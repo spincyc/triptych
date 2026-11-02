@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.ass.026.constanti-hungarorum-native-spacing-review-a57da033e48f"
+edition_id = "edition.acta-papal-archives.ass.026.1893-acta-ass-026"
+artifact_type = "native-whitespace-geometry-review"
+media_type = "application/json"
+storage = "tracked"
+retrieved = "2026-10-30"
+rights_status = "licensed"
+rights_basis = "Project-created exact source-selection, whitespace-projection recipe, mapping and review facts are licensed CC BY 4.0; they generate no source wording."
+license = "CC-BY-4.0"
+provenance = "Bounded Constanti Hungarorum witness, ASS 26, native artifact pages 129–136; original acquired source and earlier segments remain retained. Erratum, 2026-10-30: the frozen JSON geometry prose contains a copied sentence about Annum sacrum native page 651; that sentence is inapplicable to Constanti Hungarorum. The actual selected native extent is ASS 26 physical pages 129–136, with historical note groups on pages 130, 131 and 135 and raw-stream inversions on 130 and 131. No consecration formula or additional publisher-footer exclusion belongs to this correction. Independent acceptance is recorded in src/sources/papal-documents/encyclicals-repair-cold-23-a.md, SHA-256 f8789bc65eb2a6dd63f7e746c9a6be281804b181f665f0bd4d0dd4e32f1adae9. The historical JSON bytes and hashes remain unchanged; this metadata correction governs interpretation of their geometry prose. Selected source and accepted PDF bytes are unchanged."
+notes = "The dated erratum in provenance corrects copied geometry prose in the unchanged frozen JSON and generic footer-exclusion wording in the former artifact metadata. Native OCR reconstruction geometry is not original-print collation."
+sha256 = "a57da033e48ff55f75c6ee0e512749be34d305fc7b3e04db3e2af14ebe065225"
+byte_size = 2809
+path = "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/constanti-hungarorum-native-spacing-review-a57da033e48f/review.json"
+indexable = false

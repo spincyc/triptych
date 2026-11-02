@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.resume-orations-reader-completion-20261026-next17-5a179e1e"
+edition_id = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Separately manifested hand-transcribed historical Latin and human English prayer wording of the early Daily Missal with Vespers expression, catalogue-supported 1925 and independently bounded before 1931 by January 1927 physical library accession. The maximum United States historical publication term has expired. This affirmative basis covers only the separately checked underlying wording at independently reviewed settings; it does not clear the exact Google/CCWatershed PDF, image/layout/text-layer payloads, modern wrappers, commentary, illustrations or unreviewed/later inserts. Root bounded source-alias decision SHA 256 fefb 839 a 58513 a 2 eee 48166 e 4 a 48000914294949503 a 3 e 5 b 97 e 043 b 1 f 6395252 and independent identity/basis receipt SHA 25697 f 641 d 9 b 85 d 294 b 12 f 8 f 97298 c 46 c 177 a 668563560 db 20836 bfd 4 b 3 a 84 d 4314. No foreign-jurisdiction or official 1962 English claim is made."
+derived_from = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf"
+provenance = "Literal historical human English independently checked against complete bounded facing prayer images. Closed exact source/target/context relations are recorded in workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-next18.json SHA256 a77956cf5baa782c575c482add76f08a341fcf4343f32c0681ec0a7171ada87b."
+transformation = "Join checked physical line divisions and encode the reviewed English without changing words, case, punctuation or actual cues. Finite Latin context relations preserve every actual source and target cue. No generic ending matcher, source emendation, English expansion, name substitution or donor fanout."
+retrieved = "2026-10-26"
+sha256 = "5a179e1e8983794d264d0f362004a2ad5f7f6fe274620304bb428245f134d917"
+byte_size = 1941
+path = "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/artifacts/resume-orations-reader-completion-20261026-next17-5a179e1e/english.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Historical source wording is public domain under its separately recorded expression basis and is excluded from Triptych CC BY authorship. This bounded derivative clears no exact whole PDF, page image, whole OCR, layout, wrapper, modern insert or unexamined setting. It is not official English of the 1962 Missal."

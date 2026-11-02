@@ -18,6 +18,7 @@ HTML = LITURGY / "day-reader.html"
 SHELL_JS = LITURGY / "reader-shell.js"
 SHELL_CSS = LITURGY / "reader-shell.css"
 DAY_JS = LITURGY / "day-reader.js"
+DATE_CONTROLS_JS = LITURGY / "source-choice-controls.js"
 DAY_CSS = LITURGY / "day-reader.css"
 STATE_JS = LITURGY / "reader-state.js"
 ROBOTS = "noindex, nofollow, noarchive, nosnippet, noimageindex"
@@ -328,7 +329,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
             "window.dayReaderDebug.semantic = null",
         ):
             self.assertIn(assignment, source)
-        self.assertIn("No validated selection is available for the current reader outcome", source)
+        self.assertIn("No validated selection is available for the current reader outcome", text(DATE_CONTROLS_JS))
         self.assertIn("runtime.branches = []", source)
 
     def test_canonical_mode_location_and_cold_read_are_first_class(self) -> None:
@@ -374,10 +375,13 @@ class DayReaderIntegrationTests(unittest.TestCase):
             "readerShell.setContents([",
             "focus: { kind: 'day-choice-result' }",
             "reading.querySelector('[data-semantic-event-id]')",
-            "if (readable.length > 1 && runtime.outcome !== 'unresolved' && runtime.mode !== 'compare')",
             "['Mass form', state.form ||",
         ):
             self.assertIn(token, source)
+        self.assertIn(
+            "if (readable.length > 1 && runtime.outcome !== 'unresolved' && runtime.mode !== 'compare')",
+            text(DATE_CONTROLS_JS),
+        )
         self.assertIn("'No default selected'", source)
         choice_gate = source.index("if (primaryDayChoice(result, branch))")
         render_gate = source.index("if (!result.resolved)", choice_gate)

@@ -4,6 +4,10 @@ This profile governs source-first lives beneath `src/<provider>/biographies/`. T
 historical studies of persons and their ecclesial reception, not devotional
 legendaries, critical editions, canonization dossiers, or general articles.
 
+Declare the leaf's type, source roles, contract version, and ordered outputs in
+`publication.toml` under [document schemas](document-schemas.md); the chronology
+and tradition records keep their distinct canonical roles.
+
 ## Governing priorities
 
 1. Reconstruct the life from the earliest controlled evidence before tracing

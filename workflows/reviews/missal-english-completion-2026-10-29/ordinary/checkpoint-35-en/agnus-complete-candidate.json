@@ -1,0 +1,100 @@
+{
+  "scope": "English-only replacement of one abbreviated historical source rendering by an independently held complete historical rendering; no new source payloads",
+  "before": {
+    "english": {
+      "reading_note": "Historical English (Cummiskey, 1861), not the approved 2011 translation. ABBREVIATED SOURCE: three continuation asterisks remain unexpanded. This is not a fully written-out target text.",
+      "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en",
+      "elements": [
+        "agnus-dei"
+      ],
+      "column": "english",
+      "relation": "antecedent",
+      "collation": "uncollated",
+      "note": "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xl, Internet Archive leaves 50, read from the already registered page-checked transcription. ABBREVIATED HISTORICAL SOURCE: the source writes the invocation once with three asterisk continuation cues and give us peace. The asterisks are retained and no repeated invocation is expanded; this is not a complete written-out target text. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+    },
+    "text_sha256": "2b1f3862c537ec0be0a8bf32f173d2ec5b5d2a56e5c5fcec581e109b27a529d5",
+    "asterisk_count": 3
+  },
+  "after": {
+    "english": {
+      "witness": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+      "artifact": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1",
+      "elements": [
+        "agnus-dei"
+      ],
+      "column": "english",
+      "relation": "antecedent",
+      "collation": "uncollated",
+      "reading_note": "Complete threefold historical English (Lasance, 1945), not approved Missal English. The source words remain unchanged; its priest actor is not imported into this setting.",
+      "note": "The exact three independently checked Lasance English invocations, source seq4201–4203, replace the abbreviated Cummiskey English rendering for this element only. The historical source artifacts remain immutable, including the Cummiskey three-asterisk body and the separate Latin column. Full older Latin at Mame1922 artifact464/printed350 and secondary2002 n130 artifact367 establish the same printed threefold wording; this is not an authenticated whole2008 collation. The modern chant/cantor/people performance allocation and additional permitted repetitions are not inferred from the older source priest labels."
+    },
+    "witness": {
+      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+      "lang": "en",
+      "label": "Complete historical English (Lasance, 1945), not approved postconciliar Missal English",
+      "rights": "public-domain",
+      "caution": "An independently checked historical English witness of the complete printed threefold Agnus Dei. The old source actor and ceremonial context are not assigned to the postconciliar setting. No approved translation, authenticated complete2008 identity or recitation authority is claimed.",
+      "artifacts": [
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+      ]
+    },
+    "english_turns": [
+      {
+        "key": "invocation-1",
+        "seq": [
+          4201
+        ]
+      },
+      {
+        "key": "invocation-2",
+        "seq": [
+          4202
+        ]
+      },
+      {
+        "key": "invocation-3",
+        "seq": [
+          4203
+        ]
+      }
+    ],
+    "remove_coarse_speaker": true,
+    "turns_basis": "Three whole independently checked Lasance source rows form the printed threefold prayer. Source priest labels are not inherited. The secondary2002 n130 prints the three invocations, while IGMR83 permits chant-leading and answering allocation; no actor or functional role is assigned by this source projection.",
+    "text_sha256": "7dbcb574c3ea80f09b5e1dd9ca93e54878bbf58c6eb7bc4fc31d772ec867cc8b",
+    "source_seq": [
+      "4201",
+      "4202",
+      "4203"
+    ]
+  },
+  "source_records": {
+    "lasance_artifact": {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ordo-communio-checked-english-v1/artifact.toml",
+      "sha256": "90ce06659205c48a99d404648c317ecca827cd596661b9757cc9f1a06d654726",
+      "payload_sha256": "921a88d0a1992ee685d96682579e35748985197d708c6474ac1a40c5418d0d42",
+      "rights_status": "public-domain",
+      "provenance": "The registered facsimile is hash-verified as 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70. A source transcription and independent whole-word page-image review establish every selected English word and source cut. This artifact is a mechanical derivative of those frozen checked source paragraphs, not a fresh transcription or an inference from optical text."
+    },
+    "cummiskey_artifact": {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-en/artifact.toml",
+      "sha256": "bfeee6af60b77fc3d8060500962f617cc03f5f108ebbf1bbd3dfe6d70d8a0a0d",
+      "payload_sha256": "f35d635ec2311ade057558ad1531bc6e007126311acc9a554b4b662dfacd0ccc"
+    }
+  },
+  "proof": {
+    "mame_source_parent": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+    "source_artifact_page": 464,
+    "printed_page": "350",
+    "retained_source_proof": ".scratch/postconciliar-ordinary-20261029/second-pass/quiet-prayers/mame-source-proofs.pdf",
+    "retained_page": 3,
+    "retained_proof_sha256": "23c78d5b133d47ec8f1896ee6449264c8b703299680a87562060dcbb986cb924",
+    "target_source": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "target_page": 367,
+    "target_number": "n.130",
+    "target_grade": "secondary2002 evidence only, not authenticated complete2008"
+  },
+  "source_files_added": 0,
+  "old_artifact_changed": false,
+  "new_actor_inferred": false
+}

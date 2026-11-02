@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v15
+WORKFLOW_DIGEST: 4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83
+RUN_ID: 450355254538c1ba
+COMMIT: 4f52b9ade338f9a9f4f39f312aa45989a0baf2ca
+STAGE: homily-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-01","proper":"liturgy/roman-rite/1962/propers/temporal/f02-all-saints","provider":"claude","research_handoff":"workflows/reviews/claude-1962-f02-revision-2026-10-27/HANDOFF.md"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"HOM-005","location":"src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/10-homily.tex lines 48-52 and 87-88","problem":"Lines 48-52 put the Aquinas answer in a 44-word sentence that opens with two subordinate clauses ('When God lets his servants go hungry, as St Paul says that he and the other apostles were hungry and thirsty even as he wrote, Thomas compares ...'). The listener must hold Paul's words before learning what they are for. 'Even as he wrote' is an unclear rendering of 1 Cor 4:11's 'unto this hour'. Lines 87-88 explain when the Secret is said ('said a few moments after the Offertory') to a congregation that hears this Mass every year.","required_result":"Split the sentence, for example: 'St Paul writes that he and the other apostles were hungry and thirsty to that very hour. Thomas answers that God then acts like a physician, who keeps food from a sick man for the sake of his health.' Drop the explanation of when the Secret is said.","severity":"advisory"},{"id":"HOM-006","location":"src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/90-note.tex lines 77-80 ('Texts quoted, and their route')","problem":"The note says that Augustine on Ps 33 and Ps 87, Basil and Bernard 'are quoted in the English the expansive study gives'. In the speech Basil is never in quotation marks (lines 45-46, 109-110 and 128-130 are paraphrase). Augustine on Ps 87 (lines 79-81) is the study's English word for word ('dwell in the help of the Most High and abide in the protection of the God of heaven') but is not marked as a quotation. Bernard sermo 5 n. 5 (lines 112-114) is paraphrase. The clause 'the Offertory's English is quoted on the Lasance's attribution' does not say what is meant.","required_result":"State each route exactly: which patristic words are quoted, and mark those in the speech (for example the Ps 87 gloss), and which are paraphrased in the study's English. Reword the Offertory clause plainly, for example: 'the Offertory's English is the Lasance's, quoted without its closing Alleluia'.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

@@ -1,0 +1,1101 @@
+{
+  "schema": "triptych-english-ordinary-completion-review/v2",
+  "campaign_date": "2026-10-29",
+  "source_admissions_finalized_utc_date": "2026-10-30",
+  "scope": [
+    "roman-1962",
+    "roman-pre-1955"
+  ],
+  "state": "SOURCE_AND_READER_PROOFS_PASSED_ROOT_RELEASE_INTEGRATION_PENDING",
+  "baseline": {
+    "roman-1962": {
+      "modeled_elements": 196,
+      "english_held": 191,
+      "english_absent": 5,
+      "latin_held": 125
+    },
+    "roman-pre-1955": {
+      "modeled_elements": 206,
+      "english_held": 196,
+      "english_absent": 10,
+      "latin_held": 113
+    }
+  },
+  "baseline_qualification": "The first observed source inventory boundary for this source lane, rather than a claim about an unchanged campaign-wide denominator. Parallel lanes own other source families.",
+  "final_source_coverage": {
+    "roman-1962": {
+      "modeled_elements": 200,
+      "languages": [
+        {
+          "absent": 3,
+          "elements": 200,
+          "held": 197,
+          "lang": "en",
+          "missing": 3
+        },
+        {
+          "absent": 74,
+          "elements": 200,
+          "held": 126,
+          "lang": "la",
+          "missing": 74
+        }
+      ],
+      "language_absences": [
+        {
+          "count": 3,
+          "key": "appointment-not-established",
+          "kind": "model-gap",
+          "label": "This day’s Ordinary appointment is not established",
+          "lang": "en",
+          "state": "unavailable"
+        },
+        {
+          "count": 3,
+          "key": "appointment-not-established",
+          "kind": "model-gap",
+          "label": "This day’s Ordinary appointment is not established",
+          "lang": "la",
+          "state": "unavailable"
+        },
+        {
+          "count": 4,
+          "key": "no-facing-latin",
+          "kind": "witness-gap",
+          "label": "The 1861 witness prints this block only in English",
+          "lang": "la",
+          "state": "unavailable"
+        },
+        {
+          "count": 4,
+          "key": "preface-not-in-witness",
+          "kind": "witness-gap",
+          "label": "An exact source for this Preface is not joined in this language",
+          "lang": "la",
+          "state": "unavailable"
+        },
+        {
+          "count": 63,
+          "key": "witness-own-english",
+          "kind": "witness-gap",
+          "label": "The 1861 lay witness supplies its own English heading or rubric",
+          "lang": "la",
+          "state": "unavailable"
+        }
+      ]
+    },
+    "roman-pre-1955": {
+      "modeled_elements": 209,
+      "languages": [
+        {
+          "absent": 3,
+          "elements": 209,
+          "held": 206,
+          "lang": "en",
+          "missing": 3
+        },
+        {
+          "absent": 96,
+          "elements": 209,
+          "held": 113,
+          "lang": "la",
+          "missing": 96
+        }
+      ],
+      "language_absences": [
+        {
+          "count": 3,
+          "key": "appointment-not-established",
+          "kind": "model-gap",
+          "label": "This day’s Ordinary appointment is not established",
+          "lang": "en",
+          "state": "unavailable"
+        },
+        {
+          "count": 3,
+          "key": "appointment-not-established",
+          "kind": "model-gap",
+          "label": "This day’s Ordinary appointment is not established",
+          "lang": "la",
+          "state": "unavailable"
+        },
+        {
+          "count": 83,
+          "key": "no-facing-latin",
+          "kind": "witness-gap",
+          "label": "The 1861 witness prints this block only in English",
+          "lang": "la",
+          "state": "unavailable"
+        },
+        {
+          "count": 4,
+          "key": "preface-not-in-witness",
+          "kind": "witness-gap",
+          "label": "An exact source for this Preface is not joined in this language",
+          "lang": "la",
+          "state": "unavailable"
+        },
+        {
+          "count": 6,
+          "key": "proper-canon-form-not-held",
+          "kind": "witness-gap",
+          "label": "An exact source for this Canon form is not joined in this language",
+          "lang": "la",
+          "state": "unavailable"
+        }
+      ]
+    }
+  },
+  "count_qualification": "Held English counts unique represented elements with an available body in at least its declared context, not complete English execution in every context or the whole Missal. In Roman1962 five separately represented Preface bodies (four historical plus Chrism) replace one coarse missing-preface stand-in, changing196 to200 elements. In pre1955 four historical Preface bodies replace one coarse stand-in, changing206 to209. The May1 same-element English alternative adds a source offer without adding an element or raising unique-element heldness. Roman1962 has198 English source offers over197 held elements.",
+  "admissions": [
+    {
+      "kind": "historical-human-english",
+      "artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.english-completion-20261029-ordinary-proper-canon",
+      "sha256": "fe936369edc0160e59336d9cf4ff89d12544c2c6e6b9eecb22d4e91026966059",
+      "elements": [
+        "communicantes-nativitate",
+        "communicantes-epiphania",
+        "communicantes-pascha",
+        "communicantes-ascensione",
+        "communicantes-pentecoste"
+      ],
+      "source_locus": "Lefebvre ordinary printed pp.59–61, PDF pp.93–95; each proper head explicitly refers to its own common continuation at p.59, which continues through its actual Amen at p.60.",
+      "review": "Independent source-image review on 2026-10-29 accepted every English word, punctuation mark, saint order, source-directed continuation, Nativity alternative and Easter day-only bound. Source and accepted Bonn whole-PDF hashes were independently recomputed and the stated pages opened. No exact target-edition or civil-date execution claim was accepted.",
+      "rights": "Underlying early Saint-Andre/Lohmann historical English expression, positively accessioned by 1927, public domain in the United States by 2026. Translator remains unnamed. Modern scan typography and wrapper are not redistributed."
+    },
+    {
+      "kind": "historical-human-english",
+      "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.hanc-igitur-easter-pentecost-checked-english",
+      "elements": [
+        "hanc-igitur-pascha-pentecoste"
+      ],
+      "source_locus": "Existing complete checked Lasance English at printed pp.811–812. Joined to the pre-1955 frame without rewriting the source or asserting target collation.",
+      "rights": "Existing edition-specific United States nonrenewal basis, outside excluded lettered inserts."
+    },
+    {
+      "kind": "historical-human-english",
+      "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en",
+      "sha256": "076d0b81a5729aa921f7e11de604d86c2d2a5c74a085dfecdbaf55d1dbef1597",
+      "facsimile_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-facsimile",
+      "facsimile_sha256": "47d9aa1a5d990f2a616307593e55c8b24f1f235688ed543065cfc306e1e20b52",
+      "elements": [
+        "praefatio-sacro-corde",
+        "praefatio-christo-rege",
+        "praefatio-sancto-ioseph",
+        "praefatio-defunctis"
+      ],
+      "source_locus": "Lasance ordinary numbered printed pp.812–818, PDF pp.811–817. Each source body includes its own opening and conclusion and stops before its separately printed Sanctus.",
+      "review": "Independent image review accepted all four corrected source bodies on 2026-10-29. It found and repaired Christ the King's literal for-us semicolon. It retained St Joseph's source alternatives and the Dead Preface's dominions-and-powers translation variant. No approved-English, target-exact or full-execution grade was accepted.",
+      "rights": "Existing edition-specific United States nonrenewal basis. These are ordinary numbered pages, outside both excluded lettered insert ranges."
+    },
+    {
+      "kind": "project-study-english",
+      "artifact_id": "artifact.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029.continuation-study-en-b83d0df3",
+      "sha256": "b83d0df336dc1cd943a8b295d617c3325384492381a15d7f0426c3f322ff9d72",
+      "source_artifact_id": "artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.canon-proper-forms-651e3482",
+      "source_sha256": "651e3482bd755a2e3ef46087eab2a734ea4f812ef1a0ee952863b31dade60fc6",
+      "source_rows": [
+        2,
+        3,
+        4
+      ],
+      "element": "communicantes-continuatio",
+      "review": "Independent Latin-to-English fidelity review on 2026-10-29 accepted the complete continuation, separate nonspoken hand-joining rubric and actual conclusion without corrections. No historical or approved-English identity and no human review are claimed.",
+      "rights": "New project-created study English from the exact independently distributable held Latin projection, whose underlying public-domain witnesses and separately decided minimal Joseph-phrase basis remain controlling. Project CC BY 4.0; not for recitation. No Fordham text is a source."
+    },
+    {
+      "kind": "complete-historical-human-english-replacement",
+      "calendars": [
+        "roman-1962",
+        "roman-pre-1955"
+      ],
+      "groups": [
+        {
+          "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-en",
+          "sha256": "7161b9dba1175c18457a3ec5fb756ce989e024c5f97d1ac824c06636d3cb7b3c",
+          "elements": [
+            "praefatio-de-ss-trinitate",
+            "praefatio-de-nativitate",
+            "praefatio-de-epiphania",
+            "praefatio-de-quadragesima",
+            "praefatio-de-sancta-cruce"
+          ],
+          "text_region_proof_sha256": "c62859133eee975c8ea78bab0813d168dfa242592b74771be148df3c4ed5f316"
+        },
+        {
+          "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-b-en",
+          "sha256": "2894c6e547aafe3fd42688ac97173717fdea8b66842a1ac2172b926677beec6c",
+          "elements": [
+            "praefatio-paschalis",
+            "praefatio-de-ascensione",
+            "praefatio-de-beata-maria-virgine",
+            "praefatio-de-apostolis"
+          ],
+          "text_region_proof_sha256": "65a4b84622b12803e54f114b9c92d1a0930a5116104260e66b3727deeb14f9fb"
+        }
+      ],
+      "source": "Lasance/Walsh 1945 revised edition in the later 1955-56 printing; prayer text only from ordinary numbered pages. Retained proof crops exclude separately protected or later matter. Recovered PDF page images were compared pixel-for-pixel with the intended source crops.",
+      "rights": "Existing edition-specific United States nonrenewal basis, excluding lettered inserts and separately protected matter. These are source-exact historical human translations, not approved target English.",
+      "word_conservation": "The old Cummiskey English projection is pinned by exact witness, artifact and text hash before replacement. No old source artifact, Latin body, element order, appointment condition or Sanctus text is rewritten.",
+      "source_review_corrections": "Apostles retains the source comma in under Thee, And therefore; the superseded candidate is preserved by a one-character conservation receipt. No target or modern English corrects the historical words."
+    },
+    {
+      "kind": "old-witness-latin-projection-and-project-study-english",
+      "calendar": "roman-1962",
+      "element": "praefatio/praefatio-missa-chrismatis",
+      "latin_artifact_id": "artifact.triptych.english-completion-20261029-ordinary-chrism.latin-projection-20261030.ordinary-chrism-latin-babd71a3",
+      "latin_payload_sha256": "babd71a33c55492d66fe0b9d82acfff13265f6a006486a22463b98c616fe25e6",
+      "english_artifact_id": "artifact.triptych.english-completion-20261029-ordinary-chrism.study-english-20261030.ordinary-chrism-study-en-3a4dbe81",
+      "english_payload_sha256": "3a4dbe81ee6b6e83d978f0ab981bfb79af5f3f272c5497de70ea9a54459dc7e9",
+      "source_spans": [
+        "1861 Cummiskey common Preface: first eight words through salutare.",
+        "Wilson 1894 Gelasian Book I XL, printed 69/original PDF162: Clementiam tuam suppliciter obsecrare.",
+        "Paris A.Jouby 1859 Pontificale, printed398/originalPDF411: the contiguous complete petition from ut spiritualis through vestimento incorrupti muneris induantur, retaining baptismo and innocentiae odore.",
+        "1861 Cummiskey common Preface: contiguous Per Christum through dicentes before Sanctus."
+      ],
+      "source_identity": "The actual Paris1859 physical title page is retained alongside the old petition. No earlier physical printing is inferred solely from an online catalogue.",
+      "rights": "Old Latin words and old page reproductions remain public-domain underlying matter. Whole Google wrapper PDF is hash-only, with wrapper rights unresolved. Project-owned source projection metadata and fresh study English are distinct; no modern source page, rubric or arrangement is republished.",
+      "grades": "Latin: antecedent/collated/word-exact for this body only; English: own/project study translation, no target_wording. Four substantive contiguous source spans are explicit rather than a per-word bank."
+    },
+    {
+      "kind": "scoped-project-study-english-alternative",
+      "calendar": "roman-1962",
+      "element": "praefatio/praefatio-sancto-ioseph",
+      "formulary": "s-ioseph-opificis-sponsi-beatae-mariae",
+      "english_artifact_id": "artifact.triptych.english-completion-20261029-ordinary-joseph-preface-may1.study-english-20261030.joseph-preface-may1-study-en-240fd178",
+      "english_payload_sha256": "240fd17875204a9b6902a60f5b7ed46929ff36a463c7b0569c8c4426dea0a0b5",
+      "historical_latin_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-ordinary-joseph-preface-may1-source-body",
+      "historical_latin_payload_sha256": "235844b4188dc771ca3e0b33065bf4072f4cb58d118d00742ef48b8bc62417e8",
+      "canonical_admission": "joseph-may1-source-admission.json",
+      "rights_adoption": "joseph-may1-rights-adoption-v2.json",
+      "rights_adoption_sha256": "7ae1b0c2cd7acfa62777d7acc0b09b33c37212c7fbcd6c0b410f669ac76e43e6",
+      "boundary": "Only new English for the complete 99-word Vere-to-dicentes body in the selected May1 context. Independently established 1922 Mame foundation plus the exact sole word25 functional substitution. No selected modern Latin or target image is published.",
+      "scope_behavior": "Same counted element as the unchanged March19 historical English. Explicit distinct source IDs and disjoint named-formulary scopes; no first-body, order, default or cross-feast substitution.",
+      "metadata_correction": "Original false oe transcription is preserved as prior evidence and explicitly withdrawn by the correction-specific review and v2 adoption. Actual old source prints Cæli cælorumque. No retrospective source-glyph check is attributed to the original reviewer."
+    }
+  ],
+  "remaining_english_text_gaps_in_represented_source_bodies": [],
+  "appointment_stand_ins": [
+    "praefatio/praefatio-diei",
+    "canon/communicantes-diei",
+    "canon/hanc-igitur-diei"
+  ],
+  "execution_qualifications": [
+    "Both frames retain three unresolved appointment stand-ins: Preface of the day, Communicantes of the day and Hanc igitur of the day. These are unresolved source/model appointments, not three absent translated prayer bodies.",
+    "Historical English remains an uncollated antecedent unless its own element says otherwise. No historical English is promoted to approved target English.",
+    "The nine newly completed historical Preface English bodies have their own thanksgiving opening and conclusion through the colon before Sanctus. Existing partial Latin, source cues, Latin variants, source-only rubrics and collation limits remain unchanged.",
+    "Pre-1955 Easter Communicantes English is day-only, requires a closed named Paschal day formulary, and excludes Holy Saturday. Bonn night wording has no matching historical English here.",
+    "The complete historical Easter Preface English retains its printed day (in these days) alternatives. The old source gives a Holy Saturday night direction; no branch is selected or silently reconstructed by this source replacement.",
+    "The complete historical Marian Preface retains the printed feast blank. No target feast title is supplied.",
+    "Historical Saint Joseph Preface English retains festivity (veneration), and is scoped to March 19. The distinct new project study English applies only to the named Roman 1962 May 1 formulary. Date-free, other and votive contexts acquire no default body.",
+    "The Dead Preface preserves the historical dominions-and-powers rendering against the facing Latin Thronis et Dominationibus. Nativity preserves its historical rendering variants too.",
+    "Chrism Latin is a four-span old-witness projection with explicit seams, not a claim that one old edition prints this complete sequence. Its own new study English remains separately attributed.",
+    "Project study English is AI-authored and independently checked for fidelity by AI reviewers. No human review, ecclesiastical approval or authority for liturgical recitation is asserted.",
+    "All inherited target-collation, actor, seasonal branch, calendar placement and execution limits remain controlling. No full Ordinary execution or whole-Missal completion follows from source-heldness."
+  ],
+  "verification": {
+    "source_library": "PASS after all new source records and body/scope joins; recorded snapshot artifact10304/corpus5/edition13723/passage9413/segment10185/work10744/bindings4311. Later source-inventory-only descriptive metadata correction changes no source-library record. Other source lanes may continue adding records after this snapshot.",
+    "mass_ordinary_source_check": "PASS: source assembly and owner-run Roman metadata-successor generation/currentness. Roman-only payload and exact source/tool pins retained below; no source lane writes shared projections.",
+    "source_coverage_command": "tools/mass-ordinary coverage --json",
+    "private_target_body_check": "PASS: exact private selected May1 target Latin body and frozen targetpagePNG were absent from all71 source-lane admitted files. This is a check of those exact frozen identities, not a blanket source-rights finding.",
+    "reader_integration": "PASS: actual same-element March19/May1 source bodies and their exact notes select uniquely by context, independent of row order, on CLI, browser selected/paired rendering and lectern. Unknown/outside/overlap remain text-free refusals or explicit choice. The browser coverage guard was corrected to distinguish source offers from unique held elements and retains negative corruption controls.",
+    "own_source_regressions": "PASS: five held-Preface source tests on actual final generated frames, plus existing Ordinary translation applicability/appointed seating/production DOM controls. The Preface tests prove nine complete source-exact historical English bodies in both frames, unchanged partial Latin cues/variants and no accidental exact-English grade, and separately attributed Chrism Latin/study English.",
+    "prior_failed_check_dispositions": [
+      "Initial Preface test failed only because shared projections still held the earlier abbreviated English; after source-owner generation all five tests pass.",
+      "First dual-English browser integration exposed an incorrect relation-total equals held-elements invariant. The owning browser lane repaired source-offer accounting with negative controls; the existing applicability test now passes.",
+      "An earlier retained CLI combined log contains pre-fix note-key errors. The separate final combined log passes46tests; a further independent focused rerun passes19CLI-qualification tests. No failed log is cited as the final pass."
+    ]
+  },
+  "independent_review_receipts": [
+    {
+      "receipt_sha256": "a4fac4105139cc124749e39f44ecc72966262bf3b8a83dc20bddc7ea6f7ea4cd",
+      "finding": "Independent source-image reading of five complete proper Communicantes and their explicit same-witness continuation; accepted day/night and source limits.",
+      "qualification": "AI source/fidelity review, not human or ecclesiastical approval. The retained canonical source records and page proofs establish the independently inspectable source boundary."
+    },
+    {
+      "receipt_sha256": "a7811f7ed5b525c4f6996fcc4ea1d4647f2345333572c96455dacf8a81886bc6",
+      "finding": "Independent literal source-image check of four complete historical Prefaces; accepted corrected ChristKing semicolon and retained source variants.",
+      "qualification": "AI source/fidelity review, not human or ecclesiastical approval. The retained canonical source records and page proofs establish the independently inspectable source boundary.",
+      "sanitized_review_record": {
+        "decision": "accepted-with-recorded-scope",
+        "candidate": "english-candidate.tsv",
+        "candidate_sha256": "076d0b81a5729aa921f7e11de604d86c2d2a5c74a085dfecdbaf55d1dbef1597",
+        "scope": "Four complete historical Lasance English Preface prayer bodies before each separately printed Sanctus; not approved 1962 English and not complete execution assemblies.",
+        "source_pdf_sha256_supplied": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+        "inspection": "All seven source page images PDF811-817 read at160dpi and independently rendered/read at400dpi; ChristKing for-us punctuation reopened in800dpi crop. Four supplied target Latin page images PDF371,372,376,379 read.",
+        "resolved_findings": [
+          {
+            "key": "christo-rege-for-us-punctuation",
+            "finding": "Source printed813/PDF812 reads for us; candidate initially had comma.",
+            "resolution": "Candidate now retains semicolon; exact corrected candidate hash above."
+          }
+        ],
+        "retained_limits": [
+          "StJoseph source prints festivity(veneration), lacks1962 May1solemnity. No source or target branch may be silently selected or added.",
+          "StJoseph historical English taking the place of the eternal Father is source wording, not a new project interpretation.",
+          "Dead English dominions and powers is an actual historical translation variant against facingLatin/target Thronis et Dominationibus; preserve and do not claim English exact-target identity.",
+          "SacredHeart facingLatin nunquam/target numquam and Dead conditio/condicio are orthographic differences; no new full target English collation grade asserted.",
+          "No claim of independent legal analysis, whole-book review, approved1962English, ChrismPreface coverage or downstream renderer acceptance."
+        ],
+        "source_image_hashes": {
+          "cold-review/dead-0816.png": "c480d8e3075a8e5f6aa556c8433810f1c85738dda0410d5753fc59972bebae4e",
+          "cold-review/dead-0817.png": "f2e80d8ca7e0ec92fd71a379022e39718c2b22ec8c46faca7ee2929ee8123335",
+          "cold-review/heart-0811.png": "12d242db36a84b452809e66691fabc48bb392316d9b5ca348d0c6aa4da226fd3",
+          "cold-review/heart-0812.png": "0590977a7ad66fe5e18f97a00dbfb2b4bd3990e452956c827b6c7ff01a66fb25",
+          "cold-review/joseph-0814.png": "d307611d189f7ace34cbab17111390522c5f17b08d2eca7ede4a04635f74f2f4",
+          "cold-review/joseph-0815.png": "5bd0fa8e69ad41def4ae8213b61d6fc06e7d3327c25815f23538f8734105d9f4",
+          "cold-review/king-0813.png": "1b3eda1187952590901d73048aa3bfc45abfad59f2243a360b1bc5a061a3f1c9",
+          "cold-review/king-punctuation.png": "73fb9adf69a669d8a1df54955d31025fbe557a25fcde78ceb36f86ffab45a7a5",
+          "cold-review/king-punctuation2.png": "9d31fa5debcab13b37bb51f30d748c38948f1ebf2f912a4fd3ee6d29be29d77d"
+        },
+        "reviewed_rows": [
+          "praefatio-sacro-corde",
+          "praefatio-christo-rege",
+          "praefatio-sancto-ioseph",
+          "praefatio-defunctis"
+        ]
+      },
+      "record_qualification": "Parsed original independent receipt with private research paths omitted. This nested JSON serialization is not the original receipt byte string; its original hash is retained above. Earlier snapshot hashes and stated pending gates are historical facts rather than claims of final currentness."
+    },
+    {
+      "receipt_sha256": "d4cab529bc5d8bbae1880950b154eabc82ab2b8c222bd806fc62945e4f357757",
+      "finding": "Independent acceptance of the exact Joseph continuation metadata successor, preserving separate action turn, English bytes and prior fidelity review.",
+      "qualification": "AI source/fidelity review, not human or ecclesiastical approval. The retained canonical source records and page proofs establish the independently inspectable source boundary.",
+      "sanitized_review_record": {
+        "status": "ACCEPT",
+        "scope": "Metadata successor only; prior semantic acceptance retained. No human review, liturgical approval, recitation permission, full Communicantes or whole-Ordinary completion asserted.",
+        "reviewed_on": "2026-10-29",
+        "source_sha256": "651e3482bd755a2e3ef46087eab2a734ea4f812ef1a0ee952863b31dade60fc6",
+        "english_sha256": "b83d0df336dc1cd943a8b295d617c3325384492381a15d7f0426c3f322ff9d72",
+        "draft_sha256": "b83d0df336dc1cd943a8b295d617c3325384492381a15d7f0426c3f322ff9d72",
+        "inventory_sha256": "b2dd29c3bd1131a00200afbecde10cad05cb64daf157dbc527328d3ee7feabd3",
+        "inventory_key": "canon/communicantes-continuatio",
+        "english_relation": "own",
+        "coverage_relationship": "study-translation",
+        "english_turns": [
+          {
+            "key": "oratio",
+            "seq": [
+              1
+            ],
+            "speaker": "priest"
+          },
+          {
+            "key": "iungit-manus",
+            "seq": [
+              2
+            ],
+            "action": true
+          },
+          {
+            "key": "conclusio",
+            "seq": [
+              3
+            ]
+          }
+        ],
+        "reading_note": "Triptych study translation. This English is not approved for liturgical use or recitation.",
+        "assembled_output": "tools/mass-ordinary show --calendar roman-1962 --format json; exact English turns and notice preserved; iungit-manus action=true with no speaker",
+        "tracked_edits": false,
+        "defects": []
+      },
+      "record_qualification": "Parsed original independent receipt with private research paths omitted. This nested JSON serialization is not the original receipt byte string; its original hash is retained above. Earlier snapshot hashes and stated pending gates are historical facts rather than claims of final currentness."
+    },
+    {
+      "receipt_sha256": "56382b8b9183bf416afc93055de87c51eb7f9709a703859d7b407dc772e3e4fa",
+      "finding": "Independent literal source-image review of five complete English Prefaces and proof-page boundaries.",
+      "qualification": "AI source/fidelity review, not human or ecclesiastical approval. The retained canonical source records and page proofs establish the independently inspectable source boundary.",
+      "sanitized_review_record": {
+        "schema": "triptych-independent-source-review/v1",
+        "reviewed_on": "2026-10-29",
+        "review_scope": "Literal historical Lasance English Preface bodies only; independent read-only source-image collation of all five candidate rows.",
+        "decision": "accept",
+        "accepted_candidate_sha256": "7161b9dba1175c18457a3ec5fb756ce989e024c5f97d1ac824c06636d3cb7b3c",
+        "candidate": "[private research path omitted]",
+        "source": {
+          "path": "[private research path omitted]",
+          "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+          "independently_rehashed": true,
+          "rights_scope": "Existing Lasance 1945 nonrenewal finding inherited; no new rights conclusion made. No excluded lettered inserts consulted."
+        },
+        "method": {
+          "images": "Independently rendered the exact full PDF with /usr/bin/pdftoppm -r 180 -png, selecting 1-based artifact pages 771-773, 797-800, 801, 802-803; opened and read every retained raster.",
+          "comparison": "Compared every English word, capitalization, punctuation and body boundary against the rendered source, following alternating English columns across page transitions. pdftotext -layout extracts were retained as auxiliary navigation only; images control this finding.",
+          "presentation": "The candidate joins print line wraps and discretionary end-of-line hyphenation into prose, retaining lexical hyphens, source spelling, capitals and punctuation; source small capitals IT IS are represented as IT IS.",
+          "authority_limit": "Acceptance establishes these complete historical source bodies only. It makes no modern-target exact-English, approval, promulgation, calendar equivalence or recitation claim.",
+          "instructions_read": [
+            "AGENTS.md (workspace and repository)",
+            "resolved AI_GUIDANCE.md and ai-guidance/00-core.md, 20-sub-agent-scheduling.md, 30-collaboration.md, 35-guidance-maintenance.md",
+            "guidance/sources.md",
+            "guidance/missals.md",
+            "guidance/liturgical-text-publication-policy.md",
+            "guidance/external-review-handoffs.md"
+          ]
+        },
+        "rows": [
+          {
+            "element_key": "praefatio-de-ss-trinitate",
+            "artifact_pages": [
+              772,
+              773
+            ],
+            "printed_pages": [
+              773,
+              774
+            ],
+            "result": "accept",
+            "inspection_evidence": "PDF772 English right column begins IT IS truly meet and just, and ends in the con-; PDF773 English left column resumes fession of one true and eternal Godhead. Confirmed one true and eternal Godhead we adore (no inserted comma), equality in majesty: Which, and day by day crying out with one voice, to repeat:. The body ends before The bell now is rung three times. and the separate Sanctus. PDF771 independently inspected as a duplicate printed773 occurrence and excluded from this chosen body."
+          },
+          {
+            "element_key": "praefatio-de-nativitate",
+            "artifact_pages": [
+              797
+            ],
+            "printed_pages": [
+              798
+            ],
+            "result": "accept",
+            "inspection_evidence": "PDF797 English left column begins after the dialogue and carries the complete body through glory without end saying:. Confirmed right and available to salvation, eternal God, because, and dominions and powers exactly as printed. PDF798/printed799 begins the separate Sanctus; no part of it or the preceding dialogue enters the candidate."
+          },
+          {
+            "element_key": "praefatio-de-epiphania",
+            "artifact_pages": [
+              799,
+              800
+            ],
+            "printed_pages": [
+              800,
+              801
+            ],
+            "result": "accept",
+            "inspection_evidence": "PDF799 English left column begins IT IS truly meet and just, and ends only-begotten Son appearing; PDF800 English right column continues in our mortal nature. Confirmed always, and in all places, eternal God: because, His very own., and thrones and dominations and with all the array. The final unceasingly repeat: precedes the separately printed Holy, Holy, Holy."
+          },
+          {
+            "element_key": "praefatio-de-quadragesima",
+            "artifact_pages": [
+              802
+            ],
+            "printed_pages": [
+              803
+            ],
+            "result": "accept",
+            "inspection_evidence": "PDF801/printed802 identifies section 3. Preface of Lent and prints its dialogue; PDF802/printed803 carries its body in the English right column despite the forward running heading PREFACE OF THE HOLY CROSS. Confirmed profitable, for us, the holy One, the Father almighty, the everlasting God:, Through Christ our Lord. Through Whom, Thy majesty: which, and blessed seraphim, joyfully. The complete body ends unceasingly to repeat: directly before its separate Sanctus; section 4 and the Holy Cross dialogue below are excluded."
+          },
+          {
+            "element_key": "praefatio-de-sancta-cruce",
+            "artifact_pages": [
+              803
+            ],
+            "printed_pages": [
+              804
+            ],
+            "result": "accept",
+            "inspection_evidence": "PDF803 English left column contains the complete Holy Cross body. Confirmed profitable for us (no comma before for), O holy Lord, Father almighty, eternal God:, spring; and that he who by a tree overcame, by a tree might be overthrown., our Lord: Through Whom, Thy majesty, which, and blessed seraphim joyfully (no comma). The final unceasingly to repeat: precedes the separate Holy, Holy, Holy."
+          }
+        ],
+        "page_proofs": [
+          {
+            "artifact_page": 771,
+            "printed_page": 773,
+            "role": "excluded duplicate context",
+            "file": "source-0771.png",
+            "sha256": "2e9fee239f65757524509ac9fcba0f68311f402f941542939a5aa4f8d92e6f91"
+          },
+          {
+            "artifact_page": 772,
+            "printed_page": 773,
+            "role": "Trinity body start",
+            "file": "source-0772.png",
+            "sha256": "7648853c9c45dfc7b192e770afbe71a913fcc41707f6864e2bd1ec0e7a1fde8a"
+          },
+          {
+            "artifact_page": 773,
+            "printed_page": 774,
+            "role": "Trinity body end and excluded bell/Sanctus context",
+            "file": "source-0773.png",
+            "sha256": "6b8625df073f672220c26998136a3bffe3f0b3caaeccde6af5ea035b26d224c5"
+          },
+          {
+            "artifact_page": 797,
+            "printed_page": 798,
+            "role": "Nativity complete body",
+            "file": "source-0797.png",
+            "sha256": "b9339d4febcfe06b366166bbdf54649edb604304daae151a0a1b189f82321d23"
+          },
+          {
+            "artifact_page": 798,
+            "printed_page": 799,
+            "role": "Nativity excluded Sanctus context",
+            "file": "source-0798.png",
+            "sha256": "33ab298d5f3800a7b2fc2bb7bdd66d755ec77f065b14542f8801842858ae8214"
+          },
+          {
+            "artifact_page": 799,
+            "printed_page": 800,
+            "role": "Epiphany body start",
+            "file": "source-0799.png",
+            "sha256": "3e372c9866c8341734fe35ed422457bdfd4c0b35d60b602f07469ae4bf2ebbd0"
+          },
+          {
+            "artifact_page": 800,
+            "printed_page": 801,
+            "role": "Epiphany body end and excluded Sanctus context",
+            "file": "source-0800.png",
+            "sha256": "f25ef125210fea0430445c95ba448716f995362a8144b0f4e478701e71eadf88"
+          },
+          {
+            "artifact_page": 801,
+            "printed_page": 802,
+            "role": "Lent title and excluded dialogue context",
+            "file": "source-0801.png",
+            "sha256": "4b255606d81373d1067c61f4767658290c2c31851ee1bdad08ce6016f1f054c3"
+          },
+          {
+            "artifact_page": 802,
+            "printed_page": 803,
+            "role": "Lent complete body, excluded Sanctus, and following Holy Cross title/dialogue context",
+            "file": "source-0802.png",
+            "sha256": "afe7e1aede81a123c1b5e5fcbf0d2e722bb32fdb4e6e48b09125a22b94764acb"
+          },
+          {
+            "artifact_page": 803,
+            "printed_page": 804,
+            "role": "Holy Cross complete body and excluded Sanctus context",
+            "file": "source-0803.png",
+            "sha256": "fc4885f1d240c9e195781415cacde360149056bfbd86a629ef7db74fb381f835"
+          }
+        ],
+        "defects": [],
+        "mutation_boundary": "Created only this receipt, ten source-page PNGs and two auxiliary layout extracts inside the exclusive cold-review scratch directory. No tracked edits, commits, pushes or external communications."
+      },
+      "record_qualification": "Parsed original independent receipt with private research paths omitted. This nested JSON serialization is not the original receipt byte string; its original hash is retained above. Earlier snapshot hashes and stated pending gates are historical facts rather than claims of final currentness."
+    },
+    {
+      "receipt_sha256": "1200654b8ba4967b7aeba136d2f37b68e3ed2345407766689ebb92788fa2e56f",
+      "finding": "Independent literal source-image review of four complete English Prefaces, accepting the exact Apostles comma correction.",
+      "qualification": "AI source/fidelity review, not human or ecclesiastical approval. The retained canonical source records and page proofs establish the independently inspectable source boundary.",
+      "sanitized_review_record": {
+        "decision": "accepted-corrected-source-bodies",
+        "candidate_sha256": "2894c6e547aafe3fd42688ac97173717fdea8b66842a1ac2172b926677beec6c",
+        "superseded_candidate_sha256": "0c650edfbb672772939f1feeb18a6cf78f26a3e90772bb099dfc5fd74387ec65",
+        "source_pdf_sha256_verified": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+        "scope": "Four complete historical human English Preface prayer bodies ending before their separately printed Sanctus. No approved1962English, execution-branch, target arrangement or completeMass claim.",
+        "inspection": "Independently read nine supplied source images at original resolution; reopened Apostles punctuation in an800dpi crop rendered directly from the hash-matching whole source PDF. Compared every selected English word, capital, punctuation and complete body cut to the candidate.",
+        "resolved_findings": [
+          {
+            "key": "apostles-source-comma",
+            "source": "Printed816/PDF815",
+            "finding": "Original candidate silently replaced the actual comma after under Thee with a period.",
+            "resolution": "Corrected candidate retains under Thee, And therefore. Reversing only that one punctuation byte reproduces the superseded candidate hash."
+          }
+        ],
+        "retained_limits": [
+          "Easter actual printed body retains day (in these days), unselected. Preceding printed804/PDF803 rubric directs the night substitution for HolySaturday; this candidate makes none.",
+          "BVM source . . . blank remains unfilled; source lower-case thee, whom and thy remain. No source feast or target insertion is selected.",
+          "Ascension actual available to salvation is retained, and the body includes its own full opening and conclusion before the Sanctus on the next page.",
+          "Apostles historical source comma before And therefore remains despite modern punctuation expectations.",
+          "No independent legal analysis, retained-crop pixel verification, downstream renderer or applicability review is asserted here."
+        ],
+        "reviewed_elements": [
+          "praefatio-paschalis",
+          "praefatio-de-ascensione",
+          "praefatio-de-beata-maria-virgine",
+          "praefatio-de-apostolis"
+        ],
+        "source_images_read": {
+          "easter-rubric-803.png": "9fcc5855cbf1d9a79653d396557504df6ec90361f966430f351bc5b30006f27d",
+          "page-0804.png": "485d5b293b6586e676f9ba9e99d4464acaf167415fa98b553cba9e9c7978a298",
+          "page-0805.png": "60ae29a64a5144357d7c0e5d008a1dc2e93de08d4d061fad354efad9466a56b9",
+          "page-0806.png": "3df6fdeec89393ba3d813338ec8178473b9fa9400f23e4a95616f98a93802418",
+          "page-0807.png": "df0dbd4013c05ecb3453a013062ac5a90de774ecc1b54936cddf1e7c2431a585",
+          "page-0813.png": "6b212b7a8519dc0ced0ae9426df8874234933b5d073767bdfda17310e5442822",
+          "page-0814.png": "20d9d92d9bae0434297034c4acb65037b65096a012f1d32f064c31a2a6e2dd70",
+          "page-0815.png": "cbb26b7414cc795d53a7717685f87387211592db8567c6e8d6812f4ce592943b",
+          "page-0816.png": "aa643c4eed9664c9d2855c0ade69c62c7229b525a1a78bde418542bbb2c8ccdd"
+        },
+        "enlarged_punctuation_crop_sha256": "eaaeabd062cf1b415051d08e1bf3ba562f8360ce14019ccfdbba4af9c6ad100b"
+      },
+      "record_qualification": "Parsed original independent receipt with private research paths omitted. This nested JSON serialization is not the original receipt byte string; its original hash is retained above. Earlier snapshot hashes and stated pending gates are historical facts rather than claims of final currentness."
+    },
+    {
+      "receipt_sha256": "7369675dc15076f57f3ee6270d2a528948e4604047b3938760bc17788904e694",
+      "finding": "Independent title, complete Latin-to-old-source and target-word comparison across all four source spans.",
+      "qualification": "AI source/fidelity review, not human or ecclesiastical approval. The retained canonical source records and page proofs establish the independently inspectable source boundary.",
+      "sanitized_review_record": {
+        "decision": "accepted-bounded-old-word-source-map",
+        "candidate_sha256": "3a4dbe81ee6b6e83d978f0ab981bfb79af5f3f272c5497de70ea9a54459dc7e9",
+        "latin_utf8_sha256": "8965a22570ecc00920feb4058bf50e92357a964913bb8380f0b24fe6c03e0e4d",
+        "source_map_sha256": "f0a7da3b63978e7e7bed168d9d7b9d6b65a777cc43983af500dc0c604a7f098d",
+        "checked_scope": "Every Latin prayer word from VERE through dicentes, before Sanctus, independently read on target1962 n1047 PDF313-314 and on the four old-source spans shown in source-map.json.",
+        "source_spans": [
+          "1861 Cummiskey printedxxviii/PDF39: first8words ending salutare; no intervening nos tibi source material imported.",
+          "1894 Wilson printed69/PDF162: Clementiam tuam suppliciter obsecrare only, immediately after VD; following spiritalis/baptismum/innocens odor variants are outside the selected span.",
+          "1859 Paris A.Jouby Pontificale, printed398/PDF411: whole contiguous ut spiritualis lavacri Baptismo renovandis through vestimento incorrupti muneris induantur, with actual innocentiae odore; subsequent ut sit his is outside the span.",
+          "1861 Cummiskey printedxxviii/PDF39: contiguous Per Christum Dominum nostrum through dicentes, before Sanctus."
+        ],
+        "source_identity": "The supplied title image PDF8 explicitly prints PONTIFICALE ROMANUM; PARISIIS; APUD A. JOUBY;1859.",
+        "finding": "No target prayer word in this selected extent requires a new protected lexical contribution or an unsupported correction of the Wilson variants. Four bounded contiguous source spans, including one substantial complete petition, account for the assembled prayer; this is not a per-word bank.",
+        "limits": [
+          "The exact assembled Preface does not thereby occur as one continuous old-source text; it remains a separately identified project projection with explicit seams.",
+          "No independent legal conclusion about arrangement copyright or liturgical publication permission follows from lexical source agreement.",
+          "Stored older capitalization and pointing are retained. The source map now names capitalization, pointing, accent and chant-syllable differences for comparison only.",
+          "This review independently checks Latin/source words and title image, not source retrieval history, English semantic fidelity, downstream projection or runtime acceptance."
+        ],
+        "images_read": {
+          "title-008.png": "02689722fd09b55c6241e147883a481afed8e1af4fea3c0d055bf24c2882f000",
+          "cummiskey-039.png": "718dd5a422730d1164f07e213c98d08a8cfdc6a6a9d4983d01a878ec9efdbb4b",
+          "gelasian-162.png": "70e883b16051d3bd20eab99f183fb4b4f5e9da829f74150f4f5aad3f9e49b92e",
+          "pontifical-411.png": "335b3128aecfb0685b63d0f538e46a9a4d13137eb8093c6db58a1a10fd541e7c",
+          "target-0313.png": "69726704071bff60050506f1aa7f589b6fd336b5c4fb3f16130e20d4556b816b",
+          "target-0314.png": "adf12ed080323d5bb0a965483bd98a75847314abeb5e7f90eb15515d52576de8"
+        }
+      },
+      "record_qualification": "Parsed original independent receipt with private research paths omitted. This nested JSON serialization is not the original receipt byte string; its original hash is retained above. Earlier snapshot hashes and stated pending gates are historical facts rather than claims of final currentness."
+    },
+    {
+      "receipt_sha256": "110f3f28fda26034f7f82c468b0fa1a43a86246ba2bebfca83c82085e04b84c6",
+      "finding": "Independent all-clause semantic fidelity acceptance of exact corrected fresh Chrism study English.",
+      "qualification": "AI source/fidelity review, not human or ecclesiastical approval. The retained canonical source records and page proofs establish the independently inspectable source boundary.",
+      "sanitized_review_record": {
+        "decision": "accepted-with-recorded-study-scope",
+        "candidate_sha256": "3a4dbe81ee6b6e83d978f0ab981bfb79af5f3f272c5497de70ea9a54459dc7e9",
+        "english_sha256": "9a6efe095098a8f557a42215f63c98226c4482f9b2c4aad5796cee5f7501bd86",
+        "review_scope": "Independent semantic comparison of every English clause to the supplied full Latin candidate, ending before Sanctus. Source-facsimile collation, rights, source-map sufficiency and downstream renderer acceptance belong to separate owners.",
+        "resolved_findings": [
+          {
+            "key": "perfusi-prior-passive-participle",
+            "original_candidate_sha256": "ddd6fc2866511a9ab38cb88ce1bb2df2edfddad9e428633adc71cc39e0eb1084",
+            "correction": "Candidate now retains having been endowed with royal, priestly and prophetic honor before they may be clothed; the passive participle and its relation to the final passive petition are faithful."
+          }
+        ],
+        "accepted_clauses": [
+          "The opening dignum/iustum/aequum/salutare sequence and humble petition of mercy are conveyed.",
+          "baptismo renovandis retains recipients yet to be renewed, and the instrumental washing of baptism.",
+          "sanctificatione unctionis infusa and corruptione primae nativitatis absorpta retain sanctification through anointing and the swallowing up of original-birth corruption.",
+          "The holy temple belongs to each person and gives the fragrance of innocence in a life pleasing to God.",
+          "The sacrament of divine establishment and the three distinct royal, priestly and prophetic honors are retained.",
+          "incorrupti muneris qualifies the gift, not merely the garment, and the candidate retains that relation.",
+          "The complete Christological and angelic conclusion retains Christ as mediator, angels/dominions/powers, heavens/heavenly powers/blessed seraphim, shared exultation and the petition for admission of our voices.",
+          "The ending humble confession is a permissible close rendering; no Sanctus, Amen or omitted conclusion is supplied."
+        ],
+        "status_limit": "English-only semantic review. This is AI-created project study English, not a historical human rendering, approved liturgical translation or text authorized for recitation. No independent legal review or source-image verification is asserted.",
+        "unresolved_semantic_findings": []
+      },
+      "record_qualification": "Parsed original independent receipt with private research paths omitted. This nested JSON serialization is not the original receipt byte string; its original hash is retained above. Earlier snapshot hashes and stated pending gates are historical facts rather than claims of final currentness."
+    },
+    {
+      "receipt_sha256": "0a4e2a04522bd4a98e2d8b6bf4732e5a5b57abd8c9d4bed30e060cb45201803e",
+      "finding": "Final independent all-clause Joseph Communicantes continuation fidelity review: ACCEPT, no defects. Dependency on the preceding head, all names and their order, Joseph as spouse of the same Virgin, every petition and conclusion clause, three exact reader turns, nonspoken action and study/non-recitation note checked.",
+      "sanitized_review_record": {
+        "decision": "ACCEPT_EXACT_PAYLOAD_SEMANTIC_FIDELITY",
+        "reviewed_at_utc": "2026-10-30 03:43:11 UTC",
+        "scope": "Independent all-clause Latin-to-English semantic review of the Roman 1962 Communicantes shared continuation, separate hand-joining action, and conclusion only. No new rights determination, witness collation, human approval, or whole-Communicantes/whole-Ordinary completion is asserted.",
+        "canonical_edits": false,
+        "latin_payload": {
+          "path": "src/sources/works/triptych/roman-1962-ordinary-editorial-projection/editions/2026-10-19-editorial-projection/artifacts/canon-proper-forms-651e3482/canon-proper-forms-651e3482.tsv",
+          "sha256": "651e3482bd755a2e3ef46087eab2a734ea4f812ef1a0ee952863b31dade60fc6",
+          "rows": [
+            2,
+            3,
+            4
+          ]
+        },
+        "english_payload": {
+          "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph/editions/2026-10-29-study-english/artifacts/continuation-study-en-b83d0df3/text.tsv",
+          "sha256": "b83d0df336dc1cd943a8b295d617c3325384492381a15d7f0426c3f322ff9d72",
+          "rows": [
+            1,
+            2,
+            3
+          ]
+        },
+        "latin_fields_equal": true,
+        "findings": [
+          {
+            "part": "continuation_dependency",
+            "result": "PASS",
+            "finding": "The lower-case dependent opening retains the genitive continuation of the preceding memory-and-veneration phrase; it does not recast this source part as an independent prayer. The current reader places it after canon/communicantes."
+          },
+          {
+            "part": "joseph_clause",
+            "result": "PASS",
+            "finding": "The blessing of Joseph, his identity as spouse, and the reference to the same Virgin are all retained."
+          },
+          {
+            "part": "apostles_and_martyrs",
+            "result": "PASS",
+            "finding": "The blessed status, address to God through the possessive, and both Apostles and Martyrs are retained."
+          },
+          {
+            "part": "saint_names",
+            "result": "PASS",
+            "finding": "Every named saint is present in source order, including the two James entries and the later John-and-Paul pair. The English Sixtus is the received English form of Xystus. The final extension to all Saints and the divine possessive are retained."
+          },
+          {
+            "part": "merits_and_prayers",
+            "result": "PASS",
+            "finding": "Both merits and prayers remain the relative-clause basis of the petition, and the divine grant is requested rather than stated as accomplished."
+          },
+          {
+            "part": "protection_petition",
+            "result": "PASS",
+            "finding": "The inclusive scope in all things, passive strengthening, aid, and divine protection are all retained without an added object or omitted qualification."
+          },
+          {
+            "part": "rubric",
+            "result": "PASS",
+            "finding": "The third-person hand-joining action is translated accurately and retained as a separate nonspoken action, with no dialogue role or speaker assigned."
+          },
+          {
+            "part": "conclusion",
+            "result": "PASS",
+            "finding": "The conclusion retains the same Christ, our Lord, and explicit Amen; no formula or body expansion is introduced."
+          },
+          {
+            "part": "study_scope",
+            "result": "PASS",
+            "finding": "The English payload notes identify newly AI-authored project study English. The reader retains the visible restriction against liturgical use or recitation. No historical human translation or liturgical approval is claimed."
+          }
+        ],
+        "current_reader_conservation": {
+          "command": "tools/mass-ordinary show --calendar roman-1962 --format json",
+          "captured_output_sha256": "59d7c990a6e0a7d541898acf05e55cfc9d98ce79889750494dbf6fcaefd12624",
+          "element_key": "canon/communicantes-continuatio",
+          "english_text_and_three_turns_equal_payload": true,
+          "turn_keys": [
+            "oratio",
+            "iungit-manus",
+            "conclusio"
+          ],
+          "hand_joining_action": true,
+          "hand_joining_speaker": null,
+          "hand_joining_dialogue_role": null,
+          "reading_note": "Triptych study translation. This English is not approved for liturgical use or recitation."
+        },
+        "prior_metadata_acceptance": {
+          "path": "[private research path omitted]",
+          "sha256": "d4cab529bc5d8bbae1880950b154eabc82ab2b8c222bd806fc62945e4f357757",
+          "role": "Prior metadata acceptance only; the semantic findings in this receipt were independently made from the exact source and English payloads."
+        },
+        "defects": [],
+        "limits": [
+          "No source-body, metadata, inventory, projection, or other canonical file was changed by this review.",
+          "Publication integration and broader repository validation remain outside this bounded review."
+        ]
+      },
+      "record_qualification": "Parsed independent AI review with private research paths omitted; original receipt hash above. No human review, target-PC collation, liturgical approval, recitation permission or new rights basis."
+    }
+  ],
+  "sanitized_may1_receipts": [
+    {
+      "path": "joseph-may1-admission-metadata-review.json",
+      "sha256": "54155019ffdbde7084a5feec210358436c0e48ec371cd5b78411210f96893e8a"
+    },
+    {
+      "path": "joseph-may1-english-fidelity-review.json",
+      "sha256": "1eeef6dd4c978062050f4156b0b1b4a878defc48bf530fd7f6d7d509872f920f"
+    },
+    {
+      "path": "joseph-may1-independent-rights-review.json",
+      "sha256": "b9cdf2675885448fb8b91b9dcb93907b8d15cf7f188000937cf637dd7cce52f2"
+    },
+    {
+      "path": "joseph-may1-rights-adoption-v2.json",
+      "sha256": "7ae1b0c2cd7acfa62777d7acc0b09b33c37212c7fbcd6c0b410f669ac76e43e6"
+    },
+    {
+      "path": "joseph-may1-rights-adoption.json",
+      "sha256": "f5893ad8948f13c3740efc8839f7a327d942e3bf0b2d65ed801f6855c39579fe"
+    },
+    {
+      "path": "joseph-may1-source-admission.json",
+      "sha256": "d1fa9a6e95a3c21f8ae8532a820b7d8f608468f1ca576a49fdb440c4d7ff75e2"
+    },
+    {
+      "path": "joseph-may1-source-comparison.json",
+      "sha256": "53561e88041cca19a9310c7e36ee2857ef2b322d73584e197dc7d33db550006f"
+    },
+    {
+      "path": "joseph-may1-source-correction-review.json",
+      "sha256": "47b55b51bbb681d4be8ffca3a8d4479c629b8b89677375c91a696d2606bedbf5"
+    }
+  ],
+  "source_manifest": "roman-english-source-files.json",
+  "source_manifest_qualification": "This adjacent manifest binds only this source lane's installed paths; shared generators, runtime code and general release records remain with their owners.",
+  "source_manifest_sha256": "1fff56ff250a1ec737fbea9a178bffe9bd5da5963851cf8f32a37ebc36bfcbd3",
+  "final_metadata_currentness_successor": {
+    "scope": "Only source-owned metadata currentness; no source text, reading_note, applicability, counts, turns or target-wording grades changed. Historical witness cautions and zero-count absence definition now distinguish separately joined study English; derived_from names the May1 study source.",
+    "prior_inventory_sha256": "e3188ac6366f48caffcdf43667b663f0dd5af2a60cf496407900427a364e6400",
+    "inventory_sha256": "3ee41481f416ab428d1f0a421726580a2f536c0f97fabfb01af340d227d44b04",
+    "prior_manifest_sha256": "4ecdd747703ee6f867c479ded14985e79cf4cf0a5e308c5e23f8a3a623816b4c",
+    "manifest_sha256": "1fff56ff250a1ec737fbea9a178bffe9bd5da5963851cf8f32a37ebc36bfcbd3"
+  },
+  "final_metadata_content_conservation": {
+    "result": "PASS",
+    "source_offers_checked": 324,
+    "fields_checked": [
+      "text",
+      "reading_note",
+      "applicability",
+      "turns",
+      "relation",
+      "collation",
+      "target_wording",
+      "source_id",
+      "artifact_id",
+      "rights"
+    ],
+    "normalized_checked_dictionary_sha256": "15b1b0cf3c76ddd72d3ce3d6ef0d740f76a141e27d119bbaea8533bd57116007",
+    "scope": "The final metadata-only source successor preserves every available language offer's words, reading note, scope, turns, grades, source identity and rights, and preserves unique-element language coverage. Earlier native/body proofs are not represented as having independently reviewed the later descriptive metadata."
+  },
+  "observed_source_generation_and_reader_pins": [
+    {
+      "path": "src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+      "sha256": "3ee41481f416ab428d1f0a421726580a2f536c0f97fabfb01af340d227d44b04"
+    },
+    {
+      "path": "src/sources/inventories/roman-pre-1955-ordo-missae-v1.toml",
+      "sha256": "333dcc0cade7190073044960b688714000b226e9c358af19958270914374fc03"
+    },
+    {
+      "path": "tools/mass-ordinary",
+      "sha256": "e7024cd4da0cf59a02daefe807d4129edcd4311baef620187b163ec6575cc62f"
+    },
+    {
+      "path": "src/web/data/structure/ordinary/roman-1962.json",
+      "sha256": "6b000650b33634c49d8384c75b45661bd539a9c7e2b8f4b65f46aa65713f04ec"
+    },
+    {
+      "path": "src/web/data/structure/ordinary/roman-pre-1955.json",
+      "sha256": "a5b297db7f9e500dbf3791d59baa8377e783b941f0001d2243a51f66ffcebfbd"
+    },
+    {
+      "path": "scripts/_ordinary_text.py",
+      "sha256": "0e16eafb341b3a55a9a171747e892698ea86e3d6b7dbf9fc8530b00136dcbad6"
+    },
+    {
+      "path": "tools/tests/test_ordinary_text_qualification.py",
+      "sha256": "05522936827626ecd3d27221a54e3251088dd08581d6614433955110d85eaccb"
+    },
+    {
+      "path": "src/web/browser/liturgy/reader-state-adapters.js",
+      "sha256": "48450211a3dae3e720d29563648e830da78ad50e74d84675f2534e6be9059ff7"
+    },
+    {
+      "path": "tools/tests/test_ordinary_scoped_witness_selection.py",
+      "sha256": "627a9f328577ff5a17d202fcce26db8ebd10ec1b08f1d18e159c4aff7f29f165"
+    }
+  ],
+  "pin_qualification": "Exact observed final Roman source/runtime boundary. Shared generator, model and runtime files are owned by their respective lanes; later accepted changes require their own regeneration/currentness checks. This record establishes no final status for the concurrently changing postconciliar source epoch.",
+  "runtime_validation_receipts": {
+    "native_browser": {
+      "original_receipt_sha256": "e92e6687fc69356b8bc051d5e2016a6462f9cfdc96efbc343517df79723df9b7",
+      "record": {
+        "status": "pass",
+        "checks": 16,
+        "findings": [
+          {
+            "reverse": false,
+            "display": "selected",
+            "formulary": "s-ioseph-sponsi-beatae-mariae-virginis",
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": false,
+            "display": "selected",
+            "formulary": "s-ioseph-opificis-sponsi-beatae-mariae",
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": false,
+            "display": "selected",
+            "formulary": null,
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": false,
+            "display": "selected",
+            "formulary": "outside-both",
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": false,
+            "display": "latin-and-selected",
+            "formulary": "s-ioseph-sponsi-beatae-mariae-virginis",
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": false,
+            "display": "latin-and-selected",
+            "formulary": "s-ioseph-opificis-sponsi-beatae-mariae",
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": false,
+            "display": "latin-and-selected",
+            "formulary": null,
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": false,
+            "display": "latin-and-selected",
+            "formulary": "outside-both",
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": true,
+            "display": "selected",
+            "formulary": "s-ioseph-sponsi-beatae-mariae-virginis",
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": true,
+            "display": "selected",
+            "formulary": "s-ioseph-opificis-sponsi-beatae-mariae",
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": true,
+            "display": "selected",
+            "formulary": null,
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": true,
+            "display": "selected",
+            "formulary": "outside-both",
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": true,
+            "display": "latin-and-selected",
+            "formulary": "s-ioseph-sponsi-beatae-mariae-virginis",
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": true,
+            "display": "latin-and-selected",
+            "formulary": "s-ioseph-opificis-sponsi-beatae-mariae",
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": true,
+            "display": "latin-and-selected",
+            "formulary": null,
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          },
+          {
+            "reverse": true,
+            "display": "latin-and-selected",
+            "formulary": "outside-both",
+            "selection": true,
+            "exactNote": true,
+            "visible": true,
+            "exactBody": true,
+            "noOtherLeak": true
+          }
+        ]
+      },
+      "qualification": "Sixteen actual Chromium states: both source-row orders, selected/paired displays, March19/May1/unknown/outside contexts. Native narrow capture inspected by the browser lane; final metadata body-field conservation is separately recorded."
+    },
+    "browser_unit": {
+      "tests": 9,
+      "successful_log_sha256": "52d3f5c947083fc2a78fad6306f5575cf5898b841a5ec282083630c29ba27091",
+      "scope": "Actual dual-source full adapter, selector, reversed translations, selected/paired rendering and lectern projection, plus negative coverage/source-offer corruption controls."
+    },
+    "expanded_cli": {
+      "original_receipt_sha256": "f92658d96a6865d262aa1a132dad3fe0c0b86c58244fafe52f6e1d065b5ff715",
+      "record": {
+        "s-ioseph-opificis-sponsi-beatae-mariae": {
+          "other_body_absent": true,
+          "other_note_absent": true,
+          "selected_body": true,
+          "selected_reading_note": true
+        },
+        "s-ioseph-sponsi-beatae-mariae-virginis": {
+          "other_body_absent": true,
+          "other_note_absent": true,
+          "selected_body": true,
+          "selected_reading_note": true
+        }
+      },
+      "scope": "Fresh March19/May1 expanded CLI commands each exit0; own full body and exact note present, other full body and note absent."
+    },
+    "combined_cli": {
+      "tests": 46,
+      "successful_log_sha256": "31c9a74a65ecb88384569fcb23106aede94beedc4de49487864f3aa0cff33e06"
+    },
+    "independent_final_focused_cli_rerun": {
+      "tests": 19,
+      "successful_log_sha256": "a69599291716e03b8ff33ef27121338644c8d444225f73d34aa6d05b1b43e132"
+    },
+    "final_held_prefaces": {
+      "tests": 5,
+      "successful_log_sha256": "417c3cf7751fdcb6cac065ddb576b164392fd43323fa9e540742b5de1da7d36d"
+    },
+    "final_existing_applicability_dom_controls": {
+      "result": "PASS",
+      "successful_log_sha256": "77a87c0b2543861242d8c88216ca95ee38c656f2d6006618b668ae080ea38534"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "ca164d3c04886c0b42693befed248e1b308132af382ab91f337c8cd07384e2d9",
+  "documents": [
+    {
+      "id": "acta.ass.026.ass-026-l05089",
+      "language": "la",
+      "pdf_sha256": "1a7d7b11cd6f92d913a201aac8a9a7ee111d6e2d01a56510fb8aeef35312e6a9",
+      "pages": 4,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            4
+          ],
+          "description": "All three historical citation groups are separate blocks on reader pages 1, 2 and 4. The damaged incipit and scattered source letter spacing remain usable. Page 4 preserves the literal 11 Septembris closing and LEO PP. XIII; its terminal note explicitly distinguishes the 2 September identification from that OCR discrepancy. Apparatus continues from bottom left to top right on the same source-bearing page."
+        }
+      ],
+      "limitations": "Independent layout, selected source-boundary, replay and native OCR-PDF geometry acceptance. All reader pages contact- and full-size-inspected; native inspection is bounded to the exact pages listed in the report. No original-print collation, lexical OCR correction, translation accuracy, whole-book completeness or independent rights certification. No raster reuse.",
+      "receipt_sha256": "ca164d3c04886c0b42693befed248e1b308132af382ab91f337c8cd07384e2d9",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-23-a.md",
+      "report_sha256": "f8789bc65eb2a6dd63f7e746c9a6be281804b181f665f0bd4d0dd4e32f1adae9"
+    }
+  ]
+}

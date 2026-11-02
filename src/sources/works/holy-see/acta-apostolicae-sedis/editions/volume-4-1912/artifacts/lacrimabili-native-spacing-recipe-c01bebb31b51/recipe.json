@@ -1,0 +1,79 @@
+{
+  "helper": {
+    "path": "scripts/_papal_native_spacing.py",
+    "sha256": "8163acf4cc10c54c974690bc8f87f21f302b52ccde2d2124eacaa5e83d9249ea"
+  },
+  "native_first_page": 521,
+  "native_pdf": {
+    "artifact_id": "artifact.holy-see.acta-apostolicae-sedis.volume-4-1912.internet-archive-vatican-ocr-pdf-e071e825",
+    "artifact_pages": [
+      521,
+      525
+    ],
+    "sha256": "e071e825cbd2e9e4c1ca55932340882b52da72173045cc8de592706a208857b7"
+  },
+  "native_raw": {
+    "artifact_id": "artifact.acta-papal-archives.aas.004.lacrimabili-native-raw-ea4d847e1ff2",
+    "path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-4-1912/artifacts/lacrimabili-native-raw-ea4d847e1ff2/text.txt",
+    "sha256": "ea4d847e1ff2dab5336147b589af8369666de204d60da070a002de1363094689"
+  },
+  "output_sha256": "da15906c6278c06e66708b94a9e7607417549b335acb3d8e015d1b82ad1b4aa3",
+  "parent": {
+    "artifact_id": "artifact.acta-papal-archives.aas.004.historical-text-e0104108",
+    "path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-4-1912/artifacts/acta-historical-text-e0104108/historical.txt",
+    "sha256": "e0104108dc7b3434b7a3b7ab4a312dd657d0c0ea67ddf4a2249f54030e0a4312"
+  },
+  "review": {
+    "geometry": "Every selected native page is one body column. Historical notes, where present, are distinct page-foot blocks. Native page650 of De Eucharistia places its footnote before body in raw stream order; the geometry puts it at page foot. No native mixed-column fusion observed.",
+    "limits": "Review concerns OCR reconstruction geometry and word-boundary evidence, not original printing glyph collation or lexical accuracy.",
+    "native_pages_inspected": [
+      521,
+      522,
+      523,
+      524,
+      525
+    ],
+    "raw_order_policy": "Project only whitespace from exact unique native lines onto the unchanged prior source LF order. Do not adopt native content-stream order."
+  },
+  "reviewed_stream_order_pages": [],
+  "schema": "triptych-papal-native-spacing/v1",
+  "selections": [
+    {
+      "native_page": 521,
+      "source_range": [
+        22006,
+        22030
+      ]
+    },
+    {
+      "native_page": 522,
+      "source_range": [
+        22033,
+        22068
+      ]
+    },
+    {
+      "native_page": 523,
+      "source_range": [
+        22070,
+        22104
+      ]
+    },
+    {
+      "native_page": 524,
+      "source_range": [
+        22106,
+        22141
+      ]
+    },
+    {
+      "native_page": 525,
+      "source_range": [
+        22143,
+        22169
+      ]
+    }
+  ],
+  "source_id": "acta.aas.004.archive.aas.004.046",
+  "stream_order_difference_pages": []
+}

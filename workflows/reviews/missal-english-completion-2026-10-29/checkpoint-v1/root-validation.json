@@ -1,0 +1,159 @@
+{
+  "additional_checks": {
+    "git_diff_check": {
+      "exit": 0
+    },
+    "promised_deliverables": {
+      "complete": 78,
+      "exit": 0,
+      "tracked": 98
+    },
+    "tmt_check": {
+      "exit": 0
+    }
+  },
+  "annual_structural_audit": {
+    "command": [
+      "python",
+      "-B",
+      "-m",
+      "unittest",
+      "tools.tests.test_complete_missal_year",
+      "-v"
+    ],
+    "date_calendar_coordinates": 1464,
+    "json_and_text_renderings": 5856,
+    "language_states": 2928,
+    "log_sha256": "6b65c74c77e63e34a6d024217a71d6a697faec7ca3b1f3b7e96b5de568a2f8e8",
+    "opt_in": "TRIPTYCH_COMPLETE_MISSAL_YEAR=1",
+    "qualification": "Roman 1962 civil2026 and complete postconciliar A/B/C intervals; pre-1955 excluded. Structural renderability does not establish appointments, exact wording or complete text.",
+    "result": "pass",
+    "seconds": 1874.814,
+    "tests": 7
+  },
+  "completion_boundaries": [
+    "English availability is1407/1448 Roman,1373/1391 pre-1955 and155/574 postconciliar Proper targets.",
+    "Seventy earlier postconciliar study drafts retain open source/fidelity review debt.",
+    "Whole older Holy Week rites, unmodeled modern content, exact target correspondence, real-terminal maintainer acceptance and complete English remain open.",
+    "Main reconciliation, push and live verification remain pending."
+  ],
+  "consumer_verification": {
+    "current_test_cases": 257,
+    "every_current_case_has_canonical_passing_execution": true,
+    "method_coverage_recipe": "Union of canonical passing unittest method IDs and complete all-pass module scopes across the recorded runs. Retain earlier passes only where method logic and consumed inputs remain unchanged. Scratch candidate runs are excluded.",
+    "modules": [
+      "tools.tests.test_current_source_batch_latin",
+      "tools.tests.test_ember_pentecost_september",
+      "tools.tests.test_missal_coverage",
+      "tools.tests.test_proper_latin",
+      "tools.tests.test_roman_1962_advent_ferial_use",
+      "tools.tests.test_roman_1962_common_virgin_ii_english_phase4",
+      "tools.tests.test_roman_1962_common_virgin_ii_word_repair",
+      "tools.tests.test_roman_1962_english13_phase5",
+      "tools.tests.test_roman_1962_english31_phase4",
+      "tools.tests.test_roman_1962_exact_primary_bodies",
+      "tools.tests.test_roman_1962_lasance_commons_easter_phase3",
+      "tools.tests.test_roman_1962_latin22_phase5",
+      "tools.tests.test_roman_1962_octnov_commemoration_source_repair",
+      "tools.tests.test_roman_1962_winter_ursula_source_repair",
+      "tools.tests.test_source_batch_guards",
+      "tools.tests.test_witness_agreement",
+      "tools.tests.test_complete_missal_report"
+    ],
+    "runs": [
+      {
+        "log_sha256": "9db858d6250eca1811d89f393dfd8360de277b8661808b72167b16fb1cadf549",
+        "result": "failed-then-corrected",
+        "run": 1,
+        "scope": "Full sixteen source-consumer modules plus complete-missal report",
+        "seconds": 269.823,
+        "tests": 257
+      },
+      {
+        "log_sha256": "7a4117ce027ccf853471f851e24b6267b62e1fcc56c83283225987496b677ea1",
+        "result": "failed-then-corrected",
+        "run": 2,
+        "scope": "Seven affected source-consumer modules",
+        "seconds": 111.46,
+        "tests": 91
+      },
+      {
+        "log_sha256": "c6603f79dd47841e6e7368ac2c5f4cc5e707e0ae3c43d90b1ae482c367104937",
+        "result": "pass",
+        "run": 3,
+        "scope": "Final two corrected methods plus strict current-source and source-guard controls",
+        "seconds": 6.551,
+        "tests": 19
+      },
+      {
+        "log_sha256": "f031731237c23719eaf7742a226494e8c2bdf39fcc2e68de8c68aa2bfe8196f1",
+        "result": "pass",
+        "run": 4,
+        "scope": "Entire witness-agreement module",
+        "seconds": 11.79,
+        "tests": 27
+      },
+      {
+        "log_sha256": "c935aeef77567443a96b2bb40a5fd3dc37072a497eba0d4e535e9e4e1b9eea63",
+        "result": "pass",
+        "run": 5,
+        "scope": "Entire coverage and Advent modules",
+        "seconds": 70.241,
+        "tests": 63
+      }
+    ],
+    "scope_note": "Failed full/affected runs remain disclosed. Later canonical execution closes every current test case; no failed run is relabelled."
+  },
+  "current_code_sha256_by_path": {
+    "scripts/_missal_coverage.py": "10dbc61463d145cb642d52829be8e026e4fee46720b2f3e9221fe3f6ff397f70",
+    "scripts/_proper_latin.py": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376",
+    "tools/complete-missal": "29e923e3a80f5f56727edde1a3a009947558396fc4b2cc27226eca48ca486263",
+    "tools/tests/_source_batch_guards.py": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+    "tools/tests/test_complete_missal_report.py": "97b27943b16255ad72722855758a281fd7b08ba7b708f39609f835f7517ede9e",
+    "tools/tests/test_current_source_batch_latin.py": "c26a17afd887543e44b6d10eeada1b2aa431d306265fd308d8de56291edbd954",
+    "tools/tests/test_ember_pentecost_september.py": "ed9e1ecf9b97e5db2900abd307b8740a8772f240b950a02e92075e59ebcaeb69",
+    "tools/tests/test_missal_coverage.py": "57bdd03d364eca918086031462972b52ed9a3a0cd8e6c30def32f29753f38acb",
+    "tools/tests/test_proper_latin.py": "d13ba84c2d93b9ca77b68e9a4746bcdff9ff6d23c42be57a9c508d86e329f464",
+    "tools/tests/test_roman_1962_advent_ferial_use.py": "69f5d2616c627ff2b9d057fb522681030c2e8709f341845aceb46ab07274fff5",
+    "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py": "69530f60a46c22ec5e8e2b3a1ed2338695e605abb2f370e20618b7c47c95646d",
+    "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py": "e9bf4075f1529b48682b6e64363e0d67492b0e5fb12fdb99a2e08ea9cf14db0f",
+    "tools/tests/test_roman_1962_english13_phase5.py": "cb9265ac684392086cfb9347cb9c5e778fda2563e48b5f5d431ed811ae15fa6d",
+    "tools/tests/test_roman_1962_english31_phase4.py": "e7067e3fc899d473c2619da91789893b102960e88531eafb3fb5114d9aa4627f",
+    "tools/tests/test_roman_1962_exact_primary_bodies.py": "3f28708ebd99d40b87d7b3814ff15936bb773947397819b706502e0a8bb775b1",
+    "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py": "e61a6847c080ba9ee4d922339ec05f20cbc98da4d289f3d54f1b47b6018edb91",
+    "tools/tests/test_roman_1962_latin22_phase5.py": "01d6e0490f4b84683823795b2917a8804d17b8b32b38af49b2caa97fca0f015d",
+    "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py": "cdc06660f2be35e40f94acb44d72c3a9d6cd679089d640e3486256044db5b994",
+    "tools/tests/test_roman_1962_winter_ursula_source_repair.py": "5e04878938801451c88c2d5b0c81afdfffa99bfda4f64f9025d1a8d7de6d5075",
+    "tools/tests/test_source_batch_guards.py": "f318ef79f6d273c76bf24ed6f5bfd9ca912802c53488733ce78eb0c34bbd9f0e",
+    "tools/tests/test_witness_agreement.py": "a30402f8436902ce82bf7f7aa3d897f6d7052c8cafbcc9ed4a01b1afa1442451"
+  },
+  "private_evidence_policy": "Raw logs and local runtime paths remain transient; this record retains hashes, outcomes and claim limits without a scratch-file runtime dependency.",
+  "recorded_on": "2026-10-30",
+  "schema": "triptych-missal-reader-checkpoint-closure/v1",
+  "source_and_artifact_gates": {
+    "all_audited_input_hashes_still_exact": 952,
+    "audit_path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/aggregate-checks.json",
+    "audit_sha256": "53562fcb5ef7596c750c46d423cb92e9cf654a8974fa701169d179b1d3c2ad00",
+    "native_assertions": 259,
+    "native_browser_contracts": 12,
+    "native_evidence": "Composed retained and affected-rerun evidence, as the exact aggregate audit records.",
+    "preview_build_and_verification": "pass",
+    "public_build_and_verification": "pass",
+    "source_aggregate": "pass"
+  },
+  "source_batch": {
+    "accepted_receipt": {
+      "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/source-batch-test-code-successor-v3.json",
+      "receipt_sha256": "10ee0a41cd88dd3b59119529a678858d8e7602301a9da812e5facd80416d9bf9",
+      "status": "accepted"
+    },
+    "exact_input_paths": 7068,
+    "fixture_path": "tools/tests/fixtures/missal-source-batch-20261023.json",
+    "fixture_sha256": "21fad5aaa93882037b5203807889d9c87557d62313e70cb7b7aba5926c3b0a5d",
+    "manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+    "manifest_sha256": "bfd171773b03ac0930666aad30af43552bd6e90832797bac10c642469c9e6e86",
+    "original_replay_streams_preserved": 17,
+    "source_permissions_created_by_test_pin_successors": false
+  },
+  "status": "validated-checkpoint-pending-main-reconciliation-and-publication"
+}

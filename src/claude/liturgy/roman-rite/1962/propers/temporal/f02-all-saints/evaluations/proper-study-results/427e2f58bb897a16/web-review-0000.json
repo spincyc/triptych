@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+    "files": {},
+    "provider": "claude",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.md": "2fd1fa1611e393281e1c98ffe228b1185f4528a075ae8d2dbfdd7aeb11f0c856"
+    }
+  },
+  "stage": "web-review",
+  "summary": "Cold web review of build/web/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.md (the sole web edition of the canonical expansive study), whose actual conversion hash recorded in research/web-artifact.json is sha256 2fd1fa1611e393281e1c98ffe228b1185f4528a075ae8d2dbfdd7aeb11f0c856, byte-identical to the REVIEW_INPUTS seal. Checked against the canonical TeX leaf (src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints, main.tex plus sections 00-90) and the visual-reviewed research PDF (build/claude/.../f02-all-saints.pdf, sha256 3d6f91d0b5acdab1bbd105f4fa6e6943783649a34f2a82dc1ca60604d6ebd7c6, matching the visual-review-0000 receipt). Fidelity: a sentence-level sweep of all nine sections (794 content chunks) found every source sentence, quotation, citation and reference entry (26/26) present, with nothing introduced beyond the sanctioned title block, [TOC] marker and colophon; interpretation boundaries survive as the three lane H2 sections, each closing in a four-term (Literal/Allegorical/Moral/Anagogical) definition list; the heading hierarchy (1 H1, 10 H2, 52 H3) matches the source labels one-for-one; all three tables (element map 15x3, comparison 8x4, chronology 9x3) render whole, with the eight orientation-v2 chronology rows verified payload-by-payload against research/chronology-annotations.tex; all 14 declared element keys land as unique proper-* anchors. Rendering probed through the site's locked Markdown primitive (scripts/_markdown_render.py, Markdown 3.10.3): the [TOC] marker resolves to links for all ten H2 ids with no unresolved targets, tables and definition lists become semantic markup, and the 14 smallcaps witness attributions and the single nodecor cue survive as spans. Notation is readable throughout (accents, verse markers, section signs, en/em dashes, curly quotes, thin space as U+2006); no TeX debris (no backslashes, braces, tildes or math dollars), no trailing whitespace or tabs, and no exposed production metadata (model, workflow, run and digest strings remain only in tracked generation-metadata.tex; the page carries only the reader-facing revision timestamp 2026-10-27T10:17:15Z and the CC BY 4.0 rights colophon). Limits: presentation was judged via the locked renderer's HTML, not a browser session, and scholarly content was checked for conversion fidelity rather than re-evaluated, that being the accepted study's settled ground. Verdict: no blocking, advisory or accepted findings; these exact bytes are released to the installation stage."
+}

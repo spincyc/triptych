@@ -1,0 +1,88 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.033.tametsi-futura-native-spacing-b76bbdd32d7a.note-blocks-tametsi-futura-native-spacing-e5a5c6eeaa42",
+      "correction_evidence": {
+        "both_side_paragraph_boundaries": true,
+        "geometry_artifact_id": "artifact.acta-papal-archives.ass.033.tametsi-finish-native-proof-e4102267832a",
+        "geometry_sha256": "e4102267832a2594077bf5cf18a07585834f3ed71a2424d166198bc8113f09a6",
+        "historical_note_groups": 11,
+        "independent_cold_review_required": true,
+        "kind": "exact-native-lf-word-geometry-whitespace-and-note-partition",
+        "native_bbox_artifact_id": "artifact.acta-papal-archives.ass.033.tametsi-finish-native-bbox-1b8d9a198a3c",
+        "native_bbox_sha256": "1b8d9a198a3cc069e51680d97f9137e2ca855f0483d7d5f9eed8c0a3b789accb",
+        "prior_segment_id": "segment.acta-papal-archives.ass.033.ass-033-l10742",
+        "recipe_artifact_id": "artifact.acta-papal-archives.ass.033.tametsi-finish-recipe-a6b92043f80f",
+        "recipe_sha256": "a6b92043f80f0915d2d6dcb71ef8fc4fd3333ca2d931b79bb2d16c906c195020",
+        "revision": "2026-10-30T17:27:42Z",
+        "selected_nonwhitespace_characters": 25116,
+        "source_order_preserved": true,
+        "unique_native_lines": 506
+      },
+      "date": "1900-11-01",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.033.ass-033-l10742",
+      "id": "acta.ass.033.ass-033-l10742",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          562
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T17:27:42Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. The historical title identifies Romae, Typographia Polyglotta, S. Congregationis de Propaganda Fide, 1900-901, at exact source LF line 38. The separately printed 1969 Johnson reprint wrapper at LF 40–45 is excluded. This identifies the reproduced historical printing; the Vatican OCR reconstruction is not image-collated. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.033.ass-033-l10742.tametsi-finish-e4102267832a",
+      "segment_path": "src/sources/works/papal-documents/1900-11-01-papal-leo-xiii-hf-l-xiii-enc-01111900-tametsi-futura-prospicientibus-56340f3f/editions/1900-acta-ass-033-ass-033-l10742/segments/tametsi-finish-e4102267832a.toml",
+      "sha256": "e5a5c6eeaa42b649c730cc234a4672ec13f44ec01716daa6033bf4796ba95e20",
+      "source_note": "ASS 33 (1900), Latin. Native whitespace restored from 506 unique same-page native lines; original non-whitespace characters and source order retained. All 11 historical page-foot note groups have separate paragraph boundaries. Literal OCR and original line-end hyphens remain; native witness is an archival OCR reconstruction, without original-print image or lexical collation.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-33-1900-1-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1900-acta-ass-033/artifacts/note-blocks-tametsi-futura-native-spacing-e5a5c6eeaa42/text.txt",
+      "title": "Tametsi futura",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-01111900-tametsi-futura-prospicientibus"
+    }
+  ],
+  "revision": "2026-10-30T17:27:42Z",
+  "schema": "triptych-papal-typeset/v1",
+  "supersessions": [
+    {
+      "prior": {
+        "artifact_id": "artifact.acta-papal-archives.ass.033.historical-text-0bf4c816",
+        "id": "acta.ass.033.ass-033-l10742",
+        "language": "la",
+        "pdf_sha256": "61d42a7909e2e256982ac7ba4c5f3d9c702058d0f346bd9b8a57e8a24d05b1ea",
+        "segment_id": "segment.acta-papal-archives.ass.033.ass-033-l10742",
+        "source_sha256": "0bf4c816a025b28cf31636812e0a2bf93729edf32823a74844f33ea857d3af6f"
+      },
+      "reason": "Replace actual installed raw spaced-OCR selection with exact native whitespace and explicit source-note paragraph boundaries. Actual installed source and PDF remain identified as predecessor; new producer evidence pins every LF/native WORD identity.",
+      "replacement": {
+        "artifact_id": "artifact.acta-papal-archives.ass.033.tametsi-futura-native-spacing-b76bbdd32d7a.note-blocks-tametsi-futura-native-spacing-e5a5c6eeaa42",
+        "id": "acta.ass.033.ass-033-l10742",
+        "language": "la",
+        "segment_id": "segment.acta-papal-archives.ass.033.ass-033-l10742.tametsi-finish-e4102267832a",
+        "source_sha256": "e5a5c6eeaa42b649c730cc234a4672ec13f44ec01716daa6033bf4796ba95e20"
+      }
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.acta-papal-archives.ass.033.historical-text-0bf4c816.note-blocks-tametsi-futura-la-33587b49539c",
+        "id": "acta.ass.033.ass-033-l10742",
+        "language": "la",
+        "pdf_sha256": "a6fd3d9394083bbff6ef6976a898bf33997f2ca4f89c0925fb620bcdbfb7eab0",
+        "segment_id": "segment.acta-papal-archives.ass.033.ass-033-l10742.note-blocks-33587b49539c",
+        "source_sha256": "33587b49539cd3fa0e7593215f8afb78f27843447e527febf2fe586cf426a3fd"
+      },
+      "reason": "Supersede failed notes07 note-only candidate (not the installed reader). That candidate retained original OCR spacing; native whitespace is now mechanically proved and rendered, with the same proven11source-note group boundaries.",
+      "replacement": {
+        "artifact_id": "artifact.acta-papal-archives.ass.033.tametsi-futura-native-spacing-b76bbdd32d7a.note-blocks-tametsi-futura-native-spacing-e5a5c6eeaa42",
+        "id": "acta.ass.033.ass-033-l10742",
+        "language": "la",
+        "segment_id": "segment.acta-papal-archives.ass.033.ass-033-l10742.tametsi-finish-e4102267832a",
+        "source_sha256": "e5a5c6eeaa42b649c730cc234a4672ec13f44ec01716daa6033bf4796ba95e20"
+      }
+    }
+  ]
+}

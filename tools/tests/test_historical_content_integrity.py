@@ -10,6 +10,7 @@ emitted pre-1955 structure retains its recension stamp and aggregate coverage.
 
 from __future__ import annotations
 
+import copy
 import json
 import sys
 import tomllib
@@ -304,14 +305,28 @@ class HistoricalProperIntegrityTest(unittest.TestCase):
                 target = str(reference.get("mass"))
                 self.assertTrue(appointed, (calendar, mass.get("key"), target))
                 if node_name := reference.get("proper"):
+                    # A named Common member can itself borrow a qualified
+                    # member from another Common. The borrower must retain the
+                    # terminal source identity rather than invent an immediate
+                    # provenance for that intermediate wrapper.
+                    target_mass = _calendars.mass_index(document)[target]
+                    target_rows, trouble = _calendars.resolve_propers(document, target_mass)
+                    self.assertEqual(trouble, [])
+                    target_form = str(reference.get("form") or "")
+                    selected = [(proper, provenance) for label, proper, provenance in target_rows
+                                if proper.get("name") == node_name
+                                and (not target_form or label == target_form)]
+                    self.assertEqual(len(selected), 1, (target, node_name))
+                    _, terminal = selected[0]
+                    expected_origin = terminal or {"mass": target, "proper": node_name}
                     self.assertTrue(
                         any(
                             provenance
-                            and provenance.get("mass") == target
-                            and provenance.get("proper") == node_name
+                            and provenance.get("mass") == expected_origin["mass"]
+                            and provenance.get("proper") == expected_origin["proper"]
                             for _, _, provenance in appointed
                         ),
-                        (calendar, mass.get("key"), target, node_name),
+                        (calendar, mass.get("key"), target, node_name, expected_origin),
                     )
 
     def test_generated_pre_1955_output_preserves_gaps_and_provenance(self):
@@ -324,7 +339,21 @@ class HistoricalProperIntegrityTest(unittest.TestCase):
         generated = json.loads(
             (PROPER_STRUCTURES / "roman-pre-1955.json").read_text(encoding="utf-8")
         )
-        self.assertEqual(generated["recension_coverage"], raw["recension_coverage"])
+        # Public context names the bounded witness without exposing its
+        # protected source-study identity. All other coverage facts survive.
+        expected_coverage = copy.deepcopy(raw["recension_coverage"])
+        private_witness = (
+            "edition.catholic-church.missale-romanum."
+            "2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920"
+        )
+        for evidence in expected_coverage["evidence"]:
+            evidence["witnesses"] = [
+                "Bonn 2004 reimpressio of a conformed edition of about 1954"
+                if witness == private_witness else witness
+                for witness in evidence["witnesses"]
+            ]
+        self.assertNotIn(private_witness, json.dumps(generated["recension_coverage"]))
+        self.assertEqual(generated["recension_coverage"], expected_coverage)
         self.assertEqual(generated["advisory"], raw["advisory"])
         self.assertEqual(generated["stands_before"], raw["stands_before"])
         self.assertEqual(
@@ -461,6 +490,9 @@ class Pre1955OrdinaryFrameIntegrityTest(unittest.TestCase):
                 }
 
                 self.assertEqual(emitted, expected)
+                for key, frame in emitted.items():
+                    self.assertIn(frame.get("applicability"), ORDINARY_FRAME_APPLICABILITY, key)
+                    self.assertTrue(str(frame.get("basis") or "").strip(), key)
                 self.assertTrue(
                     all(isinstance(frame, dict) for frame in emitted.values())
                 )
@@ -472,7 +504,10 @@ class Pre1955OrdinaryFrameIntegrityTest(unittest.TestCase):
                 emitted_applicability = {
                     key: frame["applicability"] for key, frame in emitted.items()
                 }
-                self.assertEqual(emitted_applicability, expected_applicability)
+                # New source-backed exceptions may be added. Preserve every
+                # independently specified exceptional rite and require all
+                # emitted rows, including additions, to match the source above.
+                self.assertLessEqual(expected_applicability.items(), emitted_applicability.items())
                 self.assertNotIn("full", emitted_applicability.values())
 
 
@@ -508,9 +543,10 @@ class HistoricalOrdinaryIntegrityTest(unittest.TestCase):
                             self.assertTrue(absence_rows[reason].get("kind"), (calendar, reason))
                             self.assertEqual(
                                 set(absence_rows[reason]),
-                                {"key", "count", "state", "kind"},
+                                {"key", "label", "count", "state", "kind"},
                                 (calendar, reason),
                             )
+                            self.assertTrue(str(absence_rows[reason]["label"]).strip())
                             self.assertIn(reason, source_absences, (calendar, reason))
                             self.assertTrue(
                                 str(source_absences[reason].get("what") or "").strip(),

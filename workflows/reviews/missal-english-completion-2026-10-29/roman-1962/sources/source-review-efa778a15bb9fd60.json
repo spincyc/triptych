@@ -1,0 +1,124 @@
+{
+  "schema": "triptych-bounded-source-translation-review/v1",
+  "decision": "accepted",
+  "candidate_sha256": "f39dd69bca24e779fddc62a9245e00f6dfc6268bcf104baad11b028bbe89c58f",
+  "verified_on": "2026-10-29",
+  "scope": "Five exact Roman1962 targets / four unique Latin chant bodies and original unapproved Triptych study English, source candidate only",
+  "targets": [
+    {
+      "mass": "comm-septem-dolorum-beatae-mariae-virginis",
+      "form_id": "main",
+      "proper": "Offertory",
+      "cycle": "all",
+      "occurrence": 1
+    },
+    {
+      "mass": "septem-dolorum-beatae-mariae-virginis",
+      "form_id": "main",
+      "proper": "Gradual",
+      "cycle": "all",
+      "occurrence": 1
+    },
+    {
+      "mass": "septem-dolorum-beatae-mariae-virginis",
+      "form_id": "main",
+      "proper": "Alleluia",
+      "cycle": "all",
+      "occurrence": 1
+    },
+    {
+      "mass": "septem-dolorum-beatae-mariae-virginis",
+      "form_id": "main",
+      "proper": "Offertory",
+      "cycle": "all",
+      "occurrence": 1
+    },
+    {
+      "mass": "septem-dolorum-beatae-mariae-virginis",
+      "form_id": "main",
+      "proper": "Communion",
+      "cycle": "all",
+      "occurrence": 1
+    }
+  ],
+  "blocking_findings": [],
+  "source_findings": [
+    "All five proposed Latin target bodies match the actual registered1962 page images at200 and400dpi after the recorded canonical orthography; no word or conclusion is invented.",
+    "All underlying words stand in the Pustet1862 page images. Its September referral explicitly omits the finalGradualAlleluia, which establishes the candidateSeptemberAlleluia stop without silently truncating the older chant.",
+    "lacrymabilis/lacrimabilis, Genitrix/Genetrix, coeli/caeli and Alleluja/Alleluia are recorded received-spelling differences; punctuation/capitalization changes are disclosed.",
+    "Friday and September Offertory appointments are separately target-checked and share one projectionbody. The Jeremiah citation is not used as a substitute for the Marian adaptation.",
+    "The Gradual translates both the sorrowful-Mary address and the incarnateAuthorofLife clause; Communion preserves the Latin senses/martyrdom/withoutdeath elements. No material omission or mistranslation found."
+  ],
+  "mechanical_findings": {
+    "manifest_count": 15,
+    "payload_count": 2,
+    "proposed_file_count": 17,
+    "manifest_common_field_type_path_errors": [],
+    "payloads": [
+      {
+        "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.dolors-chants-pages-20261029",
+        "sha256": "5ab2ea61f077f0b6b0289df9a2cf2edeaa9faf256a44fe94809094bf03384c4f",
+        "byte_size": 906678
+      },
+      {
+        "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.dolors-chants-20261029",
+        "sha256": "d03aec4448d8e29a415a62c4cc032721e4b3582e0b733121d2f1d6b146e32e03",
+        "byte_size": 557
+      }
+    ],
+    "current_old_proper_and_english_gap_snapshots_exact": true,
+    "latin_hashes_exact": true
+  },
+  "evidence": {
+    "source_pdf_sha256": "5ab2ea61f077f0b6b0289df9a2cf2edeaa9faf256a44fe94809094bf03384c4f",
+    "images": [
+      {
+        "file": "target-737-200.png",
+        "sha256": "fff148053c28fc68738f0037392aef825b4ad501cf192dce0de04b3c2bdcea43"
+      },
+      {
+        "file": "target-737-400.png",
+        "sha256": "e6ba2b31d8f1ad0e403b13ae6f189b33534ffcce3c0d4146fde53bd1d7785d9f"
+      },
+      {
+        "file": "target-739-200.png",
+        "sha256": "b39141e8f0273f5ff83f94aa96a9ff702d1bc89dfd0003653547e9b55185fe57"
+      },
+      {
+        "file": "target-739-400.png",
+        "sha256": "119ae4deacf758e5431515e1fa99b6250ae497ebbfdba9eb0c67eb88041839ca"
+      },
+      {
+        "file": "target-582-200.png",
+        "sha256": "a18f3a22a59a7286e7f8e93333f83afa8834a6a1327b1dd1833129fc4a8e65f8"
+      },
+      {
+        "file": "target-582-400.png",
+        "sha256": "88b36640cc5e62b14e0fc864aa37e6b37b49c6ec5a414b73836051b5ffa549ad"
+      },
+      {
+        "file": "pustet-505.png",
+        "sha256": "d5880494c63a1bb6a82302187850898f669f3367622c3d522c8d343ae4050497"
+      },
+      {
+        "file": "pustet-506.png",
+        "sha256": "76b3e343a286693ad21e2042cff44829ba078495fb4ecb5ae036dcc6ed965642"
+      },
+      {
+        "file": "pustet-507.png",
+        "sha256": "d1a434f8ceb52386eddd5673b5aec7eaaca86d2a7f4da44987e245827a0416bb"
+      },
+      {
+        "file": "pustet-627.png",
+        "sha256": "4b89e61d88e7becbba818a5fafb662a862d5ef37307e742568b8f7423836cfc4"
+      }
+    ]
+  },
+  "limitations": [
+    "No tracked files installed or changed by this reviewer.",
+    "Full merged source graph, per-text provenance validation, English overlay binding, generated reader projection and publication tests remain parent integration gates.",
+    "The shared2026-10-29 projectionedition is intentionally not included; parent owns its creation.",
+    "Only normalSeptemberAlleluia unit3621 is reviewed; no votive/Paschal option or calendar-rule change is accepted."
+  ],
+  "operational_correction": "Initial schema harness used Record(id=...), which is unsupported; rerun used record_id and passed. Candidate unchanged by reviewer."
+}

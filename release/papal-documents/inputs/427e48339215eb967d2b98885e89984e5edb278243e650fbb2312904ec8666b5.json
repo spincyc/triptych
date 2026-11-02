@@ -1,0 +1,2376 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "collection": "historical-english-1903-benziger",
+  "frozen_receipt_sha256": "6c6f508f3bc1859b33cf2c2501a301428ef3bc7d4cbce2b7efd784de08a2e634",
+  "reviewed_on": "2026-10-26",
+  "revision": "2026-10-26T05:10:28Z",
+  "review_scope": "Exact-PDF draft layout review: 103 newly inspected pages plus 107 exact prior-page PNG byte reuses. Not historical print collation, clean-transcription acceptance or publication approval.",
+  "raster_comparison": {
+    "path": "src/sources/papal-documents/english-encoding-raster-comparison.json",
+    "sha256": "d007562ea110c3b39643b84fb1d684ad8495588369e0fe127c861205d62cf11e"
+  },
+  "raster_renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+  "documents": [
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-21041878-inscrutabili-dei-consilio",
+      "language": "en",
+      "pdf_sha256": "5f598b44de71ba6bfed4870996f8278f2a2408cad2d7451e410e9ddf7578d7be",
+      "pages": 5,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        5
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "73f7daf67a447147b5c6af65796dcbcc9697c4781a56601e364e4cea8de3a6c1",
+          "prior_raster_sha256": "73f7daf67a447147b5c6af65796dcbcc9697c4781a56601e364e4cea8de3a6c1",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "0aaacfacaa39ca6b0d330f4750c70451e3d7789af565b762e5e239a52ba0862d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "aa14a7a2f19da819dff159d1436dca0011d90120f75535ddb6317f590d19f2ad",
+          "prior_raster_sha256": "aa14a7a2f19da819dff159d1436dca0011d90120f75535ddb6317f590d19f2ad",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "0aaacfacaa39ca6b0d330f4750c70451e3d7789af565b762e5e239a52ba0862d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "70c6af7d9aacabe2350fef26071036d02ef274cae5b0bf72cce4630d220ebc7c",
+          "prior_raster_sha256": "70c6af7d9aacabe2350fef26071036d02ef274cae5b0bf72cce4630d220ebc7c",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "0aaacfacaa39ca6b0d330f4750c70451e3d7789af565b762e5e239a52ba0862d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "ba4cbeace1f419ddf2344979fc7e2e63de08c79ceaaaa57640cf91b66f5d9211",
+          "prior_raster_sha256": "ba4cbeace1f419ddf2344979fc7e2e63de08c79ceaaaa57640cf91b66f5d9211",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "0aaacfacaa39ca6b0d330f4750c70451e3d7789af565b762e5e239a52ba0862d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "0aaacfacaa39ca6b0d330f4750c70451e3d7789af565b762e5e239a52ba0862d",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-2.md",
+          "report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-28121878-quod-apostolici-muneris",
+      "language": "en",
+      "pdf_sha256": "8e99bbf91549367d75e553706e56baa7595ab2a5ada69604d5b06323523b6373",
+      "pages": 5,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        5
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "b3fde61e83166354a57019a28678cdd9a396b93f307270bcc02d53baee7733f5",
+          "prior_raster_sha256": "b3fde61e83166354a57019a28678cdd9a396b93f307270bcc02d53baee7733f5",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "dbe57f618f34fdbc982c7a3d4358b69d21a057e23271f53ff7e75ef6169ac5a9",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "b422dcf9370f228710ad0b471d5fc08020f4a6932bcea7e57f89252bf6f4845e",
+          "prior_raster_sha256": "b422dcf9370f228710ad0b471d5fc08020f4a6932bcea7e57f89252bf6f4845e",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "dbe57f618f34fdbc982c7a3d4358b69d21a057e23271f53ff7e75ef6169ac5a9",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "36ba29ea30184a167237d8d732eda7bef67317c411e170f9942647db39d6a54a",
+          "prior_raster_sha256": "36ba29ea30184a167237d8d732eda7bef67317c411e170f9942647db39d6a54a",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "dbe57f618f34fdbc982c7a3d4358b69d21a057e23271f53ff7e75ef6169ac5a9",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "bacc9b292a9614e8ebb6e8d1a005d3cc528796a2aa25a8d9422a07384245ff3e",
+          "prior_raster_sha256": "bacc9b292a9614e8ebb6e8d1a005d3cc528796a2aa25a8d9422a07384245ff3e",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "dbe57f618f34fdbc982c7a3d4358b69d21a057e23271f53ff7e75ef6169ac5a9",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "dbe57f618f34fdbc982c7a3d4358b69d21a057e23271f53ff7e75ef6169ac5a9",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-4.md",
+          "report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-04081879-aeterni-patris",
+      "language": "en",
+      "pdf_sha256": "2162d4728ee7112fbca9a37d0d47421c0885fa4735e22ab96b2e3805a3e35b65",
+      "pages": 9,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        9
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "ccd5766f76403cf4f79b127dcb55029b62c8d48f516216f6c42cd108597d0778",
+          "prior_raster_sha256": "ccd5766f76403cf4f79b127dcb55029b62c8d48f516216f6c42cd108597d0778",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "241d9c38e09ad627d4d7c10c92362cf1fcccfce73a2e3e758cc5ac282e281b83",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "b17a49fc233d4277d2060f6748d4e5139bacd181c1e4ff468d2c2c18a25d964a",
+          "prior_raster_sha256": "b17a49fc233d4277d2060f6748d4e5139bacd181c1e4ff468d2c2c18a25d964a",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "241d9c38e09ad627d4d7c10c92362cf1fcccfce73a2e3e758cc5ac282e281b83",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "6df5dc8bf29ab97e09c0c6f2e6b7ebefbb61ed60b0271136c0141f72eb02d70d",
+          "prior_raster_sha256": "6df5dc8bf29ab97e09c0c6f2e6b7ebefbb61ed60b0271136c0141f72eb02d70d",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "241d9c38e09ad627d4d7c10c92362cf1fcccfce73a2e3e758cc5ac282e281b83",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "ac5904d473804eb9a77e3c1be69f9760e03eed1894de737d3b16965553da78d4",
+          "prior_raster_sha256": "ac5904d473804eb9a77e3c1be69f9760e03eed1894de737d3b16965553da78d4",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "241d9c38e09ad627d4d7c10c92362cf1fcccfce73a2e3e758cc5ac282e281b83",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 5,
+          "current_raster_sha256": "d245e5d876432600a3385ba15b24f3d489048613fc62c82bb2b35cb773e041c7",
+          "prior_raster_sha256": "d245e5d876432600a3385ba15b24f3d489048613fc62c82bb2b35cb773e041c7",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "241d9c38e09ad627d4d7c10c92362cf1fcccfce73a2e3e758cc5ac282e281b83",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 6,
+          "current_raster_sha256": "d31d6c1b6bd29c362ee588e6e1148a85af7fa0cb3f73492cef947fb7106069c3",
+          "prior_raster_sha256": "d31d6c1b6bd29c362ee588e6e1148a85af7fa0cb3f73492cef947fb7106069c3",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "241d9c38e09ad627d4d7c10c92362cf1fcccfce73a2e3e758cc5ac282e281b83",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 7,
+          "current_raster_sha256": "27b065dac9499467b28340d75e623fe2940d314038033e3775cc3c6568971499",
+          "prior_raster_sha256": "27b065dac9499467b28340d75e623fe2940d314038033e3775cc3c6568971499",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "241d9c38e09ad627d4d7c10c92362cf1fcccfce73a2e3e758cc5ac282e281b83",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 8,
+          "current_raster_sha256": "d55c6794c76e54ba4683cfcc4b49579d20e90d600557a88cca81daf60539257a",
+          "prior_raster_sha256": "d55c6794c76e54ba4683cfcc4b49579d20e90d600557a88cca81daf60539257a",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "241d9c38e09ad627d4d7c10c92362cf1fcccfce73a2e3e758cc5ac282e281b83",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "241d9c38e09ad627d4d7c10c92362cf1fcccfce73a2e3e758cc5ac282e281b83",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-1.md",
+          "report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-10021880-arcanum",
+      "language": "en",
+      "pdf_sha256": "e454f6a8d3e549a66b49e7980323ee79762e2bc30481835edd598868c21c83a8",
+      "pages": 9,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        9
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "7268ba0b1561850a077522811384bdcb50884fb85dcddf5bfc1cb35ca91c09c7",
+          "prior_raster_sha256": "7268ba0b1561850a077522811384bdcb50884fb85dcddf5bfc1cb35ca91c09c7",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "d5ba69ba1450026408f57fc8d548ec4cea498136b32c22d8a24eadbc465bae5d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "a53ca8cccdf9376c4816e87231a61d3c5a3371544ca0dff0377cb9413c216307",
+          "prior_raster_sha256": "a53ca8cccdf9376c4816e87231a61d3c5a3371544ca0dff0377cb9413c216307",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "d5ba69ba1450026408f57fc8d548ec4cea498136b32c22d8a24eadbc465bae5d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "b23e361ba21ae514d7a596ace3772be324ad8816e5cdb916a5a1a9065b0aaa02",
+          "prior_raster_sha256": "b23e361ba21ae514d7a596ace3772be324ad8816e5cdb916a5a1a9065b0aaa02",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "d5ba69ba1450026408f57fc8d548ec4cea498136b32c22d8a24eadbc465bae5d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "7fb07489eb5f6c440b613088684e44f592a154431b7918c87f3f636b52f3f2bf",
+          "prior_raster_sha256": "7fb07489eb5f6c440b613088684e44f592a154431b7918c87f3f636b52f3f2bf",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "d5ba69ba1450026408f57fc8d548ec4cea498136b32c22d8a24eadbc465bae5d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 5,
+          "current_raster_sha256": "7a3c08b9cf29b06d3843553a7deb5f4c83daa21b5b6c2f88dc258ecb265e4551",
+          "prior_raster_sha256": "7a3c08b9cf29b06d3843553a7deb5f4c83daa21b5b6c2f88dc258ecb265e4551",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "d5ba69ba1450026408f57fc8d548ec4cea498136b32c22d8a24eadbc465bae5d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 6,
+          "current_raster_sha256": "e7ee00b7061c5dd42ab2a67a3fa71e4282966118b5d44984071e10658e4de3f7",
+          "prior_raster_sha256": "e7ee00b7061c5dd42ab2a67a3fa71e4282966118b5d44984071e10658e4de3f7",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "d5ba69ba1450026408f57fc8d548ec4cea498136b32c22d8a24eadbc465bae5d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 7,
+          "current_raster_sha256": "471d8f976db7618c1c94558c1ba70cfed35a9ad27e784749e2132ab81fd49877",
+          "prior_raster_sha256": "471d8f976db7618c1c94558c1ba70cfed35a9ad27e784749e2132ab81fd49877",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "d5ba69ba1450026408f57fc8d548ec4cea498136b32c22d8a24eadbc465bae5d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 8,
+          "current_raster_sha256": "32f16c7ec42a04338ad06876216ec86807613da7d9c872055ae528c875a2ea9b",
+          "prior_raster_sha256": "32f16c7ec42a04338ad06876216ec86807613da7d9c872055ae528c875a2ea9b",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "d5ba69ba1450026408f57fc8d548ec4cea498136b32c22d8a24eadbc465bae5d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "d5ba69ba1450026408f57fc8d548ec4cea498136b32c22d8a24eadbc465bae5d",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-4.md",
+          "report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-18840420-humanum-genus",
+      "language": "en",
+      "pdf_sha256": "74c46088e0dd553c294e79732dfa7cc532274f701b375cead02c7adf9bf39f15",
+      "pages": 8,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        8
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "c14a88a25c01123afe7af4dfe67063559c91ed64306a548d774057695e60ad80",
+          "prior_raster_sha256": "c14a88a25c01123afe7af4dfe67063559c91ed64306a548d774057695e60ad80",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "17492ce51265ed22fef786ced00ed1305c0f6baf9dfe444c79046d6d5ab34586",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "f3c3c9884f008edc4e08ac61ef1618e4cbb1fdb6a4c9da5355d34c9dd7edd5fa",
+          "prior_raster_sha256": "f3c3c9884f008edc4e08ac61ef1618e4cbb1fdb6a4c9da5355d34c9dd7edd5fa",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "17492ce51265ed22fef786ced00ed1305c0f6baf9dfe444c79046d6d5ab34586",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "8581d846c40bdb0d60de63f1fe2bc6b4f533075e0383c281e97b212c5cce1180",
+          "prior_raster_sha256": "8581d846c40bdb0d60de63f1fe2bc6b4f533075e0383c281e97b212c5cce1180",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "17492ce51265ed22fef786ced00ed1305c0f6baf9dfe444c79046d6d5ab34586",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "c7bb2145285b722e31829ed5dc550d857cb0ec4f31d7bea2912281a102b181e6",
+          "prior_raster_sha256": "c7bb2145285b722e31829ed5dc550d857cb0ec4f31d7bea2912281a102b181e6",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "17492ce51265ed22fef786ced00ed1305c0f6baf9dfe444c79046d6d5ab34586",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 5,
+          "current_raster_sha256": "09b565b96f709cf75943b22d534756d0c7204455e337c9560816ca237dfc1917",
+          "prior_raster_sha256": "09b565b96f709cf75943b22d534756d0c7204455e337c9560816ca237dfc1917",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "17492ce51265ed22fef786ced00ed1305c0f6baf9dfe444c79046d6d5ab34586",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 6,
+          "current_raster_sha256": "3977fa75ba0e77bf5c0ac1983a0e33acad290f679eb15ce0955069d18583e6c8",
+          "prior_raster_sha256": "3977fa75ba0e77bf5c0ac1983a0e33acad290f679eb15ce0955069d18583e6c8",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "17492ce51265ed22fef786ced00ed1305c0f6baf9dfe444c79046d6d5ab34586",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 7,
+          "current_raster_sha256": "ab352bf5f0bf239a29ede154a699bfb617fcb865d1236dc4f807af8a109d29b4",
+          "prior_raster_sha256": "ab352bf5f0bf239a29ede154a699bfb617fcb865d1236dc4f807af8a109d29b4",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "17492ce51265ed22fef786ced00ed1305c0f6baf9dfe444c79046d6d5ab34586",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "17492ce51265ed22fef786ced00ed1305c0f6baf9dfe444c79046d6d5ab34586",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-3.md",
+          "report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-01111885-immortale-dei",
+      "language": "en",
+      "pdf_sha256": "892c0d7421e01f1a23c79422abbafb3f276c5b9b07806c7f4b8d81b9bea19028",
+      "pages": 10,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        10
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "42b3b3e5abc2eb03d7b9ba68fbb36fcb920a24bd411e4aed715981b5d51bc897",
+          "prior_raster_sha256": "42b3b3e5abc2eb03d7b9ba68fbb36fcb920a24bd411e4aed715981b5d51bc897",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "a6da164c52312e926e8de11fedbd58a88c9f78d9f5b1be34af58497692e1360d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "251fbdb51d92932e4d4e06acb3bbcdbe847b4659c9b4a1e8461c1dcf77647eaa",
+          "prior_raster_sha256": "251fbdb51d92932e4d4e06acb3bbcdbe847b4659c9b4a1e8461c1dcf77647eaa",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "a6da164c52312e926e8de11fedbd58a88c9f78d9f5b1be34af58497692e1360d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "e71d0b55e67f2ae435027e84cc0c52af2e8cce6e961dc5ddb6d59ef27602d049",
+          "prior_raster_sha256": "e71d0b55e67f2ae435027e84cc0c52af2e8cce6e961dc5ddb6d59ef27602d049",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "a6da164c52312e926e8de11fedbd58a88c9f78d9f5b1be34af58497692e1360d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "99e2689f2dba703ec0731cbf9e7f386c2b54c03a5aecc0cda6b751746e127216",
+          "prior_raster_sha256": "99e2689f2dba703ec0731cbf9e7f386c2b54c03a5aecc0cda6b751746e127216",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "a6da164c52312e926e8de11fedbd58a88c9f78d9f5b1be34af58497692e1360d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 5,
+          "current_raster_sha256": "d1e227728b27c9dd871d3ade58c52af2b0b7e46ae7a70ba2c4eb34b1525b6cb4",
+          "prior_raster_sha256": "d1e227728b27c9dd871d3ade58c52af2b0b7e46ae7a70ba2c4eb34b1525b6cb4",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "a6da164c52312e926e8de11fedbd58a88c9f78d9f5b1be34af58497692e1360d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 6,
+          "current_raster_sha256": "23461fc57474a84a4250df88eeefeae8e3fb8b64d0db7e504593c7c816b66e0c",
+          "prior_raster_sha256": "23461fc57474a84a4250df88eeefeae8e3fb8b64d0db7e504593c7c816b66e0c",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "a6da164c52312e926e8de11fedbd58a88c9f78d9f5b1be34af58497692e1360d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 7,
+          "current_raster_sha256": "904113e11e7db67cb36cfc633c6e2a49a160f615187a98d2cb441905c260c6b9",
+          "prior_raster_sha256": "904113e11e7db67cb36cfc633c6e2a49a160f615187a98d2cb441905c260c6b9",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "a6da164c52312e926e8de11fedbd58a88c9f78d9f5b1be34af58497692e1360d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 8,
+          "current_raster_sha256": "ac8409e48271ab32cf6984048e2ce8ec97509cec8669a4d8c0e616d61eeeb8a8",
+          "prior_raster_sha256": "ac8409e48271ab32cf6984048e2ce8ec97509cec8669a4d8c0e616d61eeeb8a8",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "a6da164c52312e926e8de11fedbd58a88c9f78d9f5b1be34af58497692e1360d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 9,
+          "current_raster_sha256": "c76a590dba0b330e6b86a3a9ab3f49e73aba0e423edd634f12b070dde85effca",
+          "prior_raster_sha256": "c76a590dba0b330e6b86a3a9ab3f49e73aba0e423edd634f12b070dde85effca",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "a6da164c52312e926e8de11fedbd58a88c9f78d9f5b1be34af58497692e1360d",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "a6da164c52312e926e8de11fedbd58a88c9f78d9f5b1be34af58497692e1360d",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-4.md",
+          "report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-20061888-libertas",
+      "language": "en",
+      "pdf_sha256": "ab92c32ba11b4a0a9100e3308af26592047240398baeda77e3f1461a643c3825",
+      "pages": 10,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        10
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "6ca6124a160b6bc216555e266e79db21adcc27a9197c760bc515b1687f589c90",
+          "prior_raster_sha256": "6ca6124a160b6bc216555e266e79db21adcc27a9197c760bc515b1687f589c90",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "936e272112c4eb22e90a8de7b4701511851c4ee38f8900333d57ae638615c2bc",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "788191e3cdfea87386ba3ca6c3373f6390f6c45c570f264c0d80f6315888fece",
+          "prior_raster_sha256": "788191e3cdfea87386ba3ca6c3373f6390f6c45c570f264c0d80f6315888fece",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "936e272112c4eb22e90a8de7b4701511851c4ee38f8900333d57ae638615c2bc",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "720f2378517037fa4d6dbfbeebac566f20c4b475b4bfdb2c28aa416d0ae1948f",
+          "prior_raster_sha256": "720f2378517037fa4d6dbfbeebac566f20c4b475b4bfdb2c28aa416d0ae1948f",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "936e272112c4eb22e90a8de7b4701511851c4ee38f8900333d57ae638615c2bc",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "86dd7f92d59603060b08baaeb9de7171b0d4bafb80c3611e5eedbb9419808f92",
+          "prior_raster_sha256": "86dd7f92d59603060b08baaeb9de7171b0d4bafb80c3611e5eedbb9419808f92",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "936e272112c4eb22e90a8de7b4701511851c4ee38f8900333d57ae638615c2bc",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 5,
+          "current_raster_sha256": "76d02364efc7883a83c7e0f53b3945a3f693c6183c1fa118fbc4b079f845581a",
+          "prior_raster_sha256": "76d02364efc7883a83c7e0f53b3945a3f693c6183c1fa118fbc4b079f845581a",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "936e272112c4eb22e90a8de7b4701511851c4ee38f8900333d57ae638615c2bc",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 6,
+          "current_raster_sha256": "f30d70809e2a84ca8a3735536fa5f6478d85caccba309d3036f66f6232b870c8",
+          "prior_raster_sha256": "f30d70809e2a84ca8a3735536fa5f6478d85caccba309d3036f66f6232b870c8",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "936e272112c4eb22e90a8de7b4701511851c4ee38f8900333d57ae638615c2bc",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 7,
+          "current_raster_sha256": "1d0153163cebe1e24daba48953e3162351a389b68ee7ae511007193faa984e78",
+          "prior_raster_sha256": "1d0153163cebe1e24daba48953e3162351a389b68ee7ae511007193faa984e78",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "936e272112c4eb22e90a8de7b4701511851c4ee38f8900333d57ae638615c2bc",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 8,
+          "current_raster_sha256": "0b9bd5c687840f7edfda76be4fe0393ab7234b70c4ccf7dc10ac030661e6f263",
+          "prior_raster_sha256": "0b9bd5c687840f7edfda76be4fe0393ab7234b70c4ccf7dc10ac030661e6f263",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "936e272112c4eb22e90a8de7b4701511851c4ee38f8900333d57ae638615c2bc",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 9,
+          "current_raster_sha256": "b9194dbf91cfc8e756bf4fca1dc76cf262833666f7c1ebbb76fca032f5db2b09",
+          "prior_raster_sha256": "b9194dbf91cfc8e756bf4fca1dc76cf262833666f7c1ebbb76fca032f5db2b09",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "936e272112c4eb22e90a8de7b4701511851c4ee38f8900333d57ae638615c2bc",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "936e272112c4eb22e90a8de7b4701511851c4ee38f8900333d57ae638615c2bc",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-4.md",
+          "report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-25121888-exeunte-iam-anno",
+      "language": "en",
+      "pdf_sha256": "2440aec5eb5562b6c30e8a8653b0cc31a74128169d1a56324b63c4e4564e8ef1",
+      "pages": 6,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        6
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "b0ac010c9a6bfc171b526967d3c680560f34efa2cca116d99e775ab833e63ea2",
+          "prior_raster_sha256": "b0ac010c9a6bfc171b526967d3c680560f34efa2cca116d99e775ab833e63ea2",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "77f78f6e3847e25f6240a24fb9634129b53dca3d5da0468fb28ee388be31fea2",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "d0fd0b9ce81b3055e12fa19629c708eeb6728525eb5e7722a6bb73351b032893",
+          "prior_raster_sha256": "d0fd0b9ce81b3055e12fa19629c708eeb6728525eb5e7722a6bb73351b032893",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "77f78f6e3847e25f6240a24fb9634129b53dca3d5da0468fb28ee388be31fea2",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "29687ba0744a31bad19a699c7de06511eec56fc2dbf0553e4dced9e39663655b",
+          "prior_raster_sha256": "29687ba0744a31bad19a699c7de06511eec56fc2dbf0553e4dced9e39663655b",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "77f78f6e3847e25f6240a24fb9634129b53dca3d5da0468fb28ee388be31fea2",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "3ad4affd3b3145394251621fb239d2c38c89a769bd6ba03cf361f2df07c03dfa",
+          "prior_raster_sha256": "3ad4affd3b3145394251621fb239d2c38c89a769bd6ba03cf361f2df07c03dfa",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "77f78f6e3847e25f6240a24fb9634129b53dca3d5da0468fb28ee388be31fea2",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 5,
+          "current_raster_sha256": "cbf8af91871c1734412750b30a85811d2563c5b1f7301182fa27e23fbc9f1ca4",
+          "prior_raster_sha256": "cbf8af91871c1734412750b30a85811d2563c5b1f7301182fa27e23fbc9f1ca4",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "77f78f6e3847e25f6240a24fb9634129b53dca3d5da0468fb28ee388be31fea2",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "77f78f6e3847e25f6240a24fb9634129b53dca3d5da0468fb28ee388be31fea2",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-4.md",
+          "report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-10011890-sapientiae-christianae",
+      "language": "en",
+      "pdf_sha256": "faad916852867bff1b76f24259142f526a06a5fe4d9d83c5108d5f754db7ac27",
+      "pages": 10,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        10
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "221d23c44297a5ff331906bf9f3eacdc4d8049760e1994aba25008a0a52aefbf",
+          "prior_raster_sha256": "221d23c44297a5ff331906bf9f3eacdc4d8049760e1994aba25008a0a52aefbf",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "b8307b4a23bd0ea04721b2d69e1a96f6786835b9dee4d74831cca8b933867320",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "48fc6803ad2753033ddd62284d9a1f673ac566cb095e3af28374cfd85178d95d",
+          "prior_raster_sha256": "48fc6803ad2753033ddd62284d9a1f673ac566cb095e3af28374cfd85178d95d",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "b8307b4a23bd0ea04721b2d69e1a96f6786835b9dee4d74831cca8b933867320",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "3c81d8d509a842cfdc6c3723f6942b50e1502c59129332b88efffd4af3babbc6",
+          "prior_raster_sha256": "3c81d8d509a842cfdc6c3723f6942b50e1502c59129332b88efffd4af3babbc6",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "b8307b4a23bd0ea04721b2d69e1a96f6786835b9dee4d74831cca8b933867320",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "3a59cf0a61ede58727550f636729d13f19727be54a5f4cb2d8f9f243235a8cb5",
+          "prior_raster_sha256": "3a59cf0a61ede58727550f636729d13f19727be54a5f4cb2d8f9f243235a8cb5",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "b8307b4a23bd0ea04721b2d69e1a96f6786835b9dee4d74831cca8b933867320",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 5,
+          "current_raster_sha256": "c0f46eabb66f45bf2aab8177bbd624a0517144d748ccefa0880fd962a60f7908",
+          "prior_raster_sha256": "c0f46eabb66f45bf2aab8177bbd624a0517144d748ccefa0880fd962a60f7908",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "b8307b4a23bd0ea04721b2d69e1a96f6786835b9dee4d74831cca8b933867320",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 6,
+          "current_raster_sha256": "35107ac88790bbd0361289338594aa8056e581c999fc40d9a37c93061a5e650d",
+          "prior_raster_sha256": "35107ac88790bbd0361289338594aa8056e581c999fc40d9a37c93061a5e650d",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "b8307b4a23bd0ea04721b2d69e1a96f6786835b9dee4d74831cca8b933867320",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 7,
+          "current_raster_sha256": "1f988d9d7779239bc3b436e8f440751329f9753d60de21c2a4921279f5f3dbb5",
+          "prior_raster_sha256": "1f988d9d7779239bc3b436e8f440751329f9753d60de21c2a4921279f5f3dbb5",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "b8307b4a23bd0ea04721b2d69e1a96f6786835b9dee4d74831cca8b933867320",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 8,
+          "current_raster_sha256": "775d24eb051c80eb2ec7e65f027b98c2574a873dfe249c806dd37e54b9904d14",
+          "prior_raster_sha256": "775d24eb051c80eb2ec7e65f027b98c2574a873dfe249c806dd37e54b9904d14",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "b8307b4a23bd0ea04721b2d69e1a96f6786835b9dee4d74831cca8b933867320",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 9,
+          "current_raster_sha256": "4dea2a8751d8fc238b7099699be25e8404a49ef509d1bced750d01d1654ee629",
+          "prior_raster_sha256": "4dea2a8751d8fc238b7099699be25e8404a49ef509d1bced750d01d1654ee629",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "b8307b4a23bd0ea04721b2d69e1a96f6786835b9dee4d74831cca8b933867320",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "b8307b4a23bd0ea04721b2d69e1a96f6786835b9dee4d74831cca8b933867320",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-3.md",
+          "report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-15051891-rerum-novarum",
+      "language": "en",
+      "pdf_sha256": "196b7a2b469c24ad054642500dd2d8dd3269277d4533fb1978aa9273146dedeb",
+      "pages": 14,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        14
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "a9f36e36df5f61493266561be90e45a8d177a32d3a8323f65d91c3751f13de06",
+          "prior_raster_sha256": "a9f36e36df5f61493266561be90e45a8d177a32d3a8323f65d91c3751f13de06",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "dc919541f8b499ac1097a1e3521cb65c251fcb23c69675ffe324b4a88caa8ef6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "737eac3858bc7f9928dab56e41bd5d9d65c3497caec6bde680bc3d0da81809df",
+          "prior_raster_sha256": "737eac3858bc7f9928dab56e41bd5d9d65c3497caec6bde680bc3d0da81809df",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "dc919541f8b499ac1097a1e3521cb65c251fcb23c69675ffe324b4a88caa8ef6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "b18a691bc4e5e7b9f05a091701410f1401436758649448bcb0dad59ef2472434",
+          "prior_raster_sha256": "b18a691bc4e5e7b9f05a091701410f1401436758649448bcb0dad59ef2472434",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "dc919541f8b499ac1097a1e3521cb65c251fcb23c69675ffe324b4a88caa8ef6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "68faa027137167f554d1f98a328e84c310fde03eeb486467e23a5c0eece69a2c",
+          "prior_raster_sha256": "68faa027137167f554d1f98a328e84c310fde03eeb486467e23a5c0eece69a2c",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "dc919541f8b499ac1097a1e3521cb65c251fcb23c69675ffe324b4a88caa8ef6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 5,
+          "current_raster_sha256": "2eeb182dd9cc49df8a8c04f19f903f1cf758af126a10575bbb4197e2db5e74d8",
+          "prior_raster_sha256": "2eeb182dd9cc49df8a8c04f19f903f1cf758af126a10575bbb4197e2db5e74d8",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "dc919541f8b499ac1097a1e3521cb65c251fcb23c69675ffe324b4a88caa8ef6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 6,
+          "current_raster_sha256": "3af0aeed050dd17a78d18c1a8a29a02baa573d1411709ae0a3a42fd957e3ad79",
+          "prior_raster_sha256": "3af0aeed050dd17a78d18c1a8a29a02baa573d1411709ae0a3a42fd957e3ad79",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "dc919541f8b499ac1097a1e3521cb65c251fcb23c69675ffe324b4a88caa8ef6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 7,
+          "current_raster_sha256": "636fe574c94af371e04606847b8f6ba3ff55f1eaba7799420b1f3eb84a88000f",
+          "prior_raster_sha256": "636fe574c94af371e04606847b8f6ba3ff55f1eaba7799420b1f3eb84a88000f",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "dc919541f8b499ac1097a1e3521cb65c251fcb23c69675ffe324b4a88caa8ef6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 8,
+          "current_raster_sha256": "e692054f5711562e5b60d222e42e7b35cad68e352517084eb908c918d885640f",
+          "prior_raster_sha256": "e692054f5711562e5b60d222e42e7b35cad68e352517084eb908c918d885640f",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "dc919541f8b499ac1097a1e3521cb65c251fcb23c69675ffe324b4a88caa8ef6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 9,
+          "current_raster_sha256": "8efc1a5bfb74da337682be6b3b87a6aebba7aec609777e0af28f8034d0c4bf22",
+          "prior_raster_sha256": "8efc1a5bfb74da337682be6b3b87a6aebba7aec609777e0af28f8034d0c4bf22",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "dc919541f8b499ac1097a1e3521cb65c251fcb23c69675ffe324b4a88caa8ef6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 10,
+          "current_raster_sha256": "429784f711144ee8e7d18ba28c6774944beb2a1f3a0fd5b40c2f2d0b9543644f",
+          "prior_raster_sha256": "429784f711144ee8e7d18ba28c6774944beb2a1f3a0fd5b40c2f2d0b9543644f",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "dc919541f8b499ac1097a1e3521cb65c251fcb23c69675ffe324b4a88caa8ef6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 11,
+          "current_raster_sha256": "5daa708b78fe899d808f64cfe794916bff56e32dd696b2ab1f6a601fed5c7a3d",
+          "prior_raster_sha256": "5daa708b78fe899d808f64cfe794916bff56e32dd696b2ab1f6a601fed5c7a3d",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "dc919541f8b499ac1097a1e3521cb65c251fcb23c69675ffe324b4a88caa8ef6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 12,
+          "current_raster_sha256": "4f657b6190361efb97e86932c96721c304fed8e411d64644df63c71695418083",
+          "prior_raster_sha256": "4f657b6190361efb97e86932c96721c304fed8e411d64644df63c71695418083",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "dc919541f8b499ac1097a1e3521cb65c251fcb23c69675ffe324b4a88caa8ef6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 13,
+          "current_raster_sha256": "0f1e1834485b5fcca994beccccfee484da940537b6f2589988a5819b70b3b9ce",
+          "prior_raster_sha256": "0f1e1834485b5fcca994beccccfee484da940537b6f2589988a5819b70b3b9ce",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "dc919541f8b499ac1097a1e3521cb65c251fcb23c69675ffe324b4a88caa8ef6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "dc919541f8b499ac1097a1e3521cb65c251fcb23c69675ffe324b4a88caa8ef6",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-2.md",
+          "report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-16021892-au-milieu-des-sollicitudes",
+      "language": "en",
+      "pdf_sha256": "0d6c2803b8a94595d0edfb0ef006ca6e5f5585e329639fdfb8ae3c378a927c60",
+      "pages": 6,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        6
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "b15a38a7577979ce0363bdb56f109f0c8b511235a78e4bdf96197fa01dcf7353",
+          "prior_raster_sha256": "b15a38a7577979ce0363bdb56f109f0c8b511235a78e4bdf96197fa01dcf7353",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "e6af7aaf2933e147a4fafec4b77bce217a55e953a9ffa72805bc00659e3fdb0f",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "18d33888aab87ecda631a1e8827bd726daa28f593b5bd105577c4ae7f8605912",
+          "prior_raster_sha256": "18d33888aab87ecda631a1e8827bd726daa28f593b5bd105577c4ae7f8605912",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "e6af7aaf2933e147a4fafec4b77bce217a55e953a9ffa72805bc00659e3fdb0f",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "4c736f9bb4d666ae8ebb1de0797160b68a84abd2bf908b45ba129e59016c46a7",
+          "prior_raster_sha256": "4c736f9bb4d666ae8ebb1de0797160b68a84abd2bf908b45ba129e59016c46a7",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "e6af7aaf2933e147a4fafec4b77bce217a55e953a9ffa72805bc00659e3fdb0f",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "7885aeb07fe46c3a3a12288c3821e8ed7e1c82a0c9b904d2ddd2e97c8c8375c0",
+          "prior_raster_sha256": "7885aeb07fe46c3a3a12288c3821e8ed7e1c82a0c9b904d2ddd2e97c8c8375c0",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "e6af7aaf2933e147a4fafec4b77bce217a55e953a9ffa72805bc00659e3fdb0f",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 5,
+          "current_raster_sha256": "b927a2d88c38ffcf0bdb57f2aa37c9a005459262dd9bbe19711426811747a99f",
+          "prior_raster_sha256": "b927a2d88c38ffcf0bdb57f2aa37c9a005459262dd9bbe19711426811747a99f",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "e6af7aaf2933e147a4fafec4b77bce217a55e953a9ffa72805bc00659e3fdb0f",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "e6af7aaf2933e147a4fafec4b77bce217a55e953a9ffa72805bc00659e3fdb0f",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-3.md",
+          "report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-16071892-quarto-abeunte-saeculo",
+      "language": "en",
+      "pdf_sha256": "83cdaf00c436e5b002d75cf8d982d5ac7e83f6144ec9899ad5494afbe3bbc7ec",
+      "pages": 3,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        3
+      ],
+      "reused_pages": [
+        1,
+        2
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "8a087f5a8c2a82e2c6f4e56dac6ace79465f0b391f7bfa24c79fe0144774a3c1",
+          "prior_raster_sha256": "8a087f5a8c2a82e2c6f4e56dac6ace79465f0b391f7bfa24c79fe0144774a3c1",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "5bf8a7ca62316c6fad4906d065344013fe684c03c6bd8c7b6ce477219476a54b",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "932eb93ac4b33a89ff43e6f5842378a987eab868ba4fed726b97dab0c47387c7",
+          "prior_raster_sha256": "932eb93ac4b33a89ff43e6f5842378a987eab868ba4fed726b97dab0c47387c7",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "5bf8a7ca62316c6fad4906d065344013fe684c03c6bd8c7b6ce477219476a54b",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "5bf8a7ca62316c6fad4906d065344013fe684c03c6bd8c7b6ce477219476a54b",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-3.md",
+          "report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-18111893-providentissimus-deus",
+      "language": "en",
+      "pdf_sha256": "c355929180726b087bdf98a4ca19ad0eef52240dcb488acf0af0b2a5147e7a67",
+      "pages": 12,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-2.md",
+      "report_sha256": "1fbb519f5a2eaee94d2aeff67a7b9836c28b57033f75f15485ea81a6771d39a0",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        "Compact title, date, language, historical heading and opening paragraph visible; both columns fit.",
+        "Columns continue normally and references fit without clipping or collision; page 3 begins with the preceding page's continuation, themselves.",
+        "Old running head THE STUDY OF HOLY SCRIPTURE., source page numeral 282 and isolated symbols remain inside the right-column body; no new layout heading or clipping.",
+        "Inherited visibly garbled passage remains in the middle of the left column; dense text fits.",
+        "Repeated old running heads, source numerals 286 and 287, and malformed prose remain. Filled square in the left-column symbol cluster is a literal source character at physical line 1491.",
+        "Substantial inherited word and symbol corruption remains in the right column of page 7 and left column of page 8; columns fit with a clear gutter.",
+        "Continuous columns and inline references fit without a heading or apparatus break.",
+        "Malformed source passages remain near the lower left and upper right; no visible text is clipped by the layout.",
+        "Concluding benediction visible in the right column, followed by retained references 1–4. Literal filled squares in damaged closing prose also occur in source lines 1591 and 1593.",
+        "Retained references 5–17, source and repair qualification, revision and complete compact rights notice fit in the left column. Empty right column; sparse notes-and-apparatus final page, not a rights-only spill."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "9dc276c46d3b363ff52942fa20d1b3eb3e9ac09e7b2457bf03389ad03aaf1c22",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-3.md",
+          "report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-apl-18940620-praeclara-gratulationis",
+      "language": "en",
+      "pdf_sha256": "88b353d8e8005f61a7fd83da4fe452f75d90aaa085cd203bc254b1ddf85e10b9",
+      "pages": 6,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        6
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "185d84ae7f8c3011d00568a5b7eaa759d10c72636f360541a90523645b2f38a5",
+          "prior_raster_sha256": "185d84ae7f8c3011d00568a5b7eaa759d10c72636f360541a90523645b2f38a5",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "892c96c541f9ab5772e4846458188bf9b822f591f44fb159bdf3533cd54623cd",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "6230ef4937431ba655093055c0f5a221bf22aebf01df1dbe58fefc946486990c",
+          "prior_raster_sha256": "6230ef4937431ba655093055c0f5a221bf22aebf01df1dbe58fefc946486990c",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "892c96c541f9ab5772e4846458188bf9b822f591f44fb159bdf3533cd54623cd",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "85b6bcd8be122caefc10af2139c6566bed132484a773ba324ed4bebe471f9f7c",
+          "prior_raster_sha256": "85b6bcd8be122caefc10af2139c6566bed132484a773ba324ed4bebe471f9f7c",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "892c96c541f9ab5772e4846458188bf9b822f591f44fb159bdf3533cd54623cd",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "8df8c7cebabfc0ff0ab0d5dafdc9f7dfed99f57fffea59a6ac1bc5e425811acf",
+          "prior_raster_sha256": "8df8c7cebabfc0ff0ab0d5dafdc9f7dfed99f57fffea59a6ac1bc5e425811acf",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "892c96c541f9ab5772e4846458188bf9b822f591f44fb159bdf3533cd54623cd",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 5,
+          "current_raster_sha256": "2354986fc20b0a374aa63e8b6978a1929473788b9d7badc2391409feba315645",
+          "prior_raster_sha256": "2354986fc20b0a374aa63e8b6978a1929473788b9d7badc2391409feba315645",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "892c96c541f9ab5772e4846458188bf9b822f591f44fb159bdf3533cd54623cd",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "892c96c541f9ab5772e4846458188bf9b822f591f44fb159bdf3533cd54623cd",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-1.md",
+          "report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-06011895-longinqua",
+      "language": "en",
+      "pdf_sha256": "888aa6cbd92e822aaddae88042781e421c4fb149a6a7b086256cbe41a4f797c0",
+      "pages": 6,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-3.md",
+      "report_sha256": "2e433137a98879c3a487ececbf2f4d053c4d0dc4b03d95969f2b5d1425ca6387",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        "p. 1: Title, issuer, date, and language are clear. The retained source title and dated heading remain together with the opening; normal continuation between columns.",
+        "p. 2: Readable dense body and clear margins. Retained OCR substitutions, carets, and spaced hyphens remain visible.",
+        "p. 3: Normal body continuation. Malformed words and historical citation markers remain visible without font or layout failure.",
+        "p. 4: Embedded historical citation lines at the upper left and prose in both columns fit within the margins. No heading split or clipping; OCR noise remains.",
+        "p. 5: Both columns continue correctly. An embedded Arcanum citation line and recognition errors remain within the retained prose.",
+        "p. 6: The final left column contains substantial closing source prose, an embedded citation, and the Apostolic Benediction before the source notice. The notice declares 5 repaired spans (5 intact reversals, no partial marker repairs), residual errors and outstanding collation, and revision `2026-10-26T05:10:28Z`. Rights text is readable and does not collide with the body or page number. The right column is empty; there is no separate notice-only page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "7300d4c8dc297cbf6f0e0f8216d2e04d2e268055b9c4d0332cddf2e645840de7",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-2.md",
+          "report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-apl-18950414-amantissime-voluntatis",
+      "language": "en",
+      "pdf_sha256": "ecad7ed32c79c30e44566de842ab162dfa2e849827c25190f629e5f1740a88ce",
+      "pages": 5,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        5
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "02969e0542744c02c6c84acf8a7e049e15e14eff384c21df3640bc440385f9d4",
+          "prior_raster_sha256": "02969e0542744c02c6c84acf8a7e049e15e14eff384c21df3640bc440385f9d4",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "95dbb1378f40dc93c68cb0241247bfb62438c219fa527c7388acdcb5e13c96bb",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "9c0e51524f9ad5c7de23134e965da10198557f208d6f1d04300f83979c375377",
+          "prior_raster_sha256": "9c0e51524f9ad5c7de23134e965da10198557f208d6f1d04300f83979c375377",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "95dbb1378f40dc93c68cb0241247bfb62438c219fa527c7388acdcb5e13c96bb",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "2eeeff73af3b063a0366cb647f70ab50dd949b389ff93188e237e3f8d7e4a0bc",
+          "prior_raster_sha256": "2eeeff73af3b063a0366cb647f70ab50dd949b389ff93188e237e3f8d7e4a0bc",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "95dbb1378f40dc93c68cb0241247bfb62438c219fa527c7388acdcb5e13c96bb",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "1e1eafc9e5e854a4503e0a7adc6b9f0aeed72c9204c5412bb5f6b90664c39f5d",
+          "prior_raster_sha256": "1e1eafc9e5e854a4503e0a7adc6b9f0aeed72c9204c5412bb5f6b90664c39f5d",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "95dbb1378f40dc93c68cb0241247bfb62438c219fa527c7388acdcb5e13c96bb",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "95dbb1378f40dc93c68cb0241247bfb62438c219fa527c7388acdcb5e13c96bb",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-2.md",
+          "report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-29061896-satis-cognitum",
+      "language": "en",
+      "pdf_sha256": "3acdb21528c7998fed7004315a25f525c1706e9063fd3a95b652329b69f3d650",
+      "pages": 15,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-1.md",
+      "report_sha256": "5f12a1794f24f14861f7be29234d9f4f0b3c4d40a230c5413e1d133c3116d8a1",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        "Substantial retained lexical/OCR damage remains, including Goaj and sjfyjri hml on page 1 and garbled spans on page 7. Encoding-only repairs do not establish word-level collation.",
+        "The retained heading prints June 20, 1896 while compact identification uses 1896-06-29. The final source notice explicitly records this discrepancy.",
+        "The source notice continues from left-column foot into right-column head on the same final physical page. Continuation, revision timestamp and rights colophon are legible without clipping or a new spill page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "a912ab0b9d7af9526f5c23b9e9e5c117a0bedff4b897b060d2b5414b758c5eac",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-1.md",
+          "report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.litterae-apostolicae-apostolicae-curae-13-septembris-1896",
+      "language": "en",
+      "pdf_sha256": "6dab69f7f5bd684fa2d196a6ec69d609d13114b6a9029a689778b70865a1f44c",
+      "pages": 6,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-2.md",
+      "report_sha256": "1fbb519f5a2eaee94d2aeff67a7b9836c28b57033f75f15485ea81a6771d39a0",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        "Title, pope, date, language, historical heading and body opening clear; historical-title æ characters render legibly.",
+        "Both columns fit and continue; inherited backslashes and malformed letter groups remain near the lower right.",
+        "Historical translators' Feria V. note remains visible in the right-column prose stream and fits with the surrounding text.",
+        "Dense text, quotation marks and dashes clear with no column or page-boundary defect.",
+        "Wherefore paragraph continues from left-column bottom to right-column top; last paragraph continues onto page 6.",
+        "Closing legal paragraphs end with these presents, followed by references 1–3. Source qualification, revision and complete rights colophon fit in the left column without an extra notice page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "1f82f3dd3b4e709db06f70f6d224bd4c8250141ad8e7adfe31a0a514e0e38aec",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-4.md",
+          "report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-apc-18970125-officiorum-ac-munerum",
+      "language": "en",
+      "pdf_sha256": "9c50b9df1d396eaa879c031e3af781ba9473fce963587f5a03e777e4c1167b8d",
+      "pages": 5,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        5
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "4da1e1321796d688afd25cb7a4e09693cc38175be9620b5437d2f5fb73a8dbd7",
+          "prior_raster_sha256": "4da1e1321796d688afd25cb7a4e09693cc38175be9620b5437d2f5fb73a8dbd7",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "d00cc902c119265005658cdf6c13b1868a5f8e06085834ac170fa914416cece6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "6c57510228bd0191872057e379766cbc8602f1fc5a985aa16e02b1f8df3ea330",
+          "prior_raster_sha256": "6c57510228bd0191872057e379766cbc8602f1fc5a985aa16e02b1f8df3ea330",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "d00cc902c119265005658cdf6c13b1868a5f8e06085834ac170fa914416cece6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "842fbfbd984669db4ca05154b1e1bd3690247f0bc1868a9e6e4eb12840cb8dc5",
+          "prior_raster_sha256": "842fbfbd984669db4ca05154b1e1bd3690247f0bc1868a9e6e4eb12840cb8dc5",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "d00cc902c119265005658cdf6c13b1868a5f8e06085834ac170fa914416cece6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "ce5872cae68ba631c59712d73b0e219aee2570da6dfe386de09bda67b7eff3db",
+          "prior_raster_sha256": "ce5872cae68ba631c59712d73b0e219aee2570da6dfe386de09bda67b7eff3db",
+          "prior_report": "src/sources/papal-documents/english-visual-3.md",
+          "prior_report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "prior_pdf_sha256": "d00cc902c119265005658cdf6c13b1868a5f8e06085834ac170fa914416cece6",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "d00cc902c119265005658cdf6c13b1868a5f8e06085834ac170fa914416cece6",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-3.md",
+          "report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        },
+        {
+          "pdf_sha256": "dab783c86db09ea7eb5c76613f9755b9c8880ed4e4fb2f35749007a626e3a712",
+          "status": "CHANGES_REQUIRED",
+          "report": "src/sources/papal-documents/english-visual-3.md",
+          "report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "findings": [
+            "Article II/Chapter I separated from paragraph 30 on page 4."
+          ],
+          "scope": "Rejected earlier layout, superseded; never a current PASS."
+        },
+        {
+          "pdf_sha256": "72d800eb2fd6fee691d904f99170dd17f9c0e72431c87e441760af01b39a8ce6",
+          "status": "CHANGES_REQUIRED",
+          "report": "src/sources/papal-documents/english-visual-3.md",
+          "report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "findings": [
+            "Chapter V subtitle split across page-5 columns."
+          ],
+          "scope": "Rejected earlier layout, superseded; never a current PASS."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus",
+      "language": "en",
+      "pdf_sha256": "fcbe69a6cc130687516201db16d9c02f9131cf1e17d54cc3b95e55356bfe543b",
+      "pages": 7,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-4.md",
+      "report_sha256": "5aef5665b1630fedc7a9dab8e179bab325c26fb2d3eaeb0505f7d4d00ddffdbc",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        "All seven physical pages opened individually at original detail; contact sheet opened.",
+        "No clipping, overlap, evident missing renderer glyph, stranded heading, or notice-only spill.",
+        "May 4 source heading versus May 9 catalog date is disclosed on final page and remains unresolved.",
+        "In-body OCR residue on pages 4 and 6 is present in body TeX; no lexical correction or full print collation claimed."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "f6651ef4976daa391feac66df22a311caf8fe742f5d6cac82bef36b9f3063b1e",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-1.md",
+          "report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.historical.leo-xiii-testem-benevolentiae-1899-01-22",
+      "language": "en",
+      "pdf_sha256": "4917810aaf680d34990c1e4fd5c1884001dcc5d015ad6498d25c2b8c21e59fbb",
+      "pages": 5,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        5
+      ],
+      "reused_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "43df5fb7570a5342fc9cbab1f007207f244cd1411fee79ef455d85c1bd7dda34",
+          "prior_raster_sha256": "43df5fb7570a5342fc9cbab1f007207f244cd1411fee79ef455d85c1bd7dda34",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "8091f425f9cfc2ae60d512003cbb50dcb1dd9d8f16510e2a0705be0fb6b2eb07",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "39c54160f8940da77184417a5e25213b7e22e21e8d94637b0ddb8a6f39383081",
+          "prior_raster_sha256": "39c54160f8940da77184417a5e25213b7e22e21e8d94637b0ddb8a6f39383081",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "8091f425f9cfc2ae60d512003cbb50dcb1dd9d8f16510e2a0705be0fb6b2eb07",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "6ac15f7e08aaf0699f84868fdc0b52102fe8befdf17ba3b73203cf29203dfd9e",
+          "prior_raster_sha256": "6ac15f7e08aaf0699f84868fdc0b52102fe8befdf17ba3b73203cf29203dfd9e",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "8091f425f9cfc2ae60d512003cbb50dcb1dd9d8f16510e2a0705be0fb6b2eb07",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 4,
+          "current_raster_sha256": "7ce28fc8cf419008dfaa4054f9f9cbe519b85c246692a632c0114305d37427a7",
+          "prior_raster_sha256": "7ce28fc8cf419008dfaa4054f9f9cbe519b85c246692a632c0114305d37427a7",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "8091f425f9cfc2ae60d512003cbb50dcb1dd9d8f16510e2a0705be0fb6b2eb07",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "8091f425f9cfc2ae60d512003cbb50dcb1dd9d8f16510e2a0705be0fb6b2eb07",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-1.md",
+          "report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-25051899-annum-sacrum",
+      "language": "en",
+      "pdf_sha256": "d4e1c3a38bba0c4f7db6e07aef783376c7360dc451d095933cbcdd740c0b4359",
+      "pages": 3,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        3
+      ],
+      "reused_pages": [
+        1,
+        2
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "a89d60e798ed64af3f5fb8a00f7f03d569d3d4bc5d14f622205b90ff2ad8689d",
+          "prior_raster_sha256": "a89d60e798ed64af3f5fb8a00f7f03d569d3d4bc5d14f622205b90ff2ad8689d",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "777f6599f332d40439e765df6b6605abd0e2075b93513a833f9e9ce76bc75275",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "dd321b4c458bef9b546855b0334b4d55a7d6fb8c1608a1b7de86d27c092c41b1",
+          "prior_raster_sha256": "dd321b4c458bef9b546855b0334b4d55a7d6fb8c1608a1b7de86d27c092c41b1",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "777f6599f332d40439e765df6b6605abd0e2075b93513a833f9e9ce76bc75275",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "777f6599f332d40439e765df6b6605abd0e2075b93513a833f9e9ce76bc75275",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-1.md",
+          "report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-01111900-tametsi-futura-prospicientibus",
+      "language": "en",
+      "pdf_sha256": "ead52013c51ac33349c208d57856ce844361ecaaadde98c49a38248995ba4493",
+      "pages": 6,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-4.md",
+      "report_sha256": "5aef5665b1630fedc7a9dab8e179bab325c26fb2d3eaeb0505f7d4d00ddffdbc",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        "All six physical pages opened individually at original detail; contact sheet opened.",
+        "No clipping, overlap, evident missing renderer glyph, stranded heading, or notice-only spill.",
+        "Page 2 solid square before Luke i. 33 is literal U+25A0 in body TeX and the declared OCR-corroborated partial marker repair at container line 2943; source noise, not a missing glyph.",
+        "Page 6 closing sentence has one-line continuation at right-column top, nonblocking; final source/revision/rights notices remain legible."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "32b8bc752ab169850adba40799ae43605c00ba1344eb9169721fc138dc8ed9b8",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-3.md",
+          "report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-18011901-graves-de-communi-re",
+      "language": "en",
+      "pdf_sha256": "df2e1778f98b817d10023cc90f746db29084bb2e7cb73e26bfa3e0b5d4044702",
+      "pages": 6,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-1.md",
+      "report_sha256": "5f12a1794f24f14861f7be29234d9f4f0b3c4d40a230c5413e1d133c3116d8a1",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        "Retained word/OCR damage remains, including Sa\\dour on page 2, and source note-marker/inline-note irregularities on page 3. These are distinct from a missing font glyph or disrupted page-column flow."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "e2e22cdf894db2fb8c4ffa42944b4598cd5eca6348c6acf9f3ef52fbe0c487a4",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-1.md",
+          "report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.historical.leo-xiii-paris-archbishop-letter-1900-12-23",
+      "language": "en",
+      "pdf_sha256": "24d3426b5fb9b7f90df54af1298752ccf18245060e4e37513c1754aa8da42555",
+      "pages": 4,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-3.md",
+      "report_sha256": "2e433137a98879c3a487ececbf2f4d053c4d0dc4b03d95969f2b5d1425ca6387",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        "p. 1: Title, issuer, date, language, and source heading are clear. “ORIGIN AND OBJECT.” and “SERVICES TO CIVIL SOCIETY.” each stay with the beginning of their following prose. Retained OCR punctuation and word damage remain visible.",
+        "p. 2: Normal full-page continuation between columns; no clipping or detached heading. Recognition errors remain visible in the source prose.",
+        "p. 3: Continuous dense body with clear margins, intact column order, and no heading split or overlap.",
+        "p. 4: Closing paragraphs and Apostolic Benediction precede the source notice. The notice declares 1 repaired span (1 intact reversal, no partial marker repairs), residual errors and outstanding collation, and revision `2026-10-26T05:10:28Z`. Source and rights text are readable and separate. This sparse final left column retains substantive source text; it is not an apparatus-only or rights-only spill."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "f008fd0a7a2618f97235c24d1cc3d463307c360a63dcc4aaa1e3c5b2e4be54b1",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-4.md",
+          "report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.historical.leo-xiii-french-religious-superiors-letter-1901-06-29",
+      "language": "en",
+      "pdf_sha256": "d2bbe84b121c28222d576c83b093fb6c4cd5d38f77fbe799e2f2ca761c50c91a",
+      "pages": 3,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-2.md",
+      "report_sha256": "1fbb519f5a2eaee94d2aeff67a7b9836c28b57033f75f15485ea81a6771d39a0",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        "Long title wraps to two centered lines within margins with identification attached. Retained II. Letter heading and At all times opening visible.",
+        "Clear column and page continuation; inline Acts V. 41. source reference visible in left column.",
+        "Body proceeds into right-column closing blessing and ends true to Us in the Lord. Source qualification, revision and complete rights colophon follow legibly in that column without splitting or spill."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "093b2b7e36731fab14b9ec4db9b8d07bb2ccdf00310e4fd15e7b1ca61b7e9f13",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-3.md",
+          "report_sha256": "7383bffb661ddb5e32e1a859702a3d4ba1ea049ad7568fa04d4fed2cb612333e",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-15041902-in-amplissimo",
+      "language": "en",
+      "pdf_sha256": "2c28f2aab65235ee3e8928c1333315a730476cfa93ae2ce9f391240678778e0a",
+      "pages": 2,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        2
+      ],
+      "reused_pages": [
+        1
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "c7daf22119734b4ce14e71e95675bc5cb6d6133566e4fbbe7f1fcdcb412706d1",
+          "prior_raster_sha256": "c7daf22119734b4ce14e71e95675bc5cb6d6133566e4fbbe7f1fcdcb412706d1",
+          "prior_report": "src/sources/papal-documents/english-visual-1.md",
+          "prior_report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "prior_pdf_sha256": "d998ab15553ada771b912ac2e28a6ab43a3c420e9b8b3457a96f95f1accf6d3a",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "d998ab15553ada771b912ac2e28a6ab43a3c420e9b8b3457a96f95f1accf6d3a",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-1.md",
+          "report_sha256": "9f08dbb8bfbdba76cdc190bdc3bbcb9b242ecfd201e3aa8e6d71dad769e2c433",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-28051902-mirae-caritatis",
+      "language": "en",
+      "pdf_sha256": "4a0dc8eb574cc54a566ffbf1d3a4e433c72862a8988f6c83b53689afdea5fe82",
+      "pages": 7,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-4.md",
+      "report_sha256": "5aef5665b1630fedc7a9dab8e179bab325c26fb2d3eaeb0505f7d4d00ddffdbc",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        "All seven physical pages opened individually at original detail; contact sheet opened.",
+        "Readable sequential columns, intact Miræ ligature and em dashes.",
+        "Closing body, source notes [1]–[10], source/revision/rights notices fit on page 7.",
+        "Residual OCR and split words remain disclosed; no full print collation claimed."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "f7c7f998dcec3073ac1220c74cf11f0180b1cc7a0b15603358ee3cd6dbc6e48b",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-2.md",
+          "report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-apl-19021030-vigilantiae-studiique",
+      "language": "en",
+      "pdf_sha256": "6a5b6e6b2f4ad31e5f6d8184b4eacf6336c8027f092843d4ea9ac46d698d3179",
+      "pages": 3,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        3
+      ],
+      "reused_pages": [
+        1,
+        2
+      ],
+      "reuse_proofs": [
+        {
+          "page": 1,
+          "current_raster_sha256": "23176704d27faf261e39ffd92b0925f9126636e59f889c08609af348802c8363",
+          "prior_raster_sha256": "23176704d27faf261e39ffd92b0925f9126636e59f889c08609af348802c8363",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "ac814015782b0ad86c0c07f5ea4ff5030060a585928e3367d7db5ab1833da051",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 2,
+          "current_raster_sha256": "9dafac8b274dd52c883108b15dfbb2c236c190c6cae236540368a689e7c87d57",
+          "prior_raster_sha256": "9dafac8b274dd52c883108b15dfbb2c236c190c6cae236540368a689e7c87d57",
+          "prior_report": "src/sources/papal-documents/english-visual-4.md",
+          "prior_report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "prior_pdf_sha256": "ac814015782b0ad86c0c07f5ea4ff5030060a585928e3367d7db5ab1833da051",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "ac814015782b0ad86c0c07f5ea4ff5030060a585928e3367d7db5ab1833da051",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-4.md",
+          "report_sha256": "79d6b667e1f4a77583d60418686c129509198bcdf6659ce4748133dcef6d0205",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    },
+    {
+      "id": "papal.historical.leo-xiii-philippines-1903-excerpt",
+      "language": "en",
+      "pdf_sha256": "2cd08db667a4208637b66a77baaf0163e9d1cbe2b2bc1da413a09b261823ee65",
+      "pages": 4,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-continuity.md",
+      "report_sha256": "2571ae7e38ecdb270c39e417c0cdf53f0f02640950ed6062a015a71c4f6595fa",
+      "individually_inspected_pages": [
+        1,
+        4
+      ],
+      "reused_pages": [
+        2,
+        3
+      ],
+      "reuse_proofs": [
+        {
+          "page": 2,
+          "current_raster_sha256": "a30d96f2c9e34adfac084bd8955b410dbdc2881949cf0d3bb8a4c1cd350ccd32",
+          "prior_raster_sha256": "a30d96f2c9e34adfac084bd8955b410dbdc2881949cf0d3bb8a4c1cd350ccd32",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "19386442d47b379b0116d5679f57d4c35355d3300257b2c51c0de6aaf7c6ffb1",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        },
+        {
+          "page": 3,
+          "current_raster_sha256": "c4a0506150911a55f3edf83d3c91e1649f288478e768e40188097ee7a31fda89",
+          "prior_raster_sha256": "c4a0506150911a55f3edf83d3c91e1649f288478e768e40188097ee7a31fda89",
+          "prior_report": "src/sources/papal-documents/english-visual-2.md",
+          "prior_report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "prior_pdf_sha256": "19386442d47b379b0116d5679f57d4c35355d3300257b2c51c0de6aaf7c6ffb1",
+          "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+          "equality_method": "complete PNG byte equality; SHA256 and file size verified against both tools/pdf-review cache manifests"
+        }
+      ],
+      "findings": [
+        "Changed final source/revision/rights notice pages were individually inspected and remain readable and unclipped; no new apparatus-only physical page.",
+        "Page 1 title/issuer/language identification was additionally inspected after omission of a null act date; the explicit historical abridgment remains identified on page 4."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment.",
+        "Historical translator expressly omits terminal legal clauses; this selection is an abridged excerpt and its act date is unrecorded here."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "19386442d47b379b0116d5679f57d4c35355d3300257b2c51c0de6aaf7c6ffb1",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-2.md",
+          "report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        },
+        {
+          "pdf_sha256": "2bf191a8edc510e9d847403e160b1e25bd462d10d1d37909ebb696c11e1da8be",
+          "status": "CHANGES_REQUIRED",
+          "report": "src/sources/papal-documents/english-visual-2.md",
+          "report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "findings": [
+            "Common colophon split into an orphan continuation on page 4."
+          ],
+          "scope": "Rejected earlier layout, superseded; never a current PASS."
+        }
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-apl-19020319-vigesimo-quinto-anno",
+      "language": "en",
+      "pdf_sha256": "a314c75c1fd217fae659bf239dbc4f2c0d70525fde0d3559aa17f7cea8385a49",
+      "pages": 10,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-encoding-visual-3.md",
+      "report_sha256": "2e433137a98879c3a487ececbf2f4d053c4d0dc4b03d95969f2b5d1425ca6387",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        "p. 1: Title, issuer, date, and language are clear. Source heading and opening follow immediately; the left-to-right continuation is intact. OCR word damage and inherited spaced hyphens remain visible.",
+        "p. 2: Both columns continue normally. Stray punctuation and an embedded St John citation remain visible within the retained transcription.",
+        "p. 3: Dense but readable continuous body; the column and page continuations are intact. Inherited broken words and paragraph interruptions remain visible.",
+        "p. 4: Clear body boundaries and margins; no overflow. OCR word damage and internal word splits remain visible.",
+        "p. 5: Normal two-column continuation without clipping or collision. Several retained malformed words and separated word fragments remain visible.",
+        "p. 6: Dense body and embedded citation fit within the columns. Retained OCR substitutions and punctuation noise remain visible.",
+        "p. 7: Body continues correctly between columns and onto page 8. Retained carets and word-recognition noise remain visible.",
+        "p. 8: Both columns remain readable and unclipped. Retained malformed words and punctuation remain visible.",
+        "p. 9: Normal page flow. The right column visibly retains running-head/page debris, `REVIEW OF HIS PONTIFICATE. 57\\f`, and a filled black square after “immediate contact”. Direct inspection of the generated body TeX confirms a literal U+25A0 square at that locus; it is source content rendered as supplied, not a font replacement glyph.",
+        "p. 10: Closing prayer and blessing, then historical note [1], appear above the source notice. The notice declares 9 repaired spans (8 intact reversals and 1 partial marker repair), residual OCR word/source-date errors, outstanding full print collation, and revision `2026-10-26T05:10:28Z`. The compact rights colophon is readable and separate. This sparse final page contains substantive source text and is not an apparatus-only or rights-only spill."
+      ],
+      "limitations": [
+        "Visual layout review only; retained English transcriptions still contain substantial OCR word errors, broken words, intrusive source notes and running-head debris.",
+        "The 205 adopted changes repair declared character-encoding spans only; source-heading date discrepancies remain explicit and no full historical print collation is claimed.",
+        "A layout PASS does not establish textual accuracy, official English wording, translation verification, installation, publication or deployment."
+      ],
+      "history": [
+        {
+          "pdf_sha256": "44f3163c7bb23243bd0ce9aeb3d576c003d44e294004c504929bb9b2f0f53502",
+          "status": "PASS",
+          "report": "src/sources/papal-documents/english-visual-2.md",
+          "report_sha256": "736808066a94ff894b22e1d81dd18d21959b89a50218b02a2dc9a54a8ae10d44",
+          "scope": "Prior hash-specific full-page layout review. Only pages explicitly listed in reused_pages carry forward through exact raster equality."
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "documents": 31,
+    "pages": 210,
+    "status": "PASS",
+    "individually_inspected_pages": 103,
+    "reused_pages": 107,
+    "changed_source_documents": 11,
+    "unchanged_source_documents": 20
+  },
+  "review_receipts": [
+    {
+      "path": ".scratch/english_encoding_review/lane-1/receipt.json",
+      "sha256": "5fde30be26a396122d01ea0f42b26ab74b3f0fa15fd6de37fe60268c7e88fc7d",
+      "report": "src/sources/papal-documents/english-encoding-visual-1.md",
+      "report_sha256": "5f12a1794f24f14861f7be29234d9f4f0b3c4d40a230c5413e1d133c3116d8a1"
+    },
+    {
+      "path": ".scratch/english_encoding_review/lane-2/receipt.json",
+      "sha256": "520e9ebb0123713b8bf2de237bb6bc76a72580e0501826f3e2c29426cd0a8e5b",
+      "report": "src/sources/papal-documents/english-encoding-visual-2.md",
+      "report_sha256": "1fbb519f5a2eaee94d2aeff67a7b9836c28b57033f75f15485ea81a6771d39a0"
+    },
+    {
+      "path": ".scratch/english_encoding_review/lane-3/receipt.json",
+      "sha256": "e4020676e9267e2defc03f08b429e9614f1973d956bfe58b9e009da386d43a03",
+      "report": "src/sources/papal-documents/english-encoding-visual-3.md",
+      "report_sha256": "2e433137a98879c3a487ececbf2f4d053c4d0dc4b03d95969f2b5d1425ca6387"
+    },
+    {
+      "path": ".scratch/english_encoding_review/lane-4/receipt.json",
+      "sha256": "9f9ce1a9c5cc9c9d10dd9c87c168475cece27b9d01dcc8ec659d78f44d88c9b0",
+      "report": "src/sources/papal-documents/english-encoding-visual-4.md",
+      "report_sha256": "5aef5665b1630fedc7a9dab8e179bab325c26fb2d3eaeb0505f7d4d00ddffdbc"
+    }
+  ]
+}

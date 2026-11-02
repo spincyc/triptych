@@ -25,6 +25,7 @@
   const storageKey = 'triptych:catalogue:' +
     location.pathname.replace(/\/index\.html$/, '/') + location.search;
   const webRoot = new URL('../web/', document.currentScript.src);
+  const printRoot = new URL('../print/', document.currentScript.src);
   const siteRoot = new URL('../', document.currentScript.src);
   const libraryRoot = new URL('library/', siteRoot);
 
@@ -52,6 +53,7 @@
       const referrer = new URL(document.referrer);
       return referrer.origin === siteRoot.origin &&
         (referrer.pathname.startsWith(webRoot.pathname) ||
+         referrer.pathname.startsWith(printRoot.pathname) ||
          referrer.pathname.startsWith(libraryRoot.pathname) ||
          referrer.pathname === siteRoot.pathname ||
          referrer.pathname === siteRoot.pathname + 'index.html');

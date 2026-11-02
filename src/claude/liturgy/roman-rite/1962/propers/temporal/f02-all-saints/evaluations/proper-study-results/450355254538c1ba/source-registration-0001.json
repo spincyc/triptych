@@ -1,0 +1,254 @@
+{
+  "admitted_passage_ids": [
+    "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-10",
+    "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-11",
+    "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-12",
+    "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-4",
+    "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-9"
+  ],
+  "advisory_findings": {
+    "RES-009": "Already carried in research/scope.md 5.2/6.3 and research/interpretations.md (De serm. Dom. quoted with the following sentence); no change needed.",
+    "RES-010": "Already carried in research/scope.md 3.5/3.7 and research/interpretations.md lines 111-114, 453 and 501 (hac nocte is the night office); the Bernard sermo 5 n. 3 disposition row now says so too."
+  },
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/source-dispositions.toml",
+  "checks": {
+    "make -k check-sources": "fails only at check-document-catalogue (homily.tex and synthesis.tex not yet written, expected) and check-publication-inventories (claude-publications-v1.toml stale hashes and missing paths for the open f02 revision, expected); the other components ran and passed",
+    "make check-source-family-migration": "fails: pinned canonical_catalog_snapshot is stale (inherited from iteration 0's registrations; ledger owner re-pins)",
+    "make source-projection": "pass (1081 works, 1312 editions, 3951 artifacts, 9118 passages)",
+    "proper-study binding-digests": "pass (93 bindings)",
+    "proper-study check --phase research --require-presentation --require-format --require-authority --require-orientation --require-orientation-v2 --require-source-dispositions": "pass",
+    "proper-study source-dispositions": "pass",
+    "tools/source-library validate": "valid: artifact=3951 corpus=5 edition=1312 passage=9118 segment=125 work=1081 bindings=4357"
+  },
+  "defects_for_other_owners": [
+    "src/sources/inventories/source-family-migration-v1.toml: canonical_catalog_snapshot is stale; the ledger owner must re-pin it.",
+    "src/sources/inventories/claude-publications-v1.toml: stale hashes and missing paths for the f02 leaf files while the revision is open.",
+    "author-standing-v1.toml has no rows for Bernard, Cyprian, Victorinus, Bonaventure, Alphonsus Liguori or Peter of Celle.",
+    "No work record exists for Bernard's sermons In transitu S. Malachiae or for Peter of Celle's writings; the PL 202 text layer is filed under John Beleth.",
+    "The library holds no Latin of Cyprian Ad Fortunatum, Augustine De sermone Domini or Sermon LXI [CXI], Victorinus on the Apocalypse, or Gregory's Moralia.",
+    "passage-commentary-index.yaml has no mapping for Wis 3:1-3; no passage records exist for Bede on Apoc 7:1-3 or for any deferred excerpt.",
+    "The Quaracchi vol. 6 OCR reads Iustorum as lustorum; Honorius's Gemma animae locus grammar admits book IV only; Fromage's volume admits printed pages only.",
+    "source-containment-v1.toml Victorinus extent (Rev 1, 5, 19) does not match the ANF text read (chs. 7, 12).",
+    "calendar roman-1962 propers.yaml omnium-sanctorum: Gospel Mt 5:1-12 for 5:1-12a; Offertory Wis 3:1-3 entire; no Preface case.",
+    "test_ordinary_appointments allSaintsSunday1962 asserts the common Preface, which the rubrics do not settle.",
+    "The proper-chronology generator renders the Apocalypse as 'Revelation'.",
+    "Provenance and translation inventories lack rows for the formulary's scriptural texts; formulary-loci is empty for it.",
+    "The Mame derivative 415a1d46 does not reproduce Mame's orthography; work.fsspx.ordo declares English but the responses are French.",
+    "The PL 35 Expositio in Apocalypsim is not represented as a work."
+  ],
+  "deferred_or_rejected": {
+    "alphonsus-preparation-for-death-ninth-consideration": [
+      "passage-record",
+      "original-language-text",
+      "page-image-collation"
+    ],
+    "aquinas-in-matthaeum-5-venice-1745": [
+      "passage-record",
+      "verified-transcription"
+    ],
+    "aquinas-summa-i-23-7": [
+      "scripture-extent",
+      "passage-record"
+    ],
+    "aquinas-super-matthaeum-5-10-leonine": [
+      "passage-record",
+      "publishable-rights"
+    ],
+    "aquinas-super-matthaeum-5-lect-2-turin": [
+      "passage-record",
+      "publishable-rights"
+    ],
+    "aquinas-super-psalmos-32-1": [
+      "passage-record",
+      "page-image-collation"
+    ],
+    "aquinas-super-psalmos-33-10-11": [
+      "passage-record",
+      "page-image-collation"
+    ],
+    "augustine-de-sermone-domini-i-3-10-i-4-12": [
+      "passage-record",
+      "original-language-text"
+    ],
+    "augustine-enarrationes-ps-32-1": [
+      "passage-record",
+      "page-image-collation"
+    ],
+    "augustine-enarrationes-ps-33-sermo-2": [
+      "passage-record",
+      "page-image-collation"
+    ],
+    "augustine-enarrationes-ps-87-5-wis-3-1": [
+      "passage-record",
+      "natural-excerpt-boundary",
+      "page-image-collation"
+    ],
+    "augustine-enchiridion-29": [
+      "scripture-extent",
+      "passage-record",
+      "publishable-rights"
+    ],
+    "augustine-sermon-61-few-saved": [
+      "passage-record",
+      "original-language-text"
+    ],
+    "basil-homilia-in-ps-32-n1": [
+      "passage-record",
+      "page-image-collation"
+    ],
+    "basil-homilia-in-ps-33-nn-6-7": [
+      "passage-record",
+      "greek-original-collation"
+    ],
+    "basil-homilia-in-ps-33-pg29-facsimile": [
+      "passage-record",
+      "greek-original-collation"
+    ],
+    "bede-explanatio-apocalypsis-7-1-3-scan": [
+      "passage-record"
+    ],
+    "bellarmine-in-ps-32-1": [
+      "passage-record",
+      "unabridged-text",
+      "latin-original"
+    ],
+    "bellarmine-in-ps-33-10-11": [
+      "passage-record",
+      "unabridged-text",
+      "latin-original"
+    ],
+    "bernard-in-transitu-malachiae-sermo-2-n5": [
+      "passage-record",
+      "page-image-collation",
+      "work-record"
+    ],
+    "bernard-omnium-sanctorum-sermo-1-beatitudes": [
+      "passage-record",
+      "verified-transcription",
+      "page-image-collation"
+    ],
+    "bernard-omnium-sanctorum-sermo-2-n1-intercession": [
+      "scripture-extent",
+      "passage-record",
+      "verified-transcription"
+    ],
+    "bernard-omnium-sanctorum-sermo-2-n4-souls-rest": [
+      "passage-record",
+      "page-image-collation"
+    ],
+    "bernard-omnium-sanctorum-sermo-5-n2-apoc-7-14": [
+      "passage-record",
+      "verified-transcription"
+    ],
+    "bernard-omnium-sanctorum-sermo-5-n3-timete": [
+      "passage-record",
+      "verified-transcription"
+    ],
+    "bernard-omnium-sanctorum-sermo-5-n5-veneration": [
+      "scripture-extent",
+      "passage-record",
+      "page-image-collation"
+    ],
+    "bernard-pl183-ocr-read-columns": [
+      "passage-record",
+      "page-image-collation"
+    ],
+    "bernard-pl183-scan-image-read-columns": [
+      "passage-record",
+      "verified-transcription"
+    ],
+    "bonaventure-in-sapientiam-3-1-3": [
+      "passage-record",
+      "page-image-collation"
+    ],
+    "chrysostom-hom-in-matt-15": [
+      "passage-record",
+      "original-language-text"
+    ],
+    "chrysostom-hom-in-matt-28-3-wis-3-1": [
+      "passage-record",
+      "original-language-text"
+    ],
+    "chrysostom-hom-in-matt-38-3": [
+      "passage-record",
+      "original-language-text"
+    ],
+    "cyprian-ad-fortunatum-11": [
+      "passage-record",
+      "original-language-text",
+      "page-image-collation"
+    ],
+    "expositio-in-apocalypsim-pl35-homilia-6": [
+      "work-record",
+      "attribution",
+      "passage-record"
+    ],
+    "fromage-communion-three-beatitudes": [
+      "passage-record",
+      "page-image-collation"
+    ],
+    "fromage-offertory-wisdom": [
+      "passage-record",
+      "page-image-collation"
+    ],
+    "gregory-homiliae-in-evangelia-34-11": [
+      "scripture-extent",
+      "passage-record",
+      "page-image-collation"
+    ],
+    "gregory-moralia-xii-6-wis-3-2": [
+      "passage-record",
+      "original-language-text",
+      "page-image-collation"
+    ],
+    "hilary-in-matthaeum-iv-1-9": [
+      "passage-record",
+      "page-image-collation"
+    ],
+    "peter-of-celle-pl202-wis-3-1-uses": [
+      "passage-record",
+      "work-record",
+      "page-image-collation"
+    ],
+    "schuster-sacramentary-v-all-saints-chapter": [
+      "passage-record",
+      "natural-excerpt-boundary"
+    ],
+    "schuster-sacramentary-v-all-saints-ocr": [
+      "passage-record",
+      "page-image-collation"
+    ],
+    "sicard-mitrale-ix-49": [
+      "passage-record",
+      "page-image-collation"
+    ],
+    "victorinus-in-apocalypsin-12-6": [
+      "passage-record",
+      "recension-identity",
+      "original-language-text",
+      "page-image-collation"
+    ],
+    "victorinus-in-apocalypsin-7-2-9": [
+      "passage-record",
+      "recension-identity",
+      "original-language-text",
+      "page-image-collation"
+    ]
+  },
+  "disposition": "PASS",
+  "iteration": 1,
+  "registered_source_ids": [],
+  "registration_note": "No new registration was needed: every source iteration 1 of the research stage read, searched or used to locate a passage was already registered and is bound (bindings 58-93). The local text-layer extraction of the 1962 facsimile used for one search is not registered; its claim rests on the bound facsimile's page image.",
+  "row_counts": {
+    "admitted": 6,
+    "deferred": 45,
+    "not-commentary": 61
+  },
+  "rows": 112,
+  "scope_corrections": [
+    "research/scope.md section 10: a note that iteration 1 needed no new registration, the missing work records (Bernard's sermons on Malachy, Peter of Celle) and Latin originals (Cyprian Ad Fortunatum, Augustine De sermone Domini and Sermon LXI [CXI], Victorinus, Gregory Moralia), and the unregistered local text layer of the 1962 facsimile.",
+    "research/scope.md section 11: Basil on Ps 32 n. 1 was read on the OCR of both columns."
+  ],
+  "stage": "source-registration",
+  "summary": "This dispatch reconciled research/source-dispositions.toml with the 93 bindings the research iteration left, re-pinning the 15 changed bindings, correcting their loci and extents, and adding rows for bindings 58-93 and for the newly read loci of widened bindings, so that every binding is covered and the disposition checker passes."
+}

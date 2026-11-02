@@ -1,0 +1,72 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-html",
+   "byte_size": 78456,
+   "edition_owned": true,
+   "id": "artifact.papal.pius-xi.hf-p-xi-apl-19250531-beatus-vianney.2026-10-26-vatican-la.html",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "restricted",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/content/pius-xi/la/apost_letters/documents/hf_p-xi_apl_19250531_beatus-vianney.html",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "normalized-transcription",
+   "byte_size": 42715,
+   "edition_owned": true,
+   "id": "artifact.papal.pius-xi.hf-p-xi-apl-19250531-beatus-vianney.2026-10-26-vatican-la.latin-text-d0b7eda149e3",
+   "media_type": "text/plain",
+   "notes": "Normalized transcription, not a facsimile or critical edition. Historical Latin wording is public domain in the United States; portal markup and translations have separate rights. Historical witness: Acta Apostolicae Sedis 17 (1925), pp. 465-481. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Original historical wording identified in Acta Apostolicae Sedis 17 (1925), pp. 465-481, published by 1930. United States expired-term assessment under 17 U.S.C. 304 and 305; qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. The preexisting wording remains distinct from modern HTML, creative revision and translations under 103(b). See src/sources/inventories/papal-documents-rights-v1.toml for the primary authorities and jurisdictional limits. ",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.vatican.va/content/pius-xi/la/apost_letters/documents/hf_p-xi_apl_19250531_beatus-vianney.html",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "corrected-normalized-transcription",
+   "byte_size": 42712,
+   "edition_owned": true,
+   "id": "artifact.papal.pius-xi.hf-p-xi-apl-19250531-beatus-vianney.2026-10-26-vatican-la.latin-text-d9935c4e9402",
+   "media_type": "text/plain",
+   "notes": "Normalized transcription, not a facsimile or critical edition. Historical Latin wording is public domain in the United States; portal markup and translations have separate rights. Historical witness: Acta Apostolicae Sedis 17 (1925), pp. 465-481. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions. Three private-use abbreviation markers in Ssm̅um, Ssm̅i and Ssm̅ae are represented as Unicode combining overline U+0305, following the visible strokes above m in the original printed pages (AAS 17, pp. 473, 478 and 481). This is a declared transcription of those three signs; no letters are expanded or supplied.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Original historical wording identified in Acta Apostolicae Sedis 17 (1925), pp. 465-481, published by 1930. United States expired-term assessment under 17 U.S.C. 304 and 305; qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. The preexisting wording remains distinct from modern HTML, creative revision and translations under 103(b). See src/sources/inventories/papal-documents-rights-v1.toml for the primary authorities and jurisdictional limits. ",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.vatican.va/content/pius-xi/la/apost_letters/documents/hf_p-xi_apl_19250531_beatus-vianney.html",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Holy See web presentation",
+  "date": "2026-10-26",
+  "editors": [],
+  "id": "edition.papal.pius-xi.hf-p-xi-apl-19250531-beatus-vianney.2026-10-26-vatican-la",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Holy See web delivery identified from its official index on 2026-10-26",
+  "title": "Christi nomen, Decretal Letter — Holy See la web delivery",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Pius XI",
+  "category": "apostolic-letter",
+  "description": "Papal act dated 1925-05-31; identified from the Holy See index. Index metadata establishes discovery identity, not whole-text verification. https://www.vatican.va/content/pius-xi/en/apost_letters.index.html https://www.vatican.va/content/pius-xi/it/apost_letters.index.html",
+  "id": "work.papal.pius-xi.hf-p-xi-apl-19250531-beatus-vianney",
+  "languages": [
+   "la"
+  ],
+  "title": "Christi nomen, Decretal Letter"
+ }
+}

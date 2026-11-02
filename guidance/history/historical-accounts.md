@@ -7,6 +7,10 @@ biography, or an apparition judgment is the governing task. A bounded module in
 one of those fields names and follows its additional profile; historical
 practice alone never establishes present doctrine or law.
 
+Declare the leaf's type, source roles, contract version, and ordered outputs in
+`publication.toml` under [document schemas](../document-schemas.md). A parish
+history also declares its required pastor-succession role.
+
 Use a stable descriptive series slug, two-digit leaf ordinal, and matching
 catalog key such as `BT-01`. The ordinal records series order, not chronology or
 importance.

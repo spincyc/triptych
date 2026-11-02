@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-30",
+  "effects": [
+    {
+      "after_sha256": "c49c297448306c07ab5eed605ddce48894a2e2f3bda1783966e498ffb70eb997",
+      "before_sha256": "d13ba84c2d93b9ca77b68e9a4746bcdff9ff6d23c42be57a9c508d86e329f464",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "after_sha256": "08f442f03f0f99b994c298e5f647c4f22dd31de2022b923e79f1a8d8c9aefb7b",
+      "before_sha256": "c26a17afd887543e44b6d10eeada1b2aa431d306265fd308d8de56291edbd954",
+      "path": "tools/tests/test_current_source_batch_latin.py"
+    },
+    {
+      "after_sha256": "ca62b45f00dbe2811c08cd77e60d82a910d653f29d58622d60a882e3049919cc",
+      "before_sha256": "2730511674d6e86e3e04da759e7fe4bf6e7f453f988586e4a85c38a3cac70233",
+      "path": "tools/tests/test_calendar_translation_overlay.py"
+    }
+  ],
+  "review_sha256": "01e832f44734f02058a9599485818b69462bc8959244c34befdb9a8b93fa7d14",
+  "schema": "triptych-root-three-current-test-successors/v1",
+  "scope": "Follow the separately adopted finite22 plus two legacy qualifications and three PC study successors; retain original historical authorities, counts and refusals. No source or publication permission granted by these tests.",
+  "status": "applied by root; source-epoch rebind and current consumer execution pending",
+  "superseded_scratch_binding": "The first apply refused the stale earlier-review digest before any mutation; this application uses the separately pinned strengthened final review."
+}

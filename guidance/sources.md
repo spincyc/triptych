@@ -13,8 +13,8 @@ Apply these priorities in order:
 
 1. identify the intellectual work, edition or expression, delivery artifact,
    language, locus system, and rights basis without conflating them;
-2. keep distributable, reasonably sized, reusable source material in the
-   repository so an ordinary clone remains a useful research environment;
+2. keep canonical textual sources and metadata in Git, and preserve exact
+   binary evidence through explicit, hash-verified artifact delivery;
 3. distinguish material that is available or searchable from material actually
    inspected, verified, and used for a particular claim;
 4. share stable source identity and checked textual evidence while keeping each
@@ -168,6 +168,7 @@ Tracked source-library records use this hierarchy:
 ```text
 src/sources/
   README.md
+  artifact-delivery.json
   schema/
   works/<namespace>/<work>/
     work.toml
@@ -175,7 +176,7 @@ src/sources/
       edition.toml
       artifacts/<artifact>/
         artifact.toml
-        <distributable source files when retained>
+        <tracked textual payload when retained>
       segments/<segment>.toml
       passages/<passage>.toml
   corpora/<corpus>.toml
@@ -333,7 +334,7 @@ other reproducible derivatives belong under ignored `build/sources/`. They are
 not authoritative inputs. A retained normalized or diplomatic text needed by
 future research is an artifact under `src/sources/`, not a build cache.
 
-## Repository-first acquisition and storage
+## Source-first acquisition and storage
 
 Project research uses only publicly reachable sources. Do not purchase an
 edition, use a paid subscription, request or store access credentials, or ask
@@ -441,71 +442,107 @@ work that may be read and not republished is `remote` or `restricted` below —
 and it is now the whole of that work whose hash and bounds are recorded, rather
 than an arbitrary slice of it.
 
-Use these storage dispositions:
+Artifact records retain their existing storage dispositions:
 
-- **tracked** — the exact artifact is lawful to distribute from the repository,
-  reasonably sized, and materially improves reproducibility or reuse;
-- **remote** — the exact artifact is not retained because of demonstrated size,
-  duplication, or a stable authoritative/public delivery route, but its
-  retrieval location, acquired hash when known, and rights status are recorded;
-- **restricted** — lawful project access does not include repository
-  redistribution; tracked metadata may identify the artifact, but its bytes
-  must not enter Git, build products, tests, fixtures, or public artifacts; and
-- **unavailable** — the record identifies an expected or previously consulted
-  object whose exact bytes cannot presently be obtained or authenticated.
+- **tracked** — retained library evidence with an affirmative distribution
+  basis; textual payloads remain beside the manifest, while registered binary
+  payloads use the physical delivery sidecar below;
+- **remote** — bytes are not preserved by this library; record the exact
+  delivery route, acquired hash when known, measured reason and access limit;
+- **restricted** — project access does not authorize public redistribution;
+  metadata may identify it, but bytes must not enter Git, tests, public build
+  output, or a public artifact pack; and
+- **unavailable** — expected or previously consulted bytes cannot presently be
+  obtained or authenticated.
 
-Default to `tracked` for lawful, reasonably sized plain text and other reusable
-artifacts. Do not introduce a separate object service, credential requirement,
-large-file extension, or dedicated data repository until measured source size
-or rights constraints justify the contribution and distribution cost. A remote
-artifact that is necessary to reproduce a consequential claim must have an
-honest access limitation; a hash proves identity, not continuing availability.
+The distinction between retained evidence and a remote citation survives the
+storage migration. Keep lawful reusable text in Git when reasonably sized.
+Exact binary evidence is preserved outside Git, without recompression,
+re-encoding, changed hashes, or weakened rights. Source records and their
+frozen fingerprints do not change merely because the delivery location moves.
 
-**Retain the bytes locally. This is the project-wide default, and it is not
-confined to any one body of research.** Every source any part of this project
-relies on is kept in this repository wherever it lawfully can be. The test is
-concrete: a reader with no network, holding nothing but a checkout, must be able
-to reopen what a claim cites and read the words the claim quotes. `remote` is
-not a default, not a convenience, and not a disposition a lane may arrive at by
-omission. It has to be earned, one artifact at a time, by a reason written into
-that artifact's own record.
+### Exact binary delivery and offline access
 
-"Wherever possible" excludes three things, and nothing else excuses a source
-from being retained:
+`src/sources/artifact-delivery.json` is the physical delivery index, validated
+by `tools/artifact-store`. It records each exact payload's former canonical
+path, SHA-256, byte count, media type, archive and member, plus each bounded
+archive's own hash, extent and immutable delivery routes. It is a delivery
+contract, not a new source schema or a new intellectual source. Do not add
+physical-location fields to frozen artifact TOMLs or refresh reviewed binding
+fingerprints to make relocation pass. Segments and passages continue to pin
+the exact evidence they already name.
 
-- **Material the project may read but not republish.** Where lawful access does
-  not extend to redistribution, the bytes stay out and the record says so. This
-  is a statement about the exact artifact, never about the work printed inside
-  it. Where a host's presentation is the whole of the encumbrance, the
-  underlying text is still retained — as a separate derivative artifact, under
-  its own affirmative rights basis, linked to the exact artifact it came from.
-- **Genuinely restricted material** — behind a licence, a subscription, an
-  institutional credential, or a permission this project does not hold.
-- **Demonstrated size**, measured in the record in bytes. A 250 MB facsimile is
-  a size argument. A 27 KB article is not, and no lane may decline to retain one
-  on an unmeasured guess that its whole class is too large.
+The delivery index's version-1 archive contract also permits an explicit
+`delivery = "offline-only"` record with `urls = []`. This additive variant
+means that exact bytes were preserved in a verified local pack; it asserts no
+upload, public route or continuing remote availability. Existing public archive
+records retain their original fields and nonempty HTTPS routes. An offline-only
+archive cannot advertise a URL, and `--fetch` fails clearly if that archive is
+not already local. Ordinary metadata checks still work without its bytes.
 
-Nothing else will do. Not that the source is reachable online; not that a
-retrieval once succeeded; not that a hash was recorded, which proves identity
-and never continuing availability; not that the host would rather have the
-traffic; not that a retained copy would duplicate a public route, because a
-public route is precisely what fails the reader who has no network. Where the
-whole of an exact artifact cannot be retained but the part carrying the evidence
-can, retain that part as a derivative of the exact artifact, and record what the
-derivative leaves out.
+For a bounded addition, `tools/artifact-store pack --append --offline-only
+--path <source-evidence-path> --release <safe-label> --out <scratch-directory>`
+preserves only the selected tracked source-evidence binaries. Repeat `--path`
+for each payload. It verifies archive members before appending the new archive
+and entries, preserves all prior delivery declarations and their snapshot,
+and never resolves or repacks unrelated evidence. Repeating the same selection
+retains its existing declaration. The release label does not publish a release
+or construct a download URL in this mode. Retain the pack separately from a
+disposable checkout and use explicit-path `hydrate --archive-dir` to verify
+its exact cache roundtrip before removing originals. A later public route
+requires separate authorization and actual delivery verification.
 
-An artifact left `remote` or `restricted` while a consequential claim depends on
-it must carry its access limitation in its own record, in plain words: what is
-not retained, why that particular thing is not retained, and what a reader
-without the network can open instead. "Remote bytes are not retained" states the
-fact and gives no reason; it is not the limitation this rule asks for.
+A source checkout contains the canonical text and source/evidence graph.
+It no longer promises every facsimile or binary can be opened without a
+network. Optional offline packs restore the exact distributable evidence
+available in that pack, after archive and member hashes are checked. They
+cannot supply a restricted, unresolved, unavailable, or never-acquired
+witness. A hash proves identity, not availability, permission, or inspection.
+State those access limits honestly for consequential claims.
+
+The resolver uses verified original bytes or a content-addressed cache under
+`.scratch/artifact-cache/`. No normal check or site deployment implicitly
+fetches or hydrates evidence. Structural validation checks delivery metadata
+and preserved source pins; it must distinguish unhydrated evidence from
+verified local bytes. Reading, source-image inspection, extraction, or a full
+evidence audit requires the particular exact payload locally and must fail
+clearly when it is unavailable.
+
+Explicit commands distinguish those operations:
+
+```sh
+tools/artifact-store check --local
+tools/artifact-store check --archives --archive-dir .scratch/offline-packs
+tools/artifact-store hydrate --all --archive-dir .scratch/offline-packs
+tools/artifact-store check --require-local
+tools/source-library validate --full-evidence
+```
+
+Hydration from public releases additionally requires explicit `--fetch`.
+`tools/source-library validate` checks the source graph and declared delivery
+metadata without acquiring absent binary witnesses. `--full-evidence` requires
+the exact source payloads; adding `--fetch` explicitly permits their hydration.
+Use it only for registered, affirmatively distributable payloads. A proposed
+archive route is not proof that an upload exists: do not claim a remote pack
+or historical download is available before the actual delivery is verified.
+Keep publication binaries, source evidence and other historical binaries
+distinguishable in the sidecar. Historical PDF receipts remain exact records
+even when a current reader or print edition has a different identity.
+
+Before deleting an in-tree binary, prove that every owned byte is in a
+verified pack and that archive/member hashes reproduce the prior payload.
+Preserve attribution, notices, rights boundaries, support dependencies and
+exact source hashes. Public archive hosting requires the same per-artifact
+and per-surface distribution basis as public Git; a change of host supplies
+no new permission. Do not silently replace a rights-limited surface with a
+downloadable source package.
 
 Record rights per artifact, not merely per abstract work. Distinguish the
 underlying public-domain text from a host's markup, annotations, typography,
 database, or newly created transcription. Record the known public-domain
 jurisdiction and basis, license, permission, legal exception, restriction, or
-unresolved status. `tracked` requires an affirmative recorded distribution
-basis; online availability and successful download are insufficient.
+unresolved status. Retention and public delivery require an affirmative
+recorded basis; online availability and successful download are insufficient.
 
 **Settle a recurring rights question once, in a rights record.** Where the same
 question governs a whole body of material and keeps being reopened, the answer
@@ -534,9 +571,11 @@ derivatives in separate artifacts linked to their inputs. Do not silently
 correct raw OCR or represent a normalized derivative as a facsimile. A
 derivative's parent artifact must have an exact hash; a URL or mutable identity
 alone does not reproducibly identify the transformation input.
-Every tracked payload must remain beneath its own artifact manifest, be the only
-payload owned by that manifest, and be covered by the manifest's rights record.
-Unmanifested files and duplicate retained bytes fail validation.
+Every retained payload has exactly one owning artifact manifest and remains
+covered by its rights record. Tracked text lives beneath that manifest; binary
+bytes resolve through the sidecar at the manifest's unchanged canonical path.
+Unmanifested files, duplicate ownership, missing delivery entries, and changed
+bytes fail the appropriate structural or full-evidence validation.
 
 Do not rewrite exact source bytes merely to make an embedded relative link fit
 the canonical library layout. Map the literal reference to its separately
@@ -726,7 +765,7 @@ research receipts.
 
 ## Reading the library
 
-Four registered tools reach this library, and they do different jobs:
+The registered tools separate source identity, reading, migration, and physical delivery:
 
 | Tool | What it is for |
 | --- | --- |
@@ -734,6 +773,7 @@ Four registered tools reach this library, and they do different jobs:
 | `source-reader` | read the corpus — search it, step through a work passage by passage, and write `structure/sources` for the browser, under each record's own rights |
 | `source-inventory` | the publication-source inventory and its classification review |
 | `source-family-migration` | the reviewed family-migration ledger |
+| `artifact-store` | verify and explicitly hydrate exact binary delivery |
 
 A work is often held only inside another record: a Migne volume, an Opera
 omnia tome, an anthology, a periodical, or a whole-volume layer filed under one
@@ -763,6 +803,16 @@ as bytes. `tools/tpt source-reader list` reports the library's current extent �
 works, editions, artifacts, passages, and how many of those are readable here —
 and is the derivation to quote rather than a count typed into prose.
 
+`source-reader structure --check-receipt` checks the complete declared input
+membership and hashes plus the complete projection output set and hashes,
+without loading or hydrating binary evidence. Its receipt is
+`src/sources/inventories/source-reader-projection-receipt-v1.json`.
+`--record-receipt` first independently runs the full uncached
+`structure --check --strict` replay and writes only after unchanged inputs
+and outputs are proven. Code, source, policy and rights changes invalidate the
+receipt. It is a mechanical freshness record with `editorial_approval = false`,
+not evidence that a source was inspected or its content newly approved.
+
 ## Migration and gates
 
 Migrate through a dual-record period:
@@ -788,8 +838,11 @@ For an ordinary source-bearing change, refresh and review in this order:
    manually review any new family presence rather than expecting refresh to
    infer it;
 4. use `--accept-canonical-catalog` only after the source library validates and
-   every family with canonical IDs has received the ledger review required
-   below, including families whose own manifests did not change; and
+   changed canonical records and affected family memberships have been reviewed
+   under the ledger rules in `src/sources/inventories/README.md`. Unchanged
+   `membership_snapshot` pins retain their prior review; a bootstrap ledger with
+   `families = []` may accept catalog drift while owner reviews remain pending;
+   and
 5. run `make check-sources` before finalizing the change.
 
 `make check-sources` is the normal, non-completion gate: it validates the
@@ -798,8 +851,9 @@ checks the family ledger while permitting honestly pending review units. Run
 `make check-source-family-screening` only as the explicit family-screening
 completion audit; it fails until every exact review-unit surface is
 `family-screened`.
-Neither target asserts atomic citation coverage, and neither is an implicit PDF
-build dependency.
+Neither target asserts atomic citation coverage or full local binary
+availability. Full evidence validation is explicit; neither target is an
+implicit PDF-build or archive-hydration dependency.
 
 The migration inventory is a separate audit contract, not a source-manifest
 record type and not an extension of frozen source schema version 1. It must
@@ -837,6 +891,8 @@ rights, invalid loci, missing binding targets, and machine-local data. It must
 also report orphan sources, unbound candidate citations, stale evidence
 dependencies, and ambiguous legacy identities without silently resolving them.
 
-Adding source-library records alone does not require a PDF build. Any change to
-rendered citations, references, source excerpts, or imported source cards does.
-Build, inspect, and install every affected publication under its own profile.
+Adding source-library records alone does not require a PDF build. A change to
+rendered citations, references, source excerpts, or imported source cards
+requires review of the affected reader surfaces and source/evidence identities.
+When producing a print edition, apply the owning profile's print gates to the
+changed rendering; normal source releases do not regenerate the corpus.

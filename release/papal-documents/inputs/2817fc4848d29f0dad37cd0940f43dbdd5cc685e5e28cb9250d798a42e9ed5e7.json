@@ -1,0 +1,42 @@
+{
+  "packet": "57b",
+  "packet_sha256": "0491dd19474a3966cc61d46c6cd1f10e2a7a04a9019dd8727e12d0626e66644f",
+  "status": "PASS",
+  "documents": 1,
+  "pages": 7,
+  "canonical_report": "src/sources/papal-documents/encyclicals-refinement-cold-57b.md",
+  "canonical_copy_owner": "root",
+  "coordinator_final_pin_checks": 110,
+  "report": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b-aggregate/report.md",
+    "sha256": "29ce6e8d6225b992a8d4b39ffa6af1be168edecb3e3dc799c93b15e4244e2897"
+  },
+  "reviews": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b-aggregate/reviews.json",
+    "sha256": "2e3bd198b24798472581f75d74c24a57ffd46b6c725f539694a9a61e9c4f1715"
+  },
+  "verification": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b-aggregate/verification.json",
+    "sha256": "2d7ee2ce3e8fb992caa94f72efdfc128bbc46e73a3be2d7a5fb1c862826d460b"
+  },
+  "independent_declared_source_decisions": {
+    "review_level": {
+      "source_status": "PASS_BOUNDED_MECHANICAL_OCR_INTAKE",
+      "pdf_status": "PASS"
+    },
+    "documents": [
+      {
+        "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+        "language": "en",
+        "source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+        "source_intake_status": "PASS_BOUNDED_MECHANICAL_OCR_INTAKE",
+        "source_decision": {
+          "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/source-decision.json",
+          "sha256": "464e042ff7328ea297971c7abb42f11a9771d4432379cf8897014650b8d63c3f",
+          "byte_size": 5322
+        }
+      }
+    ],
+    "qualification": "Exact independent reviewer declarations; no broader source admission inferred."
+  }
+}

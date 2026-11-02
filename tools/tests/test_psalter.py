@@ -260,9 +260,9 @@ class TrackedTables(unittest.TestCase):
             if edition == psalter.WITNESS_EDITION:
                 continue
             with self.subTest(edition=edition):
-                found = sorted((psalter.WORKS / where).glob("verse-aliases-*/verse-aliases.tsv"))
-                self.assertEqual(len(found), 1)
-                with found[0].open(encoding="utf-8", newline="") as handle:
+                selected = projection._artifact((psalter.WORKS / where).parent, "verse-aliases", "verse-aliases.tsv")
+                self.assertIsNotNone(selected)
+                with selected.open(encoding="utf-8", newline="") as handle:
                     tracked = [
                         {key: row[key] or "" for key in psalter.ALIAS_COLUMNS}
                         for row in csv.DictReader(handle, delimiter="\t")
@@ -283,9 +283,9 @@ class TrackedTables(unittest.TestCase):
         """
         for edition, (_, where) in sorted(psalter.EDITIONS.items()):
             with self.subTest(edition=edition):
-                found = sorted((psalter.WORKS / where).glob("verse-aliases-*/verse-aliases.tsv"))
-                self.assertEqual(len(found), 1)
-                with found[0].open(encoding="utf-8", newline="") as handle:
+                selected = projection._artifact((psalter.WORKS / where).parent, "verse-aliases", "verse-aliases.tsv")
+                self.assertIsNotNone(selected)
+                with selected.open(encoding="utf-8", newline="") as handle:
                     columns = tuple(csv.reader(handle, delimiter="\t").__next__())
                 self.assertEqual(columns, psalter.ALIAS_COLUMNS)
 

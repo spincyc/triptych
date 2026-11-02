@@ -1,0 +1,87 @@
+{
+  "candidate_path": ".scratch/roman-english-completion-20261029/chants/finite3-final/candidate.json",
+  "candidate_sha256": "f8a94d64d90e3dc82e90a84f1e7587c17d40dba0649b8c82f8ac3acf40c45acb",
+  "authority_adopted": false,
+  "rows": [
+    {
+      "identity": [
+        "exaltatione-s-crucis",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "target_latin_sha256_UTF8_with_LF": "18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79",
+      "english_sha256_UTF8_no_added_LF": "43296ddf74c76bf5b91f48044e1438e4b363766bdf0071a21f61a1329580b755",
+      "source_base_latin_sha256_UTF8_with_LF": "90099afff86b22b0f9a4194e5eed4646a4f27cfd257e0e15950c0cc3519f0829",
+      "projection_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.cross-offertory-qualified",
+      "target_verification_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.finite-cross-offertory-target-20261029",
+      "publication_basis": "qualified-nonoriginal-adaptation",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "whole_historical_target_identity": false
+    },
+    {
+      "identity": [
+        "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+        "main",
+        "Offertory",
+        "all",
+        2
+      ],
+      "target_latin_sha256_UTF8_with_LF": "e88531b6aff711ffb42e4d411fc44e81d0f07c5836d36e34fe3570b33a8a3c96",
+      "english_sha256_UTF8_no_added_LF": "aae1c894bbd01f1de8f087e5690a10c4bac4c5cf4b55391b7ad30580fef3d6b2",
+      "source_base_latin_sha256_UTF8_with_LF": "457e0d1efcc368929a5bf7ca9b29c023318037db6fa867f4fd42cc52816efa8c",
+      "projection_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.damascene-paschal-offertory-qualified",
+      "target_verification_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.finite-damascene-paschal-offertory-target-20261029",
+      "publication_basis": "qualified-nonoriginal-adaptation",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "whole_historical_target_identity": false
+    },
+    {
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "target_latin_sha256_UTF8_with_LF": "f4e866f44553d4181484958a6e4d79ffe7d1e560a4a56f39c298b877093de446",
+      "english_sha256_UTF8_no_added_LF": "c362ea43d90e5479ac43aefcc20c270118f225e8e0de49944b4ca3a2fb6b772c",
+      "source_base_latin_sha256_UTF8_with_LF": "dd345ee2fcab6b3974007069754a1ae6974851a5276af44fac6133b329655c77",
+      "projection_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-offertory-qualified",
+      "target_verification_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.finite-queenship-offertory-target-20261029",
+      "publication_basis": "qualified-nonoriginal-adaptation",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "whole_historical_target_identity": false,
+      "english_conditional_span": [
+        {
+          "kind": "rubric",
+          "offset": 116,
+          "text": "(In Paschal time, Alleluia.)"
+        }
+      ],
+      "latin_conditional_span": [
+        {
+          "kind": "rubric",
+          "offset": 110,
+          "text": "(T. P. Alleluia.)"
+        }
+      ]
+    }
+  ]
+}

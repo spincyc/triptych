@@ -18,6 +18,10 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import _proper_study as study
 from _workflow import WorkflowEngine, WorkflowError
 from tools.tests.test_proper_components_v2 import fixture as component_fixture, save as save_components
+from tools.tests.test_workflow_proper_study_artifact_routing import legacy_workflow
+
+SCRATCH = ROOT / ".scratch/authoring-pipeline"
+SCRATCH.mkdir(parents=True, exist_ok=True)
 
 TLM = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
 PC = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
@@ -63,7 +67,7 @@ class DefinitionTests(unittest.TestCase):
             entry = self.stages[stage]
             stage = entry.get("next", entry.get("pass_transition"))
         for required in ("study-review", "derive-synthesis", "synthesis-review",
-                         "derive-homily", "homily-review", "visual-review", "web-review"):
+                         "derive-homily", "homily-review", "artifact-gates", "web-review"):
             self.assertIn(required, visited)
         self.assertLess(visited.index("web-review"), visited.index("install-publication"))
 
@@ -106,7 +110,7 @@ class DefinitionTests(unittest.TestCase):
         self.assertIn("--presentation orientation-v2 --write", (fragments / "research.md").read_text())
         for path in fragments.glob("*.md"):
             self.assertNotIn("orientation-v1", path.read_text(), path.name)
-        with tempfile.TemporaryDirectory() as directory:
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as directory:
             leaf = Path(directory)
             (leaf / "proper-components.toml").write_text(
                 'schema = 2\nchronology_presentation = "orientation-v1"\n')
@@ -138,7 +142,7 @@ class RegistryTests(unittest.TestCase):
                 study.identity(ROOT, invalid)
 
     def test_edition_and_authorization_are_exact(self):
-        with tempfile.TemporaryDirectory() as directory:
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as directory:
             root = Path(directory)
             path = root / "guidance/liturgy"
             path.mkdir(parents=True)
@@ -156,7 +160,7 @@ class RegistryTests(unittest.TestCase):
 
 class ReferenceOnlyTests(unittest.TestCase):
     def setUp(self):
-        self.tmp = tempfile.TemporaryDirectory()
+        self.tmp = tempfile.TemporaryDirectory(dir=SCRATCH)
         self.addCleanup(self.tmp.cleanup)
         self.root = Path(self.tmp.name)
         self.leaf = self.root / "src/gpt" / TLM
@@ -292,7 +296,7 @@ class ExecutionTests(unittest.TestCase):
     """Exercise routing using fixture verdicts; never seed a production run."""
 
     def test_homily_upstream_finding_reopens_all_dependent_reviews(self):
-        with tempfile.TemporaryDirectory() as directory:
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as directory:
             root = Path(directory)
             shutil.copytree(ROOT / "workflows", root / "workflows")
             pipeline_path = root / "workflows/pipelines/proper-study.json"
@@ -355,18 +359,19 @@ class ExecutionTests(unittest.TestCase):
                           "synthesis-review", "derive-homily", "homily-review"):
                 self.assertEqual(submitted.count(stage), 2, stage)
             self.assertEqual(submitted.count("research-review"), 1)
-            self.assertEqual(submitted.count("visual-review"), 1)
+            self.assertEqual(submitted.count("visual-review"), 0)
+            self.assertEqual(submitted.count("web-review"), 1)
 
 
 
 class ReviewSealExecutionTests(unittest.TestCase):
     def setUp(self):
-        temporary = tempfile.TemporaryDirectory()
+        temporary = tempfile.TemporaryDirectory(dir=SCRATCH)
         self.addCleanup(temporary.cleanup)
         self.root = Path(temporary.name)
         shutil.copytree(ROOT / "workflows", self.root / "workflows")
         path = self.root / "workflows/pipelines/proper-study.json"
-        pipeline = json.loads(path.read_text())
+        pipeline = legacy_workflow(json.loads(path.read_text()))
         pipeline["document_discovery"].pop("validator")
         for stage in pipeline["stages"]:
             if "review_input_command" in stage:
@@ -468,7 +473,7 @@ class ReviewSealExecutionTests(unittest.TestCase):
 
 class ResearchSealTests(unittest.TestCase):
     def setUp(self):
-        temporary = tempfile.TemporaryDirectory()
+        temporary = tempfile.TemporaryDirectory(dir=SCRATCH)
         self.addCleanup(temporary.cleanup)
         self.root = Path(temporary.name)
         self.leaf = self.root / "src/gpt" / TLM
@@ -520,7 +525,7 @@ class PostconciliarOwnerTests(unittest.TestCase):
     EDITION = "roman-missal-third-edition-en-us-2011"
 
     def setUp(self):
-        temporary = tempfile.TemporaryDirectory()
+        temporary = tempfile.TemporaryDirectory(dir=SCRATCH)
         self.addCleanup(temporary.cleanup)
         self.root = Path(temporary.name)
 
@@ -627,7 +632,7 @@ class EvidenceAndMetadataTests(unittest.TestCase):
         self.assertNotEqual(before, after)
 
     def test_finalizing_pure_metadata_preserves_content_review_but_changes_visual_seal(self):
-        temporary = tempfile.TemporaryDirectory()
+        temporary = tempfile.TemporaryDirectory(dir=SCRATCH)
         self.addCleanup(temporary.cleanup)
         root = Path(temporary.name)
         leaf = root / "src/gpt" / TLM
@@ -662,7 +667,7 @@ class EvidenceAndMetadataTests(unittest.TestCase):
 
 class SnapshotTests(unittest.TestCase):
     def setUp(self):
-        self.temporary = tempfile.TemporaryDirectory()
+        self.temporary = tempfile.TemporaryDirectory(dir=SCRATCH)
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
         self.leaf = self.root / "src/gpt" / TLM

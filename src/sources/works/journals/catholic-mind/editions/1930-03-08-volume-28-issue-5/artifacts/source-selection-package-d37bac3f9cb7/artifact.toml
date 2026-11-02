@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.journals.catholic-mind.1930-03-08-volume-28-issue-5.source-selection-package-d37bac3f9cb7"
+edition_id = "edition.journals.catholic-mind.1930-03-08-volume-28-issue-5"
+artifact_type = "source-selection-package"
+media_type = "application/json"
+storage = "tracked"
+retrieved = "2026-10-26"
+sha256 = "d37bac3f9cb79dda598c9036d5cf45f5746e8beecc3a261b31b552603e69aeba"
+byte_size = 775
+path = "src/sources/works/journals/catholic-mind/editions/1930-03-08-volume-28-issue-5/artifacts/source-selection-package-d37bac3f9cb7/package.json"
+indexable = false
+rights_status = "licensed"
+license = "CC-BY-4.0"
+rights_basis = "Project-created acquisition, selection and review metadata is licensed CC BY 4.0. Quoted historical wording retains its independently established public-domain status."
+provenance = "Project-created factual source acquisition/selection audit; no source-body words generated or corrected by a model."
+support_artifacts = [{artifact_id = "artifact.journals.catholic-mind.1930-03-08-volume-28-issue-5.ia-ocr-5893c834e731", embedded_reference = "sim_catholic-mind_1930-03-08_28_5_djvu.txt"}, {artifact_id = "artifact.journals.catholic-mind.1930-03-08-volume-28-issue-5.ia-facsimile-43e032a24e55", embedded_reference = "sim_catholic-mind_1930-03-08_28_5.pdf"}, {artifact_id = "artifact.journals.catholic-mind.1930-03-08-volume-28-issue-5.ia-xml-bdb7dcd3a510", embedded_reference = "sim_catholic-mind_1930-03-08_28_5_djvu.xml"}, {artifact_id = "artifact.journals.catholic-mind.1930-03-08-volume-28-issue-5.ia-page-labels-7348a06f64ed", embedded_reference = "sim_catholic-mind_1930-03-08_28_5_page_numbers.json"}, {artifact_id = "artifact.journals.catholic-mind.1930-03-08-volume-28-issue-5.ia-scandata-90205430d36f", embedded_reference = "sim_catholic-mind_1930-03-08_28_5_scandata.xml"}, {artifact_id = "artifact.journals.catholic-mind.1930-03-08-volume-28-issue-5.acquisition-receipt-8548393ffded", embedded_reference = "acquisition-receipt.json"}, {artifact_id = "artifact.journals.catholic-mind.1930-03-08-volume-28-issue-5.word-geometry-selection-audit-2416efec1b85", embedded_reference = "geometry-selection.json"}, {artifact_id = "artifact.journals.catholic-mind.1930-03-08-volume-28-issue-5.source-extent-review-c38694782e63", embedded_reference = "geometry-review.json"}, {artifact_id = "artifact.journals.catholic-mind.1930-03-08-volume-28-issue-5.source-selection-recipe-dce9bb3326fd", embedded_reference = "extract.py"}]

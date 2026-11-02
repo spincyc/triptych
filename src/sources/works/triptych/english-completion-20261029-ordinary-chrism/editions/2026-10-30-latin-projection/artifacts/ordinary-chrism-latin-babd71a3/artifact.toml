@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.english-completion-20261029-ordinary-chrism.latin-projection-20261030.ordinary-chrism-latin-babd71a3"
+edition_id = "edition.triptych.english-completion-20261029-ordinary-chrism.latin-projection-20261030"
+artifact_type = "editorial-projection"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych’s bounded source selection, span mapping and editorial projection are CC BY 4.0. Every underlying Latin word is independently preexisting public-domain material in Cummiskey 1861, Wilson 1894 and Pontificale Romanum Paris: A. Jouby 1859. The projection does not reproduce modern typography, chant notes, layout, target rubrics or protected modern additions. No exclusive right is claimed in underlying Latin. The later 1962 scan is solely a comparison witness."
+rights_jurisdiction = "United States"
+provenance = "Whole old-source and target PDF hashes were recomputed before reading. Actual 1859 title and printed398, Wilson 1894 printed69 and Cummiskey 1861 printedxxviii were opened, and the entire assembled body compared word-for-word with 1962 n1047 printed232–233, original CMAA PDF 313–314. Independent source review confirms every target prayer word is supplied by four explicit contiguous spans, with no unsupported substitution; it does not assert that one older book prints this entire Preface."
+retrieved = "2026-10-30"
+sha256 = "babd71a33c55492d66fe0b9d82acfff13265f6a006486a22463b98c616fe25e6"
+byte_size = 1024
+path = "src/sources/works/triptych/english-completion-20261029-ordinary-chrism/editions/2026-10-30-latin-projection/artifacts/ordinary-chrism-latin-babd71a3/text.tsv"
+indexable = true
+encoding = "utf-8"
+projected_from = ["artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.historical-book-ocr-e4500b54", "artifact.catholic-church.pontificale-romanum.paris-jouby-1859.english-completion-20261029-ordinary-chrism-petition", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join Cummiskey common-Preface first 8 words; Wilson 1894 four-word Clementiam tuam suppliciter obsecrare head;1859 Pontifical complete ut-spiritualis petition through induantur; Cummiskey explicit PerChristum/Perquem conclusion through dicentes. Preserve older capitalization and punctuation at the joins; normalize j/i and ae/oe ligatures to declared Latin orthography and exultatione/exsultatione. For comparison only, ignore capitalization, punctuation and target stress accents and join target chant syllables into words. No target chant layout, implied source abbreviation, new word, conclusion expansion or Sanctus is supplied."
+notes = "Exact span map: Cummiskey 1861 praefationes-la seq 3, first 8 words and PerChristum through dicentes; Wilson 1894 BookI XL printed69, four words after VD before ut spiritalis; Paris: Jouby 1859 printed398, entire ut spiritualis through induantur. Wilson baptismum, spiritalis and innocens odor remain unchanged in their source and are not imported.1859 positively supplies the target petition readings. Source potestates; differs in pointing/case from target Potestates.; source caps/pointing stay. This is exact target prayer-word agreement under declared transformations, not a single-old-witness, full-execution, ritual-applicability or whole-Missal claim."

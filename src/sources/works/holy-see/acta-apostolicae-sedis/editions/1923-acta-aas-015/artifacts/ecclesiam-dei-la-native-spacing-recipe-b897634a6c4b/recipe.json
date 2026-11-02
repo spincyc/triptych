@@ -1,0 +1,668 @@
+{
+  "helper": {
+    "path": "scripts/_papal_native_spacing.py",
+    "sha256": "7c7393f6b366bc986e7d106d217a769fabba5a48edd645a7bd02b463eb64d82c"
+  },
+  "native_first_page": 573,
+  "native_pdf": {
+    "artifact_id": "artifact.acta-papal-archives.aas.015.vatican-pdf-acab305a",
+    "artifact_pages": [
+      573,
+      582
+    ],
+    "sha256": "acab305a3df26a4fe1dfe3c37c9287d8a180b40ba4690a2a2a4239fbb779d33e"
+  },
+  "native_raw": {
+    "artifact_id": "artifact.acta-papal-archives.aas.015.ecclesiam-dei-la-native-raw-d2b63ebb83ae",
+    "path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1923-acta-aas-015/artifacts/ecclesiam-dei-la-native-raw-d2b63ebb83ae/text.txt",
+    "sha256": "d2b63ebb83aed537b80178971a66506870ac1dbe5e0a2ae0b42b176b494225d2"
+  },
+  "output_sha256": "885750ca0e927cb4c6c585c444fa111b11cf8e5af25887864530e82c45d4a1a2",
+  "parent": {
+    "artifact_id": "artifact.acta-papal-archives.aas.015.historical-text-c64dd851",
+    "path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1923-acta-aas-015/artifacts/acta-historical-text-c64dd851/historical.txt",
+    "sha256": "c64dd8518ff3cef4aa800f8552a1344be374b1bbdcf9397a546161b63d41d1e0"
+  },
+  "retained_source_lines": [
+    {
+      "native_match_count": 1,
+      "native_page": 573,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 24826,
+      "source_line_sha256": "0b1cbccf4d88f04c2143f6d1ebf42be9f26ff85e700109726394e0a26176afe5"
+    },
+    {
+      "native_page": 573,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 24827,
+      "source_line_sha256": "d114baeb2672ad89e052e3fb20b66490e404730e4c25b77bcf9fa24fda4b9b5f"
+    },
+    {
+      "native_page": 573,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 24831,
+      "source_line_sha256": "09b069293468937c2a896978fbe276d3267009dc1e4b442e376f4d7ab708bf5a"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 573,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 24832,
+      "source_line_sha256": "8808a1d1944df15f7d986a613d0ffa0902a1c3040cc5a0e5aa7c80fcda5e687c"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 573,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 24839,
+      "source_line_sha256": "fe56d3e6ef2c8239d116573fac4a146bfa069ceaf8e187e8f09fd85e5f61bfff"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 573,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 24841,
+      "source_line_sha256": "610f51b8aa19ddb061135e1b2662bc09dcd48300b7c52edb8e8fc4b03e5e480b"
+    },
+    {
+      "native_page": 574,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 24848,
+      "source_line_sha256": "c87f9c3718b252d5f41fafa3014599e68d1358ee0b42047d95c568d8e2dcf8d1"
+    },
+    {
+      "native_page": 574,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 24849,
+      "source_line_sha256": "80ecc915af15cb9a6e4d963b20cb8a11e13dc6d44038d5452edabe7f2f184f48"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 574,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 24850,
+      "source_line_sha256": "b73b6d8466a75b50051568b223467f21c5683ebb3a460fed13fa70b67c93e935"
+    },
+    {
+      "native_page": 574,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 24851,
+      "source_line_sha256": "7a91e6d6f11ba72d714aa94b7a53ffbd8dcde3fbd3fa51c4b640e7f0896d5fd1"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 574,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 24852,
+      "source_line_sha256": "634aa6e8bec0defa5be70df8c044267f8590a11df44a9c15dd00744669098afe"
+    },
+    {
+      "native_page": 574,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 24853,
+      "source_line_sha256": "30e9b2acf126904cf97f5254e60a04e635b9f4e332608c60b01d9b60dd79a54d"
+    },
+    {
+      "native_page": 574,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 24866,
+      "source_line_sha256": "d6abcc70652557b4f0f0a99d3d83a79d92deef897bf4fea2a6fb93b275139e56"
+    },
+    {
+      "native_page": 574,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 24867,
+      "source_line_sha256": "d2f904af7afbbfc26dec65bae171e15e018c72ebe2d7b789f875de1c4785d368"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 574,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 24883,
+      "source_line_sha256": "133e81c942363e0fbcbebce9c1ac5a66b1d828e2c7cf97b84e4e50edbc58e52d"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 574,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 24885,
+      "source_line_sha256": "7d32afd399796736ff4ef5a1ebad547462fa1ed451c1bfddd9a3adc6e5ff5a38"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 575,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 24904,
+      "source_line_sha256": "0cf79e544e1a6dc67d2a0a4d8de50a1f8f9070f64dda17d30b86fa68fc60b69c"
+    },
+    {
+      "native_page": 575,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 24905,
+      "source_line_sha256": "1d344e40fcd8be7858c5baacc4537c0b93472df7296d368ec3470db464989abb"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 575,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 24931,
+      "source_line_sha256": "24d6f703bb0e0788dd929947cd628b2fe0738c32fee5ea4b2e4349b02d7e828f"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 576,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 24948,
+      "source_line_sha256": "0cf79e544e1a6dc67d2a0a4d8de50a1f8f9070f64dda17d30b86fa68fc60b69c"
+    },
+    {
+      "native_page": 576,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 24949,
+      "source_line_sha256": "34c3a890222e2bc3cc259c4cfda9a7a8b95fa47955b90a5d78cd7e4cfe389a4e"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 576,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 24952,
+      "source_line_sha256": "cb639a6b1d06636e58485c45872b8444090333f7a69cec7ae64fc2ec303d9c51"
+    },
+    {
+      "native_page": 576,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 24953,
+      "source_line_sha256": "71f2f98f703a733b6669087b60a7e6a315b9ff6f498a59c1b4b597afebd554fa"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 576,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 24971,
+      "source_line_sha256": "1dc25a887e512048ba2bcb6881ee4c497c46a7357e63110f7edb7ebc9b9cc8eb"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 576,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 24973,
+      "source_line_sha256": "fa2901f1aeebc8d0ed88cf358135905aacc12c4322c3fa6cf7b9ee98b434af16"
+    },
+    {
+      "native_page": 580,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 25096,
+      "source_line_sha256": "aa7b0d7e1ea16ebc8289c2b0b910f23d828a4b631593b70850f54e25de2b9a21"
+    },
+    {
+      "native_page": 580,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 25097,
+      "source_line_sha256": "a7ffd14a8a46297b39dcc4e15fe5ee9ff30b267d7b3ccc5aaafbfdb621e0dde1"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 580,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 25113,
+      "source_line_sha256": "a91acf4573b3697be4a3e1e943d0f5404d8fcfca16395642a100d43a1ebb8436"
+    },
+    {
+      "native_page": 580,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 25114,
+      "source_line_sha256": "6749018ca53a0a772e4bdf141ec5327b4a78c073397b3616f4a5a0bf3d55f9e0"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 580,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 25124,
+      "source_line_sha256": "cec11e881f22ef7bee21179e6a30d3ae8d10ca0d7b4c540ccd0d63b2ed878b3a"
+    },
+    {
+      "native_page": 580,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 25125,
+      "source_line_sha256": "efc571a3c5aa5c43cc277cfd755286dcc158c2f0a2a3f92f1db84b7d9218575e"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 580,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 25132,
+      "source_line_sha256": "fa2901f1aeebc8d0ed88cf358135905aacc12c4322c3fa6cf7b9ee98b434af16"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 580,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 25134,
+      "source_line_sha256": "47af839b07db0710e4f6fc24cd349e673f2bad8fb161c855a91e4c73a3705576"
+    },
+    {
+      "native_page": 581,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 25138,
+      "source_line_sha256": "bbdfb0fa52506e614fd15c252ebb10801f483d9c7a623935b30545d412a63895"
+    },
+    {
+      "native_page": 581,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 25139,
+      "source_line_sha256": "0617036d88d387a45135d3ad55e4d0967ad691cac52d45e428071ce79a861521"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 581,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 25145,
+      "source_line_sha256": "3a9b784da5fc6db368261d1673381847f3ca528f4de016b0c283e9a1de561743"
+    },
+    {
+      "native_page": 581,
+      "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+      "source_line": 25146,
+      "source_line_sha256": "f8dfd2e5daaaff170c95a187c1ddccf891f1792cba6542ad0d853d704164e969"
+    },
+    {
+      "native_match_count": 1,
+      "native_page": 581,
+      "preserve_original": true,
+      "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+      "source_line": 25176,
+      "source_line_sha256": "47af839b07db0710e4f6fc24cd349e673f2bad8fb161c855a91e4c73a3705576"
+    }
+  ],
+  "review": {
+    "all_nonwhitespace_characters_and_order_preserved": true,
+    "full_size_native_pages": [
+      574
+    ],
+    "limits": "Explicit retained original LF lines keep their old spacing and reference-mark grouping; remaining OCR misspellings, glyphs and literal source hyphens remain unchanged. Partial spacing repair is not lexical collation or reconstruction.",
+    "native_pages_inspected": [
+      573,
+      574,
+      575,
+      576,
+      577,
+      578,
+      579,
+      580,
+      581,
+      582
+    ],
+    "native_pdf_artifact_id": "artifact.acta-papal-archives.aas.015.vatican-pdf-acab305a",
+    "native_pdf_sha256": "acab305a3df26a4fe1dfe3c37c9287d8a180b40ba4690a2a2a4239fbb779d33e",
+    "native_review_extent": "Every native act page contact-inspected; dense note/reference page opened at full size. One body column and distinct page-foot historical notes on every affected page. Source LF note ranges read explicitly; no original-print or whole-word collation claimed.",
+    "original_selected_nonwhitespace_sha256": "79d272e5336de09ce4f735a9c991f3b655daa02fb6435fda772fc074401f983b",
+    "projected_source_line_count": 322,
+    "raw_stream_order_policy": "Keep old selected source LF order; do not adopt native raw note-before-body stream order.",
+    "retained_loci": [
+      {
+        "native_match_count": 1,
+        "native_page": 573,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 24826,
+        "source_line_sha256": "0b1cbccf4d88f04c2143f6d1ebf42be9f26ff85e700109726394e0a26176afe5"
+      },
+      {
+        "native_page": 573,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 24827,
+        "source_line_sha256": "d114baeb2672ad89e052e3fb20b66490e404730e4c25b77bcf9fa24fda4b9b5f"
+      },
+      {
+        "native_page": 573,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 24831,
+        "source_line_sha256": "09b069293468937c2a896978fbe276d3267009dc1e4b442e376f4d7ab708bf5a"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 573,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 24832,
+        "source_line_sha256": "8808a1d1944df15f7d986a613d0ffa0902a1c3040cc5a0e5aa7c80fcda5e687c"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 573,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 24839,
+        "source_line_sha256": "fe56d3e6ef2c8239d116573fac4a146bfa069ceaf8e187e8f09fd85e5f61bfff"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 573,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 24841,
+        "source_line_sha256": "610f51b8aa19ddb061135e1b2662bc09dcd48300b7c52edb8e8fc4b03e5e480b"
+      },
+      {
+        "native_page": 574,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 24848,
+        "source_line_sha256": "c87f9c3718b252d5f41fafa3014599e68d1358ee0b42047d95c568d8e2dcf8d1"
+      },
+      {
+        "native_page": 574,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 24849,
+        "source_line_sha256": "80ecc915af15cb9a6e4d963b20cb8a11e13dc6d44038d5452edabe7f2f184f48"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 574,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 24850,
+        "source_line_sha256": "b73b6d8466a75b50051568b223467f21c5683ebb3a460fed13fa70b67c93e935"
+      },
+      {
+        "native_page": 574,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 24851,
+        "source_line_sha256": "7a91e6d6f11ba72d714aa94b7a53ffbd8dcde3fbd3fa51c4b640e7f0896d5fd1"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 574,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 24852,
+        "source_line_sha256": "634aa6e8bec0defa5be70df8c044267f8590a11df44a9c15dd00744669098afe"
+      },
+      {
+        "native_page": 574,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 24853,
+        "source_line_sha256": "30e9b2acf126904cf97f5254e60a04e635b9f4e332608c60b01d9b60dd79a54d"
+      },
+      {
+        "native_page": 574,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 24866,
+        "source_line_sha256": "d6abcc70652557b4f0f0a99d3d83a79d92deef897bf4fea2a6fb93b275139e56"
+      },
+      {
+        "native_page": 574,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 24867,
+        "source_line_sha256": "d2f904af7afbbfc26dec65bae171e15e018c72ebe2d7b789f875de1c4785d368"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 574,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 24883,
+        "source_line_sha256": "133e81c942363e0fbcbebce9c1ac5a66b1d828e2c7cf97b84e4e50edbc58e52d"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 574,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 24885,
+        "source_line_sha256": "7d32afd399796736ff4ef5a1ebad547462fa1ed451c1bfddd9a3adc6e5ff5a38"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 575,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 24904,
+        "source_line_sha256": "0cf79e544e1a6dc67d2a0a4d8de50a1f8f9070f64dda17d30b86fa68fc60b69c"
+      },
+      {
+        "native_page": 575,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 24905,
+        "source_line_sha256": "1d344e40fcd8be7858c5baacc4537c0b93472df7296d368ec3470db464989abb"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 575,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 24931,
+        "source_line_sha256": "24d6f703bb0e0788dd929947cd628b2fe0738c32fee5ea4b2e4349b02d7e828f"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 576,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 24948,
+        "source_line_sha256": "0cf79e544e1a6dc67d2a0a4d8de50a1f8f9070f64dda17d30b86fa68fc60b69c"
+      },
+      {
+        "native_page": 576,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 24949,
+        "source_line_sha256": "34c3a890222e2bc3cc259c4cfda9a7a8b95fa47955b90a5d78cd7e4cfe389a4e"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 576,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 24952,
+        "source_line_sha256": "cb639a6b1d06636e58485c45872b8444090333f7a69cec7ae64fc2ec303d9c51"
+      },
+      {
+        "native_page": 576,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 24953,
+        "source_line_sha256": "71f2f98f703a733b6669087b60a7e6a315b9ff6f498a59c1b4b597afebd554fa"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 576,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 24971,
+        "source_line_sha256": "1dc25a887e512048ba2bcb6881ee4c497c46a7357e63110f7edb7ebc9b9cc8eb"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 576,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 24973,
+        "source_line_sha256": "fa2901f1aeebc8d0ed88cf358135905aacc12c4322c3fa6cf7b9ee98b434af16"
+      },
+      {
+        "native_page": 580,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 25096,
+        "source_line_sha256": "aa7b0d7e1ea16ebc8289c2b0b910f23d828a4b631593b70850f54e25de2b9a21"
+      },
+      {
+        "native_page": 580,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 25097,
+        "source_line_sha256": "a7ffd14a8a46297b39dcc4e15fe5ee9ff30b267d7b3ccc5aaafbfdb621e0dde1"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 580,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 25113,
+        "source_line_sha256": "a91acf4573b3697be4a3e1e943d0f5404d8fcfca16395642a100d43a1ebb8436"
+      },
+      {
+        "native_page": 580,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 25114,
+        "source_line_sha256": "6749018ca53a0a772e4bdf141ec5327b4a78c073397b3616f4a5a0bf3d55f9e0"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 580,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 25124,
+        "source_line_sha256": "cec11e881f22ef7bee21179e6a30d3ae8d10ca0d7b4c540ccd0d63b2ed878b3a"
+      },
+      {
+        "native_page": 580,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 25125,
+        "source_line_sha256": "efc571a3c5aa5c43cc277cfd755286dcc158c2f0a2a3f92f1db84b7d9218575e"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 580,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 25132,
+        "source_line_sha256": "fa2901f1aeebc8d0ed88cf358135905aacc12c4322c3fa6cf7b9ee98b434af16"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 580,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 25134,
+        "source_line_sha256": "47af839b07db0710e4f6fc24cd349e673f2bad8fb161c855a91e4c73a3705576"
+      },
+      {
+        "native_page": 581,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 25138,
+        "source_line_sha256": "bbdfb0fa52506e614fd15c252ebb10801f483d9c7a623935b30545d412a63895"
+      },
+      {
+        "native_page": 581,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 25139,
+        "source_line_sha256": "0617036d88d387a45135d3ad55e4d0967ad691cac52d45e428071ce79a861521"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 581,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 25145,
+        "source_line_sha256": "3a9b784da5fc6db368261d1673381847f3ca528f4de016b0c283e9a1de561743"
+      },
+      {
+        "native_page": 581,
+        "reason": "The retained layout LF record has no identical non-whitespace raw LF record on this native page. Native reference-mark and line grouping differs; this exact source LF is preserved byte-for-byte rather than regrouping glyphs. This page has one body column and distinct page-foot source notes; native content-stream order is not adopted.",
+        "source_line": 25146,
+        "source_line_sha256": "f8dfd2e5daaaff170c95a187c1ddccf891f1792cba6542ad0d853d704164e969"
+      },
+      {
+        "native_match_count": 1,
+        "native_page": 581,
+        "preserve_original": true,
+        "reason": "The source has separate body-reference and page-foot reference numeral LF records, while the native raw page has one equal standalone numeral LF record. Preserve this exact original source LF, including whitespace, without assigning or consuming the single native numeral as a witness for either source record.",
+        "source_line": 25176,
+        "source_line_sha256": "47af839b07db0710e4f6fc24cd349e673f2bad8fb161c855a91e4c73a3705576"
+      }
+    ],
+    "retained_source_line_count": 38
+  },
+  "reviewed_stream_order_pages": [],
+  "schema": "triptych-papal-native-spacing/v1",
+  "selections": [
+    {
+      "native_page": 573,
+      "source_range": [
+        24807,
+        24842
+      ]
+    },
+    {
+      "native_page": 574,
+      "source_range": [
+        24845,
+        24891
+      ]
+    },
+    {
+      "native_page": 575,
+      "source_range": [
+        24893,
+        24932
+      ]
+    },
+    {
+      "native_page": 576,
+      "source_range": [
+        24934,
+        24974
+      ]
+    },
+    {
+      "native_page": 577,
+      "source_range": [
+        24976,
+        25012
+      ]
+    },
+    {
+      "native_page": 578,
+      "source_range": [
+        25014,
+        25050
+      ]
+    },
+    {
+      "native_page": 579,
+      "source_range": [
+        25052,
+        25091
+      ]
+    },
+    {
+      "native_page": 580,
+      "source_range": [
+        25093,
+        25135
+      ]
+    },
+    {
+      "native_page": 581,
+      "source_range": [
+        25137,
+        25179
+      ]
+    },
+    {
+      "native_page": 582,
+      "source_range": [
+        25181,
+        25213
+      ]
+    }
+  ],
+  "source_id": "acta.aas.015.archive.aas.015.l024807",
+  "stream_order_difference_pages": []
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "triptych-scratch-independent-source-review/v1",
+  "reviewed_on": "2026-10-29",
+  "verdict": "accept-bounded-source-and-study-translation-candidates",
+  "candidate_packet": ".scratch/roman-english-completion-20261029/chants/late-marian/assumption/candidates.json",
+  "candidate_packet_sha256": "889fdc6534bda38691d56071ddfcd7b07c28ea7be4e9644dde3fcb9009c751ed",
+  "scope": "Exactly four complete chant bodies and their original study English. This review does not integrate the candidates or establish annual, whole-Mass, pre-1955, or approved-English completeness.",
+  "source_full_pdf_sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+  "target_full_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+  "findings": [],
+  "checks": {
+    "independent_page_image_inspection": true,
+    "all_six_source_and_target_page_images_opened": true,
+    "complete_latin_word_sequences_checked": true,
+    "target_and_source_pointing_checked": true,
+    "finite_spelling_differences_accurately_recorded": true,
+    "four_current_proper_preimages_exact": true,
+    "four_current_english_absence_dictionaries_exact": true,
+    "eighteen_proposed_files_present": true,
+    "fifteen_toml_manifests_parse_and_have_unique_ids": true,
+    "payload_hashes_and_byte_sizes_exact": true,
+    "passage_controllers_and_line_ranges_exact": true,
+    "target_body_hashes_and_projection_lines_exact": true,
+    "english_fidelity_and_study_status_checked": true
+  },
+  "rows": [
+    {
+      "target": ["roman-1962", "vigil-assumption", "main", "Gradual", "all", 1],
+      "target_locus": "1962 artifact706, printed625, unit3369, right column",
+      "historical_locus": "Pustet1862 artifact603, printed517, right lower under Graduale",
+      "latin_sha256": "b033c784f42d2ef1691c9eca8956abdaccdf41ee83d37da1f4d2de6dc5c76a5a",
+      "result": "Complete wording matches after the recorded Genitrix/Genetrix spelling, capitalization, punctuation and typography transformations. The source has its complete verse, not merely the first sentence. The study English preserves both sentences, the verse cue, intact virginity, and the Incarnation clause."
+    },
+    {
+      "target": ["roman-1962", "vigil-assumption", "main", "Offertory", "all", 1],
+      "target_locus": "1962 artifact706, printed625, unit3371, right lower",
+      "historical_locus": "Pustet1862 artifact604, printed518, left upper under Offertorium",
+      "latin_sha256": "ec01a2ea00ea15b6d9e8a0527c5ee54433f3a42be4e6ed2104b314af059c233f",
+      "result": "Complete wording and pointing match after capitalization/typography. Both Virgo occurrences are retained in Latin and English."
+    },
+    {
+      "target": ["roman-1962", "vigil-assumption", "main", "Communion", "all", 1],
+      "target_locus": "1962 artifact707, printed626, unit3374, left column",
+      "historical_locus": "Pustet1862 artifact604, printed518, right upper under Communio",
+      "latin_sha256": "7083e0d7d8b0fcfa0708cfb40cfab85450b47d45cd1eb029bc930197e49ec979",
+      "result": "Complete wording and pointing match after Virginis capitalization and normalized typography. The study translation renders the complete antiphon without adding an Alleluia."
+    },
+    {
+      "target": ["roman-1962", "assumptione-beatae-mariae-virginis", "main", "Alleluia", "all", 1],
+      "target_locus": "1962 artifact709, printed628, unit3382, left upper",
+      "historical_locus": "Pustet1862 artifact606, printed520, left upper before the Gospel",
+      "latin_sha256": "ec5b562622d5fc5e370bedecaa38bf2171df41c4f02fe8c98f04f73a89631493",
+      "result": "The entire older Alleluia survives in the later Mass. All three Alleluia repetitions and the verse agree after alleluja/alleluia, coelum/caelum, and comma/colon normalization. The study English preserves the passive Assumption, singular angelic host, verse cue and all three Alleluias."
+    }
+  ],
+  "integration_obligations": [
+    "The coordinator must provide the declared new 2026-10-29 projection edition record before source-library validation; it is intentionally absent from this four-body packet.",
+    "Run the registered source-library, per-text Latin, calendar, translation and generated-projection checks on the integrated source graph. This scratch review did not substitute a whole-graph validation.",
+    "Keep original study English explicitly project-created and unapproved; do not attribute it to Pustet, Lasance, ICEL or any historical human translator."
+  ],
+  "tracked_files_changed": false
+}

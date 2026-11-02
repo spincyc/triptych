@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.aas.015.archive.aas.015.l000037.native-spacing-6840faff6ad2"
+edition_id = "edition.acta-papal-archives.aas.015.archive.aas.015.l000037"
+artifact_id = "artifact.acta-papal-archives.aas.015.ubi-arcano-it-native-spacing-6840faff6ad2"
+artifact_sha256 = "6840faff6ad2e2f7a0976c175b74868be937424d8286cc5d62d3fa43a7ff2184"
+segment_type = "constituent-work"
+states = ["cataloged", "acquired", "inspected"]
+physical_line_ranges = [[1, 1038]]
+context = "Complete same prior constituent selection; only whitespace of uniquely matching same-page native LF records changes. Explicit zero-match and repeated-reference original lines stay byte-for-byte unchanged; recipe pins every locus."
+notes = "Prior segment and controller remain retained. Original selected non-whitespace characters/order are unchanged. 158 source LF records retain original spacing. Native OCR reconstruction, not original-print facsimile or lexical collation."

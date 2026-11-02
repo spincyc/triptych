@@ -1,0 +1,147 @@
+{
+  "accepted_fixture_core_sha256": "da5457e6bfc51297d98b2008134ae990f00fcebbdbe460f40769661bb1e5d471",
+  "actual_existing_Proper_entries_verified": 3,
+  "added_inputs": 0,
+  "all17_inverse_specifications_exact": true,
+  "all17_parent_and_successor_replays_equal_actual_original_Git": [
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+      "path": "src/sources/calendars/postconciliar/propers.yaml"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877",
+      "path": "src/sources/calendars/roman-1962/propers.yaml"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "9bf6fe5ecc3b397888a0316f7b5c06e40f65e9dfc1eb96c3bc78d111e7c41597",
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
+      "path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "560e82057dc0480a5b1fe835304ba57ed476b346a38cab6fac550298582016ea",
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "79946d1bc6e015d8624d67ce243b59cf3ee634fc5997310aa6d764953349d815",
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "465e15d42b7301b22c2d93be1b95b00eb326ee0cd2ad1f928520952a89e89faa",
+      "path": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "dedf9a58d3f9e6b311bf5caf8f7aa7c51dcc9543d6ee17e4288e834c8cdc0215",
+      "path": "tools/tests/test_roman_1962_english13_phase5.py"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "86b29add67ac575fb147300f4ab6e66c47863a16c4cf5166896a88e710f5335c",
+      "path": "tools/tests/test_roman_1962_english31_phase4.py"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "9c11f0b870c14916dfa2530c1e733f262a5c9f526cd613744a06ea7ce3c05190",
+      "path": "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py"
+    },
+    {
+      "inverse_specification_unchanged": true,
+      "original_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+    }
+  ],
+  "all_other_finding_aid_fields_exact": true,
+  "all_other_fixture_semantics_exact": true,
+  "audit_date_delta": [
+    "2026-10-26",
+    "2026-10-30"
+  ],
+  "canonical_writes": 0,
+  "changed_kept_inputs": [
+    {
+      "after_sha256": "6739d55adb969ef06f8e0e73e7457e682b61f9bee0759c461a1fb2ded1b0a194",
+      "before_sha256": "22e2cc7c36c9f0f81b85e335d076f1a1133f7a1da268db064e6e7794205222b8",
+      "path": "src/sources/inventories/postconciliar-english-2011-recension-coverage-v1.toml"
+    }
+  ],
+  "classification_review_sha256": "f53d3a71a03c0592e163303e000b6064d3442d174553d2c4bcbeb2b23039823e",
+  "dropped_inputs": 0,
+  "findings": [],
+  "negative_controls_refused": [
+    "second kept-input mutation",
+    "dropped source path",
+    "duplicate source path",
+    "missing classification successor pin",
+    "English positive mutation",
+    "historical inverse mutation",
+    "wrong manifest binding",
+    "premature acceptance",
+    "completion state promotion",
+    "whole source byte mutation",
+    "inverse current slice mutation",
+    "historical literal mutation"
+  ],
+  "new_historical_classes": 2,
+  "new_source_rights_body_or_publication_permission": false,
+  "new_target_count_or_2011_identity_claim": false,
+  "packet_sha256": {
+    "manifest.json": "6956adb9fc4336282ade4bce43015d51bb2b73ef9a2ccce1d62e90226022693c",
+    "parent-fixture.json": "f93e2b0dacd6f434c3dbe746e7d7b8a73052e92b5ff83b7c1dbdadb6dc6b0c99",
+    "parent-inputs.json": "e9cd39f351b23206c7d812c854cbfaaa593b45c3a795c8b53164bb66917da9bd",
+    "pending-fixture.json": "99706960d9d71925eaac1baef8a81f065076c6714b5b3688a04d009c05e65b8d",
+    "proposal.json": "f5ecdddd518415016eaa4d3105f450493ab0afcdb2b0b3dfd8f064b22e3e7b1b"
+  },
+  "parent_git_revision": "4e8e9fcf7d8947d5b99068d8f05b21156f70abe4",
+  "physical_candidate_condition": "The single classification owner remains at exact parent bytes; its separately hash-verified scratch postimage alone supplies the prospective changed pin. Every other input was checked directly from the physical candidate.",
+  "physical_inputs_verified": 7071,
+  "schema": "triptych-independent-PC2011-classification-source-successor-review/v1",
+  "scope_limits": [
+    "Prospective exact source-accounting and bounded classification review only; actual post-install source consumers, build currentness and publication gates remain required.",
+    "No repeated historical page collation or new English acceptance is claimed."
+  ],
+  "source_paths": 7071,
+  "status": "PASS-bounded-7071-classification-metadata-successor",
+  "strict_runtime_helper_and_replay_support_exact": true,
+  "unchanged_kept_inputs": 7070,
+  "unchanged_prior_classes": 9
+}

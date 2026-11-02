@@ -1,0 +1,135 @@
+{
+  "schema": "triptych-sanitized-independent-specific-study-translation-rights-review/v2",
+  "state": "PRIOR_REVIEW_WITH_ADOPTED_CORRECTION",
+  "sanitization": "This bundle retains the independent original and correction findings with private file paths removed. It is not byte-identical to either independent review. The original false glyph declaration is withdrawn only by the explicit correction; no earlier review is represented as having checked that correction.",
+  "original_review_sha256": "7d0ee61f74a2019a786a3ddef91d993436aa9bc5731a973413057e38bd9e68c8",
+  "original_review": {
+    "schema": "triptych-independent-specific-study-translation-rights-review/v1",
+    "reviewed_utc": "2026-10-30T02:53:10Z",
+    "jurisdiction": "United States",
+    "status": "RECOMMEND_ACCEPT_EXACT_SOURCE_AND_ONE_WORD_BASIS_FOR_ROOT_ADOPTION_ONLY",
+    "scope": {
+      "calendar": "roman-1962",
+      "element": "praefatio-sancto-ioseph",
+      "selected_context": "May 1, solemnitate option only",
+      "body_boundary": "Vere through dicentes; excludes opening dialogue, following Sanctus, title, rubric and page arrangement",
+      "frozen_comparison_sha256": "2a9f3fdf02256ee216b2aaae063adfd545a7b82a15205759f8632b15f90e00e4",
+      "private_target_research_string_sha256_utf8_no_final_lf": "526099a01ae7ae49394d1c2684a89e6d8c60cefd6c5a0a61eea150824b6a346d",
+      "source_word_count": 99,
+      "selected_target_word_count": 99,
+      "only_lexical_change": {
+        "word_index_one_based": 25,
+        "source": "Festivitate",
+        "target": "solemnitate"
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+      "target_artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+    },
+    "independent_source_review": [
+      "Reviewer directly opened complete target PDF376/printed295/n1084, complete Mame PDF451/printed337 and Mame PDF450/printed336 for the explicit Sanctus reference.",
+      "The entire Mame preface body begins Vere at lower left, continues at upper right, and ends dicentes. The following Sanctus is a separate block referenced to printed336; the opening dialogue is separate too.",
+      "The target rubric selects festivitate on March19, solemnitate on May1, and veneratione for votive Masses. Its common preface prints a placeholder at this exact word. The selected target sequence uses only the documented May1 word.",
+      "The historical source prints Festivitate with Veneratione as its explicit alternative, not solemnitate. All other98 lexical words match under individually declared stress, case, ligature, j/i, coeli/caeli and coelorumque/caelorumque spelling and pointing comparisons. No clause or word order changes.",
+      "All five frozen image/primary-law-file hashes were independently recomputed and matched. The99-word comparison was independently replayed from the frozen strings.",
+      "Both whole-artifact IDs and whole-SHA256 values were checked directly against their canonical source-library manifests; the final frozen packet uses the actual cmaa-facsimile-pdf target ID. No whole PDF was rehashed in this review."
+    ],
+    "policy_and_legal_reasoning": [
+      "Apply guidance/liturgical-text-publication-policy.md section1(6) as an explicitly qualified project publication judgment. The independent foundation is the complete1922 Mame expression; the1962 whole edition is not claimed public domain.",
+      "The only later lexical contribution in the measured selected body is the ordinary feast-designation noun solemnitate in the existing Et te in ... beati Joseph syntactic position. For this exact body it is a conventional functional substitution with insufficient independent creative expression, not a new petition, literary clause or doctrinal passage.",
+      "The Copyright Office presentation of37CFR202.1(a) and Circular33 support the individual-word/short-expression originality boundary. Circular14 explains that protection in a new edition reaches added original authorship rather than public-domain material. Applying them to this measured contribution supports a defensible route; they do not automatically clear any short change.",
+      "After root adopts the exact basis, a newly composed study-English rendering of this independently established expression plus this functional word is supported. No adaptation or relabeling of Lasance English is licensed. No ICEL English is involved."
+    ],
+    "contrary_facts_and_limits": [
+      "The1922 source is not an exact full May1 body witness. The lexical variation and all spelling/pointing differences must remain explicit.",
+      "The1922 Patronage-Solemnity feast still uses Festivitate; the feast title is not a solemnitate-body witness. The source worker reports two bounded exact-query passes without an earlier full solemnitate witness; this reviewer did not repeat the searches and asserts no universal absence.",
+      "The1962 edition and its new material retain their existing rights position. This specific judgment clears no other body, modern clause, arrangement, rubric, source wrapper, language or context.",
+      "The earlier Communicantes SaintJoseph-clause decision is nontransferable and supplies no authority. Previous finite rights adoptions supply no automatic grant either.",
+      "Copyright.gov202.1 HTML declares data current as of2025-03-14; fresh retrieval does not establish2026-current law. Circular33 is a March2021 overview. Circular14 is explanatory and says registration practice is superseded by the Compendium. This is a qualified project judgment, not adjudication or human legal approval.",
+      "No new English body was available for review. English wording, completeness, fidelity, attribution, source manifest and runtime publication remain unaccepted until separately checked.",
+      "Any different word, clause, option, boundary, candidate byte string, modern English borrowing or claimed target-exact historical relation requires new review."
+    ],
+    "primary_sources": [
+      {
+        "url": "https://www.copyright.gov/title37/202/37cfr202-1.html",
+        "sha256": "550a8131ceaae45be3e138ae11947a8c252f1cfa6e44f973d1a3023a0233107d",
+        "data_as_of": "2025-03-14",
+        "locus": "202.1(a)"
+      },
+      {
+        "url": "https://www.copyright.gov/circs/circ33.pdf",
+        "sha256": "4abb8e07b87a560612f11839fabe7c066afeffc8bdb8816c755f7e47fa07dbf2",
+        "revision": "03/2021",
+        "locus": "printed2, Names Titles Short Phrases"
+      },
+      {
+        "url": "https://www.copyright.gov/circs/circ14.pdf",
+        "inspection": "Official whole4page web view opened and read; coordinator separately retained/fetched bytes. This review supplies no local artifact hash.",
+        "locus": "printed2, Copyright Protection in Derivative Works"
+      }
+    ],
+    "canonical_mutations_performed": false,
+    "root_adoption_required": true,
+    "english_wording_reviewed": false,
+    "superseded_private_scratch_review": "The earlier unreported private scratch review bound an intermediate comparison; this final receipt supersedes it after the packet owner declared the corrected frozen2a9f packet final. No canonical approval or adoption preceded this final receipt."
+  },
+  "correction_review_sha256": "76852c4cca3ebcbbe4ca68a6a397dde60a83ad13f0fd8042cfd482226955fe51",
+  "correction_review": {
+    "schema": "triptych-independent-specific-source-metadata-correction-review/v1",
+    "reviewed_utc": "2026-10-30T03:14:27.521376+00:00",
+    "status": "ACCEPT_GLYPH_METADATA_CORRECTION_FOR_ROOT_SUCCESSOR_ADOPTION",
+    "scope": "Only the Mame1922 printed337/PDF451 Cæli and cælorumque transcription and withdrawal of the false oe-to-ae comparison rule in the exact May1Joseph preface packet. No fresh English, Latin publication or source installation is approved here.",
+    "prior_review": {
+      "sha256": "7d0ee61f74a2019a786a3ddef91d993436aa9bc5731a973413057e38bd9e68c8",
+      "disposition": "Preserved byte-exact as historical evidence. Its acceptance of the old œ reading and oe-to-ae comparison metadata was incorrect and is withdrawn by this additive correction."
+    },
+    "prior_comparison": {
+      "sha256": "2a9f3fdf02256ee216b2aaae063adfd545a7b82a15205759f8632b15f90e00e4",
+      "disposition": "Preserved byte-exact; not rewritten or described as having checked this correction."
+    },
+    "corrected_comparison": {
+      "sha256": "a08b68725876e8b224f2da98dc16721486b7d156e52e9e852044d2ac82539310"
+    },
+    "new_direct_evidence": {
+      "source_image_sha256": "ee6c61feac34b069b9328d3037b9252b4333d4e173997a8c4244d01ee82951bb",
+      "native_crop_sha256": "6aa188e09657bd7a11274cdad6ed9d7230416bc4d0e21189823273f1286c03a4",
+      "crop_box_original_pixels": {
+        "x": 595,
+        "y": 385,
+        "width": 580,
+        "height": 300
+      },
+      "independent_pixel_verification": "ImageMagick RGBA output from the stated original-image crop and from the supplied native crop had identical SHA25633a277b49c51022534643d4eb2ebfd9059bdc30732ead73bfba5cfbff96ef1a2. No output image or source file was changed.",
+      "visual_check": "Reviewer opened the native unresampled crop and original whole page at original resolution in this correction turn. Both visible source words print æ. The lower-left body provides same-page æ comparators in æquum, æterne and præconiis; neither beata nor concelebrant is claimed to contain an æ ligature."
+    },
+    "checked_changes": [
+      "The source research transcription changes only Cœli cœlorumque to Cæli cælorumque.",
+      "The normalization list removes only the explicit coeli/caeli and coelorumque/caelorumque spelling comparison. Generic opening of printed ligatures remains, with no oe-to-ae substitution used.",
+      "The only other changed fields are the additive supersedes_metadata_only and glyph_correction_evidence records.",
+      "All target research string bytes, source and target whole-artifact identities and recorded hashes, original image hashes, boundaries, target feast choice, contrary findings, legal-document hashes and presentation differences are unchanged.",
+      "Independent replay after selecting the historical Festivitate branch yields99 source words and99 target words. The sole lexical replacement remains one-based word25Festivitate→solemnitate; no oe-to-ae transformation is needed."
+    ],
+    "rights_effect": "The earlier narrowly qualified whole-public-domain-expression plus single functional-word recommendation under policy section1(6) is unchanged. The correction removes an incorrectly asserted spelling difference and grants no new exception, context, word, modern text, legal conclusion or publication authority.",
+    "boundaries": [
+      "Vere through dicentes only; opening dialogue, following Sanctus, rubric, title and arrangement remain outside the scope.",
+      "No transfer of the separate CommunicantesJoseph-clause decision.",
+      "No English candidate wording was reviewed in this correction. The separately reviewed candidate240fd is outside this review.",
+      "Root must issue its own additive successor adoption before any May1 source/English admission. Earlier review/adoption records remain immutable.",
+      "No new legal survey was conducted; existing primary-law-document currency limitations remain exact."
+    ],
+    "canonical_mutations_performed": false,
+    "new_source_or_English_admission_performed": false
+  },
+  "corrected_frozen_comparison_sha256": "a08b68725876e8b224f2da98dc16721486b7d156e52e9e852044d2ac82539310",
+  "canonical_source_comparison_path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-source-comparison.json",
+  "historical_source_facsimile_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-ordinary-joseph-preface-may1-facsimile",
+  "historical_source_body_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-ordinary-joseph-preface-may1-source-body",
+  "root_adoption_path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption-v2.json",
+  "root_adoption_sha256": "7ae1b0c2cd7acfa62777d7acc0b09b33c37212c7fbcd6c0b410f669ac76e43e6",
+  "immutable_prior_metadata": {
+    "adoption_path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption.json",
+    "adoption_sha256": "f5893ad8948f13c3740efc8839f7a327d942e3bf0b2d65ed801f6855c39579fe",
+    "comparison_sha256": "2a9f3fdf02256ee216b2aaae063adfd545a7b82a15205759f8632b15f90e00e4",
+    "review_sha256": "7d0ee61f74a2019a786a3ddef91d993436aa9bc5731a973413057e38bd9e68c8"
+  },
+  "admission_transcription_correction": "Fresh actual-source reading finds Cæli cælorumque, not frozen Cœli cœlorumque. Thus the coeli/caeli comparison transformation and contrary spelling claim are unnecessary and withdrawn for this body. This orthographic research-transcription correction does not change the 99-word counts, sole lexical change at word 25, exact selected target research identity, rights-adopted scope or new English."
+}

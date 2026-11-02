@@ -1,0 +1,102 @@
+{
+  "schema": "triptych-independent-queenship-offertory-base-source-review/v1",
+  "verdict": "accepted-base-source-only",
+  "reviewed_on": "2026-10-29",
+  "candidate_packet_sha256": "920d4775e089b39878605cff7197d40045faf85332f3dc02c30722498dfcd125",
+  "findings": [],
+  "scope": "Independent review of the complete ancient responsory base Regali ex progenie through poscimus and its proposed source records. This does not accept or clear the full 1962 Queenship Offertory with its conditional Paschal Alleluia.",
+  "source_identity": {
+    "title_read": "Breviarium Monasticum Pauli V. ac Urbani VIII.",
+    "publication_read": "Venetiis, M.DC.XC; Sumptibus Pauli Balleonii",
+    "title_artifact_page": 4,
+    "source_artifact_page": 955,
+    "source_printed_page": "912",
+    "source_full_sha256": "6fb9cd281ab4372ac9ad2de20e1a2dc9b37051bbd6112c3bf18da92dedef6277",
+    "source_byte_size": 409425773,
+    "source_page_count": 1331
+  },
+  "source_reading": {
+    "images_opened": [
+      "breviarium-title4.png",
+      "breviarium955.png",
+      "target200-622.png",
+      "target400-622.png"
+    ],
+    "source_locus": "Nativity of the BVM, Responsory IV, printed page 912, left lower column",
+    "words": "Regali ex progenie Maria exorta refulget: Cujus precibus nos adjuvari mente et spiritu devotissime poscimus.",
+    "complete_within_stated_base_extent": true,
+    "transformation_review": "Line wraps, dehyphenation, stress accent removal, long-s normalization, omission of the response asterisk and ordinal, ampersand expansion to et, and declared i/j and u/v normalization are explicit and change no word. The source colon and capital Cujus remain. The following Corde et animo versicle and later repeated Cuius fall outside the named base, as declared.",
+    "target_comparison": "1962 unit 2691 at artifact page 622, printed page 541, contains all base words after declared orthographic normalization. Its pointing and capitalization differ, and it adds conditional (T. P. Alleluia.). No complete Paschal variant match was proved or claimed."
+  },
+  "english_review": {
+    "text": "Mary, sprung from royal lineage, shines forth; we ask most devoutly in mind and spirit to be helped by her prayers.\n",
+    "verdict": "faithful original study English of the base only",
+    "approval_or_historical_translation_claim": false
+  },
+  "mechanical_checks": {
+    "eight_postimages_pin": [
+      {
+        "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/erara-whole-pdf-6fb9cd28/artifact.toml",
+        "sha256": "acf0dfc7287d2faabfe443a39b1df5f5a661aafda9676dba451f92bd6013ebef",
+        "byte_size": 1822
+      },
+      {
+        "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-latin-20261029/artifact.toml",
+        "sha256": "5f0072e9c83f926d7b8259131790b8039d2958a74fe7c2bdaa0056cd12063c96",
+        "byte_size": 1639
+      },
+      {
+        "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-latin-20261029/latin.txt",
+        "sha256": "dd345ee2fcab6b3974007069754a1ae6974851a5276af44fac6133b329655c77",
+        "byte_size": 109
+      },
+      {
+        "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-pages-20261029/artifact.toml",
+        "sha256": "48067747e3f703690e2b1fb2169bc597ff929eaca3aeb230d792a83fe71e6810",
+        "byte_size": 1529
+      },
+      {
+        "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-pages-20261029/source.pdf",
+        "sha256": "9853d5a5e49dfe4891a6614be3e1cab50dbdd599c3908da04019b00d7bc37262",
+        "byte_size": 995897
+      },
+      {
+        "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/edition.toml",
+        "sha256": "063c4e3262e09523b67c07b760f9183c18848108d2b042c1fc1ec7deb7f561ba",
+        "byte_size": 857
+      },
+      {
+        "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/passages/queenship-offertory-responsory-base-20261029.toml",
+        "sha256": "690557cdf3e7fd112682422cc0316eebdee9ac35982df75f3e048326a5ff2af6",
+        "byte_size": 1231
+      },
+      {
+        "path": "src/sources/works/catholic-church/breviarium-monasticum/work.toml",
+        "sha256": "a411c5c80f2a9e12801d6348ae4f9e6191eea2a61b56a32ab17cff4a1f7d8262",
+        "byte_size": 433
+      }
+    ],
+    "toml_records": 6,
+    "tracked_artifacts": 2,
+    "payload_hashes_and_sizes_exact": true,
+    "extracted_pages_100dpi_png_byte_identity": [
+      {
+        "wholepage": 4,
+        "extractpage": 1,
+        "sha256": "a4a44e4f94b23fe6cc6a7de13ff872346c2a3793e3e8341e13aad2e99cdebd20"
+      },
+      {
+        "wholepage": 955,
+        "extractpage": 2,
+        "sha256": "289bbdbdbae071c608c6892ecbe4d52122334de8ebb69c34ded5fa094f7a910b"
+      }
+    ],
+    "isolated_source_graph": "The six-record closure validates with zero errors using source-library.load_library and an empty publication root. The shared integrated graph was not checked."
+  },
+  "required_disposition": [
+    "Keep admission_eligible=false and the existing whole-body English and Latin hold. Acceptance of this base source cannot clear the target conditional Paschal variant.",
+    "Keep the base translation separately labeled as original study English. It is neither approved English nor an attributed historical translation.",
+    "The coordinator must run affected source graph, inventory, family and publication checks before integrating the new source records."
+  ],
+  "tracked_files_changed": false
+}

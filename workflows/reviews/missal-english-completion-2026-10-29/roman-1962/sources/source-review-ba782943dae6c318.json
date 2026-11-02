@@ -1,0 +1,51 @@
+{
+  "schema": "triptych-independent-source-candidate-review/v1",
+  "candidate": "Fulgentibus palmis",
+  "reviewed_on": "2026-10-29",
+  "approve": true,
+  "scope": "Historical Latin source, exact target relation, original study English, and proposed nine source files only; integration and public-surface checks remain with the parent.",
+  "target": [
+    "palm-sunday",
+    "main",
+    "Procession Antiphon",
+    "all",
+    6
+  ],
+  "candidate_json_sha256": "1d300dfcdd35a7295ad166b3898f4f47353a2b97c605a50fb15f6d4c4f979e29",
+  "candidate_files_bundle_sha256": "17f9fb79a3c31484c585f846c848987cd66b8dd77f43f7629d4701e4d3e2aa43",
+  "checks": {
+    "direct_images": "Read supplied manuscript and target images at 200/400 dpi, and independently rendered source PDF9 (1900 title) and PDF229 (manuscript175). All 17 lexical words agree after declared expansions and aduenienti/ymnis normalization. The actual target PDF SHA-256 was also checked and its PDF215 independently rendered and read.",
+    "translation": "Faithful complete original study translation; no modern translation or liturgical approval claimed.",
+    "schema": "Actual source-library validator passes on an isolated copy with empty publication root: artifact=3 edition=1 passage=2 work=1 bindings=0.",
+    "hashes": "Whole PDF hash and 33381274-byte extent, both tracked payload hashes/sizes, canonical Latin hash and nine-file count checked.",
+    "derivative": "Independent pdfseparate PDF229 re-extraction carries identical JP2/JBIG2 image streams; whole PDF output bytes differ, so no claim of byte-identical regenerated PDF.",
+    "final_combined_schema": "source-library valid: artifact=6 corpus=0 edition=2 passage=4 segment=0 work=2 bindings=0"
+  },
+  "study_english_sha256": "460724bb3f57fb9b78c1fb560306c495bc4b471b1d99eeb7333552c3d2faa6bf",
+  "findings": [
+    {
+      "severity": "minor",
+      "blocking": false,
+      "file": "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/artifacts/fulgentibus-latin-checked-20261029/artifact.toml",
+      "field": "rights_basis",
+      "finding": "The shared PDF wording says the text derivative contains the historical page alone; it contains only the two-line antiphon.",
+      "replace": "This derivative contains the historical page alone, excludes modern Internet Archive wrapper and collection matter, and does not assert rights over the modern complete PDF wrapper.",
+      "with": "This checked transcription contains only the complete Fulgentibus palmis antiphon from historical manuscript page 175, excludes the other page contents and modern Internet Archive wrapper and collection matter, and does not assert rights over the modern complete PDF wrapper.",
+      "resolved": true,
+      "resolution": "Exact replacement independently observed in frozen final manifest."
+    }
+  ],
+  "tracked_mutations": false,
+  "final_file_sha256": {
+    "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/artifacts/fulgentibus-latin-checked-20261029/artifact.toml": "b19162bfe1810fb0aa9f4ddb7f4d20a40261616b7f4e0e039bad0c357dbd344f",
+    "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/artifacts/fulgentibus-latin-checked-20261029/text.txt": "c2bf21a76718a0f00eda5c79a7a00f92cada8447efb0234fb92b4b5a8f042166",
+    "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/artifacts/fulgentibus-page-175-facsimile/artifact.toml": "05090275b0538f46fd879eccef2822dbd9c0eb21939c5cc3e12bd50a62fe7531",
+    "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/artifacts/fulgentibus-page-175-facsimile/source.pdf": "031f2f80af392701064f05149be2da429958a2ceed82ebf3a3fff044c9a6a69f",
+    "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/artifacts/ia-facsimile-116c6821/artifact.toml": "b8017cabd9dc79b5f1c07e9ba6f63b43020e1b86f2ace855a57e94d4131b6e57",
+    "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/edition.toml": "a7b8de5775488a872ac386dfc0dbaf55db14ef704d8c8b5f043459542337569e",
+    "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/passages/fulgentibus-latin-checked-20261029.toml": "57664b5d7fd5ddbc093edc32e6042feb377788e2ba911836cad846be816313eb",
+    "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/passages/fulgentibus-page-175-checked-20261029.toml": "8a4bdcf04ce98ae786fb3fc664d479fbb0c23a6da986bd18e51feee5ccbcded9",
+    "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/work.toml": "d47886830fd76722a2dd60dd8353a97431c9b71fc5e53ac1a62db5f5445c9881"
+  },
+  "projection_review": "projection-review.json"
+}

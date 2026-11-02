@@ -1,0 +1,37 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "de0b9daaf706e0e11740d1e0bc51f9877ee22bc8fc0d6136075300725db6e7bd",
+  "documents": [
+    {
+      "id": "acta.aas.012.archive.aas.012.l008747",
+      "language": "la",
+      "pdf_sha256": "7d2360c0f404166a03278091f3da2982f16d0f80b50dab9c8c5f9187d93cc862",
+      "pages": 4,
+      "receipt_sha256": "de0b9daaf706e0e11740d1e0bc51f9877ee22bc8fc0d6136075300725db6e7bd",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "description": "All ten source-note groups are separate blocks. Detached/duplicated reference figures, an isolated quotation mark and OCR fragments remain literal and usable. Page 4 retains body, blessing, historical dating, BENEDICTUS PP. XV and final notes above ruled apparatus."
+        }
+      ],
+      "limitations": "Every reader page inspected at full size and in contact overview. Native source boundaries and geometry checked at the exact repaired note, retention, stream-order and ending loci stated in the report. Exact derivative and PDF-fidelity replays performed. No whole-book, lexical OCR, translation, original-print or rights certification.",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-21-a.md",
+      "report_sha256": "02b04e81dac115cde3491a2f164646b9aefc87f1b7db39091b7601a462dc5210"
+    }
+  ]
+}

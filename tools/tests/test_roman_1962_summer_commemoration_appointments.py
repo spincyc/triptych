@@ -39,6 +39,14 @@ EXPECTED = [
     (SABINA, 'Postcommunion', 724, 643, 3509, 'P'),
 ]
 NAMES = ['Collect','Secret','Postcommunion']
+# Each former no-exemplar absence became one confirmed received English entry, listed under [[accepted]] in
+# src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml: eeab39fef core193 (Euphemia/Nicomedes S+P),
+# 3cd51e852 append209-strict165 (Felix), d483e5e37 lexical-first23 (Anne), 8d7e3b301 lefebvre8 (Sabina P) and
+# da270a039 sanctoral-oratio-five (Euphemia C, Sabina S; also workflows/reviews/missal-reader-completion-2026-10-26/english22-latin3-source-adoption.json).
+ENGLISH_WITNESS = {(ANNA,'Collect'):'lasance-1945',(ANNA,'Secret'):'lasance-1945',(ANNA,'Postcommunion'):'lasance-1945',
+    (EUPHEMIA,'Collect'):'lefebvre-1925',(EUPHEMIA,'Secret'):'lasance-1945',(EUPHEMIA,'Postcommunion'):'lasance-1945',
+    (FELIX,'Secret'):'lasance-1945',(FELIX,'Postcommunion'):'lasance-1945',(NICOMEDES,'Secret'):'lasance-1945',
+    (NICOMEDES,'Postcommunion'):'lasance-1945',(SABINA,'Secret'):'lefebvre-1925',(SABINA,'Postcommunion'):'lefebvre-1925'}
 
 
 class Roman1962SummerCommemorationAppointmentsTest(unittest.TestCase):
@@ -122,14 +130,14 @@ class Roman1962SummerCommemorationAppointmentsTest(unittest.TestCase):
     def test_each_new_local_oration_has_one_exact_english_disposition(self):
         for key,name,*_ in EXPECTED:
             with self.subTest(mass=key,proper=name):
-                identity=(key,'main',name,'all',1,'en')
+                identity=(key,'main',name,'all',1)
                 def same(row):
-                    return tuple(row.get(field) for field in ['mass','form_id','proper','cycle','occurrence','lang'])==identity
-                rows=[r for r in self.english['untranslated'] if same(r)]
+                    return tuple(row.get(field) for field in ['mass','form_id','proper','cycle','occurrence'])==identity
+                self.assertFalse(any(same(row) and row.get('lang')=='en' for row in self.english['untranslated']))
+                rows=[r for r in self.english.get('entries',[]) if same(r)]
                 self.assertEqual(len(rows),1)
-                self.assertEqual(rows[0]['reason'],{'kind':'no-exemplar'})
-                self.assertEqual(rows[0]['extent'],'body')
-                self.assertFalse(any(same(row) for row in self.english.get('entries',[])))
+                self.assertEqual([t['lang'] for t in rows[0]['translations']],['en'])
+                self.assertEqual((rows[0]['witness'],rows[0]['collation_result']),(ENGLISH_WITNESS[key,name],'confirmed'))
 
 
 if __name__=='__main__':

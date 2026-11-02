@@ -1,0 +1,1989 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-26T18:40:21Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.018.historical-text-da4909a7",
+      "correction_evidence": {
+        "items": [
+          {
+            "kind": "finite-replacement-review-publisher-furniture-removal",
+            "new_segment_path": "src/sources/works/papal-documents/1926-04-30-papal-pius-xi-hf-p-xi-enc-19260430-rite-expiatis-ae57989f/editions/1926-acta-aas-018-aas-018-l06278/segments/historical-text-visual-followup-2026-10-26.toml",
+            "new_segment_sha256": "3b82d15f747a5f4a7950ece21e1723f216414be760f9801772a434ecab1425e2",
+            "prior_edition_id": "edition.acta-papal-archives.aas.018.aas-018-l06278",
+            "prior_pdf": {
+              "artifact_id": "artifact.acta-papal-archives.aas.018.historical-text-da4909a7",
+              "id": "acta.aas.018.aas-018-l06278",
+              "language": "la",
+              "pdf_sha256": "8480684ef282ae18f070d7fefa7f28773a230f36ebf632431e20fdf8acbeaff6",
+              "segment_id": "segment.acta-papal-archives.aas.018.aas-018-l06278",
+              "source_sha256": "da4909a7fbc5f91f3456e946d912840c1381422caa2ab1db796b40708134872f"
+            },
+            "prior_render_receipt_revision": "2026-10-26T05:34:44Z",
+            "prior_render_receipt_sha256": "8279621b17eb5ce65b4986eaea150efec7048a2f7ba27eb2c13924689e7e39fc",
+            "prior_row_sha256": "82bdb59faa1bbaea93c1955907a95398bc4a010ea73f5cf4eec15b889498ce20",
+            "revision": "2026-10-26T18:40:21Z",
+            "source_revision": {
+              "excluded_publisher_furniture": [
+                {
+                  "exact_line": "   Aera., vol. XVIII, n. 5. - 3-5-926.                           11",
+                  "physical_LF": 6306
+                }
+              ],
+              "physical_line_ranges": [
+                [
+                  6278,
+                  6305
+                ],
+                [
+                  6308,
+                  6344
+                ],
+                [
+                  6346,
+                  6384
+                ],
+                [
+                  6386,
+                  6422
+                ],
+                [
+                  6424,
+                  6465
+                ],
+                [
+                  6467,
+                  6508
+                ],
+                [
+                  6510,
+                  6556
+                ],
+                [
+                  6558,
+                  6601
+                ],
+                [
+                  6603,
+                  6642
+                ],
+                [
+                  6644,
+                  6684
+                ],
+                [
+                  6686,
+                  6725
+                ],
+                [
+                  6727,
+                  6767
+                ],
+                [
+                  6769,
+                  6816
+                ],
+                [
+                  6818,
+                  6858
+                ],
+                [
+                  6860,
+                  6895
+                ],
+                [
+                  6897,
+                  6934
+                ],
+                [
+                  6936,
+                  6972
+                ],
+                [
+                  6975,
+                  7011
+                ],
+                [
+                  7013,
+                  7057
+                ],
+                [
+                  7059,
+                  7099
+                ],
+                [
+                  7101,
+                  7141
+                ],
+                [
+                  7143,
+                  7181
+                ],
+                [
+                  7183,
+                  7192
+                ]
+              ],
+              "prior_context": "{\"context\": \"Formal document under the papal issuer section, distinguished from adjacent curial and editorial sections.\", \"date_clause_line_ranges\": [[7188, 7192]], \"date_identity_index_evidence\": null, \"papal_issuer_or_signature_line_ranges\": [[6286, 6286], [7192, 7192]], \"source_date_clause_raw\": \"    Datum Romae apud Sanctum Petrum die x x x mensis Aprilis\\n¿tnno m d c c c c x x v i , Pontificatus Nostri quinto.\\n\\n\", \"source_heading_line_ranges\": [[6278, 6285]]}",
+              "prior_physical_line_ranges": [
+                [
+                  6278,
+                  6306
+                ],
+                [
+                  6308,
+                  6344
+                ],
+                [
+                  6346,
+                  6384
+                ],
+                [
+                  6386,
+                  6422
+                ],
+                [
+                  6424,
+                  6465
+                ],
+                [
+                  6467,
+                  6508
+                ],
+                [
+                  6510,
+                  6556
+                ],
+                [
+                  6558,
+                  6601
+                ],
+                [
+                  6603,
+                  6642
+                ],
+                [
+                  6644,
+                  6684
+                ],
+                [
+                  6686,
+                  6725
+                ],
+                [
+                  6727,
+                  6767
+                ],
+                [
+                  6769,
+                  6816
+                ],
+                [
+                  6818,
+                  6858
+                ],
+                [
+                  6860,
+                  6895
+                ],
+                [
+                  6897,
+                  6934
+                ],
+                [
+                  6936,
+                  6972
+                ],
+                [
+                  6975,
+                  7011
+                ],
+                [
+                  7013,
+                  7057
+                ],
+                [
+                  7059,
+                  7099
+                ],
+                [
+                  7101,
+                  7141
+                ],
+                [
+                  7143,
+                  7181
+                ],
+                [
+                  7183,
+                  7192
+                ]
+              ],
+              "prior_segment_id": "segment.acta-papal-archives.aas.018.aas-018-l06278",
+              "prior_segment_sha256": "2a5d9c484a19266f074977474a24cb5306ecfcb0ad3f72e79baee673afdb8a7a",
+              "proof": {
+                "calibration_sha256": "d32833e449654542b4beada5161977c8a2cb19f1b226ef15b9a47b7bde583380",
+                "correction_queue_sha256": "6be056148e937c3e1536a4770259005c6ed067eb4b4fadf466699d9961d4bdcb",
+                "report": "src/sources/papal-documents/acta-replacement-visual-017.md",
+                "report_sha256": "2d9eb1abcad4931fe5487bff5be5109093d637437eb9a98e8e0d57e52b7db3cd",
+                "reviewed_page": 1,
+                "reviewed_pdf_sha256": "8480684ef282ae18f070d7fefa7f28773a230f36ebf632431e20fdf8acbeaff6",
+                "reviewed_raster_sha256": "3f8d1db04b9cbc8d3931590bcf1d7a99736c2ec24a05b6e170b549f7d2384018",
+                "scope": "Independent calibration of exact generated reader PDF page; native historical-page collation and source-word verification are not claimed."
+              },
+              "range_continuations": [
+                0
+              ],
+              "reason": "A separately identified journal volume/issue/date/folio LF interrupts the exact source body fragments shown in continuation_evidence. The pure publication line is excluded only; all notes, citations, signatures, uncertain glyphs and body characters otherwise remain.",
+              "retained_nonwhitespace_sha256": "30f3cd029c88e8551a270199287e3446de4bd07df6c9bdec4df4914322f692c8",
+              "revision": "2026-10-26T18:40:21Z"
+            }
+          }
+        ],
+        "revision": "2026-10-26T18:40:21Z"
+      },
+      "date": "1926-04-30",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.aas.018.aas-018-l06278",
+      "id": "acta.aas.018.aas-018-l06278",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          6278,
+          6305
+        ],
+        [
+          6308,
+          6344
+        ],
+        [
+          6346,
+          6384
+        ],
+        [
+          6386,
+          6422
+        ],
+        [
+          6424,
+          6465
+        ],
+        [
+          6467,
+          6508
+        ],
+        [
+          6510,
+          6556
+        ],
+        [
+          6558,
+          6601
+        ],
+        [
+          6603,
+          6642
+        ],
+        [
+          6644,
+          6684
+        ],
+        [
+          6686,
+          6725
+        ],
+        [
+          6727,
+          6767
+        ],
+        [
+          6769,
+          6816
+        ],
+        [
+          6818,
+          6858
+        ],
+        [
+          6860,
+          6895
+        ],
+        [
+          6897,
+          6934
+        ],
+        [
+          6936,
+          6972
+        ],
+        [
+          6975,
+          7011
+        ],
+        [
+          7013,
+          7057
+        ],
+        [
+          7059,
+          7099
+        ],
+        [
+          7101,
+          7141
+        ],
+        [
+          7143,
+          7181
+        ],
+        [
+          7183,
+          7192
+        ]
+      ],
+      "pope": "Pius XI",
+      "range_continuations": [
+        0
+      ],
+      "revision": "2026-10-26T18:40:21Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"basis\": \"The official archival OCR volume identifies the historical AAS title, annual volume and Vatican printing imprint. Constituent source headings, dated issue mastheads, signatures, source notes and historical end indexes belong to that identified printing. This establishes edition testimony through the OCR reconstruction, not image-level collation.\", \"completion_colophon_line_ranges\": [[24872, 24872]], \"completion_colophon_raw\": \"           ABSOLVITUR-   D I E 31. DECEMBRIS 1926\", \"edition\": \"Acta Apostolicae Sedis 18 (1926), Rome, Typis Polyglottis Vaticanis.\", \"limitation\": \"Annual title year is nominal; the completion colophon and source issue dates are recorded separately.\", \"title_imprint_line_ranges\": [[1, 17]]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.018.aas-018-l06278.visual-followup-2026-10-26",
+      "segment_path": "src/sources/works/papal-documents/1926-04-30-papal-pius-xi-hf-p-xi-enc-19260430-rite-expiatis-ae57989f/editions/1926-acta-aas-018-aas-018-l06278/segments/historical-text-visual-followup-2026-10-26.toml",
+      "sha256": "da4909a7fbc5f91f3456e946d912840c1381422caa2ab1db796b40708134872f",
+      "source_note": "AAS 18 (1926). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text. A further explicit selector excludes only positively identified publisher furniture at physical LF 6306. Historical body wording, citations, notes, opening genre and any unresolved OCR glyphs remain literal. No word, spelling, hyphen or numeral is repaired.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-18-1926-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1926-acta-aas-018/artifacts/acta-historical-text-da4909a7/historical.txt",
+      "title": "LITTERAE              ENCYCLICAE AD VENERABILES FRATRES PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, E P I - SCOPOS ALIOSQUE LOCORUM ORDINARIOS PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES: DE SANCTO FRANCISCO ASSISIENSI SEPTIN- GENTÉSIMO AB EIUS OBITU E X E U N T E ANNO.",
+      "work_id": "work.papal.pius-xi.hf-p-xi-enc-19260430-rite-expiatis"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.022.issues-01-12.historical-text-9b499bb4",
+      "correction_evidence": {
+        "items": [
+          {
+            "categories": [
+              "exact-project-source-note-readability"
+            ],
+            "changes": {
+              "source_note": {
+                "after": "AAS 22 (1930). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text. This exact act is retained from the separately bounded earlier 1930 fascicle subset; later issue 13 / Casti, issue 14 and 1931 index / colophon are excluded.",
+                "before": "AAS 22 (1930). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text. This exact act is retained from the separately bounded earlier1930fascicle subset; laterissue13/Casti, issue14 and1931index/colophon are excluded."
+              }
+            },
+            "kind": "reviewed-metadata-correction",
+            "source_evidence": [
+              {
+                "exact_after_pattern": "earlier 1930 fascicle subset; later issue 13 / Casti, issue 14 and 1931 index / colophon",
+                "exact_before_pattern": "earlier1930fascicle subset; laterissue13/Casti, issue14 and1931index/colophon",
+                "field": "source_note",
+                "matching_current_selection_source": "src/sources/papal-documents/acta-manifest.json",
+                "occurrences_in_this_row": 1,
+                "qualification": "This replaces project metadata only. rights_basis, rights_notice and source-body bytes are unchanged.",
+                "role": "mechanical-project-note-replacement"
+              }
+            ]
+          },
+          {
+            "kind": "finite-replacement-review-publisher-furniture-removal",
+            "new_segment_path": "src/sources/works/papal-documents/1929-12-31-papal-pius-xi-hf-p-xi-enc-31121929-divini-illius-magistri-a6878805/editions/1930-acta-aas-022-issues-01-12-aas-022-l01896/segments/historical-text-visual-followup-2026-10-26.toml",
+            "new_segment_sha256": "2c2434da9477e1a6aa074b1cdccff10e700893f7cea62f39e1a206e49f291058",
+            "prior_edition_id": "edition.acta-papal-archives.aas.022.issues-01-12.aas-022-l01896",
+            "prior_pdf": {
+              "artifact_id": "artifact.acta-papal-archives.aas.022.issues-01-12.historical-text-9b499bb4",
+              "id": "acta.aas.022.issues-01-12.aas-022-l01896",
+              "language": "la",
+              "pdf_sha256": "ffedd6ceced793769d3ebff85f670414ea41672b3b071e472283ca19b5680a9e",
+              "segment_id": "segment.acta-papal-archives.aas.022.issues-01-12.aas-022-l01896",
+              "source_sha256": "9b499bb4a18a0ad5709b6c39cd446fd4095cf60a41829cb5d400ed1ea10072f8"
+            },
+            "prior_render_receipt_revision": "2026-10-26T18:13:41Z",
+            "prior_render_receipt_sha256": "0a621b5e2134d186ee3b8e5eb3ab4b16acb6c718ee442ce4162f3b3ad1954df5",
+            "prior_row_sha256": "7767f7070ef2ff0d3a3e32ca09350336b306215e388120da493efa073af8cffc",
+            "revision": "2026-10-26T18:40:21Z",
+            "source_revision": {
+              "excluded_publisher_furniture": [
+                {
+                  "exact_line": "\f                   Acte Apostolicae Sedis - Commentarium Officiale",
+                  "physical_LF": 2775
+                }
+              ],
+              "physical_line_ranges": [
+                [
+                  1879,
+                  1906
+                ],
+                [
+                  1910,
+                  1948
+                ],
+                [
+                  1950,
+                  1990
+                ],
+                [
+                  1992,
+                  2035
+                ],
+                [
+                  2037,
+                  2076
+                ],
+                [
+                  2078,
+                  2122
+                ],
+                [
+                  2124,
+                  2168
+                ],
+                [
+                  2170,
+                  2213
+                ],
+                [
+                  2215,
+                  2256
+                ],
+                [
+                  2258,
+                  2298
+                ],
+                [
+                  2300,
+                  2345
+                ],
+                [
+                  2347,
+                  2393
+                ],
+                [
+                  2395,
+                  2438
+                ],
+                [
+                  2440,
+                  2483
+                ],
+                [
+                  2485,
+                  2526
+                ],
+                [
+                  2528,
+                  2565
+                ],
+                [
+                  2567,
+                  2609
+                ],
+                [
+                  2612,
+                  2650
+                ],
+                [
+                  2652,
+                  2693
+                ],
+                [
+                  2695,
+                  2736
+                ],
+                [
+                  2738,
+                  2774
+                ],
+                [
+                  2776,
+                  2814
+                ],
+                [
+                  2816,
+                  2856
+                ],
+                [
+                  2858,
+                  2895
+                ],
+                [
+                  2897,
+                  2936
+                ],
+                [
+                  2938,
+                  2975
+                ],
+                [
+                  2977,
+                  3013
+                ],
+                [
+                  3015,
+                  3054
+                ],
+                [
+                  3056,
+                  3098
+                ],
+                [
+                  3100,
+                  3139
+                ],
+                [
+                  3141,
+                  3177
+                ],
+                [
+                  3179,
+                  3227
+                ],
+                [
+                  3229,
+                  3275
+                ],
+                [
+                  3278,
+                  3320
+                ],
+                [
+                  3322,
+                  3366
+                ],
+                [
+                  3368,
+                  3406
+                ],
+                [
+                  3408,
+                  3443
+                ],
+                [
+                  3445,
+                  3486
+                ]
+              ],
+              "prior_context": "{\"context\": \"Formal document under the papal issuer section, distinguished from adjacent curial and editorial sections.\", \"date_clause_line_ranges\": [[3493, 3500]], \"date_identity_index_evidence\": null, \"papal_issuer_or_signature_line_ranges\": [[1905, 1905], [3497, 3497]], \"source_date_clause_raw\": \"         D a t u m R o m a e , apud S. Petrum, die 31 mensis Decembris\\nanno 1929, Pontificatus Nostri o c t a v o .\\n\\n\", \"source_heading_line_ranges\": [[1896, 1904]]}",
+              "prior_physical_line_ranges": [
+                [
+                  1879,
+                  1906
+                ],
+                [
+                  1910,
+                  1948
+                ],
+                [
+                  1950,
+                  1990
+                ],
+                [
+                  1992,
+                  2035
+                ],
+                [
+                  2037,
+                  2076
+                ],
+                [
+                  2078,
+                  2122
+                ],
+                [
+                  2124,
+                  2168
+                ],
+                [
+                  2170,
+                  2213
+                ],
+                [
+                  2215,
+                  2256
+                ],
+                [
+                  2258,
+                  2298
+                ],
+                [
+                  2300,
+                  2345
+                ],
+                [
+                  2347,
+                  2393
+                ],
+                [
+                  2395,
+                  2438
+                ],
+                [
+                  2440,
+                  2483
+                ],
+                [
+                  2485,
+                  2526
+                ],
+                [
+                  2528,
+                  2565
+                ],
+                [
+                  2567,
+                  2609
+                ],
+                [
+                  2612,
+                  2650
+                ],
+                [
+                  2652,
+                  2693
+                ],
+                [
+                  2695,
+                  2736
+                ],
+                [
+                  2738,
+                  2814
+                ],
+                [
+                  2816,
+                  2856
+                ],
+                [
+                  2858,
+                  2895
+                ],
+                [
+                  2897,
+                  2936
+                ],
+                [
+                  2938,
+                  2975
+                ],
+                [
+                  2977,
+                  3013
+                ],
+                [
+                  3015,
+                  3054
+                ],
+                [
+                  3056,
+                  3098
+                ],
+                [
+                  3100,
+                  3139
+                ],
+                [
+                  3141,
+                  3177
+                ],
+                [
+                  3179,
+                  3227
+                ],
+                [
+                  3229,
+                  3275
+                ],
+                [
+                  3278,
+                  3320
+                ],
+                [
+                  3322,
+                  3366
+                ],
+                [
+                  3368,
+                  3406
+                ],
+                [
+                  3408,
+                  3443
+                ],
+                [
+                  3445,
+                  3486
+                ]
+              ],
+              "prior_segment_id": "segment.acta-papal-archives.aas.022.issues-01-12.aas-022-l01896",
+              "prior_segment_sha256": "b8d81a0729b6e68915b64e448f86709071a50937ee78957c48c08e58c0805699",
+              "proof": {
+                "calibration_sha256": "d32833e449654542b4beada5161977c8a2cb19f1b226ef15b9a47b7bde583380",
+                "correction_queue_sha256": "6be056148e937c3e1536a4770259005c6ed067eb4b4fadf466699d9961d4bdcb",
+                "report": "src/sources/papal-documents/acta-replacement-visual-011.md",
+                "report_sha256": "6ea0ceae33267fa8fa34f63dcfa5c283fd3ca1342face3b9aa88afb453771f57",
+                "reviewed_page": 8,
+                "reviewed_pdf_sha256": "ffedd6ceced793769d3ebff85f670414ea41672b3b071e472283ca19b5680a9e",
+                "reviewed_raster_sha256": "7bc5af80c4a6d54cf3ba63d15d3c7aebdbb3065369899859bf5c4fd93ea56f87",
+                "scope": "Independent calibration of exact generated reader PDF page; native historical-page collation and source-word verification are not claimed."
+              },
+              "range_continuations": [],
+              "reason": "Acte Apostolicae Sedis - Commentarium Officiale follows genuine ProvXXII15 citation before continued body; preserve citation and paragraph boundary.",
+              "retained_nonwhitespace_sha256": "951bd711680103554b0cd8ef41b18e0690729738367bc98d0435e453408063ec",
+              "revision": "2026-10-26T18:40:21Z"
+            }
+          }
+        ],
+        "prior_current_pdf": {
+          "artifact_id": "artifact.acta-papal-archives.aas.022.issues-01-12.historical-text-9b499bb4",
+          "language": "la",
+          "pdf_sha256": "69f37dd38b8455c5d23597c37079744108f39904cf6417116f355650f26713f6",
+          "receipt_revision": "2026-10-26T05:34:44Z",
+          "receipt_sha256": "8279621b17eb5ce65b4986eaea150efec7048a2f7ba27eb2c13924689e7e39fc",
+          "segment_id": "segment.acta-papal-archives.aas.022.issues-01-12.aas-022-l01896",
+          "source_sha256": "9b499bb4a18a0ad5709b6c39cd446fd4095cf60a41829cb5d400ed1ea10072f8"
+        },
+        "revision": "2026-10-26T18:40:21Z"
+      },
+      "date": "1929-12-31",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.aas.022.issues-01-12.aas-022-l01896",
+      "id": "acta.aas.022.issues-01-12.aas-022-l01896",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1879,
+          1906
+        ],
+        [
+          1910,
+          1948
+        ],
+        [
+          1950,
+          1990
+        ],
+        [
+          1992,
+          2035
+        ],
+        [
+          2037,
+          2076
+        ],
+        [
+          2078,
+          2122
+        ],
+        [
+          2124,
+          2168
+        ],
+        [
+          2170,
+          2213
+        ],
+        [
+          2215,
+          2256
+        ],
+        [
+          2258,
+          2298
+        ],
+        [
+          2300,
+          2345
+        ],
+        [
+          2347,
+          2393
+        ],
+        [
+          2395,
+          2438
+        ],
+        [
+          2440,
+          2483
+        ],
+        [
+          2485,
+          2526
+        ],
+        [
+          2528,
+          2565
+        ],
+        [
+          2567,
+          2609
+        ],
+        [
+          2612,
+          2650
+        ],
+        [
+          2652,
+          2693
+        ],
+        [
+          2695,
+          2736
+        ],
+        [
+          2738,
+          2774
+        ],
+        [
+          2776,
+          2814
+        ],
+        [
+          2816,
+          2856
+        ],
+        [
+          2858,
+          2895
+        ],
+        [
+          2897,
+          2936
+        ],
+        [
+          2938,
+          2975
+        ],
+        [
+          2977,
+          3013
+        ],
+        [
+          3015,
+          3054
+        ],
+        [
+          3056,
+          3098
+        ],
+        [
+          3100,
+          3139
+        ],
+        [
+          3141,
+          3177
+        ],
+        [
+          3179,
+          3227
+        ],
+        [
+          3229,
+          3275
+        ],
+        [
+          3278,
+          3320
+        ],
+        [
+          3322,
+          3366
+        ],
+        [
+          3368,
+          3406
+        ],
+        [
+          3408,
+          3443
+        ],
+        [
+          3445,
+          3486
+        ]
+      ],
+      "pope": "Pius XI",
+      "revision": "2026-10-26T18:40:21Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"artifact_page_range\": [5, 528], \"edition\": \"Earlier identified1930fascicles1–12 of AAS22, through the leaf preceding issue13; not the annual1930label or papal signature dates.\", \"excluded_material\": \"Annual title/uncertain wrapper LF1–17; issue13/Casti fromLF22846; issue14; all annual index/correction/20January1931completion material.\", \"fascicles\": [{\"artifact_page_range\": [5, 48], \"bounded_physical_line_range\": [18, 1881], \"date_resolution\": {\"artifact_sha256\": \"2203a197db3412e272fe4c187f3544c778e38b20ec676620a24836091108ebf1\", \"basis\": \"Direct inspection of the actual bitmap issue cover; annual OCR1980 is a source extraction error, preserved unchanged in retained text.\", \"date\": \"1930-01-27\", \"source_id\": \"passage.holy-see.acta-apostolicae-sedis.1930-01-27-volume-22-issue-1.cover-date\"}, \"issue_slot\": 1, \"masthead_physical_line_range\": [18, 18], \"masthead_raw\": \"\\f\\fANNUS XXII - VOL. XXII         27 IANUARII 1980                       NUM. 1\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [49, 120], \"bounded_physical_line_range\": [1882, 4970], \"issue_slot\": 2, \"masthead_physical_line_range\": [1882, 1882], \"masthead_raw\": \"\\fAnnus X X I I ^ Vol. X X I I                 22 Februarii 1930   Num. 2\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [121, 152], \"bounded_physical_line_range\": [4971, 6408], \"issue_slot\": 3, \"masthead_physical_line_range\": [4971, 4971], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                3 Martii 1930                Num. S\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [153, 200], \"bounded_physical_line_range\": [6409, 8514], \"issue_slot\": 4, \"masthead_physical_line_range\": [6409, 6409], \"masthead_raw\": \"\\fAnnus XXII - Yol. XXII                 7 Aprilis 1930                  Num. 4\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [201, 256], \"bounded_physical_line_range\": [8515, 10974], \"issue_slot\": 5, \"masthead_physical_line_range\": [8515, 8515], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                      1 Maii 1930                      Num. 5\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [257, 296], \"bounded_physical_line_range\": [10975, 12718], \"issue_slot\": 6, \"masthead_physical_line_range\": [10975, 10975], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                 2 Iunii 1930                 Num. 6\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [297, 336], \"bounded_physical_line_range\": [12719, 14447], \"issue_slot\": 7, \"masthead_physical_line_range\": [12719, 12719], \"masthead_raw\": \"\\fAnnus XXII - Yol. XXII                         3 Iulii 1930                       Num. 7\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [337, 368], \"bounded_physical_line_range\": [14448, 15818], \"issue_slot\": 8, \"masthead_physical_line_range\": [14448, 14448], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                         7 Augusti 1930                       Num. 8\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [369, 432], \"bounded_physical_line_range\": [15819, 18682], \"issue_slot\": 9, \"masthead_physical_line_range\": [15819, 15819], \"masthead_raw\": \"\\fAnnus X X I I - Vol. X X I I                               2 Septembris 1930                 Num. 9\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [433, 464], \"bounded_physical_line_range\": [18683, 20085], \"issue_slot\": 10, \"masthead_physical_line_range\": [18683, 18683], \"masthead_raw\": \"\\fAnnus X X I I - Yol. XXIÍ                  4 Octobris 1930        Num. 10\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [465, 496], \"bounded_physical_line_range\": [20086, 21470], \"issue_slot\": 11, \"masthead_physical_line_range\": [20086, 20086], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                   4 Novembris 1930            Num. 11\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [497, 528], \"bounded_physical_line_range\": [21471, 22845], \"issue_slot\": 12, \"masthead_physical_line_range\": [21471, 21471], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                      1 Decembris 1930     Num. 12\", \"printed_page_mapping_note\": \"Source printed and one-based artifact page labels agree at observed neighboring headers. The final leaf528 has no extracted folio; its position lies after literal527 and before next issue13 starting529.\"}], \"printed_extent\": \"Historical fascicles1–12, printed pages5–528; final folio not extracted, bounded by observed527 and following issue13start529.\", \"retained_source_line_range\": [18, 22845], \"rights_position\": \"The retained wording is supported by individually identified earlier monthly1930publication mastheads and the independently image-verified first issue cover; no known later-release evidence affects this subset.\", \"specific_contrary_evidence\": \"Casti connubii actual release in January1931 is a specific contrary publication finding; it is excluded and not generalized to earlierfascicles.\"} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.022.issues-01-12.aas-022-l01896.visual-followup-2026-10-26",
+      "segment_path": "src/sources/works/papal-documents/1929-12-31-papal-pius-xi-hf-p-xi-enc-31121929-divini-illius-magistri-a6878805/editions/1930-acta-aas-022-issues-01-12-aas-022-l01896/segments/historical-text-visual-followup-2026-10-26.toml",
+      "sha256": "9b499bb4a18a0ad5709b6c39cd446fd4095cf60a41829cb5d400ed1ea10072f8",
+      "source_note": "AAS 22 (1930). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text. This exact act is retained from the separately bounded earlier 1930 fascicle subset; later issue 13 / Casti, issue 14 and 1931 index / colophon are excluded. A further explicit selector excludes only positively identified publisher furniture at physical LF 2775. Historical body wording, citations, notes, opening genre and any unresolved OCR glyphs remain literal. No word, spelling, hyphen or numeral is repaired.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-22-1930-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1931-acta-aas-022/artifacts/acta-historical-text-9b499bb4/historical.txt",
+      "title": "LITTERAE                ENCYCLICAE AD VENERABILES FRATRES, PATRIARCHAS, PRIMATES, ARCHIEPI- SCOPOS, EPISCOPOS, ALIOSQUE LOCORUM ORDINARIOS, PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES ITEMQUE AD CHRISTIFIDELES CATHOLICI ORBIS UNIVERSOS: DE CHRI- STIANA IUVENTUTIS EDUCATIONE.",
+      "work_id": "work.papal.pius-xi.hf-p-xi-enc-31121929-divini-illius-magistri"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.005.historical-text-3e38ed09",
+      "correction_evidence": {
+        "items": [
+          {
+            "kind": "finite-replacement-review-publisher-furniture-removal",
+            "new_segment_path": "src/sources/works/papal-documents/1913-10-23-papal-pius-x-hf-p-x-motu-proprio-19131023-abhinc-duos-annos-7e91704b/editions/1913-acta-aas-005-archive.aas.005.047/segments/historical-text-visual-followup-2026-10-26.toml",
+            "new_segment_sha256": "969d8c368a737342b3cc26661a5452fb974c0e8f22fad97235f3760a6defcacb",
+            "prior_edition_id": "edition.acta-papal-archives.aas.005.archive.aas.005.047",
+            "prior_pdf": {
+              "artifact_id": "artifact.acta-papal-archives.aas.005.historical-text-3e38ed09",
+              "id": "acta.aas.005.archive.aas.005.047",
+              "language": "la",
+              "pdf_sha256": "12c5753d213174bd919c234938497531e99d3b3f99767dba72aef37e3cc55ae2",
+              "segment_id": "segment.acta-papal-archives.aas.005.archive.aas.005.047",
+              "source_sha256": "3e38ed099c61b7fca391e4cffe8e47fdb12bddfc886ce792d074dba19aca96b2"
+            },
+            "prior_render_receipt_revision": "2026-10-26T05:34:44Z",
+            "prior_render_receipt_sha256": "8279621b17eb5ce65b4986eaea150efec7048a2f7ba27eb2c13924689e7e39fc",
+            "prior_row_sha256": "79612e1811be46014c0183c6f6b6992a67922e9e9c93066f6a3bc2dcd9546d96",
+            "revision": "2026-10-26T18:40:21Z",
+            "source_revision": {
+              "excluded_publisher_furniture": [
+                {
+                  "exact_line": "  ACTA, rol. V, n. 16. — 28-10-913.                                                 32",
+                  "physical_LF": 18871
+                }
+              ],
+              "physical_line_ranges": [
+                [
+                  18846,
+                  18870
+                ],
+                [
+                  18873,
+                  18913
+                ],
+                [
+                  18915,
+                  18954
+                ]
+              ],
+              "prior_context": "Formal source genre heading at physical LF line 18845; papal ACTA or standalone formal section at line 18843; constituent heading at line 18846. Issuer/signature lines: 18849, 18954",
+              "prior_physical_line_ranges": [
+                [
+                  18846,
+                  18871
+                ],
+                [
+                  18873,
+                  18913
+                ],
+                [
+                  18915,
+                  18954
+                ]
+              ],
+              "prior_segment_id": "segment.acta-papal-archives.aas.005.archive.aas.005.047",
+              "prior_segment_sha256": "9baf1d8207269884bc6c7e06c962aa9f829b7c34131ecace95f78dcddd887962",
+              "proof": {
+                "calibration_sha256": "d32833e449654542b4beada5161977c8a2cb19f1b226ef15b9a47b7bde583380",
+                "correction_queue_sha256": "6be056148e937c3e1536a4770259005c6ed067eb4b4fadf466699d9961d4bdcb",
+                "report": "src/sources/papal-documents/acta-replacement-visual-017.md",
+                "report_sha256": "2d9eb1abcad4931fe5487bff5be5109093d637437eb9a98e8e0d57e52b7db3cd",
+                "reviewed_page": 1,
+                "reviewed_pdf_sha256": "12c5753d213174bd919c234938497531e99d3b3f99767dba72aef37e3cc55ae2",
+                "reviewed_raster_sha256": "3ce7ad19029f38590b823732b5d0899bee63dc2ca3efd5f96a10d93b3ec92db3",
+                "scope": "Independent calibration of exact generated reader PDF page; native historical-page collation and source-word verification are not claimed."
+              },
+              "range_continuations": [
+                0
+              ],
+              "reason": "Independent exact-page calibration positively identifies the standalone publisher line. Exclude only this source LF; retain all historical notes, citations, subscriptions, body words and uncertain glyphs. The following running-head/formfeed is already outside the selected ranges.",
+              "retained_nonwhitespace_sha256": "594ec23207dad492e22bb5e97799b26b1811b6f9474a901211d08cf5bfe8c8ea",
+              "revision": "2026-10-26T18:40:21Z"
+            }
+          }
+        ],
+        "revision": "2026-10-26T18:40:21Z"
+      },
+      "date": null,
+      "document_type": "motu-proprio",
+      "edition_id": "edition.acta-papal-archives.aas.005.archive.aas.005.047",
+      "id": "acta.aas.005.archive.aas.005.047",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          18846,
+          18870
+        ],
+        [
+          18873,
+          18913
+        ],
+        [
+          18915,
+          18954
+        ]
+      ],
+      "pope": "Pius X",
+      "range_continuations": [
+        0
+      ],
+      "revision": "2026-10-26T18:40:21Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"completion_colophon_line_ranges\": [[26868, 26868]], \"completion_colophon_raw\": \"       ABSOLVITUR    DIE    31   D E C . 1913.   -   TYPIS   POLYGLOTTIS    VATICANIS.\", \"evidence\": \"Annual title/imprint and year at physical LF lines 1–18, confirmed by dated issue headings and official archive annual label. This identifies the historical underlying textual edition; the acquired Vatican -ocr.pdf is a modern OCR/text reconstruction and no image collation is claimed.\", \"imprint\": \"Typis Polyglottis Vaticanis\", \"publication_year\": 1913, \"source_index_url\": \"https://www.vatican.va/archive/aas/index_en.htm\", \"title\": \"Acta Apostolicae Sedis: Commentarium officiale\", \"title_imprint_physical_line_ranges\": [[1, 18]], \"volume\": 5} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.005.archive.aas.005.047.visual-followup-2026-10-26",
+      "segment_path": "src/sources/works/papal-documents/1913-10-23-papal-pius-x-hf-p-x-motu-proprio-19131023-abhinc-duos-annos-7e91704b/editions/1913-acta-aas-005-archive.aas.005.047/segments/historical-text-visual-followup-2026-10-26.toml",
+      "sha256": "3e38ed099c61b7fca391e4cffe8e47fdb12bddfc886ce792d074dba19aca96b2",
+      "source_note": "AAS 5 (1913), printed pages 450, 451. Source heading metadata collapses whitespace only. Retained wording is selected mechanically from the exact hashed derivative, preserving OCR errors, source dating, signatures and source notes; extraction is not collation. A further explicit selector excludes only positively identified publisher furniture at physical LF 18871. Historical body wording, citations, notes, opening genre and any unresolved OCR glyphs remain literal. No word, spelling, hyphen or numeral is repaired.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-05-1913-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1913-acta-aas-005/artifacts/acta-historical-text-3e38ed09/historical.txt",
+      "title": "DE OFFICIIS DIVINIS NOVO ALIQUA EX PARTE MODO ORDINANDIS.",
+      "work_id": "work.papal.pius-x.hf-p-x-motu-proprio-19131023-abhinc-duos-annos"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b",
+      "correction_evidence": {
+        "items": [
+          {
+            "kind": "finite-replacement-review-publisher-furniture-removal",
+            "new_segment_path": "src/sources/works/acta-papal-archives/undated-aas.012-archive.aas.012.l021627/editions/1920-acta-aas-012-archive.aas.012.l021627/segments/historical-text-visual-followup-2026-10-26.toml",
+            "new_segment_sha256": "7259daf58bc582250c4accdc776fdaf002ab231498f851eddec4ef6a87984198",
+            "prior_edition_id": "edition.acta-papal-archives.aas.012.archive.aas.012.l021627",
+            "prior_pdf": {
+              "artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b",
+              "id": "acta.aas.012.archive.aas.012.l021627",
+              "language": "la",
+              "pdf_sha256": "e3c9d62b9bb16bb1ce0f51c86a32020332e8de9f86b33cdfa1450de6ba911951",
+              "segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l021627",
+              "source_sha256": "d9a0ce5b59d42a7aeff20f01a73349e154757550db955dc5a76fbff7e3fbaf20"
+            },
+            "prior_render_receipt_revision": "2026-10-26T05:34:44Z",
+            "prior_render_receipt_sha256": "8279621b17eb5ce65b4986eaea150efec7048a2f7ba27eb2c13924689e7e39fc",
+            "prior_row_sha256": "afbfef9b394c093a2dfb53ca8aafebbdf073e7d3abe49e2a98f7fede6e8ef184",
+            "revision": "2026-10-26T18:40:21Z",
+            "source_revision": {
+              "excluded_publisher_furniture": [
+                {
+                  "exact_line": "   ACTA. vol. XII, n. 1 2 . — 2 - 1 1 - 9 2 0 .                                    36",
+                  "physical_LF": 21950
+                }
+              ],
+              "physical_line_ranges": [
+                [
+                  21627,
+                  21652
+                ],
+                [
+                  21654,
+                  21694
+                ],
+                [
+                  21696,
+                  21737
+                ],
+                [
+                  21739,
+                  21779
+                ],
+                [
+                  21781,
+                  21822
+                ],
+                [
+                  21824,
+                  21864
+                ],
+                [
+                  21866,
+                  21907
+                ],
+                [
+                  21909,
+                  21949
+                ],
+                [
+                  21952,
+                  21993
+                ],
+                [
+                  21995,
+                  22035
+                ],
+                [
+                  22037,
+                  22078
+                ],
+                [
+                  22080,
+                  22120
+                ],
+                [
+                  22122,
+                  22163
+                ],
+                [
+                  22165,
+                  22205
+                ],
+                [
+                  22207,
+                  22239
+                ],
+                [
+                  22241,
+                  22284
+                ]
+              ],
+              "prior_context": "Source issuer section starts at physical line 19211; document heading/number/title at 21627 and following lines.",
+              "prior_physical_line_ranges": [
+                [
+                  21627,
+                  21652
+                ],
+                [
+                  21654,
+                  21694
+                ],
+                [
+                  21696,
+                  21737
+                ],
+                [
+                  21739,
+                  21779
+                ],
+                [
+                  21781,
+                  21822
+                ],
+                [
+                  21824,
+                  21864
+                ],
+                [
+                  21866,
+                  21907
+                ],
+                [
+                  21909,
+                  21950
+                ],
+                [
+                  21952,
+                  21993
+                ],
+                [
+                  21995,
+                  22035
+                ],
+                [
+                  22037,
+                  22078
+                ],
+                [
+                  22080,
+                  22120
+                ],
+                [
+                  22122,
+                  22163
+                ],
+                [
+                  22165,
+                  22205
+                ],
+                [
+                  22207,
+                  22239
+                ],
+                [
+                  22241,
+                  22284
+                ]
+              ],
+              "prior_segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l021627",
+              "prior_segment_sha256": "ec9cb84933c8f2db67836793084470b7e8ab4fcbc7ddd9e1f13f808791cd06c1",
+              "proof": {
+                "calibration_sha256": "d32833e449654542b4beada5161977c8a2cb19f1b226ef15b9a47b7bde583380",
+                "correction_queue_sha256": "6be056148e937c3e1536a4770259005c6ed067eb4b4fadf466699d9961d4bdcb",
+                "report": "src/sources/papal-documents/acta-replacement-visual-017.md",
+                "report_sha256": "2d9eb1abcad4931fe5487bff5be5109093d637437eb9a98e8e0d57e52b7db3cd",
+                "reviewed_page": 4,
+                "reviewed_pdf_sha256": "e3c9d62b9bb16bb1ce0f51c86a32020332e8de9f86b33cdfa1450de6ba911951",
+                "reviewed_raster_sha256": "46927e8647fda602bfcc8b3f5ce15fd8317b5a5f3e3577751ad4026fc1767187",
+                "scope": "Independent calibration of exact generated reader PDF page; native historical-page collation and source-word verification are not claimed."
+              },
+              "range_continuations": [
+                7
+              ],
+              "reason": "Independent exact-page calibration positively identifies the standalone publisher line. Exclude only this source LF; retain all historical notes, citations, subscriptions, body words and uncertain glyphs. The following running-head/formfeed is already outside the selected ranges.",
+              "retained_nonwhitespace_sha256": "6506b304ba0dd0b65193eb9b7376e001522e2d96864ffac44288c85bb7bd382f",
+              "revision": "2026-10-26T18:40:21Z"
+            }
+          }
+        ],
+        "revision": "2026-10-26T18:40:21Z"
+      },
+      "date": null,
+      "document_type": "bull",
+      "edition_id": "edition.acta-papal-archives.aas.012.archive.aas.012.l021627",
+      "id": "acta.aas.012.archive.aas.012.l021627",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          21627,
+          21652
+        ],
+        [
+          21654,
+          21694
+        ],
+        [
+          21696,
+          21737
+        ],
+        [
+          21739,
+          21779
+        ],
+        [
+          21781,
+          21822
+        ],
+        [
+          21824,
+          21864
+        ],
+        [
+          21866,
+          21907
+        ],
+        [
+          21909,
+          21949
+        ],
+        [
+          21952,
+          21993
+        ],
+        [
+          21995,
+          22035
+        ],
+        [
+          22037,
+          22078
+        ],
+        [
+          22080,
+          22120
+        ],
+        [
+          22122,
+          22163
+        ],
+        [
+          22165,
+          22205
+        ],
+        [
+          22207,
+          22239
+        ],
+        [
+          22241,
+          22284
+        ]
+      ],
+      "pope": "Benedict XV",
+      "range_continuations": [
+        7
+      ],
+      "revision": "2026-10-26T18:40:21Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"artifact_page_ranges\": [[1, 1]], \"completion_colophon_line_ranges\": [[27513, 27513]], \"completion_colophon_raw\": \"         ABSOLVITUR DIE 17 DEC. 1920. - TYPIS POLYGLOTTIS VATICANIS\", \"evidence\": \"Title and imprint in the acquired Vatican OCR PDF identify Acta Apostolicae Sedis, the annual volume, ROMAE / TYPIS POLYGLOTTIS VATICANIS and its Roman-numeral publication year. This is edition provenance, not facsimile collation.\", \"physical_line_ranges\": [[1, 17]], \"publication_year\": 1920} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l021627.visual-followup-2026-10-26",
+      "segment_path": "src/sources/works/acta-papal-archives/undated-aas.012-archive.aas.012.l021627/editions/1920-acta-aas-012-archive.aas.012.l021627/segments/historical-text-visual-followup-2026-10-26.toml",
+      "sha256": "d9a0ce5b59d42a7aeff20f01a73349e154757550db955dc5a76fbff7e3fbaf20",
+      "source_note": "AAS 12 (1920). Whole-volume Vatican OCR extraction; no facsimile collation or silent textual correction. A further explicit selector excludes only positively identified publisher furniture at physical LF 21950. Historical body wording, citations, notes, opening genre and any unresolved OCR glyphs remain literal. No word, spelling, hyphen or numeral is repaired.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-12-1920-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1920-acta-aas-012/artifacts/acta-historical-text-d9a0ce5b/historical.txt",
+      "title": "BEATA IOANNA DE ARC, VIRGO, IN SANCTORUM CAELITUM ALBUM REFERTUR AD PERPETUAM REI MEMORIAM",
+      "work_id": "work.acta-papal-archives.aas.012-archive.aas.012.l021627"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a",
+      "correction_evidence": {
+        "items": [
+          {
+            "kind": "finite-replacement-review-publisher-furniture-removal",
+            "new_segment_path": "src/sources/works/acta-papal-archives/undated-aas.021-aas-021-l04078/editions/1930-acta-aas-021-aas-021-l04078/segments/historical-text-visual-followup-2026-10-26.toml",
+            "new_segment_sha256": "06707388940c16f96cf0cfd12962c8562b7ee497bced67338170d5c5710f4882",
+            "prior_edition_id": "edition.acta-papal-archives.aas.021.aas-021-l04078",
+            "prior_pdf": {
+              "artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a",
+              "id": "acta.aas.021.aas-021-l04078",
+              "language": "la",
+              "pdf_sha256": "f0cb9513d6c7eba3eb22222b77914bd4d22c8660ab417777a996a83724b04ff6",
+              "segment_id": "segment.acta-papal-archives.aas.021.aas-021-l04078",
+              "source_sha256": "c3e4af8a24386821d8b3827235c324e20a4a0a36c0f4dc88b017a3380400357c"
+            },
+            "prior_render_receipt_revision": "2026-10-26T05:34:44Z",
+            "prior_render_receipt_sha256": "8279621b17eb5ce65b4986eaea150efec7048a2f7ba27eb2c13924689e7e39fc",
+            "prior_row_sha256": "dfaf27c0a3d07977d87127be27010cbbb4ddd8ed6d022d803ec80e5d52c38547",
+            "revision": "2026-10-26T18:40:21Z",
+            "source_revision": {
+              "excluded_publisher_furniture": [
+                {
+                  "exact_line": "  ACTA. vol. XXI, n.   3.   - 6-3-929.",
+                  "physical_LF": 4109
+                }
+              ],
+              "physical_line_ranges": [
+                [
+                  4078,
+                  4108
+                ],
+                [
+                  4111,
+                  4151
+                ]
+              ],
+              "prior_context": "{\"context\": \"Formal document under the papal issuer section, distinguished from adjacent curial and editorial sections.\", \"date_clause_line_ranges\": [[4135, 4142]], \"date_identity_index_evidence\": null, \"papal_issuer_or_signature_line_ranges\": [[4086, 4086]], \"source_date_clause_raw\": \"     D a t u m R o m a e apud Sanctum Petrum, anno Domini millesimo nongen-\\ntesimo vigesimo octavo, die decima nona mensis Ianuarii, Pontificatus\\nNostri anno sexto.\\n\\n\\nF R . A N D R E A S CARD. P R O H W I R T H ,         © B A S I L I U S C A R D . POMPILJ,\\n           S. B. E. Cancellarius.                            Episcopus      Veliternen.\\n\", \"source_heading_line_ranges\": [[4078, 4085]]}",
+              "prior_physical_line_ranges": [
+                [
+                  4078,
+                  4109
+                ],
+                [
+                  4111,
+                  4151
+                ]
+              ],
+              "prior_segment_id": "segment.acta-papal-archives.aas.021.aas-021-l04078",
+              "prior_segment_sha256": "2444c8c62c784ac675e9fbe1c7d045d855267439b356375f3ca0c073a39d15b2",
+              "proof": {
+                "calibration_sha256": "d32833e449654542b4beada5161977c8a2cb19f1b226ef15b9a47b7bde583380",
+                "correction_queue_sha256": "6be056148e937c3e1536a4770259005c6ed067eb4b4fadf466699d9961d4bdcb",
+                "report": "src/sources/papal-documents/acta-replacement-visual-017.md",
+                "report_sha256": "2d9eb1abcad4931fe5487bff5be5109093d637437eb9a98e8e0d57e52b7db3cd",
+                "reviewed_page": 1,
+                "reviewed_pdf_sha256": "f0cb9513d6c7eba3eb22222b77914bd4d22c8660ab417777a996a83724b04ff6",
+                "reviewed_raster_sha256": "42d7881008646021d3800a40ea5ab83123e8b4fb22bc0535e6170c4263ea18a2",
+                "scope": "Independent calibration of exact generated reader PDF page; native historical-page collation and source-word verification are not claimed."
+              },
+              "range_continuations": [
+                0
+              ],
+              "reason": "A separately identified journal volume/issue/date/folio LF interrupts the exact source body fragments shown in continuation_evidence. The pure publication line is excluded only; all notes, citations, signatures, uncertain glyphs and body characters otherwise remain.",
+              "retained_nonwhitespace_sha256": "f5666fdf28bb383c0c51f8f3d2d63be4cc72d8e520dc9ad40969965feb42fd6c",
+              "revision": "2026-10-26T18:40:21Z"
+            }
+          }
+        ],
+        "revision": "2026-10-26T18:40:21Z"
+      },
+      "date": null,
+      "document_type": "apostolic-constitution",
+      "edition_id": "edition.acta-papal-archives.aas.021.aas-021-l04078",
+      "id": "acta.aas.021.aas-021-l04078",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          4078,
+          4108
+        ],
+        [
+          4111,
+          4151
+        ]
+      ],
+      "pope": "Pius XI",
+      "range_continuations": [
+        0
+      ],
+      "revision": "2026-10-26T18:40:21Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"basis\": \"The official archival OCR volume identifies the historical AAS title, annual volume and Vatican printing imprint. Constituent source headings, dated issue mastheads, signatures, source notes and historical end indexes belong to that identified printing. This establishes edition testimony through the OCR reconstruction, not image-level collation.\", \"completion_colophon_line_ranges\": [[34441, 34441]], \"completion_colophon_raw\": \"      ABSOLVITUR DIE 20 IANUARII 1930\", \"edition\": \"Acta Apostolicae Sedis 21 (1929), Rome, Typis Polyglottis Vaticanis.\", \"limitation\": \"Annual title year is nominal; the completion colophon and source issue dates are recorded separately.\", \"title_imprint_line_ranges\": [[1, 17]]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.021.aas-021-l04078.visual-followup-2026-10-26",
+      "segment_path": "src/sources/works/acta-papal-archives/undated-aas.021-aas-021-l04078/editions/1930-acta-aas-021-aas-021-l04078/segments/historical-text-visual-followup-2026-10-26.toml",
+      "sha256": "c3e4af8a24386821d8b3827235c324e20a4a0a36c0f4dc88b017a3380400357c",
+      "source_note": "AAS 21 (1929). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text. A further explicit selector excludes only positively identified publisher furniture at physical LF 4109. Historical body wording, citations, notes, opening genre and any unresolved OCR glyphs remain literal. No word, spelling, hyphen or numeral is repaired.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-21-1929-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1930-acta-aas-021/artifacts/acta-historical-text-c3e4af8a/historical.txt",
+      "title": "CONSTITUTIO APOSTOLICA D E S O C O R R O E T D E SAN G I L TRANSLATIONIS SEDIS EPISCOPALIS",
+      "work_id": "work.acta-papal-archives.aas.021-aas-021-l04078"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a",
+      "correction_evidence": {
+        "items": [
+          {
+            "kind": "finite-replacement-review-publisher-furniture-removal",
+            "new_segment_path": "src/sources/works/acta-papal-archives/undated-aas.021-aas-021-l22883/editions/1930-acta-aas-021-aas-021-l22883/segments/historical-text-visual-followup-2026-10-26.toml",
+            "new_segment_sha256": "e847f74ca63f1f81d0be5abe0d741e0f3d5f9401aa44dd8d5adc69b6bb8dda29",
+            "prior_edition_id": "edition.acta-papal-archives.aas.021.aas-021-l22883",
+            "prior_pdf": {
+              "artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a",
+              "id": "acta.aas.021.aas-021-l22883",
+              "language": "la",
+              "pdf_sha256": "66c035b3ebc72000a110d13f7ad609f252f02b78403a9b225e7bd174f2375c88",
+              "segment_id": "segment.acta-papal-archives.aas.021.aas-021-l22883",
+              "source_sha256": "c3e4af8a24386821d8b3827235c324e20a4a0a36c0f4dc88b017a3380400357c"
+            },
+            "prior_render_receipt_revision": "2026-10-26T05:34:44Z",
+            "prior_render_receipt_sha256": "8279621b17eb5ce65b4986eaea150efec7048a2f7ba27eb2c13924689e7e39fc",
+            "prior_row_sha256": "8d51a8d8b7d3b52c081849bd4949997ece0812b829df37e70c0e79d7ce906f1e",
+            "revision": "2026-10-26T18:40:21Z",
+            "source_revision": {
+              "excluded_publisher_furniture": [
+                {
+                  "exact_line": "  ACTA, rol. XXI, n. 13. — 1-10-929.                                                      39",
+                  "physical_LF": 22903
+                }
+              ],
+              "physical_line_ranges": [
+                [
+                  22883,
+                  22902
+                ],
+                [
+                  22905,
+                  22941
+                ],
+                [
+                  22943,
+                  22979
+                ],
+                [
+                  22981,
+                  23016
+                ],
+                [
+                  23018,
+                  23041
+                ]
+              ],
+              "prior_context": "{\"context\": \"Formal document under the papal issuer section, distinguished from adjacent curial and editorial sections.\", \"date_clause_line_ranges\": [[23026, 23033]], \"date_identity_index_evidence\": null, \"papal_issuer_or_signature_line_ranges\": [[22888, 22888]], \"source_date_clause_raw\": \"    Datum Romae apud Sanctum Petram, anno Domini millesimo\\nnongentesimo vigesimo nono, die decima quinta mensis Augusti, in\\nFesto Assumptionis Beatae Mariae Virginis, Pontificatus Nostri\\nanno octavo.\\n\\nF R . ANDREAS CARD. FRÜHWIRTH,    ALOISIUS CARD. SINCERO,\\n         Cancellarius S. R. E. S. C. pro Ecclesia Orientali Secretarius.\\n\", \"source_heading_line_ranges\": [[22883, 22887]]}",
+              "prior_physical_line_ranges": [
+                [
+                  22883,
+                  22903
+                ],
+                [
+                  22905,
+                  22941
+                ],
+                [
+                  22943,
+                  22979
+                ],
+                [
+                  22981,
+                  23016
+                ],
+                [
+                  23018,
+                  23041
+                ]
+              ],
+              "prior_segment_id": "segment.acta-papal-archives.aas.021.aas-021-l22883",
+              "prior_segment_sha256": "789df043b301c4ecceb5148dc3ad675c9098837a890f63299ea04be65c911dba",
+              "proof": {
+                "calibration_sha256": "d32833e449654542b4beada5161977c8a2cb19f1b226ef15b9a47b7bde583380",
+                "correction_queue_sha256": "6be056148e937c3e1536a4770259005c6ed067eb4b4fadf466699d9961d4bdcb",
+                "report": "src/sources/papal-documents/acta-replacement-visual-017.md",
+                "report_sha256": "2d9eb1abcad4931fe5487bff5be5109093d637437eb9a98e8e0d57e52b7db3cd",
+                "reviewed_page": 1,
+                "reviewed_pdf_sha256": "66c035b3ebc72000a110d13f7ad609f252f02b78403a9b225e7bd174f2375c88",
+                "reviewed_raster_sha256": "ef21c71ad0703425586c77a5942b1c2e4586e563c7be975dbe8db744b2afd29b",
+                "scope": "Independent calibration of exact generated reader PDF page; native historical-page collation and source-word verification are not claimed."
+              },
+              "range_continuations": [
+                0
+              ],
+              "reason": "A separately identified journal volume/issue/date/folio LF interrupts the exact source body fragments shown in continuation_evidence. The pure publication line is excluded only; all notes, citations, signatures, uncertain glyphs and body characters otherwise remain.",
+              "retained_nonwhitespace_sha256": "56a5670adb6414876b9f78dd053ac79892de5d038c3327a7ecce7d747d2e5d4e",
+              "revision": "2026-10-26T18:40:21Z"
+            }
+          }
+        ],
+        "revision": "2026-10-26T18:40:21Z"
+      },
+      "date": null,
+      "document_type": "apostolic-constitution",
+      "edition_id": "edition.acta-papal-archives.aas.021.aas-021-l22883",
+      "id": "acta.aas.021.aas-021-l22883",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          22883,
+          22902
+        ],
+        [
+          22905,
+          22941
+        ],
+        [
+          22943,
+          22979
+        ],
+        [
+          22981,
+          23016
+        ],
+        [
+          23018,
+          23041
+        ]
+      ],
+      "pope": "Pius XI",
+      "range_continuations": [
+        0
+      ],
+      "revision": "2026-10-26T18:40:21Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"basis\": \"The official archival OCR volume identifies the historical AAS title, annual volume and Vatican printing imprint. Constituent source headings, dated issue mastheads, signatures, source notes and historical end indexes belong to that identified printing. This establishes edition testimony through the OCR reconstruction, not image-level collation.\", \"completion_colophon_line_ranges\": [[34441, 34441]], \"completion_colophon_raw\": \"      ABSOLVITUR DIE 20 IANUARII 1930\", \"edition\": \"Acta Apostolicae Sedis 21 (1929), Rome, Typis Polyglottis Vaticanis.\", \"limitation\": \"Annual title year is nominal; the completion colophon and source issue dates are recorded separately.\", \"title_imprint_line_ranges\": [[1, 17]]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.021.aas-021-l22883.visual-followup-2026-10-26",
+      "segment_path": "src/sources/works/acta-papal-archives/undated-aas.021-aas-021-l22883/editions/1930-acta-aas-021-aas-021-l22883/segments/historical-text-visual-followup-2026-10-26.toml",
+      "sha256": "c3e4af8a24386821d8b3827235c324e20a4a0a36c0f4dc88b017a3380400357c",
+      "source_note": "AAS 21 (1929). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text. A further explicit selector excludes only positively identified publisher furniture at physical LF 22903. Historical body wording, citations, notes, opening genre and any unresolved OCR glyphs remain literal. No word, spelling, hyphen or numeral is repaired.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-21-1929-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1930-acta-aas-021/artifacts/acta-historical-text-c3e4af8a/historical.txt",
+      "title": "CONSTITUTIO APOSTOLICA DE SEMINARIO RUSSICO",
+      "work_id": "work.acta-papal-archives.aas.021-aas-021-l22883"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.022.issues-01-12.historical-text-9b499bb4",
+      "correction_evidence": {
+        "items": [
+          {
+            "categories": [
+              "exact-project-source-note-readability"
+            ],
+            "changes": {
+              "source_note": {
+                "after": "AAS 22 (1930). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text. This exact act is retained from the separately bounded earlier 1930 fascicle subset; later issue 13 / Casti, issue 14 and 1931 index / colophon are excluded.",
+                "before": "AAS 22 (1930). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text. This exact act is retained from the separately bounded earlier1930fascicle subset; laterissue13/Casti, issue14 and1931index/colophon are excluded."
+              }
+            },
+            "kind": "reviewed-metadata-correction",
+            "source_evidence": [
+              {
+                "exact_after_pattern": "earlier 1930 fascicle subset; later issue 13 / Casti, issue 14 and 1931 index / colophon",
+                "exact_before_pattern": "earlier1930fascicle subset; laterissue13/Casti, issue14 and1931index/colophon",
+                "field": "source_note",
+                "matching_current_selection_source": "src/sources/papal-documents/acta-manifest.json",
+                "occurrences_in_this_row": 1,
+                "qualification": "This replaces project metadata only. rights_basis, rights_notice and source-body bytes are unchanged.",
+                "role": "mechanical-project-note-replacement"
+              }
+            ]
+          },
+          {
+            "kind": "finite-replacement-review-publisher-furniture-removal",
+            "new_segment_path": "src/sources/works/acta-papal-archives/undated-aas.022.issues-01-12-aas-022-l04984/editions/1930-acta-aas-022-issues-01-12-aas-022-l04984/segments/historical-text-visual-followup-2026-10-26.toml",
+            "new_segment_sha256": "f1931a3fd2407bf3b319f8c23eda027274f112430bf887ea564dcecb82f5b819",
+            "prior_edition_id": "edition.acta-papal-archives.aas.022.issues-01-12.aas-022-l04984",
+            "prior_pdf": {
+              "artifact_id": "artifact.acta-papal-archives.aas.022.issues-01-12.historical-text-9b499bb4",
+              "id": "acta.aas.022.issues-01-12.aas-022-l04984",
+              "language": "la",
+              "pdf_sha256": "3e82f7dcac34d575430cbbc4bc13b8ccd02d069669e824c0570b2578dc73f2e5",
+              "segment_id": "segment.acta-papal-archives.aas.022.issues-01-12.aas-022-l04984",
+              "source_sha256": "9b499bb4a18a0ad5709b6c39cd446fd4095cf60a41829cb5d400ed1ea10072f8"
+            },
+            "prior_render_receipt_revision": "2026-10-26T18:13:41Z",
+            "prior_render_receipt_sha256": "0a621b5e2134d186ee3b8e5eb3ab4b16acb6c718ee442ce4162f3b3ad1954df5",
+            "prior_row_sha256": "f6294151d0ae0a3cf096d695e90d5dcef66695786afbf1e283a9d4022d4089fe",
+            "revision": "2026-10-26T18:40:21Z",
+            "source_revision": {
+              "excluded_publisher_furniture": [
+                {
+                  "exact_line": "  Agta, rol. XXII, n. 3. — 3-3-930.                                    9",
+                  "physical_LF": 4997
+                }
+              ],
+              "physical_line_ranges": [
+                [
+                  4967,
+                  4996
+                ],
+                [
+                  4999,
+                  5040
+                ],
+                [
+                  5042,
+                  5087
+                ]
+              ],
+              "prior_context": "{\"context\": \"Formal document under the papal issuer section, distinguished from adjacent curial and editorial sections.\", \"date_clause_line_ranges\": [[5094, 5101]], \"date_identity_index_evidence\": null, \"papal_issuer_or_signature_line_ranges\": [[4988, 4988]], \"source_date_clause_raw\": \"   Datum Romae apud Sanctum Petrum, anno Domini millesimo nongente-\\nsimo vigesimo nono, die tertia mensis Iulii, Pontificatus Nostri anno octavo.\\n\\n\\nFR. A N D R E A S CARD. F R Ü H W I R T H ,          C A R O L U S CARD. P E R O S I ,\\n           Cancellarius S. B. E.                     S. C. Consistorialis Secretarius.\\n\\n                      Ioseph Wilpert, Decanus Coll. Proton. Apostolicorum.\", \"source_heading_line_ranges\": [[4984, 4987]]}",
+              "prior_physical_line_ranges": [
+                [
+                  4967,
+                  4997
+                ],
+                [
+                  4999,
+                  5040
+                ],
+                [
+                  5042,
+                  5087
+                ]
+              ],
+              "prior_segment_id": "segment.acta-papal-archives.aas.022.issues-01-12.aas-022-l04984",
+              "prior_segment_sha256": "f769bfc94c7c90e8372a17d4b76d7f31d55014baadb7343916b19931bb47deab",
+              "proof": {
+                "calibration_sha256": "d32833e449654542b4beada5161977c8a2cb19f1b226ef15b9a47b7bde583380",
+                "correction_queue_sha256": "6be056148e937c3e1536a4770259005c6ed067eb4b4fadf466699d9961d4bdcb",
+                "report": "src/sources/papal-documents/acta-replacement-visual-015.md",
+                "report_sha256": "e2e5986a395aea734b0fee17296d1c47da5e1237275281563560e26e60363de9",
+                "reviewed_page": 1,
+                "reviewed_pdf_sha256": "3e82f7dcac34d575430cbbc4bc13b8ccd02d069669e824c0570b2578dc73f2e5",
+                "reviewed_raster_sha256": "d9213ea96e1fcd5994cac845a9b347dc0a958d9aa2f5c3865893e7029cba1bf8",
+                "scope": "Independent calibration of exact generated reader PDF page; native historical-page collation and source-word verification are not claimed."
+              },
+              "range_continuations": [
+                0
+              ],
+              "reason": "The separate Agta/volume/issue/date/folio stamp is pure publication furniture between meri- and diem. Its OCR is not expanded or normalized. The body, notes, citations, current metadata and uncertain source glyphs elsewhere are unchanged.",
+              "retained_nonwhitespace_sha256": "ea92ecb8b65d16329fe651aa72b4300476f661ba6b9012bd103eda692b204a94",
+              "revision": "2026-10-26T18:40:21Z"
+            }
+          }
+        ],
+        "prior_current_pdf": {
+          "artifact_id": "artifact.acta-papal-archives.aas.022.issues-01-12.historical-text-9b499bb4",
+          "language": "la",
+          "pdf_sha256": "89e5ca64d5db5fb34d58ba9d9c972547bb626dfe83e8e81f480e000dac21964d",
+          "receipt_revision": "2026-10-26T05:34:44Z",
+          "receipt_sha256": "8279621b17eb5ce65b4986eaea150efec7048a2f7ba27eb2c13924689e7e39fc",
+          "segment_id": "segment.acta-papal-archives.aas.022.issues-01-12.aas-022-l04984",
+          "source_sha256": "9b499bb4a18a0ad5709b6c39cd446fd4095cf60a41829cb5d400ed1ea10072f8"
+        },
+        "revision": "2026-10-26T18:40:21Z"
+      },
+      "date": null,
+      "document_type": "apostolic-constitution",
+      "edition_id": "edition.acta-papal-archives.aas.022.issues-01-12.aas-022-l04984",
+      "id": "acta.aas.022.issues-01-12.aas-022-l04984",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          4967,
+          4996
+        ],
+        [
+          4999,
+          5040
+        ],
+        [
+          5042,
+          5087
+        ]
+      ],
+      "pope": "Pius XI",
+      "range_continuations": [
+        0
+      ],
+      "revision": "2026-10-26T18:40:21Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"artifact_page_range\": [5, 528], \"edition\": \"Earlier identified1930fascicles1–12 of AAS22, through the leaf preceding issue13; not the annual1930label or papal signature dates.\", \"excluded_material\": \"Annual title/uncertain wrapper LF1–17; issue13/Casti fromLF22846; issue14; all annual index/correction/20January1931completion material.\", \"fascicles\": [{\"artifact_page_range\": [5, 48], \"bounded_physical_line_range\": [18, 1881], \"date_resolution\": {\"artifact_sha256\": \"2203a197db3412e272fe4c187f3544c778e38b20ec676620a24836091108ebf1\", \"basis\": \"Direct inspection of the actual bitmap issue cover; annual OCR1980 is a source extraction error, preserved unchanged in retained text.\", \"date\": \"1930-01-27\", \"source_id\": \"passage.holy-see.acta-apostolicae-sedis.1930-01-27-volume-22-issue-1.cover-date\"}, \"issue_slot\": 1, \"masthead_physical_line_range\": [18, 18], \"masthead_raw\": \"\\f\\fANNUS XXII - VOL. XXII         27 IANUARII 1980                       NUM. 1\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [49, 120], \"bounded_physical_line_range\": [1882, 4970], \"issue_slot\": 2, \"masthead_physical_line_range\": [1882, 1882], \"masthead_raw\": \"\\fAnnus X X I I ^ Vol. X X I I                 22 Februarii 1930   Num. 2\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [121, 152], \"bounded_physical_line_range\": [4971, 6408], \"issue_slot\": 3, \"masthead_physical_line_range\": [4971, 4971], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                3 Martii 1930                Num. S\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [153, 200], \"bounded_physical_line_range\": [6409, 8514], \"issue_slot\": 4, \"masthead_physical_line_range\": [6409, 6409], \"masthead_raw\": \"\\fAnnus XXII - Yol. XXII                 7 Aprilis 1930                  Num. 4\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [201, 256], \"bounded_physical_line_range\": [8515, 10974], \"issue_slot\": 5, \"masthead_physical_line_range\": [8515, 8515], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                      1 Maii 1930                      Num. 5\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [257, 296], \"bounded_physical_line_range\": [10975, 12718], \"issue_slot\": 6, \"masthead_physical_line_range\": [10975, 10975], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                 2 Iunii 1930                 Num. 6\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [297, 336], \"bounded_physical_line_range\": [12719, 14447], \"issue_slot\": 7, \"masthead_physical_line_range\": [12719, 12719], \"masthead_raw\": \"\\fAnnus XXII - Yol. XXII                         3 Iulii 1930                       Num. 7\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [337, 368], \"bounded_physical_line_range\": [14448, 15818], \"issue_slot\": 8, \"masthead_physical_line_range\": [14448, 14448], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                         7 Augusti 1930                       Num. 8\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [369, 432], \"bounded_physical_line_range\": [15819, 18682], \"issue_slot\": 9, \"masthead_physical_line_range\": [15819, 15819], \"masthead_raw\": \"\\fAnnus X X I I - Vol. X X I I                               2 Septembris 1930                 Num. 9\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [433, 464], \"bounded_physical_line_range\": [18683, 20085], \"issue_slot\": 10, \"masthead_physical_line_range\": [18683, 18683], \"masthead_raw\": \"\\fAnnus X X I I - Yol. XXIÍ                  4 Octobris 1930        Num. 10\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [465, 496], \"bounded_physical_line_range\": [20086, 21470], \"issue_slot\": 11, \"masthead_physical_line_range\": [20086, 20086], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                   4 Novembris 1930            Num. 11\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [497, 528], \"bounded_physical_line_range\": [21471, 22845], \"issue_slot\": 12, \"masthead_physical_line_range\": [21471, 21471], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                      1 Decembris 1930     Num. 12\", \"printed_page_mapping_note\": \"Source printed and one-based artifact page labels agree at observed neighboring headers. The final leaf528 has no extracted folio; its position lies after literal527 and before next issue13 starting529.\"}], \"printed_extent\": \"Historical fascicles1–12, printed pages5–528; final folio not extracted, bounded by observed527 and following issue13start529.\", \"retained_source_line_range\": [18, 22845], \"rights_position\": \"The retained wording is supported by individually identified earlier monthly1930publication mastheads and the independently image-verified first issue cover; no known later-release evidence affects this subset.\", \"specific_contrary_evidence\": \"Casti connubii actual release in January1931 is a specific contrary publication finding; it is excluded and not generalized to earlierfascicles.\"} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.022.issues-01-12.aas-022-l04984.visual-followup-2026-10-26",
+      "segment_path": "src/sources/works/acta-papal-archives/undated-aas.022.issues-01-12-aas-022-l04984/editions/1930-acta-aas-022-issues-01-12-aas-022-l04984/segments/historical-text-visual-followup-2026-10-26.toml",
+      "sha256": "9b499bb4a18a0ad5709b6c39cd446fd4095cf60a41829cb5d400ed1ea10072f8",
+      "source_note": "AAS 22 (1930). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text. This exact act is retained from the separately bounded earlier 1930 fascicle subset; later issue 13 / Casti, issue 14 and 1931 index / colophon are excluded. A further explicit selector excludes only positively identified publisher furniture at physical LF 4997. Historical body wording, citations, notes, opening genre and any unresolved OCR glyphs remain literal. No word, spelling, hyphen or numeral is repaired.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-22-1930-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1931-acta-aas-022/artifacts/acta-historical-text-9b499bb4/historical.txt",
+      "title": "CONSTITUTIO APOSTOLICA DE S. THOMAE DE MELI AP OB. DIOECESIS NOVA CIRCUMSCRIPTIONE",
+      "work_id": "work.acta-papal-archives.aas.022.issues-01-12-aas-022-l04984"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.022.issues-01-12.historical-text-9b499bb4",
+      "correction_evidence": {
+        "items": [
+          {
+            "categories": [
+              "exact-project-source-note-readability"
+            ],
+            "changes": {
+              "source_note": {
+                "after": "AAS 22 (1930). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text. This exact act is retained from the separately bounded earlier 1930 fascicle subset; later issue 13 / Casti, issue 14 and 1931 index / colophon are excluded.",
+                "before": "AAS 22 (1930). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text. This exact act is retained from the separately bounded earlier1930fascicle subset; laterissue13/Casti, issue14 and1931index/colophon are excluded."
+              }
+            },
+            "kind": "reviewed-metadata-correction",
+            "source_evidence": [
+              {
+                "exact_after_pattern": "earlier 1930 fascicle subset; later issue 13 / Casti, issue 14 and 1931 index / colophon",
+                "exact_before_pattern": "earlier1930fascicle subset; laterissue13/Casti, issue14 and1931index/colophon",
+                "field": "source_note",
+                "matching_current_selection_source": "src/sources/papal-documents/acta-manifest.json",
+                "occurrences_in_this_row": 1,
+                "qualification": "This replaces project metadata only. rights_basis, rights_notice and source-body bytes are unchanged.",
+                "role": "mechanical-project-note-replacement"
+              }
+            ]
+          },
+          {
+            "kind": "finite-replacement-review-publisher-furniture-removal",
+            "new_segment_path": "src/sources/works/acta-papal-archives/undated-aas.022.issues-01-12-aas-022-l06420/editions/1930-acta-aas-022-issues-01-12-aas-022-l06420/segments/historical-text-visual-followup-2026-10-26.toml",
+            "new_segment_sha256": "74470769b5ecbd49499220c308aefb6b283bd5eeb50b21dd39306e1e0e645427",
+            "prior_edition_id": "edition.acta-papal-archives.aas.022.issues-01-12.aas-022-l06420",
+            "prior_pdf": {
+              "artifact_id": "artifact.acta-papal-archives.aas.022.issues-01-12.historical-text-9b499bb4",
+              "id": "acta.aas.022.issues-01-12.aas-022-l06420",
+              "language": "la",
+              "pdf_sha256": "5418fb7ccffa3ffff4708fb59d63fd5fd3a4e8b52e785fde7da7b91b14ab2e2f",
+              "segment_id": "segment.acta-papal-archives.aas.022.issues-01-12.aas-022-l06420",
+              "source_sha256": "9b499bb4a18a0ad5709b6c39cd446fd4095cf60a41829cb5d400ed1ea10072f8"
+            },
+            "prior_render_receipt_revision": "2026-10-26T18:13:41Z",
+            "prior_render_receipt_sha256": "0a621b5e2134d186ee3b8e5eb3ab4b16acb6c718ee442ce4162f3b3ad1954df5",
+            "prior_row_sha256": "55532bc1c3d006bbae27ab5259032f6b0ad534d375bff3d618c97364096ec434",
+            "revision": "2026-10-26T18:40:21Z",
+            "source_revision": {
+              "excluded_publisher_furniture": [
+                {
+                  "exact_line": "  AeTA, vol. XXII, n. 4. — 7-4-930.                                      11",
+                  "physical_LF": 6430
+                }
+              ],
+              "physical_line_ranges": [
+                [
+                  6403,
+                  6429
+                ],
+                [
+                  6432,
+                  6464
+                ]
+              ],
+              "prior_context": "{\"context\": \"Formal document under the papal issuer section, distinguished from adjacent curial and editorial sections.\", \"date_clause_line_ranges\": [[6477, 6481]], \"date_identity_index_evidence\": null, \"papal_issuer_or_signature_line_ranges\": [[6428, 6428], [6481, 6481]], \"source_date_clause_raw\": \"      D a t u m R o m a e apud Sanctum Petrum, die dominico Passio-\\nnis, vi mensis Aprilis anno MDCCCCXXX, Pontificatus Nostri n o n o .\\n\\n\", \"source_heading_line_ranges\": [[6420, 6427]]}",
+              "prior_physical_line_ranges": [
+                [
+                  6403,
+                  6430
+                ],
+                [
+                  6432,
+                  6464
+                ]
+              ],
+              "prior_segment_id": "segment.acta-papal-archives.aas.022.issues-01-12.aas-022-l06420",
+              "prior_segment_sha256": "03b4b0f57ed77dce63445d70f46f590a17720bb27de63af246bab96ccffd11d8",
+              "proof": {
+                "calibration_sha256": "d32833e449654542b4beada5161977c8a2cb19f1b226ef15b9a47b7bde583380",
+                "correction_queue_sha256": "6be056148e937c3e1536a4770259005c6ed067eb4b4fadf466699d9961d4bdcb",
+                "report": "src/sources/papal-documents/acta-replacement-visual-016.md",
+                "report_sha256": "f01ee51cb406a9007658a33206585badf402676aec0cef98ebe663102fee1f53",
+                "reviewed_page": 1,
+                "reviewed_pdf_sha256": "5418fb7ccffa3ffff4708fb59d63fd5fd3a4e8b52e785fde7da7b91b14ab2e2f",
+                "reviewed_raster_sha256": "fe7d368125526248b4bb17d3d363c1aba49c74d83cd8ac7e07f0bd9828211232",
+                "scope": "Independent calibration of exact generated reader PDF page; native historical-page collation and source-word verification are not claimed."
+              },
+              "range_continuations": [
+                0
+              ],
+              "reason": "AeTA,vol.XXII,n.4.—7-4-930.11 interrupts com-/memoratae Commissionis; retain genuine opening ACTA genre heading.",
+              "retained_nonwhitespace_sha256": "f323451fb00ad1b4248d883d7aa2e467dcac833129de2915f082d1a955b4a575",
+              "revision": "2026-10-26T18:40:21Z"
+            }
+          }
+        ],
+        "prior_current_pdf": {
+          "artifact_id": "artifact.acta-papal-archives.aas.022.issues-01-12.historical-text-9b499bb4",
+          "language": "la",
+          "pdf_sha256": "3500ed77b0f762fa7788a007cbe91534c7ff7c1d96f7d09d4b9709c925af4222",
+          "receipt_revision": "2026-10-26T05:34:44Z",
+          "receipt_sha256": "8279621b17eb5ce65b4986eaea150efec7048a2f7ba27eb2c13924689e7e39fc",
+          "segment_id": "segment.acta-papal-archives.aas.022.issues-01-12.aas-022-l06420",
+          "source_sha256": "9b499bb4a18a0ad5709b6c39cd446fd4095cf60a41829cb5d400ed1ea10072f8"
+        },
+        "revision": "2026-10-26T18:40:21Z"
+      },
+      "date": null,
+      "document_type": "motu-proprio",
+      "edition_id": "edition.acta-papal-archives.aas.022.issues-01-12.aas-022-l06420",
+      "id": "acta.aas.022.issues-01-12.aas-022-l06420",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          6403,
+          6429
+        ],
+        [
+          6432,
+          6464
+        ]
+      ],
+      "pope": "Pius XI",
+      "range_continuations": [
+        0
+      ],
+      "revision": "2026-10-26T18:40:21Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"artifact_page_range\": [5, 528], \"edition\": \"Earlier identified1930fascicles1–12 of AAS22, through the leaf preceding issue13; not the annual1930label or papal signature dates.\", \"excluded_material\": \"Annual title/uncertain wrapper LF1–17; issue13/Casti fromLF22846; issue14; all annual index/correction/20January1931completion material.\", \"fascicles\": [{\"artifact_page_range\": [5, 48], \"bounded_physical_line_range\": [18, 1881], \"date_resolution\": {\"artifact_sha256\": \"2203a197db3412e272fe4c187f3544c778e38b20ec676620a24836091108ebf1\", \"basis\": \"Direct inspection of the actual bitmap issue cover; annual OCR1980 is a source extraction error, preserved unchanged in retained text.\", \"date\": \"1930-01-27\", \"source_id\": \"passage.holy-see.acta-apostolicae-sedis.1930-01-27-volume-22-issue-1.cover-date\"}, \"issue_slot\": 1, \"masthead_physical_line_range\": [18, 18], \"masthead_raw\": \"\\f\\fANNUS XXII - VOL. XXII         27 IANUARII 1980                       NUM. 1\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [49, 120], \"bounded_physical_line_range\": [1882, 4970], \"issue_slot\": 2, \"masthead_physical_line_range\": [1882, 1882], \"masthead_raw\": \"\\fAnnus X X I I ^ Vol. X X I I                 22 Februarii 1930   Num. 2\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [121, 152], \"bounded_physical_line_range\": [4971, 6408], \"issue_slot\": 3, \"masthead_physical_line_range\": [4971, 4971], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                3 Martii 1930                Num. S\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [153, 200], \"bounded_physical_line_range\": [6409, 8514], \"issue_slot\": 4, \"masthead_physical_line_range\": [6409, 6409], \"masthead_raw\": \"\\fAnnus XXII - Yol. XXII                 7 Aprilis 1930                  Num. 4\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [201, 256], \"bounded_physical_line_range\": [8515, 10974], \"issue_slot\": 5, \"masthead_physical_line_range\": [8515, 8515], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                      1 Maii 1930                      Num. 5\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [257, 296], \"bounded_physical_line_range\": [10975, 12718], \"issue_slot\": 6, \"masthead_physical_line_range\": [10975, 10975], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                 2 Iunii 1930                 Num. 6\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [297, 336], \"bounded_physical_line_range\": [12719, 14447], \"issue_slot\": 7, \"masthead_physical_line_range\": [12719, 12719], \"masthead_raw\": \"\\fAnnus XXII - Yol. XXII                         3 Iulii 1930                       Num. 7\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [337, 368], \"bounded_physical_line_range\": [14448, 15818], \"issue_slot\": 8, \"masthead_physical_line_range\": [14448, 14448], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                         7 Augusti 1930                       Num. 8\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [369, 432], \"bounded_physical_line_range\": [15819, 18682], \"issue_slot\": 9, \"masthead_physical_line_range\": [15819, 15819], \"masthead_raw\": \"\\fAnnus X X I I - Vol. X X I I                               2 Septembris 1930                 Num. 9\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [433, 464], \"bounded_physical_line_range\": [18683, 20085], \"issue_slot\": 10, \"masthead_physical_line_range\": [18683, 18683], \"masthead_raw\": \"\\fAnnus X X I I - Yol. XXIÍ                  4 Octobris 1930        Num. 10\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [465, 496], \"bounded_physical_line_range\": [20086, 21470], \"issue_slot\": 11, \"masthead_physical_line_range\": [20086, 20086], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                   4 Novembris 1930            Num. 11\", \"printed_page_mapping_note\": \"One-based artifact-page bounds obtained from exact FF pagination; printed page labels remain independently source-qualified.\"}, {\"artifact_page_range\": [497, 528], \"bounded_physical_line_range\": [21471, 22845], \"issue_slot\": 12, \"masthead_physical_line_range\": [21471, 21471], \"masthead_raw\": \"\\fAnnus XXII - Vol. XXII                      1 Decembris 1930     Num. 12\", \"printed_page_mapping_note\": \"Source printed and one-based artifact page labels agree at observed neighboring headers. The final leaf528 has no extracted folio; its position lies after literal527 and before next issue13 starting529.\"}], \"printed_extent\": \"Historical fascicles1–12, printed pages5–528; final folio not extracted, bounded by observed527 and following issue13start529.\", \"retained_source_line_range\": [18, 22845], \"rights_position\": \"The retained wording is supported by individually identified earlier monthly1930publication mastheads and the independently image-verified first issue cover; no known later-release evidence affects this subset.\", \"specific_contrary_evidence\": \"Casti connubii actual release in January1931 is a specific contrary publication finding; it is excluded and not generalized to earlierfascicles.\"} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.022.issues-01-12.aas-022-l06420.visual-followup-2026-10-26",
+      "segment_path": "src/sources/works/acta-papal-archives/undated-aas.022.issues-01-12-aas-022-l06420/editions/1930-acta-aas-022-issues-01-12-aas-022-l06420/segments/historical-text-visual-followup-2026-10-26.toml",
+      "sha256": "9b499bb4a18a0ad5709b6c39cd446fd4095cf60a41829cb5d400ed1ea10072f8",
+      "source_note": "AAS 22 (1930). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text. This exact act is retained from the separately bounded earlier 1930 fascicle subset; later issue 13 / Casti, issue 14 and 1931 index / colophon are excluded. A further explicit selector excludes only positively identified publisher furniture at physical LF 6430. Historical body wording, citations, notes, opening genre and any unresolved OCR glyphs remain literal. No word, spelling, hyphen or numeral is repaired.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-22-1930-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1931-acta-aas-022/artifacts/acta-historical-text-9b499bb4/historical.txt",
+      "title": "ACTA MOTU PROPRIO COMMISSIO PEO RUSSIA A SACRA CONGREGATIONE PRO ECCLESIA ORIENTALI SEITJNGITTJR AC SUI IURIS CONSTITUITUR.",
+      "work_id": "work.acta-papal-archives.aas.022.issues-01-12-aas-022-l06420"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.029.historical-text-864fa26a",
+      "correction_evidence": {
+        "items": [
+          {
+            "kind": "finite-replacement-review-publisher-furniture-removal",
+            "new_segment_path": "src/sources/works/acta-papal-archives/undated-ass.029-ass-029-l20563/editions/1896-acta-ass-029-ass-029-l20563/segments/historical-text-visual-followup-2026-10-26.toml",
+            "new_segment_sha256": "9110f5c579b32e7597f4b329f9586e43337c19ed6994c48d379e19bcfbc6c25f",
+            "prior_edition_id": "edition.acta-papal-archives.ass.029.ass-029-l20563",
+            "prior_pdf": {
+              "artifact_id": "artifact.acta-papal-archives.ass.029.historical-text-864fa26a",
+              "id": "acta.ass.029.ass-029-l20563",
+              "language": "la",
+              "pdf_sha256": "1144037ae5ddac5f4f8f53cf9c24992fa6b37b7814ad712bfabf58b83a4a976d",
+              "segment_id": "segment.acta-papal-archives.ass.029.ass-029-l20563",
+              "source_sha256": "864fa26a5142712ddc93b24966f859459ba06804ca8508c6c3d4b6cc766925d4"
+            },
+            "prior_render_receipt_revision": "2026-10-26T05:34:44Z",
+            "prior_render_receipt_sha256": "8279621b17eb5ce65b4986eaea150efec7048a2f7ba27eb2c13924689e7e39fc",
+            "prior_row_sha256": "78366d591a524cd6e86bea67a93a9c67fe9d7167f9fb24a6e19b5af5b95a2e72",
+            "revision": "2026-10-26T18:40:21Z",
+            "source_revision": {
+              "excluded_publisher_furniture": [
+                {
+                  "exact_line": "       Ada, Tom. XXIX. rase. CCCXL V.                                                       33",
+                  "physical_LF": 20598
+                }
+              ],
+              "physical_line_ranges": [
+                [
+                  20557,
+                  20597
+                ],
+                [
+                  20600,
+                  20640
+                ],
+                [
+                  20642,
+                  20682
+                ],
+                [
+                  20684,
+                  20724
+                ],
+                [
+                  20726,
+                  20766
+                ],
+                [
+                  20768,
+                  20792
+                ]
+              ],
+              "prior_context": "{\"basis\": \"Source heading and papal salutation/name read against body, with terminal dating/signature; source index used as finding aid.\", \"heading_physical_lines\": [20563, 20566], \"heading_text\": \"LITTERAE APOSTOLICAE S a n c t i s s i m i Domini Nostri Leonis Divina P r o v i d e n t i a Pa-\\n     pae XIII, q u i b u s S e m i n a r i u m vaticanum cum scholis canonice c o n s t i t u i t u r .\\n\\n\"}",
+              "prior_physical_line_ranges": [
+                [
+                  20557,
+                  20598
+                ],
+                [
+                  20600,
+                  20640
+                ],
+                [
+                  20642,
+                  20682
+                ],
+                [
+                  20684,
+                  20724
+                ],
+                [
+                  20726,
+                  20766
+                ],
+                [
+                  20768,
+                  20792
+                ]
+              ],
+              "prior_segment_id": "segment.acta-papal-archives.ass.029.ass-029-l20563",
+              "prior_segment_sha256": "cff35170cfb764bdab679b0479196bd5e293cbc3e4e192d05efc54b0137ae5a8",
+              "proof": {
+                "calibration_sha256": "d32833e449654542b4beada5161977c8a2cb19f1b226ef15b9a47b7bde583380",
+                "correction_queue_sha256": "6be056148e937c3e1536a4770259005c6ed067eb4b4fadf466699d9961d4bdcb",
+                "report": "src/sources/papal-documents/acta-replacement-visual-017.md",
+                "report_sha256": "2d9eb1abcad4931fe5487bff5be5109093d637437eb9a98e8e0d57e52b7db3cd",
+                "reviewed_page": 1,
+                "reviewed_pdf_sha256": "1144037ae5ddac5f4f8f53cf9c24992fa6b37b7814ad712bfabf58b83a4a976d",
+                "reviewed_raster_sha256": "356c040c5af7513efc82804b8c9b41a34ffdf8a4128a1ae4324dd65433d8a4de",
+                "scope": "Independent calibration of exact generated reader PDF page; native historical-page collation and source-word verification are not claimed."
+              },
+              "range_continuations": [
+                0
+              ],
+              "reason": "Independent exact-page calibration positively identifies the standalone publisher line. Exclude only this source LF; retain all historical notes, citations, subscriptions, body words and uncertain glyphs. The following running-head/formfeed is already outside the selected ranges.",
+              "retained_nonwhitespace_sha256": "20a5785d4aba7aae5b2941e9295d2fbab07ce75645e0eadaab2f93e8b4c2b843",
+              "revision": "2026-10-26T18:40:21Z"
+            }
+          }
+        ],
+        "revision": "2026-10-26T18:40:21Z"
+      },
+      "date": null,
+      "document_type": "apostolic-letter",
+      "edition_id": "edition.acta-papal-archives.ass.029.ass-029-l20563",
+      "id": "acta.ass.029.ass-029-l20563",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          20557,
+          20597
+        ],
+        [
+          20600,
+          20640
+        ],
+        [
+          20642,
+          20682
+        ],
+        [
+          20684,
+          20724
+        ],
+        [
+          20726,
+          20766
+        ],
+        [
+          20768,
+          20792
+        ]
+      ],
+      "pope": "Leo XIII",
+      "range_continuations": [
+        0
+      ],
+      "revision": "2026-10-26T18:40:21Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. The historical title identifies Romae, Typographia Polyglotta, S. Congregationis de Propaganda Fide, 1896-97, at exact source LF line 38. The separately printed 1969 Johnson reprint wrapper at LF 40–45 is excluded. This identifies the reproduced historical printing; the Vatican OCR reconstruction is not image-collated. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.029.ass-029-l20563.visual-followup-2026-10-26",
+      "segment_path": "src/sources/works/acta-papal-archives/undated-ass.029-ass-029-l20563/editions/1896-acta-ass-029-ass-029-l20563/segments/historical-text-visual-followup-2026-10-26.toml",
+      "sha256": "864fa26a5142712ddc93b24966f859459ba06804ca8508c6c3d4b6cc766925d4",
+      "source_note": "ASS 29 (1896). Closing clause reads 1896, XV Kalendas Februarias, but pontificate XIX is inconsistent with January 1896; date left unknown rather than silently correcting source year. A further explicit selector excludes only positively identified publisher furniture at physical LF 20598. Historical body wording, citations, notes, opening genre and any unresolved OCR glyphs remain literal. No word, spelling, hyphen or numeral is repaired.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-29-1896-97-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1896-acta-ass-029/artifacts/acta-historical-text-864fa26a/historical.txt",
+      "title": "Quod Romani Pontifices",
+      "work_id": "work.acta-papal-archives.ass.029-ass-029-l20563"
+    }
+  ]
+}

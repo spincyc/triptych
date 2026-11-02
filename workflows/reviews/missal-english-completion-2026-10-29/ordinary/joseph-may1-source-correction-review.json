@@ -1,0 +1,34 @@
+{
+  "decision": "confirmed-bounded-source-transcription-correction",
+  "source_locus": "1922 Tours Mame, printed p.337, original whole PDF451; Saint Joseph Preface conclusion in the upper-right column.",
+  "source_extraction_sha256": "9724743c3f1bfed03bc44472731885a43769b1a41eab3666b94504a7cfb70e27",
+  "source_render_sha256": "9952504c95ad812cf35a66667e59dc2cc0878f8a73f24149a191b173e91d9843",
+  "source_reading_confirmed": "Cæli cælorumque",
+  "frozen_transcription_reading_corrected": "Cœli cœlorumque",
+  "finding": "The supplied 300 dpi rendering of the exact one-page source extraction prints the ae ligatures in both source words. This corrects the research transcription, and removes its unnecessary coeli/caeli and coelorumque/caelorumque comparison transformation.",
+  "comparison_replay": {
+    "normalizations_used": [
+      "case folding",
+      "stress accents omitted",
+      "j/i",
+      "ae/oe ligatures opened without a coeli-to-caeli spelling rewrite",
+      "pointing omitted",
+      "the frozen comparison’s declared Festivitate branch selected; the separate source Veneratione alternative excluded from this comparison only"
+    ],
+    "selected_corrected_source_word_count": 99,
+    "target_word_count": 99,
+    "lexical_differences": [
+      {
+        "word_index_one_based": 25,
+        "source_word": "festivitate",
+        "target_word": "solemnitate"
+      }
+    ],
+    "result": "The corrected source comparison retains the same 99-word counts and sole lexical change at word25. No target reading is supplied to correct any source word."
+  },
+  "frozen_comparison_sha256_unchanged": "2a9f3fdf02256ee216b2aaae063adfd545a7b82a15205759f8632b15f90e00e4",
+  "accepted_english_sha256_unchanged": "240fd17875204a9b6902a60f5b7ed46929ff36a463c7b0569c8c4426dea0a0b5",
+  "accepted_english_review_sha256_unchanged": "07fa7aac938a7d25d08422614c1eded5b1e18d3db650b4f386133777e451082f",
+  "effect_on_accepted_english": "None. Both readings denote the same heavens/heavenly-powers expression; the accepted English and its semantic fidelity remain unchanged.",
+  "scope_limit": "Independent check of this bounded source ligature correction and mechanical replay only. No whole source PDF rehash, broader source recollation, renewed rights assessment or target-Latin publication authority is asserted. This receipt contains no full target Latin or target images. The frozen packet and accepted English review were not overwritten."
+}

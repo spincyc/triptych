@@ -1,0 +1,70 @@
+{
+  "schema": "triptych-independent-historical-english-reuse-review/v1",
+  "decision": "ACCEPT_BOUNDED_SOURCE_REUSE_RUNTIME_GATES_REMAIN",
+  "candidate_sha256": "af9f0c6db3b566d4f81264cec96b111eafa149501fa958c440a13b4d62dcb8e6",
+  "scope": "One English-only PC AgnusDei replacement using the existing complete Lasance historical rendering. No new source payload, modern English translation, target2008 authentication, actor allocation or rights adoption.",
+  "source_checks": {
+    "canonical_lasance_artifact_metadata_sha256": "90ce06659205c48a99d404648c317ecca827cd596661b9757cc9f1a06d654726",
+    "canonical_payload_sha256": "921a88d0a1992ee685d96682579e35748985197d708c6474ac1a40c5418d0d42",
+    "selected_seq": [
+      4201,
+      4202,
+      4203
+    ],
+    "selected_body_sha256": "7dbcb574c3ea80f09b5e1dd9ca93e54878bbf58c6eb7bc4fc31d772ec867cc8b",
+    "prior_cummiskey_body_sha256": "2b1f3862c537ec0be0a8bf32f173d2ec5b5d2a56e5c5fcec581e109b27a529d5",
+    "source_extent_finding": "All three English invocations are fully printed on Lasance ordinary printed788/originalPDF787. The first two finish with have mercy on us; the third finishes with grant us peace. The separate Requiem forms and following prayer are excluded. Candidate uses the exact already-held normalized English rows without rewriting source words or expanding the abbreviated Cummiskey source.",
+    "latin_extent_finding": "Freshly opened Mame1922 originalPDF464/printed350 prints the same complete three Latin invocations, and the secondary2002 n130 image prints that same lexical prayer sequence. Stress, case and pointing differ as presentation. Existing Cummiskey Latin remains abbreviated and unchanged; no completeness or exact controlling2008 claim is conferred on it."
+  },
+  "primary_sources_independently_rehashed": [
+    {
+      "source": "Lasance whole registered facsimile",
+      "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70"
+    },
+    {
+      "source": "Mame1922 whole registered facsimile",
+      "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005"
+    },
+    {
+      "source": "provided three-page Mame proof",
+      "sha256": "23c78d5b133d47ec8f1896ee6449264c8b703299680a87562060dcbb986cb924"
+    }
+  ],
+  "fresh_images_opened": [
+    {
+      "source": "Lasance exact wholePDF787/printed788 at180dpi",
+      "sha256": "331f684f9fe8ce9f7e3921b8145018ab21befd9a930ddcdc90898965042fef11"
+    },
+    {
+      "source": "Mame exact wholePDF464/printed350 at180dpi",
+      "sha256": "6516163d718a3b26919b24e61fbc014032bf0b17979b9423077914d47d1e6306"
+    },
+    {
+      "source": "secondary2002 target n130 artifact367 supplied image",
+      "sha256": "a389af362474aa8889de5a8312887e14f4fb45832eca00ec628d297b9220b294"
+    }
+  ],
+  "rights_finding": {
+    "status": "EXISTING_DECLARED_BASIS_RETAINED",
+    "basis": "Canonical normalized artifact is public-domain under the registered1945 English edition nonrenewal finding in lasance-new-roman-missal-rights-v1.toml. Checked ordinary page788 is outside excluded1298a–1298n and1302a–1302d inserts. No illustration, host wrapper, later insert or different Lasance title is reused.",
+    "limits": "This review verifies the existing declared layer/scope and page inclusion; it does not repeat the renewal research or make a fresh legal determination."
+  },
+  "actor_finding": {
+    "result": "PASS_PROPOSED_UNASSIGNED_TURNS",
+    "details": "The historical source priest designation must not become the postconciliar actor. All three proposed turns omit speaker/dialogue_role/printed_marker; inspected turn parsing leaves omitted speakers unassigned. The coarse All header is explicitly removed. This avoids assigning a chant-leading or answering division or V/R marks from the old source.",
+    "official_primary_corrobation": {
+      "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html",
+      "locus": "GIRM83; also155 and267",
+      "inspection": "Official page read through the web tool on2026-10-30. It distinguishes choir/cantor with congregational response and other celebration forms, and allows continuation during the fraction. The fixed three printed invocations do not settle performance allocation or a complete execution count. No passage quoted or copied."
+    }
+  },
+  "required_integration_checks": [
+    "Resulting English equals the exact three source rows in order and contains no inherited Cummiskey asterisk cues.",
+    "All three English turns remain unassigned; no historical Priest, coarse All header, or functional V/R marker is emitted.",
+    "Existing Cummiskey English artifact and Latin side remain byte-exact, with existing Latin abbreviation and target-uncollated limits.",
+    "Historical nonapproved English reading_note survives selected/paired/CLI output; no approved English, recitation authority or authenticated whole2008 identity is asserted."
+  ],
+  "defects": [],
+  "canonical_mutations": false,
+  "reviewer_status": "Independent AI source/semantic/metadata review; no human or ecclesiastical approval."
+}

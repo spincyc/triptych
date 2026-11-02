@@ -73,6 +73,14 @@ FRAME_MASSES=['ash-wednesday',
  'thursday-after-ash-wednesday']
 MIXED=[('lent-1-ember-saturday','longer','Hymn (Benedictus es)',508),
        ('lent-3-thursday','main','Introit',646)]
+# Latin-body admissions rewrote these notes with the same unit/page facts: 1f1be432b (phase5-latin22) for the
+# first eight, eeab39fef for the rest; see src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml.
+PHASE5_NOTES={(key,name) for key,name,*_ in NEW_APPOINTMENTS[:8]}
+def locator_phrases(key,name,unit,pdf,printed):
+ if (key,name) in PHASE5_NOTES:return (f'1962 target PDF {pdf} / printed {printed};',f'; unit {unit}')
+ return (f'Proprium de tempore, printed p. {printed}, PDF p. {pdf}, unit {unit},',)
+# Every NEW_APPOINTMENTS prayer's no-exemplar absence became one confirmed Lasance 1945 entry (c6c0fefcf, 290629ed5,
+# eeab39fef, 3cd51e852; [[accepted]] in src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml).
 
 def owning_tool(name):
  loader=importlib.machinery.SourceFileLoader('early_lent_'+name,str(ROOT/'tools'/name))
@@ -98,7 +106,7 @@ def appointment_problems(document):
   wanted=['First Gradual','Oratio','Second Lesson'] if name=='Oratio' else ['Postcommunion','Oratio super populum']
   actual=names[at-1:at+2] if name=='Oratio' else names[-2:]
   if actual!=wanted:problems.append((key,name,'source order'))
-  for phrase in (f'numbered unit {unit}',f'artifact PDF p. {pdf}',f'printed p. {printed}'):
+  for phrase in locator_phrases(key,name,unit,pdf,printed):
    if phrase not in proper.get('notes',''):problems.append((key,name,'source locator'))
  for key,fid,name,refs,unit in CITATION_REPAIRS:
   proper=next(p for p in source_propers(document,key,fid) if p['name']==name)
@@ -122,10 +130,15 @@ class EarlyLentNonprimary(unittest.TestCase):
     self.assertTrue(proper.get('text') or proper.get('text_status',{}).get('state')=='unavailable')
   for key,fid,name,unit in MIXED:
    self.assertEqual(next(p for p in source_propers(self.document,key,fid) if p['name']==name)['source'],'mixed')
- def test_exact_shared_english_whole_body_absences(self):
-  expected={(key,'main',name) for key,name,*_ in NEW_APPOINTMENTS}|{(key,fid,name) for key,fid,name,_ in MIXED}
+ def test_exact_shared_english_whole_body_dispositions(self):
+  received={(key,'main',name) for key,name,*_ in NEW_APPOINTMENTS};expected=received|{(key,fid,name) for key,fid,name,_ in MIXED}
   for key,fid,name in expected:
    matches=[r for r in self.english['untranslated'] if (r['mass'],r.get('form_id','main'),r['proper'],r.get('occurrence',1),r.get('cycle','all'),r['lang'],r['extent'])==(key,fid,name,1,'all','en','body')]
+   entries=[r for r in self.english['entries'] if (r['mass'],r.get('form_id','main'),r['proper'],r.get('occurrence',1),r.get('cycle','all'))==(key,fid,name,1,'all')]
+   if (key,fid,name) in received:
+    self.assertEqual((matches,len(entries)),([],1),(key,fid,name))
+    self.assertEqual(([t['lang'] for t in entries[0]['translations']],entries[0]['witness'],entries[0]['collation_result']),(['en'],'lasance-1945','confirmed'),(key,fid,name));continue
+   self.assertEqual(entries,[],(key,fid,name))
    self.assertEqual(len(matches),1,(key,fid,name));self.assertEqual(matches[0]['reason'],{'kind':'no-exemplar'})
  def test_generic_frames_are_explicitly_unavailable_and_specialized_frames_remain(self):
   for key in FRAME_MASSES+['lent-1-ember-saturday','lent-1-ember-wednesday']:

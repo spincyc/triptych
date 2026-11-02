@@ -1,0 +1,95 @@
+{
+  "schema": "triptych-reviewed-Ordinary-applicability-adoption/v1",
+  "status": "accepted",
+  "reviewer": "root",
+  "reviewed_on": "2026-10-26",
+  "component_manifest_sha256": "2c3ef56b97f91bb8726553bbd2dc79bdf5b0371d22390d4ab009b146afaefeb9",
+  "independent_receiving_review_sha256": "793e0e4f2a26d319319070b1b7ce5b9137f6eb742ffaf5c39a43105aa07613ed",
+  "metadata_descriptor_sha256": "41977c9581737a97eae345799041307f7700944c439318b89c558ec88af48c99",
+  "descriptor": {
+    "schema": "triptych-exact-ordinary-execution-metadata-descriptor/v1",
+    "status": "pending-final-contract-review-not-new-source-admission",
+    "effects": [
+      "source-code-data"
+    ],
+    "component_manifest_sha256": "2c3ef56b97f91bb8726553bbd2dc79bdf5b0371d22390d4ab009b146afaefeb9",
+    "independent_component_review_sha256": "793e0e4f2a26d319319070b1b7ce5b9137f6eb742ffaf5c39a43105aa07613ed",
+    "source_field_export_sha256": "1d8e42917ea5a9f344c5b3f1f685f2b135ca4eab9168b7d09d3426f7eb402797",
+    "inventory_path": "src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+    "selector": {
+      "section": "canon",
+      "inserted_key": "communicantes-pascha",
+      "language_block": "english"
+    },
+    "inventory_preimage_sha256": "4ba19aee2894cca80f1bd9a9cccd3975f0c6c1acbca7b952b376e28c1d0b386e",
+    "inventory_postimage_sha256": "dcbf5253591624ec76e3bc2a213f24e9229b69a1afb31316c456beaf9980c6b0",
+    "exact_english_metadata_before": {
+      "witness": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+      "artifact": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.proper-communicantes-heads-en-20261026-57552729",
+      "element": "communicantes-pascha",
+      "column": "english",
+      "relation": "antecedent",
+      "collation": "uncollated",
+      "note": "HISTORICAL HUMAN ENGLISH, NOT APPROVED 1962 ENGLISH. Retains the source words and punctuation at the head cut; no local P/R actor cue is asserted. DAY FORM ONLY. No night alternative is printed in this English head or the inspected Lefebvre English head. Do not replace day with night by translation/inference. The actual source colon at Lord is retained. This is the complete historical day head, not a whole alternative-universe claim."
+    },
+    "exact_english_metadata_after": {
+      "witness": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+      "artifact": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.proper-communicantes-heads-en-20261026-57552729",
+      "element": "communicantes-pascha",
+      "column": "english",
+      "relation": "antecedent",
+      "collation": "uncollated",
+      "applicability": {
+        "kind": "formulary",
+        "calendar": "roman-1962",
+        "formularies": [
+          "easter-sunday",
+          "easter-monday",
+          "easter-tuesday",
+          "easter-wednesday",
+          "easter-thursday",
+          "easter-friday",
+          "easter-saturday"
+        ],
+        "basis": "Lasance 1945 original PDF 805 / printed 806 supplies only the Easter day head; no English night alternative is held. The 1962 Canon PDF 385 / printed 304 no. 1095 distinguishes noctem/diem. This English is scoped to the appointed Paschal day formularies, excluding the Easter Vigil; civil clock time grants no applicability."
+      },
+      "note": "HISTORICAL HUMAN ENGLISH, NOT APPROVED 1962 ENGLISH. Retains the source words and punctuation at the head cut; no local P/R actor cue is asserted. DAY FORM ONLY. No night alternative is printed in this English head or the inspected Lefebvre English head. Do not replace day with night by translation/inference. The actual source colon at Lord is retained. This is the complete historical day head, not a whole alternative-universe claim."
+    },
+    "unchanged_source_body": {
+      "language": "en",
+      "sha256": "1feac837e26f663e97abf9c9c9562e84d5bfc1e294b7ce23bc2fa01f007cc73a",
+      "bytes": 251,
+      "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+      "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.proper-communicantes-heads-en-20261026-57552729",
+      "artifact_manifest_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/proper-communicantes-heads-en-20261026-57552729/artifact.toml",
+      "artifact_manifest_sha256": "cd72bce133f9f160a9d500d4ffac7a794b9911daee88e7405a485c639ad38f6d",
+      "payload_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/proper-communicantes-heads-en-20261026-57552729/text.tsv",
+      "payload_sha256": "575527290bc4ae416ae5124a78c8fc4fb659700749fa67b4a978f520634b716f"
+    },
+    "scope": {
+      "type": "execution-applicability-only",
+      "scope": "Only en canon/communicantes-pascha: affirm execution for the seven named roman-1962 Paschal day formularies; unknown/malformed/default context unresolved, all exact out-of-scope formularies including easter-vigil inapplicable. Both unavailable results carry no text or selected source identity. Source catalogue heldness remains unchanged.",
+      "rights_and_source_body": "Existing independently accepted public-domain Lasance day head remains literal and source-held; no source artifact, body, rights, appointment, frame, Joseph continuation or response change.",
+      "no_grants": [
+        "No English night wording or ending generation.",
+        "No Latin body change.",
+        "No new lexical/semantic/translation permission.",
+        "No admission for other formularies by date, season, default or clock time.",
+        "No canonical/generator/Git mutation by this component."
+      ]
+    },
+    "permission_or_word_admission": false,
+    "receiving_contract_obligations": [
+      "Verify whole parsed Ordinary inventory after removing this one new applicability field equals exact parent inventory.",
+      "Verify source payload, artifact metadata, catalogue heldness, literal body and all other source/rights fields unchanged.",
+      "Bind actual portable root adoption plus exact accepted source/code component receipt; full final epoch pins the entire resulting file.",
+      "No Roman/postconciliar proper English-positive, refusal, Latin-proof/body, or owner-domain transition follows from this metadata descriptor."
+    ],
+    "parent_selected": false,
+    "live_epoch_read": false,
+    "canonical_or_git_writes": 0
+  },
+  "scope": "Only the reviewed English Paschal Communicantes day-applicability metadata and corresponding context enforcement; preserve all literal text, witnesses, rights, catalogue heldness and unrelated fields. Missing/malformed/unknown or explicit Vigil execution context withholds this day-only English. Source-appointed seven day formularies may expose it. No new prayer, translation, owner, proof or publication permission.",
+  "canonical_grant_path": "workflows/reviews/missal-reader-completion-2026-10-26/ordinary-day-applicability-adoption.json",
+  "canonical_writes_at_adoption": 0
+}

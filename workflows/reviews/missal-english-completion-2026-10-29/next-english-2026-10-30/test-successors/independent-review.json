@@ -1,0 +1,134 @@
+{
+  "schema": "triptych-independent-next-cohort-three-test-readiness-review/v1",
+  "outcome": "PASS_SCRATCH_POSTIMAGES_ONLY",
+  "effects": [
+    {
+      "path": "tools/tests/test_proper_latin.py",
+      "before_sha256": "d13ba84c2d93b9ca77b68e9a4746bcdff9ff6d23c42be57a9c508d86e329f464",
+      "after_sha256": "c49c297448306c07ab5eed605ddce48894a2e2f3bda1783966e498ffb70eb997",
+      "postimage": ".scratch/roman-english-completion-20261029/next-cohort-test-readiness-v1/roman-expectations/postimages/tools/tests/test_proper_latin.py",
+      "patch_path": ".scratch/roman-english-completion-20261029/next-cohort-test-readiness-v1/roman-expectations/test_proper_latin.patch",
+      "patch_sha256": "e192a623ddf1b99d1c0eaf8dff9d05f233ba04203469d5b141f39661ac50cf1b"
+    },
+    {
+      "path": "tools/tests/test_current_source_batch_latin.py",
+      "before_sha256": "c26a17afd887543e44b6d10eeada1b2aa431d306265fd308d8de56291edbd954",
+      "after_sha256": "08f442f03f0f99b994c298e5f647c4f22dd31de2022b923e79f1a8d8c9aefb7b",
+      "postimage": ".scratch/roman-english-completion-20261029/next-cohort-test-readiness-v1/roman-expectations/postimages/tools/tests/test_current_source_batch_latin.py",
+      "patch_path": ".scratch/roman-english-completion-20261029/next-cohort-test-readiness-v1/roman-expectations/test_current_source_batch_latin.patch",
+      "patch_sha256": "9b1f33a1069fe7d8166a912a3d394195fe93f0a3543814b90681823843f12b84"
+    },
+    {
+      "path": "tools/tests/test_calendar_translation_overlay.py",
+      "before_sha256": "2730511674d6e86e3e04da759e7fe4bf6e7f453f988586e4a85c38a3cac70233",
+      "after_sha256": "ca62b45f00dbe2811c08cd77e60d82a910d653f29d58622d60a882e3049919cc",
+      "postimage": ".scratch/roman-english-completion-20261029/next-cohort-test-readiness-v1/pc-expectation-audit/postimages/tools/tests/test_calendar_translation_overlay.py",
+      "patch_path": ".scratch/roman-english-completion-20261029/next-cohort-test-readiness-v1/pc-expectation-audit/pc-source43-expectations.patch",
+      "patch_sha256": "4cb5423d1ea55c1287fa2daabf5e12070442c022060a24cdecfb98f85ab224ae"
+    }
+  ],
+  "roman_manifest_sha256": "cd145e110c55fb4e504919368cce479378c3023d5eda2f745ea4926352e54c41",
+  "pc_receipt_sha256": "b8c0ec96471e2b8c4daddd822667c6213ec3090f4f224dda1b872f756dcf4c1f",
+  "canonical_scoped_pins_unchanged": {
+    "tools/tests/test_proper_latin.py": "d13ba84c2d93b9ca77b68e9a4746bcdff9ff6d23c42be57a9c508d86e329f464",
+    "tools/tests/test_current_source_batch_latin.py": "c26a17afd887543e44b6d10eeada1b2aa431d306265fd308d8de56291edbd954",
+    "tools/tests/test_calendar_translation_overlay.py": "2730511674d6e86e3e04da759e7fe4bf6e7f453f988586e4a85c38a3cac70233",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "59deb71b22cb457873a56a91b6044f295934c59acb044eb7d701d38547b09ff9",
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+    "src/sources/inventories/roman-pre-1955-proper-latin-provenance-v1.toml": "da959d9ba61843d2cb8f08155241b5b69058b6705f3d76aac67e6c70803546d9",
+    "tools/tests/fixtures/missal-source-batch-20261023.json": "11a3eee509b55233556f89a60d4ce978264ab215e483f354b2bcbad9b39304ee",
+    "src/sources/calendars/roman-1962/propers.yaml": "bb53c726e652fc20b4aab7f253031521bf42794d3726af50fe4bcd9d2c31fe8f",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json": "920299972ab84575183de8c84adcd3f7418bdc46304fbe1d6a4435fad1103ee3",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json": "495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/root-decision.json": "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-ordinary-four-admission.json": "2e0d3516ee8e095ac4197d23222258f38b264ad5eef04aad0a92914e6283870b",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-remaining-three-admission.json": "89d8b0f274abd76eb09c4b555f547bec0112531eaac099ce19230833e946ea27",
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml": "88e54e407656a75ee00dab1ac029cf960612c65aabbcde78d4e82236486b3d27",
+    "tools/tests/_source_batch_guards.py": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1"
+  },
+  "changed_methods": {
+    "tools/tests/test_proper_latin.py": {
+      "changed": [
+        "ProductionLedgerTests.test_production_ledgers_publish_only_the_exact_historical_recoveries"
+      ],
+      "added": []
+    },
+    "tools/tests/test_current_source_batch_latin.py": {
+      "changed": [
+        "CurrentSourceBatchLatinTests.test_every_explicit_new_or_corrected_body_has_current_six_surface_proof"
+      ],
+      "added": []
+    },
+    "tools/tests/test_calendar_translation_overlay.py": {
+      "changed": [
+        "RecoveredCummiskeyAntecedentProductionTests.test_all_43_recovered_candidates_are_bound_or_text_free"
+      ],
+      "added": [
+        "RecoveredCummiskeyAntecedentProductionTests.test_exact_study_successors_preserve_rejected_cummiskey_routes"
+      ]
+    }
+  },
+  "actual_raw_ledger_counts": {
+    "roman-1962": {
+      "nonpermitted": 12,
+      "unresolved_nonpermitted": 9,
+      "qualified": 24
+    },
+    "postconciliar": {
+      "nonpermitted": 329,
+      "unresolved_nonpermitted": 329,
+      "qualified": 0
+    },
+    "roman-pre-1955": {
+      "nonpermitted": 0,
+      "unresolved_nonpermitted": 0,
+      "qualified": 0
+    }
+  },
+  "current_authority22_plus_legacy2_and_exact_original16_scope_dictionaries": true,
+  "current_removed_restorations_exact_eight_including_new_four": [
+    "{\"course\":\"\",\"cycle\":\"\",\"form\":\"\",\"mass\":\"comm-s-silvestri-i-papae-confessoris\",\"occurrence\":1,\"proper\":\"Collect\"}",
+    "{\"course\":\"\",\"cycle\":\"\",\"form\":\"\",\"mass\":\"easter-vigil\",\"occurrence\":1,\"proper\":\"Blessing of the Lighted Candle\"}",
+    "{\"course\":\"\",\"cycle\":\"\",\"form\":\"\",\"mass\":\"good-friday\",\"occurrence\":1,\"proper\":\"Antiphons at the Translation of the Blessed Sacrament\"}",
+    "{\"course\":\"\",\"cycle\":\"\",\"form\":\"\",\"mass\":\"good-friday\",\"occurrence\":1,\"proper\":\"Improperia\"}",
+    "{\"course\":\"\",\"cycle\":\"\",\"form\":\"\",\"mass\":\"palm-sunday\",\"occurrence\":1,\"proper\":\"Blessing of the Palms\"}",
+    "{\"course\":\"\",\"cycle\":\"\",\"form\":\"\",\"mass\":\"palm-sunday\",\"occurrence\":5,\"proper\":\"Procession Antiphon\"}",
+    "{\"course\":\"\",\"cycle\":\"\",\"form\":\"\",\"mass\":\"palm-sunday\",\"occurrence\":6,\"proper\":\"Procession Antiphon\"}",
+    "{\"course\":\"\",\"cycle\":\"\",\"form\":\"\",\"mass\":\"s-antonii-padua-confessoris-ecclesiae-doctoris\",\"occurrence\":1,\"proper\":\"Collect\"}"
+  ],
+  "PD_transfer_bundle_outside_qualified22": true,
+  "historical20_removed_and17_inverse_streams_retained": true,
+  "historical348_345_assertions_unchanged": true,
+  "literal_archived_inverse_checked_without_G_fixture": {
+    "proper_test_original_before_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+    "proper_test_original_current_sha256": "d13ba84c2d93b9ca77b68e9a4746bcdff9ff6d23c42be57a9c508d86e329f464",
+    "proper_test_original_hunks": 29,
+    "historical348_345_assertions_remain_exact_AST_controls": true,
+    "of_three_test_paths_only_proper_test_belongs_to_archival_input_manifest": true,
+    "successor_compile_must_preserve_original_before_bytes_and_other16_streams": true
+  },
+  "old113_protection_mechanics_unmodified_pathmap_reference": {
+    "path": ".scratch/roman-english-completion-20261029/finite-guard/installed-sixteen-path-map-v2.json",
+    "sha256": "f30274855dab361d060b0e67bab32bbde59639821ecac9b3befc98262360ebcc",
+    "protected_source_files": 113
+  },
+  "PC_historical_BOUND27_QUARANTINED16_RECORVERED2_UNBOUND2_preserved": true,
+  "PC_three_exact_current_English_source_root_bindings_and_archived_refusals_checked": true,
+  "isolated_PC_methods": {
+    "tests_run": 2,
+    "failures": 0,
+    "errors": 0,
+    "log_sha256": "eaee3509d393a865d95d8b1ebf81b472f95e26a907930a1af5992458e20c3f4f"
+  },
+  "findings": [],
+  "owning_commands_after_exact_test_install_and_root_epoch_acceptance": [
+    "python3 -m unittest tools.tests.test_proper_latin.ProductionLedgerTests.test_production_ledgers_publish_only_the_exact_historical_recoveries",
+    "python3 -m unittest tools.tests.test_current_source_batch_latin.CurrentSourceBatchLatinTests",
+    "python3 -m unittest tools.tests.test_calendar_translation_overlay.RecoveredCummiskeyAntecedentProductionTests.test_all_43_recovered_candidates_are_bound_or_text_free tools.tests.test_calendar_translation_overlay.RecoveredCummiskeyAntecedentProductionTests.test_exact_study_successors_preserve_rejected_cummiskey_routes",
+    "python3 -m unittest tools.tests.test_calendar_translation_overlay.RecoveredCummiskeyAntecedentProductionTests"
+  ],
+  "scope": "Bounded test expectation and integration conservation only; sourceepoch acceptance, source/rights decisions, compiler/guard/helper/source changes, full suite and sourcegraph were not performed or bypassed.",
+  "canonical_writes": false,
+  "G_fixture_called_or_mocked": false,
+  "permission_or_adoption_inferred_from_tests": false
+}

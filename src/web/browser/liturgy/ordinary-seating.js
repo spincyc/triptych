@@ -71,14 +71,100 @@
     return predicates[key] === true ? true : predicates[key] === false ? false : null;
   }
 
+  function properCitations(proper, selection) {
+    const citations = (proper.citations || []).slice();
+    const owner = selection && (proper[selection.family] || {})[selection.key];
+    for (const citation of owner && owner.citations || []) citations.push(citation);
+    return citations;
+  }
+
+  function gospelBookFacts(context) {
+    const books = {Matthew: 'matthew', Mark: 'mark', Luke: 'luke', John: 'john'};
+    const facts = Object.fromEntries(Object.values(books).map((book) => ['gospel-book-' + book, null]));
+    const prepared = context && context.properAppointments;
+    if (!prepared || !Array.isArray(prepared.rows) ||
+        !prepared.selections || typeof prepared.selections !== 'object') return facts;
+    const gospel = (proper) => semanticProperId(proper, true) === 'gospel';
+    if ((prepared.unresolved || []).some((row) => gospel({name: row.appointment && row.appointment.proper}))) return facts;
+    for (const unresolved of prepared.sourcePathUnresolved || []) {
+      const source = context.properRows;
+      if (!Array.isArray(source)) return facts;
+      const members = source.map(properRow).filter((row) =>
+        row.proper.source_path_relation === unresolved.relation &&
+        formIdOf(row.proper) === unresolved.form_id);
+      if (!members.length || members.some((row) => gospel(row.proper))) return facts;
+    }
+    const byIndex = new Map(prepared.rows.map((row, index) => {
+      const normalized = properRow(row, index);
+      return [normalized.sourceIndex, row];
+    }));
+    const sources = Array.isArray(context.properRows)
+      ? context.properRows.map(properRow) : prepared.rows.map(properRow);
+    const sourceByIndex = new Map(sources.map((row) => [row.sourceIndex, row.proper]));
+    if (byIndex.size !== prepared.rows.length || sourceByIndex.size !== sources.length) return facts;
+    const appointed = [];
+    for (const unit of properUnits(prepared.rows, null, null, prepared.selections)) {
+      if (unit.kind === 'proper') {
+        if (gospel(unit.proper)) appointed.push(byIndex.get(unit.sourceIndex));
+      } else if ((unit.options || []).some((option) => option.rows.some((row) => gospel(row.proper)))) {
+        if (!unit.selection || unit.selection.state !== 'selected') return facts;
+        const selected = unit.options.find((option) => option.id === unit.selection.option);
+        if (!selected || selected.rows.some((row) => !gospel(row.proper))) return facts;
+        appointed.push(...selected.rows.map((row) => byIndex.get(row.sourceIndex)));
+      }
+    }
+    if (!appointed.length) return facts;
+    const held = new Set();
+    for (const row of appointed) {
+      const normalized = properRow(row);
+      const proper = sourceByIndex.get(normalized.sourceIndex);
+      if (!proper || !gospel(proper)) return facts;
+      const choices = properCycleSelections(proper);
+      const material = row.materialCycle || (prepared.materialSelections || {})[normalized.sourceIndex];
+      let owner = proper;
+      let citationSelection = null;
+      if (material) {
+        if (material.family === null) {
+          if (material.cycle !== 'all' || choices.length) return facts;
+        } else {
+          if (!choices.some((one) => one.family === material.family && one.key === material.cycle)) return facts;
+          owner = proper[material.family][material.cycle];
+          citationSelection = {family: material.family, key: material.cycle};
+        }
+      } else if (choices.length) {
+        if (new Set(choices.map((one) => one.dimension)).size !== 1) return facts;
+        const dimension = choices[0].dimension;
+        const requested = context.calendarCycles && context.calendarCycles[dimension];
+        const selected = requested == null
+          ? choices.length === 1 ? choices[0] : null
+          : choices.find((one) => one.key === requested);
+        if (!selected) return facts;
+        owner = proper[selected.family][selected.key];
+        citationSelection = selected;
+      }
+      if ((proper.citations != null && !Array.isArray(proper.citations)) ||
+          (owner.citations != null && !Array.isArray(owner.citations))) return facts;
+      const citations = properCitations(proper, citationSelection);
+      if (!citations.length) return facts;
+      for (const citation of citations) {
+        if (!citation || (citation.unresolved !== undefined && citation.unresolved !== null) ||
+            typeof citation.book !== 'string' || !Object.prototype.hasOwnProperty.call(books, citation.book)) return facts;
+        held.add(books[citation.book]);
+      }
+    }
+    if (held.size !== 1) return facts;
+    const book = held.values().next().value;
+    Object.keys(facts).forEach((key) => { facts[key] = key === 'gospel-book-' + book; });
+    return facts;
+  }
+
   /**
-   * Derive only applicability facts the settled calendar result states. The
-   * input is deliberately small so browser and terminal cannot grow separate
-   * rank/name heuristics. Local solemnity and proper-Preface facts are not in
-   * this calendar context and therefore remain unknown.
+   * Prepared readings supply their book; the settled calendar supplies only
+   * its own applicability facts. Browser and terminal share this derivation.
+   * Local solemnity and proper-Preface facts remain unknown here.
    */
   function predicateFacts(context) {
-    const facts = {};
+    const facts = gospelBookFacts(context);
     // The appointment inputs travel with the facts so one call site feeds
     // both: the formulary's printed appointments (null where the day borrows
     // its formulary), the civil date and the owning year's anchors.
@@ -1539,12 +1625,156 @@
     });
   }
 
+  /**
+   * Locate source-owned orations in an already admitted Day series. This does
+   * not admit a commemoration, select a Mass, alter words, or supply endings.
+   * Both the browser adapter and the expanded CLI consume this same plan.
+   */
+  function orationPlan(rows, context) {
+    if (!context || !context.active || !context.execution) return [];
+    function fail(reason, message) {
+      const error = new Error(message); error.code = reason;
+      error.context = {mainKey: context.mainKey, scope: 'oration-assembly'};
+      throw error;
+    }
+    const execution = context.execution;
+    if (context.calendar !== 'roman-1962' || execution.scope !== 'dated-mass-of-office' ||
+        !execution.conclusions || execution.conclusions.principal !== 1 ||
+        execution.conclusions.commemorations !== 2 ||
+        !Array.isArray(execution.slots) || !execution.slots.length) {
+      fail('unsupported-oration-context', 'unsupported source oration execution contract');
+    }
+    const series = context.series || [];
+    if (!series.length || series[0].source_key !== context.mainKey) {
+      fail('principal-oration-owner-unbound', 'oration series has no matching principal source owner');
+    }
+    if (series.some(function (unit, index) { return !unit || unit.position !== index + 1; })) {
+      fail('invalid-counted-oration-unit', 'oration units lost their exact admitted sequence');
+    }
+    if (JSON.stringify(execution.slots.map(function (slot) { return slot.slot; })) !==
+        JSON.stringify(['Collect', 'Secret', 'Postcommunion'])) {
+      fail('unsupported-oration-slot', 'oration execution requires all three exact source slots');
+    }
+    const units = series.filter(function (unit) { return unit.position > 1 || unit.members; });
+    if (!units.length) return [];
+    const owners = new Map();
+    (context.owners || []).forEach(function (owner) {
+      if (!owner || typeof owner.key !== 'string' || owners.has(owner.key) || !Array.isArray(owner.rows)) {
+        fail('ambiguous-oration-source-owner', 'oration source owners require unique exact keys and rows');
+      }
+      owners.set(owner.key, owner);
+    });
+    const sequence = rows.map(properRow);
+    const multiple = execution.multiple_lessons;
+    if (!multiple || multiple.insertion !== 'after-last-prayer-before-final-reading' ||
+        multiple.commemorated_source !== 'first-prayer' ||
+        !Array.isArray(multiple.reading_names) || !Array.isArray(multiple.prayer_names)) {
+      fail('unsupported-oration-context', 'unsupported source multiple-lesson oration contract');
+    }
+    function familyMatches(row, slot) {
+      return semanticProperId(row.proper, true) === semanticProperId({name: slot}, true);
+    }
+    const admittedOwners = new Map();
+    function admittedRows(owner) {
+      if (admittedOwners.has(owner.key)) return admittedOwners.get(owner.key);
+      let prepared;
+      try { prepared = prepareProperAppointments(owner.rows, {
+        calendar: context.calendar, entrance: 'day', mass: owner.key,
+        date: context.date || null, season: context.season || null,
+        facts: context.facts || {}, choices: {}, sourcePaths: owner.sourcePaths || []
+      }); } catch (error) {
+        fail('oration-source-context-unbound', error.message);
+      }
+      const selected = [];
+      unframedEvents(prepared.rows, null, prepared.selections).forEach(function (event) {
+        if (event.kind === 'proper') selected.push(event);
+        else if (event.kind === 'proper_choice' && event.selection.state === 'selected') {
+          selected.push(...event.options.find(function (one) {
+            return one.id === event.selection.option;
+          }).rows);
+        }
+      });
+      // Keep the literal original owner, not the preparer's annotation-free copy.
+      const active = selected.map(function (one) {
+        return owner.rows.find(function (row) { return row.sourceIndex === one.sourceIndex; });
+      });
+      admittedOwners.set(owner.key, active); return active;
+    }
+    function matchingOwner(member, slot) {
+      const key = member.source_key;
+      const held = key && owners.get(key);
+      if (!held) fail('oration-source-owner-unbound', 'oration member lacks its exact source owner: ' + member.of);
+      const matching = admittedRows(held).filter(function (row) { return familyMatches(row, slot); });
+      if (matching.length !== 1) {
+        fail('oration-source-slot-unbound', 'oration member lacks a unique source-qualified ' + slot + ': ' + key);
+      }
+      const result = {key: key, sourceIndex: matching[0].sourceIndex, proper: matching[0].proper,
+        of_name: member.of_name};
+      const disposition = result.proper.ordinary_disposition;
+      if (disposition && disposition.when) result.applicability = {
+        mass: key, sourceIndex: result.sourceIndex, when: disposition.when,
+        basis: disposition.basis, date: context.date || null, season: context.season || null
+      };
+      return result;
+    }
+    return execution.slots.map(function (slot) {
+      if (!slot || typeof slot.slot !== 'string' || !semanticProperId({name: slot.slot}, true)) {
+        fail('unsupported-oration-slot', 'oration execution has an unknown semantic slot');
+      }
+      let anchor = sequence.filter(function (row) { return familyMatches(row, slot.slot); });
+      let placementLocus = slot.locus || execution.locus;
+      if (slot.slot === 'Collect') {
+        const lessons = sequence.filter(function (row) {
+          return multiple.reading_names.indexOf(row.proper.name) >= 0;
+        });
+        if (lessons.length > 1) {
+          const final = lessons[lessons.length - 1].sourceIndex;
+          const prayers = sequence.filter(function (row) {
+            return row.sourceIndex < final && multiple.prayer_names.indexOf(row.proper.name) >= 0;
+          });
+          anchor = prayers.length ? [prayers[prayers.length - 1]] : [];
+          placementLocus = multiple.locus;
+        }
+      }
+      if (anchor.length !== 1) {
+        fail('principal-oration-slot-unbound', 'oration series lacks a unique principal source seat for ' + slot.slot);
+      }
+      const groups = units.map(function (unit) {
+        const members = unit.members || [{of: unit.of, source_key: unit.source_key, of_name: unit.of_name}];
+        const kind = unit.members ? 'inseparable' : 'commemoration';
+        if ((kind === 'inseparable' && (unit.count !== 1 || members.length !== 2)) ||
+            (kind === 'commemoration' && members.length !== 1)) {
+          fail('invalid-counted-oration-unit', 'oration unit has inconsistent counted members');
+        }
+        const group = {kind: kind, count: 1, position: unit.position,
+          conclusion: unit.conclusion, locus: unit.group_locus || unit.locus || execution.locus,
+          placement_locus: placementLocus, slot: slot.slot,
+          conclusion_group: unit.position === 1 ? 1 : 2,
+          conclusion_final: unit.position === 1 || unit.position === series[series.length - 1].position,
+          members: members.map(function (member) { return matchingOwner(member, slot.slot); })};
+        // The source bodies remain separately attributable. Where intermediate
+        // printed cues would need source-checked spans, do not present a
+        // synthesized execution text or silently suppress a received ending.
+        const unresolved = [];
+        if (unit.position > 1 && series.length > 2) unresolved.push('intermediate-conclusion-spans-unbound');
+        if (group.members.some(function (member) {
+          return /\bN\./.test(member.proper.text || '');
+        })) unresolved.push('source-name-placeholder-unbound');
+        group.execution = {state: unresolved.length ? 'unresolved' : 'source-wording',
+          unresolved: unresolved, basis: execution.locus};
+        return group;
+      });
+      return {sourceIndex: anchor[0].sourceIndex, slot: slot.slot, groups: groups};
+    });
+  }
+
   return {
     variantGroupsOf: variantGroupsOf,
     variantGroupOf: variantGroupOf,
     chosenOption: chosenOption,
     selectionMap: selectionMap,
     predicateFacts: predicateFacts,
+    properCitations: properCitations,
     appointmentsFor: appointmentsFor,
     conditionsShow: conditionsShow,
     resolveElements: resolveElements,
@@ -1562,6 +1792,7 @@
     properUnits: properUnits,
     seatPropers: seatPropers,
     massEvents: massEvents,
-    unframedEvents: unframedEvents
+    unframedEvents: unframedEvents,
+    orationPlan: orationPlan
   };
 }));

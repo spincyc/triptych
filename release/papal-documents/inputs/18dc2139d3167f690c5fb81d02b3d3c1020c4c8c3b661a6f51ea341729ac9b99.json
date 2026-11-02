@@ -1,0 +1,2526 @@
+{
+ "schema": "triptych-papal-typeset/v1",
+ "revision": "2026-10-30T03:38:40Z",
+ "documents": [
+  {
+   "artifact_id": "artifact.acta-papal-archives.aas.006.historical-text-fb3b4bd1",
+   "collection_corpus": "acta",
+   "date": "1914-11-01",
+   "document_type": "encyclical",
+   "edition_id": "edition.acta-papal-archives.aas.006.archive.aas.006.053",
+   "id": "acta.aas.006.archive.aas.006.053",
+   "language": "it",
+   "physical_line_ranges": [
+    [
+     24087,
+     24107
+    ],
+    [
+     24110,
+     24156
+    ],
+    [
+     24158,
+     24200
+    ],
+    [
+     24202,
+     24261
+    ],
+    [
+     24263,
+     24307
+    ],
+    [
+     24309,
+     24354
+    ],
+    [
+     24356,
+     24396
+    ],
+    [
+     24398,
+     24440
+    ],
+    [
+     24442,
+     24489
+    ],
+    [
+     24491,
+     24533
+    ],
+    [
+     24535,
+     24577
+    ],
+    [
+     24579,
+     24622
+    ],
+    [
+     24624,
+     24666
+    ],
+    [
+     24668,
+     24716
+    ],
+    [
+     24718,
+     24757
+    ]
+   ],
+   "pope": "Benedict XV",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"completion_colophon_line_ranges\": [[33746, 33746]], \"completion_colophon_raw\": \"   ABSOLVITUR DIE 31 DEC. 1914. - TYPIS POLYGLOTTIS VATICANIS\", \"evidence\": \"Annual title/imprint and year at physical LF lines 1–18, confirmed by dated issue headings and official archive annual label. This identifies the historical underlying textual edition; the acquired Vatican -ocr.pdf is a modern OCR/text reconstruction and no image collation is claimed.\", \"imprint\": \"Typis Polyglottis Vaticanis\", \"publication_year\": 1914, \"source_index_url\": \"https://www.vatican.va/archive/aas/index_en.htm\", \"title\": \"Acta Apostolicae Sedis: Commentarium officiale\", \"title_imprint_physical_line_ranges\": [[1, 18]], \"volume\": 6} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.acta-papal-archives.aas.006.archive.aas.006.053",
+   "segment_path": "src/sources/works/acta-papal-archives/1914-11-01-aas.006-archive.aas.006.work-ad-beatissimi/editions/1914-acta-aas-006-archive.aas.006.053/segments/historical-text.toml",
+   "sha256": "fb3b4bd1a8d41392dc06fc705d97bac09d7aee15780990391456a948f9ea3c67",
+   "source_note": "AAS 6 (1914). Additional constituent recovered from explicit body heading and source terminal subscription despite absent/OCR-damaged group numbering. No source wording is rewritten.",
+   "source_url": "https://www.vatican.va/archive/aas/documents/AAS-06-1914-ocr.pdf",
+   "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1914-acta-aas-006/artifacts/acta-historical-text-fb3b4bd1/historical.txt",
+   "title": "Ad beatissimi Apostolorum Principis",
+   "work_id": "work.acta-papal-archives.aas.006-archive.aas.006.work-ad-beatissimi",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.acta-papal-archives.aas.015.historical-text-c64dd851",
+   "collection_corpus": "acta",
+   "date": null,
+   "document_type": "encyclical",
+   "edition_id": "edition.acta-papal-archives.aas.015.archive.aas.015.l013172",
+   "id": "acta.aas.015.archive.aas.015.l013172",
+   "language": "la",
+   "physical_line_ranges": [
+    [
+     13172,
+     13198
+    ],
+    [
+     13201,
+     13241
+    ],
+    [
+     13243,
+     13283
+    ],
+    [
+     13285,
+     13329
+    ],
+    [
+     13331,
+     13372
+    ],
+    [
+     13374,
+     13411
+    ],
+    [
+     13413,
+     13449
+    ],
+    [
+     13451,
+     13491
+    ],
+    [
+     13493,
+     13536
+    ],
+    [
+     13538,
+     13581
+    ],
+    [
+     13583,
+     13618
+    ],
+    [
+     13620,
+     13658
+    ],
+    [
+     13660,
+     13699
+    ],
+    [
+     13701,
+     13737
+    ],
+    [
+     13739,
+     13780
+    ],
+    [
+     13782,
+     13821
+    ],
+    [
+     13823,
+     13859
+    ],
+    [
+     13862,
+     13893
+    ]
+   ],
+   "pope": "Pius XI",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"artifact_page_ranges\": [[1, 1]], \"completion_colophon_line_ranges\": [[29848, 29848]], \"completion_colophon_raw\": \"     ABSOLVITUR DIE! 31 DECEMBRIS 1923\", \"evidence\": \"Title and imprint in the acquired Vatican OCR PDF identify Acta Apostolicae Sedis, the annual volume, ROMAE / TYPIS POLYGLOTTIS VATICANIS and its Roman-numeral publication year. This is edition provenance, not facsimile collation.\", \"physical_line_ranges\": [[1, 17]], \"publication_year\": 1923} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.acta-papal-archives.aas.015.archive.aas.015.l013172",
+   "segment_path": "src/sources/works/acta-papal-archives/undated-aas.015-archive.aas.015.l013172/editions/1923-acta-aas-015-archive.aas.015.l013172/segments/historical-text.toml",
+   "sha256": "c64dd8518ff3cef4aa800f8552a1344be374b1bbdcf9397a546161b63d41d1e0",
+   "source_note": "AAS 15 (1923). Whole-volume Vatican OCR extraction; no facsimile collation or silent textual correction.",
+   "source_url": "https://www.vatican.va/archive/aas/documents/AAS-15-1923-ocr.pdf",
+   "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1923-acta-aas-015/artifacts/acta-historical-text-c64dd851/historical.txt",
+   "title": "AD V E N E R A B I L E S FRATRES PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, E P I - SCOPOS ALIOSQUE LOCORUM ORDINARIOS, PACEM ET COMMUNIONEM CUM APOSTOLICA S E D E H A B E N T E S : SAECULO SEXTO E X E U N T E A SANCTORUM CAELITUM HONORIBUS THOMAE AQUINATI D E C R E T I S .",
+   "work_id": "work.acta-papal-archives.aas.015-archive.aas.015.l013172",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.acta-papal-archives.aas.020.historical-text-748f7bf4",
+   "collection_corpus": "acta",
+   "date": "1928-09-08",
+   "document_type": "encyclical",
+   "edition_id": "edition.acta-papal-archives.aas.020.aas-020-l11951",
+   "id": "acta.aas.020.aas-020-l11951",
+   "language": "la",
+   "physical_line_ranges": [
+    [
+     11951,
+     11977
+    ],
+    [
+     11980,
+     12017
+    ],
+    [
+     12019,
+     12062
+    ],
+    [
+     12064,
+     12103
+    ],
+    [
+     12105,
+     12142
+    ],
+    [
+     12144,
+     12188
+    ],
+    [
+     12190,
+     12227
+    ],
+    [
+     12229,
+     12266
+    ],
+    [
+     12268,
+     12305
+    ],
+    [
+     12307,
+     12346
+    ],
+    [
+     12348,
+     12385
+    ],
+    [
+     12387,
+     12420
+    ]
+   ],
+   "pope": "Pius XI",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"basis\": \"The official archival OCR volume identifies the historical AAS title, annual volume and Vatican printing imprint. Constituent source headings, dated issue mastheads, signatures, source notes and historical end indexes belong to that identified printing. This establishes edition testimony through the OCR reconstruction, not image-level collation.\", \"completion_colophon_line_ranges\": [[20542, 20542]], \"completion_colophon_raw\": \"      ABSOLVITUR       DIE    20   DECEMBRIS      1928\", \"edition\": \"Acta Apostolicae Sedis 20 (1928), Rome, Typis Polyglottis Vaticanis.\", \"limitation\": \"Annual title year is nominal; the completion colophon and source issue dates are recorded separately.\", \"title_imprint_line_ranges\": [[1, 17]]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.acta-papal-archives.aas.020.aas-020-l11951",
+   "segment_path": "src/sources/works/papal-documents/1928-09-08-papal-pius-xi-hf-p-xi-enc-19280908-rerum-orientalium-a3774d84/editions/1928-acta-aas-020-aas-020-l11951/segments/historical-text.toml",
+   "sha256": "748f7bf41c9aa4da6cb7f549dd6307638d3e9fad802b38728ca2785eed643dab",
+   "source_note": "AAS 20 (1928). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text.",
+   "source_url": "https://www.vatican.va/archive/aas/documents/AAS-20-1928-ocr.pdf",
+   "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1928-acta-aas-020/artifacts/acta-historical-text-748f7bf4/historical.txt",
+   "title": "LITTERAE ENCYCLICAE AD RR. PP. D D . PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCOPOS, ALIOS- QUE LOCORUM ORDINARIOS PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES: DE STUDIIS RERUM ORIENTALIUM PROVEHENDIS.",
+   "work_id": "work.papal.pius-xi.hf-p-xi-enc-19280908-rerum-orientalium",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a",
+   "collection_corpus": "acta",
+   "date": "1929-12-20",
+   "document_type": "encyclical",
+   "edition_id": "edition.acta-papal-archives.aas.021.aas-021-l27869",
+   "id": "acta.aas.021.aas-021-l27869",
+   "language": "la",
+   "physical_line_ranges": [
+    [
+     27869,
+     27912
+    ],
+    [
+     27914,
+     27958
+    ],
+    [
+     27960,
+     28005
+    ],
+    [
+     28007,
+     28044
+    ],
+    [
+     28046,
+     28095
+    ],
+    [
+     28097,
+     28141
+    ],
+    [
+     28143,
+     28189
+    ],
+    [
+     28191,
+     28233
+    ],
+    [
+     28235,
+     28277
+    ],
+    [
+     28280,
+     28322
+    ],
+    [
+     28324,
+     28362
+    ],
+    [
+     28364,
+     28405
+    ],
+    [
+     28407,
+     28450
+    ],
+    [
+     28452,
+     28497
+    ],
+    [
+     28499,
+     28541
+    ],
+    [
+     28543,
+     28591
+    ],
+    [
+     28593,
+     28635
+    ],
+    [
+     28637,
+     28662
+    ]
+   ],
+   "pope": "Pius XI",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"basis\": \"The official archival OCR volume identifies the historical AAS title, annual volume and Vatican printing imprint. Constituent source headings, dated issue mastheads, signatures, source notes and historical end indexes belong to that identified printing. This establishes edition testimony through the OCR reconstruction, not image-level collation.\", \"completion_colophon_line_ranges\": [[34441, 34441]], \"completion_colophon_raw\": \"      ABSOLVITUR DIE 20 IANUARII 1930\", \"edition\": \"Acta Apostolicae Sedis 21 (1929), Rome, Typis Polyglottis Vaticanis.\", \"limitation\": \"Annual title year is nominal; the completion colophon and source issue dates are recorded separately.\", \"title_imprint_line_ranges\": [[1, 17]]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.acta-papal-archives.aas.021.aas-021-l27869",
+   "segment_path": "src/sources/works/papal-documents/1929-12-20-papal-pius-xi-hf-p-xi-enc-19291220-mens-nostra-3892b8f3/editions/1930-acta-aas-021-aas-021-l27869/segments/historical-text.toml",
+   "sha256": "c3e4af8a24386821d8b3827235c324e20a4a0a36c0f4dc88b017a3380400357c",
+   "source_note": "AAS 21 (1929). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text.",
+   "source_url": "https://www.vatican.va/archive/aas/documents/AAS-21-1929-ocr.pdf",
+   "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1930-acta-aas-021/artifacts/acta-historical-text-c3e4af8a/historical.txt",
+   "title": "LITTERAE ENCYCLICAE AD V E N E R A B I L E S FRATRES, PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPI- SCOPOS, ALIOSQUE         LOCORUM ORDINARIOS               PACEM ET COMMUNIONEM CUM APOSTOLICA S E D E HABENTES : DE USU EXERCITIORUM SPIRITUA- LIUM MAGIS MAGISQUE PROMOVENDO.",
+   "work_id": "work.papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.acta-papal-archives.ass.006.historical-text-6f710d76",
+   "collection_corpus": "acta",
+   "date": "1871-06-04",
+   "document_type": "encyclical",
+   "edition_id": "edition.acta-papal-archives.ass.006.ass-006-act-014",
+   "id": "acta.ass.006.ass-006-act-014",
+   "language": "la",
+   "physical_line_ranges": [
+    [
+     10631,
+     10668
+    ],
+    [
+     10670,
+     10708
+    ],
+    [
+     10710,
+     10748
+    ],
+    [
+     10750,
+     10788
+    ],
+    [
+     10790,
+     10807
+    ]
+   ],
+   "pope": "Pius IX",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Title leaf Rome, Typis Polyglottae Officinae S.C. de Propaganda Fide, MDCCCLXX (OCR MDCC&LXX), lines31–35. Modern Johnson first reprinting1968 at56–57; historical ANIMADVERSIO42–51 retained. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.acta-papal-archives.ass.006.ass-006-act-014",
+   "segment_path": "src/sources/works/papal-documents/1871-06-04-papal-pius-ix-epistola-encyclica-beneficia-dei-4-iunii-1871-13211e4a/editions/1870-acta-ass-006-ass-006-act-014/segments/historical-text.toml",
+   "sha256": "6f710d76d851369aa5ea49b7fefa65c2279ee93cf1c54f3555e5365f4fbb628a",
+   "source_note": "ASS 6 (1870), printed pages 269–273. Whole act from source-supported heading through dating/signature; historical source notes within bounds retained. OCR is not facsimile collation.",
+   "source_url": "https://www.vatican.va/archive/ass/documents/ASS-06-1870-71-ocr.pdf",
+   "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/volume-6-1870-1871/artifacts/acta-historical-text-6f710d76/historical.txt",
+   "title": "Beneficia Dei",
+   "work_id": "work.papal.pius-ix.epistola-encyclica-beneficia-dei-4-iunii-1871",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.acta-papal-archives.ass.016.historical-text-83bd7db6",
+   "collection_corpus": "acta",
+   "date": "1884-04-20",
+   "document_type": "encyclical",
+   "edition_id": "edition.acta-papal-archives.ass.016.ass-016-act-007",
+   "id": "acta.ass.016.ass-016-act-007",
+   "language": "la",
+   "physical_line_ranges": [
+    [
+     16476,
+     16520
+    ],
+    [
+     16523,
+     16564
+    ],
+    [
+     16566,
+     16606
+    ],
+    [
+     16608,
+     16649
+    ],
+    [
+     16651,
+     16691
+    ],
+    [
+     16693,
+     16736
+    ],
+    [
+     16738,
+     16778
+    ],
+    [
+     16780,
+     16821
+    ],
+    [
+     16823,
+     16863
+    ],
+    [
+     16865,
+     16906
+    ],
+    [
+     16908,
+     16948
+    ],
+    [
+     16950,
+     16989
+    ],
+    [
+     16991,
+     17031
+    ],
+    [
+     17033,
+     17073
+    ],
+    [
+     17075,
+     17115
+    ],
+    [
+     17117,
+     17157
+    ],
+    [
+     17159,
+     17169
+    ]
+   ],
+   "pope": "Leo XIII",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Historical title leaf Rome 1906 (line 34); archive serial label 1883–1884. Johnson first-reprinting 1968 wrapper excluded. This is source-delivery identification, not facsimile collation or independent original-printing verification. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.acta-papal-archives.ass.016.ass-016-act-007",
+   "segment_path": "src/sources/works/leo-xiii/humanum-genus/editions/1906-acta-ass-016-ass-016-act-007/segments/historical-text.toml",
+   "sha256": "83bd7db6c3f5d5bb95ad0e942b948ed5d72c7d0aecd7d0992064d82b962bcc24",
+   "source_note": "ASS 16 (1883), printed pages 417–433. Exact LF ranges refer to the whole hashed pdftotext -layout UTF-8 LF/form-feed derivative; no body wording is copied or rewritten through a model. Historical source notes within the identified bounds are retained. ",
+   "source_url": "https://www.vatican.va/archive/ass/documents/ASS-16-1883-84-1-576+supplemento-17-96-ocr.pdf",
+   "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1906-acta-ass-016/artifacts/acta-historical-text-83bd7db6/historical.txt",
+   "title": "Humanum genus",
+   "work_id": "work.leo-xiii.humanum-genus",
+   "compact_margin": 0.6,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.acta-papal-archives.ass.020.historical-text-c3d47678",
+   "collection_corpus": "acta",
+   "date": "1887-12-22",
+   "document_type": "apostolic-letter",
+   "edition_id": "edition.acta-papal-archives.ass.020.ass-020-007",
+   "id": "acta.ass.020.ass-020-007",
+   "language": "la",
+   "physical_line_ranges": [
+    [
+     10072,
+     10111
+    ],
+    [
+     10114,
+     10155
+    ],
+    [
+     10157,
+     10197
+    ],
+    [
+     10199,
+     10240
+    ],
+    [
+     10242,
+     10282
+    ],
+    [
+     10284,
+     10325
+    ],
+    [
+     10327,
+     10368
+    ],
+    [
+     10370,
+     10410
+    ],
+    [
+     10412,
+     10452
+    ],
+    [
+     10454,
+     10493
+    ],
+    [
+     10495,
+     10537
+    ],
+    [
+     10539,
+     10579
+    ],
+    [
+     10581,
+     10621
+    ],
+    [
+     10623,
+     10663
+    ],
+    [
+     10665,
+     10696
+    ]
+   ],
+   "pope": "Leo XIII",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"detail\": \"Original ASS title imprint reproduced before the separately printed1968/1969 Johnson reprint notice; historical publication year/period is corroborated by archive inventory. This is textual-imprint evidence, not an original-print facsimile claim.\", \"evidence_physical_lines\": [1, 41]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.acta-papal-archives.ass.020.ass-020-007",
+   "segment_path": "src/sources/works/papal-documents/1887-12-22-papal-leo-xiii-hf-l-xiii-enc-22121887-officio-sanctissimo-f51b3d3c/editions/1887-acta-ass-020-ass-020-007/segments/historical-text.toml",
+   "sha256": "c3d4767811d43be6597af243328f5a23229f3e271c4bdcf3543c462d2e7e2140",
+   "source_note": "ASS 20 (1887). Exact LF ranges of the separately hashed pdftotext -layout UTF-8 Unix derivative; Vatican OCR reconstruction, not original-print facsimile or collated transcription.",
+   "source_url": "https://www.vatican.va/archive/ass/documents/ASS-20-1887-ocr.pdf",
+   "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1887-acta-ass-020/artifacts/acta-historical-text-c3d47678/historical.txt",
+   "title": "Litterae ad Archiepiscopos et Episcopos Bavariae",
+   "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-22121887-officio-sanctissimo",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.acta-papal-archives.ass.026.historical-text-15a33cfd",
+   "collection_corpus": "acta",
+   "date": "1893-09-08",
+   "document_type": "encyclical",
+   "edition_id": "edition.acta-papal-archives.ass.026.ass-026-l07664",
+   "id": "acta.ass.026.ass-026-l07664",
+   "language": "la",
+   "physical_line_ranges": [
+    [
+     7659,
+     7700
+    ],
+    [
+     7703,
+     7742
+    ],
+    [
+     7744,
+     7784
+    ],
+    [
+     7786,
+     7827
+    ],
+    [
+     7829,
+     7870
+    ],
+    [
+     7872,
+     7911
+    ],
+    [
+     7913,
+     7943
+    ]
+   ],
+   "pope": "Leo XIII",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. The historical title identifies Romae, Typographia Polyglotta, S. Congregationis de Propaganda Fide, 1893-94, at exact source LF line 34. The separately printed 1969 Johnson reprint wrapper at LF 36–40 is excluded. This identifies the reproduced historical printing; the Vatican OCR reconstruction is not image-collated. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.acta-papal-archives.ass.026.ass-026-l07664",
+   "segment_path": "src/sources/works/papal-documents/1893-09-08-papal-leo-xiii-hf-l-xiii-enc-08091893-laetitiae-sanctae-5fde687d/editions/1893-acta-ass-026-ass-026-l07664/segments/historical-text.toml",
+   "sha256": "15a33cfd01401e070c0b912e4154be4f7d163d6730ac8f1cd64ed6096d756d3d",
+   "source_note": "ASS 26 (1893). Mechanically selected historical papal instrument; OCR spelling and spacing retained without silent correction.",
+   "source_url": "https://www.vatican.va/archive/ass/documents/ASS-26-1893-94-ocr.pdf",
+   "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/acta-historical-text-15a33cfd/historical.txt",
+   "title": "Laetitiae sanctae",
+   "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-08091893-laetitiae-sanctae",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.acta-papal-archives.ass.027.historical-text-76fd18c3",
+   "collection_corpus": "acta",
+   "date": "1894-07-02",
+   "document_type": "letter",
+   "edition_id": "edition.acta-papal-archives.ass.027.ass-027-l00048",
+   "id": "acta.ass.027.ass-027-l00048",
+   "language": "la",
+   "physical_line_ranges": [
+    [
+     43,
+     84
+    ],
+    [
+     86,
+     126
+    ],
+    [
+     128,
+     168
+    ],
+    [
+     170,
+     210
+    ],
+    [
+     212,
+     223
+    ]
+   ],
+   "pope": "Leo XIII",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. The historical title identifies Romae, Typographia Polyglotta, S. Congregationis de Propaganda Fide, 1894-95, at exact source LF line 40. The separately printed 1969 Johnson reprint wrapper at LF 42–46 is excluded. This identifies the reproduced historical printing; the Vatican OCR reconstruction is not image-collated. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.acta-papal-archives.ass.027.ass-027-l00048",
+   "segment_path": "src/sources/works/papal-documents/1894-07-02-papal-leo-xiii-hf-l-xiii-enc-02071894-litteras-a-vobis-e1b0c4ba/editions/1894-acta-ass-027-ass-027-l00048/segments/historical-text.toml",
+   "sha256": "76fd18c3621cc707adc62b79835f68c979493efd988d9e4a6916a3b16d17ae6f",
+   "source_note": "ASS 27 (1894). Mechanically selected historical papal instrument; OCR spelling and spacing retained without silent correction.",
+   "source_url": "https://www.vatican.va/archive/ass/documents/ASS-27-1894-95-ocr.pdf",
+   "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1894-acta-ass-027/artifacts/acta-historical-text-76fd18c3/historical.txt",
+   "title": "Litteras a vobis",
+   "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-02071894-litteras-a-vobis",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.acta-papal-archives.ass.033.historical-text-0bf4c816",
+   "collection_corpus": "acta",
+   "date": "1901-01-18",
+   "document_type": "encyclical",
+   "edition_id": "edition.acta-papal-archives.ass.033.ass-033-l15404",
+   "id": "acta.ass.033.ass-033-l15404",
+   "language": "la",
+   "physical_line_ranges": [
+    [
+     15398,
+     15438
+    ],
+    [
+     15441,
+     15481
+    ],
+    [
+     15483,
+     15523
+    ],
+    [
+     15525,
+     15566
+    ],
+    [
+     15568,
+     15608
+    ],
+    [
+     15610,
+     15651
+    ],
+    [
+     15653,
+     15693
+    ],
+    [
+     15695,
+     15735
+    ],
+    [
+     15737,
+     15777
+    ],
+    [
+     15779,
+     15820
+    ],
+    [
+     15822,
+     15862
+    ],
+    [
+     15864,
+     15871
+    ]
+   ],
+   "pope": "Leo XIII",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. The historical title identifies Romae, Typographia Polyglotta, S. Congregationis de Propaganda Fide, 1900-901, at exact source LF line 38. The separately printed 1969 Johnson reprint wrapper at LF 40–45 is excluded. This identifies the reproduced historical printing; the Vatican OCR reconstruction is not image-collated. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.acta-papal-archives.ass.033.ass-033-l15404",
+   "segment_path": "src/sources/works/papal-documents/1901-01-18-papal-leo-xiii-hf-l-xiii-enc-18011901-graves-de-communi-re-90b60b6a/editions/1900-acta-ass-033-ass-033-l15404/segments/historical-text.toml",
+   "sha256": "0bf4c816a025b28cf31636812e0a2bf93729edf32823a74844f33ea857d3af6f",
+   "source_note": "ASS 33 (1900). Mechanically selected historical papal instrument; OCR spelling and spacing retained without silent correction.",
+   "source_url": "https://www.vatican.va/archive/ass/documents/ASS-33-1900-1-ocr.pdf",
+   "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1900-acta-ass-033/artifacts/acta-historical-text-0bf4c816/historical.txt",
+   "title": "Graves de communi re",
+   "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-18011901-graves-de-communi-re",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.acta-papal-archives.ass.035.historical-text-0550497c",
+   "collection_corpus": "acta",
+   "date": "1902-12-08",
+   "document_type": "encyclical-letter",
+   "edition_id": "edition.acta-papal-archives.ass.035.ass-035-l010320",
+   "id": "acta.ass.035.ass-035-l010320",
+   "language": "it",
+   "physical_line_ranges": [
+    [
+     10315,
+     10355
+    ],
+    [
+     10358,
+     10401
+    ],
+    [
+     10403,
+     10444
+    ],
+    [
+     10446,
+     10487
+    ],
+    [
+     10489,
+     10530
+    ],
+    [
+     10532,
+     10573
+    ],
+    [
+     10575,
+     10615
+    ],
+    [
+     10617,
+     10657
+    ],
+    [
+     10659,
+     10677
+    ]
+   ],
+   "pope": "Leo XIII",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Original volume title page and historical journal publication period 1902; modern Johnson 1969 reprint permission/imprint rows expressly excluded. Vatican OCR delivery is a text reconstruction; no image-collation claim. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.acta-papal-archives.ass.035.ass-035-l010320",
+   "segment_path": "src/sources/works/acta-papal-archives/1902-12-08-ass.035-ass-035-l010320/editions/1902-acta-ass-035-ass-035-l010320/segments/historical-text.toml",
+   "sha256": "0550497ca2e97d3601ed20190e42114c2ee5d0d71abb742050c83f7f8614a85b",
+   "source_note": "ASS 35 (1902). Mechanical ranges over the exact whole-volume UTF-8 LF/formfeed derivative. Historical notes and terminal apparatus retained where bounded; running heads and journal issue footer lines omitted. OCR limitations remain; no facsimile or full-work textual collation.",
+   "source_url": "https://www.vatican.va/archive/ass/documents/ASS-35-1902-3-ocr.pdf",
+   "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1902-acta-ass-035/artifacts/acta-historical-text-0550497c/historical.txt",
+   "title": "L E T T E R A E N C I C L I C A del Santissimo Signor Nostro Leone per Divina P r o v v i d e n z a Papa X I I I ai Vescovi d'Italia.",
+   "work_id": "work.acta-papal-archives.ass.035-ass-035-l010320",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.acta-papal-archives.ass.036.historical-text-2e2ac41b",
+   "collection_corpus": "acta",
+   "date": "1903-10-04",
+   "document_type": "encyclical-letter",
+   "edition_id": "edition.acta-papal-archives.ass.036.ass-036-l005290",
+   "id": "acta.ass.036.ass-036-l005290",
+   "language": "it",
+   "physical_line_ranges": [
+    [
+     5284,
+     5325
+    ],
+    [
+     5327,
+     5367
+    ],
+    [
+     5369,
+     5408
+    ],
+    [
+     5410,
+     5451
+    ],
+    [
+     5453,
+     5493
+    ],
+    [
+     5495,
+     5535
+    ],
+    [
+     5538,
+     5578
+    ],
+    [
+     5580,
+     5620
+    ],
+    [
+     5622,
+     5663
+    ],
+    [
+     5665,
+     5705
+    ],
+    [
+     5707,
+     5747
+    ],
+    [
+     5749,
+     5767
+    ]
+   ],
+   "pope": "Pius X",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Original volume title page and historical journal publication period 1903; modern Johnson 1969 reprint permission/imprint rows expressly excluded. Vatican OCR delivery is a text reconstruction; no image-collation claim. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.acta-papal-archives.ass.036.ass-036-l005290",
+   "segment_path": "src/sources/works/papal-documents/1903-10-04-papal-pius-x-hf-p-x-enc-04101903-e-supremi-ee58bb7f/editions/1903-acta-ass-036-ass-036-l005290/segments/historical-text.toml",
+   "sha256": "2e2ac41b82e92ef6a68a6bd1d4c768933ebadf42a8c74f3103755ac13fd762cb",
+   "source_note": "ASS 36 (1903). Mechanical exact-byte ranges from whole-volume Vatican OCR; historical notes and subscriptions retained, no facsimile or full-work image/text-collation claim.",
+   "source_url": "https://www.vatican.va/archive/ass/documents/ASS-36-1903-4-ocr.pdf",
+   "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1903-acta-ass-036/artifacts/acta-historical-text-2e2ac41b/historical.txt",
+   "title": "E supremi apostolatus — alter textus officialis",
+   "work_id": "work.papal.pius-x.hf-p-x-enc-04101903-e-supremi",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.acta-papal-archives.ass.040.historical-text-207ee29a",
+   "collection_corpus": "acta",
+   "correction_evidence": {
+    "items": [
+     {
+      "kind": "explicit-source-selector-revision",
+      "new_physical_line_ranges": [
+       [
+        22846,
+        22883
+       ],
+       [
+        22886,
+        22922
+       ],
+       [
+        22924,
+        22960
+       ],
+       [
+        22962,
+        22999
+       ],
+       [
+        23001,
+        23037
+       ],
+       [
+        23039,
+        23075
+       ],
+       [
+        23077,
+        23112
+       ],
+       [
+        23114,
+        23150
+       ],
+       [
+        23152,
+        23189
+       ],
+       [
+        23191,
+        23227
+       ],
+       [
+        23229,
+        23264
+       ],
+       [
+        23266,
+        23301
+       ],
+       [
+        23303,
+        23338
+       ],
+       [
+        23340,
+        23376
+       ],
+       [
+        23378,
+        23414
+       ],
+       [
+        23416,
+        23453
+       ],
+       [
+        23455,
+        23493
+       ],
+       [
+        23496,
+        23532
+       ],
+       [
+        23534,
+        23570
+       ],
+       [
+        23572,
+        23608
+       ],
+       [
+        23610,
+        23646
+       ],
+       [
+        23648,
+        23684
+       ],
+       [
+        23686,
+        23723
+       ],
+       [
+        23725,
+        23761
+       ],
+       [
+        23763,
+        23799
+       ],
+       [
+        23801,
+        23837
+       ],
+       [
+        23839,
+        23874
+       ],
+       [
+        23876,
+        23911
+       ],
+       [
+        23913,
+        23951
+       ],
+       [
+        23953,
+        23988
+       ],
+       [
+        23990,
+        24025
+       ],
+       [
+        24027,
+        24062
+       ],
+       [
+        24064,
+        24099
+       ],
+       [
+        24102,
+        24138
+       ],
+       [
+        24140,
+        24177
+       ],
+       [
+        24179,
+        24214
+       ],
+       [
+        24216,
+        24252
+       ],
+       [
+        24254,
+        24290
+       ],
+       [
+        24292,
+        24327
+       ],
+       [
+        24329,
+        24364
+       ],
+       [
+        24366,
+        24401
+       ],
+       [
+        24403,
+        24438
+       ],
+       [
+        24440,
+        24476
+       ],
+       [
+        24478,
+        24513
+       ],
+       [
+        24515,
+        24551
+       ],
+       [
+        24553,
+        24589
+       ],
+       [
+        24591,
+        24626
+       ],
+       [
+        24628,
+        24663
+       ],
+       [
+        24665,
+        24702
+       ],
+       [
+        24705,
+        24741
+       ],
+       [
+        24743,
+        24777
+       ],
+       [
+        24779,
+        24815
+       ],
+       [
+        24818,
+        24855
+       ],
+       [
+        24858,
+        24894
+       ],
+       [
+        24896,
+        24932
+       ],
+       [
+        24935,
+        24971
+       ],
+       [
+        24973,
+        25009
+       ],
+       [
+        25011,
+        25042
+       ]
+      ],
+      "new_segment_id": "segment.acta-papal-archives.ass.040.ass-040-l022854.visual-2026-10-26",
+      "new_segment_path": "src/sources/works/papal-documents/1907-09-08-papal-pius-x-hf-p-x-enc-19070908-pascendi-dominici-gregis-fbd69611/editions/1907-acta-ass-040-ass-040-l022854/segments/historical-text-visual-2026-10-26.toml",
+      "new_segment_sha256": "7082a530e0e7f1389024154dfcae1f6234eb0005a30bb3f891649899f9e71bd8",
+      "old_physical_line_ranges": [
+       [
+        22846,
+        22883
+       ],
+       [
+        22886,
+        22922
+       ],
+       [
+        22924,
+        22960
+       ],
+       [
+        22962,
+        22999
+       ],
+       [
+        23001,
+        23037
+       ],
+       [
+        23039,
+        23075
+       ],
+       [
+        23077,
+        23112
+       ],
+       [
+        23114,
+        23150
+       ],
+       [
+        23152,
+        23189
+       ],
+       [
+        23191,
+        23227
+       ],
+       [
+        23229,
+        23264
+       ],
+       [
+        23266,
+        23301
+       ],
+       [
+        23303,
+        23338
+       ],
+       [
+        23340,
+        23376
+       ],
+       [
+        23378,
+        23414
+       ],
+       [
+        23416,
+        23453
+       ],
+       [
+        23455,
+        23493
+       ],
+       [
+        23496,
+        23532
+       ],
+       [
+        23534,
+        23570
+       ],
+       [
+        23572,
+        23608
+       ],
+       [
+        23610,
+        23646
+       ],
+       [
+        23648,
+        23684
+       ],
+       [
+        23686,
+        23723
+       ],
+       [
+        23725,
+        23761
+       ],
+       [
+        23763,
+        23799
+       ],
+       [
+        23801,
+        23837
+       ],
+       [
+        23839,
+        23874
+       ],
+       [
+        23876,
+        23911
+       ],
+       [
+        23913,
+        23951
+       ],
+       [
+        23953,
+        23988
+       ],
+       [
+        23990,
+        24025
+       ],
+       [
+        24027,
+        24062
+       ],
+       [
+        24064,
+        24099
+       ],
+       [
+        24102,
+        24138
+       ],
+       [
+        24140,
+        24177
+       ],
+       [
+        24179,
+        24214
+       ],
+       [
+        24216,
+        24252
+       ],
+       [
+        24254,
+        24290
+       ],
+       [
+        24292,
+        24327
+       ],
+       [
+        24329,
+        24364
+       ],
+       [
+        24366,
+        24401
+       ],
+       [
+        24403,
+        24438
+       ],
+       [
+        24440,
+        24476
+       ],
+       [
+        24478,
+        24513
+       ],
+       [
+        24515,
+        24551
+       ],
+       [
+        24553,
+        24589
+       ],
+       [
+        24591,
+        24626
+       ],
+       [
+        24628,
+        24663
+       ],
+       [
+        24665,
+        24702
+       ],
+       [
+        24705,
+        24741
+       ],
+       [
+        24743,
+        24777
+       ],
+       [
+        24779,
+        24815
+       ],
+       [
+        24818,
+        24855
+       ],
+       [
+        24857,
+        24894
+       ],
+       [
+        24896,
+        24932
+       ],
+       [
+        24934,
+        24971
+       ],
+       [
+        24973,
+        25009
+       ],
+       [
+        25011,
+        25042
+       ]
+      ],
+      "prior_segment_id": "segment.acta-papal-archives.ass.040.ass-040-l022854",
+      "prior_segment_path": "src/sources/works/papal-documents/1907-09-08-papal-pius-x-hf-p-x-enc-19070908-pascendi-dominici-gregis-fbd69611/editions/1907-acta-ass-040-ass-040-l022854/segments/historical-text.toml",
+      "prior_segment_sha256": "2d87666990b7930dbfaa706fb2eec402d430f79002cda6ed2a260e0a0100e8aa",
+      "range_continuations": [
+       52
+      ],
+      "reason": "Both later separate4+Litterae Encyclicae lines are pure publication running-head/folio fragments in exact retained source context; neither is a body citation. All body, historical notes, source signatures and the genuine opening heading remain unchanged.",
+      "source_artifact_id": "artifact.acta-papal-archives.ass.040.historical-text-207ee29a",
+      "source_evidence": {
+       "calibration_extent": "Frozen reader PDF page19 individually opened; exact reader PDF text across pages19–20. This is not native historical-page collation.",
+       "continuation_evidence": [
+        {
+         "left_body_LF": 24855,
+         "left_exact": "scripta cognoscit, vel si editionem non probant. — C e n s o -",
+         "range_index_0_based": 52,
+         "right_body_LF": 24860,
+         "right_exact": "res e religiosorum familiis nunquam e l i g a n t u r , nisi prius",
+         "semantics": "Join only selection-boundary whitespace with one space. Preserve all literal C e n s o - / res body characters, source spacing and hard-line hyphen."
+        }
+       ],
+       "excluded_furniture": [
+        {
+         "classification_basis": "Separate4+Litterae Encyclicae line immediately after unselected FF/page fragment, between source body C e n s o - and res. It contains no source body or historical citation.",
+         "context_before_after": [
+          {
+           "LF": 24850,
+           "currently_selected": true,
+           "text": "formula, adiectoque ipsius censoris nomine. — Extraordinariis"
+          },
+          {
+           "LF": 24851,
+           "currently_selected": true,
+           "text": "tantum in adiunctis ac per quam raro, prudenti Episcopi arbi-"
+          },
+          {
+           "LF": 24852,
+           "currently_selected": true,
+           "text": "trio, censoris mentio intermitti poterit. — A u c t o r i b u s censoris"
+          },
+          {
+           "LF": 24853,
+           "currently_selected": true,
+           "text": "nomen patebit nunquam, antequam hic faventem sententiam"
+          },
+          {
+           "LF": 24854,
+           "currently_selected": true,
+           "text": "ediderit; ne quid molestiae censori exhibeatur vel dum"
+          },
+          {
+           "LF": 24855,
+           "currently_selected": true,
+           "text": "scripta cognoscit, vel si editionem non probant. — C e n s o -"
+          },
+          {
+           "LF": 24856,
+           "currently_selected": false,
+           "text": "\f6 6"
+          },
+          {
+           "LF": 24857,
+           "currently_selected": true,
+           "text": " 4                        Litterae   Encyclicae"
+          },
+          {
+           "LF": 24858,
+           "currently_selected": true,
+           "text": ""
+          },
+          {
+           "LF": 24859,
+           "currently_selected": true,
+           "text": ""
+          },
+          {
+           "LF": 24860,
+           "currently_selected": true,
+           "text": "res e religiosorum familiis nunquam e l i g a n t u r , nisi prius"
+          },
+          {
+           "LF": 24861,
+           "currently_selected": true,
+           "text": "moderatoris provinciae vel, si de Urbe agatur, moderatoris"
+          },
+          {
+           "LF": 24862,
+           "currently_selected": true,
+           "text": "generalis secreto sententia audiatur: is autem de eligendi"
+          },
+          {
+           "LF": 24863,
+           "currently_selected": true,
+           "text": "moribus, scientia et doctrinae integritate pro officii con-"
+          },
+          {
+           "LF": 24864,
+           "currently_selected": true,
+           "text": "scientia testabitur. — Religiosorum moderatores de g r a v i s -"
+          }
+         ],
+         "exclude": {
+          "LF": 24857,
+          "artifact_UTF8_byte_interval_0_based_half_open": [
+           1415293,
+           1415340
+          ],
+          "artifact_Unicode_interval_0_based_half_open": [
+           1411871,
+           1411918
+          ],
+          "exact_line": " 4                        Litterae   Encyclicae",
+          "nonwhitespace_Unicode_interval_0_based_half_open": [
+           1,
+           47
+          ],
+          "retained_prefix": "",
+          "retained_suffix": "",
+          "shares_physical_LF_with_body": false,
+          "whole_line_Unicode_interval_0_based_half_open": [
+           0,
+           47
+          ]
+         },
+         "kind": "running-head-and-folio-fragment"
+        },
+        {
+         "classification_basis": "Second separate4+Litterae Encyclicae line immediately after unselected FF/page fragment; it is the same publication running-head pattern. Historical notes24931–24932 remain selected.",
+         "context_before_after": [
+          {
+           "LF": 24926,
+           "currently_selected": true,
+           "text": "sit, ne ad animarum perniciem magis magisque diffundatur,"
+          },
+          {
+           "LF": 24927,
+           "currently_selected": true,
+           "text": "vel quod peius est in dies confirmetur et crescat. — T a l e"
+          },
+          {
+           "LF": 24928,
+           "currently_selected": true,
+           "text": "igitur Consilium, quod a vigilantia dici placet, in singulis"
+          },
+          {
+           "LF": 24929,
+           "currently_selected": true,
+           "text": "dioecesibus institui quamprimum decernimus. Viri, qui in illud"
+          },
+          {
+           "LF": 24930,
+           "currently_selected": true,
+           "text": ""
+          },
+          {
+           "LF": 24931,
+           "currently_selected": true,
+           "text": "     (1) Litt. Enc. Nobilissima Gallorum, 10 febr. 1884."
+          },
+          {
+           "LF": 24932,
+           "currently_selected": true,
+           "text": "     (2) Act. Consess. Epp. Umbriae, novembri 1849, Tit. n, art. 6."
+          },
+          {
+           "LF": 24933,
+           "currently_selected": false,
+           "text": "\fö 8"
+          },
+          {
+           "LF": 24934,
+           "currently_selected": true,
+           "text": " 4                                Litterae    Encyclicae"
+          },
+          {
+           "LF": 24935,
+           "currently_selected": true,
+           "text": ""
+          },
+          {
+           "LF": 24936,
+           "currently_selected": true,
+           "text": ""
+          },
+          {
+           "LF": 24937,
+           "currently_selected": true,
+           "text": "adsciscantur, eo fere modo cooptabuntur, quo supra de cen-"
+          },
+          {
+           "LF": 24938,
+           "currently_selected": true,
+           "text": "soribus statuimus. A l t e r o quoque mense statoque die c u m"
+          },
+          {
+           "LF": 24939,
+           "currently_selected": true,
+           "text": "E p i s c o p o convenient: quae tractarint decreverint, ea arcani"
+          },
+          {
+           "LF": 24940,
+           "currently_selected": true,
+           "text": "l e g e custodiunto. — Officii munere haec sibi demandata"
+          },
+          {
+           "LF": 24941,
+           "currently_selected": true,
+           "text": "habeant. Modernismi indicia ac vestigia tam in libris quam"
+          }
+         ],
+         "exclude": {
+          "LF": 24934,
+          "artifact_UTF8_byte_interval_0_based_half_open": [
+           1419585,
+           1419641
+          ],
+          "artifact_Unicode_interval_0_based_half_open": [
+           1416139,
+           1416195
+          ],
+          "exact_line": " 4                                Litterae    Encyclicae",
+          "nonwhitespace_Unicode_interval_0_based_half_open": [
+           1,
+           56
+          ],
+          "retained_prefix": "",
+          "retained_suffix": "",
+          "shares_physical_LF_with_body": false,
+          "whole_line_Unicode_interval_0_based_half_open": [
+           0,
+           56
+          ]
+         },
+         "kind": "running-head-and-folio-fragment"
+        }
+       ],
+       "independent_reader_page_calibration_sha256": "c6db5bc7ccb5a349e1ff1cfa38d7cb92144672e648bdee4350a5d0acf8aa5ad7",
+       "retained_quality_gaps": [],
+       "reviewed_prior_pdf_sha256": "98588238b36fc2e2016fd5b635444750a5bd71199a10a7a1d8c9c0eaa3c8c009"
+      },
+      "source_sha256": "207ee29a48b9666d498dbc780093dc5a35f5c53be145f158bf33827b3600f384"
+     },
+     {
+      "batch": 1,
+      "category": "source-footer",
+      "findings": [
+       "Page 1: Four-line title and Pius X / date / Latin line fit above the retained encyclical heading and papal identification. Pascendi incipit and extensive historical editor note remain inside separated columns. Retained OCR letter spacing, reference strings and broken words are qualified source limitations.",
+       "Page 2: Dense Latin continuation and inline source references stay within clear columns and margins; no clipping, collision or missing-glyph boxes seen.",
+       "Page 3: Dense continuation remains readable in both columns; source OCR spacing and broken words remain qualified, with no physical layout obstruction seen.",
+       "Page 4: Dense body and inline references remain within two clear columns; retained source spacing and word breaks cause no clipping or collision.",
+       "Page 5: Full Latin columns have clear margins and gutter; no missing-glyph boxes, overlap or isolated headings seen.",
+       "Page 6: Dense continuation and source-reference strings remain readable. Literal bullets/caret and unusual spacing in the right column are retained OCR features, with no physical layout obstruction seen.",
+       "Page 7: Dense Latin continuation and retained source spacing/reference fragments remain within clear columns and margins; no clipping, collision, missing-glyph boxes or isolated heading seen.",
+       "Page 8: Dense Latin continuation and retained source spacing/reference fragments remain within clear columns and margins; no clipping, collision, missing-glyph boxes or isolated heading seen.",
+       "Page 9: Dense Latin continuation and retained source spacing/reference fragments remain within clear columns and margins; no clipping, collision, missing-glyph boxes or isolated heading seen.",
+       "Page 10: Full columns and inline source-reference blocks remain clear and within margins; no clipping or overlap seen.",
+       "Page 11: Dense body and inline references remain inside separated columns with readable line spacing; retained OCR spacing is qualified.",
+       "Page 12: Full columns remain distinct. Literal bullets and malformed source-reference fragment near upper left are retained OCR, with no missing-glyph boxes, collision or clipping seen.",
+       "Page 13: Dense Latin continuation and source references remain readable inside two distinct columns with clear margins; retained source letter spacing and word breaks are qualified, with no clipping, collision or missing-glyph boxes seen.",
+       "Page 14: Dense Latin continuation and source references remain readable inside two distinct columns with clear margins; retained source letter spacing and word breaks are qualified, with no clipping, collision or missing-glyph boxes seen.",
+       "Page 15: Dense Latin continuation and source references remain readable inside two distinct columns with clear margins; retained source letter spacing and word breaks are qualified, with no clipping, collision or missing-glyph boxes seen.",
+       "Page 16: Dense body, retained source references and numbered provisions remain inside distinct columns with clear margins; no clipping, overlap, missing-glyph boxes or isolated heading seen.",
+       "Page 17: Dense body, retained source references and numbered provisions remain inside distinct columns with clear margins; no clipping, overlap, missing-glyph boxes or isolated heading seen.",
+       "Page 18: Dense body, retained source references and numbered provisions remain inside distinct columns with clear margins; no clipping, overlap, missing-glyph boxes or isolated heading seen.",
+       "Page 19: CHANGES_REQUIRED for two pure publisher running heads '4 Litterae Encyclicae' intruding into the source text. The lower left-column head splits Censo- / res e religiosorum familiis (source LF 24857); the right-column foot head follows genuine historical citations before the page 20 continuation adsciscantur (source LF 24934). Exclude only these publisher heads; retain the historical citations and opening genre heading. Dense provisions and references otherwise remain within clear columns; retained bullets remain qualified OCR. This supersedes the original furniture qualification on the coordinator's independent original-page calibration, proof <transient review path; hash retained> SHA-256 c6db5bc7ccb5a349e1ff1cfa38d7cb92144672e648bdee4350a5d0acf8aa5ad7. This revision claims no additional page view.",
+       "Page 20: Substantive conclusion and source dating clause remain readable in the right column after the final provisions; no clipped closing or overlap seen.",
+       "Page 21: Very sparse terminal page retains the historical Pius X subscription before the readable Source notice and rights colophon. PASS qualified as a source-bearing signature spill; it is not an apparatus-only page."
+      ],
+      "gate": "Source-owner disposition and separately reviewed replacement required; original finding preserved.",
+      "id": "acta.ass.040.ass-040-l022854",
+      "kind": "completed-exact-original-visual-review",
+      "language": "la",
+      "pages": 21,
+      "pdf_sha256": "98588238b36fc2e2016fd5b635444750a5bd71199a10a7a1d8c9c0eaa3c8c009",
+      "report": "src/sources/papal-documents/acta-visual-001.md",
+      "report_sha256": "2310001afc76a116281b6cb34b261bc111ffecb9da36abbc1eca57c140004b0c",
+      "review_queue_sha256": "ad43bc8a380651aea8e74c850bbc148a3d9677a78eebc57fe61bff57cc408625",
+      "status": "CHANGES_REQUIRED"
+     }
+    ],
+    "prior_current_pdf": {
+     "artifact_id": "artifact.acta-papal-archives.ass.040.historical-text-207ee29a",
+     "language": "la",
+     "pdf_sha256": "98588238b36fc2e2016fd5b635444750a5bd71199a10a7a1d8c9c0eaa3c8c009",
+     "receipt_revision": "2026-10-26T05:34:44Z",
+     "receipt_sha256": "8279621b17eb5ce65b4986eaea150efec7048a2f7ba27eb2c13924689e7e39fc",
+     "segment_id": "segment.acta-papal-archives.ass.040.ass-040-l022854",
+     "source_sha256": "207ee29a48b9666d498dbc780093dc5a35f5c53be145f158bf33827b3600f384"
+    },
+    "revision": "2026-10-26T18:13:41Z"
+   },
+   "date": "1907-09-08",
+   "document_type": "encyclical-letter",
+   "edition_id": "edition.acta-papal-archives.ass.040.ass-040-l022854",
+   "id": "acta.ass.040.ass-040-l022854",
+   "language": "la",
+   "physical_line_ranges": [
+    [
+     22846,
+     22883
+    ],
+    [
+     22886,
+     22922
+    ],
+    [
+     22924,
+     22960
+    ],
+    [
+     22962,
+     22999
+    ],
+    [
+     23001,
+     23037
+    ],
+    [
+     23039,
+     23075
+    ],
+    [
+     23077,
+     23112
+    ],
+    [
+     23114,
+     23150
+    ],
+    [
+     23152,
+     23189
+    ],
+    [
+     23191,
+     23227
+    ],
+    [
+     23229,
+     23264
+    ],
+    [
+     23266,
+     23301
+    ],
+    [
+     23303,
+     23338
+    ],
+    [
+     23340,
+     23376
+    ],
+    [
+     23378,
+     23414
+    ],
+    [
+     23416,
+     23453
+    ],
+    [
+     23455,
+     23493
+    ],
+    [
+     23496,
+     23532
+    ],
+    [
+     23534,
+     23570
+    ],
+    [
+     23572,
+     23608
+    ],
+    [
+     23610,
+     23646
+    ],
+    [
+     23648,
+     23684
+    ],
+    [
+     23686,
+     23723
+    ],
+    [
+     23725,
+     23761
+    ],
+    [
+     23763,
+     23799
+    ],
+    [
+     23801,
+     23837
+    ],
+    [
+     23839,
+     23874
+    ],
+    [
+     23876,
+     23911
+    ],
+    [
+     23913,
+     23951
+    ],
+    [
+     23953,
+     23988
+    ],
+    [
+     23990,
+     24025
+    ],
+    [
+     24027,
+     24062
+    ],
+    [
+     24064,
+     24099
+    ],
+    [
+     24102,
+     24138
+    ],
+    [
+     24140,
+     24177
+    ],
+    [
+     24179,
+     24214
+    ],
+    [
+     24216,
+     24252
+    ],
+    [
+     24254,
+     24290
+    ],
+    [
+     24292,
+     24327
+    ],
+    [
+     24329,
+     24364
+    ],
+    [
+     24366,
+     24401
+    ],
+    [
+     24403,
+     24438
+    ],
+    [
+     24440,
+     24476
+    ],
+    [
+     24478,
+     24513
+    ],
+    [
+     24515,
+     24551
+    ],
+    [
+     24553,
+     24589
+    ],
+    [
+     24591,
+     24626
+    ],
+    [
+     24628,
+     24663
+    ],
+    [
+     24665,
+     24702
+    ],
+    [
+     24705,
+     24741
+    ],
+    [
+     24743,
+     24777
+    ],
+    [
+     24779,
+     24815
+    ],
+    [
+     24818,
+     24855
+    ],
+    [
+     24858,
+     24894
+    ],
+    [
+     24896,
+     24932
+    ],
+    [
+     24935,
+     24971
+    ],
+    [
+     24973,
+     25009
+    ],
+    [
+     25011,
+     25042
+    ]
+   ],
+   "pope": "Pius X",
+   "range_continuations": [
+    52
+   ],
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Original volume title page and historical journal publication period 1907; modern Johnson 1969 reprint permission/imprint rows expressly excluded. Vatican OCR delivery is a text reconstruction; no image-collation claim. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.acta-papal-archives.ass.040.ass-040-l022854.visual-2026-10-26",
+   "segment_path": "src/sources/works/papal-documents/1907-09-08-papal-pius-x-hf-p-x-enc-19070908-pascendi-dominici-gregis-fbd69611/editions/1907-acta-ass-040-ass-040-l022854/segments/historical-text-visual-2026-10-26.toml",
+   "sha256": "207ee29a48b9666d498dbc780093dc5a35f5c53be145f158bf33827b3600f384",
+   "source_note": "ASS 40 (1907). Mechanical ranges over the exact whole-volume UTF-8 LF/formfeed derivative. Historical notes and terminal apparatus retained where bounded; running heads and journal issue footer lines omitted. OCR limitations remain; no facsimile or full-work textual collation. An explicit source-selector revision excludes only the positively identified journal furniture at retained LF 24857,24934. All historical body text, citations and notes remain literal.",
+   "source_url": "https://www.vatican.va/archive/ass/documents/ASS-40-1907-ocr.pdf",
+   "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1907-acta-ass-040/artifacts/acta-historical-text-207ee29a/historical.txt",
+   "title": "L I T T E R A E       E N C Y C L I C A E S S . D. N. Pii div. prov. PP. X ad Patriarchas, Primates, Ar- chiepiscopos, Episcopos, aliosque locorum Ordinarios pa- cem et communionem cum Apostolica Sede habentes, de modernistarum doctrinis (i).",
+   "work_id": "work.papal.pius-x.hf-p-x-enc-19070908-pascendi-dominici-gregis",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.gregory-xvi-acta.volume-01.1901-rome-mul.ocr-cdd5664e1012",
+   "collection_corpus": "gregory-xvi-acta",
+   "date": "1831-07-12",
+   "document_type": "encyclical",
+   "extent_kind": "printed-act",
+   "id": "gregory-xvi-acta.volume-01.line-00005594",
+   "language": "mul",
+   "physical_line_ranges": [
+    [
+     5594,
+     5639
+    ],
+    [
+     5645,
+     5645
+    ],
+    [
+     5651,
+     5717
+    ]
+   ],
+   "pope": "GREGORIO PP. XVI.",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "The historical Latin and Italian wording and Bernasconi edition apparatus in the individually title-inspected Acta Gregorii Papae XVI, volume-01, Pars prima canonica (Rome: Ex Typographia Polyglotta S. C. de Propaganda Fide, 1901) printing are public domain in the United States by expiration of that identified historical publication's term, under the assessment in src/sources/inventories/papal-documents-rights-v1.toml. The uncorrected mechanical OCR adds no original literary authorship; it is not an image collation or a newly authored text. Exact hashes identify the unchanged delivery. Incidental provider and library marks remain distinct from the historical wording and outside Triptych's CC BY 4.0 grant. Any identified Google usage-guidelines prose or digitizer stamp is governed by the separate settled src/sources/inventories/google-usage-guidelines-rights-v1.toml assessment, without a general Google or provider licence. This historical-text assessment does not clear other unreviewed components of the complete PDF wrapper; that whole-PDF artifact remains remote with unresolved wrapper rights. No worldwide public-domain claim is made.",
+   "rights_notice": "Historical source wording is public domain in the United States; project typesetting does not relicense it.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.gregory-xvi-acta.volume-01.line-00005594.1901-gregory-xvi-acta-volume-01-mul.source-ocr",
+   "segment_path": "src/sources/works/gregory-xvi-acta/volume-01-line-00005594/editions/1901-gregory-xvi-acta-volume-01-mul/segments/source-ocr.toml",
+   "sha256": "cdd5664e1012a3cec8d36ccb9c3921e61ee2ddbfc15158fe6cbf290ef907f619",
+   "source_note": "Rome: Ex Typographia Polyglotta S. C. de Propaganda Fide, 1901. Uncorrected, uncollated OCR transcription of the identified constituent. Historical synopsis, source notes, dating and subscriptions are retained as this witness gives them; literal abbreviations are not expanded. The source prints an Italian encyclical with Latin synopsis; uncorrected OCR and its own source citation are retained.",
+   "source_url": "https://archive.org/download/actagregoriipapa0001vinc/actagregoriipapa0001vinc_djvu.txt",
+   "text_path": "src/sources/works/gregory-xvi-acta/volume-01/editions/1901-rome-mul/artifacts/ocr-cdd5664e1012/ocr.txt",
+   "title": "Ad universos subditos Pontificiae ditionis pro suadenda obedientia Sanctae Sedi debita '.",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.gregory-xvi-acta.volume-02.1901-rome-mul.ocr-6348406cc83a",
+   "collection_corpus": "gregory-xvi-acta",
+   "date": "1835-05-17",
+   "document_type": "encyclical-letter",
+   "extent_kind": "printed-act",
+   "id": "gregory-xvi-acta.volume-02.line-00004663.part-02",
+   "language": "la",
+   "physical_line_ranges": [
+    [
+     4870,
+     4934
+    ],
+    [
+     4943,
+     5003
+    ],
+    [
+     5010,
+     5072
+    ],
+    [
+     5078,
+     5143
+    ],
+    [
+     5149,
+     5290
+    ],
+    [
+     5296,
+     5394
+    ]
+   ],
+   "pope": "-GREGORIUS PP. XVI.",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "The historical Latin and Italian wording and Bernasconi edition apparatus in the individually title-inspected Acta Gregorii Papae XVI, volume-02, Pars prima canonica (Rome: Ex Typographia Polyglotta S. C. de Propaganda Fide, 1901) printing are public domain in the United States by expiration of that identified historical publication's term, under the assessment in src/sources/inventories/papal-documents-rights-v1.toml. The uncorrected mechanical OCR adds no original literary authorship; it is not an image collation or a newly authored text. Exact hashes identify the unchanged delivery. Incidental provider and library marks remain distinct from the historical wording and outside Triptych's CC BY 4.0 grant. Any identified Google usage-guidelines prose or digitizer stamp is governed by the separate settled src/sources/inventories/google-usage-guidelines-rights-v1.toml assessment, without a general Google or provider licence. This historical-text assessment does not clear other unreviewed components of the complete PDF wrapper; that whole-PDF artifact remains remote with unresolved wrapper rights. No worldwide public-domain claim is made.",
+   "rights_notice": "Historical source wording is public domain in the United States; project typesetting does not relicense it.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.gregory-xvi-acta.volume-02.line-00004663.part-02.1901-gregory-xvi-acta-volume-02-la.source-ocr",
+   "segment_path": "src/sources/works/gregory-xvi-acta/volume-02-line-00004663-part-02/editions/1901-gregory-xvi-acta-volume-02-la/segments/source-ocr.toml",
+   "sha256": "6348406cc83a0885ac0b4839910b0ed689fe73085c432d15c738c2edcf11a5df",
+   "source_note": "Rome: Ex Typographia Polyglotta S. C. de Propaganda Fide, 1901. Uncorrected, uncollated OCR transcription of the identified constituent. Complete papal body; editorial caption or non-substantive publishing furniture omitted as separately identified in the source review. Uncorrected OCR of the papal text; edition numerals, genre labels, synopses, running titles, page numbers and provenance citations omitted.",
+   "source_url": "https://archive.org/download/actagregoriipapa0002vinc/actagregoriipapa0002vinc_djvu.txt",
+   "text_path": "src/sources/works/gregory-xvi-acta/volume-02/editions/1901-rome-mul/artifacts/ocr-6348406cc83a/ocr.txt",
+   "title": "Commissum divinitus — Ad clerum Helvetiae de conventu Badensi",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.papal.benedict-xv.hf-ben-xv-enc-01111914-ad-beatissimi-apostolorum.2026-10-26-vatican-la.latin-text-764086454ccd",
+   "collection_corpus": "latin",
+   "compact_layout": true,
+   "date": "1914-11-01",
+   "document_type": "encyclical",
+   "id": "papal.benedict-xv.hf-ben-xv-enc-01111914-ad-beatissimi-apostolorum",
+   "keep_with_next": [
+    27
+   ],
+   "language": "la",
+   "pope": "Benedict XV",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Original Latin text identified in Acta Apostolicae Sedis 6 (1914), pp. 565–581, published no later than 1930. United States expired-term assessment under 17 U.S.C. 304 and 305; qualifying foreign restoration under 104A(a)(1)(B) extends only the remaining applicable term. Clearance covers preexisting historical wording under 103(b), not Vatican HTML, later translations, creative revision, or scan/reprint wrapper. See src/sources/inventories/papal-documents-rights-v1.toml.",
+   "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+   "rights_status": "public-domain",
+   "sha256": "764086454ccd8458a0b93e9fb2e38afd9f3f892d414cd7901ba104de27f1b2e6",
+   "source_note": "Historical witness: Acta Apostolicae Sedis 6 (1914), pp. 565–581. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+   "source_url": "https://www.vatican.va/content/benedict-xv/la/encyclicals/documents/hf_ben-xv_enc_01111914_ad-beatissimi-apostolorum.html",
+   "terminal_keep_blocks": 3,
+   "text_path": "src/sources/works/papal-documents/1914-11-01-papal-benedict-xv-hf-ben-xv-enc-01111914-ad-beatissimi-apostolorum-312b0990/editions/2026-10-26-vatican-la/artifacts/latin-text-764086454ccd/text.txt",
+   "title": "Ad Beatissimi Apostolorum",
+   "compact_margin": 0.6
+  },
+  {
+   "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-08091894-iucunda-semper-expectatione.2026-10-26-vatican-la.latin-text-7c2bfc6ce4c0",
+   "collection_corpus": "latin",
+   "compact_layout": true,
+   "date": "1894-09-08",
+   "document_type": "encyclical",
+   "id": "papal.leo-xiii.hf-l-xiii-enc-08091894-iucunda-semper-expectatione",
+   "keep_with_next": [
+    8
+   ],
+   "language": "la",
+   "pope": "Leo XIII",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Historical Latin wording identified in Acta Sanctae Sedis 27 (1894-1895), pp. 177-184, published no later than 1895. United States expired-term assessment under 17 U.S.C. 304 and 305; any qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. This covers preexisting historical wording under 103(b), not Vatican HTML, later translations, creative revisions, modern bibliographic annotation, or scan/reprint wrapper. See src/sources/inventories/papal-documents-rights-v1.toml for primary authorities and jurisdictional limits.",
+   "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+   "rights_status": "public-domain",
+   "sha256": "7c2bfc6ce4c034079f86edcfc246a82bfb80e7612aeb01403ef91f811f09e8aa",
+   "source_note": "Historical witness: Acta Sanctae Sedis 27 (1894-1895), pp. 177-184. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+   "source_url": "https://www.vatican.va/content/leo-xiii/la/encyclicals/documents/hf_l-xiii_enc_08091894_iucunda-semper-expectatione.html",
+   "terminal_keep_blocks": 3,
+   "text_path": "src/sources/works/papal-documents/1894-09-08-papal-leo-xiii-hf-l-xiii-enc-08091894-iucunda-semper-expectatione-739b4b7f/editions/2026-10-26-vatican-la/artifacts/latin-text-7c2bfc6ce4c0/text.txt",
+   "title": "Iucunda Semper Expectatione",
+   "compact_margin": 0.6
+  },
+  {
+   "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-encoding-repaired-ed8e5a40",
+   "chapter": 24,
+   "collection_corpus": "english",
+   "completeness": "complete-within-identified-printed-chapter",
+   "date": "1901-01-18",
+   "document_type": "encyclical",
+   "id": "papal.leo-xiii.hf-l-xiii-enc-18011901-graves-de-communi-re",
+   "language": "en",
+   "physical_line_ranges": [
+    [
+     3025,
+     3123
+    ]
+   ],
+   "pope": "Leo XIII",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Only the wording of the English translation collection printed in the United States by Benziger Brothers in 1903 is retained. Its historical translation/notes are public domain in the United States on the publication-term basis verified on the printed copyright leaf. Modern Wikisource navigation, contributor markup, links, styles, parsing reports and page-number controls are removed; no creative modern revision or independent commentary is intentionally retained. The derivative is a transcription with residual recognition errors, not a critical or corrected edition.",
+   "rights_notice": "The 1903 English translation is public domain in the United States; Triptych claims no exclusive right in its wording.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-18011901-graves-de-communi-re.1903-benziger-english.benziger-english-encoding-repaired-ed8e5a40",
+   "segment_path": "src/sources/works/papal-documents/1901-01-18-papal-leo-xiii-hf-l-xiii-enc-18011901-graves-de-communi-re-90b60b6a/editions/1903-benziger-english/segments/benziger-english-encoding-repaired-ed8e5a40.toml",
+   "sha256": "ed8e5a405701a51eec9124f0e63a4db7740ded35545fe5d99874ac9581541879",
+   "source_note": "Historical English web transcription of the 1903 Benziger edition; individual translator unidentified. Encoding-only repair of 6 spans (5 intact reversals; 1 partial marker repairs), each corroborated by independent OCR of this printing. OCR word and source-date errors remain uncorrected; full print collation is outstanding.",
+   "source_url": "https://en.wikisource.org/wiki/The_Great_Encyclical_Letters_of_Pope_Leo_XIII/Christian_Democracy",
+   "text_path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ws-encoding-repaired-ed8e5a40/great-encyclical-letters-encoding-repaired.txt",
+   "title": "Christian Democracy",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-encoding-repaired-ed8e5a40",
+   "chapter": 17,
+   "collection_corpus": "english",
+   "completeness": "complete-within-identified-printed-chapter",
+   "date": "1896-06-29",
+   "document_type": "encyclical",
+   "id": "papal.leo-xiii.hf-l-xiii-enc-29061896-satis-cognitum",
+   "language": "en",
+   "physical_line_ranges": [
+    [
+     1909,
+     2335
+    ]
+   ],
+   "pope": "Leo XIII",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Only the wording of the English translation collection printed in the United States by Benziger Brothers in 1903 is retained. Its historical translation/notes are public domain in the United States on the publication-term basis verified on the printed copyright leaf. Modern Wikisource navigation, contributor markup, links, styles, parsing reports and page-number controls are removed; no creative modern revision or independent commentary is intentionally retained. The derivative is a transcription with residual recognition errors, not a critical or corrected edition.",
+   "rights_notice": "The 1903 English translation is public domain in the United States; Triptych claims no exclusive right in its wording.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-29061896-satis-cognitum.1903-benziger-english.benziger-english-encoding-repaired-ed8e5a40",
+   "segment_path": "src/sources/works/papal-documents/1896-06-29-papal-leo-xiii-hf-l-xiii-enc-29061896-satis-cognitum-b49a9e31/editions/1903-benziger-english/segments/benziger-english-encoding-repaired-ed8e5a40.toml",
+   "sha256": "ed8e5a405701a51eec9124f0e63a4db7740ded35545fe5d99874ac9581541879",
+   "source_note": "Historical English web transcription of the 1903 Benziger edition; individual translator unidentified. Encoding-only repair of 75 spans (69 intact reversals; 6 partial marker repairs), each corroborated by independent OCR of this printing. OCR word and source-date errors remain uncorrected; full print collation is outstanding. The web transcription heading prints June 20, 1896; the official work catalog dates the act June 29, 1896.",
+   "source_url": "https://en.wikisource.org/wiki/The_Great_Encyclical_Letters_of_Pope_Leo_XIII/The_Unity_of_the_Church",
+   "text_path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ws-encoding-repaired-ed8e5a40/great-encyclical-letters-encoding-repaired.txt",
+   "title": "The Unity of the Church",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.papal.pius-ix.epistola-encyclica-beneficia-dei-4-iunii-1871.2026-10-26-vatican-la.latin-text-a2dd64f873a5",
+   "collection_corpus": "latin",
+   "date": "1871-06-04",
+   "document_type": "encyclical",
+   "id": "papal.pius-ix.epistola-encyclica-beneficia-dei-4-iunii-1871",
+   "language": "la",
+   "pope": "Pius IX",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Original Latin text identified in Acta Sanctae Sedis 6 (1870–1871), pp. 269–273, published no later than 1930. United States expired-term assessment under 17 U.S.C. 304 and 305; qualifying foreign restoration under 104A(a)(1)(B) extends only the remaining applicable term. Clearance covers preexisting historical wording under 103(b), not Vatican HTML, later translations, creative revision, or scan/reprint wrapper. See src/sources/inventories/papal-documents-rights-v1.toml.",
+   "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+   "rights_status": "public-domain",
+   "sha256": "a2dd64f873a5040a8fc91a912fb50b14c045125f120e846551b7ef7e12b13df4",
+   "source_note": "Historical witness: Acta Sanctae Sedis 6 (1870–1871), pp. 269–273. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+   "source_url": "https://www.vatican.va/content/pius-ix/la/documents/epistola-encyclica-beneficia-dei-4-iunii-1871.html",
+   "text_path": "src/sources/works/papal-documents/1871-06-04-papal-pius-ix-epistola-encyclica-beneficia-dei-4-iunii-1871-13211e4a/editions/2026-10-26-vatican-la/artifacts/latin-text-a2dd64f873a5/text.txt",
+   "title": "Letter Beneficia Dei",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.papal.pius-x.hf-p-x-enc-02021904-ad-diem-illum-laetissimum.2026-10-26-vatican-la.latin-text-3b71befe5070",
+   "collection_corpus": "latin",
+   "date": "1904-02-02",
+   "document_type": "encyclical",
+   "id": "papal.pius-x.hf-p-x-enc-02021904-ad-diem-illum-laetissimum",
+   "language": "la",
+   "pope": "Pius X",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Historical Latin wording identified in Acta Sanctae Sedis 36 (1903–1904), pp. 449–462, published by 1930. United States expired-term assessment under 17 U.S.C. 304/305; qualifying foreign restoration under 104A(a)(1)(B) only receives the remaining term. Under 103(b), this covers preexisting historical wording rather than modern creative additions. Vatican HTML, translations of later date, and scan/reprint wrappers have separate rights. See src/sources/inventories/papal-documents-rights-v1.toml.",
+   "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+   "rights_status": "public-domain",
+   "sha256": "3b71befe5070b100abed4a3cb5e93e0d4838a2d005b9e7084a17ebf75864d3d0",
+   "source_note": "Historical witness: Acta Sanctae Sedis 36 (1903–1904), pp. 449–462. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions. Publication is bounded by the identified volume's final year; its first issue date is unrecorded.",
+   "source_url": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+   "text_path": "src/sources/works/papal-documents/1904-02-02-papal-pius-x-hf-p-x-enc-02021904-ad-diem-illum-laetissimum-eed5b370/editions/2026-10-26-vatican-la/artifacts/latin-text-3b71befe5070/text.txt",
+   "title": "Ad Diem Illum Laetissimum",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.papal.pius-x.hf-p-x-enc-05041906-tribus-circiter.2026-10-26-vatican-la.latin-text-e54f9a735815",
+   "collection_corpus": "latin",
+   "compact_layout": true,
+   "date": "1906-04-05",
+   "document_type": "encyclical",
+   "id": "papal.pius-x.hf-p-x-enc-05041906-tribus-circiter",
+   "keep_with_next": [
+    19
+   ],
+   "language": "la",
+   "pope": "Pius X",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Historical Latin wording identified in Acta Sanctae Sedis 39 (1906), pp. 129–134, published by 1930. United States expired-term assessment under 17 U.S.C. 304/305; qualifying foreign restoration under 104A(a)(1)(B) only receives the remaining term. Under 103(b), this covers preexisting historical wording rather than modern creative additions. Vatican HTML, translations of later date, and scan/reprint wrappers have separate rights. See src/sources/inventories/papal-documents-rights-v1.toml.",
+   "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+   "rights_status": "public-domain",
+   "sha256": "e54f9a7358153c061f19e510c486c3ea6be9db4c8626a927817f23c3f92493ca",
+   "source_note": "Historical witness: Acta Sanctae Sedis 39 (1906), pp. 129–134. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+   "source_url": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_05041906_tribus-circiter.html",
+   "terminal_keep_blocks": 3,
+   "text_path": "src/sources/works/papal-documents/1906-04-05-papal-pius-x-hf-p-x-enc-05041906-tribus-circiter-ff59a7f6/editions/2026-10-26-vatican-la/artifacts/latin-text-e54f9a735815/text.txt",
+   "title": "Tribus Circiter",
+   "compact_margin": 0.6
+  },
+  {
+   "artifact_id": "artifact.journals.american-catholic-quarterly-review.1904-volume-29.english-reading-0dc48b0fe2f9",
+   "collection_corpus": "historical-english-journal",
+   "completeness": "complete-within-identified-printed-witness",
+   "date": "1904-03-12",
+   "document_type": "encyclical",
+   "extent_kind": "complete-printed-witness",
+   "id": "papal.pius-x.hf-p-x-enc-12031904-iucunda-sane.acqr-1904-english",
+   "keep_with_next": [
+    0,
+    4
+   ],
+   "language": "en",
+   "physical_line_ranges": [
+    [
+     223,
+     391
+    ]
+   ],
+   "pope": "Pius X",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Historical human English translations actually printed in the identified 1904 United States periodical are public domain in the United States. This derivative removes only explicitly reviewed source furniture and normalizes whitespace; it adds no translation, reconstructed wording or corrected words.",
+   "rights_notice": "Historical English wording is public domain in the United States; later translations, host wrappers and project-created apparatus have separate status.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.papal.pius-x.hf-p-x-enc-12031904-iucunda-sane.1904-acqr-volume-29-english.english-reading",
+   "segment_path": "src/sources/works/papal-documents/1904-03-12-papal-pius-x-hf-p-x-enc-12031904-iucunda-sane-ae6102b5/editions/1904-acqr-volume-29-english/segments/english-reading.toml",
+   "sha256": "0dc48b0fe2f9867355c1f886a0aa337e6ae4030a0901595f13ce26de32e3536e",
+   "source_note": "Historical English translation in The American Catholic Quarterly Review 29 (1904), pp. 588–603. Translator unrecorded. All 26 historical notes are retained, including note 26 after the papal signature. OCR recognition errors, punctuation, broken words and historical source order remain. Full selected OCR extents and outer boundaries were read; no complete word-for-word print-image collation or corrected text is claimed.",
+   "source_url": "https://archive.org/download/americancatholic29philuoft/americancatholic29philuoft_djvu.txt",
+   "text_path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1904-volume-29/artifacts/english-reading-0dc48b0fe2f9/text.txt",
+   "title": "Iucunda sane",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.papal.pius-x.hf-p-x-enc-19070908-pascendi-dominici-gregis.2026-10-26-vatican-la.latin-text-cc267546aed0",
+   "collection_corpus": "latin",
+   "date": "1907-09-08",
+   "document_type": "encyclical",
+   "id": "papal.pius-x.hf-p-x-enc-19070908-pascendi-dominici-gregis",
+   "language": "la",
+   "pope": "Pius X",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Original Latin text identified in Acta Sanctae Sedis 40 (1907), pp. 593-650, published no later than 1930. United States expired-term assessment under 17 U.S.C. 304 and 305; any qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. This clearance covers preexisting historical wording under 103(b), not Vatican HTML, modern translation, creative revision, or scan/reprint wrapper. See src/sources/inventories/papal-documents-rights-v1.toml for the primary authorities and jurisdictional limits.",
+   "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+   "rights_status": "public-domain",
+   "sha256": "cc267546aed09a5bd7304c5bf2f558e3b4167ef34b44328abdffa38670ce402c",
+   "source_note": "Historical witness: Acta Sanctae Sedis 40 (1907), pp. 593-650. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+   "source_url": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+   "text_path": "src/sources/works/papal-documents/1907-09-08-papal-pius-x-hf-p-x-enc-19070908-pascendi-dominici-gregis-fbd69611/editions/2026-10-26-vatican-la/artifacts/latin-text-cc267546aed0/text.txt",
+   "title": "Pascendi Dominici Gregis",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.papal.pius-x.hf-p-x-enc-24091912-singulari-quadam.2026-10-26-vatican-la.latin-text-ca99e0ca645d",
+   "collection_corpus": "latin",
+   "compact_layout": true,
+   "date": "1912-09-24",
+   "document_type": "encyclical",
+   "id": "papal.pius-x.hf-p-x-enc-24091912-singulari-quadam",
+   "keep_with_next": [
+    10
+   ],
+   "language": "la",
+   "pope": "Pius X",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Historical Latin wording identified in Acta Apostolicae Sedis 4 (1912), pp. 657–662, published by 1930. United States expired-term assessment under 17 U.S.C. 304/305; qualifying foreign restoration under 104A(a)(1)(B) only receives the remaining term. Under 103(b), this covers preexisting historical wording rather than modern creative additions. Vatican HTML, translations of later date, and scan/reprint wrappers have separate rights. See src/sources/inventories/papal-documents-rights-v1.toml.",
+   "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+   "rights_status": "public-domain",
+   "sha256": "ca99e0ca645ddfea523386796ddf518ac09c6fd6e6cf483fcb3da4e9e89fed94",
+   "source_note": "Historical witness: Acta Apostolicae Sedis 4 (1912), pp. 657–662. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions. Web bibliographic footer incorrectly repeats AAS 3 (1911), pp. 217–224 for Iamdudum. The actual printing is AAS 4 (1912), no. 20, pages 657–662; the historical reference note on page 659 is retained.",
+   "source_url": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_24091912_singulari-quadam.html",
+   "terminal_keep_blocks": 3,
+   "text_path": "src/sources/works/papal-documents/1912-09-24-papal-pius-x-hf-p-x-enc-24091912-singulari-quadam-c479e0b4/editions/2026-10-26-vatican-la/artifacts/latin-text-ca99e0ca645d/text.txt",
+   "title": "Singulari quadam",
+   "compact_margin": 0.6
+  },
+  {
+   "artifact_id": "artifact.papal.pius-xi.hf-p-xi-enc-19230629-studiorum-ducem.2026-10-26-vatican-la.latin-text-951c5ea1844d",
+   "collection_corpus": "latin",
+   "date": "1923-06-29",
+   "document_type": "encyclical",
+   "id": "papal.pius-xi.hf-p-xi-enc-19230629-studiorum-ducem",
+   "language": "la",
+   "pope": "Pius XI",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Original historical wording identified in Acta Apostolicae Sedis 15 (1923), pp. 309-326, published by 1930. United States expired-term assessment under 17 U.S.C. 304 and 305; qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. The preexisting wording remains distinct from modern HTML, creative revision and translations under 103(b). See src/sources/inventories/papal-documents-rights-v1.toml for the primary authorities and jurisdictional limits. ",
+   "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+   "rights_status": "public-domain",
+   "sha256": "951c5ea1844dfaac6bae5ec28b81ad7b80f591af5f95c9bd4777d0bea11bdf7e",
+   "source_note": "Historical witness: Acta Apostolicae Sedis 15 (1923), pp. 309-326. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+   "source_url": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19230629_studiorum-ducem.html",
+   "text_path": "src/sources/works/papal-documents/1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5/editions/2026-10-26-vatican-la/artifacts/latin-text-951c5ea1844d/text.txt",
+   "title": "Studiorum Ducem",
+   "allow_long_token_breaks": true
+  },
+  {
+   "artifact_id": "artifact.papal.pius-xi.hf-p-xi-enc-19231112-ecclesiam-dei.2026-10-26-vatican-la.latin-text-1ba1818d7fd3",
+   "collection_corpus": "latin",
+   "date": "1923-11-12",
+   "document_type": "encyclical",
+   "id": "papal.pius-xi.hf-p-xi-enc-19231112-ecclesiam-dei",
+   "language": "la",
+   "pope": "Pius XI",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Original historical wording identified in Acta Apostolicae Sedis 15 (1923), pp. 573-582, published by 1930. United States expired-term assessment under 17 U.S.C. 304 and 305; qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. The preexisting wording remains distinct from modern HTML, creative revision and translations under 103(b). See src/sources/inventories/papal-documents-rights-v1.toml for the primary authorities and jurisdictional limits. ",
+   "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+   "rights_status": "public-domain",
+   "sha256": "1ba1818d7fd3c49f1b1a0de99faeae7b7855cc687b06cf611d153389bab3ed52",
+   "source_note": "Historical witness: Acta Apostolicae Sedis 15 (1923), pp. 573-582. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions. The web dating clause reads MDCCCCXVIII although the contemporary AAS 15 (1923) act and index identify 12 November 1923. The web transcription error is preserved and not treated as a new date for the act.",
+   "source_url": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19231112_ecclesiam-dei.html",
+   "text_path": "src/sources/works/papal-documents/1923-11-12-papal-pius-xi-hf-p-xi-enc-19231112-ecclesiam-dei-5ab385da/editions/2026-10-26-vatican-la/artifacts/latin-text-1ba1818d7fd3/text.txt",
+   "title": "Ecclesiam Dei",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.journals.catholic-mind.1928-02-22-volume-26-issue-4.bounded-english-123633d87eef",
+   "collection_corpus": "historical-english-journal",
+   "date": "1928-01-06",
+   "document_type": "encyclical",
+   "id": "papal.pius-xi.hf-p-xi-enc-19280106-mortalium-animos",
+   "keep_with_next": [
+    0,
+    1,
+    5,
+    10,
+    13,
+    23,
+    30,
+    41,
+    47,
+    55
+   ],
+   "keep_with_next_mode": "first-line",
+   "language": "en",
+   "physical_line_ranges": [
+    [
+     1,
+     129
+    ]
+   ],
+   "pope": "Pius XI",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "The native masthead identifies the actual United States journal issue as The Catholic Mind 26, no. 4, published 1928-02-22. The historical English translation and issue apparatus were therefore published by 1930 and are public domain in the United States under the expired publication term. This basis is established from the contemporary printing, not the act date or a later reprint.",
+   "rights_notice": "This historically identified 1928 English printing is public domain in the United States; later translations and modern host presentations have separate status.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-19280106-mortalium-animos.1928-02-22-catholic-mind-english.complete-english-text",
+   "segment_path": "src/sources/works/papal-documents/1928-01-06-papal-pius-xi-hf-p-xi-enc-19280106-mortalium-animos-84c4d016/editions/1928-02-22-catholic-mind-english/segments/complete-english-text.toml",
+   "sha256": "123633d87eefc46a8093a1a9692ee16e1e7d255c66924b8cad5a3d0a8b5c8a26",
+   "source_note": "Historical English translation in The Catholic Mind 26, no. 4 (1928-02-22), pp. 61–72. The native issue masthead was checked against the complete PDF. The translation is credited to the N.C.W.C. News Sheet; this issue does not name an individual translator. Literal XML-word selection removes neighboring-page gutter text and printed running furniture by exact reviewed coordinates. All selected native source pages and complete selected text were inspected for extent. OCR spelling, broken words and reference defects remain; no critical text or translation collation is claimed.",
+   "source_url": "https://archive.org/download/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4.pdf",
+   "text_path": "src/sources/works/journals/catholic-mind/editions/1928-02-22-volume-26-issue-4/artifacts/bounded-english-123633d87eef/papal-act-geometry-text.txt",
+   "title": "Mortalium Animos",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra.2026-10-26-vatican-la.latin-text-bcaa8fb06277",
+   "collection_corpus": "latin",
+   "date": "1929-12-20",
+   "document_type": "encyclical",
+   "id": "papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra",
+   "keep_with_next": [
+    1,
+    2,
+    4,
+    6,
+    9,
+    11,
+    12,
+    14,
+    18,
+    20,
+    21,
+    24,
+    26,
+    28,
+    30,
+    32,
+    34,
+    36,
+    41,
+    43,
+    45,
+    47,
+    49,
+    51,
+    54,
+    56
+   ],
+   "language": "la",
+   "pope": "Pius XI",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Original historical wording identified in Acta Apostolicae Sedis 21 (1929), pp. 689-706, published by 1930. United States expired-term assessment under 17 U.S.C. 304 and 305; qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. The preexisting wording remains distinct from modern HTML, creative revision and translations under 103(b). See src/sources/inventories/papal-documents-rights-v1.toml for the primary authorities and jurisdictional limits. ",
+   "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+   "rights_status": "public-domain",
+   "sha256": "bcaa8fb06277b1451d81ebc007105846975e1ad9515dae915f2370773bfb3d2f",
+   "source_note": "Historical witness: Acta Apostolicae Sedis 21 (1929), pp. 689-706. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+   "source_url": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19291220_mens-nostra.html",
+   "text_path": "src/sources/works/papal-documents/1929-12-20-papal-pius-xi-hf-p-xi-enc-19291220-mens-nostra-3892b8f3/editions/2026-10-26-vatican-la/artifacts/latin-text-bcaa8fb06277/text.txt",
+   "title": "Mens Nostra",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.papal.pius-xi.hf-p-xi-enc-19300420-ad-salutem-humani.2026-10-26-vatican-la.latin-text-3b09c259119e",
+   "collection_corpus": "latin",
+   "date": "1930-04-20",
+   "document_type": "encyclical",
+   "id": "papal.pius-xi.hf-p-xi-enc-19300420-ad-salutem-humani",
+   "language": "la",
+   "pope": "Pius XI",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Original historical wording identified in Acta Apostolicae Sedis 22 (1930), pp. 201-234, published by 1930. United States expired-term assessment under 17 U.S.C. 304 and 305; qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. The preexisting wording remains distinct from modern HTML, creative revision and translations under 103(b). See src/sources/inventories/papal-documents-rights-v1.toml for the primary authorities and jurisdictional limits. ",
+   "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+   "rights_status": "public-domain",
+   "sha256": "3b09c259119e2dbe22818d61a00b9c5d803a1c17010ec7d404aa942378ad12d8",
+   "source_note": "Historical witness: Acta Apostolicae Sedis 22 (1930), pp. 201-234. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+   "source_url": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19300420_ad-salutem-humani.html",
+   "text_path": "src/sources/works/papal-documents/1930-04-20-papal-pius-xi-hf-p-xi-enc-19300420-ad-salutem-humani-229d87a3/editions/2026-10-26-vatican-la/artifacts/latin-text-3b09c259119e/text.txt",
+   "title": "Ad Salutem Humani",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome-ia-mul.ocr-3a788e20d82b",
+   "collection_corpus": "pius-ix-acta",
+   "date": "1859-04-27",
+   "document_type": "encyclical",
+   "extent_kind": "printed-act",
+   "id": "pius-ix-acta.volume-03.line-00000167.part-08",
+   "language": "la",
+   "physical_line_ranges": [
+    [
+     2541,
+     2590
+    ],
+    [
+     2592,
+     2625
+    ],
+    [
+     2627,
+     2655
+    ]
+   ],
+   "pope": ". PIVS PAPA IX.",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Historical wording and contemporary apparatus of the identified Rome 1864 printing are public domain in the United States by expiration of publication term, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical OCR does not add original authorship; no corrected or image-collated text is asserted. Google's usage-guidelines front matter and digitizer marks are preserved as separate modern material under the repository's recorded implied-license and independent fair-use assessment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; they are excluded from the historical work, bounded body searches and Triptych's CC BY grant. The Google front-matter prose occupies physical LF lines 4–61 (English); recurring digitizer marks and factual library marks remain intact.",
+   "rights_notice": "Historical source wording is public domain in the United States; project typesetting does not relicense it.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.pius-ix-acta.volume-03.line-00000167.part-08.1864-pius-ix-acta-volume-03-la.source-ocr",
+   "segment_path": "src/sources/works/pius-ix-acta/volume-03-line-00000167-part-08/editions/1864-pius-ix-acta-volume-03-la/segments/source-ocr.toml",
+   "sha256": "3a788e20d82b5eb754d99242edaf43006aa915d8ebdfd9e1a62e73a1804e19f8",
+   "source_note": "Pii IX Pontificis Maximi Acta, pars prima, volume III. Rome: Ex Typographia Bonarum Artium, habita facultate, 1864. Uncorrected, uncollated OCR transcription of the identified constituent. Complete papal body; editorial caption or non-substantive publishing furniture omitted as separately identified in the source review. Uncorrected OCR of the act as printed in Pii IX Pontificis Maximi Acta, pars prima; edition genre labels, synopses, page numbers, gathering signatures and scan watermarks are omitted.",
+   "source_url": "https://archive.org/download/piiixpontificis00ixgoog/piiixpontificis00ixgoog_djvu.txt",
+   "text_path": "src/sources/works/papal-collections/pii-ix-acta-pars-prima-volume-3/editions/1864-rome-ia-mul/artifacts/ocr-3a788e20d82b/ocr.txt",
+   "title": "Cum sancta Mater Ecclesia — de publicis precibus pro pace",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  },
+  {
+   "artifact_id": "artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome-ia-mul.ocr-3a788e20d82b",
+   "collection_corpus": "pius-ix-acta",
+   "date": "1862-04-08",
+   "document_type": "encyclical",
+   "extent_kind": "printed-act",
+   "id": "pius-ix-acta.volume-03.line-00016060.part-02",
+   "language": "la",
+   "physical_line_ranges": [
+    [
+     16157,
+     16196
+    ],
+    [
+     16198,
+     16231
+    ],
+    [
+     16233,
+     16301
+    ],
+    [
+     16306,
+     16335
+    ],
+    [
+     16337,
+     16349
+    ],
+    [
+     16351,
+     16390
+    ],
+    [
+     16392,
+     16426
+    ],
+    [
+     16428,
+     16468
+    ],
+    [
+     16470,
+     16502
+    ],
+    [
+     16507,
+     16550
+    ],
+    [
+     16552,
+     16591
+    ],
+    [
+     16593,
+     16632
+    ],
+    [
+     16634,
+     16668
+    ],
+    [
+     16670,
+     16701
+    ]
+   ],
+   "pope": "PIVS PAPA IX.",
+   "revision": "2026-10-30T03:38:40Z",
+   "rights_basis": "Historical wording and contemporary apparatus of the identified Rome 1864 printing are public domain in the United States by expiration of publication term, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical OCR does not add original authorship; no corrected or image-collated text is asserted. Google's usage-guidelines front matter and digitizer marks are preserved as separate modern material under the repository's recorded implied-license and independent fair-use assessment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; they are excluded from the historical work, bounded body searches and Triptych's CC BY grant. The Google front-matter prose occupies physical LF lines 4–61 (English); recurring digitizer marks and factual library marks remain intact.",
+   "rights_notice": "Historical source wording is public domain in the United States; project typesetting does not relicense it.",
+   "rights_status": "public-domain",
+   "segment_id": "segment.pius-ix-acta.volume-03.line-00016060.part-02.1864-pius-ix-acta-volume-03-la.source-ocr",
+   "segment_path": "src/sources/works/pius-ix-acta/volume-03-line-00016060-part-02/editions/1864-pius-ix-acta-volume-03-la/segments/source-ocr.toml",
+   "sha256": "3a788e20d82b5eb754d99242edaf43006aa915d8ebdfd9e1a62e73a1804e19f8",
+   "source_note": "Pii IX Pontificis Maximi Acta, pars prima, volume III. Rome: Ex Typographia Bonarum Artium, habita facultate, 1864. Uncorrected, uncollated OCR transcription of the identified constituent. Complete papal body; editorial caption or non-substantive publishing furniture omitted as separately identified in the source review. Uncorrected OCR of the act as printed in Pii IX Pontificis Maximi Acta, pars prima; edition genre labels, synopses, page numbers, gathering signatures and scan watermarks are omitted.",
+   "source_url": "https://archive.org/download/piiixpontificis00ixgoog/piiixpontificis00ixgoog_djvu.txt",
+   "text_path": "src/sources/works/papal-collections/pii-ix-acta-pars-prima-volume-3/editions/1864-rome-ia-mul/artifacts/ocr-3a788e20d82b/ocr.txt",
+   "title": "Amantissimus humani generis — ad episcopos ritus orientalis",
+   "compact_margin": 0.65,
+   "compact_layout": true
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-la-20261026-34961eae"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "United States public domain;1922 printing and mechanical page reproduction;existing registered artifact owns this conclusion."
+rights_jurisdiction = "United States"
+provenance = "Source owner read the exact selected words on the held, hash-verified whole-book facsimile pages at 200 and 400 dpi on 2026-10-26. Whole-book pdftotext output was a discovery aid only. No model stood in retrieval or byte hashing. The source packet retains exact image hashes, cuts, conditional-word boundaries and refused readings. Independent source/publication review remains required before adoption."
+retrieved = "2026-10-26"
+sha256 = "34961eae20a35ba392793d5efece02850b01cb01fd199f2d8d510a0fc14a43d6"
+byte_size = 2072
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-proper-canon-la-20261026-34961eae/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+source_url = "https://archive.org/download/missaleromanum0000unse/missaleromanum0000unse.pdf"
+transformation = "Select the four printed proper Communicantes heads before sed et beatorum Apostolorum and the complete Accendat body. Join wraps and discretionary line-end hyphens; retain source accents, ligatures, parenthetic alternatives, wording and pointing. These are the historical source words, distinct from the target projection."
+notes = "Nativity and Easter contain two source-declared alternatives, not cumulative speech. The shared Communicantes continuation, Joseph clause, conclusions and Amens are outside all four heads. Accendat includes its actual Amen."

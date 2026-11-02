@@ -1,0 +1,29 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/homily.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "HOM-001",
+      "note": "Mt 5:3, 5:6 and 5:10 keep their qualifiers everywhere; the join rests on Augustine's De serm. Dom. I.3.10/I.4.11 pairing, stated as the preacher's inference, and the note's own-connections list describes it.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "HOM-002",
+      "note": "Augustine now puts the complaint in a hearer's heart, tells him not to say it, admits only the literal appearance, and warns of the snare (Enarr. 33 s.2 n.14, Migne Latin); the response uses the hearer's practice as the homily's own pattern, recorded in the note.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "HOM-003",
+      "note": "Bernard, Augustine's scheme, Basil and Bernard n.5 are given with their reasoning in plain sentences, and one sentence states why the Collect and Postcommunion follow.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "HOM-004",
+      "note": "The three restatements and the 'go without ... not without' reversal are cut; the Gradual and Offertory are joined once.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "derive-homily",
+  "summary": "Revised the All Saints homily to clear HOM-001 to HOM-004 and the advisories HOM-005 and HOM-006: the Gospel's qualifiers are kept and the Gradual-Gospel join now rests on Augustine's pairing of the fear of the Lord with the poor in spirit; Augustine's hearer is reported as the locus has him, with his verdict (the snare); the closing section is carried in the preacher's voice; the 'go without' reversals and restatements are gone; the note and production review were updated, the revision timestamp refreshed, and the 4-page homily PDF rebuilt and checked (component and every preflight check pass). This dispatch contributed the iteration-1 revision of the homily's spoken body, terminal note and production-review record for run 450355254538c1ba."
+}

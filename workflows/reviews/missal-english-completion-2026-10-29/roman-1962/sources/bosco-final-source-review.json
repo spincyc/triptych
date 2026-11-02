@@ -1,0 +1,422 @@
+{
+  "schema": "triptych-independent-bosco-source-english-review/v1",
+  "reviewed_on": "2026-10-29",
+  "status": "frozen-independent-review-complete",
+  "intended_durable_path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/bosco-final-source-review.json",
+  "scope": "Exactly three Bosco orations and their source/conclusion controls; no review or acceptance of the other eight proposal bodies. Body-free receipt; source and English payloads are bound only by hashes.",
+  "review_subject": {
+    "plan_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/install-plan.json",
+    "plan_sha256": "f0e75b76a3fea20d40c241d3ded7ab0a3dbca5d145760f120a9da1860d5f0d37",
+    "candidates_sha256": "5934208f29466c6025d767b2f5a9cdae403134760a62bcfbe78aed13cd27bb6c",
+    "candidate_files_manifest_sha256": "0e5a8aec526510844d686f36344eb379a6b0786747840ca1b7a1234bbbe0d151"
+  },
+  "source_identification": {
+    "title": "Atti del Capitolo Superiore della Societa Salesiana",
+    "issue": "Anno XI, N.52",
+    "publication_date": "1930-02-24",
+    "whole_document_pages": 8,
+    "whole_document_bytes": 2478922,
+    "official_source_url": "https://db.archiviosalesiano.net/files/original/23799/ASC-ACT-0-IT-052_1930.pdf",
+    "independent_complete_fetch_sha256": "93b726aeb737cddcc5a71650cee028a45af501074c017e8b9ce1496d2728f6a2",
+    "historical_heading": "Die26Aprilis, In Festo Beati Ioannis Bosco Confessoris",
+    "target_heading": "Die31ianuarii, S.Ioannis Bosco Confessoris, IIIclassis",
+    "approval": "Printed850–851: SRC deliberation7January1930 and PiusXI approval/grant15January1930, for Salesian institutes’ annual26April observance.",
+    "correction": "Prayer bodies are printed849–850;851 is the continuation of the approval decree. This actual1930 publication defeats a blanket1934-composition premise, while proving neither a1930 universal calendar appointment nor whole-formulary1962 identity."
+  },
+  "method": "Read the complete8-page1930issue at200dpi; inspected cover, prayer pages and approval at200and400dpi; inspected exact1962pages542–543 at200and400dpi and matched each prayer word. Independent whole official fetch and200dpi source/target rerenders agree with candidate controls. Independently inspected1922Mame title/approval and literal conclusion loci; conclusion pages also read at400dpi. OCR supplied no authoritative wording.",
+  "common_transformations": [
+    "Remove source stress accents; preserve declared calendar consonantal-j orthography against source/target Ioannes/Iesus forms.",
+    "Join printed wraps and expand ligatures.",
+    "Preserve1962target pointing and capitals; differences from1930pointing/capitalization are transformations, not silent claims of diplomatic identity.",
+    "Retain each actual printed conclusion stop. No words after in unitate and no Spiritus Sancti, per omnia, or Amen are added."
+  ],
+  "rights_boundary": {
+    "jurisdiction": "United States",
+    "historical_source": "Accepted1930public-domain publication-date basis in2026: maximum95-year publication term has elapsed; any restoration supplies only the remaining otherwise-applicable term. Mechanical facsimile/transcription adds no original textual authorship. This does not clear the1962edition.",
+    "qualified_rows": "Collect and Postcommunion remain separately qualified minimal functional adaptations. Neither is accepted as a whole-word historical identity or unqualified public-domain modern prayer. Exact canonical root policy1(6) adoption and closed per-target guard remain required.",
+    "secret": "Direct public-domain petition plus literal1922conclusion controls; do not require or attribute a finite-adaptation authority for this row.",
+    "english": "Accepted as project-created study English of the exact hashed Latin; it is not quoted historical English or official approved1962English.",
+    "excluded": "No1934/1962whole edition, modern scan/image, rubric, unrelated act, or other prayer is cleared; no universal short-phrase exemption or prior Joseph-clause fanout is asserted.",
+    "sources": [
+      {
+        "url": "https://www.copyright.gov/title17/92chap3.html",
+        "loci": "17USC304(b),305",
+        "retrieved_on": "2026-10-29",
+        "sha256": "121ed92e20b6fc9325e22a2f0f33cadabc56fda923b06902e8f8372292d0db6d"
+      },
+      {
+        "url": "https://www.copyright.gov/title17/92chap1.html",
+        "loci": "17USC103(b),104A(a)(1)(B)",
+        "retrieved_on": "2026-10-29",
+        "sha256": "97999d678e2877c8142da81a0dce819b210e9f92aa5a405d130bf2f2e50c7d75"
+      },
+      {
+        "url": "https://www.copyright.gov/circs/circ33.pdf",
+        "loci": "pp1–3: originality, names/short phrases; supporting evidence for bounded inference only",
+        "retrieved_on": "2026-10-29",
+        "sha256": "4abb8e07b87a560612f11839fabe7c066afeffc8bdb8816c755f7e47fa07dbf2"
+      }
+    ]
+  },
+  "metadata_disposition": {
+    "payload_changes_required": false,
+    "secret_metadata_revision_required": "Remove finite-method/authority template claims from the direct-PD Secret. Cite this actual source/English receipt and retain direct1930petition/literal1922conclusion evidence. This receipt does not pre-accept unreviewed replacement metadata bytes.",
+    "review_pointer_revision_required": "Replace stale/null earlier reviewer pointers with this actual receipt at the reserved durable path and its exact frozen SHA.",
+    "installation_or_root_adoption_performed": false
+  },
+  "rows": [
+    {
+      "identity": [
+        "s-ioannis-bosco-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "verdict": "accepted",
+      "accepted_scope": "Exact source identification, historical transcription, target Latin reading at declared calendar orthography, actual printed conclusion extent, and fidelity of the supplied project-created study English. Rights recommendation is separately bounded below.",
+      "latin_sha256": "20e15f699f0c8c1a9538024049d905c97a6d86577e24a2f5d3cae4a9c9b60155",
+      "english_sha256": "a7d51a4fce5bb83ca075c7cb4e18f2d7f819499df2b5ad9bacb00c41c2425ecd",
+      "english_hash_convention": "UTF-8 exact candidate English string; no appended newline",
+      "historical_prayer_string_sha256": "9043339970cb42d5296bf55d638c2ad69a43b80165fffdbac313e65ff2b3201e",
+      "source_image_passage_id": "passage.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.bosco-collect-image-20261029",
+      "source_text_passage_id": "passage.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.bosco-collect-text-20261029",
+      "source_artifact_sha256": "93b726aeb737cddcc5a71650cee028a45af501074c017e8b9ce1496d2728f6a2",
+      "source_artifact_pages": [
+        6
+      ],
+      "source_printed_page": "849",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.bosco-three-orations-target-20261029",
+      "target_artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "target_artifact_pages": [
+        542
+      ],
+      "target_printed_page": "461",
+      "target_unit": 2072,
+      "measured_word_differences": [
+        "Beátum -> sanctum (factual canonisation title)",
+        "adolescéntium -> adulescentium (received spelling of same word)"
+      ],
+      "historical_printed_conclusion": "Per Dóminum.",
+      "target_printed_conclusion": "Per Dominum nostrum.",
+      "conclusion_source_passage_ids": [
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-conclusion-rule-20261026",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-father-conclusion-20261026"
+      ],
+      "projection_artifact_dictionary_sha256": "cd585eaf794a68bd32b3e9427df9d70247e51a2f453f77d385a90651e21de1e1",
+      "projection_passage_dictionary_sha256": "39e809df9ad77033888a9ea67ea59dfceb18dd20cbbe0a01a70bf569446bdcb8",
+      "dictionary_hash_convention": "UTF-8 JSON, ensure_ascii=false, sort_keys=true, separators comma/colon, no trailing newline",
+      "rights_recommendation": {
+        "basis": "qualified-nonoriginal-adaptation",
+        "verdict": "accepted-as-qualified-recommendation-only-pending-root-adoption",
+        "reason": "The1930 historical prayer is independently public domain in the United States. The measured later changes are factual canonization-title substitution and received spelling; no new petition.",
+        "root_adoption_required": true
+      },
+      "english_fidelity": "accepted; all petitions, actors, possessives retained by the target, and conclusion words represented; no omitted target clause, imported historical tuo, or invented full formula. Collect religious families is a contextually justified rendering of familias, confirmed by the same issue’s Salesian-foundation context.",
+      "payload_corrections_required": []
+    },
+    {
+      "identity": [
+        "s-ioannis-bosco-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "verdict": "accepted",
+      "accepted_scope": "Exact source identification, historical transcription, target Latin reading at declared calendar orthography, actual printed conclusion extent, and fidelity of the supplied project-created study English. Rights recommendation is separately bounded below.",
+      "latin_sha256": "db67a20c9856f185be4d0784326f5f7ab5906ce09c079c05ca7ec2a6c8541225",
+      "english_sha256": "7508e33c6df415effab4e181eb61a63ed3e34974de84b512a7d715199ff835c2",
+      "english_hash_convention": "UTF-8 exact candidate English string; no appended newline",
+      "historical_prayer_string_sha256": "579d7d5086d47ff6edfd46457b5a95c129f7a141bed7a4ff13eff5cc703677bf",
+      "source_image_passage_id": "passage.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.bosco-secret-image-20261029",
+      "source_text_passage_id": "passage.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.bosco-secret-text-20261029",
+      "source_artifact_sha256": "93b726aeb737cddcc5a71650cee028a45af501074c017e8b9ce1496d2728f6a2",
+      "source_artifact_pages": [
+        7
+      ],
+      "source_printed_page": "850",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.bosco-three-orations-target-20261029",
+      "target_artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "target_artifact_pages": [
+        543
+      ],
+      "target_printed_page": "462",
+      "target_unit": 2080,
+      "measured_word_differences": [],
+      "historical_printed_conclusion": "Per Dóminum.",
+      "target_printed_conclusion": "Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.",
+      "conclusion_source_passage_ids": [
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-conclusion-rule-20261026",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-father-conclusion-20261026"
+      ],
+      "projection_artifact_dictionary_sha256": "e016ed60a871d7161e653bcc949f0d171979f7d716578a99ce5702c133051e8e",
+      "projection_passage_dictionary_sha256": "4a5b985aa5c2755263e2aa0ee9f658f7308effdd64ebd016f5d33b2f5a05a977",
+      "dictionary_hash_convention": "UTF-8 JSON, ensure_ascii=false, sort_keys=true, separators comma/colon, no trailing newline",
+      "rights_recommendation": {
+        "basis": "public-domain",
+        "verdict": "accepted-direct-public-domain-route",
+        "reason": "The entire petition is independently witnessed in the dated1930 publication. The actual longer target ending is a contiguous literal prefix of the independently image-checked1922 Father-directed conclusion, with target pointing and consonantal-j normalization separately recorded.",
+        "root_adoption_required": false
+      },
+      "english_fidelity": "accepted; all petitions, actors, possessives retained by the target, and conclusion words represented; no omitted target clause, imported historical tuo, or invented full formula. Collect religious families is a contextually justified rendering of familias, confirmed by the same issue’s Salesian-foundation context.",
+      "payload_corrections_required": []
+    },
+    {
+      "identity": [
+        "s-ioannis-bosco-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "verdict": "accepted",
+      "accepted_scope": "Exact source identification, historical transcription, target Latin reading at declared calendar orthography, actual printed conclusion extent, and fidelity of the supplied project-created study English. Rights recommendation is separately bounded below.",
+      "latin_sha256": "4f47d9dd70abae1166e980d2935e2a4552abd9e65d7105af44e7f8909fce62ea",
+      "english_sha256": "f90300369f528793e9ed8be614d2cb99a4ebaef074485f81bb5c39997e8f4c55",
+      "english_hash_convention": "UTF-8 exact candidate English string; no appended newline",
+      "historical_prayer_string_sha256": "52071ab650b3887f5074319726daa5c9e8675bdd4097b5dd57b3e4fc77323257",
+      "source_image_passage_id": "passage.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.bosco-postcommunion-image-20261029",
+      "source_text_passage_id": "passage.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.bosco-postcommunion-text-20261029",
+      "source_artifact_sha256": "93b726aeb737cddcc5a71650cee028a45af501074c017e8b9ce1496d2728f6a2",
+      "source_artifact_pages": [
+        7
+      ],
+      "source_printed_page": "850",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.bosco-three-orations-target-20261029",
+      "target_artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "target_artifact_pages": [
+        543
+      ],
+      "target_printed_page": "462",
+      "target_unit": 2082,
+      "measured_word_differences": [
+        "Beáto -> sancto (factual canonisation title)",
+        "omit source tuo after Confessore (one possessive pronoun)"
+      ],
+      "historical_printed_conclusion": "Qui vivis.",
+      "target_printed_conclusion": "Qui vivis et regnas cum Deo Patre in unitate.",
+      "conclusion_source_passage_ids": [
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-conclusion-rule-20261026",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-christ-conclusion-20261026"
+      ],
+      "projection_artifact_dictionary_sha256": "a852de49c666d94e627234f7bed48e9012c9ccb0176828949f51aa6f43822553",
+      "projection_passage_dictionary_sha256": "b9b9e8008b506c7ea10398697d9ff14bcc283cf718d5f02454bbd3e07f61594b",
+      "dictionary_hash_convention": "UTF-8 JSON, ensure_ascii=false, sort_keys=true, separators comma/colon, no trailing newline",
+      "rights_recommendation": {
+        "basis": "qualified-nonoriginal-adaptation",
+        "verdict": "accepted-as-qualified-recommendation-only-pending-root-adoption",
+        "reason": "The1930 historical prayer is independently public domain in the United States. The measured later changes are factual canonization-title substitution plus omission of one conventional possessive, with no new petition. A defensible lack-of-original-authorship argument exists for exactly these functional changes, but this is an inference requiring explicit root policy1(6) adoption.",
+        "root_adoption_required": true
+      },
+      "english_fidelity": "accepted; all petitions, actors, possessives retained by the target, and conclusion words represented; no omitted target clause, imported historical tuo, or invented full formula. Collect religious families is a contextually justified rendering of familias, confirmed by the same issue’s Salesian-foundation context.",
+      "payload_corrections_required": []
+    }
+  ],
+  "control_files": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/bosco-three-orations-target-20261029.toml",
+      "sha256": "0bf3c946bd9dae441d69a75f24c5bacc74b9dff8f57a3b976f5752ad7be2109e"
+    },
+    {
+      "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/bosco-orations-checked-20261029/artifact.toml",
+      "sha256": "7b34447b050985a11b075cd9b394bc72c0ff819b39f0197d6b22780bcd032120"
+    },
+    {
+      "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/bosco-orations-checked-20261029/latin.txt",
+      "sha256": "82a011c5e4207cab295d68f4f922440a74894d8522865e2ca28ef0df34f08b03"
+    },
+    {
+      "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/official-asc-scan-93b726ae/artifact.toml",
+      "sha256": "434f260653da24bc0b41877f19e71aee3a8d0c53776d3a1b07b25e1e0e7692b7"
+    },
+    {
+      "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/official-asc-scan-93b726ae/source.pdf",
+      "sha256": "93b726aeb737cddcc5a71650cee028a45af501074c017e8b9ce1496d2728f6a2"
+    },
+    {
+      "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/edition.toml",
+      "sha256": "aed3789690a2e194116711f3fce17024fbe34ee68ae5d6783ee494944d5cbd33"
+    },
+    {
+      "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-collect-image-20261029.toml",
+      "sha256": "c7e3d5e7f42349e934f852ed39cd22608cd24a240f6d1de65a384b189c56b4b0"
+    },
+    {
+      "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-collect-text-20261029.toml",
+      "sha256": "87e8ae371cb02c360637b784b3cd9b005be3b6272e1d40161b5bdd39b99285e1"
+    },
+    {
+      "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-postcommunion-image-20261029.toml",
+      "sha256": "d8384136d9a1ac34a0e8f80a4629e132627a74ec6157d790551989ae3c8a919a"
+    },
+    {
+      "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-postcommunion-text-20261029.toml",
+      "sha256": "d121e57dc8d1d245ac5da26f5b17dd73a4794a4cc3295e29ca654ec3eee92a93"
+    },
+    {
+      "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-secret-image-20261029.toml",
+      "sha256": "b19771deac9c06f2d092653c0bc1557c3f0ad0acea1e04578b0669c3ceeaee33"
+    },
+    {
+      "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-secret-text-20261029.toml",
+      "sha256": "1e8e8893fef426fed06ad169ae4d45330f9f0e316e0f4100ec74c0d1d387fff9"
+    },
+    {
+      "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/work.toml",
+      "sha256": "35a36fba86a92c0875d56bf1a02fb02da0b9090a0d1c5ff940d255b8bebb6506"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/edition.toml",
+      "sha256": "c5570791955722356a338b95201c30372b26a9fa44e82882e504daa7a23b7b89"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml",
+      "sha256": "ca4b224874d452a269befb56edcb56b1ffd06e62b9a6c067b718054e7e8ba116"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-five-support-pages-20261026/artifact.toml",
+      "sha256": "b79d59e12cfc4459b13119ead0065f42f9c204b546d082de794eb2de0de65f51"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-five-support-pages-20261026/source.pdf",
+      "sha256": "d79410cf7b26b3dde9de6e117eb1c5ebc7cf1a174f006b4b5024fc7d462e4fc7"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-conclusion-rule-20261026.toml",
+      "sha256": "035b8ac2191627ddbd7889f70164925a76fc958b6b2f1fb4b060c22d7e0bd2d8"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-father-conclusion-20261026.toml",
+      "sha256": "f3bb729eda76519264d5fda879083b248adb32b61db75fcaeb72dc0aeb9d515e"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-christ-conclusion-20261026.toml",
+      "sha256": "3e031f7e30c97c9107e446fcd394f9ffed1c0de002752df1634b7d621f9e0463"
+    }
+  ],
+  "image_checks": [
+    {
+      "kind": "1930-source",
+      "page": 1,
+      "dpi": 200,
+      "sha256": "96150855b07926ffbb5b67d07f5ec636b912584021a079a31f9a5851ccbb27f4",
+      "independent_rerender_equal": true
+    },
+    {
+      "kind": "1930-source",
+      "page": 6,
+      "dpi": 200,
+      "sha256": "40aed435b767fd67c97529905ca3713c1d6eafd0af82e315e34f5670e43e7bde",
+      "independent_rerender_equal": true
+    },
+    {
+      "kind": "1930-source",
+      "page": 7,
+      "dpi": 200,
+      "sha256": "bcee57b015a8a8ea850996f37a6b85b467ff0c6af8aea15d418b0e7ae895b87c",
+      "independent_rerender_equal": true
+    },
+    {
+      "kind": "1930-source",
+      "page": 8,
+      "dpi": 200,
+      "sha256": "9cefe4c279c50033e70ba78e4c802b0e526cc967fff529dfa9666b69c9ec3eaf",
+      "independent_rerender_equal": true
+    },
+    {
+      "kind": "1962-target",
+      "page": 542,
+      "dpi": 200,
+      "sha256": "89e79c5fa5e3993cf333ec346230f749db5eed71e4a75af1b658eb179aca090a",
+      "independent_rerender_equal": true
+    },
+    {
+      "kind": "1962-target",
+      "page": 543,
+      "dpi": 200,
+      "sha256": "1f46a0bedd035138524ba175c43f93071a6ce055ad579174f7dbdf98c26a20c3",
+      "independent_rerender_equal": true
+    },
+    {
+      "kind": "1922-conclusion-control",
+      "page": 3,
+      "dpi": 200,
+      "sha256": "80901c841a17d15b6e84c12f91a1f46735fff0629c43d9cdd84c9b1b12129b77",
+      "independent_rerender_equal": true
+    },
+    {
+      "kind": "1922-conclusion-control",
+      "page": 4,
+      "dpi": 200,
+      "sha256": "cc6854eb43f2877f8f1bf1ea0fd8f748c4b116d87c65cfe912b5db199af76666",
+      "independent_rerender_equal": true
+    },
+    {
+      "kind": "1922-conclusion-control",
+      "page": 5,
+      "dpi": 200,
+      "sha256": "027020774d7243f20393e58ebdd686600b9b4a9c9f819c1fa403050be405b630",
+      "independent_rerender_equal": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/modern-saints/source-p1-400.png",
+      "dpi": 400,
+      "sha256": "7391ef7abf012cf29d01f92258165ea5e4b925f6d0e20f9ddcf34875acf6beae",
+      "visually_inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/modern-saints/source-p6-400.png",
+      "dpi": 400,
+      "sha256": "e24042446986c793c364855d1d1e428e893521bb91059012ac915c0e68b44778",
+      "visually_inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/modern-saints/source-p7-400.png",
+      "dpi": 400,
+      "sha256": "8ac268987fe7fab6526e61b6d032682082f3b533b6756c4a975fdee48ddcb48f",
+      "visually_inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/modern-saints/source-p8-400.png",
+      "dpi": 400,
+      "sha256": "356e359014b8da4f23aa8f119cbde11c4a5ef36fd815381078d2d297d2793310",
+      "visually_inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/modern-saints/target-p542-400.png",
+      "dpi": 400,
+      "sha256": "bfb9d1f3deb372cfb1415458eb7ace4487076a37c0b37830006c488f4f1c4a78",
+      "visually_inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/modern-saints/target-p543-400.png",
+      "dpi": 400,
+      "sha256": "9ef99416177c6c4f7f5519fd44846d44fc7bea31b8ae0e268fd10bb88a12547a",
+      "visually_inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/modern-saints/mame-support-p3-400.png",
+      "dpi": 400,
+      "sha256": "55500419bea7036a882c81cfa4fe8f0c4af1237c8aea88c5e78301a222a22b87",
+      "visually_inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/modern-saints/mame-support-p4-400.png",
+      "dpi": 400,
+      "sha256": "0ae24e24a93bc688b4f44f559c8d938bd71499bb995425e57cec5593bb27b980",
+      "visually_inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/modern-saints/mame-support-p5-400.png",
+      "dpi": 400,
+      "sha256": "3cbbc84bdecf0afc4ddf90b9d134ac49882f4d9d4f2db719169db7e368ceaa53",
+      "visually_inspected": true
+    }
+  ],
+  "limitations": [
+    "No source-library validation of an installed tree was run; candidate files remain a scratch proposal and root owns installation/checks.",
+    "The1930and1922rights bases are distinguished from the1962collation witness.",
+    "No canonical write, commit, push, or delegation occurred."
+  ]
+}

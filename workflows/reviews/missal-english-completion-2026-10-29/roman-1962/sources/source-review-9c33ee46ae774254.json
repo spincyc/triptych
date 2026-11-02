@@ -1,0 +1,118 @@
+{
+  "schema": "triptych-temporal4-independent-source-english-review/v1",
+  "recorded_on": "2026-10-29",
+  "candidate": "candidate-v3.json",
+  "candidate_sha256": "129de6335b0deb848948ffa098a92c1551a7e462abbc870427dfdc22d3c77fc1",
+  "verdict": "accepted",
+  "scope": "Final exact bounded successor acceptance for four Latin source qualifications, four original unapproved study-English texts, corrected provenance/calendar patches and29proposedfiles. No new source work or page-image rerun.",
+  "prior_review_v2_sha256": "2e105af1d2594efcbb509650de7013dc0a05b0bfbff849bc50db69530a201f0d",
+  "prior_visual_review_sha256": "d45873c9f10915cc0e8320296968334a17bdfb6c4b1e026535f74005c6171d37",
+  "exact_successor_check": {
+    "v2_candidate_sha256": "dea1c11e263580267472a30ff45155f888bd76cfacbf911734c716e825fde556",
+    "only_difference": {
+      "path": "/rows/1/new_latin_provenance/relationship",
+      "old": "historical-witness-identical-to-target",
+      "new": "collated-exact"
+    },
+    "all_other_candidate_metadata_and_text_unchanged": true,
+    "all29_manifest_entries_identical_to_v2": true,
+    "all29_physical_payload_and_manifest_hashes_sizes_rechecked": true,
+    "proposed_manifest_sha256": "025a82316cb56985193e7aeca19ccafbc835e2378cad0bb168fb9b8a1d1c78d2"
+  },
+  "resolved_blockers": [
+    "B1 duplicate Lent3 projection removed; historical public-domain artifact/passage is sole controller.",
+    "B2 Ascension count corrected from five to four.",
+    "B3 obsolete proper/mass availability notes removed.",
+    "B4 Lent3 relationship now uses existing allowed collated-exact token."
+  ],
+  "remaining_blockers": [],
+  "rows": [
+    {
+      "mass": "mass-of-the-first-sunday-after-epiphany",
+      "proper": "Introit",
+      "form_id": "main",
+      "cycle": "all",
+      "occurrence": 1,
+      "slug": "epiphany-ferial-introit",
+      "source_qualification": "accepted",
+      "original_study_english": "accepted",
+      "historical_latin_sha256": "2c3d02a567f2dccb58accebea18e01648e543c6f01c73394d9f19177a53a51d0",
+      "target_latin_sha256": "b88ee0082ae7dc4b9d8199df2660d98c9f31ac691153825b791eccbe898973a1",
+      "english_sha256": "eb328f37707f1da70f38f69ea9777bcca6d9f75f09fb8b762090543d58ae1874",
+      "publication_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-temporal4-epiphany-ferial-introit",
+      "publication_artifact_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-temporal4-epiphany-ferial-introit",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-temporal4-epiphany-ferial-introit"
+      ],
+      "source_reference_ownership": "accepted",
+      "latin_provenance_schema": "accepted"
+    },
+    {
+      "mass": "lent-3-thursday",
+      "proper": "Introit",
+      "form_id": "main",
+      "cycle": "all",
+      "occurrence": 1,
+      "slug": "lent3-thursday-introit",
+      "source_qualification": "accepted",
+      "original_study_english": "accepted",
+      "historical_latin_sha256": "1d4a94ffd65472aee0499469153e1f9e9f4781c043c5879d2936631dd96f7fab",
+      "target_latin_sha256": "1d4a94ffd65472aee0499469153e1f9e9f4781c043c5879d2936631dd96f7fab",
+      "english_sha256": "2cac7bab5698efc199e799e14fe2784a8f485fbc353340380dd1e5615fdc5a2a",
+      "publication_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-temporal4-lent3-thursday-introit",
+      "publication_artifact_ids": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-temporal4-lent3-thursday-introit"
+      ],
+      "source_reference_ownership": "accepted",
+      "latin_provenance_schema": "accepted"
+    },
+    {
+      "mass": "vigil-of-the-ascension",
+      "proper": "Alleluia",
+      "form_id": "main",
+      "cycle": "all",
+      "occurrence": 1,
+      "slug": "ascension-vigil-alleluia",
+      "source_qualification": "accepted",
+      "original_study_english": "accepted",
+      "historical_latin_sha256": "32693e80d4ae708b0574e7a439521fe98588b6efae2fdd2158e526e645c4f850",
+      "target_latin_sha256": "1c9cd92566a9c66be51406f5333a197b1cd7f97cb91434ab8d1116e6a16d8a45",
+      "english_sha256": "f61916d5034d587152bf6d646a75ae02dcbab411da2f05db747531f6890ba82c",
+      "publication_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-temporal4-ascension-vigil-alleluia",
+      "publication_artifact_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-temporal4-ascension-vigil-alleluia",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-temporal4-ascension-vigil-alleluia"
+      ],
+      "source_reference_ownership": "accepted",
+      "latin_provenance_schema": "accepted"
+    },
+    {
+      "mass": "lent-1-ember-saturday",
+      "proper": "Hymn (Benedictus es)",
+      "form_id": "longer",
+      "cycle": "all",
+      "occurrence": 1,
+      "slug": "lent1-ember-saturday-hymn",
+      "source_qualification": "accepted",
+      "original_study_english": "accepted",
+      "historical_latin_sha256": "39d5da4829bc7b527d62c1b4e0824033499b866469d84e070325c131aac5a52e",
+      "target_latin_sha256": "3c7101578472c4ffbd39978633095d9e77760331d06227e692815ae1a15edf63",
+      "english_sha256": "a0922c774b63426aa3831a9d4943b5e50db6f2e29572e6eb335c5b4aac32157b",
+      "publication_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-temporal4-lent1-ember-saturday-hymn",
+      "publication_artifact_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-temporal4-lent1-ember-saturday-hymn",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-temporal4-lent1-ember-saturday-hymn"
+      ],
+      "source_reference_ownership": "accepted",
+      "latin_provenance_schema": "accepted"
+    }
+  ],
+  "validation": {
+    "source_graph": "accepted: exact same29manifest entries, source relationships, controllers and payload bytes as v2 source-library in-memory overlay, which passed. Physical hashes rechecked for this successor. That source-graph acceptance is preserved by exact manifest identity; no source reread or graph rerun asserted.",
+    "latin_provenance_rows": "executed scripts/_proper_latin._row_problems against all4v3rows; zero problems for each.",
+    "rights_and_source_ownership": "unchanged and accepted: Lent3 directly names its exact1922public-domain transcription passage/artifact; the other3name their checked project projection passages over separately identified historical artifacts and text-free remote1962target comparisons.",
+    "text_acceptance": "all4historicalLatin, targetLatin and English byte sequences are unchanged from independently page-image-reviewed candidatev1. Each row retains exact accepted hashes and source/English verdicts.",
+    "boundary": "No tracked mutations, source acquisition, page-image rerender, index operations, commits, pushes or external messages. Only review-v3.json written."
+  },
+  "parent_integration_obligations": "Accepted for parent integration within this exact4row/29file scope. Parent still owns installation, original-study-English artifact and overlay bindings, installed source/calendar/publication/rendering gates and preservation of unapproved study status. This review makes no whole-Mass, whole-book, official-English or release-completeness claim."
+}

@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.aas.068.extracted-text-7a5da447"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-68-1976"
+artifact_type = "mechanical-pdf-text-extraction"
+media_type = "text/plain"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Exact extraction may contain protected text or modern wrappers and remains transient. Separately manifested historical text excludes uncleared material."
+retrieved = "2026-10-26"
+sha256 = "7a5da4479d8f4b1aff898d20457702513239da76a04b0f6800b2299ccd847bc0"
+byte_size = 2056304
+derived_from = "artifact.holy-see.acta-apostolicae-sedis.volume-68-1976.vatican-ocr-pdf-b0101e98"
+transformation = "pdftotext -layout -enc UTF-8 -eol unix INPUT.pdf OUTPUT.txt; preserves form feeds"
+notes = "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

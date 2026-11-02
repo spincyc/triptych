@@ -5,6 +5,10 @@ identified 1962 or postconciliar Roman Missal. It does not inherit a proper-guid
 template. Edition-specific works belong under that edition's `ordinary/` path;
 cross-edition studies belong under `liturgy/roman-rite/comparative/`.
 
+Declare the leaf's type, source roles, contract version, and ordered outputs in
+`publication.toml` under [document schemas](../document-schemas.md); preserve
+the edition-specific sequence inventory without imposing uniform dossiers.
+
 An edition-specific reading preface may use `O00` only as a technical assembly
 key before variable propers. It is not a title, temporal identity, or public
 navigation rule.

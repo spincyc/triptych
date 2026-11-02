@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-26"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs.s-iosephi-calasanctii-confessoris-collect"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs.three-reviewed-bodies-20261026"
+artifact_sha256 = "ce303bc47e7a37b777c7bfabb9750e69b6212c19433fc47c7ba3b5647963d354"
+locus = "1962 PDF 719, printed p. 638, no. 3469; Pustet Ratisbon 1862 PDF 614-615, printed pp. 528-529"
+physical_line_ranges = [[11, 15]]
+context = "Exact complete bounded editorial projection, not a historical printing."
+notes = "Exact UTF-8 calendar body SHA-256 including its final LF: 8eccf0c2a207270588f4a2ced5b50519aa2cbf197fc9a1faa4b233210fbbe391. The target and independent Pustet pages both print providere; the proposed provenire substitution is rejected. The calendar body remains byte-identical. Target intellegentiae and historical intelligentiae are received spellings of one word, retained separately. Pustet prints a comma after intelligentiae, no comma after juventutem, a comma rather than the target semicolon after quaesumus, no comma after nos, a comma after exemplo, none after intercessione, and a comma after facere. Pustet actually stops at Per Dominum.; the target stops at Per Dominum nostrum. That contiguous longer prefix is independently printed in the separately held Pustet PDF 390, printed p. 304. The prior 1862-owned evidence had incorrectly named Tours Mame 1922 PDF 815 and its raw lines; this new chain identifies the actual Pustet pages and changes no old artifact or passage."

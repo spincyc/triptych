@@ -1,0 +1,130 @@
+{
+  "helper": {
+    "license": "MIT",
+    "path": "scripts/_papal_native_spacing.py",
+    "sha256": "7c7393f6b366bc986e7d106d217a769fabba5a48edd645a7bd02b463eb64d82c"
+  },
+  "native_first_page": 145,
+  "native_pdf": {
+    "artifact_id": "artifact.acta-papal-archives.ass.015.vatican-pdf-fef5408d",
+    "artifact_pages": [
+      145,
+      153
+    ],
+    "sha256": "fef5408d4eeeac0958135b7074cc19253fea456624fa0cea80758dc7c8d7f59a"
+  },
+  "native_raw": {
+    "artifact_id": "artifact.acta-papal-archives.ass.015.auspicato-spacing06-native-raw-c502233f711b",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1898-acta-ass-015/artifacts/auspicato-spacing06-native-raw-c502233f711b/text.txt",
+    "sha256": "c502233f711bb8bd933912ca720233912b53d2bbc0cdec5071015e9134a33636"
+  },
+  "output_sha256": "59f47652d8ab0ebe1411fca3806b574771174504c88a9712ac079450b8ad54a7",
+  "parent": {
+    "artifact_id": "artifact.acta-papal-archives.ass.015.historical-text-ce7f8fbb",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1898-acta-ass-015/artifacts/acta-historical-text-ce7f8fbb/historical.txt",
+    "sha256": "ce7f8fbb6a92dd17066c6343b60deb8936d228c487e61c1eabf3b660327dd3ab"
+  },
+  "retained_source_lines": [
+    {
+      "native_match_count": 0,
+      "native_page": 146,
+      "preserve_original": true,
+      "reason": "Retain exact parent LF bytes. The native raw stream combines a floating numeral with the adjacent body line; no exact same-page LF identity exists. No word-boundary or glyph repair is inferred.",
+      "source_line": 5909,
+      "source_line_sha256": "14a873064545e101ec8abfda0e649486be2377e7d624dfbe1ddc296e2dd17279"
+    },
+    {
+      "native_match_count": 0,
+      "native_page": 146,
+      "preserve_original": true,
+      "reason": "Retain exact parent LF bytes. The native raw stream combines a floating numeral with the adjacent body line; no exact same-page LF identity exists. No word-boundary or glyph repair is inferred.",
+      "source_line": 5910,
+      "source_line_sha256": "67f7c3843fa3f121f2374968f01b346b745417799d727c2c95a287b72d5fa3ce"
+    }
+  ],
+  "review": {
+    "geometry": "Selected act has one body column. Auspicato has one distinct page-foot citation on each of native146–148; In ipso and Gibbons have no historical notes within their selected extents. Neighboring acts on boundary pages remain excluded.",
+    "limits": "Native OCR reconstruction geometry only; no original-print collation or lexical accuracy certification.",
+    "native_pages_inspected": [
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153
+    ],
+    "raw_order_policy": "Preserve parent LF sequence; borrow only whitespace from exact unique same-page native LF lines. Explicit original retention claims no native LF identity."
+  },
+  "reviewed_stream_order_pages": [],
+  "schema": "triptych-papal-native-spacing/v1",
+  "selections": [
+    {
+      "native_page": 145,
+      "source_range": [
+        5836,
+        5878
+      ]
+    },
+    {
+      "native_page": 146,
+      "source_range": [
+        5881,
+        5923
+      ]
+    },
+    {
+      "native_page": 147,
+      "source_range": [
+        5925,
+        5967
+      ]
+    },
+    {
+      "native_page": 148,
+      "source_range": [
+        5969,
+        6011
+      ]
+    },
+    {
+      "native_page": 149,
+      "source_range": [
+        6013,
+        6054
+      ]
+    },
+    {
+      "native_page": 150,
+      "source_range": [
+        6056,
+        6097
+      ]
+    },
+    {
+      "native_page": 151,
+      "source_range": [
+        6099,
+        6140
+      ]
+    },
+    {
+      "native_page": 152,
+      "source_range": [
+        6142,
+        6183
+      ]
+    },
+    {
+      "native_page": 153,
+      "source_range": [
+        6185,
+        6205
+      ]
+    }
+  ],
+  "source_id": "acta.ass.015.ass-015-act-004",
+  "stream_order_difference_pages": []
+}

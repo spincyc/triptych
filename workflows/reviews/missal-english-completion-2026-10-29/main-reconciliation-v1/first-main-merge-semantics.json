@@ -1,0 +1,82 @@
+{
+  "Act31_semantics_exact_only_current_source_library_and_incoming_tooling_bindings": 31,
+  "PC_counts": {
+    "admission_receipts": 8,
+    "positives": 155,
+    "quarantine_targets": 174,
+    "untranslated": 419
+  },
+  "PC_exact_one_positive_correction_original116_and_all_quarantine_exact": true,
+  "PC_projection_exactly_four_source_confirmed_English_text_locations": [
+    [
+      "masses",
+      6,
+      "forms",
+      3,
+      "propers",
+      0,
+      "translations",
+      0,
+      "text"
+    ],
+    [
+      "masses",
+      6,
+      "propers",
+      32,
+      "translations",
+      0,
+      "text"
+    ],
+    [
+      "masses",
+      258,
+      "forms",
+      3,
+      "propers",
+      0,
+      "translations",
+      0,
+      "text"
+    ],
+    [
+      "masses",
+      258,
+      "propers",
+      32,
+      "translations",
+      0,
+      "text"
+    ]
+  ],
+  "all222_deletions_follow_one_parent_and_unchanged_other_parent": 222,
+  "all_release_authorization_terms_exact_both_parents": true,
+  "family_bootstrap164_pending_review_units_exact_both_parents": true,
+  "fixture_all_original_semantics_and_16_of17_inverse_owners_exact": true,
+  "merged_promises": 101,
+  "parent_promise_dictionary_counts_exact": [
+    98,
+    100
+  ],
+  "rights_record_non_table_prose_exact_both_parents": true,
+  "tool_AST_comparison": {
+    "tools/public-alpha": {
+      "combined_top_level_definitions": [],
+      "non_examples_exact_parent": null
+    },
+    "tools/source-library": {
+      "combined_top_level_definitions": [],
+      "non_examples_exact_parent": "ac620e2f8becd4c354973b5804a2556a990b7ec8"
+    },
+    "tools/source-reader": {
+      "combined_top_level_definitions": [],
+      "non_examples_exact_parent": "ac620e2f8becd4c354973b5804a2556a990b7ec8"
+    },
+    "tools/tests/test_public_alpha.py": {
+      "combined_top_level_definitions": [
+        "PublicAlphaTest"
+      ],
+      "non_examples_exact_parent": null
+    }
+  }
+}

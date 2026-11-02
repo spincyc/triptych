@@ -678,27 +678,36 @@ class TrackedRecensionTest(unittest.TestCase):
     def test_the_pre_1955_recension_states_no_broken_departure(self):
         self.assertEqual(_calendars.recension_problems(self.root, "roman-pre-1955"), [])
 
-    def test_coverage_names_every_domain_and_the_uncollated_inheritance(self):
+    def test_coverage_names_every_domain_and_the_exact_three_body_limit(self):
         document = _calendars.load_document(self.root, "roman-pre-1955", effective=False)
         coverage = document["recension_coverage"]
-        self.assertEqual(coverage["status"], "structural-only")
+        self.assertEqual(coverage["status"], "partial")
         self.assertEqual(
             set(coverage["domains"]),
             set(_calendars.RECENSION_COVERAGE_DOMAINS),
         )
-        self.assertEqual(coverage["domains"]["propers"]["state"], "none")
+        self.assertEqual(coverage["domains"]["propers"]["state"], "partial")
+        self.assertEqual(
+            {name: domain["state"] for name, domain in coverage["domains"].items()
+             if name != "propers"},
+            {"calendar": "partial", "precedence": "partial",
+             "commons": "inherited-uncollated", "ordinary": "partial",
+             "ceremonies": "structural-only"},
+        )
         self.assertEqual(coverage["domains"]["commons"]["state"], "inherited-uncollated")
         self.assertEqual(coverage["domains"]["precedence"]["state"], "partial")
         self.assertEqual(coverage["inheritance"]["source_calendar"], "roman-1962")
-        self.assertEqual(coverage["inheritance"]["status"], "uncollated")
+        self.assertEqual(coverage["inheritance"]["status"], "partial")
         advisory = document["advisory"].lower()
-        self.assertIn("structural-only", advisory)
-        self.assertIn("not a complete 1920 missal corpus", advisory)
+        self.assertIn("exactly three separately attested latin", advisory)
+        self.assertIn("witness-state-only", advisory)
+        self.assertIn("no civil-date authority", advisory)
+        self.assertIn("not a complete 1920 corpus", advisory)
         self.assertIn("six holy week departures", advisory)
         self.assertIn("st joseph the worker", advisory)
         self.assertIn("queenship of the blessed virgin mary", advisory)
         self.assertIn("roman-1962", advisory)
-        self.assertIn("inherited and uncollated", advisory)
+        self.assertIn("mechanically inherited from roman-1962 and uncollated", advisory)
         self.assertIn(
             "implement-criteria-precedence",
             {row["id"] for row in coverage["blockers"]},
@@ -707,6 +716,41 @@ class TrackedRecensionTest(unittest.TestCase):
             document["stands_before"],
             ["de-rubricis-simpliciorem-1955", "maxima-redemptionis-1955"],
         )
+
+    def test_only_the_three_reviewed_witness_bodies_have_latin_permission(self):
+        import _proper_latin as latin
+        import _proper_target_overrides as target
+        import _missal_coverage as missal_coverage
+
+        raw = _calendars.load_document(self.root, "roman-pre-1955", effective=False)
+        evidence = next(row for row in raw["recension_coverage"]["evidence"]
+                        if row["id"] == "bonn-pentecost-three-prayers")
+        self.assertEqual(evidence["domains"], ["propers"])
+        self.assertEqual(evidence["grade"], "page-image-collated")
+        self.assertEqual(evidence["witnesses"], [target.WITNESS_EDITION])
+        document = _calendars.load_document(self.root, "roman-pre-1955")
+        document = latin.target_document(self.root, "roman-pre-1955", document)
+        records, problems = latin.publication_records(self.root, "roman-pre-1955")
+        self.assertEqual(problems, [])
+        decisions = [(key, latin.decision_for(key, text, records))
+                     for key, text in latin.text_owners(document)]
+        admitted = {key for key, decision in decisions
+                    if decision.permits(latin.STRUCTURE_SURFACES)}
+        expected = {latin.LatinKey("pentecost", "", proper, "", "", 1)
+                    for proper in ("Collect", "Secret", "Postcommunion")}
+        self.assertEqual(admitted, expected)
+        self.assertGreater(len(decisions), len(admitted))
+        for key, decision in decisions:
+            projected = decision.projection(latin.STRUCTURE_SURFACES)
+            relation = missal_coverage.latin_evidence(projected, inherited=True)
+            self.assertEqual(relation["relationship"], "unresolved")
+            if key in expected:
+                self.assertEqual(relation["collation"], "collated")
+                self.assertEqual(projected["target_context"]["scope"], "witness-state-only")
+                self.assertIs(projected["target_context"]["civil_date_authority"], False)
+            else:
+                self.assertTrue(projected["withheld"])
+                self.assertNotIn("target_context", projected)
 
     def test_it_retains_the_sourced_departures_the_design_named(self):
         document = _calendars.load_document(self.root, "roman-pre-1955", effective=False)

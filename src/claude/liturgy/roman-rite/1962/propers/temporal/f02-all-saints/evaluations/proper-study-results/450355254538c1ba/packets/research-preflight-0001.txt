@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v15
+WORKFLOW_DIGEST: 4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83
+RUN_ID: 450355254538c1ba
+COMMIT: 4f52b9ade338f9a9f4f39f312aa45989a0baf2ca
+STAGE: research-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-01","proper":"liturgy/roman-rite/1962/propers/temporal/f02-all-saints","provider":"claude","research_handoff":"workflows/reviews/claude-1962-f02-revision-2026-10-27/HANDOFF.md"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"RES-009","location":"research/scope.md 3.7 (lines 317-319); research/interpretations.md Reading B, Augustine (lines 154-155)","problem":"Augustine, De serm. Dom. I.4.12, appears in quotation marks but is not quoted word for word. NPNF (ccel-text-ce371798, lines 1064-1066) reads 'those promises can indeed be fulfilled in this life, as we believe them to have been fulfilled in the case of the apostles'. The next sentence, 'For that all-embracing change into the angelic form, which is promised after this life, cannot be explained in any words', is not recorded. It bears on 5.2 and 6.3: Augustine also keeps a consummation after this life, beyond words.","required_result":"Quote the sentence exactly, and record the following sentence in 5.2 and 6.3, so that Augustine's difference from Hilary is stated as a difference of emphasis that this sentence qualifies.","severity":"advisory"},{"id":"RES-010","location":"research/scope.md 3.5 (lines 281-286); research/interpretations.md Reading A, Gradual (lines 85-87), Reading C, supporting witnesses (lines 277-280), section 5 table, Gradual row (line 346)","problem":"Bernard's 'Cantavimus sanctis hac nocte, dicentes: Timete Dominum, omnes sancti ejus' (sermo 5 n. 3, PL 183 col. 477) refers to Ps 33:10 as sung in the night office of the feast, not to the Mass Gradual. The record quotes 'hac nocte', but the readings present Bernard as saying to whom the Gradual is addressed.","required_result":"Note that Bernard's locus concerns the verse as sung in the night office. Cite him as reception of the verse that the Gradual shares, not as a comment on the Mass Gradual.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

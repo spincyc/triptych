@@ -1,0 +1,54 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.inter-praecipuas-native-finish.source-85105d054e15",
+      "date": "1844-05-08",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.009.ass-009-act-035",
+      "id": "acta.ass.009.ass-009-act-035",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          515
+        ]
+      ],
+      "pope": "Gregory XVI",
+      "revision": "2026-10-30T17:40:07Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Historical title identifies volumeIX ANNO1876, EDITIO TERTIA, Rome Ex Typographia Polyglotta Vaticana MCMXV (1915), LF25–39. Modern Johnson publishing wrapper LF41–44 and1968 reprint LF50–51 excluded; printed body begins LF52. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.inter-praecipuas-native-finish.85105d054e15",
+      "segment_path": "src/sources/works/papal-documents/1844-05-08-papal-gregorius-xvi-encyclica-inter-praecipuas-machinationes-8-maii-1844-f2ad9f7c/editions/1915-acta-ass-009-ass-009-act-035/segments/inter-praecipuas-native-finish-85105d054e15.toml",
+      "sha256": "85105d054e156fab4f5e1913e15886656fbbfc19f792dd4134d60680bc78d584",
+      "source_note": "ASS9 (1876), printed pages644–656. Whole act through dating and subscription, with historical source notes retained as separate paragraph blocks. Whitespace restored mechanically from native word geometry; literal source marks, hard hyphens and word order retained. Archival OCR reconstruction; inherited OCR spelling remains, without original-print facsimile collation.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-09-1876-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1915-acta-ass-009/artifacts/inter-praecipuas-native-finish-source-85105d054e15/text.txt",
+      "title": "Inter praecipuas",
+      "work_id": "work.papal.gregorius-xvi.encyclica-inter-praecipuas-machinationes-8-maii-1844"
+    }
+  ],
+  "revision": "2026-10-30T17:40:07Z",
+  "schema": "triptych-papal-typeset/v1",
+  "supersessions": [
+    {
+      "prior": {
+        "artifact_id": "artifact.acta-papal-archives.ass.009.historical-text-a7896d1d.note-blocks-inter-praecipuas-literal-41c8cb04aeb8",
+        "id": "acta.ass.009.ass-009-act-035",
+        "language": "la",
+        "pdf_sha256": "4602b5020fec528d37a71e3764e73a90d9668dcf596d066e0b47ce9d6f7ac58e",
+        "segment_id": "segment.acta-papal-archives.ass.009.ass-009-act-035.note-blocks-41c8cb04aeb8",
+        "source_sha256": "41c8cb04aeb865dfaa1def992d77a9f4e1df1cd7ec011add2e59d182a1f77f50"
+      },
+      "reason": "Actual native-WORD geometry whitespace restoration replaces the exact LF-only reader retained as CHANGES_REQUIRED for pervasive interletter spacing. Wording, source order and all historical note partitions are preserved. Producer review and independent cold review are separate gates.",
+      "replacement": {
+        "artifact_id": "artifact.inter-praecipuas-native-finish.source-85105d054e15",
+        "id": "acta.ass.009.ass-009-act-035",
+        "language": "la",
+        "revision": "2026-10-30T17:40:07Z",
+        "segment_id": "segment.inter-praecipuas-native-finish.85105d054e15",
+        "source_sha256": "85105d054e156fab4f5e1913e15886656fbbfc19f792dd4134d60680bc78d584"
+      }
+    }
+  ]
+}

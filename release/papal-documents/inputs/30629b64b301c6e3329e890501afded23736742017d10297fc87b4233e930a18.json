@@ -1,0 +1,267 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+  "documents": [
+    {
+      "id": "acta.aas.010.archive.aas.010.l019820",
+      "language": "la",
+      "pdf_sha256": "ba07f0b6999eeea1ac6becac59478e44960bdbe8b1c867d2b1465d61e0401bd8",
+      "pages": 1,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review does not certify source wording, translation accuracy, rights, or whole-source facsimile collation.",
+        "Local pinned source/body.tex opening, ending, and relevant note loci checked; restricted ancestor payloads without local paths were not retrieved.",
+        "Generator fidelity PASS was verified as exact receipt data, not independently recomputed."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-original02-cold-03.md",
+      "report_sha256": "fb22785c0d67a9b2cabc61e7a1881995637a7fce14600961dc62c60f0c12b6b3",
+      "contact_sheet_pages": [
+        1
+      ],
+      "full_size_pages": [
+        1
+      ]
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus",
+      "language": "la",
+      "pdf_sha256": "dae8895fd12620b5d1df05e13c723a10fe5c95aa0befaeec2836cdbeb1ee6468",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Classic justified two-column layout is legible and contained. The final page retains substantial source body, the dating clause and Benedict XV subscription before compact apparatus; it is not an apparatus-only page. Retained transcription spellings and word separations are not certified or silently corrected."
+        }
+      ],
+      "limitations": [
+        "Layout acceptance does not certify source wording, translation accuracy, completeness, or rights.",
+        "Only opening/ending source boundaries and the specified local loci were checked; no whole-source or facsimile collation.",
+        "No inherited page inspection, raster reuse, rerender, reraster, installation, or installed-byte comparison."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-15.md",
+      "report_sha256": "b68b97b48025de8b68805cfa7353d104e397cca0db43892ebbd90680e91ca4ea"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-04081879-aeterni-patris",
+      "language": "en",
+      "pdf_sha256": "94df7779351ec47c78f285e0369fb59acdba185f3feb7d464ce0ad4e0c91da6a",
+      "pages": 10,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            10
+          ],
+          "description": "Sparse final page retains historical source notes [48]–[50], followed by compact source/rights notices; source LF 293–297 and body.tex 258–265 confirm source-bearing content."
+        }
+      ],
+      "limitations": [
+        "Visual review does not certify source wording, translation accuracy, rights, or whole-source facsimile collation.",
+        "Local pinned source/body.tex opening, ending, and relevant note loci checked; restricted ancestor payloads without local paths were not retrieved.",
+        "Generator fidelity PASS was verified as exact receipt data, not independently recomputed."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-original02-cold-03.md",
+      "report_sha256": "fb22785c0d67a9b2cabc61e7a1881995637a7fce14600961dc62c60f0c12b6b3",
+      "contact_sheet_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "full_size_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-08121892-inimica-vis",
+      "language": "la",
+      "pdf_sha256": "97dd197a106a47d6ab9458db4c15bc167af125440256f5d1ca9ee40fe9593362",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Legible, contained classic two-column source reader. Page 2 retains substantial historical body, benediction, dating clause, and Leo XIII subscription above the compact ruled colophon. No clipping, overlap, fusion, or material spacing defect was observed."
+        }
+      ],
+      "limitations": [
+        "Layout acceptance does not certify source wording, translation accuracy, completeness, or rights.",
+        "Only opening/ending source boundaries and the specified local loci were checked; no whole-source or facsimile collation.",
+        "No inherited page inspection, raster reuse, rerender, reraster, installation, or installed-byte comparison."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-15.md",
+      "report_sha256": "b68b97b48025de8b68805cfa7353d104e397cca0db43892ebbd90680e91ca4ea"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-12091891-pastoralis-officii",
+      "language": "la",
+      "pdf_sha256": "e7eb67ea5f405aadb337b5c3641a6261afb0e79c1f0a43dd28bb26d1b5013efe",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Classic justified two-column layout is legible and contained, with substantial historical text on the final page, a separate dating clause and subscription, and a compact ruled colophon. The displayed 1891-09-22 act date agrees with the pinned source XXII Septembris; the visible apparatus explains conflicting official index dates."
+        }
+      ],
+      "limitations": [
+        "Layout acceptance does not certify source wording, translation accuracy, completeness, or rights.",
+        "Only opening/ending source boundaries and the specified local loci were checked; no whole-source or facsimile collation.",
+        "The cited historical date witness was not independently opened; this review checked the pinned retained dating clause and visible disclosure.",
+        "No inherited page inspection, raster reuse, rerender, reraster, installation, or installed-byte comparison."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-15.md",
+      "report_sha256": "b68b97b48025de8b68805cfa7353d104e397cca0db43892ebbd90680e91ca4ea"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-25071898-caritatis-studium",
+      "language": "la",
+      "pdf_sha256": "9c62c30e23fb8a565f446e5ba36b6b5cc7330ec41ce3042a9936e873da012824",
+      "pages": 4,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review does not certify source wording, translation accuracy, rights, or whole-source facsimile collation.",
+        "Local pinned source/body.tex opening, ending, and relevant note loci checked; restricted ancestor payloads without local paths were not retrieved.",
+        "Generator fidelity PASS was verified as exact receipt data, not independently recomputed."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-original02-cold-03.md",
+      "report_sha256": "fb22785c0d67a9b2cabc61e7a1881995637a7fce14600961dc62c60f0c12b6b3",
+      "contact_sheet_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "full_size_pages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-29061881-diuturnum",
+      "language": "la",
+      "pdf_sha256": "414d8c96f8120d4448ceb969e195ecc12e2e03ba663a1899f9499ea9a42c188c",
+      "pages": 6,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review does not certify source wording, translation accuracy, rights, or whole-source facsimile collation.",
+        "Local pinned source/body.tex opening, ending, and relevant note loci checked; restricted ancestor payloads without local paths were not retrieved.",
+        "Generator fidelity PASS was verified as exact receipt data, not independently recomputed."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-original02-cold-03.md",
+      "report_sha256": "fb22785c0d67a9b2cabc61e7a1881995637a7fce14600961dc62c60f0c12b6b3",
+      "contact_sheet_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_size_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  ]
+}

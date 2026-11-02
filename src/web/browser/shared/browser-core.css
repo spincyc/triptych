@@ -901,3 +901,78 @@ body:not(:has(> .site-header)) {
   font-family: "Triptych Punctus Elevatus", ui-monospace, SFMono-Regular,
     Consolas, monospace;
 }
+
+.browser-print-actions { margin-block: 0.75rem; }
+.browser-print-actions button { min-height: 2.75rem; padding: 0.4rem 0.7rem; }
+.browser-print-status { margin-block: 0.35rem; font-size: 0.9rem; }
+.browser-print-identity,
+.browser-print-refusal { display: none; }
+
+/* Applied only to surfaces that explicitly prepare a complete selection.
+   Reader identity, qualifications, notes and source evidence stay in flow. */
+@media print {
+  body.browser-print-enabled {
+    --ink: #000;
+    --ink-faint: #222;
+    --ink-soft: #222;
+    --section-ink: #000;
+    --notice: #000;
+    --notice-bg: #fff;
+    --muted: #222;
+    --section-accent: #000;
+    --section-line: #777;
+    --panel: #fff;
+    background: #fff !important;
+    color: #000 !important;
+    padding: 0 !important;
+    max-width: none !important;
+    font-size: 11pt;
+    orphans: 3;
+    widows: 3;
+  }
+  .browser-print-enabled .site-header,
+  .browser-print-enabled .site-footer,
+  .browser-print-enabled .skip-link,
+  .browser-print-enabled .banner,
+  .browser-print-enabled .browser-print-actions,
+  .browser-print-enabled .controls,
+  .browser-print-enabled .passage-nav,
+  .browser-print-enabled .back,
+  .browser-print-enabled .rail,
+  .browser-print-enabled .reading-foot,
+  .browser-print-enabled .reading-progress { display: none !important; }
+  .browser-print-enabled .downloads { display: none !important; }
+  .browser-print-enabled.sources-page #finder { display: none !important; }
+
+  .browser-print-enabled .browser-print-identity {
+    display: block;
+    margin: 0 0 1rem;
+    overflow-wrap: anywhere;
+    font: 9pt sans-serif;
+  }
+  .browser-print-enabled .reading,
+  .browser-print-enabled .browser-print-content { max-width: none; display: block; }
+  .browser-print-enabled [hidden] { display: none !important; }
+  .browser-print-enabled h1,
+  .browser-print-enabled h2,
+  .browser-print-enabled h3,
+  .browser-print-enabled h4,
+  .browser-print-enabled summary { break-after: avoid; color: #000; }
+  .browser-print-enabled details::details-content { content-visibility: visible; }
+  .browser-print-enabled summary { list-style: none; }
+  .browser-print-enabled table { width: 100%; border-collapse: collapse; }
+  .browser-print-enabled thead { display: table-header-group; }
+  .browser-print-enabled th,
+  .browser-print-enabled td { border: 0.5pt solid #777; padding: 0.3em; }
+  .browser-print-enabled pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .browser-print-enabled a { color: #000; text-decoration: underline; overflow-wrap: anywhere; }
+  .browser-print-enabled a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; }
+  .browser-print-enabled .footnote,
+  .browser-print-enabled .footnotes { font-size: 9pt; }
+  .browser-print-enabled .browser-print-refusal { display: none; }
+  .browser-print-blocked .browser-print-content,
+  .browser-print-blocked .browser-print-identity,
+  .browser-print-blocked .page-header,
+  .browser-print-blocked .page-footer { display: none !important; }
+  .browser-print-blocked .browser-print-refusal { display: block; color: #000; }
+}

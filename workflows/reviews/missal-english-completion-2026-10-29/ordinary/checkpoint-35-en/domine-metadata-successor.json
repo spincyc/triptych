@@ -1,0 +1,90 @@
+{
+  "schema": "metadata-only-finite-adoption-successor/v1",
+  "predecessor_candidate_sha256": "b2ef7af8630f6cf299c5b1dd23c131326f4d466a59edbfd753a3f591a5fd35e4",
+  "successor_candidate_sha256": "9c08a928e70756eabc218bbb2575c64f73d487e53197f928440504d6feb6f3ed",
+  "root_adoption": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/domine-rights-adoption.json",
+    "sha256": "6bfe83b76107281005c660733522e4c077f52b225b79418b04bf9fcd07f98381",
+    "reviewed_predecessor_candidate_sha256": "b2ef7af8630f6cf299c5b1dd23c131326f4d466a59edbfd753a3f591a5fd35e4",
+    "scope": "Exact English-only n126 expression, source choices, revision, conclusion and actor boundaries; no revised whole target Latin or another prayer."
+  },
+  "independent_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/domine-source-English-review.json",
+    "sha256": "6dd4666971c2324dcd088a03d58b5ff0cc43b012a472c2aafae601430bced117",
+    "reviewed_candidate_sha256": "b2ef7af8630f6cf299c5b1dd23c131326f4d466a59edbfd753a3f591a5fd35e4",
+    "qualification": "Source and English fidelity accepted; no human review or liturgical approval claimed."
+  },
+  "changed_source_postimages": [
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/artifacts/domine-qui-dixisti-study-en/artifact.toml",
+      "fields": [
+        "rights_basis",
+        "notes"
+      ],
+      "before": {
+        "sha256": "103063204c2686c3b33e6122b3e5ba9d189879473c074a1bfadf03bc73daa6a4",
+        "bytes": 3517
+      },
+      "after": {
+        "sha256": "ce444b2b7a09e3349fbd3979567303978e80e08f007226a270ca4b7f11feaaed",
+        "bytes": 4060
+      }
+    }
+  ],
+  "unchanged_source_postimages": {
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-la/artifact.toml": {
+      "sha256": "08b2b8ccfa6b0703fe54b566f8147c93be42db025995296e73c70592872b9591",
+      "bytes": 2750
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-la/text.tsv": {
+      "sha256": "c54326753e78c74a0db88e33c938e2e0b3703a1f1c2aaba5ac0e523587063bf8",
+      "bytes": 550
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-pages/artifact.toml": {
+      "sha256": "2060ee236b63cc34f5e5a0eda4e1e353bde34fd0b75c8388c153d24f5133808e",
+      "bytes": 2311
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-pages/source.pdf": {
+      "sha256": "82ba014aba05e5948c494892990e33bbe35b67b42f1874349512c13c081c3eb9",
+      "bytes": 402728
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-domine-qui-dixisti-old-prayer.toml": {
+      "sha256": "dc49ad4b5b9bc855213dbc3662f300d6dd39e29d58c74f7a099ac647b183f1e9",
+      "bytes": 1232
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-qui-vivis-short-conclusion.toml": {
+      "sha256": "3753d5d4721da7b22edd9652c31eb7578b22afa17e9880c5c478286aa2096c31",
+      "bytes": 1284
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/artifacts/domine-qui-dixisti-study-en/text.tsv": {
+      "sha256": "dd4e3f58bf11acba57c5247b582cc112728bf3d0b74ab9eef907e8a5b9ecf859",
+      "bytes": 1108
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/edition.toml": {
+      "sha256": "e5adf166015ca1558db3908b98a274b97e3ad6ff1c4c3b12c5491d9aee243734",
+      "bytes": 914
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/work.toml": {
+      "sha256": "671f06e3165103bcd79493d5e6575e520a677618af5eb19bd662b192e8d2b5ce",
+      "bytes": 966
+    }
+  },
+  "all_ten_paths_preserved": true,
+  "all_English_and_old_Latin_TSV_bytes_conserved": true,
+  "historical_PDF_bytes_conserved": true,
+  "source_revision_operations_conserved": true,
+  "source_choices_and_complete_short_conclusion_conserved": true,
+  "actors_and_turns_basis_conserved": true,
+  "literal_reading_note_conserved": true,
+  "Latin_exact_source_gap_retained": true,
+  "no_human_review_or_liturgical_approval_claim": true,
+  "candidate_only_metadata_changes": [
+    "state",
+    "english.note adoption citation",
+    "rights_recommendation canonical path and recommendation-only basis",
+    "root_finite_adoption",
+    "independent_source_and_English_review",
+    "files single metadata hash/size"
+  ],
+  "canonical_files_mutated": false
+}

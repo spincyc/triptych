@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.visitation-five-chants-20261029"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers only its bounded transcription layout and normalization under CC BY4.0. Every underlying Latin word is independently witnessed in the1922 public-domain Mame printing; no exclusive right in those words or blanket target-edition clearance is claimed."
+rights_jurisdiction = "United States"
+provenance = "Complete five-chant page-image collation on2026-10-29. Both independently rehashed full PDFs rendered and read at200 and400dpi. No text layer supplied a reading."
+retrieved = "2026-10-29"
+sha256 = "68feee0ed77ad5c2695ab4498b3b110142f5ea251f91afaab8b3cbece361963c"
+byte_size = 680
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/visitation-five-chants-20261029/latin.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.visitation-five-chants-20261029-pages", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join printed line wraps; remove stress accents; expand ae ligatures; render printed versicle glyph as V.; use target capitalization and punctuation; normalize target consonantal i to calendar j; use target Genetrix for Mame Genitrix and target Alleluia for Mame Alleluja, as received spellings. No word, clause or verse added or omitted."
+indexable = true
+encoding = "utf-8"
+notes = "Exactly one LF-terminated body per line in order Introit,Gradual,Alleluia,Offertory,Communion. Introit includes its source-printed Psalm verse and Gloria Patri cue; no expansion or adjacent oration imported. Original project English is a separate candidate, not this source artifact."

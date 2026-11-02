@@ -1,0 +1,201 @@
+{
+  "schema": "triptych-1962-Joseph-variation-additive-review/v1",
+  "recorded_at_utc": "2026-10-30T19:53:05.198136+00:00",
+  "disposition": "ACCEPT",
+  "scope": "Minimal factual/source-citation/schema acceptance of the exact two-field v3 catalog addendum. It does not adopt canonical changes or create publication permission, body/source/grade promotion, new book identity, schema/runtime authority or an exact physical-impression date.",
+  "candidate": {
+    "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/CANDIDATE-v3.json",
+    "sha256": "b74b6783efda911a0d5ef6644412b198f435e1c9e4c5192e77d13a6968cc6e9d",
+    "bytes": 5027
+  },
+  "base_catalog": {
+    "path": ".scratch/missal-version-nomenclature-20261030/implementation/reconcile-next-english-v1/postimages/src/sources/calendars/recensions.json",
+    "sha256": "ecbd62f8a76ab6876a135393c73baee41be921da5d004543cab4748ef161b649",
+    "bytes": 42220
+  },
+  "accepted_catalog": {
+    "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/proposed-recensions-qualification-v3.json",
+    "sha256": "2e416361e414b5648a17f6aa96c72d8050a00f85097f2cb8c9487a5c93d237a7",
+    "bytes": 42615
+  },
+  "accepted_additive_patch": {
+    "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/PROPOSED-CATALOG-QUALIFICATION-v3.patch",
+    "sha256": "2d961e9a951aefbfba4b24ab68795a966dbbd2abfaf2be51c2d81bd1c6666df2",
+    "bytes": 1453
+  },
+  "canonical_attestation": {
+    "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/CANONICAL-ATTESTATION.json",
+    "sha256": "47c79c9cb55777b3aabb4d68153c6c1f3b5a32a41042feca514bc92374449310",
+    "bytes": 2984
+  },
+  "rendered_page_manifest": {
+    "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/RENDERED-PAGES.json",
+    "sha256": "7dfb8218db65de790df1026f546d2d63c658855733c642534f97b7b8fab56c73",
+    "bytes": 2028
+  },
+  "source_image_review": {
+    "primary_source": {
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-54-1962-ocr.pdf",
+      "pdf": {
+        "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/AAS-54-1962-ocr.pdf",
+        "sha256": "fb64f5f96696b5dd2aa6dce86dfc6e6437246732c303824d659277cf88646208",
+        "bytes": 4176239
+      },
+      "printed_and_artifact_page": 873,
+      "raster": {
+        "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/aas54-ap873.png",
+        "sha256": "4bded649ab4a57d4449414ffca3fe38d0d09efad8b24fcd945c977be3fb2c1fe",
+        "bytes": 213718
+      },
+      "reading_grade": "complete page image read visually"
+    },
+    "CMAA_controller_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+    "CMAA_pages": [
+      {
+        "artifact_page": 2,
+        "raster": {
+          "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/cmaa1962-ap2.png",
+          "sha256": "4275337d271bcb0122f57df7a69e0a0d3e60f1e8ecb33dfc73accf9eda60d82a",
+          "bytes": 99221
+        },
+        "finding": "The complete23 June1962 decree identifies the Vatican printing as the typical edition."
+      },
+      {
+        "artifact_page": 383,
+        "printed_page": 302,
+        "raster": {
+          "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/cmaa1962-ap383.png",
+          "sha256": "d5774329f0da795524fee3ea79dc769d5b1c65b7c2685b72647afd0d8aec3397",
+          "bytes": 150791
+        },
+        "finding": "The common Communicantes visibly contains the Joseph clause and refers to the proper forms."
+      },
+      {
+        "artifact_page": 386,
+        "printed_page": 305,
+        "raster": {
+          "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/cmaa1962-ap386.png",
+          "sha256": "a16da7c622628f29c9653535ccf1e6f17764a50f91580a5270dd84f13af577e8",
+          "bytes": 201310
+        },
+        "finding": "The dagger-led shared continuation visibly starts with the Joseph clause. Its text remains separate from the neighboring Hanc igitur and Quam oblationem."
+      }
+    ],
+    "all_supplied_full_PDF_raster_text_hashes_verified": true
+  },
+  "accepted_facts": {
+    "act_name": "Novis hisce temporibus (incipit), decree on inserting Saint Joseph’s name into the Canon",
+    "decree_date": "1962-11-13",
+    "effective_date": "1962-12-08",
+    "AAS_issue_date": "1962-12-28",
+    "date_basis": "The act date appears at the decree’s close; its body directs observance from8 December, and the page footer supplies28 December1962 for the issue. These dates remain distinct.",
+    "special_formula_scope": "The decree expressly extends the insertion to days with a prescribed special Communicantes formula. It is not limited to the common formula.",
+    "edition_decision": "Retain roman-la-1962-typica and the1962 typical display. The June edition declaration and this later Canon insertion are separate source facts; the later insertion is qualified in the reader correspondence. No new typical edition is identified by the reviewed decree.",
+    "impression_limit": "Presence of the June decree and Joseph insertion establishes represented textual content, not the exact physical-impression date of the held CMAA witness. No universal printing or exhaustive applied-act claim is accepted."
+  },
+  "existing_reader_attestation": {
+    "input_pins": [
+      {
+        "path": "src/web/data/structure/ordinary/roman-1962.json",
+        "sha256": "6b000650b33634c49d8384c75b45661bd539a9c7e2b8f4b65f46aa65713f04ec",
+        "bytes": 810762
+      },
+      {
+        "path": "src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+        "sha256": "3ee41481f416ab428d1f0a421726580a2f536c0f97fabfb01af340d227d44b04",
+        "bytes": 451141
+      },
+      {
+        "path": "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+        "sha256": "55080a0b002e6045387408025b5fd5e3a3c7b10b545fa5593e097d7ab36146c5",
+        "bytes": 58757
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/canon-communicantes.toml",
+        "sha256": "7fc6fd72511e735a8d74294f35b9cd279e98412e75e9af7941cbcd6ae64adff1",
+        "bytes": 1629
+      },
+      {
+        "path": "src/sources/works/triptych/roman-1962-ordinary-editorial-projection/editions/2026-10-19-editorial-projection/artifacts/canon-proper-forms-651e3482/artifact.toml",
+        "sha256": "d9e82451f237f00809f6903185a9361e5aeb5df832d088dba6ff0533b362e389",
+        "bytes": 5513
+      }
+    ],
+    "element_key": "canon/communicantes-continuatio",
+    "six_unchanged_source_declared_options": [
+      "common",
+      "nativitate",
+      "epiphania",
+      "pascha",
+      "ascensione",
+      "pentecoste"
+    ],
+    "published_translation_pins": [
+      {
+        "lang": "en",
+        "text_sha256": "4b28d83343a642023440ed0fd93d4a8274db943e30e30a2a284c031fb2ac4b14",
+        "source_id": "edition.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029",
+        "rights": "project-created",
+        "relation": "own"
+      },
+      {
+        "lang": "la",
+        "text_sha256": "70fd52c7ec13c0f96fc81ec2ae5ffa0f331b8fd8dc080394c916a41365222591",
+        "source_id": "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19",
+        "rights": "project-created",
+        "relation": "antecedent"
+      }
+    ],
+    "finding": "The existing Latin shared continuation and separately attributed project-study English both contain the Joseph clause, with exact published body hashes matching CANONICAL-ATTESTATION. Source, artifact, rights, collation and appointment records are unedited. Their existing scope is observed, not rejudged or enlarged."
+  },
+  "exact_metadata_boundary": {
+    "changed_fields": [
+      "/reader_views/0/evidence_refs",
+      "/reader_views/0/reader_version/correspondence"
+    ],
+    "all_other_catalog_objects_exact": true,
+    "all_book_fields_and_keys_exact": true,
+    "reader_id": "roman-1962",
+    "book_id": "roman-la-1962-typica",
+    "display": "Roman Missal — 1962 typical edition",
+    "no_new_applied_variations_field": true,
+    "runtime_or_schema_change": false
+  },
+  "validation": {
+    "exact_existing_reference_API": "PASS, zero diagnostics",
+    "normal_catalog_validator": "PASS, zero diagnostics",
+    "strict_additive_patch_replay": "PASS, exactecbd preimage to2e416 postimage without offset/fuzz",
+    "overlay": "Four read-only symlinks under this review directory; no source/private body copies or canonical writes.",
+    "evidence": {
+      "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/review/schema-and-exact-patch-v3.json",
+      "sha256": "b57a32c96162cef9bea08194e5949f596286836d257caf5fb906069e4d56a203",
+      "bytes": 905
+    }
+  },
+  "v2_finding": {
+    "status": "CLOSED IN V3",
+    "finding": "The external URL in evidence_refs violated the existing repository-relative reference contract. V3 removes only that URL item; the official URL/full-PDF hash/locus remain in the factual audit, the exact AAS citation remains visible and the existing source passage remains a valid reference.",
+    "v2_candidate": {
+      "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/CANDIDATE-v2.json",
+      "sha256": "d61df01d8832c282bb2da5853232275b64c5a862dafb4529e0306841cba420c7",
+      "bytes": 5012
+    },
+    "preserved_refusal_probe": {
+      "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/review/schema-reference-probe-v2.json",
+      "sha256": "c268508e914511099119492299720aeb81fd966f1820a28848a9298254b05b93",
+      "bytes": 477
+    },
+    "v1_and_v2_applied": false
+  },
+  "source_fixture_followup": {
+    "new_catalog_post_sha256": "2e416361e414b5648a17f6aa96c72d8050a00f85097f2cb8c9487a5c93d237a7",
+    "prior_sealed53_catalog_post_sha256": "ecbd62f8a76ab6876a135393c73baee41be921da5d004543cab4748ef161b649",
+    "requirement": "Root’s next exact naming source-pin/metadata successor must bind the actual accepted v3 catalog postimage and this additive review. Old53/READY/receipt hashes do not cover this new metadata. Keep all prior records immutable and do not present unadopted v1/v2 proposals as accepted."
+  },
+  "limits": [
+    "No canonical/index/ref/network writes, source acquisition or new legal survey were performed. The retained official-URL PDF and held CMAA controller were read locally and rehashed; no new HTTP retrieval is claimed.",
+    "No source body, translation, permission, grade, appointment, schema, book key or runtime changes are approved by this receipt.",
+    "No render/generation/browser/release freshness or whole-source-epoch acceptance is claimed; those remain root integration followup.",
+    "No private PDF or raster copies were created. Only the existing four scratch page images were viewed and this assigned review directory was written."
+  ]
+}

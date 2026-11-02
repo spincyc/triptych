@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-29"
+id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.visitation-five-chants-20261029-introit"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.visitation-five-chants-20261029-pages"
+artifact_sha256 = "c419453fd003b68d3623fa62fed41c8fbcf944523c9364eb41496a272b11572c"
+locus = "Mame Tours1922, Visitation2July, printed p.644, original PDFp.758, retained excerptp.1; complete Introit."
+artifact_page_ranges = [[1, 1]]
+context = "Independent public-domain historical whole-chant witness, read from page images at200/400dpi. Source owns its spelling; projected target normalization is separately declared."
+notes = "Normalized source transcription joins line wraps, removes stress accents and expands ligatures; it is not a diplomatic facsimile transcription: Salve, sancta parens, enixa puerpera regem: qui caelum, terramque regit in saecula saeculorum. Eructavit cor meum verbum bonum: dico ego opera mea regi. V. Gloria Patri. Differences: Mame prints regem/regi in lower case; target prints Regem/Regi. Mame places a comma after caelum; target does not."

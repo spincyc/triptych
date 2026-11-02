@@ -430,35 +430,28 @@ class GateTests(unittest.TestCase):
         )
 
     def test_deployment_source_gate_checks_every_generated_missal_layer(self) -> None:
-        """Coverage, wherever the gate keeps it.
-
-        Each layer's check must be invoked by some recipe `make
-        check-deployment-sources` reaches --- the gate's own, a member target,
-        or a member of a member. What it no longer asserts is the order of the
-        seven, because targets the gate runs concurrently have none; ordering
-        only ever bought legible failure, and `check-act-history` still holds
-        that position as the gate's first plain prerequisite, asserted below.
-        """
+        """Publication authenticates projections; research replays them."""
         text = (ROOT / "Makefile").read_text(encoding="utf-8")
         heading = re.search(r"\ncheck-deployment-sources:([^\n]*)\n", text)
         self.assertIsNotNone(heading, "check-deployment-sources has no target")
-        self.assertIn("check-act-history", heading.group(1))
-        self.assertRegex(
-            text,
-            r"\ncheck-act-history:\n\t@\$\(PYTHON\) tools/tpt act-history structure --check\n",
-        )
+        self.assertIn("check-act-history-receipt", heading.group(1))
         reached = make_reached("check-deployment-sources", text)
-        self.assertIn(
-            "check-deployment-sources", reached, "the gate resolved to no rule at all"
-        )
-        self.assertIn(
-            "check-act-history",
-            reached,
-            "prerequisites did not resolve, so this searched the gate's own recipe "
-            "and nothing else",
-        )
+        required = {"check-act-history-receipt", "check-document-schemas",
+                    "check-artifact-delivery", "check-source-graph",
+                    "check-source-projection", "check-curriculum-source-rights",
+                    "check-document-catalogue"}
+        self.assertEqual(required - reached.keys(), set())
+        self.assertNotIn("check-act-history", reached)
+        self.assertNotIn("check-source-evidence", reached)
+        self.assertNotIn("check-curriculum-rights", reached)
         body = "\n".join(recipe for _, recipe in sorted(reached.items()))
-        for command in MISSAL_LAYER_CHECKS:
+        for command in (
+            "scripts/_act_history_projection_receipt.py check",
+            "$(DOCUMENT_SCHEMA_TOOL) check", "$(ARTIFACT_STORE_TOOL) check",
+            "$(SOURCE_LIBRARY_TOOL) validate",
+            "$(SOURCE_READER_TOOL) structure --check-receipt",
+            *MISSAL_LAYER_CHECKS[2:],
+        ):
             with self.subTest(command=command):
                 self.assertIn(
                     command,
@@ -466,6 +459,24 @@ class GateTests(unittest.TestCase):
                     "no recipe the deployment gate reaches invokes this; searched "
                     f"{', '.join(sorted(reached))}",
                 )
+
+    def test_check_all_is_source_only_and_research_keeps_full_replay(self) -> None:
+        text = (ROOT / "Makefile").read_text(encoding="utf-8")
+        reached = make_reached("check-all", text)
+        self.assertEqual(
+            {"check", "check-examples", "check-expensive", "check-research-sources",
+             "check-source-evidence", "check-source-reader", "check-act-history"}
+            - reached.keys(), set(),
+        )
+        self.assertFalse({"check-installed", "install", "install-all", "pdf", "all"} & reached.keys())
+        research = "\n".join(make_reached("check-research-sources", text).values())
+        for command in ("$(SOURCE_LIBRARY_TOOL) validate --full-evidence",
+                        "$(SOURCE_READER_TOOL) check",
+                        "$(SOURCE_READER_TOOL) structure --check",
+                        "tools/tpt act-history structure --check"):
+            self.assertIn(command, research)
+        installed = make_reached("check-installed", text)
+        self.assertIn("install-all", installed)
 
     def test_the_gate_resolution_follows_the_goal_and_not_the_whole_makefile(self) -> None:
         """Both halves of what the assertion above rests on, on a fixture.
@@ -566,10 +577,8 @@ class GateTests(unittest.TestCase):
         make_targets = set(
             re.findall(r"\brun:\s+make\s+([a-z][a-z0-9-]*)", workflow)
         )
-        self.assertEqual(
-            {"check-deployment-sources", "public-site"} - make_targets,
-            set(),
-        )
+        self.assertIn("public-site", make_targets)
+        self.assertIn("check-deployment-sources", make_reached("public-site", makefile))
         tool_variables = dict(
             re.findall(
                 r"^([A-Z_]+_TOOL)\s*:=\s*tools/tpt\s+([a-z][a-z0-9-]*)",

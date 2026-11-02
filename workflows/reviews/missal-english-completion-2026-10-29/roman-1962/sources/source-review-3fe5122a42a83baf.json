@@ -1,0 +1,134 @@
+{
+  "schema": "triptych-independent-source-review/v1",
+  "reviewed_on": "2026-10-29",
+  "disposition": "accept-two-exact-petition-candidates-and-study-English; Collect-source-facts-only",
+  "candidate_packet_sha256": "6456a237fb6ccba86552863f2f8817ab525af130c63b2fef8cfd5b7a885a3dab",
+  "scope": "Source identity, exactword relation, transcription, original studyEnglish fidelity and bounded source-record mechanics. No installation/publication/integratedreader acceptance.",
+  "candidates": [
+    {
+      "target": [
+        "chrism-mass",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "canonical_target_latin_sha256": "100ae514cc635ab67fa0b2f223954bbb9053f77c01dead58eb11309c16815d33",
+      "study_english_sha256": "349d86f852ad183d4454042e8c27be173e5593acfa2f9af688ac6a8c44f0411a",
+      "source_artifact_sha256": "33c7ecdffc2d25aec50dbf79361a4bf7fb092a25086f7e3f8ac71f7fa08de654",
+      "disposition": "sourcefacts and studyEnglishfidelity accepted; whole-body lexical identity not established; publicationqualification remains parent",
+      "judgment": "Wilsonmain ministerium/merito, Wilsonapparatus ministerio and target ministerio/meritis accurately disclosed. Targetopening/sourceending punctuation are separately correct; no unqualified wholeCollect publicdomain clearance."
+    },
+    {
+      "target": [
+        "chrism-mass",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "canonical_target_latin_sha256": "fb99a58ece500857741cb5fa45b1c3249b9952c9b7d6383ab09a493f2b5a88dd",
+      "study_english_sha256": "f729420445bc2e30435e1fc9e1e5bb880fa771b27f1d807b94b83eebffd3569b",
+      "source_artifact_sha256": "33c7ecdffc2d25aec50dbf79361a4bf7fb092a25086f7e3f8ac71f7fa08de654",
+      "disposition": "accepted bounded exactpetition source candidate and original studyEnglish fidelity",
+      "judgment": "Entire petition words agree in both actual image witnesses. Historical Per. and actual targetconclusion lengths remain separately explicit. English faithfully renders petition and targetshort conclusion."
+    },
+    {
+      "target": [
+        "chrism-mass",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "canonical_target_latin_sha256": "d72f8da2e384f21cc70b42ebb72eef71e31b07e4ec7bc6d37e5186011da64332",
+      "study_english_sha256": "cb4551498a897658bf2a7fec94ccd3f9e691f3f57a360ac859ba78ecdfc05772",
+      "source_artifact_sha256": "33c7ecdffc2d25aec50dbf79361a4bf7fb092a25086f7e3f8ac71f7fa08de654",
+      "disposition": "accepted bounded exactpetition source candidate and original studyEnglish fidelity",
+      "judgment": "Entire petition words agree in both actual image witnesses. Historical Per. and actual targetconclusion lengths remain separately explicit. English faithfully renders petition and targetshort conclusion."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C1",
+      "state": "resolved",
+      "finding": "WilsonCollect terminal augeatur comma initially transcribed as period. Corrected in immutable sourceTSV33c7ecdf."
+    },
+    {
+      "id": "C2",
+      "state": "resolved",
+      "finding": "Postcommunion source locus initially mislabeled sourcePostcommunion. Both records now name actual AdPopulum after distinct ConcedePostcommun prayer."
+    },
+    {
+      "id": "C3",
+      "state": "resolved",
+      "finding": "Source-comma correction spilled into Collect target_text, breaking targetSHA. Actual targetperiod restored with correction preserved."
+    },
+    {
+      "id": "C4",
+      "state": "resolved",
+      "finding": "Indexable Wilsoncheckedartifact lacked mandatoryencodingutf-8. Added; focused owning validator passes."
+    },
+    {
+      "id": "C5",
+      "state": "resolved",
+      "finding": "TargetCollect opening Domine, Deus comma initially omitted. Source-independent target corrected to SHA100ae514."
+    }
+  ],
+  "unresolved_blockers_for_two_exact_candidates": [],
+  "checks": {
+    "all15proposed_file_pins": "pass",
+    "TOMLparses": "pass",
+    "threeartifact_hash_size_encodingjoins": "pass",
+    "allthreecandidate_target_and_EnglishSHAjoins": "pass",
+    "sourceparentSHA": "006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc",
+    "targetparentSHA": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+    "independentfour_raster_reproduction": "My own exactparentextracts through registeredpdf-review produce PNGhashes IDENTICAL to allfour inspected packet2200pixel rasters.",
+    "owning_source_library": "PASS15records/zeroerrors for source11files plus existing identity/parentclosure; excludesfour projectprojectionfiles awaiting parenteditionowner.",
+    "Englishfidelity": "No remaining material fidelity finding for the three explicit study renderings."
+  },
+  "captures": [
+    {
+      "file": ".scratch/roman-english-completion-20261029/temporal/source-chrism-162-400.png",
+      "sha256": "9345435e7d1dad0b44fd14704f2ed875006c073f0af3a3eb7ee7b2c01eb18810",
+      "dimensions": [
+        2288,
+        3682
+      ],
+      "reading": "Whole selected prayers and adjacent source/target headings inspected. Filename supplied by primary reader; no independent DPI assertion."
+    },
+    {
+      "file": ".scratch/roman-english-completion-20261029/temporal/source-chrism-166-400.png",
+      "sha256": "91e8e2b309e9bd74cf0f0fb6a31c6a1a82bf2b44d8d408ae4406ed77bb695bf7",
+      "dimensions": [
+        2288,
+        3682
+      ],
+      "reading": "Whole selected prayers and adjacent source/target headings inspected. Filename supplied by primary reader; no independent DPI assertion."
+    },
+    {
+      "file": ".scratch/roman-english-completion-20261029/temporal/target-chrism-233-400.png",
+      "sha256": "77302ed7238beb136b5dfd32ac73e7496c7f8b7859f81199aa306cac2f5a5479",
+      "dimensions": [
+        2062,
+        3062
+      ],
+      "reading": "Whole selected prayers and adjacent source/target headings inspected. Filename supplied by primary reader; no independent DPI assertion."
+    },
+    {
+      "file": ".scratch/roman-english-completion-20261029/temporal/target-chrism-234-400.png",
+      "sha256": "efb23c61207bd7c7deac9eb4c826abd97c1f7185606e47951b8c63906dcdd572",
+      "dimensions": [
+        2028,
+        3045
+      ],
+      "reading": "Whole selected prayers and adjacent source/target headings inspected. Filename supplied by primary reader; no independent DPI assertion."
+    }
+  ],
+  "remaining_integration_dependencies": [
+    "Parent must register2026-10-29 projection edition before four projectprojection files join full sourcegraph.",
+    "Run integrated source/calendar/translation/generateddata/affected reader gates after installation.",
+    "Keep original studyEnglish distinct from approved liturgical translation and received historicalEnglish.",
+    "Collect requires separate exactvariant/limitedoriginality publication decision."
+  ]
+}

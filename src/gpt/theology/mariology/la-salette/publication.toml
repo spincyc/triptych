@@ -1,0 +1,89 @@
+schema_version = 1
+id = "gpt/theology/mariology/la-salette"
+kind = "marian-apparition"
+profile = "guidance/theology/mariology.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/theology/mariology/la-salette"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "corpus-status"
+source = "research/corpus-status.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "exposition"
+source = "sections/00-method-status.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/10-context-witnesses-sources.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/20-event-public-message.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/30-investigation-judgments.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/40-symbols-theology.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/50-secrets-corpus.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/55-roman-discipline.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/60-witness-lives-controversy.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/70-reception.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/80-pastoral-synthesis.tex"
+
+[[structure]]
+role = "timeline"
+source = "sections/95-timeline.tex"
+
+[[structure]]
+role = "references"
+source = "sections/99-references.tex"

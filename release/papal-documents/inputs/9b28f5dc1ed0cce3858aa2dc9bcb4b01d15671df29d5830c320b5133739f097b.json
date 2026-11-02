@@ -1,0 +1,80 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra.2026-10-26-vatican-la.latin-text-bcaa8fb06277",
+      "body_tex": "1929-12-20-papal-pius-xi-hf-p-xi-enc-19291220-mens-nostra-3892b8f3-la/1929-12-20-papal-pius-xi-hf-p-xi-enc-19291220-mens-nostra-3892b8f3-la.body.tex",
+      "changed": true,
+      "id": "papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra",
+      "keep_with_next": [
+        1,
+        2,
+        4,
+        6,
+        9,
+        11,
+        12,
+        14,
+        18,
+        20,
+        21,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        41,
+        43,
+        45,
+        47,
+        49,
+        51,
+        54,
+        56
+      ],
+      "language": "la",
+      "pages": 8,
+      "pdf": "1929-12-20-papal-pius-xi-hf-p-xi-enc-19291220-mens-nostra-3892b8f3-la/1929-12-20-papal-pius-xi-hf-p-xi-enc-19291220-mens-nostra-3892b8f3-la.pdf",
+      "pdf_sha256": "710fac0836118e1f851509f306f763411aa5d0ac60718ac938aa639933f5b8d4",
+      "render_revision": "2026-10-26T16:42:56Z",
+      "source_sha256": "bcaa8fb06277b1451d81ebc007105846975e1ad9515dae915f2370773bfb3d2f",
+      "status": "compiled",
+      "stem": "1929-12-20-papal-pius-xi-hf-p-xi-enc-19291220-mens-nostra-3892b8f3-la",
+      "tex": "1929-12-20-papal-pius-xi-hf-p-xi-enc-19291220-mens-nostra-3892b8f3-la/1929-12-20-papal-pius-xi-hf-p-xi-enc-19291220-mens-nostra-3892b8f3-la.tex",
+      "text_fidelity": {
+        "method": "pdf-raw-whitespace-soft-hyphen-nfkc-v2",
+        "pages": 8,
+        "source_characters": 35673,
+        "source_first_page": 1,
+        "source_last_page": 8,
+        "source_normalized_characters": 30842,
+        "status": "pass"
+      },
+      "warnings": []
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 1,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "23b534b636c5c428cd7a6392d8f9f7d782279bf502f672c73b908554a7dae8e4",
+  "options": {
+    "automatic_hyphenation": false,
+    "body_alignment": "ragged-right",
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-26T16:42:56Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

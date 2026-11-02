@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome.native-page-extraction-recipe"
+edition_id = "edition.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome"
+artifact_type = "project-created-extraction-recipe"
+media_type = "text/x-python"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Project-created mechanical extraction code, MIT license; the script does not grant rights in input source material."
+retrieved = "2026-10-26"
+sha256 = "85105941ec7bfd4afdc69894045a86e17e99ab473dd4d113583167c7974bc025"
+byte_size = 6091
+path = "src/sources/works/papal-collections/pii-ix-acta-pars-prima-volume-3/editions/1864-rome/artifacts/native-page-extraction-recipe/extract-native-pages.py"
+indexable = false
+provenance = "Deterministic recipe pins the full acquired PDF hash and the exact source page interval, rejects unexpected native-image counts/dimensions, preserves historical bitmaps, and writes a minimal lossless PDF and pixel-hash receipt. Requires Python standard library and Poppler pdfimages."

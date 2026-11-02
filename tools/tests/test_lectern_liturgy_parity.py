@@ -2,8 +2,11 @@
 from __future__ import annotations
 
 import importlib.util
+import asyncio
+import json
 import re
 import shutil
+import subprocess
 import sys
 import unittest
 from pathlib import Path
@@ -184,6 +187,71 @@ class LiturgyParityTests(unittest.TestCase):
 
 @unittest.skipUnless(importlib.util.find_spec("textual") and shutil.which("node"), "Textual and node are required")
 class SurfaceParityTests(unittest.IsolatedAsyncioTestCase):
+    async def test_day_can_reselect_source_mass_and_forms_with_cli_event_parity(self) -> None:
+        from lectern.app import TriptychApp
+        from lectern.dialogs import Pick
+        from lectern.snapshot import _settle
+        from lectern.surfaces.day import Day
+        from textual.widgets import OptionList
+
+        cases = [
+            ("postconciliar", "2026-10-19", "calendar-formulary",
+             "saint-paul-cross-priest", "ot-29-monday", None, "pentecost"),
+            ("roman-1962", "2026-12-25", "proper-form",
+             "night", "day", "nativitate-domini-octave", "first"),
+            ("roman-1962", "2026-11-02", "proper-form",
+             "first", "third", "commemoratione-omnium-fidelium-defunctorum", "night"),
+        ]
+        for calendar, date, kind, first, second, mass, foreign in cases:
+            with self.subTest(calendar=calendar, date=date):
+                app = TriptychApp(start="day", intent={"calendar": calendar, "date": date,
+                                      "ordinary": True, "ordinaryLang": "la", "orations": "la"})
+                async with app.run_test(size=(120, 40)) as pilot:
+                    await _settle(app, pilot)
+                    day = app.query_one(Day)
+                    for target in (first, second):
+                        await pilot.press("s")
+                        await _settle(app, pilot)
+                        self.assertIsInstance(app.screen, Pick)
+                        offered = [(index, value) for index, (value, _) in enumerate(app.screen.options)
+                                   if value[2].startswith(kind)]
+                        self.assertNotIn(foreign, [value[3] for _, value in offered])
+                        matches = [index for index, value in offered if value[3] == target]
+                        self.assertEqual(len(matches), 1, (target, offered))
+                        app.screen.query_one(OptionList).highlighted = matches[0]
+                        await pilot.press("enter")
+                        await _settle(app, pilot)
+                        row = day.views[calendar]["rows"][0]
+                        self.assertNotIn("failed", row)
+                        wanted_mass = mass or target
+                        wanted_form = target if mass else "main"
+                        self.assertEqual(Day.resolved_key(row), wanted_mass)
+                        self.assertEqual(row["resolved"].get("form") or "main", wanted_form)
+                        direct = bridge.call("liturgy", "day", calendar, date, day.options_for(calendar))
+                        events = [(event["id"], event["kind"]) for event in row["events"]]
+                        self.assertEqual(events, [(event["id"], event["kind"])
+                                                  for event in direct["rows"][0]["events"]])
+                        arguments = [sys.executable, str(ROOT / "tools/mass-today"), "show",
+                                     "--calendar", calendar, "--date", date,
+                                     "--expanded", "--lang", "la", "--format", "json"]
+                        if mass:
+                            arguments.extend(["--form", target])
+                        else:
+                            arguments.extend(["--mass", target])
+                        done = await asyncio.to_thread(subprocess.run, arguments, cwd=ROOT,
+                                                       capture_output=True, text=True, timeout=90)
+                        self.assertEqual(done.returncode, 0, done.stderr)
+                        selected = next(item for item in json.loads(done.stdout)["days"][0]["masses"]
+                                        if item["key"] == wanted_mass)
+                        self.assertEqual(selected["selected_form"], wanted_form)
+                        self.assertEqual(events, [(event["id"], event["kind"])
+                                                  for event in selected["expanded_events"]])
+                    invalid = dict(day.options_for(calendar))
+                    invalid["form" if mass else "mass"] = foreign
+                    rejected = bridge.call("liturgy", "day", calendar, date, invalid)["rows"][0]
+                    self.assertIn("failed", rejected)
+                    self.assertNotIn("events", rejected)
+
     async def test_day_compare_waits_for_layout_and_keeps_the_corresponding_unit(self) -> None:
         from lectern.app import TriptychApp
         from lectern.snapshot import _settle

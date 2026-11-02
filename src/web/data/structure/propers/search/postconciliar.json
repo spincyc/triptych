@@ -598,13 +598,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 2,
+       "available": 4,
        "inapplicable": 0,
-       "not-publishable": 2,
+       "not-publishable": 0,
        "not-sourced": 2,
        "unresolved": 0
       },
-      "available": 2,
+      "available": 4,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 6,
@@ -659,8 +659,13 @@
    "season": null,
    "witnesses": [
     {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
+     "lang": "en"
+    },
+    {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -731,13 +736,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 2,
+       "available": 3,
        "inapplicable": 0,
        "not-publishable": 1,
-       "not-sourced": 1,
+       "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 2,
+      "available": 3,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 4,
@@ -793,7 +798,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -876,13 +881,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 2,
+       "available": 3,
        "inapplicable": 0,
-       "not-publishable": 2,
+       "not-publishable": 1,
        "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 2,
+      "available": 3,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 5,
@@ -931,8 +936,13 @@
    "season": null,
    "witnesses": [
     {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
+     "lang": "en"
+    },
+    {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -1003,13 +1013,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 3,
+       "available": 6,
        "inapplicable": 0,
-       "not-publishable": 2,
-       "not-sourced": 1,
+       "not-publishable": 0,
+       "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 3,
+      "available": 6,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 6,
@@ -1064,8 +1074,13 @@
    "season": null,
    "witnesses": [
     {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
+     "lang": "en"
+    },
+    {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -1422,13 +1437,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
        "not-publishable": 0,
-       "not-sourced": 1,
+       "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 1,
@@ -1451,7 +1466,13 @@
    "kind": "marian",
    "name": "Mary, the Holy Mother of God",
    "season": null,
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -2041,27 +2062,27 @@
        "inapplicable": 0,
        "not-publishable": 0,
        "not-sourced": 0,
-       "unresolved": 1
+       "unresolved": 3
       },
       "available": 0,
       "exact_target": 0,
       "lang": "la",
-      "occurrences": 1,
+      "occurrences": 3,
       "scripture_occurrences": 6
      },
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
        "not-publishable": 1,
-       "not-sourced": 0,
+       "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
-      "occurrences": 1,
+      "occurrences": 3,
       "scripture_occurrences": 6
      }
     ]
@@ -2069,12 +2090,25 @@
    "fixed_date": "09-08",
    "form_id": "main",
    "form_name": null,
-   "incipits": [],
+   "incipits": [
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "slot": "Prayer over the Offerings",
+     "text": "Unigeniti tui, Domine, nobis succurrat humanitas"
+    }
+   ],
    "key": "nativity-blessed-virgin-mary",
    "kind": "marian",
    "name": "The Nativity of the Blessed Virgin Mary",
    "season": null,
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -5071,12 +5105,12 @@
        "inapplicable": 0,
        "not-publishable": 0,
        "not-sourced": 0,
-       "unresolved": 0
+       "unresolved": 1
       },
       "available": 0,
       "exact_target": 0,
       "lang": "la",
-      "occurrences": 0,
+      "occurrences": 1,
       "scripture_occurrences": 4
      },
      {
@@ -5085,13 +5119,13 @@
        "available": 0,
        "inapplicable": 0,
        "not-publishable": 0,
-       "not-sourced": 0,
+       "not-sourced": 1,
        "unresolved": 0
       },
       "available": 0,
       "exact_target": 0,
       "lang": "en",
-      "occurrences": 0,
+      "occurrences": 1,
       "scripture_occurrences": 4
      }
     ]
@@ -9197,12 +9231,12 @@
        "inapplicable": 0,
        "not-publishable": 0,
        "not-sourced": 0,
-       "unresolved": 0
+       "unresolved": 1
       },
       "available": 0,
       "exact_target": 0,
       "lang": "la",
-      "occurrences": 0,
+      "occurrences": 1,
       "scripture_occurrences": 4
      },
      {
@@ -9211,13 +9245,13 @@
        "available": 0,
        "inapplicable": 0,
        "not-publishable": 0,
-       "not-sourced": 0,
+       "not-sourced": 1,
        "unresolved": 0
       },
       "available": 0,
       "exact_target": 0,
       "lang": "en",
-      "occurrences": 0,
+      "occurrences": 1,
       "scripture_occurrences": 4
      }
     ]
@@ -9693,13 +9727,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
        "not-publishable": 0,
-       "not-sourced": 1,
+       "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 1,
@@ -9715,7 +9749,13 @@
    "kind": "sanctoral",
    "name": "Saint Lawrence of Brindisi, Priest and Doctor of the Church",
    "season": null,
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+     "label": "Historical English: Bute, Roman Breviary (1908)",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -10616,27 +10656,27 @@
        "inapplicable": 0,
        "not-publishable": 0,
        "not-sourced": 0,
-       "unresolved": 0
+       "unresolved": 1
       },
       "available": 0,
       "exact_target": 0,
       "lang": "la",
-      "occurrences": 0,
+      "occurrences": 1,
       "scripture_occurrences": 4
      },
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
        "not-publishable": 0,
        "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
-      "occurrences": 0,
+      "occurrences": 1,
       "scripture_occurrences": 4
      }
     ]
@@ -10649,7 +10689,13 @@
    "kind": "sanctoral",
    "name": "The Dedication of the Basilica of Saint Mary Major",
    "season": null,
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "edition.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915",
+     "label": "Historical English: Little Office (Benziger, 1915)",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -12525,13 +12571,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
        "not-publishable": 0,
-       "not-sourced": 1,
+       "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 1,
@@ -12547,7 +12593,13 @@
    "kind": "sanctoral",
    "name": "Saint John Chrysostom, Bishop and Doctor of the Church",
    "season": null,
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+     "label": "Historical English: Bute, Roman Breviary (1908)",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -16184,13 +16236,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
        "not-publishable": 0,
-       "not-sourced": 1,
+       "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 1,
@@ -16206,7 +16258,13 @@
    "kind": "sanctoral",
    "name": "Saint Cecilia, Virgin and Martyr",
    "season": null,
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -17028,13 +17086,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
        "not-publishable": 0,
-       "not-sourced": 1,
+       "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 1,
@@ -17050,7 +17108,13 @@
    "kind": "sanctoral",
    "name": "Saint Lucy, Virgin and Martyr",
    "season": null,
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -17766,13 +17830,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
-       "not-publishable": 2,
+       "not-publishable": 1,
        "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 3,
@@ -17825,7 +17889,13 @@
    "kind": "seasonal",
    "name": "First Sunday of Advent",
    "season": "advent",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -18021,7 +18091,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -18207,7 +18277,7 @@
     },
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -18801,13 +18871,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
-       "not-publishable": 1,
+       "not-publishable": 0,
        "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 1,
@@ -18823,7 +18893,13 @@
    "kind": "seasonal",
    "name": "Friday of the First Week of Advent",
    "season": "advent",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -19293,13 +19369,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
-       "not-publishable": 1,
+       "not-publishable": 0,
        "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 1,
@@ -19315,7 +19391,13 @@
    "kind": "seasonal",
    "name": "Friday of the Second Week of Advent",
    "season": "advent",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -19941,13 +20023,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
-       "not-publishable": 1,
+       "not-publishable": 0,
        "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 1,
@@ -19963,7 +20045,13 @@
    "kind": "seasonal",
    "name": "18 December",
    "season": "advent",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+     "label": "Historical English: Bute, Roman Breviary (1908)",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -20517,13 +20605,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 2,
+       "available": 4,
        "inapplicable": 0,
-       "not-publishable": 2,
+       "not-publishable": 0,
        "not-sourced": 2,
        "unresolved": 0
       },
-      "available": 2,
+      "available": 4,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 6,
@@ -20578,8 +20666,13 @@
    "season": "christmas",
    "witnesses": [
     {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
+     "lang": "en"
+    },
+    {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -20650,13 +20743,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 2,
+       "available": 3,
        "inapplicable": 0,
        "not-publishable": 1,
-       "not-sourced": 1,
+       "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 2,
+      "available": 3,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 4,
@@ -20712,7 +20805,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -20795,13 +20888,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 2,
+       "available": 3,
        "inapplicable": 0,
-       "not-publishable": 2,
+       "not-publishable": 1,
        "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 2,
+      "available": 3,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 5,
@@ -20850,8 +20943,13 @@
    "season": "christmas",
    "witnesses": [
     {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
+     "lang": "en"
+    },
+    {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -20922,13 +21020,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 3,
+       "available": 6,
        "inapplicable": 0,
-       "not-publishable": 2,
-       "not-sourced": 1,
+       "not-publishable": 0,
+       "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 3,
+      "available": 6,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 6,
@@ -20983,8 +21081,13 @@
    "season": "christmas",
    "witnesses": [
     {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
+     "lang": "en"
+    },
+    {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -21254,13 +21357,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 2,
        "inapplicable": 0,
-       "not-publishable": 2,
-       "not-sourced": 3,
+       "not-publishable": 1,
+       "not-sourced": 2,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 2,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 5,
@@ -21313,7 +21416,18 @@
    "kind": "seasonal",
    "name": "Solemnity of Mary, the Holy Mother of God",
    "season": "christmas",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)",
+     "lang": "en"
+    },
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -21387,13 +21501,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
        "not-publishable": 0,
-       "not-sourced": 3,
+       "not-sourced": 2,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 3,
@@ -21440,7 +21554,13 @@
    "kind": "seasonal",
    "name": "Second Sunday after the Nativity",
    "season": "christmas",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -21635,13 +21755,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 2,
+       "available": 3,
        "inapplicable": 0,
-       "not-publishable": 1,
+       "not-publishable": 0,
        "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 2,
+      "available": 3,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 3,
@@ -21691,7 +21811,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -21834,13 +21954,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
-       "not-publishable": 1,
+       "not-publishable": 0,
        "not-sourced": 3,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 4,
@@ -21893,7 +22013,13 @@
    "kind": "seasonal",
    "name": "The Baptism of the Lord",
    "season": "christmas",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -23137,13 +23263,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 1,
+       "available": 2,
        "inapplicable": 0,
-       "not-publishable": 1,
+       "not-publishable": 0,
        "not-sourced": 2,
        "unresolved": 0
       },
-      "available": 1,
+      "available": 2,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 4,
@@ -23205,7 +23331,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -23838,7 +23964,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -23987,13 +24113,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 1,
+       "available": 2,
        "inapplicable": 0,
        "not-publishable": 1,
-       "not-sourced": 2,
+       "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 1,
+      "available": 2,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 4,
@@ -24061,7 +24187,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -25794,13 +25920,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
-       "not-publishable": 1,
+       "not-publishable": 0,
        "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 2,
@@ -25816,7 +25942,13 @@
    "kind": "seasonal",
    "name": "Thursday of the Third Week of Lent",
    "season": "lent",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -27378,13 +27510,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 2,
+       "available": 6,
        "inapplicable": 0,
-       "not-publishable": 4,
-       "not-sourced": 7,
+       "not-publishable": 1,
+       "not-sourced": 6,
        "unresolved": 0
       },
-      "available": 2,
+      "available": 6,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 13,
@@ -27498,8 +27630,13 @@
      "lang": "en"
     },
     {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
+     "lang": "en"
+    },
+    {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -27936,13 +28073,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 1,
+       "available": 4,
        "inapplicable": 0,
-       "not-publishable": 2,
-       "not-sourced": 4,
+       "not-publishable": 1,
+       "not-sourced": 2,
        "unresolved": 0
       },
-      "available": 1,
+      "available": 4,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 7,
@@ -28060,6 +28197,16 @@
      "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
      "label": "Antecedent English (not the Missale Romanum 2002's text): The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)",
      "lang": "en"
+    },
+    {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
+     "lang": "en"
+    },
+    {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946",
+     "label": "Historical antecedent English: Lasance and Walsh, revised 1945 expression, actual 1946 Benziger printing",
+     "lang": "en"
     }
    ]
   },
@@ -28147,13 +28294,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 4,
        "inapplicable": 0,
-       "not-publishable": 12,
-       "not-sourced": 6,
+       "not-publishable": 10,
+       "not-sourced": 4,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 4,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 18,
@@ -28284,7 +28431,23 @@
    "kind": "seasonal",
    "name": "Celebration of the Lord's Passion",
    "season": "triduum",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)",
+     "lang": "en"
+    },
+    {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
+     "lang": "en"
+    },
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -28466,13 +28629,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 6,
+       "available": 7,
        "inapplicable": 0,
-       "not-publishable": 5,
+       "not-publishable": 4,
        "not-sourced": 15,
        "unresolved": 0
       },
-      "available": 6,
+      "available": 7,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 26,
@@ -28670,7 +28833,7 @@
     },
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -28783,13 +28946,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 1,
+       "available": 2,
        "inapplicable": 0,
        "not-publishable": 1,
-       "not-sourced": 2,
+       "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 1,
+      "available": 2,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 4,
@@ -28858,6 +29021,11 @@
     {
      "id": "edition.edward-caswall.lyra-catholica.london-1849",
      "label": "Lyra Catholica: containing all the Breviary and Missal hymns, with others from various sources, translated by Edward Caswall (London: James Burns, 1849)",
+     "lang": "en"
+    },
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -28970,13 +29138,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 1,
+       "available": 2,
        "inapplicable": 0,
        "not-publishable": 1,
-       "not-sourced": 1,
+       "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 1,
+      "available": 2,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 3,
@@ -29032,7 +29200,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -29175,13 +29343,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 1,
+       "available": 2,
        "inapplicable": 0,
        "not-publishable": 1,
-       "not-sourced": 2,
+       "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 1,
+      "available": 2,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 4,
@@ -29244,6 +29412,11 @@
     {
      "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
      "label": "Antecedent English (not the Missale Romanum 2002's text): The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)",
+     "lang": "en"
+    },
+    {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
      "lang": "en"
     }
    ]
@@ -29418,7 +29591,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -29605,7 +29778,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -30124,7 +30297,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -30304,7 +30477,7 @@
     },
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -30393,13 +30566,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 3,
        "inapplicable": 0,
        "not-publishable": 0,
-       "not-sourced": 5,
+       "not-sourced": 2,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 3,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 5,
@@ -30458,7 +30631,18 @@
    "kind": "seasonal",
    "name": "Pentecost Sunday",
    "season": "easter",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
+     "lang": "en"
+    },
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -30562,13 +30746,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 2,
+       "available": 3,
        "inapplicable": 0,
        "not-publishable": 0,
-       "not-sourced": 3,
+       "not-sourced": 2,
        "unresolved": 0
       },
-      "available": 2,
+      "available": 3,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 5,
@@ -30640,8 +30824,176 @@
      "lang": "en"
     },
     {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
+     "lang": "en"
+    },
+    {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
+  },
+  {
+   "citations": [
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "ref": "Genesis 11:1-9",
+     "slot": "First Reading"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "ref": "Psalm 32:10-11, 12-13, 14-15",
+     "slot": "Responsorial Psalm after the First Reading"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "ref": "Exodus 19:3-8, 16-20b",
+     "slot": "Second Reading"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "ref": "Daniel 3:52, 53, 54, 55, 56",
+     "slot": "Responsorial Psalm after the Second Reading"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "ref": "Psalm 18:8, 9, 10, 11",
+     "slot": "Responsorial Psalm after the Second Reading"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "ref": "Ezekiel 37:1-14",
+     "slot": "Third Reading"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "ref": "Psalm 106:2-3, 4-5, 6-7, 8-9",
+     "slot": "Responsorial Psalm after the Third Reading"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "ref": "Joel 3:1-5",
+     "slot": "Fourth Reading"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "ref": "Psalm 103:1-2a, 24, 35c, 27-28, 29bc-30",
+     "slot": "Responsorial Psalm after the Fourth Reading"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "ref": "Romans 8:22-27",
+     "slot": "Reading from the Apostle"
+    }
+   ],
+   "coverage": {
+    "denominator": "represented-units",
+    "languages": [
+     {
+      "availability": {
+       "absent-in-witness": 0,
+       "available": 0,
+       "inapplicable": 0,
+       "not-publishable": 0,
+       "not-sourced": 0,
+       "unresolved": 8
+      },
+      "available": 0,
+      "exact_target": 0,
+      "lang": "la",
+      "occurrences": 8,
+      "scripture_occurrences": 10
+     },
+     {
+      "availability": {
+       "absent-in-witness": 0,
+       "available": 1,
+       "inapplicable": 0,
+       "not-publishable": 0,
+       "not-sourced": 7,
+       "unresolved": 0
+      },
+      "available": 1,
+      "exact_target": 0,
+      "lang": "en",
+      "occurrences": 8,
+      "scripture_occurrences": 10
+     }
+    ]
+   },
+   "fixed_date": null,
+   "form_id": "extended-vigil",
+   "form_name": "Vigil Mass, extended form",
+   "incipits": [
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "slot": "Collect (before the readings)",
+     "text": "Praesta, quaesumus"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "slot": "Prayer after the First Reading",
+     "text": "Concede, quaesumus, omnipotens Deus, ut Ecclesia tua semper"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "slot": "Prayer after the Second Reading",
+     "text": "Deus, qui in fulgure ignis in monte Sinai"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "slot": "Prayer after the Third Reading",
+     "text": "Domine, Deus virtutum"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "slot": "Prayer after the Third Reading",
+     "text": "Deus, qui nos verbo vitae regenerasti"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "slot": "Prayer after the Third Reading",
+     "text": "Semper exsultet populus tuus, Deus"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "slot": "Prayer after the Fourth Reading",
+     "text": "Promissionem tuam, quaesumus, Domine"
+    },
+    {
+     "cycle": null,
+     "cycle_family": null,
+     "slot": "Collect (after Gloria)",
+     "text": "Omnipotens sempiterne Deus"
+    }
+   ],
+   "key": "pentecost",
+   "kind": "seasonal",
+   "name": "Pentecost Sunday",
+   "season": "easter",
+   "witnesses": [
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -31600,13 +31952,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
        "not-publishable": 2,
-       "not-sourced": 1,
+       "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 3,
@@ -31622,7 +31974,13 @@
    "kind": "seasonal",
    "name": "Saturday of the Second Week of Easter",
    "season": "easter",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -32752,13 +33110,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
-       "not-publishable": 2,
+       "not-publishable": 1,
        "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 3,
@@ -32774,7 +33132,13 @@
    "kind": "seasonal",
    "name": "Wednesday of the Fifth Week of Easter",
    "season": "easter",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -32902,13 +33266,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 1,
        "inapplicable": 0,
-       "not-publishable": 2,
+       "not-publishable": 1,
        "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 1,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 3,
@@ -32924,7 +33288,13 @@
    "kind": "seasonal",
    "name": "Friday of the Fifth Week of Easter",
    "season": "easter",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -34205,7 +34575,7 @@
     },
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -34433,7 +34803,7 @@
     },
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -34582,13 +34952,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 2,
+       "available": 3,
        "inapplicable": 0,
        "not-publishable": 0,
-       "not-sourced": 1,
+       "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 2,
+      "available": 3,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 3,
@@ -34644,7 +35014,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -34992,13 +35362,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 1,
+       "available": 2,
        "inapplicable": 0,
        "not-publishable": 0,
-       "not-sourced": 2,
+       "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 1,
+      "available": 2,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 3,
@@ -35055,6 +35425,11 @@
     {
      "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
      "label": "Antecedent English (not the Missale Romanum 2002's text): The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)",
+     "lang": "en"
+    },
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -35258,7 +35633,7 @@
     },
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -35457,7 +35832,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -35662,7 +36037,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -35861,7 +36236,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -35998,13 +36373,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 1,
+       "available": 2,
        "inapplicable": 0,
-       "not-publishable": 2,
+       "not-publishable": 1,
        "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 1,
+      "available": 2,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 4,
@@ -36060,7 +36435,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -36259,7 +36634,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -36470,7 +36845,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -36675,7 +37050,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -36886,7 +37261,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -37091,7 +37466,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -37296,7 +37671,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -37501,7 +37876,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -37736,7 +38111,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -37935,7 +38310,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -38134,7 +38509,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -38333,7 +38708,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -38532,7 +38907,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -38742,7 +39117,7 @@
     },
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -38879,13 +39254,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 3,
        "inapplicable": 0,
-       "not-publishable": 2,
-       "not-sourced": 2,
+       "not-publishable": 1,
+       "not-sourced": 0,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 3,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 4,
@@ -38938,7 +39313,18 @@
    "kind": "seasonal",
    "name": "Twenty-fifth Sunday in Ordinary Time",
    "season": "ordinary-time",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
+     "lang": "en"
+    },
+    {
+     "id": "project-created",
+     "label": "Triptych, study translation from public-domain Latin",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -39164,7 +39550,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -39369,7 +39755,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -39585,7 +39971,7 @@
     },
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -39796,7 +40182,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -39995,7 +40381,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -40132,13 +40518,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 1,
+       "available": 2,
        "inapplicable": 0,
        "not-publishable": 0,
-       "not-sourced": 2,
+       "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 1,
+      "available": 2,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 3,
@@ -40194,7 +40580,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -40411,7 +40797,7 @@
    "witnesses": [
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -40621,7 +41007,7 @@
     },
     {
      "id": "project-created",
-     "label": "Triptych, translated from the ancient Latin",
+     "label": "Triptych, study translation from public-domain Latin",
      "lang": "en"
     }
    ]
@@ -40734,13 +41120,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 1,
+       "available": 2,
        "inapplicable": 0,
-       "not-publishable": 2,
+       "not-publishable": 1,
        "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 1,
+      "available": 2,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 4,
@@ -40791,6 +41177,11 @@
     {
      "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
      "label": "Antecedent English (not the Missale Romanum 2002's text): The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)",
+     "lang": "en"
+    },
+    {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing",
      "lang": "en"
     }
    ]

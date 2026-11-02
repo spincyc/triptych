@@ -5,7 +5,8 @@ Import `common/preamble` then `common/propers-format`, using the shared title,
 inventory, overview and dossier forms. Do not re-derive their layouts, change
 fonts or margins, or import the homily column helper. Emit literal unconditional
 component imports and keep literal markers in their declared source owners.
-The finished PDF targets 10–12 physical pages. Restore the first four pages
+The print-export profile targets 10–12 physical pages. Author the opening
+semantic blocks in the fixed order and preserve the first four print pages
 specified in `guidance/liturgy/propers-three-documents.md`: page 1, complete
 propers map and four senses overview; page 2, Scriptural Date and Location;
 pages 3–4, The Propers: Themes and Movement. Developed interleaved commentary
@@ -49,12 +50,10 @@ manifest. Update the common generation timestamp and actual contribution
 record, and record the substantive word count in the production audit. A
 fresh reviewer compares this work both on its own and against its source study.
 
-Build an author proof with
-`make doc DOC={proper}-synthesis PROVIDER={provider}`. Run
-`tools/check-proper-components --provider {provider} --document {proper} --phase artifacts --edition synthesis`
-and inspect the settled PDF and physical-page
-evidence. Give the reviewer exact PDF, auxiliary and log paths with hashes;
-retain them beneath this run's stage/iteration artifact directory. Keep raster
-evidence in a dedicated child because its helper replaces the destination.
-An author proof does not replace the final three-document build or cold visual
-review after the shared generation metadata has settled.
+Validate synthesis source roles, component coverage, source ownership, and
+manifest output selection before submission. If a print proof is explicitly
+requested, export this output through `tools/print-document` and run its artifact
+checks. Inspect the settled PDF and physical-page evidence; record exact PDF,
+auxiliary, and log identities in the stage/iteration area. An author proof does
+not establish independent full-page print acceptance. Normal source submission
+does not require a PDF build.

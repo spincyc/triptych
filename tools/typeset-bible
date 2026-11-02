@@ -59,6 +59,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from _bible_artifacts import select_book_index  # noqa: E402
 from _psalms import NumberingError, PSALMS, convert_range  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
@@ -179,9 +180,9 @@ PLAN_ROOT = ROOT / "src" / "sources" / "reading-plans"
 # Every id here must be publishable, which `entry` enforces by name.
 PLAN_EDITIONS = ("douay-rheims", "king-james-version")
 
-# Where a rendered edition may be written. `build/` is the only tree in this
-# repository that holds reproducible artifacts; `pdf/`, `web/` and `src/` hold
-# reviewed or authoritative ones, and a whole-bible render is neither.
+# Where a rendered edition may be written. `build/` and `.scratch/` hold
+# reproducible or transient artifacts; `pdf/`, `web/` and `src/` hold reviewed
+# or authoritative ones, and a whole-bible render is neither.
 WRITABLE_ROOT = ROOT / "build"
 
 # Headings for the divisions a book index declares. The value is the edition's
@@ -428,14 +429,11 @@ class Edition:
         return tomllib.loads(path.read_text(encoding="utf-8"))
 
     def _books(self) -> list[Book]:
-        index = sorted(self.artifacts.glob("book-index-*/book-index.tsv"))
-        if len(index) != 1:
-            raise ValueError(
-                f"{self.id}: expected exactly one book index under {self.artifacts}, "
-                f"found {len(index)}"
-            )
+        index = select_book_index(self.artifacts.parent)
+        if index is None:
+            raise ValueError(f"{self.id}: no book index under {self.artifacts}")
         books: list[Book] = []
-        for row in read_tsv(index[0]):
+        for row in read_tsv(index):
             # Identity by the declared file name, never by the position of an
             # artifact directory in a listing.
             found = sorted(self.artifacts.glob(f"verse-text-*/{row['file']}"))
@@ -1801,9 +1799,10 @@ def render_tex(
 def destination(out: Path) -> Path:
     """Refuse an output directory that would put a build artifact in a source tree."""
     resolved = out.resolve()
-    if resolved.is_relative_to(ROOT) and not resolved.is_relative_to(WRITABLE_ROOT):
+    allowed = (WRITABLE_ROOT, ROOT / ".scratch")
+    if resolved.is_relative_to(ROOT) and not any(resolved.is_relative_to(path) for path in allowed):
         raise ValueError(
-            f"{resolved} is inside this repository but not under {WRITABLE_ROOT}; "
+            f"{resolved} is inside this repository but not under build/ or .scratch/; "
             "a rendered bible is a build artifact"
         )
     return resolved

@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-29"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-exaltatione-s-crucis-introit-1"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"
+artifact_sha256 = "10b19922a2fc07cd74be90ae8832d093e705247b93491fa155bf9a1090635e82"
+locus = "exaltatione-s-crucis / Introit occurrence 1; project physical lines 5-6; Tours Mame 1922, artifact pages 827; printed 713; 1962 Vatican target, artifact p. 735, printed p. 654, unit 3605"
+physical_line_ranges = [[5, 6]]
+context = "Complete target-bound Latin chant, independently source-qualified; original study English remains separately identified and unapproved."
+notes = "Exact canonical UTF-8 body including terminal LF SHA-256 3da4528dbcad76ea6cda1c145fdb2687db877145537f6640b1e305ee975bb599. Declared transformations: [\"Dehyphenate typographic line-break word divisions and join lines without changing words.\", \"Preserve source/target accented readings in diplomaticLatin; remove stress accents/diaeresis in canonicalLatin.\", \"Expand æ/œ ligatures to ae/oe in canonicalLatin.\", \"CanonicalLatin follows declared calendar orthography: retained consonantal j; Alleluia conventional spelling.\", \"CanonicalLatin uses target pointing with the exact source/target differences separately recorded.\", \"No Gloria Patri expansion, added response, text supplied from citations, or borrowed English.\", \"Omit the printed inline Psalm citation Ps. 66, 2 from canonical spoken text and original English; retain it as source apparatus in diplomaticLatin. The complete spoken Psalm verse remains.\"]. Exact differences: [{\"kind\": \"consonantal-i-j\", \"source\": \"Jesu\", \"target\": \"Iesu\", \"canonical\": \"Jesu\"}, {\"kind\": \"pointing\", \"source\": \"nostri et benedícat\", \"target\": \"nostri, et benedícat\"}, {\"kind\": \"citation-punctuation\", \"source\": \"Ps. 66, 2.\", \"target\": \"Ps. 66, 2\"}, {\"kind\": \"spacing\", \"source\": \"space before colons\", \"target\": \"no space before colons\"}]"

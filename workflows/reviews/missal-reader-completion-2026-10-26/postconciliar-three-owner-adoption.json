@@ -1,0 +1,185 @@
+{
+  "schema": "triptych-source-established-owner-additions/v1",
+  "status": "accepted",
+  "calendar": "postconciliar",
+  "targets": [
+    [
+      "saint-turibius-mogrovejo-bishop",
+      "main",
+      "Collect",
+      "all",
+      1
+    ],
+    [
+      "saint-maria-goretti-virgin-martyr",
+      "main",
+      "Collect",
+      "all",
+      1
+    ],
+    [
+      "dedication-basilica-saint-mary-major",
+      "main",
+      "Collect",
+      "all",
+      1
+    ]
+  ],
+  "owners": [
+    {
+      "target": [
+        "saint-turibius-mogrovejo-bishop",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "operation": "add-source-established-owner",
+      "source_expected_target_id": "postconciliar.2002.sanctoral.03-23.1:collect:1",
+      "source_record": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml",
+      "source_segment_id": "segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387",
+      "controller_artifact_id": "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174",
+      "controller_artifact_sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f",
+      "controller_artifact_page": 55,
+      "controller_printed_page": 373,
+      "controller_missal_entry_page": 737,
+      "secondary_2002_context_artifact_page": 434,
+      "secondary_qualification": "Dated unique Collect heading context only; no authenticated full2008 body claim.",
+      "insert_before": {
+        "proper": "First Reading",
+        "occurrence": 1,
+        "node_sha256": "499f4c5caa88bf6fa956e7dd72a9a9ef2c88598063a70468b79fc716b2245c49"
+      },
+      "new_node": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387"
+            }
+          ]
+        },
+        "notes": "Own Collect appointment positively established by the official 2008 Variationes, Notitiae 44, printed p. 373 / artifact p. 55, entry p. 737, and its 03-23 heading context checked in the registered secondary 2002 reproduction, artifact p. 434. Existing expected target postconciliar.2002.sanctoral.03-23.1:collect:1. This records the role only; no complete authenticated 2008 body, Latin publication basis or English whole-prayer exemplar is established. No wording or Common oration is inferred."
+      },
+      "new_node_sha256": "9cf923057f028e3f58c36dacb4855957733e100f319f3cb00397eda3658d98df",
+      "before_mass_sha256": "0f220a09067a62231bc8428e70296b97062c05b1fc80adb659f4f6934f2fbab6",
+      "after_mass_sha256": "6935f49f98b7b30b13c2295f1c6dcb85d65faa5581729f7cd2fd32582eafb03d",
+      "body_publication_authority": null,
+      "english_body_authority": null,
+      "publication_position_change": false
+    },
+    {
+      "target": [
+        "saint-maria-goretti-virgin-martyr",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "operation": "add-source-established-owner",
+      "source_expected_target_id": "postconciliar.2002.sanctoral.07-06.1:collect:1",
+      "source_record": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml",
+      "source_segment_id": "segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387",
+      "controller_artifact_id": "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174",
+      "controller_artifact_sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f",
+      "controller_artifact_page": 55,
+      "controller_printed_page": 373,
+      "controller_missal_entry_page": 786,
+      "secondary_2002_context_artifact_page": 464,
+      "secondary_qualification": "Dated unique Collect heading context only; no authenticated full2008 body claim.",
+      "insert_before": {
+        "proper": "First Reading",
+        "occurrence": 1,
+        "node_sha256": "55ddd2f5fed2adaf1c546c3c7c43ef0bf75bc55a92d1551ff419ef496226c1d7"
+      },
+      "new_node": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387"
+            }
+          ]
+        },
+        "notes": "Own Collect appointment positively established by the official 2008 Variationes, Notitiae 44, printed p. 373 / artifact p. 55, entry p. 786, and its 07-06 heading context checked in the registered secondary 2002 reproduction, artifact p. 464. Existing expected target postconciliar.2002.sanctoral.07-06.1:collect:1. This records the role only; no complete authenticated 2008 body, Latin publication basis or English whole-prayer exemplar is established. No wording or Common oration is inferred."
+      },
+      "new_node_sha256": "4cc6c5d929f7c75c6a276e7260a004cdd1c70497c99a6f9faa1a3522d987f7b4",
+      "before_mass_sha256": "cc64d09a9e6b331e48e77df36f9a41d2b0fc1ce22fe80a79b61120763e259548",
+      "after_mass_sha256": "0ece47ef1be81ce4da871a0b9aa5b358cb5b3bf0e0b93a8fb474d2ed62830c56",
+      "body_publication_authority": null,
+      "english_body_authority": null,
+      "publication_position_change": false
+    },
+    {
+      "target": [
+        "dedication-basilica-saint-mary-major",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "operation": "add-source-established-owner",
+      "source_expected_target_id": "postconciliar.2002.sanctoral.08-05.1:collect:1",
+      "source_record": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml",
+      "source_segment_id": "segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387",
+      "controller_artifact_id": "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174",
+      "controller_artifact_sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f",
+      "controller_artifact_page": 55,
+      "controller_printed_page": 373,
+      "controller_missal_entry_page": 799,
+      "secondary_2002_context_artifact_page": 474,
+      "secondary_qualification": "Dated unique Collect heading context only; no authenticated full2008 body claim.",
+      "insert_before": {
+        "proper": "First Reading",
+        "occurrence": 1,
+        "node_sha256": "7cdf281a4c30c752ef099b457a27bf0c73f4aedb4b820fb6f2bec8f7a1699fdf"
+      },
+      "new_node": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387"
+            }
+          ]
+        },
+        "notes": "Own Collect appointment positively established by the official 2008 Variationes, Notitiae 44, printed p. 373 / artifact p. 55, entry p. 799, and its 08-05 heading context checked in the registered secondary 2002 reproduction, artifact p. 474. Existing expected target postconciliar.2002.sanctoral.08-05.1:collect:1. This records the role only; no complete authenticated 2008 body, Latin publication basis or English whole-prayer exemplar is established. No wording or Common oration is inferred."
+      },
+      "new_node_sha256": "66368b4c5a5313239525b5fae29c45196340f1e92a36a7fee77a36f00f6f3d71",
+      "before_mass_sha256": "02ca533dd18904b6cdfa2a2cda42c7846d6c0678bb204957ce8dd663a32d62b0",
+      "after_mass_sha256": "47bf6aee269f5e9de8c4834123c47e3674e3ba1024077edf9853c6545cd239e6",
+      "body_publication_authority": null,
+      "english_body_authority": null,
+      "publication_position_change": false
+    }
+  ],
+  "accepted_source_model_review_sha256": "618dd646179d44d38e4e58d291cfdd0b8d5329f5a4f500ea0c85631f53431eb0",
+  "accepted_guard_v2_review_sha256": "3945cbf51f73080d2d755e1bee67b660c8ef334d787c3110e62e12ecd83503c9",
+  "accepted_v2_manifest_sha256": "2e9b4c565ea785c776119e9f5c38d5d8059c3f6e6f54a69b2ef9879369458bfa",
+  "domain_qualification": "The3 listed owners are positively source-established appointments. The561→564 count is a measured consequence, never an authority to infer any unlisted owner.",
+  "new_prayer_words": 0,
+  "new_english_bodies": 0,
+  "new_latin_bodies": 0,
+  "rights_or_publication_grant": false,
+  "baseline_domain": 561,
+  "receiving_domain": 564,
+  "source_review_sha256": "3945cbf51f73080d2d755e1bee67b660c8ef334d787c3110e62e12ecd83503c9",
+  "counts_are_measured_consequences_only": true,
+  "reviewer": "root",
+  "reviewed_on": "2026-10-26",
+  "independent_current_composition_review_sha256": "a1959c416745df4519bb326d1e05e22ed9650c816020524f286dc936055e1a5b",
+  "source_authority_proposal_sha256": "1ff1c90a281932cadfd738e81264e01044f28320fd0260c0e1fbe9ed87d0294b",
+  "root_adoption": "Accept only the3 enumerated source-established text-free Collect appointments,3 corresponding English no-exemplar records and6 exact expected-slot joins. No Latin/English wording, authenticated whole2008 text, rights grant or unlisted owner is inferred. Existing fields and refusal partitions remain conserved."
+}

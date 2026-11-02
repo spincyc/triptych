@@ -1,0 +1,201 @@
+{
+  "schema": "triptych-scratch-pentecost-extended-vigil-candidate/v1",
+  "recorded_on": "2026-10-29",
+  "state": "frozen-for-independent-source-and-schema-review",
+  "write_scope": "Scratch only; no tracked file edits or source registration.",
+  "mass": "pentecost",
+  "form_id": "extended-vigil",
+  "form_name": "Vigil Mass, extended form",
+  "official_source": {
+    "artifact_id": "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174",
+    "sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f",
+    "local_pdf": ".scratch/pc-official-target-witness-20261029/notitiae-503-504-2008.pdf",
+    "module_artifact_pages": [
+      [
+        62,
+        66
+      ]
+    ],
+    "module_printed_pages": "380-384",
+    "read_as_images": true,
+    "modern_pdf_or_images_not_for_tracking": true
+  },
+  "independent_ancient_source": {
+    "edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+    "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+    "sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+    "local_pdf": ".scratch/resume-postconciliar-orations/pustet-1862.pdf",
+    "artifact_page_ranges": [
+      [
+        382,
+        382
+      ]
+    ],
+    "printed_page": "296",
+    "read_as_image": true,
+    "affirmative_basis": "Exact 1862 printing is public domain by publication date; new original study English directly follows the independently image-checked ancient petition."
+  },
+  "source_coordinates": [
+    {
+      "artifact_pages": [
+        [
+          62,
+          62
+        ]
+      ],
+      "printed_pages": "380",
+      "paragraphs": "1-3",
+      "facts": "Extended form scope; alternative opening branches; Praesta Collect pointer to p.443."
+    },
+    {
+      "artifact_pages": [
+        [
+          63,
+          63
+        ]
+      ],
+      "printed_pages": "381",
+      "paragraphs": "4-5",
+      "facts": "General reading/psalm/prayer order; silence alternative; Genesis11/Psalm32/first prayer."
+    },
+    {
+      "artifact_pages": [
+        [
+          63,
+          64
+        ]
+      ],
+      "printed_pages": "381-382",
+      "paragraphs": "6",
+      "facts": "Exodus19; Daniel3 or Psalm18; second prayer."
+    },
+    {
+      "artifact_pages": [
+        [
+          64,
+          65
+        ]
+      ],
+      "printed_pages": "382-383",
+      "paragraphs": "7",
+      "facts": "Ezekiel37/Psalm106; all three mutually exclusive prayer options, second spanning pages."
+    },
+    {
+      "artifact_pages": [
+        [
+          65,
+          65
+        ]
+      ],
+      "printed_pages": "383",
+      "paragraphs": "8-10",
+      "facts": "Joel3/Psalm103/fourth prayer; delayed Gloria; Omnipotens Collect pointer to p.443."
+    },
+    {
+      "artifact_pages": [
+        [
+          66,
+          66
+        ]
+      ],
+      "printed_pages": "384",
+      "paragraphs": "11-13",
+      "facts": "Romans8:22-27; usual Mass continuation; optional joined-Vespers/blessing/dismissal provisions retained as limits, not selected."
+    },
+    {
+      "artifact_pages": [
+        [
+          382,
+          382
+        ]
+      ],
+      "printed_pages": "296",
+      "source": "Pustet1862",
+      "facts": "Complete old Domine Deus virtutum petition across bottom-left/top-right columns, actual Per Dominum cue."
+    }
+  ],
+  "counts": {
+    "proper_rows": 18,
+    "composed_coordinates": 8,
+    "after_reading_options": 6,
+    "after_reading_seats": 4,
+    "after_reading_options_with_study_english": 1,
+    "after_reading_options_without_english": 5,
+    "collect_pointer_gaps": 2,
+    "all_composed_english_candidates": 1,
+    "all_composed_english_gaps": 7
+  },
+  "interpretation_limits": [
+    "A partial extended-form module, not a complete Vigil or a selected Vespers branch.",
+    "No source evidence was borrowed silently from the existing simple Vigil or day forms.",
+    "No implicit default among the three Ezekiel prayer choices or two second-reading psalm choices.",
+    "A psalm-to-silence option is explicit in the source but not implemented by this candidate.",
+    "All target Latin bodies remain absent. Five complete modern Latin bodies are typed held-unpublished; two incomplete Collect pointers remain witness gaps; the independent ancient prayer awaits an exact Latin publication projection.",
+    "The prayer English is fresh study English, not an adaptation of Lasance human English; its actual target short cue and separately marked response are explicit.",
+    "R. Amen. is marked on its own line. The preceding Oremus is a separate source invitation outside the proposed prayer body.",
+    "No approved English claim, full Missal2008 authentication, inferred full conclusion or whole-form completion."
+  ],
+  "proposed_source_ids": [
+    "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.pentecost-extended-vigil-module-20261029",
+    "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.pentecost-extended-vigil-domine-deus-virtutum-20261029",
+    "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.pentecost-extended-vigil-domine-deus-virtutum-20261029"
+  ],
+  "integration_work_remaining": [
+    "Independent source/schema review.",
+    "Parent installs reviewed source passages and sidecar entries with a new exact English publication artifact/passage.",
+    "Parent decides calendar placement/accounting prose and runs global source/translation/Ordinary validation.",
+    "Acquisition receipt is review-safe metadata only; source registration and target matching remain separate."
+  ],
+  "files": [
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/historical-donors/pentecost-extended-vigil-2008/acquisition-disposition-receipt.json",
+      "sha256": "75359fa71439974eb973e611183c8dc3234911fff81cb7e96615c53798d92fd5",
+      "bytes": 11200
+    },
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/historical-donors/pentecost-extended-vigil-2008/ancient-domine-passage.toml",
+      "sha256": "1da190c29b3b12d376ad4423ca37980d366d386523f30ffbe774ce2fbb24eb54",
+      "bytes": 1699
+    },
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/historical-donors/pentecost-extended-vigil-2008/build-candidate.py",
+      "sha256": "29c834cd5b1b05ff3a113458f1b6d1ad554bec717513d81aa532f66ab2df8944",
+      "bytes": 27004
+    },
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/historical-donors/pentecost-extended-vigil-2008/citations-tool-results.json",
+      "sha256": "b6aa604ce82aa60558c76612e746825f5d3932704dbd155f866715caa1d43f00",
+      "bytes": 6962
+    },
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/historical-donors/pentecost-extended-vigil-2008/domine-study-english.txt",
+      "sha256": "17a0ab2147bdb4b40d675d2bac515f0551c624224677ec22b321488a3524b671",
+      "bytes": 283
+    },
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/historical-donors/pentecost-extended-vigil-2008/official-domine-passage.toml",
+      "sha256": "8055ccd8a380f7ef73211ef3ea05dd180ab50cc42c9edf3d8dc74fe1e7c2ab68",
+      "bytes": 1615
+    },
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/historical-donors/pentecost-extended-vigil-2008/official-module-passage.toml",
+      "sha256": "e6649ca7cc206bc9ff14b944820a76b0935a6f5fd8b3fc52067f865fec907b99",
+      "bytes": 1780
+    },
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/historical-donors/pentecost-extended-vigil-2008/proposed-english-entries.toml",
+      "sha256": "4de0517520d82791ccef6fc153dc4b45abc02a5d7d52535040b3145d8b8d918a",
+      "bytes": 9003
+    },
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/historical-donors/pentecost-extended-vigil-2008/proposed-form.yaml",
+      "sha256": "a3146d6ab1cd09938b6039e6043155827a7e862d5c8b2ff3b634aec871c9cca7",
+      "bytes": 18665
+    },
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/historical-donors/pentecost-extended-vigil-2008/validation.json",
+      "sha256": "ce1a4942481a8e44f19d3745aa75f91316f6964e9446da8cf2310557efb88a7f",
+      "bytes": 1611
+    }
+  ]
+}

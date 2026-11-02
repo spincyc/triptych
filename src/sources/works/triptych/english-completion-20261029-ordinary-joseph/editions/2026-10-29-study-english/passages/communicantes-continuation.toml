@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029.communicantes-continuation"
+edition_id = "edition.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029"
+artifact_id = "artifact.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029.continuation-study-en-b83d0df3"
+artifact_sha256 = "b83d0df336dc1cd943a8b295d617c3325384492381a15d7f0426c3f322ff9d72"
+locus = "Communicantes shared continuation, nonspoken hand-joining rubric and explicit conclusion; TSV rows1–3"
+states = ["cataloged", "acquired", "inspected", "verified"]
+physical_line_ranges = [[2, 4]]
+context = "All three project English rows were read against the exact pinned Latin source rows 2–4. Independent AI semantic review on 2026-10-29 accepted the dependent genitive construction, Joseph as spouse of the same Virgin, every saint-name in source order, the merits-and-prayers relative petition, passive fortified sense, nonspoken action and complete same-Christ conclusion with its source Amen. This is verification of the new study translation against its source, not historical transcription or human review."
+verified_on = "2026-10-29"
+notes = "The underlying Latin projection retains its separate source witnesses and rights limits. No new target-edition Latin collation, full Communicantes translation, date appointment or approved English claim is made."
+
+# Exact checked English cells of the controlling TSV rows, for prose Source Reader display.
+text = "and also of blessed Joseph, spouse of the same Virgin, and of your blessed Apostles and Martyrs, Peter and Paul, Andrew, James, John, Thomas, James, Philip, Bartholomew, Matthew, Simon and Thaddeus: Linus, Cletus, Clement, Sixtus, Cornelius, Cyprian, Lawrence, Chrysogonus, John and Paul, Cosmas and Damian: and of all your Saints; by whose merits and prayers grant that we may in all things be fortified by the aid of your protection.\n\nHe joins his hands.\n\nThrough the same Christ our Lord. Amen."
+transcription_segments = [{ line = 2, text = "and also of blessed Joseph, spouse of the same Virgin, and of your blessed Apostles and Martyrs, Peter and Paul, Andrew, James, John, Thomas, James, Philip, Bartholomew, Matthew, Simon and Thaddeus: Linus, Cletus, Clement, Sixtus, Cornelius, Cyprian, Lawrence, Chrysogonus, John and Paul, Cosmas and Damian: and of all your Saints; by whose merits and prayers grant that we may in all things be fortified by the aid of your protection." }, { line = 3, text = "He joins his hands." }, { line = 4, text = "Through the same Christ our Lord. Amen." }]

@@ -1,0 +1,45 @@
+{
+  "schema": "triptych-exact-study-English-underlying-expression-adoption/v1",
+  "state": "adopted-basis-pending-source-installation",
+  "recorded_at_utc": "2026-10-30T04:17:22Z",
+  "jurisdiction": "United States civil copyright",
+  "policy": "guidance/liturgical-text-publication-policy.md section 1(6)",
+  "target": "postconciliar/ritus-communionis/domine-iesu-christe-qui-dixisti",
+  "basis": "Qualified insufficient originality of the exact limited revision to an independently established complete older prayer; new project study English.",
+  "confidence": "moderate; project judgment, not holder permission, court adjudication or human legal approval",
+  "candidate": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/domine-candidate.json",
+    "sha256": "b2ef7af8630f6cf299c5b1dd23c131326f4d466a59edbfd753a3f591a5fd35e4",
+    "scope": "Exactly the ten named source postimages, English priest and people utterances, source choices, revision and actor boundaries in this candidate."
+  },
+  "independent_source_and_English_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/domine-source-English-review.json",
+    "sha256": "6dd4666971c2324dcd088a03d58b5ff0cc43b012a472c2aafae601430bced117"
+  },
+  "earlier_policy_recommendation": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/pc-residual-rights-recommendation.json",
+    "sha256": "97024c11fd5a5262375e2fcdebba83e233f1d831774db6bc8b598aa3097467e4",
+    "limit": "Its permission to prepare a candidate was not publication adoption. This record makes the separate exact adoption for n126 only."
+  },
+  "English_payload_sha256": {
+    "priest": "70394669cebd32f8039cd8dc24eab95b4e433acf73ad5e8202f7383fe86a0170",
+    "people": "d07a178bc193c1910055e2cfd1e2c19eece00b6cd3368d5e96308f79539eaad3"
+  },
+  "whole_expression_assessment": "The complete main prayer and its continuous sequence are independently established in the identified 1922 Mame printing, original page 464, printed 350. It addresses Christ, quotes his two peace clauses, contrasts sins with the Church's faith and asks for her peace and unity according to his will. The modern main-body change is exactly one singular-to-plural possessive, mea to nostra. This changes the communal perspective and is substantive, but retains all clauses, petition order and syntax. The complete old conclusion is expressly replaced by a separately witnessed complete conventional short conclusion from the same printing, original page 1022, printed 144*. No conclusion words are inferred by deletion. Considered together, the possessive change and standard whole-conclusion choice add no independently developed petition or nontrivial literary structure. The limited contribution to this complete older prayer has a defensible insufficient-originality basis under section 1(6).",
+  "strongest_contrary_argument": "The communal perspective and public prayer arrangement are deliberate theological and editorial choices; the originality threshold is low, and a selection of old words can be protected. An old complete main prayer plus a separate conclusion is not literal historical identity of the whole later target. This exact combination nonetheless remains a conventional possessive adjustment and conventional ending attached to the same continuous old prayer, rather than a new collage or newly authored petition. The objection remains explicit and the judgment qualified.",
+  "source_and_target_limits": [
+    "The source retains its actual mea and full older conclusion separately from the declared revision and independently witnessed short conclusion.",
+    "The secondary 2002 reset directly supplies the observed nostra and priest/people actor boundaries. It does not authenticate a complete 2008 target or establish exact 2008 Latin fidelity.",
+    "The Latin exact-source gap stays unchanged. No revised modern Latin payload is authorized for publication by this record.",
+    "English is newly authored project study translation with separately accepted fidelity. It has no approved, official or historical human-English identity and is not for liturgical use or recitation."
+  ],
+  "surfaces": ["web", "corpus-data", "public-git", "download", "print", "cli"],
+  "installation_conditions": [
+    "Retain the exact canonical candidate and independent review bytes named above, all historical source controls, source revisions and typed Latin gap.",
+    "A metadata-only successor may replace prospective adoption language with this exact record and retain accurate project-created English classification. Independently verify that no English or historical payload, source choice, actor or conclusion changes.",
+    "Validate the installed source graph, owning Ordinary projection, selected complete English body, two actor turns and concise reading qualification before delivery."
+  ],
+  "exclusions": ["other prayers or recipients", "Libera", "Qui pridie", "private Communion formulas", "whole modern editions or scans", "approved modern English", "whole modern Latin target publication", "foreign-law or canonical permission adjudication"],
+  "overturning_evidence": ["material source or fidelity error", "specific enforceable reservation in the measured added expression", "stronger whole-expression analysis establishing protected original authorship"],
+  "primary_source_boundary": "The separately retained policy assessment and the root's fresh reading of Copyright Office Circular 14 distinguish old material from new original contributions. General short-expression guidance is not a universal exemption. The regulatory support page declares data as of 2025-03-14; no current court ruling on this prayer is claimed."
+}

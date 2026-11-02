@@ -1,0 +1,48 @@
+{
+  "accepted_review": "workflows/reviews/missal-english-completion-2026-10-29/complete-missal-offer-accounting/independent-review-v1.json",
+  "accepted_review_sha256": "927583fd92d012099d175b879554c4c4f77328950ba3e9fd7667235c014e19d0",
+  "evidence": [
+    {
+      "exit_code": 0,
+      "exit_record": ".scratch/english-integration-20261029/fullgen-20261030/complete-missal-final-currentness.exit",
+      "exit_record_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "currentness",
+      "log": ".scratch/english-integration-20261029/fullgen-20261030/complete-missal-final-currentness.log",
+      "log_sha256": "aaa26f34abfc6908db58dbd713b0af4110df87295305f998e36122a24050ad46"
+    },
+    {
+      "exit_code": 0,
+      "exit_record": ".scratch/english-integration-20261029/fullgen-20261030/complete-missal-final-examples-recapture.exit",
+      "exit_record_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "examples-recapture",
+      "log": ".scratch/english-integration-20261029/fullgen-20261030/complete-missal-final-examples-recapture.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "exit_code": 0,
+      "exit_record": ".scratch/english-integration-20261029/fullgen-20261030/complete-missal-final-examples-replay.exit",
+      "exit_record_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "examples-replay",
+      "log": ".scratch/english-integration-20261029/fullgen-20261030/complete-missal-final-examples-replay.log",
+      "log_sha256": "c696658a36a7453ba4a58417bdfa54c5d47c8b5a23cbcff80d156a8f5fc58bc7"
+    }
+  ],
+  "examples_diverged": 0,
+  "examples_replayed": 2,
+  "limits": "Consumer accounting and examples verification only; no source, rights, source epoch, fixture, release or full-completeness acceptance.",
+  "outcome": "No transcript or semantic successor was needed. Exact originally reviewed code and whole-file identity remain current.",
+  "outside_examples_sha256": "4c5025f4b49da9ad7a90b816df7595249e2074d63fc7ef658234574403038696",
+  "outside_examples_unchanged": true,
+  "owning_conservation_proof": {
+    "path": ".scratch/english-integration-20261029/fullgen-20261030/transcript-final-v2-conservation.json",
+    "sha256": "7dbef92081b118efe785466e7d9c07f49cef1ca0af9cfd35671c66c951420957"
+  },
+  "recapture_rewrites": 0,
+  "recorded_on": "2026-10-30",
+  "schema": "triptych-accepted-consumer-examples-recapture/v1",
+  "tool": "tools/complete-missal",
+  "tracked_state_writes": 0,
+  "whole_file_after_sha256": "29e923e3a80f5f56727edde1a3a009947558396fc4b2cc27226eca48ca486263",
+  "whole_file_before_sha256": "29e923e3a80f5f56727edde1a3a009947558396fc4b2cc27226eca48ca486263",
+  "whole_file_byte_identical": true
+}

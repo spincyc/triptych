@@ -1,0 +1,227 @@
+{
+  "additional_image_inspection": {
+    "OCR_header_page_value_retained": "224",
+    "XML_OBJECT_ordinal_1": 235,
+    "image_sha256": "681c945f83ba6b83ab8a801367fa429f84383f00c1a540f2e5481c66182aa58a",
+    "pdf_page_ordinal_1": 235,
+    "printed_page_label_seen_in_image": "221",
+    "render_command": [
+      "pdftoppm",
+      "-f",
+      "235",
+      "-singlefile",
+      "-r",
+      "150",
+      "-scale-to",
+      "2400",
+      "-png",
+      ".scratch/bullarium_reconstruction/volumes_07_12/08/source.pdf",
+      ".scratch/bullarium_reconstruction/geometry_hybrid/next_leaf237/v08-leaf237-pdf235"
+    ],
+    "review_scope": "Entire source page image for geometric stream membership and column order; no character correction or whole-act image collation.",
+    "scan_leaf": 237,
+    "source_pdf_sha256": "6d52237fca006a2e23dfa721939812da62b24ba28eeb4b595dc4ffa8fc02a898",
+    "visually_inspected": true
+  },
+  "additional_page_image": {
+    "id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.geometry-leaf-237-681c945f83ba",
+    "manifest": "src/sources/works/bullarium-romanum/volume-08/editions/1883-naples-latin/artifacts/geometry-leaf-237-681c945f83ba/artifact.toml",
+    "path": "src/sources/works/bullarium-romanum/volume-08/editions/1883-naples-latin/artifacts/geometry-leaf-237-681c945f83ba/page.png",
+    "sha256": "681c945f83ba6b83ab8a801367fa429f84383f00c1a540f2e5481c66182aa58a"
+  },
+  "complete_printed_witness_proposal": {
+    "candidate_hybrid_bytes": 4687144,
+    "candidate_hybrid_sha256": "87945ff4a164b60a7d66e69b49624115ec9f82996c411b460143d780b0d47919",
+    "changed_leaf236_owned_source_WORD_global_ranges_1": [
+      [
+        115304,
+        115369
+      ]
+    ],
+    "changed_leaf237_owned_source_WORD_global_ranges_1": [
+      [
+        115381,
+        115882
+      ]
+    ],
+    "date": null,
+    "decision": "propose-complete",
+    "every_leaf237_WORD_preserved_once": true,
+    "extent_kind": "printed-act",
+    "frozen_first_packet_sha256": {
+      "08/recipe.json": "ad5dcd3ea3380a2269b6ab2af6f5a6e70fa0fc336fb0f08c8bad0b006441f2b1",
+      "08/word-lines-hybrid.txt": "f37197e94c2ba52afabfab11474f88cd13696638562c552fc764f477190765f9",
+      "08/word-lines-recipe.json": "803946f1a4e005e7f970ce306b224310c93ed09883ebb201581f1fd4bb06846c",
+      "12/recipe.json": "d3008e2f7596c38329fc2fe12d7483a9b4dc534a10e623b72029956b30718df5",
+      "12/word-lines-hybrid.txt": "e69d188972ee07a5bead29e71447e68ec671ba2830e377ab4d254e4ae74bfa2c",
+      "12/word-lines-recipe.json": "9e4f6dfae56fc36b941cddece783294cc51f9807f8c77548830b8bb25d3ef0c5",
+      "word-lines-ownership-and-dispositions.json": "3ebb89dbf4c62b88c9518848a48ae135cdfd91b4d24789df13ecdb43a491f63c",
+      "word-lines-registration-packet.json": "4ee65a21dccc45b693924025275481b6e6ab871033a81529e9d214a46bbb5bf5",
+      "word-lines-replay-validation.json": "13820cccbddaf83bab7d060db62a50a2eb44eb8e523dfb04d35fbe61015037bb"
+    },
+    "geometry_image_review": [
+      {
+        "image_sha256": "c03ca524cfa1393481e26d067548bff8d4270eb8c6f3faf24915a698c26bb5c0",
+        "leaf": 236,
+        "scope": "Inherited frozen geometry proof, previously inspected."
+      },
+      {
+        "OCR_header_page_value_retained": "224",
+        "XML_OBJECT_ordinal_1": 235,
+        "image_sha256": "681c945f83ba6b83ab8a801367fa429f84383f00c1a540f2e5481c66182aa58a",
+        "pdf_page_ordinal_1": 235,
+        "printed_page_label_seen_in_image": "221",
+        "render_command": [
+          "pdftoppm",
+          "-f",
+          "235",
+          "-singlefile",
+          "-r",
+          "150",
+          "-scale-to",
+          "2400",
+          "-png",
+          ".scratch/bullarium_reconstruction/volumes_07_12/08/source.pdf",
+          ".scratch/bullarium_reconstruction/geometry_hybrid/next_leaf237/v08-leaf237-pdf235"
+        ],
+        "review_scope": "Entire source page image for geometric stream membership and column order; no character correction or whole-act image collation.",
+        "scan_leaf": 237,
+        "source_pdf_sha256": "6d52237fca006a2e23dfa721939812da62b24ba28eeb4b595dc4ffa8fc02a898",
+        "visually_inspected": true
+      }
+    ],
+    "hybrid_physical_line_ranges": [
+      [
+        26212,
+        26271
+      ],
+      [
+        26278,
+        26283
+      ],
+      [
+        26289,
+        26979
+      ]
+    ],
+    "indivisible_multi_token_WORDs": [
+      115448,
+      115463,
+      115580,
+      115714,
+      115719,
+      115738,
+      115780,
+      115833
+    ],
+    "key_order_checks": [
+      {
+        "WORDs": [
+          115590,
+          115801,
+          115805,
+          115813,
+          115839,
+          115871,
+          115875,
+          115595
+        ],
+        "pass": true
+      },
+      {
+        "WORDs": [
+          115675,
+          115678,
+          115753,
+          115807,
+          115877
+        ],
+        "pass": true
+      }
+    ],
+    "language": "la",
+    "language_label": "Latin",
+    "language_qualifier": "Latin papal act and historical apparatus; no substantive non-Latin passage in the entire reviewed extent. The locally named commercial contracts remain in the source Latin narration.",
+    "mixed_source_XML_LINE_ordinals_page_1": [
+      81,
+      94
+    ],
+    "neighboring_units": "Leaf237 contains only0067. Leaf236 also contains0066; its frozen admission extents are not changed. Other existing acts and consumer pins remain untouched.",
+    "ownership": {
+      "leaf236_body": "Only LXXXIV heading/synopsis/protocol and its first two body lines; previous0066 body, marginal summaries and uncertain punctuation115375 excluded.",
+      "leaf236_edge_noise": "WORDs115379–115380 remain controller-only uncertain recognitions, not asserted as act text.",
+      "leaf236_note": "Own title-source note WORDs115364–115369 retained.",
+      "leaf237_body_left": "All belongs to0067 section1; left bottom completes the displaced clauses before right top.",
+      "leaf237_body_right": "All belongs to0067 section1 continuation then sections2–3, continuing on leaf238.",
+      "leaf237_gutter_ocr": "WORDs115806 and115876 overlap the printed vertical column rule; retained whole in a separate stream, never body text.",
+      "leaf237_header": "Running header including misrecognized page value224 retained literally; visual page label221 is separate metadata.",
+      "leaf237_margin_right": "All eight WORDs form the current section2 marginal summary; retained literally.",
+      "leaf237_uncertain": "WORDs115693–115694 are punctuation-only interline recognitions below the second paragraph2 row; retained separately, with no asserted correction/deduplication.",
+      "notes": "No footnote or footer block is printed on leaf237. Own historical title note is on leaf236."
+    },
+    "printed_attribution": "Gregorius Papa XIII, ad futuram rei memoriam.",
+    "reader_source_note": "Latin historical witness. Reading order on scan leaves 236 and 237 follows the inspected column positions. The remaining pages are uncollated OCR; spelling and uncertain recognitions are unchanged. The act’s historical title-source note and marginal summary remain included. Punctuation-only and rule-shaped recognitions are retained separately, without supplying or correcting wording. No whole-act image collation or authenticity determination is claimed.",
+    "remaining_OCR_only_leaves": [
+      238,
+      239
+    ],
+    "remaining_barriers": [],
+    "review_note": "Entire original0067 candidate raw LF25874–26213 and20LF surrounding context read, together with inherited reordered leaf236 and new image-reviewed leaf237. Independent LXXXIV and Gregory self-protocol raw25886 open one act. The current title-source note raw25890 is retained. The page237 patch restores the continuation from denun-25954 through26005/26008–26013/26024 before the right-column opening25961; sections2–3 follow in source page order. The unchanged remainder on leaves238–239 contains current sections4–11, full transumpt/publication clauses, and complete full/short dating26209–26213 before independent LXXXV26216. Hadrian VI is narrated predecessor, not a serial outer act. No omitted substantive body, opening, annex or subscription notice occurs. No WORD is repaired, split, deleted or deduplicated. This is a complete printed OCR witness, not an authenticated act or a collated autograph.",
+    "role_WORD_counts": {
+      "body-left": 239,
+      "body-right": 243,
+      "gutter-ocr": 2,
+      "header": 8,
+      "margin-right": 8,
+      "uncertain": 2
+    },
+    "schema": "triptych-bullarium-geometry-additive-review/v1",
+    "source_attribution_lines_hybrid": [
+      [
+        26255,
+        26261
+      ]
+    ],
+    "source_attribution_lines_raw": [
+      25886,
+      25886
+    ],
+    "source_raw_sha256": "516f2693e4a068939e3696ae771afd0032a80cd49d59ace3944725b943bad2cc",
+    "source_research_limits": [
+      "Known OCR spelling and recognition damage remains literal.",
+      "Geometry images establish stream membership/order only.",
+      "Independent replay and source-segment registration remain separate downstream steps."
+    ],
+    "source_title_lines_hybrid": [
+      [
+        26213,
+        26254
+      ]
+    ],
+    "source_title_lines_raw": [
+      25876,
+      25884
+    ],
+    "source_xml_sha256": "b5e32433ab1f006e9b2ded8e3d144aedd4967b9526208796b2bda88d7e5ae78d",
+    "title": "Innoratìo poenarum ab Hadriano Vlpro- posìtannn cantra mercatores exercen- tes monopolia jrnmentonim ei aliorum ad vìdum m-cessariorum in regnis A- ragoniae, et extensio ad facknlcs con- traclus quictamentos mincupalos, curri prohibitìone notariis, sub poma falsi, ne aliqìiod instrumenhim super prae- missis coiifìciant^ '",
+    "unchanged_source_raw_lf_ranges_1": [
+      [
+        26025,
+        26213
+      ]
+    ],
+    "unit_id": "bullarium.volume-08.unit-0067"
+  },
+  "inherited_geometry_evidence": {
+    "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.coordinate-evidence-v1-c9e80f0cc2f9",
+    "manifest": "src/sources/works/bullarium-romanum/volume-08/editions/1883-naples-latin/artifacts/coordinate-evidence-v1-c9e80f0cc2f9/artifact.toml",
+    "sha256": "c9e80f0cc2f9e5cb4aa5b00af6a558b07dd4a97b0b09bb20adceff375e36650c"
+  },
+  "limits": "This fourth witness uses a newer volume derivative. All earlier accepted geometry controllers, source bounds, document IDs and frozen input bytes remain unchanged. Page geometry inspection is not word-level or whole-act collation.",
+  "schema": "triptych-bullarium-coordinate-evidence/v1",
+  "source_ocr_artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.ocr-516f2693e4a0",
+  "source_ocr_sha256": "516f2693e4a068939e3696ae771afd0032a80cd49d59ace3944725b943bad2cc",
+  "source_xml_artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.xml-b5e32433ab1f",
+  "source_xml_sha256": "b5e32433ab1f006e9b2ded8e3d144aedd4967b9526208796b2bda88d7e5ae78d",
+  "volume": 8
+}

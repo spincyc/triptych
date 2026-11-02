@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.bosco-orations-checked-20261029"
+edition_id = "edition.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52"
+artifact_type = "verified-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The issue is dated 24 February 1930 on its cover. Its 1930 words are public domain in the United States in 2026 after expiry of the maximum 95-year publication term. This faithful mechanical scan adds no new human authorship. The basis is the independently read publication date, not online accessibility or an uploader licence label. Underlying historical text and facsimile are excluded from the project CC BY 4.0 grant."
+provenance = "Three complete Latin prayers transcribed directly from the exact ACS52 scan page images at200and400dpi; no OCR spelling was adopted as authority. Retains source accents, capitals, pointing and actual short conclusions. Joins printed line wraps and splits prayers by one empty physical line."
+retrieved = "2026-10-29"
+sha256 = "82a011c5e4207cab295d68f4f922440a74894d8522865e2ca28ef0df34f08b03"
+byte_size = 674
+path = "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/bosco-orations-checked-20261029/latin.txt"
+derived_from = "artifact.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.official-asc-scan-93b726ae"
+transformation = "Join line wraps and remove line-end hyphenation, preserving each source word, accent, capital, punctuation mark and actual conclusion cue; one complete prayer per physical line with blank separators."
+encoding = "utf-8"
+indexable = true

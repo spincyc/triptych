@@ -1,0 +1,55 @@
+{
+  "preview-build": {
+    "command": [
+      "make",
+      "PYTHON=python",
+      "public-preview"
+    ],
+    "exit": 0,
+    "private_log_sha256": "831f232a3bbcc3523c25e77bb91dab9701b7ebc91797cd202aacb0d9d1635b3a",
+    "seconds": 98.951
+  },
+  "preview-verify": {
+    "command": [
+      "python",
+      "tools/public-alpha",
+      "verify",
+      "--preview"
+    ],
+    "exit": 0,
+    "private_log_sha256": "2d87689935ce2ac9799e8734369261a2c512c6b0a60e5acaadee1f31940a8bae",
+    "seconds": 104.005
+  },
+  "public-build": {
+    "command": [
+      "make",
+      "PYTHON=python",
+      "public-site"
+    ],
+    "exit": 0,
+    "private_log_sha256": "daf95302b2bbc4500dde6cbd9c6f428769e8d12651379ef7aab91d7fa04e95b5",
+    "seconds": 105.693
+  },
+  "public-verify": {
+    "command": [
+      "python",
+      "tools/public-alpha",
+      "verify",
+      "--deployment-target",
+      "github-pages"
+    ],
+    "exit": 0,
+    "private_log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14",
+    "seconds": 106.096
+  },
+  "source-aggregate": {
+    "command": [
+      "make",
+      "PYTHON=python",
+      "check-sources"
+    ],
+    "exit": 0,
+    "private_log_sha256": "08d0df8a75ca2966c19655c7e581a46c1db124ba74fbcd62e463ce0ba526e809",
+    "seconds": 212.371
+  }
+}

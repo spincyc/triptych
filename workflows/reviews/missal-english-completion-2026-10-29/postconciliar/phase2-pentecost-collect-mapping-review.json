@@ -1,0 +1,118 @@
+{
+  "schema": "independent-extended-vigil-collect-referral-mapping/v1",
+  "reviewed_on": "2026-10-29",
+  "reviewer": "pc_nativity_review",
+  "decision": "SOURCE-LOCAL REFERRAL MAPPING SUPPORTED for both named Collect seats; study-English recipient admission still requires independent ordinary-four body/English seal and parent adoption",
+  "scope": "Separate successor to frozen18-row/8-composed-seat partial extended-Vigil shape. This does not rewrite the original seven gaps or claim full2008Collect bodies.",
+  "base_shape_review": {
+    "path": ".scratch/postconciliar-english-completion-20261029/nativity-review/pentecost-extended-round/review.json",
+    "sha256": "54bf2fb4129a47643453afdec096093f348e90cfa77e5e525868ecf73bda9366"
+  },
+  "ordinary_study_candidate_pin": {
+    "path": ".scratch/postconciliar-english-completion-20261029/ancient-sources/secondpass-ordinary/candidate-four.json",
+    "sha256": "c6319d565bbcf5654db1f5688613dfc8ded428ac3d1eaa12c69face08c19458f",
+    "scope": "Only the two identified study candidates are pinned for intended recipient references. Full ancient-body/English review is owned separately by pc_ancient_review; this mapping-only receipt does not claim to have repeated it."
+  },
+  "directly_read_evidence": [
+    {
+      "source": "Official Notitiae2008,nos503-504",
+      "whole_pdf_sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f",
+      "artifact_pages": [
+        62,
+        65
+      ],
+      "printed_pages": [
+        "380",
+        "383"
+      ],
+      "facts": "Module heading Ad Missam in Vigilia Pentecostes(p443); nn2/3 appoint Praesta quaesumus ut ad Missam in Vigilia,p443 in both opening branches. n10 appoints Omnipotens sempiterne Deus ut ad Missam in Vigilia,p443 after hymn Gloria."
+    },
+    {
+      "source": "Registered secondary digitally typeset2002Missal",
+      "whole_pdf_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "artifact_pages": [
+        264,
+        265
+      ],
+      "facts": "AP264 bottom starts DominicaPentecostes/Sollemnitas; AP265 begins AdMissaminVigilia and contains complete Collect1Omnipotens paschale followed by Vel and complete Collect2Praesta claritatis, each ending PerDominum. These are whole prayers read in their own source-local role; printed2002fidelity is unestablished."
+    }
+  ],
+  "recipient_mappings": [
+    {
+      "recipient": [
+        "pentecost",
+        "extended-vigil",
+        "Collect (before the readings)",
+        "all",
+        1
+      ],
+      "source_study_identity": [
+        "pentecost",
+        "vigil",
+        "Collect",
+        "all",
+        2
+      ],
+      "source_study_id": "english-completion-20261029-postconciliar-pentecost-vigil-collect-2-study",
+      "source_study_english_sha256": "ac34c4afd5c25948d3151350c1a2f653cd6eb6d9c4161b3ee49af95070e50066",
+      "specific_relation": "Official module explicitly calls the Praesta prayer of the Pentecost Vigil atp443 in both opening branches. In held secondary same-named Vigil, the Vel Collect is Praesta quaesumus omnipotens Deus ut claritatis tuae..., matching the established study candidate. This identifies a source-qualified prayer referral, not a complete2008body equivalence.",
+      "source_ending_limit": "Held secondary full prayer ends PerDominum. Older Hadrianum and candidate cue basis are separately reviewed by ordinary-four lane. Official2008pointer alone supplies no full ending or response."
+    },
+    {
+      "recipient": [
+        "pentecost",
+        "extended-vigil",
+        "Collect (after Gloria)",
+        "all",
+        1
+      ],
+      "source_study_identity": [
+        "pentecost",
+        "vigil",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_study_id": "english-completion-20261029-postconciliar-pentecost-vigil-collect-1-study",
+      "source_study_english_sha256": "f39297ffc2bd1806838302e46492126d2762bd4252978dd1a430b5196eaf146e",
+      "specific_relation": "Official n10 explicitly calls the Omnipotens sempiterne Deus Collect of the Pentecost Vigil atp443 after Gloria. In held secondary same-named Vigil, principal Collect1continues qui paschale sacramentum..., matching the established study candidate. This identifies a source-qualified prayer referral, not a complete2008body equivalence.",
+      "source_ending_limit": "Held secondary full prayer ends PerDominum. Older Gelasian body and independent cue basis are separately reviewed by ordinary-four lane. Official2008pointer alone supplies no full ending or response."
+    }
+  ],
+  "same_incipit_refusal_control": {
+    "source_page": 264,
+    "heading": "Sabbato / Ad Missam matutinam",
+    "incipit": "Praesta, quaesumus, omnipotens Deus",
+    "continued_identity": "ut qui paschalia festa peregimus",
+    "decision": "EXCLUDED. Adjacent Saturday-morning prayer has the same short incipit but a different full body and role. Official reference explicitly names AdMissaminVigilia,p443; it does not appoint this nearby morning Collect. The accepted mapping therefore does not rest on incipit alone."
+  },
+  "limitations": [
+    "Official source is primary for exactly its inspected extended-module appointments and pointers. It does not reproduce the two complete2008prayer bodies.",
+    "Secondary2002body/source role is bounded and does not authenticate the printed2002or2008book. Keep source-qualified study-English labels and exact source distinctions visible.",
+    "Do not call either recipient an exact or approved2008English translation. This mapping supplies no English rights or text by itself; independent old-Latin body, English fidelity and all conclusion differences must pass their own sealed review.",
+    "Unselected opening branches remain unselected; Praesta happens to be the same pointer in both. No other simple-Vigil proper or normalOrdinaryframe is transferred.",
+    "Do not infer R.Amen or any full conclusion from these official pointers. Any proposed response or longer ending needs its own exact source proof.",
+    "Preserve original frozen module’s two pointer gaps and seven-gap receipt. After all required seals, two separate source-qualified recipient entries can coexist with preserved historical findings; remaining five gaps continue to be explicit."
+  ],
+  "required_integration": [
+    "Reference both the official module/pointer passage and the source-local whole secondaryVigil comparison passage in each recipient witness note.",
+    "Reference the separately accepted ordinary-four ancient-body/English seal and exact English payload hashes; source-qualified recipient rows need exact recipient publication joins.",
+    "Root decides adoption after body/English seal. If frozen English changes during that review, use the successor candidate/English hash; this receipt does not bless a modified text.",
+    "Do not alter shape, prayer alternatives, denominator or whole-form completion claim by copying two texts. Two additional study uses change only accepted English coverage after proper integration."
+  ],
+  "validation": {
+    "fresh_secondary_complete_pages_rendered_and_read": [
+      264,
+      265
+    ],
+    "official_pages_read_in_prior_fresh_shape_review": [
+      62,
+      65
+    ],
+    "secondary_whole_pdf_hash_rechecked": true,
+    "render_check": ".scratch/postconciliar-english-completion-20261029/nativity-review/pentecost-collect-mapping-round/render-check.json",
+    "render_check_sha256": "d3bd62bc34ddcd074c75c8421497859b2fa903b3b1ff47061d808c6b57f7b459",
+    "ordinary_candidate_bytes_pinned": true,
+    "tracked_mutations": "none"
+  }
+}

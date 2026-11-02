@@ -1,0 +1,159 @@
+{
+  "schema": "triptych-independent-finite-three-English-and-surface-review/v1",
+  "reviewed_utc": "2026-10-30T03:54:38.874966+00:00",
+  "status": "ACCEPT_EXACT_THREE_STUDY_ENGLISH_AND_CONDITIONAL_SURFACE_DESIGN_PENDING_ROOT_ADOPTION_AND_SOURCE_ASSEMBLY",
+  "scope": "Only complete English fidelity, project-English rights classification, exact source-owned marker substrings and bounded surface decision for the frozen three Offertory candidates. Parallel independent reviewer owns source/controller/final assembly review; no such acceptance is inferred here.",
+  "input": {
+    "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/candidate.json",
+    "sha256": "f8a94d64d90e3dc82e90a84f1e7587c17d40dba0649b8c82f8ac3acf40c45acb"
+  },
+  "mechanical_check_read": {
+    "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/mechanical-check.json",
+    "sha256": "674807b41b759773373809f94989f3f9bf28df8546a12d4e624e6946a196dc1d",
+    "note": "Read as candidate author evidence; its reported bounded graph/refusal test is not falsely described as rerun by this reviewer."
+  },
+  "finite_source_index": {
+    "path": ".scratch/roman-english-completion-20261029/chants/finite-rights-candidate-index-v2.json",
+    "sha256": "7cf5c043202d197c705fb25983ac7a10c035b96c2bf3e9a5079ef4876851ef1a"
+  },
+  "prior_underlying_rights_recommendations": [
+    {
+      "path": ".scratch/translation-policy-20261029/sanctoral-rights3/CHRISM-CHANT-FOUR-RECOMMENDATION.json",
+      "sha256": "fe1f06208f67865a47312a5675cc10ecabe09c62871e73122685ecba9bc86b59"
+    },
+    {
+      "path": ".scratch/translation-policy-20261029/sanctoral-rights3/CHANT-V2-CONTROLLER-SUCCESSOR-REVIEW.json",
+      "sha256": "1f0d83b277cad947579908274b714985d5ab0b9c9d2f439dae2964e56cfd0ada"
+    }
+  ],
+  "exact_cases": [
+    {
+      "identity": [
+        "exaltatione-s-crucis",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "Latin_sha256_UTF8_including_terminal_LF": "18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79",
+      "English_sha256_UTF8_no_added_LF": "43296ddf74c76bf5b91f48044e1438e4b363766bdf0071a21f61a1329580b755",
+      "English_fidelity": "ACCEPT_EXACT_PROJECT_STUDY_ENGLISH",
+      "fidelity_reasoning": "Complete direct study rendering accepted: divine protection of your people by the Cross; omnibus and omnium both explicitly become all, with snares and enemies kept distinct; pleasing service rendered to you, acceptable sacrifice and final alleluia all present. No added response or petition.",
+      "rights": "Original project study English directly translating the exact source-controlled Latin; not human Lasance/Cummiskey English, approved modern English, ICEL text, or an independent license to protected Latin. Underlying qualified-Latin basis and root adoption remain separately required.",
+      "exact_marker_controls": [],
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.cross-offertory-qualified",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.cross-offertory-qualified-18060fef",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708"
+      ],
+      "prospective_publication_surfaces": [
+        "web",
+        "download",
+        "print",
+        "cli",
+        "corpus-data",
+        "public-git"
+      ]
+    },
+    {
+      "identity": [
+        "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+        "main",
+        "Offertory",
+        "all",
+        2
+      ],
+      "Latin_sha256_UTF8_including_terminal_LF": "e88531b6aff711ffb42e4d411fc44e81d0f07c5836d36e34fe3570b33a8a3c96",
+      "English_sha256_UTF8_no_added_LF": "aae1c894bbd01f1de8f087e5690a10c4bac4c5cf4b55391b7ad30580fef3d6b2",
+      "English_fidelity": "ACCEPT_EXACT_PROJECT_STUDY_ENGLISH",
+      "fidelity_reasoning": "Complete direct study rendering accepted: a tree has hope, conditional cutting down, renewed greening, sprouting branches and the actual selected Paschal Alleluia are all represented. It does not substitute a selected Bible translation or infer an expanded pericope. The source-owned T.P. instruction is not represented as spoken chant text; this exact occurrence2 is already the separately selected Paschal body.",
+      "rights": "Original project study English directly translating the exact source-controlled Latin; not human Lasance/Cummiskey English, approved modern English, ICEL text, or an independent license to protected Latin. Underlying qualified-Latin basis and root adoption remain separately required.",
+      "exact_marker_controls": [],
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.damascene-paschal-offertory-qualified",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.damascene-paschal-offertory-qualified-e88531b6",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708"
+      ],
+      "prospective_publication_surfaces": [
+        "web",
+        "download",
+        "print",
+        "cli",
+        "corpus-data",
+        "public-git"
+      ]
+    },
+    {
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "Latin_sha256_UTF8_including_terminal_LF": "f4e866f44553d4181484958a6e4d79ffe7d1e560a4a56f39c298b877093de446",
+      "English_sha256_UTF8_no_added_LF": "c362ea43d90e5479ac43aefcc20c270118f225e8e0de49944b4ca3a2fb6b772c",
+      "English_fidelity": "ACCEPT_EXACT_PROJECT_STUDY_ENGLISH",
+      "fidelity_reasoning": "Complete direct study rendering accepted: Mary springs from royal lineage and shines forth; most devout petition in mind and spirit for aid through her prayers preserves every old-base component. The added conditional instruction In Paschal time, Alleluia accurately represents the source T.P. apparatus, with the invocation still conditional. No following Corde et animo versicle or invented prayer words are included.",
+      "rights": "Original project study English directly translating the exact source-controlled Latin; not human Lasance/Cummiskey English, approved modern English, ICEL text, or an independent license to protected Latin. Underlying qualified-Latin basis and root adoption remain separately required.",
+      "exact_marker_controls": [
+        {
+          "lang": "la",
+          "text_sha256": "f4e866f44553d4181484958a6e4d79ffe7d1e560a4a56f39c298b877093de446",
+          "actions": [
+            {
+              "kind": "rubric",
+              "offset": 110,
+              "text": "(T. P. Alleluia.)"
+            }
+          ],
+          "substring_offset_check": "pass"
+        },
+        {
+          "lang": "en",
+          "text_sha256": "c362ea43d90e5479ac43aefcc20c270118f225e8e0de49944b4ca3a2fb6b772c",
+          "actions": [
+            {
+              "kind": "rubric",
+              "offset": 116,
+              "text": "(In Paschal time, Alleluia.)"
+            }
+          ],
+          "substring_offset_check": "pass"
+        }
+      ],
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-offertory-qualified",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-offertory-qualified-f4e866f4",
+        "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-base-latin-20261029"
+      ],
+      "prospective_publication_surfaces": [
+        "web",
+        "download",
+        "print",
+        "cli",
+        "corpus-data",
+        "public-git"
+      ]
+    }
+  ],
+  "independent_checks": [
+    "All3 full Latin and English UTF8 hashes were recomputed; all3 English strings equal their sole project-created translation rows and no human source_id is invented.",
+    "All27 candidate source-file hashes were recomputed and matched; this is conservation evidence, not a duplicate whole-source or assembly audit.",
+    "The2 Queenship text-structure hashes and exact rubric-action substring offsets110Latin/116English match the full actual strings.",
+    "The3 underlying Latin hashes exactly match the previously recommended finite cases and corrected source index. No new source words, arrangement or finite rights question is introduced by these English renderings.",
+    "Current candidate authority marker uses only the agreed path and method; root authority is not falsely described as adopted and no circular authority-file hash is introduced."
+  ],
+  "surface_judgment": "After separate root adoption of the exact qualified underlying-Latin tuple/body/source/proof/surface records, the independently established public-domain foundation plus finite limited-contribution basis supports the listed web/download/print/CLI/corpus-data/public-Git surfaces for these exact three Latin bodies. Their new project study English can use those surfaces under project attribution. This is not ICEL conditional-live-web permission and does not expand any third-party source wrapper or other modern text right.",
+  "conditional_marker_limit": "Queenship whole parenthetical is honestly marked as source-owned rubric apparatus in Latin and English. Exact marker metadata does not itself prove a date-dependent runtime selector. Preserve the explicit Paschal condition in displayed/printed text and verify actual seasonal behavior in final runtime tests. Damascene’s selected occurrence2 must remain bounded to its existing source-owned Paschal option; do not copy its added Alleluia onto occurrence1 or another chant.",
+  "remaining_conditions": [
+    "Root must adopt the exact three qualified-Latin authorities; the current expected guard refusal before adoption is required and must not be bypassed. Prospective permitted rows are candidate postimages, not existing publication permission.",
+    "Parallel independent source/assembly review must accept the exact final27sourcefiles/22controllers and complete target bindings; this receipt does not pre-empt that verdict.",
+    "The canonical translation-review owner must record these exact English hashes and AI study authorship before integration. No human/legal/official/approved-English status is claimed.",
+    "Final source graph, closed guard, publication-owner generation, source privacy, UI/CLI/print and seasonal rendering checks remain required before public release. No modern complete book/scan, rubric corpus, other proper or historical human translation is cleared."
+  ],
+  "canonical_files_modified": false,
+  "root_adoption_performed": false,
+  "publication_performed": false,
+  "new_source_assembly_acceptance_claimed": false
+}

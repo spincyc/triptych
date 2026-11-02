@@ -1,0 +1,89 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "731c568a3488e363e825dacf9a4ee9010bd4080ebabb12030082cd3493925246",
+  "documents": [
+    {
+      "id": "acta.ass.006.ass-006-act-008",
+      "language": "la",
+      "pdf_sha256": "4b1d115bbc560c59a57f846d8923819aa1fee430729eb37f2c86c17e3fc19fe3",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "full_size_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            3
+          ],
+          "description": "Final right column is empty; the final page retains historical concluding source text, dating/subscription and the readable terminal source notice and rights colophon. No apparatus-only spill page."
+        }
+      ],
+      "limitations": [
+        "Native Vatican source PDFs are OCR reconstructions; no original-print facsimile or whole-source lexical collation.",
+        "No translation accuracy, new historical identity/intake approval or rights clearance is certified.",
+        "No installation or deployment was performed; root owns admission and canonical report copying.",
+        "Native source inspection is limited to ASS 6 parent pages 161–165."
+      ],
+      "receipt_sha256": "731c568a3488e363e825dacf9a4ee9010bd4080ebabb12030082cd3493925246",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-40.md",
+      "report_sha256": "51620a2d57ccda740ef5178b6d59c258d962cacb84a154d952f6f9c6424411f9",
+      "source_repair_status": "PASS"
+    },
+    {
+      "id": "acta.ass.039.ass-039-l004849",
+      "language": "la",
+      "pdf_sha256": "6db1990eb8e40d06401b4ad423f6471cee768312f1de1ffb1c7a85804c3b48c7",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "full_size_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            3
+          ],
+          "description": "Final right column is empty; the final page retains historical concluding source text, dating/subscription and the readable terminal source notice and rights colophon. No apparatus-only spill page."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            2
+          ],
+          "description": "Literal l32 running-page marker (historical LF 4957) and the already separate Cfr. Acta note (LF 5031) remain in source order. Ezechiel / Die 20 Febr. notes are distinct source paragraphs, with explicit TeX paragraph breaks before and after."
+        }
+      ],
+      "limitations": [
+        "Native Vatican source PDFs are OCR reconstructions; no original-print facsimile or whole-source lexical collation.",
+        "No translation accuracy, new historical identity/intake approval or rights clearance is certified.",
+        "No installation or deployment was performed; root owns admission and canonical report copying.",
+        "Native source inspection is limited to ASS 39 parent page 131."
+      ],
+      "receipt_sha256": "731c568a3488e363e825dacf9a4ee9010bd4080ebabb12030082cd3493925246",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-40.md",
+      "report_sha256": "51620a2d57ccda740ef5178b6d59c258d962cacb84a154d952f6f9c6424411f9",
+      "source_repair_status": "PASS"
+    }
+  ]
+}

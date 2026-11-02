@@ -1,0 +1,363 @@
+{
+  "schema": "triptych-etsi-foreign-ocr-exclusion-replay/v1",
+  "status": "pass",
+  "parent_sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+  "output_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+  "parent_bytes": 40192,
+  "output_bytes": 40091,
+  "removed_bytes": 101,
+  "input_LF_count": 824,
+  "output_LF_count": 788,
+  "recipe_sha256": "d0d45474937b90f2018e8de1f9d4412cc4bd047563c29ba32332a27260f178f5",
+  "implementation_sha256": "aa67b0e765f3c803c535ad3960c385eccc12509af75d9f5db5c0ea317caf3213",
+  "foreign_span_disposition_sha256": "a704482e5f91e8987f319f34ecca6457e427b7ce48d5aac4d594907b29c0e728",
+  "removals": [
+    {
+      "removed_parent_byte_range": [
+        5502,
+        5505
+      ],
+      "source_LF_range": [
+        113,
+        113
+      ],
+      "removed_sha256": "54d3f98a959e47bc09f39a6925125d58ba52023eba8c97394a4b27c40846831c",
+      "source_classification": "OWN_LAYOUT_FURNITURE",
+      "original_native_page": 5,
+      "printed_folio": 6,
+      "retained_parent_byte_range": [
+        0,
+        5502
+      ],
+      "retained_output_byte_range": [
+        0,
+        5502
+      ],
+      "retained_sha256": "2f04c9f4725f8d6adc6c9fa8dfa0309e52fc7404160aa941b0431522245fe628",
+      "output_deletion_boundary": 5502
+    },
+    {
+      "removed_parent_byte_range": [
+        17402,
+        17406
+      ],
+      "source_LF_range": [
+        343,
+        343
+      ],
+      "removed_sha256": "6cd5dd763dec7b2089cd9b59bd11e23e63438ce9bb2512433b0cca3dd441dfff",
+      "source_classification": "OWN_LAYOUT_FURNITURE",
+      "original_native_page": 11,
+      "printed_folio": 12,
+      "retained_parent_byte_range": [
+        5505,
+        17402
+      ],
+      "retained_output_byte_range": [
+        5502,
+        17399
+      ],
+      "retained_sha256": "37904dd3c1e23da806d4ee1d86e3d0089f1f1d75dffd2e53b23cf611bd223230",
+      "output_deletion_boundary": 17399
+    },
+    {
+      "removed_parent_byte_range": [
+        19333,
+        19354
+      ],
+      "source_LF_range": [
+        379,
+        387
+      ],
+      "removed_sha256": "e07353ac5a8987fff8496589d21d882f1dc2af7eeb83235fc98023fdd4a0a987",
+      "source_classification": "FOREIGN_CLIPPED_FACING_PAGE",
+      "original_native_page": 11,
+      "printed_folio": 12,
+      "retained_parent_byte_range": [
+        17406,
+        19333
+      ],
+      "retained_output_byte_range": [
+        17399,
+        19326
+      ],
+      "retained_sha256": "c8f252c68300ce4f7dcab84d20e2dd67fb72d7ae7164687ea17a4086bc4ade4e",
+      "output_deletion_boundary": 19326
+    },
+    {
+      "removed_parent_byte_range": [
+        19470,
+        19474
+      ],
+      "source_LF_range": [
+        395,
+        395
+      ],
+      "removed_sha256": "e253a310af2eefd75138165569b69ed5360a215c8ebbcccef6a6c7275e670c9f",
+      "source_classification": "OWN_LAYOUT_FURNITURE",
+      "original_native_page": 12,
+      "printed_folio": 13,
+      "retained_parent_byte_range": [
+        19354,
+        19470
+      ],
+      "retained_output_byte_range": [
+        19326,
+        19442
+      ],
+      "retained_sha256": "b6873cc8762ce6d31e03aa6fa8ef77ed8b83c5e3bb3ceca48e8751b886473cb4",
+      "output_deletion_boundary": 19442
+    },
+    {
+      "removed_parent_byte_range": [
+        20761,
+        20770
+      ],
+      "source_LF_range": [
+        419,
+        419
+      ],
+      "removed_sha256": "3c11f51bc4ba7d302c36151074764fa29e74d4760852ad0c06b559a302aec908",
+      "source_classification": "EXTRANEOUS_RECOGNITION_OUTPUT",
+      "original_native_page": 12,
+      "printed_folio": 13,
+      "retained_parent_byte_range": [
+        19474,
+        20761
+      ],
+      "retained_output_byte_range": [
+        19442,
+        20729
+      ],
+      "retained_sha256": "05beddd9fb256728c8176036f449be73d4c3bb3ad1afa38aaca5d6af5f33f5db",
+      "output_deletion_boundary": 20729
+    },
+    {
+      "removed_parent_byte_range": [
+        23477,
+        23515
+      ],
+      "source_LF_range": [
+        470,
+        485
+      ],
+      "removed_sha256": "73b0fd3c28813840114a7862d9a49c44f919d3f664e8fe9bc6f04d015a14e0fa",
+      "source_classification": "FOREIGN_CLIPPED_FACING_PAGE",
+      "original_native_page": 13,
+      "printed_folio": 14,
+      "retained_parent_byte_range": [
+        20770,
+        23477
+      ],
+      "retained_output_byte_range": [
+        20729,
+        23436
+      ],
+      "retained_sha256": "44f61c90e5ef0d4369cd6b428abc22740aa3251a4c08648a5582a6e6d33ce341",
+      "output_deletion_boundary": 23436
+    },
+    {
+      "removed_parent_byte_range": [
+        25524,
+        25528
+      ],
+      "source_LF_range": [
+        527,
+        527
+      ],
+      "removed_sha256": "91a4dc8c36d1666007178940abfd75f14c9a70d702090367148a0c28852a0061",
+      "source_classification": "OWN_LAYOUT_FURNITURE",
+      "original_native_page": 15,
+      "printed_folio": 16,
+      "retained_parent_byte_range": [
+        23515,
+        25524
+      ],
+      "retained_output_byte_range": [
+        23436,
+        25445
+      ],
+      "retained_sha256": "ff42f1f0713641caa6e1a7d94fc37802c47b6370da6fcf6b5b0d948c9f7cc2c2",
+      "output_deletion_boundary": 25445
+    },
+    {
+      "removed_parent_byte_range": [
+        27629,
+        27643
+      ],
+      "source_LF_range": [
+        564,
+        568
+      ],
+      "removed_sha256": "6d4a6a2c69d63338ff0bf7c04b3cf6364d96e3338fd6735ecd660f6eeab55f5b",
+      "source_classification": "FOREIGN_CLIPPED_FACING_PAGE",
+      "original_native_page": 15,
+      "printed_folio": 16,
+      "retained_parent_byte_range": [
+        25528,
+        27629
+      ],
+      "retained_output_byte_range": [
+        25445,
+        27546
+      ],
+      "retained_sha256": "4c659aaaaad9486a2b3125b4e31c297ea03c87f7cb186b6dc6c6141c3b8c8c4d",
+      "output_deletion_boundary": 27546
+    },
+    {
+      "removed_parent_byte_range": [
+        39778,
+        39782
+      ],
+      "source_LF_range": [
+        810,
+        810
+      ],
+      "removed_sha256": "559dd0a129926e0ed17e2f453e12e9fa50483c4f312ba7f567ba37fc0e46caa7",
+      "source_classification": "OWN_LAYOUT_FURNITURE",
+      "original_native_page": 22,
+      "printed_folio": 23,
+      "retained_parent_byte_range": [
+        27643,
+        39778
+      ],
+      "retained_output_byte_range": [
+        27546,
+        39681
+      ],
+      "retained_sha256": "6a1cddd117f4cc9b2ae718a906260104fafb296972c3ae88bf5175ec363700ce",
+      "output_deletion_boundary": 39681
+    }
+  ],
+  "retained_suffix_parent_byte_range": [
+    39782,
+    40192
+  ],
+  "retained_suffix_output_byte_range": [
+    39681,
+    40091
+  ],
+  "retained_suffix_sha256": "3944ebf54bd0cef28902af487c05485804a4ead69596a97b7cffceee95b431b5",
+  "all_other_parent_bytes_retained_exactly": true,
+  "reinserting_only_the_nine_original_spans_restores_parent_exactly": true,
+  "foreign_removed_bytes": 82,
+  "own_folio_removed_bytes": 19,
+  "primary_image_replay": [
+    {
+      "original_native_page": 11,
+      "source_png_sha256": "55f28ddc949d0ddf13a7ec1e00f1a8b6ac31545b245dbe166d9f3f6adef83fbd",
+      "context_crop_sha256": "c56775dae1445f1aae03019e2ad7a7fd45c985382f2064e851f07bfa6e8a2e95",
+      "crop_rectangle_xywh": [
+        1120,
+        230,
+        101,
+        1670
+      ],
+      "source_and_crop_equal_frozen_primary_evidence": true
+    },
+    {
+      "original_native_page": 12,
+      "source_png_sha256": "e309a6645a29ed167b2b9345eb503cb19f507bf261d78181ed4c72b7ad06eb52",
+      "context_crop_sha256": "d2ce6efe448298f99c2a83ea793157fee526939561f6d759aff53f6c8785dd4d",
+      "crop_rectangle_xywh": [
+        10,
+        1180,
+        1040,
+        210
+      ],
+      "source_and_crop_equal_frozen_primary_evidence": true
+    },
+    {
+      "original_native_page": 13,
+      "source_png_sha256": "62b5665107e102de88245ab5d5bba47eb6a4d7ff1a56d1b67af39c61e36359a3",
+      "context_crop_sha256": "5d454da23d4f20e480be21a8488736908a301c9ced5968e15647394656ec119a",
+      "crop_rectangle_xywh": [
+        1120,
+        230,
+        101,
+        1670
+      ],
+      "source_and_crop_equal_frozen_primary_evidence": true
+    },
+    {
+      "original_native_page": 15,
+      "source_png_sha256": "1e7194d1900967791b5e1391ea8e2168999076423e5c463749bedba8d8098d95",
+      "context_crop_sha256": "cc30cb2f379ce3c9f5ad4cdfa5dc1824260b67a61ffdec2f069febf782626bcb",
+      "crop_rectangle_xywh": [
+        1120,
+        230,
+        101,
+        1770
+      ],
+      "source_and_crop_equal_frozen_primary_evidence": true
+    },
+    {
+      "classification": "OWN_LAYOUT_FURNITURE",
+      "original_native_page": 5,
+      "source_png_sha256": "52c8c6bda950d7adeadb93c3dcbfaf18152446b16b06eda56278aec1cc495edf",
+      "folio_crop_sha256": "9de622e82c397cf55858871bdba87e3ea6ae046d88f0f5e8182a5b664744cce7",
+      "crop_rectangle_xywh": [
+        350,
+        90,
+        500,
+        165
+      ],
+      "source_and_crop_equal_frozen_primary_evidence": true
+    },
+    {
+      "classification": "OWN_LAYOUT_FURNITURE",
+      "original_native_page": 11,
+      "source_png_sha256": "55f28ddc949d0ddf13a7ec1e00f1a8b6ac31545b245dbe166d9f3f6adef83fbd",
+      "folio_crop_sha256": "83b6a589a286ad01487377adb9acb330088cf4511bd5aa6f11893d50dfd4d69f",
+      "crop_rectangle_xywh": [
+        350,
+        90,
+        500,
+        165
+      ],
+      "source_and_crop_equal_frozen_primary_evidence": true
+    },
+    {
+      "classification": "OWN_LAYOUT_FURNITURE",
+      "original_native_page": 12,
+      "source_png_sha256": "e309a6645a29ed167b2b9345eb503cb19f507bf261d78181ed4c72b7ad06eb52",
+      "folio_crop_sha256": "fb9c597b83cccad711ecb7a8dfba5cefb1834809e8de9421d244a640d759959b",
+      "crop_rectangle_xywh": [
+        350,
+        90,
+        500,
+        165
+      ],
+      "source_and_crop_equal_frozen_primary_evidence": true
+    },
+    {
+      "classification": "OWN_LAYOUT_FURNITURE",
+      "original_native_page": 15,
+      "source_png_sha256": "1e7194d1900967791b5e1391ea8e2168999076423e5c463749bedba8d8098d95",
+      "folio_crop_sha256": "4ac56684c1b68a5addaaa411d54bcf513b40424db98ac16dca929ab712fe858e",
+      "crop_rectangle_xywh": [
+        350,
+        90,
+        500,
+        165
+      ],
+      "source_and_crop_equal_frozen_primary_evidence": true
+    },
+    {
+      "classification": "OWN_LAYOUT_FURNITURE",
+      "original_native_page": 22,
+      "source_png_sha256": "6b470d59916130ea99d1786211e99009f9cc11030dffbdd33ac3fd54a4a57b77",
+      "folio_crop_sha256": "6712678fcc1060471b1f943c150d2517842798cc5d688f16c9c5825637131879",
+      "crop_rectangle_xywh": [
+        350,
+        90,
+        500,
+        165
+      ],
+      "source_and_crop_equal_frozen_primary_evidence": true
+    }
+  ],
+  "source_word_insertions": 0,
+  "whitespace_normalization": false,
+  "limitations": "Exact native-justified exclusion only; this mechanical replay does not confer fresh independent source/PDF acceptance or body-wide lexical collation."
+}

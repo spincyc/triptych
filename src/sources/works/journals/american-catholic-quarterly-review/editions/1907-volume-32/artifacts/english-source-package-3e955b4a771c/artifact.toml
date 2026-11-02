@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.journals.american-catholic-quarterly-review.1907-volume-32.english-source-package-3e955b4a771c"
+edition_id = "edition.journals.american-catholic-quarterly-review.1907-volume-32"
+artifact_type = "source-input-package"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "Triptych-created factual source package, CC BY 4.0."
+license = "CC-BY-4.0"
+retrieved = "2026-10-26"
+sha256 = "3e955b4a771cf7b9c5566835772ac64cd50185d3542363e3e6a33dbf82e0f99c"
+byte_size = 562
+path = "src/sources/works/journals/american-catholic-quarterly-review/editions/1907-volume-32/artifacts/english-source-package-3e955b4a771c/package.json"
+encoding = "utf-8"
+indexable = false
+provenance = "Exact source OCR and reviewed extraction recipe identified as one replayable package."
+support_artifacts = [{ artifact_id = "artifact.journals.american-catholic-quarterly-review.1907-volume-32.ia-ocr-0960353e7922", embedded_reference = "raw-ocr.txt" }, { artifact_id = "artifact.journals.american-catholic-quarterly-review.1907-volume-32.english-extraction-recipe-944d90a8da63", embedded_reference = "recipe.json" }]

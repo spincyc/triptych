@@ -1,0 +1,121 @@
+#!/usr/bin/env python3
+"""Discover and inspect Vatican papal-document catalog metadata."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from _papal_documents import main
+from _tooling import Example
+
+# Captured from these exact invocations; refresh with make recapture-examples.
+EXAMPLES = {
+    'discover': (
+        Example(
+            'tools/papal-documents discover --workers 0',
+            (
+                'papal-documents: workers must be 1..8 and pace must be nonnegative',
+            ),
+            'exit 2; refuses invalid bounds before making requests',
+        ),
+        Example(
+            'tools/papal-documents discover --pace -1',
+            (
+                'papal-documents: workers must be 1..8 and pace must be nonnegative',
+            ),
+            'exit 2; refuses invalid bounds before making requests',
+        ),
+    ),
+    'check': (
+        Example(
+            'tools/papal-documents check',
+            (
+                '2814 documents; 237 index pages; 6 failed pages; 57 unresolved dates.',
+                '  address: 23',
+                '  apostolic-constitution: 1247',
+                '  apostolic-exhortation: 54',
+                '  apostolic-letter: 769',
+                '  brief: 102',
+                '  bull: 30',
+                '  encyclical: 325',
+                '... 3 more lines',
+            ),
+        ),
+        Example(
+            'tools/papal-documents check --json',
+            (
+                '{"coverage_pages": 237, "date_conflicts": 58, "discovery_complete": false, "document_types": {"address": 23, "apostolic-constitution": 1247, "apostolic-exhortation": 54, "apostolic-letter": 769, "brief": 102, "bull": 30, "encyclical": 325, ... [+999 chars]',
+            ),
+        ),
+    ),
+    'list': (
+        Example(
+            'tools/papal-documents list --pope leo-xiv --type encyclical',
+            (
+                '2026-05-15  Leo XIV  encyclical  Letter of His Holiness Leo XIV Magnifica Humanitas  papal.leo-xiv.20260515-magnifica-humanitas',
+            ),
+        ),
+        Example(
+            'tools/papal-documents list --pope john-paul-i',
+            (
+                '1978-09-01  John Paul I  apostolic-letter  for the elevation of the Shrine of Our Lady of Consolation to the status of Minor Basilica, Piacenza, Italy  papal.john-paul-i.hf-jp-i-apl-19780901-progredientibus-iam',
+                '1978-09-01  John Paul I  apostolic-letter  for the proclamation of Our Lady of the Good Journey as Patroness of the city of Itabirito, Brazil  papal.john-paul-i.hf-jp-i-apl-19780901-propterea-maxime',
+                '1978-09-12  John Paul I  apostolic-letter  for the creation of the Apostolic Nunciature in the Fiji Islands  papal.john-paul-i.hf-jp-i-apl-19780912-cum-probe',
+            ),
+        ),
+    ),
+    'show': (
+        Example(
+            'tools/papal-documents show --document papal.leo-xiv.20260515-magnifica-humanitas',
+            (
+                '{',
+                '  "date": "2026-05-15",',
+                '  "date_basis": "index-title",',
+                '  "date_raw": "15 May 2026",',
+                '  "document_type": "encyclical",',
+                '  "document_types": [',
+                '    "encyclical"',
+                '  ],',
+                '... 40 more lines',
+            ),
+        ),
+        Example(
+            'tools/papal-documents show --document papal.leo-xiv.20260515-magnifica-humanitas --json',
+            (
+                '{"date": "2026-05-15", "date_basis": "index-title", "date_raw": "15 May 2026", "document_type": "encyclical", "document_types": ["encyclical"], "id": "papal.leo-xiv.20260515-magnifica-humanitas", "identity_aliases": [], "index_title_raw": "... [+2733 chars]',
+            ),
+        ),
+    ),
+    'export': (
+        Example(
+            'tools/papal-documents export --document papal.leo-xiv.20260515-magnifica-humanitas --format beamer',
+            (
+                '\\documentclass[aspectratio=169]{beamer}',
+                '\\usepackage{fontspec}',
+                '\\setmainfont{Latin Modern Roman}',
+                '\\setbeamertemplate{navigation symbols}{}',
+                '\\begin{document}',
+                '% citation key: papal-leo-xiv-20260515-magnifica-humanitas-en-0ff738b150aeed5e',
+                '\\begin{frame}',
+                '\\frametitle{\\small Letter of His Holiness Leo XIV Magnifica Humanitas}',
+                '... 6 more lines',
+            ),
+        ),
+        Example(
+            'tools/papal-documents export --document papal.leo-xiv.20260515-magnifica-humanitas --format biblatex',
+            (
+                '@online{papal-leo-xiv-20260515-magnifica-humanitas-ar-6735e08bc8e9e917,',
+                '  author = {{Leo XIV}},',
+                '  title = {Letter of His Holiness Leo XIV Magnifica Humanitas},',
+                '  type = {encyclical},',
+                '  language = {ar},',
+                '  url = {https://www.vatican.va/content/leo-xiv/ar/encyclicals/documents/20260515-magnifica-humanitas.html},',
+                '  date = {2026-05-15},',
+                '}',
+                '... 81 more lines',
+            ),
+        ),
+    ),
+}
+
+if __name__ == "__main__":
+    raise SystemExit(main(examples=EXAMPLES))

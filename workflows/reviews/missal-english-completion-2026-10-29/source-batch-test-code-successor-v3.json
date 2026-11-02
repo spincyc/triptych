@@ -1,0 +1,88 @@
+{
+  "accepted_by": "coordinating AI contributor under the maintainer-authorized completion and publication task",
+  "accepted_fixture_core_sha256": "d83fd2c8a2e750475965e50b00078bac3e6d0e1fecc994fdb7410cab7e611122",
+  "accepted_on": "2026-10-30",
+  "added_paths": [],
+  "all_original_replay_streams_preserved": 17,
+  "all_source_and_semantic_partitions_unchanged": true,
+  "boundaries": [
+    "Two existing test-code pins and their after-byte inverse representations change; all seventeen reconstructed original byte streams remain exact.",
+    "All source, translation, target, owner, positive/absence, coverage, rights and source-fidelity authorities remain unchanged from the separately accepted source epoch.",
+    "Complete English, whole-book correspondence, human acceptance and deployment remain separate obligations."
+  ],
+  "changed_test_pins": [
+    {
+      "after_sha256": "d13ba84c2d93b9ca77b68e9a4746bcdff9ff6d23c42be57a9c508d86e329f464",
+      "before_sha256": "eeabd808b92cb4754b102a700897bf758c0abcc1f656bfb059de70e56d884982",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "after_sha256": "01d6e0490f4b84683823795b2917a8804d17b8b32b38af49b2caa97fca0f015d",
+      "before_sha256": "6eac69145f33bca64ea050e95a1c41c2dcea12ced488a002fc64fcd8e56d4a0c",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    }
+  ],
+  "consumer_tests": "Pending after atomic code and fixture installation; the two scratch candidate methods passed separately and are not claimed as canonical execution here.",
+  "dropped_paths": [],
+  "fixture_core_serialization": "UTF-8 json.dumps(indent=2, sort_keys=True, ensure_ascii=False), followed by LF; omit acceptance and state.",
+  "historical_fields_preserved": [
+    "schema",
+    "baseline_revision",
+    "baseline_roman_document_sha256",
+    "latin_baseline_rows",
+    "latin_baseline_bodies",
+    "latin_baseline_present_keys",
+    "latin_baseline_supplemented_keys",
+    "projection_baseline_source_files",
+    "english_219_keys",
+    "english_baseline_source_files",
+    "english_historical_source_files",
+    "english_historical_absence_scope"
+  ],
+  "independent_code_merits_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/test-code-successor-v3/merits-review.json",
+    "sha256": "ad826bcec44810e9a336ed551b8e9c0cdea26d10705d0d9233c206f6de0c05d8"
+  },
+  "independent_mechanical_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/test-code-successor-v3/review.json",
+    "sha256": "2919ec95eb70fac7b09944bca156e6bdbb010113d39384737c6f1eb4914d59aa"
+  },
+  "original_before_hashes_preserved": true,
+  "original_revision": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "parent_acceptance": {
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/source-batch-test-code-successor-v2.json",
+    "receipt_sha256": "82c7006d6e9705cae50f40140905188c63b47fc6978b6a5ac4754b11dccdfa08",
+    "status": "accepted"
+  },
+  "proposal": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/test-code-successor-v3/proposal.json",
+    "sha256": "2cf5f422f8f9a212b2c5cc4319de446ba74cb25e0033559d4e5140cc8989687d"
+  },
+  "replay_support_sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc",
+  "retained_exact_parent_inputs": {
+    "fixture": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/test-code-successor-v3/parent-fixture.json",
+      "sha256": "d7894d8cd47c3891bc1dd52ce9de90be97f32fdc3580cf0cb979afdac299bcba"
+    },
+    "inputs": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/test-code-successor-v3/parent-inputs.json",
+      "sha256": "a0e3d98e0bb4de8f9f0509701550ff71312d5c1c11b81fac3ccf0f00a80f8baa"
+    }
+  },
+  "root_test_code_review": [
+    "All twenty-four direct-proof supplemental witness vectors remain included in the exact current owner accounting. Only two identified proof-only project carriers have their own exact payload and six-ancestor checks; neither is a primary publication body.",
+    "Only the nine named Marian carriers use the exact hash-bound two-line identity-header transport. The header is verified literally and every remaining Latin body hash remains exact.",
+    "Both changed project-code inputs retain actual 6aeb96a392 historical bytes and their original literal hashes; current code has separate exact hashes. No current code pin is represented as wording or publication authority."
+  ],
+  "schema": "triptych-source-batch-acceptance/v1",
+  "scope": "missal-source-batch",
+  "source_epoch_paths": 7068,
+  "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+  "source_input_manifest_sha256": "bfd171773b03ac0930666aad30af43552bd6e90832797bac10c642469c9e6e86",
+  "source_permission_created_by_this_receipt": false,
+  "status": "accepted",
+  "strict_runtime_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+  "successor_kind": "two-final-reviewed-test-code-pins-and-original-inverse-rebinding",
+  "unchanged_inverse_specifications": 15,
+  "unchanged_manifest_rows": 7066
+}

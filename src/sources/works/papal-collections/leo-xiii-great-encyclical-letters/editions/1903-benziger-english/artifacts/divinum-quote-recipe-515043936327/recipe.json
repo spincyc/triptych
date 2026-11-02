@@ -1,0 +1,133 @@
+{
+  "schema": "triptych-divinum-quote-recovery/v1",
+  "source": {
+    "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-boundary-text-05fccc3f45dc",
+    "path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-boundary-text-05fccc3f45dc/text.txt",
+    "sha256": "05fccc3f45dcf497469491527999a6f0d3a8329cede1f3455f1536cdc15db75f",
+    "byte_size": 36440,
+    "record_path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-boundary-text-05fccc3f45dc/artifact.toml"
+  },
+  "evidence": {
+    "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-quote-native-evidence-c40a614cc0de",
+    "path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-quote-native-evidence-c40a614cc0de/evidence.zip",
+    "sha256": "c40a614cc0deb4b209b0802c739bfe60652703a9b94706151d0a9a9711a997f7",
+    "byte_size": 716029,
+    "record_path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-quote-native-evidence-c40a614cc0de/artifact.toml"
+  },
+  "changes": [
+    {
+      "start": 30297,
+      "end": 30305,
+      "before_hex": "68656c6965723e65",
+      "physical_line": 121,
+      "source_parent_original_physical_line": 2729,
+      "replacement_member": "context-ocr.txt",
+      "replacement_byte_range": [
+        146,
+        153
+      ],
+      "replacement_hex": "62656c69657665",
+      "context_ocr_byte_range": [
+        123,
+        159
+      ],
+      "context_ocr_hex": "6f7065726174696f6e206f66206572726f722c20746f2062656c69657665206c79696e67",
+      "full_page_ocr_context_byte_range": [
+        746,
+        782
+      ],
+      "crop_tsv_row": {
+        "level": "5",
+        "page_num": "1",
+        "block_num": "1",
+        "par_num": "1",
+        "line_num": "3",
+        "word_num": "5",
+        "left": "694",
+        "top": "110",
+        "width": "178",
+        "height": "52",
+        "conf": "96.299927",
+        "text": "believe"
+      },
+      "full_page_tsv_row": {
+        "level": "5",
+        "page_num": "1",
+        "block_num": "2",
+        "par_num": "1",
+        "line_num": "14",
+        "word_num": "5",
+        "left": "844",
+        "top": "1460",
+        "width": "178",
+        "height": "52",
+        "conf": "96.299927",
+        "text": "believe"
+      },
+      "left_context_hex": "20476f64207368616c6c2073656e64207468656d20746865206f7065726174696f6e206f66206572726f722c20746f20",
+      "right_context_hex": "206c79696e677d20496e20746865206c6173742074696d657320736f6d6520734a69616c6c206465706172742066726f"
+    },
+    {
+      "start": 30336,
+      "end": 30342,
+      "before_hex": "734a69616c6c",
+      "physical_line": 121,
+      "source_parent_original_physical_line": 2729,
+      "replacement_member": "context-ocr.txt",
+      "replacement_byte_range": [
+        184,
+        189
+      ],
+      "replacement_hex": "7368616c6c",
+      "context_ocr_byte_range": [
+        184,
+        211
+      ],
+      "context_ocr_hex": "7368616c6c206465706172742066726f6d20746865206661697468",
+      "full_page_ocr_context_byte_range": [
+        807,
+        834
+      ],
+      "crop_tsv_row": {
+        "level": "5",
+        "page_num": "1",
+        "block_num": "1",
+        "par_num": "1",
+        "line_num": "4",
+        "word_num": "1",
+        "left": "63",
+        "top": "188",
+        "width": "128",
+        "height": "48",
+        "conf": "95.861137",
+        "text": "shall"
+      },
+      "full_page_tsv_row": {
+        "level": "5",
+        "page_num": "1",
+        "block_num": "2",
+        "par_num": "1",
+        "line_num": "15",
+        "word_num": "1",
+        "left": "213",
+        "top": "1538",
+        "width": "128",
+        "height": "48",
+        "conf": "95.861137",
+        "text": "shall"
+      },
+      "left_context_hex": "72726f722c20746f2068656c6965723e65206c79696e677d20496e20746865206c6173742074696d657320736f6d6520",
+      "right_context_hex": "206465706172742066726f6d207468652066616974683b20676976696e67206865656420746f20746865207370697269"
+    }
+  ],
+  "output_sha256": "ba3ad11b1ec60e61cbd795d6ecabd15dfb13fce21c02c218f63c852f636447fa",
+  "output_byte_size": 36438,
+  "source_byte_size": 36440,
+  "qualification": "Exactly two malformed quoted token spans are replaced by raw OCR byte slices corroborated in the same 1903 printing native page and matching full-page/context TSV boxes. Every other source byte, punctuation, whitespace and LF boundary remains exact. No general proofreading, translation, lexical modernization or whole-source collation.",
+  "predecessor_pdf_sha256": "8fdc6e4203514ae85f7befaa9cd8fbff6ad8d2942d4a0e8852a2680f5d793f8d",
+  "predecessor_segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus.1903-benziger-english.boundary-05fccc3f45dc",
+  "prior_hold_report_sha256": "1f4403d2cf0b87f43c04f7bba079daddcfebadb36b6d1c81ce2893fac02dd817",
+  "python3_program": "from pathlib import Path\nimport hashlib,json,sys,zipfile,io,csv\nH=lambda b:hashlib.sha256(b).hexdigest()\nr=json.loads(Path(sys.argv[1]).read_text());b=Path(r[\"source\"][\"path\"]).read_bytes();assert H(b)==r[\"source\"][\"sha256\"],\"source hash\"\ne=Path(r[\"evidence\"][\"path\"]).read_bytes();assert H(e)==r[\"evidence\"][\"sha256\"],\"evidence hash\"\nz=zipfile.ZipFile(io.BytesIO(e));w=json.loads(z.read(\"witness.json\"))\nfor n,v in w[\"members\"].items():assert H(z.read(n))==v[\"sha256\"],\"evidence member hash\"\nlast=0\nfor q in r[\"changes\"]:\n a,c=q[\"start\"],q[\"end\"];assert last<=a<c<=len(b);last=c\n assert b[a:c].hex()==q[\"before_hex\"],\"old token span\"\n left=bytes.fromhex(q[\"left_context_hex\"]);right=bytes.fromhex(q[\"right_context_hex\"])\n assert b[a-len(left):a]==left and b[c:c+len(right)]==right,\"source context\"\n v=z.read(q[\"replacement_member\"]);i,j=q[\"replacement_byte_range\"];replacement=v[i:j];assert replacement.hex()==q[\"replacement_hex\"],\"OCR byte slice\"\n i,j=q[\"context_ocr_byte_range\"];assert v[i:j].hex()==q[\"context_ocr_hex\"],\"OCR context\"\n i,j=q[\"full_page_ocr_context_byte_range\"];assert z.read(\"page-ocr.txt\")[i:j].hex()==q[\"context_ocr_hex\"],\"full-page agreement\"\n for member,key in ((\"context-ocr.tsv\",\"crop_tsv_row\"),(\"page-ocr.tsv\",\"full_page_tsv_row\")):\n  rows=list(csv.DictReader(io.StringIO(z.read(member).decode()),delimiter=\"\\t\"));assert q[key] in rows and q[key][\"text\"].encode()==replacement and float(q[key][\"conf\"])>95,\"TSV token box\"\nout=b\nfor q in reversed(r[\"changes\"]):\n i,j=q[\"replacement_byte_range\"];v=z.read(q[\"replacement_member\"])[i:j];out=out[:q[\"start\"]]+v+out[q[\"end\"]:]\nassert H(out)==r[\"output_sha256\"] and len(out)==r[\"output_byte_size\"],\"output hash/extent\"\nassert out.count(b\"\\n\")==b.count(b\"\\n\"),\"LF count\"\nPath(sys.argv[2]).write_bytes(out)\n",
+  "program_license": "MIT, project-created standalone replay code; historical words excluded. Copyright 2026 Triptych contributors. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the Software), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+  "replay_command": "python3 -c 'import json,sys;exec(json.load(open(sys.argv[1]))[\"python3_program\"])' RECIPE_PATH OUTPUT_PATH"
+}

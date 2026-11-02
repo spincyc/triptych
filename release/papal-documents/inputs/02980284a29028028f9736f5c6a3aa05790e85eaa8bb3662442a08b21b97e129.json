@@ -1,0 +1,67 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T15:30:19Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.012.1879-acta-ass-012.aeterni-patris-notes-recovered-60f42818f98e",
+      "date": "1879-08-04",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.012.ass-012-act-002",
+      "id": "acta.ass.012.ass-012-act-002",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          887
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T15:30:19Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Historical title leaf MDCCCLXXIX (line 35), and archive serial label 1879; Johnson first-reprinting 1968 wrapper excluded. This is source-delivery identification, not facsimile collation or independent original-printing verification. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.012.ass-012-act-002.notes-recovered-60f42818f98e",
+      "segment_path": "src/sources/works/papal-documents/1879-08-04-papal-leo-xiii-hf-l-xiii-enc-04081879-aeterni-patris-2cd8503f/editions/1879-acta-ass-012-ass-012-act-002/segments/notes-recovered-aeterni-patris-la-60f42818f98e.toml",
+      "sha256": "60f42818f98eeb6303acfe7f595169cd8138cb6e065fa0f6050ddd8cc9598932",
+      "source_note": "ASS 12 (1879), printed pages 97–115. Historical archival OCR reconstruction, with native note-column order and note blocks restored mechanically. All existing body LF bytes and their order are retained. The historical note missing from the p. 110 text layer is added from fresh OCR of its retained native bitmap; only that note is image-checked. Old OCR errors and damaged note labels remain literal. No whole-act original-print collation is claimed.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-12-1879-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1879-acta-ass-012/artifacts/aeterni-patris-notes-recovered-60f42818f98e/text.txt",
+      "title": "Aeterni Patris Unigenitus Filius",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-04081879-aeterni-patris",
+      "correction_evidence": {
+        "kind": "explicit-source-note-column-order-plus-native-bitmap-ocr",
+        "revision": "2026-10-30T15:30:19Z",
+        "recovery_recipe_artifact_id": "artifact.acta-papal-archives.ass.012.1879-acta-ass-012.aeterni-note4-recovery-recipe-deterministic-99bd7f54ad36",
+        "recovery_recipe_sha256": "99bd7f54ad36b45be57aae0ae46829701ca67675a1a5e5f69bc1d3211f1fec86",
+        "source_review_artifact_id": "artifact.acta-papal-archives.ass.012.1879-acta-ass-012.aeterni-note4-source-review-deterministic-593a85a248dd",
+        "source_review_sha256": "593a85a248dd60712af8909402870d93938e529e36718547ab3040da27d5a9fb",
+        "prior_segment_id": "segment.acta-papal-archives.ass.012.ass-012-act-002",
+        "body_lf_bytes_and_order_unchanged": true,
+        "old_selected_source_units_used_once": true,
+        "new_historical_note_bytes_from_native_bitmap_ocr": true,
+        "global_old_byte_permutation_only": false
+      }
+    }
+  ],
+  "supersessions": [
+    {
+      "reason": "Explicit native column order and note block boundaries separate all historical notes from body; a missing p110 historical bitmap note is mechanically recovered and added as a new source derivative. Prior source, segment and failed PDF remain historical records.",
+      "prior": {
+        "id": "acta.ass.012.ass-012-act-002",
+        "language": "la",
+        "pdf_sha256": "a765646cc75e3f8a0a20f6acc08a9496d89db0f2b48cf60059c0c6565e9e74a2",
+        "artifact_id": "artifact.acta-papal-archives.ass.012.historical-text-e91f242d",
+        "source_sha256": "e91f242db16225fdba90c31848787b87d35b16f3836a57a27867907c2501a703",
+        "segment_id": "segment.acta-papal-archives.ass.012.ass-012-act-002"
+      },
+      "replacement": {
+        "id": "acta.ass.012.ass-012-act-002",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.012.1879-acta-ass-012.aeterni-patris-notes-recovered-60f42818f98e",
+        "source_sha256": "60f42818f98eeb6303acfe7f595169cd8138cb6e065fa0f6050ddd8cc9598932",
+        "segment_id": "segment.acta-papal-archives.ass.012.ass-012-act-002.notes-recovered-60f42818f98e",
+        "revision": "2026-10-30T15:30:19Z"
+      }
+    }
+  ]
+}

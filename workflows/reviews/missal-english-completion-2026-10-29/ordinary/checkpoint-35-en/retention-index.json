@@ -1,0 +1,674 @@
+{
+  "schema": "triptych-accepted-checkpoint-retention-index/v1",
+  "recorded_on": "2026-10-30",
+  "purpose": "Frozen canonical audit retention of exactly the 24 accepted candidate/review/adopted-metadata JSON references explicitly selected from the checkpoint seal.",
+  "original_seal": {
+    "path": ".scratch/postconciliar-ordinary-20261029/second-pass/checkpoint-35-en/canonical-source-manifest.json",
+    "sha256": "04723c28ab0459f695dd5ff5bb4a9a758a9bdcb0041359902e12819d9d297e5b",
+    "bytes": 44414
+  },
+  "canonical_seal": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/canonical-source-manifest.json",
+    "sha256": "04723c28ab0459f695dd5ff5bb4a9a758a9bdcb0041359902e12819d9d297e5b",
+    "bytes": 44414,
+    "representation": "exact-original-bytes"
+  },
+  "selection": {
+    "explicit_seal_roles": [
+      "authority_and_reviews/*/candidate",
+      "authority_and_reviews/*/independent_acceptance",
+      "root_rights_adoption",
+      "additional_adopted_metadata_receipts/*",
+      "prior20_english_deliberate_replacement/receipt"
+    ],
+    "accepted_input_count": 24,
+    "exact_original_copies": 23,
+    "new_text_free_summaries": 1,
+    "transitive_reference_copying": false,
+    "directory_copying": false
+  },
+  "phase_boundaries": {
+    "phase": "accepted-canonical-source-checkpoint-only",
+    "sealed_counts": {
+      "elements": 70,
+      "languages": [
+        {
+          "absent": 35,
+          "elements": 70,
+          "held": 35,
+          "lang": "en",
+          "missing": 35
+        },
+        {
+          "absent": 38,
+          "elements": 70,
+          "held": 32,
+          "lang": "la",
+          "missing": 38
+        }
+      ],
+      "relation_offers": [
+        {
+          "collation": "uncollated",
+          "count": 26,
+          "lang": "en",
+          "relation": "antecedent"
+        },
+        {
+          "collation": "not-applicable",
+          "count": 9,
+          "lang": "en",
+          "relation": "own"
+        },
+        {
+          "collation": "collated",
+          "count": 5,
+          "lang": "la",
+          "relation": "antecedent"
+        },
+        {
+          "collation": "uncollated",
+          "count": 27,
+          "lang": "la",
+          "relation": "antecedent"
+        }
+      ],
+      "witness_offers": [
+        {
+          "acknowledgement": null,
+          "caution": "The English of an 1861 lay hand missal, not the approved 2011 English and never an altar book. It supplies only explicitly joined historical antecedents beside the older Latin already carried here. Its own spelling, printed cues, abbreviations, speaker allocation and optional-text configuration are preserved; the historical Our Father has an additional priest Amen and the Agnus Dei retains continuation asterisks. Every English body remains uncollated against approved target English. Nothing here may be used for recitation.",
+          "held": 23,
+          "label": "Historical English antecedent (NOT the approved Roman Missal English): The Roman Missal translated into the English language for the use of the laity (Philadelphia: Eugene Cummiskey, 1861)",
+          "lang": "en",
+          "rights": "public-domain",
+          "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+        },
+        {
+          "acknowledgement": null,
+          "caution": "New AI-authored study English from the individually identified public-domain source spans. Not approved for liturgical use or recitation; no human review is claimed.",
+          "held": 5,
+          "label": "Triptych study English of ancient source fragments (not approved liturgical English)",
+          "lang": "en",
+          "rights": "project-created",
+          "source_id": "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
+        },
+        {
+          "acknowledgement": null,
+          "caution": "The complete historical human English of the Apostles Creed in Bute's 1908 Roman Breviary, not approved2011 Roman Missal English. Source wording, capitals, pronouns, pointing and complete Amen ending remain; typographic small capitals are represented as uppercase. This study witness does not clear or replace the approved English and is not for recitation.",
+          "held": 1,
+          "label": "Historical English antecedent (NOT approved Missal English): Bute Roman Breviary, 1908",
+          "lang": "en",
+          "rights": "public-domain",
+          "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+        },
+        {
+          "acknowledgement": null,
+          "caution": "An independently checked historical English witness of the complete printed threefold Agnus Dei. The old source actor and ceremonial context are not assigned to the postconciliar setting. No approved translation, authenticated complete2008 identity or recitation authority is claimed.",
+          "held": 1,
+          "label": "Complete historical English (Lasance, 1945), not approved postconciliar Missal English",
+          "lang": "en",
+          "rights": "public-domain",
+          "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+        },
+        {
+          "acknowledgement": null,
+          "caution": "Six study utterances arranged from two exact historical English glosses. The 1861 Mass itself is ninefold and does not print this complete arrangement. Its older P./R. actors are not inherited. This is not approved English or a text for recitation.",
+          "held": 1,
+          "label": "Triptych sixfold study arrangement of 1861 Kyrie glosses (not approved English)",
+          "lang": "en",
+          "rights": "project-created",
+          "source_id": "edition.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030"
+        },
+        {
+          "acknowledgement": null,
+          "caution": "Common form only, with full saints list and omitted conclusion; seasonal proper forms remain unfilled. New AI-authored study English from the separately identified source body and exact Joseph clause. No approved translation, human review, whole2008 identity or recitation authority is claimed.",
+          "held": 1,
+          "label": "Triptych study English of common Communicantes (not approved Missal English)",
+          "lang": "en",
+          "rights": "project-created",
+          "source_id": "edition.triptych.postconciliar-common-communicantes-study-english-20261030.study-english-20261030"
+        },
+        {
+          "acknowledgement": null,
+          "caution": "New AI-authored study English of a checked old main prayer, one explicit communal possessive revision and a separately witnessed ancient short conclusion. Not approved for liturgical use or recitation; no human review or complete2008target grade is claimed.",
+          "held": 1,
+          "label": "Triptych study English with explicit communal revision (not approved liturgical English)",
+          "lang": "en",
+          "rights": "project-created",
+          "source_id": "edition.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030"
+        },
+        {
+          "acknowledgement": null,
+          "caution": "New AI-authored English from the independently checked1712 invitation only. Not approved for liturgical use or recitation; no human review is claimed.",
+          "held": 1,
+          "label": "Triptych study English of the historical peace invitation (not approved liturgical English)",
+          "lang": "en",
+          "rights": "project-created",
+          "source_id": "edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030"
+        },
+        {
+          "acknowledgement": null,
+          "caution": "New AI-authored study English from the independently checked public-domain 1922 prayer-body prefix, without its separate old conclusion. No approved English or human review is claimed. Not approved for liturgical use or recitation.",
+          "held": 1,
+          "label": "Triptych study English of the historical Supplices body (not approved liturgical English)",
+          "lang": "en",
+          "rights": "project-created",
+          "source_id": "edition.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030"
+        },
+        {
+          "acknowledgement": null,
+          "caution": "NOT the Latin of the Missale Romanum. The controlling 2008 Latin is a work of the Holy See, is under copyright, is not distributable on this surface, and is not served under this witness; no element here claims that the 1861 words are that book's text. The repository does hold and has read a verified 2002 Ordo witness and the official bounded 2008 variation list, but that evidence does not establish every antecedent identity. What is here is the facing Latin column of an 1861 Philadelphia lay hand missal - never an altar book, never an approved liturgical translation, and pre-1955 in its rubrics and its discipline - which prints the ancient prayers this Order of Mass received. It is joined element by element, and only where an element's Latin is that ancient prayer; where the reform composed, recast or rearranged, nothing is carried and the element says why. Its orthography and its misprints are its own and are carried as printed: justum for iustum, Jesu for Iesu, Et expecto for Et exspecto, the ae- and oe-ligatures, and nodie for hodie at In spiritu humilitatis are the 1861 printer's and not the Holy See's. Every element carrying Latin states beside its own words which prayer of that book it is, at which printed page and Internet Archive leaf, which accidents it carries, and whether its identity with the controlling edition has been established or is so far only asserted. Nothing here may be used for recitation.",
+          "held": 24,
+          "label": "Antecedent Latin (NOT the Missale Romanum's text): the facing Latin column of The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)",
+          "lang": "la",
+          "rights": "public-domain",
+          "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+        },
+        {
+          "acknowledgement": null,
+          "caution": "Independently identified historical source wording with explicit selections and source spelling. This is not an authenticated complete 2008 target witness or approved liturgical English, and is not for recitation.",
+          "held": 4,
+          "label": "Historical Latin antecedent: Clementine Vulgate (eBible latVUC), not the controlling 2008 Missal",
+          "lang": "la",
+          "rights": "public-domain",
+          "source_id": "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+        },
+        {
+          "acknowledgement": null,
+          "caution": "A checked historical printing of the ancient prayer, with source spelling and explicit bounded source selection. It is not an authenticated complete 2008 target witness and is not a text for recitation.",
+          "held": 2,
+          "label": "Historical Latin antecedent (Mame, 1922), not the controlling 2008 Missal",
+          "lang": "la",
+          "rights": "public-domain",
+          "source_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+        },
+        {
+          "acknowledgement": null,
+          "caution": "An independently checked complete old invitation, from a different rite. No old response, rubrics or assignment is transferred. No complete2008 collation or recitation authority is claimed.",
+          "held": 1,
+          "label": "Historical Ambrosian Latin (Milan,1712), not a controlling2008 exemplar",
+          "lang": "la",
+          "rights": "public-domain",
+          "source_id": "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+        },
+        {
+          "acknowledgement": null,
+          "caution": "The complete ancient Apostles Creed from an 1888 Roman Breviary, not the controlling 2008 Missal. Acute accents are explicitly omitted in this normalized study transcription; source ligatures, j, capitals and punctuation remain. Source verification does not establish authenticated complete2008 identity or permission to recite from this finding aid.",
+          "held": 1,
+          "label": "Historical Latin antecedent (NOT the controlling Missal): Roman Breviary, Pustet, 1888",
+          "lang": "la",
+          "rights": "public-domain",
+          "source_id": "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+        }
+      ]
+    },
+    "earlier_review_statuses": "Original reviews retain their literal then-current states and reviewed predecessor hashes. Later source metadata and root adoption are separate pinned records; retention does not rewrite an earlier pending/private review into a later adoption.",
+    "canonical_source_surface": "The 82 source files and inventory/producer pins stay in the original seal. Source/body data and its holds are untouched by this retention operation.",
+    "not_a_goal_completion": true,
+    "pending_excluded": [
+      "Wordframes",
+      "quiet4bodies",
+      "privateCommunion2",
+      "QuiPridie",
+      "commonclosing",
+      "dismissals",
+      "bishopblessingprefix",
+      "Communiondistribution",
+      "Liberaacclamation",
+      "penitentialcores"
+    ],
+    "excluded_explicit_JSON_roles": [
+      "september8_exact_seat_test",
+      "generated_pc_payload"
+    ],
+    "new_source_english_review": false,
+    "new_rights_adoption": false,
+    "new_publication_or_latin_authority": false
+  },
+  "precheck": {
+    "scope": "All 24 explicitly selected JSON inputs and the seal were read and hash-checked before retention; explicit source/body/controller fields were inspected for private modern whole-Latin, target-image bytes and whole maps.",
+    "all_111_explicit_seal_pins_rehashed_before_retention": true,
+    "target_image_handling": "Only existing hash/label/locus references occur in retained JSON; no image or image payload was copied.",
+    "common_candidate_finding": "Whole assembled source-Latin proof, explicitly derived from old Mame plus bounded Joseph clause, retained as a conservative new text-free summary. No unchanged-byte or original-identity claim is made for that summary.",
+    "domine_finding": "No revised whole modern-Latin prayer is in the candidate or review JSON; bounded target revision/role facts, old-source controls and hash-only images remain literal.",
+    "private_payload_scan_hits": 0
+  },
+  "records": [
+    {
+      "cohort": "supplices",
+      "role": "candidate",
+      "seal_pointer": "/authority_and_reviews/0/candidate",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/central/supplices/candidate.json",
+        "sha256": "8e29f33da419ed985c101115d4fed8ccc4050c92b9028e35ee766f4061f8674d",
+        "bytes": 5577
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/supplices-candidate.json",
+        "sha256": "8e29f33da419ed985c101115d4fed8ccc4050c92b9028e35ee766f4061f8674d",
+        "bytes": 5577
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "supplices",
+      "role": "independent_acceptance",
+      "seal_pointer": "/authority_and_reviews/0/independent_acceptance",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/supplices-review/acceptance.json",
+        "sha256": "b021743f7287a52e4f3bfa1493ff4e8d4cc256101ece13d4a831c504d8dec937",
+        "bytes": 4522
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/supplices-independent-acceptance.json",
+        "sha256": "b021743f7287a52e4f3bfa1493ff4e8d4cc256101ece13d4a831c504d8dec937",
+        "bytes": 4522
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "apostles",
+      "role": "candidate",
+      "seal_pointer": "/authority_and_reviews/1/candidate",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogues/apostles-install/candidate.json",
+        "sha256": "02e9c64a3a96f898627c4e9f550ad89bee844ea4f3e4ec19b54cbda447e575ba",
+        "bytes": 4827
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/apostles-candidate.json",
+        "sha256": "02e9c64a3a96f898627c4e9f550ad89bee844ea4f3e4ec19b54cbda447e575ba",
+        "bytes": 4827
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "apostles",
+      "role": "independent_acceptance",
+      "seal_pointer": "/authority_and_reviews/1/independent_acceptance",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogue-review/ACCEPTANCE-apostles-install-v1.json",
+        "sha256": "24a1b23c726d0da3612741d6c9d527c66238e4bc4d2dbb627c593c06695e9ec4",
+        "bytes": 7795
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/apostles-independent-acceptance.json",
+        "sha256": "24a1b23c726d0da3612741d6c9d527c66238e4bc4d2dbb627c593c06695e9ec4",
+        "bytes": 7795
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "offerte",
+      "role": "candidate",
+      "seal_pointer": "/authority_and_reviews/2/candidate",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/peace-prayers/offerte-candidate/candidate.json",
+        "sha256": "310908c1049c67aa08e73f887d7e8e26bd8df82cd4ecfabd35e7618ee166f932",
+        "bytes": 7689
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/offerte-candidate.json",
+        "sha256": "310908c1049c67aa08e73f887d7e8e26bd8df82cd4ecfabd35e7618ee166f932",
+        "bytes": 7689
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "offerte",
+      "role": "independent_acceptance",
+      "seal_pointer": "/authority_and_reviews/2/independent_acceptance",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogue-review/ACCEPTANCE-offerte-v2.json",
+        "sha256": "6a036020c8936ea9ef24d95148c30ca626c03025c0e66d025f6b71390033caca",
+        "bytes": 7233
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/offerte-independent-acceptance.json",
+        "sha256": "6a036020c8936ea9ef24d95148c30ca626c03025c0e66d025f6b71390033caca",
+        "bytes": 7233
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "ancient-source-frames",
+      "role": "candidate",
+      "seal_pointer": "/authority_and_reviews/3/candidate",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames/candidate.json",
+        "sha256": "167adbfd5fc8b1d3c3ce58cad858ae5c0ee124c19e5707850f1ee20ff9c48d74",
+        "bytes": 46050
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/ancient-source-frames-candidate.json",
+        "sha256": "167adbfd5fc8b1d3c3ce58cad858ae5c0ee124c19e5707850f1ee20ff9c48d74",
+        "bytes": 46050
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "ancient-source-frames",
+      "role": "independent_acceptance",
+      "seal_pointer": "/authority_and_reviews/3/independent_acceptance",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/REVIEW.json",
+        "sha256": "f1de77567e87af6e34cc046e1fcf09d02eb95b5ffa6af10792e5326121ec8722",
+        "bytes": 13015
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/ancient-source-frames-independent-acceptance.json",
+        "sha256": "f1de77567e87af6e34cc046e1fcf09d02eb95b5ffa6af10792e5326121ec8722",
+        "bytes": 13015
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "ancient-consumer-shape",
+      "role": "candidate",
+      "seal_pointer": "/authority_and_reviews/4/candidate",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames/integration/receipt.json",
+        "sha256": "244a94b8e82955cd96dc6cb542abb6fbd37023d15e794b5b4cd7f68fc314b013",
+        "bytes": 11960
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/ancient-consumer-shape-candidate.json",
+        "sha256": "244a94b8e82955cd96dc6cb542abb6fbd37023d15e794b5b4cd7f68fc314b013",
+        "bytes": 11960
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "ancient-consumer-shape",
+      "role": "independent_acceptance",
+      "seal_pointer": "/authority_and_reviews/4/independent_acceptance",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/CONSUMER-SHAPE-ACCEPTANCE.json",
+        "sha256": "8bae9145b553d87cda60c346d7daa42c67c0c1a6767a722bab6af0efaf59ec47",
+        "bytes": 9798
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/ancient-consumer-shape-independent-acceptance.json",
+        "sha256": "8bae9145b553d87cda60c346d7daa42c67c0c1a6767a722bab6af0efaf59ec47",
+        "bytes": 9798
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "bishop-activation",
+      "role": "candidate",
+      "seal_pointer": "/authority_and_reviews/5/candidate",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames/bishop-activation/candidate.json",
+        "sha256": "084e7dbbae2b4b2dfced4ef550945ce0858d84d7f6a8099549471e6a60322bb3",
+        "bytes": 928
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/bishop-activation-candidate.json",
+        "sha256": "084e7dbbae2b4b2dfced4ef550945ce0858d84d7f6a8099549471e6a60322bb3",
+        "bytes": 928
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "bishop-activation",
+      "role": "independent_acceptance",
+      "seal_pointer": "/authority_and_reviews/5/independent_acceptance",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/BISHOP-ACTIVATION-ACCEPTANCE.json",
+        "sha256": "4e21cd3eb94beee93c1df9c95d8fb14bffa2638887db8e27a3e89c4882b51281",
+        "bytes": 12324
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/bishop-activation-independent-acceptance.json",
+        "sha256": "4e21cd3eb94beee93c1df9c95d8fb14bffa2638887db8e27a3e89c4882b51281",
+        "bytes": 12324
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "kyrie",
+      "role": "candidate",
+      "seal_pointer": "/authority_and_reviews/6/candidate",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogues/dialogue-install/kyrie-sixfold/candidate.json",
+        "sha256": "c8132250e566db632b97d91d4d0e41f2270e5b55a7681882782c00ae3a4b7817",
+        "bytes": 5350
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/kyrie-candidate.json",
+        "sha256": "c8132250e566db632b97d91d4d0e41f2270e5b55a7681882782c00ae3a4b7817",
+        "bytes": 5350
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "kyrie",
+      "role": "independent_acceptance",
+      "seal_pointer": "/authority_and_reviews/6/independent_acceptance",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogue-review/ACCEPTANCE-kyrie-v2.json",
+        "sha256": "5b9349aae5899d15c174997f763fe25b5f659ac85741fcb15d9d8c524d8597dd",
+        "bytes": 3913
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/kyrie-independent-acceptance.json",
+        "sha256": "5b9349aae5899d15c174997f763fe25b5f659ac85741fcb15d9d8c524d8597dd",
+        "bytes": 3913
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "domine",
+      "role": "candidate",
+      "seal_pointer": "/authority_and_reviews/7/candidate",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/peace-prayers/domine-candidate/candidate.json",
+        "sha256": "9c08a928e70756eabc218bbb2575c64f73d487e53197f928440504d6feb6f3ed",
+        "bytes": 10565
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/domine-candidate.json",
+        "sha256": "9c08a928e70756eabc218bbb2575c64f73d487e53197f928440504d6feb6f3ed",
+        "bytes": 10565
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "domine",
+      "role": "independent_acceptance",
+      "seal_pointer": "/authority_and_reviews/7/independent_acceptance",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogue-review/domine-review/ACCEPTANCE-private-v1.json",
+        "sha256": "6dd4666971c2324dcd088a03d58b5ff0cc43b012a472c2aafae601430bced117",
+        "bytes": 9038
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/domine-independent-acceptance.json",
+        "sha256": "6dd4666971c2324dcd088a03d58b5ff0cc43b012a472c2aafae601430bced117",
+        "bytes": 9038
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "communicantes-common",
+      "role": "candidate",
+      "seal_pointer": "/authority_and_reviews/8/candidate",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/common-communicantes-install/candidate.json",
+        "sha256": "0fa7dd30f67043f294c96dad2900c5856d387548a30e205350ed95a5a4dd2a5c",
+        "bytes": 10896
+      },
+      "representation": "new-text-free-summary",
+      "retention_note": "Original candidate bytes are not copied; new summary has its own identity and hash.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/communicantes-common-candidate-summary.json",
+        "sha256": "0c303f1354c38e2aa32754c86705c3cf049e97cdee155e45b9e040592e4c1ead",
+        "bytes": 9935
+      },
+      "byte_identical_to_original": false
+    },
+    {
+      "cohort": "communicantes-common",
+      "role": "independent_acceptance",
+      "seal_pointer": "/authority_and_reviews/8/independent_acceptance",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/common-communicantes/REVIEW.json",
+        "sha256": "83833e1a48bcb8ea99ad32db48819e08cb9a93cbaba33010438ac8375d3974e0",
+        "bytes": 14352
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/communicantes-common-independent-acceptance.json",
+        "sha256": "83833e1a48bcb8ea99ad32db48819e08cb9a93cbaba33010438ac8375d3974e0",
+        "bytes": 14352
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "agnus-complete",
+      "role": "candidate",
+      "seal_pointer": "/authority_and_reviews/9/candidate",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/agnus-complete/candidate.json",
+        "sha256": "af9f0c6db3b566d4f81264cec96b111eafa149501fa958c440a13b4d62dcb8e6",
+        "bytes": 6514
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/agnus-complete-candidate.json",
+        "sha256": "af9f0c6db3b566d4f81264cec96b111eafa149501fa958c440a13b4d62dcb8e6",
+        "bytes": 6514
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "agnus-complete",
+      "role": "independent_acceptance",
+      "seal_pointer": "/authority_and_reviews/9/independent_acceptance",
+      "original": {
+        "path": ".scratch/english-ordinary-20261029/pc-agnus-source-review/review.json",
+        "sha256": "2807558099dae154ae5343392543fb7b5e0a4ff4efb677e52fbe3c0da52fed51",
+        "bytes": 5119
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/agnus-complete-independent-acceptance.json",
+        "sha256": "2807558099dae154ae5343392543fb7b5e0a4ff4efb677e52fbe3c0da52fed51",
+        "bytes": 5119
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "domine",
+      "role": "root_rights_adoption",
+      "seal_pointer": "/root_rights_adoption",
+      "original": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/domine-rights-adoption.json",
+        "sha256": "6bfe83b76107281005c660733522e4c077f52b225b79418b04bf9fcd07f98381",
+        "bytes": 5742
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/domine-root-rights-adoption.json",
+        "sha256": "6bfe83b76107281005c660733522e4c077f52b225b79418b04bf9fcd07f98381",
+        "bytes": 5742
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "domine",
+      "role": "metadata_successor",
+      "seal_pointer": "/additional_adopted_metadata_receipts/0",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/peace-prayers/domine-candidate/adoption-metadata-successor.json",
+        "sha256": "ee5168f239f9569be93522937fee8b5a178147d1d8f20bb5d264d1e6f84b57b6",
+        "bytes": 5100
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/domine-metadata-successor.json",
+        "sha256": "ee5168f239f9569be93522937fee8b5a178147d1d8f20bb5d264d1e6f84b57b6",
+        "bytes": 5100
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "communicantes-common",
+      "role": "metadata_successor",
+      "seal_pointer": "/additional_adopted_metadata_receipts/1",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/common-communicantes-install/metadata-successor-receipt.json",
+        "sha256": "082e10b255a1e86169fc9bb957ec9da296b0296cae5711f906c030491d548945",
+        "bytes": 2230
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/communicantes-common-metadata-successor.json",
+        "sha256": "082e10b255a1e86169fc9bb957ec9da296b0296cae5711f906c030491d548945",
+        "bytes": 2230
+      },
+      "byte_identical_to_original": true
+    },
+    {
+      "cohort": "agnus-complete",
+      "role": "prior20_english_replacement_receipt",
+      "seal_pointer": "/prior20_english_deliberate_replacement/receipt",
+      "original": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/agnus-complete/installed.json",
+        "sha256": "63a011738b224732fccddc1210e444841441f91052b6202c12add56cf5e9612b",
+        "bytes": 688
+      },
+      "representation": "exact-original-bytes",
+      "retention_note": "Exact original bytes retained; original role, state and internal references are not rewritten.",
+      "canonical": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/agnus-complete-installed.json",
+        "sha256": "63a011738b224732fccddc1210e444841441f91052b6202c12add56cf5e9612b",
+        "bytes": 688
+      },
+      "byte_identical_to_original": true
+    }
+  ],
+  "hash_manifest": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/SHA256SUMS",
+    "scope": "Every other file directly in this retention directory; no self-hash."
+  }
+}

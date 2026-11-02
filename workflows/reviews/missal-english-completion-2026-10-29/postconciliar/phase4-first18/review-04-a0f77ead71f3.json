@@ -1,0 +1,150 @@
+{
+  "record_type": "independent-cold-source-and-study-English-review",
+  "reviewed_on": "2026-10-30",
+  "reviewer": "/root/postconciliar_english_completion/pc_source_review",
+  "scope": "Two independently witnessed ancient prayer bodies, two original study English translations, positive official2008Mary closing correction, and one explicit duplicateJanuary1source use. No tracked changes.",
+  "original_packet": ".scratch/postconciliar-english-completion-20261029/ancient-sources/secondpass-remaining/candidate-two-and-holds.json",
+  "original_packet_sha256": "8ac07406022b9891a2ef5228d937a269b494e9dd2b6605201b47abebfbdc4996",
+  "successor_packet": ".scratch/postconciliar-english-completion-20261029/ancient-sources/secondpass-remaining/candidate-two-and-holds-v2.json",
+  "successor_packet_sha256": "8eb9777bf070581c466758957a1808a1f3815b16985ef11f3748d92fbbc417de",
+  "accepted_entry_blocks": ".scratch/postconciliar-english-completion-20261029/ancient-sources/secondpass-remaining/package-v1/candidate-entry-blocks.toml",
+  "accepted_entry_blocks_sha256": "029fb4e80c2a670ecca2ae1e6232e95f80bd6c8411c7d03cac4b0505f1506c08",
+  "disposition": "accept-both-corrected-study-English-candidates-and-explicit-January1-duplicate-use",
+  "method": "Read actual independently rendered complete page images: HadrianumAP74/printed16, GelasianAP184/printed91, correctly headed secondary2002AP110/111 and224/225, and officialNotitiaeAP52/printed370. Whole source hashes independently recomputed. Re-rendered whole-source pages and proved exact PNG byte equality with reviewed single-page extract rasters for both ancient pages and target110/224/225. Checked all47packet evidence-file hashes. Original second candidate and both hold dictionaries remain exact in v2.",
+  "whole_artifacts": [
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/source.pdf",
+      "byte_size": 28655931,
+      "sha256": "96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681"
+    },
+    {
+      "path": ".scratch/roman-phase4-discovery-20261022T123009Z/gelasian1894-local-only-whole.pdf",
+      "byte_size": 13625474,
+      "sha256": "006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/sacramentariumle00cath.pdf",
+      "byte_size": 19868448,
+      "sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a"
+    },
+    {
+      "path": ".scratch/resume-postconciliar-orations/latin-missal2002.pdf",
+      "byte_size": 3333382,
+      "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7"
+    },
+    {
+      "path": ".scratch/pc-official-target-witness-20261029/notitiae-503-504-2008.pdf",
+      "byte_size": 1280566,
+      "sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f"
+    }
+  ],
+  "review_raster_sha256": {
+    "gelasian-184-whole.png": "4eb4cb595875669b852dfeff010b3fee005a62776f6fecbf7bcf107b11d5b141",
+    "gelasian-184.png": "4eb4cb595875669b852dfeff010b3fee005a62776f6fecbf7bcf107b11d5b141",
+    "hadrianum-74-whole.png": "71c1a1e9c8d0c8b17bdcac50a5829d169727210c23068d8459317e99e40e577a",
+    "hadrianum-74.png": "71c1a1e9c8d0c8b17bdcac50a5829d169727210c23068d8459317e99e40e577a",
+    "notitiae-52.png": "69bf82ba10c551142d79894110124620510b8adf4d7fccc811ba83c23e5265d8",
+    "target-110-whole.png": "5c558d13984d35b11fefa271db7c029829b55aa5258cf0b63f4c135aac58f320",
+    "target-110.png": "5c558d13984d35b11fefa271db7c029829b55aa5258cf0b63f4c135aac58f320",
+    "target-111.png": "6948ae1ffb3fb30275a0ed40eccdc525b91e3d7940f51dbe367390ce25fffb9a",
+    "target-224-whole.png": "55a2dfe9fc8f67e1ca49176b8edad7e49d97051f12e1cd9c2f76ab6c06da3896",
+    "target-224.png": "55a2dfe9fc8f67e1ca49176b8edad7e49d97051f12e1cd9c2f76ab6c06da3896",
+    "target-225-whole.png": "e2b6e7004af70401c3dc7260e30857665307aa18cbe84d5a72f90c31530242f6",
+    "target-225.png": "e2b6e7004af70401c3dc7260e30857665307aa18cbe84d5a72f90c31530242f6"
+  },
+  "mary_review": {
+    "target": "postconciliar/mary-mother-of-god/main/Collect/all/1",
+    "disposition": "accept-corrected-v2-English-with-exact-final-block-cue-qualification",
+    "old_complete_source": "Hadrianum Wilson1915 AP74/printed16, explicitly Mense Ianuario in Octabas Domini ad Sanctam Mariam ad Martyres; the full prayer is visible before Super oblata, ending dominum nostrum iesum christum qui tecum vivit.",
+    "secondary_source": "Actual secondary2002AP110 explicitly heads Die1ianuarii / InoctavaNativitatisDomini / SollemnitasSanctaeDeiGenetricisMariae and prints complete Collect; AP111 continues the same formulary. This is source-local identity/body evidence, not faithful printed2002 or whole2008 authentication.",
+    "positive_2008_witness": "Actual officialNotitiaeAP52/printed370 under Proprium de tempore/Tempus Nativitatis names Missal p166 Ad c and positively replaces the quoted closing excerpt. The January1identification is from the independently headed secondary and matching quoted oldclose; the official excerpt itself does not print aJanuary1title.",
+    "official_delta": "The secondary close places Filium tuum before auctorem vitae suscipere and lacks the explicit Dominum nostrum Iesum Christum. The official2008 correction restores auctorem vitae suscipere, Dominum nostrum Iesum Christum and places Filium tuum last. The old Hadrianum main reading already has the restored author-of-life order and full Christ reference; the corrected finite close adds only final Filium tuum to that old reading.",
+    "apparatus_boundary": "Hadrianumfootnote1 separately attests Iesum Christum Filium tuum Dominum nostrum in witnessO. It corroborates the old Son words but is not silently spliced into the main reading or treated as exact corrected order.",
+    "spelling_pointing": "Finalblocks explicitly retain source prestitisti against secondary praestitisti as historical vowel spelling. E-caudata/ae, u/v, case, stress, ordinary pointing and layout are normalized/declarative; source ancient_reading is ordered wordsequence, not diplomatic page pointing. No apparatusnumbers or folio markers enter the prayer.",
+    "conclusion_boundary": "Old source qui tecum vivit; secondary Qui tecum. omits vivit. Finalblocks now explicitly name that omitted word. Official2008excerpt prints no conclusion cue; its2008cue remains unknown. Deliberately incomplete English Who with you. is secondary-only, with no expansion/Amen or full execution claim.",
+    "English": "O God, who through the fruitful virginity of blessed Mary bestowed on the human race the rewards of eternal salvation, grant, we ask, that we may experience her intercession for us, through whom we merited to receive the author of life, our Lord Jesus Christ, your Son. Who with you.",
+    "English_sha256": "01a9a677203a3fcbd39a86d66f647d8d420cd602939b19cd967252edee5971d1",
+    "semantic_assessment": "Faithfully renders all old petition concepts and the finite official2008corrected close, including our Lord Jesus Christ, your Son. It is original project study English, not approved or historical human English.",
+    "superseded_draft": "Original packet English followed the now-known obsolete secondary2002close; not accepted as the current use. Its bytes remain preserved, while v2andfinalblocks correct it explicitly rather than hiding the known delta behind a generic2008caveat."
+  },
+  "easter_review": {
+    "target": "postconciliar/easter-sunday/main/Prayer over the Offerings/all/1",
+    "disposition": "accept-unchanged",
+    "source_boundary": "GelasianWilson1894 AP184/printed91, BookI sectionXLVII FeriaSecunda Secreta, complete prayer ending bracketed[Per.] before distinct followingVDpreface. Marginal FerIV is secondary oldsourceapparatus, not modernappointment.",
+    "target_boundary": "Secondary2002AP224 heads AdMissaminDie; AP225 n73 Superoblata prints the whole offering prayer and PerChristum., then a separate Preface.",
+    "exact_delta": "Old immolamus is replaced by exsultantes offerimus; everyother petition word agrees in order after case, stress and pointing. The two substituted modern words are fully stated under existing tinyvariant logic. Old bracketed[Per.] is editorial and stays bracketed in ancient_reading; English ThroughChrist. follows only secondary short generic PerChristum., with no expanded ending orAmen.",
+    "English": "Exulting in Easter gladness, O Lord, we offer sacrifices by which your Church is wonderfully born anew and nourished. Through Christ.",
+    "English_sha256": "6586216e37912d36fc0f7adde9bc2d747ba399e244de98476560035f78de1e63",
+    "semantic_assessment": "Exulting in Easter gladness correctly supplies both the disclosed exsultantes and old paschalibus gaudiis; we offer sacrifices, wonderfully born anew and nourished render the complete remaining petition. No human historical English transfer.",
+    "target_limit": "No positive whole2008witness for this prayer established here; retain bounded secondary2002qualification."
+  },
+  "duplicate_january1_review": {
+    "target": "postconciliar/mary-holy-mother-god/main/Collect/all/1",
+    "disposition": "accept-same-source-qualified-use-under-explicit-shared-appointment",
+    "independent_identity_evidence": "Canonical propers.yaml seasonal mary-mother-of-god registrypc-s07 names SolemnityofMarytheHolyMotherofGod; Marian mary-holy-mother-god registrypc-01-01 explicitly has date01-01/rankSolemnity/same name. Canonical rubrics.yaml same_celebration explicitly keepsmary-mother-of-god and alsomary-holy-mother-god. Actual secondaryAP110supplies explicitJanuary1solemnityheading and wholeCollect; hence the shared-source use is supported beyond incipit.",
+    "English_sha256": "01a9a677203a3fcbd39a86d66f647d8d420cd602939b19cd967252edee5971d1",
+    "conservation": "Duplicate English and ancient_reading are exact copies of acceptedMaryentry; qualification adds the explicit same_celebration/date/title basis. Same2008finitecloseandsecondary-onlycuequalifications apply.",
+    "excluded_inference": "Removed targetbodyhashes differ; neitherbodyidentity nor2008transcription is inferred from them. Marianold1862antecedentnote is not used as independent modernexactness or approval. Existing historicalhumanEnglish refusal remains separate."
+  },
+  "preserved_holds": {
+    "verbatim_from_original_packet": [
+      {
+        "identity": [
+          "epiphany",
+          "vigil",
+          "Collect",
+          "all",
+          1
+        ],
+        "status": "hold-modern-substitution-beyond-existing-tinyvariant-route",
+        "ancient_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "ancient_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+        "ancient_artifact_pages": [
+          103,
+          104
+        ],
+        "ancient_printed_pages": [
+          "10",
+          "11"
+        ],
+        "ancient_locus": "BookI sectionXI InVigiliisdeTheophania,Collectanditsfootnotes",
+        "ancient_reading": "Corda nostra, quaesumus, Domine, venturae festivitatis splendor illustret, quo mundi huius tenebras carere valeamus, et perveniamus ad patriam claritatis aeternae. Per.",
+        "target_artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+        "target_artifact_pages": [
+          112
+        ],
+        "difference": "Secondary2002 replaces venturae festivitatis by tuae maiestatis and carere by transire: three actualreplacementwords, not typography orOCR. Wilsonp11footnotesattest tenebris andalternateordering of carere/pervenire, butnottransire ortuaemaiestatis. No demonstratedexactearlierwholebody was foundin this sourcewindow; sourcecorpusnegative remainsbounded.",
+        "why_no_english": "A freshtranslation matching the currentbody would includethree modernsubstitutedwords beyond the existingone-or-two-wordroute; anexactancienttranslation would followa differentbody. NoEnglishdraftorpublicationbasis claimed."
+      },
+      {
+        "identity": [
+          "palm-sunday",
+          "main",
+          "Prayer over the Offerings",
+          "all",
+          1
+        ],
+        "status": "hold-modern-prefix-not-established-by-earlier-witness",
+        "ancient_edition_id": "edition.catholic-church.sacramentarium-veronense.feltoe-1896",
+        "ancient_artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "ancient_artifact_pages": [
+          104
+        ],
+        "ancient_printed_pages": [
+          "80"
+        ],
+        "ancient_locus": "MenseSeptember, XXXVIII Itemalia,prayerlines10–12",
+        "ancient_reading": "Placatio tua nobis Dne sit propinqua quam etsi nostris operibus non meremur interveniente sacrificio singulari tua percipiamus miseratione praeventi per.",
+        "target_artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+        "target_artifact_pages": [
+          173
+        ],
+        "difference": "Secondary2002 prefixes the four words Per Unigeniti tui passionem to the oldercompletepetition Placatio...praeventi, whose remainingwords agree after Dneexpansion,pointing/case/accents. The automatedscorepairedthetargetinitialPerwiththepreviousprayerterminalper; that isnot partofthisprayer and isrejected. The trueaddedprefixisfourwords, notthree.",
+        "why_no_english": "The exactearlierwitnessdoesnotestablishtheaddedfourwordprefixunderthissamewholeunit. Freshstudytranslationofthecurrentwholebodyneedsaseparatelyreviewedfinitebasis; neithera similarityscore northeantiquityoftheunmodifiedcore establishesone. NoEnglishdraft supplied."
+      }
+    ],
+    "conservation": "Both exact refusal dictionaries remain unchanged in v2; this review does not convert either into an accepted translation. Epiphanyvigil three replacementwords and PalmOffering four-wordprefix remain separately bounded holds; no cross-prayer previous terminalPer borrowing."
+  },
+  "final_metadata_checks": "Acceptedfinalblock029fb4e8includesexplicitprestitisti/praestitisti and oldquiTecumVivit/secondaryQuiTecum omission. All3Englishvalues match correctedv2drafts exactly (duplicate sharesMaryEnglish).",
+  "integration_limits": "Source registration/library joins, rights adoption, shared source/publication inventory and final generation/UI/CLI checks remain parent/root responsibilities. This receipt accepts source support, literal/corrected semantic English and bounded source qualifications, not a complete authenticated2008prayer or approved English."
+}

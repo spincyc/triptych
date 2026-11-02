@@ -33,7 +33,8 @@ emphases are valid distinct interpretations when the study demonstrates their
 different movement or consequence. Historic compositional intent needs evidence.
 
 Judge clarity and reader value as well as correctness. The complete expansive
-PDF must fall within 20–50 physical pages; a page count alone proves no depth.
+study must have substantive depth; its optional print export additionally must
+fall within 20–50 physical pages, and a page count alone proves no depth.
 Perform the profile's consequential-difficulty test: check the author's actual
 inference at its cited locus, then judge whether the prose teaches the question
 and makes the inference intelligible. Record a concrete locus and outcome.

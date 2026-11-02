@@ -1,0 +1,116 @@
+{
+  "schema": "triptych-coordinator-finite-name-execution-inference/v1",
+  "decision": "adopt-exact-two-inferences-under-all-independent-conditions-for-bounded-implementation",
+  "date": "2026-10-26",
+  "source_facts_sha256": "053ccd1b5dfda15d20afcea8f35742f3dd34f9beedf615204e0d0242fb00e066",
+  "design_sha256": "07ce5a14a365cf4610f9a8770936e8c389d45f98a1673b3893bc5cbdecad9a03",
+  "independent_review_sha256": "535f0c334f0ff175b72db21ba825c2bd6b169f01f56a2e9d3baa77e84c4c6df7",
+  "exact_contexts": [
+    {
+      "recipient": [
+        "s-patricii-episcopi-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "date": "2026-03-17",
+      "calendar": "roman-1962",
+      "required_execution_role": "ordinary-commemoration",
+      "source_template_sha256": "ffed65c43057c928cff48acebf8ec4c43efd3d467f8d44a3d300445b893fdc47",
+      "English_placeholder": {
+        "literal": "N.",
+        "codepoint_range": [
+          132,
+          134
+        ],
+        "full_source_sha256": "ffed65c43057c928cff48acebf8ec4c43efd3d467f8d44a3d300445b893fdc47"
+      },
+      "English_name_controller_sha256": "350a44e064ec8d5dacc56d98392a9b33a235c2766a568fdc5301134dd3ec48bb",
+      "English_name_span": {
+        "literal": "Patrick",
+        "codepoint_range": [
+          39,
+          46
+        ],
+        "full_source_sha256": "350a44e064ec8d5dacc56d98392a9b33a235c2766a568fdc5301134dd3ec48bb"
+      },
+      "named_normative_Latin_sha256": "a30666b8d297cd9c67ca22d309ec78cf1d10054abf9d009a97f4f02c74c8a0d9",
+      "actual_Latin_name_span": {
+        "literal": "Patricio",
+        "codepoint_range": [
+          103,
+          111
+        ],
+        "full_source_sha256": "a30666b8d297cd9c67ca22d309ec78cf1d10054abf9d009a97f4f02c74c8a0d9"
+      },
+      "canonical_Latin_sha256": "98c77901b712e4eebedc4a21f6ba8ef40596928452a69165eb49e5cea1a67376",
+      "conditions": [
+        "Exact named target, Common owner, source referral, singular slot, whole source and name controller hashes and spans must match this accepted occurrence.",
+        "A separately recorded typed execution relation must be adopted; existing whole-body translation reuse and CommonN source rows remain unchanged.",
+        "An accepted source-backed producer must prove the selected exact Mass/commemoration applies in the actual use context; date or current observed winner alone is insufficient.",
+        "Separate conclusion controls must account for the actual target and source cues; this name inference licenses no ending change."
+      ]
+    },
+    {
+      "recipient": [
+        "s-antonii-abbatis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "date": "2026-01-17",
+      "calendar": "roman-1962",
+      "required_execution_role": "own-Mass-of-Office",
+      "source_template_sha256": "ac3bfa3736a36d50868c824094707ae8b25e32f74ed9488061cb0717b9ab1fee",
+      "English_placeholder": {
+        "literal": "N.",
+        "codepoint_range": [
+          42,
+          44
+        ],
+        "full_source_sha256": "ac3bfa3736a36d50868c824094707ae8b25e32f74ed9488061cb0717b9ab1fee"
+      },
+      "English_name_controller_sha256": "484f2424b6167b7760d40dea59e82db47e45f1f487c9ea2ab20d94a83aa5e9f7",
+      "English_name_span": {
+        "literal": "Anthony",
+        "codepoint_range": [
+          12,
+          19
+        ],
+        "full_source_sha256": "484f2424b6167b7760d40dea59e82db47e45f1f487c9ea2ab20d94a83aa5e9f7"
+      },
+      "named_normative_Latin_sha256": "097f7c0cb294df064889d63fd91d1c7b76d468c3cc8774a11e011601ebe0db24",
+      "actual_Latin_name_span": {
+        "literal": "Antonii",
+        "codepoint_range": [
+          42,
+          49
+        ],
+        "full_source_sha256": "097f7c0cb294df064889d63fd91d1c7b76d468c3cc8774a11e011601ebe0db24"
+      },
+      "canonical_Latin_sha256": "097f7c0cb294df064889d63fd91d1c7b76d468c3cc8774a11e011601ebe0db24",
+      "conditions": [
+        "Exact named target, Common owner, source referral, singular slot, whole source and name controller hashes and spans must match this accepted occurrence.",
+        "A separately recorded typed execution relation must be adopted; existing whole-body translation reuse and CommonN source rows remain unchanged.",
+        "An accepted source-backed producer must prove the selected exact Mass/commemoration applies in the actual use context; date or current observed winner alone is insufficient.",
+        "Separate conclusion controls must account for the actual target and source cues; this name inference licenses no ending change."
+      ]
+    }
+  ],
+  "mandatory_conditions": [
+    "The relation must be occurrence-bound with source-qualified exact terminalCommon and actualrecipient identities, not a resolver doing arbitrary N replacement from selected saint labels.",
+    "Patrick current canonicalLatin remains genericN, whereas the own1962controller is actually namedPatricio. Keep those distinct; never silently repair canonicalLatin or inherit Commonproof as if it proved the namedbody. Public product need not receive the private1962wholebody.",
+    "Anthony lacks a paired historicalLatin/English own-prayer name; this does not defeat the exact singularbinding because the same-book datedAnthonyAbbot heading and explicitCommonreferral identify the role and name without lexical generation. It must not become a general heading-to-prayer name grant.",
+    "The same-book Common instruction proves referral/use, not N substitution; A-cunctis/Canon/Memento/dead rules are negativecontrols only, never imported as generic name authority.",
+    "A published execution projection needs its relation/inference provenance independently of the immutable historicaltemplate and name controller. Do not put the derivednamedbody into existing positive translations.text or count it as recovered historicalEnglish.",
+    "Complete target applicability must come from an already accepted source-backed use context. The v2dayreceipts are producer observations only. Patrick ordinarycommemoration must obey applicable Mass-use conditions; do not reject or allow every HighMass by label alone, since conventualMass and LowMass permissions differ.",
+    "The two actual Latin names are copied from the exact normative printedprayers. No Patricium-to-Patricio or Antonius-to-Antonii inflection occurs. English Patrick/Anthony are literal same-book spans.",
+    "Name binding and ordinary conclusion relation are independent. Preserve actual EnglishThroughourLord and target endings; no suffix, Amen or response is generated.",
+    "All Reading/Study/print/terminal consumers and public validators must distinguish typed execution projection from historicalsourcequotation; unsupported consumers retain the unboundtemplate/hold.",
+    "Keep the wholeEnglishNtemplate and all outside characters verbatim, including abbreviationdot inside the exact N. span, commas, can not, titles and pronouns. No cleanup, grammatical repair, title selection or role-option election.",
+    "The finite source judgment is adopted only for2026Jan17Anthony ownMassOfOffice and2026Mar17Patrick ordinarycommemoration as individually source-backed and applicable; no annual/date fanout or unselectedPropers binding is implied."
+  ],
+  "implementation_requirement": "Use separately labelled typed source execution relation, retain whole immutable N template/source name spans, infer no historical named English/whole-body availability. Actual source-backed use and independently proved conclusion mandatory. Any unproved applicability retains precise execution hold. No general N substitution or annual fanout. New code/source receiving and integrated UI/CLI/source publication review required before adoption."
+}

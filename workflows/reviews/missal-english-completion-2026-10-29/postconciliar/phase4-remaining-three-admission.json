@@ -1,0 +1,171 @@
+{
+  "schema": "triptych-proper-source-admission/v1",
+  "recorded_on": "2026-10-30",
+  "state": "Source-qualified historical/study English admitted by exact root2026-10-30 decision; no approved English or modern Latin permission created.",
+  "package": "remaining-two-three-uses",
+  "targets": [
+    [
+      "easter-sunday",
+      "main",
+      "Prayer over the Offerings",
+      "all",
+      1
+    ],
+    [
+      "mary-holy-mother-god",
+      "main",
+      "Collect",
+      "all",
+      1
+    ],
+    [
+      "mary-mother-of-god",
+      "main",
+      "Collect",
+      "all",
+      1
+    ]
+  ],
+  "superseded_unavailable_dictionaries": [
+    {
+      "mass": "mary-mother-of-god",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The historical witness is truncated at the page break after `thy Son, who,` and follows the antecedent word order rather than the target's reordered close. It is not an exact complete target body. No English wording is retained."
+    },
+    {
+      "mass": "mary-holy-mother-god",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The antecedent reorders the close and the witness body ends mid-conclusion at a page break. It is neither complete nor exact for this target. No English wording is retained."
+    },
+    {
+      "mass": "easter-sunday",
+      "form_id": "main",
+      "proper": "Prayer over the Offerings",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "rejected_detectors": [
+        "liturgies-net-2026-08-22"
+      ],
+      "quarantined_text_sha256": [
+        "9bead87f48e487d607d1bfb1ed28415a8f3c2bf13ae9a1c9fc036464d4b5a7e2"
+      ],
+      "note": "an ancient ancestor was identified in the Gelasianum Vetus at 0.85 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    }
+  ],
+  "source_files": [
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-remaining-gelasian-p91-facsimile-57614b82/artifact.toml",
+      "sha256": "1977df8b9d1cc4697909adeefe5c9e588fee0f6736b6e74736bffd4456765a76",
+      "byte_size": 2625
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-remaining-gelasian-p91-facsimile-57614b82/wilson-1894-p91.pdf",
+      "sha256": "57614b82108dc09ed60f91634f2d6938c1cfe8fc6ac769baa94b6855f4fe232c",
+      "byte_size": 116843
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-phase3-remaining-easter-offerings-source.toml",
+      "sha256": "700a956a76aa02977c88ad1aa760a4516c1d82bc26da91e6937e12cc6b270d1c",
+      "byte_size": 1439
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/english-completion-20261029-postconciliar-phase3-remaining-mary-collect-source.toml",
+      "sha256": "0edf5e9058e58d8d31b9cf230510a04e0043584c750f163f85db55aceac89ce1",
+      "byte_size": 1874
+    },
+    {
+      "path": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/english-completion-20261029-postconciliar-phase3-remaining-mary-collect-close.toml",
+      "sha256": "a22ca7be9893619cd7782a7b3c25971a7c86fd35733b5e415036b3a0a5cf6d4a",
+      "byte_size": 1842
+    }
+  ],
+  "package_manifest": {
+    "path": ".scratch/postconciliar-english-completion-20261029/ancient-sources/secondpass-remaining/package-v1/manifest.json",
+    "sha256": "dd317624a46c5707ef8d088f330c2810b7e5ec24c95397bbb302160cf9a88f66"
+  },
+  "source_and_English_reviews": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-04-a0f77ead71f3.json",
+      "sha256": "a0f77ead71f3ac6838360f960a96fac986930002462e7af3abc659c4e8cb3c0e"
+    }
+  ],
+  "prepared_entry_blocks_sha256": "029fb4e80c2a670ecca2ae1e6232e95f80bd6c8411c7d03cac4b0505f1506c08",
+  "normalized_entry_blocks_sha256": "83e4b8f44dd6ce7fbdd3753943a3bc395fbb5cab5302227ab2d72c22fb996cb4",
+  "assembly_normalization": "Only optional empty form labels removed; exact form_id and every translation dictionary retained.",
+  "source_policy": {
+    "literal_PD_uses": 0,
+    "project_study_uses": 3,
+    "no_approved_English_or_modern_Latin_payload": true,
+    "root_finite_adoption_not_implied_by_dryrun": true
+  },
+  "all_prior_positive_and_unselected_absence_dictionaries_exact": true,
+  "checkpoint_refresh": {
+    "state": "Exact root-adopted source/English installation at checkpoint702; prior155positives preserved.",
+    "checkpoint_commit": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+    "sidecar_preimage_sha256": "57123fdfb8472718679284f93698912c296e85fa7e78245554956f3890bc3e6d",
+    "predecessor_proposed_receipt_sha256": "5df002a473bc86a30a0851dc48501d30eb26411d79fe8d132c35c8129eed4556",
+    "all155_existing_positive_dictionaries_preserved": true,
+    "metadata_successor_seals": [
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-09-9b0215d8be44.json",
+        "sha256": "9b0215d8be44bd02ff8b3cdba8dd7876f39ad9e68fa02cbfbabe32bc49116744"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-10-2a8ad2a63b4c.json",
+        "sha256": "2a8ad2a63b4cba9b4018439d5f6f5d893d3dcebe2a5c894a4c091bb3a07e91d1"
+      }
+    ],
+    "finite_recommendation_index": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/source-expression-recommendation-index.json",
+      "sha256": "b9bd060281b8ab9f165ff85b3c2e16bbe06dd4d89935b46581de424422b4dd97"
+    },
+    "recommendation_is_not_root_adoption": false,
+    "root_adoption": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/root-decision.json",
+      "sha256": "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943"
+    }
+  },
+  "root_adoption": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/root-decision.json",
+    "sha256": "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943"
+  },
+  "retained_source_expression_recommendations": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/source-expression-recommendation-index.json",
+    "sha256": "b9bd060281b8ab9f165ff85b3c2e16bbe06dd4d89935b46581de424422b4dd97"
+  },
+  "retained_metadata_successor_reviews": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-09-9b0215d8be44.json",
+      "sha256": "9b0215d8be44bd02ff8b3cdba8dd7876f39ad9e68fa02cbfbabe32bc49116744"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-10-2a8ad2a63b4c.json",
+      "sha256": "2a8ad2a63b4cba9b4018439d5f6f5d893d3dcebe2a5c894a4c091bb3a07e91d1"
+    }
+  ],
+  "predecessor_dryrun_receipt_sha256": "7b9138be306662b619ec88c36f798a384abcb5269c25831148a67c69751a22dd"
+}

@@ -1,0 +1,294 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T11:59:25Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.024.historical-text-040fa780.note-blocks-au-milieu-fr-b371b79b50cc",
+      "date": "1892-02-16",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.024.ass-024-010",
+      "id": "acta.ass.024.ass-024-010",
+      "language": "fr",
+      "physical_line_ranges": [
+        [
+          1,
+          45
+        ],
+        [
+          47,
+          92
+        ],
+        [
+          94,
+          141
+        ],
+        [
+          143,
+          189
+        ],
+        [
+          191,
+          237
+        ],
+        [
+          239,
+          285
+        ],
+        [
+          287,
+          332
+        ],
+        [
+          334,
+          379
+        ],
+        [
+          381,
+          429
+        ],
+        [
+          431,
+          476
+        ],
+        [
+          478,
+          497
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T11:59:25Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"detail\": \"Original ASS title imprint reproduced before the separately printed1968/1969 Johnson reprint notice; historical publication year/period is corroborated by archive inventory. This is textual-imprint evidence, not an original-print facsimile claim.\", \"evidence_physical_lines\": [1, 35]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.024.ass-024-010.note-blocks-b371b79b50cc",
+      "segment_path": "src/sources/works/papal-documents/1892-02-16-papal-leo-xiii-hf-l-xiii-enc-16021892-au-milieu-des-sollicitudes-c9538ed1/editions/1891-acta-ass-024-ass-024-010/segments/note-blocks-au-milieu-fr-b371b79b50cc.toml",
+      "sha256": "b371b79b50cc5279f6a8782f842287d6642d452dfcd98ee36b520a084d436562",
+      "source_note": "ASS 24 (1891). Exact LF ranges of the separately hashed pdftotext -layout UTF-8 Unix derivative; Vatican OCR reconstruction, not original-print facsimile or collated transcription. A separately registered bounded LF-only derivative partitions explicitly inspected historical source-note groups into distinct paragraph blocks at their source-page breaks. All selected non-LF bytes and their order are unchanged; literal source OCR, word spacing and reference marks remain. The exact partition spec and raw parent are retained; no original-print image collation is claimed.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-24-1891-92-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1891-acta-ass-024/artifacts/note-blocks-au-milieu-fr-b371b79b50cc/text.txt",
+      "title": "Litterae encyclicae ad Antistites et catholicos Galliae",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-16021892-au-milieu-des-sollicitudes",
+      "correction_evidence": {
+        "revision": "2026-10-30T11:59:25Z",
+        "kind": "explicit-source-note-lf-partition",
+        "spec_artifact_id": "artifact.acta-papal-archives.ass.024.historical-text-040fa780.note-spec-au-milieu-fr-cf7e51dc7fd1",
+        "spec_sha256": "cf7e51dc7fd1e9313b2fd7e6496e85f2d8ea7da0061c12e42a9ecdede240d709",
+        "source_note_physical_line_ranges": [
+          [
+            20393,
+            20400
+          ]
+        ],
+        "prior_segment_id": "segment.acta-papal-archives.ass.024.ass-024-010",
+        "selected_non_lf_sha256": "7302b31cdf4d4610de178cee596b83a6fb2bc98747b3782110fcb364d5371af2",
+        "selected_non_lf_bytes_preserved": true,
+        "source_order_preserved": true
+      }
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.013.historical-text-9bf27994.note-blocks-in-praeclara-la-87f0d8b56478",
+      "date": "1921-04-30",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.aas.013.archive.aas.013.l008854",
+      "id": "acta.aas.013.archive.aas.013.l008854",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          30
+        ],
+        [
+          32,
+          67
+        ],
+        [
+          69,
+          104
+        ],
+        [
+          106,
+          148
+        ],
+        [
+          150,
+          190
+        ],
+        [
+          192,
+          235
+        ],
+        [
+          237,
+          272
+        ],
+        [
+          274,
+          311
+        ],
+        [
+          313,
+          339
+        ]
+      ],
+      "pope": "Benedict XV",
+      "revision": "2026-10-30T11:59:25Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"artifact_page_ranges\": [[1, 1]], \"completion_colophon_line_ranges\": [[27234, 27234]], \"completion_colophon_raw\": \"          ABSOLVITUR   DIE   29   DEC.   1921.   -   TYPIS   POLYGLOTTIS      VATICANIS\", \"evidence\": \"Title and imprint in the acquired Vatican OCR PDF identify Acta Apostolicae Sedis, the annual volume, ROMAE / TYPIS POLYGLOTTIS VATICANIS and its Roman-numeral publication year. This is edition provenance, not facsimile collation.\", \"physical_line_ranges\": [[1, 17]], \"publication_year\": 1921} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.013.archive.aas.013.l008854.note-blocks-87f0d8b56478",
+      "segment_path": "src/sources/works/acta-papal-archives/1921-04-30-aas.013-archive.aas.013.l008854/editions/1921-acta-aas-013-archive.aas.013.l008854/segments/note-blocks-in-praeclara-la-87f0d8b56478.toml",
+      "sha256": "87f0d8b564782983560ef5a590c56898ed220a438eac317ad9bf5faee3a8b053",
+      "source_note": "AAS 13 (1921). Whole-volume Vatican OCR extraction; no facsimile collation or silent textual correction. A separately registered bounded LF-only derivative partitions explicitly inspected historical source-note groups into distinct paragraph blocks at their source-page breaks. All selected non-LF bytes and their order are unchanged; literal source OCR, word spacing and reference marks remain. The exact partition spec and raw parent are retained; no original-print image collation is claimed.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-13-1921-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1921-acta-aas-013/artifacts/note-blocks-in-praeclara-la-87f0d8b56478/text.txt",
+      "title": "DILECTIS FILIIS DOCTORIBUS ET ALUMNIS LITTERARUM ARTIUMQUE OPTIMARUM ORBIS CATHOLICI, SAECULO SEXTO EXEUNTE AB OBITU D A N T I S AL1GHERII.",
+      "work_id": "work.acta-papal-archives.aas.013-archive.aas.013.l008854",
+      "correction_evidence": {
+        "revision": "2026-10-30T11:59:25Z",
+        "kind": "explicit-source-note-lf-partition",
+        "spec_artifact_id": "artifact.acta-papal-archives.aas.013.historical-text-9bf27994.note-spec-in-praeclara-la-8094e4bb4b8f",
+        "spec_sha256": "8094e4bb4b8f9b77f106e457288487fd39a054e64a7b74c605cdaedd081b7a82",
+        "source_note_physical_line_ranges": [
+          [
+            8995,
+            9000
+          ],
+          [
+            9080,
+            9085
+          ]
+        ],
+        "prior_segment_id": "segment.acta-papal-archives.aas.013.archive.aas.013.l008854",
+        "selected_non_lf_sha256": "3a5e495d18fc026e1adc22cf95a8578851550c1f0457e1e1cd78fd92fde2509d",
+        "selected_non_lf_bytes_preserved": true,
+        "source_order_preserved": true
+      }
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.016.historical-text-f7401c32.note-blocks-consociationibus-la-2d212df64e84",
+      "correction_evidence": {
+        "revision": "2026-10-30T11:59:25Z",
+        "kind": "explicit-source-note-lf-partition",
+        "spec_artifact_id": "artifact.acta-papal-archives.aas.016.historical-text-f7401c32.note-spec-consociationibus-la-281998a4fb2f",
+        "spec_sha256": "281998a4fb2f4ff9d9adc26abb31265306b8ac859ea03d5c877dece08575babd",
+        "source_note_physical_line_ranges": [
+          [
+            283,
+            293
+          ]
+        ],
+        "prior_segment_id": "segment.acta-papal-archives.aas.016.aas-016-l00032",
+        "selected_non_lf_sha256": "924e8d5d3ce022bbf059fba10a81cfa827d86624c4f7e76666132c4289f69da0",
+        "selected_non_lf_bytes_preserved": true,
+        "source_order_preserved": true
+      },
+      "date": "1924-01-18",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.aas.016.aas-016-l00032",
+      "id": "acta.aas.016.aas-016-l00032",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          25
+        ],
+        [
+          27,
+          61
+        ],
+        [
+          63,
+          97
+        ],
+        [
+          99,
+          133
+        ],
+        [
+          135,
+          171
+        ],
+        [
+          173,
+          209
+        ],
+        [
+          211,
+          260
+        ]
+      ],
+      "pope": "Pius XI",
+      "revision": "2026-10-30T11:59:25Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"basis\": \"The official archival OCR volume identifies the historical AAS title, annual volume and Vatican printing imprint. Constituent source headings, dated issue mastheads, signatures, source notes and historical end indexes belong to that identified printing. This establishes edition testimony through the OCR reconstruction, not image-level collation.\", \"completion_colophon_line_ranges\": [[24055, 24055]], \"completion_colophon_raw\": \"    ABSOLVITUR   D I E 31 DECEMBRIS    1924\", \"edition\": \"Acta Apostolicae Sedis 16 (1924), Rome, Typis Polyglottis Vaticanis.\", \"limitation\": \"Annual title year is nominal; the completion colophon and source issue dates are recorded separately.\", \"title_imprint_line_ranges\": [[1, 17]]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.016.aas-016-l00032.note-blocks-2d212df64e84",
+      "segment_path": "src/sources/works/acta-papal-archives/1924-01-18-aas.016-aas-016-l00032/editions/1924-acta-aas-016-aas-016-l00032/segments/note-blocks-consociationibus-la-2d212df64e84.toml",
+      "sha256": "2d212df64e84a104949179b211325752a625e156aaa1106a7a68f86fe7cc9d67",
+      "source_note": "AAS 16 (1924). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text. The display label is a literal source-heading excerpt; the original source text remains unchanged. A separately registered bounded LF-only derivative partitions explicitly inspected historical source-note groups into distinct paragraph blocks at their source-page breaks. All selected non-LF bytes and their order are unchanged; literal source OCR, word spacing and reference marks remain. The exact partition spec and raw parent are retained; no original-print image collation is claimed.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-16-1924-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1924-acta-aas-016/artifacts/note-blocks-consociationibus-la-2d212df64e84/text.txt",
+      "title": "DE CONSOCIATIONIBUS DIOECESANIS",
+      "work_id": "work.acta-papal-archives.aas.016-aas-016-l00032"
+    }
+  ],
+  "supersessions": [
+    {
+      "reason": "Explicit inspected source-footnote LF partitions replace a paragraph-fused reader. Every selected non-LF byte and its source order are preserved; original source and predecessor remain retained.",
+      "prior": {
+        "id": "acta.ass.024.ass-024-010",
+        "language": "fr",
+        "pdf_sha256": "3703528ef99b8a590e1a8b956f6e104e62bdeaa5ef1c185534beeced805514da",
+        "artifact_id": "artifact.acta-papal-archives.ass.024.historical-text-040fa780",
+        "source_sha256": "040fa780d381758f432e740ecfe4cee01143cc43aceb357677177ec4458a5215",
+        "segment_id": "segment.acta-papal-archives.ass.024.ass-024-010"
+      },
+      "replacement": {
+        "id": "acta.ass.024.ass-024-010",
+        "language": "fr",
+        "artifact_id": "artifact.acta-papal-archives.ass.024.historical-text-040fa780.note-blocks-au-milieu-fr-b371b79b50cc",
+        "source_sha256": "b371b79b50cc5279f6a8782f842287d6642d452dfcd98ee36b520a084d436562",
+        "segment_id": "segment.acta-papal-archives.ass.024.ass-024-010.note-blocks-b371b79b50cc",
+        "revision": "2026-10-30T11:59:25Z"
+      }
+    },
+    {
+      "reason": "Explicit inspected source-footnote LF partitions replace a paragraph-fused reader. Every selected non-LF byte and its source order are preserved; original source and predecessor remain retained.",
+      "prior": {
+        "id": "acta.aas.013.archive.aas.013.l008854",
+        "language": "la",
+        "pdf_sha256": "25dd971099032a9387a883ccd2c0e20b73bc647dad595b60b78797453a88aef4",
+        "artifact_id": "artifact.acta-papal-archives.aas.013.historical-text-9bf27994",
+        "source_sha256": "9bf27994c06caf012dda4f6cb6fc630e62d0612e06bf1aa354bc65ab7183124a",
+        "segment_id": "segment.acta-papal-archives.aas.013.archive.aas.013.l008854"
+      },
+      "replacement": {
+        "id": "acta.aas.013.archive.aas.013.l008854",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.013.historical-text-9bf27994.note-blocks-in-praeclara-la-87f0d8b56478",
+        "source_sha256": "87f0d8b564782983560ef5a590c56898ed220a438eac317ad9bf5faee3a8b053",
+        "segment_id": "segment.acta-papal-archives.aas.013.archive.aas.013.l008854.note-blocks-87f0d8b56478",
+        "revision": "2026-10-30T11:59:25Z"
+      }
+    },
+    {
+      "reason": "Explicit inspected source-footnote LF partitions replace a paragraph-fused reader. Every selected non-LF byte and its source order are preserved; original source and predecessor remain retained.",
+      "prior": {
+        "id": "acta.aas.016.aas-016-l00032",
+        "language": "la",
+        "pdf_sha256": "427fc0fed6174bdd9dd5511924f6cd407e70ba3b2af7767749c53e28bcc840c9",
+        "artifact_id": "artifact.acta-papal-archives.aas.016.historical-text-f7401c32",
+        "source_sha256": "f7401c3299a54d1d683e84c5a8e5cf509ed315f681a73ec42f962d83a0082bd4",
+        "segment_id": "segment.acta-papal-archives.aas.016.aas-016-l00032"
+      },
+      "replacement": {
+        "id": "acta.aas.016.aas-016-l00032",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.016.historical-text-f7401c32.note-blocks-consociationibus-la-2d212df64e84",
+        "source_sha256": "2d212df64e84a104949179b211325752a625e156aaa1106a7a68f86fe7cc9d67",
+        "segment_id": "segment.acta-papal-archives.aas.016.aas-016-l00032.note-blocks-2d212df64e84",
+        "revision": "2026-10-30T11:59:25Z"
+      }
+    }
+  ]
+}

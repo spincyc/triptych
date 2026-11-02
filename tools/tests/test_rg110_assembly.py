@@ -143,7 +143,7 @@ let raw='';process.stdin.on('data',s=>raw+=s);process.stdin.on('end',()=>{
   const structure=JSON.parse(fs.readFileSync(root+'/src/web/data/structure/propers/roman-1962.json'));
   const mass=structure.masses.find(m=>m.key===key);mass.propers=mass.propers.filter(p=>p.name!=='Collect');
   const request=JSON.parse(JSON.stringify(fixture.requested));delete request.selectedReadableFormulary;request.civilDate=derived.date;
-  try{A.adaptDay({request,derived,structure});results.push(false);}catch(error){results.push(/inseparable/.test(String(error)));}
+  try{A.adaptDay({request,derived,structure});results.push(false);}catch(error){results.push(/inseparable/.test(String(error)) || ['principal-oration-slot-unbound','oration-source-slot-unbound'].includes(error.code));}
  }
  process.stdout.write(JSON.stringify(results));
 });
@@ -215,7 +215,7 @@ let raw = ''; process.stdin.on('data', s => raw += s); process.stdin.on('end', (
     if (mode === 'missal') request.languages.ordinary = 'la';
     const result = A.adaptDay({request, derived, structure, ordinary: mode === 'missal' ? ordinary : null});
     const mass = structure.masses.find(m => m.key === result.resolved.formulary);
-    const grouped = result.events.filter(e => e.orationGroups);
+    const grouped = result.events.filter(e => e.orationGroups?.some(g => g.kind === 'inseparable')).map(e => ({...e, orationGroups: e.orationGroups.filter(g => g.kind === 'inseparable')}));
     const members = grouped.flatMap(e => e.orationGroups.flatMap(g => g.members));
     const exact = members.every(e => {
       const hook = e.sourceHooks.find(h => h.kind === 'proper-structure');

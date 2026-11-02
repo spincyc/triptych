@@ -1,7 +1,7 @@
 # Review the canonical web conversion
 
 Read the generated canonical Markdown at `build/web/{provider}/{proper}.md`
-and compare it to the reviewed research PDF and canonical source. Check the
+and compare it to the reviewed canonical study source and evidence. Check the
 complete text, interpretation boundaries and four senses, meaningful heading
 hierarchy, tables or replacements, exact source notes, readable notation,
 working references, and absence of TeX debris or exposed production metadata.

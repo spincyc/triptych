@@ -1,0 +1,126 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.008.historical-text-197b329e.native-spacing-quod-nunquam-bf733a255f99.note-blocks-quod-nunquam-bf85ea98c0a0",
+      "body_tex": "1875-02-05-acta-ass-008-ass-008-act-003-ae12c620-la/1875-02-05-acta-ass-008-ass-008-act-003-ae12c620-la.body.tex",
+      "changed": true,
+      "id": "acta.ass.008.ass-008-act-003",
+      "language": "la",
+      "pages": 2,
+      "pdf": "1875-02-05-acta-ass-008-ass-008-act-003-ae12c620-la/1875-02-05-acta-ass-008-ass-008-act-003-ae12c620-la.pdf",
+      "pdf_sha256": "37a78f9c9e7a3bf5379004af088a0691387e3ea613b865095cdae4ae466fbb31",
+      "physical_line_ranges": [
+        [
+          1,
+          182
+        ]
+      ],
+      "render_revision": "2026-10-30T06:44:01Z",
+      "segment_id": "segment.acta-papal-archives.ass.008.ass-008-act-003.native-spacing-bf733a255f99.note-blocks-bf85ea98c0a0",
+      "source_sha256": "bf85ea98c0a03faf891d2008552178309ac61663fa7da5a308ca2e11bdf96bbb",
+      "status": "compiled",
+      "stem": "1875-02-05-acta-ass-008-ass-008-act-003-ae12c620-la",
+      "tex": "1875-02-05-acta-ass-008-ass-008-act-003-ae12c620-la/1875-02-05-acta-ass-008-ass-008-act-003-ae12c620-la.tex",
+      "text_fidelity": {
+        "layout_hyphens": 33,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 2,
+        "source_characters": 8605,
+        "source_first_page": 1,
+        "source_last_page": 2,
+        "source_normalized_characters": 7320,
+        "status": "pass"
+      },
+      "warnings": []
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.010.historical-text-8a558d38.native-spacing-quae-in-patriarchatu-1d29bf463a27.note-blocks-quae-in-patriarchatu-ccbcb0ce6c7e",
+      "body_tex": "1876-09-01-acta-ass-010-ass-010-act-001-987dda0c-la/1876-09-01-acta-ass-010-ass-010-act-001-987dda0c-la.body.tex",
+      "changed": true,
+      "id": "acta.ass.010.ass-010-act-001",
+      "language": "la",
+      "pages": 14,
+      "pdf": "1876-09-01-acta-ass-010-ass-010-act-001-987dda0c-la/1876-09-01-acta-ass-010-ass-010-act-001-987dda0c-la.pdf",
+      "pdf_sha256": "f0eca7f4a5b8884649daa93363c0798d94a64458eb26abe68940836388a1b72c",
+      "physical_line_ranges": [
+        [
+          1,
+          1322
+        ]
+      ],
+      "render_revision": "2026-10-30T06:44:01Z",
+      "segment_id": "segment.acta-papal-archives.ass.010.ass-010-act-001.native-spacing-1d29bf463a27.note-blocks-ccbcb0ce6c7e",
+      "source_sha256": "ccbcb0ce6c7e956a61b39b4174c3eb61a9d802bf8dc764f6045ba99b532ca080",
+      "status": "compiled",
+      "stem": "1876-09-01-acta-ass-010-ass-010-act-001-987dda0c-la",
+      "tex": "1876-09-01-acta-ass-010-ass-010-act-001-987dda0c-la/1876-09-01-acta-ass-010-ass-010-act-001-987dda0c-la.tex",
+      "text_fidelity": {
+        "layout_hyphens": 355,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 14,
+        "source_characters": 70170,
+        "source_first_page": 1,
+        "source_last_page": 14,
+        "source_normalized_characters": 60040,
+        "status": "pass"
+      },
+      "warnings": [
+        "Underfull \\hbox (badness 1009) in paragraph at lines 1272--1307"
+      ]
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.015.historical-text-ce7f8fbb.native-spacing-cum-multa-967135b7756d.note-blocks-cum-multa-dbd6a9de258d",
+      "body_tex": "1882-12-08-acta-ass-015-ass-015-act-006-6d710cb9-la/1882-12-08-acta-ass-015-ass-015-act-006-6d710cb9-la.body.tex",
+      "changed": true,
+      "error": "terminal apparatus creates a page after the complete source body",
+      "id": "acta.ass.015.ass-015-act-006",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          261
+        ]
+      ],
+      "render_revision": "2026-10-30T06:44:01Z",
+      "segment_id": "segment.acta-papal-archives.ass.015.ass-015-act-006.native-spacing-967135b7756d.note-blocks-dbd6a9de258d",
+      "source_sha256": "dbd6a9de258dd44308f050c74300b7a943c93d3b776445d3ac4603dac520f768",
+      "status": "failed",
+      "stem": "1882-12-08-acta-ass-015-ass-015-act-006-6d710cb9-la",
+      "tex": "1882-12-08-acta-ass-015-ass-015-act-006-6d710cb9-la/1882-12-08-acta-ass-015-ass-015-act-006-6d710cb9-la.tex"
+    }
+  ],
+  "errors": [
+    {
+      "error": "terminal apparatus creates a page after the complete source body",
+      "id": "acta.ass.015.ass-015-act-006",
+      "language": "la"
+    }
+  ],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "08fdaf8399f26e1bc28644cae430c0a73f0c58530995a864e025ca43b0083cd4",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T06:44:01Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 2,
+    "failed": 1,
+    "selected": 3
+  }
+}

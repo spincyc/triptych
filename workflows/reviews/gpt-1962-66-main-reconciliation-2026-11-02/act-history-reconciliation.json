@@ -1,0 +1,1269 @@
+{
+  "approval_boundary": {
+    "editorial_approval": false,
+    "freshness_receipt": "The independent act-history projection receipt is recorded separately after governing inputs are frozen; this report does not assert receipt currentness.",
+    "new_source_inspection_claimed": false,
+    "publication_approval": false
+  },
+  "baseline": {
+    "all_pre_generation_files_match_git_blobs": true,
+    "commit": "84c2f7e041af77230095987ae7eb86b0f4d2f92e",
+    "ref": "origin/main"
+  },
+  "changed_paths": {
+    "catalogue.json": {
+      "after_sha256": "23ad401457085de134f92476602a9c39cce9ea0736eb5fbdeaf76bd6525fac63",
+      "all_other_json_values_identical": true,
+      "before_sha256": "a59e5ee163c7c027de9ebe8473ee1b9bf7d03d344b931ba4dc11da7bc781d2e1",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "stage_history.inputs",
+          "path": "src/sources/artifact-delivery.json"
+        }
+      ]
+    },
+    "comparisons/brightman-1896-greek-basil-chrysostom-anamnesis-oblation.json": {
+      "after_sha256": "66ca7cdd6e4fdfec4daa2ab756e4286150a9490241e405d0907fbe9b3469f311",
+      "all_other_json_values_identical": true,
+      "before_sha256": "f0e55e7587d02d269302fc144836634d4858eff6fcaaefa676aee22494fe764a",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/brightman-1896-greek-basil-chrysostom-invocation-gifts.json": {
+      "after_sha256": "dcc876bf6ae1b109ebebea219f4a943d923cbee39fb947a0b502a783f7f76fee",
+      "all_other_json_values_identical": true,
+      "before_sha256": "88c61003a50564556c79a4222730c9ef5446537df72e7e56f493dd312a7608dc",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/brightman-1896-greek-basil-james-anamnesis-oblation.json": {
+      "after_sha256": "6aac9fc271a561c9d92d29ffe3b83499c444bf6641f087ea3326c8354a96b705",
+      "all_other_json_values_identical": true,
+      "before_sha256": "b543eb9f02840b71ed6a06e2fc60587e887fb1a017bb1785fe4e336944cad68a",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/brightman-1896-greek-basil-james-invocation-gifts.json": {
+      "after_sha256": "bc4ab57a4b6fa28abe8f0a3e0188e53ac6f7f6e8fe7a2e618f8c6c2e7146cd05",
+      "all_other_json_values_identical": true,
+      "before_sha256": "5bb6db82aa7dbbc7e981aff86d25e9bf565a7647cf1550665c04e45af45b6060",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/brightman-1896-greek-chrysostom-james-anamnesis-oblation.json": {
+      "after_sha256": "21536d79d8b1ac26e252689f18700d1fc16e7c2020a2bb4a198be6fc4f40e3c0",
+      "all_other_json_values_identical": true,
+      "before_sha256": "de95189623d4507335295e9179f890c6faf005c36839343a73ac62e96c4a6815",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/brightman-1896-greek-chrysostom-james-invocation-gifts.json": {
+      "after_sha256": "839432b7e741ac1c17947570da97a9f63d4c34e0b92231d81a71a3e58d820cbc",
+      "all_other_json_values_identical": true,
+      "before_sha256": "423b6980a1677009b238a79fb2c076147c78e9cbefea86f9eda02225deaa13c9",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/carmelite-1574-1621-october-05-calendar.json": {
+      "after_sha256": "dbebf93380add6e298814ee6fad60ee3c91866dd9b80472fa74d2d7a8cc1f2fc",
+      "all_other_json_values_identical": true,
+      "before_sha256": "e5aa981d75fcc2a56d995d220802259f10877a8df90e09a51f75e3cac70fbadf",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/cistercian-1606-1657-canon-constituents.json": {
+      "after_sha256": "b29ef5c6fac384a88baef39659432e6a1f8e774845eb7a0a474498d29e0c1319",
+      "all_other_json_values_identical": true,
+      "before_sha256": "0c7e81a57ea02872eadaa9da55627f26cb79479f57436c90051ce203c922119c",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/cistercian-1606-1657-confiteor.json": {
+      "after_sha256": "f7567094866bd6f651c14dc9760198e3c12adaf192da0ae31a0b13296176f299",
+      "all_other_json_values_identical": true,
+      "before_sha256": "54ae2b5f3be431ecacf260b858187730a11e0ef7e473b28e6f286c9af61d6b14",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/cistercian-1606-1657-offertory-constituents.json": {
+      "after_sha256": "23335ce84679c21b693bc11e1210e455ddfdafcf03e9293697d1d65e3a668243",
+      "all_other_json_values_identical": true,
+      "before_sha256": "a289ee40a5d6b2758557ce8cfc7b1b7fbdb6a27488678d416dfd6acd09aadd27",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/cistercian-1606-1657-orate-response.json": {
+      "after_sha256": "67bb2c684237b23b8ebda8914ff9ae77d3d00cd5a76c57e510fb769b4f99a1b7",
+      "all_other_json_values_identical": true,
+      "before_sha256": "3707c4c01bd7f07d9f671adc5aec8b86fa296ee16c0186354a5abb7c95200a89",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/cistercian-1606-1657-pater-noster-first-chant.json": {
+      "after_sha256": "1fb3c82567e74832d964515688de16a6ba9116518c654f36e599a4748b8ca9d6",
+      "all_other_json_values_identical": true,
+      "before_sha256": "182bb710aacfd116da0519641f494faee1a7346aa5930f2a061fc77749f0af93",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/cistercian-1606-1657-suscipe-trinitas.json": {
+      "after_sha256": "929e5355edf3024b87d0e49db9960b25e144d517509a797b77de1a2d5aeb3ebc",
+      "all_other_json_values_identical": true,
+      "before_sha256": "2d4508b0a628e0907f0374222d6e023b84d5bd72b5073769fed98f91b07658e9",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/dominican-1550-1604-suscepimus-collect.json": {
+      "after_sha256": "9d1541ba01d1bd1ce962ec43e50eaa885dbf065e6d056b28937cff64a0463e9d",
+      "all_other_json_values_identical": true,
+      "before_sha256": "d617ec8fd321c630d7d8ceb1689c5985aaa11a9d294f747da901e06e05f99571",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/mozarabic-1500-1755-benedictio-panis.json": {
+      "after_sha256": "ad4edcd8d968144756df21182031d7bd883fed2a851654e9333724eb8bf50f00",
+      "all_other_json_values_identical": true,
+      "before_sha256": "52a4d7757a1ecc91dd55562f68cadd747cd104646913a785d855b7f2ca4e9fbf",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/mozarabic-1500-1804-benedictio-panis.json": {
+      "after_sha256": "3bb2080e897348e5a11d965239f87cae2452278bfaac91e0c295db0c24626db5",
+      "all_other_json_values_identical": true,
+      "before_sha256": "dbbda5f829f29848afa57dccdd9f2dc09fe95127fa618632753f761295556e75",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/mozarabic-1755-1804-benedictio-panis.json": {
+      "after_sha256": "eab5985755d1027cb3cd0c4edf4135af9bc4a51cb1e7471b6ccce3f828f25567",
+      "all_other_json_values_identical": true,
+      "before_sha256": "549a1347ba87524dcfdf4ccb0b94d67a4ce83a54fe139517355df2460b84385c",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/roman-canon-memento-wilson-r-and-cummiskey-1861.json": {
+      "after_sha256": "d7dd232abb4f41c2d141582414162d9ac1d0c7b7ee8c89c56181470d52eb26cf",
+      "all_other_json_values_identical": true,
+      "before_sha256": "0b296a31e198d0202f4b5923891ba10f5e182fde3b8492b29080206d46f58c4b",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/roman-hanc-igitur-gelasian-and-cummiskey-1861.json": {
+      "after_sha256": "aaf5dae0fe9a4bebd65f58b60172b3b4f4c21c7586c24f5a66a02c257ffb6a8b",
+      "all_other_json_values_identical": true,
+      "before_sha256": "b632fe9d790e562259f65dfc21a4ccefc17805e55ae09a8368a13dd29228e1bc",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/roman-hanc-igitur-gelasian-and-stowe.json": {
+      "after_sha256": "05004d6b3a288091974456d412911a91c82b544cd211c014e871f8443dffdf5b",
+      "all_other_json_values_identical": true,
+      "before_sha256": "8813fbd05de5b01a425177ab3065a2e5b748ab28034b2916f7aa55459c2f53ca",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/roman-hanc-igitur-gregorian-and-cummiskey-1861.json": {
+      "after_sha256": "9a0a564eff42b96fb0a89e9902b8df19636b090cc7eb83eba26a33cb0c5460bb",
+      "all_other_json_values_identical": true,
+      "before_sha256": "d9e7854e479a02b8d3f852eb944f7f4a1f4d0fac1eebacf65b1869739e492fe3",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/roman-hanc-igitur-gregorian-and-gelasian.json": {
+      "after_sha256": "1c56bc3e212d218237e4239c55dd3ed4ec9d3667a8b1e408d09554c0290b4a89",
+      "all_other_json_values_identical": true,
+      "before_sha256": "f2ca8efbf4cefbdd2a1e56a45660414693f2d1c838f773561030a48eeb7eccd5",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/roman-hanc-igitur-gregorian-and-stowe.json": {
+      "after_sha256": "1232f7e0bffa8dd017696b68fb089b47ac42fb47588e2b6dd2fddb059e4419bd",
+      "all_other_json_values_identical": true,
+      "before_sha256": "f2594af4ac3d61f48d200b910d4aebea211db732bcebc709f9159f6e90430ea0",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/roman-hanc-igitur-stowe-and-cummiskey-1861.json": {
+      "after_sha256": "c17c516bab54372399f6cb000ecf0ca801d392d6e353c71483fdfa1b0b293d35",
+      "all_other_json_values_identical": true,
+      "before_sha256": "a1ba556b43c26325ce0459f8121a8c0b1cedd3b3873ebd334e17f7881a926811",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/roman-quam-oblationem-gelasian-and-cummiskey-1861.json": {
+      "after_sha256": "ff63fa613573a7632553a40fb05931dac6ac7c99de53fffff2f270e9f832e1d7",
+      "all_other_json_values_identical": true,
+      "before_sha256": "7dec2dfcb8e3e0740d04277513d045919e39ae9cda00e332623fdec939cd00d7",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/roman-quam-oblationem-gelasian-and-stowe.json": {
+      "after_sha256": "d896a8942b5e3f44f1cdc2f49cc2637e3546bcbe944105815140946c2563a9a2",
+      "all_other_json_values_identical": true,
+      "before_sha256": "b357b7ede7a7152d4eecfd1ee0de45f2718932d552112dbbca49e3cb44829224",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/roman-quam-oblationem-gregorian-and-cummiskey-1861.json": {
+      "after_sha256": "3e0c74469049f5fd8434c3a7d91d7d18fe4b4d062b365d5558ea98c0fe73cd84",
+      "all_other_json_values_identical": true,
+      "before_sha256": "1c9a0eb3c3294733030e8ae217e456b75c978f9e1e458b46d7e7db95093f1afa",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/roman-quam-oblationem-gregorian-and-gelasian.json": {
+      "after_sha256": "8751e3b244f35f0dc18e0ac46fc45a49ad794e3907052685faeb55f1aef4cbe8",
+      "all_other_json_values_identical": true,
+      "before_sha256": "663288b690ee4bb7a5b9953090f6a7c868f4936f0618b64e29e6d6b5c491666d",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/roman-quam-oblationem-gregorian-and-stowe.json": {
+      "after_sha256": "d5435f37605f93ba6250384685c112f485723f2620f97e1d84ca51520d8713de",
+      "all_other_json_values_identical": true,
+      "before_sha256": "d49460605286b29bdc4a2e6fe768812930da327fc496c26c13c34575e224e358",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/roman-quam-oblationem-stowe-and-cummiskey-1861.json": {
+      "after_sha256": "579ce695b48432fd51432b43077056e3fc53d9492ac049a0ec6ee5c06384fc53",
+      "all_other_json_values_identical": true,
+      "before_sha256": "7f86fafdb0e1b25b044544b8e187cd371eaf2f19372b9c37cef37243627bf0ab",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    },
+    "comparisons/roman-sanctus-stowe-and-cummiskey-1861.json": {
+      "after_sha256": "8966b6dc659129fd40333ac6e62ab4a769574db473b48d6e380902f5af102449",
+      "all_other_json_values_identical": true,
+      "before_sha256": "4a72c578b33d2c5139bc10725f31c24c47445260c9cb53841797c2244f21f0d2",
+      "provenance_stamps": [
+        {
+          "after": {
+            "byte_size": 2990029,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+          },
+          "before": {
+            "byte_size": 2986929,
+            "path": "src/sources/artifact-delivery.json",
+            "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+          },
+          "json_field": "inputs",
+          "path": "src/sources/artifact-delivery.json"
+        },
+        {
+          "after": {
+            "byte_size": 33634,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+          },
+          "before": {
+            "byte_size": 29538,
+            "path": "scripts/_artifact_store.py",
+            "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+          },
+          "json_field": "tool_inputs",
+          "path": "scripts/_artifact_store.py"
+        }
+      ]
+    }
+  },
+  "contrary_findings": [
+    "The complete structure --out argument is a data root, src/web/data, rather than the owned structure/act-history subtree.",
+    "The regeneration changes provenance fingerprints only. The accepted source-catalog growth does not change any act-history input membership or substantive history result."
+  ],
+  "only_changed_input_identities": [
+    {
+      "after": {
+        "byte_size": 33634,
+        "path": "scripts/_artifact_store.py",
+        "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+      },
+      "before": {
+        "byte_size": 29538,
+        "path": "scripts/_artifact_store.py",
+        "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+      },
+      "path": "scripts/_artifact_store.py",
+      "projection_occurrences": 31
+    },
+    {
+      "after": {
+        "byte_size": 2990029,
+        "path": "src/sources/artifact-delivery.json",
+        "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+      },
+      "before": {
+        "byte_size": 2986929,
+        "path": "src/sources/artifact-delivery.json",
+        "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+      },
+      "path": "src/sources/artifact-delivery.json",
+      "projection_occurrences": 33
+    }
+  ],
+  "operation": {
+    "command": "tools/act-history structure --out src/web/data --json",
+    "exit_code": 0,
+    "generated_output_hand_edits": false,
+    "generator_owns_complete_projection": true
+  },
+  "outcome": {
+    "added_files": [],
+    "byte_identical_files": 525,
+    "changed_files": 32,
+    "files": 557,
+    "removed_files": [],
+    "substantive_history_preserved": true,
+    "unexpected_substantive_changes": []
+  },
+  "record_type": "act-history-main-reconciliation",
+  "recorded_on": "2026-11-02",
+  "schema_version": 1,
+  "scope": "src/web/data/structure/act-history",
+  "semantic_proof": {
+    "acts_dates_text_rubrics_relationships_and_comparison_results_equal": true,
+    "all_557_files_equal": true,
+    "all_native_text_payloads_byte_identical": true,
+    "baseline_normalized_tree_sha256": "9e36988a9018a3cdd966ee4ea674c9b5254c245ff52b1e86a8720317a8475b1f",
+    "method": "For every JSON file, compare all values and ordering after normalizing only sha256 and byte_size on the explicitly identified provenance stamps; input membership and every other JSON value remain exact. Unchanged files also retain their exact original bytes.",
+    "normalized_stamp_locations": {
+      "catalogue.json": {
+        "inputs": [
+          "src/sources/artifact-delivery.json"
+        ],
+        "stage_history.inputs": [
+          "src/sources/artifact-delivery.json"
+        ]
+      },
+      "comparisons/*.json": {
+        "inputs": [
+          "src/sources/artifact-delivery.json"
+        ],
+        "tool_inputs": [
+          "scripts/_artifact_store.py"
+        ]
+      }
+    },
+    "normalized_tree_hash_method": "SHA-256 of compact sorted-key UTF-8 JSON array plus LF, each row with relative path and normalized-payload SHA-256, sorted by path. Normalized exact fingerprint fields are the strings excluded-exact-provenance-sha256 and excluded-exact-provenance-byte-size.",
+    "regenerated_normalized_tree_sha256": "9e36988a9018a3cdd966ee4ea674c9b5254c245ff52b1e86a8720317a8475b1f"
+  },
+  "unchanged_counts": {
+    "catalogue": {
+      "candidates": 1972,
+      "entries": 2031,
+      "presentation_groups": 233,
+      "relationship_entities": 28,
+      "relationships": 62,
+      "substantive_established": 44,
+      "text_sets": 35,
+      "unmapped_families": 0,
+      "witnesses": 222
+    },
+    "comparisons": 31,
+    "lines": 23,
+    "native_texts": 20,
+    "slices": [
+      {
+        "id": "latin-missal",
+        "lines": 17,
+        "stations": 59,
+        "vocabulary": "liturgy"
+      },
+      {
+        "id": "code-of-canon-law",
+        "lines": 4,
+        "stations": 47,
+        "vocabulary": "law"
+      },
+      {
+        "id": "roman-holy-week",
+        "lines": 2,
+        "stations": 12,
+        "vocabulary": "liturgy"
+      }
+    ],
+    "stage_history": {
+      "documented_recension_branches": 0,
+      "documented_receptions": 6,
+      "documented_revisions": 86,
+      "documented_stages": 446,
+      "documented_transitions": 110,
+      "documented_witness_successions": 18,
+      "dossiers": 39,
+      "gaps": 283,
+      "provisional_stages": 37,
+      "provisional_transitions": 6,
+      "sources": 638,
+      "stages": 483,
+      "traditions": 259,
+      "transitions": 116
+    },
+    "stations": 118
+  },
+  "unchanged_tree_sha256": "6b3e229265983dd4cae877b7c2447221c79d4ae7a1ec29ad47f1ca1dbdf82d71"
+}

@@ -1,0 +1,193 @@
+{
+  "schema": "triptych-independent-chant-source-controller-successor-rights-review/v1",
+  "reviewed_utc": "2026-10-30T03:29:11.037921+00:00",
+  "status": "ACCEPT_V2_SOURCE_CONTROLLER_BINDING_WITH_PRIOR_EXACT_RIGHTS_RECOMMENDATION_UNCHANGED",
+  "scope": "Only replace the provisional normalized Cross/Damascene base controller inputs with the independently accepted diplomatic1922 three-line controller set in exact v2 index. Retain the prior Chrism+threechant recommendation for its same target hashes and qualifications. No new English or target source admission.",
+  "prior_rights_recommendation": {
+    "path": ".scratch/translation-policy-20261029/sanctoral-rights3/CHRISM-CHANT-FOUR-RECOMMENDATION.json",
+    "sha256": "fe1f06208f67865a47312a5675cc10ecabe09c62871e73122685ecba9bc86b59",
+    "preserved": true
+  },
+  "old_index": {
+    "path": ".scratch/roman-english-completion-20261029/chants/finite-rights-candidate-index.json",
+    "sha256": "624e35d1b4e0e51249a74de5ca15dc61f9bf33aaa128812604f6ff13f98fcca0",
+    "disposition": "Historical unadopted source inputs; its5 provisional coordinator source controls are superseded as authority inputs."
+  },
+  "successor_index": {
+    "path": ".scratch/roman-english-completion-20261029/chants/finite-rights-candidate-index-v2.json",
+    "sha256": "7cf5c043202d197c705fb25983ac7a10c035b96c2bf3e9a5079ef4876851ef1a"
+  },
+  "mechanical_findings": [
+    "All15 v2 candidate source-file hashes match actual bytes; all indexed input packet hashes match.",
+    "All3 exact target Latin strings and full hashes remain byte-exact; Queenship row is entirely unchanged. Chrism is outside this metadata change and its original plan/review remain unchanged.",
+    "Cross/Damascene old normalized base word sequences equal the new independently accepted diplomatic source lines after declared stress, ligature and consonantal-j/Alleluja comparison transforms. The underlying old utterance, actual difference and whole-body nonidentity are unchanged.",
+    "Cross now points exactly at diplomatic line1/wholeMame828. Separate Passion contrary evidence points exactly at line2/wholeMame952, without combining it into the selected feast donor.",
+    "Damascene now points exactly at diplomatic line3/wholeMame673. Its Paschal Offertory occurrence2 still adds only Alleluia; no historical Paschal full match is asserted.",
+    "Independent source-controller review a2195e06f231727c5fd6cd843c271fc9f78003156f90152e635ae208628ff729 and source-only variant review ea7206c52f4737cd1e268fd17f6a40228e011568d5c12e2bc1f75090ea3e1186 remain their separate accepted bounded evidence."
+  ],
+  "updated_controllers": [
+    {
+      "identity": {
+        "mass": "exaltatione-s-crucis",
+        "form_id": "main",
+        "proper": "Offertory",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "source_base_diplomatic_line_sha256_including_LF": "90099afff86b22b0f9a4194e5eed4646a4f27cfd257e0e15950c0cc3519f0829",
+      "source_base_controller_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-cross-feast-base",
+      "source_base_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708",
+      "source_range_controls": {
+        "source_text": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708",
+          "artifact_sha256": "2be6c7089fade3e9ae6399f63a18064915b4ee3c13b4f3712ca6442d35ad11ab",
+          "physical_line_ranges": [
+            [
+              1,
+              1
+            ]
+          ],
+          "text_sha256": "90099afff86b22b0f9a4194e5eed4646a4f27cfd257e0e15950c0cc3519f0829",
+          "passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-cross-feast-base",
+          "passage_canonical_sha256": "1aa53752cc1800a31c60320f6e52b4c9ef089f6ce37f60cd0e38ace0c4b0d41c"
+        },
+        "source_original": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "artifact_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+          "artifact_page": 828,
+          "printed_page": "714"
+        },
+        "target": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+          "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+          "artifact_pages": [
+            736
+          ],
+          "printed_pages": [
+            "655"
+          ],
+          "unit": 3611
+        }
+      },
+      "alternate_source_controller_controls": [
+        {
+          "name": "cross-passion-alternate",
+          "passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-cross-passion-alternate",
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708",
+          "artifact_payload_sha256": "2be6c7089fade3e9ae6399f63a18064915b4ee3c13b4f3712ca6442d35ad11ab",
+          "physical_line_ranges": [
+            [
+              2,
+              2
+            ]
+          ],
+          "source_wording": "Prótege, Dómine, plebem tuam, per signum sanctæ crucis, ab ómnibus insídiis inimicórum ómnium : ut tibi gratam exhibeámus servitútem, et acceptábile fiat sacrifícium nostrum.",
+          "source_wording_plus_lf_sha256": "a8dc2ce73823bfeccacb8e8bbab75fab76164aaf9cbb584cb3a95620df98fc80",
+          "source_original_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "source_original_artifact_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+          "source_original_artifact_page": 952,
+          "source_printed_page": "74*",
+          "passage_record_sha256": "fc1e22776240be23c05b8e2ff4b135406986a386d37a2c97fab5fbc88132ec29"
+        }
+      ],
+      "independent_controller_review": {
+        "path": ".scratch/roman-english-completion-20261029/chants/saints/independent-review/finite-source-controller-review.json",
+        "sha256": "a2195e06f231727c5fd6cd843c271fc9f78003156f90152e635ae208628ff729",
+        "status": "accepted-source-only-controller-proposal"
+      }
+    },
+    {
+      "identity": {
+        "mass": "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+        "form_id": "main",
+        "proper": "Offertory",
+        "cycle": "all",
+        "occurrence": 2
+      },
+      "source_base_diplomatic_line_sha256_including_LF": "457e0d1efcc368929a5bf7ca9b29c023318037db6fa867f4fd42cc52816efa8c",
+      "source_base_controller_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-damascene-non-paschal-base",
+      "source_base_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708",
+      "source_range_controls": {
+        "source_text": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708",
+          "artifact_sha256": "2be6c7089fade3e9ae6399f63a18064915b4ee3c13b4f3712ca6442d35ad11ab",
+          "physical_line_ranges": [
+            [
+              3,
+              3
+            ]
+          ],
+          "text_sha256": "457e0d1efcc368929a5bf7ca9b29c023318037db6fa867f4fd42cc52816efa8c",
+          "passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-damascene-non-paschal-base",
+          "passage_canonical_sha256": "c86cfae3754fd48b5ba400ca69dfc4f921288fa271c5a7a81c71037db84fbb96"
+        },
+        "source_original": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "artifact_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+          "artifact_page": 673,
+          "printed_page": "559"
+        },
+        "target": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+          "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+          "artifact_pages": [
+            579
+          ],
+          "printed_pages": [
+            "498"
+          ],
+          "unit": 2342,
+          "variant": "OnlyPaschalOffertory occurrence2; do not extend base occurrence1 authority"
+        }
+      },
+      "alternate_source_controller_controls": [],
+      "independent_controller_review": {
+        "path": ".scratch/roman-english-completion-20261029/chants/saints/independent-review/finite-source-controller-review.json",
+        "sha256": "a2195e06f231727c5fd6cd843c271fc9f78003156f90152e635ae208628ff729",
+        "status": "accepted-source-only-controller-proposal"
+      }
+    }
+  ],
+  "target_hashes": [
+    {
+      "identity": {
+        "mass": "exaltatione-s-crucis",
+        "form_id": "main",
+        "proper": "Offertory",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "Latin_sha256_including_LF": "18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79"
+    },
+    {
+      "identity": {
+        "mass": "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+        "form_id": "main",
+        "proper": "Offertory",
+        "cycle": "all",
+        "occurrence": 2
+      },
+      "Latin_sha256_including_LF": "e88531b6aff711ffb42e4d411fc44e81d0f07c5836d36e34fe3570b33a8a3c96"
+    },
+    {
+      "identity": {
+        "calendar": "roman-1962",
+        "mass": "beatae-mariae-virginis-reginae",
+        "form_id": "main",
+        "proper": "Offertory",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "Latin_sha256_including_LF": "f4e866f44553d4181484958a6e4d79ffe7d1e560a4a56f39c298b877093de446"
+    }
+  ],
+  "rights_effect": "The complete-old-base plus exact ordinary quantifier/seasonal invocation analyses in prior fe1f062 remain unchanged. The new source representation strengthens accepted controller closure and does not add a word, arrangement, form, language, rights grant or English verdict. Root should bind this v2 index and this additive receipt rather than the superseded old5-file controller set.",
+  "conditions": [
+    "Root finite adoption and closed tuple/body/source/condition guard remain required. This review is not adoption.",
+    "Complete chant-English drafting and independent fidelity/source review remain pending; old null/conditional index English fields do not become accepted by this source-controller review.",
+    "Final exact target projections, source graph, publication and seasonal rendering remain separate gates. Preserve old refusal and nonidentity histories."
+  ],
+  "canonical_files_modified": false,
+  "root_adoption_performed": false,
+  "source_or_English_verdict_rewritten": false
+}

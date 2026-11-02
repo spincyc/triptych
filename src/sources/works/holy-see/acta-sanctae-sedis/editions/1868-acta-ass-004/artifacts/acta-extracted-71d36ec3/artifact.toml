@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.ass.004.extracted-text-71d36ec3"
+edition_id = "edition.acta-papal-archives.ass.004.1868-acta-ass-004"
+artifact_type = "mechanical-pdf-text-extraction"
+media_type = "text/plain"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Exact extraction may contain protected text or modern wrappers and remains transient. Separately manifested historical text excludes uncleared material."
+retrieved = "2026-10-26"
+sha256 = "71d36ec30e98ebe47b92fdacb0011997bce28f40b0f9bb4a92dc8ee7cebebcc4"
+byte_size = 4973
+derived_from = "artifact.acta-papal-archives.ass.004.extracted-text-c8eff72a"
+transformation = "[\"python\", \"<transient-path>\"]; Concatenate the listed inclusive 1-based physical LF ranges in listed order. Preserve each selected line byte-for-byte and append its original terminating LF; no words added, corrected, or rewritten. No extra inter-range separator inserted. FF/header/decorative/curial ranges are omitted explicitly.; concatenate source LF ranges in this declared order: [[33580,33590],[33593,33630],[33654,33672],[33633,33652]]; join with LF and one terminal LF; Concatenate the listed inclusive 1-based physical LF ranges in listed order. Preserve each selected line byte-for-byte and append its original terminating LF; no words added, corrected, or rewritten. No extra inter-range separator inserted. FF/header/decorative/curial ranges are omitted explicitly."
+notes = "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

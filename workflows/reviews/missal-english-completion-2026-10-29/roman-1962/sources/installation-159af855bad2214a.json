@@ -1,0 +1,1323 @@
+{
+  "schema": "triptych-reviewed-source-installation/v1",
+  "recorded_on": "2026-10-29",
+  "source_plans": [
+    {
+      "plan_sha256": "0c261361b242d36acb1b7d436b0ba4c6227a940d21776820cc2c96731f52ec16",
+      "plan_name": "finite10-install-plan.json",
+      "targets": [
+        [
+          "immaculati-cordis-beatae-mariae-virginis",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        [
+          "immaculati-cordis-beatae-mariae-virginis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        [
+          "s-clementis-i-papae-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        [
+          "comm-s-zephyrini-papae-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        [
+          "comm-s-silvestri-i-papae-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        [
+          "s-clementis-i-papae-martyris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        [
+          "s-clementis-i-papae-martyris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        [
+          "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        [
+          "s-ioannis-bosco-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        [
+          "s-ioannis-bosco-confessoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ]
+      ],
+      "source_files": [
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-control-pages/artifact.toml",
+          "sha256": "29fc4baed38f824ae26c3fa9ca7f4db1be6387769742976f577f94d81e540a16"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-control-pages/source.pdf",
+          "sha256": "fe425c3ced93d5d48bc9d64af1a83d646035ae60715c33021931179d25169c2a"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/artifact.toml",
+          "sha256": "d633bb457718a0fa58abfcbc0d6477c4cbab60425ffcaa2d04f47557a94bbdee"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/latin.txt",
+          "sha256": "834d0e60236511a5ff7f3d4f9186ea1188791eab9706277e7bb488d52f6b6cff"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-collect-images.toml",
+          "sha256": "b5bb3adcacdd8ba07deb9a3b91c6eb3d54418a6b29bfedae15064316bdfd5744"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-collect.toml",
+          "sha256": "5c9208770e496f9a97cf6efc8a2b9e8062e744f8559675a442205a70422209ac"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-postcommunion-images.toml",
+          "sha256": "aa457b5be0d2b9961ebfb622c4cdf1bf7e61d4251f9411b858ce5048d4fabf1e"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-postcommunion.toml",
+          "sha256": "39e9be89666133deb91a0f5e9d8a16a142a6c1ff52f7071ed327e516648660c6"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/heart-two-20261029-collect.toml",
+          "sha256": "16f25ae3261b8483aa6c46cbf2e5a71671ddc662d0b13eb452b8bf7942f7b1d3"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/heart-two-20261029-postcommunion.toml",
+          "sha256": "9bcd42ca2a91aae4d2e3365e3c0bf603b3d3fe29d8d7f3f79258d9b53237fbe3"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/artifact.toml",
+          "sha256": "8eec30c80657798ee7a4495654a26ce86cd00f52da22268b037d3ebec68c8dee"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/source.pdf",
+          "sha256": "976afd4964a6b833ec2bf92ee5cb00825be96a4d7bc789acf34fde0bacac3b6b"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-historical-latin-20261029-5602f33a/artifact.toml",
+          "sha256": "2a85a0437f586455b6317121b9b190ea39737db0c959d587c0dad1653b8d996d"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-historical-latin-20261029-5602f33a/source.txt",
+          "sha256": "5602f33a0dc7039761adac78d736fdb286ea1261404cd7cdd3a0c5bdb9fd66f2"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-conclusion-prefix-20261029.toml",
+          "sha256": "0112c46dfcea6dc6edc66e41e4d234d3dfcf0075970d2bcfdc434e8346e3d46e"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-historical-page-20261029.toml",
+          "sha256": "83e262e5e4e12b0ccc0b0c88dd0269f26de1d80f06682e1e890edd8e8a3347a9"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-historical-text-20261029.toml",
+          "sha256": "bd34f0536e2a4911dc184a62893d0abda05090aa25afc5b5250b4d763bda13bc"
+        },
+        {
+          "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-collect-image-20261029.toml",
+          "sha256": "c7e3d5e7f42349e934f852ed39cd22608cd24a240f6d1de65a384b189c56b4b0"
+        },
+        {
+          "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-collect-text-20261029.toml",
+          "sha256": "87e8ae371cb02c360637b784b3cd9b005be3b6272e1d40161b5bdd39b99285e1"
+        },
+        {
+          "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-postcommunion-image-20261029.toml",
+          "sha256": "d8384136d9a1ac34a0e8f80a4629e132627a74ec6157d790551989ae3c8a919a"
+        },
+        {
+          "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-postcommunion-text-20261029.toml",
+          "sha256": "d121e57dc8d1d245ac5da26f5b17dd73a4794a4cc3295e29ca654ec3eee92a93"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/edition.toml",
+          "sha256": "ec3153b2574d1fb18f52ef4ead2d7aeba837d078f6bae3471b0d6fa096483a09"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--collect--1/artifact.toml",
+          "sha256": "f0a1b926d9a05757007b13d62243a4a7a51e5f7c27d37b7d3dbd01df3b45c0b9"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--collect--1/latin.txt",
+          "sha256": "c8b53661561aac747517845360d96151db5afb6707c0c3b798b8de710559395a"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/immaculati-cordis-beatae-mariae-virginis--collect--1.toml",
+          "sha256": "7b75ec071e929b1fbb0e962a971cb7e172a73e7fd89b8550e57fccda2dcc5687"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--postcommunion--1/artifact.toml",
+          "sha256": "906d1840aef2e08162fad2daa05fc267a5bcca7b051441fee805cf3de30433f0"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--postcommunion--1/latin.txt",
+          "sha256": "6c81c9d5ef0912c0e01fc911ab4dc9fe86648e27e49651092086e38d2ca17795"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/immaculati-cordis-beatae-mariae-virginis--postcommunion--1.toml",
+          "sha256": "418cbf9ffe5df9b5712172eff23cac4173e6aec0ba686e0af97bb19305154a4b"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--collect--1.toml",
+          "sha256": "e9ec9b3acedf9ef52adb949a072f4cb4020439f46d859777abf43db20b25fe42"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--collect--1/artifact.toml",
+          "sha256": "5b477e81d329255b09101f01ebd9fda8b77836bf1935629be67e67d5192509e0"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--collect--1/latin.txt",
+          "sha256": "d57235904e4e32436dfda5e58d4ac5c98822e784725000a41d75bbc1a24d4aa8"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/s-clementis-i-papae-martyris--collect--1.toml",
+          "sha256": "0944f415ca454250cfe5675a5e9625217ab09b76da57e2122641688ec0ef3c2f"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-comm-s-zephyrini-papae-martyris--collect--1.toml",
+          "sha256": "53488bae36aba1bf01148f29f66f4d22e5c637a8630659f48479bb8d1c7df7ba"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/comm-s-zephyrini-papae-martyris--collect--1/artifact.toml",
+          "sha256": "5b1d4a8416437478731b5253aaf9f1c45fd2a968378c34448764068d82071ceb"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/comm-s-zephyrini-papae-martyris--collect--1/latin.txt",
+          "sha256": "f8732dcb77e4139160ed879dc19947b26595c5d3541442c3f9ec67cc5bf774ad"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/comm-s-zephyrini-papae-martyris--collect--1.toml",
+          "sha256": "87ceadd0018ba206f5d7d06bef41fb2080394ead94495f44308deb4b5d333ec1"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-comm-s-silvestri-i-papae-confessoris--collect--1.toml",
+          "sha256": "17cf2e24755f9c8435edf0549d475fbbf7ff0f4aac68d1e9c923bbb5d0bc575e"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/comm-s-silvestri-i-papae-confessoris--collect--1/artifact.toml",
+          "sha256": "2aa765a31552c624ab49fc116a59360a85131028cc21535d632cd140c7b3d0c2"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/comm-s-silvestri-i-papae-confessoris--collect--1/latin.txt",
+          "sha256": "61fa6b8ea693b00660f9d11521ac5f6330018be9982109845a252f53cd056f53"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/comm-s-silvestri-i-papae-confessoris--collect--1.toml",
+          "sha256": "05fb3d5e6a0b24f687ff8387298208a2f9eaae0cdfc926956c44bef4e1b554ab"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--secret--1.toml",
+          "sha256": "0ad00ae23895d5e89964a40c435ab3b4e444227a827694365f31b758a626532a"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--secret--1/artifact.toml",
+          "sha256": "c9ab080494cafef116da79508660eddfde229d2fea1c1a0e6c5fe998a1a69e1d"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--secret--1/latin.txt",
+          "sha256": "85e15b6f86d5c6f8c122d9c2c70203102ad0659a6006d502467d9e1afb0628de"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/s-clementis-i-papae-martyris--secret--1.toml",
+          "sha256": "6d99f1e9d4a39e488e040cb5df0282b3619819740a9bae1b54f2020b52e9be1c"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--postcommunion--1.toml",
+          "sha256": "b2be333e52b57362bb79df840428dc6e37fb404a098ede22076b2da2ee1d8491"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--postcommunion--1/artifact.toml",
+          "sha256": "f882fbc8ff44ef3bec3f89f39b4fbe55dbdbad021b7fc18e024d207902063fa2"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--postcommunion--1/latin.txt",
+          "sha256": "bfd0be06cd5ff6e036d7a9e22ee73a2bec99a413c24cc12baefc939a3db52bce"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/s-clementis-i-papae-martyris--postcommunion--1.toml",
+          "sha256": "290eb6dd12268257457147de977e7718c01ca02616a29d9a82a4c9795557833e"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1.toml",
+          "sha256": "89feee2dfab5257899407c15ce45210a7f90fbc9740d163aee74402f6d783878"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1/artifact.toml",
+          "sha256": "f1093bb4544af8aa0ea0aabf10492967f9e5579d60be07a45bac9cfc662cbac2"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1/latin.txt",
+          "sha256": "9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1.toml",
+          "sha256": "ad6c7662d2ea6816f869795237708c0627ba49e934d0c376d4d6b64784ce04f2"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-ioannis-bosco-confessoris--collect--1/artifact.toml",
+          "sha256": "6071ce4e2fec0be5abc7139aade946aea82b50ae865373242e9d92c6e7962515"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-ioannis-bosco-confessoris--collect--1/latin.txt",
+          "sha256": "20e15f699f0c8c1a9538024049d905c97a6d86577e24a2f5d3cae4a9c9b60155"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/s-ioannis-bosco-confessoris--collect--1.toml",
+          "sha256": "5012af9a6a8c8f5acd4f17465e5f9bb01963849afaafaa293a5cb0ba5a648bb2"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-ioannis-bosco-confessoris--postcommunion--1/artifact.toml",
+          "sha256": "943b2f33a4af82b31f83ed6bc0bc2d4109c05c076e1dc9eafe4be14148a56057"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-ioannis-bosco-confessoris--postcommunion--1/latin.txt",
+          "sha256": "4f47d9dd70abae1166e980d2935e2a4552abd9e65d7105af44e7f8909fce62ea"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/s-ioannis-bosco-confessoris--postcommunion--1.toml",
+          "sha256": "e57b9cafd46100e452535b66c10fcd005386cba1d033d7dba164c4f44e7e0b30"
+        }
+      ]
+    },
+    {
+      "plan_sha256": "06b8209ec05d518ff662c9546b643fc0662a27c93ee3d1ce7a8a0073704c58c3",
+      "plan_name": "finite-common-reviewed-install-plan.json",
+      "targets": [
+        [
+          "commune-summorum-pontificum",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        [
+          "commune-summorum-pontificum",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ]
+      ],
+      "source_files": [
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pontiff-secret-postcommunion-collation-20261029.toml",
+          "sha256": "a540cbe01394bd0a09f75060e8e7cef082d3b78e84c57a2b4ef498efb4b289c3"
+        },
+        {
+          "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/pontiff-common-postcommunion-whole-foundation-20261029.toml",
+          "sha256": "3aaa57840d3ff3f7efebd917c888f9f74b28c12c148d383dad8193065dfdb6ff"
+        },
+        {
+          "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/pontiff-common-secret-whole-foundation-20261029.toml",
+          "sha256": "154022bad8b6eeaf91209881c6edf62848e58749dcf40889554dc927237fae51"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/artifact.toml",
+          "sha256": "b4a8a78095b4661ddf0398c35d748f90c79c08e9712dcfeff81c3888e071f486"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/english.tsv",
+          "sha256": "dc95b61f0a85f8b3f73f383b0d2b705a5c785e61eedc54b13596dae7daf383bd"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-postcommunion-publish-20261029.toml",
+          "sha256": "7134b2d46a62f0ab7009c2b8b55ba9f71e850cb0e46ee63f8dbb380ca138b6fc"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-postcommunion-verify-20261029.toml",
+          "sha256": "0c0945b3ff81ee712fdf7e51f8eef7123ce294b4fe36208cf83be38b6a4d0580"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-secret-publish-20261029.toml",
+          "sha256": "cab13e69590815941d5eed6472985e7c2d086ace4e6404a8f3d8a6b62661c606"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-secret-verify-20261029.toml",
+          "sha256": "6671b1390e38b46088b8af80638e2ba876b365a9ed54a076176e536b39fbbc99"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-two-qualified-3920bd77/artifact.toml",
+          "sha256": "5ef1d38cadfc5cee6acbf0c7a8ecccce406834c4e26a1934e25746b5da09d223"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-two-qualified-3920bd77/latin.txt",
+          "sha256": "3920bd772a32ebba24b336a71f9bcd30eeff745c60630d5fe20739609e58a75b"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pontiff-postcommunion-qualified.toml",
+          "sha256": "c510207c1e56a72c358913f839192f73cc2cd59f0fba6ec65ab41c269d1e6d43"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pontiff-secret-qualified.toml",
+          "sha256": "aa72bfe94da5f95123b6fee091fa5b8df94733fb322d12d1f2d05ad3f6967339"
+        }
+      ]
+    },
+    {
+      "plan_sha256": "0fea972fe4dfd1b20f081dc089603d47fbdb639fd96e4bfa7f8be312e24d54d2",
+      "plan_name": "finite-chrism-collect-install-plan.json",
+      "targets": [
+        [
+          "chrism-mass",
+          "main",
+          "Collect",
+          "all",
+          1
+        ]
+      ],
+      "source_files": [
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/chrism-collect-qualified-100ae514/artifact.toml",
+          "sha256": "01989a359709ec335f622e4b8ccaddbe5e46a840b867b43322411a3fe410275e"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/chrism-collect-qualified-100ae514/latin.txt",
+          "sha256": "100ae514cc635ab67fa0b2f223954bbb9053f77c01dead58eb11309c16815d33"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/chrism-collect-qualified.toml",
+          "sha256": "40aeac125436ef89707d46546758626fde57f0f54a0709b2123a0599aee3e979"
+        }
+      ]
+    },
+    {
+      "plan_sha256": "dce120cc6f348cc1d24ce99baeb3e7b5da3985ed4e0779e5c68910b09a6975a3",
+      "plan_name": "install-plan.json",
+      "targets": [
+        [
+          "exaltatione-s-crucis",
+          "main",
+          "Offertory",
+          "all",
+          1
+        ],
+        [
+          "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+          "main",
+          "Offertory",
+          "all",
+          2
+        ],
+        [
+          "beatae-mariae-virginis-reginae",
+          "main",
+          "Offertory",
+          "all",
+          1
+        ]
+      ],
+      "source_files": [
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-finite-cross-passion-page-ff164f57/artifact.toml",
+          "sha256": "f9fec5bcb38b181a2db749ca3d2647c0f2d9db529c70d82620a1de8b78eab396"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-finite-cross-passion-page-ff164f57/source.pdf",
+          "sha256": "ff164f574b5e2bb6ef5d1b94f97f60df671a4d27fbbc4e7702f9d43025fc02e0"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-finite-saints-bases-2be6c708/artifact.toml",
+          "sha256": "9b18f8c7e1593d0b2decca73d4a5fa0714c2083d9574814dc22114b25f523b33"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-finite-saints-bases-2be6c708/latin.txt",
+          "sha256": "2be6c7089fade3e9ae6399f63a18064915b4ee3c13b4f3712ca6442d35ad11ab"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-finite-cross-feast-base.toml",
+          "sha256": "beb9b85c77523e4bd5c15fe124de047d113a929540de885f0c953ce3ee81e890"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-finite-cross-passion-alternate.toml",
+          "sha256": "ed811a9bf1fca033dc2c46186a1b8e0d799d2b0790274b9c41d49ce6e7ff62a4"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-finite-damascene-non-paschal-base.toml",
+          "sha256": "83eedac29670a0eb94f4233db65c09d1e216e4c0e14b62ca197094c74795da4b"
+        },
+        {
+          "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/erara-whole-pdf-6fb9cd28/artifact.toml",
+          "sha256": "acf0dfc7287d2faabfe443a39b1df5f5a661aafda9676dba451f92bd6013ebef"
+        },
+        {
+          "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-latin-20261029/artifact.toml",
+          "sha256": "5f0072e9c83f926d7b8259131790b8039d2958a74fe7c2bdaa0056cd12063c96"
+        },
+        {
+          "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-latin-20261029/latin.txt",
+          "sha256": "dd345ee2fcab6b3974007069754a1ae6974851a5276af44fac6133b329655c77"
+        },
+        {
+          "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-pages-20261029/artifact.toml",
+          "sha256": "48067747e3f703690e2b1fb2169bc597ff929eaca3aeb230d792a83fe71e6810"
+        },
+        {
+          "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-pages-20261029/source.pdf",
+          "sha256": "9853d5a5e49dfe4891a6614be3e1cab50dbdd599c3908da04019b00d7bc37262"
+        },
+        {
+          "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/edition.toml",
+          "sha256": "063c4e3262e09523b67c07b760f9183c18848108d2b042c1fc1ec7deb7f561ba"
+        },
+        {
+          "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/passages/queenship-offertory-responsory-base-20261029.toml",
+          "sha256": "690557cdf3e7fd112682422cc0316eebdee9ac35982df75f3e048326a5ff2af6"
+        },
+        {
+          "path": "src/sources/works/catholic-church/breviarium-monasticum/work.toml",
+          "sha256": "a411c5c80f2a9e12801d6348ae4f9e6191eea2a61b56a32ab17cff4a1f7d8262"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/finite-cross-offertory-target-20261029.toml",
+          "sha256": "69999a8da594b8c32790a5a986289ad4f6c75653a1a4dd94b4d385c68200787c"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/cross-offertory-qualified-18060fef/latin.txt",
+          "sha256": "18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/cross-offertory-qualified-18060fef/artifact.toml",
+          "sha256": "9aaec287b29d59a0e8738803fa1472ca21bba2ac55c54972be44175d3081d5f0"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/cross-offertory-qualified.toml",
+          "sha256": "d8639a56178895f6cda9ad578fa8bdd52399d380ffd3e78ca0eb8f05ba7f2863"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/finite-damascene-paschal-offertory-target-20261029.toml",
+          "sha256": "9f1bbf6bd87b4674d22ca0f6bd85ca482868fc2ea6f12669adc0c14feb0f9d4d"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/damascene-paschal-offertory-qualified-e88531b6/latin.txt",
+          "sha256": "e88531b6aff711ffb42e4d411fc44e81d0f07c5836d36e34fe3570b33a8a3c96"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/damascene-paschal-offertory-qualified-e88531b6/artifact.toml",
+          "sha256": "93632ce542a22691f908e2994113f657cc99713c1d086ef03dfa462d8a98f43c"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/damascene-paschal-offertory-qualified.toml",
+          "sha256": "cbeed2b32ee8edf1a3bfe9afde6e5f9e492e961775e1b93b01eb4a35cb17deae"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/finite-queenship-offertory-target-20261029.toml",
+          "sha256": "d0938bcbdb2186304a00d3ce135994dd2e5c635b3a0d5213dbc28013288a97b3"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-offertory-qualified-f4e866f4/latin.txt",
+          "sha256": "f4e866f44553d4181484958a6e4d79ffe7d1e560a4a56f39c298b877093de446"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-offertory-qualified-f4e866f4/artifact.toml",
+          "sha256": "21204c15341245443d3764a6c629e1b0e0f782e10c36516168a5694b47f512aa"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/queenship-offertory-qualified.toml",
+          "sha256": "d9d00451a88b6d5d6b0c2c2a624a84612100bc60ee5dc7ea92f3e1ec49d74079"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "target": [
+        "immaculati-cordis-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "immaculati-cordis-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "1f9d070d341886425594bff2946a429365faf7144145a64ccb8821b340902fbd",
+      "new_english_sha256": "0cb90b2744188032f1232cf3e8a165a6d1c9a04d4ba9b19adad607cb66d19917",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-d5755810808b4a74.json"
+    },
+    {
+      "target": [
+        "immaculati-cordis-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Postcommunion",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "immaculati-cordis-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Postcommunion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "d6ea93764168d5869663a4e4e86da145058b77f8c7799a98aeb97d270fa05dc8",
+      "new_english_sha256": "5313dcbd2b70bbd5afe7cb21803276343442ad3a9d561ec7bfd47e18ef90fafe",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-d5755810808b4a74.json"
+    },
+    {
+      "target": [
+        "s-clementis-i-papae-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-clementis-i-papae-martyris",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "67e24f5405e5d9f8df4a514b17eaee1c7336c2f2156cdec279c31b030ed4d3b3",
+      "new_english_sha256": "b6ef950e9c018c37eb66d0b55dfd99897c89571af088cc5064a2a5a4731275b0",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-1842100692792b19.json"
+    },
+    {
+      "target": [
+        "comm-s-zephyrini-papae-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "comm-s-zephyrini-papae-martyris",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "519f9a0e7877faa275bee4e5150da163b4b8fad3fe3937f1f5d76a52e82813cf",
+      "new_english_sha256": "61c79d48d465c680752abb21b09fc108917ab200570a3840f9eea6c14ea30337",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-1842100692792b19.json"
+    },
+    {
+      "target": [
+        "comm-s-silvestri-i-papae-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-1962"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "comm-s-silvestri-i-papae-confessoris",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "witness-gap",
+          "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+        },
+        "note": "the witness keeps the day and prints no proper Collect for it, only a pointer into its Common. Leaf n541, printed p. 533, running head `31st DECEMBER AND 2d JANUARY.`, gives the heading `XXXI. St. SYLVESTER, p. c.` and under it `INTROIT, Sacerdotes, p. 484. Collect, Secret and P. Comm. as in p. 482, with Commemorations of all the Festivals, from Christmas-day inclusively.`, printing an Epistle, Gradual, Gospel, Offertory and Communion for the day but no oration of any kind. Its Kalendar at p. 777, leaf n785, says the same: `31 S. Sylvester, c. bp. d. Com. of octaves 533`. Page 482 was then opened: leaf n490, running head `MASS X.* STATUIT,`, prints `COLLECT. Da, quaesumus.-Grant, we beseech thee, O Almighty God, that the venerable solemnity of blessed N. thy Confessor and Bishop, may improve our devotion, and strengthen in us the hopes of salvation. Thro'.` -- with `N.` and no saint's name. That is the same prayer the 1962 sets here with `Silvestri` written in, and this file already records it at commune-confessoris-pontificis-1 (printed_page 482, collated 2026-08-01). So an English for this slot would have to be made by writing a name the witness does not print, as at the Mennas and Sabbas rows above. Reversible from leaf n490 alone if that ground is relaxed"
+      },
+      "old_latin_provenance": [
+        {
+          "mass": "comm-s-silvestri-i-papae-confessoris",
+          "form": "",
+          "proper": "Collect",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "3b272cbc2235d117f16ba9a76b02d0e1a36f9f26e450bf3cbf90fcb0c61dae88",
+          "body_status": "removed"
+        }
+      ],
+      "new_proper_sha256": "c717750626ed820788c5c47d99f8b35525e8e84c869178c3f8aa56c36ec40508",
+      "new_english_sha256": "ade447541d35d66591e06aafaba4bfc9e9f20bb633e004a2a051256a9d8e1868",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-1842100692792b19.json"
+    },
+    {
+      "target": [
+        "s-clementis-i-papae-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Secret",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-clementis-i-papae-martyris",
+        "form_id": "main",
+        "proper": "Secret",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "31d97c736afd7b3dbcb9089386cde396f2c4dea5ecfed26b50a59a336b7debcc",
+      "new_english_sha256": "74cdb18eeb765ef8880cf4058948da0500870f8fe56b1fd485edda9fbecb8837",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-1842100692792b19.json"
+    },
+    {
+      "target": [
+        "s-clementis-i-papae-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Postcommunion",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-clementis-i-papae-martyris",
+        "form_id": "main",
+        "proper": "Postcommunion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "e743d75248001b672f9923df2bfe18026c9ea12d1895d1ee169b4fbe5435116a",
+      "new_english_sha256": "b0a0a3f7de33960f9bfa9027b2b46a033fbf72666b8569ad23788ffb9ecde6ab",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-1842100692792b19.json"
+    },
+    {
+      "target": [
+        "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "body_status": "held-unpublished",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Source-established own appointment: Missale Romanum 1962, printed p. 594, marginal no. 3117. Exact body wording is not supplied here."
+      },
+      "old_untranslated": {
+        "mass": "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established own proper. Its whole-body appointment does not inherit a Common or Scripture companion translation."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "db74cede7e8c353754a3cf68a498fc4083d5d10595e6ecab9d628b7ffe8f00ea",
+      "new_english_sha256": "f915dcad95b7217e16c83e3f1d8c6ee756d1378adc0518b403ac277aafcdecfb",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-d5755810808b4a74.json"
+    },
+    {
+      "target": [
+        "s-ioannis-bosco-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-ioannis-bosco-confessoris",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "dea8063fae62ec56e61ca016b791d66d9658e372c49220f7d5350a2689c90d91",
+      "new_english_sha256": "a7d51a4fce5bb83ca075c7cb4e18f2d7f819499df2b5ad9bacb00c41c2425ecd",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-c8f21b503aad214e.json"
+    },
+    {
+      "target": [
+        "s-ioannis-bosco-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Postcommunion",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-ioannis-bosco-confessoris",
+        "form_id": "main",
+        "proper": "Postcommunion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "79e9be4c39b7287b1fe67c5a1b743a9307405996f842a92b0f6ddfcacbb7713d",
+      "new_english_sha256": "f90300369f528793e9ed8be614d2cb99a4ebaef074485f81bb5c39997e8f4c55",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-c8f21b503aad214e.json"
+    },
+    {
+      "target": [
+        "commune-summorum-pontificum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Secret",
+        "incipit": "Oblatis muneribus, quaesumus",
+        "source": "composed",
+        "notes": "Printed p. [3], no. 4187.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "commune-summorum-pontificum",
+        "form_id": "main",
+        "proper": "Secret",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+          "surfaces": [
+            "site-display",
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        },
+        "witness_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+        "witness_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-supreme-pontiff-common-gap",
+        "verified_artifact_page": 511,
+        "verified_on_page": "2026-08-27",
+        "verified_printed_page": "502-504",
+        "note": "The only held Lasance generic-slot reading is on the excluded 1302a-1302d insert and has no affirmative publication binding. Independently, bounded Cummiskey pp. 502-504 show that its numbered Commons end at Mass XXI and pass directly to the Dedication Mass, so it supplies no public-domain Common of Supreme Pontiffs as a fallback. No body is recorded."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "06fc7edefd175844cdbade4549c51e3dfadebf00667a29f671383aa386b6b81e",
+      "new_english_sha256": "ade3795a41a53771bb17b5f259548f24e444f9f7d3446ac9b7978481138cbaae",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-d85ba6a4b9c3df6b.json"
+    },
+    {
+      "target": [
+        "commune-summorum-pontificum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Postcommunion",
+        "incipit": "Refectione sancta enutritam",
+        "source": "composed",
+        "notes": "Printed p. [3], no. 4190.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "commune-summorum-pontificum",
+        "form_id": "main",
+        "proper": "Postcommunion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+          "surfaces": [
+            "site-display",
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        },
+        "witness_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+        "witness_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-supreme-pontiff-common-gap",
+        "verified_artifact_page": 511,
+        "verified_on_page": "2026-08-27",
+        "verified_printed_page": "502-504",
+        "note": "The only held Lasance generic-slot reading is on the excluded 1302a-1302d insert and has no affirmative publication binding. Independently, bounded Cummiskey pp. 502-504 show that its numbered Commons end at Mass XXI and pass directly to the Dedication Mass, so it supplies no public-domain Common of Supreme Pontiffs as a fallback. No body is recorded."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "5012b66b0e925f3205f321d38d4a5275aef76d440b551b9f2a903910471cf799",
+      "new_english_sha256": "17708c81cefb954dbe3d980b8daf0583083ee9b1e039547a6f434a3f51a509c2",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-d85ba6a4b9c3df6b.json"
+    },
+    {
+      "target": [
+        "chrism-mass",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "chrism-mass",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "6943da592dfd33d312954161f386654b15d640d2512cc436ca3b7c6ef4a2c71d",
+      "new_english_sha256": "349d86f852ad183d4454042e8c27be173e5593acfa2f9af688ac6a8c44f0411a",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-3fe5122a42a83baf.json"
+    },
+    {
+      "target": [
+        "exaltatione-s-crucis",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Offertory",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, registered CMAA facsimile, artifact page 736, printed page 655, numbered unit 3611; normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source record."
+      },
+      "old_untranslated": {
+        "mass": "exaltatione-s-crucis",
+        "form_id": "main",
+        "proper": "Offertory",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal Proper appointment; retained Scripture citations do not establish that whole body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "5b3a6191cb0583a22ac75a06253d468ce15aaf3f800dd5c8d4346af611e6d670",
+      "new_english_sha256": "43296ddf74c76bf5b91f48044e1438e4b363766bdf0071a21f61a1329580b755",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-cafcae080f5716b0.json"
+    },
+    {
+      "target": [
+        "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+        "main",
+        "Offertory",
+        "all",
+        2
+      ],
+      "old_proper": {
+        "name": "Offertory",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Job",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 14,
+                  "verse": 7
+                },
+                "end": {
+                  "chapter": 14,
+                  "verse": 7
+                }
+              }
+            ],
+            "ref": "Job 14:7"
+          }
+        ],
+        "notes": "The same1962 unit2342 adds a separately marked optional Paschal clause after the matched base. Mame1922's local Offertory does not print that continuation; no complete independent Paschal-body publication proof is established here. The complete selected body remains unavailable, not a Bible substitution or a truncated base.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "john-damascene-offertory",
+          "option": "paschal-body-gap",
+          "basis": "1962 artifact577-579/printed496-498 establishes the dated March27 Mass and unit2342 with its explicitly marked optional Paschal continuation. The base choice is limited to the source-proved dated non-Paschal tract regime; the Paschal complete-body choice remains a witness gap. No ordinary-season, unknown-season or Triduum applicability is inferred.",
+          "anchor": {
+            "mass": "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+            "form_id": "main",
+            "proper": "Offertory",
+            "occurrence": 1
+          },
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "paschal"
+            ]
+          }
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+        "form_id": "main",
+        "proper": "Offertory",
+        "cycle": "all",
+        "occurrence": 2,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "New explicit1962 source appointment. No exact human English exemplar/publication binding is admitted for this owner. Existing English dictionaries remain unchanged; no English body or whole-witness absence claim."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "2eb897ca5b0927e2b6d75db968dd2554203cf424543e89d70a123e98180e2fc5",
+      "new_english_sha256": "aae1c894bbd01f1de8f087e5690a10c4bac4c5cf4b55391b7ad30580fef3d6b2",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-cafcae080f5716b0.json"
+    },
+    {
+      "target": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Offertory",
+        "source": "composed",
+        "notes": "Registered 1962 CMAA facsimile, artifact622/printed541, unit2691; appointment read on the page images on 2026-10-23. No complete earlier-witness word collation or independent publication basis is established here; no body is supplied.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "beatae-mariae-virginis-reginae",
+        "form_id": "main",
+        "proper": "Offertory",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The source appointment is established by the registered 1962 CMAA facsimile, artifact621-622/printed540-541. No exact human English exemplar/publication binding is established for this owner; no English is supplied and no whole-witness absence is asserted."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "33824b940050a044dc3685ed6711388a24b4c988ce89aab421b6cac9488e61de",
+      "new_english_sha256": "c362ea43d90e5479ac43aefcc20c270118f225e8e0de49944b4ca3a2fb6b772c",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-cafcae080f5716b0.json"
+    }
+  ],
+  "source_credit_changes": [
+    {
+      "before": {
+        "id": "project-created",
+        "source_id": "",
+        "label": "Triptych study English",
+        "rights": "project-created",
+        "rights_jurisdiction": "United States",
+        "rights_basis": "Original English translated by Triptych contributors from the exact independently witnessed public-domain Latin identified by each entry's source_latin binding. Project-created English is offered under CC BY 4.0; underlying Latin retains its own recorded publication basis. No approved or historical English translation is claimed as its source.",
+        "caution": "Original study translation; not approved for liturgical use or recitation."
+      },
+      "after": {
+        "id": "project-created",
+        "source_id": "",
+        "label": "Triptych study English",
+        "rights": "project-created",
+        "rights_jurisdiction": "United States",
+        "rights_basis": "Original English translated by Triptych contributors from the exact Latin identified by each entry's source_latin binding. Each underlying body retains its individually recorded source and publication basis, including any finite qualified assessment. Project-created English is offered under CC BY 4.0. No approved or historical English translation is claimed as its source.",
+        "caution": "Original study translation; not approved for liturgical use or recitation."
+      },
+      "reason": "Preserve original English authorship while identifying the separately adopted finite Latin basis without falsely calling every underlying target public domain."
+    }
+  ],
+  "after_hashes": {
+    "src/sources/calendars/roman-1962/propers.yaml": "8e3ff366af9a728868f688bf7e62272a034353fe723b828d00eb92d3599922fb",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "4425c42f5e8cf452ffdb76e9e1ba7da404c0eaff4e47525908dec85aa41ec6ea",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "421594738c44c655412cf6454e3ab7f22f971b6f4e6dc47272b2360e28f9ecfd"
+  }
+}

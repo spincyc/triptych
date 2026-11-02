@@ -1,0 +1,71 @@
+{
+  "state": "prepared-for-independent-source-and-English-review",
+  "scope": "Only complete Apostles Creed antecedents; all other dialogue candidates excluded.",
+  "input_packet_sha256": "1c6cb0b96308828f7a9f3a7720ad1eca6ae878c00b30d7d140dd055d8905a13d",
+  "source_file_manifest": "candidate-files.json",
+  "source_file_manifest_sha256": "b2e272155f06855727f8d1c548f3790421a8cebc1af6955a4a9bfc5b0fc178f2",
+  "source_postimages_count": 12,
+  "existing_editions_only": true,
+  "target_element": "symbolum/symbolum-apostolicum",
+  "source_rows": [
+    {
+      "lang": "la",
+      "witness": "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888",
+      "artifact": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-ordinary-apostles-latin",
+      "page_artifact": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-ordinary-apostles-page1",
+      "source_parent_artifact": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf",
+      "source_parent_sha256": "a8a789d4c48003cbfaeb440cc22a6970b96d18d9cb19ea60b2a02c83a53582f0",
+      "text_body_sha256": "2016bd81e880a7626d7ea97491ff0ac4c675ab38b858fef702d5ae95175636dd",
+      "text_artifact_sha256": "c898da39031fdc0ccab706274d884c5fb8277fd5d1096968f8ea362f1fcca479",
+      "row": "symbolum-apostolicum",
+      "column": "latin",
+      "verify_passage": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-ordinary-apostles-latin-verify",
+      "publish_passage": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-ordinary-apostles-latin-publish",
+      "original_artifact_page": 55,
+      "printed_page": "1",
+      "retained_artifact_page": 1,
+      "ia_leaf": "54",
+      "source_url": "https://archive.org/download/p1breviariumroma00cathuoft/p1breviariumroma00cathuoft.pdf"
+    },
+    {
+      "lang": "en",
+      "witness": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+      "artifact": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-ordinary-apostles-english",
+      "page_artifact": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-ordinary-apostles-page2",
+      "source_parent_artifact": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+      "source_parent_sha256": "6792c0e56d581081e12420e5fddde82a86802c6bbdb4970a947981d04f8ce6b5",
+      "text_body_sha256": "c308f9d877e9485e9d83e522ea505cab7ab039b9b0c23f281b34ee770af16f52",
+      "text_artifact_sha256": "afa44c2416ef5fc374505f27bc2e7e6b797ab57624789cabc59d2d2c6e3ba270",
+      "row": "symbolum-apostolicum",
+      "column": "english",
+      "verify_passage": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-ordinary-apostles-english-verify",
+      "publish_passage": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-ordinary-apostles-english-publish",
+      "original_artifact_page": 86,
+      "printed_page": "2",
+      "retained_artifact_page": 1,
+      "ia_leaf": "85",
+      "source_url": "https://archive.org/download/romanbreviaryref01cathuoft/romanbreviaryref01cathuoft.pdf"
+    }
+  ],
+  "inventory_operations": {
+    "add_witnesses": "proposed-inventory-blocks.toml witness tables",
+    "add_sides": "proposed-inventory-blocks.toml element English/Latin sideblocks",
+    "remove_absent_latin": "no-antecedent-witness",
+    "preserve_absent_english": "approved-english-publication-restriction",
+    "preserve_conditions_and_creed_option": true,
+    "source_to_target_relation": "antecedent",
+    "target_collation": "uncollated",
+    "no_approved_english_payload": true,
+    "no_modern_target_latin_payload": true
+  },
+  "publication_ledger_owner": "root coordinator; this packet changes no ledger",
+  "review_ceilings": [
+    "Whole1888 and1908 source bodies verified at exact retained pages.",
+    "2002 comparator plus explicit2008 opening replacement is bounded evidence, not full2008 authentication.",
+    "Historical English does not replace or clear approved2011 English.",
+    "Source-artifact bases are copied exactly from existing affirmed canonical parent records."
+  ],
+  "inventory_blocks_sha256": "1490f7130c5f0766149a2f3148986809be60fa6a82b8ccc1d3201c6c97c633f3",
+  "verification_sha256": "8e23c26e18df08463de3abf6a3b3c9995990b8f78aea1a2015d296160b70f7ec",
+  "readme_sha256": "6520790483c8d17272ba0ca923e4c5200bcb897aa850c390eca487c6e4962dd9"
+}

@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.027.ass-027-l00048.pdf"
+edition_id = "edition.acta-papal-archives.ass.027.ass-027-l00048"
+artifact_id = "artifact.acta-papal-archives.ass.027.vatican-pdf-cef47d12"
+artifact_sha256 = "cef47d120d5700533b8de81d136a7d5d90790157755e4cca2400b2cb0e189fd4"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[3, 7]]
+context = "{\"closing_physical_lines\": [225, 228], \"closing_text\": \"     Datum R o m a e apud S. Petrum die II Iulii an. MDCCCXCIIII,\\nPontificatus Nostri decimo septimo.\\n\\n                             LEO P P . X I I I .\", \"end_line\": 228, \"removed\": \"Running header/page-number lines carrying formfeed and Acta volume/fascicle footers are omitted via disjoint ranges; all remaining source text and notes in selected extent retained.\", \"retained_historical_note_ranges\": [], \"start_line\": 48}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 3, \"printed_page\": null, \"running_head_text\": \"a\"}, {\"artifact_page\": 4, \"printed_page\": \"4\", \"running_head_text\": \"4                               EPISTOLA\"}, {\"artifact_page\": 5, \"printed_page\": \"5\", \"running_head_text\": \"EPISTOLA                                 5\"}, {\"artifact_page\": 6, \"printed_page\": \"6\", \"running_head_text\": \"6                               EPISTOLA\"}, {\"artifact_page\": 7, \"printed_page\": \"7\", \"running_head_text\": \"LITTERAE                                  7\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

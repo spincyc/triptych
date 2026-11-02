@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-ordinary-joseph-preface-may1-source-body"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Historical Latin actually printed in the identified Tours: Alfred Mame 1922 edition, United States public domain by expiration of its publication term. A faithful normalized transcription adds no exclusive right in the underlying expression and is excluded from Triptych CC BY 4.0. This is the old body with both printed alternatives; it is not the later selected May 1 Latin body."
+rights_jurisdiction = "United States"
+provenance = "Read against original PDF 451, printed 337, and the identical retained one-page facsimile. The bounded earlier independent source review examined the complete source and target images. A fresh admission image check corrected the frozen research packet Cœli/cœlorumque transcription to the source actual Cæli/cælorumque. The correction changes no word count, sole feast-designation variation or English rendering."
+retrieved = "2026-10-30"
+sha256 = "235844b4188dc771ca3e0b33065bf4072f4cb58d118d00742ef48b8bc62417e8"
+byte_size = 737
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-ordinary-joseph-preface-may1-source-body/text.txt"
+source_url = "https://archive.org/download/missaleromanum0000unse/missaleromanum0000unse.pdf"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-ordinary-joseph-preface-may1-facsimile"
+transformation = "Transcribe only the complete historical body from VERE through dicentes. Join physical wraps and discretionary line-end hyphens, collapse spacing around pointing, omit printed stress accents, represent decorative small-cap VERE in ordinary capitals, and omit the red nonspoken reference asterisk after in. Retain source lexical words, intrinsic spelling, ligatures, punctuation, remaining capitalization and the printed parenthesized Veneratione alternative. The source actually prints Cæli/cælorumque; no coeli spelling is introduced."
+notes = "One complete historical body on physical line 1. There are 100 words when both printed alternatives are counted and 99 when the Festivitate branch is selected. The opening dialogue, headings, rubric and following separately referred Sanctus are outside this text. No source-exact historical May 1 relation is asserted."

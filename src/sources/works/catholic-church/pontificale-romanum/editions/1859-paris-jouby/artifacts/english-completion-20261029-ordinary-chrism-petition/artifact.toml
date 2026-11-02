@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.pontificale-romanum.paris-jouby-1859.english-completion-20261029-ordinary-chrism-petition"
+edition_id = "edition.catholic-church.pontificale-romanum.paris-jouby-1859"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Exact historical Latin of the 1859 Paris: A. Jouby Roman Pontifical, printed398, public domain in the United States by expiration of its publication term. A faithful transcription originates no exclusive right in the underlying words and is excluded from Triptych CC BY 4.0. No 1955/1962-only wording or modern translation is supplied."
+rights_jurisdiction = "United States"
+provenance = "Read directly from original whole-PDF 411 at190 dpi and independently at enlarged resolution; the retained facsimile reproduces that page without changed pixels. Every word of this contiguous old petition was separately compared with the corresponding 1962 n1047 petition. Source capitalization, punctuation and ligatures are retained here; OCR was only a finding aid."
+retrieved = "2026-10-30"
+sha256 = "b158eef9d0867b4a99570a9991aa4e43c26baf51fff4baeef9d930e644ac4bed"
+byte_size = 413
+path = "src/sources/works/catholic-church/pontificale-romanum/editions/1859-paris-jouby/artifacts/english-completion-20261029-ordinary-chrism-petition/text.txt"
+source_url = "https://archive.org/download/pontificaleroma00churgoog/pontificaleroma00churgoog.pdf"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.pontificale-romanum.paris-jouby-1859.english-completion-20261029-ordinary-chrism-facsimile"
+transformation = "Transcribe the complete contiguous span beginning ut spiritualis lavacri Baptismo renovandis and ending vestimento incorrupti muneris induantur; preserve the source semicolon at the end. Rejoin physical wraps and discretionary line-end hyphens only; retain words, capitals, punctuation, ligatures and intrinsic spelling."
+notes = "The actual 1859 source supplies Baptismo and innocentiae odore, with its original ligature spelling. It is not a repair of Wilson 1894 baptismum or innocens odor. The full older consecration prayer continues ut sit his after this bounded cut; no claim is made that the 1859 source prints the later assembled Missal Preface whole."

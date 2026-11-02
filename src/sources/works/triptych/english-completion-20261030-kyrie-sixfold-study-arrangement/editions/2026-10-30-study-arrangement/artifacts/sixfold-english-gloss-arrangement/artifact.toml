@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030.sixfold-english-gloss-arrangement"
+edition_id = "edition.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030"
+artifact_type = "project-study-arrangement"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "The project-created finite arrangement and its metadata are offered under CC BY4.0. Every underlying Englishgloss phrase is independently public-domain historical wording, in which Triptych claims no exclusive right. No approvedEnglish or protectedtargetLatin body is copied; this classification does not claim copyright in the sourcephrases themselves."
+rights_jurisdiction = "United States"
+projected_from = ["artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-kyrie-glosses"]
+transformation = "Take exact sourcegloss kyrie-gloss and christe-gloss, and emit six distinct utterance rows in explicit K,K,C,C,K,K order without changing anyword, capitalization or punctuation. This is a projectstudyarrangement, not a verbatim1861Mass body or an expanded oldrubric. SourceP./R. cues, actors and source9fold execution are excluded. Target6turn order and V./R. boundaries are recorded separately as structuralcomparisonmetadata."
+provenance = "Exact oldhumanEnglishglosses were independently selected from the registered faithfulCummiskey transcription and checked on sourceimages. Secondary2002AP305 n7 explicitly prints sixGreekcalls in threeV./R.pairs; its structuralfact supports this finiteprojection, not a protectedtextcopy or complete2008 authentication."
+retrieved = "2026-10-30"
+sha256 = "0eace201927e0b1f690657f8618b339ee46c96512fd001bf9048518af7c3bc8d"
+byte_size = 1107
+path = "src/sources/works/triptych/english-completion-20261030-kyrie-sixfold-study-arrangement/editions/2026-10-30-study-arrangement/artifacts/sixfold-english-gloss-arrangement/text.tsv"
+indexable = true
+encoding = "utf-8"

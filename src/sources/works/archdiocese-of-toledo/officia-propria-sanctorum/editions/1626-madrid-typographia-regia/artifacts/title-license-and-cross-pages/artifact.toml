@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.title-license-and-cross-pages"
+edition_id = "edition.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia"
+artifact_type = "facsimile-pdf"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "United States: this identified Madrid Typographia Regia printing was published in 1626, long before 1931, and its publication term has expired. The retained historical title, license and office pages contain no modern editorial contribution. A faithful mechanical scan adds no authorship to those historical words or pages. Received Latin remains public domain and is excluded from Triptych project licensing. No blanket assessment of the modern complete PDF delivery is asserted."
+rights_jurisdiction = "United States"
+provenance = "Exact historical page extraction from the independently fetched and hash-bound complete University of Seville PDF. The retained four pages are the original title, dated license, printed 55, and printed 56; no modern wrappers, text rewriting, or image generation are included."
+retrieved = "2026-10-30"
+sha256 = "981ac4aed0eef481f6c8521c7d8d458eba8454c214527c649f5f354db1935100"
+byte_size = 542251
+page_count = 4
+path = "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/title-license-and-cross-pages/source.pdf"
+indexable = false
+derived_from = "artifact.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.idus-complete-773d2c56"
+transformation = "Run pdfseparate for complete parent PDF pages 1, 2, 71 and 72, then pdfunite in exactly that order. Retained derivative PDF1=parentPDF1 (title), PDF2=parentPDF2 (license), PDF3=parentPDF71 (printed55), PDF4=parentPDF72 (printed56). This is an exact-page derivative, not a byte substring of the parent."

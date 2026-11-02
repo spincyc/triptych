@@ -1,0 +1,97 @@
+{
+  "schema": "triptych-editae-p404-order-evidence/v1",
+  "reviewed_on": "2026-10-30T15:19:14Z",
+  "review_kind": "producer-bounded-native-image-inspection",
+  "parent": {
+    "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/historical-ocr-b437c2e46869/historical.txt",
+    "sha256": "b437c2e468696968cc178e45cf7ad0e7dccedd4ffcb646231a2f55c4b6e81072",
+    "bytes": 2707017
+  },
+  "prior_selection": {
+    "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/english-reading-3598918606cc/text.txt",
+    "sha256": "3598918606cc73f1630e383c00b8fc07f9b43b553c33333aed286e26ff599221",
+    "bytes": 51684
+  },
+  "prior_recipe": {
+    "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/selection-recipe-a76f3fb8e1c8/selection.json",
+    "sha256": "a76f3fb8e1c8da5957d666cf825e072cff2a017cd16bbc7f43c6ad5b9de00a84",
+    "bytes": 16090
+  },
+  "helper": {
+    "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-replay-efd0286bfaa7/extract.py",
+    "sha256": "efd0286bfaa782818ce5cd27ccb58db9ec359754bcd35455e7dbfcd06f4f4ef6",
+    "bytes": 624
+  },
+  "recipe": {
+    "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/editae-order-recipe-02f78aa508e6/selection.json",
+    "sha256": "02f78aa508e677816dde2b4fd17466fdedb4d124881c76e5e4de7a0ca2d435a5",
+    "bytes": 16501
+  },
+  "new_selection": {
+    "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/editae-order-8aa2b82572e5/text.txt",
+    "sha256": "8aa2b82572e5c92c450d98cc980c757c835df11fe16d317d09be0f5ba597b6f9",
+    "bytes": 51682
+  },
+  "native_print_proof": {
+    "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/native-print-proof-1e317299a5d7/source.pdf",
+    "sha256": "1e317299a5d72d9353564029d8995e526c7d66fca94e77c75e25a58916964694",
+    "bytes": 3844695
+  },
+  "native_locus": {
+    "artifact_page": 12,
+    "printed_page": "404",
+    "observed_image": {
+      "path": ".scratch/english-intake-recovery/packet-08/audit/editae-p404.jpg",
+      "sha256": "a5242bb0c584713bca963827b81fedc8dfeb58d0d738f20de228e1484c8e7298",
+      "bytes": 801646
+    },
+    "native_raster": {
+      "path": ".scratch/english-intake-recovery/packet-08/audit/rasters/.scratch/english-intake-recovery/packet-08/audit/editae-native-12/pages/page-1.png",
+      "sha256": "050c794c317630417e35361b60e322ba02a17d5f05e4b54ad0fe6ef140045d65",
+      "bytes": 380054
+    },
+    "observation": "The page visibly places life. before These same qualities and the I. Thess. citation continuation before Thus the word of God. The OCR literal ii.. 13) is retained despite the printed punctuation. Both displaced pieces are substantive text."
+  },
+  "native_order_moves": [
+    {
+      "source_line": 28794,
+      "after_source_line": 28750,
+      "basis": "Native printed p.404: literal OCR life. closes the paragraph ending sound doctrine and good, before These same qualities."
+    },
+    {
+      "source_line": 28797,
+      "after_source_line": 28780,
+      "basis": "Native printed p.404: literal OCR ii.. 13) closes the I. Thess. citation, before Thus the word of God."
+    }
+  ],
+  "mechanical_checks": {
+    "same_parent_line_identity_multiset": true,
+    "no_duplicate_physical_lines": true,
+    "same_excluded_lines_as_prior": true,
+    "each_retained_raw_line_value_unchanged": true,
+    "same_whitespace_delimited_token_multiset": true,
+    "independent_prior_paragraph_permutation_matches": true,
+    "unchanged_other_paragraphs": 75,
+    "new_paragraph_count": 77,
+    "helper_exit_code": 0,
+    "helper_replay_byte_identical": true
+  },
+  "scope_limit": "Only the two p404 order defects are image-checked and repaired. Literal OCR errors, other prior ordering, exclusions, identity, extent and rights are inherited, without global original-order or full word-level collation claim. Independent cold source and PDF review remain outside this producer event.",
+  "blocker_disposition": {
+    "prior_source_sha256": "3598918606cc73f1630e383c00b8fc07f9b43b553c33333aed286e26ff599221",
+    "prior_remains": "BLOCKED",
+    "replacement_source_sha256": "8aa2b82572e5c92c450d98cc980c757c835df11fe16d317d09be0f5ba597b6f9",
+    "repaired_loci": [
+      28794,
+      28797
+    ],
+    "decision": "Separate replacement repairs the two known order defects. Old artifact and controller remain immutable history; do not represent old source359 as passed."
+  },
+  "replay_command": [
+    "python3",
+    "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-replay-efd0286bfaa7/extract.py",
+    "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/historical-ocr-b437c2e46869/historical.txt",
+    "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/editae-order-recipe-02f78aa508e6/selection.json",
+    "<scratch-output>"
+  ]
+}

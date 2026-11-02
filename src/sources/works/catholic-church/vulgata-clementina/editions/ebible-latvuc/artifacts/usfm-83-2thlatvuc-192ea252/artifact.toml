@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-83-2thlatvuc-192ea252"
+edition_id = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+artifact_type = "structured-text"
+media_type = "text/x-usfm; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The publisher edition-specific Bible notice at https://ebible.org/latVUC/copyright.htm identifies this Bible text as Public Domain; this affirmative Bible-text permission was independently checked for these complete USFM members, including their native markers and unchanged publisher notes. The permission is not inferred from Bible age or applied to excluded package support files."
+source_url = "https://eBible.org/Scriptures/latVUC_usfm.zip"
+retrieved = "2026-10-26"
+sha256 = "192ea2523013b8a8eee485894b191d2b15253ac2f8d7c35d224b19605bc3b1cf"
+byte_size = 15491
+path = "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/usfm-83-2thlatvuc-192ea252/83-2THlatVUC.usfm"
+derived_from = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.ebible-usfm-439d1789"
+transformation = "Exact ZIP-member extraction only: retain the complete 83-2THlatVUC.usfm member byte for byte, without Unicode, line-ending, whitespace, marker, footnote, spelling, native chapter/verse or ordering changes. No wrapper or other archive member is included."
+provenance = "Complete native Bible book member extracted from the publisher archive SHA256 439d1789e021e3209125270dd2e3476f9ff7e99fea2a0349778655e4e40b7826 at exact member 83-2THlatVUC.usfm. The independently checked disclosure inventory pins this complete member SHA256 and byte extent. Archive-level rights remain unresolved; the retained Bible member has its own affirmative distribution basis."
+indexable = true
+encoding = "utf-8"
+notes = "The original USFM file markers and all complete source lines are retained unchanged; no project-license header is inserted. This is edition Bible source evidence, not literal Missal wording or a retranslation. Whole-archive modern CSS, HTML wrapper, public keys and signed checksums are excluded; this child does not resolve their redistribution rights. See THIRD_PARTY.md for Bible-text terms and jurisdiction limits."

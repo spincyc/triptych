@@ -1,0 +1,37 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "The 1570 binding and disposition now record what was read at each locus: 71705-71709 (mortis, no alleluia), 62448 (Communion, 2 June) and 68676-68680 (Gradual, 30 August). The history is witnessed from 1604 to 1922 and the alleluia's entry is stated as unresolved. Scope sections 3.7, 5.3, 6.3 and 7 and interpretation C and note 4 were updated.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "verified.md section 8 now lists the five differences from Wis 3:1-3 (autem omitted, tanget, malitiae, 3:2b-3a omitted, alleluia added). The Douay English route quotes Wis 3:1-3 and names the omitted words. Scope sections 2 and 3.7 match.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-003",
+      "note": "NPNF ver. 9-11 = Vulgate 33:10-12, and Bellarmine's v. 9-10 = Vulgate 33:10-11, with the basis stated in scope sections 3.4 and 6.9, interpretations note 3, the bindings (Augustine loci 32.1 and 33.10-12) and the dispositions (Bellarmine extent 33:10-11). Ps 33:12 is marked context only in reading A. The concordance is corrected in scope, interpretations and verified.md, and Achimelech is corrected in scope section 2.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-004",
+      "note": "Binding 5 is now the tracked extract pentecost-23-prayer-pages-7e6ef53b (rights-control, verified 2026-10-26, fingerprint sha256:184d1fd9...). Each oration's reading and cue are recorded at printed p. 357/358 = extract p. 1/2 = parent PDF p. 443/444. verified.md, scope section 9, the review-dependencies header, context.md and the 1862 text-layer binding all agree.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": [
+    "Records written: research/scope.md, research/interpretations.md, research/context.md, research/source-bindings.toml (now 34 bindings: binding 5 replaced by the Pustet extract, binding 31 promoted to an inspected witness, bindings 32-34 added for the 1604, 1862 text and 1889 Missals), research/source-dispositions.toml (changed binding_sha256 pins recomputed; new rows added), research/review-dependencies.toml (header), and propers/verified.md.",
+    "Receipts: the Pustet extract renders (150 dpi whole and 300-dpi crops) are scratch-only, in .scratch/claude-f02/work/research-0001. Tracked records describe them without a path.",
+    "Remaining limitations: the 1604, 1862 and 1889 Offertory readings and the 1570 readings rest on OCR or text layers, not on page images. The point and act at which the alleluia entered the All Saints Offertory, between 1909 and 1922, are unresolved because no 1920 typical edition is held in readable form.",
+    "Advisories RES-005 to RES-010 were also cleared: the chronology corpus path and its cited sources (with the NABRE label reconciled), the cross-references, the duplicate context bullet, the scratch-path references, the Mame j-forms, and Bede's order of readings.",
+    "No shared-record defect was found in this iteration. The NABRE psalms-introduction passage id cited by chronology.toml exists (editions/english-usccb-web-2026-07-28/passages/psalms-introduction.toml). The reports in scope section 10 still stand.",
+    "research/chronology.toml and chronology-annotations.tex were not changed."
+  ],
+  "stage": "research",
+  "summary": "Repaired all four blocking findings and all six advisories in the f02-all-saints research records. RES-001: the 1570 Venice Missal's own All Saints Offertory (lines 71705-71709) is recorded as tormentum mortis with no alleluia; lines 62448 and 68676-68680 are identified as the Communion of Ss Marcellinus, Peter and Erasmus and the Gradual of Ss Felix and Adauctus; the 1604, 1862 and 1889 text layers (malitiae, no alleluia) are bound as inspected witnesses; the alleluia is first held in the Mame 1922, and its entry is stated as unresolved. RES-002: the Clementine and Douay collation of the Offertory is rewritten word by word. RES-003: every NPNF and Bellarmine Ps 33 verse reference is converted to Vulgate numbering with its basis, Ps 33:12 is marked context only, and the concordance (Vulgate = Douay 33:10-11 = Hebrew 34:10-11 = English 34:9-10) is fixed. RES-004: the tracked Pustet 1862 extract 7e6ef53b was read on its page images, bound as rights-control with its fingerprint, and the records now agree, with printed and PDF pages. Validators: _proper_study.py source-dispositions and check --phase research --require-orientation-v2 --require-source-dispositions both exit 0."
+}

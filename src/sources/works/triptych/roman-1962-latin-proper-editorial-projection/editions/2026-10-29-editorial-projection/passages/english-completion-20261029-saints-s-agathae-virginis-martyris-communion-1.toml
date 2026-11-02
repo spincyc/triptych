@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-29"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-s-agathae-virginis-martyris-communion-1"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"
+artifact_sha256 = "10b19922a2fc07cd74be90ae8832d093e705247b93491fa155bf9a1090635e82"
+locus = "s-agathae-virginis-martyris / Communion occurrence 1; project physical lines 7-7; Tours Mame 1922, artifact pages 643; printed 529; 1962 Vatican target, artifact p. 551, printed p. 470, unit 2133"
+physical_line_ranges = [[7, 7]]
+context = "Complete target-bound Latin chant, independently source-qualified; original study English remains separately identified and unapproved."
+notes = "Exact canonical UTF-8 body including terminal LF SHA-256 64555ed5d6c0a1211ff4672c1475711fd04ed57e2a50bbb8f87583698c75ec73. Declared transformations: [\"Join printed line wraps and discard solely line-end hyphens; preserve every chant word and printed ending/cue.\", \"Remove stress accents; expand ae/oe ligatures as ae/oe.\", \"Canonical punctuation/case follow the 1962 target; normalize consonantal i/j to the declared calendar orthography (j retained).\", \"Exclude printed nonrecited citation labels and heading names from canonicalLatin/studyEnglish; retain the complete quoted Psalm words and explicit Gloria Patri cue.\"]. Exact differences: [\"All words agree, including mamillam meam meo pectori restituere and ipsum invoco Deum vivum.\", \"Target adds a comma after curare; Mame has no comma there.\", \"No biblical reference is printed or inferred; no citation apparatus is removed.\"]"

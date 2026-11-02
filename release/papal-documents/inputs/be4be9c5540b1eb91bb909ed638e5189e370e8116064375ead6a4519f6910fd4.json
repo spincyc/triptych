@@ -1,0 +1,76 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T15:19:14Z",
+  "documents": [
+    {
+      "id": "papal.pius-x.hf-p-x-enc-26051910-editae-saepe.acqr-1910-english",
+      "artifact_id": "artifact.journals.american-catholic-quarterly-review.1910-volume-35.editae-order-8aa2b82572e5",
+      "sha256": "8aa2b82572e5c92c450d98cc980c757c835df11fe16d317d09be0f5ba597b6f9",
+      "text_path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/editae-order-8aa2b82572e5/text.txt",
+      "physical_line_ranges": [
+        [
+          1,
+          153
+        ]
+      ],
+      "segment_id": "segment.papal.pius-x.hf-p-x-enc-26051910-editae-saepe.1910-acqr-volume-35-english.complete-english-p404-order-8aa2b82572e5",
+      "segment_path": "src/sources/works/papal-documents/1910-05-26-papal-pius-x-hf-p-x-enc-26051910-editae-saepe-4203d7dc/editions/1910-acqr-volume-35-english/segments/complete-english-p404-order-8aa2b82572e5.toml",
+      "language": "en",
+      "pope": "Pius X",
+      "title": "Editae Saepe",
+      "date": "1910-05-26",
+      "document_type": "encyclical",
+      "revision": "2026-10-30T15:19:14Z",
+      "extent_kind": "complete-printed-witness",
+      "completeness": "complete-within-identified-printed-witness",
+      "rights_status": "public-domain",
+      "rights_basis": "Historical human English and original journal wording in the identified Philadelphia 1910 printing are public domain in the United States by expiration of the publication term. Modern Google introductory text and generated covers are excluded; faithful scan/OCR adds no original wording. This assessment concerns the actual historical printing, not merely the act date.",
+      "rights_notice": "Historical human English wording is public domain in the United States; later translations and host wrappers have separate status.",
+      "source_url": "https://archive.org/download/AmeriCatholicQRevV35/AmeriCatholicQRevV35_djvu.txt",
+      "source_note": "English complete printed constituent, pp. 394–412. Anonymous historical human translation. Only two displaced OCR lines on printed p.404 are restored to their image-established paragraph positions: life. after sound doctrine and good, and literal ii.. 13) after (I. Thess. All source words, characters and historical OCR errors remain unchanged under the prior declared whitespace normalization. Other source order inherits the prior selection; no whole-printing word collation or comprehensive original-order claim is made.",
+      "act_id": "papal.pius-x.hf-p-x-enc-26051910-editae-saepe",
+      "extent": "complete",
+      "witness": "The American Catholic Quarterly Review, historical English printing",
+      "recipe_artifact_id": "artifact.journals.american-catholic-quarterly-review.1910-volume-35.editae-order-recipe-02f78aa508e6",
+      "correction_evidence": {
+        "kind": "literal-p404-source-line-permutation",
+        "evidence_artifact_id": "artifact.journals.american-catholic-quarterly-review.1910-volume-35.editae-order-evidence-56bdbee02891",
+        "evidence_sha256": "56bdbee028916c42216f837ab64f171be1ff877fca9a1e650a914bb31e2f9678",
+        "recipe_artifact_id": "artifact.journals.american-catholic-quarterly-review.1910-volume-35.editae-order-recipe-02f78aa508e6",
+        "recipe_sha256": "02f78aa508e677816dde2b4fd17466fdedb4d124881c76e5e4de7a0ca2d435a5",
+        "native_order_moves": [
+          {
+            "source_line": 28794,
+            "after_source_line": 28750,
+            "basis": "Native printed p.404: literal OCR life. closes the paragraph ending sound doctrine and good, before These same qualities."
+          },
+          {
+            "source_line": 28797,
+            "after_source_line": 28780,
+            "basis": "Native printed p.404: literal OCR ii.. 13) closes the I. Thess. citation, before Thus the word of God."
+          }
+        ]
+      }
+    }
+  ],
+  "supersessions": [
+    {
+      "prior": {
+        "id": "papal.pius-x.hf-p-x-enc-26051910-editae-saepe.acqr-1910-english",
+        "language": "en",
+        "artifact_id": "artifact.journals.american-catholic-quarterly-review.1910-volume-35.english-reading-3598918606cc",
+        "source_sha256": "3598918606cc73f1630e383c00b8fc07f9b43b553c33333aed286e26ff599221",
+        "segment_id": "segment.papal.pius-x.hf-p-x-enc-26051910-editae-saepe.1910-acqr-volume-35-english.complete-english-reading",
+        "pdf_sha256": "51299678beedb2c1735c8a363c6ebbd9f336ce578c90e830d54363ef0ba0de97"
+      },
+      "replacement": {
+        "id": "papal.pius-x.hf-p-x-enc-26051910-editae-saepe.acqr-1910-english",
+        "language": "en",
+        "artifact_id": "artifact.journals.american-catholic-quarterly-review.1910-volume-35.editae-order-8aa2b82572e5",
+        "source_sha256": "8aa2b82572e5c92c450d98cc980c757c835df11fe16d317d09be0f5ba597b6f9",
+        "segment_id": "segment.papal.pius-x.hf-p-x-enc-26051910-editae-saepe.1910-acqr-volume-35-english.complete-english-p404-order-8aa2b82572e5"
+      },
+      "reason": "The prior English selection displaces the p404 substantive closing word life. and I.Thess. citation continuation. This separately replayed literal line permutation restores those two positions only; every OCR token and previous artifact is preserved. Prior source359 remains blocked and its PDF must be superseded before current installation."
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "schema": "triptych-etsi-nine-exclusions/v1",
+  "implementation": {
+    "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-replay-aa67b0e765f3/replay.py",
+    "sha256": "aa67b0e765f3c803c535ad3960c385eccc12509af75d9f5db5c0ea317caf3213",
+    "byte_size": 7779,
+    "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-replay-aa67b0e765f3"
+  },
+  "inputs": {
+    "parent_text": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-protocol-text-afe42c91f0cb/text.txt",
+      "sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+      "byte_size": 40192,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-text-afe42c91f0cb"
+    },
+    "facsimile": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-facsimile-597fbc3a7c70/source.pdf",
+      "sha256": "597fbc3a7c70e449bf5260b89167694ccb4e7e9d0f52be509f8f7401175a1cfa",
+      "byte_size": 1079291,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-facsimile-597fbc3a7c70"
+    },
+    "foreign_span_disposition": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-foreign-map-a704482e5f91/map.json",
+      "sha256": "a704482e5f91e8987f319f34ecca6457e427b7ce48d5aac4d594907b29c0e728",
+      "byte_size": 9527,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-foreign-map-a704482e5f91"
+    },
+    "foreign_span_image_proof": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-foreign-image-proof-71922475bb63/proof.json",
+      "sha256": "71922475bb632a060e1768982663fa76e1721462e93e091b518786efd0664a96",
+      "byte_size": 7261,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-foreign-image-proof-71922475bb63"
+    },
+    "own_folio_exclusion_proof": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-own-folio-proof-fae96079cf26/proof.json",
+      "sha256": "fae96079cf2694a4f21a2929ded70d10ed875bb53b3a952c626171bb7bc50d9a",
+      "byte_size": 5279,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-own-folio-proof-fae96079cf26"
+    },
+    "native_pixel_archive": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-native-pixels-8e4417ac842c/pixels.zip",
+      "sha256": "8e4417ac842c100eb82719e564f7346f9da0cbfe035c498fad4621c254d86670",
+      "byte_size": 4197253,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-native-pixels-8e4417ac842c"
+    }
+  },
+  "tools": {
+    "pdftoppm": {
+      "path": "/usr/bin/pdftoppm",
+      "sha256": "518cf83997f7d1e414e53d64fb167c0c270c629dcfd356386510fc09a50fb4b2",
+      "version": "pdftoppm version 26.10.0"
+    },
+    "magick": {
+      "path": "/usr/bin/magick",
+      "sha256": "c9b439e075a75795901641dadab39b3aee6395c2220553bb5d7ce30c75ec0b03",
+      "version": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org"
+    }
+  },
+  "output_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+  "separate_removal_classes": {
+    "FOREIGN_CLIPPED_FACING_PAGE_or_EXTRANEOUS_RECOGNITION_OUTPUT": {
+      "intervals": 4,
+      "bytes": 82,
+      "LF_rows": 31
+    },
+    "OWN_LAYOUT_FURNITURE": {
+      "intervals": 5,
+      "bytes": 19,
+      "LF_rows": 5
+    }
+  },
+  "source_word_insertions": 0,
+  "whitespace_normalization": false,
+  "reused_opening_provenance": {
+    "source": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-protocol-text-afe42c91f0cb/text.txt",
+      "sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+      "byte_size": 40192,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-text-afe42c91f0cb"
+    },
+    "recipe": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-protocol-recipe-9967cd52ba79/recipe.json",
+      "sha256": "9967cd52ba79c1d499f9a2b011c84784e57bdc8afee9051f43bc4c173f360d62",
+      "byte_size": 10764,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-recipe-9967cd52ba79"
+    },
+    "source_crop_raw_ocr_proof": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-protocol-proof-165c48cf5813/proof.zip",
+      "sha256": "165c48cf581307ed14b76219d87df418f7f8efa21fbf0000081a1182628e42ef",
+      "byte_size": 45531,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-proof-165c48cf5813"
+    },
+    "implementation": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-protocol-replay-ba10bd77f9dc/replay.py",
+      "sha256": "ba10bd77f9dc25be0773387d3e9e70c5285777975182d8c0b8f956bf407fc28d",
+      "byte_size": 5739,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-replay-ba10bd77f9dc"
+    },
+    "byte_map": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-protocol-byte-map-8ea7001b0e01/map.json",
+      "sha256": "8ea7001b0e019e7404935e67b22774fb176dc4f2663aec18863146c1a69e484e",
+      "byte_size": 10615,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-byte-map-8ea7001b0e01"
+    }
+  },
+  "scope": "Only the nine exact proven/authorized intervals. Unchanged original-source opening recovery is inherited by exact byte identity, not reauthored or independently accepted by this producer. Other original OCR defects and all unlisted own numeral rows remain literal.",
+  "license_boundary": "New orchestration MIT; project-created proof/maps CC BY4.0; historical words and faithful scan pixels public domain under controlling edition; unchanged ancestor recognition models retain Apache-2.0 and are neither copied nor relicensed.",
+  "unchanged_repository_implementations": [
+    {
+      "path": "scripts/_typeset_papal.py",
+      "sha256": "1c14411ed430d51605af66a37ddcb6d758d0eb67c9e8d56a1d4d875e9a0ba146",
+      "role": "unchanged production validation/renderer/review implementation"
+    },
+    {
+      "path": "scripts/_papal_source_order.py",
+      "sha256": "f0a3014db485ee25ffa7df013c81e600f8e4f9eccff76b5ac7daecbc1d6a9c86",
+      "role": "unchanged production validation/renderer/review implementation"
+    },
+    {
+      "path": "tools/source-library",
+      "sha256": "f450ac98d8978cdd532185367e8669ea5487247d938fb5dd5e12c62b75df7d14",
+      "role": "unchanged production validation/renderer/review implementation"
+    },
+    {
+      "path": "tools/pdf-review",
+      "sha256": "0e6f688778216faeb02b3335e4467eb476c878cf94bd89e31af93f86e3a3ad3e",
+      "role": "unchanged production validation/renderer/review implementation"
+    }
+  ]
+}

@@ -97,7 +97,17 @@ class PostconciliarOrdinaryDivergenceRecoveryTests(unittest.TestCase):
         self.assertEqual(pax["latin"]["collation"], "uncollated")
         self.assertIn("does not establish Et cum spiritu tuo", pax["latin"]["note"])
         self.assertEqual(invitation["missal_number"], "n. 128")
-        self.assertEqual(invitation["absent_latin"], "no-antecedent-witness")
+        self.assertEqual(invitation["latin"]["witness"],
+                         "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712")
+        self.assertEqual(invitation["latin"]["relation"], "antecedent")
+        self.assertEqual(invitation["latin"]["collation"], "uncollated")
+        self.assertEqual(invitation["english"]["relation"], "own")
+        self.assertEqual(invitation["speaker"], "deacon-or-priest")
+        self.assertEqual(invitation["english_turns"],
+                         [{"key": "invitation", "seq": [1], "speaker": "deacon-or-priest"}])
+        self.assertIn("separate source response is omitted", invitation["latin"]["reading_note"])
+        self.assertIn("Not approved", invitation["english"]["reading_note"])
+        self.assertNotIn("target_wording", invitation["latin"])
         self.assertEqual(invitation["absent_english"], "approved-english-publication-restriction")
         self.assertIn("pro opportunitate", invitation["note"])
 
@@ -116,7 +126,7 @@ class PostconciliarOrdinaryDivergenceRecoveryTests(unittest.TestCase):
             "supplices", "memento-etiam", "nobis-quoque", "per-quem",
         ]
         self.assertEqual([element["key"] for element in ep_one], expected)
-        self.assertEqual(sum("latin" in element for element in ep_one), 9)
+        self.assertEqual(sum("latin" in element for element in ep_one), 10)
         self.assertEqual(
             [element["key"] for element in ep_one if element.get("latin", {}).get("collation") == "collated"],
             ["quam-oblationem"],
@@ -126,9 +136,20 @@ class PostconciliarOrdinaryDivergenceRecoveryTests(unittest.TestCase):
             {
                 "communicantes": "element-spans-mixed-matter",
                 "qui-pridie": "editio-typica-new-matter",
-                "supplices": "element-spans-mixed-matter",
             },
         )
+
+        by_key = {element["key"]: element for element in ep_one}
+        self.assertEqual(by_key["supplices"]["latin"]["witness"],
+                         "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam")
+        self.assertEqual(by_key["supplices"]["latin"]["collation"], "uncollated")
+        self.assertIn("conclusion is omitted", by_key["supplices"]["latin"]["reading_note"])
+        self.assertIn("common form only", by_key["communicantes"]["english"]["reading_note"])
+        self.assertIn("Seasonal proper forms remain unfilled",
+                      by_key["communicantes"]["english"]["reading_note"])
+        self.assertNotIn("english", by_key["qui-pridie"])
+        self.assertTrue(all("target_wording" not in element.get("latin", {})
+                            for element in ep_one))
 
         def shown(option: str) -> list[str]:
             selected = []
@@ -153,23 +174,45 @@ class PostconciliarOrdinaryDivergenceRecoveryTests(unittest.TestCase):
 
     def test_generated_structure_has_the_settled_coverage(self) -> None:
         structure = json.loads(STRUCTURE.read_text(encoding="utf-8"))
-        # 2026-10-19 (C2 G5): the Preface and dismissal appointment seats are two
-        # text-free elements; the held Latin and its relations are unchanged.
-        self.assertEqual(sum(len(section["elements"]) for section in structure["sections"]), 61)
+        # Original61 semantic IDs remain, plus nine source-complete children.
+        # This checkpoint does not include the pending next-epoch packages.
+        self.assertEqual(sum(len(section["elements"]) for section in structure["sections"]), 70)
         self.assertEqual(
             structure["language_coverage"],
             [
-                {"absent": 61, "elements": 61, "held": 0, "lang": "en", "missing": 61},
-                {"absent": 41, "elements": 61, "held": 20, "lang": "la", "missing": 41},
+                {"absent": 35, "elements": 70, "held": 35, "lang": "en", "missing": 35},
+                {"absent": 38, "elements": 70, "held": 32, "lang": "la", "missing": 38},
             ],
         )
         self.assertEqual(
             structure["relation_coverage"],
             [
+                {"collation": "uncollated", "count": 26, "lang": "en", "relation": "antecedent"},
+                {"collation": "not-applicable", "count": 9, "lang": "en", "relation": "own"},
                 {"collation": "collated", "count": 5, "lang": "la", "relation": "antecedent"},
-                {"collation": "uncollated", "count": 15, "lang": "la", "relation": "antecedent"},
+                {"collation": "uncollated", "count": 27, "lang": "la", "relation": "antecedent"},
             ],
         )
+        by_key = {element["key"]: element for section in structure["sections"]
+                  for element in section["elements"]}
+        refinements = {
+            "ritus-initiales/introitus": ["ritus-initiales/signum-crucis"],
+            "ritus-initiales/salutatio": ["ritus-initiales/greeting-trinitarian",
+                "ritus-initiales/greeting-grace-peace", "ritus-initiales/greeting-lord",
+                "ritus-initiales/greeting-bishop", "ritus-initiales/greeting-response"],
+            "ritus-communionis/ecce-agnus-dei": ["ritus-communionis/ecce-agnus",
+                "ritus-communionis/beati-ad-cenam", "ritus-communionis/domine-non-sum-dignus"],
+        }
+        order = list(by_key)
+        for parent, children in refinements.items():
+            self.assertEqual(by_key[parent]["kind"], "rubric")
+            self.assertIsNone(by_key[parent]["translations"])
+            self.assertEqual(by_key[parent]["absent"],
+                             {"english": "not-a-text", "latin": "not-a-text"})
+            self.assertTrue(all(order.index(parent) < order.index(child) for child in children))
+            self.assertTrue(all({row["lang"] for row in by_key[child]["translations"]} == {"en", "la"}
+                                for child in children))
+
 
 
 if __name__ == "__main__":

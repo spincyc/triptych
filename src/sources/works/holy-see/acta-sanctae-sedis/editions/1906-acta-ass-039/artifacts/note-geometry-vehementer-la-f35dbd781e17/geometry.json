@@ -1,0 +1,85 @@
+{
+  "schema": "triptych-papal-note-geometry-evidence/v1",
+  "document_id": "acta.ass.039.ass-039-l000032",
+  "language": "la",
+  "native_artifact_id": "artifact.acta-papal-archives.ass.039.vatican-pdf-c7c09ead",
+  "native_sha256": "c7c09eadd5c34262284da629f988fca7cb829c5f739f997d3a1fc97048d37873",
+  "measurement": "pdftotext -bbox-layout -enc UTF-8 over exact native PDF; bounds in PDF points; lines sorted only in this factual coordinate record, never in source output",
+  "inspected_native_artifact_pages": [
+    14
+  ],
+  "input_artifact_id": "artifact.acta-papal-archives.ass.039.historical-text-036e2b7e",
+  "input_sha256": "036e2b7e75b6d396ae9ef1aef98669749cbac3c5b0db08305510ffb04046dfc6",
+  "note_physical_line_ranges": [
+    [
+      467,
+      469
+    ]
+  ],
+  "pages": [
+    {
+      "artifact_page": 14,
+      "page_width": 419.55,
+      "page_height": 595.3,
+      "bottom_lines": [
+        {
+          "xMin": 76.0,
+          "yMin": 502.3866,
+          "xMax": 363.37618,
+          "yMax": 511.2066,
+          "text": "Iam v o s compellamus, catholici quotquot estis in G a l l i a ;"
+        },
+        {
+          "xMin": 76.18,
+          "yMin": 524.5401,
+          "xMax": 83.395356,
+          "yMax": 529.3101,
+          "text": "(ij"
+        },
+        {
+          "xMin": 91.752776,
+          "yMin": 524.5401,
+          "xMax": 104.966131,
+          "yMax": 529.3101,
+          "text": "Rom."
+        },
+        {
+          "xMin": 113.610921,
+          "yMin": 524.5401,
+          "xMax": 126.762682,
+          "yMax": 529.3101,
+          "text": "XIII,"
+        },
+        {
+          "xMin": 137.424212,
+          "yMin": 524.5401,
+          "xMax": 145.327402,
+          "yMax": 529.3101,
+          "text": "12."
+        },
+        {
+          "xMin": 76.36,
+          "yMin": 534.035317,
+          "xMax": 105.472778,
+          "yMax": 541.236217,
+          "text": "(2) Act."
+        },
+        {
+          "xMin": 121.26036,
+          "yMin": 534.378183,
+          "xMax": 133.249303,
+          "yMax": 541.127283,
+          "text": "41."
+        },
+        {
+          "xMin": 110.987398,
+          "yMin": 535.8801,
+          "xMax": 115.923158,
+          "yMax": 540.6501,
+          "text": "v,"
+        }
+      ]
+    }
+  ],
+  "limitation": "Native archival OCR PDF reconstruction geometry; no facsimile or word-level collation. Page-foot membership checked visually at all listed pages. No source words changed, inferred, moved or expanded."
+}

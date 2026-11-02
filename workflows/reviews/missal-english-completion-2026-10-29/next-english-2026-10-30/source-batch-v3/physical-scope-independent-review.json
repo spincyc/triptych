@@ -1,0 +1,48 @@
+{
+  "GENSETTLED_v3_wrapper_sha256": "e3871f1e2260bcadad4565002a502504f9f5d666b7bffd8b2d7a2c6fdb19773c",
+  "actual_derive_install_or_acceptance_performed": false,
+  "candidate_sha256": {
+    "adapter-proof.json": "68961eb740d38fd7639a32f2100a5e63d7ffbe0d8753d77a7cbd92d84b3a61b1",
+    "data-proof.json": "68325b619038d8e9872f2c2a468f0a04a01ce1bc57a5a6b35f341cfc1a05d60b",
+    "tools/tests/fixtures/missal-source-batch-20261023-inputs.json": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84",
+    "tools/tests/fixtures/missal-source-batch-20261023.json": "f0510da7466a3c79b05c90f038d9b0eea5f3d81e66d8787b6d1538719c07085d",
+    "transition-contract.json": "7495dee6d0d191b9f376d6494e8323dd47a1869a0636deaac0a0c4f1d6a11755"
+  },
+  "canonical_fixture_manifest_still_parent_and_new_receipt_unused": true,
+  "canonical_index_or_ref_writes": 0,
+  "comparison_to702": {
+    "added": 193,
+    "all_v2_200_delta_rows_and_193_added_paths_exact": true,
+    "changed_kept": 8,
+    "delta_rows": 201,
+    "kept": 7071
+  },
+  "compiler_support_helper_and_five_authority_pins_and_two_review_refs_unchanged": true,
+  "declaration_sha256": "b05cc94593171cea71c6568d512fbf4ab7a6b3443eed42efedb2e197ea3bf26f",
+  "findings": [],
+  "pending_acceptance_retained": true,
+  "prior_v2_scope_review_sha256": "3b400a5b29ce50181faba4a0e8b641b4a571f7d1469f1406dc2bbf244dc6d1b5",
+  "registered_owner_generation_v2_sha256": "b37bddc8e9ffd464da8ef139d26b4b3c0ba6b471afed0fd9f6d2dcdddb50b14b",
+  "runtime18_file_hashes_and_four_named_successors_unchanged_from_v2_and_current": true,
+  "schema": "triptych-independent-candidate-v3-narrow-scope-review/v1",
+  "scope_limits": [
+    "Narrow scope/declaration/runtime followup only. Does not repeat or extend source, English, rights, body or finite-control review.",
+    "Coordinator owns fixture-inverse/core comparison and the separately reviewed three-file test-code adoption; only test_proper_latin.py belongs to this source-map pin domain.",
+    "Root alone may accept and install the candidate."
+  ],
+  "semantic_transitions_byte_semantically_exact_to_v2": true,
+  "source_GEN_declaration_delta_and_candidate_metadata_bindings_exact": true,
+  "source_settlement_sha256": "32a27a9c8c6ecd9ab19c4eb5c7d677326e227eabb03088c1d0d9b2a185020d53",
+  "status": "PASS-only-approved-test-pin-and-declaration-binding-successor",
+  "test_successor_application_sha256": "6e0377d845368085d1a23e74f6b7e5db2c396d942cc43b579b1b4e0a33f9223a",
+  "v2_to_v3_source_map": {
+    "all7264_physical_pins_exact": true,
+    "all_other7263_pins_exact": true,
+    "exactly_one_changed_pin": {
+      "before_sha256": "d13ba84c2d93b9ca77b68e9a4746bcdff9ff6d23c42be57a9c508d86e329f464",
+      "path": "tools/tests/test_proper_latin.py",
+      "post_sha256": "c49c297448306c07ab5eed605ddce48894a2e2f3bda1783966e498ffb70eb997"
+    },
+    "same_paths": 7264
+  }
+}

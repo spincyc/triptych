@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.030.ass-030-l19810.pdf"
+edition_id = "edition.acta-papal-archives.ass.030.ass-030-l19810"
+artifact_id = "artifact.acta-papal-archives.ass.030.vatican-pdf-b9366cd4"
+artifact_sha256 = "b9366cd4091305a79cb8aa8f3ed14e74e062efc626f7bd3de11eca569f35cbac"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[478, 479]]
+context = "{\"closing_physical_lines\": [19867, 19872], \"closing_text\": \"mem. die XXVIII dicti mensis probatum. Datum Romae apud\\nS. Petrum sub annulo Piscatoris die I Martii MDCCCXCVIII Pon-\\ntificatus Nostri Anno vigesimo.\\n\\n                             Pro Dno Card. MACCHI\\n                       NICOLAUS      MARINI         Substitutus.\", \"end_line\": 19872, \"removed\": \"Running header/page-number lines carrying formfeed and Acta volume/fascicle footers are omitted via disjoint ranges; all remaining source text and notes in selected extent retained.\", \"retained_historical_note_ranges\": [], \"start_line\": 19810}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 478, \"printed_page\": \"478\", \"running_head_text\": \"478                           EX   S. C. INQUISITIONIS\"}, {\"artifact_page\": 479, \"printed_page\": \"479\", \"running_head_text\": \"EX   SEGRETARIA   RREVIUM                   479\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26.three-prayers-90ea7729"
+edition_id = "edition.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych editorial selection, transcription layout and normalization are offered under CC BY 4.0. The underlying three Latin prayers are preexisting public-domain words independently witnessed in the registered 1862 Pustet images; no exclusive right in those words is claimed. The modern Bonn layout, pagination and apparatus are not copied."
+rights_jurisdiction = "United States"
+provenance = "Source proposal read from complete registered Bonn PDF b676ce5c, artifact pages 497-499 at 200 and 400 dpi, with the prayer petitions directly compared on retained 1862 Pustet leaves 384 and 386. Independent primary source review by genitrice_extra accepted these exact three transcriptions on 2026-10-26 (SOURCE-REVIEW SHA-256 f94be8d23b3bb2fed9c80ccb0643693b720dd857fddb8ee2e3df1e4618a87f7d); adopted by the root coordinator for this Bonn witness state only."
+retrieved = "2026-10-26"
+sha256 = "90ea7729be19c33f7eabba7b800d1a5fc33b44dbc61b90b72feb38faa3cb303c"
+byte_size = 483
+path = "src/sources/works/triptych/bonn-pre-1955-pentecost-latin-projection/editions/2026-10-26-editorial-projection/artifacts/three-prayers-90ea7729/three-prayers.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.ia-reimpressio-pdf-b676ce5c", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-384-c7491a25", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-386-4ed5e594"]
+transformation = "One prayer per physical UTF-8 line; join printed line/page wraps, remove stress accents, retain Bonn pointing and j spelling, and retain each literal short conclusion cue. Do not expand those cues from 1962. No headings, rubrics or arrangement are retained."
+indexable = true
+encoding = "utf-8"
+notes = "Three-only accepted source projection; admission requires the hash-bound accepted independent receipt and exact current body, owner and source evidence. This establishes the identified Bonn witness state only, without civil-date authority."

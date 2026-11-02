@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.church-of-england.king-james-version.ebible-engkjv.ebible-usfm-67561758"
+edition_id = "edition.church-of-england.king-james-version.ebible-engkjv"
+artifact_type = "downloadable-data"
+media_type = "application/zip"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Underlying Bible text has its separately verified public-domain basis; this whole container also includes modern publisher support files whose exact redistribution basis is unresolved. No package-wide public-domain claim is made and no archive bytes are retained in public source storage."
+rights_jurisdiction = "United States"
+source_url = "https://eBible.org/Scriptures/eng-kjv_usfm.zip"
+provenance = "Complete official publisher USFM ZIP acquired and hashed on 2026-10-26 as finite native-marker evidence. It is a distinct source identity from historical parent packages. Only separately manifested complete unchanged USFM book members are retained; the complete archive remains a remote hashed parent."
+retrieved = "2026-10-26"
+sha256 = "67561758cf58d9e767e89226a99171dba722579157d3894767c2f27538bcb38e"
+byte_size = 2771083
+indexable = false
+notes = "ACCESS LIMITATION: the complete 2771083-byte archive has 85 members (81 USFM files). Its modern support members are excluded from retained public payloads: copr.htm SHA256 80af6e747e792534ce966769307682261d5fac6eca606d7d1173793dedf762b7; keys.asc SHA256 8659487be35d9a79b8bb41eb68db1e96e9a1933792f683b88e0de50cd3841942; signature.txt.asc SHA256 f09e123a0b15ae603b1edaa37058c08863d64c08e067b49c763960535ffa87a5; latin.css SHA256 b0bafca14b3632a01adb83e8b8683ad86e76b4eb65131f0ed90ff3103787c175. Their stylesheets differ from Haiola upstream material and this record does not assert a package-wide redistribution grant. The underlying Bible text permission is separate. Parent archive URL/hash/extent describe the acquired bytes, not an identity claim about earlier deliveries. No CSS, HTML wrapper, public-key file or signature is copied into the retained USFM children."

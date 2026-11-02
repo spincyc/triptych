@@ -1,0 +1,57 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-html-compound-delivery",
+   "byte_size": 78744,
+   "edition_owned": true,
+   "id": "artifact.papal-collections.pius-ix-quanta-cura-syllabus.2026-10-26-vatican-latin.html-c173d95c19b6",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "restricted",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/content/pius-ix/la/documents/encyclica-quanta-cura-8-decembris-1864.html",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "normalized-compound-transcription",
+   "byte_size": 41220,
+   "edition_owned": true,
+   "id": "artifact.papal-collections.pius-ix-quanta-cura-syllabus.2026-10-26-vatican-latin.latin-text-04f9a32a9434",
+   "media_type": "text/plain",
+   "notes": "One payload contains both constituent works. Its Quanta portion preserves the complete terminal prayer, blessing, date, signature and 14 historical notes. Its Syllabus portion preserves sections I–X and propositions I–LXXX with references. Known transcription defects include the final Syllabus reference Multis gravibusque 17 December 1860 where the 1864 Acta printing reads Iamdudum cernimus 18 March 1861. No full-wording collation or correction claimed.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Original Latin wording of Quanta cura and the Syllabus errorum identified in Pii IX Pontificis Maximi Acta, pars prima, volume III (Romae, 1864), pp. 687–700 and 701–717. The corresponding complete pre-1931 facsimile was inspected for work identity, full opening/ending bounds, Quanta terminal clauses, note apparatus, and all ten Syllabus sections. United States expired-term assessment under 17 U.S.C. 304/305, with 104A limited to remaining term and 103(b) preserving the status of preexisting wording. This basis excludes modern Vatican HTML, Denzinger bibliography, Google marks, scan wrappers, and creative modern additions; it does not assert complete verbal collation. See src/sources/inventories/papal-documents-rights-v1.toml.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.vatican.va/content/pius-ix/la/documents/encyclica-quanta-cura-8-decembris-1864.html",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Holy See web delivery of identified historical Latin wording",
+  "date": "2026-10-26",
+  "editors": [],
+  "id": "edition.papal-collections.pius-ix-quanta-cura-syllabus.2026-10-26-vatican-latin",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Holy See, complete Latin HTML response under the Quanta cura URL; dated acquisition state, not the historical first printing.",
+  "title": "Composite Latin web transcription acquired 26 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Pius IX; Holy See web presentation",
+  "category": "papal-document-source-container",
+  "description": "Composite source delivery containing two distinct papal works. The entire web response and its one retained normalized text belong here; Quanta cura and the Syllabus remain separately owned constituents addressed by bounded segments. This source container is not one papal act.",
+  "id": "work.papal-collections.pius-ix-quanta-cura-syllabus",
+  "languages": [
+   "la"
+  ],
+  "title": "Quanta cura and Syllabus errorum — composite Vatican Latin delivery"
+ }
+}

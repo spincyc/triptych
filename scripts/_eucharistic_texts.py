@@ -21,6 +21,8 @@ from urllib.parse import quote
 
 import _calendars
 import _proper_latin
+import _artifact_store
+from _source_delivery_policy import external_source_identity
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = "triptych-eucharistic-texts/v1"
@@ -28,6 +30,7 @@ PROPER_TARGET_EDITION = "edition.catholic-church.missale-romanum.vatican-typica-
 TOOL_INPUT_PATHS = (
     "scripts/_eucharistic_texts.py", "scripts/_proper_latin.py", "scripts/_calendars.py",
     "scripts/_tooling.py", "tools/source-library", "guidance/liturgical-text-publication-policy.md",
+    "scripts/_artifact_store.py", "scripts/_source_delivery_policy.py",
 )
 ORDINARY_EDITION = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 WILSON_EDITION = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
@@ -686,13 +689,36 @@ class _Sources:
         for support in data.get("support_artifacts", []):
             self.use(support["artifact_id"])
         if data.get("storage") == "tracked" and data.get("path"):
-            self.payload(data)
+            try:
+                identity = external_source_identity(self.root, data["path"], metadata=data)
+            except (OSError, ValueError) as error:
+                raise AdapterError(f"Source delivery prevents text export: {error}") from error
+            if identity is None:
+                self.payload(data)
+            else:
+                # Preserve the evidence row's exact path/hash/size while the
+                # actual text comes from its separately retained derivative.
+                # This records identity, not a fresh inspection of the parent.
+                self.inputs[data["path"]] = identity
+                if _artifact_store.INDEX_PATH not in self.inputs:
+                    self.pin(self.root / _artifact_store.INDEX_PATH)
         return data
 
-    def payload(self, artifact: dict) -> bytes:
+    def payload(self, artifact: dict, *, fetch: bool = False) -> bytes:
         if artifact.get("storage") != "tracked" or not artifact.get("path"):
             raise AdapterError(f"No tracked payload: {artifact['id']}")
-        blob = self.pin(self.root / artifact["path"])
+        try:
+            identity = external_source_identity(self.root, artifact["path"], metadata=artifact)
+            if identity is None:
+                blob = self.pin(self.root / artifact["path"])
+            else:
+                physical = _artifact_store.resolve(self.root, artifact["path"], fetch=fetch)
+                blob = physical.read_bytes()
+                self.inputs[artifact["path"]] = identity
+                if _artifact_store.INDEX_PATH not in self.inputs:
+                    self.pin(self.root / _artifact_store.INDEX_PATH)
+        except (OSError, ValueError) as error:
+            raise AdapterError(f"Cannot read exact artifact {artifact['id']}: {error}") from error
         if _sha(blob) != artifact.get("sha256"):
             raise AdapterError(f"Artifact hash mismatch: {artifact['id']}")
         return blob

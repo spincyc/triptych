@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-base-latin-20261029"
+edition_id = "edition.catholic-church.breviarium-monasticum.1690-venice-baglioni"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Bounded complete responsorybase transcribed from1690VeniceBaglioni printing, independently in the UnitedStates publicdomain. No targetseasonal Alleluia is appended here."
+derived_from = "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-base-pages-20261029"
+provenance = "Read directly from wholeparent artifactpage955/printed912 leftcolumn, ResponsoryIVofNativityofBVM, on2026-10-29. Sourcebody stops atposcimus before the next versicleCordeetanimo. The extractedsourcepage retains context and the separate following versicle, which are not transcribed into this basebody."
+retrieved = "2026-10-29"
+sha256 = "dd345ee2fcab6b3974007069754a1ae6974851a5276af44fac6133b329655c77"
+byte_size = 109
+path = "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-latin-20261029/latin.txt"
+indexable = true
+encoding = "utf-8"
+transformation = "Join wraps and dehyphenate; remove stress accents; render longs as s; expand &toet; normalize u/v and consonantal i/j (sourceCuius/ad iuuari toCujus/adjuvari); omit liturgical responseasterisk and numeralIV. Keep complete prayerwordsequence,sourcecolon and sourcecapitalization."

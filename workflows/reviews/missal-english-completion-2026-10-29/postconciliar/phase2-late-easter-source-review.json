@@ -1,0 +1,93 @@
+{
+  "record_type": "independent-cold-source-review",
+  "reviewed_on": "2026-10-29",
+  "reviewer": "/root/postconciliar_english_completion/pc_source_review",
+  "scope": "Two complete source-local Latin antiphon/verse bodies, their secondary2002 comparisons and newly project-authored study English. Read-only tracked files; this receipt is scratch only.",
+  "candidate_packet": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/ot-communion/easter-ferial/candidates-two.json",
+  "candidate_packet_sha256": "f1fe1f8036140df183a176d6aa9798c8045dc3405f979d36b8b13929b9414cec",
+  "overall_disposition": "accept-source-bodies-and-English-with-metadata-correction-and-integration-prerequisites",
+  "method": "Independently opened all named historical title/body and secondary modern comparison/context images; read whole source-local units and adjacent boundaries; recomputed whole source PDF and English hashes. OCR was a locator only. A normalized word comparison after visual inspection confirms exactly the enumerated lexical differences.",
+  "image_snapshot_sha256": {
+    "pustet373.png": "94c7e041a1aaca81b65db2da20606789ebd3dd324ec87076acfbed07814aec7f",
+    "secondary249.png": "a97634758cf2470e3084c513ecbd9313cd7cca6b47b51cbbc31d7fcc6845ab58",
+    "officia-title.png": "d2c1400c29659c821fa1ccfdd63aeb5912416fdc26c57bb1db1d4b32a80190a0",
+    "officia103.png": "6c40c9f661786f5458204253d3aa377ca1b433ab3f51ffcc570176cf8d413381",
+    "officia114.png": "ac07638c434d711864be881801e197facbd50f266aef617e10abe181a8fa1e59",
+    "secondary251.png": "0c215822ba51b8de5808fff59fd8b3fe7051cfbc4559cabba61388b52b79cf1a",
+    "secondary246.png": "f978879f57dd6ec07d99ab47fd9f382e7183c85b48eda6306907735e7942325f",
+    "secondary247.png": "981eb9b15e4c3d3140c63d2e3340ba7e99df5dacb5a2c60a4b890a37d54c3d16",
+    "secondary250.png": "2b8cbc51eb22946e8d05ab9623ba4617a2af84a8dc16777ee5eeb14026d88499"
+  },
+  "whole_artifacts": [
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/ot-communion/easter-ferial/officia-novissima.pdf",
+      "byte_size": 10851022,
+      "sha256": "78b296aa96f9121e0e12a8695cda4087b97f8018a4fffe01645b4dbea947eda1"
+    },
+    {
+      "path": ".scratch/resume-postconciliar-orations/pustet-1862.pdf",
+      "byte_size": 102880787,
+      "sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474"
+    },
+    {
+      "path": ".scratch/resume-postconciliar-orations/latin-missal2002.pdf",
+      "byte_size": 3333382,
+      "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7"
+    }
+  ],
+  "reviews": [
+    {
+      "target": "postconciliar/easter-5-wednesday/main/Communion Antiphon/all/1",
+      "disposition": "accept",
+      "source": "Pustet1862, actual PDF AP373/printed287/established leaf372; Greater Alleluia verse under Dominica V post Pascha",
+      "source_complete_body": "Surrexit Christus, et illuxit nobis, quos redemit sanguine suo. Alleluja.",
+      "comparison_actual_pdf_page": 249,
+      "comparison_body": "Surréxit Dóminus et illúxit nobis, quos redémit sánguine suo, allelúia.",
+      "boundary_check": "The complete local verse starts Surrexit and includes its final Alleluja. The preceding double Alleluia/V. chant framing and next Exivi a Patre verse are distinct and excluded.",
+      "lexical_comparison": "Historical Christus -> secondary Dominus only; all remaining9 words match after accents/case, j/i and punctuation normalization.",
+      "other_differences": "Historical comma after Christus, full stop before final Alleluja and final capital differ from modern punctuation/case; accent marks and Alleluja/allelúia spelling differ.",
+      "relation": "variant",
+      "policy_assessment": "An independently public-domain complete old text with one common title substitution, fully stated. The existing variant logic allows one/two-word substitutions when every difference is shown; not an exact historical-English transfer.",
+      "english": "The Lord has risen and has shone upon us, whom he redeemed with his blood, alleluia.",
+      "english_sha256": "ea518a19a0d2575defe641dde3d2929ff5e4df02e6ce7b8dee8de82b84b3dbea",
+      "english_assessment": "Faithful original study English. Lord follows declared Dominus; risen and has shone upon us render surrexit/illuxit nobis; whom he redeemed with his blood renders the complete relative clause. No source-human attribution.",
+      "corrections": []
+    },
+    {
+      "target": "postconciliar/easter-5-friday/main/Communion Antiphon/all/1",
+      "disposition": "accept-body-English; correct unsupported IA locator before admission",
+      "source_identity": "Actual1815 bound Officia title at AP3; separate Commemoratio, et suffragia sanctorum constituent title at AP103, Mexici ex Typographia in via Sancti Dominici, Anno Domini1815. Actual title responsibility reads Fr. Mariano Estada; do not silently regularize surname to Estrada.",
+      "source": "Distinct Wikimedia PDF78b296aa, AP114/printed114, AD LAUDES Ant. in the separately titled1815 constituent",
+      "source_complete_body": "Crucifixus surrexit á mortuis, et redemit nos alleluja, alleluja.",
+      "comparison_actual_pdf_page": 251,
+      "comparison_body": "Crucifíxus surréxit a mórtuis, et redémit nos, allelúia.",
+      "boundary_check": "Complete source Ant. includes both final alleluja tokens and ends before the separately labelled following Dicite in nationibus versicle/response. Modern antiphon includes one final alleluia only. Week/day mapping checked with actual secondary AP246/247/250/251 headings.",
+      "lexical_comparison": "Modern drops the second final historical alleluja and changes no other body word; exactly8 retained words agree after accents/case, j/i and punctuation normalization.",
+      "other_differences": "Historical acute preposition á, other source/modern accents, j/i in alleluja, and source lack of comma after nos versus modern comma are declared orthographic/pointing differences.",
+      "relation": "abridged",
+      "rights_assessment": "Both actual title pages date the relevant underlying printing1815. The historical body is public-domain by publication age in the United States; faithful mechanical scan and project transcription do not introduce new authorship. Do not infer rights from hosting or host labels.",
+      "policy_assessment": "Only a deletion from an independently established complete old Latin body. The disclosed abridged logic permits this omission; no modern added expression translated and no historical English attributed.",
+      "english": "He who was crucified has risen from the dead and redeemed us, alleluia.",
+      "english_sha256": "3946e0fe404b1c217d46ce397e337ec69334c48a8aeb33a7627ea044eb81da94",
+      "english_assessment": "Faithful original study English. He who was crucified renders substantive Crucifixus; has risen from the dead and redeemed us renders the two perfect verbs; one alleluia reflects disclosed omission.",
+      "corrections": [
+        "Remove unsupported source_ia_leaves:[113] or establish actual IA page-map correspondence before admission."
+      ]
+    }
+  ],
+  "required_metadata_corrections": [
+    "For the distinct Wikimedia78b296aa artifact, omit source_ia_leaves:[113] unless an independently verified IA page map proves correspondence. PDF AP114 and printed114 are established; AP-minus-one alone is not an IA leaf proof."
+  ],
+  "integration_prerequisites": [
+    "Register the1815 bound Officia container separately from the Commemoratio et suffragia constituent identified by actual title AP103. AP103–128 may be an explicitly bounded source segment, never an unsupported complete-constituent extent claim.",
+    "Register the actual Wikimedia-delivered10,851,022-byte,166-page artifact; do not use the different11,168,204-byte IA PDF metadata as byte identity proof. The initial102-page catalogue extent does not describe this whole bound artifact.",
+    "Keep new English marked rights=project-created with no historical English source_id. Record independent old Latin, every modern difference, source and comparison passages, and no official/recitation or authenticated2008 claim.",
+    "Make shared explanatory scope truthful for the chant extension: existing what_is_published says for an oration only and project-created rights_basis names ancient Roman sacramentaries. These new old Latin chants come from1862 Missal and1815 Office sources. Preserve dated historical census prose while explicitly documenting new bounded route."
+  ],
+  "limits": [
+    "This is a source/body/policy-route review, not final publication registration approval.",
+    "The secondary2002 digital witness is not proved faithful to printed2002 and does not authenticate2008.",
+    "No historical human English, approved modern English or ICEL body is imported.",
+    "No claim that an1815 Franciscan Office source establishes modern Missal appointment; it independently establishes the old body only."
+  ]
+}

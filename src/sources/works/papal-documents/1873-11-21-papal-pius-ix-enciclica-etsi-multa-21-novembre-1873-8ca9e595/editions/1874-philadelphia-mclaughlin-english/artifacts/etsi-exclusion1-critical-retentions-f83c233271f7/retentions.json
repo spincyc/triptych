@@ -1,0 +1,143 @@
+{
+  "parent_sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+  "source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+  "all_retained": true,
+  "spans": [
+    {
+      "label": "opening-and-first-body",
+      "parent_LF_range": [
+        1,
+        112
+      ],
+      "parent_byte_range": [
+        0,
+        5502
+      ],
+      "output_byte_range": [
+        0,
+        5502
+      ],
+      "sha256": "2f04c9f4725f8d6adc6c9fa8dfa0309e52fc7404160aa941b0431522245fe628",
+      "byte_identity": true
+    },
+    {
+      "label": "all-four-own-historical-notes-on-printed12",
+      "parent_LF_range": [
+        390,
+        392
+      ],
+      "parent_byte_range": [
+        19356,
+        19468
+      ],
+      "output_byte_range": [
+        19328,
+        19440
+      ],
+      "sha256": "4599d2516fc928cf4902e811eac20577fcbd4f1c4658024312b7c123a3820520",
+      "byte_identity": true
+    },
+    {
+      "label": "own-body-before-first-edge-block",
+      "parent_LF_range": [
+        345,
+        376
+      ],
+      "parent_byte_range": [
+        17407,
+        19331
+      ],
+      "output_byte_range": [
+        17400,
+        19324
+      ],
+      "sha256": "38b2d74a47db9ce8af89f3ebeffa38fa2da3759a3f679c687b89e94c7b6e95f1",
+      "byte_identity": true
+    },
+    {
+      "label": "own-body-around-spurious-row-before",
+      "parent_LF_range": [
+        398,
+        418
+      ],
+      "parent_byte_range": [
+        19476,
+        20761
+      ],
+      "output_byte_range": [
+        19444,
+        20729
+      ],
+      "sha256": "48e6c83e401f4a229914b43de8d6a4e8a45ae2685f48b5699a9c58279c4b55d6",
+      "byte_identity": true
+    },
+    {
+      "label": "own-body-around-spurious-row-after",
+      "parent_LF_range": [
+        420,
+        433
+      ],
+      "parent_byte_range": [
+        20770,
+        21474
+      ],
+      "output_byte_range": [
+        20729,
+        21433
+      ],
+      "sha256": "7c8a8a52fad5c0ba53a9fb99e5729439fcacba2f8afc3fc8197f966428862005",
+      "byte_identity": true
+    },
+    {
+      "label": "own-body-before-second-edge-block",
+      "parent_LF_range": [
+        436,
+        468
+      ],
+      "parent_byte_range": [
+        21476,
+        23476
+      ],
+      "output_byte_range": [
+        21435,
+        23435
+      ],
+      "sha256": "228a15c514d677e733e365d2f38a610ba9407a0eb0a564f0c6ba27173deb9444",
+      "byte_identity": true
+    },
+    {
+      "label": "own-body-before-third-edge-block",
+      "parent_LF_range": [
+        530,
+        561
+      ],
+      "parent_byte_range": [
+        25530,
+        27627
+      ],
+      "output_byte_range": [
+        25447,
+        27544
+      ],
+      "sha256": "2020ee8e58ebe07b83632cbad54a995216a68a7c647146a9e5acb875b3e9f921",
+      "byte_identity": true
+    },
+    {
+      "label": "final-blessing-dating-clause-and-subscription",
+      "parent_LF_range": [
+        811,
+        824
+      ],
+      "parent_byte_range": [
+        39782,
+        40192
+      ],
+      "output_byte_range": [
+        39681,
+        40091
+      ],
+      "sha256": "3944ebf54bd0cef28902af487c05485804a4ead69596a97b7cffceee95b431b5",
+      "byte_identity": true
+    }
+  ]
+}

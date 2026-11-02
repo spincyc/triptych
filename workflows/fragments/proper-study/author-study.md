@@ -20,7 +20,7 @@ Use `research/interpretations.md` as the evidence map. Preserve material
 qualifications and disagreements where they change a claim. Do not invent a
 Father's commentary on this whole Mass, generic patristic agreement, or a
 historically intentional postconciliar theme. Roughly 6,000–10,000 substantive
-words is a planning range; the finished PDF must occupy 20–50 physical pages.
+words is a planning range; an exported print edition must occupy 20–50 physical pages.
 Meaningful exposition decides the treatment within that range. Reject both
 padding and an outline passed off as expansive.
 
@@ -39,7 +39,8 @@ profile's expansive-study section says why. Write every reader sentence to
 asserted significance, antitheses against positions nobody holds, texts
 credited with the study's inferences, or production vocabulary in reader prose.
 
-Create or revise the full schema-2 `proper-components.toml`, declaring future
+Create or revise `publication.toml` under `guidance/document-schemas.md` and the
+full schema-2 `proper-components.toml`, declaring future
 synthesis and homily components as well as the actual research files. The
 study preflight requires only research-mode files to exist yet. Record two to
 five `[[lanes]]` with all appointed element keys, four senses, substantive
@@ -80,14 +81,14 @@ Put work-wide scope and used references at the end; display the one canonical
 generation timestamp and compact rights colophon. Set exact provenance from
 this packet and declare canonical web eligibility.
 
-Build an author proof with `make doc DOC={proper} PROVIDER={provider}` before
-submission. Run
-`tools/check-proper-components --provider {provider} --document {proper} --phase artifacts --edition research`; inspect
-the settled PDF, its page count and build diagnostics. Keep any proof copies,
-logs and raster evidence beneath this run's stage/iteration artifact directory,
-with rasters in their own replaceable child. Report the exact PDF path and hash
-for the cold reviewer. This is author verification; the later shared-timestamp
-three-document build and independent visual review remain required.
+Before submission, run the research-mode source/component checks and validate
+the publication manifest and its available source roles. The study's future
+companion declarations do not authorize invented files or review results. If an
+author print proof is explicitly requested, use `tools/print-document` for this
+output and inspect its settled PDF, page count, physical evidence, and build
+diagnostics. Keep proof and review evidence in the run's stage/iteration area.
+Report its exact identity without claiming cold print review. Normal source
+submission does not require that proof.
 
 Also run `tools/tpt web-edition --provider {provider} --output <probe-root> {proper}`,
 using this run's `build/tpt-runs/<run>/artifacts/author-study-<iteration>/web-probe`

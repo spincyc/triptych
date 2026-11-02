@@ -1,0 +1,15 @@
+{
+  "artifact_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf",
+  "artifacts": {
+    "evidence": "build/tpt-runs/450355254538c1ba/artifacts/build-artifacts-1/evidence",
+    "homily_pdf": "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.pdf",
+    "rasters": "build/tpt-runs/450355254538c1ba/artifacts/build-artifacts-1/rasters",
+    "snapshot": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/artifacts.json",
+    "study_pdf": "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf",
+    "synthesis_pdf": "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.pdf"
+  },
+  "disposition": "PASS",
+  "iteration": 1,
+  "stage": "build-artifacts",
+  "summary": "Built the expansive study (31 pp, SHA-256 08f8c5e99572d5f8a9584555c47b901bc32abd09fdf74dd5d7094f387143c3bc), concise study (11 pp, fb899d0258fe16641fb2be454eb088f37fd41011012fe599b5fb2d5ac397c881) and homily (4 pp, a6630b389583e729bbaa18103fb48364e2767d47485ecbddeb4ddbef4d3bc2ac, identical to the derive-homily iteration 2 proof) with make doc; logs carry no error, overfull/underfull box, undefined reference, rerun or font warning; all fonts are embedded subset Type 1 Latin Modern; extraction is clean; concise zref markers settle inventory/overview/four senses on physical page 1, chronology on 2, themes 3-4, commentary from 5; check-proper-components (all three editions) and the artifacts-phase _proper_study.py check pass. The snapshot wrote research/artifacts.json, rasters and contact sheets are in build/tpt-runs/450355254538c1ba/artifacts/build-artifacts-1/rasters with logs, auxiliaries, contents file, build output and extracted texts kept beside them under evidence/, and the build record was appended to research/production-review.md. No layout repair was needed, so no source, manifest or generation-metadata file was edited and no content seal is affected. This dispatch contributed the iteration 1 build, mechanical artifact checks, snapshot, review rasters and the production-audit entry for the three F02 documents. Limitations: TeX's non-warning 'Infinite glue shrinkage found in box being split' message at expansive page 3, where the shared map table carries its last row to page 4 (the same message appears at the same place in sibling leaves), and the PDFs are untagged; the visual reviewer must still inspect every page at page resolution and perform the page-2 lookup."
+}

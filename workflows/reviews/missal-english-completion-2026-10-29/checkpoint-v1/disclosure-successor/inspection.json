@@ -1,0 +1,2304 @@
+{
+  "cohort_counts": {
+    "original": 1666,
+    "final": 1726,
+    "added": 60,
+    "removed": 0
+  },
+  "files": [
+    {
+      "path": "src/sources/commentary/mass-commentary-corpus.yaml",
+      "bytes": 6691572,
+      "sha256": "fb3dd877d59dc575ede8293dd144504ab9ff91ba65d5930aefe1d1ba0c6d4098",
+      "existed_at_head": true
+    },
+    {
+      "path": "src/sources/inventories/source-containment-v1.toml",
+      "bytes": 5814765,
+      "sha256": "221e528587c64f0a4ac2b1ec049c1381b5a582f62ac95782d70f80651bfd58c1",
+      "existed_at_head": true
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-anamnesis-oblation.json",
+      "bytes": 283022,
+      "sha256": "bce9db3e1e5699e8c2212a186d594c80fb599dd531d9dece765ef67cc50e226b",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-invocation-gifts.json",
+      "bytes": 290110,
+      "sha256": "506bbee66b64a6802ef89566202f2e56584dd3195d625aec95bea12ba09c7099",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-james-anamnesis-oblation.json",
+      "bytes": 291849,
+      "sha256": "be5aef85f23ec2d8cdab5682030b3c7320eeda578886d15c97ff3da69cb557c6",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-james-invocation-gifts.json",
+      "bytes": 297074,
+      "sha256": "128865a4ba75577161bfd880f6fa115f228f7428851237302cd44c311bdede51",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-anamnesis-oblation.json",
+      "bytes": 290880,
+      "sha256": "b034fb2329c8e58ddf27836481e167546a314ec1608537bdc8fa9d1893f4a55f",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-invocation-gifts.json",
+      "bytes": 292175,
+      "sha256": "b81dd86cc083d236111ae832a5c2cf17118e7d38ab19cf7915522d79c5639c28",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/carmelite-1574-1621-october-05-calendar.json",
+      "bytes": 262718,
+      "sha256": "69da7d0a4a252be6c92b704a6b9e87eafc7c93d015bd2ac4d18014d4154ec88c",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-canon-constituents.json",
+      "bytes": 824134,
+      "sha256": "175bd60a34678cffcdbf51108c12408c24339df3c2ff292035efbcbb6b971a74",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-confiteor.json",
+      "bytes": 344056,
+      "sha256": "b464d371f50d69e63d68c35f3dc7cecbfa3c52c079f28f48e91731e6a81e3321",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-offertory-constituents.json",
+      "bytes": 453366,
+      "sha256": "78957c448def8ff9590f4e445feb0650467b8f5bbefd3825657d6e3f45a85cf2",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-orate-response.json",
+      "bytes": 345472,
+      "sha256": "8c06dad57d5a51b6be902e677f28b4fb295708bc885a3b369c7d3bbdf63d3434",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-pater-noster-first-chant.json",
+      "bytes": 411277,
+      "sha256": "a82042623f2ad6314e012c1aae0410e69ccf0fdc9306a86151a8e7ebbbf7bbc1",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-suscipe-trinitas.json",
+      "bytes": 346523,
+      "sha256": "34be15b3e54aee56594f32457603ab140a55e3ef67a4c33a4cfec72e20bdfd3b",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/dominican-1550-1604-suscepimus-collect.json",
+      "bytes": 262030,
+      "sha256": "e1d7bd6cb6518f34040f4cdf795e276b702e184da677c59424c9e80be3af4569",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/mozarabic-1500-1755-benedictio-panis.json",
+      "bytes": 306588,
+      "sha256": "e4317bfd50f1efc6ac1822ea570bfbc3f3b7c516deb92adba15999bd50f177bb",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/mozarabic-1500-1804-benedictio-panis.json",
+      "bytes": 305309,
+      "sha256": "54a9563fc91d4dea186b8a9c91f432aac4b434087a4b469c2d31c2355afa6b75",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/mozarabic-1755-1804-benedictio-panis.json",
+      "bytes": 303793,
+      "sha256": "c61598bbe5d5d0ea3e89721b6f22988f511812abf77206ea20aac5ff064bca6b",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/roman-canon-memento-wilson-r-and-cummiskey-1861.json",
+      "bytes": 300220,
+      "sha256": "ebac3cb10a90762936cb8ea856878e67add13c733fbd016786188c66e2541944",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-cummiskey-1861.json",
+      "bytes": 307495,
+      "sha256": "73f0d3541c660a0aa68fd4a9fa4d4826c0db5b8c148fcd6e0c312056c718630b",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-stowe.json",
+      "bytes": 284928,
+      "sha256": "35982d1aba6a0c5b50588df06afbf548e1c30cd445942d1140c1309ab76cc4b4",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-cummiskey-1861.json",
+      "bytes": 302512,
+      "sha256": "1f933e236b29f66171cd408ed4701d6b742977fea79af2b6223b61b3930b6a4c",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-gelasian.json",
+      "bytes": 274006,
+      "sha256": "2ebc3a798b913077d9dba80744df80df74a86b3171bc0e70009c4601d17eb4e6",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-stowe.json",
+      "bytes": 279704,
+      "sha256": "fe69f21588b0c53dd3978c66da8d89e08b472c2724fee83b698746bd3a55b558",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-stowe-and-cummiskey-1861.json",
+      "bytes": 313385,
+      "sha256": "544c7ab3a25268cf0a50e921bd423605bfc4d732075c540d962e566bdbfe39f1",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-cummiskey-1861.json",
+      "bytes": 307092,
+      "sha256": "e21d0d62de461fbc72164930f93e972dfa2d6abd84a082d9096a4a2cbcabf5fd",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-stowe.json",
+      "bytes": 281101,
+      "sha256": "8d7a73dbe8b3185b3252650424accb8deb46c64d376749cfab2d17b1d0abe476",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-cummiskey-1861.json",
+      "bytes": 302715,
+      "sha256": "ac6a9e271d6447078d291c9e122ab5253a42b4ef32a50d7cc183b8fd7b324be9",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-gelasian.json",
+      "bytes": 274338,
+      "sha256": "8e17f37fccf2c34d35832d1c050d54718554e9831635a00ea343693d0704ab4b",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-stowe.json",
+      "bytes": 276515,
+      "sha256": "17fa84c6bbdccc125af9ac2a269e5b04726b70a162348eb6e610a351798c9857",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-stowe-and-cummiskey-1861.json",
+      "bytes": 309429,
+      "sha256": "83b498ba4478594db2139de4e1634e3ad084b0819844fafd8de5613b9b5d5332",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/act-history/comparisons/roman-sanctus-stowe-and-cummiskey-1861.json",
+      "bytes": 310113,
+      "sha256": "6f699b3b5d1766fab3cd787d2c029bc565ba5cbc3e9857ebaf37c1da49fd56b1",
+      "existed_at_head": true,
+      "top_keys": [
+        "apparatus_caveat",
+        "basis",
+        "historical_act_claimed",
+        "historical_ancestry_claimed",
+        "id",
+        "identical_serialized_text",
+        "identity_claim",
+        "inputs",
+        "introduction_date_inferred",
+        "kind",
+        "left",
+        "limitations",
+        "membership_status",
+        "relationship_ids",
+        "relationships",
+        "right",
+        "schema",
+        "source_refs",
+        "sources",
+        "text_serialization",
+        "tool_inputs",
+        "unified_diff"
+      ],
+      "json_valid": true,
+      "changes": 4,
+      "exact_changes": [
+        {
+          "path": "tool_inputs.5.byte_size",
+          "old": 54697,
+          "new": 54706
+        },
+        {
+          "path": "tool_inputs.5.sha256",
+          "old": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+          "new": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+        },
+        {
+          "path": "tool_inputs.8.byte_size",
+          "old": 132893,
+          "new": 132894
+        },
+        {
+          "path": "tool_inputs.8.sha256",
+          "old": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "new": "457257b5d71414c00a8864d2950ed9dce1755636a3c0c27a005ee0f96e4a1b05"
+        }
+      ]
+    },
+    {
+      "path": "src/web/data/structure/rubrics/postconciliar.json",
+      "bytes": 96174,
+      "sha256": "b517b7970e666a7004527050a22099f12792193de47826e4c367d77e4eee72c8",
+      "existed_at_head": true,
+      "top_keys": [
+        "advisory",
+        "assignment",
+        "bases",
+        "calendar",
+        "citation_forms",
+        "code",
+        "commemoration",
+        "edition",
+        "edition_short",
+        "guidance",
+        "impediment",
+        "implied",
+        "keys",
+        "latin_text_status",
+        "mass_category",
+        "not_decided_here",
+        "orations",
+        "overrides",
+        "precedence",
+        "same_celebration",
+        "saturday_office",
+        "schema",
+        "source_advisory",
+        "unsettled"
+      ],
+      "json_valid": true,
+      "changes": 1,
+      "exact_changes": [
+        {
+          "path": "keys.pentecost.forms.#length",
+          "old": 2,
+          "new": 3
+        }
+      ]
+    },
+    {
+      "path": "tools/tests/day_reader_choices_browser.mjs",
+      "bytes": 45103,
+      "sha256": "bbd9ee0858d1950d9c0f2a2e79d45f9c196bab2034dba128bcaa2d043fa39ebb",
+      "existed_at_head": true
+    },
+    {
+      "path": "tools/tests/day_reader_integration_browser.mjs",
+      "bytes": 224053,
+      "sha256": "817a84fcb664e5dd15f55dd07d1f30c64cf10edde8261c13e65485d0fd8b403a",
+      "existed_at_head": true
+    },
+    {
+      "path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+      "bytes": 1975840,
+      "sha256": "a842b22712bce139398aa6e5b86cfd662cfb14ab46de510e5c241265440324fd",
+      "existed_at_head": true,
+      "top_keys": "list",
+      "json_valid": true,
+      "changes": 11173
+    },
+    {
+      "path": "tools/tests/fixtures/missal-source-batch-20261023.json",
+      "bytes": 4746225,
+      "sha256": "ed919d8d549395ee3d8736fa2cd3ced903e1cccb98fd72a101b25dad8eba00c1",
+      "existed_at_head": true,
+      "top_keys": [
+        "acceptance",
+        "baseline_revision",
+        "baseline_roman_document_sha256",
+        "corrected_latin_keys",
+        "cross_supplement_specs",
+        "current_roman_document_sha256",
+        "direct_pd_permitted_specs",
+        "english_219_keys",
+        "english_baseline_source_files",
+        "english_coverage",
+        "english_historical_absence_scope",
+        "english_historical_source_files",
+        "files",
+        "latin_baseline_bodies",
+        "latin_baseline_present_keys",
+        "latin_baseline_rows",
+        "latin_baseline_supplemented_keys",
+        "latin_current_bodies",
+        "latin_current_rows",
+        "latin_current_supplements",
+        "latin_permitted_keys",
+        "new_latin_keys",
+        "new_projection_artifact_specs",
+        "new_projection_specs",
+        "postconciliar_current_english_absence",
+        "postconciliar_current_english_positive",
+        "projection_baseline_source_files",
+        "reviewed_transition_contract_sha256",
+        "roman_current_english_absence",
+        "roman_current_english_owner_universe",
+        "roman_current_english_positive",
+        "roman_current_execution_source_hashes",
+        "schema",
+        "source_input_manifest_path",
+        "source_input_manifest_sha256",
+        "state"
+      ],
+      "json_valid": true,
+      "changes": 2957,
+      "raw_replay": [
+        {
+          "path": "src/sources/calendars/postconciliar/propers.yaml",
+          "hunks": 11,
+          "retained_original_chars": 4120
+        },
+        {
+          "path": "src/sources/calendars/roman-1962/propers.yaml",
+          "hunks": 174,
+          "retained_original_chars": 86857
+        },
+        {
+          "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+          "hunks": 0,
+          "retained_original_chars": 0
+        },
+        {
+          "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+          "hunks": 96,
+          "retained_original_chars": 71535
+        },
+        {
+          "path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+          "hunks": 119,
+          "retained_original_chars": 141231
+        },
+        {
+          "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+          "hunks": 35,
+          "retained_original_chars": 100564
+        },
+        {
+          "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+          "hunks": 40,
+          "retained_original_chars": 372299
+        },
+        {
+          "path": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml",
+          "hunks": 21,
+          "retained_original_chars": 623
+        },
+        {
+          "path": "tools/tests/test_proper_latin.py",
+          "hunks": 19,
+          "retained_original_chars": 418
+        },
+        {
+          "path": "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py",
+          "hunks": 7,
+          "retained_original_chars": 501
+        },
+        {
+          "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py",
+          "hunks": 4,
+          "retained_original_chars": 11280
+        },
+        {
+          "path": "tools/tests/test_roman_1962_english13_phase5.py",
+          "hunks": 8,
+          "retained_original_chars": 829
+        },
+        {
+          "path": "tools/tests/test_roman_1962_english31_phase4.py",
+          "hunks": 5,
+          "retained_original_chars": 253
+        },
+        {
+          "path": "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py",
+          "hunks": 6,
+          "retained_original_chars": 527
+        },
+        {
+          "path": "tools/tests/test_roman_1962_latin22_phase5.py",
+          "hunks": 10,
+          "retained_original_chars": 1035
+        },
+        {
+          "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py",
+          "hunks": 6,
+          "retained_original_chars": 691
+        },
+        {
+          "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py",
+          "hunks": 3,
+          "retained_original_chars": 454
+        }
+      ]
+    },
+    {
+      "path": "tools/tests/propers_reader_integration_browser.mjs",
+      "bytes": 160282,
+      "sha256": "ddad266de88ff7665d5d305faa1687ed650647e1145bf9dad89a661b70f9dd3a",
+      "existed_at_head": true
+    },
+    {
+      "path": "tools/tests/reader_coverage_fixture.mjs",
+      "bytes": 12244,
+      "sha256": "5f67b9eabec3a74810e55309f11f7234e17ca93e25fdb3905ca4ba6b32f11dc8",
+      "existed_at_head": true
+    },
+    {
+      "path": "tools/tests/test_complete_missal_report.py",
+      "bytes": 38832,
+      "sha256": "97b27943b16255ad72722855758a281fd7b08ba7b708f39609f835f7517ede9e",
+      "existed_at_head": true
+    },
+    {
+      "path": "tools/tests/test_current_source_batch_latin.py",
+      "bytes": 6390,
+      "sha256": "c26a17afd887543e44b6d10eeada1b2aa431d306265fd308d8de56291edbd954",
+      "existed_at_head": true
+    },
+    {
+      "path": "tools/tests/test_proper_latin.py",
+      "bytes": 117568,
+      "sha256": "0149bd4a6c9ed10d975d17bf91863c06dd86632ff8b42a9680054bffc933fcf4",
+      "existed_at_head": true
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/aggregate-checks.json",
+      "bytes": 169386,
+      "sha256": "53562fcb5ef7596c750c46d423cb92e9cf654a8974fa701169d179b1d3c2ad00",
+      "existed_at_head": false,
+      "top_keys": [
+        "artifact_gates",
+        "artifact_manifest_hashes",
+        "commands_note",
+        "content_index_recipe",
+        "core_sha256_by_path",
+        "generated_followups",
+        "generated_layers",
+        "input_hashes",
+        "native_browser",
+        "not_claimed_complete",
+        "package_versions",
+        "private_evidence_note",
+        "private_evidence_sha256",
+        "recorded_on",
+        "release",
+        "schema",
+        "scope",
+        "separate_root_annual_record",
+        "source_aggregate",
+        "status"
+      ],
+      "json_valid": true
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/browser-oracle-review.json",
+      "bytes": 1449,
+      "sha256": "30f3dc717d361fc64f94666db47a5902ab61274cec47908fee6af862f1962104",
+      "existed_at_head": false,
+      "top_keys": [
+        "prior_delta_sha256",
+        "prior_full_diff_sha256",
+        "delta_sha256",
+        "delta_bytes",
+        "files",
+        "status",
+        "issues",
+        "recorded_utc",
+        "full_four_file_diff_sha256",
+        "full_four_file_diff_bytes",
+        "other_two_files_exact_to_original_review",
+        "node_syntax_checks",
+        "no_duplicate_fixture_or_chromium_run",
+        "historical_witness_refusals_and_all_souls_unchanged",
+        "study_witness_four_exact_chants_and_four_exact_absences_asserted",
+        "compare_negative_is_same_ready_trinity_as_positive",
+        "default_hilary_whole_no_witness_fixture_retained"
+      ],
+      "json_valid": true
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/cohort-disclosure-review.json",
+      "bytes": 2661,
+      "sha256": "a15258f674236dc6af85969a3499d8043a03e7ebd61a135826957c2537af90ec",
+      "existed_at_head": false,
+      "top_keys": [
+        "recorded_utc",
+        "status",
+        "scope",
+        "snapshot",
+        "binary_result",
+        "all_new_artifacts_result",
+        "review_retention_result",
+        "modern_comparison_passage_result",
+        "common_settlement_result",
+        "private_scan_result",
+        "blockers",
+        "pending_outside_this_snapshot",
+        "written_resources"
+      ],
+      "json_valid": true
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/latin-oracle-review.json",
+      "bytes": 2651,
+      "sha256": "fe12ea1483f624a7347dcfb200b2bd0cb6a4ac5582e2dbe5950d43bdba809754",
+      "existed_at_head": false,
+      "top_keys": [
+        "status",
+        "issues",
+        "scope",
+        "canonical_sha256",
+        "proposal_sha256",
+        "unified_diff_sha256",
+        "unified_diff_bytes",
+        "finite_authority_sha256",
+        "prior_two_literal_code_preserved",
+        "qualified_identity_count",
+        "qualified_new_finite_identity_count",
+        "restored_exact_triples",
+        "original_negative_partition",
+        "proof_only_original_seven_assertion_exact",
+        "six_surface_and_body_tamper_controls_exact",
+        "palm_source_to_latin_ordinal_mapping",
+        "silvester_installation_receipt"
+      ],
+      "json_valid": true
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/ordinary-event-conservation.json",
+      "bytes": 6248,
+      "sha256": "b4f34c4629844a3e096b0a21a5d316a6eeb0b9f6c36a6959450d099353ac2f07",
+      "existed_at_head": false,
+      "top_keys": [
+        "pentecost_10",
+        "ot_18",
+        "roman-1962",
+        "postconciliar",
+        "scope",
+        "grounds"
+      ],
+      "json_valid": true
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/ordinary-oracle-validation.json",
+      "bytes": 3219,
+      "sha256": "94ee33b914781ae28987c34078834ac5e424560194d11233789f4d16ed900de5",
+      "existed_at_head": false,
+      "top_keys": [
+        "scope",
+        "source_seal_sha256",
+        "test_files",
+        "combined_suite",
+        "first_failure_log_sha256",
+        "independent_event_and_body_delta_summary",
+        "correction_grounds"
+      ],
+      "json_valid": true
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/source-data-proof.json",
+      "bytes": 247532,
+      "sha256": "1667f10f0a0bf951e02db251f3954a429aa857c1becb3cce21224004a547a718",
+      "existed_at_head": false,
+      "top_keys": [
+        "added_input_paths",
+        "canonical_writes",
+        "changed_input_paths",
+        "compiler_sha256",
+        "direct_pd_declaration",
+        "direct_pd_permitted_keys",
+        "direct_pd_proof_map_sha256",
+        "dropped_V4_paths",
+        "english_coverage",
+        "exact_recorded_positive_corrections",
+        "explicit_input_delta_sha256",
+        "historical_fields_preserved",
+        "new_V4_projection_oracle_keys",
+        "original17_before",
+        "parent_fixture_sha256",
+        "parent_git_revision",
+        "parent_manifest_sha256",
+        "pending_fixture_sha256",
+        "preserved_V4_paths",
+        "schema",
+        "source_acceptance_claimed",
+        "source_epoch_paths",
+        "source_input_manifest_sha256",
+        "status",
+        "strict_helper_sha256",
+        "support_sha256",
+        "transition_contract_sha256"
+      ],
+      "json_valid": true
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/source-input-declaration.json",
+      "bytes": 286402,
+      "sha256": "6c4d3f90fd10952ac40507034d5baefb7e4597a5838e192485f09743da55efa9",
+      "existed_at_head": false,
+      "top_keys": [
+        "acceptance_receipt_created",
+        "all_eight_May1_receipts",
+        "boundaries",
+        "bounded_v3_additions",
+        "common_source_proof_disposition",
+        "compiler",
+        "consumer_review_inputs",
+        "exact_reasons",
+        "expected_total_epoch_paths",
+        "explicit_accepted_kept_pin_transition",
+        "explicit_extra_inputs",
+        "fresh_source_dependency_proposal",
+        "owner_seal_mismatches",
+        "owner_sealed_non_source_epoch_references",
+        "owner_seals_checked",
+        "post_corpus_existing_metadata_ancestors",
+        "predecessor_declaration",
+        "public_PCOrd_retention",
+        "root_stable_basis",
+        "schema",
+        "selected_fresh_pending_acceptance_receipt",
+        "source_acceptance_claimed_by_declaration",
+        "source_domain_before_extras",
+        "status",
+        "strict_helper_sha256",
+        "support_sha256"
+      ],
+      "json_valid": true
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/source-input-delta.json",
+      "bytes": 569548,
+      "sha256": "f07876d93b4dba02e0562fb7ee73e3d1233848ac62dfabca082fd36795b49378",
+      "existed_at_head": false,
+      "top_keys": [
+        "extra_inputs",
+        "files",
+        "parent_git_revision",
+        "parent_manifest_sha256",
+        "schema",
+        "source_acceptance_claimed"
+      ],
+      "json_valid": true
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/source-transition-contract.json",
+      "bytes": 3911668,
+      "sha256": "04b8448f2bc13e5e79bc2593b9be10c624ef38f7a30bcfebb49392815285e9eb",
+      "existed_at_head": false,
+      "top_keys": [
+        "direct_pd_declaration",
+        "direct_pd_permitted_specs",
+        "english_coverage",
+        "exact_recorded_positive_corrections",
+        "explicit_input_delta_sha256",
+        "files",
+        "parent",
+        "schema",
+        "semantic_transitions",
+        "source_permissions_claimed"
+      ],
+      "json_valid": true
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/direct-pd-latin-proof-declaration-v1.json",
+      "bytes": 201339,
+      "sha256": "70716afc9012297f8600c837b129332a1b924b9520b8861d9d6ad33ae4f47752",
+      "existed_at_head": false,
+      "top_keys": [
+        "boundaries",
+        "calendar",
+        "primary_artifacts",
+        "recorded_on",
+        "records",
+        "required_surfaces",
+        "schema",
+        "scope"
+      ],
+      "json_valid": true,
+      "shape": {
+        "boundaries": {
+          "type": "list",
+          "length": 3
+        },
+        "calendar": "roman-1962",
+        "primary_artifacts": {
+          "type": "list",
+          "length": 3
+        },
+        "recorded_on": "2026-10-30",
+        "records": {
+          "type": "list",
+          "length": 25
+        },
+        "required_surfaces": {
+          "type": "list",
+          "length": 6
+        },
+        "schema": "triptych-exact-direct-pd-latin-proof-declaration/v1",
+        "scope": {
+          "length": 193,
+          "sha256": "6d975beb5f0778c50ecfa48722d70e88bb6437864bdd4db658043b9d0ea6251d"
+        }
+      }
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-batch-checkpoint-v1.json",
+      "bytes": 4954,
+      "sha256": "341942539fe1292753f059df0f487c30588ee864c87b923218b3440ffd8a860a",
+      "existed_at_head": false,
+      "top_keys": [
+        "accepted_by",
+        "accepted_fixture_core_sha256",
+        "accepted_on",
+        "accepted_state",
+        "boundaries",
+        "compiler",
+        "consumer_tests",
+        "direct_public_domain_proof_targets",
+        "dropped_parent_paths",
+        "english_coverage",
+        "historical_fields_preserved",
+        "independent_candidate_review",
+        "independent_compiler_review",
+        "parent_fixture_sha256",
+        "parent_git_revision",
+        "parent_manifest_sha256",
+        "pending_fixture_sha256",
+        "pending_state",
+        "preserved_parent_paths",
+        "raw_original_replay_objects_preserved",
+        "retained_reproduction_inputs",
+        "schema",
+        "scope",
+        "source_epoch_paths",
+        "source_input_manifest_path",
+        "source_input_manifest_sha256",
+        "source_permission_created_by_this_receipt",
+        "status",
+        "strict_runtime_helper_sha256",
+        "successor_kind",
+        "support_sha256"
+      ],
+      "json_valid": true
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py",
+      "bytes": 31336,
+      "sha256": "29d0add9b330248b4047881310175614d91adc82688bfc695451318696c0865b",
+      "existed_at_head": false
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compiler-v3-independent-review.json",
+      "bytes": 4893,
+      "sha256": "574467f95411fdcb96bbc11e93edb3aaad71e54009d439fbee28d9a8cb0d92a3",
+      "existed_at_head": false,
+      "top_keys": [
+        "canonical_mutations",
+        "controls",
+        "decision",
+        "findings",
+        "immutable_inputs",
+        "independent",
+        "limits",
+        "review_kind",
+        "reviewed_on",
+        "schema",
+        "scope",
+        "subjects"
+      ],
+      "json_valid": true
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/pending-v3-1-independent-review.json",
+      "bytes": 3124,
+      "sha256": "10575f8a978646eb59ec674e25e1c7adc0b1d698523c1dea95437c008ba8b0f1",
+      "existed_at_head": false,
+      "top_keys": [
+        "candidate",
+        "canonical_mutations",
+        "compiler_review",
+        "completed_mechanical_review",
+        "decision",
+        "findings",
+        "independent",
+        "limits",
+        "remaining_required_before_installation",
+        "review_kind",
+        "reviewed_on",
+        "schema",
+        "source_qualification_scope",
+        "verified_boundaries"
+      ],
+      "json_valid": true
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/support_v3.py",
+      "bytes": 13378,
+      "sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc",
+      "existed_at_head": false
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/test_compile_successor_v3.py",
+      "bytes": 19911,
+      "sha256": "0be297e97e011db8b0ef80f39c8c452a61dc02aa76d71b663d60cb8af10fae40",
+      "existed_at_head": false
+    }
+  ]
+}

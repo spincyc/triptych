@@ -34,10 +34,9 @@ So `title_of` walks the preamble the way the build does — following `\\input`,
 recording `\\newcommand` and `\\def`, taking the branch a `\\ifdefined` selects,
 and stopping at `\\begin{document}` — and expands whatever `pdftitle` finally
 holds. That is more machinery than a regex, and it earns it: every one of the
-186 titles and all 186 subjects it derives are byte-identical to what `pdfinfo`
-reads out of the built PDF. `document-library check` performs exactly that
-comparison, so a document whose preamble grows a construct this walk cannot
-follow fails loudly instead of being catalogued under a plausible wrong name.
+titles it derives can be compared to `pdfinfo` with the optional
+`document-library check-render` command. Ordinary catalogue checks evaluate
+the current sources without requiring an installed rendering.
 
 The synthesis issues are why the walk starts from an entry file rather than
 always from `main.tex`. Two shapes exist in the corpus and both are current: a
@@ -64,14 +63,15 @@ import tomllib
 from dataclasses import dataclass
 from pathlib import Path
 
+from _document_schema import PROVIDERS
+
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
 PDF_ROOT = ROOT / "pdf"
 PUBLICATION_ROOT = ROOT / "release" / "publications"
 
-# The two editions this project issues. A third provider directory would be a
-# third edition and is not assumed anywhere: the set is read from here.
-PROVIDERS = ("claude", "gpt")
+# The schema inventory owns provider identities; this module re-exports them
+# for the metadata gate and other existing source consumers.
 
 MAIN = "main.tex"
 SYNTHESIS = "synthesis.tex"
@@ -477,18 +477,20 @@ class _Walk:
     templates: dict[str, str]
     # One entry per open conditional: True while the branch being read is taken.
     frames: list[bool]
+    root: Path = ROOT
 
     @property
     def emitting(self) -> bool:
         return all(self.frames)
 
 
-def _resolve_input(argument: str, provider: str) -> Path | None:
+def _resolve_input(argument: str, provider: str, source_root: Path | None = None) -> Path | None:
     """Resolve one `\\input` the way the build's ``TEXINPUTS`` does."""
     candidate = Path(argument)
     if candidate.is_absolute() or ".." in candidate.parts:
         return None
-    for base in (SRC / provider, SRC):
+    sources = SRC if source_root is None else source_root
+    for base in (sources / provider, sources):
         for path in (base / argument, base / f"{argument}.tex"):
             if path.is_file():
                 return path
@@ -505,7 +507,10 @@ def _walk(path: Path, walk: _Walk, depth: int = 0) -> None:
         if match.group("input") is not None:
             if not walk.emitting:
                 continue
-            target = _resolve_input(expand(match.group("input").strip(), walk.macros), walk.provider)
+            target = _resolve_input(
+                expand(match.group("input").strip(), walk.macros), walk.provider,
+                walk.root / "src",
+            )
             # The shared preamble sets no title and pulls in the whole package
             # list; skipping it is what keeps this walk to the leaf's own text.
             if target is not None and target.stem != "preamble":
@@ -584,10 +589,12 @@ class Title:
 NO_TITLE = "no pdftitle is declared anywhere in this document's own sources"
 
 
-def title_of(entry: Path, provider: str) -> Title:
+def title_of(entry: Path, provider: str, *, root: Path | None = None) -> Title:
     """Evaluate ``entry``'s preamble and return the title it finally declares."""
+    repository = ROOT if root is None else root
     walk = _Walk(
-        provider=provider, macros={}, values={}, origins={}, templates={}, frames=[]
+        provider=provider, macros={}, values={}, origins={}, templates={}, frames=[],
+        root=repository,
     )
     try:
         _walk(entry, walk)
@@ -601,7 +608,7 @@ def title_of(entry: Path, provider: str) -> Title:
     return Title(
         text=text,
         subject=walk.values.get("subject") or None,
-        source=origin.relative_to(ROOT).as_posix(),
+        source=origin.relative_to(repository).as_posix(),
         template=template if template != text else None,
         absent=None,
     )
@@ -609,10 +616,8 @@ def title_of(entry: Path, provider: str) -> Title:
 
 # --- The built PDF ---------------------------------------------------------
 #
-# The only fact here that no source file states. `pdfinfo` is already required
-# by `make check-tools` and used by `check-generation-metadata`, so this adds no
-# dependency; a checkout without it gets a stated refusal rather than a
-# catalogue whose extents are quietly missing.
+# Render-specific metadata. Only an explicit rendering inspection reads it;
+# source discovery and the ordinary catalogue never inspect an installed PDF.
 
 PDFINFO = "pdfinfo"
 NO_PDF = "no PDF is installed for this issue"
@@ -631,6 +636,7 @@ class PdfInfoUnavailable(CorpusError):
 
 def read_pdf(path: Path) -> PdfMetadata:
     """Read one built PDF's page count and its own title and subject."""
+    shown = path.relative_to(ROOT) if path.is_relative_to(ROOT) else path
     try:
         completed = subprocess.run(
             [PDFINFO, str(path)], capture_output=True, text=True, check=False
@@ -641,7 +647,7 @@ def read_pdf(path: Path) -> PdfMetadata:
         ) from error
     if completed.returncode != 0:
         raise CorpusError(
-            f"{PDFINFO} failed for {path.relative_to(ROOT)}: {completed.stderr.strip()}"
+            f"{PDFINFO} failed for {shown}: {completed.stderr.strip()}"
         )
     fields: dict[str, str] = {}
     for line in completed.stdout.splitlines():
@@ -652,7 +658,7 @@ def read_pdf(path: Path) -> PdfMetadata:
         pages = int(fields.get("Pages", ""))
     except ValueError as error:
         raise CorpusError(
-            f"{PDFINFO} reported no page count for {path.relative_to(ROOT)}"
+            f"{PDFINFO} reported no page count for {shown}"
         ) from error
     return PdfMetadata(
         pages=pages, title=fields.get("Title", ""), subject=fields.get("Subject", "")
@@ -693,7 +699,8 @@ def eligible_document_ids(source_root: Path | None = None) -> set[tuple[str, str
     root = SRC if source_root is None else source_root
     eligible: set[tuple[str, str]] = set()
     for record_path in sorted(root.glob(f"*/**/{WEB_EDITION_RECORD}")):
-        if read_web_edition(record_path).get("eligibility") != "eligible":
+        record = read_web_edition(record_path)
+        if record.get("eligibility") != "eligible" or record.get("withdrawn"):
             continue
         relative = record_path.parent.relative_to(root)
         eligible.add((relative.parts[0], "/".join(relative.parts[1:])))
@@ -705,7 +712,11 @@ def eligible_document_ids(source_root: Path | None = None) -> set[tuple[str, str
 
 @dataclass(frozen=True)
 class Issue:
-    """One PDF a document builds: research, synthesis, or a homily companion."""
+    """One declared source output, with its historical canonical PDF identity.
+
+    ``pdf`` names an output identity, never a live download or availability
+    claim. ``pages`` is populated only by an explicit render inspection.
+    """
 
     kind: str
     stem: str
@@ -716,6 +727,9 @@ class Issue:
     pages: int | None
     status: str | None
     authorization: str | None
+    output_id: str = ""
+    derivation: str = "authored"
+    print_recipe: str | None = None
 
 
 @dataclass(frozen=True)
@@ -734,6 +748,10 @@ class Document:
     blocking_constructs: tuple[str, ...]
     web_page: str | None
     issues: tuple[Issue, ...]
+    withdrawn: str | None = None
+    manifest: str | None = None
+    kind: str | None = None
+    profile: str | None = None
 
     @property
     def key(self) -> tuple[str, str]:
@@ -753,42 +771,41 @@ class Document:
         return tuple(seen)
 
 
-def _issues_of(directory: Path, provider: str, leaf: str, extents: bool) -> tuple[Issue, ...]:
-    entries = [(FULL, directory / MAIN, leaf)]
-    if (directory / SYNTHESIS).is_file():
-        entries.append((SYNTHESIS_ISSUE, directory / SYNTHESIS, leaf + SYNTHESIS_SUFFIX))
-
-    # A homily is independently composed inside the canonical source owner.
-    # Only a versioned manifest establishes it as a companion issue.
-    from _proper_components import companion_owner
-    companion = companion_owner(directory.parents[len(Path(leaf).parts) - 1], leaf + HOMILY_SUFFIX)
-    if companion is not None:
-        entries.append((HOMILY_ISSUE, companion[1], leaf + HOMILY_SUFFIX))
-
+def _issues_of(publication: dict, extents: bool, root: Path) -> tuple[Issue, ...]:
+    provider = publication["provider"]
     issues = []
-    for kind, entry, stem in entries:
-        pdf = PDF_ROOT / provider / f"{stem}.pdf"
-        built = pdf.is_file() and not pdf.is_symlink()
-        record_path = PUBLICATION_ROOT / provider / f"{stem}.json"
+    for output in publication["outputs"]:
+        kind = FULL if output["role"] == "canonical" else output["role"]
+        # Output IDs remain exact and provider-qualified in the manifest.
+        output_id = output["id"]
+        prefix = provider + "/"
+        stem = output_id[len(prefix):] if output_id.startswith(prefix) else output_id
+        entry = root / output["source_path"]
+        pdf_identity = f"pdf/{provider}/{stem}.pdf"
+        pdf = root / pdf_identity
+        record_path = root / "release/publications" / provider / f"{stem}.json"
         record = read_publication(record_path) if record_path.is_file() else {}
         issues.append(
             Issue(
                 kind=kind,
                 stem=stem,
-                entry=entry.relative_to(ROOT).as_posix(),
-                title=title_of(entry, provider),
-                pdf=pdf.relative_to(ROOT).as_posix() if built else None,
-                pdf_absent=None if built else NO_PDF,
-                pages=read_pdf(pdf).pages if built and extents else None,
+                entry=entry.relative_to(root).as_posix(),
+                title=title_of(entry, provider, root=root),
+                pdf=pdf_identity,
+                pdf_absent=None,
+                pages=read_pdf(pdf).pages if extents and pdf.is_file() else None,
                 status=record.get("status"),
                 authorization=record.get("authorization"),
+                output_id=output_id,
+                derivation=output["derivation"],
+                print_recipe=entry.relative_to(root).as_posix(),
             )
         )
     return tuple(issues)
 
 
-def _catalog_of(provider: str, leaf: str) -> str | None:
-    record_path = PUBLICATION_ROOT / provider / f"{leaf}.json"
+def _catalog_of(provider: str, leaf: str, root: Path = ROOT) -> str | None:
+    record_path = root / "release/publications" / provider / f"{leaf}.json"
     if not record_path.is_file():
         return None
     return read_publication(record_path).get("catalog")
@@ -796,32 +813,36 @@ def _catalog_of(provider: str, leaf: str) -> str | None:
 
 @functools.lru_cache(maxsize=8)
 def documents(
-    *, providers: tuple[str, ...] = PROVIDERS, extents: bool = True
+    *, providers: tuple[str, ...] = PROVIDERS, extents: bool = False,
+    root: Path | None = None,
 ) -> tuple[Document, ...]:
     """Read every document under the given providers, in (provider, leaf) order.
 
-    ``extents=False`` skips the `pdfinfo` pass, which is the only part of this
-    that shells out. A caller that wants names and authorship and not page
-    counts should use it; a caller that wants to compare against the built PDF
-    must not.
-
-    Memoized per argument pair. With ``extents=True`` this starts one `pdfinfo`
-    per document --- 188 processes, 1.37s --- and the test suite asks for the
-    same catalogue about eight times in a run. Both arguments are hashable and
-    `Document` is a frozen dataclass in a tuple, so the cached answer cannot be
-    edited by one caller under another. It caches for the life of a process: a
-    long-lived one that rebuilds a PDF and expects a new page count from the
-    same process must call `documents.cache_clear()`, which no caller does
-    today because every one of them is a short-lived command.
+    ``publication.toml`` is the output inventory. The schema adapter handles
+    unmigrated legacy leaves and is the sole owner of that compatibility walk.
+    ``extents=True`` explicitly inspects local renderings; the default never
+    needs PDF bytes, Poppler, or an installed build tree. Results are cached
+    for the life of the process; callers changing sources must clear the cache.
     """
     found: list[Document] = []
+    from _document_schema import SchemaError, discover
+
+    repository = ROOT if root is None else root
+    try:
+        publications = discover(repository)
+    except SchemaError as error:
+        raise CorpusError(str(error)) from error
     for provider in providers:
         if provider not in PROVIDERS:
             raise CorpusError(f"unknown provider: {provider}")
-        root = SRC / provider
-        for main in sorted(root.glob(f"**/{MAIN}")):
-            directory = main.parent
-            leaf = directory.relative_to(root).as_posix()
+        for publication in publications:
+            if publication["provider"] != provider:
+                continue
+            if publication.get("discovery_error"):
+                raise CorpusError(f"{publication['id']}: {publication['discovery_error']}")
+            leaf = publication["leaf"]
+            directory = repository / publication["source_dir"]
+            main = directory / publication["entrypoint"]
             record_path = directory / WEB_EDITION_RECORD
             if not record_path.is_file():
                 raise CorpusError(
@@ -834,13 +855,13 @@ def documents(
                     f"{main.relative_to(ROOT)}: no {GENERATION_METADATA} beside it"
                 )
             eligibility = str(record.get("eligibility", ""))
-            web = ROOT / "web" / provider / f"{leaf}.md"
+            web = repository / "web" / provider / f"{leaf}.md"
             found.append(
                 Document(
                     provider=provider,
                     leaf=leaf,
                     section=leaf.split("/")[0],
-                    catalog=_catalog_of(provider, leaf),
+                    catalog=_catalog_of(provider, leaf, repository),
                     provenance=read_provenance(metadata),
                     eligibility=eligibility,
                     reviewed=str(record.get("reviewed", "")),
@@ -852,7 +873,11 @@ def documents(
                         if eligibility == "eligible" and web.is_file()
                         else None
                     ),
-                    issues=_issues_of(directory, provider, leaf, extents),
+                    issues=_issues_of(publication, extents, repository),
+                    withdrawn=record.get("withdrawn"),
+                    manifest=publication["manifest_path"],
+                    kind=publication["kind"],
+                    profile=publication["profile"],
                 )
             )
     return tuple(found)

@@ -8,8 +8,12 @@ review, and publication rules remain in force.
 
 The family belongs under
 `src/<provider>/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/`.
-The owner root is non-publishable. Its independently printable leaves mirror
-under `build/<provider>/` and `pdf/<provider>/`.
+The owner root is non-publishable. Each leaf declares its type, canonical object
+and artwork selections, and output entrypoints in `publication.toml` under
+[document schemas](../document-schemas.md). Existing structured object, artwork,
+and plate owners remain canonical. Physical composition and PDF checks below
+govern [optional print exports](../../docs/printing.md); source/HTML publication
+validates the selected source graph and its actual visual output.
 
 ## Governing priorities
 
@@ -215,7 +219,8 @@ print trial, photocopy trial, intended-reader test, or external artwork review.
 
 The production manifest records `source_audit_status`,
 `rights_status`, `safety_status`, `production_status`,
-`alpha_status`, and the exact installed artifact identity. `published` records
+`alpha_status`, and the exact source/output identity; completed print reviews
+add their exact exported artifact identities. `published` records
 deployment of that verified alpha artifact and does not imply a higher
 editorial or external-approval state.
 
@@ -229,16 +234,21 @@ equivalent, `completeness-matrix.md`, `variant-register.md`,
 `production-manifest.md`. Each leaf keeps `research/guide-map.md`, source
 bindings where required, generation metadata, and a web-edition declaration.
 
-Before installation or release:
+Before source or HTML publication:
 
 1. close and audit the declared corpus and completeness matrix;
 2. reconcile every rendered name, status, use, handler, variant, and source
    key with the inventory;
 3. reconcile all plate and artwork IDs with their manifests;
-4. inspect every page and ambiguous figure at rendered full size;
-5. verify mechanically that representative dense, linen, vestment, and
-   composition plates remain legible in monochrome at their declared size;
+4. inspect every displayed plate and ambiguous figure at its intended size;
+5. verify that representative dense, linen, vestment, and composition plates
+   preserve labels, scale, and legibility in the published output;
 6. verify that front apparatus does not delay visual content;
 7. verify that smaller editions contain no drifting fact or artwork; and
-8. record exact PDF identities, page counts, font and text checks, installed
-   byte identity, alpha eligibility, and deployment state.
+8. record source/schema and output validation, actual visual review, alpha
+   eligibility, and deployment state.
+
+For each selected print export, also inspect every page at full size, verify
+the declared monochrome plate-size contract, and record exact PDF identity,
+page counts, font and text checks, and full-page review. A source or HTML
+acceptance does not establish these print facts.

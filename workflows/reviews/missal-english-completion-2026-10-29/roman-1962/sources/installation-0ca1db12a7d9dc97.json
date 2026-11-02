@@ -1,0 +1,407 @@
+{
+  "schema": "triptych-reviewed-source-installation/v1",
+  "recorded_on": "2026-10-29",
+  "source_plans": [
+    {
+      "plan_sha256": "e47a9d280c99da8758b1507e0c4a553b6ed85e226465ba2367c4886676bba03e",
+      "plan_name": "install-plan-delta-temporal4.json",
+      "targets": [
+        [
+          "mass-of-the-first-sunday-after-epiphany",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        [
+          "lent-3-thursday",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        [
+          "vigil-of-the-ascension",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "lent-1-ember-saturday",
+          "longer",
+          "Hymn (Benedictus es)",
+          "all",
+          1
+        ]
+      ],
+      "source_files": [
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-temporal4-lent1-ember-saturday-hymn/artifact.toml",
+          "sha256": "f54e6ea6a3ec49a697032aee4d4b009c1aeee7c20ee35e828d489bea76510260"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-temporal4-lent1-ember-saturday-hymn/latin.txt",
+          "sha256": "39d5da4829bc7b527d62c1b4e0824033499b866469d84e070325c131aac5a52e"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-temporal4-lent3-thursday-introit/artifact.toml",
+          "sha256": "4072d3594c6ce3668cef30aeae21f90517fa533227ea0102397bc313f2fa4f39"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-temporal4-lent3-thursday-introit/latin.txt",
+          "sha256": "1d4a94ffd65472aee0499469153e1f9e9f4781c043c5879d2936631dd96f7fab"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-temporal4-pages/artifact.toml",
+          "sha256": "ae76701684ae0f20f95499294dc93b5d85e8b5cf72dacf31d9189ebf5eb4fe35"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-temporal4-pages/source.pdf",
+          "sha256": "3d9bd446e81901b76a5427fe8fb35410c8dfa8cab44694f7ec636fd14b4e30bb"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-temporal4-lent1-ember-saturday-hymn.toml",
+          "sha256": "ac87c644d069448a3b37c8f7015f4dede37edc5540a43dd9dabcfe354cd1ddbb"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-temporal4-lent3-thursday-introit.toml",
+          "sha256": "3534408672217b46ce87c8d4d6a87fdf6deec1e8552472ae10ce9879bfbf32f3"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/english-completion-20261029-temporal4-ascension-vigil-alleluia/artifact.toml",
+          "sha256": "00c10dcf87068e0dce18fff79a83da67c2f8eb47f32143b904f965e25c0a48f0"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/english-completion-20261029-temporal4-ascension-vigil-alleluia/latin.txt",
+          "sha256": "32693e80d4ae708b0574e7a439521fe98588b6efae2fdd2158e526e645c4f850"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/english-completion-20261029-temporal4-epiphany-ferial-introit/artifact.toml",
+          "sha256": "944e057798b2484191da1675e4b005b123f3756ea96bd11b88a50806f9819195"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/english-completion-20261029-temporal4-epiphany-ferial-introit/latin.txt",
+          "sha256": "2c3d02a567f2dccb58accebea18e01648e543c6f01c73394d9f19177a53a51d0"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/english-completion-20261029-temporal4-pages/artifact.toml",
+          "sha256": "15ec0464852a9aca24534cd2e1bc9800a5188de44f75718dd557767c1719096f"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/english-completion-20261029-temporal4-pages/source.pdf",
+          "sha256": "b9b6eaab5de270962d10d7038eabb7599b76a585b18b1b98a35beba07e2eb311"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/english-completion-20261029-temporal4-ascension-vigil-alleluia.toml",
+          "sha256": "02f5f1e1f5022e9a40df116f1dd002d06b137d3df65c30113deb83d28a01e767"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/english-completion-20261029-temporal4-epiphany-ferial-introit.toml",
+          "sha256": "921b2f333f751c84b57df92a00db562880b09b4a1bf73b390935e79f9cdc2c4f"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-temporal4-ascension-vigil-alleluia-target.toml",
+          "sha256": "0659515794ac03c0d2d2226d7b5b094872ee8fff99e058a353ae5289f5f981dd"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-temporal4-epiphany-ferial-introit-target.toml",
+          "sha256": "b3f505dd94f1959f90e69dd097f27cd7f8523bb5cf3cf49092d2e5dee869abb2"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-temporal4-lent1-ember-saturday-hymn-target.toml",
+          "sha256": "85780d4c69ffef34dca40daf5a5ca20b26f93ab8c27e37aa5ce4de0a65f703e9"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-temporal4-lent3-thursday-introit-target.toml",
+          "sha256": "9ce713bfd9da15d19fc694a74ef881b6322894d0d50e139a1515bff670b074f3"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-temporal4-ascension-vigil-alleluia/artifact.toml",
+          "sha256": "c68a920566ec1519115e3ee27b2ea24ad6d998911b2e97c64bb50e8281306c42"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-temporal4-ascension-vigil-alleluia/latin.txt",
+          "sha256": "1c9cd92566a9c66be51406f5333a197b1cd7f97cb91434ab8d1116e6a16d8a45"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-temporal4-epiphany-ferial-introit/artifact.toml",
+          "sha256": "05ba23fdddc7032501296835e3d2b563a2fc7c0f27165e96b528819dc0d28540"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-temporal4-epiphany-ferial-introit/latin.txt",
+          "sha256": "b88ee0082ae7dc4b9d8199df2660d98c9f31ac691153825b791eccbe898973a1"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-temporal4-lent1-ember-saturday-hymn/artifact.toml",
+          "sha256": "37da11e803f8cd6af5723b0d064a9b6366cd6f51e6717aa1e4749df8cf902584"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-temporal4-lent1-ember-saturday-hymn/latin.txt",
+          "sha256": "3c7101578472c4ffbd39978633095d9e77760331d06227e692815ae1a15edf63"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-temporal4-ascension-vigil-alleluia.toml",
+          "sha256": "01e66b47e4334160818d89b5f201a331a027f7693b5a0557c15abc6bf5595549"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-temporal4-epiphany-ferial-introit.toml",
+          "sha256": "e18b4e327ce4852236fbad407ef1ad3beeff437995e7ec8e2577dc855ca5692d"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-temporal4-lent1-ember-saturday-hymn.toml",
+          "sha256": "51b596b1cbebf6e95bff9144ebd64a50bd0ded63d4a92c1fb454cd0e9494b44a"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "target": [
+        "mass-of-the-first-sunday-after-epiphany",
+        "main",
+        "Introit",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Introit",
+        "incipit": "In excelso throno vidi sedere virum",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 99,
+                  "verse": 1
+                },
+                "end": {
+                  "chapter": 99,
+                  "verse": 1
+                }
+              }
+            ],
+            "ref": "Psalm 99:1"
+          }
+        ],
+        "notes": "Missale Romanum 1962, artifact p. 121, printed p. 40, unit 273: the principal antiphon In excelso throno is uncited literal wording; only its following psalm verse is cited as Ps. 99, 1. The whole literal body is unavailable and must not be replaced by the psalm companion alone.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "mass-of-the-first-sunday-after-epiphany",
+        "form_id": "main",
+        "proper": "Introit",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal appointment."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "d49e8f5462ef951af2dc8b0cc608eaadf67c8de52760a83725a06c7748ce19ee",
+      "new_english_sha256": "eb328f37707f1da70f38f69ea9777bcca6d9f75f09fb8b762090543d58ae1874",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-9c33ee46ae774254.json"
+    },
+    {
+      "target": [
+        "lent-3-thursday",
+        "main",
+        "Introit",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Introit",
+        "incipit": "Salus populi ego sum",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 77,
+                  "verse": 1
+                },
+                "end": {
+                  "chapter": 77,
+                  "verse": 1
+                }
+              }
+            ],
+            "ref": "Psalm 77:1"
+          }
+        ],
+        "notes": "Missale Romanum 1962, Proprium de tempore, printed p. 98, artifact PDF p. 179, numbered unit 646, L column. The Introit prints an uncited literal antiphon before its Psalm 77:1 verse; that antiphon is not supplied by the Scripture citation.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "lent-3-thursday",
+        "form_id": "main",
+        "proper": "Introit",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is attached to this source-appointed normal Proper; a Scripture constituent or Common body does not supply this own body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "1457e5b3789d09e56970813787d4890e4fd899dde45b1641a28be4ab6e97a7ae",
+      "new_english_sha256": "2cac7bab5698efc199e799e14fe2784a8f485fbc353340380dd1e5615fdc5a2a",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-9c33ee46ae774254.json"
+    },
+    {
+      "target": [
+        "vigil-of-the-ascension",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "incipit": "Surrexit Christus, et illuxit nobis",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "John",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 16,
+                  "verse": 28
+                },
+                "end": {
+                  "chapter": 16,
+                  "verse": 28
+                }
+              }
+            ],
+            "ref": "John 16:28"
+          }
+        ],
+        "notes": "Missale Romanum 1962, artifact p. 431, printed p. 350, numbered unit 1276; this normal Alleluia also appoints a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "vigil-of-the-ascension",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established normal appointment. Its Scripture component does not supply the uncited Missal wording."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "f4227a0e02bd77669a65befc20a943b49ed128080b18c365a8aea093e384125b",
+      "new_english_sha256": "f61916d5034d587152bf6d646a75ae02dcbab411da2f05db747531f6890ba82c",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-9c33ee46ae774254.json"
+    },
+    {
+      "target": [
+        "lent-1-ember-saturday",
+        "longer",
+        "Hymn (Benedictus es)",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Hymn (Benedictus es)",
+        "incipit": "Benedictus es, Domine Deus patrum nostrorum",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Daniel",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 3,
+                  "verse": 52
+                },
+                "end": {
+                  "chapter": 3,
+                  "verse": 56
+                }
+              }
+            ],
+            "ref": "Daniel 3:52-56"
+          }
+        ],
+        "notes": "Missale Romanum 1962, Proprium de tempore, printed p. 75, artifact PDF p. 156, numbered unit 508, R column. The Hymnus continues beyond its printed Daniel 3:52-56 citation with additional acclamations and a doxology; the complete literal hymn is not supplied by that citation.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "lent-1-ember-saturday",
+        "form_id": "longer",
+        "proper": "Hymn (Benedictus es)",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is attached to this source-appointed normal Proper; a Scripture constituent or Common body does not supply this own body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "cece4dbbc23043dfaa03725e0107868ed24fc05eb646e6d75d9c191da880f912",
+      "new_english_sha256": "a0922c774b63426aa3831a9d4943b5e50db6f2e29572e6eb335c5b4aac32157b",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-9c33ee46ae774254.json"
+    }
+  ],
+  "after_hashes": {
+    "src/sources/calendars/roman-1962/propers.yaml": "1bd63d467f5ceaf5a5e1632a03de433e7cb69a14c45c95ef5fe942837b7ece55",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "65542ed1aa69780171a3a9829fc3953aaa9a365054257e32a6a01191a8d4319d",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "1aa65b28f8e890c715ce90496ec2fe8f0ac8619fe7b7b1c32a47a0fdb3dcdf2d"
+  }
+}

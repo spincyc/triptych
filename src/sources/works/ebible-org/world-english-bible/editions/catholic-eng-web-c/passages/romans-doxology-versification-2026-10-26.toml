@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.ebible-org.world-english-bible.catholic-eng-web-c.romans-doxology-versification-2026-10-26"
+edition_id = "edition.ebible-org.world-english-bible.catholic-eng-web-c"
+artifact_id = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.usfm-75-romeng-web-c-35fc9b00"
+artifact_sha256 = "35fc9b00970d6a15bcc5b897335009d9a79ff7c1796ab64ea7b315bc3f3bf6a1"
+locus = "Rom.14.24-26"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-26"
+context = "Publisher-owned explicit whole-verse correspondence between native Romans 14:24-26 and the conventional Romans 16:25-27 doxology coordinates."
+notes = "The exact complete raw Romans USFM book is retained as the controller. Native bodies at physical lines 541-543 and the publisher footnote on 543 place native 14:24-26 after Romans 16:24 as 16:25-27. The reciprocal publisher footnote at physical 627, at the otherwise text-free native 16:25 marker, states the same relocation and numbering. Physical ranges address the retained UTF-8 USFM file itself. These three normalized bodies equal the existing Romans TSV lines 375-377 after its declared footnote omission. No fuzzy alignment or inferred offset supplies this relation. The parent wholeZIP is remote with unresolved modern-support-file rights; its complete raw Bible book member is retained under its separate checked Bible-text basis."
+physical_line_ranges = [[541, 543], [627, 627]]

@@ -1,0 +1,649 @@
+{
+  "schema": "triptych-independent-papal-source-and-english-review/v1",
+  "reviewed_on": "2026-10-29",
+  "status": "five-source-and-conditional-english-passes-v2-metadata-corrections-verified-no-rights-adoption",
+  "frozen_candidate": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/dispositions.json",
+  "frozen_candidate_sha256": "2246897447793c9daee2d9f71718cbbd314de0d5ff08f5a8513ab123aa43fde7",
+  "scope": "Clement Collect/Secret/Postcommunion; Zephyrinus Collect; Sylvester Collect; bounded Urban negative check. Lawrence Collect deliberately excluded and not reviewed.",
+  "method": "Independent whole-PDF SHA-256 recomputation; fresh pdftoppm full-page renders at 200 and 400 dpi; every listed image opened with view_image and the exact appointment, complete prayer, endings and source delta read directly. OCR did not supply any reading. Candidate English independently compared with actual target Latin. No producer image or producer assertion substituted for fresh source reading.",
+  "render_recipe": "pdftoppm -f PAGE -l PAGE -singlefile -r DPI -png WHOLE_PDF OUTPUT_PREFIX",
+  "guidance_read_completely": [
+    "guidance/sources.md",
+    "guidance/missals.md",
+    "guidance/propers-for-agents.md",
+    "guidance/liturgical-text-publication-policy.md",
+    "guidance/external-review-handoffs.md"
+  ],
+  "tool_registry_read_before_script": "tmt.json; no registered tool owns this one-off source/English judgment or its JSON report",
+  "whole_artifacts": [
+    {
+      "path": ".scratch/c1-retry-1962/missale62.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "byte_size": 82815941
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/sacramentariumle00cath.pdf",
+      "sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+      "byte_size": 19868448
+    },
+    {
+      "path": ".scratch/c1-pre1955/download/mame1922.pdf",
+      "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "byte_size": 51720493
+    }
+  ],
+  "received_source_receipt": {
+    "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/candidate2.json",
+    "sha256": "e82348a664e4dcad64a2063da2ef63b23aaf6aeb2e2e8099adeab284e7876eee",
+    "role": "Received source leads and proposed foundation records; all source images used for the five-target conclusion freshly checked independently here."
+  },
+  "images_seen": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/target-805-200.png",
+      "sha256": "c33e8454d8f4d29968331d225027b8bcae1aaa4e3014ae790ad61443f2bccd8b",
+      "byte_size": 246853,
+      "whole_pdf": ".scratch/c1-retry-1962/missale62.pdf",
+      "whole_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "artifact_page": 805,
+      "dpi": 200,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/target-805-400.png",
+      "sha256": "2c8abe630348e9ecfa562dea2172f92fa0e4e2dd9ff8396df01c6ad487266bdb",
+      "byte_size": 274431,
+      "whole_pdf": ".scratch/c1-retry-1962/missale62.pdf",
+      "whole_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "artifact_page": 805,
+      "dpi": 400,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/target-719-200.png",
+      "sha256": "26351ccc5d5d01d1c9d74edfa63ec7cffd87aeee11eaffc984585b802a9ee356",
+      "byte_size": 228665,
+      "whole_pdf": ".scratch/c1-retry-1962/missale62.pdf",
+      "whole_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "artifact_page": 719,
+      "dpi": 200,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/target-719-400.png",
+      "sha256": "9c9d0c9b8611f26944e78ed6eef3a1c964061f8d20ee82f4ed6660687e9b69dc",
+      "byte_size": 265621,
+      "whole_pdf": ".scratch/c1-retry-1962/missale62.pdf",
+      "whole_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "artifact_page": 719,
+      "dpi": 400,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/target-112-200.png",
+      "sha256": "f971497f87de24fc33097602e3b03e8401b8d9fee21065982afd2f3f4010d9d4",
+      "byte_size": 224662,
+      "whole_pdf": ".scratch/c1-retry-1962/missale62.pdf",
+      "whole_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "artifact_page": 112,
+      "dpi": 200,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/target-112-400.png",
+      "sha256": "8e2f3d7409fa7bd302e4f79390062e6fb25ef4df6876781ff0ae093e49d63a79",
+      "byte_size": 251614,
+      "whole_pdf": ".scratch/c1-retry-1962/missale62.pdf",
+      "whole_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "artifact_page": 112,
+      "dpi": 400,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/target-806-200.png",
+      "sha256": "e63f6bfc7ba8081b3d35f6833182544d60d5f102871907ef8fc90ab629827882",
+      "byte_size": 220832,
+      "whole_pdf": ".scratch/c1-retry-1962/missale62.pdf",
+      "whole_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "artifact_page": 806,
+      "dpi": 200,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/target-806-400.png",
+      "sha256": "4d9ddc7134ea09076ec6440cf772039dbc8a14fe8440fea62710a66fdb30b317",
+      "byte_size": 249168,
+      "whole_pdf": ".scratch/c1-retry-1962/missale62.pdf",
+      "whole_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "artifact_page": 806,
+      "dpi": 400,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/target-616-200.png",
+      "sha256": "be22f3bf32db15a75cb22168f605cbae4de294cd6e4650930aef623888193ef5",
+      "byte_size": 228219,
+      "whole_pdf": ".scratch/c1-retry-1962/missale62.pdf",
+      "whole_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "artifact_page": 616,
+      "dpi": 200,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/target-616-400.png",
+      "sha256": "ccaf64f195fd5ce7d25d8608c30b597881524d3ef4e33e6d4f544c7e0bb1295b",
+      "byte_size": 253364,
+      "whole_pdf": ".scratch/c1-retry-1962/missale62.pdf",
+      "whole_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "artifact_page": 616,
+      "dpi": 400,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/target-810-200.png",
+      "sha256": "0a8b1eea53f208ace5198f5eae6be37ca3bbd2679b467895c0d3ade363a38139",
+      "byte_size": 286600,
+      "whole_pdf": ".scratch/c1-retry-1962/missale62.pdf",
+      "whole_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "artifact_page": 810,
+      "dpi": 200,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/target-810-400.png",
+      "sha256": "1e9c88600c33424ad4ccc7915bb1ce0a0f463008e4e2b1db1050afc5e1760b41",
+      "byte_size": 362139,
+      "whole_pdf": ".scratch/c1-retry-1962/missale62.pdf",
+      "whole_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "artifact_page": 810,
+      "dpi": 400,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/feltoe-66-200.png",
+      "sha256": "9f42c6a7a4f0530084b8c17c05366ef6fa1d742297b6468e2a29df33965c9f16",
+      "byte_size": 1106074,
+      "whole_pdf": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/sacramentariumle00cath.pdf",
+      "whole_pdf_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+      "artifact_page": 66,
+      "dpi": 200,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/feltoe-66-400.png",
+      "sha256": "5540c325c2b6453307a542f8dd2a6132c38ae26cfb8c33a787806821865b6f51",
+      "byte_size": 1755098,
+      "whole_pdf": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/sacramentariumle00cath.pdf",
+      "whole_pdf_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+      "artifact_page": 66,
+      "dpi": 400,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/feltoe-24-200.png",
+      "sha256": "df0fa7a69bef3ecb6def7fb528f8f9f6fa142bf41cb9fffda801413490f8c3e3",
+      "byte_size": 490238,
+      "whole_pdf": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/sacramentariumle00cath.pdf",
+      "whole_pdf_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+      "artifact_page": 24,
+      "dpi": 200,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/feltoe-24-400.png",
+      "sha256": "727667dcfd4fc2c5cfd41e3c808a18b6cc9df1b7bce8026fc644982bfce4e2ee",
+      "byte_size": 749613,
+      "whole_pdf": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/sacramentariumle00cath.pdf",
+      "whole_pdf_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+      "artifact_page": 24,
+      "dpi": 400,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/feltoe-155-200.png",
+      "sha256": "6a7a3aba88457c1ca246bf5fe31a37bd6d94f26213dbc6079715334cfe430390",
+      "byte_size": 1079080,
+      "whole_pdf": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/sacramentariumle00cath.pdf",
+      "whole_pdf_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+      "artifact_page": 155,
+      "dpi": 200,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/feltoe-155-400.png",
+      "sha256": "3034c6acec7c376548fa9b6c952a56f283c56fb5c3c6e30b61746ead4fad2c86",
+      "byte_size": 1692529,
+      "whole_pdf": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/sacramentariumle00cath.pdf",
+      "whole_pdf_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+      "artifact_page": 155,
+      "dpi": 400,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/feltoe-156-200.png",
+      "sha256": "b5146c8d32d38c1a91f4afe816f328dcdd9c4435d032589143026a92ca142adf",
+      "byte_size": 996006,
+      "whole_pdf": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/sacramentariumle00cath.pdf",
+      "whole_pdf_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+      "artifact_page": 156,
+      "dpi": 200,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/feltoe-156-400.png",
+      "sha256": "022cd3f4ca526a63f97e1e45dfeada35ba63aa4bea594e8077fc2a6c2a932725",
+      "byte_size": 1571041,
+      "whole_pdf": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/sacramentariumle00cath.pdf",
+      "whole_pdf_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+      "artifact_page": 156,
+      "dpi": 400,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/mame-368-200.png",
+      "sha256": "027020774d7243f20393e58ebdd686600b9b4a9c9f819c1fa403050be405b630",
+      "byte_size": 474428,
+      "whole_pdf": ".scratch/c1-pre1955/download/mame1922.pdf",
+      "whole_pdf_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "artifact_page": 368,
+      "dpi": 200,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/mame-368-400.png",
+      "sha256": "3cbbc84bdecf0afc4ddf90b9d134ac49882f4d9d4f2db719169db7e368ceaa53",
+      "byte_size": 1184327,
+      "whole_pdf": ".scratch/c1-pre1955/download/mame1922.pdf",
+      "whole_pdf_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "artifact_page": 368,
+      "dpi": 400,
+      "independently_rendered": true,
+      "actually_opened_and_read": true
+    }
+  ],
+  "results": [
+    {
+      "target": [
+        "s-clementis-i-papae-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "d57235904e4e32436dfda5e58d4ac5c98822e784725000a41d75bbc1a24d4aa8",
+      "conditional_english_sha256": "b6ef950e9c018c37eb66d0b55dfd99897c89571af088cc5064a2a5a4731275b0",
+      "target_artifact_page": 805,
+      "target_printed_page": "724",
+      "target_unit": 4145,
+      "target_appointment_pass": true,
+      "target_normalized_transcription_pass": true,
+      "historical_whole_foundation_pass": true,
+      "historical_foundation_text_sha256": "8a39ba82e96ddf5c1c465a8d793313f53d3e3091e29d41708cacc467bc6dc446",
+      "literal_feltoe_target_whole_word_identity": false,
+      "conditional_english_fidelity_pass": true,
+      "english_unprinted_formula_expansion": false,
+      "source_and_english_status": "pass-with-rights-reserved",
+      "rights": {
+        "adopted_by_this_review": false,
+        "existing_finite_grant_covers_this_target": false,
+        "publication_is_conditional": true,
+        "required": "Separate exact-tuple whole-arrangement rights assessment and adoption by the coordinating root. Source and English acceptance does not make this target publicly admissible."
+      },
+      "source_pages_seen": [
+        "feltoe-66-200.png",
+        "feltoe-66-400.png",
+        "feltoe-24-200.png",
+        "feltoe-24-400.png"
+      ],
+      "source_finding": "The complete continuous Gregem prayer is printed at Feltoe p.42 lines8-10/PDF66; the same edition Addenda and Corrigenda/PDF24 explicitly changes Pater to Pastor. This is a corrected critical printed witness, not a claim to a manuscript diplomatic transcription. The prayer precedes the XIIII Item alia heading.",
+      "delta_verified": [
+        "bone becomes aeterne.",
+        "Plural beatos apostolos becomes the exact named singular recipient and office; Clement and Zephyrinus include Martyrem tuum atque, Sylvester does not.",
+        "quos/pastores become quem/pastorem and Filii tui vicarios is removed.",
+        "The historical per. is distinct from the exact target conclusion; pointing, case, accents and linewrap are normalized as declared."
+      ],
+      "actual_target_conclusion": "Per Dominum.",
+      "english_finding": "The successor keeps the gracious regard and protection of the flock, exact saint/rank and appointment as shepherd of the whole Church. Its whom you appointed relative clause directly represents quem. Revised object placement is clear, and the printed conclusion is still rendered at its actual length without expansion.",
+      "prior_record_corrections": [],
+      "record_corrections_required": []
+    },
+    {
+      "target": [
+        "comm-s-zephyrini-papae-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "f8732dcb77e4139160ed879dc19947b26595c5d3541442c3f9ec67cc5bf774ad",
+      "conditional_english_sha256": "61c79d48d465c680752abb21b09fc108917ab200570a3840f9eea6c14ea30337",
+      "target_artifact_page": 719,
+      "target_printed_page": "638",
+      "target_unit": 3465,
+      "target_appointment_pass": true,
+      "target_normalized_transcription_pass": true,
+      "historical_whole_foundation_pass": true,
+      "historical_foundation_text_sha256": "8a39ba82e96ddf5c1c465a8d793313f53d3e3091e29d41708cacc467bc6dc446",
+      "literal_feltoe_target_whole_word_identity": false,
+      "conditional_english_fidelity_pass": true,
+      "english_unprinted_formula_expansion": false,
+      "source_and_english_status": "pass-with-rights-reserved",
+      "rights": {
+        "adopted_by_this_review": false,
+        "existing_finite_grant_covers_this_target": false,
+        "publication_is_conditional": true,
+        "required": "Separate exact-tuple whole-arrangement rights assessment and adoption by the coordinating root. Source and English acceptance does not make this target publicly admissible."
+      },
+      "source_pages_seen": [
+        "feltoe-66-200.png",
+        "feltoe-66-400.png",
+        "feltoe-24-200.png",
+        "feltoe-24-400.png"
+      ],
+      "source_finding": "The complete continuous Gregem prayer is printed at Feltoe p.42 lines8-10/PDF66; the same edition Addenda and Corrigenda/PDF24 explicitly changes Pater to Pastor. This is a corrected critical printed witness, not a claim to a manuscript diplomatic transcription. The prayer precedes the XIIII Item alia heading.",
+      "delta_verified": [
+        "bone becomes aeterne.",
+        "Plural beatos apostolos becomes the exact named singular recipient and office; Clement and Zephyrinus include Martyrem tuum atque, Sylvester does not.",
+        "quos/pastores become quem/pastorem and Filii tui vicarios is removed.",
+        "The historical per. is distinct from the exact target conclusion; pointing, case, accents and linewrap are normalized as declared."
+      ],
+      "actual_target_conclusion": "Per Dominum.",
+      "english_finding": "The successor keeps the gracious regard and protection of the flock, exact saint/rank and appointment as shepherd of the whole Church. Its whom you appointed relative clause directly represents quem. Revised object placement is clear, and the printed conclusion is still rendered at its actual length without expansion.",
+      "prior_record_corrections": [],
+      "record_corrections_required": []
+    },
+    {
+      "target": [
+        "comm-s-silvestri-i-papae-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "61fa6b8ea693b00660f9d11521ac5f6330018be9982109845a252f53cd056f53",
+      "conditional_english_sha256": "ade447541d35d66591e06aafaba4bfc9e9f20bb633e004a2a051256a9d8e1868",
+      "target_artifact_page": 112,
+      "target_printed_page": "31",
+      "target_unit": 220,
+      "target_appointment_pass": true,
+      "target_normalized_transcription_pass": true,
+      "historical_whole_foundation_pass": true,
+      "historical_foundation_text_sha256": "8a39ba82e96ddf5c1c465a8d793313f53d3e3091e29d41708cacc467bc6dc446",
+      "literal_feltoe_target_whole_word_identity": false,
+      "conditional_english_fidelity_pass": true,
+      "english_unprinted_formula_expansion": false,
+      "source_and_english_status": "pass-with-rights-reserved",
+      "rights": {
+        "adopted_by_this_review": false,
+        "existing_finite_grant_covers_this_target": false,
+        "publication_is_conditional": true,
+        "required": "Separate exact-tuple whole-arrangement rights assessment and adoption by the coordinating root. Source and English acceptance does not make this target publicly admissible."
+      },
+      "source_pages_seen": [
+        "feltoe-66-200.png",
+        "feltoe-66-400.png",
+        "feltoe-24-200.png",
+        "feltoe-24-400.png"
+      ],
+      "source_finding": "The complete continuous Gregem prayer is printed at Feltoe p.42 lines8-10/PDF66; the same edition Addenda and Corrigenda/PDF24 explicitly changes Pater to Pastor. This is a corrected critical printed witness, not a claim to a manuscript diplomatic transcription. The prayer precedes the XIIII Item alia heading.",
+      "delta_verified": [
+        "bone becomes aeterne.",
+        "Plural beatos apostolos becomes the exact named singular recipient and office; Clement and Zephyrinus include Martyrem tuum atque, Sylvester does not.",
+        "quos/pastores become quem/pastorem and Filii tui vicarios is removed.",
+        "The historical per. is distinct from the exact target conclusion; pointing, case, accents and linewrap are normalized as declared."
+      ],
+      "actual_target_conclusion": "Per Dominum nostrum.",
+      "english_finding": "The successor keeps the gracious regard and protection of the flock, exact saint/rank and appointment as shepherd of the whole Church. Its whom you appointed relative clause directly represents quem. Revised object placement is clear, and the printed conclusion is still rendered at its actual length without expansion.",
+      "prior_record_corrections": [],
+      "record_corrections_required": []
+    },
+    {
+      "target": [
+        "s-clementis-i-papae-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "85e15b6f86d5c6f8c122d9c2c70203102ad0659a6006d502467d9e1afb0628de",
+      "conditional_english_sha256": "74cdb18eeb765ef8880cf4058948da0500870f8fe56b1fd485edda9fbecb8837",
+      "target_artifact_page": 806,
+      "target_printed_page": "725",
+      "target_unit": 4152,
+      "target_appointment_pass": true,
+      "target_normalized_transcription_pass": true,
+      "historical_whole_foundation_pass": true,
+      "historical_foundation_text_sha256": "fdc2bf11d80c2c291cc2ba671799732e3143594678d06905e747a08dfdd91934",
+      "literal_feltoe_target_whole_word_identity": false,
+      "conditional_english_fidelity_pass": true,
+      "english_unprinted_formula_expansion": false,
+      "source_and_english_status": "pass-with-rights-reserved",
+      "rights": {
+        "adopted_by_this_review": false,
+        "existing_finite_grant_covers_this_target": false,
+        "publication_is_conditional": true,
+        "required": "Separate exact-tuple whole-arrangement rights assessment and adoption by the coordinating root. Source and English acceptance does not make this target publicly admissible."
+      },
+      "source_pages_seen": [
+        "feltoe-155-200.png",
+        "feltoe-155-400.png",
+        "mame-368-200.png",
+        "mame-368-400.png"
+      ],
+      "source_finding": "Feltoe p.131 lines1-3/PDF155 has the complete continuous Ecclesiam tuam prayer. Its Domine is a printed abbreviation, expanded explicitly in the source passage record. Mame1922 p.254/PDF368 has the contiguous conventional Latin formula that includes every word through the Clement target stop in unitate; the source continues beyond that stop.",
+      "delta_verified": [
+        "Add Oblatis muneribus and quaesumus.",
+        "Move Domine from after Ecclesiam tuam to before Ecclesiam tuam.",
+        "inlumina becomes illumina; accent, case, pointing and linewrap normalization are separate from lexical additions.",
+        "Feltoe ends per.; Clement actually prints Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate. Mame independently witnesses this contiguous formula prefix, with routine orthographic/pointing differences; no later formula words are supplied."
+      ],
+      "actual_target_conclusion": "Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.",
+      "english_finding": "Offered gifts, supplication, gracious illumination of the Church, progress of the flock everywhere, and shepherds pleasing to the divine name under divine governance are represented without an added petition. Through our Lord Jesus Christ, your Son, who lives and reigns with you in unity corresponds to the actual printed target ending. It adds no Holy Spirit, God or age formula beyond in unitate.",
+      "prior_record_corrections": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "record_corrections_required": []
+    },
+    {
+      "target": [
+        "s-clementis-i-papae-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "bfd0be06cd5ff6e036d7a9e22ee73a2bec99a413c24cc12baefc939a3db52bce",
+      "conditional_english_sha256": "b0a0a3f7de33960f9bfa9027b2b46a033fbf72666b8569ad23788ffb9ecde6ab",
+      "target_artifact_page": 806,
+      "target_printed_page": "725",
+      "target_unit": 4155,
+      "target_appointment_pass": true,
+      "target_normalized_transcription_pass": true,
+      "historical_whole_foundation_pass": true,
+      "historical_foundation_text_sha256": "645977e3cc77723f71e6778525efae2c62f9cdfdae664a4839ac89bc74335a9c",
+      "literal_feltoe_target_whole_word_identity": false,
+      "conditional_english_fidelity_pass": true,
+      "english_unprinted_formula_expansion": false,
+      "source_and_english_status": "pass-with-rights-reserved",
+      "rights": {
+        "adopted_by_this_review": false,
+        "existing_finite_grant_covers_this_target": false,
+        "publication_is_conditional": true,
+        "required": "Separate exact-tuple whole-arrangement rights assessment and adoption by the coordinating root. Source and English acceptance does not make this target publicly admissible."
+      },
+      "source_pages_seen": [
+        "feltoe-156-200.png",
+        "feltoe-156-400.png"
+      ],
+      "source_finding": "Feltoe p.132 lines9-11/PDF156 supplies one continuous Guberna prayer before XI Item alia. The complete governing prayer and arrangement are visible, but the sacramental opening in the Clement target is absent from Feltoe.",
+      "delta_verified": [
+        "Prepend Refectione sancta enutritam.",
+        "Change Guberna Domine quaesumus to guberna quaesumus Domine.",
+        "Expand printed Domine abbreviation in the historical transcription and distinguish its per. from actual target Per Dominum.; normalize typography as declared."
+      ],
+      "actual_target_conclusion": "Per Dominum.",
+      "english_finding": "The Church nourished by holy refreshment, gracious governance, direction by powerful rule, growth in freedom and persistence in religious integrity are faithfully represented. Grow in freedom conveys incrementa libertatis accipiat. Through the Lord preserves the actual cue with no invented long ending.",
+      "prior_record_corrections": [
+        "C3",
+        "C4"
+      ],
+      "record_corrections_required": []
+    }
+  ],
+  "urban_negative": {
+    "target": [
+      "comm-s-urbani-i-papae-martyris",
+      "main",
+      "Collect",
+      "all",
+      1
+    ],
+    "pass": true,
+    "status": "retain-current-body-and-English-unavailable",
+    "target_page": 616,
+    "target_printed_page": "535",
+    "target_unit": 2639,
+    "comparison_page": 810,
+    "comparison_printed_page": "[2]",
+    "comparison_unit": 4178,
+    "verified": "Urban own Collect really has virtute; the Common second singular Collect has veritate. The separate right-column Urban commemoration directive at2643A selects orations II loco. Those appointment and own-body facts remain distinct.",
+    "bounded_conclusion": "No complete older matching Urban whole arrangement has been established in the received packet. Related old fragments and a shared modern invocation do not establish that full target. This is a source/rights gap on the present record, not proof that no earlier source exists and not a finding of infringement.",
+    "scope_limit": "No Urban target body or English supplied for publication; no new corpus-wide absence claim; Feltoe related-preface page itself not freshly reviewed here because the verified own/Common mismatch and absence of a complete offered witness suffice for this bounded hold."
+  },
+  "rights_boundary": {
+    "review_type": "source and conditional English fidelity only; no new legal opinion or rights adoption",
+    "existing_record_read": "src/sources/inventories/gregem-damasus-qualified-latin-rights-v1.toml",
+    "existing_record_scope": "Exactly Common singular Collect and Damasus Collect. Its exclusions expressly include all other Common prayers or recipient fanout and English translations. None of these five candidate tuples is included.",
+    "possible_basis_only": "The exact deltas and complete older prayer arrangements make a separately reasoned finite qualified-nonoriginal-adaptation proposal under policy priority6 reviewable. Whether the cumulative theological or sacramental redaction falls below the originality threshold is for the separate rights assessor and root adoption; these source findings do not decide it.",
+    "prohibited_inferences": [
+      "No complete Feltoe/1962 prayer identity claim.",
+      "No whole1962, AAS, Lasance, or all-papal-recipient public-domain claim.",
+      "No old-printing age, project-created carrier, project-created English or Lasance English nonrenewal clears later Latin automatically.",
+      "No inferred fanout from an existing Common or Damasus finite adoption.",
+      "No universal legal rule that every appended conventional phrase or saint/rank change is nonoriginal."
+    ],
+    "required_before_tracking_or_publication": "Root must adopt the precise qualified basis for each accepted target and exact Latin hash, bind source/target/conclusion provenance and project-created English accurately, apply actual surface/attribution requirements, and keep any unadopted target unavailable."
+  },
+  "limits": [
+    "Registered edition identity and rights metadata were read; the recomputed exact whole-PDF hashes establish which bytes were reviewed. This review does not pretend to reread the entire historical books.",
+    "No independent Lasance page review or human historical-English attestation is claimed. Only the candidate project-created English is assessed here.",
+    "No independent legal-source revalidation was undertaken; rights remain conditional and the finite source review does not adopt a legal basis.",
+    "Candidate source manifests are proposed records, not a validated installed source-library graph or publication test."
+  ],
+  "writes": [
+    "This review JSON, its one-off audit script, and independently rendered evidence images within the assigned exclusive scratch directory only."
+  ],
+  "no_tracked_or_candidate_files_written": true,
+  "no_commit_push_or_delegation": true,
+  "historical_v1_record_corrections": [
+    {
+      "id": "C1",
+      "target": [
+        "s-clementis-i-papae-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "field": "new_contribution[1]",
+      "issue": "Copied Common ending delta stops at Per Dominum nostrum although the Clement target actually continues through in unitate.",
+      "correction": "Name the full actual conclusion through in unitate, its independently checked contiguous Mame1922 PDF368 prefix control, and the rule that no source words beyond that target stop are projected.",
+      "disposition": "resolved-in-independently-read-successor-v2",
+      "corrected_by_sha256": "daf5f4fcd495e1769138ed1d60c72e7ed160c30bcf5138387c806ecce45d36af"
+    },
+    {
+      "id": "C2",
+      "target": [
+        "s-clementis-i-papae-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "field": "new_contribution",
+      "issue": "The declared additions do not expressly disclose the change of Domine position.",
+      "correction": "Add Ecclesiam tuam Domine becomes Domine Ecclesiam tuam; keep the historical abbreviation expansion distinct from this word-order change.",
+      "disposition": "resolved-in-independently-read-successor-v2",
+      "corrected_by_sha256": "daf5f4fcd495e1769138ed1d60c72e7ed160c30bcf5138387c806ecce45d36af"
+    },
+    {
+      "id": "C3",
+      "targets": [
+        [
+          "s-clementis-i-papae-martyris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        [
+          "s-clementis-i-papae-martyris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ]
+      ],
+      "field": "source_review",
+      "issue": "Copied source_review says the source producer freshly read Feltoe and Lasance images; the producer explicitly reports that the old Feltoe155/156 and Lasance readings were received from a sibling. Its receiver_specific_source_review states that distinction correctly. The two fields should not leave authorship of inspection ambiguous.",
+      "correction": "Separate producer-owned target/Clement image checks, received sibling source receipt, and the independent fresh checks documented by this review. This report does not independently verify any Lasance image or English transcription.",
+      "disposition": "resolved-in-independently-read-successor-v2",
+      "corrected_by_sha256": "daf5f4fcd495e1769138ed1d60c72e7ed160c30bcf5138387c806ecce45d36af"
+    },
+    {
+      "id": "C4",
+      "target": [
+        "s-clementis-i-papae-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "field": "source_review",
+      "issue": "Whole historical and target Latin word sequences agree is ambiguous in a receiver row that retains only Feltoe older_whole. Feltoe does not contain the whole target, and this statement would be false if interpreted as referring to that foundation. The producer explains that it originally referred to a later Lasance counterpart omitted from this receiver row.",
+      "correction": "Remove the ambiguous identity statement or name and bind the separate Lasance counterpart explicitly. State literal Feltoe-to-Clement whole-word identity false; retain its added sacramental opening and word-order delta. No Lasance Latin rights clearance is inferred.",
+      "disposition": "resolved-in-independently-read-successor-v2",
+      "corrected_by_sha256": "daf5f4fcd495e1769138ed1d60c72e7ed160c30bcf5138387c806ecce45d36af"
+    }
+  ],
+  "required_record_corrections": [],
+  "reviewed_candidate": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/dispositions-v2.json",
+  "reviewed_candidate_sha256": "daf5f4fcd495e1769138ed1d60c72e7ed160c30bcf5138387c806ecce45d36af",
+  "successor_bounded_recheck": {
+    "source": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/dispositions-v2.json",
+    "sha256": "daf5f4fcd495e1769138ed1d60c72e7ed160c30bcf5138387c806ecce45d36af",
+    "supersedes": "2246897447793c9daee2d9f71718cbbd314de0d5ff08f5a8513ab123aa43fde7",
+    "five_latin_and_foundation_bodies_unchanged": true,
+    "actual_endings_unchanged": true,
+    "urban_hold_unchanged": true,
+    "three_revised_gregem_translations_read_and_passed": true,
+    "clement_secret_full_ending_and_Domine_movement_corrections_verified": true,
+    "clement_secret_and_postcommunion_source_inspection_attribution_corrected": true,
+    "feltoe_later_target_nonidentity_now_explicit": true,
+    "rights_and_adoption_remain_conditional": true,
+    "lawrence_successor_changes_not_reviewed_in_this_lane": true,
+    "mame_source_precision": "The independently viewed PDF368 prints Deus: before the following rubric and sung Per omnia. The formula prefix used by the Clement target ends earlier at in unitate; its reading and English do not change."
+  }
+}

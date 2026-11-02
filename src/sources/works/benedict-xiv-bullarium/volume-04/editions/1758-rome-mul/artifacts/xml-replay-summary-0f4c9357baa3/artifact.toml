@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.benedict-xiv-bullarium.volume-04.1758-rome-mul.xml-replay-summary-0f4c9357baa3"
+edition_id = "edition.benedict-xiv-bullarium.volume-04.1758-rome-mul"
+artifact_type = "mechanical-derivation-replay-summary"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC-BY-4.0"
+rights_basis = "Project-created factual identity and replay findings under CC BY4.0; source wording retains its separate historical rights."
+retrieved = "2026-10-26"
+sha256 = "0f4c9357baa304ed560a721da882789e47bcf20a490798cde6202b41ed364f30"
+byte_size = 3308
+path = "src/sources/works/benedict-xiv-bullarium/volume-04/editions/1758-rome-mul/artifacts/xml-replay-summary-0f4c9357baa3/summary.json"
+derived_from = "artifact.benedict-xiv-bullarium.volume-04.1758-rome-mul.xml-1c8a7e89e77d"
+support_artifacts = [{ artifact_id = "artifact.benedict-xiv-bullarium.volume-04.1758-rome-mul.offered-ocr-459bb1400c39", embedded_reference = "offered-ocr.txt" }, { artifact_id = "artifact.benedict-xiv-bullarium.volume-04.1758-rome-mul.ocr-f846e3d09d9a", embedded_reference = "ocr.txt" }]
+provenance = "Exact input digests and measured counts from the acquired XML representation audit, plus byte-identical standalone recipe replay. No source wording reconstructed or corrected."
+notes = "Large acquisition mismatch arrays and scratch-dependent original recipe remain separately preserved acquisition evidence; canonical input regeneration uses the small self-contained archived recipe."
+transformation = "Record exact whole input identities, native/offered token counts and mismatch-span count; independently run the archived SHA-pinned XML serializer and compare its whole output byte for byte. Summary contains no lexical repair or source reconstruction."

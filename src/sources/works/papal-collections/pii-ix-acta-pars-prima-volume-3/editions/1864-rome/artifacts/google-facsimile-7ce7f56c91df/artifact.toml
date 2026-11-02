@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome.google-facsimile-7ce7f56c91df"
+edition_id = "edition.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome"
+artifact_type = "complete-volume-image-facsimile"
+media_type = "application/pdf"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The 1864 historical printing is separately assessed as public domain in the United States. The full modern Google PDF includes introductory wrapper pages and separate Google mark objects, whose distribution basis is not established by that historical publication. This record does not retain or redistribute the whole modern delivery."
+source_url = "http://www.documentacatholicaomnia.eu/01p/1846-1878,_SS_Pius_IX,_Pontificis_Maximi_acta_Pars_I_Vol_03,_LT.pdf"
+retrieved = "2026-10-26"
+sha256 = "7ce7f56c91dfeea894474e2bb30be573eab1aab355cced00db5a3d4906f3123d"
+byte_size = 21256700
+page_count = 764
+indexable = false
+provenance = "Complete public PDF response acquired and SHA-256 hashed before page selection. Public HTTP was used after HTTPS failed certificate validation; no authentication was used. The PDF is image-only, produced by Google Books PDF Converter in 2010. It belongs to the full historical volume, not to either constituent act or their modern web-delivery container."
+notes = "Quanta cura: printed pages 687–700, PDF pages 697–710. Syllabus: printed pages 701–717, PDF pages 711–727. The whole delivery remains outside Git; only the independently cleared historical page-image derivative is retained."

@@ -4,6 +4,10 @@ This profile governs the comprehensive reference at
 `src/<provider>/theology/virtues/`. It is not a trait catalog, catechism, discursive
 article, or instrument for diagnosing another person.
 
+Declare the leaf's type, source roles, contract version, and ordered outputs in
+`publication.toml` under [document schemas](../document-schemas.md), preserving
+the inventory, taxonomy, terminology, and opposition classifications below.
+
 ## Governing priorities
 
 1. Make every comprehensive claim agree with the controlling source corpus and

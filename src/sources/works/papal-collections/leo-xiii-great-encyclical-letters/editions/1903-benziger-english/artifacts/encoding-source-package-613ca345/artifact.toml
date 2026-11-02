@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.encoding-source-package-613ca345"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "project-source-package"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC-BY-4.0"
+rights_basis = "Project-created factual dependency-package metadata, distributed under the repository content license, CC BY 4.0. Referenced historical texts, modern source markup, audit and recipe retain their separately recorded rights; the package grants no additional rights in them."
+provenance = "Project-created manifest of exact original transcription, independent complete OCR, unchanged per-span corroboration audit, and deterministic replay recipe. References resolve through support_artifacts without duplicating their payloads."
+retrieved = "2026-10-26"
+encoding = "utf-8"
+indexable = false
+support_artifacts = [{ artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-reading-text-fc16a357", embedded_reference = "original-reading-text.txt" }, { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ia-raw-ocr-2b7c730b", embedded_reference = "independent-complete-ocr.txt" }, { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.encoding-audit-63e640f6", embedded_reference = "encoding-investigation.json" }, { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.encoding-repair-recipe-b8daa71f", embedded_reference = "encoding-repair.py" }]
+notes = "The output preserves all 3,602 physical lines. Its derivative artifact has a new identity and only 11 changed constituent selections receive new segment controllers."
+sha256 = "613ca345320d453259d48d77a4afb4c424869933bfbde6f45055932fe8848488"
+byte_size = 2339
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/encoding-source-package-613ca345/package.json"

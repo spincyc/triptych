@@ -1,0 +1,99 @@
+{
+  "schema": "triptych-three-act-source-cold-audit/v1",
+  "packet": 5,
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "papal.leo-xii.enciclica-ubi-primum-5-maggio-1824",
+      "en"
+    ],
+    [
+      "papal.leo-xiii.hf-l-xiii-enc-01091883-supremi-apostolatus-officio.1883-irish-ecclesiastical-record-english",
+      "en"
+    ],
+    [
+      "papal.leo-xiii.hf-l-xiii-enc-03081881-licet-multa.1881-10-dublin-review-english",
+      "en"
+    ]
+  ],
+  "documents": [
+    {
+      "key": [
+        "papal.leo-xii.enciclica-ubi-primum-5-maggio-1824",
+        "en"
+      ],
+      "title": "Ubi primum",
+      "row_sha256": "7298b70cc1ae13e2b107d79661ba24ab0910cab8cc1e3fe3fb923aa731d5362e",
+      "source_sha256": "699266d3b3844a8942afc96dd14c1445ae9faf70d4010786f455255081e8b090",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-05/act-01-evidence.json",
+        "sha256": "753ebce1b3d4dc2edf1f950235e96fb9cea5a2c4b0e9307ccc1ba4ef8f2bacbd",
+        "bytes": 46834
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-05/act-01-selected.txt",
+        "sha256": "699266d3b3844a8942afc96dd14c1445ae9faf70d4010786f455255081e8b090",
+        "bytes": 20894
+      },
+      "controller_pin": {
+        "id": "segment.papal.leo-xii.enciclica-ubi-primum-5-maggio-1824.1824-coyne-dublin-english.complete-english-ocr",
+        "record": "src/sources/works/papal-documents/1824-05-05-papal-leo-xii-enciclica-ubi-primum-5-maggio-1824-fc9de02b/editions/1824-coyne-dublin-english/segments/complete-english.toml",
+        "sha256": "782fb4137c8b99df702ab4435dabaa5cf3ec07e1693bd1a6295a168a884cd4e7"
+      }
+    },
+    {
+      "key": [
+        "papal.leo-xiii.hf-l-xiii-enc-01091883-supremi-apostolatus-officio.1883-irish-ecclesiastical-record-english",
+        "en"
+      ],
+      "title": "Supremi Apostolatus Officio",
+      "row_sha256": "ff47a6a13affb170584fb239d45b8deb00b45c580349c9450bfab91f19b59901",
+      "source_sha256": "84876b1b2d5b13b60b14d876d4140f8d4d41f5b97ea31c234ad2c775a351ce31",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-05/act-02-evidence.json",
+        "sha256": "2eb9d24963bae2e55a7c20131646e36875628f80ebcbfadaca79d1774aeef716",
+        "bytes": 35920
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-05/act-02-selected.txt",
+        "sha256": "84876b1b2d5b13b60b14d876d4140f8d4d41f5b97ea31c234ad2c775a351ce31",
+        "bytes": 15568
+      },
+      "controller_pin": {
+        "id": "segment.papal.leo-xiii.hf-l-xiii-enc-01091883-supremi-apostolatus-officio.1883-irish-ecclesiastical-record-english.complete-english",
+        "record": "src/sources/works/papal-documents/1883-09-01-papal-leo-xiii-hf-l-xiii-enc-01091883-supremi-apostolatus-officio-bf476759/editions/1883-irish-ecclesiastical-record-english/segments/complete-english.toml",
+        "sha256": "8cb5d79c86ed34da6256da00b6104051e1452a9074d7bc31a64676b21b8fa9af"
+      }
+    },
+    {
+      "key": [
+        "papal.leo-xiii.hf-l-xiii-enc-03081881-licet-multa.1881-10-dublin-review-english",
+        "en"
+      ],
+      "title": "Licet Multa",
+      "row_sha256": "27647a31361dcdc94cbac432174547774e1ae56a82616e8072791b8ab829935d",
+      "source_sha256": "a1b9a51509852951fe675dee5f7efc0bf869d8501e5915e746e16abd602b673b",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-05/act-03-evidence.json",
+        "sha256": "de32e49c25bcb0b6fa08513fc2cbd3e1561a160ee66763eb40cd3ee316df21c4",
+        "bytes": 34805
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-05/act-03-selected.txt",
+        "sha256": "a1b9a51509852951fe675dee5f7efc0bf869d8501e5915e746e16abd602b673b",
+        "bytes": 7867
+      },
+      "controller_pin": {
+        "id": "segment.papal.leo-xiii.hf-l-xiii-enc-03081881-licet-multa.1881-10-dublin-review-english.complete-english",
+        "record": "src/sources/works/papal-documents/1881-08-03-papal-leo-xiii-hf-l-xiii-enc-03081881-licet-multa-cafd7f84/editions/1881-10-dublin-review-english/segments/complete-english.toml",
+        "sha256": "b8eaa87ba8d062f2ba3769d4e75242a3e24ecb1a6643e940499871d2162e0f8e"
+      }
+    }
+  ],
+  "common_pins": {
+    "path": ".scratch/english-intake-recovery/common-pins.json",
+    "sha256": "17f8dc51ed96ec27c7b02254b4edac12df478c97a547e1660c27b8a0996921e9",
+    "bytes": 2847
+  },
+  "scope_limits": "Review source intake and exact selected historical human English witness. Fresh native image checks are required; prior visual claims are not inherited. No PDF compiler/layout review or lexical translation accuracy/full printing collation claimed."
+}

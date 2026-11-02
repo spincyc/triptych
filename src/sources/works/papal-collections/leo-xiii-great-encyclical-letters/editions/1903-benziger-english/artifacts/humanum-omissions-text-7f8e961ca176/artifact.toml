@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.humanum-omissions-text-7f8e961ca176"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "source-omission-repaired-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The bounded historical English printed by Benziger Brothers in the United States in 1903 and its faithful mechanical image/OCR evidence are public domain in the United States under the publication-term assessment in src/sources/inventories/papal-documents-rights-v1.toml. Historical words are excluded from Triptych CC BY 4.0. Modern delivery covers, library matter and creative revisions are excluded. Scan attribution: Gumberg Library, Duquesne University; Lyrasis Members and Sloan Foundation; Internet Archive."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "7f8e961ca176eeefe996894ce79a9c2dcfd2bf9c81a5e6ec46744e08dfbf7820"
+byte_size = 46693
+derived_from = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-reading-text-fc16a357"
+transformation = "Select original whole-book LF459–537 exactly, then replay artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.humanum-omissions-recipe-a666ecf5b4f7 SHA-256 a666ecf5b4f79eab1085d2c3fb2452bf3bb0785b892c733fc650f21d6318b4a4 to insert only two mechanically recovered native OCR fragments at original LF467 and469. Evidence artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.humanum-omissions-native-evidence-9014714ed29e SHA-256 9014714ed29ea80f4cf3eaa977dd7eb87e8b79249b0e9ce832ec49c86e5f1a08. No original selected byte is deleted or replaced; all other selected bytes and LF boundaries are exact."
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/humanum-omissions-text-7f8e961ca176/text.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Historical English chapter, human translator unidentified; only two substantive omissions repaired from the same1903 printing. Other disclosed transcription errors remain; no whole-text collation or lexical modernization. Complete earlier source/API and reviewed predecessor selection remain unchanged."

@@ -1,0 +1,71 @@
+{
+  "chunks": [
+    {
+      "kind": "copied-raw-ocr",
+      "output_byte_range_0": [
+        0,
+        958293
+      ],
+      "sha256": "b745e0060b18cd6f366bc19b56506b47d6629ef5f3db6469d45275e4360b1b2e",
+      "source_byte_range_0": [
+        0,
+        958293
+      ]
+    },
+    {
+      "kind": "reviewed-page-serialization",
+      "leaf": 236,
+      "output_byte_range_0": [
+        958293,
+        962398
+      ],
+      "output_sha256": "526a1604a90b612cfd83f076119eb9089ef4566a542ef59628dbdadb39ed9f3d",
+      "source_byte_range_0": [
+        958293,
+        962520
+      ],
+      "source_sha256": "2eb048d0a85ffafe9000afab77988d11b28421f1c6472fad880548ecea4ef430"
+    },
+    {
+      "kind": "copied-raw-ocr",
+      "output_byte_range_0": [
+        962398,
+        2589849
+      ],
+      "sha256": "ccdc9004044e87e622f5eae4af01f4ea7cdfa5c484dd88e3abf63f4c8f97b2e4",
+      "source_byte_range_0": [
+        962520,
+        2589971
+      ]
+    },
+    {
+      "kind": "reviewed-page-serialization",
+      "leaf": 617,
+      "output_byte_range_0": [
+        2589849,
+        2594374
+      ],
+      "output_sha256": "c54ba65e335f3013fa593a8bc32cd1bb3653d86fc30301127fa4fc75d5dd3210",
+      "source_byte_range_0": [
+        2589971,
+        2594634
+      ],
+      "source_sha256": "dc05512d86988c86ad6a83726f82065ac514876cfc4dbbd1ad82fd44b8805ab8"
+    },
+    {
+      "kind": "copied-raw-ocr",
+      "output_byte_range_0": [
+        2594374,
+        4687260
+      ],
+      "sha256": "59a39e00ddbc1499afdb02a7db59d0af872e9c9f542698c407493c19ddb2b187",
+      "source_byte_range_0": [
+        2594634,
+        4687520
+      ]
+    }
+  ],
+  "output_sha256": "f37197e94c2ba52afabfab11474f88cd13696638562c552fc764f477190765f9",
+  "schema": "triptych-bullarium-hybrid-byte-map/v1",
+  "source_sha256": "516f2693e4a068939e3696ae771afd0032a80cd49d59ace3944725b943bad2cc"
+}

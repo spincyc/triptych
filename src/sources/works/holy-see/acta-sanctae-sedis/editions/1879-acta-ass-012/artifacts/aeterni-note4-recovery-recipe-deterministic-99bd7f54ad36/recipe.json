@@ -1,0 +1,192 @@
+{
+  "schema": "triptych-aeterni-source-note-recovery/v1",
+  "revision": "2026-10-30T15:30:19Z",
+  "source_identity": "acta.ass.012.ass-012-act-002",
+  "inputs": {
+    "witness": {
+      "artifact_id": "artifact.acta-papal-archives.ass.012.1879-acta-ass-012.aeterni-note4-bitmap-d709f1aa5129",
+      "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1879-acta-ass-012/artifacts/aeterni-note4-bitmap-d709f1aa5129/witness.pdf",
+      "sha256": "fdeae02114e111bf2334845d4544e6543d055e1df9fd9d7df438e4e259cc4b46"
+    },
+    "model": {
+      "artifact_id": "artifact.acta-papal-archives.ass.012.1879-acta-ass-012.aeterni-note4-ocr-eng-model-7d4322bd2a77",
+      "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1879-acta-ass-012/artifacts/aeterni-note4-ocr-eng-model-7d4322bd2a77/eng.traineddata",
+      "sha256": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2"
+    },
+    "native_png": {
+      "artifact_id": "artifact.acta-papal-archives.ass.012.1879-acta-ass-012.aeterni-note4-native-419ddfe70959",
+      "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1879-acta-ass-012/artifacts/aeterni-note4-native-419ddfe70959/native.png",
+      "sha256": "419ddfe70959c624024247b518d1d09852fefad172d9edf0ae92c83f87c1d3b6"
+    },
+    "crop": {
+      "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1879-acta-ass-012/artifacts/aeterni-note4-crop-deterministic-b0faf50c9b6e/crop.png",
+      "sha256": "b0faf50c9b6ed374e7494a2a7186377bd7b6d200a7bf5675905df4e9892586db",
+      "artifact_id": "artifact.acta-papal-archives.ass.012.1879-acta-ass-012.aeterni-note4-crop-deterministic-b0faf50c9b6e"
+    },
+    "ocr_text": {
+      "artifact_id": "artifact.acta-papal-archives.ass.012.1879-acta-ass-012.aeterni-note4-raw-ocr-a9a485ed3c45",
+      "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1879-acta-ass-012/artifacts/aeterni-note4-raw-ocr-a9a485ed3c45/text.txt",
+      "sha256": "a9a485ed3c45c038bf67541ea6c818075b64adbc409602969a55ea98f0d5d7de"
+    },
+    "ocr_tsv": {
+      "artifact_id": "artifact.acta-papal-archives.ass.012.1879-acta-ass-012.aeterni-note4-ocr-tsv-082af720b0fa",
+      "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1879-acta-ass-012/artifacts/aeterni-note4-ocr-tsv-082af720b0fa/ocr.tsv",
+      "sha256": "082af720b0fa98b478444a0a2a6f70f85af4202e689240968cdf9bad5f1864d0"
+    },
+    "order_spec": {
+      "artifact_id": "artifact.acta-papal-archives.ass.012.1879-acta-ass-012.source-order-spec-aeterni-patris-la-4f697c9044bf",
+      "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1879-acta-ass-012/artifacts/source-order-spec-aeterni-patris-la-4f697c9044bf/spec.json",
+      "sha256": "4f697c9044bf4f580889f8428c2570a4fd692a66b38eaf09f9aead244fcc1437"
+    },
+    "ordered_old": {
+      "artifact_id": "artifact.acta-papal-archives.ass.012.1879-acta-ass-012.source-order-old-aeterni-patris-la-330934c25e43",
+      "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1879-acta-ass-012/artifacts/source-order-old-aeterni-patris-la-330934c25e43/text.txt",
+      "sha256": "330934c25e431e620929f7139b5e889c7bb0b58f0329a3bf6b7dd47791692961"
+    }
+  },
+  "original_selected_source": {
+    "artifact_id": "artifact.acta-papal-archives.ass.012.historical-text-e91f242d",
+    "sha256": "e91f242db16225fdba90c31848787b87d35b16f3836a57a27867907c2501a703",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1879-acta-ass-012/artifacts/acta-historical-text-e91f242d/historical.txt",
+    "physical_line_ranges": [
+      [
+        3891,
+        3933
+      ],
+      [
+        3936,
+        3976
+      ],
+      [
+        3978,
+        4018
+      ],
+      [
+        4020,
+        4060
+      ],
+      [
+        4062,
+        4103
+      ],
+      [
+        4105,
+        4145
+      ],
+      [
+        4147,
+        4188
+      ],
+      [
+        4190,
+        4230
+      ],
+      [
+        4232,
+        4273
+      ],
+      [
+        4275,
+        4316
+      ],
+      [
+        4318,
+        4358
+      ],
+      [
+        4360,
+        4400
+      ],
+      [
+        4402,
+        4442
+      ],
+      [
+        4444,
+        4486
+      ],
+      [
+        4488,
+        4528
+      ],
+      [
+        4530,
+        4570
+      ],
+      [
+        4572,
+        4613
+      ],
+      [
+        4616,
+        4657
+      ],
+      [
+        4659,
+        4690
+      ]
+    ]
+  },
+  "crop": {
+    "geometry": "228x31+0+17",
+    "resize": "300%",
+    "border": 30,
+    "strip_metadata": true
+  },
+  "ocr": {
+    "language": "eng",
+    "psm": 6,
+    "options": [
+      "tessedit_create_txt=1",
+      "tessedit_create_tsv=1"
+    ],
+    "model_license_artifact_id": "artifact.acta-papal-archives.ass.012.1879-acta-ass-012.aeterni-note4-ocr-model-license-cfc7749b96f6"
+  },
+  "tools": {
+    "/usr/bin/pdfimages": {
+      "sha256": "d03f5f9d948062b40b56844797aa755b45ce2574ce3b0974715f2f9ba792fd4f",
+      "version": "pdfimages version 26.10.0"
+    },
+    "/usr/bin/magick": {
+      "sha256": "c9b439e075a75795901641dadab39b3aee6395c2220553bb5d7ce30c75ec0b03",
+      "version": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org"
+    },
+    "/usr/bin/tesseract": {
+      "sha256": "0e8a7f5cd32fbed5a897f7ecff3860be04d0df93f5c6721d7ac6d0920a882127",
+      "version": "tesseract 5.5.4"
+    }
+  },
+  "helper": {
+    "path": "scripts/_papal_source_order.py",
+    "sha256": "f0a3014db485ee25ffa7df013c81e600f8e4f9eccff76b5ac7daecbc1d6a9c86"
+  },
+  "implementation": {
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1879-acta-ass-012/artifacts/aeterni-note4-replay-deterministic-fe0e247ecee6/replay.py",
+    "sha256": "fe0e247ecee60c030b28eed68c86d28c2992dd2c3f826fae63e35c3a9d4a8db1"
+  },
+  "insertion": {
+    "after_source_slice": "l4483-left",
+    "ordered_old_byte_offset": 34322,
+    "prefix_bytes_hex": "0a",
+    "suffix_bytes_hex": "0a",
+    "note_raw_ocr_bytes_unchanged": true
+  },
+  "outputs": {
+    "native_png_sha256": "419ddfe70959c624024247b518d1d09852fefad172d9edf0ae92c83f87c1d3b6",
+    "crop_sha256": "b0faf50c9b6ed374e7494a2a7186377bd7b6d200a7bf5675905df4e9892586db",
+    "ocr_text_sha256": "a9a485ed3c45c038bf67541ea6c818075b64adbc409602969a55ea98f0d5d7de",
+    "ocr_tsv_sha256": "082af720b0fa98b478444a0a2a6f70f85af4202e689240968cdf9bad5f1864d0",
+    "ordered_old_sha256": "330934c25e431e620929f7139b5e889c7bb0b58f0329a3bf6b7dd47791692961",
+    "final_sha256": "60f42818f98eeb6303acfe7f595169cd8138cb6e065fa0f6050ddd8cc9598932"
+  },
+  "claims": {
+    "all_old_body_lf_bytes_and_order_unchanged": true,
+    "old_source_note_slices_one_use_permutation": true,
+    "final_is_not_an_old_global_byte_permutation": true,
+    "new_source_note_is_from_retained_actual_native_bitmap": true,
+    "whole_original_print_collation": false
+  },
+  "replay_command": "PYTHONDONTWRITEBYTECODE=1 python src/sources/works/holy-see/acta-sanctae-sedis/editions/1879-acta-ass-012/artifacts/aeterni-note4-replay-deterministic-fe0e247ecee6/replay.py --recipe RECIPE_PATH --out .scratch/aeterni-replay",
+  "supersedes_recipe_sha256": "4431bddadce7ba9cbea5ab0a43b0ee2b9ffc46a47b296dfc4fb042d765501dbd",
+  "supersession_reason": "The first crop PNG carried file-time-dependent metadata; exact byte replay failed while native and crop pixels matched. The new crop removes metadata; raw OCR, TSV and final source bytes remain identical."
+}

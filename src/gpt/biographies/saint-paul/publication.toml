@@ -1,0 +1,105 @@
+schema_version = 1
+id = "gpt/biographies/saint-paul"
+kind = "biography"
+profile = "guidance/biographies.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/biographies/saint-paul"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "chronology"
+source = "research/chronology.md"
+
+[[structure]]
+role = "tradition-audit"
+source = "research/tradition-audit.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/00-opening.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/03-world-and-identity.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/04-persecutor-called-apostle.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/05-mission-and-communities.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/06-relationships-and-conflict.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/07-teaching-and-office.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/08-letters-and-authorship.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/09-final-years-martyrdom-and-burial.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/10-cult-iconography-and-patronage.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/11-tradition-under-review.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/12-contested-legacy-and-synthesis.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/01-scope-and-method.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/02-chronological-orientation.tex"
+
+[[structure]]
+role = "timeline"
+source = "sections/13-detailed-timeline.tex"
+
+[[structure]]
+role = "references"
+source = "sections/14-references.tex"

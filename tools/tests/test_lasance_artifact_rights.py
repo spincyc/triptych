@@ -68,7 +68,13 @@ class LasanceTrackedArtifactRightsTests(unittest.TestCase):
             self.assertIn(pages, third_party)
         self.assertIn("Two exclusions and one trap", guidance)
         self.assertIn("pages 1302a–1302d", guidance)
-        self.assertIn("thirty-two oration entries", third_party)
+        # c6c0fefcf replaced the stale "thirty-two oration entries" count
+        # with a pointer to the inventory's per-entry records.
+        self.assertIn(
+            "The inventory's per-entry witness, collation, passage and "
+            "publication-artifact records identify the current bindings",
+            " ".join(third_party.split()),
+        )
         self.assertIn("only the Collect on ordinary printed p.", guidance)
         self.assertIn("1302 is positive", guidance)
         self.assertIn("the five readings whose generic loci", guidance)

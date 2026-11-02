@@ -1,0 +1,625 @@
+{
+  "schema": "triptych-ordinary-english-prose-delivery-successor/v1",
+  "state": "SIX_EXACT_PROSE_DELIVERIES_ACCEPTED_STRICT_POINT_READS_PASS",
+  "scope": "Only six already accepted Ordinary English TSV passage records: four complete historical Prefaces, Chrism study English, Joseph continuation. Add exact checked prose text and its raw-line transcription map; no new English wording, source payload, rights classification, controller, range, calendar scope, Ordinary join or actor allocation.",
+  "authorization": "Root granted the source-write lease after the Roman compiler source snapshot completed. Postimages were installed only after independent bounded metadata acceptance.",
+  "predecessor_manifest": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/roman-english-source-files-v3.json",
+    "sha256": "aeb5820130b1f5ce67f441a6ff3ec49d6ffeca8cf74658be2e369ea5e540780c",
+    "disposition": "Preserved byte-for-byte; the successor changes exactly six passage metadata rows."
+  },
+  "predecessor_delivery_audit": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/roman-english-source-reader-successor.json",
+    "sha256": "0524654752606cff7b3bf45d47bc07908f84574d62a86a88ccac8e1ac51a2c44",
+    "disposition": "May1 point-read fix and all bounded rights/type qualifications remain unchanged."
+  },
+  "successor_manifest": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/roman-english-source-files-v4.json",
+    "sha256": "11d359b6b66c0dd5a600da22d8bc4a7b3fd10ba7627629fae0e959bdb1dd3dde",
+    "entries": 71
+  },
+  "metadata_changes": [
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-ordinary-prefaces-christo-rege.toml",
+      "before_sha256": "7f0049f36cee04d02dd9f1b6a20d66760f095ea9cef6a6ba56cfc37f1f4d5ebd",
+      "after_sha256": "a42235e967a46691a73d6bf55d62ab6f8490fc71598e5fb6a0b9212bbe8622bc"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-ordinary-prefaces-defunctis.toml",
+      "before_sha256": "4d4480ac7365dc060fd3c6a027a39d16c85fdb61670098b2a21cb19e359eb492",
+      "after_sha256": "f7f89652089b1d881af957bef869d434e56b9742e094c8ae21fe965d738ddc86"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-ordinary-prefaces-sacro-corde.toml",
+      "before_sha256": "69b3297c099cf9d637638b2ce674cceb38cf74f20d5481ce1dd984b6a703ee0a",
+      "after_sha256": "61fc5585a2039dc37c78261d917d8a0945ac118fc84f23a77e3966cdfc1f3d8d"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-ordinary-prefaces-sancto-ioseph.toml",
+      "before_sha256": "b126b3f948837e692982a3b23ddcfa97167cc499ea4d1c691452cb947c8353f5",
+      "after_sha256": "957bcebc0606b2161a15c14c5a88244a1f278d3b27185c8e3bea41da3b6962b6"
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-ordinary-chrism/editions/2026-10-30-study-english/passages/ordinary-chrism-preface.toml",
+      "before_sha256": "07b142dcf852f66e823d6cd981120666e5db2089e2813d75ab447681ec66d567",
+      "after_sha256": "4d3975d64646198b88fc2ad554aa1ca96197dbf635eb369bfd240eddc0dafec9"
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph/editions/2026-10-29-study-english/passages/communicantes-continuation.toml",
+      "before_sha256": "42b4a085d42ffada6de2b3304bf3f8babe4fa55ab98afa8c381ba1eda1311ddf",
+      "after_sha256": "f0bde00fc7a58c5cbf9807220ccdd3fb102409f1a37ef677df5b292e679582a0"
+    }
+  ],
+  "accepted_proposal_sha256": "6711df6e1f7ef9a8c5e5af57ae5894d4dec849cb1a32fcd036064f4c545833b2",
+  "independent_metadata_review": {
+    "original_receipt_sha256": "14084bae3fd63b19123d16d6159c5b1f52e9303ad395ce3a9be15b62f56bb930",
+    "sanitized_record": {
+      "decision": "ACCEPT_SIX_EXACT_PASSAGE_METADATA_POSTIMAGES",
+      "reviewed_at_utc": "2026-10-30T04:20:06Z",
+      "scope": "Independent bounded metadata-conservation review of six English prose-delivery additions only: four historical Prefaces, Chrism study English, and Joseph continuation. This is not a new rights determination, translation-fidelity review, witness collation, schema-validator run or whole-Ordinary completion claim.",
+      "proposal": {
+        "path": "[private research path omitted]",
+        "sha256": "6711df6e1f7ef9a8c5e5af57ae5894d4dec849cb1a32fcd036064f4c545833b2"
+      },
+      "reviewer_canonical_edits": false,
+      "records": [
+        {
+          "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-christo-rege",
+          "canonical_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-ordinary-prefaces-christo-rege.toml",
+          "before": {
+            "path": "[private research path omitted]",
+            "sha256": "7f0049f36cee04d02dd9f1b6a20d66760f095ea9cef6a6ba56cfc37f1f4d5ebd"
+          },
+          "after": {
+            "path": "[private research path omitted]",
+            "sha256": "a42235e967a46691a73d6bf55d62ab6f8490fc71598e5fb6a0b9212bbe8622bc"
+          },
+          "canonical_matches_before_at_review": true,
+          "added_fields": [
+            "text",
+            "transcription_segments"
+          ],
+          "changed_or_removed_original_fields": [],
+          "all_original_bytes_retained_as_prefix": true,
+          "artifact_metadata": {
+            "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-ordinary-prefaces-en/artifact.toml",
+            "sha256": "dd8f0c58c2b9b105026bf667620583bf297b0988f3daa3f505295ed33d02858e",
+            "unchanged": true
+          },
+          "payload": {
+            "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-ordinary-prefaces-en/text.tsv",
+            "sha256": "076d0b81a5729aa921f7e11de604d86c2d2a5c74a085dfecdbaf55d1dbef1597",
+            "unchanged": true
+          },
+          "controller_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en",
+          "controller_artifact_sha256": "076d0b81a5729aa921f7e11de604d86c2d2a5c74a085dfecdbaf55d1dbef1597",
+          "physical_line_ranges": [
+            [
+              3,
+              3
+            ]
+          ],
+          "text_sha256_utf8": "ea65ec872aa8758916f10dd686ae2e435395e4bb08b22fa904233b274ca601a2",
+          "segments": [
+            {
+              "line": 3,
+              "text_sha256": "ea65ec872aa8758916f10dd686ae2e435395e4bb08b22fa904233b274ca601a2",
+              "words": 146
+            }
+          ],
+          "exact_accepted_english_cells": true,
+          "exact_ordered_raw_line_substrings": true,
+          "raw_line_occurrences_each": 1,
+          "paragraph_count": 1,
+          "only_english_cells_no_latin_or_tsv_metadata_imported": true,
+          "bounded_inline_text_schema_conditions": "PASS"
+        },
+        {
+          "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-defunctis",
+          "canonical_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-ordinary-prefaces-defunctis.toml",
+          "before": {
+            "path": "[private research path omitted]",
+            "sha256": "4d4480ac7365dc060fd3c6a027a39d16c85fdb61670098b2a21cb19e359eb492"
+          },
+          "after": {
+            "path": "[private research path omitted]",
+            "sha256": "f7f89652089b1d881af957bef869d434e56b9742e094c8ae21fe965d738ddc86"
+          },
+          "canonical_matches_before_at_review": true,
+          "added_fields": [
+            "text",
+            "transcription_segments"
+          ],
+          "changed_or_removed_original_fields": [],
+          "all_original_bytes_retained_as_prefix": true,
+          "artifact_metadata": {
+            "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-ordinary-prefaces-en/artifact.toml",
+            "sha256": "dd8f0c58c2b9b105026bf667620583bf297b0988f3daa3f505295ed33d02858e",
+            "unchanged": true
+          },
+          "payload": {
+            "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-ordinary-prefaces-en/text.tsv",
+            "sha256": "076d0b81a5729aa921f7e11de604d86c2d2a5c74a085dfecdbaf55d1dbef1597",
+            "unchanged": true
+          },
+          "controller_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en",
+          "controller_artifact_sha256": "076d0b81a5729aa921f7e11de604d86c2d2a5c74a085dfecdbaf55d1dbef1597",
+          "physical_line_ranges": [
+            [
+              5,
+              5
+            ]
+          ],
+          "text_sha256_utf8": "807f49a367db96dae41899f5bfb353873cd43a435110901a145db9cc9c3dcbcb",
+          "segments": [
+            {
+              "line": 5,
+              "text_sha256": "807f49a367db96dae41899f5bfb353873cd43a435110901a145db9cc9c3dcbcb",
+              "words": 123
+            }
+          ],
+          "exact_accepted_english_cells": true,
+          "exact_ordered_raw_line_substrings": true,
+          "raw_line_occurrences_each": 1,
+          "paragraph_count": 1,
+          "only_english_cells_no_latin_or_tsv_metadata_imported": true,
+          "bounded_inline_text_schema_conditions": "PASS"
+        },
+        {
+          "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-sacro-corde",
+          "canonical_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-ordinary-prefaces-sacro-corde.toml",
+          "before": {
+            "path": "[private research path omitted]",
+            "sha256": "69b3297c099cf9d637638b2ce674cceb38cf74f20d5481ce1dd984b6a703ee0a"
+          },
+          "after": {
+            "path": "[private research path omitted]",
+            "sha256": "61fc5585a2039dc37c78261d917d8a0945ac118fc84f23a77e3966cdfc1f3d8d"
+          },
+          "canonical_matches_before_at_review": true,
+          "added_fields": [
+            "text",
+            "transcription_segments"
+          ],
+          "changed_or_removed_original_fields": [],
+          "all_original_bytes_retained_as_prefix": true,
+          "artifact_metadata": {
+            "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-ordinary-prefaces-en/artifact.toml",
+            "sha256": "dd8f0c58c2b9b105026bf667620583bf297b0988f3daa3f505295ed33d02858e",
+            "unchanged": true
+          },
+          "payload": {
+            "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-ordinary-prefaces-en/text.tsv",
+            "sha256": "076d0b81a5729aa921f7e11de604d86c2d2a5c74a085dfecdbaf55d1dbef1597",
+            "unchanged": true
+          },
+          "controller_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en",
+          "controller_artifact_sha256": "076d0b81a5729aa921f7e11de604d86c2d2a5c74a085dfecdbaf55d1dbef1597",
+          "physical_line_ranges": [
+            [
+              2,
+              2
+            ]
+          ],
+          "text_sha256_utf8": "2708eceda8adc4184607c9df3200dce65c750071f596f4750f4fd9b02be07ece",
+          "segments": [
+            {
+              "line": 2,
+              "text_sha256": "2708eceda8adc4184607c9df3200dce65c750071f596f4750f4fd9b02be07ece",
+              "words": 128
+            }
+          ],
+          "exact_accepted_english_cells": true,
+          "exact_ordered_raw_line_substrings": true,
+          "raw_line_occurrences_each": 1,
+          "paragraph_count": 1,
+          "only_english_cells_no_latin_or_tsv_metadata_imported": true,
+          "bounded_inline_text_schema_conditions": "PASS"
+        },
+        {
+          "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-sancto-ioseph",
+          "canonical_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-ordinary-prefaces-sancto-ioseph.toml",
+          "before": {
+            "path": "[private research path omitted]",
+            "sha256": "b126b3f948837e692982a3b23ddcfa97167cc499ea4d1c691452cb947c8353f5"
+          },
+          "after": {
+            "path": "[private research path omitted]",
+            "sha256": "957bcebc0606b2161a15c14c5a88244a1f278d3b27185c8e3bea41da3b6962b6"
+          },
+          "canonical_matches_before_at_review": true,
+          "added_fields": [
+            "text",
+            "transcription_segments"
+          ],
+          "changed_or_removed_original_fields": [],
+          "all_original_bytes_retained_as_prefix": true,
+          "artifact_metadata": {
+            "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-ordinary-prefaces-en/artifact.toml",
+            "sha256": "dd8f0c58c2b9b105026bf667620583bf297b0988f3daa3f505295ed33d02858e",
+            "unchanged": true
+          },
+          "payload": {
+            "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-ordinary-prefaces-en/text.tsv",
+            "sha256": "076d0b81a5729aa921f7e11de604d86c2d2a5c74a085dfecdbaf55d1dbef1597",
+            "unchanged": true
+          },
+          "controller_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en",
+          "controller_artifact_sha256": "076d0b81a5729aa921f7e11de604d86c2d2a5c74a085dfecdbaf55d1dbef1597",
+          "physical_line_ranges": [
+            [
+              4,
+              4
+            ]
+          ],
+          "text_sha256_utf8": "5799451760fb93e13d5589615aea4a5f63a6a695029be41bf92da7d2c1e3d752",
+          "segments": [
+            {
+              "line": 4,
+              "text_sha256": "5799451760fb93e13d5589615aea4a5f63a6a695029be41bf92da7d2c1e3d752",
+              "words": 153
+            }
+          ],
+          "exact_accepted_english_cells": true,
+          "exact_ordered_raw_line_substrings": true,
+          "raw_line_occurrences_each": 1,
+          "paragraph_count": 1,
+          "only_english_cells_no_latin_or_tsv_metadata_imported": true,
+          "bounded_inline_text_schema_conditions": "PASS"
+        },
+        {
+          "id": "passage.triptych.english-completion-20261029-ordinary-chrism.study-english-20261030.ordinary-chrism-preface",
+          "canonical_path": "src/sources/works/triptych/english-completion-20261029-ordinary-chrism/editions/2026-10-30-study-english/passages/ordinary-chrism-preface.toml",
+          "before": {
+            "path": "[private research path omitted]",
+            "sha256": "07b142dcf852f66e823d6cd981120666e5db2089e2813d75ab447681ec66d567"
+          },
+          "after": {
+            "path": "[private research path omitted]",
+            "sha256": "4d3975d64646198b88fc2ad554aa1ca96197dbf635eb369bfd240eddc0dafec9"
+          },
+          "canonical_matches_before_at_review": true,
+          "added_fields": [
+            "text",
+            "transcription_segments"
+          ],
+          "changed_or_removed_original_fields": [],
+          "all_original_bytes_retained_as_prefix": true,
+          "artifact_metadata": {
+            "path": "src/sources/works/triptych/english-completion-20261029-ordinary-chrism/editions/2026-10-30-study-english/artifacts/ordinary-chrism-study-en-3a4dbe81/artifact.toml",
+            "sha256": "4bfa32bfc8d4798d67ee16eaeef328c250a00c53d0d36f0765fcb7d7c4674bca",
+            "unchanged": true
+          },
+          "payload": {
+            "path": "src/sources/works/triptych/english-completion-20261029-ordinary-chrism/editions/2026-10-30-study-english/artifacts/ordinary-chrism-study-en-3a4dbe81/text.tsv",
+            "sha256": "3a4dbe81ee6b6e83d978f0ab981bfb79af5f3f272c5497de70ea9a54459dc7e9",
+            "unchanged": true
+          },
+          "controller_artifact_id": "artifact.triptych.english-completion-20261029-ordinary-chrism.study-english-20261030.ordinary-chrism-study-en-3a4dbe81",
+          "controller_artifact_sha256": "3a4dbe81ee6b6e83d978f0ab981bfb79af5f3f272c5497de70ea9a54459dc7e9",
+          "physical_line_ranges": [
+            [
+              2,
+              2
+            ]
+          ],
+          "text_sha256_utf8": "9a6efe095098a8f557a42215f63c98226c4482f9b2c4aad5796cee5f7501bd86",
+          "segments": [
+            {
+              "line": 2,
+              "text_sha256": "9a6efe095098a8f557a42215f63c98226c4482f9b2c4aad5796cee5f7501bd86",
+              "words": 155
+            }
+          ],
+          "exact_accepted_english_cells": true,
+          "exact_ordered_raw_line_substrings": true,
+          "raw_line_occurrences_each": 1,
+          "paragraph_count": 1,
+          "only_english_cells_no_latin_or_tsv_metadata_imported": true,
+          "bounded_inline_text_schema_conditions": "PASS"
+        },
+        {
+          "id": "passage.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029.communicantes-continuation",
+          "canonical_path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph/editions/2026-10-29-study-english/passages/communicantes-continuation.toml",
+          "before": {
+            "path": "[private research path omitted]",
+            "sha256": "42b4a085d42ffada6de2b3304bf3f8babe4fa55ab98afa8c381ba1eda1311ddf"
+          },
+          "after": {
+            "path": "[private research path omitted]",
+            "sha256": "f0bde00fc7a58c5cbf9807220ccdd3fb102409f1a37ef677df5b292e679582a0"
+          },
+          "canonical_matches_before_at_review": true,
+          "added_fields": [
+            "text",
+            "transcription_segments"
+          ],
+          "changed_or_removed_original_fields": [],
+          "all_original_bytes_retained_as_prefix": true,
+          "artifact_metadata": {
+            "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph/editions/2026-10-29-study-english/artifacts/continuation-study-en-b83d0df3/artifact.toml",
+            "sha256": "6f9a57bc9d180df63bbf8dff9759432e87e917b5804323d8658644f09f304442",
+            "unchanged": true
+          },
+          "payload": {
+            "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph/editions/2026-10-29-study-english/artifacts/continuation-study-en-b83d0df3/text.tsv",
+            "sha256": "b83d0df336dc1cd943a8b295d617c3325384492381a15d7f0426c3f322ff9d72",
+            "unchanged": true
+          },
+          "controller_artifact_id": "artifact.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029.continuation-study-en-b83d0df3",
+          "controller_artifact_sha256": "b83d0df336dc1cd943a8b295d617c3325384492381a15d7f0426c3f322ff9d72",
+          "physical_line_ranges": [
+            [
+              2,
+              4
+            ]
+          ],
+          "text_sha256_utf8": "0a31a66a6cdb1b6c024d6c751d6f739ca9f4838d11239a8360324e45b06aa1a1",
+          "segments": [
+            {
+              "line": 2,
+              "text_sha256": "09fb138746150fe98aabf0b9411e485eec2cd853d921d1eedd7acb9051eab014",
+              "words": 70
+            },
+            {
+              "line": 3,
+              "text_sha256": "937008640a88f1df8a2c72825337d50d3c5d5ed3947438df2355a6f793abdff0",
+              "words": 4
+            },
+            {
+              "line": 4,
+              "text_sha256": "de138a9b1dbf978a54974c574c579fa85b1b55f057ffc7f8dba7bfdec1381955",
+              "words": 7
+            }
+          ],
+          "exact_accepted_english_cells": true,
+          "exact_ordered_raw_line_substrings": true,
+          "raw_line_occurrences_each": 1,
+          "paragraph_count": 3,
+          "only_english_cells_no_latin_or_tsv_metadata_imported": true,
+          "bounded_inline_text_schema_conditions": "PASS"
+        }
+      ],
+      "findings": [
+        {
+          "check": "six_exact_records_only",
+          "result": "PASS",
+          "finding": "The frozen postimages contain only the six specified passage records. Each matches its declared before/after hashes and the canonical record matched its original preimage at review. No A/B evidence, Canon facsimile-only evidence, artifact, payload or Ordinary inventory change is proposed."
+        },
+        {
+          "check": "original_metadata_conservation",
+          "result": "PASS",
+          "finding": "Every original parsed field and all original bytes remain intact in all six records. Only text and transcription_segments are added; controllers, ranges, provenance context, verification states, source scopes, rights metadata and applicability are preserved."
+        },
+        {
+          "check": "exact_accepted_english",
+          "result": "PASS",
+          "finding": "Each inline text and segment uses exactly the already accepted English cell at the existing physical line. Every segment is a single exact ordered substring occurring once on that raw TSV line. Cell order and complete selected extent are retained; no Latin, headers, notes or new English words are imported."
+        },
+        {
+          "check": "historical_preface_limits",
+          "result": "PASS",
+          "finding": "The four historical bodies retain their exact punctuation and source alternatives, including the Joseph festivity/veneration wording and its existing scope limitations. Source dialogue and Sanctus remain outside the displayed body, and no target-exact or approved-English grade is added."
+        },
+        {
+          "check": "joseph_part_boundaries",
+          "result": "PASS",
+          "finding": "The continuation, hand-joining action and conclusion remain in source order as three paragraphs separated by exactly one blank line. The existing nonspoken-action and study-translation context is preserved. No speaker, dialogue role or other spoken-role field is added."
+        },
+        {
+          "check": "study_english_limits",
+          "result": "PASS",
+          "finding": "The Chrism and Joseph project study payloads, their qualified source bases and nonapproval context remain unchanged. The prose delivery adds no historical identity, Latin publication permission, English rights expansion, liturgical approval or recitation authority."
+        },
+        {
+          "check": "both_fields_bounded_schema_conditions",
+          "result": "PASS_BOUNDED_INSPECTION",
+          "finding": "Each record has reviewed status and an indexable tracked UTF-8 controller. Every sole or ordered segment has exactly line/text fields, a positive in-range physical line, exact raw-line text and a reconstruction of inline text after the schema whitespace joining. The Joseph blank paragraphs preserve distinct source parts while satisfying that joining rule."
+        },
+        {
+          "check": "guarded_source_reader_path",
+          "result": "PASS",
+          "finding": "The inspected unchanged Source Reader applies controller, qualified-source, distributable-rights and tracked-storage checks before using passage text, then _qualified_reading applies result-specific checks. No guard code or permission policy change is proposed."
+        },
+        {
+          "check": "review_history",
+          "result": "PASS",
+          "finding": "This new receipt binds these exact later metadata postimages. It does not retroactively claim that earlier semantic or metadata reviews inspected them."
+        }
+      ],
+      "inspected_tools": [
+        {
+          "path": "tools/source-reader",
+          "sha256": "6add9dc673943c8589cf511cee004f922566d1c4aa68038b923d74c30270801c",
+          "loci": [
+            "reading_of",
+            "_qualified_reading"
+          ]
+        },
+        {
+          "path": "tools/source-library",
+          "sha256": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+          "locus": "passage text/transcription_segments validation conditions"
+        }
+      ],
+      "defects": [],
+      "remaining_parent_gates": [
+        "Install exact accepted postimages under the root lease.",
+        "Run strict Actual Source Reader point reads and verify complete English body delivery with source qualifications.",
+        "Run source-library/global validation and confirm Ordinary conservation."
+      ]
+    },
+    "qualification": "Parsed independent AI review with private research paths omitted; not original receipt bytes. No human or liturgical approval, fresh legal judgment, or retrospective earlier-review acceptance is asserted."
+  },
+  "exact_prose_point_reads": [
+    {
+      "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-christo-rege",
+      "readable": true,
+      "source": "transcription",
+      "rights": "public-domain",
+      "text_sha256": "ea65ec872aa8758916f10dd686ae2e435395e4bb08b22fa904233b274ca601a2",
+      "words": 146,
+      "exact_accepted_cells": true,
+      "source_segments": [
+        {
+          "line": 3,
+          "text_sha256": "ea65ec872aa8758916f10dd686ae2e435395e4bb08b22fa904233b274ca601a2",
+          "words": 146
+        }
+      ]
+    },
+    {
+      "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-defunctis",
+      "readable": true,
+      "source": "transcription",
+      "rights": "public-domain",
+      "text_sha256": "807f49a367db96dae41899f5bfb353873cd43a435110901a145db9cc9c3dcbcb",
+      "words": 123,
+      "exact_accepted_cells": true,
+      "source_segments": [
+        {
+          "line": 5,
+          "text_sha256": "807f49a367db96dae41899f5bfb353873cd43a435110901a145db9cc9c3dcbcb",
+          "words": 123
+        }
+      ]
+    },
+    {
+      "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-sacro-corde",
+      "readable": true,
+      "source": "transcription",
+      "rights": "public-domain",
+      "text_sha256": "2708eceda8adc4184607c9df3200dce65c750071f596f4750f4fd9b02be07ece",
+      "words": 128,
+      "exact_accepted_cells": true,
+      "source_segments": [
+        {
+          "line": 2,
+          "text_sha256": "2708eceda8adc4184607c9df3200dce65c750071f596f4750f4fd9b02be07ece",
+          "words": 128
+        }
+      ]
+    },
+    {
+      "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-sancto-ioseph",
+      "readable": true,
+      "source": "transcription",
+      "rights": "public-domain",
+      "text_sha256": "5799451760fb93e13d5589615aea4a5f63a6a695029be41bf92da7d2c1e3d752",
+      "words": 153,
+      "exact_accepted_cells": true,
+      "source_segments": [
+        {
+          "line": 4,
+          "text_sha256": "5799451760fb93e13d5589615aea4a5f63a6a695029be41bf92da7d2c1e3d752",
+          "words": 153
+        }
+      ]
+    },
+    {
+      "passage_id": "passage.triptych.english-completion-20261029-ordinary-chrism.study-english-20261030.ordinary-chrism-preface",
+      "readable": true,
+      "source": "transcription",
+      "rights": "project-created",
+      "text_sha256": "9a6efe095098a8f557a42215f63c98226c4482f9b2c4aad5796cee5f7501bd86",
+      "words": 155,
+      "exact_accepted_cells": true,
+      "source_segments": [
+        {
+          "line": 2,
+          "text_sha256": "9a6efe095098a8f557a42215f63c98226c4482f9b2c4aad5796cee5f7501bd86",
+          "words": 155
+        }
+      ]
+    },
+    {
+      "passage_id": "passage.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029.communicantes-continuation",
+      "readable": true,
+      "source": "transcription",
+      "rights": "project-created",
+      "text_sha256": "0a31a66a6cdb1b6c024d6c751d6f739ca9f4838d11239a8360324e45b06aa1a1",
+      "words": 81,
+      "exact_accepted_cells": true,
+      "source_segments": [
+        {
+          "line": 2,
+          "text_sha256": "09fb138746150fe98aabf0b9411e485eec2cd853d921d1eedd7acb9051eab014",
+          "words": 70
+        },
+        {
+          "line": 3,
+          "text_sha256": "937008640a88f1df8a2c72825337d50d3c5d5ed3947438df2355a6f793abdff0",
+          "words": 4
+        },
+        {
+          "line": 4,
+          "text_sha256": "de138a9b1dbf978a54974c574c579fa85b1b55f057ffc7f8dba7bfdec1381955",
+          "words": 7
+        }
+      ]
+    }
+  ],
+  "strict_registered_cli_checks": [
+    {
+      "command": "tools/source-reader show --edition edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945 --strict --json",
+      "exit_code": 0,
+      "result": "All four exact new historical Preface passage IDs are readable; the edition also retains other intentional evidence-only loci.",
+      "stdout_sha256": "ac639a4f86df6be3e0975e74da66e42468ab5be3f7054a6be8974581ff1120f5"
+    },
+    {
+      "command": "tools/source-reader show --edition edition.triptych.english-completion-20261029-ordinary-chrism.study-english-20261030 --plain --strict",
+      "exit_code": 0,
+      "readable": 1,
+      "passages": 1,
+      "stdout_sha256": "07e97566b6188b742222cad27c5cc86626a9ec84a047ad7ead3948e9eb29e70b"
+    },
+    {
+      "command": "tools/source-reader show --edition edition.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029 --plain --strict",
+      "exit_code": 0,
+      "readable": 1,
+      "passages": 1,
+      "stdout_sha256": "daf9ec8cea50d3f10e40ca967327492ac4a3c88f83065a072159a0e9e2694b20"
+    }
+  ],
+  "point_read_qualification": "The unchanged production reading_of function was called separately for every selected canonical passage, and each returned its entire exact accepted English cell sequence as readable prose. Strict edition-level CLI also marks those exact passage IDs readable. This is six of six direct point reads, not a claim that every facsimile evidence locus in the Lasance edition is readable prose.",
+  "source_library_validation": {
+    "result": "PASS",
+    "recorded_stdout": "source-library valid: artifact=10333 corpus=5 edition=13732 passage=9456 segment=10186 work=10752 bindings=4311",
+    "stdout_sha256": "d5d84c2eb731f9cc766872d2e4634182e5ceba574bd5a2d00b27704ab2f17b26"
+  },
+  "ordinary_conservation": [
+    {
+      "calendar": "roman-1962",
+      "result": "BYTE_IDENTICAL_TO_BEFORE_ALL_PROSE_FIXES",
+      "source_build_sha256": "59d7c990a6e0a7d541898acf05e55cfc9d98ce79889750494dbf6fcaefd12624",
+      "served_ordinary_sha256": "6b000650b33634c49d8384c75b45661bd539a9c7e2b8f4b65f46aa65713f04ec"
+    },
+    {
+      "calendar": "roman-pre-1955",
+      "result": "BYTE_IDENTICAL_TO_BEFORE_ALL_PROSE_FIXES",
+      "source_build_sha256": "01c4c738f0a3fe3ef791c18cad9ce2ea8fcadf7b0f0b957ddffd38db69ad214e",
+      "served_ordinary_sha256": "a5b297db7f9e500dbf3791d59baa8377e783b941f0001d2243a51f66ffcebfbd"
+    }
+  ],
+  "ordinary_tool_sha256_during_comparison": "4fc67cfe87581f9f9b24b624c126a8608329bf8e55415e894e36d520a6370430",
+  "unchanged_source_reader_and_guard_code": [
+    {
+      "path": "scripts/_proper_qualified_latin.py",
+      "sha256": "0136f6bb020938867d4ca1e75816c56c363a15603a8fede2aee9126c96b24949"
+    },
+    {
+      "path": "scripts/_proper_finite_latin_20261029.py",
+      "sha256": "a98b0178ea31f5cefd9a0ee78bea1e00f62e9d7788f81a46f5d892d99d71f998"
+    },
+    {
+      "path": "tools/source-reader",
+      "sha256": "6add9dc673943c8589cf511cee004f922566d1c4aa68038b923d74c30270801c"
+    }
+  ],
+  "preserved_source_part_limits": [
+    "Joseph continuation retains its three distinct paragraphs: dependent continuation, nonspoken hand-joining rubric, explicit conclusion. No spoken actor or dialogue role is inferred from the raw Source Reader transcription.",
+    "Historical StJoseph retains festivity/veneration alternatives; Dead retains its historical translation variant. Source prose visibility grants no liturgical application or target-English identity."
+  ],
+  "evidence_only_loci_untouched": "All nine A/B Preface image-proof passages and the Canon facsimile passage retain their actual controllers and evidence-only roles. No prose is fabricated for a PDF record, and no source image is re-owned as a text artifact.",
+  "remaining_integration": "The owning source-integration lane must refresh Sources catalogue, edition metadata and text payloads for these six now-readable passages. No Ordinary regeneration is needed: both Roman source builds and served Ordinary byte hashes remain unchanged."
+}

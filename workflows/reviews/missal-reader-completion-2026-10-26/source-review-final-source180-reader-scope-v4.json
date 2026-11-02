@@ -1,0 +1,74 @@
+{
+  "acceptance_basis": [
+    "V1-V3 pinned every tracked path, so unrelated commits by other streams broke every consumer of this batch three times in two days; V4 keeps only the inputs its oracles stand on.",
+    "Every kept pin is byte-identical to the V3 pin at the published parent; no source, prayer, body, proof, rights, owner, replay or historical map changed.",
+    "Code is outside the batch: tools/tests/test_roman_1962_latin22_phase5.py PRESERVED_FILES and each module's own tests continue to pin the reader code they replay.",
+    "A later change to any kept path still fails closed and needs a reviewed successor."
+  ],
+  "all_source_inputs_current_before_acceptance": true,
+  "compiler_sha256": "0b2082266860561e53452fddc9b044c1493f8dc41917dc273c7cddcc06982ab1",
+  "dropped_out_of_scope_pins": {
+    "count": 98965,
+    "path_sha256_list_digest": "e9f0f3da3226989302c0ce14530837fed6dbf3d57831edaa4c24e73f17b04a77"
+  },
+  "fixture_fields_changed": [
+    "acceptance",
+    "source_input_manifest_sha256"
+  ],
+  "kept_pins_identical_to_parent_manifest": true,
+  "kept_scope": {
+    "fixed_prefixes": [
+      "src/sources/calendars/",
+      "src/sources/inventories/roman-1962-",
+      "src/sources/inventories/roman-pre-1955-",
+      "src/sources/inventories/postconciliar-",
+      "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/",
+      "src/sources/works/francis-xavier-lasance/",
+      "src/sources/works/eugene-cummiskey/",
+      "src/sources/works/edward-caswall/",
+      "tools/tests/_source_batch_guards.py"
+    ],
+    "historical_replay_inputs": [
+      "src/sources/calendars/postconciliar/propers.yaml",
+      "src/sources/calendars/roman-1962/propers.yaml",
+      "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+      "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+      "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml",
+      "tools/tests/test_proper_latin.py",
+      "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py",
+      "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py",
+      "tools/tests/test_roman_1962_english13_phase5.py",
+      "tools/tests/test_roman_1962_english31_phase4.py",
+      "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py",
+      "tools/tests/test_roman_1962_latin22_phase5.py",
+      "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py",
+      "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+    ],
+    "reader_written_derivation": "git log --author=Codex --since=2026-10-19 --name-only -- src/sources, less the shared registries",
+    "shared_registries_excluded": [
+      "src/sources/inventories/claude-publications-v1.toml",
+      "src/sources/inventories/source-containment-v1.toml",
+      "src/sources/inventories/source-family-migration-v1.toml"
+    ]
+  },
+  "parent_source_input_manifest_sha256": "747c3ec0b2f6825d33335baa65ea249aaa356eb85295def3f24aeceabc5d6fc0",
+  "parent_source_receipt_path": "workflows/reviews/missal-reader-completion-2026-10-26/source-review-final-source180-upstream-v3.json",
+  "parent_source_receipt_sha256": "9038cbf806977317679163ba175c6fbcd8d936bb0f0cf9fb5855d45ec03ccf7c",
+  "published_parent": "4c840c2f91d8a44ae2db706b8d8775e627003468",
+  "review": "Coordinator self-check: the narrowing removes pins only, and every consumer of the batch was run against it; the V3 content it carries forward had an independent review recorded in the parent receipt.",
+  "schema": "triptych-reviewed-source-batch-receipt/v1",
+  "scope": "missal-source-batch",
+  "self_cycle_exclusions": [
+    "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+    "tools/tests/fixtures/missal-source-batch-20261023.json",
+    "workflows/reviews/missal-reader-completion-2026-10-26/source-review-final-source180-reader-scope-v4.json"
+  ],
+  "source_epoch_paths": 5615,
+  "source_input_manifest_sha256": "40552d0fc0099216b7c3c299985430a3a2f19db35742db6a8db4c25804ccf1cd",
+  "source_permissions_extended_beyond_exact_reviewed_authorities": false,
+  "status": "accepted",
+  "successor_kind": "reader-scope-narrowing"
+}

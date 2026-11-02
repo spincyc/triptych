@@ -78,6 +78,11 @@ from pathlib import Path
 from typing import Any, Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
+# Recording binds current Python source bytes. A fresh cache namespace prevents
+# an older same-size, same-mtime .pyc from executing in their place.
+if any(flag in sys.argv for flag in ("--record-receipt", "--check-receipt")):
+    sys.dont_write_bytecode = True
+    sys.pycache_prefix = str(ROOT / ".scratch/source-projection-receipt" / ("python-" + os.urandom(16).hex()))
 # Below this the derivation is cheap and the tree is a sandbox, not the corpus.
 CORPUS_CACHE_FLOOR = 1000
 # Shared CLI helpers live outside tools/ so that tmt's registry scan, which
@@ -222,6 +227,18 @@ def _payload_lines(library, artifact: dict) -> list[str] | None:
         return None
 
 
+def _qualified_reading(library, passage: dict, artifact: dict, result: dict) -> dict:
+    """Check the actual result after inline or physical-line selection."""
+    from _proper_qualified_latin import reading_problems
+    problems = reading_problems(
+        library.root, passage, artifact, sources=library.records,
+        text=result.get("text"))
+    if not problems:
+        return result
+    return {**{key: value for key, value in result.items() if key != "text"},
+            "readable": False, "withheld": "rights", "reason": "; ".join(problems)}
+
+
 def reading_of(library, passage: dict) -> dict:
     """May this passage be read here, and if not, why not.
 
@@ -259,6 +276,13 @@ def reading_of(library, passage: dict) -> dict:
         "source_url": artifact.get("source_url"),
     }
 
+    from _proper_qualified_latin import reading_problems
+    qualified_problems = reading_problems(
+        library.root, passage, artifact, sources=library.records)
+    if qualified_problems:
+        return {**common, "readable": False, "withheld": "rights",
+                "reason": "; ".join(qualified_problems)}
+
     if rights not in DISTRIBUTABLE_RIGHTS:
         stated = {
             "restricted": (
@@ -291,12 +315,12 @@ def reading_of(library, passage: dict) -> dict:
 
     text = passage.get("text")
     if isinstance(text, str) and text.strip():
-        return {
+        return _qualified_reading(library, passage, artifact, {
             **common,
             "readable": True,
             "source": "transcription",
             "text": text,
-        }
+        })
 
     ranges = passage.get("physical_line_ranges")
     media = str(artifact.get("media_type") or "")
@@ -337,12 +361,12 @@ def reading_of(library, passage: dict) -> dict:
                     ),
                 }
             held.extend(lines[start - 1 : end])
-        return {
+        return _qualified_reading(library, passage, artifact, {
             **common,
             "readable": True,
             "source": "physical-lines",
             "text": "\n".join(held),
-        }
+        })
 
     return {
         **common,
@@ -440,9 +464,11 @@ def corpus(library) -> list[dict]:
         # A sandbox library is a handful of files; caching it would leave an
         # entry in the real repository's build/ that nothing reads again.
         return _corpus(library)
+    from _proper_qualified_latin import cache_fingerprint
+    qualified_key = cache_fingerprint(library.root)
     return cached_json(
         ROOT / "build" / "source-reader-corpus",
-        f"{fingerprint}-{code_fingerprint(__file__)}",
+        f"{fingerprint}-{code_fingerprint(__file__)}-{qualified_key}",
         lambda: _corpus(library),
     )
 
@@ -948,6 +974,29 @@ def edition_payload(work: dict, edition: dict) -> dict:
 
 
 def run_structure(arguments: argparse.Namespace) -> dict:
+    check_receipt = getattr(arguments, "check_receipt", False)
+    record_receipt = getattr(arguments, "record_receipt", False)
+    if sum(bool(one) for one in (arguments.check, check_receipt, record_receipt)) > 1:
+        raise ReaderError("choose one of --check, --check-receipt or --record-receipt")
+    if check_receipt or record_receipt:
+        from _source_projection_receipt import (
+            RECEIPT_PATH, ReceiptError, check_receipt as check_proof,
+            record_receipt as record_proof,
+        )
+        out = Path(arguments.out)
+        out = out if out.is_absolute() else ROOT / out
+        if out != ROOT / DEFAULT_OUT:
+            raise ReaderError("projection receipts govern the tracked default output; omit --out")
+        try:
+            proof = (record_proof if record_receipt else check_proof)(
+                ROOT, out / STRUCTURE_RELATIVE, SCHEMA)
+        except ReceiptError as error:
+            raise ReaderError(str(error)) from error
+        return {**proof["counted"], "files": proof["outputs"]["count"],
+                "current": str(Path(arguments.out) / STRUCTURE_RELATIVE),
+                "receipt": RECEIPT_PATH, "receipt_recorded": record_receipt,
+                "editorial_approval": False, "status": "ok"}
+
     library = load(arguments)
     works = corpus(library)
     counted = tally(works)
@@ -1356,6 +1405,9 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         print(f"  -> {payload['written']} ({payload['files']} files)")
     if payload.get("current"):
         print(f"  {payload['current']} is current ({payload['files']} files)")
+    if payload.get("receipt"):
+        action = "recorded" if payload.get("receipt_recorded") else "checked"
+        print(f"  mechanical projection receipt {action}; no editorial approval")
     return 0
 
 
@@ -1365,8 +1417,8 @@ EXAMPLES = {
         Example(
             "tools/source-reader check",
             (
-                "1064 works, 1255 editions, 3685 artifacts, 6067 passages; 3501 readable here.",
-                "  passages the rights records withhold: 2566",
+                "10937 works, 14267 editions, 10610 artifacts, 9612 passages; 4137 readable here.",
+                "  passages the rights records withhold: 5475",
                 "  every one of them listed with its reason: yes",
                 "  the page's own derivation, replayed: src/web/browser/sources/reader-model.js",
             ),
@@ -1384,7 +1436,7 @@ EXAMPLES = {
             "tools/source-reader list --author 'Augustine of Hippo'",
             (
                 "Augustine of Hippo       Confessiones                                   1896       la         0/1  edition.augustine-of-hippo.confessiones.1896-knoll-csel-33",
-                "... 42 more lines",
+                "... 43 more lines",
             ),
         ),
         Example(
@@ -1406,7 +1458,7 @@ EXAMPLES = {
         Example(
             "tools/source-reader show --edition edition.augustine.de-civitate-dei.dods-1871",
             (
-                "... 36 more lines",
+                "... 54 more lines",
             ),
         ),
     ),
@@ -1414,16 +1466,16 @@ EXAMPLES = {
         Example(
             "tools/source-reader structure --out build/example-sources",
             (
-                "1064 works, 1255 editions, 3685 artifacts, 6067 passages; 3501 readable here.",
-                "  -> build/example-sources/structure/sources (4757 files)",
+                "10937 works, 14267 editions, 10610 artifacts, 9612 passages; 4137 readable here.",
+                "  -> build/example-sources/structure/sources (18405 files)",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
         ),
         Example(
             "tools/source-reader structure --check",
             (
-                "1064 works, 1255 editions, 3685 artifacts, 6067 passages; 3501 readable here.",
-                "  src/web/data/structure/sources is current (4757 files)",
+                "10937 works, 14267 editions, 10610 artifacts, 9612 passages; 4137 readable here.",
+                "  src/web/data/structure/sources is current (18405 files)",
             ),
             "writes nothing; refuses when the tracked projection has drifted from the records",
         ),
@@ -1458,6 +1510,14 @@ def main(argv: list[str] | None = None) -> int:
         "--check",
         action="store_true",
         help="`structure`: prove the tracked projection matches the records, and write nothing",
+    )
+    shared.add_argument(
+        "--check-receipt", action="store_true",
+        help="`structure`: check governing input and complete output hashes without replay or artifact hydration",
+    )
+    shared.add_argument(
+        "--record-receipt", action="store_true",
+        help="`structure`: independently replay the full strict check, then record a mechanical projection receipt",
     )
     shared.add_argument(
         "--strict",

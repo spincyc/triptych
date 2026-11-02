@@ -1,0 +1,102 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T15:28:56Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.nullis-ass6.nullis-native-spacing-b3cf559831fe",
+      "collection_corpus": "acta",
+      "date": "1860-01-19",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.006.ass-006-act-008",
+      "id": "acta.ass.006.ass-006-act-008",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          351
+        ]
+      ],
+      "pope": "Pius IX",
+      "revision": "2026-10-30T15:28:56Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Title leaf Rome, Typis Polyglottae Officinae S.C. de Propaganda Fide, MDCCCLXX (OCR MDCC&LXX), lines31–35. Modern Johnson first reprinting1968 at56–57; historical ANIMADVERSIO42–51 retained. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.native-spacing-nullis.b3cf559831fe",
+      "segment_path": "src/sources/works/papal-documents/1860-01-19-papal-pius-ix-enciclica-nullis-certe-19-gennaio-1860-7f06def4/editions/1870-acta-ass-006-ass-006-act-008/segments/native-spacing-nullis-b3cf559831fe.toml",
+      "sha256": "b3cf559831fe1eff46119d10aafe003027e05d43ebba564bc2edcb76bf348781",
+      "source_note": "ASS 6 (1870), pp. 161–165. Whitespace restored mechanically from native text geometry. Original wording, hyphens and text order retained. Vatican OCR reconstruction; no original-print facsimile collation.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-06-1870-71-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/volume-6-1870-1871/artifacts/nullis-native-spacing-b3cf559831fe/text.txt",
+      "title": "Nullis certe verbis",
+      "work_id": "work.papal.pius-ix.enciclica-nullis-certe-19-gennaio-1860"
+    },
+    {
+      "artifact_id": "artifact.mariavitarum-ass39.mariavitarum-note-boundary-c5822863d02d",
+      "collection_corpus": "acta",
+      "date": "1906-04-05",
+      "document_type": "encyclical-letter",
+      "edition_id": "edition.acta-papal-archives.ass.039.ass-039-l004849",
+      "id": "acta.ass.039.ass-039-l004849",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          220
+        ]
+      ],
+      "pope": "Pius X",
+      "revision": "2026-10-30T15:28:56Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Original volume title page and historical journal publication period 1906; modern Johnson 1969 reprint permission/imprint rows expressly excluded. Vatican OCR delivery is a text reconstruction; no image-collation claim. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.note-boundary-mariavitarum.c5822863d02d",
+      "segment_path": "src/sources/works/papal-documents/1906-04-05-papal-pius-x-hf-p-x-enc-05041906-tribus-circiter-ff59a7f6/editions/1906-acta-ass-039-ass-039-l004849/segments/note-boundary-mariavitarum-c5822863d02d.toml",
+      "sha256": "c5822863d02df5790f516a115615a4b724b467b1ac9b76db3fa465902a879ec3",
+      "source_note": "ASS 39 (1906). Historical notes remain as separate paragraphs in source order. A literal running-page marker is retained. OCR wording and the previously selected extent are unchanged; no original-print facsimile collation.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-39-1906-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1906-acta-ass-039/artifacts/mariavitarum-note-boundary-c5822863d02d/text.txt",
+      "title": "LITTERAE ENCYCLICAE S S . D. N. Pii d. pr. PP. X, quibus consociatio \" Mariavitarum „ seu sacerdotum mysticorum reprobatur ac supprimitur.",
+      "work_id": "work.papal.pius-x.hf-p-x-enc-05041906-tribus-circiter"
+    }
+  ],
+  "supersessions": [
+    {
+      "prior": {
+        "artifact_id": "artifact.acta-papal-archives.ass.006.historical-text-893190ca",
+        "id": "acta.ass.006.ass-006-act-008",
+        "language": "la",
+        "pdf_sha256": "4de22148736e7d1f7b85c9ed945cbb5c24dce79839d28c947db45c9e8ea5961d",
+        "segment_id": "segment.acta-papal-archives.ass.006.ass-006-act-008",
+        "source_sha256": "893190ca01494e5251b4258e8fbc570b87672977d9765d0b0b40afea58edeb3a"
+      },
+      "reason": "Fresh derivative repairing proven source whitespace defect; independent review pending.",
+      "replacement": {
+        "artifact_id": "artifact.nullis-ass6.nullis-native-spacing-b3cf559831fe",
+        "id": "acta.ass.006.ass-006-act-008",
+        "language": "la",
+        "segment_id": "segment.native-spacing-nullis.b3cf559831fe",
+        "source_sha256": "b3cf559831fe1eff46119d10aafe003027e05d43ebba564bc2edcb76bf348781",
+        "revision": "2026-10-30T15:28:56Z"
+      }
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.acta-papal-archives.ass.039.historical-text-036e2b7e",
+        "id": "acta.ass.039.ass-039-l004849",
+        "language": "la",
+        "pdf_sha256": "80a4e7b0d642093ddf5c22666adfdd05482918b913386d301669d7e985ea81a9",
+        "segment_id": "segment.acta-papal-archives.ass.039.ass-039-l004849",
+        "source_sha256": "036e2b7e75b6d396ae9ef1aef98669749cbac3c5b0db08305510ffb04046dfc6"
+      },
+      "reason": "Fresh derivative repairing proven source whitespace defect; independent review pending.",
+      "replacement": {
+        "artifact_id": "artifact.mariavitarum-ass39.mariavitarum-note-boundary-c5822863d02d",
+        "id": "acta.ass.039.ass-039-l004849",
+        "language": "la",
+        "segment_id": "segment.note-boundary-mariavitarum.c5822863d02d",
+        "source_sha256": "c5822863d02df5790f516a115615a4b724b467b1ac9b76db3fa465902a879ec3",
+        "revision": "2026-10-30T15:28:56Z"
+      }
+    }
+  ]
+}

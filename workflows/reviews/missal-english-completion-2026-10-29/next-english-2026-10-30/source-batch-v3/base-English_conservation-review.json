@@ -1,0 +1,493 @@
+{
+  "Roman_adoption": {
+    "exact_new_entries": [
+      {
+        "English_sha256": "5e1806df9e092a2efbba787595792ee945b76a2f68e4138bdc5724627e1182d0",
+        "basis": "qualified-nonoriginal-adaptation",
+        "entry_sha256": "ebee11ccf0adf4783f43327f271fd6a39c69b5d4298ef9bf0d770f8a8592c0aa",
+        "target": [
+          "commune-summorum-pontificum",
+          "main",
+          "Collect (in plurali)",
+          "all",
+          1
+        ]
+      },
+      {
+        "English_sha256": "5abfe150d6bf4f25b8a84197cec8f653b6399ee5cf1b00fa9a55a59a93b3cc90",
+        "basis": "qualified-nonoriginal-adaptation",
+        "entry_sha256": "9ec7b92fe79397de3c53e6def39d0a324c28b9758216bee87977c89db578bc01",
+        "target": [
+          "easter-vigil",
+          "main",
+          "Blessing of the Lighted Candle",
+          "all",
+          1
+        ]
+      },
+      {
+        "English_sha256": "22c7315d204930624fb95d56b8aed271dae87a2efba6a2ffaeba63ea2a2d58b5",
+        "basis": "qualified-nonoriginal-adaptation",
+        "entry_sha256": "4f4aeaf07783c7dc6cb4c42a265bf10146a0e9a8f9d46671a8df8ee490d3ce79",
+        "target": [
+          "palm-sunday",
+          "main",
+          "Blessing of the Palms",
+          "all",
+          1
+        ]
+      },
+      {
+        "English_sha256": "916522d1fdd8d57ee78be2d2a3cb698c3858cd84a66f63fbcbab9a03836f4606",
+        "basis": "qualified-nonoriginal-adaptation",
+        "entry_sha256": "d3997cd8beef48f50d9a6abb7f2a32a0aa2fb39955bdb12af7285a2bafa27591",
+        "target": [
+          "good-friday",
+          "main",
+          "Improperia",
+          "all",
+          1
+        ]
+      },
+      {
+        "English_sha256": "4853a3fb4e06853fbde934bffefb7678bb63013cb86d5b79ff309029b35a039c",
+        "basis": "public-domain",
+        "entry_sha256": "6f12205805705e448737d22c34a4b8ff5531eeab5c5b146a8fff1837b3afc815",
+        "target": [
+          "good-friday",
+          "main",
+          "Antiphons at the Translation of the Blessed Sacrament",
+          "all",
+          1
+        ]
+      },
+      {
+        "English_sha256": "d27ed7afe836505a10030545626bc206d44e6e2158bf966e1834b263b9ff6898",
+        "basis": "qualified-nonoriginal-adaptation",
+        "entry_sha256": "e6b1b0b1381f442a8c9bf1e71610f2929b478636c6020e0da741f5d5c227b566",
+        "target": [
+          "beatae-mariae-virginis-reginae",
+          "main",
+          "Introit",
+          "all",
+          1
+        ]
+      },
+      {
+        "English_sha256": "885fe7d427c834c38bd72d32f96faa8fc252824f8f533191eb69ba3dc3f52409",
+        "basis": "qualified-nonoriginal-adaptation",
+        "entry_sha256": "66ae7c60cdf5f79560a4f54bf67faf33c7877fbb05558e9e9112540b59a24e20",
+        "target": [
+          "beatae-mariae-virginis-reginae",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ]
+      }
+    ],
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision.json",
+    "sha256": "d0802309d2518db774c3ad352f2eba03605e67cad735959444b422233ffd4874"
+  },
+  "actual_derive_or_acceptance_performed": false,
+  "actual_owning_English_coverage": {
+    "postconciliar": {
+      "ledgered_untranslated": 401,
+      "slots": 574,
+      "with_english": 173
+    },
+    "roman-1962": {
+      "ledgered_untranslated": 34,
+      "slots": 1448,
+      "with_english": 1414
+    },
+    "roman-pre-1955": {
+      "inherited_inapplicable_records": 57,
+      "ledgered_untranslated": 17,
+      "slots": 1391,
+      "with_english": 1374
+    }
+  },
+  "assertions_passed": 214,
+  "calendar_conservation": {
+    "postconciliar": {
+      "all_prior_positive_dictionaries_exact": true,
+      "current_absences": 401,
+      "current_positive_dictionaries": 173,
+      "new_positive_dictionaries": 18,
+      "prior_absences": 419,
+      "prior_positive_dictionaries": 155,
+      "target_universe_unchanged": true,
+      "unconsumed_absences_exact": true
+    },
+    "roman-1962": {
+      "all_prior_positive_dictionaries_exact": true,
+      "current_absences": 34,
+      "current_positive_dictionaries": 1414,
+      "new_positive_dictionaries": 7,
+      "prior_absences": 41,
+      "prior_positive_dictionaries": 1407,
+      "target_universe_unchanged": true,
+      "unconsumed_absences_exact": true
+    }
+  },
+  "candidate_fixture_sha256": "1ddc1aaca776d6bf10de4a1b5e86994beda323db20828f3586e2850bc0265c68",
+  "canonical_index_or_ref_writes": 0,
+  "contrary_or_failed_assertions": [],
+  "legacy70": {
+    "all70_current_dictionaries_exact": true,
+    "debt_closed_by_this_cohort": 0,
+    "original_project_draft_dictionaries": 70,
+    "review_debt_qualifications_unchanged": true
+  },
+  "older_frame": {
+    "current_English": 1374,
+    "net_new_English": 1,
+    "one_inherited_new_positive": [
+      [
+        "commune-summorum-pontificum",
+        "main",
+        "Collect (in plurali)",
+        "all",
+        1
+      ]
+    ],
+    "six_mask_retypes_only": [
+      [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Introit",
+        "all",
+        1
+      ],
+      [
+        "easter-vigil",
+        "main",
+        "Blessing of the Lighted Candle",
+        "all",
+        1
+      ],
+      [
+        "good-friday",
+        "main",
+        "Antiphons at the Translation of the Blessed Sacrament",
+        "all",
+        1
+      ],
+      [
+        "good-friday",
+        "main",
+        "Improperia",
+        "all",
+        1
+      ],
+      [
+        "palm-sunday",
+        "main",
+        "Blessing of the Palms",
+        "all",
+        1
+      ]
+    ],
+    "targets": 1391,
+    "total_masks": 57
+  },
+  "original116_whole_PC_positive_dictionaries_exact": true,
+  "parent_git_revision": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+  "postconciliar_adoption": {
+    "all18_prior_absences_retained_in_new_receipts": true,
+    "exact_new_entries": [
+      {
+        "English_sha256": "8fdb0dab3b3d917888285c24b04c77fd720123ee6f1c261024163c011c7cc957",
+        "classification": "qualified-exact-finite-underlying-expression",
+        "entry_sha256": "e7eb9dd7bf10ac9305bacf839552146199f3d80abd89ae760d29f4fbda4118cf",
+        "target": [
+          "epiphany",
+          "day",
+          "Prayer over the Offerings",
+          "all",
+          1
+        ],
+        "translation_rights": "project-created"
+      },
+      {
+        "English_sha256": "84d489a5659adc5a9364300eb2fd2d9cff8ad42f19c871ecc45473fbcec2816e",
+        "classification": "qualified-exact-finite-underlying-expression",
+        "entry_sha256": "dad9a76cafe534466fe969194b16ca86939c1c6ee47cd878b5a912db0d1661e3",
+        "target": [
+          "ot-25",
+          "main",
+          "Prayer after Communion",
+          "all",
+          1
+        ],
+        "translation_rights": "project-created"
+      },
+      {
+        "English_sha256": "f39297ffc2bd1806838302e46492126d2762bd4252978dd1a430b5196eaf146e",
+        "classification": "qualified-exact-finite-underlying-expression",
+        "entry_sha256": "7e5da0449cffefcedcfa69791b8e12397e7f5f1c50a1d2942c1cfbaef93ae99c",
+        "target": [
+          "pentecost",
+          "vigil",
+          "Collect",
+          "all",
+          1
+        ],
+        "translation_rights": "project-created"
+      },
+      {
+        "English_sha256": "ac34c4afd5c25948d3151350c1a2f653cd6eb6d9c4161b3ee49af95070e50066",
+        "classification": "normal-public-domain-new-study-English",
+        "entry_sha256": "95dc72e540f0e80966b60528d934595348ebea4baf73f7fef2d1794db2bf5f62",
+        "target": [
+          "pentecost",
+          "vigil",
+          "Collect",
+          "all",
+          2
+        ],
+        "translation_rights": "project-created"
+      },
+      {
+        "English_sha256": "8865032526a653274ec29ef172191e3cccb9ac5bcb00bba2328afc03a802b8ee",
+        "classification": "qualified-exact-finite-underlying-expression",
+        "entry_sha256": "0faf8a938ffc217318757d67ccf9f82569b864fb14f1108972b62b4f20042b9a",
+        "target": [
+          "ot-11",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "translation_rights": "project-created"
+      },
+      {
+        "English_sha256": "3ba71c43e03b94aba22879968aa844717562bdb4c8cb9b8ab19594bb4cfd3cb3",
+        "classification": "qualified-exact-finite-underlying-expression",
+        "entry_sha256": "004802315f46cc6d36672dbd525be25583fc487cb37a83db2a071fe2c1340c1b",
+        "target": [
+          "ot-31",
+          "main",
+          "Prayer after Communion",
+          "all",
+          1
+        ],
+        "translation_rights": "project-created"
+      },
+      {
+        "English_sha256": "01a9a677203a3fcbd39a86d66f647d8d420cd602939b19cd967252edee5971d1",
+        "classification": "qualified-exact-finite-underlying-expression",
+        "entry_sha256": "66d25bf48bd38e85a5d84e16bab3a4cf31372fdb863f56d77a2d6225f462cbd8",
+        "target": [
+          "mary-mother-of-god",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "translation_rights": "project-created"
+      },
+      {
+        "English_sha256": "6586216e37912d36fc0f7adde9bc2d747ba399e244de98476560035f78de1e63",
+        "classification": "qualified-exact-finite-underlying-expression",
+        "entry_sha256": "61e2a061df6bb1fca01a9cad309b1f8c429d7fe1ba121aa96b628067e25df1fc",
+        "target": [
+          "easter-sunday",
+          "main",
+          "Prayer over the Offerings",
+          "all",
+          1
+        ],
+        "translation_rights": "project-created"
+      },
+      {
+        "English_sha256": "01a9a677203a3fcbd39a86d66f647d8d420cd602939b19cd967252edee5971d1",
+        "classification": "qualified-exact-finite-underlying-expression",
+        "entry_sha256": "b03cb91797b87665e0579551972e38c6f051d52304870e7e40b81f12709551b2",
+        "target": [
+          "mary-holy-mother-god",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "translation_rights": "project-created"
+      },
+      {
+        "English_sha256": "c5a625d6e04c4d11df921a9353779ba8cde9142726abd2f351dbf22c7172a21a",
+        "classification": "literal-public-domain-historical-English",
+        "entry_sha256": "cb16a4841892413a3d4a4a0f1bb1d734bf0e936e445ca22288992fe45327d54d",
+        "target": [
+          "most-holy-trinity",
+          "main",
+          "Entrance Antiphon",
+          "all",
+          1
+        ],
+        "translation_rights": "public-domain"
+      },
+      {
+        "English_sha256": "5b168c961ec155c57ff09ecfacf3e9a35f19bb5d711954ae481ff9ca82102d2b",
+        "classification": "literal-public-domain-historical-English",
+        "entry_sha256": "18a014fbe3e6a832ec1266dbf2a120d46207539795dae31411ef2aa2599025e5",
+        "target": [
+          "lent-3-thursday",
+          "main",
+          "Entrance Antiphon",
+          "all",
+          1
+        ],
+        "translation_rights": "public-domain"
+      },
+      {
+        "English_sha256": "ec64c42d9e7813a54eab3ca00a4b3a8db47ae3ae736306ee541f237bec2d3c89",
+        "classification": "literal-public-domain-historical-English",
+        "entry_sha256": "584c8db88862b5a5f96af3488bf787b1d40f0006869df042cadd8be2f4b8f42d",
+        "target": [
+          "advent-december-18",
+          "main",
+          "Entrance Antiphon",
+          "all",
+          1
+        ],
+        "translation_rights": "public-domain"
+      },
+      {
+        "English_sha256": "aa4b07dfda8976668996210cdbb6b3021d621366bf2518f0b167001d33f7572f",
+        "classification": "normal-public-domain-new-study-English",
+        "entry_sha256": "10fff0e4645e9e3d97c29b3dc98f3bc6d4adf5d4332e691d13a85125c61e1037",
+        "target": [
+          "advent-1-friday",
+          "main",
+          "Entrance Antiphon",
+          "all",
+          1
+        ],
+        "translation_rights": "project-created"
+      },
+      {
+        "English_sha256": "aa4b07dfda8976668996210cdbb6b3021d621366bf2518f0b167001d33f7572f",
+        "classification": "normal-public-domain-new-study-English",
+        "entry_sha256": "014c34fa9ef3a50bf4f1f13f089866bc1b42c20bef1ced325f4a375d4c6b1e86",
+        "target": [
+          "advent-2-friday",
+          "main",
+          "Entrance Antiphon",
+          "all",
+          1
+        ],
+        "translation_rights": "project-created"
+      },
+      {
+        "English_sha256": "2af99ec30a2e741d5138a647db979320eb968b336c6b067aa4454d72af69679a",
+        "classification": "literal-public-domain-historical-English",
+        "entry_sha256": "1eac9c694f8c9904773c19560c82af4dfb3c3b14da51fc7affc63b4b7d12f75d",
+        "target": [
+          "mass-of-the-lords-supper",
+          "main",
+          "Hymn at the Transfer of the Blessed Sacrament",
+          "all",
+          1
+        ],
+        "translation_rights": "public-domain"
+      },
+      {
+        "English_sha256": "fde699664599d7a55bb0662729cf4683c920c7b6a293548b2d57ac71a8155ac0",
+        "classification": "literal-public-domain-historical-English",
+        "entry_sha256": "5d6873bd1114b37a783747685cb84c5088143033047a4f93ee9e4cd22916508b",
+        "target": [
+          "mass-of-the-lords-supper",
+          "main",
+          "Chant at the Place of Reposition",
+          "all",
+          1
+        ],
+        "translation_rights": "public-domain"
+      },
+      {
+        "English_sha256": "253eb52f17597424fcd0ed772956c008126c2efed10fbef9d0440b47aa3cf121",
+        "classification": "qualified-exact-finite-underlying-expression",
+        "entry_sha256": "b3a0ce276cbfac4e82f1065e9df50327d9df8ff707ecf2ebc296d913e9f8ae57",
+        "target": [
+          "good-friday",
+          "main",
+          "Prayer",
+          "all",
+          1
+        ],
+        "translation_rights": "project-created"
+      },
+      {
+        "English_sha256": "259ffb9853436f8b1b77c80178366f36ca9b77860657c308e5eff74f52f1ee61",
+        "classification": "qualified-exact-finite-underlying-expression",
+        "entry_sha256": "94667bda7ae952d238ae3f2aacdd9ffdbef70a854915208feb1b0bd3e4c954ab",
+        "target": [
+          "good-friday",
+          "main",
+          "Prayer (alternative)",
+          "all",
+          1
+        ],
+        "translation_rights": "project-created"
+      }
+    ],
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/root-decision.json",
+    "sha256": "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943",
+    "six_exact_admission_receipts": [
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-extra-two-admission.json",
+        "sha256": "7a58224decae8b70bc8b80059c65d2fef910e61fca194cf9a02dfe7eada41324"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-ordinary-four-admission.json",
+        "sha256": "2e0d3516ee8e095ac4197d23222258f38b264ad5eef04aad0a92914e6283870b"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-remaining-three-admission.json",
+        "sha256": "89d8b0f274abd76eb09c4b555f547bec0112531eaac099ce19230833e946ea27"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-seasonal-five-admission.json",
+        "sha256": "4fbe06443c355f25da591d7233041460b2f1515db3d7ed2c1e138286381d8d0b"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-pange-two-admission.json",
+        "sha256": "549f477cecaabfe64fbda5f3dd070231c2196a070d26ba3c5cb2c8a35a0326e6"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-good-friday-opening-two-admission.json",
+        "sha256": "159c5d14dc1cb1ab090358abd47f2ad9fa44070adfd5d51c13598ee47274c1cf"
+      }
+    ],
+    "source_classes": {
+      "literal-public-domain-historical-English": 5,
+      "normal-public-domain-new-study-English": 3,
+      "qualified-exact-finite-underlying-expression": 10
+    }
+  },
+  "qualifications": [
+    "This verifies exact adopted data and prior conservation, not a new legal judgment, historical source collation or English fidelity acceptance.",
+    "The represented-body counts do not establish whole-Missal completeness, exact2008 correspondence or approved liturgical English.",
+    "Legacy70 source/fidelity debt remains open; new25 source approvals do not retrospectively accept those drafts.",
+    "Candidate remains pending; root retains acceptance/install authority."
+  ],
+  "quarantine": {
+    "all_baseline_metadata_exact": true,
+    "approved_2011_identity_and_rights_not_promoted": true,
+    "baseline_target_rows": 174,
+    "distinct_hashes": 172,
+    "new_admission_receipts": 6,
+    "old_admission_receipts_exact": 8
+  },
+  "schema": "triptych-independent-English25-conservation-review/v1",
+  "status": "PASS-bounded-English-dictionaries-transitions-and-coverage",
+  "transition_contract_sha256": "a378e7ab8d12876e50946054673f5305af11c11ab43c444ecb445752f11dcb7f"
+}

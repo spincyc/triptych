@@ -1,0 +1,280 @@
+{
+  "recorded_on": "2026-10-29",
+  "state": "prepared-source-reviewed-awaiting-canonical-installation",
+  "scope": "Five exact postconciliar source-owned Gospel Acclamation verse recipients; three distinct complete historical human English verses. No wrapper, rubric, protected payload or authenticated 2008 claim.",
+  "candidate_packet_sha256": "d03165ec428b95eead683843886b053f2eabaa185f3b7a1a2cd3b625fcead2bd",
+  "source_cold_review_sha256": "5f0bee81a9f73b0d5a80a157be0ef5c0b30365e1b7853b71f16f940bc5062081",
+  "sidecar_preimage_sha256": "e88c65f925f7f1676a9fcbf81eef604ab229ac9d6cc426fd2d7fe924ba333ba4",
+  "calendar_preimage_sha256": "4f2ab3a78e54a3d36e2c003444d22121a323c5187ef8ca5d91182f1e4925e43d",
+  "candidate_entries_sha256": "02ca1568e58a5a091c9af3f9fc32f26675744094ad3c9ea1f2c5ef4c0df67841",
+  "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-lasance-verses-en",
+  "publication_artifact_sha256": "822222a570dca1d26bd887b8767b1bf2f2dbdec9d7646c51806e58709bab6a66",
+  "publication_artifact_byte_size": 757,
+  "target_count": 5,
+  "distinct_historical_body_count": 3,
+  "canonical_file_count": 15,
+  "targets": [
+    {
+      "target": {
+        "mass": "pentecost",
+        "form_id": "vigil",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "source_visual_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-veni-sancte-spiritus-verse-source",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-pentecost-vigil-gospel-acclamation-all-1-publication",
+      "comparison_passage_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-pentecost-vigil-gospel-acclamation-all-1-olm-comparison",
+      "english_sha256": "885a5136d1f867d0691a9a096e9af7e05580d16e14ed9049f8a0fe017e6f511c",
+      "publication_physical_line": 2,
+      "canonical_incipit_preimage": "Veni, Sancte Spiritus",
+      "superseded_untranslated_preimage": {
+        "mass": "pentecost",
+        "form_id": "vigil",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-23"
+        ],
+        "quarantined_text_sha256": [
+          "19670034a81d3299012feb659a2fd9cef2997d185e5852ce10164c6e61b066a9"
+        ],
+        "note": "The official ICEL Antiphonary contains no Gospel Acclamations, so its permission cannot clear this slot. The liturgies.net row, which failed comparison with the current U.S. rendering, is a rejected source candidate. This is instead a Lectionary / Confraternity of Christian Doctrine candidate; neither liturgies.net nor the USCCB comparison establishes an authoritative redistributable exemplar. No English wording is retained."
+      }
+    },
+    {
+      "target": {
+        "mass": "pentecost",
+        "form_id": "day",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "source_visual_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-veni-sancte-spiritus-verse-source",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-pentecost-day-gospel-acclamation-all-1-publication",
+      "comparison_passage_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-pentecost-day-gospel-acclamation-all-1-olm-comparison",
+      "english_sha256": "885a5136d1f867d0691a9a096e9af7e05580d16e14ed9049f8a0fe017e6f511c",
+      "publication_physical_line": 3,
+      "canonical_incipit_preimage": "Veni, Sancte Spiritus",
+      "superseded_untranslated_preimage": {
+        "mass": "pentecost",
+        "form_id": "day",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-23"
+        ],
+        "quarantined_text_sha256": [
+          "19670034a81d3299012feb659a2fd9cef2997d185e5852ce10164c6e61b066a9"
+        ],
+        "note": "The official ICEL Antiphonary contains no Gospel Acclamations, so its permission cannot clear this slot. The liturgies.net row is a rejected source candidate. This is instead a Lectionary / Confraternity of Christian Doctrine candidate; neither liturgies.net nor the USCCB comparison establishes an authoritative redistributable exemplar. No English wording is retained."
+      }
+    },
+    {
+      "target": {
+        "mass": "nativity",
+        "form_id": "day",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "source_visual_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-dies-sanctificatus-verse-source",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-nativity-day-gospel-acclamation-all-1-publication",
+      "comparison_passage_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-nativity-day-gospel-acclamation-all-1-olm-comparison",
+      "english_sha256": "60fff024d7b543e76876749940e2e1c9419ff008e6be17887f1bb7ee828d6ad4",
+      "publication_physical_line": 4,
+      "canonical_incipit_preimage": "Dies sanctificatus illuxit nobis",
+      "superseded_untranslated_preimage": {
+        "mass": "nativity",
+        "form_id": "day",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "04de0ebcfcf1d4b68067929a01fd20e3f2c1d4dc1640f67fae4f3db4228c5c44"
+        ],
+        "note": "The official ICEL Antiphonary contains no Gospel Acclamations, so its permission cannot clear this slot. The liturgies.net row is a rejected source candidate. This is instead a Lectionary / Confraternity of Christian Doctrine candidate; neither liturgies.net nor the USCCB comparison establishes an authoritative redistributable exemplar. No English wording is retained."
+      }
+    },
+    {
+      "target": {
+        "mass": "easter-3",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "C",
+        "occurrence": 1
+      },
+      "source_visual_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-surrexit-christus-verse-source",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-easter-3-main-gospel-acclamation-c-1-publication",
+      "comparison_passage_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-easter-3-main-gospel-acclamation-c-1-olm-comparison",
+      "english_sha256": "388998c78ec3888ea0fb40a8b18d432c5a84fced0534245d734d379883c29690",
+      "publication_physical_line": 5,
+      "canonical_incipit_preimage": "",
+      "superseded_untranslated_preimage": {
+        "mass": "easter-3",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "C",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "763779437d55a920bde233ec984b228862f77015c32c944475935555139c0e43"
+        ],
+        "note": "The official ICEL Antiphonary contains no Gospel Acclamations, so its permission cannot clear this slot. The liturgies.net row, which was Latin mislabeled as English, is a rejected source candidate. This is instead a Lectionary / Confraternity of Christian Doctrine candidate; neither liturgies.net nor the USCCB comparison establishes an authoritative redistributable English exemplar. No English wording is retained."
+      }
+    },
+    {
+      "target": {
+        "mass": "easter-2-saturday",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "source_visual_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-surrexit-christus-verse-source",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-easter-2-saturday-main-gospel-acclamation-all-1-publication",
+      "comparison_passage_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-easter-2-saturday-main-gospel-acclamation-all-1-olm-comparison",
+      "english_sha256": "388998c78ec3888ea0fb40a8b18d432c5a84fced0534245d734d379883c29690",
+      "publication_physical_line": 6,
+      "canonical_incipit_preimage": "",
+      "superseded_untranslated_preimage": {
+        "mass": "easter-2-saturday",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1,
+        "extent": "body",
+        "lang": "en",
+        "availability": "unavailable",
+        "note": "OLM 1981 n.272, AP202 / printed148, complete Gospel Acclamation inspected 2026-10-22. No biblical citation is printed. An uncited two-clause Easter unit is printed; no biblical whole-unit identification or independent publishable whole witness is established. Exact Latin image evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.easter-ferial-courses-267-284. The underlying biblical material is not assigned new Latin ownership. No independent lawful whole-unit witness/publication basis for the adapted or composed unit has been established; the held source artifact remains non-indexable and restricted. No text, incipit, removed-body hash or Latin publication-ledger entry is supplied. No exact English whole-unit exemplar is held. The Latin image is not an English witness; no English rights-withheld claim is made.",
+        "reason": {
+          "kind": "no-exemplar"
+        }
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/english-completion-20261029-postconciliar-phase2-acclamations-easter-2-saturday-main-gospel-acclamation-all-1-olm-comparison.toml",
+      "sha256": "2eb70a32bdb38d73034fe41f7849f76f8cf3e4ad04d60bf759585523a7d61823",
+      "byte_size": 1760
+    },
+    {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/english-completion-20261029-postconciliar-phase2-acclamations-easter-3-main-gospel-acclamation-c-1-olm-comparison.toml",
+      "sha256": "5db7152a4ee369a59e9da5cb3899fa8f9ce0bc09e8f4955cf752900ff03e8918",
+      "byte_size": 1631
+    },
+    {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/english-completion-20261029-postconciliar-phase2-acclamations-nativity-day-gospel-acclamation-all-1-olm-comparison.toml",
+      "sha256": "5e089abda526f806b137be869ce338b3579492c4f5319d2a5ffa06e66d2e33a7",
+      "byte_size": 1522
+    },
+    {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/english-completion-20261029-postconciliar-phase2-acclamations-pentecost-day-gospel-acclamation-all-1-olm-comparison.toml",
+      "sha256": "0c1bbe7884167329e64142949c5683202aa84ac33eac2e9fbc86de7852e6de63",
+      "byte_size": 1713
+    },
+    {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/english-completion-20261029-postconciliar-phase2-acclamations-pentecost-vigil-gospel-acclamation-all-1-olm-comparison.toml",
+      "sha256": "9a05eeaafe113cd1bce82c509a6efc7bada5112e213c3242ba6b4f6cefa56127",
+      "byte_size": 1715
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase2-acclamations-lasance-verses-en/artifact.toml",
+      "sha256": "1fb3c6a30c128a83ecfe89a884cd3310275bb25e9ffdfb5b057119a41b64b728",
+      "byte_size": 2331
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase2-acclamations-lasance-verses-en/text.tsv",
+      "sha256": "822222a570dca1d26bd887b8767b1bf2f2dbdec9d7646c51806e58709bab6a66",
+      "byte_size": 757
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-acclamations-dies-sanctificatus-verse-source.toml",
+      "sha256": "375a3c141fe5b8b7f5b1c5e0d0e4d9c6c56030060f90403642ca668b65da174a",
+      "byte_size": 1508
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-acclamations-easter-2-saturday-main-gospel-acclamation-all-1-publication.toml",
+      "sha256": "1c5bd259ed72108a0ce36aa8fc52492e20bcd5c79827ffd54b5d0edffb2d6734",
+      "byte_size": 1728
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-acclamations-easter-3-main-gospel-acclamation-c-1-publication.toml",
+      "sha256": "f388786f3eb6777b4e8d971c2a6e7d7250445ba103094e5c0763d9cca8aee0f2",
+      "byte_size": 1695
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-acclamations-nativity-day-gospel-acclamation-all-1-publication.toml",
+      "sha256": "f2e8912ba27df123fb198c567f00ec0d304ba5d1a37d98cd1aa5b556bef01e6e",
+      "byte_size": 1696
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-acclamations-pentecost-day-gospel-acclamation-all-1-publication.toml",
+      "sha256": "1a8b6e176845f46e938e4891381897f0cb39965dc470b41ab38d5a5ab29be3cc",
+      "byte_size": 1704
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-acclamations-pentecost-vigil-gospel-acclamation-all-1-publication.toml",
+      "sha256": "89c113d6207e173859e4bf4ef6bdf43542e4d2877b5939a868e45a7d9f3ff940",
+      "byte_size": 1710
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-acclamations-surrexit-christus-verse-source.toml",
+      "sha256": "2777df7da9df1d118377b59ff7b100fd3f11698b62e8201497f9e02a91877a43",
+      "byte_size": 1546
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-acclamations-veni-sancte-spiritus-verse-source.toml",
+      "sha256": "a8e14e24a79beb55c60c9fed02468e7e8f84e617c50ba952447de05a7a3ffee0",
+      "byte_size": 1515
+    }
+  ],
+  "validation": [
+    "Input source-review and packet SHA join",
+    "Exact English SHA join against independent review for all five recipients",
+    "Current exact target and cycle/incipit preimage join",
+    "TOML round trip for all proposed manifests and five overlay entries",
+    "TSV JSON cell equality and five exact recipient identities",
+    "Three distinct complete English bodies and three source-verification controllers",
+    "Every canonical destination is absent before proposal writing"
+  ],
+  "remaining": [
+    "Canonical installation and superseded-absence preservation",
+    "Source graph and calendar overlay validation",
+    "Publication proof and frozen source-epoch adoption",
+    "Owner generation and integrated reader checks"
+  ],
+  "tracked_mutations": "none"
+}

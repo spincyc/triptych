@@ -4,6 +4,10 @@ This profile governs source-first histories of condemned propositions, persons,
 schools, movements, and ecclesial responses beneath `src/<provider>/theology/heresies/`.
 They are not juridical determinations of a living person's culpability.
 
+Declare the leaf's type, source roles, contract version, and ordered outputs in
+`publication.toml` under [document schemas](../document-schemas.md), preserving
+the census, dossier, evidence-grade, and response-event distinctions below.
+
 ## Governing priorities
 
 1. Define and reconcile a controlling corpus before claiming completeness.
@@ -132,8 +136,8 @@ confirmations, mixed censures, and provenance limits.
 
 ## Currentness and profile gate
 
-Before installation, recheck current canon law, material DDF acts, and official
-common declarations; date only mutable law and present ecclesial claims rather
+Before source or HTML publication, recheck current canon law, material DDF acts,
+and official common declarations; date only mutable law and present ecclesial claims rather
 than giving stable history artificial currentness. Publication, census, dossiers,
 and timeline must agree exactly. Source audit is not independent historical,
 theological, canonical, ecumenical, or ecclesiastical review, and a broad survey

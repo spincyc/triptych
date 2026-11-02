@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "review": "independent source-first catalogue policy repair confirmation",
+  "verdict": "PASS",
+  "reviewed_sha256": {
+    "tools/public-alpha": "380964f02a435029982fbfe3756da80faf445fd979e1d0891cb973282b3172b9",
+    "tools/tests/test_public_alpha.py": "9f60d0c0b9bc74d6a077f820bbbff0cdf53aa1db733aad57226abdb81f9d5147"
+  },
+  "resolved_findings": [
+    {
+      "id": "SOURCE-CATALOGUE-001",
+      "resolution": "The local identity parser and link resolver now both recognize included web and print HTML routes. The full filter/rewrite path preserves the print action, query and fragment."
+    },
+    {
+      "id": "SOURCE-CATALOGUE-002",
+      "resolution": "Row marker validation compares the union of PDF and local HTML identities. Correct mixed-provider rows pass; incorrect markers still fail."
+    }
+  ],
+  "additional_resolution": "Held HTML links use normalized local identities for degradation, including percent encoding; unrelated external URLs remain unchanged. HTML-only catalogue rows also receive the existing private-support-link suppression during rewriting.",
+  "independent_checks": [
+    {
+      "command": "python -m unittest tools.tests.test_public_alpha -v",
+      "runtime": "Reconstructed pinned repository runtime; exclusive reviewer scratch TMPDIR",
+      "exit_code": 0,
+      "tests": 159,
+      "passed": 159,
+      "seconds": 8.022
+    },
+    {
+      "result": "Independent included print HTML filter/rewrite preserves query and fragment; an excluded print row and destination are removed."
+    },
+    {
+      "result": "Independent correct mixed PDF/HTML markers pass; an incorrect marker is still reported; legacy PDF plus Read ownership remains exactly one."
+    },
+    {
+      "result": "Independent percent-encoded held link becomes an em dash while its row’s external URL remains linked. Multiline comments, HTTPS and protocol-relative external URLs do not add local ownership."
+    },
+    {
+      "result": "The full focused suite retains duplicate ownership, undeclared provider, source-only three-edition ownership, empty held-row filtering and legacy public-alpha regression checks."
+    },
+    {
+      "command": "git diff --check -- tools/public-alpha tools/tests/test_public_alpha.py",
+      "exit_code": 0
+    }
+  ],
+  "prior_review_history": {
+    "verdict": "CHANGES_REQUIRED",
+    "finding_ids": [
+      "SOURCE-CATALOGUE-001",
+      "SOURCE-CATALOGUE-002"
+    ],
+    "reviewed_tool_sha256": "ef84741277a44b537d5dd346e3105f1d586cd0fc44a81f5ea8c9d49e70436fff",
+    "original_scratch_report_available": false,
+    "record_basis": "The original report was deleted during the user-confirmed scratch cleanup. This new review records the findings and resolutions from the preserved conversation and fresh checks; it does not recreate or claim exact original report bytes."
+  },
+  "open_findings": [],
+  "limits": [
+    "This confirms the bounded catalogue-policy repair. Fresh governing receipts, final site build and integration/disclosure review remain separate.",
+    "No authoritative source, index, release, workflow record or global build mutation was performed by this reviewer."
+  ]
+}

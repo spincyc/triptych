@@ -1,0 +1,97 @@
+schema_version = 1
+id = "claude/biographies/saint-thomas-aquinas"
+kind = "biography"
+profile = "guidance/biographies.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "claude/biographies/saint-thomas-aquinas"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "chronology"
+source = "research/chronology.md"
+
+[[structure]]
+role = "tradition-audit"
+source = "research/tradition-audit.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/00-question.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/10-aquino.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/20-paris-cologne.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/30-master.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/40-italy.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/50-second-paris.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/60-naples-end.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/70-aftermath.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/80-traditions.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/90-reception.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/100-conclusion.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/110-scope-chronology-evidence.tex"
+
+[[structure]]
+role = "references"
+source = "sections/120-references.tex"

@@ -1,0 +1,151 @@
+{
+  "schema": "triptych-native-note-column-review/v1",
+  "revision": "2026-10-30T16:23:36Z",
+  "source_artifact_id": "artifact.acta-papal-archives.ass.012.historical-text-e91f242d.note-blocks-arcanum-la-fd4fbfc32f74",
+  "source_sha256": "fd4fbfc32f74ef62b13b24d533120d495c404cd2405dec588f63092541993872",
+  "prior_segment_id": "segment.acta-papal-archives.ass.012.ass-012-act-007.note-blocks-fd4fbfc32f74",
+  "prior_pdf_sha256": "c158cde1e0458c59f65ff7a40ff8e207f9dfa410b19720682a958e99cc9f3d29",
+  "prior_frozen_manifest_sha256": "09302898a48d7a8bbd806ea0f30e08a70166747b5c43d82739305509c6474fa6",
+  "prior_receipt_sha256": "04edda9f22905ccb201809b3f2ab04601ca57e87f231b6e1ccc80dea84307f20",
+  "native_pdf_artifact_id": "artifact.acta-papal-archives.ass.012.vatican-pdf-01700964",
+  "native_pdf_sha256": "017009649925ced58e3f51a80eac34dc0f858a8e4b06e6992bf6e663e56b8993",
+  "native_full_size_pages_inspected": [
+    387,
+    388,
+    389,
+    390,
+    391,
+    392,
+    393,
+    398
+  ],
+  "source_note_lf_ranges": [
+    [
+      135,
+      136
+    ],
+    [
+      178,
+      180
+    ],
+    [
+      222,
+      225
+    ],
+    [
+      264,
+      270
+    ],
+    [
+      313,
+      315
+    ],
+    [
+      360,
+      361
+    ],
+    [
+      398,
+      406
+    ],
+    [
+      617,
+      624
+    ]
+  ],
+  "native_word_geometry_artifact_id": "artifact.acta-papal-archives.ass.012.historical-text-e91f242d.note-blocks-arcanum-la-fd4fbfc32f74.native-note-geometry-9a0a51a96db3",
+  "native_word_geometry_sha256": "9a0a51a96db3c2b8f8dcd87776bfc4ddf882724182acc451e27a03a47b31fce3",
+  "source_byte_proof_artifact_id": "artifact.acta-papal-archives.ass.012.historical-text-e91f242d.note-blocks-arcanum-la-fd4fbfc32f74.source-order-byte-proof-29f08070f94a",
+  "source_byte_proof_sha256": "29f08070f94aa56b6d1ed270288331c4c0c6d2d38d6c0c716d8d3db01d7c59fd",
+  "word_count": 603,
+  "source_slice_count": 75,
+  "native_word_values_preserved": true,
+  "native_column_ownership_clear": true,
+  "every_source_note_byte_covered_once": true,
+  "every_source_slice_emitted_once": true,
+  "non_note_selected_lf_rows_byte_identical_and_in_order": true,
+  "global_non_lf_order_preserved": false,
+  "reading_order": "Each of the eight native two-column page-foot note groups reads completely down its left column, then completely down its right column. Page391 note(2) continues from bottom left into top right; right top is not a new note. Each visible historical note starts a separate paragraph. Literal OCR labels, source interletter spaces and original hyphens remain unchanged.",
+  "helper_path": "scripts/_papal_source_order.py",
+  "helper_sha256": "f0a3014db485ee25ffa7df013c81e600f8e4f9eccff76b5ac7daecbc1d6a9c86",
+  "output_sha256": "d28389997f6af7045924b64ab085b6e58ec7df1622060fb7675fa9909a5d484d",
+  "native_parent_subset_equality_proofs": [
+    {
+      "parent_pdf_page": 387,
+      "subset_page": 1,
+      "subset_path": ".scratch/arcanum-note-order-fix/native/page-387.pdf",
+      "subset_sha256": "e730145471531e0f4629f703945e0c75bdea839abb1a49c7e1d83d3e821d5977",
+      "raw_text_stdout_sha256": "b3a95ea278b3aedb31352b6dbca16e598343d09b383b0b035f6a15d0db093482",
+      "bbox_page_elementtree_default_serialization_sha256": "d518483e72e7e2b4d732c0303bcd9432ee14d6e142549a4055832b6d68581e08",
+      "raw_and_bbox_parent_subset_equal": true
+    },
+    {
+      "parent_pdf_page": 388,
+      "subset_page": 1,
+      "subset_path": ".scratch/arcanum-note-order-fix/native/page-388.pdf",
+      "subset_sha256": "fb46c6894663515fce11f67cf162e5561d6a98f0c37fc58c298ca04583651909",
+      "raw_text_stdout_sha256": "8d8723daec9c7c6ee5287b05e3a24d9980b0e82c4ab189f00914851a2d5b7e12",
+      "bbox_page_elementtree_default_serialization_sha256": "abea752228c6310986e23cff46b6943487e97642e712538937c90f7513a381a5",
+      "raw_and_bbox_parent_subset_equal": true
+    },
+    {
+      "parent_pdf_page": 389,
+      "subset_page": 1,
+      "subset_path": ".scratch/arcanum-note-order-fix/native/page-389.pdf",
+      "subset_sha256": "b8c31ebd491fbb85166c3ee8329cac1fa7983878aab2b8cc6c57dd7654dc94cf",
+      "raw_text_stdout_sha256": "72182b1a0af62a755cdf6cdb90bafbcb6980dada65519712c48f3fc37f6f2554",
+      "bbox_page_elementtree_default_serialization_sha256": "26f2700f7651a8edcc7ccd1ce4d1d64100e5803b436914631e977bdc07ee514e",
+      "raw_and_bbox_parent_subset_equal": true
+    },
+    {
+      "parent_pdf_page": 390,
+      "subset_page": 1,
+      "subset_path": ".scratch/arcanum-note-order-fix/native/page-390.pdf",
+      "subset_sha256": "bb500cb2e616f6d1229031ed45146573e4991a06e0634349ea11c58a14ac8f14",
+      "raw_text_stdout_sha256": "6e57bae319f5c02c7aa85402aa59aea5f6a6347089435100e985fbb034fbfdb7",
+      "bbox_page_elementtree_default_serialization_sha256": "0f9a91837d9bbda2ece078645b3b23c221818edc2175ab6f9270784cc1bbe260",
+      "raw_and_bbox_parent_subset_equal": true
+    },
+    {
+      "parent_pdf_page": 391,
+      "subset_page": 1,
+      "subset_path": ".scratch/arcanum-note-order-fix/native/page-391.pdf",
+      "subset_sha256": "5e9d23605de5b2c8d6aa0e83d8adb362010f1f5e018f6326c10767b76f8cd76c",
+      "raw_text_stdout_sha256": "623a0f62a2f9d5af6815f3384890e0bd29c53a9ad4a5b3207721d8224f428843",
+      "bbox_page_elementtree_default_serialization_sha256": "c29a07dd5758702c55001346c5ee4ba407e94ac209a8308f1d58665d1160796b",
+      "raw_and_bbox_parent_subset_equal": true
+    },
+    {
+      "parent_pdf_page": 392,
+      "subset_page": 1,
+      "subset_path": ".scratch/arcanum-note-order-fix/native/page-392.pdf",
+      "subset_sha256": "36f4cacad75bef22b86af83cceaf66bf0f3f57758873dc29dbf619245d26d96e",
+      "raw_text_stdout_sha256": "322abf777228baa6340876b115271b809701b117ffbdf2d67c61b76875459014",
+      "bbox_page_elementtree_default_serialization_sha256": "443a18ab20daf68ff5390e7cc09884156cc7a0ec91e4937e76075d05b3b7c91c",
+      "raw_and_bbox_parent_subset_equal": true
+    },
+    {
+      "parent_pdf_page": 393,
+      "subset_page": 1,
+      "subset_path": ".scratch/arcanum-note-order-fix/native/page-393.pdf",
+      "subset_sha256": "7649b57bed2ca190864378698c0c885075232a6ed700ffd2c32f53d88ab83cd4",
+      "raw_text_stdout_sha256": "e9c674c617fbacce9870913e28bd67ea046e3cd5a6499ff7aebfa242b029f7ce",
+      "bbox_page_elementtree_default_serialization_sha256": "a4f58cd75745c692aa96e822acae846a3e81a3d4f78930e0f9cf960bea5a1828",
+      "raw_and_bbox_parent_subset_equal": true
+    },
+    {
+      "parent_pdf_page": 398,
+      "subset_page": 1,
+      "subset_path": ".scratch/arcanum-note-order-fix/native/page-398.pdf",
+      "subset_sha256": "88b731d56c62e6874ac111154a72552c07c71d0855be34ca2d90230aee1152c0",
+      "raw_text_stdout_sha256": "9528837de8b4ddda65c99240cfa8677d1744b0559c4e1153ae2c6e048c7a78fb",
+      "bbox_page_elementtree_default_serialization_sha256": "34c566b11161a4f7fbd8b31362b3cc79523e20792d488e37faae1124d5faf3ac",
+      "raw_and_bbox_parent_subset_equal": true
+    }
+  ],
+  "limits": [
+    "Native Vatican archival OCR PDF reconstruction establishes its own note geometry; no original-print facsimile or whole-source lexical collation.",
+    "Only source-order and LF paragraph boundaries change; no source words, reference marks, spelling or source hyphens are corrected.",
+    "Earlier LF-only source and its failed PDF remain retained; independent cold review of replacement remains required."
+  ]
+}

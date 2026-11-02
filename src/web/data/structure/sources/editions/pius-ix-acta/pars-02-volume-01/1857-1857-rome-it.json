@@ -1,0 +1,115 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "historical-printing-evidence-container",
+   "byte_size": 26653840,
+   "edition_owned": true,
+   "id": "artifact.pius-ix-acta.pars-02-volume-01.1857-rome-it.imprint-6a5107cedc29",
+   "media_type": "application/pdf",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/attidelsommopont0001vari/attidelsommopont0001vari.pdf",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "automated-pagination-map",
+   "byte_size": 121544,
+   "edition_owned": true,
+   "id": "artifact.pius-ix-acta.pars-02-volume-01.1857-rome-it.labels-3944f8753fe8",
+   "media_type": "application/json",
+   "notes": "Exact whole offered response retained without changing its bytes. A token match or an imprint check does not establish complete image collation or act authentication.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Automated factual leaf and printed-number correspondence, preserved unchanged. Individual identifiers, numbers and mechanical pagination facts do not add copyrightable authorship in the United States; no copyright in the historical source or provider presentation is claimed.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/attidelsommopont0001vari/attidelsommopont0001vari_page_numbers.json",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "mechanical-line-leaf-map",
+   "byte_size": 273605,
+   "edition_owned": true,
+   "id": "artifact.pius-ix-acta.pars-02-volume-01.1857-rome-it.line-map-09ca7fef8879",
+   "media_type": "application/json",
+   "notes": "Mapping pins exact OCR and XML hashes. Layout flags are conservative leads, not verified reading order or printed pagination.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "licensed",
+   "rights_basis": "Project-created factual correspondence data under CC BY 4.0; source words retain their separately identified historical rights.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "uncorrected-ocr",
+   "byte_size": 1022978,
+   "edition_owned": true,
+   "id": "artifact.pius-ix-acta.pars-02-volume-01.1857-rome-it.ocr-34d40fa922b1",
+   "media_type": "text/plain",
+   "notes": "Exact whole offered response retained without changing its bytes. A token match or an imprint check does not establish complete image collation or act authentication.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Historical wording and contemporary apparatus of the identified Rome 1857 printing are public domain in the United States by expiration of publication term, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical OCR does not add original authorship; no corrected or image-collated text is asserted. The preliminary and terminal OCR retains factual library and copy marks; these are separate from the historical body and are not project-authored text.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/attidelsommopont0001vari/attidelsommopont0001vari_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "mechanical-scan-sequence",
+   "byte_size": 897261,
+   "edition_owned": true,
+   "id": "artifact.pius-ix-acta.pars-02-volume-01.1857-rome-it.scandata-705388c62e7b",
+   "media_type": "application/xml",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/attidelsommopont0001vari/attidelsommopont0001vari_scandata.xml",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "ocr-layout-xml",
+   "byte_size": 12571412,
+   "edition_owned": true,
+   "id": "artifact.pius-ix-acta.pars-02-volume-01.1857-rome-it.xml-12ee8c2810c6",
+   "media_type": "application/xml",
+   "notes": "The exact 12,571,412-byte verbose XML remains remote for its measured size. Complete raw OCR, exact token/line/leaf correspondence and a standalone replay recipe are retained offline. A token match or an imprint check does not establish complete image collation or act authentication.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Historical wording and contemporary apparatus of the identified Rome 1857 printing are public domain in the United States by expiration of publication term, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical OCR does not add original authorship; no corrected or image-collated text is asserted. This exact verbose OCR-layout XML remains remote for its measured byte size; complete raw OCR, exact token/line/leaf map and the standalone replay recipe are retained offline. The source wrapper is distinct from the historical text. ",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/attidelsommopont0001vari/attidelsommopont0001vari_djvu.xml",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1857",
+  "editors": [],
+  "id": "edition.pius-ix-acta.pars-02-volume-01.1857-rome-it",
+  "jurisdiction": null,
+  "language": "it",
+  "publication": "Atti del sommo Pontefice Pio IX, parte seconda, volume I. Rome: Tipografia delle Belle Arti, 1857.",
+  "title": "Atti del sommo Pontefice Pio IX, parte seconda, volume I — 1857",
+  "translators": [],
+  "year": 1857
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Historical collection editors; issuing authorities attributed within each instrument",
+  "category": "historical-document-container",
+  "description": "Historical collection containing acts, constituent instruments and editorial apparatus. Acquiring this container establishes no complete census or authentication of its acts.",
+  "id": "work.pius-ix-acta.pars-02-volume-01",
+  "languages": [
+   "it"
+  ],
+  "title": "Atti del sommo Pontefice Pio IX, parte seconda, volume I"
+ }
+}

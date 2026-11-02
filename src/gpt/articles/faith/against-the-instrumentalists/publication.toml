@@ -1,0 +1,65 @@
+schema_version = 1
+id = "gpt/articles/faith/against-the-instrumentalists"
+kind = "article-faith"
+profile = "guidance/articles.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/articles/faith/against-the-instrumentalists"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "argument"
+source = "sections/00-a-superb-servant.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/10-no-reading-reads-itself.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/20-the-rule-no-instrument-reports.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/30-from-phenomenon-to-foundation.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/40-the-instrument-restored.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/80-notes.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/90-scope-method-qualifications.tex"
+
+[[structure]]
+role = "references"
+source = "sections/99-references.tex"

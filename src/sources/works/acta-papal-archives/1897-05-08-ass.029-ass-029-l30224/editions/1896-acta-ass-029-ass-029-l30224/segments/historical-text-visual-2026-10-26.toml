@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.029.ass-029-l30224.visual-2026-10-26"
+edition_id = "edition.acta-papal-archives.ass.029.ass-029-l30224"
+artifact_id = "artifact.acta-papal-archives.ass.029.historical-text-864fa26a"
+artifact_sha256 = "864fa26a5142712ddc93b24966f859459ba06804ca8508c6c3d4b6cc766925d4"
+segment_type = "constituent-work"
+states = ["cataloged", "acquired", "inspected"]
+physical_line_ranges = [[30218, 30233], [30236, 30276], [30278, 30289]]
+context = "{\"prior_segment_id\": \"segment.acta-papal-archives.ass.029.ass-029-l30224\", \"prior_segment_sha256\": \"31f69c78c5d9960091aa71f9756676616cd916790b49f9c890e6ac04f4a44fca\", \"removed_journal_furniture\": {\"exact_text\": \"         Acìa, Tom. XXIX. fase. CCCXLVIII.                                                                48\", \"physical_line\": 30234}, \"render_range_continuations\": [0], \"retained_literal_fragments\": {\"LF30233\": \"Congregatio hoc potissimum fine instituit, ut solemni ac perpe-\", \"LF30237\": \"tua eiusdem Augusti Sacramenti expositione et adoratione Eius\"}}"
+notes = "Explicit visual-boundary revision excludes only journal footer LF30234. Every other prior selected source character, historical note, dating and subscription remains selected; the full controlling artifact and prior segment remain unchanged. range_continuations:[0] removes only the artificial paragraph at this disjoint boundary, retaining the literal fragments perpe- and tua without dehyphenation. Archival OCR wording is uncorrected; no facsimile or full-work image collation is claimed."

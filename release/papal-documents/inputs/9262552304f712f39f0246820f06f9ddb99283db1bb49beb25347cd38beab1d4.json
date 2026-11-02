@@ -1,0 +1,1613 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+  "documents": [
+    {
+      "id": "acta.ass.007.ass-007-act-016",
+      "language": "la",
+      "pdf_sha256": "1c5f2e914c3de0453057fa73b83bacd867d3d1bdcdc00597c7f66c6d17985c79",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "informational",
+          "pages": [
+            1,
+            2,
+            3
+          ],
+          "description": "Archival OCR reconstruction retains letterspaced forms, source hyphens and isolated OCR/name-glyph errors; it is not original-facsimile evidence. Native notes remain separate blocks, full closing and signature retained, and no blocking defect found."
+        },
+        {
+          "severity": "informational",
+          "pages": [
+            3
+          ],
+          "description": "The registered ASS volume/date/printing conflicts remain qualified. The reconstruction visibly dates the act MDCCCLXXIV; this review does not resolve original publication chronology."
+        }
+      ],
+      "limitations": [
+        "Native witness is an OCR reconstruction rather than an original facsimile; exact original glyphs and typography are not independently established.",
+        "Native artifact pages629–634 individually inspected; opening has no visible printed number, followed by visible630–634.",
+        "Nominal volume/date/1915-printing and ANNO OCR conflicts remain unresolved as registered; no whole lexical collation or historical authentication."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-direct-baseline-recovery-e.md",
+      "report_sha256": "548580ad3d3a43cb1905b4eb66633f856ba32f7ade04b4de49752aba74a40074"
+    },
+    {
+      "id": "acta.ass.014.ass-014-act-003",
+      "language": "la",
+      "title": "Licet multa — ad Episcopos Belgii",
+      "pdf_sha256": "0ea49e1c34783f8ebbc3d2e04e8b15e69f5c362bd28e4c1935129d883399930f",
+      "pages": 2,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "full_size_views": [
+        1,
+        2
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-08.md",
+      "evidence_file": "doc-03-review.json",
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Retained OCR and physical-line word divisions remain visible, including X I I I in the protocol and the literal <litum at page 2 opening. These are source irregularities; no sustained unreadable block or layout clipping/overlap was found."
+        }
+      ],
+      "limitations": [
+        "No whole-source or facsimile collation",
+        "Historical OCR wording and paragraph divisions remain uncorrected as disclosed",
+        "No installation or release action performed"
+      ],
+      "observations": [
+        "Contact sheet 001 and both full-size page rasters were freshly inspected. Clear compact title, pope/date/language identification and two-column reading order. Headings stay within the column and body text remains visually legible.",
+        "Page 2 contains substantial historical body and the complete closing blessing/date. The compact source/rights apparatus begins below a short rule at the end of the left column and continues at the top of the right column on the same page; there is no apparatus-only terminal page.",
+        "No historical note block was present in these source bounds, and no note fusion was alleged. Source-page word continuations have visible paragraph indents rather than invented footnote placement."
+      ],
+      "boundary_evidence": [
+        "Source literal LF 5582–5595 matches protocol, address and salutation. LF 5703–5705 matches the final blessing and Datum Romae/Pontificatus clauses, body.tex 135–138.",
+        "Page 1 op-/portunitatem break corresponds to source LF 5624/5627, excluding source furniture 5625–5626; body.tex 55/58 has explicit \\par at 56. This is an inherited source-page paragraph division, not a fused note.",
+        "Page 1/2 ere-/<litum continuation corresponds to source LF 5667/5669 with excluded form-feed heading at 5668; body.tex 98/101 with \\par 99. Literal <litum is present in the pinned historical text, not introduced by rendering."
+      ],
+      "report_sha256": "32fa861711712939b5d550269ae8b58696f60653592caf8e4c62d12da2ffe5d5"
+    },
+    {
+      "id": "acta.ass.018.ass-018-007",
+      "language": "la",
+      "pdf_sha256": "dce4df91d9122847af96de95a6e11e207ca0ecb72c1c6c42f427940d47fd4e3c",
+      "pages": 2,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "full_size_views": [
+        1,
+        2
+      ],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            2
+          ],
+          "description": "The final page is sparse and confined to the top of the left column, but contains the historical blessing, Rome/27 November 1885 dating clause and LEO PP. XIII subscription before the compact source/rights colophon. It is source-bearing and passes with this explicit qualification."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "The identified Vatican OCR reconstruction retains source hyphen-space word divisions and isolated OCR punctuation, including the terminal “r” after “Nostrae testem”. These are source-text limitations; the rendered reader remains legible and this review does not certify them as correct historical wording."
+        }
+      ],
+      "observations": "Both pages were freshly inspected in sheet-001 and at full resolution. Title, author/date/language and the historical caption are visible and readable. The first page fills two justified columns with a clear gutter; no clipping, overlap, crowded note, stranded heading or material spacing defect was observed. The final page retains seven or so display lines of genuine closing text and the subscription above compact terminal apparatus, with ample white space. No historical footnote block appears in the selected reader.",
+      "boundary_evidence": "The retained caption source LF 11763–11764 matches body.tex 9–10; source incipit LF 11768 matches body.tex 13 and the first-column reading. The last interior range ends at source LF 11845 “dabit.”; LF 11846 begins with literal form feed plus running heading/page furniture and is excluded, without counting the form feed as another LF. Source LF 11847 contains “Caelestium … Nostrae testem  r”, matching body.tex 93. The subsequent blessing/date source LF 11850–11853 maps to body.tex 96–99, and source LF 11855 “LEO PP. X I I I .” maps to the flush-left subscription body.tex 102–103. Explicit \\par occurs at 91,94,100 and 103, with no note/body fusion. Existing receipt has text_fidelity=pass and no warnings; pdfinfo confirms 2 unencrypted letter pages, with all four fonts embedded/subset and Unicode mapped.",
+      "limitations": [
+        "Vatican OCR reconstruction and separately hashed pdftotext-layout derivative, not an original-print facsimile or collated transcription.",
+        "Restricted ancestor payloads were not locally available via the pinset; only their hashed controller records were checked. No historical-source or rights collation performed."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-14.md",
+      "report_sha256": "75ba4311329d3fc8999751a98625c056da7e5739c4119e0ad4a8f9f448614c37"
+    },
+    {
+      "id": "acta.ass.025.ass-025-017",
+      "language": "la",
+      "pdf_sha256": "8a3757e9c23e751ef86db2fb82cd11589d924f15299ba4206840acfb7e346913",
+      "pages": 3,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            3
+          ],
+          "description": "The final page is sparse but preserves the actual historical conclusion, act dating clause and LEO PP. XIII subscription before compact source/rights apparatus. The conclusion corresponds to source literal-LF 28886–28891 and body.tex LF 190–197. It is source-bearing and qualifies under the stated sparse-final-page rule."
+        }
+      ],
+      "limitations": [
+        "Literal source OCR word divisions, scattered spacing and punctuation anomalies remain; visual acceptance does not certify the reconstructed wording.",
+        "No whole-volume facsimile collation, independent rights determination or installation check was performed."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-11.md",
+      "report_sha256": "a321138168c84871285b1de9ac24ed5f7415048c53eb34e18812f57628bb2f90"
+    },
+    {
+      "id": "acta.ass.028.ass-028-l25349",
+      "language": "la",
+      "pdf_sha256": "7b776d26f70e5bee6bc1f959260ac924b05ef487b686dde603273b79df4a8a52",
+      "pages": 4,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-10.md",
+      "report_sha256": "20a285bb5b797e7650cab36a99877a7706c8d8d9755e11a29a5f9e21aeed35c6",
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "description": "Retained archival OCR has pervasive internal letter spacing and source-line hyphen fragments; these impede smooth reading but words remain decipherable at full resolution. No clipping, overlap or material unreadability found."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            3
+          ],
+          "description": "Historical page-foot notes interrupt sentences but are separate source-order paragraphs, with explicit body TeX \\par on both sides; no fusion defect established."
+        }
+      ],
+      "limitations": [
+        "Archival OCR witness; no image collation or silent correction.",
+        "Layout review and pinned boundary checks only; not a fresh complete source/PDF collation."
+      ]
+    },
+    {
+      "id": "acta.ass.029.ass-029-l08038",
+      "language": "la",
+      "title": "Fidentem piumque animum",
+      "pdf_path": ".scratch/encyclical-classic/readers-fixed/1896-09-20-acta-ass-029-ass-029-l08038-3f3ff98b-la/1896-09-20-acta-ass-029-ass-029-l08038-3f3ff98b-la.pdf",
+      "pdf_sha256": "69311cc7109f09f16995c9cbc115fe148c7975cb4a07e47b468a0f7c7584139c",
+      "pages": 3,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "full_size_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3
+          ],
+          "description": "Retained OCR includes intraword spaces, divided-word spacing and a damaged citation label (page 2: “De (tssumpt”). Glyphs and separate note blocks remain legible; no material layout unreadability, clipping or overlap observed."
+        }
+      ],
+      "observations": [
+        "The compact title identifies Leo XIII, date and Latin. Both columns follow ordinary left-column then right-column order, with clear gutter, consistent baselines and contained justified text. The all-capital source identification and historical subscription remain visible.",
+        "All three pages were viewed in contact sheet sheet-001.png and opened at full size because each contains retained notes. Notes visibly start as separate indented paragraphs. The last page retains substantial historical body text, dating clause, LEO PP. XIII. and final Acts note; the compact smaller project colophon follows a rule on that same page. No apparatus-only page or problematic heading split was found."
+      ],
+      "boundary_evidence": [
+        "Source LF 8113–8116, 8156–8159, 8199–8202, 8244 and 8285 are the five retained note blocks. In body.tex these are lines 90–93, 134–137, 178–181, 224 and 265, delimited respectively by explicit \\par at 88/94, 132/138, 176/182, 222/225 and 263/266.",
+        "Rendered page 1 ends with the Matthew/Apologeticum note; page 2 contains the Litt. apost. note and De (tssumpt)/Hebrews/Colossians/Romans note; page 3 has Sap. XV and Acts notes. Interruptions after “placuit”, “inde simul”, “pretium” and “de qua” match the separate source-order paragraphs, not fused body/note text.",
+        "The source ending at LF 8278–8279 (Datum…anno…1896), LF 8281 (LEO PP. XIII.) and LF 8285 (Acts note) matches body.tex 258–266 and the final rendered column."
+      ],
+      "limitations": [
+        "Cold review of these exact three rendered pages and bounded source/TeX loci only; no full-work textual or facsimile collation.",
+        "Two restricted ancestor payloads have no supplied local payload path; their exact artifact records were checked."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-12.md",
+      "report_sha256": "a857cfa7abddaec53efaa43ad991ab24b609dc9cd33fd467e95ef8c0ba057f79"
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-14051919-in-hac-tanta",
+      "language": "la",
+      "pdf_sha256": "46d57e1a3022c68eec58d55992c8a858596b30e85bf051016fbe12669e7945ca",
+      "pages": 5,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "low",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "Non-blocking selected-witness limitation: the exact uncollated web source retains localized spelling, quote and word-division defects, including de vinctam (p1), quis/non / quant am / poce puli (p2), noce stro / dispensatoci rem (p3), ornee nipotens (p4), and vestror um (p5). Full-size review found no sustained unreadable spacing, body/note fusion or missing rendering glyph. Corrections would require a separately identified derivative and fresh byte-bound review."
+        },
+        {
+          "severity": "low",
+          "pages": [
+            5
+          ],
+          "description": "Non-blocking selected-witness reference-number anomaly: the Clement quotation uses body anchor [23] while its terminal reference is [22], and the final Boniface quotation uses [24] while its terminal reference is [23]. All 23 historical reference texts are present. Native AAS 220 and 221 identify the corresponding S. CLEM. ROM. and Ep. L references. The complete normalized source contains the same mismatch, and the reader expressly retains source numbering; this is not loss of a final note during typesetting."
+        },
+        {
+          "severity": "low",
+          "pages": [
+            1
+          ],
+          "description": "Three final-pass underfull hbox diagnostics (badness 1596, 2903, 1412) concern the long source-title paragraph. Full-size inspection found the title readable and within both margins; no overflow or layout blocker remains."
+        }
+      ],
+      "limitations": [
+        "Normalized Vatican web wording and reference numbering are intentionally retained. This PASS covers faithful, legible rendering of that exact selected uncollated witness; it does not certify a corrected Latin text, the AAS paragraphing, or original-print glyphs.",
+        "The official AAS -ocr.pdf is an OCR reconstruction, not an original-print facsimile. Native visual checks are bounded to the explicitly listed pages and establish extent, note ownership and examined boundaries, not full lexical collation.",
+        "Restricted HTML parent payload bytes were not independently opened; their controlling artifact records and exact recorded hashes were checked. The normalized tracked payloads, complete reader PDFs and native comparison volumes were hashed directly.",
+        "No build, source repair, canonical record, installation, release change, Git mutation or external publication was performed. Existing reader rasters were read-only; new native extracts and review artifacts are confined to this lane."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-direct-baseline-recovery-d.md",
+      "report_sha256": "595dffcb70daad32cc7cf8ee1546abd65a5dba7144734f1f5087b62ef6e55bdd"
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-15091920-spiritus-paraclitus",
+      "language": "la",
+      "pdf_sha256": "c70d985478baef912ab6e3e93c3febd0ed270b822b91ee9f060944ece62409ca",
+      "pages": 15,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            1,
+            13,
+            15
+          ],
+          "description": "Retained uncollated-transcription anomalies are visible and match pinned source/TeX loci: PATHIAHCHAS (source LF 7); spiritúzn and gloliabatwr (source LF 45/49, body TeX LF 75/81); Postumiauus npud Sulp. Sov. in note (128) (source LF 311/body TeX LF 474). No material layout unreadability observed; no correction or historical collation claimed."
+        },
+        {
+          "severity": "info",
+          "pages": [
+            14,
+            15
+          ],
+          "description": "Historical reference notes (1)–(144) are separately paragraphed. Rendered first/final note pages and exact source/TeX boundaries agree. Page 15 retains historical notes through (144) before a compact separated source/rights colophon; it is source-bearing."
+        },
+        {
+          "severity": "info",
+          "pages": [
+            1
+          ],
+          "description": "Receipt underfull-hbox warnings at generated TeX lines 18–19 correspond to a contained, readable long all-capital source address; no blocking rendered defect observed."
+        }
+      ],
+      "limitations": [
+        "Fresh contact-sheet coverage is pages 1–15; additional full-size views are only pages 1, 6, 13, 14, 15. No inherited or reused inspection.",
+        "Layout acceptance does not certify historical wording, translation accuracy or rights. The input is a disclosed uncollated normalized web transcription with retained anomalies.",
+        "No compilation, raster generation, installation, installed-mirror comparison, full verbal/image collation, translation assessment or rights reassessment performed.",
+        "qpdf executable unavailable; pdfinfo, pdffonts, raw extraction and repository source/PDF fidelity succeeded.",
+        "Restricted parent HTML payload unavailable in the sidecar; its controller record hash and metadata were checked, not its response content."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-02.md",
+      "report_sha256": "b7a9e06e69ab1c26be9105b1182f276b749719f23eb84b827b24ef789aa08cdf"
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum",
+      "language": "la",
+      "pdf_sha256": "55de28632623853421c49359e1a175a75b9e0517b7ec1b6b8856b36eda82e3ad",
+      "pages": 4,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "low",
+          "pages": [
+            1,
+            2,
+            3
+          ],
+          "description": "Non-blocking selected-witness limitation: localized source transcription errors remain, including num quam and sedi simul (p1), Römern / falli neseium / dediti s simuim (p2), and tiusque / vemovere (p3). The rendered pages are legible and faithful to the pinned normalized web source. No sustained nonsensical body, material whitespace unreadability, note/body fusion or missing rendering glyph was found."
+        },
+        {
+          "severity": "low",
+          "pages": [
+            4
+          ],
+          "description": "Acceptable source-bearing sparse final page: genuine dating clause, signature and nine historical references remain before project apparatus. The empty right column is not a source-ending or completeness failure."
+        }
+      ],
+      "limitations": [
+        "Normalized Vatican web wording and reference numbering are intentionally retained. This PASS covers faithful, legible rendering of that exact selected uncollated witness; it does not certify a corrected Latin text, the AAS paragraphing, or original-print glyphs.",
+        "The official AAS -ocr.pdf is an OCR reconstruction, not an original-print facsimile. Native visual checks are bounded to the explicitly listed pages and establish extent, note ownership and examined boundaries, not full lexical collation.",
+        "Restricted HTML parent payload bytes were not independently opened; their controlling artifact records and exact recorded hashes were checked. The normalized tracked payloads, complete reader PDFs and native comparison volumes were hashed directly.",
+        "No build, source repair, canonical record, installation, release change, Git mutation or external publication was performed. Existing reader rasters were read-only; new native extracts and review artifacts are confined to this lane."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-direct-baseline-recovery-d.md",
+      "report_sha256": "595dffcb70daad32cc7cf8ee1546abd65a5dba7144734f1f5087b62ef6e55bdd"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-03031891-in-ipso",
+      "language": "la",
+      "title": "In Ipso",
+      "pdf_path": ".scratch/encyclical-classic/readers-fixed/1891-03-03-papal-leo-xiii-hf-l-xiii-enc-03031891-in-ipso-baf35a16-la/1891-03-03-papal-leo-xiii-hf-l-xiii-enc-03031891-in-ipso-baf35a16-la.pdf",
+      "pdf_sha256": "00d9ac45cb865455ae47c5597564b689dd3d1fcaa6d0c3d2820e3531f653ea1d",
+      "pages": 3,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "full_size_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            3
+          ],
+          "description": "Sparse final page with empty right column retains the conclusion, Apostolic blessing, dating clause and LEO PP.XIII before the colophon. It is source-bearing and acceptable under the sparse-page criterion."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "A few retained transcription intraword spaces remain visible (for example t am and ad u n um). Body remains readable; this review does not certify the transcription wording."
+        }
+      ],
+      "observations": [
+        "All three pages were freshly viewed in sheet-001.png and at full size. Compact identification names Leo XIII, date and Latin; the historical EPISTOLA / IN IPSO heading and recipient description precede the source body. Two-column reading order, gutter, justification, margins and baselines are consistent, with no clipping, overlap, dangling heading or observed material unreadability.",
+        "The unnumbered historical paragraphs and final subscription are preserved. No historical note blocks appear in these three rendered pages or the bounded source/body checks. The final page has a short continuation paragraph, blessing, date and signature, then a ruled, smaller terminal source/rights colophon."
+      ],
+      "boundary_evidence": [
+        "Opening source literal LF1–7 has EPISTOLA, IN IPSO, Sanctissimi D.N.LeonisXIII and the recipient description; body.tex9 onward retains these, including separate ragged-right all-capital headings. Rendered page1 shows this same order.",
+        "Source LF17 is the concluding Haec igitur paragraph, LF19 the Interim blessing, LF21 the Datum dating clause, and LF23 LEO PP.XIII. Body.tex33/34,36/37,39/40 and42/43 retain the corresponding text and explicit paragraph endings. Rendered page3 shows the ending before project apparatus."
+      ],
+      "limitations": [
+        "Bounded visual and opening/ending source/TeX review only; no whole-work textual, historical-image or facsimile collation.",
+        "One restricted HTML ancestor has no supplied local payload path; its exact artifact record was checked."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-12.md",
+      "report_sha256": "a857cfa7abddaec53efaa43ad991ab24b609dc9cd33fd467e95ef8c0ba057f79"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-03121880-sancta-dei-civitas",
+      "language": "la",
+      "pdf_sha256": "0f309481e418f66fdad1107d83ecd45caf1edcfc6041e0d5da92a414bd377a0e",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "minor",
+          "pages": [
+            1
+          ],
+          "description": "Bounded native ASS XIII p.241 opening contains LEO PAPA XIII and salutation blocks absent from the selected, explicitly uncollated normalized web witness. Rendering retains that witness exactly; no diplomatic-completeness acceptance is claimed."
+        },
+        {
+          "severity": "informational",
+          "pages": [
+            1
+          ],
+          "description": "Native page-foot Bible references on ASS XIII pp.241–242 occur as coherent inline parenthetical references in the selected web source. Both-side paragraph context was checked; this does not establish accidental note/body fusion."
+        }
+      ],
+      "limitations": [
+        "PASS covers the exact identified uncollated normalized web witness and readable rendering; no full source-to-native lexical or original-facsimile collation is claimed.",
+        "Native Vatican OCR PDF reconstruction was checked at bounded pages; it is not asserted to be an original facsimile.",
+        "Original restricted HTML payloads were not reacquired or independently re-extracted; their pinned metadata controllers and retained derived text were checked.",
+        "No review status or page inspection was inherited; no reused pages.",
+        "Native pages actually visually inspected: ASS XIII artifact ordinals/printed pages 241, 242, 248; pp.243–247 were read as mechanically extracted text only."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-direct-baseline-recovery-b.md",
+      "report_sha256": "4c06834b11264a59c13d81a1b391a0fe0033e8da7cd1c0a90ca533622226c84c"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-06011886-iampridem",
+      "language": "la",
+      "pdf_sha256": "e24c7d6b0d4df6be065e061f4bdbfea882fbd5bd63d927038ca4d31702447a1d",
+      "pages": 4,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-10.md",
+      "report_sha256": "20a285bb5b797e7650cab36a99877a7706c8d8d9755e11a29a5f9e21aeed35c6",
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            4
+          ],
+          "description": "The source transcription retains the anomalous word fbrtunentur (source literal LF33; body TeX LF57); it is legible and not silently corrected. Layout acceptance does not certify source wording."
+        }
+      ],
+      "limitations": [
+        "Uncollated normalized web transcription identified against ASS 18 (1885–1886), pp.387–394.",
+        "Layout review and pinned boundary checks only; not a fresh complete source/PDF collation."
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-06011895-longinqua",
+      "language": "en",
+      "pdf_sha256": "496097463da71bf8b67a56d62d0b40c4b138c6feffe869ca9ee7906662deb312",
+      "pages": 7,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            7
+          ],
+          "description": "Sparse final page contains the historical Apostolic Benediction paragraph before source/rights apparatus. It is source-bearing rather than apparatus-only."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            4,
+            5,
+            6
+          ],
+          "description": "Historical reference notes are separate retained paragraphs. Page 5 reference interrupts the sentence between by and nature; rendered separation and explicit source/TeX paragraph boundaries were checked, so interruption alone is not a fusion finding."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Retained web/OCR defects include broken-word forms and localized corrupt tokens, for example pubHc and 3'ou on page 3, and unitj? with a caret on page 4. These reduce textual quality but did not make a continuous passage materially unreadable in this review; they are not corrected or certified."
+        }
+      ],
+      "limitations": [
+        "Historical English web transcription of the 1903 Benziger edition; individual translator unidentified. Source notice discloses encoding-only repair and outstanding full print collation; OCR word and source-date errors remain uncorrected.",
+        "Layout acceptance only; no full-source/facsimile collation, translation validation or new rights adjudication. This review does not certify corrupt wording or note anchors.",
+        "Receipt fidelity and generation pins were verified as exact retained records; no rerender, rerasterization or independent full-body fidelity replay was performed."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-07.md",
+      "report_sha256": "49395eaae4e2c0e374ac6ca37381ab92b7b5527c2e4de109b3d0aca188487a02",
+      "evidence": {
+        "contact_sheets": [
+          "contact-sheets/sheet-001.png"
+        ],
+        "contact_sheet_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "full_size_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "fresh_inspection": true,
+        "page_observations": {
+          "1": "Title/date/English/Leo XIII identification is clear. Source title and opening begin immediately below it; two columns legible with retained mid-word hyphens/spaces.",
+          "2": "Dense justified text is contained. Source paragraph breaks within sentences remain visible; no clipping or gutter intrusion.",
+          "3": "Both columns remain legible. Local OCR corruptions pubHc, 3'ou, ApostoUc and a source paragraph break apos/tolic are visible; no material continuous unreadability observed.",
+          "4": "Three citation paragraphs at lower left are distinct and legible. Raw caret/numeric markers and corrupt tokens remain visible. Normal column continuation; no fused source note.",
+          "5": "Encyc. Arcanum. is a separate note paragraph near top right between body sentence fragments by and nature. Clear indents and containment; source-boundary check performed.",
+          "6": "Cognita Nobis reference is a distinct paragraph in right column, followed separately by the body beginning 1 Praeclara. No overlap or note fusion.",
+          "7": "Historical benediction at top left precedes rule and smaller terminal apparatus; sparse but source-bearing."
+        },
+        "boundary_checks": {
+          "source_literal_LF_range": [
+            1721,
+            1805
+          ],
+          "opening_source_lines": [
+            1721,
+            1723,
+            1725
+          ],
+          "final_source_line": 1805,
+          "final_body_tex_line": 135,
+          "note_source_lines": [
+            1763,
+            1765,
+            1767,
+            1783,
+            1797
+          ],
+          "note_tex_lines": [
+            72,
+            75,
+            78,
+            102,
+            123
+          ],
+          "description": "Segment TOML identity/artifact/hash and physical_line_ranges match packet. Source notes are blank-line delimited. TeX note LF72 has explicit par at LF70/73; LF75 at73/76; LF78 at76/79; LF102 at100/103; LF123 at121/124. Source final blessing LF1805 matches TeX LF135 with following par LF136. Literal LF alone counted; form-feed never adds a line. Exact local contexts in doc-02-note-boundaries.json."
+        },
+        "pins": "All packet file hashes, segment manifest, source-controller hashes/payloads, frozen and receipt row equality, raster manifest row/cache provenance and 15 cached image hashes passed; details in pin-verification.json.",
+        "pdfinfo_fonts": "pdfinfo confirms seven unencrypted Letter pages and correct title/author/language; pdffonts lists four embedded subset Unicode Latin Modern fonts. See en-7-pdfinfo.txt and en-7-pdffonts.txt."
+      }
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-08091893-laetitiae-sanctae",
+      "language": "la",
+      "pdf_sha256": "af786c197856e143e9456b6910c159b48916203f298b9245b7b1004165e4aadd",
+      "pages": 4,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-10.md",
+      "report_sha256": "20a285bb5b797e7650cab36a99877a7706c8d8d9755e11a29a5f9e21aeed35c6",
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1
+          ],
+          "description": "The long all-capital salutation is justified, producing visibly wide word spaces on its opening lines; it remains legible and contained, while the shorter source headings are flush left."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            4
+          ],
+          "description": "Sparse final page has only left-column content, but includes substantive continuation, closing blessing, 8 September 1893 dating clause and LEO PP. XIII before compact source/rights apparatus; it is source-bearing."
+        }
+      ],
+      "limitations": [
+        "Uncollated normalized web transcription identified against ASS 26 (1893–1894), pp.193–199.",
+        "Layout review and pinned boundary checks only; not a fresh complete source/PDF collation."
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-08121897-affari-vos",
+      "language": "la",
+      "title": "Affari Vos",
+      "pages": 3,
+      "pdf_path": ".scratch/encyclical-classic/readers-fixed/1897-12-08-papal-leo-xiii-hf-l-xiii-enc-08121897-affari-vos-556099fa-la/1897-12-08-papal-leo-xiii-hf-l-xiii-enc-08121897-affari-vos-556099fa-la.pdf",
+      "pdf_sha256": "86c9f21ea9be12cdbec57f52eb3f0db98755afe29ec739f59ce7e0e54cdfb51d",
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "frozen_manifest_sha256": "13e7c7109ce155a4acba1af8df2fe82119e9315e73fcdb41a025e46a59171342",
+      "source_sha256": "3593b01c15a67c918aa10f9608ad35d7d9a6f2b955300687afb984af725a5c0a",
+      "body_tex_sha256": "2b69991760f1bf1a692dfbd004c7d5ab0b30b12a0a9d343baf263a44175186bf",
+      "row_file": "doc-01-review.json",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "full_size_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "contact_sheet": ".scratch/encyclical-classic/visual-fixed/.scratch/encyclical-classic/readers-fixed/1897-12-08-papal-leo-xiii-hf-l-xiii-enc-08121897-affari-vos-556099fa-la/1897-12-08-papal-leo-xiii-hf-l-xiii-enc-08121897-affari-vos-556099fa-la/contact-sheets/sheet-001.png",
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            3
+          ],
+          "description": "Final page retains substantial historical body, blessing, dating clause and LEO PP. XIII before compact source/rights apparatus."
+        }
+      ],
+      "limitations": [
+        "Visual layout and bounded source-boundary inspection only; no full historical image collation, translation review or independent rights adjudication.",
+        "The input is an explicitly uncollated normalized Vatican web transcription; isolated retained spelling/spacing anomalies are not certified as historical readings."
+      ],
+      "observations": [
+        "Pages 1–3 have clear normal left-column then right-column flow, justified readable Latin, stable gutters and margins; no visible clipping, overlap or material unreadability.",
+        "Page 1 identifies Affari Vos, Leo XIII, 1897-12-08 and Latin; the retained long all-capital source heading is flush left and remains with the opening body.",
+        "Page 2 is dense but legible, with clear paragraph indents and ordinary line-ending hyphenation.",
+        "Page 3 is source bearing in both columns: the blessing, date and papal subscription precede the ruled compact terminal apparatus. The right column is shorter than the left, with no apparatus-only page.",
+        "The text has no separate historical note blocks requiring a fusion decision; no rendered source-note fusion was observed. All PDF fonts are embedded and the metadata title/author/language match."
+      ],
+      "boundary_evidence": [
+        "Source text literal-LF line 1 is the retained EPISTOLA ENCYCLICA heading; line 3 begins “Affari vos, quod perlibenter”. These match page 1 and the generated opening body.",
+        "Source line 21 contains the final apostolic blessing, line 23 the “Datum Romae apud S. Petrum die VIII Decembris” dating clause, and line 25 “LEO PP. XIII”. Page 3 renders these in that order.",
+        "Generated body TeX line 39 contains the blessing, line 40 closes it with \\par; line 42 contains the dating clause and line 43 is \\par; line 45 contains the papal subscription and line 46 closes its separate ragged-right paragraph with \\par}."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-13.md",
+      "report_sha256": "58d03b8c7538587a98b2deff3892e0105614673261b90ce8935625cf77ba35af"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-10011890-sapientiae-christianae",
+      "language": "en",
+      "pdf_sha256": "13a06c91d8a34075f98ebb6f2cbc57e47d6cc4f1272d803dcac29d82ee01c45f",
+      "pages": 11,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            11
+          ],
+          "description": "Historical endnotes [1]-[41] remain readable and separately paragraphed; long note [32] continues in normal left-to-right column order. Apostolic blessing precedes them and terminal apparatus follows a short rule."
+        }
+      ],
+      "limitations": [
+        "Cold visual acceptance of exact rendered bytes only; no historical facsimile or whole-source word-for-word collation, translation-accuracy or independent rights certification.",
+        "No rerender/raster generation, source or shared-cache write, installation, Git mutation, compile-log/font audit or installed-mirror comparison performed.",
+        "Previously prepared rasters were freshly inspected; no prior review acceptance or inspected pages were inherited."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-original02-cold-02-subset-01.md",
+      "report_sha256": "88efd30f1e4e379dc809265db0bcdeae00e885d27e2add2223a9f7cfbe196bcd"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-10011890-sapientiae-christianae",
+      "language": "la",
+      "pdf_sha256": "8c2134d7bb665e401616d7d7e871fdaef310ef6bb7840b854d44c22f7ece6285",
+      "pages": 9,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "This is layout acceptance of the exact nine-page PDF, with bounded opening/closing source checks. The retained normalized web transcription is explicitly uncollated and includes literal source spelling/character oddities; no whole-source print collation, translation review or rights adjudication was performed.",
+        "No new raster/render, source/controller/cache/canonical/installed/release/Git write, network research or installation was performed. The PDF is untagged; accessibility remediation is outside this visual brief."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-original02-cold-04-subset-01.md",
+      "report_sha256": "e00001edb0b1afbd9f3468fc19b1c6a4bba20fa9875a39730247e9fcaf6cde1f"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-10121888-quam-aerumnosa",
+      "language": "la",
+      "pdf_sha256": "d2b07b50a84ad994a3a8756b1fdc6b8300c6fed3fb0dea1838b6d5240aade26d",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "minor",
+          "pages": [
+            2
+          ],
+          "description": "Selected web source and reader retain isolated italis parentibus XIII natos anomaly; checked native ASS XXI p.259→260 has italis parentibus / natos. No typesetting-introduced addition is present."
+        },
+        {
+          "severity": "minor",
+          "pages": [
+            2
+          ],
+          "description": "Selected web source and reader retain LEONE PP. XIII; native ASS XXI p.260 reconstruction shows LEO PP. XIII. The ending is present; this is a bounded retained transcription/edition difference."
+        }
+      ],
+      "limitations": [
+        "PASS covers the exact identified uncollated normalized web witness and readable rendering; no full source-to-native lexical or original-facsimile collation is claimed.",
+        "Native Vatican OCR PDF reconstruction was checked at bounded pages; it is not asserted to be an original facsimile.",
+        "Original restricted HTML payloads were not reacquired or independently re-extracted; their pinned metadata controllers and retained derived text were checked.",
+        "No review status or page inspection was inherited; no reused pages.",
+        "Native pages actually visually inspected: ASS XXI artifact ordinals/printed pages 258, 259, 260. Final reader page has substantial source text in its left column and compact apparatus at upper right; unused space is acceptable."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-direct-baseline-recovery-b.md",
+      "report_sha256": "4c06834b11264a59c13d81a1b391a0fe0033e8da7cd1c0a90ca533622226c84c"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-20061888-libertas",
+      "language": "la",
+      "pdf_sha256": "3d9d9acfcfa2b45a351a34363475fffe503c6872971cee8d59657756a27a7b7d",
+      "pages": 10,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "full_size_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Layout acceptance only; uncollated normalized web transcription. No full historical source collation or independent rights determination. Restricted parent payload not independently hashed."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-04.md",
+      "report_sha256": "848a6bd37bd47503814590b6b6da31ff8ae11fb266f46cb1180c3bf0d58cc3ad",
+      "evidence": [
+        "Fresh contact and full-size pages 1–10.",
+        "Page 10 source-bearing closing/date/signature; source LF 81,83 and body.tex 129–133 preserve distinct closing paragraphs.",
+        "Two recorded opening-protocol underfull warnings visually nonmaterial on page 1."
+      ]
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-21041878-inscrutabili-dei-consilio",
+      "language": "en",
+      "pdf_sha256": "b97000cea315a04e33ba3faa1decadb0bdfada8dcd7f610d55578e52033b2bb3",
+      "pages": 5,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            2,
+            5
+          ],
+          "description": "Source-declared residual OCR remains (for example p.2 gospel Ught and hum.an); the rendered prose remains readable. Page 5 contains the historical conclusion and all five separate source notes before the compact project apparatus, so its sparse right column is source-bearing."
+        }
+      ],
+      "limitations": [
+        "Cold visual/layout review of exact pinned bytes; no whole-source image collation, translation accuracy assessment, or independent rights clearance.",
+        "Historical 1903 Benziger English web transcription; individual translator unidentified and residual OCR disclosed."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-09.md",
+      "report_sha256": "a755e8096fa69f0491c8079c3e3ac7c4a70db4a09b436531e03f612ee6960146",
+      "evidence": {
+        "contact_sheets": [
+          ".scratch/encyclical-classic/visual-fixed/.scratch/encyclical-classic/readers-fixed/1878-04-21-papal-leo-xiii-hf-l-xiii-enc-21041878-inscrutabili-dei-consilio-0922dede-en/1878-04-21-papal-leo-xiii-hf-l-xiii-enc-21041878-inscrutabili-dei-consilio-0922dede-en/contact-sheets/sheet-001.png"
+        ],
+        "full_size_inspected_pages": [
+          1,
+          5,
+          2,
+          3,
+          4
+        ],
+        "source_boundary_loci": [
+          "Literal-LF source lines 1–9 match retained publisher headings, act caption and beginning.",
+          "Selected source ends at LF45 (Apostolic Benediction), followed by separate notes at LF47,49,51,53,55.",
+          "Generated body.tex LF75–91 preserves the final blessing and note paragraphs with explicit \\par at LF76,79,82,85,88,91; rendered p.5 shows those notes separately, without body fusion."
+        ],
+        "observations": [
+          "All five pages freshly inspected in contact sheet and full-size rasters; normal left-column then right-column continuation.",
+          "p.1 identification and retained all-capital historical headings are legible and contained; justified body lines have stable spacing.",
+          "pp.2–4 dense body text has no clipping, overlap, conspicuous rivers, stranded headings or bad column transition.",
+          "p.5 final blessing fills the left column and notes continue at the right top; compact ruled source/rights block follows the final note. No apparatus-only page."
+        ],
+        "pin_verification": "pin-verification.json",
+        "report_section": "The first page identifies Leo XIII, 1878-04-21 and English, followed by retained historical publisher headings and body. Every page was freshly viewed in the contact sheet and at full size (1, 5, 2, 3, 4). The dense body remains legible and follows normal two-column order without clipping, overlap, heading stranding or material spacing defects. Page 5 retains the final Apostolic Benediction and all five historical notes; its sparse right column is source-bearing and the ruled source/rights apparatus fits compactly after the notes. Separate note boundaries are confirmed at literal-LF source lines 47/49/51/53/55 and body.tex lines 78/81/84/87/90, with explicit \\par before and after each. Residual OCR examples on p.2 include “gospel Ught” and “hum.an”; these do not make the prose materially unreadable. The source remains an uncollated historical English web transcription and this PASS accepts layout only."
+      }
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-24121894-christi-nomen",
+      "language": "la",
+      "pdf_sha256": "390c577d4376d2e2a8282b2b0465a24e1aaf96a475d12d5869812f5467a75125",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "minor",
+          "pages": [
+            1
+          ],
+          "description": "Isolated inherited web-transcription defects include “explora vim us”, “litus”, and “commendalione”; these also occur in the bounded native OCR reconstruction. The visibly uncollated selected witness remains readable, with no sustained body nonsense, source/note fusion, or material whitespace unreadability. These are nonblocking source limitations, not certified original spellings."
+        }
+      ],
+      "limitations": [
+        "Selected witness is an uncollated normalized Vatican web transcription, not a corrected, diplomatic, or critical edition.",
+        "Native artifact is an OCR reconstruction, not an original facsimile; images were inspected at artifact/printed pages 385–387 for source extent, paragraph boundaries, notes, closing and suspicious loci. No full lexical or original-print glyph collation is claimed.",
+        "No current-website comparison or local byte-level re-collation of the restricted HTML parent was performed.",
+        "Prior reviewer references contribute no inspection coverage; reader PDF is untagged and accessibility conformance was not certified."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-direct-baseline-recovery-f.md",
+      "report_sha256": "d2fe85a8c96514b0200c1d23c3ece303c065abac1813a97082c80cfc310e0a0d"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-25121888-exeunte-iam-anno",
+      "language": "la",
+      "pdf_sha256": "9432cf54deb25b60c25059b8f2650b239ddf74409be6dfccf7ec13cf7e22e165",
+      "pages": 6,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            6
+          ],
+          "description": "Sparse last page contains real final body text, the Augustine citation, apostolic blessing, Roman dating clause and LEO PP. XIII before the compact ruled source/rights colophon. This source-bearing ending is acceptable."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Uncollated normalized Vatican web transcription retained as disclosed. Minor source spelling/spacing irregularities remain visible but do not cause material unreadability; no clipping, overlap, separate-note fusion, heading collision or apparatus-only page observed."
+        }
+      ],
+      "limitations": [
+        "No whole-source/facsimile collation, translation review or new rights determination.",
+        "Mechanical source-aware text fidelity PASS is the retained receipt result, not an independent rerun.",
+        "All full-size page views used native full-pixel JPEG95 proxies with unchanged dimensions and paired source/proxy hashes."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-06.md",
+      "report_sha256": "39e1ee14dddab47254d8a9994809cfd5d30e2677b99e706fda6df8e23839445d"
+    },
+    {
+      "id": "papal.pius-ix.epistola-encyclica-levate-17-octobris-1867",
+      "language": "la",
+      "title": "Letter Levate",
+      "pages": 3,
+      "pdf_path": ".scratch/encyclical-classic/readers-fixed/1867-10-17-papal-pius-ix-epistola-encyclica-levate-17-octobris-1867-2bf2dd8e-la/1867-10-17-papal-pius-ix-epistola-encyclica-levate-17-octobris-1867-2bf2dd8e-la.pdf",
+      "pdf_sha256": "da6b14010d3499b4bd10116ac9165d3084fa526ebb8a49beef18808a46bd17b1",
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "frozen_manifest_sha256": "13e7c7109ce155a4acba1af8df2fe82119e9315e73fcdb41a025e46a59171342",
+      "source_sha256": "5441a50fbb3f8b4105005b638335001a0f836c1b92c3a0859f4d43fc021ca3ff",
+      "body_tex_sha256": "b45811de7c5135e1913fd4e8c2ba5116e944968b44726c52f3c5d493220f4992",
+      "row_file": "doc-02-review.json",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "full_size_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "contact_sheet": ".scratch/encyclical-classic/visual-fixed/.scratch/encyclical-classic/readers-fixed/1867-10-17-papal-pius-ix-epistola-encyclica-levate-17-octobris-1867-2bf2dd8e-la/1867-10-17-papal-pius-ix-epistola-encyclica-levate-17-octobris-1867-2bf2dd8e-la/contact-sheets/sheet-001.png",
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            3
+          ],
+          "description": "Sparse final page has an empty right column, but the left column retains substantial source text on prayers/indulgences, the closing blessing, dating clause and PIUS PP. IX, followed by compact source/rights apparatus."
+        }
+      ],
+      "limitations": [
+        "Visual layout and bounded source-boundary inspection only; no full historical image collation, translation review or independent rights adjudication.",
+        "The source remains an explicitly uncollated normalized Vatican web transcription."
+      ],
+      "observations": [
+        "Pages 1–3 were freshly inspected in the contact sheet and opened individually at full raster size. The normal left-column then right-column reading order is clear, with legible justified Latin, stable gutters and no visible clipping or overlap.",
+        "Page 1 identifies Letter Levate, Pius IX, 1867-10-17 and Latin. The multi-block all-capital historical identification remains flush left, followed by its address, salutation and incipit.",
+        "The dense second page remains readable; page 1 ends “Sa-” and page 2 begins “crorum”, an ordinary word continuation rather than a missing passage.",
+        "Page 3 is sparse, with an empty right column, but retains the final portion of the substantial prayer/indulgence paragraph, closing blessing, dating clause and papal subscription in the left column before the small terminal apparatus. It is not an apparatus-only page.",
+        "No separate historical note blocks or rendered source-note fusion were observed. All PDF fonts are embedded; metadata identity agrees with the packet."
+      ],
+      "boundary_evidence": [
+        "Literal-LF source lines 1, 3, 5 and 7 retain PIUS PP. IX, LEVATE and the historical heading/address. Lines 9 and 11 retain the address and salutation; line 13 begins “Levate, Venerabiles Fratres”. Page 1 renders them in source order.",
+        "Source line 27 contains the prayer/indulgence paragraph continued onto page 3; line 29 contains the closing blessing, line 31 “Datum Romae apud S. Petrum die 17 Octobris anno 1867”, and line 33 “PIUS PP. IX”. These are visible before the project apparatus on page 3.",
+        "Generated body TeX line 54 contains the dating clause, followed by \\par at line 55. Line 57 contains the separately ragged-right papal subscription and line 58 closes it with \\par}."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-13.md",
+      "report_sha256": "58d03b8c7538587a98b2deff3892e0105614673261b90ce8935625cf77ba35af"
+    },
+    {
+      "id": "papal.pius-ix.epistola-encyclica-ubi-nos-15-maii-1871",
+      "language": "la",
+      "title": "Ubi Nos",
+      "pages": 3,
+      "pdf_path": ".scratch/encyclical-classic/readers-fixed/1871-05-15-papal-pius-ix-epistola-encyclica-ubi-nos-15-maii-1871-093e217b-la/1871-05-15-papal-pius-ix-epistola-encyclica-ubi-nos-15-maii-1871-093e217b-la.pdf",
+      "pdf_sha256": "e3a6c97a50e09c0d64400c24625446a0a10747871e70b571580b456fd828285f",
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "frozen_manifest_sha256": "13e7c7109ce155a4acba1af8df2fe82119e9315e73fcdb41a025e46a59171342",
+      "source_sha256": "b2a18fef6d17989b6e3364190f1653bbd8c68e3552cbed8fcd887a74e8bff37f",
+      "body_tex_sha256": "7770bf8d998a8474679292f24d7149618a96bd9bbb138510f6ce843721ab559b",
+      "row_file": "doc-03-review.json",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "full_size_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "contact_sheet": ".scratch/encyclical-classic/visual-fixed/.scratch/encyclical-classic/readers-fixed/1871-05-15-papal-pius-ix-epistola-encyclica-ubi-nos-15-maii-1871-093e217b-la/1871-05-15-papal-pius-ix-epistola-encyclica-ubi-nos-15-maii-1871-093e217b-la/contact-sheets/sheet-001.png",
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            3
+          ],
+          "description": "Final page retains substantial historical body and the blessing/date/PIUS PP. IX, with compact terminal apparatus below. The source spelling “uie” in its date is retained and is not a clipping or note-fusion defect."
+        }
+      ],
+      "limitations": [
+        "Visual layout and bounded source-boundary inspection only; no full historical image collation, translation review or independent rights adjudication.",
+        "The source remains an explicitly uncollated normalized Vatican web transcription, including retained spelling and reference-format anomalies; acceptance does not certify these readings."
+      ],
+      "observations": [
+        "Pages 1–3 were freshly inspected in the contact sheet and individually at full raster size. Dense justified Latin remains legible with clear two-column order, paragraph indents and stable gutters/margins. No material clipping, overlap, widow/orphan problem or unreadability was observed.",
+        "Page 1 identifies Ubi Nos, Pius IX, 1871-05-15 and Latin. The flush-left historical all-capital identification precedes its address, salutation and opening body.",
+        "Page 1 ends “da-” and page 2 begins “tis”; page 2 ends its right column “Videte, circumspicite;” and page 3 continues “exempla sunt in promptu”. These are readable source continuations in the expected order.",
+        "Page 3 retains extensive historical text in both columns, then a separate closing blessing, date and papal subscription before the ruled compact source/rights colophon. No apparatus-only page occurs.",
+        "Parenthetical source references remain legible inline; no separate historical note blocks or rendered note fusion were observed. All PDF fonts are embedded, and metadata identity agrees with the packet."
+      ],
+      "boundary_evidence": [
+        "Literal-LF source lines 1, 3 and 5 contain PIUS PP. IX, UBI NOS and the historical EPISTOLA ENCYCLICA heading. Lines 7 and 9 contain the address and salutation, and line 11 begins “Ubi Nos arcano Dei consilio”. They match the opening rendered order.",
+        "Source line 29 contains “Uberrima demum caelestium gratiarum munera” and the closing apostolic blessing; line 31 contains “Datum Romae apud S. Petrum uie decimaquinta Maii anno Domini MDCCCLXXI”; line 33 is “PIUS PP. IX”. These source-bearing blocks are visible on page 3.",
+        "Generated body TeX line 51 holds the blessing and line 52 is \\par; line 54 holds the date (including retained “uie”) and line 55 is \\par; line 57 holds the separate ragged-right papal subscription and line 58 closes it with \\par}."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-13.md",
+      "report_sha256": "58d03b8c7538587a98b2deff3892e0105614673261b90ce8935625cf77ba35af"
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-04101903-e-supremi",
+      "language": "la",
+      "pdf_sha256": "6f3df25f343d44913c7d07d79867a943a435cd77dd10c8085279ff805cd6f866",
+      "pages": 5,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            5
+          ],
+          "description": "Source-bearing final page retains the conclusion, dated subscription, PIUS PP. X and all 49 separately paragraphed historical notes; the sparse lower right area follows the compact terminal apparatus."
+        }
+      ],
+      "limitations": [
+        "Cold visual/layout review of exact pinned bytes; no whole-source image collation, translation accuracy assessment, or independent rights clearance.",
+        "Uncollated normalized Vatican Latin web transcription; historical witness and publication-date limitation remain as disclosed."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-09.md",
+      "report_sha256": "a755e8096fa69f0491c8079c3e3ac7c4a70db4a09b436531e03f612ee6960146",
+      "evidence": {
+        "contact_sheets": [
+          ".scratch/encyclical-classic/visual-fixed/.scratch/encyclical-classic/readers-fixed/1903-10-04-papal-pius-x-hf-p-x-enc-04101903-e-supremi-ee58bb7f-la/1903-10-04-papal-pius-x-hf-p-x-enc-04101903-e-supremi-ee58bb7f-la/contact-sheets/sheet-001.png"
+        ],
+        "full_size_inspected_pages": [
+          1,
+          5,
+          2,
+          3,
+          4
+        ],
+        "source_boundary_loci": [
+          "Literal-LF source lines 1/3/5/7 preserve the protocol, address, salutation and incipit.",
+          "Source LF19 ends with the final blessing; LF21 dating clause, LF23 PIUS PP. X; LF25–121 contain notes [1]–[49] on alternate lines.",
+          "body.tex LF36 conclusion, LF39 dating clause and LF42 subscription; notes [1]–[49] at LF45–189 in steps of three; every note is followed by explicit \\par."
+        ],
+        "observations": [
+          "All five pages freshly inspected in contact sheet and full-size; dense pp.1–4 remain legible with normal two-column order.",
+          "p.1 retained long all-capital protocol, address and salutation are contained beneath compact identification.",
+          "p.5 historical closing, dating clause and subscription precede note [1]; notes [34]–[49] continue at the right top; every note remains visually separate.",
+          "No clipping, overlap, material justification defect, stranded heading or apparatus-only page."
+        ],
+        "pin_verification": "pin-verification.json",
+        "report_section": "The identification names Pius X, 1903-10-04 and Latin. The contact sheet and full-size pages (1, 5, 2, 3, 4) were freshly inspected. The long retained protocol, address, salutation and dense prose are contained and readable, with normal left-to-right column continuation and no clipping, overlap or material justification/heading defects. Page 5 is source-bearing: it retains the conclusion, dated subscription and PIUS PP. X, followed by all 49 separate historical note paragraphs. Notes [34]–[49] continue at the right top and the ruled terminal source/rights apparatus follows note [49]. Source literal-LF lines 21/23/25–121 and body.tex lines 39/42/45–189 confirm the source ending and note boundaries; each generated note has its own explicit \\par. The sparse lower right portion follows real historical material and compact apparatus. The uncollated normalized web transcription and historical-publication limitations remain disclosed; this PASS accepts layout only."
+      }
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-12031904-iucunda-sane",
+      "language": "la",
+      "pdf_sha256": "58718f37b2a9b437182e43630689bdf34c32d37d96a1f728e40fb1637a919e91",
+      "pages": 8,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            8
+          ],
+          "description": "Sparse final page is source-bearing: the historical blessing, Datum Romae dating clause and PIUS PP. X subscription precede compact terminal apparatus; it is not apparatus-only."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            1
+          ],
+          "description": "The visible source spelling Venerabiles Frodres matches pinned source literal-LF line 7 and body.tex line 18. This is a retained transcription reading, not a layout defect or a correction."
+        }
+      ],
+      "limitations": [
+        "Layout acceptance only; no whole-source or facsimile collation, translation accuracy or new rights adjudication. The source is the disclosed uncollated normalized Vatican web transcription; integrated parenthetical citations remain historical finding aids.",
+        "Receipt fidelity and generation pins were verified as exact retained records; no rerender, rerasterization or independent full-body fidelity replay was performed."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-07.md",
+      "report_sha256": "49395eaae4e2c0e374ac6ca37381ab92b7b5527c2e4de109b3d0aca188487a02",
+      "evidence": {
+        "contact_sheets": [
+          "contact-sheets/sheet-001.png"
+        ],
+        "contact_sheet_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "full_size_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "fresh_inspection": true,
+        "page_observations": {
+          "1": "Compact title/date/Latin identification; all-capital source protocol is flush left; body begins below it; no clipping or stretched source heading.",
+          "2": "Both columns continue in order; dense parenthetical citations are legible and contained.",
+          "3": "Citation-heavy body remains legible with ordinary paragraph indentation; no separate source footnote or fused note block seen.",
+          "4": "Consistent justified Latin text, gutter and baselines; no overlap or clipping.",
+          "5": "Dense body and parenthetical references fit; column continuation remains clear.",
+          "6": "Multiple long citations and question punctuation remain legible; no crowding into gutter or footer.",
+          "7": "Body continues from page 6; right column closes the long Gregorius quotation above the bottom margin without an orphan heading.",
+          "8": "Historical blessing, dating clause and signature at top left; rule separates smaller source/rights apparatus; right column and lower page blank."
+        },
+        "boundary_checks": {
+          "source_literal_LF_lines": [
+            1,
+            3,
+            5,
+            7,
+            85,
+            87,
+            89
+          ],
+          "body_tex_literal_LF_lines": [
+            18,
+            135,
+            136,
+            138,
+            139,
+            141,
+            142
+          ],
+          "description": "Opening protocol and salutation visually match source opening. Final page blessing matches source LF85/body.tex LF135, dating source LF87/TeX LF138 and signature source LF89/TeX LF141. Explicit TeX paragraph boundaries follow blessing and dating. All physical line counts used literal LF."
+        },
+        "source_notes": "Parenthetical references are integrated in the pinned web text; no separate retained page-foot note was identified in these 8 rendered pages.",
+        "pins": "All packet file hashes, source-controller hashes/payloads, frozen and receipt row equality, raster manifest row/cache provenance and 17 cached image hashes passed; details in pin-verification.json.",
+        "pdfinfo_fonts": "pdfinfo confirms 8 unencrypted Letter pages and correct title/author/language; pdffonts lists four embedded subset Unicode Latin Modern fonts. See la-8-pdfinfo.txt and la-8-pdffonts.txt."
+      }
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-15041905-acerbo-nimis",
+      "language": "la",
+      "pdf_sha256": "1c7472ff05112419b528b3d554e840f40253ab3d9487025171bd11a1aa1aba34",
+      "pages": 5,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            5
+          ],
+          "description": "Final page is source-bearing despite the short right column: the closing body and final blessing continue across the columns, followed by the dated subscription and PIUS PP. X before compact terminal apparatus."
+        }
+      ],
+      "limitations": [
+        "Cold visual/layout review of exact pinned bytes; no whole-source image collation, translation accuracy assessment, or independent rights clearance.",
+        "Uncollated normalized Vatican Latin web transcription; historical witness and publication-date limitation remain as disclosed."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-09.md",
+      "report_sha256": "a755e8096fa69f0491c8079c3e3ac7c4a70db4a09b436531e03f612ee6960146",
+      "evidence": {
+        "contact_sheets": [
+          ".scratch/encyclical-classic/visual-fixed/.scratch/encyclical-classic/readers-fixed/1905-04-15-papal-pius-x-hf-p-x-enc-15041905-acerbo-nimis-5c1c310e-la/1905-04-15-papal-pius-x-hf-p-x-enc-15041905-acerbo-nimis-5c1c310e-la/contact-sheets/sheet-001.png"
+        ],
+        "full_size_inspected_pages": [
+          1,
+          5,
+          2,
+          3,
+          4
+        ],
+        "source_boundary_loci": [
+          "Literal-LF source LF1/3/5/7 retain title/protocol/address; incipit follows at LF11.",
+          "Roman-numbered paragraphs I–VI are source LF43/45/47/49/51/53 and generated body.tex LF72/75/78/81/84/87; p.4 renders them separately and legibly.",
+          "Final blessing source LF61 / body.tex LF99 continues normally across p.5 columns; LF63 / body.tex LF102 retains the dating clause, and LF65 / body.tex LF105 retains PIUS PP. X; explicit \\par at TeX LF100/103/106 separates each closing block."
+        ],
+        "observations": [
+          "All five pages freshly inspected in contact sheet and full-size rasters.",
+          "p.1 source all-capital headings and address remain legible, contained and distinguished from compact identification.",
+          "pp.2–3 dense justified prose is readable without clipping, overlap or material spacing/column defects.",
+          "p.4 Roman-numbered paragraphs I–VI are distinct and orderly; the continuing body transitions normally to p.5.",
+          "p.5 splits Apostolica across the column boundary as Aposto-/lica, preserving normal reading order; the right column retains blessing/date/subscription before apparatus. No standalone historical footnote blocks occur in this retained source. No apparatus-only page."
+        ],
+        "pin_verification": "pin-verification.json",
+        "report_section": "The compact identification names Pius X, 1905-04-15 and Latin. All five pages were freshly inspected in the contact sheet and full-size rasters (1, 5, 2, 3, 4). The retained all-capital headings/address, justified prose and p.4 Roman-numbered paragraphs I–VI are legible and contained, without clipping, overlap, material spacing defects or stranded headings. The numbered paragraphs match literal-LF source lines 43/45/47/49/51/53 and body.tex lines 72/75/78/81/84/87. Page 5 retains substantial closing prose and the final blessing, which continues normally across columns (Aposto-/lica), followed by the dated subscription and PIUS PP. X at the right top. These closing blocks match source LF61/63/65 and body.tex LF99/102/105, with explicit paragraph boundaries at LF100/103/106. The sparse right column is therefore source-bearing; the ruled source/rights apparatus follows compactly. No standalone historical footnote blocks occur in this retained source. The uncollated normalized web transcription and historical-publication limitations remain disclosed; this PASS accepts layout only."
+      }
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-15041905-acerbo-nimis.acqr-1905-english",
+      "language": "en",
+      "pdf_sha256": "dc813b5d3b2447777ead80386e53b1e68fc80f94a27d43e5869a3638e3db8b90",
+      "pages": 6,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "minor",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "Disclosed isolated OCR recognition errors and original broken-word forms remain; native representative checks confirm defects. No sustained nonsensical or materially unreadable sequence was found. Acceptable for the explicitly uncorrected mechanical OCR reader."
+        },
+        {
+          "severity": "info",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "Nine exact running-head exclusions preserve both source blocks and blank-block boundaries; native page breaks can interrupt a word or sentence. Both sides remain readable, with no omitted body block or fused body/note."
+        },
+        {
+          "severity": "info",
+          "pages": [
+            2
+          ],
+          "description": "Underfull hbox badness 1701 at body lines48–49 was visually inspected at the first paragraph of page2; no clipping, overflow or material readability failure."
+        },
+        {
+          "severity": "info",
+          "pages": [
+            6
+          ],
+          "description": "Sparse final page contains genuine benediction continuation, Pius X signature and complete date before the separated project colophon."
+        }
+      ],
+      "limitations": [
+        "Historical English witness only; no full word-for-word print-image collation or complete English-to-Latin equivalence certification.",
+        "Translator unrecorded. OCR recognition errors, source punctuation, historical word breaks and blank-block page-boundary interruptions remain.",
+        "Native visual evidence: actual PDF ordinals7,435,444–454; English printing426–435 at actual PDF444–453. No inherited visual inspection or acceptance.",
+        "No installation, release, source-state promotion or Latin-witness supersession is implied. PDF is untagged; accessibility conformance was not assessed."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-direct-baseline-recovery-h.md",
+      "report_sha256": "4c439b4b19e07651c9c3a08e03b47fffecdf3a8adce01f02e33ad14626680924"
+    },
+    {
+      "id": "papal.pius-xi.hf-p-xi-enc-18111926-iniquis-afflictisque",
+      "language": "la",
+      "title": "Iniquis Afflictisque",
+      "pdf_sha256": "264d2ef423547411b540e880db60922fc53989f77b03bcf1bf9808b5183e217b",
+      "pages": 6,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "full_size_views": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-08.md",
+      "evidence_file": "doc-02-review.json",
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            6
+          ],
+          "description": "The sparse final page contains historical endnotes (7)–(9), continuing notes (1)–(6) on page 5, before the source/rights colophon. It is source-bearing and accepted under the historical-note qualification."
+        }
+      ],
+      "limitations": [
+        "No whole-source or facsimile collation",
+        "Uncollated normalized web transcription remains as disclosed; visible lexical/punctuation irregularities are not certified corrections",
+        "No installation or release action performed"
+      ],
+      "observations": [
+        "Contact sheet 001 and full-size rasters 1–6 were freshly inspected. Two-column order, compact title/date/language identification, heading wrapping and justified spacing are sound. No clipping, overlap, broken heading, material glyph unreadability or disruptive orphan/widow found.",
+        "Page 5 preserves the closing blessing, dating clause and PIUS PP. XI subscription followed by separately paragraphed historical notes (1)–(6); page 6 completes the note sequence and keeps the terminal apparatus compact."
+      ],
+      "boundary_evidence": [
+        "Source literal LF 1–9 matches the rendered protocol/address and salutation; LF 41 dating clause and 43 signature match page 5.",
+        "The signature and first note are separate: source LF 43/blank 44/45; body.tex signature at 72 with \\par} at 73; note (1) at 75 with \\par} at 76. No signature-to-note fusion.",
+        "Source LF 55/57/59/61 holds notes (6)/(7)/(8)/(9), separated by blank LFs. body.tex lines 90–100 have explicit paragraph endings 91,94,97,100; the page 5/6 break occurs between historical notes (6) and (7)."
+      ],
+      "report_sha256": "32fa861711712939b5d550269ae8b58696f60653592caf8e4c62d12da2ffe5d5"
+    },
+    {
+      "id": "papal.pius-xi.hf-p-xi-enc-19291223-quinquagesimo-ante-anno",
+      "language": "en",
+      "pdf_sha256": "aea5a7a26665674b97216fb2fc67333edc912456441beba101578505de6ea906",
+      "pages": 7,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "description": "Retained OCR word splits, mixed capitals and isolated misrecognitions remain visible (p1 Hotrtness and IFTY, p4 Hew). They are source limitations and do not materially obstruct reading in this witness."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            7
+          ],
+          "description": "Sparse final page is source-bearing: retained indulgence extension, apostolic blessing and 23 December 1929 closing precede source/rights apparatus. The paragraph break between Our and gratitude follows the pinned source, not a source-note fusion."
+        }
+      ],
+      "limitations": [
+        "Cold visual acceptance of exact rendered bytes only; no historical facsimile or whole-source word-for-word collation, translation-accuracy or independent rights certification.",
+        "No rerender/raster generation, source or shared-cache write, installation, Git mutation, compile-log/font audit or installed-mirror comparison performed.",
+        "Previously prepared rasters were freshly inspected; no prior review acceptance or inspected pages were inherited."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-original02-cold-02-subset-02.md",
+      "report_sha256": "db4bad4576eb664f734577d4c925532bf981a49444c6e34402d167f108820015"
+    },
+    {
+      "id": "pius-ix-acta.volume-03.line-00004175.part-03",
+      "language": "la",
+      "pdf_sha256": "8a10fa5efae887ef47e32d5e9e0c145bf94324a1af69cf40b3a6dbbefbc23554",
+      "pages": 3,
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "full_size_views": [
+        1,
+        2,
+        3
+      ],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3
+          ],
+          "description": "Retained uncorrected OCR includes internal hyphen-space divisions and occasional corrupt glyphs/words (for example the opening address and the isolated page-2 “énferamus” line). These remain disclosed source limitations; unlike the sustained corruption in Inter multiplices, this witness remains usable at the inspected scale. This is layout acceptance, not word-level collation."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            3
+          ],
+          "description": "Final page uses only the left column, but retains substantial source continuation, blessing, historical dating and pontifical-year clauses before the compact project apparatus. It is source-bearing and is not an apparatus-only terminal page."
+        }
+      ],
+      "observations": "All three pages were freshly inspected in the existing contact sheet and at full resolution. Roman title, pope/date/language and flush-left address are legible. Both full opening/interior pages have justified columns, clear gutter and stable margins without clipping or overlap. No table, note collision, heading separation or material orphan/widow defect was observed. The final page is confined to its left column, with readable source text and a compact terminal colophon; its empty right column does not force a separate apparatus page.",
+      "boundary_evidence": "Source LF 5150–5152 is the displayed address, LF 5155 the pope identification, and LF 5158–5159 the greeting/incipit; these match body.tex 9–18. At the historical page break, source LF 5402 ends “Venerabi-”, blanks at 5403–5404 and the excluded printed page number LF 5405 precede continuation “les Fratres” LF 5406. Generated body.tex 248 ends “Venerabi-”, followed by explicit paragraph separation and the continuation. This is a disclosed source segmentation/word-division feature, not a fused note. Final source LF 5427–5431 contains the 19 January 1860 dating and pontifical-year clauses; body.tex 273–279 and the rendered final page retain them above the apparatus. No historical note block appears in this selected reader. Existing receipt has text_fidelity=pass and no warnings; pdfinfo confirms 3 unencrypted letter pages, with all four fonts embedded/subset and Unicode mapped.",
+      "limitations": [
+        "Uncorrected, uncollated OCR of the Rome 1864 volume; no native-print or whole-source collation performed.",
+        "PASS addresses layout and bounded reading usability only; retained OCR errors were not corrected."
+      ],
+      "report": "src/sources/papal-documents/encyclicals-baseline-recovery-14.md",
+      "report_sha256": "75ba4311329d3fc8999751a98625c056da7e5739c4119e0ad4a8f9f448614c37"
+    },
+    {
+      "id": "pius-ix-acta.volume-03.line-00021313.part-18",
+      "language": "la",
+      "pdf_sha256": "94b30a049dcdcd6fbe2237f5eafe40d80f4306e1e01f93033318a0743582bdd2",
+      "pages": 5,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "informational",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "Explicitly uncorrected OCR retains isolated glyph/name errors, source hyphen/dash spacing and damaged citations; opening decorative Q is absent. Exact native boundaries and separate historical-note blocks checked; no blocking defect found."
+        },
+        {
+          "severity": "informational",
+          "pages": [
+            5
+          ],
+          "description": "Sparse final page contains genuine blessing, dated closing, pontificate year and historical Bernard note. Following native page begins separately headed Syllabus outside this selected constituent."
+        }
+      ],
+      "limitations": [
+        "Uncorrected, uncollated OCR; full source/PDF fidelity and all reader pages checked, but no whole lexical image collation or historical authentication.",
+        "Native exact IA artifact pages 696–710 individually inspected. Page-map label693 at native702 visually resembles698; exact artifact ordinals control.",
+        "PASS covers the selected Quanta cura body through its closing and historical note; the separately headed following Syllabus is outside this record."
+      ],
+      "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e",
+      "report": "src/sources/papal-documents/encyclicals-direct-baseline-recovery-e.md",
+      "report_sha256": "548580ad3d3a43cb1905b4eb66633f856ba32f7ade04b4de49752aba74a40074"
+    }
+  ]
+}

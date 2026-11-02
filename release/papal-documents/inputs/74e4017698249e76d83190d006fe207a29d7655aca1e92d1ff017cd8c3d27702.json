@@ -1,0 +1,97 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "526b128f0787ea2694f84a3cb782920bbb9a084bb153c87ae020410076f04149",
+  "documents": [
+    {
+      "id": "acta.ass.031.ass-031-l05065",
+      "language": "it",
+      "pdf_sha256": "a0dba0fee44e79bc0836f27bde1f488c30bdef0a6b29fe5f7bfe2b8856b4251e",
+      "pages": 4,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "description": "Readable ragged-right Italian body in two columns; retained literal source hard-line hyphens and OCR glyph errors remain conspicuous but do not create clipping or unreadable spacing. Page 4 has source blessing, 5 August 1898 date and LEO PP. XIII subscription before the short-rule apparatus. No note/body fusion or isolated apparatus page found."
+        }
+      ],
+      "limitations": "Visual layout and bounded source-repair invariant review. All final-reader pages inspected at contact and full size. Native evidence is Vatican OCR reconstruction, not original-print facsimile. No lexical collation, word reconstruction, OCR accuracy certification, translation equivalence review, independent rights determination or source-state promotion. Generator PDF/source fidelity algorithm was not independently rerun; its PASS receipts were checked.",
+      "receipt_sha256": "526b128f0787ea2694f84a3cb782920bbb9a084bb153c87ae020410076f04149",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-19.md",
+      "report_sha256": "f9674bf0dfb2813239acca5174a44f96a9a18856819fdfcc956197eb4727ad08"
+    },
+    {
+      "id": "acta.ass.031.ass-031-l05416",
+      "language": "la",
+      "pdf_sha256": "eeb24e5c08f8bb15469d60d03d97390f20aada9864a2e8f9118200f595518573",
+      "pages": 5,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "Normal justified Latin columns; Versio Latina is explicit. Literal source hyphen-plus-space fragments remain throughout and reduce reading comfort without making the word spacing unreadable. Sparse page 5 retains continuation of blessing, dated closing and LEO PAPA XIII subscription before apparatus, so it is source-bearing."
+        }
+      ],
+      "limitations": "Visual layout and bounded source-repair invariant review. All final-reader pages inspected at contact and full size. Native evidence is Vatican OCR reconstruction, not original-print facsimile. No lexical collation, word reconstruction, OCR accuracy certification, translation equivalence review, independent rights determination or source-state promotion. Generator PDF/source fidelity algorithm was not independently rerun; its PASS receipts were checked.",
+      "receipt_sha256": "526b128f0787ea2694f84a3cb782920bbb9a084bb153c87ae020410076f04149",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-19.md",
+      "report_sha256": "f9674bf0dfb2813239acca5174a44f96a9a18856819fdfcc956197eb4727ad08"
+    },
+    {
+      "id": "acta.ass.031.ass-031-l05804",
+      "language": "la",
+      "pdf_sha256": "7610dd2732c557e4c49063abaa6de232247503925c3acfd1505a7ac62701d046",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Page 1 citation pair and page 2 (i) vii, li. remain separate indented historical note blocks at source order positions, interrupting body continuations rather than fusing into them. Page 2 retains body, blessing, 5 September 1898 dating and subscription before apparatus. Retained OCR errors and literal hyphen fragments are legible qualifications. Receipt Underfull \\hbox badness 1502 at body lines 13--27 was visually disposed at full size; no material spacing defect."
+        }
+      ],
+      "limitations": "Visual layout and bounded source-repair invariant review. All final-reader pages inspected at contact and full size. Native evidence is Vatican OCR reconstruction, not original-print facsimile. No lexical collation, word reconstruction, OCR accuracy certification, translation equivalence review, independent rights determination or source-state promotion. Generator PDF/source fidelity algorithm was not independently rerun; its PASS receipts were checked.",
+      "receipt_sha256": "526b128f0787ea2694f84a3cb782920bbb9a084bb153c87ae020410076f04149",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-19.md",
+      "report_sha256": "f9674bf0dfb2813239acca5174a44f96a9a18856819fdfcc956197eb4727ad08"
+    }
+  ]
+}

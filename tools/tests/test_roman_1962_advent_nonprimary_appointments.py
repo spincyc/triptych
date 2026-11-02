@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import copy
+from hashlib import sha256
 from pathlib import Path
 import sys
 import tomllib
@@ -26,6 +27,18 @@ EXPECTED_HOLY_NAME_ORDER = ['Introit', 'Collect', 'Lesson', 'Gradual', 'Alleluia
                            'Postcommunion']
 NEW_BODIES = [('advent-3', 'Alleluia'), ('advent-ember-wednesday', 'Oratio'),
               ('mass-of-the-first-sunday-after-epiphany', 'Introit')]
+# Later admitted whole Latin bodies (collated, permitted rows in
+# src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml): 1f1be432b
+# phase5-latin22, and 8d7e3b301 per
+# workflows/reviews/missal-reader-completion-2026-10-26/latin-five-oratio-source-review.json.
+# Their English absences became one confirmed entry each (eeab39fef core39 and
+# da270a039 sanctoral-oratio-five, [[accepted]] in
+# src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml).
+ADMITTED_BODIES = {
+    ('advent-3', 'Alleluia'): '0188d53c71815633e8cf11e8d8a245f74e98481cafb978ebe38348733b0b3ccc',
+    ('advent-ember-wednesday', 'Oratio'): '74e442a42a44911f7dcfddf187a9ca60803e4cf8cd1eb0dd12e989bbc8d9e20a'}
+ADMITTED_ENGLISH = {('advent-3', 'Alleluia'): 'lasance-1945',
+                    ('advent-ember-wednesday', 'Oratio'): 'lefebvre-1925'}
 
 
 def masses(document):
@@ -47,7 +60,12 @@ def problems(document):
             errors.append((mass, name, 'missing required source unit'))
             continue
         expected_source = 'mixed' if name == 'Introit' else 'composed'
-        if (target.get('source') != expected_source or 'text' in target
+        if (mass, name) in ADMITTED_BODIES:
+            if (target.get('source') != expected_source or 'text_status' in target
+                    or sha256(target.get('text', '').encode('utf-8')).hexdigest()
+                    != ADMITTED_BODIES[mass, name]):
+                errors.append((mass, name, 'literal body disposition'))
+        elif (target.get('source') != expected_source or 'text' in target
                 or target.get('text_status') != {
                     'state': 'unavailable', 'scope': 'proper-body',
                     'reasons': [{'kind': 'no-exemplar'}]}):
@@ -78,7 +96,7 @@ class AdventNonprimaryAppointmentsTest(unittest.TestCase):
     def test_the_source_appointments_and_normal_course(self):
         self.assertEqual(problems(self.document), [])
 
-    def test_each_new_literal_has_one_exact_english_whole_body_absence(self):
+    def test_each_new_literal_has_one_exact_english_whole_body_disposition(self):
         for mass, proper in NEW_BODIES:
             with self.subTest(mass=mass, proper=proper):
                 rows = [r for r in self.english['untranslated']
@@ -86,6 +104,18 @@ class AdventNonprimaryAppointmentsTest(unittest.TestCase):
                             r.get('cycle', 'all'), r.get('occurrence', 1),
                             r['lang'], r.get('extent', 'body'))
                         == (mass, 'main', proper, 'all', 1, 'en', 'body')]
+                entries = [r for r in self.english['entries']
+                           if (r['mass'], r.get('form_id', 'main'), r['proper'],
+                               r.get('cycle', 'all'), r.get('occurrence', 1))
+                           == (mass, 'main', proper, 'all', 1)]
+                if (mass, proper) in ADMITTED_ENGLISH:
+                    self.assertEqual(rows, [])
+                    self.assertEqual(len(entries), 1)
+                    self.assertEqual(([t['lang'] for t in entries[0]['translations']],
+                                      entries[0]['witness'], entries[0]['collation_result']),
+                                     (['en'], ADMITTED_ENGLISH[mass, proper], 'confirmed'))
+                    continue
+                self.assertEqual(entries, [])
                 self.assertEqual(len(rows), 1)
                 self.assertEqual(rows[0]['availability'], 'unavailable')
                 self.assertEqual(rows[0]['reason'], {'kind': 'no-exemplar'})

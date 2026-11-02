@@ -1,0 +1,489 @@
+{
+  "schema": "triptych-humanum-english-omission-recovery/v1",
+  "source": {
+    "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-reading-text-fc16a357",
+    "path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ws-reading-text-fc16a357/great-encyclical-letters-reading-text.txt",
+    "sha256": "fc16a357008f7f2e1b0f331dceecc6ae76138b370a19665208fb064677cf6573"
+  },
+  "evidence": {
+    "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.humanum-omissions-native-evidence-9014714ed29e",
+    "path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/humanum-omissions-native-evidence-9014714ed29e/evidence.zip",
+    "sha256": "9014714ed29ea80f4cf3eaa977dd7eb87e8b79249b0e9ce832ec49c86e5f1a08",
+    "byte_size": 331137,
+    "record_path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/humanum-omissions-native-evidence-9014714ed29e/artifact.toml"
+  },
+  "selection_physical_line_ranges": [
+    [
+      459,
+      537
+    ]
+  ],
+  "selection_absolute_byte_range": [
+    143684,
+    190310
+  ],
+  "selection_sha256": "bae710c3706caf06a31f3e261c0c04d6362017a209c2140abaffbbeea2b3e3bd",
+  "selection_byte_size": 46626,
+  "changes": [
+    {
+      "kind": "recover-same-printing-omitted-span",
+      "absolute_source_byte_offset": 146511,
+      "selected_byte_offset": 2827,
+      "source_physical_line": 467,
+      "before_hex": "",
+      "left_context_hex": "6f66204a657375732043687269737420656e7472757374656420746f204f757220636861726765206d6179206e6f7420",
+      "right_context_hex": "7374616e6420616e642072656d61696e2077686f6c652c20627574206d617920626520656e6c61726765642062792061",
+      "ocr_member": "first-clean-ocr.txt",
+      "ocr_byte_range": [
+        45,
+        50
+      ],
+      "raw_ocr_hex": "6f6e6c7920",
+      "transformation": "replace only LF bytes in this OCR fragment with ASCII space",
+      "replacement_hex": "6f6e6c7920",
+      "full_page_ocr_byte_range": [
+        1313,
+        1318
+      ],
+      "crop_origin": [
+        175,
+        1910
+      ],
+      "tsv_member": "first-clean-ocr.tsv",
+      "tsv_corroboration": [
+        {
+          "crop": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "1",
+            "line_num": "1",
+            "word_num": "9",
+            "left": "1302",
+            "top": "8",
+            "width": "110",
+            "height": "57",
+            "conf": "96.754639",
+            "text": "only"
+          },
+          "full_page": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "3",
+            "line_num": "7",
+            "word_num": "9",
+            "left": "1477",
+            "top": "1918",
+            "width": "110",
+            "height": "57",
+            "conf": "96.754639",
+            "text": "only"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "recover-same-printing-omitted-span",
+      "absolute_source_byte_offset": 146944,
+      "selected_byte_offset": 3260,
+      "source_physical_line": 469,
+      "before_hex": "",
+      "left_context_hex": "6f63636173696f6e2077697468207472756520666f7265736967687420746f20676976652c2061732069742077657265",
+      "right_context_hex": "206f6e2074686569722067756172642c20616e64206e6f7420616c6c6f77207468656d73656c76657320746f20626520",
+      "ocr_member": "second-clean-ocr.txt",
+      "ocr_byte_range": [
+        7,
+        69
+      ],
+      "raw_ocr_hex": "2c2074686520616c61726d2c20616e6420746f2061646d6f6e69736820626f7468207072696e63657320616e640a6e6174696f6e7320746f207374616e64",
+      "transformation": "replace only LF bytes in this OCR fragment with ASCII space",
+      "replacement_hex": "2c2074686520616c61726d2c20616e6420746f2061646d6f6e69736820626f7468207072696e63657320616e64206e6174696f6e7320746f207374616e64",
+      "full_page_ocr_byte_range": [
+        1751,
+        1813
+      ],
+      "crop_origin": [
+        175,
+        2513
+      ],
+      "tsv_member": "second-clean-ocr.tsv",
+      "tsv_corroboration": [
+        {
+          "crop": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "1",
+            "line_num": "1",
+            "word_num": "2",
+            "left": "133",
+            "top": "23",
+            "width": "129",
+            "height": "41",
+            "conf": "96.151398",
+            "text": "were,"
+          },
+          "full_page": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "4",
+            "line_num": "7",
+            "word_num": "2",
+            "left": "308",
+            "top": "2536",
+            "width": "129",
+            "height": "41",
+            "conf": "96.151398",
+            "text": "were,"
+          }
+        },
+        {
+          "crop": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "1",
+            "line_num": "1",
+            "word_num": "3",
+            "left": "301",
+            "top": "9",
+            "width": "81",
+            "height": "44",
+            "conf": "96.376869",
+            "text": "the"
+          },
+          "full_page": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "4",
+            "line_num": "7",
+            "word_num": "3",
+            "left": "476",
+            "top": "2522",
+            "width": "81",
+            "height": "44",
+            "conf": "96.376869",
+            "text": "the"
+          }
+        },
+        {
+          "crop": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "1",
+            "line_num": "1",
+            "word_num": "4",
+            "left": "418",
+            "top": "7",
+            "width": "158",
+            "height": "56",
+            "conf": "96.452782",
+            "text": "alarm,"
+          },
+          "full_page": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "4",
+            "line_num": "7",
+            "word_num": "4",
+            "left": "593",
+            "top": "2520",
+            "width": "158",
+            "height": "56",
+            "conf": "96.452782",
+            "text": "alarm,"
+          }
+        },
+        {
+          "crop": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "1",
+            "line_num": "1",
+            "word_num": "5",
+            "left": "614",
+            "top": "7",
+            "width": "95",
+            "height": "46",
+            "conf": "95.784973",
+            "text": "and"
+          },
+          "full_page": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "4",
+            "line_num": "7",
+            "word_num": "5",
+            "left": "789",
+            "top": "2520",
+            "width": "95",
+            "height": "46",
+            "conf": "95.784973",
+            "text": "and"
+          }
+        },
+        {
+          "crop": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "1",
+            "line_num": "1",
+            "word_num": "6",
+            "left": "743",
+            "top": "11",
+            "width": "50",
+            "height": "42",
+            "conf": "96.358292",
+            "text": "to"
+          },
+          "full_page": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "4",
+            "line_num": "7",
+            "word_num": "6",
+            "left": "918",
+            "top": "2524",
+            "width": "50",
+            "height": "42",
+            "conf": "96.358292",
+            "text": "to"
+          }
+        },
+        {
+          "crop": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "1",
+            "line_num": "1",
+            "word_num": "7",
+            "left": "829",
+            "top": "6",
+            "width": "247",
+            "height": "46",
+            "conf": "96.318314",
+            "text": "admonish"
+          },
+          "full_page": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "4",
+            "line_num": "7",
+            "word_num": "7",
+            "left": "1004",
+            "top": "2519",
+            "width": "247",
+            "height": "46",
+            "conf": "96.318314",
+            "text": "admonish"
+          }
+        },
+        {
+          "crop": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "1",
+            "line_num": "1",
+            "word_num": "8",
+            "left": "1108",
+            "top": "6",
+            "width": "119",
+            "height": "46",
+            "conf": "96.141792",
+            "text": "both"
+          },
+          "full_page": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "4",
+            "line_num": "7",
+            "word_num": "8",
+            "left": "1283",
+            "top": "2519",
+            "width": "119",
+            "height": "46",
+            "conf": "96.141792",
+            "text": "both"
+          }
+        },
+        {
+          "crop": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "1",
+            "line_num": "1",
+            "word_num": "9",
+            "left": "1260",
+            "top": "5",
+            "width": "182",
+            "height": "58",
+            "conf": "96.412720",
+            "text": "princes"
+          },
+          "full_page": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "4",
+            "line_num": "7",
+            "word_num": "9",
+            "left": "1435",
+            "top": "2518",
+            "width": "182",
+            "height": "57",
+            "conf": "96.412720",
+            "text": "princes"
+          }
+        },
+        {
+          "crop": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "1",
+            "line_num": "1",
+            "word_num": "10",
+            "left": "1478",
+            "top": "6",
+            "width": "93",
+            "height": "46",
+            "conf": "96.756744",
+            "text": "and"
+          },
+          "full_page": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "4",
+            "line_num": "7",
+            "word_num": "10",
+            "left": "1653",
+            "top": "2519",
+            "width": "93",
+            "height": "46",
+            "conf": "96.756744",
+            "text": "and"
+          }
+        },
+        {
+          "crop": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "1",
+            "line_num": "2",
+            "word_num": "1",
+            "left": "57",
+            "top": "74",
+            "width": "187",
+            "height": "44",
+            "conf": "96.410934",
+            "text": "nations"
+          },
+          "full_page": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "4",
+            "line_num": "8",
+            "word_num": "1",
+            "left": "232",
+            "top": "2587",
+            "width": "187",
+            "height": "44",
+            "conf": "96.410934",
+            "text": "nations"
+          }
+        },
+        {
+          "crop": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "1",
+            "line_num": "2",
+            "word_num": "2",
+            "left": "267",
+            "top": "80",
+            "width": "51",
+            "height": "40",
+            "conf": "96.683281",
+            "text": "to"
+          },
+          "full_page": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "4",
+            "line_num": "8",
+            "word_num": "2",
+            "left": "442",
+            "top": "2593",
+            "width": "51",
+            "height": "40",
+            "conf": "96.683281",
+            "text": "to"
+          }
+        },
+        {
+          "crop": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "1",
+            "line_num": "2",
+            "word_num": "3",
+            "left": "341",
+            "top": "75",
+            "width": "141",
+            "height": "45",
+            "conf": "96.395096",
+            "text": "stand"
+          },
+          "full_page": {
+            "level": "5",
+            "page_num": "1",
+            "block_num": "1",
+            "par_num": "4",
+            "line_num": "8",
+            "word_num": "3",
+            "left": "516",
+            "top": "2588",
+            "width": "141",
+            "height": "45",
+            "conf": "96.395096",
+            "text": "stand"
+          }
+        }
+      ]
+    }
+  ],
+  "output_sha256": "7f8e961ca176eeefe996894ce79a9c2dcfd2bf9c81a5e6ec46744e08dfbf7820",
+  "output_byte_size": 46693,
+  "conservation": "Delete exactly the two new output spans at the declared shifted offsets to recover the original chapter selection byte for byte. Whole parent outside this selection is not copied or modified. Every selected LF boundary remains exact.",
+  "qualification": "Only two omitted spans are recovered from exact raw OCR fragments. Full-page and clean-crop OCR agree at identical native top-left coordinates, with token dimensions differing by at most1pixel; every used TSV word confidence exceeds95, and the actual native full page/crops were viewed. Internal OCR LF becomes space for the second insertion. No expected replacement wording was typed from a prompt. Other source wording, punctuation, whitespace and all selected LF boundaries remain exact. This is not whole-source collation or translation.",
+  "predecessor_pdf_sha256": "27380be1983b1af1eefe992fe6bb86952d72c6f52c93524eef33161d600af804",
+  "predecessor_segment_id": "segment.leo-xiii.humanum-genus.1903-benziger-english.benziger-english-transcription",
+  "prior_hold_report_sha256": "cab6d0435a106002db61fc725d01952cb91c7b57fa77091978ea5c64afceda12",
+  "exact_chapter_response": {
+    "path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ws-chapter-05-79b2bf13/response.json",
+    "sha256": "79b2bf13793bf592a8fb2c3526ab5b1b7e6565649db5108a628e08e86cdcb0a7"
+  },
+  "python3_program": "from pathlib import Path\nimport hashlib,json,sys,zipfile,io,csv\nH=lambda b:hashlib.sha256(b).hexdigest()\nr=json.loads(Path(sys.argv[1]).read_text());b=Path(r['source']['path']).read_bytes()\nassert H(b)==r['source']['sha256'],'source hash'\ne=Path(r['evidence']['path']).read_bytes();assert H(e)==r['evidence']['sha256'],'evidence hash'\nz=zipfile.ZipFile(io.BytesIO(e));w=json.loads(z.read('witness.json'))\nfor n,p in w['members'].items():assert H(z.read(n))==p['sha256'] and len(z.read(n))==p['byte_size'],'member hash'\nlo,hi=r['selection_absolute_byte_range'];selected=b[lo:hi]\nassert H(selected)==r['selection_sha256'],'selection hash'\nassert b[:lo].count(b'\\n')==458 and selected.count(b'\\n')==79,'selection LF bounds'\nlast=-1\nfor q in r['changes']:\n a=q['absolute_source_byte_offset'];p=q['selected_byte_offset'];assert lo<=a<=hi and p==a-lo and a>last,'insertion offset';last=a\n left=bytes.fromhex(q['left_context_hex']);right=bytes.fromhex(q['right_context_hex'])\n assert b[a-len(left):a]==left and b[a:a+len(right)]==right,'source context'\n raw=z.read(q['ocr_member']);i,j=q['ocr_byte_range'];v=raw[i:j];assert v.hex()==q['raw_ocr_hex'],'OCR slice'\n assert v.replace(b'\\n',b' ').hex()==q['replacement_hex'],'OCR composition'\n i,j=q['full_page_ocr_byte_range'];assert z.read('full-page.txt')[i:j]==v,'full-page agreement'\n crop=list(csv.DictReader(io.StringIO(z.read(q['tsv_member']).decode()),delimiter='\\t'))\n full=list(csv.DictReader(io.StringIO(z.read('full-page.tsv').decode()),delimiter='\\t'))\n for pair in q['tsv_corroboration']:\n  c,f=pair['crop'],pair['full_page'];assert c in crop and f in full and c['text']==f['text'],'TSV record'\n  assert float(c['conf'])>95 and float(f['conf'])>95,'TSV confidence'\n  assert int(c['left'])+q['crop_origin'][0]==int(f['left']) and int(c['top'])+q['crop_origin'][1]==int(f['top']),'native coordinates'\n  assert all(abs(int(c[k])-int(f[k]))<=1 for k in ('width','height')),'native token dimensions'\nout=selected\nfor q in reversed(r['changes']):\n p=q['selected_byte_offset'];i,j=q['ocr_byte_range'];v=z.read(q['ocr_member'])[i:j].replace(b'\\n',b' ');out=out[:p]+v+out[p:]\nassert H(out)==r['output_sha256'] and len(out)==r['output_byte_size'],'output hash/extent'\nrestored=out\nfor q in r['changes']:\n p=q['selected_byte_offset'];v=bytes.fromhex(q['replacement_hex']);assert restored[p:p+len(v)]==v,'inserted span';restored=restored[:p]+restored[p+len(v):]\nassert restored==selected and out.count(b'\\n')==selected.count(b'\\n'),'conservation'\nPath(sys.argv[2]).write_bytes(out)\n",
+  "program_license": "MIT, project-created standalone replay code; historical words excluded. Copyright 2026 Triptych contributors. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the Software), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+  "replay_command": "python3 -c \"import json,sys; from pathlib import Path; r=json.loads(Path(sys.argv[1]).read_text()); exec(r[\"python3_program\"])\" RECIPE_PATH OUTPUT_PATH"
+}

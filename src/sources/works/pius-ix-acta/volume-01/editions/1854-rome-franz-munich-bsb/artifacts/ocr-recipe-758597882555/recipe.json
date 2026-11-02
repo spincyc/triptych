@@ -1,0 +1,772 @@
+{
+  "schema": "triptych-bounded-facsimile-ocr-experiment/v1",
+  "output_directory": "candidate",
+  "model_url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/main/lat.traineddata",
+  "model_sha256": "60054dd32ac03ebd9b4f87d0665bd491a7ffe0d3ee99ceb91aefaf348b65e94f",
+  "threshold": "40%",
+  "blocks": [
+    {
+      "id": "p00352-address",
+      "canvas": 352,
+      "printed_page": 342,
+      "role": "address",
+      "crop_xywh": [
+        280,
+        375,
+        1140,
+        190
+      ],
+      "psm": 6,
+      "source_sha256": "1b655c35fb2550abbf43fd5d06ea3e801dd436a598889dd3c1cd8afa843dcf07"
+    },
+    {
+      "id": "p00352-protocol",
+      "canvas": 352,
+      "printed_page": 342,
+      "role": "protocol",
+      "crop_xywh": [
+        400,
+        665,
+        850,
+        125
+      ],
+      "psm": 6,
+      "source_sha256": "1b655c35fb2550abbf43fd5d06ea3e801dd436a598889dd3c1cd8afa843dcf07"
+    },
+    {
+      "id": "p00352-initial",
+      "canvas": 352,
+      "printed_page": 342,
+      "role": "initial",
+      "crop_xywh": [
+        320,
+        860,
+        62,
+        90
+      ],
+      "psm": 8,
+      "source_sha256": "1b655c35fb2550abbf43fd5d06ea3e801dd436a598889dd3c1cd8afa843dcf07",
+      "border": 20
+    },
+    {
+      "id": "p00352-first-line",
+      "canvas": 352,
+      "printed_page": 342,
+      "role": "first-line",
+      "crop_xywh": [
+        375,
+        898,
+        1035,
+        60
+      ],
+      "psm": 7,
+      "source_sha256": "1b655c35fb2550abbf43fd5d06ea3e801dd436a598889dd3c1cd8afa843dcf07",
+      "border": 20
+    },
+    {
+      "id": "p00352-body-continuation",
+      "canvas": 352,
+      "printed_page": 342,
+      "role": "body-continuation",
+      "crop_xywh": [
+        280,
+        960,
+        1160,
+        1300
+      ],
+      "psm": 3,
+      "source_sha256": "1b655c35fb2550abbf43fd5d06ea3e801dd436a598889dd3c1cd8afa843dcf07",
+      "border": 0
+    },
+    {
+      "id": "p00353-body",
+      "canvas": 353,
+      "printed_page": 343,
+      "role": "body",
+      "crop_xywh": [
+        110,
+        235,
+        1350,
+        1925
+      ],
+      "psm": 3,
+      "source_sha256": "12e10af44f91494f0eaa30d1450b6dff8f6bc622ccd70550bdfa232453c15883"
+    },
+    {
+      "id": "p00354-body",
+      "canvas": 354,
+      "printed_page": 344,
+      "role": "body",
+      "crop_xywh": [
+        110,
+        235,
+        1350,
+        1925
+      ],
+      "psm": 3,
+      "source_sha256": "6ad07017336616f1f8dc9aaa86dafe56215816513f1676b96d1ba4e43be8896c"
+    },
+    {
+      "id": "p00355-body",
+      "canvas": 355,
+      "printed_page": 345,
+      "role": "body",
+      "crop_xywh": [
+        170,
+        235,
+        1160,
+        1810
+      ],
+      "psm": 3,
+      "source_sha256": "0c63d38ada4c9a2c8f3a4d04398910bc283de0f29f552a4e1d408318b8e4d22a"
+    },
+    {
+      "id": "p00355-note",
+      "canvas": 355,
+      "printed_page": 345,
+      "role": "note",
+      "crop_xywh": [
+        220,
+        2080,
+        800,
+        70
+      ],
+      "psm": 6,
+      "source_sha256": "0c63d38ada4c9a2c8f3a4d04398910bc283de0f29f552a4e1d408318b8e4d22a"
+    },
+    {
+      "id": "p00356-body",
+      "canvas": 356,
+      "printed_page": 346,
+      "role": "body",
+      "crop_xywh": [
+        110,
+        235,
+        1350,
+        1925
+      ],
+      "psm": 3,
+      "source_sha256": "736a57999842ebde10e9d0b02dc94ca13a66d23ef2218c3ea2edca25bd771d82"
+    },
+    {
+      "id": "p00357-body",
+      "canvas": 357,
+      "printed_page": 347,
+      "role": "body",
+      "crop_xywh": [
+        170,
+        235,
+        1160,
+        730
+      ],
+      "psm": 3,
+      "source_sha256": "6fa7bcf27bb23f01b2577e4bb5ad287ff4e6c5b6f205ebfd16347a68d011c363"
+    },
+    {
+      "id": "p00358-address",
+      "canvas": 358,
+      "printed_page": 348,
+      "role": "address",
+      "crop_xywh": [
+        280,
+        375,
+        1140,
+        190
+      ],
+      "psm": 6,
+      "source_sha256": "edf7810197d0292f0ceb16b42006a42c2976529a6490ee5583f4615439e16e9a"
+    },
+    {
+      "id": "p00358-protocol",
+      "canvas": 358,
+      "printed_page": 348,
+      "role": "protocol",
+      "crop_xywh": [
+        400,
+        665,
+        850,
+        125
+      ],
+      "psm": 6,
+      "source_sha256": "edf7810197d0292f0ceb16b42006a42c2976529a6490ee5583f4615439e16e9a"
+    },
+    {
+      "id": "p00358-initial",
+      "canvas": 358,
+      "printed_page": 348,
+      "role": "initial",
+      "crop_xywh": [
+        305,
+        875,
+        67,
+        95
+      ],
+      "psm": 10,
+      "source_sha256": "edf7810197d0292f0ceb16b42006a42c2976529a6490ee5583f4615439e16e9a",
+      "border": 20
+    },
+    {
+      "id": "p00358-first-line",
+      "canvas": 358,
+      "printed_page": 348,
+      "role": "first-line",
+      "crop_xywh": [
+        365,
+        915,
+        1060,
+        60
+      ],
+      "psm": 7,
+      "source_sha256": "edf7810197d0292f0ceb16b42006a42c2976529a6490ee5583f4615439e16e9a",
+      "border": 20
+    },
+    {
+      "id": "p00358-body-continuation",
+      "canvas": 358,
+      "printed_page": 348,
+      "role": "body-continuation",
+      "crop_xywh": [
+        280,
+        975,
+        1160,
+        1285
+      ],
+      "psm": 3,
+      "source_sha256": "edf7810197d0292f0ceb16b42006a42c2976529a6490ee5583f4615439e16e9a",
+      "border": 0
+    },
+    {
+      "id": "p00359-body",
+      "canvas": 359,
+      "printed_page": 349,
+      "role": "body",
+      "crop_xywh": [
+        110,
+        235,
+        1350,
+        1925
+      ],
+      "psm": 3,
+      "source_sha256": "f1920d8a589e9a544e37eb27366b0ce017aab05486267b69c332c269e2e4a008"
+    },
+    {
+      "id": "p00360-body",
+      "canvas": 360,
+      "printed_page": 350,
+      "role": "body",
+      "crop_xywh": [
+        110,
+        235,
+        1350,
+        1925
+      ],
+      "psm": 3,
+      "source_sha256": "6702eef8105d778045b10774ae59e50d7fb9b6df35560a5aa8b71881f2eb7fc1"
+    },
+    {
+      "id": "p00361-body",
+      "canvas": 361,
+      "printed_page": 351,
+      "role": "body",
+      "crop_xywh": [
+        110,
+        235,
+        1350,
+        1925
+      ],
+      "psm": 3,
+      "source_sha256": "00e28cae30e63166cbc190b8567115de4dda0dc692468d4dbac1b333af333847"
+    },
+    {
+      "id": "p00362-body",
+      "canvas": 362,
+      "printed_page": 352,
+      "role": "body",
+      "crop_xywh": [
+        280,
+        235,
+        1150,
+        970
+      ],
+      "psm": 3,
+      "source_sha256": "0f71d534619d2f90024f83f589ee7cf8335c10ea44a1ded741fa1ecd11beb712"
+    },
+    {
+      "id": "p00363-address",
+      "canvas": 363,
+      "printed_page": 353,
+      "role": "address",
+      "crop_xywh": [
+        280,
+        220,
+        1000,
+        120
+      ],
+      "psm": 6,
+      "source_sha256": "d4ecac556115b41dc6cea486bef7661e3923056d844589265f03b8d2040b9ba2"
+    },
+    {
+      "id": "p00363-protocol",
+      "canvas": 363,
+      "printed_page": 353,
+      "role": "protocol",
+      "crop_xywh": [
+        280,
+        450,
+        1000,
+        115
+      ],
+      "psm": 6,
+      "source_sha256": "d4ecac556115b41dc6cea486bef7661e3923056d844589265f03b8d2040b9ba2"
+    },
+    {
+      "id": "p00363-initial",
+      "canvas": 363,
+      "printed_page": 353,
+      "role": "initial",
+      "crop_xywh": [
+        180,
+        650,
+        78,
+        95
+      ],
+      "psm": 10,
+      "source_sha256": "d4ecac556115b41dc6cea486bef7661e3923056d844589265f03b8d2040b9ba2",
+      "border": 20
+    },
+    {
+      "id": "p00363-first-line",
+      "canvas": 363,
+      "printed_page": 353,
+      "role": "first-line",
+      "crop_xywh": [
+        250,
+        690,
+        1035,
+        65
+      ],
+      "psm": 7,
+      "source_sha256": "d4ecac556115b41dc6cea486bef7661e3923056d844589265f03b8d2040b9ba2",
+      "border": 20
+    },
+    {
+      "id": "p00363-body-continuation",
+      "canvas": 363,
+      "printed_page": 353,
+      "role": "body-continuation",
+      "crop_xywh": [
+        160,
+        755,
+        1150,
+        1245
+      ],
+      "psm": 3,
+      "source_sha256": "d4ecac556115b41dc6cea486bef7661e3923056d844589265f03b8d2040b9ba2",
+      "border": 0
+    },
+    {
+      "id": "p00363-note",
+      "canvas": 363,
+      "printed_page": 353,
+      "role": "note",
+      "crop_xywh": [
+        220,
+        2020,
+        1100,
+        130
+      ],
+      "psm": 6,
+      "source_sha256": "d4ecac556115b41dc6cea486bef7661e3923056d844589265f03b8d2040b9ba2"
+    },
+    {
+      "id": "p00364-body",
+      "canvas": 364,
+      "printed_page": 354,
+      "role": "body",
+      "crop_xywh": [
+        280,
+        235,
+        1160,
+        1780
+      ],
+      "psm": 3,
+      "source_sha256": "4c29f816a3640affad26a832a282d2fd086be6445eb9cbf32188721c1d20f8b4"
+    },
+    {
+      "id": "p00364-note",
+      "canvas": 364,
+      "printed_page": 354,
+      "role": "note",
+      "crop_xywh": [
+        320,
+        2060,
+        1000,
+        100
+      ],
+      "psm": 6,
+      "source_sha256": "4c29f816a3640affad26a832a282d2fd086be6445eb9cbf32188721c1d20f8b4"
+    },
+    {
+      "id": "p00365-body",
+      "canvas": 365,
+      "printed_page": 355,
+      "role": "body",
+      "crop_xywh": [
+        110,
+        235,
+        1350,
+        1925
+      ],
+      "psm": 3,
+      "source_sha256": "05f7fb493857356e2252552248f21a7344abab38fa38c260813fc8c56db8f9b6"
+    },
+    {
+      "id": "p00366-body",
+      "canvas": 366,
+      "printed_page": 356,
+      "role": "body",
+      "crop_xywh": [
+        110,
+        235,
+        1350,
+        1925
+      ],
+      "psm": 3,
+      "source_sha256": "0908deb115300f304cc1d1473764954085593fed401f35d25c069d0d586c67dd"
+    },
+    {
+      "id": "p00367-body",
+      "canvas": 367,
+      "printed_page": 357,
+      "role": "body",
+      "crop_xywh": [
+        110,
+        235,
+        1350,
+        1925
+      ],
+      "psm": 3,
+      "source_sha256": "39a1415a9d755af2c35a54eb9413967c21f83e82e3121557bfe4f6aa15d28d4b"
+    },
+    {
+      "id": "p00368-body",
+      "canvas": 368,
+      "printed_page": 358,
+      "role": "body",
+      "crop_xywh": [
+        110,
+        235,
+        1350,
+        1925
+      ],
+      "psm": 3,
+      "source_sha256": "27c1d55c8d44dac69ba22ad8537f9414f637bce6826d2577be55af2d64bfb7fd"
+    },
+    {
+      "id": "p00369-body",
+      "canvas": 369,
+      "printed_page": 359,
+      "role": "body",
+      "crop_xywh": [
+        110,
+        235,
+        1350,
+        1925
+      ],
+      "psm": 3,
+      "source_sha256": "51d5e3da1582a31055dccaf021f17b884f0a19300fb731d63acc5796112f8493"
+    },
+    {
+      "id": "p00370-body",
+      "canvas": 370,
+      "printed_page": 360,
+      "role": "body",
+      "crop_xywh": [
+        280,
+        250,
+        1150,
+        1190
+      ],
+      "psm": 3,
+      "source_sha256": "0541647e4c7855b9446c4e6c4f94e47c134540340a7d039a8667f009d9a7aaf6"
+    }
+  ],
+  "acts": {
+    "exultavit": {
+      "separator": "\n\n",
+      "blocks": [
+        "p00352-address",
+        "p00352-protocol",
+        {
+          "separator": "\n",
+          "blocks": [
+            {
+              "separator": "",
+              "blocks": [
+                "p00352-initial",
+                "p00352-first-line"
+              ]
+            },
+            "p00352-body-continuation"
+          ]
+        },
+        "p00353-body",
+        "p00354-body",
+        "p00355-body",
+        "p00355-note",
+        "p00356-body",
+        "p00357-body"
+      ]
+    },
+    "ex-aliis": {
+      "separator": "\n\n",
+      "blocks": [
+        "p00358-address",
+        "p00358-protocol",
+        {
+          "separator": "\n",
+          "blocks": [
+            {
+              "separator": "",
+              "blocks": [
+                "p00358-initial",
+                "p00358-first-line"
+              ]
+            },
+            "p00358-body-continuation"
+          ]
+        },
+        "p00359-body",
+        "p00360-body",
+        "p00361-body",
+        "p00362-body"
+      ]
+    },
+    "nemo": {
+      "separator": "\n\n",
+      "blocks": [
+        "p00363-address",
+        "p00363-protocol",
+        {
+          "separator": "\n",
+          "blocks": [
+            {
+              "separator": "",
+              "blocks": [
+                "p00363-initial",
+                "p00363-first-line"
+              ]
+            },
+            "p00363-body-continuation"
+          ]
+        },
+        "p00363-note",
+        "p00364-body",
+        "p00364-note",
+        "p00365-body",
+        "p00366-body",
+        "p00367-body",
+        "p00368-body",
+        "p00369-body",
+        "p00370-body"
+      ]
+    }
+  },
+  "text_transform": "Each leaf is raw Tesseract UTF-8 text stripped only of leading/trailing whitespace. Recursively join exactly by each declared separator, followed by one final LF. The large initial and remaining first line are recognized from distinct explicit source-image rectangles and concatenated without an intervening character. No glyph or word is typed, replaced, expanded, spell-checked, or inferred.",
+  "source_manifest_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10543911/manifest",
+  "source_manifest_sha256": "173394060052ff23262d13419808699fb7aeb372f704fb3c955796b02a983aec",
+  "tool_versions": {
+    "tesseract": "5.5.4",
+    "leptonica": "1.87.0",
+    "imagemagick": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org"
+  },
+  "source_image_bundle_artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.bounded-images-ca31a9280e5a",
+  "source_image_bundle_sha256": "ca31a9280e5a0f8408d4ce63c4a3855389d7b7522ea8231599a157897b4d183f",
+  "processed_bundle_artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.processed-images-882a5d5723cb",
+  "processed_bundle_sha256": "882a5d5723cb23515a12ca7d32846ea57291c00493aea811bd2d68122000473b",
+  "raw_ocr_bundle_artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.raw-ocr-5843d9ec2477",
+  "raw_ocr_bundle_sha256": "5843d9ec24775bf53ba9319e30c1d4589e92a26e38607fc8c24977f2e389415f",
+  "whole_pdf_artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.whole-facsimile-cab3ef195818",
+  "whole_pdf_sha256": "cab3ef195818824cc283af485503d21480399d797b2e8201c5ec78faf67d2ac6",
+  "whole_pdf_byte_size": 347266817,
+  "source_copy": "Pii IX Pontificis Maximi Acta, pars prima, volume I. Ex Typographia Bonarum Artium, habita facultate; Giorgio Franz in Monaco. 1854 (holding-library catalogue date). Bayerische Staatsbibliothek, J.can.f. 113 i-1,1; bsb10543911.",
+  "images": [
+    {
+      "canvas": 5,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00005/full/full/0/default.jpg",
+      "path": "bsb-images/00005.jpg",
+      "sha256": "40669d2a86f6661c353fa5254dec4019db0749d09d28ab5d029639ebf4105361",
+      "bytes": 337712,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 351,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00351/full/full/0/default.jpg",
+      "path": "bsb-images/00351.jpg",
+      "sha256": "2a9a08bc428578e7edd9cc81f47fe47857fe72631bb37c1a0008f6946f8ebc41",
+      "bytes": 407498,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 352,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00352/full/full/0/default.jpg",
+      "path": "bsb-images/00352.jpg",
+      "sha256": "1b655c35fb2550abbf43fd5d06ea3e801dd436a598889dd3c1cd8afa843dcf07",
+      "bytes": 462791,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 353,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00353/full/full/0/default.jpg",
+      "path": "bsb-images/00353.jpg",
+      "sha256": "12e10af44f91494f0eaa30d1450b6dff8f6bc622ccd70550bdfa232453c15883",
+      "bytes": 586995,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 354,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00354/full/full/0/default.jpg",
+      "path": "bsb-images/00354.jpg",
+      "sha256": "6ad07017336616f1f8dc9aaa86dafe56215816513f1676b96d1ba4e43be8896c",
+      "bytes": 528096,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 355,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00355/full/full/0/default.jpg",
+      "path": "bsb-images/00355.jpg",
+      "sha256": "0c63d38ada4c9a2c8f3a4d04398910bc283de0f29f552a4e1d408318b8e4d22a",
+      "bytes": 530602,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 356,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00356/full/full/0/default.jpg",
+      "path": "bsb-images/00356.jpg",
+      "sha256": "736a57999842ebde10e9d0b02dc94ca13a66d23ef2218c3ea2edca25bd771d82",
+      "bytes": 505136,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 357,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00357/full/full/0/default.jpg",
+      "path": "bsb-images/00357.jpg",
+      "sha256": "6fa7bcf27bb23f01b2577e4bb5ad287ff4e6c5b6f205ebfd16347a68d011c363",
+      "bytes": 443329,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 358,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00358/full/full/0/default.jpg",
+      "path": "bsb-images/00358.jpg",
+      "sha256": "edf7810197d0292f0ceb16b42006a42c2976529a6490ee5583f4615439e16e9a",
+      "bytes": 498927,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 359,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00359/full/full/0/default.jpg",
+      "path": "bsb-images/00359.jpg",
+      "sha256": "f1920d8a589e9a544e37eb27366b0ce017aab05486267b69c332c269e2e4a008",
+      "bytes": 569349,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 360,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00360/full/full/0/default.jpg",
+      "path": "bsb-images/00360.jpg",
+      "sha256": "6702eef8105d778045b10774ae59e50d7fb9b6df35560a5aa8b71881f2eb7fc1",
+      "bytes": 555175,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 361,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00361/full/full/0/default.jpg",
+      "path": "bsb-images/00361.jpg",
+      "sha256": "00e28cae30e63166cbc190b8567115de4dda0dc692468d4dbac1b333af333847",
+      "bytes": 566834,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 362,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00362/full/full/0/default.jpg",
+      "path": "bsb-images/00362.jpg",
+      "sha256": "0f71d534619d2f90024f83f589ee7cf8335c10ea44a1ded741fa1ecd11beb712",
+      "bytes": 428746,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 363,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00363/full/full/0/default.jpg",
+      "path": "bsb-images/00363.jpg",
+      "sha256": "d4ecac556115b41dc6cea486bef7661e3923056d844589265f03b8d2040b9ba2",
+      "bytes": 510068,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 364,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00364/full/full/0/default.jpg",
+      "path": "bsb-images/00364.jpg",
+      "sha256": "4c29f816a3640affad26a832a282d2fd086be6445eb9cbf32188721c1d20f8b4",
+      "bytes": 527538,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 365,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00365/full/full/0/default.jpg",
+      "path": "bsb-images/00365.jpg",
+      "sha256": "05f7fb493857356e2252552248f21a7344abab38fa38c260813fc8c56db8f9b6",
+      "bytes": 587742,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 366,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00366/full/full/0/default.jpg",
+      "path": "bsb-images/00366.jpg",
+      "sha256": "0908deb115300f304cc1d1473764954085593fed401f35d25c069d0d586c67dd",
+      "bytes": 508012,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 367,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00367/full/full/0/default.jpg",
+      "path": "bsb-images/00367.jpg",
+      "sha256": "39a1415a9d755af2c35a54eb9413967c21f83e82e3121557bfe4f6aa15d28d4b",
+      "bytes": 550383,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 368,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00368/full/full/0/default.jpg",
+      "path": "bsb-images/00368.jpg",
+      "sha256": "27c1d55c8d44dac69ba22ad8537f9414f637bce6826d2577be55af2d64bfb7fd",
+      "bytes": 521872,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 369,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00369/full/full/0/default.jpg",
+      "path": "bsb-images/00369.jpg",
+      "sha256": "51d5e3da1582a31055dccaf021f17b884f0a19300fb731d63acc5796112f8493",
+      "bytes": 523763,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 370,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00370/full/full/0/default.jpg",
+      "path": "bsb-images/00370.jpg",
+      "sha256": "0541647e4c7855b9446c4e6c4f94e47c134540340a7d039a8667f009d9a7aaf6",
+      "bytes": 431601,
+      "status": "complete-image"
+    },
+    {
+      "canvas": 371,
+      "url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10543911_00371/full/full/0/default.jpg",
+      "path": "bsb-images/00371.jpg",
+      "sha256": "888ad0005cfbbf7c62437c02d481d363fa1a37cfaa06e9bda5672563f009fbac",
+      "bytes": 504739,
+      "status": "complete-image"
+    }
+  ],
+  "assembly_order": "For replay, unpack historical-images.zip alongside recipe.json and ocr.py, and supply the exact lat model under tessdata/lat.traineddata. Run python ocr.py with ImageMagick and Tesseract versions recorded here. For verification compare generated TXT/TSV/PNG and combined act hashes against the frozen raw package and candidate receipt."
+}

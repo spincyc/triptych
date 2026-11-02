@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.ass.025.extracted-text-c7a9c3f3"
+edition_id = "edition.acta-papal-archives.ass.025.1892-acta-ass-025"
+artifact_type = "mechanical-pdf-text-extraction"
+media_type = "text/plain"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Exact extraction may contain protected text or modern wrappers and remains transient. Separately manifested historical text excludes uncleared material."
+retrieved = "2026-10-26"
+sha256 = "c7a9c3f3f69ff798c8707ae16910b91fa284ca9cf2260f6a710be2da342597d9"
+byte_size = 10738
+derived_from = "artifact.acta-papal-archives.ass.025.extracted-text-5b4f11b9"
+transformation = "Mechanical exact source Unicode-column selection; no source character substitution.; Remove only source running-head letters/folio digits from the explicitly declared Unicode slices. Every retained character comes directly from the hashed complete layout extraction; concatenate fragments of the same source row before its original LF. Independent -raw extraction corroborates the separation but supplies no replacement wording.; select inclusive 1-based LF ranges and 0-based half-open Unicode columns in this declared order: [{\"physical_line_range\":[2955,2963],\"unicode_columns\":null},{\"physical_line_range\":[2965,3005],\"unicode_columns\":null},{\"physical_line_range\":[3007,3048],\"unicode_columns\":null},{\"physical_line_range\":[3050,3090],\"unicode_columns\":null},{\"physical_line_range\":[3092,3132],\"unicode_columns\":null},{\"physical_line_range\":[3134,3134],\"unicode_columns\":[0,34]},{\"join_previous\":true,\"physical_line_range\":[3134,3134],\"unicode_columns\":[35,39]},{\"physical_line_range\":[3136,3145],\"unicode_columns\":null}]; join_previous concatenates consecutive fragments of the same source LF line before its LF; otherwise append LF after each selected source line/slice, preserving all selected characters; Remove only source running-head letters/folio digits from the explicitly declared Unicode slices. Every retained character comes directly from the hashed complete layout extraction; concatenate fragments of the same source row before its original LF. Independent -raw extraction corroborates the separation but supplies no replacement wording."
+notes = "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

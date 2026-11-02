@@ -8,6 +8,11 @@
   "identity_claim": "parallel-function-not-same-composition",
   "inputs": [
     {
+      "byte_size": 2990029,
+      "path": "src/sources/artifact-delivery.json",
+      "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d"
+    },
+    {
       "byte_size": 190717,
       "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
       "sha256": "e9a98cc82601fbfb459467654727c245cf6756252b7e77215270617d4084af4c"
@@ -4853,19 +4858,24 @@
   },
   "tool_inputs": [
     {
-      "byte_size": 67556,
+      "byte_size": 68994,
       "path": "guidance/liturgical-text-publication-policy.md",
-      "sha256": "3a035f6e50c06da9597ea99020efb0fa93939d6ef88f6204ed83ffbdf9aae32f"
+      "sha256": "e34f2917225dc5fd3440197a86b18c72532c267bb1659567af5f0388f2510fa7"
     },
     {
-      "byte_size": 142150,
+      "byte_size": 33634,
+      "path": "scripts/_artifact_store.py",
+      "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6"
+    },
+    {
+      "byte_size": 142215,
       "path": "scripts/_calendars.py",
-      "sha256": "c2ec47e2001a219429ca879165d56202a0cd587b00c36f3abe18a6a4dec593ef"
+      "sha256": "54f37042b07ae107a9bea59fe6080d5699f70290335ae7ddee453752f35eb7d4"
     },
     {
-      "byte_size": 68549,
+      "byte_size": 69710,
       "path": "scripts/_eucharistic_history.py",
-      "sha256": "0b0d74a48979ed4034b4caf91f459c339615f8a2c2d7fec85983a0614b55954a"
+      "sha256": "eedce62fc34d4fdc2a50feec4439ff18463285013f4b56e7bff19a111cb37fb3"
     },
     {
       "byte_size": 24489,
@@ -4873,29 +4883,34 @@
       "sha256": "2d7d31f31b319c0d9320f3b686fff4fab9b1dde4129592b475290fb2b741eab7"
     },
     {
-      "byte_size": 115189,
+      "byte_size": 116745,
       "path": "scripts/_eucharistic_texts.py",
-      "sha256": "3a400e0a7edcafbab5ea2d89403fccde74621127259d4ba89825c8379b273ed6"
+      "sha256": "d728a0955bc16045475594a8711f830e17b0755aa4054b286d4142fdc5a61c20"
     },
     {
-      "byte_size": 50284,
+      "byte_size": 54756,
       "path": "scripts/_proper_latin.py",
-      "sha256": "064d6567ba12b7ab19191fb3c530b248c70a9de0855afe5c932c7be81a5874a6"
+      "sha256": "852acb6a88084aba5729e5f60e807ca4e10f9c4436f5db2b23a9fdd3fbe2da1a"
     },
     {
-      "byte_size": 33721,
+      "byte_size": 3736,
+      "path": "scripts/_source_delivery_policy.py",
+      "sha256": "6b2027085308de89e0aae1cc5be07f407c3e6e76c1ef482736c8e98dc1a2aa75"
+    },
+    {
+      "byte_size": 34499,
       "path": "scripts/_tooling.py",
-      "sha256": "d019123d6498b5fc3bfdde1259b7ef6b8aae848bf053053deb402423c2ea85f0"
+      "sha256": "7e6a0f5077cc2eda65de8e930a21716685fd8db7b81d74682240c9c9ab1af072"
     },
     {
-      "byte_size": 255818,
+      "byte_size": 255863,
       "path": "tools/act-history",
-      "sha256": "cf2d6ae5b90d07f130a653cb1d11de7493a16b9bdcf3f9e4e39d76ae27151e6f"
+      "sha256": "2fc6aee41059ed53eeead87e80ed5305b3ca89940f40d0e7381fa54b96667e80"
     },
     {
-      "byte_size": 124276,
+      "byte_size": 150668,
       "path": "tools/source-library",
-      "sha256": "6167f4618afa0223424bfeba3af31c98aca3209643c78ea082a4fef8dbe05ac8"
+      "sha256": "fc4d59e693378aa42d6d6a16878b98cfce839e0411a5396b5a58002f5035eaee"
     }
   ],
   "unified_diff": "--- left/brightman-1896-greek-chrysostom\n+++ right/brightman-1896-greek-james\n@@ -1 +1 @@\n-Μεμνημένοι τοίνυν τῆς σωτηρίου ταύτης ἐντολῆς καὶ πάντων τῶν ὑπὲρ ἡμῶν γεγενημένων, τοῦ σταυροῦ, τοῦ τάφου, τῆς τριημέρου ἀναστάσεως, τῆς εἰς οὐρανοὺς ἀναβάσεως, τῆς ἐκ δεξιῶν καθέδρας, τῆς δευτέρας καὶ ἐνδόξου πάλιν παρουσίας τὰ ϹᾺ ἘΚ ΤΩ͂Ν ϹΩ͂Ν ϹΟῚ προσφέρομεν κατὰ πάντα καὶ διὰ πάντα\n+Μεμνημένοι οὖν καὶ ἡμεῖς οἱ ἁμαρτωλοὶ τῶν ζωοποιῶν αὐτοῦ παθημάτων, τοῦ σωτηρίου σταυροῦ καὶ τοῦ θανάτου καὶ τῆς ταφῆς καὶ τῆς τριημέρου ἐκ νεκρῶν ἀναστάσεως καὶ τῆς εἰς οὐρανοὺς ἀνόδου καὶ τῆς ἐκ δεξιῶν σου τοῦ Θεοῦ καὶ Πατρὸς καθέδρας καὶ τῆς δευτέρας ἐνδόξου καὶ φοβερᾶς αὐτοῦ παρουσίας ὅταν ἜΛΘῌ ΜΕΤᾺ ΔΌΞΗϹ ΚΡΙ͂ΝΑΙ ΖΩ͂ΝΤΑϹ ΚΑῚ ΝΕΚΡΟΎϹ, ὅταν μέλλῃ ἈΠΟΔΙΔΌΝΑΙ ἙΚΆϹΤῼ ΚΑΤᾺ ΤᾺ ἜΡΓΑ ΑΥ̓ΤΟΥ͂· ΦΕΙ͂ϹΑΙ ἡμῶν ΚΎΡΙΕ ὁ θεὸς ἡμῶν, μᾶλλον δὲ κατὰ τὴν εὐσπλαγχνίαν αὐτοῦ προσφέρομέν σοι δέσποτα τὴν φοβερὰν ταύτην καὶ ἀναίμακτον θυσίαν δεόμενοι ἵνα ΜῊ ΚΑΤᾺ ΤᾺϹ ἉΜΑΡΤΊΑϹ ἩΜΩ͂Ν ΠΟΙΉϹῌϹ ΜΕΘ’ ἩΜΩ͂Ν ΜΗΔῈ ΚΑΤᾺ ΤᾺϹ ἈΝΟΜΊΑϹ ἩΜΩ͂Ν ἈΝΤΑΠΟΔΏϹῌϹ ἩΜΙ͂Ν ἀλλὰ ΚΑΤᾺ τὴν ϹῊΝ ἘΠΙΕΊΚΕΙΑΝ καὶ ἄφατόν σου φιλανθρωπίαν ὑπερβὰς καὶ ἘΞΑΛΕΊΨΑϹ ΤῸ ΚΑΘ’ ἩΜΩ͂Ν ΧΕΙΡΌΓΡΑΦΟΝ τῶν σῶν ἱκετῶν χαρίσῃ ἡμῖν τὰ ἐπουράνια καὶ αἰώνιά σου δωρήματα Ἃ ὈΦΘΑΛΜῸϹ ΟΥ̓Κ ΕἾΔΕ ΚΑῚ ΟΥ̓͂Ϲ ΟΥ̓Κ ἬΚΟΥϹΕ ΚΑῚ ἘΠῚ ΚΑΡΔΊΑΝ ἈΝΘΡΏΠΟΥ ΟΥ̓Κ ἈΝΈΒΗ, Ἃ ἩΤΟΊΜΑϹΑϹ Ὁ ΘΕῸϹ ΤΟΙ͂Ϲ ἈΓΑΠΩ͂ϹΊ σε, καὶ μὴ δι’ ἐμὲ καὶ διὰ τὰς ἐμὰς ἁμαρτίας ἀθετήσῃς τὸν λαὸν φιλάνθρωπε Κύριε\n"

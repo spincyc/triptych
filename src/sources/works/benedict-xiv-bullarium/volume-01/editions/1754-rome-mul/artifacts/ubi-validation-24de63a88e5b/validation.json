@@ -1,0 +1,102 @@
+{
+  "changed_components": 3032,
+  "changed_pages": 3,
+  "checks": {
+    "all_access_leaves_match_scandata_sequence": true,
+    "all_access_page_native_nonwhite_fingerprints": true,
+    "all_components_independent_LF_bounds": true,
+    "complete_source_hashes": true,
+    "each_split_source_character_exactly_once": true,
+    "every_original_WORD_whole_or_completely_bound": true,
+    "excluded_native_text_never_emitted": true,
+    "native_charParams_indivisible_and_position_aligned": true,
+    "no_runtime_paths_or_OBJECT_attributes": true,
+    "unchanged_raw_bytes_identical": true,
+    "whole_TXT_XML_tokens": true,
+    "whole_gzip_decoded_XML_identity": true,
+    "whole_nonwhite_character_conservation": true
+  },
+  "derived_from": "artifact.benedict-xiv-bullarium.volume-01.1754-rome-mul.ocr-d9042ad44ad3",
+  "evidence": [],
+  "excluded_upstream_pages": [],
+  "generator": "bullarium-character-geometry",
+  "generator_version": 1,
+  "hybrid_bytes": 2862647,
+  "hybrid_sha256": "146a891e26c4583b2b929c9fe70c30bd86fad0b0ca2552c236657d37b7cf1eea",
+  "limitations": [
+    "Native OCR character values are not corrected, restored or authenticated.",
+    "Explicit source-role assignments and component order require independent source review.",
+    "Unchanged raw bytes and unreviewed original order retain their recorded defects.",
+    "Page replay proves no whole-act repair, admission, juridical weight or image collation.",
+    "Whole upstream hashes do not establish rights clearance of excluded or unreviewed upstream surfaces; their native text is never emitted.",
+    "Native OCR wording remains uncorrected. Margin/body assignment uses the independently inspected native pages and exact matching native character bboxes.",
+    "Page role partitions are explicit recipe decisions; this replay alone does not admit an act."
+  ],
+  "native_character_output_scope": [
+    26,
+    27,
+    28
+  ],
+  "native_pages": 456,
+  "outputs": {
+    "byte-map.json": {
+      "byte_size": 2502,
+      "sha256": "18b56f4a38aaff96b972687fcdaa20ea67187b73d0304472d80ce8f5dc796b8f"
+    },
+    "component-map.jsonl.gz": {
+      "byte_size": 137910,
+      "sha256": "5a6155a397e363027c5d83d6e39acf66cc03c58d8bc95b4151516d59fff6d8df"
+    },
+    "hybrid.txt": {
+      "byte_size": 2862647,
+      "sha256": "146a891e26c4583b2b929c9fe70c30bd86fad0b0ca2552c236657d37b7cf1eea"
+    },
+    "page-map.json": {
+      "byte_size": 374860,
+      "sha256": "a8f11c82520204ae9555c4712cbb94c2f05daaefdad57521683a19951d1ccdba"
+    }
+  },
+  "recipe_sha256": "63464a4adfc88bad717f6bbe234da02b24380333deff3ed87ab884ebdc67d1f6",
+  "roles": {
+    "body-left": 1400,
+    "body-right": 1466,
+    "footer": 17,
+    "gutter-ocr": 9,
+    "header": 35,
+    "margin-left": 58,
+    "margin-right": 47
+  },
+  "schema": "triptych-bullarium-character-witness/v1",
+  "source_WORDs": 442568,
+  "source_native_charParams": 2679889,
+  "source_pages": 456,
+  "sources": {
+    "source_abbyy_gz": {
+      "artifact_id": "artifact.benedict-xiv-bullarium.volume-01.1754-rome-mul.abbyy-ea099ac27477",
+      "byte_size": 44334414,
+      "sha1": "fe70a1d8538588aa75310bfc9cfa4f7b4a35b6b5",
+      "sha256": "ea099ac27477a54838bfe9479498fc905bf5dcc3a1b77fa0b070234d5193d1e9"
+    },
+    "source_abbyy_xml": {
+      "artifact_id": "artifact.benedict-xiv-bullarium.volume-01.1754-rome-mul.abbyy-xml-c3d78c0c810c",
+      "byte_size": 622075204,
+      "sha256": "c3d78c0c810c48cece6258ee3e7bb1cafa6262758da7ff7d1bf3eb3a32351f36"
+    },
+    "source_scandata": {
+      "artifact_id": "artifact.benedict-xiv-bullarium.volume-01.1754-rome-mul.scandata-ac2a8f6048a6",
+      "byte_size": 136903,
+      "sha256": "ac2a8f6048a682ef1f005924038f656b41ca0148cdeb1dc013e120790298ac96"
+    },
+    "source_txt": {
+      "artifact_id": "artifact.benedict-xiv-bullarium.volume-01.1754-rome-mul.ocr-d9042ad44ad3",
+      "byte_size": 2863032,
+      "sha256": "d9042ad44ad3d0249d8c3c45e2e13c738a189d97cfdc5bdb6883748e84a16429"
+    },
+    "source_xml": {
+      "artifact_id": "artifact.benedict-xiv-bullarium.volume-01.1754-rome-mul.ubi-coords4-4baa6408f479",
+      "byte_size": 24298490,
+      "sha256": "4baa6408f4798ec297533f8bc83cf31a487bc96fa1322c74751a850210bdd59c"
+    }
+  },
+  "split_WORDs": 3
+}

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-josaphat-chain.josaphat-collect-unchanged-20261026"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-josaphat-chain"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Triptych offers only its bounded selection, layout and declared editorial normalization under CC BY 4.0. Every petition word is independently witnessed by the public-domain Tours Mame 1922 printing; the explicit conclusion suffix is separately printed in that edition own rule and the public-domain Pustet 1862 formula. The underlying Latin remains public domain and excluded from the project grant. The repository preexisting-material basis under 17 U.S.C. 103(b) does not clear the 1962 facsimile, images, layout or other later contributions."
+provenance = "A new immutable count-neutral projection over the actually read Mame historical prayer, its own rule, the separately read Pustet formula and the separately controlled 1962 target. Mame PDF 871/printed 757 supplies every one of the 37 petition words and its actual Per Dominum... in unitate ejusdem. cue. The actual 1962 PDF 799/printed 718/no.4097 stops at Per Dominum ... in unitate eiusdem Spiritus Sancti. Mame own IX17 on PDF 54/printed xlii explicitly prints In unitate ejusdem Spiritus Sancti, etc.; the separately registered Pustet PDF 390/printed 304 Praesta formula prints that suffix contiguously in a Father-through-Son conclusion. Only the two already printed target suffix words Spiritus Sancti are supported by these separate controls; neither omitted middle nor any later tail is added. The project retains its consonantal-j convention, punctuation, wraps and final LF. Pustet is formula support, never the source of this Josaphat petition."
+retrieved = "2026-10-26"
+sha256 = "8ac5c63a4f70f545c337ffb3ccf2a36223df16945211944a2ec31db59c72c0f0"
+byte_size = 303
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-josaphat-chain/artifacts/josaphat-collect-unchanged-20261026/latin-only.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.josaphat-prayer-and-rule-20261026", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-petitions-and-formulas-20261022", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Preserve the exact current UTF8 Latin body, including each wrap and final LF; no body repair. Historical petition normalization removes stress accents, expands ligatures and decorative capitalization and applies target pointing and the project consonantal-j convention. Declare the distinct target same-Spirit suffix extension from historical ejusdem. to target ejusdem Spiritus Sancti.; both added suffix words are separately attested by Mame own IX17 and the Pustet full formula. Preserve the target literal ellipsis; expand no hidden middle or final tail."
+encoding = "utf-8"
+indexable = true
+notes = "This exact one-owner successor replaces the current proof dependency on the older 90-prayer mixed Pustet/Mame projection only for Josaphat Collect. The old projection artifact, passage notes and all 89 complementary bodies remain unchanged. No English, appointment or availability count changes."

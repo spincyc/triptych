@@ -4,7 +4,10 @@
 from __future__ import annotations
 
 import argparse
-import subprocess
+import hashlib
+import importlib.machinery
+import importlib.util
+import json
 import sys
 import tomllib
 from pathlib import Path
@@ -13,6 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _tooling import Example, with_examples  # noqa: E402
+import _artifact_store  # noqa: E402
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
@@ -40,6 +44,9 @@ WORK_REGISTER = ROOT / "PROJECT-WORK.md"
 DELIVERABLE_STATES = {"planned", "in_progress", "blocked", "candidate", "complete"}
 REQUIREMENT_STATES = {"open", "blocked", "pass", "waived"}
 CHECKS = {"path_exists", "contains", "pdf_min_pages"}
+PRINT_ARCHIVE = Path("release/print-archive.json")
+PRINT_PAGES = Path("release/print-archive-pages.json")
+PRINT_PAGE_METHOD = "Page counts measured from each exact archived PDF with pdfinfo; historical render facts only."
 
 
 def relative_path(value: object, label: str, errors: list[str]) -> Path | None:
@@ -53,21 +60,106 @@ def relative_path(value: object, label: str, errors: list[str]) -> Path | None:
     return path
 
 
-def pdf_pages(path: Path) -> int:
-    result = subprocess.run(
-        ["pdfinfo", str(path)],
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    for line in result.stdout.splitlines():
-        if line.startswith("Pages:"):
-            return int(line.split(":", 1)[1].strip())
-    raise ValueError("pdfinfo returned no page count")
+def _json_record(path: Path) -> tuple[bytes, object]:
+    if path.is_symlink():
+        raise ValueError(f"archive metadata must not be a symbolic link: {path.relative_to(ROOT)}")
+
+    def unique_pairs(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"duplicate JSON key {key!r}")
+            result[key] = value
+        return result
+
+    body = path.read_bytes()
+    return body, json.loads(body, object_pairs_hook=unique_pairs)
+
+
+def _archived_prints() -> tuple[bytes, dict]:
+    """Reuse the release owner's pure archive validator; never build or fetch."""
+
+    path = ROOT / PRINT_ARCHIVE
+    if not path.exists():
+        return b"", {}
+    body, _ = _json_record(path)
+    name = "_promised_deliverables_public_alpha"
+    if name not in sys.modules:
+        tool = Path(__file__).with_name("public-alpha")
+        loader = importlib.machinery.SourceFileLoader(name, str(tool))
+        spec = importlib.util.spec_from_loader(name, loader)
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[name] = module
+        loader.exec_module(module)
+    module = sys.modules[name]
+    module.ROOT = ROOT
+    try:
+        archived = module.archived_prints()
+    except module.ReleaseError as exc:
+        raise ValueError(str(exc)) from exc
+    if path.read_bytes() != body:
+        raise ValueError("print archive changed while validating its identity")
+    return body, archived
+
+
+def external_pdf_evidence() -> tuple[set[str], dict[str, int]]:
+    """Preserved historical bytes and page counts, without opening a PDF.
+
+    Availability proves only that the exact historical evidence is declared in
+    a validated delivery index. A page criterion additionally needs its own
+    exact archived-byte measurement receipt; no promise status is inferred.
+    """
+
+    deliveries = _artifact_store.load_index(ROOT)["artifacts"]
+    identities = {}
+    for entry in deliveries:
+        if Path(entry["path"]).suffix.lower() != ".pdf":
+            continue
+        if entry["media_type"] != "application/pdf" or entry["bytes"] <= 0:
+            raise ValueError(f"external PDF has no exact PDF byte identity: {entry['path']}")
+        identities[entry["path"]] = (entry["sha256"], entry["bytes"])
+    archive_body, archived = _archived_prints()
+    for row in archived.values():
+        identity = (row["sha256"], row["bytes"])
+        if row["legacy_pdf"] in identities and identities[row["legacy_pdf"]] != identity:
+            raise ValueError(f"print archive and artifact delivery disagree: {row['legacy_pdf']}")
+        identities[row["legacy_pdf"]] = identity
+    pages = {}
+    if (ROOT / PRINT_PAGES).exists():
+        _, receipt = _json_record(ROOT / PRINT_PAGES)
+        if (
+            not isinstance(receipt, dict)
+            or set(receipt) != {"schema", "archive_manifest_sha256", "method", "publications"}
+            or receipt["schema"] != "triptych-print-archive-pages/v1"
+            or not archive_body
+            or receipt["archive_manifest_sha256"] != hashlib.sha256(archive_body).hexdigest()
+            or receipt["method"] != PRINT_PAGE_METHOD
+            or not isinstance(receipt["publications"], list)
+        ):
+            raise ValueError("invalid historical print page-count receipt or archive identity")
+        for row in receipt["publications"]:
+            if not isinstance(row, dict) or set(row) != {"id", "legacy_pdf", "pdf_sha256", "pages"}:
+                raise ValueError("invalid historical print page-count fields")
+            identity = row.get("id")
+            declared = archived.get(identity) if isinstance(identity, str) else None
+            if (
+                declared is None or row["legacy_pdf"] != declared["legacy_pdf"]
+                or row["pdf_sha256"] != declared["sha256"]
+                or type(row["pages"]) is not int or row["pages"] < 1
+                or row["legacy_pdf"] in pages
+            ):
+                raise ValueError("historical print page count does not match a unique exact archived PDF")
+            pages[row["legacy_pdf"]] = row["pages"]
+    return set(identities), pages
 
 
 def validate(ledger: Path, required: set[str]) -> list[str]:
     errors: list[str] = []
+    try:
+        external_pdfs, historical_pages = external_pdf_evidence()
+    except (OSError, UnicodeError, ValueError) as exc:
+        errors.append(f"external PDF evidence: {exc}")
+        external_pdfs, historical_pages = set(), {}
     try:
         data = tomllib.loads(ledger.read_text(encoding="utf-8"))
     except (OSError, tomllib.TOMLDecodeError) as exc:
@@ -146,13 +238,15 @@ def validate(ledger: Path, required: set[str]) -> list[str]:
             if status != "pass":
                 continue
             for path in evidence_paths:
-                if not (ROOT / path).exists():
+                if not (ROOT / path).exists() and path.as_posix() not in external_pdfs:
                     errors.append(f"{label}: missing evidence {path}")
             try:
                 if check == "contains":
                     path = relative_path(requirement.get("path"), f"{label}.path", errors)
                     needle = requirement.get("needle")
-                    if path is not None and (
+                    if path is not None and path.suffix.lower() == ".pdf":
+                        errors.append(f"{label}: contains requires retained text evidence")
+                    elif path is not None and (
                         not isinstance(needle, str)
                         or needle not in (ROOT / path).read_text(encoding="utf-8")
                     ):
@@ -161,14 +255,15 @@ def validate(ledger: Path, required: set[str]) -> list[str]:
                     path = relative_path(requirement.get("path"), f"{label}.path", errors)
                     minimum = requirement.get("minimum")
                     if path is not None and (
-                        not isinstance(minimum, int)
+                        type(minimum) is not int
                         or minimum < 1
-                        or pdf_pages(ROOT / path) < minimum
+                        or path.as_posix() not in historical_pages
+                        or historical_pages[path.as_posix()] < minimum
                     ):
-                        errors.append(f"{label}: PDF does not meet minimum page count")
+                        errors.append(f"{label}: exact historical PDF page-count receipt does not meet minimum page count")
                 elif check == "path_exists":
                     pass
-            except (OSError, UnicodeError, subprocess.SubprocessError, ValueError) as exc:
+            except (OSError, UnicodeError, ValueError) as exc:
                 errors.append(f"{label}: mechanical check failed: {exc}")
         if state == "complete" and incomplete:
             errors.append(f"{deliverable_id}: complete state has unmet requirements")
@@ -206,9 +301,13 @@ def main() -> int:
         return 1
     data = tomllib.loads(args.ledger.read_text(encoding="utf-8"))
     complete = sum(item.get("state") == "complete" for item in data["deliverables"])
+    page_checks = sum(
+        requirement.get("status") == "pass" and requirement.get("check") == "pdf_min_pages"
+        for item in data["deliverables"] for requirement in item["requirements"]
+    )
     print(
         f"Promised-deliverable ledger valid: {len(data['deliverables'])} tracked, "
-        f"{complete} complete."
+        f"{complete} complete. Historical archived-PDF page checks: {page_checks}; no current render measured."
     )
     return 0
 

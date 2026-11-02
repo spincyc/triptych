@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.proper-communicantes-heads-en-20261026-57552729"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Underlying historical English of registered1945revision; United States nonrenewal;all selected ordinary numbered pages precede excluded later inserts. Exact whole PDF/images remain remote/unresolved."
+rights_jurisdiction = "United States"
+provenance = "Source owner read the exact selected words on the held, hash-verified whole-book facsimile pages at 200 and 400 dpi on 2026-10-26. Whole-book pdftotext output was a discovery aid only. No model stood in retrieval or byte hashing. The source packet retains exact image hashes, cuts, conditional-word boundaries and refused readings. Independent source/publication review remains required before adoption."
+retrieved = "2026-10-26"
+sha256 = "575527290bc4ae416ae5124a78c8fc4fb659700749fa67b4a978f520634b716f"
+byte_size = 2812
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/proper-communicantes-heads-en-20261026-57552729/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+transformation = "Read actual historical English heads; join physical wraps and discretionary line-end hyphens, retaining intrinsic hyphens, wording, capitalization and punctuation at the head cut. Stop before likewise or the continuation referral; add no Amen or Joseph clause. For Nativity retain the mixed source instruction in raw_source_english; identify the italic at the Christmas midnight Mass only as nonspoken and preserve the source alternatives as day (night) in the presentation candidate. No English word is translated or added."
+notes = "Historical human English, not approved 1962 English. Empty speaker fields record the lack of a local P/R cue; no actor is borrowed from another source. Easter English is the day form only. Lasance Pentecost adds the same and is refused; the selected Lefebvre Pentecost does not. Scan images, whole OCR and host wrapper remain outside the public payload."

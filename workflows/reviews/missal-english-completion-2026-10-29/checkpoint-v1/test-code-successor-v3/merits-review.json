@@ -1,0 +1,50 @@
+{
+  "status": "PASS candidate merits; prospective only, no canonical activation or pin review yet",
+  "recorded_utc": "2026-10-30T12:11:46.263609+00:00",
+  "issues": [],
+  "files": [
+    {
+      "path": "tools/tests/test_proper_latin.py",
+      "canonical_sha256": "eeabd808b92cb4754b102a700897bf758c0abcc1f656bfb059de70e56d884982",
+      "candidate_path": ".scratch/root-checkpoint-20261030/final-two-candidates/test_proper_latin.py",
+      "candidate_sha256": "d13ba84c2d93b9ca77b68e9a4746bcdff9ff6d23c42be57a9c508d86e329f464",
+      "candidate_bytes": 129144
+    },
+    {
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py",
+      "canonical_sha256": "6eac69145f33bca64ea050e95a1c41c2dcea12ced488a002fc64fcd8e56d4a0c",
+      "candidate_path": ".scratch/root-checkpoint-20261030/final-two-candidates/test_roman_1962_latin22_phase5.py",
+      "candidate_sha256": "01d6e0490f4b84683823795b2917a8804d17b8b32b38af49b2caa97fca0f015d",
+      "candidate_bytes": 108861
+    }
+  ],
+  "diff_sha256": "02eef546be3e87d2d577db23313087d15bc3f314770927ae78f4dec3e9a75887",
+  "diff_bytes": 8223,
+  "archives": [
+    {
+      "archive": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/historical-code/proper-latin-prior.py",
+      "source": "scripts/_proper_latin.py",
+      "source_revision": "6aeb96a392a61e216310c3bf71834863afb229f8",
+      "historical_sha256": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+      "current_sha256": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376",
+      "archive_exact_historical_git_bytes": true
+    },
+    {
+      "archive": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/historical-code/missal-coverage-prior.py",
+      "source": "scripts/_missal_coverage.py",
+      "source_revision": "6aeb96a392a61e216310c3bf71834863afb229f8",
+      "historical_sha256": "635cc202ce2bc40d8c6195733bd365cf9b63405bf8d60c2d2b9ee5782587589d",
+      "current_sha256": "10dbc61463d145cb642d52829be8e026e4fee46720b2f3e9221fe3f6ff397f70",
+      "archive_exact_historical_git_bytes": true
+    }
+  ],
+  "accepted_method_run_evidence": ".scratch/root-checkpoint-20261030/final-two-candidate-methods-v2.log",
+  "method_run_scope": "two proposed methods passed 5.652s against actual current protected source epoch; root-owned run, no canonical/helper override",
+  "merits": [
+    "All 24 direct-PD supplement owners remain bound by the existing exact source-batch owner/id assertion.",
+    "Exactly two named proof-only carriers require closed six-parent membership, exact payload hashes, project-created rights, nonempty transformation and exclusion from primary publication artifact positions.",
+    "Exactly nine named Marian wrapper keys require complete carrier hash, exactly two selected lines, literal identity header and unchanged exact Latin body hash. Other projection shape rules remain.",
+    "Both original code literals remain checked against exact 6aeb Git archives; current code is separately pinned. No new wording or rights authority is created."
+  ],
+  "mutations": "Only own scratch; canonical/source/fixture/helper/index/ref untouched."
+}

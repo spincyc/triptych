@@ -1,0 +1,114 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "editorial-projection",
+   "byte_size": 311,
+   "edition_owned": true,
+   "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.holyweek-antiphons-2026-10-29.ave-rex-60e6fd51",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "This artifact contains only the exact calendar Latin projection. Original source spelling remains in its own checked transcription. No target image, heading, rubric or other protected apparatus is copied.",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "project-created",
+   "rights_basis": "Triptych offers only its bounded editorial selection, spelling normalization and target-relation record under CC BY 4.0. The historical Latin words have their independently registered public-domain source basis; no exclusive right in those words is claimed.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "editorial-projection",
+   "byte_size": 150,
+   "edition_owned": true,
+   "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.holyweek-antiphons-2026-10-29.fulgentibus-0916383d",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "This artifact contains only the exact calendar Latin projection. Original source spelling remains in its own checked transcription. No target image, heading, rubric or other protected apparatus is copied.",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "project-created",
+   "rights_basis": "Triptych offers only its bounded editorial selection, spelling normalization and target-relation record under CC BY 4.0. The historical Latin words have their independently registered public-domain source basis; no exclusive right in those words is claimed.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Project editorial artifact; not a Missal edition or liturgical authority",
+  "date": "2026-10-29",
+  "editors": [
+   "Triptych contributors"
+  ],
+  "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.holyweek-antiphons-2026-10-29",
+  "jurisdiction": "United States",
+  "language": "la",
+  "publication": "Triptych project-created editorial projection",
+  "title": "Roman 1962 Palm Sunday antiphons 6 and 7: bounded historical Latin projection, 29 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.holyweek-antiphons-2026-10-29.fulgentibus-0916383d",
+   "artifact_type": "editorial-projection",
+   "context": "Full canonical Latin for Palm Sunday Procession Antiphon 6 from the independently attested older complete antiphon.",
+   "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.holyweek-antiphons-2026-10-29.fulgentibus",
+   "locus": "Full artifact physical line 1; CMAA1962 PDF215, printed134, no840",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Expand manuscript contractions Fulgentib[us] and p[ro]sternimur and et signs. Manuscript aduenienti/ymnis -> target advenienti/hymnis; orthography only. Target pointing/capitals, join original two text lines, omit musical neumes and mode annotations. Source and target were separately image-read; no lexical addition, omission or new petition.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "Triptych offers only its bounded editorial selection, spelling normalization and target-relation record under CC BY 4.0. The historical Latin words have their independently registered public-domain source basis; no exclusive right in those words is claimed.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.holyweek-antiphons-2026-10-29.fulgentibus.json",
+   "verified_on": "2026-10-29",
+   "words": 19
+  },
+  {
+   "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.holyweek-antiphons-2026-10-29.ave-rex-60e6fd51",
+   "artifact_type": "editorial-projection",
+   "context": "Full canonical Latin for Palm Sunday Procession Antiphon 7 from the independently attested older complete antiphon.",
+   "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.holyweek-antiphons-2026-10-29.ave-rex",
+   "locus": "Full artifact physical line 1; CMAA1962 PDF215-216,printed 134-135, no. 841",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Join source paragraph linewraps and expand ae-ligature. Source expectabant -> target exspectabant; receivedLatinorthography. Source Osanna -> target Hosanna twice; same receivedacclamation spelling. Target pointing and capitals; no lexical addition, omission, or replacement. Source and target were separately image-read; no lexical addition, omission or new petition.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "Triptych offers only its bounded editorial selection, spelling normalization and target-relation record under CC BY 4.0. The historical Latin words have their independently registered public-domain source basis; no exclusive right in those words is claimed.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.holyweek-antiphons-2026-10-29.ave-rex.json",
+   "verified_on": "2026-10-29",
+   "words": 47
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Triptych contributors",
+  "category": "editorial-source-projection",
+  "description": "A project-created editorial source projection containing bounded Latin prayer bodies in date-specific artifacts. It is neither an edition of a historical hand missal nor an edition of the Missale Romanum. Each artifact records the transformation rule over separate public-domain antecedent and 1962 page-image witnesses; its passages let consumers cite the projected bodies without assigning Triptych's target-controlled collation choices to the antecedent printing.",
+  "id": "work.triptych.roman-1962-latin-proper-editorial-projection",
+  "languages": [
+   "la"
+  ],
+  "title": "Roman 1962 Latin Proper Editorial Projection"
+ }
+}

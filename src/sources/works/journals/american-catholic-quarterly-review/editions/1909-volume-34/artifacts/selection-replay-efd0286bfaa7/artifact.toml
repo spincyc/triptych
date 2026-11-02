@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.journals.american-catholic-quarterly-review.1909-volume-34.selection-replay-efd0286bfaa7"
+edition_id = "edition.journals.american-catholic-quarterly-review.1909-volume-34"
+artifact_type = "deterministic-source-selector"
+media_type = "text/x-python"
+retrieved = "2026-10-29"
+sha256 = "efd0286bfaa782818ce5cd27ccb58db9ec359754bcd35455e7dbfcd06f4f4ef6"
+indexable = false
+rights_status = "licensed"
+license = "CC-BY-4.0"
+rights_basis = "Project-created deterministic source selection code."
+notes = "Run with historical.txt, selection.json and a destination. Input/output hashes and exact excluded lines are asserted."
+storage = "tracked"
+path = "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-replay-efd0286bfaa7/extract.py"
+byte_size = 624
+provenance = "Project-created exact source-selection or source-extent record, based on the registered historical OCR and native print-page inspection in this edition."

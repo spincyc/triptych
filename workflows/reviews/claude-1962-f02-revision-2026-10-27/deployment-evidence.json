@@ -1,0 +1,153 @@
+{
+ "record_type": "deployment-verification",
+ "verified_on": "2026-10-28",
+ "commit": "ffadf81e4e",
+ "main_base": "3a0a888430",
+ "integration": "fast-forward; origin/main was merged into feature/propers/claude twice while the gates ran (2d87e1cad8, ffadf81e4e), each merge re-recording only this branch's site-source bindings, and origin/main then fast-forwarded from 3a0a888430 to ffadf81e4e; no rebase or force push. The run's seed commit 4f52b9ade stays reachable.",
+ "publications": [
+  {
+   "publication": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+   "provider": "claude",
+   "run": "450355254538c1ba"
+  },
+  {
+   "publication": "articles/faith/four-last-things-01-death … 04-heaven",
+   "provider": "claude",
+   "correction_commits": [
+    "b1dd8c785",
+    "3d457eebc"
+   ]
+  }
+ ],
+ "local_gates": [
+  {
+   "command": "make check-deployment-sources",
+   "exit_code": 0,
+   "log_sha256": "d13c8bb94ca7dda14c879ae80c2d0e1042b16d8d38aedbed1050aef7dc417325"
+  },
+  {
+   "command": "make public-site",
+   "exit_code": 0,
+   "log_sha256": "cdddebb44007f13ac048846c6da0029b129479e00552ea53b3676552f39820bd"
+  },
+  {
+   "command": "tools/tpt public-alpha verify --deployment-target github-pages",
+   "exit_code": 0,
+   "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+  }
+ ],
+ "local_gate_environment": "Python Markdown 3.10.3 and PyYAML 6.0.3 from requirements-public-alpha.txt and requirements-tools.txt in a scratch virtualenv; run at ffadf81e4e after the second merge of origin/main",
+ "disclosure": "Outgoing range 3a0a888430..ffadf81e4e; added lines scanned for machine paths, usernames, hosts, addresses and credentials with no match. The run archive's result notes were redacted to repository-relative paths by tools/proper-study-run-archive --redact-repository-paths; its receipt is in the archive.",
+ "workflow_run": "https://github.com/spincyc/triptych/actions/runs/40753942788",
+ "workflow_conclusion": "success",
+ "repository_hygiene_run": "https://github.com/spincyc/triptych/actions/runs/40753942791",
+ "repository_hygiene_conclusion": "success",
+ "routes": [
+  {
+   "url": "https://mystago.gy/pdf/claude/articles/faith/four-last-things-01-death.pdf",
+   "http_status": 200,
+   "sha256": "321c4346c435299ab6376ce68c1a91fa34face004d903fdcc485c2b6c00d3b3c",
+   "match": "byte-identical",
+   "physical_pages": 23,
+   "compared_with": "build/public-alpha/site/pdf/claude/articles/faith/four-last-things-01-death.pdf and the installed reviewed PDF"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/articles/faith/four-last-things-02-judgment.pdf",
+   "http_status": 200,
+   "sha256": "6ec2bf6a465cecec3800baa2ac2ef59d6b616383d94952e551b875cae4f36555",
+   "match": "byte-identical",
+   "physical_pages": 25,
+   "compared_with": "build/public-alpha/site/pdf/claude/articles/faith/four-last-things-02-judgment.pdf and the installed reviewed PDF"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/articles/faith/four-last-things-03-hell.pdf",
+   "http_status": 200,
+   "sha256": "3bcfa196950617c075073adc31e904c9298047ca48b1979eed34d3cccd9960f5",
+   "match": "byte-identical",
+   "physical_pages": 30,
+   "compared_with": "build/public-alpha/site/pdf/claude/articles/faith/four-last-things-03-hell.pdf and the installed reviewed PDF"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/articles/faith/four-last-things-04-heaven.pdf",
+   "http_status": 200,
+   "sha256": "53f57926044cfefef5f41dc0de2f1e858d28ae14545f9070c65a2a2e25f6f252",
+   "match": "byte-identical",
+   "physical_pages": 22,
+   "compared_with": "build/public-alpha/site/pdf/claude/articles/faith/four-last-things-04-heaven.pdf and the installed reviewed PDF"
+  },
+  {
+   "url": "https://mystago.gy/web/claude/articles/faith/four-last-things-01-death.html",
+   "http_status": 200,
+   "sha256": "20be4794abcf0ede4aea04d338c0a8318329c5a77bc7400f91ca0b4e8dd7db53",
+   "match": "byte-identical",
+   "compared_with": "build/public-alpha/site/web/claude/articles/faith/four-last-things-01-death.html"
+  },
+  {
+   "url": "https://mystago.gy/web/claude/articles/faith/four-last-things-02-judgment.html",
+   "http_status": 200,
+   "sha256": "912476ae0dbe20dfe7c4d3111776e26c9bf73755f121e2d93d9de5061225765c",
+   "match": "byte-identical",
+   "compared_with": "build/public-alpha/site/web/claude/articles/faith/four-last-things-02-judgment.html"
+  },
+  {
+   "url": "https://mystago.gy/web/claude/articles/faith/four-last-things-03-hell.html",
+   "http_status": 200,
+   "sha256": "3dc8d9c4c0f7e29817427d4157b18ea658171dc95ed4ba727807ca2beae3a1fd",
+   "match": "byte-identical",
+   "compared_with": "build/public-alpha/site/web/claude/articles/faith/four-last-things-03-hell.html"
+  },
+  {
+   "url": "https://mystago.gy/web/claude/articles/faith/four-last-things-04-heaven.html",
+   "http_status": 200,
+   "sha256": "d460b30562c58762bc4177734789414d2fac66c31476d3d5d2f57fc58d03442f",
+   "match": "byte-identical",
+   "compared_with": "build/public-alpha/site/web/claude/articles/faith/four-last-things-04-heaven.html"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf",
+   "http_status": 200,
+   "sha256": "08f8c5e99572d5f8a9584555c47b901bc32abd09fdf74dd5d7094f387143c3bc",
+   "match": "byte-identical",
+   "physical_pages": 31,
+   "compared_with": "build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf and the installed reviewed PDF"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.pdf",
+   "http_status": 200,
+   "sha256": "fb899d0258fe16641fb2be454eb088f37fd41011012fe599b5fb2d5ac397c881",
+   "match": "byte-identical",
+   "physical_pages": 11,
+   "compared_with": "build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.pdf and the installed reviewed PDF"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.pdf",
+   "http_status": 200,
+   "sha256": "a6630b389583e729bbaa18103fb48364e2767d47485ecbddeb4ddbef4d3bc2ac",
+   "match": "byte-identical",
+   "physical_pages": 4,
+   "compared_with": "build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.pdf and the installed reviewed PDF"
+  },
+  {
+   "url": "https://mystago.gy/web/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.html",
+   "http_status": 200,
+   "sha256": "48fadacf9177de212772888ca4704af5abf012c00f78e691847ca53a0388a577",
+   "match": "byte-identical",
+   "compared_with": "build/public-alpha/site/web/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.html"
+  },
+  {
+   "url": "https://mystago.gy/library/traditional-latin-mass.html",
+   "http_status": 200,
+   "sha256": "7d7a16f5c301d26b1e77bf8885160b1aa9130f9d075a4840d6f3a7c9848ae237",
+   "match": "byte-identical",
+   "compared_with": "build/public-alpha/site/library/traditional-latin-mass.html"
+  },
+  {
+   "url": "https://mystago.gy/PUBLICATION-MANIFEST.json",
+   "http_status": 200,
+   "sha256": "844e532074a0f375db335d12e40d897daf7aff357aaa82b78bba4552a07bbab6",
+   "match": "byte-identical",
+   "compared_with": "build/public-alpha/site/PUBLICATION-MANIFEST.json"
+  }
+ ],
+ "note": "Checked before any later deployment of main replaced the site: every route above, including the library page and the publication manifest, matched the local build of ffadf81e4e byte for byte, and each PDF matched its installed reviewed bytes."
+}

@@ -1,0 +1,7 @@
+{
+  "artifact_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf",
+  "disposition": "PASS",
+  "iteration": 0,
+  "stage": "build-artifacts",
+  "summary": "Built all three editions with make doc (exit 0 each): study 32 pages, synthesis 12 pages, homily 4 pages; logs clean (no fatal errors, undefined references, or overfull/underfull boxes), all fonts embedded, and the concise physical-page markers verified (inventory and four sense rows on page 1, chronology alone on page 2, themes on pages 3-4, commentary from page 5). Recorded the PDF/render-input snapshot (research/artifacts.json, exit 0) and generated bounded rasters for all three PDFs (48 pages, exit 0) under artifacts/build-artifacts-0000/; no source or layout edits were made, and the production audit in research/production-review.md records the proofs, hashes and remaining limitations."
+}

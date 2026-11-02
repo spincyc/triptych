@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.usfm-42-jdteng-web-c-d8d450de"
+edition_id = "edition.ebible-org.world-english-bible.catholic-eng-web-c"
+artifact_type = "structured-text"
+media_type = "text/x-usfm; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The publisher edition-specific Bible notice at https://ebible.org/eng-web-c/copyright.htm identifies this Bible text as Public Domain; this affirmative Bible-text permission was independently checked for these complete USFM members, including their native markers and unchanged publisher notes. The permission is not inferred from Bible age or applied to excluded package support files. World English Bible remains an eBible.org trademark; unchanged source identification is preserved."
+source_url = "https://ebible.org/Scriptures/eng-web-c_usfm.zip"
+retrieved = "2026-10-26"
+sha256 = "d8d450dec5bd9cce8e05d77a788e69f94962772f6d773b766b7424548c5cdde8"
+byte_size = 62461
+path = "src/sources/works/ebible-org/world-english-bible/editions/catholic-eng-web-c/artifacts/usfm-42-jdteng-web-c-d8d450de/42-JDTeng-web-c.usfm"
+derived_from = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.ebible-usfm-6fedbef9"
+transformation = "Exact ZIP-member extraction only: retain the complete 42-JDTeng-web-c.usfm member byte for byte, without Unicode, line-ending, whitespace, marker, footnote, spelling, native chapter/verse or ordering changes. No wrapper or other archive member is included."
+provenance = "Complete native Bible book member extracted from the publisher archive SHA256 6fedbef919e0850ecbe7a9480012c2549f327db7aa7bccf79d1bf6261e9992c1 at exact member 42-JDTeng-web-c.usfm. The independently checked disclosure inventory pins this complete member SHA256 and byte extent. Archive-level rights remain unresolved; the retained Bible member has its own affirmative distribution basis."
+indexable = true
+encoding = "utf-8"
+notes = "The original USFM file markers and all complete source lines are retained unchanged; no project-license header is inserted. This is edition Bible source evidence, not literal Missal wording or a retranslation. Whole-archive modern CSS, HTML wrapper, public keys and signed checksums are excluded; this child does not resolve their redistribution rights. See THIRD_PARTY.md for Bible-text terms and jurisdiction limits."

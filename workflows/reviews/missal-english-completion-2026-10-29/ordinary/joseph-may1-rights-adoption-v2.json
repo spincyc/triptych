@@ -1,0 +1,30 @@
+{
+  "schema": "triptych-specific-study-english-rights-successor/v1",
+  "state": "adopted-basis-only",
+  "recorded_at_utc": "2026-10-30T03:15:21Z",
+  "jurisdiction": "United States",
+  "supersedes": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption.json",
+    "sha256": "f5893ad8948f13c3740efc8839f7a327d942e3bf0b2d65ed801f6855c39579fe",
+    "extent": "Only the frozen comparison, review and source-glyph declaration are replaced. The original record remains an exact historical record of the initial basis decision."
+  },
+  "corrected_evidence": {
+    "comparison_sha256": "a08b68725876e8b224f2da98dc16721486b7d156e52e9e852044d2ac82539310",
+    "independent_glyph_correction_review_sha256": "76852c4cca3ebcbbe4ca68a6a397dde60a83ad13f0fd8042cfd482226955fe51",
+    "correction": "The actual 1922 Mame source prints Cæli/cælorumque, not Cœli/cœlorumque. The independent reviewer withdrew the earlier œ declaration after checking the complete source page and its exact native crop. No oe-to-ae substitution is needed in the corrected comparison.",
+    "source_word_count": 99,
+    "target_word_count": 99,
+    "only_lexical_change": {"word_index_one_based": 25, "source": "Festivitate", "target": "solemnitate"},
+    "target_research_body_sha256_utf8_without_final_lf": "526099a01ae7ae49394d1c2684a89e6d8c60cefd6c5a0a61eea150824b6a346d"
+  },
+  "root_decision": "Continue the exact May 1 English-only basis under policy section 1(6), using the corrected source declaration and independent correction review. The whole underlying 1922 expression and sole functional feast-word contribution are unchanged by this glyph correction. This is not a retrospective claim that the earlier review had read the glyph correctly.",
+  "unchanged_limits": [
+    "Only the exact 99-word Vere-through-dicentes body and May 1 solemnitate context are assessed.",
+    "The prior scope, contrary evidence, limited confidence, source identity, civil jurisdiction and primary-source qualifications remain controlling.",
+    "No target Latin payload, modern English, rubric, dialogue, Sanctus, other option or other context is admitted.",
+    "New English still requires its separate exact-body fidelity acceptance, canonical source assembly, applicability validation, visible study qualification and integrated rendering checks."
+  ],
+  "english_wording_accepted_by_this_record": false,
+  "target_latin_publication_adopted": false,
+  "whole_missal_completion_claimed": false
+}

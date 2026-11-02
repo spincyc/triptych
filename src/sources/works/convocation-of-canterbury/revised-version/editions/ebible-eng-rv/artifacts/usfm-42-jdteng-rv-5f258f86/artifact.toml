@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.usfm-42-jdteng-rv-5f258f86"
+edition_id = "edition.convocation-of-canterbury.revised-version.ebible-eng-rv"
+artifact_type = "structured-text"
+media_type = "text/x-usfm; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The publisher edition-specific Bible notice at https://ebible.org/eng-rv/copyright.htm identifies this Bible text as Public Domain; this affirmative Bible-text permission was independently checked for these complete USFM members, including their native markers and unchanged publisher notes. The permission is not inferred from Bible age or applied to excluded package support files. Triptych's existing edition and artifact records retain a United Kingdom qualification concerning Crown letters patent and printing or importing printed copies. That project qualification is preserved here; the cited Revised Version publisher notice itself states public-domain status and copying permission without a United Kingdom qualification. The recorded public-domain jurisdiction here is the United States."
+source_url = "https://eBible.org/Scriptures/eng-rv_usfm.zip"
+retrieved = "2026-10-26"
+sha256 = "5f258f86b779100d11ef6cd70b1981894708194e1c3a774d06239254269ba896"
+byte_size = 64552
+path = "src/sources/works/convocation-of-canterbury/revised-version/editions/ebible-eng-rv/artifacts/usfm-42-jdteng-rv-5f258f86/42-JDTeng-rv.usfm"
+derived_from = "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.ebible-usfm-8eee566b"
+transformation = "Exact ZIP-member extraction only: retain the complete 42-JDTeng-rv.usfm member byte for byte, without Unicode, line-ending, whitespace, marker, footnote, spelling, native chapter/verse or ordering changes. No wrapper or other archive member is included."
+provenance = "Complete native Bible book member extracted from the publisher archive SHA256 8eee566b1e4a6a77363221b450bb00fb2f7a9afb98dd6981f094e6c24a6040d5 at exact member 42-JDTeng-rv.usfm. The independently checked disclosure inventory pins this complete member SHA256 and byte extent. Archive-level rights remain unresolved; the retained Bible member has its own affirmative distribution basis."
+indexable = true
+encoding = "utf-8"
+notes = "The original USFM file markers and all complete source lines are retained unchanged; no project-license header is inserted. This is edition Bible source evidence, not literal Missal wording or a retranslation. Whole-archive modern CSS, HTML wrapper, public keys and signed checksums are excluded; this child does not resolve their redistribution rights. See THIRD_PARTY.md for Bible-text terms and jurisdiction limits."

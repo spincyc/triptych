@@ -1,0 +1,89 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T14:35:12Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50.source-order-d85f33f3fdd0",
+      "date": "1880-12-03",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.013.ass-013-act-006",
+      "id": "acta.ass.013.ass-013-act-006",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          304
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T14:35:12Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Historical title leaf MDCCCLXXX (line 33), and archive serial label 1880; Johnson first-reprinting 1968 wrapper excluded. This is source-delivery identification, not facsimile collation or independent original-printing verification. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.013.ass-013-act-006.note-blocks-f1534dd74c50.source-order-d85f33f3fdd0",
+      "segment_path": "src/sources/works/papal-documents/1880-12-03-papal-leo-xiii-hf-l-xiii-enc-03121880-sancta-dei-civitas-2f96527c/editions/1880-acta-ass-013-ass-013-act-006/segments/source-order-sancta-dei-civitas-d85f33f3fdd0.toml",
+      "sha256": "d85f33f3fdd01425f34066f2e3ce1cf68ef175dab51c55ae867a905db1075d5e",
+      "source_note": "ASS 13 (1880), printed pages 241–248. Mechanical reconstruction of the identified historical witness; OCR spelling, interletter spacing and reference marks are retained. The page-foot notes are separate paragraphs. The two note columns on native PDF page 242 follow complete left-column then complete right-column order. No original-print facsimile or lexical collation is claimed.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-13-1880-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1880-acta-ass-013/artifacts/source-order-sancta-dei-civitas-d85f33f3fdd0/text.txt",
+      "title": "Sancta Dei civitas",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-03121880-sancta-dei-civitas",
+      "correction_evidence": {
+        "revision": "2026-10-30T13:42:38Z",
+        "kind": "explicit-native-note-column-byte-permutation-after-lf-partition",
+        "source_order_spec_artifact_id": "artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50.source-order-spec-08fa6bbd1f67",
+        "source_order_spec_sha256": "08fa6bbd1f67efcadaeb13e7e441dfc3864002422c65a367a6b99ca4a8194218",
+        "native_geometry_artifact_id": "artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50.native-note-geometry-2e1c0994a13f",
+        "native_geometry_sha256": "2e1c0994a13f9a874600670658da4bf1c39adab62496935956785409f000dd3f",
+        "native_review_artifact_id": "artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50.source-order-review-fa978a35c940",
+        "native_review_sha256": "fa978a35c940e2e8e3bb4f661daa83e9d6f05b3163fb54b187a15126e4bd35a3",
+        "prior_segment_id": "segment.acta-papal-archives.ass.013.ass-013-act-006.note-blocks-f1534dd74c50",
+        "body_lf_rows_byte_identical_and_in_order": true,
+        "source_units_preserved_exactly_once": true,
+        "global_non_lf_order_preserved": false,
+        "helper_path": "scripts/_papal_source_order.py",
+        "helper_sha256": "f0a3014db485ee25ffa7df013c81e600f8e4f9eccff76b5ac7daecbc1d6a9c86"
+      }
+    }
+  ],
+  "supersessions": [
+    {
+      "reason": "Explicit inspected source-footnote LF partitions replace a paragraph-fused reader. Every selected non-LF byte and its source order are preserved; original source and predecessor remain retained.",
+      "prior": {
+        "id": "acta.ass.013.ass-013-act-006",
+        "language": "la",
+        "pdf_sha256": "b537849eac3bce80ad28fba305572d441149f4fb8acd67ce061d0b4226dfb982",
+        "artifact_id": "artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5",
+        "source_sha256": "5e04a8b55bb05d08312b49a49089eddf5c3ec3de12c5e87ee35ff5938ec4275a",
+        "segment_id": "segment.acta-papal-archives.ass.013.ass-013-act-006"
+      },
+      "replacement": {
+        "id": "acta.ass.013.ass-013-act-006",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50",
+        "source_sha256": "f1534dd74c508578b768004f97918249b69457b7d789587c10364b54335fe40a",
+        "segment_id": "segment.acta-papal-archives.ass.013.ass-013-act-006.note-blocks-f1534dd74c50",
+        "revision": "2026-10-30T11:52:14Z"
+      }
+    },
+    {
+      "reason": "Complete native PDF page 242 left and right note columns restored by an exhaustive permutation of unchanged byte slices. Every body LF row remains byte-identical and in order. The prior LF-only derivative, original source/segment and exact reader pins remain retained.",
+      "prior": {
+        "id": "acta.ass.013.ass-013-act-006",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50",
+        "source_sha256": "f1534dd74c508578b768004f97918249b69457b7d789587c10364b54335fe40a",
+        "segment_id": "segment.acta-papal-archives.ass.013.ass-013-act-006.note-blocks-f1534dd74c50",
+        "pdf_sha256": "533c6bd830520d8cbbffcb9290eb47ae5b8de81c2fc823509be350e6d2106376"
+      },
+      "replacement": {
+        "id": "acta.ass.013.ass-013-act-006",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50.source-order-d85f33f3fdd0",
+        "source_sha256": "d85f33f3fdd01425f34066f2e3ce1cf68ef175dab51c55ae867a905db1075d5e",
+        "segment_id": "segment.acta-papal-archives.ass.013.ass-013-act-006.note-blocks-f1534dd74c50.source-order-d85f33f3fdd0",
+        "revision": "2026-10-30T14:35:12Z"
+      }
+    }
+  ]
+}

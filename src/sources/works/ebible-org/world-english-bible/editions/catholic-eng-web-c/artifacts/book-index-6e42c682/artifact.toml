@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.book-index-6e42c682"
+edition_id = "edition.ebible-org.world-english-bible.catholic-eng-web-c"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created book identity/count and source-coordinate reference facts."
+rights_jurisdiction = "United States"
+projected_from = ["artifact.ebible-org.world-english-bible.catholic-eng-web-c.book-index-ed6ce3fc", "artifact.ebible-org.world-english-bible.catholic-eng-web-c.verse-aliases-748c36dc"]
+transformation = "Retain every book row and every field except the Baruch note; WEB also receives the separately accepted Romans source-coordinate note. Book order, names, tokens, aliases, filenames and declared counts stay byte-identical."
+provenance = "New immutable 2026-10-26 book-index revision. The old artifact, ID, payload path and bytes remain unchanged. Notes remove prior claims that reviewed exact aliases cannot be executed; no edition Bible wording or numbering is rewritten."
+retrieved = "2026-10-26"
+sha256 = "6e42c682202fc441d750f548c684e739fe2f337f066b39e3dc63eac354fb70c1"
+byte_size = 15293
+path = "src/sources/works/ebible-org/world-english-bible/editions/catholic-eng-web-c/artifacts/book-index-6e42c682/book-index.tsv"
+indexable = true
+encoding = "utf-8"

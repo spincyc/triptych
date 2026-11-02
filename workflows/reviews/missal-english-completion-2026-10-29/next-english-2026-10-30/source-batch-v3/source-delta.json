@@ -1,0 +1,1208 @@
+{
+  "extra_inputs": [
+    "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/idus-complete-773d2c56/artifact.toml",
+    "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/three-cross-antiphons-checked-20261030/artifact.toml",
+    "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/three-cross-antiphons-checked-20261030/text.txt",
+    "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/title-license-and-cross-pages/artifact.toml",
+    "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/title-license-and-cross-pages/source.pdf",
+    "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/edition.toml",
+    "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/passages/three-cross-antiphons-checked-20261030.toml",
+    "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/passages/three-cross-antiphons-page-images-20261030.toml",
+    "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/work.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-historical-la/artifact.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-historical-la/text.txt",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-page/artifact.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-page/source-page.png",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-historical-la/artifact.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-historical-la/text.txt",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-page/artifact.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-page/source-page.png",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-historical-latin.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-page-proof.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-source.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-historical-latin.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-page-proof.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-source.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-bute-historical-en/artifact.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-bute-historical-en/text.tsv",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-advent-december-18-main-entrance-antiphon-all-1-publication.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-advent-december-18-main-entrance-antiphon-all-1-source.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/queen-introit-gaudeamus-latin-20261029/artifact.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/queen-introit-gaudeamus-latin-20261029/latin.txt",
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/queen-introit-gaudeamus-pages-20261029/artifact.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/queen-introit-gaudeamus-pages-20261029/source.pdf",
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/queen-introit-carmel-gaudeamus-base-20261029.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/improperia-whole-checked-20261029-b8728178/artifact.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/improperia-whole-checked-20261029-b8728178/latin.txt",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/improperia-whole-pages-20261029-04a3ab17/artifact.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/improperia-whole-pages-20261029-04a3ab17/source.pdf",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-latin-20261029-be854aa4/artifact.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-latin-20261029-be854aa4/latin.txt",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-page-20261029-0e5057cc/artifact.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-page-20261029-0e5057cc/page.pdf",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/palm-blessing-whole-latin-20261029/artifact.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/palm-blessing-whole-latin-20261029/latin.txt",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/palm-blessing-whole-page-20261029/artifact.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/palm-blessing-whole-page-20261029/source.pdf",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/improperia-whole-checked-20261029.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/improperia-whole-image-20261029.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/lighted-candle-old-prayer-checked-20261029.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/lighted-candle-old-prayer-image-20261029.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/palm-blessing-whole-20261029.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/good-friday-transfer-antiphons-checked-20261030.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/improperia-whole-collation-20261029.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/lighted-candle-target-word-collation-20261029.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/palm-blessing-collation-20261029.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pontiff-plural-collect-collation-20261029.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/queen-introit-full-target-control-20261029.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/queen-regular-alleluia-full-target-control-20261030.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-ot-11-collect-study-comparison.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-ot-31-after-communion-study-comparison.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-pentecost-vigil-collect-1-study-comparison.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-pentecost-vigil-collect-2-study-comparison.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-advent-1-friday-main-entrance-antiphon-all-1-comparison.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-advent-2-friday-main-entrance-antiphon-all-1-comparison.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-advent-december-18-main-entrance-antiphon-all-1-comparison.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-lent-3-thursday-main-entrance-antiphon-all-1-comparison.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-most-holy-trinity-main-entrance-antiphon-all-1-comparison.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-named-work-appointment.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-named-work-appointment.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d/artifact.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d/pages.pdf",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1/artifact.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1/wilson-1894-pp106-122-123.pdf",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-extra-gelasian-p36-facsimile-f20c91fa/artifact.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-extra-gelasian-p36-facsimile-f20c91fa/wilson-1894-p36.pdf",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-remaining-gelasian-p91-facsimile-57614b82/artifact.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-remaining-gelasian-p91-facsimile-57614b82/wilson-1894-p91.pdf",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-latin-20261029-1334bce8/artifact.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-latin-20261029-1334bce8/latin.txt",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-pages-20261029-eb290d46/artifact.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-pages-20261029-eb290d46/pages.pdf",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-deus-qui-peccati-source.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-reminiscere-source.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-ordinary-four-short-conclusion-cues-source.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-ot-11-collect-study-source.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-ot-31-after-communion-study-source.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-pentecost-vigil-collect-1-study-source.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-phase3-extra-gelasian-p36-proof.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-phase3-extra-ot25-postcommunion-source.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-phase3-remaining-easter-offerings-source.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/lighted-candle-old-prayer-checked-20261029.toml",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/lighted-candle-old-prayer-image-20261029.toml",
+    "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/english-completion-20261029-postconciliar-pentecost-vigil-collect-2-study-source.toml",
+    "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/english-completion-20261029-postconciliar-phase3-extra-epiphany-day-offerings-source.toml",
+    "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/english-completion-20261029-postconciliar-phase3-remaining-mary-collect-source.toml",
+    "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/lighted-candle-intende-whole-image-20261029.toml",
+    "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/pontiff-plural-collect-whole-foundation-20261029.toml",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase2-pange-historical-selections-en/artifact.toml",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase2-pange-historical-selections-en/text.tsv",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-publication.toml",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-source.toml",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-publication.toml",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-source.toml",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/pages.pdf",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-lasance-historical-en/artifact.toml",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-lasance-historical-en/text.tsv",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-lent-3-thursday-main-entrance-antiphon-all-1-publication.toml",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-lent-3-thursday-main-entrance-antiphon-all-1-source.toml",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-most-holy-trinity-main-entrance-antiphon-all-1-publication.toml",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-most-holy-trinity-main-entrance-antiphon-all-1-source.toml",
+    "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/english-completion-20261029-postconciliar-phase3-remaining-mary-collect-close.toml",
+    "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/artifacts/publisher-whole-pdf-d7c7795c/artifact.toml",
+    "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/artifacts/publisher-whole-pdf-d7c7795c/source.pdf",
+    "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/artifacts/queenship-hymn-stanza-text-20261029/artifact.toml",
+    "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/artifacts/queenship-hymn-stanza-text-20261029/stanza.txt",
+    "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/edition.toml",
+    "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/passages/queenship-hymn-stanza-20261029.toml",
+    "src/sources/works/salesian-society/bollettino-salesiano/work.toml",
+    "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/artifacts/paderborn-whole-pdf-1db9e816/artifact.toml",
+    "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/artifacts/queenship-invocation-pages-20261029/artifact.toml",
+    "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/artifacts/queenship-invocation-pages-20261029/source.pdf",
+    "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/artifacts/queenship-invocation-text-20261029/artifact.toml",
+    "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/artifacts/queenship-invocation-text-20261029/invocation.txt",
+    "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/edition.toml",
+    "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/passages/queenship-invocation-20261029.toml",
+    "src/sources/works/society-of-bollandists/acta-sanctorum/work.toml",
+    "src/sources/works/triptych/english-completion-20261030-kyrie-sixfold-study-arrangement/editions/2026-10-30-study-arrangement/passages/sixfold-kyrie-english-reading.toml",
+    "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/passages/common-communicantes-english-reading.toml",
+    "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/beati-ad-cenam-english-reading.toml",
+    "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/ecce-agnus-english-reading.toml",
+    "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/greeting-bishop-english-reading.toml",
+    "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/greeting-grace-peace-english-reading.toml",
+    "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/greeting-trinitarian-english-reading.toml",
+    "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/passages/domine-qui-dixisti-english-reading.toml",
+    "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/editions/2026-10-30-study-english/passages/peace-invitation-english-reading.toml",
+    "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/editions/2026-10-30-study-english/passages/supplices-body-english-reading.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/improperia-whole-qualified-83cbd703/artifact.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/improperia-whole-qualified-83cbd703/latin.txt",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/lighted-candle-qualified-05954809/artifact.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/lighted-candle-qualified-05954809/latin.txt",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/palm-blessing-qualified-800c4d2c/artifact.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/palm-blessing-qualified-800c4d2c/latin.txt",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-plural-collect-qualified-77215320/artifact.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-plural-collect-qualified-77215320/latin.txt",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-introit-qualified-62bc1f50/artifact.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-introit-qualified-62bc1f50/latin.txt",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-regular-alleluia-qualified-01c6691e/artifact.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-regular-alleluia-qualified-01c6691e/latin.txt",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/improperia-whole-qualified.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/lighted-candle-qualified.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/palm-blessing-qualified.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pontiff-plural-collect-qualified.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/queenship-introit-qualified.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/queenship-regular-alleluia-qualified.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/artifacts/three-antiphons-0911d4eb/artifact.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/artifacts/three-antiphons-0911d4eb/latin.txt",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/edition.toml",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/passages/three-antiphons.toml",
+    "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-english-delivery.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-independent-metadata-review.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-metadata-adoption.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-metadata-files.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/activation-independent-review.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/actual-authority-activation.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision-binding.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-extra-two-admission.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-01-cff977a5cd64.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-02-79362b72f99c.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-03-bf2e4449ced7.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-04-a0f77ead71f3.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-05-9ae0bc10b3de.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-06-cf7c9a7bfc58.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-07-d3a9cff83569.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-08-b7aa0d76220c.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-09-9b0215d8be44.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-10-2a8ad2a63b4c.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/root-decision.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/source-expression-recommendation-index.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-good-friday-opening-two-admission.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-ordinary-four-admission.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-pange-two-admission.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-remaining-three-admission.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-seasonal-five-admission.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-01a03e183b94872e.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-06325027601a1cc3.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-107329b343472b93.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-30ba22065d321290.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-3f0e3efae65382c1.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-ababd1f3c1d308b2.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-df319c65bab50adb.json"
+  ],
+  "files": [
+    {
+      "before_sha256": "1a0b78a3c72803ce56166bc70c4229465a5a8b6c4a2c0c6be73ab431b57e781a",
+      "path": "src/sources/calendars/roman-1962/propers.yaml",
+      "post_sha256": "bb53c726e652fc20b4aab7f253031521bf42794d3726af50fe4bcd9d2c31fe8f"
+    },
+    {
+      "before_sha256": "6739d55adb969ef06f8e0e73e7457e682b61f9bee0759c461a1fb2ded1b0a194",
+      "path": "src/sources/inventories/postconciliar-english-2011-recension-coverage-v1.toml",
+      "post_sha256": "b5afc17e188efa13e22a11b585510a73105d2a46969a52864b24b3b5d5ac283a"
+    },
+    {
+      "before_sha256": "57123fdfb8472718679284f93698912c296e85fa7e78245554956f3890bc3e6d",
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "post_sha256": "88e54e407656a75ee00dab1ac029cf960612c65aabbcde78d4e82236486b3d27"
+    },
+    {
+      "before_sha256": "421594738c44c655412cf6454e3ab7f22f971b6f4e6dc47272b2360e28f9ecfd",
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "post_sha256": "59deb71b22cb457873a56a91b6044f295934c59acb044eb7d701d38547b09ff9"
+    },
+    {
+      "before_sha256": "4425c42f5e8cf452ffdb76e9e1ba7da404c0eaff4e47525908dec85aa41ec6ea",
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "post_sha256": "9dffc512b5ba43699f9d72dc3624e1cfe148ff262ff9ddd1acd41bc2e6f3a1fc"
+    },
+    {
+      "before_sha256": "c078838d5b94c858f2f7351607331b0febf16b9c4ea57185115b504c3f09ea17",
+      "path": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml",
+      "post_sha256": "87be6b440b449f41b13b758a1a68d4a0e561b1cd6e2e45ae5b6002c59118edcb"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/idus-complete-773d2c56/artifact.toml",
+      "post_sha256": "18e1d63f7fb38f2dd889488bdbcb075903d3d645c6eaecedc9ed958837e30747"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/three-cross-antiphons-checked-20261030/artifact.toml",
+      "post_sha256": "e471aee200d86ff041ad1ed08a54ad143b4e9e214ba757af5c3284ba2d114325"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/three-cross-antiphons-checked-20261030/text.txt",
+      "post_sha256": "64b648ba6faf6e07d44d20de2a0d3a25fb84968b52f975905bfb17983f634d24"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/title-license-and-cross-pages/artifact.toml",
+      "post_sha256": "addf1f88c8727bb44030bff878263bcf40fa4a09548910fcb40d9a999c4e4ce6"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/title-license-and-cross-pages/source.pdf",
+      "post_sha256": "981ac4aed0eef481f6c8521c7d8d458eba8454c214527c649f5f354db1935100"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/edition.toml",
+      "post_sha256": "7fc43450c797503a8bdd268cbb87c09d41bda6f3bf14af0090a355fdc171c840"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/passages/three-cross-antiphons-checked-20261030.toml",
+      "post_sha256": "2501ad9c86638e724e5a7656a17065bcb5bc73857a260ef7fcbb8f61063a54f5"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/passages/three-cross-antiphons-page-images-20261030.toml",
+      "post_sha256": "71b6828f09bfaa371ba2f042de7a3ccd0e53fb1e3e5fe1c901de741dc1f5f99c"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/work.toml",
+      "post_sha256": "ce13564d85dca6f58e55d40a98b0d62172728115e997e99b74757652d0237bb6"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-historical-la/artifact.toml",
+      "post_sha256": "352949b5a99686337ce1166cfbc7f5f212cfad33e3a1f59012399e8ecdbaab0a"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-historical-la/text.txt",
+      "post_sha256": "89fed3f9d7e34eea3446eece4988a6280fc391902f84be4cd057800c5a710033"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-page/artifact.toml",
+      "post_sha256": "e07f50c3271d8e5dde851dfea86b984e134c6b93d491e7fe9662cd597da17774"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-page/source-page.png",
+      "post_sha256": "158dbf8112fbd94280bc0b4dd831c0e3081042660b7ad1df4d67e1fc3ff7e96f"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-historical-la/artifact.toml",
+      "post_sha256": "de6b8948017d723af8dafcdde95f3ac765bdd3827dbed8b418e5837a034b8480"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-historical-la/text.txt",
+      "post_sha256": "a05337b3bfbc91e4de158bb4eafe16539a904c5b850f4a6c8f8161ef70e7678b"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-page/artifact.toml",
+      "post_sha256": "a3225718e498ff9a71e955ae2edebe5201d0cfadca36f23bfa20093f10b45bb8"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-page/source-page.png",
+      "post_sha256": "f3aa78e216a333e5aaee4b531d4b8764c22faf71b7e8a83344c37f89ebfdfc08"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-historical-latin.toml",
+      "post_sha256": "6b17e77dc7e2bea7679edd610d45c38dc1aac410bba24a1428fedf23d3786010"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-page-proof.toml",
+      "post_sha256": "377d5532618524d8994c8fb85c7cdbbf1f0af11fa31be2d316df1b3bdf5bc9f7"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-source.toml",
+      "post_sha256": "f16f55cba0d62c5e2bc60e99e2b85a6d1680d82763f22071ea73c84ffa690b9e"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-historical-latin.toml",
+      "post_sha256": "d400882356a0db623d6de17b79931b3c40c9e840ffe3774120cb561410b2b464"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-page-proof.toml",
+      "post_sha256": "2344028d7463eefb97449cea5be3cda5eb638ebf75d0f5ff6d26506a4f915d38"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-source.toml",
+      "post_sha256": "41c132d1f340e96b568f9261a7db8be1882d207ef2ffb98c6023d896a5f70089"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-bute-historical-en/artifact.toml",
+      "post_sha256": "0799a264874fdcfdf1148c63272dac0b7efcc78a5928b55975cb94edcc1f7160"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-bute-historical-en/text.tsv",
+      "post_sha256": "42b0f6c167257ddbc567930cf376825312b9434f5cf63ba41953a85698e7d43e"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-advent-december-18-main-entrance-antiphon-all-1-publication.toml",
+      "post_sha256": "490cc9e4fc9eb8f831805a05073b668ad33a312e6febb497b21151c45f09a8ec"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-advent-december-18-main-entrance-antiphon-all-1-source.toml",
+      "post_sha256": "fa13ad062b893bcac30a46daeaecb2b56c4226fdfb48f7393e8f0c7a7c22790a"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/queen-introit-gaudeamus-latin-20261029/artifact.toml",
+      "post_sha256": "c75ae67d679ff9f96fa4fcf79f81b300471b7357cb4fe77cf4ae60c7e87cba5c"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/queen-introit-gaudeamus-latin-20261029/latin.txt",
+      "post_sha256": "544780624845b97099cee3df0bace07b8c6d0d4044a03f7af84053e474f5bb64"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/queen-introit-gaudeamus-pages-20261029/artifact.toml",
+      "post_sha256": "a4dfb145f0f7ff3c8d63ee602f9c30d8ad29ac4af8a72f9f44ee8f03fc0650b7"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/queen-introit-gaudeamus-pages-20261029/source.pdf",
+      "post_sha256": "440c4b2be360272c0762bb3e9eab2b2651f518c7d4a07dc452bee482b8e0b8ad"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/queen-introit-carmel-gaudeamus-base-20261029.toml",
+      "post_sha256": "672bb3eefa502e491d7fab054429916f5382addd88f6e11d194bfb00ff39a988"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/improperia-whole-checked-20261029-b8728178/artifact.toml",
+      "post_sha256": "22680aa1c77d7d60a43ad35e10571fd6a0e866499e05d458a63f700bcf4a861c"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/improperia-whole-checked-20261029-b8728178/latin.txt",
+      "post_sha256": "b872817894e93d9cfbc6ef8820b193e32cc0461c61b783be058219370f09e9b8"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/improperia-whole-pages-20261029-04a3ab17/artifact.toml",
+      "post_sha256": "6776803166e727c5b68788ef34fab91421fd7c84013b6a90e8c222a3b1b0b402"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/improperia-whole-pages-20261029-04a3ab17/source.pdf",
+      "post_sha256": "04a3ab17ee92a718deecebaa3f520df70fe7d4b21559be81fffae90d5310aa96"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-latin-20261029-be854aa4/artifact.toml",
+      "post_sha256": "3bdfda9bd5282bf7eb2f44635f291e34a7928584bad6bc2f62caa2f27e75d63f"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-latin-20261029-be854aa4/latin.txt",
+      "post_sha256": "be854aa4a99d23f87f6cac2fbd494aac99df3bdb74d1b4d97520080562f5165c"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-page-20261029-0e5057cc/artifact.toml",
+      "post_sha256": "a9cbfc7a8cbd6dcda2dd5595da0bff5cff165289085d675319317e76325dad36"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-page-20261029-0e5057cc/page.pdf",
+      "post_sha256": "0e5057cc5e3af1f377068dbfab96d99b64f3b95736400715ed9d4e346beb25c0"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/palm-blessing-whole-latin-20261029/artifact.toml",
+      "post_sha256": "632af913c00d28e81058e79bffc14a668442854fd702fceac415d1e94deccf95"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/palm-blessing-whole-latin-20261029/latin.txt",
+      "post_sha256": "79d5f5f10f212a83ebfef0176e96cbbc27be4d0701592e91b2ec3c7f8f588798"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/palm-blessing-whole-page-20261029/artifact.toml",
+      "post_sha256": "007189bee5eb0ce46a3973b0a20b9d37e05b19975b1ea5c0b1c878f14ffa9ca2"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/palm-blessing-whole-page-20261029/source.pdf",
+      "post_sha256": "ae48dd3e6d235cba87dbe8836ab5d3d4b95d3b73752801f0a0251b23e262ee30"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/improperia-whole-checked-20261029.toml",
+      "post_sha256": "41dbbae61f4be6a717562b2d41ed75449500de2013e33bd541c5e10f10287b35"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/improperia-whole-image-20261029.toml",
+      "post_sha256": "393a0620eacb0126f60b466d7b16acc977f348c6a610aab97e70faee223bf040"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/lighted-candle-old-prayer-checked-20261029.toml",
+      "post_sha256": "6435a0180306e4f2499741fa20e8321b6c21a805adc8f2d99ff3eeb2ed88f669"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/lighted-candle-old-prayer-image-20261029.toml",
+      "post_sha256": "1a25e579b192653405353ac82c0fc06671d40fcaae3f0c2d7ab250868f89f65e"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/palm-blessing-whole-20261029.toml",
+      "post_sha256": "32fc2f9f12dc20726435652a5499093e6f255708dd28865b15993d14bf970605"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/good-friday-transfer-antiphons-checked-20261030.toml",
+      "post_sha256": "f663b8b7926d8ce552f49dcb37ae46ff7bc41b47c5616e0bebf4a088fd17db07"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/improperia-whole-collation-20261029.toml",
+      "post_sha256": "47d151d34a1565ffafb641a89ba30a8db4aa2abe6539cf4e91ec7493f3058579"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/lighted-candle-target-word-collation-20261029.toml",
+      "post_sha256": "af22d7b3e46caa2bd1e6e45e127c08d6b277a6a64888326f947263278dd9227b"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/palm-blessing-collation-20261029.toml",
+      "post_sha256": "677441e408080165abaadb6d723eee5ca6f8016716fef90a28e06ede7ddd7136"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pontiff-plural-collect-collation-20261029.toml",
+      "post_sha256": "8d1d9b6331b0a956f5e053043d2d987c90c15deeb54a32338165ac6ecfe5783b"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/queen-introit-full-target-control-20261029.toml",
+      "post_sha256": "159ef07342358bbdd897e41801cec16a9c85528183108abb961a91f939738e6c"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/queen-regular-alleluia-full-target-control-20261030.toml",
+      "post_sha256": "2e56821a98eed231f42dace431370e8fc6560ce4b696120718d1cb3396ab0e78"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-ot-11-collect-study-comparison.toml",
+      "post_sha256": "617a9a21d64474f3745e56ec091fb8c40313c0f53013f5fa8d99eb4eda1bfdf8"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-ot-31-after-communion-study-comparison.toml",
+      "post_sha256": "689674a598a2a80932646130c53d2efc2e791cea47bffa35f2d43d10f70cea12"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-pentecost-vigil-collect-1-study-comparison.toml",
+      "post_sha256": "45e73d7bfe196bae3f283fb01897d1b0bd9c5c4e34394e0b196ffaada092125b"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-pentecost-vigil-collect-2-study-comparison.toml",
+      "post_sha256": "840bd6fbc7120c369b56badaae505ab17148866d4288467868c9f1c30b06037e"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-advent-1-friday-main-entrance-antiphon-all-1-comparison.toml",
+      "post_sha256": "a0be41502c4e2c5201db0f494693977077c4121957e484bc9f8bdc0642d261ad"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-advent-2-friday-main-entrance-antiphon-all-1-comparison.toml",
+      "post_sha256": "f17b6544284e83a17b857766c1ba5a7360f2904de18898c013a72af68a183695"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-advent-december-18-main-entrance-antiphon-all-1-comparison.toml",
+      "post_sha256": "4c2a7ccf0781662340b0777e2445ac3302441d5e1c7f81b7cbf6b2ba803ff555"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-lent-3-thursday-main-entrance-antiphon-all-1-comparison.toml",
+      "post_sha256": "fba77e02b9c05cd6d4fbaeb5cbc3da5362322423c51df570bd0779239f116846"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-most-holy-trinity-main-entrance-antiphon-all-1-comparison.toml",
+      "post_sha256": "eb485448b24ddee0c3135fcd90e4c1f1620994431a1af5f53450f4a8fa74e65c"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-named-work-appointment.toml",
+      "post_sha256": "a65092a559cfa757b9a33e5e52a085bc0950124e427aac9a8c87cdecd755fca8"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-named-work-appointment.toml",
+      "post_sha256": "e844010da5fc737b6e44bd037dda57bd4a46f49cad99272daddb00baa891e4eb"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d/artifact.toml",
+      "post_sha256": "e6690facf70cfac99878e532bd0ef998e72dab9e2003400528d2b83308dd6e52"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d/pages.pdf",
+      "post_sha256": "9ea0918d6a9ee489ccd4aa70c23b2d6e87162e4e93c6c4bfdf2b216156f1aac3"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1/artifact.toml",
+      "post_sha256": "fc2ef0aaf9ac2dc554e609df81009ccf4bdca39068e6231252960f4915e42b77"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1/wilson-1894-pp106-122-123.pdf",
+      "post_sha256": "c4d7d3c11ff5fd9d0545ff9c0185f4bcbaf855f5f5c13b9ae027bae8d72d48f5"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-extra-gelasian-p36-facsimile-f20c91fa/artifact.toml",
+      "post_sha256": "9f1696bcc4e0a6e7719002ca94f23abd6cfa8a316137fbabd3d7e446f517c575"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-extra-gelasian-p36-facsimile-f20c91fa/wilson-1894-p36.pdf",
+      "post_sha256": "f20c91fa7d7ff60e2c43e898bbcd710bbc276601ec1bcb7c606078dbcc262217"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-remaining-gelasian-p91-facsimile-57614b82/artifact.toml",
+      "post_sha256": "1977df8b9d1cc4697909adeefe5c9e588fee0f6736b6e74736bffd4456765a76"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-remaining-gelasian-p91-facsimile-57614b82/wilson-1894-p91.pdf",
+      "post_sha256": "57614b82108dc09ed60f91634f2d6938c1cfe8fc6ac769baa94b6855f4fe232c"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-latin-20261029-1334bce8/artifact.toml",
+      "post_sha256": "e79a99bf99ae9439e276699a23d7798aa13859e32706ea7ee9988d248abdff8d"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-latin-20261029-1334bce8/latin.txt",
+      "post_sha256": "1334bce8473c9265d2547c8052ebc2af3972a0d62952d0ff2e6d90a4fde7e674"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-pages-20261029-eb290d46/artifact.toml",
+      "post_sha256": "910a0f4040e6a51bf6d097f51b06b34f05eafd349382d7dbc66369ce357139eb"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-pages-20261029-eb290d46/pages.pdf",
+      "post_sha256": "eb290d46293f2889b2d089b16aae0f744deb1c085f34b5ba0325b1202c20aa43"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-deus-qui-peccati-source.toml",
+      "post_sha256": "19071fafbe8097b47b000bd5a31c03088f147ebec47ebf50c1537e165394ae65"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion.toml",
+      "post_sha256": "39c81f55fbdd6b518c8994e6e449b8c73c6780002e81358dbf418e0235ce1dea"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-reminiscere-source.toml",
+      "post_sha256": "16ff87e456d98d649eb9690e578e9e8d8b803adab2b687689c6949042684a5fb"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-ordinary-four-short-conclusion-cues-source.toml",
+      "post_sha256": "edbf7ca01a9ad7408cca30293156081f5e4716d2bb6c657d1e623bcca7231f80"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-ot-11-collect-study-source.toml",
+      "post_sha256": "c0fa3935c853505d82332a20be0e34aa5dbf8e1e85b75d3cecbd7bd81bd5d483"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-ot-31-after-communion-study-source.toml",
+      "post_sha256": "fd6b9a18b6e33c9a03081b9896a1dcf28c1761aca43f160ff79e008b11707444"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-pentecost-vigil-collect-1-study-source.toml",
+      "post_sha256": "847e4a6cf499e33a872e33959f8abba8de8e5e2fbdffdc424530cdd531db7b0e"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-phase3-extra-gelasian-p36-proof.toml",
+      "post_sha256": "72d4cca2a2310fed6f82dfc7376bb59e254f113e97b25cb9b897c7df5ba8f1cc"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-phase3-extra-ot25-postcommunion-source.toml",
+      "post_sha256": "531d4d15dfc8119186b92ec90a8c8e856211a4435f21a11460ecd68dd5d43676"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-phase3-remaining-easter-offerings-source.toml",
+      "post_sha256": "700a956a76aa02977c88ad1aa760a4516c1d82bc26da91e6937e12cc6b270d1c"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/lighted-candle-old-prayer-checked-20261029.toml",
+      "post_sha256": "1c67b922cb63fdbf0ee9c4e5597f3f8a77a4ef254986e913aedb76599f1016f1"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/lighted-candle-old-prayer-image-20261029.toml",
+      "post_sha256": "baba94e18218c621bd259ad3fea03c5ce4ea66de0b2bfd69997fec632ad0a2dd"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/english-completion-20261029-postconciliar-pentecost-vigil-collect-2-study-source.toml",
+      "post_sha256": "f2d998d82070a5152c25f3bf68a3bb7b51f1738594fdd395665bcbff2c263628"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/english-completion-20261029-postconciliar-phase3-extra-epiphany-day-offerings-source.toml",
+      "post_sha256": "9b97bd137abad67a9415618682c435c00799f5f7d264169d10f7a3c6c7d54bcc"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/english-completion-20261029-postconciliar-phase3-remaining-mary-collect-source.toml",
+      "post_sha256": "0edf5e9058e58d8d31b9cf230510a04e0043584c750f163f85db55aceac89ce1"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/lighted-candle-intende-whole-image-20261029.toml",
+      "post_sha256": "54457e10784cfa8d6009c4a1c6dc8670de1a893eb040a28a7c04bde2aca84a28"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/pontiff-plural-collect-whole-foundation-20261029.toml",
+      "post_sha256": "d3023827cacaf9ac07409cbdd3241d53acaf47fd45767cb3d402f4406111aa5b"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase2-pange-historical-selections-en/artifact.toml",
+      "post_sha256": "bba05801c695681e4d109c8d4a006437d87554de58d2afb7bc243f2b15883457"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase2-pange-historical-selections-en/text.tsv",
+      "post_sha256": "421b84c0761c4c8cc37f3f83e4c528b6e6ee2974279c71308333a7166304771c"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-publication.toml",
+      "post_sha256": "c0d16bf83dd6d5319fb2132db03ff2c8d1f40063c6c7df110d2599795a0fd07b"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-source.toml",
+      "post_sha256": "85869829c02d11128834089d375235e41743cb130a0a046db0bc8240ef89d16e"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-publication.toml",
+      "post_sha256": "e6d5d931bab0e57acee639b4b4aee16f3841e92986339e5187f274e2a6305cd8"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-source.toml",
+      "post_sha256": "5aaa872fbc4fbed4f34e97726833de479f22d1533a870dbdb580afd4484adce3"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+      "post_sha256": "617e48d287ca3a1b6409d74e9adf1cc8faad0e97bc52fe02706ed4f257b45252"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/pages.pdf",
+      "post_sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-lasance-historical-en/artifact.toml",
+      "post_sha256": "c865e357fdc68e97229de50c7d0adf5fe30825769a550b3fccf00e4808ff9a1e"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-lasance-historical-en/text.tsv",
+      "post_sha256": "d9d904bf162f620bee49d16f058422e1b9f151e1227fbd6382a5dd9cfb394726"
+    },
+    {
+      "before_sha256": "b4a8a78095b4661ddf0398c35d748f90c79c08e9712dcfeff81c3888e071f486",
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/artifact.toml",
+      "post_sha256": "104e1c4485d595051bf5f7eca3eef0578f7242f1106697f52248d62035bd3a93"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+      "post_sha256": "d380657fdad6aa7a98b1e62f2ea4b8bd6247703e089e98a5ba8ea47754105974"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-lent-3-thursday-main-entrance-antiphon-all-1-publication.toml",
+      "post_sha256": "e09a99ee36ec9b6739fc3adb7f95f9e96a7b550fadae84429e608ac4b0eed696"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-lent-3-thursday-main-entrance-antiphon-all-1-source.toml",
+      "post_sha256": "07c0f965784b32ada7f86740da1348c166086784fd359aaf631e380f880bf083"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-most-holy-trinity-main-entrance-antiphon-all-1-publication.toml",
+      "post_sha256": "992778d5fbbe4b5e2da5af1b164b5c5bbb8b7358a97d26ba9113b2d2bc83c1d9"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-otherseasonal-most-holy-trinity-main-entrance-antiphon-all-1-source.toml",
+      "post_sha256": "5f81754503aa88d2028a2af450d1c4ab61122df7df88cbee0c4ddc38f3ed53f2"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/english-completion-20261029-postconciliar-phase3-remaining-mary-collect-close.toml",
+      "post_sha256": "a22ca7be9893619cd7782a7b3c25971a7c86fd35733b5e415036b3a0a5cf6d4a"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/artifacts/publisher-whole-pdf-d7c7795c/artifact.toml",
+      "post_sha256": "95fd11b93a9dfc2eb4cdf13304a9a4306059eb9f70d6e3ddb6bdeb0feacfa979"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/artifacts/publisher-whole-pdf-d7c7795c/source.pdf",
+      "post_sha256": "d7c7795c05c44aae9b68bdd59f13db9d626bd2a89de9a44d8287dfcb7f1cc6ca"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/artifacts/queenship-hymn-stanza-text-20261029/artifact.toml",
+      "post_sha256": "7312382f171b2267be46b12a48ea631bae88f9fbd794e9b4040021888649a8f5"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/artifacts/queenship-hymn-stanza-text-20261029/stanza.txt",
+      "post_sha256": "c7e703200c4a0e4eb35ea5eed8395c3c45798967d0fc7969f39915e9704c2ae1"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/edition.toml",
+      "post_sha256": "70641917e57025893723c685426aca1ef85e2d9957afa4e3ffb4a019875fdbc0"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/passages/queenship-hymn-stanza-20261029.toml",
+      "post_sha256": "6f43fc020c02d88c1fb8fcf665462795aca7adc13bb3d2b00ba0dea546ec5856"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/salesian-society/bollettino-salesiano/work.toml",
+      "post_sha256": "685124782f356de428604962bb126c13046b700fc56ec944f1d59801a29c2dba"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/artifacts/paderborn-whole-pdf-1db9e816/artifact.toml",
+      "post_sha256": "e75c8239ebfc1a676815afdc7b688ac5d71b2e9941175ece347a05986cfaaa09"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/artifacts/queenship-invocation-pages-20261029/artifact.toml",
+      "post_sha256": "abe4439ca86116d5a6510a4af24bd0f2ea3a22e769b5e1bf3a2fbae29da8c8c7"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/artifacts/queenship-invocation-pages-20261029/source.pdf",
+      "post_sha256": "444d802dbfa5bbf2c5781ed6b059a3a65bebf682cc0e8d5b0b8bdcfa992abed1"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/artifacts/queenship-invocation-text-20261029/artifact.toml",
+      "post_sha256": "c72a0478342498eeb90c55998705252cee36b829a671a0de6960f68cff266279"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/artifacts/queenship-invocation-text-20261029/invocation.txt",
+      "post_sha256": "f57a6c53c781cd19dcf44e1d43961f703231d833eac147a31170132baacde3c9"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/edition.toml",
+      "post_sha256": "abf731ce53228d530ca72d587861a66c553f9183453fe632c1cceaff59f2cf02"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/passages/queenship-invocation-20261029.toml",
+      "post_sha256": "e3e8bacc2599654bf316a8212689214b7089b3d469c1a8222d942d2e3fdb8c72"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/society-of-bollandists/acta-sanctorum/work.toml",
+      "post_sha256": "50ac85ccc06e6db6143d45719566cdd799dff75d6d71f35b08d83c15fe765d87"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/english-completion-20261030-kyrie-sixfold-study-arrangement/editions/2026-10-30-study-arrangement/passages/sixfold-kyrie-english-reading.toml",
+      "post_sha256": "e3cd60ead4f60a68609f3f0cf52501a47749de24ba68522140c641a376f4a8fa"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/passages/common-communicantes-english-reading.toml",
+      "post_sha256": "e91d4c5591c0ea58e887f7f26adf4fab8e3173134d0aac61fa65fbddad7c13c2"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/beati-ad-cenam-english-reading.toml",
+      "post_sha256": "98bfdcc5dea151567f20b475a70069a420dd572bbcae5be01a233ebd828ffff8"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/ecce-agnus-english-reading.toml",
+      "post_sha256": "645fc0b9aa2c28e7750e16ae130615a501df40234e6cb15d13c07537b4ea10b5"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/greeting-bishop-english-reading.toml",
+      "post_sha256": "8323b99c45614fef2146485d9acdaed36f175c8993d52a47759054851374cf31"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/greeting-grace-peace-english-reading.toml",
+      "post_sha256": "c820379101553c35a905c321e485ba18dac5ed68775dd44cb3dd18ca9e4b4046"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/greeting-trinitarian-english-reading.toml",
+      "post_sha256": "7ce3b521162f0b2706114fa300d61c37b1d5c184d79d5b859d76d5cf7a7d03a6"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/passages/domine-qui-dixisti-english-reading.toml",
+      "post_sha256": "1c63171d9fa23b00a15845a98f841d92c8a5b5b1b2f90cf0d771eaf05c28f738"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/editions/2026-10-30-study-english/passages/peace-invitation-english-reading.toml",
+      "post_sha256": "98b1d11ba6ed008190090b2568d4c34be6d3a76aef5adaafad20930528f990cd"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/editions/2026-10-30-study-english/passages/supplices-body-english-reading.toml",
+      "post_sha256": "0d914b46b40291f6303a7caefcc9c048b7e3d27d141d563ab1f106b972a5576f"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/improperia-whole-qualified-83cbd703/artifact.toml",
+      "post_sha256": "e6995214ae3dce0158a0d6b93ef36f9136425b61532cf515b8a10d425813e45a"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/improperia-whole-qualified-83cbd703/latin.txt",
+      "post_sha256": "83cbd70391a22369245ab9c1019d3d25db59e02b5b267474f3b039130d40a616"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/lighted-candle-qualified-05954809/artifact.toml",
+      "post_sha256": "6fae476734384faf987105380b7984260225e59791f25f17d39244a47584de31"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/lighted-candle-qualified-05954809/latin.txt",
+      "post_sha256": "0595480950da324de25ef33113f56537a979517bd4bd23beb75d7643f3310b5f"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/palm-blessing-qualified-800c4d2c/artifact.toml",
+      "post_sha256": "1dddba44d5734343c57a0126d9fec81a041c74716f79e7aa30d19f8f276b3743"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/palm-blessing-qualified-800c4d2c/latin.txt",
+      "post_sha256": "800c4d2cbcdd38b63a488b726080ae2c8497cd882d277602dd389a396c01f31e"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-plural-collect-qualified-77215320/artifact.toml",
+      "post_sha256": "4dbefc60ef90f3e15f6afc2837fb09d7409419d85ff224dc0dfc34f7934bc7da"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-plural-collect-qualified-77215320/latin.txt",
+      "post_sha256": "77215320cce36c1a3823c3643d63bac8f3f98579ded3eb454c1fead0f6abf440"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-introit-qualified-62bc1f50/artifact.toml",
+      "post_sha256": "4d2484a33ec750793221dc1d2bab5541747f4a351b217e3ad72789068ba84224"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-introit-qualified-62bc1f50/latin.txt",
+      "post_sha256": "62bc1f505027f3ba9f914511ae9c836b6b460068c08409677226a16ff44de459"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-regular-alleluia-qualified-01c6691e/artifact.toml",
+      "post_sha256": "0ccb184e16ed6283d100fcc77ce87c1faebe23817c9261de24cb216d52e8e881"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-regular-alleluia-qualified-01c6691e/latin.txt",
+      "post_sha256": "01c6691e3d76f113226e381bcb55c959ab40f630541c544fbbfadb0a110f2071"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/improperia-whole-qualified.toml",
+      "post_sha256": "5ba2b2a68de90278b24e39ab39240de28771b93b3773b0adeb382785bddc0f76"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/lighted-candle-qualified.toml",
+      "post_sha256": "aeba8581345727f0977b170fbe45759e6f8695f8ba41d6bb3c93251d592e7423"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/palm-blessing-qualified.toml",
+      "post_sha256": "7f7874fac3ac2e79a2a270df57a809c70cdf36ec8132b1a53fa76d1345dd4bcf"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pontiff-plural-collect-qualified.toml",
+      "post_sha256": "491771a1b1618ede8b06d3170d0c183643cc1d55a1050725f7126183b5b96814"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/queenship-introit-qualified.toml",
+      "post_sha256": "b0acc90ea7a2df5caf132b0d2fd7c0b0056a0f328803f5bbf4a6b5bd5ae047d3"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/queenship-regular-alleluia-qualified.toml",
+      "post_sha256": "616f613d125074f359d525aa3ce98c030abd30dc505f99190a987a9bf601135e"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/artifacts/three-antiphons-0911d4eb/artifact.toml",
+      "post_sha256": "84fb75d96acc3dd0efbb1083bee3b468f268fce2c251b1179508101bc231ef38"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/artifacts/three-antiphons-0911d4eb/latin.txt",
+      "post_sha256": "0911d4eb3eb4f93de9ed5a26db304906b9675a8b4f47f971e19ca15165c5b28a"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/edition.toml",
+      "post_sha256": "38b5d8456bed286acae54a455eb049fbcdf752ae7bb9173a608ddade93802f19"
+    },
+    {
+      "before_sha256": null,
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/passages/three-antiphons.toml",
+      "post_sha256": "a6d3dfbdeed4db48938744196748ac5452b1290134e8db4fcb0abd3aa6f5b3d4"
+    },
+    {
+      "before_sha256": "d13ba84c2d93b9ca77b68e9a4746bcdff9ff6d23c42be57a9c508d86e329f464",
+      "path": "tools/tests/test_proper_latin.py",
+      "post_sha256": "c49c297448306c07ab5eed605ddce48894a2e2f3bda1783966e498ffb70eb997"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-english-delivery.json",
+      "post_sha256": "1adbcd1af5f180545201178c8f93beccb6afb62d3f14ab6d26e76d5749461843"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-independent-metadata-review.json",
+      "post_sha256": "b298ccd6e27ad7aefff9a562c5429b0287f4a484f05a38722fa65624004e0070"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-metadata-adoption.json",
+      "post_sha256": "02e74b2bef88f81ea0f380fec96f379399a116208c16d2b03cc5321f49929b39"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-metadata-files.json",
+      "post_sha256": "bf1a28a336cfcc16647d702fef672dea74257a627d5a63f0619be2ac434151a5"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/activation-independent-review.json",
+      "post_sha256": "92d1933b2f6778c37059a9de6375fe79eb70dd070c96477307b69ba81915cab9"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/actual-authority-activation.json",
+      "post_sha256": "55a3ea92a0d4892607d7376bf16c339b7fc5e1aeb6b82fd1a4af663ded7fadff"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision-binding.json",
+      "post_sha256": "bbfaac484a6f2f3775900288093688e068c83a7df56edfe5659753764c74022f"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision.json",
+      "post_sha256": "d0802309d2518db774c3ad352f2eba03605e67cad735959444b422233ffd4874"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-extra-two-admission.json",
+      "post_sha256": "7a58224decae8b70bc8b80059c65d2fef910e61fca194cf9a02dfe7eada41324"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-01-cff977a5cd64.json",
+      "post_sha256": "cff977a5cd64495ec1f09cb39fd04c553a300b33b3ce7f9b8d46782e06b19ef7"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-02-79362b72f99c.json",
+      "post_sha256": "79362b72f99cf8f5801f82db3d3a7a24cdd5676c2ce1881bd8ddc1800f3ca822"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-03-bf2e4449ced7.json",
+      "post_sha256": "bf2e4449ced7c9ed61c13cc261f95fa3d01a49a2fd2ea74a37a688128e46c7be"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-04-a0f77ead71f3.json",
+      "post_sha256": "a0f77ead71f3ac6838360f960a96fac986930002462e7af3abc659c4e8cb3c0e"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-05-9ae0bc10b3de.json",
+      "post_sha256": "9ae0bc10b3de3156ea88c330ce5cae812c1a35a3817fd1559424ee9c1a98ad1e"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-06-cf7c9a7bfc58.json",
+      "post_sha256": "cf7c9a7bfc58afd1c5dd4e77a5991df06f195094c50346aa69152cab2b89827f"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-07-d3a9cff83569.json",
+      "post_sha256": "d3a9cff835690c1d79da83f34a37c34d0004b014cd948c875e5063819158ac3a"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-08-b7aa0d76220c.json",
+      "post_sha256": "b7aa0d76220cbf32c4414bc9d79b6a0c4df169c0fbed4e190c1f2c33c10ef8c3"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-09-9b0215d8be44.json",
+      "post_sha256": "9b0215d8be44bd02ff8b3cdba8dd7876f39ad9e68fa02cbfbabe32bc49116744"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-10-2a8ad2a63b4c.json",
+      "post_sha256": "2a8ad2a63b4cba9b4018439d5f6f5d893d3dcebe2a5c894a4c091bb3a07e91d1"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/root-decision.json",
+      "post_sha256": "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/source-expression-recommendation-index.json",
+      "post_sha256": "b9bd060281b8ab9f165ff85b3c2e16bbe06dd4d89935b46581de424422b4dd97"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-good-friday-opening-two-admission.json",
+      "post_sha256": "159c5d14dc1cb1ab090358abd47f2ad9fa44070adfd5d51c13598ee47274c1cf"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-ordinary-four-admission.json",
+      "post_sha256": "2e0d3516ee8e095ac4197d23222258f38b264ad5eef04aad0a92914e6283870b"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-pange-two-admission.json",
+      "post_sha256": "549f477cecaabfe64fbda5f3dd070231c2196a070d26ba3c5cb2c8a35a0326e6"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-remaining-three-admission.json",
+      "post_sha256": "89d8b0f274abd76eb09c4b555f547bec0112531eaac099ce19230833e946ea27"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-seasonal-five-admission.json",
+      "post_sha256": "4fbe06443c355f25da591d7233041460b2f1515db3d7ed2c1e138286381d8d0b"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
+      "post_sha256": "495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-01a03e183b94872e.json",
+      "post_sha256": "01a03e183b94872e9c1adb53c04d711cb6bfebe844c3d8b6021f299bdfad70cc"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-06325027601a1cc3.json",
+      "post_sha256": "06325027601a1cc384a37c253b67e9e794d68c91b197704ede43bb89fe9dc17e"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-107329b343472b93.json",
+      "post_sha256": "107329b343472b934104c1dec18e22991c36f5efd970ee31069061252094b774"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-30ba22065d321290.json",
+      "post_sha256": "30ba22065d32129062e87d8bdf820f2abe9e8a66bf0315485610cd303085bc5b"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-3f0e3efae65382c1.json",
+      "post_sha256": "3f0e3efae65382c1bbf47e08faa979116fafaf20227545a08636ae11d5494953"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-ababd1f3c1d308b2.json",
+      "post_sha256": "ababd1f3c1d308b2b45bd254272a2452de6c14d7127b6194fba00d0749f1ccf8"
+    },
+    {
+      "before_sha256": null,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-df319c65bab50adb.json",
+      "post_sha256": "df319c65bab50adb6ece2c3552f1461c61956786018a14fddb158c979c0b2063"
+    }
+  ],
+  "parent_git_revision": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+  "parent_manifest_sha256": "6956adb9fc4336282ade4bce43015d51bb2b73ef9a2ccce1d62e90226022693c",
+  "schema": "triptych-bounded-source-input-delta/v1",
+  "source_acceptance_claimed": false
+}

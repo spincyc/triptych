@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "facsimile-page-extract"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "United States: the identified Tours 1922 printed words and page images have no remaining copyright term in 2026. Mechanical extraction and machine image/OCR layers add no new human authorship. This basis is the identified printing and mechanical reproduction; it does not rely on a host licence or clear the 1962 target contribution. Underlying historical Latin and images remain excluded from the project CC BY 4.0 grant."
+sha256 = "976afd4964a6b833ec2bf92ee5cb00825be96a4d7bc789acf34fde0bacac3b6b"
+byte_size = 411321
+page_count = 2
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/source.pdf"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+retrieved = "2026-10-29"
+provenance = "Mechanically extracted from the already acquired exact whole 1922 Tours Mame PDF, 51720493 bytes, SHA256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Both complete pages independently read at 200 and 400 dpi on 29 October 2026."
+transformation = "pdfseparate then pdfunite; extract page 1 = whole PDF368/printed254 (actual long conclusion); extract page2 = wholePDF1082/printed[52] (complete historical Lawrence Collect). Full page boxes and original image streams retained."
+notes = "No target1962 image or modern Latin contribution is included. The actual historical petition has consilii, no Doctor title and gloria; it is not represented as the complete modern target prayer."
+indexable = false

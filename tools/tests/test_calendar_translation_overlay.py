@@ -40,6 +40,16 @@ def load_propers():
     return module
 
 
+def load_ordinary():
+    path = ROOT / "tools/mass-ordinary"
+    loader = SourceFileLoader("calendar_translation_overlay_ordinary", str(path))
+    spec = spec_from_loader(loader.name, loader)
+    module = module_from_spec(spec)
+    sys.modules[spec.name] = module
+    loader.exec_module(module)
+    return module
+
+
 def record(record_type: str, **data):
     return SimpleNamespace(record_type=record_type, data=data)
 
@@ -1047,6 +1057,47 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
         ("most-holy-name-mary", "Prayer over the Offerings"),
         ("most-holy-name-mary", "Prayer after Communion"),
     }
+    # Current dispositions of that historical 43: 79d48aa62 removed the
+    # unrelated George and Apollinaris Collect bindings (now typed no-exemplar
+    # gaps) and bound the checked Advent IV antecedent under its own artifact,
+    # per workflows/reviews/missal-reader-resume-2026-10-23/source-review-postconciliar.json.
+    UNBOUND = {
+        ("saint-george-martyr", "Collect"),
+        ("saint-apollinaris-bishop-martyr", "Collect"),
+    }
+    RECOVERED = {
+        ("advent-4", "Collect"): (
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861."
+            "postconciliar-advent4-antecedent-en-20261023"
+        ),
+        # The Cummiskey whole-Introit refusal remains intact.  The successor
+        # is a fresh, separately checked Lasance antiphon, not that payload.
+        ("ot-25", "Entrance Antiphon"): (
+            "artifact.francis-xavier-lasance.the-new-roman-missal."
+            "benziger-revised-1945."
+            "english-completion-20261029-postconciliar-phase1-lasance-fresh"
+        ),
+    }
+
+    # These three historical Cummiskey refusals remain in QUARANTINED.
+    # Their current positive rows are separately adopted project study English.
+    STUDY_SUCCESSORS = {
+        ("ot-31", "Prayer after Communion"): (
+            "004802315f46cc6d36672dbd525be25583fc487cb37a83db2a071fe2c1340c1b",
+            "phase4-ordinary-four-admission.json",
+            "2444876431e1613dbc366c6898626857f661721e784abd7f61eb00cc5eccda0f",
+        ),
+        ("mary-mother-of-god", "Collect"): (
+            "66d25bf48bd38e85a5d84e16bab3a4cf31372fdb863f56d77a2d6225f462cbd8",
+            "phase4-remaining-three-admission.json",
+            "0ad9032760edc2264256541c6b204f731aa7dcbc00034cce0b8808b6a26193fb",
+        ),
+        ("mary-holy-mother-god", "Collect"): (
+            "b03cb91797b87665e0579551972e38c6f051d52304870e7e40b81f12709551b2",
+            "phase4-remaining-three-admission.json",
+            "7ed2607710f15370a39ed8f57ab638d73ddb8d6c55d4054059e1e4bd829cc63a",
+        ),
+    }
 
     def setUp(self) -> None:
         with self.INVENTORY.open("rb") as handle:
@@ -1061,11 +1112,17 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
         gaps = {self.key(row): row for row in self.data["untranslated"]}
         self.assertEqual(len(self.BOUND), 27)
         self.assertEqual(len(self.QUARANTINED), 16)
-        for key in self.BOUND:
+        self.assertLessEqual(self.UNBOUND, self.BOUND)
+        self.assertLessEqual(set(self.RECOVERED), self.QUARANTINED)
+        self.assertEqual(len(self.STUDY_SUCCESSORS), 3)
+        self.assertLessEqual(set(self.STUDY_SUCCESSORS), self.QUARANTINED)
+        self.assertFalse(set(self.STUDY_SUCCESSORS) & set(self.RECOVERED))
+        for key in (self.BOUND - self.UNBOUND) | set(self.RECOVERED):
             self.assertIn(key, positives)
             self.assertNotIn(key, gaps)
             row = positives[key]
-            self.assertEqual(row["publication_artifact_id"], self.PUBLICATION_ARTIFACT)
+            self.assertEqual(row["publication_artifact_id"],
+                             self.RECOVERED.get(key, self.PUBLICATION_ARTIFACT))
             self.assertEqual(len(row["translations"]), 1)
             self.assertEqual(row["translations"][0]["rights"], "public-domain")
             for field in (
@@ -1076,12 +1133,61 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
                 "publication_passage_id",
             ):
                 self.assertTrue(row.get(field), (key, field))
-        for key in self.QUARANTINED:
+        for key in ((self.QUARANTINED - set(self.RECOVERED)
+                     - set(self.STUDY_SUCCESSORS)) | self.UNBOUND):
             self.assertNotIn(key, positives)
             self.assertIn(key, gaps)
             self.assertEqual(gaps[key]["availability"], "unavailable")
             self.assertEqual(gaps[key]["reason"]["kind"], "no-exemplar")
             self.assertNotIn("text", gaps[key])
+
+    def test_exact_study_successors_preserve_rejected_cummiskey_routes(self) -> None:
+        review_dir = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/postconciliar"
+        decision_path = review_dir / "phase4-first18/root-decision.json"
+        decision_sha256 = "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943"
+        self.assertEqual(hashlib.sha256(decision_path.read_bytes()).hexdigest(), decision_sha256)
+        decision = json.loads(decision_path.read_text())
+        cases = {tuple(case["target"]): case for case in decision["cases"]}
+        positives = {self.key(row): row for row in self.data["entries"]}
+        gaps = {self.key(row): row for row in self.data["untranslated"]}
+        canonical = lambda value: hashlib.sha256(json.dumps(
+            value, sort_keys=True, ensure_ascii=False, separators=(",", ":")
+        ).encode()).hexdigest()
+        for key, (entry_sha256, admission_name, old_gap_sha256) in self.STUDY_SUCCESSORS.items():
+            with self.subTest(target=key):
+                self.assertIn(key, positives)
+                self.assertNotIn(key, gaps)
+                row = positives[key]
+                target = (key[0], "main", key[1], "all", 1)
+                case = cases[target]
+                self.assertEqual(canonical(row), entry_sha256)
+                self.assertEqual(entry_sha256, case["complete_positive_dictionary_sha256"])
+                self.assertEqual(case["decision"], "adopt exact finite English/source scope")
+                self.assertEqual(row["relation"], "variant")
+                self.assertEqual(len(row["translations"]), 1)
+                translation = row["translations"][0]
+                self.assertEqual((translation["lang"], translation["rights"]),
+                                 ("en", "project-created"))
+                self.assertNotIn("source_id", translation)
+                self.assertNotIn("publication_artifact_id", row)
+                self.assertEqual(hashlib.sha256(translation["text"].encode()).hexdigest(),
+                                 case["English_sha256_raw_UTF8"])
+                self.assertEqual(hashlib.sha256(row["ancient_reading"].encode()).hexdigest(),
+                                 case["old_reading_sha256_raw_UTF8"])
+                for field, value in case["source_binding_fields"].items():
+                    self.assertEqual(row[field], value)
+                admission = json.loads((review_dir / admission_name).read_text())
+                self.assertEqual(admission["root_adoption"], {
+                    "path": str(decision_path.relative_to(ROOT)), "sha256": decision_sha256,
+                })
+                old = next(one for one in admission["superseded_unavailable_dictionaries"]
+                           if self.key(one) == key)
+                self.assertEqual(canonical(old), old_gap_sha256)
+                self.assertEqual(old["reason"], {"kind": "no-exemplar"})
+                self.assertNotIn("text", old)
+                if key[0].startswith("mary-"):
+                    self.assertEqual(row["target_qualification"], "official-2008-closing-excerpt-only")
+                    self.assertTrue(translation["text"].endswith("Who with you."))
 
     def test_overbroad_ot25_page_proof_survives_without_a_body(self) -> None:
         proof = (
@@ -1095,6 +1201,191 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
         self.assertEqual(record["artifact_page_ranges"], [[454, 455]])
         self.assertIn("printed pp. 445-446", record["context"])
         self.assertEqual(record["states"][-2:], ["inspected", "verified"])
+
+    def test_ot25_successor_preserves_the_rejected_cummiskey_route(self) -> None:
+        receipt = json.loads((
+            ROOT / "workflows/reviews/missal-english-completion-2026-10-29/"
+            "postconciliar/phase1-admission.json"
+        ).read_text())
+        old = next(row for row in receipt["superseded_unavailable_dictionaries"]
+                   if self.key(row) == ("ot-25", "Entrance Antiphon"))
+        self.assertEqual(old["reason"]["kind"], "no-exemplar")
+        self.assertNotIn("text", old)
+        row = next(row for row in self.data["entries"]
+                   if self.key(row) == ("ot-25", "Entrance Antiphon"))
+        self.assertEqual(row["witness"], "lasance-1945")
+        self.assertEqual(row["printed_page"], "310")
+        self.assertIn("dixit/dicit", row["witness_note"])
+        self.assertNotIn("cummiskey", row["publication_artifact_id"])
+        checker = load_checker()
+        witnesses = {source["id"]: source for source in self.data["sources"]}
+        self.assertEqual(checker.overlay_entry_source_problems(
+            "ot25-successor", row, witnesses), [])
+        self.assertEqual(checker.overlay_entry_publication_problems(
+            "ot25-successor", row, witnesses), [])
+
+    def test_new_historical_bindings_pass_the_readers_own_contract(self) -> None:
+        receipt = json.loads((
+            ROOT / "workflows/reviews/missal-english-completion-2026-10-29/"
+            "postconciliar/phase1-admission.json"
+        ).read_text())
+        keys = ("mass", "form_id", "proper", "cycle", "occurrence")
+        targets = {tuple(target) for target in receipt["new_targets"]}
+        propers = load_propers()
+        witnesses = {source["id"]: source for source in self.data["sources"]}
+        checked = 0
+        for row in self.data["entries"]:
+            target = tuple(row.get(key) for key in keys)
+            if target not in targets or not row.get("publication_artifact_id"):
+                continue
+            with self.subTest(target=target):
+                propers.validate_translation_publication_binding(
+                    row, ROOT / "src/sources/calendars", self.INVENTORY,
+                    witnesses)
+                checked += 1
+        self.assertEqual(checked, 17)
+
+
+class HistoricalAcclamationVerseSuccessorTests(unittest.TestCase):
+    INVENTORY = ROOT / "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+    REVIEW_DIR = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/postconciliar"
+
+    def test_exact_reviewed_verses_pass_the_readers_own_binding_contract(self) -> None:
+        data = tomllib.loads(self.INVENTORY.read_text())
+        review = json.loads((self.REVIEW_DIR / "phase2-acclamations-source-review.json").read_text())
+        fields = ("mass", "form_id", "proper", "cycle", "occurrence")
+        key = lambda row: tuple(row.get(field) for field in fields)
+        entries = {key(row): row for row in data["entries"]}
+        witnesses = {source["id"]: source for source in data["sources"]}
+        propers = load_propers()
+        self.assertEqual(len(review["reviews"]), 5)
+        self.assertEqual(review["distinct_english_body_count"], 3)
+        for accepted in review["reviews"]:
+            with self.subTest(target=accepted["target"]):
+                row = entries[key(accepted["target"])]
+                translation = row["translations"][0]
+                self.assertEqual(hashlib.sha256(translation["text"].encode()).hexdigest(),
+                                 accepted["english_sha256"])
+                self.assertEqual(translation["rights"], "public-domain")
+                propers.validate_translation_publication_binding(
+                    row, ROOT / "src/sources/calendars", self.INVENTORY, witnesses)
+
+    def test_dated_absence_survives_while_its_calendar_note_names_the_successor(self) -> None:
+        receipt = json.loads((self.REVIEW_DIR / "phase2-acclamations-admission.json").read_text())
+        old = next(row for row in receipt["superseded_unavailable_dictionaries"]
+                   if row["mass"] == "easter-2-saturday")
+        self.assertEqual(old["reason"], {"kind": "no-exemplar"})
+        self.assertNotIn("text", old)
+        self.assertIn("No exact English whole-unit exemplar", old["note"])
+        document = yaml.safe_load((ROOT / "src/sources/calendars/postconciliar/propers.yaml").read_text())
+        mass = next(mass for section in document["sections"].values()
+                    for mass in section["masses"] if mass["key"] == "easter-2-saturday")
+        proper = next(row for row in mass["propers"] if row["name"] == "Gospel Acclamation")
+        self.assertIn("Dated 2026-10-29 successor", proper["notes"])
+        self.assertIn("independently image-checked", proper["notes"])
+        self.assertEqual(proper["text_status"]["state"], "unavailable")
+        self.assertNotIn("text", proper)
+        self.assertNotIn("incipit", proper)
+
+
+class Official2008September8OfferingTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = yaml.safe_load((
+            ROOT / "src/sources/calendars/postconciliar/propers.yaml"
+        ).read_text())
+        cls.mass = next(mass for section in cls.document["sections"].values()
+                        for mass in section["masses"]
+                        if mass["key"] == "nativity-blessed-virgin-mary")
+        cls.rows = [proper for proper in cls.mass["propers"]
+                    if proper.get("ordinary_disposition", {}).get("group")
+                    == "september-8-offerings"]
+        cls.overlay = tomllib.loads((ROOT / "src/sources/inventories/"
+                                    "postconciliar-proper-translations-v1.toml").read_text())
+        cls.entry = next(row for row in cls.overlay["entries"]
+                         if row["mass"] == cls.mass["key"]
+                         and row["proper"] == "Prayer over the Offerings")
+        cls.review = json.loads((
+            ROOT / "workflows/reviews/missal-english-completion-2026-10-29/"
+            "postconciliar/phase2-september8-source-review.json"
+        ).read_text())
+
+    def test_official_vel_retains_an_explicit_untranslated_option(self) -> None:
+        self.assertEqual(len(self.rows), 2)
+        self.assertEqual([row["ordinary_disposition"]["option"] for row in self.rows],
+                         ["supplementum-2008", "retained-earlier-option"])
+        self.assertEqual({row["ordinary_disposition"]["kind"] for row in self.rows},
+                         {"alternative"})
+        self.assertEqual(len({row["ordinary_disposition"]["basis"] for row in self.rows}), 1)
+        self.assertIn("bounded minimum", self.rows[0]["ordinary_disposition"]["basis"])
+        retained = self.rows[1]
+        self.assertNotIn("text", retained)
+        self.assertNotIn("incipit", retained)
+        self.assertEqual(retained["text_status"]["reasons"], [{"kind": "no-exemplar"}])
+        gap = next(row for row in self.overlay["untranslated"]
+                   if row["mass"] == self.mass["key"] and row["proper"] == retained["name"])
+        self.assertEqual(gap["reason"], {"kind": "no-exemplar"})
+        self.assertNotIn("text", gap)
+
+    def test_the_body_and_ancient_reading_match_the_independent_review(self) -> None:
+        self.assertEqual(hashlib.sha256(self.entry["translations"][0]["text"].encode()).hexdigest(),
+                         self.review["draft_english_sha256"])
+        self.assertEqual(hashlib.sha256(self.entry["ancient_reading"].encode()).hexdigest(),
+                         self.review["ancient_reading_sha256"])
+        self.assertEqual(self.entry["translations"][0]["rights"], "project-created")
+        self.assertNotIn("source_id", self.entry["translations"][0])
+        self.assertIn("both C and O", self.entry["divergence"])
+
+    def test_exact_2008_claim_is_bounded_to_the_official_excerpt(self) -> None:
+        path = ROOT / "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/english-completion-20261029-postconciliar-phase2-sept8-offering-and-insertion.toml"
+        record = tomllib.loads(path.read_text())
+        self.assertEqual(record["id"], self.entry["target_witness_passage_id"])
+        self.assertEqual(record["artifact_page_ranges"], [[55, 56], [67, 67]])
+        self.assertEqual(record["artifact_sha256"], self.review["verified_sources"][0]["sha256"])
+        self.assertEqual(self.entry["target_qualification"], "official-2008-bounded-excerpt")
+        self.assertIn("No whole-book authentication", record["notes"])
+        self.assertNotIn("text", record)
+
+    def test_new_offering_choices_stay_between_gospel_and_communion(self) -> None:
+        names = [proper["name"] for proper in self.mass["propers"]]
+        first = names.index("Prayer over the Offerings")
+        self.assertEqual(names[first - 1], "Gospel (shorter form)")
+        self.assertEqual(names[first + 1], "Prayer over the Offerings (retained option)")
+        self.assertEqual(names[first + 2], "Communion Antiphon")
+        self.assertTrue(all("text" not in row for row in self.rows))
+
+    def offering_seating(self):
+        ordinary = load_ordinary()
+        inventory = tomllib.loads((ROOT / "src/sources/inventories/"
+                                   "postconciliar-ordo-missae-v1.toml").read_text())
+        return ordinary, {"slots": inventory["slots"]}
+
+    def test_current_source_declares_the_exact_retained_offering_seat(self) -> None:
+        ordinary, model = self.offering_seating()
+        slot = next(row for row in model["slots"] if row["key"] == "super-oblata")
+        self.assertEqual(slot["propers"], [row["name"] for row in self.rows])
+        self.assertFalse(slot.get("qualified", False))
+        self.assertIn("artifact pp. 55-56", slot["locus"])
+        ordinary._check_legacy_form_seating(model, self.rows, "September8", full=True)
+        self.assertEqual(len({ordinary.proper_slot(model["slots"], row["name"])
+                              for row in self.rows}), 1)
+
+    def test_unknown_offering_qualifier_remains_unseated(self) -> None:
+        ordinary, model = self.offering_seating()
+        rows = copy.deepcopy(self.rows)
+        rows[1]["name"] = "Prayer over the Offerings (unproved option)"
+        with self.assertRaisesRegex(ordinary.SourceError, "no usable Ordinary seat"):
+            ordinary._check_legacy_form_seating(model, rows, "September8", full=True)
+
+    def test_retained_offering_cannot_move_to_another_ordinary_seat(self) -> None:
+        ordinary, model = self.offering_seating()
+        retained_name = self.rows[1]["name"]
+        offering = next(row for row in model["slots"] if row["key"] == "super-oblata")
+        after_communion = next(row for row in model["slots"] if row["key"] == "post-communionem")
+        offering["propers"].remove(retained_name)
+        after_communion["propers"].append(retained_name)
+        with self.assertRaisesRegex(ordinary.SourceError, "spans Ordinary slots"):
+            ordinary._check_legacy_form_seating(model, self.rows, "September8", full=True)
 
 
 if __name__ == "__main__":

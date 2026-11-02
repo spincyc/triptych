@@ -1,0 +1,97 @@
+{
+  "chunks": [
+    {
+      "kind": "copied-raw-ocr",
+      "output_byte_range_0": [
+        0,
+        73108
+      ],
+      "sha256": "a8c16b45e8599fa515b2d0690cc2b446db34fbc8756f590ce7b5f3ab5b91dd21",
+      "source_byte_range_0": [
+        0,
+        73108
+      ]
+    },
+    {
+      "kind": "explicit-character-page-patch",
+      "leaf": 26,
+      "output_byte_range_0": [
+        73108,
+        79294
+      ],
+      "output_sha256": "c963e025e5eee2feb0ed5f03fb1de9093d9ccdd0f337948bfbe2e4764b008f54",
+      "source_byte_range_0": [
+        73108,
+        79419
+      ],
+      "source_sha256": "ee2578abd956ce172fde98d80050cce6860a1d3856e215ba8245b197d295d109"
+    },
+    {
+      "kind": "copied-raw-ocr",
+      "output_byte_range_0": [
+        79294,
+        79296
+      ],
+      "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+      "source_byte_range_0": [
+        79419,
+        79421
+      ]
+    },
+    {
+      "kind": "explicit-character-page-patch",
+      "leaf": 27,
+      "output_byte_range_0": [
+        79296,
+        86046
+      ],
+      "output_sha256": "dc4b0043c3f866e5766f3861199e6071385f5663971936de1f9915f3fd8944e3",
+      "source_byte_range_0": [
+        79421,
+        86305
+      ],
+      "source_sha256": "9ed7e4325b54f0f55b0c11239675ddc9ddc7b93d91135c291171eeda937768ba"
+    },
+    {
+      "kind": "copied-raw-ocr",
+      "output_byte_range_0": [
+        86046,
+        86049
+      ],
+      "sha256": "6a3cf5192354f71615ac51034b3e97c20eda99643fcaf5bbe6d41ad59bd12167",
+      "source_byte_range_0": [
+        86305,
+        86308
+      ]
+    },
+    {
+      "kind": "explicit-character-page-patch",
+      "leaf": 28,
+      "output_byte_range_0": [
+        86049,
+        91988
+      ],
+      "output_sha256": "0d2713158d2987a7c31958812949b3f4dfce83bff93f72aac26a493dff783fc5",
+      "source_byte_range_0": [
+        86308,
+        92373
+      ],
+      "source_sha256": "831e803aa939aef77241b958befd9a70749053698e3ca48aa5e5baa96be7e456"
+    },
+    {
+      "kind": "copied-raw-ocr",
+      "output_byte_range_0": [
+        91988,
+        2862647
+      ],
+      "sha256": "e624147308702b96088b8bdf9a202fc4af675435dbfda03be30662671d267682",
+      "source_byte_range_0": [
+        92373,
+        2863032
+      ]
+    }
+  ],
+  "output_sha256": "146a891e26c4583b2b929c9fe70c30bd86fad0b0ca2552c236657d37b7cf1eea",
+  "schema": "triptych-bullarium-character-byte-map/v1",
+  "source_sha256": "d9042ad44ad3d0249d8c3c45e2e13c738a189d97cfdc5bdb6883748e84a16429"
+}

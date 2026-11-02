@@ -1,0 +1,334 @@
+# Vatican mechanical reading editions: replacement visual review batch 17
+
+Reviewed 2026-10-26. Replacement receipt SHA-256: `0a3cba767175a1675173fd0271262e44fa3546272910c04c11f8012acb92529f`.
+
+Coverage: **19 PDFs / 66 physical pages: 58 newly individually inspected at original raster detail and 8 exact prior PNG reuses**. Every physical page is accounted for; contact sheets were not substituted. All 19 current PDF hashes, 66 PNG hashes and prior PNG/report hashes supporting the eight reuses independently matched. Embedded-font outputs have no font flags.
+
+**Disposition: 18 PASS; 1 CHANGES_REQUIRED (Mens Nostra).** Visible glyphs, clipping, gutters, column flow, heading chains, closing/date/subscription groups and final notices were inspected. Complete substantial paragraphs, subscriptions and historical notes may end naturally with white space. Source transcription anomalies remain qualified witness readings.
+
+This establishes visual usability of declared corpus witnesses, not comprehensive OCR accuracy, historical-print collation, a legal rights conclusion or a new theological argument. No PDF, source payload, generator or raster was changed.
+
+## 01. Arcano Divinae
+
+- Work: `papal.pius-ix.litterae-apostolicae-arcano-divinae-8-septembris-1868`; language: `la`.
+- Current PDF SHA-256: `02834f1547738253207528483be128bac6a72259bbdf92a7e5353ce4d09b1361`.
+- Prior PDF SHA-256: `f2fa6bde138ffdccbcd4013839b694874891fae37c1199dd15ff6381ddbfa201`; prior disposition: **CHANGES_REQUIRED**, preserved as history.
+- Covered physical pages: 1–1; newly individually opened: 1; exact prior PNG reuse: none.
+- Prior review: [vatican-visual-01.md](vatican-visual-01.md).
+- Current disposition: **PASS**.
+
+Complete body, dating clause, Source/revision notice and rights colophon now fit on one substantive page; former protocol-only spill resolved.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 02. Misericors Dei Filius
+
+- Work: `papal.leo-xiii.hf-l-xiii-apc-18830530-misericors-dei-filius`; language: `la`.
+- Current PDF SHA-256: `88f818ea7f6d15f8bc8d48d16f73c4b4b5a9b28dec5ebb2345810fa7368453c7`.
+- Prior PDF SHA-256: `8d63ea15a7773ec471615b2726be81d26f209e1857b182ca58fe4a8aa7182d48`; prior disposition: **CHANGES_REQUIRED**, preserved as history.
+- Covered physical pages: 1–4; newly individually opened: 1, 4; exact prior PNG reuse: 2, 3.
+- Prior review: [vatican-visual-04.md](vatican-visual-04.md).
+- Current disposition: **PASS**.
+
+Corrected title reads Misericors Dei Filius. Operative closing, dating, subscriptions and final Source notice are clear; unchanged middle pages use exact prior PNG evidence.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 03. Pergrata
+
+- Work: `papal.leo-xiii.hf-l-xiii-enc-14091886-pergrata`; language: `la`.
+- Current PDF SHA-256: `0c8e77fdecb93befcf40e13293c169dd2854a54ea794929128d10c0783305e53`.
+- Prior PDF SHA-256: `6260ba0a91f559104313cb136ca2c3cd119427afdea6c8921ddee6facfbf5f8e`; prior disposition: **PASS**, preserved as history.
+- Covered physical pages: 1–4; newly individually opened: 1, 4; exact prior PNG reuse: 2, 3.
+- Prior review: [vatican-visual-01.md](vatican-visual-01.md).
+- Current disposition: **PASS**.
+
+Title date 1886-09-14 agrees with visible die 14 Septembris closing. Source notice explains reviewed date resolution with duplicate project notice removed. Complete blessing, dating, signature and colophon share the final page.
+
+## 04. Ad Extremas
+
+- Work: `papal.leo-xiii.hf-l-xiii-enc-24061893-ad-extremas`; language: `la`.
+- Current PDF SHA-256: `1632d5eb77f06efe1b3eb6cc9ca4aa89417a9f656eea49f1877895028b50bbc5`.
+- Prior PDF SHA-256: `9f4be820a0d04d51509c8345a6bb0caf49e217d5d2849bddb2b6fedf780b4c24`; prior disposition: **PASS**, preserved as history.
+- Covered physical pages: 1–2; newly individually opened: 1, 2; exact prior PNG reuse: none.
+- Prior review: [vatican-visual-01.md](vatican-visual-01.md).
+- Current disposition: **PASS**.
+
+Title date 1893-06-24 agrees with visible closing; source-proof URL wraps legibly. Both columns and complete final notices are unclipped.
+
+## 05. Provida Matris
+
+- Work: `papal.leo-xiii.hf-l-xiii-brief-18950505-provida-matris`; language: `la`.
+- Current PDF SHA-256: `6ab66d2f72bef336ce0c27980c304911ffc8bff7e4f6c47e44748ef2dc114338`.
+- Prior PDF SHA-256: `73140d9eb25b0d32a0cdadba928095ad0c51696b4da1c4f48072cdf7895ae104`; prior disposition: **CHANGES_REQUIRED**, preserved as history.
+- Covered physical pages: 1–2; newly individually opened: 1, 2; exact prior PNG reuse: none.
+- Prior review: [vatican-visual-02.md](vatican-visual-02.md).
+- Current disposition: **PASS**.
+
+Title date 1895-05-05 agrees with die V Maii closing. Source notice explains index date conflict. Complete concluding paragraph, date and subscription remain together.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 06. Unitatis christianae
+
+- Work: `papal.leo-xiii.hf-l-xiii-apl-18950611-unitatis-christianae`; language: `la`.
+- Current PDF SHA-256: `cb79ce0c24640e6f49a94915fb8832532ae750b8bc1ef02c03ffc4362bc6350e`.
+- Prior PDF SHA-256: `7daa60c8a6726518703506daf2fcfc6bfd38076f108939c272bd4323b2c3579c`; prior disposition: **CHANGES_REQUIRED**, preserved as history.
+- Covered physical pages: 1–3; newly individually opened: 1, 2, 3; exact prior PNG reuse: none.
+- Prior review: [vatican-visual-13.md](vatican-visual-13.md).
+- Current disposition: **PASS**.
+
+All three pages opened. Final page has a complete substantial concluding paragraph, intact date/signature and apparatus, resolving former signature-only spill. Natural white space accepted.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 07. Tametsi Futura Prospicientibus
+
+- Work: `papal.leo-xiii.hf-l-xiii-enc-01111900-tametsi-futura-prospicientibus`; language: `la`.
+- Current PDF SHA-256: `9a90079eece1d3d945f27e13887ab17d4afbb81941a01ecda5447baa125ccb84`.
+- Prior PDF SHA-256: `17a448c30b7ef4d4a1704d10d8cc5993af04329cc7d2ae0ddda47461766b9270`; prior disposition: **CHANGES_REQUIRED**, preserved as history.
+- Covered physical pages: 1–5; newly individually opened: 1, 2, 3, 4, 5; exact prior PNG reuse: none.
+- Prior review: [vatican-visual-12.md](vatican-visual-12.md).
+- Current disposition: **PASS**.
+
+All five pages opened. Old six-page protocol spill consolidated: complete concluding blessing, dating, subscription and final apparatus share substantive page 5.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 08. Quum, arcano
+
+- Work: `papal.pius-x.hf-p-x-apl-19040211-quum-arcano`; language: `la`.
+- Current PDF SHA-256: `22893d4fbfc4923258ca1c4961ca74e2e3752ea16954e000e4d3c882ae0d0b63`.
+- Prior PDF SHA-256: `b0340799ac5971be1cadf7a993958d6db09730d8866143d75abde7956ab31090`; prior disposition: **CHANGES_REQUIRED**, preserved as history.
+- Covered physical pages: 1–2; newly individually opened: 2; exact prior PNG reuse: 1.
+- Prior review: [vatican-visual-12.md](vatican-visual-12.md).
+- Current disposition: **PASS**.
+
+Stray standalone comma absent. Complete closing/date/subscriptions clear. Source notice explicitly describes punctuation exclusion and omitted journal registry tail. Page 1 uses exact prior evidence.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 09. Dei providentis benignitatem
+
+- Work: `papal.pius-x.hf-p-x-motu-proprio-19060716-dei-providentis-benignitatem`; language: `la`.
+- Current PDF SHA-256: `4da446ee9d406b6e3de2ea15bfc9fc67ad8b37684220ca529e3a9169cf36ef86`.
+- Prior PDF SHA-256: `3d264e96241ba97ec803732b0b9c05df8d6469d69dc040585b68960ebce0be73`; prior disposition: **PASS**, preserved as history.
+- Covered physical pages: 1–2; newly individually opened: 2; exact prior PNG reuse: 1.
+- Prior review: [vatican-visual-03.md](vatican-visual-03.md).
+- Current disposition: **PASS**.
+
+Final historical notes substantial and legible. Source notice identifies N.R. editorial apparatus and reviewed citation with ordinary spaces. Page 1 uses exact prior evidence.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 10. Sanctos inter
+
+- Work: `papal.pius-x.hf-p-x-apl-19080918-sanctos-inter`; language: `la`.
+- Current PDF SHA-256: `46909e9ad2726ef706645c238dc1605a25f7cb2422888141b1a675e3914e46e4`.
+- Prior PDF SHA-256: `86909883caf7008bba9f1e7fba1c92bf8b0bc34db5a6d1cd3deb64743ee87b77`; prior disposition: **PASS**, preserved as history.
+- Covered physical pages: 1–3; newly individually opened: 3; exact prior PNG reuse: 1, 2.
+- Prior review: [vatican-visual-01.md](vatican-visual-01.md).
+- Current disposition: **PASS**.
+
+Final operative paragraph, date and Merry del Val subscription clear. Bibliography notice now has ordinary readable spaces. Pages 1–2 use exact prior evidence.
+
+## 11. In sublimi
+
+- Work: `papal.pius-x.hf-p-x-apl-19080919-in-sublimi`; language: `la`.
+- Current PDF SHA-256: `4ae0c60c4284ae29020023838d6ec8d551696c1e184ec7e0197f8cb6580a6087`.
+- Prior PDF SHA-256: `c396c049a248cb4ddc9f5b679c1d97a571ef663fdbdcc905c83d251607b24498`; prior disposition: **PASS**, preserved as history.
+- Covered physical pages: 1–1; newly individually opened: 1; exact prior PNG reuse: none.
+- Prior review: [vatican-visual-05.md](vatican-visual-05.md).
+- Current disposition: **PASS**.
+
+Complete one-page act and notices legible. Source-notice volume/date/page explanation has readable spaces.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 12. Ordo Servandus in sacris Congregationibus, Tribunalibus, Officiis Romanae Curiae - Normae peculiares
+
+- Work: `papal.pius-x.hf-p-x-apc-19080629-ordo-servandus-normae-2`; language: `la`.
+- Current PDF SHA-256: `4ec2c6c3e3806acbfe1b243b821e83ffdb092c87aac8c40fa294aa89085391cd`.
+- Prior PDF SHA-256: `e966392298dc20a84d6755f3306d896b5d5c841f95630555ccb282406c568f99`; prior disposition: **CHANGES_REQUIRED**, preserved as history.
+- Covered physical pages: 1–12; newly individually opened: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12; exact prior PNG reuse: none.
+- Prior review: [vatican-visual-07.md](vatican-visual-07.md).
+- Current disposition: **PASS**.
+
+All 12 pages opened. Chapter/article chains retain following source text, including ART.II p 2 and APPENDIX/title/first clause p 11. P 12 has substantial final regulation text, complete date/subscription and notice identifying regulation constituent signed on special papal mandate. No standalone heading remains.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 13. Satis constat
+
+- Work: `papal.pius-x.hf-p-x-apl-19081016-satis-constat`; language: `la`.
+- Current PDF SHA-256: `abcedc8b31b553956c6e3bdbfca57d2ddd75f8b7fafb57ec9b79bad0910fcd1f`.
+- Prior PDF SHA-256: `4368e873f023ccabde3ea2bceb581cb98b16ed31461831bd681b3daf98dd3a5f`; prior disposition: **PASS**, preserved as history.
+- Covered physical pages: 1–1; newly individually opened: 1; exact prior PNG reuse: none.
+- Prior review: [vatican-visual-04.md](vatican-visual-04.md).
+- Current disposition: **PASS**.
+
+Complete one-page act, long heading, closing/subscription and notices readable. Source notice separates AAS volume IV, dates 1909 and AAS volume  1.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 14. Decessorum Nostrorum
+
+- Work: `papal.pius-x.hf-p-x-apl-19100907-decessorum-nostrorum`; language: `la`.
+- Current PDF SHA-256: `f66f87543cab138647a39819ae4714dd5a0054676e9925d23b73d535cf9a508f`.
+- Prior PDF SHA-256: `478315f41f1dad577a5e04d399c266696d7adfc39c46db7924dac1bf401614ac`; prior disposition: **CHANGES_REQUIRED**, preserved as history.
+- Covered physical pages: 1–1; newly individually opened: 1; exact prior PNG reuse: none.
+- Prior review: [vatican-visual-08.md](vatican-visual-08.md).
+- Current disposition: **PASS**.
+
+Complete act fits one substantive page, including reviewed closing/date, full Merry del Val subscription and notices; former closing spill resolved.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 15. Divino afflatu
+
+- Work: `papal.pius-x.hf-p-x-apc-19111101-divino-afflatu`; language: `la`.
+- Current PDF SHA-256: `d3b81ffd6ec57f03436baf4549830fe8d1e12d77d8e3b91b10879e0b37a89bc3`.
+- Prior PDF SHA-256: `8de4026f110948e8b9e4cd80f077fa662d2e6927a5ea5d4563f3cfd91fbb4008`; prior disposition: **CHANGES_REQUIRED**, preserved as history.
+- Covered physical pages: 1–6; newly individually opened: 1, 2, 3, 4, 5, 6; exact prior PNG reuse: none.
+- Prior review: [vatican-visual-04.md](vatican-visual-04.md).
+- Current disposition: **PASS**.
+
+All six pages opened. Rubricae and every Titulus heading retain following source text across new pagination. Final historical annex and quotation extent clear. Source notice qualifies historical documentary annexes and full printing extent.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 16. Singulari quadam
+
+- Work: `papal.pius-x.hf-p-x-enc-24091912-singulari-quadam`; language: `la`.
+- Current PDF SHA-256: `3075b7d16fd5f2b0018cdef832dd8789cd8491c10c8a6ad2bb453b63276f60e9`.
+- Prior PDF SHA-256: `468b21f8b2024fa25f18a60d8b8911de529041c25cb1c2d499731d1d71d24273`; prior disposition: **CHANGES_REQUIRED**, preserved as history.
+- Covered physical pages: 1–2; newly individually opened: 1, 2; exact prior PNG reuse: none.
+- Prior review: [vatican-visual-01.md](vatican-visual-01.md).
+- Current disposition: **PASS**.
+
+Both pages opened. Former third-page dating/subscription spill consolidated on substantive page 2 with full conclusion, date, signature, reference and notices.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 17. Humani Generis Redemptionem
+
+- Work: `papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem`; language: `la`.
+- Current PDF SHA-256: `ce424f50cdab8f476e672123665a1e6864415500b271413f6efaa5fff5f1616f`.
+- Prior PDF SHA-256: `dc8d3a62c0376d1da1e8b28915c43bd99f722dce55c3e9d1feed62253364a5b6`; prior disposition: **CHANGES_REQUIRED**, preserved as history.
+- Covered physical pages: 1–5; newly individually opened: 1, 2, 3, 4, 5; exact prior PNG reuse: none.
+- Prior review: [vatican-visual-10.md](vatican-visual-10.md).
+- Current disposition: **PASS**.
+
+All five pages opened. Full prose and closing/date/subscription readable. Final page has 26 substantial historical references and complete notices; natural historical-note ending accepted.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 18. Decor Carmeli
+
+- Work: `papal.pius-xi.hf-p-xi-apl-19290609-decor-carmeli`; language: `la`.
+- Current PDF SHA-256: `84ed9aa3ac3073f5bf1f1a662d148280a0058e9ead6a9bfec2d766150cb80d7b`.
+- Prior PDF SHA-256: `951063b985a0e5fd7a62a28908cca0defe031b47aa011af4709c7124a442f8f0`; prior disposition: **CHANGES_REQUIRED**, preserved as history.
+- Covered physical pages: 1–3; newly individually opened: 1, 2, 3; exact prior PNG reuse: none.
+- Prior review: [vatican-visual-08.md](vatican-visual-08.md).
+- Current disposition: **PASS**.
+
+All three pages opened. Final page retains complete substantial operative paragraph, full dating/subscription and notices; no tiny terminal fragment.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## 19. Mens Nostra
+
+- Work: `papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra`; language: `la`.
+- Current PDF SHA-256: `6b1c229e2fada7244c474f7ca881b53df5d62784ba148fe717ab57c727c5d376`.
+- Prior PDF SHA-256: `d4f82644c9f6bd97ebbc533f1060d62c51092b5197d1c49da885481cb21af740`; prior disposition: **CHANGES_REQUIRED**, preserved as history.
+- Covered physical pages: 1–7; newly individually opened: 1, 2, 3, 4, 5, 6, 7; exact prior PNG reuse: none.
+- Prior review: [vatican-visual-16.md](vatican-visual-16.md).
+- Current disposition: **CHANGES_REQUIRED**.
+
+All seven pages opened. Fonts, prose, closing/date/signature, notes and final notices readable. Residual standalone bottom-left-column headings on physical pp 3 and 4 require repair. P 3 right-column S. Ignatius de Loyola has only one following bodyline; include this heading chain in repair.
+
+Required correction on physical p3: Standalone section heading Exercitia spiritualia in ecclesiae historia. at bottom of left column; subordinate heading/body begin in right column. Evidence PNG SHA-256 `76cbfa1a98995e64ee0f5f1b5cafdafd4034843fc6e027a03a9a9353c52f7398`.
+
+Required correction on physical p4: Standalone section heading Exercitia spiritualia pro variis hominum classibus. at bottom of left column; following paragraph starts in right column. Evidence PNG SHA-256 `fd8b08c58db60b6d5405f3dd7506e0e4de646d5eec4556acded34733ff71599a`.
+
+Prior findings remain in aggregate history; replacement disposition described above.
+
+## Exact page evidence
+
+Each listed PNG was individually opened with view_image at original detail. Paths and full PDF bindings are in the scratch ledger.
+
+| Work ID | Page | PNG SHA-256 |
+| --- | ---: | --- |
+| `papal.pius-ix.litterae-apostolicae-arcano-divinae-8-septembris-1868` | 1 | `79511e40f002d6acf87707c1e364f739af1a55bc16eb5136b51e04e52b2afd2b` |
+| `papal.leo-xiii.hf-l-xiii-apc-18830530-misericors-dei-filius` | 1 | `820c85c9e2557fefe53f988934170321d14a8c2fbd84c76318eaa9e9d26c9977` |
+| `papal.leo-xiii.hf-l-xiii-apc-18830530-misericors-dei-filius` | 4 | `bc3c61c731d9abbe7ac364df597d8c237c52a5901b9d822472f291981e35070d` |
+| `papal.leo-xiii.hf-l-xiii-enc-14091886-pergrata` | 1 | `90d4c3b1a639c4ea048fd8a7760a2747884299c438836d21e1a6f2f085e00d2d` |
+| `papal.leo-xiii.hf-l-xiii-enc-14091886-pergrata` | 4 | `39d7302fe33036eb0988e8c06516bc8aeee8f9f0754f0cb58505b1e000eb2c41` |
+| `papal.leo-xiii.hf-l-xiii-enc-24061893-ad-extremas` | 1 | `c6d25c341306f7a9890aa512a5e1f16a7505397e98be563ff87608098fc08b87` |
+| `papal.leo-xiii.hf-l-xiii-enc-24061893-ad-extremas` | 2 | `426d86cdebb942b84d80cf2b7cbf6e3adcb09776dbb2e7e7c7315a3bb850f68f` |
+| `papal.leo-xiii.hf-l-xiii-brief-18950505-provida-matris` | 1 | `3196e306191337251d7abd8e0218beef5c6a85225c5b4bb8b3dedcf0a82cfc76` |
+| `papal.leo-xiii.hf-l-xiii-brief-18950505-provida-matris` | 2 | `8d4c2c16fc36411f043084e06ce5e461d01aceb9d09d4f29622464c238d7c2ce` |
+| `papal.leo-xiii.hf-l-xiii-apl-18950611-unitatis-christianae` | 1 | `194c0bbaf4e4ff39fab874d29865c2be002d711402229bfec47fd18d9f1ae9bd` |
+| `papal.leo-xiii.hf-l-xiii-apl-18950611-unitatis-christianae` | 2 | `01158159bf81c6af658ff38c58f3982ab5d8a389f677b4f3a66ebb3ca485f172` |
+| `papal.leo-xiii.hf-l-xiii-apl-18950611-unitatis-christianae` | 3 | `a65d0a7edc56f4520fe9d61b9f35250832a2983d3ae9921b27dbad9e40887890` |
+| `papal.leo-xiii.hf-l-xiii-enc-01111900-tametsi-futura-prospicientibus` | 1 | `1c0f5a971ddb2d0c84fc8c366b55b6522f687efb0f819e6fc367a2b6f57f463a` |
+| `papal.leo-xiii.hf-l-xiii-enc-01111900-tametsi-futura-prospicientibus` | 2 | `1e313d7f1666c29c990e6f90e6c94e9dd7c3d9f4658d31aba82117e54b376bca` |
+| `papal.leo-xiii.hf-l-xiii-enc-01111900-tametsi-futura-prospicientibus` | 3 | `34f7074a61549623bb5db1b76dda5d321e2f7fe046822244615767e9e8a2bf6d` |
+| `papal.leo-xiii.hf-l-xiii-enc-01111900-tametsi-futura-prospicientibus` | 4 | `b9fe4db632888b150412d34fc05b94c198944c0ec6f8eec34f70289641e533b8` |
+| `papal.leo-xiii.hf-l-xiii-enc-01111900-tametsi-futura-prospicientibus` | 5 | `bcf50921ab085dcc097bd4656c3f3f6b989bba749d693232faf5f71f111b6d70` |
+| `papal.pius-x.hf-p-x-apl-19040211-quum-arcano` | 2 | `2d94b91281d2e6bbeca738e3ffce74a227dfb2bc2bb2145b929f59c1aaabe0c4` |
+| `papal.pius-x.hf-p-x-motu-proprio-19060716-dei-providentis-benignitatem` | 2 | `67b72ceb8250dd8662e20cdc158c1fa0babc6dc5fdda3b57c840dd88d86c4c06` |
+| `papal.pius-x.hf-p-x-apl-19080918-sanctos-inter` | 3 | `677aeff93e66247622e0ad21f6740b5550c1b0db34ab40a2a03952af4b0811fb` |
+| `papal.pius-x.hf-p-x-apl-19080919-in-sublimi` | 1 | `55c8c34ca76c7faaac7d08449eb9812478fc4b3dc18ccb559c2289eecf6f21d6` |
+| `papal.pius-x.hf-p-x-apc-19080629-ordo-servandus-normae-2` | 1 | `31bf1117659349e83c99d3242181e9e15afc8da43425202fde266f5824565220` |
+| `papal.pius-x.hf-p-x-apc-19080629-ordo-servandus-normae-2` | 2 | `90b70edd34e4129018c312b75806d442e6a4c595d964f2fa3d99979d0aa9cc9f` |
+| `papal.pius-x.hf-p-x-apc-19080629-ordo-servandus-normae-2` | 3 | `3a42fc89c5bf68f7d18c5623065a148f975f2c147d17817c96851c1c0244da96` |
+| `papal.pius-x.hf-p-x-apc-19080629-ordo-servandus-normae-2` | 4 | `e0de9c87ac8a03115dd4fe61910e7d252c8f1a3b94554e3456563a177dde34bb` |
+| `papal.pius-x.hf-p-x-apc-19080629-ordo-servandus-normae-2` | 5 | `cc1eb2c3a6446bd7e6878497eb3761ebaba5946b7a383443519862e84b52f2dc` |
+| `papal.pius-x.hf-p-x-apc-19080629-ordo-servandus-normae-2` | 6 | `8f89e3a10fe1ecb598e247bb27c02108c722953b00e70aabfd7c4e9e47524203` |
+| `papal.pius-x.hf-p-x-apc-19080629-ordo-servandus-normae-2` | 7 | `e9d87f8720e18cccb04624871c5ebfa3e9e8980d5707f746f2c06672e98f8e49` |
+| `papal.pius-x.hf-p-x-apc-19080629-ordo-servandus-normae-2` | 8 | `534a6646fae6cc23f9e7edd1675ef46f96f59c3bc667570493adcbe1782be889` |
+| `papal.pius-x.hf-p-x-apc-19080629-ordo-servandus-normae-2` | 9 | `4192cab063ca6148bbd40f7e0fc4420a7be019989b239625789f2811eaa98991` |
+| `papal.pius-x.hf-p-x-apc-19080629-ordo-servandus-normae-2` | 10 | `f32f308ab3685225f3f2b0294173fceb70f19a97553fbb1a36713a5e1f90b7e9` |
+| `papal.pius-x.hf-p-x-apc-19080629-ordo-servandus-normae-2` | 11 | `159565b92eda56e0c1d04a25450eca5e54df7c96f4709cd30343dcbaf148490f` |
+| `papal.pius-x.hf-p-x-apc-19080629-ordo-servandus-normae-2` | 12 | `f1a8a6ca029d27e930046d1a25516ac72a119288fc20c8ef67e189aca8388dea` |
+| `papal.pius-x.hf-p-x-apl-19081016-satis-constat` | 1 | `4c271981e73630a41d6ea6ebcfff9e2e016fa88243dc539ca99eb4b3f84ea419` |
+| `papal.pius-x.hf-p-x-apl-19100907-decessorum-nostrorum` | 1 | `6c2481275405c42ea42f1780c56e44b524ee5c652e2c669ca71e3b4c0036d3ff` |
+| `papal.pius-x.hf-p-x-apc-19111101-divino-afflatu` | 1 | `3be9211477a5518e09d3c0a200b96a1577edc86a50fe7849174aaf684c45f47c` |
+| `papal.pius-x.hf-p-x-apc-19111101-divino-afflatu` | 2 | `0c848c4e4720d3de81942029a4c3d1a2fba7b8d74932eab025d10fe14a813ce3` |
+| `papal.pius-x.hf-p-x-apc-19111101-divino-afflatu` | 3 | `5d7ecca3a9e1b7f96b69183e23ec91f2d59e5e289dd122490dd5c82543853191` |
+| `papal.pius-x.hf-p-x-apc-19111101-divino-afflatu` | 4 | `6b91fa3dcecd149ddb2b7a15487fa29798ecfba1361fda3ab2bfdd4b3e14c125` |
+| `papal.pius-x.hf-p-x-apc-19111101-divino-afflatu` | 5 | `1c2ab0afad1351eec03b76f676ec8d4329008d2248871997d460451b91ea8342` |
+| `papal.pius-x.hf-p-x-apc-19111101-divino-afflatu` | 6 | `e461ab117050ce290f87851905ce9beb19a43a2886e9de48d649b2a19879e87d` |
+| `papal.pius-x.hf-p-x-enc-24091912-singulari-quadam` | 1 | `3281a5d4d9fcb4a220bc0ba66ecad29aed7053b62aef23ff21f9932d57c6ad48` |
+| `papal.pius-x.hf-p-x-enc-24091912-singulari-quadam` | 2 | `b7baaef582d636bd22584925dcf0239d8482635721268977cd665498c932c98b` |
+| `papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem` | 1 | `6d016c380946e64f954975f4f2d60de4f1feeeb63e17163acc5771e355ba3364` |
+| `papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem` | 2 | `282bf5bf338b12de3a43eb824095c18089d57776519118683de333c4172424fc` |
+| `papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem` | 3 | `55483d09e0e8d12b8aee5cfd3ef016485959bec413a14238a67aa5e2f60f3641` |
+| `papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem` | 4 | `d035a713d1df2fb2037d7ecda13fb9acb773354b0c125086898dea8bb964eab1` |
+| `papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem` | 5 | `e62ed3ad92fdc342ca50d4121ef430253c639c450923899c6e4ce13b7e6a7865` |
+| `papal.pius-xi.hf-p-xi-apl-19290609-decor-carmeli` | 1 | `8afee3dbbceccfc74fb5d14451e0074b740e68dcc87b9aa3785e1009dd6de4f3` |
+| `papal.pius-xi.hf-p-xi-apl-19290609-decor-carmeli` | 2 | `73239e94ee840ba843d6756c9c39fb714e20cb47fd34941d1475e3ba825ef0e6` |
+| `papal.pius-xi.hf-p-xi-apl-19290609-decor-carmeli` | 3 | `0daf1dca01f96336d1709e68c3b84d6aa6f43057b67bc7b06fe509112d451ffd` |
+| `papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra` | 1 | `da0e9f4962658717e218ace35bf32181e70cbbc06d5df6f6aedafdb81045ed14` |
+| `papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra` | 2 | `42d8657d0ccf7a2b907fed717f16e148d93c95279297665657e7ac51aeb9788f` |
+| `papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra` | 3 | `76cbfa1a98995e64ee0f5f1b5cafdafd4034843fc6e027a03a9a9353c52f7398` |
+| `papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra` | 4 | `fd8b08c58db60b6d5405f3dd7506e0e4de646d5eec4556acded34733ff71599a` |
+| `papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra` | 5 | `9580fb750656d433285ffaed9d74f06e8cf9221a485b7eabf26346aab55a3ff9` |
+| `papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra` | 6 | `10abf35257250dc6e0f113f00da1a8bdcf552a0ff60d0270adbf096592cb2740` |
+| `papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra` | 7 | `2d63a71b9a3c50a0a75d83e0023a3cc9153ae9489dca25d91a80b92b2e804054` |
+
+## Exact reused-page evidence
+
+Only exact SHA-256 equality of current/prior PNG bytes permits reuse. Every prior-report hash was independently checked. These are prior individual inspections, not new views.
+
+| Work ID | Page | Equal PNG SHA-256 | Prior PDF SHA-256 | Prior report | Prior report SHA-256 |
+| --- | ---: | --- | --- | --- | --- |
+| `papal.leo-xiii.hf-l-xiii-apc-18830530-misericors-dei-filius` | 2 | `2b81adffde03236e03735d9e0c5f00ed905a49ce3a9576d21d0ffa4780dfd7f4` | `8d63ea15a7773ec471615b2726be81d26f209e1857b182ca58fe4a8aa7182d48` | `src/sources/papal-documents/vatican-visual-04.md` | `3aa37891c26163ef4518f57ea3d06f4d91181b110b1d73ef9a8da978af54c5d9` |
+| `papal.leo-xiii.hf-l-xiii-apc-18830530-misericors-dei-filius` | 3 | `50bc2c1f3baf9b9c7d7fdbef42e69506f6e4706e98043f13d967a601da1ce82d` | `8d63ea15a7773ec471615b2726be81d26f209e1857b182ca58fe4a8aa7182d48` | `src/sources/papal-documents/vatican-visual-04.md` | `3aa37891c26163ef4518f57ea3d06f4d91181b110b1d73ef9a8da978af54c5d9` |
+| `papal.leo-xiii.hf-l-xiii-enc-14091886-pergrata` | 2 | `8f88ca37ed362dd7ccc0112406084d9e1c5e10539fcbd22818d09867c8cf57d2` | `6260ba0a91f559104313cb136ca2c3cd119427afdea6c8921ddee6facfbf5f8e` | `src/sources/papal-documents/vatican-visual-01.md` | `88bb2a8532e55dde2394488a73ab603330046b17415bf647db8ad5bcb4c226b9` |
+| `papal.leo-xiii.hf-l-xiii-enc-14091886-pergrata` | 3 | `8ed3a4eaf8c9bb576deabb8a8032298d8c4f7ee42b3ce40139c99b98a65a3680` | `6260ba0a91f559104313cb136ca2c3cd119427afdea6c8921ddee6facfbf5f8e` | `src/sources/papal-documents/vatican-visual-01.md` | `88bb2a8532e55dde2394488a73ab603330046b17415bf647db8ad5bcb4c226b9` |
+| `papal.pius-x.hf-p-x-apl-19040211-quum-arcano` | 1 | `09357d150d3975257cd988f8d8d80155534f37f6f3d5148ec6a08ff1274fab1b` | `b0340799ac5971be1cadf7a993958d6db09730d8866143d75abde7956ab31090` | `src/sources/papal-documents/vatican-visual-12.md` | `826449a13c4e7f9deed0c98c6dce61d5fc6c0fff83252d48145ad05bd9c20b50` |
+| `papal.pius-x.hf-p-x-motu-proprio-19060716-dei-providentis-benignitatem` | 1 | `81de616f8c042f984892173adacdd7b36524488df712e89aaf2ddd2252070a5f` | `3d264e96241ba97ec803732b0b9c05df8d6469d69dc040585b68960ebce0be73` | `src/sources/papal-documents/vatican-visual-03.md` | `3ab4cfc4be7573d45f4d8a3a3795b6fb32f5787dc7b262707ca9ac8912aa1709` |
+| `papal.pius-x.hf-p-x-apl-19080918-sanctos-inter` | 1 | `fe2480ceb24012854ce8f09fcc424f47acfbbe2a4fe7268d7e2349a8f23bd8f6` | `86909883caf7008bba9f1e7fba1c92bf8b0bc34db5a6d1cd3deb64743ee87b77` | `src/sources/papal-documents/vatican-visual-01.md` | `88bb2a8532e55dde2394488a73ab603330046b17415bf647db8ad5bcb4c226b9` |
+| `papal.pius-x.hf-p-x-apl-19080918-sanctos-inter` | 2 | `8c1edc09b903db6d9d94c94659c9909bce6e3b8259b3376a09e79fa0704ad8dc` | `86909883caf7008bba9f1e7fba1c92bf8b0bc34db5a6d1cd3deb64743ee87b77` | `src/sources/papal-documents/vatican-visual-01.md` | `88bb2a8532e55dde2394488a73ab603330046b17415bf647db8ad5bcb4c226b9` |

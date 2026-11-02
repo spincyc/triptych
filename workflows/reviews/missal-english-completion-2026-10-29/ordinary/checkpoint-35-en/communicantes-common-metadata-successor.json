@@ -1,0 +1,49 @@
+{
+  "purpose": "Additive metadata-only successor to independently accepted1a8 candidate; source and English acceptance retained.",
+  "accepted_predecessor_sha256": "1a8b302d536e702194b05745882274e60e147f18360c9b335ce2ae23da71f02e",
+  "successor_sha256": "0fa7dd30f67043f294c96dad2900c5856d387548a30e205350ed95a5a4dd2a5c",
+  "independent_source_english_receipt": {
+    "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/common-communicantes/REVIEW.json",
+    "sha256": "83833e1a48bcb8ea99ad32db48819e08cb9a93cbaba33010438ac8375d3974e0"
+  },
+  "only_changes": [
+    {
+      "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/work.toml",
+      "fields": [
+        "composed_basis"
+      ],
+      "before": {
+        "sha256": "f7c5756ad0fa41cc9cde5cddb1e231196cc0723ae55d2d0d7b773117b83b57a5",
+        "bytes": 1072
+      },
+      "after": {
+        "sha256": "bc7dc9922d69539f210999e749cc6143e3940f93b49bb9eb7bb9e6cdcf06d6a3",
+        "bytes": 1306
+      }
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/artifacts/common-full-names-conclusion-omitted-study-en/artifact.toml",
+      "fields": [
+        "provenance"
+      ],
+      "before": {
+        "sha256": "5645a111f1371beac24f3b79ac080cc3705a1de238ee83414fde0d1727b27db1",
+        "bytes": 4180
+      },
+      "after": {
+        "sha256": "c6a1bf3a61413bbbaf46db8f619e69fe413062fd8350e3b2e57f3b344d7696d5",
+        "bytes": 4727
+      }
+    }
+  ],
+  "preserved_exactly": [
+    "allLatin/English/pagepayloadbytes",
+    "allsourceinputsandassemblyboundaries",
+    "sourcegraphidentitiesandlinks",
+    "allturnandreadingnotedata",
+    "commononly/fullnames/conclusionomitted/seasonalpropergaps",
+    "allremainingcandidatefields"
+  ],
+  "canonical_basis": "Existing src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml [the_joseph_clause], exactly seven Latin words including its express commonCommunicantes reach; no new grant claimed. English follows separate standing project-created route in guidance/liturgical-text-publication-policy.md section8.2.",
+  "no_tracked_writes": true
+}

@@ -66,7 +66,7 @@ test('held Transfiguration cycles independently resolve their source-qualified G
   assert.equal(view.calendarResults, null);
   assert.equal(view.units.length, fixture.expected.unitCount);
   assert.deepEqual(view.units.map((unit) => unit.semanticSlot),
-    ['reading-1', 'responsorial-psalm', 'reading-2', 'gospel-acclamation', 'gospel']);
+    ['entrance-antiphon', 'reading-1', 'responsorial-psalm', 'reading-2', 'gospel-acclamation', 'gospel', 'communion-antiphon']);
   const gospel = view.units.find((unit) => unit.semanticSlot === 'gospel');
   assert.deepEqual(gospel.sides.map((cell) => cell.status), ['text-held', 'text-held']);
   assert.deepEqual(gospel.sides.map((cell) => cell.event.selected.cycle), ['A', 'B']);
@@ -74,7 +74,7 @@ test('held Transfiguration cycles independently resolve their source-qualified G
     [['Matthew 17:1-9'], ['Mark 9:2-10']]);
   for (const cell of gospel.sides) {
     assert.equal(cell.event.selected.bible, 'douay-rheims');
-    assert.equal(cell.event.sourceHooks[0].id, 'postconciliar/transfiguration-lord/005');
+    assert.equal(cell.event.sourceHooks[0].id, 'postconciliar/transfiguration-lord/006');
   }
   assert.equal(JSON.stringify(prepared), snapshot);
 });

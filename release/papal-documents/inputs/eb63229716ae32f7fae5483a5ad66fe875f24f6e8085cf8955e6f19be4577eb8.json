@@ -1,0 +1,54 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "8b90b2fdb0b2be95a820ea0e89cd2ef33683cb8ce4dea9ef78e2d04c16791da9",
+  "documents": [
+    {
+      "id": "acta.aas.006.archive.aas.006.051",
+      "language": "la",
+      "pdf_sha256": "e413c89202f772ef987fb29c904951daa3c738d1fc7192a8a1630a77f003f33c",
+      "pages": 7,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "description": "Disclosed retained OCR and 35 unmatched/46 reference-marker spacing records remain literal; no material reading impairment or fused source-note paragraph found."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            7
+          ],
+          "description": "Terminal apparatus continues at the top of the right column; the same physical page retains substantial source closing, dating, note and subscription in the left column."
+        }
+      ],
+      "limitations": [
+        "Every reader page inspected afresh on contact sheets and at original raster resolution; no prior visual review reused.",
+        "No translation accuracy, whole-source lexical collation, new rights clearance, installation or deployment certification.",
+        "Native Vatican PDF is an OCR/text reconstruction; inspection does not establish original-print glyphs or lexical collation."
+      ],
+      "receipt_sha256": "8b90b2fdb0b2be95a820ea0e89cd2ef33683cb8ce4dea9ef78e2d04c16791da9",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-25.md",
+      "report_sha256": "a32e53d4419b6ffc02451665b898987332415ebe217d703e8a310e2973dd9613"
+    }
+  ]
+}

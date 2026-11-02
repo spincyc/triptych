@@ -1,0 +1,74 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "92a63c2a59020f28d96234e880d4f76dabba8050c9ce5778658870413f6d1fd8",
+  "documents": [
+    {
+      "id": "acta.ass.033.ass-033-l10742",
+      "language": "la",
+      "pdf_sha256": "43ff816d916e563e7f48644f04506287e671fc3f60d4722b9b4dee9edcab283a",
+      "pages": 6,
+      "status": "PASS",
+      "review_kind": "independent-cold-source-and-all-page-pdf-review",
+      "source_spacing_notes_status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_size_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Literal OCR, native word-gap exceptions and original hard-line hyphens remain; indentation-only native body paragraph starts are not fully restored. Bounded spacing and note repair is accepted without lexical or original-print collation."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "All11historical note groups have source and rendered paragraph boundaries on both sides, with internal citation order checked against freshly viewed native pages273–285. Historical page-foot note placement can interrupt a source word at a native page break, including or-/dine on readerpage3."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            6
+          ],
+          "description": "Substantive ending, blessing, dating clause, papal subscription and final citation precede readable ruled source apparatus and rights colophon on the same physical finalpage."
+        }
+      ],
+      "limitations": [
+        "Native archival OCR reconstruction only; all13native pages and all6final reader pages freshly inspected at original raster resolution plus their contact sheets.",
+        "No original-print facsimile or lexical/translation collation, new rights clearance, installation, deployment or root admission certification.",
+        "Producer visual acceptance and earlier provisional PDFs were not reused; inherited source hard-line hyphens and indentation-only body-paragraph limits remain disclosed."
+      ],
+      "receipt_sha256": "92a63c2a59020f28d96234e880d4f76dabba8050c9ce5778658870413f6d1fd8",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-47.md",
+      "report_sha256": "377b996a872350d1b61798206c95bb4f9041786c8ba7728d0b53785a6aaa5ceb"
+    }
+  ]
+}

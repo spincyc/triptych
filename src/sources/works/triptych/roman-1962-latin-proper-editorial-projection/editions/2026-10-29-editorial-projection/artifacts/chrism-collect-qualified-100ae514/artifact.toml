@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.chrism-collect-qualified-100ae514"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Prospective finite UnitedStates qualified adaptation assessment under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json, method english-completion-20261029-finite-latin-v1. The whole underlying old prayer is independently witnessed in Wilson1894. The modern readings are limited to ministerio instead of main-text ministerium (expressly attested in the old edition apparatus) and meritis instead of merito, plus pointing. No holder permission or unqualifiedpublic-domain claim is made. Triptych offers only its editorial carrier under CC BY4.0. This candidate must not be installed before the named finite authority is adopted."
+rights_jurisdiction = "United States"
+provenance = "Exact1962Collect wordreading compared with independently inspectedWilson1894 whole main-textCollect and its apparatus; sourcefacts and originalstudyEnglish separately accepted in bounded coldreview."
+retrieved = "2026-10-29"
+sha256 = "100ae514cc635ab67fa0b2f223954bbb9053f77c01dead58eb11309c16815d33"
+byte_size = 240
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/chrism-collect-qualified-100ae514/latin.txt"
+projected_from = ["artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.chrism-three-oration-readings-20261029-33c7ecdf", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Preserve complete1962target body including openingcommaDómine,Deus and actualPerDominum.; independently retain entireWilsonoldbody andactualending unchanged in sourceartifact; modernministerio/meritis explicitly exposed, never silently assigned to oldsource."
+indexable = true
+encoding = "utf-8"
+notes = "Finitecandidate only. Modern grammaticalinflection/number choices may be viewed as a redaction contributing originality; strongest contrary is retained in owning finiteassessment. Review and parent adoption prerequisite, no automaticextension from sevenhistoricalqualifiedscope targets."

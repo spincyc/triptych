@@ -1,0 +1,116 @@
+schema_version = 1
+id = "gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost"
+kind = "proper-1962"
+profile = "guidance/liturgy/roman-1962-propers.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[contracts]
+appointed_text_completeness = "complete"
+component_schema = 1
+
+[[outputs]]
+id = "gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[outputs]]
+id = "gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis"
+role = "synthesis"
+entrypoint = "synthesis.tex"
+derivation = "projection"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "appointed-source"
+source = "propers/verified.md"
+
+[[structure]]
+role = "retrieved-source"
+source = "propers/retrieved.txt"
+
+[[structure]]
+role = "proper-components"
+source = "proper-components.toml"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "front-matter"
+source = "main.tex"
+outputs = ["canonical", "synthesis"]
+key = "component-orientation"
+
+[[structure]]
+role = "brief-synthesis"
+source = "sections/synthesis/10-themes-and-movement.tex"
+outputs = ["canonical", "synthesis"]
+key = "component-brief-synthesis"
+depends_on = ["component-orientation"]
+
+[[structure]]
+role = "appointed-text"
+source = "sections/05-appointed-text.tex"
+outputs = ["canonical"]
+key = "component-appointed-text"
+
+[[structure]]
+role = "proper-treatment"
+source = "sections/30-commentary.tex"
+outputs = ["canonical"]
+key = "component-per-element-sweep"
+depends_on = ["component-appointed-text"]
+
+[[structure]]
+role = "integrated-commentary"
+source = "sections/synthesis/20-integrated-commentary.tex"
+outputs = ["synthesis"]
+key = "component-integrated-commentary"
+depends_on = ["component-brief-synthesis"]
+
+[[structure]]
+role = "source-grounded-synthesis"
+source = "sections/35-source-grounded-synthesis.tex"
+outputs = ["canonical", "synthesis"]
+key = "component-source-grounded-synthesis"
+depends_on = ["component-brief-synthesis"]
+
+[[structure]]
+role = "notable-quotable"
+source = "sections/40-notable.tex"
+outputs = ["canonical", "synthesis"]
+key = "component-notable-and-quotable"
+depends_on = ["component-source-grounded-synthesis"]
+
+[[structure]]
+role = "exploratory-synthesis"
+source = "sections/50-interpretive.tex"
+outputs = ["canonical", "synthesis"]
+key = "component-exploratory-synthesis"
+depends_on = ["component-notable-and-quotable"]
+
+[[structure]]
+role = "terminal-apparatus"
+source = "sections/90-scope.tex"
+outputs = ["canonical", "synthesis"]
+key = "component-terminal-apparatus"
+depends_on = ["component-exploratory-synthesis"]

@@ -1,0 +1,211 @@
+{
+  "schema": "triptych-independent-source-and-study-english-review/v1",
+  "recorded_on": "2026-10-30",
+  "reviewer": "/root/postconciliar_english_completion/pc_ancient_review",
+  "scope": "Four finite project-created study English candidates; two simple Pentecost Vigil Collects, OT11 Collect and OT31 Prayer after Communion.",
+  "verdict": "all-four-accepted-without-English-corrections",
+  "candidate_packet": ".scratch/postconciliar-english-completion-20261029/ancient-sources/secondpass-ordinary/candidate-four.json",
+  "candidate_packet_sha256": "c6319d565bbcf5654db1f5688613dfc8ded428ac3d1eaa12c69face08c19458f",
+  "verified_whole_source_pdfs": [
+    {
+      "whole_pdf": ".scratch/roman-phase4-discovery-20261022T123009Z/gelasian1894-local-only-whole.pdf",
+      "sha256": "006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc",
+      "pages": [
+        199,
+        215,
+        216,
+        330
+      ]
+    },
+    {
+      "whole_pdf": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/source.pdf",
+      "sha256": "96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681",
+      "pages": [
+        135
+      ]
+    },
+    {
+      "whole_pdf": ".scratch/resume-postconciliar-orations/latin-missal2002.pdf",
+      "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "pages": [
+        264,
+        265,
+        276,
+        277,
+        293,
+        294
+      ]
+    }
+  ],
+  "methods": [
+    "Independently hashed the three complete source/comparison PDFs and checked exact registered identities before extracting pages.",
+    "Independently extracted eleven actual whole-PDF pages and rendered them with tools/pdf-review in this exclusive review scratch. Directly read all eleven fresh full-page images, including both apparatus notes, printed headings, bounded prayer bodies and conclusion cues.",
+    "Compared every old petition against its actual secondary digital counterpart and read each fresh English draft clause by clause. No coverage percentage, OCR alone, incipit similarity or prior unavailable target payload supplied a source word.",
+    "Read governing policy section8.2 and existing project-created verbatim/abridged/variant definitions; assessed the lone added adverb expressly rather than silently treating it as substitution."
+  ],
+  "findings": [
+    {
+      "identity": [
+        "pentecost",
+        "vigil",
+        "Collect",
+        "all",
+        1
+      ],
+      "verdict": "accepted-as-finite-project-created-study-english",
+      "source_and_difference_verdict": "Gelasian Wilson1894 AP215/printed122 I.LXXX first prayer independently read in full. Its main reading dispersio divisione ... congregetur differs from secondary digital AP265 dispersione divisiones ... congregentur by exactly three linked grammatical inflections, with no added petition word or clause. AP216/printed123 apparatus note2 explicitly attests divisiones V.; note4 explicitly attests congregentur V. The apparatus does not license calling all three forms one exactly identical ancient main reading.",
+      "policy_verdict": "Accepted under the existing grammatical-inflection variant route. All lexical words of the complete older prayer preexist; three linked inflections are fully shown and two separately occur in the old apparatus. This is finite grammatical repair, not a general tolerance score or permission for rewrites.",
+      "english_verdict": "Accepted unchanged. The temporal background after the scattering of the nations and plural divisions of tongues accurately render the selected inflections; fifty days, paschal sacrament, heavenly gift and one confession of your name are retained.",
+      "conclusion_verdict": "Old main prayer ends literally Per.; secondary digital ends Per Dominum. The latter conventional two-word cue is independently printed in Gelasian AP199/printed106, not expanded from an unavailable full conclusion. Through our Lord. is faithful to that short cue.",
+      "id": "english-completion-20261029-postconciliar-pentecost-vigil-collect-1-study",
+      "draft_english_sha256_with_final_lf": "bac3c4da91fc006b79571b8911b4bc5bd02d09e63e619e1865ce87efb95288b8",
+      "ancient_reading_sha256_with_final_lf": "fedd1c88b548e00c77261d06ff7c244bcb4f677bf650e52ebfb3630005ec33aa",
+      "source_pages": [
+        215,
+        216
+      ],
+      "comparison_pages": [
+        264,
+        265
+      ]
+    },
+    {
+      "identity": [
+        "pentecost",
+        "vigil",
+        "Collect",
+        "all",
+        2
+      ],
+      "verdict": "accepted-as-finite-project-created-study-english",
+      "source_and_difference_verdict": "Hadrianum Wilson1915 AP135/printed77 explicitly heads Orationes ad Missam in Sabbato Pentecosten post ascensum fontis. The entire first petition agrees with secondary digital AP265 after the disclosed inlustratione/illustratione spelling and per gratiam tuam renati sunt to per tuam gratiam sunt renati word-order changes. Printed e-caudata is normalized to ae and apparatus superscripts excluded. No petition word is substituted, added or omitted.",
+      "policy_verdict": "Accepted as verbatim under the existing spelling and word-order rule, with the complete old petition independently established.",
+      "english_verdict": "Accepted unchanged. Splendor of glory, light of light, strengthening the reborn hearts, grace and illumination of the Holy Spirit faithfully render both word orders.",
+      "conclusion_verdict": "Old witness prints per dominum nostrum iesum christum in unitate eiusdem.; secondary digital prints only Per Dominum. English Through our Lord. renders the directly witnessed first two words, not an inferred full formula. No Amen or modern ending is supplied.",
+      "id": "english-completion-20261029-postconciliar-pentecost-vigil-collect-2-study",
+      "draft_english_sha256_with_final_lf": "372110d4166c08feb6198da4db8185c3313fd35477ad3391996e43d9d8e45d37",
+      "ancient_reading_sha256_with_final_lf": "90de62ece8fbf0c0ab9038874f1b205986cf9bc2083f7374c4641c3fad447f51",
+      "source_pages": [
+        135
+      ],
+      "comparison_pages": [
+        264,
+        265
+      ]
+    },
+    {
+      "identity": [
+        "ot-11",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "verdict": "accepted-as-finite-project-created-study-english-with-explicit-single-adverb-addition",
+      "source_and_difference_verdict": "Gelasian AP199/printed106 I.LXII first prayer independently read in full. Secondary digital OT11 context begins AP276, with the full Collect onAP277. The sole added word is semper before auxilium. Invocationibus nostris and gratiae tuae move as described; exequendis/exsequendis is received spelling; every other petition word and the literal Per Dominum. cue agree.",
+      "policy_verdict": "This finite addition is accepted under the governing criterion that the new English add no expression capable of authorship beyond the independently established old petition. Semper is one commonplace adverb attached to the already complete ancient request for help; it introduces no new clause, image or prayer construction. It must be recorded as an addition, not called a substitution or verbatim match. Existing tiny-variant and added-quaesumus practice supports this bounded application; it supplies no general rule permitting added phrases or rewritten prayers.",
+      "english_verdict": "Accepted unchanged. Always grant the help of your grace explicitly renders the added adverb, while mortal weakness, pleas, commandments, will and deed faithfully render the full old petition.",
+      "conclusion_verdict": "Per Dominum. is literally present in both old prayer and comparison. Through our Lord. preserves the actual short cue without expansion.",
+      "prior_route_limit": "Keep the former approved-ICEL witness and its restricted-surface/quarantined-fingerprint absence separate and unchanged. This fresh study English is not its wording or its approval.",
+      "id": "english-completion-20261029-postconciliar-ot-11-collect-study",
+      "draft_english_sha256_with_final_lf": "27739fdfe248b6a166b4300a690e5847213a869d61bff9ec83254db6a5351121",
+      "ancient_reading_sha256_with_final_lf": "211d5b4df37911569b067e4f40c04064cbfb3f2cf035ad179f715942fb0af1ab",
+      "source_pages": [
+        199
+      ],
+      "comparison_pages": [
+        276,
+        277
+      ]
+    },
+    {
+      "identity": [
+        "ot-31",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "verdict": "accepted-as-finite-project-created-study-english",
+      "source_and_difference_verdict": "Gelasian AP330/printed237 first prayer independently read in full. Secondary digital OT31 begins AP293 and its Post communionem continues onAP294. Actual changed words are divinis to caelestibus and vegetati to refecti, with local order changed from divinis vegetati to refecti caelestibus. Domine/quaesumus exchange order; all other petition words agree.",
+      "policy_verdict": "Accepted under the existing two-word-variant route, with both lexical substitutions and their sense differences explicit. The earlier historical-human-English refusal remains correct and must not be converted into a license to edit that translation.",
+      "english_verdict": "Accepted unchanged. Refreshed by the heavenly sacraments expresses the selected changed readings; the working of your power, increase in us, gift, preparation and receiving the sacraments promises are accurately represented.",
+      "conclusion_verdict": "Old main body ends literally Per.; secondary digital ends Per Christum. Gelasian AP199/printed106 independently prints the conventional short Per Christum. cue, which supports English Through Christ. without an invented fuller ending.",
+      "locus_precision": "Use appended Postcommunions after Canon Actionis, running header III.xvi., first prayer onprinted237. The running head is not proof that Wilson assigns this prayer to numbered sectionXVI: his footnote says this appended series stands outside the numbered sections inV.",
+      "id": "english-completion-20261029-postconciliar-ot-31-after-communion-study",
+      "draft_english_sha256_with_final_lf": "b7a4a0bb7c61573316e4e212662514b20163cf83fb4448158e728363c60f6de5",
+      "ancient_reading_sha256_with_final_lf": "a4a7a8312b792be79f8dc38e1ceb35740fda661c7a4727e3321b1dd62c5f0722",
+      "source_pages": [
+        330
+      ],
+      "comparison_pages": [
+        293,
+        294
+      ]
+    }
+  ],
+  "required_English_corrections": [],
+  "required_metadata_precision": [
+    "Preserve all three inflection changes for PentecostCollect1, and identify the two ancientV apparatus forms separately rather than replacing Wilson main text.",
+    "Preserve OT11 semper as an added commonplace adverb in the finite rights/difference assessment.",
+    "Clarify OT31 running-header versus unnumbered appended-series distinction as recorded in its finding.",
+    "Keep each old literal conclusion and separately witnessed conventional short comparison cue explicit."
+  ],
+  "required_limits": [
+    "All full modern prayer-body comparisons are only with the registered secondary2002 digital artifact. Printed2002 fidelity and authenticated full2008 correspondence remain unestablished.",
+    "These are fresh project-created study translations, not historical human English, approved English, ICEL, recitation texts or a liturgical-use authorization.",
+    "Retain all prior historical-human or approved-English route refusals, source permissions and fingerprints; only the finite new study route is accepted.",
+    "Whole restricted comparison PDF and images remain private. Gelasian wholePDF has unresolved digitizer matter; retain only lawfully bounded old printed-page extractions and source records under existing rights disposition.",
+    "No other recipient or calendar form is admitted by this receipt. The separate official2008 extended-Vigil source-local Collect-referral mapping may connect these accepted studies only with its own exact source facts and retained full-body qualification.",
+    "Source-registration, publication graph, source-family, consumer and renderer checks remain integration responsibilities."
+  ],
+  "renderer_receipt": ".scratch/postconciliar-english-completion-20261029/ancient-review/ordinary-four-round/rendered/review-run.json",
+  "renderer_receipt_sha256": "64b4fa64095f7b2d3361e2124f854333aeeb271f065dd5eddc74452290cc6906",
+  "independently_read_images": [
+    {
+      "name": "gelasian-199",
+      "sha256": "569deb5e0d44815dbdfb84e2572f27995293384735aaafa7465e43ea58988307"
+    },
+    {
+      "name": "gelasian-215",
+      "sha256": "967a76e0d5211a61005d6e0b2bc1fb26619a501e6075ebffe31ba66bce303a0e"
+    },
+    {
+      "name": "gelasian-216",
+      "sha256": "a0dafac271d015592fd232fcd66920d11644c498a8919cd018a84594ab7d32b3"
+    },
+    {
+      "name": "gelasian-330",
+      "sha256": "65637def3e303cf88bceb8d7bb7c72c921e5e368a193a32252bc60bc7d5b9769"
+    },
+    {
+      "name": "hadrianum-135",
+      "sha256": "d6c43c0c053c5419be5f153677e7bfcb824f1888284758dd022f709a823c5842"
+    },
+    {
+      "name": "target-264",
+      "sha256": "7366a904adbafaddac95bbd7bcc10cec3692aba96836de6a7546ce893bfa4115"
+    },
+    {
+      "name": "target-265",
+      "sha256": "02b029ee93c74e91e3543b8c40abfd429dad7833cdbf33e0ba1696b15cadc39f"
+    },
+    {
+      "name": "target-276",
+      "sha256": "32d62904ccb790b44815aeef33d34af7c1a491fdd098da8fbe63a6847c984453"
+    },
+    {
+      "name": "target-277",
+      "sha256": "4645b481a1d40afffb5271c87a5adf9efb883c16191ae3262882bebc3c6e169b"
+    },
+    {
+      "name": "target-293",
+      "sha256": "bb169cf63758421ffcaab37e59004d7a81523e044e1d880d5236cfef24979bfa"
+    },
+    {
+      "name": "target-294",
+      "sha256": "84109e85afeff10f207dbe2b86979e3c068cb55db35ee11b0e27244b6feafd9b"
+    }
+  ],
+  "tracked_mutations": []
+}

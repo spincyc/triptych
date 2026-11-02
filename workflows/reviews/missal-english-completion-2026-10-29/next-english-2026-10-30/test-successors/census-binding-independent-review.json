@@ -1,0 +1,282 @@
+{
+  "schema": "triptych-independent-census-four-existing-bindings-test-review/v1",
+  "outcome": "PASS_EXACT_SCRATCH_POSTIMAGE_AND_FOCUSED_TEST",
+  "actual_HEAD": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+  "subject": {
+    "path": "tools/tests/test_propers_census.py",
+    "before_sha256": "6a726fae97db4b6bd544edf3dc96ebcf0754b6ad8682ab75a487e7be9be62629",
+    "after_sha256": "18b31041ba010c55ba9ccba195f034854146b1ba5fff69a83e4a616c901fa9b6",
+    "postimage": ".scratch/roman-english-completion-20261029/next-cohort-test-readiness-v1/census-binding-successor/audit-and-postimage/postimages/tools/tests/test_propers_census.py",
+    "patch_path": ".scratch/roman-english-completion-20261029/next-cohort-test-readiness-v1/census-binding-successor/audit-and-postimage/four-earlier-bindings.patch",
+    "patch_sha256": "bafbe136502422e9fa5278f6233ad87e4dd167283ee4ce941196e80f869d9be7"
+  },
+  "proposal": {
+    "path": ".scratch/roman-english-completion-20261029/next-cohort-test-readiness-v1/census-binding-successor/audit-and-postimage/proposal-v1.json",
+    "sha256": "858c773cbbe244da4a0bb4930a5595fba1f29e69245703e174b05860098584bf"
+  },
+  "verified_readiness": {
+    "outcome": "PASS_EXACT_SCRATCH_CANDIDATE_ON_ACTUAL_ACCEPTED_EPOCH",
+    "testsRun": 1,
+    "failures": 0,
+    "errors": 0,
+    "old_sha256": "6a726fae97db4b6bd544edf3dc96ebcf0754b6ad8682ab75a487e7be9be62629",
+    "new_sha256": "18b31041ba010c55ba9ccba195f034854146b1ba5fff69a83e4a616c901fa9b6",
+    "changed_methods": [
+      "EnglishCoverageTests.test_publication_bound_translations_fail_closed_on_any_stale_edge"
+    ],
+    "insertion_lines": 23,
+    "stale_edge_tail_byte_exact": true,
+    "exact_existing_702_English_rows": 4,
+    "existing_controller_records": 13,
+    "unchanged_payloads": 3,
+    "changed_source_fields": {
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/artifact.toml": [
+        "rights_basis"
+      ]
+    },
+    "fixture_guard_called_without_mock": true,
+    "accepted_source_paths": 7264,
+    "test_pinned": false,
+    "test_inverse_stream": false,
+    "canonical_writes": false
+  },
+  "preexisting_702_expected_set_omission": {
+    "test_bytes_equal_702": true,
+    "four_English_dictionaries_equal_702": true,
+    "all_four_binding_fields_preexist": true,
+    "selection_assertion_occurs_before_readability_validation": true,
+    "carrier_metadata_fix_does_not_create_bindings": true,
+    "explanation": "The unchanged raw test enumeration omitted these four already bound rows at702. Their current publication fields and complete English dictionaries equal702, while only the Common carrier rights_basis metadata differs. That separately root-adopted correction can affect later readability, not manufacture the four rows or cause the earlier set mismatch."
+  },
+  "exact_four_cases": [
+    {
+      "target": [
+        "palm-sunday",
+        "main",
+        "Hymn to Christ the King",
+        "all",
+        1
+      ],
+      "dictionary_sha256": "e7c0c2ce9fea42d272f9d4de3b51e291ffed40f858ae952a8cfd423e3b7e3826",
+      "Git702_dictionary_equal": true,
+      "English_body_sha256": "5c4d842e0df0c4ac9a8e6f930a2912733a19d2062efb0493ae3a62806f7132bf",
+      "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.holyweek-hymn-gloria-laus-en-20261029-4363e40f",
+      "publication_artifact_sha256": "4363e40f424419f977659a98c75b2a293ed9c19950af7758b1394daf5f894f92",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.holyweek-hymn-gloria-laus-publish-20261029",
+      "verification_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "verification_artifact_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "verification_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.holyweek-hymn-gloria-laus-verify-20261029",
+      "locus": "Lasance/Walsh revised1945, printed398-399, artifact pages[398, 399]; Hymn to Christ the King",
+      "publication_line": 2,
+      "cause": "Pre-existing exact expected-set omission at Git702; current and Git702 both select this publication-bound entry before any source readability check."
+    },
+    {
+      "target": [
+        "mass-of-the-lords-supper",
+        "main",
+        "Mandatum Antiphon 8",
+        "all",
+        1
+      ],
+      "dictionary_sha256": "08ac0ca6e44fd3e5c2c2c20991c8f30e26e147630a3618fed136497fd123c336",
+      "Git702_dictionary_equal": true,
+      "English_body_sha256": "5e160254f2d9d1782e835fbe6dc64ad126a21d598634e70786ea8b49bd8f42da",
+      "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holyweek-hymn-ubi-caritas-en-20261029-b736c65c",
+      "publication_artifact_sha256": "b736c65ce8fa607f765fbb747857d88f87cf28d85216208614ba5cb7fd32bc63",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holyweek-hymn-ubi-caritas-publish-20261029",
+      "verification_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+      "verification_artifact_sha256": "4573991d962eb6a6391bc2555b8445bdfebd84de1ccffd7828f84e74d308ca77",
+      "verification_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holyweek-hymn-ubi-caritas-verify-20261029",
+      "locus": "Lasance/Walsh revised1945, printed468, artifact pages[478, 478]; Mandatum Antiphon 8",
+      "publication_line": 2,
+      "cause": "Pre-existing exact expected-set omission at Git702; current and Git702 both select this publication-bound entry before any source readability check."
+    },
+    {
+      "target": [
+        "commune-summorum-pontificum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "dictionary_sha256": "bbcd4557022a07849c52e84f3bcf892e1b393bd9bceb84a86fc11810fde44155",
+      "Git702_dictionary_equal": true,
+      "English_body_sha256": "ade3795a41a53771bb17b5f259548f24e444f9f7d3446ac9b7978481138cbaae",
+      "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-two-en-20261029-dc95b61f",
+      "publication_artifact_sha256": "dc95b61f0a85f8b3f73f383b0d2b705a5c785e61eedc54b13596dae7daf383bd",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-secret-publish-20261029",
+      "verification_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "verification_artifact_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "verification_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-secret-verify-20261029",
+      "locus": "Lasance/Walshrevised1945ordinaryStMartin Secret, Lasance/Walsh revised1945 ordinary printed1286-1287, PDF1287-1288, November12 StMartinPope, Secret across pagebreak.",
+      "publication_line": 2,
+      "cause": "Pre-existing exact expected-set omission at Git702; current and Git702 both select this publication-bound entry before any source readability check."
+    },
+    {
+      "target": [
+        "commune-summorum-pontificum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "dictionary_sha256": "b47b0b4587edac7f9b3ab2485832647faed983a731eeec5c5484fb5f26d17030",
+      "Git702_dictionary_equal": true,
+      "English_body_sha256": "17708c81cefb954dbe3d980b8daf0583083ee9b1e039547a6f434a3f51a509c2",
+      "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-two-en-20261029-dc95b61f",
+      "publication_artifact_sha256": "dc95b61f0a85f8b3f73f383b0d2b705a5c785e61eedc54b13596dae7daf383bd",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-postcommunion-publish-20261029",
+      "verification_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "verification_artifact_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "verification_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-postcommunion-verify-20261029",
+      "locus": "Lasance/Walshrevised1945ordinaryStMartin Postcommunion, Lasance/Walsh revised1945 ordinary printed1287, PDF1288, November12 StMartinPope, Postcommunion at pagehead.",
+      "publication_line": 3,
+      "cause": "Pre-existing exact expected-set omission at Git702; current and Git702 both select this publication-bound entry before any source readability check."
+    }
+  ],
+  "source_controller_facts": {
+    "count": 13,
+    "pins": {
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/holyweek-hymn-gloria-laus-en-20261029-4363e40f/artifact.toml": {
+        "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.holyweek-hymn-gloria-laus-en-20261029-4363e40f",
+        "current_sha256": "6d9ec5f6dfb5c636a904c12c6428871247fc1e3c15dca97859b8d7de21102305",
+        "Git702_sha256": "6d9ec5f6dfb5c636a904c12c6428871247fc1e3c15dca97859b8d7de21102305",
+        "changed_dictionary_fields": []
+      },
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-hymn-gloria-laus-publish-20261029.toml": {
+        "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.holyweek-hymn-gloria-laus-publish-20261029",
+        "current_sha256": "0b56dedc1c417d69b1ff6c91479a0aaa577f50b0f49895d90e5daf2da62aeefb",
+        "Git702_sha256": "0b56dedc1c417d69b1ff6c91479a0aaa577f50b0f49895d90e5daf2da62aeefb",
+        "changed_dictionary_fields": []
+      },
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-facsimile-pdf-6cf3c3d0/artifact.toml": {
+        "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "current_sha256": "268c53acbfcfe0d272929d70c64f7343f171116bcb5e2595b645bed42527dbdd",
+        "Git702_sha256": "268c53acbfcfe0d272929d70c64f7343f171116bcb5e2595b645bed42527dbdd",
+        "changed_dictionary_fields": []
+      },
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-hymn-gloria-laus-verify-20261029.toml": {
+        "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.holyweek-hymn-gloria-laus-verify-20261029",
+        "current_sha256": "95a294f1dee3f9ab996c2bc07109c2a0ad06554164e105e4e28b499e4aed2144",
+        "Git702_sha256": "95a294f1dee3f9ab996c2bc07109c2a0ad06554164e105e4e28b499e4aed2144",
+        "changed_dictionary_fields": []
+      },
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/holyweek-hymn-ubi-caritas-en-20261029-b736c65c/artifact.toml": {
+        "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holyweek-hymn-ubi-caritas-en-20261029-b736c65c",
+        "current_sha256": "d733e8ba06d5e0aba1fef23a49e02feae0b7956a2c323ae3d7cc79e8a008430f",
+        "Git702_sha256": "d733e8ba06d5e0aba1fef23a49e02feae0b7956a2c323ae3d7cc79e8a008430f",
+        "changed_dictionary_fields": []
+      },
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/holyweek-hymn-ubi-caritas-publish-20261029.toml": {
+        "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holyweek-hymn-ubi-caritas-publish-20261029",
+        "current_sha256": "4048db5316a55a392e0aa98b9f61471790fc210e41faa1614dfee0aea08a0864",
+        "Git702_sha256": "4048db5316a55a392e0aa98b9f61471790fc210e41faa1614dfee0aea08a0864",
+        "changed_dictionary_fields": []
+      },
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ia-google-facsimile-pdf-4573991d/artifact.toml": {
+        "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+        "current_sha256": "1abaf2370ebd4d7fd82807ab9285b4a7b3e1a487e1d9936fcead9865e3f5f16a",
+        "Git702_sha256": "1abaf2370ebd4d7fd82807ab9285b4a7b3e1a487e1d9936fcead9865e3f5f16a",
+        "changed_dictionary_fields": []
+      },
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/holyweek-hymn-ubi-caritas-verify-20261029.toml": {
+        "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holyweek-hymn-ubi-caritas-verify-20261029",
+        "current_sha256": "71da135c8c2ebd1480920f08074c19bcf8048ed7657afe7409ea5d895e609e24",
+        "Git702_sha256": "71da135c8c2ebd1480920f08074c19bcf8048ed7657afe7409ea5d895e609e24",
+        "changed_dictionary_fields": []
+      },
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/artifact.toml": {
+        "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-two-en-20261029-dc95b61f",
+        "current_sha256": "104e1c4485d595051bf5f7eca3eef0578f7242f1106697f52248d62035bd3a93",
+        "Git702_sha256": "b4a8a78095b4661ddf0398c35d748f90c79c08e9712dcfeff81c3888e071f486",
+        "changed_dictionary_fields": [
+          "rights_basis"
+        ]
+      },
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-secret-publish-20261029.toml": {
+        "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-secret-publish-20261029",
+        "current_sha256": "cab13e69590815941d5eed6472985e7c2d086ace4e6404a8f3d8a6b62661c606",
+        "Git702_sha256": "cab13e69590815941d5eed6472985e7c2d086ace4e6404a8f3d8a6b62661c606",
+        "changed_dictionary_fields": []
+      },
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-secret-verify-20261029.toml": {
+        "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-secret-verify-20261029",
+        "current_sha256": "6671b1390e38b46088b8af80638e2ba876b365a9ed54a076176e536b39fbbc99",
+        "Git702_sha256": "6671b1390e38b46088b8af80638e2ba876b365a9ed54a076176e536b39fbbc99",
+        "changed_dictionary_fields": []
+      },
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-postcommunion-publish-20261029.toml": {
+        "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-postcommunion-publish-20261029",
+        "current_sha256": "7134b2d46a62f0ab7009c2b8b55ba9f71e850cb0e46ee63f8dbb380ca138b6fc",
+        "Git702_sha256": "7134b2d46a62f0ab7009c2b8b55ba9f71e850cb0e46ee63f8dbb380ca138b6fc",
+        "changed_dictionary_fields": []
+      },
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-postcommunion-verify-20261029.toml": {
+        "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-postcommunion-verify-20261029",
+        "current_sha256": "0c0945b3ff81ee712fdf7e51f8eef7123ce294b4fe36208cf83be38b6a4d0580",
+        "Git702_sha256": "0c0945b3ff81ee712fdf7e51f8eef7123ce294b4fe36208cf83be38b6a4d0580",
+        "changed_dictionary_fields": []
+      }
+    },
+    "only_changed_field": "one Common English carrier rights_basis",
+    "all_three_payloads_exact_702": {
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/holyweek-hymn-gloria-laus-en-20261029-4363e40f/bilingual.tsv": {
+        "sha256": "4363e40f424419f977659a98c75b2a293ed9c19950af7758b1394daf5f894f92",
+        "same_as_Git702": true
+      },
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/holyweek-hymn-ubi-caritas-en-20261029-b736c65c/bilingual.tsv": {
+        "sha256": "b736c65ce8fa607f765fbb747857d88f87cf28d85216208614ba5cb7fd32bc63",
+        "same_as_Git702": true
+      },
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/english.tsv": {
+        "sha256": "dc95b61f0a85f8b3f73f383b0d2b705a5c785e61eedc54b13596dae7daf383bd",
+        "same_as_Git702": true
+      }
+    }
+  },
+  "guard_scope": {
+    "actual_fixture_guard_called_without_mock": true,
+    "actual_accepted_receipt": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-acceptance.json",
+    "actual_accepted_receipt_sha256": "5ae2464f2e7a73218262bf91473de8cbcc98e54840dc19d22b02dcb89b110072",
+    "test_path_absent_from_explicit7264_manifest": true,
+    "test_path_absent_from_original17_inverse_streams": true,
+    "no_fixture_rederive_for_this_unpinned_test": true,
+    "all_original_methods_retained": true,
+    "one23_line_insertion_only": true,
+    "reverse_removal_exactly_reconstructs_preimage": true,
+    "all_stale_edge_controls_and_remaining_tail_byte_exact": true,
+    "partial_binding_stale_artifact_hash_changed_English_body_refusals_executed": true
+  },
+  "focused_execution": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 .scratch/roman-english-completion-20261029/next-cohort-test-readiness-v1/census-binding-successor/independent-review/run_focused.py",
+    "exit_code": 0,
+    "testsRun": 1,
+    "failures": 0,
+    "errors": 0,
+    "log_path": ".scratch/roman-english-completion-20261029/next-cohort-test-readiness-v1/census-binding-successor/independent-review/focused-test.log",
+    "log_sha256": "2d49a6838a8ed4598375e14f19f117fbfcd1e4d6de3383d66d8b17ed34e3c799",
+    "checks_path": ".scratch/roman-english-completion-20261029/next-cohort-test-readiness-v1/census-binding-successor/independent-review/checks.json",
+    "checks_sha256": "d6ce55f4ce7c77790b6ed67f01ec0e393b188a34dfed4197b9e944e49e08448d",
+    "script_path": ".scratch/roman-english-completion-20261029/next-cohort-test-readiness-v1/census-binding-successor/independent-review/run_focused.py",
+    "script_sha256": "c22b7c7bc94dcc47dd7c67a63eea6056235d1a8c97a65272a52aabfa9ec6d3d1",
+    "locality_only": "The exact frozen scratch postimage is compiled unchanged with __file__ naming its intended canonical test path solely to resolve the ordinary repository ROOT. No test function, source path, fixture acceptance, authority or production helper is replaced or mocked.",
+    "initial_preflight_diagnostic": "An initial review-harness attempt exited1 before running unittest because unrelated legacy rows omit form_id. The review harness was corrected to use the schema defaults while locating four explicit existing identities; the actual test postimage was never changed."
+  },
+  "final_owning_command_after_root_apply": "python3 -m unittest tools.tests.test_propers_census.EnglishCoverageTests.test_publication_bound_translations_fail_closed_on_any_stale_edge",
+  "immutable_inputs_rehashed": {
+    "tools/tests/_source_batch_guards.py": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+    "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py": "29d0add9b330248b4047881310175614d91adc82688bfc695451318696c0865b",
+    "workflows/reviews/missal-english-completion-2026-10-29/source-guard/support_v3.py": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc",
+    "tools/tests/fixtures/missal-source-batch-20261023.json": "ae34d8450f42835523ee6c5c2ec44cf5d99f6289adc83654853aa47c3fbe1b97",
+    "tools/tests/fixtures/missal-source-batch-20261023-inputs.json": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84",
+    "tools/tests/test_propers_census.py": "6a726fae97db4b6bd544edf3dc96ebcf0754b6ad8682ab75a487e7be9be62629",
+    ".scratch/roman-english-completion-20261029/next-queen-two-independent-policy-review/review.json": "200b24a28b1169f1fb5112fef562cb822ca2bcf51824761d07e9ea6849e5e249"
+  },
+  "source_English_fixture_helper_compiler_or_authority_writes": false,
+  "canonical_writes": false,
+  "new_permissions_or_Latin_or_English_admissions": false,
+  "global_source_semantic_or_English_fidelity_reaudit": false,
+  "broad_suite_or_generation": false,
+  "material_findings": [],
+  "extra_approval_gate": false
+}

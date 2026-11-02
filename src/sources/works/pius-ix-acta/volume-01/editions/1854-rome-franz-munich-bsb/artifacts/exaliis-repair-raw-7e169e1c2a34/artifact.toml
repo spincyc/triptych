@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-raw-7e169e1c2a34"
+edition_id = "edition.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb"
+artifact_type = "exaliis-localized-ocr-raw"
+media_type = "application/zip"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Original Latin wording and contemporary notes in the identified 1854 historical printing are public domain in the United States by expiration of publication term under 17 U.S.C. 304–305; 104A supplies only any remaining term, and 103(b) does not extend copyright to preexisting wording. Faithful mechanical OCR adds no original authorship. The BSB title image bears Ex Typographia Bonarum Artium, habita facultate, and Giorgio Franz in Monaco; its primary holding-library catalogue and IIIF metadata date the edition 1854. See src/sources/inventories/papal-documents-rights-v1.toml. This claim covers historical wording and mechanical facts, not modern wrappers or an unrestricted licence over digital images."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "7e169e1c2a347df8b5c3507a4132b1a844c19ef72af9a4bec933285323bfee41"
+byte_size = 5312
+path = "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/exaliis-repair-raw-7e169e1c2a34/raw-ocr.zip"
+provenance = "New bounded mechanical OCR recovery from retained original BSB canvas360 and361 pixels, plus exact byte composition over the immutable failed BSB candidate. Source words are never authored or inferred."
+derived_from = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-processed-3eee6c46ddee"
+transformation = "Exact uncorrected raw Tesseract TXT and TSV for all eight declared comparison/selected blocks. Three byte-bounded subsets of these outputs supply the localized derivative; raw errors outside those subsets remain literal raw evidence."

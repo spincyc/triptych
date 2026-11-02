@@ -20,6 +20,7 @@ SOURCE_ROOT = Path(os.environ.get("TRIPTYCH_COMMON_SOURCE_ROOT", ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(MODULE_ROOT / "scripts"))
 import _calendars as C
+from tools.tests import _source_batch_guards as G
 
 _loader = importlib.machinery.SourceFileLoader("_advent_usage_publisher", str(MODULE_ROOT / "tools/mass-propers"))
 _spec = importlib.util.spec_from_loader(_loader.name, _loader)
@@ -36,13 +37,16 @@ CASES = {
     "advent-3": ("2026-12-13", ["2026-12-14", "2026-12-15", "2026-12-17"]),
     "advent-4": ("2026-12-20", ["2026-12-22", "2026-12-23"]),
 }
+# 2026-12-05 and 12-10 commemorate these saints. Since 8d7e3b301 the Day
+# oration assembly binds each commemorated Collect to its exact source owner.
+COMMEMORATIONS = ("comm-s-sabbae-abbatis", "comm-s-melchiadis-papae-martyris")
 
 # Canonical source resolver supplies appointment identities and inherited
 # metadata. The fixture keeps the actual held source bodies and references;
 # the test does not author a second applicability resolver or Missal wording.
 def structure():
     masses = []
-    for key in [*CASES, "pentecost-2"]:
+    for key in [*CASES, "pentecost-2", *COMMEMORATIONS]:
         entries, problems = C.resolve_propers(SOURCE, INDEX[key], appointments=True)
         if problems:
             raise AssertionError(problems)
@@ -54,7 +58,8 @@ def structure():
             row.update(form=form, form_id="main", cycles={}, translations=[])
             row["citations"] = [{"ref": verse["ref"]} for verse in row.get("verses", [])]
             rows.append(row)
-        masses.append({"key": key, "kind": "seasonal", "propers": rows})
+        masses.append({"key": key, "kind": "sanctoral" if key in COMMEMORATIONS else "seasonal",
+                       "propers": rows})
     return {"calendar": "roman-1962", "proper_appointment_facts": SOURCE["proper_appointment_facts"],
             "translations": [], "masses": masses}
 
@@ -86,8 +91,14 @@ let raw='';process.stdin.on('data',chunk=>raw+=chunk);process.stdin.on('end',()=
  const input=JSON.parse(raw),s=input.structure,base=withoutRule(s),checks=[];
  if(input.mode==='private-status') {
   const target=s.masses.find(m=>m.key==='advent-3').propers.find(p=>p.name==='Alleluia');
+  assert.equal(typeof target.text,'string');assert(target.text.length>0);
+  assert.equal(target.text_status,undefined);
+  // Exercise an actual unavailable-body carrier without erasing the accepted
+  // current body or pretending that its former source gap remains live.
+  delete target.text;target.text_status={state:'unavailable',scope:'proper-body'};
   assert.deepEqual(target.text_status,{state:'unavailable',scope:'proper-body'});
   assert.equal(target.source,'composed');assert.deepEqual(target.citations,[]);
+  A.adaptDay({request:request('2026-12-13','advent-3'),derived:derive('2026-12-13'),structure:s});
   target.text_status.reasons=[{kind:'no-exemplar'}];
   assert.throws(()=>A.adaptDay({request:request('2026-12-13','advent-3'),
    derived:derive('2026-12-13'),structure:s}),/text_status must use the exact public state\/scope shape/);
@@ -124,9 +135,17 @@ let raw='';process.stdin.on('data',chunk=>raw+=chunk);process.stdin.on('end',()=
    '2026-12-08','2026-12-11','2026-12-21','2026-12-24'];
   for(const date of unused){const d=derive(date),b=d.options[0],advertised=year.ferial_formulary[date][0].key;
    assert(['feast','vigil-or-octave-day'].includes(b.winner.nature));
-   assert.equal(b.readable.some(r=>r.key===advertised),false);
-   assert.throws(()=>A.adaptDay({request:request(date,advertised),derived:d,structure:s}),/not held on this Day branch/);
-   checks.push({date,advertised,notReadable:true});}
+   const readable=b.readable.filter(r=>r.key===advertised);
+   assert.equal(b.readable.some(r=>r.key===advertised&&r.state==='said'),false);
+   if(readable.length){
+    assert.equal(readable.length,1);assert.equal(readable[0].state,'commemorated');
+    const result=A.adaptDay({request:request(date,advertised),derived:d,structure:s});
+    assert.equal(result.events.some(e=>e.editionSlotLabel==='Alleluia'),false);
+    assert.equal(condition(result,advertised).length,1);
+    checks.push({date,advertised,commemoratedNotPrincipal:true});
+   }else{
+    assert.throws(()=>A.adaptDay({request:request(date,advertised),derived:d,structure:s}),/not held on this Day branch/);
+    checks.push({date,advertised,notReadable:true});}}
   for(const date of ['2026-12-16','2026-12-18','2026-12-19']){const d=derive(date),b=d.options[0];
    assert.equal(b.winner.nature,'feria');assert.equal(b.winner.source,'index');assert.equal(b.winner.formulary,null);
    assert.throws(()=>A.adaptDay({request:request(date,'advent-3'),derived:d,structure:s}),/not held on this Day branch/);
@@ -197,14 +216,15 @@ class AdventFerialUse(unittest.TestCase):
                                              "advent-3": [], "advent-4": []})
         # Held 1962 AP86 / printed p.5 L, unit25 (before Gospel26) has
         # no printed citation. The former Psalm79:3 was an inference, removed
-        # by the held-page appointment correction.
+        # by the held-page appointment correction. Its former body gap is
+        # filled by the accepted Phase 5 Latin22 body (1f1be432b; ledger and
+        # missal-source-batch-20261023 latin_current_bodies).
         alleluia = INDEX["advent-3"]["propers"][4]
         self.assertEqual(alleluia["source"], "composed")
         self.assertEqual(alleluia["incipit"], "Excita, Domine, potentiam tuam")
-        self.assertNotIn("text", alleluia)
-        self.assertEqual(alleluia["text_status"], {
-            "state": "unavailable", "scope": "proper-body",
-            "reasons": [{"kind": "no-exemplar"}]})
+        self.assertEqual(hashlib.sha256(alleluia["text"].encode()).hexdigest(),
+                         "0188d53c71815633e8cf11e8d8a245f74e98481cafb978ebe38348733b0b3ccc")
+        self.assertNotIn("text_status", alleluia)
         self.assertEqual(hashlib.sha256(INDEX["advent-4"]["propers"][4]["text"].encode()).hexdigest(),
                          "b7d6fee93fb37223387643d18c0640604e0235b2e63e5813ad8755dfff0f7240")
 
@@ -218,7 +238,51 @@ class AdventFerialUse(unittest.TestCase):
                           ("advent-4", "main", "Alleluia", 1, 4, 92, 95)])
         self.assertEqual([(r["artifact_page"], r["printed_page"], r["column"]) for r in ledger["source_contrasts"]], [(459, "378", "L")])
 
-    def test_public_fixture_keeps_body_gap_and_refuses_source_audit_shape(self):
+    def test_original_advent_latin_and_english_gap_are_preserved_by_frozen_source_replay(self):
+        historical = G.historical_document(SOURCE)
+        former = [row for row in C.mass_index(historical)["advent-3"]["propers"]
+                  if row["name"] == "Alleluia"]
+        self.assertEqual(len(former), 1)
+        self.assertEqual(G.digest(former[0]["text"]),
+                         "0188d53c71815633e8cf11e8d8a245f74e98481cafb978ebe38348733b0b3ccc")
+        self.assertNotIn("text_status", former[0])
+        old_ledger = tomllib.loads(G.historical_text(
+            "src/sources/inventories/roman-1962-proper-translations-v1.toml"))
+        original = [row for row in old_ledger["untranslated"]
+                    if row["mass"] == "advent-3" and PUBLISHER.translation_record_identity(row) ==
+                    ("advent-3", "main", "Alleluia", "all", 1)]
+        self.assertEqual(len(original), 1)
+        self.assertEqual((original[0]["availability"], original[0]["reason"]),
+                         ("unavailable", {"kind": "no-exemplar"}))
+        self.assertNotIn("text", original[0])
+        original_collect = G.historical_english_absence(("advent-2", "main", "Collect", "all", 1))
+        self.assertEqual(original_collect["reason"], {
+            "kind": "witness-gap",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"})
+        current = tomllib.loads((SOURCE_ROOT /
+            "src/sources/inventories/roman-1962-proper-translations-v1.toml").read_text())
+        for key, proper_name in (("advent-3", "Alleluia"), ("advent-4", "Alleluia"),
+                                 ("advent-1", "Epistle")):
+            rows = [row for row in current["entries"]
+                    if row["mass"] == key and PUBLISHER.translation_record_identity(row) ==
+                    (key, "main", proper_name, "all", 1)]
+            self.assertEqual(len(rows), 1)
+            row = rows[0]
+            self.assertEqual(G.digest(G.canonical(row)),
+                             G.fixture()["roman_current_english_positive"][G.canonical(
+                                 (key, "main", proper_name, "all", 1))])
+            if proper_name == "Epistle":
+                self.assertLessEqual(PUBLISHER.STUDY_TRANSLATION_SOURCE_FIELDS, set(row))
+                self.assertTrue(all(t["rights"] == "project-created" and "source_id" not in t
+                                    for t in row["translations"]))
+                PUBLISHER.validate_study_translation_binding(
+                    row, "roman-1962", SOURCE_ROOT / "src/sources/calendars",
+                    Path("accepted-advent-study-source-control"))
+            else:
+                self.assertTrue(all(t["rights"] == "public-domain" and t["source_id"]
+                                    for t in row["translations"]))
+
+    def test_public_fixture_keeps_current_body_and_refuses_source_audit_shape(self):
         before = copy.deepcopy(SOURCE)
         public = structure()
         for mass in public["masses"]:

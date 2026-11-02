@@ -1,0 +1,57 @@
+{
+  "schema": "triptych-scratch-postconciliar-cold-source-review/v1",
+  "reviewed_on": "2026-10-29",
+  "scope": "One finite HolyThursday EntranceAntiphon; independent source/wholebody comparison only.",
+  "packet": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/holy-thursday-entrance-candidate.json",
+  "packet_sha256": "e658c60a4f20ee366b70849bdcd4a1acb6c4010e50c7b8ad293109f65b0176fc",
+  "target": {
+    "mass": "mass-of-the-lords-supper",
+    "form_id": "main",
+    "proper": "Entrance Antiphon",
+    "cycle": "all",
+    "occurrence": 1
+  },
+  "decision": "source-accepted",
+  "historical_source": {
+    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+    "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+    "pdf_pages": [
+      445,
+      446
+    ],
+    "printed_pages": [
+      "447",
+      "448"
+    ],
+    "bounds": "Entire first antiphon across the two physical pages, ending delivered. before separately labelledPsalm66:2; repeated cue afterPsalm excluded.",
+    "inspection": "Opened both complete source-page images. Literal historicalEnglish and complete associatedLatin read across continuation; ornamental initial smallcaps and line wrapping only treated typographically."
+  },
+  "modern_comparison": {
+    "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+    "pdf_pages": [
+      181,
+      182
+    ],
+    "inspection": "Opened both complete source-page images and read the whole antiphon over the page break. Every body word agrees with historicalLatin after stress, punctuation and Jesu/Iesu orthography. No modern ceremony text or alternate antiphon imported.",
+    "qualification": "Secondary digital2002 reading only; unestablished printed2002fidelity and2008correspondence remain unchanged."
+  },
+  "english_sha256": "f52a8449ba97b6c91460065ec8c615f8a13f4542c4f1e4d9e886edd2764f2857",
+  "nativity_correction_recheck": {
+    "packet": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/nativity-five-candidates.json",
+    "packet_sha256": "3aaa8b6fc9ccc3446efcdbfa6326f1670b15563287ca5021583056f1a19feec3",
+    "target": [
+      "nativity",
+      "vigil",
+      "Entrance Antiphon",
+      "all",
+      1
+    ],
+    "comma_restored": true,
+    "decision": "source-accepted-after-recorded-correction"
+  },
+  "remaining_gates": [
+    "New exact source/publication records and recipient TSV binding; parent-owned validator, projection and integrated checks."
+  ],
+  "tracked_changes": []
+}

@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.aas.001.extracted-text-56ac8d06"
+edition_id = "edition.acta-papal-archives.aas.001.1909-acta-aas-001"
+artifact_type = "mechanical-pdf-text-extraction"
+media_type = "text/plain"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Exact extraction may contain protected text or modern wrappers and remains transient. Separately manifested historical text excludes uncleared material."
+retrieved = "2026-10-26"
+sha256 = "56ac8d06f09c77bc139e83c4e2b9aa7927201e50f06db7b8e0563cd0da1a4ad1"
+byte_size = 2325300
+derived_from = "artifact.acta-papal-archives.aas.001.vatican-pdf-2a46f0b0"
+transformation = "[\"/usr/bin/pdftotext\", \"-layout\", \"-enc\", \"UTF-8\", \"-eol\", \"unix\", \"<transient-path>\", \"<transient-path>\"]"
+notes = "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

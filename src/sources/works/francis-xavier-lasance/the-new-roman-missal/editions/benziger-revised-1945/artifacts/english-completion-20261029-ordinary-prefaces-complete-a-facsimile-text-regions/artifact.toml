@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-facsimile-text-regions"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "facsimile-pdf"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only historical prayer-text regions of ordinary numbered pages 773–774 and 798–804 in the Lasance 1945 revision, outside both excluded lettered insert ranges. United States nonrenewal of registrations A110108 and A192159 is established in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. The two Trinity regions exclude the separate 1936 illustration; no rights claim in that artwork is made. These faithful text-region reproductions claim no new right in the underlying words."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "Reused the complete registered facsimile after recomputing whole-PDF SHA-256 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70 on 2026-10-30. Original pages 772–773,797,799–800,802–803 were directly read. The source owner checked retained crops and the seven-page PDF. Independent source review separately hashed the whole PDF and read ten freshly rendered source pages including the duplicate printed 773 and Lent title context."
+retrieved = "2026-10-30"
+sha256 = "c62859133eee975c8ea78bab0813d168dfa242592b74771be148df3c4ed5f316"
+byte_size = 1011715
+page_count = 7
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-ordinary-prefaces-complete-a-facsimile-text-regions/source.pdf"
+indexable = false
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Rasterize original whole-PDF pages at scale-to 2200 using pdftoppm, retaining only these exact pixel regions (page,x,y,W,H): [(772, 70, 1260, 1200, 900), (773, 80, 150, 1140, 460), (797, 170, 1170, 940, 565), (799, 65, 1755, 1200, 300), (800, 80, 180, 1180, 447), (802, 80, 180, 1200, 950), (803, 70, 180, 1200, 990)]. Combine the seven exact cropped raster images losslessly as a PDF. The source prayer words, capitalization and punctuation are unchanged. The crops exclude unrelated illustrations, Canon bodies and applicability rubrics rather than reissuing whole original pages. Small nonselected dialogue, bell-rubric or Sanctus fragments remain at some crop edges as context; none enters the selected English TSV body."
+notes = "This is a seven-region prayer-text proof, not seven whole original pages. The retained order is original PDF 772,773,797,799,800,802,803. Mapping: retained 1–2 = Trinity printed 773–774; retained 3 = Nativity printed 798; retained 4–5 = Epiphany printed 800–801; retained 6 = Lent printed 803; retained 7 = Holy Cross printed 804. OriginalPDF771 repeats printed 773 and is not substituted for the selected PDF 772. No rights conclusion about the excluded artwork or later Easter-night rubric is made."

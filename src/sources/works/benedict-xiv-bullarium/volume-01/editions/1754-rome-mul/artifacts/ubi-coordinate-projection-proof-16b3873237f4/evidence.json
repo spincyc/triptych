@@ -1,0 +1,45 @@
+{
+  "all_WORD_values_and_order_identical": true,
+  "all_non_coordinate_WORD_attributes_identical": true,
+  "all_other_page_COORDS_identical": true,
+  "compared_WORDs": 442568,
+  "coordinate_semantics": "First four original integers are left,bottom,right,top in native top-left pixel coordinates. Each min/max rectangle equals all position-aligned native charParams rectangle unions on these three pages. No scaling, rotation or origin remapping. The fifth field is not used as geometry and remains preserved in the original XML; no inference about its baseline semantics is needed.",
+  "native_bbox_unions": {
+    "compared_words": 3029,
+    "mismatches": []
+  },
+  "native_pixel_dimensions": [
+    {
+      "dimensions": [
+        1686,
+        2500
+      ],
+      "leaf": 26
+    },
+    {
+      "dimensions": [
+        1625,
+        2500
+      ],
+      "leaf": 27
+    },
+    {
+      "dimensions": [
+        1627,
+        2500
+      ],
+      "leaf": 28
+    }
+  ],
+  "output_bytes": 24298490,
+  "output_sha256": "4baa6408f4798ec297533f8bc83cf31a487bc96fa1322c74751a850210bdd59c",
+  "projected_WORDs": 3029,
+  "projected_leaves": [
+    26,
+    27,
+    28
+  ],
+  "schema": "triptych-ubi-coordinate-projection-proof/v1",
+  "source_bytes": 24312392,
+  "source_sha256": "d7a70bdb078e657e36dfe43c1d2d691fe9433f9e191d4f047f329a569c0b3602"
+}

@@ -1,0 +1,131 @@
+{
+  "schema": "triptych-observer-stop-cutoff/v1",
+  "packet_sha256": "0491dd19474a3966cc61d46c6cd1f10e2a7a04a9019dd8727e12d0626e66644f",
+  "source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+  "pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+  "actual_reader_pages": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "actual_own_folio_pages": [
+    5,
+    11
+  ],
+  "original_observations_pin": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b/observations.jsonl",
+    "sha256": "abd1bcb650fcad3b779d2265c5e446ad556fa5f4c7bb97f1ec4626f2799b7ded",
+    "byte_size": 7658
+  },
+  "observations": [
+    {
+      "kind": "reader-contact",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "image": ".scratch/etsi-english-greeting-recovery/exclusion-successor-1/pdf-review/.scratch/etsi-english-greeting-recovery/exclusion-successor-1/render/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/contact-sheets/sheet-001.png",
+      "finding": "Fresh actual successor contact shows seven consistent two-column pages; previously conspicuous stacks on4\u20135 no longer present. Source-bearing final page has long left body column and closing at upper right before apparatus. Individual full-resolution review follows.",
+      "verdict": "overview inspected; no page acceptance inferred",
+      "current_pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+      "sha256": "e40076e5b4c1e0fdb21c68009bdb5c856334a5a471258707c46ff24ee98ff9d9"
+    },
+    {
+      "kind": "reader-page",
+      "page": 1,
+      "image": ".scratch/etsi-english-greeting-recovery/exclusion-successor-1/pdf-review/.scratch/etsi-english-greeting-recovery/exclusion-successor-1/render/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/pages/page-1.png",
+      "finding": "Fresh current full-resolution page. Etsi multa/PiusIX/1873-11-21/English clear; full address, PIUS PP.IX., both restored greeting lines and ALTHOUGH remain legible. Historical Machab.iii.59 note separately paragraphed before literal unexcluded folio4. Normal columns; no clipping/overlap/dropout. Literal OCR divisions and punctuation remain.",
+      "verdict": "PASS current PDF layout/opening",
+      "current_pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+      "sha256": "4169bd2d5e1a6f21204ccb75b5a22737b30b5cb658859010c5dc98300a30d7dc"
+    },
+    {
+      "kind": "reader-page",
+      "page": 2,
+      "image": ".scratch/etsi-english-greeting-recovery/exclusion-successor-1/pdf-review/.scratch/etsi-english-greeting-recovery/exclusion-successor-1/render/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/pages/page-2.png",
+      "finding": "Fresh successor full-resolution. Excluded own folio6 is absent from top; main constitution paragraph starts normally. Source StJohn and Ezech note blocks remain separately paragraphed before unlisted literal folios8/9. Normal two-column sequence and clear gutter; no clipping/overlap/dropout. Literal detached parenthesis, quotation/punctuation and source word-division OCR defects remain as qualified unchanged input.",
+      "verdict": "PASS current PDF layout; ordinary OCR qualification",
+      "current_pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+      "sha256": "7e8846f4136e802d01d35bbc7044f7be88f08282bc9772cfec2061f718b076bc"
+    },
+    {
+      "kind": "reader-page",
+      "page": 3,
+      "image": ".scratch/etsi-english-greeting-recovery/exclusion-successor-1/pdf-review/.scratch/etsi-english-greeting-recovery/exclusion-successor-1/render/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/pages/page-3.png",
+      "finding": "Fresh current full-resolution. Left/right normal order; source folios10/11 remain literal, excluded12 no longer intervenes before belong the heavens. Native own sentence continuation visible and legible through page foot to next page. No note fusion, clipping, overlap or glyph loss.",
+      "verdict": "PASS current PDF layout/source transition",
+      "current_pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+      "sha256": "3fd9c87b2cfd8cae9c689578fc1f6650cc3a6c8ac5952e94108ce529e01c8c08"
+    },
+    {
+      "kind": "reader-page",
+      "page": 4,
+      "image": ".scratch/etsi-english-greeting-recovery/exclusion-successor-1/pdf-review/.scratch/etsi-english-greeting-recovery/exclusion-successor-1/render/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/pages/page-4.png",
+      "finding": "Fresh successor full-resolution. First foreign stack and spurious o o7 absent; main have \u2192 historical four-note block \u2192 refused sequence remains legible, notes remain separate. Excluded own13 absent. Weighed these things at left foot continues will reject at right top without extraneous row. Second former noise block absent before retained unlisted folio15 and redeemed continuation. Main paragraphs and source notes intact, no clipping/overlap/dropout. Peter iy.13.16 OCR defect remains literal and qualified.",
+      "verdict": "PASS current PDF layout and inspected former contamination transitions",
+      "current_pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+      "sha256": "2035100b42170c7967ea9021f57cbd3ea2945399e7d6f5295d20789dff72145b"
+    },
+    {
+      "kind": "reader-page",
+      "page": 5,
+      "image": ".scratch/etsi-english-greeting-recovery/exclusion-successor-1/pdf-review/.scratch/etsi-english-greeting-recovery/exclusion-successor-1/render/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/pages/page-5.png",
+      "finding": "Fresh current full-resolution. Former second stack no longer appears; excluded1C absent between retained col- and lected source fragments. Third i./ii/tl stack absent; in testimony proceeds through retained unlisted folio17 to to all nations. Own substantive continuation and Augustin/Pacian note group intact and separately paragraphed. Normal columns, no clipping/overlap/dropout; conswnmation and other literal OCR errors remain qualified.",
+      "verdict": "PASS current PDF layout and former contamination transition",
+      "current_pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+      "sha256": "971875146ce07afa3e59c31d3dedb847cdd013da4e21ba67512a14c3e38d50a6"
+    },
+    {
+      "kind": "own-folio-crop",
+      "original_pdf_page": 5,
+      "printed_folio": 6,
+      "old_afe_LF": 113,
+      "image": ".scratch/encyclical-refinement-package/cold-review-57b/replay/native/folio-5.png",
+      "source_image_sha256": "52c8c6bda950d7adeadb93c3dcbfaf18152446b16b06eda56278aec1cc495edf",
+      "source_image_dimensions": [
+        1221,
+        2200
+      ],
+      "rectangle_xywh": [
+        350,
+        90,
+        500,
+        165
+      ],
+      "finding": "Fresh actual replay crop shows centered own numeral6 above a separate rule; no act-body glyphs enter rectangle. Prior57 full original5 view supplies unchanged surrounding body context. Exact removed oldafe LF113 is own layout furniture, not source body or foreign text.",
+      "verdict": "PASS authorized OWN_LAYOUT_FURNITURE exclusion",
+      "current_pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+      "sha256": "9de622e82c397cf55858871bdba87e3ea6ae046d88f0f5e8182a5b664744cce7"
+    },
+    {
+      "kind": "own-folio-crop",
+      "original_pdf_page": 11,
+      "printed_folio": 12,
+      "old_afe_LF": 343,
+      "image": ".scratch/encyclical-refinement-package/cold-review-57b/replay/native/folio-11.png",
+      "source_image_sha256": "55f28ddc949d0ddf13a7ec1e00f1a8b6ac31545b245dbe166d9f3f6adef83fbd",
+      "source_image_dimensions": [
+        1221,
+        2200
+      ],
+      "rectangle_xywh": [
+        350,
+        90,
+        500,
+        165
+      ],
+      "finding": "Fresh actual replay crop shows centered own numeral12 and separate rule without body glyphs. Prior57 full original11 image supplies unchanged main text and four historical notes. Removed oldafe LF343 is only own page furniture; note/body spans remain outside it.",
+      "verdict": "PASS authorized OWN_LAYOUT_FURNITURE exclusion",
+      "current_pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+      "sha256": "83b6a589a286ad01487377adb9acb330088cf4511bd5aa6f11893d50dfd4d69f"
+    }
+  ],
+  "qualification": "Exact persisted observer records frozen after interrupt; no completed57b SOURCE or wholePDF judgment exists. No unavailable views credited."
+}

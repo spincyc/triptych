@@ -8,6 +8,11 @@ Publication-local interpretations and evidence judgments do not move here.
 They remain in each publication's research records and are connected to this
 library through `research/source-bindings.toml`.
 
+The [papal document collection](papal-documents/README.md) catalogues formal
+papal acts and historical archive containers, retains identified source
+editions under their own rights, and supplies two-column readers and citation
+exports for studies and presentations.
+
 Migration coverage under `inventories/` has its own audit schema and checker.
 It inventories legacy records and ownership without turning their prose labels
 into source-manifest evidence; see

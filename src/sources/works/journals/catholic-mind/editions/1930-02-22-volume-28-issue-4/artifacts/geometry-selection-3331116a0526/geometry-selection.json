@@ -1,0 +1,3446 @@
+{
+  "schema": "triptych-english-word-geometry-selection/v1",
+  "source_xml": "sim_catholic-mind_1930-02-22_28_4_djvu.xml",
+  "source_xml_sha256": "86287faa74c89799342cd89ce8a91b6e3a4a6a47fe8a26919bb23d368c18544f",
+  "source_pdf": "sim_catholic-mind_1930-02-22_28_4.pdf",
+  "source_pdf_sha256": "82cce39e14e0a35fbca2abdf7d3dff68d743cd0cd0f1d43b37145a6a2c0d0366",
+  "selected_artifact_page_range": [
+    1,
+    31
+  ],
+  "method": "Select exact XML WORD text in original XML paragraph/line order within the explicit page-specific rectangle. Join literal words/lines with spaces and retained XML paragraphs with blank LF. Exclude only neighboring-page gutter/scan-edge nodes, upper printed journal furniture and isolated lower folio. Exclude separate editorial Outline on artifact page32. Preserve all retained lexical OCR, numbering, punctuation, broken words, notes, subscriptions and dating without corrections.",
+  "output": "papal-act-geometry-text.txt",
+  "output_sha256": "8d44b2c03213449a25f5e4af3b4b5daed51dffb24ee9bf9f1dd63b3e61f8cafa",
+  "output_bytes": 79669,
+  "pages": [
+    {
+      "page": 1,
+      "printed_page": 61,
+      "width": 1782,
+      "height": 2694,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 300,
+      "word_center_y_max": 2694,
+      "kept_words": 334,
+      "excluded_words": [
+        {
+          "text": "THE",
+          "coords": [
+            325,
+            162,
+            410,
+            134
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CATHOLIC",
+          "coords": [
+            431,
+            162,
+            642,
+            132
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "MIND",
+          "coords": [
+            662,
+            161,
+            778,
+            132
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "VOL.",
+          "coords": [
+            194,
+            213,
+            280,
+            183
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "XXVIII,",
+          "coords": [
+            299,
+            218,
+            450,
+            182
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "No.",
+          "coords": [
+            468,
+            211,
+            527,
+            182
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "4,",
+          "coords": [
+            546,
+            217,
+            573,
+            185
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "February",
+          "coords": [
+            591,
+            217,
+            746,
+            181
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "22,",
+          "coords": [
+            765,
+            217,
+            812,
+            184
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "1930",
+          "coords": [
+            832,
+            210,
+            907,
+            183
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "61",
+          "coords": [
+            799,
+            2542,
+            842,
+            2506
+          ],
+          "reason": "isolated printed lower folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        191,
+        334,
+        1430,
+        2501
+      ]
+    },
+    {
+      "page": 2,
+      "printed_page": 62,
+      "width": 1782,
+      "height": 2687,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2687,
+      "kept_words": 443,
+      "excluded_words": [
+        {
+          "text": "62",
+          "coords": [
+            370,
+            173,
+            413,
+            140
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            533,
+            173,
+            807,
+            138
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            834,
+            172,
+            1129,
+            136
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1154,
+            171,
+            1219,
+            135
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1242,
+            171,
+            1418,
+            134
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        369,
+        244,
+        1608,
+        2494
+      ]
+    },
+    {
+      "page": 3,
+      "printed_page": 63,
+      "width": 1782,
+      "height": 2687,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2687,
+      "kept_words": 406,
+      "excluded_words": [
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            363,
+            158,
+            638,
+            122
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            665,
+            157,
+            960,
+            121
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            985,
+            157,
+            1049,
+            121
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1074,
+            156,
+            1250,
+            120
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "63",
+          "coords": [
+            1370,
+            155,
+            1414,
+            120
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        199,
+        230,
+        1438,
+        2486
+      ]
+    },
+    {
+      "page": 4,
+      "printed_page": 64,
+      "width": 1782,
+      "height": 2687,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2687,
+      "kept_words": 426,
+      "excluded_words": [
+        {
+          "text": "64",
+          "coords": [
+            390,
+            160,
+            435,
+            126
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            553,
+            162,
+            827,
+            125
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            854,
+            161,
+            1148,
+            126
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1173,
+            162,
+            1238,
+            125
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1262,
+            161,
+            1438,
+            124
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        390,
+        233,
+        1628,
+        2485
+      ]
+    },
+    {
+      "page": 5,
+      "printed_page": 65,
+      "width": 1782,
+      "height": 2687,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2687,
+      "kept_words": 433,
+      "excluded_words": [
+        {
+          "text": "ea",
+          "coords": [
+            0,
+            2471,
+            13,
+            2404
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "TSS",
+          "coords": [
+            0,
+            2364,
+            18,
+            2331
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "TC",
+          "coords": [
+            0,
+            2313,
+            18,
+            2304
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "OS",
+          "coords": [
+            0,
+            2276,
+            18,
+            2236
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "S—‘",
+          "coords": [
+            0,
+            2216,
+            18,
+            2166
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "UP",
+          "coords": [
+            0,
+            2162,
+            18,
+            2154
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            356,
+            192,
+            630,
+            155
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            657,
+            191,
+            953,
+            154
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            978,
+            190,
+            1042,
+            154
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1073,
+            190,
+            1244,
+            152
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "65",
+          "coords": [
+            1363,
+            188,
+            1407,
+            152
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        193,
+        262,
+        1418,
+        2516
+      ]
+    },
+    {
+      "page": 6,
+      "printed_page": 66,
+      "width": 1782,
+      "height": 2678,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2678,
+      "kept_words": 467,
+      "excluded_words": [
+        {
+          "text": "66",
+          "coords": [
+            396,
+            192,
+            441,
+            159
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            559,
+            192,
+            833,
+            156
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            860,
+            191,
+            1155,
+            155
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1180,
+            191,
+            1244,
+            154
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1269,
+            191,
+            1445,
+            154
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        397,
+        263,
+        1640,
+        2506
+      ]
+    },
+    {
+      "page": 7,
+      "printed_page": 67,
+      "width": 1782,
+      "height": 2678,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2678,
+      "kept_words": 505,
+      "excluded_words": [
+        {
+          "text": "er",
+          "coords": [
+            0,
+            2512,
+            47,
+            2477
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            342,
+            185,
+            617,
+            149
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            644,
+            184,
+            939,
+            149
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            965,
+            184,
+            1029,
+            148
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1053,
+            183,
+            1230,
+            147
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "67",
+          "coords": [
+            1349,
+            181,
+            1393,
+            146
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        182,
+        255,
+        1429,
+        2497
+      ]
+    },
+    {
+      "page": 8,
+      "printed_page": 68,
+      "width": 1782,
+      "height": 2670,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2670,
+      "kept_words": 444,
+      "excluded_words": [
+        {
+          "text": "68",
+          "coords": [
+            416,
+            187,
+            460,
+            154
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            579,
+            188,
+            853,
+            153
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            879,
+            189,
+            1175,
+            153
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1200,
+            189,
+            1264,
+            153
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1288,
+            189,
+            1464,
+            152
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        405,
+        262,
+        1628,
+        2504
+      ]
+    },
+    {
+      "page": 9,
+      "printed_page": 69,
+      "width": 1782,
+      "height": 2670,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2670,
+      "kept_words": 452,
+      "excluded_words": [
+        {
+          "text": "oem",
+          "coords": [
+            0,
+            1867,
+            28,
+            1805
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "ewe",
+          "coords": [
+            0,
+            1748,
+            28,
+            1648
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "er",
+          "coords": [
+            0,
+            1631,
+            28,
+            1605
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "wer",
+          "coords": [
+            0,
+            1580,
+            28,
+            1511
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "yee",
+          "coords": [
+            0,
+            1489,
+            22,
+            1262
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "<“<",
+          "coords": [
+            1,
+            1992,
+            25,
+            1908
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": ")-",
+          "coords": [
+            0,
+            2132,
+            28,
+            2108
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            370,
+            181,
+            644,
+            145
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            671,
+            180,
+            967,
+            145
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            993,
+            180,
+            1057,
+            144
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1081,
+            181,
+            1258,
+            144
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "69",
+          "coords": [
+            1377,
+            180,
+            1423,
+            146
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        206,
+        254,
+        1438,
+        2496
+      ]
+    },
+    {
+      "page": 10,
+      "printed_page": 70,
+      "width": 1782,
+      "height": 2686,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2686,
+      "kept_words": 452,
+      "excluded_words": [
+        {
+          "text": "70",
+          "coords": [
+            404,
+            193,
+            449,
+            158
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            565,
+            194,
+            839,
+            157
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            866,
+            193,
+            1161,
+            156
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1186,
+            192,
+            1249,
+            156
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1274,
+            191,
+            1450,
+            155
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        403,
+        264,
+        1619,
+        2517
+      ]
+    },
+    {
+      "page": 11,
+      "printed_page": 71,
+      "width": 1782,
+      "height": 2686,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2686,
+      "kept_words": 472,
+      "excluded_words": [
+        {
+          "text": "hall",
+          "coords": [
+            0,
+            1698,
+            9,
+            1674
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "a",
+          "coords": [
+            0,
+            2309,
+            23,
+            2277
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "wa",
+          "coords": [
+            0,
+            2049,
+            23,
+            2020
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "ant",
+          "coords": [
+            0,
+            1996,
+            23,
+            1925
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "wwe",
+          "coords": [
+            0,
+            1899,
+            23,
+            1842
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "Vy",
+          "coords": [
+            0,
+            1802,
+            23,
+            1765
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "o<*s",
+          "coords": [
+            0,
+            2452,
+            26,
+            2328
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "-_",
+          "coords": [
+            0,
+            2502,
+            9,
+            2471
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "wn",
+          "coords": [
+            11,
+            2502,
+            28,
+            2478
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "+",
+          "coords": [
+            115,
+            2378,
+            121,
+            2370
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "dieapas",
+          "coords": [
+            107,
+            2360,
+            127,
+            2236
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "aa",
+          "coords": [
+            95,
+            2298,
+            131,
+            2268
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "iota",
+          "coords": [
+            111,
+            2217,
+            117,
+            2209
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "ET",
+          "coords": [
+            109,
+            2195,
+            126,
+            2099
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            351,
+            191,
+            626,
+            155
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            653,
+            190,
+            949,
+            155
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            974,
+            190,
+            1038,
+            154
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1063,
+            190,
+            1239,
+            153
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "71",
+          "coords": [
+            1360,
+            189,
+            1400,
+            154
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        188,
+        264,
+        1424,
+        2523
+      ]
+    },
+    {
+      "page": 12,
+      "printed_page": 72,
+      "width": 1782,
+      "height": 2686,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2686,
+      "kept_words": 448,
+      "excluded_words": [
+        {
+          "text": "72",
+          "coords": [
+            393,
+            205,
+            434,
+            171
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            554,
+            204,
+            828,
+            168
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            855,
+            203,
+            1149,
+            167
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1175,
+            202,
+            1239,
+            166
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1264,
+            202,
+            1439,
+            165
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        388,
+        274,
+        1609,
+        2528
+      ]
+    },
+    {
+      "page": 13,
+      "printed_page": 73,
+      "width": 1782,
+      "height": 2686,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2686,
+      "kept_words": 419,
+      "excluded_words": [
+        {
+          "text": "—————",
+          "coords": [
+            0,
+            2512,
+            20,
+            1993
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "OO",
+          "coords": [
+            0,
+            2306,
+            24,
+            2194
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "Oe",
+          "coords": [
+            0,
+            2158,
+            24,
+            2120
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "ee",
+          "coords": [
+            0,
+            2100,
+            24,
+            2080
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            367,
+            205,
+            641,
+            168
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            669,
+            203,
+            965,
+            167
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            989,
+            203,
+            1054,
+            166
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1078,
+            202,
+            1255,
+            165
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "73",
+          "coords": [
+            1376,
+            202,
+            1417,
+            166
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        203,
+        275,
+        1429,
+        2535
+      ]
+    },
+    {
+      "page": 14,
+      "printed_page": 74,
+      "width": 1782,
+      "height": 2678,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2678,
+      "kept_words": 444,
+      "excluded_words": [
+        {
+          "text": "74",
+          "coords": [
+            391,
+            217,
+            433,
+            183
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            552,
+            217,
+            826,
+            182
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            853,
+            217,
+            1148,
+            181
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1174,
+            217,
+            1237,
+            182
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1262,
+            216,
+            1438,
+            180
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        386,
+        290,
+        1621,
+        2548
+      ]
+    },
+    {
+      "page": 15,
+      "printed_page": 75,
+      "width": 1782,
+      "height": 2678,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2678,
+      "kept_words": 491,
+      "excluded_words": [
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            345,
+            194,
+            620,
+            157
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            646,
+            193,
+            942,
+            157
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            968,
+            193,
+            1032,
+            157
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1056,
+            193,
+            1233,
+            156
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "75",
+          "coords": [
+            1353,
+            193,
+            1396,
+            156
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        182,
+        264,
+        1427,
+        2517
+      ]
+    },
+    {
+      "page": 16,
+      "printed_page": 76,
+      "width": 1782,
+      "height": 2686,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2686,
+      "kept_words": 471,
+      "excluded_words": [
+        {
+          "text": "76",
+          "coords": [
+            412,
+            196,
+            455,
+            161
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            573,
+            195,
+            847,
+            158
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            874,
+            193,
+            1169,
+            156
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1195,
+            192,
+            1258,
+            155
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1283,
+            191,
+            1459,
+            154
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        409,
+        267,
+        1632,
+        2521
+      ]
+    },
+    {
+      "page": 17,
+      "printed_page": 77,
+      "width": 1782,
+      "height": 2686,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2686,
+      "kept_words": 461,
+      "excluded_words": [
+        {
+          "text": "eu",
+          "coords": [
+            0,
+            1762,
+            15,
+            1702
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "t",
+          "coords": [
+            3,
+            1675,
+            15,
+            1671
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "ww",
+          "coords": [
+            0,
+            1638,
+            14,
+            1582
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "VW",
+          "coords": [
+            0,
+            1561,
+            22,
+            1538
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "OPN",
+          "coords": [
+            0,
+            1521,
+            15,
+            1424
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "HT",
+          "coords": [
+            0,
+            1396,
+            22,
+            1377
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "TR",
+          "coords": [
+            0,
+            1363,
+            22,
+            1320
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "te",
+          "coords": [
+            0,
+            1286,
+            22,
+            1256
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "tel",
+          "coords": [
+            0,
+            1237,
+            22,
+            1210
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "rll",
+          "coords": [
+            0,
+            1202,
+            11,
+            1135
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "-",
+          "coords": [
+            0,
+            2489,
+            19,
+            2468
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            353,
+            174,
+            628,
+            137
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            655,
+            173,
+            951,
+            136
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            976,
+            172,
+            1041,
+            135
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1065,
+            171,
+            1241,
+            134
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "77",
+          "coords": [
+            1362,
+            169,
+            1404,
+            134
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        193,
+        243,
+        1423,
+        2507
+      ]
+    },
+    {
+      "page": 18,
+      "printed_page": 78,
+      "width": 1782,
+      "height": 2694,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2694,
+      "kept_words": 418,
+      "excluded_words": [
+        {
+          "text": "78",
+          "coords": [
+            369,
+            189,
+            411,
+            155
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            529,
+            190,
+            804,
+            154
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            831,
+            189,
+            1126,
+            153
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1151,
+            189,
+            1215,
+            153
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1239,
+            188,
+            1415,
+            152
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "—",
+          "coords": [
+            1699,
+            1598,
+            1710,
+            1527
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        364,
+        262,
+        1595,
+        2507
+      ]
+    },
+    {
+      "page": 19,
+      "printed_page": 79,
+      "width": 1782,
+      "height": 2694,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2694,
+      "kept_words": 412,
+      "excluded_words": [
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            362,
+            207,
+            637,
+            171
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            664,
+            206,
+            960,
+            170
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            985,
+            205,
+            1049,
+            169
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1074,
+            205,
+            1250,
+            168
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "79",
+          "coords": [
+            1371,
+            203,
+            1415,
+            168
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        203,
+        278,
+        1438,
+        2541
+      ]
+    },
+    {
+      "page": 20,
+      "printed_page": 80,
+      "width": 1782,
+      "height": 2670,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2670,
+      "kept_words": 458,
+      "excluded_words": [
+        {
+          "text": "80",
+          "coords": [
+            391,
+            193,
+            438,
+            160
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            554,
+            193,
+            828,
+            158
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            855,
+            193,
+            1150,
+            157
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1175,
+            192,
+            1239,
+            157
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1264,
+            192,
+            1439,
+            156
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        392,
+        267,
+        1632,
+        2508
+      ]
+    },
+    {
+      "page": 21,
+      "printed_page": 81,
+      "width": 1782,
+      "height": 2670,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2670,
+      "kept_words": 381,
+      "excluded_words": [
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            306,
+            188,
+            580,
+            152
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            608,
+            187,
+            903,
+            152
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            929,
+            187,
+            995,
+            151
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1018,
+            187,
+            1193,
+            150
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "81",
+          "coords": [
+            1313,
+            186,
+            1355,
+            152
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "*",
+          "coords": [
+            105,
+            283,
+            108,
+            279
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        144,
+        261,
+        1385,
+        2509
+      ]
+    },
+    {
+      "page": 22,
+      "printed_page": 82,
+      "width": 1782,
+      "height": 2670,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2670,
+      "kept_words": 434,
+      "excluded_words": [
+        {
+          "text": "82",
+          "coords": [
+            394,
+            175,
+            437,
+            142
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            557,
+            175,
+            831,
+            138
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            858,
+            173,
+            1154,
+            137
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1179,
+            173,
+            1243,
+            137
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1267,
+            173,
+            1443,
+            136
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "uw",
+          "coords": [
+            1758,
+            273,
+            1772,
+            249
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "ye",
+          "coords": [
+            1774,
+            272,
+            1782,
+            249
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "—_—",
+          "coords": [
+            1761,
+            322,
+            1773,
+            288
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "an",
+          "coords": [
+            1774,
+            322,
+            1782,
+            299
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "eos",
+          "coords": [
+            1759,
+            521,
+            1782,
+            349
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "&",
+          "coords": [
+            1755,
+            372,
+            1782,
+            345
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "P~",
+          "coords": [
+            1758,
+            869,
+            1782,
+            829
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "rere",
+          "coords": [
+            1762,
+            819,
+            1782,
+            598
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "TH",
+          "coords": [
+            1758,
+            721,
+            1782,
+            683
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "SO",
+          "coords": [
+            1762,
+            667,
+            1782,
+            598
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "CO",
+          "coords": [
+            1762,
+            571,
+            1781,
+            548
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "nm",
+          "coords": [
+            1763,
+            1415,
+            1782,
+            1388
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "ae",
+          "coords": [
+            1763,
+            1367,
+            1782,
+            1332
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "orlUrrlUC",
+          "coords": [
+            1763,
+            1315,
+            1782,
+            1216
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "lO",
+          "coords": [
+            1763,
+            1201,
+            1782,
+            1164
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "FULCUlUr",
+          "coords": [
+            1763,
+            1157,
+            1782,
+            1108
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "OO",
+          "coords": [
+            1763,
+            1103,
+            1782,
+            1091
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "UrOUr",
+          "coords": [
+            1763,
+            1087,
+            1782,
+            1012
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "lh",
+          "coords": [
+            1763,
+            1006,
+            1782,
+            1001
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "COO",
+          "coords": [
+            1769,
+            989,
+            1782,
+            935
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "Se",
+          "coords": [
+            1778,
+            1665,
+            1782,
+            1605
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "<a",
+          "coords": [
+            1778,
+            1593,
+            1782,
+            1580
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "a",
+          "coords": [
+            1777,
+            1536,
+            1782,
+            1535
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "eee",
+          "coords": [
+            1775,
+            1465,
+            1782,
+            1442
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        392,
+        245,
+        1617,
+        2488
+      ]
+    },
+    {
+      "page": 23,
+      "printed_page": 83,
+      "width": 1782,
+      "height": 2670,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2670,
+      "kept_words": 420,
+      "excluded_words": [
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            315,
+            163,
+            589,
+            128
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            616,
+            163,
+            912,
+            126
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            937,
+            161,
+            1002,
+            125
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1025,
+            160,
+            1202,
+            124
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "83",
+          "coords": [
+            1322,
+            158,
+            1365,
+            123
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        153,
+        232,
+        1376,
+        2493
+      ]
+    },
+    {
+      "page": 24,
+      "printed_page": 84,
+      "width": 1782,
+      "height": 2678,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2678,
+      "kept_words": 430,
+      "excluded_words": [
+        {
+          "text": "84",
+          "coords": [
+            421,
+            164,
+            466,
+            131
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            583,
+            164,
+            857,
+            128
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            884,
+            162,
+            1179,
+            126
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1204,
+            161,
+            1268,
+            125
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1292,
+            160,
+            1468,
+            124
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "fool",
+          "coords": [
+            1752,
+            677,
+            1782,
+            622
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "@",
+          "coords": [
+            1763,
+            615,
+            1780,
+            607
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "Tl",
+          "coords": [
+            1752,
+            597,
+            1782,
+            574
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "one",
+          "coords": [
+            1752,
+            567,
+            1782,
+            519
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "|",
+          "coords": [
+            1760,
+            507,
+            1782,
+            501
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "Qmna.cd",
+          "coords": [
+            1756,
+            423,
+            1782,
+            252
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "i}",
+          "coords": [
+            1754,
+            198,
+            1782,
+            190
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "onal",
+          "coords": [
+            1765,
+            723,
+            1782,
+            694
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "~",
+          "coords": [
+            1771,
+            1120,
+            1782,
+            1098
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "«x",
+          "coords": [
+            1761,
+            1070,
+            1782,
+            1045
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "©",
+          "coords": [
+            1769,
+            1016,
+            1782,
+            998
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "08",
+          "coords": [
+            1761,
+            972,
+            1782,
+            945
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "1)",
+          "coords": [
+            1761,
+            921,
+            1782,
+            896
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "3",
+          "coords": [
+            1767,
+            872,
+            1782,
+            849
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "SS",
+          "coords": [
+            1761,
+            820,
+            1782,
+            796
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "COO",
+          "coords": [
+            1761,
+            781,
+            1782,
+            750
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "———",
+          "coords": [
+            1775,
+            1369,
+            1782,
+            1297
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "—",
+          "coords": [
+            1762,
+            1295,
+            1782,
+            1257
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        419,
+        233,
+        1639,
+        2488
+      ]
+    },
+    {
+      "page": 25,
+      "printed_page": 85,
+      "width": 1782,
+      "height": 2678,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2678,
+      "kept_words": 423,
+      "excluded_words": [
+        {
+          "text": "mw",
+          "coords": [
+            0,
+            2219,
+            19,
+            2177
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "i",
+          "coords": [
+            0,
+            2159,
+            10,
+            2155
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "werelUw]wThlCUrC",
+          "coords": [
+            0,
+            2120,
+            12,
+            1958
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            320,
+            160,
+            594,
+            123
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            621,
+            158,
+            917,
+            121
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            942,
+            156,
+            1008,
+            120
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1031,
+            155,
+            1207,
+            118
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "85",
+          "coords": [
+            1327,
+            152,
+            1371,
+            116
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        154,
+        226,
+        1379,
+        2490
+      ]
+    },
+    {
+      "page": 26,
+      "printed_page": 86,
+      "width": 1782,
+      "height": 2678,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2678,
+      "kept_words": 440,
+      "excluded_words": [
+        {
+          "text": "86",
+          "coords": [
+            399,
+            167,
+            443,
+            134
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            562,
+            168,
+            836,
+            132
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            862,
+            168,
+            1158,
+            132
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1183,
+            168,
+            1247,
+            132
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1271,
+            167,
+            1446,
+            131
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "os",
+          "coords": [
+            1748,
+            545,
+            1782,
+            511
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "Te",
+          "coords": [
+            1753,
+            599,
+            1778,
+            561
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "dt",
+          "coords": [
+            1750,
+            644,
+            1782,
+            599
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        403,
+        240,
+        1625,
+        2491
+      ]
+    },
+    {
+      "page": 27,
+      "printed_page": 87,
+      "width": 1782,
+      "height": 2678,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2678,
+      "kept_words": 426,
+      "excluded_words": [
+        {
+          "text": "SOTO",
+          "coords": [
+            0,
+            679,
+            9,
+            550
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "OS",
+          "coords": [
+            0,
+            478,
+            11,
+            450
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "CO",
+          "coords": [
+            0,
+            424,
+            10,
+            400
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "—_",
+          "coords": [
+            0,
+            772,
+            17,
+            740
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "=",
+          "coords": [
+            0,
+            721,
+            7,
+            699
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            306,
+            185,
+            581,
+            149
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            608,
+            184,
+            904,
+            148
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            930,
+            183,
+            994,
+            147
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1018,
+            183,
+            1194,
+            146
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "87",
+          "coords": [
+            1314,
+            182,
+            1357,
+            147
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        141,
+        256,
+        1367,
+        2509
+      ]
+    },
+    {
+      "page": 28,
+      "printed_page": 88,
+      "width": 1782,
+      "height": 2678,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2678,
+      "kept_words": 419,
+      "excluded_words": [
+        {
+          "text": "88",
+          "coords": [
+            407,
+            194,
+            451,
+            161
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            569,
+            194,
+            843,
+            157
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            871,
+            192,
+            1165,
+            156
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1191,
+            192,
+            1254,
+            156
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1279,
+            191,
+            1454,
+            155
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "—s-",
+          "coords": [
+            1764,
+            1618,
+            1782,
+            1446
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "1:",
+          "coords": [
+            1758,
+            1518,
+            1782,
+            1498
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "OD",
+          "coords": [
+            1758,
+            1472,
+            1782,
+            1442
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "KS",
+          "coords": [
+            1762,
+            1869,
+            1782,
+            1839
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "OO",
+          "coords": [
+            1762,
+            1817,
+            1782,
+            1791
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "ree",
+          "coords": [
+            1762,
+            1768,
+            1782,
+            1734
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "oOo",
+          "coords": [
+            1762,
+            1715,
+            1782,
+            1695
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "ee",
+          "coords": [
+            1771,
+            2361,
+            1782,
+            2303
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "ae",
+          "coords": [
+            1762,
+            2290,
+            1782,
+            2266
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "ee",
+          "coords": [
+            1772,
+            2249,
+            1782,
+            2221
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "ee,",
+          "coords": [
+            1762,
+            2209,
+            1782,
+            2138
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "2.)",
+          "coords": [
+            1762,
+            2127,
+            1782,
+            2103
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "ee.",
+          "coords": [
+            1770,
+            2092,
+            1782,
+            2016
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "de",
+          "coords": [
+            1762,
+            2007,
+            1782,
+            1988
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        403,
+        265,
+        1622,
+        2522
+      ]
+    },
+    {
+      "page": 29,
+      "printed_page": 89,
+      "width": 1782,
+      "height": 2678,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2678,
+      "kept_words": 459,
+      "excluded_words": [
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            303,
+            156,
+            578,
+            120
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            604,
+            154,
+            900,
+            118
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            925,
+            152,
+            989,
+            117
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1013,
+            151,
+            1190,
+            115
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "89",
+          "coords": [
+            1308,
+            148,
+            1354,
+            114
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        140,
+        223,
+        1366,
+        2485
+      ]
+    },
+    {
+      "page": 30,
+      "printed_page": 90,
+      "width": 1782,
+      "height": 2686,
+      "word_center_x_min": 300,
+      "word_center_x_max": 1680,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2686,
+      "kept_words": 438,
+      "excluded_words": [
+        {
+          "text": "90",
+          "coords": [
+            403,
+            166,
+            450,
+            133
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            566,
+            166,
+            840,
+            130
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            867,
+            166,
+            1162,
+            129
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            1187,
+            165,
+            1251,
+            129
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1275,
+            165,
+            1451,
+            128
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "hon",
+          "coords": [
+            1774,
+            1620,
+            1782,
+            1348
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "a",
+          "coords": [
+            1762,
+            1516,
+            1782,
+            1492
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "i",
+          "coords": [
+            1762,
+            1468,
+            1782,
+            1445
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "i",
+          "coords": [
+            1762,
+            1421,
+            1782,
+            1397
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        406,
+        237,
+        1640,
+        2485
+      ]
+    },
+    {
+      "page": 31,
+      "printed_page": 91,
+      "width": 1782,
+      "height": 2686,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1500,
+      "word_center_y_min": 220,
+      "word_center_y_max": 2686,
+      "kept_words": 389,
+      "excluded_words": [
+        {
+          "text": "1",
+          "coords": [
+            0,
+            1331,
+            13,
+            1309
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "f",
+          "coords": [
+            4,
+            1382,
+            15,
+            1348
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "d",
+          "coords": [
+            0,
+            1432,
+            16,
+            1398
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "n",
+          "coords": [
+            0,
+            1482,
+            16,
+            1460
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "s",
+          "coords": [
+            0,
+            1533,
+            18,
+            1510
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "Oo",
+          "coords": [
+            0,
+            1632,
+            21,
+            1554
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "-",
+          "coords": [
+            0,
+            1683,
+            22,
+            1659
+          ],
+          "reason": "neighboring-page gutter or scan-edge noise outside main body column"
+        },
+        {
+          "text": "CHRISTIAN",
+          "coords": [
+            311,
+            180,
+            586,
+            143
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "EDUCATION",
+          "coords": [
+            612,
+            180,
+            909,
+            143
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            934,
+            180,
+            1000,
+            143
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "YOUTH",
+          "coords": [
+            1022,
+            180,
+            1199,
+            143
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        },
+        {
+          "text": "91",
+          "coords": [
+            1317,
+            180,
+            1360,
+            145
+          ],
+          "reason": "printed journal masthead or upper running header/folio"
+        }
+      ],
+      "kept_coordinate_minmax": [
+        146,
+        252,
+        1375,
+        2115
+      ]
+    }
+  ]
+}

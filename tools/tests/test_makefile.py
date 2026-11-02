@@ -68,9 +68,27 @@ class CurriculumLiturgicalRightsTests(unittest.TestCase):
     def test_gate_was_invoked(self):
         with open(os.environ["MAKE_TEST_CURRICULUM_RIGHTS_LOG"], "a", encoding="utf-8") as log:
             log.write("check\\n")
+
+    test_hash_only_registry_is_complete_and_well_formed = test_gate_was_invoked
+    test_allowlist_exactly_matches_tracked_curriculum_sources = test_gate_was_invoked
+    test_unavailable_dispositions_cover_affected_stable_ids = test_gate_was_invoked
+    test_scanner_is_location_and_surface_sensitive = test_gate_was_invoked
+    test_tex_control_words_cannot_hide_a_window = test_gate_was_invoked
 """,
             encoding="utf-8",
         )
+        # The commentary-corpus gate composes two unit-test modules after its
+        # CLI checks. Keep these fixture modules observable just like the
+        # curriculum-rights gate, without running source-domain tests here.
+        for module in ("test_harvest_work_identity", "test_commentary_mass_inheritance"):
+            (self.root / "tools/tests" / f"{module}.py").write_text(
+                "import os\nimport unittest\n\n"
+                "class CommentaryCorpusGateTests(unittest.TestCase):\n"
+                "    def test_gate_was_invoked(self):\n"
+                "        with open(os.environ['MAKE_TEST_COMMENTARY_CORPUS_LOG'], 'a') as log:\n"
+                f"            log.write({module!r} + '\\n')\n",
+                encoding="utf-8",
+            )
         launcher = self.root / "tools" / "tpt"
         launcher.write_text(
             """#!/usr/bin/env python3
@@ -169,6 +187,8 @@ with open(os.environ["MAKE_TEST_SOURCE_READER_LOG"], "a", encoding="utf-8") as l
         # domain implementations, so deterministic no-op stubs are sufficient.
         for tool_name in (
             "act-history",
+            "document-schema",
+            "artifact-store",
             "document-library",
             "calendar-days",
             "check-calendar-masses",
@@ -180,6 +200,9 @@ with open(os.environ["MAKE_TEST_SOURCE_READER_LOG"], "a", encoding="utf-8") as l
             fake = library / tool_name
             fake.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
             fake.chmod(0o755)
+        (scripts / "_act_history_projection_receipt.py").write_text(
+            "import sys\nassert sys.argv[1:] == ['check']\n", encoding="utf-8"
+        )
 
         self.source_inventory = library / "source-inventory"
         self.source_inventory.write_text(
@@ -226,6 +249,13 @@ with open(os.environ["MAKE_TEST_COMMENTARY_WORK_INDEX_LOG"], "a", encoding="utf-
         )
         self.commentary_work_index.chmod(0o755)
 
+        self.harvest = library / "harvest"
+        self.harvest.write_text(
+            "#!/bin/sh\nprintf '%s\\n' \"$*\" >> \"$MAKE_TEST_HARVEST_LOG\"\n",
+            encoding="utf-8",
+        )
+        self.harvest.chmod(0o755)
+
         self.pdflatex = scripts / "fake-pdflatex"
         self.pdflatex.write_text(
             """#!/bin/sh
@@ -260,6 +290,8 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.source_gate_order_log = self.root / "source-gate-order.log"
         self.commentary_work_index_log = self.root / "commentary-work-index.log"
         self.curriculum_rights_log = self.root / "curriculum-rights.log"
+        self.harvest_log = self.root / "harvest.log"
+        self.commentary_corpus_log = self.root / "commentary-corpus.log"
         self.pacman_log = self.root / "pacman.log"
         self.codex_log = self.root / "codex.log"
         self.environment = os.environ.copy()
@@ -283,6 +315,8 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
                 "MAKE_TEST_CURRICULUM_RIGHTS_LOG": str(
                     self.curriculum_rights_log
                 ),
+                "MAKE_TEST_HARVEST_LOG": str(self.harvest_log),
+                "MAKE_TEST_COMMENTARY_CORPUS_LOG": str(self.commentary_corpus_log),
                 "MAKE_TEST_PACMAN_LOG": str(self.pacman_log),
                 "MAKE_TEST_CODEX_LOG": str(self.codex_log),
                 "PATH": f"{scripts}:{self.environment['PATH']}",
@@ -328,6 +362,8 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.source_gate_order_log.write_text("", encoding="utf-8")
         self.commentary_work_index_log.write_text("", encoding="utf-8")
         self.curriculum_rights_log.write_text("", encoding="utf-8")
+        self.harvest_log.write_text("", encoding="utf-8")
+        self.commentary_corpus_log.write_text("", encoding="utf-8")
 
     @staticmethod
     def sha256(path: Path) -> str:
@@ -337,7 +373,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
     def stamp_fields(path: Path) -> dict[str, str]:
         return dict(line.split("=", 1) for line in path.read_text(encoding="utf-8").splitlines())
 
-    def test_direct_and_default_build_each_validate_a_new_pdf_once(self) -> None:
+    def test_direct_and_explicit_pdf_build_each_validate_a_new_pdf_once(self) -> None:
         self.run_make("build/gpt/demo-a.pdf")
         self.assertEqual(len(self.lines(self.latex_log)), 2)
         self.assertEqual(len(self.lines(self.check_log)), 2)  # own source + own PDF
@@ -356,7 +392,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
 
         shutil.rmtree(self.root / "build")
         self.clear_logs()
-        result = self.run_make("PDF_JOBS=2")
+        result = self.run_make("pdf", "PDF_JOBS=2")
         self.assertEqual(len(self.lines(self.latex_log)), 4)
         self.assertEqual(len(self.lines(self.check_log)), 5)  # global + two source/PDF pairs
         self.assertTrue(all("-j2" in flags for flags in self.lines(self.flags_log)))
@@ -372,7 +408,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
             )
 
         self.clear_logs()
-        self.run_make("-j4", "all", "pdf")
+        self.run_make("-j4", "pdf")
         self.assertEqual(self.lines(self.latex_log), [])
         self.assertEqual(len(self.lines(self.check_log)), 3)  # global + two sources
 
@@ -381,9 +417,11 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         inventory.parent.mkdir(parents=True, exist_ok=True)
         inventory.write_text("")
         self.run_make("check-sources")
-        self.assertEqual(self.lines(self.curriculum_rights_log), ["check"])
-        self.assertEqual(self.lines(self.source_library_log), ["validate"])
-        self.assertEqual(self.lines(self.source_reader_log), ["check", "structure --check"])
+        self.assertEqual(self.lines(self.curriculum_rights_log), ["check"] * 5)
+        self.assertEqual(self.lines(self.source_library_log),
+                         ["validate", "validate --full-evidence", "validate"])
+        self.assertEqual(self.lines(self.source_reader_log),
+                         ["structure --check-receipt", "check", "structure --check"])
         self.assertEqual(
             self.lines(self.source_inventory_log),
             [
@@ -395,11 +433,16 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.assertEqual(self.lines(self.source_family_migration_log), ["check"])
         self.assertEqual(
             self.lines(self.commentary_work_index_log),
-            ["containment", "standing", "formulary"],
+            ["containment", "standing", "formulary", "build-corpus --check"],
         )
         self.assertEqual(
             self.lines(self.source_gate_order_log),
-            ["library", "inventory", "family"],
+            ["library", "library", "library", "inventory", "family"],
+        )
+        self.assertEqual(self.lines(self.harvest_log), ["promote --check --json"])
+        self.assertEqual(
+            self.lines(self.commentary_corpus_log),
+            ["test_harvest_work_identity", "test_commentary_mass_inheritance"],
         )
         self.assertEqual(self.lines(self.latex_log), [])
         self.assertEqual(self.lines(self.check_log), [])
@@ -589,8 +632,8 @@ esac
         self.assertNotIn("resetting jobserver", result.stderr)
         self.assertNotIn("jobserver unavailable", result.stderr)
 
-    def test_parallel_all_and_install_share_one_build_graph(self) -> None:
-        result = self.run_make("-j4", "all", "install")
+    def test_parallel_pdf_and_install_share_one_build_graph(self) -> None:
+        result = self.run_make("-j4", "pdf", "install")
         self.assertEqual(len(self.lines(self.latex_log)), 4)
         self.assertEqual(len(self.lines(self.check_log)), 5)
         self.assertNotIn("resetting jobserver", result.stderr)
@@ -970,6 +1013,7 @@ with patch("importlib.metadata.version", side_effect=installed_version):
             "texlive-pictures",
             "texlive-fontsrecommended",
             "texlive-fontsextra",
+            "texlive-langother",
             "poppler",
             "imagemagick",
             "pandoc",

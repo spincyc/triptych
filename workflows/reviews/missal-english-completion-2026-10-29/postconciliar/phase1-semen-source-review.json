@@ -1,0 +1,217 @@
+{
+  "recorded_on": "2026-10-29",
+  "scope": "One complete historical Breviary antiphon and its human English, received at two finite OLM1981 source-local Gospel-Acclamation uses",
+  "state": "accepted-source-candidate",
+  "candidate_overlay_sha256": "7565535f8887d646940758a2396655232610e1272cd53106c7b10442582c5f77",
+  "candidate_targets": [
+    "saint-lawrence-brindisi-priest-doctor-church",
+    "saint-john-chrysostom-bishop-doctor-church"
+  ],
+  "source_proof": {
+    "latin_historical": {
+      "printing": "Pustet Ratisbon1888, pars hiemalis",
+      "artifact_page": 393,
+      "printed_page": "339",
+      "whole_pdf_sha256": "a8a789d4c48003cbfaeb440cc22a6970b96d18d9cb19ea60b2a02c83a53582f0"
+    },
+    "human_english": {
+      "printing": "Blackwood1908, Bute translation, volumeI Winter",
+      "artifact_page": 523,
+      "printed_page": "439",
+      "whole_pdf_sha256": "6792c0e56d581081e12420e5fddde82a86802c6bbdb4970a947981d04f8ce6b5"
+    },
+    "modern_comparison": {
+      "edition": "OLM1981",
+      "whole_pdf_sha256": "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d",
+      "body_artifact_page": 390,
+      "body_printed_page": "336",
+      "body_locus": "729.8",
+      "referrals": [
+        {
+          "number": "602",
+          "artifact_page": 351,
+          "printed_page": "297"
+        },
+        {
+          "number": "637",
+          "artifact_page": 359,
+          "printed_page": "305"
+        }
+      ]
+    }
+  },
+  "direct_reading": "Both historical title pages, both complete historical antiphon pages, both retained whole-page JPEGs, the complete OLM729.8 item and both dated OLM referrals were directly opened and read. Complete Latin words agree after only stress accents, ae ligature, colon/semicolon and chant-star display. Complete Bute English is literal, including printed asterisk, punctuation, capitalization and his free rendering he shall never be moved.",
+  "mechanical_checks": {
+    "whole_bytes": [
+      {
+        "source": "latin1888.pdf",
+        "bytes": 55473851,
+        "metadata_bytes": 55473851,
+        "sha1": "5812e124d90fd5a2525bab46f4ac74f3a54e7d5d",
+        "metadata_sha1": "5812e124d90fd5a2525bab46f4ac74f3a54e7d5d",
+        "size_and_sha1_match": true
+      },
+      {
+        "source": "bute1908-v1.pdf",
+        "bytes": 73032087,
+        "metadata_bytes": 73032087,
+        "sha1": "b480a16b89323bb20b9ea49879918e6dbda8cce2",
+        "metadata_sha1": "b480a16b89323bb20b9ea49879918e6dbda8cce2",
+        "size_and_sha1_match": true
+      }
+    ],
+    "independent_renders": [
+      {
+        "image": "latin1888-ap393",
+        "independent_sha256": "1ccfac1295be845c9e0c82010dbfbaa981e451cec69036178e25dafc1f278167",
+        "matches_inspected_image": true
+      },
+      {
+        "image": "bute1908-ap523",
+        "independent_sha256": "a2209f25cb0296de0d8e1397e902b2bee78367ebc2aa8cc154c8862cf079a8b1",
+        "matches_inspected_image": true
+      },
+      {
+        "image": "olm-ap390",
+        "independent_sha256": "cd9325cdc27b09923259a8647f17a3f59d651fea6d789efaaff6a2a291191fe1",
+        "matches_inspected_image": true
+      }
+    ],
+    "toml_records_parsed": 16,
+    "retained_payload_hashes_and_sizes": 6,
+    "exact_english_publication_joins": 2
+  },
+  "resolved_findings": [
+    {
+      "finding": "English publication TSV had a text column instead of the validator required english/english_json column",
+      "resolution": "Changed to english and regenerated artifact hash, both publication passage pins and candidate entry joins; exact final body joins rechecked."
+    },
+    {
+      "finding": "A si-quid-est1634 attestation would invent a Missal-act edge for a Breviary",
+      "resolution": "Source now says attests unestablished, attests_kind title-page-statement and explicitly states that the title establishes no Missal-act edge."
+    },
+    {
+      "finding": "Initial difference prose incorrectly implied initial capitalization differed",
+      "resolution": "Corrected difference prose lists only observed accents, ae ligature, pointing and chant-star display."
+    }
+  ],
+  "candidate_source_files": [
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-page339/artifact.toml",
+      "sha256": "9ef5bdaaa1e0b042faef83b0862c53f8b47133389d62e66e9e561bf2cbdb7ecb",
+      "bytes": 1734
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-page339/source-page.jpg",
+      "sha256": "b68ef0d6180b0f7a00e06269a71e44ab1b9eebc79ca69ca7086f952fe3b71849",
+      "bytes": 773246
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-pdf/artifact.toml",
+      "sha256": "02997d248da9c47e43ef703851a53f9c123e2becff977e491916b8c400c06f28",
+      "bytes": 1992
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-semen/artifact.toml",
+      "sha256": "a2cf4519fae093ddd751f58fd09f828d771d7be1f67ff7efb2e44bfb1cbbfd2f",
+      "bytes": 1946
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-semen/semen.tsv",
+      "sha256": "129a2f73517c43fca3d9211581d6b2ad6b5754c22b0af664561836a5b4ff5c76",
+      "bytes": 196
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-title/artifact.toml",
+      "sha256": "b216d7176b7b62fdcb91bde41bcce6f45bf6f2f09fd874efa7a2c5404edb0c99",
+      "bytes": 1640
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-title/title-page.png",
+      "sha256": "e976e98c562e12d77036c1e4c38726953b1dbb088ac0d435e183173181a32daf",
+      "bytes": 1617256
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/edition.toml",
+      "sha256": "39c835e448f867a979441f4ddaf7534582f47305f7b658aaee0b499f6afff675",
+      "bytes": 670
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-latin1888-semen-publish.toml",
+      "sha256": "b5b3892c7c7fd677eb09be301f89a21d1c776bddd5845d82b0e45f310f17b723",
+      "bytes": 1239
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-latin1888-verify-semen.toml",
+      "sha256": "8550743e68379eb6e813dbc5cf9e9b6c6116431fe7feb6800a1cdf9dea42c917",
+      "bytes": 1187
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-page439/artifact.toml",
+      "sha256": "05be24ef328af1f78faeedd1af480d8bad3b9516b8ba8ebb5b4924ee23a5790b",
+      "bytes": 1834
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-page439/source-page.jpg",
+      "sha256": "d9f23026a095f366bed46c750760db865214623ae2a2e7545633e268111e63c4",
+      "bytes": 759269
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-pdf/artifact.toml",
+      "sha256": "6a9ef04d6d13a6f4e42cd9d0ebaaf5a1fb2f33c417ba22121b948ee21ab2a7fe",
+      "bytes": 2102
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-semen/artifact.toml",
+      "sha256": "e6426d43363264b26930e45c125ea7e93736e0136de99f11ce27cb07765edf9e",
+      "bytes": 2037
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-semen/semen.tsv",
+      "sha256": "34d4f7ee1e4bfe5d8190df8ca2fc7954f72970cf9833e23137d0cc56cf92c828",
+      "bytes": 397
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-title/artifact.toml",
+      "sha256": "3a434bbb3ec9d65a6f5521eb84849f27e022493a55131af5c5aa73891b9e8497",
+      "bytes": 1731
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-title/title-page.png",
+      "sha256": "aebdedab9bcbd9881e100a17777c1b203c0f6d5157922d4ef5ad2841ce1b7a37",
+      "bytes": 1883233
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/edition.toml",
+      "sha256": "f78a87c36022c325839a12ca7576f1560db3c3512057220d775b026bffebb702",
+      "bytes": 888
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/english-completion-20261029-postconciliar-bute1908-semen-publish-chrysostom.toml",
+      "sha256": "d867aa876c4451e3827dee8d3dcad1513f991a211ee867fd2a4b645225b8037f",
+      "bytes": 1228
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/english-completion-20261029-postconciliar-bute1908-semen-publish-lawrence.toml",
+      "sha256": "d9fdcbdb66f5714ab735570c26df2f6d9e50769f9222974a5b5e997cddb4b0c1",
+      "bytes": 1228
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/english-completion-20261029-postconciliar-bute1908-verify-semen.toml",
+      "sha256": "33c4488d7ed7c512b92ed08973df68636719b466e99a77eca1977d3255c6c729",
+      "bytes": 1161
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/work.toml",
+      "sha256": "4c7d7fb7936515dcb73559128c988001fedf3d1b326d0d289c5203bb999654e9",
+      "bytes": 400
+    }
+  ],
+  "limits": [
+    "Source candidate acceptance only; final library/calendar/publication checks and installation remain coordinator-owned.",
+    "One historical physical English body supplies two receiving study uses; it is not two newly recovered human translations.",
+    "The source local OLM1981 referral and whole body are established; authenticated target2008 correspondence remains unresolved.",
+    "The approved modern English surface restriction and the target Latin whole-body hold remain separate.",
+    "No modern copyrighted source body or image belongs in tracked review evidence."
+  ]
+}

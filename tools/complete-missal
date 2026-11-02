@@ -67,7 +67,7 @@ EXAMPLES = {
             (
                 "complete-missal completeness: unresolved",
                 "placement span: 2020-2120",
-                "roman-pre-1955: 8 represented celebrations (recension-delta); at least 5606 modeled text slots; 13/15 dimensions unresolved",
+                "roman-pre-1955: 8 represented celebrations (recension-delta); at least 5629 modeled text slots; 13/15 dimensions unresolved",
                 "... 23 more lines",
             ),
         ),
@@ -277,8 +277,60 @@ def ordinary_languages(
     return sorted(normalized, key=lambda item: item["lang"]), held
 
 
+def ordinary_source_offers(
+    row: dict, calendar: str, elements: int, held_by_language: dict[str, int]
+) -> dict[str, int]:
+    """Keep covered elements separate from their published witness choices."""
+    if "typed_coverage" not in row:
+        # The original report contract allowed one offer per held element.
+        return dict(held_by_language)
+    typed = row["typed_coverage"]
+    try:
+        validate_summary(typed)
+    except ValueError as error:
+        raise Refused(f"{calendar} typed Ordinary coverage: {error}") from error
+    if typed.get("scope") != "ordinary":
+        raise Refused(f"{calendar} typed Ordinary coverage must use ordinary scope")
+    offered = {}
+    for language in typed["languages"]:
+        lang = language["lang"]
+        if (lang not in held_by_language
+                or language["occurrences"] != elements
+                or language["available"] != held_by_language[lang]):
+            raise Refused(
+                f"{calendar} {lang} typed Ordinary coverage does not match "
+                "modeled and held elements"
+            )
+        for witness in language["witnesses"]:
+            if witness["available"]:
+                offered[lang, witness["id"]] = witness["available"]
+    if {language["lang"] for language in typed["languages"]} != set(held_by_language):
+        raise Refused(f"{calendar} typed Ordinary coverage languages do not match")
+    manifest = {}
+    for index, witness in enumerate(row["witnesses"]):
+        where = f"mass-ordinary.coverage.{calendar}.witnesses[{index}]"
+        if not isinstance(witness, dict):
+            raise Refused(f"{where} must be an object")
+        lang, source = witness.get("lang"), witness.get("source_id")
+        if not isinstance(lang, str) or lang not in held_by_language:
+            raise Refused(f"{where}.lang must name a covered language")
+        if not isinstance(source, str) or not source:
+            raise Refused(f"{where}.source_id must be a non-empty string")
+        key = (lang, source)
+        if key in manifest:
+            raise Refused(f"{where} repeats an Ordinary witness")
+        manifest[key] = integer(witness.get("held"), f"{where}.held")
+    if offered != {key: count for key, count in manifest.items() if count}:
+        raise Refused(f"{calendar} Ordinary witness offers do not match typed coverage")
+    return {
+        lang: sum(count for (language, _), count in offered.items() if language == lang)
+        for lang in held_by_language
+    }
+
+
 def ordinary_relations(
-    row: dict, calendar: str, held_by_language: dict[str, int]
+    row: dict, calendar: str, held_by_language: dict[str, int],
+    offers_by_language: dict[str, int],
 ) -> tuple[list[dict], dict[str, int]]:
     relations = row.get("relation_coverage")
     if not isinstance(relations, list):
@@ -288,7 +340,7 @@ def ordinary_relations(
     normalized = []
     seen: set[tuple[str, str, str]] = set()
     relation_totals = dict.fromkeys(held_by_language, 0)
-    target_edition_held = dict.fromkeys(held_by_language, 0)
+    own_offers = dict.fromkeys(held_by_language, 0)
     for index, relation_row in enumerate(relations):
         where = f"mass-ordinary.coverage.{calendar}.relation_coverage[{index}]"
         if not isinstance(relation_row, dict):
@@ -318,14 +370,37 @@ def ordinary_relations(
             raise Refused(f"{where}.count must be positive for an emitted bucket")
         relation_totals[language] += count
         if relation == "own":
-            target_edition_held[language] += count
+            own_offers[language] += count
         normalized.append(dict(relation_row))
-    for language, held in held_by_language.items():
-        if relation_totals[language] != held:
+    for language, offers in offers_by_language.items():
+        if relation_totals[language] != offers:
+            unit = "source offers" if "typed_coverage" in row else "held elements"
             raise Refused(
                 f"mass-ordinary {calendar} {language} relation buckets do not "
-                f"partition held elements: {relation_totals[language]} != {held}"
+                f"partition {unit}: {relation_totals[language]} != {offers}"
             )
+    target_edition_held = own_offers
+    if "typed_coverage" in row:
+        target_edition_held = {}
+        for language in row["typed_coverage"]["languages"]:
+            lang = language["lang"]
+            # A summary retains each witness's possible collations, not a
+            # per-offer split when that witness has mixed grades.
+            for collation in ("collated", "uncollated", "not-applicable"):
+                forced = sum(witness["available"] for witness in language["witnesses"]
+                             if witness["collations"] == [collation])
+                possible = sum(witness["available"] for witness in language["witnesses"]
+                               if collation in witness["collations"])
+                observed = sum(bucket["count"] for bucket in normalized
+                               if bucket["lang"] == lang and bucket["collation"] == collation)
+                if not forced <= observed <= possible:
+                    raise Refused(
+                        f"mass-ordinary {calendar} {lang} relation collation offers "
+                        "contradict typed witnesses"
+                    )
+            # `own` includes study translations and counts witness offers.
+            # Only the typed grade counts exact target wording, once per element.
+            target_edition_held[lang] = language["exact_target"]
     return (
         sorted(
             normalized,
@@ -700,8 +775,11 @@ def one_family(
     language_coverage, held_by_language = ordinary_languages(
         ordinary, calendar, ordinary_elements
     )
+    source_offers_by_language = ordinary_source_offers(
+        ordinary, calendar, ordinary_elements, held_by_language
+    )
     relation_coverage, target_edition_held_by_language = ordinary_relations(
-        ordinary, calendar, held_by_language
+        ordinary, calendar, held_by_language, source_offers_by_language
     )
     absence_reasons, language_absences = ordinary_absences(
         ordinary, calendar, held_by_language, ordinary_elements
@@ -826,6 +904,7 @@ def one_family(
             english=english_known,
             latin_recension=latin if latin is not None and latin.get("calendar") == calendar else None,
             ordinary_language_coverage=language_coverage,
+            ordinary_source_offers_by_language=source_offers_by_language,
             ordinary_relation_coverage=relation_coverage,
             ordinary_target_edition_held_by_language=target_edition_held_by_language,
         ),

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.english-completion-20261030-peace-invitation-la"
+edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The underlying 1712 Milan printing, with separately bound 1733 matter, has the affirmative United States public-domain basis recorded on artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.missale-ambrosianum-1712-text-a1319e20 and in src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml. A faithful mechanical image reproduction and machine text overlay create no new exclusive right in those historical pages. The faithful source transcription claims no new exclusive right in the historical words."
+rights_jurisdiction = "United States"
+provenance = "Direct source-image transcription from artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.english-completion-20261030-peace-invitation-page, packet1, original193, printed155, on2026-10-30. Read both complete separately printed spoken units; no OCR supplies or repairs a word. The second row retains the Ambrosian response as source context, not as a postconciliar response."
+retrieved = "2026-10-30"
+sha256 = "215af41bb9ec4395307523a7278387bcdf2350c563debc5f402287b8875b0b79"
+byte_size = 129
+path = "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/english-completion-20261030-peace-invitation-la/text.tsv"
+derived_from = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.english-completion-20261030-peace-invitation-page"
+transformation = "Record the complete source invitation and its separately marked complete response as two physical rows. Expand typographic long s to ordinary s. Preserve the source words, capitals and full stops. Neither selected utterance has a drop capital or stress accent, so no drop-cap case or accent normalization is performed. Omit chant notation, red speaker rubric and the red response marker from the spoken Latin columns; no utterance is expanded or modernized."
+indexable = true
+encoding = "utf-8"
+notes = "One header and two rows. Only row1, offerte-vobis-pacem, supplies the complete selected invitation; row2 preserves the actual different-rite response. The modern assignment and conditional use are established independently by the registered secondary2002 n128; no complete authenticated2008 wording claim is made."

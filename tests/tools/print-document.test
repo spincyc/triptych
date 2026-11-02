@@ -1,0 +1,15 @@
+#!/bin/sh
+# Selected print CLI smoke gate; no PDF typesetting or installed PDFs required.
+set -eu
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+"$repo/tools/print-document" --help >/dev/null
+"$repo/tools/print-document" list --family bible --json |
+    python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["status"] == "ok"; assert len(d["documents"]) == 7; assert all(x["id"] != "bible:knox" for x in d["documents"])'
+"$repo/tools/print-document" check --document bible:douay-rheims --json |
+    python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["status"] == "valid"; assert d["document"]["validation"]["editions"][0]["verses"] == 35804'
+if "$repo/tools/print-document" check --document bible:knox >/dev/null 2>&1; then
+    echo 'non-publishable Bible unexpectedly admitted to print' >&2
+    exit 1
+fi
+python3 -m unittest discover -s "$repo/tools/tests" -p test_print_document.py
+echo ok

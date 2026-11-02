@@ -1,0 +1,67 @@
+{
+  "accepted_by": "coordinating AI contributor under the maintainer-authorized English completion and main reconciliation task",
+  "accepted_fixture_core_sha256": "da5457e6bfc51297d98b2008134ae990f00fcebbdbe460f40769661bb1e5d471",
+  "accepted_on": "2026-10-30",
+  "added_source_paths": [],
+  "all_other_fixture_fields_exact": true,
+  "boundaries": [
+    "All155 positive English entries and419 gaps, source/publication bindings, quarantine and approved2011 dispositions remain byte-exact.",
+    "This corrects classification metadata for three already accepted historical-English entries. It creates no text, permission, target count or2011-recension identity.",
+    "Actual post-install consumer and final publication checks remain required; this is not a claim of complete English or deployment."
+  ],
+  "changed_kept_inputs": [
+    {
+      "after_sha256": "6739d55adb969ef06f8e0e73e7457e682b61f9bee0759c461a1fb2ded1b0a194",
+      "before_sha256": "22e2cc7c36c9f0f81b85e335d076f1a1133f7a1da268db064e6e7794205222b8",
+      "path": "src/sources/inventories/postconciliar-english-2011-recension-coverage-v1.toml"
+    }
+  ],
+  "dropped_parent_paths": [],
+  "evidence": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/source-batch-classification-proposal.json",
+      "sha256": "f5ecdddd518415016eaa4d3105f450493ab0afcdb2b0b3dfd8f064b22e3e7b1b"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/pc2011-classification-independent-review.json",
+      "sha256": "f53d3a71a03c0592e163303e000b6064d3442d174553d2c4bcbeb2b23039823e"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/source-batch-classification-independent-review.json",
+      "sha256": "d4400d7f75e2a1a9a247cebfdef46beacf95e94e589a7ae2ed47712e6bc082e2"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/pc2011-classification-source-proofs.json",
+      "sha256": "7eae982df9409697bb25684cce2a767bacd3f96cb01ba25ddc693cdf57c215f1"
+    }
+  ],
+  "original_replay_streams_preserved": 17,
+  "parent_acceptance": {
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/source-batch-main-nativity-acceptance.json",
+    "receipt_sha256": "e572987bd7e3d5089fc634c8975551e388f66ecfcf58f4da8d0e86ac9b861e85",
+    "status": "accepted"
+  },
+  "parent_fixture": {
+    "git_revision": "4e8e9fcf7d8947d5b99068d8f05b21156f70abe4",
+    "path": "tools/tests/fixtures/missal-source-batch-20261023.json",
+    "sha256": "f93e2b0dacd6f434c3dbe746e7d7b8a73052e92b5ff83b7c1dbdadb6dc6b0c99"
+  },
+  "parent_git_revision": "4e8e9fcf7d8947d5b99068d8f05b21156f70abe4",
+  "parent_input_manifest": {
+    "git_revision": "4e8e9fcf7d8947d5b99068d8f05b21156f70abe4",
+    "path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+    "sha256": "e9cd39f351b23206c7d812c854cbfaaa593b45c3a795c8b53164bb66917da9bd"
+  },
+  "replay_support_sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc",
+  "schema": "triptych-source-batch-acceptance/v1",
+  "scope": "missal-source-batch",
+  "semantic_delta": "Add exactly two historical-antecedent-English classes for three already accepted Proper entries; change as_of from2026-10-26 to2026-10-30. All nine prior classes and every other field are exact. These are explicitly not2011-recension English.",
+  "source_epoch_paths": 7071,
+  "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+  "source_input_manifest_sha256": "6956adb9fc4336282ade4bce43015d51bb2b73ef9a2ccce1d62e90226022693c",
+  "source_permission_created_by_this_receipt": false,
+  "status": "accepted",
+  "strict_runtime_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+  "successor_kind": "two-historical-English-finding-aid-classes-and-audit-date",
+  "unchanged_inverse_specifications": 17
+}

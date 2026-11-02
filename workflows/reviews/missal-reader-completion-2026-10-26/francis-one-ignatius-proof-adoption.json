@@ -1,0 +1,434 @@
+{
+  "schema": "triptych-Francis-one-Ignatius-proof-root-adoption/v1",
+  "status": "accepted",
+  "reviewer": "root",
+  "reviewed_on": "2026-10-26",
+  "accepted_delivery_sha256": "07b6abca5f102c3efcbbda29b5186e6762189bcf54aa758391e5884b7e9d708e",
+  "accepted_granular_carrier_sha256": "5098a4758b002c73d4b1c99202a4780002dab043b3c532c8a0cf1561933aadb6",
+  "independent_Francis_source_review_sha256": "3b9fc5a4eb0f7f7a505d26198c0577ce2581b15102b37c4d676cc9fbef0ec547",
+  "independent_Ignatius_source_review_sha256": "43c27b604d6a1792c85e5e454172ffc354de91d84c7f46671fb5b440ac5f5798",
+  "independent_Francis_receiving_review_sha256": "e00536ede1b1a38b42705460077460a3e1ad86a5842e5d5aee1f88395cea6d79",
+  "independent_Ignatius_receiving_review_sha256": "020a7e0d1b8854ce602b0f793d98c0ba7d7fc8b5e2c452de3ae9597c847f865b",
+  "additional_Ignatius_receiving_review_sha256": "f7893ed261b2bd1a7c112b682cfd4395d4890478117b52437ccfda4a78448f00",
+  "English_owner_transitions": [
+    {
+      "target": [
+        "s-francisci-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "before_entry": null,
+      "before_absence": {
+        "mass": "s-francisci-confessoris",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established Latin proper."
+      },
+      "after_entry": {
+        "mass": "s-francisci-confessoris",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "witness": "lasance-1945",
+        "printed_page": "1224",
+        "ia_leaf": 1218,
+        "ia_leaf_range": [
+          1218,
+          1218
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-francis-one-verify-s-francisci-confessoris--main--collect--all--1",
+        "collated": "Independent complete named source/context page-image review and bounded existing lexical comparison, 2026-10-26",
+        "collation_result": "confirmed",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-francis-one-f9548bab",
+        "publication_artifact_sha256": "f9548bab2b927f11198abe8b08f1017c0552a051282ddb866117e2e76836baaa",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-francis-one-publish-s-francisci-confessoris--main--collect--all--1",
+        "witness_note": "Complete actual Latin word sequences and short Per Dominum. endings agree after only the original authorized foetu/fetu pair at token7 and declared coelestium/caelestium spelling at token19. Both source and target retain the same fourth-declension masculine ablative singular noun and the same neuter genitive plural adjective modifying donorum. Literal historical English ends Through our Lord. with no response or expansion. Exact current target UTF8 SHA256 e1503f1b8200e8c1fa8237668c85918030b650159e67b159d63715b9d2f918b8; unchanged full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-francisci-confessoris-orations. Exact comparison {\"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"subroute\": \"strict\", \"donor_fanout\": false, \"lexical_differences\": [{\"source\": \"foetu\", \"target\": \"fetu\", \"source_word_index_zero_based\": 7, \"target_word_index_zero_based\": 7, \"contextual_parse\": {\"lexeme\": \"fetus/foetus\", \"part_of_speech\": \"noun\", \"gender\": \"masculine\", \"number\": \"singular\", \"case\": \"ablative\"}, \"contextual_parse_evidence\": \"Both occur in the identical clause Ecclesiam tuam beati Francisci meritis ... novae prolis amplificas. Ecclesiam is the object of amplificas; meritis and fetu express means. The genitive novae prolis depends on the same noun. This is not the adjective fetus (whose ablative is feto), and no dative-recipient relation is present.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-fetus-foetus\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-fourth-declension\"]}], \"orthography_differences\": [{\"source\": \"coelestium\", \"target\": \"caelestium\", \"source_word_index_zero_based\": 19, \"target_word_index_zero_based\": 19, \"contextual_parse\": {\"lexeme\": \"coelestis/caelestis\", \"part_of_speech\": \"adjective\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"genitive\"}, \"contextual_parse_evidence\": \"Both describe the same donorum in ... donorum semper participatione gaudere; the genitive plural adjective agrees with the same neuter genitive plural noun. Only the printed oe/ae spelling differs.\"}], \"source_latin_ending\": \"Per Dominum.\", \"target_latin_ending\": \"Per Dominum.\", \"literal_english_ending\": \"Through our Lord.\", \"source_english_expanded\": false, \"response_added\": false}. The existing canonical target retains tribue nobis; while the1962 image prints tribue nobis:. Its selected projection payload and current Latin proof agree at e1503f1b8200e8c1fa8237668c85918030b650159e67b159d63715b9d2f918b8; the old projection-passage prose note names a stale hash. This receiving assembly preserves both old records and exact target bytes; it does not claim a new diplomatic target transcription or a repaired Latin publication basis.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "O God, Who, by the merits of blessed Francis, didst increase Thy Church by bringing forth a new progeny, grant us to imitate him in despising earthly things and ever to rejoice in partaking of heavenly gifts. Through our Lord."
+          }
+        ]
+      },
+      "after_absence": null,
+      "before_absence_dictionary_sha256": "8f2c6ed59a48a8d7073b4f0767f9ea67b6a33c45e3e690aa79cccd524bc101d6",
+      "after_entry_dictionary_sha256": "6a080a924c795423e0cb5431ebcde985a271a68d63b4646a874e8e738d1f2058",
+      "raw_TOML_block": "[[entries]]\nmass = \"s-francisci-confessoris\"\nform_id = \"main\"\nproper = \"Collect\"\ncycle = \"all\"\noccurrence = 1\nwitness = \"lasance-1945\"\nprinted_page = \"1224\"\nia_leaf = 1218\nia_leaf_range = [1218, 1218]\nartifact_id = \"artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0\"\npassage_id = \"passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-francis-one-verify-s-francisci-confessoris--main--collect--all--1\"\ncollated = \"Independent complete named source/context page-image review and bounded existing lexical comparison, 2026-10-26\"\ncollation_result = \"confirmed\"\npublication_artifact_id = \"artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-francis-one-f9548bab\"\npublication_artifact_sha256 = \"f9548bab2b927f11198abe8b08f1017c0552a051282ddb866117e2e76836baaa\"\npublication_passage_id = \"passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-francis-one-publish-s-francisci-confessoris--main--collect--all--1\"\nwitness_note = \"Complete actual Latin word sequences and short Per Dominum. endings agree after only the original authorized foetu/fetu pair at token7 and declared coelestium/caelestium spelling at token19. Both source and target retain the same fourth-declension masculine ablative singular noun and the same neuter genitive plural adjective modifying donorum. Literal historical English ends Through our Lord. with no response or expansion. Exact current target UTF8 SHA256 e1503f1b8200e8c1fa8237668c85918030b650159e67b159d63715b9d2f918b8; unchanged full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-francisci-confessoris-orations. Exact comparison {\\\"method_id\\\": \\\"own-appointment-lexically-attested-spelling-2026-10-23\\\", \\\"subroute\\\": \\\"strict\\\", \\\"donor_fanout\\\": false, \\\"lexical_differences\\\": [{\\\"source\\\": \\\"foetu\\\", \\\"target\\\": \\\"fetu\\\", \\\"source_word_index_zero_based\\\": 7, \\\"target_word_index_zero_based\\\": 7, \\\"contextual_parse\\\": {\\\"lexeme\\\": \\\"fetus/foetus\\\", \\\"part_of_speech\\\": \\\"noun\\\", \\\"gender\\\": \\\"masculine\\\", \\\"number\\\": \\\"singular\\\", \\\"case\\\": \\\"ablative\\\"}, \\\"contextual_parse_evidence\\\": \\\"Both occur in the identical clause Ecclesiam tuam beati Francisci meritis ... novae prolis amplificas. Ecclesiam is the object of amplificas; meritis and fetu express means. The genitive novae prolis depends on the same noun. This is not the adjective fetus (whose ablative is feto), and no dative-recipient relation is present.\\\", \\\"lexical_passage_ids\\\": [\\\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-fetus-foetus\\\", \\\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-fourth-declension\\\"]}], \\\"orthography_differences\\\": [{\\\"source\\\": \\\"coelestium\\\", \\\"target\\\": \\\"caelestium\\\", \\\"source_word_index_zero_based\\\": 19, \\\"target_word_index_zero_based\\\": 19, \\\"contextual_parse\\\": {\\\"lexeme\\\": \\\"coelestis/caelestis\\\", \\\"part_of_speech\\\": \\\"adjective\\\", \\\"gender\\\": \\\"neuter\\\", \\\"number\\\": \\\"plural\\\", \\\"case\\\": \\\"genitive\\\"}, \\\"contextual_parse_evidence\\\": \\\"Both describe the same donorum in ... donorum semper participatione gaudere; the genitive plural adjective agrees with the same neuter genitive plural noun. Only the printed oe/ae spelling differs.\\\"}], \\\"source_latin_ending\\\": \\\"Per Dominum.\\\", \\\"target_latin_ending\\\": \\\"Per Dominum.\\\", \\\"literal_english_ending\\\": \\\"Through our Lord.\\\", \\\"source_english_expanded\\\": false, \\\"response_added\\\": false}. The existing canonical target retains tribue nobis; while the1962 image prints tribue nobis:. Its selected projection payload and current Latin proof agree at e1503f1b8200e8c1fa8237668c85918030b650159e67b159d63715b9d2f918b8; the old projection-passage prose note names a stale hash. This receiving assembly preserves both old records and exact target bytes; it does not claim a new diplomatic target transcription or a repaired Latin publication basis.\"\n\n[[entries.translations]]\nlang = \"en\"\nrights = \"public-domain\"\nsource_id = \"edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945\"\ntext = \"O God, Who, by the merits of blessed Francis, didst increase Thy Church by bringing forth a new progeny, grant us to imitate him in despising earthly things and ever to rejoice in partaking of heavenly gifts. Through our Lord.\"\n\n",
+      "raw_TOML_entry_block": "[[entries]]\nmass = \"s-francisci-confessoris\"\nform_id = \"main\"\nproper = \"Collect\"\ncycle = \"all\"\noccurrence = 1\nwitness = \"lasance-1945\"\nprinted_page = \"1224\"\nia_leaf = 1218\nia_leaf_range = [1218, 1218]\nartifact_id = \"artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0\"\npassage_id = \"passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-francis-one-verify-s-francisci-confessoris--main--collect--all--1\"\ncollated = \"Independent complete named source/context page-image review and bounded existing lexical comparison, 2026-10-26\"\ncollation_result = \"confirmed\"\npublication_artifact_id = \"artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-francis-one-f9548bab\"\npublication_artifact_sha256 = \"f9548bab2b927f11198abe8b08f1017c0552a051282ddb866117e2e76836baaa\"\npublication_passage_id = \"passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-francis-one-publish-s-francisci-confessoris--main--collect--all--1\"\nwitness_note = \"Complete actual Latin word sequences and short Per Dominum. endings agree after only the original authorized foetu/fetu pair at token7 and declared coelestium/caelestium spelling at token19. Both source and target retain the same fourth-declension masculine ablative singular noun and the same neuter genitive plural adjective modifying donorum. Literal historical English ends Through our Lord. with no response or expansion. Exact current target UTF8 SHA256 e1503f1b8200e8c1fa8237668c85918030b650159e67b159d63715b9d2f918b8; unchanged full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-francisci-confessoris-orations. Exact comparison {\\\"method_id\\\": \\\"own-appointment-lexically-attested-spelling-2026-10-23\\\", \\\"subroute\\\": \\\"strict\\\", \\\"donor_fanout\\\": false, \\\"lexical_differences\\\": [{\\\"source\\\": \\\"foetu\\\", \\\"target\\\": \\\"fetu\\\", \\\"source_word_index_zero_based\\\": 7, \\\"target_word_index_zero_based\\\": 7, \\\"contextual_parse\\\": {\\\"lexeme\\\": \\\"fetus/foetus\\\", \\\"part_of_speech\\\": \\\"noun\\\", \\\"gender\\\": \\\"masculine\\\", \\\"number\\\": \\\"singular\\\", \\\"case\\\": \\\"ablative\\\"}, \\\"contextual_parse_evidence\\\": \\\"Both occur in the identical clause Ecclesiam tuam beati Francisci meritis ... novae prolis amplificas. Ecclesiam is the object of amplificas; meritis and fetu express means. The genitive novae prolis depends on the same noun. This is not the adjective fetus (whose ablative is feto), and no dative-recipient relation is present.\\\", \\\"lexical_passage_ids\\\": [\\\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-fetus-foetus\\\", \\\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-fourth-declension\\\"]}], \\\"orthography_differences\\\": [{\\\"source\\\": \\\"coelestium\\\", \\\"target\\\": \\\"caelestium\\\", \\\"source_word_index_zero_based\\\": 19, \\\"target_word_index_zero_based\\\": 19, \\\"contextual_parse\\\": {\\\"lexeme\\\": \\\"coelestis/caelestis\\\", \\\"part_of_speech\\\": \\\"adjective\\\", \\\"gender\\\": \\\"neuter\\\", \\\"number\\\": \\\"plural\\\", \\\"case\\\": \\\"genitive\\\"}, \\\"contextual_parse_evidence\\\": \\\"Both describe the same donorum in ... donorum semper participatione gaudere; the genitive plural adjective agrees with the same neuter genitive plural noun. Only the printed oe/ae spelling differs.\\\"}], \\\"source_latin_ending\\\": \\\"Per Dominum.\\\", \\\"target_latin_ending\\\": \\\"Per Dominum.\\\", \\\"literal_english_ending\\\": \\\"Through our Lord.\\\", \\\"source_english_expanded\\\": false, \\\"response_added\\\": false}. The existing canonical target retains tribue nobis; while the1962 image prints tribue nobis:. Its selected projection payload and current Latin proof agree at e1503f1b8200e8c1fa8237668c85918030b650159e67b159d63715b9d2f918b8; the old projection-passage prose note names a stale hash. This receiving assembly preserves both old records and exact target bytes; it does not claim a new diplomatic target transcription or a repaired Latin publication basis.\"\n\n[[entries.translations]]\nlang = \"en\"\nrights = \"public-domain\"\nsource_id = \"edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945\"\ntext = \"O God, Who, by the merits of blessed Francis, didst increase Thy Church by bringing forth a new progeny, grant us to imitate him in despising earthly things and ever to rejoice in partaking of heavenly gifts. Through our Lord.\"\n\n",
+      "before_full_proof": {
+        "provenance_status": "collated",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "mass": "s-francisci-confessoris",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "e1503f1b8200e8c1fa8237668c85918030b650159e67b159d63715b9d2f918b8",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-francisci-confessoris-collect",
+        "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+        "locator": "editorial-projection artifact physical lines 91-93; antecedent Mame Tours 1922, printed p. 729; artifact PDF p. 843",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-francisci-confessoris-orations",
+        "verification_locator": "printed p. 675, no. 3770; artifact PDF p. 756",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "apply the target printing's punctuation",
+          "carry the target's conclusion at its printed length"
+        ],
+        "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: antecedent witness is the Mame, Tours 1922 (editio quarta iuxta typicam Vaticanam); 87% of the 1962 body's tokens align in order after canon folding; the witness text layer damages '729 Oratio EuS quiEcclésiam' where the 1962 prints 'qui Ecclesiam'; the witness text layer damages 'donérum' where the 1962 prints 'donorum'; the Mame prints j where the 1962 prints i (Iesum/Jesum, eius/ejus) and its recogniser renders the ae ligature as 'z' or 'e'; both are orthographic; pointing: the antecedent's reading is recorded verbatim above so its commas and colons can be compared, but its punctuation is NOT safely collatable - the recogniser turns commas into full stops, semicolons and question marks - so no punctuation difference here should be read as a difference between the printings; the 1962 prints the conclusion as 'Per Dominum.'; conclusion length was excluded from the alignment and is recorded here as printed, per the settled rule. Corroboration: Pustet 1862 text-layer lines 75877-75886 (65% coverage); Benziger 1962 conformed printing at line 94887 (61%; comparison only, never a publication basis). Recorded limitation: The antecedent reading is taken from that witness's text layer, not from a page image, so its letterforms are inferred rather than read; only the 1962 target was read on a page. I did not collate the antecedent's Introit, readings, chants or any Secunda Oratio / Alia Secreta / Alia Postcommunio.",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "medium",
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+        ],
+        "publication_locator": "Tours Mame 1922, Mame Tours 1922, printed p. 729; artifact PDF p. 843; artifact rights_status public-domain",
+        "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+      },
+      "receiving_full_proof": {
+        "provenance_status": "collated",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "mass": "s-francisci-confessoris",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "e1503f1b8200e8c1fa8237668c85918030b650159e67b159d63715b9d2f918b8",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-francisci-confessoris-collect",
+        "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+        "locator": "editorial-projection artifact physical lines 91-93; antecedent Mame Tours 1922, printed p. 729; artifact PDF p. 843",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-francisci-confessoris-orations",
+        "verification_locator": "printed p. 675, no. 3770; artifact PDF p. 756",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "apply the target printing's punctuation",
+          "carry the target's conclusion at its printed length"
+        ],
+        "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: antecedent witness is the Mame, Tours 1922 (editio quarta iuxta typicam Vaticanam); 87% of the 1962 body's tokens align in order after canon folding; the witness text layer damages '729 Oratio EuS quiEcclésiam' where the 1962 prints 'qui Ecclesiam'; the witness text layer damages 'donérum' where the 1962 prints 'donorum'; the Mame prints j where the 1962 prints i (Iesum/Jesum, eius/ejus) and its recogniser renders the ae ligature as 'z' or 'e'; both are orthographic; pointing: the antecedent's reading is recorded verbatim above so its commas and colons can be compared, but its punctuation is NOT safely collatable - the recogniser turns commas into full stops, semicolons and question marks - so no punctuation difference here should be read as a difference between the printings; the 1962 prints the conclusion as 'Per Dominum.'; conclusion length was excluded from the alignment and is recorded here as printed, per the settled rule. Corroboration: Pustet 1862 text-layer lines 75877-75886 (65% coverage); Benziger 1962 conformed printing at line 94887 (61%; comparison only, never a publication basis). Recorded limitation: The antecedent reading is taken from that witness's text layer, not from a page image, so its letterforms are inferred rather than read; only the 1962 target was read on a page. I did not collate the antecedent's Introit, readings, chants or any Secunda Oratio / Alia Secreta / Alia Postcommunio.",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "medium",
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+        ],
+        "publication_locator": "Tours Mame 1922, Mame Tours 1922, printed p. 729; artifact PDF p. 843; artifact rights_status public-domain",
+        "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+      },
+      "raw_body": "Deus, qui Ecclesiam tuam beati Francisci meritis fetu novae prolis\namplificas: tribue nobis; ex ejus imitatione, terrena despicere, et\ncaelestium donorum semper participatione gaudere. Per Dominum.\n",
+      "raw_body_sha256": "e1503f1b8200e8c1fa8237668c85918030b650159e67b159d63715b9d2f918b8"
+    }
+  ],
+  "Latin_proof_replacements": [
+    {
+      "target": [
+        "s-ignatii-episcopi-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "raw_owner": {
+        "mass": "s-ignatii-episcopi-martyris",
+        "form": "",
+        "proper": "Postcommunion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "before": {
+        "provenance_status": "collated",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "mass": "s-ignatii-episcopi-martyris",
+        "form": "",
+        "proper": "Postcommunion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "065c6887ffea243726b7fdc716b379c1088d2c2e523e30009d742cfaa18a379b",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-ignatii-episcopi-martyris-postcommunion",
+        "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+        "locator": "editorial-projection artifact physical lines 127-131; antecedent Tours: Mame 1922 (editio quarta iuxta typicam Vaticanam), printed p. 759; artifact PDF p. 873 (text layer, column-correct -raw extraction)",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-ignatii-episcopi-martyris-orations",
+        "verification_locator": "printed p. 464, no. 2094; artifact PDF p. 545",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "apply the target printing's punctuation",
+          "carry the target's conclusion at its printed length"
+        ],
+        "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: conclusion length differs: the 1962 prints \"Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: per omnia saecula saeculorum. R. Amen.\"; the antecedent prints \"Per Dominum no- strum. Pro S. Pontiano Postc\"; accents, ae/oe ligatures and word division differ throughout; the antecedent reading is an optical text layer and its pointing cannot be trusted at comma level. Corroboration: 1862 at text-layer lines 54858-54886 (printed p. 377), alignment 0.67; 1604 at lines 46504-46519, alignment 0.60 (degraded-latin; corroboration only). Recorded limitation: The 1962 reading was settled on the facsimile page image; the antecedent reading is an optical text layer only and its letterforms and pointing were not verified on a page image (the 1862's images are not available to this lane, and the Mame's were not rendered for this entry). What was NOT checked: the Benziger conformed printing was used only as a boundary check on the extraction, never as a reading; no attempt was made to establish which of several possible loci in the antecedent is the 'original' one, since an order is not a contribution.",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "medium",
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+        ],
+        "publication_locator": "Pustet Ratisbon 1862, Tours: Mame 1922 (editio quarta iuxta typicam Vaticanam), printed p. 759; artifact PDF p. 873 (text layer, column-correct -raw extraction); artifact rights_status public-domain",
+        "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+      },
+      "after": {
+        "provenance_status": "collated",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "mass": "s-ignatii-episcopi-martyris",
+        "form": "",
+        "proper": "Postcommunion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "065c6887ffea243726b7fdc716b379c1088d2c2e523e30009d742cfaa18a379b",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ignatius-postcommunion-proof-successor-20261026",
+        "source_date": "2026-09-03 unchanged projectbody; source-chain page-image successor26October2026 over PustetRatisbon1862",
+        "locator": "Existing projectpayload physicallines127-131; namedIgnatius petition Pustet1862 originalPDF485 printed399; complete longconclusion and separate R.Amen Pustet1862 originalPDF88 printed2",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.ignatius-postcommunion-response-recheck-20261026",
+        "verification_locator": "Actual1962 PDF545 printed464 no2094, complete two-column Postcommunion and separate R.Amen before February2 heading",
+        "transformations": [
+          "retain existing calendar/projectpayload words, punctuation, wraps and finalLF byte-exactly",
+          "read complete named1862 petition from actualpage485; join linewraps, remove stress accents and expand ae/oe ligatures",
+          "use actual complete contiguous1862 conclusion and separate response from page88; retain target pointing/capitalization and project j orthography",
+          "keep priest conclusion ending at saeculorum. distinct from separately marked R.Amen; no English generated"
+        ],
+        "provenance_evidence": "New page-image source-chain successor. Complete namedIgnatius petition is actually printed in Pustet1862 PDF485 printed399 and stops Per Dominum. Complete retained longconclusion including response is independently contiguous in the1862 Contra persecutores Ecclesiae oration PDF88 printed2. Two separate historical source prayers are retained separately; current projectpayload selects only their already printed petition/formula words at the exact1962 unit extent. Actual1962 PDF545 printed464 no2094 explicitly separates priest prayer/conclusion and R.Amen; response is not an accidental February2 import. Current targetbody and existing immutable projectpayload physicallines127-131 match the ledger hash exactly. Mame1922 PDF873 actually namesPontian and is not used as a namedIgnatius donor. Old records, their dates, oldpayload and prior English absence remain untouched.",
+        "provenance_authority": "Unchanged Triptych projectpayload independently rechecked against actual1862 namedpetition/completeformula-response images and distinct1962 target structure",
+        "provenance_confidence": "high",
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-text-20261026",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-controls-20261026"
+        ],
+        "publication_locator": "Existing projectpayload physicallines127-131; new Pustet1862 fullpage extract1-2 = originalPDF88/485 printed2/399; historicalLatin physicallines1 and3",
+        "publication_evidence": "Underlying Latin petition, entire conclusion and response words are independently printed in the1862 Pustet book, public domain in the UnitedStates by publication date. The1962 edition supplies unit placement, actual longextent, pointing and response-role comparison only under17USC103(b); it is not a new copyright/publication grant. Existing projectpayload owns editorial arrangement/normalization only. Full modernPDF/layout is not admitted. Google digitizer footers on the bounded1862 extract retain the separate existing Google rights treatment.",
+        "note": "Current one-owner provenance-only successor. Body hash remains065c6887ffea243726b7fdc716b379c1088d2c2e523e30009d742cfaa18a379b. Old dated proof/passages/artifacts and all English records preserved; no new prayer/response/translation admission."
+      },
+      "before_sha256": "1fdf88fff127155cb62336e5f03b311479e00f1b3a4217b7ba33fb526f5303b0",
+      "after_sha256": "78f66dfebc34c7eade52a0f5f2ce4d12f220c8002248a831aa6b42e6d73649a1",
+      "before_body": "Refecti participatione muneris sacri, quaesumus, Domine Deus noster: ut,\ncujus exsequimur cultum, intercedente beato Ignatio Martyre tuo atque\nPontifice, sentiamus effectum. Per Dominum nostrum Jesum Christum, Filium\ntuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: per omnia\nsaecula saeculorum. R. Amen.\n",
+      "after_body": "Refecti participatione muneris sacri, quaesumus, Domine Deus noster: ut,\ncujus exsequimur cultum, intercedente beato Ignatio Martyre tuo atque\nPontifice, sentiamus effectum. Per Dominum nostrum Jesum Christum, Filium\ntuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: per omnia\nsaecula saeculorum. R. Amen.\n",
+      "body_unchanged_sha256": "065c6887ffea243726b7fdc716b379c1088d2c2e523e30009d742cfaa18a379b",
+      "raw_TOML_after_block": "[[entries]]\nprovenance_status = \"collated\"\npublication_status = \"permitted\"\npublication_basis = \"public-domain\"\nsurfaces = [\"web\", \"download\", \"print\", \"cli\", \"corpus-data\", \"public-git\"]\nmass = \"s-ignatii-episcopi-martyris\"\nform = \"\"\nproper = \"Postcommunion\"\ncourse = \"\"\ncycle = \"\"\noccurrence = 1\ntext_sha256 = \"065c6887ffea243726b7fdc716b379c1088d2c2e523e30009d742cfaa18a379b\"\nsource_id = \"passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ignatius-postcommunion-proof-successor-20261026\"\nsource_date = \"2026-09-03 unchanged projectbody; source-chain page-image successor26October2026 over PustetRatisbon1862\"\nlocator = \"Existing projectpayload physicallines127-131; namedIgnatius petition Pustet1862 originalPDF485 printed399; complete longconclusion and separate R.Amen Pustet1862 originalPDF88 printed2\"\nrelationship = \"editorial-projection-exact-to-target\"\nverification_source_id = \"passage.catholic-church.missale-romanum.vatican-typica-1962.ignatius-postcommunion-response-recheck-20261026\"\nverification_locator = \"Actual1962 PDF545 printed464 no2094, complete two-column Postcommunion and separate R.Amen before February2 heading\"\ntransformations = [\"retain existing calendar/projectpayload words, punctuation, wraps and finalLF byte-exactly\", \"read complete named1862 petition from actualpage485; join linewraps, remove stress accents and expand ae/oe ligatures\", \"use actual complete contiguous1862 conclusion and separate response from page88; retain target pointing/capitalization and project j orthography\", \"keep priest conclusion ending at saeculorum. distinct from separately marked R.Amen; no English generated\"]\nprovenance_evidence = \"New page-image source-chain successor. Complete namedIgnatius petition is actually printed in Pustet1862 PDF485 printed399 and stops Per Dominum. Complete retained longconclusion including response is independently contiguous in the1862 Contra persecutores Ecclesiae oration PDF88 printed2. Two separate historical source prayers are retained separately; current projectpayload selects only their already printed petition/formula words at the exact1962 unit extent. Actual1962 PDF545 printed464 no2094 explicitly separates priest prayer/conclusion and R.Amen; response is not an accidental February2 import. Current targetbody and existing immutable projectpayload physicallines127-131 match the ledger hash exactly. Mame1922 PDF873 actually namesPontian and is not used as a namedIgnatius donor. Old records, their dates, oldpayload and prior English absence remain untouched.\"\nprovenance_authority = \"Unchanged Triptych projectpayload independently rechecked against actual1862 namedpetition/completeformula-response images and distinct1962 target structure\"\nprovenance_confidence = \"high\"\npublication_source_ids = [\"artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423\", \"artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-text-20261026\", \"artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-controls-20261026\"]\npublication_locator = \"Existing projectpayload physicallines127-131; new Pustet1862 fullpage extract1-2 = originalPDF88/485 printed2/399; historicalLatin physicallines1 and3\"\npublication_evidence = \"Underlying Latin petition, entire conclusion and response words are independently printed in the1862 Pustet book, public domain in the UnitedStates by publication date. The1962 edition supplies unit placement, actual longextent, pointing and response-role comparison only under17USC103(b); it is not a new copyright/publication grant. Existing projectpayload owns editorial arrangement/normalization only. Full modernPDF/layout is not admitted. Google digitizer footers on the bounded1862 extract retain the separate existing Google rights treatment.\"\nnote = \"Current one-owner provenance-only successor. Body hash remains065c6887ffea243726b7fdc716b379c1088d2c2e523e30009d742cfaa18a379b. Old dated proof/passages/artifacts and all English records preserved; no new prayer/response/translation admission.\"\n\n",
+      "permission_changed": false
+    }
+  ],
+  "unchanged_full_proofs": [
+    {
+      "role": "unchanged-independent-Latin-proof",
+      "owner": {
+        "mass": "s-francisci-confessoris",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "before_body": "Deus, qui Ecclesiam tuam beati Francisci meritis fetu novae prolis\namplificas: tribue nobis; ex ejus imitatione, terrena despicere, et\ncaelestium donorum semper participatione gaudere. Per Dominum.\n",
+      "after_body": "Deus, qui Ecclesiam tuam beati Francisci meritis fetu novae prolis\namplificas: tribue nobis; ex ejus imitatione, terrena despicere, et\ncaelestium donorum semper participatione gaudere. Per Dominum.\n",
+      "body_sha256": "e1503f1b8200e8c1fa8237668c85918030b650159e67b159d63715b9d2f918b8",
+      "body_changed": false,
+      "before_proof": {
+        "provenance_status": "collated",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "mass": "s-francisci-confessoris",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "e1503f1b8200e8c1fa8237668c85918030b650159e67b159d63715b9d2f918b8",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-francisci-confessoris-collect",
+        "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+        "locator": "editorial-projection artifact physical lines 91-93; antecedent Mame Tours 1922, printed p. 729; artifact PDF p. 843",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-francisci-confessoris-orations",
+        "verification_locator": "printed p. 675, no. 3770; artifact PDF p. 756",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "apply the target printing's punctuation",
+          "carry the target's conclusion at its printed length"
+        ],
+        "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: antecedent witness is the Mame, Tours 1922 (editio quarta iuxta typicam Vaticanam); 87% of the 1962 body's tokens align in order after canon folding; the witness text layer damages '729 Oratio EuS quiEcclésiam' where the 1962 prints 'qui Ecclesiam'; the witness text layer damages 'donérum' where the 1962 prints 'donorum'; the Mame prints j where the 1962 prints i (Iesum/Jesum, eius/ejus) and its recogniser renders the ae ligature as 'z' or 'e'; both are orthographic; pointing: the antecedent's reading is recorded verbatim above so its commas and colons can be compared, but its punctuation is NOT safely collatable - the recogniser turns commas into full stops, semicolons and question marks - so no punctuation difference here should be read as a difference between the printings; the 1962 prints the conclusion as 'Per Dominum.'; conclusion length was excluded from the alignment and is recorded here as printed, per the settled rule. Corroboration: Pustet 1862 text-layer lines 75877-75886 (65% coverage); Benziger 1962 conformed printing at line 94887 (61%; comparison only, never a publication basis). Recorded limitation: The antecedent reading is taken from that witness's text layer, not from a page image, so its letterforms are inferred rather than read; only the 1962 target was read on a page. I did not collate the antecedent's Introit, readings, chants or any Secunda Oratio / Alia Secreta / Alia Postcommunio.",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "medium",
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+        ],
+        "publication_locator": "Tours Mame 1922, Mame Tours 1922, printed p. 729; artifact PDF p. 843; artifact rights_status public-domain",
+        "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+      },
+      "after_proof": {
+        "provenance_status": "collated",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "mass": "s-francisci-confessoris",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "e1503f1b8200e8c1fa8237668c85918030b650159e67b159d63715b9d2f918b8",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-francisci-confessoris-collect",
+        "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+        "locator": "editorial-projection artifact physical lines 91-93; antecedent Mame Tours 1922, printed p. 729; artifact PDF p. 843",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-francisci-confessoris-orations",
+        "verification_locator": "printed p. 675, no. 3770; artifact PDF p. 756",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "apply the target printing's punctuation",
+          "carry the target's conclusion at its printed length"
+        ],
+        "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: antecedent witness is the Mame, Tours 1922 (editio quarta iuxta typicam Vaticanam); 87% of the 1962 body's tokens align in order after canon folding; the witness text layer damages '729 Oratio EuS quiEcclésiam' where the 1962 prints 'qui Ecclesiam'; the witness text layer damages 'donérum' where the 1962 prints 'donorum'; the Mame prints j where the 1962 prints i (Iesum/Jesum, eius/ejus) and its recogniser renders the ae ligature as 'z' or 'e'; both are orthographic; pointing: the antecedent's reading is recorded verbatim above so its commas and colons can be compared, but its punctuation is NOT safely collatable - the recogniser turns commas into full stops, semicolons and question marks - so no punctuation difference here should be read as a difference between the printings; the 1962 prints the conclusion as 'Per Dominum.'; conclusion length was excluded from the alignment and is recorded here as printed, per the settled rule. Corroboration: Pustet 1862 text-layer lines 75877-75886 (65% coverage); Benziger 1962 conformed printing at line 94887 (61%; comparison only, never a publication basis). Recorded limitation: The antecedent reading is taken from that witness's text layer, not from a page image, so its letterforms are inferred rather than read; only the 1962 target was read on a page. I did not collate the antecedent's Introit, readings, chants or any Secunda Oratio / Alia Secreta / Alia Postcommunio.",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "medium",
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+        ],
+        "publication_locator": "Tours Mame 1922, Mame Tours 1922, printed p. 729; artifact PDF p. 843; artifact rights_status public-domain",
+        "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+      },
+      "before_proof_dictionary_sha256": "cf6d5a71e2c6dad5c2ad737d509ced949e0693034d66c4a01891254f04a2c908",
+      "after_proof_dictionary_sha256": "cf6d5a71e2c6dad5c2ad737d509ced949e0693034d66c4a01891254f04a2c908",
+      "target_context_before": null,
+      "target_context_after": null,
+      "publication_status_basis_surfaces_changed": false,
+      "new_permission": false
+    }
+  ],
+  "calendar_node_replacements": [
+    {
+      "target": [
+        "s-ignatii-episcopi-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "raw_owner": {
+        "mass": "s-ignatii-episcopi-martyris",
+        "form": "",
+        "proper": "Postcommunion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "before": {
+        "name": "Postcommunion",
+        "source": "composed",
+        "notes": "Printed locus printed p. 464, no. 2094; artifact PDF p. 545. Preexisting material under 17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet Ratisbon 1862 at Tours: Mame 1922 (editio quarta iuxta typicam Vaticanam), printed p. 759; artifact PDF p. 873 (text layer, column-correct -raw extraction).",
+        "text": "Refecti participatione muneris sacri, quaesumus, Domine Deus noster: ut,\ncujus exsequimur cultum, intercedente beato Ignatio Martyre tuo atque\nPontifice, sentiamus effectum. Per Dominum nostrum Jesum Christum, Filium\ntuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: per omnia\nsaecula saeculorum. R. Amen.\n"
+      },
+      "after": {
+        "name": "Postcommunion",
+        "source": "composed",
+        "notes": "Target printed p. 464, no. 2094; artifact PDF p. 545. Current body retained byte-exactly. Complete named Ignatius petition visually checked in Pustet Ratisbon 1862, printed p. 399, PDF p. 485. Its actual short Per Dominum cue is distinct from the complete conclusion and separately marked R. Amen printed contiguously in the same book, printed p. 2, PDF p. 88. The 1962 unit explicitly includes that separate response before the February 2 title. Current proof is the 2026-10-26 source-chain successor; no English is added.",
+        "text": "Refecti participatione muneris sacri, quaesumus, Domine Deus noster: ut,\ncujus exsequimur cultum, intercedente beato Ignatio Martyre tuo atque\nPontifice, sentiamus effectum. Per Dominum nostrum Jesum Christum, Filium\ntuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: per omnia\nsaecula saeculorum. R. Amen.\n"
+      },
+      "only_field_changed": "notes"
+    }
+  ],
+  "qualifications": [
+    {
+      "kind": "INHERITED_TARGET_POINTING_OBSERVATION",
+      "finding": "Actual1962 image prints tribue nobis: while the exact canonical target body prints tribue nobis;. This does not add a word difference, change the two declared spelling positions, or authorize changing pinned canonical bytes. A receiver must retain or explicitly disclose this observed pointing distinction rather than claim that those canonical punctuation bytes are a diplomatic target transcription."
+    },
+    {
+      "kind": "INHERITED_TARGET_PASSAGE_NOTE_STALE_HASH",
+      "finding": "The existing projection passage notes name 1a15c8c2bb9bbb2855a2b06310f063311f915f4de9222be52babec9d7f051456 as the retained body hash. Its actual selected payload and the current provenance body hash agree at e1503f1b8200e8c1fa8237668c85918030b650159e67b159d63715b9d2f918b8. This stale prose note does not change the verified payload; no metadata mutation occurred in this lane."
+    }
+  ],
+  "root_decision": "Adopt only the exact Francis whole historical English dictionary and corresponding prior typed absence removal using the already accepted own-appointment lexical-spelling method, pair20 foetu/fetu at zero7 and coelestium/caelestium at zero19. Preserve literal Through our Lord. and all Latin body/proof bytes. Adopt exactly one Ignatius full provenance-row replacement and notes-only node correction, preserving321-byte Latin, actual response once and its English whole-body hold. No new spelling rule, English expansion, Latin permission, owner domain or unlisted proof change.",
+  "limits": [
+    "Francis source/target punctuation qualification and the inherited old prose-hash qualification remain explicitly recorded; never alter body or proof to conceal them.",
+    "Ignatius actual Pustet petition and formula/response controllers replace the false older attribution; no English Amen or response is fabricated.",
+    "All existing English, other absences, proof/body dictionaries, aliases, prior audit decisions and historical before streams remain exact.",
+    "Shared ledgers/audit/notices are composed fieldwise; no full older snapshot may overwrite later receiving cohorts."
+  ],
+  "canonical_grant_path": "workflows/reviews/missal-reader-completion-2026-10-26/francis-one-ignatius-proof-adoption.json",
+  "canonical_writes_at_adoption": 0
+}

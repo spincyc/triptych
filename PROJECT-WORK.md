@@ -29,8 +29,37 @@ and generated site, independently review the outgoing change, and commit and
 push the workspace branch. Main publication and deployment are separate from
 this branch reconciliation.
 
-Evidence and final outcomes belong in
-`workflows/reviews/gpt-1962-66-main-reconciliation-2026-11-02/RECORD.md`.
+Source and review evidence is recorded in
+`workflows/reviews/gpt-1962-66-main-reconciliation-2026-11-02/RECORD.md`;
+final operational results and the final integration review are retained here.
+The first normal merge resolves all ten shared conflicts, keeping both sets
+of work and incoming source-only publication behavior. Proper 66 declares
+three authored editions and links its full reader and concise/homily print
+options. Exact offline preservation precedes removal of the four new binary
+source witnesses. All prior prose, source identities and 58 native audit files
+remain unchanged. Independent review confirms the artifact migration, repaired
+combined archive audit, source catalogue ownership and HTML route handling.
+
+Fresh runs pass all 231 affected tests, all 11 browser tests, the 58-tool
+registry, source inventory and source-family currency. Both final mechanical
+receipts independently pass against the same 80,650 input identities, digest
+`fa751816af07e42cb1212940ac9485945f21b337b2906867d4c99e987b572725`.
+The source projection has 18,443 outputs; the act-history projection has 557.
+Receipt hashes are respectively
+`cf82d3d5739874ed046837bb6698adad4e3987a75c65229089007a0d1f36e50e`
+and `b709c9ef18b5f2767a83155dc8c76bf5e344fb615e742c3162b93ac9db3c99a3`.
+These are mechanical freshness facts, without new editorial approval.
+
+Before the first merge checkpoint was committed, remote main advanced to
+`e1ca91ba734219cefa92315c5520820c2c603607`. That follow-up also removes generated
+browser products and frozen papal input snapshots from Git. Preserve the first
+merge as a normal local checkpoint, then merge this additional main commit and
+adopt its descriptor-bound, outside-Git product model. Do not restore deleted
+generated products as tracked files. The latest integration, final site gates,
+independent review and branch push remain in progress. Historical PDF delivery
+and review statements below describe the earlier branch checkpoint; this
+reconciliation supersedes its current download surfaces without rewriting
+those historical audit facts.
 
 ## GPT resumed Fifth Sunday and web catalogue, 2026-11-02
 
@@ -217,6 +246,560 @@ is complete; a metadata-only follow-up records the verified source commit and
 closes the ledger. Main integration and live deployment are separate states
 and are not promised by this work unit.
 
+## Missal reader English completion, 2026-10-29
+
+<!-- promised-deliverable: missal-reader-english-completion-2026-10-29 -->
+
+**In progress.** The maintainer requests completion of the missal reader,
+English translations of all its texts, and maximum useful parallel agent work.
+This extends the existing annual-content promise; it does not replace its
+appointment, wording, source, review or annual-render requirements. Work
+continues on `feature/missal-reader`, preserving all existing accepted text
+and source qualifications. The current recovery and source receipts supersede
+older numerical summaries in the roadmap.
+
+On 2026-10-30 the maintainer expressly requested coherent commits, regular
+reconciliation with current `main`, and pushes to `main`. Keep the workspace
+branch name; integrate current main by ordinary merges and publish the verified
+result to `origin/main` without force or history rewriting. The rejected old
+remote feature history remains excluded. Publication of a validated checkpoint
+does not mark the complete-English promise fulfilled.
+
+At intake, fresh owning-report audits identified Roman 1962 composed English availability
+of 1,188/1,448 canonical targets, inherited pre-1955 availability of
+1,168/1,391, and postconciliar availability of 116/564. These are represented
+full-text targets, distinct from Bible-citation rendering availability and
+not whole-Missal completeness denominators. English
+Ordinary availability is 191/196 modeled Roman elements, 196/206 pre-1955
+elements and 0/61 postconciliar elements; modeled placeholders do not all
+represent missing translation bodies.
+
+Independent lanes own the fresh census, source/publication-policy review,
+Roman Proper recovery and study translations, postconciliar Proper recovery,
+each Ordinary family, and reader verification. Exact identified historical
+English and original project study English remain distinct. Original study
+translations require independently established distributable source wording;
+they confer no official liturgical approval. Protected modern originals or
+translations require their own distribution basis. Typed gaps and passing
+structural renders do not fulfill the requested complete English text.
+
+The Roman Ordinary source lane now supplies English for every currently
+represented text body in both historical frames; the three remaining records
+in each are appointment stand-ins. Seven new direct English source passages
+also have verified prose delivery through the Source Library. The exact
+source manifest and delivery successor are retained under
+`workflows/reviews/missal-english-completion-2026-10-29/ordinary/`.
+Sixteen additional Roman Proper bodies have separately measured, qualified
+publication authorities and independent source, English and installed-guard
+checks. Their fourteen study translations and two historical translations
+remain distinct; the exact authority and receipts are retained under that
+review namespace's `roman-1962/` directory. These are bounded accepted
+cohorts, not completion of this promise.
+
+Postconciliar availability includes seventy earlier project-study drafts whose
+fidelity and underlying-source review remains explicitly open. Independent
+acceptance of the new admissions does not retrospectively review those drafts,
+approve liturgical use or establish exact 2008 correspondence.
+
+The scope audit also distinguishes real older Holy Week work from historical
+nonapplicability. Pre-1955 has four effectively empty rite contexts (Palm
+Sunday, its overlapping standalone blessing, Good Friday and the Easter
+Vigil). The Lord's Supper still inherits nineteen later-frame Propers despite
+its raw unavailable marker; it needs actual older-recension collation and
+assembly qualification. Independent source packages and an explicit older
+rite model are in progress. A separate pre-1955 Chrism Mass is explicitly
+absent and is not missing English work. Postconciliar Common catalogues,
+antiphon-only directions and partial formularies also require source-extent
+and target correspondence before any fixed number of missing prayers can be
+asserted. Complete English cannot be inferred from represented-body counts.
+
+The first accepted source cohort provides composed English for 1,407/1,448
+Roman 1962 Proper targets, 1,373/1,391 inherited pre-1955 targets and 155/574
+postconciliar targets. The corresponding gaps are 41, 18 and 419; all 57
+pre-1955 inapplicability masks remain accounted. Postconciliar Ordinary English
+is available for 35/70 modeled elements. Its remaining records include twelve
+structural or appointment placeholders and twenty-three represented text gaps.
+These counts include the seventy earlier postconciliar drafts with open review
+debt and exclude unmodeled whole-book or rite requirements.
+
+The source aggregate, public and preview build verification, all twelve required
+browser contracts (259 assertions), and the annual structural rendering audit
+pass. The latter covers 1,464 date/calendar coordinates and 5,856 JSON/text
+renderings; it does not establish wording or textual completeness. Exact
+source, browser, Ordinary and historical-conservation evidence is retained in
+`workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/`.
+The source-batch epoch and its bounded test-code successors have been separately
+accepted with 7,068 exact input pins and all seventeen original replay streams
+preserved. All 257 current source-consumer/report tests have canonical passing
+executions across the full run and corrected reruns; the exact composed evidence
+is retained in `checkpoint-v1/root-validation.json`. Historical refusals, source
+confidence and original code bytes remain distinct from later admissions.
+The validated cohort is committed as `0b7da814a9`. The first main reconciliation
+preserves checkpoint `ac620e2f8b` and corrects one new Nativity English
+transcription from a colon to the semicolon printed in its historical source.
+The bounded successor retains all historical replay streams and binds 7,071
+exact source inputs; its seventeen controls pass. Evidence is retained in
+`workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/`.
+The successor also corrects the English finding aid's omission of two historical
+source classes covering three already accepted entries. All previous classes,
+English bodies, permissions and target counts remain exact. The seventeen source
+controls and seventeen affected English tests pass together; 233 publication,
+Source Library and encyclical tests also pass. Their earlier failed attempts
+remain distinguished from the corrected executions.
+
+Main checkpoint `f955c512ac` is reconciled. The final full source aggregate and
+all four public/preview build and verification gates pass. Fresh affected native
+browser contracts pass 136 assertions; unchanged reader and annual-render code
+retain the earlier broader structural evidence with its original limits. The
+stale ignored All Saints PDFs are restored byte-for-byte from the already
+accepted builds and their existing full-page review records; no new document
+content or PDF acceptance is inferred. Checkpoint `702f650020` is pushed to
+`origin/main`; the exact outgoing-object audit passes. Pages and repository
+hygiene both succeed on that exact commit. All 58 targeted live HTTPS responses
+match the verified artifact, including the reader routes and code, all three
+Proper datasets, Ordinary data, source index and historical Nativity source.
+The corrected English and its source/target qualifications remain intact.
+Final merged evidence is retained in the same reconciliation namespace.
+
+The next bounded source cohort has actual finite source/English adoption for
+seven Roman uses and eighteen postconciliar uses. The former includes six
+qualified adaptations and a separately sourced old three-antiphon bundle; the
+latter includes ten qualified English uses, five literal historical translations
+and three ordinary public-domain study translations. The complete later
+contributions, strongest contrary arguments, exact bodies, source bindings and
+surfaces were assessed separately. Current-book fidelity, approved translations
+and wider book arrangements are not inferred. Canonical source integration,
+finite-authority activation and owner generation are installed. Composed English
+is now 1,414/1,448 Roman targets, 1,374/1,391 Bonn witness study targets and
+173/574 modern Roman targets; the corresponding gaps are 34, 17 and 401. These
+remain represented-body counts, including the seventy earlier drafts with open
+review debt. Ten new Sources reading passages expose already accepted Ordinary
+English without adding new wording. The independently reviewed source epoch
+binds 7,264 exact inputs, preserves all seventeen original raw replay streams
+and retains historical refusals separately from the current admissions.
+Canonical source consumers pass through the recorded full runs and corrected
+executions; the six census-number collision subcases retain their explicit
+short-number skips. The corrections preserve earlier English admissions and
+source refusals rather than adding texts. The cohort is committed as
+`4403b11f98`; the separately reviewed removed-owner sanitizer correction is
+committed as `61a2b2ae6a`. Main `2827cb6b55` is reconciled in the working tree.
+All five final source/public/preview gates pass. The merged source-consumer run
+found one stale current-code checksum assertion; its reviewed test and source
+epoch successor preserve all seventeen raw replay streams, and all 24 source
+guard and affected phase5 tests pass. The 171 publication and encyclical tests
+also pass. These are composed executions, not a claim that the initial
+292-test run passed. Exact merged evidence is retained under
+`next-english-2026-10-30/main-reconciliation-v2/` in the same review namespace.
+The older Common remains blocked by its existing source-applicability condition;
+generated English availability does not override that reader restriction.
+Fresh browser validation passes 136 native assertions, 68 materialization cases
+(62 visible English bodies and six expected older applicability refusals),
+14 affected Day cases, eight Nativity regressions and 24 exact Sources English
+selections across the public and preview artifacts. Complete Improperia,
+print and actual clipboard checks also pass, with clean final diagnostics.
+The ordinary merge is committed as `b658058df2`; its exact outgoing-object
+audit passes, excluding the obsolete feature history and both rejected blobs.
+The maintainer requested a coherent stop, a persisted handoff, and publication
+of this checkpoint. The handoff and unapplied candidate evidence are retained
+in [the stop handoff](workflows/reviews/missal-english-completion-2026-10-29/stop-handoff-2026-10-30.json).
+Final handoff-commit audit, push and exact deployment verification remain the
+publication steps; this record does not predict their outcome. No additional
+translation, naming or rite integration is authorized during the stop.
+Exact local evidence
+is retained in `next-english-2026-10-30/local-source-validation.json` under the
+same review namespace.
+The actual seven-case decision and its source bindings are retained under
+`workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/`.
+The existing real-terminal maintainer acceptance and broader product promises
+retain their own requirements.
+
+## Missal version names and reader inclusion, 2026-10-30
+
+<!-- promised-deliverable: missal-version-nomenclature-2026-10-30 -->
+
+**In progress.** The maintainer requests source-supported names for every
+historical point represented by a missal, a firm versioning nomenclature across
+the project, retirement of the vague current label “Pre-1955,” and reader
+options only for missals with actual contributed content. A dedicated source
+and implementation lane is establishing edition, reform horizon, language and
+witness distinctions before applying the names consistently. A structural
+placeholder alone does not establish contributed text; actual Latin or English
+content does. Existing source and completeness qualifications remain binding.
+
+The sourced matrix and implementation have independent bounded review. The
+proposed current reader names are “Roman Missal — Bonn 2004 witness study,”
+“Roman Missal — 1962 typical edition,” and “Roman Missal — 2008 base with
+recorded additions.” The first identifies the actual reprint witness rather
+than treating an inferred calendar horizon as an edition; the last distinguishes
+the 2008 emended reprint of the third typical edition from its recorded later
+additions. The 1962 reader qualification must distinguish the June edition from
+the separately decreed December insertion of Saint Joseph in the Canon.
+Application and final consumer validation remain pending after the current
+English checkpoint. Historical audit bytes and quoted historical labels remain
+evidence of their original state; compatibility preserves opaque existing IDs
+while current public labels and new reader keys use the sourced nomenclature.
+
+## Encyclical completion and English coverage, 2026-10-29
+
+<!-- promised-deliverable: encyclicals-completion-2026-10-29 -->
+
+**In progress.** The maintainer requested English translations of all catalogued
+acts, a classic TeX appearance for the two-column PDFs, maximum useful parallel
+work and independent cold review. Existing human English sources take priority.
+This pass has introduced no AI-translated encyclical bodies; catalogue
+descriptions remain separately identified AI work.
+
+The catalogue contains 322 distinct Vatican-indexed acts and 305 external
+English links. Complete English is available for 284 acts; 14 have only partial
+or damaged English and 24 have no located English route. All 91 acts after
+1930 have complete external English routes. These are bounded identity and
+extent findings, not translation-accuracy or local-republication permissions.
+Thirty-eight complete-English gaps remain open.
+
+The accepted release contains 4,831 PDFs and 9,218 pages. Seventeen more
+historical human English witnesses raise complete local English coverage from
+47 to 64 acts, with 68 local English readers in total. Source intake separately
+checks their editions, rights basis, extent and source boundaries; every
+installed PDF also has exact, independent every-page acceptance. Qualified
+imprints and the corrected Editae source order remain explicit. Damaged Coyne
+Ubi is excluded; Studiorum remains a fragment. No new English act wording was
+authored for these additions.
+
+Five classic-reader checkpoints replace 277 of the original 327 encyclical
+source versions: nine source repairs and 268 further accepted readers. The
+23 new English additions also use the classic design, for 300 classic versions
+among 350 linked readers. The remaining 50 original versions still need final
+acceptance or source repairs. Latin Modern Roman, language-specific hyphenation,
+indented paragraphs and restrained terminal apparatus implement the requested
+appearance. Note and native-spacing repairs preserve their declared source
+bytes and identify any explicit reordering.
+
+The latest checkpoint replaces 47 readers (236 prior pages with 248 reviewed
+pages), with no additions. All 4,784 other complete release rows and PDF bytes
+are unchanged. There are no withdrawals or filename retirements. All 6,832 current source selections are accounted for. Historical
+receipts and audits admit only their exact selected readers; unrelated
+historical reviews grant no additional admissions.
+
+All 322 descriptions remain present, with Claude's 255 and Codex's 67
+contributions explicitly credited. The new complete external Levate route
+preserves the prior fragment link and explicitly records the host's 27 October,
+closing's 21 October and official 17 October 1867 dates. No external English
+body is retained. All prior routes, summaries and other index facts are
+unchanged. The browser distinguishes complete English, local PDFs, external
+links and remaining gaps. Thirty-one comparison projections change only the
+source-library tool hash and size. All 164 source family owner review units
+remain pending; no completed family screening is claimed.
+
+Validation passes the complete source and install/fidelity gates, 67
+source-library tests, 243 papal tests, 20 catalogue tests, 151 public-alpha
+tests, exact scoped release bindings, site build and independent deployment
+artifact verification. Built routes pass six viewport and text-size states,
+keyboard and no-JavaScript checks; all 47 changed reader aliases resolve to the
+reviewed PDF bytes. Direct source and full-install checks ran uncached; the
+aggregate source/deployment check uses an isolated, fingerprinted supported
+cache. Its earlier interrupted run remains distinct from the passing retry. Thirteen additional exact source-admission metadata
+envelopes create no verified passages or PDF-layout approvals. The validator
+cache namespace changes to prevent stale prior ownership rejections.
+
+The historical native-spacing helper with hash prefix 8163 is retained as an
+exact hash-constrained recovery from the archived b67 implementation; no
+original file copy was located. Its MIT license and recovery provenance remain
+explicit. Three existing recipes replay exactly, without repinning historical
+evidence or granting another reader admission. Two intake reports have
+publication derivatives that change only 17 private diagnostic path values;
+current consumers pin those derivatives and distinguish the raw historical
+hashes. Source wording, source judgments and PDF bytes are unchanged.
+
+The English Etsi multa publication hold is closed for source
+0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693
+and seven-page reader 66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9.
+The protocol and initial capital were recovered mechanically from the original
+1874 printing. Nine independently source-identified exclusions remove 101
+bytes of clipped facing-page text, spurious recognition and printed folios;
+all other parent bytes, own notes and closing remain exact. Fresh independent
+source acceptance and disjoint five-plus-two page review cover the complete
+current PDF. Old 949/25df and afe/77c failures and their evidence remain
+historical; no earlier positive report is relabelled. The one-row replacement
+preserves all 4,830 other complete release rows and every installed PDF hash.
+Isolated OCR and citation defects remain qualified; no whole-word or
+translation-accuracy certification is claimed.
+
+The maintainer requested a coherent stop, committed checkpoint, persisted
+handoff and push on 2026-10-30. New source/review work is frozen. Fifty original
+classic versions and thirty-eight complete-English gaps remain; completed but
+unadmitted candidates, partial work and source holds are retained separately
+for a later resume. No AI-translated act body was introduced. A successful
+render or producer review does not establish independent acceptance, and no
+unfinished requirement is waived. The workspace retains feature/encyclicals;
+validated checkpoints publish to origin/main without rewriting history.
+
+The stopped work and exact restoration instructions are retained in the
+[durable handoff](workflows/handoffs/encyclicals-2026-10-30/HANDOFF.md).
+The inactive archive grants no source or reader admission.
+
+## Claude Four Last Things correction, 2026-10-27
+
+<!-- promised-deliverable: claude-flt-correction-2026-10-27 -->
+
+**Complete: corrected, pushed to `main` and verified live.** On 2026-10-27 the maintainer asked
+that the Claude work of 26 October be checked for damage from a model
+substitution: partway through that work the host switched the coordinating
+session and some of its workers from the Claude model to kimi-k3. The switch
+was announced inside those sessions but was not acted on, and the records
+credited that work to the Claude model. The maintainer declined to add the
+substituted model to the contribution records. The correction therefore had
+every review that model performed done again by fresh Claude workers, had its
+one print-only adjustment re-derived independently, rewrote the records it had
+written, and superseded its mechanical steps with Claude rebuilds and
+refreshes. The contribution metadata lists only Claude work by exact model
+identifier, and kimi-k3 is named only in the correction notes.
+
+The audit found the essay texts sound and the records wrong. In Judgment the
+substituted model had given the round-1 verdict on the cold-review repairs,
+made both visual reviews and the print-only space reservation, and drafted the
+series record and the contribution line. In Death it had written the round-1
+visual verdict after the Claude model inspected the pages. Done again by
+Claude: the Judgment round-1 recheck, against the sources, found one blocking
+defect the earlier verdict had passed (a repair sentence calling the Lyons
+profession of 1274 a definition); a two-phrase repair passed at round 2; a
+fresh every-page visual review restored the same space reservation, and a
+further every-page review passed the repaired build; and every page of the
+published Death PDF was reviewed again and found clean. The series record was
+rewritten, the Judgment and Death records were corrected, and all four
+`generation-metadata.tex` files now list only Claude contributions. The
+accounts are the series record's "Correction of 27 October 2026" and the
+Judgment record's "Correction, recheck and repair, 27 October 2026".
+
+On 2026-10-28 a further independent Claude audit of the correction commit
+`b1dd8c785` rebuilt the four PDFs and converted the four web editions again,
+byte for byte identical to the installed files and their recorded hashes, and
+confirmed from the session logs that every review the substituted model made
+had been done again by Claude. It found record statements that overstated or
+misdated the correction: this entry and the series record had called the
+switch unannounced and had credited the redo plan to the maintainer; the
+series record's list of the substituted model's steps was incomplete; and
+smaller figures and section numbers in the Judgment and Death records were
+wrong. Those records were corrected on 2026-10-28 with no change to any render
+source, PDF or web edition.
+
+The review of the regenerated Judgment web edition also found that it had no
+title-page epigraph. No web edition in the series had carried one since
+16 October, because the shared title-page macro was set only in print. The
+macro now sets the epigraph in the web edition too. A review of all four web
+editions then found that four Latin lemmas in Heaven had also been set
+without italics on the web since 16 October, because the source nested
+`\latin` inside `\emph`; they now use `\latin` alone. The print pages are
+unchanged: apart from the revision line, every page of each rebuilt PDF
+matches its predecessor. All four essays carry the revision timestamp
+2026-10-27T16:55:31Z, and all four web editions were converted again,
+reviewed against their PDFs and installed. The account is the series
+record's "Web edition repairs, 27 October 2026".
+
+| Essay | Pages | PDF SHA-256 | Web edition SHA-256 |
+| --- | ---: | --- | --- |
+| I Death | 23 | `321c4346c435299ab6376ce68c1a91fa34face004d903fdcc485c2b6c00d3b3c` | `4a3e7cd75a9c61081a15eb3505f268d2a655b4bf56879a98aa9cef107496a617` |
+| II Judgment | 25 | `6ec2bf6a465cecec3800baa2ac2ef59d6b616383d94952e551b875cae4f36555` | `fedbaef01297c60c2cab44d57037476ab1c0904221e31ee4cf2b4dec6865d04a` |
+| III Hell | 30 | `3bcfa196950617c075073adc31e904c9298047ca48b1979eed34d3cccd9960f5` | `53596d14d153c2bf0043758e19f1fe45ce4c1b5abe2fb0a5e26dc94dbe9dc38b` |
+| IV Heaven | 22 | `53f57926044cfefef5f41dc0de2f1e858d28ae14545f9070c65a2a2e25f6f252` | `185560890437b62851f7aef26bcb39dd594370f936e9c4d5001de398c40632f0` |
+
+The Claude publication inventory, document catalogue and scoped release
+bindings are refreshed. The correction published with the All Saints revision:
+`origin/main` fast-forwarded to `ffadf81e4e` on 2026-10-28 after the three
+deploy gates passed locally, Pages run 40753942788 and repository hygiene run
+40753942791 succeeded, and the four live PDFs and web editions matched the
+local site build byte for byte, the PDFs also matching the table above, as the
+revision's [deployment
+evidence](workflows/reviews/claude-1962-f02-revision-2026-10-27/deployment-evidence.json)
+records.
+
+## Claude 1962 All Saints revision, 2026-10-27
+
+<!-- promised-deliverable: claude-1962-f02-revision-2026-10-27 -->
+
+**Complete: accepted, pushed to `main` and verified live.** On 2026-10-27 the maintainer
+asked that the Claude work of 26–27 October be checked, because partway
+through it the host had switched some stages from the Claude model to kimi-k3;
+the switch was announced inside those sessions but was not acted on. For All Saints the audit found that the
+substituted model had made the study's last two revisions and their
+reviews, the concise study, the homily and every stage after them, and part
+of the research. The maintainer decided to repair the publication on the
+Claude model before Sunday 1 November 2026, without adding that model as a
+provider anywhere:
+
+- the expansive study goes back to its text after author-study iteration 1
+  of run `427e2f58bb897a16`, the last text the Claude model wrote, and every
+  later revision is made again;
+- the research is rebuilt from the sources, with nothing taken over;
+- the concise study and the homily are derived again from the revised
+  study, and every review is fresh;
+- the first run's cycles record gets a short correction, and the leaf's
+  contribution metadata lists only Claude work by exact model identifier.
+
+The opening commit restores the study. Its section files match byte for
+byte what study-review iteration 0 read, and `generation-metadata.tex` lists
+the two author-study contributions as `claude-opus-5-5`. It removes the
+earlier research and `propers/` records, the concise study, the homily, the
+standing-findings record and the two Patrologia Latina volume 35 artifacts
+registered for this production. The first run's archive stays in the leaf
+as the record of that run and is not evidence. A new `proper-study` v15 run
+revises the leaf in place. It is seeded with the
+[research handoff](workflows/reviews/claude-1962-f02-revision-2026-10-27/HANDOFF.md),
+which lists the twelve findings of study-review iteration 0, the points
+where the later revisions went wrong and the research leads, and keeps the
+GPT leaf closed.  Run `450355254538c1ba` reached ACCEPTED on 2026-10-28 with
+no escalation: 52 packets, 52 accepted results, one intervention, seven repair
+cycles (three in research, one each in the study, the concise study, the
+homily and the concise study's layout). Every accepted agent stage ran on
+`claude-opus-5-5` at its packet's effort. Through author-study 0 the workers
+were Factory Droid sessions with the model pinned, each accepted only after
+its session log showed the Claude model alone; one research attempt the host
+switched to kimi-k3 was rejected and its files removed, and one study-review
+result whose session closed on kimi-k3 was set aside and the review done
+again. From study-review 0 the workers were fresh Claude Code harness
+subagents. The installed PDFs are the expansive study (31 pages,
+`08f8c5e99572d5f8a9584555c47b901bc32abd09fdf74dd5d7094f387143c3bc`), the
+concise study (11 pages,
+`fb899d0258fe16641fb2be454eb088f37fd41011012fe599b5fb2d5ac397c881`) and the
+homily (4 pages,
+`a6630b389583e729bbaa18103fb48364e2767d47485ecbddeb4ddbef4d3bc2ac`); the web
+edition is `cbe405ad17c9ba6be5d64d37891a282e99700df9a1ded3528ab595931cf0438c`.
+The run is archived in the leaf; its [cycles
+record](workflows/reviews/claude-1962-f02-revision-2026-10-27/CYCLES.md) says
+what became of every handoff finding and lead and lists the advisories that
+stand, among them the physician answer at Aquinas, *In Ps.* 33 n. 10, which
+the research and both studies credit to Aquinas though he reports it as
+Augustine's (the homily is right). The archive tool's privacy audit was fixed
+after acceptance (`b38044fe8`) so that the run could be archived. The Claude
+publication inventory and the source-family ledger are refreshed. branch twice
+(`2d87e1cad8`, `ffadf81e4e`), each time re-recording only this branch's
+site-source bindings; after the three deploy gates passed locally,
+`origin/main` fast-forwarded to `ffadf81e4e` on 2026-10-28. Pages run
+40753942788 and repository hygiene run 40753942791 succeeded, and the three
+live PDFs and the web edition matched the local site build and the reviewed
+bytes, as the [deployment
+evidence](workflows/reviews/claude-1962-f02-revision-2026-10-27/deployment-evidence.json)
+records.
+
+## Claude 1962 All Saints, 2026-11-01
+
+<!-- promised-deliverable: claude-1962-f02-all-saints-three-documents-2026-11-01 -->
+
+**Complete: accepted, pushed to `main` and verified live.** On
+2026-10-26 the maintainer asked for the Claude 1962 proper-study documents
+for the upcoming Sunday and authorized publication to `main`. Sunday,
+1 November 2026 is All Saints (I class), permanent identity `F02`,
+`liturgy/roman-rite/1962/propers/temporal/f02-all-saints`; the Twenty-third
+Sunday after Pentecost is commemorated. The production plan records the
+one-provider authorization. This is an independent Claude production: the
+published GPT leaf for the same identity is not an input, and no stage
+opened any GPT-provider file or record for the identity.
+
+Work began at the authorization commit `c7dfb84c7` on
+`feature/propers/claude`; publication is an ordinary fast-forward of
+`origin/main` after the three deploy gates pass locally. Run
+`427e2f58bb897a16` (`proper-study` v15) reached ACCEPTED at its
+publication gates with no escalation: 45 packets, 45 accepted results, one
+recorded intervention. Every agent stage ran as a fresh Factory Droid
+worker subagent with no inherited conversation, and every review was a
+fresh worker. Six cycles were real defects
+that program gates or cold reviews found and repaired: two in research (a
+misreported 1570 Offertory, a wrong Offertory collation and psalm
+numbering, a Missal reported read but unread; then unsealed Lasance English
+and unregistered dated web witnesses), one house-voice preflight failure,
+one round where a research false negative hid Victorinus of Pettau on
+Apoc 7 and the study carried six defects of its own, one carry-through gap
+where that research repair never reached the study prose, and one homily
+note that misrouted a Gal 3:29 quotation. The Latin rests on the 1962
+Missal read on the RGMR facsimile page images, with the 1570, 1604, 1862
+and 1889 layers collated; the Preface is deliberately left unsettled, both
+candidates named and neither asserted. The installed family is a 32-page
+expansive study, a 12-page concise study, a four-page homily (about 1,445
+spoken words) and the canonical web edition. The run is archived in the
+leaf under `evaluations/proper-study-results/427e2f58bb897a16/`. The
+driver's account covers every cycle, the five standing advisories and what
+is left for other owners:
+[CYCLES.md](workflows/reviews/claude-1962-f02-production-2026-10-27/CYCLES.md).
+The three local deploy gates passed, and `origin/main` was fast-forwarded
+from `59a9862cc` to `6f93e73e9`. Pages run 40501677604 succeeded. The
+three PDFs, the web edition, the Traditional Latin Mass catalog page, the
+browser's corpus data and the publication manifest are each byte-identical
+live to the verified local site, as
+[deployment-evidence.json](workflows/reviews/claude-1962-f02-production-2026-10-27/deployment-evidence.json)
+records.
+
+Corrected 2026-10-27 (see "Claude 1962 All Saints revision, 2026-10-27"
+above): this entry first said that every stage ran at its packet's declared
+effort. The Claude workers ran at `high`, the reviews included, and part of
+the production ran on a substituted model, kimi-k3; the cycles record's
+correction says which stages. The revision supersedes this production.
+
+## Claude Four Last Things register revision, 2026-10-26
+
+<!-- promised-deliverable: claude-flt-register-2026-10-26 -->
+
+**Complete: pushed to main and verified live.** On 2026-10-26
+the maintainer asked that the new voice and drafting guidance be applied to
+the four Claude Four Last Things essays and published to `main`. The
+governing rules are the Catholic voice rule and "Say what the texts say,
+plainly" in `guidance/editorial.md`. The revision changes prose only:
+quotations, references, bindings, heading order and the two-column layout
+stay as accepted on 2026-10-26, and each essay keeps approximately its
+present extent.
+
+All four essays are revised. A mechanical conservation check against
+`c7dfb84c7` passes for each: quotations, `\latin` spans, endnotes,
+headings, appendices and `main.tex` are unchanged, and body prose is
+90-93% of its starting length. Each essay passed an independent cold
+register and fidelity review (Death and Heaven at round 2, Judgment and Hell
+at round 1) and an independent every-page visual review; three print-only
+space and column adjustments changed no word. The series record is
+`src/claude/articles/faith/four-last-things-shared/register-revision-2026-10-26.md`,
+with each leaf's `research/revision-2026-10-26.md` and `research/scope.md`.
+
+| Essay | Pages | PDF SHA-256 |
+| --- | ---: | --- |
+| I Death | 23 | `c0ce7de359ea8da84599bd1dcdbf883457ad3d99a9acb89c720313eb7bd196e6` |
+| II Judgment | 25 | `07227cae27258bcaf5af90fe188a93d373ed32e03a35026040a467dcf52f7731` |
+| III Hell | 30 | `e4f164a8b5122cfad75bb2efce11b8263efa3148c6065ab12f04372b7794507d` |
+| IV Heaven | 22 | `1c2fb4e8e6a664609b3b31afb61e239d2c3d2edd6a54384a6614d8913714effa` |
+
+The reviewed PDFs and regenerated web editions are installed. The Claude
+publication inventory, document catalogue and scoped release bindings are
+refreshed; source classifications and the family ledger are unchanged.
+`make check-sources`, `check-web-editions-current`,
+`check-release-bindings` and the promise ledger pass.
+
+Corrected 2026-10-27 (see "Claude Four Last Things correction, 2026-10-27"
+above): the Judgment round-1 pass and both Judgment visual reviews summarized
+here, and the Death round-1 visual verdict, were the work of a substituted
+model and have been done again. Judgment now passes at round 2 after one
+further repair, and the print-only adjustments numbered four, not three. The
+table gives the hashes published on 2026-10-26.
+
+### Verified register publication, 2026-10-27
+
+`origin/main` had advanced to `da270a039` during the work, so it was
+merged without rewriting either parent; the only conflict,
+`release/public-alpha.json`, took the upstream manifest and re-recorded only
+the catalogue and the four Claude web editions. The deploy gates
+(`make check-deployment-sources`, `make public-site`,
+`public-alpha verify --deployment-target github-pages`) and
+`make check-sources` passed on the merged tree. Commit
+`ff484b0e3163f4e64c4a48aa14628d0e3ef20f8d` reached `origin/main` by
+ordinary fast-forward. [Pages run 40422812019](https://github.com/spincyc/triptych/actions/runs/40422812019)
+and [repository hygiene run 40422812013](https://github.com/spincyc/triptych/actions/runs/40422812013)
+both succeeded for that exact commit.
+
+At `2026-10-27T00:18:13Z`, all 15 checked routes on `https://mystago.gy/`
+returned HTTP 200 and matched the verified local site byte for byte: the
+four canonical Claude PDFs, their four provider-qualified aliases, the four
+web editions, the Faith catalogue, the document-catalogue data and the
+publication manifest. All live PDF hashes equal the accepted hashes above.
+The live publication-manifest SHA-256 is
+`cf6109a58e45b30987d955569cc93fef9db8a5b9e3c4e04bdea2376b3f165a4f`.
+This closure receipt changes no reader-facing artifact and does not claim
+its own subsequent deployment.
+
 ## Four Last Things PDF layout, 2026-10-26
 
 <!-- promised-deliverable: four-last-things-pdf-layout-2026-10-26 -->
@@ -352,6 +935,266 @@ routes on `mystago.gy`, including the new three PDF/canonical-alias pairs,
 canonical web, catalog/corpus/manifest and preserved incoming articles, return
 HTTP 200 with exact reviewed bytes. The owning published-runs and live receipts
 record the evidence. This completion receipt changes operator records only.
+
+## Papal document source corpus, 2026-10-25
+
+<!-- promised-deliverable: papal-documents-2026-10-25 -->
+
+**In progress.** Source and organize papal encyclicals, bulls, and related
+formal documents; catalogue their editions; produce two-column TeX/PDF source
+editions; and make the sources reusable by larger presentation projects.
+On 2026-10-28 the maintainer authorized integrating this work into `main`
+and completing every queued lane. The installed readers under
+`pdf/papal-documents/` are repository release files; they are not part of
+the deployed Pages site, whose Sources projection lists their source records.
+
+The first acquisition boundary is the Vatican's mixed historical collections
+and modern document-category indexes, supplemented by the printed Bullarium,
+ASS/AAS volume inventories, and identified historical English editions.
+An index's coverage is recorded independently from the universe of historical
+papal acts. Historical volume acquisition does not count as individual-document
+segmentation. Modern translation rights, missing original-language witnesses,
+unresolved dates, index errors, and unsegmented volumes remain explicit gaps.
+
+The canonical ownership remains the provider-neutral source library. Exact
+source bytes, original works, translations, and generated source editions stay
+distinct. Publicly retained text needs its own affirmative rights basis;
+public accessibility and an act's date alone do not establish it. Full-text
+retrieval, normalized text, typesetting, visual review, installation, and public
+distribution are separately recorded states. The owning collection records are
+under `src/sources/papal-documents/`; the profile is
+`guidance/papal-documents.md`.
+
+On 2026-10-26 the maintainer confirmed both coverage layers: English and Latin
+where available, the linked Vatican formal-document collections, and
+reconstruction of individual acts from the historical volumes. Volume
+acquisition alone does not fulfill that expansion. The Bullarium and ASS/AAS
+programs therefore retain exact containers and independently reviewed act
+boundaries, with explicit holds for interleaved columns, displaced notes,
+uncertain issuers, duplicate scans and unavailable material. Later protected
+bodies remain metadata-only. Printed attribution does not authenticate an early
+or disputed act.
+
+The Vatican index snapshot contains 2,814 source-index records across 237
+pages, including six absent historical Latin interfaces, reviewed aliases,
+source-date conflicts and composite/constituent distinctions. The first source
+program retained historical Latin readings and 31 bounded English translation
+entries from the 1903 Benziger collection. The English transcriptions retain
+substantial source OCR errors; 205 separately audited character-encoding spans
+in 11 selections have been repaired without rewriting words. Successful layout
+review is not image collation. Quanta cura and the Syllabus have separate constituent identities
+within one controlling delivery.
+
+Publication-date review reopened Casti connubii: its nominal 31 December 1930
+date and AAS volume label do not establish publication before 1931. A
+contemporary report identifies 8 January 1931. Its full text and generated
+readers are withheld while its factual metadata and evidence remain. Earlier
+1930 fascicles are not blanket-dated by the annual 1931 colophon.
+
+Required aggregate validation, final source projections, complete PDF review,
+coherent commits and feature publication remain in progress. No main
+deployment or complete historical corpus is claimed.
+
+The presentation reuse requirement is met by executed tabular, bibliographic
+and Beamer exports, a four-page individually inspected role-aware source-card
+example, and documented source-fragment/PDF-appendix imports. The exact review
+copy is recorded in
+`src/sources/papal-documents/presentation-integration-review.md`.
+
+The historical coverage audit identified separate post-1740 continuations,
+Benedict XIV's Bullarium, and Gregory XVI/Pius IX Acta as additional source
+families. Their complete available input witnesses and printing identities are
+being established independently of the initial Turin and journal batches.
+Current visual findings also require explicit supersessions for missing source
+notes, mixed-language identification, stranded headings, erroneous index
+metadata and retained modern portal apparatus. A compiled batch is not a final
+reviewed selection; the combined reader index must apply exact exclusions.
+
+The recovered initial corpus and Acta source checkpoint passes source-library,
+containment, source-inventory, family-catalog and reader-projection checks.
+Its scope, initial compilation counts, baseline comparison and open corrections
+are recorded in `src/sources/papal-documents/validation-checkpoint.md`.
+Source reconstruction, all-page review, final selection and feature publication
+remain open.
+
+Recovery checkpoint, 2026-10-26: commits `ed833ea0a` and `6cbe1bd3f` are
+published on `origin/feature/encyclicals`. The later source plan selects 5,827
+readers after 710 exclusions, including 507 confirmed source-order withdrawals.
+Exact frozen receipts account for 5,826 successful PDFs and 11,697 pages, plus
+one failed long-token layout whose source-preserving repair passes independent
+PDF fidelity checks and awaits its canonical render selection. These build
+counts do not establish page-review acceptance or complete historical coverage.
+
+Current tooling records per-reader revisions, explicit corrections and
+withdrawals, and complete hash-bound page-review evidence. Independent review
+closed staged page-witness tampering, lost reviewed series discoveries,
+collection input overwrites and installer rollback failures. The installer
+retains exact release inputs and copies only current PASS bytes to the
+provider-neutral destination defined in `guidance/papal-documents.md`.
+Its first installation was pending evidence reconciliation at that checkpoint.
+Additional sealed source admissions and the remaining PDF reviews remain
+active work; source-family review states are not promoted by these operations.
+
+The follow-up current plan has 5,825 successful PDFs and 11,696 pages, with no
+missing or failed builds and 509 source-order withdrawals excluded. The new
+long-token reader preserves all source characters. Containment passes with
+6,348 constituents after adding the newly registered historical English
+Divini witness and qualifying two further source-order holds. The source
+aggregate passes with act-history freshness established separately. Complete
+page review, source-wrapper corrections, further sealed admissions and broader
+installation remain open.
+
+The current scoped installation contains 851 exact reviewed PDFs and 2,170
+pages: 392 Vatican Latin readers, 60 historical English witnesses, the two
+Quanta/Syllabus constituents and 397 historical continuation readers. Their
+[release record](release/papal-documents.json) retains exact frozen inputs,
+receipts and review reports. All 454 previously installed PDFs remain
+byte-identical; the 397 continuation additions contribute 601 pages.
+Installed hashes, owned paths, source fidelity and durable evidence pass the
+owning checker. English fragments retain their explicit extent qualifications.
+The 472 rejected continuation readers and the remaining historical families
+stay outside this scoped installation while their source-boundary and
+page-review work continues.
+
+Recovery and main integration, 2026-10-28: the interrupted session's
+in-flight admissions and review evidence were committed, the 332 newly
+admitted continuation witnesses received their containment entries, and the
+release grew to 3,540 reviewed PDFs and 6,684 pages by adding 2,619 ASS/AAS
+Acta witnesses and 70 Gregory XVI Acta witnesses. Their review evidence is
+the completed Acta audit (2,619 PASS, nine follow-up corrections pending) and
+the Gregory lanes merged into the series audit.
+
+Page review of the 332 continuation admissions, the nine Acta follow-up
+corrections and the 59 provider-mark corrections is complete but not yet
+installed. It found that continuation volumes XIV, XV, XVIII and XIX print
+marginal summaries that their OCR fuses inline into body lines, often too
+garbled for first-pass review to recognize.
+Fresh full-size re-verification turned all 28 of one corrected lane to
+changes-required. Every installed continuation reader (397, mostly volumes
+XIII and XIV) therefore stays under a source-order re-audit, and a reader
+that fails it is withdrawn from the next release. The Bullarium (Turin)
+readers remain uninstalled for the same defect class: about 600 of 630
+independently screened units show confirmed fusion. Both families need
+coordinate-based reconstruction from the native OCR geometry before further
+admission. Codex's prepared correction plan for 412 remaining continuation
+readers (provider marks and the `Rome: None` placeholder) is still to be
+applied.
+
+Gregory XVI and Bullarium repair, 2026-10-28: every one of the 1,473 Gregory
+XVI Acta candidates now carries a reviewed disposition (0 unreviewed). 826
+complete printed witnesses and one historical fragment were admitted in 22
+boundary packets. 113 holds remain for displaced or missing OCR words and
+compound printings, and the civil volume's curial instruments are recorded
+with their actual issuers. Page review passed 823 of the 827 new readers, and
+all 823 are installed.
+
+A whole-volume coordinate reading-order derivative now repairs Bullarium
+margin fusion (`tools/bullarium geometry`; rules in
+`guidance/papal-documents.md`). Volume IV is registered with 70 repaired
+readings. Page review found no fused marginal summary among 464 blocks, and
+45 readers are installed. The other 25 wait for the tool to set printed
+footnotes as their own blocks instead of joining them to body paragraphs.
+The release holds 4,417 PDFs and 8,013 pages.
+
+Open:
+- footnote separation and the volume IV replacements;
+- the Bullarium roll-out by withdrawn-fusion count (VII, IX, XI, III, VIII,
+  X, II, then the rest), each behind a twelve-page native-image evidence gate;
+- a coordinate audit of the 397 installed continuation readers (the detector
+  flags real marginal text on body lines in 168 of the 208 volume-XIII
+  readers) and withdrawal of any confirmed defects;
+- the four rejected Gregory readers;
+- boundary review of the Benedict XIV Bullarium (207 candidates, including
+  *Ubi primum*), whose printing shows the same margin fusion and so waits for
+  the geometry roll-out.
+
+Continuation audit, 2026-10-28: the coordinate detector was checked against
+native page images (176 of 177 strong leads true). It confirmed marginal
+summaries or dates fused into body or heading lines in 212 of the 397
+installed continuation readers. Those readers are withdrawn with explicit
+prior-to-null supersessions and their PDFs removed from the release. The 199
+held readers were audited before installation: 21 were withdrawn, the 27
+confirmed provider-mark corrections stay uninstalled, 8 unauditable readers
+stay held for manual review, and 143 lead-free readers were installed. The 14
+unauditable installed readers stay pending manual review. See
+`src/sources/papal-documents/continuation-source-order-audit.md`.
+
+Pius IX Acta, 2026-10-28: all 113 held candidates across Pars I volumes
+I–III and Pars II volume I are dispositioned. 174 complete printed witnesses
+are admitted, and 8 are held (missing scan pages, an Arabic facing-page
+interleave, displaced list numerals, and the *Syllabus*, whose issuer is
+unresolved). Their readers are rendered and in page review. The release holds
+4,348 PDFs.
+
+Second repair pass, 2026-10-28:
+- **Pius IX and Gregory XVI trims:** 18 readers that failed page review only
+  because a folio, signature, page-foot speck, stamp or duplicated scan sat
+  inside their selection now have narrowed selection variants that exclude
+  exactly those raw lines, with no word changed. All 18 passed fresh page
+  review and are installed. Four failed readers stay held: their furniture
+  shares a line with apparatus, or they have a misread issuer or a collapsed
+  table.
+- **Continuation manual review:** the 22 readers the coordinate audit could
+  not check were reviewed by hand against every native leaf. One installed
+  reader (XIII, line 51765 part 2) is withdrawn for fused marginal-note OCR,
+  six held readers are installed, and two stay held for missing body lines or
+  a neighbouring act's note.
+- **Bullarium VII/IX footnotes and volumes XI, III, VIII:** the geometry tool
+  now recognizes footnotes whose OCR garbled the reference mark. The 17
+  VII/IX readings with a fused note are superseded by replacements. Volumes
+  XI, III and VIII are registered with 65, 54 and 38 clean units. Page review
+  of these 174 readers passed 165 and installed 146. Nine failed: four XI
+  footnotes continued across a page break, one VIII footnote with no
+  surviving mark, and four readers where a single OCR word spans the margin
+  and the body, so a body word prints inside the marginal block.
+- **Straddling words:** a scan of all 400 registered geometry readings found
+  that same word-level mixture in 43 live readings. A native-image check
+  confirmed 26 of the 43 flagged words. Of the 19 held readers that passed
+  page review, 9 are clean and installed; 10 stay held. The 14 confirmed
+  installed readers (IV 8, VII 2, IX 4) are withdrawn with explicit
+  prior-to-null supersessions in a new reading-order withdrawals manifest.
+  The geometry tool now holds such units as inseparable.
+- **Lost printed lines:** the tool now also holds a page whose OCR skipped a
+  whole printed body line. Of the 8 installed readers touching such a page,
+  native images confirmed a missing line inside 4 (IV 0128, IX 0069, IX 0075,
+  XI 0179), which are withdrawn the same way. The other 4 are clean.
+- A sample of 30 lower-confidence word crossings showed no displaced text.
+
+The release holds 4,808 PDFs and 9,039 pages.
+
+Encyclicals landing page, 2026-10-28 (user priority): the public
+`/encyclicals/` page lists all 322 encyclicals in the Vatican indexes, from
+*Ubi primum* (1740) to the present, one sortable and filterable row each with
+date, pope, title, an AI-written (Claude) description grounded in the act's
+text, and links to the installed two-column readers. 166 rows link readers
+(160 Latin, 44 English, plus other languages); the site now serves exactly
+those linked papal PDFs, hash-checked against the release record. The index
+source is `src/sources/papal-documents/encyclicals-index.json`
+(`make encyclicals-catalogue`).
+
+Paused at the user's request to save effort:
+- English: 195 encyclicals up to 1930 still lack a complete English reader.
+  Two translations are confirmed in Vaughan (1869), already acquired, and
+  about 35 journal candidates are unchecked (Catholic Mind, ACQR, Homiletic
+  Monthly, American Ecclesiastical Review).
+- Latin before 1846: Gasparri's *Codicis Iuris Canonici Fontes* (1926–28)
+  covers 25 of Benedict XIV's 30 uninstalled encyclicals in clean OCR
+  (bodies without salutation or dating), and *Acta Pii VI* (1871) covers
+  Pius VI. Both need new series plumbing.
+- 67 post-1947 rows have no description yet.
+- Bullarium batch 2 and the continuation geometry are paused with handoffs
+  in `.scratch/claude-r3/HANDOFF.md` and `.scratch/claude-cont-geom/pilot.md`.
+
+Open:
+- a sampled image audit of the lower-confidence word crossings;
+- the geometry classifier fix and supersede package for the nine failed
+  readers;
+- the next Bullarium batch: X, II, the remaining Turin volumes and the
+  appendix;
+- 1,844 unreviewed continuation candidates and a geometry derivative for the
+  withdrawn continuation readers;
+- the Gregory (113) and Pius IX holds;
+- the Benedict XIV Bullarium (207 candidates, including *Ubi primum*).
 
 ## GPT Last Things and next Sunday propers, 2026-10-25
 

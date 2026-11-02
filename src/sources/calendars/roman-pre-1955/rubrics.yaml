@@ -88,6 +88,13 @@ derived_from:
       the promulgated text of the precedence rule, at AAS 3 (1911) 641-642,
       sha256 590a78b670da67f013ea6fc0b62bb7ed347dc89a9267fbb7ddc0380f1e872f7c,
       fetched from vatican.va 2026-08-01
+  - id: artifact.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.ia-reimpressio-pdf-b676ce5c
+    role: bounded-older-prayer-count-witness
+    what: >-
+      Bonn 2004 reimpression of the conformed 28th edition, about 1954, artifact
+      pp. 39-42 and 54-58, especially General Rubrics VII.7 and IX.12 and
+      Additions V.1 and VI.6; page images inspected 2026-10-26. This is not an
+      authenticated 1920 typical impression or a generic legislation claim.
   - id: src/sources/inventories/pre-1955-rubrics-sources-v1.toml
     role: sourcing-record
     what: the sourcing record that located, read and graded every source this file rests on
@@ -842,7 +849,14 @@ commemoration:
     - {clause: d, what: of the privileged ferias of Advent, Lent and Passiontide}
     - {clause: e, what: of the greater Litanies, in the Mass}
   ceilings:
-    locus: DA, Titulus VI
+    locus: Legacy linearization's unverified count limits; not a transcription of Bonn Additions V
+    limitation: >-
+      These retained finding-aid limits do not implement the older Office-based
+      commemoration rules. The accepted Bonn witness's Additions V.1 admits the
+      Lauds commemorations with its own exceptions, requiring historical grade,
+      Office, octave and Mass-execution facts not supplied by inherited 1962
+      class labels. Removing the false absolute cap below does not establish
+      those missing facts or complete this admission approximation.
     rules:
     - {clause: a, when_class: I, max: 1, privileged_only: true, what: 'On a duplex I classis day, one commemoration only and it must be privileged.'}
     - {clause: b, when_class: II, when_nature: sunday, max: 1, privileged_only: false, second_class_feasts_only: true, displaced_by_privileged: true, what: 'On a duplex II classis Sunday, one commemoration only, of a duplex II classis feast; omitted if a privileged commemoration is due.'}
@@ -900,12 +914,30 @@ orations:
       prescribe; the prayer imposed by the local Ordinary; and the votive
       prayer.
   ceiling_covers_all:
-    locus: DA, Titulus VI
-    what: The ceiling counts all of them together, not only the commemorations.
-  absolute_cap:
-    locus: the pre-1955 Missal, Rubricae generales, De Orationibus
-    value: 3
-    gloss: Three orations at most, as in the 1960 code.
+    locus: Bonn conformed pre-1955 witness, Additions VI.6, artifact p. 58
+    what: >-
+      Only within the scoped optional-addition rule below, prescribed and
+      imposed prayers count with the optional additions toward the stated limit.
+  # No global three-prayer cap belongs to this older witness. In particular,
+  # do not truncate a series whose commemorations were already admitted.
+  additional_orations_limit:
+    applied: false
+    locus: Bonn conformed pre-1955 witness, General Rubrics IX.12 and Additions VI.6,
+      artifact pp. 41 and 58
+    maximum_with_optional_additions: 7
+    odd_total_required: true
+    scope: >-
+      The Additions permit optional additions in read Masses outside the
+      conventual Mass, of simple rite, outside greater privileged ferias,
+      whether of the occurring Office or a votive not for a grave public cause.
+      Prescribed and imposed prayers count toward that optional-addition limit.
+    why_not_applied: >-
+      The present finding aid does not carry the older rite, conventual status,
+      optional additions or imposed prayers needed to apply this scoped rule.
+      It neither asserts a global maximum of seven nor supplies missing seasonal
+      prayers. Additions V.1 requires the admitted Office commemoration series;
+      General Rubrics VII.7 governs its conclusions. The former 1960-style cap of three could
+      silently truncate that series.
   conclusions:
     locus: the pre-1955 Missal, Rubricae generales, De Orationibus
     what: >-
@@ -931,8 +963,9 @@ orations:
     locus: the pre-1955 Missal, Rubricae generales, De Orationibus
     applied: false
     what: >-
-      Any priest may add one at his discretion in read non-conventual Masses
-      on lower-grade days, placed last.
+      The scoped optional additions described in additional_orations_limit
+      are permitted by the older witness. Their number, eligibility and order
+      are not inferred from an inherited 1962 class or reduced to one addition.
 
 # ---------------------------------------------------------------------------
 # Decision four is not taken here at all.

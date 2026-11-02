@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--postcommunion--1"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "The independently identified complete historical prayer and standard conclusion sources remain public domain in the United States. Only the exact measured contribution for this tuple may be used under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. The canonical finite coordinator decision and the closed source guard alone authorize this exact tuple; no prior grant fanout or universal short-word exemption is asserted. Project editorial layout alone is offered under CC BY 4.0; underlying received Latin is excluded. No whole modern edition, scan, image or unrelated act is cleared."
+sha256 = "6c81c9d5ef0912c0e01fc911ab4dc9fe86648e27e49651092086e38d2ca17795"
+byte_size = 246
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--postcommunion--1/latin.txt"
+retrieved = "2026-10-29"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-historical-prayers", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-control-pages", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+provenance = "Exact target body received from paired historical and target page-image source checks and independent source/English review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Source/target/cue distinctions and the measured later contribution remain explicit."
+transformation = "Preserve the actual target body and conclusion extent; declared calendar consonantal-j orthography, stress/ligature/line-wrap normalization and pointing are recorded. Exact source/target contribution: Replace historical purissimi with immaculati; add functional parenthetical (memoriam). Historical cujus and target cuius are the declared calendar consonantal-j normalization; no other words or actual conclusion differ."
+notes = "This source record defines exact scope and source control; rights follow separately from the canonical finite authority. Source and translation review does not itself grant rights or liturgical approval."

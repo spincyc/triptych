@@ -1,5 +1,12 @@
 # Then Face to Face — scope record (rewrite of 16 October 2026)
 
+## Register revision — 2026-10-26
+
+The maintainer asked that the 21 October guidance ("Say what the texts say,
+plainly") and the Catholic voice rule be applied to this essay. Prose only;
+quotations, notes, headings, appendices, references and bindings are unchanged.
+The record is `research/revision-2026-10-26.md`.
+
 ## PDF layout revision — 2026-10-26
 
 The maintainer requested a standalone title page, following contents, and a

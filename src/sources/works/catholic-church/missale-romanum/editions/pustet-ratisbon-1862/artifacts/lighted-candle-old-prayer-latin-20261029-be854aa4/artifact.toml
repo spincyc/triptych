@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lighted-candle-old-prayer-latin-20261029-be854aa4"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "checked-normalized-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Complete underlying prayer from the Pustet Ratisbon1862 printing, public domain in the United States by publication date; these checked normalized source words do not include target1962 additions or substitutions."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ.pdf"
+provenance = "Entire prayer and ending independently read on the actual parent page images at200 and400dpi on2026-10-29, with surrounding rite retained in the linked facsimile excerpt."
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lighted-candle-old-prayer-page-20261029-0e5057cc"
+transformation = "Page-image transcription; join printed line wraps, undo line-end hyphens, remove stress accents, expand ae/oe ligatures. Preserve actual prayer words, word order, punctuation and conclusion. Omit the typographic blessing cross inside benedictionis as an action sign, not a spoken word; exclude the separately printed response R.Amen and surrounding rubrics."
+notes = "Actual old hoc incensum and regenerator accende remain unchanged. Target cereum, hunc and intende are not silently inserted. Existing source-owned j orthography hujus/majestatis is retained. Actual full ending is Per Christum Dominum nostrum."
+retrieved = "2026-10-29"
+sha256 = "be854aa4a99d23f87f6cac2fbd494aac99df3bdb74d1b4d97520080562f5165c"
+byte_size = 430
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-latin-20261029-be854aa4/latin.txt"

@@ -1,0 +1,18 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-kyrie-glosses"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The underlying 1861 Philadelphia printing is public domain in the United States. This is a word-preserving, source-fragment derivative of the exact tracked parent transcription, retaining its source words, printed letters, pointing and known misprints. The parent's United States public-domain basis applies; no modern protected text or apparatus is added."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20"
+transformation = "Select only exact English sourcefragment cells seq2604 and2704 from the registered complete turn-divided parent transcription, SHA256 c9d7cdfcbb57437a6896b64358749771a56db244d3a1781a241d773f4428db8f. Preserve each phrase byteforbyte, with its own printedpage and originalseq declared. Do not copy GreekP./R. cues into the sourcegloss or invent a repeated sourceMass body. Sourcepage images were inspected, but exact scanbytes remain untracked."
+retrieved = "2026-10-30"
+sha256 = "0d1c6bd82d333a5faab5d26c75454d24a0094598c8dc069511282570457f2af9"
+byte_size = 479
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-kyrie-glosses/text.tsv"
+indexable = true
+encoding = "utf-8"

@@ -1,0 +1,178 @@
+{
+  "accepted_by": "root coordinator",
+  "accepted_fixture_core_sha256": "be05e5928b8be8dd59c23dc8401c431e616ca605ea138dd0bf465d7a18330e3a",
+  "accepted_on": "2026-10-30",
+  "added_input_paths": 193,
+  "boundaries": [
+    "Root accepts only the exact V3 source-accounting core after the frozen V2 data, narrow V3 inverse and final physical-scope reviews. Publication and completion retain their separate requirements.",
+    "The receipt accounts for exact source inputs and fixture partitions; source/publication judgments remain with their existing exact source reviews and root decisions.",
+    "All7071 parent paths are retained,193 source/review paths added and eight kept inputs changed. The original12 historical fields,17 raw replay streams and25 direct-PD keys remain preserved by the immutable derivation.",
+    "No postconciliar modern Latin or2011-recension English permission is created. The finite helper classification correction does not admit a body or broaden calendar authority.",
+    "Post-install owning consumers and final publication gates remain required; this is not complete English, a deployment claim or an inherited test waiver.",
+    "V3 adds only the reviewed current test_proper_latin input pin/replay change to the V2 source batch. Original raw historical streams remain exact; other two current test successors are separately recorded and do not expand the adapter runtime chain."
+  ],
+  "changed_kept_inputs": 8,
+  "compiler_sha256": "29d0add9b330248b4047881310175614d91adc82688bfc695451318696c0865b",
+  "direct_pd_partition_unchanged_keys": 25,
+  "dropped_parent_paths": [],
+  "english_coverage": {
+    "postconciliar": {
+      "ledgered_untranslated": 401,
+      "slots": 574,
+      "with_english": 173
+    },
+    "roman-1962": {
+      "ledgered_untranslated": 34,
+      "slots": 1448,
+      "with_english": 1414
+    },
+    "roman-pre-1955": {
+      "inherited_inapplicable_records": 57,
+      "ledgered_untranslated": 17,
+      "slots": 1391,
+      "with_english": 1374
+    }
+  },
+  "evidence": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/transition-contract.json",
+      "sha256": "7495dee6d0d191b9f376d6494e8323dd47a1869a0636deaac0a0c4f1d6a11755"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/data-proof.json",
+      "sha256": "68325b619038d8e9872f2c2a468f0a04a01ce1bc57a5a6b35f341cfc1a05d60b"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/adapter-proof.json",
+      "sha256": "68961eb740d38fd7639a32f2100a5e63d7ffbe0d8753d77a7cbd92d84b3a61b1"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/declaration.json",
+      "sha256": "b05cc94593171cea71c6568d512fbf4ab7a6b3443eed42efedb2e197ea3bf26f"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/semantic-adapter.py",
+      "sha256": "23391e404ec941d3057070c48da95fb538698fb9ce9f0777ab688034c0443a09"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/adapter-independent-review.json",
+      "sha256": "052cce2b141a2a8e3172b196f8ecf8b6b80242a721511826d1577c35d648c9eb"
+    }
+  ],
+  "finite_runtime_chain": {
+    "accepted_intermediate_sha256": "ecca66760debc9c0451e1b6743883c55d59390f575b4503b6af27d9923117fd3",
+    "final_sha256": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5",
+    "independent_reviews": [
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/pure-quarantine-code-review.json",
+        "sha256": "b2f859809819b9a24e3a1f488bcd136cae87bcf0b918375244f5c2a349881105"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/pure-quarantine-regressions.json",
+        "sha256": "dc5542cdc8bdfc5040f98d650a01376fd74dbc2a25512cd2a193a28224a8e030"
+      }
+    ],
+    "intermediate_activation": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/actual-authority-activation.json",
+      "sha256": "55a3ea92a0d4892607d7376bf16c339b7fc5e1aeb6b82fd1a4af663ded7fadff"
+    },
+    "path": "scripts/_proper_finite_latin_20261029.py",
+    "published_parent_sha256": "34c7ea2520f0917108495ea333323c33e4eb3b6993aba2e10c91fc49385dfb40"
+  },
+  "fixture_core_serialization": "UTF-8 json.dumps(indent=2,sort_keys=True,ensure_ascii=False,allow_nan=False) plus LF, excluding exactly acceptance and state.",
+  "independent_data_review": {
+    "base_data_review": {
+      "original_path": ".scratch/merged-publication-audit-20261030/candidate-v2-integrated/review.json",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-data-independent-review.json",
+      "sha256": "b34480695b287ab4779693888828c67b7834c4ce6fd49a8c6498a17d65af7967"
+    },
+    "final_physical_scope_review": {
+      "original_path": ".scratch/merged-publication-audit-20261030/candidate-v3-scope/review.json",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/physical-scope-independent-review.json",
+      "sha256": "e4307811f2e6b735b80a77a2cf4b2230c8dbc7e6c57e6a013477dd31faa90a55"
+    },
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-independent-review.json",
+    "sha256": "bebf620edc65ef674a6e7d70134e3cfc0779a778a2e0b7b8cddaf93b9356547c",
+    "status": "accepted"
+  },
+  "inherited_consumer_finding": "The injected-only removed-marker sanitizer gap is retained in the base review and must receive the separately reviewed narrow code repair before final merged publication. No actual candidate record contains that payload.",
+  "kept_parent_paths": 7071,
+  "original_historical_fields_preserved": [
+    "schema",
+    "baseline_revision",
+    "baseline_roman_document_sha256",
+    "latin_baseline_rows",
+    "latin_baseline_bodies",
+    "latin_baseline_present_keys",
+    "latin_baseline_supplemented_keys",
+    "projection_baseline_source_files",
+    "english_219_keys",
+    "english_baseline_source_files",
+    "english_historical_source_files",
+    "english_historical_absence_scope"
+  ],
+  "original_replay_streams_preserved": 17,
+  "parent_acceptance": {
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/source-batch-classification-acceptance.json",
+    "receipt_sha256": "2c05072109012b7da86c21da2ab23a1b5c89c317cc6be1c21b3f70acfe8e2cca",
+    "status": "accepted"
+  },
+  "parent_fixture": {
+    "git_revision": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+    "path": "tools/tests/fixtures/missal-source-batch-20261023.json",
+    "sha256": "11a3eee509b55233556f89a60d4ce978264ab215e483f354b2bcbad9b39304ee"
+  },
+  "parent_git_revision": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+  "parent_input_manifest": {
+    "git_revision": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+    "path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+    "sha256": "6956adb9fc4336282ade4bce43015d51bb2b73ef9a2ccce1d62e90226022693c"
+  },
+  "pending_fixture_reconstruction": {
+    "duplicate_pending_fixture_archive_required": false,
+    "expected_pending_fixture_sha256": "f0510da7466a3c79b05c90f038d9b0eea5f3d81e66d8787b6d1538719c07085d",
+    "replace_exact_top_level_fields": {
+      "acceptance": {
+        "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-acceptance.json",
+        "receipt_sha256": null,
+        "status": "pending"
+      },
+      "state": "Bounded source successor candidate; independent source and fixture acceptance pending"
+    },
+    "schema": "triptych-pending-fixture-envelope-reconstruction/v1",
+    "serialization": "UTF-8 json.dumps(indent=2,sort_keys=True,ensure_ascii=False,allow_nan=False) plus LF.",
+    "source": "installed accepted fixture at tools/tests/fixtures/missal-source-batch-20261023.json",
+    "source_fixture_core_sha256": "be05e5928b8be8dd59c23dc8401c431e616ca605ea138dd0bf465d7a18330e3a"
+  },
+  "pending_fixture_sha256": "f0510da7466a3c79b05c90f038d9b0eea5f3d81e66d8787b6d1538719c07085d",
+  "replay_support_sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc",
+  "retention_map": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/retention-map.json",
+    "sha256": "53fed4b3e938c8189525c279d172b4d6da6dd5b3eb19fb99da1d99f1adb8dff8"
+  },
+  "root_acceptance_pending": false,
+  "schema": "triptych-source-batch-acceptance/v1",
+  "scope": "missal-source-batch",
+  "semantic_adapter_sha256": "23391e404ec941d3057070c48da95fb538698fb9ce9f0777ab688034c0443a09",
+  "source_epoch_paths": 7264,
+  "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+  "source_input_manifest_sha256": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84",
+  "source_permission_created_by_this_receipt": false,
+  "status": "accepted",
+  "strict_runtime_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+  "successor_kind": "seven-Roman-English-Latin-additions-eighteen-postconciliar-English-additions-and-ten-Ordinary-reading-metadata-passages-and-three-peer-reviewed-current-test-expectations",
+  "test_expectation_successors": {
+    "actual_root_application": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/actual-application.json",
+      "sha256": "6e0377d845368085d1a23e74f6b7e5db2c396d942cc43b579b1b4e0a33f9223a"
+    },
+    "independent_readiness_review": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/independent-review.json",
+      "sha256": "01e832f44734f02058a9599485818b69462bc8959244c34befdb9a8b93fa7d14"
+    },
+    "no_runtime_adapter_successor_added": true,
+    "one_archival_manifest_pin_and_replay_changed": "tools/tests/test_proper_latin.py",
+    "original17_before_hashes_exact": true,
+    "other16_replay_specifications_exact_to_v2": true
+  }
+}

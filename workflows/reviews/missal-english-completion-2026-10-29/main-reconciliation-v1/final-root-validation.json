@@ -1,0 +1,196 @@
+{
+  "additional_checks": {
+    "git_diff_check": {
+      "exit": 0
+    },
+    "promised_deliverables": {
+      "complete": 80,
+      "exit": 0,
+      "private_log_sha256": "4990ef3a85cd0432c8d609d2abc6236c7b7c2e9fbf40a13346813a840e228dc1",
+      "tracked": 102
+    },
+    "release_bindings": {
+      "exit": 0,
+      "private_log_sha256": "81b5c9979e16b7295a385dc9fd585e88bef46d1c28bd0643ee7e4e47dc373c3f",
+      "stale": 0
+    },
+    "tmt_check": {
+      "exit": 0,
+      "private_log_sha256": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22"
+    }
+  },
+  "artifact_manifests": {
+    "preview": {
+      "checksums_sha256": "e4eb3b33faaaa3681f6a8fa471d2e29e8c3517eee02db0d36e91f79389ffb300",
+      "publication_manifest_sha256": "a4d35b3dbff1611c1add5bf92f7ff3f92af7ecf93350b6a35fde33567856dc9d"
+    },
+    "site": {
+      "checksums_sha256": "113313260a1124f7353833b0d7b0a1ee579fffdae42973f81b96937eeb123b6e",
+      "publication_manifest_sha256": "5cfe44c157d055d4cb939e597da8faafa51a9d312db0aa475150a57d6fef9bba"
+    }
+  },
+  "completion_boundaries": [
+    "Complete English remains open: Proper availability1407/1448 Roman1962,1373/1391 older Roman frame,155/574 postconciliar; Ordinary35/70 postconciliar.",
+    "Seventy earlier postconciliar study drafts retain open source/fidelity debt; whole older rites, complete modern scope and exact target correspondence remain open.",
+    "Firm source-backed version nomenclature and contribution-only reader inclusion are a newly recorded in-progress deliverable.",
+    "Main push, workflow success and live verification remain pending at creation of this pre-publication evidence."
+  ],
+  "core_sha256_by_path": {
+    "Makefile": "f374140b4cd659bfb02afa05729e33c6538647977e8569ac3db26360f79cf078",
+    "release/public-alpha.json": "c574a703aba0c280743bc750136c11c1fd23b702fe4c5dfa8eee1afc3a5c0d33",
+    "release/rights/public-alpha-2026-07-15.md": "485d039b712cde3fbbb8ca77837225e92d565bba1714597166ad47cf6b8786b1",
+    "requirements-public-alpha.txt": "59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762",
+    "requirements-tools.txt": "0969da99a0bc2a1b71ed50584560f4588a37567ac63af3ddbaf3c4617ca5621a",
+    "scripts/_calendars.py": "54f37042b07ae107a9bea59fe6080d5699f70290335ae7ddee453752f35eb7d4",
+    "scripts/_proper_latin.py": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376",
+    "scripts/_tooling.py": "f42654633791efe86a5222e7d2c1e80a75bfbcec94f2d34c4d06ad57e186af60",
+    "src/sources/inventories/postconciliar-english-2011-recension-coverage-v1.toml": "6739d55adb969ef06f8e0e73e7457e682b61f9bee0759c461a1fb2ded1b0a194",
+    "src/sources/inventories/source-family-migration-v1.toml": "7ae4e16b2a74fda77c16e021ba7a9ec9b030395b3b39ce4392aef663d4a59a65",
+    "src/web/browser/liturgy/assembly-model.js": "f35e647872f998b6e54a3916e55ae4512834f1ad034f3ab5fef8163a7c8e52e3",
+    "src/web/browser/liturgy/day-reader.js": "a5bb7d4c9afeab6d2c6cd1809c6ba74e8a4dd7dfd92dd05052afcffa35a23bc9",
+    "src/web/browser/liturgy/day.js": "dc45b3f062cd05109f424a7ebeb56375f649063746c417855960aeaad6b5db18",
+    "src/web/browser/liturgy/ordinary-seating.js": "90467f26022701a79cfee246c131de8776a6226f208cde0c5bc30010aaa3b5ba",
+    "src/web/browser/liturgy/propers-reader.js": "d6db9ab38ba58b962ce23d689ef471c50e14cf76b71ead005eb1b0829e509718",
+    "src/web/browser/liturgy/reader-state-adapters.js": "8dfa04ac0d4dd56a80aef3cefdbdd3d3d18a61cb6de444af50888ee8a307723f",
+    "src/web/browser/liturgy/reader-state.js": "bc0f8e646bfa506289fe27ab88618cf6940eda88fa715be1d71a8fa4b48895e3",
+    "src/web/browser/shared/browser-core.js": "64d34d185b5d3c7690f5b0e262862fbbb72478312e05ec84f352428a10c09a6d",
+    "src/web/data/structure/propers/postconciliar.json": "835e9621b5e95de89de83a39a1cda11ec9c23748ab968003b292dfd3014ca59a",
+    "src/web/data/structure/sources/index.json": "76bcb0cd2df95a49946bc0e223ff1cc3b30b14875c2a37dc23a65e6774a7cc12",
+    "tmt.json": "72623c88766a45fe9a01a74725847a557277952937c67bb12985d2b348272e1b",
+    "tools/act-history": "2fc6aee41059ed53eeead87e80ed5305b3ca89940f40d0e7381fa54b96667e80",
+    "tools/calendar-rubrics": "b68a8d6befab20e5f04ffb6828512044acf3a70015edd522105ab37bf207f95e",
+    "tools/commentary-work-index": "a4f43b8e40719b3e04658d4538ccaea8de4ab4ee4dfce0373ece71b289902a18",
+    "tools/complete-missal": "29e923e3a80f5f56727edde1a3a009947558396fc4b2cc27226eca48ca486263",
+    "tools/mass-ordinary": "c0cfd8354d72a8a2be29020a2cc0299fce21b27bf6576ac20591d6bfa1d3dcb9",
+    "tools/mass-propers": "47a90640129df0060b673607638f579b4f2c20c5faff0287010f3b21357fd0d0",
+    "tools/public-alpha": "a80ee8f13565011bcdcef57cb3f00c6f1596b8f3e27003058afb644f789a9234",
+    "tools/release-bindings": "7a10dda302714fef2692387446980603b09974f87734594681d07d77a71044da",
+    "tools/source-library": "b6327d428d75d897840c413f9a8db6ed62f6c9413b7c1678b9658da625b78102",
+    "tools/source-reader": "ff16f35d8febcecdb57770f03d80ecf210d26c43d7d8e50b67a5b01b91e2fe13",
+    "tools/tests/_source_batch_guards.py": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+    "tools/tests/day_reader_choices_browser.mjs": "bbd9ee0858d1950d9c0f2a2e79d45f9c196bab2034dba128bcaa2d043fa39ebb",
+    "tools/tests/day_reader_integration_browser.mjs": "817a84fcb664e5dd15f55dd07d1f30c64cf10edde8261c13e65485d0fd8b403a",
+    "tools/tests/propers_reader_integration_browser.mjs": "ddad266de88ff7665d5d305faa1687ed650647e1145bf9dad89a661b70f9dd3a",
+    "tools/tests/reader_coverage_fixture.mjs": "5f67b9eabec3a74810e55309f11f7234e17ca93e25fdb3905ca4ba6b32f11dc8",
+    "tools/tests/test_browser_harnesses.py": "0531a601ad7a68c80f934fbb29da1cbf4ce2bac58609314f5b287f51516e4071",
+    "tools/tpt": "711e418aa6b6631428ee624c3dfb705bf62975e6d3a2b3bbb4cd923b596452e5"
+  },
+  "earlier_attempts": [
+    "The first aggregate failed because ignored study PDFs predated accepted main sources. Registered restoration reproduces all three prior accepted PDF hashes; the final full aggregate passes.",
+    "The first affected English run found two omitted historical source classes. The independent metadata/epoch successor corrects them without changing the test or any English body; the final34-test run passes.",
+    "One unit command named a nonexistent catalogue module. The corrected three-module233-test execution passes; no failed command is relabelled.",
+    "Additional scratch Nativity probes corrected cleanup and URL/qualification assumptions before the sealed eight-case pass; the browser report retains their scope."
+  ],
+  "fresh_browser_validation": {
+    "additional_Nativity_browser_cases": 8,
+    "artifacts": [
+      "public",
+      "preview"
+    ],
+    "exact_Nativity_data_locations_per_artifact": 4,
+    "native_assertions": 136,
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/final-browser-validation.json",
+    "sha256": "b97d37397d253a6066dceb867679500593af3d41ed71c444f87532727d56a37b"
+  },
+  "gates": {
+    "preview-build": {
+      "command": [
+        "make",
+        "PYTHON=python",
+        "public-preview"
+      ],
+      "exit": 0,
+      "private_log_sha256": "5763eccff4883ddea188084245e6a1f27ec337ef699e77a8b15cef9f14513346",
+      "seconds": 94.379
+    },
+    "preview-verify": {
+      "command": [
+        "python",
+        "tools/public-alpha",
+        "verify",
+        "--preview"
+      ],
+      "exit": 0,
+      "private_log_sha256": "2d87689935ce2ac9799e8734369261a2c512c6b0a60e5acaadee1f31940a8bae",
+      "seconds": 93.166
+    },
+    "public-build": {
+      "command": [
+        "make",
+        "PYTHON=python",
+        "public-site"
+      ],
+      "exit": 0,
+      "private_log_sha256": "7041fceef0ba3c066310856ffcc46f7c64719466946b4e20c07c052b65488e0f",
+      "seconds": 99.01
+    },
+    "public-verify": {
+      "command": [
+        "python",
+        "tools/public-alpha",
+        "verify",
+        "--deployment-target",
+        "github-pages"
+      ],
+      "exit": 0,
+      "private_log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14",
+      "seconds": 98.586
+    },
+    "source-aggregate": {
+      "command": [
+        "make",
+        "PYTHON=python",
+        "check-sources"
+      ],
+      "exit": 0,
+      "private_log_sha256": "8cdf174cdc490e17e14fd9728823978aef5becd93fb92ac60305694e71fd20e1",
+      "seconds": 203.16
+    }
+  },
+  "incoming_main": "f955c512ac5bb27ceaade50b3ad846a53dc2d410",
+  "retained_predecessor_evidence": {
+    "annual_date_calendar_coordinates": 1464,
+    "annual_json_text_renderings": 5856,
+    "annual_tests": 7,
+    "checkpoint": "0b7da814a9c3d0bbf721565ceac1abc6898faa2a",
+    "full_browser_assertions": 259,
+    "qualification": "Historical broader evidence is retained because its reader/annual code is byte-identical. Fresh affected browser evidence is136 assertions plus8 Nativity cases. No fresh full annual or full twelve-harness run is claimed."
+  },
+  "root_parent": "4e8e9fcf7d8947d5b99068d8f05b21156f70abe4",
+  "runtime": {
+    "Markdown": "3.10.3",
+    "PyYAML": "6.0.3",
+    "python": "3.14.8"
+  },
+  "schema": "triptych-merged-missal-english-checkpoint-validation/v1",
+  "source_batch": {
+    "acceptance": {
+      "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/source-batch-classification-acceptance.json",
+      "receipt_sha256": "2c05072109012b7da86c21da2ab23a1b5c89c317cc6be1c21b3f70acfe8e2cca",
+      "status": "accepted"
+    },
+    "fixture_sha256": "11a3eee509b55233556f89a60d4ce978264ab215e483f354b2bcbad9b39304ee",
+    "historical_replay_streams_retained": 17,
+    "manifest_sha256": "6956adb9fc4336282ade4bce43015d51bb2b73ef9a2ccce1d62e90226022693c",
+    "paths": 7071,
+    "strict_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1"
+  },
+  "status": "PASS-bounded-merged-checkpoint",
+  "unit_runs": [
+    {
+      "private_log_sha256": "ed5233950f6766b160afbcb373d3b26c52ee2911f760d484156251150cf8a8cb",
+      "result": "PASS",
+      "scope": "current source-batch controls and affected postconciliar English modules",
+      "seconds": 7.592,
+      "tests": 34
+    },
+    {
+      "private_log_sha256": "ccdde19c39b7f0d95e14ffd961a8a96294b462b907c5367d38eb909e50ca79f6",
+      "result": "PASS",
+      "scope": "public-alpha, source-library and encyclicals-index",
+      "seconds": 10.922,
+      "tests": 233
+    }
+  ],
+  "workspace_branch": "feature/missal-reader"
+}

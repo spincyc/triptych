@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile.fulgentibus-latin-checked-20261029"
+edition_id = "edition.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "United States: the identified facsimile printing was published at Solesmes in 1900, before 1931, and its publication term has expired. The underlying manuscript chant is earlier still. Faithful mechanical reproduction adds no authorship to the historical page. This checked transcription contains only the complete Fulgentibus palmis antiphon from historical manuscript page 175, excludes the other page contents and modern Internet Archive wrapper and collection matter, and does not assert rights over the modern complete PDF wrapper. Received Latin remains public domain and is excluded from Triptych project licensing."
+rights_jurisdiction = "United States"
+provenance = "Read from the two complete text lines of Fulgentibus palmis at the top of manuscript page 175 in the retained historical facsimile; images at 200 and 400 dpi were opened. Wording was compared directly with the 1962 target at exact CMAA PDF215, printed134, no840, also opened at 200 and400dpi. No optical text supplies any manuscript reading."
+retrieved = "2026-10-29"
+sha256 = "c2bf21a76718a0f00eda5c79a7a00f92cada8447efb0234fb92b4b5a8f042166"
+byte_size = 139
+path = "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/artifacts/fulgentibus-latin-checked-20261029/text.txt"
+indexable = true
+derived_from = "artifact.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile.fulgentibus-page-175-facsimile"
+transformation = "Transcribe the two complete Fulgentibus lines, excluding initial antiphon marker, marginal mode letters and musical neumes. Expand the manuscript contractions Fulgentib[us] and p[ro]sternimur and the et signs; retain the manuscript aduenienti and ymnis spellings and lowercase domino/dominus. Retain the original line break. No modern punctuation or target stress accents are introduced."
+encoding = "utf-8"

@@ -22,10 +22,10 @@ Name the document and page or section if you can, but a high-level concern is en
 Git keeps the project’s files and history. An AI coding agent can edit, check, and rebuild them.
 
 1. Clone the repository using the address shown by its hosting site. If you already have a copy, update it and begin from a clean `main`.
-   The project keeps a large illustrated corpus, so a plain clone fetches every
-   branch. Adding `--single-branch` fetches only `main` and is about 37 MB
-   smaller; nothing in an ordinary contribution needs the other branches, and
-   `git remote set-branches origin '*'` restores them if you later do.
+   A shallow clone (`git clone --depth 1 --single-branch <repository-url>`)
+   avoids downloading old binary history when that history is not needed.
+   Current-tree PDF removal does not shrink a full-history clone. If a workspace
+   assigns a branch, keep that branch and follow its local instructions.
 2. From the repository’s top-level folder, start Codex directly. The current checkout is the ordinary workspace; do not create, move, delete, or administer worktrees yourself.
 3. Give the agent an ordinary request, including any sources, concerns, emphases, or limits that matter.
    The agent must first read `PROJECT-WORK.md` and
@@ -33,8 +33,11 @@ Git keeps the project’s files and history. An AI coding agent can edit, check,
    reconcile both records before reporting completion.
 4. Review the changes and verification results. Direct Codex sessions have
    standing authority to make coherent ordinary commits and regularly push
-   validated checkpoints to `origin/main`.
-5. Read the revised PDF as well as the line-by-line view of what changed.
+   validated checkpoints to `origin/main` when working under that ordinary
+   workflow. An assigned workspace branch or narrower task instruction governs
+   instead; do not switch it to `main`.
+5. Read the revised source or reader edition as well as the line-by-line view
+   of what changed. A PDF is generated only when a print edition is requested.
 6. Before each push, the agent must inspect the exact outgoing range, confirm
    that every newly reachable object is intended for public disclosure, and
    run the checks required by the affected guidance. Pushing `origin/main`
@@ -47,7 +50,7 @@ Git keeps the project’s files and history. An AI coding agent can edit, check,
 A useful starting prompt is:
 
 ```text
-Read AGENTS.md and the applicable guidance completely. Revise [document] to [describe the concern or desired result]. Check the governing sources, preserve material uncertainty, update the research records, and rebuild and inspect every affected PDF. Commit coherent validated checkpoints and push them regularly to origin/main under the standing authority.
+Read AGENTS.md and the applicable guidance completely. Revise [document] to [describe the concern or desired result]. Check the governing sources, preserve material uncertainty, update the publication manifest and research records, and validate the affected source and reader editions. Follow the assigned branch and task authority for commits and publication.
 ```
 
 The agent should do the technical work. The contributor remains responsible for judging whether the result is faithful, clear, and worth proposing.
@@ -101,6 +104,8 @@ Submit only material you created or have authority to provide. Identify quotatio
 - [Promised-deliverable contract](guidance/promised-deliverables.md)
 - [Editorial and evidence standard](guidance/editorial.md)
 - [Repository and publication contract](guidance/repository.md)
+- [Publication schemas](guidance/document-schemas.md)
+- [Printing one edition](docs/printing.md)
 - [Reusable source library contract](guidance/sources.md)
 - [Reusable source library](src/sources/README.md)
 - [About](ABOUT.md)

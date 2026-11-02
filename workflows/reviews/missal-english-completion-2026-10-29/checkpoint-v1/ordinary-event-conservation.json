@@ -1,0 +1,185 @@
+{
+  "pentecost_10": {
+    "sequence_changes": [],
+    "changed_or_inserted": [
+      {
+        "index": 98,
+        "id": "ordinary_element:praefatio/praefatio-de-ss-trinitate",
+        "type": "changed"
+      }
+    ],
+    "replay_text_hash": "4e0a78e2bf7e33e8effdd6601a2ce6ce6941342388ebf3e83a688c67c8487b9a",
+    "matches_prior": true
+  },
+  "ot_18": {
+    "sequence_changes": [
+      {
+        "op": "insert",
+        "before": [],
+        "after": [
+          "ordinary_element:ritus-initiales/signum-crucis"
+        ]
+      },
+      {
+        "op": "insert",
+        "before": [],
+        "after": [
+          "ordinary_element:ritus-initiales/greeting-trinitarian",
+          "ordinary_element:ritus-initiales/greeting-response"
+        ]
+      },
+      {
+        "op": "insert",
+        "before": [],
+        "after": [
+          "ordinary_element:ritus-communionis/ecce-agnus",
+          "ordinary_element:ritus-communionis/beati-ad-cenam",
+          "ordinary_element:ritus-communionis/domine-non-sum-dignus"
+        ]
+      }
+    ],
+    "changed_or_inserted": [
+      {
+        "index": 1,
+        "id": "ordinary_element:ritus-initiales/introitus",
+        "type": "changed"
+      },
+      {
+        "index": 3,
+        "id": "ordinary_element:ritus-initiales/signum-crucis",
+        "type": "inserted"
+      },
+      {
+        "index": 4,
+        "id": "ordinary_element:ritus-initiales/salutatio",
+        "type": "changed"
+      },
+      {
+        "index": 5,
+        "id": "ordinary_element:ritus-initiales/greeting-trinitarian",
+        "type": "inserted"
+      },
+      {
+        "index": 6,
+        "id": "ordinary_element:ritus-initiales/greeting-response",
+        "type": "inserted"
+      },
+      {
+        "index": 8,
+        "id": "ordinary_element:ritus-initiales/kyrie",
+        "type": "changed"
+      },
+      {
+        "index": 33,
+        "id": "proper:seated:Prayer over the Offerings",
+        "type": "changed"
+      },
+      {
+        "index": 39,
+        "id": "ordinary_element:prex-eucharistica/communicantes",
+        "type": "changed"
+      },
+      {
+        "index": 46,
+        "id": "ordinary_element:prex-eucharistica/supplices",
+        "type": "changed"
+      },
+      {
+        "index": 54,
+        "id": "ordinary_element:ritus-communionis/domine-iesu-christe-qui-dixisti",
+        "type": "changed"
+      },
+      {
+        "index": 56,
+        "id": "ordinary_element:ritus-communionis/offerte-vobis-pacem",
+        "type": "changed"
+      },
+      {
+        "index": 58,
+        "id": "ordinary_element:ritus-communionis/agnus-dei",
+        "type": "changed"
+      },
+      {
+        "index": 60,
+        "id": "ordinary_element:ritus-communionis/ecce-agnus-dei",
+        "type": "changed"
+      },
+      {
+        "index": 61,
+        "id": "ordinary_element:ritus-communionis/ecce-agnus",
+        "type": "inserted"
+      },
+      {
+        "index": 62,
+        "id": "ordinary_element:ritus-communionis/beati-ad-cenam",
+        "type": "inserted"
+      },
+      {
+        "index": 63,
+        "id": "ordinary_element:ritus-communionis/domine-non-sum-dignus",
+        "type": "inserted"
+      },
+      {
+        "index": 69,
+        "id": "proper:seated:Prayer after Communion",
+        "type": "changed"
+      }
+    ],
+    "replay_text_hash": "b2f168aa13366beb1e2043cd3d6499df7ab59bf265ab1584f0101ff03bcade5a",
+    "matches_prior": true
+  },
+  "roman-1962": {
+    "proper_changes": [
+      {
+        "name": "Epistle",
+        "fields": [
+          "translations",
+          "untranslated"
+        ]
+      }
+    ],
+    "old_digest": "79c653c1a959ef53d7ce772bd6cf38ebee7296b1069dc26780ef723512de572c",
+    "new_digest": "e648631d469125047af4a9a53b89f3204b41f6ba69ea1cbb4ad505b49e30885b",
+    "count": 10
+  },
+  "postconciliar": {
+    "proper_changes": [
+      {
+        "name": "Prayer over the Offerings",
+        "fields": [
+          "translations"
+        ]
+      },
+      {
+        "name": "Prayer after Communion",
+        "fields": [
+          "translations"
+        ]
+      }
+    ],
+    "old_digest": "e3f087b4bf34a32bff82ae866299efc0b920f686efc76cd0dd7b4e02f2f6fc70",
+    "new_digest": "8651b9d6f56d37e8c0b7d605268ff72b96d50f8348f5f7da84207c81d356592d",
+    "count": 11
+  },
+  "scope": {
+    "source_runtime_inputs_unchanged": true,
+    "outside_owned_test_spans_unchanged": false,
+    "owned_spans": [
+      "OrdinaryPage",
+      "FormularyPage.test_text_bearing_proper_structures_remain_fixed"
+    ],
+    "owned_patch_sha256": "67e50a269b9021ce6230f750936e68ac6c3a28f62a9bad841cf95443f9642bda",
+    "owned_final_sha256": "b1509659c22a56ef518b268d267050925f1064105299e1f56e43acc8fdb4df6e",
+    "final_log_sha256": "612ce6dab11396523d4ff28cba1345712dc3a05800186dfefe28ae0c771a771c",
+    "focused_result": "17 tests passed",
+    "concurrent_owner_test_changes": "The PC owner independently updated seven OrdinaryStructure/OrdinaryTool methods during this test-only handoff. Those changes are present in the shared file and were not edited by this lane; preimage-to-final whole-file equality is therefore not asserted. The retained owned-span patch contains only the authorized OrdinaryPage class and one FormularyPage method.",
+    "returned_ownership": true
+  },
+  "grounds": {
+    "roman_event98": "Complete source-owned Lasance Trinity English plus historical reading note; all178 IDs/order unchanged.",
+    "pc_model": "All61 original keys retained, nine exact source children added; six show in default OT18, three other greeting options unselected. Bishop remains explicit/nondefault.",
+    "pc_changed_bodies": "Structural parent/Introit notices; sixfold gloss arrangement; independently accepted common Communicantes/Supplices/peace/Offerte; complete historical threefold Lasance Agnus; source invitation children.",
+    "proper_checkpoint": "Advent1 Epistle adds accepted project-study English and clears that English absence; OT18 two oration texts unchanged, only study-source labels added. All10/11 names/forms/order and unchanged fields conserved.",
+    "negative_controls": "Existing omission/source-path/cue/order controls preserved; real withheld memorial acclamation still renders typed refusal without restricted attribution, even though Kyrie is now available."
+  }
+}

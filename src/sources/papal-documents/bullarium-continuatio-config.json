@@ -1,0 +1,2384 @@
+{
+  "revision": "2026-10-26T13:16:09Z",
+  "schema": "triptych-papal-series-config/v1",
+  "scope": "Nineteen whole offered physical source witnesses; separately found incomplete twentieth-tome source is not included in this snapshot.",
+  "series_id": "bullarium-continuatio",
+  "title": "Bullarii Romani continuatio, identified Rome printings",
+  "volumes": [
+    {
+      "body_line_ranges": [
+        [
+          4299,
+          70794
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Discovery body/index frame only; no individual act boundaries or complete-witness admission asserted",
+        "contexts": [
+          {
+            "physical_lines": [
+              4279,
+              4334
+            ],
+            "text": "\nV \n\n\nFenimus in altitudine 1758. \n\n\np \n\n\n322 \n279 \n\n\nasi \n\n\n\n\n\nG5E \n\n\n\n\n\nY) \n\n\n& m9 attt \nO NT. CCLII | \n\n\nANNO POST VIRGINIS PARTUM MBCCLVII, \n\n\n(ees XIII Venetiis natus die 7 Martii 1693 , Carolus Rez- \nzonico antea dictus , Presbyter:Cardinalis Tituli S. Marci, Be- \nnedicti XIV Successor, olim Episcopus Patavinus , creatus \nCardinali a san. mem. Clementis XII die 20 Decembris .1735 \n\n\nI \n\n\nAllocutio Sanctissimi Domini Clemen- \nüs PP. XIII. ad Etios , et Rínos Do- \nminos S. R. E. Cardinales habita in \n\n\n\n\n\nDaum de rum actione post electionem ad San- \nuo L' ctam Sedem Apostolicam, feria quarta \n"
+          },
+          {
+            "physical_lines": [
+              70759,
+              70814
+            ],
+            "text": "\nvoglia altro Decreto , e Risoluzione del- | \n\n\nla Gongregazione Particolare deputata \n\n\nnel 1741. dalla san. mer, di Benedei- \n\n\nto XIV. Nostro Predecessore sopra gl'in- \n\n\n$51 \n\n\nteressi , ed azienda della. Nostra Came- \nra Capitolina, ed a qualunque altro Sta- \ntuto ,- Regola , Uso, Stile; o^Gonsnetu- \ndine, che in: qualsivoglia rnodo 'faces- \nse, o potesse fare in contrario^al pre- \nsente Nostro Chirografo , .délle quali cose \ntütte , e singole avendone il di loro te- \n\n\nnore qui per espresso, e sufficientemen- \n\n\nte di parola in parola inserto, per questa \nvolta sola, e per detto eífetto pienamen- \nte, ed amplamente deroghiamo, Dato dal \nNostro Palazzo Apostolico di Monte Ca- \nvallo , questo di xi. Marzo MDGCLX. \n\n\nCLEMENS XIII. \n\n\nFINIS TOMI PRIME \n\n\n\n\n\num moG RI \n\n\nQ U AE \nB0 VORUMIEE \n\n\n\n\n\nCONTINENTUR \n"
+          }
+        ],
+        "notes": [
+          "Raw source includes marginal notes, running heads, inserted documents and sometimes severe OCR column order defects.",
+          "The generous discovery frame retains displaced source notes near the outer boundaries; each act requires separate attribution and full boundary review.",
+          "Unparsed act dates remain null; no date-word eligibility test or title-only canonical join."
+        ],
+        "source_sha256": "8152d72650a6948981e8a527adc0f7f257448018fbcbef7b45c5d03c3390fc56"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-01.1835-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-01",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [
+        {
+          "act_number_raw": "I",
+          "image_evidence": {
+            "artifact_id": "artifact.bullarium-continuatio.volume-01.1835-rome-mul.layout-evidence-016841df5c20",
+            "first_act_kind": "allocution",
+            "image_sha256": "016841df5c203bdc7b84673255546504a366b5733b8ae30b3dea8a2761f36bdb",
+            "leaf": 29,
+            "printed_first_act_number": "I",
+            "separate_matter": "Full-width papal biography precedes the first act; its raw OCR continuation at4381–4388 is displaced between body lines. Exclude by exact reviewed disjoint bounds, not by rewriting words.",
+            "source_url": "https://ia600701.us.archive.org/BookReader/BookReaderImages.php?zip=%2F31%2Fitems%2FBRC-Tomo-01%2FBRC+01_jp2.zip&file=BRC+01_jp2%2FBRC+01_0029.jp2&id=BRC-Tomo-01&scale=1&rotate=0",
+            "volume": 1
+          },
+          "line": 4321,
+          "literal_heading_line": "I ",
+          "observed_printed_number": "I",
+          "reason": "First allocution marker I and papal attribution were inspected in the whole offered leaf29 image. This protocol is an allocution title plus Venerabiles Fratres, not a standard Papa/Episcopus incipit. The displaced preceding biography at4381–4388 is not act body and needs a separate exact-range disposition before admission.",
+          "selection_start": 4321
+        }
+      ],
+      "heading_patterns": [
+        "(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-01.1835-rome-mul.imprint-a0892072ac1e",
+          "byte_size": 167370,
+          "filename": "BRC-Tomo-01-leaf0000.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "a0892072ac1e1fdec21e5e49dd403189868c499e55321f1eb9164ac9bfab6b90",
+          "source_url": "https://ia600701.us.archive.org/BookReader/BookReaderImages.php?zip=%2F31%2Fitems%2FBRC-Tomo-01%2FBRC+01_jp2.zip&file=BRC+01_jp2%2FBRC+01_0000.jp2&id=BRC-Tomo-01&scale=2&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-01.1835-rome-mul.labels-ccae57a1cb1e",
+          "byte_size": 85931,
+          "filename": "BRC 01_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "c85d2661e14a72aeb4dabb8e9066634cd19e2aed",
+          "sha256": "ccae57a1cb1e1b4672d0583b06fc3d4aebc921213a98889780031df252962bdc",
+          "source_url": "https://archive.org/download/BRC-Tomo-01/BRC%2001_page_numbers.json"
+        },
+        "layout-evidence": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-01.1835-rome-mul.layout-evidence-016841df5c20",
+          "byte_size": 945353,
+          "filename": "continuatio-01-leaf-0029.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Bounded title, act-number and source-layout evidence; not a full-text collation.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "016841df5c203bdc7b84673255546504a366b5733b8ae30b3dea8a2761f36bdb",
+          "source_url": "https://ia600701.us.archive.org/BookReader/BookReaderImages.php?zip=%2F31%2Fitems%2FBRC-Tomo-01%2FBRC+01_jp2.zip&file=BRC+01_jp2%2FBRC+01_0029.jp2&id=BRC-Tomo-01&scale=1&rotate=0"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-01.1835-rome-mul.ocr-8152d72650a6",
+          "byte_size": 2004881,
+          "filename": "BRC 01_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "4471e2a41ef46eb5911dbfc990371bd25df174b2",
+          "sha256": "8152d72650a6948981e8a527adc0f7f257448018fbcbef7b45c5d03c3390fc56",
+          "source_url": "https://archive.org/download/BRC-Tomo-01/BRC%2001_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-01.1835-rome-mul.scandata-4eb8aabf3c39",
+          "byte_size": 162036,
+          "filename": "BRC 01_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "3fa59bff8d1f366e6562f60ba584c7dd49e34091",
+          "sha256": "4eb8aabf3c394ee75d7b68ed5057744905158ebcf004084ff2355c738e137efa",
+          "source_url": "https://archive.org/download/BRC-Tomo-01/BRC%2001_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-01.1835-rome-mul.xml-03a18d4c6d76",
+          "byte_size": 25066336,
+          "filename": "BRC 01_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "3858e4e6b85435f8d3fb0291af05aa68e4d0d6c2",
+          "sha256": "03a18d4c6d76690c98cc6f10c5509d61719fefea56ff47fdcdead92ceefe57ba",
+          "source_url": "https://archive.org/download/BRC-Tomo-01/BRC%2001_djvu.xml"
+        }
+      },
+      "key": "volume-01",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1835",
+      "metadata_title_raw": "Bullarii Romani continuatio TOMO 01",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 a0892072ac1e1fdec21e5e49dd403189868c499e55321f1eb9164ac9bfab6b90; source https://ia600701.us.archive.org/BookReader/BookReaderImages.php?zip=%2F31%2Fitems%2FBRC-Tomo-01%2FBRC+01_jp2.zip&file=BRC+01_jp2%2FBRC+01_0000.jp2&id=BRC-Tomo-01&scale=2&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome I. Rome: Typographia Reverendae Camerae Apostolicae, 1835.",
+      "publication_year": 1835,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1835, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome I"
+    },
+    {
+      "body_line_ranges": [
+        [
+          4742,
+          93659
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Discovery body/index frame only; no individual act boundaries or complete-witness admission asserted",
+        "contexts": [
+          {
+            "physical_lines": [
+              4722,
+              4777
+            ],
+            "text": "17 61. . e 5 n5 \nVoluptatem IYobis 1 762. iow d \n\n\n\n\n\n86 \n435 \n534 \n563 \n\n\nA25 \n\n\n118 \n2968 \n\n\nDat. die 2: Conüirmatio nonullorum S:itatorum \n\n\nJil. 17680 Ann. \n\"J eriin. \n\n\n\n\n\n\n\n\nExurdinn \n\n\n\n\n\nCLVI. \n\n\nap- \nprobatorum ab Abbate Generali , p \nDiffiaitorio Generali Ordinis S. Bene- \ndicti Congregationis Monacnorum Val- \nlis Umbrosz super nova methodo stu- \ndiorum in' dicto Ordine. \n\n\nCongregutionem Monachorum V allis Urn- \nbrost£ Ordinis S. Benedicti approba- \neit, et sub protectione Sedis .dposto- \nlicae suscepit. Urbanus II. Const, An- \nnt 10990 4prilis 6. Monasteria Mo- \nnachorum Congregationis Vallis Um- "
+          },
+          {
+            "physical_lines": [
+              93624,
+              93679
+            ],
+            "text": "Cardinalis Corsinus. \n\nEgo Prosper S. Agathw in Suburra \nDiaconus Cardinalis Columna de Sciarra. \n\nEgo Dominicus S8. Marize ad Marty- \nres Diaconus Cardinalis Ursinus. | \n\nEgo Flavius S. Mari. in Porticu Dia- \nconus Cardinalis Chisius. \n\nEgo Aloysius Maria SS, Viti , et Mo- \ndesti Diaconus Cardinalis Torregianus, \n\nEgo Joannes Constantius S. Caesarei \n\n\n\n\n\n\n\n\n\n\n\nClemens PP, Decimus \"Tertius 464 \n\n\nDiaconus Cardinalis Caracciolo. Ego Cornelius SS. Cosme et Damia- \nEgo Nicolaus S. Georgei in Velabro || ni Diaconus Cardinalis Caprara. \nDiaconus Cardinalis Perelli. Ego Andreas S. Mariz in Aquiro Dia- \n\n\nEgo Andreas $5. Angeli in Foro Pi- || conus Cardinalis Nigronus. \nscium Diaconus Cardinalis Cforsinys, \n\n\nFINIS TOMI SECUNDI \n\n\nBull. Rom. Tom. Il. Nnnz \n\n\nINDEX MATERIARUM \n\n\nA85 \n\n\nPR/ECIPUARUM \n\n\nQUE \n\n"
+          }
+        ],
+        "notes": [
+          "Raw source includes marginal notes, running heads, inserted documents and sometimes severe OCR column order defects.",
+          "The generous discovery frame retains displaced source notes near the outer boundaries; each act requires separate attribution and full boundary review.",
+          "Unparsed act dates remain null; no date-word eligibility test or title-only canonical join."
+        ],
+        "source_sha256": "99f8d35580f2291f69b43ea840d8d0f98efa4a772924772cddc51315b923838d"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-02.1837-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-02",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [
+        {
+          "act_number_raw": "CLVI.",
+          "line": 4761,
+          "literal_heading_line": "CLVI. ",
+          "reason": "The first main-body source date and title are displaced before the standalone raw numeral at4761. Retain the full first-body frame from4742 for review; no act date is inferred from the damaged raw date.",
+          "selection_start": 4742
+        }
+      ],
+      "heading_patterns": [
+        "(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-02.1837-rome-mul.imprint-f5344cd514b7",
+          "byte_size": 248527,
+          "filename": "BRC-Tomo-02-leaf0000.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "f5344cd514b760cd0107c80c915d4032f35727630066221ccd36f67b73bc8051",
+          "source_url": "https://ia600402.us.archive.org/BookReader/BookReaderImages.php?zip=%2F9%2Fitems%2FBRC-Tomo-02%2FBRC+02_jp2.zip&file=BRC+02_jp2%2FBRC+02_0000.jp2&id=BRC-Tomo-02&scale=2&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-02.1837-rome-mul.labels-148b1879fab1",
+          "byte_size": 104140,
+          "filename": "BRC 02_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "e96ab1e64d46b8dffcf7f79925305c36f6970f04",
+          "sha256": "148b1879fab1b1c7499206ebe55d7571f9812468655b68fcc7dc26136e2921e7",
+          "source_url": "https://archive.org/download/BRC-Tomo-02/BRC%2002_page_numbers.json"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-02.1837-rome-mul.ocr-99f8d35580f2",
+          "byte_size": 2760819,
+          "filename": "BRC 02_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "65a77eb418de495120e7961505a803267615e9a1",
+          "sha256": "99f8d35580f2291f69b43ea840d8d0f98efa4a772924772cddc51315b923838d",
+          "source_url": "https://archive.org/download/BRC-Tomo-02/BRC%2002_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-02.1837-rome-mul.scandata-203695f41569",
+          "byte_size": 214801,
+          "filename": "BRC 02_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "03b6ab45815819190d57706a09ea8707e8a76aca",
+          "sha256": "203695f41569eeefccf77bf045fa986a077c53cd86a6373be26be8d2374f0b80",
+          "source_url": "https://archive.org/download/BRC-Tomo-02/BRC%2002_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-02.1837-rome-mul.xml-02fbf4ad057a",
+          "byte_size": 34872801,
+          "filename": "BRC 02_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "6b00b04713445c178b2c1fa10710a8287a95525d",
+          "sha256": "02fbf4ad057af88fceca187a4ebf1be06497da2145445cf2dd76a2bb58a1eb10",
+          "source_url": "https://archive.org/download/BRC-Tomo-02/BRC%2002_djvu.xml"
+        }
+      },
+      "key": "volume-02",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1837",
+      "metadata_title_raw": "Bullarii Romani continuatio TOMO 02",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 f5344cd514b760cd0107c80c915d4032f35727630066221ccd36f67b73bc8051; source https://ia600402.us.archive.org/BookReader/BookReaderImages.php?zip=%2F9%2Fitems%2FBRC-Tomo-02%2FBRC+02_jp2.zip&file=BRC+02_jp2%2FBRC+02_0000.jp2&id=BRC-Tomo-02&scale=2&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome II. Rome: Typographia Reverendae Camerae Apostolicae, 1837.",
+      "publication_year": 1837,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1837, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome II"
+    },
+    {
+      "body_line_ranges": [
+        [
+          4813,
+          108455
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Discovery body/index frame only; no individual act boundaries or complete-witness admission asserted",
+        "contexts": [
+          {
+            "physical_lines": [
+              4793,
+              4848
+            ],
+            "text": "\n\n20 \n\n\n129 \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfh) TT 2 vasi ue roa en \n\" NC NO MERC ECS \namen aaumirdui muepewter s e \n\n\n\n\n\nCDXX. \n\n\nDat die 14 Julit \n1704. Aun. Y1. \n\n\n8 vt \n\n\n. Gorlinlem Migsciium Archiepiscopum \n\n\n; P ' : ; i Viennepnsem. obsecrat; ut.e sua Diccesi. \n\n\n.. exterminare curet-- librum. Justini: JFe- \n\n\ns (7-2 fug Romani. Pontificis potes \nQuoad proscriptionem Libri sib. nomi-^ \nne - Justini. Fébronii. . alias -dedimtis \n\nLiteras: perscriptas Episcopo: Herbipo- \n\n\n.lensi, €t. Moguntino. zirchiepiscópo': j. \nqua .cOnsulenda .ad' opportunitatem. "
+          },
+          {
+            "physical_lines": [
+              108420,
+              108475
+            ],
+            "text": "stolici auditores judicari , et defiuiri de- \nbere, ac irritum ,et inane , si secus si- \nper his a quocumque quavis auctoritate \nscienter , veliguoranter contigerit atten- \ntart. : \n$. 4» Non obstantibus constitutioni- Nihil ia. con- \nbus; et ordiuationibus apostolicis ; ae ross qoos \nquatenus opus sit, ordinis , congregatio- twr, derogatis \nnis , et monasteriorum hujusmodi etian: \"125 suem \njuramento , confirmatione apostolica , bus, et cansti- \n\"vel quavis firmitate alia roboratis , sta- \"dps P \ntutis , et consuetudinibus ; privilegiis \nquoque indultis , et literis apostolicis su- . \nperioribus , et personis sub quibuscum- \nque tenoribus, et formis , ac cum qui- \nbusvis etiam derogatoriarum derogato- \nris , alüsque efficacioribus efficacissi- \nmis , ae insolitie clausulis, irritantibus- \nque, et aliis decretis in genere, vel in \nspecie , ac aliis in contrarium quomo- \ndolibet concessis, approbatis, et inno- \nvatis. Quibus omuibus , et singulis illo- \nrum tenore presentibus pro plene, et \nsufficienter expressis, ac de verbo ad \nverbum insertis habentes , illis alias in \nsuo robore permansuris ad premissorum \neffectum, hac vice dumtaxat specialiter , \net expresse derogamus , cseterisque con- \ntrarlis quibuscumque. Datum Rome \napud sanctam Mariam majorem sub an- \nnulo piscatoris die xxvii. Januarii mille- \naimo septingenteslmo sexagesimo nono , \npontificatus nostri anno undecimo. \n\n\nLi \n\n\nFINIS TOMI TERTII \n\n\n\n\n\n\n\n\nINDEX MATERIARUM | \n\n\nQUAE \n\n\nIN HOC'PERTIO VOLUMINE \n\n"
+          }
+        ],
+        "notes": [
+          "Raw source includes marginal notes, running heads, inserted documents and sometimes severe OCR column order defects.",
+          "The generous discovery frame retains displaced source notes near the outer boundaries; each act requires separate attribution and full boundary review.",
+          "Unparsed act dates remain null; no date-word eligibility test or title-only canonical join."
+        ],
+        "source_sha256": "d3ebdc3bb0fcd0d9578b80bc89d23718ef5358379f9e08c0acdb36c5954791d4"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-03.1838-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-03",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [],
+      "heading_patterns": [
+        "(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-03.1838-rome-mul.imprint-557fbbc0f231",
+          "byte_size": 258352,
+          "filename": "BRC-Tomo-03-leaf0000.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "557fbbc0f23138c0bb90fc955a561fc6d2a92f3d453eab53a60d1950110d3add",
+          "source_url": "https://ia600807.us.archive.org/BookReader/BookReaderImages.php?zip=%2F20%2Fitems%2FBRC-Tomo-03%2FBRC+03_jp2.zip&file=BRC+03_jp2%2FBRC+03_0000.jp2&id=BRC-Tomo-03&scale=2&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-03.1838-rome-mul.labels-a86fc42042dd",
+          "byte_size": 119223,
+          "filename": "BRC 03_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "dc48487113bef3d6780d0a41f05a2295f6bad3f6",
+          "sha256": "a86fc42042dd50ebfdb0c045b4f2d8e5951a3b7eedbd58bfa563fc205b720f19",
+          "source_url": "https://archive.org/download/BRC-Tomo-03/BRC%2003_page_numbers.json"
+        },
+        "layout-evidence": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-03.1838-rome-mul.layout-evidence-55a90d089af5",
+          "byte_size": 1443425,
+          "filename": "continuatio-03-leaf-0022.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Bounded title, act-number and source-layout evidence; not a full-text collation.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "55a90d089af51297945b8d4d580c218ff8078c1ee1db36e98b2b1afe8fafd72a",
+          "source_url": "https://ia600807.us.archive.org/BookReader/BookReaderImages.php?zip=%2F20%2Fitems%2FBRC-Tomo-03%2FBRC+03_jp2.zip&file=BRC+03_jp2%2FBRC+03_0022.jp2&id=BRC-Tomo-03&scale=1&rotate=0"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-03.1838-rome-mul.ocr-d3ebdc3bb0fc",
+          "byte_size": 2915488,
+          "filename": "BRC 03_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "97e46948ce4787e466fe00fe92e5b78aec2c8924",
+          "sha256": "d3ebdc3bb0fcd0d9578b80bc89d23718ef5358379f9e08c0acdb36c5954791d4",
+          "source_url": "https://archive.org/download/BRC-Tomo-03/BRC%2003_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-03.1838-rome-mul.scandata-107317ccc63c",
+          "byte_size": 218748,
+          "filename": "BRC 03_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "5fa040b2e9c969959503fc092fbda7a33e96d51a",
+          "sha256": "107317ccc63c5f7fbe38bbf3404e0ff26aa51184bab2c67e2fc894a9b1f4e266",
+          "source_url": "https://archive.org/download/BRC-Tomo-03/BRC%2003_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-03.1838-rome-mul.xml-1b9f27141ada",
+          "byte_size": 37040796,
+          "filename": "BRC 03_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "d02b2ae9f0bbd186a753cbeed4f6b76cbc652e5e",
+          "sha256": "1b9f27141adabb1f2d47f70076d98ed75582e8414830a3929ed1dfce05043ef2",
+          "source_url": "https://archive.org/download/BRC-Tomo-03/BRC%2003_djvu.xml"
+        }
+      },
+      "key": "volume-03",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1838",
+      "metadata_title_raw": "Bullarii Romani continuatio TOMO 03",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 557fbbc0f23138c0bb90fc955a561fc6d2a92f3d453eab53a60d1950110d3add; source https://ia600807.us.archive.org/BookReader/BookReaderImages.php?zip=%2F20%2Fitems%2FBRC-Tomo-03%2FBRC+03_jp2.zip&file=BRC+03_jp2%2FBRC+03_0000.jp2&id=BRC-Tomo-03&scale=2&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome III. Rome: Typographia Reverendae Camerae Apostolicae, 1838.",
+      "publication_year": 1838,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1838, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome III"
+    },
+    {
+      "body_line_ranges": [
+        [
+          4961,
+          148238
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Discovery body/index frame only; no individual act boundaries or complete-witness admission asserted",
+        "contexts": [
+          {
+            "physical_lines": [
+              4941,
+              4996
+            ],
+            "text": "\n\nU i E \n\n\nUniversis orbis ccclesiis . . » 60b \n\n\n\n\n\n. \n\n\n\n\n\n\n\n\nCLEMENS XIV. \n\n\nANNO PRIMO \n\n\n\n\n\n\n\n\nL \nDat. die 4. : : s dcs \nleni 176g. Dealificatio Servi Dei Francisci Carac- \nÀÁuno I. \n\n\nciolo Fundatoris Congregationis Cle- \nricorum Regularium  Minimorum , \nejusque Missze, et Officii cerlis ia \nlocis concessio. \n\n\nClemens PP. XIV. \n\n\nÁd perpetuam rei memoriam \n\n\nAd supremum \n\n\nji M MEC Áa supremum Apostolatus \nministeiom Tülnisterium , quod divinz sapientiz \nhi Fewratque bonitatis altitudo. nobis, nullo li- "
+          },
+          {
+            "physical_lines": [
+              148203,
+              148258
+            ],
+            "text": "que serie derogamus , aliisque contra- \nriis quibuseumque. \n$. 9 Volumus autem quod earum- \nem praesentium transumptis etiam \nimpressis, manu alicujus notarii pu- \nblici subscriptis , et sigillo persons ir \n\n\n797 \n\n\necclesiastica dignitate constitntze muni- \ntis , eadem prorsus fides in judicio , \net extra illud adhibeatur , qua ipsis \nprasentibus haberetur, si forent exhi. \nbite , vel ostense . Nulli erzo omnino \nhominum líceat , hanc paginam No- \nstrarum erectionis, institutionis , addi- \ntionis, aggregationis, pracepti , man- \ndati, oneris , injunctionis, suppressio- \nnis, extinctionis , applicationis, unigo- \nnis , annexionis , Incorporationis , Com- \nmissionis , decreti , derogationis , et \nvoluntatis infringere , vel ei ausu tc- \nmerario Contraire ; si. quis autem hoc \nattentare presumpserit indignationem \nomnipotentis Dei, ac beatorum Petri, \net Pauli apostolorum ejus se noverit \nincursurui., \n\nDatum Romz apnd sanctam Mariam \nMajorem auno incarnationis Dominicze \nmillesimo septingentesimo. septuagesi- \nmo quarto decimo kalendas septembris \n\n| pontificatus INNostii anno sexto, \n\n\nFINIS TOW! QUARTI \n\n\nBull Hom. Tom. IF. \n\n\nDdddds»s \n\n\nE. \n3 \n3 \nj \n\n\n\n\n"
+          }
+        ],
+        "notes": [
+          "Raw source includes marginal notes, running heads, inserted documents and sometimes severe OCR column order defects.",
+          "The generous discovery frame retains displaced source notes near the outer boundaries; each act requires separate attribution and full boundary review.",
+          "Unparsed act dates remain null; no date-word eligibility test or title-only canonical join."
+        ],
+        "source_sha256": "f9106a2db612810c008ecf0e8540917877be37dafb26275cc88aefb9da3bac48"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-04.1841-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-04",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [
+        {
+          "act_number_raw": "L.",
+          "image_evidence": {
+            "artifact_id": "artifact.bullarium-continuatio.volume-04.1841-rome-mul.layout-evidence-60d36bb12b98",
+            "image_sha256": "60d36bb12b98f55adc07f582cc1bbccc2e6f369afd5841dad09e7ecd3d59bc93",
+            "leaf": 27,
+            "limitation": "The raw OCR numeral is retained; printed-number interpretation is separately witnessed.",
+            "printed_first_act_number": "I",
+            "raw_first_heading": "L.",
+            "raw_first_heading_line": 4973,
+            "source_url": "https://ia903103.us.archive.org/BookReader/BookReaderImages.php?zip=%2F33%2Fitems%2FBRC-Tomo-04%2FBRC+04_jp2.zip&file=BRC+04_jp2%2FBRC+04_0027.jp2&id=BRC-Tomo-04&scale=1&rotate=0",
+            "volume": 4
+          },
+          "line": 4973,
+          "literal_heading_line": "L ",
+          "observed_printed_number": "I",
+          "reason": "Raw OCR L. is preserved literally; the whole offered leaf27 image separately shows printed numeral I. Treat the numerical interpretation as reviewed metadata, not a source-text replacement.",
+          "selection_start": 4973
+        }
+      ],
+      "heading_patterns": [
+        "(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-04.1841-rome-mul.imprint-f79fce6a469a",
+          "byte_size": 181434,
+          "filename": "BRC-Tomo-04-leaf0000.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "f79fce6a469a306bcae13d7bff22a5950e035d588a80bd5bc724bccd1451093e",
+          "source_url": "https://ia903103.us.archive.org/BookReader/BookReaderImages.php?zip=%2F33%2Fitems%2FBRC-Tomo-04%2FBRC+04_jp2.zip&file=BRC+04_jp2%2FBRC+04_0000.jp2&id=BRC-Tomo-04&scale=2&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-04.1841-rome-mul.labels-9a348e978f0b",
+          "byte_size": 142786,
+          "filename": "BRC 04_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "970d97073173302e9dbc53afe7d8127d4d27df7b",
+          "sha256": "9a348e978f0b0147eef9c1ba453770cf4a0f061b281486f4c62258eaa21ec150",
+          "source_url": "https://archive.org/download/BRC-Tomo-04/BRC%2004_page_numbers.json"
+        },
+        "layout-evidence": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-04.1841-rome-mul.layout-evidence-60d36bb12b98",
+          "byte_size": 990120,
+          "filename": "continuatio-04-leaf-0027.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Bounded title, act-number and source-layout evidence; not a full-text collation.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "60d36bb12b98f55adc07f582cc1bbccc2e6f369afd5841dad09e7ecd3d59bc93",
+          "source_url": "https://ia903103.us.archive.org/BookReader/BookReaderImages.php?zip=%2F33%2Fitems%2FBRC-Tomo-04%2FBRC+04_jp2.zip&file=BRC+04_jp2%2FBRC+04_0027.jp2&id=BRC-Tomo-04&scale=1&rotate=0"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-04.1841-rome-mul.ocr-f9106a2db612",
+          "byte_size": 4118087,
+          "filename": "BRC 04_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "7b650ae11d5b429ded7c18de17ebf9acdd350e5b",
+          "sha256": "f9106a2db612810c008ecf0e8540917877be37dafb26275cc88aefb9da3bac48",
+          "source_url": "https://archive.org/download/BRC-Tomo-04/BRC%2004_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-04.1841-rome-mul.scandata-9cc87953177c",
+          "byte_size": 296638,
+          "filename": "BRC 04_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "73fc006bb19702dd254fb7da36ddceb680d81a1a",
+          "sha256": "9cc87953177ce81603f5e8ffb5c93c867692c57396ed2b363260b00f550aabb9",
+          "source_url": "https://archive.org/download/BRC-Tomo-04/BRC%2004_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-04.1841-rome-mul.xml-158dc1e89165",
+          "byte_size": 50062723,
+          "filename": "BRC 04_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "8c7ed881294298f8f3eaffe6f2f28f9c97bb7d3b",
+          "sha256": "158dc1e891652cdc21ce819d650fe17c512456a85e85798a8b17f412c4327371",
+          "source_url": "https://archive.org/download/BRC-Tomo-04/BRC%2004_djvu.xml"
+        }
+      },
+      "key": "volume-04",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1841",
+      "metadata_title_raw": "Bullarii Romani continuatio TOMO 04",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 f79fce6a469a306bcae13d7bff22a5950e035d588a80bd5bc724bccd1451093e; source https://ia903103.us.archive.org/BookReader/BookReaderImages.php?zip=%2F33%2Fitems%2FBRC-Tomo-04%2FBRC+04_jp2.zip&file=BRC+04_jp2%2FBRC+04_0000.jp2&id=BRC-Tomo-04&scale=2&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome IV. Rome: Typographia Reverendae Camerae Apostolicae, 1841.",
+      "publication_year": 1841,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1841, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome IV"
+    },
+    {
+      "body_line_ranges": [
+        [
+          2571,
+          94920
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Discovery body/index frame only; no individual act boundaries or complete-witness admission asserted",
+        "contexts": [
+          {
+            "physical_lines": [
+              2551,
+              2606
+            ],
+            "text": "\n\n| Ut dilecü fü fratres & x* \n\n\nV \n\n\nFetus, atque eximium. « —» \n\n\n1g1 \n\n\n186 \n\n\n\n\n\nAME \n\n\nDat. die \n985 februarii \n1725. \nAnno I. \n\n\nProemium, \n\n\n\n\n\n11 \n\n\n\n\n\n' consilii et. fortitudinis abunde . \n\n\nL. \n\n\nPonitentiariis in basilicis , et ecclesiis \nurbis deputatis , etin anno sancto de- \nputandis ,. confessariis a cardinali ur- \nbis. vicario.designandis , facultates eo- \ndem.anno exercendae conceduntur. \n\n\nPius Episcopus \n:Seryus servorum Dei "
+          },
+          {
+            "physical_lines": [
+              94885,
+              94940
+            ],
+            "text": "dolibet debitis penitentiis in forma Ec- \nclesi: consueta relaxamus. \n\n$. 2. In contrarium facientibus nou \nobstantibus quibuscumque. Praesentibus \nperpetuis futnris temporibus valituris. \nVolumnus autem ut presentium lite- \nrarum transumptis seu exemplis etiam \nimpressis manu alicujus notarii publi- \nci subscriptis, et sigillo personz in ec- \nclesiastica dignitate constituize , vel pro- \ncuratoris generalis dicti ordinis piunitis \neadem prorsus fides habeatur, qux ha- \nberetur ipsis pr:esentibus, si forent exhi- \nbitz vel ostensz. Datum Romse apud \nsanctum Petrum sub annulo piscatoris \ndie x januarii MDCCLX XVIII pontifi- \ncatus Nostri anno tertio. \n\n\nFINIS TOMI QUINTI \n\n\nDrit. die \n1o januarii \n\n1728. \nAnno ll. \n\n\nTenor Qumceo* \ngionis. \n\n\nDerognatio cno- \nirartgrum. \n\n\n3 \ni \ni \ni \n$í \ni \ni \nE] \n3 \nà \nT \n* \nE \n1 \n] \n\n\n"
+          }
+        ],
+        "notes": [
+          "Raw source includes marginal notes, running heads, inserted documents and sometimes severe OCR column order defects.",
+          "The generous discovery frame retains displaced source notes near the outer boundaries; each act requires separate attribution and full boundary review.",
+          "Unparsed act dates remain null; no date-word eligibility test or title-only canonical join.",
+          "Marginal notes at LF94908–94920 follow FINIS at94905 and remain inside this discovery frame; do not stop the last act at the preceding dating clause without note disposition."
+        ],
+        "source_sha256": "9dc1a5cf5cc754984a2c973b65ea49654a7be9a0bf634b847763df64889bc846"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-05.1842-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-05",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [
+        {
+          "act_number_raw": "L.",
+          "image_evidence": {
+            "artifact_id": "artifact.bullarium-continuatio.volume-05.1842-rome-mul.layout-evidence-99bdba44fa91",
+            "image_sha256": "99bdba44fa9192d8329892422f0b7b9b70fa5dffeafd56ce178ca5f66e9f881c",
+            "leaf": 16,
+            "limitation": "The raw OCR numeral is retained; printed-number interpretation is separately witnessed.",
+            "printed_first_act_number": "I",
+            "raw_first_heading": "L.",
+            "raw_first_heading_line": 2595,
+            "source_url": "https://ia903208.us.archive.org/BookReader/BookReaderImages.php?zip=%2F35%2Fitems%2FBRC-Tomo-05%2FBRC+05_jp2.zip&file=BRC+05_jp2%2FBRC+05_0016.jp2&id=BRC-Tomo-05&scale=1&rotate=0",
+            "volume": 5
+          },
+          "line": 2595,
+          "literal_heading_line": "L. ",
+          "observed_printed_number": "I",
+          "reason": "Raw OCR L. is preserved; whole offered leaf16 shows printed I. The act-specific marginal date precedes the numeral, beginning2574, and must remain in boundary review.",
+          "selection_start": 2574
+        }
+      ],
+      "heading_patterns": [
+        "(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-05.1842-rome-mul.imprint-a4f718c11476",
+          "byte_size": 184659,
+          "filename": "BRC-Tomo-05-leaf0000.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "a4f718c11476df9acf6b77056e4d15adb354fc546f13bd2c1015405f2971a99d",
+          "source_url": "https://ia903208.us.archive.org/BookReader/BookReaderImages.php?zip=%2F35%2Fitems%2FBRC-Tomo-05%2FBRC+05_jp2.zip&file=BRC+05_jp2%2FBRC+05_0000.jp2&id=BRC-Tomo-05&scale=2&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-05.1842-rome-mul.labels-0f9eb1ed8129",
+          "byte_size": 96735,
+          "filename": "BRC 05_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "b6ef9a8b6120bf3584146d31d8ed87c2aeddde11",
+          "sha256": "0f9eb1ed8129cb2e2b7d3dc9583196396392d42694fb30a841feb81c4c9c737b",
+          "source_url": "https://archive.org/download/BRC-Tomo-05/BRC%2005_page_numbers.json"
+        },
+        "layout-evidence": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-05.1842-rome-mul.layout-evidence-99bdba44fa91",
+          "byte_size": 1072583,
+          "filename": "continuatio-05-leaf-0016.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Bounded title, act-number and source-layout evidence; not a full-text collation.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "99bdba44fa9192d8329892422f0b7b9b70fa5dffeafd56ce178ca5f66e9f881c",
+          "source_url": "https://ia903208.us.archive.org/BookReader/BookReaderImages.php?zip=%2F35%2Fitems%2FBRC-Tomo-05%2FBRC+05_jp2.zip&file=BRC+05_jp2%2FBRC+05_0016.jp2&id=BRC-Tomo-05&scale=1&rotate=0"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-05.1842-rome-mul.ocr-9dc1a5cf5cc7",
+          "byte_size": 2486875,
+          "filename": "BRC 05_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "0bbf6f83570c3b054be3d6c63b9ed24d0300e7c4",
+          "sha256": "9dc1a5cf5cc754984a2c973b65ea49654a7be9a0bf634b847763df64889bc846",
+          "source_url": "https://archive.org/download/BRC-Tomo-05/BRC%2005_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-05.1842-rome-mul.scandata-4de286e2547f",
+          "byte_size": 179672,
+          "filename": "BRC 05_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "96d9d7017f2b7c62c4f04be4b7b13fb9be9a1bdb",
+          "sha256": "4de286e2547f37134d864d86065df161cdcae670355fb2e656f214fb32c5d2d8",
+          "source_url": "https://archive.org/download/BRC-Tomo-05/BRC%2005_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-05.1842-rome-mul.xml-7f39ecc41697",
+          "byte_size": 30041923,
+          "filename": "BRC 05_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "4bba46ea1624cb389a21e68b64dc76ac26f8d05e",
+          "sha256": "7f39ecc4169760ca4f1cd4f5d9d74152929fa1c68767a913b9a1542ab3a4a2b3",
+          "source_url": "https://archive.org/download/BRC-Tomo-05/BRC%2005_djvu.xml"
+        }
+      },
+      "key": "volume-05",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1842",
+      "metadata_title_raw": "Bullarii Romani continuatio TOMO 03",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 a4f718c11476df9acf6b77056e4d15adb354fc546f13bd2c1015405f2971a99d; source https://ia903208.us.archive.org/BookReader/BookReaderImages.php?zip=%2F35%2Fitems%2FBRC-Tomo-05%2FBRC+05_jp2.zip&file=BRC+05_jp2%2FBRC+05_0000.jp2&id=BRC-Tomo-05&scale=2&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome V. Rome: Typographia Reverendae Camerae Apostolicae, 1842.",
+      "publication_year": 1842,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1842, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome V"
+    },
+    {
+      "body_line_ranges": [
+        [
+          3771,
+          109462
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Discovery body/index frame only; no individual act boundaries or complete-witness admission asserted",
+        "contexts": [
+          {
+            "physical_lines": [
+              3751,
+              3806
+            ],
+            "text": "\nVineam Domini Sabaoth. \n\n\n129 \n306 \n332 \n579 \n599 \n\n\n207 \n\n\n\n\n\n\n\n\nDat die \nP i. martii \n: 1778. \n\nAnno IV. \n\n\nSoUáblEmony uns ur \n\n\n\n\n\nProamium \n\n\n\n\n\nSlatus patrtar- \n\n\n«ralis ecciesize \n\n\net elceltanis 1e- \n\n\nMor, \n\n\n\n\n\nIUS \n"
+          },
+          {
+            "physical_lines": [
+              109427,
+              109482
+            ],
+            "text": "\n\n6o9 Bullariüm Romanum \n\n\nformis, ac cum quibusvis etiam dero- \ngatoriarum derogatoriis , aliisque effica- \ncioribus , efficacissimis , ac insolitis \nclausulis , irritantibusque , et aliis de- \nerelis in genere , vel in specie, ac aliis \nin contrarium quomodolibet concessis , \napprobatis , et iunoyatis. Quibus. omni- \n\n\nbus, et singalis illorum tenores pre-- \n\n\nsentibus pro plene , et sufficienter ex- \npressis , ac de verbo ad verbum: insertis \nhabeutes, illis alias in suo robore per- \n\n\nmansuris ad premissorum effectum hac \n\n\nvice dumtaxat specialiter , et expresse \n\n\nderogamus , czterisque contrariis qui- \nbuscumque. Gzeterum per przsentes non \nintendimus dictum juspatronatus in ali- \nquo approbare. Datum Home apnd san- \nctum Petrum sub annulo piscatoris die \ndecima octava febrnarii millesimo se- \nplingentesimo octuagesimo tertio , pon- \ntificatus Nostri anno octavo. \n\n\n\n\n\n— — — n a C LA OIM EIER TR CN ERE Z5: E ME ONIS TE S2 AC \n\n\n\n\n\n\n\n\nic \nP. \n|: \n\n\n"
+          }
+        ],
+        "notes": [
+          "Raw source includes marginal notes, running heads, inserted documents and sometimes severe OCR column order defects.",
+          "The generous discovery frame retains displaced source notes near the outer boundaries; each act requires separate attribution and full boundary review.",
+          "Unparsed act dates remain null; no date-word eligibility test or title-only canonical join."
+        ],
+        "source_sha256": "a91a386cae2d2d37f287d305a9a487db4ea0e77574d6e14bdb38bd484c12e143"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-06.1843-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-06",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [],
+      "heading_patterns": [
+        "(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-06.1843-rome-mul.imprint-07330bdaa1b6",
+          "byte_size": 211870,
+          "filename": "BRC-Tomo-06-leaf0000.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "07330bdaa1b6f024a306b88bdd2fc06351ad832ec19b410c771ced103910ce7c",
+          "source_url": "https://ia903103.us.archive.org/BookReader/BookReaderImages.php?zip=%2F3%2Fitems%2FBRC-Tomo-06%2FBRC+06_jp2.zip&file=BRC+06_jp2%2FBRC+06_0000.jp2&id=BRC-Tomo-06&scale=2&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-06.1843-rome-mul.labels-36c97e05a2b4",
+          "byte_size": 125150,
+          "filename": "BRC 06_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "666f313a0725a3e8a00f7f9e4ca3e1c956b64c5a",
+          "sha256": "36c97e05a2b4b218e76768caeac245c4844407ad33a877058d5fa65b0e2c6e7f",
+          "source_url": "https://archive.org/download/BRC-Tomo-06/BRC%2006_page_numbers.json"
+        },
+        "native-audience-jp2-leaf-0208": {
+          "byte_size": 1052661,
+          "filename": "native-audience-leaf0208.jp2",
+          "media_type": "image/jp2",
+          "purpose": "Complete native leaf0208, artifact page209/printed186, retaining the printed Ex audientia formula at source LF36441; source OCR remains Ex audieotia SSini unchanged.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "fc3d1d131e435620b4ad7cd155ced37d1a55031c6d6e988563fd9177298f2eb0",
+          "source_url": "https://archive.org/download/BRC-Tomo-06/BRC%2006_jp2.zip/BRC%2006_jp2%2FBRC%2006_0208.jp2"
+        },
+        "native-audience-leaf-0208": {
+          "byte_size": 1340762,
+          "filename": "native-audience-leaf0208.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Complete native leaf0208, artifact page209/printed186, retaining the printed Ex audientia formula at source LF36441; source OCR remains Ex audieotia SSini unchanged.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "54bcb78a4f914360ba4986b547755acea09202cf2270234338d09a404c936dc1",
+          "source_url": "https://ia903103.us.archive.org/BookReader/BookReaderImages.php?zip=%2F3%2Fitems%2FBRC-Tomo-06%2FBRC+06_jp2.zip&file=BRC+06_jp2%2FBRC+06_0208.jp2&id=BRC-Tomo-06&scale=1&rotate=0"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-06.1843-rome-mul.ocr-a91a386cae2d",
+          "byte_size": 3071237,
+          "filename": "BRC 06_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "b802907c173f72baa81328f5b136f7707f8d0788",
+          "sha256": "a91a386cae2d2d37f287d305a9a487db4ea0e77574d6e14bdb38bd484c12e143",
+          "source_url": "https://archive.org/download/BRC-Tomo-06/BRC%2006_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-06.1843-rome-mul.scandata-5054b50cdcaf",
+          "byte_size": 239619,
+          "filename": "BRC 06_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "f835da9c04015e115bffbee715488fb2f9d9a1ab",
+          "sha256": "5054b50cdcaf67c7790256d2fe24914910f70739bfe682ce0943404179c82c21",
+          "source_url": "https://archive.org/download/BRC-Tomo-06/BRC%2006_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-06.1843-rome-mul.xml-a84f47b3c54b",
+          "byte_size": 37474047,
+          "filename": "BRC 06_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "b8d0d42aa40a06e62e386ef779b07b36daf8a4a6",
+          "sha256": "a84f47b3c54bc2683458329054b096ec50d37c1a8c429850f36622a0c9d3a8f5",
+          "source_url": "https://archive.org/download/BRC-Tomo-06/BRC%2006_djvu.xml"
+        }
+      },
+      "key": "volume-06",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1842",
+      "metadata_title_raw": "Bullarii Romani continuatio TOMO 06",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 07330bdaa1b6f024a306b88bdd2fc06351ad832ec19b410c771ced103910ce7c; source https://ia903103.us.archive.org/BookReader/BookReaderImages.php?zip=%2F3%2Fitems%2FBRC-Tomo-06%2FBRC+06_jp2.zip&file=BRC+06_jp2%2FBRC+06_0000.jp2&id=BRC-Tomo-06&scale=2&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome VI. Rome: Typographia Reverendae Camerae Apostolicae, 1843.",
+      "publication_year": 1843,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1843, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome VI"
+    },
+    {
+      "body_line_ranges": [
+        [
+          3144,
+          139908
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Discovery body/index frame only; no individual act boundaries or complete-witness admission asserted",
+        "contexts": [
+          {
+            "physical_lines": [
+              3124,
+              3179
+            ],
+            "text": "284 \n322 \n425 \n\n\n485 \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDat. Rom CDX X. \n17 martii \nNn Confirmantür regule , et constitutiones \nfratrum ordinis Beate Marie de Mon- \nte Carmelo. excalceatorum nuncupato- \nrum congregationis Portugallis. \nPius PP. VI. \nAd perpetaam rei memoriam \nProemium $- 1. I. supremo: militantis Eccle- \n\n\nsie solio per ineffabilem divine boni- \ntatis abundantiam nullo licet merito- \nrum Nostrorum sufftagio. constituti, ea; \nque pro salubri eorum , qui Altissimi \nobsequiis sub. suavi religionis jugo man- \n\"ipati sunt directione , ac felici guber- \nnio provide, prudenterque constitnta \nsunt, ut firma semper atque inviolata \npersistant apostolici munimiais. Nostri \npresidio, cum id a Nobis petitur li- \nhenter roboramus. \n\n\nSposi e: $. 2. Exponi siquidem Nobis nuper \ncwm porecta- fecerunt dilecti filii prior: generalis ; ac \nTE w pun e iuc Ap Tnt \ngenerali ordinis AC at res. ordinis. Beate Mariz. Virginis de \noie Monte Carmelo excalceatorum nuncupa- , \n? ' Condita . . . j Hd \nfnise 2 capi- '0Orum Congregationis Lusitanze, quod. nu- | \ntulo generali 1 1 itult z \nm wcehas per in vim facultatum,quas capitulo gene \nfacultatis imr- \npertitz a. Cle- \n"
+          },
+          {
+            "physical_lines": [
+              139873,
+              139928
+            ],
+            "text": "etiam derogatoriarum derogatoriis, aliis- \n\n\n' que efficacioribns ;: efficacissiniis, ac in- \n\n\nsolitis clausulis, irritantibusque , €t aliis \n\n\n| decretis in. genere ; vel in. specie, ac \n\n\naliis 1à contrarium, quomodolibet .con- \ncessis, approbatis, et innovatis. Quibus \nomnibus , et singulis illorum. tenores \npresentibus pro plene , et sufficienter \n\n\n;expressis, ac insertis\" habentes, illis alias \nin sno robore permansuris, ad praemis- \nsorum effectum hac. vice dumtaxat spe- \n\n\ncialiter, et expresse derogamus, czeteris- \nque Contrariis quibuscumque. Datum \nnulo piscatoris die decimatertia febrna- \nrii miilesimo septingentesimo octuage- \nsimo septimo ».:pontificatus Nostri aano \ndecimo secundo. \n\n\nQqqqgqe \n\n\nDerogatio con» \ntrariorüm. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n[e 2 u m. \n\n\nXN 6 SEPTIMO VOLUMINE \n\n"
+          }
+        ],
+        "notes": [
+          "Raw source includes marginal notes, running heads, inserted documents and sometimes severe OCR column order defects.",
+          "The generous discovery frame retains displaced source notes near the outer boundaries; each act requires separate attribution and full boundary review.",
+          "Unparsed act dates remain null; no date-word eligibility test or title-only canonical join."
+        ],
+        "source_sha256": "32c53169d3bac08e96c12352eddc76629fe7373093d6f4b6c595d1b5322012b8"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-07.1845-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-07",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [
+        {
+          "act_number_raw": "CDX X.",
+          "image_evidence": {
+            "artifact_id": "artifact.bullarium-continuatio.volume-07.1845-rome-mul.layout-evidence-bfc1ca59922f",
+            "image_sha256": "bfc1ca59922fb3630ce291bab3f11a9b90f50c63cd0adce907a8cfccecf947e3",
+            "leaf": 17,
+            "limitation": "Printed numeral and marginal date occupy separate page positions but share one raw OCR line.",
+            "printed_first_act_number": "CDXX",
+            "raw_first_heading_line": 3144,
+            "source_url": "https://ia600904.us.archive.org/BookReader/BookReaderImages.php?zip=%2F14%2Fitems%2FBRC-Tomo-07%2FBRC+07_jp2.zip&file=BRC+07_jp2%2FBRC+07_0017.jp2&id=BRC-Tomo-07&scale=1&rotate=0",
+            "volume": 7
+          },
+          "line": 3144,
+          "literal_heading_line": "Dat. Rom CDX X. ",
+          "observed_printed_number": "CDXX",
+          "reason": "The printed CDXX marker is separately positioned in whole offered leaf17, but OCR embeds it within the same line as the marginal dating lead. Full raw line3144 remains literal.",
+          "selection_start": 3144
+        }
+      ],
+      "heading_patterns": [
+        "(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-07.1845-rome-mul.imprint-002c98ebc47f",
+          "byte_size": 152695,
+          "filename": "BRC-Tomo-07-leaf0000.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "002c98ebc47f2f032326285c18a64d6bc1ee12881c8181d7968a49fcd4bb5a71",
+          "source_url": "https://ia600904.us.archive.org/BookReader/BookReaderImages.php?zip=%2F14%2Fitems%2FBRC-Tomo-07%2FBRC+07_jp2.zip&file=BRC+07_jp2%2FBRC+07_0000.jp2&id=BRC-Tomo-07&scale=2&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-07.1845-rome-mul.labels-9eb73903ffd9",
+          "byte_size": 141895,
+          "filename": "BRC 07_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "65d3b1c2dbc0b975ec62a1c8672520a47bbb1da1",
+          "sha256": "9eb73903ffd924aecb86cc584554191991868b3001e1d3d321de33c9b537f8af",
+          "source_url": "https://archive.org/download/BRC-Tomo-07/BRC%2007_page_numbers.json"
+        },
+        "layout-evidence": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-07.1845-rome-mul.layout-evidence-bfc1ca59922f",
+          "byte_size": 879901,
+          "filename": "continuatio-07-leaf-0017.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Bounded title, act-number and source-layout evidence; not a full-text collation.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "bfc1ca59922fb3630ce291bab3f11a9b90f50c63cd0adce907a8cfccecf947e3",
+          "source_url": "https://ia600904.us.archive.org/BookReader/BookReaderImages.php?zip=%2F14%2Fitems%2FBRC-Tomo-07%2FBRC+07_jp2.zip&file=BRC+07_jp2%2FBRC+07_0017.jp2&id=BRC-Tomo-07&scale=1&rotate=0"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-07.1845-rome-mul.ocr-32c53169d3ba",
+          "byte_size": 3532548,
+          "filename": "BRC 07_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "940151fe76987e9e13bf9d8396526ae0a0504cfe",
+          "sha256": "32c53169d3bac08e96c12352eddc76629fe7373093d6f4b6c595d1b5322012b8",
+          "source_url": "https://archive.org/download/BRC-Tomo-07/BRC%2007_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-07.1845-rome-mul.scandata-1be3c6ee2c2b",
+          "byte_size": 259595,
+          "filename": "BRC 07_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "f2d1b489627def6356bca59a2de3ddb69fa62a0d",
+          "sha256": "1be3c6ee2c2b72168ebffaf9daf09e0ab7e767068509175ce59baeaa97c312f2",
+          "source_url": "https://archive.org/download/BRC-Tomo-07/BRC%2007_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-07.1845-rome-mul.xml-fcca30e839ef",
+          "byte_size": 42725003,
+          "filename": "BRC 07_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "a49596e14313fb0f2bdced2a2fe2192a46da0c6a",
+          "sha256": "fcca30e839ef3465c4146b1d151b15e66721264a492971b5008b048031c5252c",
+          "source_url": "https://archive.org/download/BRC-Tomo-07/BRC%2007_djvu.xml"
+        }
+      },
+      "key": "volume-07",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1843",
+      "metadata_title_raw": "Bullarii Romani continuatio TOMO 07",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 002c98ebc47f2f032326285c18a64d6bc1ee12881c8181d7968a49fcd4bb5a71; source https://ia600904.us.archive.org/BookReader/BookReaderImages.php?zip=%2F14%2Fitems%2FBRC-Tomo-07%2FBRC+07_jp2.zip&file=BRC+07_jp2%2FBRC+07_0000.jp2&id=BRC-Tomo-07&scale=2&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome VII. Rome: Typographia Reverendae Camerae Apostolicae, 1845.",
+      "publication_year": 1845,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1845, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome VII"
+    },
+    {
+      "body_line_ranges": [
+        [
+          3752,
+          114101
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Discovery body/index frame only; no individual act boundaries or complete-witness admission asserted",
+        "contexts": [
+          {
+            "physical_lines": [
+              3732,
+              3787
+            ],
+            "text": "\n\ne \n\n\n\n\n\n\n\n\n\" \n\n\n\n\n\nLt. \n\n\n2 \nE \no \n\nE) \nI4 \n.g \n\nE \n\nE: \n\n3 \n\nT \n\nn \n\n\n\n\n\ni \n\n\nAa \n\n\n\n\n\n\n\n\n\n"
+          },
+          {
+            "physical_lines": [
+              114066,
+              114121
+            ],
+            "text": "farsi con detta terra per tutta la città, \ne territorio di Velletri , cosicché nes» \nsuuo ardisca di dare alcuna molestia \no impedire in qualsivoglia maniera il \nlibero esescizio della privativa suddetta \nconeeduta a de*to signor Mariano Pan- \ndoli, e suoi durante il tempo sud- \ndetto di anni dieciotto , sotto le pene \n( oltre la perdita della merce lavorata, \ndegli ordegni , e stigli ) di scudi cin- \nquanta da applicarsi per una terza par- \nte alla reverenda camera , altra tecza \nparte a detto signor Mariano Pandolfi, \ne per l'altra terza parte al. tribunale , \ned esecutori, e sotto altre pene anco \ncorporali a Nostro arbitrio. \n\n$. 8. Vogliamo pertanto ; cbe il \npresente editto affisso ; e pubblicato \nche sia ne' luoghi soliti di Roma , e \ndela città di Velletri , astringa ognu- \nno di qualunque stato , grado , & con- \ndizione come sopra alla piena, e to- \ntale osservauza del medesimo come se \ngli fosse stato personalmente intimato , \nsenza che possa suffragargli alcuna scu- \nsa, o pretesto. Dato dalla Wostra s0Jita \nresidenza di Monte Citorio questo di 4. \nmarzo 179l. \n\n\nExecutio. \n\n\nSanetio poena- \nJis. \n\n\nTees \ns \n\n\n\n\n\n2UMATERIARUM- \n| : \"QUE \ndk Poco p'eEgd)o kISGITa : NE^ \nCC OHXUNÜUHOC OCPAVO VOLUMINE \nId olpAc ido doocjsusome socia ago. D \n\"OU*.. \"CONTINENTUR \nvoo€* & Qt E \nUd dns : \nii CON i | siis 61/7 , \nDOTCUIUT Do HABRA CASS \nA m s Item bona hzxreditatis Hippolytze "
+          }
+        ],
+        "notes": [
+          "Raw source includes marginal notes, running heads, inserted documents and sometimes severe OCR column order defects.",
+          "The generous discovery frame retains displaced source notes near the outer boundaries; each act requires separate attribution and full boundary review.",
+          "Unparsed act dates remain null; no date-word eligibility test or title-only canonical join."
+        ],
+        "source_sha256": "130cbe58eb4ddf21b00716d1a5556bb3996fca2a22b899e3d3a8a49310a10f20"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-08.1844-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-08",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [],
+      "heading_patterns": [
+        "(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-08.1844-rome-mul.imprint-008bc0dec1fb",
+          "byte_size": 203902,
+          "filename": "BRC-Tomo-08-leaf0000.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "008bc0dec1fb08c1fa5f788046a060b577872a9bd6b030789f8c685c0edf29ad",
+          "source_url": "https://ia600905.us.archive.org/BookReader/BookReaderImages.php?zip=%2F25%2Fitems%2FBRC-Tomo-08%2FBRC+08_jp2.zip&file=BRC+08_jp2%2FBRC+08_0000.jp2&id=BRC-Tomo-08&scale=2&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-08.1844-rome-mul.labels-5c78bcb0ee09",
+          "byte_size": 112628,
+          "filename": "BRC 08_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "59d6c467256a745587cef4463519bf5c0e1e83c5",
+          "sha256": "5c78bcb0ee0921d06308ef8a7ef91984ea58297102131fe3e17db81c884ba036",
+          "source_url": "https://archive.org/download/BRC-Tomo-08/BRC%2008_page_numbers.json"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-08.1844-rome-mul.ocr-130cbe58eb4d",
+          "byte_size": 2814730,
+          "filename": "BRC 08_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "0c5a3db12e3c287d39b9f691e4852f500911b2ec",
+          "sha256": "130cbe58eb4ddf21b00716d1a5556bb3996fca2a22b899e3d3a8a49310a10f20",
+          "source_url": "https://archive.org/download/BRC-Tomo-08/BRC%2008_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-08.1844-rome-mul.scandata-9e23d16d4c05",
+          "byte_size": 218159,
+          "filename": "BRC 08_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "eb755209ad796055caab5b52781b436d5a8c840c",
+          "sha256": "9e23d16d4c05a51652f4bfaebc3547937313a11b17461653a0ce89e7863d2531",
+          "source_url": "https://archive.org/download/BRC-Tomo-08/BRC%2008_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-08.1844-rome-mul.xml-c3b1161ed6f5",
+          "byte_size": 34742056,
+          "filename": "BRC 08_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "115122f915596eda5d6767511a440033bbd2e64c",
+          "sha256": "c3b1161ed6f5778255e2c6888a46ca2e54f98d4b1f67aafbcb2f0a519d5b5f8f",
+          "source_url": "https://archive.org/download/BRC-Tomo-08/BRC%2008_djvu.xml"
+        }
+      },
+      "key": "volume-08",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1844",
+      "metadata_title_raw": "Bullarii Romani continuatio TOMO 08",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 008bc0dec1fb08c1fa5f788046a060b577872a9bd6b030789f8c685c0edf29ad; source https://ia600905.us.archive.org/BookReader/BookReaderImages.php?zip=%2F25%2Fitems%2FBRC-Tomo-08%2FBRC+08_jp2.zip&file=BRC+08_jp2%2FBRC+08_0000.jp2&id=BRC-Tomo-08&scale=2&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome VIII. Rome: Typographia Reverendae Camerae Apostolicae, 1844.",
+      "publication_year": 1844,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1844, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome VIII"
+    },
+    {
+      "body_line_ranges": [
+        [
+          4371,
+          129653
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Discovery body/index frame only; no individual act boundaries or complete-witness admission asserted",
+        "contexts": [
+          {
+            "physical_lines": [
+              4351,
+              4406
+            ],
+            "text": "' * . Bl \nà oae - \" \nB \nA \n' ] € ^ ' \n- ' \n3 \n- . H n ' \n* - ^ \n- \"UE DS: . \ns & * \nh . \n. . \nH \n. P t \n\n\n\n\n\n\"vir \n\n\nDat. die \n35. februarii \n1761 S i te Mun : \"I \na» iVIL Confirfhatio, transactionis  initm inter \n.' Aensam- archiepiscopalem Mediola- \n' nerisemyet: communitatem nuncupa- \n. tam dé;Gorana proviücix€ de Vo- \n\n\n| o^ DCCCXXXIIL.- \n\n\n\"E , \n£d4i.e14:57 tad \n\n\nghera.. .. \n|^ Pins PP. VI. \nAd perpetuam rei memoriam \n\n\n$. or. Eicassiróm .quaárumeuni- \nque, presertim metropolitanarum com- \namodis et. utilitatibus prospecruni . esse \n\n\nProeniuin. \n\n\ncópientes , ea quz ia huoc finem .or«. \n\n\ndinata, et statuta esse noscuntut » uli "
+          },
+          {
+            "physical_lines": [
+              129618,
+              129673
+            ],
+            "text": "\n\n| \n\n\n^4 \n\n\nervaeud. videri- in. enm possint, qui \nmnartytis nomen assecutus Creditnr , di- \n.cente. sancto Augustino :» -Ecclesia pro \n» Xuartyribus non orat;sed eorum potius \n\n\n», Orationibus se rommendat, » tamen \nhzc ipsa Augustini sententia de illo \nintelligi ;. explicarique debet , qui mar- \ntyr. non . jam. ex. bumana: persuasione \n\n\ntreditus sit, sed éx apostolice , Sedis \njudicio comprobatus. \n\n\nDie igitur vobis indicenda in pon- \n\n\ntificio Nostro sacello publicas de more \n\n\nexeqnias ina vobiscum , yenerabiles \nfratres pro Ludovico XVI. christianis- \nsimo rege perageruus. \n\n\nNONI \n\n\n\n\n\nDI: \n\n\nMb M \"n 61g \n| INDEX MATERIARUM \n, (0. PRAECIPUARUM- \n\n\nQUE \n\n\n\n\n\n"
+          }
+        ],
+        "notes": [
+          "Raw source includes marginal notes, running heads, inserted documents and sometimes severe OCR column order defects.",
+          "The generous discovery frame retains displaced source notes near the outer boundaries; each act requires separate attribution and full boundary review.",
+          "Unparsed act dates remain null; no date-word eligibility test or title-only canonical join."
+        ],
+        "source_sha256": "390c6e414ee3ca3cfb80a5fe142a1a758a784c2ac63369b56657de3dac38b77b"
+      },
+      "canonical_container": {
+        "edition_id": "edition.bullarium-continuatio.volume-09.1845-rome-mul",
+        "identity_evidence": {
+          "basis": "Exact previously registered physical container and printing are unchanged; the additional French-language observation corrects metadata only, preserving source IDs and all source bytes.",
+          "source_artifact_id": "artifact.bullarium-continuatio.volume-09.1845-rome-mul.ocr-390c6e414ee3",
+          "source_sha256": "390c6e414ee3ca3cfb80a5fe142a1a758a784c2ac63369b56657de3dac38b77b"
+        },
+        "work_id": "work.bullarium-continuatio.volume-09"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-09.1845-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-09",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [],
+      "heading_patterns": [
+        "(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-09.1845-rome-mul.imprint-c5c98aa8585f",
+          "byte_size": 216472,
+          "filename": "BRC-Tomo-09-leaf0000.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "c5c98aa8585f3bc7e38543b32461b5063f5f1c2f96d97c5ea94849b8d0770769",
+          "source_url": "https://ia903206.us.archive.org/BookReader/BookReaderImages.php?zip=%2F11%2Fitems%2FBRC-Tomo-09%2FBRC+09_jp2.zip&file=BRC+09_jp2%2FBRC+09_0000.jp2&id=BRC-Tomo-09&scale=2&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-09.1845-rome-mul.labels-859bc72cb14b",
+          "byte_size": 128372,
+          "filename": "BRC 09_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "aed0bf39df78bf0c04a07f0389b11e2f4b967bcf",
+          "sha256": "859bc72cb14bc8c9582e87bfd8aa3c628d0b6ac3d1a81afa9799c61f041c39cf",
+          "source_url": "https://archive.org/download/BRC-Tomo-09/BRC%2009_page_numbers.json"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-09.1845-rome-mul.ocr-390c6e414ee3",
+          "byte_size": 3146603,
+          "filename": "BRC 09_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "4a1b7ac5a3fb2efd555d07e444a2d672141bfb78",
+          "sha256": "390c6e414ee3ca3cfb80a5fe142a1a758a784c2ac63369b56657de3dac38b77b",
+          "source_url": "https://archive.org/download/BRC-Tomo-09/BRC%2009_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-09.1845-rome-mul.scandata-4f22ad9a7980",
+          "byte_size": 234052,
+          "filename": "BRC 09_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "d5aeee6c6b7f4cc266ca7eff1520c7033d20aa5b",
+          "sha256": "4f22ad9a7980f8a55bd54affea3101a8760db8d2f4f13ef475731171f33bd57d",
+          "source_url": "https://archive.org/download/BRC-Tomo-09/BRC%2009_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-09.1845-rome-mul.xml-2648c187c4ab",
+          "byte_size": 39098227,
+          "filename": "BRC 09_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "c26eed483bac1aa3d569897e5fc16fc6f3a41b56",
+          "sha256": "2648c187c4ab679e9b147dc0fcc2fa5a0d256ca08e32570e15115bee269eba0a",
+          "source_url": "https://archive.org/download/BRC-Tomo-09/BRC%2009_djvu.xml"
+        }
+      },
+      "key": "volume-09",
+      "language": "mul",
+      "language_evidence": {
+        "basis": "Substantive French source prose and notes were directly inspected at the pinned literal LF locus; this is container language history, not a language assertion for every act.",
+        "literal_context": "jusquéain jour-cdo'saxmori: destiponti ifesis \". nins, ret: dans leurssprapres(t Inaiscns. On... \n\n\neidesvprétres: y: igüoig ülis. i ussenti pas \nconservé sla erainte de Died ,ceapi? ils: \nri'éussent: qpás recónnir de Messe. On? \ninifüolé:wun grand -nomhre::de drangois \ndé:tous: les: états.; c Censo iquel'pn* per-j \nsécutoit.:aveo: Te: moiüs; de- rigneürs:se; \nvoyoient arrachés:de. leurs: Kfoyers:jette- \nlégués: dans:des:pays etrangers:y:sans:du- \ncine. distinction: d'áge;, désexe;;. de con-: \ndition..-On-«avoit ;décreté.que : «ehacün| \npourroir la-religion qu?il: 'yondroit;prá- | \nfesser : comme :sl toutes: les: religions: \n€onduisotent. également: au. ^salnt: etev- ; ",
+        "physical_line_ranges": [
+          [
+            69802,
+            69844
+          ]
+        ],
+        "source_artifact_id": "artifact.bullarium-continuatio.volume-09.1845-rome-mul.ocr-390c6e414ee3",
+        "source_sha256": "390c6e414ee3ca3cfb80a5fe142a1a758a784c2ac63369b56657de3dac38b77b"
+      },
+      "languages": [
+        "la",
+        "it",
+        "fr"
+      ],
+      "metadata_publication_date_raw": "1845",
+      "metadata_title_raw": "Bullarii Romani continuatio TOMO 09",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 c5c98aa8585f3bc7e38543b32461b5063f5f1c2f96d97c5ea94849b8d0770769; source https://ia903206.us.archive.org/BookReader/BookReaderImages.php?zip=%2F11%2Fitems%2FBRC-Tomo-09%2FBRC+09_jp2.zip&file=BRC+09_jp2%2FBRC+09_0000.jp2&id=BRC-Tomo-09&scale=2&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome IX. Rome: Typographia Reverendae Camerae Apostolicae, 1845.",
+      "publication_year": 1845,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1845, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted. The same identified historical printing also includes French wording, covered by its same United States expired-term publication basis.",
+      "title": "Bullarii Romani continuatio — Tome IX"
+    },
+    {
+      "body_line_ranges": [
+        [
+          2332,
+          43704
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Discovery body/index frame only; no individual act boundaries or complete-witness admission asserted",
+        "contexts": [
+          {
+            "physical_lines": [
+              2312,
+              2367
+            ],
+            "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTee SPI \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTat. die \nS martii \nd \n\n\nmno XXIL \n\n\nRito conces \nSionis, \n\n\nCoucessiouis \ntemor. \n\n\nDe:ogatio eune \ntrarioruin- "
+          },
+          {
+            "physical_lines": [
+              43669,
+              43724
+            ],
+            "text": "simis ; à& insolitis clausulis , irritanti- \nbusque e aliis decretis ia genere , vel \nin specie, ac aliis in contrarium pre- \nmissorum quomodolibet concessis , ap- \nprobatis , et ináovatis; Quibus omüibusa \n\n\nClontsla. 28b- \nlata, et decpo« \n7 tun iscitaus- \n\n\nDetogatio t0n- \ntrarioram, \n\n\ntehoribns j et formis, ac cum qui- ^: \n\n\nPius PP. Sextus 231 \n\n\net singulis illorum tenores presentibus \npro plene, et suffcienter expressis , ac \nde verbo ad verbum insertis habentes, il- \nlis alias in suo robore permansuris , ad \npremissorum effectum hac vice dumta- \nxat specialiter ; et expresse derogamus, \n\n\nexterisque contrariis quibuscumque. Da- \ntum Roms apud sanctam Mariam Ma- \njorem sub annulo piscatoris die deci- \nma sexta septembris millesimo septin- \nBentesimo nonagesimo quarto, pontifi- \nCatus Nostri anno vicesimo. \n\n\nEXPLICIT TOMUS DECIMUS \n\n\n'a93 \nINDEX MATERIARUM \nPRZECIPUARUM - \nQUAE \nIN HOC PECIMO WOLnUyMINZSE \n\n\nCONTINENTUR \n\n\n: E ' . ALTARE \n\n\nConcessio altaris privilegiati pro \n: fratribus sancti Francisci Cap- "
+          }
+        ],
+        "notes": [
+          "Raw source includes marginal notes, running heads, inserted documents and sometimes severe OCR column order defects.",
+          "The generous discovery frame retains displaced source notes near the outer boundaries; each act requires separate attribution and full boundary review.",
+          "Unparsed act dates remain null; no date-word eligibility test or title-only canonical join."
+        ],
+        "source_sha256": "c4eeaf55f532629b2f4a4f8e049d116f1181533d45d48bc54905259cb3b4eac6"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-10.1845-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-10",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [],
+      "heading_patterns": [
+        "(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-10.1845-rome-mul.imprint-1caf65f7289c",
+          "byte_size": 81613,
+          "filename": "BRC-Tomo-10-leaf0000.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "1caf65f7289c90be28c77055987ca62913a312d78511f4fe6b1a65ebc96cd349",
+          "source_url": "https://ia601000.us.archive.org/BookReader/BookReaderImages.php?zip=%2F1%2Fitems%2FBRC-Tomo-10%2FBRC+10_jp2.zip&file=BRC+10_jp2%2FBRC+10_0000.jp2&id=BRC-Tomo-10&scale=2&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-10.1845-rome-mul.labels-fb7cac78e802",
+          "byte_size": 51167,
+          "filename": "BRC 10_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "7f6c50ea955de4197fcf4bf4df0ddb91ce86b295",
+          "sha256": "fb7cac78e802a2bd4952102ea4274b18791b674bb580b5dd02608f6695545321",
+          "source_url": "https://archive.org/download/BRC-Tomo-10/BRC%2010_page_numbers.json"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-10.1845-rome-mul.ocr-c4eeaf55f532",
+          "byte_size": 1105761,
+          "filename": "BRC 10_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "4e4deaa384e74b556462800b2bd129812fbe544c",
+          "sha256": "c4eeaf55f532629b2f4a4f8e049d116f1181533d45d48bc54905259cb3b4eac6",
+          "source_url": "https://archive.org/download/BRC-Tomo-10/BRC%2010_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-10.1845-rome-mul.scandata-ca4b51dbe1f7",
+          "byte_size": 95856,
+          "filename": "BRC 10_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "3104e20ef4d14456f7b615215caa11f7354f8cd7",
+          "sha256": "ca4b51dbe1f71280501b83f6afd4bb4b1efbda35d51410791ae99e9b1e0623b9",
+          "source_url": "https://archive.org/download/BRC-Tomo-10/BRC%2010_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-10.1845-rome-mul.xml-56a9004801f7",
+          "byte_size": 13274538,
+          "filename": "BRC 10_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "22c750884bac27ec98d52521d5803105801b6b35",
+          "sha256": "56a9004801f78613e8ee739b54095b20fcf83d0b3a1ba358fdd009350bb6f639",
+          "source_url": "https://archive.org/download/BRC-Tomo-10/BRC%2010_djvu.xml"
+        }
+      },
+      "key": "volume-10",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1844",
+      "metadata_title_raw": "Bullarii Romani continuatio TOMO 10",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 1caf65f7289c90be28c77055987ca62913a312d78511f4fe6b1a65ebc96cd349; source https://ia601000.us.archive.org/BookReader/BookReaderImages.php?zip=%2F1%2Fitems%2FBRC-Tomo-10%2FBRC+10_jp2.zip&file=BRC+10_jp2%2FBRC+10_0000.jp2&id=BRC-Tomo-10&scale=2&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome X. Rome: Typographia Reverendae Camerae Apostolicae, 1845.",
+      "publication_year": 1845,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1845, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome X"
+    },
+    {
+      "body_line_ranges": [
+        [
+          3170,
+          95909
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Discovery body/index frame only; no individual act boundaries or complete-witness admission asserted",
+        "contexts": [
+          {
+            "physical_lines": [
+              3150,
+              3205
+            ],
+            "text": "] . : ] s \n1 \n* T . \n' \nD u x \n. D - \" \nNEP -oh j \"M tela . . \nPT ' i . » \nD » * E \ni \" \n; H \n! ^ » * Li \" \n: n t 5 4 NM * , \n4 i j he \no : \" \n\n\n\n\n\npat. die \n\n28 martii \n1800. \n\nanno I. \n\n\nProemium \n\n\nYertarbstio- \nues pass? in \nsuscipiendo su \npremi pontif \ncatus muuETe. \n\n\nTYaudes prede \n£eSSOT1S. \n\n\n\" \n\n\nOPIUS VII. \n\"ANNO PRIMO \n- eusEude tem \n\n\n: Jf. \n\n\n' Allocutio habita. Venetiis iu monaste- \n\n"
+          },
+          {
+            "physical_lines": [
+              95874,
+              95929
+            ],
+            "text": "\n\n(tionibus , et ordinationibus apostoli- \n\n\ncis,nec non eorumdem locorum etiam \njuramento , confirmatione apostolica, \nvel quavis firmitate alia roboratts sta- \ntutis, et consuetudinibus ; privilegiis \nquoque , indultis, et literis apostolicis \nsuperioribus, et personis sub quibus- \neumque tenoribüs , et formis, ac \ncum quibusvis etiarn derogatoriarum \n\n\n* \nSeptimus A81 \ni derogatoriis , aliisque efficaciorihus , \ni efficacissimis , ac insolitis clausulis , \nirritantibusque, et aliis decretis in \n|genere , vel in specie , ac aliis in \ncoütrarium quomodolibet concessis ; \napprobatis, et inaovatis; quibus omni- \nbus et singulis illorum tenores prz- \nsentibus pro plene, et sufficienter ex- \npressis, ac de verbo ad verbum in- \nsertis habentes , illis alias in suo ro- \nbore permansuris ad premissorum ef- \nfectum, hac vice dumiaxat speciali- \nter, et expresse derogamus , coteris- \nque contrariis quibuscumque. Datum \nHomz apud sanctam Mariam Ma- \nJorem , sub annulo piscatoris die un- \ndecima martii; millesimo octingente- \nsimo tertio, pontificatus Nostr! anno \ntertio. \n\n\n\n\n\n\n\n\n\n\n\nFINIS TOMI DECIMI PhIMI \n\n\nBull. Rom. Tom. XI. F. 70. \n\n\n61 \n\n"
+          }
+        ],
+        "notes": [
+          "Raw source includes marginal notes, running heads, inserted documents and sometimes severe OCR column order defects.",
+          "The generous discovery frame retains displaced source notes near the outer boundaries; each act requires separate attribution and full boundary review.",
+          "Unparsed act dates remain null; no date-word eligibility test or title-only canonical join."
+        ],
+        "source_sha256": "60e687440bde41e366cfdb982bc6995cf8b269cbe96c593064b75c12b08b4863"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-11.1846-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-11",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [],
+      "heading_patterns": [
+        "(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-11.1846-rome-mul.imprint-fdf0098334bf",
+          "byte_size": 161598,
+          "filename": "BRC-Tomo-11-leaf0000.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "fdf0098334bf659a32b24bc9072287959df7f43de8cd291803309b8a5ec5d153",
+          "source_url": "https://ia600607.us.archive.org/BookReader/BookReaderImages.php?zip=%2F32%2Fitems%2FBRC-Tomo-11%2FBRC+11_jp2.zip&file=BRC+11_jp2%2FBRC+11_0000.jp2&id=BRC-Tomo-11&scale=2&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-11.1846-rome-mul.labels-7efae0ea47b1",
+          "byte_size": 108831,
+          "filename": "BRC 11_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "5f020118127c960bc5813119d63eb0f89e1b9434",
+          "sha256": "7efae0ea47b16f68088df09e0f216ef92922d3dd095f7e55da9934cf52670af6",
+          "source_url": "https://archive.org/download/BRC-Tomo-11/BRC%2011_page_numbers.json"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-11.1846-rome-mul.ocr-60e687440bde",
+          "byte_size": 2272095,
+          "filename": "BRC 11_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "fac0ee42dad146afa02ad3a48591bae3bd5fd8a7",
+          "sha256": "60e687440bde41e366cfdb982bc6995cf8b269cbe96c593064b75c12b08b4863",
+          "source_url": "https://archive.org/download/BRC-Tomo-11/BRC%2011_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-11.1846-rome-mul.scandata-de10cd1666c3",
+          "byte_size": 196341,
+          "filename": "BRC 11_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "9d149e538d4b2a32cdeb7b79fcbd1f956b657c44",
+          "sha256": "de10cd1666c3830a4bc940d72bf3e6179bd1d336c0b6abd0bda830a0ea619f6c",
+          "source_url": "https://archive.org/download/BRC-Tomo-11/BRC%2011_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-11.1846-rome-mul.xml-793892cbfb18",
+          "byte_size": 28155279,
+          "filename": "BRC 11_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "8e3cf10fa5c4ff5dc486620c450afe8321b6d7fa",
+          "sha256": "793892cbfb18c0642ad06951a02c15f2227ad6724c0438861698e3c1c9ee9fcc",
+          "source_url": "https://archive.org/download/BRC-Tomo-11/BRC%2011_djvu.xml"
+        }
+      },
+      "key": "volume-11",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1846",
+      "metadata_title_raw": "Bullarii Romani continuatio TOMO 11",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 fdf0098334bf659a32b24bc9072287959df7f43de8cd291803309b8a5ec5d153; source https://ia600607.us.archive.org/BookReader/BookReaderImages.php?zip=%2F32%2Fitems%2FBRC-Tomo-11%2FBRC+11_jp2.zip&file=BRC+11_jp2%2FBRC+11_0000.jp2&id=BRC-Tomo-11&scale=2&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome XI. Rome: Typographia Reverendae Camerae Apostolicae, 1846.",
+      "publication_year": 1846,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1846, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome XI"
+    },
+    {
+      "body_line_ranges": [
+        [
+          3733,
+          85852
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Discovery body/index frame only; no individual act boundaries or complete-witness admission asserted",
+        "contexts": [
+          {
+            "physical_lines": [
+              3713,
+              3768
+            ],
+            "text": "\n\n)\" \n\n\n^ \n\n\n252 \n\n\n\n\n\n\n\n\n\n\n\nTat. dic \n22 mactit \n180 \n\n\nanno \n\n\nExpositio pre- \n\n\ncum. \n\n\n\"Tenor conces- \n\n\nBlOdis, \n\n\ne \n\n\nPIUS VII. \nANNO QUARTO \n\n\nCXCII. \nAE \n\n\nv.^ Approbatio pix congregationis puel- \n\n\nlarum sub invocatione Conceptionis \nbeate Maris virginis pro Joseph "
+          },
+          {
+            "physical_lines": [
+              85817,
+              85872
+            ],
+            "text": "anm \n\n\nfra certum iempus tunc expressum j| \n\n\nBullarium Romanum \n\n\nprestandis , et registrandis, nec non \nquibuslibet constitutionibus , et ordi- \n\n\nnationibus apostolicis , ac omnibns, et \n. singulis illis , que memoratus Grego- \n\n\nrius predecessor in dictis suis literis \nnon obstare voluit , ceterisque contra- \nriis. quibuseumque. Volumus autem , \nut presentium literarum, transunip tis, \nseu exemplis manu alicujus notarii pu- \nbliei subscriptis , ac sigillo persone in \necclesiastica dignitate constitute mu- \nnitis eadem prorsus fides in judicio, \net extra illud adhibeatur, quz, ipsis \npresentibus adhiberetur si forent exhi- \nbite , vel ostensa. \n\nDatum Romz apud sanctam \nMariam Majorem sub annulo. piscato- \nris die septima mártii, millesimo octine. \ngentesimo sexjo , pontificatus. Nostri \n\n\nanno.sexto. \n\n\nFINIS TOI DECIMI SECUNDI .— \n\n\n\n\n\nS s P i ; \n\n\n\n\n\n\n\n\nE \n\n"
+          }
+        ],
+        "notes": [
+          "Raw source includes marginal notes, running heads, inserted documents and sometimes severe OCR column order defects.",
+          "The generous discovery frame retains displaced source notes near the outer boundaries; each act requires separate attribution and full boundary review.",
+          "Unparsed act dates remain null; no date-word eligibility test or title-only canonical join."
+        ],
+        "source_sha256": "e82bf225f250c7e33de256bea2cebcf5b6aa4d60987d1e2dfe0103b928b7f9b6"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-12.1846-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-12",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [],
+      "heading_patterns": [
+        "(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-12.1846-rome-mul.imprint-19836f066757",
+          "byte_size": 89813,
+          "filename": "BRC-Tomo-12-leaf0000.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "19836f066757aaa77b34f968369c44c036aab8b2b0ba447b8b875bd6fda14c74",
+          "source_url": "https://ia600900.us.archive.org/BookReader/BookReaderImages.php?zip=%2F25%2Fitems%2FBRC-Tomo-12%2FBRC+12_jp2.zip&file=BRC+12_jp2%2FBRC+12_0000.jp2&id=BRC-Tomo-12&scale=2&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-12.1846-rome-mul.labels-bef70555fd9b",
+          "byte_size": 92240,
+          "filename": "BRC 12_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "f5cf2daa52723cdde48b0d673d584e61a376b973",
+          "sha256": "bef70555fd9b64d635ce191ff582157b35880e0cf2f7b453160f01e7786739ea",
+          "source_url": "https://archive.org/download/BRC-Tomo-12/BRC%2012_page_numbers.json"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-12.1846-rome-mul.ocr-e82bf225f250",
+          "byte_size": 1953884,
+          "filename": "BRC 12_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "6ed68ea74df71ace5ce192b2969a750d98d25530",
+          "sha256": "e82bf225f250c7e33de256bea2cebcf5b6aa4d60987d1e2dfe0103b928b7f9b6",
+          "source_url": "https://archive.org/download/BRC-Tomo-12/BRC%2012_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-12.1846-rome-mul.scandata-ed678584ea14",
+          "byte_size": 166932,
+          "filename": "BRC 12_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "f11a7509f6a7cb1cbf6d73942b7fa60281096b76",
+          "sha256": "ed678584ea14a67c8879b006c3567f6a597830a2440c8a94487db15df0ebb7a2",
+          "source_url": "https://archive.org/download/BRC-Tomo-12/BRC%2012_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-12.1846-rome-mul.xml-2529243689c7",
+          "byte_size": 23567362,
+          "filename": "BRC 12_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "7ccc13e229ceb24ad340a815350f44e1342d4c5e",
+          "sha256": "2529243689c778fecf151ef72cd6f69122528ced5992806c4b8ded40da0968fa",
+          "source_url": "https://archive.org/download/BRC-Tomo-12/BRC%2012_djvu.xml"
+        }
+      },
+      "key": "volume-12",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1846",
+      "metadata_title_raw": "Bullarii Romani continuatio TOMO 12",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 19836f066757aaa77b34f968369c44c036aab8b2b0ba447b8b875bd6fda14c74; source https://ia600900.us.archive.org/BookReader/BookReaderImages.php?zip=%2F25%2Fitems%2FBRC-Tomo-12%2FBRC+12_jp2.zip&file=BRC+12_jp2%2FBRC+12_0000.jp2&id=BRC-Tomo-12&scale=2&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome XII. Rome: Typographia Reverendae Camerae Apostolicae, 1846.",
+      "publication_year": 1846,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1846, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome XII"
+    },
+    {
+      "body_line_ranges": [
+        [
+          3320,
+          65410
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Broad front-index/body/back-index transition checked against the exact acquired OCR and bounded page evidence; individual act extents remain unreviewed.",
+        "contexts": [
+          {
+            "physical_lines": [
+              3300,
+              3355
+            ],
+            "text": "\n233 \n\n\n31 G \n439 \n\n\nDigitized  by  Google \n\n\nDigitized  by  £oogIe \n\n\nf \n\n\nf \n\n\nDat*  dic \n18  matlii \n1806 \n\nanno  VII. \n\n\nExpolitio  pro- \ncum- \n\n\nTenor  conce»- \naioni*. \n\n\nPIUS  PII. \n\nANNO  SEPTIMO \n\n\nccccxv. \n\nFacultas  gestandi  crucem,  seu  numisma  i \npro  altaristis  primae  , et  secundae  1 \nerectionis  in  capitulo cathedral  is  ba- \nsii irae  mi  noris  civ  i tatis  Hecina  tensis . \n\nPius  PP.  VII. \n\nAd  perpetuam  rei  memoriam. \n\n§.  I.  Exponi  Nobis  nuper  fece- \nrunt dilecti  lilii  moderni  heneficiati  ; \naltar  istae  nuncupati  primae , et  se- \ncundae erectionis  rathedralis  basilicae \nminoris  civitatis  Recinat  ensis,  quod "
+          },
+          {
+            "physical_lines": [
+              65375,
+              65430
+            ],
+            "text": "citius  coalescat  , et  augeatur , ser- \nvari ea  volumus  , quae  dicto  alio \nmonte  Panormitano  , aliisque  simi- \nlibus sapienter  constituta  reperiuntur. \n\nt;.  Non  obstantibus  constitu- \ntionibus , et  ordinationibus  aposto- \nlicis;  privilegiis  quoque,  induitis  in \ncontrarium  praemissorum  quomodo- \nlibet  concessis  , approbatis  , ct  inno- \nvatis , et  in  posterum  concedendis: \netiam  si  pro  illorum  sufficienti  de- \nrogatione specialis,  specifica,  expres- \nsa , et  individua  , non  autem  per \nclausulas  generales  idem  importantes \nmentio  habenda  , aut  quaevis  alia \nexquisita  forma  ad  hoc  servanda  fo- \nret , cael  erisque  contrariis  quibus- \ncumque.  Datum  Romae  apud  San- \nctam Mariam  Majorem  sub  annulo \npiscatoris  die  decima  quinta  martii \ninillesimooctingcntesimo  decimo  sexto, \npontificatus  Nostri  anno  decimo  sexto. \n\n\nFINIS  TOMI  TEIITII  DECIMI \n\n\nBnll.  Bom.  Tom.  XIII.  F.  95. \n\n\n59 \n\n\nDfrogati»  c»n \ntrar  iorum. \n\n\nDigitized  by  Google \n\n\nDigitized  by  Google \n\n\n'457 \n\n\nPRAECIPUARUM  MATERIARUM \n\nQUAE \n\n\nXXV  DECEDO  TERTIO  HOC  VOLCmiNE \n\n\nCOBJTXIVEIVTUB. "
+          }
+        ],
+        "notes": [
+          "First act own marginal date begins LF3320 before pope/year heading LF3335; preserve it in the broad body range.",
+          "Final dating clause closes LF65397, but the final marginal derogation label is displaced to LF65409–65410 after FINIS; do not crop at the signature or FINIS."
+        ],
+        "source_sha256": "86b80fa11d2683f5b6413a564c62e437109b1ef41e84294aeb22087a03e795d8"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-13.1847-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-13",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [
+        {
+          "act_number_raw": "ccccxv.",
+          "line": 3340,
+          "reason": "Explicit first body candidate from inspected frontindex/body transition; no act admission or corrected source wording implied.",
+          "selection_start": 3320,
+          "source_heading_raw": "ccccxv. "
+        }
+      ],
+      "heading_patterns": [
+        "(?i)(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-13.1847-rome-mul.imprint-b0d4aa95c3ca",
+          "byte_size": 205037,
+          "filename": "bub_gb_jZf1dfvcbxUC-leaf-0006.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "b0d4aa95c3caa8ba752e4fecc833c641e2d7780aaa2c7b0cbaffede125554158",
+          "source_url": "https://ia801407.us.archive.org/BookReader/BookReaderImages.php?zip=%2F6%2Fitems%2Fbub_gb_jZf1dfvcbxUC%2Fbub_gb_jZf1dfvcbxUC_jp2.zip&file=bub_gb_jZf1dfvcbxUC_jp2%2Fbub_gb_jZf1dfvcbxUC_0006.jp2&id=bub_gb_jZf1dfvcbxUC&scale=1&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-13.1847-rome-mul.labels-ac634c4eddea",
+          "byte_size": 89436,
+          "filename": "bub_gb_jZf1dfvcbxUC_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "e1c7ef45697f3bf6313a25e50443f1bef91b7949",
+          "sha256": "ac634c4eddeac178da5e39ee651bda4a847feb36a78ad2467a056996a20d63ec",
+          "source_url": "https://archive.org/download/bub_gb_jZf1dfvcbxUC/bub_gb_jZf1dfvcbxUC_page_numbers.json"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-13.1847-rome-mul.ocr-86b80fa11d26",
+          "byte_size": 2234828,
+          "filename": "bub_gb_jZf1dfvcbxUC_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "ed76f022ee17286e6ec23102fa302e32b24ff4c3",
+          "sha256": "86b80fa11d2683f5b6413a564c62e437109b1ef41e84294aeb22087a03e795d8",
+          "source_url": "https://archive.org/download/bub_gb_jZf1dfvcbxUC/bub_gb_jZf1dfvcbxUC_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-13.1847-rome-mul.scandata-35a6c1860e5d",
+          "byte_size": 175150,
+          "filename": "bub_gb_jZf1dfvcbxUC_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "0e734f4608514fc38ef527fff91afdfef729fec0",
+          "sha256": "35a6c1860e5dfa4fa2f1e63d9f7faa1abfe5ebae18dea4d55d05d15e13737da7",
+          "source_url": "https://archive.org/download/bub_gb_jZf1dfvcbxUC/bub_gb_jZf1dfvcbxUC_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-13.1847-rome-mul.xml-464e90af66ec",
+          "byte_size": 23271405,
+          "filename": "bub_gb_jZf1dfvcbxUC_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "4c2983c63d4f2317e9595a24a94eb951c685b885",
+          "sha256": "464e90af66ec412c64f2bca41b4ff6e59fe2032af72cf90742c52b277fc7ae28",
+          "source_url": "https://archive.org/download/bub_gb_jZf1dfvcbxUC/bub_gb_jZf1dfvcbxUC_djvu.xml"
+        }
+      },
+      "key": "volume-13",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1847",
+      "metadata_title_raw": "Bullarii Romani continuatio Summorum Pontificum Clementis 13., Clementis 14., Pii 6., Pii 7., Leonis 12. et Pii 8. dal v. 11 ..., Pii 8. et Gregorii 16. constitutiones, literas in forma brevis, epistolas ad principes viros, et alios, atque allocutiones poi anche alloquutiones complectens quas collegit dal v. 11 al v. 17 usque ad",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 b0d4aa95c3caa8ba752e4fecc833c641e2d7780aaa2c7b0cbaffede125554158; source https://ia801407.us.archive.org/BookReader/BookReaderImages.php?zip=%2F6%2Fitems%2Fbub_gb_jZf1dfvcbxUC%2Fbub_gb_jZf1dfvcbxUC_jp2.zip&file=bub_gb_jZf1dfvcbxUC_jp2%2Fbub_gb_jZf1dfvcbxUC_0006.jp2&id=bub_gb_jZf1dfvcbxUC&scale=1&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome XIII. Rome: Typographia Reverendae Camerae Apostolicae, 1847.",
+      "publication_year": 1847,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1847, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome XIII"
+    },
+    {
+      "body_line_ranges": [
+        [
+          1543,
+          81614
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Broad front-index/body/back-index transition checked against the exact acquired OCR and bounded page evidence; individual act extents remain unreviewed.",
+        "contexts": [
+          {
+            "physical_lines": [
+              1523,
+              1578
+            ],
+            "text": "\nUbi  primum  . \n\n« \n\n365 \n\nPastoralis  o/ficii  , . , \n\n« 442 \n\nUbi  primum , . . , \n\n« \n\n378 \n\nDìgitized  by  Google \n\n\nP I U S VII. \n\nANNO  DECIMOSEPTIMO \n\n\nnst.  di* \n26  inartii \n1*16. \n\nmni)  XVU. \n\n\nPfOflTOÌ«J \n\n\nDCLVIII. \n\nConlirmalio  ronstitutionuni  prò  so- \ncietate  pur I lanini  Cbariutis  juxla \nleges  a sancì»  Vincerli»  a Paulo \nslalutas  erccta  in  regie  Hispania- \nrum. \n\nPius  episcopus \nServus  scrvorum  >ei \n\n\nAd  perpetuam  rei  Ilici  uria  ni \n\n\n5-  I Misericordiae  stt'ium  di- \nvini patri*  contesti*  ciemp  , ,:in \nctissimisque  Salvatori*  Nosi  prae. \nceptis  lantopere  commendati^  veres \nKcclesiae  filios  eo  incendi!  i)e  r}la_ \nritatis  , ut  animalo  lubcnlerionen- "
+          },
+          {
+            "physical_lines": [
+              81579,
+              81634
+            ],
+            "text": "bus , et  actibus  publicis  qutbuscura- \nque  gestarc  libere  et  licite  valeant  , \naucloi  itale  apostolica  tenore  praesen- \nJiuui  concedimus  , et  indulgemns  , \n\n\nd easque  desuper  a quoquam  quavis  au- \nctoritate  impediri,  molestari,  pertur- \nbar! nullatcnns  posse  , ac  irritum  et \ninane,  si  secus  super  his  a quoquam \nquavis  auctoritate  scienter,  vel  igno- \nrantcr  contigcrit  attentari  , decerni- \nmus. \n\n§.  5.  Non  obstantibus  fclicis  re- \ncordationis  lienedicti  pp.  XIV.  prae- \ndcccssoris  Nostri  super  divisione  ma- \nteriarum  , aliisque  constitutionibus, \net  ordinationibus  apostolicis,  nec  non \ndictae  ecclesiae  etiam  juramento,  con- \nfirmatinne  apostolica,  vel  quavis  fir- \nm ita  te  alia  roboralis  stalutis  et  eoa- \nsuetudinibus  , caeterisque  contrariis \nquibuscumque.  Datum  Ilomae  apud \nsanctam  Mariam  Majorem  sub  annu- \nlo  piscatoris  die  decima  tenia  martii \nmillesimo  octingantesimo  decimo  o- \nctavo,  ponlificatus  Giostri  anno  decimo \nxxcUvo. \n\n\n>>• \n\n\nRrrngatio  co» \nIruitrua. \n\n\nDigitized  by  Google \n\n\nDigitized  by  Google \n\n\n101 \n\n\n3515)83 \n\nMATER1ARUM  PRAECIPUARUM \n\nQ U À E \n\nIH  m©S  WMJmHIE  <S©H3KIHJEH!rT!72t \n\n■ . t "
+          }
+        ],
+        "notes": [
+          "Final act DCCLXXV starts LF81523 and closes LF81607, with displaced marginal derogation label LF81613–81614. Backindex firstheading is corrupted as3515)83 at LF81626.",
+          "Source includes Italian legal instruments and multi-column OCR; broad volume bounds do not settle individual reading order."
+        ],
+        "source_sha256": "d212c29516eb64263e0dcdcd8d8583cd4683c24a9031b9cbd53e61ab25dfea75"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-14.1849-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-14",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [
+        {
+          "act_number_raw": "DCLVIII.",
+          "line": 1558,
+          "reason": "Explicit first body candidate from inspected frontindex/body transition; no act admission or corrected source wording implied.",
+          "selection_start": 1543,
+          "source_heading_raw": "DCLVIII. "
+        }
+      ],
+      "heading_patterns": [
+        "(?i)(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-14.1849-rome-mul.imprint-d2626c6bdfd9",
+          "byte_size": 209003,
+          "filename": "bub_gb_-TnrdvrpWEAC-leaf-0006.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "d2626c6bdfd927c20dfecd12759df3c3c81d6825695436e4ed3655031e5f8865",
+          "source_url": "https://ia601907.us.archive.org/BookReader/BookReaderImages.php?zip=%2F2%2Fitems%2Fbub_gb_-TnrdvrpWEAC%2Fbub_gb_-TnrdvrpWEAC_jp2.zip&file=bub_gb_-TnrdvrpWEAC_jp2%2Fbub_gb_-TnrdvrpWEAC_0006.jp2&id=bub_gb_-TnrdvrpWEAC&scale=1&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-14.1849-rome-mul.labels-01a829c0e64c",
+          "byte_size": 109957,
+          "filename": "bub_gb_-TnrdvrpWEAC_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "8afe51a006e7a6d67ee324fb513c470f97caaac2",
+          "sha256": "01a829c0e64c5c9d3cc2d7dbf0061a04b05972c5985e7feb8ef50a7496f76df4",
+          "source_url": "https://archive.org/download/bub_gb_-TnrdvrpWEAC/bub_gb_-TnrdvrpWEAC_page_numbers.json"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-14.1849-rome-mul.ocr-d212c29516eb",
+          "byte_size": 2586116,
+          "filename": "bub_gb_-TnrdvrpWEAC_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "ef2870a059313ee5f2f3914bb4e7a11dd242564d",
+          "sha256": "d212c29516eb64263e0dcdcd8d8583cd4683c24a9031b9cbd53e61ab25dfea75",
+          "source_url": "https://archive.org/download/bub_gb_-TnrdvrpWEAC/bub_gb_-TnrdvrpWEAC_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-14.1849-rome-mul.scandata-29352a4b2f0f",
+          "byte_size": 213750,
+          "filename": "bub_gb_-TnrdvrpWEAC_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "ae393c1c4d929af89a5037b9fb5fe11fbaf0f936",
+          "sha256": "29352a4b2f0fb9654c1a06ebad2ced5d920c35b4eb5920a132f011686ba3fb11",
+          "source_url": "https://archive.org/download/bub_gb_-TnrdvrpWEAC/bub_gb_-TnrdvrpWEAC_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-14.1849-rome-mul.xml-3468647b16cd",
+          "byte_size": 28683812,
+          "filename": "bub_gb_-TnrdvrpWEAC_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "cd8f5d17614d745c4e340f8ccfadd84f5f3d87e7",
+          "sha256": "3468647b16cdbe26d9faf92a3b686322befa6eec5b56959a3a7ee7463c7dcf92",
+          "source_url": "https://archive.org/download/bub_gb_-TnrdvrpWEAC/bub_gb_-TnrdvrpWEAC_djvu.xml"
+        }
+      },
+      "key": "volume-14",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1849",
+      "metadata_title_raw": "Bullarii Romani continuatio Summorum Pontificum Clementis 13., Clementis 14., Pii 6., Pii 7., Leonis 12. et Pii 8. dal v. 11 ..., Pii 8. et Gregorii 16. constitutiones, literas in forma brevis, epistolas ad principes viros, et alios, atque allocutiones poi anche alloquutiones complectens quas collegit dal v. 11 al v. 17 usque ad",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 d2626c6bdfd927c20dfecd12759df3c3c81d6825695436e4ed3655031e5f8865; source https://ia601907.us.archive.org/BookReader/BookReaderImages.php?zip=%2F2%2Fitems%2Fbub_gb_-TnrdvrpWEAC%2Fbub_gb_-TnrdvrpWEAC_jp2.zip&file=bub_gb_-TnrdvrpWEAC_jp2%2Fbub_gb_-TnrdvrpWEAC_0006.jp2&id=bub_gb_-TnrdvrpWEAC&scale=1&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome XIV. Rome: Typographia Reverendae Camerae Apostolicae, 1849.",
+      "publication_year": 1849,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1849, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome XIV"
+    },
+    {
+      "body_line_ranges": [
+        [
+          4287,
+          101549
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Broad front-index/body/back-index transition checked against the exact acquired OCR and bounded page evidence; individual act extents remain unreviewed.",
+        "contexts": [
+          {
+            "physical_lines": [
+              4267,
+              4322
+            ],
+            "text": "Varia  indumentorum.  . » 291 \n\nVaria  indumentorum.  ...»  312 \n\nVaria  indumenta »317 \n\nVix  dum  ad  hanc » 400 \n\n» .......  • . j. \n\n\n( \n\n\nDigilized  by  Google \n\n\n1 \n\n\nPIUS  VII \n\n\nANNO  DECIMONONO \n\n\nDCCLXXYI. \n\n*• . *®  Allocutio  habita  in  consistorio  secreto  diei \n:\"i«x.  “ xvi  martii  MDCCCXVIII  et  publicatio \n\nconventionis  initae  inter  sanctam  Sedem \net  serenissimum  regem  utriusque  Siciliae» \net  indultum  nominandi  ad  plures  eccle- \nsias praedicti  regni  favore  ipsius  regis. \n\nVenerabiles  fratres \n\nTenor  «i  Io-  N on  alieno  tantum  admoniti  eiem-  | \n\nmuoou.  pi0>  venerabiles  fratres,  sed  propria  etiam \nexperientia  edocti  probe  intelligimus  mi- \nsericordem Deum  ita  cum  servi9  suis  a^c- \nre  , ut  illis  neque  tribulationes,  neque  ju- \ncunditates sinat  esse  perpetuas , sed  moc-  | \nstis  rebus  secunda  quaedam  permisceat , \nut  recreati  confirmatique  justitiae  iter  ala- \ncri animo  insistere  pergant.  Dum  enim  ca- \nlamitates illas , quibus  Ecclesia  Dei  pre- \nmitur, et  gravissima  quae  catholicum  gre- \ngem circumstant  pericula  meditantes  ve- \nhementer angimur  , ecce  Dominus  subito \n- in  ista  nostra  fluctuatione  qua  labora- \ntu us  dat  Nobis  fiduciam  veniens  ad  Nos , \net  confortans  Nos  , tantum  ne  turbati  in \nnavi  excutiamus  Nos  , et  projiciamus  in "
+          },
+          {
+            "physical_lines": [
+              101514,
+              101569
+            ],
+            "text": "sedeat. \n\n§.  5.  Haec  autem  omnia  cam  obii- Doropu®  ««• \nnere  vim  ac  firmitatem  volumus , quam  u,rlont“' \nilla  obtinent,  quae  motu  proprio , ut  dici- \ntur, et  ex  certa  scientia  a Romanis  pon- \ntificibus constituta  fuerint,  atque  mandata. \n\nNon  obstantibus  constitutionibus,  et  san- \nctionibus apostolicis , ac  legis  fundationis \nejus  collegii,  etiam  juramento,  confirma- \ntione aposlolica  vel  quavis  firmitate  alia \nroboratis  statutis,  et  consuetudinibus;  pri- \nvilegiis quoque  induitis,  et  literis  aposlo- \nlicis  superioribus,  et  personis  sub  qui- \nbuscumque tenoribus  , et  formis,  ac  cum \nquibusvis  etiam  derogatoriarum  , deroga- \ntoriis , aliisque  elficacioribus  , efficacissi- \nmis,  ac  insolitis  clausulis,  irrilantibusque, \net  aliis  decretis  in  genere,  vel  in  specie, \nac  aliis  in  contrarium  quomodolibet  con- \ncessis, approbatis,  et  innovatis.  Quibus \nomnibus  et  singulis  illorum  tenores  prae- \nsentibus pro  plene,  et  sufficienter  expres- \nsis, ac  de  verbo  ad  Yerbum  insertis \nhabentes,  illis  alias  in  suo  robore  per- \nmansuris, ad  praemissorum  efTectum  hac \nvice  dumtaxat  specialiter  et  expresse  de- \nrogamus , caelerisque  contrariis  quibas- \ncumque. \n\nDatum  Romae  apud  sauctam  Mariam \nMajorem  sub  annulo  piscatoris  die  octa- \nva augusti  millesimo  octingentesimo  vice- \nsimo tertio,  pontificatus  Nostri  anno  vi- \ncesimo quarto. \n\n\nDigitized  by  Google \n\n\n«31 \n\n\nINDEX  MATERIARUM \n\nQ © &E \n\n1B  Um  ¥©£1801X8» \n\nCONTINENTUR \n\n\nA \n\nABBATIA "
+          }
+        ],
+        "notes": [
+          "Final act closes with its dating clause through LF101549; first backindex begins LF101558.",
+          "Initial allocutio has Venerabiles fratres rather than a separate Pius PP protocol; pope/year heading supplies collection context, not independent act verification."
+        ],
+        "source_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-15.1853-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-15",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [
+        {
+          "act_number_raw": "DCCLXXYI.",
+          "line": 4293,
+          "reason": "Explicit first body candidate from inspected frontindex/body transition; no act admission or corrected source wording implied.",
+          "selection_start": 4287,
+          "source_heading_raw": "DCCLXXYI. "
+        }
+      ],
+      "heading_patterns": [
+        "(?i)(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-15.1853-rome-mul.imprint-b65474acc2de",
+          "byte_size": 217302,
+          "filename": "bub_gb_g62rTF4NMK0C-leaf-0004.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "b65474acc2decc66c98d4f1dac5b3fb3669a4be2627d4afd2b4c3491ff693d02",
+          "source_url": "https://ia801902.us.archive.org/BookReader/BookReaderImages.php?zip=%2F24%2Fitems%2Fbub_gb_g62rTF4NMK0C%2Fbub_gb_g62rTF4NMK0C_jp2.zip&file=bub_gb_g62rTF4NMK0C_jp2%2Fbub_gb_g62rTF4NMK0C_0004.jp2&id=bub_gb_g62rTF4NMK0C&scale=1&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-15.1853-rome-mul.labels-110878483bfd",
+          "byte_size": 138612,
+          "filename": "bub_gb_g62rTF4NMK0C_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "8facb95f73961e04048597f6baaaefeedcaf6504",
+          "sha256": "110878483bfd3d48dd1a5ce7461da3fc6153d8243a71340ce2330a57fb976c1b",
+          "source_url": "https://archive.org/download/bub_gb_g62rTF4NMK0C/bub_gb_g62rTF4NMK0C_page_numbers.json"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-15.1853-rome-mul.ocr-98d02eba261d",
+          "byte_size": 3393561,
+          "filename": "bub_gb_g62rTF4NMK0C_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "19cefc1174c477582b1d460ec453eadbdf2fe488",
+          "sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
+          "source_url": "https://archive.org/download/bub_gb_g62rTF4NMK0C/bub_gb_g62rTF4NMK0C_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-15.1853-rome-mul.scandata-a58e836c0ca4",
+          "byte_size": 231352,
+          "filename": "bub_gb_g62rTF4NMK0C_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "d2cbdfca5d8d4c1e4380592d12ecb303abe98218",
+          "sha256": "a58e836c0ca4a60cb720ecc72e3ca77f693ca96e770f8236a7b78e69ea912e99",
+          "source_url": "https://archive.org/download/bub_gb_g62rTF4NMK0C/bub_gb_g62rTF4NMK0C_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-15.1853-rome-mul.xml-d1775b5a6d3b",
+          "byte_size": 35494641,
+          "filename": "bub_gb_g62rTF4NMK0C_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "b83ccd9d734f08c255341bb987b82b07668dcf18",
+          "sha256": "d1775b5a6d3b08ebe19965a88e5cbd0d6f53a90a8571985e814c61cfb6898d53",
+          "source_url": "https://archive.org/download/bub_gb_g62rTF4NMK0C/bub_gb_g62rTF4NMK0C_djvu.xml"
+        }
+      },
+      "key": "volume-15",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1853",
+      "metadata_title_raw": "Bullarii Romani continuatio Summorum Pontificum Clementis 13., Clementis 14., Pii 6., Pii 7., Leonis 12. et Pii 8. dal v. 11 ..., Pii 8. et Gregorii 16. constitutiones, literas in forma brevis, epistolas ad principes viros, et alios, atque allocutiones poi anche alloquutiones complectens quas collegit dal v. 11 al v. 17 usque ad",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 b65474acc2decc66c98d4f1dac5b3fb3669a4be2627d4afd2b4c3491ff693d02; source https://ia801902.us.archive.org/BookReader/BookReaderImages.php?zip=%2F24%2Fitems%2Fbub_gb_g62rTF4NMK0C%2Fbub_gb_g62rTF4NMK0C_jp2.zip&file=bub_gb_g62rTF4NMK0C_jp2%2Fbub_gb_g62rTF4NMK0C_0004.jp2&id=bub_gb_g62rTF4NMK0C&scale=1&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome XV. Rome: None, 1853.",
+      "publication_year": 1853,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1853, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome XV"
+    },
+    {
+      "body_line_ranges": [
+        [
+          2445,
+          70266
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Broad front-index/body/back-index transition checked against the exact acquired OCR and bounded page evidence; individual act extents remain unreviewed.",
+        "contexts": [
+          {
+            "physical_lines": [
+              2425,
+              2480
+            ],
+            "text": "388 \n\nVos  ex  hoc \n\n« t u \n\n1 \n\nSupremi . \n\n» \n\n100 \n\nDigitized  by  Google \n\n\nDigitized  by  Google \n\n\nLEO \n\nANNO \n\n\nPRIMO \n\n\nIW.4J*  Allocutio  habita  in  consistorio  secreto  diei \n17 decimae  septimae  novembris  miliesimo \nmmo  l octingentesimo  vicesimo  tertio. \n\nVenerabiles  fratres \n\n\nV os  ex  hoc  sublimi  loco  primum \nallocuturi , dubitavimus  aliquantisper,  ve- \nnerabiles fratres,  an  de  pontificia,  ad  quam \nNos  evexistis  dignitate,  gratias  vobis  age- \nre, an  queri  quod  gravissimum  apostoli- \ncae  servitutis  onus  Nobis  imposuissetis  , \ndeberemus.  Numquid  Pio  VIi  , de  cujus \nlaudibus  nulla  unquam  aetas  conticescet, \nNos  succedere  voluistis,  ut  infirmitas  No- \nstra cum  tanto  virtutum  robore  compa- \nrata evidentius  , lati  usque  pateret  ? Col- \nlegas habebatis  amplissima  virtutum  su- \npellectile instructos  , ideoque  dignissimos, \nquibus  Ecclesiam  regendam  committeretis. \nCur  Nos  nullo  meritorum  praesidio  mu- \nnitos, reluctanlcsque  illis  praeposuistis  ? \nSed  Nobis  animo  haec  agitantibus  in  men- \ntem venit,  Nos  ab  eo  revera  electos  es- \nse , qui  de  lapidibus  filios  Abrahae  susci- \ntare solet,  quique  infirma  mundi  eligit , \nut  fortia  quaeque  confundat : vos  autem "
+          },
+          {
+            "physical_lines": [
+              70231,
+              70286
+            ],
+            "text": "etiam  confirmata,  tum  praesertim  quae  de \nasylo,  atque  alia  quaecumque  eo  modo  » \net  forma,  quibus  canonicorum  collegium \nVaticanae  basilicae  ante  motus  proprii  fel. \nrec.  Pii  pp.  VII.  praedecessoris  Nostri \ndiei  sextae  julii  anni  millesimi  octingente- \nsimi decimi  sexti  publicationem  ibidem \npoliebatur , ac  utebatur , atque  ca  per \nejusdem  canonicorum  collegii  gubernato- \nrem denuo  exerceantur  decernimus,  col- \nlegiumque ipsum  in  eorumdem  jurium,  ac \nprivilegiorum  omnium  liberum  exercitium, \nquatenus  opus  sit,  restituimus.  Assentiente \npraeterea  venerabili  fratre  Nostro  episco- \npo, et  perpetuo  Ostiae  , ac  Velitrarum \ngubernatore,  eidem  cui  legio  rursus  facul- \ntatem facimus,  qua  tam  in  praesens,  quam \nfuturis  quibusve  temporibus  uti  possit  pu- \nblicis Velitrarum  carceribus,  ut  ejus  arbi- \ntrio noxii  detineantur,  quemadmodum  ante \npoliebatur. \n\n$.  3.  Haec  concedimus  atque  man-  u«ro«.u« \ndamus  , non  obstantibus  motu  proprio \nPii  VII.  praedecessoris  Nostri  die  sexta \njulii  anni  millesimi  octingentesimi  decimi \nsexti  edito  , caeterisquc  contrariis  qui- \nbuscumque. \n\nDatum  Romae  apud  sanctum  Petrum \nsub  annulo  piscatoris  die  decima  quinta, \nseplembris  millesimo  octingentesimo  vice- \nsimo sexto,  pontificatus  Nostri  anno  tertio. \n\n\nFINIS  TOMI  DECIMI  SEXTI \n\n\nDigitized  by  Google \n\n\nm \n\nINDEX  MATERIAREM \n\nmu \n\nm itic  israism©  mmm  ©(Minmm  ; \n\n\nA \n\n\nABBATIA \n\nA.bbalia  nuncupata  sanctae  Mariae "
+          }
+        ],
+        "notes": [
+          "First printed act numberI is entirely absent as a standalone rawOCRline. The first title is mixed with marginal date in LF2453–2455; headingoverride preserves rawnull instead of inventing a source numeral.",
+          "Whole body page leaf20 inspected: printed numberI is visible above title; this is bounded image evidence, not a source-text replacement.",
+          "Final act closes LF70263, followed by FINIS LF70266 and backindex LF70274."
+        ],
+        "source_sha256": "f01ebfe8ff66893e4773b4bf5cbaa2b666f47122390cbeed7b7bb80a2121d7c4"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-16.1854-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-16",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [
+        {
+          "act_number_raw": null,
+          "line": 2453,
+          "printed_act_number": "I",
+          "printed_number_evidence": {
+            "artifact_id": "artifact.bullarium-continuatio.volume-16.1854-rome-mul.first-act-evidence-8eac628ab39c",
+            "byte_size": 404819,
+            "completeness": "whole offered page-image response; no truncation",
+            "item": "bub_gb_Cvg1MyPJ0PYC",
+            "leaf": 20,
+            "media_type": "image/jpeg",
+            "retrieved_on": "2026-10-26T05:35:47.454272+00:00",
+            "sha256": "8eac628ab39cfd5132c457ed153d2e74c54a3585eea2effd077022865e1bb276",
+            "url": "https://ia803207.us.archive.org/BookReader/BookReaderImages.php?zip=%2F30%2Fitems%2Fbub_gb_Cvg1MyPJ0PYC%2Fbub_gb_Cvg1MyPJ0PYC_jp2.zip&file=bub_gb_Cvg1MyPJ0PYC_jp2%2Fbub_gb_Cvg1MyPJ0PYC_0020.jp2&id=bub_gb_Cvg1MyPJ0PYC&scale=1&rotate=0"
+          },
+          "reason": "The first standalone printed numeral is absent in rawOCR; preserve rawnull. Actual page image identifiesI without inserting it into text.",
+          "selection_start": 2445,
+          "source_heading_raw": "IW.4J*  Allocutio  habita  in  consistorio  secreto  diei "
+        }
+      ],
+      "heading_patterns": [
+        "(?i)(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "first-act-evidence": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-16.1854-rome-mul.first-act-evidence-8eac628ab39c",
+          "byte_size": 404819,
+          "filename": "bub_gb_Cvg1MyPJ0PYC-body-leaf-0020.jpg",
+          "media_type": "image/jpeg",
+          "retrieved_on": "2026-10-26",
+          "sha256": "8eac628ab39cfd5132c457ed153d2e74c54a3585eea2effd077022865e1bb276",
+          "source_url": "https://ia803207.us.archive.org/BookReader/BookReaderImages.php?zip=%2F30%2Fitems%2Fbub_gb_Cvg1MyPJ0PYC%2Fbub_gb_Cvg1MyPJ0PYC_jp2.zip&file=bub_gb_Cvg1MyPJ0PYC_jp2%2Fbub_gb_Cvg1MyPJ0PYC_0020.jp2&id=bub_gb_Cvg1MyPJ0PYC&scale=1&rotate=0"
+        },
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-16.1854-rome-mul.imprint-1b66ba190b8c",
+          "byte_size": 208337,
+          "filename": "bub_gb_Cvg1MyPJ0PYC-leaf-0004.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "1b66ba190b8c586eb47b45929e530398c919a3d1fd3dda7452b656278650b541",
+          "source_url": "https://ia803207.us.archive.org/BookReader/BookReaderImages.php?zip=%2F30%2Fitems%2Fbub_gb_Cvg1MyPJ0PYC%2Fbub_gb_Cvg1MyPJ0PYC_jp2.zip&file=bub_gb_Cvg1MyPJ0PYC_jp2%2Fbub_gb_Cvg1MyPJ0PYC_0004.jp2&id=bub_gb_Cvg1MyPJ0PYC&scale=1&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-16.1854-rome-mul.labels-2c9bedcd28a8",
+          "byte_size": 86821,
+          "filename": "bub_gb_Cvg1MyPJ0PYC_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "8b8822016e1b684f812db0b798d499c0ea293edb",
+          "sha256": "2c9bedcd28a8e5929cfdfb68d43637e2d80b1804a7e4e794a4ddb2a392dc7917",
+          "source_url": "https://archive.org/download/bub_gb_Cvg1MyPJ0PYC/bub_gb_Cvg1MyPJ0PYC_page_numbers.json"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-16.1854-rome-mul.ocr-f01ebfe8ff66",
+          "byte_size": 2404117,
+          "filename": "bub_gb_Cvg1MyPJ0PYC_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "d25fc6d72931dc72ac85f4db910614e20e2f87df",
+          "sha256": "f01ebfe8ff66893e4773b4bf5cbaa2b666f47122390cbeed7b7bb80a2121d7c4",
+          "source_url": "https://archive.org/download/bub_gb_Cvg1MyPJ0PYC/bub_gb_Cvg1MyPJ0PYC_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-16.1854-rome-mul.scandata-37d60a324c03",
+          "byte_size": 172540,
+          "filename": "bub_gb_Cvg1MyPJ0PYC_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "3288bfac71c2625b39959dbc1ff3080d79b67760",
+          "sha256": "37d60a324c033a5df3d183a398412ac36087b2588e1cd5fae0772efdbee5356e",
+          "source_url": "https://archive.org/download/bub_gb_Cvg1MyPJ0PYC/bub_gb_Cvg1MyPJ0PYC_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-16.1854-rome-mul.xml-099699c3c76e",
+          "byte_size": 24819874,
+          "filename": "bub_gb_Cvg1MyPJ0PYC_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "aa26d46f0970d00b538b2cc250276326dc275c32",
+          "sha256": "099699c3c76ede3b8c1814b19a92ff5c2bd0a73a89323b808461ebbda1ef86f1",
+          "source_url": "https://archive.org/download/bub_gb_Cvg1MyPJ0PYC/bub_gb_Cvg1MyPJ0PYC_djvu.xml"
+        }
+      },
+      "key": "volume-16",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1854",
+      "metadata_title_raw": "Bullarii Romani continuatio Summorum Pontificum Clementis 13., Clementis 14., Pii 6., Pii 7., Leonis 12. et Pii 8. dal v. 11 ..., Pii 8. et Gregorii 16. constitutiones, literas in forma brevis, epistolas ad principes viros, et alios, atque allocutiones poi anche alloquutiones complectens quas collegit dal v. 11 al v. 17 usque ad",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 1b66ba190b8c586eb47b45929e530398c919a3d1fd3dda7452b656278650b541; source https://ia803207.us.archive.org/BookReader/BookReaderImages.php?zip=%2F30%2Fitems%2Fbub_gb_Cvg1MyPJ0PYC%2Fbub_gb_Cvg1MyPJ0PYC_jp2.zip&file=bub_gb_Cvg1MyPJ0PYC_jp2%2Fbub_gb_Cvg1MyPJ0PYC_0004.jp2&id=bub_gb_Cvg1MyPJ0PYC&scale=1&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome XVI. Rome: None, 1854.",
+      "publication_year": 1854,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1854, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome XVI"
+    },
+    {
+      "body_line_ranges": [
+        [
+          2316,
+          65306
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Broad front-index/body/back-index transition checked against the exact acquired OCR and bounded page evidence; individual act extents remain unreviewed.",
+        "contexts": [
+          {
+            "physical_lines": [
+              2296,
+              2351
+            ],
+            "text": ". . n \n\n137 \n\nSeraphicu»  vir  ...  « \n\n. . » \n\n•Ì60 \n\nVeienim  Otristifuiorum \n\n. » 311 \n\nDigitized  by  Google \n\n\nDigitized  by  Google \n\n\nDtt.  dia \n9 aclo^K \nIBM \n\nanno  IT- \n\n\nPramiai \n\n\nEtpotiiia  pra- \ncaa. \n\n\nTnaar  CMcat- \n\n\nLEO  XII. \n\nANNO  QUARTO \n\n\naxxxi. \n\n\nGoaccssio  novorum  magis  ìdìì^oìuiuìikìU' \nonealoruin  prò  canoDìcù  ecclesiae  colle* \ngiatae  s.  Pauii  apostoli  loci  ouDCiipati \n:=  Concordia  « dioecosis  Carpeoais. \n\n\nLeo  PP.  III. \n\n\nXd  fuUiram  rei  memoriaDi \n"
+          },
+          {
+            "physical_lines": [
+              65271,
+              65326
+            ],
+            "text": "beneiìcenlia  prosequi  volcnles , et  a qui- \nbusvis  exrommunicalìonìs , et  intcrdicli  , \naliisque  occlesiaslicis  ccnsuris,  scnlenliis , \nac  poeois  quovis  modo,  et  quacumque  de \ncausa  latis.  si  quas  forte  incurrcrint,  liu- \njus  tantum  indulti  assc<{ucndi  gratia  absol- \nveotes,  et  absolutos  foro  censcntes,  aucto- \nrilale  Nostra  apostolica  concedimus,  cl  in- \ndulgemus,  ul  in  privalo  ejiisJem  roooa- \nslerii  sacello  , ab  ordinario  episcopo  de \nmore  iovisendo  . dummodo  ibidem  aliud \nhujusmodì  privilegium  nequaquam  vigeat, \nper  quemeuroque  ex  congregulioiiis  Cas- \nsinensis  presbvterum  rìle  probalum,  mo- \nderatoris  venia,  singulis  diobus  ctiam  so- \nlemoionbus  divina  hostia  libere,  ac  lìcite \npossit  immolari:  ita  ul  quicumque  ex  il- \nliua  alumnis,  aliisque  mooasterio  addictis \ndiebus  festis  pielale,  qua  decet,  incruento \nìbibem  sacrificio  iniersit  , ab  obligalionc \nsolvalur  eidem  publico  in  lomplo  assislen- \ndi,  et  ecclesiae  praecepto  satisfecisse  du- \ncatur^  non  obslanlibus  conslitulionìbus,  et \nsanctionìbus  apostolicis,  caeterisquo  coo- \ntreriis  quibuscumque. \n\n$.  3.  Volumus  autem  , ut  nemini , a»f*rTM(o \npraeter  eos  , quos  meminimus  indullum \nNostrum  omnino  suflragelur. \n\nDatum  Romae  apud  sanctum  Pelrum \nsub  annulo  piscatoris  die  quarta  februarii \nmillesimo  octingcnlesimo  vìcesimo  nono  , \npontiBcatus  Nostri  anno  sexto. \n\nXII.  PONTIFICXTUS \n\n\nDigitized  by  Google \n\n\nDigitized  by  Coogle \n\n\n475 \n\n\nINDEX  MATERIA»  UM \n\n\n(fiViS \n\n1 \n\nVi  HOC  DECFMOSEPTIMO  VOLUMINE \n"
+          }
+        ],
+        "notes": [
+          "First own marginal date starts LF2316 before pope/year heading LF2333. First act numeral is damaged asaxxxi. inrawLF2338.",
+          "EXPLICITfirsthalf appears LF65241 BEFORE the final act title/body. Its final half occurs LF65306 after final dating LF65304. A generic firstEXPLICITcrop would delete the final act."
+        ],
+        "source_sha256": "5c75c39a8836dcd3145a594a712f22148b614d773db3c380b2a7a5b0f4b3742e"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-17.1855-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-17",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [
+        {
+          "act_number_raw": "axxxi.",
+          "line": 2338,
+          "reason": "Explicit first body candidate from inspected frontindex/body transition; no act admission or corrected source wording implied.",
+          "selection_start": 2316,
+          "source_heading_raw": "axxxi. "
+        }
+      ],
+      "heading_patterns": [
+        "(?i)(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-17.1855-rome-mul.imprint-03aa061fd539",
+          "byte_size": 214862,
+          "filename": "bub_gb_RypNw_FaXxAC-leaf-0004.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "03aa061fd539c11ea33c155183f9409bb0fd5cb0e2fa981b3272be6fc5d5b3fe",
+          "source_url": "https://ia800900.us.archive.org/BookReader/BookReaderImages.php?zip=%2F31%2Fitems%2Fbub_gb_RypNw_FaXxAC%2Fbub_gb_RypNw_FaXxAC_jp2.zip&file=bub_gb_RypNw_FaXxAC_jp2%2Fbub_gb_RypNw_FaXxAC_0004.jp2&id=bub_gb_RypNw_FaXxAC&scale=1&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-17.1855-rome-mul.labels-5204c07ca64f",
+          "byte_size": 98801,
+          "filename": "bub_gb_RypNw_FaXxAC_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "48e6819202ecb2386c32a88795c43d9815af2508",
+          "sha256": "5204c07ca64f54731923b8428cab74817d616b4e31345df3272e8a6ce25eb0f3",
+          "source_url": "https://archive.org/download/bub_gb_RypNw_FaXxAC/bub_gb_RypNw_FaXxAC_page_numbers.json"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-17.1855-rome-mul.ocr-5c75c39a8836",
+          "byte_size": 1793638,
+          "filename": "bub_gb_RypNw_FaXxAC_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "a4966c42d452b86a2dda141683f034a85678a36b",
+          "sha256": "5c75c39a8836dcd3145a594a712f22148b614d773db3c380b2a7a5b0f4b3742e",
+          "source_url": "https://archive.org/download/bub_gb_RypNw_FaXxAC/bub_gb_RypNw_FaXxAC_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-17.1855-rome-mul.scandata-efd7b8d7d640",
+          "byte_size": 169051,
+          "filename": "bub_gb_RypNw_FaXxAC_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "afec6f3b943f952ad234d094186ffba1f37cb2a1",
+          "sha256": "efd7b8d7d640714af2d3d01c670201d7b56544c7af024d16683cd5b0ff712b7a",
+          "source_url": "https://archive.org/download/bub_gb_RypNw_FaXxAC/bub_gb_RypNw_FaXxAC_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-17.1855-rome-mul.xml-b30f5ee6cb39",
+          "byte_size": 18982125,
+          "filename": "bub_gb_RypNw_FaXxAC_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "b993f1a9482d1bd3d4a7549775ea8271024800e5",
+          "sha256": "b30f5ee6cb393704eae1893180d06feebd1a8a489c50e85275baad94bc994522",
+          "source_url": "https://archive.org/download/bub_gb_RypNw_FaXxAC/bub_gb_RypNw_FaXxAC_djvu.xml"
+        }
+      },
+      "key": "volume-17",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1855",
+      "metadata_title_raw": "Bullarii Romani continuatio Summorum Pontificum Clementis 13., Clementis 14., Pii 6., Pii 7., Leonis 12. et Pii 8. dal v. 11 ..., Pii 8. et Gregorii 16. constitutiones, literas in forma brevis, epistolas ad principes viros, et alios, atque allocutiones poi anche alloquutiones complectens quas collegit dal v. 11 al v. 17 usque ad",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 03aa061fd539c11ea33c155183f9409bb0fd5cb0e2fa981b3272be6fc5d5b3fe; source https://ia800900.us.archive.org/BookReader/BookReaderImages.php?zip=%2F31%2Fitems%2Fbub_gb_RypNw_FaXxAC%2Fbub_gb_RypNw_FaXxAC_jp2.zip&file=bub_gb_RypNw_FaXxAC_jp2%2Fbub_gb_RypNw_FaXxAC_0004.jp2&id=bub_gb_RypNw_FaXxAC&scale=1&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome XVII. Rome: None, 1855.",
+      "publication_year": 1855,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1855, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome XVII"
+    },
+    {
+      "body_line_ranges": [
+        [
+          2188,
+          24719
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Broad front-index/body/back-index transition checked against the exact acquired OCR and bounded page evidence; individual act extents remain unreviewed.",
+        "contexts": [
+          {
+            "physical_lines": [
+              2168,
+              2223
+            ],
+            "text": "\n^renustmt ^onissiac regis . » 51 \n\nSacrae virgines » 56 \n\n\n\nT \n\n\n\nTroiltb' humilitati , . \n\n\n\n\nDigitized by-GoogU:- \n\n\n\nPIUS VIII. \n\nANNO PRIMO \n\n\n\nI. \n\nAmpliatio sodalitii laicorum sub titulo san • \ncti Aotonii Palavioi locifiarictta dioe- \ncesis Traccnsis , et concessio novorum \nprivilegiorum facta coofratribus. \n\nPius PP. VIII. \n\nAd perpetuam rei memoriam \n\n§. 1- C^uum sicut Nobis exponi \ncurarunt dilecti 0111 prior, cl confratres \n*** ^ cujusdam pii sodalitii laicorum in loco \nBarictta nuocupatoTranensia dioecesis rite, \nprout asseritur, erecti, et a divo Antonio \nPatavino titulum assumentis, plurimum ad \ndivini cultus incromenlum, fideliumque \nutilitatem conducat, prout asseritur, hu- \njusmodi sodalitii ampliatio, privilegiorum- \nque augmentum, eorum nomine supplici- \nter petitum fuit a Nobis , ut sodalitium \npraedictum, quod alii sub eodem titulo \nin urbe erecto, uti asseritur, esi aggre- \ngatum, arcbisodalilii titulo et privilegiis \ndonemus. \n\n5 . 2. Nos praedictos oratores , ac \nomnes quibus praesentes lilcrao favent, \nspeciali beneficentia prosequi volentes, et "
+          },
+          {
+            "physical_lines": [
+              24684,
+              24739
+            ],
+            "text": "inane si secus super his a quoquam qua- \nvis auctoritate scienter vel ignoranter con- \ntigerit attentari. \n\n$. 4. Non obstantibus quatenus opus ^ \nsil. Nostra et cancellariae apostoUcae re- •mtririma \ngula de jure quaesito non tollendo, ac coo- \nslilutionibus, et ordinationibus apostolicU, \nnec noo dicti ordinis, et familiae ultramon- \ntaoae provinciarum et conventuum etiam \njuramento, conGrmatione apostolica vel \nqoavis Grmitate alia roboratis statutis et \nconsuetudinibus; privilegiis quoque indui- \ntis et literis apostolicis superioribus et \npersonis sub quibuscumque tenoribus, et \nformis, ac cum quibusvis etiam derogato- \nriarum derogatoriis, aliisque efficacioribus \nefficacissimis, ac iosolitis clausulis , irri- \ntaotibusque, et aliis decretis io genere vel \nio specie, ac aliis in contrarium quomo- \ndolibot concessis, approbatis, et innovatis; \nquibus omoilMJS et singulis illorum teno- \nres praesentibus pro plene et sufficienter \nexpressis, ar dc verbo ad verbum inser- \ntis habentes, illis alias in suo robore per- \nmansuris ad praemissorum effectum hac \nvice dumtaxat specialiter et expresse de- \nrogamus , caelerisque contrariis quibus- \ncumque. \n\nDatam Romae apud sanctam Mariam' \n\nMajorem sub aonulo piscatoris die vice- \nsima sexta novembris millesimo octingen- \ntesimo trigesimo, pontificatus Nostri anno \nsecundo. \n\n\n\n\nDigilized by \n\n\n\nINDEX MATERIARUM \n\n\n\nm \n\n\n\nIN HOC DECIMOCTAVO VOLUMINE \n\nCONTINENTUR \n"
+          }
+        ],
+        "notes": [
+          "Only three input objects are offered: no page-numberJSON. Exact XML/scandata leaf map is available; providerprintedlabels remainnull.",
+          "First and final reviewed frames are Latin; no claim of full-body language collation. Final dating ends LF24719 before backindex LF24728."
+        ],
+        "source_sha256": "3799fdb00494bcbe8cd1a186b9d22a9b5ababa04bbf8f6ea85816ca1f833b45f"
+      },
+      "canonical_container": {
+        "edition_id": "edition.bullarium-continuatio.volume-18.1856-rome-la",
+        "identity_evidence": {
+          "basis": "Exact previously registered physical source and printing are unchanged; only the container language classification was corrected from Latin to multilingual. Stable source IDs and source bytes are preserved.",
+          "source_artifact_id": "artifact.bullarium-continuatio.volume-18.1856-rome-la.ocr-3799fdb00494",
+          "source_sha256": "3799fdb00494bcbe8cd1a186b9d22a9b5ababa04bbf8f6ea85816ca1f833b45f"
+        },
+        "work_id": "work.bullarium-continuatio.volume-18"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-18.1856-rome-la",
+      "container_work_id": "work.bullarium-continuatio.volume-18",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [
+        {
+          "act_number_raw": "I.",
+          "line": 2194,
+          "reason": "Explicit first body candidate from inspected frontindex/body transition; no act admission or corrected source wording implied.",
+          "selection_start": 2188,
+          "source_heading_raw": "I. "
+        }
+      ],
+      "heading_patterns": [
+        "(?i)(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-18.1856-rome-la.imprint-e22819ccb6c1",
+          "byte_size": 219212,
+          "filename": "bub_gb_AdKIbK3cyvgC-leaf-0002.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "e22819ccb6c111ed5a4c8ab66053b20a51ef4faaea4b68ecc30152da3ba7c0e1",
+          "source_url": "https://ia902804.us.archive.org/BookReader/BookReaderImages.php?zip=%2F17%2Fitems%2Fbub_gb_AdKIbK3cyvgC%2Fbub_gb_AdKIbK3cyvgC_jp2.zip&file=bub_gb_AdKIbK3cyvgC_jp2%2Fbub_gb_AdKIbK3cyvgC_0002.jp2&id=bub_gb_AdKIbK3cyvgC&scale=1&rotate=0"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-18.1856-rome-la.ocr-3799fdb00494",
+          "byte_size": 772040,
+          "filename": "bub_gb_AdKIbK3cyvgC_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "97eaa876ff679a1a52c9b32f1bb3b62d296bb044",
+          "sha256": "3799fdb00494bcbe8cd1a186b9d22a9b5ababa04bbf8f6ea85816ca1f833b45f",
+          "source_url": "https://archive.org/download/bub_gb_AdKIbK3cyvgC/bub_gb_AdKIbK3cyvgC_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-18.1856-rome-la.scandata-3bb22c1f01a7",
+          "byte_size": 57103,
+          "filename": "bub_gb_AdKIbK3cyvgC_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "f0fa10298349034abed194c71a35210cd28db88d",
+          "sha256": "3bb22c1f01a7e402b485119880a78530bcb7223bb97c2b7ccda46ccd1520e295",
+          "source_url": "https://archive.org/download/bub_gb_AdKIbK3cyvgC/bub_gb_AdKIbK3cyvgC_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-18.1856-rome-la.xml-63495e3e2ff9",
+          "byte_size": 6026784,
+          "filename": "bub_gb_AdKIbK3cyvgC_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "7ff59c20e3bcd073a188e4880c4eba58b253f3c2",
+          "sha256": "63495e3e2ff915babfdca9148b35febf70a4caa988669505fbb6a07b0ac4b132",
+          "source_url": "https://archive.org/download/bub_gb_AdKIbK3cyvgC/bub_gb_AdKIbK3cyvgC_djvu.xml"
+        }
+      },
+      "key": "volume-18",
+      "language": "mul",
+      "language_classification_history": [
+        {
+          "basis": "Initial Latin catalog category and examined frames; superseded by direct Italian-body evidence.",
+          "language": "la"
+        }
+      ],
+      "language_evidence": {
+        "basis": "An independently identified Italian Pius VIII chirograph was directly inspected at the pinned literal LF locus; the container is multilingual, while each act retains its own reviewed language.",
+        "literal_context": "Pius pp. vin. \n\n' ftmo cardinale Nostro segre- \n\naMto eon supplica, con \n\nccDH.i>» cui rl commercio di Ancona ha da Noi \nrispettosamenle implorato che ci piaccia \ndi ristabilire io qucUa ciU^ il tribunale \ndi Appello Commerciale che vi ^ stato per \nlungo teropO) ci siamo senza ritardo ap- \nplicati ad esaminame la coovcnienza ncl- \nla favorevole preveozione, che le ragioni \naddotte, e la intercessione dei cardina! \nvescovo, c dei Nostro delegato apostoli- \nco colh residenti ne hanno ispirata. ",
+        "physical_line_ranges": [
+          [
+            14255,
+            14587
+          ]
+        ],
+        "source_artifact_id": "artifact.bullarium-continuatio.volume-18.1856-rome-la.ocr-3799fdb00494",
+        "source_sha256": "3799fdb00494bcbe8cd1a186b9d22a9b5ababa04bbf8f6ea85816ca1f833b45f"
+      },
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1856",
+      "metadata_title_raw": "Bullarii Romani continuatio Summorum Pontificum Clementis 13., Clementis 14., Pii 6., Pii 7., Leonis 12. et Pii 8. dal v. 11 ..., Pii 8. et Gregorii 16. constitutiones, literas in forma brevis, epistolas ad principes viros, et alios, atque allocutiones poi anche alloquutiones complectens quas collegit dal v. 11 al v. 17 usque ad",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 e22819ccb6c111ed5a4c8ab66053b20a51ef4faaea4b68ecc30152da3ba7c0e1; source https://ia902804.us.archive.org/BookReader/BookReaderImages.php?zip=%2F17%2Fitems%2Fbub_gb_AdKIbK3cyvgC%2Fbub_gb_AdKIbK3cyvgC_jp2.zip&file=bub_gb_AdKIbK3cyvgC_jp2%2Fbub_gb_AdKIbK3cyvgC_0002.jp2&id=bub_gb_AdKIbK3cyvgC&scale=1&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome XVIII. Rome: None, 1856.",
+      "publication_year": 1856,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1856, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome XVIII"
+    },
+    {
+      "body_line_ranges": [
+        [
+          4173,
+          102514
+        ]
+      ],
+      "boundary_evidence": {
+        "basis": "Broad front-index/body/back-index transition checked against the exact acquired OCR and bounded page evidence; individual act extents remain unreviewed.",
+        "contexts": [
+          {
+            "physical_lines": [
+              4153,
+              4208
+            ],
+            "text": "Concowio  titnli  ercbisodalitaiis  cum  facnl- \ni tale  aggregandi  facta  sodalitio  san- \n\n\nibid- \n\n\nCCXCVI \n\nErectio  ecclesiae  catbedrali»  Vercellensi» \nin  basilicam  minorem  . . . • * \n\nJCCXCVU.  'r \n\nConcessio  tituli  et  bonoris  principis  fecte \n\n\n657 \n\n\nGREGORIUS  XVI. \n\nANNO  PRIMO \n\n\nI. \n\nEncyclica  porrecta  ad  universos  subditos \nditionis  Ecclesiasticae  ad  effectum  con- \nfirmandi subjectos,  et  revocandi  re- \nbelles. \n\nGregorio  XVI. \n\nAlii  suoi  dileltissimi  suddili \n\nCbiamati  dalla  Divina  provvidenza \nad  onta  della  Nostra  tcnuilu  al  somnio \npontificatu,  ed  ai  governo  di  quegli  stati, \ncbe  ne  formano  il  patrimonio  , dilatiamo \nsolleciti  sopra  essi  il  Nostro  cuore,  accio \napprendano  subito  da  quali  senlimenti \nfummo  per  loro  penetrali  fio  dal  momen- \nto, che  su  di  Noi  si  dispiegb  Ia  volootA \ndi  qucllo,  nelle  cui  mani  sono  le  sorti \ndegli  uomini.  Posti  ad  essere  per  essi  , \npiii  che  principe,  padre  a morosissimo  , \nviscere  di  padre  rivestimmo,  che  solo  al \nbene  aspira  de1  figli  suoi  , e solo  per \nquesti  occupa  le  sollecitudioi  sue.  Falti \nluito  a tuiti,  volgemmo  ali'  istanlc  i No- \nstri peosieri  alie  varie  classi  di  quelli  , \nche  Dio  ci  diede  per  figli,  e nellaraarez- \nza  dei  Nostro  spirito  vedemmo  il  risui tato \ninfelice  di  quelie  circoslanze,  che  in  tante \nguise  ovuoque  porlarono  Ia  iodigenza  , e "
+          },
+          {
+            "physical_lines": [
+              102479,
+              102534
+            ],
+            "text": "s \n\n50 \n\nDI  SPAGNA \n\n888 \n\n1 13 \n\ni \n\n490 \n\n11 \n\nn \n\n)) \n\n» \n\nn \n\nN.  B.  Oli  spesoali  dclle  monete  non  comprai  nella  praen te  tanffa  non  avranno  cono, \n\n\nDull.  /lom.  7om.  XIX. \n\n\nDigitized  by  Google \n\n\n( \n\nEXPLICIT  TOMUS  DECIMUS  NONUS \n\n\nDigitized  by  Google \n\n\nDigitizod  by  Googk \n\n\nm \n\n\nHi \n\n\nIli \n\n\nINDEX  MATEBIARfl  m \n\n],  -r  | -ry  Kitnuawi  o.ifcyilq':'- "
+          }
+        ],
+        "notes": [
+          "First act is Italian, beginning GregorioXVI / Alli suoi dilettissimi sudditi inLF4185–4189.",
+          "Final source material includes an attached currency tariff after the last dating/subscription; retain the tariff through its finalnoteLF102503. EXPLICIT TOMUS DECIMUS NONUS isLF102514; backindexstartsLF102532.",
+          "Do not crop the volume at the last signature or assume tables are index matter. Individual attachment membership remains for act-boundary review."
+        ],
+        "source_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba"
+      },
+      "container_edition_id": "edition.bullarium-continuatio.volume-19.1857-rome-mul",
+      "container_work_id": "work.bullarium-continuatio.volume-19",
+      "discovery_limitations": "Roman markers and protocols are lexical leads, not issuer or completeness determinations. Paragraph/canon numerals, marginal notes and source OCR damage can produce false proposals. Dates are not an eligibility gate.",
+      "heading_overrides": [
+        {
+          "act_number_raw": "I.",
+          "line": 4178,
+          "reason": "Explicit first body candidate from inspected frontindex/body transition; no act admission or corrected source wording implied.",
+          "selection_start": 4173,
+          "source_heading_raw": "I. "
+        }
+      ],
+      "heading_patterns": [
+        "(?i)(?P<number>[IVXLCDM][IVXLCDM ]{0,19})[.,*]*"
+      ],
+      "inputs": {
+        "imprint": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-19.1857-rome-mul.imprint-57945e052c9b",
+          "byte_size": 85509,
+          "filename": "bub_gb_S6WYUuscxwUC-leaf-0009.jpg",
+          "media_type": "image/jpeg",
+          "purpose": "Whole acquired title-page image inspected at readable scale; no body image collation; actual title imprint only.",
+          "retrieved_on": "2026-10-26",
+          "sha256": "57945e052c9bab283054e3438a1e811a929f9e0b38d7db87ade21c84137d8d8f",
+          "source_url": "https://ia800802.us.archive.org/BookReader/BookReaderImages.php?zip=%2F34%2Fitems%2Fbub_gb_S6WYUuscxwUC%2Fbub_gb_S6WYUuscxwUC_jp2.zip&file=bub_gb_S6WYUuscxwUC_jp2%2Fbub_gb_S6WYUuscxwUC_0009.jp2&id=bub_gb_S6WYUuscxwUC&scale=2&rotate=0"
+        },
+        "labels": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-19.1857-rome-mul.labels-8b4e41a45e7f",
+          "byte_size": 150346,
+          "filename": "bub_gb_S6WYUuscxwUC_page_numbers.json",
+          "media_type": "application/json",
+          "retrieved_on": "2026-10-26",
+          "sha1": "2bec604700b55c1ce46f64d10796e2bbba6ef75b",
+          "sha256": "8b4e41a45e7fa90c559fab3caf88b7cd443da210ea535db1ed4b249159f07a33",
+          "source_url": "https://archive.org/download/bub_gb_S6WYUuscxwUC/bub_gb_S6WYUuscxwUC_page_numbers.json"
+        },
+        "ocr": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-19.1857-rome-mul.ocr-c12cbb5c5cd4",
+          "byte_size": 3337327,
+          "filename": "bub_gb_S6WYUuscxwUC_djvu.txt",
+          "media_type": "text/plain",
+          "retrieved_on": "2026-10-26",
+          "sha1": "f46ad5c90cf88a02cb20188ab51dd3a1d35f62d6",
+          "sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
+          "source_url": "https://archive.org/download/bub_gb_S6WYUuscxwUC/bub_gb_S6WYUuscxwUC_djvu.txt"
+        },
+        "scandata": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-19.1857-rome-mul.scandata-2ab5e557bf98",
+          "byte_size": 252178,
+          "filename": "bub_gb_S6WYUuscxwUC_scandata.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "83aeae20c1d590d179e891d27b88f845c3d72449",
+          "sha256": "2ab5e557bf989d6d89bb9a6670d793f46b9f8ce6c4a51672962067b22a72c68d",
+          "source_url": "https://archive.org/download/bub_gb_S6WYUuscxwUC/bub_gb_S6WYUuscxwUC_scandata.xml"
+        },
+        "xml": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-19.1857-rome-mul.xml-5002ff715b0d",
+          "byte_size": 34557862,
+          "filename": "bub_gb_S6WYUuscxwUC_djvu.xml",
+          "media_type": "application/xml",
+          "retrieved_on": "2026-10-26",
+          "sha1": "afc39caf622db85b070f4353aef88d71412eb0b9",
+          "sha256": "5002ff715b0d281f65e74125eedf8493c0ddd10e169fa1cd82f6ce6db6c52f78",
+          "source_url": "https://archive.org/download/bub_gb_S6WYUuscxwUC/bub_gb_S6WYUuscxwUC_djvu.xml"
+        }
+      },
+      "key": "volume-19",
+      "language": "mul",
+      "languages": [
+        "la",
+        "it"
+      ],
+      "metadata_publication_date_raw": "1857",
+      "metadata_title_raw": "Bullarii Romani continuatio Summorum Pontificum Clementis 13., Clementis 14., Pii 6., Pii 7., Leonis 12. et Pii 8. dal v. 11 ..., Pii 8. et Gregorii 16. constitutiones, literas in forma brevis, epistolas ad principes viros, et alios, atque allocutiones poi anche alloquutiones complectens quas collegit dal v. 11 al v. 17 usque ad",
+      "place_slug": "rome",
+      "printing_basis": "Actual printed title-page imprint inspected in image SHA-256 57945e052c9bab283054e3438a1e811a929f9e0b38d7db87ade21c84137d8d8f; source https://ia800802.us.archive.org/BookReader/BookReaderImages.php?zip=%2F34%2Fitems%2Fbub_gb_S6WYUuscxwUC%2Fbub_gb_S6WYUuscxwUC_jp2.zip&file=bub_gb_S6WYUuscxwUC_jp2%2Fbub_gb_S6WYUuscxwUC_0009.jp2&id=bub_gb_S6WYUuscxwUC&scale=2&rotate=0. This is an imprint check, not body collation.",
+      "protocol_patterns": [
+        "\\b(?:Clemens|Pius|Gregorius|Leo|Benedictus)[ \\t\\r\\n]+(?:PP\\.?[ \\t\\r\\n]+|Papa[ \\t\\r\\n]+|Episcopus[ \\t\\r\\n]+)?[IVXLCDM]+\\b",
+        "\\bVenerabiles[ \\t\\r\\n]+[Ff]ratres\\b"
+      ],
+      "publication": "Bullarii Romani continuatio, tome XIX. Rome: None, 1857.",
+      "publication_year": 1857,
+      "responsible": "Historical collection editors; issuing authorities attributed within the printing",
+      "rights_basis": "United States: this exact historical printing is Rome 1857, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+      "title": "Bullarii Romani continuatio — Tome XIX"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "schema": "triptych-papal-source-order/v1",
+  "source_artifact_id": "artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50",
+  "source_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1880-acta-ass-013/artifacts/note-blocks-sancta-dei-civitas-la-f1534dd74c50/text.txt",
+  "source_sha256": "f1534dd74c508578b768004f97918249b69457b7d789587c10364b54335fe40a",
+  "physical_line_ranges": [
+    [
+      1,
+      295
+    ]
+  ],
+  "note_groups": [
+    {
+      "id": "native-pdf242-note-columns",
+      "geometry_basis": "Native archival OCR PDF4b841f737ce46d8c98e0f22a74619ff4ab458d5b9fb500735c17ab7e5bee0f89 page242;25 note WORDs at y519.103233–545.643217pt are disjoint across x200pt. Left xmax155.775266pt, right xmin236.68pt; empty gutter80.90473400000002pt. Exact LF90byte48 and LF91byte48 cuts occur immediately before literalrightmarkers* and8, after ASCIIspaces. LF89/93markers1/s and LF90/91/94left citations precede LF90/91/92right citations. No WORD straddles the gutter. Nativegeometry artifactartifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50.native-note-geometry-2e1c0994a13f SHA-2562e1c0994a13f9a874600670658da4bf1c39adab62496935956785409f000dd3f.",
+      "physical_line_range": [
+        89,
+        94
+      ],
+      "slices": [
+        {
+          "id": "left-marker1",
+          "physical_line": 89,
+          "byte_range": [
+            0,
+            4
+          ]
+        },
+        {
+          "id": "left-note1",
+          "physical_line": 90,
+          "byte_range": [
+            0,
+            48
+          ]
+        },
+        {
+          "id": "right-note4",
+          "physical_line": 90,
+          "byte_range": [
+            48,
+            75
+          ]
+        },
+        {
+          "id": "left-note2",
+          "physical_line": 91,
+          "byte_range": [
+            0,
+            48
+          ]
+        },
+        {
+          "id": "right-marker5",
+          "physical_line": 91,
+          "byte_range": [
+            48,
+            49
+          ]
+        },
+        {
+          "id": "right-note5",
+          "physical_line": 92,
+          "byte_range": [
+            0,
+            62
+          ]
+        },
+        {
+          "id": "left-marker3",
+          "physical_line": 93,
+          "byte_range": [
+            0,
+            5
+          ]
+        },
+        {
+          "id": "left-note3",
+          "physical_line": 94,
+          "byte_range": [
+            0,
+            19
+          ]
+        }
+      ],
+      "order": [
+        "left-marker1",
+        "left-note1",
+        "left-note2",
+        "left-marker3",
+        "left-note3",
+        "right-note4",
+        "right-marker5",
+        "right-note5"
+      ],
+      "block_starts": [
+        "left-marker1",
+        "left-note2",
+        "left-marker3",
+        "right-note4",
+        "right-marker5"
+      ]
+    }
+  ],
+  "expected_sha256": "d85f33f3fdd01425f34066f2e3ce1cf68ef175dab51c55ae867a905db1075d5e"
+}

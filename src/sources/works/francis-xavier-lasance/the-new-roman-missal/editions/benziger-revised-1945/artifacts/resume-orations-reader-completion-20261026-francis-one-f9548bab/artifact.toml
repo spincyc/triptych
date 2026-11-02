@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-francis-one-f9548bab"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Existing United States nonrenewal of A110108/A192159 for original Lasance/Walsh revised-1945 English on ordinary pages; unchanged insert-excluded expression anchor artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759, SHA256 80b34759fb18ec60f6205460c2ac24dc9e4a861938a94ef1f8e04a08a398ac9a. See src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Lettered inserts 1298a-1298n and 1302a-1302d excluded. No whole-scan redistribution or new Latin publication authority."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+provenance = "Literal English of the complete named October4 Francis Collect, independently checked on ordinary printed1224/PDF1219 with its heading/referral on printed1223/PDF1218. Existing exact lexical method and full current target proof were checked separately. This derivative claims no fresh primary-image inspection."
+transformation = "Encode checked English without changing words, capitalization, punctuation or actual short ending. The separately recorded Latin comparison never rewrites source or target. No source image, whole scan, new translation, name substitution, donor fanout, added response or conclusion expansion."
+retrieved = "2026-10-26"
+sha256 = "f9548bab2b927f11198abe8b08f1017c0552a051282ddb866117e2e76836baaa"
+byte_size = 326
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-reader-completion-20261026-francis-one-f9548bab/english.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Historical Lasance/Walsh revised1945 English in the identified circa1955-56 physical printing; not official1962 English. Lettered inserts1298a-1298n and1302a-1302d excluded. The whole mixed scan and page images remain evidence only."

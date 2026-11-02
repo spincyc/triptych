@@ -787,7 +787,7 @@ class HistoryBootstrapTests(unittest.TestCase):
         cls.station = next(one for one in stations if one.get("station_path"))
         cls.seen = drive({
             "acts": [
-                {"do": "navigate", "url": page("history")},
+                {"do": "navigate", "url": page("history", "slice=latin-missal")},
                 {"do": "wait", "until": "document.querySelector('.station')",
                  "label": "the map"},
                 {"do": "refuse", "match": "structure/act-history/latin-missal/"},
@@ -820,7 +820,8 @@ class HistoryBootstrapTests(unittest.TestCase):
         # Both routes out of the boot chain end it, as the other pages do: the
         # spine arriving, and the spine failing to arrive.
         script = source("history/history.js")
-        self.assertEqual(script.count("T.doneBootstrapping();"), 2)
+        map_bootstrap = script[script.rindex("chosenSlice().then"):]
+        self.assertEqual(map_bootstrap.count("T.doneBootstrapping();"), 2)
 
 
 TEXTS_STATE = """JSON.stringify({

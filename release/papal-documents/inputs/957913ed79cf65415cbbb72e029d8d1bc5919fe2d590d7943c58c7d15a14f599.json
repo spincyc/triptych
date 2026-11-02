@@ -1,0 +1,57 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T15:13:34Z",
+  "documents": [
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-18111893-providentissimus-deus",
+      "title": "The Study of Holy Scripture",
+      "pope": "Leo XIII",
+      "date": "1893-11-18",
+      "document_type": "encyclical",
+      "language": "en",
+      "revision": "2026-10-30T15:13:34Z",
+      "collection_corpus": "english",
+      "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.providentissimus-duquesne-note-blocks-fca936aedede",
+      "text_path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/providentissimus-duquesne-note-blocks-fca936aedede/text.txt",
+      "sha256": "fca936aedede6000b59697dba68ca9e0ff6915ffe7c40d21e4fd66b109b3b830",
+      "source_url": "https://archive.org/download/greatencyclicall00cath/greatencyclicall00cath.pdf",
+      "rights_status": "public-domain",
+      "rights_basis": "The retained English wording and historical notes are the human translation printed in the United States by Benziger Brothers in 1903, The Great Encyclical Letters of Pope Leo XIII, printed pp.271–302. The title/copyright leaves establish the historical edition independently of the act date. Its United States publication term has expired under src/sources/inventories/papal-documents-rights-v1.toml. Automated OCR adds no identified creative revision; modern delivery wrappers and matter outside this complete printed act are excluded. Historical source wording is excluded from Triptych CC BY 4.0.",
+      "rights_notice": "The 1903 English translation and historical notes are public domain in the United States; Triptych claims no exclusive right in their wording.",
+      "source_note": "Benziger Brothers, 1903, pp.271–302; human translator unidentified. Uncorrected OCR of the Duquesne/Gumberg copy. Historical notes retained; editorial title/date caption, running heads and folio omitted. Recognition errors and printed word divisions remain; not fully image-collated.",
+      "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-18111893-providentissimus-deus.1903-benziger-english.duquesne-note-blocks-fca936aedede",
+      "segment_path": "src/sources/works/papal-documents/1893-11-18-papal-leo-xiii-hf-l-xiii-enc-18111893-providentissimus-deus-ec8dd363/editions/1903-benziger-english/segments/benziger-english-duquesne-note-blocks-fca936aedede.toml",
+      "physical_line_ranges": [
+        [
+          1,
+          1402
+        ]
+      ],
+      "completeness": "complete-papal-body-with-historical-notes",
+      "terminal_keep_blocks": 2,
+      "compact_layout": true,
+      "compact_margin": 0.6
+    }
+  ],
+  "supersessions": [
+    {
+      "reason": "An independently acquired clean copy of the same identified 1903 historical human translation replaces materially nonsensical Toronto/Wikisource OCR. The new selection is a mechanical, source-backed witness; no words are corrected or translated by a model. Earlier artifacts and selections remain unchanged.",
+      "prior": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-18111893-providentissimus-deus",
+        "language": "en",
+        "pdf_sha256": "234ef12d1b952160ae9fdd46d18f7dc528f369d3c9ede414133eaa6ef5eb15c2",
+        "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-encoding-repaired-ed8e5a40",
+        "source_sha256": "ed8e5a405701a51eec9124f0e63a4db7740ded35545fe5d99874ac9581541879",
+        "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-18111893-providentissimus-deus.1903-benziger-english.benziger-english-encoding-repaired-ed8e5a40"
+      },
+      "replacement": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-18111893-providentissimus-deus",
+        "language": "en",
+        "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.providentissimus-duquesne-note-blocks-fca936aedede",
+        "source_sha256": "fca936aedede6000b59697dba68ca9e0ff6915ffe7c40d21e4fd66b109b3b830",
+        "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-18111893-providentissimus-deus.1903-benziger-english.duquesne-note-blocks-fca936aedede",
+        "revision": "2026-10-30T15:13:34Z"
+      }
+    }
+  ]
+}

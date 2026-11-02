@@ -143,6 +143,8 @@ def main(argv: list[str] | None = None) -> int:
 
     os.chdir(ROOT)
     sys.path.insert(0, str(ROOT))
+    # Match unittest discovery so tests can import their sibling helpers.
+    sys.path.insert(0, str(TESTS))
 
     modules = _units(arguments.pattern)
     if not modules:

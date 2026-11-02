@@ -1,0 +1,536 @@
+{
+  "status": "ACCEPT_SIX_EXACT_SOURCE_WORDS_AND_METADATA_WITH_PINNED_POINTING_CORRECTION_RIGHTS_AND_ASSEMBLY_RESERVED",
+  "reviewed_utc": "2026-10-26T01:59:16Z",
+  "reviewer": "Independent sibling /root/latin_candidates/philip_collect; produced none of these six packets. Own Philip candidate explicitly excluded.",
+  "scope": "Exact source words, whole prayer extents, roles, conclusions, received target body joins, current before nodes, source identity, pinned input bytes. This is source-only acceptance, not rights adoption, canonical assembly, proof acceptance or publication authorization.",
+  "source_seals": [
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/anthony/SEALED-MANIFEST.json",
+      "sha256": "e3bd7cc0068883852d1938d43fb79c0c758b4a31eeac9d0c4ebf1eec027c9e0a",
+      "bytes": 2101
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/SEALED.json",
+      "sha256": "fffe7d9f827f31c3be77671bb45a65d540db492e08a42fcf84214103879f6af1",
+      "bytes": 10351
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/anthony-collect/SEALED.json",
+      "sha256": "3f3be79250524242e97f2c178bc50c00d18fd4f3618213d0a4f7f112bbaf8200",
+      "bytes": 2717
+    }
+  ],
+  "metadata_correction": {
+    "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/POINTING-CORRECTION.json",
+    "sha256": "a994fc6fefdde93f5c11221d16c41916fda4dec9f3c46c663ec3d9389e57aadd",
+    "bytes": 1376
+  },
+  "current_parent": "f3f59d483358128e1b78d7a12aaeb4f3feab4a8a",
+  "current_calendar_sha256": "ef47c63c9528a99f2e5b70bd849f0014f8bbddfc1a8af116d77e500e08c0f9bf",
+  "counts": {
+    "targets": 6,
+    "accepted_exact_source_bodies": 6,
+    "body_defects": 0,
+    "source_word_refusals": 0,
+    "metadata_defects_detected": 1,
+    "metadata_defects_corrected_by_pinned_addendum": 1,
+    "hashed_current_packet_references": 192,
+    "extra_exact_Franciscan_manifest_controls": 2,
+    "extra_whole_Pustet_PDF_control": 1,
+    "all_195_file_controls_pass": true,
+    "complete_before_node_joins": 6,
+    "candidate_body_hash_joins": 6,
+    "whole_manually_keyed_reading_comparisons": 6,
+    "actual_page_scale_image_views": 37,
+    "independent_byte_exact_raster_reproductions": 38
+  },
+  "rows": [
+    {
+      "target": [
+        "s-antonii-padua-confessoris-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "body_sha256": "ce4bddd814e9b99aee80ed02a901551ed8f949f13c48662f3c9d4c54770a0696",
+      "current_before_node_sha256": "07ca65297117e71ddf24b3c3a2974d5726f9dcfe7ea4bdf4065c3609091b22f0",
+      "source_words_role_endings_decision": "ACCEPT_EXACT_SOURCE_ONLY",
+      "complete_petition_word_delta": [
+        {
+          "operation": "insert",
+          "historical_positions": [
+            10,
+            10
+          ],
+          "target_positions": [
+            10,
+            12
+          ],
+          "historical": [],
+          "target": [
+            "atque",
+            "doctoris"
+          ]
+        }
+      ],
+      "other_petition_word_changes": 0,
+      "target_ending": "Per Dominum.",
+      "rights_condition": "Finite-rights recommendation is separately pinned; coordinating maintainer must expressly adopt its exact per-body disposition.",
+      "assembly_condition": "Separate exact canonical/source/proof assembly and independent assembled review required."
+    },
+    {
+      "target": [
+        "s-antonii-padua-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "body_sha256": "477fc3ccb5b28d6c984eb149d9150b2beac0f0c263bbf7fce39682f2e0ae505e",
+      "current_before_node_sha256": "db147991ed1a9503ff91685fc17cce98a2ee64e0823dbbdafd049e310b42a587",
+      "source_words_role_endings_decision": "ACCEPT_EXACT_SOURCE_ONLY",
+      "complete_petition_word_delta": [
+        {
+          "operation": "insert",
+          "historical_positions": [
+            7,
+            7
+          ],
+          "target_positions": [
+            7,
+            9
+          ],
+          "historical": [],
+          "target": [
+            "atque",
+            "doctoris"
+          ]
+        }
+      ],
+      "other_petition_word_changes": 0,
+      "target_ending": "Per Dominum nostrum.",
+      "rights_condition": "Separate exact Anthony Collect narrow-rights addendum now pinned; coordinator must expressly adopt it. Original finite-six receipt expressly excludes this row.",
+      "assembly_condition": "Separate exact canonical/source/proof assembly and independent assembled review required."
+    },
+    {
+      "target": [
+        "s-iacobi-apostoli",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "body_sha256": "93d45e7bbd858bbffdb581065cb4304d81ecb0e2c60626c805c8507f97817bcf",
+      "current_before_node_sha256": "9edec75cbb88e17b83ccde16b4bf96b8c6b186f08c7c5402bcef50ac72590ace",
+      "source_words_role_endings_decision": "ACCEPT_EXACT_SOURCE_ONLY",
+      "complete_petition_word_delta": [
+        {
+          "operation": "insert",
+          "historical_positions": [
+            12,
+            12
+          ],
+          "target_positions": [
+            12,
+            13
+          ],
+          "historical": [],
+          "target": [
+            "commemoratione"
+          ]
+        }
+      ],
+      "other_petition_word_changes": 0,
+      "target_ending": "Per Dominum nostrum.",
+      "rights_condition": "Finite-rights recommendation is separately pinned; coordinating maintainer must expressly adopt its exact per-body disposition.",
+      "assembly_condition": "Separate exact canonical/source/proof assembly and independent assembled review required."
+    },
+    {
+      "target": [
+        "s-ioachim-patris-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "body_sha256": "091f3c414277631835619a17bc1b6cf748b113d23e91dcbe1a0bb389d5264431",
+      "current_before_node_sha256": "a737f1a5f9b5500771e489d6880485b9aff07593ad958a11bba5be283c3ce146",
+      "source_words_role_endings_decision": "ACCEPT_EXACT_SOURCE_ONLY",
+      "complete_petition_word_delta": [
+        {
+          "operation": "replace",
+          "historical_positions": [
+            8,
+            9
+          ],
+          "target_positions": [
+            8,
+            9
+          ],
+          "historical": [
+            "genitricis"
+          ],
+          "target": [
+            "genetricis"
+          ]
+        },
+        {
+          "operation": "insert",
+          "historical_positions": [
+            19,
+            19
+          ],
+          "target_positions": [
+            19,
+            20
+          ],
+          "historical": [],
+          "target": [
+            "memoriam"
+          ]
+        }
+      ],
+      "other_petition_word_changes": 0,
+      "target_ending": "Per eundem Dominum.",
+      "rights_condition": "Finite-rights recommendation is separately pinned; coordinating maintainer must expressly adopt its exact per-body disposition.",
+      "assembly_condition": "Separate exact canonical/source/proof assembly and independent assembled review required."
+    },
+    {
+      "target": [
+        "s-bartholomaei-apostoli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "body_sha256": "7a241de028830373fc873e86baa38df7e792cec6aeb1314b2d5b934a3a035acd",
+      "current_before_node_sha256": "a737f1a5f9b5500771e489d6880485b9aff07593ad958a11bba5be283c3ce146",
+      "source_words_role_endings_decision": "ACCEPT_EXACT_SOURCE_ONLY",
+      "complete_petition_word_delta": [
+        {
+          "operation": "insert",
+          "historical_positions": [
+            15,
+            15
+          ],
+          "target_positions": [
+            15,
+            16
+          ],
+          "historical": [],
+          "target": [
+            "commemoratione"
+          ]
+        }
+      ],
+      "other_petition_word_changes": 0,
+      "target_ending": "Per Dominum.",
+      "rights_condition": "Finite-rights recommendation is separately pinned; coordinating maintainer must expressly adopt its exact per-body disposition.",
+      "assembly_condition": "Separate exact canonical/source/proof assembly and independent assembled review required."
+    },
+    {
+      "target": [
+        "s-bartholomaei-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "body_sha256": "42ee32c39e4ab1e22e48758d436aa9caf10e593ea4fe24dabc950df8fb6b5cbe",
+      "current_before_node_sha256": "f362a3fbb469b67a8c646b53eaba34af3394d45ed0966c2b8e524f3295e16407",
+      "source_words_role_endings_decision": "ACCEPT_EXACT_SOURCE_ONLY",
+      "complete_petition_word_delta": [
+        {
+          "operation": "insert",
+          "historical_positions": [
+            5,
+            5
+          ],
+          "target_positions": [
+            5,
+            6
+          ],
+          "historical": [],
+          "target": [
+            "memoriam"
+          ]
+        }
+      ],
+      "other_petition_word_changes": 0,
+      "target_ending": "Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat.",
+      "rights_condition": "Finite-rights recommendation is separately pinned; coordinating maintainer must expressly adopt its exact per-body disposition.",
+      "assembly_condition": "Separate exact canonical/source/proof assembly and independent assembled review required."
+    }
+  ],
+  "finding_and_disposition": {
+    "target": "Joachim Collect",
+    "defect": "Original rows[1].pointing_differences claimed Mame has no comma after ut. Actual Mame807 clearly prints ut, cujus. Its manually keyed historical_reading already had the comma, and the candidate body was correct.",
+    "disposition": "Exact immutable POINTING-CORRECTION.json withdraws only that explanatory sentence and sets the field to []. Original seal retained unchanged. No source words or candidate hashes change. Source-only acceptance consumes both original seal and correction."
+  },
+  "image_source_findings": [
+    "James: target681 own25July heading, complete3170 at682, adjacentChristopher3171 excluded. Mame781 ownJames heading, independently read782 continuity, wholePostcommunion783 leftcolumn before distinctChristopherPostcommunion; followingAnne runninghead does not change the role. Mame prayer lacks only parenthetical commemoratione in petition.",
+    "Joachim: target709/628 own16AugustCollect3389 and Mame807/693 ownheading and completeCollect read. Actual genitives are target Genetricis and Mame Genitricis; this is separately recorded exact spelling, not general stem closure. Only other petition delta is memoriam. Both print comma after ut.",
+    "Bartholomew: target716/635 own24AugustCollect3445 and Mame812/698 rightcolumn ownprayer; neighboringPhilipBenitius and vigil excluded. Both print colon after tribuisti; target adds comma after credidit. Only petition word delta is commemoratione.",
+    "Bartholomew Secret3451: complete target717/636 spans leftfoot to righttop; historicalMame813/699 complete rightcolumnSecret. Sole petition word delta memoriam. Target long conclusion ends at regnat.; no unity tail, peromnia tail or Amen added.",
+    "Anthony: target632/551 own13JuneDoctorheading, commonDoctor referral and Collect2776, target633/552 Postcommunion2778 read. Mame730/616 own13JuneConfessorheading and fullCollect/Postcommunion731/617 read; separateBasil subdivision excluded. Pustet545/459 complete Postcommunion read. Sole petition word delta in each is atque Doctoris; target pointing remains separately read.",
+    "Received Anthony1946 amendment: actual photographic Chełmno gazetteNr3 May-June1947 title/actheading177 and completePostcommunion178, Mass referral to priorCollect, authorizingSRC decree,date1June1946,Salotti/Carinci signatures read. Both received whole petitions include atque Doctoris. Collect prints Per D.; Postcommunion prints Per Dominum. Gazette is retained private source control, not a whole-scan rights claim.",
+    "LaterLasance1046-1047 wholeAnthonyheading/Collect and completePostcommunion corroborate receivedDoctor words. Exact earlierLasance title1946 and completePostcommunion1057/1047 omit atqueDoctoris. The1945nonrenewal finding is not extended to these later words.",
+    "Mame54/xlii RubricaeGeneralesIX17 explicitly prints Per Dominum nostrum, etc. Only literal three words used for actual target short endings. FullMame368/254 fontblessingOmnipotenssempiterneDeusadesto prayer read with367 context; exact long-form contiguous wordprefix controls actualBartholomewSecret ending, with separately recorded Iesum/Jesum and comma afterChristum. No words from etc. or separately printed responseAmen are supplied.",
+    "Franciscan1798 titleKempten/MDCCXCVIII and namedAnthony29/23 withcompletePostcommunion30/24 read: meritis gloriosis / salutaris victimae desideratum gives a genuinely different prayer, not a target donor. BonaventureDoctor32-33/26-27 has a different completePostcommunion. All60 offeredimage/OCRbytes hash-check; no claim all60pages image-read or physicalvolumecomplete. Lefebvre1925 namedAnthony1451/1415 plus completePostcommunion1452/1416 retain oldnonDoctor prayer; boundedrefusals preserved.",
+    "Fresh originalPDF identity leaves independently read: Mame13/15 Tours1922 editioquarta conformed printing and approval17May1922; Pustet5 Ratisbon1862; target1/2 editio typica decree23June1962. These identity checks support source metadata; they do not create a new whole-modern-book rights finding."
+  ],
+  "actual_images_read": [
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/images/target-682-400.png",
+      "sha256": "b703d350595a6d5efdf36f789a77af02c3f970611cf7baac7ed734cdd7b0a5e4",
+      "bytes": 259379
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/images/target-709-400.png",
+      "sha256": "e8687f306806a4433bfc697d9d186b85cac1bf8e5f79505e93d84338c1862c5a",
+      "bytes": 259914
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/images/target-716-400.png",
+      "sha256": "8a175af8813322823ce18d41550d51b50b25c85ab48adcfb70acf4ff0af210cd",
+      "bytes": 260080
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/images/target-717-400.png",
+      "sha256": "5a2b0c643489b9fdae08df87391e954af2d998d5042f70a0739f2fef4e172b86",
+      "bytes": 265379
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/images/mame-783-400.png",
+      "sha256": "5959cc0e613c67e98d5c3fa9f390232b75928e401a287778056909f463f3d62e",
+      "bytes": 898034
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/images/mame-807-400.png",
+      "sha256": "c2fa6dc095b70edfb9ab0ca019e3e62b7b28c0875890e72be78165aeb8222a7b",
+      "bytes": 901234
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/images/mame-812-400.png",
+      "sha256": "25cc1bfd742a06669076188d5f324ef474e873c29d316f733ae0e2653b1a895f",
+      "bytes": 995166
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/images/mame-813-400.png",
+      "sha256": "aa8b17e26c598d131d38ad0ebe27215d9936d8368e63ab9a3be53b905c4cdc50",
+      "bytes": 940511
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/images/target-681-200.png",
+      "sha256": "f458d195469d60516987bb122bcb1092bdc5c4080092e39528c93ccfc6cd275b",
+      "bytes": 227247
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/images/mame-781-200.png",
+      "sha256": "fbe8b1ec6637edad7014522b587fd6bd6950173bccece5f972b849773ddcb298",
+      "bytes": 301648
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/images/mame-54-200.png",
+      "sha256": "2649e5dd762966ff876b83403798f2bf9196fdaf50d20d0fd40a6ae7f80395f8",
+      "bytes": 444324
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/images/mame-367-200.png",
+      "sha256": "491901ce25ab11f5be1cf899ad95c7032124b3f659cc924f4ed423f0c72cee85",
+      "bytes": 340565
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/parenthetical-four/images/mame-368-400.png",
+      "sha256": "17c1aee26aea0872ec9672282de42ebe857f323b902129dff39354df11d8ebb6",
+      "bytes": 871072
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/anthony-collect/target-632-400.png",
+      "sha256": "f7e3ab648004910bbde5b051dc42256259f81397f07b61462f484229fd0132a9",
+      "bytes": 263628
+    },
+    {
+      "path": ".scratch/resume-next-latin-five-residual/images/mame-730-731-200-0730.png",
+      "sha256": "d3049cabfd4c24d7d224b499e7c000d6c5aeca117e69822904620444d4b9c504",
+      "bytes": 544067
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/anthony-collect/mame-731-400.png",
+      "sha256": "a6100644cc2e9a5014c24c03067ecf7866e203f3747150130ebb16b478188d5e",
+      "bytes": 863403
+    },
+    {
+      "path": ".scratch/resume-next-latin-five-residual/images/target-632-633-400-0633.png",
+      "sha256": "ed57e90f699d66c9c671ab6db7ea7db3886add6e6ece1ec4401bf6ba78b8ffba",
+      "bytes": 267694
+    },
+    {
+      "path": ".scratch/resume-next-latin-five-residual/images/pustet-545-400-545.png",
+      "sha256": "dd72d3b76e78a2cc5b3cd26882d6936b7a6653e5bf8dcdf56f6b4b1fce2a3957",
+      "bytes": 4472013
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/anthony-collect/chelmno-3-400.png",
+      "sha256": "d431b9abb9869f24c8a73cfc9afe488c6f83c74e9120dd2b9766b3ffe0f24856",
+      "bytes": 1291849
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/anthony/chelmno-200-004.png",
+      "sha256": "fe6fb1dfcaf07dec2dfd5118d8b15aa30d39826829daff0c433e09e9a7811483",
+      "bytes": 787953
+    },
+    {
+      "path": ".scratch/resume-next-english-anthony-chantal/images/lasance-held-1040-400.png",
+      "sha256": "9f49e24b18bca9915c657dff61b781dd416d3bdec4f59baad1a8c2cc85358094",
+      "bytes": 877290
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/anthony/lasance1946-p1057-400.png",
+      "sha256": "8550f8ff7de01e2f1d161ee3eea464e5487dc4ac1407c6df0222b0400f24aef6",
+      "bytes": 5625640
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/anthony/lefebvre1925-200-1451.png",
+      "sha256": "2a357bd6dd965e539a92fb876f91b25309126e3a0e392ab7f46e8ed649259bed",
+      "bytes": 88569
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/anthony/lefebvre1925-1452-400.png",
+      "sha256": "7f69944cfd36bae07da8fe81c0d3daf7b2d5f9490dfa47d0942bdb8e0f77945e",
+      "bytes": 405403
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/anthony/franciscan1798/0001.jpg",
+      "sha256": "11fbba8ec394244ffad33a6360519a9bc645b53ec463199de1df7053a8c0ff9f",
+      "bytes": 1097430
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/anthony/franciscan1798/0029.jpg",
+      "sha256": "ee70a145ab1ce0517f79de1b16e3e115d562ae4b26461aea61dc3bc18d4873cb",
+      "bytes": 1721026
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/anthony/franciscan1798/0030.jpg",
+      "sha256": "f95e5f17ff44f276344d9e89689fd20ed0b58282ee3fab40231e10a90c019753",
+      "bytes": 1667572
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/anthony/franciscan1798/0032.jpg",
+      "sha256": "727aa78c8688477726591f423817bb7823de2af8792e79eef7fe587928780bcd",
+      "bytes": 1696096
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/anthony/franciscan1798/0033.jpg",
+      "sha256": "518ac37af6a8a00e7494fe00efb98bb51c18cff3e8cbb4e681db86cb9ada1657",
+      "bytes": 1823009
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/mame-title-200.png",
+      "sha256": "eda0251d536b6b545d6573c0008b081f02a7d6a248a5c0262d510ba5275f9340",
+      "bytes": 235482
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/mame-approval-200.png",
+      "sha256": "bb6f5cad3820f32c767274369f2935710cfa7770880844b6c54cdf09ff202b24",
+      "bytes": 331227
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/target-title-200.png",
+      "sha256": "2b308049e15d9e81ccca4f62c98304bfd9148d7039051af7c0af450a5711013b",
+      "bytes": 68881
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/target-decree-200.png",
+      "sha256": "804405f128eb2f83675a9167d4050c83612c0c6a834d82c6fbbd4970c74e7ba2",
+      "bytes": 108341
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/pustet-title-200.png",
+      "sha256": "6a6ae2ca14eab0d2ea1e24b6cbe131c822417f2478da49cd4be41e893001bac0",
+      "bytes": 1304804
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/lasance-anthony-heading-200.png",
+      "sha256": "255a5219c41a532feb387ffb7573a069a80a61d76a36c0f98b1ee3e9fa538c51",
+      "bytes": 105422
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/lasance-1946-title-200.png",
+      "sha256": "33a7b26b7a0bff615f2e0b0d5074c8fc1eac4fa3c1ebea68a99816abca43c3f5",
+      "bytes": 1697406
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/mame-james-middle-200.png",
+      "sha256": "321b19a62c71dffd0d07c155785e7df3115111ec61eefd21c8271c123bd66963",
+      "bytes": 575710
+    }
+  ],
+  "mechanical_attachments": [
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/input-integrity.json",
+      "sha256": "3772525f71e1a842336e76d0972bbdeaeafb27507d27719db1397b0d5afeff5a",
+      "bytes": 44817
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/whole-reading-comparison.json",
+      "sha256": "63f3fa5a5638d5016bc13068c0340c8e8df242998d7f160e5d2e5cf5bbb52d22",
+      "bytes": 9632
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/raster-reproduction.json",
+      "sha256": "af13b68300c254a62a0358dbb1154058f7c8a1d080057bf7d56e899c8b3d830d",
+      "bytes": 23282
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/extra-identity-and-role-renders.json",
+      "sha256": "8616485fcfaa20bcbdb1e4a08217593ea00446beaa4e196cf32abbc2401d72c6",
+      "bytes": 2574
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/verify_inputs.py",
+      "sha256": "1512e222f085189cad029eb3e5d7c9bd445f11c8a121b0709ade7c2e158decd2",
+      "bytes": 4275
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/compare_whole_readings.py",
+      "sha256": "26d8875f5438ad02a175fa512f079607fdcf41c9e68c745618bbacad6e7ad9d0",
+      "bytes": 7555
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-anthony-four/reproduce_rasters.py",
+      "sha256": "bfc4a72a876792d5eaed6926f0a84e9d4d9eda749fe14e9a17749fcda8da2999",
+      "bytes": 3053
+    }
+  ],
+  "rights_recommendation_reference": {
+    "path": ".scratch/reader-completion-20261026-short-phrase-rights/RIGHTS-REVIEW.json",
+    "sha256": "1d9c373d363a68859d28a18600a96237afd900b94bfa55061060d44d9b358e02",
+    "bytes": 5634
+  },
+  "separate_Anthony_Collect_rights_recommendation_reference": {
+    "path": ".scratch/reader-completion-20261026-short-phrase-rights/anthony-collect-addendum/RIGHTS-REVIEW.json",
+    "sha256": "63879e4b7501cb106c81fe611b0bcca6c0e8d451f5fdd619ec8adc977e9051b9",
+    "bytes": 3821
+  },
+  "rights_limits": "Existing finite-six recommendation is read and pinned only; no legal position rederived or approval inherited. It covers five of this review's six rows plus separately reviewed Philip. AnthonyCollect is excluded from that receipt; its independently produced separate exact addendum is now read and pinned. Source acceptance remains conditional on coordinator adoption of the respective per-body recommendations.",
+  "nonphotographic_AAS_limit": "Official Vatican AAS38(1946) reconstructedOCR PDF291-292 contains no raster images (independent pdfimages listing checked). Its actidentity/corroborating text is not a photographic word controller. Actualgazettephotos and actualLasance carry received words.",
+  "historical_reference_limit": "Archived refusal/review packets are raw-file hash references. Their older whole-English inventory/calendar epochs are not treated as current input epochs. No stale whole-inventory replacement proposed.",
+  "limits": [
+    "No ownPhilip source review or self-acceptance.",
+    "No canonical/proof/English source edits or acceptance.",
+    "No full1946act/1947gazette/1955Lasance/1962Missal public-domain finding; source scans, page images and layouts remain private controls.",
+    "No general ordinary-option, name/title adaptation, donor substitution, model reconstruction, ending expansion or general word-count rule.",
+    "Current before-node observations are exact at pinned parent and calendar; later canonical assembly must rebase and verify them.",
+    "No annual completeness claim; this review covers exactly six specified source-only candidates."
+  ],
+  "own_mutations": {
+    "canonical": 0,
+    "frozen_packets": 0,
+    "source_proposals": 0,
+    "Git": 0,
+    "English": 0,
+    "writes": "Own source-review-anthony-four scratch leaf only."
+  }
+}

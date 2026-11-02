@@ -4,141 +4,74 @@
 
 Apply these rules in order:
 
-1. keep authoritative inputs and audit records under `src/`, reviewed publications under `pdf/`, and reproducible intermediates under ignored `build/`;
+1. keep authoritative plaintext, typed data, manifests, and audit records under `src/`, with reviewed web editions under `web/`;
 2. preserve provider, collection, rite, edition, locale, jurisdiction, and document identity in the path and records;
 3. give shared text one owner, keep reusable external sources provider-neutral, and declare every consumer dependency;
-4. build deterministically, inspect every affected page, and install only the reviewed PDF; and
+4. validate source structure and evidence independently of optional print rendering; and
 5. treat editing, committing, integrating, pushing, and deployment as separate authorized operations.
 
 `guidance/editorial.md` governs universal content quality. The applicable genre profiles govern document-specific sources, records, structure, and gates. This file governs ownership, paths, builds, catalogs, release artifacts, and version control.
 
 ## Ownership and paths
 
-- `src/` contains tracked authoring sources, focused evidence and research records, reusable fragments, and the provider-neutral reusable source library governed by `guidance/sources.md`.
-- `pdf/` contains PDFs installed from reviewed builds. They are built during deployment and are no longer tracked, except `pdf/reading-plans/`, which a release authorization binds by digest and which stays tracked; see the dated note below.
-- `web/` contains tracked reader-facing web editions installed from reviewed conversions of the same sources, governed by `guidance/web-editions.md`.
-- `build/` contains only ignored, reproducible intermediates, logs, caches, review rasters, and generated release artifacts.
+- `src/` contains tracked authoring sources, semantic publication manifests,
+  evidence and research records, reusable fragments, and provider-neutral
+  typed source data.
+- `web/` contains reviewed reader editions generated from those sources under
+  `guidance/web-editions.md`.
+- `build/` contains ignored, reproducible site and build intermediates. In a
+  workspace, task-created logs, review output, caches, and experiments go under
+  the owning `.scratch/` directory.
+- PDF files are optional print outputs, generated one edition at a time by
+  `tools/print-document`. They are neither tracked publications nor inputs to
+  normal checks, catalog generation, or site deployment.
 
-Anything required to understand, verify, or reproduce a publication belongs under `src/`, never `build/`. Reader-facing `pdf/` and `web/` outputs may summarize tracked generation and production metadata; they must not reproduce internal agent/runtime or process ledgers merely because those records remain auditable under `src/`. Neither `pdf/` nor `web/` is a build directory; an installed output is a reviewed publication rather than a disposable intermediate, whether or not it is tracked. Cleaning may remove `build/` but never `src/`, `pdf/`, or `web/`.
+Anything needed to understand or reproduce a publication belongs in tracked
+source or a declared exact-artifact delivery record. The current authoring
+format remains lossless TeX plaintext where that is what a publication uses;
+existing typed inventories and canonical shared fragments keep their owners.
+Adding semantic manifests does not authorize flattening them into Markdown,
+dropping content, or creating another editable rendition.
 
-**Installed PDFs under `pdf/` stopped being tracked on 2026-09-04.** The
-maintainer decided that day that the GitHub Pages workflow builds them from
-`src/` during deployment, and that the repository carries the sources rather
-than a second copy of what the sources determine. The 210 installed PDFs were
-262 MB of an 803 MB working tree, a third of everything tracked, and every
-revision of a document added another copy. The build is deterministic on
-purpose — `\pdfinfoomitdate=1` and `\pdftrailerid{}` in
-`src/common/preamble.tex`, and a `/ModDate` taken from the document's declared
-revision rather than the build clock — so those bytes were reproducible from
-the tree that was keeping them.
+`guidance/document-schemas.md` owns the per-leaf `publication.toml` contract:
+explicit kind, profile, semantic roles, dependencies, and ordered editions.
+Source review identifies the exact source/evidence graph. Print receipts
+identify a renderer/template and a particular inspected render. A successful
+source check is not visual approval, and a historical PDF review is not an
+approval of changed sources or a different print template.
 
-`pdf/reading-plans/` is the exception and stays tracked. Its six volumes are
-named in `release/public-alpha.json` under the perpetual authorization's
-`site_sources`, each bound to an exact SHA-256, and `tools/tpt public-alpha
-verify` reads them from the tree. An authorization that binds bytes has to be
-able to find them, so those six remain in the repository; the 204 other
-installed PDFs, which nothing binds, do not.
+Normal releases are source and web releases. They validate canonical inputs,
+rights, source bindings, manifests, and admitted reader surfaces without
+building PDFs, hydrating the evidence archive, invoking Poppler, or demanding
+equality with old PDF bytes. When a print edition is requested, apply the
+owning profile's print gates to that edition. Strict page counts, paired pages,
+duplex geometry, and physically meaningful layouts remain exact unless the
+maintainer explicitly changes the profile.
 
-The paragraph below states the position that decision reverses. It is kept
-rather than deleted because most of it is still in force; its first two
-sentences are the ones that have stopped being true.
+Exact binary evidence has a separate preservation and delivery layer governed
+by `guidance/sources.md`. Its source identity, acquired hashes, rights, passage
+pins, and frozen review fingerprints remain authoritative. The physical
+delivery sidecar at `src/sources/artifact-delivery.json` maps those identities
+to hash-verified external packs and an optional `.scratch/` cache. No ordinary
+site build fetches those packs. An archive URL is advertised only after the
+particular upload and downloaded bytes have been verified.
 
-Installed PDFs under `pdf/` are tracked release artifacts retained through
-ordinary Git history. Their reproducibility does not make them disposable
-intermediates or authorize rewriting history to remove prior releases. Moving
-release artifacts to external storage requires a separately designed and
-authorized migration of publication, catalog, verification, and deployment
-contracts.
+Old PDF URLs may lead to an identified reader or print page that explains the
+available edition. Such a page is HTML, not a PDF response or a claim that a
+historical file is hosted there. Offer a historical binary download only when
+its exact archive delivery is verified. Preserve old hashes and review facts
+as historical evidence rather than replacing them with current output hashes.
 
-Its second sentence is superseded too, and deliberately. The maintainer
-authorized a history rewrite the same day: `pdf/` apart from
-`pdf/reading-plans/`, and the superseded `doc/` tree it was renamed from, were
-removed from every reachable commit with `git filter-repo`, the 25 duplicate
-handoff archives under
-`build/agent-handoffs/` were removed with them, and 79 superseded working
-branches were to be dropped; that drop never reached origin, and they stayed
-until the 2026-09-24 tidy recorded under Branches below. The pack fell from 1.14 GiB to 394 MiB and a fresh
-checkout from 2,093 MB to 1,067 MB. The fifteen `evidence/*` branches were
-deliberately kept: sixteen of the twenty-five archives existed nowhere else,
-and dropping those branches would have destroyed 803 files of review evidence.
-The 79 carried about 9 MiB of objects reachable from nowhere else,
-and the verified bundle of the pre-rewrite history, taken before any of this
-ran, is the record of them and of everything else the rewrite removed. This was
-a one-time, owner-authorized act recorded here so that it is not repeated
-casually: rewriting published history still requires an explicit decision of
-this kind, and nothing in this section authorizes a routine filter to reclaim
-space.
+This policy supersedes the former installed-PDF exceptions for reading plans
+and papal readers, the deploy-time full-corpus typeset, and release gates that
+depended on installed PDF bytes. Removing current-tree binaries does not remove
+old Git objects or make an existing clone smaller. History rewriting, remote
+cleanup, repository replacement, and publishing an external archive each need
+their own authorization; this source migration grants none of them.
 
-The rest of the paragraph still governs. Reproducibility still does not make an
-installed PDF a disposable intermediate — `pdf/` is an install destination and
-not `build/`, `make clean` removes `build/` and never `pdf/`, and nothing may
-install a partial or unreviewed result there. And the migration the last
-sentence demanded is being performed rather than skipped; its four named
-contracts are disposed of as follows.
-
-**Publication.** Each publication's tracked record under
-`release/publications/<provider>/<leaf-id>.json` is unchanged; it never stored
-a PDF hash. `promised-deliverables.toml` keeps the installed-PDF paths its
-criteria are about, and names a tracked record beside them wherever a `pass`
-requirement would otherwise cite nothing that survives in the tree.
-
-**Catalog.** `library/` pages, the `web/` editions, and the tracked document
-catalogue `src/web/data/structure/documents/corpus.json` stay tracked, and that
-catalogue keeps the per-edition facts previously readable only from the
-installed file: page count, install commit, review and revision dates. Web
-editions are a separate reviewed conversion of the same sources, not a copy of
-the PDF, and this decision does not touch them.
-
-**Verification.** The `site_sources` hashes in `release/public-alpha.json` are
-unchanged, the six reading tracks under `pdf/reading-plans/` included. The
-recorded digest used to prove that a tracked file had not been modified; it now
-proves that the deployment rebuild reproduced the exact reviewed bytes. The
-assertion is the same one — someone read these bytes and approved them —
-held against a rebuild instead of against a checkout.
-`tools/tpt release-bindings status` and `tools/tpt public-alpha verify` are
-what compare them, and the renderer still decides the recorded set: an
-installed track the record does not mention, or a recorded entry nothing
-renders, is a divergence exactly as a changed byte is.
-
-**Deployment.** The Pages workflow must install every PDF the artifact serves
-before it builds the site, and must fail the deployment rather than publish an
-artifact missing one. `check-deployment-sources` re-derives page counts from
-the built PDFs, so the workflow typesets first and gates afterwards; the order
-is load-bearing and not an accident of listing.
-
-Pages derives its per-provider build selection from `tools/public-alpha`'s
-publication inventory and inclusion policy, including local-record overrides
-of legacy rows and separately identified companions. It rejects source or
-build-inventory mismatches and unknown states before planning cache reuse.
-Only the included set is cached, typeset, and installed, using the same explicit
-`DOCUMENTS` selection in both cold-cache and cache-only installs. Held work
-remains excluded; this does not change ordinary local `make install`, relax
-publication or pagination gates, or permit missing approved outputs.
-
-No check was left proving an installed PDF current by asking Git whether it
-differed. `check-tracks` did exactly that, over `pdf/reading-plans` — which
-stays tracked, so it had not silently stopped working — and it was replaced
-anyway with the stronger question: rebuild each track and compare its SHA-256
-against the digest `release/public-alpha.json` binds. Asking Git only proves a
-file matches the index. Asking the manifest proves the sources still build the
-bytes someone authorized. Were a reader-facing PDF ever untracked without that
-substitution, the `git diff` form would pass by no longer being able to fail.
-
-One consequence is settled and one is open. Settled: all six bound reading
-tracks were rebuilt on 2026-09-04 and reproduced their recorded digests
-exactly, so the verification above is known to hold and not merely hoped for.
-`make check` now covers tracked sources and names what it does not run;
-`make check-installed` builds the tree first and runs the four gates that read
-it; `make check-all` runs both. Open: a rebuild of the wider corpus that day
-reproduced 162 of 188 documents byte-identically and the other 26 are
-undiagnosed, most of them tracked PDFs that had drifted from their sources
-rather than builds that vary. A divergence in a bound track is a build defect
-to diagnose, never a hash to refresh.
-
-External source identities and lawful reusable artifacts live under
-`src/sources/`, not under a generated provider branch. Provider publications
-remain under `src/<provider>/`. Generated source indexes and reports live under
-ignored `build/sources/` and may always be reconstructed from tracked inputs.
+External source records remain under `src/sources/`, not a generated provider
+branch. Generated indexes and reports are reproducible outputs, not source
+identity records.
 
 Generated documents retain a provider branch. The present providers are `gpt` (documents authored by OpenAI ChatGPT/Codex) and `claude` (documents authored by Anthropic Claude); do not flatten a provider from existing paths. Each provider branch uses this collection hierarchy:
 
@@ -177,7 +110,7 @@ src/<provider>/
 
 `<edition-locale>` must distinguish the governing books and territory; never use `current`, `novus-ordo`, or a bare language as its sole identity. Postconciliar proper guides also use the stable universal registry in `guidance/liturgy/postconciliar-propers-registry.md`; edition-specific collation, unresolved branches, and instantiated leaves belong under the edition's `propers/registry/` directory rather than in the reusable profile. A curriculum keeps course-wide teaching, practice, reference, and audit sources at its non-publishable owner root and gives each independently printable module or companion its own publishable leaf. Do not duplicate shared lessons or answer sources into module leaves.
 
-Each publishable leaf contains `main.tex`, `generation-metadata.tex` or a profile-authorized inherited declaration, `web-edition.toml` declaring its web-edition eligibility, and the profile-required records. Shared directories are non-publishable and have no PDF mirror. Put shared material at the narrowest ancestor that genuinely owns it; keep provider-neutral global typesetting primitives under `src/common/` — both providers import the shared preamble, which the build resolves as `\input{common/preamble}` through `TEXINPUTS` — and rite-, edition-, collection-, or work-specific material within its subtree. Hoist a file to `src/common/` only when it is pure typesetting or format and providers genuinely share it. Content-bearing shared material — lesson content, prayer texts, verified liturgical texts, response references — remains inside its provider branch; a provider's documents must not ride on another provider's authored substance.
+Each publishable leaf contains `publication.toml`, its declared authoring entrypoints (currently `main.tex`), `generation-metadata.tex` or a profile-authorized inherited declaration, `web-edition.toml` declaring reader eligibility, and the profile-required records. Shared directories are non-publishable and have no independent output. Put shared material at the narrowest ancestor that genuinely owns it; keep provider-neutral global typesetting primitives under `src/common/` — both providers import the shared preamble, which the build resolves as `\input{common/preamble}` through `TEXINPUTS` — and rite-, edition-, collection-, or work-specific material within its subtree. Hoist a file to `src/common/` only when it is pure typesetting or format and providers genuinely share it. Content-bearing shared material — lesson content, prayer texts, verified liturgical texts, response references — remains inside its provider branch; a provider's documents must not ride on another provider's authored substance.
 
 A proper-guide profile may authorize one canonical leaf to produce multiple PDFs
 through a provider-neutral `proper-components.toml` manifest. The bare leaf ID
@@ -186,9 +119,10 @@ The mechanical `-synthesis` PDF is a derived companion, not a second editable
 leaf: it has no `main.tex`, source records, generation record, web declaration,
 or independently authored prose. It is compiled through the manifest's
 `synthesis_entrypoint`, inherits canonical provenance, and may include only
-components whose manifest mode is `synthesis`. Both outputs are independently
-reviewed, installed, cataloged in the canonical row, and bound to their own
-exact release hashes.
+components whose manifest mode is `synthesis`. Both output roles are declared
+in `publication.toml` and cataloged in the
+canonical row. Their print renderings have independent inspection receipts
+when produced; their shared source owner remains the leaf.
 
 For schema 2, [the three-document profile](liturgy/propers-three-documents.md)
 supersedes the preceding schema-1 membership and prose-free companion rule.
@@ -196,32 +130,25 @@ One leaf owns three independently reviewed entrypoints: the research study,
 the concise `-synthesis` study, and the `-homily` companion. Their authored
 prose remains in the canonical leaf, with one research trail and generation
 record; neither companion is another editable publication leaf. Each has its
-own release record and derived PDF identity. Only the research study has a web
+own edition role and optional print identity. Only the research study has a web
 edition. The manifest and include graph establish the build dependencies of
 all three outputs.
 
-`build/<provider>/`, `pdf/<provider>/`, and `web/<provider>/` mirror a publishable leaf's path below `src/<provider>/`; the PDF and the web edition are named for the leaf. For example, under `gpt`:
+`web/<provider>/` mirrors the leaf path below `src/<provider>/`. Print
+output goes to an explicitly selected ignored destination; a basename is
+never a publication identity. For example:
 
 ```text
+src/gpt/articles/canon-law/example/publication.toml
 src/gpt/articles/canon-law/example/main.tex
-build/gpt/articles/canon-law/example.pdf
-pdf/gpt/articles/canon-law/example.pdf
 web/gpt/articles/canon-law/example.md
+.scratch/print/example.pdf
 ```
 
-The same mirroring applies to every provider branch.
-
-The generated reader site additionally serves each admitted PDF through a
-basename qualified by provider and a digest of its full canonical path.
-Its HTML and browser catalogue link that alias; the original mirrored URL
-remains a byte-identical compatibility copy. This prevents filename-only PDF
-caches from substituting another provider or collection. The alias stays stable
-across content revisions so a shared publication link does not become a 404;
-it is not an immutable snapshot URL or a same-document cache-busting scheme.
-Source IDs, installed paths, and the publication manifest's `pdf` identity stay
-canonical; its generated `public_pdf` field names the current alias. The
-generator verifies distinct alias basenames and both copies against the same
-installed bytes, including the provider-neutral reading-plan PDFs.
+The stable identity `publication:gpt/articles/canon-law/example` selects the
+source owner; a declared edition role selects one output. The same rule
+applies to each provider. Historical mirrored `pdf/` paths may remain in
+receipts and compatibility routing, but are not current input paths.
 
 A document leaf ID such as `articles/faith/ontological-vertigo` may exist under more than one provider. Each provider edition is an independent work on the same scope: it keeps its own research records, its own sections, and its own generation metadata, and reuses no text across providers. Publication identity is provider-qualified — the provider plus the leaf ID.
 
@@ -259,9 +186,10 @@ Repository-wide external-source reuse follows `guidance/sources.md`. Its work,
 edition, artifact, segment, passage, corpus, and binding records remain
 distinct from shared authored publication fragments. A segment may identify a
 constituent under its truthful edition while pointing to exact container bytes
-owned by another work; it does not transfer or duplicate those bytes. Lawful,
-reasonably sized, distributable source artifacts may be tracked under
-`src/sources/`; restricted bytes and machine-private caches may not. A
+owned by another work; it does not transfer or duplicate those bytes. Lawful
+textual source artifacts may remain tracked under `src/sources/`;
+exact binary preservation uses the declared delivery layer. Restricted bytes
+and machine-private caches may not enter Git or public output. A
 publication-local binding records why and how that publication used a central
 source. Central identity never supplies a consumer's interpretation
 automatically.
@@ -340,64 +268,66 @@ the terminal they happen to be printed at. Detection is tested by table in
 
 ## Build and review contract
 
-The normal lifecycle is:
+The normal lifecycle validates sources and builds the reader site:
 
 ```sh
-make                  # bounded parallel build into build/
-make pdf              # incremental PDF build
-make review-pdfs      # artifacts for changed PDFs
-make review-all-pdfs  # artifacts for every built PDF
-make install          # copy reviewed PDFs into pdf/
-make clean            # remove reproducible intermediates only
+make                       # source-only public site
+tools/document-schema check
+make check
+make public-site
 ```
 
-Build recipes must:
+`make` and `make all` select the source-only site path. `make pdf` remains an
+explicit developer opt-in for a corpus PDF build; it is not a normal check or
+deployment prerequisite. Prefer the selected-document print command for an
+individual edition.
 
-- validate structured generation records before compilation and rendered metadata afterward;
-- derive PDF modification time only from the tracked revision, omit build-clock creation dates and automatic trailer IDs, and reproduce identical bytes from unchanged inputs under the same toolchain;
-- preserve mirrored paths without basename collisions and isolate concurrent targets;
-- declare every render-affecting input and shared-consumer edge;
-- stop on fatal failure and never install a partial result; and
-- keep all intermediates out of `pdf/`.
+`docs/printing.md` gives the single-document print commands. A print request
+selects one stable document identity, one declared edition, and an output
+path. It must not silently rebuild the corpus or install into tracked paths.
 
-Compile each affected publication for enough passes to settle references and contents. Reject fatal errors, undefined references, overflow, and unresolved layout warnings.
+Build recipes declare every render-affecting input and shared-consumer edge,
+isolate concurrent targets, stop on fatal failure, and never expose partial
+output. Keep revision timestamps source-controlled; omit build-clock PDF
+dates and automatic trailer IDs. Repeating unchanged inputs under a pinned
+toolchain should reproduce a render, but ordinary source releases do not
+compare rebuilt PDFs with historical publication bytes.
 
-Use only `make review-pdfs`, `make review-all-pdfs`, or `tools/tpt pdf-review` to prepare page rasters and bounded contact sheets. The helper owns concurrency and memory controls; do not replace it with raw parallel ImageMagick or equivalent whole-document commands. A cache hit or contact sheet is not review. Inspect every rendered page, opening full-size rasters where scale matters, then verify PDF structure, fonts, metadata, extracted text, and byte identity between reviewed build and installed mirror.
+Source-bearing changes run the universal and profile content/evidence gates,
+`tools/document-schema check`, and `make check-sources`. The latter validates
+the source graph, publication bindings, legacy inventory, and reviewed family
+ledger; honestly pending family review remains permitted. The separate
+`make check-source-family-screening` target is a completion audit. Neither
+source-schema validation nor source release confers print-layout approval.
 
-The helper replaces its entire output directory. Give each stage and iteration
-a dedicated raster destination, such as
-`build/tpt-runs/<run>/artifacts/<stage>-<iteration>/rasters`; keep logs, author
-proofs and other review evidence outside that destination. A workflow's example
-artifact root is a namespace: select a dedicated child when that root contains
-other work. Never use a shared ancestor as the replaceable output directory.
+When producing a reviewed print edition, compile enough passes to settle
+contents and references. Reject fatal errors, undefined references, overflow,
+and unresolved layout warnings. Check PDF structure, embedded fonts,
+metadata, extracted text, clipping, density, and the rights colophon. Follow
+every exact pagination, paired-page, card, illustration, and physical-use gate
+in the owning profile; flowing browser print does not satisfy those gates.
 
-Audit publication size after rendered content settles. Investigate, rather
-than automatically rewrite, a PDF above 1 MiB or 75 KiB per page. Investigate
-a publishing raster above 1 MiB, above two megapixels without a placement
-need, above 450 effective dpi at its largest placement, or stored as RGB when
-the work declares it monochrome. Monochrome publishing art should ordinarily
-be stripped 8-bit grayscale PNG at no less than 300 effective dpi. Record the
-dimensions, mode, before-and-after bytes, transformed hash, comparison metric,
-and full-size visual comparison in the owning production or artwork record.
-Rebuild and review every consumer after normalization. These thresholds are
-review triggers, not quotas.
+Use `tools/pdf-review` for page rasters and bounded contact sheets. It owns
+concurrency and memory controls; do not substitute raw parallel ImageMagick or
+equivalent whole-document jobs. Give each invocation its own replaceable
+`.scratch/` directory and keep logs and receipts outside it. A cache hit or
+contact sheet is not inspection. Record the reviewed output hash, renderer
+and template identity, inputs, and actual page extent inspected when a review
+is required. Never infer a full-page PASS from a schema or build result.
 
-Exact acquired evidence artifacts are preservation inputs. Do not recompress,
-re-encode, or otherwise optimize their bytes merely to reduce repository size;
-any deliberate artifact migration must follow `guidance/sources.md` and update
-every dependent record. Never optimize an installed PDF independently of its
-authoritative source and reviewed build.
+Audit print and artwork size after composition settles. Investigate a PDF
+above 1 MiB or 75 KiB per page and a publishing raster above 1 MiB, above two
+megapixels without a placement need, above 450 effective dpi, or RGB in a
+monochrome work. These are review triggers, not quotas. Preserve an artwork
+normalization's dimensions, mode, hashes, comparison and full-size inspection
+in its owning record, and review affected print consumers.
 
-Research records that cannot affect rendered bytes need not force recompilation. Evidence dependencies on reusable external sources must nevertheless be queryable for freshness and impact under `guidance/sources.md`. Adding a publication may use deterministic controlled discovery; exceptional shared render dependencies must be explicit.
-
-Before finalizing a source-bearing change, run `make check-sources`. It
-validates the reusable source graph and publication bindings, replays the
-exhaustive legacy-source inventory, and checks the reviewed family-migration
-ledger. Honestly pending family review is allowed by this routine gate;
-`make check-source-family-screening` is the separate family-screening
-completion audit. These research gates are deliberately not prerequisites of `all`,
-`pdf`, or an individual PDF build. Rendered source changes still require every
-profile-specific build, page review, and installation gate above.
+Exact acquired evidence is a preservation input. Do not recompress, re-encode,
+or optimize it to reduce storage; a new derivative is a distinct artifact.
+`guidance/sources.md` owns physical relocation without changed bytes or source
+fingerprints. An evidence-only correction need not render unchanged text,
+but its affected consumers must remain discoverable and reviewed for source
+impact.
 
 ## External-review handoffs
 
@@ -419,6 +349,10 @@ GitHub Pages workflow and therefore authorizes that automatic deployment
 attempt. It does not authorize another deployment, a force-push, or history
 rewriting.
 
+An assigned workspace branch and explicit task limits govern that session;
+the ordinary `main` workflow does not authorize switching its branch or
+publishing a different ref.
+
 ## Adding or moving a publication
 
 For a new work:
@@ -426,10 +360,10 @@ For a new work:
 1. select provider, collection, profile, edition, locale, jurisdiction, and stable identity;
 2. create the publishable leaf and all required records;
 3. register exceptional shared dependencies;
-4. build, validate, review, and install the exact mirrored PDF; and
+4. validate its manifest, source records, and eligible reader edition; and
 5. add it to its one owning `library/` page.
 
-For a move, preserve history and update imports, dependencies, internal links, catalog entries, attributes, build paths, and installed mirrors together. Validate every consumer of moved shared material. Leave no second editable copy. Prefer a separate structural commit before substantive revision when the requested order permits it.
+For a move, preserve history and update manifests, imports, dependencies, internal links, catalog entries, attributes, and generated routes together. Validate every consumer of moved shared material. Leave no second editable copy. Prefer a separate structural commit before substantive revision when the requested order permits it.
 
 ## Public navigation and catalog
 
@@ -440,7 +374,7 @@ work was built. `ABOUT.md` is the consumer overview: it begins with
 `Don't Panic!` and explains AI and authority limits, the reuse boundary, and the
 name in ordinary language.
 
-Each installed publication has exactly one
+Each publication has exactly one
 owning catalog under `library/`. The root landing tables expose exactly seven
 reader portals, in this order and with these muted liturgical-color identities:
 white `Faith`, gold `Scripture`, red `Liturgy`, green `History`, violet
@@ -466,7 +400,7 @@ When one course or repeatable collection would dominate its section landing,
 give it one narrowly scoped child catalog such as
 `library/ecclesiastical-latin.md`. Link that child from the section landing and
 link it back to the section landing. The child, not its parent, owns the
-publication entries; do not repeat their PDF links on the landing page. Keep
+publication entries; do not repeat their edition links on the landing page. Keep
 all `library/` pages at the same filesystem level so source and generated links
 remain predictable.
 
@@ -474,7 +408,7 @@ A single unusually long or prominently requested work may likewise receive one
 narrowly scoped child landing when readers materially benefit from direct
 format links, a safety or reliance boundary, and section-level web navigation.
 That child owns the publication entry and stable publication marker. Its
-section landing links to the child without repeating the PDF or web links.
+section landing links to the child without repeating its edition links.
 `README.md` may feature the child outside its section tables when the
 maintainer has expressly requested landing-page visibility. Keep a review
 edition's status and material completion shortfall conspicuous on the child
@@ -496,56 +430,30 @@ stable-publication marker retains ownership for held work whose reader cell
 is plain text; it never replaces a released artifact's visible link.
 Title cells remain unlinked bold text.
 
-A componentized proper guide remains one catalog identity. In the complete
-Sunday calendars its provider cell links every installed artifact the identity
-owns, in this order and joined by ` · `:
+A componentized proper guide remains one catalog identity. Its provider cell
+links the available reader edition and declared print editions in source order.
+Schema 2 distinguishes research, synthesis, and homily; neither companion gets
+another work row or another source owner. Label a rights-limited or authorized
+reference-only research edition accurately. A companion without an HTML
+conversion may link a page explaining print options, with its available format stated
+plainly. Do not label that page as a PDF download.
 
-    [Full PDF](../pdf/<provider>/<leaf>.pdf) · [Synthesis PDF](../pdf/<provider>/<leaf>-synthesis.pdf) · [Read](../web/<provider>/<leaf>.html)
+A named `ChatGPT` or `Claude` column contains only that provider's editions.
+Format labels need not repeat the provider. In mixed-provider legacy tables,
+every edition link names its provider. Show `Planned` where a provider has no
+admitted edition; keep the stable-publication marker for held work without
+advertising it as released.
 
-For schema 2, insert `[Homily PDF](../pdf/<provider>/<leaf>-homily.pdf)`
-between the synthesis and web links. The canonical label is `Research PDF`
-when appointed text is rights-limited or the schema-2 edition is expressly
-authorized as reference-only under its owning profile. All three PDFs occupy the same owning
-catalog identity; their separate release records do not create extra rows.
+A curriculum landing follows the provider-column rule at course level. Each
+provider link opens its course section in the child catalog, which lists
+modules and companions in reader order. Each work retains one owning row.
 
-A named `ChatGPT` or `Claude` column links only that provider's
-editions; format labels need not repeat the provider. Legacy cycle-column
-tables require every label in a mixed-provider or non-primary-provider cell
-to name its provider, such as `GPT Synthesis PDF` or `Read Claude`. The
-proper-study publication gate checks both layouts; on 2026-09-19 the Claude
-Twenty-fifth Sunday links were appended after the ChatGPT edition's bare ones
-and read as the same edition's.
-
-Show `Planned` when the identity has no installed artifact for that provider.
-The row still carries its stable-publication marker, which owns the canonical
-identity whether or not the canonical PDF is also linked; the companion
-receives no separate row, and the web edition is the canonical leaf's, never
-the synthesis companion's. Earlier revisions of this rule linked the synthesis
-alone and left the canonical PDF and web edition reachable only through the
-marker. That suppressed installed artifacts a reader had no other route to, so
-the rule now names them.
-The component manifest records `appointed_text_completeness` as `complete`,
-`rights-limited`, or, in schema 2 with explicit profile authorization,
-`reference-only`; its canonical label must correspond, and its synthesis label
-is always `Synthesis PDF`.
-
-A curriculum section landing follows that provider-column rule at course
-level: each available provider link opens the corresponding provider section
-of the curriculum's child catalog. Within that provider section, list the
-course publications in reader order with one plain `PDF` column; do not repeat
-the AI-provider name on every packet or companion row. Every PDF still keeps
-its single owning catalog link, and a later provider edition receives its own
-parallel section rather than being mixed packet by packet.
-
-Do not cross-list. Keep derived companions in their canonical work's entry.
-Outside the Sunday calendars, link installed PDFs from the provider columns
-and describe each work in terse,
-reader-useful language. Do not link TeX files, research records, audits,
-manifests, provenance, review state, production state, release bookkeeping, or
-other repository-facing apparatus from reader landing pages. That apparatus
-remains in the publication's source records. Retain an edition, territory,
-as-of date, stable ID, or availability notice only when it helps a reader
-choose or safely use the work.
+Do not cross-list or expose source ZIPs as the reading experience. Reader
+links open the existing reader or an honest page explaining print options. Do not
+link TeX, research records, audits, manifests, provenance, production state,
+or release bookkeeping from reader landing pages. Those records remain
+auditable in source. Keep an edition, territory, as-of date, stable ID, or
+availability notice only when it helps readers choose or use the work.
 
 Keep section landing pages terse and prefer compact tables. Normally expose
 only a bold title, its provider links, and a short statement of subject, use,
@@ -563,18 +471,17 @@ On the 1962 page list the Ordinary first, assembly and calendar references secon
 
 Repository visibility and reader-site deployment are separate decisions. A public repository exposes tracked content and reachable history; a reader site is a generated, history-free artifact under ignored `build/`. Neither follows automatically from a successful build or commit.
 
-The public-alpha inventory must account for every discovered source and
-installed PDF. Accounting is per provider edition: each provider's installed
-PDF is a distinct entry under its provider-qualified identity, and one provider
-edition's state never covers another's:
+The public-alpha inventory must account for every discovered publication leaf
+and declared output role. Accounting is provider-qualified: one provider's
+release state never covers another provider or an undeclared companion:
 
 - `hold` excludes the work from public artifacts and ordinary review previews;
-- `alpha` includes an installed paper when its source, rights, safety,
+- `alpha` includes an admitted edition when its source, rights, safety,
   reproducibility, mechanical-validity, and basic-visual-usability checks pass;
   and
 - `published` records deployment of a verified alpha artifact.
 
-The editorial status `review` includes an installed paper in the public alpha
+The editorial status `review` includes an admitted edition in the public alpha
 when the alpha concerns pass. It is internal release control and does not
 control reader-facing labeling or ordinary discoverability.
 
@@ -591,7 +498,8 @@ legally necessary notices remain where readers need them.
 Each migrated publication owns
 `release/publications/<provider>/<leaf-id>.json`; the path below the provider
 mirrors the leaf ID. That independently writable record contains its catalog,
-alpha or hold state, and standing authorization reference. Current PDF hashes,
+alpha or hold state, and standing authorization reference. Current source
+identities,
 provider and status counts, and the aggregate publication manifest are
 generated during artifact construction and are not tracked publication inputs.
 During migration, a local record overrides its matching legacy row in
@@ -602,9 +510,10 @@ snapshot inventory.
 The maintainer's standing public-alpha decision of 27 July 2026 authorizes
 every current and later document snapshot to enter `alpha` without a new
 document-by-document approval request, provided that the six alpha concerns
-pass and the installed PDF and generated artifact identities are reproducible.
-This standing decision authorizes ordinary research, build, installation,
-validation, and coherent commit steps needed to prepare current public links.
+pass and the source/evidence and generated reader identities are reproducible.
+This standing decision authorizes ordinary research, source validation,
+reader builds,
+and coherent commit steps needed to prepare current public links.
 For a direct session on `main`, it also authorizes regular validated pushes to
 `origin/main` after review of the exact outgoing range and its public
 disclosure. Such a push starts the GitHub Pages workflow and authorizes that
@@ -614,20 +523,25 @@ may be recorded as external approval or final editorial judgment.
 
 An explicit user deliverable—such as promised scope, minimum extent, named
 sections, formats, or publication surfaces—must be recorded in the owning
-research scope before work is represented as complete. If the installed paper
+research scope before work is represented as complete. If the admitted edition
 does not yet meet that deliverable, it may remain discoverable as `alpha` if it
 states its actual present scope in the terminal scope-and-qualifications
 appendix and in its owning record, and never substitutes successful build,
 review, installation, or distribution for fulfillment of the promised
 deliverable.
 
-The authorization inventory also binds every reader-facing Markdown file, template, stylesheet, copied license text, generator, and dependency lock capable of changing the artifact. The public generator may copy only authorized HTML, styles, licenses, PDFs, and narrowly scoped host-control or verification files. It must not copy authoring sources, research records, intermediates, repository metadata, history, or private-preview output.
+The authorization inventory also binds every reader-facing Markdown file, template, stylesheet, copied license text, generator, and dependency lock capable of changing the artifact. The public generator may copy only authorized reader HTML, browser data, styles, licenses, and narrowly scoped host-control or verification files. It does not build or copy PDFs or binary evidence packs. It must not copy authoring sources, research records, intermediates, repository metadata, history, or private-preview output.
 
 Preparation, build, verification, push, and deployment are distinct. A preparation command may print current candidate hashes but grants no approval and changes nothing. Verification must independently prove the complete artifact file set, approved repository hashes, dependency lock, local links and fragments, checksums, excluded identifiers, and absence of machine-private paths.
 
-Conditional authorization records its effective instant, timezone, duration, exclusive cutoff when temporary, scope, and machine-recognized conditions. A temporary or request-time-restricted release requires enforceable controls for every page and direct PDF request, cache and rollback protection, monitoring, withdrawal, and purge; a static artifact cannot revoke itself. GitHub Pages is acceptable only for a perpetual authorization that needs no request-time expiration or discovery headers. Publish only a verified artifact through the authorized host workflow, never the repository root or private preview.
+Conditional authorization records its effective instant, timezone, duration, exclusive cutoff when temporary, scope, and machine-recognized conditions. A temporary or request-time-restricted release requires enforceable controls for every authorized page and direct request, cache and rollback protection, monitoring, withdrawal, and purge; a static artifact cannot revoke itself. GitHub Pages is acceptable only for a perpetual authorization that needs no request-time expiration or discovery headers. Publish only a verified artifact through the authorized host workflow, never the repository root or private preview.
 
 ## Version control and authority
+
+**Storage migration does not authorize history cleanup.** Removing current-tree
+binaries leaves reachable historical objects intact. Do not infer that a fresh
+ordinary clone is small until the retained history and fetch policy have been
+measured. A history rewrite or remote-ref cleanup requires explicit authority.
 
 **Do not repack this repository with Git's defaults.** The pack was built by an
 aggressive repack and is held together by long delta chains; a plain
@@ -649,9 +563,10 @@ attributes already recorded there are correct and do not imply `-delta`.
 Preserve unrelated changes and stage only a coherent requested result.
 Editing, building, installing, committing, updating another local target,
 pushing another ref, and deploying outside the
-automatic Pages workflow remain distinct authorities. Direct sessions have
-standing authority for coherent ordinary commits on `main` and validated
-regular pushes to `origin/main`.
+automatic Pages workflow remain distinct authorities. Direct sessions follow
+the authority in `AGENTS.md`. An assigned workspace
+branch and explicit task limits take precedence over its ordinary `main`
+workflow; do not switch or rename a workspace branch.
 
 Before any push to a public ref, review the exact outgoing range and confirm
 that every newly reachable source, record, PDF, and historical object is

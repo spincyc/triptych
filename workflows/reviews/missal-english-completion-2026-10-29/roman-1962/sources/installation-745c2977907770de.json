@@ -1,0 +1,897 @@
+{
+  "schema": "triptych-reviewed-source-installation/v1",
+  "recorded_on": "2026-10-29",
+  "source_plans": [
+    {
+      "plan_sha256": "ddd96554c51d05691ee5c62ec535fd64b51d42b85339d61e22efc442a308c7c0",
+      "plan_name": "install-plan-delta11-after45.json",
+      "targets": [
+        [
+          "purificatione-beatae-mariae-virginis",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "apparitione-beatae-mariae-virginis-immaculatae",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "apparitione-beatae-mariae-virginis-immaculatae",
+          "main",
+          "Tract",
+          "all",
+          1
+        ],
+        [
+          "annuntiatio-beatae-mariae-virginis",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "sanctissimi-nominis-beatae-mariae-virginis",
+          "main",
+          "Gradual",
+          "all",
+          1
+        ],
+        [
+          "sanctissimi-nominis-beatae-mariae-virginis",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "sanctissimi-nominis-beatae-mariae-virginis",
+          "main",
+          "Communion",
+          "all",
+          1
+        ],
+        [
+          "beatae-mariae-virginis-a-rosario",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        [
+          "beatae-mariae-virginis-a-rosario",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "s-ioseph-opificis-sponsi-beatae-mariae",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "beatae-mariae-virginis-reginae",
+          "main",
+          "Communion",
+          "all",
+          1
+        ]
+      ],
+      "source_files": [
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/marian-ancient-chant-pages-20261029/artifact.toml",
+          "sha256": "3e3dc663def9184fd9110a0a0d0d672d99dac3cb41b24c556daf7dec6ed258af"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/marian-ancient-chant-pages-20261029/source.pdf",
+          "sha256": "b63e71313abec111240d47fd76a7a827e61b0ffc03bc7a4f9f0e695dfa9b7d5f"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/marian-ancient-20261029-apparitione-beatae-mariae-virginis-immaculatae-alleluia.toml",
+          "sha256": "ba43bae389e440570870e2fc8abd538473e439916f372a2c1a2001dd7ce3136e"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/marian-ancient-20261029-apparitione-beatae-mariae-virginis-immaculatae-tract.toml",
+          "sha256": "b524136ba9775bd9494234cdce32263febf36a61d14a4e1889be0a2d7738d36e"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/marian-ancient-20261029-beatae-mariae-virginis-a-rosario-alleluia.toml",
+          "sha256": "db11845393297d2ad98597746bbd5ea26989ed22972fe2eae342368891fcd841"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/marian-ancient-20261029-beatae-mariae-virginis-a-rosario-introit-gloria-cue.toml",
+          "sha256": "6e837788ae602257738dada70d566cc81096eccc5c1a81d0ea952f029b022fcd"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/marian-ancient-20261029-beatae-mariae-virginis-a-rosario-introit.toml",
+          "sha256": "86b2b6c1385f3b93df6f40d1cfa78727b18246ceceda1934fe7dfd59f2b478b7"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/marian-ancient-20261029-purificatione-beatae-mariae-virginis-alleluia.toml",
+          "sha256": "42fca516b72cde8e41460a202c7a314f9b2ed6bc4555c08b4f10366fb854fca6"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/marian-ancient-20261029-sanctissimi-nominis-beatae-mariae-virginis-alleluia.toml",
+          "sha256": "efe0f7a4c1dd5424de04c29844b10e5442afa362023d7e7156624b2139069f33"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/marian-ancient-20261029-sanctissimi-nominis-beatae-mariae-virginis-communion.toml",
+          "sha256": "694649c1882a6eb20867bb84416fbf386fa72153a1a83f72cc176e0cff74a13b"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/marian-ancient-20261029-sanctissimi-nominis-beatae-mariae-virginis-gradual.toml",
+          "sha256": "ca16470bd64fe9db8dd169a7c759963a5dd5d93c3f548c20aececb0ab570a6d1"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/marian-annunciation-leaf503-20261029/artifact.toml",
+          "sha256": "06236b9a5e7697823ca62bb7fc290168c848e33bf6efa4de0ad5a14cf13ed1ac"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/marian-annunciation-leaf503-20261029/page-503.jpg",
+          "sha256": "6c3f72784b13d65c188e38562acbb496dce09e96ceba4b57e619c74e5a0ed561"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/marian-ancient-20261029-annuntiatio-beatae-mariae-virginis-alleluia.toml",
+          "sha256": "62560627af1e3f474222a413c5e377c64cabdd3785d69567bd5f8ea76d391f4a"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/marian-ancient-20261029-annuntiatio-beatae-mariae-virginis-alleluia.toml",
+          "sha256": "7c661ff41dc8a10b47a0178eefcb2e9de5e1b30a4568492b7b7e72f24e8fb2da"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/marian-ancient-20261029-apparitione-beatae-mariae-virginis-immaculatae-alleluia.toml",
+          "sha256": "32610caee3584f4c7e3d9f16fbfda7eeb73de7cf26e3312cbb3b8803a5cae0bf"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/marian-ancient-20261029-apparitione-beatae-mariae-virginis-immaculatae-tract.toml",
+          "sha256": "62ff33ba71fb371a3262e2d0028404d68908c6ff9b87d579e432ebdaac8e1ad3"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/marian-ancient-20261029-beatae-mariae-virginis-a-rosario-alleluia.toml",
+          "sha256": "d1fa99cb1d29cb4412d1f4db18773b5e4f138d4cef5015372302a16c69bc20e9"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/marian-ancient-20261029-beatae-mariae-virginis-a-rosario-introit.toml",
+          "sha256": "91aab5f4d7970a058cb6279a62e66942d8709354a87547e89d13716d609313c0"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/marian-ancient-20261029-purificatione-beatae-mariae-virginis-alleluia.toml",
+          "sha256": "18bbfb3a86cbb748f5c7de977b44c859a67c0e6f15dbd4710b97f99fb865df97"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/marian-ancient-20261029-sanctissimi-nominis-beatae-mariae-virginis-alleluia.toml",
+          "sha256": "900b9dac8ceadf568ccc6c2489a4c8e5413ac20f8c60c24a80025d58cb7f798f"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/marian-ancient-20261029-sanctissimi-nominis-beatae-mariae-virginis-communion.toml",
+          "sha256": "5e4f2589d0c04f798ee5f3fb781d0b3c3e1bcf3f1b5bec7f50b87ee4013ebcbb"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/marian-ancient-20261029-sanctissimi-nominis-beatae-mariae-virginis-gradual.toml",
+          "sha256": "bf3fa0df09d642016b91e8c89190ebceb43de7a78109b893d98d3718311fe6ae"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/marian-ancient-chants-20261029/artifact.toml",
+          "sha256": "fc69b37f1d47e68c846cf10e23b4d6894a792635574a83c1e8e4d7e29aba820b"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/marian-ancient-chants-20261029/latin-only.txt",
+          "sha256": "94e82bd101d9f2b2251f8e48acc72e3aed0b9332975128b9fe162802e0782935"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/marian-ancient-20261029-annuntiatio-beatae-mariae-virginis-alleluia.toml",
+          "sha256": "ee6afdf6f5923119aef75e05f9cdb40e17c06a98dc20a6543ef18c975477578e"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/marian-ancient-20261029-apparitione-beatae-mariae-virginis-immaculatae-alleluia.toml",
+          "sha256": "9c5f65fb88a066aedd7bd991715318619e4e77d0d5b9ab720cb07c557badf4aa"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/marian-ancient-20261029-apparitione-beatae-mariae-virginis-immaculatae-tract.toml",
+          "sha256": "af8be42c381f869901b70714d42566708d209cb281a0072b9197dec6ffd20f3b"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/marian-ancient-20261029-beatae-mariae-virginis-a-rosario-alleluia.toml",
+          "sha256": "e4d09ce2ad9cc55a16ee5ae722d5a550b10a8ccc3fbe239dd3987ae9b4062516"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/marian-ancient-20261029-beatae-mariae-virginis-a-rosario-introit.toml",
+          "sha256": "14cb7d32ecba1dff5885352dc347b4707759a16464735d74e0455e06c612fe1a"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/marian-ancient-20261029-purificatione-beatae-mariae-virginis-alleluia.toml",
+          "sha256": "20bd86a1b34a19ede424bf24fd0c8b0bd80bc03e5224ec25874541b67bf86c2f"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/marian-ancient-20261029-sanctissimi-nominis-beatae-mariae-virginis-alleluia.toml",
+          "sha256": "f180905c26f0d6af8beeca971b17e9f3b4e5cb6ed521ad6090eb75a5e536f111"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/marian-ancient-20261029-sanctissimi-nominis-beatae-mariae-virginis-communion.toml",
+          "sha256": "32bb9d379a01e91d54211c639e073822152b8deaa55822137c58c9fe2ce0f14c"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/marian-ancient-20261029-sanctissimi-nominis-beatae-mariae-virginis-gradual.toml",
+          "sha256": "c29332cb4bd0c5018adf2b36e182520dc1341097a425e657c79066c52be96623"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/late-marian-two-chants-latin-20261029/artifact.toml",
+          "sha256": "a8d092605fa1ce88df2c65144014feec86ed72ca2783daf3e3668193efc06878"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/late-marian-two-chants-latin-20261029/latin.txt",
+          "sha256": "195521e5df0bcdafd28e38962272ed1027990687b5b9808865779898b90f260d"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/late-marian-two-chants-pages-20261029/artifact.toml",
+          "sha256": "fc04618c9b5330f69f0097e252f4d4f22782fa77123456be094e0bbcb724b51a"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/late-marian-two-chants-pages-20261029/source.pdf",
+          "sha256": "763e787e3fa63a16b947f2c087b86788dab3f25abb851eedf254cc4ec5594b73"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/late-marian-two-chants-20261029-beatae-mariae-virginis-reginae-communion.toml",
+          "sha256": "243f326eff85a052246164a4adabe7aad7ca72a41ad38f0b5fc16a0bed711781"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/late-marian-two-chants-20261029-s-ioseph-opificis-sponsi-beatae-mariae-alleluia.toml",
+          "sha256": "147b567d1720e07f26811c08921660f746cbb8b662f208e01395a4d88f2cd37b"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/late-marian-two-chants-20261029-beatae-mariae-virginis-reginae-communion.toml",
+          "sha256": "dfbfe1e0ff89e45d7c48f64b49583cbe340f58266cad06cc7fec99fe0022a56f"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/late-marian-two-chants-20261029-s-ioseph-opificis-sponsi-beatae-mariae-alleluia.toml",
+          "sha256": "bc3cd86175e8f0c82d260523d9caf5ebfc22c228d63ccdfb8352919d721f1557"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/late-marian-two-chants-projection-20261029/artifact.toml",
+          "sha256": "ae3c702015d21e904a77b5e94912225658de9102da140d03537fd3c48642c497"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/late-marian-two-chants-projection-20261029/latin.txt",
+          "sha256": "a6406eff476911cdbd16e301edf7eba52aa6c19afe058e8aebcd90c50805be60"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/late-marian-two-chants-20261029-beatae-mariae-virginis-reginae-communion.toml",
+          "sha256": "488f6985e4a7087a0414ca1aafa8f419fccace9da0f1956cdb3f4cbafe7df2dc"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/late-marian-two-chants-20261029-s-ioseph-opificis-sponsi-beatae-mariae-alleluia.toml",
+          "sha256": "477b41d7ae701248f8cfb0fa3c77c90df31073544fda20951393cdd89ea18f91"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "target": [
+        "purificatione-beatae-mariae-virginis",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, CMAA facsimile, artifact p. 548 / printed p. 467, right column, no. 2111. No biblical reference is printed; none is inferred.",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "purification-post-epistle",
+          "option": "regular",
+          "basis": "Missale Romanum 1962, CMAA facsimile, artifact p. 548 / printed p. 467, nn. 2111-2112: after Septuagesima the Alleluia and its verse are omitted and the printed Tract is said.",
+          "anchor": {
+            "mass": "purificatione-beatae-mariae-virginis",
+            "form_id": "main",
+            "proper": "Alleluia",
+            "occurrence": 1
+          },
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "advent",
+              "regular"
+            ]
+          }
+        }
+      },
+      "old_untranslated": {
+        "mass": "purificatione-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No attached exact English exemplar is recorded for this whole own chant body; Bible companions and Common translations do not establish it."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "74865199f01e49b5cf5570b4a9f3ba7da7400ca95fc2c989d4ad9e90df0bda01",
+      "new_english_sha256": "67ef66b68328742eecb98cb41a3d4bee1a608609a1688f78f5e3a45eb3123b06",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
+    },
+    {
+      "target": [
+        "apparitione-beatae-mariae-virginis-immaculatae",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, CMAA facsimile, artifact p. 555 / printed p. 474, left column, no. 2168. No biblical reference is printed; none is inferred.",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "apparition-post-epistle",
+          "option": "regular",
+          "basis": "Missale Romanum 1962, CMAA facsimile, artifact p. 555 / printed p. 474, nn. 2168-2169: after Septuagesima the Alleluia and its verse are omitted and the printed Tract is said.",
+          "anchor": {
+            "mass": "apparitione-beatae-mariae-virginis-immaculatae",
+            "form_id": "main",
+            "proper": "Alleluia",
+            "occurrence": 1
+          },
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "advent",
+              "regular"
+            ]
+          }
+        }
+      },
+      "old_untranslated": {
+        "mass": "apparitione-beatae-mariae-virginis-immaculatae",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No attached exact English exemplar is recorded for this whole own chant body; Bible companions and Common translations do not establish it."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "a09d10462bcd7ed3f9c05f665ee1c0737ce6b8dee3b8ca4709375171d2fb4eb5",
+      "new_english_sha256": "8ee38369d50b3c0fc8215655bd7a720c579aa169069fcbae089b505940e781d6",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
+    },
+    {
+      "target": [
+        "apparitione-beatae-mariae-virginis-immaculatae",
+        "main",
+        "Tract",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Tract",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Judith",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 15,
+                  "verse": 10
+                },
+                "end": {
+                  "chapter": 15,
+                  "verse": 10
+                }
+              }
+            ],
+            "ref": "Judith 15:10"
+          },
+          {
+            "book": "Song of Songs",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 4,
+                  "verse": 7
+                },
+                "end": {
+                  "chapter": 4,
+                  "verse": 7
+                }
+              }
+            ],
+            "ref": "Song of Songs 4:7"
+          }
+        ],
+        "notes": "Missale Romanum 1962, CMAA facsimile, artifact p. 555 / printed p. 474, left column, no. 2169. Printed biblical references are retained; the uncited chant wording remains a separate unavailable body.",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "apparition-post-epistle",
+          "option": "tract",
+          "basis": "Missale Romanum 1962, CMAA facsimile, artifact p. 555 / printed p. 474, nn. 2168-2169: after Septuagesima the Alleluia and its verse are omitted and the printed Tract is said.",
+          "anchor": {
+            "mass": "apparitione-beatae-mariae-virginis-immaculatae",
+            "form_id": "main",
+            "proper": "Alleluia",
+            "occurrence": 1
+          },
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "tract"
+            ]
+          }
+        },
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "apparitione-beatae-mariae-virginis-immaculatae",
+        "form_id": "main",
+        "proper": "Tract",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No attached exact English exemplar is recorded for this whole own chant body; Bible companions and Common translations do not establish it."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "171223932734d0fda412ed5452371b15116bad1faffb043b014a98dbea577630",
+      "new_english_sha256": "8f16b27c9a7c8fa94da87e077aaff077a6b0a6513be9818c02130cc6b7aaa166",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
+    },
+    {
+      "target": [
+        "annuntiatio-beatae-mariae-virginis",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Luke",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 1,
+                  "verse": 28
+                },
+                "end": {
+                  "chapter": 1,
+                  "verse": 28
+                }
+              }
+            ],
+            "ref": "Luke 1:28"
+          }
+        ],
+        "incipit": "Alleluia, alleluia; Ave, Maria; Virga Jesse floruit",
+        "notes": "CMAA artifact p. 576 / printed p. 495, no. 2328. Luke 1:28 is the first cited verse; the second verse, identified by Virga Jesse floruit, has no printed Scripture citation. The whole mixed Latin body is unavailable.",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "annunciation-post-epistle",
+          "option": "paschal",
+          "basis": "Missale Romanum 1962, CMAA artifact p. 576 / printed p. 495, units 2326-2328: the normal Gradual and Tract are omitted in paschal time and replaced by the printed double Alleluia; the second Alleluia verse has no printed Scripture citation.",
+          "anchor": {
+            "mass": "annuntiatio-beatae-mariae-virginis",
+            "form_id": "main",
+            "proper": "Tract",
+            "occurrence": 1
+          },
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "paschal"
+            ]
+          }
+        },
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "annuntiatio-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to the whole mixed paschal Alleluia printed at CMAA artifact p. 576 / printed p. 495, no. 2328."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "2a5a897dec6761389265e25b07f96471c6ae7d0794e794126fa4c67a2393db8d",
+      "new_english_sha256": "518b8fdd20128f7d558e49b0f309eb4c831815618195bb305d77b3cd92d38d1a",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
+    },
+    {
+      "target": [
+        "sanctissimi-nominis-beatae-mariae-virginis",
+        "main",
+        "Gradual",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Gradual",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, registered CMAA facsimile, artifact page 734, printed page 653, numbered unit 3595; normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source record."
+      },
+      "old_untranslated": {
+        "mass": "sanctissimi-nominis-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Gradual",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal Proper appointment; retained Scripture citations do not establish that whole body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "1e22beb772ceaead670b8a8eb8cd86f7e1f4211aa71d5cef257a09c7f3327e92",
+      "new_english_sha256": "e738ff0fedb471e7d8b5919a5077cdb653bf690c793ee85f7d7b46d49cdfb06c",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
+    },
+    {
+      "target": [
+        "sanctissimi-nominis-beatae-mariae-virginis",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, registered CMAA facsimile, artifact page 734, printed page 653, numbered unit 3596; normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source record."
+      },
+      "old_untranslated": {
+        "mass": "sanctissimi-nominis-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal Proper appointment; retained Scripture citations do not establish that whole body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "d4fccec6d3d0e5571057fbe4804159027266c74446cee8564dffd411da7be3f1",
+      "new_english_sha256": "c607a5b070e3587bd27e21ebe39bf4d57db5033cd07ae0c2e18c4475008f7d31",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
+    },
+    {
+      "target": [
+        "sanctissimi-nominis-beatae-mariae-virginis",
+        "main",
+        "Communion",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Communion",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, registered CMAA facsimile, artifact page 735, printed page 654, numbered unit 3603; normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source record."
+      },
+      "old_untranslated": {
+        "mass": "sanctissimi-nominis-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal Proper appointment; retained Scripture citations do not establish that whole body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "d87a30cf47b7c5c6878e8bba3642c583ebe0b5271341f07ca899ca026833bebc",
+      "new_english_sha256": "9e8cf8ebfd90acf163cf34b00b9a115e77d8aba88f5a889d7b8073e7b06191d1",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
+    },
+    {
+      "target": [
+        "beatae-mariae-virginis-a-rosario",
+        "main",
+        "Introit",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Introit",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 44,
+                  "verse": 2
+                },
+                "end": {
+                  "chapter": 44,
+                  "verse": 2
+                }
+              }
+            ],
+            "ref": "Psalms 44:2"
+          }
+        ],
+        "notes": "Missale Romanum 1962, registered CMAA facsimile, artifact page 758, printed page 677, numbered unit 3786; Uncited antiphon plus Psalm 44:2. The retained citations do not supply the complete literal Introit; that body is unavailable in this source record.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "beatae-mariae-virginis-a-rosario",
+        "form_id": "main",
+        "proper": "Introit",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal Proper appointment; retained Scripture citations do not establish that whole body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "3eb0929565ca1ca3c0c08e28260e0f686d257966b5e60475f2040f7c51a75b55",
+      "new_english_sha256": "ddf5f82984c37b49c944ba6b51624e5d71ade4b954556347f80363f183788d3d",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
+    },
+    {
+      "target": [
+        "beatae-mariae-virginis-a-rosario",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, registered CMAA facsimile, artifact page 759, printed page 678, numbered unit 3792; normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source record."
+      },
+      "old_untranslated": {
+        "mass": "beatae-mariae-virginis-a-rosario",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal Proper appointment; retained Scripture citations do not establish that whole body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "c1aa60084e716e1fda8623c7718dd506fd0eb28bd038f359f3eadf64acf05b8c",
+      "new_english_sha256": "26ff3e757078ff6ae4bb2595468906cac96ae8c485f800320b3e634eb55230c4",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-67e4c9bacba07630.json"
+    },
+    {
+      "target": [
+        "s-ioseph-opificis-sponsi-beatae-mariae",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        },
+        "ordinary_disposition": {
+          "kind": "conditional",
+          "group": "own-paschal-alleluia",
+          "basis": "The controlling 1962 Missal, artifact pp. 597-598, explicitly prints this chant under its seasonal heading.",
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "paschal"
+            ]
+          }
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-ioseph-opificis-sponsi-beatae-mariae",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The controlling 1962 Missal appoints this exact body at printed p.516, unit2485. No exact shared English whole-body exemplar/publication binding is attached to this seat."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "f0526a7249dec2e100d8e6a7023c33c31c042c94a090a2f2dee98a8e444f9734",
+      "new_english_sha256": "e39bda0873c9596250bc8e8e22da6138f4a898841bd33ccb4c10eb6ddfba6774",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-217c5ee8b999c83f.json"
+    },
+    {
+      "target": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Communion",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Communion",
+        "source": "composed",
+        "notes": "Registered 1962 CMAA facsimile, artifact622/printed541, unit2694; appointment read on the page images on 2026-10-23. No complete earlier-witness word collation or independent publication basis is established here; no body is supplied.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "beatae-mariae-virginis-reginae",
+        "form_id": "main",
+        "proper": "Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The source appointment is established by the registered 1962 CMAA facsimile, artifact621-622/printed540-541. No exact human English exemplar/publication binding is established for this owner; no English is supplied and no whole-witness absence is asserted."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "0985fddc5a99b1b7bd4e31d250dc7130c525bbb141874bba6c37e4cc63e8145d",
+      "new_english_sha256": "fa52b2c26eec645e8f8b79c81a5db9a5e5927a6591055d25f04c1e1938297272",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-217c5ee8b999c83f.json"
+    }
+  ],
+  "after_hashes": {
+    "src/sources/calendars/roman-1962/propers.yaml": "1863cad92336d7eccb19b51417e3adf6129c034dd47725a41c51e283ad1035c6",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "fa21288096b04c62085735dbc52078dfd91f97c0baa2330dbc0f3b38cc52067f",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "88c7848103e6b8e078e359a93df83386c32fdf0127f845b3435c26be6e23dd46"
+  }
+}

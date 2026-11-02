@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-domine-qui-dixisti-la"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 1922 Mame printing and its faithful mechanical reproduction have the affirmative United States public-domain basis recorded on artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a. The retained pages are historical book pages only; no modern target page, website wrapper or new editorial apparatus is copied. Faithful source transcription claims no new exclusive right in the old words."
+rights_jurisdiction = "United States"
+provenance = "Direct image transcription of the whole old Domine-qui-dixisti prayer from packet1/original464/printed350, and the whole short Qui-vivis conclusion with its marked response from packet2/original1022/printed144*. No OCR supplies or repairs wording. The old body retains mea; no revised target petition is represented as the historical source."
+retrieved = "2026-10-30"
+sha256 = "c54326753e78c74a0db88e33c938e2e0b3703a1f1c2aaba5ac0e523587063bf8"
+byte_size = 550
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-la/text.tsv"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-domine-qui-dixisti-pages"
+transformation = "Join source line-ending hyphenation; expand printed ae ligatures to ae; remove tonic accents; retain source j spelling, capitals and pointing except compositor spaces before colons. Render the opening red drop capital D plus small capitals OMINE in conventional sentence case Domine. Store the complete old body and its complete Deus-per-omnia conclusion as separate rows1–2; store the separately printed short conclusion and its marked Amen response as rows3–4. Exclude red rubrics and the red response mark from spoken Latin. No possessive, conclusion word or response is changed."
+indexable = true
+encoding = "utf-8"
+notes = "One header and four physical rows. Whole old prayer=rows1–2. Independent complete short conclusion with response=rows3–4. Row1 ends in the actual source colon. The exact short conclusion is witnessed whole after Non-intres and is not manufactured by deleting words from row2. These source rows do not establish modern speakers or a complete authenticated2008 state."

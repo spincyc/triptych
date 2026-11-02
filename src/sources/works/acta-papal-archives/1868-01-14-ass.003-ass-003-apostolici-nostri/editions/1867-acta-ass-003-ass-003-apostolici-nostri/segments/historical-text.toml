@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.003.ass-003-apostolici-nostri"
+edition_id = "edition.acta-papal-archives.ass.003.ass-003-apostolici-nostri"
+artifact_id = "artifact.acta-papal-archives.ass.003.historical-text-e55a22fd"
+artifact_sha256 = "e55a22fd78f8d5d5f53b236eef9eacfbb34b93eefd90c6c446cb2d4786068c02"
+segment_type = "constituent-work"
+states = ["cataloged", "acquired", "inspected"]
+physical_line_ranges = [[1, 84]]
+context = "Inspected source lines 15240–15255 give issuer/salutation and incipit; source closure inspected at lines 15298–15308. Identity remains source-local; no canonical match is inferred. Original source coordinates remain in the derivative ordered_source_line_ranges metadata."
+notes = "Exact per-act derivative concatenates only reviewed ordered source physical LF ranges; all characters of those source lines are retained. Main body and historical notes are complete. Papal brief followed by historical newspaper/retraction note. Excludes unrelated preceding-case continuation at 16451–16458. Main joins causis/prout and Aposto-/licam checked against layout pp380–382; historical note preserves its printed order. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

@@ -1,0 +1,80 @@
+{
+  "actual_parent_verification": {
+    "git_revision": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+    "historical_fields": 12,
+    "proof_sha256": "1dc99d5a3dd4f90298d97a2e3e5795837ce5cfde82d5b4b97b94f9f8a10cd7bb",
+    "raw_original_Git_replays": 17,
+    "source_pins": 7071
+  },
+  "actual_semantic_candidate_derived": false,
+  "canonical_index_or_ref_writes": 0,
+  "contract_findings": {
+    "Transfer3_public_domain_basis_stays_project_projection": true,
+    "all7071_parent_paths_preserved_and_new_paths_explicit_only": true,
+    "declared_successors_enforced_even_when_disk_equals_parent": true,
+    "finite_context_requires_five_exact_adopted_root_pins_and_two_fixed_runtime_reviews": true,
+    "immutable_compiler_and_support_and_strict_helper_preserved": true,
+    "no_generic_permission_from_arbitrary_accepted_receipt": true,
+    "only_parent_state_and_scope_paths_are_replaced_in_memory": true,
+    "ordinary_namespace_symlink_and_drift_guards_retained": true,
+    "original_semantic_derivation_and_direct_PD25_partition_unchanged": true,
+    "root_selected_exact_declaration_and_SOURCESETTLED_GENSETTLED_required": true,
+    "runtime_changes_limited_to_exact_F34_ECCA_AA925_chain_and_literal_EXAMPLES_transcripts": true,
+    "source_execution_hashes_are_metadata_dictionary_hashes_not_runtime_code_pins": true
+  },
+  "controls": {
+    "harness_scope": "Exact frozen supplied tests run unchanged from a private copy. Independent cases use synthetic stores/declarations and exact published/intermediate/final helper and frozen review bytes; no actual semantic derive.",
+    "independent": 20,
+    "log_sha256": "c11a4ec7b65419d6c85cdeb6d055d123d15b2c53bc54867d79adbaab17b6e683",
+    "result": "PASS",
+    "supplied": 44
+  },
+  "corrections_remaining": [],
+  "finite_runtime_entry_export_sha256": "22bfb1258f5dd6943af5a6405857352c899cbf832a8f269a3172c3e485c5f915",
+  "finite_runtime_successor": {
+    "after_sha256": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5",
+    "before_sha256": "34c7ea2520f0917108495ea333323c33e4eb3b6993aba2e10c91fc49385dfb40",
+    "independent_reviews": [
+      {
+        "path": ".scratch/roman-english-completion-20261029/v2-consolidation/pure-quarantine-review-v1/review.json",
+        "sha256": "b2f859809819b9a24e3a1f488bcd136cae87bcf0b918375244f5c2a349881105"
+      },
+      {
+        "path": ".scratch/roman-english-completion-20261029/v2-consolidation/pure-quarantine-regression-v1/receipt.json",
+        "sha256": "dc5542cdc8bdfc5040f98d650a01376fd74dbc2a25512cd2a193a28224a8e030"
+      }
+    ],
+    "intermediate_activation": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/actual-authority-activation.json",
+      "sha256": "55a3ea92a0d4892607d7376bf16c339b7fc5e1aeb6b82fd1a4af663ded7fadff"
+    },
+    "intermediate_sha256": "ecca66760debc9c0451e1b6743883c55d59390f575b4503b6af27d9923117fd3",
+    "kind": "finite22-quarantine-claim-successor"
+  },
+  "helper_review_boundary": "Reuses the two exact independently accepted helper reviews after verifying their ECCA-to-AA925 and authority bindings; does not claim a repeated full helper/source/fidelity review.",
+  "new_rejected_adapter_sha256": "43ea9c7ffe052c3a2f6c415ac7a262db32d1d49058cd685839848fa8e498cdff",
+  "new_resolved_finding": {
+    "corrected_behavior": "All explicitly declared runtime successors bind their actual after bytes before parent equality is considered; the exact final finite helper chain is mandatory even on parent-equal or undeclared code.",
+    "old_behavior_independently_reproduced": "The intermediate wrapper accepted published F34 helper bytes despite declaring the selected AA925 successor, because it skipped successor checks on parent-equal bytes."
+  },
+  "new_source_English_rights_or_acceptance_adopted": false,
+  "previous_adapter_review_sha256": "b26ededb5742e7d6c4df8c0d0b3199e3338c9ccba4d719a730ccb286026d628e",
+  "required_next_steps": [
+    "Root new GENSETTLED and exact declaration for the actual complete union and the new reviewed adapter/runtime entry.",
+    "Exact actual-candidate derive and separate independent data/transition/replay review.",
+    "Root acceptance/install and actual source-guard consumer checks."
+  ],
+  "resolved_finding": {
+    "new_behavior": "Exact UTF8 byte spans retain and compare prefix/suffix independently; executable opening/closing-line changes now refuse. Unicode and LF/CRLF/CR controls pass.",
+    "old_behavior_independently_reproduced": "The original whole-line exclusion accepted an added executable closing-line statement."
+  },
+  "reviewed_adapter_sha256": "23391e404ec941d3057070c48da95fb538698fb9ce9f0777ab688034c0443a09",
+  "reviewed_tests_sha256": "6aa5fa58c3c0e6dbb2429715ac9430e8653ac6eadd6fd8395173d7a104577592",
+  "schema": "triptych-independent-settled-semantic-adapter-code-review/v1",
+  "scope_limits": [
+    "Code/contract review only, not approval of source wording, translation fidelity, new rights or the eventual candidate.",
+    "Runtime audit checks ordinary repository code-file identities in the settled trusted interpreter workflow; this is not a hostile-host sandbox."
+  ],
+  "status": "PASS-corrected-exact-functional-helper-adapter-contract",
+  "superseded_adapter_sha256": "6591fdaae6b110b30fc9e219fb73c870aa2046ece2a05e807430e3c6ca5ebe0b"
+}

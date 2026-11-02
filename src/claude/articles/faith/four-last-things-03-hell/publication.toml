@@ -1,0 +1,97 @@
+schema_version = 1
+id = "claude/articles/faith/four-last-things-03-hell"
+kind = "article-faith"
+profile = "guidance/articles.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "claude/articles/faith/four-last-things-03-hell"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "argument"
+source = "sections/00-depart-from-me.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/10-the-loss-of-god.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/20-the-fire.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/30-the-worm-and-the-darkness.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/40-for-ever.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/50-with-their-own-bodies.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/60-the-martyrs-fear.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/65-the-narrow-gate.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/70-the-saints-who-saw.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/75-the-fear-that-saves.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/78-deliver-us.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/80-affections-of-saint-alphonsus.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/85-graded-teaching.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/90-scope-method-qualifications.tex"
+
+[[structure]]
+role = "references"
+source = "sections/99-references.tex"

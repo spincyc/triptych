@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-existing-forward-five-57a17611"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Public domain in the United States by failure to renew, on the affirmative registration-number record established at src/sources/inventories/lasance-new-roman-missal-rights-v1.toml: A 110108, copyright 15 July 1937, renewal window closed 15 July 1965; A 192159, copyright 1 November 1945, renewal window closed 1 November 1973. That holding is the repository's own and is recorded there with its citations, its controls, and what would overturn it; nothing here re-argues it. It does not cover the lettered inserts at printed pages 1298a-1298n or 1302a-1302d. The tracked publication artifact removes both complete page-bounded ranges, and no entry below quotes either."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+provenance = "Literal historical English independently image-checked by the separately pinned source review. Five exact EXISTING complete-sequence applications are bound by workflows/reviews/missal-reader-completion-2026-10-26/existing-source-methods-forward-five.json SHA256 5eba1be1b20d6fa73bd94db48a67f5e90a2add78ddbafcbbaf1ab3ea564f8f02. This receiving carrier makes no new page-image-reading claim."
+transformation = "Join only accepted visual line divisions and encode literal English without changing words, pointing, case or actual endings. No source repair, English expansion, response addition, name/N substitution, new lexical family or new finite adoption."
+retrieved = "2026-10-26"
+sha256 = "57a176114b198adab4748f16f8e04bb2e1d1a4d05e9c396485f4825e5eb0ea55"
+byte_size = 294
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-reader-completion-20261026-existing-forward-five-57a17611/english.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Historical underlying wording retains its existing separately recorded bounded US expression basis and is excluded from new Triptych CC BY authorship. No official1962English, whole scan, image, OCR, modern advertisement, page layout, wrapper or unexamined setting is cleared."

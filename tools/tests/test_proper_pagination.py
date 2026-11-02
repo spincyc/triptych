@@ -349,6 +349,7 @@ class PaginationTests(unittest.TestCase):
         preflight = load("check-content-preflight")
         element = SimpleNamespace(key="gospel", loci=["Mt.1.1"], publication_claims=[])
         found = SimpleNamespace(state=preflight._wiring().APPOINTED, elements=[element],
+                                presentation="",
                                 element=lambda key: element if key == "gospel" else None)
         path = self.leaf / "chronology.tex"
         original = path.read_text()
@@ -367,6 +368,7 @@ class PaginationTests(unittest.TestCase):
         preflight = load("check-content-preflight")
         element = SimpleNamespace(key="gospel", loci=["Matt.1.1"], publication_claims=[])
         found = SimpleNamespace(state=preflight._wiring().APPOINTED, elements=[element],
+                                presentation="",
                                 element=lambda key: element if key == "gospel" else None)
         cell = "\\chronodate{gospel}{\\chronologyannotation{gospel}}"
         # The expansive study can develop a separate historical appendix; its

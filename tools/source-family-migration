@@ -37,13 +37,13 @@ EXAMPLES = {
         Example(
             "tools/source-family-migration check",
             (
-                "source-family-migration valid: families=0 review_units=162 screened=0 pending=162 trace_records=0 atomic_citation_coverage=false",
+                "source-family-migration valid: families=0 review_units=164 screened=0 pending=164 trace_records=0 atomic_citation_coverage=false",
             ),
         ),
         Example(
             "tools/source-family-migration --root . check",
             (
-                "source-family-migration valid: families=0 review_units=162 screened=0 pending=162 trace_records=0 atomic_citation_coverage=false",
+                "source-family-migration valid: families=0 review_units=164 screened=0 pending=164 trace_records=0 atomic_citation_coverage=false",
             ),
             "--root belongs before the verb",
         ),

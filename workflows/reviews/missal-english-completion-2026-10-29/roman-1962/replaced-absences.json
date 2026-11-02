@@ -1,0 +1,2027 @@
+{
+  "schema": "triptych-study-translation-replaced-absences/v1",
+  "recorded_on": "2026-10-29",
+  "before_sidecar_sha256": "1dbc454c7edc0a0e0054ddd57dd65bdc59f07195d193be003e9b200a1f0c57ed",
+  "scope": "Historical witness-specific absence dictionaries replaced by a separately identified original Triptych study rendering. They are preserved here as historical evidence; no historical witness disagreement is reversed.",
+  "untranslated": [
+    {
+      "mass": "s-ioannis-mariae-vianney-confessoris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+      },
+      "note": "Lasance translates `beatum Joannem Mariam`, while the 1962 target reads `sanctum Ioannem Mariam`. The historical English remains verified in its source passage but is not attached as an exact translation of the 1962 wording."
+    },
+    {
+      "mass": "s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "witness_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "witness_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-hilary-common-gap",
+      "verified_artifact_page": 495,
+      "verified_on_page": "2026-08-27",
+      "verified_printed_page": "485-487; 535",
+      "note": "Cummiskey appoints its Doctor Common to Hilary, but that Common's Collect prints Blessed N. while the 1962 target names Hilary. Supplying the name would compose text not printed by the witness."
+    },
+    {
+      "mass": "s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "witness_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "witness_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-hilary-common-gap",
+      "verified_artifact_page": 496,
+      "verified_on_page": "2026-08-27",
+      "verified_printed_page": "485-487; 535",
+      "note": "Cummiskey's Doctor Secret prints holy servant N. and renders neither Pontiff nor Confessor, while the 1962 target names Hilary as Pontiff and Doctor. Supplying those distinctions would compose text."
+    },
+    {
+      "mass": "s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "witness_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "witness_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-hilary-common-gap",
+      "verified_artifact_page": 496,
+      "verified_on_page": "2026-08-27",
+      "verified_printed_page": "485-487; 535",
+      "note": "Cummiskey's Doctor Postcommunion prints thy Confessor and great Doctor, while the 1962 target names Hilary as Pontiff and Doctor. It answers the non-pontifical Common form, not this target."
+    },
+    {
+      "mass": "palm-sunday",
+      "form_id": "main",
+      "proper": "Hymn to Christ the King",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "Cummiskey printed pp. 238-239 and Lasance pp. 398-399 have the complete six-couplet English Gloria, laus et honor matching the target hymn. It remains text-free only until exact Lasance visual and tracked-publication passages are registered. Until they are, no exact exemplar is bound and the slot is not sourced. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): Lasance 1945 is public domain, and nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "mass-of-the-lords-supper",
+      "form_id": "main",
+      "proper": "Mandatum Antiphon 8",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "Cummiskey has no Mandatum section, but Lasance printed p. 468 has complete facing Latin and English Ubi caritas matching the target. The slot remains text-free only until exact Lasance visual and tracked-publication passages are registered. Until they are, no exact exemplar is bound and the slot is not sourced. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): Lasance 1945 is public domain, and nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "mass-of-the-lords-supper",
+      "form_id": "main",
+      "proper": "Prayer of the Mandatum",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "Cummiskey has no Mandatum section, but Lasance printed p. 469 has facing Adesto Domine and exact English. The slot remains text-free only until exact Lasance visual and tracked-publication passages are registered. Until they are, no exact exemplar is bound and the slot is not sourced. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): Lasance 1945 is public domain, and nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "easter-vigil",
+      "form_id": "main",
+      "proper": "Litany of the Saints, first part",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "note": "Cummiskey refers to an old full, unsplit, Latin-only Rogation Litany with a different roster. It supplies no exact English for the 1962 split first part."
+    },
+    {
+      "mass": "easter-vigil",
+      "form_id": "main",
+      "proper": "Prayer at the Font",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "note": "At the font Cummiskey prints a different Concede prayer about thirsting after the fountain of life, not the 1962 Omnipotens prayer. This is a substantive text mismatch."
+    },
+    {
+      "mass": "easter-vigil",
+      "form_id": "main",
+      "proper": "Litany of the Saints, second part",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "note": "Cummiskey refers to an old full, unsplit, Latin-only Rogation Litany with a different roster and petitions. It supplies no exact English for the 1962 split continuation."
+    },
+    {
+      "mass": "ss-cornelii-papae-cypriani-episcopi-martyrum",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "note": "the witness prints no proper Collect for this day. At 16 September, XVI. SS. CORNELIUS and CYPRIAN, mm., printed p. 660 = leaf n668, it prints `All as in Mass VII. p. 475, with a Commem. of SS. Euphemia, &c. mm.` and then only the commemoration's three orations (Collect Praesta, of Euphemia, Lucy and Geminianus). The 1962 Missal prints a proper Collect for this day -- the index's Collect slot is still a placeholder because the CMAA text layer wrecked it -- and the 1861 has no counterpart to it under any alignment: its whole formulary for the day is its Common, Collect included. The leaf was read at w1400 on 2026-08-19; the page that would reverse this row is p. 660 itself."
+    },
+    {
+      "mass": "comm-ss-placidi-sociorum-martyrum",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "note": "the witness reaches this day and reaches it by reference. At 5 October, V. SS. PLACIDUS and COMPANIONS, mm., printed p. 671 = leaf n679, it prints `All as in Mass IX. p. 479, except the Collect, Secret, and P. Comm. which are taken from Mass VIII. pp. 478, 479` and no oration of its own. Printed p. 478 = leaf n486 was opened as well: Mass VIII's Collect renders `O God, by whose favour we celebrate the festival of thy holy Martyrs N. and N. grant that we may enjoy their fellowship in eternal bliss` -- the same Latin form the 1962 fills for this day as Placidi et Sociorum ejus, but with the names left as N. and N. Writing `Placidus and his Companions` into it is project-composed text and is not done -- the same refusal as s-hilarii and comm-s-sabinae. The Common's English is recorded at commune-plurimorum-martyrum-2, where the witness prints it. Both leaves were read at w1400 on 2026-08-19."
+    },
+    {
+      "mass": "comm-s-mennae-martyris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "note": "the witness keeps the commemoration and prints no proper Collect for it, only a pointer into its Common. Leaf n699, printed p. 691, running head `10th AND 12th NOVEMBER.`, ends its 11 November entry (`XI. St. MARTIN, bp. c.`) with the line `Commem. of St. Mennas, by the Collect, Secret and P. Comm. of Mass III. p. 466.` and prints no text for him. Its Kalendar at p. 776, leaf n784, says the same: `11 S. Martin, c. bp. d. Com. of S. Menna, m. 691`. Mass III was then opened: leaf n474, printed p. 466, heading `MASS III. In virtute, of a MARTYR not a BISHOP`, prints `COLLECT. Praesta.-Grant, we beseech thee, O Almighty God, that we, who celebrate the festival of blessed N. thy Martyr, may, by his intercession, be strengthened in the love of thy name.` -- with `N.` and no saint's name, and with no conclusion. That is the same prayer the 1962 sets here with `Mennae` written in, and this file already records it at commune-unius-martyris-3 (printed_page 466, collated 2026-08-01). The English for THIS slot would therefore have to be made by writing a name the witness does not print, which is the ground already taken at the three `s-hilarii` rows. The row this would become is reversible from leaf n474 alone if that ground is ever relaxed"
+    },
+    {
+      "mass": "comm-s-sabbae-abbatis",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "note": "the witness keeps the commemoration in its Kalendar and prints no text for it anywhere. Its Kalendar at p. 777, leaf n785, reads `5 S. Birinus, c. bp. d. Com. of S. Salbas, ab.   Mass x.   482` -- `Salbas` for Sabbas, the `l` a scan artefact of a long s or a broken b -- and the page it names, 482, is the Common of a Confessor Bishop, which is St Birinus's Mass, not the commemoration's. The sanctoral itself has no 5 December entry at all: leaf n534 (printed p. 526, running head `3d AND 4th DECEMBER.`) ends with `IV. St. PETER CHRYSOLOGUS, c.`, and leaf n535 (printed p. 527, running head `6th DECEMBER.`) finishes that day's Collect, adds `COLLECT, in commemoration of St. Barbara`, and then passes straight to `VI. St. NICHOLAS, bp. c.`. Nothing stands between 4 and 6 December. The Collect the commemoration would take is the Common of Abbots at printed p. 491, which this file already records at commune-abbatum and which reads `May the intercession, O Lord, of the blessed Abbot N, recommend us to thee ...` -- `N`, with no saint's name. That is the same prayer the 1962 sets here with `Sabbae` written in, so as at the Mennas row above, an English for this slot would have to be composed by writing a name the witness does not print"
+    },
+    {
+      "mass": "comm-s-bonifatii-martyris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "note": "the witness gives 14 May a proper Collect only and sends the rest to Mass V: leaf n592, printed p. 584, `XIV. St. BONIFACE, m. All as in Mass V. p. 470, except COLLECT. Da, quaesumus.` Mass V's Postcommunions were then opened. Leaf n480, printed p. 472, and leaf n481, printed p. 473, print two of them for a Martyr not a Bishop; the second, `Another. Refecti.-Being fed by the participation of thy sacred gifts, we beseech thee, O Lord our God, that we may feel the efficacy thereof, by the intercession of blessed N. thy Martyr. Thro'.`, is the 1962's `Refecti participatione muneris sacri ... intercedente beato Bonifacio Martyre tuo` with `N.` where the name stands. The Secret on the same leaf carries no name and is recorded above; this one cannot be without writing the name in"
+    },
+    {
+      "mass": "comm-ss-xysti-ii-papae-felicissimi",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "note": "the witness prints no proper Collect for the commemoration, only a pointer into its Common: leaf n642, printed p. 634, running head `6th AUGUST.`, gives `VI. TRANSFIGURATION of our LORD.` and under it `Commem. of St. XYSTUS, &c. mm. by the Collect, Secret and P. Comm. of Mass VI. p. 473.` Mass VI was then opened: leaf n481, printed p. 473, heads `MASS VI. Sancti tui, of MANY MARTYRS` and prints two Collects, the second `Deus, qui.-O God, by whose favour we celebrate the festival of thy holy Martyrs N. and N. grant we may enjoy their fellowship in eternal bliss. Thro'.` -- with `N. and N.`. That is the 1962's `Deus, qui nos concedis sanctorum Martyrum tuorum Xysti, Felicissimi, et Agapiti` with the names left out. Reversible from leaf n481 alone if the ground against writing names in is relaxed"
+    },
+    {
+      "mass": "comm-s-eusebii-confessoris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "note": "the witness keeps the day and prints no proper Collect for the commemoration, only a pointer into its Common. Leaf n649, printed p. 641, running head `14th AUGUST`, heads `XIV. VIGIL of the ASSUMPTION` and prints `Collect, &c. of St. Eusebius, as in Mass XIII. p. 488.` Mass XIII was then opened: leaf n496, printed p. 488, heads `MASS XIII. Os justi, of a CONFESSOR not a BP` and prints `COLLECT. Deus, qui.-O God, who comfortest us by the yearly solemnity of blessed N. thy Confessor; mercifully grant, that while we celebrate his festival, we may imitate his actions. Thro'.` -- with `N.` and no saint's name. That is the 1962's `Deus, qui nos beati Eusebii Confessoris tui annua solemnitate laetificas` with the name left out. Reversible from leaf n496 alone if the ground against writing in a name is relaxed"
+    },
+    {
+      "mass": "comm-ss-cypriani-iustinae-virginis-martyrum",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "note": "the witness prints no proper Postcommunion for the day, only a pointer: leaf n672, printed p. 664, gives `XXVI. SS. CYPRIAN and JUSTINA, mm. All as in Mass IX. p. 479, except COLLECT. Beatorum. ... SECRET, (We bring) and P. Comm.(Praesta.) p. 479`. Page 479 was then opened: leaf n487 prints `P. COMM. Praesta.-Grant, we beseech thee, O Lord, by the intercession of thy holy Martyrs N. and N. that what we have taken with our mouths we may receive with a pure soul. Thro'.` -- with `N. and N.` where the 1962 writes `Cypriano et Justina`. The Secret named in the same rubric carries no name and is recorded as an entry above"
+    },
+    {
+      "mass": "comm-ss-placidi-sociorum-martyrum",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "note": "the witness prints no proper Postcommunion for the day, only a pointer: leaf n679, printed p. 671, running head `5th AND 6th OCTOBER.`, gives `V. SS. PLACIDUS and COMPANIONS, mm. All as in Mass IX. p. 479, except the Collect, Secret. and P. Comm. which are taken from Mass VIII. pp. 478, 479.` Mass VIII's Postcommunion, on leaf n487, printed p. 479, is `Praesta` with `N. and N.` where the 1962 writes `Placido et Sociis ejus`. The Secret reached by the same rubric carries no name and is recorded as an entry above"
+    },
+    {
+      "mass": "missa-de-s-maria-in-sabbato-4",
+      "form_id": "main",
+      "proper": "Introit",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "note": "Cummiskey printed p. 507 supplies the plain Salve, sancta parens antiphon used outside Paschaltide. The complete 1962 Saturday Mass IV target includes its Paschaltide Alleluia addition, absent from that body, so the shorter form is not attached here."
+    },
+    {
+      "mass": "missa-de-s-maria-in-sabbato-4",
+      "form_id": "main",
+      "proper": "Communion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "note": "Cummiskey printed p. 509 supplies the plain Beata viscera Communion used outside Paschaltide. The complete 1962 Saturday Mass IV target includes its final Alleluia, absent from that body, so the shorter form is not attached here."
+    },
+    {
+      "mass": "palm-sunday",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "easter-vigil",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "easter-sunday",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "pentecost-2",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "pentecost-9",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "commune-unius-martyris-1",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "commune-doctorum-non-pontificis",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "pentecost-18",
+      "form_id": "main",
+      "proper": "Offertory",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "praesentatione-beatae-mariae-virginis",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "comm-s-theclae-virginis-martyris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "s-teresiae-virginis",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "s-antonii-padua-confessoris-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+    },
+    {
+      "mass": "thursday-after-ash-wednesday",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "friday-after-ash-wednesday",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "passion-thursday",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "easter-monday",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "pentecost-monday",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "pentecost-monday",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "pentecost-tuesday",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "pentecost-ember-friday",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "september-ember-wednesday",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "immaculati-cordis-beatae-mariae-virginis",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "nativitate-beatae-mariae-virginis",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "beatae-mariae-virginis-a-rosario",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "epiphania-domini",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "transfiguratione-domini-nostri-iesu-christi",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "nativitate-domini-octave",
+      "form_id": "dawn",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-antonii-abbatis",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-antonii-abbatis",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-antonii-abbatis",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-timothei-episcopi-martyris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-timothei-episcopi-martyris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-timothei-episcopi-martyris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "conversione-s-pauli-apostoli",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "conversione-s-pauli-apostoli",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "conversione-s-pauli-apostoli",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-polycarpi-episcopi-martyris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-polycarpi-episcopi-martyris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-polycarpi-episcopi-martyris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-ignatii-episcopi-martyris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-titi-episcopi-confessoris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "cathedrae-s-petri-apostoli",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "cathedrae-s-petri-apostoli",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "cathedrae-s-petri-apostoli",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-thomae-aquino-confessoris-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-thomae-aquino-confessoris-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-gabrielis-archangeli",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-iustini-martyris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-antonini-episcopi-confessoris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "comm-ss-gervasii-protasii-martyrum",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "comm-ss-gervasii-protasii-martyrum",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "comm-ss-gervasii-protasii-martyrum",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-ioannis-gualberti-abbatis",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-ioannis-gualberti-abbatis",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-ioannis-gualberti-abbatis",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "comm-s-alexii-confessoris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-camilli-lellis-confessoris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-vincentii-a-paulo-confessoris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "comm-s-praxedis-virginis",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-iacobi-apostoli",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    },
+    {
+      "mass": "s-marthae-virginis",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-alfonsi-mariae-ligorio-episcopi-confessoris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-alfonsi-mariae-ligorio-episcopi-confessoris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-alfonsi-mariae-ligorio-episcopi-confessoris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-ioachim-patris-beatae-mariae-virginis",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    },
+    {
+      "mass": "s-ioachim-patris-beatae-mariae-virginis",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-bernardi-abbatis-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-bernardi-abbatis-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-bernardi-abbatis-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-bartholomaei-apostoli",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    },
+    {
+      "mass": "s-bartholomaei-apostoli",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    },
+    {
+      "mass": "s-ludovici-regis-confessoris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-iosephi-calasanctii-confessoris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-augustini-episcopi-confessoris-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-augustini-episcopi-confessoris-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-stephani-regis-confessoris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "ss-ianuarii-episcopi-sociorum-martyrum",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "ss-ianuarii-episcopi-sociorum-martyrum",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "ss-ianuarii-episcopi-sociorum-martyrum",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "comm-ss-mauritii-sociorum-martyrum",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-teresiae-a-iesu-infante-virginis",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    },
+    {
+      "mass": "s-teresiae-a-iesu-infante-virginis",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    },
+    {
+      "mass": "s-teresiae-a-iesu-infante-virginis",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    },
+    {
+      "mass": "s-birgittae-viduae",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-margaritae-mariae-alacoque-virginis",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-margaritae-mariae-alacoque-virginis",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-petri-alcantara-confessoris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "comm-ss-chrysanthi-dariae-martyrum",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-andreae-avellini-confessoris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-gregorii-thaumaturgi-episcopi-confessoris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-gregorii-thaumaturgi-episcopi-confessoris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-petri-chrysologi-episcopi-confessoris-ecclesiae",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "s-petri-chrysologi-episcopi-confessoris-ecclesiae",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established Latin proper."
+    },
+    {
+      "mass": "comm-ss-ursulae-ac-sociarum-virginum",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "witness_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "witness_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-comm-ss-ursulae-ac-sociarum-virginum--main--collect--all--1",
+      "verified_artifact_page": 687,
+      "verified_on_page": "2026-08-19",
+      "verified_printed_page": "678-679",
+      "note": "Read on leaves n686 (printed p. 678, running head `19th AND 21st OCTOBER.`) and n687 (printed p. 679, running head `22d OCTOBER.`), the oration running over the page break; filed at the page where it begins. Day heading verified: `XXI. SS. URSULA and her Companions, mm.` above `All as in Mass XVIII. p. 497, except`. The Latin cue printed before the English is `Da nobis`, which answers the 1962 incipit `Da nobis, quaesumus Domine Deus noster`. Date agrees: 21 October in both books. The witness keeps Ursula as a day of her own where the 1962 keeps her as a commemoration; the oration is the same slot in both. The historical English and its exact Cummiskey page are registered, and a read-only audit found full-formula agreement with Pustet and the 1962 target. This row remains text-free until durable target-Latin and independent-witness passage bindings preserve that identity check."
+    },
+    {
+      "mass": "s-catharinae-virginis-martyris",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "witness-gap",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      "witness_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "witness_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-s-catharinae-virginis-martyris--main--collect--all--1",
+      "verified_artifact_page": 707,
+      "verified_on_page": "2026-08-19",
+      "verified_printed_page": "698",
+      "note": "Read on leaf n706, printed p. 698, running head `24th AND 25th NOVEMBER.`. Day heading verified: `XXV. St. CATHARINE, v. m.` above `All as in Mass XVI. p. 493, except`; the oration is the last thing on the page and the page ends there. The Latin cue printed before the English is `Deus, qui`, which answers the 1962 incipit `Deus, qui dedisti legem Moysi in summitate montis Sinai`. Date agrees: 25 November in both books; Kalendar p. 776 (leaf n784) `25 S. Catharine, v. m. d. 698`. TERMINAL PUNCTUATION FLAGGED: the word `Christ` sits at the right margin and its last letters are blotted with ink in this scan, so whether a full stop follows it could not be read even at 4x. A full stop is written here because the line ends and `Who liveth.` begins the next line, which is the same layout this witness uses at Hedwiges (`by embracing thy cross. Who livest.`, p. 677); that is an inference from the book's habit and NOT a reading, and the integrator may prefer to drop it. Nothing else on this oration is uncertain. The witness prints no conclusion beyond `Who liveth.`, answering the 1962's `Qui vivis`. The historical English and its exact Cummiskey page are registered, and a read-only audit found full-formula agreement with Pustet and the 1962 target. This row remains text-free until durable target-Latin and independent-witness passage bindings preserve that identity check."
+    },
+    {
+      "mass": "s-antonii-padua-confessoris-ecclesiae-doctoris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established own proper. Its own appointment does not inherit a Common translation."
+    },
+    {
+      "mass": "s-bibianae-virginis-martyris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established own proper. Its own appointment does not inherit a Common translation."
+    },
+    {
+      "mass": "s-bibianae-virginis-martyris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established own proper. Its own appointment does not inherit a Common translation."
+    },
+    {
+      "mass": "comm-s-sabbae-abbatis",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established own proper. Its own appointment does not inherit a Common translation."
+    },
+    {
+      "mass": "comm-s-sabbae-abbatis",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established own proper. Its own appointment does not inherit a Common translation."
+    },
+    {
+      "mass": "advent-1",
+      "form_id": "main",
+      "proper": "Epistle",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English rendering of this complete source-owned adapted Missal reading is currently recorded. The bounded Mame 1922 proof establishes Latin words only. A selected Bible expands the printed appointments as separate Scripture apparatus; it does not render this liturgical incipit, internal cuts, cento order and terminal clause as an exact whole English Missal body. No English translation is generated or inherited from that Bible expansion."
+    },
+    {
+      "mass": "comm-s-chrysogoni-martyris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The 1962 own oration appointment is image-verified at artifact p. 807, printed p. 726, marginal no. 4165. No exact English whole-body witness is bound to this target; inherited Common English is not an English rendering of this own prayer."
+    },
+    {
+      "mass": "comm-ss-ursulae-ac-sociarum-virginum",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The 1962 own oration appointment is image-verified at artifact p. 775, printed p. 694, marginal no. 3922. No exact English whole-body witness is bound to this target; inherited Common English is not an English rendering of this own prayer."
+    },
+    {
+      "mass": "comm-ss-ursulae-ac-sociarum-virginum",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The 1962 own oration appointment is image-verified at artifact p. 775, printed p. 694, marginal no. 3921. No exact English whole-body witness is bound to this target; inherited Common English is not an English rendering of this own prayer."
+    },
+    {
+      "mass": "commemoratione-s-pauli-apostoli",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The controlling 1962 Missal appoints this exact body at printed p.571, unit2923. No exact shared English whole-body exemplar/publication binding is attached to this seat."
+    },
+    {
+      "mass": "commemoratione-s-pauli-apostoli",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The controlling 1962 Missal appoints this exact body at printed p.572, unit2935. No exact shared English whole-body exemplar/publication binding is attached to this seat."
+    },
+    {
+      "mass": "commemoratione-s-pauli-apostoli",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The controlling 1962 Missal appoints this exact body at printed p.572, unit2932. No exact shared English whole-body exemplar/publication binding is attached to this seat."
+    },
+    {
+      "mass": "pentecost-ember-wednesday",
+      "form_id": "main",
+      "proper": "Second Alleluia",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English whole-body exemplar is bound to this source-established normal appointment. Its Scripture component does not supply the uncited Missal wording."
+    },
+    {
+      "mass": "s-brunonis-confessoris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The controlling 1962 Missal appoints the day's own Postcommunion at no. 3785; no exact shared English whole-body exemplar is bound to this target."
+    },
+    {
+      "mass": "s-francisci-borgiae-confessoris",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The controlling 1962 Missal appoints the day's own Postcommunion at no. 3845; no exact shared English whole-body exemplar is bound to this target."
+    },
+    {
+      "mass": "s-francisci-borgiae-confessoris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The controlling 1962 Missal appoints the day's own Secret at no. 3844; no exact shared English whole-body exemplar is bound to this target."
+    },
+    {
+      "mass": "ss-philippi-iacobi-apostolorum",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 2,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The controlling 1962 Missal appoints this exact body at printed p.525, unit2559. No exact shared English whole-body exemplar/publication binding is attached to this seat."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.assumption-chants-latin-20261029"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Complete bounded underlying chant wording is transcribed from the 1862 Pustet printing in the United States public domain by publication date. No modern edition contribution is claimed or included in this source transcription."
+rights_jurisdiction = "United States"
+provenance = "Read from the identified source page images on 2026-10-29, not admitted from OCR. Four complete chants only. Physical lines follow candidate scope order: Vigil Gradual, Vigil Offertory, Vigil Communion, Assumption Alleluia."
+retrieved = "2026-10-29"
+sha256 = "b78600e93d7718a29710c7d460193abd439192939b03fa40eb2dc015a21069f1"
+byte_size = 456
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/assumption-chants-latin-20261029/latin.txt"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.assumption-chants-pages-20261029"
+transformation = "Join printed wraps and dehyphenate end-of-line breaks; remove stress accents; expand printed ae/oe ligatures; represent the printed versicle sign as V. Retain source words, pointing and capitalization. Source line order follows the four identified chant appointments, not page reading order."
+indexable = true
+encoding = "utf-8"

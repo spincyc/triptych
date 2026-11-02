@@ -1,0 +1,119 @@
+{
+  "base_git_revision": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+  "binary_disclosure": {
+    "Lasance1945": "Only the separately admitted ordinary printed page217 is retained; the mixed/unresolved remote whole PDF is excluded.",
+    "PDFs": 13,
+    "PNGs": 2,
+    "Salesian1892": "Exact retained historical issue matches its explicit public-domain publication and mechanical-reproduction basis and prior source admission.",
+    "all_artifact_metadata_rights_MIME_hash_size_and_writer_copies_exact": true,
+    "all_new_manifest_inputs": true,
+    "count": 15,
+    "new_matches_to_rejected_bad_blobs": [],
+    "new_visual_fidelity_review_performed": false,
+    "prior_visual_review_references_rehashed": 100,
+    "protected_modern_whole_source_introduced": false,
+    "total_bytes": 12832936
+  },
+  "canonical_index_or_ref_writes": false,
+  "cohort": {
+    "UTF8_text_paths": 810,
+    "all_paths_classified": true,
+    "all_snapshot_paths_and_bytes_rechecked_exact": true,
+    "binary_paths": 15,
+    "path_classification": {
+      "accepted-reviewed-source-fixture-or-manifest": 2,
+      "exact-accepted-source-epoch-delta": 201,
+      "exact-peer-reviewed-runtime-or-unpinned-test-successor": 3,
+      "exact-registered-GEN-served-postimage": 582,
+      "exact-registered-GEN-tool-transcript-successor": 3,
+      "registered-GEN-family-bootstrap-refresh": 1,
+      "root-progress-and-open-promise-record": 1,
+      "root-reviewed-source-adoption-test-or-proof-retention": 30,
+      "root-scoped-release-binding-refresh": 2
+    },
+    "path_count": 825,
+    "tracked_delta_paths": 569,
+    "untracked_paths": 256
+  },
+  "disclosure_findings": {
+    "credential_or_private_key_patterns": [],
+    "encoded_PDF_or_image_payload_patterns": [],
+    "private_host_home_paths": [],
+    "private_runtime_record_paths": [],
+    "symlink_or_ancestor_escape": [],
+    "unclassified_paths": []
+  },
+  "evidence": {
+    "binary_review": {
+      "path": ".scratch/merged-publication-audit-20261030/next-cohort-disclosure/binary-review/review.json",
+      "sha256": "913aeb6877f24e5a7c334af59eb8d735b96059b9ca644005b26570889c2ba779"
+    },
+    "full_content_inventory": {
+      "path": ".scratch/merged-publication-audit-20261030/next-cohort-disclosure/content-inventory.json",
+      "sha256": "d8baf9eb4e5df896339a1de26585a0b5986a7fe42f0e4ad0bc9dc04d4d5df93e"
+    },
+    "metadata_final_recheck": {
+      "path": ".scratch/merged-publication-audit-20261030/next-cohort-disclosure/metadata-review/final-snapshot-check.json",
+      "sha256": "9fd0586e309f51d2f0d24e64c8443a50eefa9ea7b7680bdca468271f0737ce5c"
+    },
+    "metadata_review": {
+      "path": ".scratch/merged-publication-audit-20261030/next-cohort-disclosure/metadata-review/review.json",
+      "sha256": "76b787a91d400d3ec4a6c7cc003629d09f0c1ea8f4cf982510d95f8257fec423"
+    },
+    "snapshot": {
+      "path": ".scratch/merged-publication-audit-20261030/next-cohort-disclosure/snapshot.json",
+      "sha256": "5687240f0de6067932bdb29aca2ede58f534ea81cfdfa45ca4e24502ea006c86"
+    }
+  },
+  "findings": [],
+  "generated_scope": {
+    "all_exact_to_registered_generation": true,
+    "family_bootstrap_refresh": 1,
+    "served_postimages": 582,
+    "tool_EXAMPLES_only_successors": 3
+  },
+  "inherited_consumer_finding": {
+    "actual_candidate_injected_payload_found": false,
+    "counterexample_sha256": "6d808ca64cc380067158a18d607af6a9e9c0de7827218cfff1b1825560840f5a",
+    "disposition": "Recorded independently and reserved for a separate minimal consumer fix before final merged publication. This disclosure pass is limited to actual cohort content.",
+    "finding": "Published702 removed-owner marker sanitizer can retain injected text; source checks and runtime surface decisions reject it.",
+    "proposed_fix_handoff_sha256": "103a390c5fd99850bd8d4c9d55f12347f242d4a2ba853218bae3ccab2717be3b"
+  },
+  "limits": [
+    "This is a concrete content disclosure review, not a claim that all tests passed or all Missal English work is complete.",
+    "A later Common-acclamation test successor is outside this frozen825-path snapshot and requires an explicit bounded update if added.",
+    "An exact outgoing Git-object graph review remains required after root creates the commit; no ref or remote state was mutated here.",
+    "Prior source identity, rights and visual admissions are reused by exact hashes; no new legal or image-fidelity conclusion is claimed."
+  ],
+  "metadata_disclosure": {
+    "checks_passed": 156,
+    "open_promise_ledger_exact_to_parent": true,
+    "paths_independently_reviewed": 76,
+    "release_permission_terms_and_rights_prose_unchanged": true,
+    "retained_historical_live702_and_disclosure_records": "Exact accepted historical records; they do not clear the current cohort.",
+    "retention_copies_exact": 26
+  },
+  "schema": "triptych-next-English-cohort-precommit-disclosure-review/v1",
+  "scope": "Exact frozen union of tracked changes and untracked nonignored files before the source-cohort commit; canonical content was read only.",
+  "source_epoch": {
+    "acceptance_receipt_sha256": "5ae2464f2e7a73218262bf91473de8cbcc98e54840dc19d22b02dcb89b110072",
+    "accepted_core_sha256": "be05e5928b8be8dd59c23dc8401c431e616ca605ea138dd0bf465d7a18330e3a",
+    "added_paths": 193,
+    "changed_or_added_paths": 201,
+    "changed_retained_paths": 8,
+    "dropped_paths": 0,
+    "fixture_sha256": "ae34d8450f42835523ee6c5c2ec44cf5d99f6289adc83654853aa47c3fbe1b97",
+    "manifest_sha256": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84",
+    "new_source_permission_created_by_acceptance": false,
+    "parent_paths_retained": 7071,
+    "paths": 7264
+  },
+  "status": "PASS_BOUNDED_PRECOMMIT_CONTENT_DISCLOSURE",
+  "test_execution_boundary": {
+    "all_tests_pass_claim": false,
+    "cause": "Old Common-acclamation expected gaps for four newly accepted historical English entries.",
+    "initial_actual_tests_run": 144,
+    "initial_subtest_failures": 8,
+    "late_Common_test_successor": "Not present in this frozen metadata snapshot; requires its own exact postimage and peer-review binding if added."
+  }
+}

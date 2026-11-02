@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.marian-ancient-chants-20261029"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+retrieved = "2026-10-29"
+sha256 = "94e82bd101d9f2b2251f8e48acc72e3aed0b9332975128b9fe162802e0782935"
+byte_size = 2018
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/marian-ancient-chants-20261029/latin-only.txt"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.marian-ancient-chant-pages-20261029", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.marian-annunciation-leaf503-20261029", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+rights_basis = "Project editorial identification, layout and normalization are offered under CC BY4.0. The underlying nine Latin chant bodies are preexisting wording independently established in the registered United States public-domain Mame1922 and Pustet1862 witnesses;17U.S.C.103(b) reaches only the later edition contribution. No1962-only chant wording, image, layout, rubric or protected editorial arrangement is reproduced."
+provenance = "Nine bounded target chant units read on exact registered1962 page images at200and400dpi and collated against complete historical page-image bodies on2026-10-29. Whole target and Mame PDF hashes checked before use. Pustet whole-PDF and exact-page hashes checked independently for Annunciation ima. No text-layer reading supplies the transcription."
+transformation = "Join printed wraps; remove stress accents; expand ligatures; use declared calendar consonantal-j spelling and target punctuation/capitalization. Genitrix/Genetrix is the specifically allowed received spelling pair. Source Alleluja becomes target Alleluia. Rosary Gloria. cue extends only to separately source-held Gloria Patri.; no full doxology is composed. Every row records its exact differences. Annunciation rests on Pustet ima, not a silent correction of Mame imma."
+notes = "Candidate source acceptance and English translation acceptance are separate. This artifact supplies only the nine named Latin bodies and establishes no other seasonal alternative, appointment, feast, or whole-Missal completeness."

@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v15
+WORKFLOW_DIGEST: 4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83
+RUN_ID: 450355254538c1ba
+COMMIT: 4f52b9ade338f9a9f4f39f312aa45989a0baf2ca
+STAGE: homily-preflight
+ITERATION: 2
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-01","proper":"liturgy/roman-rite/1962/propers/temporal/f02-all-saints","provider":"claude","research_handoff":"workflows/reviews/claude-1962-f02-revision-2026-10-27/HANDOFF.md"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"VIS-002","location":"Expansive study f02-all-saints.pdf, physical page 16, the Aquinas quotation (ST I q. 23 a. 7); source sections/20-sealed-number-uncounted-crowd.tex line 131","problem":"The nested closing quotes print in the wrong order. The source `''' typesets as U+201D U+2019 (\"happiness,\u201d\u2019 in the words\"), closing the outer quotation before the inner one that opened it with \u2018to God alone'. Text extraction and a 400-dpi crop confirm it. It is the only misnested pair in the study (203 opening and 203 closing double quotes).","required_result":"The inner quotation closes first and the outer second: \"happiness,\u2019\u201d in the words of a Secret of the Missal\", typeset for example as '\\,'' or '{}'' in place of '''. Check that no other nested quotation in the study is misnested.","severity":"advisory"},{"id":"VIS-003","location":"Concise study f02-all-saints-synthesis.pdf, physical page 6, the same Aquinas quotation; source sections/concise/10-commentary.tex line 109","problem":"The inner quotation, opened with a single \u2018 (\u2018to God alone'), is closed with a double quote. The source ''\\,'' typesets as U+201D U+201D (\"happiness,\u201d \u201d in the words\"), so the single quotation is never closed. The concise text layer has 100 opening and 101 closing double quotes, and a 400-dpi crop confirms it.","required_result":"The inner single quotation closes with \u2019 and the outer double with \u201d: \"happiness,\u2019\u201d in the words of a Secret of the Missal\", typeset for example as '\\,'' in place of ''\\,''.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

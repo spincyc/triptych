@@ -40,12 +40,12 @@ trap 'rm -rf "$sandbox"' EXIT INT TERM
 # opening and the Communicantes continuation (196), held the Pentecost
 # Communicantes head and Hanc igitur from two new witnesses (Lasance English,
 # the 1962 editorial projection Latin), and graded seven rows collated.
-# C26 adds three missing Latin sides from one independent Mame witness and
-# eleven bounded Latin comparisons. No source element, English wording or
-# event enters; only Common/Hanc and the three new Mame sides gain exactness.
+# The reviewed successor adds five English proper Canon heads, four Latin
+# heads and Accendat Latin. Each retains its own witness; the original frame,
+# exclusions, source text and separate Joseph continuation gap stay exact.
 summary="$(run_tool check --calendar roman-1962 | head -1)"
 case "$summary" in
-*"roman-1962: 6 sections, 196 elements, 5 witnesses, 0 variants, 9 slots; en 186 held/10 missing, la 120 held/76 missing; relations en antecedent/collated 1, en antecedent/uncollated 185, la antecedent/collated 118, la antecedent/uncollated 2; 12 target-recension exclusions"*) ;;
+*"roman-1962: 6 sections, 196 elements, 6 witnesses, 0 variants, 9 slots; en 191 held/5 missing, la 125 held/71 missing; relations en antecedent/collated 1, en antecedent/uncollated 190, la antecedent/collated 123, la antecedent/uncollated 2; 12 target-recension exclusions"*) ;;
 *)
 	echo "unexpected summary line: $summary" >&2
 	exit 1
@@ -182,8 +182,8 @@ for path in files:
         # Communicantes head and Hanc igitur.
         assert len(elements) == 196, len(elements)
         languages = {one["lang"]: one for one in payload["languages"]}
-        assert (languages["en"]["held"], languages["en"]["missing"]) == (186, 10), languages
-        assert (languages["la"]["held"], languages["la"]["missing"]) == (120, 76), languages
+        assert (languages["en"]["held"], languages["en"]["missing"]) == (191, 5), languages
+        assert (languages["la"]["held"], languages["la"]["missing"]) == (125, 71), languages
         # 2026-10-19: six conclusio exclusions join (C2 G6, the verified 1962
         # Ordo passages print no second Postcommunion or Et famulos).
         expected = {
@@ -224,14 +224,28 @@ for path in files:
         assert absence_counts == {
             "appointment-not-established": 6,
             "communicantes-continuation-english-lacks-1962-clause": 1,
-            "no-facing-latin": 5,
+            "no-facing-latin": 4,
             "not-in-the-1962-ordo": 0,
             "preface-not-in-witness": 2,
-            "proper-canon-form-not-held": 8,
-            "proper-communicantes-english-variant": 1,
+            "proper-canon-form-not-held": 0,
+            "proper-communicantes-english-variant": 0,
             "witness-own-english": 63,
         }, absence_counts
-        assert sum(absence_counts.values()) == 86, absence_counts
+        assert sum(absence_counts.values()) == 76, absence_counts
+
+        # Five separately witnessed Latin sides fill target-frame gaps without
+        # changing Cummiskey's source-owned column or the frame denominator.
+        additions = {"oblatio/accendat-in-nobis", *("canon/communicantes-" + ending
+                     for ending in ("nativitate", "epiphania", "pascha", "ascensione"))}
+        for key in additions:
+            side = next(row for row in elements[key]["translations"] if row["lang"] == "la")
+            assert side["rights"] == ("public-domain" if key == "oblatio/accendat-in-nobis"
+                                      else "project-created"), (key, side)
+            assert side["target_wording"] == "word-exact", (key, side)
+            assert side["coverage_relationship"] == "exact-target", (key, side)
+            assert elements[key]["absent"]["latin"] is None, key
+        assert elements["canon/communicantes-continuatio"]["absent"]["english"] == \
+            "communicantes-continuation-english-lacks-1962-clause"
 
         # The source-specific Cummiskey gap is not rewritten as facing Latin.
         # Each Latin side owns its Mame provenance and exact actor partition.
@@ -246,7 +260,7 @@ for path in files:
             "per-evangelica-dicta": "P. May our sins be blotted out by the words of the Gospel.",
         }
         witnesses = {(one["source_id"], one["lang"]): one for one in payload["translations"]}
-        assert witnesses[(mame, "la")]["held"] == 3, witnesses
+        assert witnesses[(mame, "la")]["held"] == 4, witnesses
         assert witnesses[(cummiskey, "la")]["held"] == 114, witnesses
         for local in ("munda-cor-meum", "dominus-sit-in-corde-meo", "per-evangelica-dicta"):
             element = elements["oblatio/" + local]
@@ -581,7 +595,7 @@ for path in files:
             bounded_findings = partial_prefaces | {"praefatio/praefatio-communis", "canon/hanc-igitur"}
             exact = {key for key, row in collated_la.items() if row.get("target_wording") == "word-exact"}
             assert set(collated_la) - exact == not_exact, sorted(set(collated_la) - exact)
-            assert len(exact) == 97 and len(collated_la) == 118, (len(exact), len(collated_la))
+            assert len(exact) == 102 and len(collated_la) == 123, (len(exact), len(collated_la))
             antecedent_only = {"praeparatio/indulgentiam", "conclusio/dominus-vobiscum-ante-postcommunionem"}
             assert set(divided) - antecedent_only <= exact, sorted(set(divided) - antecedent_only - exact)
             for key, row in collated_la.items():
@@ -596,7 +610,13 @@ for path in files:
                         "passage.catholic-church.missale-romanum."), (key, row["collation_finding"])
                 if key in exact:
                     assert row["coverage_relationship"] == "exact-target", key
-                    assert "COLLATED WORD-EXACT" in row["note"], key
+                    if key in additions:
+                        note_hash = ("77973c6a3607f9515ffa8709a89ee27343b8de24ddad1857d3352af75683206f"
+                                     if key == "oblatio/accendat-in-nobis" else
+                                     "e9b644d9bbe4b2ad8286fa844d35bc3c4316af7f5cba6fc3ec2a8790bd9e064a")
+                        assert hashlib.sha256(row["note"].encode()).hexdigest() == note_hash, key
+                    else:
+                        assert "COLLATED WORD-EXACT" in row["note"], key
                 else:
                     assert "coverage_relationship" not in row, key
                     if key in partial_prefaces:
@@ -742,10 +762,10 @@ assert old["exclusions"] == json.loads(
 )["exclusions"]
 languages = {row["lang"]: row for row in old["language_coverage"]}
 assert languages["en"] == {
-    "lang": "en", "elements": 196, "held": 186, "missing": 10, "absent": 10,
+    "lang": "en", "elements": 196, "held": 191, "missing": 5, "absent": 5,
 }, languages
 assert languages["la"] == {
-    "lang": "la", "elements": 196, "held": 120, "missing": 76, "absent": 76,
+    "lang": "la", "elements": 196, "held": 125, "missing": 71, "absent": 71,
 }, languages
 assert pre["elements"] == 206 and pre["exclusions"] == [], pre
 assert coverage["postconciliar"]["exclusions"] == [], coverage["postconciliar"]
@@ -967,7 +987,7 @@ esac
 # says in terms that the identity is not established, and the elements where a
 # comparison found a divergence carry nothing at all.
 python3 - "$root" "$repo" <<'PY'
-import json, pathlib, sys, tomllib
+import hashlib, json, pathlib, sys, tomllib
 
 root = pathlib.Path(sys.argv[1])
 pc = json.loads((root / "postconciliar.json").read_text(encoding="utf-8"))
@@ -1055,6 +1075,19 @@ for section in ("canon", "communio", "conclusio"):
         "Source-specific ceremonies, unsupported variants and target witness gaps are not resolved.",
     )
 seen_lasance_notes = set()
+# The five reviewed English proper heads use source-specific cautions, not
+# the older generic antecedent template. Retain those exact authored notes.
+inserted_english = {
+    section["key"] + "/" + entry["key"]: entry["english"]
+    for section in inventory["sections"] for entry in section.get("inserted", [])
+    if section["key"] == "canon" and entry["key"] in {
+        "communicantes-" + ending for ending in
+        ("nativitate", "epiphania", "pascha", "ascensione", "pentecoste")}
+    and isinstance(entry.get("english"), dict)
+}
+assert set(inserted_english) == {"canon/communicantes-" + ending for ending in
+    ("nativitate", "epiphania", "pascha", "ascensione", "pentecoste")}
+seen_inserted_english = set()
 #
 # 2026-10-19 (C3, the 1962 Pentecost Ordinary-variable texts): exactly these
 # seven 1962 rows carry an element-level collated provenance, and each must
@@ -1082,7 +1115,7 @@ collated_rows["roman-1962"] |= {
     (key, "la") for key, element in by_key(old).items()
     if side(element, "la") and key not in still_uncollated_1962
 }
-assert len({key for key, lang in collated_rows["roman-1962"] if lang == "la"}) == 118
+assert len({key for key, lang in collated_rows["roman-1962"] if lang == "la"}) == 123
 for payload in (old, pre):
     seen_collated = set()
     for element in by_key(payload).values():
@@ -1098,15 +1131,28 @@ for payload in (old, pre):
                         "praefatio/praefatio-de-ss-trinitate", "praefatio/praefatio-de-quadragesima",
                         "praefatio/praefatio-de-beata-maria-virgine", "praefatio/praefatio-de-apostolis",
                     }
-                    assert "COLLATED" in note or (
-                        payload["calendar"] == "roman-1962" and lang == "la"
-                        and element["key"] in bounded_note_keys and "COLLATION COMPLETE" in note
-                    ), (payload["calendar"], element["key"], lang)
+                    if element["key"] == "oblatio/accendat-in-nobis":
+                        assert hashlib.sha256(note.encode()).hexdigest() == \
+                            "77973c6a3607f9515ffa8709a89ee27343b8de24ddad1857d3352af75683206f"
+                    else:
+                        assert "COLLATED" in note or (
+                            payload["calendar"] == "roman-1962" and lang == "la"
+                            and element["key"] in bounded_note_keys and "COLLATION COMPLETE" in note
+                        ), (payload["calendar"], element["key"], lang)
                     continue
                 assert row["collation"] == "uncollated", (payload["calendar"], element["key"], lang)
                 assert not row.get("collation_finding"), (payload["calendar"], element["key"], lang)
                 note = row.get("note") or ""
-                if payload["calendar"] == "roman-1962" and lang == "en" and element["key"] in lasance_notes:
+                if payload["calendar"] == "roman-1962" and lang == "en" and element["key"] in inserted_english:
+                    declared = inserted_english[element["key"]]
+                    assert row["source_id"] == declared["witness"], (element["key"], row)
+                    assert (declared["relation"], declared["collation"]) == ("antecedent", "uncollated"), declared
+                    assert note == declared["note"], (element["key"], note)
+                    assert "NOT APPROVED 1962 ENGLISH" in note, (element["key"], note)
+                    assert row.get("coverage_relationship") != "exact-target", row
+                    assert "target_wording" not in row and not row.get("turns"), row
+                    seen_inserted_english.add(element["key"])
+                elif payload["calendar"] == "roman-1962" and lang == "en" and element["key"] in lasance_notes:
                     declared = lasance_notes[element["key"]]
                     lasance = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
                     assert row["source_id"] == declared["witness"] == lasance, (element["key"], row)
@@ -1120,6 +1166,7 @@ for payload in (old, pre):
                     assert "UNCOLLATED" in note, (payload["calendar"], element["key"], lang)
     assert seen_collated == collated_rows[payload["calendar"]], (payload["calendar"], seen_collated)
 assert seen_lasance_notes == set(lasance_notes), seen_lasance_notes
+assert seen_inserted_english == set(inserted_english), seen_inserted_english
 
 # Where a comparison of the two Latins found a divergence, NOTHING is carried,
 # and the file still says why. These are the elements the summary would have

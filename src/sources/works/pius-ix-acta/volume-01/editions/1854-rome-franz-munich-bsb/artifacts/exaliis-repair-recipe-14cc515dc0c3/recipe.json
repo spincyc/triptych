@@ -1,0 +1,467 @@
+{
+  "schema": "triptych-exaliis-bounded-ocr-byte-composition/v1",
+  "inputs": {
+    "images": {
+      "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.bounded-images-ca31a9280e5a",
+      "path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/bounded-images-ca31a9280e5a/historical-images.zip",
+      "sha256": "ca31a9280e5a0f8408d4ce63c4a3855389d7b7522ea8231599a157897b4d183f",
+      "byte_size": 11079319
+    },
+    "models": {
+      "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.nemo-repair-models-14ed17fae08d",
+      "path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/nemo-repair-models-14ed17fae08d/models.zip",
+      "sha256": "14ed17fae08dde0425293a887915ce91f9f3afb5b15b7deafded93e67d680c02",
+      "byte_size": 20891134
+    },
+    "parent_text": {
+      "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.ex-aliis-ocr-text-426797883992",
+      "path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/ex-aliis-ocr-text-426797883992/ex-aliis.txt",
+      "sha256": "4267978839922b17042e7ace35bf770b39c026015d940922d2fadae75eb9187c",
+      "byte_size": 7006
+    }
+  },
+  "members": {
+    "images": [
+      {
+        "name": "bsb-images/00360.jpg",
+        "sha256": "6702eef8105d778045b10774ae59e50d7fb9b6df35560a5aa8b71881f2eb7fc1",
+        "byte_size": 555175
+      },
+      {
+        "name": "bsb-images/00361.jpg",
+        "sha256": "00e28cae30e63166cbc190b8567115de4dda0dc692468d4dbac1b333af333847",
+        "byte_size": 566834
+      }
+    ],
+    "models": [
+      {
+        "name": "lat.traineddata",
+        "sha256": "60054dd32ac03ebd9b4f87d0665bd491a7ffe0d3ee99ceb91aefaf348b65e94f",
+        "byte_size": 9705145
+      },
+      {
+        "name": "eng.traineddata",
+        "sha256": "8280aed0782fe27257a68ea10fe7ef324ca0f8d85bd2fd145d1c2b560bcb66ba",
+        "byte_size": 15400601
+      },
+      {
+        "name": "LICENSE",
+        "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+        "byte_size": 10173
+      },
+      {
+        "name": "README.md",
+        "sha256": "08c87523fb799c5bae6380f6ffa1a823494ab78f63906d7255dddd7671f94a5f",
+        "byte_size": 470
+      }
+    ]
+  },
+  "tools": {
+    "magick": {
+      "executable": "/usr/bin/magick",
+      "sha256": "c9b439e075a75795901641dadab39b3aee6395c2220553bb5d7ce30c75ec0b03",
+      "version_argument": "-version",
+      "version_line": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org"
+    },
+    "tesseract": {
+      "executable": "/usr/bin/tesseract",
+      "sha256": "0e8a7f5cd32fbed5a897f7ecff3860be04d0df93f5c6721d7ac6d0920a882127",
+      "version_argument": "--version",
+      "version_line": "tesseract 5.5.4"
+    }
+  },
+  "model_provenance": {
+    "repository": "https://github.com/tesseract-ocr/tessdata_best",
+    "immutable_commit": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+    "license": "Apache-2.0",
+    "license_member": "LICENSE",
+    "README_member": "README.md"
+  },
+  "implementation": {
+    "sha256": "283fbd4bcb43551013758faec5196bbc53d69fb88c860caf397337e6a0b87837",
+    "license": "MIT",
+    "command": "python REPLAY --root . --recipe RECIPE --out NEW_SCRATCH_DIRECTORY",
+    "retained_software_license": "MIT; SPDX identifier in retained replay source; full project MIT grant at LICENSES/MIT.txt.",
+    "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-replay-283fbd4bcb43",
+    "path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/exaliis-repair-replay-283fbd4bcb43/replay.py",
+    "byte_size": 4782,
+    "manifest": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/exaliis-repair-replay-283fbd4bcb43/artifact.toml",
+    "name": "exaliis-repair-replay-283fbd4bcb43"
+  },
+  "source_copy": "BSB bsb10543911, J.can.f. 113 i-1,1; Bonarum Artium / Giorgio Franz in Monaco issue, 1854 holding-library catalogue date. No Harvard/Google equality asserted.",
+  "whole_facsimile": {
+    "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.whole-facsimile-cab3ef195818",
+    "sha256": "cab3ef195818824cc283af485503d21480399d797b2e8201c5ec78faf67d2ac6",
+    "byte_size": 347266817,
+    "pdf_pages": 689,
+    "native_canvas_pdf_page_offset": 1
+  },
+  "blocks": [
+    {
+      "id": "clause-gray-lat",
+      "canvas": 360,
+      "printed_page": 350,
+      "image_member": "00360.jpg",
+      "crop_xywh": [
+        270,
+        2013,
+        1160,
+        142
+      ],
+      "processing": [],
+      "border": 20,
+      "psm": 6,
+      "language": "lat",
+      "role": "comparison",
+      "expected_outputs": {
+        "png": {
+          "sha256": "0c4249d1b9e9139beba5da1c6a59222eb00598f6da4397ba863595fe7e6def87",
+          "byte_size": 91982
+        },
+        "txt": {
+          "sha256": "350c7c2aa34c781f5a50aa0cbe203bc3001525763f508c30aa17309bc81d779b",
+          "byte_size": 115
+        },
+        "tsv": {
+          "sha256": "ee040e6e1f7a700b34bbb6a31707eba6965b2de37feca68d533b302b63ddeccc",
+          "byte_size": 844
+        }
+      },
+      "expected_gray8_pixel_sha256": "796552e3adc117f6569fb3c27cd4ea3dba86295a60bf42cdc546d0e3544eed35",
+      "expected_gray8_pixel_bytes": 218400
+    },
+    {
+      "id": "clause-threshold35-lat",
+      "canvas": 360,
+      "printed_page": 350,
+      "image_member": "00360.jpg",
+      "crop_xywh": [
+        270,
+        2013,
+        1160,
+        142
+      ],
+      "processing": [
+        "-threshold",
+        "35%"
+      ],
+      "border": 20,
+      "psm": 6,
+      "language": "lat",
+      "role": "comparison",
+      "expected_outputs": {
+        "png": {
+          "sha256": "c7546dc22a94d46148f5d5dc3695e67a548411cf5250fd0f22820a5418becb66",
+          "byte_size": 3809
+        },
+        "txt": {
+          "sha256": "9f534f175bab187010e7d587a1c8c6dc52db25200ef26729ebf84baef73a8916",
+          "byte_size": 103
+        },
+        "tsv": {
+          "sha256": "24c9f1c86a7b37facceda6a72207fa6d2f02004bb1897f32e4e1acc2bdea9267",
+          "byte_size": 840
+        }
+      },
+      "expected_gray8_pixel_sha256": "cbf429476f775a4780532d6f5ff7441a1d39adf30ee915808252d42e39557cf2",
+      "expected_gray8_pixel_bytes": 218400
+    },
+    {
+      "id": "clause-threshold40-lat",
+      "canvas": 360,
+      "printed_page": 350,
+      "image_member": "00360.jpg",
+      "crop_xywh": [
+        270,
+        2013,
+        1160,
+        142
+      ],
+      "processing": [
+        "-threshold",
+        "40%"
+      ],
+      "border": 20,
+      "psm": 6,
+      "language": "lat",
+      "role": "comparison",
+      "expected_outputs": {
+        "png": {
+          "sha256": "f04b12d22bc0538fcffb5dd4e96345b17c413ec8aa91ba87ccdf6962ccb6c665",
+          "byte_size": 3995
+        },
+        "txt": {
+          "sha256": "dad8303ae304d1d303d19cc1e96c320099a626748efcbdad6f41b94c69a688cb",
+          "byte_size": 104
+        },
+        "tsv": {
+          "sha256": "0abc19263a6b86c868437a51a21c810c4010be3cdeda4dc2a1c8c86502db9949",
+          "byte_size": 840
+        }
+      },
+      "expected_gray8_pixel_sha256": "645bc0baa797d2191596eec40900f85e7423177381df33a97ac514056131202a",
+      "expected_gray8_pixel_bytes": 218400
+    },
+    {
+      "id": "clause-threshold30-3x-lat",
+      "canvas": 360,
+      "printed_page": 350,
+      "image_member": "00360.jpg",
+      "crop_xywh": [
+        270,
+        2013,
+        1160,
+        142
+      ],
+      "processing": [
+        "-resize",
+        "300%",
+        "-threshold",
+        "30%"
+      ],
+      "border": 50,
+      "psm": 6,
+      "language": "lat",
+      "role": "selected-suffix",
+      "expected_outputs": {
+        "png": {
+          "sha256": "4ebb50d7d9b5d9e3f906ab821317c3d461126d96cda26d6a2a56fe739811a1f8",
+          "byte_size": 15901
+        },
+        "txt": {
+          "sha256": "2636ab2941b4f649247e4410b15dc35f5c989901b112bc26cee882e5159cfbc2",
+          "byte_size": 101
+        },
+        "tsv": {
+          "sha256": "a780f64f1696605d75a9725ec731819abcffb1149c6c07864cc350cb1b22d269",
+          "byte_size": 873
+        }
+      },
+      "expected_gray8_pixel_sha256": "93641e6cdf0f292ace1a61d252b922acf55e053b24c1d1f06d9193a4ed8eae43",
+      "expected_gray8_pixel_bytes": 1883080
+    },
+    {
+      "id": "penance-gray-lat",
+      "canvas": 361,
+      "printed_page": 351,
+      "image_member": "00361.jpg",
+      "crop_xywh": [
+        170,
+        295,
+        1130,
+        80
+      ],
+      "processing": [],
+      "border": 30,
+      "psm": 7,
+      "language": "lat",
+      "role": "comparison",
+      "expected_outputs": {
+        "png": {
+          "sha256": "05ba48e0916d737e7cc97d963b186c67d299179261f2c07019d5befec14cf911",
+          "byte_size": 51681
+        },
+        "txt": {
+          "sha256": "d930538918207524f35312db32a1470067f2fddfd2b2ab9f356e7444bb8ef2eb",
+          "byte_size": 60
+        },
+        "tsv": {
+          "sha256": "0af424116737fb9903dde730706fcf2de6b922957fae3230ddebf481303a200d",
+          "byte_size": 512
+        }
+      },
+      "expected_gray8_pixel_sha256": "03d60339a8411fe68a610c2bdc8271b0c1278113b28a4b077461396ee3e3e95c",
+      "expected_gray8_pixel_bytes": 166600
+    },
+    {
+      "id": "penance-t30-eng",
+      "canvas": 361,
+      "printed_page": 351,
+      "image_member": "00361.jpg",
+      "crop_xywh": [
+        170,
+        295,
+        1130,
+        80
+      ],
+      "processing": [
+        "-resize",
+        "300%",
+        "-threshold",
+        "30%"
+      ],
+      "border": 30,
+      "psm": 7,
+      "language": "eng",
+      "role": "selected-word",
+      "expected_outputs": {
+        "png": {
+          "sha256": "9b793d093eee24ac4c0ffc213ee3b1785d52bb2c07f8338a6c56c35b38e6804b",
+          "byte_size": 8602
+        },
+        "txt": {
+          "sha256": "304fb9c7e16871c8e98fcdc89e1d1d374bd87e8cd88fb2a936d6da21153605a2",
+          "byte_size": 55
+        },
+        "tsv": {
+          "sha256": "97134fa25449959f69ae03f501b035466a6dec93ed9f3d2f2b5f91a394193a55",
+          "byte_size": 526
+        }
+      },
+      "expected_gray8_pixel_sha256": "3f35ddb35e3e109b232b0e0eb26a9269adf2196036772a262686f9ede61f32f7",
+      "expected_gray8_pixel_bytes": 1035000
+    },
+    {
+      "id": "sacrament-gray-lat",
+      "canvas": 361,
+      "printed_page": 351,
+      "image_member": "00361.jpg",
+      "crop_xywh": [
+        170,
+        1055,
+        1130,
+        80
+      ],
+      "processing": [],
+      "border": 30,
+      "psm": 7,
+      "language": "lat",
+      "role": "comparison",
+      "expected_outputs": {
+        "png": {
+          "sha256": "2ad2dd195085ba68340e20b219086960d639d2297218f61faac34f5723f775be",
+          "byte_size": 54136
+        },
+        "txt": {
+          "sha256": "a440c3f7775f48b90d2a08807d77e6a8308f65e9d1e8f216d14136afb5524a8c",
+          "byte_size": 55
+        },
+        "tsv": {
+          "sha256": "cfe52a0d9e72f4ce01b1ababad6b5bf7b088856224809c687de48218177ad339",
+          "byte_size": 506
+        }
+      },
+      "expected_gray8_pixel_sha256": "0cfa81fc139bc8cbf4db3065f54080bcf7c777e0d038d4c2c0d85187d103e431",
+      "expected_gray8_pixel_bytes": 166600
+    },
+    {
+      "id": "sacrament-t30-lat",
+      "canvas": 361,
+      "printed_page": 351,
+      "image_member": "00361.jpg",
+      "crop_xywh": [
+        170,
+        1055,
+        1130,
+        80
+      ],
+      "processing": [
+        "-resize",
+        "300%",
+        "-threshold",
+        "30%"
+      ],
+      "border": 30,
+      "psm": 7,
+      "language": "lat",
+      "role": "selected-word",
+      "expected_outputs": {
+        "png": {
+          "sha256": "f35dc634fe9b6b6e8de474e0c8bd01a8846178ad3c9248409ce45c60c465a93c",
+          "byte_size": 9344
+        },
+        "txt": {
+          "sha256": "88f4b4c0a5d26fddabd13829d58c965dbcef7fde3994ee67566b22e13dfda8e8",
+          "byte_size": 51
+        },
+        "tsv": {
+          "sha256": "36f6491ee84ecfe145d5028d7bcc965771838f245ffcb81aa14efa88b0b7688a",
+          "byte_size": 522
+        }
+      },
+      "expected_gray8_pixel_sha256": "e896728333a2dc49b23c58c866c364027d1cfa71408562e055122647b9d09ae5",
+      "expected_gray8_pixel_bytes": 1035000
+    }
+  ],
+  "composition": {
+    "method": "Copy parent bytes in order. Replace only three half-open byte spans with exact half-open spans from retained raw OCR. Keep every other parent byte, whitespace, physical LF and terminal LF unchanged. No typed source-word substitutions, inferred glyphs, dictionary corrections or normalization.",
+    "splices": [
+      {
+        "label": "operative-condition",
+        "parent_source_lf": [
+          95,
+          96
+        ],
+        "parent_byte_range": [
+          4591,
+          4652
+        ],
+        "removed_sha256": "ffe5e2c7af35c0034832cf515ca31a428c17eb81bd80c922d07e41edbd74fc79",
+        "raw_txt": "clause-threshold30-3x-lat.txt",
+        "raw_byte_range": [
+          44,
+          100
+        ],
+        "inserted_sha256": "1731d41885519c484c04210bbed860574d490860d720f597b69f1e08dc099db4"
+      },
+      {
+        "label": "penance-word",
+        "parent_source_lf": [
+          99,
+          99
+        ],
+        "parent_byte_range": [
+          4754,
+          4763
+        ],
+        "removed_sha256": "eecd94423f04b1c0298cd1258aaf91a6d33f853f8d69f017623b4cdc524138db",
+        "raw_txt": "penance-t30-eng.txt",
+        "raw_byte_range": [
+          46,
+          54
+        ],
+        "inserted_sha256": "54ef4cee4acfe73b7fbca5bbaf17c7b3e4f7289ff2abde79eb9f4842d4563a6a"
+      },
+      {
+        "label": "constitution-incipit-word",
+        "parent_source_lf": [
+          112,
+          112
+        ],
+        "parent_byte_range": [
+          5423,
+          5435
+        ],
+        "removed_sha256": "b9b06cf627c60d6f594e803121de8e0c8f434a1d8b9bd6b1543e86ca698c58c3",
+        "raw_txt": "sacrament-t30-lat.txt",
+        "raw_byte_range": [
+          34,
+          45
+        ],
+        "inserted_sha256": "3912ce0623893c5313df3a999f042168b1addb3f2197de1295f045e46d0b50d3"
+      }
+    ],
+    "output_sha256": "87320abf345c99cd855ab844a63eaadee4a65007348eb75382a8ac136c965152",
+    "output_byte_size": 6999,
+    "physical_lines": 148
+  },
+  "limits": "Localized mechanical source recovery only; no lexical PASS, complete verbal collation, edition equality, translation judgment, rights reinterpretation, evidence-state promotion or admission. Independent cold source/PDF review remains required.",
+  "retained_outputs": {
+    "processed": {
+      "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-processed-3eee6c46ddee",
+      "path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/exaliis-repair-processed-3eee6c46ddee/processed-images.zip",
+      "sha256": "3eee6c46ddeeb368531d540beef4f03eecc8ee7b9f407de1b05ee77ebee58ebd",
+      "byte_size": 237721,
+      "manifest": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/exaliis-repair-processed-3eee6c46ddee/artifact.toml",
+      "name": "exaliis-repair-processed-3eee6c46ddee"
+    },
+    "raw": {
+      "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-raw-7e169e1c2a34",
+      "path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/exaliis-repair-raw-7e169e1c2a34/raw-ocr.zip",
+      "sha256": "7e169e1c2a347df8b5c3507a4132b1a844c19ef72af9a4bec933285323bfee41",
+      "byte_size": 5312,
+      "manifest": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/exaliis-repair-raw-7e169e1c2a34/artifact.toml",
+      "name": "exaliis-repair-raw-7e169e1c2a34"
+    }
+  }
+}

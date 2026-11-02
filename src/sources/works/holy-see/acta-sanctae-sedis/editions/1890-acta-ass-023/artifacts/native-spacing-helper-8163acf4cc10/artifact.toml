@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.ass.023.native-spacing-helper-8163acf4cc10"
+edition_id = "edition.acta-papal-archives.ass.023.1890-acta-ass-023"
+artifact_type = "source-replay-implementation"
+media_type = "text/x-python"
+storage = "tracked"
+retrieved = "2026-10-30"
+rights_status = "licensed"
+rights_basis = "Project-created deterministic source replay code copied from scripts/, licensed MIT under LICENSE and LICENSES/MIT.txt; no historical source wording."
+license = "MIT"
+provenance = "Exact historical implementation recovered mechanically from archived b67 code by reversing its two later raw-line and hardlink guard changes. No preexisting 8163 file was located in the searched source and scratch evidence. Recovered bytes match the preexisting SHA-256 pins in the unchanged Lacrimabili, Bohemiae and Eucharistia recipes. Independent execution of this exact implementation reproduces all three retained outputs, full line maps and stream-order dispositions identically to compatible current code. This is hash-verified recovery of project code, not a claim that the original file copy had been retained. Replay with PYTHONPATH=scripts for the shared CLI formatting helper."
+derived_from = "artifact.acta-papal-archives.ass.023.native-spacing-helper-b67f55a5075a"
+transformation = "Recovery action: reverse the later literal-LF candidate split and samefile hardlink guard in exact archived b67 bytes; require the result to match the preexisting complete 8163 SHA-256. The derivation edge describes this recovery, not the historical version order."
+sha256 = "8163acf4cc10c54c974690bc8f87f21f302b52ccde2d2124eacaa5e83d9249ea"
+byte_size = 12590
+path = "src/sources/works/holy-see/acta-sanctae-sedis/editions/1890-acta-ass-023/artifacts/native-spacing-helper-8163acf4cc10/helper.py"
+indexable = false

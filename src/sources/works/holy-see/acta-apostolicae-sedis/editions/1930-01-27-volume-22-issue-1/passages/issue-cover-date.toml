@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.holy-see.acta-apostolicae-sedis.1930-01-27-volume-22-issue-1.cover-date"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.1930-01-27-volume-22-issue-1"
+artifact_id = "artifact.holy-see.acta-apostolicae-sedis.1930-01-27-volume-22-issue-1.ia-microfilm-pdf-2203a197"
+artifact_sha256 = "2203a197db3412e272fe4c187f3544c778e38b20ec676620a24836091108ebf1"
+locus = "cover"
+states = ["cataloged", "acquired", "inspected", "verified"]
+artifact_page_ranges = [[1, 1]]
+verified_on = "2026-10-26"
+context = "The actual microfilm cover masthead reads 27 Ianuarii 1930,AnnusXXII,Vol.XXII,Num.1; the imprint reads Romae, Typis Polyglottis Vaticanis,M.DCCCC.XXX. This directly checks issue date and printing identity only."
+notes = "The Vatican annual OCR masthead at LF18 has 1980; retain those exact OCR bytes and record this separate image-level date evidence. No other printed page or act wording is image-collated by this event."

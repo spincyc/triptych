@@ -1,0 +1,22 @@
+{
+  "schema": "triptych-current-finite-route-diagnosis/v1",
+  "state": "diagnostic-only-no-exemptions",
+  "metadata_snapshot": {
+    "selection": "Every recursive *.toml regular nonsymlink file below src/sources, keyed by repository-relative POSIX path; values are exact file-byte SHA256; map serialized as sorted compact ensure_ascii=False UTF8 JSON.",
+    "file_count": 54535,
+    "canonical_path_sha256_map_sha256": "9b977477f553d34fc20e1411e7bf8f06a6235ab0befcf39bf99bbb0123cd7228"
+  },
+  "automatic_prior_route_additions": false,
+  "alias_candidates": [],
+  "structural_graph": "validated-current-metadata-snapshot",
+  "captured_carrier_readable_closure": [],
+  "scan": {
+    "passages": 9452,
+    "readable": 4077,
+    "body_collisions": 0,
+    "payload_collisions": 0,
+    "artifact_classifier_captures": 0,
+    "passage_identity_collisions": 0
+  },
+  "exemption_boundary": "Current aliases, if any, are only leads. Root must separately bind independently accepted source evidence before any prior-route pin; a current rights token or a readable result supplies no automatic exemption."
+}

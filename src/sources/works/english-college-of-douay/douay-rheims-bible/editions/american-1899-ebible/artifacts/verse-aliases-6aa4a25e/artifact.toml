@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-aliases-6aa4a25e"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.american-1899-ebible"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference facts and qualification prose; no third-party scripture body is copied into this table."
+rights_jurisdiction = "United States"
+projected_from = ["artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-82-1thlatvuc-ce55f63a", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-83-2thlatvuc-192ea252", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-59-1-thessalonians-d9f2bcea", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-60-2-thessalonians-79eff09a", "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.usfm-82-1thengdra-65d88c4a", "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.usfm-83-2thengdra-2bfed0ae", "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-aliases-49a721df", "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-59-1-thessalonians-7143792c", "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-60-2-thessalonians-fbfdb747"]
+transformation = "Preserve the exact previous immutable alias payload as a byte prefix and append only independently accepted distinct source-coordinate rows, ordered by cited_locus. No prior row or source wording is edited."
+provenance = "New immutable 2026-10-26 reference revision. Previous artifact artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-aliases-49a721df SHA256 ebd583897975aa5fcc47e8881a6c6f18e3ae68e6c5d4d14550d9da6fc06a9035, its payload path and metadata remain unchanged. Append 16 accepted rows (12 exact renumberings; 4 precise refusals). The source acceptance covers only the exact finite coordinates; combined or differing source wording is never silently widened."
+retrieved = "2026-10-26"
+sha256 = "6aa4a25eb8cdac2ed74a2b2b2777a756201a5ce19355b94981733e2f9d6ff7d4"
+byte_size = 8752
+path = "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/verse-aliases-6aa4a25e/verse-aliases.tsv"
+indexable = true
+encoding = "utf-8"
+notes = "Native Bible verse bodies, divisions and printed order remain unchanged. Baruch acceptance is isolated 3:38 only; no chapter-wide alignment or singleton superset claim. New current ZIPs retain distinct source identities from historical parent packages. Primary archive parents remain remote with unresolved support-file rights; exact complete underlying Bible USFM book children carry separately checked public-domain bases and supply the raw source testimony."

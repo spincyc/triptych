@@ -1,0 +1,83 @@
+{
+  "id": "acta.ass.027.ass-027-l00048",
+  "source_pdf_artifact_id": "artifact.acta-papal-archives.ass.027.vatican-pdf-cef47d12",
+  "source_pdf_sha256": "cef47d120d5700533b8de81d136a7d5d90790157755e4cca2400b2cb0e189fd4",
+  "native_extraction_sha256": "c6c47e965087a5f1d0ec03883ebf3c252b571f92f9b8269d0f426be1ddd83109",
+  "excerpt_sha256": "5f895c53bfb7e37110bc3fedc39851681bf75f50cd8fbd190ab7caa4756cb914",
+  "native_pdf_pages": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "source_ranges": [
+    {
+      "physical_line_range": [
+        43,
+        84
+      ],
+      "native_pdf_page": 3
+    },
+    {
+      "physical_line_range": [
+        86,
+        126
+      ],
+      "native_pdf_page": 4
+    },
+    {
+      "physical_line_range": [
+        128,
+        168
+      ],
+      "native_pdf_page": 5
+    },
+    {
+      "physical_line_range": [
+        170,
+        210
+      ],
+      "native_pdf_page": 6
+    },
+    {
+      "physical_line_range": [
+        212,
+        223
+      ],
+      "native_pdf_page": 7
+    }
+  ],
+  "schema": "triptych-source-note-partition-review/v1",
+  "revision": "2026-10-30T11:52:14Z",
+  "language": "la",
+  "source_artifact_id": "artifact.acta-papal-archives.ass.027.historical-text-76fd18c3",
+  "source_sha256": "76fd18c3621cc707adc62b79835f68c979493efd988d9e4a6916a3b16d17ae6f",
+  "prior_segment_id": "segment.acta-papal-archives.ass.027.ass-027-l00048",
+  "prior_pdf_sha256": "11c49f1bd3af8bdfb1736a60dc68e755c833b774910d80bba07bdfba803a9934",
+  "note_line_ranges": [
+    [
+      124,
+      126
+    ]
+  ],
+  "native_full_size_excerpt_pages": [
+    2
+  ],
+  "native_contact_sheet_pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "geometry": "The repaired note groups occupy smaller-type page-foot blocks below a single body column. Exact LF bounds include the complete note markers and citation lines. No lexical repair, body/note reordering or margin reconstruction.",
+  "selected_non_lf_sha256": "8eba7abf3f8aae50621e1600feec7817b99cd9443e672ecce956f193566f7f3d",
+  "selected_non_lf_bytes_preserved": true,
+  "source_order_preserved": true,
+  "derivative_artifact_id": "artifact.acta-papal-archives.ass.027.historical-text-76fd18c3.note-blocks-litteras-a-vobis-la-4a32cf22714d",
+  "derivative_sha256": "4a32cf22714de57b8eaf5f3af0ff744ae8339d58bff3e55934761e0e6cf53f89",
+  "replay_helper_sha256": "a0b31d45f498bec3a12a29cdff28da38f3e01cc02c50e5de8a9a65e4a82a9d57",
+  "limit": "Official native archival OCR PDF reconstruction; no original-print image collation or lexical accuracy claim.",
+  "replay_helper_path": "scripts/_papal_source_notes.py"
+}

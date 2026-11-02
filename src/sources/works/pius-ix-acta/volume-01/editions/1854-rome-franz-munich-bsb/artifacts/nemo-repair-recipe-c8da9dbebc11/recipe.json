@@ -1,0 +1,123 @@
+{
+  "schema": "triptych-localized-facsimile-ocr-repair/v1",
+  "scope": "Nemo certe ignorat Latin only; one historical citation note on printed p.353/canvas363; source bytes outside the declared half-open parent range remain exact.",
+  "upstream_models_commit": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+  "models_license": "Apache-2.0; exact upstream LICENSE and README.md retained in models.zip",
+  "inputs": {
+    "images": {
+      "path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/bounded-images-ca31a9280e5a/historical-images.zip",
+      "sha256": "ca31a9280e5a0f8408d4ce63c4a3855389d7b7522ea8231599a157897b4d183f",
+      "byte_size": 11079319
+    },
+    "models": {
+      "path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/nemo-repair-models-14ed17fae08d/models.zip",
+      "sha256": "14ed17fae08dde0425293a887915ce91f9f3afb5b15b7deafded93e67d680c02",
+      "byte_size": 20891134
+    },
+    "parent_text": {
+      "path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/nemo-ocr-text-616920cfe9af/nemo.txt",
+      "sha256": "616920cfe9af6771db73785cb06b87191df1c2b36cfdf41dc90409b0ab5d52ea",
+      "byte_size": 12268
+    },
+    "original_raw": {
+      "path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/raw-ocr-5843d9ec2477/raw-ocr.zip",
+      "sha256": "5843d9ec24775bf53ba9319e30c1d4589e92a26e38607fc8c24977f2e389415f",
+      "byte_size": 103993
+    }
+  },
+  "image": {
+    "member": "bsb-images/00363.jpg",
+    "sha256": "d4ecac556115b41dc6cea486bef7661e3923056d844589265f03b8d2040b9ba2",
+    "canvas": 363,
+    "printed_page": 353
+  },
+  "crop_xywh": [
+    220,
+    2020,
+    1100,
+    130
+  ],
+  "modes": [
+    {
+      "id": "gray"
+    },
+    {
+      "id": "threshold35",
+      "threshold": "35%"
+    },
+    {
+      "id": "threshold40",
+      "threshold": "40%"
+    }
+  ],
+  "preprocessing": "Exact native JPEG input; lossless crop to PNG, Gray colorspace,8-bit depth; compare unthresholded grayscale with35%/40% threshold; density300; strip only output PNG metadata. Never OCR a viewing proxy.",
+  "models": {
+    "lat": {
+      "member": "lat.traineddata",
+      "sha256": "60054dd32ac03ebd9b4f87d0665bd491a7ffe0d3ee99ceb91aefaf348b65e94f",
+      "byte_size": 9705145,
+      "url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/e12c65a915945e4c28e237a9b52bc4a8f39a0cec/lat.traineddata"
+    },
+    "eng": {
+      "member": "eng.traineddata",
+      "sha256": "8280aed0782fe27257a68ea10fe7ef324ca0f8d85bd2fd145d1c2b560bcb66ba",
+      "byte_size": 15400601,
+      "url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/e12c65a915945e4c28e237a9b52bc4a8f39a0cec/eng.traineddata"
+    }
+  },
+  "psm": [
+    6,
+    7
+  ],
+  "selected_raw_member": "threshold40-eng-6.txt",
+  "selection_basis": "Compare actual unthresholded crop with raw outputs; English40% PSM6 and7 each preserve material note address and cited chapter. No expected source words enter recognition commands, configuration or composition.",
+  "composition": {
+    "parent_byte_range_half_open": [
+      1274,
+      1308
+    ],
+    "removed_span_sha256": "7b0d132d735d0bc197736a4c29629284747b6c1a57bf2d6f0c24b5623335f70b",
+    "replacement_span_sha256": "602871f165ba9ad0360477a7c545eb08568a104f011f1d92ec9b1a4c08d0e70c",
+    "replacement_rule": "Read selected raw TXT, strip only leading/trailing whitespace, splice by exact half-open byte offsets. No source characters are typed or reconstructed.",
+    "output_sha256": "f4e60868a4e3f3eb574663c0e64ed464c586b5430e513f5a17c567a3ad2235e1",
+    "preserved_prefix_sha256": "79ce31061e7a55c8b358d3621f46295f034a501b8c420866ab31bcefeb5546c1",
+    "preserved_suffix_sha256": "1e561596bf535e762bba852e5ac5cb66bb267f89ec663f2d183dbc065d5a6297",
+    "parent_raw_member": "p00363-note.txt"
+  },
+  "tools": {
+    "python": {
+      "path": "/usr/bin/python",
+      "sha256": "375532f83be620283ab780c14ca6bcc5907dc379d2b621de0c5d0a112cf5458b"
+    },
+    "tesseract": {
+      "path": "/usr/bin/tesseract",
+      "sha256": "0e8a7f5cd32fbed5a897f7ecff3860be04d0df93f5c6721d7ac6d0920a882127"
+    },
+    "magick": {
+      "path": "/usr/bin/magick",
+      "sha256": "c9b439e075a75795901641dadab39b3aee6395c2220553bb5d7ce30c75ec0b03"
+    }
+  },
+  "replay_script": {
+    "path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/nemo-repair-replay-a87535f3909b/replay.py",
+    "sha256": "a87535f3909b93c7280d4563e889ed92a8447b329ee2f07dfe3153df9f678f61",
+    "byte_size": 4309
+  },
+  "tool_versions": {
+    "python": "Python 3.14.8\n",
+    "tesseract": "tesseract 5.5.4\n leptonica-1.87.0\n  libgif 6.1.3 : libjpeg 8d (libjpeg-turbo 3.2.0) : libpng 1.6.59 : libtiff 4.7.2 : zlib 1.3.2 : libwebp 1.6.0 : libopenjp2 2.5.4\n Found AVX2\n Found AVX\n Found FMA\n Found SSE4.1\n Found OpenMP 202111\n Found libarchive 3.8.10 zlib/1.3.2 liblzma/5.8.4 bz2lib/1.0.8 liblz4/1.10.0 libzstd/1.5.7 openssl/3.6.5 libb2/bundled libacl/2.4.0\n Found libcurl/8.23.0 OpenSSL/3.6.5 zlib/1.3.2 brotli/1.2.1 zstd/1.5.7 libidn2/2.3.8 libpsl/0.21.5 libssh2/1.11.1 nghttp2/1.70.0 ngtcp2/1.25.0 nghttp3/1.18.0 mit-krb5/1.22.2\n",
+    "magick": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org\nCopyright: (C) 1999 ImageMagick Studio LLC\nLicense: https://imagemagick.org/license/\nFeatures: Cipher DPC HDRI Modules OpenCL OpenMP \nDelegates (built-in): bzlib cairo djvu fftw fontconfig freetype heic jbig jng jp2 jpeg jxl lcms lqr ltdl lzma openexr pangocairo png raqm raw rsvg tiff uhdr webp wmf x xml zip zlib zstd\nCompiler: gcc (16.2)\n"
+  },
+  "retained_outputs": {
+    "processed": {
+      "path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/nemo-repair-processed-a50a178179a1/processed.zip",
+      "sha256": "a50a178179a189bcc1cfa36c351d320caa9afbc4afe96664c73f5bdc92ab148b",
+      "byte_size": 59160
+    },
+    "raw": {
+      "path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/nemo-repair-raw-e921282a04e8/raw.zip",
+      "sha256": "e921282a04e8038dae1ea9f315a35d9682cf20b5fe1219083339c72a2c782a8d",
+      "byte_size": 6266
+    }
+  }
+}

@@ -11,9 +11,12 @@ model server roster where ceremonial training is in scope.
 
 The series belongs under
 `src/<provider>/liturgy/roman-rite/1962/reference/altar-server-guides/`. Its
-owner root is non-publishable; its seven independently printable leaves mirror
-under `build/<provider>/` and `pdf/<provider>/`. Universal evidence, rights, metadata, review, and
-publication rules remain in `guidance/editorial.md`; ownership, paths, shared
+owner root is non-publishable; its seven leaves declare their type, canonical
+selections, derivation, and output entrypoints in `publication.toml` under
+[document schemas](../document-schemas.md). Physical page matching, card
+imposition, duplex, and PDF requirements below remain
+[print-export gates](../../docs/printing.md). Universal evidence, rights,
+metadata, review, and publication rules remain in `guidance/editorial.md`; ownership, paths, shared
 dependencies, catalogs, and installation remain governed by
 `guidance/repository.md`.
 
@@ -188,8 +191,8 @@ response flash card must consume the same authoritative data. Do not maintain a
 second editable copy for a card back or another guide. Give the page-matched
 Low Mass main lane one owner, and give shared ceremonial actions one owner when
 the action is genuinely identical across publications. Declare every
-cross-leaf render dependency so a shared change rebuilds all affected
-consumers.
+cross-leaf source dependency so a shared change validates every affected
+consumer. Preserve the corresponding dependency for selected print exports.
 
 ## Voice, pronunciation, and memorization
 
@@ -371,9 +374,10 @@ The non-publishable series owner keeps:
   comparisons, consequential negative results, rejected edition mixing,
   rights, and completed liturgical, Latin, pedagogical, and production checks;
   and
-- `research/production-manifest.md`: the exact seven validated builds, page and
-  card counts, log and PDF checks, every-page visual inspection, duplex
-  verification, installed identity, and alpha state.
+- `research/production-manifest.md`: source/output validation for all seven
+  leaves and alpha state; for actual print exports, exact artifact identity,
+  page and card counts, log and PDF checks, every-page visual inspection, and
+  duplex verification. Planned checks remain distinct from completed reviews.
 
 Each publishable leaf keeps `research/guide-map.md`, naming its form, stable
 guide identity, imported data selections, model roster where applicable,
@@ -473,18 +477,18 @@ front on physical page 1, and contains no independent teaching prose. Its
 local guide map records the planned duplex order, final verified physical page
 map, and inherited relationship.
 
-The seven installed PDFs have one catalog home in
+The seven source publications have one catalog home in
 `library/traditional-latin-mass.md` and remain together in three form rows.
 The Low Mass row gives separate, clearly labeled links for the child booklet,
 trainer manual, and flash-card companion. Each sung-form row retains separate
-links for its full training guide and cards-only companion. Build,
-installation, cataloging, exact-snapshot release authorization, public push,
+links for its full training guide and cards-only companion. Optional print export,
+cataloging, exact-snapshot release authorization, public push,
 and deployment are separate operations.
 
 ## Profile gate
 
-An alpha snapshot may be installed when source integrity, rights and lawful
-distribution, safety, reproducibility and identity, mechanical validity, and
+An alpha source/HTML snapshot may be published when source integrity, rights and
+lawful distribution, safety, reproducibility and identity, mechanical validity, and
 basic visual usability pass. Internal release state does not appear in the
 reader edition. The terminal `Scope, Edition, and Qualifications` appendix
 states any work-wide form or use boundary once; immediate safety instructions
@@ -492,15 +496,16 @@ and conditions that change an action remain at their points of use. Catalogs
 need only identify the work and available formats. Installation and deployment
 remain separate operations.
 
-Before installation or release, in addition to the universal gates:
+Before source or HTML publication, in addition to the universal gates:
 
 - reconcile every rendered verbal item and card with the response inventory
   and visually collate its received Latin against the identified page image;
 - reconcile every Low Mass action, object state, position, and branch with the
   declared two-server model and ceremonial inventory; verify that every
-  trainer main lane is page-for-page and word-for-word identical to the child
-  lane, that the trainer rail remains on the left, and that no trainer-only
-  material enters the child booklet or flash cards;
+  trainer main lane preserves its declared shared child source and action
+  identity, and that no trainer-only material enters the child booklet or
+  flash cards. The exact page/word matching and left-rail print checks below
+  remain required for a print edition;
 - reconcile every Missa Cantata and Solemn action in both chronological and
   role views with the ceremonial inventory, including all roster states,
   objects, handoffs, omissions, and branch rejoins;
@@ -512,7 +517,17 @@ Before installation or release, in addition to the universal gates:
   extraction;
 - check every applicable exercise, assessment, answer, and card pair for a
   unique stable ID and agreement with its authoritative source;
-- build and inspect all seven consumers after any shared render-source change;
+- validate the source/schema and reviewed output of all affected consumers after
+  a shared source change;
+- state liturgical, ceremonial, Latin-pronunciation, pedagogical, and rights
+  bounds accurately. Received Latin and other third-party material require a
+  local rights statement and recorded distribution basis.
+
+For selected print exports, additionally:
+
+- verify that every trainer main lane is page-for-page and word-for-word
+  identical to the child lane and that the trainer rail remains on the left;
+- build and inspect the selected affected consumers;
   reject unresolved log warnings, overfull or underfull boxes, broken links,
   missing fonts, or unstable contents;
 - inspect every page for age-appropriate type size, density, navigation,
@@ -524,7 +539,4 @@ Before installation or release, in addition to the universal gates:
   then verify duplex edge, front/back alignment, cut safety, the Low Mass
   eight-up grid and fixed 11.5-point text, the sung-form six-up grids,
   Mass-order or lesson-group order as applicable, form markers, and the absence
-  of an inserted cover or parity page; and
-- state liturgical, ceremonial, Latin-pronunciation, pedagogical, and rights
-  bounds accurately. Received Latin and other third-party material require a
-  local rights statement and recorded distribution basis.
+  of an inserted cover or parity page.

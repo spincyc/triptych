@@ -1,0 +1,25 @@
+{
+  "schema": "triptych-historical-english-line-selection/v1",
+  "source_url": "https://archive.org/download/sim_dublin-review_1881-10_6/sim_dublin-review_1881-10_6_djvu.txt",
+  "source_artifact_id": "artifact.journals.dublin-review.1881-10-third-series-volume-6.source-ocr-5f7772c6f76a",
+  "source_sha256": "5f7772c6f76a5aa3b095a2e30e0fb35a92d2b0e12741a831a1763136143cf0f7",
+  "source_bytes": 791302,
+  "physical_line_ranges": [
+    [
+      10706,
+      10756
+    ],
+    [
+      10768,
+      10818
+    ],
+    [
+      10836,
+      10863
+    ]
+  ],
+  "algorithm": "Decode UTF-8; split only at LF; take each inclusive 1-based physical-line range; strip outer whitespace from each selected range; join ranges with one LF; split paragraphs at a blank line (regex newline-whitespace-newline); replace each whitespace run within a paragraph by one space; join nonempty paragraphs by two LF and append one LF. No lexical, punctuation, numbering or date correction.",
+  "output_sha256": "a1b9a51509852951fe675dee5f7efc0bf869d8501e5915e746e16abd602b673b",
+  "native_evidence_artifact_id": "artifact.journals.dublin-review.1881-10-third-series-volume-6.native-source-evidence-980d830690ae",
+  "excluded": "Surrounding non-act text, running page heads/numbers and Google digitizer furniture. Supremi retains its terminal historical editorial note."
+}

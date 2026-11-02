@@ -1,0 +1,121 @@
+{
+  "schema": "triptych-reviewed-source-installation/v1",
+  "recorded_on": "2026-10-29",
+  "source_plans": [
+    {
+      "plan_sha256": "9fab950e8bc019c3dde79d2a87b7cb5fd55825b6863e043b2583e19e9f072273",
+      "plan_name": "install-plan.json",
+      "targets": [
+        [
+          "s-ioannis-bosco-confessoris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ]
+      ],
+      "source_files": [
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/bosco-three-orations-target-20261029.toml",
+          "sha256": "0bf3c946bd9dae441d69a75f24c5bacc74b9dff8f57a3b976f5752ad7be2109e"
+        },
+        {
+          "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/bosco-orations-checked-20261029/artifact.toml",
+          "sha256": "7b34447b050985a11b075cd9b394bc72c0ff819b39f0197d6b22780bcd032120"
+        },
+        {
+          "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/bosco-orations-checked-20261029/latin.txt",
+          "sha256": "82a011c5e4207cab295d68f4f922440a74894d8522865e2ca28ef0df34f08b03"
+        },
+        {
+          "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/official-asc-scan-93b726ae/artifact.toml",
+          "sha256": "434f260653da24bc0b41877f19e71aee3a8d0c53776d3a1b07b25e1e0e7692b7"
+        },
+        {
+          "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/official-asc-scan-93b726ae/source.pdf",
+          "sha256": "93b726aeb737cddcc5a71650cee028a45af501074c017e8b9ce1496d2728f6a2"
+        },
+        {
+          "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/edition.toml",
+          "sha256": "aed3789690a2e194116711f3fce17024fbe34ee68ae5d6783ee494944d5cbd33"
+        },
+        {
+          "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-secret-image-20261029.toml",
+          "sha256": "b19771deac9c06f2d092653c0bc1557c3f0ad0acea1e04578b0669c3ceeaee33"
+        },
+        {
+          "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-secret-text-20261029.toml",
+          "sha256": "1e8e8893fef426fed06ad169ae4d45330f9f0e316e0f4100ec74c0d1d387fff9"
+        },
+        {
+          "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/work.toml",
+          "sha256": "35a36fba86a92c0875d56bf1a02fb02da0b9090a0d1c5ff940d255b8bebb6506"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-bosco-secret-public-domain/artifacts/s-ioannis-bosco-confessoris--secret--1/artifact.toml",
+          "sha256": "9c98f547dbebc3aa9c1f49361aa41ca4e035b1f15fd4dd8f4b96dff3f54b069f"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-bosco-secret-public-domain/artifacts/s-ioannis-bosco-confessoris--secret--1/latin.txt",
+          "sha256": "db67a20c9856f185be4d0784326f5f7ab5906ce09c079c05ca7ec2a6c8541225"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-bosco-secret-public-domain/edition.toml",
+          "sha256": "04d20e93e5542057f2a39b741861d975a8563db6ebe2a774e52291a93dc69d7a"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-bosco-secret-public-domain/passages/s-ioannis-bosco-confessoris--secret--1.toml",
+          "sha256": "d4da7e9923c29ca52fa2c487dc16d9a9dd1ac7cc2db7cfddf8977e4e87277811"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "target": [
+        "s-ioannis-bosco-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Secret",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-ioannis-bosco-confessoris",
+        "form_id": "main",
+        "proper": "Secret",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "d9ac9584c47274f5add528a0270d5880dc9c738abe2afd660ffb103dac55641f",
+      "new_english_sha256": "7508e33c6df415effab4e181eb61a63ed3e34974de84b512a7d715199ff835c2",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-c8f21b503aad214e.json"
+    }
+  ],
+  "after_hashes": {
+    "src/sources/calendars/roman-1962/propers.yaml": "9209fc89aa5ad923359c27065194d58d16c39666f53f4e59540511d255be07c4",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "87b7f1e9ef3f66c2d601c33139ab8b50aca738597da8e235741980ca5ebe2802",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "1a66f51b5d66fc6945c2a9bfcb44471068523c5f85a361a9a28c72ca628a5e1d"
+  }
+}

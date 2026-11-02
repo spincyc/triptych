@@ -1,0 +1,65 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.humanum-omissions-text-7f8e961ca176",
+      "body_tex": "1884-04-20-papal-leo-xiii-hf-l-xiii-enc-18840420-humanum-genus-1c6966f6-en/1884-04-20-papal-leo-xiii-hf-l-xiii-enc-18840420-humanum-genus-1c6966f6-en.body.tex",
+      "changed": true,
+      "id": "papal.leo-xiii.hf-l-xiii-enc-18840420-humanum-genus",
+      "language": "en",
+      "pages": 9,
+      "pdf": "1884-04-20-papal-leo-xiii-hf-l-xiii-enc-18840420-humanum-genus-1c6966f6-en/1884-04-20-papal-leo-xiii-hf-l-xiii-enc-18840420-humanum-genus-1c6966f6-en.pdf",
+      "pdf_sha256": "b388fd365fa52f28fb6fd2f9ed76b8125ed74502b45449595a0dc7129f31a8b5",
+      "physical_line_ranges": [
+        [
+          1,
+          79
+        ]
+      ],
+      "render_revision": "2026-10-30T16:32:10Z",
+      "segment_id": "segment.leo-xiii.humanum-genus.1903-benziger-english.omissions-7f8e961ca176",
+      "source_sha256": "7f8e961ca176eeefe996894ce79a9c2dcfd2bf9c81a5e6ec46744e08dfbf7820",
+      "status": "compiled",
+      "stem": "1884-04-20-papal-leo-xiii-hf-l-xiii-enc-18840420-humanum-genus-1c6966f6-en",
+      "tex": "1884-04-20-papal-leo-xiii-hf-l-xiii-enc-18840420-humanum-genus-1c6966f6-en/1884-04-20-papal-leo-xiii-hf-l-xiii-enc-18840420-humanum-genus-1c6966f6-en.tex",
+      "text_fidelity": {
+        "layout_hyphens": 63,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 9,
+        "source_characters": 46658,
+        "source_first_page": 1,
+        "source_last_page": 9,
+        "source_normalized_characters": 38504,
+        "status": "pass"
+      },
+      "warnings": []
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "226fd14f457e2e09bc90ec8226eb7ed29b76a51e6da816bd9f0aff3792c37254",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T16:32:10Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

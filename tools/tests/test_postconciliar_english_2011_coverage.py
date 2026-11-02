@@ -50,6 +50,12 @@ def live_slot_sets() -> tuple[
     families = {propers.slot_family(key[2]) for key in overlay} | {
         propers.slot_family(key[2]) for key in untranslated
     }
+    body_targets = {
+        propers.untranslated_record_identity(row)
+        for rows in untranslated.values()
+        for row in rows
+        if row.get("lang") == "en" and row.get("extent") == "body"
+    }
     slots: dict[
         tuple[str, str, str, str, int],
         tuple[dict, dict, tuple[str, str, str]],
@@ -62,7 +68,9 @@ def live_slot_sets() -> tuple[
             source_identity = propers.source_slot_identity(
                 document, mass, form, proper, taken_from
             )
-            units = propers.coverage_slot_units(proper, source_identity)
+            units = propers.coverage_slot_units(
+                proper, source_identity, body_targets
+            )
             for identity, owner in units:
                 if propers.slot_family(proper.get("name")) in families:
                     slots[identity] = (proper, owner, key)
@@ -280,7 +288,7 @@ class PostconciliarEnglish2011CoverageTests(unittest.TestCase):
                 )
             else:
                 self.assertNotEqual(row["identity_relation"], "approved-icel-2011")
-        historical_or_project = {"", "cummiskey-1861", "caswall-1849"}
+        historical_or_project = {"", "cummiskey-1861", "caswall-1849", "lasance-1945"}
         by_witness = {row["entry_witness"]: row for row in classes}
         for witness in historical_or_project:
             self.assertTrue(by_witness[witness]["currently_servable"])

@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+"""Build one document on demand from its canonical sources."""
+from pathlib import Path
+import sys
+
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from _print_document import main
+from _tooling import Example
+
+EXAMPLES = {
+    "list": (
+        Example("tools/print-document list --family bible", (
+            "bible:catholic-public-domain-version\tpdf,tex\tCatholic Public Domain Version",
+            "bible:clementine-vulgate\tpdf,tex\tClementine Vulgate (Latin)",
+            "bible:douay-rheims\tpdf,tex\tDouay-Rheims (Challoner)",
+            "bible:douay-rheims-american-1899\tpdf,tex\tDouay-Rheims (American 1899)",
+            "bible:king-james-version\tpdf,tex\tKing James, with Apocrypha",
+            "bible:revised-version-1895\tpdf,tex\tRevised Version, with Apocrypha",
+            "bible:world-english-bible-catholic\tpdf,tex\tWorld English, Catholic Edition",
+        ), "Lists publishable edition recipes without typesetting."),
+        Example("tools/print-document list --family reading-plan", (
+            "reading-plan:narrative-spine-full-account-douay-rheims\tpdf,tex\tThe Full Account — Douay-Rheims (Challoner)",
+            "reading-plan:narrative-spine-full-account-king-james-version\tpdf,tex\tThe Full Account — King James, with Apocrypha",
+            "reading-plan:narrative-spine-landmarks-douay-rheims\tpdf,tex\tLandmarks — Douay-Rheims (Challoner)",
+            "reading-plan:narrative-spine-landmarks-king-james-version\tpdf,tex\tLandmarks — King James, with Apocrypha",
+            "reading-plan:narrative-spine-story-douay-rheims\tpdf,tex\tThe Story — Douay-Rheims (Challoner)",
+            "reading-plan:narrative-spine-story-king-james-version\tpdf,tex\tThe Story — King James, with Apocrypha",
+        ), "Lists declared plan volumes without typesetting."),
+    ),
+    "check": (
+        Example("tools/print-document check --document bible:douay-rheims", ("valid: bible:douay-rheims",)),
+        Example("tools/print-document check --document reading-plan:narrative-spine-landmarks-douay-rheims", ("valid: reading-plan:narrative-spine-landmarks-douay-rheims",)),
+    ),
+    "build": (
+        Example("tools/print-document build --document bible:douay-rheims --output-format tex", (
+            "built: .scratch/print-document/c0bedb6eea78c35c/output/douay-rheims--c0bedb6eea78c35c.tex",
+            "receipt: .scratch/print-document/c0bedb6eea78c35c/output/douay-rheims--c0bedb6eea78c35c.print.json",
+        ), "Writes complete standalone TeX in disposable print scratch; no PDF compilation."),
+        Example("tools/print-document build --document reading-plan:narrative-spine-landmarks-douay-rheims --output-format tex", (
+            "built: .scratch/print-document/7bf9703a67a53b2f/output/narrative-spine-landmarks-douay-rheims--7bf9703a67a53b2f.tex",
+            "receipt: .scratch/print-document/7bf9703a67a53b2f/output/narrative-spine-landmarks-douay-rheims--7bf9703a67a53b2f.print.json",
+        ), "Writes one selected plan volume's standalone TeX and receipt."),
+    ),
+}
+
+if __name__ == "__main__":
+    raise SystemExit(main(examples=EXAMPLES))

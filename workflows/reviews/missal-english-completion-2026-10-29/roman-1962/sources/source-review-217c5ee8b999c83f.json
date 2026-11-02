@@ -1,0 +1,60 @@
+{
+  "schema": "triptych-independent-two-chant-target-transport-review/v1",
+  "disposition": "ACCEPT",
+  "scope": "Only the schema transport correction to the two newly proposed CMAA-controlled target passage records; original source fidelity and study English remain supported by unchanged bodies, unchanged source artifacts and retained prior image review. No new source reading or integrated release acceptance is asserted.",
+  "packet_path": ".scratch/roman-english-completion-20261029/chants/late-marian/two/candidates.json",
+  "packet_sha256": "58af4ddfa9f7b44ff8b4afa68c2383ba14024fabb5cde7fd71274662ddc76d78",
+  "previous_packet_path": ".scratch/roman-english-completion-20261029/chants/late-marian/two/history-v2/candidates.json",
+  "previous_packet_sha256": "92182f41fa802c25d9e6f0d8fa52a982b4355ea71fbf5a809ffd030aea29c249",
+  "previous_review_path": ".scratch/roman-english-completion-20261029/chants/late-marian/two/history-v2/source_review_final.json",
+  "previous_review_sha256": "484f37b9687f44363ffb96a4656c293d243db52f0c887ce422e9b3fe7b06eeb5",
+  "transport_correction": {
+    "changed_records": [
+      "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/late-marian-two-chants-20261029-beatae-mariae-virginis-reginae-communion.toml",
+      "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/late-marian-two-chants-20261029-s-ioseph-opificis-sponsi-beatae-mariae-alleluia.toml"
+    ],
+    "only_record_changes": [
+      "schema changes from2to1",
+      "artifact_page_ranges removed"
+    ],
+    "preserved_fields": "Every other field is exact, including identities, controller hashes, literal page/unit locators, dates, states, context and notes.",
+    "reason": "The existing immutable CMAA controller is schema1 and does not declare page_count. The owning validator requires page_count whenever artifact_page_ranges is present. Newly proposed schema1 metadata passages retain their exact human-readable loci without asserting unsupported machine page bounds.",
+    "controller_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+    "controller_record_sha256": "9e2440cfcf8fd3a0bc86dfc57bd9871992b9bca4fd5baced4ce07c7c06c48fbf",
+    "controller_schema": 1,
+    "controller_has_page_count": false,
+    "no_existing_record_migration": true
+  },
+  "checks": {
+    "prior_packet_review_and_two_original_target_passages_preserved_byte_exact": true,
+    "candidate_rows_and_rubric_structures_entirely_unchanged": true,
+    "masked_candidate_packet_exact_to_prior": true,
+    "two_target_record_deltas_exact": true,
+    "other_ten_postimages_byte_exact_to_original_review": true,
+    "all_twelve_final_postimages_exact_to_new_source_file_sha256s": true,
+    "owning_common_record_validation_passes_two_new_passages": true,
+    "owning_string_validation_passes_two_new_passages": true,
+    "owning_passage_locator_validation_passes_against_actual_controller": true
+  },
+  "owning_scoped_validation_errors": [],
+  "source_file_sha256s": {
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/late-marian-two-chants-latin-20261029/artifact.toml": "a8d092605fa1ce88df2c65144014feec86ed72ca2783daf3e3668193efc06878",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/late-marian-two-chants-latin-20261029/latin.txt": "195521e5df0bcdafd28e38962272ed1027990687b5b9808865779898b90f260d",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/late-marian-two-chants-pages-20261029/artifact.toml": "fc04618c9b5330f69f0097e252f4d4f22782fa77123456be094e0bbcb724b51a",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/late-marian-two-chants-pages-20261029/source.pdf": "763e787e3fa63a16b947f2c087b86788dab3f25abb851eedf254cc4ec5594b73",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/late-marian-two-chants-20261029-beatae-mariae-virginis-reginae-communion.toml": "243f326eff85a052246164a4adabe7aad7ca72a41ad38f0b5fc16a0bed711781",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/late-marian-two-chants-20261029-s-ioseph-opificis-sponsi-beatae-mariae-alleluia.toml": "147b567d1720e07f26811c08921660f746cbb8b662f208e01395a4d88f2cd37b",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/late-marian-two-chants-20261029-beatae-mariae-virginis-reginae-communion.toml": "dfbfe1e0ff89e45d7c48f64b49583cbe340f58266cad06cc7fec99fe0022a56f",
+    "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/late-marian-two-chants-20261029-s-ioseph-opificis-sponsi-beatae-mariae-alleluia.toml": "bc3cd86175e8f0c82d260523d9caf5ebfc22c228d63ccdfb8352919d721f1557",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/late-marian-two-chants-projection-20261029/artifact.toml": "ae3c702015d21e904a77b5e94912225658de9102da140d03537fd3c48642c497",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/late-marian-two-chants-projection-20261029/latin.txt": "a6406eff476911cdbd16e301edf7eba52aa6c19afe058e8aebcd90c50805be60",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/late-marian-two-chants-20261029-beatae-mariae-virginis-reginae-communion.toml": "488f6985e4a7087a0414ca1aafa8f419fccace9da0f1956cdb3f4cbafe7df2dc",
+    "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/late-marian-two-chants-20261029-s-ioseph-opificis-sponsi-beatae-mariae-alleluia.toml": "477b41d7ae701248f8cfb0fa3c77c90df31073544fda20951393cdd89ea18f91"
+  },
+  "findings": [],
+  "qualifications": [
+    "The earlier schema2 page-range transport failed the global source check; this bounded successor corrects that transport without changing any source wording or acquired artifact.",
+    "Latin and English bodies, typed conditional-rubric structures and exact old dictionaries remain byte/semantic-exact to the accepted metadata successor.",
+    "Source/calendar/provenance graph validation and affected renderer checks remain required on the installed integrated tree; only the relevant owning common-record, string and passage-locator checks were executed for this transport review."
+  ]
+}

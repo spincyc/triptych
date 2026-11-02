@@ -18,6 +18,13 @@ rights, metadata, review, and publication rules remain in
 `guidance/editorial.md`; repository paths and build rules remain in
 `guidance/repository.md`.
 
+Declare each packet or companion's type, canonical selections, source roles,
+and contract version in `publication.toml` under
+[document schemas](../document-schemas.md). Existing teaching, exercise, answer,
+and vocabulary owners remain canonical. Page hierarchy, writable space, duplex
+usability, and other physical provisions below govern
+[print exports](../../docs/printing.md).
+
 The course is a study aid for acquiring language competence. It is not an
 official liturgical book, an approved seminary curriculum, a credential, a
 substitute for an identified edition, or evidence that grammatical knowledge
@@ -349,8 +356,8 @@ supplied by the repository preamble.
 
 ## Profile checks
 
-Before installation, verify that the curriculum map accounts for every packet,
-stable lesson, teaching section, memory and practice family, reading,
+Before source or HTML publication, verify that the curriculum map accounts for
+every packet, stable lesson, teaching section, memory and practice family, reading,
 composition step, qualitative readiness description, cumulative review,
 dependency edge, and poetry-branch part. Confirm that every local module or
 companion record agrees with that map; the passage inventory accounts for
@@ -367,15 +374,17 @@ them as unresolved. Confirm that no protected translation, corpus, database
 transcription, or other third-party material is redistributed without a
 recorded basis.
 
-Run the universal metadata, build, log, PDF, and every-page review checks for
-every affected publication. Additionally inspect packet identity, stable
-lesson boundaries, memory and vocabulary recurrence, reading-source labels,
-composition progression, answer separation, writable space, explicit IDs,
-contents entries, self-records, duplex usability, and the final-page colophon.
+Run the universal source, schema, metadata, and output checks for every affected
+publication. Inspect packet identity, stable lesson boundaries, memory and
+vocabulary recurrence, reading-source labels, composition progression, answer
+separation, explicit IDs, contents entries, and self-records. For a requested
+print export, also run build, log, PDF, and every-page review checks, including
+writable space, duplex usability, rendered hierarchy, and final-page colophon.
 Run `make check-curriculum-structure` whenever a curriculum publication or
 shared source changes; it must reconcile the source registry, multi-unit
 selection, all-variant practice contract, qualitative readiness language,
-stable-ID coverage, and rendered hierarchy for the complete discovered
-publication set. Alpha publication requires these source, rights, safety,
-reproducibility, mechanical-validity, and basic-visual-usability checks; it
+stable-ID coverage for the complete discovered publication set. Its PDF-specific
+hierarchy check applies to each selected print export. Alpha publication requires
+these source, rights, safety, reproducibility, mechanical-validity, and
+basic-visual-usability checks; it
 does not carry external-review gates or placeholders.

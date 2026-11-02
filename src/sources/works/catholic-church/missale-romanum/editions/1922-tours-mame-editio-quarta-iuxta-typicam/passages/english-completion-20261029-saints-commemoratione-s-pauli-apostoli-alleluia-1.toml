@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-29"
+id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-commemoratione-s-pauli-apostoli-alleluia-1"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+artifact_sha256 = "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005"
+locus = "Tours Mame 1922, artifact pages 755; printed ['641']"
+artifact_page_ranges = [[755, 755]]
+context = "Complete historical Latin chant for commemoratione-s-pauli-apostoli / Alleluia occurrence 1; source and target page images compared in full."
+notes = "Complete source words, including all alleluias, versicles and printed short cues, agree with the separately identified target after only the declared spelling/typography differences. No Bible reconstruction replaces this whole body. Differences: [{\"kind\": \"orthography\", \"from\": \"Allelúja\", \"to\": \"Allelúia\", \"scope\": \"every occurrence\", \"effect\": \"consonantal j/i spelling; no lexical change\"}, {\"kind\": \"typography\", \"from\": \"source physical line endings and terminal line-break hyphens\", \"to\": \"reflowed single text body\", \"effect\": \"line-break hyphens removed; words rejoined without additions\"}, {\"kind\": \"typography\", \"from\": \"printed versicle sign\", \"to\": \"℣\", \"effect\": \"Unicode representation only; one sign per printed verse\"}, {\"kind\": \"canonical-projection\", \"from\": \"stress accents and æ ligatures in diplomatic transcriptions\", \"to\": \"unaccented text with ae\", \"effect\": \"declared calendar orthography; no word substitution\"}]"

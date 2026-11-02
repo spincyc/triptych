@@ -1,0 +1,60 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T14:54:51Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-02071894-litteras-a-vobis.2026-10-26-vatican-la.alien-act-excluded-bd08bc9d03f8",
+      "collection_corpus": "latin",
+      "date": "1894-07-02",
+      "document_type": "letter",
+      "edition_id": "edition.papal.leo-xiii.hf-l-xiii-enc-02071894-litteras-a-vobis.2026-10-26-vatican-la",
+      "id": "papal.leo-xiii.hf-l-xiii-enc-02071894-litteras-a-vobis",
+      "language": "la",
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T14:54:51Z",
+      "rights_basis": "Historical Latin of Litteras a vobis identified in Acta Sanctae Sedis 27 (1894-1895), printed pp.3-7, including its address, complete body, blessing, 2 July 1894 dating and subscription. The retained facsimile title establishes publication by 1895. United States expired publication-term basis under 17 U.S.C. 304-305, with 104A remainder where applicable and 103(b) for unchanged preexisting wording. This bounded derivative excludes one exactly identified foreign-act insertion from the normalized Vatican web transcription; it does not clear portal HTML, modern bibliography, later revisions or translations. Shared authorities and jurisdictional limits: src/sources/inventories/papal-documents-rights-v1.toml. Historical source wording is excluded from Triptych CC BY 4.0.",
+      "rights_notice": "Historical Latin wording is public domain in the United States; portal markup, translations and modern additions retain their separate rights.",
+      "rights_status": "public-domain",
+      "sha256": "bd08bc9d03f8bfa572048c4a973fe6ea01be0022fb1f72750c5dfe3c6fc0f253",
+      "source_note": "Vatican web transcription of ASS 27 (1894-1895), pp.3-7. An alien-act insertion is excluded by exact byte bounds checked against the historical facsimile. All retained wording, inline reference notes and order are unchanged. Remaining transcription errors are uncorrected; full word-for-word collation was not performed.",
+      "source_url": "https://www.vatican.va/content/leo-xiii/la/encyclicals/documents/hf_l-xiii_enc_02071894_litteras-a-vobis.html",
+      "text_path": "src/sources/works/papal-documents/1894-07-02-papal-leo-xiii-hf-l-xiii-enc-02071894-litteras-a-vobis-e1b0c4ba/editions/2026-10-26-vatican-la/artifacts/alien-act-excluded-bd08bc9d03f8/text.txt",
+      "title": "Litteras a Vobis",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-02071894-litteras-a-vobis",
+      "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-02071894-litteras-a-vobis.vatican-la.alien-act-excluded-bd08bc9d03f8",
+      "segment_path": "src/sources/works/papal-documents/1894-07-02-papal-leo-xiii-hf-l-xiii-enc-02071894-litteras-a-vobis-e1b0c4ba/editions/2026-10-26-vatican-la/segments/alien-act-excluded-bd08bc9d03f8.toml",
+      "physical_line_ranges": [
+        [
+          1,
+          25
+        ]
+      ],
+      "correction_evidence": {
+        "kind": "exact-alien-act-byte-exclusion",
+        "spec_artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-02071894-litteras-a-vobis.2026-10-26-vatican-la.alien-act-exclusion-spec-17ca197eaacc",
+        "spec_sha256": "17ca197eaacceab71154238581401420642f10ff12e587b87595566470bcd647",
+        "source_byte_ranges_0_based_half_open": [
+          [
+            0,
+            9186
+          ],
+          [
+            10626,
+            11173
+          ]
+        ],
+        "excluded_byte_range_0_based_half_open": [
+          9186,
+          10626
+        ],
+        "excluded_sha256": "001678905192c4d70428ecc80ef0363c3c65ec58ceb73d65eb8ca7d1e8892fbc",
+        "retained_source_bytes_unchanged": true,
+        "retained_source_order_preserved": true,
+        "facsimile_artifact_id": "artifact.acta-papal-archives.ass.027.litteras-coconnier-facsimile-58e98c94a7cb"
+      },
+      "terminal_keep_blocks": 3,
+      "compact_layout": true,
+      "compact_margin": 0.65
+    }
+  ]
+}

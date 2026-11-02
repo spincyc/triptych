@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.proper-communicantes-four-heads-20261026-1e80c25b"
+edition_id = "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19"
+artifact_type = "editorial-projection"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych owns only the bounded selection, row division, normalization decisions and collation record under CC BY 4.0. Every Latin word is independently witnessed in the public-domain 1922 Mame under 17 U.S.C. 103(b). No Joseph clause, modern word, scan, image, layout or protected rubric is supplied."
+rights_jurisdiction = "United States"
+provenance = "Source owner read the exact selected words on the held, hash-verified whole-book facsimile pages at 200 and 400 dpi on 2026-10-26. Whole-book pdftotext output was a discovery aid only. No model stood in retrieval or byte hashing. The source packet retains exact image hashes, cuts, conditional-word boundaries and refused readings. Independent source/publication review remains required before adoption."
+retrieved = "2026-10-26"
+sha256 = "1e80c25b7d0c5689f387d3c20a75d123dee04ec95c4af3a71169f0b01da942eb"
+byte_size = 2076
+path = "src/sources/works/triptych/roman-1962-ordinary-editorial-projection/editions/2026-10-19-editorial-projection/artifacts/proper-communicantes-four-heads-20261026-1e80c25b/text.tsv"
+indexable = true
+encoding = "utf-8"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-la-20261026-34961eae", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Read the four Mame heads against 1962 nn. 1093–1096, printed p. 304. Retain j, expand ligatures, remove stress accents, and follow target pointing and the received Genetricis spelling. Present the same printed Nativity and Easter alternatives in the target arrangement; compare each day/night branch independently. Alternatives are not cumulative speech. Omit the dagger because it is a reference mark, not a prayer word."
+notes = "The separately sourced continuation remains unchanged. This artifact supplies only the four previously absent heads."

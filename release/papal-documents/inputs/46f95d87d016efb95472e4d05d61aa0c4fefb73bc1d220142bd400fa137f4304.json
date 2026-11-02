@@ -1,0 +1,67 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.papal-collections.encyclicals-pius-xi-ryan-1927.1927-herder-english.studiorum-fresh-ocr-6c720368bacc",
+      "body_tex": "1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5-en/1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5-en.body.tex",
+      "changed": true,
+      "id": "papal.pius-xi.hf-p-xi-enc-19230629-studiorum-ducem",
+      "language": "en",
+      "pages": 9,
+      "pdf": "1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5-en/1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5-en.pdf",
+      "pdf_sha256": "43c3054dc2a567c6febba74a1759d471e110b1efd03bfa2177a44a609955293e",
+      "physical_line_ranges": [
+        [
+          1,
+          877
+        ]
+      ],
+      "render_revision": "2026-10-30T15:31:58Z",
+      "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-19230629-studiorum-ducem.1927-herder-ryan-english.ryan-fresh-image-ocr-6c720368bacc",
+      "source_sha256": "6c720368bacc86d4fd618243863b184b4048aff4e28e57be1a589f1a61bd4e51",
+      "status": "compiled",
+      "stem": "1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5-en",
+      "tex": "1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5-en/1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5-en.tex",
+      "text_fidelity": {
+        "layout_hyphens": 49,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 9,
+        "source_characters": 42114,
+        "source_first_page": 1,
+        "source_last_page": 9,
+        "source_normalized_characters": 34540,
+        "status": "pass"
+      },
+      "warnings": [
+        "Underfull \\hbox (badness 4132) in paragraph at lines 822--837"
+      ]
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "9c8415878a68a7eb71220418483dd488370d83e0997669cb1e6d07355a46191e",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T15:31:58Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-temporal4-ascension-vigil-alleluia"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "image-checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Complete bounded Latin of the identified 1862 public-domain printing; source wording is excluded from project licensing. This faithful transcription adds no new liturgical words."
+rights_jurisdiction = "United States"
+provenance = "2026-10-29 direct page-image reading, including complete body extent. OCR only located candidates; it supplied no textual authority."
+retrieved = "2026-10-29"
+sha256 = "32693e80d4ae708b0574e7a439521fe98588b6efae2fdd2158e526e645c4f850"
+byte_size = 187
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/english-completion-20261029-temporal4-ascension-vigil-alleluia/latin.txt"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-temporal4-pages"
+transformation = "Join physical wraps and break hyphens; expand ligatures; remove stress accents; normalize decorative initial capitalization and versicle glyph to V.; omit printed heading/citation labels while retaining the complete body and its actual verse/cue extent. Keep historical spelling and pointing."
+indexable = true
+encoding = "utf-8"
+notes = "Extract page 2 corresponds to original PDF page 376. No neighboring rubrics, orations or other chant bodies enter this derivative."

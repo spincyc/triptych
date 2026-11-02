@@ -1,0 +1,31 @@
+{
+  "reviewed_on": "2026-10-30",
+  "reviewer": "coordinating AI contributor",
+  "status": "existing independently distributable source proof retained",
+  "issue": "The Common Communicantes study-English TSV includes a 557-character assembled Latin proof column. Determine its actual source and authority rather than treating every assembled Latin body as a transcription of the modern target.",
+  "controlling_existing_record": {
+    "path": "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+    "sha256": "55080a0b002e6045387408025b5fd5e3a3c7b10b545fa5593e097d7ab36146c5",
+    "section": "the_joseph_clause",
+    "decision_date": "2026-10-19",
+    "scope": "The maintainer's existing decision expressly reaches the exact seven Latin words in the common Communicantes as well as the continuation of its proper forms. It reaches no other modern Latin and supplies no English permission."
+  },
+  "literal_source_replay": {
+    "old_payload": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-communicantes-common-la/text.tsv",
+    "old_payload_sha256": "2a07ceacafa17667e2c5d7e371b06c300f495e0d8a787407324460ddca738e9a",
+    "study_payload": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/artifacts/common-full-names-conclusion-omitted-study-en/text.tsv",
+    "study_payload_sha256": "72d5e9a3546b78cdef41bc61180c2c6453b930698c78c49700e787233518c882",
+    "operation": "In the complete 67-word old body, replace the single string sed et beatorum with sed et beati Ioseph, eiusdem Virginis Sponsi, et beatorum. Every other old character remains exact. The authorized seven-word clause shares the old sed; six words are inserted. The full old conclusion is a separate source row and remains unjoined.",
+    "result": "The replay equals the entire 73-word proof column byte for byte; it introduces no other word, spelling, punctuation, name deletion or modern target expression.",
+    "assembled_latin_sha256": "7520717c9f240076ae17c93e8965f6c96b74f1335271624ba2bbbdbc0fe5f521",
+    "english_sha256": "3937f47745c80e9790d32ee95bb38c083c5dff440aead0706ec1ed984efabcb2"
+  },
+  "disposition": "Retain the existing source-proof column under its already recorded old-source and exact-clause bases. This applies the existing decision to the common form within its express reach; it creates no new whole-modern-body grant. The artifact already identifies the composite source proof accurately and prohibits joining it as Mame-only or exact-target Latin. No source, body, metadata, generated payload or release authorization changes are needed.",
+  "english_boundary": "The new study English has its separate project-created translation basis and independent source/fidelity review. This disposition neither substitutes for that review nor asserts human review, approved English or liturgical recitation authority.",
+  "target_boundary": "The controlling postconciliar Latin absence and uncollated-to-2008 grade remain unchanged. Common-form source proof does not fill seasonal proper forms or establish their appointment.",
+  "retention_boundary": "The new text-free Common candidate summary remains accurately labeled as a summary with the private original's distinct hash. Keeping that conservative audit summary does not imply that the separately retained old-source proof column is an unauthorized whole modern text.",
+  "independent_source_english_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/checkpoint-35-en/communicantes-common-independent-acceptance.json",
+    "sha256": "83833e1a48bcb8ea99ad32db48819e08cb9a93cbaba33010438ac8375d3974e0"
+  }
+}

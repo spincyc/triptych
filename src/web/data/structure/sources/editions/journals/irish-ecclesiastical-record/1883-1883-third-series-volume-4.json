@@ -1,0 +1,116 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "source-extent-review",
+   "byte_size": 1969,
+   "edition_owned": true,
+   "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.extent-review-a9ee9382b6cb",
+   "media_type": "application/json",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "licensed",
+   "rights_basis": "Project-created factual source-review record licensed CC BY 4.0.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "bounded-historical-english-transcription",
+   "byte_size": 15568,
+   "edition_owned": true,
+   "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.historical-english-84876b1b2d5b",
+   "media_type": "text/plain",
+   "notes": "Complete historical English translation in The Irish Ecclesiastical Record, third series 4 (1883), pp. 667–672, in Roman Notes and Documents. Translator unrecorded; the historical editor expressly says the encyclical is printed in English. The native title/imprint and all six act pages were inspected. The full protocol, body, dated closing, papal subscription and final historical editorial note are retained. OCR closing 18S8 and signature XIH remain literal although the native page clearly prints 1883 and XIII. Other inherited OCR errors and broken words remain; this is not a word-for-word image collation or a corrected translation.",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "The historical English translation, its terminal editorial note and the identified journal printing were published in Dublin in 1883, independently confirmed by the native title/imprint and complete act pages. Their United States publication term has expired under src/sources/inventories/papal-documents-rights-v1.toml, including its foreign-publication qualification. The bounded text excludes all Google wrapper and digitizer-furniture wording. Selected flat historical page reproductions preserve incidental Google attribution under the separately recorded treatment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; no general Google license is asserted. Historical/source wording is excluded from Triptych CC BY 4.0.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/IrishEcclesiasticalRecordV04-1883/IrishEcclesiasticalRecordV04-1883_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "bounded-historical-facsimile",
+   "byte_size": 1584152,
+   "edition_owned": true,
+   "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.native-source-evidence-12569f69f9f1",
+   "media_type": "application/pdf",
+   "notes": "Complete native pages of the act plus historical publication identification. This is a bounded viewing artifact, not the whole issue or volume.",
+   "page_count": 7,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "The historical English translation, its terminal editorial note and the identified journal printing were published in Dublin in 1883, independently confirmed by the native title/imprint and complete act pages. Their United States publication term has expired under src/sources/inventories/papal-documents-rights-v1.toml, including its foreign-publication qualification. The bounded text excludes all Google wrapper and digitizer-furniture wording. Selected flat historical page reproductions preserve incidental Google attribution under the separately recorded treatment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; no general Google license is asserted. Historical/source wording is excluded from Triptych CC BY 4.0.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/IrishEcclesiasticalRecordV04-1883/IrishEcclesiasticalRecordV04-1883.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "source-selection-recipe",
+   "byte_size": 1489,
+   "edition_owned": true,
+   "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.selection-recipe-4613b2f8193b",
+   "media_type": "application/json",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "licensed",
+   "rights_basis": "Project-created factual selection recipe licensed CC BY 4.0; underlying historical words retain their separate status.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "raw-ocr",
+   "byte_size": 2437647,
+   "edition_owned": true,
+   "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.source-ocr-d1531485ea5b",
+   "media_type": "text/plain",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://archive.org/download/IrishEcclesiasticalRecordV04-1883/IrishEcclesiasticalRecordV04-1883_djvu.txt",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "whole-journal-facsimile",
+   "byte_size": 45871697,
+   "edition_owned": true,
+   "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.whole-facsimile-17a0ffa88be4",
+   "media_type": "application/pdf",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://archive.org/download/IrishEcclesiasticalRecordV04-1883/IrishEcclesiasticalRecordV04-1883.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1883",
+  "editors": [],
+  "id": "edition.journals.irish-ecclesiastical-record.1883-third-series-volume-4",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Dublin: Browne & Nolan, The Irish Ecclesiastical Record, third series, volume IV (1883), October issue, printed pp. 667–672",
+  "title": "The Irish Ecclesiastical Record — 1883-third-series-volume-4",
+  "translators": [],
+  "year": 1883
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "The Irish Ecclesiastical Record editors and contributors",
+  "category": "periodical",
+  "description": "Historical Catholic periodical. Identified issue or volume editions own exact historical artifacts; bounded papal constituents retain their separate act identities.",
+  "id": "work.journals.irish-ecclesiastical-record",
+  "languages": [
+   "en",
+   "la"
+  ],
+  "title": "The Irish Ecclesiastical Record"
+ }
+}

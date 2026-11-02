@@ -1,0 +1,318 @@
+{
+  "limits": "This evidence records inspected page geometry and exact source ownership. It is not historical authentication, OCR repair, or whole-act image collation.",
+  "method": "Every decoded XML WORD remains indivisible. Explicit image-reviewed WORD order and role assignments change only serialization and surrounding whitespace on the named pages. All other raw OCR bytes are copied exactly.",
+  "ownership": [
+    {
+      "changed_page": {
+        "excluded_source_WORD_global_ranges_1": [
+          [
+            114879,
+            114882
+          ],
+          [
+            115129,
+            115130
+          ],
+          [
+            115304,
+            115372
+          ],
+          [
+            115379,
+            115380
+          ]
+        ],
+        "leaf": 236,
+        "owned_WORD_count": 425,
+        "owned_source_WORD_global_ranges_1": [
+          [
+            114883,
+            115128
+          ],
+          [
+            115131,
+            115303
+          ],
+          [
+            115373,
+            115378
+          ]
+        ],
+        "role_WORD_counts": {
+          "body-left": 244,
+          "body-right": 174,
+          "margin-left": 4,
+          "margin-right": 2,
+          "uncertain": 1
+        }
+      },
+      "date": null,
+      "decision": "propose-complete",
+      "geometry_image_review": {
+        "extent": "Entire supplied page image inspected for columns, body/margin/note membership and retained uncertain zones; not whole-act word-level collation.",
+        "image_sha256": "c03ca524cfa1393481e26d067548bff8d4270eb8c6f3faf24915a698c26bb5c0",
+        "leaf": 236,
+        "object_ordinal_1": 234
+      },
+      "hybrid_path": "08/word-lines-hybrid.txt",
+      "hybrid_physical_line_ranges": [
+        [
+          25599,
+          25784
+        ],
+        [
+          25794,
+          26211
+        ],
+        [
+          26272,
+          26277
+        ],
+        [
+          26284,
+          26284
+        ]
+      ],
+      "hybrid_sha256": "f37197e94c2ba52afabfab11474f88cd13696638562c552fc764f477190765f9",
+      "language": "la",
+      "language_evidence_extent_raw_lf_1": [
+        25599,
+        25872
+      ],
+      "language_label": "Latin",
+      "language_qualifier": "Latin act and historical editorial apparatus; no substantive non-Latin passage identified in the entire reviewed raw/hybrid extent. Proper names and Latinized local terms remain literal.",
+      "page_stream_ownership": {
+        "header": "running edition header; retained in whole witness",
+        "leaf236_body_left": "all WORDs belong to0066",
+        "leaf236_body_right": "local serialized LF49–80 belong to0066; LF81–93 belong to0067",
+        "leaf236_margin_left_and_right": "all belong to0066; execution, derogation and transumpt summaries",
+        "leaf236_notes_right": "all belong to0067, tied to title marker; excluded",
+        "leaf236_uncertain": {
+          "115375": "punctuation-only recognition overlapping0066 section9; retained in separate uncertain apparatus range",
+          "115379–115380": "clipped outer-edge/rule recognitions; retained only in whole witness, never asserted as act text"
+        }
+      },
+      "printed_attribution": "Gregorins  Papa  XIII,  ad  perpetoam  rei  memoriam.",
+      "reader_source_note": "Latin historical witness. Reading order on scan leaf 236 follows the inspected column positions. The remaining pages are uncollated OCR; spelling and uncertain recognitions are unchanged. The historical source note and the act’s marginal summaries remain included, as does the separately retained uncertain punctuation. The conventional transumpt abbreviation remains literal and unexpanded. No whole-act image collation or authenticity determination is claimed.",
+      "remaining_source_extent_review": "Entire act range plus at least20LF context read as raw/hybrid OCR; the other pages were not image-collated in this task.",
+      "review_note": "Independent LXXXIII heading25599, synopsis25602–25614 and actual Gregory protocol25616 precede ordered proem and sections1–9. Source note25633 belongs to the synopsis. Image-reviewed WORD order restores the divided section6 phrase and the displaced section9 WORDs; original full/short dating25867–25872 closes the act before independent LXXXIV25874. No substantive omission notice occurs. Conventional transumpt abbreviation at raw25865 remains literal. This proposal includes every owned page body/marginal WORD plus punctuation-only uncertain WORD115375, retained separately as uncertain OCR. All two left marginal summaries and the right section9 marginal summary belong to this act. The next heading/protocol/body and its note115364–115369 are excluded. Clipped outer-edge recognitions115379–115380 remain in the whole-volume uncertain stream and are not treated as act text.",
+      "reviewed_extent": "Entire raw candidate plus at least20LF context; entire changed-page serialization; source page image; no whole-act image collation.",
+      "source_pages_read_as_OCR_only": [
+        {
+          "artifact_page": 232,
+          "leaf": 234,
+          "raw_lf_range_1": [
+            25571,
+            25681
+          ]
+        },
+        {
+          "artifact_page": 233,
+          "leaf": 235,
+          "raw_lf_range_1": [
+            25684,
+            25782
+          ]
+        }
+      ],
+      "source_raw_sha256": "516f2693e4a068939e3696ae771afd0032a80cd49d59ace3944725b943bad2cc",
+      "title": "Confirmat  indulta  magistro  el  fratribus hospìlalisB.M.  Theutonicorum  aprae- decessoribiis  sitis  concessa  cum  supple- tione  defectnum,  praeserli m super  prae- senlatwne  ad  beneficia  dicti  hospitalis, et  innovai  pcìyeluo,  ita  quod  dicti  ma- gister  el  fratres  in  coUatione  seii  prae- sentatione  ad  dieta  beneficia,  etiam  in mense  reservato  et  apudSedemvacantia, mulestari  non  debeant,  etlittcrisaposlo- licis  itnpetratis  cantra  eorum  indidta non  teneantur  respondere.nisideindid- tis  ipsis  feccrint  mentionem  i.",
+      "unchanged_source_raw_lf_ranges_1": [
+        [
+          25599,
+          25784
+        ]
+      ],
+      "unit_id": "bullarium.volume-08.unit-0066"
+    },
+    {
+      "changed_page": {
+        "excluded_source_WORD_global_ranges_1": [],
+        "leaf": 617,
+        "owned_WORD_count": 549,
+        "owned_source_WORD_global_ranges_1": [
+          [
+            307665,
+            308213
+          ]
+        ],
+        "role_WORD_counts": {
+          "body-left": 241,
+          "body-right": 238,
+          "footer": 5,
+          "gutter-ocr": 1,
+          "header": 10,
+          "margin-left": 13,
+          "margin-right": 28,
+          "uncertain": 13
+        }
+      },
+      "date": null,
+      "decision": "propose-complete",
+      "geometry_image_review": {
+        "extent": "Entire supplied page image inspected for columns, body/margin/note membership and retained uncertain zones; not whole-act word-level collation.",
+        "image_sha256": "418c7bd1e0f9a801ac3b9e68c0719ec1e7058e58b8dc1209dc933e502a51a6fc",
+        "leaf": 617,
+        "object_ordinal_1": 615
+      },
+      "hybrid_path": "08/word-lines-hybrid.txt",
+      "hybrid_physical_line_ranges": [
+        [
+          69689,
+          70355
+        ]
+      ],
+      "hybrid_sha256": "f37197e94c2ba52afabfab11474f88cd13696638562c552fc764f477190765f9",
+      "language": "la",
+      "language_evidence_extent_raw_lf_1": [
+        69309,
+        69564
+      ],
+      "language_label": "Latin",
+      "language_qualifier": "Latin act and historical editorial apparatus; no substantive non-Latin passage identified in the entire reviewed raw/hybrid extent. Proper names and Latinized local terms remain literal.",
+      "page_stream_ownership": {
+        "leaf617_body_left_and_right": "all belong to0155; section3 before4 and section4 continuations repaired",
+        "leaf617_footer": "edition signature retained explicitly",
+        "leaf617_gutter_ocr": "WORD308207 retained explicitly as rule-shaped uncertain recognition; not asserted as body",
+        "leaf617_header": "running edition header retained explicitly",
+        "leaf617_margin_left_and_right": "all concern0155; duplicated/overlapping recognitions remain literal",
+        "leaf617_uncertain": "all13 retained as uncertain page-band OCR belonging to the presentation of0155, with no asserted textual repair or deduplication"
+      },
+      "printed_attribution": "SixtasPapaV,  adperpetaam  rei  memoriam.",
+      "reader_source_note": "Latin historical witness. Reading order on scan leaf 617 follows the inspected column positions. The remaining pages are uncollated OCR; spelling is unchanged. Historical apparatus and marginal, uncertain and rule-shaped recognitions remain retained and distinguished from continuous body prose. Overlapping marginal recognitions are not deduplicated. The conventional transumpt abbreviation remains literal and unexpanded. No whole-act image collation or authenticity determination is claimed.",
+      "remaining_source_extent_review": "Entire act range plus at least20LF context read as raw/hybrid OCR; the other pages were not image-collated in this task.",
+      "review_note": "Independent XIV heading69309, synopsis69311–69317 and actual Sixtus protocol69318 identify one act. Gregory69345 is a narrated predecessor. Current source note69323–69324 belongs to the synopsis. Image-reviewed leaf617 body order restores sections3 and4 and the displaced WORDs from raw69453–69457; all body paragraphs1–8, full/short dating69560–69564 and own historical note survive before XV69573. Literal transumpt abbreviation69556–69558 is conventional and remains unexpanded. All marginal summaries on leaf617 concern this act; overlapping or fused marginal recognitions remain separate and are not deduplicated. All thirteen uncertain WORDs and the gutter-rule WORD are retained, typed outside continuous body prose; the footer is an edition signature, not another act. No source-declared substantive omission occurs. Rendering must preserve and distinguish typed marginal, uncertain and gutter streams, rather than concatenate them as unmarked body prose.",
+      "reviewed_extent": "Entire raw candidate plus at least20LF context; entire changed-page serialization; source page image; no whole-act image collation.",
+      "source_pages_read_as_OCR_only": [
+        {
+          "artifact_page": 614,
+          "leaf": 616,
+          "raw_lf_range_1": [
+            69263,
+            69378
+          ]
+        },
+        {
+          "artifact_page": 616,
+          "leaf": 618,
+          "raw_lf_range_1": [
+            69521,
+            69634
+          ]
+        }
+      ],
+      "source_raw_sha256": "516f2693e4a068939e3696ae771afd0032a80cd49d59ace3944725b943bad2cc",
+      "title": "Dp  clectione  praelalonnn  congregationis S'indi Bernardiin  Italia  monachorum Ordinis  Cisterciensis  regularis  obser- vantiae,  de  celerò  facienda  ex  universo numero  sacerdolum  dictae  congregatio- lìis ,  qui  minora  officia  laudabiliter biennio  exercucrinl  *.",
+      "unchanged_source_raw_lf_ranges_1": [
+        [
+          69309,
+          69380
+        ],
+        [
+          69519,
+          69564
+        ]
+      ],
+      "unit_id": "bullarium.volume-08.unit-0155"
+    },
+    {
+      "concrete_blockers": {
+        "leaf237": [
+          26005,
+          26024
+        ],
+        "required_next_step": "Obtain and image-review leaf237 WORD geometry, add a separately pinned page patch, then reread the entire act with apparatus."
+      },
+      "decision": "hold",
+      "geometry_image_review": {
+        "extent": "Entire supplied page image inspected for columns, body/margin/note membership and retained uncertain zones; not whole-act word-level collation.",
+        "image_sha256": "c03ca524cfa1393481e26d067548bff8d4270eb8c6f3faf24915a698c26bb5c0",
+        "leaf": 236,
+        "object_ordinal_1": 234
+      },
+      "language": "la",
+      "language_evidence_extent_raw_lf_1": [
+        25874,
+        26213
+      ],
+      "language_label": "Latin",
+      "language_qualifier": "Latin act and historical editorial apparatus; no substantive non-Latin passage identified in the entire reviewed raw/hybrid extent. Proper names and Latinized local terms remain literal.",
+      "original_physical_line_ranges": [
+        [
+          25874,
+          26213
+        ]
+      ],
+      "remaining_source_extent_review": "Entire act range plus at least20LF context read as raw/hybrid OCR; the other pages were not image-collated in this task.",
+      "review_note": "LXXXIV and its Gregory protocol are independent; own title/source note at raw25890 belongs here. The changed first page correctly excludes previous0066 margin/body continuations. Untouched leaf237 still emits left continuation denun-25954 before right/left mixing at26005, interleaves late-left body25961–25975 ahead of its earlier continuation26008–26013, and raw26024 again combines left and right body. Those substantive clauses cannot be restored by this three-page recipe. Full dating26209–26213 does not cure that remaining order defect. No clean prefix is designated a historical fragment.",
+      "reviewed_extent": "Entire original candidate plus20LF context and changed leaf236 serialization read; leaf237 not image-reviewed or reordered.",
+      "source_pages_read_as_OCR_only": [
+        {
+          "artifact_page": 235,
+          "leaf": 237,
+          "raw_lf_range_1": [
+            25909,
+            26024
+          ]
+        },
+        {
+          "artifact_page": 236,
+          "leaf": 238,
+          "raw_lf_range_1": [
+            26027,
+            26139
+          ]
+        },
+        {
+          "artifact_page": 237,
+          "leaf": 239,
+          "raw_lf_range_1": [
+            26142,
+            26249
+          ]
+        }
+      ],
+      "source_raw_sha256": "516f2693e4a068939e3696ae771afd0032a80cd49d59ace3944725b943bad2cc",
+      "unit_id": "bullarium.volume-08.unit-0067"
+    }
+  ],
+  "page_images": [
+    {
+      "artifact_page": 234,
+      "dimensions": [
+        1402,
+        2200
+      ],
+      "id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.geometry-leaf-236-c03ca524cfa1",
+      "inspection_extent": "Entire page inspected for column, margin and historical-note membership; no whole-act word-level collation.",
+      "leaf": 236,
+      "manifest": "src/sources/works/bullarium-romanum/volume-08/editions/1883-naples-latin/artifacts/geometry-leaf-236-c03ca524cfa1/artifact.toml",
+      "path": "src/sources/works/bullarium-romanum/volume-08/editions/1883-naples-latin/artifacts/geometry-leaf-236-c03ca524cfa1/page.png",
+      "sha256": "c03ca524cfa1393481e26d067548bff8d4270eb8c6f3faf24915a698c26bb5c0"
+    },
+    {
+      "artifact_page": 615,
+      "dimensions": [
+        1402,
+        2200
+      ],
+      "id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.geometry-leaf-617-418c7bd1e0f9",
+      "inspection_extent": "Entire page inspected for column, margin and historical-note membership; no whole-act word-level collation.",
+      "leaf": 617,
+      "manifest": "src/sources/works/bullarium-romanum/volume-08/editions/1883-naples-latin/artifacts/geometry-leaf-617-418c7bd1e0f9/artifact.toml",
+      "path": "src/sources/works/bullarium-romanum/volume-08/editions/1883-naples-latin/artifacts/geometry-leaf-617-418c7bd1e0f9/page.png",
+      "sha256": "418c7bd1e0f9a801ac3b9e68c0719ec1e7058e58b8dc1209dc933e502a51a6fc"
+    }
+  ],
+  "prior_receipt_hashes": {
+    "assessment.json": "d1a47b1221e4123df51a8d8f754f3d137b64c7b854e73f1472b21532b38b7c51",
+    "image-receipts.json": "c2a683907b8b943622bd3375c48c5edcf041080010c221353ed4e80b16bbb45a",
+    "proof.json": "e79576cc7244e2c21193b2d7e373600d6ac2ae546bc7a66e72e2eadb6911ac0c"
+  },
+  "schema": "triptych-bullarium-coordinate-evidence/v1",
+  "source_ocr_artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.ocr-516f2693e4a0",
+  "source_ocr_sha256": "516f2693e4a068939e3696ae771afd0032a80cd49d59ace3944725b943bad2cc",
+  "source_xml_artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.xml-b5e32433ab1f",
+  "source_xml_sha256": "b5e32433ab1f006e9b2ded8e3d144aedd4967b9526208796b2bda88d7e5ae78d",
+  "volume": 8
+}

@@ -1,0 +1,26 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/synthesis.tex",
+  "author_proof": {
+    "aux": "build/tpt-runs/450355254538c1ba/artifacts/derive-synthesis-0001/f02-all-saints-synthesis.aux",
+    "aux_sha256": "803e9a36861d8b0511c6cba755827c30416f3f67a56ca7f6f4fe94ee7aa36140",
+    "build_log": "build/tpt-runs/450355254538c1ba/artifacts/derive-synthesis-0001/build.log",
+    "checks_log": "build/tpt-runs/450355254538c1ba/artifacts/derive-synthesis-0001/checks.log",
+    "log": "build/tpt-runs/450355254538c1ba/artifacts/derive-synthesis-0001/f02-all-saints-synthesis.log",
+    "log_sha256": "4bc99e11fc6e12112b883427fa657d393e25102850093d5b8b832bd0ee80f295",
+    "pages": 11,
+    "pdf": "build/tpt-runs/450355254538c1ba/artifacts/derive-synthesis-0001/f02-all-saints-synthesis.pdf",
+    "pdf_sha256": "abb35a858397b9e5ef9ca8ec06dd678edd5e0a85474b1eaa2539e44995db7eff",
+    "rasters": "build/tpt-runs/450355254538c1ba/artifacts/derive-synthesis-0001/rasters/"
+  },
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "SYN-001",
+      "note": "Commentary rebuilt as three interleaved question units plus a four-senses close; 50-comparison.tex no longer reprinted; qualifications kept; 11 pages.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "derive-synthesis",
+  "summary": "Rewrote the concise commentary (sections/concise/10-commentary.tex) around three questions that more than one interpretation answers \u2014 who the saints of the feast are, what the fear of the Lord is and what it is promised, and when and where the reward is had \u2014 setting the authorities of different interpretations side by side within each unit, stating each interpretation's controlling claim where its unit reaches it, and closing with a four-senses comparison only (no reprint of 50-comparison.tex); all listed claim-local qualifications kept, no source or locus added, copied eight-word-run prose reduced from 56% to about 16% of the commentary's own prose. Cleared advisories SYN-002, SYN-003 and SYN-004(a) in 04-themes.tex, 10-commentary.tex and 03-date-location.tex; left SYN-004(b) because the place phrases reprint the reviewed study appendix, which this stage may not edit. Updated the shared revision timestamp (2026-10-28T15:37:20Z) and appended the iteration record to research/production-review.md. Author proof: 11 physical pages, opening markers on pages 1/1/2/3-4/5, no overfull/underfull/undefined/rerun warnings; component artifacts check, component contract and all 12 synthesis content-preflight checks pass. This dispatch contributed the rewrite of the concise study's commentary into interleaved question units and the advisory repairs on its themes and date pages, with a fresh author proof. Defect for the shared-format owner: a section's running head is set on the page where the preceding section ends mid-page (proof p. 9 prints 'Scope and References' above the end of the commentary)."
+}

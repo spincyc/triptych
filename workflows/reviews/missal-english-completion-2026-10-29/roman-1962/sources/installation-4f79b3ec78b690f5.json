@@ -1,0 +1,2821 @@
+{
+  "schema": "triptych-reviewed-source-installation/v1",
+  "recorded_on": "2026-10-29",
+  "source_plans": [
+    {
+      "plan_sha256": "a836611d079f4627a9dea7df5a53a967052e22220dbc3de9fafe773cdb2fabc0",
+      "plan_name": "install-plan-accepted37.json",
+      "targets": [
+        [
+          "vigil-assumption",
+          "main",
+          "Gradual",
+          "all",
+          1
+        ],
+        [
+          "vigil-assumption",
+          "main",
+          "Offertory",
+          "all",
+          1
+        ],
+        [
+          "vigil-assumption",
+          "main",
+          "Communion",
+          "all",
+          1
+        ],
+        [
+          "assumptione-beatae-mariae-virginis",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "visitatione-beatae-mariae-virginis",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        [
+          "visitatione-beatae-mariae-virginis",
+          "main",
+          "Gradual",
+          "all",
+          1
+        ],
+        [
+          "visitatione-beatae-mariae-virginis",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "visitatione-beatae-mariae-virginis",
+          "main",
+          "Offertory",
+          "all",
+          1
+        ],
+        [
+          "visitatione-beatae-mariae-virginis",
+          "main",
+          "Communion",
+          "all",
+          1
+        ],
+        [
+          "commune-confessoris-pontificis-1",
+          "main",
+          "Alleluia (Tempore paschali)",
+          "all",
+          1
+        ],
+        [
+          "commune-non-virginum-1",
+          "main",
+          "Alleluia (Tempore paschali)",
+          "all",
+          1
+        ],
+        [
+          "commune-non-virginum-2",
+          "main",
+          "Alleluia (Tempore paschali)",
+          "all",
+          1
+        ],
+        [
+          "commemoratione-s-pauli-apostoli",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "dedicatione-s-michaelis-archangeli",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "exaltatione-s-crucis",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "exaltatione-s-crucis",
+          "main",
+          "Communion",
+          "all",
+          1
+        ],
+        [
+          "exaltatione-s-crucis",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        [
+          "s-agathae-virginis-martyris",
+          "main",
+          "Communion",
+          "all",
+          1
+        ],
+        [
+          "s-agathae-virginis-martyris",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        [
+          "s-agnetis-virginis-martyris",
+          "main",
+          "Tract",
+          "all",
+          1
+        ],
+        [
+          "s-andreae-apostoli",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "s-bartholomaei-apostoli",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "s-francisci-paula-confessoris",
+          "main",
+          "Alleluia (Tempore paschali)",
+          "all",
+          1
+        ],
+        [
+          "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+          "main",
+          "Alleluia (Tempore paschali)",
+          "all",
+          1
+        ],
+        [
+          "s-iosaphat-episcopi-martyris",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "s-iosaphat-episcopi-martyris",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        [
+          "s-polycarpi-episcopi-martyris",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "ss-ianuarii-episcopi-sociorum-martyrum",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "ss-ioannis-pauli-martyrum",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "ss-nerei-achillei-domitillae-virginis-atque",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "ss-nerei-achillei-domitillae-virginis-atque",
+          "main",
+          "Alleluia",
+          "all",
+          2
+        ],
+        [
+          "ss-septem-fratrum-martyrum-ac-ss",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "comm-septem-dolorum-beatae-mariae-virginis",
+          "main",
+          "Offertory",
+          "all",
+          1
+        ],
+        [
+          "septem-dolorum-beatae-mariae-virginis",
+          "main",
+          "Gradual",
+          "all",
+          1
+        ],
+        [
+          "septem-dolorum-beatae-mariae-virginis",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "septem-dolorum-beatae-mariae-virginis",
+          "main",
+          "Offertory",
+          "all",
+          1
+        ],
+        [
+          "septem-dolorum-beatae-mariae-virginis",
+          "main",
+          "Communion",
+          "all",
+          1
+        ]
+      ],
+      "source_files": [
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/assumption-chants-latin-20261029/artifact.toml",
+          "sha256": "81656ed4e1a575170584bf3a6ecbc3e3b6d2cbe57549ba800446e03516bd3923"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/assumption-chants-latin-20261029/latin.txt",
+          "sha256": "b78600e93d7718a29710c7d460193abd439192939b03fa40eb2dc015a21069f1"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/assumption-chants-pages-20261029/artifact.toml",
+          "sha256": "dc3b8cfc50db97194dfda07c7ef76919eea2cec2e9d3bf2aa4fa484797ccb4f5"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/assumption-chants-pages-20261029/source.pdf",
+          "sha256": "f86db5f487814d4cd8dd21f0eb3559b07edf41b17e4aecd107979bff3565a53f"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/assumption-chants-20261029-assumptione-beatae-mariae-virginis-alleluia.toml",
+          "sha256": "5549f13975594dc17bfd295f38086f654f9440ccc09a440ad8f4d58117abe1e0"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/assumption-chants-20261029-vigil-assumption-communion.toml",
+          "sha256": "64fcaf08f0af96f2e6d5585a84299ea566c2e9a2b8780e1d0e6b737fd0071e98"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/assumption-chants-20261029-vigil-assumption-gradual.toml",
+          "sha256": "1118684baffa3410d5ef2b6fef40ae4125c4c8377d0cfd208fa9a1f9b20c5602"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/assumption-chants-20261029-vigil-assumption-offertory.toml",
+          "sha256": "b85455526df5c9e67053cb0ea70b8a3f4ef8e68e123b08747fcc0deed774bbbb"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/assumption-chants-20261029-assumptione-beatae-mariae-virginis-alleluia.toml",
+          "sha256": "5dd13e6775f1bb17872b88eca1cd1c92698f55df42363cf338b579ecbb95672a"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/assumption-chants-20261029-vigil-assumption-communion.toml",
+          "sha256": "6b9bc919b02f893e2c38401d70963d4bc8ddc30bb53a25629c8c18aa750671b4"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/assumption-chants-20261029-vigil-assumption-gradual.toml",
+          "sha256": "f9eba771c14165e28530ab3e5405a37bc1585aab04294b81146efeedb49d8c52"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/assumption-chants-20261029-vigil-assumption-offertory.toml",
+          "sha256": "b230473966c5c407576b92853e14604fc81bfd3d55862ae6f024cd5a6d6c03c5"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/assumption-chants-four-20261029/artifact.toml",
+          "sha256": "2437051ebe73d852cd1472195adbef85cc3903c0917947222a4e95f35c413f31"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/assumption-chants-four-20261029/latin.txt",
+          "sha256": "abad99ac630d2a9c5e37a91f5e38be515bf0ad6cc7e8d40f8b387662f7797037"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/assumption-chants-20261029-assumptione-beatae-mariae-virginis-alleluia.toml",
+          "sha256": "996cf5e32060fa406ca194adc1cff9714ea8a75b1df26232a0bd715e41372290"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/assumption-chants-20261029-vigil-assumption-communion.toml",
+          "sha256": "f303538e705761ad6811a735f39e14828e7373cce78d8cd4d3754812cec9b48e"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/assumption-chants-20261029-vigil-assumption-gradual.toml",
+          "sha256": "0bab3431fefe6073a45344e60a1de1ca06317b70dea344b75514016542f895f0"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/assumption-chants-20261029-vigil-assumption-offertory.toml",
+          "sha256": "1e5027ff6039f0c809023e7bcdb94bf4b9c27957af4bf894f0eb820fa6835e19"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/visitation-five-chants-20261029-pages/artifact.toml",
+          "sha256": "e32295e20c36ac1e1372f9c154866841ca0cb976d9992c4dc8ebddb67f0ac20c"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/visitation-five-chants-20261029-pages/source.pdf",
+          "sha256": "c419453fd003b68d3623fa62fed41c8fbcf944523c9364eb41496a272b11572c"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/visitation-five-chants-20261029-alleluia.toml",
+          "sha256": "c404b040460b6fb349987fa72b93a213dd597ce42c607e666a2a9f8f2dbeea9a"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/visitation-five-chants-20261029-communion.toml",
+          "sha256": "61aba6db225eff5612e6737fc380e77ec4bdc834700bab74c107c0c7bfe67b56"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/visitation-five-chants-20261029-gradual.toml",
+          "sha256": "4888a32e14c54e5253a86ec8fd6edc0a69a2b4c7dee721252f9951ea25a1e81c"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/visitation-five-chants-20261029-introit.toml",
+          "sha256": "f6fefcff3e95afa269dfbd97f1d5dd222e9f98fea9ff0b1b37c6ef57c5498d2e"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/visitation-five-chants-20261029-offertory.toml",
+          "sha256": "4b83ecec467abeee25e65167f9aa961c577e796e587baa38a05167f105d8b356"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/visitation-five-chants-20261029-alleluia.toml",
+          "sha256": "104686f324a545d3cfd6e1bb8f322ba37337e62931e0ba84808c748d6c993cf6"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/visitation-five-chants-20261029-communion.toml",
+          "sha256": "32e7f02b395c896369321a48c6b4304a4a9568e67c7b52fc936981da9f1ec8f7"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/visitation-five-chants-20261029-gradual.toml",
+          "sha256": "dd204c536efa59ab7745dca7358f22f4ef989db58a525223e13cfd305e307325"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/visitation-five-chants-20261029-introit.toml",
+          "sha256": "4f4f02f016448dd205cfb67807b5c5da4d997310715f5ea76b385a7f36596ec4"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/visitation-five-chants-20261029-offertory.toml",
+          "sha256": "3b3759d5dc22d12b563fb413679dc7d25e7bba3540439e7a43d227d664e094c1"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/visitation-five-chants-20261029/artifact.toml",
+          "sha256": "c76abe77a5b11967719c33288f12df4481bc354d40cb1030eeff4ed7eae1fd98"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/visitation-five-chants-20261029/latin.txt",
+          "sha256": "68feee0ed77ad5c2695ab4498b3b110142f5ea251f91afaab8b3cbece361963c"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/visitation-five-chants-20261029-alleluia.toml",
+          "sha256": "b6e5ed04a1774eb87c6b068f848c7cc13aadcbf3e5534d139df962f7da646efb"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/visitation-five-chants-20261029-communion.toml",
+          "sha256": "beff0362338650a6048902b2618d7175dfcc4775081ed4c1deaa0d96a187c3d6"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/visitation-five-chants-20261029-gradual.toml",
+          "sha256": "c73094546ef3e8ed768926ddbb3e039957377d0b25d1420604b6145ca6e3b3da"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/visitation-five-chants-20261029-introit.toml",
+          "sha256": "fc01aa33f797909c7a5c684e25a0108e51e5cecb0268942785318acb0ed7e0a1"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/visitation-five-chants-20261029-offertory.toml",
+          "sha256": "3f9824e21bebfcadae79aba0743c7ecded1775458f6bd7d1e184224dba5d3eed"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-common-paschal-pages/artifact.toml",
+          "sha256": "d392c5de3eb8cf72e03bca54cf27c51e491311d23f9e95d25fac94a20d859cd0"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-common-paschal-pages/source.pdf",
+          "sha256": "5a89bcc0840aaa39d2ea6ca05962d491d2adeb58a8bae6c86b623f19ce6f4edc"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-common-paschal-commune-confessoris-pontificis-1-paschal-alleluia.toml",
+          "sha256": "616931cebfb6254926a8a76409361604771bc084edf02685a9f604a6d4e7295d"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-common-paschal-commune-non-virginum-1-paschal-alleluia.toml",
+          "sha256": "c5c8a5202179935124f0b9f61d60bf1d718b9aeef044f593485563151c854881"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-common-paschal-commune-non-virginum-2-paschal-alleluia.toml",
+          "sha256": "244d5370e8ad1120b8630ec37d77b022c446159513baf197209c64c6fcd889d5"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-common-paschal-commune-confessoris-pontificis-1-paschal-alleluia.toml",
+          "sha256": "644cf3d75a47989d05d40416fe94e2b2dbc2560fa6efcd933153bcda7a84eea6"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-common-paschal-commune-non-virginum-1-paschal-alleluia.toml",
+          "sha256": "4934961bbd0ca917ddb142a5a1172a97edeefcf53e0bb3f60f75d218b7ce2e18"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-common-paschal-commune-non-virginum-2-paschal-alleluia.toml",
+          "sha256": "a532437fd99c77105f3534b204eef8d3f32ca923f1cb0b7bcb2c72dc147452c6"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-common-paschal/artifact.toml",
+          "sha256": "33c803295fc7be2ff122044d84e5a4967deaaa6c034c8b43c612d1bc8046f4f8"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-common-paschal/latin.txt",
+          "sha256": "51e71a00ee2df641e678e26e136d5645602b6dde98b20e3e74b64c849083e005"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/commune-confessoris-pontificis-1-paschal-alleluia.toml",
+          "sha256": "43606c83ef170b44131ceb8dbc617b09fcf9bd35c8717965ef507eff6106b34e"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/commune-non-virginum-1-paschal-alleluia.toml",
+          "sha256": "f71de09bb54b598a4b188b30787afbe62c90ee7ed35937c0f4bf95968173dbc8"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/commune-non-virginum-2-paschal-alleluia.toml",
+          "sha256": "2bcf9c1efc1d6108beb5b6b26eb856e6af3b236074671f1cc5ab70a9bd029fff"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-saints-chant-pages-59c31d7f/artifact.toml",
+          "sha256": "a4f961b579cea1e70e48b367554fe9b0236d90fc8cdda7ef90220be6584cbe48"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-saints-chant-pages-59c31d7f/source.pdf",
+          "sha256": "59c31d7fe87648bcc0d55635c2d902b3054d9c5eb826357802ea426ea7f62077"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-commemoratione-s-pauli-apostoli-alleluia-1.toml",
+          "sha256": "9c6d3c74c090f1e0675af850c2d171130a9d17fc3a8d9ecf6ce8e6dbc6534223"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-dedicatione-s-michaelis-archangeli-alleluia-1.toml",
+          "sha256": "45ff4adec0b478d390a03bdfa6071d9d03c7e03ae815c36483879276e5f04766"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-exaltatione-s-crucis-alleluia-1.toml",
+          "sha256": "cbd55d4d149d9e85a0b28090e2c9c86736cf816d5fefddbf100637ddc439ef21"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-exaltatione-s-crucis-communion-1.toml",
+          "sha256": "7304b797bd756af44aeb02522f312ac2a32287f639acd5dd16e2829cf5207f89"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-exaltatione-s-crucis-introit-1.toml",
+          "sha256": "9fb3e18422fd1ace0a3c9333f4b8b0813bc5a1a60c830997cb2b15c489f6bccf"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-s-agathae-virginis-martyris-communion-1.toml",
+          "sha256": "07756f44bf7c6692793973fc30525d0fb765b760c11768c2afa6647ceb9282af"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-s-agathae-virginis-martyris-introit-1.toml",
+          "sha256": "179b400b03d8b8576e6f0f21423647090b9e58ca48b4cf66641a05b7df2391ed"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-s-agnetis-virginis-martyris-tract-1.toml",
+          "sha256": "f31cfa71777711fef465a722599207e931bc31e10fdb50faa8c0ebbc46ed3dee"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-s-andreae-apostoli-alleluia-1.toml",
+          "sha256": "285b124845da90de603a43ac163a1f10cdd8f8db7715c4e21c6f28834c37b0f2"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-s-bartholomaei-apostoli-alleluia-1.toml",
+          "sha256": "b5d4a1e6ab22b572b8eccb4d3fee0976357436d4393a42aa48cc33954d3471bb"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-s-francisci-paula-confessoris-alleluia-tempore-paschali-1.toml",
+          "sha256": "4d762d8682e6e2d52b77740b8badd07845bf4a09526cb0cfc97ea0e912b60ce6"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-s-ioannis-damasceni-confessoris-ecclesiae-doctoris-alleluia-tempore-paschali-1.toml",
+          "sha256": "90da61b071527105becfa78ee468f617d18416da1c408ffc29e8d357eff30c8e"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-s-iosaphat-episcopi-martyris-alleluia-1.toml",
+          "sha256": "e19176fcd3935b1a972cd817110288cae8de9c7e9a90248aa03e6fcb13f56a7f"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-s-iosaphat-episcopi-martyris-introit-1.toml",
+          "sha256": "99a062af4526de58d11afa14c78512e6d93ca82c54de8bca7895fe6d04dd2e74"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-s-polycarpi-episcopi-martyris-alleluia-1.toml",
+          "sha256": "745a0e4c1d04a10be33b90c0ffeed23ea0717d2124106f02115594efd18f318d"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-ss-ianuarii-episcopi-sociorum-martyrum-alleluia-1.toml",
+          "sha256": "014a867caa79b3d5beb7b76a94e1cdecfc02d4c60cc812289565d593871b9d27"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-ss-ioannis-pauli-martyrum-alleluia-1.toml",
+          "sha256": "21914ba425a35f9379d417d3a4ddd19cfe2c90893f44e624b65eee5a58258757"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-ss-nerei-achillei-domitillae-virginis-atque-alleluia-1.toml",
+          "sha256": "5557cd1eb496a142f276c57c3bc95bfe8c236b4efb748cfa6000e0bc448c214e"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-ss-nerei-achillei-domitillae-virginis-atque-alleluia-2.toml",
+          "sha256": "ccaa2d2adcb7aac80e9eee2c75247cca64261950b3c2e54e31d93279828edb30"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-saints-ss-septem-fratrum-martyrum-ac-ss-alleluia-1.toml",
+          "sha256": "c014a7a58960cfb39336695269bacdbe6a5aa36ca8249981c1e67012f936e6aa"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-commemoratione-s-pauli-apostoli-alleluia-1.toml",
+          "sha256": "f01770e5f15902f39e3244eadaa0c6b88457d44390751404041719b8a088bc4a"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-dedicatione-s-michaelis-archangeli-alleluia-1.toml",
+          "sha256": "b0063d8f6521687b28af4129c174db560d3422a81d587c4c9aa245b9a1f1b6b7"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-exaltatione-s-crucis-alleluia-1.toml",
+          "sha256": "b4e314b2d132c5d206eb7efaef03a8af39eb1f6ffc29ed5fc0304519ede0e997"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-exaltatione-s-crucis-communion-1.toml",
+          "sha256": "22b2d9925d4dba6e0808ab558e246b20a4e65be847eb8aa6cfdb0bbc134a3cd3"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-exaltatione-s-crucis-introit-1.toml",
+          "sha256": "3cb5e0bf043cf42e6961cee59cec08cd0987843e17ead4c4b1b1e5ecf6df59ed"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-s-agathae-virginis-martyris-communion-1.toml",
+          "sha256": "e37076a311504460db827211ccddc2b60ca25f052ad8118ba467b02a8f0dead0"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-s-agathae-virginis-martyris-introit-1.toml",
+          "sha256": "50814a8aa658d496675165a87cdf0fd9ce198a77bca93d47f44b1129b663beba"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-s-agnetis-virginis-martyris-tract-1.toml",
+          "sha256": "7a4f9dbedca20bf003ff61ecce9db7f17eca092102facebafe639d9d10925109"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-s-andreae-apostoli-alleluia-1.toml",
+          "sha256": "c89954f329acf0eea4380dbc2aa7b1b7c8afd2a317a4709fb305a327078e1d6c"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-s-bartholomaei-apostoli-alleluia-1.toml",
+          "sha256": "332a6f7e2b546002d027bb10d6ea39427834b63ad03f739ccd6dbf8671471213"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-s-francisci-paula-confessoris-alleluia-tempore-paschali-1.toml",
+          "sha256": "636a1ab7d93da096c8cf9a254c18b8e7416819e3884e810be4e6bb954d2e010d"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-s-ioannis-damasceni-confessoris-ecclesiae-doctoris-alleluia-tempore-paschali-1.toml",
+          "sha256": "7ff57c39d3ae1054c593bfe194bcd9a0e4ba90b6eb8bfe79a8ee07c036b59b2c"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-s-iosaphat-episcopi-martyris-alleluia-1.toml",
+          "sha256": "755af5ab21a245df99bb3b2da3629e562dd784c92dd613130a0f9c77c7955f69"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-s-iosaphat-episcopi-martyris-introit-1.toml",
+          "sha256": "de420270150312b772a8332dda00b1fc9e7bcef566401fbfaf4198f2e435aebd"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-s-polycarpi-episcopi-martyris-alleluia-1.toml",
+          "sha256": "a7ccc0ab29b7963ef4e0cbd1b8d782a701630d7fb748db435baf33eaf87fcae7"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-ss-ianuarii-episcopi-sociorum-martyrum-alleluia-1.toml",
+          "sha256": "f70e7fcd6b2e422a8f6e065f5a9cf1b326c1106c4ae8f6fe668126bcaf736908"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-ss-ioannis-pauli-martyrum-alleluia-1.toml",
+          "sha256": "3379f62a5da67653555ce48212d3a8b72bd12fc49211a0a66af8ad24b9b1ce23"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-ss-nerei-achillei-domitillae-virginis-atque-alleluia-1.toml",
+          "sha256": "605be287994d15c9acde4173078ac354d1a9c3764fe7324f0d5ac1b97428b217"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-ss-nerei-achillei-domitillae-virginis-atque-alleluia-2.toml",
+          "sha256": "26eeb979971523714fcd8b6f0f5f11c720dbc12456ea322b4cbebd603ffcd015"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-saints-ss-septem-fratrum-martyrum-ac-ss-alleluia-1.toml",
+          "sha256": "2ecabcb18dedc0d7626514eeaa83ac1f312301c8370ed784485a45fedfa34c74"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-saints-chant-latin-10b19922/artifact.toml",
+          "sha256": "8fdc9374b397e9a44bc9479c1abee2a32c711b56843ad5647744711eb2263582"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-saints-chant-latin-10b19922/latin.txt",
+          "sha256": "10b19922a2fc07cd74be90ae8832d093e705247b93491fa155bf9a1090635e82"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-commemoratione-s-pauli-apostoli-alleluia-1.toml",
+          "sha256": "2ff351aee1584824012ad72efce1b56afccea707395ab3349a952c570ca74b47"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-dedicatione-s-michaelis-archangeli-alleluia-1.toml",
+          "sha256": "9762634e0cddf205672471d068097461989880e70c56db34459913354aaec090"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-exaltatione-s-crucis-alleluia-1.toml",
+          "sha256": "601a9dd5e92ea268e697f0a1102dd039979fe33874a8bab574461927d22962a7"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-exaltatione-s-crucis-communion-1.toml",
+          "sha256": "0970c12ea8c9d4069330cc4bd350ddda5bf2c832a624000a6d495501d6c67ef5"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-exaltatione-s-crucis-introit-1.toml",
+          "sha256": "ee65bd3a2c451e305b445848bf90c43c0ac45be6726f568ca2ce7ea81398fe2a"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-s-agathae-virginis-martyris-communion-1.toml",
+          "sha256": "73051583b214ec524a5c3ca3897d5481236d8db3d9951407f3190e1188df517b"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-s-agathae-virginis-martyris-introit-1.toml",
+          "sha256": "f3c241e83b36d432f25a0c814ed9d3ea2378c5412c2044f8a206c4e67520fcaf"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-s-agnetis-virginis-martyris-tract-1.toml",
+          "sha256": "f9eb0a098827dabc2ff93520dc38fc46c776a82d6835c83577a75e870090dbb8"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-s-andreae-apostoli-alleluia-1.toml",
+          "sha256": "e70ab972fa26325da7bb7b6c20dc8e864a7ff12d776f49b10fce30273d6ec8db"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-s-bartholomaei-apostoli-alleluia-1.toml",
+          "sha256": "15f3045192ed3d952c6afad634c81a3f4a1191fa4fd45592f1b72252a7f481f6"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-s-francisci-paula-confessoris-alleluia-tempore-paschali-1.toml",
+          "sha256": "fb8625942f6ad5a02aec6b3f3a813f14484ea273ca49512faec20f0717c40c17"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-s-ioannis-damasceni-confessoris-ecclesiae-doctoris-alleluia-tempore-paschali-1.toml",
+          "sha256": "ba9c88db06defa8edabbda607fa28c3b245df643cb80b7d1252b71b3217b0eeb"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-s-iosaphat-episcopi-martyris-alleluia-1.toml",
+          "sha256": "ca2105d8874e646a4a48a08a3b4a00b71d1b8ace7df6aeff037ebc651259e494"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-s-iosaphat-episcopi-martyris-introit-1.toml",
+          "sha256": "4ec098ca7d218ee87100dfc751f2787801188aab8b3b63a4802d8622c77a9391"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-s-polycarpi-episcopi-martyris-alleluia-1.toml",
+          "sha256": "6d9ef62e0af51cabbb86314de0b95948517c9c8117fdb99389761638a3d0288b"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-ss-ianuarii-episcopi-sociorum-martyrum-alleluia-1.toml",
+          "sha256": "2a23cfb5e709db7a45c7f81a6484cbf94c5567ef328946c17dd2dc3514b180ff"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-ss-ioannis-pauli-martyrum-alleluia-1.toml",
+          "sha256": "f1fe92cc93e38987fd2f1b0c02b75d1465b8751b0f8270ec7496d564e981cf7c"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-ss-nerei-achillei-domitillae-virginis-atque-alleluia-1.toml",
+          "sha256": "085c47aea8ac44db2678f42340b34e3dc4d47289ebfe838b0bc97b5dd67f0e50"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-ss-nerei-achillei-domitillae-virginis-atque-alleluia-2.toml",
+          "sha256": "b9f40aa12cb8dd4b0de2aa431268d5fbd93b35ca9173fc2f74d076c07f4d6645"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/english-completion-20261029-saints-ss-septem-fratrum-martyrum-ac-ss-alleluia-1.toml",
+          "sha256": "9a80bf0dec9767e36085638c4d0a86715f1f3b383f0d567d96ce45c2dbe91c9f"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/dolors-chants-pages-20261029/artifact.toml",
+          "sha256": "f8c2ba70adb233afa059147b5d03946d8c42430bb3733a8eb35e365f7b52754b"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/dolors-chants-pages-20261029/source.pdf",
+          "sha256": "5ab2ea61f077f0b6b0289df9a2cf2edeaa9faf256a44fe94809094bf03384c4f"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/dolors-chants-20261029-alleluia.toml",
+          "sha256": "6a99f30e871664a57abb14f160cfc80a008da1c3a8351bce54c5f8071ee15d42"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/dolors-chants-20261029-communion.toml",
+          "sha256": "fe8cb41113f0c6418ac517689f077b00c442d825378a1ca4a144da8087d740a4"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/dolors-chants-20261029-gradual.toml",
+          "sha256": "1b2474e0ecf632cce9da5d73447b607be172bf18bb5f09169baf9ca0afc69c35"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/dolors-chants-20261029-offertory.toml",
+          "sha256": "a66ccbb6c3181316f5438cbcf4fcd240f49d9d38e1fee8f271f4074e8ea6e3ed"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/dolors-chants-20261029-friday-offertory.toml",
+          "sha256": "354d340d1920d7280b8bd06a688f2a51076005a63513c00a72c34b5da92c30c2"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/dolors-chants-20261029-september-alleluia.toml",
+          "sha256": "b925dc4a92ca71722cabcd8b875dc1e21f18024f15685aabc60daebddd15a072"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/dolors-chants-20261029-september-communion.toml",
+          "sha256": "3f14916a9bcaa4ffee4c6e690643549ad6bb006399b4eabaf7a032645a9b104d"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/dolors-chants-20261029-september-gradual.toml",
+          "sha256": "6e7a90fcf53ae3ca8b9aff5396b7f711eaa461f56c18b1d6695e5eac122696fc"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/dolors-chants-20261029-september-offertory.toml",
+          "sha256": "9f2b46014173a96ab36e5a0389ffec116b00aeb4c5483b43032446aad69f3171"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/dolors-chants-20261029/artifact.toml",
+          "sha256": "56149e2416ecc6cf8c5aae941bdaaf907b9eb5101ef17abc7c103685dcd18747"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/dolors-chants-20261029/latin.txt",
+          "sha256": "d03aec4448d8e29a415a62c4cc032721e4b3582e0b733121d2f1d6b146e32e03"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/dolors-chants-20261029-alleluia.toml",
+          "sha256": "7acf32376a46b002b10a5870c49da8a68a2a978730d270d2383bbaeb7350b3b8"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/dolors-chants-20261029-communion.toml",
+          "sha256": "d778445c573d7c8276d26220be942f49ab79125c189699e65716f6a1869a896a"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/dolors-chants-20261029-gradual.toml",
+          "sha256": "415a5b14c2f6b41cc680ec98ee520d61c7c63385da27490e53c0d8f60ed7a85b"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/dolors-chants-20261029-offertory.toml",
+          "sha256": "464819dfd7e70d6c50ac7bd0c26e8c875044a622c13e14da28ce40e21ea7b6ae"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "target": [
+        "vigil-assumption",
+        "main",
+        "Gradual",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Gradual",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Source-established own appointment: Missale Romanum 1962, printed p. 625, marginal no. 3369. Exact body wording is not supplied here."
+      },
+      "old_untranslated": {
+        "mass": "vigil-assumption",
+        "form_id": "main",
+        "proper": "Gradual",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established own proper. Its whole-body appointment does not inherit a Common or Scripture companion translation."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "b02407620f16597bb1c0277c51b3adf62fefcad82aaf79b87924e66ee82b4a4d",
+      "new_english_sha256": "e33b2f7974c57177021b9fbc1dc6b594543bc2e50674806aa45430b439e8c11d",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-4c60b608947d0f10.json"
+    },
+    {
+      "target": [
+        "vigil-assumption",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Offertory",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Source-established own appointment: Missale Romanum 1962, printed p. 625, marginal no. 3371. Exact body wording is not supplied here."
+      },
+      "old_untranslated": {
+        "mass": "vigil-assumption",
+        "form_id": "main",
+        "proper": "Offertory",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established own proper. Its whole-body appointment does not inherit a Common or Scripture companion translation."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "92acd16798affb93e2e69141b085c9cae4d564b5c2bf0db232bba7ce9d738cd1",
+      "new_english_sha256": "e05d6287f137ec615d4516429af920b7fe7b5f1a89539d72408bbdefbed93411",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-4c60b608947d0f10.json"
+    },
+    {
+      "target": [
+        "vigil-assumption",
+        "main",
+        "Communion",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Communion",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Source-established own appointment: Missale Romanum 1962, printed p. 626, marginal no. 3374. Exact body wording is not supplied here."
+      },
+      "old_untranslated": {
+        "mass": "vigil-assumption",
+        "form_id": "main",
+        "proper": "Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established own proper. Its whole-body appointment does not inherit a Common or Scripture companion translation."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "8741587c1374ea67c0fe94ec41ea72a774fd75393a5202c00525c1d756ba942a",
+      "new_english_sha256": "9e8cf8ebfd90acf163cf34b00b9a115e77d8aba88f5a889d7b8073e7b06191d1",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-4c60b608947d0f10.json"
+    },
+    {
+      "target": [
+        "assumptione-beatae-mariae-virginis",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Source-established own appointment: Missale Romanum 1962, printed p. 628, marginal no. 3382. Exact body wording is not supplied here."
+      },
+      "old_untranslated": {
+        "mass": "assumptione-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established own proper. Its whole-body appointment does not inherit a Common or Scripture companion translation."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "29293cf19a82e488d0b9be34c413959aaa924131fb100b7fce6ad8b7beb0c098",
+      "new_english_sha256": "7bfaea58fc80474e5a4d3a2170faaf5bc14844644a2e95cf4949af4674fd999d",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-4c60b608947d0f10.json"
+    },
+    {
+      "target": [
+        "visitatione-beatae-mariae-virginis",
+        "main",
+        "Introit",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Introit",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 44,
+                  "verse": 2
+                },
+                "end": {
+                  "chapter": 44,
+                  "verse": 2
+                }
+              }
+            ],
+            "ref": "Psalms 44:2"
+          }
+        ],
+        "notes": "The printed Introit combines a non-biblical antiphon attributed to Sedulius with Psalm 44:2. Its own non-biblical body remains unavailable; the Psalm companion is not the complete Introit.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "visitatione-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Introit",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established own proper. Its whole-body appointment does not inherit a Common or Scripture companion translation."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "fec2cafe569efc79c808768c7e269b5c1674cc9043f4e0fee48ec7f45fa66613",
+      "new_english_sha256": "fd4631fc2a31bb66c21fcc97e18cc76ce691ef536cf97c934c35dc54bed480c8",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-5d75e48dc833c728.json"
+    },
+    {
+      "target": [
+        "visitatione-beatae-mariae-virginis",
+        "main",
+        "Gradual",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Gradual",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Source-established own appointment: Missale Romanum 1962, printed p. 575, marginal no. 2953. Exact body wording is not supplied here."
+      },
+      "old_untranslated": {
+        "mass": "visitatione-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Gradual",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established own proper. Its whole-body appointment does not inherit a Common or Scripture companion translation."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "1c28600ad37113a78fb17adbc6ef2577de79d681406e8545bf8198cd273d9df9",
+      "new_english_sha256": "90ca3464384231c72b7ee7c3aa9994c93b2107098f76e100f9d5fa410618b689",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-5d75e48dc833c728.json"
+    },
+    {
+      "target": [
+        "visitatione-beatae-mariae-virginis",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Source-established own appointment: Missale Romanum 1962, printed p. 575, marginal no. 2954. Exact body wording is not supplied here."
+      },
+      "old_untranslated": {
+        "mass": "visitatione-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established own proper. Its whole-body appointment does not inherit a Common or Scripture companion translation."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "01b53267d7551c581df7c40eec1710d17bd5e01f6598299132779a04abfc158a",
+      "new_english_sha256": "ebc27838a683d0545ed3ee47f3d99220d660213ccc09b3f007d2c62f4bd3797e",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-5d75e48dc833c728.json"
+    },
+    {
+      "target": [
+        "visitatione-beatae-mariae-virginis",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Offertory",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Source-established own appointment: Missale Romanum 1962, printed p. 575, marginal no. 2956. Exact body wording is not supplied here."
+      },
+      "old_untranslated": {
+        "mass": "visitatione-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Offertory",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established own proper. Its whole-body appointment does not inherit a Common or Scripture companion translation."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "c8c4e63f051eb459949fa114ab8d2aeff9732b6b1b3d0a49d11d83f2b3817e5e",
+      "new_english_sha256": "9d7f8a587ee87b7ba087c55f652d11e31988c7440df74857853bd18170afb3c8",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-5d75e48dc833c728.json"
+    },
+    {
+      "target": [
+        "visitatione-beatae-mariae-virginis",
+        "main",
+        "Communion",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Communion",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Source-established own appointment: Missale Romanum 1962, printed p. 576, marginal no. 2959. Exact body wording is not supplied here."
+      },
+      "old_untranslated": {
+        "mass": "visitatione-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established own proper. Its whole-body appointment does not inherit a Common or Scripture companion translation."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "915758774d33ca2faf028154fdf355ddb93b7e5decb30493445c0d87c9616b94",
+      "new_english_sha256": "9e8cf8ebfd90acf163cf34b00b9a115e77d8aba88f5a889d7b8073e7b06191d1",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-5d75e48dc833c728.json"
+    },
+    {
+      "target": [
+        "commune-confessoris-pontificis-1",
+        "main",
+        "Alleluia (Tempore paschali)",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia (Tempore paschali)",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 109,
+                  "verse": 4
+                },
+                "end": {
+                  "chapter": 109,
+                  "verse": 4
+                }
+              }
+            ],
+            "ref": "Psalm 109:4"
+          }
+        ],
+        "notes": "1962 CMAA facsimile, artifact p. 827, printed [19]; raw text page line 60; Printed text unit 4312; distinct Paschal appointment, with Bible reconstruction only for its cited components. Its second verse is the uncited Hic est sacerdos chant; the whole exact body remains unavailable. Psalm109:4 is a component, not the whole appointment.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "confessoris-pontificis-1-post-epistle",
+          "option": "paschal",
+          "basis": "1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 827, printed [19]; raw text page line 1 and the numbered local chant cues",
+          "anchor": {
+            "mass": "commune-confessoris-pontificis-1",
+            "form_id": "main",
+            "proper": "Alleluia",
+            "occurrence": 1
+          },
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "paschal"
+            ]
+          }
+        }
+      },
+      "old_untranslated": {
+        "mass": "commune-confessoris-pontificis-1",
+        "form_id": "main",
+        "proper": "Alleluia (Tempore paschali)",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "This source-appointed Common chant at 1962 artifact827/printed[19], unit4312 has no exact whole-body English exemplar or publication binding in this ledger. The terminal owner identity is recorded once, including all borrowing wrappers. A selected Bible rendering or a separately held Latin body does not supply its whole English body. This is a present exemplar gap, not a claim that no historical English translation exists."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "73da34ee4c2975e2bc7bbbe72c9af675b837b99f04ff9e724f5e8412f3474dec",
+      "new_english_sha256": "be0470e96192a6d9ee74d7a7540c19269293742cbb9fbb6d8422c7fb08b83884",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-84c816e278ede03f.json"
+    },
+    {
+      "target": [
+        "commune-non-virginum-1",
+        "main",
+        "Alleluia (Tempore paschali)",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia (Tempore paschali)",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 44,
+                  "verse": 5
+                },
+                "end": {
+                  "chapter": 44,
+                  "verse": 5
+                }
+              }
+            ],
+            "ref": "Psalm 44:5"
+          }
+        ],
+        "notes": "1962 CMAA facsimile, artifact p. 843, printed [35]; raw text page line 71; Printed text unit 4438; distinct Paschal appointment, with Bible reconstruction only for its cited components. The two liturgical segments share Psalm44:5 but differ from the regular first hemistich; the exact two-verse body remains unavailable. A whole Bible verse does not encode those segments.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "non-virginum-1-post-epistle",
+          "option": "paschal",
+          "basis": "1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 843, printed [35]; raw text page line 1 and the numbered local chant cues",
+          "anchor": {
+            "mass": "commune-non-virginum-1",
+            "form_id": "main",
+            "proper": "Alleluia",
+            "occurrence": 1
+          },
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "paschal"
+            ]
+          }
+        }
+      },
+      "old_untranslated": {
+        "mass": "commune-non-virginum-1",
+        "form_id": "main",
+        "proper": "Alleluia (Tempore paschali)",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "This source-appointed Common chant at 1962 artifact843/printed[35], unit4438 has no exact whole-body English exemplar or publication binding in this ledger. The terminal owner identity is recorded once, including all borrowing wrappers. A selected Bible rendering or a separately held Latin body does not supply its whole English body. This is a present exemplar gap, not a claim that no historical English translation exists."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "92bb8ed9c23f5598b47b0bcb472347824bdf61a3c18a287a15c48e138ccb59dd",
+      "new_english_sha256": "4928fed69151858d9149c4ff70963020bcbf45ab2c3da0372bfe3f6e50af20e3",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-84c816e278ede03f.json"
+    },
+    {
+      "target": [
+        "commune-non-virginum-2",
+        "main",
+        "Alleluia (Tempore paschali)",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia (Tempore paschali)",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 44,
+                  "verse": 5
+                },
+                "end": {
+                  "chapter": 44,
+                  "verse": 5
+                }
+              }
+            ],
+            "ref": "Psalm 44:5"
+          }
+        ],
+        "notes": "1962 CMAA facsimile, artifact p. 846, printed [38]; raw text page line 4; Printed text unit 4453; distinct Paschal appointment, with Bible reconstruction only for its cited components. The two liturgical segments share Psalm44:5 but differ from the regular first hemistich; the exact two-verse body remains unavailable. A whole Bible verse does not encode those segments.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "non-virginum-2-post-epistle",
+          "option": "paschal",
+          "basis": "1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 845, printed [37]; raw text page line 2 and the numbered local chant cues",
+          "anchor": {
+            "mass": "commune-non-virginum-2",
+            "form_id": "main",
+            "proper": "Alleluia",
+            "occurrence": 1
+          },
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "paschal"
+            ]
+          }
+        }
+      },
+      "old_untranslated": {
+        "mass": "commune-non-virginum-2",
+        "form_id": "main",
+        "proper": "Alleluia (Tempore paschali)",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "This source-appointed Common chant at 1962 artifact846/printed[38], unit4453 has no exact whole-body English exemplar or publication binding in this ledger. The terminal owner identity is recorded once, including all borrowing wrappers. A selected Bible rendering or a separately held Latin body does not supply its whole English body. This is a present exemplar gap, not a claim that no historical English translation exists."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "afb358a25861a186a1fa17c1bb9eeed1ad230dd902fda5fafc2035ac12ab769d",
+      "new_english_sha256": "4928fed69151858d9149c4ff70963020bcbf45ab2c3da0372bfe3f6e50af20e3",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-84c816e278ede03f.json"
+    },
+    {
+      "target": [
+        "commemoratione-s-pauli-apostoli",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "commemoratione-s-pauli-apostoli",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The controlling 1962 Missal appoints this exact body at printed p.572, unit2927. No exact shared English whole-body exemplar/publication binding is attached to this seat."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "dd68e04ae0503dda5bdaa12ddf68243d9ebc966bc84bef7680a075fcf8a93c9e",
+      "new_english_sha256": "f5a2161d9e85335aa0850f693f99ba6978e33e51973eaa067fcbc9f80996847b",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "dedicatione-s-michaelis-archangeli",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, registered CMAA facsimile, artifact page 751, printed page 670, numbered unit 3730; normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source record."
+      },
+      "old_untranslated": {
+        "mass": "dedicatione-s-michaelis-archangeli",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal Proper appointment; retained Scripture citations do not establish that whole body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "d9fba36eecd6c84ae6d7910a883e8c01038a7e3221e19ea5d8090d42f5aea6c9",
+      "new_english_sha256": "b84f5449e66b18c00548f88d19191ed9ff982b8235b40a262df82070337b415c",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "exaltatione-s-crucis",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, registered CMAA facsimile, artifact page 736, printed page 655, numbered unit 3609; normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source record."
+      },
+      "old_untranslated": {
+        "mass": "exaltatione-s-crucis",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal Proper appointment; retained Scripture citations do not establish that whole body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "eb92a085539c5b0eeaab903390bf097a0d1644cfeba613a69b3664a14091664f",
+      "new_english_sha256": "523cd7b18d60b894b93b2ed42a2029df86ee75d07f8e54cf9ccf27003d08aa4c",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "exaltatione-s-crucis",
+        "main",
+        "Communion",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Communion",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, registered CMAA facsimile, artifact page 736, printed page 655, numbered unit 3613; normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source record."
+      },
+      "old_untranslated": {
+        "mass": "exaltatione-s-crucis",
+        "form_id": "main",
+        "proper": "Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal Proper appointment; retained Scripture citations do not establish that whole body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "9031784de91f713382b33cdf4f9a66db28e8ad26a3d30c616ddf27d156d90ae5",
+      "new_english_sha256": "ff752f8c17dfe4630c7511d95304f5f344083c721e5734fd05c0b135c57eb7b6",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "exaltatione-s-crucis",
+        "main",
+        "Introit",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Introit",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Galatians",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 6,
+                  "verse": 14
+                },
+                "end": {
+                  "chapter": 6,
+                  "verse": 14
+                }
+              }
+            ],
+            "ref": "Galatians 6:14"
+          },
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 66,
+                  "verse": 2
+                },
+                "end": {
+                  "chapter": 66,
+                  "verse": 2
+                }
+              }
+            ],
+            "ref": "Psalms 66:2"
+          }
+        ],
+        "notes": "Missale Romanum 1962, registered CMAA facsimile, artifact page 735, printed page 654, numbered unit 3605; Printed adaptation with Galatians 6:14 and Psalm 66:2. The retained citations do not supply the complete literal Introit; that body is unavailable in this source record.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "exaltatione-s-crucis",
+        "form_id": "main",
+        "proper": "Introit",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal Proper appointment; retained Scripture citations do not establish that whole body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "feeb91f03739b765981f76a8cb3ab662ac6a61cbff6c72c8ff16f9ae861a8b12",
+      "new_english_sha256": "6da9ec3a84680c98a9ced7a960a13216a1118c4386ced7b0aaaeb6819e4fec62",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "s-agathae-virginis-martyris",
+        "main",
+        "Communion",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Communion",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, CMAA facsimile, artifact p. 551 / printed p. 470, left column, no. 2133. No biblical reference is printed; none is inferred."
+      },
+      "old_untranslated": {
+        "mass": "s-agathae-virginis-martyris",
+        "form_id": "main",
+        "proper": "Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No attached exact English exemplar is recorded for this whole own chant body; Bible companions and Common translations do not establish it."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "0541ba612123b8e091e462e976957198a187fc0090414aca0d9fe66e185c51b8",
+      "new_english_sha256": "7d5be92c1da151f6dda15b5e29eadfa04196eb8e8f95e3306cfd30dda7414459",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "s-agathae-virginis-martyris",
+        "main",
+        "Introit",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Introit",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 44,
+                  "verse": 2
+                },
+                "end": {
+                  "chapter": 44,
+                  "verse": 2
+                }
+              }
+            ],
+            "ref": "Psalms 44:2"
+          }
+        ],
+        "notes": "Missale Romanum 1962, CMAA facsimile, artifact p. 550 / printed p. 469, left column, no. 2124. Printed biblical references are retained; the uncited chant wording remains a separate unavailable body.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-agathae-virginis-martyris",
+        "form_id": "main",
+        "proper": "Introit",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No attached exact English exemplar is recorded for this whole own chant body; Bible companions and Common translations do not establish it."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "952796b4525bcfd778ce25dd7899a40c62def77c48a49bf3de39ae8716b0d095",
+      "new_english_sha256": "4dfbef5f3b4ae93c86867831176bacced71085a3fa41310d2500c1fea5db152a",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "s-agnetis-virginis-martyris",
+        "main",
+        "Tract",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Tract",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 44,
+                  "verse": 8
+                },
+                "end": {
+                  "chapter": 44,
+                  "verse": 8
+                }
+              }
+            ],
+            "ref": "Psalms 44:8"
+          },
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 44,
+                  "verse": 5
+                },
+                "end": {
+                  "chapter": 44,
+                  "verse": 5
+                }
+              }
+            ],
+            "ref": "Psalms 44:5"
+          }
+        ],
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, CMAA facsimile, artifact p. 531 / printed p. 450, right column, no. 1986. Printed biblical references are retained; the uncited chant wording remains a separate unavailable body.",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "agnes-post-epistle",
+          "option": "tract",
+          "basis": "Missale Romanum 1962, CMAA facsimile, artifact p. 531 / printed p. 450, nn. 1985-1986: after Septuagesima the Alleluia and its verse are omitted and the printed Tract is said.",
+          "anchor": {
+            "mass": "s-agnetis-virginis-martyris",
+            "form_id": "main",
+            "proper": "Alleluia",
+            "occurrence": 1
+          },
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "tract"
+            ]
+          }
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-agnetis-virginis-martyris",
+        "form_id": "main",
+        "proper": "Tract",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No attached exact English exemplar is recorded for this whole own chant body; Bible companions and Common translations do not establish it."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "194199d6d0b3b03798925391f83664819e7b65d6904fe234766653ddc18f12e6",
+      "new_english_sha256": "ef206ef943dc837ca0afb297f85651a50469e5f99317f550d71ece1b3c604d5d",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "s-andreae-apostoli",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        },
+        "notes": "Printed uncited chant, artifact PDF p. 510, printed p. 429, no. 1816; its exact wording remains unavailable."
+      },
+      "old_untranslated": {
+        "mass": "s-andreae-apostoli",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The own source-appointed composed or mixed whole body has no attached exact English exemplar or publication binding; a Bible companion or Common translation does not supply this exact own body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "b2b79e192256032a9de58ff34fce59d0ce8b7e9e42d55395549f621111c30c11",
+      "new_english_sha256": "b85e60e2b38f3e27df4282f945cc6dea7bcd3965aeea093ca0dfd23fd36c9040",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "s-bartholomaei-apostoli",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "notes": "Printed p. 636 / artifact p. 717, marginal no. 3448, between the Gradual continuation and Gospel. The source gives no biblical citation; the exact uncited chant body remains unavailable.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "bartholomew-alleluia",
+          "option": "non-paschal",
+          "basis": "1962 Missal, printed p. 636 / artifact p. 717, independent Tempore paschali paragraph: Missa Protexisti, Common of Martyrs I [15], retaining the local orations, Epistle and Gospel. The local non-Paschal chants and referred Paschal chants are mutually exclusive.",
+          "anchor": {
+            "mass": "s-bartholomaei-apostoli",
+            "form_id": "main",
+            "proper": "Alleluia",
+            "occurrence": 1
+          },
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "advent",
+              "regular"
+            ]
+          }
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-bartholomaei-apostoli",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No English whole-body exemplar is registered for this exact own source appointment; cited or Common components do not supply its wording."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "494432ce9e5c104995d082a92607f895d5e4eae604aa4d3408c5e290154b36d1",
+      "new_english_sha256": "749516fd70aaee254460dbbee17dfc929259976c2e657c4d2cceef4be27101f3",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "s-francisci-paula-confessoris",
+        "main",
+        "Alleluia (Tempore paschali)",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia (Tempore paschali)",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 111,
+                  "verse": 1
+                },
+                "end": {
+                  "chapter": 111,
+                  "verse": 1
+                }
+              }
+            ],
+            "ref": "Psalm 111:1"
+          },
+          {
+            "book": "Hosea",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 14,
+                  "verse": 6
+                },
+                "end": {
+                  "chapter": 14,
+                  "verse": 6
+                }
+              }
+            ],
+            "ref": "Hosea 14:6"
+          }
+        ],
+        "notes": "Registered 1962 CMAA facsimile, artifact583-584/printed502-503, heading Die2aprilis; Tempore paschali appoints Alleluia2375; Extra tempus paschale appoints Gradual2376 and Tract2377. The dated feast's Lent/Passiontide and Paschal provisions are non-cumulative. Appointments and full local directive context checked on page images on2026-10-23; citations are factual components, not a word-collated chant body. The Missal's uncaptured complete chant expression remains a typed body gap beside these cited Bible components; no selected Bible is claimed to reproduce that expression.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "francis-paola-post-epistle",
+          "basis": "Registered 1962 CMAA facsimile, artifact583-584/printed502-503, heading Die2aprilis; Tempore paschali appoints Alleluia2375; Extra tempus paschale appoints Gradual2376 and Tract2377. The dated feast's Lent/Passiontide and Paschal provisions are non-cumulative.",
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "paschal"
+            ]
+          },
+          "option": "paschal",
+          "anchor": {
+            "mass": "s-francisci-paula-confessoris",
+            "form_id": "main",
+            "proper": "Tract",
+            "occurrence": 1
+          }
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-francisci-paula-confessoris",
+        "form_id": "main",
+        "proper": "Alleluia (Tempore paschali)",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The complete Missal chant body remains unavailable beside its factual Bible citations. No exact human English exemplar/publication binding is established for this owner; no English body or whole-witness absence claim is supplied."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "f49f8d0ae58cbbd137a961a1eebd23207d8ba4f239f3991c6fd4be80fd1b6dc7",
+      "new_english_sha256": "6617f3e483b2c98c68f288e4bad790b199f9db54d6fab44fc1449a45f4dcab98",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+        "main",
+        "Alleluia (Tempore paschali)",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia (Tempore paschali)",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "1 Samuel",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 25,
+                  "verse": 26
+                },
+                "end": {
+                  "chapter": 25,
+                  "verse": 26
+                }
+              },
+              {
+                "begin": {
+                  "chapter": 25,
+                  "verse": 28
+                },
+                "end": {
+                  "chapter": 25,
+                  "verse": 28
+                }
+              }
+            ],
+            "ref": "1 Samuel 25:26, 28"
+          },
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 143,
+                  "verse": 1
+                },
+                "end": {
+                  "chapter": 143,
+                  "verse": 1
+                }
+              }
+            ],
+            "ref": "Psalm 143:1"
+          }
+        ],
+        "notes": "Registered 1962 CMAA facsimile, artifact577-579/printed496-498, heading Die27martii; Gradual2337 and Tract2338 are replaced together by Paschal Alleluia2339. The separate votive ante-Septuagesima or post-Pentecost provision2340 is outside this dated feast record. Appointments and full local directive context checked on page images on2026-10-23; citations are factual components, not a word-collated chant body. The Missal's uncaptured complete chant expression remains a typed body gap beside these cited Bible components; no selected Bible is claimed to reproduce that expression.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "john-damascene-post-epistle",
+          "basis": "Registered 1962 CMAA facsimile, artifact577-579/printed496-498, heading Die27martii; Gradual2337 and Tract2338 are replaced together by Paschal Alleluia2339. The separate votive ante-Septuagesima or post-Pentecost provision2340 is outside this dated feast record.",
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "paschal"
+            ]
+          },
+          "option": "paschal",
+          "anchor": {
+            "mass": "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+            "form_id": "main",
+            "proper": "Tract",
+            "occurrence": 1
+          }
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+        "form_id": "main",
+        "proper": "Alleluia (Tempore paschali)",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The complete Missal chant body remains unavailable beside its factual Bible citations. No exact human English exemplar/publication binding is established for this owner; no English body or whole-witness absence claim is supplied."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "d40f7f0b2c169b0753429154f2a8f0cb39874589af18833896a2b8a7f1aa0a77",
+      "new_english_sha256": "2bcd0de991e607a4d3b787af02ad5c620c1bfdb930ddb65104a0a65b49e0781b",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "s-iosaphat-episcopi-martyris",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        },
+        "notes": "Printed uncited chant, artifact PDF p. 799, printed p. 718, no. 4100; its exact wording remains unavailable."
+      },
+      "old_untranslated": {
+        "mass": "s-iosaphat-episcopi-martyris",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The own source-appointed composed or mixed whole body has no attached exact English exemplar or publication binding; a Bible companion or Common translation does not supply this exact own body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "3eb7f9db11da05ca0e9900f0d54399c7ef661506449de17ce1fc28bbbcfe0358",
+      "new_english_sha256": "f274b9e172afd73af1cc1788595a328ee7dde29a2e125bb5cad4168743e16e14",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "s-iosaphat-episcopi-martyris",
+        "main",
+        "Introit",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Introit",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 32,
+                  "verse": 1
+                },
+                "end": {
+                  "chapter": 32,
+                  "verse": 1
+                }
+              }
+            ],
+            "ref": "Psalms 32:1"
+          }
+        ],
+        "notes": "Printed Introit, artifact PDF p. 799, printed p. 718, no. 4096; the principal antiphon is uncited composed wording, followed by the separately cited Ps. 32, 1. The principal antiphon wording remains unavailable.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-iosaphat-episcopi-martyris",
+        "form_id": "main",
+        "proper": "Introit",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The own source-appointed composed or mixed whole body has no attached exact English exemplar or publication binding; a Bible companion or Common translation does not supply this exact own body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "d14aa0d75a9fa3e3fb1a99e27d930f65545432377aa580c448fbd88a0a29cdcb",
+      "new_english_sha256": "1d6725f23162bb88e66fe8391f70a52adc35dff06f5d96d278fb7f2e051525fd",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "s-polycarpi-episcopi-martyris",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "incipit": "Hic est sacerdos",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, CMAA facsimile, artifact p.537 / printed p.456, right column, no.2030. No biblical citation is printed; none is inferred.",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "polycarp-post-epistle",
+          "option": "regular",
+          "basis": "Missale Romanum 1962, CMAA facsimile, artifact p.537 / printed p.456, nn.2030-2031: after Septuagesima the Alleluia and its verse are omitted and the printed Tract is said.",
+          "anchor": {
+            "mass": "s-polycarpi-episcopi-martyris",
+            "form_id": "main",
+            "proper": "Alleluia",
+            "occurrence": 1
+          },
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "advent",
+              "regular"
+            ]
+          }
+        }
+      },
+      "old_untranslated": {
+        "mass": "s-polycarpi-episcopi-martyris",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The own literal whole-body appointment has no exact English exemplar attached in this ledger; a Scripture companion or Common body does not supply that identity."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "1754642e70e19b6bc1b805aa853fdb0c8a5491f30391ac5dc01a91e03e88b297",
+      "new_english_sha256": "f274b9e172afd73af1cc1788595a328ee7dde29a2e125bb5cad4168743e16e14",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "ss-ianuarii-episcopi-sociorum-martyrum",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        },
+        "notes": "Printed uncited chant, artifact PDF p. 744, printed p. 663, no. 3670; its exact wording remains unavailable."
+      },
+      "old_untranslated": {
+        "mass": "ss-ianuarii-episcopi-sociorum-martyrum",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The own source-appointed composed or mixed whole body has no attached exact English exemplar or publication binding; a Bible companion or Common translation does not supply this exact own body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "06d8c37e336ea0415516e96e6910fda2b6f8e35a22d17c532fc8b173a6001949",
+      "new_english_sha256": "fcd7d16300e561ee74c0f48d9237af0faf1aa5bd01abe04e531c7dcebac82f41",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "ss-ioannis-pauli-martyrum",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "ss-ioannis-pauli-martyrum",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The controlling 1962 Missal appoints this exact body at printed p.565, unit2885. No exact shared English whole-body exemplar/publication binding is attached to this seat."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "bfdc0bd1ab2129b66c463eb0afa62414a833022726c5e8e41eb552380ffad54d",
+      "new_english_sha256": "05f25c81ea8de5b8b2f56a91a7e31428fffcb8fe4fb36cb75042873a57eaf756",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "ss-nerei-achillei-domitillae-virginis-atque",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        },
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "own-post-epistle",
+          "option": "paschal",
+          "basis": "The controlling 1962 Missal, artifact pp. 607-609, prints mutually exclusive Tempore paschali and Extra tempus paschale appointments.",
+          "anchor": {
+            "mass": "ss-nerei-achillei-domitillae-virginis-atque",
+            "form_id": "main",
+            "proper": "Alleluia",
+            "occurrence": 1
+          },
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "paschal"
+            ]
+          }
+        }
+      },
+      "old_untranslated": {
+        "mass": "ss-nerei-achillei-domitillae-virginis-atque",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The controlling 1962 Missal appoints this exact body at printed p.527, unit2571. No exact shared English whole-body exemplar/publication binding is attached to this seat."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "63be8e98d5dabadd7eb46cd09b1ccf7453ea6b6712b52a0452771a4ad2204a3c",
+      "new_english_sha256": "86a0143231b39b192dff72992a14fe1948ec9a826cfb771005ebedbbe0785bcb",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "ss-nerei-achillei-domitillae-virginis-atque",
+        "main",
+        "Alleluia",
+        "all",
+        2
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        },
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "own-post-epistle",
+          "option": "outside-paschal",
+          "basis": "The controlling 1962 Missal, artifact pp. 607-609, prints mutually exclusive Tempore paschali and Extra tempus paschale appointments.",
+          "anchor": {
+            "mass": "ss-nerei-achillei-domitillae-virginis-atque",
+            "form_id": "main",
+            "proper": "Alleluia",
+            "occurrence": 1
+          },
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "advent",
+              "regular"
+            ]
+          }
+        }
+      },
+      "old_untranslated": {
+        "mass": "ss-nerei-achillei-domitillae-virginis-atque",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 2,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The controlling 1962 Missal appoints this exact body at printed p.528, unit2581. No exact shared English whole-body exemplar/publication binding is attached to this seat."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "8a6fdc36fdfcf374df3c0501ffc5d8f1f47300ef8564890c96b33b40ef0a81ba",
+      "new_english_sha256": "05f25c81ea8de5b8b2f56a91a7e31428fffcb8fe4fb36cb75042873a57eaf756",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "ss-septem-fratrum-martyrum-ac-ss",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Source-established own appointment: Missale Romanum 1962, printed p. 583, marginal no. 3015. Exact body wording is not supplied here."
+      },
+      "old_untranslated": {
+        "mass": "ss-septem-fratrum-martyrum-ac-ss",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established own proper. Its whole-body appointment does not inherit a Common or Scripture companion translation."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "2e4c3a3e8c1f3a5de2c69ee133e2b9c652cfa6dc4b9beb1c779d6ea6070e728c",
+      "new_english_sha256": "05f25c81ea8de5b8b2f56a91a7e31428fffcb8fe4fb36cb75042873a57eaf756",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-48324af3c5584c78.json"
+    },
+    {
+      "target": [
+        "comm-septem-dolorum-beatae-mariae-virginis",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Offertory",
+        "incipit": "Recordare, Virgo Mater Dei, dum steteris in conspectu Domini",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Jeremiah",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 18,
+                  "verse": 20
+                },
+                "end": {
+                  "chapter": 18,
+                  "verse": 20
+                }
+              }
+            ],
+            "ref": "Jeremiah 18:20"
+          }
+        ],
+        "notes": "Printed p. 501 = digital p. 582, n. 2366, headed Ant. ad Offertorium, printed reference Ierem. 18, 20. The printed Virgin-addressed antiphon is a liturgical adaptation; the biblical reference does not supply the complete proper body.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "comm-septem-dolorum-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Offertory",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The own literal whole-body appointment has no exact English exemplar attached in this ledger; a Scripture companion or Common body does not supply that identity."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "10589a0348ca9af25b85e5d8aeab5f676f33e55f4921763b6d76d52d5e0c2e91",
+      "new_english_sha256": "efee1199a53168ff09fdc827c3e6a68aa79350899d09f80fd1d3d0a8e2a7a484",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-efa778a15bb9fd60.json"
+    },
+    {
+      "target": [
+        "septem-dolorum-beatae-mariae-virginis",
+        "main",
+        "Gradual",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Gradual",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, registered CMAA facsimile, artifact page 737, printed page 656, numbered unit 3620; normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source record."
+      },
+      "old_untranslated": {
+        "mass": "septem-dolorum-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Gradual",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal Proper appointment; retained Scripture citations do not establish that whole body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "75c6271aa23c8f4d73f7e80d481a700f9ed589723c80c81d6784accbd9398075",
+      "new_english_sha256": "7feae743f4bbd90b91029c8953800d122404348f2a4ba04c09ebd143c8d003cb",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-efa778a15bb9fd60.json"
+    },
+    {
+      "target": [
+        "septem-dolorum-beatae-mariae-virginis",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, registered CMAA facsimile, artifact page 737, printed page 656, numbered unit 3621; normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source record."
+      },
+      "old_untranslated": {
+        "mass": "septem-dolorum-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal Proper appointment; retained Scripture citations do not establish that whole body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "f6a2137df45fb2332ab011890c640f7dfcdcfc9eaf1b18deba8bdb0d17db2c01",
+      "new_english_sha256": "080d47d1c6f688d8519184650c096c16b02a7a6c3f8e80929d4d5ceb4a85e82c",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-efa778a15bb9fd60.json"
+    },
+    {
+      "target": [
+        "septem-dolorum-beatae-mariae-virginis",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Offertory",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Jeremiah",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 18,
+                  "verse": 20
+                },
+                "end": {
+                  "chapter": 18,
+                  "verse": 20
+                }
+              }
+            ],
+            "ref": "Jeremiah 18:20"
+          }
+        ],
+        "notes": "Missale Romanum 1962, registered CMAA facsimile, artifact page 739, printed page 658, numbered unit 3626; Printed Marian adaptation with Jeremiah 18:20. The retained citations do not supply the complete literal Offertory; that body is unavailable in this source record.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "septem-dolorum-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Offertory",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal Proper appointment; retained Scripture citations do not establish that whole body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "51c94236d7934e51bb1d47da8810be540be9c4459aa935d24dd38253cb1c8be9",
+      "new_english_sha256": "efee1199a53168ff09fdc827c3e6a68aa79350899d09f80fd1d3d0a8e2a7a484",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-efa778a15bb9fd60.json"
+    },
+    {
+      "target": [
+        "septem-dolorum-beatae-mariae-virginis",
+        "main",
+        "Communion",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Communion",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, registered CMAA facsimile, artifact page 739, printed page 658, numbered unit 3629; normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source record."
+      },
+      "old_untranslated": {
+        "mass": "septem-dolorum-beatae-mariae-virginis",
+        "form_id": "main",
+        "proper": "Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established literal Proper appointment; retained Scripture citations do not establish that whole body."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "1e27afcbeedfc062f95185b5bd0199d9cac27d17361c8503911859a19dfd0fed",
+      "new_english_sha256": "dd8075524d6cda791258ef73f5b708a1d4addcd7d92ec39f4161b7490d672cb8",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-efa778a15bb9fd60.json"
+    }
+  ],
+  "after_hashes": {
+    "src/sources/calendars/roman-1962/propers.yaml": "14b48f9ed76ba2c9a1d2fc789872f58bb55dc8cd835854505beff752a4bdd5c5",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "1f49f6726e45077312d5f82064299ab551747f2583bcc45d16b430dba6906d54",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "6eb188d9c150f9a7cabda1ecbbbb260c52da6758738058aeb7622eadace379a7"
+  }
+}

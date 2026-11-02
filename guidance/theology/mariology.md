@@ -5,6 +5,11 @@ apparition-judgment references beneath `src/<provider>/theology/mariology/`. It
 supplies a shared doctrinal core and separate genre addenda; do not merge their
 templates.
 
+Declare the leaf's actual Marian genre, source roles, contract version, and
+ordered outputs in `publication.toml` under
+[document schemas](../document-schemas.md). Physical synopsis-page and final-page
+requirements below remain [print-export gates](../../docs/printing.md).
+
 ## Governing priorities
 
 1. Preserve Christ's unique mediation and the completeness of public Revelation.
@@ -106,13 +111,13 @@ make either document a fragment that is unusable on its own. Historical
 development distinguishes documented textual stages from traditional
 attributions and does not manufacture a single author or origin event.
 
-Before installation, collate every reproduced line against page images or an
-official edition, verify season, time, posture, liturgical status, and
+Before source or HTML publication, collate every reproduced line against page
+images or an official edition, verify season, time, posture, liturgical status, and
 indulgence claims in current sources, test every cited historical milestone,
 and record the exact rights and review state. The complete prayer, terminal
 scope appendix, references, generation metadata, and final-page rights
-colophon must remain readable and must not create a prayer-only or rights-only
-spill page.
+colophon must remain readable; a print export must not create a prayer-only or
+rights-only spill page.
 
 ## Rosary addendum
 
@@ -217,7 +222,7 @@ an evidentiary gap.
 
 ## Currentness and profile gate
 
-Before installing an apparition work, recheck DDF indices and norms, the
+Before publishing an apparition work, recheck DDF indices and norms, the
 competent diocese/eparchy, later Holy See interventions, reversals, and
 restrictions; never infer unchanged status from silence. Date mutable Rosary
 discipline and current judgments, not stable doctrine artificially.

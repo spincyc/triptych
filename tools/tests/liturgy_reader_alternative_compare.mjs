@@ -93,25 +93,25 @@ test('adapters select only the exact held source option without mutating product
   assert.equal(result.resolved.alternative, shorter);
   assert.deepEqual(result.unresolvedChoices, []);
   const selected = choice.options.find((option) => option.id === 'shorter').events[0];
-  assert.equal(selected.id, 'proper/postconciliar/presentation-lord/006');
+  assert.equal(selected.id, 'proper/postconciliar/presentation-lord/007');
   assert.ok(selected.sourceHooks.some((hook) => hook.kind === 'proper-choice-option' && hook.id === shorter));
   assert.equal(JSON.stringify(structure), source);
   assert.equal(JSON.stringify(state), snapshot);
   for (const id of [group + '/unknown', shorter.replace('/presentation-lord/', '/transfiguration-lord/'),
-    shorter.replace('/main/', '/not-held/'), 'shorter']) assert.throws(() => adapt(id), /alternative.*not held/);
+    shorter.replace('/main/', '/not-held/'), 'shorter']) assert.throws(() => adapt(id), /(?:alternative|Proper choice).*not held/);
 });
 
-test('Compare independently resolves source ordinals 005 and 006 into their one shared Gospel slot', () => {
+test('Compare independently resolves source ordinals 006 and 007 into their one shared Gospel slot', () => {
   const prepared = input();
   const before = JSON.stringify(prepared);
   const view = Comparison.compare(prepared);
   assert.equal(view.calendarResults, null);
   assert.equal(view.dimension, 'reading-alternative');
-  assert.equal(view.units.length, 5);
+  assert.equal(view.units.length, 7);
   const gospel = view.units.find((unit) => unit.semanticSlot === 'gospel');
   assert.deepEqual(gospel.sides.map((cell) => cell.status), ['text-held', 'text-held']);
   assert.deepEqual(gospel.sides.map((cell) => cell.event.id),
-    ['proper/postconciliar/presentation-lord/005', 'proper/postconciliar/presentation-lord/006']);
+    ['proper/postconciliar/presentation-lord/006', 'proper/postconciliar/presentation-lord/007']);
   assert.deepEqual(gospel.sides.map((cell) => cell.event.selected.references),
     [['Luke 2:22-40'], ['Luke 2:22-32']]);
   assert.equal(JSON.stringify(prepared), before);

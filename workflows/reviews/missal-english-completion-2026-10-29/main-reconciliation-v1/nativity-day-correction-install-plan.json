@@ -1,0 +1,46 @@
+{
+  "counts": {
+    "positive": 155,
+    "targets": 574,
+    "untranslated": 419
+  },
+  "english_after_sha256": "935ddab7999ced30303b493dbaabfc2121d6a586f3dd40b260cd11ce4d451bfb",
+  "english_before_sha256": "2791ddc1edb9f96b06cf44264d3f4822ef32a237d52c66a5d3bf76111666c627",
+  "new_entry_sha256": "422509d9181b119590f62d345caf1fa829c2849a9844866c77cd5eea5ff6f0e5",
+  "old_entry_sha256": "3b692c6384e7e4484ac0416fb41609476c02fa070c683ab9c4ded1047324c819",
+  "old_phase1_receipt_preserved": true,
+  "old_publication_artifact_preserved": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-lasance-fresh",
+  "predecessor_plan_sha256": "c57d83d16d8df25d738f20a0c1cdaf5f6b868ef9549a2b40324f7ca1d484019a",
+  "proposal_successor": "Only new publication passage locus matches the retained visual passage exactly; all English/source payload, entry, prior artifacts and other metadata remain byte-identical.",
+  "schema": "triptych-nativity-punctuation-correction-plan/v1",
+  "sidecar_after_sha256": "57123fdfb8472718679284f93698912c296e85fa7e78245554956f3890bc3e6d",
+  "sidecar_before_sha256": "32632b026ac4f06ceeff9a7cec18586e619659b2b44ecc52247a58ca67a2ea5d",
+  "sidecar_path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+  "source_confirmation_sha256": "8e9d3b6e940a2c3cf41df0e891309a6d8f1ac6143cbab07645f9d721fcd7ba10",
+  "source_files": [
+    {
+      "byte_size": 238,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261030-pc-nativity-day-punctuation-0d801929/text.tsv",
+      "sha256": "0d801929b436514d5db46b3dfbda469c56c88a81bf3cfb342901cd76fafa8576"
+    },
+    {
+      "byte_size": 2152,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261030-pc-nativity-day-punctuation-0d801929/artifact.toml",
+      "sha256": "2310118fd5a9a43bb689b5721a0638241a1a13fa8249148c4190e807906fbf81"
+    },
+    {
+      "byte_size": 1543,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261030-pc-nativity-day-punctuation-0d801929.toml",
+      "sha256": "767aad0cb7c9f2b1a3a75650ea58f9158afbb10a11874ce80f09ba3ad2d4cdba"
+    }
+  ],
+  "source_permission_created": false,
+  "status": "candidate-only; source and predicate review pending",
+  "target": [
+    "nativity",
+    "day",
+    "Entrance Antiphon",
+    "all",
+    1
+  ]
+}

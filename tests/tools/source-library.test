@@ -54,7 +54,7 @@ if ! cmp -s "$sandbox/validate-1" "$sandbox/validate-2"; then
 	exit 1
 fi
 summary="$(cat "$sandbox/validate-1")"
-match '^source-library valid: artifact=[0-9]+ corpus=[0-9]+ edition=[0-9]+ passage=[0-9]+ segment=[0-9]+ work=[0-9]+ bindings=[0-9]+$' "$summary"
+match '^source-library valid: artifact=[0-9]+ corpus=[0-9]+ edition=[0-9]+ passage=[0-9]+ segment=[0-9]+ work=[0-9]+ bindings=[0-9]+ external-witnesses=[0-9]+:metadata-only$' "$summary"
 
 # The library is populated, so every count is positive, not an empty pass.
 if printf '%s\n' "$summary" | grep -Eq '=0( |$)'; then

@@ -1,0 +1,108 @@
+{
+  "packet": "57",
+  "packet_sha256": "39f84cfdb1c57f8fdb178365564dec1f79cdbe8e4d9c8916395d980ad1ac8342",
+  "status": "CHANGES_REQUIRED",
+  "source_intake_status": "CHANGES_REQUIRED",
+  "pdf_status": "PASS",
+  "admission_allowed": false,
+  "source_admission": "BLOCKED_SOURCE_CONTAMINATION",
+  "documents": 1,
+  "pages": 7,
+  "canonical_report": "src/sources/papal-documents/encyclicals-refinement-cold-57.md",
+  "canonical_copy_owner": "root",
+  "blocked_source_sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+  "pdf_sha256": "77c489f65d57979916bc16a4696c99c8944ad3e4d63e354181fbadb20d515139",
+  "findings": [
+    {
+      "severity": "blocker",
+      "pages": [
+        4,
+        5
+      ],
+      "description": "Primary-image review confirms foreign clipped-facing-page OCR and spurious recognition additions at LF379\u2013387,419,470\u2013485,564\u2013568. Root admission criterion treats this as material source contamination. Exact removal map is frozen separately. Main prose readability does not waive the source hold."
+    },
+    {
+      "severity": "qualification",
+      "pages": [
+        4,
+        5
+      ],
+      "description": "Real isolated recognition errors remain: native St.Peter iv.15.16 becomes OCR iy.13.16; consummation becomes conswnmation; printed16 becomes1C. No source accuracy or whole-word collation acceptance is granted."
+    },
+    {
+      "severity": "qualification",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "description": "Literal historical page numerals, quotation errors, spelling errors and word divisions remain. Historical note paragraphs stay in source-page order."
+    }
+  ],
+  "independent_source_decisions": {
+    "source_intake": {
+      "status": "CHANGES_REQUIRED",
+      "qualification": "Confirmed foreign and extraneous source additions block admission; see separately passing identity and recovery gates."
+    },
+    "source_identity_basis": {
+      "status": "PASS",
+      "qualification": "Bounded actual historical-printing evidence; existing edition-specific United States basis only."
+    },
+    "source_protocol_recovery": {
+      "status": "PASS",
+      "qualification": "Actual native page2 plus all5 crop images, full OCR/model/tool replay and raw-span assembly; no manual source words."
+    },
+    "source_residual_noise_intake_adequacy": {
+      "status": "CHANGES_REQUIRED",
+      "qualification": "Confirmed foreign/extraneous additions are a material source-contamination hold under root criterion, independently of remaining main-prose readability. Frozen82byte/31LF removal map and actual source-edge crop proof supplied."
+    },
+    "pdf_visual": {
+      "status": "PASS",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "admission_publication": {
+      "status": "PENDING_ROOT",
+      "qualification": "No supersession, installation or publication action performed."
+    }
+  },
+  "coordinator_final_pin_checks": 90,
+  "qualification": "Exact observer source failure and separate physical PDF layout PASS. No coordinator image views, admission, or accuracy claim. All failed histories immutable; new successor57b is a separate open review.",
+  "supplemental_observer_evidence": [
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/foreign-span-disposition.json",
+      "sha256": "a704482e5f91e8987f319f34ecca6457e427b7ce48d5aac4d594907b29c0e728"
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/foreign-span-image-proof.json",
+      "sha256": "71922475bb632a060e1768982663fa76e1721462e93e091b518786efd0664a96"
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/observations.jsonl",
+      "sha256": "f3c24642ddce7111f9c630525ce451e66e510fe0bbe2c00c1df8663e83220fbc"
+    }
+  ],
+  "report": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57/report.md",
+    "sha256": "95fa2a7019f2bcb0536192890a78d7fdd0f69317a094777819b1a2e3562d9a21"
+  },
+  "reviews": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57/reviews.json",
+    "sha256": "29f5be0d92e3b9772402c6fb73d6a8f0a4cab52b715c5b13f9cd935cb3a1b6e1"
+  },
+  "verification": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57/verification.json",
+    "sha256": "8b44fd7981eb1f0e77a9bdef4feb5df15c6727b43feac1c672fdd015216bf155"
+  }
+}

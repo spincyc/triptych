@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.improperia-whole-checked-20261029-b8728178"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+retrieved = "2026-10-29"
+sha256 = "b872817894e93d9cfbc6ef8820b193e32cc0461c61b783be058219370f09e9b8"
+byte_size = 4893
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/improperia-whole-checked-20261029-b8728178/latin.txt"
+indexable = true
+encoding = "utf-8"
+rights_basis = "Complete bounded underlying Latin text and functional rubrics independently transcribed from the Pustet Ratisbon 1862 source pages. The underlying printing is public domain in the United States by publication date. No modern target words, choir substitutions, or expanded refrain text is interpolated in this old-source carrier."
+provenance = "Read all words directly from original PDF260-262 / printed174-176 page images on2026-10-29. The whole old sequence, source cues, nine narrative Pange lingua stanzas, and doxology are retained; OCR was only a locator."
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.improperia-whole-pages-20261029-04a3ab17"
+transformation = "Join printed wraps and end-of-line hyphens; strip stress accents; expand ae/oe ligatures; represent versicle glyph as V.; retain old wordforms and rubric cues. Source rubric paragraph-sign glyphs and typographic small capitals are not textual words. Printed page headers and post-hymn rubrics are outside this bounded transcription."
+notes = "Old reading lacks electam and reads caecidisti, jam, Agios/imas. Cue expansions belong only to the separately qualified modern projection. The source has nine principal hymn stanzas (Pange through Sola) plus one doxology, not eight."

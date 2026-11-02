@@ -1,0 +1,31 @@
+{
+  "Named_calendars_after_sha256": "ca1388f525f672bbc7e344daa45f783fecf8633db9fc49f844bb8da2947c31c0",
+  "base_Name53_READY_sha256": "0bd17f84edb995c2e93efd123ba5087dc055e2652a4d2feaab22aa2c8fd33efb",
+  "base_Name53_patch_sha256": "6faa078c210647f7fe3da2b2eaa72353ef87b889fd2e6e2f0dd14ebafd7b5e45",
+  "base_metadata_driver_sha256": "8cdbfab73005a7699897dc2bf939597dc68473e9c77efdeecce2cc753a35c146",
+  "base_producer_verifier_sha256": "d8fbe265171e8af64191e0e7c5656d957bfb82a94a733d976e9ce8f23cd673c1",
+  "canonical_writes": 0,
+  "current_source_fixture_sha256": "3bcf736daf2c6afd3eabb2bfd3f3e8528beddb513d1c496051a25255b9b933b3",
+  "current_source_manifest_sha256": "ea29e0b2f4ae20bb73626f88070608a5a7b76a2dead18a3d7daee32ebc3c9f2b",
+  "current_source_receipt_sha256": "4d35419fbb3f7a9cf59c2e2934addfeba0327f832f436d3f9fe0de83a4c23871",
+  "historical_snapshot": {
+    "basis": "Exact pre-Names code matching the retained PRESERVED_FILES literal; this is not the earliest original2e code.",
+    "path": "workflows/reviews/missal-version-nomenclature-2026-10-30/historical-code/calendars-before-names.py",
+    "sha256": "54f37042b07ae107a9bea59fe6080d5699f70290335ae7ddee453752f35eb7d4",
+    "source_path": "scripts/_calendars.py"
+  },
+  "literal_PRESERVED_FILES_and_other_test_AST_exact": true,
+  "metadata_source_changes": 5,
+  "original_inverse_spec_changes": 2,
+  "original_test_Git_before_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+  "other_inverse_specifications_exact": 15,
+  "patch_sha256": "328a701406fe6010d80c5afcde0a578c57371d7e1664ad5844a2335edc55caeb",
+  "schema": "triptych-Names-phase5-calendars-code-currentness-proposal/v1",
+  "source_or_runtime_permission_created": false,
+  "status": "scratch-proposal-root-apply-and-source-epoch-acceptance-pending",
+  "test": {
+    "after_sha256": "c52f31edba2f320b78916eab2e831b5ad59b3984450f181d331bd7a01e1317d1",
+    "before_sha256": "9414a3119e435fd016ff4f6354650440a065c38d86b5dfab0d7052c16c5aaa09",
+    "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+  }
+}

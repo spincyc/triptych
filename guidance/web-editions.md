@@ -8,8 +8,10 @@ defines.
 ## What a web edition is
 
 A web edition is a generated, reviewed reading version of one eligible
-publication, offered for readers who cannot use a print-shaped PDF. The
-LaTeX under `src/<provider>/<leaf>/` remains the one authoritative source.
+publication and the normal reading surface. The publication manifest identifies
+the authoritative plaintext, entrypoint, and semantic roles. Existing
+LaTeX under `src/<provider>/<leaf>/` remains authoritative without a lossy
+conversion to a new authoring format.
 A web edition is derived from it and never hand-authored beside it: there is
 no second editable copy of a publication's text, and a divergence between
 the two is a defect in the web edition, not a variant reading.
@@ -22,10 +24,11 @@ neither.
 
 Three tiers, in order:
 
-1. **generate** — a converter reads `src/<provider>/<leaf>/*.tex` and writes
+1. **generate** — a converter reads the declared source graph and writes
    `build/web/<provider>/<leaf>.md` under the ignored build tree;
 2. **review** — a person or provider reads the generated file against the
-   installed PDF and installs the accepted result as tracked
+   canonical source, checking semantic order and complete content, and installs
+   the accepted result as tracked
    `web/<provider>/<leaf>.md`; and
 3. **install** — the site renders only tracked `web/`.
 
@@ -36,7 +39,7 @@ without review. An ineligible publication has no tier-one output.
 ## Eligibility
 
 Every publishable leaf declares its own eligibility in `web-edition.toml`
-beside `main.tex`. `make check-web-editions` validates the declaration
+beside `publication.toml`. `make check-web-editions` validates the declaration
 mechanically: a missing record is an error, so a new publication cannot
 default to eligible by silence.
 
@@ -51,8 +54,8 @@ default to eligible by silence.
   write-in forms). The record names the obstacle; it does not promise a
   solution.
 - **ineligible** — the page itself carries the meaning (duplex cards,
-  page-matched courses, print artifacts). These publications remain
-  PDF-only without prejudice: ineligibility is a statement about layout,
+  page-matched courses, print artifacts). These publications retain their
+  canonical sources and optional print editions: ineligibility describes layout,
   not about quality, importance, or release status.
 
 Declaring `eligible` against a document that uses a blocking construct is a
@@ -100,8 +103,9 @@ the PDF.
 
 ## Fidelity
 
-A web edition never introduces content absent from the PDF, and never
-silently omits content present in it. Permitted differences are layout
+A web edition never introduces content absent from its declared source edition,
+and never silently omits content present in it. A generated PDF is optional
+and is not the fidelity oracle. Permitted differences are layout
 adaptations only: reflow, single-column collapse, table linearization,
 substitution of a described equivalent for a purely decorative rule or
 frame. Any material omission — a dropped appendix, matrix, diagram, or
@@ -210,13 +214,14 @@ makes when it runs is pandoc's to make, and the audit does not follow it: a
 table cell that depends on one is audited against the earlier definition, and
 so refused rather than passed.
 
-Three differences from TeX remain, and they are left because none can reach a
-published edition silently:
-- A second `\newcommand` of a name keeps the first definition. TeX stops the
-  PDF build at that line, so no installed leaf can carry one.
+Three differences from TeX remain. Source/content review must account for them
+without assuming that normal deployment compiles a PDF:
+
+- A second `\newcommand` of a name keeps the first definition. TeX rejects
+  that duplicate; the source must be corrected before reader release.
 - A `\newcommand` inside a preamble group is carried as if at top level. A
-  later use outside the group is undefined to TeX and stops the build. A use
-  inside the group gets the same text either way.
+  later use outside the group is undefined to TeX and must be corrected in
+  source. A use inside the group gets the same text either way.
 - An unbraced `\renewcommand\name` is not carried. The one case,
   `\subsubsection` in Claude 55's `format.tex`, restyles a heading, and the
   web edition renders headings itself.
@@ -277,18 +282,18 @@ dialect for other publications is unchanged.
 
 When a proper profile authorizes `proper-components.toml`, the canonical
 research mode is the publication represented on the web. The converter reads
-the canonical entrypoint and every `research` component. The `-synthesis` PDF
+the canonical entrypoint and every `research` component. The `-synthesis` edition
 is a bounded mechanical companion and receives no separate web leaf; canonical
 HTML is its accessible superset. This is not an `ineligible` classification
 and must not be represented by a fabricated blocking construct.
 
 Under [the schema-2 contract](liturgy/propers-three-documents.md), the
 canonical research study remains the sole web owner. Its `-synthesis` and
-`-homily` PDFs contain separately authored concise and spoken presentations
+`-homily` editions contain separately authored concise and spoken presentations
 within that same source leaf and have no separate web declarations. The
 canonical HTML supplies their research and citations, not a claim that it
-reproduces their distinct prose verbatim. The reader catalog links all three
-PDFs alongside the canonical web edition.
+reproduces their distinct prose verbatim. The reader catalog exposes each
+declared edition with an honest reader link or page explaining print options.
 
 Component boundaries become semantic headings, stable element keys become
 durable anchors, and relation evidence classes remain readable text rather
@@ -311,3 +316,13 @@ source and rendered targets; it does not infer a liturgical role from a Bible
 reference or a combined heading. Label placement remains a source-review
 judgment. A missing or misplaced source label belongs to the study author;
 loss of a correctly placed label in conversion belongs to the converter.
+
+## Browser printing
+
+Reader pages may provide flowing browser print or the browser's Save as PDF.
+It prints the current reader surface under that surface's rights and content
+limits. It does not reproduce a fixed-page edition or establish compliance
+with a profile's page count, paired-page, or duplex contract. Use
+`tools/print-document` for a declared fixed-layout print edition, as described
+in `docs/printing.md`. Print controls must identify the format they actually
+produce; a source archive or an HTML information page is not a PDF download.

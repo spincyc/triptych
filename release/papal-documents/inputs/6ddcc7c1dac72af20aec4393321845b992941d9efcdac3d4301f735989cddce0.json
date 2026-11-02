@@ -1,0 +1,78 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "4ca4333db336ffc87589cb0a25ae6c430c6ce0a7a4dcb3073312941568b208b8",
+  "documents": [
+    {
+      "id": "acta.ass.017.ass-017-act-001",
+      "language": "la",
+      "pdf_sha256": "0337c3c87ba589e44a514c6d45496139e875d8e5d1a4c45c9f9ab8d18b4273c3",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Body/source hash/ranges remain unchanged. Inherited spaced protocol, source hard hyphens, isolated OCR forms and damaged Roman year remain disclosed; page 2 source-bearing final page has a readable compact colophon at top of its right column."
+        }
+      ],
+      "limitations": [
+        "Native source PDFs are archival OCR reconstructions; no original-print facsimile identity or full lexical collation is established.",
+        "This bounded repair and every-page PDF review grants no new rights clearance, source intake, installation, admission or deployment decision.",
+        "No fresh visual inspection of native ASS 17 pages; metadata-only decision uses exact unchanged selected body/body TeX and source derivation checks plus all current reader pages."
+      ],
+      "receipt_sha256": "4ca4333db336ffc87589cb0a25ae6c430c6ce0a7a4dcb3073312941568b208b8",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-44.md",
+      "report_sha256": "100e724ef9d2039a66f6036ed7e5ee9bcfbf7768bb71aad33848e14b46cccbab",
+      "source_or_metadata_repair_status": "PASS",
+      "source_or_metadata_repair_scope": "Metadata/apparatus-only repair; only revision/source_note change, source hash/ranges/selected body and body TeX unchanged. Fresh current reader pages 1–2. No new source intake judgment."
+    },
+    {
+      "id": "acta.ass.026.ass-026-l07953",
+      "language": "la",
+      "pdf_sha256": "61b25f717f5a0f46cba310af332d4b9f6192eaf43d611637e13d4e094732688e",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Native spacing restores continuous readability; literal source hard hyphens, historical page-break At-/qui and isolated OCR name/glyph anomalies remain disclosed. Historical note (1) stays a separate reader paragraph."
+        }
+      ],
+      "limitations": [
+        "Native source PDFs are archival OCR reconstructions; no original-print facsimile identity or full lexical collation is established.",
+        "This bounded repair and every-page PDF review grants no new rights clearance, source intake, installation, admission or deployment decision."
+      ],
+      "receipt_sha256": "4ca4333db336ffc87589cb0a25ae6c430c6ce0a7a4dcb3073312941568b208b8",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-44.md",
+      "report_sha256": "100e724ef9d2039a66f6036ed7e5ee9bcfbf7768bb71aad33848e14b46cccbab",
+      "source_or_metadata_repair_status": "PASS",
+      "source_or_metadata_repair_scope": "Bounded whitespace-only source/readability repair; 143 native matches, 0 exceptions, all nonwhitespace/order/LF/blank boundaries and historical note preserved. Fresh native pages 199–203 and current reader pages 1–2.",
+      "native_pages_freshly_inspected": [
+        199,
+        200,
+        201,
+        202,
+        203
+      ]
+    }
+  ]
+}

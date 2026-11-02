@@ -1,5 +1,46 @@
 # Source Schema Changelog
 
+## Further bounded English source-admission ownership — added 2026-10-30
+
+The papal inventory additionally owns the exact report/scope pairs
+`historical-english-source-intake-01.json` and `-01-scope.json`, the same
+pairs for packets `04` through `08`, and
+`historical-english-source-intake-supplement.json`. Each filename retains
+its own typed envelope; the existing `02` and `03` owners remain unchanged.
+The supplement records qualified-imprint and native-order successors,
+and distinguishes historical raw report hashes from the path-normalized
+publication copies that current consumers actually pin.
+
+These remain source-admission judgments. Recognition creates no source
+records, verified passages, bindings or PDF-layout acceptance. Unknown
+filenames, wrong schemas and missing or wrongly typed fields are rejected.
+The library-cache namespace advances from `2` to `3` so prior cached
+unknown-envelope rejections cannot survive this ownership update. Source
+fingerprints, rights, search and review-state meanings are unchanged.
+
+## Bounded English source-admission inventory ownership — added 2026-10-30
+
+The papal collection owns exactly `historical-english-source-intake-02.json`,
+`historical-english-source-intake-03.json` and their `-scope.json` inputs,
+with their independently recorded three-act audit envelopes. These are
+source-admission judgments, separate from PDF-layout review. Recognizing their
+metadata creates no source records, verified passages, bindings or review
+states. Unknown filenames, wrong envelopes and missing typed fields remain
+rejected; existing source, fingerprint, rights and search semantics are unchanged.
+The internal library-cache namespace advances to `2` so a prior validator's
+cached rejection cannot survive the new ownership envelopes.
+
+## Papal collection inventory ownership — added 2026-10-26
+
+The source-tree validator recognizes the exact catalog, archive, source-link,
+publication-approval, typesetting-manifest, and page-review comparison JSON names documented in
+`papal-documents/README.md`, with their versioned ownership envelopes, and
+immediate collection Markdown records. The catalog/acquisition/typesetting
+tools own semantic checks. Unknown names, nested files, malformed JSON,
+duplicate keys, incorrect envelopes and unmanifested payloads remain rejected.
+These project-created inventories do not add source record types or change
+manifest, fingerprint, binding, search, or rights semantics.
+
 ## Eucharistic stage inventory ownership — added 2026-10-16
 
 The source-tree validator recognizes immediate

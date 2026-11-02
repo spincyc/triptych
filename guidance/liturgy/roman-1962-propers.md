@@ -10,6 +10,14 @@ restored first four pages of its 10–12-page concise study; the source,
 identity, language, and rights rules
 below remain in force. Schema-1 guides retain the older presentation below.
 
+The per-leaf `publication.toml` follows
+[document schemas](../document-schemas.md) and declares the actual component or
+legacy contract without converting it. Existing TeX, source records, and typed
+chronology remain canonical. Physical-page and PDF requirements below govern
+[optional print exports](../../docs/printing.md); source/HTML publication uses
+the declared source and evidence review closure. PDF labels below name print
+variants, not required site artifacts.
+
 The study is a hand-missal companion, not an official liturgical text, critical edition, or substitute for the cited sources. It should help a reader perceive the appointed texts as one ordered liturgical action while keeping verified text, documented history and reception, editorial synthesis, and exploratory proposal distinct. The separately reviewed homily is authored under the three-document contract.
 
 ## Collection Identity
@@ -212,8 +220,8 @@ For every new or substantially revised guide, maintain a passage-by-passage rece
 
 New and substantially revised guides are authored once in a
 canonical leaf with `proper-components.toml`. The bare ID produces the
-complete research PDF and the sole complete HTML edition. A mechanical
-`-synthesis` PDF companion is compiled from the same source; it is not another
+complete research source output and the sole complete HTML edition. A mechanical
+`-synthesis` companion is derived from the same source; it is not another
 leaf and owns no prose, audit record, or web declaration.
 
 The manifest gives every appointed element a stable lowercase kebab-case key
@@ -476,9 +484,9 @@ Give one terse account of edition and formulary identity, text-verification stat
 
 ### References and metadata
 
-`References` contains only sources actually used, with exact loci sufficient to verify their claims, and immediately precedes `Generation Metadata`. Do not retain unused leads or sources used only by deleted material.
+`References` contains only sources actually used, with exact loci sufficient to verify their claims, and immediately precedes the terminal generation record. Do not retain unused leads or sources used only by deleted material.
 
-`Generation Metadata` is terminal and imports the leaf's structured `generation-metadata.tex`. Follow the universal metadata standard; refresh the UTC revision timestamp and accurately append materially distinct AI contributions without erasing prior contribution history.
+The terminal generation record imports the leaf's structured `generation-metadata.tex` and displays the revision without a wrapper heading. Follow the universal metadata standard; refresh the UTC revision timestamp and accurately append materially distinct AI contributions without erasing prior contribution history.
 
 ## Profile Gates
 
@@ -496,4 +504,4 @@ Before publication, verify that:
 - the thematic thesis opens directly as prose, and an audit of headings, box titles, run-in labels, and table headings in both editions finds no rhetorical or editorial wrapper such as `Governing thesis`, `Thesis`, `Key takeaway`, `Argument map`, or `Reading order`; one occurrence fails this categorical structural gate independently of whether process prose recurs;
 - a required sacramental summary is imported from the canonical fragment, `References` contains only used sources, and generation metadata is accurate and terminal;
 - the reader-facing body states its findings rather than the editorial process behind them and speaks from within the Catholic tradition, with the modern critical horizon confined to the page-2 explanatory row and claim-local use, secular afterlives confined to `The Propers: Notable and Quotable`, and work-wide method, search bounds, and qualification confined to the terminal apparatus and `research/scope.md`; and
-- the universal editorial, rights, build, warning, visual-review, installation, and publication gates pass for every affected consumer.
+- the universal source, schema, editorial, rights, metadata, output-review, and publication gates pass for every affected consumer; a selected print export also passes build, warning, pagination, and full-page visual-review gates for its exact artifact.

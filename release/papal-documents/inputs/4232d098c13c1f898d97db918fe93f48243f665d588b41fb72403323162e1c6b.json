@@ -1,0 +1,84 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "c8c5cedca855916ebfed943a762e389f82af71428f126b342a6d6a82e1de481b",
+  "documents": [
+    {
+      "id": "acta.aas.021.aas-021-l28668",
+      "language": "la",
+      "pdf_sha256": "f088632ee71ade5e6a48bb14f187a23372db2f28065070dce8c9d995a4dac007",
+      "pages": 7,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            2,
+            4
+          ],
+          "description": "Repaired historical references are visibly separate source paragraphs at their preserved source-page positions; literal perspe-/ctam and amis-/sione interruptions remain."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            7
+          ],
+          "description": "Long literal protocol remains legible. Final page retains closing prose, dating clause and PIUS PP. X I subscription before source apparatus and rights colophon."
+        }
+      ],
+      "limitations": "Independent all-page layout and bounded source/LF-note review, with exact helper/source/PDF/native mapping replay and source-library schema validation. Native inspection is limited to the assigned note pages; earlier excluded-gap selection decisions were not re-adjudicated. Disclosed OCR defects remain. No whole-work lexical or original-print collation, translation accuracy, new rights clearance, source-intake approval, installation or deployment claim.",
+      "receipt_sha256": "c8c5cedca855916ebfed943a762e389f82af71428f126b342a6d6a82e1de481b",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-27.md",
+      "report_sha256": "8e4c5d58eea8e2836cb1ff4cbef6964faef05bfc348a49ee123c8229f461eb87"
+    },
+    {
+      "id": "acta.ass.039.ass-039-l000032",
+      "language": "la",
+      "pdf_sha256": "a2bb45e3e258f7087070ec50f31dfa5f674a2534b33aa0402a0c366522f425b2",
+      "pages": 6,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            5
+          ],
+          "description": "(ij Rom. XIII, 12. and (2) Act. v, 41. are separate paragraphs after Gallia;, followed by continuing body."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            6
+          ],
+          "description": "The two disclosed underfull hbox warnings do not cause unreadability. Sparse final page retains source closing prose, prayer, blessing, dating clause and PIUS PP. X before source apparatus and rights colophon."
+        }
+      ],
+      "limitations": "Independent all-page layout and bounded source/LF-note review, with exact helper/source/PDF/native mapping replay and source-library schema validation. Native inspection is limited to the assigned note pages; earlier excluded-gap selection decisions were not re-adjudicated. Disclosed OCR defects remain. No whole-work lexical or original-print collation, translation accuracy, new rights clearance, source-intake approval, installation or deployment claim.",
+      "receipt_sha256": "c8c5cedca855916ebfed943a762e389f82af71428f126b342a6d6a82e1de481b",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-27.md",
+      "report_sha256": "8e4c5d58eea8e2836cb1ff4cbef6964faef05bfc348a49ee123c8229f461eb87"
+    }
+  ]
+}

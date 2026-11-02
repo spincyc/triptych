@@ -27,7 +27,7 @@ const A = require(root + 'reader-state-adapters.js');
 const M = require(root + 'assembly-model.js');
 const read = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
 const input = JSON.parse(fs.readFileSync(0, 'utf8'));
-function request(entrance, calendar, date, form) {
+function request(entrance, calendar, date, form, choices) {
   const held = {
     schema: C.STATE_SCHEMA, entrance: entrance, civilDate: date,
     edition: { id: calendar }, calendar: { id: calendar },
@@ -36,6 +36,7 @@ function request(entrance, calendar, date, form) {
     options: { ordinary: true, legitimate: {} },
     coverage: [], unresolvedChoices: [], sourceHooks: []
   };
+  if (choices) held.properChoices = choices;
   if (form) {
     held.form = form;
     held.selectedReadableFormulary = { id: 'pentecost' };
@@ -58,12 +59,16 @@ for (const row of input.days) {
   const year = read('src/web/data/structure/calendar/' + row.calendar + '/' +
     row.date.slice(0, 4) + '.json');
   const rubrics = read('src/web/data/structure/rubrics/' + row.calendar + '.json');
+  const structure = read('src/web/data/structure/propers/' + row.calendar + '.json');
   out[row.id] = project(A.adaptDay({
-    request: request('day', row.calendar, row.date, row.form),
+    request: request('day', row.calendar, row.date, row.form, row.choices),
     derived: M.derive({ year: year, rubrics: rubrics, date: row.date }),
-    structure: read('src/web/data/structure/propers/' + row.calendar + '.json'),
+    structure,
     ordinary: read('src/web/data/structure/ordinary/' + row.calendar + '.json')
   }));
+  const selected = structure.masses.find(mass => mass.key === out[row.id].resolved.formulary);
+  out[row.id].sourceAppointments = selected.ordinary_appointments || null;
+  out[row.id].frame = selected.ordinary_frame || null;
 }
 const propersRequest = {
   schema: C.STATE_SCHEMA, entrance: 'propers', civilDate: null,
@@ -97,7 +102,15 @@ DAYS = [
     {"id": "pentecostPost", "calendar": "postconciliar", "date": "2026-05-24"},
     {"id": "pentecostPostVigil", "calendar": "postconciliar", "date": "2026-05-24",
      "form": "vigil"},
-    {"id": "easterPost", "calendar": "postconciliar", "date": "2026-04-05"},
+    # Explicit source choices keep this seating test independent of coequal
+    # Easter readings; no option is supplied by source order.
+    {"id": "easterPost", "calendar": "postconciliar", "date": "2026-04-05",
+     "choices": {
+         "proper-choice/postconciliar/easter-sunday/main/easter-day-second-reading": "colossians-3",
+         "proper-choice/postconciliar/easter-sunday/main/second-reading": "colossians-3",
+         "proper-choice/postconciliar/easter-sunday/main/easter-day-gospel": "john-20",
+         "proper-choice/postconciliar/easter-sunday/main/gospel": "john-20",
+     }},
     {"id": "adventPost", "calendar": "postconciliar", "date": "2026-11-29"},
     # Preface appointments from the printed directions and RGMR 482-498
     # (2026-10-19): a Lenten feria, a feast with a proper Preface, a saint in a
@@ -239,7 +252,6 @@ class OrdinaryAppointments(unittest.TestCase):
     def test_1962_prefaces_follow_the_printed_direction_then_the_season(self) -> None:
         expected = {
             # the formulary's own printed direction
-            "lentFeria1962": "praefatio-de-quadragesima",
             "annunciation1962": "praefatio-de-beata-maria-virgine",
             "petrusPaulus1962": "praefatio-de-apostolis",
             "saturdayOurLady1962": "praefatio-de-beata-maria-virgine",
@@ -302,10 +314,16 @@ class OrdinaryAppointments(unittest.TestCase):
         for key in ("canon/communicantes-continuatio", "canon/hanc-igitur-pascha-pentecoste"):
             turns = next(row for row in by_key[key]["translations"] if row["lang"] == "la")["turns"]
             self.assertEqual([turn["action"] for turn in turns], [None, True, None], key)
-        # The English of the head and of the continuation is a typed variant
-        # gap, never the 1861 common form's English.
-        self.assertEqual(by_key["canon/communicantes-pentecoste"]["absent"]["english"],
-                         "proper-communicantes-english-variant")
+        # The held 1925 Pentecost head is distinct from the common form;
+        # the continuation still lacks a checked English 1962 clause.
+        head = by_key["canon/communicantes-pentecoste"]
+        self.assertIsNone(head["absent"]["english"])
+        english_head = [row for row in head["translations"] if row["lang"] == "en"]
+        self.assertEqual(len(english_head), 1)
+        self.assertEqual(english_head[0]["source_id"],
+                         "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925")
+        self.assertTrue(english_head[0]["text"].startswith(
+            "Communicating, and keeping the most holy day of Pentecost,"))
         self.assertEqual(by_key["canon/communicantes-continuatio"]["absent"]["english"],
                          "communicantes-continuation-english-lacks-1962-clause")
 
@@ -434,7 +452,15 @@ class OrdinaryAppointments(unittest.TestCase):
         # where 1962 says the common Preface: an inherited formulary does not
         # carry the 1962 book's direction into this recension.
         self.assertEqual(self.preface_of("transfigurationPre1955"), "praefatio-de-nativitate")
-        self.assertEqual(self.preface_of("lentFeriaPre1955"), "praefatio-de-quadragesima")
+        for key in ("lentFeria1962", "lentFeriaPre1955"):
+            # The Lenten ferial prayer now has its own source row. The
+            # generic frame cannot seat it, but the printed Preface direction
+            # remains independently inspectable without inventing that seat.
+            day = self.report[key]
+            self.assertEqual(day["sourceAppointments"]["preface"]["option"], "quadragesima")
+            self.assertEqual(day["frame"]["applicability"], "unavailable")
+            self.assertEqual(day["ordinary"], [])
+            self.assertIn(["Oratio super populum", None], day["propers"])
         # A saint's day the Bonn formulary gives no direction for: its general
         # rubrics turn on commemorations and octaves, which are not modelled,
         # so the typed stand-in remains, never a de Tempore or common Preface.
@@ -543,7 +569,10 @@ class OrdinaryAppointments(unittest.TestCase):
              "roman-pre-1955", "--expanded", "--plain"],
             cwd=ROOT, capture_output=True, text=True, check=False,
         )
-        self.assertEqual(finished.returncode, 0, finished.stderr[-2000:])
+        # Expanding this day includes a commemoration whose inherited Common
+        # carries a 1962-only condition. It may not be executed as pre-1955.
+        self.assertEqual(finished.returncode, 2, finished.stderr[-2000:])
+        self.assertIn("unsupported foreign-source Proper applicability", finished.stderr)
         self.assertIn("The Preface of the day -- appointment not established", finished.stdout)
 
 

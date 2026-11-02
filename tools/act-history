@@ -3884,6 +3884,7 @@ def build_structure_projection(sources: tuple[Path, ...], out: Path) -> dict:
         for declaration in catalogue["comparisons"]:
             comparison = eucharistic_history.compare(
                 routing, ROOT, declaration["id"], ventilator=ventilate, act_loader=load,
+                catalogue_context=catalogue,
             )
             eucharistic_history.write_comparison(
                 comparison, root / declaration["projection_path"],

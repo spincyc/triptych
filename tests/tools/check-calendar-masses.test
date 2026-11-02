@@ -153,7 +153,9 @@ if not any("filed marian" in problem for problem in problems):
 changed = copy.deepcopy(mass)
 changed["registry"] = "definitely-wrong-but-unique"
 problems = module._spine_identity_problems(spine, changed, "christological")
-if not any("not one of the five recorded" in problem for problem in problems):
+if not any("identifies registry" in problem
+           and "recorded fixed-row/temporal-catalog crosswalks" in problem
+           for problem in problems):
     raise SystemExit(f"unrecorded registry mismatch was not rejected: {problems}")
 
 

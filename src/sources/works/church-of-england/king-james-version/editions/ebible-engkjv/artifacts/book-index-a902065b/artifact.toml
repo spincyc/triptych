@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.church-of-england.king-james-version.ebible-engkjv.book-index-a902065b"
+edition_id = "edition.church-of-england.king-james-version.ebible-engkjv"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created book identity/count and source-coordinate reference facts."
+rights_jurisdiction = "United States"
+projected_from = ["artifact.church-of-england.king-james-version.ebible-engkjv.book-index-ee979c6e", "artifact.church-of-england.king-james-version.ebible-engkjv.verse-aliases-4c994ba5"]
+transformation = "Retain every book row and every field except the Baruch note; WEB also receives the separately accepted Romans source-coordinate note. Book order, names, tokens, aliases, filenames and declared counts stay byte-identical."
+provenance = "New immutable 2026-10-26 book-index revision. The old artifact, ID, payload path and bytes remain unchanged. Notes remove prior claims that reviewed exact aliases cannot be executed; no edition Bible wording or numbering is rewritten."
+retrieved = "2026-10-26"
+sha256 = "a902065bad95b6f2a30c6b16dab0245ea0e0a5761e1ad9bcaccef395c88533b7"
+byte_size = 15651
+path = "src/sources/works/church-of-england/king-james-version/editions/ebible-engkjv/artifacts/book-index-a902065b/book-index.tsv"
+indexable = true
+encoding = "utf-8"

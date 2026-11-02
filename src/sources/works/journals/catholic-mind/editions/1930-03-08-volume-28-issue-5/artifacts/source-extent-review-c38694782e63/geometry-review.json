@@ -1,0 +1,411 @@
+{
+  "disposition": "admit-complete-printed-translation-with-disclosed-subscription-omission",
+  "exact_boundary_lines": {
+    "first_next_article_line": [
+      {
+        "bbox": [
+          485,
+          1052,
+          1134,
+          1119
+        ],
+        "line": 27,
+        "text": "Character Building",
+        "words": [
+          {
+            "coords": [
+              485,
+              1108,
+              828,
+              1052
+            ],
+            "text": "Character"
+          },
+          {
+            "coords": [
+              854,
+              1119,
+              1134,
+              1052
+            ],
+            "text": "Building"
+          }
+        ]
+      }
+    ],
+    "first_page_title": "Review of the Jubilee Year",
+    "last_selected_source_lines": [
+      {
+        "bbox": [
+          274,
+          893,
+          1418,
+          938
+        ],
+        "line": 24,
+        "text": "Given at Rome at St. Peter’s the twenty-third day of",
+        "words": [
+          {
+            "coords": [
+              274,
+              930,
+              386,
+              895
+            ],
+            "text": "Given"
+          },
+          {
+            "coords": [
+              414,
+              930,
+              451,
+              902
+            ],
+            "text": "at"
+          },
+          {
+            "coords": [
+              480,
+              930,
+              591,
+              896
+            ],
+            "text": "Rome"
+          },
+          {
+            "coords": [
+              617,
+              930,
+              654,
+              900
+            ],
+            "text": "at"
+          },
+          {
+            "coords": [
+              682,
+              929,
+              732,
+              895
+            ],
+            "text": "St."
+          },
+          {
+            "coords": [
+              761,
+              930,
+              893,
+              895
+            ],
+            "text": "Peter’s"
+          },
+          {
+            "coords": [
+              921,
+              930,
+              980,
+              895
+            ],
+            "text": "the"
+          },
+          {
+            "coords": [
+              1008,
+              938,
+              1255,
+              893
+            ],
+            "text": "twenty-third"
+          },
+          {
+            "coords": [
+              1282,
+              938,
+              1354,
+              893
+            ],
+            "text": "day"
+          },
+          {
+            "coords": [
+              1380,
+              928,
+              1418,
+              893
+            ],
+            "text": "of"
+          }
+        ]
+      },
+      {
+        "bbox": [
+          203,
+          944,
+          1262,
+          989
+        ],
+        "line": 25,
+        "text": "December, 1929, the eighth year of Our Pontificate.",
+        "words": [
+          {
+            "coords": [
+              203,
+              988,
+              410,
+              945
+            ],
+            "text": "December,"
+          },
+          {
+            "coords": [
+              436,
+              988,
+              536,
+              947
+            ],
+            "text": "1929,"
+          },
+          {
+            "coords": [
+              559,
+              980,
+              617,
+              945
+            ],
+            "text": "the"
+          },
+          {
+            "coords": [
+              638,
+              988,
+              759,
+              944
+            ],
+            "text": "eighth"
+          },
+          {
+            "coords": [
+              780,
+              989,
+              864,
+              956
+            ],
+            "text": "year"
+          },
+          {
+            "coords": [
+              885,
+              979,
+              922,
+              945
+            ],
+            "text": "of"
+          },
+          {
+            "coords": [
+              943,
+              979,
+              1018,
+              945
+            ],
+            "text": "Our"
+          },
+          {
+            "coords": [
+              1040,
+              979,
+              1262,
+              944
+            ],
+            "text": "Pontificate."
+          }
+        ]
+      }
+    ]
+  },
+  "full_text_read_extent": "All 66 retained XML paragraph blocks (5633 literal XML words), all 131 LF lines, plus every 430 excluded XML WORD strings/coordinates. Native source pages 1–15 inspected individually.",
+  "geometry_findings": [
+    {
+      "finding": "Every page rectangle was chosen against this issue’s own XML coordinates and visible native page. Odd-page main text is separated from left neighbor gutter words; even-page main text extends safely through x 1671 and is kept through center 1700, while the right neighboring strip starts at x 1712 or farther right. No right-edge body words are clipped.",
+      "status": "pass"
+    },
+    {
+      "finding": "First-page center y 350–2440 retains historical title, translator credit, copyright notice, address and all body words. The masthead ends 286; the retained last body line ends 2435; the separate folio starts 2442. Only its folio is omitted below the body.",
+      "status": "pass"
+    },
+    {
+      "finding": "Other upper center bounds y 280 lie below running heads ending at most 258 and above first body or section-heading words. Final page center y 1010 retains the date ending 989; Character Building begins 1052 and is excluded along with its article.",
+      "status": "pass"
+    },
+    {
+      "finding": "No independent act occurs inside the selection. The historical article has no separately numbered footnotes, terminal notes, annex, or appended prayer. All historical section headings and inline references remain. Page crossings preserve literal source order, including split words.",
+      "status": "pass"
+    }
+  ],
+  "geometry_selection_sha256": "2416efec1b85d7bd858f963d2fd6745314a867fe4376ca3a9ea967b030af194b",
+  "identity_findings": [
+    {
+      "finding": "Actual issue date March 8, 1930; volume XXVIII, number 5. The historical title identifies Quinquagesimo ante Anno, published December 23, 1929, attributed to Pius XI. Rev. John K. Cartwright, S.T.D., is credited as translator for the N.C.W.C. News Service, with a 1930 N.C.W.C. copyright notice.",
+      "locus": "Native artifact page 1, printed 93, masthead and translator notice"
+    },
+    {
+      "finding": "The episcopal and Catholic-faithful address, fiftieth priesthood-anniversary opening in the Lateran Church, continuous review of 1929 jubilee events and final extension of the jubilee positively identify the same dated Pius XI act.",
+      "locus": "Opening address and body; native pages 1–15"
+    },
+    {
+      "finding": "Apostolic blessing and dated closing identify 23 December 1929, eighth pontifical year. The printing immediately proceeds to the independent Character Building article. No separate papal subscription is printed in this witness; none was lost to selection or supplied. This is a complete article as printed, not an assertion that the historical English edition reproduces every diplomatic subscription of the original act.",
+      "locus": "Native artifact page 15, printed 107, final body/date"
+    }
+  ],
+  "page_evidence": [
+    {
+      "artifact_page": 1,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 93,
+      "review_png_bytes": 1586499,
+      "review_png_sha256": "21878934fbe60598fdc93eeb43270864c950e3fddfce5dd4484273259f6b81b1"
+    },
+    {
+      "artifact_page": 2,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 94,
+      "review_png_bytes": 1879862,
+      "review_png_sha256": "7ffd04205c5424b0ea02b361d6aefb0b3bfc6e19d3981fef7698dd1b2f237b54"
+    },
+    {
+      "artifact_page": 3,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 95,
+      "review_png_bytes": 1823943,
+      "review_png_sha256": "6ac1c67f542d3ce5c1f0bcebb9961fe6f5eccfddbe30a4919fc04ac6de9a8ce6"
+    },
+    {
+      "artifact_page": 4,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 96,
+      "review_png_bytes": 1769163,
+      "review_png_sha256": "58c6476b794372aca3fd0afee3c5a5d6daa29275403f148d34be90f9c4156347"
+    },
+    {
+      "artifact_page": 5,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 97,
+      "review_png_bytes": 1864950,
+      "review_png_sha256": "0b51816e8ef2b5b1973d5ecb27cb4696651ff041dae38ad87af026f8306fe888"
+    },
+    {
+      "artifact_page": 6,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 98,
+      "review_png_bytes": 1863343,
+      "review_png_sha256": "59594630a16126aa97227bcf471ebba281f5717e5a4976d2b9c169ebb84f220d"
+    },
+    {
+      "artifact_page": 7,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 99,
+      "review_png_bytes": 1730217,
+      "review_png_sha256": "d82d2d980bd478c2787f0772cf4e55ac6ba7f19c572831c120dc28e5bd25ca97"
+    },
+    {
+      "artifact_page": 8,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 100,
+      "review_png_bytes": 1724951,
+      "review_png_sha256": "da0c6db19ae94b92eb0a0a7a20d25a001c30f7b6945a5bcb92e748d8915f509b"
+    },
+    {
+      "artifact_page": 9,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 101,
+      "review_png_bytes": 1896197,
+      "review_png_sha256": "2cba04cf4accd67be66c93e45fa1e5a6f509b6e35b885dbe36ec5c67b7946f6a"
+    },
+    {
+      "artifact_page": 10,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 102,
+      "review_png_bytes": 1788852,
+      "review_png_sha256": "58d664efc531e5f18100d45690c158928afe08e3ecf8d9dbea00084adc62df75"
+    },
+    {
+      "artifact_page": 11,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 103,
+      "review_png_bytes": 1799322,
+      "review_png_sha256": "8f4733ad653f24d9176de3475fd1c95423acae5554ce642cd436cb2c6cab8d6f"
+    },
+    {
+      "artifact_page": 12,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 104,
+      "review_png_bytes": 1825250,
+      "review_png_sha256": "71ecf007818d597f9eff93a1c4d0b1b22723c9d4f62ec612809b7cccab9b353d"
+    },
+    {
+      "artifact_page": 13,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 105,
+      "review_png_bytes": 1802494,
+      "review_png_sha256": "b1b0998e7bc7d543af54369bce775348e72787483ca5fbd65ff2a7c843be25ae"
+    },
+    {
+      "artifact_page": 14,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 106,
+      "review_png_bytes": 1838769,
+      "review_png_sha256": "15a0e84b6c5c2e76d228a89931e4005ef9824201c4ac8c1d986f66b0b2df2d63"
+    },
+    {
+      "artifact_page": 15,
+      "inspection": "Entire native source PDF page individually opened; printed text-column/gutter separation, heading and body continuity, notes and terminal extent inspected. This is structural and boundary review, not a general word-for-word image collation.",
+      "printed_page": 107,
+      "review_png_bytes": 1683903,
+      "review_png_sha256": "65937332cd9c77cf0e6e5ec538238b8bffc8f79eb3950b4a4b8affa4d330d7d5"
+    }
+  ],
+  "remaining_ocr_limitations": [
+    "The large initial drop-cap F is not recognized in the source XML: the first body word is IFTY. No letter was removed by the geometry mask and no replacement letter is supplied.",
+    "Inherited recognition errors, including Hotrtness, Hew, damaged capitalization, punctuation and literal line-end hyphens followed by spaces remain. Source spelling and translation are not silently modernized or corrected.",
+    "A complete structural read and all-page extent inspection do not certify word-for-word accuracy, translation accuracy, original diplomatic completeness, or full image collation.",
+    "The whole issue has 20 pages. Pages 16–20 are retained under the container but not selected or visually reviewed for this act."
+  ],
+  "reviewed_on": "2026-10-26",
+  "schema": "triptych-english-geometry-review/v1",
+  "scope": "Complete printed historical English article and literal XML word membership/boundaries. No critical text or translation-accuracy verification is claimed.",
+  "selected_artifact_page_range": [
+    1,
+    15
+  ],
+  "selected_text_bytes": 32358,
+  "selected_text_physical_line_count": 131,
+  "selected_text_sha256": "2e8f95fb87ff10b9ca7396ec0c8fc90982d711494b0a9c2d8117f41a018c75e8",
+  "selected_xml_word_count": 5633,
+  "source_citation": "The Catholic Mind 28, no.5 (8 March 1930), printed pages 93–107; the next independent article begins on page 107 below the dated closing.",
+  "source_mutations": "None. Whole acquired source files remain byte-exact; selected words remain literal.",
+  "source_page_count": 20,
+  "source_pages_individually_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "source_pdf": "sim_catholic-mind_1930-03-08_28_5.pdf",
+  "source_pdf_sha256": "43e032a24e5520e1a948d3ad2239445f5924e5ced4f20381e4498c0a8745404a",
+  "source_raster_cache_key": "e524ed6c24a7eea30dcbb95e7d38e84b70c8efdd1c24d0cb1482edff71028a08",
+  "source_raster_cache_sha256": "11d279037623f62575b7568f91434e4ed93f959cf14e3fc2c9da1eb1a5c4345f",
+  "source_xml": "sim_catholic-mind_1930-03-08_28_5_djvu.xml",
+  "source_xml_sha256": "bdb7dcd3a510fa4830254b2aee6c7c7ce9fe0e6d6479ce4545950f48abcd0351",
+  "status": "PASS"
+}

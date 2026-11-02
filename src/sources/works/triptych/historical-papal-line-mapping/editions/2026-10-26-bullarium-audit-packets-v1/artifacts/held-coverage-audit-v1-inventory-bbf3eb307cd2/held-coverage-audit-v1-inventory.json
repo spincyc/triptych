@@ -1,0 +1,2191 @@
+{
+  "schema": "triptych-bullarium-archive-inventory/v1",
+  "archive_filename": "held-coverage-audit-v1.tar.gz",
+  "archive_bytes": 8494678,
+  "archive_sha256": "1580b3a24a45c555bbbc35293f438adf5eacd52ee16bd804a3100f75f582e90f",
+  "project_reports": 143,
+  "members": 148,
+  "member_payload_bytes": 77987281,
+  "redaction_records": 500,
+  "changed_project_reports": 13,
+  "protected_historical_fields": 79496,
+  "source_preservation_all_equal": true,
+  "original_files_unchanged": true,
+  "byte_identical_rebuild": true,
+  "headers_verified": true,
+  "privacy_tokens_remaining": 0,
+  "included_members": [
+    {
+      "archive_member": "_archive/exclusions.json",
+      "bytes": 404,
+      "sha256": "87f58415129eb1465ee41c6c3129b03ed0d393ddf3b57d297c9c9741b5c1a1da"
+    },
+    {
+      "archive_member": "_archive/manifest.json",
+      "bytes": 85084,
+      "sha256": "421eaf13a0cb2e4e235f857eff9badd572a5c0d2dfa6c051cf77be3e17703c6f"
+    },
+    {
+      "archive_member": "_archive/redactions.json",
+      "bytes": 268533,
+      "sha256": "1d90bcb73d8598aa5978cd66598f71702dfec1b76d478033586dc7974b57caa5"
+    },
+    {
+      "archive_member": "_archive/scope.md",
+      "bytes": 2602,
+      "sha256": "5bb5b9c49d68fcdba49d4bbc9b2527800f72bcd0b66bb4b0c5dcf33fe8dba73c"
+    },
+    {
+      "archive_member": "_archive/source-preservation.json",
+      "bytes": 114349,
+      "sha256": "b3625cd400b321301582b5e1bda1c1fd534ab7bf0fa3f453d117470ffeff786a"
+    },
+    {
+      "archive_member": "held_coverage_audit/accepted-line-intersections.json",
+      "bytes": 115123,
+      "sha256": "15f773e09eb3e71bff8d7b4776d704b2df3f27dc23b6a7f8235e98954c8832cd"
+    },
+    {
+      "archive_member": "held_coverage_audit/accepted-source-ownership-projection.json",
+      "bytes": 2095751,
+      "sha256": "550631a7c3b8634cfa116d70e6809672472167d445ccdb23fe132900d053bfe0"
+    },
+    {
+      "archive_member": "held_coverage_audit/audit.json",
+      "bytes": 31325,
+      "sha256": "216e2858c021ed26a303c02dffc59ade6bd17bdc5182de10be35bad2bf3a6f48"
+    },
+    {
+      "archive_member": "held_coverage_audit/baseline-reconciliation.json",
+      "bytes": 6188164,
+      "sha256": "241e5a90dcfabcfcc83e88b8b9f97303510a230fdb50b4edc9433bdfbdab063e"
+    },
+    {
+      "archive_member": "held_coverage_audit/extra-discoveries.json",
+      "bytes": 45167,
+      "sha256": "c6385f0a1ec2d0d96ae581d0550064048e7d409dd300da55a801f91f4bba1e2c"
+    },
+    {
+      "archive_member": "held_coverage_audit/held-units.json",
+      "bytes": 9233528,
+      "sha256": "6ee0921647dadfbfa05718e384d508e4cdb0b47362a7647570d62e612b1ef88e"
+    },
+    {
+      "archive_member": "held_coverage_audit/mechanical-intersections.json",
+      "bytes": 395835,
+      "sha256": "cbb7bd3ec5575fccedf9786419ec9528313618c83d7e5ca06a1f852eba07f14b"
+    },
+    {
+      "archive_member": "held_coverage_audit/method.json",
+      "bytes": 2824,
+      "sha256": "2e929da606bfed0e92c1febdc3beb22b031c6571494e0f5b0886586511b4c592"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/00-target-of-recorded-duplicate/volume-07-001.json",
+      "bytes": 6226,
+      "sha256": "e31fdbe987e053a3b4d648cc3212d4e10e299f7134d377aeb4fefd9c175b3012"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/appendix-01-001.json",
+      "bytes": 8098,
+      "sha256": "0a5f31cfc458b9469b370a5f1bd24aff6a40c7895a2f3e09c62b7201b2798de0"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-01-001.json",
+      "bytes": 44870,
+      "sha256": "0417dc1a5bd97162095de7601a82dc0a39055a3856da8b2f90d2210de0525c58"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-02-001.json",
+      "bytes": 44900,
+      "sha256": "814cd42321de2b7001960477ccee1346b7d6377ee19730437448af2d2b30c077"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-02-002.json",
+      "bytes": 47820,
+      "sha256": "32ec712f4d53c34aae2e926db00f82e234d1de0d41aeafd5dcbab7efcfb986d5"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-02-003.json",
+      "bytes": 33640,
+      "sha256": "55845dc7399dc553714944b380a6136a0b8c9f2e98c49dd06d987b5c4b0c74a5"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-03-001.json",
+      "bytes": 50672,
+      "sha256": "1deaefae6cb9f9daf0a43469ce284a61286deeeb0d50376a0230b057e05898a4"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-03-002.json",
+      "bytes": 22231,
+      "sha256": "c2d7943c3e5bbe2977e23163207d102cfae42c001ef548b6586927e255749289"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-04-001.json",
+      "bytes": 47726,
+      "sha256": "67da3085e449661d002dcf89e3313c1ddf2ac0282ffbcf6add5a66b4e7fd32f2"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-05-001.json",
+      "bytes": 8008,
+      "sha256": "3f3146783daaa049e971495e123b574b6f049a5c936fc645726d781c5d99ce12"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-06-001.json",
+      "bytes": 33539,
+      "sha256": "0e52770b578e0ab74bc27b3db327f67a5f3881b941edd24ca172cd6fa16f6a67"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-07-001.json",
+      "bytes": 39230,
+      "sha256": "7d4e82028960af6d43d46ae672dac2fd7f0d12ca714758fa9c88557c09b03463"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-07-002.json",
+      "bytes": 5215,
+      "sha256": "3827d3afb4cc0ad52c5da16b50b8c29866b98e86a3da07d745eda7aebec9e43d"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-08-001.json",
+      "bytes": 25164,
+      "sha256": "05157bb0f0eace6e0e22200a760725e446acf87b50dc1d0959e72832a8abfa0c"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-09-001.json",
+      "bytes": 30712,
+      "sha256": "24414a8ecbd0b461473658de94fbe44ff75635b814777a539abdea06b988580c"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-10-001.json",
+      "bytes": 27956,
+      "sha256": "5bbe581030615227083f0481d181ca70fa8a3901d9c821dd2f88626fbbd75aee"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-11-001.json",
+      "bytes": 39253,
+      "sha256": "3e0bf6eb38d54a1b899be0d21193d120a054d92fa314cce0251eafa350d545d5"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-12-001.json",
+      "bytes": 13740,
+      "sha256": "b93fbf0e987c4596fb324d830aea1f665f164031a9ccfdb07f2a1e56fbcdd4f6"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-13-001.json",
+      "bytes": 47804,
+      "sha256": "06bb215a4e389a7f053f4a1018e781c41a95c4f0aec07c6ba0957eee6539bb33"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-13-002.json",
+      "bytes": 22265,
+      "sha256": "5745b2beed61c8196cb4ad69569da6dc894964d8bdf93287883ea7fdcbc3ebad"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-14-001.json",
+      "bytes": 50671,
+      "sha256": "375481614be352cc8d01d71bf8b1487b96f129dffc9ece0aa4ff1364392e24fc"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-14-002.json",
+      "bytes": 10902,
+      "sha256": "dce43939120a65a7817aaa99de7b55b49b548ec5024c70b85893e246317f312b"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-15-001.json",
+      "bytes": 36449,
+      "sha256": "70b5c63749a6ec37d1112e0d6c00e5f44a326a0d6e2a58474767cd76365f3859"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-16-001.json",
+      "bytes": 44973,
+      "sha256": "6d38bbd4b29a75fe929982c311c4c22824b57202a517563e0cdf86e4b94b062f"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-16-002.json",
+      "bytes": 10900,
+      "sha256": "8468c6c014dd96f89ef5b0d199cf61c071737e491625519177e3e6108461520a"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-17-001.json",
+      "bytes": 25084,
+      "sha256": "036bb8303a97bbc505ecd9641e6434a76f29a7067ffaf28378894823fdad94dc"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-18-001.json",
+      "bytes": 16553,
+      "sha256": "5fc6158c90d866a26df08c72777b8a9f68d610d36405c8051139e8083f8eab16"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-19-001.json",
+      "bytes": 33639,
+      "sha256": "00fbbdc7b0e7da1fcbf18512b47a24ad3ebaf7b54657fbcd85c1efde0ca2fc28"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-20-001.json",
+      "bytes": 19435,
+      "sha256": "d3c7dc81b04f6cc7e2c4bf480dfbf52001b64cc2e887117b8c7b6cbfc5028e18"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-21-001.json",
+      "bytes": 42128,
+      "sha256": "725dc9f403eee9a48240c8c866fab58a48f8e14503bc4c304ecd888b130f0212"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-22-001.json",
+      "bytes": 47890,
+      "sha256": "7ff54d6a290a8843879d6de1dfcd219bcdb55129260b8dfb79b220279b7b1449"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-22-002.json",
+      "bytes": 5223,
+      "sha256": "5b6f0fd8c4661c6772a89f1f2d8f6b8511fa7a1413a66bccdef2f934c6cbc8e6"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-23-001.json",
+      "bytes": 25065,
+      "sha256": "cfaa7cf8d43036e08f4415f573b39de61658b757eef1fc85facaca5d4022f68b"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-24-001.json",
+      "bytes": 19408,
+      "sha256": "5e2ed3e9a03ff013c39d4623ec8a692474601982f402fd3c149ba6a6572973bd"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/appendix-01-001.json",
+      "bytes": 5218,
+      "sha256": "776715cfae8d906f55824c04f39efd3ea8892620869abd24bfbc44e150ae70a4"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-01-001.json",
+      "bytes": 8052,
+      "sha256": "6e61c434d556286481256ea9a14641f56c05a48db55827f2077729b518684292"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-02-001.json",
+      "bytes": 16661,
+      "sha256": "8096578139cfa2fd22f68de42160117425d1dfb87f85e1b3ab9c9b859e39a70e"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-03-001.json",
+      "bytes": 19496,
+      "sha256": "8f59cc3c8fe34aa8280776e040765dbf1ba61d00297b360b9f052a637ab101dd"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-04-001.json",
+      "bytes": 16620,
+      "sha256": "7f329e54663566aa72248a67ed3e5c3b0b7f802e5387bf40231454236ac70e8c"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-05-001.json",
+      "bytes": 10915,
+      "sha256": "6b080c31608446929e26ca80c428250568c370350351cc9f39c02ef518d81a91"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-06-001.json",
+      "bytes": 8058,
+      "sha256": "f08968db545238f083987b479b074db4c8b3b77f34eb7ae3bec6eec4b305b65e"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-07-001.json",
+      "bytes": 10877,
+      "sha256": "07fec6bba2a642b66187f64b1e7244751bfdf5df7c0cce5fd3eff49251fe55e3"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-08-001.json",
+      "bytes": 10937,
+      "sha256": "a9c5bea697e66d8bd20013fef92f94ad9e1f2e1e336a027f1af5cafc4f7eb7a3"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-09-001.json",
+      "bytes": 5205,
+      "sha256": "072419981bb53f2773aa127b20ad95dfed48160ddd28aca5a962ec1e1a8a67dd"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-10-001.json",
+      "bytes": 5214,
+      "sha256": "adce40212491d90d214a2a0b9cbd1a30926b6d147ddc26e9d877b51d2b422e0b"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-11-001.json",
+      "bytes": 8060,
+      "sha256": "677c60a968cc0c5334e8743dceb9a6cca3e92335e4e028b4ec888577655d736f"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-12-001.json",
+      "bytes": 13773,
+      "sha256": "f7e4493e06bd14c17f45931906193d5375b46b438abf23817c8916feb07c0103"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-13-001.json",
+      "bytes": 13752,
+      "sha256": "17609a6468815e2f3f4cdf65bb6807a16e5b83912a3b55720fd4b8efac72f1da"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-14-001.json",
+      "bytes": 28016,
+      "sha256": "09a853603fab6ca4aa3bc885e8dc3df27262a694d1d976cf03483fd74c19f6ff"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-15-001.json",
+      "bytes": 22325,
+      "sha256": "63df53d900507f9f493db269c337f6f3abc507d3ea26e4059a2552fc8f791358"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-16-001.json",
+      "bytes": 10913,
+      "sha256": "4e6d4742acca5ef988463bf64e1bd32afb2b468d9e42ab1dec6159611da34705"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-17-001.json",
+      "bytes": 13742,
+      "sha256": "9727a16ec622304006af458d3d691d066512cee552150e27c0d938da5bf2643f"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-19-001.json",
+      "bytes": 10911,
+      "sha256": "b858c2a9b644de85073b18805cf474fcabe9a3357ee90f06cfeeb34152848fc4"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-20-001.json",
+      "bytes": 8095,
+      "sha256": "c7bd86b046bcd9a2df6a7a4a886132f89a30e06a9d3d78ec42682b369322f2b7"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-21-001.json",
+      "bytes": 13771,
+      "sha256": "d503f9ed943f61e84744941b4eac19adcfb31459b00a164ac2507e7cfa425a4a"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-22-001.json",
+      "bytes": 8092,
+      "sha256": "a4b10e2ddd7fb9f04ca1fcb02c947d314c4b966bd618076b50de3ab7429c6921"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-23-001.json",
+      "bytes": 10898,
+      "sha256": "f2eec9d884f04e9aa0712619085f9f3edb1180900c9fec7bda3056eb76d3c765"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-24-001.json",
+      "bytes": 19467,
+      "sha256": "dbabec21f11e8e4ed2ff466d2959eb7c8f783eb6ec1e7f0375ed8c295303bccf"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/appendix-01-001.json",
+      "bytes": 29829,
+      "sha256": "a2b93fa48b9e97df658c252cd782332176761b2bdeeba9bd621c2e210214c1ea"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-01-001.json",
+      "bytes": 50778,
+      "sha256": "3f18881c6d972919ed797a87755e30c65247e7782886c2a8df74d8f5dd93d696"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-02-001.json",
+      "bytes": 66513,
+      "sha256": "1de93904840aab06e0f38d499843c26afdbd009ded12982848e76dc2aa96b359"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-02-002.json",
+      "bytes": 35512,
+      "sha256": "c5b929a48118308b445ef9a84b6926c26877ec6ec85b7ad06991091547572d1c"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-03-001.json",
+      "bytes": 67392,
+      "sha256": "c00089cb3c40a1b433527c3442700abb4f85ac816920a5ca0b95281dcb85bb5c"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-03-002.json",
+      "bytes": 68854,
+      "sha256": "eabab86b206477d666bb9cab0686810c1a0d2376a9ace31aea14443d163e10ce"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-03-003.json",
+      "bytes": 11908,
+      "sha256": "0ef83b9f852f7a38a804fbef0aee98b7be088fc3056c4fd1b1cb99b0084b777b"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-04-001.json",
+      "bytes": 11906,
+      "sha256": "dbef6837d09078e5840bb84950ac1ea8b97bc9c0a44edc15cc8e972fc49ad51e"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-05-001.json",
+      "bytes": 18124,
+      "sha256": "1cdee6b9a4a46b1aea94be7616faa658eda137345922e3fa4b1c0eee6a85a801"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-06-001.json",
+      "bytes": 21551,
+      "sha256": "3940e3808cfc4eff3abd70ff593eb3a24d37b0af3ed79a6c018a1919eaafda6e"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-07-001.json",
+      "bytes": 31125,
+      "sha256": "9467e99e299a150a12fb701509ebb29dfb8557f7f2819d8385b53dc65f7d8c84"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-08-001.json",
+      "bytes": 65469,
+      "sha256": "9274c2c5b3dd12d09e6a2f95e9b19c32636ccd053958a66382be278167ccae95"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-08-002.json",
+      "bytes": 28625,
+      "sha256": "6d4b868ff5d92f6cfddc69b7147b999151a35028f78469909e9e54a90b094342"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-09-001.json",
+      "bytes": 53987,
+      "sha256": "355b3c959461bffea8ad7ef6ce26fb0bdfbf0ae7a06f7088e4bbcd37e122df22"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-10-001.json",
+      "bytes": 68413,
+      "sha256": "47f99d3a921c8da8614ec49000a9e85398b99f9d7b0daac2f20f0fcbe49dc596"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-10-002.json",
+      "bytes": 25118,
+      "sha256": "f335048c1888740dbf1920b78ed94baaa406dae60a314e9e739714d06e926c0c"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-11-001.json",
+      "bytes": 55345,
+      "sha256": "d121fbe2553c3c55c4cee104db3982ec07124e7bd50ad317efd7fdbcec511357"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-12-001.json",
+      "bytes": 69698,
+      "sha256": "b2b839d4258ea3c50b9e1b8431749d9320dcc002d3395a63f79ac6e18a863afb"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-12-002.json",
+      "bytes": 43186,
+      "sha256": "df7026a55ae827055e2a3e59b34e91fa18a00bfb0cbc989ed254bfe6d467359e"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-13-001.json",
+      "bytes": 47439,
+      "sha256": "f9e50e954c7db17e15f5637cc4fb8f9d2838983f4eb914cb220c4757b138ba2d"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-14-001.json",
+      "bytes": 65543,
+      "sha256": "b1b40d1f9d9b3cf3980c0b0fcab34fae4bec849281ab1a3fbf33bc1dedeefc5b"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-15-001.json",
+      "bytes": 69039,
+      "sha256": "e002e24d39531444d69e3c11d5c8ac5d54d674508cac0492188f7fff94bfe923"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-15-002.json",
+      "bytes": 25086,
+      "sha256": "41cabec0391e9e6cec19aabb1167b843514d1a2fdcc4883762912a4064565fb0"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-16-001.json",
+      "bytes": 67682,
+      "sha256": "c8a3f73cc163ab83374ae4b31df658526140b7f0b45d457b735ad762fe78f3da"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-16-002.json",
+      "bytes": 69285,
+      "sha256": "46aa575ce6aaa9f4ee2e0eb49b95d0ac218688ab6bb28285c34780d062f3bbf7"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-16-003.json",
+      "bytes": 68562,
+      "sha256": "f86722d07eb3529c8c11ff4cdf8aa6a4ad26885fdd26c1dc392b4d1b8c58b33b"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-17-001.json",
+      "bytes": 69819,
+      "sha256": "b4ced2be83760147adad37eee0d697e977fd7bd2f3f83de682674a430e9c53cc"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-17-002.json",
+      "bytes": 68658,
+      "sha256": "4a1948cbc74bcf49dab884b4e60630641bb5acb48919169990b5a7095b160ce2"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-17-003.json",
+      "bytes": 69268,
+      "sha256": "4f74ddcadff8f212dbac542171c142f3c89748c19ff98e52aa010f597a1f2982"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-17-004.json",
+      "bytes": 5575,
+      "sha256": "7efdb9f0566741734e0549a47ad4b8cc8ad0da502a905dde5629b965046ef94f"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-18-001.json",
+      "bytes": 68637,
+      "sha256": "12a39129ae258950005df5b0e9faa1fe9b77ab9703ae24b8047efccad6345205"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-18-002.json",
+      "bytes": 5594,
+      "sha256": "20d26a7745cb852df724f42ae37a21f361aee503458ab1853757269040fc25ca"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-19-001.json",
+      "bytes": 44785,
+      "sha256": "7ca7f7ce34ae129b97c057781991e1b853a7926d86abd62d88731e037d9b50ab"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-20-001.json",
+      "bytes": 68285,
+      "sha256": "6a27ecce2bad8fbc2804d7568d948efa13334894c7b0ea72fd6e44f8d878c0ff"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-21-001.json",
+      "bytes": 38421,
+      "sha256": "aefca7e2c11cf4b20fb5b1c8aa21b0878a2d6193a0f77a0d6ab6312aad0adf68"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-22-001.json",
+      "bytes": 34762,
+      "sha256": "8848bf611458901d1445e54268152738a555f8c8a1e0dacdee0cc99625f0329c"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-23-001.json",
+      "bytes": 12047,
+      "sha256": "50ed5f39dd90b8af863ab99cb5b57bd6c910d4d903e3e08946e03f8e9a2636eb"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-24-001.json",
+      "bytes": 8661,
+      "sha256": "31fa2ce0c0151e53465729458e0584ca51e5c9fc3e5c505d0474b54ec87f3f60"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/appendix-01-001.json",
+      "bytes": 41056,
+      "sha256": "c408a87a8a5f6a6ef8b74d009823b714cddb54587aa4c8f25a13838d5a65ee51"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-01-001.json",
+      "bytes": 19115,
+      "sha256": "e9d4b35736e4d2af85c0ac7c74f42072d0983012b8d7fbf82c23022f5c243856"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-02-001.json",
+      "bytes": 54879,
+      "sha256": "454404e1d1e5438ecdb138293367ddc36ac240c3f854bb514e8424bfb5182eb2"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-03-001.json",
+      "bytes": 52198,
+      "sha256": "5d728f3fad2b1db2b11a870442208c463313d854fc03544b7a47004ea124c84c"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-04-001.json",
+      "bytes": 8729,
+      "sha256": "5facef92fb41b2f8fce5efdbab465c2879ef6cf31b4ead7ce29c377447838194"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-05-001.json",
+      "bytes": 5553,
+      "sha256": "a697b6a553c5c0fc3b523c227f28a530d3a62f6ed88045d2c2c846e0ae936bda"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-06-001.json",
+      "bytes": 5557,
+      "sha256": "3c02f017bb61aa76ed22b9c890de2e46053fde49b7f9493d2fad421d70af769b"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-07-001.json",
+      "bytes": 8845,
+      "sha256": "4ded590586dabb1793725699c5b47ac96f358ad475baf71381d9f6e577dc9b9b"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-08-001.json",
+      "bytes": 8981,
+      "sha256": "0e75e2115bf0c6c1d17b9b019c852f6a2b6c9fd8010681e589fd471ce97f05b4"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-09-001.json",
+      "bytes": 5699,
+      "sha256": "329825b51fc79952986acc32ee6065b79e6cc2ad9046a817cd0366a1032b9a3e"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-10-001.json",
+      "bytes": 9338,
+      "sha256": "f4c18bfe322659438a23204a27042dc0aacb130e88d7642a45a3695ad0f5244a"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-11-001.json",
+      "bytes": 16313,
+      "sha256": "cff5b0d9d19e74a749f21ecf18623d41a8e5d792a394ea48784e155f9f96402b"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-12-001.json",
+      "bytes": 30423,
+      "sha256": "9222f0cc79043661d3e0887607eceef3cf5f131b0e7b73f986632d9d46455ba6"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-13-001.json",
+      "bytes": 8768,
+      "sha256": "7563edc5b8941c17d9bf60ccc5a0e247987cc8ab9067e6a93818e85422178c69"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-14-001.json",
+      "bytes": 29028,
+      "sha256": "ab190ccdac0974a18418f5cfac99fb11b618d4f1895188798be4b13b4e07a152"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-15-001.json",
+      "bytes": 16193,
+      "sha256": "df52832e2f3850ad74f954666e636e842a9c7190b9184d485b77bb69501d0fe1"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-16-001.json",
+      "bytes": 40584,
+      "sha256": "45723a7e6ee59db44d6dfb77b45a5570bc9903aee1216dcea44fd72e55753f9d"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-17-001.json",
+      "bytes": 34033,
+      "sha256": "9168040333b3db97d00e14c6faf28dd566ff4d88f6fb2f002e5c0022fa41485a"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-18-001.json",
+      "bytes": 13068,
+      "sha256": "04767228e5fd65a43492fbe67d4bda41213fd7f3450f33e56dec84b7a3c024f9"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-19-001.json",
+      "bytes": 5558,
+      "sha256": "63e0d7dbdcdcccdcb5ed08b91a9a3f78409640b00125ebf484b71238c7e26f7e"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-20-001.json",
+      "bytes": 16062,
+      "sha256": "86794c2548d3c07b78c5577c792531ee859e1341e031aa71429ca131c3f63796"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-21-001.json",
+      "bytes": 15308,
+      "sha256": "518635eb5483fd58c5b74927cd23cb8e957da7c8d2c8cd317a9bef60d7f98a9c"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-22-001.json",
+      "bytes": 15591,
+      "sha256": "c90aaa0019ebf93959c9999103facc32e3ff992e6424d3cf7122245146509200"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-23-001.json",
+      "bytes": 5707,
+      "sha256": "85a1996f5001bd0d5389c9345e996a740de607fd8b508d006fdb74edb8cf1b4e"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-24-001.json",
+      "bytes": 5530,
+      "sha256": "e04668dfe23496ba7c20c18981c2cb3e05d9a203557f6a0f598678a081f968c7"
+    },
+    {
+      "archive_member": "held_coverage_audit/next-batches/index.json",
+      "bytes": 222276,
+      "sha256": "624232f784172035284db57097ea6a88ce450e4f7ad91a5c843b96886a89019a"
+    },
+    {
+      "archive_member": "held_coverage_audit/number-gap-index.json",
+      "bytes": 2225089,
+      "sha256": "22cb80d94f30ae184dc086c37cb298076cd41f38e9425f1344a9204660ef5f57"
+    },
+    {
+      "archive_member": "held_coverage_audit/remaining-barriers.json",
+      "bytes": 2532195,
+      "sha256": "cb3a3cbc72c6a4e73396332439e9740b66cc6f875b999c6f153233b6ac6f341c"
+    },
+    {
+      "archive_member": "held_coverage_audit/report.md",
+      "bytes": 6951,
+      "sha256": "3c0731d2d19a53562b0434f3cd15ac78ab7c11bb9d7e41e3577c8db03e68f95b"
+    },
+    {
+      "archive_member": "held_coverage_audit/reviewed-dispositions.json",
+      "bytes": 89129,
+      "sha256": "206cd97063391c689de1d5bd563e5b8ed2be39dd9f87314004c9e2a191844486"
+    },
+    {
+      "archive_member": "held_coverage_audit/reviewed-hold-evidence.json",
+      "bytes": 1237892,
+      "sha256": "c53ed997d16a02f4d30b5cfd3e96a893847d7909d5e5d750934b2a418c45d109"
+    },
+    {
+      "archive_member": "held_coverage_audit/snapshots/baseline-head-catalog.json",
+      "bytes": 15075205,
+      "sha256": "fca67b5407da1308091afe236415be2c5bdec2fe03e2a6b2780ecda9f3250e32"
+    },
+    {
+      "archive_member": "held_coverage_audit/snapshots/current-catalog.json",
+      "bytes": 17263886,
+      "sha256": "9444ce1ce34ec52773ca8ffa167cecef7d820abbbca2be77d958d518ace32885"
+    },
+    {
+      "archive_member": "held_coverage_audit/snapshots/drift.json",
+      "bytes": 40075,
+      "sha256": "9bb93185e26d73de55ee874331f92573c53b02d485f2f4477f32e812cdf297a1"
+    },
+    {
+      "archive_member": "held_coverage_audit/snapshots/prior-audit-catalog.json",
+      "bytes": 17188316,
+      "sha256": "76047188a8df1083fcc1eaddb66648bea85a0d3be84debcabfa72851e7df2068"
+    },
+    {
+      "archive_member": "held_coverage_audit/snapshots/prior-audit-receipt.json",
+      "bytes": 392,
+      "sha256": "0942eb6d276d0bcb634d9c0a0a781a63ca3d0718ab026cda6b302a3341e38aa6"
+    },
+    {
+      "archive_member": "held_coverage_audit/snapshots/receipts.json",
+      "bytes": 756,
+      "sha256": "37e363c0df8d6b4ffc6891d78f6960b94558762a552b6e6515d4de044393d04e"
+    },
+    {
+      "archive_member": "held_coverage_audit/source-artifacts.json",
+      "bytes": 21717,
+      "sha256": "81e008fa14b9a28339b6603e27d24fc9544a511d36ce52e7ddec2192e5c4509d"
+    },
+    {
+      "archive_member": "held_coverage_audit/validation.json",
+      "bytes": 15659,
+      "sha256": "d6423c8e5432fc2084e0743891c98c5cf11916b9ada2da1f944cfa11b5728af8"
+    }
+  ],
+  "original_and_retained_project_reports": [
+    {
+      "original_project_report_filename": "held_coverage_audit/accepted-line-intersections.json",
+      "original_bytes": 115191,
+      "original_sha256": "ee837112a7efb1c1d3068a4bbe58c772f3afbe0449289ad4a094af0a16cbe153",
+      "retained_archive_member": "held_coverage_audit/accepted-line-intersections.json",
+      "retained_bytes": 115123,
+      "retained_sha256": "15f773e09eb3e71bff8d7b4776d704b2df3f27dc23b6a7f8235e98954c8832cd",
+      "redaction_records": 2,
+      "retained_byte_identical_to_original": false
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/accepted-source-ownership-projection.json",
+      "original_bytes": 2095751,
+      "original_sha256": "550631a7c3b8634cfa116d70e6809672472167d445ccdb23fe132900d053bfe0",
+      "retained_archive_member": "held_coverage_audit/accepted-source-ownership-projection.json",
+      "retained_bytes": 2095751,
+      "retained_sha256": "550631a7c3b8634cfa116d70e6809672472167d445ccdb23fe132900d053bfe0",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/audit.json",
+      "original_bytes": 32039,
+      "original_sha256": "e6e05c33d2ae5fe968129aeee5d2cb03468ae4e16a76d3109b02a76ddbdbb1f3",
+      "retained_archive_member": "held_coverage_audit/audit.json",
+      "retained_bytes": 31325,
+      "retained_sha256": "216e2858c021ed26a303c02dffc59ade6bd17bdc5182de10be35bad2bf3a6f48",
+      "redaction_records": 21,
+      "retained_byte_identical_to_original": false
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/baseline-reconciliation.json",
+      "original_bytes": 6188232,
+      "original_sha256": "c3945268ec3cc49c23981502410df38e14ec77c58e5ede78a84a45c7897cc794",
+      "retained_archive_member": "held_coverage_audit/baseline-reconciliation.json",
+      "retained_bytes": 6188164,
+      "retained_sha256": "241e5a90dcfabcfcc83e88b8b9f97303510a230fdb50b4edc9433bdfbdab063e",
+      "redaction_records": 2,
+      "retained_byte_identical_to_original": false
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/extra-discoveries.json",
+      "original_bytes": 45253,
+      "original_sha256": "f0ef5b9b4eeaf0f60b32493aa22ee8823e30e30cdbeefb0bafff74023a7519e2",
+      "retained_archive_member": "held_coverage_audit/extra-discoveries.json",
+      "retained_bytes": 45167,
+      "retained_sha256": "c6385f0a1ec2d0d96ae581d0550064048e7d409dd300da55a801f91f4bba1e2c",
+      "redaction_records": 2,
+      "retained_byte_identical_to_original": false
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/held-units.json",
+      "original_bytes": 9233562,
+      "original_sha256": "d8a3bf4af8b85871ca800f4215cd9bf6c3a811fa8ad16b9f5a63773dc4ba4786",
+      "retained_archive_member": "held_coverage_audit/held-units.json",
+      "retained_bytes": 9233528,
+      "retained_sha256": "6ee0921647dadfbfa05718e384d508e4cdb0b47362a7647570d62e612b1ef88e",
+      "redaction_records": 1,
+      "retained_byte_identical_to_original": false
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/mechanical-intersections.json",
+      "original_bytes": 395835,
+      "original_sha256": "cbb7bd3ec5575fccedf9786419ec9528313618c83d7e5ca06a1f852eba07f14b",
+      "retained_archive_member": "held_coverage_audit/mechanical-intersections.json",
+      "retained_bytes": 395835,
+      "retained_sha256": "cbb7bd3ec5575fccedf9786419ec9528313618c83d7e5ca06a1f852eba07f14b",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/method.json",
+      "original_bytes": 2824,
+      "original_sha256": "2e929da606bfed0e92c1febdc3beb22b031c6571494e0f5b0886586511b4c592",
+      "retained_archive_member": "held_coverage_audit/method.json",
+      "retained_bytes": 2824,
+      "retained_sha256": "2e929da606bfed0e92c1febdc3beb22b031c6571494e0f5b0886586511b4c592",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/00-target-of-recorded-duplicate/volume-07-001.json",
+      "original_bytes": 6226,
+      "original_sha256": "e31fdbe987e053a3b4d648cc3212d4e10e299f7134d377aeb4fefd9c175b3012",
+      "retained_archive_member": "held_coverage_audit/next-batches/00-target-of-recorded-duplicate/volume-07-001.json",
+      "retained_bytes": 6226,
+      "retained_sha256": "e31fdbe987e053a3b4d648cc3212d4e10e299f7134d377aeb4fefd9c175b3012",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/appendix-01-001.json",
+      "original_bytes": 8098,
+      "original_sha256": "0a5f31cfc458b9469b370a5f1bd24aff6a40c7895a2f3e09c62b7201b2798de0",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/appendix-01-001.json",
+      "retained_bytes": 8098,
+      "retained_sha256": "0a5f31cfc458b9469b370a5f1bd24aff6a40c7895a2f3e09c62b7201b2798de0",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-01-001.json",
+      "original_bytes": 44870,
+      "original_sha256": "0417dc1a5bd97162095de7601a82dc0a39055a3856da8b2f90d2210de0525c58",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-01-001.json",
+      "retained_bytes": 44870,
+      "retained_sha256": "0417dc1a5bd97162095de7601a82dc0a39055a3856da8b2f90d2210de0525c58",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-02-001.json",
+      "original_bytes": 44900,
+      "original_sha256": "814cd42321de2b7001960477ccee1346b7d6377ee19730437448af2d2b30c077",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-02-001.json",
+      "retained_bytes": 44900,
+      "retained_sha256": "814cd42321de2b7001960477ccee1346b7d6377ee19730437448af2d2b30c077",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-02-002.json",
+      "original_bytes": 47820,
+      "original_sha256": "32ec712f4d53c34aae2e926db00f82e234d1de0d41aeafd5dcbab7efcfb986d5",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-02-002.json",
+      "retained_bytes": 47820,
+      "retained_sha256": "32ec712f4d53c34aae2e926db00f82e234d1de0d41aeafd5dcbab7efcfb986d5",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-02-003.json",
+      "original_bytes": 33640,
+      "original_sha256": "55845dc7399dc553714944b380a6136a0b8c9f2e98c49dd06d987b5c4b0c74a5",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-02-003.json",
+      "retained_bytes": 33640,
+      "retained_sha256": "55845dc7399dc553714944b380a6136a0b8c9f2e98c49dd06d987b5c4b0c74a5",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-03-001.json",
+      "original_bytes": 50672,
+      "original_sha256": "1deaefae6cb9f9daf0a43469ce284a61286deeeb0d50376a0230b057e05898a4",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-03-001.json",
+      "retained_bytes": 50672,
+      "retained_sha256": "1deaefae6cb9f9daf0a43469ce284a61286deeeb0d50376a0230b057e05898a4",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-03-002.json",
+      "original_bytes": 22231,
+      "original_sha256": "c2d7943c3e5bbe2977e23163207d102cfae42c001ef548b6586927e255749289",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-03-002.json",
+      "retained_bytes": 22231,
+      "retained_sha256": "c2d7943c3e5bbe2977e23163207d102cfae42c001ef548b6586927e255749289",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-04-001.json",
+      "original_bytes": 47726,
+      "original_sha256": "67da3085e449661d002dcf89e3313c1ddf2ac0282ffbcf6add5a66b4e7fd32f2",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-04-001.json",
+      "retained_bytes": 47726,
+      "retained_sha256": "67da3085e449661d002dcf89e3313c1ddf2ac0282ffbcf6add5a66b4e7fd32f2",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-05-001.json",
+      "original_bytes": 8008,
+      "original_sha256": "3f3146783daaa049e971495e123b574b6f049a5c936fc645726d781c5d99ce12",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-05-001.json",
+      "retained_bytes": 8008,
+      "retained_sha256": "3f3146783daaa049e971495e123b574b6f049a5c936fc645726d781c5d99ce12",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-06-001.json",
+      "original_bytes": 33539,
+      "original_sha256": "0e52770b578e0ab74bc27b3db327f67a5f3881b941edd24ca172cd6fa16f6a67",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-06-001.json",
+      "retained_bytes": 33539,
+      "retained_sha256": "0e52770b578e0ab74bc27b3db327f67a5f3881b941edd24ca172cd6fa16f6a67",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-07-001.json",
+      "original_bytes": 39230,
+      "original_sha256": "7d4e82028960af6d43d46ae672dac2fd7f0d12ca714758fa9c88557c09b03463",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-07-001.json",
+      "retained_bytes": 39230,
+      "retained_sha256": "7d4e82028960af6d43d46ae672dac2fd7f0d12ca714758fa9c88557c09b03463",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-07-002.json",
+      "original_bytes": 5215,
+      "original_sha256": "3827d3afb4cc0ad52c5da16b50b8c29866b98e86a3da07d745eda7aebec9e43d",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-07-002.json",
+      "retained_bytes": 5215,
+      "retained_sha256": "3827d3afb4cc0ad52c5da16b50b8c29866b98e86a3da07d745eda7aebec9e43d",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-08-001.json",
+      "original_bytes": 25164,
+      "original_sha256": "05157bb0f0eace6e0e22200a760725e446acf87b50dc1d0959e72832a8abfa0c",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-08-001.json",
+      "retained_bytes": 25164,
+      "retained_sha256": "05157bb0f0eace6e0e22200a760725e446acf87b50dc1d0959e72832a8abfa0c",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-09-001.json",
+      "original_bytes": 30712,
+      "original_sha256": "24414a8ecbd0b461473658de94fbe44ff75635b814777a539abdea06b988580c",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-09-001.json",
+      "retained_bytes": 30712,
+      "retained_sha256": "24414a8ecbd0b461473658de94fbe44ff75635b814777a539abdea06b988580c",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-10-001.json",
+      "original_bytes": 27956,
+      "original_sha256": "5bbe581030615227083f0481d181ca70fa8a3901d9c821dd2f88626fbbd75aee",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-10-001.json",
+      "retained_bytes": 27956,
+      "retained_sha256": "5bbe581030615227083f0481d181ca70fa8a3901d9c821dd2f88626fbbd75aee",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-11-001.json",
+      "original_bytes": 39253,
+      "original_sha256": "3e0bf6eb38d54a1b899be0d21193d120a054d92fa314cce0251eafa350d545d5",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-11-001.json",
+      "retained_bytes": 39253,
+      "retained_sha256": "3e0bf6eb38d54a1b899be0d21193d120a054d92fa314cce0251eafa350d545d5",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-12-001.json",
+      "original_bytes": 13740,
+      "original_sha256": "b93fbf0e987c4596fb324d830aea1f665f164031a9ccfdb07f2a1e56fbcdd4f6",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-12-001.json",
+      "retained_bytes": 13740,
+      "retained_sha256": "b93fbf0e987c4596fb324d830aea1f665f164031a9ccfdb07f2a1e56fbcdd4f6",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-13-001.json",
+      "original_bytes": 47804,
+      "original_sha256": "06bb215a4e389a7f053f4a1018e781c41a95c4f0aec07c6ba0957eee6539bb33",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-13-001.json",
+      "retained_bytes": 47804,
+      "retained_sha256": "06bb215a4e389a7f053f4a1018e781c41a95c4f0aec07c6ba0957eee6539bb33",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-13-002.json",
+      "original_bytes": 22265,
+      "original_sha256": "5745b2beed61c8196cb4ad69569da6dc894964d8bdf93287883ea7fdcbc3ebad",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-13-002.json",
+      "retained_bytes": 22265,
+      "retained_sha256": "5745b2beed61c8196cb4ad69569da6dc894964d8bdf93287883ea7fdcbc3ebad",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-14-001.json",
+      "original_bytes": 50671,
+      "original_sha256": "375481614be352cc8d01d71bf8b1487b96f129dffc9ece0aa4ff1364392e24fc",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-14-001.json",
+      "retained_bytes": 50671,
+      "retained_sha256": "375481614be352cc8d01d71bf8b1487b96f129dffc9ece0aa4ff1364392e24fc",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-14-002.json",
+      "original_bytes": 10902,
+      "original_sha256": "dce43939120a65a7817aaa99de7b55b49b548ec5024c70b85893e246317f312b",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-14-002.json",
+      "retained_bytes": 10902,
+      "retained_sha256": "dce43939120a65a7817aaa99de7b55b49b548ec5024c70b85893e246317f312b",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-15-001.json",
+      "original_bytes": 36449,
+      "original_sha256": "70b5c63749a6ec37d1112e0d6c00e5f44a326a0d6e2a58474767cd76365f3859",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-15-001.json",
+      "retained_bytes": 36449,
+      "retained_sha256": "70b5c63749a6ec37d1112e0d6c00e5f44a326a0d6e2a58474767cd76365f3859",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-16-001.json",
+      "original_bytes": 44973,
+      "original_sha256": "6d38bbd4b29a75fe929982c311c4c22824b57202a517563e0cdf86e4b94b062f",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-16-001.json",
+      "retained_bytes": 44973,
+      "retained_sha256": "6d38bbd4b29a75fe929982c311c4c22824b57202a517563e0cdf86e4b94b062f",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-16-002.json",
+      "original_bytes": 10900,
+      "original_sha256": "8468c6c014dd96f89ef5b0d199cf61c071737e491625519177e3e6108461520a",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-16-002.json",
+      "retained_bytes": 10900,
+      "retained_sha256": "8468c6c014dd96f89ef5b0d199cf61c071737e491625519177e3e6108461520a",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-17-001.json",
+      "original_bytes": 25084,
+      "original_sha256": "036bb8303a97bbc505ecd9641e6434a76f29a7067ffaf28378894823fdad94dc",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-17-001.json",
+      "retained_bytes": 25084,
+      "retained_sha256": "036bb8303a97bbc505ecd9641e6434a76f29a7067ffaf28378894823fdad94dc",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-18-001.json",
+      "original_bytes": 16553,
+      "original_sha256": "5fc6158c90d866a26df08c72777b8a9f68d610d36405c8051139e8083f8eab16",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-18-001.json",
+      "retained_bytes": 16553,
+      "retained_sha256": "5fc6158c90d866a26df08c72777b8a9f68d610d36405c8051139e8083f8eab16",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-19-001.json",
+      "original_bytes": 33639,
+      "original_sha256": "00fbbdc7b0e7da1fcbf18512b47a24ad3ebaf7b54657fbcd85c1efde0ca2fc28",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-19-001.json",
+      "retained_bytes": 33639,
+      "retained_sha256": "00fbbdc7b0e7da1fcbf18512b47a24ad3ebaf7b54657fbcd85c1efde0ca2fc28",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-20-001.json",
+      "original_bytes": 19435,
+      "original_sha256": "d3c7dc81b04f6cc7e2c4bf480dfbf52001b64cc2e887117b8c7b6cbfc5028e18",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-20-001.json",
+      "retained_bytes": 19435,
+      "retained_sha256": "d3c7dc81b04f6cc7e2c4bf480dfbf52001b64cc2e887117b8c7b6cbfc5028e18",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-21-001.json",
+      "original_bytes": 42128,
+      "original_sha256": "725dc9f403eee9a48240c8c866fab58a48f8e14503bc4c304ecd888b130f0212",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-21-001.json",
+      "retained_bytes": 42128,
+      "retained_sha256": "725dc9f403eee9a48240c8c866fab58a48f8e14503bc4c304ecd888b130f0212",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-22-001.json",
+      "original_bytes": 47890,
+      "original_sha256": "7ff54d6a290a8843879d6de1dfcd219bcdb55129260b8dfb79b220279b7b1449",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-22-001.json",
+      "retained_bytes": 47890,
+      "retained_sha256": "7ff54d6a290a8843879d6de1dfcd219bcdb55129260b8dfb79b220279b7b1449",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-22-002.json",
+      "original_bytes": 5223,
+      "original_sha256": "5b6f0fd8c4661c6772a89f1f2d8f6b8511fa7a1413a66bccdef2f934c6cbc8e6",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-22-002.json",
+      "retained_bytes": 5223,
+      "retained_sha256": "5b6f0fd8c4661c6772a89f1f2d8f6b8511fa7a1413a66bccdef2f934c6cbc8e6",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-23-001.json",
+      "original_bytes": 25065,
+      "original_sha256": "cfaa7cf8d43036e08f4415f573b39de61658b757eef1fc85facaca5d4022f68b",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-23-001.json",
+      "retained_bytes": 25065,
+      "retained_sha256": "cfaa7cf8d43036e08f4415f573b39de61658b757eef1fc85facaca5d4022f68b",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/01-short-number-skips/volume-24-001.json",
+      "original_bytes": 19408,
+      "original_sha256": "5e2ed3e9a03ff013c39d4623ec8a692474601982f402fd3c149ba6a6572973bd",
+      "retained_archive_member": "held_coverage_audit/next-batches/01-short-number-skips/volume-24-001.json",
+      "retained_bytes": 19408,
+      "retained_sha256": "5e2ed3e9a03ff013c39d4623ec8a692474601982f402fd3c149ba6a6572973bd",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/appendix-01-001.json",
+      "original_bytes": 5218,
+      "original_sha256": "776715cfae8d906f55824c04f39efd3ea8892620869abd24bfbc44e150ae70a4",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/appendix-01-001.json",
+      "retained_bytes": 5218,
+      "retained_sha256": "776715cfae8d906f55824c04f39efd3ea8892620869abd24bfbc44e150ae70a4",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-01-001.json",
+      "original_bytes": 8052,
+      "original_sha256": "6e61c434d556286481256ea9a14641f56c05a48db55827f2077729b518684292",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-01-001.json",
+      "retained_bytes": 8052,
+      "retained_sha256": "6e61c434d556286481256ea9a14641f56c05a48db55827f2077729b518684292",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-02-001.json",
+      "original_bytes": 16661,
+      "original_sha256": "8096578139cfa2fd22f68de42160117425d1dfb87f85e1b3ab9c9b859e39a70e",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-02-001.json",
+      "retained_bytes": 16661,
+      "retained_sha256": "8096578139cfa2fd22f68de42160117425d1dfb87f85e1b3ab9c9b859e39a70e",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-03-001.json",
+      "original_bytes": 19496,
+      "original_sha256": "8f59cc3c8fe34aa8280776e040765dbf1ba61d00297b360b9f052a637ab101dd",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-03-001.json",
+      "retained_bytes": 19496,
+      "retained_sha256": "8f59cc3c8fe34aa8280776e040765dbf1ba61d00297b360b9f052a637ab101dd",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-04-001.json",
+      "original_bytes": 16620,
+      "original_sha256": "7f329e54663566aa72248a67ed3e5c3b0b7f802e5387bf40231454236ac70e8c",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-04-001.json",
+      "retained_bytes": 16620,
+      "retained_sha256": "7f329e54663566aa72248a67ed3e5c3b0b7f802e5387bf40231454236ac70e8c",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-05-001.json",
+      "original_bytes": 10915,
+      "original_sha256": "6b080c31608446929e26ca80c428250568c370350351cc9f39c02ef518d81a91",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-05-001.json",
+      "retained_bytes": 10915,
+      "retained_sha256": "6b080c31608446929e26ca80c428250568c370350351cc9f39c02ef518d81a91",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-06-001.json",
+      "original_bytes": 8058,
+      "original_sha256": "f08968db545238f083987b479b074db4c8b3b77f34eb7ae3bec6eec4b305b65e",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-06-001.json",
+      "retained_bytes": 8058,
+      "retained_sha256": "f08968db545238f083987b479b074db4c8b3b77f34eb7ae3bec6eec4b305b65e",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-07-001.json",
+      "original_bytes": 10877,
+      "original_sha256": "07fec6bba2a642b66187f64b1e7244751bfdf5df7c0cce5fd3eff49251fe55e3",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-07-001.json",
+      "retained_bytes": 10877,
+      "retained_sha256": "07fec6bba2a642b66187f64b1e7244751bfdf5df7c0cce5fd3eff49251fe55e3",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-08-001.json",
+      "original_bytes": 10937,
+      "original_sha256": "a9c5bea697e66d8bd20013fef92f94ad9e1f2e1e336a027f1af5cafc4f7eb7a3",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-08-001.json",
+      "retained_bytes": 10937,
+      "retained_sha256": "a9c5bea697e66d8bd20013fef92f94ad9e1f2e1e336a027f1af5cafc4f7eb7a3",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-09-001.json",
+      "original_bytes": 5205,
+      "original_sha256": "072419981bb53f2773aa127b20ad95dfed48160ddd28aca5a962ec1e1a8a67dd",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-09-001.json",
+      "retained_bytes": 5205,
+      "retained_sha256": "072419981bb53f2773aa127b20ad95dfed48160ddd28aca5a962ec1e1a8a67dd",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-10-001.json",
+      "original_bytes": 5214,
+      "original_sha256": "adce40212491d90d214a2a0b9cbd1a30926b6d147ddc26e9d877b51d2b422e0b",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-10-001.json",
+      "retained_bytes": 5214,
+      "retained_sha256": "adce40212491d90d214a2a0b9cbd1a30926b6d147ddc26e9d877b51d2b422e0b",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-11-001.json",
+      "original_bytes": 8060,
+      "original_sha256": "677c60a968cc0c5334e8743dceb9a6cca3e92335e4e028b4ec888577655d736f",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-11-001.json",
+      "retained_bytes": 8060,
+      "retained_sha256": "677c60a968cc0c5334e8743dceb9a6cca3e92335e4e028b4ec888577655d736f",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-12-001.json",
+      "original_bytes": 13773,
+      "original_sha256": "f7e4493e06bd14c17f45931906193d5375b46b438abf23817c8916feb07c0103",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-12-001.json",
+      "retained_bytes": 13773,
+      "retained_sha256": "f7e4493e06bd14c17f45931906193d5375b46b438abf23817c8916feb07c0103",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-13-001.json",
+      "original_bytes": 13752,
+      "original_sha256": "17609a6468815e2f3f4cdf65bb6807a16e5b83912a3b55720fd4b8efac72f1da",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-13-001.json",
+      "retained_bytes": 13752,
+      "retained_sha256": "17609a6468815e2f3f4cdf65bb6807a16e5b83912a3b55720fd4b8efac72f1da",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-14-001.json",
+      "original_bytes": 28016,
+      "original_sha256": "09a853603fab6ca4aa3bc885e8dc3df27262a694d1d976cf03483fd74c19f6ff",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-14-001.json",
+      "retained_bytes": 28016,
+      "retained_sha256": "09a853603fab6ca4aa3bc885e8dc3df27262a694d1d976cf03483fd74c19f6ff",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-15-001.json",
+      "original_bytes": 22325,
+      "original_sha256": "63df53d900507f9f493db269c337f6f3abc507d3ea26e4059a2552fc8f791358",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-15-001.json",
+      "retained_bytes": 22325,
+      "retained_sha256": "63df53d900507f9f493db269c337f6f3abc507d3ea26e4059a2552fc8f791358",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-16-001.json",
+      "original_bytes": 10913,
+      "original_sha256": "4e6d4742acca5ef988463bf64e1bd32afb2b468d9e42ab1dec6159611da34705",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-16-001.json",
+      "retained_bytes": 10913,
+      "retained_sha256": "4e6d4742acca5ef988463bf64e1bd32afb2b468d9e42ab1dec6159611da34705",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-17-001.json",
+      "original_bytes": 13742,
+      "original_sha256": "9727a16ec622304006af458d3d691d066512cee552150e27c0d938da5bf2643f",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-17-001.json",
+      "retained_bytes": 13742,
+      "retained_sha256": "9727a16ec622304006af458d3d691d066512cee552150e27c0d938da5bf2643f",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-19-001.json",
+      "original_bytes": 10911,
+      "original_sha256": "b858c2a9b644de85073b18805cf474fcabe9a3357ee90f06cfeeb34152848fc4",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-19-001.json",
+      "retained_bytes": 10911,
+      "retained_sha256": "b858c2a9b644de85073b18805cf474fcabe9a3357ee90f06cfeeb34152848fc4",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-20-001.json",
+      "original_bytes": 8095,
+      "original_sha256": "c7bd86b046bcd9a2df6a7a4a886132f89a30e06a9d3d78ec42682b369322f2b7",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-20-001.json",
+      "retained_bytes": 8095,
+      "retained_sha256": "c7bd86b046bcd9a2df6a7a4a886132f89a30e06a9d3d78ec42682b369322f2b7",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-21-001.json",
+      "original_bytes": 13771,
+      "original_sha256": "d503f9ed943f61e84744941b4eac19adcfb31459b00a164ac2507e7cfa425a4a",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-21-001.json",
+      "retained_bytes": 13771,
+      "retained_sha256": "d503f9ed943f61e84744941b4eac19adcfb31459b00a164ac2507e7cfa425a4a",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-22-001.json",
+      "original_bytes": 8092,
+      "original_sha256": "a4b10e2ddd7fb9f04ca1fcb02c947d314c4b966bd618076b50de3ab7429c6921",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-22-001.json",
+      "retained_bytes": 8092,
+      "retained_sha256": "a4b10e2ddd7fb9f04ca1fcb02c947d314c4b966bd618076b50de3ab7429c6921",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-23-001.json",
+      "original_bytes": 10898,
+      "original_sha256": "f2eec9d884f04e9aa0712619085f9f3edb1180900c9fec7bda3056eb76d3c765",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-23-001.json",
+      "retained_bytes": 10898,
+      "retained_sha256": "f2eec9d884f04e9aa0712619085f9f3edb1180900c9fec7bda3056eb76d3c765",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-24-001.json",
+      "original_bytes": 19467,
+      "original_sha256": "dbabec21f11e8e4ed2ff466d2959eb7c8f783eb6ec1e7f0375ed8c295303bccf",
+      "retained_archive_member": "held_coverage_audit/next-batches/02-short-sequence-resets-or-final-extents/volume-24-001.json",
+      "retained_bytes": 19467,
+      "retained_sha256": "dbabec21f11e8e4ed2ff466d2959eb7c8f783eb6ec1e7f0375ed8c295303bccf",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/appendix-01-001.json",
+      "original_bytes": 29829,
+      "original_sha256": "a2b93fa48b9e97df658c252cd782332176761b2bdeeba9bd621c2e210214c1ea",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/appendix-01-001.json",
+      "retained_bytes": 29829,
+      "retained_sha256": "a2b93fa48b9e97df658c252cd782332176761b2bdeeba9bd621c2e210214c1ea",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-01-001.json",
+      "original_bytes": 50778,
+      "original_sha256": "3f18881c6d972919ed797a87755e30c65247e7782886c2a8df74d8f5dd93d696",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-01-001.json",
+      "retained_bytes": 50778,
+      "retained_sha256": "3f18881c6d972919ed797a87755e30c65247e7782886c2a8df74d8f5dd93d696",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-02-001.json",
+      "original_bytes": 66513,
+      "original_sha256": "1de93904840aab06e0f38d499843c26afdbd009ded12982848e76dc2aa96b359",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-02-001.json",
+      "retained_bytes": 66513,
+      "retained_sha256": "1de93904840aab06e0f38d499843c26afdbd009ded12982848e76dc2aa96b359",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-02-002.json",
+      "original_bytes": 35512,
+      "original_sha256": "c5b929a48118308b445ef9a84b6926c26877ec6ec85b7ad06991091547572d1c",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-02-002.json",
+      "retained_bytes": 35512,
+      "retained_sha256": "c5b929a48118308b445ef9a84b6926c26877ec6ec85b7ad06991091547572d1c",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-03-001.json",
+      "original_bytes": 67392,
+      "original_sha256": "c00089cb3c40a1b433527c3442700abb4f85ac816920a5ca0b95281dcb85bb5c",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-03-001.json",
+      "retained_bytes": 67392,
+      "retained_sha256": "c00089cb3c40a1b433527c3442700abb4f85ac816920a5ca0b95281dcb85bb5c",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-03-002.json",
+      "original_bytes": 68854,
+      "original_sha256": "eabab86b206477d666bb9cab0686810c1a0d2376a9ace31aea14443d163e10ce",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-03-002.json",
+      "retained_bytes": 68854,
+      "retained_sha256": "eabab86b206477d666bb9cab0686810c1a0d2376a9ace31aea14443d163e10ce",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-03-003.json",
+      "original_bytes": 11908,
+      "original_sha256": "0ef83b9f852f7a38a804fbef0aee98b7be088fc3056c4fd1b1cb99b0084b777b",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-03-003.json",
+      "retained_bytes": 11908,
+      "retained_sha256": "0ef83b9f852f7a38a804fbef0aee98b7be088fc3056c4fd1b1cb99b0084b777b",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-04-001.json",
+      "original_bytes": 11906,
+      "original_sha256": "dbef6837d09078e5840bb84950ac1ea8b97bc9c0a44edc15cc8e972fc49ad51e",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-04-001.json",
+      "retained_bytes": 11906,
+      "retained_sha256": "dbef6837d09078e5840bb84950ac1ea8b97bc9c0a44edc15cc8e972fc49ad51e",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-05-001.json",
+      "original_bytes": 18124,
+      "original_sha256": "1cdee6b9a4a46b1aea94be7616faa658eda137345922e3fa4b1c0eee6a85a801",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-05-001.json",
+      "retained_bytes": 18124,
+      "retained_sha256": "1cdee6b9a4a46b1aea94be7616faa658eda137345922e3fa4b1c0eee6a85a801",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-06-001.json",
+      "original_bytes": 21551,
+      "original_sha256": "3940e3808cfc4eff3abd70ff593eb3a24d37b0af3ed79a6c018a1919eaafda6e",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-06-001.json",
+      "retained_bytes": 21551,
+      "retained_sha256": "3940e3808cfc4eff3abd70ff593eb3a24d37b0af3ed79a6c018a1919eaafda6e",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-07-001.json",
+      "original_bytes": 31125,
+      "original_sha256": "9467e99e299a150a12fb701509ebb29dfb8557f7f2819d8385b53dc65f7d8c84",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-07-001.json",
+      "retained_bytes": 31125,
+      "retained_sha256": "9467e99e299a150a12fb701509ebb29dfb8557f7f2819d8385b53dc65f7d8c84",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-08-001.json",
+      "original_bytes": 65469,
+      "original_sha256": "9274c2c5b3dd12d09e6a2f95e9b19c32636ccd053958a66382be278167ccae95",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-08-001.json",
+      "retained_bytes": 65469,
+      "retained_sha256": "9274c2c5b3dd12d09e6a2f95e9b19c32636ccd053958a66382be278167ccae95",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-08-002.json",
+      "original_bytes": 28625,
+      "original_sha256": "6d4b868ff5d92f6cfddc69b7147b999151a35028f78469909e9e54a90b094342",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-08-002.json",
+      "retained_bytes": 28625,
+      "retained_sha256": "6d4b868ff5d92f6cfddc69b7147b999151a35028f78469909e9e54a90b094342",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-09-001.json",
+      "original_bytes": 53987,
+      "original_sha256": "355b3c959461bffea8ad7ef6ce26fb0bdfbf0ae7a06f7088e4bbcd37e122df22",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-09-001.json",
+      "retained_bytes": 53987,
+      "retained_sha256": "355b3c959461bffea8ad7ef6ce26fb0bdfbf0ae7a06f7088e4bbcd37e122df22",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-10-001.json",
+      "original_bytes": 68413,
+      "original_sha256": "47f99d3a921c8da8614ec49000a9e85398b99f9d7b0daac2f20f0fcbe49dc596",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-10-001.json",
+      "retained_bytes": 68413,
+      "retained_sha256": "47f99d3a921c8da8614ec49000a9e85398b99f9d7b0daac2f20f0fcbe49dc596",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-10-002.json",
+      "original_bytes": 25118,
+      "original_sha256": "f335048c1888740dbf1920b78ed94baaa406dae60a314e9e739714d06e926c0c",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-10-002.json",
+      "retained_bytes": 25118,
+      "retained_sha256": "f335048c1888740dbf1920b78ed94baaa406dae60a314e9e739714d06e926c0c",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-11-001.json",
+      "original_bytes": 55345,
+      "original_sha256": "d121fbe2553c3c55c4cee104db3982ec07124e7bd50ad317efd7fdbcec511357",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-11-001.json",
+      "retained_bytes": 55345,
+      "retained_sha256": "d121fbe2553c3c55c4cee104db3982ec07124e7bd50ad317efd7fdbcec511357",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-12-001.json",
+      "original_bytes": 69698,
+      "original_sha256": "b2b839d4258ea3c50b9e1b8431749d9320dcc002d3395a63f79ac6e18a863afb",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-12-001.json",
+      "retained_bytes": 69698,
+      "retained_sha256": "b2b839d4258ea3c50b9e1b8431749d9320dcc002d3395a63f79ac6e18a863afb",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-12-002.json",
+      "original_bytes": 43186,
+      "original_sha256": "df7026a55ae827055e2a3e59b34e91fa18a00bfb0cbc989ed254bfe6d467359e",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-12-002.json",
+      "retained_bytes": 43186,
+      "retained_sha256": "df7026a55ae827055e2a3e59b34e91fa18a00bfb0cbc989ed254bfe6d467359e",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-13-001.json",
+      "original_bytes": 47439,
+      "original_sha256": "f9e50e954c7db17e15f5637cc4fb8f9d2838983f4eb914cb220c4757b138ba2d",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-13-001.json",
+      "retained_bytes": 47439,
+      "retained_sha256": "f9e50e954c7db17e15f5637cc4fb8f9d2838983f4eb914cb220c4757b138ba2d",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-14-001.json",
+      "original_bytes": 65543,
+      "original_sha256": "b1b40d1f9d9b3cf3980c0b0fcab34fae4bec849281ab1a3fbf33bc1dedeefc5b",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-14-001.json",
+      "retained_bytes": 65543,
+      "retained_sha256": "b1b40d1f9d9b3cf3980c0b0fcab34fae4bec849281ab1a3fbf33bc1dedeefc5b",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-15-001.json",
+      "original_bytes": 69039,
+      "original_sha256": "e002e24d39531444d69e3c11d5c8ac5d54d674508cac0492188f7fff94bfe923",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-15-001.json",
+      "retained_bytes": 69039,
+      "retained_sha256": "e002e24d39531444d69e3c11d5c8ac5d54d674508cac0492188f7fff94bfe923",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-15-002.json",
+      "original_bytes": 25086,
+      "original_sha256": "41cabec0391e9e6cec19aabb1167b843514d1a2fdcc4883762912a4064565fb0",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-15-002.json",
+      "retained_bytes": 25086,
+      "retained_sha256": "41cabec0391e9e6cec19aabb1167b843514d1a2fdcc4883762912a4064565fb0",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-16-001.json",
+      "original_bytes": 67682,
+      "original_sha256": "c8a3f73cc163ab83374ae4b31df658526140b7f0b45d457b735ad762fe78f3da",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-16-001.json",
+      "retained_bytes": 67682,
+      "retained_sha256": "c8a3f73cc163ab83374ae4b31df658526140b7f0b45d457b735ad762fe78f3da",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-16-002.json",
+      "original_bytes": 69285,
+      "original_sha256": "46aa575ce6aaa9f4ee2e0eb49b95d0ac218688ab6bb28285c34780d062f3bbf7",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-16-002.json",
+      "retained_bytes": 69285,
+      "retained_sha256": "46aa575ce6aaa9f4ee2e0eb49b95d0ac218688ab6bb28285c34780d062f3bbf7",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-16-003.json",
+      "original_bytes": 68562,
+      "original_sha256": "f86722d07eb3529c8c11ff4cdf8aa6a4ad26885fdd26c1dc392b4d1b8c58b33b",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-16-003.json",
+      "retained_bytes": 68562,
+      "retained_sha256": "f86722d07eb3529c8c11ff4cdf8aa6a4ad26885fdd26c1dc392b4d1b8c58b33b",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-17-001.json",
+      "original_bytes": 69819,
+      "original_sha256": "b4ced2be83760147adad37eee0d697e977fd7bd2f3f83de682674a430e9c53cc",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-17-001.json",
+      "retained_bytes": 69819,
+      "retained_sha256": "b4ced2be83760147adad37eee0d697e977fd7bd2f3f83de682674a430e9c53cc",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-17-002.json",
+      "original_bytes": 68658,
+      "original_sha256": "4a1948cbc74bcf49dab884b4e60630641bb5acb48919169990b5a7095b160ce2",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-17-002.json",
+      "retained_bytes": 68658,
+      "retained_sha256": "4a1948cbc74bcf49dab884b4e60630641bb5acb48919169990b5a7095b160ce2",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-17-003.json",
+      "original_bytes": 69268,
+      "original_sha256": "4f74ddcadff8f212dbac542171c142f3c89748c19ff98e52aa010f597a1f2982",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-17-003.json",
+      "retained_bytes": 69268,
+      "retained_sha256": "4f74ddcadff8f212dbac542171c142f3c89748c19ff98e52aa010f597a1f2982",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-17-004.json",
+      "original_bytes": 5575,
+      "original_sha256": "7efdb9f0566741734e0549a47ad4b8cc8ad0da502a905dde5629b965046ef94f",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-17-004.json",
+      "retained_bytes": 5575,
+      "retained_sha256": "7efdb9f0566741734e0549a47ad4b8cc8ad0da502a905dde5629b965046ef94f",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-18-001.json",
+      "original_bytes": 68637,
+      "original_sha256": "12a39129ae258950005df5b0e9faa1fe9b77ab9703ae24b8047efccad6345205",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-18-001.json",
+      "retained_bytes": 68637,
+      "retained_sha256": "12a39129ae258950005df5b0e9faa1fe9b77ab9703ae24b8047efccad6345205",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-18-002.json",
+      "original_bytes": 5594,
+      "original_sha256": "20d26a7745cb852df724f42ae37a21f361aee503458ab1853757269040fc25ca",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-18-002.json",
+      "retained_bytes": 5594,
+      "retained_sha256": "20d26a7745cb852df724f42ae37a21f361aee503458ab1853757269040fc25ca",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-19-001.json",
+      "original_bytes": 44785,
+      "original_sha256": "7ca7f7ce34ae129b97c057781991e1b853a7926d86abd62d88731e037d9b50ab",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-19-001.json",
+      "retained_bytes": 44785,
+      "retained_sha256": "7ca7f7ce34ae129b97c057781991e1b853a7926d86abd62d88731e037d9b50ab",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-20-001.json",
+      "original_bytes": 68285,
+      "original_sha256": "6a27ecce2bad8fbc2804d7568d948efa13334894c7b0ea72fd6e44f8d878c0ff",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-20-001.json",
+      "retained_bytes": 68285,
+      "retained_sha256": "6a27ecce2bad8fbc2804d7568d948efa13334894c7b0ea72fd6e44f8d878c0ff",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-21-001.json",
+      "original_bytes": 38421,
+      "original_sha256": "aefca7e2c11cf4b20fb5b1c8aa21b0878a2d6193a0f77a0d6ab6312aad0adf68",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-21-001.json",
+      "retained_bytes": 38421,
+      "retained_sha256": "aefca7e2c11cf4b20fb5b1c8aa21b0878a2d6193a0f77a0d6ab6312aad0adf68",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-22-001.json",
+      "original_bytes": 34762,
+      "original_sha256": "8848bf611458901d1445e54268152738a555f8c8a1e0dacdee0cc99625f0329c",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-22-001.json",
+      "retained_bytes": 34762,
+      "retained_sha256": "8848bf611458901d1445e54268152738a555f8c8a1e0dacdee0cc99625f0329c",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-23-001.json",
+      "original_bytes": 12047,
+      "original_sha256": "50ed5f39dd90b8af863ab99cb5b57bd6c910d4d903e3e08946e03f8e9a2636eb",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-23-001.json",
+      "retained_bytes": 12047,
+      "retained_sha256": "50ed5f39dd90b8af863ab99cb5b57bd6c910d4d903e3e08946e03f8e9a2636eb",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/03-short-geometry-only/volume-24-001.json",
+      "original_bytes": 8661,
+      "original_sha256": "31fa2ce0c0151e53465729458e0584ca51e5c9fc3e5c505d0474b54ec87f3f60",
+      "retained_archive_member": "held_coverage_audit/next-batches/03-short-geometry-only/volume-24-001.json",
+      "retained_bytes": 8661,
+      "retained_sha256": "31fa2ce0c0151e53465729458e0584ca51e5c9fc3e5c505d0474b54ec87f3f60",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/appendix-01-001.json",
+      "original_bytes": 41056,
+      "original_sha256": "c408a87a8a5f6a6ef8b74d009823b714cddb54587aa4c8f25a13838d5a65ee51",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/appendix-01-001.json",
+      "retained_bytes": 41056,
+      "retained_sha256": "c408a87a8a5f6a6ef8b74d009823b714cddb54587aa4c8f25a13838d5a65ee51",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-01-001.json",
+      "original_bytes": 19115,
+      "original_sha256": "e9d4b35736e4d2af85c0ac7c74f42072d0983012b8d7fbf82c23022f5c243856",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-01-001.json",
+      "retained_bytes": 19115,
+      "retained_sha256": "e9d4b35736e4d2af85c0ac7c74f42072d0983012b8d7fbf82c23022f5c243856",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-02-001.json",
+      "original_bytes": 54879,
+      "original_sha256": "454404e1d1e5438ecdb138293367ddc36ac240c3f854bb514e8424bfb5182eb2",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-02-001.json",
+      "retained_bytes": 54879,
+      "retained_sha256": "454404e1d1e5438ecdb138293367ddc36ac240c3f854bb514e8424bfb5182eb2",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-03-001.json",
+      "original_bytes": 52198,
+      "original_sha256": "5d728f3fad2b1db2b11a870442208c463313d854fc03544b7a47004ea124c84c",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-03-001.json",
+      "retained_bytes": 52198,
+      "retained_sha256": "5d728f3fad2b1db2b11a870442208c463313d854fc03544b7a47004ea124c84c",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-04-001.json",
+      "original_bytes": 8729,
+      "original_sha256": "5facef92fb41b2f8fce5efdbab465c2879ef6cf31b4ead7ce29c377447838194",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-04-001.json",
+      "retained_bytes": 8729,
+      "retained_sha256": "5facef92fb41b2f8fce5efdbab465c2879ef6cf31b4ead7ce29c377447838194",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-05-001.json",
+      "original_bytes": 5553,
+      "original_sha256": "a697b6a553c5c0fc3b523c227f28a530d3a62f6ed88045d2c2c846e0ae936bda",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-05-001.json",
+      "retained_bytes": 5553,
+      "retained_sha256": "a697b6a553c5c0fc3b523c227f28a530d3a62f6ed88045d2c2c846e0ae936bda",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-06-001.json",
+      "original_bytes": 5557,
+      "original_sha256": "3c02f017bb61aa76ed22b9c890de2e46053fde49b7f9493d2fad421d70af769b",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-06-001.json",
+      "retained_bytes": 5557,
+      "retained_sha256": "3c02f017bb61aa76ed22b9c890de2e46053fde49b7f9493d2fad421d70af769b",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-07-001.json",
+      "original_bytes": 8845,
+      "original_sha256": "4ded590586dabb1793725699c5b47ac96f358ad475baf71381d9f6e577dc9b9b",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-07-001.json",
+      "retained_bytes": 8845,
+      "retained_sha256": "4ded590586dabb1793725699c5b47ac96f358ad475baf71381d9f6e577dc9b9b",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-08-001.json",
+      "original_bytes": 8981,
+      "original_sha256": "0e75e2115bf0c6c1d17b9b019c852f6a2b6c9fd8010681e589fd471ce97f05b4",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-08-001.json",
+      "retained_bytes": 8981,
+      "retained_sha256": "0e75e2115bf0c6c1d17b9b019c852f6a2b6c9fd8010681e589fd471ce97f05b4",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-09-001.json",
+      "original_bytes": 5699,
+      "original_sha256": "329825b51fc79952986acc32ee6065b79e6cc2ad9046a817cd0366a1032b9a3e",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-09-001.json",
+      "retained_bytes": 5699,
+      "retained_sha256": "329825b51fc79952986acc32ee6065b79e6cc2ad9046a817cd0366a1032b9a3e",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-10-001.json",
+      "original_bytes": 9338,
+      "original_sha256": "f4c18bfe322659438a23204a27042dc0aacb130e88d7642a45a3695ad0f5244a",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-10-001.json",
+      "retained_bytes": 9338,
+      "retained_sha256": "f4c18bfe322659438a23204a27042dc0aacb130e88d7642a45a3695ad0f5244a",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-11-001.json",
+      "original_bytes": 16313,
+      "original_sha256": "cff5b0d9d19e74a749f21ecf18623d41a8e5d792a394ea48784e155f9f96402b",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-11-001.json",
+      "retained_bytes": 16313,
+      "retained_sha256": "cff5b0d9d19e74a749f21ecf18623d41a8e5d792a394ea48784e155f9f96402b",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-12-001.json",
+      "original_bytes": 30423,
+      "original_sha256": "9222f0cc79043661d3e0887607eceef3cf5f131b0e7b73f986632d9d46455ba6",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-12-001.json",
+      "retained_bytes": 30423,
+      "retained_sha256": "9222f0cc79043661d3e0887607eceef3cf5f131b0e7b73f986632d9d46455ba6",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-13-001.json",
+      "original_bytes": 8768,
+      "original_sha256": "7563edc5b8941c17d9bf60ccc5a0e247987cc8ab9067e6a93818e85422178c69",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-13-001.json",
+      "retained_bytes": 8768,
+      "retained_sha256": "7563edc5b8941c17d9bf60ccc5a0e247987cc8ab9067e6a93818e85422178c69",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-14-001.json",
+      "original_bytes": 29028,
+      "original_sha256": "ab190ccdac0974a18418f5cfac99fb11b618d4f1895188798be4b13b4e07a152",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-14-001.json",
+      "retained_bytes": 29028,
+      "retained_sha256": "ab190ccdac0974a18418f5cfac99fb11b618d4f1895188798be4b13b4e07a152",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-15-001.json",
+      "original_bytes": 16193,
+      "original_sha256": "df52832e2f3850ad74f954666e636e842a9c7190b9184d485b77bb69501d0fe1",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-15-001.json",
+      "retained_bytes": 16193,
+      "retained_sha256": "df52832e2f3850ad74f954666e636e842a9c7190b9184d485b77bb69501d0fe1",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-16-001.json",
+      "original_bytes": 40584,
+      "original_sha256": "45723a7e6ee59db44d6dfb77b45a5570bc9903aee1216dcea44fd72e55753f9d",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-16-001.json",
+      "retained_bytes": 40584,
+      "retained_sha256": "45723a7e6ee59db44d6dfb77b45a5570bc9903aee1216dcea44fd72e55753f9d",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-17-001.json",
+      "original_bytes": 34033,
+      "original_sha256": "9168040333b3db97d00e14c6faf28dd566ff4d88f6fb2f002e5c0022fa41485a",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-17-001.json",
+      "retained_bytes": 34033,
+      "retained_sha256": "9168040333b3db97d00e14c6faf28dd566ff4d88f6fb2f002e5c0022fa41485a",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-18-001.json",
+      "original_bytes": 13068,
+      "original_sha256": "04767228e5fd65a43492fbe67d4bda41213fd7f3450f33e56dec84b7a3c024f9",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-18-001.json",
+      "retained_bytes": 13068,
+      "retained_sha256": "04767228e5fd65a43492fbe67d4bda41213fd7f3450f33e56dec84b7a3c024f9",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-19-001.json",
+      "original_bytes": 5558,
+      "original_sha256": "63e0d7dbdcdcccdcb5ed08b91a9a3f78409640b00125ebf484b71238c7e26f7e",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-19-001.json",
+      "retained_bytes": 5558,
+      "retained_sha256": "63e0d7dbdcdcccdcb5ed08b91a9a3f78409640b00125ebf484b71238c7e26f7e",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-20-001.json",
+      "original_bytes": 16062,
+      "original_sha256": "86794c2548d3c07b78c5577c792531ee859e1341e031aa71429ca131c3f63796",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-20-001.json",
+      "retained_bytes": 16062,
+      "retained_sha256": "86794c2548d3c07b78c5577c792531ee859e1341e031aa71429ca131c3f63796",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-21-001.json",
+      "original_bytes": 15308,
+      "original_sha256": "518635eb5483fd58c5b74927cd23cb8e957da7c8d2c8cd317a9bef60d7f98a9c",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-21-001.json",
+      "retained_bytes": 15308,
+      "retained_sha256": "518635eb5483fd58c5b74927cd23cb8e957da7c8d2c8cd317a9bef60d7f98a9c",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-22-001.json",
+      "original_bytes": 15591,
+      "original_sha256": "c90aaa0019ebf93959c9999103facc32e3ff992e6424d3cf7122245146509200",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-22-001.json",
+      "retained_bytes": 15591,
+      "retained_sha256": "c90aaa0019ebf93959c9999103facc32e3ff992e6424d3cf7122245146509200",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-23-001.json",
+      "original_bytes": 5707,
+      "original_sha256": "85a1996f5001bd0d5389c9345e996a740de607fd8b508d006fdb74edb8cf1b4e",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-23-001.json",
+      "retained_bytes": 5707,
+      "retained_sha256": "85a1996f5001bd0d5389c9345e996a740de607fd8b508d006fdb74edb8cf1b4e",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-24-001.json",
+      "original_bytes": 5530,
+      "original_sha256": "e04668dfe23496ba7c20c18981c2cb3e05d9a203557f6a0f598678a081f968c7",
+      "retained_archive_member": "held_coverage_audit/next-batches/04-short-geometry-and-number-skips/volume-24-001.json",
+      "retained_bytes": 5530,
+      "retained_sha256": "e04668dfe23496ba7c20c18981c2cb3e05d9a203557f6a0f598678a081f968c7",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/next-batches/index.json",
+      "original_bytes": 226390,
+      "original_sha256": "457efe15176227dc39073a93267ef6d29536d4c2be3eb5be0981b431c1b7d7f3",
+      "retained_archive_member": "held_coverage_audit/next-batches/index.json",
+      "retained_bytes": 222276,
+      "retained_sha256": "624232f784172035284db57097ea6a88ce450e4f7ad91a5c843b96886a89019a",
+      "redaction_records": 121,
+      "retained_byte_identical_to_original": false
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/number-gap-index.json",
+      "original_bytes": 2225089,
+      "original_sha256": "22cb80d94f30ae184dc086c37cb298076cd41f38e9425f1344a9204660ef5f57",
+      "retained_archive_member": "held_coverage_audit/number-gap-index.json",
+      "retained_bytes": 2225089,
+      "retained_sha256": "22cb80d94f30ae184dc086c37cb298076cd41f38e9425f1344a9204660ef5f57",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/remaining-barriers.json",
+      "original_bytes": 2532229,
+      "original_sha256": "f3022b310f0ff1bf074d2adf84de592ee08cb3be895a0eb6c3188b94dbc71a9b",
+      "retained_archive_member": "held_coverage_audit/remaining-barriers.json",
+      "retained_bytes": 2532195,
+      "retained_sha256": "cb3a3cbc72c6a4e73396332439e9740b66cc6f875b999c6f153233b6ac6f341c",
+      "redaction_records": 1,
+      "retained_byte_identical_to_original": false
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/report.md",
+      "original_bytes": 6951,
+      "original_sha256": "3c0731d2d19a53562b0434f3cd15ac78ab7c11bb9d7e41e3577c8db03e68f95b",
+      "retained_archive_member": "held_coverage_audit/report.md",
+      "retained_bytes": 6951,
+      "retained_sha256": "3c0731d2d19a53562b0434f3cd15ac78ab7c11bb9d7e41e3577c8db03e68f95b",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/reviewed-dispositions.json",
+      "original_bytes": 89129,
+      "original_sha256": "206cd97063391c689de1d5bd563e5b8ed2be39dd9f87314004c9e2a191844486",
+      "retained_archive_member": "held_coverage_audit/reviewed-dispositions.json",
+      "retained_bytes": 89129,
+      "retained_sha256": "206cd97063391c689de1d5bd563e5b8ed2be39dd9f87314004c9e2a191844486",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/reviewed-hold-evidence.json",
+      "original_bytes": 1237892,
+      "original_sha256": "c53ed997d16a02f4d30b5cfd3e96a893847d7909d5e5d750934b2a418c45d109",
+      "retained_archive_member": "held_coverage_audit/reviewed-hold-evidence.json",
+      "retained_bytes": 1237892,
+      "retained_sha256": "c53ed997d16a02f4d30b5cfd3e96a893847d7909d5e5d750934b2a418c45d109",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/snapshots/baseline-head-catalog.json",
+      "original_bytes": 15090777,
+      "original_sha256": "06501bdccbc7d81b54c9e5de3d4e13621cecd561ff70302a47dd4d5f7904d4e0",
+      "retained_archive_member": "held_coverage_audit/snapshots/baseline-head-catalog.json",
+      "retained_bytes": 15075205,
+      "retained_sha256": "fca67b5407da1308091afe236415be2c5bdec2fe03e2a6b2780ecda9f3250e32",
+      "redaction_records": 320,
+      "retained_byte_identical_to_original": false
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/snapshots/current-catalog.json",
+      "original_bytes": 17264058,
+      "original_sha256": "46ffe7d1d26f04375643814717bc86538c52868471f10416b6d13c90733500ca",
+      "retained_archive_member": "held_coverage_audit/snapshots/current-catalog.json",
+      "retained_bytes": 17263886,
+      "retained_sha256": "9444ce1ce34ec52773ca8ffa167cecef7d820abbbca2be77d958d518ace32885",
+      "redaction_records": 4,
+      "retained_byte_identical_to_original": false
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/snapshots/drift.json",
+      "original_bytes": 40229,
+      "original_sha256": "d948b31dac9682b27f58c1461e30ea20c30dadf4bb0a822ed6ab2ec5747c879e",
+      "retained_archive_member": "held_coverage_audit/snapshots/drift.json",
+      "retained_bytes": 40075,
+      "retained_sha256": "9bb93185e26d73de55ee874331f92573c53b02d485f2f4477f32e812cdf297a1",
+      "redaction_records": 4,
+      "retained_byte_identical_to_original": false
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/snapshots/prior-audit-catalog.json",
+      "original_bytes": 17188316,
+      "original_sha256": "76047188a8df1083fcc1eaddb66648bea85a0d3be84debcabfa72851e7df2068",
+      "retained_archive_member": "held_coverage_audit/snapshots/prior-audit-catalog.json",
+      "retained_bytes": 17188316,
+      "retained_sha256": "76047188a8df1083fcc1eaddb66648bea85a0d3be84debcabfa72851e7df2068",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/snapshots/prior-audit-receipt.json",
+      "original_bytes": 426,
+      "original_sha256": "114c106bb4eba8d9ed37ab523c178629aee368cb6e87dce1f093c4aaab43d500",
+      "retained_archive_member": "held_coverage_audit/snapshots/prior-audit-receipt.json",
+      "retained_bytes": 392,
+      "retained_sha256": "0942eb6d276d0bcb634d9c0a0a781a63ca3d0718ab026cda6b302a3341e38aa6",
+      "redaction_records": 1,
+      "retained_byte_identical_to_original": false
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/snapshots/receipts.json",
+      "original_bytes": 824,
+      "original_sha256": "dfe840fe74db37865e4bd19aebf4d714902be07a8b55a63218f3a96192e53026",
+      "retained_archive_member": "held_coverage_audit/snapshots/receipts.json",
+      "retained_bytes": 756,
+      "retained_sha256": "37e363c0df8d6b4ffc6891d78f6960b94558762a552b6e6515d4de044393d04e",
+      "redaction_records": 2,
+      "retained_byte_identical_to_original": false
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/source-artifacts.json",
+      "original_bytes": 21717,
+      "original_sha256": "81e008fa14b9a28339b6603e27d24fc9544a511d36ce52e7ddec2192e5c4509d",
+      "retained_archive_member": "held_coverage_audit/source-artifacts.json",
+      "retained_bytes": 21717,
+      "retained_sha256": "81e008fa14b9a28339b6603e27d24fc9544a511d36ce52e7ddec2192e5c4509d",
+      "redaction_records": 0,
+      "retained_byte_identical_to_original": true
+    },
+    {
+      "original_project_report_filename": "held_coverage_audit/validation.json",
+      "original_bytes": 16305,
+      "original_sha256": "2d0f2c3604af20a898d27a3f641b40aed73cec8f92c488cff38f1293ca76afeb",
+      "retained_archive_member": "held_coverage_audit/validation.json",
+      "retained_bytes": 15659,
+      "retained_sha256": "d6423c8e5432fc2084e0743891c98c5cf11916b9ada2da1f944cfa11b5728af8",
+      "redaction_records": 19,
+      "retained_byte_identical_to_original": false
+    }
+  ]
+}

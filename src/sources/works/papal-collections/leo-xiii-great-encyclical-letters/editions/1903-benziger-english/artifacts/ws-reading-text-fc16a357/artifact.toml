@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-reading-text-fc16a357"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "normalized-web-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only the wording of the English translation collection printed in the United States by Benziger Brothers in 1903 is retained. Its historical translation/notes are public domain in the United States on the publication-term basis verified on the printed copyright leaf. Modern Wikisource navigation, contributor markup, links, styles, parsing reports and page-number controls are removed; no creative modern revision or independent commentary is intentionally retained. The derivative is a transcription with residual recognition errors, not a critical or corrected edition."
+rights_jurisdiction = "United States"
+provenance = "Mechanically extracted from the 30 exact Wikisource chapter API responses manifested in this edition, in the order of the printed contents. The full 1903 volume was separately acquired as facsimile and complete OCR. No source wording was generated or rewritten through a model."
+retrieved = "2026-10-26"
+derived_from = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ordered-source-package-8fdd4840"
+transformation = "Materialize the project-created ordered source package and its30exact support responses. Parse each response's HTML field as HTML; select prp-pages-output nodes; omit style/script/link and pagenum/ws-noexport/mw-cite-backlink/mw-empty-elt/noprint/wst-rh nodes; preserve text and printed headings, paragraphs and note order. Prefix references-list items with their source note number. Remove U+200B page controls, collapse whitespace inside paragraphs, separate block paragraphs with blank LF lines, and append each complete chapter with a blank LF line. Remove isolated all-capital running-heading paragraphs under140characters containing a page number and only uppercase letters/digits/punctuation; all167removed candidates were inspected as running heads. No spelling, punctuation, lexical dehyphenation, dates or source classifications are corrected."
+encoding = "utf-8"
+indexable = true
+notes = "Contains all 30 source chapters, 1,112,266 bytes and 3,602 physical lines. Front matter/preface/contents are omitted here but remain in complete raw OCR. The chapter about French religious congregations contains two letters. The Philippine chapter is explicitly abridged by its historical translator. Several source heading dates disagree with official catalog dates and are preserved. This is a reading transcription with residual OCR errors; whole-text image collation remains outstanding."
+sha256 = "fc16a357008f7f2e1b0f331dceecc6ae76138b370a19665208fb064677cf6573"
+byte_size = 1112266
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ws-reading-text-fc16a357/great-encyclical-letters-reading-text.txt"

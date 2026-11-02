@@ -1,0 +1,72 @@
+{
+  "recorded_on": "2026-10-29",
+  "state": "independently-reviewed-installed-awaiting-owner-validation",
+  "scope": "Two finite OLM1981 roles, one independently witnessed1888 initial respond sentence, one original study English body; no authenticated2008 or approved-English claim",
+  "targets": [
+    [
+      "saint-cecilia-virgin-martyr",
+      "main",
+      "Gospel Acclamation",
+      "all",
+      1
+    ],
+    [
+      "saint-lucy-virgin-martyr",
+      "main",
+      "Gospel Acclamation",
+      "all",
+      1
+    ]
+  ],
+  "superseded_unavailable_dictionaries": [
+    {
+      "mass": "saint-cecilia-virgin-martyr",
+      "form_id": "main",
+      "proper": "Gospel Acclamation",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "OLM 1981 n. 681, artifact page 370, refers to Common n. 735,2, artifact page 391, establishing this source-local Latin acclamation role without a Scripture citation. Its exact target-2008 body remains unestablished. No authoritative approved-English exemplar is held for this role; the Latin referral establishes neither English wording nor English publication permission. No English body, removed-body hash, or inferred Bible citation is supplied."
+    },
+    {
+      "mass": "saint-lucy-virgin-martyr",
+      "form_id": "main",
+      "proper": "Gospel Acclamation",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "OLM 1981 n. 692, artifact page 372, refers to Common n. 735,2, artifact page 391, establishing this source-local Latin acclamation role without a Scripture citation. Its exact target-2008 body remains unestablished. No authoritative approved-English exemplar is held for this role; the Latin referral establishes neither English wording nor English publication permission. No English body, removed-body hash, or inferred Bible citation is supplied."
+    }
+  ],
+  "source_files": [
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-virgo-initial-respond.toml",
+      "sha256": "5425a98e8ae60451c428bb0bb6ad728e553d71c27dc2545d5975824cef24f9af"
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-virgo-page93/artifact.toml",
+      "sha256": "3d0d6b0925fe13df1750e641077347c4d1cf731eef359eef98f8d361d716e2c1"
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-virgo-page93/source-page.jpg",
+      "sha256": "425ebe617dd0b741bc21cf8c1a9beac0f8ce24d8a93b618dbfc1efdf79429892"
+    }
+  ],
+  "candidate_entry_sha256": "cc51fbe450741473298fa84cee0a7c094479d849302507cc445a612409654923",
+  "overlay_before_sha256": "bc15ee953432402282d69275fc79d40222b47e404de15e01eeb5a5ae3cc38f4d",
+  "overlay_after_sha256": "e88c65f925f7f1676a9fcbf81eef604ab229ac9d6cc426fd2d7fe924ba333ba4",
+  "all_previous_positive_and_unselected_absence_dictionaries_exact": true,
+  "source_review_sha256": "8762c104e14be5c32e5f952edea986916af9216053f7d7597b5b87e14f459a27",
+  "English_policy_review_sha256": "612e9f3faf9db8dac87b61b5ed846d7944f6331b29a73f921a772488a52c8754",
+  "functional_source_scope_update": "The shared project-created source now describes independently witnessed public-domain prayers and chants. Original dated70-oration census snapshots remain; existing English bodies are unchanged."
+}

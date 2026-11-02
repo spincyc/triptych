@@ -114,3 +114,50 @@ class RefusalTests(unittest.TestCase):
 
     def test_a_range_without_a_chapter_yields_nothing(self) -> None:
         self.assertEqual(range_to_loci({}, {}), [])
+
+
+class WholeChapterDepartureTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        from _loci import edition_departures
+
+        cls.departures, cls.refused = edition_departures("Esth", {
+            key: [{"chapter": 13, "first": None, "last": None}]
+            for key in ("vulgate", "hebrew", "hebrew-unnumbered-titles")
+        }, {})
+
+    def test_whole_esther_redirects_to_held_separate_book(self) -> None:
+        for edition in ("king-james-version", "revised-version-1895"):
+            with self.subTest(edition=edition):
+                self.assertEqual(self.departures.get(edition), [
+                    {"book": "EsthGr", "chapter": 13, "first": 1, "last": 18},
+                ])
+                self.assertNotIn(edition, self.refused)
+
+    def test_whole_esther_keeps_recorded_refusal(self) -> None:
+        self.assertNotIn("catholic-public-domain-version", self.departures)
+        self.assertIn("no exact selection recorded", self.refused.get(
+            "catholic-public-domain-version", ""))
+
+    def test_partial_alias_domain_does_not_become_a_whole_chapter(self) -> None:
+        self.assertNotIn("world-english-bible-catholic", self.departures)
+        self.assertIn("Esth 13:1", self.refused.get(
+            "world-english-bible-catholic", ""))
+
+    def test_whole_psalm_keeps_native_open_extent(self) -> None:
+        from _loci import edition_readers, placed
+
+        reader = next(row for row in edition_readers()
+                      if row.id == "catholic-public-domain-version")
+        self.assertIn(("Ps", 13), reader.chapters)
+        locus = {"chapter": 13, "first": None, "last": None}
+        self.assertEqual(placed(reader, "Ps", [locus]), ([locus], ""))
+
+    def test_ordinary_whole_chapter_without_aliases_is_unchanged(self) -> None:
+        from _loci import edition_readers, placed
+
+        reader = next(row for row in edition_readers()
+                      if row.id == "king-james-version")
+        self.assertNotIn(("Gen", 1), reader.chapters)
+        locus = {"chapter": 1, "first": None, "last": None}
+        self.assertEqual(placed(reader, "Gen", [locus]), ([locus], ""))

@@ -58,7 +58,8 @@ CHRONOLOGY_COMPUTATION_INPUTS = (
     "scripts/_chronology.py", "scripts/_canon.py",
     "scripts/_loci.py", "scripts/_calendars.py", "scripts/_tooling.py",
     "scripts/_psalms.py", "scripts/_deuterocanon.py", "scripts/_projection.py",
-    "scripts/_psalter.py", "tools/proper-chronology", "requirements-tools.txt",
+    "scripts/_psalter.py", "scripts/_bible_artifacts.py", "scripts/_bible_editions.py",
+    "tools/proper-chronology", "requirements-tools.txt",
 )
 POSTCONCILIAR_CHRONOLOGY_INPUTS = (
     "scripts/_proper_chronology_inputs.py", "tools/citations",
@@ -251,27 +252,36 @@ def artifact_state(root: Path, provider: str, document: str) -> dict:
 
 
 
-def bound_evidence(root: Path, bindings: Path) -> set[Path]:
+def bound_evidence(root: Path, bindings: Path, *, metadata_only: bool = False) -> set[Path]:
     """Follow the source library's exact ancestry, including available payloads."""
     ids = [item["source_id"] for item in tomllib.loads(bindings.read_text()).get("bindings", [])]
-    return source_evidence(root, ids)
+    return source_evidence(root, ids, metadata_only=metadata_only)
 
 
-def _source_library(root: Path):
+def _source_library(root: Path, *, metadata_only: bool = False):
     loader = importlib.machinery.SourceFileLoader("proper_study_sources", str(ROOT / "tools/source-library"))
     spec = importlib.util.spec_from_loader(loader.name, loader)
     library_tool = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = library_tool
     spec.loader.exec_module(library_tool)
-    return library_tool, library_tool.load_library(root, check_binding_fingerprints=False)
+    if metadata_only:
+        library = library_tool.Library(root, root / "src/sources", [])
+        library_tool._load_source_records(library)
+    else:
+        library = library_tool.load_library(root, check_binding_fingerprints=False)
+    return library_tool, library
 
 
-def source_evidence(root: Path, ids, role: str = "bound evidence") -> set[Path]:
-    """Each source's record, its ancestry's records, and their available payloads."""
+def source_evidence(root: Path, ids, role: str = "bound evidence", *,
+                    metadata_only: bool = False) -> set[Path]:
+    """Source ancestry, with available payloads only for historical print seals."""
     ids = list(ids)
     if not ids:
         return set()
-    library_tool, library = _source_library(root)
+    if metadata_only:
+        from _document_schema import evidence_metadata
+        return evidence_metadata(root, [], source_ids=ids)
+    library_tool, library = _source_library(root, metadata_only=metadata_only)
     paths, visited = set(), set()
     while ids:
         source_id = ids.pop()
@@ -284,7 +294,7 @@ def source_evidence(root: Path, ids, role: str = "bound evidence") -> set[Path]:
         paths.add(record.path)
         ids.extend(library_tool._dependency_ids(record))
         payload = record.data.get("path")
-        if payload:
+        if payload and not metadata_only:
             path = (root / payload).resolve()
             if not path.is_relative_to(root):
                 raise ValueError("source payload escapes repository")
@@ -310,7 +320,8 @@ def source_admission_computation_inputs(root: Path) -> dict[str, str]:
     return {name: digest(root / name) for name in SOURCE_ADMISSION_INPUTS}
 
 
-def source_dispositions(root: Path, provider: str, document: str) -> set[Path]:
+def source_dispositions(root: Path, provider: str, document: str, *,
+                        metadata_only: bool = False) -> set[Path]:
     """Reconcile research bindings with reusable holdings and fragment admission.
 
     This is a workflow contract, not an extension of the frozen source schemas.
@@ -334,7 +345,7 @@ def source_dispositions(root: Path, provider: str, document: str) -> set[Path]:
     bindings = tomllib.loads(binding_path.read_text()).get("bindings", [])
     if not isinstance(bindings, list):
         raise ValueError("source-bindings.toml requires bindings[]")
-    library_tool, library = _source_library(root)
+    library_tool, library = _source_library(root, metadata_only=metadata_only)
     covered, keys, admitted, paths = set(), set(), set(), set()
     ceilings = None
     evidence_ids = set()
@@ -464,7 +475,8 @@ def source_dispositions(root: Path, provider: str, document: str) -> set[Path]:
     omitted = sorted(set(range(1, len(bindings) + 1)) - covered)
     if omitted:
         raise ValueError(f"{SOURCE_DISPOSITIONS} omits source bindings: {omitted}")
-    paths.update(source_evidence(root, evidence_ids | admitted, "reusable-source evidence"))
+    paths.update(source_evidence(root, evidence_ids | admitted, "reusable-source evidence",
+                                 metadata_only=metadata_only))
     if admitted:
         import _catena
         edges = _catena.load_edges(root)
@@ -477,7 +489,8 @@ def source_dispositions(root: Path, provider: str, document: str) -> set[Path]:
         selected = [item for item in edges["fragments"] if item["passage_id"] in admitted]
         # Anthology passages can name a constituent work outside their source
         # controller's ancestry. Its attribution, language and date also count.
-        paths.update(source_evidence(root, {item["work_id"] for item in selected}, "admitted commentary work"))
+        paths.update(source_evidence(root, {item["work_id"] for item in selected}, "admitted commentary work",
+                                     metadata_only=metadata_only))
         for item in selected:
             canonical_evidence(_catena._extent(item["extent"]))
         paths.update(root / name for name in (_catena.EDGES_RELATIVE, _catena.ALIASES_RELATIVE,
@@ -489,7 +502,8 @@ def source_dispositions(root: Path, provider: str, document: str) -> set[Path]:
     return paths
 
 
-def research_dependencies(root: Path, provider: str, document: str) -> set[Path]:
+def research_dependencies(root: Path, provider: str, document: str, *,
+                          metadata_only: bool = False) -> set[Path]:
     leaf = leaf_path(root, provider, document)
     record = leaf / "research/review-dependencies.toml"
     declared = tomllib.loads(record.read_text()).get("paths")
@@ -500,7 +514,7 @@ def research_dependencies(root: Path, provider: str, document: str) -> set[Path]
     paths, shared_owner = set(), False
     for name in declared:
         path = root / name
-        if Path(name).is_absolute() or ".." in Path(name).parts or not path.exists():
+        if Path(name).is_absolute() or ".." in Path(name).parts or (not metadata_only and not path.exists()):
             raise ValueError(f"unsafe or missing evidence dependency: {name}")
         validate_liturgical_family(leaf, root / "src" / provider, path)
         if not path.resolve().is_relative_to(root / "src"):
@@ -509,7 +523,11 @@ def research_dependencies(root: Path, provider: str, document: str) -> set[Path]
         if canonical_owner is not None and (resolved == canonical_owner
                                              or resolved.is_relative_to(canonical_owner)):
             shared_owner = True
-        selected = [path] if path.is_file() else [item for item in path.rglob("*") if item.is_file()]
+        if metadata_only:
+            from _document_schema import evidence_metadata
+            selected = evidence_metadata(root, [path])
+        else:
+            selected = [path] if path.is_file() else [item for item in path.rglob("*") if item.is_file()]
         if not selected:
             raise ValueError(f"empty evidence dependency: {name}")
         for item in selected:
@@ -632,14 +650,17 @@ def chronology_reads(root: Path, provider: str, document: str) -> tuple[set[Path
 
 
 def review_inputs(root: Path, provider: str, document: str, review: str, *,
-                  review_contract: str | None = None) -> dict:
+                  review_contract: str | None = None, mode: str = "print") -> dict:
     """Stable evidence scope for each independent review, sealed by the engine.
 
-    Later editions are deliberately absent from earlier content scopes. Metadata
-    evolves with contributors and is finally bound, in full, by visual review.
-    Research evidence and source bindings are independently sealed before prose.
+    Later editions are absent from earlier content scopes. Final metadata and
+    the complete publication closure are bound by source-mode web review;
+    historical print mode keeps its exact visual seal. Research is sealed first.
     """
     leaf = leaf_path(root, provider, document)
+    if mode not in {"source", "print"}:
+        raise ValueError("publication mode must be source or print")
+    metadata_only = mode == "source"
     if review_contract is not None and (review_contract not in RESEARCH_REVIEW_CONTRACTS
                                         or review != "research"):
         raise ValueError(f"review-contract {review_contract} applies only to research review")
@@ -655,8 +676,8 @@ def review_inputs(root: Path, provider: str, document: str, review: str, *,
                 raise ValueError(f"missing research review input: {name}")
         for directory in ("propers", "instance"):
             paths.update(path for path in (leaf / directory).rglob("*") if path.is_file())
-        paths.update(research_dependencies(root, provider, document))
-        paths.update(bound_evidence(root, leaf / "research/source-bindings.toml"))
+        paths.update(research_dependencies(root, provider, document, metadata_only=metadata_only))
+        paths.update(bound_evidence(root, leaf / "research/source-bindings.toml", metadata_only=metadata_only))
         if review_contract in RESEARCH_REVIEW_CONTRACTS:
             for name in ("research/chronology.toml", "research/chronology-annotations.tex"):
                 path = leaf / name
@@ -670,12 +691,16 @@ def review_inputs(root: Path, provider: str, document: str, review: str, *,
                 # The named list stays; anything else the computation compiled joins it.
                 computation.update(modules)
                 paths.update(reads)
-                paths.update(source_evidence(root, cited, "chronology source"))
+                paths.update(source_evidence(root, cited, "chronology source", metadata_only=metadata_only))
                 value["chronology_cited_sources"] = cited
             value["chronology_computation_inputs"] = computation
             if review_contract == SOURCE_DISPOSITIONS_CONTRACT:
-                paths.update(source_dispositions(root, provider, document))
+                paths.update(source_dispositions(root, provider, document, metadata_only=metadata_only))
                 value["source_admission_computation_inputs"] = source_admission_computation_inputs(root)
+        if metadata_only:
+            from _document_schema import evidence_metadata
+            paths = evidence_metadata(root, paths)
+            value["publication_mode"] = "source"
     elif review in {"study", "synthesis", "homily"}:
         data = manifest(leaf)
         mode = "research" if review == "study" else review
@@ -715,10 +740,14 @@ def review_inputs(root: Path, provider: str, document: str, review: str, *,
                 "production": PRODUCTION_RE.findall(text), "inheritance": INHERITANCE_RE.findall(text)}
             paths.remove(path)
     elif review == "visual":
+        if metadata_only:
+            raise ValueError("visual review requires an explicit print export, not source mode")
         value["artifacts"] = artifact_state(root, provider, document)
     elif review == "web":
         path = root / "build/web" / provider / f"{document}.md"
         value["web"] = {str(path.relative_to(root)): digest(path)}
+        if mode == "source":
+            value["source_publication"] = source_state(root, provider, document, run_gates=False)
     else:
         raise ValueError("unknown review scope")
     for path in paths:
@@ -764,6 +793,27 @@ def artifacts(root: Path, provider: str, document: str) -> None:
         run(root, sys.executable, str(root / "tools/check-generation-metadata"),
             "--provider", provider, "--pdf", output,
             str(root / "build" / provider / f"{output}.pdf"))
+
+
+def source_state(root: Path, provider: str, document: str, *, run_gates: bool = True) -> dict:
+    """Validate declared source outputs without opening a print artifact.
+
+    This identity is sealed by the independent web review after all three
+    source reviews. It records inputs, never an editorial or print approval.
+    """
+    import _document_schema
+
+    leaf = leaf_path(root, provider, document)
+    record = _document_schema.load_manifest(root, leaf / "publication.toml")
+    report = _document_schema.validate(root, record, phase="content", run_gates=run_gates)
+    if not report["ok"]:
+        raise ValueError("publication source contract failed: " + "; ".join(report["errors"]))
+    expected = [("canonical" if mode == "research" else mode, f"{provider}/{document}{suffix}")
+                for mode, suffix in EDITIONS.items()]
+    if [(item["role"], item["id"]) for item in record["outputs"]] != expected:
+        raise ValueError("publication must declare the ordered canonical, synthesis and homily source outputs")
+    return {"schema": 1, "publication_mode": "source", "provider": provider,
+            "document": document, "identities": _document_schema.identities(root, record)}
 
 
 PROVIDER_LABELS = {"gpt": "GPT", "claude": "Claude"}
@@ -817,30 +867,42 @@ def catalog_cell_providers(text: str, row: str, row_links: list[str], primary: s
         return
 
 
-def publication(root: Path, provider: str, document: str) -> None:
+def publication(root: Path, provider: str, document: str, *, mode: str = "print") -> None:
     catalog = scope(root, provider, document)
-    artifacts(root, provider, document)
+    if mode == "source":
+        source_state(root, provider, document)
+    elif mode == "print":
+        artifacts(root, provider, document)
+    else:
+        raise ValueError("publication mode must be source or print")
     leaf = leaf_path(root, provider, document)
     data = manifest(leaf)
     text = (root / catalog).read_text()
     release = json.loads((root / "release/public-alpha.json").read_text())
     row_links = []
-    for mode, suffix in EDITIONS.items():
+    for output_mode, suffix in EDITIONS.items():
         output = document + suffix
-        if data["outputs"].get(mode) != output:
-            raise ValueError(f"incorrect {mode} output id")
-        installed = root / "pdf" / provider / f"{output}.pdf"
-        if digest(installed) != digest(root / "build" / provider / f"{output}.pdf"):
-            raise ValueError(f"installed {mode} differs from reviewed build")
+        if data["outputs"].get(output_mode) != output:
+            raise ValueError(f"incorrect {output_mode} output id")
+        if mode == "print":
+            installed = root / "pdf" / provider / f"{output}.pdf"
+            if digest(installed) != digest(root / "build" / provider / f"{output}.pdf"):
+                raise ValueError(f"installed {output_mode} differs from reviewed build")
         record = json.loads((root / "release/publications" / provider / f"{output}.json").read_text())
         if (record.get("schema_version"), record.get("id"), record.get("catalog"),
             record.get("status")) != (1, output, catalog, "alpha") or record.get("authorization") not in release.get("authorizations", {}):
-            raise ValueError(f"release record does not authorize {mode} for this catalog")
-        row_links.append(f"](../pdf/{provider}/{output}.pdf)")
+            raise ValueError(f"release record does not authorize {output_mode} for this catalog")
+        if mode == "print":
+            row_links.append(f"](../pdf/{provider}/{output}.pdf)")
     row_links.append(f"](../web/{provider}/{document}.html)")
     rows = [line for line in text.splitlines() if all(link in line for link in row_links)]
     if len(rows) != 1:
-        raise ValueError("one catalog row must link all three PDFs and canonical web edition")
+        raise ValueError("one catalog row must link " + (
+            "all three PDFs and canonical web edition" if mode == "print" else "the canonical web edition"))
+    if mode == "source" and any(
+            f"](../pdf/{provider}/{document}{suffix}.pdf)" in rows[0]
+            for suffix in EDITIONS.values()):
+        raise ValueError("source publication catalog must not link absent site PDFs")
     catalog_cell_providers(text, rows[0], row_links, release.get("provider"))
     publication_id = document if release.get("provider") == provider else f"{provider}:{document}"
     marker = f"<!-- triptych-publication-id: {publication_id} -->"
@@ -866,7 +928,9 @@ def check(root: Path, provider: str, document: str, phase: str,
           edition: str | None, *, require_presentation: bool = False,
           require_format: bool = False, require_authority: bool = False,
           require_orientation: bool = False, require_orientation_v2: bool = False,
-          require_source_dispositions: bool = False) -> None:
+          require_source_dispositions: bool = False, mode: str = "print") -> None:
+    if mode not in {"source", "print"}:
+        raise ValueError("publication mode must be source or print")
     scope(root, provider, document)
     leaf = leaf_path(root, provider, document)
     if phase == "scope":
@@ -881,8 +945,11 @@ def check(root: Path, provider: str, document: str, phase: str,
             "--root", str(root), "--provider", provider, "--document", document,
             "--check", "bindings-valid")
         if require_source_dispositions:
-            source_dispositions(root, provider, document)
-        review_inputs(root, provider, document, "research")
+            if mode == "source":
+                source_dispositions(root, provider, document, metadata_only=True)
+            else:
+                source_dispositions(root, provider, document)
+        review_inputs(root, provider, document, "research", mode=mode)
         return
     presentation_contract(manifest(leaf), required=require_presentation)
     format_contract(manifest(leaf), required=require_format)
@@ -894,9 +961,12 @@ def check(root: Path, provider: str, document: str, phase: str,
     if phase == "content":
         components(root, provider, document, "content", edition)
     elif phase == "artifacts":
-        artifacts(root, provider, document)
+        if mode == "source":
+            source_state(root, provider, document)
+        else:
+            artifacts(root, provider, document)
     elif phase == "publication":
-        publication(root, provider, document)
+        publication(root, provider, document, mode=mode)
 
 
 def main() -> int:
@@ -908,6 +978,8 @@ def main() -> int:
     parser.add_argument("--document", required=True)
     parser.add_argument("--phase", choices=("scope", "research", "content", "artifacts", "publication"))
     parser.add_argument("--edition", choices=tuple(EDITIONS))
+    parser.add_argument("--mode", choices=("source", "print"), default="print",
+                        help="source validates source/HTML publication; print preserves historical exact-PDF gates")
     parser.add_argument("--require-presentation", action="store_true",
                         help="require the current physical pagination contract (proper-study v3)")
     parser.add_argument("--require-format", action="store_true",
@@ -933,7 +1005,7 @@ def main() -> int:
             datetime.date.fromisoformat(args.date)
         if args.action == "seal":
             print(json.dumps(review_inputs(root, args.provider, args.document, args.review,
-                                           review_contract=args.review_contract),
+                                           review_contract=args.review_contract, mode=args.mode),
                              sort_keys=True, separators=(",", ":")))
             return 0
         if args.action == "binding-digests":
@@ -946,8 +1018,13 @@ def main() -> int:
         if args.action == "identity":
             identity(root, args.document)
         elif args.action == "source-dispositions":
-            source_dispositions(root, args.provider, args.document)
+            if args.mode == "source":
+                source_dispositions(root, args.provider, args.document, metadata_only=True)
+            else:
+                source_dispositions(root, args.provider, args.document)
         elif args.action.startswith("snapshot"):
+            if args.mode == "source" and args.action == "snapshot":
+                raise ValueError("source publication uses document-schema identities, not a print snapshot")
             snapshot(root, args.provider, args.document, web=args.action == "snapshot-web")
         elif not args.phase:
             raise ValueError("check requires --phase")
@@ -957,7 +1034,7 @@ def main() -> int:
                   require_authority=args.require_authority,
                   require_orientation=args.require_orientation,
                   require_orientation_v2=args.require_orientation_v2,
-                  require_source_dispositions=args.require_source_dispositions)
+                  require_source_dispositions=args.require_source_dispositions, mode=args.mode)
     except (OSError, ValueError, KeyError, subprocess.TimeoutExpired) as error:
         print(f"proper-study: {error}", file=sys.stderr)
         return 1

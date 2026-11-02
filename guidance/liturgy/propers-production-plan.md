@@ -130,6 +130,13 @@ one identity for that one provider and nothing else, and it is an
 independent Claude production, not a companion to or a derivative of any
 other leaf. It does not open the displaced Twenty-second Sunday after
 Pentecost or the GPT target for the same identity.
+On 2026-10-26 the maintainer authorized the Claude 1962 All Saints target,
+identity `F02`, for Sunday, 1 November 2026, on the same terms and under the
+same three-document contract. It opens that one identity for that one
+provider and nothing else, and it is an independent Claude production, not a
+companion to or a derivative of the published GPT leaf for the same
+identity. It does not open the commemorated Twenty-third Sunday after
+Pentecost.
 
 Each line below records one maintainer decision to open the boundary for
 one provider and one permanent identity. A line is the whole
@@ -169,6 +176,8 @@ and an identity with no line here is closed.
 - Authorized 2026-10-25: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/f02-all-saints`.
 
 - Authorized 2026-10-25: provider `gpt`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc`.
+
+- Authorized 2026-10-26: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/f02-all-saints`.
 
 - Authorized 2026-11-02: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany`.
 
@@ -260,9 +269,11 @@ so they are not made again:
 Registry counts are counts of **targets**. A target is one canonical leaf and
 the derived companions its manifest authorizes — one
 identity, one owner, one research trail, one set of source bindings. A target is
-not finished when only the canonical PDF exists, and companions are never
+not finished when only the canonical source output exists, and companions are never
 additional targets. Schema 2 requires both `-synthesis` and `-homily` under the
 three-document contract; schema 1 retains its existing synthesis companion.
+Optional print exports do not create additional targets or gate ordinary
+source/HTML publication.
 
 The English requirement is retrospective. Every proper published before it was
 authored under the previous rule, which printed the appointed Latin in full and

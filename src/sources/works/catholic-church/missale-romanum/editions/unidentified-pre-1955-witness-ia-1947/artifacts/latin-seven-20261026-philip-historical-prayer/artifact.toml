@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.unidentified-pre-1955-witness-ia-1947.latin-seven-20261026-philip-historical-prayer"
+edition_id = "edition.catholic-church.missale-romanum.unidentified-pre-1955-witness-ia-1947"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "United States: independently accepted complete historical no-annua commemoratione prayer under the existing six-registration1942-1945Benziger nonrenewal disposition in lasance-new-roman-missal-rights-v1.toml sectionthe_1942_benziger. Exact title/copyright/approval condition is fulfilled by source receiptf81ada974640e768c7442f78d24a10cc252961fcc3d0a2ecd6c013a985f2d798 and adopted by coordinator on26October2026. This clears this exact LatinTXT, not the wholePDF, page images, exact printing year or a single registration identity. Historical Latin is excluded from the project CC BY4.0 offer."
+sha256 = "799378bbde82ce5eaab33385b1dac3edb4c2819e917f16c48b3285a9cd75d1a1"
+byte_size = 170
+path = "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/artifacts/latin-seven-20261026-philip-historical-prayer/latin.txt"
+derived_from = "artifact.catholic-church.missale-romanum.unidentified-pre-1955-witness-ia-1947.latin-seven-20261026-philip-remote-pdf"
+retrieved = "2026-10-26"
+encoding = "utf-8"
+indexable = true
+provenance = "Actual complete named outside-Paschal votivePhilip/JamesCollect, fullPDF637/printed563,leftcolumn; fullnamedcontext635-638 and exactidentityleaves1-4 independently reviewed. Whole prayer and Per Dominum nostrum. read at200and400dpi."
+transformation = "Join wraps/line-end hyphens, remove stress accents, expand ligatures; preserve sourceJacobi, all sourcewords, pointing and actualPer Dominum nostrum. stop. No annua deletion or solemnitate addition. One physical line and terminalLF are project layout."
+notes = "This historical single-choice text is not literal testimony to the modern solemnitate(commemoratione) union. The target projection has separate source, controller and finite contribution basis."

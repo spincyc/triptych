@@ -201,7 +201,163 @@
     });
   }
 
+  /** Date-surface presentation over the Day controller's validated result. */
+  function createDayDateControls(input) {
+    const T = input.T;
+    const runtime = input.runtime;
+    const resultMass = input.resultMass;
+    const ordinaryVariantGroups = input.ordinaryVariantGroups;
+    const ordinarySelectionMap = input.ordinarySelectionMap;
+    const dateForm = root.document.getElementById('date-form');
+    const dateInput = root.document.getElementById('reader-date');
+    const missalSelect = root.document.getElementById('reader-missal');
+    const bibleSelect = root.document.getElementById('reader-bible');
+    const orationsSelect = root.document.getElementById('reader-orations');
+    const formularyField = root.document.getElementById('reader-formulary-field');
+    const formularySelect = root.document.getElementById('reader-formulary');
+    const massFormField = root.document.getElementById('reader-mass-form-field');
+    const massFormSelect = root.document.getElementById('reader-mass-form');
+    const ordinaryLangField = root.document.getElementById('reader-ordinary-lang-field');
+    const ordinaryLangSelect = root.document.getElementById('reader-ordinary-lang');
+    const ordinaryOptionField = root.document.getElementById('reader-ordinary-option-field');
+    const ordinaryOptionSelect = root.document.getElementById('reader-ordinary-option');
+    const dateSurface = root.document.getElementById('date-surface');
+    const dateStatus = dateSurface.querySelector('.surface-note');
+    const dateStepButtons = Array.from(dateSurface.querySelectorAll('.date-steps button'));
+
+    // Keep Date, missal, Apply, and Today live after an invalid day.
+    function setDateSurfaceEnabled(enabled) {
+      [bibleSelect, orationsSelect, formularySelect,
+        ordinaryLangSelect, ordinaryOptionSelect].forEach(function (control) {
+        control.disabled = !enabled;
+      });
+      if (massFormSelect) massFormSelect.disabled = !enabled;
+      // These escape controls also stay live before manifests finish loading.
+      dateInput.disabled = false;
+      missalSelect.disabled = false;
+      dateForm.querySelector('.surface-apply').disabled = false;
+      dateStepButtons.forEach(function (button) {
+        button.disabled = button.id === 'today-date' ? false : !enabled;
+      });
+    }
+
+    function resetDateSurface() {
+      dateInput.value = '';
+      [bibleSelect, orationsSelect, formularySelect,
+        ordinaryLangSelect, ordinaryOptionSelect].forEach(function (select) {
+        select.replaceChildren();
+      });
+      // Keep manifest choices and the explicit missal visible after failure.
+      T.fillSelect(missalSelect, (runtime.missals || []).map(function (row) {
+        return { value: row.id, label: row.label, title: row.edition || row.code || row.id };
+      }));
+      const asked = new URLSearchParams(root.location.hash.replace(/^#/, '')).get('missal');
+      missalSelect.value = (runtime.missals || []).some(function (row) {
+        return row.id === asked;
+      }) ? asked : '';
+      formularyField.hidden = true;
+      if (massFormField) {
+        massFormField.hidden = true;
+        massFormSelect.replaceChildren();
+      }
+      ordinaryLangField.hidden = true;
+      ordinaryOptionField.hidden = true;
+      dateStatus.textContent = 'No validated selection is available for the current reader outcome.';
+      setDateSurfaceEnabled(false);
+    }
+
+    function populateDateSurface() {
+      const state = runtime.normalized && runtime.normalized.state;
+      if (!state || !runtime.structure) {
+        resetDateSurface();
+        return;
+      }
+      T.fillSelect(missalSelect, runtime.missals.map(function (row) {
+        return { value: row.id, label: row.label, title: row.edition || row.code || row.id };
+      }));
+      T.fillBibleSelect(bibleSelect, runtime.bibles);
+      dateInput.value = state.civilDate;
+      missalSelect.value = state.edition.id;
+      bibleSelect.value = state.bible.id;
+      const languages = T.orationLanguagesOf(runtime.structure);
+      T.fillSelect(orationsSelect, languages.map(function (entry) {
+        return { value: entry.lang, label: T.orationLanguageLabel(entry), title: entry.lang };
+      }));
+      orationsSelect.value = state.languages.orations;
+      const readable = (runtime.branch && runtime.branch.readable) || [];
+      // Do not let a native select preselect a coequal formulary.
+      if (readable.length > 1 && runtime.outcome !== 'unresolved' && runtime.mode !== 'compare') {
+        T.fillSelect(formularySelect, readable.map(function (row) {
+          return { value: row.key, label: (row.label || row.key) + ' — ' + row.state };
+        }));
+        formularySelect.value = state.selectedReadableFormulary
+          ? state.selectedReadableFormulary.id
+          : (runtime.result && runtime.result.resolved && runtime.result.resolved.formulary) || '';
+        formularyField.hidden = false;
+      } else {
+        formularyField.hidden = true;
+        formularySelect.replaceChildren();
+      }
+      if (massFormField) {
+        const mass = resultMass(runtime.result);
+        const forms = mass && mass.forms || [];
+        const selected = runtime.result && runtime.result.resolved && runtime.result.resolved.form;
+        // The first choice stays in the reading, with no native-select default.
+        // Only an already selected form exposes its Mass's source-authored peers.
+        if (forms.length > 1 && forms.some(function (form) { return form.id === selected; }) &&
+            runtime.mode !== 'compare') {
+          T.fillSelect(massFormSelect, forms.map(function (form) {
+            return { value: form.id, label: form.name };
+          }));
+          massFormSelect.value = selected;
+          massFormField.hidden = false;
+        } else {
+          massFormField.hidden = true;
+          massFormSelect.replaceChildren();
+        }
+      }
+      if (state.options.ordinary && runtime.ordinary) {
+        const languages = T.orationLanguagesOf(runtime.ordinary);
+        T.fillSelect(ordinaryLangSelect, languages.map(function (row) {
+          return {
+            value: row.lang,
+            label: T.orationLanguageLabel(row)
+          };
+        }));
+        ordinaryLangSelect.value = state.languages.ordinary || 'en';
+        ordinaryLangField.hidden = languages.length < 2;
+        const groups = ordinaryVariantGroups(runtime.ordinary);
+        if (groups.length === 1) {
+          const group = groups[0];
+          T.fillSelect(ordinaryOptionSelect, (group.options || []).map(function (option) {
+            return { value: option.id, label: option.name };
+          }));
+          const chosen = ordinarySelectionMap(state, runtime.ordinary)[group.group];
+          if (chosen) ordinaryOptionSelect.value = chosen;
+          ordinaryOptionField.hidden = false;
+        } else {
+          ordinaryOptionField.hidden = true;
+          ordinaryOptionSelect.replaceChildren();
+        }
+      } else {
+        ordinaryLangField.hidden = true;
+        ordinaryOptionField.hidden = true;
+      }
+      if (runtime.outcome === 'unresolved') {
+        dateStatus.textContent = 'These validated values are current, but the formulary outcome remains unresolved.';
+      } else {
+        dateStatus.textContent = runtime.branches.length > 1
+          ? 'Every held territorial branch is shown; no locality or preferred branch is inferred.'
+          : 'The resolved production result is shown without inferring a locality.';
+      }
+      setDateSurfaceEnabled(true);
+    }
+
+    return Object.freeze({ setEnabled: setDateSurfaceEnabled,
+      reset: resetDateSurface, populate: populateDateSurface });
+  }
+
   return Object.freeze({ renderProperChoice: renderProperChoice,
     attachSourcePathChoices: attachSourcePathChoices,
-    properChoiceRemovals: properChoiceRemovals });
+    properChoiceRemovals: properChoiceRemovals, createDayDateControls: createDayDateControls });
 }));

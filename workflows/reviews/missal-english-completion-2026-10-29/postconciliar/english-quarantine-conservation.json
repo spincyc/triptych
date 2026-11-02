@@ -1,0 +1,39 @@
+{
+  "recorded_on": "2026-10-29",
+  "scope": "Permanent text-free predecessor source-route fingerprints independent of present English availability.",
+  "baseline_inventory_sha256": "f06a68826790a3b828d0f44cccecd52d09ff12c828a01dd330391636bf086128",
+  "baseline_projected_rows": 174,
+  "baseline_unique_hashes": 172,
+  "canonical_projection_sha256": "ba1bb392b8c1ce8803dbc0b0c5794ad58a1faebf73ee7de54d302db990e1ebd9",
+  "baseline_matches_original_unavailable_rows_exactly_after_declared_projection": true,
+  "receipt_refs": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase1-admission.json",
+      "sha256": "336c2eeb280f40fcf291e99a691c21bc0a1025b8b20751815ff8facaa10cc255"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-acclamations-admission.json",
+      "sha256": "6224ba1a95fbeff1af014cad00b03177ad65e356601c06c28bf1d681beb4c31e"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-late-easter-admission.json",
+      "sha256": "c4202aa5c2cf5efb6840a68097f97214bc62c36580762c9cd22bac4c3335d3ff"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-pentecost-extended-admission.json",
+      "sha256": "ab3b863eeef1f4434c6751307f6b32b789f621f622ce383f042a1a02eac767d4"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-september8-admission.json",
+      "sha256": "d9ec4ff8b7f8637068025635c394b4b88c2caaf9e848298231b022e828d1326c"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-virgo-admission.json",
+      "sha256": "32c337acd6aa77053b342e9da372cb7fd687a945647a9535bd7f8358e8cd4967"
+    }
+  ],
+  "all_previous_source_owned_fields_exact": true,
+  "overlay_before_sha256": "fd3dd097d41654878d213707d15415b9336502da18caf52c128f288430a0fe97",
+  "overlay_after_sha256": "9d3d4542d77cd6b4ca939b28e7b8fa612dadb48fe4cde89c00303b7d8a6c0fee",
+  "future_admission_rule": "Append the exact hash of each finalized dated admission receipt; later validation records are separate and must not mutate hash-bound receipts."
+}

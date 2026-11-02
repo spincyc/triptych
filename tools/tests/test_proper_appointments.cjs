@@ -244,7 +244,7 @@ test('mixed held bodies and translation witnesses retain their own availability 
   assert.equal(absent.availability, 'unavailable'); assert.equal(absent.text, null);
   assert.equal(absent.scriptureComponents.references[0], 'Psalms 109:4');
 });
-test('real held Virgin IV mixed body remains exact and its English absence stays unavailable', () => {
+test('real held Virgin IV mixed body retains the exact Latin and checked English witnesses', () => {
   const held = JSON.parse(fs.readFileSync(path.join(root, 'src/web/data/structure/propers/roman-1962.json'), 'utf8'));
   const mass = held.masses.find((one) => one.key === 'commune-virginum-4');
   assert(mass, 'the actual Common Virgin IV is held');
@@ -260,8 +260,11 @@ test('real held Virgin IV mixed body remains exact and its English absence stays
   req.languages.orations = 'en';
   const english = allEvents(A.adaptPropers({request: req, structure: held}).events)
     .find((event) => event.editionSlotLabel === proper.name).selected;
-  assert.equal(english.kind, 'composed'); assert.equal(english.availability, 'unavailable');
-  assert.equal(english.reason, 'ledgered-untranslated'); assert.equal(english.text, null);
+  const witnesses = proper.translations.filter(row => row.lang === 'en');
+  assert.equal(witnesses.length, 1);
+  assert.equal(english.kind, 'composed'); assert.equal(english.availability, 'held');
+  assert.equal(english.text, witnesses[0].text);
+  assert.equal(witnesses[0].source_id, 'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945');
   assert.equal(JSON.stringify(mass), before);
 });
 test('pure Scripture citation behavior remains unchanged', () => {

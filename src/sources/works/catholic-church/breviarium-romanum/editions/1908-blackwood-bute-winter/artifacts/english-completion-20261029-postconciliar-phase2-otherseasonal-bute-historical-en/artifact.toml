@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-phase2-otherseasonal-bute-historical-en"
+edition_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The identified English book was published by William Blackwood and Sons in 1908. Its 1908 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain English words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label. This covers the historical human translation, not approved modern English or any modern editorial addition. Faithful transcription adds no new authorship. The historical human wording is excluded from Triptych’s CC BY 4.0 offer. No approved contemporary English, modern Latin, OCR wrapper, source image, publisher furniture or translated rubric is included."
+derived_from = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+transformation = "Freshly transcribe each complete explicitly bounded historical English body from the exact visual PDF named by derived_from. Join printer line wraps and represent the ornamental initial capitals as prose; retain every accepted word, spelling and punctuation character. Calendar-address columns identify bounded historical antecedent study recipients, not the source book appointment or authenticated 2008 text."
+retrieved = "2026-10-29"
+sha256 = "42b0f6c167257ddbc567930cf376825312b9434f5cf63ba41953a85698e7d43e"
+byte_size = 198
+path = "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-bute-historical-en/text.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "1 complete historical human English bodies, unchanged from the independently accepted frozen packet 11c4c137fd60453e0a00f38ea8066f6b7dd93ea9721af57cd271061a68c85d00. Verification and publication passages use exactly the same source locus. The comparison is bounded to the directly inspected secondary digitally typeset 2002 reproduction. Its fidelity to printed 2002 and correspondence to the authenticated 2008 reimpressio remain unresolved. No approved modern English, ICEL wording, recitation authority, protected modern Latin payload or modern source image is supplied."

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.holyweek-antiphons-2026-10-29.ave-rex-60e6fd51"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.holyweek-antiphons-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers only its bounded editorial selection, spelling normalization and target-relation record under CC BY 4.0. The historical Latin words have their independently registered public-domain source basis; no exclusive right in those words is claimed."
+rights_jurisdiction = "United States"
+provenance = "Complete historical and target bodies read on source page images at 200 and 400 dpi on 29 October 2026, with source/target separation and explicit orthographic transformations."
+retrieved = "2026-10-29"
+sha256 = "60e6fd51bdd407c32bf4b59928c45c249956b404d22469311dd8b7c835139cc3"
+byte_size = 311
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-holyweek-antiphons/artifacts/ave-rex-60e6fd51/latin.txt"
+projected_from = ["artifact.diocese-of-york.manuale-et-processionale.1875-henderson.ave-rex-latin-checked-20261029", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join source paragraph linewraps and expand ae-ligature. Source expectabant -> target exspectabant; receivedLatinorthography. Source Osanna -> target Hosanna twice; same receivedacclamation spelling. Target pointing and capitals; no lexical addition, omission, or replacement."
+indexable = true
+encoding = "utf-8"
+notes = "This artifact contains only the exact calendar Latin projection. Original source spelling remains in its own checked transcription. No target image, heading, rubric or other protected apparatus is copied."

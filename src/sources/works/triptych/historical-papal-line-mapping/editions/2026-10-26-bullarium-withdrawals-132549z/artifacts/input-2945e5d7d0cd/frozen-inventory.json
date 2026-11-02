@@ -1,0 +1,2582 @@
+{
+  "affected_units": [
+    {
+      "active_disposition": "source-order-hold",
+      "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.coordinate-order-v1-f37197e94c2b",
+      "current_document_id": "bullarium.volume-08.unit-0066.part-01",
+      "physical_line_ranges": [
+        [
+          25599,
+          25784
+        ],
+        [
+          25794,
+          26211
+        ],
+        [
+          26272,
+          26277
+        ],
+        [
+          26284,
+          26284
+        ]
+      ],
+      "segment_id": "segment.bullarium-romanum.volume-08.unit-0066.part-01.1883-naples-latin.source-ocr",
+      "source_order_evidence": {
+        "active_controller_path": "src/sources/works/bullarium-romanum/volume-08/editions/1883-naples-latin/artifacts/coordinate-order-v1-f37197e94c2b/hybrid.txt",
+        "active_selected_ranges": [
+          [
+            25599,
+            25784
+          ],
+          [
+            25794,
+            26211
+          ],
+          [
+            26272,
+            26277
+          ],
+          [
+            26284,
+            26284
+          ]
+        ],
+        "affected_physical_line_ranges": [
+          [
+            25658,
+            25660
+          ]
+        ],
+        "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.coordinate-order-v1-f37197e94c2b",
+        "artifact_sha256": "f37197e94c2ba52afabfab11474f88cd13696638562c552fc764f477190765f9",
+        "candidate_repair_pages": [
+          {
+            "leaf": 234,
+            "object_ordinal_1": 232
+          }
+        ],
+        "classification": "confirmed-fusion",
+        "current_document_id": "bullarium.volume-08.unit-0066.part-01",
+        "evidence": [
+          {
+            "active_lf_ranges": [
+              [
+                25658,
+                25660
+              ]
+            ],
+            "active_source_excerpt": [
+              {
+                "line": 25658,
+                "raw": "§  2.  Ad  haec,  piae  memofiae  Bonifa-  Bonifedii "
+              },
+              {
+                "line": 25659,
+                "raw": "cius  IX  motu  proprio  statuii  et  ordinavil  po^'loies "
+              },
+              {
+                "line": 25660,
+                "raw": "quod  de  celerò  nulli,  cuiuscumque  status,  \"  \"^f^'' "
+              }
+            ],
+            "inspection_active_lf_range": [
+              25638,
+              25680
+            ],
+            "leaf": 234,
+            "native_xml_words": [
+              {
+                "coords": "1178,1476,1213,1432",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "§ ",
+                "word_id": 114241
+              },
+              {
+                "coords": "1213,1467,1267,1432",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "2. ",
+                "word_id": 114242
+              },
+              {
+                "coords": "1267,1467,1340,1433",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "Ad ",
+                "word_id": 114243
+              },
+              {
+                "coords": "1340,1473,1459,1433",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "haec, ",
+                "word_id": 114244
+              },
+              {
+                "coords": "1459,1476,1556,1432",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "piae ",
+                "word_id": 114245
+              },
+              {
+                "coords": "1556,1467,1750,1433",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "memofiae ",
+                "word_id": 114246
+              },
+              {
+                "coords": "1750,1467,1918,1434",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "Bonifa- ",
+                "word_id": 114247
+              },
+              {
+                "coords": "1918,1472,2028,1444",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "Bonifedii",
+                "word_id": 114248
+              },
+              {
+                "coords": "1135,1519,1222,1485",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "cius ",
+                "word_id": 114249
+              },
+              {
+                "coords": "1222,1519,1280,1486",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "IX ",
+                "word_id": 114250
+              },
+              {
+                "coords": "1280,1519,1390,1491",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "motu ",
+                "word_id": 114251
+              },
+              {
+                "coords": "1390,1530,1542,1486",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "proprio ",
+                "word_id": 114252
+              },
+              {
+                "coords": "1542,1519,1670,1486",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "statuii ",
+                "word_id": 114253
+              },
+              {
+                "coords": "1670,1519,1720,1491",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "et ",
+                "word_id": 114254
+              },
+              {
+                "coords": "1720,1521,1897,1487",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "ordinavil ",
+                "word_id": 114255
+              },
+              {
+                "coords": "1897,1526,2014,1478",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "po^'loies",
+                "word_id": 114256
+              },
+              {
+                "coords": "1134,1582,1240,1539",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "quod ",
+                "word_id": 114257
+              },
+              {
+                "coords": "1240,1572,1294,1539",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "de ",
+                "word_id": 114258
+              },
+              {
+                "coords": "1294,1573,1412,1546",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "celerò ",
+                "word_id": 114259
+              },
+              {
+                "coords": "1412,1579,1517,1539",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "nulli, ",
+                "word_id": 114260
+              },
+              {
+                "coords": "1517,1583,1765,1540",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "cuiuscumque ",
+                "word_id": 114261
+              },
+              {
+                "coords": "1765,1582,1898,1530",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "status, ",
+                "word_id": 114262
+              },
+              {
+                "coords": "1898,1571,1954,1530",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "\" ",
+                "word_id": 114263
+              },
+              {
+                "coords": "1954,1558,2044,1528",
+                "leaf": 234,
+                "object_ordinal_1": 232,
+                "text": "\"^f^''",
+                "word_id": 114264
+              }
+            ],
+            "object_ordinal_1": 232,
+            "raw_parent_lf_ranges": [
+              [
+                25658,
+                25660
+              ]
+            ],
+            "reason": "On copied leaf234 the outer Boniface-summary WORD114248 follows the body Bonifa- WORD114247 and precedes cius WORD114249. Later summary WORD114256 and114263–114264 are likewise serialized beside and between body continuation lines. The local reorder on leaf236 does not change this page."
+          }
+        ],
+        "inspection_scope": "Complete current review wording; active copied-page passage and more than20raw LF context lines either side; exact active controller hash replay; native XML WORD/raw expanded-token identity proved. No source re-acquisition or image collation.",
+        "known_correction_ids": [],
+        "native_word_evidence": [
+          {
+            "coords": "1178,1476,1213,1432",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "§ ",
+            "word_id": 114241
+          },
+          {
+            "coords": "1213,1467,1267,1432",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "2. ",
+            "word_id": 114242
+          },
+          {
+            "coords": "1267,1467,1340,1433",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "Ad ",
+            "word_id": 114243
+          },
+          {
+            "coords": "1340,1473,1459,1433",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "haec, ",
+            "word_id": 114244
+          },
+          {
+            "coords": "1459,1476,1556,1432",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "piae ",
+            "word_id": 114245
+          },
+          {
+            "coords": "1556,1467,1750,1433",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "memofiae ",
+            "word_id": 114246
+          },
+          {
+            "coords": "1750,1467,1918,1434",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "Bonifa- ",
+            "word_id": 114247
+          },
+          {
+            "coords": "1918,1472,2028,1444",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "Bonifedii",
+            "word_id": 114248
+          },
+          {
+            "coords": "1135,1519,1222,1485",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "cius ",
+            "word_id": 114249
+          },
+          {
+            "coords": "1222,1519,1280,1486",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "IX ",
+            "word_id": 114250
+          },
+          {
+            "coords": "1280,1519,1390,1491",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "motu ",
+            "word_id": 114251
+          },
+          {
+            "coords": "1390,1530,1542,1486",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "proprio ",
+            "word_id": 114252
+          },
+          {
+            "coords": "1542,1519,1670,1486",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "statuii ",
+            "word_id": 114253
+          },
+          {
+            "coords": "1670,1519,1720,1491",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "et ",
+            "word_id": 114254
+          },
+          {
+            "coords": "1720,1521,1897,1487",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "ordinavil ",
+            "word_id": 114255
+          },
+          {
+            "coords": "1897,1526,2014,1478",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "po^'loies",
+            "word_id": 114256
+          },
+          {
+            "coords": "1134,1582,1240,1539",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "quod ",
+            "word_id": 114257
+          },
+          {
+            "coords": "1240,1572,1294,1539",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "de ",
+            "word_id": 114258
+          },
+          {
+            "coords": "1294,1573,1412,1546",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "celerò ",
+            "word_id": 114259
+          },
+          {
+            "coords": "1412,1579,1517,1539",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "nulli, ",
+            "word_id": 114260
+          },
+          {
+            "coords": "1517,1583,1765,1540",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "cuiuscumque ",
+            "word_id": 114261
+          },
+          {
+            "coords": "1765,1582,1898,1530",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "status, ",
+            "word_id": 114262
+          },
+          {
+            "coords": "1898,1571,1954,1530",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "\" ",
+            "word_id": 114263
+          },
+          {
+            "coords": "1954,1558,2044,1528",
+            "leaf": 234,
+            "object_ordinal_1": 232,
+            "text": "\"^f^''",
+            "word_id": 114264
+          }
+        ],
+        "original_document_id": "bullarium.volume-08.unit-0066.part-01",
+        "physical_line_ranges": [
+          [
+            25599,
+            25784
+          ],
+          [
+            25794,
+            26211
+          ],
+          [
+            26272,
+            26277
+          ],
+          [
+            26284,
+            26284
+          ]
+        ],
+        "relevant_review_wording": "Independent LXXXIII heading25599, synopsis25602–25614 and actual Gregory protocol25616 precede ordered proem and sections1–9. Source note25633 belongs to the synopsis. Image-reviewed WORD order restores the divided section6 phrase and the displaced section9 WORDs; original full/short dating25867–25872 closes the act before independent LXXXIV25874. No substantive omission notice occurs. Conventional transumpt abbreviation at raw25865 remains literal. This proposal includes every owned page body/marginal WORD plus punctuation-only uncertain WORD115375, retained separately as uncertain OCR. All two left marginal summaries and the right section9 marginal summary belong to this act. The next heading/protocol/body and its note115364–115369 are excluded. Clipped outer-edge recognitions115379–115380 remain in the whole-volume uncertain stream and are not treated as act text.",
+        "remedy": "Withdraw this exact active selection pending a separately reviewed page-local stream separation/order correction for the copied raw page. Keep every original WORD identity; do not silently drop or split fused recognitions. Existing corrected-page roles cannot establish clean prose on unchanged pages.",
+        "segment_id": "segment.bullarium-romanum.volume-08.unit-0066.part-01.1883-naples-latin.source-ocr",
+        "source_grounded_reason": "On copied leaf234 the outer Boniface-summary WORD114248 follows the body Bonifa- WORD114247 and precedes cius WORD114249. Later summary WORD114256 and114263–114264 are likewise serialized beside and between body continuation lines. The local reorder on leaf236 does not change this page.",
+        "unit_id": "bullarium.volume-08.unit-0066.part-01"
+      },
+      "source_sha256": "f37197e94c2ba52afabfab11474f88cd13696638562c552fc764f477190765f9",
+      "unit_id": "bullarium.volume-08.unit-0066.part-01",
+      "withdrawn_documents": [
+        {
+          "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.coordinate-order-v1-f37197e94c2b",
+          "id": "bullarium.volume-08.unit-0066.part-01",
+          "language": "la",
+          "pdf_sha256": "d449b33c41f2aa330c518aedc32a356bbf7548622795def62ffa9abf9aa569d1",
+          "segment_id": "segment.bullarium-romanum.volume-08.unit-0066.part-01.1883-naples-latin.source-ocr",
+          "source_sha256": "f37197e94c2ba52afabfab11474f88cd13696638562c552fc764f477190765f9"
+        }
+      ]
+    },
+    {
+      "active_disposition": "source-order-hold",
+      "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.coordinate-order-v2-87945ff4a164",
+      "current_document_id": "bullarium.volume-08.unit-0067.part-01",
+      "physical_line_ranges": [
+        [
+          26212,
+          26271
+        ],
+        [
+          26278,
+          26283
+        ],
+        [
+          26289,
+          26979
+        ]
+      ],
+      "segment_id": "segment.bullarium-romanum.volume-08.unit-0067.part-01.1883-naples-latin.source-ocr",
+      "source_order_evidence": {
+        "active_controller_path": "src/sources/works/bullarium-romanum/volume-08/editions/1883-naples-latin/artifacts/coordinate-order-v2-87945ff4a164/hybrid.txt",
+        "active_selected_ranges": [
+          [
+            26212,
+            26271
+          ],
+          [
+            26278,
+            26283
+          ],
+          [
+            26289,
+            26979
+          ]
+        ],
+        "affected_physical_line_ranges": [
+          [
+            26843,
+            26847
+          ]
+        ],
+        "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.coordinate-order-v2-87945ff4a164",
+        "artifact_sha256": "87945ff4a164b60a7d66e69b49624115ec9f82996c411b460143d780b0d47919",
+        "candidate_repair_pages": [
+          {
+            "leaf": 238,
+            "object_ordinal_1": 236
+          }
+        ],
+        "classification": "confirmed-fusion",
+        "current_document_id": "bullarium.volume-08.unit-0067.part-01",
+        "evidence": [
+          {
+            "active_lf_ranges": [
+              [
+                26843,
+                26847
+              ]
+            ],
+            "active_source_excerpt": [
+              {
+                "line": 26843,
+                "raw": ",„„„„,i„rta.scientia  ac   matura   deliberatione  nostra, "
+              },
+              {
+                "line": 26844,
+                "raw": ""
+              },
+              {
+                "line": 26845,
+                "raw": "Ì'!'«^\"'pp! 'i^l (piae  per  Hadiianum  praediclum  statuta "
+              },
+              {
+                "line": 26846,
+                "raw": ""
+              },
+              {
+                "line": 26847,
+                "raw": "fii.n<,„B  «^«\"\"sunt,  ut  praefcrtur,  cuni  censuvis  et  poe- "
+              }
+            ],
+            "inspection_active_lf_range": [
+              26823,
+              26867
+            ],
+            "leaf": 238,
+            "native_xml_words": [
+              {
+                "coords": "179,2469,504,2427",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": ",„„„„,i„rta.scientia ",
+                "word_id": 116119
+              },
+              {
+                "coords": "504,2461,571,2439",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "ac  ",
+                "word_id": 116120
+              },
+              {
+                "coords": "571,2461,726,2429",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "matura  ",
+                "word_id": 116121
+              },
+              {
+                "coords": "726,2461,974,2429",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "deliberatione ",
+                "word_id": 116122
+              },
+              {
+                "coords": "974,2468,1091,2433",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "nostra,",
+                "word_id": 116123
+              },
+              {
+                "coords": "151,2526,290,2478",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "Ì'!'«^\"'pp!",
+                "word_id": 116124
+              },
+              {
+                "coords": "300,2522,341,2476",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "'i^l",
+                "word_id": 116125
+              },
+              {
+                "coords": "350,2525,451,2492",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "(piae ",
+                "word_id": 116126
+              },
+              {
+                "coords": "451,2524,531,2481",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "per ",
+                "word_id": 116127
+              },
+              {
+                "coords": "531,2514,754,2481",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "Hadiianum ",
+                "word_id": 116128
+              },
+              {
+                "coords": "754,2524,974,2482",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "praediclum ",
+                "word_id": 116129
+              },
+              {
+                "coords": "974,2514,1089,2486",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "statuta",
+                "word_id": 116130
+              },
+              {
+                "coords": "149,2564,263,2535",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "fii.n<,„B ",
+                "word_id": 116131
+              },
+              {
+                "coords": "263,2574,457,2532",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "«^«\"\"sunt, ",
+                "word_id": 116132
+              },
+              {
+                "coords": "457,2566,506,2539",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "ut ",
+                "word_id": 116133
+              },
+              {
+                "coords": "506,2577,710,2535",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "praefcrtur, ",
+                "word_id": 116134
+              },
+              {
+                "coords": "710,2569,799,2543",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "cuni ",
+                "word_id": 116135
+              },
+              {
+                "coords": "799,2568,963,2534",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "censuvis ",
+                "word_id": 116136
+              },
+              {
+                "coords": "963,2568,1016,2539",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "et ",
+                "word_id": 116137
+              },
+              {
+                "coords": "1016,2578,1089,2545",
+                "leaf": 238,
+                "object_ordinal_1": 236,
+                "text": "poe-",
+                "word_id": 116138
+              }
+            ],
+            "object_ordinal_1": 236,
+            "raw_parent_lf_ranges": [
+              [
+                26077,
+                26081
+              ]
+            ],
+            "reason": "On copied leaf238 native WORD116119 combines outer-left marginal recognition and body scientia in one OCR WORD bbox179–504. Separate margin WORD116124–116125 precede the body quae/per/Hadrianum WORD116126 onward, and marginal WORD116131 plus fused116132 intrude before body sunt/ut. The local reorder of leaves236–237 does not repair this subsequent raw page."
+          }
+        ],
+        "inspection_scope": "Complete current review wording; active copied-page passage and more than20raw LF context lines either side; exact active controller hash replay; native XML WORD/raw expanded-token identity proved. No source re-acquisition or image collation.",
+        "known_correction_ids": [],
+        "native_word_evidence": [
+          {
+            "coords": "179,2469,504,2427",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": ",„„„„,i„rta.scientia ",
+            "word_id": 116119
+          },
+          {
+            "coords": "504,2461,571,2439",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "ac  ",
+            "word_id": 116120
+          },
+          {
+            "coords": "571,2461,726,2429",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "matura  ",
+            "word_id": 116121
+          },
+          {
+            "coords": "726,2461,974,2429",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "deliberatione ",
+            "word_id": 116122
+          },
+          {
+            "coords": "974,2468,1091,2433",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "nostra,",
+            "word_id": 116123
+          },
+          {
+            "coords": "151,2526,290,2478",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "Ì'!'«^\"'pp!",
+            "word_id": 116124
+          },
+          {
+            "coords": "300,2522,341,2476",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "'i^l",
+            "word_id": 116125
+          },
+          {
+            "coords": "350,2525,451,2492",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "(piae ",
+            "word_id": 116126
+          },
+          {
+            "coords": "451,2524,531,2481",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "per ",
+            "word_id": 116127
+          },
+          {
+            "coords": "531,2514,754,2481",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "Hadiianum ",
+            "word_id": 116128
+          },
+          {
+            "coords": "754,2524,974,2482",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "praediclum ",
+            "word_id": 116129
+          },
+          {
+            "coords": "974,2514,1089,2486",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "statuta",
+            "word_id": 116130
+          },
+          {
+            "coords": "149,2564,263,2535",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "fii.n<,„B ",
+            "word_id": 116131
+          },
+          {
+            "coords": "263,2574,457,2532",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "«^«\"\"sunt, ",
+            "word_id": 116132
+          },
+          {
+            "coords": "457,2566,506,2539",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "ut ",
+            "word_id": 116133
+          },
+          {
+            "coords": "506,2577,710,2535",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "praefcrtur, ",
+            "word_id": 116134
+          },
+          {
+            "coords": "710,2569,799,2543",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "cuni ",
+            "word_id": 116135
+          },
+          {
+            "coords": "799,2568,963,2534",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "censuvis ",
+            "word_id": 116136
+          },
+          {
+            "coords": "963,2568,1016,2539",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "et ",
+            "word_id": 116137
+          },
+          {
+            "coords": "1016,2578,1089,2545",
+            "leaf": 238,
+            "object_ordinal_1": 236,
+            "text": "poe-",
+            "word_id": 116138
+          }
+        ],
+        "original_document_id": "bullarium.volume-08.unit-0067.part-01",
+        "physical_line_ranges": [
+          [
+            26212,
+            26271
+          ],
+          [
+            26278,
+            26283
+          ],
+          [
+            26289,
+            26979
+          ]
+        ],
+        "relevant_review_wording": "Entire original0067 candidate raw LF25874–26213 and20LF surrounding context read, together with inherited reordered leaf236 and new image-reviewed leaf237. Independent LXXXIV and Gregory self-protocol raw25886 open one act. The current title-source note raw25890 is retained. The page237 patch restores the continuation from denun-25954 through26005/26008–26013/26024 before the right-column opening25961; sections2–3 follow in source page order. The unchanged remainder on leaves238–239 contains current sections4–11, full transumpt/publication clauses, and complete full/short dating26209–26213 before independent LXXXV26216. Hadrian VI is narrated predecessor, not a serial outer act. No omitted substantive body, opening, annex or subscription notice occurs. No WORD is repaired, split, deleted or deduplicated. This is a complete printed OCR witness, not an authenticated act or a collated autograph.",
+        "remedy": "Withdraw this exact active selection pending a separately reviewed page-local stream separation/order correction for the copied raw page. Keep every original WORD identity; do not silently drop or split fused recognitions. Existing corrected-page roles cannot establish clean prose on unchanged pages.",
+        "segment_id": "segment.bullarium-romanum.volume-08.unit-0067.part-01.1883-naples-latin.source-ocr",
+        "source_grounded_reason": "On copied leaf238 native WORD116119 combines outer-left marginal recognition and body scientia in one OCR WORD bbox179–504. Separate margin WORD116124–116125 precede the body quae/per/Hadrianum WORD116126 onward, and marginal WORD116131 plus fused116132 intrude before body sunt/ut. The local reorder of leaves236–237 does not repair this subsequent raw page.",
+        "unit_id": "bullarium.volume-08.unit-0067.part-01"
+      },
+      "source_sha256": "87945ff4a164b60a7d66e69b49624115ec9f82996c411b460143d780b0d47919",
+      "unit_id": "bullarium.volume-08.unit-0067.part-01",
+      "withdrawn_documents": [
+        {
+          "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.coordinate-order-v2-87945ff4a164",
+          "id": "bullarium.volume-08.unit-0067.part-01",
+          "language": "la",
+          "pdf_sha256": "875c748c2f1cfd081c06a2ac998c7fa6d8ea8cd6f798a1824a5d2e69d25b8383",
+          "segment_id": "segment.bullarium-romanum.volume-08.unit-0067.part-01.1883-naples-latin.source-ocr",
+          "source_sha256": "87945ff4a164b60a7d66e69b49624115ec9f82996c411b460143d780b0d47919"
+        }
+      ]
+    },
+    {
+      "active_disposition": "source-order-hold",
+      "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.coordinate-order-v1-f37197e94c2b",
+      "current_document_id": "bullarium.volume-08.unit-0155.part-01",
+      "physical_line_ranges": [
+        [
+          69689,
+          70355
+        ]
+      ],
+      "segment_id": "segment.bullarium-romanum.volume-08.unit-0155.part-01.1883-naples-latin.source-ocr",
+      "source_order_evidence": {
+        "active_controller_path": "src/sources/works/bullarium-romanum/volume-08/editions/1883-naples-latin/artifacts/coordinate-order-v1-f37197e94c2b/hybrid.txt",
+        "active_selected_ranges": [
+          [
+            69689,
+            70355
+          ]
+        ],
+        "affected_physical_line_ranges": [
+          [
+            69707,
+            69716
+          ]
+        ],
+        "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.coordinate-order-v1-f37197e94c2b",
+        "artifact_sha256": "f37197e94c2ba52afabfab11474f88cd13696638562c552fc764f477190765f9",
+        "candidate_repair_pages": [
+          {
+            "leaf": 616,
+            "object_ordinal_1": 614
+          }
+        ],
+        "classification": "confirmed-fusion",
+        "current_document_id": "bullarium.volume-08.unit-0155.part-01",
+        "evidence": [
+          {
+            "active_lf_ranges": [
+              [
+                69707,
+                69716
+              ]
+            ],
+            "active_source_excerpt": [
+              {
+                "line": 69707,
+                "raw": "generalis  Ordinis  Cisterciensfe  ,   n^i^noii  jon^o'^u***\"' "
+              },
+              {
+                "line": 69708,
+                "raw": "abbatum  ,    praelatornm    et   conventuum  praeuioru  eli' "
+              },
+              {
+                "line": 69709,
+                "raw": ""
+              },
+              {
+                "line": 69710,
+                "raw": ",.      •-,!•■/>•  !•  f'  Tiros  mt., "
+              },
+              {
+                "line": 69711,
+                "raw": ""
+              },
+              {
+                "line": 69712,
+                "raw": "monasleriorum  dicti  Ordmis  luit  nobis  ex- gis  idoneoi  » "
+              },
+              {
+                "line": 69713,
+                "raw": ""
+              },
+              {
+                "line": 69714,
+                "raw": ".,  j       I-  ■  •       •  universo  noT- "
+              },
+              {
+                "line": 69715,
+                "raw": ""
+              },
+              {
+                "line": 69716,
+                "raw": "posilum  quod  alias  regimen  ipsius  con-  ro  swerdoi. "
+              }
+            ],
+            "inspection_active_lf_range": [
+              69687,
+              69736
+            ],
+            "leaf": 616,
+            "native_xml_words": [
+              {
+                "coords": "1078,284,1268,238",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "generalis ",
+                "word_id": 307385
+              },
+              {
+                "coords": "1268,276,1420,238",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "Ordinis ",
+                "word_id": 307386
+              },
+              {
+                "coords": "1420,276,1653,237",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "Cisterciensfe ",
+                "word_id": 307387
+              },
+              {
+                "coords": "1653,280,1696,248",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": ",  ",
+                "word_id": 307388
+              },
+              {
+                "coords": "1696,276,1839,247",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "n^i^noii ",
+                "word_id": 307389
+              },
+              {
+                "coords": "1839,286,2003,231",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "jon^o'^u***\"'",
+                "word_id": 307390
+              },
+              {
+                "coords": "1079,326,1246,294",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "abbatum ",
+                "word_id": 307391
+              },
+              {
+                "coords": "1246,332,1294,301",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": ",   ",
+                "word_id": 307392
+              },
+              {
+                "coords": "1294,332,1546,292",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "praelatornm   ",
+                "word_id": 307393
+              },
+              {
+                "coords": "1546,324,1608,297",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "et  ",
+                "word_id": 307394
+              },
+              {
+                "coords": "1608,324,1839,297",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "conventuum ",
+                "word_id": 307395
+              },
+              {
+                "coords": "1839,323,1977,296",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "praeuioru ",
+                "word_id": 307396
+              },
+              {
+                "coords": "1977,318,2017,290",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "eli'",
+                "word_id": 307397
+              },
+              {
+                "coords": "1382,358,1440,338",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": ",.     ",
+                "word_id": 307398
+              },
+              {
+                "coords": "1440,358,1712,338",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "•-,!•■/>• ",
+                "word_id": 307399
+              },
+              {
+                "coords": "1712,358,1839,332",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "!• ",
+                "word_id": 307400
+              },
+              {
+                "coords": "1839,352,1903,332",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "f' ",
+                "word_id": 307401
+              },
+              {
+                "coords": "1903,352,1969,328",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "Tiros ",
+                "word_id": 307402
+              },
+              {
+                "coords": "1969,348,2013,333",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "mt.,",
+                "word_id": 307403
+              },
+              {
+                "coords": "1079,380,1372,348",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "monasleriorum ",
+                "word_id": 307404
+              },
+              {
+                "coords": "1372,379,1457,348",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "dicti ",
+                "word_id": 307405
+              },
+              {
+                "coords": "1457,379,1598,348",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "Ordmis ",
+                "word_id": 307406
+              },
+              {
+                "coords": "1598,379,1668,351",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "luit ",
+                "word_id": 307407
+              },
+              {
+                "coords": "1668,380,1774,348",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "nobis ",
+                "word_id": 307408
+              },
+              {
+                "coords": "1774,381,1826,358",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "ex-",
+                "word_id": 307409
+              },
+              {
+                "coords": "1839,384,1887,357",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "gis ",
+                "word_id": 307410
+              },
+              {
+                "coords": "1887,379,1987,357",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "idoneoi ",
+                "word_id": 307411
+              },
+              {
+                "coords": "1987,379,2007,365",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "»",
+                "word_id": 307412
+              },
+              {
+                "coords": "1140,415,1308,396",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "., ",
+                "word_id": 307413
+              },
+              {
+                "coords": "1308,415,1374,396",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "j      ",
+                "word_id": 307414
+              },
+              {
+                "coords": "1374,415,1520,396",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "I- ",
+                "word_id": 307415
+              },
+              {
+                "coords": "1520,410,1626,396",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "■ ",
+                "word_id": 307416
+              },
+              {
+                "coords": "1626,410,1676,396",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "•      ",
+                "word_id": 307417
+              },
+              {
+                "coords": "1676,410,1839,395",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "• ",
+                "word_id": 307418
+              },
+              {
+                "coords": "1839,410,1946,390",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "universo ",
+                "word_id": 307419
+              },
+              {
+                "coords": "1946,409,1999,395",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "noT-",
+                "word_id": 307420
+              },
+              {
+                "coords": "1078,445,1238,407",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "posilum ",
+                "word_id": 307421
+              },
+              {
+                "coords": "1238,444,1354,403",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "quod ",
+                "word_id": 307422
+              },
+              {
+                "coords": "1354,436,1461,403",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "alias ",
+                "word_id": 307423
+              },
+              {
+                "coords": "1461,443,1624,411",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "regimen ",
+                "word_id": 307424
+              },
+              {
+                "coords": "1624,445,1747,412",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "ipsius ",
+                "word_id": 307425
+              },
+              {
+                "coords": "1747,436,1840,413",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "con- ",
+                "word_id": 307426
+              },
+              {
+                "coords": "1840,442,1877,414",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "ro ",
+                "word_id": 307427
+              },
+              {
+                "coords": "1877,442,1983,420",
+                "leaf": 616,
+                "object_ordinal_1": 614,
+                "text": "swerdoi.",
+                "word_id": 307428
+              }
+            ],
+            "object_ordinal_1": 614,
+            "raw_parent_lf_ranges": [
+              [
+                69327,
+                69336
+              ]
+            ],
+            "reason": "On copied opening leaf616 right-margin election-summary WORDs307390,307396–307403 and307410–307412 appear between body generalis/abbatum/conventuum/monasteriorum; later margin307419–307420 and307427–307428 separate ex-/positum and con-/gregationis. The repaired leaf617 and typed streams there do not fix this opening page."
+          }
+        ],
+        "inspection_scope": "Complete current review wording; active copied-page passage and more than20raw LF context lines either side; exact active controller hash replay; native XML WORD/raw expanded-token identity proved. No source re-acquisition or image collation.",
+        "known_correction_ids": [],
+        "native_word_evidence": [
+          {
+            "coords": "1078,284,1268,238",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "generalis ",
+            "word_id": 307385
+          },
+          {
+            "coords": "1268,276,1420,238",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "Ordinis ",
+            "word_id": 307386
+          },
+          {
+            "coords": "1420,276,1653,237",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "Cisterciensfe ",
+            "word_id": 307387
+          },
+          {
+            "coords": "1653,280,1696,248",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": ",  ",
+            "word_id": 307388
+          },
+          {
+            "coords": "1696,276,1839,247",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "n^i^noii ",
+            "word_id": 307389
+          },
+          {
+            "coords": "1839,286,2003,231",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "jon^o'^u***\"'",
+            "word_id": 307390
+          },
+          {
+            "coords": "1079,326,1246,294",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "abbatum ",
+            "word_id": 307391
+          },
+          {
+            "coords": "1246,332,1294,301",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": ",   ",
+            "word_id": 307392
+          },
+          {
+            "coords": "1294,332,1546,292",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "praelatornm   ",
+            "word_id": 307393
+          },
+          {
+            "coords": "1546,324,1608,297",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "et  ",
+            "word_id": 307394
+          },
+          {
+            "coords": "1608,324,1839,297",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "conventuum ",
+            "word_id": 307395
+          },
+          {
+            "coords": "1839,323,1977,296",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "praeuioru ",
+            "word_id": 307396
+          },
+          {
+            "coords": "1977,318,2017,290",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "eli'",
+            "word_id": 307397
+          },
+          {
+            "coords": "1382,358,1440,338",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": ",.     ",
+            "word_id": 307398
+          },
+          {
+            "coords": "1440,358,1712,338",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "•-,!•■/>• ",
+            "word_id": 307399
+          },
+          {
+            "coords": "1712,358,1839,332",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "!• ",
+            "word_id": 307400
+          },
+          {
+            "coords": "1839,352,1903,332",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "f' ",
+            "word_id": 307401
+          },
+          {
+            "coords": "1903,352,1969,328",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "Tiros ",
+            "word_id": 307402
+          },
+          {
+            "coords": "1969,348,2013,333",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "mt.,",
+            "word_id": 307403
+          },
+          {
+            "coords": "1079,380,1372,348",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "monasleriorum ",
+            "word_id": 307404
+          },
+          {
+            "coords": "1372,379,1457,348",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "dicti ",
+            "word_id": 307405
+          },
+          {
+            "coords": "1457,379,1598,348",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "Ordmis ",
+            "word_id": 307406
+          },
+          {
+            "coords": "1598,379,1668,351",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "luit ",
+            "word_id": 307407
+          },
+          {
+            "coords": "1668,380,1774,348",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "nobis ",
+            "word_id": 307408
+          },
+          {
+            "coords": "1774,381,1826,358",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "ex-",
+            "word_id": 307409
+          },
+          {
+            "coords": "1839,384,1887,357",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "gis ",
+            "word_id": 307410
+          },
+          {
+            "coords": "1887,379,1987,357",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "idoneoi ",
+            "word_id": 307411
+          },
+          {
+            "coords": "1987,379,2007,365",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "»",
+            "word_id": 307412
+          },
+          {
+            "coords": "1140,415,1308,396",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "., ",
+            "word_id": 307413
+          },
+          {
+            "coords": "1308,415,1374,396",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "j      ",
+            "word_id": 307414
+          },
+          {
+            "coords": "1374,415,1520,396",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "I- ",
+            "word_id": 307415
+          },
+          {
+            "coords": "1520,410,1626,396",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "■ ",
+            "word_id": 307416
+          },
+          {
+            "coords": "1626,410,1676,396",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "•      ",
+            "word_id": 307417
+          },
+          {
+            "coords": "1676,410,1839,395",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "• ",
+            "word_id": 307418
+          },
+          {
+            "coords": "1839,410,1946,390",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "universo ",
+            "word_id": 307419
+          },
+          {
+            "coords": "1946,409,1999,395",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "noT-",
+            "word_id": 307420
+          },
+          {
+            "coords": "1078,445,1238,407",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "posilum ",
+            "word_id": 307421
+          },
+          {
+            "coords": "1238,444,1354,403",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "quod ",
+            "word_id": 307422
+          },
+          {
+            "coords": "1354,436,1461,403",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "alias ",
+            "word_id": 307423
+          },
+          {
+            "coords": "1461,443,1624,411",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "regimen ",
+            "word_id": 307424
+          },
+          {
+            "coords": "1624,445,1747,412",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "ipsius ",
+            "word_id": 307425
+          },
+          {
+            "coords": "1747,436,1840,413",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "con- ",
+            "word_id": 307426
+          },
+          {
+            "coords": "1840,442,1877,414",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "ro ",
+            "word_id": 307427
+          },
+          {
+            "coords": "1877,442,1983,420",
+            "leaf": 616,
+            "object_ordinal_1": 614,
+            "text": "swerdoi.",
+            "word_id": 307428
+          }
+        ],
+        "original_document_id": "bullarium.volume-08.unit-0155.part-01",
+        "physical_line_ranges": [
+          [
+            69689,
+            70355
+          ]
+        ],
+        "relevant_review_wording": "Independent XIV heading69309, synopsis69311–69317 and actual Sixtus protocol69318 identify one act. Gregory69345 is a narrated predecessor. Current source note69323–69324 belongs to the synopsis. Image-reviewed leaf617 body order restores sections3 and4 and the displaced WORDs from raw69453–69457; all body paragraphs1–8, full/short dating69560–69564 and own historical note survive before XV69573. Literal transumpt abbreviation69556–69558 is conventional and remains unexpanded. All marginal summaries on leaf617 concern this act; overlapping or fused marginal recognitions remain separate and are not deduplicated. All thirteen uncertain WORDs and the gutter-rule WORD are retained, typed outside continuous body prose; the footer is an edition signature, not another act. No source-declared substantive omission occurs. Rendering must preserve and distinguish typed marginal, uncertain and gutter streams, rather than concatenate them as unmarked body prose.",
+        "remedy": "Withdraw this exact active selection pending a separately reviewed page-local stream separation/order correction for the copied raw page. Keep every original WORD identity; do not silently drop or split fused recognitions. Existing corrected-page roles cannot establish clean prose on unchanged pages.",
+        "segment_id": "segment.bullarium-romanum.volume-08.unit-0155.part-01.1883-naples-latin.source-ocr",
+        "source_grounded_reason": "On copied opening leaf616 right-margin election-summary WORDs307390,307396–307403 and307410–307412 appear between body generalis/abbatum/conventuum/monasteriorum; later margin307419–307420 and307427–307428 separate ex-/positum and con-/gregationis. The repaired leaf617 and typed streams there do not fix this opening page.",
+        "unit_id": "bullarium.volume-08.unit-0155.part-01"
+      },
+      "source_sha256": "f37197e94c2ba52afabfab11474f88cd13696638562c552fc764f477190765f9",
+      "unit_id": "bullarium.volume-08.unit-0155.part-01",
+      "withdrawn_documents": [
+        {
+          "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.coordinate-order-v1-f37197e94c2b",
+          "id": "bullarium.volume-08.unit-0155.part-01",
+          "language": "la",
+          "pdf_sha256": "db0530b549f6cb4f873b5952c44e349163f1b32c993861e826810669abaaf5e4",
+          "segment_id": "segment.bullarium-romanum.volume-08.unit-0155.part-01.1883-naples-latin.source-ocr",
+          "source_sha256": "f37197e94c2ba52afabfab11474f88cd13696638562c552fc764f477190765f9"
+        }
+      ]
+    },
+    {
+      "active_disposition": "source-order-hold",
+      "artifact_id": "artifact.bullarium-romanum.volume-12.1867-turin-latin.coordinate-order-v1-e69d188972ee",
+      "current_document_id": "bullarium.volume-12.unit-0107.part-01",
+      "physical_line_ranges": [
+        [
+          65373,
+          66060
+        ]
+      ],
+      "segment_id": "segment.bullarium-romanum.volume-12.unit-0107.part-01.1867-turin-latin.source-ocr",
+      "source_order_evidence": {
+        "affected_physical_line_ranges": [
+          [
+            65389,
+            65390
+          ],
+          [
+            65403,
+            65406
+          ]
+        ],
+        "artifact_id": "artifact.bullarium-romanum.volume-12.1867-turin-latin.coordinate-order-v1-e69d188972ee",
+        "artifact_sha256": "e69d188972ee07a5bead29e71447e68ec671ba2830e377ab4d254e4ae74bfa2c",
+        "classification": "confirmed-fusion",
+        "current_document_id": "bullarium.volume-12.unit-0107.part-01",
+        "image_evidence": {
+          "artifact_id": "artifact.bullarium-romanum.volume-12.1867-turin-latin.geometry-leaf-494-6610806dfc94",
+          "passage_id": "passage.bullarium-romanum.volume-12.1867-turin-latin.geometry-leaf-494",
+          "path": "src/sources/works/bullarium-romanum/volume-12/editions/1867-turin-latin/artifacts/geometry-leaf-494-6610806dfc94/page.jpg",
+          "printed_page_seen": "456",
+          "scan_leaf": 494,
+          "sha256": "6610806dfc94c958727a2b37d63bbe85fd974de4f94b3a4a535d360af71ebda7",
+          "visually_inspected": true
+        },
+        "inspection_physical_line_ranges": [
+          [
+            65383,
+            65408
+          ]
+        ],
+        "known_correction_ids": [],
+        "limits": "Geometry proof does not authenticate the act or repair its OCR words.",
+        "minimum_confirmed_repair_leaves": [
+          494
+        ],
+        "native_word_evidence": [
+          {
+            "coords": "1292,1830,1458,1796",
+            "source_attrs": {
+              "coords": "1292,1830,1458,1796",
+              "x-confidence": "15"
+            },
+            "source_bbox": [
+              1292,
+              1796,
+              1458,
+              1830
+            ],
+            "source_line_global_1": 48351,
+            "source_line_page_1": 75,
+            "source_txt_physical_lines": [
+              65389
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2098389,
+                2098398
+              ]
+            ],
+            "source_word_global_1": 259601,
+            "source_word_page_1": 421,
+            "source_xml_byte_range_0": [
+              21547373,
+              21547443
+            ],
+            "value": "lieliilum "
+          },
+          {
+            "coords": "1458,1839,1647,1796",
+            "source_attrs": {
+              "coords": "1458,1839,1647,1796",
+              "x-confidence": "14"
+            },
+            "source_bbox": [
+              1458,
+              1796,
+              1647,
+              1839
+            ],
+            "source_line_global_1": 48351,
+            "source_line_page_1": 75,
+            "source_txt_physical_lines": [
+              65389
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2098400,
+                2098410
+              ]
+            ],
+            "source_word_global_1": 259602,
+            "source_word_page_1": 422,
+            "source_xml_byte_range_0": [
+              21547452,
+              21547523
+            ],
+            "value": "pastoralis "
+          },
+          {
+            "coords": "1647,1830,1759,1796",
+            "source_attrs": {
+              "coords": "1647,1830,1759,1796",
+              "x-confidence": "7"
+            },
+            "source_bbox": [
+              1647,
+              1796,
+              1759,
+              1830
+            ],
+            "source_line_global_1": 48351,
+            "source_line_page_1": 75,
+            "source_txt_physical_lines": [
+              65389
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2098412,
+                2098419
+              ]
+            ],
+            "source_word_global_1": 259603,
+            "source_word_page_1": 423,
+            "source_xml_byte_range_0": [
+              21547532,
+              21547599
+            ],
+            "value": "oHìcii "
+          },
+          {
+            "coords": "1759,1830,1869,1797",
+            "source_attrs": {
+              "coords": "1759,1830,1869,1797",
+              "x-confidence": "16"
+            },
+            "source_bbox": [
+              1759,
+              1797,
+              1869,
+              1830
+            ],
+            "source_line_global_1": 48351,
+            "source_line_page_1": 75,
+            "source_txt_physical_lines": [
+              65389
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2098421,
+                2098426
+              ]
+            ],
+            "source_word_global_1": 259604,
+            "source_word_page_1": 424,
+            "source_xml_byte_range_0": [
+              21547608,
+              21547674
+            ],
+            "value": "nobis "
+          },
+          {
+            "coords": "1869,1830,1923,1807",
+            "source_attrs": {
+              "coords": "1869,1830,1923,1807",
+              "x-confidence": "1"
+            },
+            "source_bbox": [
+              1869,
+              1807,
+              1923,
+              1830
+            ],
+            "source_line_global_1": 48351,
+            "source_line_page_1": 75,
+            "source_txt_physical_lines": [
+              65389
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2098428,
+                2098430
+              ]
+            ],
+            "source_word_global_1": 259605,
+            "source_word_page_1": 425,
+            "source_xml_byte_range_0": [
+              21547683,
+              21547745
+            ],
+            "value": "ex "
+          },
+          {
+            "coords": "1923,1830,2029,1797",
+            "source_attrs": {
+              "coords": "1923,1830,2029,1797",
+              "x-confidence": "46"
+            },
+            "source_bbox": [
+              1923,
+              1797,
+              2029,
+              1830
+            ],
+            "source_line_global_1": 48351,
+            "source_line_page_1": 75,
+            "source_txt_physical_lines": [
+              65389
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2098432,
+                2098436
+              ]
+            ],
+            "source_word_global_1": 259606,
+            "source_word_page_1": 426,
+            "source_xml_byte_range_0": [
+              21547754,
+              21547819
+            ],
+            "value": "allo "
+          },
+          {
+            "coords": "2029,1837,2146,1816",
+            "source_attrs": {
+              "coords": "2029,1837,2146,1816",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              2029,
+              1816,
+              2146,
+              1837
+            ],
+            "source_line_global_1": 48351,
+            "source_line_page_1": 75,
+            "source_txt_physical_lines": [
+              65389
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2098438,
+                2098450
+              ]
+            ],
+            "source_word_global_1": 259607,
+            "source_word_page_1": 427,
+            "source_xml_byte_range_0": [
+              21547828,
+              21547899
+            ],
+            "value": "r,,„ramBi."
+          },
+          {
+            "coords": "1245,1881,1431,1849",
+            "source_attrs": {
+              "coords": "1245,1881,1431,1849",
+              "x-confidence": "58"
+            },
+            "source_bbox": [
+              1245,
+              1849,
+              1431,
+              1881
+            ],
+            "source_line_global_1": 48352,
+            "source_line_page_1": 76,
+            "source_txt_physical_lines": [
+              65390
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2098452,
+                2098460
+              ]
+            ],
+            "source_word_global_1": 259608,
+            "source_word_page_1": 428,
+            "source_xml_byte_range_0": [
+              21547937,
+              21548006
+            ],
+            "value": "commissi "
+          },
+          {
+            "coords": "1290,2529,1325,2486",
+            "source_attrs": {
+              "coords": "1290,2529,1325,2486",
+              "x-confidence": "3"
+            },
+            "source_bbox": [
+              1290,
+              2486,
+              1325,
+              2529
+            ],
+            "source_line_global_1": 48364,
+            "source_line_page_1": 88,
+            "source_txt_physical_lines": [
+              65403
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099004,
+                2099006
+              ]
+            ],
+            "source_word_global_1": 259670,
+            "source_word_page_1": 490,
+            "source_xml_byte_range_0": [
+              21553076,
+              21553138
+            ],
+            "value": "§ "
+          },
+          {
+            "coords": "1325,2519,1374,2486",
+            "source_attrs": {
+              "coords": "1325,2519,1374,2486",
+              "x-confidence": "18"
+            },
+            "source_bbox": [
+              1325,
+              2486,
+              1374,
+              2519
+            ],
+            "source_line_global_1": 48364,
+            "source_line_page_1": 88,
+            "source_txt_physical_lines": [
+              65403
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099008,
+                2099010
+              ]
+            ],
+            "source_word_global_1": 259671,
+            "source_word_page_1": 491,
+            "source_xml_byte_range_0": [
+              21553147,
+              21553210
+            ],
+            "value": "\\. "
+          },
+          {
+            "coords": "1374,2519,1535,2485",
+            "source_attrs": {
+              "coords": "1374,2519,1535,2485",
+              "x-confidence": "11"
+            },
+            "source_bbox": [
+              1374,
+              2485,
+              1535,
+              2519
+            ],
+            "source_line_global_1": 48364,
+            "source_line_page_1": 88,
+            "source_txt_physical_lines": [
+              65403
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099012,
+                2099020
+              ]
+            ],
+            "source_word_global_1": 259672,
+            "source_word_page_1": 492,
+            "source_xml_byte_range_0": [
+              21553219,
+              21553288
+            ],
+            "value": "Exhibita "
+          },
+          {
+            "coords": "1535,2528,1706,2485",
+            "source_attrs": {
+              "coords": "1535,2528,1706,2485",
+              "x-confidence": "25"
+            },
+            "source_bbox": [
+              1535,
+              2485,
+              1706,
+              2528
+            ],
+            "source_line_global_1": 48364,
+            "source_line_page_1": 88,
+            "source_txt_physical_lines": [
+              65403
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099022,
+                2099030
+              ]
+            ],
+            "source_word_global_1": 259673,
+            "source_word_page_1": 493,
+            "source_xml_byte_range_0": [
+              21553297,
+              21553366
+            ],
+            "value": "siquidem "
+          },
+          {
+            "coords": "1706,2519,1809,2485",
+            "source_attrs": {
+              "coords": "1706,2519,1809,2485",
+              "x-confidence": "47"
+            },
+            "source_bbox": [
+              1706,
+              2485,
+              1809,
+              2519
+            ],
+            "source_line_global_1": 48364,
+            "source_line_page_1": 88,
+            "source_txt_physical_lines": [
+              65403
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099032,
+                2099037
+              ]
+            ],
+            "source_word_global_1": 259674,
+            "source_word_page_1": 494,
+            "source_xml_byte_range_0": [
+              21553375,
+              21553441
+            ],
+            "value": "nobis "
+          },
+          {
+            "coords": "1809,2529,1927,2495",
+            "source_attrs": {
+              "coords": "1809,2529,1927,2495",
+              "x-confidence": "69"
+            },
+            "source_bbox": [
+              1809,
+              2495,
+              1927,
+              2529
+            ],
+            "source_line_global_1": 48364,
+            "source_line_page_1": 88,
+            "source_txt_physical_lines": [
+              65403
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099039,
+                2099044
+              ]
+            ],
+            "source_word_global_1": 259675,
+            "source_word_page_1": 495,
+            "source_xml_byte_range_0": [
+              21553450,
+              21553516
+            ],
+            "value": "nuper "
+          },
+          {
+            "coords": "1927,2529,2042,2496",
+            "source_attrs": {
+              "coords": "1927,2529,2042,2496",
+              "x-confidence": "10"
+            },
+            "source_bbox": [
+              1927,
+              2496,
+              2042,
+              2529
+            ],
+            "source_line_global_1": 48364,
+            "source_line_page_1": 88,
+            "source_txt_physical_lines": [
+              65403
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099046,
+                2099050
+              ]
+            ],
+            "source_word_global_1": 259676,
+            "source_word_page_1": 496,
+            "source_xml_byte_range_0": [
+              21553525,
+              21553594
+            ],
+            "value": "prò     "
+          },
+          {
+            "coords": "2042,2525,2142,2498",
+            "source_attrs": {
+              "coords": "2042,2525,2142,2498",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              2042,
+              2498,
+              2142,
+              2525
+            ],
+            "source_line_global_1": 48364,
+            "source_line_page_1": 88,
+            "source_txt_physical_lines": [
+              65403
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099056,
+                2099061
+              ]
+            ],
+            "source_word_global_1": 259677,
+            "source_word_page_1": 497,
+            "source_xml_byte_range_0": [
+              21553603,
+              21553668
+            ],
+            "value": "peuno "
+          },
+          {
+            "coords": "2142,2531,2185,2504",
+            "source_attrs": {
+              "coords": "2142,2531,2185,2504",
+              "x-confidence": "34"
+            },
+            "source_bbox": [
+              2142,
+              2504,
+              2185,
+              2531
+            ],
+            "source_line_global_1": 48364,
+            "source_line_page_1": 88,
+            "source_txt_physical_lines": [
+              65403
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099063,
+                2099068
+              ]
+            ],
+            "source_word_global_1": 259678,
+            "source_word_page_1": 498,
+            "source_xml_byte_range_0": [
+              21553677,
+              21553742
+            ],
+            "value": "«pi-"
+          },
+          {
+            "coords": "1246,2581,1372,2542",
+            "source_attrs": {
+              "coords": "1246,2581,1372,2542",
+              "x-confidence": "13"
+            },
+            "source_bbox": [
+              1246,
+              2542,
+              1372,
+              2581
+            ],
+            "source_line_global_1": 48365,
+            "source_line_page_1": 89,
+            "source_txt_physical_lines": [
+              65404
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099070,
+                2099075
+              ]
+            ],
+            "source_word_global_1": 259679,
+            "source_word_page_1": 499,
+            "source_xml_byte_range_0": [
+              21553780,
+              21553848
+            ],
+            "value": "parte   "
+          },
+          {
+            "coords": "1372,2570,1591,2538",
+            "source_attrs": {
+              "coords": "1372,2570,1591,2538",
+              "x-confidence": "15"
+            },
+            "source_bbox": [
+              1372,
+              2538,
+              1591,
+              2570
+            ],
+            "source_line_global_1": 48365,
+            "source_line_page_1": 89,
+            "source_txt_physical_lines": [
+              65404
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099079,
+                2099090
+              ]
+            ],
+            "source_word_global_1": 259680,
+            "source_word_page_1": 500,
+            "source_xml_byte_range_0": [
+              21553857,
+              21553930
+            ],
+            "value": "venerabilis  "
+          },
+          {
+            "coords": "1591,2570,1727,2537",
+            "source_attrs": {
+              "coords": "1591,2570,1727,2537",
+              "x-confidence": "12"
+            },
+            "source_bbox": [
+              1591,
+              2537,
+              1727,
+              2570
+            ],
+            "source_line_global_1": 48365,
+            "source_line_page_1": 89,
+            "source_txt_physical_lines": [
+              65404
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099093,
+                2099100
+              ]
+            ],
+            "source_word_global_1": 259681,
+            "source_word_page_1": 501,
+            "source_xml_byte_range_0": [
+              21553939,
+              21554008
+            ],
+            "value": "fralris  "
+          },
+          {
+            "coords": "1727,2571,1862,2538",
+            "source_attrs": {
+              "coords": "1727,2571,1862,2538",
+              "x-confidence": "6"
+            },
+            "source_bbox": [
+              1727,
+              2538,
+              1862,
+              2571
+            ],
+            "source_line_global_1": 48365,
+            "source_line_page_1": 89,
+            "source_txt_physical_lines": [
+              65404
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099103,
+                2099109
+              ]
+            ],
+            "source_word_global_1": 259682,
+            "source_word_page_1": 502,
+            "source_xml_byte_range_0": [
+              21554017,
+              21554085
+            ],
+            "value": "nostri   "
+          },
+          {
+            "coords": "1862,2571,2003,2538",
+            "source_attrs": {
+              "coords": "1862,2571,2003,2538",
+              "x-confidence": "23"
+            },
+            "source_bbox": [
+              1862,
+              2538,
+              2003,
+              2571
+            ],
+            "source_line_global_1": 48365,
+            "source_line_page_1": 89,
+            "source_txt_physical_lines": [
+              65404
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099113,
+                2099121
+              ]
+            ],
+            "source_word_global_1": 259683,
+            "source_word_page_1": 503,
+            "source_xml_byte_range_0": [
+              21554094,
+              21554163
+            ],
+            "value": "flenrici "
+          },
+          {
+            "coords": "2003,2577,2083,2536",
+            "source_attrs": {
+              "coords": "2003,2577,2083,2536",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              2003,
+              2536,
+              2083,
+              2577
+            ],
+            "source_line_global_1": 48365,
+            "source_line_page_1": 89,
+            "source_txt_physical_lines": [
+              65404
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099123,
+                2099126
+              ]
+            ],
+            "source_word_global_1": 259684,
+            "source_word_page_1": 504,
+            "source_xml_byte_range_0": [
+              21554172,
+              21554235
+            ],
+            "value": "]'Z "
+          },
+          {
+            "coords": "2083,2570,2126,2533",
+            "source_attrs": {
+              "coords": "2083,2570,2126,2533",
+              "x-confidence": "23"
+            },
+            "source_bbox": [
+              2083,
+              2533,
+              2126,
+              2570
+            ],
+            "source_line_global_1": 48365,
+            "source_line_page_1": 89,
+            "source_txt_physical_lines": [
+              65404
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099128,
+                2099130
+              ]
+            ],
+            "source_word_global_1": 259685,
+            "source_word_page_1": 505,
+            "source_xml_byte_range_0": [
+              21554244,
+              21554307
+            ],
+            "value": "*' "
+          },
+          {
+            "coords": "2126,2557,2186,2531",
+            "source_attrs": {
+              "coords": "2126,2557,2186,2531",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              2126,
+              2531,
+              2186,
+              2557
+            ],
+            "source_line_global_1": 48365,
+            "source_line_page_1": 89,
+            "source_txt_physical_lines": [
+              65404
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                2099132,
+                2099137
+              ]
+            ],
+            "source_word_global_1": 259686,
+            "source_word_page_1": 506,
+            "source_xml_byte_range_0": [
+              21554316,
+              21554400
+            ],
+            "value": "\"\"\"^\""
+          }
+        ],
+        "original_document_id": "bullarium.volume-12.unit-0107.part-01",
+        "pages_requiring_order_review": [
+          496,
+          497
+        ],
+        "physical_line_ranges": [
+          [
+            65373,
+            66060
+          ]
+        ],
+        "relevant_existing_review_wording": "Independent CCCXXIV, Paulus protocol at raw LF65383–65387, all printed sections1–4, historical apparatus and full/short dating at raw LF65638–65643 survive before CCCXXV at65646. The leaf495 mixed-column defect at65416 is repaired. Notes65458–65459,65463–65465 and65569–65570 are tentative individual lexical/editorial conjectures; they do not announce an omitted proem, substantive body or annex. Their exact wording remains literal, and no proposed limiter, verb form or preposition is adopted or supplied. This is a complete printed OCR witness, not an authenticated act or a complete autograph.",
+        "remaining_page_scope": "Leaf495 was already reordered; leaves496–497 still need the same whole-act current-source order audit. Their need for repair is not inferred solely from margin mentions.",
+        "repair_leaves": [
+          494
+        ],
+        "required_disposition": "active source-order hold; preserve current PDF/source history and require a separately identified ordered derivative before restored complete-reader eligibility.",
+        "review_extent": "Actual retained opening and petition loci plus native XML WORD geometry and the complete native page image; not a new whole-act boundary review.",
+        "segment_id": "segment.bullarium-romanum.volume-12.unit-0107.part-01.1867-turin-latin.source-ocr",
+        "segment_path": "src/sources/works/bullarium-romanum/volume-12-unit-0107-part-01/editions/1867-turin-latin/segments/source-ocr.toml",
+        "source_order_findings": [
+          {
+            "body_after_WORD": 259608,
+            "body_before_WORD": 259606,
+            "finding": "The right-marginal opening caption is serialized between the end of the first body line and its continuation. The current coordinate controller copies this raw page unchanged.",
+            "intruding_margin_WORDs": [
+              259607
+            ],
+            "source_role_seen": "right-marginal opening summary"
+          },
+          {
+            "body_after_WORD": 259679,
+            "body_before_WORD": 259676,
+            "finding": "The petition caption intrudes after the body preposition and again among the following line. Ownership is known, but the body sequence remains interleaved.",
+            "intruding_margin_WORDs": [
+              259677,
+              259678,
+              259684,
+              259685,
+              259686
+            ],
+            "source_role_seen": "right-marginal petition summary"
+          }
+        ],
+        "source_xml_artifact_id": "artifact.bullarium-romanum.volume-12.1867-turin-latin.xml-95fe035b27cf",
+        "source_xml_sha256": "95fe035b27cf8c21654ac99bd71b4cf9402fc14e9b776bfc70d2a5c565790ff3",
+        "text_path": "src/sources/works/bullarium-romanum/volume-12/editions/1867-turin-latin/artifacts/coordinate-order-v1-e69d188972ee/hybrid.txt",
+        "unit_id": "bullarium.volume-12.unit-0107.part-01"
+      },
+      "source_sha256": "e69d188972ee07a5bead29e71447e68ec671ba2830e377ab4d254e4ae74bfa2c",
+      "unit_id": "bullarium.volume-12.unit-0107.part-01",
+      "withdrawn_documents": [
+        {
+          "artifact_id": "artifact.bullarium-romanum.volume-12.1867-turin-latin.coordinate-order-v1-e69d188972ee",
+          "id": "bullarium.volume-12.unit-0107.part-01",
+          "language": "la",
+          "pdf_sha256": "0bf4cd53184df51e9b3d99d2d40a858ab49e66ea37c7156db5a6e5bef189e246",
+          "segment_id": "segment.bullarium-romanum.volume-12.unit-0107.part-01.1867-turin-latin.source-ocr",
+          "source_sha256": "e69d188972ee07a5bead29e71447e68ec671ba2830e377ab4d254e4ae74bfa2c"
+        }
+      ]
+    }
+  ],
+  "documents": [],
+  "revision": "2026-10-26T13:25:49Z",
+  "schema": "triptych-papal-typeset/v1",
+  "supersessions": [
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.coordinate-order-v1-f37197e94c2b",
+        "id": "bullarium.volume-08.unit-0066.part-01",
+        "language": "la",
+        "pdf_sha256": "d449b33c41f2aa330c518aedc32a356bbf7548622795def62ffa9abf9aa569d1",
+        "segment_id": "segment.bullarium-romanum.volume-08.unit-0066.part-01.1883-naples-latin.source-ocr",
+        "source_sha256": "f37197e94c2ba52afabfab11474f88cd13696638562c552fc764f477190765f9"
+      },
+      "reason": "Confirmed body/margin word interleaving remains in the selected source at LF [[25658, 25660]]; page-local repairs did not establish whole-act source order. Preserve the historical PDF and require a separately identified ordered witness before active delivery.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.coordinate-order-v2-87945ff4a164",
+        "id": "bullarium.volume-08.unit-0067.part-01",
+        "language": "la",
+        "pdf_sha256": "875c748c2f1cfd081c06a2ac998c7fa6d8ea8cd6f798a1824a5d2e69d25b8383",
+        "segment_id": "segment.bullarium-romanum.volume-08.unit-0067.part-01.1883-naples-latin.source-ocr",
+        "source_sha256": "87945ff4a164b60a7d66e69b49624115ec9f82996c411b460143d780b0d47919"
+      },
+      "reason": "Confirmed body/margin word interleaving remains in the selected source at LF [[26843, 26847]]; page-local repairs did not establish whole-act source order. Preserve the historical PDF and require a separately identified ordered witness before active delivery.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.coordinate-order-v1-f37197e94c2b",
+        "id": "bullarium.volume-08.unit-0155.part-01",
+        "language": "la",
+        "pdf_sha256": "db0530b549f6cb4f873b5952c44e349163f1b32c993861e826810669abaaf5e4",
+        "segment_id": "segment.bullarium-romanum.volume-08.unit-0155.part-01.1883-naples-latin.source-ocr",
+        "source_sha256": "f37197e94c2ba52afabfab11474f88cd13696638562c552fc764f477190765f9"
+      },
+      "reason": "Confirmed body/margin word interleaving remains in the selected source at LF [[69707, 69716]]; page-local repairs did not establish whole-act source order. Preserve the historical PDF and require a separately identified ordered witness before active delivery.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-12.1867-turin-latin.coordinate-order-v1-e69d188972ee",
+        "id": "bullarium.volume-12.unit-0107.part-01",
+        "language": "la",
+        "pdf_sha256": "0bf4cd53184df51e9b3d99d2d40a858ab49e66ea37c7156db5a6e5bef189e246",
+        "segment_id": "segment.bullarium-romanum.volume-12.unit-0107.part-01.1867-turin-latin.source-ocr",
+        "source_sha256": "e69d188972ee07a5bead29e71447e68ec671ba2830e377ab4d254e4ae74bfa2c"
+      },
+      "reason": "Confirmed body/margin word interleaving remains in the selected source at LF [[65389, 65390], [65403, 65406]]; page-local repairs did not establish whole-act source order. Preserve the historical PDF and require a separately identified ordered witness before active delivery.",
+      "replacement": null
+    }
+  ]
+}

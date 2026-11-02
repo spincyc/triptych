@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31.verse-aliases-31d31383"
+edition_id = "edition.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference facts and qualification prose; no third-party scripture body is copied into this table."
+rights_jurisdiction = "United States"
+projected_from = ["artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-83-2thlatvuc-192ea252", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-60-2-thessalonians-79eff09a", "artifact.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31.verse-aliases-6b8eb235", "artifact.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31.verse-text-60-2-thessalonians-955c6d3e"]
+transformation = "Preserve the exact previous immutable alias payload as a byte prefix and append only independently accepted distinct source-coordinate rows, ordered by cited_locus. No prior row or source wording is edited."
+provenance = "New immutable 2026-10-26 reference revision. Previous artifact artifact.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31.verse-aliases-6b8eb235 SHA256 476bb32e49fbe2ef2652a00226bbc53107ef263fff3b7ef056c412e6e25367b9, its payload path and metadata remain unchanged. Append 8 accepted rows (6 exact renumberings; 2 precise refusals). The source acceptance covers only the exact finite coordinates; combined or differing source wording is never silently widened."
+retrieved = "2026-10-26"
+sha256 = "31d31383f11169bedfbd11775b028f24674cc0d7a45970eef7144f5173c0df9f"
+byte_size = 164837
+path = "src/sources/works/ronald-conte/catholic-public-domain-version/editions/sacredbible-original-web-2026-07-31/artifacts/verse-aliases-31d31383/verse-aliases.tsv"
+indexable = true
+encoding = "utf-8"
+notes = "Native Bible verse bodies, divisions and printed order remain unchanged. Baruch acceptance is isolated 3:38 only; no chapter-wide alignment or singleton superset claim. New current ZIPs retain distinct source identities from historical parent packages. Primary archive parents remain remote with unresolved support-file rights; exact complete underlying Bible USFM book children carry separately checked public-domain bases and supply the raw source testimony."

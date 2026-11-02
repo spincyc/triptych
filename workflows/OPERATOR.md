@@ -7,11 +7,13 @@ schema-2 successor for both the 1962 and postconciliar Roman Rite collections.
 It produces the expansive study, concise `-synthesis` companion and standalone
 `-homily` from one canonical owner. The old `proper` and `proper-finish` remain
 available for legacy schema-1 work. The current three-document contract
-restores the established first four pages for the concise companion, while
-its remaining argument and the expansive study follow their distinct roles. Read
+preserves the established first four pages for the concise companion when
+printed, while its remaining argument and the expansive study follow their
+distinct roles. Read
 `guidance/liturgy/propers-three-documents.md` for the owning standard. The
-`proper-study` workflow is at version 15. The version paragraphs below say what
-each bump changed.
+`proper-study` workflow is at version 16. Its current path publishes source
+and reader editions; optional print rendering is separate. The version
+paragraphs below retain the contracts of earlier runs.
 
 The driver grammar is unchanged:
 
@@ -40,58 +42,98 @@ complete adopted expansion; mixed or partial shapes fail closed. Other
 postconciliar families require an explicit registry resolver rather than a
 grammar-only pass.
 
-The sequence is context, research, reusable source registration, cold research review, expansive study and
-cold review, concise study and cold review, homily and cold review, build and
-cold visual review, canonical web conversion and cold review, installation and
-terminal publication gates. Every author stage runs at `high`; every review at
-`xhigh`. Dispatch each as a new worker with no authoring conversation history,
-exactly the compiled packet and its result destination. Never prefill a PASS
-from preparatory work or use an author as the cold reviewer of that work.
+### Current source and reader path: version 16
 
-Review findings route to the actual evidence, study, concise, homily, artifact
-or publication owner. An upstream repair reruns every downstream document and
-review. The engine seals each review's actual inputs in its hashed dispatch
-packet and accepted result; a reviewer cannot supply or refresh that seal.
-Changed evidence or content returns to its author, changed PDFs return to the
-build/visual boundary, and changed web returns to conversion/review. The
-terminal gate and the independent acceptance audit both verify these seals.
-`research/artifacts.json` and `research/web-artifact.json` remain useful build
-receipts; refreshing one cannot renew an old approval. Research seals include
-local evidence, appointed-text and instance audits, registered source ancestry
-and available payloads, plus external owners declared in
-`research/review-dependencies.toml`. Reviewers check that declaration's coverage.
-Only pure generation timestamp/contribution furniture may evolve between prose
-reviews; stable run provenance and all final render bytes remain sealed.
+The sequence is context, research, reusable source registration, cold research
+review, expansive study and cold review, concise study and cold review, homily
+and cold review, source/schema gates, canonical web conversion and cold review,
+reader installation, and terminal publication gates:
 
-`research/artifacts.json` is receipt schema 2 from 2026-09-23. Schema 1 also
-digested each edition's TeX `.log`. The log records the build's time and
-absolute paths, so a schema-1 receipt verified only in the checkout and pdfTeX
-run that wrote it. Schema 2 binds the PDFs, the render inputs, and the `.aux`
-graphs that carry the physical-page markers. The gates still read the `.log` for
-settled references. The artifact gate refuses a schema-1 receipt and prints the
-`snapshot` command that replaces it. The visual-review seal embeds this receipt.
-A run whose visual review was sealed under schema 1 therefore returns to build
-and visual review at its terminal gate.
-The research-review command explicitly selects a seal contract.
-`--review-contract proper-study-v3` requires canonical chronology records and separately seals
-their computation code and applicable identity registry even before a new
-leaf's component manifest exists. `proper-study-v4`, introduced in version 8,
-also seals what that computation reads and what its answer cites; Version 8
-below says how. New version-15 runs select `proper-study-v5`, which inherits
-that chronology boundary and adds the source-admission evidence described below.
-The default seal contract remains unchanged for historical
-runs, including older studies that already carried chronology, and so does
-`proper-study-v3`.
+```text
+scope-gate -> resolve-context -> research -> source-registration
+  -> research-preflight -> research-review
+  -> author-study -> study-preflight -> study-review
+  -> derive-synthesis -> synthesis-preflight -> synthesis-review
+  -> derive-homily -> homily-preflight -> homily-review
+  -> build-artifacts -> artifact-gates
+  -> generate-web -> web-review -> install-publication
+  -> publication-gates -> ACCEPTED
+```
 
-Publication checks require all three target PDFs and the canonical web edition,
-their exact release records and the correct family catalog. Public-alpha uses
-`check --provider <provider> --document <canonical-id>` to retain global source,
-release and authorization validation while requiring installed artifacts for
-this family. Unrelated uninstalled PDFs are outside that artifact check; this
-is not a global deployment approval. The live document-catalog check is scoped
-to this owner and the deterministic source projection remains globally checked.
-Complete reusable pipeline changes and checks before seeding a real run so the
-run remains bound to one reviewed workflow digest.
+Every author stage runs at `high`; every review at `xhigh`. Dispatch each as a
+new worker with no authoring conversation history, exactly the compiled packet
+and its result destination. Never prefill a PASS from preparatory work or use
+an author as the cold reviewer of that work. Follow each packet's repair route;
+the linear diagram shows the passing path, not permission to bypass a loop.
+
+Version 16 adopts the source-first publication contract in
+`guidance/document-schemas.md`. The existing `build-artifacts` name now means
+source and schema validation. Its `artifact-gates` successor goes directly to
+`generate-web`: no PDF is built or installed, no `visual-review` stage runs,
+and no visual PASS is fabricated to fill the removed stage. Fixed-page rules
+remain in the print profiles and apply when that edition is rendered.
+
+Current `scripts/_proper_study.py check` commands explicitly pass `--mode source`.
+They validate the declared kind, source roles, edition entrypoints and contracts,
+run the owning source/content gates, and bind full source, evidence, render and
+output identities. The engine's dispatch, accepted-result and final-acceptance
+checks use the same source mode. Seals record `mode = "source"`, and the
+publication result records `publication_mode` separately from print behavior.
+`research/artifacts.json` remains a legacy print receipt; it is not created or
+renewed as a substitute source approval. `research/web-artifact.json` remains a
+generated Markdown receipt, not acceptance.
+
+Review findings return to their evidence, study, concise, homily or publication
+owner. An upstream source repair invalidates the affected review and downstream
+work. Changed web output returns to conversion/review. The engine seals actual
+inputs in its hashed dispatch packet and accepted result; a reviewer cannot
+supply or refresh that seal. Research review keeps the `proper-study-v5`
+contract, including chronology computation, source admission, source-record
+ancestry, canonical edges and declared external owners. In source mode the
+evidence closure binds exact metadata and witness hashes without implicitly
+hydrating binary evidence. Image inspection or other witness use still requires
+the exact payload and the source profile's real check.
+
+The web review additionally binds the full typed content/evidence/render/output
+identities and exact generated Markdown. Publication gates verify the current
+source and reader identities, authorization, release records and family catalog.
+They do not compare or require installed PDFs. Global source-projection and
+release concerns remain checked, while document-specific checks stay scoped to
+the owner. These are currentness checks against their declared inputs, not a new
+scholarly review or a clearance of inherited chronology/currentness findings.
+
+Print one selected edition with `tools/print-document`, as described in
+`docs/printing.md`, or use the separate manual print CI path. Browser printing
+flows the reader page; it does not reproduce the exact fixed layout of a prior
+PDF. Historical fixed-layout downloads, where offered, are independently
+verified archive deliveries. None renews source review or old render approval.
+
+Complete reusable pipeline changes and checks before seeding a real run. A run
+remains bound to its workflow version and digest. An active older run fails
+closed against a changed definition; seed a new run rather than migrating or
+restamping its reports. Historical terminal status and saved-packet integrity
+replay remain available with their original identity and `deterministic: null`.
+
+### Historical proper-study print path: through version 15
+
+The following receipt behavior and version narratives describe earlier print
+runs. They do not add PDF stages or approvals to version 16. Omitting `--mode`
+from the standalone `_proper_study.py` CLI, or passing `--mode print`, retains
+the historical exact-PDF checks; every current engine invocation opts into
+source mode explicitly.
+
+`research/artifacts.json` is print receipt schema 2 from 2026-09-23. Schema 1
+also digested each edition's TeX `.log`, which contains build time and absolute
+paths. Schema 2 binds PDFs, render inputs and physical-page `.aux` graphs; its
+gates still read logs for settled references. A print gate refuses schema 1 and
+prints the `snapshot` command. A historical visual-review seal embeds that
+receipt; an old print approval cannot be reused for changed bytes.
+
+The historical research seal contracts remain distinct. `proper-study-v3`
+requires canonical chronology records and computation/registry identity;
+`proper-study-v4` adds what that computation reads and cites; `proper-study-v5`,
+introduced in version 15, adds source-admission evidence. Source mode does not
+rewrite these historical seals or their accepted results.
 
 Version 2 corrects two command recipes: PDF review writes to a dedicated
 stage/iteration raster child because its helper replaces the whole destination,
@@ -1205,8 +1247,9 @@ and it applies to runs seeded after it.
 
 ## The propers workflow
 
-The first real workflow is `proper` (1962 propers synthesis production).
-Its stages are:
+The following diagram and lifecycle describe the legacy `proper` workflow
+(1962 propers synthesis production), with its historical print contract. They
+are not the current `proper-study` version-16 path shown above. Its stages are:
 
 ```
 seed

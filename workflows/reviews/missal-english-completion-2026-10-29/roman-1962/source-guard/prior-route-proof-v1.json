@@ -1,0 +1,62 @@
+{
+  "schema": "triptych-finite-prior-route-proof/v1",
+  "state": "pending-root-review",
+  "baseline_commit": "6aeb96a392a61e216310c3bf71834863afb229f8",
+  "baseline_source_records": 54005,
+  "baseline_structural_validation": "source-library common/string/path/relationship/cycle/work-date/locus checks; not a whole-5.7GB payload-validation claim",
+  "prior_collision_validation": "Each collision closure additionally passes actual immutable payload hashes, source-library artifact/support/passage/license validators and the owning baseline reader or per-body Latin source checks.",
+  "baseline_reading_scan": {
+    "passages": 9140,
+    "readable": 3989,
+    "body_collisions": 0,
+    "payload_collisions": 0,
+    "artifact_classifier_captures": 0,
+    "passage_identity_collisions": 0
+  },
+  "baseline_row_classifier_scan": {
+    "direct_sidecars": {
+      "postconciliar": 329,
+      "roman-1962": 1346,
+      "roman-pre-1955": 0
+    },
+    "classifier_matches": [
+      {
+        "calendar": "roman-1962",
+        "key": [
+          "comm-s-silvestri-i-papae-confessoris",
+          "",
+          "Collect",
+          "",
+          "",
+          1
+        ],
+        "row_sha256": "da0c5243fc32569e76e7fa3206dd406400ff44dbe9527620a9e434a61b23dd0d",
+        "matches": {
+          "key": true,
+          "body": false,
+          "source": false,
+          "carrier": false,
+          "marker": false
+        },
+        "publication_status": "unresolved",
+        "prior_admitted_route": false
+      }
+    ],
+    "target_override_rows": 3,
+    "target_override_matches": []
+  },
+  "captured_carrier_count": 0,
+  "captured_carrier_readings_closed": 0,
+  "prior_route_counts": {
+    "row_sha256": 0,
+    "artifacts": 0,
+    "readings": 0
+  },
+  "collision_proofs": [],
+  "validated_collision_records": {},
+  "snapshot_io": {
+    "blobs": 54200,
+    "bytes": 136362507
+  },
+  "no_empty_prior_routes_inference": "Rows, full carrier hashes and every readable selected passage were scanned separately; an empty result is measured, never inferred from the Latin ledger alone."
+}

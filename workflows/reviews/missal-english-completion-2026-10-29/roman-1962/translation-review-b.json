@@ -1,0 +1,915 @@
+{
+  "schema": "triptych-study-translation-cold-review/v1",
+  "reviewer": "review-b",
+  "scope": "Original project English study translations in packets 02, 04, and 05, checked against the exact supplied Latin.",
+  "outcome": "accepted",
+  "counts": {
+    "reviewed": 48,
+    "accepted": 48,
+    "needs_correction": 0,
+    "source_inadequacy_findings": 0,
+    "binding_failures": 0
+  },
+  "guidance_read": [
+    "guidance/editorial.md (complete; including Evidence and claims and Rights, quotation, and received prayer)",
+    "guidance/liturgical-text-publication-policy.md §§8.2, 15.3"
+  ],
+  "method": "Read all 48 complete Latin and English pairs and all supplied translator notes. Checked semantic clauses, names and titles, conclusions and responses, and ordinary English sense. Then verified output/input target equality, UTF-8 Latin hashes against the input and provenance, and exact current source-data target/body identity. SHA-256 records below identify exact output text bytes, including existing whitespace; hashes were not used as a substitute for reading.",
+  "publication_scope": "Acceptance concerns new project-created CC BY 4.0 study translations. It makes no claim that these are approved English liturgical texts, received human translations, or texts supplied for vocal prayer or ritual recitation.",
+  "source_scope": "The supplied records identify collated exact-to-target editorial projections with public-domain publication bases. No inadequacy contradicting the supplied Latin was apparent in the metadata checked. Historical and target page images were not newly inspected in this translation-only lane, so this review adds no independent page-image collation or rights finding.",
+  "material_findings": [],
+  "corrections": [],
+  "review_observations": [
+    "Short and incomplete source conclusions are intentionally retained at their actual extent, including in unitate, Qui tecum, and Qui vivis et regnas; no missing continuation was silently supplied.",
+    "Full conclusions and separately marked Amen responses are retained for Ignatius and Alexius.",
+    "Source parenthetical feast/commemoration or feast/memory alternatives are retained for James, Joachim, and Bartholomew.",
+    "Unexpressed verbal objects in Alphonsus Postcommunion and the unexpressed subjects in Bartholomew Collect were considered in context; the drafts disclose their treatment and do not warrant a material correction."
+  ],
+  "packets": [
+    {
+      "packet": "packet-02",
+      "input_sha256": "739ff02b73d0ff1564c103558cc0c1f5d271a179f0f56469c93d1ce8c6608e3e",
+      "output_sha256": "6da82b12049c35e14d0021efe82fc25b391243260918b9c283b91198cb8f44e3",
+      "rows_read": 16
+    },
+    {
+      "packet": "packet-04",
+      "input_sha256": "6a7399e168537560dc0859360611e0b3666070498d475d932b840a587de0e395",
+      "output_sha256": "13075f00ce4efa0031949e217aef80dc94035d1004388020378d76de65ee4a41",
+      "rows_read": 16
+    },
+    {
+      "packet": "packet-05",
+      "input_sha256": "3ee1a0e3e0a55a71c11c4ded55449ee0336643cf207c374919347ffc4d1bdc81",
+      "output_sha256": "8e535cbb020dce6c02a82635c7cd6b969b1b80ab7a151942f9519a24cb9bb3ca",
+      "rows_read": 16
+    }
+  ],
+  "accepted": [
+    {
+      "packet": "packet-02",
+      "row": 1,
+      "target": [
+        "s-antonii-abbatis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "6c5614d6376060e084f5f4c80dbdef4d9d8cf24fd9f640361dcad45235528763",
+      "text_sha256": "994899088e4c2dcc1847593fd2fa33ab4166ee3e52bddad831e5fe1e273e6334",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-antonii-abbatis.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The protection petition, experiential force of conversationis insignia, help of intercession, and conclusion ending in unitate are all retained."
+    },
+    {
+      "packet": "packet-02",
+      "row": 2,
+      "target": [
+        "s-timothei-episcopi-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "4beeffcce351f10c0318560a3072f37c3e50ddce5221062f849137cb957f3e05",
+      "text_sha256": "09c6d7c9fa4282cf480c539e260ecb8a89eac48583178ad26da7879b3a45d7c3",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-timothei-episcopi-martyris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The infirmity, burden of personal conduct, Timothy as martyr and bishop, glorious intercession, and short conclusion are fully rendered."
+    },
+    {
+      "packet": "packet-02",
+      "row": 3,
+      "target": [
+        "s-timothei-episcopi-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "58c0b5bb3533b04e49a5c445c387c90d5a1d65657608909accc2f78782be2ac5",
+      "text_sha256": "e8b3769b582088423043b97b704d09ea74d06c87ad11a01735e61a130d6ae788",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-timothei-episcopi-martyris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The dedication of offerings in honor of Timothy's merits, gracious acceptance, enduring help, and exact extent of the conclusion are conveyed."
+    },
+    {
+      "packet": "packet-02",
+      "row": 4,
+      "target": [
+        "s-timothei-episcopi-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "27902b09390153018fe0b33fc4174704ff9bfe6c3165178b4eebf28f63076be2",
+      "text_sha256": "6e9d5b264af84ea162ecbe203e775316f471fc2491b1e95501133bd40418f17e",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-timothei-episcopi-martyris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The sacred gift, nourishment by participation, Timothy's intercession, effect of the worship celebrated, and short conclusion are preserved."
+    },
+    {
+      "packet": "packet-02",
+      "row": 5,
+      "target": [
+        "conversione-s-pauli-apostoli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "17079ee97e8a7982f30dcd772ed1344a618ae2d35dd678c114f209649f3ee3e5",
+      "text_sha256": "5e6d45e324f5491258fc95edc6a58c0c9d7e8a1de496b385b16b48796747b628",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/conversione-s-pauli-apostoli.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The worldwide teaching through Paul's preaching, present celebration of his conversion, and progress toward God by his examples are complete."
+    },
+    {
+      "packet": "packet-02",
+      "row": 6,
+      "target": [
+        "conversione-s-pauli-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "5645ce4b211974872761201de670697b79cc5c637022e01665c760f878c839d2",
+      "text_sha256": "ef527e4c0ca762d97916afd330baf934cd3ef94c77d00d327473d3189d601f14",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/conversione-s-pauli-apostoli.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The gifts belong to the people; God's own ordinance and Paul's pleading patronage remain the two reasons they are pleasing and more pleasing."
+    },
+    {
+      "packet": "packet-02",
+      "row": 7,
+      "target": [
+        "conversione-s-pauli-apostoli",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "30e08085dd476b0542ba58693d3e6f760cadc09ebb7f3766194ee14f7f1516ee",
+      "text_sha256": "12276c4cc18f413a28273c916ee9f4835f22804e55787085ce51b7870818befe",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/conversione-s-pauli-apostoli.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The saving mystery and continuing prayer of the patron under whose protection God grants guidance are accurately connected."
+    },
+    {
+      "packet": "packet-02",
+      "row": 8,
+      "target": [
+        "s-polycarpi-episcopi-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "5af10ff8f0a15733f772fdfb6bb8b47b25ab536023c2fa78f4c074223ee80f77",
+      "text_sha256": "ae671f3decfa4008500eb7d50fb7445110887857c7bb79ee14f142b9b1eb78c1",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-polycarpi-episcopi-martyris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The annual celebration, Polycarp's titles, natalicia, his protection, and conclusion are retained; the translator note correctly explains the heavenly birthday sense."
+    },
+    {
+      "packet": "packet-02",
+      "row": 9,
+      "target": [
+        "s-polycarpi-episcopi-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "660fc07d34ddb1ce5f2d97bd2c06a0e2b0a274eeb7b2f900ec66d95ded0399a2",
+      "text_sha256": "5c69926565061379eb1b839fcefaf8c86340807bcaf7817c248f5de284eff786",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-polycarpi-episcopi-martyris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The dedication and sanctification of gifts, Polycarp's intercession, and favorable regard through those same gifts are all present."
+    },
+    {
+      "packet": "packet-02",
+      "row": 10,
+      "target": [
+        "s-polycarpi-episcopi-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "237f940ae37b275d6cf416b5a04351edf58c7172be3cc3b1d404fb82114c3614",
+      "text_sha256": "e29e0f611bd5231b5711187d83d80cb2dc576e27d97ba87774bd7d97e673e70c",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-polycarpi-episcopi-martyris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The sacred gift, nourishment by participation, Polycarp's intercession, effect of the worship celebrated, and short conclusion are preserved."
+    },
+    {
+      "packet": "packet-02",
+      "row": 11,
+      "target": [
+        "s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "ba7575632565dd1cade0e907d21549f0b04b7802ce3c66ba35f195c27b634bec",
+      "text_sha256": "34474b40b9e8c30b98a672c345e2bf6a90a5c320b91e2c30db35c10db7111cb3",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The devout prayer of John Chrysostom as bishop and doctor, acceptable gifts, continuing pardon, and short conclusion are complete."
+    },
+    {
+      "packet": "packet-02",
+      "row": 12,
+      "target": [
+        "s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "5a88c7bcdf2c8b016e8aed874be072afd9692221a2ed24c512374e9b8c109a43",
+      "text_sha256": "92cdbc06e4281a6c08e68fef674e89782e0a2be7dbd869fb52abc7f59355478c",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The eminent doctor John Chrysostom comes forward to intercede so that the sacrifices bring salvation; no petition or title is lost."
+    },
+    {
+      "packet": "packet-02",
+      "row": 13,
+      "target": [
+        "s-ignatii-episcopi-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "065c6887ffea243726b7fdc716b379c1088d2c2e523e30009d742cfaa18a379b",
+      "text_sha256": "267c18c94a6c26a0b1c7aa63fd26ab1cc6a2dac81606e73096aaeea97a5cec58",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-ignatii-episcopi-martyris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Ignatius, the sacramental participation and effect petition, the entire supplied long conclusion, and the separately marked response Amen are retained."
+    },
+    {
+      "packet": "packet-02",
+      "row": 14,
+      "target": [
+        "s-titi-episcopi-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "2fdc40c52399e80a37c7cafc3858539098e24763be340a1a9aad07ae06dd745e",
+      "text_sha256": "87944884e84dce2b71326162fdcf17d3eb94aba7cf1687b8a539e93e68e915ee",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-titi-episcopi-confessoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Thanksgiving for received gifts, Titus as confessor and bishop, his intercession, greater blessings, and the short conclusion are complete."
+    },
+    {
+      "packet": "packet-02",
+      "row": 15,
+      "target": [
+        "cathedrae-s-petri-apostoli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "de808fd11353aff95d861910d079f71dad822a2b442ebacd65efbdee14c37774",
+      "text_sha256": "3a37afc1bb607bbe6cf48687efa0c4daa086d4efd27c95ad003ed7e4ca1f3d45",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/cathedrae-s-petri-apostoli.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Peter's keys and pontifical power to bind and loose, his intercession, and release from the bonds of sins are retained without adding an absent conclusion."
+    },
+    {
+      "packet": "packet-02",
+      "row": 16,
+      "target": [
+        "cathedrae-s-petri-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "fd5d9eff97985f676a6f42b092659a8581991fc3bcc77ba47a4d8f9fc421797d",
+      "text_sha256": "fbdebdda9a13219f8eca2459255300057f0705a0426230071cc3b7a8a388d44b",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/cathedrae-s-petri-apostoli.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Peter's prayer commends the Church's prayers and offerings, and celebration for his glory benefits the petitioners by pardon; the source has no conclusion to add."
+    },
+    {
+      "packet": "packet-04",
+      "row": 1,
+      "target": [
+        "commemoratione-s-pauli-apostoli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "b2f29e451a2ba64f2a1fb01732ac5c4503f3ba81e70f9c8c483637088e0218b1",
+      "text_sha256": "394c30d6166cd2eb3cd349c15ea3e9fbae79f83e32172f6ff2964bf62c803646",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/commemoratione-s-pauli-apostoli.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The multitude of nations, Paul's preaching, natalicia celebration, and experience of his patronage before God are all retained."
+    },
+    {
+      "packet": "packet-04",
+      "row": 2,
+      "target": [
+        "commemoratione-s-pauli-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "5645ce4b211974872761201de670697b79cc5c637022e01665c760f878c839d2",
+      "text_sha256": "2d8c6b327381f7d7bbb9d01f7130e757f9b081f3cf15560b05e9d7b52d20a5e8",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/commemoratione-s-pauli-apostoli.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The people's gifts, God's own institution, and the increased acceptability through Paul's pleading patronage are rendered completely."
+    },
+    {
+      "packet": "packet-04",
+      "row": 3,
+      "target": [
+        "commemoratione-s-pauli-apostoli",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "c6acaf6d03ca6bd5c165a710d720158596c63031c7439a608cdac76326fa6175",
+      "text_sha256": "e0f318a0b8d6f9bf298f2918021b10907ea89f47ea470f1ea523cf7f83fe79a2",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/commemoratione-s-pauli-apostoli.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Receipt of the sacraments, Paul's intercession, celebration for his glory, and healing for the recipients are preserved."
+    },
+    {
+      "packet": "packet-04",
+      "row": 4,
+      "target": [
+        "s-ioannis-gualberti-abbatis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "2fd4a0b796ad3365025050903854f7f4d6b881e2fca139d7e6e677281993fdc8",
+      "text_sha256": "7bedfb2672104571bb49b48edf6091d14f2695713f173f7ec560fa464143efef",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-ioannis-gualberti-abbatis.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "John the Abbot's intercession commends the petitioners to God and obtains what their own merits cannot; the conclusion is retained at source length."
+    },
+    {
+      "packet": "packet-04",
+      "row": 5,
+      "target": [
+        "s-ioannis-gualberti-abbatis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "93364dc171dd2f451cff4468942e926ae13755646a74d472208808e204b6d7dd",
+      "text_sha256": "e34a203c5874034bbcd4a41a8a27c4f57df0d2f9a270d14588f6a24a4cd94230",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-ioannis-gualberti-abbatis.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "John the Abbot petitions for the salvation of the recipients through the offerings placed on the holy altars; the short conclusion is accurate."
+    },
+    {
+      "packet": "packet-04",
+      "row": 6,
+      "target": [
+        "s-ioannis-gualberti-abbatis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "057be131d476076658fe837a32fef0578f96281c108e0c33265e952b5842c3dd",
+      "text_sha256": "09252b348fcd60428777d644d124673ed3da1c3a158d407b90ad408df75c53ff",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-ioannis-gualberti-abbatis.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "John's intercessory protection, reception of the sacrament, experience of the excellence of his life, and aid of his intercession are complete."
+    },
+    {
+      "packet": "packet-04",
+      "row": 7,
+      "target": [
+        "s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "55eea8d013d46e0191a618241b1420e5eb782b641f1b530e2f47de49c6420604",
+      "text_sha256": "5ffe62d5ac129b0836f273863a4fb9fe54c9117afaaebf099e471d7f7188c64a",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Bonaventure as minister of eternal salvation and earthly teacher of life, worthiness to have his heavenly intercession, and the conclusion are complete."
+    },
+    {
+      "packet": "packet-04",
+      "row": 8,
+      "target": [
+        "s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "fd490db5617c1217c7d6813bb589086571ce949b14c01118507ec91348fc90a9",
+      "text_sha256": "222bc9e12064a7fcd6a0b812cb1208d7974d9b6dcf3ab0f07b6edfdb814a1baa",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The annual solemnity makes the petitioners acceptable to divine pietas; the atoning observances, blessed reward attending Bonaventure, and gifts of grace for the petitioners are retained."
+    },
+    {
+      "packet": "packet-04",
+      "row": 9,
+      "target": [
+        "s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "6b6b31975c3f0e0cf8a75abebc5dee23d0a50b1909f4d50e90c9e98ec92af5b7",
+      "text_sha256": "7f298a7f2e86a71e95d25e489102fb7898badf56f44a91ff404805ddaf1a69ec",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "God rewards faithful souls; Bonaventure's titles, the revered feast, forgiveness through his prayers, and conclusion are complete."
+    },
+    {
+      "packet": "packet-04",
+      "row": 10,
+      "target": [
+        "comm-s-alexii-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "bef67a7e4b5b366b609b0fb593a677ea042efc95b4e75adbec2b6cd324b537a1",
+      "text_sha256": "405f75fe2643ca60a7a61e11f9204d1920d558d8e7336abe06a741544dc3737d",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-s-alexii-confessoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Alexius's confessor title, annual celebration and natalicia, imitation of his deeds, full supplied conclusion, and Amen response are preserved."
+    },
+    {
+      "packet": "packet-04",
+      "row": 11,
+      "target": [
+        "s-camilli-lellis-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "25d4368f379476e01083d31e575cb2678c8b8ea7cfc4bcb2fa901ff9b46b56e7",
+      "text_sha256": "15e7d920c0cb86da7c101c55344a32e1e56cc7a764dfec268f3493b2eda62411",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-camilli-lellis-confessoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The unblemished sacrifice renews Christ's immense charity and brings bodily and spiritual remedy, final comfort and protection through Camillus; Qui tecum remains a fragment without supplied continuation."
+    },
+    {
+      "packet": "packet-04",
+      "row": 12,
+      "target": [
+        "s-vincentii-a-paulo-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "9b9ebbb60a19b6177d80ff51709a2dabb5fcc9b59b31046963b5f7dcc744d567",
+      "text_sha256": "9b04f2c7df59496de5df313fc5325cf4548838bc21ea7e0cb8adeba25b4d541c",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-vincentii-a-paulo-confessoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The heavenly food, Vincent's intercession and confessor title, protection through the received food, and all adversity are preserved."
+    },
+    {
+      "packet": "packet-04",
+      "row": 13,
+      "target": [
+        "comm-s-praxedis-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "111b28e5ed2c234dbd008b27ed0550c72bd1f173768ab7b772ff3d3941e223cd",
+      "text_sha256": "d46517b163142fbb2b66c852dde99c861852ffc59c906130405df2b6dff4841c",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-s-praxedis-virginis.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Praxedes's virgin title, joy in her feast, corresponding formation in devout affection, and conclusion are retained."
+    },
+    {
+      "packet": "packet-04",
+      "row": 14,
+      "target": [
+        "s-iacobi-apostoli",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "93d45e7bbd858bbffdb581065cb4304d81ecb0e2c60626c805c8507f97817bcf",
+      "text_sha256": "978f19a107bfb497d2df87bdac5d8736fab532e04ea1be9edbb242a84929d79b",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-iacobi-apostoli.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "James's intercession, joyful reception of the holy gifts for his feast, the supplied commemoration alternative, and conclusion are all preserved."
+    },
+    {
+      "packet": "packet-04",
+      "row": 15,
+      "target": [
+        "s-marthae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "17b610e6d2ec67a59f0d39a88df79222c8749c519a9d1bbf574b6c65c8135e13",
+      "text_sha256": "a7ec0406d1dec8c44abdf0feca1a40d06fbca914ed8afa3db0c29205de9f6d10",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-marthae-virginis.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Martha's virgin title, joy in her feast, corresponding formation in devout affection, and short conclusion are retained."
+    },
+    {
+      "packet": "packet-04",
+      "row": 16,
+      "target": [
+        "s-alfonsi-mariae-ligorio-episcopi-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "58daf4b27623a67c204754c22fa1304f2e8cd0971d6e456e365a9d397353e36a",
+      "text_sha256": "03caee3cc41051aad39984ab673050eec5b7f37588b7834377fb4d5347468f75",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-alfonsi-mariae-ligorio-episcopi-confessoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Alphonsus Mary's titles and zeal for souls, the Church's new offspring, saving counsels, strengthening examples, and blessed arrival at God are all present."
+    },
+    {
+      "packet": "packet-05",
+      "row": 1,
+      "target": [
+        "s-alfonsi-mariae-ligorio-episcopi-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "8f32b4dcca0883c381d6115293e0894c468ec8c12be087091c0e703c32b7c101",
+      "text_sha256": "baca85051bd97018de54920849bd57ead2ec1d252ac263e4b0de0ba1c1ad5407",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-alfonsi-mariae-ligorio-episcopi-confessoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The heavenly sacrificial fire, sweet fragrance, Alphonsus's celebration of the mysteries and self-offering as a holy victim through them are preserved; the ending stops at live and reign."
+    },
+    {
+      "packet": "packet-05",
+      "row": 2,
+      "target": [
+        "s-alfonsi-mariae-ligorio-episcopi-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "3eeef603999b6ead72e83f1efcf9b2ea5b4bfe3fb317cb356d3dcba1a3446adb",
+      "text_sha256": "da5312a9986cf3f7d7ccbaabacfab7542d861d815c8d65c5c9ba85104753ba49",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-alfonsi-mariae-ligorio-episcopi-confessoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Alphonsus remains both steward and herald of the divine mystery; merits and prayers, frequent reception, praise through reception and without end are retained. The implicit Latin objects remain implicit as the note states."
+    },
+    {
+      "packet": "packet-05",
+      "row": 3,
+      "target": [
+        "comm-ss-xysti-ii-papae-felicissimi",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "5cf813a4797f966ea421bfb74583b53e6cc5c0f10ffe6e1c6e43693630fda8ab",
+      "text_sha256": "a729f1ee23c8e2db020cf548ae430a1500f4b272f325907459b814f1fc321460",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-ss-xysti-ii-papae-felicissimi.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The three named martyrs Sixtus, Felicissimus and Agapitus, celebration of their natalicia, and joy in their company in eternal blessedness are all retained."
+    },
+    {
+      "packet": "packet-05",
+      "row": 4,
+      "target": [
+        "s-ioannis-mariae-vianney-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "12105ba3649c6e5b37c48e65fd93475d55706432eb8485f495625e32b20ddcb4",
+      "text_sha256": "91deab7c4d6de7a0dfc1f6f8673f1f4222ca3c63145d356de7ab0fc4d0297090",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-ioannis-mariae-vianney-confessoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "John Mary's pastoral zeal and unceasing prayer and penance, example and intercession, winning souls for Christ and eternal glory together with them are complete."
+    },
+    {
+      "packet": "packet-05",
+      "row": 5,
+      "target": [
+        "comm-s-eusebii-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "15f8ce99b58a51bbe6cd42ba1c7bc549ecd946c76112e135b2a5dccf936c3cf3",
+      "text_sha256": "f7b57e4265445084afafb0fc93f64527e7fe01db9313b0a664f14c40118c036d",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-s-eusebii-confessoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Eusebius's confessor title, annual celebration, gracious petition, and progress toward God by his examples are preserved."
+    },
+    {
+      "packet": "packet-05",
+      "row": 6,
+      "target": [
+        "s-ioachim-patris-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "091f3c414277631835619a17bc1b6cf748b113d23e91dcbe1a0bb389d5264431",
+      "text_sha256": "4454892d9a7c524f695735a7d934158c4a02194c709b150f9c7fd2dd3e89e1a2",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-ioachim-patris-beatae-mariae-virginis.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Joachim's unique selection as father of the Son's mother, feasts with the supplied memory alternative, enduring protection, and conclusion are retained."
+    },
+    {
+      "packet": "packet-05",
+      "row": 7,
+      "target": [
+        "s-ioachim-patris-beatae-mariae-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "0e09c19929b2682cf4d6fb415749b44c3f7aa3679464abb4e18ac9d2dee15fe1",
+      "text_sha256": "687422f3baaa64356a557e836828a72b3175985080eed7819073283fca8648d9",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-ioachim-patris-beatae-mariae-virginis.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Joachim as patriarch and Mary's father, his wife and most blessed child as fellow intercessors, perfect remission of sins and everlasting glory are all retained without inventing their names."
+    },
+    {
+      "packet": "packet-05",
+      "row": 8,
+      "target": [
+        "s-bernardi-abbatis-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "e34264bb8b03114e1e8bf604bba1861fd095ecefb4429a8d7280ee0903d2e982",
+      "text_sha256": "11a19eeb572ea304a7a3a01de4b8df328ed768fd9cc8d0ed50561c0811d25205",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-bernardi-abbatis-ecclesiae-doctoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Bernard as minister of eternal salvation and earthly teacher of life, worthiness to have his heavenly intercession, and the conclusion are complete."
+    },
+    {
+      "packet": "packet-05",
+      "row": 9,
+      "target": [
+        "s-bernardi-abbatis-ecclesiae-doctoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "2870850bf47b5b5e851b3b4174ab3e496c98a85a72f9e3a19f7effe23e57803a",
+      "text_sha256": "a50af3f811d94211312f82ef4a7de6d886abb8b5bf9b6884f0610402409a2842",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-bernardi-abbatis-ecclesiae-doctoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Bernard's confessor and doctor titles, devout prayer, acceptable gifts and lasting forgiveness are preserved; the conclusion is not extended beyond in unitate."
+    },
+    {
+      "packet": "packet-05",
+      "row": 10,
+      "target": [
+        "s-bernardi-abbatis-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "5845ca075bd9b7947489a60dc9dcd16e5f1537cd8bc74a9949e7d1f083bd7bc7",
+      "text_sha256": "61f1c4633c792c4e460dad6cd83df0b368211e4ee78c20c6a21a9aa0dc2ec6df",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-bernardi-abbatis-ecclesiae-doctoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Bernard's confessor and eminent doctor titles, his role as intercessor and salvation through God's sacrifices, and short conclusion are complete."
+    },
+    {
+      "packet": "packet-05",
+      "row": 11,
+      "target": [
+        "s-bartholomaei-apostoli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "7a241de028830373fc873e86baa38df7e792cec6aeb1314b2d5b934a3a035acd",
+      "text_sha256": "6e3a4f11328427f333592f13b492f26c21ffacabd658b8c1a8711f30f06dcb6f",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-bartholomaei-apostoli.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "The holy joy of Bartholomew's feast, the supplied commemoration alternative, and both love and proclamation petitions are complete; Bartholomew as subject of credidit and docuit is a defensible contextual construal, disclosed in the note."
+    },
+    {
+      "packet": "packet-05",
+      "row": 12,
+      "target": [
+        "s-bartholomaei-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "42ee32c39e4ab1e22e48758d436aa9caf10e593ea4fe24dabc950df8fb6b5cbe",
+      "text_sha256": "e652021d63ab190c5f974fc5e524f46ae16377162127adf62e4df198b043c680",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-bartholomaei-apostoli.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Bartholomew's celebration with supplied memory alternative, his assistance, God's blessings and sacrifices of praise in his honor are retained; the conclusion ends exactly after lives and reigns with you."
+    },
+    {
+      "packet": "packet-05",
+      "row": 13,
+      "target": [
+        "s-ludovici-regis-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "7ef4baa494c24f348b9d86d975434698a5addd48323c803e7c0ce0c2f6340842",
+      "text_sha256": "83db6c630fe44c4f989969c166e22dd9a8f0a847b811aeced05f1db2c868d988",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-ludovici-regis-confessoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Louis's confessor title, rejection of worldly pleasures, exclusive desire to please Christ the King, his prayer and acceptability to God are preserved."
+    },
+    {
+      "packet": "packet-05",
+      "row": 14,
+      "target": [
+        "s-iosephi-calasanctii-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "8eccf0c2a207270588f4a2ced5b50519aa2cbf197fc9a1faa4b233210fbbe391",
+      "text_sha256": "c30b20fb178bf9e86263eb4a430123d5f0faa23c69c112ef5dfaf381270c94bf",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-iosephi-calasanctii-confessoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Joseph's confessor title, the new assistance provided for the Church to educate youth in understanding and piety, example and intercession, action and teaching, and eternal rewards are complete."
+    },
+    {
+      "packet": "packet-05",
+      "row": 15,
+      "target": [
+        "s-augustini-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "557a88c9c82c259e624fc2bf3e5f599a5fda7f9dd2b6736dddb3458d24828756",
+      "text_sha256": "d1acc6ff77502eeb72bd9f2bdd950510f255a0da4310f57c6ca836626d43817e",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-augustini-episcopi-confessoris-ecclesiae-doctoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Augustine's bishop and doctor titles, devout prayer, acceptable gifts and lasting forgiveness are preserved; the conclusion is not extended beyond in unitate."
+    },
+    {
+      "packet": "packet-05",
+      "row": 16,
+      "target": [
+        "s-augustini-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "2c627d20091cc66a7526d2600770202f08b59e357575c8db5fda04f7c4d09e3a",
+      "text_sha256": "f58531a94b828308d90c73811f742d98b966b2affbc29f02e495ae7e6794bbba",
+      "verdict": "accepted",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-augustini-episcopi-confessoris-ecclesiae-doctoris.json",
+      "binding_verified": true,
+      "full_pair_read": true,
+      "review_note": "Augustine's bishop and eminent doctor titles, his role as intercessor and salvation through God's sacrifices, and short conclusion are complete."
+    }
+  ],
+  "blockers": []
+}

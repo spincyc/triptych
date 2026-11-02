@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.ebible-usfm-2f991375"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.american-1899-ebible"
+artifact_type = "downloadable-data"
+media_type = "application/zip"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Underlying Bible text has its separately verified public-domain basis; this whole container also includes modern publisher support files whose exact redistribution basis is unresolved. No package-wide public-domain claim is made and no archive bytes are retained in public source storage."
+rights_jurisdiction = "United States"
+source_url = "https://eBible.org/Scriptures/engDRA_usfm.zip"
+provenance = "Complete official publisher USFM ZIP acquired and hashed on 2026-10-26 as finite native-marker evidence. It is a distinct source identity from historical parent packages. Only separately manifested complete unchanged USFM book members are retained; the complete archive remains a remote hashed parent."
+retrieved = "2026-10-26"
+sha256 = "2f991375420fcbff9a8000912920a8d4c1b665d766fdd23f22c9d433e53444eb"
+byte_size = 2942946
+indexable = false
+notes = "ACCESS LIMITATION: the complete 2942946-byte archive has 77 members (73 USFM files). Its modern support members are excluded from retained public payloads: copr.htm SHA256 768a857529dfdfff3394d0a1b004cc6120e114259ad71585cbde4853a3cce6c7; keys.asc SHA256 8659487be35d9a79b8bb41eb68db1e96e9a1933792f683b88e0de50cd3841942; signature.txt.asc SHA256 4dfabca602499f73585599e57c5aa7cc6ff32855a4299c3b06808438ce12cfed; gentium.css SHA256 45550a2bb1b17f5ab08886ffec444b3db27fef38ea9b0455f774a6aa97323e66. Their stylesheets differ from Haiola upstream material and this record does not assert a package-wide redistribution grant. The underlying Bible text permission is separate. Parent archive URL/hash/extent describe the acquired bytes, not an identity claim about earlier deliveries. No CSS, HTML wrapper, public-key file or signature is copied into the retained USFM children."

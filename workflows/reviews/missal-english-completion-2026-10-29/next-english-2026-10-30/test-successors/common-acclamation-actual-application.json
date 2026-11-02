@@ -1,0 +1,24 @@
+{
+  "English_admissions": {
+    "historical_Bute_public_domain": 2,
+    "original_project_study_Virgo_abridgments": 2
+  },
+  "classification": "inherited 702 test expectations; all four positive dictionaries already exist unchanged at published parent",
+  "correction_to_initial_diagnostic": "The first triage incorrectly attributed these four existing positives to the next eighteen. Exact Git702/current comparison establishes that these are previous Phase1 and Phase2 admissions.",
+  "date": "2026-10-30",
+  "historical_absences_preserved": 7,
+  "independent_Latin_target_gaps_preserved": 7,
+  "original_admissions": [
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase1-admission.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-virgo-admission.json"
+  ],
+  "remaining_current_English_absences": 3,
+  "schema": "triptych-root-Common-acclamation-test-currentness-successor/v1",
+  "source_or_fixture_or_permission_change": false,
+  "status": "applied; independent peer review and actual canonical execution pending",
+  "subject": {
+    "after_sha256": "1c87fb057821f2512e9938580c8b477fee0334e45d8c029940a83c36e5e230cf",
+    "before_sha256": "646dc302f47185c5a69be2581ce8f145e8e8c7a75e16ed285c373518b1709025",
+    "path": "tools/tests/test_postconciliar_common_acclamation_english.py"
+  }
+}

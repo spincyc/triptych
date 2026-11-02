@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.aas.012.archive.aas.012.l008747.note-blocks-685ae00f7121"
+edition_id = "edition.acta-papal-archives.aas.012.archive.aas.012.l008747"
+artifact_id = "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-blocks-pacem-dei-la-685ae00f7121"
+artifact_sha256 = "685ae00f71212d5815dbaf2d36c05fb7cb67af24efb9314d94f0c3ed0773770d"
+segment_type = "constituent-work"
+states = ["cataloged", "acquired", "inspected"]
+physical_line_ranges = [[1, 438]]
+context = "Same complete prior constituent as segment.acta-papal-archives.aas.012.archive.aas.012.l008747, selected from exact parent artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b at original physical LF [[8747, 8773], [8776, 8815], [8817, 8861], [8863, 8909], [8911, 8954], [8956, 8997], [8999, 9038], [9040, 9078], [9080, 9126], [9128, 9165]]. The explicit partition spec is artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-spec-pacem-dei-la-e3227c7681e3 (e3227c7681e3fbedebeef1f37eb6e9225b14b4ba98c1d12473bfab02de1b48f0)."
+notes = "Reading-only replacement preserves all selected non-LF bytes and their original order. Historical source-note groups at original LF [[8772, 8773], [8813, 8815], [8854, 8861], [8900, 8909], [8951, 8954], [8992, 8997], [9035, 9038], [9077, 9078], [9123, 9126], [9160, 9165]] occupy separate blocks at their existing source breaks. Prior source/segment remain retained; no lexical repair, reordered body/notes, or original-print collation is claimed."

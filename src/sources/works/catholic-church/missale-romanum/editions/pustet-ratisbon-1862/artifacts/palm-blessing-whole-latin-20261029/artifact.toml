@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-latin-20261029"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The Pustet Ratisbon printing was published in 1862 and is in the United States public domain by publication date. Faithful mechanical page extraction and a checked transcription add no new prayer wording. This basis does not clear any later target contribution."
+retrieved = "2026-10-29"
+provenance = "Direct complete-prayer transcription from the separately retained old printed page, checked at scale-to2000 and400dpi on2026-10-29. OCR was a location lead only."
+sha256 = "79d5f5f10f212a83ebfef0176e96cbbc27be4d0701592e91b2ec3c7f8f588798"
+byte_size = 278
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/palm-blessing-whole-latin-20261029/latin.txt"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-page-20261029"
+transformation = "Join physical linewraps and decorative initial, remove stress accents, expand ae/oe ligatures and omit the action cross embedded in Bene-dic. Keep every older word, old hodierna, old pointing and its actual Per Dominum. conclusion. No later alternative or conclusion is inserted."
+encoding = "utf-8"
+indexable = true

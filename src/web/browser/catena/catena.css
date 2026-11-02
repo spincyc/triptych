@@ -782,8 +782,8 @@
  * Print. Browser print of this page is a fallback, not a publication: the
  * chrome goes, the reading order stands (chapter, then chain), every
  * licence and source line prints with its text, and the page says what it
- * is. Only what the reader opened is on paper — closed fragments were
- * never fetched, and paper must not pretend otherwise.
+ * is. The print action first requests every fragment in the selected voice
+ * and author set; it refuses a copy if any selected body is missing.
  *
  * Everything a paper copy cannot use goes: navigation, loopback links,
  * recovery links, the prose that speaks of opening and choosing. What
@@ -852,8 +852,8 @@
   .catena-page .paragraph-note { break-inside: avoid; }
 
   .catena-page .page-header::after {
-    content: "Browser print — a working copy of the open fragments, not a "
-      "canonical rendering; the page itself remains the citable form.";
+    content: "Browser print — a flowed copy of the complete selection, not a "
+      "canonical rendering; the page remains citable.";
     display: block;
     margin-top: 0.35rem;
     font-family: var(--sans);

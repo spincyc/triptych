@@ -1,0 +1,99 @@
+{
+  "schema": "triptych-three-act-source-cold-audit/v1",
+  "packet": 8,
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "papal.pius-x.hf-p-x-enc-24051911-iamdudum.acqr-1911-english",
+      "en"
+    ],
+    [
+      "papal.pius-x.hf-p-x-enc-26051910-editae-saepe.acqr-1910-english",
+      "en"
+    ],
+    [
+      "papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra",
+      "en"
+    ]
+  ],
+  "documents": [
+    {
+      "key": [
+        "papal.pius-x.hf-p-x-enc-24051911-iamdudum.acqr-1911-english",
+        "en"
+      ],
+      "title": "Iamdudum",
+      "row_sha256": "3d008cf6bb04b0e74a3835acdf6cb5816d01e36617f1933d384c60aa4323e017",
+      "source_sha256": "535f35980d469901f36340bc735ea185ecede480c4dc4984d49ffea4789307f7",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-08/act-01-evidence.json",
+        "sha256": "57cb976b59294c81903a5c013a9cb03f6b05ac172b7210cfe64809cd1eb60a5c",
+        "bytes": 35224
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-08/act-01-selected.txt",
+        "sha256": "535f35980d469901f36340bc735ea185ecede480c4dc4984d49ffea4789307f7",
+        "bytes": 15336
+      },
+      "controller_pin": {
+        "id": "segment.papal.pius-x.hf-p-x-enc-24051911-iamdudum.1911-acqr-volume-36-english.complete-english-reading",
+        "record": "src/sources/works/papal-documents/1911-05-24-papal-pius-x-hf-p-x-enc-24051911-iamdudum-150928a9/editions/1911-acqr-volume-36-english/segments/complete-english-reading.toml",
+        "sha256": "727fe9d0bbb33f6a35f9564a9989f17bee57b1a8f69ee4b1a472dbd8aef03e04"
+      }
+    },
+    {
+      "key": [
+        "papal.pius-x.hf-p-x-enc-26051910-editae-saepe.acqr-1910-english",
+        "en"
+      ],
+      "title": "Editae Saepe",
+      "row_sha256": "0a398352080c3cd32d226d878736f111564240b9ba316d3811f42428ae173b53",
+      "source_sha256": "3598918606cc73f1630e383c00b8fc07f9b43b553c33333aed286e26ff599221",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-08/act-02-evidence.json",
+        "sha256": "0a529800240936f3339c9e946c1bfd083ebcee2dd32afb146aafd0eb30009123",
+        "bytes": 38214
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-08/act-02-selected.txt",
+        "sha256": "3598918606cc73f1630e383c00b8fc07f9b43b553c33333aed286e26ff599221",
+        "bytes": 51684
+      },
+      "controller_pin": {
+        "id": "segment.papal.pius-x.hf-p-x-enc-26051910-editae-saepe.1910-acqr-volume-35-english.complete-english-reading",
+        "record": "src/sources/works/papal-documents/1910-05-26-papal-pius-x-hf-p-x-enc-26051910-editae-saepe-4203d7dc/editions/1910-acqr-volume-35-english/segments/complete-english-reading.toml",
+        "sha256": "0296bd1fdf4dff9e62a1b0ac0a03d316c889c6c5b2f7e9d7c841d24634b26f03"
+      }
+    },
+    {
+      "key": [
+        "papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra",
+        "en"
+      ],
+      "title": "Mens nostra",
+      "row_sha256": "2596593b767e0c62aea1b235c49c11c14528aac09dd7b45a6c183353832878ea",
+      "source_sha256": "de1e426c7a6c0eb99b247f598e800e4ec61c5c5e70fed3a18a4b67ee7fbc2f3b",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-08/act-03-evidence.json",
+        "sha256": "173b80a08f56f6f8563d9d126505a19df08c2fc63b1bbe411a42ad5991e6a596",
+        "bytes": 53296
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-08/act-03-selected.txt",
+        "sha256": "de1e426c7a6c0eb99b247f598e800e4ec61c5c5e70fed3a18a4b67ee7fbc2f3b",
+        "bytes": 38277
+      },
+      "controller_pin": {
+        "id": "segment.papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra.1930-02-08-catholic-mind-english.complete-english-text",
+        "record": "src/sources/works/papal-documents/1929-12-20-papal-pius-xi-hf-p-xi-enc-19291220-mens-nostra-3892b8f3/editions/1930-02-08-catholic-mind-english/segments/complete-english-text.toml",
+        "sha256": "19dc64df432e718c7a39f30109d6510864e4d43c0765ad04ef1f7c75397cec64"
+      }
+    }
+  ],
+  "common_pins": {
+    "path": ".scratch/english-intake-recovery/common-pins.json",
+    "sha256": "17f8dc51ed96ec27c7b02254b4edac12df478c97a547e1660c27b8a0996921e9",
+    "bytes": 2847
+  },
+  "scope_limits": "Review source intake and exact selected historical human English witness. Fresh native image checks are required; prior visual claims are not inherited. No PDF compiler/layout review or lexical translation accuracy/full printing collation claimed."
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "triptych-inactive-stop-disclosure-scan/v1",
+  "counts": {
+    "members": 2124,
+    "bytes_inspected": 328421873,
+    "text_views": 4204,
+    "pdf_files": 93,
+    "zip_archives": 9
+  },
+  "hits": [],
+  "errors": [],
+  "scope": "Every payload member; recursively expanded ZIP/TAR/gzip members; extracted PDF text and metadata; textual and binary metadata strings. This is a privacy/transport check, not new source or visual review.",
+  "random_binary_three_byte_hits": "Excluded from identity findings because compressed PDF/JPEG/model streams can contain arbitrary three-byte sequences; canonical bytes remain exact."
+}

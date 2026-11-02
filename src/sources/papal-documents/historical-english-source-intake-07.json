@@ -1,0 +1,970 @@
+{
+  "schema": "triptych-three-act-source-cold-audit-report/v1",
+  "packet": 7,
+  "scope_sha256": "8eb5940394c14ac74ff88e9d03bb243f4100caedb8d000ec73e2b5f07e13429f",
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "papal.pius-ix.enciclica-ubi-primum-2-febbraio-1849",
+      "en"
+    ],
+    [
+      "papal.pius-x.hf-p-x-enc-07061912-lacrimabili-statu.acqr-1912-english",
+      "en"
+    ],
+    [
+      "papal.pius-x.hf-p-x-enc-21041909-communium-rerum.acqr-1909-english",
+      "en"
+    ]
+  ],
+  "document_count": 3,
+  "pass_count": 3,
+  "blocked_count": 0,
+  "pending_count": 0,
+  "source_acceptance": "PASS",
+  "scope_limits": "Source intake of the exact selected historical human English edition. All selected text read. Native identity, boundaries and note structure inspected only at the recorded image loci; no word-for-word/full-printing image collation or lexical translation-accuracy certification. No compiler, PDF layout/fonts, installation or deployment review.",
+  "rights_policy": {
+    "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+    "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+    "jurisdiction": "United States",
+    "application": "Apply the current repository expired-publication-term position to the independently identified 1852, 1912 and 1909 historical English printings and faithful derivatives only. Wrapper-bearing modern deliveries remain restricted/unresolved; their recorded hashes do not clear those deliveries."
+  },
+  "actual_opened_image_count": 12,
+  "documents": [
+    {
+      "id": "papal.pius-ix.enciclica-ubi-primum-2-febbraio-1849",
+      "language": "en",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "row_sha256": "f9ee989c083cddfebf0940508924bdf1fc94b7d5ed259763d4218b53b16271b9",
+      "source_sha256": "e735205405eef788604a529116453684aee5678d8d6b2361d84b69b2e1a31293",
+      "source_scope_sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+      "proof_pins": {
+        "key": [
+          "papal.pius-ix.enciclica-ubi-primum-2-febbraio-1849",
+          "en"
+        ],
+        "row_sha256": "f9ee989c083cddfebf0940508924bdf1fc94b7d5ed259763d4218b53b16271b9",
+        "source_scope": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "source": {
+          "path": "src/sources/works/journals/catholic-layman/editions/1852-01-17-volume-01-number-01/artifacts/papal-quotation-ocr-e735205405ee/text.txt",
+          "sha256": "e735205405eef788604a529116453684aee5678d8d6b2361d84b69b2e1a31293",
+          "bytes": 7947
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-07/act-01-selected.txt",
+          "sha256": "e735205405eef788604a529116453684aee5678d8d6b2361d84b69b2e1a31293",
+          "bytes": 7947
+        },
+        "controller": {
+          "id": "segment.papal.pius-ix.enciclica-ubi-primum-2-febbraio-1849.1852-catholic-layman-english.complete-english-ocr",
+          "record": "src/sources/works/papal-documents/1849-02-02-papal-pius-ix-enciclica-ubi-primum-2-febbraio-1849-97cd54dd/editions/1852-catholic-layman-english/segments/complete-english-ocr.toml",
+          "sha256": "c0beae2e6512e7cf4d83bb6049fcd56c3e195fd7c4b8c2549ed7e7ca3798403b"
+        },
+        "constituent_edition": {
+          "path": "src/sources/works/papal-documents/1849-02-02-papal-pius-ix-enciclica-ubi-primum-2-febbraio-1849-97cd54dd/editions/1852-catholic-layman-english/edition.toml",
+          "sha256": "ffcd45e681481249efc7cdd6b3d60cbe23f399c4f5c051f46680ade3c1a62e09"
+        },
+        "container_edition": {
+          "path": "src/sources/works/journals/catholic-layman/editions/1852-01-17-volume-01-number-01/edition.toml",
+          "sha256": "ce57c209bc0fab44403427bf4ed8c59c6949b95173bb08c299648aa515207960"
+        },
+        "metadata_pins": [
+          {
+            "path": "src/sources/works/papal-documents/1849-02-02-papal-pius-ix-enciclica-ubi-primum-2-febbraio-1849-97cd54dd/editions/1852-catholic-layman-english/segments/complete-english-ocr.toml",
+            "sha256": "c0beae2e6512e7cf4d83bb6049fcd56c3e195fd7c4b8c2549ed7e7ca3798403b"
+          },
+          {
+            "path": "src/sources/works/papal-documents/1849-02-02-papal-pius-ix-enciclica-ubi-primum-2-febbraio-1849-97cd54dd/editions/1852-catholic-layman-english/edition.toml",
+            "sha256": "ffcd45e681481249efc7cdd6b3d60cbe23f399c4f5c051f46680ade3c1a62e09"
+          },
+          {
+            "path": "src/sources/works/journals/catholic-layman/editions/1852-01-17-volume-01-number-01/edition.toml",
+            "sha256": "ce57c209bc0fab44403427bf4ed8c59c6949b95173bb08c299648aa515207960"
+          },
+          {
+            "path": "src/sources/works/journals/catholic-layman/editions/1852-01-17-volume-01-number-01/artifacts/papal-quotation-ocr-e735205405ee/artifact.toml",
+            "sha256": "989dd2eae249532ad2bf4067f47053ef4492c8ce2beabd8fb3d4a6c68e1df4b5"
+          },
+          {
+            "path": "src/sources/works/journals/catholic-layman/editions/1852-01-17-volume-01-number-01/artifacts/raw-pdf-941fa2bca602/artifact.toml",
+            "sha256": "e53d322fbba20d84dce229558fe3560dd51eb0d64a9119ab38c8d0f2e3f8089e"
+          },
+          {
+            "path": "src/sources/works/journals/catholic-layman/editions/1852-01-17-volume-01-number-01/artifacts/historical-facsimile-8f24378cd250/artifact.toml",
+            "sha256": "2189dacfadd1c0c2ba08ef8e77036b77296ad40daa66acabf470fe39fb3a91bb"
+          },
+          {
+            "path": "src/sources/works/journals/catholic-layman/editions/1852-01-17-volume-01-number-01/artifacts/raw-ocr-b63d611296e3/artifact.toml",
+            "sha256": "108d8a9dcab961aaff421193f633ff15fc263addaae14aed1224f7d7794c8272"
+          }
+        ],
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-07/act-01-evidence.json",
+          "sha256": "f2e6f2ede4e9764f420d60914587df77377ed794733627b4169c69638fef2bc9"
+        },
+        "parent": {
+          "path": ".scratch/english-research-pius-ix/30064854_djvu.txt",
+          "sha256": "b63d611296e3f6d34d3d1497c592069bfe912fbe6cb614fe45e7dee2cd150fa2"
+        },
+        "parent_ranges": [
+          [
+            356,
+            372
+          ],
+          [
+            384,
+            518
+          ]
+        ],
+        "recipe": null,
+        "replay": {
+          "path": ".scratch/english-intake-recovery/packet-07/audit/act-01-replay.txt",
+          "sha256": "e735205405eef788604a529116453684aee5678d8d6b2361d84b69b2e1a31293"
+        },
+        "helper": null,
+        "display_map": {
+          "path": ".scratch/english-intake-recovery/image-proxies/display-map-jpeg-only.json",
+          "sha256": "400812f7877d3b344967da24455891d29cc7d44e7c62982dd2356a581cedd3fd"
+        },
+        "rights_policy": {
+          "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+          "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+          "jurisdiction": "United States",
+          "application": "Apply the current repository expired-publication-term position to the independently identified 1852, 1912 and 1909 historical English printings and faithful derivatives only. Wrapper-bearing modern deliveries remain restricted/unresolved; their recorded hashes do not clear those deliveries."
+        }
+      },
+      "scope_limits": "Source intake of the exact selected historical human English edition. All selected text read. Native identity, boundaries and note structure inspected only at the recorded image loci; no word-for-word/full-printing image collation or lexical translation-accuracy certification. No compiler, PDF layout/fonts, installation or deployment review.",
+      "findings": [
+        {
+          "kind": "identity-and-attribution",
+          "severity": "information",
+          "finding": "Identified 1852 historical human English papal quotation; translator accurately remains unrecorded."
+        },
+        {
+          "kind": "body-and-boundaries",
+          "severity": "information",
+          "finding": "Address, complete quoted body, benediction and printed dating clause retained; surrounding polemical journal prose excluded by exact LF ranges. No separate final subscription/act-specific reference note is printed here."
+        },
+        {
+          "kind": "historical-ellipsis",
+          "severity": "information",
+          "finding": "Spaced dots within quoted historical wording are native printing, not a project-created excerpt."
+        },
+        {
+          "kind": "transcription-limit",
+          "severity": "information",
+          "finding": "Uncorrected OCR recognition damage is visible (for example PICS for native PIUS), with broken words/spelling retained. Acceptance does not certify lexical accuracy."
+        }
+      ],
+      "blockers": [],
+      "title": "Ubi primum",
+      "selected_text_read_complete": true,
+      "selected_text_read_extent": {
+        "path": ".scratch/english-intake-recovery/packet-07/act-01-selected.txt",
+        "sha256": "e735205405eef788604a529116453684aee5678d8d6b2361d84b69b2e1a31293",
+        "bytes": 7947,
+        "read": "entire selected file"
+      },
+      "historical_identity": {
+        "historical_edition": "The Catholic Layman (Dublin), volume 1, number 1, 17 January 1852, pp.5\u20136",
+        "native_publication_evidence": "Printed p.5 masthead/year and p.6 DUBLIN, SATURDAY, JANUARY 17, 1852 line; independent of 2 February 1849 act date.",
+        "translator": "Unrecorded; no named translator identified in the inspected historical quotation. Human English printing identity established.",
+        "extent": "Papal quotation begins in p.5 column 3 at PIUS P.P., IX and full salutation, continues through p.6 column 1/top column 2, closes with apostolic benediction and Cajeta 2 February 1849/third pontifical-year dating clause. Journal polemical introduction/commentary and neighbors excluded.",
+        "notes": "The two complete native act pages show no separate papal final subscription or act-specific source-reference footnotes. Neighboring p.5 footnotes belong to other material. Spaced ellipsis inside the patristic quotation on p.6 is historical printing, retained literally."
+      },
+      "actual_opened_image_count": 2,
+      "actual_opened_images": [
+        {
+          "source_page": 1,
+          "source_pdf": "src/sources/works/journals/catholic-layman/editions/1852-01-17-volume-01-number-01/artifacts/historical-facsimile-8f24378cd250/source.pdf",
+          "source_pdf_sha256": "8f24378cd25020056c803067a781f2e73d943daae89d2878521d38b6daff0248",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-06/pages/page-1.png",
+          "source_png_sha256": "84a13d925336b3655aa8c06bd5edc7144bdd1cb182dce2f3592e39f57db0879e",
+          "source_bytes": 1141780,
+          "source_dimensions": [
+            1559,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1559,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-07-act-01-sample-01-84a13d925336.jpg",
+          "proxy_sha256": "4c61b05fbbdace892200007c7816f92e36da5a0a729c1431840dbde84ec91eb2",
+          "proxy_bytes": 2016510,
+          "proxy_dimensions": [
+            1559,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-06/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-07-act-01-sample-01-84a13d925336.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-07-act-01-sample-01-84a13d925336.jpg",
+          "observations": "Fresh visual inspection: Catholic Layman masthead, printed p.5, year 1852; editorial Letter of Pope Pius IX context ends before printed PIUS P.P., IX and address in column 3. Selected text begins at the papal heading/address; neighboring articles and editorial polemic excluded. PICS in retained OCR is recognition damage to printed PIUS, not a supplied correction. No act-specific notes occur in this opening column; notes at bottom left belong to neighboring material."
+        },
+        {
+          "source_page": 2,
+          "source_pdf": "src/sources/works/journals/catholic-layman/editions/1852-01-17-volume-01-number-01/artifacts/historical-facsimile-8f24378cd250/source.pdf",
+          "source_pdf_sha256": "8f24378cd25020056c803067a781f2e73d943daae89d2878521d38b6daff0248",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-06/pages/page-2.png",
+          "source_png_sha256": "6a20334bc9d096b847a10fc439d2c8ba48042bd64e63e54010c1443fbd71d7fd",
+          "source_bytes": 1017477,
+          "source_dimensions": [
+            1559,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1559,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-07-act-01-sample-02-6a20334bc9d0.jpg",
+          "proxy_sha256": "c5a297a82582d7c2d1915f152f573a041b9c500fbcc88020861339ebfc6a72cf",
+          "proxy_bytes": 1845791,
+          "proxy_dimensions": [
+            1559,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-06/pages/page-2.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-07-act-01-sample-02-6a20334bc9d0.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-07-act-01-sample-02-6a20334bc9d0.jpg",
+          "observations": "Fresh visual inspection: printed p.6, continued body in column 1 and top column 2, full benediction and Cajeta 2 February 1849/third pontifical-year dating clause; quotation closes before journal commentary resumes. No separate final papal subscription or source-reference notes printed with act. Three spaced dots in patristic quotation after flows from her are literal historical printing, retained by selected OCR; not project excerpting. Native imprint line lower column 2 independently establishes DUBLIN, SATURDAY, JANUARY 17, 1852."
+        }
+      ],
+      "rights_assessment": {
+        "status": "PASS",
+        "basis": {
+          "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+          "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+          "jurisdiction": "United States",
+          "application": "Apply the current repository expired-publication-term position to the independently identified 1852, 1912 and 1909 historical English printings and faithful derivatives only. Wrapper-bearing modern deliveries remain restricted/unresolved; their recorded hashes do not clear those deliveries."
+        },
+        "retained_extent": "Identified historical human English text and separately retained original journal pages, with modern wrappers excluded.",
+        "whole_modern_delivery_cleared": false
+      },
+      "ai_translated_body": false,
+      "prior_visual_verdict_inherited": false
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-07061912-lacrimabili-statu.acqr-1912-english",
+      "language": "en",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "row_sha256": "9014d68e4e741696579284e5d92bda9b3b03d1f9ac851bb539df52b5056d4aa4",
+      "source_sha256": "acf453149edbc189bf906da5a07cd29b25adffd56ebd0ad4e548a7fe48fac870",
+      "source_scope_sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+      "proof_pins": {
+        "key": [
+          "papal.pius-x.hf-p-x-enc-07061912-lacrimabili-statu.acqr-1912-english",
+          "en"
+        ],
+        "row_sha256": "9014d68e4e741696579284e5d92bda9b3b03d1f9ac851bb539df52b5056d4aa4",
+        "source_scope": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "source": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/english-reading-acf453149edb/text.txt",
+          "sha256": "acf453149edbc189bf906da5a07cd29b25adffd56ebd0ad4e548a7fe48fac870",
+          "bytes": 10194
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-07/act-02-selected.txt",
+          "sha256": "acf453149edbc189bf906da5a07cd29b25adffd56ebd0ad4e548a7fe48fac870",
+          "bytes": 10194
+        },
+        "controller": {
+          "id": "segment.papal.pius-x.hf-p-x-enc-07061912-lacrimabili-statu.1912-acqr-volume-37-english.complete-english-reading",
+          "record": "src/sources/works/papal-documents/1912-06-07-papal-pius-x-hf-p-x-enc-07061912-lacrimabili-statu-28074b3e/editions/1912-acqr-volume-37-english/segments/complete-english-reading.toml",
+          "sha256": "85ea0da84476ba4677f26756b7e172556726a61416df17beda4367ec6fbe027b"
+        },
+        "constituent_edition": {
+          "path": "src/sources/works/papal-documents/1912-06-07-papal-pius-x-hf-p-x-enc-07061912-lacrimabili-statu-28074b3e/editions/1912-acqr-volume-37-english/edition.toml",
+          "sha256": "363a64becd40917da5dfbdf90e543c1769c1945e61c6b67d08023a9c0b788ce8"
+        },
+        "container_edition": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/edition.toml",
+          "sha256": "96a58a76cef804b087b426d46a595590dbdf43c2bd47b864f6d5f2c859353e2d"
+        },
+        "metadata_pins": [
+          {
+            "path": "src/sources/works/papal-documents/1912-06-07-papal-pius-x-hf-p-x-enc-07061912-lacrimabili-statu-28074b3e/editions/1912-acqr-volume-37-english/segments/complete-english-reading.toml",
+            "sha256": "85ea0da84476ba4677f26756b7e172556726a61416df17beda4367ec6fbe027b"
+          },
+          {
+            "path": "src/sources/works/papal-documents/1912-06-07-papal-pius-x-hf-p-x-enc-07061912-lacrimabili-statu-28074b3e/editions/1912-acqr-volume-37-english/edition.toml",
+            "sha256": "363a64becd40917da5dfbdf90e543c1769c1945e61c6b67d08023a9c0b788ce8"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/edition.toml",
+            "sha256": "96a58a76cef804b087b426d46a595590dbdf43c2bd47b864f6d5f2c859353e2d"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/selection-recipe-e4c8a8d84efa/artifact.toml",
+            "sha256": "c3debc22975013d4f5657ceea48177d862b715d7e16251a1092201d104b7cc86"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/historical-ocr-d8559a050463/artifact.toml",
+            "sha256": "47c444d46c38115fe10d5f64de02104bc97623e708daf7b9cec4585425d58c11"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/raw-delivery-8b90e7eb4ecd/artifact.toml",
+            "sha256": "d3b4c2772e17b1ed2239353ccc0c06d7814cd4f16892a892961f63bed304267d"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/extent-review-3ecf15c0f328/artifact.toml",
+            "sha256": "8f76c92845a5e8ff7b0dd305c16c5dd9d3981e5069e5357149e9ff6fe0d1564a"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/native-print-proof-0f719117aaca/artifact.toml",
+            "sha256": "374bac577e89ce6020501e6de695edf31808746e2023191efc3fb6b2dce2a824"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/facsimile-delivery-4f69ff909520/artifact.toml",
+            "sha256": "c9d07717f465da7aee745db3efbe2ce140fbe8c01a25164bf950813bea624d32"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/english-reading-acf453149edb/artifact.toml",
+            "sha256": "059124597e5449ffcce966644336622d165e5a833ce265731c2d01a9d9d8fffe"
+          }
+        ],
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-07/act-02-evidence.json",
+          "sha256": "4430cdc3e7be01335f8c79457b52c013b6117f4e6d177dcca9cd574360ee8a91"
+        },
+        "parent": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/historical-ocr-d8559a050463/historical.txt",
+          "sha256": "d8559a050463022727fe65f8fd7dcad701d31a46db2940c234cb6545cbd6cf01"
+        },
+        "parent_ranges": [
+          [
+            42062,
+            42271
+          ]
+        ],
+        "recipe": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/selection-recipe-e4c8a8d84efa/selection.json",
+          "sha256": "e4c8a8d84efa3d4dec5577e161a97399db8b11f426e8474136a028ad818c8637"
+        },
+        "replay": {
+          "path": ".scratch/english-intake-recovery/packet-07/audit/act-02-replay.txt",
+          "sha256": "acf453149edbc189bf906da5a07cd29b25adffd56ebd0ad4e548a7fe48fac870"
+        },
+        "helper": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-replay-efd0286bfaa7/extract.py",
+          "sha256": "efd0286bfaa782818ce5cd27ccb58db9ec359754bcd35455e7dbfcd06f4f4ef6"
+        },
+        "display_map": {
+          "path": ".scratch/english-intake-recovery/image-proxies/display-map-jpeg-only.json",
+          "sha256": "400812f7877d3b344967da24455891d29cc7d44e7c62982dd2356a581cedd3fd"
+        },
+        "rights_policy": {
+          "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+          "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+          "jurisdiction": "United States",
+          "application": "Apply the current repository expired-publication-term position to the independently identified 1852, 1912 and 1909 historical English printings and faithful derivatives only. Wrapper-bearing modern deliveries remain restricted/unresolved; their recorded hashes do not clear those deliveries."
+        }
+      },
+      "scope_limits": "Source intake of the exact selected historical human English edition. All selected text read. Native identity, boundaries and note structure inspected only at the recorded image loci; no word-for-word/full-printing image collation or lexical translation-accuracy certification. No compiler, PDF layout/fonts, installation or deployment review.",
+      "findings": [
+        {
+          "kind": "identity-and-attribution",
+          "severity": "information",
+          "finding": "1912 Philadelphia ACQR English printing established independently by original title page and act pp.741\u2013744; translator remains anonymous."
+        },
+        {
+          "kind": "body-and-boundaries",
+          "severity": "information",
+          "finding": "All four act pages structurally inspected; full address, salutation, benediction, dating and subscription present. No source note apparatus silently dropped."
+        },
+        {
+          "kind": "transcription-limit",
+          "severity": "information",
+          "finding": "Printed drop-cap D in DEEPLY is absent from raw selected EEPLY. This is disclosed uncorrected OCR recognition loss, not a selector exclusion or supplied AI wording. Other OCR defects remain; no corrected transcription claimed."
+        }
+      ],
+      "blockers": [],
+      "title": "Lacrimabili Statu",
+      "selected_text_read_complete": true,
+      "selected_text_read_extent": {
+        "path": ".scratch/english-intake-recovery/packet-07/act-02-selected.txt",
+        "sha256": "acf453149edbc189bf906da5a07cd29b25adffd56ebd0ad4e548a7fe48fac870",
+        "bytes": 10194,
+        "read": "entire selected file"
+      },
+      "historical_identity": {
+        "historical_edition": "The American Catholic Quarterly Review 37 (Philadelphia, January\u2013October 1912), pp.741\u2013744",
+        "native_publication_evidence": "Original title page explicitly prints Volume XXXVII, From January to October, 1912, Philadelphia, 610 South Washington Square; independent of 7 June 1912 act date.",
+        "translator": "Anonymous contemporary human English translation; title-page directors/editors are not identified as translators.",
+        "extent": "Printed heading, address to archbishops and bishops of Latin America, PIUS X. POPE, full salutation, continuous four-page body, benediction, Rome/St Peter 7 June 1912/ninth pontifical-year dating and PIUS X., POPE subscription retained.",
+        "notes": "All four native act pages inspected structurally; no separate footnote/marginal note apparatus appears. Only six exactly recorded running-head/page-label lines omitted. Source citations and quotations stay in body."
+      },
+      "actual_opened_image_count": 5,
+      "actual_opened_images": [
+        {
+          "source_page": 1,
+          "source_pdf": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/native-print-proof-0f719117aaca/source.pdf",
+          "source_pdf_sha256": "0f719117aaca0bcc5e1d8a5104890b2f1ab34a7c7291b6ee7724795fb97b6e52",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-07/pages/page-1.png",
+          "source_png_sha256": "2d20f7528d33ef36bfaf0be83d0d132fca2f44c2acf72a8f13f2c5fb249eb8ce",
+          "source_dimensions": [
+            1487,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-07-act-02-sample-01-2d20f7528d33.jpg",
+          "proxy_sha256": "ee826779763ed7e9e551b2f9790c0e6559b5e1d998df86b6132105499cf51bc9",
+          "proxy_dimensions": [
+            1487,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1487,
+            2200
+          ],
+          "observations": "Fresh visual inspection: original title page names The American Catholic Quarterly Review, Volume XXXVII, From January to October, 1912; Philadelphia, 610 South Washington Square. Direction by Edmond F. Prendergast and associate editor James P. Turner are editorial roles, not translator attribution. Historical publication year is independently printed; Google scan watermark is delivery furniture."
+        },
+        {
+          "source_page": 2,
+          "source_pdf": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/native-print-proof-0f719117aaca/source.pdf",
+          "source_pdf_sha256": "0f719117aaca0bcc5e1d8a5104890b2f1ab34a7c7291b6ee7724795fb97b6e52",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-07/pages/page-2.png",
+          "source_png_sha256": "58aff61778d918a3bb1ba0ed8a0c5845f477f1cfc4c618f5f3bf3e09a3cb3551",
+          "source_dimensions": [
+            1487,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-07-act-02-sample-02-58aff61778d9.jpg",
+          "proxy_sha256": "1340ccc16bf896015f253f1eeba633ec435dc9b49db8a18aa0488b3acbd8dc0d",
+          "proxy_dimensions": [
+            1487,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1487,
+            2200
+          ],
+          "observations": "Fresh visual inspection: printed p.741 begins the English encyclical on the Condition of the Indians, retains archbishops/bishops of Latin America address, PIUS X. POPE and full salutation. No translator is credited here. Body starts with printed drop-cap D; selected EEPLY is raw OCR drop-cap loss, within disclosed uncorrected OCR limitation. No footnotes visible; source title and initial body belong to this constituent, no neighboring act or modern introductory prose."
+        },
+        {
+          "source_page": 3,
+          "source_pdf": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/native-print-proof-0f719117aaca/source.pdf",
+          "source_pdf_sha256": "0f719117aaca0bcc5e1d8a5104890b2f1ab34a7c7291b6ee7724795fb97b6e52",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-07/pages/page-3.png",
+          "source_png_sha256": "dc67a41a2e3bf39b76676cca37e687ce24212bbbf9e03dad574b4b017981a099",
+          "source_dimensions": [
+            1487,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-07-act-02-sample-03-dc67a41a2e3b.jpg",
+          "proxy_sha256": "182ff23dd5216579e92f131beaf7847b444ec3291301f37eb0fb666952453b2f",
+          "proxy_dimensions": [
+            1487,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1487,
+            2200
+          ],
+          "observations": "Fresh visual inspection: printed p.742 continues the same encyclical from natives at top through pastoral appeal at bottom. Single body column, with running head and Google watermark separated. No page-foot or marginal note apparatus appears. The selected text retains the page transition and these body paragraphs; no body interruption or neighboring material detected at sampled locus."
+        },
+        {
+          "source_page": 5,
+          "source_pdf": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/native-print-proof-0f719117aaca/source.pdf",
+          "source_pdf_sha256": "0f719117aaca0bcc5e1d8a5104890b2f1ab34a7c7291b6ee7724795fb97b6e52",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-07/pages/page-4.png",
+          "source_png_sha256": "dee88fab6d3b8d4539b9693c48fa5a2d23c4bc1099589eb7b60ffd63f4364661",
+          "source_dimensions": [
+            1487,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-07-act-02-sample-04-dee88fab6d3b.jpg",
+          "proxy_sha256": "76304ae92f1891f9a6543f5f93a45961c8089862c4439253d351e723a4ff3cee",
+          "proxy_dimensions": [
+            1487,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1487,
+            2200
+          ],
+          "observations": "Fresh visual inspection: printed p.744 preserves final condemnation, penance provision, closing exhortation, Apostolic Benediction, Rome/St Peter dating clause 7 June 1912 in ninth pontifical year, and final PIUS X., POPE subscription. Selection ends at that subscription; no subsequent commentary or notes enter it. No source note apparatus appears on final page."
+        },
+        {
+          "source_pdf": "src/sources/works/journals/american-catholic-quarterly-review/editions/1912-volume-37/artifacts/native-print-proof-0f719117aaca/source.pdf",
+          "source_pdf_sha256": "0f719117aaca0bcc5e1d8a5104890b2f1ab34a7c7291b6ee7724795fb97b6e52",
+          "source_page": 4,
+          "source_printed_page": 743,
+          "bounded_pdf": ".scratch/english-intake-recovery/packet-07/audit/lacrimabili-native-4.pdf",
+          "bounded_pdf_sha256": "6db5e05483608f94795315f39f56ed0a5e0f562db97a4e84681eebf9144875c7",
+          "source_png": ".scratch/english-intake-recovery/packet-07/audit/extra-rasters/.scratch/english-intake-recovery/packet-07/audit/lacrimabili-native-4/pages/page-1.png",
+          "source_png_sha256": "64cd9d35ea0a34640701ecd7019c5214bf6c29dfe15933b01e158da7e947509e",
+          "source_dimensions": [
+            1487,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/packet-07/audit/lacrimabili-p743.jpg",
+          "proxy_sha256": "3da4bcebba2a892cc365f751f4f533e915dd3aceb613386b5ecff3746a6f00fb",
+          "proxy_dimensions": [
+            1487,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1487,
+            2200
+          ],
+          "pdf_review": {
+            "path": "tools/pdf-review",
+            "sha256": "0e6f688778216faeb02b3335e4467eb476c878cf94bd89e31af93f86e3a3ad3e"
+          },
+          "proxy_command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-recovery/packet-07/audit/extra-rasters/.scratch/english-intake-recovery/packet-07/audit/lacrimabili-native-4/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-07/audit/lacrimabili-p743.jpg"
+          ],
+          "observations": "Fresh visual inspection of bounded native proof page 4, printed p.743: continuous pastoral exhortation, missionary planning and closing-page bridge; no footnotes, marginal notes, separate source apparatus or neighboring content. Full selected text includes these paragraphs and bridge. This completes structural inspection of all four native Lacrimabili act pages, without word-for-word collation."
+        }
+      ],
+      "rights_assessment": {
+        "status": "PASS",
+        "basis": {
+          "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+          "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+          "jurisdiction": "United States",
+          "application": "Apply the current repository expired-publication-term position to the independently identified 1852, 1912 and 1909 historical English printings and faithful derivatives only. Wrapper-bearing modern deliveries remain restricted/unresolved; their recorded hashes do not clear those deliveries."
+        },
+        "retained_extent": "Identified historical human English text and separately retained original journal pages, with modern wrappers excluded.",
+        "whole_modern_delivery_cleared": false
+      },
+      "ai_translated_body": false,
+      "prior_visual_verdict_inherited": false
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-21041909-communium-rerum.acqr-1909-english",
+      "language": "en",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "row_sha256": "23e4aa37be9badf18eee74139abc8945ff279528b0e48a935e1d4e54181691ef",
+      "source_sha256": "255b537e8fbfc20e618c642379ac7351fe2b442be028377362f0baebf4c9cf45",
+      "source_scope_sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+      "proof_pins": {
+        "key": [
+          "papal.pius-x.hf-p-x-enc-21041909-communium-rerum.acqr-1909-english",
+          "en"
+        ],
+        "row_sha256": "23e4aa37be9badf18eee74139abc8945ff279528b0e48a935e1d4e54181691ef",
+        "source_scope": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "source": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/english-reading-255b537e8fbf/text.txt",
+          "sha256": "255b537e8fbfc20e618c642379ac7351fe2b442be028377362f0baebf4c9cf45",
+          "bytes": 65494
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-07/act-03-selected.txt",
+          "sha256": "255b537e8fbfc20e618c642379ac7351fe2b442be028377362f0baebf4c9cf45",
+          "bytes": 65494
+        },
+        "controller": {
+          "id": "segment.papal.pius-x.hf-p-x-enc-21041909-communium-rerum.1909-acqr-volume-34-english.complete-english-reading",
+          "record": "src/sources/works/papal-documents/1909-04-21-papal-pius-x-hf-p-x-enc-21041909-communium-rerum-62878975/editions/1909-acqr-volume-34-english/segments/complete-english-reading.toml",
+          "sha256": "1cc24d78183108f69d95b0046ee3a6d57f5492da15e1f2710ef8bbc380aefebd"
+        },
+        "constituent_edition": {
+          "path": "src/sources/works/papal-documents/1909-04-21-papal-pius-x-hf-p-x-enc-21041909-communium-rerum-62878975/editions/1909-acqr-volume-34-english/edition.toml",
+          "sha256": "6de15f5f109faeba41ee6b2288b142a95a48700a9acb097ae0c5ae047919e3d2"
+        },
+        "container_edition": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/edition.toml",
+          "sha256": "58c83fe482a5b2cdfc35651e2e8639c646206045bf0c1993987c2dc9241deb01"
+        },
+        "metadata_pins": [
+          {
+            "path": "src/sources/works/papal-documents/1909-04-21-papal-pius-x-hf-p-x-enc-21041909-communium-rerum-62878975/editions/1909-acqr-volume-34-english/segments/complete-english-reading.toml",
+            "sha256": "1cc24d78183108f69d95b0046ee3a6d57f5492da15e1f2710ef8bbc380aefebd"
+          },
+          {
+            "path": "src/sources/works/papal-documents/1909-04-21-papal-pius-x-hf-p-x-enc-21041909-communium-rerum-62878975/editions/1909-acqr-volume-34-english/edition.toml",
+            "sha256": "6de15f5f109faeba41ee6b2288b142a95a48700a9acb097ae0c5ae047919e3d2"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/edition.toml",
+            "sha256": "58c83fe482a5b2cdfc35651e2e8639c646206045bf0c1993987c2dc9241deb01"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/historical-ocr-bb659248823e/artifact.toml",
+            "sha256": "3f2f296cf7a00d2d70fca4a6221c989dbb0132ea733045b05a40a2b14201aaee"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/facsimile-delivery-8e4de1f39d23/artifact.toml",
+            "sha256": "fb2483977c9cd2011db245ecdb43354d5bc203e3ac4f63db70d043ad5d29054b"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-replay-efd0286bfaa7/artifact.toml",
+            "sha256": "59f2c6f5c4a71025a08a0d3cb1dbca2a43e951fba2b6c061a106bd9a2ad25c0a"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/raw-delivery-f88512b4b91f/artifact.toml",
+            "sha256": "2d992e664c5d0526ff418fd672d5fe6a279217dd00dab4daa4d7deea33084da6"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/english-reading-255b537e8fbf/artifact.toml",
+            "sha256": "1a66e19ca70d0a83451884e9ebbe42e0b5c377eefa9d832d8a80eca78b7f9def"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/extent-review-de5823c9914b/artifact.toml",
+            "sha256": "c8e6a46438d319ef3d772e5d9a7c66d343d52985857821846997a0be25b792da"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/native-print-proof-17f5547ed46c/artifact.toml",
+            "sha256": "45ea2a0a461c0b4c01670aacd9890b95b011fde9beabc319bbb21a20c857f7c1"
+          },
+          {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-recipe-01e52e103c63/artifact.toml",
+            "sha256": "951892af17f891ab13f9ad0c0a13359bf97ac91979a911358f31b663db362935"
+          }
+        ],
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-07/act-03-evidence.json",
+          "sha256": "0f8471c46f0a43bf209404bce8afd6ca66ded9f1ec228a2acc114e13e79e962f"
+        },
+        "parent": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/historical-ocr-bb659248823e/historical.txt",
+          "sha256": "bb659248823efe8a1aa1ae17814d92c55dfd75b7ad963e774bc8e399f9b547c1"
+        },
+        "parent_ranges": [
+          [
+            21438,
+            22800
+          ]
+        ],
+        "recipe": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-recipe-01e52e103c63/selection.json",
+          "sha256": "01e52e103c6306b8e8c30b9fa12e11bc06b4389f55becbbca879b4b695bfdfda"
+        },
+        "replay": {
+          "path": ".scratch/english-intake-recovery/packet-07/audit/act-03-replay.txt",
+          "sha256": "255b537e8fbfc20e618c642379ac7351fe2b442be028377362f0baebf4c9cf45"
+        },
+        "helper": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-replay-efd0286bfaa7/extract.py",
+          "sha256": "efd0286bfaa782818ce5cd27ccb58db9ec359754bcd35455e7dbfcd06f4f4ef6"
+        },
+        "display_map": {
+          "path": ".scratch/english-intake-recovery/image-proxies/display-map-jpeg-only.json",
+          "sha256": "400812f7877d3b344967da24455891d29cc7d44e7c62982dd2356a581cedd3fd"
+        },
+        "rights_policy": {
+          "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+          "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+          "jurisdiction": "United States",
+          "application": "Apply the current repository expired-publication-term position to the independently identified 1852, 1912 and 1909 historical English printings and faithful derivatives only. Wrapper-bearing modern deliveries remain restricted/unresolved; their recorded hashes do not clear those deliveries."
+        }
+      },
+      "scope_limits": "Source intake of the exact selected historical human English edition. All selected text read. Native identity, boundaries and note structure inspected only at the recorded image loci; no word-for-word/full-printing image collation or lexical translation-accuracy certification. No compiler, PDF layout/fonts, installation or deployment review.",
+      "findings": [
+        {
+          "kind": "identity-and-attribution",
+          "severity": "information",
+          "finding": "1909 Philadelphia ACQR English Translation printing established independently by title page and native act heading; translator remains anonymous."
+        },
+        {
+          "kind": "protocol-order",
+          "severity": "information",
+          "finding": "Two exact existing parent OCR lines are moved to the native p.347 protocol positions. Independent reconstruction and pinned-helper replay match the current selected bytes."
+        },
+        {
+          "kind": "source-chronology-disagreement",
+          "severity": "information",
+          "finding": "Native p.369 says eighth year of our Pontificate. Current source/edition note discloses that historical disagreement and selection preserves it."
+        },
+        {
+          "kind": "notes-and-ellipsis",
+          "severity": "information",
+          "finding": "Inline historical citations and quoted ellipses retained. All 80 omitted full lines are explicitly identified furniture; no substantive note is listed for omission. Native structural checks remain bounded to four act pages."
+        },
+        {
+          "kind": "transcription-limit",
+          "severity": "information",
+          "finding": "OCR recognition/spelling and historical printing errors remain; no corrected text, lexical translation assessment or all-23-page word collation claimed."
+        }
+      ],
+      "blockers": [],
+      "title": "Communium Rerum",
+      "selected_text_read_complete": true,
+      "selected_text_read_extent": {
+        "path": ".scratch/english-intake-recovery/packet-07/act-03-selected.txt",
+        "sha256": "255b537e8fbfc20e618c642379ac7351fe2b442be028377362f0baebf4c9cf45",
+        "bytes": 65494,
+        "read": "entire selected file"
+      },
+      "historical_identity": {
+        "historical_edition": "The American Catholic Quarterly Review 34 (Philadelphia, January\u2013October 1909), pp.347\u2013369",
+        "native_publication_evidence": "Original title page explicitly prints Volume XXXIV, From January to October, 1909, Philadelphia, 211 South Sixth Street; independent of 21 April 1909 act date. Act p.347 explicitly labels English Translation.",
+        "translator": "Anonymous contemporary human English translation; no named translator established by the inspected native title/start/closing. Editorial directors are not treated as translators.",
+        "extent": "Full contiguous historical OCR constituent pp.347\u2013369 selected; complete heading/address/protocol/salutation, body, apostolic benediction, Rome/St Peter feast of St Anselm 21 April 1909 dating and PIUS X., POPE subscription retained. Two exact OCR protocol lines restored to native p.347 order.",
+        "notes": "Historical citations are in-line parentheticals in selected body, directly checked at pp.348,357,369. Exact omission list contains only page labels, running heads and scan watermarks; no substantive note is designated for omission. No separate footnote region appears in the sampled native act pages. Literal quoted ellipses visible on p.369 are retained."
+      },
+      "actual_opened_image_count": 5,
+      "actual_opened_images": [
+        {
+          "source_page": 1,
+          "source_pdf": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/native-print-proof-17f5547ed46c/source.pdf",
+          "source_pdf_sha256": "17f5547ed46c246e1f24ded344ef4fc4fad68778f6be49bb45c9c54adee33d8c",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-08/pages/page-1.png",
+          "source_png_sha256": "92c93616b14f124a41b6a5627dbac3143a7431cb85bfec2e1e64fd8a97594e80",
+          "source_dimensions": [
+            1407,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-07-act-03-sample-01-92c93616b14f.jpg",
+          "proxy_sha256": "f52876b1bafaecf6385096ed876a55d578d562ea1dd7e3fc2a0644feb683769a",
+          "proxy_dimensions": [
+            1407,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1407,
+            2200
+          ],
+          "observations": "Fresh visual inspection: original title page names The American Catholic Quarterly Review, Volume XXXIV, From January to October, 1909; Philadelphia, 211 South Sixth Street. Patrick John Ryan directs the volume and James F. Loughlin/James P. Turner are associate editors; no translator attribution inferred from those roles. Independently printed historical publication year supports exact English edition identity."
+        },
+        {
+          "source_page": 2,
+          "source_pdf": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/native-print-proof-17f5547ed46c/source.pdf",
+          "source_pdf_sha256": "17f5547ed46c246e1f24ded344ef4fc4fad68778f6be49bb45c9c54adee33d8c",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-08/pages/page-2.png",
+          "source_png_sha256": "0d31d223e3a0bc3f72c3815e4a166fe9733745a04af27d66118662e7a8cc02a3",
+          "source_dimensions": [
+            1407,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-07-act-03-sample-02-0d31d223e3a0.jpg",
+          "proxy_sha256": "6f579b711cea16c951d9807e0207e8a02c5eef5da76068020ee5adb03467274b",
+          "proxy_dimensions": [
+            1407,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1407,
+            2200
+          ],
+          "observations": "Fresh visual inspection: printed p.347 explicitly labels Encyclical\u2014English Translation. Heading gives Pius X by Divine Providence Pope; address to patriarchs, primates, archbishops, bishops and other ordinaries; separate PIUS X. POPE and full salutation precede body. The two recipe line moves restore those protocol positions without new words. Native heading has Aostolic spelling as printed; uncorrected OCR recognition damage remains. No named translator or separate footnotes on this page."
+        },
+        {
+          "source_page": 3,
+          "source_pdf": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/native-print-proof-17f5547ed46c/source.pdf",
+          "source_pdf_sha256": "17f5547ed46c246e1f24ded344ef4fc4fad68778f6be49bb45c9c54adee33d8c",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-08/pages/page-3.png",
+          "source_png_sha256": "7d0f9be419fd97adcb2156dcc18c43ee78b2f10a867aa5d67980b21e67b51111",
+          "source_dimensions": [
+            1407,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-07-act-03-sample-03-7d0f9be419fd.jpg",
+          "proxy_sha256": "199b86cfcad916dda97a004ca5415374c587714bdcaec07ab5ef593631b73a97",
+          "proxy_dimensions": [
+            1407,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1407,
+            2200
+          ],
+          "observations": "Fresh visual inspection: printed p.348 continues from preceding page; historical references and citations are in-line parentheticals (Colossians, E supremi, Corinthians) and are retained in selected text. No page-foot note region or marginal commentary is visible. Source running head/page number and Google watermark are furniture omitted by recipe, while body and citation text remain."
+        },
+        {
+          "source_page": 12,
+          "source_pdf": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/native-print-proof-17f5547ed46c/source.pdf",
+          "source_pdf_sha256": "17f5547ed46c246e1f24ded344ef4fc4fad68778f6be49bb45c9c54adee33d8c",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-08/pages/page-4.png",
+          "source_png_sha256": "152e5fe1445571710625761438174f13416207b70d968ed24d24988f2e54a969",
+          "source_dimensions": [
+            1407,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-07-act-03-sample-04-152e5fe14455.jpg",
+          "proxy_sha256": "c1fea5382f40ee7bea798e24ceba133ddb04948c041ed77e78ccd12c39a1531a",
+          "proxy_dimensions": [
+            1407,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1407,
+            2200
+          ],
+          "observations": "Fresh visual inspection: printed p.357 is continuous English body. Quoted Anselm passages retain parenthetical Epist. lib. IV ep.12 and ep.8 citations inline; the selected source text includes both. No separate footnote or marginal apparatus is visible at this interior locus. No neighboring work, wrapper, or project commentary is interleaved."
+        },
+        {
+          "source_page": 24,
+          "source_pdf": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/native-print-proof-17f5547ed46c/source.pdf",
+          "source_pdf_sha256": "17f5547ed46c246e1f24ded344ef4fc4fad68778f6be49bb45c9c54adee33d8c",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-08/pages/page-5.png",
+          "source_png_sha256": "c739084bac5e58a9bac1f2355529ce7162d785ce2ac299683e0e57367aa38dc8",
+          "source_dimensions": [
+            1407,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-07-act-03-sample-05-c739084bac5e.jpg",
+          "proxy_sha256": "574be6573f34302189f69c7d6b391e5a301fd0c8b1d86bd196e13ccdf56f7630",
+          "proxy_dimensions": [
+            1407,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1407,
+            2200
+          ],
+          "observations": "Fresh visual inspection: printed p.369 preserves in-line Anselm citations, literal spaced ellipses within the historical quotation, final exhortation and Apostolic Benediction, Rome/St Peter feast of St Anselm 21 April 1909 dating clause, and PIUS X., POPE subscription. Native closing explicitly says eighth year of our Pontificate, matching selected text and current edition/source note despite chronological tension. No separate source-footnote region or post-act text enters selection."
+        }
+      ],
+      "rights_assessment": {
+        "status": "PASS",
+        "basis": {
+          "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+          "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+          "jurisdiction": "United States",
+          "application": "Apply the current repository expired-publication-term position to the independently identified 1852, 1912 and 1909 historical English printings and faithful derivatives only. Wrapper-bearing modern deliveries remain restricted/unresolved; their recorded hashes do not clear those deliveries."
+        },
+        "retained_extent": "Identified historical human English text and separately retained original journal pages, with modern wrappers excluded.",
+        "whole_modern_delivery_cleared": false
+      },
+      "ai_translated_body": false,
+      "prior_visual_verdict_inherited": false
+    }
+  ],
+  "blockers": [],
+  "mechanical_verification": {
+    "path": ".scratch/english-intake-recovery/packet-07/audit/verification.json",
+    "all_checks_pass": true,
+    "executed_check_count": 196
+  }
+}

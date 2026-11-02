@@ -1,0 +1,251 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T08:19:46Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.020.historical-text-c3d47678.note-blocks-officio-sanctissimo-9f316145741b",
+      "date": "1887-12-22",
+      "document_type": "apostolic-letter",
+      "edition_id": "edition.acta-papal-archives.ass.020.ass-020-007",
+      "id": "acta.ass.020.ass-020-007",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          640
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T05:57:41Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"detail\": \"Original ASS title imprint reproduced before the separately printed1968/1969 Johnson reprint notice; historical publication year/period is corroborated by archive inventory. This is textual-imprint evidence, not an original-print facsimile claim.\", \"evidence_physical_lines\": [1, 41]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.020.ass-020-007.note-blocks-9f316145741b",
+      "segment_path": "src/sources/works/papal-documents/1887-12-22-papal-leo-xiii-hf-l-xiii-enc-22121887-officio-sanctissimo-f51b3d3c/editions/1887-acta-ass-020-ass-020-007/segments/note-blocks-officio-sanctissimo-9f316145741b.toml",
+      "sha256": "9f316145741bd007f7c758bed2ced93570d151b98fdfe9135ef4330cad04205b",
+      "source_note": "ASS 20 (1887). Exact LF ranges of the separately hashed pdftotext -layout UTF-8 Unix derivative; Vatican OCR reconstruction, not original-print facsimile or collated transcription. A separately registered bounded LF-only derivative partitions explicitly inspected historical source-note groups into distinct paragraph blocks at their source-page breaks. All selected non-LF bytes and their order are unchanged; literal source OCR, word spacing and reference marks remain. The exact partition spec and raw parent are retained; no original-print image collation is claimed.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-20-1887-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1887-acta-ass-020/artifacts/note-blocks-officio-sanctissimo-9f316145741b/text.txt",
+      "title": "Litterae ad Archiepiscopos et Episcopos Bavariae",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-22121887-officio-sanctissimo",
+      "compact_margin": 0.65,
+      "compact_layout": true,
+      "correction_evidence": {
+        "revision": "2026-10-30T05:57:41Z",
+        "kind": "explicit-source-note-lf-partition",
+        "spec_artifact_id": "artifact.acta-papal-archives.ass.020.historical-text-c3d47678.note-spec-officio-sanctissimo-9dc94157ea44",
+        "spec_sha256": "9dc94157ea442771bd37cbc8862f774e8afa0bb183de90c33a515a4c92c0acc4",
+        "source_note_physical_line_ranges": [
+          [
+            10155,
+            10155
+          ],
+          [
+            10196,
+            10197
+          ],
+          [
+            10237,
+            10240
+          ],
+          [
+            10281,
+            10282
+          ],
+          [
+            10368,
+            10368
+          ],
+          [
+            10408,
+            10410
+          ],
+          [
+            10450,
+            10452
+          ],
+          [
+            10579,
+            10579
+          ]
+        ],
+        "prior_segment_id": "segment.acta-papal-archives.ass.020.ass-020-007",
+        "selected_non_lf_sha256": "c48de1ef78bbd9b58105d34038a86aa1c8addda9f03ceff0c5eda0aacdb22f0b",
+        "selected_non_lf_bytes_preserved": true,
+        "source_order_preserved": true
+      }
+    },
+    {
+      "artifact_id": "artifact.journals.catholic-mind.1928-02-22-volume-26-issue-4.bounded-english-123633d87eef.mortalium-text-9567cc6cc366",
+      "date": "1928-01-06",
+      "document_type": "encyclical",
+      "id": "papal.pius-xi.hf-p-xi-enc-19280106-mortalium-animos",
+      "keep_with_next": [
+        0,
+        1,
+        5,
+        10,
+        13,
+        23,
+        30,
+        41,
+        47,
+        55
+      ],
+      "keep_with_next_mode": "first-line",
+      "language": "en",
+      "physical_line_ranges": [
+        [
+          1,
+          131
+        ]
+      ],
+      "pope": "Pius XI",
+      "revision": "2026-10-30T08:19:46Z",
+      "rights_basis": "The native masthead identifies the actual United States journal issue as The Catholic Mind 26, no. 4, published 1928-02-22. The historical English translation and issue apparatus were therefore published by 1930 and are public domain in the United States under the expired publication term. This basis is established from the contemporary printing, not the act date or a later reprint.",
+      "rights_notice": "This historically identified 1928 English printing is public domain in the United States; later translations and modern host presentations have separate status.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-19280106-mortalium-animos.1928-02-22-catholic-mind-english.complete-english-text.mortalium-9567cc6cc366",
+      "segment_path": "src/sources/works/papal-documents/1928-01-06-papal-pius-xi-hf-p-xi-enc-19280106-mortalium-animos-84c4d016/editions/1928-02-22-catholic-mind-english/segments/mortalium-9567cc6cc366.toml",
+      "sha256": "9567cc6cc36698f6af7287ab3e776b2c8bc591d0f6367a5cc25c99381d58a295",
+      "source_note": "Historical English translation in The Catholic Mind 26, no. 4 (1928-02-22), pp. 61–72. The native issue masthead was checked against the complete PDF. The translation is credited to the N.C.W.C. News Sheet; this issue does not name an individual translator. Literal XML-word selection removes neighboring-page gutter text and printed running furniture by exact reviewed coordinates. All selected native source pages and complete selected text were inspected for extent. OCR spelling, broken words and reference defects remain; no critical text or translation collation is claimed. A separately pinned LF-only derivative repairs one inherited XML-paragraph fusion before notes 21–26 on printed page 71. Two LF bytes are inserted at original source LF 119, UTF-8 byte 2124; every original non-LF byte and its order are unchanged. Notes remain at their source-page break; inherited OCR wording and reference defects remain literal.",
+      "source_url": "https://archive.org/download/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4.pdf",
+      "text_path": "src/sources/works/journals/catholic-mind/editions/1928-02-22-volume-26-issue-4/artifacts/mortalium-text-9567cc6cc366/text.txt",
+      "title": "Mortalium Animos",
+      "compact_margin": 0.65,
+      "compact_layout": true
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.018.historical-text-7561964e.quod-auctoritate-text-a4ab2cc95980",
+      "date": "1885-12-22",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.018.ass-018-005",
+      "id": "acta.ass.018.ass-018-005",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          240
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T08:19:46Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"detail\": \"Original ASS title imprint reproduced before the separately printed1968/1969 Johnson reprint notice; historical publication year/period is corroborated by archive inventory. This is textual-imprint evidence, not an original-print facsimile claim.\", \"evidence_physical_lines\": [1, 32]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.018.ass-018-005.quod-auctoritate-a4ab2cc95980",
+      "segment_path": "src/sources/works/papal-documents/1885-12-22-papal-leo-xiii-hf-l-xiii-enc-22121885-quod-auctoritate-3d303b71/editions/1885-acta-ass-018-ass-018-005/segments/quod-auctoritate-a4ab2cc95980.toml",
+      "sha256": "a4ab2cc95980ae1f7a90500eea763e5712816494e9c47540980c3e696cc92392",
+      "source_note": "ASS 18 (1885). Exact LF ranges of the separately hashed pdftotext -layout UTF-8 Unix derivative; Vatican OCR reconstruction, not original-print facsimile or collated transcription. A separately pinned source-unit derivative restores the four native page 259 note units from row-wise order 1,3,2,4 to the printed column order 1,2,3,4, using exhaustive UTF-8 byte slices of original LF10035–10036. Every byte inside each unit is unchanged and used once; body wording is unchanged. The three page-foot note groups are separate blocks. This is an explicit note-order correction against the Vatican OCR reconstruction, not original-print collation or lexical OCR repair.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-18-1885-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1885-acta-ass-018/artifacts/quod-auctoritate-text-a4ab2cc95980/text.txt",
+      "title": "Litterae encyclicae quibus extraordinarium Iubilaeum indicitur",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-22121885-quod-auctoritate"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.029.historical-text-864fa26a.divinum-spacing-text-c8bdfba93d02.divinum-notes-text-21f6dafef364",
+      "date": "1897-05-09",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.029.ass-029-l25864",
+      "id": "acta.ass.029.ass-029-l25864",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          674
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T08:19:46Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. The historical title identifies Romae, Typographia Polyglotta, S. Congregationis de Propaganda Fide, 1896-97, at exact source LF line 38. The separately printed 1969 Johnson reprint wrapper at LF 40–45 is excluded. This identifies the reproduced historical printing; the Vatican OCR reconstruction is not image-collated. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.029.ass-029-l25864.divinum-spacing-c8bdfba93d02.divinum-notes-21f6dafef364",
+      "segment_path": "src/sources/works/papal-documents/1897-05-09-papal-leo-xiii-hf-l-xiii-enc-09051897-divinum-illud-munus-7370b2e4/editions/1896-acta-ass-029-ass-029-l25864/segments/divinum-notes-21f6dafef364.toml",
+      "sha256": "21f6dafef3648aa4b08b13a0af06aaa0f01d3790d8791c28495db7f882e8a395",
+      "source_note": "ASS 29 (1896). Mechanically selected historical papal instrument; OCR spelling and spacing retained without silent correction. A separately pinned native-spacing derivative projects whitespace from 583 unique same-page native raw lines while preserving every original non-whitespace character and its order. Twelve explicitly hashed superscript/note LF records with zero native-line matches remain byte-for-byte unchanged. The native raw stream order on pages 651,656,657 is not adopted. Literal source hyphens, superscript debris and OCR errors remain; no lexical repair or original-print collation is claimed. A second, separately pinned LF-only stage separates all 15 historical page-foot note groups at their existing source-page breaks. Every selected non-LF byte of the spacing derivative remains unchanged and in order. Original note/reference defects and the 12 explicitly retained source LF records remain literal; neither source wording nor superscript position is inferred.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-29-1896-97-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1896-acta-ass-029/artifacts/divinum-notes-text-21f6dafef364/text.txt",
+      "title": "Divinum illud munus",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus"
+    }
+  ],
+  "supersessions": [
+    {
+      "reason": "Explicit inspected source-footnote LF partitions replace a paragraph-fused reader. Every selected non-LF byte and its source order are preserved; original source and predecessor remain retained.",
+      "prior": {
+        "id": "acta.ass.020.ass-020-007",
+        "language": "la",
+        "pdf_sha256": "3320f08e7e38183b8f9948bcd21b5ed53a57aed0a96dd75e05ae9ef0a15c66f3",
+        "artifact_id": "artifact.acta-papal-archives.ass.020.historical-text-c3d47678",
+        "source_sha256": "c3d4767811d43be6597af243328f5a23229f3e271c4bdcf3543c462d2e7e2140",
+        "segment_id": "segment.acta-papal-archives.ass.020.ass-020-007"
+      },
+      "replacement": {
+        "id": "acta.ass.020.ass-020-007",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.020.historical-text-c3d47678.note-blocks-officio-sanctissimo-9f316145741b",
+        "source_sha256": "9f316145741bd007f7c758bed2ced93570d151b98fdfe9135ef4330cad04205b",
+        "segment_id": "segment.acta-papal-archives.ass.020.ass-020-007.note-blocks-9f316145741b",
+        "revision": "2026-10-30T05:57:41Z"
+      }
+    },
+    {
+      "reason": "A separately pinned LF-only derivative repairs one inherited XML-paragraph fusion before notes21–26 on native page71. Two LF bytes are inserted at original source LF119, UTF8 byte2124; every original non-LF byte and its order are unchanged. Notes remain at their source-page break; inherited OCR wording and reference defects remain literal.",
+      "prior": {
+        "id": "papal.pius-xi.hf-p-xi-enc-19280106-mortalium-animos",
+        "language": "en",
+        "artifact_id": "artifact.journals.catholic-mind.1928-02-22-volume-26-issue-4.bounded-english-123633d87eef",
+        "source_sha256": "123633d87eefc46a8093a1a9692ee16e1e7d255c66924b8cad5a3d0a8b5c8a26",
+        "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-19280106-mortalium-animos.1928-02-22-catholic-mind-english.complete-english-text",
+        "pdf_sha256": "efb69aec90a3427f00ad30ab135bddeb10767f81b6934ef6d2dee13a6a866c2a"
+      },
+      "replacement": {
+        "id": "papal.pius-xi.hf-p-xi-enc-19280106-mortalium-animos",
+        "language": "en",
+        "artifact_id": "artifact.journals.catholic-mind.1928-02-22-volume-26-issue-4.bounded-english-123633d87eef.mortalium-text-9567cc6cc366",
+        "source_sha256": "9567cc6cc36698f6af7287ab3e776b2c8bc591d0f6367a5cc25c99381d58a295",
+        "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-19280106-mortalium-animos.1928-02-22-catholic-mind-english.complete-english-text.mortalium-9567cc6cc366",
+        "revision": "2026-10-30T08:19:46Z"
+      }
+    },
+    {
+      "reason": "A separately pinned source-unit derivative restores the four native page259 note units from row-wise order1,3,2,4 to the printed column order1,2,3,4, using exhaustive UTF8byte slices of original LF10035–10036. Every byte inside each unit is unchanged and used once; body wording is unchanged. The three page-foot note groups are separate blocks. This is an explicit note-order correction against the Vatican OCR reconstruction, not original-print collation or lexical OCR repair.",
+      "prior": {
+        "id": "acta.ass.018.ass-018-005",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.018.historical-text-7561964e",
+        "source_sha256": "7561964eefcffbc661202bb128538de5d7f0b50d6b75316d7c43cdb44f012003",
+        "segment_id": "segment.acta-papal-archives.ass.018.ass-018-005",
+        "pdf_sha256": "39c53f01060b45d2ee57a07e432be06f73381116f18493bde68f9017ee78598c"
+      },
+      "replacement": {
+        "id": "acta.ass.018.ass-018-005",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.018.historical-text-7561964e.quod-auctoritate-text-a4ab2cc95980",
+        "source_sha256": "a4ab2cc95980ae1f7a90500eea763e5712816494e9c47540980c3e696cc92392",
+        "segment_id": "segment.acta-papal-archives.ass.018.ass-018-005.quod-auctoritate-a4ab2cc95980",
+        "revision": "2026-10-30T08:19:46Z"
+      }
+    },
+    {
+      "reason": "A second, separately pinned LF-only stage separates all15historical page-foot note groups at their existing source-page breaks. Every selected non-LF byte of the spacing derivative remains unchanged and in order. Original note/reference defects and the12explicitly retained source LF records remain literal; neither source wording nor superscript position is inferred.",
+      "prior": {
+        "id": "acta.ass.029.ass-029-l25864",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.029.historical-text-864fa26a",
+        "source_sha256": "864fa26a5142712ddc93b24966f859459ba06804ca8508c6c3d4b6cc766925d4",
+        "segment_id": "segment.acta-papal-archives.ass.029.ass-029-l25864",
+        "pdf_sha256": "b88add0371fdc973c89e6fc22c8b7dac128a7fcd340c0be666d1922f96e9671e"
+      },
+      "replacement": {
+        "id": "acta.ass.029.ass-029-l25864",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.029.historical-text-864fa26a.divinum-spacing-text-c8bdfba93d02.divinum-notes-text-21f6dafef364",
+        "source_sha256": "21f6dafef3648aa4b08b13a0af06aaa0f01d3790d8791c28495db7f882e8a395",
+        "segment_id": "segment.acta-papal-archives.ass.029.ass-029-l25864.divinum-spacing-c8bdfba93d02.divinum-notes-21f6dafef364",
+        "revision": "2026-10-30T08:19:46Z"
+      }
+    }
+  ]
+}

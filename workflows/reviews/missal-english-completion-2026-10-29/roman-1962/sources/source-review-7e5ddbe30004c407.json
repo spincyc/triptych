@@ -1,0 +1,302 @@
+{
+  "schema": "triptych-independent-pange-final-composite-review/v1",
+  "reviewed_on": "2026-10-29",
+  "disposition": "accepted-bounded-source-scope-english",
+  "blocking_findings": [],
+  "candidate": {
+    "plan_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/pange-install-plan.json",
+    "plan_sha256": "2cb5581d58924ae70a6044be7e7887c1fd657c704bd62d35aec61427cf0b08cd",
+    "frozen_reviewed_plan": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/review/final-reviewed-plan-2cb5581d.json",
+    "frozen_reviewed_plan_sha256": "2cb5581d58924ae70a6044be7e7887c1fd657c704bd62d35aec61427cf0b08cd",
+    "source_files": [
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/holy-thursday-pange-hymn-referral-20261029.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/holy-thursday-pange-hymn-referral-20261029.toml",
+        "sha256": "4c10e02a058adac7d35508326c51ca397930ab79421e0928f50eac67a85ff9ca"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/pange-lingua-historical-en-20261029-7dc5b07e/artifact.toml",
+        "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/pange-lingua-historical-en-20261029-7dc5b07e/artifact.toml",
+        "sha256": "d56fe3835578dbdfcc7b84cc94cd9aae5a9a4c2091f402bc6c9192d5e5af9a62"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/pange-lingua-historical-en-20261029-7dc5b07e/bilingual.tsv",
+        "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/pange-lingua-historical-en-20261029-7dc5b07e/bilingual.tsv",
+        "sha256": "7dc5b07e7cf017028acf80b5d40971d9a71747e94f036ae85e48a1b6fe0724be"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/pange-lingua-six-stanzas-publish-20261029.toml",
+        "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/pange-lingua-six-stanzas-publish-20261029.toml",
+        "sha256": "94675a2ff5444d5b11b3a1769352a78af9fb2e01cfd48bd1d2b3aea71b2f2114"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/pange-lingua-six-stanzas-verify-20261029.toml",
+        "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/pange-lingua-six-stanzas-verify-20261029.toml",
+        "sha256": "701d1f7a0c50dda17a68bee70ee6ddd270774a8d034b50f97588787984dd7cfe"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/artifacts/pange-lingua-latin-checked-20261029-15c03ec1/artifact.toml",
+        "repository_path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/artifacts/pange-lingua-latin-checked-20261029-15c03ec1/artifact.toml",
+        "sha256": "cb55e216662b591f2d5581c6dbc0cef3256af8f60a15479adc46cedb648c9ee3"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/artifacts/pange-lingua-latin-checked-20261029-15c03ec1/latin.txt",
+        "repository_path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/artifacts/pange-lingua-latin-checked-20261029-15c03ec1/latin.txt",
+        "sha256": "15c03ec1c4929c2fb54f32f5e4930d80917f90c0ebeb6f9f660cf6b508a50f76"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/artifacts/pange-lingua-pages-301-302-69fd77df/artifact.toml",
+        "repository_path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/artifacts/pange-lingua-pages-301-302-69fd77df/artifact.toml",
+        "sha256": "cb15c49a12b126e6caae42efdb30db3e73d3d3e718a853a02142e541eaf95a85"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/artifacts/pange-lingua-pages-301-302-69fd77df/pages.pdf",
+        "repository_path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/artifacts/pange-lingua-pages-301-302-69fd77df/pages.pdf",
+        "sha256": "69fd77df32441bc239a2a18fc2858b669bf3ed21c8da5162531e688f4a281f51"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/passages/pange-lingua-six-stanzas-checked-20261029.toml",
+        "repository_path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/passages/pange-lingua-six-stanzas-checked-20261029.toml",
+        "sha256": "79e952f6a342764cadbf7eef953356d264593f54372f4bb3d7ea152fda6861ff"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/passages/pange-lingua-six-stanzas-image-20261029.toml",
+        "repository_path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/passages/pange-lingua-six-stanzas-image-20261029.toml",
+        "sha256": "b6ceb3e4219761d9b040af595ef0441993f24a72c74003ce2d8781e63610e6b6"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pange-source-prescribed-assembly-53086b37/artifact.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pange-source-prescribed-assembly-53086b37/artifact.toml",
+        "sha256": "322692cb0b12c6ac7689eb65cd265bc26a0528e5a03c2d772c452d5f50239ae3"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pange-source-prescribed-assembly-53086b37/latin.txt",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pange-source-prescribed-assembly-53086b37/latin.txt",
+        "sha256": "53086b37a090275ba11b1a8053054ba39c95fd3dc475aabf9c8f5206167d6379"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pange-source-prescribed-assembly.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pange-source-prescribed-assembly.toml",
+        "sha256": "e4892c39dfe80c85b0b247706d5fceab8d616e55ba475b6a1e9391f8c41c0943"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/triptych/roman-1962-pange-reading-assembly/editions/2026-10-29-english-assembly/artifacts/pange-cue-and-original-hymn-5e4b22f6/artifact.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-pange-reading-assembly/editions/2026-10-29-english-assembly/artifacts/pange-cue-and-original-hymn-5e4b22f6/artifact.toml",
+        "sha256": "69405556b8e93e96b7a9326d5229f36aa56aafb2a28c388942d86e7e4f5c0166"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/triptych/roman-1962-pange-reading-assembly/editions/2026-10-29-english-assembly/artifacts/pange-cue-and-original-hymn-5e4b22f6/english.txt",
+        "repository_path": "src/sources/works/triptych/roman-1962-pange-reading-assembly/editions/2026-10-29-english-assembly/artifacts/pange-cue-and-original-hymn-5e4b22f6/english.txt",
+        "sha256": "5e4b22f6ba9a372b240daa866558fdba02df2b66073716ca8c6d1a0132749e2b"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/triptych/roman-1962-pange-reading-assembly/editions/2026-10-29-english-assembly/edition.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-pange-reading-assembly/editions/2026-10-29-english-assembly/edition.toml",
+        "sha256": "342eb10bc5343f1479ed81dbe156bf652aea11c675d7c95b866c294dcc41c37a"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/triptych/roman-1962-pange-reading-assembly/editions/2026-10-29-english-assembly/passages/pange-cue-and-original-hymn.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-pange-reading-assembly/editions/2026-10-29-english-assembly/passages/pange-cue-and-original-hymn.toml",
+        "sha256": "3dadaa3e8b0d74b1334fe1b32e4482ae9e98fb376142583541d8802e2c092a11"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/candidate/src/sources/works/triptych/roman-1962-pange-reading-assembly/work.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-pange-reading-assembly/work.toml",
+        "sha256": "ee08146f3570e61c3f420700c97683a8d6be4529d6b97c2620383fb7f6566af3"
+      }
+    ],
+    "body_sha256": {
+      "latin": "15c03ec1c4929c2fb54f32f5e4930d80917f90c0ebeb6f9f660cf6b508a50f76",
+      "english": "d9902364371c5968b871f9ce724d04f8d78801c526dfbcb1d2b75bf5a9b7969c",
+      "literal_lasance_latin": "83ea6f263698ba2a0bafc33c0e6089e978ce146a54f7b6358bf11314bd2d4a75",
+      "latin_composite": "53086b37a090275ba11b1a8053054ba39c95fd3dc475aabf9c8f5206167d6379",
+      "english_composite": "5e4b22f6ba9a372b240daa866558fdba02df2b66073716ca8c6d1a0132749e2b",
+      "old_cue": "d07c74cfec3dc6001fb0299c455b420849559908b105d5f70bf2dd5d17894d8f",
+      "english_cue": "8f4905ed9104e18a107ae611a078e8b038e6596b8dce73ed2383c0e4cd0b5bc4",
+      "original_english_hymn": "8f7311f6b7e86039adcbcb03e6b7cd81ca6c05430d977cf5a13a4e50e69fc0d5"
+    },
+    "identity": [
+      "mass-of-the-lords-supper",
+      "main",
+      "Hymn at the Translation of the Blessed Sacrament",
+      "all",
+      1
+    ]
+  },
+  "whole_source_pdfs": [
+    {
+      "source": "gueranger1879",
+      "path": ".scratch/roman-english-completion-20261029/temporal/pange-recovery/gueranger1879-v10.pdf",
+      "sha256": "8cdf446fc35f3e88d0a8cb0cfc4f9577e71ddfbfcbed3019b5c55d80a6df43a8",
+      "byte_size": 27543265
+    },
+    {
+      "source": "lasance1946",
+      "path": ".scratch/reader-completion-20261026-latin-absent-nodes/private/lasance1946-4573991d.pdf",
+      "sha256": "4573991d962eb6a6391bc2555b8445bdfebd84de1ccffd7828f84e74d308ca77",
+      "byte_size": 135628123
+    },
+    {
+      "source": "target1962",
+      "path": ".scratch/reader-completion-20261026-latin-absent-nodes/private/cmaa-1962-648fdb8f.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "byte_size": 82815941
+    }
+  ],
+  "existing_key_ancestors": [
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/work.toml",
+      "sha256": "ec158d3a6a6b806eae829bf0ee477f401ef7bcf848cb831e3a286d2e96e291a5"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/edition.toml",
+      "sha256": "ee2bd5610f0fcdcf6d7b566961b9d997a902c2f4af79480073c07eb5c57313ae"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/triduum-orations-21aa7a98/artifact.toml",
+      "sha256": "294ed6e5f18738d9e699f82c91d7ef30f833a7729c08e7fbf42b989d29c9df3e"
+    },
+    {
+      "path": "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+      "sha256": "2125b5c00cfec520ec15ccb50d6935375c5180df20f64cac22a478ec411154b1"
+    }
+  ],
+  "owning_implementation_sha256": [
+    {
+      "path": "tools/source-library",
+      "sha256": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3"
+    },
+    {
+      "path": "tools/check-calendar-masses",
+      "sha256": "80ecce15b846affba60deefd3bad71be47904be9657359279d8326506e27609b"
+    },
+    {
+      "path": "tools/mass-propers",
+      "sha256": "ff739cf04a75d2b0de097fe38d51e9e1a60edd03c7784d243f829fda97ae54b7"
+    },
+    {
+      "path": "scripts/_proper_latin.py",
+      "sha256": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+    },
+    {
+      "path": "scripts/_lasance_publication.py",
+      "sha256": "c56117d625a887f98804268fa9f6d9876a5164e0ea9b5b37b0124e4154e7c93d"
+    },
+    {
+      "path": "scripts/_missal_coverage.py",
+      "sha256": "635cc202ce2bc40d8c6195733bd365cf9b63405bf8d60c2d2b9ee5782587589d"
+    }
+  ],
+  "acceptance": {
+    "latin_source_and_scope": "Accepted: unchanged prior instruction plus complete six-stanza 1879 Latin hymn, with historical source exactness and the actual 1962 named referral kept distinct. Historical words, punctuation and stanza boundaries retain the initial independent 200/400dpi review. The final Latin composite hash is 53086b37a090275ba11b1a8053054ba39c95fd3dc475aabf9c8f5206167d6379. No full-body 1962 word collation is accepted or asserted.",
+    "original_english_fidelity": "Accepted: the nonspoken instruction is faithfully translated. All clauses of each of the six Latin stanzas are represented in the plain study English, including the world-ransom and royal/noble-womb predicates; gift, birth, Virgin, earthly sojourn and seed; supper, brothers, legal foods and present self-giving to the twelve; incarnate Word, real bread, flesh, wine/Blood, senses and faith; bowed reverence, old observance/new rite and faith supplying the senses; Father/Son, praise, joyful acclaim, salvation, honor, power, blessing, procession from both, equal praise and final Amen. English line mapping need not duplicate Latin line order. No textual correction requested. Composite hash 5e4b22f6ba9a372b240daa866558fdba02df2b66073716ca8c6d1a0132749e2b; hymn-only hash 8f7311f6b7e86039adcbcb03e6b7cd81ca6c05430d977cf5a13a4e50e69fc0d5.",
+    "authorship_and_credit": "Accepted: the entire active English is original Triptych study English with its own source carrier and notice. It is distinct in phrasing from the retained historical English. The Lasance/Walsh hand missal remains a separately identified human historical witness, not the active translation and not a newly identified individual hymn translator. The superseded hybrid is not accepted for installation.",
+    "nonspoken_structure": "Accepted after R6: the exact Latin instruction words at offset zero are marked as a rubric; its structural terminal newline remains in the body but is excluded from the action span. Original English instruction is similarly marked. Actual owner projection gives Latin action [0,147) and English action [0,152). The six hymn paragraph groups follow and are not part of either action. Both owning structure validators return no errors.",
+    "stage_boundary": "Accepted as a source-grounded interpretation of the named prescription: first four historical hymn stanzas during procession, repeated if necessary, with the last two beginning Tantum ergo at the repository. Rubric 4 literally names Tantum ergo; inclusion of the closing Genitori stanza comes from the independently witnessed complete hymn. No browser performance scheduling or rendered-stage behavior was tested.",
+    "vocabulary_and_source_grade": {
+      "source_qualification": "historical-source-prescribed-by-target; exact-to-assembled-carrier, not full-word1962target",
+      "source_qualification_status": "Accepted as plan/review prose, not a new typed provenance enum. Do not add it as an unsupported ledger field.",
+      "latin_relationship": "exact-transcription",
+      "latin_relationship_status": "Recognized by the owning Latin publication validator and accepted as exact to the qualified assembled source carrier. It does not mean exact-to-target.",
+      "actual_latin_coverage": {
+        "relationship": "unresolved",
+        "collation": "collated",
+        "publication_basis": "public-domain"
+      },
+      "actual_english_coverage": "study-translation",
+      "model_change_required": false
+    },
+    "rights_boundary": "Accepted within the existing per-source records: project ownership covers the original English and editorial assembly; the historical hymn sources retain their independent public-domain bases. The 1962 facsimile remains unresolved and its bytes are not retained in the proposed packet. The old instruction retains its prior recorded publication decision; this review does not newly re-derive or broaden that inherited decision."
+  },
+  "actual_validation": {
+    "full_registered_source_graph": {
+      "exit_code": 0,
+      "output": "source-library valid: artifact=10304 corpus=5 edition=13724 passage=9415 segment=10185 work=10745 bindings=0",
+      "scope": "Full copied current source graph plus 19 exact candidate files; isolated current calendar and one Proper/Latin/English overlay replacement; empty publication roots, so no collection-wide study-publication binding claim.",
+      "validated_plan_sha256": "36e4d2432beb5034386f0a72b83d85e76e1e0556293edbe2dec78a3de620e4ab",
+      "final_successor_relation": "All 19 source files, bodies and Latin/English binding values are unchanged and hashes rechecked. Only the Latin action terminal LF and a correction note changed. Full graph validation is retained for these unchanged graph inputs."
+    },
+    "latin_row_source_publication_and_sidecar_coverage": "Actual _proper_latin row, source, complete publication-record and bidirectional sidecar checks returned no problems.",
+    "original_english_binding": "Actual payload validation and study translation binding passed against the isolated full source graph, current calendar and overlaid English/Latin ledgers. The study binding enforces the entire composite Latin hash, exact source passage and publication source IDs.",
+    "strict_historical_component_binding": "Actual checker page-source and publication validators returned no problems, and actual mass-propers.validate_translation_publication_binding passed on the separate historical_hymn.english_binding.",
+    "original_publication_binding_limit": "Actual publication validator was called on the original entry and returned normally because it has no historical page/publication fields. This is an exemption for wholly original study English, not enforcement of a strict historical English binding. The historical component is validated separately.",
+    "final_structure_validation": {
+      "plan_sha256": "2cb5581d58924ae70a6044be7e7887c1fd657c704bd62d35aec61427cf0b08cd",
+      "prior_validated_plan_sha256": "36e4d2432beb5034386f0a72b83d85e76e1e0556293edbe2dec78a3de620e4ab",
+      "changed_paths": [
+        "/corrections/7",
+        "/rows/0/new_proper/text_structure/actions/0/text"
+      ],
+      "all_19_source_files_unchanged_and_hash_rechecked": true,
+      "all_bodies_and_English_and_Latin_binding_fields_unchanged": true,
+      "latin_text_structure_problems": [],
+      "english_text_structure_problems": [],
+      "latin_public_structure": {
+        "actions": [
+          {
+            "kind": "rubric",
+            "start": 0,
+            "end": 147
+          }
+        ]
+      },
+      "english_public_structure": {
+        "actions": [
+          {
+            "kind": "rubric",
+            "start": 0,
+            "end": 152
+          }
+        ]
+      },
+      "reused_checks": "Full source graph and actual Latin row/source/publication/sidecar coverage, original English payload/study-Latin binding, both strict historical publication consumers and historical page-source checks apply unchanged; their exact source files, body bytes and binding inputs are identical. Source graph not rerun for action-span-only calendar metadata change."
+    },
+    "independent_byte_checks": "All 19 candidate hashes and payload manifest hashes/sizes match. Latin and English composites, historical substrings, six stanza groups and action offsets were checked independently. Three whole PDF hashes and ten supplied 200/400dpi rasters were previously reproduced byte-for-byte and remain bound to unchanged historical source bodies."
+  },
+  "corrected_findings": [
+    {
+      "id": "R1",
+      "status": "resolved",
+      "result": "Both Guéranger passages use canonical vol-x-p-301 with separate machine bounds."
+    },
+    {
+      "id": "R2",
+      "status": "resolved",
+      "result": "Historical English artifact explicitly declares typographic apostrophe normalization."
+    },
+    {
+      "id": "R3",
+      "status": "resolved",
+      "result": "1962 page-local referral evidence is distinguished from the bounded raw-text search."
+    },
+    {
+      "id": "R4-R5",
+      "status": "resolved",
+      "result": "Historical printed_page uses ASCII 454-455, page context states that locus, and verification/publication passage loci agree. Actual strict consumers pass; no runtime change required. Earlier whitelist speculation was corrected after actual ASCII-locator reruns."
+    },
+    {
+      "id": "R6",
+      "status": "resolved",
+      "result": "Latin action text excludes structural terminal LF. Actual mass-propers validator and public structure projection pass."
+    }
+  ],
+  "evidence_files": [
+    "review.json",
+    "final-reviewed-plan-2cb5581d.json",
+    "final-original-machine-checks.json",
+    "final-source-graph.json",
+    "source-graph-36e4d243.json",
+    "owning-checks-36e4d243.json",
+    "final-metadata-successor-checks.json",
+    "source-pdf-checks.json",
+    "raster-checks.json",
+    "original-isolation.json",
+    "superseded-composite-owning-checks.json",
+    "historical-ascii-locator-checks.json"
+  ],
+  "limits": [
+    "This is acceptance of the exact bounded source packet, qualified historical Latin selection, full original English fidelity, source credit, rights boundaries and cited owning checks. It is not acceptance of tracked integration, rendered output, all-Missal completeness, publication, deployment, commit or push.",
+    "The coordinator may append review_path/review_sha256 and an explicit metadata-only successor link to the install plan. This receipt continues to cover only the frozen source files, body hashes, binding values and reviewed action metadata.",
+    "No tracked or candidate files were edited. All review output is under the exclusive review scratch directory; existing immutable source payloads were hardlinked only for read-only validation."
+  ]
+}

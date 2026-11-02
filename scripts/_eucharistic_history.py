@@ -18,6 +18,8 @@ import tempfile
 import tomllib
 from urllib.parse import quote, urlsplit
 
+from _source_delivery_policy import external_source_identity
+
 SCHEMA = "triptych-eucharistic-history/v1"
 CORPUS_SCHEMA = "triptych-eucharistic-corpus/v1"
 COMPARISON_SCHEMA = "triptych-eucharistic-witness-comparison/v1"
@@ -57,9 +59,14 @@ def inside(root: Path, value: str | Path) -> Path:
 
 def fingerprint(root: Path, path: Path) -> dict:
     try:
+        external = external_source_identity(root, path.relative_to(root).as_posix())
+        if external is not None:
+            return external
         payload = path.read_bytes()
     except OSError as error:
         raise HistoryError(f"cannot read {path.relative_to(root)}: {error.strerror}") from error
+    except ValueError as error:
+        raise HistoryError(f"cannot identify {path.relative_to(root)}: {error}") from error
     return {"path": path.relative_to(root).as_posix(), "sha256": digest(payload), "byte_size": len(payload)}
 
 
@@ -960,9 +967,26 @@ def _comparison_record_binding(record: dict | None, members: list[dict]) -> dict
             "limitation": "Only explicit source-owner identities are checked; no manuscript identity, historical date or ancestry is inferred."}
 
 
+def _verify_comparison_inputs(root: Path, inputs: dict, stage_inputs) -> None:
+    for expected in inputs.values():
+        if fingerprint(root, inside(root, expected["path"]))["sha256"] != expected["sha256"]:
+            raise HistoryError(f"comparison input changed: {expected['path']}")
+    if stage_inputs is not None:
+        from _eucharistic_stages import verify_inputs as verify_stage_inputs, StageError
+        try:
+            verify_stage_inputs(root, stage_inputs, fingerprint=fingerprint)
+        except StageError as error:
+            raise HistoryError(f"stage history: {error}") from error
+
+
 def compare(source: Path, root: Path, identifier: str, *, ventilator,
-            adapter_loader=None, supported_adapters=None, act_loader=None) -> dict:
-    """Compare explicit witness membership without creating textual ancestry."""
+            adapter_loader=None, supported_adapters=None, act_loader=None,
+            catalogue_context=None) -> dict:
+    """Compare witnesses, optionally reusing this projection's checked catalogue.
+
+    A supplied context is bounded to one invocation and rechecked before and
+    after adapter loading; it grants no persistent validation exemption.
+    """
     root = root.resolve()
     data, inputs = route(source, root)
     declarations = {row["id"]: row for row in data.get("comparisons", [])}
@@ -1002,11 +1026,20 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
     if data.get("relationship_sets") or any("record_id" in declaration.get(side, {}) for side in ("left", "right")):
         if data.get("act_slices") and act_loader is None:
             raise HistoryError("linked comparison requires the owning act loader to validate catalogue records")
-        context = catalogue(source, root, act_loader=act_loader)
+        context = catalogue_context
+        if context is None:
+            context = catalogue(source, root, act_loader=act_loader)
+        else:
+            context_inputs = {row["path"]: row for row in context["inputs"]}
+            for routed in inputs.values():
+                if context_inputs.get(routed["path"]) != routed:
+                    raise HistoryError(f"comparison catalogue context does not match routing input: {routed['path']}")
         records = {row["id"]: row for row in context["entries"]}
         related = [row for row in context["relationships"] if identifier in row["comparison_ids"]]
         collect(context["inputs"], inputs, "path")
         stage_inputs = context["stage_history"]["inputs"]
+        if catalogue_context is not None:
+            _verify_comparison_inputs(root, inputs, stage_inputs)
 
     for side in ("left", "right"):
         selected = declaration.get(side)
@@ -1064,15 +1097,7 @@ def compare(source: Path, root: Path, identifier: str, *, ventilator,
     # Revalidate after both sides are loaded; no result may mix changing inputs.
     for payload in loaded.values():
         verify_adapter(payload, root)
-    for expected in inputs.values():
-        if fingerprint(root, inside(root, expected["path"]))["sha256"] != expected["sha256"]:
-            raise HistoryError(f"comparison input changed: {expected['path']}")
-    if stage_inputs is not None:
-        from _eucharistic_stages import verify_inputs as verify_stage_inputs, StageError
-        try:
-            verify_stage_inputs(root, stage_inputs, fingerprint=fingerprint)
-        except StageError as error:
-            raise HistoryError(f"stage history: {error}") from error
+    _verify_comparison_inputs(root, inputs, stage_inputs)
     for relative in ("scripts/_eucharistic_history.py", "scripts/_eucharistic_stages.py", "tools/act-history"):
         tool_inputs[relative] = fingerprint(TOOL_ROOT, TOOL_ROOT / relative)
     unified = "".join(difflib.unified_diff(

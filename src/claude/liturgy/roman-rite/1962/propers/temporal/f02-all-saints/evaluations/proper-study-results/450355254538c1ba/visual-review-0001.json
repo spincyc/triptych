@@ -1,0 +1,94 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "VIS-002",
+      "location": "Expansive study f02-all-saints.pdf, physical page 16, the Aquinas quotation (ST I q. 23 a. 7); source sections/20-sealed-number-uncounted-crowd.tex line 131",
+      "problem": "The nested closing quotes still print in the wrong order. The source ''' typesets as U+201D U+2019 ('eternal happiness,\u201d\u2019 in the words of a Secret'), so the outer double quotation closes before the inner single one that opened with \u2018to God alone. The text layer confirms it. The source file is unchanged since iteration 0, and the concise study's copy of the same quotation has been corrected.",
+      "required_result": "The inner quotation closes first and the outer second: 'happiness,\u2019\u201d in the words of a Secret of the Missal', typeset for example as '\\,'' in place of ''', as the concise source now does.",
+      "severity": "advisory"
+    },
+    {
+      "accepted_because": "Accepted at iteration 0 and unchanged. The repeated header keeps the continued row complete and readable, and keeping the map whole would mean cutting settled opening prose or moving the pagination of all 31 pages.",
+      "id": "VIS-004",
+      "location": "Expansive study f02-all-saints.pdf, physical pages 3-4, the opening map table",
+      "problem": "The 14-row map of appointed texts breaks after the Postcommunion. Its last row, the Commemoration Postcommunion, stands alone at the top of page 4 under a repeated header, just before The Appointed Texts: a one-row spill. It is unchanged since iteration 0.",
+      "required_result": "Either the whole map stands on one page, or the break leaves at least two rows on the continuation page.",
+      "severity": "accepted"
+    },
+    {
+      "id": "VIS-005",
+      "location": "Concise study f02-all-saints-synthesis.pdf, physical page 2, Occurrence and place cells, and the identical table on expansive study page 27; sources sections/concise/03-date-location.tex and sections/80-date-location.tex (the authored place phrases in \\chronologyorientationrow)",
+      "problem": "The lookup's place leg is unanswered in four of the eight rows. The traditional-attribution row ('David's reign. Two psalms of praise and of the fear of the Lord ...'), the Psalm 32 historical-setting row ('A hymn bidding the just rejoice ...'), the Psalter composition row ('The Psalter, the book in which both psalms stand') and the Matthew composition row ('The Gospel according to St Matthew, from which the Alleluia verse, the Gospel and the Communion are taken') each describe the occurrence, but none names a place or says that the place is unknown. The Wisdom row gives Egypt only by implication, through 'reigns of Ptolemaic kings of Egypt'. The profile asks the author's phrase to name the place of the dated subject and to say when a location is unknown (propers-three-documents.md, A table that locates the passage; scripture-chronology.md section 14.1). The event rows (Galilee, Achis and Geth, Patmos) do answer it. Nothing is misstated, so a reader is not misled, but a reader who asks where a passage was written finds no answer for these rows.",
+      "required_result": "In both tables, each of these rows' place phrase either names the sourced place of the subject it dates, as the chronology's own sources give it (the writer's place for a composition row, the attribution's geographic frame for the Davidic row), or says in a few words that the place is unknown. The phrase must not invent a place, add a date, or restate the psalm numbering. The two tables stay identical, and the page-2 table still fits its page without smaller type.",
+      "severity": "advisory"
+    },
+    {
+      "accepted_because": "The block's bold Literal/Allegorical/Moral/Anagogical labels and the section heading below keep the split readable, and the running head is the shared mark convention, naming a section that does begin on that page, so no reader is misled. Keeping the block whole would leave about a quarter of page 24 empty and move the pagination of pages 25-31 in a study whose sources are unchanged and settled since the last review.",
+      "id": "VIS-006",
+      "location": "Expansive study f02-all-saints.pdf, physical pages 24-25, the four-senses block closing No Want to Them That Fear Him, and the Just in God's Hand; source sections/40-no-want-just-in-gods-hand.tex lines 202-216 and main.tex",
+      "problem": "The third interpretation's fourSenses block is split two and two across the page break. Literal and Allegorical end page 24; Moral and Anagogical open page 25 under the running head 'Three Interpretations Compared', because the comparison section begins lower on that page. The first and second interpretations' blocks each stand whole on one page (pages 18 and 21).",
+      "required_result": "The third interpretation's four senses stand together on one page, as the other two do, for example by an ordinary \\Needspace before the block, without changing type, margins or content.",
+      "severity": "accepted"
+    }
+  ],
+  "iteration": 1,
+  "observations": [
+    {
+      "location": "research/chronology-annotations.tex orientation rows (concise page 2, study page 27); shared generator scripts/_proper_chronology.py and src/sources/chronology/composition.yaml",
+      "note": "The generator-owned Passage and Date cells print 'Revelation 7:2-12' for a 1962 leaf that names the book Apocalypse throughout, 'Matthew 5:1-12' (the whole-verse query envelope) for the appointed Mt 5:1-12a, and hyphenated '221-204 B.C.' and '145-117 B.C.' beside en-dash ranges elsewhere. The concise page has to spend a sentence glossing the first two, and the leaf may not edit generated cells, so any repair belongs to the shared chronology generator and corpus owner, not to this leaf."
+    }
+  ],
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+      "pagination_evidence": {
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.aux": "803e9a36861d8b0511c6cba755827c30416f3f67a56ca7f6f4fe94ee7aa36140",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.aux": "935e267e37a10be62da920538d2396ccf8fe31812ab7f9cfaf77b2ca8f965d31"
+      },
+      "pdfs": {
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.pdf": "a6630b389583e729bbaa18103fb48364e2767d47485ecbddeb4ddbef4d3bc2ac",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.pdf": "fb899d0258fe16641fb2be454eb088f37fd41011012fe599b5fb2d5ac397c881",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf": "08f8c5e99572d5f8a9584555c47b901bc32abd09fdf74dd5d7094f387143c3bc"
+      },
+      "provider": "claude",
+      "render_inputs": {
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/format.tex": "43c4890d11fec65696c54659b90db4841affb0ccae551e3cfff335db4233a9ab",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/generation-metadata.tex": "a77d2fd46f6274929dec8cc3642b2f959c5407cf87cc4c9c449bdb7ea555b5ea",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/homily.tex": "30b13599c715e124338f2c8fb298526109e9a0f1c3b7d61642d90aa0db6d48c2",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/main.tex": "9f387c7630e8baced0fecdec8e9f8cd090252d4990b72f81fd37883e0453063e",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/proper-components.toml": "8d05991b37a91afb5e466a8abbeb2571fb45dd279503c564b9c377233af758a8",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/chronology-annotations.tex": "d396816f55517a7918ac3d74bed09420c977a11f524ec904a923668d7bbf3c51",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/00-opening.tex": "fa0c028a18077544c5b06b4d044965e9982b6b4ee0b541618375e919640fa4f3",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/05-appointed-texts.tex": "50562e9223995c595b203b60ebb38b4a230fa07eef5175b987d1bd300daaf55a",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/10-each-element.tex": "b5f84b21c77e686a723fa316710a0d12936cde89b46ba8356fa5b0c7574d0a74",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/20-sealed-number-uncounted-crowd.tex": "942a833350f62734d8ad7f303f05b8faf80afe3b06bf17eef7f9280bda51aa6d",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/30-beatitudes-way-of-the-saints.tex": "dd8f4370e84c16d59fd5b23e297b202e893db1b3915d6f31c63b5b44f67659a4",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/40-no-want-just-in-gods-hand.tex": "2ce98e890a82e44f9b4c6ec6abc8375841cf289bfebadc4a883f77047fba4ac7",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/50-comparison.tex": "fa992f366c899b067c4cea3eba4987fdad9bb76e110d5b8f1640dfdf582edcc8",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/80-date-location.tex": "d24752ed8971234d90e80bde986b569157e432ea7b8daa9f680b8ab7886bfd9e",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/90-apparatus.tex": "d64f98588a9008f385d332063a68dce1497d3515b14fc4afc520ffa4d45d7f57",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/01-inventory.tex": "a0b1ff927528d42c6ff84bf85abcbed682ddb8381c6312ba78e99525e8469f03",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/02-overview.tex": "972f3fbcd170642b4117f45670a2e67015d8606f9d5606a99e8b836bb044b7e6",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/03-date-location.tex": "0a59dda2a305b24944b4a3eb0e972b133f4460f6d85d43abf85a815be58f184b",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/04-themes.tex": "5615ef7204cc79e74f00329f03ac330ac25329b94b7865fe1933247385990c43",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/10-commentary.tex": "68581d1a49b9ef1f2006273088c9d92f8abac3405a0c4509ea35f9e40d7e431e",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/90-apparatus.tex": "1a18f58912ea77fb72271afd136a424cb25ba129ac0f0ffb19ccba687faf2c59",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/10-homily.tex": "30757206f0b455fc9580b41c6220927e6443f27a94e3ef7c9f01b962de515fa2",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/90-note.tex": "249a7aeff6d912970db5b5e4db1fc02825fb3a10065d6e7d2a44cf83b4c6c764",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/synthesis.tex": "800ef22ca937f33829e2daee306704f4733872875ef3f0e9673463374776730f",
+        "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+        "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+        "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+      },
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+    "files": {},
+    "provider": "claude",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "Visual review, iteration 1, of the three build PDFs of liturgy/roman-rite/1962/propers/temporal/f02-all-saints (claude). All 46 pages were inspected at full size from the run's build-artifacts-1 rasters (200 dpi, 1700x2200), after the contact sheets: the expansive study f02-all-saints.pdf (sha256 08f8c5e99572d5f8a9584555c47b901bc32abd09fdf74dd5d7094f387143c3bc), pages 1-31 of 31; the concise study f02-all-saints-synthesis.pdf (fb899d0258fe16641fb2be454eb088f37fd41011012fe599b5fb2d5ac397c881), pages 1-11 of 11; and the homily f02-all-saints-homily.pdf (a6630b389583e729bbaa18103fb48364e2767d47485ecbddeb4ddbef4d3bc2ac), pages 1-4 of 4. All 32 sealed REVIEW_INPUTS paths match their bytes on disk; research/artifacts.json equals the seal; and the raster run's review-run.json records the same three PDF hashes. Checked evidence: letter pages; all content inside the 0.75-inch margins (content box x 147-1554 px of 1700, with glyph overhang only); every page monochrome (zero saturation); Latin Modern Type 1 subsets only, all embedded; no overfull, underfull, undefined-reference or rerun warnings in the three logs and no '??' in the text layers; PDF ModDate equal to the tracked revision 2026-10-28T17:52:51Z, which is printed once above the compact rights colophon on the final page of each document (the shared colophon suppresses that page's head and folio by design); neither study is set in columns; the homily has a full-width title, a two-column speech with no parentheses, loci or apparatus, and a separate full-width Note on Sources and Delivery and References. The three \\properlane headings are consistent, and each lane closes with its own Literal/Allegorical/Moral/Anagogical block. Pagination: 31 pages (20-50) and 11 pages (10-12). The concise aux markers settle at inventory, overview and the four sense rows on physical page 1, chronology on 2, themes on 3-4 and commentary on 5, and the pages agree: page 1 holds the complete 14-element map in liturgical order, with the three commemorations and the two Preface options shown as options, and exactly four sense rows; page 2 holds only Scriptural Date and Location; pages 3-4 are a substantive Themes and Movement, opening on thesis prose with no wrapper label; and the interleaved commentary, organized by three cross-proper questions, begins at the top of page 5. Passage lookup at normal reading size on concise page 2, with study page 27 identical: the Communion's Mt 5:8-10 is found in the Passage cell 'Alleluia: Matthew 11:28; Gospel: Matthew 5:1-12; Communion: Matthew 5:8-10', which pairs in the same top-aligned row with 'Composition: The Gospel of St Matthew' and 'Disputed: c. A.D. 38-45 ... c. A.D. 50'. The Gospel's event row pairs the unnamed mountain after the circuit of Galilee with 'Date unresolved'. The Lesson's Apoc 7:2-12 pairs with Patmos and 'Disputed: A.D. 81-96; c. A.D. 90-100', and the note directly below glosses Revelation as the Apocalypse. Outcome: the passage-occurrence-date pairing is visible across each row without reading down another column. The place leg is unanswered in four rows, which neither name a place nor say it is unknown (advisory VIS-005). Standing findings: VIS-001 (the orphaned concise page-9 running head) is repaired, since page 9 is now headed Detailed Commentary and Scope and References first appears on page 10, where the appendix begins. VIS-003 is repaired: the concise text layer now closes the nested Aquinas quotation with a single and then a double quote, and has 100 opening and 100 closing double quotes. VIS-002 stands as an advisory in the unchanged study source. VIS-004 stays accepted. Limits: the installed pdf/ mirror and the web edition were not reviewed, as they belong to later stages; no source text was verified against its witnesses, which is outside this lane. Verdict: PASS, with two advisories (VIS-002, VIS-005) and two accepted findings (VIS-004, VIS-006). This dispatch contributed an independent full-page visual review of the three F02 build PDFs at the sealed hashes, including the page-2 passage lookup and checks that the earlier visual findings were repaired."
+}

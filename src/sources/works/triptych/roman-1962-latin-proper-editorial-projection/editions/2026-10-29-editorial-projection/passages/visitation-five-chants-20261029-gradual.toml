@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-29"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.visitation-five-chants-20261029-gradual"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.visitation-five-chants-20261029"
+artifact_sha256 = "68feee0ed77ad5c2695ab4498b3b110142f5ea251f91afaab8b3cbece361963c"
+locus = "visitatione-beatae-mariae-virginis, Gradual; target printed p.575, no.2953, PDFp.656; Mame1922 printed p.645, original PDFp.759, retained excerptp.2."
+physical_line_ranges = [[2, 2]]
+context = "Exact bounded project editorial projection; no historical edition owns these normalized bytes."
+notes = "Exact UTF8 body SHA256 including finalLF b033c784f42d2ef1691c9eca8956abdaccdf41ee83d37da1f4d2de6dc5c76a5a. Mame prints Genitrix; target prints Genetrix. This is the received Genetrix/Genitrix spelling pair named in guidance/propers-for-agents.md, not a substituted word. Target Gradual begins at bottom left of p.575 and continues at top right of that same page."

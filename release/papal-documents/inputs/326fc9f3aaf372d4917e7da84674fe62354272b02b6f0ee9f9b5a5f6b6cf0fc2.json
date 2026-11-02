@@ -1,0 +1,67 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-text-0bc35822f5ca",
+      "body_tex": "1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en.body.tex",
+      "changed": true,
+      "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+      "language": "en",
+      "pages": 7,
+      "pdf": "1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en.pdf",
+      "pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+      "physical_line_ranges": [
+        [
+          1,
+          788
+        ]
+      ],
+      "render_revision": "2026-10-30T20:57:04Z",
+      "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-0bc35822f5ca",
+      "source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+      "status": "compiled",
+      "stem": "1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en",
+      "tex": "1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en.tex",
+      "text_fidelity": {
+        "layout_hyphens": 53,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 7,
+        "source_characters": 39743,
+        "source_first_page": 1,
+        "source_last_page": 7,
+        "source_normalized_characters": 27650,
+        "status": "pass"
+      },
+      "warnings": [
+        "Underfull \\hbox (badness 1009) in paragraph at lines 406--426"
+      ]
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "b7d8ab152bd0322f95601b283dcbf99e9867d5058c68597d4c185a9f66ea362a",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T20:57:04Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

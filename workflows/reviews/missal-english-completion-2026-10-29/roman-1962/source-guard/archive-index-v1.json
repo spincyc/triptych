@@ -1,0 +1,42 @@
+{
+  "schema": "triptych-finite-source-guard-archive/v1",
+  "state": "pending-root-adoption",
+  "files": [
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/source-guard/candidate-authority-v1.json",
+      "sha256": "f491fe023beedb25a7f51b58d97974f5d39fd0674a921d7ca11eb0b73670a270",
+      "captured_source_path": ".scratch/roman-english-completion-20261029/finite-guard/proposed-activation-16-v5/candidate-authority.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/source-guard/declaration-v1.json",
+      "sha256": "e138c739859678d5f08c67a9dce0234a24a39a5828242cc084c2b62759722780",
+      "captured_source_path": ".scratch/roman-english-completion-20261029/finite-guard/proposed-activation-16-v5/declaration.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/source-guard/prior-route-proof-v1.json",
+      "sha256": "a82a09becf3c0083f7e48ef22d300b99cf8b8f509afa0e1750a0f2a6763f3d15",
+      "captured_source_path": ".scratch/roman-english-completion-20261029/finite-guard/proposed-activation-16-v5/prior-route-proof.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/source-guard/current-route-diagnosis-v1.json",
+      "sha256": "67b1fdbf76e23f68ce678205f02f33062f56af05c4a5644c94664f02fac4093e",
+      "captured_source_path": ".scratch/roman-english-completion-20261029/finite-guard/proposed-activation-16-v5/current-route-diagnosis.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/source-guard/prepare_activation.py",
+      "sha256": "53eb75950f8bf58d48cbbc09e4f555638c65f7189881333b32dcf915d051e6c1",
+      "captured_source_path": ".scratch/roman-english-completion-20261029/finite-guard/prepare_activation.py"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/source-guard/prepare_frozen_evidence.py",
+      "sha256": "bb3732db1d93d22e65a281c78503b7855383fe5ca766f8501f0faa5c7413e11a",
+      "captured_source_path": ".scratch/roman-english-completion-20261029/finite-guard/prepare_frozen_evidence.py"
+    }
+  ],
+  "pending_candidate_preserved_byte_exact": true,
+  "compiler_scope": "Archival exact executed compiler and auxiliary evidence-preflight bytes. Their recorded relative-path entrypoints describe the captured scratch execution; production publication uses the separately adopted runtime guard authority.",
+  "runtime_authority_path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json",
+  "runtime_state": "No activation pin or runtime authority installed by this archive operation.",
+  "evidence_reference_boundary": "The immutable candidate and declaration preserve original historical input paths and byte digests. Registered source controllers resolve through canonical source IDs and paths; runtime scope validation never reads scratch evidence paths.",
+  "activation_performed": false
+}

@@ -1,6 +1,6 @@
 #!/bin/sh
 # Test for `tools/tpt document-library`: exit 0 = pass (the stable gate).
-# The tool reads the corpus and the PDFs it builds and writes only where --out
+# The tool reads the corpus sources and writes only where --out
 # points, so every invocation here runs against the repository itself and its
 # one writing verb is aimed at a sandbox.
 set -eu
@@ -19,12 +19,12 @@ mkdir -p "$repo/.scratch"
 sandbox="$(mktemp -d "$repo/.scratch/document-library-test.XXXXXX")"
 trap 'rm -rf "$sandbox"' EXIT INT TERM
 
-# Every derived title is confirmed against the PDF that was built from it, and
+# Every derived title is checked against current source declarations, and
 # the page's own model is replayed against the summaries the catalogue offers.
 run_tool check >"$sandbox/check.txt"
 summary="$(head -1 "$sandbox/check.txt")"
 case "$summary" in
-*" works, "*" documents, "*" issues, "*" pages.") ;;
+*" works, "*" documents, "*" issues, page extents unmeasured.") ;;
 *)
 	echo "unexpected summary line: $summary" >&2
 	exit 1
@@ -36,7 +36,6 @@ set -- $counts
 works="$1"
 docs="$2"
 issues="$3"
-pages="$4"
 
 # One document a leaf, at least one issue a document, and a work is never more
 # than its editions: a summary that collapsed would be caught by all three.
@@ -45,24 +44,24 @@ if [ "$docs" -ne "$leaves" ]; then
 	echo "counted $docs documents against $leaves leaves with a main.tex" >&2
 	exit 1
 fi
-if [ "$issues" -lt "$docs" ] || [ "$works" -gt "$docs" ] || [ "$pages" -lt "$docs" ]; then
+if [ "$issues" -lt "$docs" ] || [ "$works" -gt "$docs" ]; then
 	echo "implausible counts: $summary" >&2
 	exit 1
 fi
 
-# Withdrawn editions retain source records without an installed PDF. Every
-# issue must be confirmed or explicitly reported absent; deployment eligibility
-# separately requires every published issue's artifact.
+# Withdrawn editions retain source records. Page counts describe particular
+# renderings, so a source-only catalogue makes no current extent claim.
 run_tool check --json >"$sandbox/check.json"
 python3 - "$sandbox/check.json" <<'PY'
 import json, sys
 
 report = json.load(open(sys.argv[1], encoding="utf-8"))
 assert not report["unrecorded"], report["unrecorded"]
-assert report["confirmed"] + len(report["unbuilt"]) == report["issues"], report
-assert all(isinstance(reason, str) and reason.strip() for reason in report["unbuilt"])
+assert report["confirmed"] + len(report["unrecorded"]) == report["issues"], report
+assert report["pages"] == 0, report
+assert report["pages_unmeasured"] == report["documents"], report
 PY
-for line in "titles the sources do not state" "issues with no PDF installed"; do
+for line in "titles the sources do not state" "documents with no current rendered page count"; do
 	grep -q "$line" "$sandbox/check.txt" || {
 		echo "check does not report: $line" >&2
 		exit 1
@@ -111,6 +110,11 @@ for work in works:
         assert ("contributions" in edition) != ("inherits" in edition), work["leaf"]
         for model in edition["models"]:
             assert model in offered, (work["leaf"], model)
+        for issue in [edition, *edition.get("also", [])]:
+            assert "pdf" not in issue, issue
+            assert issue["pages"] is None, issue
+            assert issue["available"]["print"] == bool(issue["targets"].get("print")), issue
+            assert issue["available"]["reader"] == bool(issue["targets"].get("reader")), issue
 
 # What produced each edition, carried from its own record and never invented.
 # A field the document could not recover is absent, so anything present is a

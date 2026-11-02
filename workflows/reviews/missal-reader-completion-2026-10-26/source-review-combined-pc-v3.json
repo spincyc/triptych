@@ -1,0 +1,198 @@
+{
+  "all1123_parent_English_positive_dictionaries_exact": true,
+  "candidate_data_proof_sha256": "1794419e5888438dd0714a9b5226b88c7de6218ac3a8b38a2f9907920d8faa3e",
+  "candidate_fixture_sha256": "c59cb431e77954f49122d327e6dd7c2fdab2a9e5b5c96ebbe10bba1b83145c49",
+  "historical_before_replays": [
+    {
+      "after_sha256": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+      "before_sha256": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+      "hunks": 0,
+      "original_before_bytes_exact": true,
+      "path": "src/sources/calendars/postconciliar/propers.yaml"
+    },
+    {
+      "after_sha256": "da814d1a099ab386ab48d1e31e7b395f964e253aa5303a4cff9bfaa68f555a96",
+      "before_sha256": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877",
+      "hunks": 94,
+      "original_before_bytes_exact": true,
+      "path": "src/sources/calendars/roman-1962/propers.yaml"
+    },
+    {
+      "after_sha256": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+      "before_sha256": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+      "hunks": 0,
+      "original_before_bytes_exact": true,
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml"
+    },
+    {
+      "after_sha256": "0bfa8bf28b612f6cc3a43bd3a9fe56a7a0e5dbf5d81ebe632c6544a50aa13ff5",
+      "before_sha256": "9bf6fe5ecc3b397888a0316f7b5c06e40f65e9dfc1eb96c3bc78d111e7c41597",
+      "hunks": 5,
+      "original_before_bytes_exact": true,
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+    },
+    {
+      "after_sha256": "59fc17879a6bd7ad5dcc7b329dd1c89f4e9c60296bf7fb67157db73fe9ab5213",
+      "before_sha256": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
+      "hunks": 129,
+      "original_before_bytes_exact": true,
+      "path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml"
+    },
+    {
+      "after_sha256": "c6426ef3e813d4f0bde87c87b6b0ed0094ad4743c4463efa01ecaffe36a15388",
+      "before_sha256": "560e82057dc0480a5b1fe835304ba57ed476b346a38cab6fac550298582016ea",
+      "hunks": 20,
+      "original_before_bytes_exact": true,
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
+    },
+    {
+      "after_sha256": "a9b8748387c4bcd839af5994b22b731187f8b0cd6c522da770da3abb54ddce46",
+      "before_sha256": "79946d1bc6e015d8624d67ce243b59cf3ee634fc5997310aa6d764953349d815",
+      "hunks": 193,
+      "original_before_bytes_exact": true,
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+    },
+    {
+      "after_sha256": "c50695190d7a5b0a42ddc80569ac9a08483fb36a87bae17b98050a545af3933b",
+      "before_sha256": "465e15d42b7301b22c2d93be1b95b00eb326ee0cd2ad1f928520952a89e89faa",
+      "hunks": 9,
+      "original_before_bytes_exact": true,
+      "path": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml"
+    },
+    {
+      "after_sha256": "27aba519f4d733c25818917bb0eda9b461129165b0c4970088384d41d3c9d87d",
+      "before_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+      "hunks": 11,
+      "original_before_bytes_exact": true,
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "after_sha256": "69530f60a46c22ec5e8e2b3a1ed2338695e605abb2f370e20618b7c47c95646d",
+      "before_sha256": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+      "hunks": 7,
+      "original_before_bytes_exact": true,
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py"
+    },
+    {
+      "after_sha256": "6f3f78af5d6b2a5c39b181476c24edef766f174f6d51b9c638431cdc94bf73f1",
+      "before_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+      "hunks": 3,
+      "original_before_bytes_exact": true,
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py"
+    },
+    {
+      "after_sha256": "208dc6448c764907e500be197f6e112ebd10e4807f1a84eef5c884ba10228dbd",
+      "before_sha256": "dedf9a58d3f9e6b311bf5caf8f7aa7c51dcc9543d6ee17e4288e834c8cdc0215",
+      "hunks": 8,
+      "original_before_bytes_exact": true,
+      "path": "tools/tests/test_roman_1962_english13_phase5.py"
+    },
+    {
+      "after_sha256": "e7067e3fc899d473c2619da91789893b102960e88531eafb3fb5114d9aa4627f",
+      "before_sha256": "86b29add67ac575fb147300f4ab6e66c47863a16c4cf5166896a88e710f5335c",
+      "hunks": 5,
+      "original_before_bytes_exact": true,
+      "path": "tools/tests/test_roman_1962_english31_phase4.py"
+    },
+    {
+      "after_sha256": "e61a6847c080ba9ee4d922339ec05f20cbc98da4d289f3d54f1b47b6018edb91",
+      "before_sha256": "9c11f0b870c14916dfa2530c1e733f262a5c9f526cd613744a06ea7ce3c05190",
+      "hunks": 6,
+      "original_before_bytes_exact": true,
+      "path": "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py"
+    },
+    {
+      "after_sha256": "e6277ea1c793fd7d00ac2f4c1ae5608ac6d89d5027ba6f75416ae97cdec1390d",
+      "before_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+      "hunks": 6,
+      "original_before_bytes_exact": true,
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    },
+    {
+      "after_sha256": "8bc6ee1c5d6b0b5dac5b17f6ebde210bee51cd2ffb606daaae7b7e20ef7c2d8a",
+      "before_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+      "hunks": 8,
+      "original_before_bytes_exact": true,
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py"
+    },
+    {
+      "after_sha256": "07c44e1117eb8644f83fffe01ee059d0ff0706d4f68cbed0c47706b513484921",
+      "before_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+      "hunks": 3,
+      "original_before_bytes_exact": true,
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+    }
+  ],
+  "historical_fields_exact": [
+    "schema",
+    "baseline_revision",
+    "baseline_roman_document_sha256",
+    "latin_baseline_rows",
+    "latin_baseline_bodies",
+    "latin_baseline_present_keys",
+    "latin_baseline_supplemented_keys",
+    "projection_baseline_source_files",
+    "english_219_keys",
+    "english_baseline_source_files",
+    "english_historical_source_files",
+    "english_historical_absence_scope"
+  ],
+  "independent_source_and_component_decisions": "workflows/reviews/missal-reader-completion-2026-10-26/reader-integration-review.json",
+  "parent_acceptance_receipt_sha256": "3ebdde006403a03457f27170c4120a67610ae082b8bfc07c6654a93c533c1cde",
+  "parent_fixture_sha256": "702391e010ab4618ef28e57ad3d70cbfeb9de72c423cdee60ecc075d7e0d52a7",
+  "parent_revision": "f3f59d483358128e1b78d7a12aaeb4f3feab4a8a",
+  "publication_and_runtime_gate_scope": "Source-epoch acceptance only; no new publication permission or whole-corpus completion is conferred. Full source/deployment/code/native/site/outgoing-object checks remain required before push.",
+  "reviewed_on": "2026-10-26",
+  "reviewed_transition_contract_sha256": "14af3275b412b814109fca6914861d4bef9a34778aeccee601eb5136d9e0a67a",
+  "reviewer": "root",
+  "schema": "triptych-reviewed-source-input-acceptance/v1",
+  "scope": "missal-source-batch",
+  "source_acceptance_basis": [
+    "Exact full dictionaries and body/source hashes come from separately reviewed component carriers and portable root adoptions; they are not inferred from final counts.",
+    "A fresh deterministic rebuild of the component contract is byte-identical. Eighteen transition refusal controls passed.",
+    "The compiler verified the immutable accepted parent Git objects, full current closure, every unchanged complement and all17 original inverse byte streams.",
+    "Historical source artifacts and older receipt snapshots remain available in the parent history and preserved evidence; the unchanged strict runtime consumer validates this successor.",
+    "The successor changes only the outer TOML EOF newline of the completion inventory; parsed TOML, source words, proof values and the reviewed transition contract are exact. The earlier source receipt remains immutable and is included in this full source epoch.",
+    "This successor binds the mechanically reviewed metadata projection refresh and tested reader runtime/native-oracle corrections. Full Latin/English source dictionaries and all separately adopted source relations remain byte/contract exact. Both previous source receipts remain immutable inputs.",
+    "The merged source dictionaries are independently conserved against accepted8d; all active prayer/proof/English/execution/rights maps remain exact. The unused All Saints F02 projection namespace is pinned in the full input closure and conveys no active prayer-oracle grant. All original17 historical raw inverses and historical fields remain exact; published upstream151 publications and163pending family records survive normal owner refresh.",
+    "This successor preserves all prayer dictionaries and exact17 raw replay specs from the reviewed previous merged source receipt. Incoming82 article formatting is separately conserved; reviewed catalogue-context reuse has exact557 outputbyteidentity and strictcontext/input/stage negative controls. Restored PDFs now yield published documentcatalogue metadata; all163 family owner/review dictionaries remain exact except legitimate surface snapshots. ",
+    "The merged source dictionaries are independently conserved against accepted8d; all active prayer/proof/English/execution/rights maps remain exact. The unused All Saints F02 projection namespace is pinned in the full input closure and conveys no active prayer-oracle grant. All original17 historical raw inverses and historical fields remain exact; published upstream151 publications and163pending family records survive normal owner refresh.",
+    "Root explicitly adopts this first7b plus QA checkpoint. Exact current source/code/data/release closure is freshly pinned; earlier source receipts remain immutable inputs. All15 active prayer oracle fields, Roman document hash and16 unchanged raw specs are exact to accepted formatv2; the English notice audit changes one metadata row only, and all17 historical before streams remain exact original2e. This source-epoch acceptance does not claim new prayer admissions, rights, whole-corpus completion or new full-suite passes."
+  ],
+  "source_changes": {
+    "Bonn_witness_only_overrides": 3,
+    "Latin_proof_appends": 20,
+    "context_only_execution_source_rows": 6,
+    "explicit_existing_proof_replacements": 4,
+    "explicit_new_owner_domain": 9,
+    "old_absence_owners_admitted": 31,
+    "reviewed_new_English_dictionaries": 40
+  },
+  "source_epoch_paths": 51824,
+  "source_epoch_sha256": "fab3823e1d2cd152ece7ceabe33f552356e4902389d50a004baf4b0e68196cf0",
+  "source_input_manifest_sha256": "49a4ddf208b5763ec3732c61fcb517ddceb705ba03ab776199ee35798e3ec92a",
+  "status": "accepted",
+  "strict_runtime_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+  "successor_reason": {
+    "English_audit_notice_row": {
+      "fields": [
+        "source_postimages[2107].sha256",
+        "source_postimages[2107].bytes"
+      ],
+      "new_bytes": 91299,
+      "new_notice_sha256": "d2f813da7f3534160f74fedc6fcfa4df73189ff401203d81ab5339c959b47cf3",
+      "old_bytes": 91304,
+      "old_notice_sha256": "298fff6cdba2ba68d9c537f12b78e5561f11b6bc51248c5a5cda010369bdfa3c"
+    },
+    "QA15_peer_sha256": "2d7b37b8ef0ac1ddc55b1899c73d2aaec1f57ef8259219929145485347383fc1",
+    "bounded_upstream_conservation_review_sha256": "18a1b3dceeba3d58c680fbc8395fd78525f200cf204ac31e57c5a0ac1e2bfb11",
+    "changes": "Preserve published7b PCAllSaints source graphs, publication and archive privacy/ownership framework; normal source/Catena/catalogue/inventory/family/release owners complete. Bind root-adopted current QA checkpoint with exactly pinned QA15 and runtime3 independent reviews; no claim those receipts cover unrelated fixture tables or full suites. Every active prayer/proof/English/execution/projection oracle and RomanDoc hash unchanged; only the notice audit replay after pin changes among17 raw specs.",
+    "local_checkpoint": "504de2bba4104e0fc05314b40386e27c90acd763",
+    "merged_published_parent": "7b10db216dc859dfb239b97f64671abb245243e3",
+    "rights_or_finite_method_changes": false,
+    "runtime3_peer_sha256": "aeb83cf78dff35f55cc8344b09dc025643828fe9be50c15d27543d7667957c48",
+    "source_or_body_or_proof_changes": false
+  },
+  "supersedes_source_receipt_sha256": "a73258a46518b90d279e589c25cac69e3fdf85a2315856188dd7ea7a9c298efc",
+  "transition_checker_sha256": "08a80ed65cc369d05d9023b77b23f44a2b26668950290330c97efee5202c3ab8"
+}

@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-boundary-text-05fccc3f45dc"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "source-boundary-repaired-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The bounded historical English and notes printed by Benziger Brothers in the United States in 1903 are public domain in the United States under the publication-term basis in papal-documents-rights-v1.toml. Historical source words remain excluded from Triptych CC BY 4.0. Modern wrappers, creative revisions and other printings are not admitted."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "05fccc3f45dcf497469491527999a6f0d3a8329cede1f3455f1536cdc15db75f"
+byte_size = 36440
+derived_from = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-encoding-repaired-ed8e5a40"
+transformation = "Replay artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-boundary-recipe-7e4b9463904b SHA-256 7e4b9463904b9fc4df65e636c9442d6ad9f6b34e6603e7ff4bf9b214a7ddc304 using its embedded standalone Python. Exact chapter LF2609–2771 selected. Exclude only running-head prefix at original LF2709 and recover only two book-numeral bytes at LF2721 from artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-note-corroboration-66c8747e99b1. All other selected bytes/LF boundaries remain unchanged. Evidence artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-boundary-evidence-76d44a86d3ce SHA-256 76d44a86d3cef067e97528d34f570c6b819df531427af936130b270a859107e5."
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-boundary-text-05fccc3f45dc/text.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Complete papal chapter body, closing and historical notes within the existing chapter selection; excludes the one identified running head and declares a two-byte OCR numeral recovery. Existing OCR spelling, spacing, note markers, heading date and separate source-note paragraphs remain literal; no whole-text collation claimed."

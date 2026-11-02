@@ -1,0 +1,64 @@
+{
+  "documents": [
+    {
+      "allow_long_token_breaks": true,
+      "artifact_id": "artifact.bullarium-continuatio.volume-02.1837-rome-mul.ocr-99f8d35580f2",
+      "body_tex": "undated-bullarium-continuatio-volume-02-line-00056225-part-03-d7aabb91-mul/undated-bullarium-continuatio-volume-02-line-00056225-part-03-d7aabb91-mul.body.tex",
+      "changed": true,
+      "id": "bullarium-continuatio.volume-02.line-00056225.part-03",
+      "language": "mul",
+      "pages": 2,
+      "pdf": "undated-bullarium-continuatio-volume-02-line-00056225-part-03-d7aabb91-mul/undated-bullarium-continuatio-volume-02-line-00056225-part-03-d7aabb91-mul.pdf",
+      "pdf_sha256": "71a825d272cb2338563a6e5c2ab53279ddefde77dd57eb74d2d554ba85922a1d",
+      "physical_line_ranges": [
+        [
+          56908,
+          56919
+        ],
+        [
+          56938,
+          57240
+        ]
+      ],
+      "render_revision": "2026-10-26T15:32:55Z",
+      "segment_id": "segment.bullarium-continuatio.volume-02.line-00056225.part-03.1837-bullarium-continuatio-volume-02-mul.source-ocr",
+      "source_sha256": "99f8d35580f2291f69b43ea840d8d0f98efa4a772924772cddc51315b923838d",
+      "status": "compiled",
+      "stem": "undated-bullarium-continuatio-volume-02-line-00056225-part-03-d7aabb91-mul",
+      "tex": "undated-bullarium-continuatio-volume-02-line-00056225-part-03-d7aabb91-mul/undated-bullarium-continuatio-volume-02-line-00056225-part-03-d7aabb91-mul.tex",
+      "text_fidelity": {
+        "method": "pdf-raw-whitespace-soft-hyphen-nfkc-v2",
+        "pages": 2,
+        "source_characters": 9628,
+        "source_first_page": 1,
+        "source_last_page": 2,
+        "source_normalized_characters": 7773,
+        "status": "pass"
+      },
+      "warnings": []
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 1,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "0c1c0ece124541f5908b38939a9e7530641a3305a410e9454ae484f2983baf49",
+  "options": {
+    "automatic_hyphenation": false,
+    "body_alignment": "ragged-right",
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-26T15:32:55Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

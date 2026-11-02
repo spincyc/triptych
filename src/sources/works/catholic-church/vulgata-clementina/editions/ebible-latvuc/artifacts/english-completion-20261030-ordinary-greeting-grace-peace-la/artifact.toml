@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-grace-peace-la"
+edition_id = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The Clementine Vulgate was promulgated in 1592 and its Latin scripture wording is public domain by age. The separately registered eBible latVUC source is explicitly public domain. This finite derivative contains only that ancient scripture wording and mechanical reference columns, with no modern heading, footnote, protected target wording or apparatus."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "011831ec8aef16b5c47f5e7df0a3ed383e33e317e82dbe0185f21c6d1afae471"
+byte_size = 193
+path = "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-grace-peace-la/text.tsv"
+derived_from = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-53-1-corinthians-82f86d50"
+provenance = "Mechanical finite extraction from the retained public-domain Clementine verse TSV; each exact parent payload was freshly hashed. No modern Latin book or English text supplies the selected words."
+transformation = "From exact parent artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-53-1-corinthians-82f86d50, SHA256 82f86d50b5d85bdc8f2e3237be8cd229511f6f77dd7079c11675726544d74f59, select book 1Cor chapter1 verse3. Retain the entire source verse without a change. Preserve all retained source characters, including Jesu spelling, ligatures and punctuation. The selected source fragments are at zero-based Unicode-codepoint half-open spans [[0, 64]]; join the retained spans without inserting any character. Emit a new one-row element-keyed TSV so the source boundary is independently addressable; the parent verse remains complete and unchanged."
+indexable = true
+encoding = "utf-8"
+notes = "Historical biblical antecedent only. Source spelling and pointing are intentionally retained; no authenticated complete2008 target collation or liturgical approval is claimed."

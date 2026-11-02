@@ -1,0 +1,423 @@
+{
+  "original_review_sha256": "dcec89b45879412c99e6994e9394ae10e3f4563926f970d6c5c80ca9eed5e3ac",
+  "review": {
+    "identity": {
+      "date": "1740-12-03",
+      "issuer": "Benedict XIV",
+      "language": "la",
+      "native_leaves": [
+        26,
+        27,
+        28
+      ],
+      "printed_act_number": "II",
+      "printed_pages": [
+        3,
+        4,
+        5
+      ],
+      "publication_year": 1754,
+      "raw_outer_LF": [
+        2728,
+        3092
+      ],
+      "title": "Ubi Primum"
+    },
+    "limitations": [
+      "PASS concerns conservation, source extent and ownership partitions only; it is not a critical edition or a claim of full accurate historical-note transcription.",
+      "Downstream reading output must distinguish historical marginal apparatus from continuous papal body, and disclose uncorrected OCR. Do not silently present page-end marginal blocks as intervening papal paragraphs.",
+      "Machine conservation/bbox proofs are separately pinned validation evidence; this reviewer did not rerun the complete456-page engine.",
+      "No canonical source/code/config/admission or installed PDF changes by reviewer."
+    ],
+    "negative_findings": [
+      "No remaining cross-act leakage, missing substantive paragraph, omitted dated closing or additional visible role assignment defect found in this bounded review.",
+      "Raw and derived OCR remain visibly damaged. Marginal OCR especially does not provide a reliable literal reading of all printed note words."
+    ],
+    "page_reviews": [
+      {
+        "individually_reopened_at_original_detail": true,
+        "leaf": 26,
+        "native_image": {
+          "byte_size": 1383352,
+          "sha256": "f48ec74cde67deae292bd7c49be4a23bc81c39c307a5df341e50be8c336d347b"
+        },
+        "own_outer_extent_role_counts": {
+          "body-left": 387,
+          "body-right": 510,
+          "footer": 13,
+          "gutter-ocr": 9,
+          "header": 8,
+          "margin-left": 8,
+          "margin-right": 16
+        },
+        "printed_page": 3
+      },
+      {
+        "individually_reopened_at_original_detail": true,
+        "leaf": 27,
+        "native_image": {
+          "byte_size": 1395798,
+          "sha256": "a7a9a1caa5f39189bece447b54123737722622010e69035fdef55eacbbfd3b11"
+        },
+        "own_outer_extent_role_counts": {
+          "body-left": 534,
+          "body-right": 533,
+          "footer": 1,
+          "header": 13,
+          "margin-left": 20,
+          "margin-right": 13
+        },
+        "printed_page": 4
+      },
+      {
+        "individually_reopened_at_original_detail": true,
+        "leaf": 28,
+        "native_image": {
+          "byte_size": 1313352,
+          "sha256": "d051bc9034112203f96bf59d203dcf4f483f849b6f14669d386601a805507958"
+        },
+        "own_outer_extent_role_counts": {
+          "body-left": 358,
+          "header": 4,
+          "margin-left": 24
+        },
+        "printed_page": 5
+      }
+    ],
+    "positive_findings": [
+      "Named issuer, source genre heading, recipient address, salutation, incipit/proem and complete ordered source body are retained. Prior jubilee ending/subscription on p3 is outside the selection.",
+      "Body order is p3 left then right, p4 left then right, then p5 left only. Column-end/page-end body continuations are preserved.",
+      "The final blessing and the complete dated closing on p5 are retained; no separate signature appears in this printing between the closing and the ornamental separator.",
+      "Next actIII, its heading/protocol/body in p5 lower left and the entire p5 right column are excluded.",
+      "All available own marginal OCR components in the stated outer extent remain as historical apparatus; no additional selected body-to-margin misclassification was identified. This does not establish accurate recovery of badly recognized printed note wording.",
+      "Excluded running heads, folios, printer signature and repeated catchwords are visibly publishing furniture; the next substantive body continuation remains selected.",
+      "Final role assignment retains the two Ubi fused-WORD character partitions without replacing their OCR text. No lexical cleanup or new source prose was supplied."
+    ],
+    "required_fixes": [],
+    "resolved_finding": {
+      "classification": "duplicate-OCR-recognition/nontext; stored by recipe as gutter-ocr",
+      "crop": {
+        "byte_size": 69079,
+        "sha256": "32fb69ce34d52b39cd3fd1c775a4ae34a1ec5bce7d99c4c978b3bf5835d9ac53"
+      },
+      "crop_operation": "Native leaf26 PNG pixels, crop730x190+820+820 only; no source changes.",
+      "disposition": "All nine exact WORD values retained in full character-conserved controller, excluded only from the reading selection. Genuine marginal WORD11443 remains selected.",
+      "global_WORD_ids": [
+        11434,
+        11435,
+        11436,
+        11437,
+        11438,
+        11439,
+        11440,
+        11441,
+        11442
+      ],
+      "positive_image_basis": "Whole native p3 and crop show no independent printed line at this location. Tiny boxes y890–908 overlap lower portions of neighboring true glyph rows. They are duplicate recognition artifacts rather than additional papal text or marginal rubric wording.",
+      "prior_hybrid_sha256": "523c9bb56f7f3c2978e096c58cb3c8ec88c28786e211a7f57ee643ea346a5421",
+      "prior_recipe_sha256": "482a7c81ae86b84da9599688d7bee8048e06802876366d6c440cae4666bd9266",
+      "source_LF": 2824,
+      "word_pins": [
+        {
+          "coords": "877,904,880,900",
+          "source_bbox": [
+            877,
+            900,
+            880,
+            904
+          ],
+          "source_line_global_1": 1847,
+          "source_line_page_1": 91,
+          "source_txt_physical_lines": [
+            2824
+          ],
+          "source_txt_token_byte_ranges_0": [
+            [
+              77079,
+              77080
+            ]
+          ],
+          "source_word_global_1": 11434,
+          "source_word_page_1": 642,
+          "source_xml_byte_range_0": [
+            653637,
+            653676
+          ],
+          "value": "."
+        },
+        {
+          "coords": "905,899,914,890",
+          "source_bbox": [
+            905,
+            890,
+            914,
+            899
+          ],
+          "source_line_global_1": 1847,
+          "source_line_page_1": 91,
+          "source_txt_physical_lines": [
+            2824
+          ],
+          "source_txt_token_byte_ranges_0": [
+            [
+              77081,
+              77082
+            ]
+          ],
+          "source_word_global_1": 11435,
+          "source_word_page_1": 643,
+          "source_xml_byte_range_0": [
+            653677,
+            653716
+          ],
+          "value": "y"
+        },
+        {
+          "coords": "1020,900,1026,892",
+          "source_bbox": [
+            1020,
+            892,
+            1026,
+            900
+          ],
+          "source_line_global_1": 1847,
+          "source_line_page_1": 91,
+          "source_txt_physical_lines": [
+            2824
+          ],
+          "source_txt_token_byte_ranges_0": [
+            [
+              77083,
+              77084
+            ]
+          ],
+          "source_word_global_1": 11436,
+          "source_word_page_1": 644,
+          "source_xml_byte_range_0": [
+            653717,
+            653758
+          ],
+          "value": "*"
+        },
+        {
+          "coords": "1056,904,1123,899",
+          "source_bbox": [
+            1056,
+            899,
+            1123,
+            904
+          ],
+          "source_line_global_1": 1847,
+          "source_line_page_1": 91,
+          "source_txt_physical_lines": [
+            2824
+          ],
+          "source_txt_token_byte_ranges_0": [
+            [
+              77085,
+              77089
+            ]
+          ],
+          "source_word_global_1": 11437,
+          "source_word_page_1": 645,
+          "source_xml_byte_range_0": [
+            653759,
+            653803
+          ],
+          "value": "...."
+        },
+        {
+          "coords": "1143,899,1149,890",
+          "source_bbox": [
+            1143,
+            890,
+            1149,
+            899
+          ],
+          "source_line_global_1": 1847,
+          "source_line_page_1": 91,
+          "source_txt_physical_lines": [
+            2824
+          ],
+          "source_txt_token_byte_ranges_0": [
+            [
+              77090,
+              77091
+            ]
+          ],
+          "source_word_global_1": 11438,
+          "source_word_page_1": 646,
+          "source_xml_byte_range_0": [
+            653804,
+            653845
+          ],
+          "value": "1"
+        },
+        {
+          "coords": "1196,908,1218,891",
+          "source_bbox": [
+            1196,
+            891,
+            1218,
+            908
+          ],
+          "source_line_global_1": 1847,
+          "source_line_page_1": 91,
+          "source_txt_physical_lines": [
+            2824
+          ],
+          "source_txt_token_byte_ranges_0": [
+            [
+              77092,
+              77094
+            ]
+          ],
+          "source_word_global_1": 11439,
+          "source_word_page_1": 647,
+          "source_xml_byte_range_0": [
+            653846,
+            653888
+          ],
+          "value": "V,"
+        },
+        {
+          "coords": "1255,902,1258,898",
+          "source_bbox": [
+            1255,
+            898,
+            1258,
+            902
+          ],
+          "source_line_global_1": 1847,
+          "source_line_page_1": 91,
+          "source_txt_physical_lines": [
+            2824
+          ],
+          "source_txt_token_byte_ranges_0": [
+            [
+              77095,
+              77098
+            ]
+          ],
+          "source_word_global_1": 11440,
+          "source_word_page_1": 648,
+          "source_xml_byte_range_0": [
+            653889,
+            653932
+          ],
+          "value": "•"
+        },
+        {
+          "coords": "1276,902,1279,899",
+          "source_bbox": [
+            1276,
+            899,
+            1279,
+            902
+          ],
+          "source_line_global_1": 1847,
+          "source_line_page_1": 91,
+          "source_txt_physical_lines": [
+            2824
+          ],
+          "source_txt_token_byte_ranges_0": [
+            [
+              77099,
+              77102
+            ]
+          ],
+          "source_word_global_1": 11441,
+          "source_word_page_1": 649,
+          "source_xml_byte_range_0": [
+            653933,
+            653976
+          ],
+          "value": "•"
+        },
+        {
+          "coords": "1322,897,1328,890",
+          "source_bbox": [
+            1322,
+            890,
+            1328,
+            897
+          ],
+          "source_line_global_1": 1847,
+          "source_line_page_1": 91,
+          "source_txt_physical_lines": [
+            2824
+          ],
+          "source_txt_token_byte_ranges_0": [
+            [
+              77103,
+              77104
+            ]
+          ],
+          "source_word_global_1": 11442,
+          "source_word_page_1": 650,
+          "source_xml_byte_range_0": [
+            653977,
+            654018
+          ],
+          "value": "*"
+        }
+      ]
+    },
+    "reviewed_inputs": {
+      "body_view": {
+        "byte_size": 14401,
+        "sha256": "caf1a65e7aa153b8d48c6d8a19d8351b7ff6e643b2df0e5430d276927873270d"
+      },
+      "hybrid_controller": {
+        "byte_size": 2862647,
+        "sha256": "146a891e26c4583b2b929c9fe70c30bd86fad0b0ca2552c236657d37b7cf1eea"
+      },
+      "notes_view": {
+        "byte_size": 459,
+        "sha256": "8c96243f87cea62b00b50cf252c35826fce3562e1a1824e5b5b621269ddf45f5"
+      },
+      "recipe": {
+        "byte_size": 2720076,
+        "sha256": "63464a4adfc88bad717f6bbe234da02b24380333deff3ed87ab884ebdc67d1f6"
+      },
+      "selection": {
+        "byte_size": 9043,
+        "sha256": "9247178ff3619c6ace93dbc9e47e56af73b45c3cfcf7d24feac73c885d2c595d"
+      },
+      "validation": {
+        "byte_size": 4221,
+        "sha256": "24de63a88e5b019c09d2446ef7f1ca1e87913c23ec8a9c59cd8bccef9d1ace55"
+      }
+    },
+    "schema": "triptych-papal-source-partition-review/v1",
+    "scope": "Independent bounded source extent, ownership and body/margin role review; not word-level OCR collation, authentication, admission or PDF approval.",
+    "selection": {
+      "body_components": 2322,
+      "derived_LF_ranges": [
+        [
+          2776,
+          3685
+        ],
+        [
+          3692,
+          3724
+        ],
+        [
+          3771,
+          4886
+        ],
+        [
+          4907,
+          5264
+        ],
+        [
+          5781,
+          5808
+        ]
+      ],
+      "own_marginal_components": 81,
+      "selected_components": 2403
+    },
+    "status": "PASS"
+  }
+}

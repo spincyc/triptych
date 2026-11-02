@@ -302,7 +302,11 @@ class WorkflowEngine:
         """
         for stage in workflow["stages"]:
             routes = stage.get(REPAIR_ROUTES)
+            check_targets = [check[REPAIR_TARGET] for check in stage.get("checks", [])
+                             if REPAIR_TARGET in check]
             if not routes:
+                if check_targets:
+                    raise WorkflowError(f"{path}: {stage['id']}: check repair_target requires repair_routes")
                 continue
             schema_name = self.schema_name_for(stage)
             enums = self.load_schema(schema_name).get("finding_enums", {})
@@ -314,6 +318,8 @@ class WorkflowEngine:
                     f"{REPAIR_TARGET} its findings may carry"
                 )
             declared = {route[REPAIR_TARGET] for route in routes}
+            if any(not isinstance(target, str) or target not in declared for target in check_targets):
+                raise WorkflowError(f"{path}: {stage['id']}: check repair_target must name a declared repair route")
             if set(admitted) != declared:
                 raise WorkflowError(
                     f"{path}: {stage['id']} routes "
@@ -4102,6 +4108,7 @@ class WorkflowEngine:
 
         for check in checks:
             check_id = check["id"]
+            finding_count = len(findings)
             command_template = check["command"]
             # Arguments are shell-quoted: a document id is data, never a place
             # to continue the command from.
@@ -4163,6 +4170,10 @@ class WorkflowEngine:
                         f"command must be executable: {command}"
                     ),
                 })
+
+            if REPAIR_TARGET in check:
+                for finding in findings[finding_count:]:
+                    finding[REPAIR_TARGET] = check[REPAIR_TARGET]
 
         return {
             "disposition": PASS if all_passed else FAIL,

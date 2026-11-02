@@ -1,0 +1,682 @@
+{
+  "schema": "triptych-three-sanctoral-finite-source-translation-review/v1",
+  "reviewed_utc": "2026-10-30T02:44:59.098621+00:00",
+  "role": "Independent cold source and translation reviewer; not candidate author. No tracked or candidate file was modified.",
+  "status": "source-and-translation-pass-for-corrected-v2-candidates; rights-and-final-assembly-unadmitted",
+  "source_identity": {
+    "historical": "Tours: Typis Alfredi Mame et Filiorum, 1922, editio quarta juxta typicam Vaticanam. Title PDF13 and Albertus Negre conformity/approval PDF15, dated17May1922, independently viewed. This is the conformed commercial printing, not an authenticated Vatican1920 impression.",
+    "target": "CMAA facsimile of Vatican editio typica1962; title PDF1 and Novo rubricarum corpore decree PDF2 dated23June1962 independently viewed.",
+    "whole_pdf_checks": {
+      "mame": {
+        "path": ".scratch/c1-pre1955/download/mame1922.pdf",
+        "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+        "byte_size": 51720493
+      },
+      "target": {
+        "path": ".scratch/c1-retry-1962/missale62.pdf",
+        "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "byte_size": 82815941
+      }
+    }
+  },
+  "reviewed_inputs": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart2-candidate/candidate-bodies.json",
+      "sha256": "957b25dd4fb87f178dad760f3aa28ed5f3d08b34e920b78c78837a42b3c2f7fd",
+      "byte_size": 6446
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart2-candidate/pending-target-projection.txt",
+      "sha256": "99adc7d3f0d6709d4d7989c6cdf88e76988e03462b18576665f8ae9b512ace8f",
+      "byte_size": 542
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart2-candidate/projection-record-template.json",
+      "sha256": "a78570162d6580cc9203dc6c32ad2330fd0bc76849516536731d066b2751ea75",
+      "byte_size": 1905
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/lawrence-proposal.json",
+      "sha256": "1fc07727acc9566ba65c5a94177f7585a716d2e8c3f1488fe7972fde66cdead0",
+      "byte_size": 4589
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart2-candidate-v2/candidate-bodies.json",
+      "sha256": "957b25dd4fb87f178dad760f3aa28ed5f3d08b34e920b78c78837a42b3c2f7fd",
+      "byte_size": 6446
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart2-candidate-v2/metadata-correction.json",
+      "sha256": "bc9dca6dd53b6c9e049d0f83622f14187be77a83ddb024b06e1ccf9de0a288a5",
+      "byte_size": 4566
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/lawrence-proposal-v2.json",
+      "sha256": "b725b76bf8ba68cc6a992a317c99cf9ac3f371a6d585c485837ba1e7b33ecb3d",
+      "byte_size": 5268
+    }
+  ],
+  "evidence_receipt": {
+    "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/finite-source-review/mechanical-evidence.json",
+    "sha256": "4a204a849f182d828fb2c11d6756420d38ec23d29f81ab72ab4ec1db6e22607f",
+    "byte_size": 27795
+  },
+  "images_inspected": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart-target-200-0714.png",
+      "sha256": "213195d9af4c6bdc7df309318e8f32b1669e18d762a1c66241780cbe757ad1b8",
+      "byte_size": 236238,
+      "artifact": "target",
+      "artifact_page": 714,
+      "dpi": 200,
+      "inspection": "Full page viewed; complete assigned prayer/conclusion and surrounding source context read. Pixel-identical to fresh render of the hash-checked whole PDF."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart-target-400-0714.png",
+      "sha256": "7f928c3970448162b908fefac59fb8d2fab148cbabb991d5cedf4ac7e92bfdc6",
+      "byte_size": 262142,
+      "artifact": "target",
+      "artifact_page": 714,
+      "dpi": 400,
+      "inspection": "Full page viewed; complete assigned prayer/conclusion and surrounding source context read. Pixel-identical to fresh render of the hash-checked whole PDF."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart-target-200-0715.png",
+      "sha256": "3f3ba30ec71cd5263d0d191a23872b52a21f121cb4919f0d367b15f22a8862df",
+      "byte_size": 244409,
+      "artifact": "target",
+      "artifact_page": 715,
+      "dpi": 200,
+      "inspection": "Full page viewed; complete assigned prayer/conclusion and surrounding source context read. Pixel-identical to fresh render of the hash-checked whole PDF."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart-target-400-0715.png",
+      "sha256": "c7bb8126ebf8f8a4108c685cc69a7dbf65d9309c86e69c119181ac4c712918c1",
+      "byte_size": 277555,
+      "artifact": "target",
+      "artifact_page": 715,
+      "dpi": 400,
+      "inspection": "Full page viewed; complete assigned prayer/conclusion and surrounding source context read. Pixel-identical to fresh render of the hash-checked whole PDF."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart-mame-200-1048.png",
+      "sha256": "1bd1a794911f7f423eb6d700a54194662304c940bf808f3badf7d8df5a482263",
+      "byte_size": 554736,
+      "artifact": "mame",
+      "artifact_page": 1048,
+      "dpi": 200,
+      "inspection": "Full page viewed; complete assigned prayer/conclusion and surrounding source context read. Pixel-identical to fresh render of the hash-checked whole PDF."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart-mame-400-1048.png",
+      "sha256": "80799ab99f31ef480f9384d4c8b1d1850291a78074235baebb1b9231f858aee4",
+      "byte_size": 1399171,
+      "artifact": "mame",
+      "artifact_page": 1048,
+      "dpi": 400,
+      "inspection": "Full page viewed; complete assigned prayer/conclusion and surrounding source context read. Pixel-identical to fresh render of the hash-checked whole PDF."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart-mame-200-1049.png",
+      "sha256": "670f9dcc556307be8d75784aa706a6b24977c8731b128123d4c73aec3adc821e",
+      "byte_size": 457285,
+      "artifact": "mame",
+      "artifact_page": 1049,
+      "dpi": 200,
+      "inspection": "Full page viewed; complete assigned prayer/conclusion and surrounding source context read. Pixel-identical to fresh render of the hash-checked whole PDF."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart-mame-400-1049.png",
+      "sha256": "81f0b2db7890a0658715dd2bf70caa278fc7837c833b5b7369d8fe7dce59fd20",
+      "byte_size": 1177818,
+      "artifact": "mame",
+      "artifact_page": 1049,
+      "dpi": 400,
+      "inspection": "Full page viewed; complete assigned prayer/conclusion and surrounding source context read. Pixel-identical to fresh render of the hash-checked whole PDF."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/target-675-400.png",
+      "sha256": "cb549441d2cb22cd457fdea4de1f40765d5d701ce02367b0595e6a6047970c19",
+      "byte_size": 281331,
+      "artifact": "target",
+      "artifact_page": 675,
+      "dpi": 400,
+      "inspection": "Full page viewed; complete assigned prayer/conclusion and surrounding source context read. Pixel-identical to fresh render of the hash-checked whole PDF."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/target-676-400.png",
+      "sha256": "41a7d696c734919d15a09ce33adba55cde7e4da490557999d1fdd882469d4b2d",
+      "byte_size": 273543,
+      "artifact": "target",
+      "artifact_page": 676,
+      "dpi": 400,
+      "inspection": "Full page viewed; complete assigned prayer/conclusion and surrounding source context read. Pixel-identical to fresh render of the hash-checked whole PDF."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/mame-368-200.png",
+      "sha256": "027020774d7243f20393e58ebdd686600b9b4a9c9f819c1fa403050be405b630",
+      "byte_size": 474428,
+      "artifact": "mame",
+      "artifact_page": 368,
+      "dpi": 200,
+      "inspection": "Full page viewed; complete assigned prayer/conclusion and surrounding source context read. Pixel-identical to fresh render of the hash-checked whole PDF."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/mame-368-400.png",
+      "sha256": "3cbbc84bdecf0afc4ddf90b9d134ac49882f4d9d4f2db719169db7e368ceaa53",
+      "byte_size": 1184327,
+      "artifact": "mame",
+      "artifact_page": 368,
+      "dpi": 400,
+      "inspection": "Full page viewed; complete assigned prayer/conclusion and surrounding source context read. Pixel-identical to fresh render of the hash-checked whole PDF."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/mame-1082-200.png",
+      "sha256": "faa6dcdb2e2a165356e0fb068d2ba37548dcec9ba3d6646e0d9b97af31be2da8",
+      "byte_size": 564423,
+      "artifact": "mame",
+      "artifact_page": 1082,
+      "dpi": 200,
+      "inspection": "Full page viewed; complete assigned prayer/conclusion and surrounding source context read. Pixel-identical to fresh render of the hash-checked whole PDF."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/mame-1082-400.png",
+      "sha256": "e95ad60b9c9d619ad466be11f7404d96374bc53823f52b14de69b73335339d73",
+      "byte_size": 1414151,
+      "artifact": "mame",
+      "artifact_page": 1082,
+      "dpi": 400,
+      "inspection": "Full page viewed; complete assigned prayer/conclusion and surrounding source context read. Pixel-identical to fresh render of the hash-checked whole PDF."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/finite-source-review/lawrence-target-200-0675.png",
+      "sha256": "2f3b30d09c783d6c957d23bda1b8e5bef5688994636a88274e3d6d67eba2c6ba",
+      "byte_size": 244308,
+      "artifact": "target",
+      "artifact_page": 675,
+      "dpi": 200,
+      "inspection": "New genuine 200dpi full-page render inspected; complete own Collect read across the page break."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/finite-source-review/lawrence-target-200-0676.png",
+      "sha256": "52bb2122bf16dcaeced8ce57ce37fffefc2366b8722f3babbd6b0e53ba6d433a",
+      "byte_size": 242591,
+      "artifact": "target",
+      "artifact_page": 676,
+      "dpi": 200,
+      "inspection": "New genuine 200dpi full-page render inspected; complete own Collect read across the page break."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/finite-source-review/mame-title-200-0013.png",
+      "sha256": "eda0251d536b6b545d6573c0008b081f02a7d6a248a5c0262d510ba5275f9340",
+      "byte_size": 235482,
+      "artifact": "mame",
+      "artifact_page": 13,
+      "dpi": 200,
+      "inspection": "Source identity page read."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/finite-source-review/mame-approval-200-0015.png",
+      "sha256": "bb6f5cad3820f32c767274369f2935710cfa7770880844b6c54cdf09ff202b24",
+      "byte_size": 331227,
+      "artifact": "mame",
+      "artifact_page": 15,
+      "dpi": 200,
+      "inspection": "Source identity page read."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/finite-source-review/target-title-200-0001.png",
+      "sha256": "2b308049e15d9e81ccca4f62c98304bfd9148d7039051af7c0af450a5711013b",
+      "byte_size": 68881,
+      "artifact": "target",
+      "artifact_page": 1,
+      "dpi": 200,
+      "inspection": "Source identity page read."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/finite-source-review/target-decree-200.png",
+      "sha256": "804405f128eb2f83675a9167d4050c83612c0c6a834d82c6fbbd4970c74e7ba2",
+      "byte_size": 108341,
+      "artifact": "target",
+      "artifact_page": 2,
+      "dpi": 200,
+      "inspection": "Source identity page read."
+    }
+  ],
+  "extra_context_images_inspected": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/target-675.png",
+      "sha256": "ce92ccb3435ed6009ed22abb00301e834e48cf2c89249eadacb8d25cc0f02e17",
+      "byte_size": 202523,
+      "dpi": 250,
+      "artifact": "target",
+      "artifact_page": 675,
+      "note": "These preexisting files are 250dpi, not the required200dpi; own genuine200dpi images listed above satisfy that check."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/target-676.png",
+      "sha256": "542ac9306a929ca0bb220d28faa1e4130d10dc990be441e28f0b10d7159316be",
+      "byte_size": 197623,
+      "dpi": 250,
+      "artifact": "target",
+      "artifact_page": 676,
+      "note": "These preexisting files are 250dpi, not the required200dpi; own genuine200dpi images listed above satisfy that check."
+    }
+  ],
+  "mechanical_verification": {
+    "command": "/usr/bin/python3 .scratch/roman-english-completion-20261029/sanctoral-sources/finite-source-review/audit.py",
+    "exit_status": 0,
+    "candidate_TOML_records_parsed": 13,
+    "whole_PDF_hashes_recomputed": 2,
+    "paired_existing_rasters_equal_fresh_whole_PDF_rasters": 14,
+    "retained_PDF_pages_pixel_equal_whole_PDF_rasters": 4,
+    "payload_hashes_sizes_and_local_passage_ranges": "pass",
+    "heart_token_delta_receipts_replayed": "pass",
+    "final_canonical_source_graph_or_publication_gate": "not run; no canonical admission occurred"
+  },
+  "retained_payloads": [
+    {
+      "manifest": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart2-candidate/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-control-pages/artifact.toml",
+        "sha256": "29fc4baed38f824ae26c3fa9ca7f4db1be6387769742976f577f94d81e540a16",
+        "byte_size": 1540
+      },
+      "record_type": "artifact",
+      "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-control-pages",
+      "payload": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart2-candidate/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-control-pages/source.pdf",
+        "sha256": "fe425c3ced93d5d48bc9d64af1a83d646035ae60715c33021931179d25169c2a",
+        "byte_size": 410906
+      },
+      "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+    },
+    {
+      "manifest": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart2-candidate/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/artifact.toml",
+        "sha256": "1f0eb4813c256ae549806a2fec65a0456b4f9f029bf400086bac76c95f7c522f",
+        "byte_size": 1719
+      },
+      "record_type": "artifact",
+      "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-historical-prayers",
+      "payload": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart2-candidate/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/latin.txt",
+        "sha256": "834d0e60236511a5ff7f3d4f9186ea1188791eab9706277e7bb488d52f6b6cff",
+        "byte_size": 501
+      },
+      "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-control-pages",
+      "physical_lines": [
+        "Omnipotens sempiterne Deus, qui in Corde beatae Mariae Virginis dignum Spiritus Sancti habitaculum praeparasti: concede propitius; ut ejusdem purissimi Cordis festivitatem devota mente recolentes, secundum cor tuum vivere valeamus. Per Dominum... in unitate ejusdem.",
+        "Divinis refecti muneribus te, Domine, suppliciter exoramus: ut beatae Mariae Virginis intercessione, cujus purissimi Cordis solemnia venerando egimus, a praesentibus periculis liberati, aeternae vitae gaudia consequamur. Per Dominum."
+      ]
+    },
+    {
+      "manifest": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/candidate/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/artifact.toml",
+        "sha256": "8eec30c80657798ee7a4495654a26ce86cd00f52da22268b037d3ebec68c8dee",
+        "byte_size": 2040
+      },
+      "record_type": "artifact",
+      "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+      "payload": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/candidate/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/source.pdf",
+        "sha256": "976afd4964a6b833ec2bf92ee5cb00825be96a4d7bc789acf34fde0bacac3b6b",
+        "byte_size": 411321
+      },
+      "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+    },
+    {
+      "manifest": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/candidate/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-historical-latin-20261029-5602f33a/artifact.toml",
+        "sha256": "2a85a0437f586455b6317121b9b190ea39737db0c959d587c0dad1653b8d996d",
+        "byte_size": 2027
+      },
+      "record_type": "artifact",
+      "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-historical-latin-20261029-5602f33a",
+      "payload": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/candidate/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-historical-latin-20261029-5602f33a/source.txt",
+        "sha256": "5602f33a0dc7039761adac78d736fdb286ea1261404cd7cdd3a0c5bdb9fd66f2",
+        "byte_size": 260
+      },
+      "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+      "physical_lines": [
+        "Deus, qui, ad ardua quaeque pro nominis tui gloria et animarum salute, beato Laurentio Confessori tuo spiritum consilii et fortitudinis contulisti: da nobis in eodem spiritu et agenda cognoscere; et cognita, ejus intercessione, perficere. Per Dominum nostrum."
+      ]
+    }
+  ],
+  "bounded_v2_recheck": [
+    {
+      "before": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart2-candidate/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/artifact.toml",
+        "sha256": "1f0eb4813c256ae549806a2fec65a0456b4f9f029bf400086bac76c95f7c522f",
+        "byte_size": 1719
+      },
+      "after": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart2-candidate-v2/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/artifact.toml",
+        "sha256": "d633bb457718a0fa58abfcbc0d6477c4cbab60425ffcaa2d04f47557a94bbdee",
+        "byte_size": 1723
+      },
+      "only_changed_field": "provenance",
+      "before_text": "Two complete historical prayers read on 200 and 400 dpi page images of registered Mame 1922 whole-PDF pages 1048-1049, printed [18]-[19], with own votive heading and full actual conclusion cues. Line 1 Collect; line 2 Postcommunion.",
+      "after_text": "Two complete historical prayers read on 200 and 400 dpi page images of registered Mame 1922 whole-PDF pages 1048-1049, printed [18]-[19], with own historical heading and full actual conclusion cues. Line 1 Collect; line 2 Postcommunion.",
+      "accepted": true
+    },
+    {
+      "before": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/candidate/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-conclusion-prefix-20261029.toml",
+        "sha256": "edac39585eccb711bdbfcc6791aa9947656d3980f1a58a8f52af8464f1e170ed",
+        "byte_size": 1114
+      },
+      "after": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/candidate-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-conclusion-prefix-20261029.toml",
+        "sha256": "0112c46dfcea6dc6edc66e41e4d234d3dfcf0075970d2bcfdc434e8346e3d46e",
+        "byte_size": 1159
+      },
+      "only_changed_field": "notes",
+      "before_text": "Actual contiguous full formula contains Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus. The target ends after in unitate; only that literal contiguous prefix is used, with target pointing and no continuation.",
+      "after_text": "Actual contiguous full formula contains Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: followed by a rubric and the sung Per omnia. The target ends after in unitate; only that literal contiguous prefix is used, with target pointing and no continuation.",
+      "accepted": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "F1-resolved-v2",
+      "severity": "minor-source-metadata",
+      "original_finding": "Heart historical-prayers artifact called the own source heading votive. The page prints the local Purissimi Cordis historical heading with Saturday-after-Corpus-Christi-octave date, not a votive label.",
+      "correction_accepted": "V2 changes only provenance to own historical heading. The related source-dispositions-v2 text changes only the corresponding labels. All prayer bodies, English, payloads, controllers, page ranges and proposed rights remain unchanged.",
+      "corrected_manifest": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/heart2-candidate-v2/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/artifact.toml",
+        "sha256": "d633bb457718a0fa58abfcbc0d6477c4cbab60425ffcaa2d04f47557a94bbdee",
+        "byte_size": 1723
+      },
+      "related_dispositions": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/marian/source-dispositions-v2.json",
+        "sha256": "826330d9e72572d5951ae4b26777f0dafbd56fbeec9bb47f614c815c73a192c3",
+        "byte_size": 14833
+      },
+      "remaining": false
+    },
+    {
+      "id": "F2-resolved-v2",
+      "severity": "minor-source-punctuation-metadata",
+      "original_finding": "Lawrence conclusion-control note ended the quoted Mame prose after Deus with a period. The page actually prints Deus: then the rubric and sung Per omnia.",
+      "correction_accepted": "V2 changes only that passage note to Deus: followed by a rubric and the sung Per omnia. Actual target prefix and target stop in unitate. remain unchanged.",
+      "corrected_passage": {
+        "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-common/candidate-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-conclusion-prefix-20261029.toml",
+        "sha256": "0112c46dfcea6dc6edc66e41e4d234d3dfcf0075970d2bcfdc434e8346e3d46e",
+        "byte_size": 1159
+      },
+      "remaining": false
+    }
+  ],
+  "targets": [
+    {
+      "target": [
+        "immaculati-cordis-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_review": "pass",
+      "translation_review": "pass",
+      "admission": "unadmitted-pending-root-finite-rights-and-canonical-assembly",
+      "target_latin_sha256_including_terminal_LF": "c8b53661561aac747517845360d96151db5afb6707c0c3b798b8de710559395a",
+      "historical_latin_sha256_including_terminal_LF": "b9f4924c41f5dd422cd84b84bb26d5bf600c0c7b0f7a4f781e8788bcc3228aa4",
+      "english_sha256_UTF8_no_added_LF": "0cb90b2744188032f1232cf3e8a165a6d1c9a04d4ba9b19adad607cb66d19917",
+      "target_locus": {
+        "whole_pdf_page": 714,
+        "printed_page": "633",
+        "unit": 3424
+      },
+      "historical_locus": {
+        "whole_pdf_page": 1048,
+        "printed_page": "[18]",
+        "heading": "PURISSIMI CORDIS B. MARIAE VIRG. (Sabbato post Octavam Corporis Christi), Missae pro aliquibus locis"
+      },
+      "complete_ordered_petition_checked": [
+        "Omnipotens sempiterne Deus",
+        "qui in Corde beatae Mariae Virginis dignum Spiritus Sancti habitaculum praeparasti",
+        "concede propitius",
+        "ut, ejusdem immaculati Cordis festivitatem (commemorationem) devota mente recolentes",
+        "secundum Cor tuum vivere valeamus"
+      ],
+      "unreported_word_or_clause_difference_found": false,
+      "exact_word_deltas": [
+        {
+          "operation": "replace",
+          "historical": [
+            "purissimi"
+          ],
+          "target": [
+            "immaculati"
+          ],
+          "historical_token_range": [
+            18,
+            19
+          ],
+          "target_token_range": [
+            18,
+            19
+          ]
+        },
+        {
+          "operation": "insert",
+          "historical": [],
+          "target": [
+            "commemorationem"
+          ],
+          "historical_token_range": [
+            21,
+            21
+          ],
+          "target_token_range": [
+            21,
+            22
+          ]
+        },
+        {
+          "operation": "insert",
+          "historical": [],
+          "target": [
+            "nostrum"
+          ],
+          "historical_token_range": [
+            31,
+            31
+          ],
+          "target_token_range": [
+            32,
+            33
+          ]
+        }
+      ],
+      "pointing_and_orthography": "Replace historical purissimi with immaculati; add functional parenthetical (commemorationem); add nostrum to the actual Per Dominum ... in unitate ejusdem. conclusion prefix; add target comma after ut and capitalise Cor. No other word changes after declared i/j, accent, ligature and line-wrap normalization.",
+      "actual_historical_conclusion": "Per Dominum... in unitate ejusdem.",
+      "actual_target_conclusion": "Per Dominum nostrum ... in unitate ejusdem.",
+      "conclusion_verdict": "Exact printed cue extent retained; no standard formula expansion, Amen or words after the printed stop. Added nostrum in Collect has an independently viewed public-domain control at Mame whole PDF368, printed254.",
+      "translation_findings": [],
+      "translation_rationale": "The English renders the complete target petition, its Immaculate wording and the parenthetical alternative; it does not silently translate historical purissimi. Its conclusion renders only the actual abbreviated target extent. No approved or historical-English status is claimed. Carry explicit original study-translation attribution in final assembly.",
+      "metadata_findings": [
+        "F1-resolved-v2"
+      ],
+      "rights_condition": "Root must separately adopt a finite basis for this exact complete target body, including lexical purissimi→immaculati, the named parenthetical option and, for Collect, the independently controlled nostrum prefix. The prior seven-body adoption supplies no automatic authority."
+    },
+    {
+      "target": [
+        "immaculati-cordis-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_review": "pass",
+      "translation_review": "pass",
+      "admission": "unadmitted-pending-root-finite-rights-and-canonical-assembly",
+      "target_latin_sha256_including_terminal_LF": "6c81c9d5ef0912c0e01fc911ab4dc9fe86648e27e49651092086e38d2ca17795",
+      "historical_latin_sha256_including_terminal_LF": "6393ab75d5901bf6daf975b2ac34cf92db0bc06360c618ca6980addec466c60f",
+      "english_sha256_UTF8_no_added_LF": "5313dcbd2b70bbd5afe7cb21803276343442ad3a9d561ec7bfd47e18ef90fafe",
+      "target_locus": {
+        "whole_pdf_page": 715,
+        "printed_page": "634",
+        "unit": 3436
+      },
+      "historical_locus": {
+        "whole_pdf_page": 1049,
+        "printed_page": "[19]",
+        "heading": "PURISSIMI CORDIS B. MARIAE VIRG. (Sabbato post Octavam Corporis Christi), Missae pro aliquibus locis"
+      },
+      "complete_ordered_petition_checked": [
+        "Divinis refecti muneribus",
+        "te, Domine, suppliciter exoramus",
+        "ut beatae Mariae Virginis intercessione",
+        "cujus immaculati Cordis solemnia (memoriam) venerando egimus",
+        "a praesentibus periculis liberati",
+        "aeternae vitae gaudia consequamur"
+      ],
+      "unreported_word_or_clause_difference_found": false,
+      "exact_word_deltas": [
+        {
+          "operation": "replace",
+          "historical": [
+            "purissimi"
+          ],
+          "target": [
+            "immaculati"
+          ],
+          "historical_token_range": [
+            13,
+            14
+          ],
+          "target_token_range": [
+            13,
+            14
+          ]
+        },
+        {
+          "operation": "insert",
+          "historical": [],
+          "target": [
+            "memoriam"
+          ],
+          "historical_token_range": [
+            16,
+            16
+          ],
+          "target_token_range": [
+            16,
+            17
+          ]
+        }
+      ],
+      "pointing_and_orthography": "Replace historical purissimi with immaculati; add functional parenthetical (memoriam). Historical cujus and target cuius are the declared calendar consonantal-j normalization; no other words or actual conclusion differ.",
+      "actual_historical_conclusion": "Per Dominum.",
+      "actual_target_conclusion": "Per Dominum.",
+      "conclusion_verdict": "Exact printed cue extent retained; no standard formula expansion, Amen or words after the printed stop. Added nostrum in Collect has an independently viewed public-domain control at Mame whole PDF368, printed254.",
+      "translation_findings": [],
+      "translation_rationale": "The English renders the complete target petition, its Immaculate wording and the parenthetical alternative; it does not silently translate historical purissimi. Its conclusion renders only the actual abbreviated target extent. No approved or historical-English status is claimed. Carry explicit original study-translation attribution in final assembly.",
+      "metadata_findings": [
+        "F1-resolved-v2"
+      ],
+      "rights_condition": "Root must separately adopt a finite basis for this exact complete target body, including lexical purissimi→immaculati, the named parenthetical option and, for Collect, the independently controlled nostrum prefix. The prior seven-body adoption supplies no automatic authority."
+    },
+    {
+      "target": [
+        "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_review": "pass",
+      "translation_review": "pass",
+      "admission": "unadmitted-pending-root-finite-rights-and-canonical-assembly",
+      "target_latin_sha256_including_terminal_LF": "9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005",
+      "historical_latin_sha256_including_terminal_LF": "5602f33a0dc7039761adac78d736fdb286ea1261404cd7cdd3a0c5bdb9fd66f2",
+      "english_sha256_UTF8_no_added_LF": "f915dcad95b7217e16c83e3f1d8c6ee756d1378adc0518b403ac277aafcdecfb",
+      "target_locus": {
+        "whole_pdf_pages": [
+          675,
+          676
+        ],
+        "printed_pages": [
+          "594",
+          "595"
+        ],
+        "unit": 3117
+      },
+      "historical_locus": {
+        "whole_pdf_page": 1082,
+        "printed_page": "[52]",
+        "heading": "SANCTI LAURENTII A BRUNDUSIO CONFESSORIS (Die7Julii), Missae pro aliquibus locis"
+      },
+      "complete_ordered_petition_checked": [
+        "Deus, qui ad ardua quaeque pro nominis tui gloriam et animarum salute",
+        "beato Laurentio, Confessori tuo atque Doctori",
+        "spiritum sapientiae et fortitudinis contulisti",
+        "da nobis in eodem spiritu et agenda cognoscere",
+        "et cognita, ejus intercessione, perficere"
+      ],
+      "unreported_word_or_clause_difference_found": false,
+      "exact_differences": [
+        {
+          "kind": "substantive-lexical",
+          "historical": "consilii",
+          "target": "sapientiae",
+          "explanation": "Counsel changes to wisdom. This is not an orthographic or simply functional change."
+        },
+        {
+          "kind": "factual-title-addition",
+          "historical": "Confessori tuo",
+          "target": "Confessori tuo atque Doctori"
+        },
+        {
+          "kind": "inflection",
+          "historical": "gloria",
+          "target": "gloriam",
+          "explanation": "The target page image really prints gloriam, despite its grammatical incongruity; no silent repair."
+        },
+        {
+          "kind": "independently-controlled-conclusion-prefix",
+          "historical": "Per Dominum nostrum.",
+          "target": "Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.",
+          "source": "1922 wholePDF368 actual contiguous full formula, stop after in unitate"
+        },
+        {
+          "kind": "pointing-and-orthography",
+          "explanation": "Target omits source comma after qui and salute; adds commas enclosing Confessori...Doctori; replaces source semicolon after cognoscere with comma; declared calendar consonantal-j and accent/ligature normalization."
+        }
+      ],
+      "target_gloriam": "Confirmed on both the 200dpi and 400dpi page images; the incongruous inflection must not be silently repaired.",
+      "actual_historical_conclusion": "Per Dominum nostrum.",
+      "actual_target_conclusion": "Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.",
+      "conclusion_control": {
+        "whole_pdf_page": 368,
+        "printed_page": "254",
+        "retained_extract_page": 1,
+        "accepted_passage": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-conclusion-prefix-20261029",
+        "target_pointing_change": "The target inserts a comma after Christum; the historical full control has no comma there. The final period after unitate is the target stop, not the end of the historical control formula."
+      },
+      "conclusion_verdict": "Target words are the literal contiguous prefix of the separately viewed Mame full formula, under declared i/j/accent/pointing normalization; no Spiritus Sancti Deus, Per omnia, Amen or other continuation is supplied.",
+      "translation_findings": [],
+      "translation_rationale": "The original study English renders wisdom rather than counsel, retains blessed Lawrence and the Doctor title, covers both know-and-accomplish petitions and the intercession, and stops at in unity. It makes no approved-liturgical-English or historical-translation claim.",
+      "metadata_findings": [
+        "F2-resolved-v2"
+      ],
+      "rights_condition": "Root must separately decide a finite basis for the exact complete target, including substantive consilii→sapientiae, added atque Doctori and gloria→gloriam. The wisdom/counsel substitution changes meaning and is neither spelling nor a merely functional option. The prior seven-body title/option decision does not decide this case."
+    }
+  ],
+  "rights_boundary": {
+    "adopted_here": false,
+    "prior_finite_adoption": {
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/latin-seven-rights-adoption.json",
+      "sha256": "073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e",
+      "byte_size": 4142
+    },
+    "prior_adoption_extends_to_these_targets": false,
+    "historical_payload_basis": "The source identity and payload/page derivations agree with the already registered public-domain1922 Mame artifact. This source review does not redecide the general legal rule.",
+    "proposed_basis_status": "Heart qualified-nonoriginal-adaptation remains a pending finite proposal; no whole-modern-target historical exact-match is claimed. Lawrence is likewise unadmitted. Neither project-created English nor checked source identity alone clears the Latin adaptation.",
+    "root_required": "A separately sourced, independently reviewed finite rights decision for these exact full target hashes and all measured deltas; preserve source versus target ownership and qualified projection metadata.",
+    "after_rights_adoption": "Canonical artifact/edition/passage/provenance construction, exact source fingerprints and independent final assembly/publication validation remain necessary before admission. Retain explicit original study English credits, actual abbreviation extent, and all existing hold/history records unless separately and validly superseded."
+  },
+  "disposition": "All three exact Latin candidates and their original study English pass independent source/translation review with both V1 metadata findings resolved in frozen V2 successors. No source or translation correction remains. Root rights adoption and final canonical assembly remain pending."
+}

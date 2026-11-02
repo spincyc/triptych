@@ -1,0 +1,18 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-ordinary-apostles-latin"
+edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The identified printed book was published by Friedrich Pustet in 1888. Its 1888 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label."
+rights_jurisdiction = "United States"
+derived_from = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-ordinary-apostles-page1"
+transformation = "Direct image transcription of the complete historical Latin Apostles Creed on printed p. 1, right column. Printed line wraps and line-end hyphens are joined; the drop capital becomes ordinary C; acute accent marks are explicitly omitted. Source ae/oe ligatures, j in Jesum/ejus/judicare, lowercase sanctum and sanctorum, wording, capitals and punctuation are retained. This is an explicitly normalized historical-source transcription, not a diplomatic text or a modern Missal body."
+retrieved = "2026-10-29"
+sha256 = "c898da39031fdc0ccab706274d884c5fb8277fd5d1096968f8ea362f1fcca479"
+byte_size = 965
+path = "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-ordinary-apostles-latin/text.tsv"
+indexable = true
+encoding = "utf-8"

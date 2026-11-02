@@ -1,0 +1,123 @@
+{
+  "schema": "triptych-historical-selection-recipe/v1",
+  "input_artifact_id": "artifact.robert-james-mcghee.nullity-government-queen-victoria-ireland.1839.layout-5bdd9d1694ec6dfb",
+  "input_sha256": "5bdd9d1694ec6dfb15f26430b54b058a1f2677e7decabc31116cb8db8080ad8e",
+  "input_pdf_artifact_id": "artifact.robert-james-mcghee.nullity-government-queen-victoria-ireland.1839.scan-31cb39239ad8da40",
+  "input_pdf_sha256": "31cb39239ad8da409bcb4a3787e0eb547684bd9ceffa7322d396f289a253fed7",
+  "input_extraction": "pdftotext -layout INPUT.pdf OUTPUT.txt (Poppler pdftotext version 26.10.0)",
+  "artifact_pages": [
+    263,
+    264,
+    265,
+    266,
+    267,
+    268
+  ],
+  "printed_pages": [
+    209,
+    210,
+    211,
+    212,
+    213,
+    214
+  ],
+  "opening": "OF THE DRAGGING FORTH OF CRIMINALS",
+  "exclude_after_page264": "The preamble of this Bull",
+  "resume_page265": "“Section 1.",
+  "exclude_after_page268": "This Bull, be it remembered",
+  "remove_page_heads": true,
+  "remove_page265_terminal_ocr_mark": "Q:",
+  "source_editor_annotation_regexes": [
+    "—\\(Let\\nme now entreat particular attention to the Bull which is\\nhere renewed\\)",
+    " \\(that is excepted\\nfrom the privileges of the sanctuary,\\)",
+    "\\(of the sanctuary\\)"
+  ],
+  "source_editor_notes_sha256": "988ebe707d03b3707f4fbbe54d32fc5baa1bce4be0c89502804907a68c190e75",
+  "exact_native_line_division_replacements": [
+    [
+      "Con\nstitution",
+      "Constitution"
+    ],
+    [
+      "cer\ntain",
+      "certain"
+    ],
+    [
+      "AS OF TEN AS PRO OF",
+      "AS OFTEN AS PROOF"
+    ],
+    [
+      "usin our",
+      "us in our"
+    ],
+    [
+      "congrega\ntion",
+      "congregation"
+    ],
+    [
+      "afore\nsaid",
+      "aforesaid"
+    ],
+    [
+      "protec\ntion",
+      "protection"
+    ],
+    [
+      "inten\ntion",
+      "intention"
+    ],
+    [
+      "commu\nicated",
+      "commuicated"
+    ],
+    [
+      "constitu\ntions",
+      "constitutions"
+    ],
+    [
+      "ex\ncepted",
+      "excepted"
+    ],
+    [
+      "be\nlonging",
+      "belonging"
+    ],
+    [
+      "what\nsoever",
+      "whatsoever"
+    ],
+    [
+      "ob\n served",
+      "observed"
+    ],
+    [
+      "ob\nserved",
+      "observed"
+    ],
+    [
+      "sanc\ntuary",
+      "sanctuary"
+    ],
+    [
+      "benedic\ntion",
+      "benediction"
+    ]
+  ],
+  "paragraph_starts": [
+    "OF THE DRAGGING FORTH OF CRIMINALS",
+    "An Encyclical Letter",
+    "BENEDICT XIV., POPE.",
+    "Beloved Son, Health and Apostolical Benediction.",
+    "At the close of the last year",
+    "But because our before-mentioned predecessors",
+    "“Section 1.",
+    "“Section 2.",
+    "“Section 3.",
+    "“Section 4.",
+    "“Section 5.",
+    "“Given at Rome,"
+  ],
+  "normalization": "Collapse each selected paragraph whitespace to one ASCII space; separate paragraphs by two LF; terminal LF. Exclude p210 isolated trailing OCR rule. Preserve native English spelling, translator infelicities and section numbering.",
+  "output_sha256": "5ca9eba70ed98d9d74520b03f0f02c9b22e2eb04cceafe4cc173a8c45fb14ff5",
+  "annotation_disposition": "Preserved verbatim after whitespace normalization in a separately owned notes artifact and in the reader terminal source note, explicitly attributed to M‘Ghee rather than Benedict XIV. No papal clause removed."
+}

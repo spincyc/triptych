@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-lasance-historical-en"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The identified Lasance and Walsh revised-1945 original English has the separately registered United States nonrenewal basis in lasance-new-roman-missal-rights-v1.toml. Only the two complete image-checked ordinary-page antiphon bodies are retained; excluded lettered inserts, post-1954 new matter and the unresolved whole scan are not redistributed. Faithful transcription adds no new authorship. The historical human wording is excluded from Triptych’s CC BY 4.0 offer. No approved contemporary English, modern Latin, OCR wrapper, source image, publisher furniture or translated rubric is included."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Freshly transcribe each complete explicitly bounded historical English body from the exact visual PDF named by derived_from. Join printer line wraps and represent the ornamental initial capitals as prose; retain every accepted word, spelling and punctuation character. Calendar-address columns identify bounded historical antecedent study recipients, not the source book appointment or authenticated 2008 text."
+retrieved = "2026-10-29"
+sha256 = "d9d904bf162f620bee49d16f058422e1b9f151e1227fbd6382a5dd9cfb394726"
+byte_size = 434
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-lasance-historical-en/text.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "2 complete historical human English bodies, unchanged from the independently accepted frozen packet 11c4c137fd60453e0a00f38ea8066f6b7dd93ea9721af57cd271061a68c85d00. Verification and publication passages use exactly the same source locus. The comparison is bounded to the directly inspected secondary digitally typeset 2002 reproduction. Its fidelity to printed 2002 and correspondence to the authenticated 2008 reimpressio remain unresolved. No approved modern English, ICEL wording, recitation authority, protected modern Latin payload or modern source image is supplied."

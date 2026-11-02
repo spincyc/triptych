@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.dolors-chants-20261029"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Triptych organization and normalization are offered under CC BY4.0 only. All underlying Latin words are independently witnessed in public-domain Pustet1862. No clearance of the 1962 edition as a whole is asserted and its images are not redistributed."
+provenance = "Four complete historical chant readings and the September referral/ending rubric were read on the Pustet1862 page images on 2026-10-29. Their target readings were independently read on registered1962 page images at200 and400dpi. The projection retains four unique bodies; its Offertory supports two independently checked target appointments."
+retrieved = "2026-10-29"
+sha256 = "d03aec4448d8e29a415a62c4cc032721e4b3582e0b733121d2f1d6b146e32e03"
+byte_size = 557
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/dolors-chants-20261029/latin.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.dolors-chants-pages-20261029", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join line wraps; remove stress accents; expand ligatures; apply the calendar consonantal-j convention and target punctuation/capitalization. Gradual lacrymabilis becomes lacrimabilis and Genitrix becomes Genetrix as recorded received-spelling normalizations. Alleluja becomes Alleluia and coeli becomes caeli. The September Alleluia lacks the final Alleluia by the explicit1862September source rubric at printed541, not by inference. No petition or chant words are otherwise inserted, omitted or replaced."
+encoding = "utf-8"
+indexable = true
+notes = "Only four unique complete Latin chant bodies. Separate1962 source controls distinguish Friday and September appointments and preserve their own pointing. No yearly or whole-formulary completeness, approved English, inherited pre1955 target attestation or new liturgical appointment is claimed."

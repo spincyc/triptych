@@ -1,0 +1,1846 @@
+{
+  "schema": "triptych-reviewed-latin-twelve-admission-adoption/v1",
+  "decision": "accepted-root-adoption-exact-reviewed-twelve-body-cohort",
+  "date": "2026-10-26",
+  "coordinator": "root",
+  "parent_commit": "f3f59d483358128e1b78d7a12aaeb4f3feab4a8a",
+  "composed_items_sha256": "34006983372a06d1a923097d25fb3fb4bea25fc44fb63891f8ea593ad9128681",
+  "component_install_manifest_sha256": "c746b5d929e6dbba1cefd55c54704cea2c3b95d0798876abd1ed5f232d458ce1",
+  "full_install_manifest_sha256": "9cd6a1e917427e47bb8fed8bfeb19770dd686869548ced24dcc7dde2eaa7e454",
+  "delivery_sha256": "b0e0a2d0988560d7fffc6d363cafd41ed8e1090744e389a34c80e9ba285a2b52",
+  "independent_receiving_review_sha256": "1c9d8b6f3140c72563a9983e4b0e47a9e37968fac7f703abc9ea8845ca95f08b",
+  "independent_source_review_and_rights_sha256": [
+    "073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e",
+    "3a62a0f9862811087f67a725bfc1bd4d4bf1afbbc3c70f9347a074cfd1380b17",
+    "4eaf34b3c279617bd759a2ea362ea3feacabddeb989502ad9a2edc261e6c603f",
+    "c3a62a101c88f4c5e05068dfd31c30f74864ec3747d3aeb8020ae66d2c1e089a",
+    "d82591596f919bc18834804124b9efbe0f81f383b4cceeb08583035d158b76b0",
+    "e5a5f112f2038307dd139eb7034cc318b0225fdc2b1b1afee48c502258772749",
+    "ea9081da08e7d5643ffea644baee05f15e3f8c6e14a8e61e883ef87a299cd26d",
+    "f81ada974640e768c7442f78d24a10cc252961fcc3d0a2ecd6c013a985f2d798"
+  ],
+  "root_seven_rights_adoption_sha256": "073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e",
+  "root_seven_rights_adoption": {
+    "schema": "triptych-coordinator-seven-specific-Latin-rights-adoption/v1",
+    "adopted_utc": "2026-10-26T03:14:54.602018+00:00",
+    "jurisdiction": "United States",
+    "status": "accepted-specific-defensible-basis-pending-canonical-publication-assembly-review",
+    "policy": "guidance/liturgical-text-publication-policy.md section1(6), with independently cleared preexisting prayer text and exactly measured insufficiently original contribution",
+    "scope": "Exactly seven body/target tuples in candidate-seven-bodies.json, with the accepted source receipts and stated conclusion/pointing qualifications; no automatic other words/targets/languages/forms.",
+    "judgment": "Adopt the independent, currently sourced limited originality analysis for the measured factual Doctor title, functional options/parentheses and specifically recorded conventional spelling/pointing changes on the independently verified full underlying prayers. These particular tiny functional contributions do not supply sufficient original expression to defeat the recorded preexisting public-domain foundation. This is a qualified project publication judgment, not a court finding or a universal short-word exemption.",
+    "mandatory_conditions": [
+      "Receiving exact whole bodies and actual target option unions must remain as controlled; historical single-option bodies are not whole modern target identity.",
+      "Keep all modern whole PDFs/images/scan wrappers and unrelated act/commentary outside this grant; retain only independently permitted bounded historical artifacts and separately cleared exact Latin derivatives.",
+      "The Philip/James title/approval/source identity condition is fulfilled only by the exact f81ada source receipt; no exact printing year or single registration is thereby invented.",
+      "Record both the preexisting public-domain witness and the specified contribution analysis explicitly in each source/provenance/publication basis; do not describe whole1946/1942/1955books as public domain.",
+      "Six Latin proof additions and exactly one replacement of AnthonyCollect removed row; retain prior removed/refusal history, all other Latin rows and all seven English gaps unless separately proved.",
+      "Joachim pointing correction is included; Genetricis/Genitricis and every conclusion projection must remain separately declared and controlled.",
+      "Independent assembled source/controller/rights/publication review and fresh strict source/code epoch remain required before canonical admission/push.",
+      "No English rights or source transfer, new inflection, source reconstruction, generic normalization, permission request or history rewrite."
+    ],
+    "decision_does_not_change_canonical_sources": true
+  },
+  "exact_body_admissions": [
+    {
+      "target": [
+        "s-antonii-padua-confessoris-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "key": {
+        "mass": "s-antonii-padua-confessoris-ecclesiae-doctoris",
+        "form": "",
+        "proper": "Postcommunion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "action": "append-exact-new-proof-owner",
+      "before_node": {
+        "name": "Postcommunion",
+        "source": "composed",
+        "notes": "Direct named appointment, printed p. 552, no. 2778, marked P; artifact PDF p. 633. Classification P describes the source origin, not the speaker or permission to publish its wording. See src/sources/inventories/roman-1962-named-oration-appointment-collation-v1.toml.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "before_row": null,
+      "before_body": null,
+      "before_latin": null,
+      "after_row": {
+        "mass": "s-antonii-padua-confessoris-ecclesiae-doctoris",
+        "form": "",
+        "proper": "Postcommunion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "ce4bddd814e9b99aee80ed02a901551ed8f949f13c48662f3c9d4c54770a0696",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-postcommunion",
+        "source_date": "2026-10-26 project editorial projection; complete1922Mame historical witness",
+        "locator": "Projectionphysical line1; Mame1922wholePDF731,printed617,rightupper,ownAnthonyPostcommunion; June13headingPDF730",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-postcommunion",
+        "verification_locator": "1962originalPDF633,printed552,unit2778,leftupper; ownJune13AnthonyPostcommunion; headingPDF632",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures",
+          "retain declared calendar consonantal-j orthography",
+          "preserve exact actual target conclusion stop",
+          "The only modern petition novelty is the factual honorific atque Doctoris after Confessoris tui; the actual received 1946 amendment and target control those words. The complete old Mame/Pustet prayer and literal Per Dominum. are independently witnessed. The target comma after ut is recorded pointing. No title is inserted into the historical transcription."
+        ],
+        "provenance_evidence": "Complete received target and complete oldsource were independently image-reviewed; exact currentbefore node and candidatebodyhash joined. Sourceactualcues remain unchanged in historicalTXT; targetprojection carries only actual receivedstop. The only modern petition novelty is the factual honorific atque Doctoris after Confessoris tui; the actual received 1946 amendment and target control those words. The complete old Mame/Pustet prayer and literal Per Dominum. are independently witnessed. The target comma after ut is recorded pointing. No title is inserted into the historical transcription.",
+        "provenance_authority": "Triptych independent complete source-image reviews of26October2026",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-historical-prayers",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-control-pages"
+        ],
+        "publication_locator": "Mame1922wholePDF731,printed617,rightupper,ownAnthonyPostcommunion; June13headingPDF730",
+        "publication_authority": "Triptych coordinator finite USbasis adoption of26October2026, decisionSHA256073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e",
+        "publication_evidence": "United States finite coordinator judgment adopted on 26 October 2026 under guidance/liturgical-text-publication-policy.md section 1(6), 17 U.S.C. 103(b), and the separately reviewed limited-originality analysis. Durable adoption record: workflows/reviews/missal-reader-completion-2026-10-26/latin-seven-rights-adoption.json (SHA256 073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e). The complete independently witnessed preexisting historical prayers remain public domain. Only the exactly measured factual atque Doctoris honorific, ordinary functional option words/parentheses, and recorded spelling, pointing and conclusion-prefix transformations are included. These particular tiny functional contributions were adopted as insufficiently original expression for these seven exact tuples. No universal short-word exemption, whole 1946 act, 1947 gazette, 1942 Benziger, later Lasance or 1962 Missal clearance is asserted. Project editorial layout alone is offered under CC BY 4.0; underlying Latin is excluded. Exact contribution: The only modern petition novelty is the factual honorific atque Doctoris after Confessoris tui; the actual received 1946 amendment and target control those words. The complete old Mame/Pustet prayer and literal Per Dominum. are independently witnessed. The target comma after ut is recorded pointing. No title is inserted into the historical transcription.",
+        "publication_retrieved": "2026-10-26",
+        "note": "Bounded exact seven-bodyadoption only. No English/source transfer, wholemodernbook/imageclearance, newappointment or annualcompleteness. Earlierremoved/refusalhistory is preserved."
+      },
+      "after_latin": "Divinis, Domine, muneribus satiati: quaesumus; ut, beati Antonii Confessoris tui atque Doctoris meritis et intercessione, salutaris sacrificii sentiamus effectum. Per Dominum.\n",
+      "after_body": {
+        "state": "present",
+        "body_sha256": "ce4bddd814e9b99aee80ed02a901551ed8f949f13c48662f3c9d4c54770a0696"
+      },
+      "source_group": "seven",
+      "historical_locator": "Mame1922wholePDF731,printed617,rightupper,ownAnthonyPostcommunion; June13headingPDF730",
+      "target_locator": "1962originalPDF633,printed552,unit2778,leftupper; ownJune13AnthonyPostcommunion; headingPDF632"
+    },
+    {
+      "target": [
+        "s-antonii-padua-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "key": {
+        "mass": "s-antonii-padua-confessoris-ecclesiae-doctoris",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "action": "restore-exact-removed-owner",
+      "before_node": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-1962"
+            }
+          ]
+        }
+      },
+      "before_row": {
+        "provenance_status": "unresolved",
+        "publication_status": "unresolved",
+        "publication_basis": "unresolved",
+        "surfaces": [],
+        "mass": "s-antonii-padua-confessoris-ecclesiae-doctoris",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "4750a85cade3e62f43bc0e1525aea460e04d09f94788450e2f1d911e5baab0dc",
+        "body_status": "removed"
+      },
+      "before_body": {
+        "state": "removed",
+        "body_sha256": null
+      },
+      "before_latin": null,
+      "after_row": {
+        "mass": "s-antonii-padua-confessoris-ecclesiae-doctoris",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "477fc3ccb5b28d6c984eb149d9150b2beac0f0c263bbf7fce39682f2e0ae505e",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-collect",
+        "source_date": "2026-10-26 project editorial projection; complete1922Mame historical witness",
+        "locator": "Projectionphysical line2; Mame1922wholePDF731,printed617,leftupper,ownAnthonyCollect; June13headingPDF730; MameIX17wholePDF54 and contiguous fullformulaPDF368",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-collect",
+        "verification_locator": "1962originalPDF632,printed551,unit2776,rightbottom; ownJune13AnthonyCollect and Doctorheading",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures",
+          "retain declared calendar consonantal-j orthography",
+          "preserve exact actual target conclusion stop",
+          "The only modern petition novelty is the factual honorific atque Doctoris. The old complete Mame Collect prints Per Dominum.; the actual target prints Per Dominum nostrum., whose exact three-word prefix is explicitly witnessed by Mame IX17. The received 1946 act prints Per D. and different pointing; neither the complete act nor a modern source text payload is redistributed."
+        ],
+        "provenance_evidence": "Complete received target and complete oldsource were independently image-reviewed; exact currentbefore node and candidatebodyhash joined. Sourceactualcues remain unchanged in historicalTXT; targetprojection carries only actual receivedstop. The only modern petition novelty is the factual honorific atque Doctoris. The old complete Mame Collect prints Per Dominum.; the actual target prints Per Dominum nostrum., whose exact three-word prefix is explicitly witnessed by Mame IX17. The received 1946 act prints Per D. and different pointing; neither the complete act nor a modern source text payload is redistributed.",
+        "provenance_authority": "Triptych independent complete source-image reviews of26October2026",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-historical-prayers",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-control-pages"
+        ],
+        "publication_locator": "Mame1922wholePDF731,printed617,leftupper,ownAnthonyCollect; June13headingPDF730; MameIX17wholePDF54 and contiguous fullformulaPDF368",
+        "publication_authority": "Triptych coordinator finite USbasis adoption of26October2026, decisionSHA256073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e",
+        "publication_evidence": "United States finite coordinator judgment adopted on 26 October 2026 under guidance/liturgical-text-publication-policy.md section 1(6), 17 U.S.C. 103(b), and the separately reviewed limited-originality analysis. Durable adoption record: workflows/reviews/missal-reader-completion-2026-10-26/latin-seven-rights-adoption.json (SHA256 073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e). The complete independently witnessed preexisting historical prayers remain public domain. Only the exactly measured factual atque Doctoris honorific, ordinary functional option words/parentheses, and recorded spelling, pointing and conclusion-prefix transformations are included. These particular tiny functional contributions were adopted as insufficiently original expression for these seven exact tuples. No universal short-word exemption, whole 1946 act, 1947 gazette, 1942 Benziger, later Lasance or 1962 Missal clearance is asserted. Project editorial layout alone is offered under CC BY 4.0; underlying Latin is excluded. Exact contribution: The only modern petition novelty is the factual honorific atque Doctoris. The old complete Mame Collect prints Per Dominum.; the actual target prints Per Dominum nostrum., whose exact three-word prefix is explicitly witnessed by Mame IX17. The received 1946 act prints Per D. and different pointing; neither the complete act nor a modern source text payload is redistributed.",
+        "publication_retrieved": "2026-10-26",
+        "note": "Bounded exact seven-bodyadoption only. No English/source transfer, wholemodernbook/imageclearance, newappointment or annualcompleteness. Earlierremoved/refusalhistory is preserved."
+      },
+      "after_latin": "Ecclesiam tuam, Deus, beati Antonii Confessoris tui atque Doctoris solemnitas votiva laetificet: ut spiritualibus semper muniatur auxiliis et gaudiis perfrui mereatur aeternis. Per Dominum nostrum.\n",
+      "after_body": {
+        "state": "present",
+        "body_sha256": "477fc3ccb5b28d6c984eb149d9150b2beac0f0c263bbf7fce39682f2e0ae505e"
+      },
+      "source_group": "seven",
+      "historical_locator": "Mame1922wholePDF731,printed617,leftupper,ownAnthonyCollect; June13headingPDF730; MameIX17wholePDF54 and contiguous fullformulaPDF368",
+      "target_locator": "1962originalPDF632,printed551,unit2776,rightbottom; ownJune13AnthonyCollect and Doctorheading"
+    },
+    {
+      "target": [
+        "s-iacobi-apostoli",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "key": {
+        "mass": "s-iacobi-apostoli",
+        "form": "",
+        "proper": "Postcommunion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "action": "append-exact-new-proof-owner",
+      "before_node": {
+        "name": "Postcommunion",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "before_row": null,
+      "before_body": null,
+      "before_latin": null,
+      "after_row": {
+        "mass": "s-iacobi-apostoli",
+        "form": "",
+        "proper": "Postcommunion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "93d45e7bbd858bbffdb581065cb4304d81ecb0e2c60626c805c8507f97817bcf",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-iacobi-apostoli-postcommunion",
+        "source_date": "2026-10-26 project editorial projection; complete1922Mame historical witness",
+        "locator": "Projectionphysical line3; Mame1922wholePDF783,printed669,leftcolumncontinuedJamesPostcommunion; ownJuly25headingPDF781,continuation782beforeChristopher/Anne; MameIX17wholePDF54 and contiguous fullformulaPDF368",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-seven-20261026-s-iacobi-apostoli-postcommunion",
+        "verification_locator": "1962originalPDF682,printed601,unit3170; ownJuly25JamesPostcommunion, distinctChristopher3171; headingPDF681",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures",
+          "retain declared calendar consonantal-j orthography",
+          "preserve exact actual target conclusion stop",
+          "The complete historical James Postcommunion has festivitate and the actual Per. cue. The target adds functional parenthetical commemoratione and prints Per Dominum nostrum.; that literal three-word prefix is independently printed at Mame IX17 and in the full formula on PDF368. No words are supplied from etc."
+        ],
+        "provenance_evidence": "Complete received target and complete oldsource were independently image-reviewed; exact currentbefore node and candidatebodyhash joined. Sourceactualcues remain unchanged in historicalTXT; targetprojection carries only actual receivedstop. The complete historical James Postcommunion has festivitate and the actual Per. cue. The target adds functional parenthetical commemoratione and prints Per Dominum nostrum.; that literal three-word prefix is independently printed at Mame IX17 and in the full formula on PDF368. No words are supplied from etc.",
+        "provenance_authority": "Triptych independent complete source-image reviews of26October2026",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-historical-prayers",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-control-pages"
+        ],
+        "publication_locator": "Mame1922wholePDF783,printed669,leftcolumncontinuedJamesPostcommunion; ownJuly25headingPDF781,continuation782beforeChristopher/Anne; MameIX17wholePDF54 and contiguous fullformulaPDF368",
+        "publication_authority": "Triptych coordinator finite USbasis adoption of26October2026, decisionSHA256073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e",
+        "publication_evidence": "United States finite coordinator judgment adopted on 26 October 2026 under guidance/liturgical-text-publication-policy.md section 1(6), 17 U.S.C. 103(b), and the separately reviewed limited-originality analysis. Durable adoption record: workflows/reviews/missal-reader-completion-2026-10-26/latin-seven-rights-adoption.json (SHA256 073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e). The complete independently witnessed preexisting historical prayers remain public domain. Only the exactly measured factual atque Doctoris honorific, ordinary functional option words/parentheses, and recorded spelling, pointing and conclusion-prefix transformations are included. These particular tiny functional contributions were adopted as insufficiently original expression for these seven exact tuples. No universal short-word exemption, whole 1946 act, 1947 gazette, 1942 Benziger, later Lasance or 1962 Missal clearance is asserted. Project editorial layout alone is offered under CC BY 4.0; underlying Latin is excluded. Exact contribution: The complete historical James Postcommunion has festivitate and the actual Per. cue. The target adds functional parenthetical commemoratione and prints Per Dominum nostrum.; that literal three-word prefix is independently printed at Mame IX17 and in the full formula on PDF368. No words are supplied from etc.",
+        "publication_retrieved": "2026-10-26",
+        "note": "Bounded exact seven-bodyadoption only. No English/source transfer, wholemodernbook/imageclearance, newappointment or annualcompleteness. Earlierremoved/refusalhistory is preserved."
+      },
+      "after_latin": "Beati Apostoli tui Jacobi, quaesumus, Domine, intercessione nos adjuva: pro cujus festivitate (commemoratione) percepimus tua sancta laetantes. Per Dominum nostrum.\n",
+      "after_body": {
+        "state": "present",
+        "body_sha256": "93d45e7bbd858bbffdb581065cb4304d81ecb0e2c60626c805c8507f97817bcf"
+      },
+      "source_group": "seven",
+      "historical_locator": "Mame1922wholePDF783,printed669,leftcolumncontinuedJamesPostcommunion; ownJuly25headingPDF781,continuation782beforeChristopher/Anne; MameIX17wholePDF54 and contiguous fullformulaPDF368",
+      "target_locator": "1962originalPDF682,printed601,unit3170; ownJuly25JamesPostcommunion, distinctChristopher3171; headingPDF681"
+    },
+    {
+      "target": [
+        "s-ioachim-patris-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "key": {
+        "mass": "s-ioachim-patris-beatae-mariae-virginis",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "action": "append-exact-new-proof-owner",
+      "before_node": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "before_row": null,
+      "before_body": null,
+      "before_latin": null,
+      "after_row": {
+        "mass": "s-ioachim-patris-beatae-mariae-virginis",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "091f3c414277631835619a17bc1b6cf748b113d23e91dcbe1a0bb389d5264431",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-ioachim-patris-beatae-mariae-virginis-collect",
+        "source_date": "2026-10-26 project editorial projection; complete1922Mame historical witness",
+        "locator": "Projectionphysical line4; Mame1922wholePDF807,printed693,ownAugust16JoachimCollect andheading",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-seven-20261026-s-ioachim-patris-beatae-mariae-virginis-collect",
+        "verification_locator": "1962originalPDF709,printed628,unit3389; ownAugust16JoachimCollect and completeheading",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures",
+          "retain declared calendar consonantal-j orthography",
+          "preserve exact actual target conclusion stop",
+          "The historical Joachim Collect prints Genitricis and festa without the modern parenthetical memoriam; the actual target prints Genetricis and festa (memoriam). The received genitive spelling is recorded separately from the ordinary option. Source and target both print a comma after ut; the false contrary explanatory sentence was withdrawn. The actual Per eundem Dominum. agrees."
+        ],
+        "provenance_evidence": "Complete received target and complete oldsource were independently image-reviewed; exact currentbefore node and candidatebodyhash joined. Sourceactualcues remain unchanged in historicalTXT; targetprojection carries only actual receivedstop. The historical Joachim Collect prints Genitricis and festa without the modern parenthetical memoriam; the actual target prints Genetricis and festa (memoriam). The received genitive spelling is recorded separately from the ordinary option. Source and target both print a comma after ut; the false contrary explanatory sentence was withdrawn. The actual Per eundem Dominum. agrees.",
+        "provenance_authority": "Triptych independent complete source-image reviews of26October2026",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-historical-prayers",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-control-pages"
+        ],
+        "publication_locator": "Mame1922wholePDF807,printed693,ownAugust16JoachimCollect andheading",
+        "publication_authority": "Triptych coordinator finite USbasis adoption of26October2026, decisionSHA256073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e",
+        "publication_evidence": "United States finite coordinator judgment adopted on 26 October 2026 under guidance/liturgical-text-publication-policy.md section 1(6), 17 U.S.C. 103(b), and the separately reviewed limited-originality analysis. Durable adoption record: workflows/reviews/missal-reader-completion-2026-10-26/latin-seven-rights-adoption.json (SHA256 073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e). The complete independently witnessed preexisting historical prayers remain public domain. Only the exactly measured factual atque Doctoris honorific, ordinary functional option words/parentheses, and recorded spelling, pointing and conclusion-prefix transformations are included. These particular tiny functional contributions were adopted as insufficiently original expression for these seven exact tuples. No universal short-word exemption, whole 1946 act, 1947 gazette, 1942 Benziger, later Lasance or 1962 Missal clearance is asserted. Project editorial layout alone is offered under CC BY 4.0; underlying Latin is excluded. Exact contribution: The historical Joachim Collect prints Genitricis and festa without the modern parenthetical memoriam; the actual target prints Genetricis and festa (memoriam). The received genitive spelling is recorded separately from the ordinary option. Source and target both print a comma after ut; the false contrary explanatory sentence was withdrawn. The actual Per eundem Dominum. agrees.",
+        "publication_retrieved": "2026-10-26",
+        "note": "Bounded exact seven-bodyadoption only. No English/source transfer, wholemodernbook/imageclearance, newappointment or annualcompleteness. Earlierremoved/refusalhistory is preserved."
+      },
+      "after_latin": "Deus, qui prae omnibus Sanctis tuis beatum Joachim Genetricis Filii tui patrem esse voluisti: concede, quaesumus; ut, cujus festa (memoriam) veneramur, ejus quoque perpetuo patrocinia sentiamus. Per eundem Dominum.\n",
+      "after_body": {
+        "state": "present",
+        "body_sha256": "091f3c414277631835619a17bc1b6cf748b113d23e91dcbe1a0bb389d5264431"
+      },
+      "source_group": "seven",
+      "historical_locator": "Mame1922wholePDF807,printed693,ownAugust16JoachimCollect andheading",
+      "target_locator": "1962originalPDF709,printed628,unit3389; ownAugust16JoachimCollect and completeheading"
+    },
+    {
+      "target": [
+        "s-bartholomaei-apostoli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "key": {
+        "mass": "s-bartholomaei-apostoli",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "action": "append-exact-new-proof-owner",
+      "before_node": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "before_row": null,
+      "before_body": null,
+      "before_latin": null,
+      "after_row": {
+        "mass": "s-bartholomaei-apostoli",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "7a241de028830373fc873e86baa38df7e792cec6aeb1314b2d5b934a3a035acd",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-bartholomaei-apostoli-collect",
+        "source_date": "2026-10-26 project editorial projection; complete1922Mame historical witness",
+        "locator": "Projectionphysical line5; Mame1922wholePDF812,printed698,rightcolumn,ownAugust24BartholomewCollect",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-seven-20261026-s-bartholomaei-apostoli-collect",
+        "verification_locator": "1962originalPDF716,printed635,unit3445; ownAugust24BartholomewCollect,rightcolumn",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures",
+          "retain declared calendar consonantal-j orthography",
+          "preserve exact actual target conclusion stop",
+          "The complete historical Bartholomew Collect prints festivitate without modern parenthetical commemoratione. The target adds only that functional option and a comma after credidit. Both actual images have a colon after tribuisti. The entire remaining petition and actual Per Dominum. agree."
+        ],
+        "provenance_evidence": "Complete received target and complete oldsource were independently image-reviewed; exact currentbefore node and candidatebodyhash joined. Sourceactualcues remain unchanged in historicalTXT; targetprojection carries only actual receivedstop. The complete historical Bartholomew Collect prints festivitate without modern parenthetical commemoratione. The target adds only that functional option and a comma after credidit. Both actual images have a colon after tribuisti. The entire remaining petition and actual Per Dominum. agree.",
+        "provenance_authority": "Triptych independent complete source-image reviews of26October2026",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-historical-prayers",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-control-pages"
+        ],
+        "publication_locator": "Mame1922wholePDF812,printed698,rightcolumn,ownAugust24BartholomewCollect",
+        "publication_authority": "Triptych coordinator finite USbasis adoption of26October2026, decisionSHA256073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e",
+        "publication_evidence": "United States finite coordinator judgment adopted on 26 October 2026 under guidance/liturgical-text-publication-policy.md section 1(6), 17 U.S.C. 103(b), and the separately reviewed limited-originality analysis. Durable adoption record: workflows/reviews/missal-reader-completion-2026-10-26/latin-seven-rights-adoption.json (SHA256 073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e). The complete independently witnessed preexisting historical prayers remain public domain. Only the exactly measured factual atque Doctoris honorific, ordinary functional option words/parentheses, and recorded spelling, pointing and conclusion-prefix transformations are included. These particular tiny functional contributions were adopted as insufficiently original expression for these seven exact tuples. No universal short-word exemption, whole 1946 act, 1947 gazette, 1942 Benziger, later Lasance or 1962 Missal clearance is asserted. Project editorial layout alone is offered under CC BY 4.0; underlying Latin is excluded. Exact contribution: The complete historical Bartholomew Collect prints festivitate without modern parenthetical commemoratione. The target adds only that functional option and a comma after credidit. Both actual images have a colon after tribuisti. The entire remaining petition and actual Per Dominum. agree.",
+        "publication_retrieved": "2026-10-26",
+        "note": "Bounded exact seven-bodyadoption only. No English/source transfer, wholemodernbook/imageclearance, newappointment or annualcompleteness. Earlierremoved/refusalhistory is preserved."
+      },
+      "after_latin": "Omnipotens sempiterne Deus, qui hujus diei venerandam sanctamque laetitiam in beati Apostoli tui Bartholomaei festivitate (commemoratione) tribuisti: da Ecclesiae tuae, quaesumus; et amare quod credidit, et praedicare quod docuit. Per Dominum.\n",
+      "after_body": {
+        "state": "present",
+        "body_sha256": "7a241de028830373fc873e86baa38df7e792cec6aeb1314b2d5b934a3a035acd"
+      },
+      "source_group": "seven",
+      "historical_locator": "Mame1922wholePDF812,printed698,rightcolumn,ownAugust24BartholomewCollect",
+      "target_locator": "1962originalPDF716,printed635,unit3445; ownAugust24BartholomewCollect,rightcolumn"
+    },
+    {
+      "target": [
+        "s-bartholomaei-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "key": {
+        "mass": "s-bartholomaei-apostoli",
+        "form": "",
+        "proper": "Secret",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "action": "append-exact-new-proof-owner",
+      "before_node": {
+        "name": "Secret",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "before_row": null,
+      "before_body": null,
+      "before_latin": null,
+      "after_row": {
+        "mass": "s-bartholomaei-apostoli",
+        "form": "",
+        "proper": "Secret",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "42ee32c39e4ab1e22e48758d436aa9caf10e593ea4fe24dabc950df8fb6b5cbe",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-bartholomaei-apostoli-secret",
+        "source_date": "2026-10-26 project editorial projection; complete1922Mame historical witness",
+        "locator": "Projectionphysical line6; Mame1922wholePDF813,printed699,rightcolumn,completeownBartholomewSecret; headingPDF812; MameIX17wholePDF54 and contiguous fullformulaPDF368",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-seven-20261026-s-bartholomaei-apostoli-secret",
+        "verification_locator": "1962originalPDF717,printed636,unit3451; ownAugust24BartholomewSecret,leftfoot-to-righttop",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures",
+          "retain declared calendar consonantal-j orthography",
+          "preserve exact actual target conclusion stop",
+          "The complete historical Bartholomew Secret prints solemnia without parenthetical memoriam and has the actual Per Dominum. cue. The target adds the ordinary functional option and an independently controlled contiguous long conclusion prefix through regnat, printed in Mame PDF368; the target comma after Christum is pointing. No words after the actual target stop or separate Amen response are imported."
+        ],
+        "provenance_evidence": "Complete received target and complete oldsource were independently image-reviewed; exact currentbefore node and candidatebodyhash joined. Sourceactualcues remain unchanged in historicalTXT; targetprojection carries only actual receivedstop. The complete historical Bartholomew Secret prints solemnia without parenthetical memoriam and has the actual Per Dominum. cue. The target adds the ordinary functional option and an independently controlled contiguous long conclusion prefix through regnat, printed in Mame PDF368; the target comma after Christum is pointing. No words after the actual target stop or separate Amen response are imported.",
+        "provenance_authority": "Triptych independent complete source-image reviews of26October2026",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-historical-prayers",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-control-pages"
+        ],
+        "publication_locator": "Mame1922wholePDF813,printed699,rightcolumn,completeownBartholomewSecret; headingPDF812; MameIX17wholePDF54 and contiguous fullformulaPDF368",
+        "publication_authority": "Triptych coordinator finite USbasis adoption of26October2026, decisionSHA256073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e",
+        "publication_evidence": "United States finite coordinator judgment adopted on 26 October 2026 under guidance/liturgical-text-publication-policy.md section 1(6), 17 U.S.C. 103(b), and the separately reviewed limited-originality analysis. Durable adoption record: workflows/reviews/missal-reader-completion-2026-10-26/latin-seven-rights-adoption.json (SHA256 073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e). The complete independently witnessed preexisting historical prayers remain public domain. Only the exactly measured factual atque Doctoris honorific, ordinary functional option words/parentheses, and recorded spelling, pointing and conclusion-prefix transformations are included. These particular tiny functional contributions were adopted as insufficiently original expression for these seven exact tuples. No universal short-word exemption, whole 1946 act, 1947 gazette, 1942 Benziger, later Lasance or 1962 Missal clearance is asserted. Project editorial layout alone is offered under CC BY 4.0; underlying Latin is excluded. Exact contribution: The complete historical Bartholomew Secret prints solemnia without parenthetical memoriam and has the actual Per Dominum. cue. The target adds the ordinary functional option and an independently controlled contiguous long conclusion prefix through regnat, printed in Mame PDF368; the target comma after Christum is pointing. No words after the actual target stop or separate Amen response are imported.",
+        "publication_retrieved": "2026-10-26",
+        "note": "Bounded exact seven-bodyadoption only. No English/source transfer, wholemodernbook/imageclearance, newappointment or annualcompleteness. Earlierremoved/refusalhistory is preserved."
+      },
+      "after_latin": "Beati Apostoli tui Bartholomaei solemnia (memoriam) recensentes, quaesumus, Domine: ut ejus auxilio tua beneficia capiamus, pro quo tibi laudis hostias immolamus. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat.\n",
+      "after_body": {
+        "state": "present",
+        "body_sha256": "42ee32c39e4ab1e22e48758d436aa9caf10e593ea4fe24dabc950df8fb6b5cbe"
+      },
+      "source_group": "seven",
+      "historical_locator": "Mame1922wholePDF813,printed699,rightcolumn,completeownBartholomewSecret; headingPDF812; MameIX17wholePDF54 and contiguous fullformulaPDF368",
+      "target_locator": "1962originalPDF717,printed636,unit3451; ownAugust24BartholomewSecret,leftfoot-to-righttop"
+    },
+    {
+      "target": [
+        "ss-philippi-iacobi-apostolorum",
+        "main",
+        "Collect",
+        "all",
+        2
+      ],
+      "key": {
+        "mass": "ss-philippi-iacobi-apostolorum",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 2
+      },
+      "action": "append-exact-new-proof-owner",
+      "before_node": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        },
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "own-collect",
+          "option": "outside-paschal",
+          "basis": "The controlling 1962 Missal, artifact pp. 605-607, prints mutually exclusive Tempore paschali and Extra tempus paschale appointments.",
+          "anchor": {
+            "mass": "ss-philippi-iacobi-apostolorum",
+            "form_id": "main",
+            "proper": "Collect",
+            "occurrence": 1
+          },
+          "when": {
+            "fact": "roman-1962-common-chant-regime",
+            "in": [
+              "advent",
+              "regular",
+              "tract"
+            ]
+          }
+        }
+      },
+      "before_row": null,
+      "before_body": null,
+      "before_latin": null,
+      "after_row": {
+        "mass": "ss-philippi-iacobi-apostolorum",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 2,
+        "text_sha256": "d501d42fdc12584740a5f9f42844705335ff64d181f58b91c51506b54e056b87",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-ss-philippi-iacobi-apostolorum-collect-2",
+        "source_date": "2026-10-26 project editorial projection; completeBenziger1942/1944historicalsingleoptionwitness",
+        "locator": "Projectionphysical line7; BenzigerNewYorkeditioIV,copyright1942/1944,fullPDF637/printed563,leftcolumn,ownoutside-PaschalvotivePhilipJamesCollect; title/copyright/approvalPDF1-4 independentlyreviewed",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-seven-20261026-ss-philippi-iacobi-apostolorum-collect-2",
+        "verification_locator": "1962originalPDF606,printed525,unit2559,rightbottom; outside-PaschalCollectoccurrence2; namedheading/annualCollect2550on605 andcontinuation607",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures",
+          "retain declared calendar consonantal-j orthography",
+          "preserve exact actual target conclusion stop",
+          "The complete historical outside-Paschal Philip/James Collect has no annua and the single choice commemoratione, with complete Per Dominum nostrum. The target union adds ordinary solemnitate plus functional parentheses. This exact historical single-option body is not a literal union witness. Source Jacobi and target Iacobi are declared consonantal orthography; no annua deletion or prayer reconstruction occurs."
+        ],
+        "provenance_evidence": "Complete received target and complete oldsource were independently image-reviewed; exact currentbefore node and candidatebodyhash joined. Sourceactualcues remain unchanged in historicalTXT; targetprojection carries only actual receivedstop. The complete historical outside-Paschal Philip/James Collect has no annua and the single choice commemoratione, with complete Per Dominum nostrum. The target union adds ordinary solemnitate plus functional parentheses. This exact historical single-option body is not a literal union witness. Source Jacobi and target Iacobi are declared consonantal orthography; no annua deletion or prayer reconstruction occurs.",
+        "provenance_authority": "Triptych independent complete source-image reviews of26October2026",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026",
+          "artifact.catholic-church.missale-romanum.unidentified-pre-1955-witness-ia-1947.latin-seven-20261026-philip-historical-prayer"
+        ],
+        "publication_locator": "BenzigerNewYorkeditioIV,copyright1942/1944,fullPDF637/printed563,leftcolumn,ownoutside-PaschalvotivePhilipJamesCollect; title/copyright/approvalPDF1-4 independentlyreviewed",
+        "publication_authority": "Triptych coordinator finite USbasis adoption of26October2026, decisionSHA256073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e",
+        "publication_evidence": "United States finite coordinator judgment adopted on 26 October 2026 under guidance/liturgical-text-publication-policy.md section 1(6), 17 U.S.C. 103(b), and the separately reviewed limited-originality analysis. Durable adoption record: workflows/reviews/missal-reader-completion-2026-10-26/latin-seven-rights-adoption.json (SHA256 073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e). The complete independently witnessed preexisting historical prayers remain public domain. Only the exactly measured factual atque Doctoris honorific, ordinary functional option words/parentheses, and recorded spelling, pointing and conclusion-prefix transformations are included. These particular tiny functional contributions were adopted as insufficiently original expression for these seven exact tuples. No universal short-word exemption, whole 1946 act, 1947 gazette, 1942 Benziger, later Lasance or 1962 Missal clearance is asserted. Project editorial layout alone is offered under CC BY 4.0; underlying Latin is excluded. Exact contribution: The complete historical outside-Paschal Philip/James Collect has no annua and the single choice commemoratione, with complete Per Dominum nostrum. The target union adds ordinary solemnitate plus functional parentheses. This exact historical single-option body is not a literal union witness. Source Jacobi and target Iacobi are declared consonantal orthography; no annua deletion or prayer reconstruction occurs.",
+        "publication_retrieved": "2026-10-26",
+        "note": "Bounded exact seven-bodyadoption only. No English/source transfer, wholemodernbook/imageclearance, newappointment or annualcompleteness. Earlierremoved/refusalhistory is preserved."
+      },
+      "after_latin": "Deus, qui nos Apostolorum tuorum Philippi et Jacobi solemnitate (commemoratione) laetificas: praesta, quaesumus; ut, quorum gaudemus meritis, instruamur exemplis. Per Dominum nostrum.\n",
+      "after_body": {
+        "state": "present",
+        "body_sha256": "d501d42fdc12584740a5f9f42844705335ff64d181f58b91c51506b54e056b87"
+      },
+      "source_group": "seven",
+      "historical_locator": "BenzigerNewYorkeditioIV,copyright1942/1944,fullPDF637/printed563,leftcolumn,ownoutside-PaschalvotivePhilipJamesCollect; title/copyright/approvalPDF1-4 independentlyreviewed",
+      "target_locator": "1962originalPDF606,printed525,unit2559,rightbottom; outside-PaschalCollectoccurrence2; namedheading/annualCollect2550on605 andcontinuation607"
+    },
+    {
+      "target": [
+        "advent-ember-wednesday",
+        "main",
+        "Oratio",
+        "all",
+        1
+      ],
+      "key": {
+        "mass": "advent-ember-wednesday",
+        "form": "",
+        "proper": "Oratio",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "action": "append-exact-new-proof-owner",
+      "before_node": {
+        "name": "Oratio",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, artifact p. 87, printed p. 6, unit 35: a second normal Oratio follows the first Gradual and precedes the second Lesson. Its body remains unavailable."
+      },
+      "before_row": null,
+      "before_body": null,
+      "before_latin": null,
+      "after_row": {
+        "mass": "advent-ember-wednesday",
+        "form": "",
+        "proper": "Oratio",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "74e442a42a44911f7dcfddf187a9ca60803e4cf8cd1eb0dd12e989bbc8d9e20a",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.advent-ember-wednesday-oratio",
+        "source_date": "2026-10-26 project editorial projection; complete Mame Tours 1922 page-image witness",
+        "locator": "Editorial projection physical line 1; Mame Tours 1922 original PDF 122, printed p. 8; Feria IV Quatuor Temporum Adventus; second Oratio, right column, after Tollite portas Graduale and before Lectio Isaiae7:10-15; not first Praesta Collect atleft.",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-five-advent-ember-wednesday-oratio-20261026",
+        "verification_locator": "Missale Romanum 1962 original PDF 87, printed p. 6, numbered unit 35; Second normal Oratio following Graduale34 and before Lesson36; starts left column bottom and continues right column top.",
+        "transformations": [
+          "join physical line wraps and division hyphens",
+          "remove stress accents",
+          "expand ae/oe ligatures",
+          "retain calendar consonantal-j orthography",
+          "apply actual target pointing",
+          "carry only the actual target printed conclusion stop",
+          "use only separately cited literal historical conclusion controls and own prayer cue for the exact longer target prefix"
+        ],
+        "provenance_evidence": "The immutable native projection passage reproduces the complete accepted one-line + LF body hash exactly. Source producer and independent reviewer read whole historical and target prayers on page images; separate mechanical review checked every source/raster pin, exact historical lines, five complete petition token sequences and current before-node/English-absence joins. Stress accents, ae ligatures, decorative capitalization and printed line wraps normalized as declared. Mame prints shorter Qui vivis. cue;1962 prints Qui vivis et regnas cum Deo Patre in unitate. That precise prefix is independently printed atMame PDF 115; no petition word changes. Complete petition has no substantive word difference. Historical actual short conclusion remains in the separate historical artifact. This row supplies only the normal additional Oratio; no first Collect, Oratio super populum, adjacent Lesson or chant is imported.",
+        "provenance_authority": "Triptych editorial projection verified by independent complete source and target page-image collation",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.latin-five-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-pages-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026"
+        ],
+        "publication_locator": "Mame Tours 1922 original PDF 122, printed p. 8; Feria IV Quatuor Temporum Adventus; second Oratio, right column, after Tollite portas Graduale and before Lectio Isaiae7:10-15; not first Praesta Collect atleft.; finite conclusion controls originalMame PDF 54/115/368 where specifically identified",
+        "publication_evidence": "Every complete historical petition word is independently witnessed in the exact registered U.S. public-domain Mame Tours 1922 printing. The historical TXT preserves actual abbreviated conclusions and received eumdem. Longer target prefixes are separately supported literally by the accepted Mame conclusion controls; no generic expansion or model reconstruction is used. Accepted source-only review applies the repository 17 USC 103(b) plus independent public-domain-witness basis, with accurate current elapsed-term rationale and no pre-1996 expiry assertion. Stress accents, ae ligatures, decorative capitalization and printed line wraps normalized as declared. Mame prints shorter Qui vivis. cue;1962 prints Qui vivis et regnas cum Deo Patre in unitate. That precise prefix is independently printed atMame PDF 115; no petition word changes. Complete petition has no substantive word difference. Historical actual short conclusion remains in the separate historical artifact. This row supplies only the normal additional Oratio; no first Collect, Oratio super populum, adjacent Lesson or chant is imported."
+      },
+      "after_latin": "Festina, quaesumus, Domine, ne tardaveris, et auxilium nobis supernae virtutis impende: ut adventus tui consolationibus subleventur, qui in tua pietate confidunt: Qui vivis et regnas cum Deo Patre in unitate.\n",
+      "after_body": {
+        "state": "present",
+        "body_sha256": "74e442a42a44911f7dcfddf187a9ca60803e4cf8cd1eb0dd12e989bbc8d9e20a"
+      },
+      "source_group": "five",
+      "historical_locator": "Mame Tours 1922 original PDF 122, printed p. 8; Feria IV Quatuor Temporum Adventus; second Oratio, right column, after Tollite portas Graduale and before Lectio Isaiae7:10-15; not first Praesta Collect atleft.; finite conclusion controls originalMame PDF 54/115/368 where specifically identified",
+      "target_locator": "Missale Romanum 1962 original PDF 87, printed p. 6, numbered unit 35; Second normal Oratio following Graduale34 and before Lesson36; starts left column bottom and continues right column top."
+    },
+    {
+      "target": [
+        "lent-4-wednesday",
+        "main",
+        "Oratio",
+        "all",
+        1
+      ],
+      "key": {
+        "mass": "lent-4-wednesday",
+        "form": "",
+        "proper": "Oratio",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "action": "append-exact-new-proof-owner",
+      "before_node": {
+        "name": "Oratio",
+        "incipit": "Praesta, quaesumus, omnipotens Deus",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, printed p. 110, numbered text 712; artifact PDF p. 191. The normal formulary appoints this prayer; its complete Latin body has not been collated to a publication witness."
+      },
+      "before_row": null,
+      "before_body": null,
+      "before_latin": null,
+      "after_row": {
+        "mass": "lent-4-wednesday",
+        "form": "",
+        "proper": "Oratio",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "ee7635bba04e873cde6b057fe1169f44d69d19b8e2607e9d6682e03f7454ae38",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.lent-4-wednesday-oratio",
+        "source_date": "2026-10-26 project editorial projection; complete Mame Tours 1922 page-image witness",
+        "locator": "Editorial projection physical line 2; Mame Tours 1922 original PDF 253, printed p. 139; Feria IV post Dominicam IV Quadragesimae; second Oratio, right column middle, after Venite filii Graduale and before Lectio Isaiae1:16-19; not first Deus qui et justis Collect atleft.",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-five-lent-4-wednesday-oratio-20261026",
+        "verification_locator": "Missale Romanum 1962 original PDF 191, printed p. 110, numbered unit 712; Second normal Oratio after Graduale711 and before Lesson713; left column lower half.",
+        "transformations": [
+          "join physical line wraps and division hyphens",
+          "remove stress accents",
+          "expand ae/oe ligatures",
+          "retain calendar consonantal-j orthography",
+          "apply actual target pointing",
+          "carry only the actual target printed conclusion stop"
+        ],
+        "provenance_evidence": "The immutable native projection passage reproduces the complete accepted one-line + LF body hash exactly. Source producer and independent reviewer read whole historical and target prayers on page images; separate mechanical review checked every source/raster pin, exact historical lines, five complete petition token sequences and current before-node/English-absence joins. Stress accents, ae ligatures, decorative capitalization and printed line wraps normalized as declared. Mame jejunia versus1962 ieiunia follows the calendar's declared j orthography; all petition and conclusion words agree. Complete petition has no substantive word difference. Historical actual short conclusion remains in the separate historical artifact. This row supplies only the normal additional Oratio; no first Collect, Oratio super populum, adjacent Lesson or chant is imported.",
+        "provenance_authority": "Triptych editorial projection verified by independent complete source and target page-image collation",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.latin-five-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-pages-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026"
+        ],
+        "publication_locator": "Mame Tours 1922 original PDF 253, printed p. 139; Feria IV post Dominicam IV Quadragesimae; second Oratio, right column middle, after Venite filii Graduale and before Lectio Isaiae1:16-19; not first Deus qui et justis Collect atleft.; finite conclusion controls originalMame PDF 54/115/368 where specifically identified",
+        "publication_evidence": "Every complete historical petition word is independently witnessed in the exact registered U.S. public-domain Mame Tours 1922 printing. The historical TXT preserves actual abbreviated conclusions and received eumdem. Longer target prefixes are separately supported literally by the accepted Mame conclusion controls; no generic expansion or model reconstruction is used. Accepted source-only review applies the repository 17 USC 103(b) plus independent public-domain-witness basis, with accurate current elapsed-term rationale and no pre-1996 expiry assertion. Stress accents, ae ligatures, decorative capitalization and printed line wraps normalized as declared. Mame jejunia versus1962 ieiunia follows the calendar's declared j orthography; all petition and conclusion words agree. Complete petition has no substantive word difference. Historical actual short conclusion remains in the separate historical artifact. This row supplies only the normal additional Oratio; no first Collect, Oratio super populum, adjacent Lesson or chant is imported."
+      },
+      "after_latin": "Praesta, quaesumus, omnipotens Deus: ut, quos jejunia votiva castigant, ipsa quoque devotio sancta laetificet; ut, terrenis affectibus mitigatis, facilius caelestia capiamus. Per Dominum.\n",
+      "after_body": {
+        "state": "present",
+        "body_sha256": "ee7635bba04e873cde6b057fe1169f44d69d19b8e2607e9d6682e03f7454ae38"
+      },
+      "source_group": "five",
+      "historical_locator": "Mame Tours 1922 original PDF 253, printed p. 139; Feria IV post Dominicam IV Quadragesimae; second Oratio, right column middle, after Venite filii Graduale and before Lectio Isaiae1:16-19; not first Deus qui et justis Collect atleft.; finite conclusion controls originalMame PDF 54/115/368 where specifically identified",
+      "target_locator": "Missale Romanum 1962 original PDF 191, printed p. 110, numbered unit 712; Second normal Oratio after Graduale711 and before Lesson713; left column lower half."
+    },
+    {
+      "target": [
+        "holy-wednesday",
+        "main",
+        "Oratio",
+        "all",
+        1
+      ],
+      "key": {
+        "mass": "holy-wednesday",
+        "form": "",
+        "proper": "Oratio",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "action": "append-exact-new-proof-owner",
+      "before_node": {
+        "name": "Oratio",
+        "incipit": "Deus, qui pro nobis",
+        "source": "composed",
+        "notes": "Missale Romanum 1962, artifact p. 228, printed p. 147, numbered unit 882; source-established normal appointment. Printed after Graduale881 and before the second Lesson883. Exact wording remains unavailable in this record.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        }
+      },
+      "before_row": null,
+      "before_body": null,
+      "before_latin": null,
+      "after_row": {
+        "mass": "holy-wednesday",
+        "form": "",
+        "proper": "Oratio",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "a1ba771e3c018e3ae52224e1c440e2b97e0e3361c80e8558cb87297b1b7debc2",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.holy-wednesday-oratio",
+        "source_date": "2026-10-26 project editorial projection; complete Mame Tours 1922 page-image witness",
+        "locator": "Editorial projection physical line 3; Mame Tours 1922 original PDF 307, printed p. 193; Feria IV Majoris Hebdomadae; second Oratio, right column top, after Ne avertas Graduale and before Lectio Isaiae53:1-12; not first Praesta qui nostris excessibus Collect on precedingpage.",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-five-holy-wednesday-oratio-20261026",
+        "verification_locator": "Missale Romanum 1962 original PDF 228, printed p. 147, numbered unit 882; Numbered normal Oratio after Graduale881 and before Lesson883; right column lower half.",
+        "transformations": [
+          "join physical line wraps and division hyphens",
+          "remove stress accents",
+          "expand ae/oe ligatures",
+          "retain calendar consonantal-j orthography",
+          "apply actual target pointing",
+          "carry only the actual target printed conclusion stop",
+          "historical eumdem to actual target eundem received spelling"
+        ],
+        "provenance_evidence": "The immutable native projection passage reproduces the complete accepted one-line + LF body hash exactly. Source producer and independent reviewer read whole historical and target prayers on page images; separate mechanical review checked every source/raster pin, exact historical lines, five complete petition token sequences and current before-node/English-absence joins. Stress accents, decorative capitalization and printed line wraps normalized as declared. Mame conclusion prints eumdem;1962 prints eundem. This received spelling variation is disclosed; no noun, verb, clause or petition changes. Holy Week placement supplies no publication right by itself. The whole petition and conclusion stand independently in1922 before the1955 reform. Complete petition has no substantive word difference. Historical actual short conclusion remains in the separate historical artifact. This row supplies only the normal additional Oratio; no first Collect, Oratio super populum, adjacent Lesson or chant is imported.",
+        "provenance_authority": "Triptych editorial projection verified by independent complete source and target page-image collation",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.latin-five-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-pages-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026"
+        ],
+        "publication_locator": "Mame Tours 1922 original PDF 307, printed p. 193; Feria IV Majoris Hebdomadae; second Oratio, right column top, after Ne avertas Graduale and before Lectio Isaiae53:1-12; not first Praesta qui nostris excessibus Collect on precedingpage.; finite conclusion controls originalMame PDF 54/115/368 where specifically identified",
+        "publication_evidence": "Every complete historical petition word is independently witnessed in the exact registered U.S. public-domain Mame Tours 1922 printing. The historical TXT preserves actual abbreviated conclusions and received eumdem. Longer target prefixes are separately supported literally by the accepted Mame conclusion controls; no generic expansion or model reconstruction is used. Accepted source-only review applies the repository 17 USC 103(b) plus independent public-domain-witness basis, with accurate current elapsed-term rationale and no pre-1996 expiry assertion. Stress accents, decorative capitalization and printed line wraps normalized as declared. Mame conclusion prints eumdem;1962 prints eundem. This received spelling variation is disclosed; no noun, verb, clause or petition changes. Holy Week placement supplies no publication right by itself. The whole petition and conclusion stand independently in1922 before the1955 reform. Complete petition has no substantive word difference. Historical actual short conclusion remains in the separate historical artifact. This row supplies only the normal additional Oratio; no first Collect, Oratio super populum, adjacent Lesson or chant is imported."
+      },
+      "after_latin": "Deus, qui pro nobis Filium tuum crucis patibulum subire voluisti, ut inimici a nobis expelleres potestatem: concede nobis famulis tuis; ut resurrectionis gratiam consequamur. Per eundem Dominum.\n",
+      "after_body": {
+        "state": "present",
+        "body_sha256": "a1ba771e3c018e3ae52224e1c440e2b97e0e3361c80e8558cb87297b1b7debc2"
+      },
+      "source_group": "five",
+      "historical_locator": "Mame Tours 1922 original PDF 307, printed p. 193; Feria IV Majoris Hebdomadae; second Oratio, right column top, after Ne avertas Graduale and before Lectio Isaiae53:1-12; not first Praesta qui nostris excessibus Collect on precedingpage.; finite conclusion controls originalMame PDF 54/115/368 where specifically identified",
+      "target_locator": "Missale Romanum 1962 original PDF 228, printed p. 147, numbered unit 882; Numbered normal Oratio after Graduale881 and before Lesson883; right column lower half."
+    },
+    {
+      "target": [
+        "pentecost-ember-wednesday",
+        "main",
+        "Oratio",
+        "all",
+        1
+      ],
+      "key": {
+        "mass": "pentecost-ember-wednesday",
+        "form": "",
+        "proper": "Oratio",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "action": "append-exact-new-proof-owner",
+      "before_node": {
+        "name": "Oratio",
+        "incipit": "Praesta, quaesumus, omnipotens",
+        "source": "composed",
+        "notes": "Missale Romanum 1962, artifact p. 443, printed p. 362, numbered unit 1344; source-established normal appointment. Printed after the first Alleluia1343 and before the second Lesson1345. Exact wording remains unavailable in this record.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        }
+      },
+      "before_row": null,
+      "before_body": null,
+      "before_latin": null,
+      "after_row": {
+        "mass": "pentecost-ember-wednesday",
+        "form": "",
+        "proper": "Oratio",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "50c254fdba0b7ab1379e983f91442a97976993da9b2ff1e9842cea044dac1175",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.pentecost-ember-wednesday-oratio",
+        "source_date": "2026-10-26 project editorial projection; complete Mame Tours 1922 page-image witness",
+        "locator": "Editorial projection physical line 4; Mame Tours 1922 original PDF 519, printed p. 405; Feria IV Quatuor Temporum Pentecostes; second Oratio, right column top, after first Alleluia Verbo Domini and before Lectio Actuum5:12-16; not first Mentes nostras Collect carried over atlefttop.",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-five-pentecost-ember-wednesday-oratio-20261026",
+        "verification_locator": "Missale Romanum 1962 original PDF 443, printed p. 362, numbered unit 1344; Second normal Oratio after Alleluia1343 and before Lesson1345; left column bottom.",
+        "transformations": [
+          "join physical line wraps and division hyphens",
+          "remove stress accents",
+          "expand ae/oe ligatures",
+          "retain calendar consonantal-j orthography",
+          "apply actual target pointing",
+          "carry only the actual target printed conclusion stop",
+          "use only separately cited literal historical conclusion controls and own prayer cue for the exact longer target prefix"
+        ],
+        "provenance_evidence": "The immutable native projection passage reproduces the complete accepted one-line + LF body hash exactly. Source producer and independent reviewer read whole historical and target prayers on page images; separate mechanical review checked every source/raster pin, exact historical lines, five complete petition token sequences and current before-node/English-absence joins. Stress accents, ae ligatures, decorative capitalization and printed line wraps normalized as declared. 1962 Iesum/eiusdem versus calendar Jesum/ejusdem are declared consonantal-i normalization. Mame prints Per Dominum... in unitate ejusdem.1962 gives the longer prefix through ejusdem. SourcePDF368 prints the intervening Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate; sourcePDF54 and this prayer's own ejusdem cue specify the Holy-Spirit conclusion. Carry only target's actual printed length; no Spiritus Sancti Deus or per omnia is appended. Apply target's comma after Christum; no petition word changes. Complete petition has no substantive word difference. Historical actual short conclusion remains in the separate historical artifact. This row supplies only the normal additional Oratio; no first Collect, Oratio super populum, adjacent Lesson or chant is imported.",
+        "provenance_authority": "Triptych editorial projection verified by independent complete source and target page-image collation",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.latin-five-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-pages-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026"
+        ],
+        "publication_locator": "Mame Tours 1922 original PDF 519, printed p. 405; Feria IV Quatuor Temporum Pentecostes; second Oratio, right column top, after first Alleluia Verbo Domini and before Lectio Actuum5:12-16; not first Mentes nostras Collect carried over atlefttop.; finite conclusion controls originalMame PDF 54/115/368 where specifically identified",
+        "publication_evidence": "Every complete historical petition word is independently witnessed in the exact registered U.S. public-domain Mame Tours 1922 printing. The historical TXT preserves actual abbreviated conclusions and received eumdem. Longer target prefixes are separately supported literally by the accepted Mame conclusion controls; no generic expansion or model reconstruction is used. Accepted source-only review applies the repository 17 USC 103(b) plus independent public-domain-witness basis, with accurate current elapsed-term rationale and no pre-1996 expiry assertion. Stress accents, ae ligatures, decorative capitalization and printed line wraps normalized as declared. 1962 Iesum/eiusdem versus calendar Jesum/ejusdem are declared consonantal-i normalization. Mame prints Per Dominum... in unitate ejusdem.1962 gives the longer prefix through ejusdem. SourcePDF368 prints the intervening Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate; sourcePDF54 and this prayer's own ejusdem cue specify the Holy-Spirit conclusion. Carry only target's actual printed length; no Spiritus Sancti Deus or per omnia is appended. Apply target's comma after Christum; no petition word changes. Complete petition has no substantive word difference. Historical actual short conclusion remains in the separate historical artifact. This row supplies only the normal additional Oratio; no first Collect, Oratio super populum, adjacent Lesson or chant is imported."
+      },
+      "after_latin": "Praesta, quaesumus, omnipotens et misericors Deus: ut Spiritus Sanctus adveniens, templum nos gloriae suae dignanter inhabitando perficiat. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate ejusdem.\n",
+      "after_body": {
+        "state": "present",
+        "body_sha256": "50c254fdba0b7ab1379e983f91442a97976993da9b2ff1e9842cea044dac1175"
+      },
+      "source_group": "five",
+      "historical_locator": "Mame Tours 1922 original PDF 519, printed p. 405; Feria IV Quatuor Temporum Pentecostes; second Oratio, right column top, after first Alleluia Verbo Domini and before Lectio Actuum5:12-16; not first Mentes nostras Collect carried over atlefttop.; finite conclusion controls originalMame PDF 54/115/368 where specifically identified",
+      "target_locator": "Missale Romanum 1962 original PDF 443, printed p. 362, numbered unit 1344; Second normal Oratio after Alleluia1343 and before Lesson1345; left column bottom."
+    },
+    {
+      "target": [
+        "september-ember-wednesday",
+        "main",
+        "Oratio",
+        "all",
+        1
+      ],
+      "key": {
+        "mass": "september-ember-wednesday",
+        "form": "",
+        "proper": "Oratio",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "action": "append-exact-new-proof-owner",
+      "before_node": {
+        "name": "Oratio",
+        "incipit": "Praesta, quaesumus, Domine, familiae tuae",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, physical PDF p. 481, printed p. 400, right column, numbered unit 1616. This additional Oratio follows the first Gradual and precedes the second Lesson. Its exact Latin body remains unavailable."
+      },
+      "before_row": null,
+      "before_body": null,
+      "before_latin": null,
+      "after_row": {
+        "mass": "september-ember-wednesday",
+        "form": "",
+        "proper": "Oratio",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "db5d327e933dcd20e8f9f36b1f03fec9af0958986fbae5ef74225f06b9671c2b",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.september-ember-wednesday-oratio",
+        "source_date": "2026-10-26 project editorial projection; complete Mame Tours 1922 page-image witness",
+        "locator": "Editorial projection physical line 5; Mame Tours 1922 original PDF 566, printed p. 452; Feria IV Quatuor Temporum Septembris; second Oratio, left column bottom, after Quis sicut Dominus Graduale and before Lectio Esdrae8:1-10 at righttop; not first Misericordiae tuae Collect on precedingpage.",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-five-september-ember-wednesday-oratio-20261026",
+        "verification_locator": "Missale Romanum 1962 original PDF 481, printed p. 400, numbered unit 1616; Second normal Oratio after Graduale1615 and before Lesson1617; right column middle.",
+        "transformations": [
+          "join physical line wraps and division hyphens",
+          "remove stress accents",
+          "expand ae/oe ligatures",
+          "retain calendar consonantal-j orthography",
+          "apply actual target pointing",
+          "carry only the actual target printed conclusion stop",
+          "retain actual target Per Dominum. shorter stop without historical nostrum"
+        ],
+        "provenance_evidence": "The immutable native projection passage reproduces the complete accepted one-line + LF body hash exactly. Source producer and independent reviewer read whole historical and target prayers on page images; separate mechanical review checked every source/raster pin, exact historical lines, five complete petition token sequences and current before-node/English-absence joins. Stress accents, ae ligatures, decorative capitalization and printed line wraps normalized as declared. Mame jejunet versus1962 ieiunet follows calendar j orthography. Mame prints Per Dominum nostrum.1962 prints shorter Per Dominum.; conclusion abbreviation only, with no petition word changes. Complete petition has no substantive word difference. Historical actual short conclusion remains in the separate historical artifact. This row supplies only the normal additional Oratio; no first Collect, Oratio super populum, adjacent Lesson or chant is imported.",
+        "provenance_authority": "Triptych editorial projection verified by independent complete source and target page-image collation",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.latin-five-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-pages-20261026",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026"
+        ],
+        "publication_locator": "Mame Tours 1922 original PDF 566, printed p. 452; Feria IV Quatuor Temporum Septembris; second Oratio, left column bottom, after Quis sicut Dominus Graduale and before Lectio Esdrae8:1-10 at righttop; not first Misericordiae tuae Collect on precedingpage.; finite conclusion controls originalMame PDF 54/115/368 where specifically identified",
+        "publication_evidence": "Every complete historical petition word is independently witnessed in the exact registered U.S. public-domain Mame Tours 1922 printing. The historical TXT preserves actual abbreviated conclusions and received eumdem. Longer target prefixes are separately supported literally by the accepted Mame conclusion controls; no generic expansion or model reconstruction is used. Accepted source-only review applies the repository 17 USC 103(b) plus independent public-domain-witness basis, with accurate current elapsed-term rationale and no pre-1996 expiry assertion. Stress accents, ae ligatures, decorative capitalization and printed line wraps normalized as declared. Mame jejunet versus1962 ieiunet follows calendar j orthography. Mame prints Per Dominum nostrum.1962 prints shorter Per Dominum.; conclusion abbreviation only, with no petition word changes. Complete petition has no substantive word difference. Historical actual short conclusion remains in the separate historical artifact. This row supplies only the normal additional Oratio; no first Collect, Oratio super populum, adjacent Lesson or chant is imported."
+      },
+      "after_latin": "Praesta, quaesumus, Domine, familiae tuae supplicanti: ut, dum a cibis corporalibus se abstinet, a vitiis quoque mente jejunet. Per Dominum.\n",
+      "after_body": {
+        "state": "present",
+        "body_sha256": "db5d327e933dcd20e8f9f36b1f03fec9af0958986fbae5ef74225f06b9671c2b"
+      },
+      "source_group": "five",
+      "historical_locator": "Mame Tours 1922 original PDF 566, printed p. 452; Feria IV Quatuor Temporum Septembris; second Oratio, left column bottom, after Quis sicut Dominus Graduale and before Lectio Esdrae8:1-10 at righttop; not first Misericordiae tuae Collect on precedingpage.; finite conclusion controls originalMame PDF 54/115/368 where specifically identified",
+      "target_locator": "Missale Romanum 1962 original PDF 481, printed p. 400, numbered unit 1616; Second normal Oratio after Graduale1615 and before Lesson1617; right column middle."
+    }
+  ],
+  "source_export": [
+    {
+      "path": "THIRD_PARTY.md",
+      "pre_sha256": "b486903a51ac8eb8855b1c17be3532e5213427dea5f989a14adefe3e95e64092",
+      "post_sha256": "b6e90e45db4081fe86b625959c7b0becdc08f9caf8e3cc4b23fdffeb4f3fae69",
+      "bytes": 83876,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/research/source-bindings.toml",
+      "pre_sha256": "f0617aafd2f085140bb1d590ecb2d95910acc484577533b8d8b5e44514dbba82",
+      "post_sha256": "f9285f130208125eac205d6dd1e87e7a239f8939cbcc0e00aaf4e0d840e583fc",
+      "bytes": 48095,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/source-bindings.toml",
+      "pre_sha256": "f48c427ee9032adfbcf34f42bc3a239f9a1ad64e22cedbd57de01c7a7d84facb",
+      "post_sha256": "1abaa241e7c1a33922d1158f8691c9a760932b987531f78b8dc0342f4a195f87",
+      "bytes": 17419,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-bindings.toml",
+      "pre_sha256": "c7695743cd3b15dfbdae1fa19aedfc2ffdf9bb35829d5c28ede733baebd79712",
+      "post_sha256": "403b35fa694723c5f3077874af8d3bd33c197ab455e71b95159baba82dc94139",
+      "bytes": 22127,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/calendars/roman-1962/propers.yaml",
+      "pre_sha256": "7e76e9d940659dfe2c9aa293da95fa4a9e5711640e53b6ed44341edf85e1c01c",
+      "post_sha256": "0227dc328cd86ac0f8d5f6161fe52fce1c4f0d2dd04376c8ae6b5ebfddded198",
+      "bytes": 2633924,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-latin-completion-2026-10-26.toml",
+      "pre_sha256": null,
+      "post_sha256": "ece404f3a1988965a59633346760c51c715991b19a773c076562fc1e01f6aa95",
+      "bytes": 7886,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "pre_sha256": "733e1eaed6070b99da98ff06c1302f36b48d2a4baf5be65e542f1620d3ca038e",
+      "post_sha256": "6d5dbfa9660b0b5c4246511581d299b6e4ef9bb753f251ec68ce3b3393a1a1cc",
+      "bytes": 5134954,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml",
+      "pre_sha256": "72e9a9f73deab975d22e4e665ec891afc931f613549493a65c7b3c38572def45",
+      "post_sha256": "ca4b224874d452a269befb56edcb56b1ffd06e62b9a6c067b718054e7e8ba116",
+      "bytes": 2782,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-five-20261026/artifact.toml",
+      "pre_sha256": null,
+      "post_sha256": "ee1edaa63214dd0bcb290407a678a5c9970d99f6bb8625d12840b021e9a41e90",
+      "bytes": 2371,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-five-20261026/latin-only.txt",
+      "pre_sha256": null,
+      "post_sha256": "b5c77d8c5c6d8eb71d4a0f914aa9df808fb00536bc5c263cdd61ba5d33d5713b",
+      "bytes": 881,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-five-pages-20261026/artifact.toml",
+      "pre_sha256": null,
+      "post_sha256": "e6869b8bbb37627c6f1a28116029a68dd17e271f21e3e60f3f292f41640b26f0",
+      "bytes": 2372,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-five-pages-20261026/source.pdf",
+      "pre_sha256": null,
+      "post_sha256": "9d6b117077bc6fc105035b0540f8e46938776a5fef8bd4e4fdec7658a1603415",
+      "bytes": 753109,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-five-support-pages-20261026/artifact.toml",
+      "pre_sha256": null,
+      "post_sha256": "b79d59e12cfc4459b13119ead0065f42f9c204b546d082de794eb2de0de65f51",
+      "bytes": 2473,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-five-support-pages-20261026/source.pdf",
+      "pre_sha256": null,
+      "post_sha256": "d79410cf7b26b3dde9de6e117eb1c5ebc7cf1a174f006b4b5024fc7d462e4fc7",
+      "bytes": 617459,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-seven-20261026-control-pages/artifact.toml",
+      "pre_sha256": null,
+      "post_sha256": "409dcb9fe56644fa64a8490d94d392623a4701bd9f89d0c727d6ab39b99c6e8e",
+      "bytes": 2118,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-seven-20261026-control-pages/source.pdf",
+      "pre_sha256": null,
+      "post_sha256": "d6d327ea3dc97dbf13235a232b59e0d84e05795226a3ed79dd200f66d37cf7f7",
+      "bytes": 2004986,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-seven-20261026-historical-prayers/artifact.toml",
+      "pre_sha256": null,
+      "post_sha256": "54649d1e9bee91e4f21c49dbdd7113ac9aabe95fee962e7d12c7a41c09022060",
+      "bytes": 2179,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-seven-20261026-historical-prayers/latin.txt",
+      "pre_sha256": null,
+      "post_sha256": "c95c8d9644fb04be9be0b8eca63331f7f90cb3bbbfad11178f1abbca8a94425c",
+      "bytes": 1062,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-advent-ember-wednesday-oratio-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "fc6f221d5b79378a06ed0ad79b542b9cb087b84259b217ad0432c704118c66be",
+      "bytes": 1496,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-advent-ember-wednesday-oratio-images-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "991ac2ecf193425aeb86f014d5d4c26965a093af670f11d05838599e0cf741a0",
+      "bytes": 1687,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-christ-conclusion-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "3e031f7e30c97c9107e446fcd394f9ffed1c0de002752df1634b7d621f9e0463",
+      "bytes": 1100,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-conclusion-rule-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "035b8ac2191627ddbd7889f70164925a76fc958b6b2f1fb4b060c22d7e0bd2d8",
+      "bytes": 1170,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-father-conclusion-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "f3bb729eda76519264d5fda879083b248adb32b61db75fcaeb72dc0aeb9d515e",
+      "bytes": 1310,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-holy-wednesday-oratio-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "1b5acaed275f9e467b3194c1eda4122c4b96d50f5a240360f7d1a17fa6669e57",
+      "bytes": 1607,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-holy-wednesday-oratio-images-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "2d29373998cd0e0b86450f9d8a209644be074bc0882b50a5468b61ab5b381279",
+      "bytes": 1798,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-identity-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "c3e1470e4a55f990a2bcdd98cf1abc559fe503e6158632f923a8e036a500488c",
+      "bytes": 1024,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-lent-4-wednesday-oratio-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "52f33c1d3c965e30901bfe7b5f761f329efd923a2335c91291915cba01f2e2e4",
+      "bytes": 1454,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-lent-4-wednesday-oratio-images-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "190a08565ebf238821c055eaceeb13cc613d875561177d19a3deb4bb8b833c83",
+      "bytes": 1645,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-pentecost-ember-wednesday-oratio-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "a8c4c56afa060352bd361b2a23bb907407edd0b428edeed570a1c04047e117ef",
+      "bytes": 1898,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-pentecost-ember-wednesday-oratio-images-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "733655d1e918084b9b1ab02513aefbd9e61284c1c3163bb758a5ddb93c14f4d1",
+      "bytes": 2089,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-september-ember-wednesday-oratio-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "1af89c9cf55e558133172624a7875ef16cdbec72b93b1ddd76b6d613e66113b9",
+      "bytes": 1556,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-september-ember-wednesday-oratio-images-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "e1d964e804b00dae5e56beb6a4027a598b18c2e48f08feaf4cebe041227f7b00",
+      "bytes": 1747,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-seven-20261026-conclusion-controls.toml",
+      "pre_sha256": null,
+      "post_sha256": "01a492ee93eea547a84f9ab248f6b9a4122a18af021650ee48826547a80cf8ab",
+      "bytes": 1218,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-collect-images.toml",
+      "pre_sha256": null,
+      "post_sha256": "c87dd10a27e554177cf39d2826ca5d6ccf09241e3f200233c5d45db4dd16e749",
+      "bytes": 1355,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-collect.toml",
+      "pre_sha256": null,
+      "post_sha256": "34e0da5ec373ee490794b7546efe90336bb136922f45596e2501e5f2c5ce90dd",
+      "bytes": 1360,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-postcommunion-images.toml",
+      "pre_sha256": null,
+      "post_sha256": "991179de232bb6cf6ec8c7c8c4778c14ed7da07c9737c91856a91f161dd3a296",
+      "bytes": 1349,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-postcommunion.toml",
+      "pre_sha256": null,
+      "post_sha256": "1c76759e8b20da91f5e7bd50959c72734ec5f20e83900eae54d3c4968567d320",
+      "bytes": 1354,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-seven-20261026-s-bartholomaei-apostoli-collect-images.toml",
+      "pre_sha256": null,
+      "post_sha256": "250a8eb9f512a8c6fca861c3f7eb015ea88d96dd711677d11da7ef5f8c647b9c",
+      "bytes": 1241,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-seven-20261026-s-bartholomaei-apostoli-collect.toml",
+      "pre_sha256": null,
+      "post_sha256": "5a3b88e219d502e52c70fdf4d289e3775ed392f9ec2c82b4feb57f7619d061c9",
+      "bytes": 1244,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-seven-20261026-s-bartholomaei-apostoli-secret-images.toml",
+      "pre_sha256": null,
+      "post_sha256": "c2e824cbd8a9b7b795317442ae97df407e5fb713e1c2a7f5d3a975bcdd8e181c",
+      "bytes": 1367,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-seven-20261026-s-bartholomaei-apostoli-secret.toml",
+      "pre_sha256": null,
+      "post_sha256": "2858d54fcc8b0a80ed5ebdb5d2f8f32ae0f607a148effadcdd755c2db5a277a3",
+      "bytes": 1370,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-seven-20261026-s-iacobi-apostoli-postcommunion-images.toml",
+      "pre_sha256": null,
+      "post_sha256": "a88d10a9688bb0eab5e66ad16378bc90ed934fb20420e1e03ec6480cbd90641f",
+      "bytes": 1318,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-seven-20261026-s-iacobi-apostoli-postcommunion.toml",
+      "pre_sha256": null,
+      "post_sha256": "d2a1d0dd23ef1a7896187d87fc716fa35d300591a6bec8a9b1b4b5250dce0d08",
+      "bytes": 1322,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-seven-20261026-s-ioachim-patris-beatae-mariae-virginis-collect-images.toml",
+      "pre_sha256": null,
+      "post_sha256": "80e5ee9bb0ea888854217102c0a4f4b6538abc7d2a08c6b3c0c57326cf011769",
+      "bytes": 1343,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-seven-20261026-s-ioachim-patris-beatae-mariae-virginis-collect.toml",
+      "pre_sha256": null,
+      "post_sha256": "e238c99c45e47c89833baccae70486bd479ed3c42511b209a326d1e9b679a012",
+      "bytes": 1346,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/artifacts/latin-seven-20261026-philip-historical-prayer/artifact.toml",
+      "pre_sha256": null,
+      "post_sha256": "ed0074ec4aac3801dea4c9dc7d9b95488ab977307d2beab7540df0bcdd4da995",
+      "bytes": 2221,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/artifacts/latin-seven-20261026-philip-historical-prayer/latin.txt",
+      "pre_sha256": null,
+      "post_sha256": "799378bbde82ce5eaab33385b1dac3edb4c2819e917f16c48b3285a9cd75d1a1",
+      "bytes": 170,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/artifacts/latin-seven-20261026-philip-remote-pdf/artifact.toml",
+      "pre_sha256": null,
+      "post_sha256": "6ee92a5635a5fd8c32299746d46c3be6a39c43d3a40e69d559d8e94854fdaf79",
+      "bytes": 1534,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/passages/latin-seven-20261026-philip-historical-prayer-images.toml",
+      "pre_sha256": null,
+      "post_sha256": "b026d01a12ed5e7c507860c59b7848c7faa5865ccd5b6f17ef9e7f024bf47bd6",
+      "bytes": 960,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/passages/latin-seven-20261026-philip-historical-prayer.toml",
+      "pre_sha256": null,
+      "post_sha256": "8881978aff70d08abfe065526782d4194e752b1b2f88ead364e5f456b80cd7e2",
+      "bytes": 1015,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/passages/latin-seven-20261026-title-copyright-approval.toml",
+      "pre_sha256": null,
+      "post_sha256": "38656e43e107c0847661531e16974c390f61ccc71c60d1731fa47f4a773b5502",
+      "bytes": 1044,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-five-advent-ember-wednesday-oratio-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "69128d40683b41507f9fa3446579a8b3e18e50f65f73b01b7f4e943b32e97a2a",
+      "bytes": 1316,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-five-holy-wednesday-oratio-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "6e4ae5a299e6a3b4308bc912fc9f144b01013ac1662752e0fea774fb72ca5db2",
+      "bytes": 1279,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-five-lent-4-wednesday-oratio-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "0202772f7c3c0afdefb99fb35ca40906ec699e29637b6961ec995ee1a3dc5436",
+      "bytes": 1278,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-five-pentecost-ember-wednesday-oratio-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "b6a184c9a531d40ff790b61418c3a51f1282b96bfd5330608402470a43589cb6",
+      "bytes": 1286,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-five-september-ember-wednesday-oratio-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "185e02b71f407f9805390f80dff758b0c2edc015e7adb6630d098b012e92bcc9",
+      "bytes": 1287,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-collect.toml",
+      "pre_sha256": null,
+      "post_sha256": "0090b7097530948a5707527e1b19f39f340323143d1b34ae3b96a28736fee31c",
+      "bytes": 1322,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-postcommunion.toml",
+      "pre_sha256": null,
+      "post_sha256": "db4f42ae401d56694d3edf57e8b6e4ae290ee5ba50a2af4968110eef353d5ecc",
+      "bytes": 1310,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-seven-20261026-s-bartholomaei-apostoli-collect.toml",
+      "pre_sha256": null,
+      "post_sha256": "a31c4936972ae16d548cf0a99e1a648ae98500debc677f8996e415398c24841a",
+      "bytes": 1201,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-seven-20261026-s-bartholomaei-apostoli-secret.toml",
+      "pre_sha256": null,
+      "post_sha256": "cfe8e8f0943476a8a6fcdd1174f09d973b56dbbc5725f5e07462b9b76491dc4f",
+      "bytes": 1321,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-seven-20261026-s-iacobi-apostoli-postcommunion.toml",
+      "pre_sha256": null,
+      "post_sha256": "4413ea0838609bbfe3f006af379facc2ee3f32a75f4a092a464d9f0360db329b",
+      "bytes": 1247,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-seven-20261026-s-ioachim-patris-beatae-mariae-virginis-collect.toml",
+      "pre_sha256": null,
+      "post_sha256": "a961f3784fc5659f80b07eb554a1e57906e3dbb45e6f62c719e12640fe1fd7c1",
+      "bytes": 1312,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-seven-20261026-ss-philippi-iacobi-apostolorum-collect-2.toml",
+      "pre_sha256": null,
+      "post_sha256": "f150086faaaa45650ecd08e06afdd32c6d7692d688d045f669e5dc69fb8215f2",
+      "bytes": 1393,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/diocese-of-chelmno/oredownik-diecezji-chelminskiej/editions/1947-year-3-number-3/artifacts/latin-seven-20261026-photographic-remote-pdf/artifact.toml",
+      "pre_sha256": null,
+      "post_sha256": "67122f7c5030c4d1984b4ecaf37fbaffa53915052fc2f27e6805a44b2e034b2b",
+      "bytes": 1505,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/diocese-of-chelmno/oredownik-diecezji-chelminskiej/editions/1947-year-3-number-3/edition.toml",
+      "pre_sha256": null,
+      "post_sha256": "37955d351f9050ab1fb072cc83ff38a61305217c52f880d7339a6dc30f6add9e",
+      "bytes": 773,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/diocese-of-chelmno/oredownik-diecezji-chelminskiej/editions/1947-year-3-number-3/passages/latin-seven-20261026-anthony-collect.toml",
+      "pre_sha256": null,
+      "post_sha256": "eb3cc0f13868023554050b751d978bca0c8afe798e051648bf543a63a301fba2",
+      "bytes": 1082,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/diocese-of-chelmno/oredownik-diecezji-chelminskiej/editions/1947-year-3-number-3/passages/latin-seven-20261026-anthony-postcommunion.toml",
+      "pre_sha256": null,
+      "post_sha256": "a095a434057368d3363ee07e05a69ef39ee65d5627d20620bc130fa37b19658e",
+      "bytes": 1095,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/diocese-of-chelmno/oredownik-diecezji-chelminskiej/work.toml",
+      "pre_sha256": null,
+      "post_sha256": "27e821e03bd25a772daa68da347e9c3ef7a8525e6cebbefe6e04bb4d9ce8bba0",
+      "bytes": 438,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-five/artifacts/latin-five-20261026/artifact.toml",
+      "pre_sha256": null,
+      "post_sha256": "28cdfcc87a9776901e62b77c0c7683c2d8c7155b2f8eabc4213947956ab46740",
+      "bytes": 3112,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-five/artifacts/latin-five-20261026/latin-only.txt",
+      "pre_sha256": null,
+      "post_sha256": "d82591596f919bc18834804124b9efbe0f81f383b4cceeb08583035d158b76b0",
+      "bytes": 968,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-five/edition.toml",
+      "pre_sha256": null,
+      "post_sha256": "41e9d3b566c43a4c00e5f259b0238977ec14ca930e76522ac363b83b0becaf93",
+      "bytes": 865,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-five/passages/advent-ember-wednesday-oratio.toml",
+      "pre_sha256": null,
+      "post_sha256": "7b29a59816cc9f3b64699953db016a6cf4861a145039969a1e9588c90f9f8872",
+      "bytes": 1840,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-five/passages/holy-wednesday-oratio.toml",
+      "pre_sha256": null,
+      "post_sha256": "cb834ee78e38f04bc5c3b833bd4686db6f001e66f9a8282642aae8dfafbb3f09",
+      "bytes": 1922,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-five/passages/lent-4-wednesday-oratio.toml",
+      "pre_sha256": null,
+      "post_sha256": "6f63b9c950df64590f93b9d868ef94ecef1a11f40100fbabf4de3a6e02d00cfa",
+      "bytes": 1766,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-five/passages/pentecost-ember-wednesday-oratio.toml",
+      "pre_sha256": null,
+      "post_sha256": "19ff0435eee8068757990d6ece9bec798474e1c534389baf4b321950b6de922c",
+      "bytes": 2209,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-five/passages/september-ember-wednesday-oratio.toml",
+      "pre_sha256": null,
+      "post_sha256": "8c51a353b6247e4c8e43cac333c63a54b87158869bdc1d853692d49cd3e4eb5d",
+      "bytes": 1868,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-seven/artifacts/latin-seven-20261026/artifact.toml",
+      "pre_sha256": null,
+      "post_sha256": "e6adc045e450418bed6a06cacb759ff9a118adb3c5413f71ad7fe78a61ed01d0",
+      "bytes": 3801,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-seven/artifacts/latin-seven-20261026/latin.txt",
+      "pre_sha256": null,
+      "post_sha256": "5385ed3800db33ef4565996473243adab7aec14cdc924dffe1dec816c98cff70",
+      "bytes": 1421,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-seven/edition.toml",
+      "pre_sha256": null,
+      "post_sha256": "86f48a42de001708925902c0cdb5406e5ecca2b2b5c8ff72c0c94eee5c626e54",
+      "bytes": 877,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-seven/passages/latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-collect.toml",
+      "pre_sha256": null,
+      "post_sha256": "d41a294f1dbf4723dd95b0f245491b0b21c411a433dbdf971d1a70a086a9acc8",
+      "bytes": 2676,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-seven/passages/latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-postcommunion.toml",
+      "pre_sha256": null,
+      "post_sha256": "683b937e28c02852455b598ca6ed867b10b5358c0d01f1819f4dc5d1259ac1b4",
+      "bytes": 2670,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-seven/passages/latin-seven-20261026-s-bartholomaei-apostoli-collect.toml",
+      "pre_sha256": null,
+      "post_sha256": "9fc1bae15decc723fa63945fb935e23c06017bb148d483d9229ce3073becba5f",
+      "bytes": 2532,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-seven/passages/latin-seven-20261026-s-bartholomaei-apostoli-secret.toml",
+      "pre_sha256": null,
+      "post_sha256": "04f714529df9232d168a408cafba0e5f35e060a3120f60dc292d5435b1245f04",
+      "bytes": 2651,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-seven/passages/latin-seven-20261026-s-iacobi-apostoli-postcommunion.toml",
+      "pre_sha256": null,
+      "post_sha256": "4a45f63e77fd86beb656206e404f4fa6b836017299b4be7f6803e9824e3f0c56",
+      "bytes": 2578,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-seven/passages/latin-seven-20261026-s-ioachim-patris-beatae-mariae-virginis-collect.toml",
+      "pre_sha256": null,
+      "post_sha256": "6b9b76a2fa22fe9ce7b37262c0da679aebcb512c14043f62b00a1181d8b26097",
+      "bytes": 2659,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-seven/passages/latin-seven-20261026-ss-philippi-iacobi-apostolorum-collect-2.toml",
+      "pre_sha256": null,
+      "post_sha256": "3fd7963a60454254b989face9dc9f8620ea306133dac1a49b6174fe4c80d5c79",
+      "bytes": 2711,
+      "mode": "0o644"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/latin-five-oratio-source-review.json",
+      "pre_sha256": null,
+      "post_sha256": "3a62a0f9862811087f67a725bfc1bd4d4bf1afbbc3c70f9347a074cfd1380b17",
+      "bytes": 28813,
+      "mode": "0o644"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/latin-seven-philip-source-review.json",
+      "pre_sha256": null,
+      "post_sha256": "f81ada974640e768c7442f78d24a10cc252961fcc3d0a2ecd6c013a985f2d798",
+      "bytes": 18242,
+      "mode": "0o644"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/latin-seven-rights-adoption.json",
+      "pre_sha256": null,
+      "post_sha256": "073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e",
+      "bytes": 4142,
+      "mode": "0o644"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/latin-six-source-review.json",
+      "pre_sha256": null,
+      "post_sha256": "4eaf34b3c279617bd759a2ea362ea3feacabddeb989502ad9a2edc261e6c603f",
+      "bytes": 25874,
+      "mode": "0o644"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/mame-rights-rationale-correction.json",
+      "pre_sha256": null,
+      "post_sha256": "0ec080c63f8e619b189bbc467a1b13c2b3a38bff993e5c90c55c273252a45b19",
+      "bytes": 4463,
+      "mode": "0o644"
+    }
+  ],
+  "independent_verification": {
+    "exact_Latin_body_tuples": 12,
+    "exact_native_whole_proof_dictionaries": 12,
+    "new_proof_rows": 11,
+    "replaced_removed_Anthony_Collect_rows": 1,
+    "old_Latin_proof_rows": 1325,
+    "new_Latin_proof_rows": 1336,
+    "all1324_complementary_Latin_proof_dictionaries_exact": true,
+    "prior_removed_Anthony_hash_preserved": "4750a85cade3e62f43bc0e1525aea460e04d09f94788450e2f1d911e5baab0dc",
+    "all_other_calendar_dictionary_values_exact_except_four_disclosed_owner_note_scalars": true,
+    "ordinary_frame_holds_exact": true,
+    "English_positive": 1131,
+    "English_unavailable": 308,
+    "English_domain": 1439,
+    "whole_English_inventory_and_recovery_bytes_exact": true,
+    "every_prior_first8_postimage_preserved": true,
+    "nonoverlapping_accepted_repair_postimages_exact": true,
+    "THIRD_PARTY_first8_and_repair_prefixes_preserved_and_seven_five_appendices_exact": true,
+    "Mame_rights_basis_only_correction_exact": true,
+    "three_dependent_binding_source_fingerprint_fields_only": true,
+    "four_owner_availability_notes_preserve_prior_notes_as_exact_prefixes": true,
+    "new_tracked_payloads": 8,
+    "new_Latin_TXT_payloads": 5,
+    "new_historical_Mame_PDF_payloads": 3,
+    "new_modern_PDF_or_image_payloads": 0,
+    "full_original_historical_extract_raster_stream_geometry_pairs": 23,
+    "combined_exported_postimages": 136,
+    "component_postimages": 91,
+    "source_epoch_files_rehashed": 17422,
+    "finite_independent_assertions": 366
+  },
+  "receiving_review_remaining_integration_findings": [
+    {
+      "kind": "inherited_checker_failure_outside_this_source_assembly",
+      "owner": "root final source/code integration",
+      "evidence": "The accepted-input f3 calendar checker rejects Raphael English Collect printed_page1711²; final independent calendar JSON is byte-identical to saved pre-Latin12 baseline. No English dictionary was changed. This source acceptance does not mark that final-root gate passed."
+    }
+  ],
+  "scope": [
+    "Exactly12 target/body/proof/source tuples from the independently accepted receiving component:11 proof appends and the exact removedAnthonyCollect restoration.",
+    "Before removed-row body hash remains archival proof evidence; it is not replaced with a fabricated old resident body. The actual before resident body state is removed and null.",
+    "Finite US rights adoption covers exactly the seven stated body/target tuples and their measured contributions. The fiveMame source admissions retain their separate accepted independent primary-source controls.",
+    "No English dictionary or owner-domain change, Ordinary-frame release, Common/chant option, other form/language, whole modern book/page/image grant, or blanket short-word exemption.",
+    "All original17 historical before bytes, all unlisted priorLatin proof/body/refusal dictionaries, and all oldEnglish positives remain fixed. Final combined source/code/guard acceptance and owner generation remain separate root obligations."
+  ],
+  "adoption_parent_sha256": "c7b5675b169ec5e2593869cd7ed3a5c9f61794c2eab616a84fa62ba9e81d6881",
+  "adopted_utc": "2026-10-26T04:52:39.403964+00:00"
+}

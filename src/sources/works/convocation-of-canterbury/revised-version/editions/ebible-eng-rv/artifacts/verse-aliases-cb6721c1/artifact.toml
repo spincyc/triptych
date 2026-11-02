@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.verse-aliases-cb6721c1"
+edition_id = "edition.convocation-of-canterbury.revised-version.ebible-eng-rv"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference facts and qualification prose; no third-party scripture body is copied into this table."
+rights_jurisdiction = "United States"
+projected_from = ["artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-29-hoslatvuc-5b466d7f", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-42-jdtlatvuc-66351169", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-47-barlatvuc-6eca1df1", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-18-judith-c271f5df", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-30-baruch-97262d58", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-33-osee-0341e42a", "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.usfm-29-hoseng-rv-972586ee", "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.usfm-42-jdteng-rv-5f258f86", "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.usfm-47-bareng-rv-65a8292d", "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.verse-aliases-17006d2d", "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.verse-text-28-hosea-b59d715c", "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.verse-text-43-judith-abb62b42", "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.verse-text-47-baruch-82f687db"]
+transformation = "Preserve the exact previous immutable alias payload as a byte prefix and append only independently accepted distinct source-coordinate rows, ordered by cited_locus. No prior row or source wording is edited."
+provenance = "New immutable 2026-10-26 reference revision. Previous artifact artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.verse-aliases-17006d2d SHA256 e5dc5c95d218ab8686166c44b57eb65f6fb6e88de8d4183d7955893257751ba9, its payload path and metadata remain unchanged. Append 16 accepted rows (12 exact renumberings; 4 precise refusals). The source acceptance covers only the exact finite coordinates; combined or differing source wording is never silently widened."
+retrieved = "2026-10-26"
+sha256 = "cb6721c14e9649c63ec334bc979eeed988d948306a69410a717dd8c07bfbe974"
+byte_size = 433307
+path = "src/sources/works/convocation-of-canterbury/revised-version/editions/ebible-eng-rv/artifacts/verse-aliases-cb6721c1/verse-aliases.tsv"
+indexable = true
+encoding = "utf-8"
+notes = "Native Bible verse bodies, divisions and printed order remain unchanged. Baruch acceptance is isolated 3:38 only; no chapter-wide alignment or singleton superset claim. New current ZIPs retain distinct source identities from historical parent packages. Primary archive parents remain remote with unresolved support-file rights; exact complete underlying Bible USFM book children carry separately checked public-domain bases and supply the raw source testimony."

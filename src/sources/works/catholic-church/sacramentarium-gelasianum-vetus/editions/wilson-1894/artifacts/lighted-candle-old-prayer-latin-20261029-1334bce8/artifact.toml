@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.lighted-candle-old-prayer-latin-20261029-1334bce8"
+edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Literal continuous prayer from Wilson1894, public domain in the United States by publication date. No modern target variant is represented as this old source reading."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/LiberSacramentorumRomanaeEcclesiae/LiberSacramentorumRomanaeEcclesiae.pdf"
+provenance = "Whole Veniat ergo prayer including entire written-out conclusion read directly on printed81/PDF174 image at200 and400dpi on2026-10-29. Adjacent apparatus continuation was inspected on printed82."
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.lighted-candle-old-prayer-pages-20261029-eb290d46"
+transformation = "Manual page-image transcription; join printed line wraps and remove line-end hyphens, marginal Mur.ii146 siglum, footnote numeral36 and terminal manuscript mark gamma. Retain main-text wording, order, pointing, capitalisation and whole written-out ending."
+notes = "Old text already has intende, but reads ergo, regnator, lacks cereum and in, has different order ex huius aliquid sanctificationis fuerit mysterio, diabolica fraudis, and a different full ending. It is a whole variant witness, never an exact1962 donor."
+retrieved = "2026-10-29"
+sha256 = "1334bce8473c9265d2547c8052ebc2af3972a0d62952d0ff2e6d90a4fde7e674"
+byte_size = 530
+path = "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-latin-20261029-1334bce8/latin.txt"

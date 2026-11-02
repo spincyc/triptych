@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "study-review",
+  "text": "Dispatch envelope change at study-review iteration 0 (2026-10-28). Stages through author-study 0 ran as fresh non-interactive Factory Droid sessions pinned to the Claude model, each accepted only after its session log showed that model alone; a research-0 attempt that the host switched to another model mid-session was rejected and its output quarantined before research 0 was re-dispatched. The first study-review 0 worker wrote its result on the Claude model, but its session's closing chat message was served by another model, so that result was set aside unread and study-review 0 was re-dispatched. From study-review 0 onward every agent stage runs as a fresh Anthropic Claude Code harness subagent (general-purpose, no inherited conversation) at the packet's declared EFFORT, given exactly the packet, its SHA-256, a result path and a private scratch directory, under a brief that forbids subagents, git operations, contribution-line edits, and opening the superseded first-run archive, other workers' scratch, or the GPT leaf. The driver records each accepted authoring contribution in generation-metadata.tex.",
+  "timestamp": "2026-10-28T13:32:49Z"
+}

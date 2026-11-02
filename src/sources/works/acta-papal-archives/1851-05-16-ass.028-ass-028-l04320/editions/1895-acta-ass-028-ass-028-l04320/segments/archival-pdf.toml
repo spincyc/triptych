@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.028.ass-028-l04320.pdf"
+edition_id = "edition.acta-papal-archives.ass.028.ass-028-l04320"
+artifact_id = "artifact.acta-papal-archives.ass.028.vatican-pdf-82baca9e"
+artifact_sha256 = "82baca9eff7bd498c8b567272706f4cec5662a30869e217883aa9cf24500dac0"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[111, 112]]
+context = "{\"closing_physical_lines\": [4368, 4375], \"closing_text\": \"dinarios, et S. R. E, Cardinales iudicari debere, irritumque\\nquidquid secus super his quavis auctoritate contigerit atten-\\ntari. Non obstan, fel. rec. Benedicti X I V Praed. Nostri,\\n           e      m\\nsuper Div. Mat. (sic) aliisque apostolicis Constitutionibus,\\net sanctionibus, ceterisque contrariis quibuscumque. Datum\\nRomae apud S. Petrum sub annulo Piscatoris, die 16 Maii 1851.\\nPontificatus Nostri anno V ».\", \"end_line\": 4375, \"removed\": \"Running header/page-number lines carrying formfeed and Acta volume/fascicle footers are omitted via disjoint ranges; all remaining source text and notes in selected extent retained.\", \"retained_historical_note_ranges\": [], \"start_line\": 4320}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 111, \"printed_page\": null, \"running_head_text\": \"Ili\"}, {\"artifact_page\": 112, \"printed_page\": \"112\", \"running_head_text\": \"112                         RHEMEN.\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

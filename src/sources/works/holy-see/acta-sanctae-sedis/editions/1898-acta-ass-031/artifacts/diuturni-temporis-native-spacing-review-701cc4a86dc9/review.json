@@ -1,0 +1,50 @@
+{
+  "extent": "All selected native pages inspected in contact sheets; native pages129,137,146,147,148,149 additionally inspected full-size where within this act span. Review concerns source word boundaries, physical order, boundaries and notes; no original-print or lexical OCR collation.",
+  "geometry": "One body column on each native page; no source marginal summary or mixed note columns observed.",
+  "historical_notes": [
+    {
+      "disposition": "Two source notes remain together as a separate existing blank-LF-delimited block at the source page break.",
+      "native_page": 147,
+      "original_physical_lines": [
+        5858,
+        5859
+      ]
+    },
+    {
+      "disposition": "One source note remains a separate existing blank-LF-delimited block at the source page break.",
+      "native_page": 148,
+      "original_physical_lines": [
+        5901,
+        5901
+      ]
+    }
+  ],
+  "limitations": "Vatican OCR reconstruction only. OCR glyph errors, literal source hyphens, source spellings and damaged citations remain. Whitespace projection uses no lexicon, alternate wording, translation or model reconstruction.",
+  "native_pages_inspected": [
+    146,
+    147,
+    148,
+    149
+  ],
+  "native_pdf_sha256": "4c1f67a32e35808f32bcee788ff380bd8bafc954e854a441be99be58dc1a9eb9",
+  "no_new_note_partition_required": true,
+  "raster_sha256": {
+    "146": "84ee433022179d2b0a4d73e58a96cf5afebdcbee1e51768b895002aa4462acd6",
+    "147": "2323c16987e5d971f519be4b249e422c5738aa6828c9a9be59d1fab6f184439c",
+    "148": "f8b2c408b5063f76eaf0e0ea420bf5af90ce7bd87f2448470193036509a2c202",
+    "149": "ba34e93c5dfdb150895ffba7a52d9025b61e58e1fd760741039e548b96d08770"
+  },
+  "raw_stream_differences": [
+    {
+      "disposition": "The second line of the Diuturni heading is emitted after its body in raw stream; physically it remains directly below the first heading line. Keep existing source order.",
+      "native_page": 146
+    },
+    {
+      "disposition": "A single page-foot note is emitted before body in raw stream; physically it remains below the body. Keep existing source order.",
+      "native_page": 148
+    }
+  ],
+  "schema": "triptych-papal-native-spacing-review/v1",
+  "shared_boundaries": "Native page137 holds the Italian Spesse volte closing followed by its separately headed Latin version; native page146 holds that Latin closing followed by the Diuturni heading/body. Existing source ranges retain only the assigned act.",
+  "source_id": "acta.ass.031.ass-031-l05804"
+}

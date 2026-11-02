@@ -1,0 +1,80 @@
+{
+  "schema": "triptych-independent-pure-quarantine-regression/v1",
+  "outcome": "PASS_BOUNDED_REGRESSION",
+  "subject": {
+    "path": ".scratch/roman-english-completion-20261029/finite-guard/pure-quarantine-fix-v1/postimages/scripts/_proper_finite_latin_20261029.py",
+    "sha256": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5"
+  },
+  "authority_sha256": "495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e",
+  "counts": {
+    "qualified_row_positives": 22,
+    "five_field_mutant_refusals": 110,
+    "old16_exact_scopes_and_behavior": 16,
+    "legacy2_original_routes": 2,
+    "existing_guard_tests": 17,
+    "failures": 0,
+    "errors": 0
+  },
+  "input_sha256": {
+    ".scratch/roman-english-completion-20261029/finite-guard/pure-quarantine-fix-v1/postimages/scripts/_proper_finite_latin_20261029.py": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5",
+    ".scratch/roman-english-completion-20261029/finite-guard/activation-v2-postimages-20261030/postimages/workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json": "495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json": "920299972ab84575183de8c84adcd3f7418bdc46304fbe1d6a4435fad1103ee3",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "59deb71b22cb457873a56a91b6044f295934c59acb044eb7d701d38547b09ff9",
+    "scripts/_proper_finite_latin_20261029.py": "ecca66760debc9c0451e1b6743883c55d59390f575b4503b6af27d9923117fd3",
+    "scripts/_proper_qualified_latin.py": "0136f6bb020938867d4ca1e75816c56c363a15603a8fede2aee9126c96b24949",
+    "workflows/reviews/missal-reader-completion-2026-10-26/gregem-damasus-qualified-rights-adoption.json": "652f44afd2c566e48391c7b249137eab32a483ace0346f751059ac8c842fad9c",
+    "src/sources/inventories/gregem-damasus-qualified-latin-rights-v1.toml": "a7f69af84b9dc2ee3b2f9f53c9b93c436111b1a4855fcdd451c56bd92b9bd0a8",
+    "tools/tests/test_finite_latin_20261029.py": "ad7fe152744e1fa7de37868f7d63ef8a23b51b9af09d9dc2f85b5b249a1b907e"
+  },
+  "controls_sha256": "e875f5b2585dc732fc659b10a6c48b495764e8ccedeb91d5ee1fba485d1784bc",
+  "guard_tests_log_sha256": "6d6182dcf6bcee0976550cde11221f17329e9209bad274b5837badc7e95f7e9f",
+  "locality_only_test_copy_sha256": "c673301ad997ea882190b9fbac36eff39a5540b532cb888fbdcff7cb9e2cb188",
+  "self_authored_regression_script_sha256": "89865ef0d59edb88592e06725aa24132dc01c9f75a2afb7df43aa0e24008c131",
+  "boundaries": {
+    "canonical_writes": false,
+    "full_generation": false,
+    "global_source_walk": false,
+    "new_permissions_review": false,
+    "actualPC_and_body_reintroduction_controls_owned_elsewhere": true,
+    "canonical_fixture_or_sourcegraph_changes": false
+  },
+  "material_findings": [],
+  "blockers": [],
+  "boundary_clarification": {
+    "qualified22": "Exactly22 F.claims_row/F.row_problems and Q.row_problems positives; these are row-tuple controls, not22 source_problems or runtime-publication checks.",
+    "mutants110": "All110 five-field mutants refused by both F.row_problems and Q.row_problems.",
+    "existing17": "Original17 guard tests retained all assertions, including their synthetic source/authority/reading checks and bounded original-two checks; only test ROOT and test temporary-output locality changed.",
+    "actual_source_problems22_called": false,
+    "source_permission22_claimed": false,
+    "all_bytes_outside_claims_row_unchanged": true,
+    "all_other_function_bytes_unchanged": [
+      "_hex_digest",
+      "_digest",
+      "_data",
+      "_bytes",
+      "recognition_from_scopes",
+      "_prior_routes_valid",
+      "_scopes",
+      "_scope_for_row",
+      "_marker",
+      "_signatures",
+      "prior_row_exact",
+      "_prior_artifact",
+      "_prior_reading",
+      "_selected_sha256",
+      "claims_artifact",
+      "claims_reading",
+      "row_problems",
+      "inherited_row_exact",
+      "authority_problems",
+      "_record_problems",
+      "source_problems",
+      "artifact_problems",
+      "reading_problems",
+      "public_scope",
+      "cache_fingerprint"
+    ],
+    "broader_controller_or_global_reads_added": false
+  },
+  "boundary_check_script_sha256": "0fe978cc169f36743f610c97fa4283f3785c3e4130e7a573cb8bef4ed25a3109"
+}

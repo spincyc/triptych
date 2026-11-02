@@ -1,0 +1,88 @@
+{
+  "schema": "triptych-sixteen-exact-qualified-Latin-root-assessments/v1",
+  "state": "adopted-basis-pending-exact-authority-activation-and-source-installation",
+  "recorded_on_utc": "2026-10-30",
+  "jurisdiction": "United States civil copyright",
+  "policy": "guidance/liturgical-text-publication-policy.md section 1(6)",
+  "basis": "qualified-nonoriginal-adaptation",
+  "confidence": "moderate; qualified project judgment, not holder permission, a court finding or human legal approval",
+  "exact_proposed_scope": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/source-guard/candidate-authority-v1.json",
+    "sha256": "f491fe023beedb25a7f51b58d97974f5d39fd0674a921d7ca11eb0b73670a270",
+    "scope_count": 16,
+    "adopted_fields": "Exactly its sixteen case_evidence identities and complete Latin/English hashes, and its scopes with full owner-row, inherited-row, body, artifact-payload, source-controller, publication-source, physical-range and public-notice constraints. The pending proposal is preserved unchanged; actual runtime adoption is separate."
+  },
+  "durable_evidence_index": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/finite-sixteen-receipt-path-map.json",
+    "sha256": "e1b0d010e9dfe1024666ce54e5b0b6561812d0fe84fa36239cc4f0c7bbd02208",
+    "scope": "Nineteen exact retained source, English, rights and mechanical evidence records. Their distinct roles and evidence ceilings remain unchanged."
+  },
+  "individual_judgments": [
+    {
+      "targets": ["Immaculate Heart Collect", "Immaculate Heart Postcommunion", "Lawrence of Brindisi Collect"],
+      "rights_record": "sources/rights-review-7d48a4214f1fe486.json",
+      "rights_record_sha256": "7d48a4214f1fe486cc72f90e291e66cf7bb1bd9b4af7dc34c74ca93abd7c715d",
+      "root_judgment": "Adopt each exact case separately. Purissimi to immaculati is a substantive conventional devotional-epithet substitution; the functional commemoration options are actual added words. Lawrence's counsel-to-wisdom change is substantive, the Doctor title factual, and the source-confirmed gloriam remains unrepaired. In each complete old prayer, the combined changes preserve the connected main petition and its order, adding no independently developed clause or literary architecture. The exact conventional endings are separately controlled. These measured whole contributions are defensibly insufficiently original under the repository's qualified priority 6.",
+      "contrary_argument": "A semantic epithet or wisdom substitution, especially alongside a Doctor title, can be deliberate theological redaction; the low creativity threshold applies to the combined revision. Shortness alone does not settle originality. That objection warrants moderate confidence but is outweighed here by the preserved complete old petition and limited conventional expression.",
+      "required_successor": "sources/rights-review-ff5f4fea37246777.json",
+      "required_successor_sha256": "ff5f4fea37246777bb4d75df3800ccb59665d1dcce800e01dab8b6042bf1814c",
+      "lineage_limit": "Heart nostrum has its own first-class Mame conclusion edge. Lawrence's description of a stop at in unitate does not redefine the Heart's actual in unitate ejusdem stop."
+    },
+    {
+      "targets": ["Clement Collect", "Zephyrinus Collect", "Sylvester Collect"],
+      "rights_record": "pope-three-rights-assessment.json",
+      "rights_record_sha256": "a0d49c755d32455eda8e14ab13f4b862a6bbac446a23991deaa97548df355c1b",
+      "root_judgment": "Carry the three separately measured root judgments forward unchanged. The complete continuous Feltoe prayer supplies each petition; exact epithet, named office, martyr rank where present, grammatical agreement, omitted vicar phrase and actual endings are individually measured. No earlier two-recipient grant supplies automatic fanout.",
+      "contrary_argument": "The apostle-to-Pontiff adaptation is theological redaction and could meet a low originality threshold; the prior record preserves this whole-expression objection."
+    },
+    {
+      "targets": ["Clement Secret", "Clement Postcommunion", "Common of Supreme Pontiffs Secret", "Common of Supreme Pontiffs Postcommunion"],
+      "rights_record": "sources/rights-review-1d0e395d41de0c7a.json",
+      "rights_record_sha256": "1d0e395d41de0c7a0f0ed2a52a17b990e0fcc6d00cd6f5bbb6e757028d73e3ff",
+      "root_judgment": "Adopt all four exact appointments individually. Each derives its continuous main petition from a complete Feltoe prayer. The added offering or sacramental circumstance, ordinary supplication and vocative reorder, spelling and independently controlled actual ending are real changes, but together remain conventional circumstances attached to the same connected prayer. They introduce no new main petition or nontrivial literary recomposition. This supports the qualified insufficient-originality basis for these four bodies.",
+      "contrary_argument": "Adapting governance petitions to gifts or Communion can constitute creative theological refunctioning, and a new arrangement of old language can be protected. The whole preserved petition and limited conventional adjuncts support the narrower judgment here; neither old ingredients nor Lasance English rights alone decides the Latin question.",
+      "English_limit": "Clement English is new project study translation. Common English is separately accepted literal historical Lasance English from ordinary Saint Martin pages, with its own nonrenewal/source basis. Neither status transfers to the other."
+    },
+    {
+      "targets": ["John Bosco Collect", "John Bosco Postcommunion"],
+      "source_and_English_record": "sources/bosco-final-source-review.json",
+      "source_and_English_record_sha256": "c8f21b503aad214e85d0a3a3ca52c0db7e7e9da7f4438ca23c3257bf1c2ae2b2",
+      "root_judgment": "Adopt the two exact underlying-expression bases separately. The dated 1930 official publication establishes each complete old petition independently. The later change from Blessed to Saint is a factual canonization title; the Collect's adolescent spelling changes no word, and the Postcommunion omits one conventional possessive. Actual longer target endings are literal contiguous prefixes of independently checked 1922 formulae. Considered as complete expressions, these changes add no independently developed petition or original literary structure.",
+      "contrary_argument": "A revised saint's prayer and its title, possessive and ending choices can be deliberate editorial adaptation; the whole modern book is not thereby public domain. The measured factual and conventional contribution supports only these two exact qualified cases.",
+      "excluded_direct_case": "Bosco Secret has a separate direct public-domain route and is expressly outside the sixteen qualified scopes. No inference from the 1934 canonization date supplies its 1930 publication evidence."
+    },
+    {
+      "targets": ["Chrism Collect", "Exaltation of the Cross Offertory occurrence 1", "John Damascene Paschal Offertory occurrence 2", "Queenship Offertory occurrence 1"],
+      "rights_record": "sources/rights-review-fe1f06208f67865a.json",
+      "rights_record_sha256": "fe1f06208f67865a47312a5675cc10ecabe09c62871e73122685ecba9bc86b59",
+      "root_judgment": "Adopt each exact complete expression separately. Chrism's complete Wilson prayer supplies the petition, its apparatus actually witnesses ministerio, and the remaining merito-to-meritis inflection and pointing create no new clause. Cross uses the complete historical same-feast body, including its final Alleluia, plus exactly omnibus; the separate Passion body is contrary evidence rather than a spliced donor. Damascene occurrence 2 preserves its complete older non-Paschal base and adds one standard seasonal Alleluia in the separately proved Paschal appointment. Queenship preserves the complete 1690 responsory base and adds only the conventional conditional Paschal invocation and its short instruction. The combined limited contributions are defensibly insufficiently original for these exact bodies.",
+      "contrary_argument": "Apparatus selection, semantic broadening and appointment of an older chant with a new seasonal ending may be deliberate original selection or arrangement. No exact old whole-target identity or first-publication date is claimed for these qualified bodies. Their complete continuous older bases and limited conventional changes support the narrow judgment; ancient words generally provide no blanket clearance.",
+      "controller_successor": "sources/rights-review-1f0d83b277cad947.json",
+      "controller_successor_sha256": "1f0d83b277cad947579908274b714985d5ab0b9c9d2f439dae2964e56cfd0ada",
+      "English_and_surface_record": "sources/source-review-cafcae080f5716b0.json",
+      "English_and_surface_record_sha256": "cafcae080f5716b0b177c28db3158fbb8b0a6343e8535931ce5e9c28c0964997",
+      "assembly_judgment": "The accepted old-source/controllers, whole-target variants, exact study-English review and 27-file/22-controller mechanical evidence cover the combined proposal. The optional extra assembly peer adds no required approval gate; the reviewer explicitly identified no uncovered source-word, locator, target-body or rights claim. Exact authority and installed source/runtime validation remain necessary.",
+      "seasonal_limit": "Queenship's entire conditional parenthetical remains nonspoken rubric apparatus in both languages; exact offsets do not establish a runtime season selector. Preserve the explicit Paschal condition and verify actual output. Damascene occurrence 2 never authorizes occurrence 1 or another chant."
+    }
+  ],
+  "source_transport_correction": {
+    "path": "sources/sanctoral-target-schema-conservation.json",
+    "sha256": "bfe7ec54be6ae8ee4d6729a950c37f9d7aecb207577929f508e1a04b1ba74260",
+    "limit": "Seven target passage dictionaries use the existing schema-1 facsimile controller honestly, preserving literal loci, full Latin/English and all finite carrier/proof dictionaries. Two Heart target passages already had valid transport. No target-image or new source-word claim follows."
+  },
+  "surfaces": ["web", "corpus-data", "public-git", "download", "print", "cli"],
+  "shared_limits": [
+    "This is sixteen finite assessments, not a whole-1962-book public-domain declaration, scan-wrapper license, prior-authority fanout or exemption based on word count.",
+    "Keep source identity, historical wording, target changes, rights basis, translation fidelity, AI study authorship and availability separate. No new study English is approved liturgical English or represented as human reviewed.",
+    "Preserve actual printed conclusion extents, source options and contrary evidence. Supply no unprinted formula continuation, response or rubric.",
+    "Common plural Collect, Queenship regular Alleluia and Introit, other Holy Week material and every unrelated target remain outside this decision.",
+    "Retain all prior positives and old authorities; original refusals remain historical evidence unless separately superseded at an exact owner."
+  ],
+  "required_for_runtime_activation": [
+    "Independently review the exact pending packet's closure and measured prior routes; preserve the older two-scope authority and copied/renamed-payload refusals.",
+    "Install a separate adopted authority pinning these exact sixteen scopes and this root judgment. Activate only its actual file hash and exact code-owned recognition/prior-route pins.",
+    "Run installed source, calendar, translation-binding and source-reader checks, generate through registered owners, and verify reader/CLI/seasonal behavior before representing the batch as delivered."
+  ],
+  "primary_source_boundary": "Root freshly read Copyright Office Circular 14, SHA256 928aa3a506f94d5772bad430bbb01ff54aec812194aff33d3aab6b95a2ceffc1, distinguishing preexisting material from new original contribution. The retained recommendations identify further primary support and the low creativity threshold. The regulatory page's data are as of 2025-03-14; no 2026-current legal guarantee or adjudication of these prayers is claimed.",
+  "overturning_evidence": ["a material source, controller or fidelity mismatch", "a specific enforceable reservation in the measured added expression", "a stronger whole-contribution analysis establishing protected original expression"]
+}

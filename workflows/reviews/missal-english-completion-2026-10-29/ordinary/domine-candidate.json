@@ -1,0 +1,175 @@
+{
+  "target": "ritus-communionis/domine-iesu-christe-qui-dixisti",
+  "state": "PRIVATE_FROZEN_CANDIDATE_REQUIRING_ROOT_FINITE_ADOPTION_AND_INDEPENDENT_SOURCE_ENGLISH_REVIEW",
+  "files": {
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-la/artifact.toml": {
+      "sha256": "08b2b8ccfa6b0703fe54b566f8147c93be42db025995296e73c70592872b9591",
+      "bytes": 2750
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-la/text.tsv": {
+      "sha256": "c54326753e78c74a0db88e33c938e2e0b3703a1f1c2aaba5ac0e523587063bf8",
+      "bytes": 550
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-pages/artifact.toml": {
+      "sha256": "2060ee236b63cc34f5e5a0eda4e1e353bde34fd0b75c8388c153d24f5133808e",
+      "bytes": 2311
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-pages/source.pdf": {
+      "sha256": "82ba014aba05e5948c494892990e33bbe35b67b42f1874349512c13c081c3eb9",
+      "bytes": 402728
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-domine-qui-dixisti-old-prayer.toml": {
+      "sha256": "dc49ad4b5b9bc855213dbc3662f300d6dd39e29d58c74f7a099ac647b183f1e9",
+      "bytes": 1232
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-qui-vivis-short-conclusion.toml": {
+      "sha256": "3753d5d4721da7b22edd9652c31eb7578b22afa17e9880c5c478286aa2096c31",
+      "bytes": 1284
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/artifacts/domine-qui-dixisti-study-en/artifact.toml": {
+      "sha256": "103063204c2686c3b33e6122b3e5ba9d189879473c074a1bfadf03bc73daa6a4",
+      "bytes": 3517
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/artifacts/domine-qui-dixisti-study-en/text.tsv": {
+      "sha256": "dd4e3f58bf11acba57c5247b582cc112728bf3d0b74ab9eef907e8a5b9ecf859",
+      "bytes": 1108
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/edition.toml": {
+      "sha256": "e5adf166015ca1558db3908b98a274b97e3ad6ff1c4c3b12c5491d9aee243734",
+      "bytes": 914
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/work.toml": {
+      "sha256": "671f06e3165103bcd79493d5e6575e520a677618af5eb19bd662b192e8d2b5ce",
+      "bytes": 966
+    }
+  },
+  "english": {
+    "witness": "edition.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030",
+    "artifact": "artifact.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030.domine-qui-dixisti-study-en",
+    "elements": [
+      "domine-qui-dixisti-priest",
+      "domine-qui-dixisti-amen"
+    ],
+    "column": "english",
+    "relation": "own",
+    "reading_note": "Triptych study translation. The older prayer’s “my sins” becomes “our sins,” followed by a separately witnessed ancient short conclusion. Not approved for liturgical use or recitation.",
+    "note": "New study English from the whole checked1922 old petition, with the substantive mea-to-nostra communal revision expressly declared and the complete ancient short conclusion independently witnessed at Mameoriginal1022. Modern priest/people boundaries are separately read at secondary2002 n126, original367. Root finite section1(6) adoption, not a blanket ancient-word claim, governs the minimal revised expression; no complete controlling2008 collation, approved English or human review is claimed."
+  },
+  "english_turns": [
+    {
+      "key": "priest-prayer",
+      "seq": [
+        1
+      ],
+      "speaker": "priest"
+    },
+    {
+      "key": "people-amen",
+      "seq": [
+        2
+      ],
+      "speaker": "all",
+      "dialogue_role": "response"
+    }
+  ],
+  "turns_basis": "Registered secondary digitally reset2002 Missal artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944, SHA-2560b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7, original artifact367, n126, freshly rendered and directly inspected. The priest says the full prayer and short conclusion; Populus respondet assigns Amen to the people. No P/R letters are printed on this target span. This evidence establishes those actor boundaries only and does not authenticate complete2008 wording or marks.",
+  "latin_side": "Retain the existing typed exact-source gap; no revised whole targetLatin payload or false2008projected-Latin grade is offered.",
+  "witness": {
+    "id": "edition.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030",
+    "lang": "en",
+    "label": "Triptych study English with explicit communal revision (not approved liturgical English)",
+    "rights": "project-created",
+    "caution": "New AI-authored study English of a checked old main prayer, one explicit communal possessive revision and a separately witnessed ancient short conclusion. Not approved for liturgical use or recitation; no human review or complete2008target grade is claimed.",
+    "artifacts": [
+      "artifact.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030.domine-qui-dixisti-study-en"
+    ]
+  },
+  "source_selection": {
+    "old_whole_prayer": {
+      "artifact": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-domine-qui-dixisti-la",
+      "rows": [
+        1,
+        2
+      ],
+      "source_pages": [
+        464
+      ],
+      "printed": [
+        "350"
+      ],
+      "source_body_sha256": "3b2a3111ffe422a39b1274e9f95e1f7c50e0dba672a7f73daafdecde1c18ff2c",
+      "old_conclusion_sha256": "da6367b10760d53354a2c6cc9f5b3825d30fbdccbb7b4f668e468adf5b407221"
+    },
+    "independent_whole_short_conclusion": {
+      "artifact": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-domine-qui-dixisti-la",
+      "rows": [
+        3,
+        4
+      ],
+      "source_pages": [
+        1022
+      ],
+      "printed": [
+        "144*"
+      ],
+      "priest_formula_sha256": "ae138329e45dd2e21ce5235def96bafaec6d4822b54be5a59923c8bdb2732017",
+      "source_Amen_separately_retained": true
+    },
+    "body_revision": {
+      "kind": "substantive-possessive-substitution",
+      "old": "mea",
+      "new": "nostra",
+      "occurrence_count": 1,
+      "source_for_actual_revision": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+      "target_page": 367,
+      "target_number": 126,
+      "normalization_is_not_the_basis": true
+    },
+    "old_ending_selection": "The whole old Deus-per-omnia conclusion is not selected; replace it with the separately witnessed whole old short conclusion, never infer this by omission."
+  },
+  "English": {
+    "priest_text_sha256": "70394669cebd32f8039cd8dc24eab95b4e433acf73ad5e8202f7383fe86a0170",
+    "people_text_sha256": "d07a178bc193c1910055e2cfd1e2c19eece00b6cd3368d5e96308f79539eaad3",
+    "newly_authored_from_source": true,
+    "no_modernEnglish_consulted_or_copied": true,
+    "no_human_review_claimed": true
+  },
+  "rights_recommendation": {
+    "path": ".scratch/translation-policy-20261029/pc-residual-maps/RECOMMENDATION.json",
+    "sha256": "97024c11fd5a5262375e2fcdebba83e233f1d831774db6bc8b598aa3097467e4",
+    "case": "secondary2002 n126 only",
+    "basis": "finite policy1(6) candidate preparation; root adoption not performed by this lane",
+    "not_inherited": [
+      "existing one-word grants",
+      "finite-seven grants",
+      "historical whole-source identity",
+      "approvedEnglish rights"
+    ]
+  },
+  "source_images": {
+    "mame-464.jpg": {
+      "sha256": "05975fe053184207c62d26f0904e344c3d6bc598d8f3c1a246a24be23bb912e1",
+      "byte_size": 349227
+    },
+    "mame-1022.jpg": {
+      "sha256": "e26ab05cace74d3993e7bbe49902f289b449592b86c9a039ff67266fb613d5b9",
+      "byte_size": 326646
+    }
+  },
+  "target_evidence": {
+    "artifact": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+    "page": 367,
+    "number": 126,
+    "image": {
+      "sha256": "05766ca0d02a5bb48c245b6853c56f440cedc44baeb9b5d1766530d3d8f2e4b6",
+      "byte_size": 231206
+    },
+    "qualification": "Secondary digitally reset2002, not authenticated complete2008; actor facts and actual one-word target revision only."
+  },
+  "full_old_source": {
+    "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+    "byte_size": 51720493
+  },
+  "tracked_mutations": []
+}

@@ -25,7 +25,11 @@ CALENDARS = ROOT / 'src/sources/calendars'
 EXPECTED = {('first', 'Collect'): ('5e512755467527b255130a5e18e96e261eb8f535404a4c6aeef4456086f4d050', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-first-collect'), ('first', 'Tract'): ('9ae43a7ab151f037c2b390cb78b97a44d332a3446d77f9280e51cc63e432ff52', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-first-tract'), ('first', 'Sequence'): ('87f039a9c40447c9af9952efb4e3f1a5a3c2510b8e3d4b4516b6c2376f6008ef', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-first-sequence'), ('first', 'Offertory'): ('4be2836129c872cd10d52eea31131b2117ef8354ef5f9dd610e65017698be93e', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-first-offertory'), ('first', 'Secret'): ('1f931cc3bc7fe512b1cd91f1a94a3f7a91d55f510ba81df2742b40b8211f4c31', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-first-secret'), ('first', 'Postcommunion'): ('96e3dee4fec348be97089331b74a275daafce5eda19fd40a3073c49ca463a652', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-first-postcommunion'), ('second', 'Collect'): ('30e48e208401dc42d128140be8a04c58f12f20d89d9a5c9bcfb90bddfb53f054', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-second-collect'), ('second', 'Tract'): ('9ae43a7ab151f037c2b390cb78b97a44d332a3446d77f9280e51cc63e432ff52', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-second-tract'), ('second', 'Offertory'): ('4be2836129c872cd10d52eea31131b2117ef8354ef5f9dd610e65017698be93e', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-second-offertory'), ('second', 'Secret'): ('cd9140c844f1e30155d93be9993ac51e43630ac6a321fce42e5e33daa10e00a1', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-second-secret'), ('second', 'Postcommunion'): ('ba2b69434a3457a9642232323225ec0964e364632e5e138728912d7bf6efc600', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-second-postcommunion'), ('third', 'Collect'): ('86a4fd1f06fb14467594949b6255fab3dba90108de16013c464ebef4c4f3d16b', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-third-collect'), ('third', 'Tract'): ('9ae43a7ab151f037c2b390cb78b97a44d332a3446d77f9280e51cc63e432ff52', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-third-tract'), ('third', 'Offertory'): ('4be2836129c872cd10d52eea31131b2117ef8354ef5f9dd610e65017698be93e', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-third-offertory'), ('third', 'Secret'): ('b351e3fb080a86848e3596736761a340d2032b791034f8c2870b97f1a4b31c0e', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-third-secret'), ('third', 'Postcommunion'): ('abad7626ab3256d18b99f84e123d0c83632915aa45ccf74fb3f02fb7d57ec8cb', 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-third-postcommunion')}
 UNCHANGED_HASH = '9cc0c574f099c34eb7e10ee201bb06a587d827ea2c99ac10edb0b56459fe26ee'
 ORDERS = {'first': ['Introit', 'Collect', 'Epistle', 'Gradual', 'Tract', 'Sequence', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion'], 'second': ['Introit', 'Collect', 'Lesson', 'Gradual', 'Tract', 'Sequence', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion'], 'third': ['Introit', 'Collect', 'Lesson', 'Gradual', 'Tract', 'Sequence', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion']}
-ENGLISH_OWNERS_HASH = '7086db8b551a289c37f0432337fa182f3569d3850a5810196187910ab4517759'
+# Was 7086db8b... (4 entries, 12 absences). The twelve absences were later closed by
+# accepted rows of the English recovery ledger (eeab39fef Lasance, 8d7e3b301 Lefebvre);
+# the four earlier entries are unchanged.
+ENGLISH_OWNERS_HASH = 'c6a0d97b03f4d8cbac812158911d1420bc64bdd79ecf63d859e82be5101d1442'
+ENGLISH_RECOVERY = ROOT / 'src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml'
 HISTORICAL_ARTIFACT = 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-souls-twelve-bodies-la-checked-4a41c7e8'
 PROJECTION_ARTIFACT = 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-sixteen-bodies-871dadab'
 HISTORICAL_MANIFEST = 'src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-souls-twelve-bodies-la-checked-4a41c7e8/artifact.toml'
@@ -187,8 +191,18 @@ class AllSoulsBodyTests(unittest.TestCase):
         ledger = tomllib.loads((ROOT / 'src/sources/inventories/roman-1962-proper-translations-v1.toml').read_text())
         owners = {kind: [r for r in ledger[kind] if r['mass'] == MASS]
                   for kind in ('entries', 'untranslated')}
-        self.assertEqual((len(owners['entries']), len(owners['untranslated'])), (4, 12))
+        self.assertEqual((len(owners['entries']), len(owners['untranslated'])), (16, 0))
         self.assertEqual(digest(owners), ENGLISH_OWNERS_HASH)
+        recovered = {tuple(row['target'][1:]): row['english_sha256']
+                     for row in tomllib.loads(ENGLISH_RECOVERY.read_text())['accepted']
+                     if row['target'][0] == MASS}
+        entries = {(row['form_id'], row['proper'], row['cycle'], row['occurrence']): row
+                   for row in owners['entries']}
+        self.assertEqual(set(entries) - set(recovered),
+                         {('first', name, 'all', 1) for name in ('Sequence', 'Collect', 'Secret', 'Postcommunion')})
+        self.assertEqual(len(recovered), 12)
+        for key, english in recovered.items():
+            self.assertEqual(text_sha256(entries[key]['translations'][0]['text']), english, key)
         for row in owners['untranslated']:
             self.assertEqual(row['availability'], 'unavailable')
             self.assertNotIn('text', row)

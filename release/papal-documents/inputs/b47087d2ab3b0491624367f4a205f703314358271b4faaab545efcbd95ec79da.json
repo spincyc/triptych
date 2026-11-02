@@ -1,0 +1,55 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T17:33:11Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.nemo-repair-text-f4e60868a4e3",
+      "collection_corpus": "pius-ix-acta",
+      "date": "1852-03-25",
+      "document_type": "encyclical",
+      "extent_kind": "printed-act",
+      "id": "pius-ix-acta.volume-01.line-00012583.part-02",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          250
+        ]
+      ],
+      "pope": "Pius IX",
+      "revision": "2026-10-30T17:33:11Z",
+      "rights_basis": "Original Latin wording and contemporary notes in the identified 1854 historical printing are public domain in the United States by expiration of publication term under 17 U.S.C. 304–305; 104A supplies only any remaining term, and 103(b) does not extend copyright to preexisting wording. Faithful mechanical OCR adds no original authorship. The BSB title image bears Ex Typographia Bonarum Artium, habita facultate, and Giorgio Franz in Monaco; its primary holding-library catalogue and IIIF metadata date the edition 1854. See src/sources/inventories/papal-documents-rights-v1.toml. This claim covers historical wording and mechanical facts, not modern wrappers or an unrestricted licence over digital images.",
+      "rights_notice": "Historical source wording is public domain in the United States; project typesetting does not relicense it.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.pius-ix-acta.volume-01.line-00012583.part-02.1854-rome-franz-munich-bsb-la.image-ocr-nemo-repair-f4e60868a4e3",
+      "segment_path": "src/sources/works/pius-ix-acta/volume-01-line-00012583-part-02/editions/1854-rome-franz-munich-bsb-la/segments/image-ocr-nemo-repair-f4e60868a4e3.toml",
+      "sha256": "f4e60868a4e3f3eb574663c0e64ed464c586b5430e513f5a17c567a3ad2235e1",
+      "source_note": "Pii IX Pontificis Maximi Acta, pars prima, volume I. Ex Typographia Bonarum Artium, habita facultate; Giorgio Franz in Monaco. 1854 (holding-library catalogue date). Bayerische Staatsbibliothek, J.can.f. 113 i-1,1; bsb10543911. Printed pp. 353–360. Uncorrected mechanical OCR from facsimile images; the first citation note was separately re-recognized. Scattered OCR errors remain; no complete verbal collation is claimed. Page numbers and gathering signatures are omitted.",
+      "source_url": "https://www.digitale-sammlungen.de/en/details/bsb10543911",
+      "text_path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/nemo-repair-text-f4e60868a4e3/nemo.txt",
+      "title": "Nemo certe ignorat — ad archiepiscopos et episcopos Hiberniae",
+      "edition_id": "edition.pius-ix-acta.volume-01.line-00012583.part-02.1854-rome-franz-munich-bsb-la"
+    }
+  ],
+  "supersessions": [
+    {
+      "prior": {
+        "id": "pius-ix-acta.volume-01.line-00012583.part-02",
+        "language": "la",
+        "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.nemo-ocr-text-616920cfe9af",
+        "source_sha256": "616920cfe9af6771db73785cb06b87191df1c2b36cfdf41dc90409b0ab5d52ea",
+        "segment_id": "segment.pius-ix-acta.volume-01.line-00012583.part-02.1854-rome-franz-munich-bsb-la.image-ocr",
+        "pdf_sha256": "cb3216449e7604372f171e1e281afcce8743532813d517e51dcf82e341d77585"
+      },
+      "replacement": {
+        "id": "pius-ix-acta.volume-01.line-00012583.part-02",
+        "language": "la",
+        "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.nemo-repair-text-f4e60868a4e3",
+        "source_sha256": "f4e60868a4e3f3eb574663c0e64ed464c586b5430e513f5a17c567a3ad2235e1",
+        "segment_id": "segment.pius-ix-acta.volume-01.line-00012583.part-02.1854-rome-franz-munich-bsb-la.image-ocr-nemo-repair-f4e60868a4e3",
+        "revision": "2026-10-30T17:33:11Z"
+      },
+      "reason": "Replace failed BSB cold33c candidate: material first-note address/chapter corruption recovered mechanically from exact source crop; correct act-inapplicable genre-caption omission notice. Localized composition preserves all other parent bytes. Independent new source/PDF cold review remains required."
+    }
+  ]
+}

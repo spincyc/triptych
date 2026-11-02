@@ -1,0 +1,153 @@
+schema_version = 1
+id = "gpt/theology/angelology"
+kind = "angelology"
+profile = "guidance/theology/angelology.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/theology/angelology"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "question-inventory"
+source = "research/question-inventory.md"
+
+[[structure]]
+role = "order-inventory"
+source = "research/order-inventory.md"
+
+[[structure]]
+role = "terminology-audit"
+source = "research/terminology-audit.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "exposition"
+source = "sections/00-scripture.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/05-creation-and-faith.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/10-fathers.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/15-celestial-hierarchy.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/20-reception.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/30-nature.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/32-knowledge.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/34-love-and-grace.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/36-fall.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/40-illumination-and-order.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/42-government-and-guardians.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/44-assault-and-providence.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/50-christ-mary.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/55-disputed-and-eastern.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/60-liturgy-and-devotion.tex"
+
+[[structure]]
+role = "exposition"
+source = "appendices/01-orders.tex"
+
+[[structure]]
+role = "exposition"
+source = "appendices/02-article-census.tex"
+
+[[structure]]
+role = "exposition"
+source = "appendices/03-aquinas-parallels.tex"
+
+[[structure]]
+role = "exposition"
+source = "appendices/04-dionysian-concordance.tex"
+
+[[structure]]
+role = "chronology-display"
+source = "appendices/04-magisterial-chronology.tex"
+
+[[structure]]
+role = "exposition"
+source = "appendices/05-calendar-and-names.tex"
+
+[[structure]]
+role = "exposition"
+source = "appendices/06-scripture-and-powers.tex"
+
+[[structure]]
+role = "exposition"
+source = "appendices/07-first-sin.tex"
+
+[[structure]]
+role = "exposition"
+source = "appendices/08-terminology-and-witnesses.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "appendices/90-scope.tex"
+
+[[structure]]
+role = "references"
+source = "appendices/99-references.tex"

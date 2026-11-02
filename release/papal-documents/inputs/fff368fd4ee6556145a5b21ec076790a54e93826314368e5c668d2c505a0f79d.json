@@ -1,0 +1,59 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.journals.catholic-mind.1930-02-22-volume-28-issue-4.bounded-english-8d44b2c03213",
+      "body_tex": "1929-12-31-papal-pius-xi-hf-p-xi-enc-31121929-divini-illius-magistri-a6878805-en/1929-12-31-papal-pius-xi-hf-p-xi-enc-31121929-divini-illius-magistri-a6878805-en.body.tex",
+      "changed": true,
+      "id": "papal.pius-xi.hf-p-xi-enc-31121929-divini-illius-magistri",
+      "language": "en",
+      "pages": 14,
+      "pdf": "1929-12-31-papal-pius-xi-hf-p-xi-enc-31121929-divini-illius-magistri-a6878805-en/1929-12-31-papal-pius-xi-hf-p-xi-enc-31121929-divini-illius-magistri-a6878805-en.pdf",
+      "pdf_sha256": "fb6d2b1598120e894bd8cb5efcc6ac309b3c2efc03298e08ee2329ee60b90c72",
+      "physical_line_ranges": [
+        [
+          1,
+          371
+        ]
+      ],
+      "render_revision": "2026-10-26T16:09:28Z",
+      "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-31121929-divini-illius-magistri.1930-02-22-catholic-mind-english.complete-english-text",
+      "source_sha256": "8d44b2c03213449a25f5e4af3b4b5daed51dffb24ee9bf9f1dd63b3e61f8cafa",
+      "status": "compiled",
+      "stem": "1929-12-31-papal-pius-xi-hf-p-xi-enc-31121929-divini-illius-magistri-a6878805-en",
+      "tex": "1929-12-31-papal-pius-xi-hf-p-xi-enc-31121929-divini-illius-magistri-a6878805-en/1929-12-31-papal-pius-xi-hf-p-xi-enc-31121929-divini-illius-magistri-a6878805-en.tex",
+      "text_fidelity": {
+        "method": "pdf-raw-whitespace-soft-hyphen-nfkc-v2",
+        "pages": 14,
+        "source_characters": 79238,
+        "source_first_page": 1,
+        "source_last_page": 14,
+        "source_normalized_characters": 65539,
+        "status": "pass"
+      },
+      "warnings": []
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 1,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "5c3c377fb0e9264f5eaaa123e521f30e933d71b9df20e7b6560443a3d47f6ca4",
+  "options": {
+    "automatic_hyphenation": false,
+    "body_alignment": "ragged-right",
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-26T16:09:28Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

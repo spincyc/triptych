@@ -1,0 +1,103 @@
+{
+  "schema": "triptych-papal-source-note-boundary-review/v1",
+  "reviewed_on": "2026-10-30",
+  "document_id": "acta.ass.036.ass-036-l020506",
+  "language": "la",
+  "source_artifact_id": "artifact.acta-papal-archives.ass.036.historical-text-2e2ac41b",
+  "source_sha256": "2e2ac41b82e92ef6a68a6bd1d4c768933ebadf42a8c74f3103755ac13fd762cb",
+  "prior_segment_id": "segment.acta-papal-archives.ass.036.ass-036-l020506",
+  "prior_pdf_sha256": "b7d445685299a338bcfcdc4596280d1c9af381570ce09bd0a8b8fccaa13125dc",
+  "native_pdf_sha256": "4d5577b47b26023818a4219fc9e089c3425a066056638aa2c16013990fd87d27",
+  "source_note_physical_line_ranges": [
+    [
+      21044,
+      21049
+    ]
+  ],
+  "native_page_geometry": [
+    {
+      "native_pdf_page": 525,
+      "width": 419.55,
+      "height": 595.3,
+      "lower_page_line_boxes": [
+        {
+          "xMin": 21.0,
+          "yMin": 459.4026,
+          "xMax": 27.153252,
+          "yMax": 468.0051
+        },
+        {
+          "xMin": 21.0,
+          "yMin": 531.9707,
+          "xMax": 23.216597,
+          "yMax": 538.3607
+        },
+        {
+          "xMin": 55.56,
+          "yMin": 434.8881,
+          "xMax": 363.264488,
+          "yMax": 443.2581
+        },
+        {
+          "xMin": 55.74,
+          "yMin": 447.1281,
+          "xMax": 363.298118,
+          "yMax": 455.4981
+        },
+        {
+          "xMin": 58.935772,
+          "yMin": 459.7281,
+          "xMax": 364.310597,
+          "yMax": 468.0981
+        },
+        {
+          "xMin": 55.02,
+          "yMin": 471.9681,
+          "xMax": 313.975067,
+          "yMax": 480.3381
+        },
+        {
+          "xMin": 76.62,
+          "yMin": 490.5707,
+          "xMax": 136.437492,
+          "yMax": 496.9607
+        },
+        {
+          "xMin": 76.08,
+          "yMin": 501.0107,
+          "xMax": 182.259467,
+          "yMax": 507.4007
+        },
+        {
+          "xMin": 75.72,
+          "yMin": 511.2707,
+          "xMax": 148.281146,
+          "yMax": 517.6607
+        },
+        {
+          "xMin": 75.72,
+          "yMin": 521.5307,
+          "xMax": 124.346895,
+          "yMax": 527.9207
+        },
+        {
+          "xMin": 76.318125,
+          "yMin": 531.9707,
+          "xMax": 124.942773,
+          "yMax": 538.3607
+        },
+        {
+          "xMin": 75.9,
+          "yMin": 542.4107,
+          "xMax": 128.3047,
+          "yMax": 548.8007
+        }
+      ]
+    }
+  ],
+  "review_extent": "Every listed native page opened at full size. Page-foot notes occupy smaller text below the preceding body or subscription; no marginal prose or column reordering is adopted.",
+  "source_order_preserved": true,
+  "selected_non_lf_bytes_preserved": true,
+  "selected_non_lf_sha256": "867fb1ea710c4c76d4730bf2d79976a3a2047136a8419ffeaf21beb9e524e7b7",
+  "limitations": "Vatican OCR reconstruction geometry only; not original-print image collation or lexical correction. Isolated native marginal glyphs remain literal in the source stream. No deletion, word repair, translation or inferred note anchor."
+}

@@ -1,0 +1,128 @@
+{
+  "limits": "This evidence records inspected page geometry and exact source ownership. It is not historical authentication, OCR repair, or whole-act image collation.",
+  "method": "Every decoded XML WORD remains indivisible. Explicit image-reviewed WORD order and role assignments change only serialization and surrounding whitespace on the named pages. All other raw OCR bytes are copied exactly.",
+  "ownership": [
+    {
+      "changed_page": {
+        "excluded_source_WORD_global_ranges_1": [],
+        "leaf": 495,
+        "owned_WORD_count": 527,
+        "owned_source_WORD_global_ranges_1": [
+          [
+            259702,
+            260228
+          ]
+        ],
+        "role_WORD_counts": {
+          "body-left": 212,
+          "body-right": 242,
+          "footer": 5,
+          "gutter-ocr": 1,
+          "header": 10,
+          "margin-right": 12,
+          "notes-left": 37,
+          "notes-right": 8
+        }
+      },
+      "date": null,
+      "decision": "propose-complete",
+      "geometry_image_review": {
+        "extent": "Entire supplied page image inspected for columns, body/margin/note membership and retained uncertain zones; not whole-act word-level collation.",
+        "image_sha256": "6b5324cbef66d061118a686f996d97a1bb7a26a0fa8471a09f7fe57b1451659e",
+        "leaf": 495,
+        "object_ordinal_1": 495
+      },
+      "hybrid_path": "12/word-lines-hybrid.txt",
+      "hybrid_physical_line_ranges": [
+        [
+          65373,
+          66060
+        ]
+      ],
+      "hybrid_sha256": "e69d188972ee07a5bead29e71447e68ec671ba2830e377ab4d254e4ae74bfa2c",
+      "language": "la",
+      "language_evidence_extent_raw_lf_1": [
+        65373,
+        65643
+      ],
+      "language_label": "Latin",
+      "language_qualifier": "Latin act and historical editorial apparatus; no substantive non-Latin passage identified in the entire reviewed raw/hybrid extent. Proper names and Latinized local terms remain literal.",
+      "page_stream_ownership": {
+        "footer": "edition signature retained",
+        "gutter_ocr": "WORD259717 preserved as rule-shaped recognition outside body",
+        "leaf495_body_left_and_right": "all belong to0107; left ending65456 now precedes right continuation from65416",
+        "margin_right": "current section2 dismemberment summary; retained",
+        "notes_left": "three notes belong to current paragraph1 markers; retained",
+        "notes_right": "variant at65520 targets current mensae capitulari at65480; retained"
+      },
+      "reader_source_note": "The historical apparatus tentatively suggests a limiting word in the monetary narrative, a different verb form and a possible preposition. These editorial conjectures remain literal in their notes; no proposed words are adopted or supplied. The printed sections 1–4, dating and historical apparatus survive. Page-specific WORD reordering changes only serialization and inter-WORD whitespace, without repairing the OCR or establishing authenticity. Only scan leaf 495 was inspected for column order; the remaining pages are uncollated OCR. This is a Latin historical witness, with its editorial apparatus in Latin.",
+      "remaining_source_extent_review": "Entire act range plus at least20LF context read as raw/hybrid OCR; the other pages were not image-collated in this task.",
+      "review_note": "Independent CCCXXIV, Paulus protocol at raw LF65383–65387, all printed sections1–4, historical apparatus and full/short dating at raw LF65638–65643 survive before CCCXXV at65646. The leaf495 mixed-column defect at65416 is repaired. Notes65458–65459,65463–65465 and65569–65570 are tentative individual lexical/editorial conjectures; they do not announce an omitted proem, substantive body or annex. Their exact wording remains literal, and no proposed limiter, verb form or preposition is adopted or supplied. This is a complete printed OCR witness, not an authenticated act or a complete autograph.",
+      "reviewed_extent": "Entire candidate plus20LF context; entire changed-page serialization and source page image read.",
+      "source_pages_read_as_OCR_only": [
+        {
+          "artifact_page": 494,
+          "leaf": 494,
+          "raw_lf_range_1": [
+            65297,
+            65408
+          ]
+        },
+        {
+          "artifact_page": 496,
+          "leaf": 496,
+          "raw_lf_range_1": [
+            65523,
+            65624
+          ]
+        },
+        {
+          "artifact_page": 497,
+          "leaf": 497,
+          "raw_lf_range_1": [
+            65627,
+            65734
+          ]
+        }
+      ],
+      "source_raw_sha256": "7142fbc19444b22a8b4ee9fe9ea0b947e2bfce6fcbf90aa0d354ff40530ce685",
+      "unchanged_source_raw_lf_ranges_1": [
+        [
+          65373,
+          65410
+        ],
+        [
+          65521,
+          65643
+        ]
+      ],
+      "unit_id": "bullarium.volume-12.unit-0107"
+    }
+  ],
+  "page_images": [
+    {
+      "artifact_page": 495,
+      "dimensions": [
+        1500,
+        2114
+      ],
+      "id": "artifact.bullarium-romanum.volume-12.1867-turin-latin.geometry-leaf-495-6b5324cbef66",
+      "inspection_extent": "Entire page inspected for column, margin and historical-note membership; no whole-act word-level collation.",
+      "leaf": 495,
+      "manifest": "src/sources/works/bullarium-romanum/volume-12/editions/1867-turin-latin/artifacts/geometry-leaf-495-6b5324cbef66/artifact.toml",
+      "path": "src/sources/works/bullarium-romanum/volume-12/editions/1867-turin-latin/artifacts/geometry-leaf-495-6b5324cbef66/page.jpg",
+      "sha256": "6b5324cbef66d061118a686f996d97a1bb7a26a0fa8471a09f7fe57b1451659e"
+    }
+  ],
+  "prior_receipt_hashes": {
+    "assessment.json": "d1a47b1221e4123df51a8d8f754f3d137b64c7b854e73f1472b21532b38b7c51",
+    "image-receipts.json": "c2a683907b8b943622bd3375c48c5edcf041080010c221353ed4e80b16bbb45a",
+    "proof.json": "e79576cc7244e2c21193b2d7e373600d6ac2ae546bc7a66e72e2eadb6911ac0c"
+  },
+  "schema": "triptych-bullarium-coordinate-evidence/v1",
+  "source_ocr_artifact_id": "artifact.bullarium-romanum.volume-12.1867-turin-latin.ocr-7142fbc19444",
+  "source_ocr_sha256": "7142fbc19444b22a8b4ee9fe9ea0b947e2bfce6fcbf90aa0d354ff40530ce685",
+  "source_xml_artifact_id": "artifact.bullarium-romanum.volume-12.1867-turin-latin.xml-95fe035b27cf",
+  "source_xml_sha256": "95fe035b27cf8c21654ac99bd71b4cf9402fc14e9b776bfc70d2a5c565790ff3",
+  "volume": 12
+}

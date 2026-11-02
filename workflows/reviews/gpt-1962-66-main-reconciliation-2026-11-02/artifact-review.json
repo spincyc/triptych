@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "review": "independent bounded exact-artifact delivery and typed proper migration review",
+  "verdict": "PASS",
+  "workspace_branch": "feature/propers/codex",
+  "integration_target": "84c2f7e041af77230095987ae7eb86b0f4d2f92e",
+  "source_commit": "91ee09d34f86be55e421df5ff9eb67ca75912171",
+  "reviewed_sha256": {
+    "scripts/_artifact_store.py": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6",
+    "tools/artifact-store": "a58ec948301012ded2b5f0d0bc14bb698c19bc674650f0b9ecdd63cb89ef0992",
+    "tools/tests/test_artifact_store.py": "f437f2bbe0587f8032b15778bf20e2345438a58e01404a2ac17b10fd74e7e337",
+    "guidance/sources.md": "681772b2d765e4e3c39bfcc1a7a8a50426179863d55cca91fb9e6e05f12c50f1",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/publication.toml": "29a3fae6d6b91424163226dfb451725af03206ac099ebb2054abc4e8fbae782e",
+    "src/sources/artifact-delivery.json": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d",
+    "workflows/reviews/gpt-1962-66-main-reconciliation-2026-11-02/artifact-preservation.json": "f34ba693e7e8d9c5718f84064d8ec29f3053e0e8ebdbd6f2cbdb746f465fc6c9"
+  },
+  "contract_findings": [
+    "Version-1 delivery validation retains legacy public archives with nonempty HTTPS routes and permits only the explicit offline-only variant with an empty URL array. Offline records cannot advertise a route or silently fetch.",
+    "Scoped preservation requires append, offline-only and an explicit safe source-evidence selection together; it resolves selected new payloads, preserves old archive/entry arrays and snapshot, and performs no upload.",
+    "Archive members are verified before the appended sidecar is atomically replaced. Invalid selection, changed or missing selected source, manifest mismatch and size-bound failures preserve prior index declarations; hydration verifies each exact member before atomic cache installation.",
+    "Tar metadata and member order are deterministic. Existing selected declarations remain unchanged on repeated append. Legacy public packing, fetching, strict validation and unsafe-member refusals retain their focused regression coverage.",
+    "The new proper-1962 manifest accurately declares the existing three authored schema-2 outputs, semantic source roles and unchanged component contracts. It adds typed discovery without editing accepted prose, generation provenance or native audit records."
+  ],
+  "independent_checks": [
+    {
+      "command": "python -m unittest tools.tests.test_artifact_store",
+      "runtime": "Pinned repository runtime; fixture ROOT redirected into exclusive reviewer scratch",
+      "exit_code": 0,
+      "tests": 33,
+      "passed": 33,
+      "seconds": 0.359
+    },
+    {
+      "command": "tools/document-schema check --provider gpt --document liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany --phase content --run-gates --json",
+      "exit_code": 0,
+      "documents": 1,
+      "outputs": 3,
+      "errors": 0,
+      "owning_gates": [
+        "generation PASS",
+        "proper-components PASS",
+        "proper-content PASS"
+      ]
+    },
+    {
+      "result": "The actual four-member tar was compared with all four committed source payloads and manifest hashes. An isolated scoped append reproduced its bytes and the complete current index exactly; repeating it left every pack file byte-identical."
+    },
+    {
+      "result": "With network access replaced by a refusal, uncached offline fetch fails clearly, metadata validation succeeds, and explicit local-archive hydration restores all four exact payloads only in the isolated cache."
+    },
+    {
+      "result": "All 97 prior canonical leaf files and all 58 native v15 archive files match the source commit byte for byte. Four source artifact manifests match that commit; the four canonical binary paths are absent from the worktree and fully covered by the verified delivery members."
+    },
+    {
+      "result": "All eight logs bound by artifact-preservation.json match their declared hashes, including the eight successful registered example replays."
+    },
+    {
+      "command": "git diff --check on reviewed implementation, tests, guidance, index and publication manifest",
+      "exit_code": 0
+    }
+  ],
+  "delivery_reconciliation": {
+    "old_public_archives_unchanged": 10,
+    "old_entries_unchanged": 5540,
+    "old_snapshot_unchanged": true,
+    "new_archive": {
+      "id": "05e4f8d0b98cd4ba1c7ff62b383406f9cbfc965e56a41097f8174f2bc98f5907",
+      "name": "triptych-binaries-0011-05e4f8d0b98cd4ba.tar",
+      "sha256": "05e4f8d0b98cd4ba1c7ff62b383406f9cbfc965e56a41097f8174f2bc98f5907",
+      "bytes": 2775040,
+      "urls": [],
+      "delivery": "offline-only"
+    },
+    "exact_payloads": 4,
+    "payload_bytes": 2762900,
+    "new_archive_bytes": 2775040,
+    "public_delivery_available": false,
+    "public_upload_performed": false
+  },
+  "open_findings": [],
+  "limits": [
+    "The offline pack and cache are local ignored artifacts. No new public route, continuing remote availability or external upload is asserted; the original payloads also remain in existing Git history.",
+    "Legacy archive declarations were preserved and regression tested; their remote payloads were not downloaded again.",
+    "This structural/storage migration preserves accepted v15 evidence and provenance. It is not a v16 workflow rerun, renewed scholarly review or new print approval.",
+    "This verdict is bounded to the frozen listed files and four-payload migration. Final source currentness, shared projections, site integration and disclosure receive the later frozen-snapshot review.",
+    "No shared source, index, release, native archive or delivery pack was mutated by this reviewer; all packing and hydration writes were isolated scratch fixtures."
+  ]
+}

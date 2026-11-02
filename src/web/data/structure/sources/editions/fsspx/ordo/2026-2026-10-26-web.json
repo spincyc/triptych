@@ -1,0 +1,98 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "web-page",
+   "byte_size": 186674,
+   "edition_owned": true,
+   "id": "artifact.fsspx.ordo.web-2026-10-26.day-html-81bb6438",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://ordo.fsspx.org/day/2026-11-01",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "web-api-response",
+   "byte_size": 11425,
+   "edition_owned": true,
+   "id": "artifact.fsspx.ordo.web-2026-10-26.texts-json-5404783d",
+   "media_type": "application/json",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://ordo.fsspx.org/api/v1/calendar/2026/11/1/texts",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-10-26",
+  "editors": [],
+  "id": "edition.fsspx.ordo.web-2026-10-26",
+  "jurisdiction": null,
+  "language": "fr",
+  "publication": "Fraternité Sacerdotale Saint-Pie X, online Ordo (ordo.fsspx.org)",
+  "title": "FSSPX Ordo — day page and texts endpoint for 1 November 2026, web state of 26 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.fsspx.ordo.web-2026-10-26.day-html-81bb6438",
+   "artifact_type": "web-page",
+   "id": "passage.fsspx.ordo.web-2026-10-26.2026-11-01-day-page",
+   "locus": "2026-11-01, day page",
+   "media_type": "text/html",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://ordo.fsspx.org/day/2026-11-01",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "restricted",
+   "verified_on": null,
+   "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.fsspx.ordo.web-2026-10-26.texts-json-5404783d",
+   "artifact_type": "web-api-response",
+   "id": "passage.fsspx.ordo.web-2026-10-26.2026-11-01-texts",
+   "locus": "2026-11-01, texts endpoint",
+   "media_type": "application/json",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://ordo.fsspx.org/api/v1/calendar/2026/11/1/texts",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "restricted",
+   "verified_on": null,
+   "withheld": "rights"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Priestly Society of Saint Pius X",
+  "category": "institutional-liturgical-calendar",
+  "description": "Institutional online Ordo; its reported calendar observance is corroboration, not the governing edition of the Roman Missal or a statement of current canonical permissions.",
+  "id": "work.fsspx.ordo",
+  "languages": [
+   "en"
+  ],
+  "title": "FSSPX Ordo"
+ }
+}

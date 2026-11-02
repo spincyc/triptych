@@ -170,6 +170,7 @@ def check_plan(path: Path, document: dict, tokens: dict, bounds: dict) -> list[s
     if orders != list(range(1, len(orders) + 1)):
         problems.append(f"{path}: order must run 1..{len(orders)} without gaps or repeats")
 
+    selected_cells = {}
     for _, reading in pairs:
         where = f"{path}: reading {reading.get('order')}"
         book = reading.get("book")
@@ -191,6 +192,27 @@ def check_plan(path: Path, document: dict, tokens: dict, bounds: dict) -> list[s
                         f"{where}/{edge}: {book} {chapter}:{verse} is outside "
                         f"{extent[0]}-{extent[1]}"
                     )
+            first, last = begin.get("chapter"), end.get("chapter")
+            if type(first) is not int or type(last) is not int or first > last:
+                problems.append(f"{where}: range chapters must be increasing integers")
+                continue
+            for chapter in range(first, last + 1):
+                extent = bounds.get((token, chapter))
+                if extent is None:
+                    problems.append(f"{where}: {book} has no chapter {chapter}")
+                    continue
+                low = begin.get("verse") if chapter == first else None
+                high = end.get("verse") if chapter == last else None
+                low, high = extent[0] if low is None else low, extent[1] if high is None else high
+                if type(low) is not int or type(high) is not int or low > high:
+                    problems.append(f"{where}: verse range must be increasing integers")
+                    continue
+                for verse in range(max(low, extent[0]), min(high, extent[1]) + 1):
+                    cell = token, chapter, verse
+                    if cell in selected_cells:
+                        problems.append(f"{where}: overlaps reading {selected_cells[cell]} at {book} {chapter}:{verse}")
+                        break
+                    selected_cells[cell] = reading.get("order")
     return problems
 
 

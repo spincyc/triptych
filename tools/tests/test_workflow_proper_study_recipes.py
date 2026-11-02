@@ -19,17 +19,23 @@ from _workflow import WorkflowEngine, WorkflowError
 
 DOCUMENT = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
 FIXTURE_RUN = "0000000000000001"
+# Exact v15 optional-print recipe; v16 source runs have no renderer stage.
+LEGACY_PDF_REVIEW_RECIPE = (
+    "tools/tpt pdf-review --output build/tpt-runs/{run_id}/artifacts/"
+    "build-artifacts-{iteration}/rasters build/{provider}/{proper}.pdf "
+    "build/{provider}/{proper}-synthesis.pdf build/{provider}/{proper}-homily.pdf"
+)
 
 
 class IsolatedRecipeTests(unittest.TestCase):
     def setUp(self):
-        parent = ROOT / "build/test-tmp"
+        parent = ROOT / ".scratch/authoring-pipeline"
         parent.mkdir(parents=True, exist_ok=True)
         temporary = tempfile.TemporaryDirectory(prefix="proper-study-recipes-", dir=parent)
         self.addCleanup(temporary.cleanup)
         self.root = Path(temporary.name)
         for name in ("tools/tpt", "tools/web-edition", "tools/pdf-review", "tmt.json",
-                     "scripts/_tooling.py", "scripts/_corpus.py", "scripts/_workflow.py",
+                     "scripts/_tooling.py", "scripts/_corpus.py", "scripts/_workflow.py", "scripts/_document_schema.py",
                      "scripts/_proper_study.py", "scripts/_proper_components.py", "scripts/_markdown_render.py",
                      "scripts/web-shim.tex"):
             target = self.root / name
@@ -87,7 +93,7 @@ class IsolatedRecipeTests(unittest.TestCase):
                 self.assertEqual(receipt["sha256"], hashlib.sha256(expected.read_bytes()).hexdigest())
                 self.assertFalse((self.root / "web").exists(), "recipe must not install a web edition")
 
-    def test_real_renderer_replaces_only_its_child_and_preserves_sibling_evidence(self):
+    def test_legacy_renderer_replaces_only_its_child_and_preserves_sibling_evidence(self):
         self.require_tools("pdflatex", "pdftoppm", "magick", "kpsewhich")
         fixture = self.root / "build/tiny.tex"
         fixture.write_text("\\documentclass{article}\n\\begin{document}\n"
@@ -103,7 +109,8 @@ class IsolatedRecipeTests(unittest.TestCase):
         sentinel = artifacts / "author-proof.json"
         sentinel.write_bytes(b'{"fixture_evidence":"must survive raster replacement"}\n')
         before = sentinel.read_bytes()
-        command = self.command("build-artifacts.md", "tools/tpt pdf-review")
+        command = shlex.split(LEGACY_PDF_REVIEW_RECIPE.format(
+            run_id=FIXTURE_RUN, iteration=0, provider="gpt", proper=DOCUMENT))
         destination = self.root / command[command.index("--output") + 1]
         command.extend(["--jobs", "1", "--cache", "build/recipe-review-cache"])
         self.execute(command)

@@ -1,0 +1,89 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 5212472,
+   "edition_owned": true,
+   "id": "artifact.salesian-society.bollettino-salesiano.1892-april-issue-4.publisher-whole-pdf-d7c7795c",
+   "media_type": "application/pdf",
+   "notes": "Fullissue retained for offlineverification. The page-image reading corrects the locatingOCR's poste to the actuallyprintedhoste; the acquiredPDFbytes remain exact. Nootherarticleinspection,completeperiodicalcoverage orofficialliturgicalstatus is claimed.",
+   "page_count": 19,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "The issueimage itself identifies firstpublication inApril1892, outside anyremainingUnitedStatescopyrightterm in2026. Faithful mechanical scan and OCR add no human authorship. The publisher's access does not replace this historicalpublication basis.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://bollettinosalesiano.it/archivio/1892/189204.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 96,
+   "edition_owned": true,
+   "id": "artifact.salesian-society.bollettino-salesiano.1892-april-issue-4.queenship-hymn-stanza-text-20261029",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "Complete15wordreceivedLatinHymnstanza printed in the1892public-domainissue, independentlyreadonitsactualpageimage. No1954or1962targetbodyorarrangement is included.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1892-04",
+  "editors": [],
+  "id": "edition.salesian-society.bollettino-salesiano.1892-april-issue-4",
+  "jurisdiction": "HistoricalItalianSalesianperiodical",
+  "language": "it",
+  "publication": "Torino: Direzione nell'Oratorio Salesiano, April1892, annoXVI,n.4. Exact scanned monthlyissue served by the publisher's historicalarchive.",
+  "title": "Bollettino Salesiano, annoXVI,n.4,Aprile1892",
+  "translators": [],
+  "year": 1892
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.salesian-society.bollettino-salesiano.1892-april-issue-4.queenship-hymn-stanza-text-20261029",
+   "artifact_type": "checked-transcription",
+   "context": "The Italianprose presents this as a hymn sung by the faithful in Mary's honor and explains its clauses. This establishes the literal receivedLatin in an1892printing, including mortis hora wordorder; it does not establish thecompleteQueenshipAlleluiaarrangement in1892.",
+   "id": "passage.salesian-society.bollettino-salesiano.1892-april-issue-4.queenship-hymn-stanza-20261029",
+   "locus": "BollettinoSalesiano annoXVI,n.4,Aprile1892,printed77,leftcolumntop;wholePDFartifactpage13;checkedtextline1.",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The targettail Tu nos ab hoste protege, et mortis hora suscipe is a contiguous exactwordspan after theolderstanza's openingMaria mater gratiae,dulcis parens clementiae;. The1690Monastichymn hasdifferenthora mortis order; that earlier contrary result remains true and is not the controllingtailwitness.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "Complete15wordreceivedLatinHymnstanza printed in the1892public-domainissue, independentlyreadonitsactualpageimage. No1954or1962targetbodyorarrangement is included.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.salesian-society.bollettino-salesiano.1892-april-issue-4.queenship-hymn-stanza-20261029.json",
+   "verified_on": "2026-10-29",
+   "words": 15
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Bollettino salesiano"
+  ],
+  "author": "Salesian Society",
+  "category": "periodical",
+  "description": "The Salesian monthly periodical; individual issue dates and quoted historical prayers are distinct from the composition dates of those prayers.",
+  "id": "work.salesian-society.bollettino-salesiano",
+  "languages": [
+   "it",
+   "la"
+  ],
+  "title": "Bollettino Salesiano"
+ }
+}

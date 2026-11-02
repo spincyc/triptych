@@ -1,0 +1,71 @@
+{
+  "scope": "Exact negative-fingerprint conservation only; no English rights, admission or release approval.",
+  "baseline": {
+    "commit": "6aeb96a392a61e216310c3bf71834863afb229f8",
+    "inventory_sha256": "f06a68826790a3b828d0f44cccecd52d09ff12c828a01dd330391636bf086128",
+    "projection_sha256": "ba1bb392b8c1ce8803dbc0b0c5794ad58a1faebf73ee7de54d302db990e1ebd9",
+    "target_records": 174,
+    "unique_hashes": 172
+  },
+  "active_registry_canonical_sha256": "ce137a066538325b65962f763951c92eafaa9a07fcfa0e9c47fcc68c102bd596",
+  "scanner_unique_hashes": 172,
+  "admission_receipts": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase1-admission.json",
+      "sha256": "336c2eeb280f40fcf291e99a691c21bc0a1025b8b20751815ff8facaa10cc255"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-acclamations-admission.json",
+      "sha256": "6224ba1a95fbeff1af014cad00b03177ad65e356601c06c28bf1d681beb4c31e"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-late-easter-admission.json",
+      "sha256": "c4202aa5c2cf5efb6840a68097f97214bc62c36580762c9cd22bac4c3335d3ff"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-pentecost-extended-admission.json",
+      "sha256": "ab3b863eeef1f4434c6751307f6b32b789f621f622ce383f042a1a02eac767d4"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-september8-admission.json",
+      "sha256": "d9ec4ff8b7f8637068025635c394b4b88c2caaf9e848298231b022e828d1326c"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-virgo-admission.json",
+      "sha256": "32c337acd6aa77053b342e9da372cb7fd687a945647a9535bd7f8358e8cd4967"
+    }
+  ],
+  "changed_code_sha256": {
+    "tools/public-alpha": "be3439932971aa0dd0aec482a598351812aab9ece44704440640df84d627434a",
+    "tools/tests/test_public_alpha_quarantine.py": "7cd894b17e714ff13c78e27fc9ec02e56e905c06baae0991c362790b5efe6092",
+    "tools/tests/test_liturgical_rights_surfaces.py": "b38ff784634c5591d532307c7c9502070973270695b1b5aef53e00cfc73727d5",
+    "tools/tests/test_public_alpha.py": "97e44aefd8fd20ee99590f2239a32994e51a68fb6102a7db42a6b9ad556a4ca8",
+    "tools/tests/test_public_alpha_scripture.py": "6bb490548cdf8bfbff79005c8d9f3f08eef5444b6e63df286371981f4315526f",
+    "tools/tests/test_public_alpha_fonts.py": "bdc1eb5dfab747c2051a680e8467d1f56341192a07848f7987172531e4141913"
+  },
+  "tests": [
+    {
+      "modules": [
+        "tools.tests.test_public_alpha_quarantine",
+        "tools.tests.test_public_alpha",
+        "tools.tests.test_public_alpha_scripture",
+        "tools.tests.test_public_alpha_fonts"
+      ],
+      "passed": 165,
+      "log": ".scratch/pc-quarantine-conservation-20261029/all-release-tests.log",
+      "markdown_version": "3.10.3"
+    },
+    {
+      "cases": [
+        "tools.tests.test_liturgical_rights_surfaces.TrackedSourceBoundary.test_postconciliar_quarantine_hashes_are_derived_fail_closed",
+        "tools.tests.test_liturgical_rights_surfaces.RightsMutationBoundary"
+      ],
+      "passed": 14,
+      "log": ".scratch/pc-quarantine-conservation-20261029/rights-mutation-tests.log"
+    }
+  ],
+  "tmt_check": "passed",
+  "diff_check": "passed",
+  "canonical_source_writes_by_this_lane": [],
+  "commits_by_this_lane": []
+}

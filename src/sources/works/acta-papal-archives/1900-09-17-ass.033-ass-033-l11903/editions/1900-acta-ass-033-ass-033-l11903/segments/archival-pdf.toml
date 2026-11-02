@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.033.ass-033-l11903.pdf"
+edition_id = "edition.acta-papal-archives.ass.033.ass-033-l11903"
+artifact_id = "artifact.acta-papal-archives.ass.033.vatican-pdf-18fd550d"
+artifact_sha256 = "18fd550d59a2de5ac9f7e283c407c43ee5d1f004032b9109c4cdc733fcb021d6"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[301, 303]]
+context = "{\"closing_physical_lines\": [11989, 11992], \"closing_text\": \"       Datum R o m a e apud S. Petrum sub annulo Piscatoris die\\n X V I I Septembris MCM. Pontificatus Nostri Anno Vigesimo\\n tertio.\\n                                                A L O Y S . Card. MACCHI.\", \"end_line\": 11992, \"removed\": \"Running header/page-number lines carrying formfeed and Acta volume/fascicle footers are omitted via disjoint ranges; all remaining source text and notes in selected extent retained.\", \"retained_historical_note_ranges\": [], \"start_line\": 11903}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 301, \"printed_page\": \"30\", \"running_head_text\": \"30t\"}, {\"artifact_page\": 302, \"printed_page\": \"302\", \"running_head_text\": \"302                          IOSEPHI   PENNACCHI\"}, {\"artifact_page\": 303, \"printed_page\": \"303\", \"running_head_text\": \"AD COMMENTARIUM ADDITIONES                           303\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

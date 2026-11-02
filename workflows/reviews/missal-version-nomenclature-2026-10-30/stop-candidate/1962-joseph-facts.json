@@ -1,0 +1,118 @@
+{
+  "schema": "triptych-nomenclature-1962-applied-variation-facts/v1",
+  "recorded_at_utc": "2026-10-30T19:55:46.291218+00:00",
+  "state": "Factual audit complete; exact existing-fields v3 addendum independently accepted; canonical installation remains root-owned",
+  "recommendation": "Retain the 1962 typical-edition book identity, public reader key and display. Add the exact visible correspondence and source-passage citation to disclose the Saint Joseph Canon variation within that edition. No new book/version/runtime/schema is required.",
+  "primary_citation": {
+    "title": "Sacred Congregation of Rites, De S. Ioseph nomine Canoni Missae inserendo (Novis hisce temporibus)",
+    "citation": "Acta Apostolicae Sedis 54 (1962), p. 873",
+    "url": "https://www.vatican.va/archive/aas/documents/AAS-54-1962-ocr.pdf#page=873",
+    "full_official_pdf_sha256": "fb64f5f96696b5dd2aa6dce86dfc6e6437246732c303824d659277cf88646208",
+    "full_official_pdf_bytes": 4176239,
+    "decree_date": "1962-11-13",
+    "effective_date": "1962-12-08",
+    "aas_issue_date": "1962-12-28",
+    "checked_scope": "The whole page expressly covers common and special Communicantes formulas. Dates were read from the decree body/signature/footer, not inferred from memory.",
+    "whole_page_raster_sha256": "4bded649ab4a57d4449414ffca3fe38d0d09efad8b24fcd945c977be3fb2c1fe"
+  },
+  "held_book_witness": {
+    "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+    "pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+    "source_url": "https://media.churchmusicassociation.org/pdf/missale62.pdf",
+    "typical_edition_declaration": {
+      "date": "1962-06-23",
+      "artifact_page": 2
+    },
+    "joseph_present_in_checked_pages": [
+      {
+        "artifact_page": 383,
+        "printed_page": 302,
+        "scope": "Common Communicantes"
+      },
+      {
+        "artifact_page": 386,
+        "printed_page": 305,
+        "scope": "Shared continuation for proper Communicantes forms"
+      }
+    ],
+    "impression_limit": "The approval decree and embodied variation attest the textual state. They do not establish the exact physical-impression date or certify every part of this copy."
+  },
+  "current_reader_attestation": {
+    "element_key": "canon/communicantes-continuatio",
+    "six_conditions": [
+      "common",
+      "nativitate",
+      "epiphania",
+      "pascha",
+      "ascensione",
+      "pentecoste"
+    ],
+    "latin": {
+      "lang": "la",
+      "text_sha256": "70fd52c7ec13c0f96fc81ec2ae5ffa0f331b8fd8dc080394c916a41365222591",
+      "source_id": "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19",
+      "rights": "project-created",
+      "relation": "antecedent"
+    },
+    "english": {
+      "lang": "en",
+      "text_sha256": "4b28d83343a642023440ed0fd93d4a8274db943e30e30a2a284c031fb2ac4b14",
+      "source_id": "edition.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029",
+      "rights": "project-created",
+      "relation": "own"
+    },
+    "input_attestation": {
+      "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/CANONICAL-ATTESTATION.json",
+      "sha256": "47c79c9cb55777b3aabb4d68153c6c1f3b5a32a41042feca514bc92374449310",
+      "bytes": 2984
+    },
+    "finding": "Existing published Latin and separately attributed project-study English both carry Joseph in the shared continuation. No new body or source relation is introduced. Existing publication scope is observed and unchanged."
+  },
+  "three_axes": {
+    "book_identity": "roman-la-1962-typica; 23 June declaration remains accurate. The November decree does not declare another typical edition.",
+    "manifestation": "The held CMAA witness embodies the later Canon variation; its exact impression date remains unestablished.",
+    "reader_projection": "Partial source-qualified roman-1962 reader with this explicitly recorded variation, retained historical/modern source distinctions and existing per-unit grades."
+  },
+  "exact_addendum": {
+    "candidate": {
+      "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/CANDIDATE-v3.json",
+      "sha256": "b74b6783efda911a0d5ef6644412b198f435e1c9e4c5192e77d13a6968cc6e9d",
+      "bytes": 5027
+    },
+    "patch": {
+      "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/PROPOSED-CATALOG-QUALIFICATION-v3.patch",
+      "sha256": "2d961e9a951aefbfba4b24ab68795a966dbbd2abfaf2be51c2d81bd1c6666df2",
+      "bytes": 1453
+    },
+    "base_catalog_sha256": "ecbd62f8a76ab6876a135393c73baee41be921da5d004543cab4748ef161b649",
+    "new_catalog_sha256": "2e416361e414b5648a17f6aa96c72d8050a00f85097f2cb8c9487a5c93d237a7",
+    "changed_fields_only": [
+      "reader_views[calendar=roman-1962].reader_version.correspondence",
+      "reader_views[calendar=roman-1962].evidence_refs"
+    ],
+    "visible_correspondence": "Partial source-qualified reader of the 1962 typical edition. Each body retains its actual original, historical-translation or project-study witness and rights evidence; the label does not turn partial coverage into a complete book. Its Ordinary includes the Saint Joseph Canon insertion (Novis hisce temporibus, 13 November 1962; effective 8 December 1962; AAS 54 [1962], p. 873). This records a textual variation within the same typical edition, not the exact impression date of the held CMAA witness.",
+    "new_repo_relative_reference": [
+      "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/canon-communicantes.toml"
+    ],
+    "new_fields_or_runtime_changes": false,
+    "all_book_keys_display_and_other_catalog_fields_exact": true
+  },
+  "independent_acceptance": {
+    "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/review/ADDITIVE-REVIEW-RECEIPT-v1.json",
+    "sha256": "fec3bd1306deaf9eefa346c43c63881b5a2a969d77c1fad3cbf93b0be6d80487",
+    "bytes": 11017
+  },
+  "validation": {
+    "path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/VALIDATION-v3.json",
+    "sha256": "ce908f89b9e9b08410dca7ec5110e02390f2a4b5988df60321de6ee70446a0b8",
+    "bytes": 1325
+  },
+  "root_source_fixture_followup": "If root adopts this addendum after the53 patch, the actual catalog posthash for the four-pin naming source recipe is2e416361…, not ecbd62f8…. Bind this additive receipt separately. Keep original53/READY/matrix/audit hashes unchanged; do not present unadopted v1/v2 proposals as accepted. Root and next_epoch_semantics have been informed.",
+  "sealed_records_unchanged": {
+    ".scratch/missal-version-nomenclature-20261030/implementation/package-v1/COHORT-MANIFEST.json": "93965cca01869ce307ed09dfb438332e8b4668718b6839303726547584f38f36",
+    ".scratch/missal-version-nomenclature-20261030/implementation/reconcile-next-english-v1/READY.json": "0bd17f84edb995c2e93efd123ba5087dc055e2652a4d2feaab22aa2c8fd33efb",
+    ".scratch/missal-version-nomenclature-20261030/design/NAMING-MATRIX-v2.json": "e0dae8d1073d346d312db5af7c7b57bca4944d17def7d51d85591947fe68e604"
+  },
+  "publication_payload_limit": "Only factual URL/locus/hash metadata and the bounded existing-field patch are proposed. No whole AAS PDF, CMAA PDF or page raster needs to be tracked. This audit creates no permission, source/grade upgrade, exhaustive variation history, whole-target or liturgical approval claim.",
+  "canonical_writes": false
+}

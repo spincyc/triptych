@@ -1,0 +1,49 @@
+{
+  "recorded_on": "2026-10-29",
+  "scope": "Phase1 owning validation only; generated data, annual runtime, site and final merged checks belong to root integration; refreshed to the final phase1-only logs after metadata corrections, before phase2 calendar additions.",
+  "state": "passed",
+  "checks": [
+    {
+      "name": "source-library",
+      "command": "tools/source-library validate",
+      "exit_code": 0,
+      "log_sha256": "a944c7698e76135f247775c57bb678eb84e913c88991a29af7a3de7bdd38e031",
+      "result": "source-library valid: artifact=10276 corpus=5 edition=13721 passage=9354 segment=10185 work=10742 bindings=4311"
+    },
+    {
+      "name": "calendar-owner",
+      "command": "tools/check-calendar-masses --calendar postconciliar",
+      "exit_code": 0,
+      "log_sha256": "4e9089d6caa439118a9c71e8ecdc7a119a42f7b9b4eac52f9d84169ccdede04e",
+      "result": "src/sources/calendars/postconciliar/propers.yaml\t619 masses\t3517 propers"
+    },
+    {
+      "name": "overlay-suite",
+      "command": "python3 -m unittest tools.tests.test_calendar_translation_overlay -v",
+      "exit_code": 0,
+      "log_sha256": "0180e0f7f331ed670aa35c0951e8fb1035559a8752d4aa68426fb2e0ae32b4c2",
+      "result": "25 tests passed"
+    },
+    {
+      "name": "strict-reader-contract",
+      "command": "tools/mass-propers show --calendar postconciliar --mass ot-6 --lang en --format json",
+      "exit_code": 0,
+      "output_sha256": "53d2cfd92a0eaf7717e86ec1f7b8babf9eb4e7278b4eecbb909af3d091556140",
+      "result": "New source-qualified study English is published; Latin is still unavailable under its own axis."
+    }
+  ],
+  "overlay_tests": 25,
+  "source_and_wording_findings": [],
+  "assembly_failures_before_success": [
+    "Recipient grouping initially collided on one Cummiskey artifact ID; unified the three bodies under one source-edition artifact without changing accepted English.",
+    "Fresh historical passage contexts initially omitted the exact printed-locus labels required by the owner validator; exact source labels now present.",
+    "Nativity retained empty legacy form labels conflicted with explicit form IDs; legacy labels removed in favor of the exact canonical IDs.",
+    "Three Cummiskey receiving passages initially used unsupported new locus strings; each now retains its unchanged historical visual controller locus.",
+    "The strict CLI contract additionally required every receiving historical passage to use exactly its visual-verification locus and the derivative publication artifact to point to that verification artifact. These metadata constraints were corrected before the reader check passed; accepted English remained unchanged."
+  ],
+  "conservation": {
+    "all_prior_positive_dictionaries_exact": true,
+    "all_unselected_unavailable_dictionaries_exact": true
+  },
+  "sidecar_sha256": "05686eaf89f85d19d82befcc6fccfcc1014f8cee01336d40e9c23a435c900308"
+}

@@ -1,0 +1,111 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "a2ee275ce92e2b203a6cb7947791f1e1b7d97d40a1433a713309de5a9cdb8b8e",
+  "documents": [
+    {
+      "id": "acta.aas.002.archive.aas.002.048",
+      "language": "la",
+      "pdf_sha256": "5035b5162de126cd7ca1036b7b6da0de13475a618bcd704bd7076a6913b9310a",
+      "pages": 10,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "full_size_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1
+          ],
+          "description": "Underfull hbox badness 1009: actual page has moderate loose spacing but remains readable without clipping or overlap; literal source hard hyphens and marker interruptions retained."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            10
+          ],
+          "description": "Sparse source-bearing ending retains closing blessing, Roman dating clause, PIVS PP. X subscription and final historical note before source apparatus and rights colophon."
+        }
+      ],
+      "limitations": [
+        "Vatican archival OCR reconstruction; bounded geometry and note review does not establish original-print glyph identity or whole-source lexical collation.",
+        "Literal OCR spelling, hard hyphens, marker interruptions and damaged note labels remain. No translation or new rights clearance assessed.",
+        "Source admission, installation, canonical copy and deployment remain outside reviewer authority.",
+        "Three initial help-only Python tool invocations omitted environment guards; possible implicit bytecode writing cannot be excluded. All substantive replays and final whole-library validation used both guards."
+      ],
+      "receipt_sha256": "a2ee275ce92e2b203a6cb7947791f1e1b7d97d40a1433a713309de5a9cdb8b8e",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-50.md",
+      "report_sha256": "04e7177470f0efe456f0a6451dd8d81bf4c6412c2c9be8227aef64cde4d930b5",
+      "review_kind": "independent-cold-review",
+      "source_spacing_decision": "PASS",
+      "source_notes_decision": "PASS",
+      "source_admission": "RESERVED_TO_COORDINATOR",
+      "source_spacing_counts": {
+        "native_words": 14597,
+        "matched_source_lf_lines": 831,
+        "retained_lines": 153,
+        "marker_numeral_lines": 151,
+        "nonwhitespace_characters": 39475,
+        "no_reused_native_line_identity": true,
+        "no_substantive_unmatched_or_undisposed_source_lines": true
+      },
+      "source_note_groups": 83,
+      "native_full_pages_inspected": [
+        357,
+        365,
+        368,
+        372,
+        380
+      ],
+      "native_note_regions_inspected": [
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380
+      ]
+    }
+  ]
+}

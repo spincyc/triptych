@@ -1,0 +1,174 @@
+{
+  "recorded_on": "2026-10-29",
+  "state": "independently-reviewed-installed-awaiting-owning-validation",
+  "scope": "One exact official2008 finite module, partial extended-vigil form; not a complete Mass or whole-book certificate.",
+  "new_form": [
+    "pentecost",
+    "extended-vigil"
+  ],
+  "new_rows": 18,
+  "new_composed_coordinates": 8,
+  "after_reading_prayer_options": 6,
+  "new_study_English_coordinates": 1,
+  "new_unavailable_English_coordinates": 7,
+  "source_files": [
+    {
+      "path": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/english-completion-20261029-postconciliar-phase2-pentecost-extended-module.toml",
+      "sha256": "fd574be0ff97870640bdfcdfe52b280bd5ae1ba5c9f0edced1e42f6f5f7fc9e1"
+    },
+    {
+      "path": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/english-completion-20261029-postconciliar-phase2-pentecost-domine-deus-virtutum.toml",
+      "sha256": "f9122d032e0b0ecfd9f511057a1bee9daa4ae0cbf4f2df73f71cefd61cff2635"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/english-completion-20261029-postconciliar-phase2-pentecost-domine-deus-virtutum.toml",
+      "sha256": "9a62dfb6b6c53ac5785f8e63b4a6c02068af3deee391c778ca33dd13081218e9"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source.toml",
+      "sha256": "4d9f4ed797adce6aeac14781b75b24d9cb20d3d6984c08d824ed5f9f67129483"
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-postconciliar-phase2-pentecost-study-english/work.toml",
+      "sha256": "dffdb491d0957dbe8dcbdfa1a4075ee68c3f505330cbe0d21b9ed844a02d9db8"
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-postconciliar-phase2-pentecost-study-english/editions/2026-10-29-study-english/edition.toml",
+      "sha256": "a6daaa470aea65ffeb96432d72410d76567f542b73255dd31f5612b84ddad664"
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-postconciliar-phase2-pentecost-study-english/editions/2026-10-29-study-english/artifacts/study-english/artifact.toml",
+      "sha256": "9732a0b5005787877e0fa3a3ed56168bab4c3bd10141fb38668d8923b50f6007"
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-postconciliar-phase2-pentecost-study-english/editions/2026-10-29-study-english/artifacts/study-english/text.tsv",
+      "sha256": "6b69a87fd2695224b4dba468200e8c2f809d739f9be91ae2e06796542fffb22c"
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-postconciliar-phase2-pentecost-study-english/editions/2026-10-29-study-english/passages/domine-deus-virtutum.toml",
+      "sha256": "fd2339bd0b2f191d920cd11649c7a69be138ff539f46ecdfbdd75e87fe324879"
+    }
+  ],
+  "candidate_manifest_sha256": "8833ec8ad4393da6925babff4ecc68f76a4bde38d9777ce2a142304b16972c33",
+  "source_review_sha256": "54bf2fb4129a47643453afdec096093f348e90cfa77e5e525868ecf73bda9366",
+  "conclusion_review_sha256": "a25767be4606a288ff9168c5d4fc80526a6bdcc232238fd23c5130102957998a",
+  "timing_review_sha256": "41c5115293b9c6af89f2e8de511f3c49ffb9dd755b03d43faf5e5cfe5c7764cd",
+  "English_sha256": "17a0ab2147bdb4b40d675d2bac515f0551c624224677ec22b321488a3524b671",
+  "assembly_successors": [
+    "Unique reserved source-ID prefix added without changing source identity or page bounds.",
+    "Reviewed evening-before timing added.",
+    "Ad-libitum reading qualification made explicit.",
+    "Overall relation qualified variant because main old cue differs; exact independent old conclusion/response passage added.",
+    "One source-backed exact-form order exception records the printed delayed Collect; it does not apply to simpleVigil/Day. Exact English is additionally retained in a separate project-created source artifact, with JSON newlines preserved."
+  ],
+  "all_previous_positive_and_unavailable_dictionaries_exact": true,
+  "all_existing_masses_and_Pentecost_fields_forms_and_propers_exact": true,
+  "calendar_before_sha256": "e297c31678ffac670a4ce394d45af2461ca6bec10f362a7a6469eb04392a869d",
+  "calendar_after_sha256": "35964d2d20f339f7201153bae4a7900ebe572c4d12fc67136169059b18952ae7",
+  "overlay_before_sha256": "bf3728737fcf40b46ab86688afede28f30f2750d019be4d57c85a12a74475089",
+  "overlay_after_sha256": "fd3dd097d41654878d213707d15415b9336502da18caf52c128f288430a0fe97",
+  "new_unavailable_dictionaries": [
+    {
+      "mass": "pentecost",
+      "form_id": "extended-vigil",
+      "proper": "Collect (before the readings)",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "note": "Exact official Latin appointment is independently recorded, but no exact English exemplar is held for this target. The Latin-only official witness does not establish an English rights-withheld state. No English body, witness, permission or hash is invented. Official 2008 Supplementum, Notitiae artifact p. 62 / printed p. 380, nn. 2-3. The excerpt appoints this Collect by a short incipit and a pointer to Missal p. 443; its complete target body is not reproduced by this finite witness. The two opening branches appoint the same incipit; neither branch is selected in this partial form. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module",
+      "reason": {
+        "kind": "no-exemplar"
+      }
+    },
+    {
+      "mass": "pentecost",
+      "form_id": "extended-vigil",
+      "proper": "Prayer after the First Reading",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "note": "Exact official Latin appointment is independently recorded, but no exact English exemplar is held for this target. The Latin-only official witness does not establish an English rights-withheld state. No English body, witness, permission or hash is invented. Official 2008 Supplementum, Notitiae artifact p. 63 / printed p. 381, n. 5. The complete modern Latin body was inspected but is not copied into the calendar. No qualifying independently sourced whole-body publication basis or exact English exemplar is established here.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module",
+      "reason": {
+        "kind": "no-exemplar"
+      }
+    },
+    {
+      "mass": "pentecost",
+      "form_id": "extended-vigil",
+      "proper": "Prayer after the Second Reading",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "note": "Exact official Latin appointment is independently recorded, but no exact English exemplar is held for this target. The Latin-only official witness does not establish an English rights-withheld state. No English body, witness, permission or hash is invented. Official 2008 Supplementum, Notitiae artifact p. 64 / printed p. 382, n. 6. The complete modern Latin body was inspected but is not copied into the calendar. No qualifying independently sourced whole-body publication basis or exact English exemplar is established here.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module",
+      "reason": {
+        "kind": "no-exemplar"
+      }
+    },
+    {
+      "mass": "pentecost",
+      "form_id": "extended-vigil",
+      "proper": "Prayer after the Third Reading",
+      "cycle": "all",
+      "occurrence": 2,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "note": "Exact official Latin appointment is independently recorded, but no exact English exemplar is held for this target. The Latin-only official witness does not establish an English rights-withheld state. No English body, witness, permission or hash is invented. Official 2008 Supplementum, Notitiae artifact pp. 64-65 / printed pp. 382-383, n. 7, second prayer. The complete modern Latin body was inspected but is not copied into the calendar. No qualifying independently sourced whole-body publication basis or exact English exemplar is established here.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module",
+      "reason": {
+        "kind": "no-exemplar"
+      }
+    },
+    {
+      "mass": "pentecost",
+      "form_id": "extended-vigil",
+      "proper": "Prayer after the Third Reading",
+      "cycle": "all",
+      "occurrence": 3,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "note": "Exact official Latin appointment is independently recorded, but no exact English exemplar is held for this target. The Latin-only official witness does not establish an English rights-withheld state. No English body, witness, permission or hash is invented. Official 2008 Supplementum, Notitiae artifact p. 65 / printed p. 383, n. 7, third prayer. The complete modern Latin body was inspected but is not copied into the calendar. No qualifying independently sourced whole-body publication basis or exact English exemplar is established here.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module",
+      "reason": {
+        "kind": "no-exemplar"
+      }
+    },
+    {
+      "mass": "pentecost",
+      "form_id": "extended-vigil",
+      "proper": "Prayer after the Fourth Reading",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "note": "Exact official Latin appointment is independently recorded, but no exact English exemplar is held for this target. The Latin-only official witness does not establish an English rights-withheld state. No English body, witness, permission or hash is invented. Official 2008 Supplementum, Notitiae artifact p. 65 / printed p. 383, n. 8. The complete modern Latin body was inspected but is not copied into the calendar. No qualifying independently sourced whole-body publication basis or exact English exemplar is established here.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module",
+      "reason": {
+        "kind": "no-exemplar"
+      }
+    },
+    {
+      "mass": "pentecost",
+      "form_id": "extended-vigil",
+      "proper": "Collect (after Gloria)",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "note": "Exact official Latin appointment is independently recorded, but no exact English exemplar is held for this target. The Latin-only official witness does not establish an English rights-withheld state. No English body, witness, permission or hash is invented. Official 2008 Supplementum, Notitiae artifact p. 65 / printed p. 383, nn. 9-10. The excerpt appoints this Collect by a short incipit and a pointer to Missal p. 443; its complete target body is not reproduced by this finite witness. The source places Gloria before this Collect; the hymn body and its Ordinary placement are not fabricated in this partial form. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module",
+      "reason": {
+        "kind": "no-exemplar"
+      }
+    }
+  ],
+  "pointer_successor_status": "Two exact source-local Collect mappings are reviewed separately; English adoption awaits ordinary-four body/English admission. Their original pointer gaps remain conserved here.",
+  "calendar_after_initial_assembly_sha256": "3d5c244c0d781e984e2fb76f3262ef140afaa40de1f7991cc1b2c63fd4cc5580",
+  "overlay_after_initial_assembly_sha256": "676e92f771c7e419e6fb73e7c221b8c6827787c4a67b660055a80255a828e9d5",
+  "study_english_passage_id": "passage.triptych.english-completion-20261029-postconciliar-phase2-pentecost-study-english.2026-10-29.domine-deus-virtutum"
+}

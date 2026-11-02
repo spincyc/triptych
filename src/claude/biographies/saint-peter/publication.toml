@@ -1,0 +1,113 @@
+schema_version = 1
+id = "claude/biographies/saint-peter"
+kind = "biography"
+profile = "guidance/biographies.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "claude/biographies/saint-peter"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "chronology"
+source = "research/chronology.md"
+
+[[structure]]
+role = "tradition-audit"
+source = "research/tradition-audit.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/00-question.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/10-galilee.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/20-call.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/30-confession.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/35-rock.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/40-denials.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/50-easter.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/60-jerusalem.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/70-antioch.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/80-writings.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/90-rome.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/100-legends.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/110-tomb.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/120-reception.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/130-conclusion.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/140-scope-chronology-evidence.tex"
+
+[[structure]]
+role = "references"
+source = "sections/150-references.tex"

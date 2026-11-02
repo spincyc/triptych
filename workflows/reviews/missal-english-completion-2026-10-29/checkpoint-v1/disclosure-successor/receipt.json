@@ -1,0 +1,92 @@
+{
+  "schema": "triptych-incremental-cohort-disclosure-review/v1",
+  "recorded_utc": "2026-10-30T11:35:52.312382+00:00",
+  "status": "PASS for the reviewed 1726-path candidate snapshot plus two explicitly named test-repair extras; no disclosure blocker identified",
+  "scope": "Read-only public-disclosure review applying existing source/publication settlements; no new rights, source fidelity, human approval, source-epoch acceptance, deployment, or final outgoing-range approval.",
+  "cohort": {
+    "original_paths": 1666,
+    "candidate_paths": 1726,
+    "additional_paths": 60,
+    "removed_paths": 0,
+    "original_path_manifest_sha256": "f28b9f9bfd2f4438af14b67326296f5a67de7ff92ab9e18c59cc235d85ccd994",
+    "candidate_path_manifest_sha256": "b8e733f7b143b8c389fa557c012737967a34d544817e3fac35ade41309297694",
+    "initial_review": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/cohort-disclosure-review.json",
+    "initial_snapshot_paths_match_original_manifest": true,
+    "unchanged_original_paths": 1660,
+    "changed_original_paths_reviewed": [
+      "workflows/reviews/missal-english-completion-2026-10-29/source-guard/README.md",
+      "PROJECT-WORK.md",
+      "release/public-alpha.json",
+      "release/rights/public-alpha-2026-07-15.md",
+      "tools/tests/test_mass_ordinary.py",
+      "tools/tests/test_postconciliar_ordinary_divergence_recovery.py"
+    ]
+  },
+  "added_files": {
+    "count": 60,
+    "bytes": 35442676,
+    "all_utf8": true,
+    "json_parsed": 48,
+    "new_binary_payloads": 0,
+    "decoded_private_or_encoded_payload_hits": 0,
+    "snapshot": "inspection.json",
+    "snapshot_sha256": "7bae3a182c3f48ac1550f4d6acb94210767712b61cfd909ee81d0df26b7f9703"
+  },
+  "generated_comparisons": {
+    "count": 31,
+    "only_changed_fields": [
+      "tool_inputs.5.byte_size",
+      "tool_inputs.5.sha256",
+      "tool_inputs.8.byte_size",
+      "tool_inputs.8.sha256"
+    ],
+    "text_and_rights_payloads_unchanged": true
+  },
+  "registry_and_rubrics": {
+    "commentary": "Citation/assignment and existing commentary-discovery metadata for the extended Pentecost Vigil form; no source wording payload.",
+    "containment": "Bounded 1815 constituent ownership, source manifest/hash and existing segment identity; no source-body or complete-extent grant.",
+    "postconciliar_rubrics": "One added source-form descriptor under Pentecost; no added liturgical wording."
+  },
+  "source_proof_and_audits": {
+    "direct_pd_proof_records": 25,
+    "primary_artifacts": 3,
+    "primary_edition": "1922 Tours Mame conformed printing",
+    "proof_carrier": "Exact source/proof/production-decision metadata, body/artifact/payload hashes and source references; no modern source text or image payload.",
+    "raw_historical_replay_files": 17,
+    "historical_replay_qualification": "Frozen original source/test inputs remain audit/reproduction material; they do not create source permission or exact-target approval.",
+    "compiler_and_candidate_independent_reviews_reused": true,
+    "hidden_source_permission_or_grant_identified": false
+  },
+  "test_repairs": {
+    "native_files": 4,
+    "added_python_tests": 3,
+    "changed_original_ordinary_tests": 2,
+    "qualification": "Explicit independently held historical/project-study positives and controlled unavailable-body negatives; historical/antecedent and unreviewed-study qualifications retained. No official-English or modern Latin clearance created.",
+    "explicit_outside_candidate_repairs": {
+      "tools/tests/test_missal_coverage.py": "b5467c3dae8c21548d54d7aa97f871ca77f908ba6e0257f17692fb5f7350bbd1",
+      "tools/tests/test_roman_1962_advent_ferial_use.py": "bd480c31508edd2c3e591d960566a60b7463a620e67523d4493ade9b8c09273a"
+    },
+    "source_audit_private_shape_refusal_preserved": true
+  },
+  "release_bindings": {
+    "source_path_hash_rebinding_only": true,
+    "authorization_terms_changed": false,
+    "new_rights_permission_created": false
+  },
+  "binary_review_reused": {
+    "count": 53,
+    "reexecuted": false,
+    "reason": "Previously hash/size/public-domain-reviewed binaries are all in the unchanged original snapshot; no binary was added or changed."
+  },
+  "private_scan": {
+    "actual_hits": 0,
+    "false_positive_disposition": "Six credential-pattern substrings in PROJECT-WORK public task-1/task-2/task-3 slugs; bounded credential matching finds no credentials."
+  },
+  "blockers": [],
+  "limits": [
+    "Future source-guard successor files outside the supplied candidate list and any changed reviewed hashes require their own bounded review.",
+    "The two explicitly reviewed test repairs are outside the 1726-path candidate manifest; their hashes are recorded here for later inclusion.",
+    "Root still owns exact staged/outgoing-range checks; this receipt grants no approval to unreviewed future changes or historical repository objects."
+  ],
+  "written_resources": ".scratch/pre1955-rite-model-completion-20261030/disclosure-review/ only; no canonical/index/ref writes."
+}

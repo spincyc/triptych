@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pentecost-four-chants-20261029-d074f957"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych contributes only selection, transcription layout and explicit orthographic/pointing decisions under CC BY4.0; the complete underlying four chants and genuflection words stand independently in public-domain Mame1922. No exclusive right is claimed in those words. No1962 layout, numbers, page images or new composition is copied."
+rights_jurisdiction = "United States"
+provenance = "Project projection on2026-10-29 over directly read full target page images and independently read retained Mame1922 pages. Entire matched units include first scriptural versicle, second uncited Veni versicle and actual terminal accende; no last Alleluia invented."
+retrieved = "2026-10-29"
+sha256 = "d074f957761fb3fbfab186eb899a2ab096ffd62e9ce03e51f776be56dee64f16"
+byte_size = 808
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pentecost-four-chants-20261029-d074f957/latin.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-four-chants-20261029-checked-latin-0097a922", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-four-chants-20261029-pages", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Apply source-independent target pointing and the calendar declared orthography over whole Mame1922 source texts. Alleluja->Alleluia and alleluja->alleluia; remove stress; expand ligatures; join wraps; verse signs V.; target parenthetic rubric has no stop; Thursday has target colon after creabuntur against source comma. No lexical word or clause added/removed."
+indexable = true
+encoding = "utf-8"

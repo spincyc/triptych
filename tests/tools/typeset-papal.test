@@ -1,0 +1,13 @@
+#!/bin/sh
+# Input refusal and extraction/rendering checks require no network or external text.
+set -eu
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+"$repo/tools/typeset-papal" --help >/dev/null
+"$repo/tools/typeset-papal" check --help >/dev/null
+"$repo/tools/typeset-papal" render --help >/dev/null
+"$repo/tools/typeset-papal" collect --help >/dev/null
+"$repo/tools/typeset-papal" plan --help >/dev/null
+"$repo/tools/typeset-papal" prepare-install --help >/dev/null
+"$repo/tools/typeset-papal" install --help >/dev/null
+"$repo/tools/typeset-papal" check-install --help >/dev/null
+python3 -m unittest discover -s "$repo/tools/tests" -p test_typeset_papal.py

@@ -1,0 +1,99 @@
+{
+  "schema": "triptych-three-act-source-cold-audit/v1",
+  "packet": 2,
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "historical.mcghee-1839.elapso-proxime-anno",
+      "en"
+    ],
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-01121918-quod-iam-diu.catholic-mind-1919-02-08-english",
+      "en"
+    ],
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus.catholic-mind-1921-02-08-english",
+      "en"
+    ]
+  ],
+  "documents": [
+    {
+      "key": [
+        "historical.mcghee-1839.elapso-proxime-anno",
+        "en"
+      ],
+      "title": "Elapso proxime anno",
+      "row_sha256": "a2203d3363753493095c02330d237c15e3ffdb233c425409d28f1e7eeade8cab",
+      "source_sha256": "5ca9eba70ed98d9d74520b03f0f02c9b22e2eb04cceafe4cc173a8c45fb14ff5",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-02/act-01-evidence.json",
+        "sha256": "6a4b70776376232d8a6d6eac7525cfc83b164316097df824d4d22908f31a5aa5",
+        "bytes": 37399
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-02/act-01-selected.txt",
+        "sha256": "5ca9eba70ed98d9d74520b03f0f02c9b22e2eb04cceafe4cc173a8c45fb14ff5",
+        "bytes": 8519
+      },
+      "controller_pin": {
+        "id": "segment.papal.benedictus-xiv.elapso-proxime-anno.1839-mcghee-english",
+        "record": "src/sources/works/papal-documents/1751-02-20-papal-benedictus-xiv-enciclica-i-elapso-proxime-anno-i-20-febbraio-1751-il-ponte-02bd6bb0/editions/1839-mcghee-english/segments/historical-english.toml",
+        "sha256": "f076b6e8a7c48f98ca36d2544704917fcd1f8bf4893a265a7e22bf23d43e9834"
+      }
+    },
+    {
+      "key": [
+        "papal.benedict-xv.hf-ben-xv-enc-01121918-quod-iam-diu.catholic-mind-1919-02-08-english",
+        "en"
+      ],
+      "title": "Quod Iam Diu",
+      "row_sha256": "7c7a162da28e6e13c3bac74d01adcf6bbe4bfac92a1608d5c10cc900d362b5eb",
+      "source_sha256": "7b43a5d3fe6462ced5224e47633867e1301290b1e44c4bcf7982dfbb043efb54",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-02/act-02-evidence.json",
+        "sha256": "36457bd3fc7cdf3e9f0f5b53b0a8eb318534fc45ce7b100710cf23950fb961d8",
+        "bytes": 27524
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-02/act-02-selected.txt",
+        "sha256": "7b43a5d3fe6462ced5224e47633867e1301290b1e44c4bcf7982dfbb043efb54",
+        "bytes": 3042
+      },
+      "controller_pin": {
+        "id": "segment.papal.benedict-xv.hf-ben-xv-enc-01121918-quod-iam-diu.1919-02-08-catholic-mind-english.complete-english-reading",
+        "record": "src/sources/works/papal-documents/1918-12-01-papal-benedict-xv-hf-ben-xv-enc-01121918-quod-iam-diu-068b3abc/editions/1919-02-08-catholic-mind-english/segments/complete-english-reading.toml",
+        "sha256": "cd5e8dea686130ac2cc63d2130081594cfb2acac761f7651eb651e22ae32e813"
+      }
+    },
+    {
+      "key": [
+        "papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus.catholic-mind-1921-02-08-english",
+        "en"
+      ],
+      "title": "Annus Iam Plenus",
+      "row_sha256": "37907601125744225cb4217b215d28bac3187feb142c26099e90466acd14f148",
+      "source_sha256": "a92bfab4d109250df59bf6c77d25ae976e772c3ae4537b3ce44c9a8370fb8956",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-02/act-03-evidence.json",
+        "sha256": "fcd9572bb587359727468bdd4f41cb50401cdb37e5a09e922a4d5c2a936c5d74",
+        "bytes": 29150
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-02/act-03-selected.txt",
+        "sha256": "a92bfab4d109250df59bf6c77d25ae976e772c3ae4537b3ce44c9a8370fb8956",
+        "bytes": 9254
+      },
+      "controller_pin": {
+        "id": "segment.papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus.1921-02-08-catholic-mind-english.complete-english-reading",
+        "record": "src/sources/works/papal-documents/1920-12-01-papal-benedict-xv-hf-ben-xv-enc-01121920-annus-iam-plenus-23241e94/editions/1921-02-08-catholic-mind-english/segments/complete-english-reading.toml",
+        "sha256": "b29fb8f9bee9a050a437335bdfee418efc6ed10add99a5b22ce5b06b0e3d0652"
+      }
+    }
+  ],
+  "common_pins": {
+    "path": ".scratch/english-intake-recovery/common-pins.json",
+    "sha256": "17f8dc51ed96ec27c7b02254b4edac12df478c97a547e1660c27b8a0996921e9",
+    "bytes": 2847
+  },
+  "scope_limits": "Review source intake and exact selected historical human English witness. Fresh native image checks are required; prior visual claims are not inherited. No PDF compiler/layout review or lexical translation accuracy/full printing collation claimed."
+}

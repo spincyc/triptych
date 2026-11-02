@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.020.ass-020-012.note-blocks-8ff5e7c5f148"
+edition_id = "edition.acta-papal-archives.ass.020.ass-020-012"
+artifact_id = "artifact.acta-papal-archives.ass.020.historical-text-c3d47678.note-blocks-in-plurimis-la-8ff5e7c5f148"
+artifact_sha256 = "8ff5e7c5f1489c6a6b8a6d89f656eef35abac71effc8a007a543e073867ff997"
+segment_type = "constituent-work"
+states = ["cataloged", "acquired", "inspected"]
+physical_line_ranges = [[1, 624]]
+context = "Same complete prior constituent as segment.acta-papal-archives.ass.020.ass-020-012, selected from exact parent artifact.acta-papal-archives.ass.020.historical-text-c3d47678 at original physical LF [[21626, 21666], [21669, 21709], [21711, 21751], [21753, 21793], [21795, 21836], [21838, 21879], [21881, 21921], [21923, 21968], [21970, 22009], [22011, 22051], [22053, 22093], [22095, 22137], [22139, 22179], [22181, 22220], [22222, 22228]]. The explicit partition spec is artifact.acta-papal-archives.ass.020.historical-text-c3d47678.note-spec-in-plurimis-la-795e2a9daf47 (795e2a9daf47ff19eedd66da92fab005e61551c3e621f901183915bb8a189cf7)."
+notes = "Reading-only replacement preserves all selected non-LF bytes and their original order. Historical source-note groups at original LF [[21662, 21666], [21707, 21709], [21750, 21751], [21791, 21793], [21833, 21836], [21877, 21879], [21921, 21921], [21964, 21968], [22008, 22009], [22092, 22093], [22179, 22179]] occupy separate blocks at their existing source breaks. Prior source/segment remain retained; no lexical repair, reordered body/notes, or original-print collation is claimed. The pinned native Vatican archival OCR PDF has SHA-256 d577fe7f3bc47e306f5b51c8c3148f77e43f86ae450fe6f34a43234650cc4755. Its native PDF pages 545–559 were inspected for body/note geometry, with full-size checks of the first/last or complex groups as recorded in the lane audit. The selected notes occupy single-column page-foot blocks on native pages [545, 546, 547, 548, 549, 550, 551, 552, 553, 555, 557]. LF groups correspond in order to those pages. This is inspection of the archival OCR reconstruction, not image collation of the original printing or lexical correction."

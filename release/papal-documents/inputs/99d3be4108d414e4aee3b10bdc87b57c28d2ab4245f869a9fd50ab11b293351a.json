@@ -1,0 +1,91 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T16:23:36Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.012.historical-text-e91f242d.note-blocks-arcanum-la-fd4fbfc32f74.source-order-d28389997f6a",
+      "date": "1880-02-10",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.012.ass-012-act-007",
+      "id": "acta.ass.012.ass-012-act-007",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          857
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T16:23:36Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Historical title leaf MDCCCLXXIX (line 35), and archive serial label 1879; Johnson first-reprinting 1968 wrapper excluded. This is source-delivery identification, not facsimile collation or independent original-printing verification. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.012.ass-012-act-007.note-blocks-fd4fbfc32f74.source-order-d28389997f6a",
+      "segment_path": "src/sources/works/papal-documents/1880-02-10-papal-leo-xiii-hf-l-xiii-enc-10021880-arcanum-75869473/editions/1879-acta-ass-012-ass-012-act-007/segments/source-order-arcanum-la-d28389997f6a.toml",
+      "sha256": "d28389997f6af7045924b64ab085b6e58ec7df1622060fb7675fa9909a5d484d",
+      "source_note": "ASS 12 (1879), printed pages 385–402. Exact source text is mechanically derived from the retained historical UTF-8 LF selection. Historical page-foot notes occupy separate paragraphs; the eight two-column note groups read completely down the left and then the right, following native archival OCR-PDF geometry. All source words, original hyphens, spacing and damaged reference markers remain literal. No original-print facsimile or whole-source word collation is claimed.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-12-1879-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1879-acta-ass-012/artifacts/source-order-arcanum-la-d28389997f6a/text.txt",
+      "title": "Arcanum divinae sapientiae",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-10021880-arcanum",
+      "correction_evidence": {
+        "revision": "2026-10-30T16:23:36Z",
+        "kind": "explicit-native-note-column-byte-permutation-after-lf-partition",
+        "source_order_spec_artifact_id": "artifact.acta-papal-archives.ass.012.historical-text-e91f242d.note-blocks-arcanum-la-fd4fbfc32f74.source-order-spec-ea99e02112ea",
+        "source_order_spec_sha256": "ea99e02112eafae37747ae7f5a7f4197c89f813b77e8d48e453eac6079e26711",
+        "native_geometry_artifact_id": "artifact.acta-papal-archives.ass.012.historical-text-e91f242d.note-blocks-arcanum-la-fd4fbfc32f74.native-note-geometry-9a0a51a96db3",
+        "native_geometry_sha256": "9a0a51a96db3c2b8f8dcd87776bfc4ddf882724182acc451e27a03a47b31fce3",
+        "native_review_artifact_id": "artifact.acta-papal-archives.ass.012.historical-text-e91f242d.note-blocks-arcanum-la-fd4fbfc32f74.source-order-review-a35675155820",
+        "native_review_sha256": "a35675155820119f140583963ae7a1f6827c4c5681114c61ce6c922de8a2bd00",
+        "source_byte_proof_artifact_id": "artifact.acta-papal-archives.ass.012.historical-text-e91f242d.note-blocks-arcanum-la-fd4fbfc32f74.source-order-byte-proof-29f08070f94a",
+        "source_byte_proof_sha256": "29f08070f94aa56b6d1ed270288331c4c0c6d2d38d6c0c716d8d3db01d7c59fd",
+        "prior_segment_id": "segment.acta-papal-archives.ass.012.ass-012-act-007.note-blocks-fd4fbfc32f74",
+        "non_note_selected_lf_rows_byte_identical_and_in_order": true,
+        "source_units_preserved_exactly_once": true,
+        "global_non_lf_order_preserved": false,
+        "helper_path": "scripts/_papal_source_order.py",
+        "helper_sha256": "f0a3014db485ee25ffa7df013c81e600f8e4f9eccff76b5ac7daecbc1d6a9c86"
+      }
+    }
+  ],
+  "supersessions": [
+    {
+      "reason": "Explicit inspected source-footnote LF partitions replace a paragraph-fused reader. Every selected non-LF byte and its source order are preserved; original source and predecessor remain retained.",
+      "prior": {
+        "id": "acta.ass.012.ass-012-act-007",
+        "language": "la",
+        "pdf_sha256": "f58a9c878c0f388a63d67e516b15adcbf7a0565bb692be22bfa2c913aa040d50",
+        "artifact_id": "artifact.acta-papal-archives.ass.012.historical-text-e91f242d",
+        "source_sha256": "e91f242db16225fdba90c31848787b87d35b16f3836a57a27867907c2501a703",
+        "segment_id": "segment.acta-papal-archives.ass.012.ass-012-act-007"
+      },
+      "replacement": {
+        "id": "acta.ass.012.ass-012-act-007",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.012.historical-text-e91f242d.note-blocks-arcanum-la-fd4fbfc32f74",
+        "source_sha256": "fd4fbfc32f74ef62b13b24d533120d495c404cd2405dec588f63092541993872",
+        "segment_id": "segment.acta-papal-archives.ass.012.ass-012-act-007.note-blocks-fd4fbfc32f74",
+        "revision": "2026-10-30T12:21:59Z"
+      }
+    },
+    {
+      "reason": "The earlier LF partition fixes body/note separation but its row-wise extraction interleaves historical note ownership. Eight native note groups are replaced by an exhaustive unchanged byte-slice permutation with native WORD geometry; every selected non-note LF row remains unchanged. Earlier LF-only artifact/segment, prior PDF pins and cold34a failure are retained.",
+      "prior": {
+        "id": "acta.ass.012.ass-012-act-007",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.012.historical-text-e91f242d.note-blocks-arcanum-la-fd4fbfc32f74",
+        "source_sha256": "fd4fbfc32f74ef62b13b24d533120d495c404cd2405dec588f63092541993872",
+        "segment_id": "segment.acta-papal-archives.ass.012.ass-012-act-007.note-blocks-fd4fbfc32f74",
+        "pdf_sha256": "c158cde1e0458c59f65ff7a40ff8e207f9dfa410b19720682a958e99cc9f3d29"
+      },
+      "replacement": {
+        "id": "acta.ass.012.ass-012-act-007",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.012.historical-text-e91f242d.note-blocks-arcanum-la-fd4fbfc32f74.source-order-d28389997f6a",
+        "source_sha256": "d28389997f6af7045924b64ab085b6e58ec7df1622060fb7675fa9909a5d484d",
+        "segment_id": "segment.acta-papal-archives.ass.012.ass-012-act-007.note-blocks-fd4fbfc32f74.source-order-d28389997f6a",
+        "revision": "2026-10-30T16:23:36Z"
+      }
+    }
+  ]
+}

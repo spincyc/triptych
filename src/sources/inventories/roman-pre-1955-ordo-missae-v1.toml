@@ -5,9 +5,9 @@ title = "The Ordinary of the Mass"
 advisory = """
 A pre-1955 lay hand missal's Ordinary, and never a book to celebrate from. \
 This is the Ordinary of the Mass as the 1861 Philadelphia printing of Eugene \
-Cummiskey set it for the laity to follow the Mass with; the English here is \
-that printing's own anonymous translation, it is not an approved liturgical \
-translation, it was never an altar book, and nothing in it may be used for \
+Cummiskey set it for the laity to follow the Mass with; the base English is \
+that printing's own anonymous translation. The joined historical English is \
+not an approved liturgical translation, and nothing here may be used for \
 recitation. The book is a witness to the discipline in force before the 1955 \
 and 1960 reforms, and it differs from the 1920 typical edition in orthography \
 and in some rubrics. Where it prints something the 1920 Ordo Missae does not \
@@ -19,11 +19,13 @@ of the 1920 typical edition - its Communicantes prints no clause naming St \
 Joseph, its Prefaces are the eleven this book knew, and its spelling, its j \
 and its ae and oe ligatures are its own. Where the book sets a block across \
 the full measure in English and prints no facing Latin at all, that silence \
-is the witness's own and the element says so.
+is the witness's own and the element says so. Separately identified historical \
+English supplies the five proper Communicantes and the Easter/Pentecost Hanc \
+igitur, under the witness and limits stated beside each element.
 """
 
 derived_from = """
-Every element is read from a tab-separated artifact under \
+Every base element is read from a tab-separated artifact under \
 edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861, one row \
 per printed block, transcribed visually from page images of the facsimile \
 registered as that edition's ia-scan-pdf artifact at 640 dpi with doubtful \
@@ -34,7 +36,9 @@ English by element_key; they were read on 2026-08-20 from that item's own page \
 images, and they carry a row only where the page prints facing Latin. Nothing \
 about an element's order, kind, speaker, page or wording is restated in this \
 file: it names the artifacts and the order they stand in, and the artifacts \
-carry the words and the hashes.
+carry the words and the hashes. The six proper Canon forms have English \
+from separate historical witnesses, explicitly joined below without replacing \
+the 1861 source artifacts or asserting a target-edition collation.
 """
 
 slots_derived_from = """
@@ -114,6 +118,29 @@ artifacts = [
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la-turn-divided",
 ]
 
+[[witnesses]]
+id = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+lang = "en"
+label = "Daily Missal with Vespers for Sundays and Feasts (Saint-Andre/Lohmann early edition, identified as 1925 and accessioned by 1927), historical English"
+rights = "public-domain"
+caution = "A historical lay hand missal, never an altar book or approved translation of the accepted Bonn witness. The English translator is unnamed. Supplies only the proper Communicantes bodies explicitly joined here, with its own same-witness continuation referral and day/night bounds. Nothing here may be used for recitation."
+artifacts = [
+  "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.english-completion-20261029-ordinary-proper-canon",
+]
+
+[[witnesses]]
+id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+lang = "en"
+label = "The New Roman Missal in Latin and English, by F. X. Lasance and F. A. Walsh (New York: Benziger Brothers), revised edition of 1945, in a printing of about 1955–56"
+rights = "public-domain"
+caution = "A historical publisher's hand missal, never an altar book or approved translation of the accepted Bonn witness. Supplies the proper Hanc igitur and the historical Preface bodies explicitly joined here. Nothing here may be used for recitation."
+artifacts = [
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.hanc-igitur-easter-pentecost-checked-english",
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en",
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-en",
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-b-en",
+]
+
 # ---------------------------------------------------------------- absences
 
 [[absences]]
@@ -130,15 +157,15 @@ what = "Nothing in this repository yet establishes which text the day appoints h
 
 [[absences]]
 key = "preface-not-in-witness"
-label = "The appointed Preface is absent from the 1861 witness"
+label = "An exact source for this Preface is not joined in this language"
 kind = "witness-gap"
-what = "The day appoints a Preface the 1861 Cummiskey lay missal does not print (it knew eleven; the Sacred Heart, Christ the King, St Joseph and the Dead came later). No witness this frame joins carries it, and no other Preface is shown in its place."
+what = "The 1861 Cummiskey witness has no Sacred Heart, Christ the King, St Joseph or Dead Preface. Four separate complete historical English bodies are joined from the Lasance witness; this remaining gap applies to the unjoined Latin sides. Historical St Joseph alternatives remain unselected and its English has a closed formulary scope. No other Preface is substituted for a missing language."
 
 [[absences]]
 key = "proper-canon-form-not-held"
-label = "The appointed proper Canon form is not held here"
+label = "An exact source for this Canon form is not joined in this language"
 kind = "witness-gap"
-what = "The day appoints a proper Communicantes or Hanc igitur, which the accepted pre-1955 witness prints in its Canon at printed pp. 336-337 (Bonn reimpressio artifact pp. 440-441), and no witness this frame joins prints it: the 1861 Cummiskey Canon carries only the common forms (canon-missae-en seq 8 and 10). The common form is NOT shown in the proper form's place."
+what = "The accepted pre-1955 Bonn witness prints these proper Communicantes and Hanc igitur forms in its Canon at printed pp.336–337 (artifact pp.440–441). The historical English is now joined separately from the Lefebvre and Lasance witnesses, but no Latin side is joined for these forms; the 1861 Cummiskey Canon carries only common forms (canon-missae-en seq8 and10). This remaining absence applies only to the missing language. No common form is shown in a proper form's place."
 
 # ---------------------------------------------------------------- appointments
 #
@@ -673,15 +700,78 @@ absent_latin = "appointment-not-established"
 note = "Stands where the day's Preface would, on a day whose Preface no formulary appointment, dated span or default in this repository establishes. The witness's Prefaces are not printed here in its place: printing all of them would claim every one is said."
 conditions = [{ kind = "unappointed", variable = "preface", basis = "Shown only when nothing appoints the day's Preface." }]
 
+
+
 [[sections.inserted]]
-key = "praefatio-non-in-teste"
+key = "praefatio-sacro-corde"
 after = "rubrica-nota-nominis"
 kind = "prayer"
 speaker = "priest"
-name = "The appointed Preface, which this witness does not print"
-absent_english = "preface-not-in-witness"
+name = "Preface of the Sacred Heart"
 absent_latin = "preface-not-in-witness"
-conditions = [{ kind = "appointed", variable = "preface", options = ["sacro-corde", "christo-rege", "sancto-ioseph", "defunctis"], basis = "Stands for an appointed Preface the 1861 witness does not print." }]
+conditions = [{ kind = "appointed", variable = "preface", options = ["sacro-corde"], basis = "This complete historical Preface body stands only where the source-owned appointment selects its named Preface. No appointment is inferred from the translation." }]
+[sections.inserted.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en"
+element = "praefatio-sacro-corde"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH. Exact source body at Lasance ordinary printed pages 812–818, independently image-checked and source-fidelity reviewed. The complete body includes its own opening and conclusion, ending before the separately printed Sanctus; no Cummiskey opening or conclusion is spliced into it. The frame’s subsequent Sanctus retains its separate existing source identity. Source spelling, capitals and punctuation remain; no approved target-English or whole-execution claim is made."
+
+[[sections.inserted]]
+key = "praefatio-christo-rege"
+after = "rubrica-nota-nominis"
+kind = "prayer"
+speaker = "priest"
+name = "Preface of Christ the King"
+absent_latin = "preface-not-in-witness"
+conditions = [{ kind = "appointed", variable = "preface", options = ["christo-rege"], basis = "This complete historical Preface body stands only where the source-owned appointment selects its named Preface. No appointment is inferred from the translation." }]
+[sections.inserted.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en"
+element = "praefatio-christo-rege"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH. Exact source body at Lasance ordinary printed pages 812–818, independently image-checked and source-fidelity reviewed. The complete body includes its own opening and conclusion, ending before the separately printed Sanctus; no Cummiskey opening or conclusion is spliced into it. The frame’s subsequent Sanctus retains its separate existing source identity. Source spelling, capitals and punctuation remain; no approved target-English or whole-execution claim is made."
+
+[[sections.inserted]]
+key = "praefatio-sancto-ioseph"
+after = "rubrica-nota-nominis"
+kind = "prayer"
+speaker = "priest"
+name = "Preface of St Joseph"
+absent_latin = "preface-not-in-witness"
+conditions = [{ kind = "appointed", variable = "preface", options = ["sancto-ioseph"], basis = "This complete historical Preface body stands only where the source-owned appointment selects its named Preface. No appointment is inferred from the translation." }]
+[sections.inserted.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en"
+element = "praefatio-sancto-ioseph"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+applicability = { kind = "formulary", calendar = "roman-pre-1955", formularies = ["s-ioseph-sponsi-beatae-mariae-virginis"], basis = "The checked historical source prints festivity (veneration), which remains unselected. The 1962 May 1 solemnity reading is absent. This body is held only for the March 19 formulary; a date-free or other formulary context establishes no use. No target appointment or alternative selection is inferred." }
+note = "HISTORICAL HUMAN ENGLISH. Exact source body at Lasance ordinary printed pages 812–818, independently image-checked and source-fidelity reviewed. The complete body includes its own opening and conclusion, ending before the separately printed Sanctus; no Cummiskey opening or conclusion is spliced into it. The frame’s subsequent Sanctus retains its separate existing source identity. Source spelling, capitals and punctuation remain; no approved target-English or whole-execution claim is made. Source festivity (veneration) alternatives remain visible and unselected; this source cannot supply May 1 solemnity."
+
+[[sections.inserted]]
+key = "praefatio-defunctis"
+after = "rubrica-nota-nominis"
+kind = "prayer"
+speaker = "priest"
+name = "Preface of the Dead"
+absent_latin = "preface-not-in-witness"
+conditions = [{ kind = "appointed", variable = "preface", options = ["defunctis"], basis = "This complete historical Preface body stands only where the source-owned appointment selects its named Preface. No appointment is inferred from the translation." }]
+[sections.inserted.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en"
+element = "praefatio-defunctis"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH. Exact source body at Lasance ordinary printed pages 812–818, independently image-checked and source-fidelity reviewed. The complete body includes its own opening and conclusion, ending before the separately printed Sanctus; no Cummiskey opening or conclusion is spliced into it. The frame’s subsequent Sanctus retains its separate existing source identity. Source spelling, capitals and punctuation remain; no approved target-English or whole-execution claim is made. Its dominions and powers is a historical translation variant against facing Latin Thronis et Dominationibus; retain it without an exact-target grade."
+
+
 
 [[sections.inserted]]
 key = "sanctus-post-praefationem"
@@ -691,6 +781,170 @@ text_of = "sanctus"
 name = "Sanctus"
 note = "The 1861 book prints the Sanctus once, after the common Preface, and ends every proper Preface with the cue Holy, &c. (Latin Sanctus, &c.). This occurrence resolves that printed cue to the same printed row, praefationes-en seq 4 at p. xxviii; it adds no words."
 conditions = [{ kind = "appointed", variable = "preface", options = ["trinitate", "nativitate", "epiphania", "quadragesima", "sancta-cruce", "paschalis", "ascensione", "spiritu-sancto", "beata-maria-virgine", "apostolis", "sacro-corde", "christo-rege", "sancto-ioseph", "defunctis"], basis = "Stands after every Preface other than the common one, where the book's own cue Holy, &c. calls for the Sanctus." }]
+
+
+[[sections.english_replacements]]
+element = "praefatio-de-ss-trinitate"
+english_turns = [{"key" = "source-body", "seq" = [1]}]
+turns_basis = "Lasance source printed pp.773–774, original PDF pp.772–773. The English prayer body is one continuous source block from its opening through the pre-Sanctus colon. No local P/R or actor cue is attached to this body, so none is inherited from Cummiskey. Dialogue, headings, source rubrics and Sanctus remain outside its one source-row turn."
+[sections.english_replacements.replaces]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
+text_sha256 = "6e2d56ddf7fd229c20cd146be5317dead1b256531a58b43016dded83a3392808"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-en"
+element = "praefatio-de-ss-trinitate"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH. Complete Lasance 1945 source body, with its own opening and conclusion, stopping before its separately printed Sanctus. No Cummiskey opening or ending is supplied. Source wording, punctuation and historical variants remain; no approved target-English or exact-target grade is asserted."
+reading_note = "Historical English from the Lasance/Walsh hand missal. Its source wording and alternatives are retained."
+
+[[sections.english_replacements]]
+element = "praefatio-de-nativitate"
+english_turns = [{"key" = "source-body", "seq" = [2]}]
+turns_basis = "Lasance source printed pp.798, original PDF pp.797. The English prayer body is one continuous source block from its opening through the pre-Sanctus colon. No local P/R or actor cue is attached to this body, so none is inherited from Cummiskey. Dialogue, headings, source rubrics and Sanctus remain outside its one source-row turn."
+[sections.english_replacements.replaces]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
+text_sha256 = "83b0899e69f87ce86b99461330b2e4be80279bd04e1b97c27ba1b791dc46b65f"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-en"
+element = "praefatio-de-nativitate"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH. Complete Lasance 1945 source body, with its own opening and conclusion, stopping before its separately printed Sanctus. No Cummiskey opening or ending is supplied. Source wording, punctuation and historical variants remain; no approved target-English or exact-target grade is asserted."
+reading_note = "Historical English from the Lasance/Walsh hand missal. Its source wording and alternatives are retained."
+
+[[sections.english_replacements]]
+element = "praefatio-de-epiphania"
+english_turns = [{"key" = "source-body", "seq" = [3]}]
+turns_basis = "Lasance source printed pp.800–801, original PDF pp.799–800. The English prayer body is one continuous source block from its opening through the pre-Sanctus colon. No local P/R or actor cue is attached to this body, so none is inherited from Cummiskey. Dialogue, headings, source rubrics and Sanctus remain outside its one source-row turn."
+[sections.english_replacements.replaces]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
+text_sha256 = "da4e002d1f65ea511c64412dbfddb9f2c9332f4659fcd936d5d0ab18981ae7f3"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-en"
+element = "praefatio-de-epiphania"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH. Complete Lasance 1945 source body, with its own opening and conclusion, stopping before its separately printed Sanctus. No Cummiskey opening or ending is supplied. Source wording, punctuation and historical variants remain; no approved target-English or exact-target grade is asserted."
+reading_note = "Historical English from the Lasance/Walsh hand missal. Its source wording and alternatives are retained."
+
+[[sections.english_replacements]]
+element = "praefatio-de-quadragesima"
+english_turns = [{"key" = "source-body", "seq" = [4]}]
+turns_basis = "Lasance source printed pp.803, original PDF pp.802. The English prayer body is one continuous source block from its opening through the pre-Sanctus colon. No local P/R or actor cue is attached to this body, so none is inherited from Cummiskey. Dialogue, headings, source rubrics and Sanctus remain outside its one source-row turn."
+[sections.english_replacements.replaces]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
+text_sha256 = "21df04b66e55715d4fca88febf4b23d52871d1c9a04f7bf533e89b34c4a4411d"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-en"
+element = "praefatio-de-quadragesima"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH. Complete Lasance 1945 source body, with its own opening and conclusion, stopping before its separately printed Sanctus. No Cummiskey opening or ending is supplied. Source wording, punctuation and historical variants remain; no approved target-English or exact-target grade is asserted."
+reading_note = "Historical English from the Lasance/Walsh hand missal. Its source wording and alternatives are retained."
+
+[[sections.english_replacements]]
+element = "praefatio-de-sancta-cruce"
+english_turns = [{"key" = "source-body", "seq" = [5]}]
+turns_basis = "Lasance source printed pp.804, original PDF pp.803. The English prayer body is one continuous source block from its opening through the pre-Sanctus colon. No local P/R or actor cue is attached to this body, so none is inherited from Cummiskey. Dialogue, headings, source rubrics and Sanctus remain outside its one source-row turn."
+[sections.english_replacements.replaces]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
+text_sha256 = "9a4d89c7aafb49ed998d0f42bda68d4c1a6bdd561ffed181d3c30a236af881a0"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-en"
+element = "praefatio-de-sancta-cruce"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH. Complete Lasance 1945 source body, with its own opening and conclusion, stopping before its separately printed Sanctus. No Cummiskey opening or ending is supplied. Source wording, punctuation and historical variants remain; no approved target-English or exact-target grade is asserted."
+reading_note = "Historical English from the Lasance/Walsh hand missal. Its source wording and alternatives are retained."
+
+
+[[sections.english_replacements]]
+element = "praefatio-paschalis"
+english_turns = [{"key" = "source-body", "seq" = [1]}]
+turns_basis = "Lasance source printed pp.805, original PDF pp.804. The English prayer is one continuous source block from its own opening through the pre-Sanctus colon. No local P/R or actor cue is attached to this body, so no role is inherited from Cummiskey. Dialogue, headings, source rubrics and Sanctus remain outside its one source-row turn."
+[sections.english_replacements.replaces]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
+text_sha256 = "f1e66d3a4e30c869ada84b4e9e3be7ceea47ca9d675d73d67d88059e7f95ff91"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-b-en"
+element = "praefatio-paschalis"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH. Complete Lasance 1945 source body with its own opening and conclusion through the colon before its separately printed Sanctus. No source-foreign opening or conclusion is supplied. Source wording, capitals, punctuation and historical variants remain. No approved target-English or exact-target claim. Complete historical source body before Sanctus. Source day (in these days) alternatives remain unselected. The preceding source rubric supplies the night substitution for Holy Saturday; this row retains the actual printed body and does not silently substitute night. No target appointment or full branch execution is asserted."
+reading_note = "Historical English from Lasance/Walsh, retaining its printed day and season alternatives. The source directs night for Holy Saturday; no form is selected here."
+
+[[sections.english_replacements]]
+element = "praefatio-de-ascensione"
+english_turns = [{"key" = "source-body", "seq" = [2]}]
+turns_basis = "Lasance source printed pp.807, original PDF pp.806. The English prayer is one continuous source block from its own opening through the pre-Sanctus colon. No local P/R or actor cue is attached to this body, so no role is inherited from Cummiskey. Dialogue, headings, source rubrics and Sanctus remain outside its one source-row turn."
+[sections.english_replacements.replaces]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
+text_sha256 = "7e8ef18991cba8c294127d727900b24b51c6e5f8af98d99dfbd94bd2af8aa3da"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-b-en"
+element = "praefatio-de-ascensione"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH. Complete Lasance 1945 source body with its own opening and conclusion through the colon before its separately printed Sanctus. No source-foreign opening or conclusion is supplied. Source wording, capitals, punctuation and historical variants remain. No approved target-English or exact-target claim. Complete historical source body before separately printed Sanctus on the following page. Preserve source available, capitals and punctuation; no source-foreign opening or conclusion is spliced."
+reading_note = "Historical English from the Lasance/Walsh hand missal. Its source wording and alternatives are retained."
+
+[[sections.english_replacements]]
+element = "praefatio-de-beata-maria-virgine"
+english_turns = [{"key" = "source-body", "seq" = [3]}]
+turns_basis = "Lasance source printed pp.814–815, original PDF pp.813–814. The English prayer is one continuous source block from its own opening through the pre-Sanctus colon. No local P/R or actor cue is attached to this body, so no role is inherited from Cummiskey. Dialogue, headings, source rubrics and Sanctus remain outside its one source-row turn."
+[sections.english_replacements.replaces]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
+text_sha256 = "bda1618f8b239717aa77c1730539d7f96e4e4b9cf9ab8f689ed7f467694cbd52"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-b-en"
+element = "praefatio-de-beata-maria-virgine"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH. Complete Lasance 1945 source body with its own opening and conclusion through the colon before its separately printed Sanctus. No source-foreign opening or conclusion is supplied. Source wording, capitals, punctuation and historical variants remain. No approved target-English or exact-target claim. Complete historical source body before Sanctus. Source festival blank remains literally . . .; the source instruction names an insertion, not a selected target feast. Preserve source lowercase thee/whom/thy; no target-specific phrase is supplied."
+reading_note = "Historical English from Lasance/Walsh. The source leaves the feast title blank; no title is supplied here."
+
+[[sections.english_replacements]]
+element = "praefatio-de-apostolis"
+english_turns = [{"key" = "source-body", "seq" = [4]}]
+turns_basis = "Lasance source printed pp.816–817, original PDF pp.815–816. The English prayer is one continuous source block from its own opening through the pre-Sanctus colon. No local P/R or actor cue is attached to this body, so no role is inherited from Cummiskey. Dialogue, headings, source rubrics and Sanctus remain outside its one source-row turn."
+[sections.english_replacements.replaces]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
+text_sha256 = "354a7a10b1fa39ed57c61154d537bfd3386bcb9db4bffed746bcbfaf25fdcc5c"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-b-en"
+element = "praefatio-de-apostolis"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH. Complete Lasance 1945 source body with its own opening and conclusion through the colon before its separately printed Sanctus. No source-foreign opening or conclusion is supplied. Source wording, capitals, punctuation and historical variants remain. No approved target-English or exact-target claim. Complete historical source body before Sanctus. Preserve exact source theological rendering and punctuation. No target-English exactness or full execution claim. The source comma in its pastors under Thee, And therefore is retained before capital And."
+reading_note = "Historical English from the Lasance/Walsh hand missal. Its source wording and alternatives are retained."
 
 [[sections]]
 key = "canon"
@@ -724,9 +978,17 @@ before = "communicantes"
 kind = "prayer"
 speaker = "priest"
 name = "Communicantes — the proper form of the Nativity"
-absent_english = "proper-canon-form-not-held"
 absent_latin = "proper-canon-form-not-held"
 conditions = [{ kind = "appointed", variable = "communicantes", options = ["nativitate"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+
+[sections.inserted.english]
+witness = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+artifact = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.english-completion-20261029-ordinary-proper-canon"
+element = "communicantes-nativitate"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH, NOT APPROVED TARGET ENGLISH. Complete prayer from the early Saint-Andre/Lohmann witness, printed pp.59–61: the proper head's explicit p.59 referral supplies that same witness's common continuation through its actual Amen. No Joseph clause or other witness's words are inserted. The accepted Bonn witness context was read, but no full target-edition collation or exact-target wording is asserted. The source's Nativity night alternative and Easter day-only bounds remain explicit."
 
 [[sections.inserted]]
 key = "communicantes-epiphania"
@@ -734,9 +996,17 @@ before = "communicantes"
 kind = "prayer"
 speaker = "priest"
 name = "Communicantes — the proper form of the Epiphany"
-absent_english = "proper-canon-form-not-held"
 absent_latin = "proper-canon-form-not-held"
 conditions = [{ kind = "appointed", variable = "communicantes", options = ["epiphania"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+
+[sections.inserted.english]
+witness = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+artifact = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.english-completion-20261029-ordinary-proper-canon"
+element = "communicantes-epiphania"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH, NOT APPROVED TARGET ENGLISH. Complete prayer from the early Saint-Andre/Lohmann witness, printed pp.59–61: the proper head's explicit p.59 referral supplies that same witness's common continuation through its actual Amen. No Joseph clause or other witness's words are inserted. The accepted Bonn witness context was read, but no full target-edition collation or exact-target wording is asserted. The source's Nativity night alternative and Easter day-only bounds remain explicit."
 
 [[sections.inserted]]
 key = "communicantes-pascha"
@@ -744,9 +1014,18 @@ before = "communicantes"
 kind = "prayer"
 speaker = "priest"
 name = "Communicantes — the proper form of Easter"
-absent_english = "proper-canon-form-not-held"
 absent_latin = "proper-canon-form-not-held"
 conditions = [{ kind = "appointed", variable = "communicantes", options = ["pascha"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+
+[sections.inserted.english]
+witness = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+artifact = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.english-completion-20261029-ordinary-proper-canon"
+element = "communicantes-pascha"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+applicability = { kind = "formulary", calendar = "roman-pre-1955", formularies = ["easter-sunday", "easter-monday", "easter-tuesday", "easter-wednesday", "easter-thursday", "easter-friday", "easter-saturday"], basis = "The historical Lefebvre English at printed pp.60–61 supplies the Easter day form only. The accepted Bonn witness at printed p.336 distinguishes day and night. This English is scoped to the named Paschal day formularies, excluding Holy Saturday; civil clock time supplies no applicability." }
+note = "HISTORICAL HUMAN ENGLISH, NOT APPROVED TARGET ENGLISH. Complete prayer from the early Saint-Andre/Lohmann witness, printed pp.59–61: the proper head's explicit p.59 referral supplies that same witness's common continuation through its actual Amen. No Joseph clause or other witness's words are inserted. The accepted Bonn witness context was read, but no full target-edition collation or exact-target wording is asserted. The source's Nativity night alternative and Easter day-only bounds remain explicit."
 
 [[sections.inserted]]
 key = "communicantes-ascensione"
@@ -754,9 +1033,17 @@ before = "communicantes"
 kind = "prayer"
 speaker = "priest"
 name = "Communicantes — the proper form of the Ascension"
-absent_english = "proper-canon-form-not-held"
 absent_latin = "proper-canon-form-not-held"
 conditions = [{ kind = "appointed", variable = "communicantes", options = ["ascensione"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+
+[sections.inserted.english]
+witness = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+artifact = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.english-completion-20261029-ordinary-proper-canon"
+element = "communicantes-ascensione"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH, NOT APPROVED TARGET ENGLISH. Complete prayer from the early Saint-Andre/Lohmann witness, printed pp.59–61: the proper head's explicit p.59 referral supplies that same witness's common continuation through its actual Amen. No Joseph clause or other witness's words are inserted. The accepted Bonn witness context was read, but no full target-edition collation or exact-target wording is asserted. The source's Nativity night alternative and Easter day-only bounds remain explicit."
 
 [[sections.inserted]]
 key = "communicantes-pentecoste"
@@ -764,9 +1051,17 @@ before = "communicantes"
 kind = "prayer"
 speaker = "priest"
 name = "Communicantes — the proper form of Pentecost"
-absent_english = "proper-canon-form-not-held"
 absent_latin = "proper-canon-form-not-held"
 conditions = [{ kind = "appointed", variable = "communicantes", options = ["pentecoste"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+
+[sections.inserted.english]
+witness = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+artifact = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.english-completion-20261029-ordinary-proper-canon"
+element = "communicantes-pentecoste"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH, NOT APPROVED TARGET ENGLISH. Complete prayer from the early Saint-Andre/Lohmann witness, printed pp.59–61: the proper head's explicit p.59 referral supplies that same witness's common continuation through its actual Amen. No Joseph clause or other witness's words are inserted. The accepted Bonn witness context was read, but no full target-edition collation or exact-target wording is asserted. The source's Nativity night alternative and Easter day-only bounds remain explicit."
 
 [[sections.inserted]]
 key = "communicantes-diei"
@@ -784,9 +1079,17 @@ before = "hanc-igitur"
 kind = "prayer"
 speaker = "priest"
 name = "Hanc igitur — the proper form of Easter and Pentecost"
-absent_english = "proper-canon-form-not-held"
 absent_latin = "proper-canon-form-not-held"
 conditions = [{ kind = "appointed", variable = "hanc_igitur", options = ["pascha-pentecoste"], basis = "Stands where the day appoints the proper Hanc igitur, in place of the common form." }]
+
+[sections.inserted.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.hanc-igitur-easter-pentecost-checked-english"
+element = "hanc-igitur-pascha-pentecoste"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH, NOT APPROVED TARGET ENGLISH. The complete Lasance proper Hanc igitur at printed pp.811–812 is joined from its separately checked source artifact. The accepted Bonn witness prints the corresponding proper form at p.337; no full target-edition collation, target rubric or recitation authority is asserted. No Joseph clause, expanded ending or source-foreign words are supplied."
 
 [[sections.inserted]]
 key = "hanc-igitur-diei"

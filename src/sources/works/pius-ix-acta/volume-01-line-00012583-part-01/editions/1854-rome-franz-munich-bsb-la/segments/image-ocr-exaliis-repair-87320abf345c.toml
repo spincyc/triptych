@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.pius-ix-acta.volume-01.line-00012583.part-01.1854-rome-franz-munich-bsb-la.image-ocr-exaliis-repair-87320abf345c"
+edition_id = "edition.pius-ix-acta.volume-01.line-00012583.part-01.1854-rome-franz-munich-bsb-la"
+artifact_id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-text-87320abf345c"
+artifact_sha256 = "87320abf345c99cd855ab844a63eaadee4a65007348eb75382a8ac136c965152"
+segment_type = "constituent-work"
+physical_line_ranges = [[1, 148]]
+states = ["cataloged", "acquired", "inspected"]
+context = "Pius IX Ex aliis Nostris, printed pp.348–352 in the separately identified BSB Bonarum Artium/Giorgio Franz in Monaco issue. Complete native pages358–362 and title5 inspected for identity and source usability; the three recovery regions are separately retained and visually inspected."
+notes = "Localized raw-OCR byte composition under artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-recipe-14cc515dc0c3. Replaces only failed sourceLF95–96 condition plus words on LF99/112; every other parent byte remains exact. Scattered OCR errors remain; no complete verbal collation, lexical PASS or Harvard/Google equality. Independent new source/PDF cold review remains required."

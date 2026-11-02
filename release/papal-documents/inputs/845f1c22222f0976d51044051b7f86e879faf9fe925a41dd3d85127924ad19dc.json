@@ -1,0 +1,96 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "ccfa1eab9f165422207f2b97f9a2c2b0461a7314686bd63ede420ffa4f3ac4ef",
+  "documents": [
+    {
+      "id": "acta.ass.012.ass-012-act-007",
+      "language": "la",
+      "pdf_sha256": "cc29fe74d31e4f8116edb2d4cb616a8b0951d4150c88b99b61f3ce67e0ee139a",
+      "pages": 9,
+      "status": "PASS",
+      "source_order_status": "PASS",
+      "pdf_status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "resolved",
+          "pages": [
+            2
+          ],
+          "description": "Native 387 and 388 groups read completely left then right as distinct note paragraphs; native388 note5 retains re-/form. matr. in one paragraph."
+        },
+        {
+          "severity": "resolved",
+          "pages": [
+            3
+          ],
+          "description": "Native389 notes1–8 and native390 notes1–9 retain complete left-then-right flow. Native390 note6 Ad-/monere, note7 cognât,/spirti., and note8/9 continuations remain together; source-page body interruptions remain bounded by separate note paragraphs."
+        },
+        {
+          "severity": "resolved",
+          "pages": [
+            4
+          ],
+          "description": "Native391 note1 Capp.5/et6 remains together; note2 continues from bottom left to top right within one paragraph before separate note3. Native392 notes1/2 precede3/4 as separate notes. Old34a blockers close only for new d283 source and cc29 PDF."
+        },
+        {
+          "severity": "resolved",
+          "pages": [
+            5
+          ],
+          "description": "Native393 notes1–15 retain whole multirow notes5,6,10; reader note10 starts the right column after note9. Its literal spaced final period wraps without altering paragraph ownership."
+        },
+        {
+          "severity": "resolved",
+          "pages": [
+            7,
+            8
+          ],
+          "description": "Native398 long note1 is one complete paragraph at page7 bottom; distinct complete notes2–5 continue at page8 top, including note3/5 continuations."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "description": "Disclosed OCR defects, damaged markers, interletter spacing and original word-break hyphens remain literal. All pages are legible with no clipping, overlap or newly missing glyph observed."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            9
+          ],
+          "description": "Final page is source-bearing: closing, prayer, blessing, historical date and LEO subscription precede the rule, compact source apparatus and rights colophon; no apparatus-only spill."
+        }
+      ],
+      "limitations": [
+        "Native evidence is an archival OCR reconstruction, not an original-print facsimile; no whole-source lexical collation or silent correction of literal OCR words, markers, spacing or source hyphens.",
+        "Bounded source-order and PDF review only; no new historical identity/intake, rights determination, translation review, installation or deployment.",
+        "qpdf unavailable on PATH and at the personal executable fallback; no qpdf structural result claimed."
+      ],
+      "receipt_sha256": "ccfa1eab9f165422207f2b97f9a2c2b0461a7314686bd63ede420ffa4f3ac4ef",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-41.md",
+      "report_sha256": "1ebf31ee5ca21b978a070d027780a75fbe30c8dc2759b429a881b7bf9c3f58ce"
+    }
+  ]
+}

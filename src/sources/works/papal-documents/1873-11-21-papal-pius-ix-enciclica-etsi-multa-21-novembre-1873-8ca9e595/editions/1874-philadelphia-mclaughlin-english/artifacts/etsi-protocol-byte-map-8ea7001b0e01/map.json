@@ -1,0 +1,373 @@
+{
+  "status": "pass",
+  "recipe_sha256": "9967cd52ba79c1d499f9a2b011c84784e57bdc8afee9051f43bc4c173f360d62",
+  "implementation_sha256": "ba10bd77f9dc25be0773387d3e9e70c5285777975182d8c0b8f956bf407fc28d",
+  "parent_sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
+  "source_sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+  "source_bytes": 40192,
+  "edits": [
+    {
+      "parent_byte_range": [
+        140,
+        140
+      ],
+      "output_byte_range": [
+        140,
+        153
+      ],
+      "removed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "inserted_sha256": "e0967b7f3d61cd998363551534f4132985af46369df441b7add7310bd2dad7db",
+      "unchanged_parent_byte_range": [
+        0,
+        140
+      ],
+      "unchanged_sha256": "74a5977a4b6c27c91b680645fe794d90eb942b0a5ce4684b700bd2279844a879"
+    },
+    {
+      "parent_byte_range": [
+        141,
+        168
+      ],
+      "output_byte_range": [
+        154,
+        173
+      ],
+      "removed_sha256": "8c5fa13aeb14edd7b92b533c26ecdc8ef37f6472c34ad18148d1f8bd31a974bd",
+      "inserted_sha256": "a10be1a5294da276e88310dc968dbe42f967d6be2d958f4740a12947a3922cf7",
+      "unchanged_parent_byte_range": [
+        140,
+        141
+      ],
+      "unchanged_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "parent_byte_range": [
+        170,
+        215
+      ],
+      "output_byte_range": [
+        175,
+        212
+      ],
+      "removed_sha256": "8baed5b9af4918443ea616ada5ccbb8a31b38b66eb73351d7aca1dbd3f5864f7",
+      "inserted_sha256": "c7d49dda97c71c4d9ecbc5ac31c06e20b37b4f45a99c06f8f5eaf4c858972996",
+      "unchanged_parent_byte_range": [
+        168,
+        170
+      ],
+      "unchanged_sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070"
+    },
+    {
+      "parent_byte_range": [
+        218,
+        218
+      ],
+      "output_byte_range": [
+        215,
+        216
+      ],
+      "removed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "inserted_sha256": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd",
+      "unchanged_parent_byte_range": [
+        215,
+        218
+      ],
+      "unchanged_sha256": "6a3cf5192354f71615ac51034b3e97c20eda99643fcaf5bbe6d41ad59bd12167"
+    }
+  ],
+  "unchanged_suffix_parent_byte_range": [
+    218,
+    40194
+  ],
+  "unchanged_suffix_sha256": "c1ecd3ccbdbaaf67912cfa0b43824cf9d726ec6b44ec4dbf79310cb77910be5f",
+  "all_parent_bytes_outside_declared_ranges_retained_exactly": true,
+  "blocks": [
+    {
+      "id": "issuer",
+      "commands": [
+        {
+          "command": [
+            "/usr/bin/magick",
+            "ROOT/.scratch/replay-final/native.png",
+            "-crop",
+            "620x80+420+515",
+            "+repage",
+            "-colorspace",
+            "Gray",
+            "-depth",
+            "8",
+            "-resize",
+            "50%",
+            "-bordercolor",
+            "white",
+            "-border",
+            "30",
+            "-strip",
+            "ROOT/.scratch/replay-final/issuer.png"
+          ],
+          "exit_status": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/usr/bin/tesseract",
+            "ROOT/.scratch/replay-final/issuer.png",
+            "ROOT/.scratch/replay-final/issuer",
+            "--tessdata-dir",
+            "ROOT/.scratch/replay-final/models",
+            "-l",
+            "deu_latf",
+            "--psm",
+            "7",
+            "--oem",
+            "1",
+            "-c",
+            "tessedit_create_txt=1",
+            "-c",
+            "tessedit_create_tsv=1"
+          ],
+          "exit_status": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "outputs": {
+        "png": "3fdc499d8878b465ecacb493c3fdc84757e79b8c84a0b088640c9c98a2a15a13",
+        "txt": "e0967b7f3d61cd998363551534f4132985af46369df441b7add7310bd2dad7db",
+        "tsv": "68fe755cd62dec6e2d1351e7db598b07f0beb7d13d1005733c0ea232671257bb"
+      }
+    },
+    {
+      "id": "greeting-one",
+      "commands": [
+        {
+          "command": [
+            "/usr/bin/magick",
+            "ROOT/.scratch/replay-final/native.png",
+            "-crop",
+            "620x90+0+720",
+            "+repage",
+            "-colorspace",
+            "Gray",
+            "-depth",
+            "8",
+            "-resize",
+            "200%",
+            "-threshold",
+            "50%",
+            "-bordercolor",
+            "white",
+            "-border",
+            "30",
+            "-strip",
+            "ROOT/.scratch/replay-final/greeting-one.png"
+          ],
+          "exit_status": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/usr/bin/tesseract",
+            "ROOT/.scratch/replay-final/greeting-one.png",
+            "ROOT/.scratch/replay-final/greeting-one",
+            "--tessdata-dir",
+            "ROOT/.scratch/replay-final/models",
+            "-l",
+            "eng",
+            "--psm",
+            "7",
+            "--oem",
+            "1",
+            "-c",
+            "tessedit_create_txt=1",
+            "-c",
+            "tessedit_create_tsv=1"
+          ],
+          "exit_status": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "outputs": {
+        "png": "64e9cbbc12ae7ca0468b669c35f042c591a3bf20ef9fa914be4b92a20113a2b0",
+        "txt": "09f43de3bfba15e3fa9f0780e2ddd3e5894756f8d2c617500942ffcb77c4d39b",
+        "tsv": "efd0f718d05860d75d49d1dc6900fbb5071230a6d1ec8aa711aad3bf06c5124d"
+      }
+    },
+    {
+      "id": "greeting-two-prefix",
+      "commands": [
+        {
+          "command": [
+            "/usr/bin/magick",
+            "ROOT/.scratch/replay-final/native.png",
+            "-crop",
+            "920x90+210+815",
+            "+repage",
+            "-colorspace",
+            "Gray",
+            "-depth",
+            "8",
+            "-resize",
+            "100%",
+            "-bordercolor",
+            "white",
+            "-border",
+            "30",
+            "-strip",
+            "ROOT/.scratch/replay-final/greeting-two-prefix.png"
+          ],
+          "exit_status": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/usr/bin/tesseract",
+            "ROOT/.scratch/replay-final/greeting-two-prefix.png",
+            "ROOT/.scratch/replay-final/greeting-two-prefix",
+            "--tessdata-dir",
+            "ROOT/.scratch/replay-final/models",
+            "-l",
+            "eng",
+            "--psm",
+            "6",
+            "--oem",
+            "1",
+            "-c",
+            "tessedit_create_txt=1",
+            "-c",
+            "tessedit_create_tsv=1"
+          ],
+          "exit_status": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "outputs": {
+        "png": "463490df615ba318eb9fa3c34b48c7232ecbe5fc68d4b2edae9f32bbb498675c",
+        "txt": "016a5436c8dfea9b80dfa464b6ecd8be2303032ae76da6e6175fd26d5cb2d2a6",
+        "tsv": "7d23a3e0b67c6b8e9484fad17f964ca725193a4cb483a1f68784216335992912"
+      }
+    },
+    {
+      "id": "greeting-two-ending",
+      "commands": [
+        {
+          "command": [
+            "/usr/bin/magick",
+            "ROOT/.scratch/replay-final/native.png",
+            "-crop",
+            "920x90+210+815",
+            "+repage",
+            "-colorspace",
+            "Gray",
+            "-depth",
+            "8",
+            "-resize",
+            "50%",
+            "-bordercolor",
+            "white",
+            "-border",
+            "30",
+            "-strip",
+            "ROOT/.scratch/replay-final/greeting-two-ending.png"
+          ],
+          "exit_status": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/usr/bin/tesseract",
+            "ROOT/.scratch/replay-final/greeting-two-ending.png",
+            "ROOT/.scratch/replay-final/greeting-two-ending",
+            "--tessdata-dir",
+            "ROOT/.scratch/replay-final/models",
+            "-l",
+            "eng",
+            "--psm",
+            "7",
+            "--oem",
+            "1",
+            "-c",
+            "tessedit_create_txt=1",
+            "-c",
+            "tessedit_create_tsv=1"
+          ],
+          "exit_status": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "outputs": {
+        "png": "67ec62e7d2e0e04434e1eb9adf3d8f69fd9c4d2451316fca0c7044acbdccc16f",
+        "txt": "85617bb58b1682e21de8508583a294e077a22245f5a06bfeabc9111fdc8faa23",
+        "tsv": "633537bf1a5c935527b64ac6de2bfe2284bc05e50d6dc574462c8a917f26c712"
+      }
+    },
+    {
+      "id": "body-capital",
+      "commands": [
+        {
+          "command": [
+            "/usr/bin/magick",
+            "ROOT/.scratch/replay-final/native.png",
+            "-crop",
+            "80x120+65+1040",
+            "+repage",
+            "-colorspace",
+            "Gray",
+            "-depth",
+            "8",
+            "-threshold",
+            "50%",
+            "-resize",
+            "200%",
+            "-bordercolor",
+            "white",
+            "-border",
+            "40",
+            "-strip",
+            "ROOT/.scratch/replay-final/body-capital.png"
+          ],
+          "exit_status": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/usr/bin/tesseract",
+            "ROOT/.scratch/replay-final/body-capital.png",
+            "ROOT/.scratch/replay-final/body-capital",
+            "--tessdata-dir",
+            "ROOT/.scratch/replay-final/models",
+            "-l",
+            "eng",
+            "--psm",
+            "10",
+            "--oem",
+            "1",
+            "-c",
+            "tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            "-c",
+            "tessedit_create_txt=1",
+            "-c",
+            "tessedit_create_tsv=1"
+          ],
+          "exit_status": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "outputs": {
+        "png": "ff9e2c78765b7565a4c3ff4683cccd7dbd59f933f21fe09400e73c0e54baf1ae",
+        "txt": "06f961b802bc46ee168555f066d28f4f0e9afdf3f88174c1ee6f9de004fc30a0",
+        "tsv": "8f7915ec2b97519e14a2b93ed1bc2c011873369a9144b9d6b680edd2154e19a9"
+      }
+    }
+  ],
+  "limitation": "Bounded OCR protocol recovery only; unselected OCR bytes are not source corrections. This replay and PDF fidelity do not establish body-wide source accuracy or independent cold acceptance."
+}

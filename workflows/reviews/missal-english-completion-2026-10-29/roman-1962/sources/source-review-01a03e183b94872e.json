@@ -1,0 +1,128 @@
+{
+  "schema": "triptych-independent-translation-semantic-review/v1",
+  "reviewed_on": "2026-10-30",
+  "state": "accepted-after-corrections",
+  "scope": "Complete Roman 1962 Good Friday Improperia, sections I-IV, marginal numbers 952-955; original study English and nonspoken action boundaries only.",
+  "identity": [
+    "good-friday",
+    "main",
+    "Improperia",
+    "all",
+    1
+  ],
+  "reviewer_role": "Independent delegated semantic reviewer; separate from the candidate author and source collator.",
+  "reviewed_hashes": {
+    "source_latin_sha256": "83cbd70391a22369245ab9c1019d3d25db59e02b5b267474f3b039130d40a616",
+    "english_sha256": "916522d1fdd8d57ee78be2d2a3cb698c3858cd84a66f63fbcbab9a03836f4606",
+    "latin_text_structure_canonical_json_sha256": "699bc68a0f6a5061e705baf191467d7d5583b691c1832144ac6cec0c78c15532",
+    "english_text_structure_canonical_json_sha256": "1e20681bd87d1710fc817b75438cb5f942e786ac1710de6cac576adf6189835f",
+    "new_english_entry_canonical_json_sha256": "56d16e7575516a0b52a0d0ded467da2ca0ed608fe0632e7093c8b16365e478be",
+    "parallel_blocks_file_sha256": "93e6fb14532d218a47f40aba21f6925fc397eb05525dab8243dff641c6795459",
+    "text_structure_file_sha256": "e8a982bc7238915e04fe8780380dcae73493ccca69b0f98d3d46bce652c9bb25"
+  },
+  "canonical_json_method": "UTF-8 JSON, ensure_ascii=False, sort_keys=True, separators=(comma,colon), no final newline.",
+  "material_examined": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/improperia-complete/target-whole-checked.txt",
+      "sha256": "83cbd70391a22369245ab9c1019d3d25db59e02b5b267474f3b039130d40a616",
+      "scope": "Complete target Latin; all words and action labels read."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/improperia-complete/english-original-study.txt",
+      "sha256": "916522d1fdd8d57ee78be2d2a3cb698c3858cd84a66f63fbcbab9a03836f4606",
+      "scope": "Complete corrected original study English; all words and action labels read."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/improperia-complete/target-0258.png",
+      "sha256": "9d91858015685f31ad00b6c0705ca0a32dd6657b913ff353cd50435119891f0a",
+      "scope": "Actual 1962 printed page 177 / PDF page 258; opening rubric and sections I-II."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/improperia-complete/target-0259.png",
+      "sha256": "03f4903b097d11114324533f626c5b7e377a74a804311ab307daaa10c0b0a89d",
+      "scope": "Actual 1962 printed page 178 / PDF page 259; continuation of II, full III, and beginning of IV."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/improperia-complete/target-0260.png",
+      "sha256": "7562e24ade9fbcdffde01559e8ddb843f82c52a1a824c27a3c6b403a35ac8085",
+      "scope": "Actual 1962 printed page 179 / PDF page 260; completion of IV, mandatory conclusion, and final response."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/improperia-complete/parallel-blocks.json",
+      "scope": "All 134 Latin-English blocks: 70 wholly nonspoken blocks and 64 body blocks; inline V. marker separately nonspoken."
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/improperia-complete/install-plan-draft.json",
+      "sha256_at_review": "8674cd5728c95e935cf0a39eed104aad09329cfdcd88a9e05f23efeb9454bb0a",
+      "scope": "Narrow metadata successor: one old-Latin publication artifact identifier changes; the complete modern Latin, English, full action structures, and all other English entry fields are byte-for-byte preserved. Plan receipt pointers and source packaging may subsequently change without altering the reviewed body hashes."
+    }
+  ],
+  "findings": [
+    {
+      "severity": "correction",
+      "latin": "et tu me flagellatum tradidisti",
+      "initial_english": "but you handed me over to be scourged.",
+      "accepted_english": "but you handed me over, scourged.",
+      "reason": "The corrected rendering preserves the perfect passive participle rather than expressing a future purpose.",
+      "disposition": "Applied and rechecked in body, parallel blocks, and entry."
+    },
+    {
+      "severity": "clarity",
+      "latin": "Aequa Patri Filioque, par decus Paraclito",
+      "initial_english": "equal to the Father and the Son, the same honor to the Paraclete",
+      "accepted_english": "equal glory to the Father and the Son, the same honor to the Paraclete",
+      "reason": "Explicit supplied glory makes the adjective agree visibly with gloria and avoids an unclear English complement.",
+      "disposition": "Applied and rechecked in body, parallel blocks, and entry."
+    }
+  ],
+  "complete_extent_checked": {
+    "section_I": "All three addresses, including the target adjective electam after vineam, and all three complete six-part Greek-and-Latin Trisagia.",
+    "section_II": "All nine reproaches and nine complete Popule meus responses in their printed order.",
+    "section_III": "Both complete occurrences of Crucem tuam and the complete Psalm 66:2 verse, with the split choir roles.",
+    "section_IV": "Complete Crux fidelis/Dulce lignum opening antiphon, all nine narrative hymn stanzas from Pange lingua through Sola digna, the Sempiterna doxology with Amen, and all ten alternating half-refrain responses.",
+    "functional_text": "Opening choir-number explanation, Roman section numbers, numerical choir labels, Antiphon/Psalm/Hymn labels, inline V. marker, and mandatory-conclusion instruction."
+  },
+  "semantic_checks": [
+    "Second-person address and first-person reproach agency, contrasted actions, direct objects, and refrain repetitions agree throughout.",
+    "Hymn stanza agents and syntax checked: Factor grieving at the first parent’s deception; divine craft outwitting the betrayer’s craft; Natus sent from the Father; Virgin Mother binding the infant; free self-giving to the Passion; blood and water washing creation.",
+    "Crux fidelis and Dulce lignum preserve the noble tree, leaf/flower/fruit comparison, sweet wood, nails, and borne weight. The English is a plain study rendering and makes no claim of reproducing a historical English hymn.",
+    "Flecte ramos preserves the address to the tree, branches and taut fibers, natural stiffness softening, and the heavenly King’s limbs upon a gentle trunk.",
+    "Sola digna preserves the Cross as bearer of the world’s victim, ark and harbor for the shipwrecked world, and object of anointing by blood poured from the Lamb’s body.",
+    "Trinitarian doxology preserves eternal glory, equal glory of Father and Son, equal honor of the Paraclete, and praise of the One and Three."
+  ],
+  "structure_checks": {
+    "latin_actions": 71,
+    "english_actions": 71,
+    "result": "Every canonical {kind,offset,text} action matches the exact substring, is in ascending non-overlapping order, and is bound to the correct full-body SHA256. All sung words remain outside the marked rubric spans; inline V. alone is marked nonspoken.",
+    "lineation": "Paragraph grouping rather than the printed poetic line breaks does not omit words or stanzas; no semantic lineation correction is required."
+  },
+  "authorship_boundary": {
+    "accepted_label": "Original study translation by Triptych.",
+    "finding": "The complete English, including the opening instruction, all responses, all nine narrative hymn stanzas, the doxology, and concluding instruction, is presented as a fresh project study translation. No block is bound as a historical human English quotation or represented as a historical witness.",
+    "evidence_limit": "The review checks the complete authored English and candidate authoring/entry boundary. It is not a historical-English source verification or a global literary originality search."
+  },
+  "remaining_semantic_defects": [],
+  "bounds": [
+    "This receipt establishes complete semantic correspondence for the exact reviewed Latin and English bodies and their action spans.",
+    "Independent old-Latin source collation, source-library graph validation, whole-arrangement copyright qualification, and root adoption of the finite Latin authority are separate decisions.",
+    "The English remains an original study translation; this review supplies no ecclesiastical approval or received liturgical translation status.",
+    "Any changed Latin or English wording, stanza extent, or action boundary requires a successor semantic review. A canonical translation_review receipt-path substitution alone may be recorded mechanically by the parent without changing these body or structure findings."
+  ],
+  "metadata_successor": {
+    "prior_receipt_path": ".scratch/roman-english-completion-20261029/temporal/improperia-complete/review-english/semantic-review.json",
+    "prior_receipt_sha256": "6d1ae5ddcc30c7d71a5647f4df89045e429aa53105a305e5d709caa3e1616f72",
+    "change_scope": "Metadata only; no modern Latin, English, response, stanza, or action-boundary changes.",
+    "old_english_entry_canonical_json_sha256": "63a1417c6e7511c3c0934166f0092fe841b9aa32882361be3a39d88b5f45e32f",
+    "new_english_entry_canonical_json_sha256": "56d16e7575516a0b52a0d0ded467da2ca0ed608fe0632e7093c8b16365e478be",
+    "old_publication_source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.improperia-whole-checked-20261029-21ce6835",
+    "new_publication_source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.improperia-whole-checked-20261029-b8728178",
+    "old_source_body_sha256": "21ce68351bca1f8236af49932eb98c63fb40bf8c48bdf65fc8213fe1233a9726",
+    "corrected_old_source_body_sha256": "b872817894e93d9cfbc6ef8820b193e32cc0461c61b783be058219370f09e9b8",
+    "source_correction": "The old source transcription changes only the punctuation in Item Chori alternatim respondent. Agios to Item Chori alternatim respondent: Agios. The independent cold source reviewer owns the page-image punctuation finding; this successor verifies the binding and preservation relationship.",
+    "preservation_check": "Replacing the new artifact identifier with the prior identifier reproduces the prior full English entry canonical JSON hash exactly. Latin and English bodies, both action structures, parallel-block bytes, and text-structure bytes reproduce all prior accepted hashes exactly; all 71 offsets in each language match and remain non-overlapping.",
+    "authority_path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
+    "method": "english-completion-20261029-finite-latin-v1",
+    "authority_boundary": "The proposed finite authority path is now finite-latin-authority-v2.json with unchanged method v1. This semantic metadata successor does not adopt that authority or determine source copyright status.",
+    "outcome": "Accepted; original full semantic and authorship-boundary findings remain unchanged."
+  }
+}

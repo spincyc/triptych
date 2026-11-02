@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.013.ass-013-act-006.note-blocks-f1534dd74c50.source-order-d85f33f3fdd0"
+edition_id = "edition.acta-papal-archives.ass.013.ass-013-act-006"
+artifact_id = "artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50.source-order-d85f33f3fdd0"
+artifact_sha256 = "d85f33f3fdd01425f34066f2e3ce1cf68ef175dab51c55ae867a905db1075d5e"
+segment_type = "constituent-work"
+states = ["cataloged", "acquired", "inspected"]
+physical_line_ranges = [[1, 304]]
+context = "Same complete constituent as segment.acta-papal-archives.ass.013.ass-013-act-006.note-blocks-f1534dd74c50; source artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50 SHA-256 f1534dd74c508578b768004f97918249b69457b7d789587c10364b54335fe40a. Exact source-order spec artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50.source-order-spec-08fa6bbd1f67 SHA-256 08fa6bbd1f67efcadaeb13e7e441dfc3864002422c65a367a6b99ca4a8194218; review artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50.source-order-review-fa978a35c940 SHA-256 fa978a35c940e2e8e3bb4f661daa83e9d6f05b3163fb54b187a15126e4bd35a3."
+notes = "The complete native PDF page 242 historical note columns are restored by an exhaustive byte-slice permutation: left 1/2/3 then right 4/5 with literal OCR markers retained. Every source unit occurs once unchanged; all body LF rows are byte-identical and in order. The earlier LF-only derivative and original artifact/selection remain retained. No global non-LF order equality is claimed. Native archival OCR reconstruction, not original-print collation."

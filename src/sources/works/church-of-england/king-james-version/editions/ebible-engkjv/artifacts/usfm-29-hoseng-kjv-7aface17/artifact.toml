@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.church-of-england.king-james-version.ebible-engkjv.usfm-29-hoseng-kjv-7aface17"
+edition_id = "edition.church-of-england.king-james-version.ebible-engkjv"
+artifact_type = "structured-text"
+media_type = "text/x-usfm; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The publisher edition-specific Bible notice at https://ebible.org/eng-kjv/copyright.htm identifies this Bible text as Public Domain; this affirmative Bible-text permission was independently checked for these complete USFM members, including their native markers and unchanged publisher notes. The permission is not inferred from Bible age or applied to excluded package support files. The notice retains the Crown letters-patent qualification for printing and importing printed copies in the United Kingdom; the recorded public-domain jurisdiction here is the United States."
+source_url = "https://eBible.org/Scriptures/eng-kjv_usfm.zip"
+retrieved = "2026-10-26"
+sha256 = "7aface174cc1180e7f5748a5cb7a20fec2f22488684600f24a02419ea28a756a"
+byte_size = 73500
+path = "src/sources/works/church-of-england/king-james-version/editions/ebible-engkjv/artifacts/usfm-29-hoseng-kjv-7aface17/29-HOSeng-kjv.usfm"
+derived_from = "artifact.church-of-england.king-james-version.ebible-engkjv.ebible-usfm-67561758"
+transformation = "Exact ZIP-member extraction only: retain the complete 29-HOSeng-kjv.usfm member byte for byte, without Unicode, line-ending, whitespace, marker, footnote, spelling, native chapter/verse or ordering changes. No wrapper or other archive member is included."
+provenance = "Complete native Bible book member extracted from the publisher archive SHA256 67561758cf58d9e767e89226a99171dba722579157d3894767c2f27538bcb38e at exact member 29-HOSeng-kjv.usfm. The independently checked disclosure inventory pins this complete member SHA256 and byte extent. Archive-level rights remain unresolved; the retained Bible member has its own affirmative distribution basis."
+indexable = true
+encoding = "utf-8"
+notes = "The original USFM file markers and all complete source lines are retained unchanged; no project-license header is inserted. This is edition Bible source evidence, not literal Missal wording or a retranslation. Whole-archive modern CSS, HTML wrapper, public keys and signed checksums are excluded; this child does not resolve their redistribution rights. See THIRD_PARTY.md for Bible-text terms and jurisdiction limits."

@@ -126,8 +126,13 @@ EXAMPLES = {
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / "release/public-alpha.json"
+PRINT_ARCHIVE_RELATIVE = PurePosixPath("release/print-archive.json")
+PRINT_ARCHIVE_PAGES_RELATIVE = PurePosixPath("release/print-archive-pages.json")
 TEMPLATE_ROOT = ROOT / "release/public-alpha"
-OUTPUT_ROOT = ROOT / "build/public-alpha"
+_OUTPUT_OVERRIDE = os.environ.get("TRIPTYCH_PUBLIC_ALPHA_OUTPUT_ROOT")
+OUTPUT_ROOT = Path(_OUTPUT_OVERRIDE) if _OUTPUT_OVERRIDE else ROOT / "build/public-alpha"
+if not OUTPUT_ROOT.is_absolute():
+    OUTPUT_ROOT = ROOT / OUTPUT_ROOT
 PICTORIAL_ROOT_RELATIVE = PurePosixPath(
     "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
 )
@@ -149,6 +154,30 @@ POSTCONCILIAR_TRANSLATIONS_RELATIVE = PurePosixPath(
     "src/sources/inventories/postconciliar-proper-translations-v1.toml"
 )
 POSTCONCILIAR_QUARANTINE_BASELINE_ROWS = 172
+POSTCONCILIAR_QUARANTINE_BASELINE_TARGETS = 174
+POSTCONCILIAR_QUARANTINE_BASELINE_COMMIT = "6aeb96a392a61e216310c3bf71834863afb229f8"
+POSTCONCILIAR_QUARANTINE_BASELINE_INVENTORY_SHA256 = (
+    "f06a68826790a3b828d0f44cccecd52d09ff12c828a01dd330391636bf086128"
+)
+# Canonical, sorted text-free target/provenance/hash records from that snapshot.
+# A row count alone permitted substitution, and current availability loses old
+# negative fingerprints whenever a different English source is admitted.
+POSTCONCILIAR_QUARANTINE_BASELINE_SHA256 = (
+    "ba1bb392b8c1ce8803dbc0b0c5794ad58a1faebf73ee7de54d302db990e1ebd9"
+)
+POSTCONCILIAR_ADMISSION_RECEIPTS_RELATIVE = PurePosixPath(
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar"
+)
+POSTCONCILIAR_QUARANTINE_TARGET_FIELDS = (
+    "mass", "form_id", "proper", "cycle", "occurrence", "lang", "extent",
+)
+POSTCONCILIAR_QUARANTINE_SOURCE_FIELDS = frozenset((
+    "antecedent_calendar", "antecedent_mass", "antecedent_proper",
+    "rejected_detectors", "relation", "rights", "source_id",
+    "verified_artifact_page", "verified_heading", "verified_on_page",
+    "verified_printed_page", "verified_url", "witness", "witness_artifact_id",
+    "witness_passage_id",
+))
 # Rights recorded as `permission` are not automatically grants for every
 # public surface.  ICEL's standing web-display permission, in particular, does
 # not cover the downloadable JSON, public Git corpus, CLI or PDFs assembled by
@@ -217,12 +246,15 @@ _PROTECTED_IDENTITY_MARKERS: dict[str, tuple[int, tuple[str, ...], tuple[str, ..
 # Short enough that every identity has one, long enough to be rare in prose.
 MARKER_LENGTH = 8
 _POSTCONCILIAR_QUARANTINE_HASHES: dict[
-    tuple[str, int, int], frozenset[str]
+    tuple, tuple[tuple[Path, ...], tuple, frozenset[str]]
 ] = {}
 # One command's held map of the copied browser/data inputs; see
 # `held_repository_inputs`. Empty outside a command, so a caller that is not
 # one --- a test, another tool --- always computes the map afresh.
 _HELD_WEB_DATA_FILES: list[dict[str, dict[str, Path]]] = []
+# These are command-local inventories of captured source identities and routes.
+# No PDF bytes or installed-file timestamps participate in source publication.
+_HELD_SOURCE_INVENTORIES: list[dict[tuple[str, str], object]] = []
 # Tracks of the abridged plans: one tier of one plan in one edition, typeset
 # from the tracked plan and the tracked verse text and installed as a reviewed
 # PDF. A track is not a publication record and deliberately has none: it has no
@@ -232,6 +264,26 @@ _HELD_WEB_DATA_FILES: list[dict[str, dict[str, Path]]] = []
 # beside them.
 READING_PDF_ROOT_RELATIVE = PurePosixPath("pdf/reading-plans")
 READING_PDF_STEM_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")
+# Papal source readers: the reviewed two-column reading PDFs installed under
+# pdf/papal-documents/ and owned, path by path and hash by hash, by
+# release/papal-documents.json (guidance/papal-documents.md, "Installed source
+# readers"). That tree is a release record, not a site directory, so it is
+# never walked for what to serve. The encyclicals catalogue the browser reads
+# names the readers it links, and exactly those are served: each one only after
+# the data, the release record and the bytes on disk agree on its id, language,
+# path, SHA-256, size and page count, and the release row is still a PASS
+# public-domain installation. A reader the catalogue does not name is not
+# served even though it sits in the tree; a reader it names that fails any of
+# those comparisons stops the build.
+PAPAL_PDF_PROVIDER = "papal-documents"
+PAPAL_PDF_PATH_RE = re.compile(r"^pdf/papal-documents/[a-z0-9][a-z0-9.-]*\.pdf$")
+PAPAL_RELEASE_RELATIVE = PurePosixPath("release/papal-documents.json")
+PAPAL_RELEASE_SCHEMA = "triptych-papal-release/v1"
+PAPAL_READER_RIGHTS = frozenset(("public-domain",))
+# The encyclicals catalogue, relative to the data root; scripts/_encyclicals.py
+# writes it from src/sources/papal-documents/encyclicals-index.json.
+ENCYCLICALS_DATA_RELATIVE = PurePosixPath("encyclicals/index.json")
+ENCYCLICALS_DATA_SCHEMA = "triptych-encyclicals-browser/v2"
 # The corpus is served once, under a name meant for the reader rather than for
 # the data, and both reading pages resolve it with ../browse.
 SITE_DATA_ROOT = PurePosixPath("browse")
@@ -240,7 +292,7 @@ SITE_DATA_ROOT = PurePosixPath("browse")
 # may drift on live once, in shared. The fixture beside them is a development
 # aid and is not published.
 # The reading pages a reader is sent to; `shared` carries no page of its own.
-WEB_BROWSER_ENTRANCES = ("liturgy", "scripture", "catena", "history", "texts", "sources", "law")
+WEB_BROWSER_ENTRANCES = ("liturgy", "scripture", "catena", "history", "texts", "sources", "law", "encyclicals")
 # Derived, never restated. These were two hand-kept lists, and adding a section
 # to one and not the other shipped a page whose stylesheet and script were left
 # out of the artifact — the build passed and the link check caught it.
@@ -305,6 +357,17 @@ FIXED_ARTIFACT_INPUT_PATHS = {
     "tools/public-alpha",
     "scripts/_proper_components.py",
     "scripts/_markdown_render.py",
+    "scripts/_document_schema.py",
+    "scripts/_print_document.py",
+    "scripts/_print_catalog.py",
+    "scripts/_artifact_store.py",
+    "scripts/_source_delivery_policy.py",
+    "scripts/_corpus.py",
+    "scripts/_scanning.py",
+    "tools/source-library",
+    "scripts/_tooling.py",
+    "tools/typeset-bible",
+    "requirements-tools.txt",
 }
 # The one origin the published site is reached at. Keep this as an origin
 # serialization (no trailing slash); public_site_url adds the path separator.
@@ -343,6 +406,7 @@ PDF_LINK_RE = re.compile(r"(?:\.\./)?pdf/([a-z0-9-]+)/([^)#\s]+)\.pdf(?:#[^)]*)?
 # Catalog links to a reviewed web edition. Catalog counting rules read only
 # PDF links, so a Read link never adds or moves a publication's one home.
 WEB_LINK_RE = re.compile(r"(?:\.\./)?web/([a-z0-9-]+)/([^)#\s]+)\.html(?:#[^)]*)?")
+SOURCE_PUBLICATION_LINK_RE = re.compile(r"(?:\.\./)?(?:web|print)/([a-z0-9-]+)/([^?#\s]+)\.html")
 CATALOG_PUBLICATION_ID_RE = re.compile(
     r"<!--\s*triptych-publication-id:\s*"
     r"(?:([a-z0-9-]+):)?"
@@ -474,43 +538,41 @@ def _descriptor_path(descriptor: int) -> Path:
 
 @contextmanager
 def _public_alpha_parent(*, create: bool):
-    """Hold ROOT/build/public-alpha by descriptors for a complete operation."""
-    expected = ROOT / "build" / "public-alpha"
-    if OUTPUT_ROOT != expected:
+    """Hold the default or explicitly selected scratch output by descriptors."""
+    try:
+        relative = OUTPUT_ROOT.relative_to(ROOT)
+    except ValueError as exc:
+        raise ReleaseError("output root must remain beneath the repository") from exc
+    parts = relative.parts
+    if (
+        ".." in parts
+        or not (parts == ("build", "public-alpha") or len(parts) >= 2 and parts[0] == ".scratch")
+    ):
         raise ReleaseError(
-            f"refusing unsafe output path: {OUTPUT_ROOT} is not {expected}"
+            f"refusing unsafe output path: {OUTPUT_ROOT}; select build/public-alpha "
+            "or a dedicated directory beneath .scratch"
         )
     try:
         root_fd = os.open(ROOT, DIRECTORY_OPEN_FLAGS)
     except OSError as exc:
         raise ReleaseError(f"cannot safely open repository root {ROOT}: {exc}") from exc
-    build_fd: int | None = None
-    output_fd: int | None = None
+    opened: list[tuple[int, str, int, Path]] = []
     try:
-        build_fd = _open_child_directory(root_fd, ROOT, "build", create=create)
-        output_fd = _open_child_directory(
-            build_fd, ROOT / "build", "public-alpha", create=create
-        )
-        yield output_fd
+        parent_fd, parent = root_fd, ROOT
+        for component in parts:
+            descriptor = _open_child_directory(parent_fd, parent, component, create=create)
+            parent /= component
+            opened.append((parent_fd, component, descriptor, parent))
+            parent_fd = descriptor
+        yield parent_fd
     finally:
         try:
             _require_path_matches_fd(ROOT, root_fd)
-            if build_fd is not None:
-                _require_entry_matches_fd(
-                    root_fd, "build", build_fd, ROOT / "build"
-                )
-            if build_fd is not None and output_fd is not None:
-                _require_entry_matches_fd(
-                    build_fd,
-                    "public-alpha",
-                    output_fd,
-                    ROOT / "build" / "public-alpha",
-                )
+            for parent_fd, component, descriptor, path in opened:
+                _require_entry_matches_fd(parent_fd, component, descriptor, path)
         finally:
-            if output_fd is not None:
-                os.close(output_fd)
-            if build_fd is not None:
-                os.close(build_fd)
+            for _parent_fd, _component, descriptor, _path in reversed(opened):
+                os.close(descriptor)
             os.close(root_fd)
 
 
@@ -753,7 +815,9 @@ def eligible_document_ids() -> set[tuple[str, str]]:
     a test repoints at a fixture.
     """
     try:
-        return corpus_eligible_document_ids(ROOT / "src")
+        return set(held_source_inventory(
+            "web-eligible", lambda: corpus_eligible_document_ids(ROOT / "src")
+        ))
     except CorpusError as error:
         raise ReleaseError(str(error)) from error
 
@@ -775,6 +839,201 @@ def document_pages(keys: set[tuple[str, str]] | None = None) -> dict[str, str]:
 def included_document_pages(included_ids: set[tuple[str, str]]) -> dict[str, str]:
     """Return the document pages this artifact actually renders."""
     return document_pages(eligible_document_ids() & set(included_ids))
+
+
+def held_source_inventory(name: str, derive: Callable[[], object]):
+    """Derive a source inventory once during one build/check/verification."""
+    def checked():
+        try:
+            return derive()
+        except (OSError, ValueError) as exc:
+            raise ReleaseError(f"cannot derive {name}: {exc}") from exc
+    if not _HELD_SOURCE_INVENTORIES:
+        return checked()
+    inventory = _HELD_SOURCE_INVENTORIES[-1]
+    key = (str(ROOT.resolve()), name)
+    if key not in inventory:
+        inventory[key] = checked()
+    return inventory[key]
+
+
+def publication_source_records() -> dict[tuple[str, str], tuple[dict, dict]]:
+    """Every independently identified output and its canonical source owner."""
+    def derive():
+        from _document_schema import discover, validate
+        result = {}
+        for record in discover(ROOT):
+            report = validate(ROOT, record, phase="source", run_gates=False)
+            if report.get("errors"):
+                raise ReleaseError(
+                    f"{record['id']}: invalid canonical source declaration: "
+                    + "; ".join(report["errors"])
+                )
+            for output in record["outputs"]:
+                provider, separator, leaf = output["id"].partition("/")
+                if not separator or not SAFE_ID_RE.fullmatch(leaf):
+                    raise ReleaseError(f"invalid source output identity: {output['id']!r}")
+                key = (provider, leaf)
+                if key in result:
+                    raise ReleaseError(f"duplicate source output identity: {output['id']}")
+                result[key] = (record, output)
+        return result
+    return dict(held_source_inventory("publication-records", derive))
+
+
+def publication_source_identity(provider: str, leaf: str) -> dict:
+    from _document_schema import identities
+    records = publication_source_records()
+    try:
+        record, output = records[(provider, leaf)]
+    except KeyError as exc:
+        raise ReleaseError(f"no canonical source for {provider}/{leaf}") from exc
+    identity = held_source_inventory(
+        f"publication-identity:{record['id']}", lambda: identities(ROOT, record)
+    )
+    return {
+        "source": output["source_path"],
+        "manifest": record.get("manifest_path"),
+        "profile": record.get("profile"),
+        "schema": record.get("kind"),
+        "schema_version": record.get("schema_version"),
+        "content": identity["content"],
+        "evidence": identity["evidence"],
+        "render": identity["render"],
+        "output": (identity.get("outputs") or {}).get(output["role"]),
+        "limitations": identity.get("limitations", []),
+    }
+
+
+def publication_reader_path(provider: str, leaf: str) -> str:
+    return f"web/{provider}/{leaf}.html"
+
+
+def publication_print_path(provider: str, leaf: str) -> str:
+    return f"print/{provider}/{leaf}.html"
+
+
+def source_print_pages() -> dict[str, dict]:
+    """Public-domain source readers assembled from their structured text."""
+    def derive():
+        if not web_data_manifest_path().is_file():
+            return {}
+        from _print_catalog import source_pages
+        pages = source_pages(ROOT)
+        for relative, page in pages.items():
+            path = PurePosixPath(relative)
+            if path.is_absolute() or ".." in path.parts or path.suffix != ".html":
+                raise ReleaseError(f"unsafe source-reader route: {relative!r}")
+            if not isinstance(page, dict) or not isinstance(page.get("html"), str):
+                raise ReleaseError(f"invalid source-reader page: {relative}")
+            inputs = page.get("source_paths")
+            if not isinstance(inputs, list) or not inputs or any(not isinstance(value, str) for value in inputs):
+                raise ReleaseError(f"source reader has no complete input declaration: {relative}")
+            for value in inputs:
+                source = safe_relative_path(value, "source-reader input")
+                if source.suffix.lower() == ".pdf" or source.is_symlink() or not source.is_file():
+                    raise ReleaseError(f"unsafe, missing or generated source-reader input: {value}")
+        return pages
+    return dict(held_source_inventory("source-print-pages", derive))
+
+
+def source_reader_routes() -> dict[str, str]:
+    """Explicit legacy PDF identities resolve to genuine HTML reader routes."""
+    def derive():
+        routes = {}
+        for relative, page in source_print_pages().items():
+            legacy = page.get("legacy_pdf")
+            if legacy:
+                if not isinstance(legacy, str) or not legacy.startswith("pdf/"):
+                    raise ReleaseError(f"invalid legacy source-reader identity: {legacy!r}")
+                if legacy in routes and routes[legacy] != relative:
+                    raise ReleaseError(f"duplicate legacy source-reader identity: {legacy}")
+                routes[legacy] = relative
+        return routes
+    return dict(held_source_inventory("source-reader-routes", derive))
+
+
+def publication_routes(included_ids: Iterable[tuple[str, str]]) -> dict[str, str]:
+    return {
+        **source_reader_routes(),
+        **{
+            f"pdf/{provider}/{leaf}.pdf": publication_reader_path(provider, leaf)
+            for provider, leaf in included_ids
+        },
+    }
+
+
+def archived_prints() -> dict[str, dict]:
+    """Known, immutable prior print artifacts; no file or network acquisition."""
+    def derive():
+        path = ROOT / PRINT_ARCHIVE_RELATIVE
+        if path.is_symlink():
+            raise ReleaseError("print archive index must not be a symlink")
+        if not path.exists():
+            if (ROOT / PRINT_ARCHIVE_PAGES_RELATIVE).exists() or (ROOT / PRINT_ARCHIVE_PAGES_RELATIVE).is_symlink():
+                raise ReleaseError("archived page-count receipt has no controlling archive index")
+            return {}
+        data = load_json_file(path, PRINT_ARCHIVE_RELATIVE.as_posix())
+        required = {"schema", "snapshot", "source_manifest_url", "source_manifest_sha256", "publications"}
+        if not isinstance(data, dict) or set(data) != required or data.get("schema") != "triptych-print-archive/v1":
+            raise ReleaseError("invalid print archive schema or fields")
+        snapshot = data.get("snapshot")
+        if not isinstance(snapshot, str) or re.fullmatch(r"[0-9a-f]{40}", snapshot) is None:
+            raise ReleaseError("print archive requires an exact source snapshot")
+        if data.get("source_manifest_url") != f"{SITE_ORIGIN}/PUBLICATION-MANIFEST.json":
+            raise ReleaseError("print archive requires the published source manifest URL")
+        if not isinstance(data.get("source_manifest_sha256"), str) or not SHA256_RE.fullmatch(data["source_manifest_sha256"]):
+            raise ReleaseError("print archive requires the captured manifest SHA-256")
+        if not isinstance(data.get("publications"), list):
+            raise ReleaseError("print archive publications must be an array")
+        result = {}
+        urls = set()
+        for row in data["publications"]:
+            fields = {"id", "legacy_pdf", "filename", "sha256", "bytes", "url"}
+            if not isinstance(row, dict) or set(row) != fields:
+                raise ReleaseError("invalid archived publication fields")
+            identity = row.get("id")
+            if not isinstance(identity, str):
+                raise ReleaseError("invalid archived publication identity")
+            provider, separator, leaf = identity.partition("/")
+            if provider not in {"gpt", "claude"} or not separator or not SAFE_ID_RE.fullmatch(leaf) or ".." in PurePosixPath(leaf).parts or PurePosixPath(leaf).as_posix() != leaf:
+                raise ReleaseError(f"invalid archived publication identity: {identity!r}")
+            filename = PurePosixPath(public_pdf_path(provider, leaf)).name
+            expected_url = f"https://github.com/spincyc/triptych-artifacts/releases/download/prints-{snapshot[:7]}/{filename}"
+            if row["legacy_pdf"] != f"pdf/{identity}.pdf" or row["filename"] != filename or row["url"] != expected_url:
+                raise ReleaseError(f"archived publication route disagrees with its identity: {identity}")
+            if not isinstance(row["sha256"], str) or not SHA256_RE.fullmatch(row["sha256"]) or type(row["bytes"]) is not int or row["bytes"] <= 0:
+                raise ReleaseError(f"archived publication has an invalid byte identity: {identity}")
+            if identity in result or row["url"] in urls:
+                raise ReleaseError(f"duplicate archived publication: {identity}")
+            urls.add(row["url"])
+            result[identity] = {**row, "snapshot": snapshot}
+        pages_path = ROOT / PRINT_ARCHIVE_PAGES_RELATIVE
+        if pages_path.is_symlink():
+            raise ReleaseError("archived page-count receipt must not be a symlink")
+        if pages_path.exists():
+            pages = load_json_file(pages_path, PRINT_ARCHIVE_PAGES_RELATIVE.as_posix())
+            fields = {"schema", "archive_manifest_sha256", "method", "publications"}
+            if not isinstance(pages, dict) or set(pages) != fields or pages.get("schema") != "triptych-print-archive-pages/v1":
+                raise ReleaseError("invalid archived page-count receipt schema or fields")
+            if pages.get("archive_manifest_sha256") != sha256(path):
+                raise ReleaseError("archived page-count receipt does not bind the current archive index")
+            if not isinstance(pages.get("method"), str) or not pages["method"].strip() or not isinstance(pages.get("publications"), list):
+                raise ReleaseError("archived page-count receipt lacks its measured method or publication list")
+            seen = set()
+            for row in pages["publications"]:
+                fields = {"id", "legacy_pdf", "pdf_sha256", "pages"}
+                if not isinstance(row, dict) or set(row) != fields or row.get("id") not in result or row["id"] in seen:
+                    raise ReleaseError("archived page-count receipt has an unknown or repeated publication")
+                archived = result[row["id"]]
+                if row["legacy_pdf"] != archived["legacy_pdf"] or row["pdf_sha256"] != archived["sha256"] or type(row["pages"]) is not int or row["pages"] <= 0:
+                    raise ReleaseError(f"archived page count disagrees with its exact PDF identity: {row['id']}")
+                archived["pages"] = row["pages"]
+                seen.add(row["id"])
+            if seen != set(result):
+                raise ReleaseError("archived page-count receipt does not cover the complete archive index")
+        return result
+    return dict(held_source_inventory("archived-prints", derive))
 
 
 def site_pages() -> dict[str, str]:
@@ -1083,6 +1342,167 @@ def reading_plan_pdfs() -> dict[str, Path]:
     return found
 
 
+def encyclicals_catalogue_path() -> Path:
+    return ROOT / WEB_DATA_ROOT_RELATIVE / ENCYCLICALS_DATA_RELATIVE
+
+
+def _papal_release_documents(errors: list[str]) -> tuple[dict, set[str]]:
+    """The papal release record's installed rows by (id, language), and its retired paths."""
+    label = PAPAL_RELEASE_RELATIVE.as_posix()
+    path = ROOT / PAPAL_RELEASE_RELATIVE
+    if path.is_symlink() or not path.is_file():
+        raise ReleaseError(
+            f"the encyclicals catalogue links papal readers, but {label} is missing; "
+            "a reader the release record does not own may not be served"
+        )
+    release = load_json_file(path, label)
+    if (
+        not isinstance(release, dict)
+        or release.get("schema") != PAPAL_RELEASE_SCHEMA
+        or not isinstance(release.get("documents"), list)
+    ):
+        raise ReleaseError(f"{label} is not a {PAPAL_RELEASE_SCHEMA} record")
+    documents: dict[tuple[str, str], dict] = {}
+    for position, document in enumerate(release["documents"]):
+        if not isinstance(document, dict):
+            errors.append(f"{label} documents[{position}] is not an object")
+            continue
+        key = (document.get("id"), document.get("language"))
+        if key in documents:
+            errors.append(f"{label} records {key[0]!r} in {key[1]!r} twice")
+            continue
+        documents[key] = document
+    retired: set[str] = set()
+    for entry in release.get("obsolete") or []:
+        if not isinstance(entry, dict) or not isinstance(entry.get("pdf"), str):
+            continue
+        current = documents.get((entry.get("id"), entry.get("language")))
+        prior_sha = entry.get("pdf_sha256")
+        replaced = (
+            entry.get("reason") == "replaced-by-current-pass"
+            and current is not None
+            and current.get("pdf") == entry["pdf"]
+            and isinstance(prior_sha, str)
+            and SHA256_RE.fullmatch(prior_sha) is not None
+            and isinstance(current.get("pdf_sha256"), str)
+            and SHA256_RE.fullmatch(current["pdf_sha256"]) is not None
+            and current["pdf_sha256"] != prior_sha
+        )
+        if not replaced:
+            retired.add(entry["pdf"])
+    return documents, retired
+
+
+def papal_reader_pdfs() -> dict[str, Path]:
+    """Every papal reader the encyclicals catalogue links, by the path that serves it.
+
+    Absent, as the reading pages are, when the repository carries no data root
+    or no encyclicals catalogue. Otherwise every reader the catalogue names is
+    compared with its row of `release/papal-documents.json` and with the bytes
+    on disk, and any disagreement stops the build: an unrecorded or retired
+    reader, a path outside the release tree, a symlink, a changed hash, size or
+    page count, a release row without a PASS review or a public-domain basis,
+    or one path the catalogue describes two ways. Every problem is reported at
+    once, because the person fixing one usually has the next in the same file.
+
+    The page count is compared as recorded. The release record states it for
+    exactly the bytes it reviewed, and the hash on disk is proved equal to those
+    bytes, so the file's own count is the recorded one without opening the PDF.
+    """
+    if not web_data_manifest_path().is_file():
+        return {}
+    catalogue_path = encyclicals_catalogue_path()
+    label = (WEB_DATA_ROOT_RELATIVE / ENCYCLICALS_DATA_RELATIVE).as_posix()
+    if catalogue_path.is_symlink():
+        raise ReleaseError(f"{label} is a symlink")
+    if not catalogue_path.is_file():
+        return {}
+    catalogue = load_json_file(catalogue_path, label)
+    if (
+        not isinstance(catalogue, dict)
+        or catalogue.get("schema") != ENCYCLICALS_DATA_SCHEMA
+        or not isinstance(catalogue.get("encyclicals"), list)
+    ):
+        raise ReleaseError(f"{label} is not a {ENCYCLICALS_DATA_SCHEMA} catalogue")
+    errors: list[str] = []
+    referenced: dict[str, dict] = {}
+    for position, row in enumerate(catalogue["encyclicals"]):
+        readers = row.get("readers") if isinstance(row, dict) else None
+        if not isinstance(readers, list):
+            errors.append(f"{label} encyclicals[{position}] has no readers list")
+            continue
+        for reader_position, reader in enumerate(readers):
+            where = f"{label} encyclicals[{position}].readers[{reader_position}]"
+            pdf = reader.get("pdf") if isinstance(reader, dict) else None
+            if not isinstance(pdf, str) or not PAPAL_PDF_PATH_RE.fullmatch(pdf):
+                errors.append(f"{where}: not a reader path under pdf/papal-documents/: {pdf!r}")
+                continue
+            earlier = referenced.setdefault(pdf, reader)
+            if any(
+                earlier.get(field) != reader.get(field)
+                for field in ("release_id", "language", "pdf_sha256", "pages")
+            ):
+                errors.append(f"{where}: {pdf} is described two different ways")
+    if not referenced and not errors:
+        return {}
+    documents, retired = _papal_release_documents(errors)
+    found: dict[str, Path] = {}
+    for pdf, reader in sorted(referenced.items()):
+        key = (reader.get("release_id"), reader.get("language"))
+        document = documents.get(key)
+        if document is None:
+            errors.append(
+                f"{pdf}: {key[0]!r} in {key[1]!r} is not a reader "
+                f"{PAPAL_RELEASE_RELATIVE.as_posix()} installs"
+            )
+            continue
+        if pdf in retired:
+            errors.append(f"{pdf}: retired by {PAPAL_RELEASE_RELATIVE.as_posix()}")
+        for field in ("pdf", "pdf_sha256", "pages"):
+            if document.get(field) != reader.get(field):
+                errors.append(
+                    f"{pdf}: the catalogue's {field} {reader.get(field)!r} is not the "
+                    f"release record's {document.get(field)!r}"
+                )
+        review = document.get("review")
+        if not isinstance(review, dict) or review.get("status") != "PASS":
+            errors.append(f"{pdf}: the release record shows no PASS review")
+        source = document.get("source")
+        if not isinstance(source, dict) or source.get("rights_status") not in PAPAL_READER_RIGHTS:
+            errors.append(f"{pdf}: the release record gives no public-domain distribution basis")
+        path = ROOT
+        unsafe = False
+        for component in PurePosixPath(pdf).parts:
+            path /= component
+            if path.is_symlink():
+                errors.append(f"{pdf}: the installed reader path is a symlink")
+                unsafe = True
+                break
+        if unsafe:
+            continue
+        if not path.is_file():
+            errors.append(f"{pdf}: the release record installs it, and it is not on disk")
+            continue
+        if path.stat().st_size != document.get("bytes"):
+            errors.append(
+                f"{pdf}: {path.stat().st_size} bytes on disk, "
+                f"{document.get('bytes')!r} recorded"
+            )
+        actual = sha256(path)
+        if actual != document.get("pdf_sha256"):
+            errors.append(
+                f"{pdf}: SHA-256 on disk {actual} is not the reviewed "
+                f"{document.get('pdf_sha256')!r}"
+            )
+        found[pdf] = path
+    if errors:
+        raise ReleaseError(
+            "the encyclicals catalogue links papal readers that may not be served:\n- "
+            + "\n- ".join(errors)
+        )
+    return found
+
+
 def public_pdf_path(provider: str, leaf: str) -> str:
     """A stable public filename bound to the full publication identity.
 
@@ -1102,6 +1522,8 @@ def public_pdf_aliases(included_ids: Iterable[tuple[str, str]]) -> dict[str, str
     """Map the admitted canonical PDFs to unique public filenames."""
     keys = set(included_ids) | {
         ("reading-plans", PurePosixPath(path).stem) for path in reading_plan_pdfs()
+    } | {
+        (PAPAL_PDF_PROVIDER, PurePosixPath(path).stem) for path in papal_reader_pdfs()
     }
     aliases = {
         f"pdf/{provider}/{leaf}.pdf": public_pdf_path(provider, leaf)
@@ -1152,8 +1574,47 @@ def projected_document_catalogue(
             for issue in [edition, *edition.get("also", [])]:
                 canonical = issue.get("pdf")
                 if canonical in aliases:
-                    issue["pdf"] = aliases[canonical]
+                    issue.pop("pdf", None)
+                    issue.setdefault("targets", {})["print"] = aliases[canonical].replace("web/", "print/", 1)
+                    issue.setdefault("available", {})["print"] = True
     return json.dumps(corpus, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
+
+
+def projected_encyclicals_catalogue(
+    relative: str, source: Path, aliases: dict[str, str]
+) -> str | None:
+    """Point the served catalogue's reader links at their public aliases.
+
+    The tracked file keeps the canonical release paths, because those are what
+    `release/papal-documents.json` owns and what `papal_reader_pdfs` compares.
+    A reader with no alias was not admitted, and the served copy is refused
+    rather than left naming a path the artifact may not carry.
+    """
+    if relative != (SITE_DATA_ROOT / ENCYCLICALS_DATA_RELATIVE).as_posix():
+        return None
+    catalogue = load_json_file(source, source.relative_to(ROOT).as_posix())
+    for row in catalogue.get("encyclicals", []):
+        for reader in row.get("readers", []):
+            canonical = reader.get("pdf")
+            if canonical not in aliases:
+                raise ReleaseError(
+                    f"{relative}: {canonical!r} has no public alias; it was not admitted"
+                )
+            reader["reader"] = aliases[canonical]
+            reader.pop("pdf", None)
+            reader.pop("pdf_sha256", None)
+            reader.pop("pages", None)
+    return json.dumps(catalogue, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
+
+
+def projected_web_data(
+    relative: str, source: Path, aliases: dict[str, str]
+) -> str | None:
+    """The served form of a data file whose PDF links move to public aliases."""
+    projection = projected_document_catalogue(relative, source, aliases)
+    if projection is None:
+        projection = projected_encyclicals_catalogue(relative, source, aliases)
+    return projection
 
 
 def web_browser_pages() -> dict[str, Path]:
@@ -1308,51 +1769,197 @@ def protected_source_identity_markers() -> tuple[int, tuple[str, ...], tuple[str
     return _PROTECTED_IDENTITY_MARKERS.get(cache_key, (0, (), ()))
 
 
+def _quarantine_canonical(value: object) -> str:
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+
+
+def _quarantine_record(row: object, label: str, *, archived: bool = False) -> dict:
+    """Project only an exact English target, negative hashes and old provenance."""
+    if not isinstance(row, dict):
+        raise ReleaseError(f"{label}: quarantine row is not a table")
+    target = {}
+    for field in POSTCONCILIAR_QUARANTINE_TARGET_FIELDS:
+        value = row.get(field)
+        valid = (
+            type(value) is int and value > 0 if field == "occurrence"
+            else isinstance(value, str) and bool(value.strip())
+        )
+        if not valid:
+            raise ReleaseError(f"{label}: quarantine target has invalid {field}")
+        target[field] = value
+    if target["lang"] != "en" or target["extent"] != "body":
+        raise ReleaseError(f"{label}: quarantine hashes a non-English body")
+    raw = row.get("quarantined_text_sha256")
+    if (not isinstance(raw, list) or not raw
+        or any(not isinstance(digest, str) or SHA256_RE.fullmatch(digest) is None
+               for digest in raw) or len(set(raw)) != len(raw)):
+        raise ReleaseError(f"{label}: quarantine row has malformed exact hashes")
+    if archived:
+        expected = set(POSTCONCILIAR_QUARANTINE_TARGET_FIELDS) | {
+            "quarantined_text_sha256", "source_provenance",
+        }
+        if set(row) != expected:
+            raise ReleaseError(f"{label}: quarantine baseline has unknown or missing fields")
+        provenance = row.get("source_provenance")
+    else:
+        allowed = set(POSTCONCILIAR_QUARANTINE_TARGET_FIELDS) | {
+            "quarantined_text_sha256", "availability", "reason", "note",
+        } | POSTCONCILIAR_QUARANTINE_SOURCE_FIELDS
+        if set(row) - allowed:
+            raise ReleaseError(f"{label}: quarantine row has unknown fields")
+        provenance = {key: row[key] for key in POSTCONCILIAR_QUARANTINE_SOURCE_FIELDS
+                      if key in row}
+    if (not isinstance(provenance, dict) or not provenance
+        or set(provenance) - POSTCONCILIAR_QUARANTINE_SOURCE_FIELDS
+        or not set(provenance) & {"rejected_detectors", "source_id", "witness",
+                                  "witness_artifact_id", "witness_passage_id"}):
+        raise ReleaseError(f"{label}: quarantine source provenance is ambiguous")
+    for field, value in provenance.items():
+        if field == "rejected_detectors":
+            valid = (isinstance(value, list) and bool(value)
+                     and all(isinstance(item, str) and item.strip() for item in value))
+        elif field == "verified_artifact_page":
+            valid = type(value) is int and value > 0
+        else:
+            valid = isinstance(value, str) and bool(value.strip())
+        if not valid:
+            raise ReleaseError(f"{label}: quarantine has invalid source provenance {field}")
+    return {**target, "quarantined_text_sha256": raw, "source_provenance": provenance}
+
+
+def _quarantine_file_signature(path: Path) -> tuple:
+    metadata = path.stat()
+    if path.resolve() != path.absolute() or not path.is_file():
+        raise ReleaseError("postconciliar quarantine inputs must be regular files")
+    return (str(path.resolve()), metadata.st_ino, metadata.st_mtime_ns,
+            metadata.st_ctime_ns, metadata.st_size)
+
+
+def _quarantine_receipt_signature(roots: tuple[Path, ...]) -> tuple:
+    """Include directory membership as well as bytes' change metadata in caching."""
+    return tuple(_quarantine_file_signature(path)
+                 for root in roots for path in sorted(root.glob("*admission.json")))
+
+
 def postconciliar_quarantined_text_hashes() -> frozenset[str]:
-    """Load the ledger's exact English body hashes; never retain the bodies."""
+    """Conserve baseline, active and admitted old hashes without retaining bodies.
+
+    This is an independent negative scanner. Historical fingerprints and source
+    routes never confer rights or make an English translation available.
+    """
     inventory = ROOT / POSTCONCILIAR_TRANSLATIONS_RELATIVE
     label = POSTCONCILIAR_TRANSLATIONS_RELATIVE.as_posix()
     try:
-        stat = inventory.stat()
-        cache_key = (str(inventory.resolve()), stat.st_mtime_ns, stat.st_size)
+        cache_key = _quarantine_file_signature(inventory)
         if cache_key in _POSTCONCILIAR_QUARANTINE_HASHES:
-            return _POSTCONCILIAR_QUARANTINE_HASHES[cache_key]
+            roots, signature, hashes = _POSTCONCILIAR_QUARANTINE_HASHES[cache_key]
+            if signature == _quarantine_receipt_signature(roots):
+                return hashes
         document = tomllib.loads(inventory.read_text(encoding="utf-8"))
     except (OSError, UnicodeError, tomllib.TOMLDecodeError) as exc:
         raise ReleaseError(f"cannot read postconciliar quarantine ledger {label}: {exc}") from exc
-    rows = document.get("untranslated")
-    if not isinstance(rows, list):
-        raise ReleaseError(f"postconciliar quarantine ledger {label} has no row list")
-    values: list[str] = []
-    for index, row in enumerate(rows):
-        if not isinstance(row, dict):
-            raise ReleaseError(f"postconciliar quarantine row {index} is not a table")
-        raw = row.get("quarantined_text_sha256")
-        if raw is None:
-            continue
-        if row.get("lang") != "en" or row.get("extent") != "body":
-            raise ReleaseError(
-                f"postconciliar quarantine row {index} hashes a non-English body"
-            )
-        if (
-            not isinstance(raw, list)
-            or not raw
-            or any(
-                not isinstance(digest, str) or SHA256_RE.fullmatch(digest) is None
-                for digest in raw
-            )
-        ):
-            raise ReleaseError(
-                f"postconciliar quarantine row {index} has malformed exact hashes"
-            )
-        values.extend(raw)
+    registry = document.get("english_quarantine")
+    if (not isinstance(registry, dict)
+        or set(registry) - {"schema", "baseline_commit", "baseline_inventory_sha256",
+                            "baseline", "admission_receipts"}
+        or type(registry.get("schema")) is not int or registry.get("schema") != 1
+        or registry.get("baseline_commit") != POSTCONCILIAR_QUARANTINE_BASELINE_COMMIT
+        or registry.get("baseline_inventory_sha256")
+            != POSTCONCILIAR_QUARANTINE_BASELINE_INVENTORY_SHA256):
+        raise ReleaseError("postconciliar English quarantine has no valid active baseline registry")
+    baseline = registry.get("baseline")
+    if not isinstance(baseline, list):
+        raise ReleaseError("postconciliar English quarantine has no baseline row list")
+    baseline = [_quarantine_record(row, f"quarantine baseline {index}", archived=True)
+                for index, row in enumerate(baseline)]
+    baseline.sort(key=_quarantine_canonical)
+    baseline_digest = hashlib.sha256(_quarantine_canonical(baseline).encode("utf-8")).hexdigest()
+    if (len(baseline) != POSTCONCILIAR_QUARANTINE_BASELINE_TARGETS
+        or baseline_digest != POSTCONCILIAR_QUARANTINE_BASELINE_SHA256):
+        raise ReleaseError("postconciliar English quarantine baseline records changed")
+    values = {digest for row in baseline for digest in row["quarantined_text_sha256"]}
     if len(values) < POSTCONCILIAR_QUARANTINE_BASELINE_ROWS:
         raise ReleaseError(
             "postconciliar English quarantine lost baseline hashes: expected at least "
             f"{POSTCONCILIAR_QUARANTINE_BASELINE_ROWS}, found {len(values)}"
         )
+    baseline_by_target = {
+        tuple(row[field] for field in POSTCONCILIAR_QUARANTINE_TARGET_FIELDS): row
+        for row in baseline
+    }
+    if len(baseline_by_target) != len(baseline):
+        raise ReleaseError("postconciliar English quarantine has ambiguous baseline targets")
+
+    def conserve(row: object, where: str) -> None:
+        record = _quarantine_record(row, where)
+        target = tuple(record[field] for field in POSTCONCILIAR_QUARANTINE_TARGET_FIELDS)
+        original = baseline_by_target.get(target)
+        if original is not None and record != original:
+            raise ReleaseError(f"{where}: quarantine baseline source or hashes changed")
+        values.update(record["quarantined_text_sha256"])
+
+    rows = document.get("untranslated")
+    if not isinstance(rows, list):
+        raise ReleaseError(f"postconciliar quarantine ledger {label} has no row list")
+    for index, row in enumerate(rows):
+        if not isinstance(row, dict):
+            raise ReleaseError(f"postconciliar quarantine row {index} is not a table")
+        if "quarantined_text_sha256" in row:
+            conserve(row, f"quarantine active row {index}")
+
+    receipts = registry.get("admission_receipts", [])
+    if not isinstance(receipts, list):
+        raise ReleaseError("postconciliar quarantine admission receipts must be a row list")
+    registered: dict[Path, str] = {}
+    roots = {ROOT / POSTCONCILIAR_ADMISSION_RECEIPTS_RELATIVE}
+    for receipt in receipts:
+        if not isinstance(receipt, dict) or set(receipt) != {"path", "sha256"}:
+            raise ReleaseError("postconciliar quarantine admission receipt has invalid fields")
+        relative = receipt["path"]
+        expected = receipt["sha256"]
+        if not isinstance(relative, str) or not isinstance(expected, str) or not SHA256_RE.fullmatch(expected):
+            raise ReleaseError("postconciliar quarantine admission receipt has invalid path or hash")
+        parts = PurePosixPath(relative).parts
+        if (len(parts) != 5 or parts[:2] != ("workflows", "reviews")
+            or parts[3] != "postconciliar" or not parts[4].endswith("admission.json")
+            or "/".join(parts) != relative or any(part in (".", "..") for part in parts)):
+            raise ReleaseError("postconciliar quarantine admission receipt path is not canonical")
+        path = ROOT / relative
+        if path in registered:
+            raise ReleaseError("postconciliar quarantine admission receipt is duplicated")
+        registered[path] = expected
+        roots.add(path.parent)
+    ordered_roots = tuple(sorted(roots))
+    try:
+        signature = _quarantine_receipt_signature(ordered_roots)
+        discovered = {Path(item[0]) for item in signature}
+        if discovered != {path.resolve() for path in registered}:
+            raise ReleaseError("postconciliar quarantine admission receipt inventory changed")
+        for path, expected in registered.items():
+            raw = path.read_bytes()
+            if hashlib.sha256(raw).hexdigest() != expected:
+                raise ReleaseError("postconciliar quarantine admission receipt hash changed")
+            receipt = json.loads(raw)
+
+            def visit(value: object) -> None:
+                if isinstance(value, dict):
+                    if "quarantined_text_sha256" in value:
+                        conserve(value, f"quarantine receipt {path.name}")
+                    for item in value.values():
+                        visit(item)
+                elif isinstance(value, list):
+                    for item in value:
+                        visit(item)
+
+            visit(receipt)
+        if signature != _quarantine_receipt_signature(ordered_roots):
+            raise ReleaseError("postconciliar quarantine admission receipts changed while reading")
+        if cache_key != _quarantine_file_signature(inventory):
+            raise ReleaseError("postconciliar quarantine ledger changed while reading")
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        raise ReleaseError(f"cannot read postconciliar quarantine admission receipts: {exc}") from exc
     hashes = frozenset(values)
-    _POSTCONCILIAR_QUARANTINE_HASHES[cache_key] = hashes
+    _POSTCONCILIAR_QUARANTINE_HASHES[cache_key] = ordered_roots, signature, hashes
     return hashes
 
 
@@ -1429,6 +2036,77 @@ def validate_liturgical_public_data(path: Path) -> None:
                 f"{matched_hash} reached public-alpha data"
             )
 
+    name_seen: set[tuple] = set()
+    execution_seen: set[tuple] = set()
+    def visit_execution(value: object, trail: tuple = (), mass_key: str | None = None) -> None:
+        if isinstance(value, list):
+            for index, item in enumerate(value): visit_execution(item, trail + (index,), mass_key)
+        elif isinstance(value, dict):
+            if isinstance(value.get("propers"), list) and isinstance(value.get("key"), str):
+                mass_key = value["key"]
+            for key, item in value.items():
+                if key == "name_execution_source_coverage":
+                    expected = {"schema": "triptych-name-source-coverage/v1", "sources": 2,
+                        "historical_named_translations_added": 0, "count_basis": "distinct-exact-recipient-occurrences"}
+                    catalog = trail == ("structure",) and parts[:3] == ("structure", "propers", "catalog")
+                    if item != expected or (trail != () and not catalog) or payload.get("calendar") != "roman-1962":
+                        raise ReleaseError(f"{label} {_address(trail)}: unknown/misplaced finite name coverage")
+                if key == "name_execution_sources":
+                    try:
+                        import _name_execution
+                        if not isinstance(item, list) or len(item) != 1:
+                            raise ValueError("one exact finite name source required")
+                        source = _name_execution.validate_public(item[0], ROOT)
+                        target = tuple(source["target"])
+                        if target in name_seen:
+                            raise ValueError("repeated finite name recipient")
+                        name_seen.add(target)
+                        if payload.get("calendar") != "roman-1962" or parts[:2] != ("structure", "propers"):
+                            raise ValueError("finite name source outside Roman1962 propers")
+                        if (mass_key, value.get("form_id"), value.get("name")) != target[:3]:
+                            raise ValueError("finite name recipient/form/slot differs")
+                        if value.get("taken_from") != source["recipient_source_relation"]:
+                            raise ValueError("exact own/Common recipient source relation differs")
+                        if _name_execution.sha(value.get("text") or "") != source["canonical_latin_sha256"]:
+                            raise ValueError("current canonical source differs; no Latin repair allowed")
+                    except (ValueError, KeyError, TypeError, OSError) as error:
+                        raise ReleaseError(f"{label} {_address(trail)}: {error}") from error
+                if key == "execution_source_coverage":
+                    expected_coverage = {"schema": "triptych-execution-source-coverage/v1", "language": "en",
+                        "count_basis": "distinct-source-targets", "sources": 6,
+                        "whole_body_translations_added": 0, "group_completeness": "context-dependent"}
+                    catalog_metadata = trail == ("structure",) and parts[:3] == ("structure", "propers", "catalog")
+                    if item != expected_coverage or (trail != () and not catalog_metadata) or payload.get("calendar") != "roman-1962":
+                        raise ReleaseError(f"{label} {_address(trail)}: unknown or misplaced execution source coverage")
+                if key == "execution_sources":
+                    try:
+                        import _oration_execution
+                        if not isinstance(item, list) or len(item) != 1:
+                            raise ValueError("one exact execution source required per proper")
+                        for source in item: _oration_execution.validate_public(source, ROOT)
+                        source = item[0]
+                        target = tuple(source["target"])
+                        if target in execution_seen:
+                            raise ValueError("repeated execution source target")
+                        execution_seen.add(target)
+                        if payload.get("calendar") != "roman-1962" or parts[:2] != ("structure", "propers"):
+                            raise ValueError("execution source outside Roman1962 Proper structure")
+                        if (mass_key, value.get("form_id"), value.get("name")) != tuple(source["target"][:3]):
+                            raise ValueError("execution source owner mass/form/slot differs")
+                        if _oration_execution.sha(value.get("text") or "") != source["target_latin_sha256"]:
+                            raise ValueError("execution source current owner Latin differs")
+                    except (ValueError, KeyError, TypeError) as error:
+                        raise ReleaseError(f"{label} {_address(trail)}: {error}") from error
+                visit_execution(item, trail + (key,), mass_key)
+    visit_execution(payload)
+    if isinstance(payload, dict) and "name_execution_source_coverage" in payload and len(name_seen) != 2:
+        raise ReleaseError(f"{label}: finite name coverage disagrees with actual separate source domain")
+    if isinstance(payload, dict) and "execution_source_coverage" in payload:
+        expected_execution_coverage = {"schema": "triptych-execution-source-coverage/v1", "language": "en",
+            "count_basis": "distinct-source-targets", "sources": len(execution_seen),
+            "whole_body_translations_added": 0, "group_completeness": "context-dependent"}
+        if payload["execution_source_coverage"] != expected_execution_coverage:
+            raise ReleaseError(f"{label}: execution source coverage disagrees with the separate source domain")
     visit_quarantined(payload)
     if (
         len(parts) < 3
@@ -1855,8 +2533,10 @@ def validate_propers_read_payload_sources(data_root: Path) -> None:
     # Source-owned appointment facts are optional generator output. The exact
     # catalog structure comparison below binds their complete value; this
     # transport gate does not redefine or evaluate the source fact contract.
+    # Execution-source coverage is validated by the per-file public gate; its
+    # complete value is bound to the catalog by the exact comparison below.
     if (not isinstance(monolith, dict)
-            or set(monolith) - {"proper_appointment_facts"} != {
+            or set(monolith) - {"proper_appointment_facts", "execution_source_coverage", "name_execution_source_coverage"} != {
                 "schema", "calendar", "edition", "edition_short", "numbering",
                 "translations", "languages", "coverage", "masses",
             }
@@ -2019,9 +2699,11 @@ def held_repository_inputs():
     comparison already reads its source exactly once.
     """
     _HELD_WEB_DATA_FILES.append({})
+    _HELD_SOURCE_INVENTORIES.append({})
     try:
         yield
     finally:
+        _HELD_SOURCE_INVENTORIES.pop()
         _HELD_WEB_DATA_FILES.pop()
 
 
@@ -2209,6 +2891,11 @@ def site_source_paths(manifest: dict | None = None) -> set[str]:
     from being copied, while the exact per-file hashes prevent a fragment or a
     newly introduced structure family from changing after authorization.
     """
+    # Release bookkeeping imports this function directly, outside `main`.
+    # Give that one closure derivation the same bounded inventory lifetime.
+    if not _HELD_SOURCE_INVENTORIES:
+        with held_repository_inputs():
+            return site_source_paths(manifest)
     if manifest is None:
         manifest = load_manifest()
     included = included_publications(publication_map(manifest), preview=False)
@@ -2220,15 +2907,33 @@ def site_source_paths(manifest: dict | None = None) -> set[str]:
         path.relative_to(ROOT).as_posix()
         for path in web_data_files().values()
     )
-    # Reading-plan PDFs remain independently bound as published volumes. Their
-    # exact derived bytes are served outside the browser data copy, so they join
-    # the same authorization closure explicitly here.
+    publication_inputs = set()
+    for provider, leaf in included:
+        identity = publication_source_identity(provider, leaf)
+        publication_inputs.add(identity["manifest"])
+        if identity.get("profile") and (ROOT / identity["profile"]).is_file():
+            publication_inputs.add(identity["profile"])
+        for kind in ("content", "evidence", "render"):
+            publication_inputs.update(identity[kind]["inputs"])
+    source_inputs = {
+        source
+        for page in source_print_pages().values()
+        for source in page["source_paths"]
+    }
+    if (ROOT / PRINT_ARCHIVE_RELATIVE).exists():
+        archived_prints()
+        source_inputs.add(PRINT_ARCHIVE_RELATIVE.as_posix())
+        if (ROOT / PRINT_ARCHIVE_PAGES_RELATIVE).exists():
+            source_inputs.add(PRINT_ARCHIVE_PAGES_RELATIVE.as_posix())
+    # Bind canonical source/schema and public projections, never optional
+    # generated PDF bytes. External evidence hashes remain in their records.
     return (
         set(SITE_SOURCE_PATHS)
         | set(included_document_pages(set(included)))
         | pictorial_gallery_source_paths()
         | browser
-        | set(reading_plan_pdfs())
+        | publication_inputs
+        | source_inputs
     )
 
 
@@ -2624,30 +3329,13 @@ def publication_map(
 
 
 def discover_source_ids(provider: str) -> set[str]:
-    root = ROOT / "src" / provider
-    ids = {
-        path.parent.relative_to(root).as_posix()
-        for path in root.rglob("main.tex")
-        if path.is_file()
-    }
-    for path in root.rglob("proper-components.toml"):
-        try:
-            data = tomllib.loads(path.read_text(encoding="utf-8"))
-            declared = proper_outputs(data)
-            if data["document"] != path.parent.relative_to(root).as_posix():
-                raise ValueError("document must match its canonical source owner")
-        except (OSError, ValueError, tomllib.TOMLDecodeError) as exc:
-            raise ReleaseError(f"invalid proper manifest {path}: {exc}") from exc
-        for mode in ("synthesis", "homily"):
-            if mode in declared:
-                ids.add(declared[mode])
-    return ids
+    records = publication_source_records()
+    return {leaf for owner, leaf in records if owner == provider}
 
 
 def publication_source_path(provider: str, leaf: str) -> Path:
-    direct = ROOT / "src" / provider / leaf / "main.tex"
-    companion = companion_owner(ROOT / "src" / provider, leaf)
-    return companion[0] / "proper-components.toml" if companion else direct
+    record, output = publication_source_records()[(provider, leaf)]
+    return ROOT / output["source_path"]
 
 
 def discover_pdf_ids(provider: str) -> set[str]:
@@ -2659,6 +3347,21 @@ def discover_pdf_ids(provider: str) -> set[str]:
     }
 
 
+def source_catalog_ids(text: str) -> list[tuple[str, str]]:
+    ids = []
+    for link in MARKDOWN_LINK_RE.finditer(text):
+        parts = link.group(2).strip().split(maxsplit=1)
+        if not parts:
+            continue
+        target = urlsplit(parts[0])
+        if target.scheme or target.netloc:
+            continue
+        match = SOURCE_PUBLICATION_LINK_RE.fullmatch(unquote(target.path))
+        if match:
+            ids.append((match.group(1), match.group(2)))
+    return ids
+
+
 def catalog_occurrences(primary: str, providers: list[str]) -> tuple[
     dict[tuple[str, str], list[str]],
     list[tuple[str, list[tuple[str, str]]]],
@@ -2668,6 +3371,7 @@ def catalog_occurrences(primary: str, providers: list[str]) -> tuple[
 ]:
     provider_set = set(providers)
     occurrences: dict[tuple[str, str], list[str]] = defaultdict(list)
+    source_occurrences: dict[tuple[str, str], list[str]] = defaultdict(list)
     multi_pdf_lines: list[tuple[str, list[tuple[str, str]]]] = []
     marked_occurrences: dict[tuple[str, str], list[str]] = defaultdict(list)
     mismatched_identity_lines: list[
@@ -2691,6 +3395,14 @@ def catalog_occurrences(primary: str, providers: list[str]) -> tuple[
                         (relative, f"pdf/{link_provider}/{leaf}.pdf")
                     )
             marked_ids: list[tuple[str, str]] = []
+            source_ids = source_catalog_ids(visible_line)
+            for link_provider, leaf in source_ids:
+                if link_provider in provider_set:
+                    source_occurrences[(link_provider, leaf)].append(relative)
+                else:
+                    undeclared_provider_references.append(
+                        (relative, f"web/print {link_provider}/{leaf}.html")
+                    )
             for marked_provider, leaf in CATALOG_PUBLICATION_ID_RE.findall(line):
                 resolved_provider = marked_provider or primary
                 if resolved_provider in provider_set:
@@ -2705,8 +3417,14 @@ def catalog_occurrences(primary: str, providers: list[str]) -> tuple[
                 marked_occurrences[key].append(relative)
             if len(ids) > 1:
                 multi_pdf_lines.append((relative, ids))
-            if ids and marked_ids and set(ids) != set(marked_ids):
-                mismatched_identity_lines.append((relative, ids, marked_ids))
+            linked_ids = ids + [key for key in source_ids if key not in ids]
+            if linked_ids and marked_ids and set(linked_ids) != set(marked_ids):
+                mismatched_identity_lines.append((relative, linked_ids, marked_ids))
+    # Legacy PDF identities keep their existing ownership count even when a
+    # catalogue also offers Read links. Source-only editions own their HTML link.
+    for key, homes in source_occurrences.items():
+        if key not in occurrences:
+            occurrences[key] = homes
     return (
         occurrences,
         multi_pdf_lines,
@@ -2723,11 +3441,11 @@ def validate_manifest(
     verify_approval_bindings: bool = True,
     installed_scope: set[tuple[str, str]] | None = None,
 ) -> dict[tuple[str, str], dict]:
-    """Validate global policy, optionally limiting installed-PDF prerequisites.
+    """Validate global source, catalogue, distribution and authorization policy.
 
     Source inventory, release records, catalog identities and authorization
-    remain global. A scope is for accepting selected new outputs in a source-only
-    checkout; site builds and deployment verification always use the whole set.
+    remain global. A selected scope may identify a proper's output family;
+    site builds and deployment verification always use the whole set.
     """
     errors: list[str] = []
     try:
@@ -2763,28 +3481,17 @@ def validate_manifest(
         for discovery_provider in providers
         for leaf in discover_source_ids(discovery_provider)
     }
-    pdf_ids = {
-        (discovery_provider, leaf)
-        for discovery_provider in providers
-        for leaf in discover_pdf_ids(discovery_provider)
-    }
     manifest_ids = set(publications)
     if installed_scope is not None:
         if not installed_scope:
-            errors.append("installed-PDF scope must not be empty")
+            errors.append("publication scope must not be empty")
         unknown_scope = installed_scope - (source_ids & manifest_ids)
         if unknown_scope:
-            errors.append(f"installed-PDF scope contains unknown outputs: {labels(unknown_scope)!r}")
+            errors.append(f"publication scope contains unknown outputs: {labels(unknown_scope)!r}")
     if source_ids != manifest_ids:
         errors.append(
             "manifest/source mismatch: "
             f"missing={labels(source_ids - manifest_ids)!r}, extra={labels(manifest_ids - source_ids)!r}"
-        )
-    unmanifested_pdf_ids = labels(pdf_ids - manifest_ids)
-    if unmanifested_pdf_ids:
-        errors.append(
-            "manifest/PDF mismatch: "
-            f"unmanifested={unmanifested_pdf_ids!r}"
         )
 
     gate_definitions = manifest.get("gates")
@@ -2803,10 +3510,7 @@ def validate_manifest(
             errors.append(f"{label}: invalid status {status!r}")
             continue
         counts[status] += 1
-        has_pdf = key in pdf_ids
         selected_install = installed_scope is None or key in installed_scope
-        if status in {"release", "review"} and not has_pdf and selected_install:
-            errors.append(f"{label}: {status} entries require an installed PDF")
         if installed_scope is not None and key in installed_scope and status == "hold":
             errors.append(f"{label}: selected output is held, not cleared for publication")
 
@@ -2833,12 +3537,10 @@ def validate_manifest(
         if not isinstance(binding, dict):
             errors.append(f"{label}: alpha entries require an authorization binding")
             continue
-        allowed_binding_keys = (
-            {"authorization"}
-            if publication.get("_alpha_record")
-            else {"authorization", "pdf_sha256"}
-        )
-        if set(binding) != allowed_binding_keys:
+        allowed_binding_keys = [{"authorization"}]
+        if not publication.get("_alpha_record"):
+            allowed_binding_keys.append({"authorization", "pdf_sha256"})
+        if set(binding) not in allowed_binding_keys:
             errors.append(
                 f"{label}: alpha binding has invalid fields"
             )
@@ -2848,7 +3550,7 @@ def validate_manifest(
         else:
             referenced_authorizations.add(authorization_id)
         approved_hash = binding.get("pdf_sha256")
-        if not publication.get("_alpha_record") and (
+        if approved_hash is not None and (
             not isinstance(approved_hash, str) or not SHA256_RE.fullmatch(approved_hash)
         ):
             errors.append(f"{label}: pdf_sha256 must be a lowercase SHA-256")
@@ -2874,31 +3576,17 @@ def validate_manifest(
         homes = occurrences.get(key, [])
         marked_homes = marked_occurrences.get(key, [])
         selected_install = installed_scope is None or key in installed_scope
-        if key in pdf_ids:
-            secondary_hold = publication.get("status") == "hold" and provider != primary
-            if secondary_hold and len(homes) > 1:
+        if key in source_ids:
+            held = publication.get("status") == "hold"
+            if held and len(homes) > 1:
                 errors.append(f"{label}: expected at most one catalog link, found {len(homes)}")
-            elif (
-                not secondary_hold
-                and publication.get("status") == "hold"
-                and len(homes) == 0
-                and len(marked_homes) == 1
-            ):
-                # Held work may retain ownership without advertising a PDF.
-                # Released papers must have a visible link of their own.
-                pass
-            elif not secondary_hold and len(homes) != 1:
+            elif not held and len(homes) != 1:
                 errors.append(f"{label}: expected one catalog link, found {len(homes)}")
             elif homes and homes[0] != publication.get("catalog"):
                 errors.append(
                     f"{label}: manifest catalog {publication.get('catalog')!r} "
                     f"does not match {homes[0]!r}"
                 )
-        elif publication.get("status") == "hold" and homes and selected_install:
-            errors.append(
-                f"{label}: source-only hold entries "
-                f"require zero catalog PDF links, found {len(homes)}"
-            )
         if marked_homes:
             if len(marked_homes) != 1:
                 errors.append(
@@ -2910,7 +3598,7 @@ def validate_manifest(
                     f"{label}: manifest catalog {publication.get('catalog')!r} "
                     f"does not match marked identity {marked_homes[0]!r}"
                 )
-        if key not in pdf_ids and publication.get("status") == "hold" and selected_install:
+        if publication.get("status") == "hold" and not homes and selected_install:
             if len(marked_homes) != 1:
                 errors.append(
                     f"{label}: source-only hold entries require exactly one "
@@ -2918,7 +3606,7 @@ def validate_manifest(
                 )
     unowned = labels(set(occurrences) - manifest_ids)
     if unowned:
-        errors.append(f"catalog links PDFs absent from manifest: {unowned!r}")
+        errors.append(f"catalog links publications absent from manifest: {unowned!r}")
     unowned_markers = labels(set(marked_occurrences) - manifest_ids)
     if unowned_markers:
         errors.append(
@@ -2927,7 +3615,7 @@ def validate_manifest(
         )
     for catalog, pdf_ids_on_line, source_ids_on_line in mismatched_identity_lines:
         errors.append(
-            f"{catalog}: catalog row PDF identities "
+            f"{catalog}: catalog row edition identities "
             f"{[publication_label(item, primary) for item in pdf_ids_on_line]!r} do not match "
             f"marked identities {[publication_label(item, primary) for item in source_ids_on_line]!r}"
         )
@@ -2971,26 +3659,18 @@ def candidate_inventory_data(
     """Return current hashes without granting or recording release authority."""
     primary, providers = declared_providers(manifest)
     errors: list[str] = []
-    pdfs = []
+    source_revisions = []
     for key in sorted(publications):
         provider, leaf = key
         source_path = publication_source_path(provider, leaf)
-        pdf_path = ROOT / "pdf" / provider / f"{leaf}.pdf"
         if source_path.is_symlink() or not source_path.is_file():
             errors.append(f"unsafe or missing publication source: {source_path.relative_to(ROOT)}")
-        if pdf_path.is_symlink():
-            errors.append(f"unsafe or missing installed PDF: {pdf_path.relative_to(ROOT)}")
+        if publications[key]["status"] == "hold":
             continue
-        if not pdf_path.is_file():
-            if publications[key]["status"] == "hold":
-                continue
-            errors.append(f"unsafe or missing installed PDF: {pdf_path.relative_to(ROOT)}")
-            continue
-        pdfs.append(
+        source_revisions.append(
             {
                 "id": publication_label(key, primary),
-                "path": pdf_path.relative_to(ROOT).as_posix(),
-                "sha256": sha256(pdf_path),
+                **publication_source_identity(provider, leaf),
             }
         )
 
@@ -3024,7 +3704,7 @@ def candidate_inventory_data(
         "notice": CANDIDATE_INVENTORY_NOTICE,
         "provider": primary,
         "providers": providers,
-        "pdfs": pdfs,
+        "publications": source_revisions,
         "site_sources": site_sources,
     }
 
@@ -3118,19 +3798,24 @@ def artifact_manifest_data(
                 f"{publication_label(key, primary)}: missing alpha binding"
             )
         authorization_id = binding["authorization"]
-        pdf_hash = sha256(ROOT / "pdf" / provider / f"{leaf}.pdf")
         publication_entries.append(
             {
                 "id": publication_label(key, primary),
                 "status": "alpha",
-                "pdf": f"pdf/{provider}/{leaf}.pdf",
-                "public_pdf": public_pdf_path(provider, leaf),
+                "reader": publication_reader_path(provider, leaf),
+                "print": publication_print_path(provider, leaf),
                 "authorization": authorization_id,
-                "pdf_sha256": pdf_hash,
+                "source_identity": publication_source_identity(provider, leaf),
             }
         )
+        archived = archived_prints().get(f"{provider}/{leaf}")
+        if archived:
+            publication_entries[-1]["archived_pdf"] = {
+                key: archived[key] for key in ("url", "sha256", "bytes", "snapshot", "pages") if key in archived
+            }
     return {
-        "schema_version": 2,
+        "schema_version": 3,
+        "publication_model": "source-first",
         "release_id": manifest["release_id"],
         "mode": "private-preview" if preview else "published-alpha",
         "history_included": False,
@@ -3151,9 +3836,10 @@ def expected_artifact_files(
         expected.add(PICTORIAL_GALLERY_OUTPUT)
         expected.update(card["destination"] for card in pictorial_gallery_data())
     expected.update(included_document_pages(set(included)).values())
-    pdf_aliases = public_pdf_aliases(included)
-    expected.update(pdf_aliases)
-    expected.update(pdf_aliases.values())
+    expected.update(source_print_pages())
+    for provider, leaf in included:
+        expected.add(publication_reader_path(provider, leaf))
+        expected.add(publication_print_path(provider, leaf))
     expected.update(web_data_files())
     expected.update(web_browser_pages())
     expected.update(
@@ -3264,9 +3950,8 @@ export default {{
 def filter_catalog(
     source: str, markdown_text: str, included_ids: set[tuple[str, str]]
 ) -> str:
-    if not PDF_LINK_RE.search(markdown_text) and not CATALOG_PUBLICATION_ID_RE.search(
-        markdown_text
-    ):
+    if not (PDF_LINK_RE.search(markdown_text) or source_catalog_ids(markdown_text)
+            or CATALOG_PUBLICATION_ID_RE.search(markdown_text)):
         return markdown_text
 
     def degrade_excluded_link(match: re.Match[str]) -> str:
@@ -3274,10 +3959,11 @@ def filter_catalog(
         target = raw_target.split(maxsplit=1)[0]
         # A web edition's Read link degrades with the PDF it accompanies; left
         # alone it would point at a page this artifact never builds.
-        for pattern in (PDF_LINK_RE, WEB_LINK_RE):
-            edition = pattern.search(target)
-            if edition and (edition.group(1), edition.group(2)) not in included_ids:
-                return "—"
+        edition = PDF_LINK_RE.search(target)
+        if edition and (edition.group(1), edition.group(2)) not in included_ids:
+            return "—"
+        if any(key not in included_ids for key in source_catalog_ids(match.group(0))):
+            return "—"
         return match.group(0)
 
     def marker_included(marker: tuple[str, str]) -> bool:
@@ -3291,6 +3977,7 @@ def filter_catalog(
     any_included = False
     for line in markdown_text.splitlines():
         line_ids = PDF_LINK_RE.findall(line)
+        line_ids += [key for key in source_catalog_ids(line) if key not in line_ids]
         markers = CATALOG_PUBLICATION_ID_RE.findall(line)
         included_on_line = [item for item in line_ids if item in included_ids]
         if line_ids:
@@ -3387,16 +4074,16 @@ def source_to_output(
         license_path = ROOT.joinpath(*resolved.parts)
         if license_path.is_file():
             destination = resolved_text
-    if destination is None and resolved_text in reading_plan_pdfs():
-        destination = public_pdf_path("reading-plans", resolved.stem)
-    if destination is None:
+    if destination is None and resolved_text.startswith("pdf/"):
         pdf_match = re.fullmatch(r"pdf/([a-z0-9-]+)/(.+)\.pdf", resolved_text)
         if pdf_match and (pdf_match.group(1), pdf_match.group(2)) in included_ids:
-            destination = public_pdf_path(pdf_match.group(1), pdf_match.group(2))
+            destination = publication_reader_path(pdf_match.group(1), pdf_match.group(2))
+        elif pdf_match and pdf_match.group(1) in {"papal-documents", "reading-plans"}:
+            destination = source_reader_routes().get(resolved_text)
     if destination is None:
         # A web edition's page exists only for an included publication, so the
         # link resolves against inclusion rather than against a bare path match.
-        page_match = WEB_PAGE_RE.fullmatch(resolved_text)
+        page_match = SOURCE_PUBLICATION_LINK_RE.fullmatch(resolved_text)
         if page_match and (page_match.group(1), page_match.group(2)) in included_ids:
             destination = resolved_text
     if destination is None:
@@ -3420,7 +4107,8 @@ def rewrite_links(
     output_lines: list[str] = []
     for line in markdown_text.splitlines():
         catalog_entry = bool(
-            PDF_LINK_RE.search(line) or CATALOG_PUBLICATION_ID_RE.search(line)
+            PDF_LINK_RE.search(line) or source_catalog_ids(line)
+            or CATALOG_PUBLICATION_ID_RE.search(line)
         )
 
         def replace(match: re.Match[str]) -> str:
@@ -3435,6 +4123,8 @@ def rewrite_links(
             if rewritten is None:
                 restricted_record = re.match(r"^(?:\.\./)*(?:src|guidance)/", target) is not None
                 return "" if catalog_entry and restricted_record else label
+            if PDF_LINK_RE.search(target):
+                label = re.sub(r"\bPDF\b", "print view", label)
             return f"[{label}]({rewritten})"
 
         rewritten_line = MARKDOWN_LINK_RE.sub(replace, line)
@@ -3525,7 +4215,7 @@ def page_classes(source_relative: str, output_relative: str) -> str:
         "library/mariology.md",
         "library/law-and-church-discipline.md",
     }
-    if output_relative.startswith("web/"):
+    if output_relative.startswith(("web/", "print/")):
         kind = "reader"
     elif source_relative == "README.md":
         kind = "home"
@@ -4112,6 +4802,11 @@ BROWSER_SECTION_COLOURS = {
     # are the marks of a code before they are the marks of a catalogue. Values
     # here are not required to be distinct; only the presence of one is.
     "law": "black",
+    # The encyclicals take white beside the source library, for the source
+    # library's reason: the page lists other people's words — the popes' — and
+    # links their historical printings rather than writing any of its own. Its
+    # one sentence of project prose per row is labelled as such on the page.
+    "encyclicals": "white",
 }
 
 # An entrance with no colour raised KeyError deep inside the build, and only in
@@ -4136,7 +4831,7 @@ def render_browser_page(
 ) -> str:
     parts = browser_page_parts(source_path, output_relative)
     if pdf_aliases is None:
-        pdf_aliases = public_pdf_aliases(())
+        pdf_aliases = publication_routes(()) if re.search(r'''\bhref\s*=\s*["'][^"']*pdf/''', parts["content"]) else {}
     return wrap_in_layout(
         source_path.relative_to(ROOT).as_posix(),
         output_relative,
@@ -4175,6 +4870,69 @@ def render_source_page(
         output_relative,
         preview,
         authorization,
+    )
+
+
+def render_publication_print_page(
+    provider: str, leaf: str, output_relative: str, preview: bool,
+    authorization: dict,
+) -> str:
+    """A truthful print action for an output, including fixed-layout works."""
+    from _print_document import publication_recipe
+    recipe = held_source_inventory(
+        f"print-recipe:{provider}/{leaf}",
+        lambda: publication_recipe(provider, leaf, root=ROOT),
+    )
+    title = recipe.get("title") or leaf.rsplit("/", 1)[-1].replace("-", " ").title()
+    reader = publication_reader_path(provider, leaf)
+    tracked = f"web/{provider}/{leaf}.md"
+    has_reader = tracked in included_document_pages({(provider, leaf)}) and (ROOT / tracked).is_file()
+    if has_reader:
+        return render_source_page(tracked, output_relative, {(provider, leaf)}, preview, authorization)
+    paragraphs = [
+        f"# {title}",
+        "",
+        f"{'ChatGPT' if provider == 'gpt' else 'Claude' if provider == 'claude' else provider} edition.",
+        "",
+    ]
+    paragraphs.extend([
+        "A browser reading edition is not available for this output. "
+        "Its print edition retains the document’s complete layout, figures and apparatus.",
+        "",
+    ])
+    archived = archived_prints().get(f"{provider}/{leaf}")
+    if archived:
+        paragraphs.extend([
+            f"[Archived PDF]({archived['url']}) — published snapshot `{archived['snapshot'][:7]}`. "
+            "This preserved printing may precede the current source revision.",
+            "",
+        ])
+    command = recipe.get("command")
+    if not isinstance(command, list) or not command or any(not isinstance(part, str) for part in command):
+        raise ReleaseError(f"{provider}/{leaf}: print recipe has no executable command")
+    import shlex
+    paragraphs.extend([
+        "Generate the PDF from a local copy of Triptych:", "", "```sh",
+        shlex.join(command), "```", "",
+        "A generated PDF is a print rendering of the identified sources. "
+        "Its production receipt records the source revision and the checks performed; "
+        "generation alone does not establish a completed page review.",
+    ])
+    return render_page(
+        f"src/{provider}/{leaf}/publication.toml", "\n".join(paragraphs) + "\n",
+        output_relative, preview, authorization,
+    )
+
+
+def render_source_print_page(
+    relative: str, page: dict, preview: bool, authorization: dict,
+) -> str:
+    title = page.get("title")
+    if not isinstance(title, str) or not title.strip():
+        raise ReleaseError(f"source reader has no title: {relative}")
+    return wrap_in_layout(
+        relative, relative, page_classes(relative, relative), title,
+        breadcrumb(relative, relative), page["html"], preview, authorization,
     )
 
 
@@ -4367,7 +5125,7 @@ def verify_catalog_reachability(
         catalog_path = output / catalog_output
         if not catalog_path.is_file():
             continue
-        destination = public_pdf_path(provider, leaf)
+        destination = publication_reader_path(provider, leaf)
         expected_href = relative_link(catalog_output, destination)
         local_paths = catalog_local_paths.get(catalog_output)
         if local_paths is None:
@@ -4379,7 +5137,7 @@ def verify_catalog_reachability(
             catalog_local_paths[catalog_output] = local_paths
         if expected_href not in local_paths:
             errors.append(
-                f"{publication_label(key, primary)}: copied PDF is not reachable "
+                f"{publication_label(key, primary)}: publication is not reachable "
                 f"from {catalog_output}"
             )
     return errors
@@ -4409,7 +5167,7 @@ def verify_web_data(
         # check independently authenticates every copied byte, including JS and
         # CSS outside the data root; regenerating artifact-local checksums must
         # not make a modified browser program acceptable.
-        projection = projected_document_catalogue(relative, source, pdf_aliases)
+        projection = projected_web_data(relative, source, pdf_aliases)
         expected_hash = (
             hashlib.sha256(projection.encode("utf-8")).hexdigest()
             if projection is not None else sha256(source)
@@ -4734,9 +5492,11 @@ def _read_artifact_regular_file(
 def _capture_artifact_snapshot(
     root_fd: int,
     topology: dict[str, os.stat_result],
+    temporary_parent_fd: int | None = None,
 ):
     """Materialize descriptor-captured bytes for all path-based verifiers."""
-    with tempfile.TemporaryDirectory(prefix="triptych-public-alpha-verify-") as temporary:
+    temporary_parent = _descriptor_path(temporary_parent_fd) if temporary_parent_fd is not None else None
+    with tempfile.TemporaryDirectory(prefix="triptych-public-alpha-verify-", dir=temporary_parent) as temporary:
         temporary_path = Path(temporary)
         temporary_fd = os.open(temporary_path, DIRECTORY_OPEN_FLAGS)
         snapshot_fd: int | None = None
@@ -4783,6 +5543,7 @@ def _verify_output_contents(
     publications: dict[tuple[str, str], dict],
     output_fd: int,
     preview: bool,
+    temporary_parent_fd: int | None = None,
 ) -> None:
     """Capture a held artifact safely, then verify only its immutable copy."""
     topology = _scan_artifact_topology(output_fd)
@@ -4797,7 +5558,7 @@ def _verify_output_contents(
     if unsafe:
         errors = site_source_binding_errors(manifest) + topology_errors
         raise ReleaseError("Public-alpha artifact verification failed:\n- " + "\n- ".join(errors))
-    with _capture_artifact_snapshot(output_fd, topology) as snapshot:
+    with _capture_artifact_snapshot(output_fd, topology, temporary_parent_fd) as snapshot:
         try:
             _verify_snapshot_contents(manifest, publications, snapshot, preview)
         finally:
@@ -4814,8 +5575,8 @@ def _verify_snapshot_contents(
     primary, _ = declared_providers(manifest)
     included = included_publications(publications, preview)
     expected_authorization = artifact_authorization(manifest, included)
-    pdf_aliases = public_pdf_aliases(included)
-    expected_pdf_paths = set(pdf_aliases) | set(pdf_aliases.values())
+    pdf_aliases = publication_routes(included)
+    expected_pdf_paths: set[str] = set()
     if not output.is_dir():
         raise ReleaseError(f"artifact does not exist: {output.relative_to(ROOT)}")
 
@@ -4882,22 +5643,6 @@ def _verify_snapshot_contents(
         artifact_manifest = {}
     if artifact_manifest != artifact_manifest_data(manifest, included, preview):
         errors.append("artifact manifest does not exactly match the release policy")
-    for key, publication in included.items():
-        provider, leaf = key
-        pdf_path = output / "pdf" / provider / f"{leaf}.pdf"
-        if pdf_path.is_file():
-            actual_hash = sha256(pdf_path)
-            expected_hash = sha256(ROOT / "pdf" / provider / f"{leaf}.pdf")
-            mismatch = "does not match its alpha SHA-256"
-            if actual_hash != expected_hash:
-                errors.append(
-                    f"{publication_label(key, primary)}: artifact PDF {mismatch}"
-                )
-    for canonical, alias in pdf_aliases.items():
-        alias_path = output / alias
-        if alias_path.is_file() and sha256(alias_path) != sha256(ROOT / canonical):
-            errors.append(f"{alias}: public PDF does not match its canonical source")
-
     included_ids = set(included)
     rendered_pages = {**PAGE_MAP, **included_document_pages(included_ids)}
     for source_relative, output_relative in rendered_pages.items():
@@ -4912,6 +5657,20 @@ def _verify_snapshot_contents(
             expected_authorization,
         ):
             errors.append(f"{output_relative}: rendered page does not match its approved source")
+
+    reviewed_pages = set(included_document_pages(included_ids).values())
+    for provider, leaf in included:
+        for relative in (publication_reader_path(provider, leaf), publication_print_path(provider, leaf)):
+            if relative in reviewed_pages:
+                continue
+            path = output / relative
+            expected = render_publication_print_page(provider, leaf, relative, preview, expected_authorization)
+            if path.is_file() and path.read_text(encoding="utf-8") != expected:
+                errors.append(f"{relative}: print landing does not match its canonical source recipe")
+    for relative, page in source_print_pages().items():
+        path = output / relative
+        if path.is_file() and path.read_text(encoding="utf-8") != render_source_print_page(relative, page, preview, expected_authorization):
+            errors.append(f"{relative}: source reader does not match its canonical text")
 
     for output_relative, source in sorted(web_browser_pages().items()):
         html_path = output / output_relative
@@ -4943,10 +5702,6 @@ def _verify_snapshot_contents(
             (ROOT / source_relative, output / source_relative)
             for source_relative in artifact_license_source_paths()
         ],
-        *[
-            (source, output / destination_relative)
-            for destination_relative, source in sorted(reading_plan_pdfs().items())
-        ],
     ]
     for source_path, artifact_path in static_sources:
         if artifact_path.is_file() and sha256(artifact_path) != sha256(source_path):
@@ -4972,6 +5727,7 @@ def _verify_snapshot_contents(
             (
                 f"pdf/{excluded_key[0]}/{excluded_key[1]}.pdf",
                 f"web/{excluded_key[0]}/{excluded_key[1]}.html",
+                f"print/{excluded_key[0]}/{excluded_key[1]}.html",
             ),
         )
         for excluded_key in disallowed_ids
@@ -5119,6 +5875,7 @@ def verify_output(
                 publications,
                 output_fd,
                 preview,
+                parent_fd,
             )
             _require_entry_matches_fd(
                 parent_fd, target, output_fd, OUTPUT_ROOT / target
@@ -5486,9 +6243,9 @@ def assemble_web_data(
             os.close(output_fd)
         return
     if pdf_aliases is None:
-        pdf_aliases = public_pdf_aliases(())
+        pdf_aliases = publication_routes(())
     for destination_relative, source in sorted(web_data_files().items()):
-        projection = projected_document_catalogue(destination_relative, source, pdf_aliases)
+        projection = projected_web_data(destination_relative, source, pdf_aliases)
         if projection is None:
             writer.copy(source, destination_relative)
         else:
@@ -5508,7 +6265,7 @@ def _build_site_contents(
 ) -> None:
     included = included_publications(publications, preview)
     authorization = artifact_authorization(manifest, included)
-    pdf_aliases = public_pdf_aliases(included)
+    pdf_aliases = publication_routes(included)
 
     for asset_relative in ("assets/site.css", SOCIAL_CARD_RELATIVE, SITE_ICON_RELATIVE):
         writer.copy(TEMPLATE_ROOT / asset_relative, asset_relative)
@@ -5516,11 +6273,6 @@ def _build_site_contents(
     for source_relative in artifact_license_source_paths():
         license_path = ROOT / source_relative
         writer.copy(license_path, source_relative)
-
-    for canonical, alias in pdf_aliases.items():
-        source = ROOT / canonical
-        writer.copy(source, canonical)
-        writer.copy(source, alias)
 
     if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
         for card in pictorial_gallery_data():
@@ -5541,6 +6293,16 @@ def _build_site_contents(
                 authorization,
             ),
         )
+    reviewed_pages = set(included_document_pages(included_ids).values())
+    for provider, leaf in included:
+        for relative in (publication_reader_path(provider, leaf), publication_print_path(provider, leaf)):
+            if relative not in reviewed_pages:
+                writer.text(
+                    relative,
+                    render_publication_print_page(provider, leaf, relative, preview, authorization),
+                )
+    for relative, page in source_print_pages().items():
+        writer.text(relative, render_source_print_page(relative, page, preview, authorization))
     if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
         writer.text(
             PICTORIAL_GALLERY_OUTPUT,
@@ -5694,7 +6456,7 @@ def main() -> int:
         help="with verify, reject conditions the named deployment target cannot enforce",
     )
     parser.add_argument("--provider", help="with check --document, select one proper's provider")
-    parser.add_argument("--document", help="with check --provider, require only this canonical proper's three installed PDFs")
+    parser.add_argument("--document", help="with check --provider, select this canonical proper's three source outputs")
     with_examples(parser, tuple(e for verb in EXAMPLES for e in EXAMPLES[verb]))
     args = parser.parse_args()
     try:
@@ -5731,8 +6493,8 @@ def main() -> int:
                 else:
                     print(f"public-alpha scoped policy valid: {args.provider}:{args.document}")
                     print(f"global source, release and authorization records valid: {len(publications)} publications")
-                    print("installed-PDF scope: " + ", ".join(leaf for _, leaf in sorted(installed_scope)))
-                    print("Unrelated PDF installation was not checked; this is not a deployment verification.")
+                    print("publication scope: " + ", ".join(leaf for _, leaf in sorted(installed_scope)))
+                    print("This source-policy check is not a deployment verification.")
             elif args.command == "build":
                 output = build_site(manifest, publications, args.preview)
                 verify_command = "verify --preview" if args.preview else "verify"

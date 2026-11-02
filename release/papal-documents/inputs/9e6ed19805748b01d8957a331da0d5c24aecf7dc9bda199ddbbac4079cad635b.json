@@ -1,0 +1,82 @@
+{
+  "schema": "triptych-rootstop-bounded-page-review/v1",
+  "packet": "57b",
+  "status": "PASS_ASSIGNED_SUBSET",
+  "whole_pdf_status": "UNASSIGNED",
+  "source_decision": "PASS_BOUNDED_MECHANICAL_OCR_INTAKE",
+  "source_decision_evidence": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/source-decision.json",
+    "sha256": "464e042ff7328ea297971c7abb42f11a9771d4432379cf8897014650b8d63c3f",
+    "byte_size": 5322
+  },
+  "pdf_path": ".scratch/etsi-english-greeting-recovery/exclusion-successor-1/render/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en.pdf",
+  "pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+  "source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+  "receipt": {
+    "path": ".scratch/etsi-english-greeting-recovery/exclusion-successor-1/render/receipt.json",
+    "sha256": "326fc9f3aaf372d4917e7da84674fe62354272b02b6f0ee9f9b5a5f6b6cf0fc2",
+    "byte_size": 2765
+  },
+  "frozen_manifest": {
+    "path": ".scratch/etsi-english-greeting-recovery/exclusion-successor-1/render/frozen-manifest.json",
+    "sha256": "b7d8ab152bd0322f95601b283dcbf99e9867d5058c68597d4c185a9f66ea362a",
+    "byte_size": 8751
+  },
+  "canonical_role_report": "src/sources/papal-documents/encyclicals-refinement-cold-57b-recovery.md",
+  "canonical_role_report_written": false,
+  "role_report": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/report.md",
+    "sha256": "06cc974acdde2c260237ec5d367d191f4083edc311795248722f55fba51d0f91",
+    "byte_size": 6720
+  },
+  "aggregate_canonical_target": "src/sources/papal-documents/encyclicals-refinement-cold-57b.md",
+  "reviewed_pages": [
+    6,
+    7
+  ],
+  "actual_individual_page_views": [
+    {
+      "kind": "reader-page",
+      "page": 6,
+      "image": ".scratch/etsi-english-greeting-recovery/exclusion-successor-1/pdf-review/.scratch/etsi-english-greeting-recovery/exclusion-successor-1/render/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/pages/page-6.png",
+      "sha256": "8aea6b8fd05e980f1a2c237b0c63fae59555a4107de5a26df3b39d809d1a666c",
+      "current_pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+      "display": "original PNG bytes, auto detail",
+      "finding": "Fresh actual current full-resolution page6. Normal sequential two-column text with clear gutter and legible lines to both column feet. StLeo/Optatus/PeterChrysologus/Jerome/Boniface note block at left and Cyprian/StJohn note lines at upper right remain separate source paragraphs; retained literal folios19/20/21 and OCR punctuation/word divisions are visible. No clipping, overlap, note fusion or glyph dropout. Right-foot source continuation proceeds to page7.",
+      "verdict": "PASS current PDF page6 layout with ordinary literal OCR qualification"
+    },
+    {
+      "kind": "reader-page",
+      "page": 7,
+      "image": ".scratch/etsi-english-greeting-recovery/exclusion-successor-1/pdf-review/.scratch/etsi-english-greeting-recovery/exclusion-successor-1/render/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/pages/page-7.png",
+      "sha256": "9dc8625e96c3a82497e567b9dcdaf9de0eda114c1ecf33b9a08548e7ccc06b71",
+      "current_pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+      "display": "original PNG bytes, auto detail",
+      "finding": "Fresh actual current full-resolution page7. Substantial source text continues through the left column and upper right; closing prayer, Apostolic blessing, Rome/StPeter dating clause, twenty-first November1873, twenty-eighth pontifical year and PIUS PP.IX subscription are legible. Removed own23 numeral does not remove closing text; unlisted own22 remains literal at left. A short rule separates terminal source/rights apparatus: source-witness link, identified1874 Philadelphia McLaughlin Brothers human translation, address/notes/complete subscription, bounded protocol recovery, exact exclusion classes and remaining uncollated OCR defects are disclosed. UnitedStates source public-domain position is distinct from project CC BY4.0 organization/typesetting with LICENSE/THIRD_PARTY reference. No clipping, overlap, glyph dropout or column-order defect; final page is source-bearing rather than apparatus-only.",
+      "verdict": "PASS current PDF page7 closing/terminal apparatus/source-bearing final-page layout"
+    }
+  ],
+  "new_contact_view": false,
+  "credited_prior_current_extent": {
+    "reader_pages": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "own_folio_pages": [
+      5,
+      11
+    ],
+    "cutoff": {
+      "path": ".scratch/encyclical-refinement-package/57b-stop-primary-observations.json",
+      "sha256": "d14af29c05ab449f9a5d325319560c272e3f7ea2044df29a14d94887670c0720",
+      "byte_size": 9184
+    },
+    "qualification": "Coordinator aggregation only; not recovery observer page views."
+  },
+  "reused_pages": [],
+  "reuse_proofs": [],
+  "qualification": "PASS covers only assigned current pages6\u20137; whole PDF status is deliberately unassigned. Current source gate is separately explicit."
+}

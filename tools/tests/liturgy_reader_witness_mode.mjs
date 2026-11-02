@@ -9,7 +9,7 @@ import test from 'node:test';
 const ROOT = resolve(process.env.TRIPTYCH_REVIEW_ROOT || resolve(import.meta.dirname, '../..'));
 const CANDIDATE = process.env.TRIPTYCH_WITNESS_MODULE_ROOT || ROOT;
 const require = createRequire(import.meta.url);
-const Adapters = require(resolve(ROOT, 'src/web/browser/liturgy/reader-state-adapters.js'));
+const Adapters = require(resolve(CANDIDATE, 'src/web/browser/liturgy/reader-state-adapters.js'));
 const json = (path) => JSON.parse(readFileSync(resolve(ROOT, path), 'utf8'));
 const structure = json('src/web/data/structure/propers/roman-1962.json');
 const ordinary = json('src/web/data/structure/ordinary/roman-1962.json');
@@ -85,4 +85,88 @@ test('unknown witnesses Latin witness misuse and unresolved Mass forms still fai
   assert.throws(() => Adapters.adaptPropers({ request: latin, structure, ordinary }), /cannot select the Latin source/);
   const unselected = request('missal'); delete unselected.form;
   assert.deepEqual(Array.from(witnessState(structure, mass, 'en', unselected).held), []);
+});
+
+function pendingWitnessRequest(calendar, massKey, witness, mode = 'read') {
+  return { schema: 'triptych-liturgy-reader-state/v1', entrance: 'propers', civilDate: null,
+    edition: { id: calendar }, formulary: { id: massKey },
+    bible: { id: 'douay-rheims', numbering: 'vulgate' },
+    languages: { orations: 'en', ordinary: 'en', translationWitness: witness },
+    requestedMode: mode, options: { ordinary: mode === 'missal', legitimate: {} },
+    coverage: [], unresolvedChoices: [], sourceHooks: [] };
+}
+
+const pendingWitnessCases = [
+  ...['commune-virginum-2', 'commune-virginum-4', 'comm-s-priscae-virginis-martyris',
+    'comm-s-emerentianae-virginis-martyris', 'comm-s-dorotheae-virginis-martyris',
+    'comm-s-petronillae-virginis', 'comm-s-margaritae-virginis-martyris',
+    'comm-s-christinae-virginis-martyris', 's-bibianae-virginis-martyris']
+    .map(id => ['roman-1962', id, cummiskey]),
+  ['roman-1962', 'comm-ss-placidi-sociorum-martyrum',
+    'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945'],
+  ['postconciliar', 'easter-vigil', cummiskey]
+];
+
+test('every actual offered witness confined to pending source options preserves an honest unresolved state', () => {
+  for (const [calendar, massKey, witness] of pendingWitnessCases) {
+    const heldStructure = json('src/web/data/structure/propers/' + calendar + '.json');
+    const heldMass = heldStructure.masses.find(one => one.key === massKey);
+    const state = pendingWitnessRequest(calendar, massKey, witness);
+    realm.runtime.ordinary = json('src/web/data/structure/ordinary/' + calendar + '.json');
+    const before = JSON.stringify({ heldStructure, state });
+    assert.ok(witnessState(heldStructure, heldMass, 'en', state).held.includes(witness), massKey);
+    const view = Adapters.adaptPropers({ request: state, structure: heldStructure });
+    assert.equal(view.request.languages.translationWitness, witness);
+    const pending = view.events.filter(event => event.kind === 'proper-choice' && event.selection.state === 'required');
+    assert.ok(pending.length > 0, massKey);
+    const held = pending.flatMap(event => event.options.flatMap(option => option.events))
+      .filter(event => event.selected.sourceId === witness && event.selected.availability === 'held');
+    assert.ok(held.length > 0, massKey);
+    // No pending member becomes an active event or silently selects its option.
+    const active = view.events.filter(event => event.kind === 'proper');
+    assert.ok(held.every(event => !active.some(one => one.id === event.id)), massKey);
+    assert.ok(pending.every(event => event.selection.option === null &&
+      view.unresolvedChoices.some(choice => choice.id === event.id)), massKey);
+    assert.equal(JSON.stringify({ heldStructure, state }), before);
+  }
+});
+
+test('choosing the exact source option admits only that witness body in Read and Missal', () => {
+  const massKey = 'commune-virginum-2';
+  const heldMass = structure.masses.find(one => one.key === massKey);
+  const group = 'proper-choice/roman-1962/' + massKey + '/main/virginum-2-post-epistle';
+  const source = heldMass.propers.find(one => one.name === 'Alleluia');
+  const literal = source.translations.find(one => one.source_id === cummiskey).text;
+  for (const mode of ['read', 'missal']) {
+    const state = pendingWitnessRequest('roman-1962', massKey, cummiskey, mode);
+    state.properChoices = { [group]: 'regular' };
+    const view = Adapters.adaptPropers({ request: state, structure, ordinary: mode === 'missal' ? ordinary : null });
+    const choice = view.events.find(event => event.id === group);
+    assert.deepEqual(choice.selection, { state: 'selected', option: 'regular' });
+    assert.equal(choice.options.find(option => option.id === 'regular').events[0].selected.text, literal);
+    assert.equal(choice.options.find(option => option.id === 'regular').events[0].selected.sourceId, cummiskey);
+    assert.ok(!view.unresolvedChoices.some(one => one.id === group));
+    for (const option of ['tract', 'paschal']) {
+      const wrong = structuredClone(state); wrong.properChoices[group] = option;
+      assert.throws(() => Adapters.adaptPropers({ request: wrong, structure,
+        ordinary: mode === 'missal' ? ordinary : null }), /selected no appointed text/);
+    }
+  }
+});
+
+test('pending options do not admit unknown witnesses empty bodies foreign applicability or foreign choices', () => {
+  const state = pendingWitnessRequest('roman-1962', 'commune-virginum-2', cummiskey);
+  const unknown = structuredClone(state); unknown.languages.translationWitness = 'not-held';
+  assert.throws(() => Adapters.adaptPropers({ request: unknown, structure }), /selected no appointed text/);
+  const empty = structuredClone(structure);
+  empty.masses.find(one => one.key === state.formulary.id).propers.forEach(proper => {
+    proper.translations = (proper.translations || []).filter(one => one.source_id !== cummiskey);
+  });
+  assert.throws(() => Adapters.adaptPropers({ request: state, structure: empty }), /selected no appointed text/);
+  const foreignChoice = structuredClone(state);
+  foreignChoice.properChoices = { 'proper-choice/roman-1962/another-mass/main/virginum-2-post-epistle': 'regular' };
+  assert.throws(() => Adapters.adaptPropers({ request: foreignChoice, structure }), /another edition, formulary or form/);
+  const inherited = json('src/web/data/structure/propers/roman-pre-1955.json');
+  const foreign = pendingWitnessRequest('roman-pre-1955', 'commune-virginum-2', cummiskey);
+  assert.throws(() => Adapters.adaptPropers({ request: foreign, structure: inherited }), /foreign-source Proper applicability/);
 });

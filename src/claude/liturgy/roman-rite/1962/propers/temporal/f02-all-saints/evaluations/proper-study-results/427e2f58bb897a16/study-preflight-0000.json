@@ -1,0 +1,14 @@
+{
+  "disposition": "FAIL",
+  "findings": [
+    {
+      "check": "house-voice",
+      "id": "GATE-HOUSE-VOICE",
+      "problem": "command exited 1: check-content-preflight error: house-voice (research edition): sections/05-appointed-texts.tex:163: the work possesses the finding: \"The Lasance renders the Missal's opening ``In those days, behold, I, John, saw another angel ascending from the rising of the sun''; that page is quoted on the Lasance's own attribution and has not been checked against the repository's register of translations.\". Rewrite the sentence so its subject is a source, a text, a witness or a fact, and delete nothing it was",
+      "required_result": "This edition must pass the owning house-voice check.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "stage": "study-preflight"
+}

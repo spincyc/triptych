@@ -1,0 +1,125 @@
+{
+  "scope": "INDEPENDENT SOURCE FACTS ONLY; not a rights/English/publication/arrangement approval",
+  "reviewed_pins": {
+    "qui_map": "ce4b638fc4873494c5ff8e610351a3af7dfd0b2641639a082f2ccf4894153efd",
+    "common_candidate": "93259b687deacc82970ba67cf32466d98c913e74948b3ab7ba2a3cb0e2cd35ea",
+    "common_private_map": "8ec2d8ce2036257ab760e410780109f13d91f3e6eaaaa71bf02c1f17eac56d04"
+  },
+  "all_dependency_pins_replayed": 23,
+  "qui_pridie": {
+    "target_words": 103,
+    "source_words_before_omissions": 103,
+    "retained_mame_words_in_order": 94,
+    "added_biblical_word_counts": [
+      4,
+      5
+    ],
+    "source_omission_word_counts": [
+      2,
+      7
+    ],
+    "sole_spelling_comparison": "coenatum→cenatum",
+    "all_5_target_spans_and_source_or_verse_slices_exact": true,
+    "verse25_alternative_omission_exact": true,
+    "mysterium_at_target_n91_outside_scope": true,
+    "complete_whole_not_printed_by_either_single_source": true
+  },
+  "communicantes": {
+    "historical_body_words": 67,
+    "full_names_target_body_words": 73,
+    "historical_head_words": 17,
+    "existing_joseph_continuation_words": 56,
+    "inserted_tokens_with_joining_conjunction": 6,
+    "optional_names_span": [
+      34,
+      58
+    ],
+    "optional_names_word_count": 24,
+    "historical_body_and_separate_conclusion_exact": true,
+    "historical_j_and_Genitricis_preserved": true,
+    "no_Joseph_in_historical_source": true,
+    "retained_page_png_byte_identity_to_whole_parent": "644a9dca660c37efe88bd5843b490fe419676a8139d7a5bb793e3d1d2aa0b4c7",
+    "conclusion_omitted_prefix_is_selection_not_ending_rewrite": true,
+    "common_only_no_seasonal_proper_identity": true
+  },
+  "scope_limits": [
+    "pointing, case, accent, ligature layout and rubrics excluded from lexical identity",
+    "secondary2002 comparator only; no authenticated whole2008 assertion",
+    "source labels and recorded rights are observed as metadata, not independently approved",
+    "no English authored, reviewed, assembled or approved",
+    "no modern arrangement or Joseph-clause authority approved",
+    "no tracked writes"
+  ],
+  "disposition": "source-facts-verified-only",
+  "reviewed_on": "2026-10-30",
+  "owning_validator": {
+    "result": "source-library valid: artifact=3 corpus=0 edition=1 passage=1 segment=0 work=1 bindings=0",
+    "scope": "Independent exact five-postimage minimal sourcegraph: three artifacts include the existing full-parent record; one edition, passage and work. Empty publication root, bindings0. This is sourcegraph consistency, not public-content or rights clearance."
+  },
+  "independent_direct_image_reads": [
+    {
+      "kind": "Mame1922 full source",
+      "artifact_pages": [
+        455,
+        456,
+        457
+      ],
+      "printed_pages": [
+        341,
+        342,
+        343
+      ],
+      "method": "Fresh pdftoppm whole-parent render after complete-file rehash, directly visually read; retained bounded page455 also renders PNG byte-identical."
+    },
+    {
+      "kind": "registered secondary digital2002 comparator",
+      "artifact_pages": [
+        348,
+        349,
+        350,
+        351
+      ],
+      "method": "Fresh pdftoppm complete-parent render after full-file rehash, directly visually read. Not an authenticated2008 facsimile."
+    }
+  ],
+  "independent_render_pins": {
+    "common-packet1.png": {
+      "sha256": "644a9dca660c37efe88bd5843b490fe419676a8139d7a5bb793e3d1d2aa0b4c7",
+      "bytes": 1156170
+    },
+    "common-target-348.jpg": {
+      "sha256": "da3a72015812ae7747457b9632c2960906f829a1192c8127c77976a3f9121f2a",
+      "bytes": 302327
+    },
+    "common-target-349.jpg": {
+      "sha256": "5382ce46e422aded6be357229964a2a77a29a06e3c58d9a66d516d6bad0fd711",
+      "bytes": 329539
+    },
+    "mame-0456.jpg": {
+      "sha256": "b1539ab104d5396fb81a4475b46d2064bccd7bafe8d0219ea26ae79871bd04be",
+      "bytes": 397682
+    },
+    "mame-0457.jpg": {
+      "sha256": "809f534c76f94708d861c13535a40845148957e23631f9bcbc165294fa5b0acd",
+      "bytes": 358036
+    },
+    "mame-parent455.png": {
+      "sha256": "644a9dca660c37efe88bd5843b490fe419676a8139d7a5bb793e3d1d2aa0b4c7",
+      "bytes": 1156170
+    },
+    "target-350.jpg": {
+      "sha256": "9fb103546731186df00c7fc2cb550ae44a4acaab61270f717f7753fc56995798",
+      "bytes": 337317
+    },
+    "target-351.jpg": {
+      "sha256": "e589b22ea24ccdf21dd099a18dafdeec6b987925c704b1e63b1f2a79a3f92af2",
+      "bytes": 303726
+    }
+  },
+  "wording_findings": [
+    "Qui map five target spans cover exactly the inspected103blackspokenwords in order; 94retained Mame words preserve source order, with sole explicit coenatum/cenatum comparison operation. Two biblical insertions contribute4+5words; old internal Mysterium2words and older command7words are excluded from n89–90. Target n91 retains Mysterium separately.",
+    "Both biblical24spans are source-contiguous and verse25alternative has exactly the recorded2wordomission. The final command after chalice is a new cross-source join; it is not printed in that whole arrangement by the historical Mame or either single biblicalverse.",
+    "Common source67wordbody and completeolderconclusion are faithfully transcribed under declared normalization; Joseph is absent, fullnames mandatory, Genitricis/j spellings preserved. Targetcommon73words equals source17wordhead + existing56wordcontinuation under declared specific spellings. Removing inserted6tokens restores exact67wordoldorder.",
+    "Target optional names are exact24wordgroup[34,58), Iacobi throughDamiani. The conclusion-omitted prefix avoids changing the separately retained full older conclusion. Seasonal proper heads and their appointments remain outside scope."
+  ]
+}

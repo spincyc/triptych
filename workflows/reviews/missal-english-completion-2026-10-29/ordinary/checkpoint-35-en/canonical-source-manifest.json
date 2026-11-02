@@ -1,0 +1,806 @@
+{
+  "schema": "triptych-pc-ordinary-accepted-checkpoint/v1",
+  "scope": "Current accepted canonical cohort only; pending scratch packages excluded. Not full goal completion.",
+  "captured_on_utc": "2026-10-30",
+  "canonical_source_files": [
+    {
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/english-completion-20261030-peace-invitation-la/artifact.toml",
+      "sha256": "61cd467a2d855cf8c9bd68c62a061e5702d6f54b7d560e0eb6cf2f4049084e65",
+      "bytes": 2652
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/english-completion-20261030-peace-invitation-la/text.tsv",
+      "sha256": "215af41bb9ec4395307523a7278387bcdf2350c563debc5f402287b8875b0b79",
+      "bytes": 129
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/english-completion-20261030-peace-invitation-page/artifact.toml",
+      "sha256": "0d200efaa833f4d875218e40cdf9f7252eb8760c2b74273bf0c3e8840b656609",
+      "bytes": 2380
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/english-completion-20261030-peace-invitation-page/source.pdf",
+      "sha256": "f9b4ff58a75abc23c180637a198f773c9681e48967b90028adbcb8fef71b36da",
+      "bytes": 121403
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/ia-text-pdf-180769e3/artifact.toml",
+      "sha256": "f55f5965ff3b52642a870bc0bb617f0f857e32554ec4f90fe1d0d101d5dc703c",
+      "bytes": 2428
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/passages/english-completion-20261030-peace-invitation.toml",
+      "sha256": "ae876dac416bd73f0192e3fd314acb3857f9835ad12592f6f0776de5537791c4",
+      "bytes": 1451
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-ordinary-apostles-latin/artifact.toml",
+      "sha256": "659aebc4a68bcc184cc4fa14802dbc04feaffa8074b304ef8e9c300b8ea3a17a",
+      "bytes": 1962
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-ordinary-apostles-latin/text.tsv",
+      "sha256": "c898da39031fdc0ccab706274d884c5fb8277fd5d1096968f8ea362f1fcca479",
+      "bytes": 965
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-ordinary-apostles-page1/artifact.toml",
+      "sha256": "ea7c84b60610441c3679163bb3a57f2903bf39c09d347568d7a7ba85c5ab3d78",
+      "bytes": 2153
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-ordinary-apostles-page1/source.pdf",
+      "sha256": "3b16b8bb6958885dfcce614f7bb34f3e91bbc779fe4c911d0fbb3fd410fd81b0",
+      "bytes": 106730
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-ordinary-apostles-latin-publish.toml",
+      "sha256": "a1cd50bbab42e12a68d3a2999818d93bc099c81003c797c484ad106d9602391c",
+      "bytes": 1278
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-ordinary-apostles-latin-verify.toml",
+      "sha256": "095aee289a918fa05a9394c4d1aacdd8089ff6a5b5f57a228bc73338d4b33438",
+      "bytes": 1227
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-ordinary-apostles-english/artifact.toml",
+      "sha256": "091629ee5d7f36ddac1eabfa205d9431b3286d3136e578884a1f14dd7b62a219",
+      "bytes": 2177
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-ordinary-apostles-english/text.tsv",
+      "sha256": "afa44c2416ef5fc374505f27bc2e7e6b797ab57624789cabc59d2d2c6e3ba270",
+      "bytes": 967
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-ordinary-apostles-page2/artifact.toml",
+      "sha256": "4568f3d54dc44e226e3fc81e93a7a8ccff75f2708312ce6d708313a3b92624c7",
+      "bytes": 2245
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-ordinary-apostles-page2/source.pdf",
+      "sha256": "e4a2b34692692aa297afe80d8830793c3c4bec280bb63e1bc69f86dccfce44e8",
+      "bytes": 80127
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/english-completion-20261029-ordinary-apostles-english-publish.toml",
+      "sha256": "12e72580cd8edfa5d6583ea03b3eec655731218cc93937eef66dc0dcd55b3a1c",
+      "bytes": 1260
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/english-completion-20261029-ordinary-apostles-english-verify.toml",
+      "sha256": "0c12bdac0067349c98686763029c4dec78fbf946d9e013238f43f517a3ea4194",
+      "bytes": 1205
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-la/artifact.toml",
+      "sha256": "08b2b8ccfa6b0703fe54b566f8147c93be42db025995296e73c70592872b9591",
+      "bytes": 2750
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-la/text.tsv",
+      "sha256": "c54326753e78c74a0db88e33c938e2e0b3703a1f1c2aaba5ac0e523587063bf8",
+      "bytes": 550
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-pages/artifact.toml",
+      "sha256": "2060ee236b63cc34f5e5a0eda4e1e353bde34fd0b75c8388c153d24f5133808e",
+      "bytes": 2311
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-pages/source.pdf",
+      "sha256": "82ba014aba05e5948c494892990e33bbe35b67b42f1874349512c13c081c3eb9",
+      "bytes": 402728
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-communicantes-common-la/artifact.toml",
+      "sha256": "4563d9f48189cd4db365cb1e1e2a0fb12b9812a10cbf8c2188a51d7121072acf",
+      "bytes": 3019
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-communicantes-common-la/text.tsv",
+      "sha256": "2a07ceacafa17667e2c5d7e371b06c300f495e0d8a787407324460ddca738e9a",
+      "bytes": 673
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-communicantes-common-pages/artifact.toml",
+      "sha256": "33ac600f87d52a3b5b3fff518b19f58b24970371f8b628c9bf94043eeabb4cf2",
+      "bytes": 2276
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-communicantes-common-pages/source.pdf",
+      "sha256": "6fb37010b37f0ad386c2e2104e7594df0814d0a501d0cb51d0681b231de11b33",
+      "bytes": 44933
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-ecce-la/artifact.toml",
+      "sha256": "08590e622b94f70e96036a03c64aca86a960a00be9a94b2ab56afb7ff2949a7c",
+      "bytes": 2344
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-ecce-la/text.tsv",
+      "sha256": "a3cab73275a00e1be80c8c46642c6a746de1bef11c0c56d6b85c04a20c1cbb1b",
+      "bytes": 259
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-ecce-page/artifact.toml",
+      "sha256": "4d04cc79752317f916386ec0ac685d822e182d5808dc3dececc43dae92da4040",
+      "bytes": 2180
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-ecce-page/source.pdf",
+      "sha256": "fd551fe7b0ba168630bf04302df888708f58709a9368746fde8bacfff9a388e1",
+      "bytes": 71627
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-supplices-la/artifact.toml",
+      "sha256": "5951548aa298df8ea4d76c792c39141a9ad41d57338b65a8c613f78964f8e19b",
+      "bytes": 3147
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-supplices-la/text.tsv",
+      "sha256": "bd34c9727a10001f04842878ffb079e2078f0209fd3d36aee470b3a69f03b2f6",
+      "bytes": 432
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-supplices-pages/artifact.toml",
+      "sha256": "232b5596ca1ff0c1b8b4dc23d0c184e6691fd9e1a80f60214e109a9809e9b08e",
+      "bytes": 2396
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-supplices-pages/source.pdf",
+      "sha256": "3a175d49a8d8b140e9a2d2564114b9ef24c39647de1ddf7b48a0c4dc6f6e8985",
+      "bytes": 341986
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-domine-qui-dixisti-old-prayer.toml",
+      "sha256": "dc49ad4b5b9bc855213dbc3662f300d6dd39e29d58c74f7a099ac647b183f1e9",
+      "bytes": 1232
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-ordinary-communicantes-common.toml",
+      "sha256": "5a35c63e8278d931b676c10d83e6013ee73e36d7abb6629cc6de3a48a165096b",
+      "bytes": 1360
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-ordinary-ecce.toml",
+      "sha256": "0490de7bfee31f261e006cfcbbdded2ffbfc1be72990791eb03dca8686d1af42",
+      "bytes": 1190
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-ordinary-supplices.toml",
+      "sha256": "52420ad71a874fc3145b966f589434d462c6acabb5065528f655d64d47a838b5",
+      "bytes": 1399
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-qui-vivis-short-conclusion.toml",
+      "sha256": "3753d5d4721da7b22edd9652c31eb7578b22afa17e9880c5c478286aa2096c31",
+      "bytes": 1284
+    },
+    {
+      "path": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-beati-ad-cenam-la/artifact.toml",
+      "sha256": "9ea277810ce7e1aef0150a8e779a23cced22b19cdbdc4d2aed9ee505dd93cb3d",
+      "bytes": 2494
+    },
+    {
+      "path": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-beati-ad-cenam-la/text.tsv",
+      "sha256": "74cc53dfe96933c28e3e87f004eb40592e468efc586fbf6b770363369fd9a0c0",
+      "bytes": 378
+    },
+    {
+      "path": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-bishop-la/artifact.toml",
+      "sha256": "86a01146337c98748469fbe60deeb212cc448123b485b3875dc70359671faa9f",
+      "bytes": 2474
+    },
+    {
+      "path": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-bishop-la/text.tsv",
+      "sha256": "f0518b2c6e3de4f9c67c9da4cc60b52b395dae36bd0d6c8cdd04054ec645c24d",
+      "bytes": 189
+    },
+    {
+      "path": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-grace-peace-la/artifact.toml",
+      "sha256": "bf51cb8dfa87179f4acbb3240aaede222682e9d429fc075ee3e2e12502866604",
+      "bytes": 2283
+    },
+    {
+      "path": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-grace-peace-la/text.tsv",
+      "sha256": "011831ec8aef16b5c47f5e7df0a3ed383e33e317e82dbe0185f21c6d1afae471",
+      "bytes": 193
+    },
+    {
+      "path": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-trinitarian-la/artifact.toml",
+      "sha256": "5b2e6398cf0a04a92e4cada06573e8bfea3cad9274f3d7a9ed1eb75014d26070",
+      "bytes": 2363
+    },
+    {
+      "path": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-trinitarian-la/text.tsv",
+      "sha256": "1b064cae8a965c287212b5c385871a6d384985d7d7191b0260030e1c721d8bc9",
+      "bytes": 313
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-ancient-frames-en/artifact.toml",
+      "sha256": "21809121e9f28bb4ea5734c01d8ec1f7b509112e921544d5ff8ac7342f8bd915",
+      "bytes": 2468
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-ancient-frames-en/text.tsv",
+      "sha256": "83ebd927f2999d55921a871bfecd79eee13fab46718279ef05d1a2b16f1c927d",
+      "bytes": 807
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-ancient-frames-la/artifact.toml",
+      "sha256": "cc9c34ca0bf54b512b6d6b7e8475225a91931c31337ea0192e3e1c18c9e36dc9",
+      "bytes": 2468
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-ancient-frames-la/text.tsv",
+      "sha256": "84ee5ca584b27a273b339fc13058991161636c487c4b4e06a596c1b7b4ff7181",
+      "bytes": 782
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-kyrie-glosses/artifact.toml",
+      "sha256": "1d61ad0bea13057e3ff33403e3db9136553ef78fb9f5b53ca03a7b9f6d45519c",
+      "bytes": 1735
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-kyrie-glosses/text.tsv",
+      "sha256": "0d1c6bd82d333a5faab5d26c75454d24a0094598c8dc069511282570457f2af9",
+      "bytes": 479
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/english-completion-20261030-ordinary-kyrie-glosses-litany-corroboration.toml",
+      "sha256": "6238ff83ccf772f92f923d8f16f04e74a7469842eacc434b99da52426832b0ad",
+      "bytes": 1063
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/english-completion-20261030-ordinary-kyrie-glosses-parent-fragments.toml",
+      "sha256": "e40495e8241c53e3a698dedd47904c97563ef1fac836c880791c68b037aab4c3",
+      "bytes": 954
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/english-completion-20261030-ordinary-kyrie-glosses-publish.toml",
+      "sha256": "bcafa3fc0a2509421fdaebf0500c2f1577a48a99d4bc8f2271c020ac2dcb7eb6",
+      "bytes": 890
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/english-completion-20261030-ordinary-kyrie-glosses-source-page.toml",
+      "sha256": "1ad2967e4d1e3dbd71722fbd0b4d0689072b9840ff95c885a9f317863cdffb8a",
+      "bytes": 995
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261030-kyrie-sixfold-study-arrangement/editions/2026-10-30-study-arrangement/artifacts/sixfold-english-gloss-arrangement/artifact.toml",
+      "sha256": "10b7a6adbd9ba3051ed887c43fbbf6ce3113b41fb341eb3c2646b20230b2b4c5",
+      "bytes": 2129
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261030-kyrie-sixfold-study-arrangement/editions/2026-10-30-study-arrangement/artifacts/sixfold-english-gloss-arrangement/text.tsv",
+      "sha256": "0eace201927e0b1f690657f8618b339ee46c96512fd001bf9048518af7c3bc8d",
+      "bytes": 1107
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261030-kyrie-sixfold-study-arrangement/editions/2026-10-30-study-arrangement/edition.toml",
+      "sha256": "60d9c8abcf22b0d9e24db0cc9194c71e26bd19c82b152d47f545b72834116ee3",
+      "bytes": 709
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261030-kyrie-sixfold-study-arrangement/editions/2026-10-30-study-arrangement/passages/sixfold-english-gloss-arrangement-publish.toml",
+      "sha256": "fd32b795940c6dc7f0d9b2fc069bdd65affe087fb4f6dc3409c4bfe272a0fe71",
+      "bytes": 939
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261030-kyrie-sixfold-study-arrangement/work.toml",
+      "sha256": "68afe003e2eed7f802ae9c3b649b9f1deca6aa9cd6f039426ba31994706c6fdf",
+      "bytes": 951
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/artifacts/common-full-names-conclusion-omitted-study-en/artifact.toml",
+      "sha256": "c6a1bf3a61413bbbaf46db8f619e69fe413062fd8350e3b2e57f3b344d7696d5",
+      "bytes": 4727
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/artifacts/common-full-names-conclusion-omitted-study-en/text.tsv",
+      "sha256": "72d5e9a3546b78cdef41bc61180c2c6453b930698c78c49700e787233518c882",
+      "bytes": 1611
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/edition.toml",
+      "sha256": "24c15362a2d6f48bf641cfafec1b173cf1f653ed4f4c202138bf3a4c9ac5dab2",
+      "bytes": 917
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/work.toml",
+      "sha256": "bc7dc9922d69539f210999e749cc6143e3940f93b49bb9eb7bb9e6cdcf06d6a3",
+      "bytes": 1306
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/artifacts/ancient-frames-study-en/artifact.toml",
+      "sha256": "1ad4d5545d325f64d25dbe90f0495a03efb059648384114259420be1a3f4ae5f",
+      "bytes": 2554
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/artifacts/ancient-frames-study-en/text.tsv",
+      "sha256": "f21219d72d3f0fb36b021f6ad1875d22f2c35d2af77f44e26f77baf750490037",
+      "bytes": 2063
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/edition.toml",
+      "sha256": "ebadd5197a68f833a4b1e81395291f37bac5f40c1d76a150303b55dde0312b12",
+      "bytes": 835
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/work.toml",
+      "sha256": "e42d2084d04d734104da56410252bc4c4105ba00a9af7b376e082d45b92ba378",
+      "bytes": 780
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/artifacts/domine-qui-dixisti-study-en/artifact.toml",
+      "sha256": "ce444b2b7a09e3349fbd3979567303978e80e08f007226a270ca4b7f11feaaed",
+      "bytes": 4060
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/artifacts/domine-qui-dixisti-study-en/text.tsv",
+      "sha256": "dd4e3f58bf11acba57c5247b582cc112728bf3d0b74ab9eef907e8a5b9ecf859",
+      "bytes": 1108
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/edition.toml",
+      "sha256": "e5adf166015ca1558db3908b98a274b97e3ad6ff1c4c3b12c5491d9aee243734",
+      "bytes": 914
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/work.toml",
+      "sha256": "671f06e3165103bcd79493d5e6575e520a677618af5eb19bd662b192e8d2b5ce",
+      "bytes": 966
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/editions/2026-10-30-study-english/artifacts/peace-invitation-study-en/artifact.toml",
+      "sha256": "0d34a008b0f0eaea22252bb64b0f7b7bb4c574366d0631fe2c987b228d14ce5c",
+      "bytes": 1958
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/editions/2026-10-30-study-english/artifacts/peace-invitation-study-en/text.tsv",
+      "sha256": "171a9fbbf2026f6385526bf17140a42d6f62dd7f9245eb72c3d961cf850a8d3f",
+      "bytes": 101
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/editions/2026-10-30-study-english/edition.toml",
+      "sha256": "4de82672927f53f9d5ec1b5203f23100f85d84b839eb2db6f3860cbb219e156b",
+      "bytes": 781
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/work.toml",
+      "sha256": "cf0b4e79f7f564711a6f5948962a46ef06ac6390acde763c9fc5ead0f3dd8208",
+      "bytes": 770
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/editions/2026-10-30-study-english/artifacts/supplices-body-study-en/artifact.toml",
+      "sha256": "787ef5eab26e3e2ceda245fe1caa3963f1d822520aa59afed97ade59ad802672",
+      "bytes": 2254
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/editions/2026-10-30-study-english/artifacts/supplices-body-study-en/text.tsv",
+      "sha256": "041ebf5a31a4b58b95958f9d08d222bd16b9b92576fe93b420a037a3e7e9f25d",
+      "bytes": 675
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/editions/2026-10-30-study-english/edition.toml",
+      "sha256": "7521d51f748bc6060e6bdfe3db5a2afac6e48db274b77538e90e96a4a79cb4e8",
+      "bytes": 776
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/work.toml",
+      "sha256": "d9df20c2314ed9d466e9af088a301b7b2cdde26f87086dab304d08dcf48c3535",
+      "bytes": 767
+    }
+  ],
+  "canonical_inventory_and_producer": [
+    {
+      "path": "src/sources/inventories/postconciliar-ordo-missae-v1.toml",
+      "sha256": "c9babb91ea80c4b1fb192693a8c2027c7fce114dfea4ab23eb149f872990246e",
+      "bytes": 172266
+    },
+    {
+      "path": "tools/mass-ordinary",
+      "sha256": "c0cfd8354d72a8a2be29020a2cc0299fce21b27bf6576ac20591d6bfa1d3dcb9",
+      "bytes": 204893
+    }
+  ],
+  "counts": {
+    "elements": 70,
+    "languages": [
+      {
+        "absent": 35,
+        "elements": 70,
+        "held": 35,
+        "lang": "en",
+        "missing": 35
+      },
+      {
+        "absent": 38,
+        "elements": 70,
+        "held": 32,
+        "lang": "la",
+        "missing": 38
+      }
+    ],
+    "relation_offers": [
+      {
+        "collation": "uncollated",
+        "count": 26,
+        "lang": "en",
+        "relation": "antecedent"
+      },
+      {
+        "collation": "not-applicable",
+        "count": 9,
+        "lang": "en",
+        "relation": "own"
+      },
+      {
+        "collation": "collated",
+        "count": 5,
+        "lang": "la",
+        "relation": "antecedent"
+      },
+      {
+        "collation": "uncollated",
+        "count": 27,
+        "lang": "la",
+        "relation": "antecedent"
+      }
+    ],
+    "witness_offers": [
+      {
+        "acknowledgement": null,
+        "caution": "The English of an 1861 lay hand missal, not the approved 2011 English and never an altar book. It supplies only explicitly joined historical antecedents beside the older Latin already carried here. Its own spelling, printed cues, abbreviations, speaker allocation and optional-text configuration are preserved; the historical Our Father has an additional priest Amen and the Agnus Dei retains continuation asterisks. Every English body remains uncollated against approved target English. Nothing here may be used for recitation.",
+        "held": 23,
+        "label": "Historical English antecedent (NOT the approved Roman Missal English): The Roman Missal translated into the English language for the use of the laity (Philadelphia: Eugene Cummiskey, 1861)",
+        "lang": "en",
+        "rights": "public-domain",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      {
+        "acknowledgement": null,
+        "caution": "New AI-authored study English from the individually identified public-domain source spans. Not approved for liturgical use or recitation; no human review is claimed.",
+        "held": 5,
+        "label": "Triptych study English of ancient source fragments (not approved liturgical English)",
+        "lang": "en",
+        "rights": "project-created",
+        "source_id": "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
+      },
+      {
+        "acknowledgement": null,
+        "caution": "The complete historical human English of the Apostles Creed in Bute's 1908 Roman Breviary, not approved2011 Roman Missal English. Source wording, capitals, pronouns, pointing and complete Amen ending remain; typographic small capitals are represented as uppercase. This study witness does not clear or replace the approved English and is not for recitation.",
+        "held": 1,
+        "label": "Historical English antecedent (NOT approved Missal English): Bute Roman Breviary, 1908",
+        "lang": "en",
+        "rights": "public-domain",
+        "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+      },
+      {
+        "acknowledgement": null,
+        "caution": "An independently checked historical English witness of the complete printed threefold Agnus Dei. The old source actor and ceremonial context are not assigned to the postconciliar setting. No approved translation, authenticated complete2008 identity or recitation authority is claimed.",
+        "held": 1,
+        "label": "Complete historical English (Lasance, 1945), not approved postconciliar Missal English",
+        "lang": "en",
+        "rights": "public-domain",
+        "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+      },
+      {
+        "acknowledgement": null,
+        "caution": "Six study utterances arranged from two exact historical English glosses. The 1861 Mass itself is ninefold and does not print this complete arrangement. Its older P./R. actors are not inherited. This is not approved English or a text for recitation.",
+        "held": 1,
+        "label": "Triptych sixfold study arrangement of 1861 Kyrie glosses (not approved English)",
+        "lang": "en",
+        "rights": "project-created",
+        "source_id": "edition.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030"
+      },
+      {
+        "acknowledgement": null,
+        "caution": "Common form only, with full saints list and omitted conclusion; seasonal proper forms remain unfilled. New AI-authored study English from the separately identified source body and exact Joseph clause. No approved translation, human review, whole2008 identity or recitation authority is claimed.",
+        "held": 1,
+        "label": "Triptych study English of common Communicantes (not approved Missal English)",
+        "lang": "en",
+        "rights": "project-created",
+        "source_id": "edition.triptych.postconciliar-common-communicantes-study-english-20261030.study-english-20261030"
+      },
+      {
+        "acknowledgement": null,
+        "caution": "New AI-authored study English of a checked old main prayer, one explicit communal possessive revision and a separately witnessed ancient short conclusion. Not approved for liturgical use or recitation; no human review or complete2008target grade is claimed.",
+        "held": 1,
+        "label": "Triptych study English with explicit communal revision (not approved liturgical English)",
+        "lang": "en",
+        "rights": "project-created",
+        "source_id": "edition.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030"
+      },
+      {
+        "acknowledgement": null,
+        "caution": "New AI-authored English from the independently checked1712 invitation only. Not approved for liturgical use or recitation; no human review is claimed.",
+        "held": 1,
+        "label": "Triptych study English of the historical peace invitation (not approved liturgical English)",
+        "lang": "en",
+        "rights": "project-created",
+        "source_id": "edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030"
+      },
+      {
+        "acknowledgement": null,
+        "caution": "New AI-authored study English from the independently checked public-domain 1922 prayer-body prefix, without its separate old conclusion. No approved English or human review is claimed. Not approved for liturgical use or recitation.",
+        "held": 1,
+        "label": "Triptych study English of the historical Supplices body (not approved liturgical English)",
+        "lang": "en",
+        "rights": "project-created",
+        "source_id": "edition.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030"
+      },
+      {
+        "acknowledgement": null,
+        "caution": "NOT the Latin of the Missale Romanum. The controlling 2008 Latin is a work of the Holy See, is under copyright, is not distributable on this surface, and is not served under this witness; no element here claims that the 1861 words are that book's text. The repository does hold and has read a verified 2002 Ordo witness and the official bounded 2008 variation list, but that evidence does not establish every antecedent identity. What is here is the facing Latin column of an 1861 Philadelphia lay hand missal - never an altar book, never an approved liturgical translation, and pre-1955 in its rubrics and its discipline - which prints the ancient prayers this Order of Mass received. It is joined element by element, and only where an element's Latin is that ancient prayer; where the reform composed, recast or rearranged, nothing is carried and the element says why. Its orthography and its misprints are its own and are carried as printed: justum for iustum, Jesu for Iesu, Et expecto for Et exspecto, the ae- and oe-ligatures, and nodie for hodie at In spiritu humilitatis are the 1861 printer's and not the Holy See's. Every element carrying Latin states beside its own words which prayer of that book it is, at which printed page and Internet Archive leaf, which accidents it carries, and whether its identity with the controlling edition has been established or is so far only asserted. Nothing here may be used for recitation.",
+        "held": 24,
+        "label": "Antecedent Latin (NOT the Missale Romanum's text): the facing Latin column of The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)",
+        "lang": "la",
+        "rights": "public-domain",
+        "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+      },
+      {
+        "acknowledgement": null,
+        "caution": "Independently identified historical source wording with explicit selections and source spelling. This is not an authenticated complete 2008 target witness or approved liturgical English, and is not for recitation.",
+        "held": 4,
+        "label": "Historical Latin antecedent: Clementine Vulgate (eBible latVUC), not the controlling 2008 Missal",
+        "lang": "la",
+        "rights": "public-domain",
+        "source_id": "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+      },
+      {
+        "acknowledgement": null,
+        "caution": "A checked historical printing of the ancient prayer, with source spelling and explicit bounded source selection. It is not an authenticated complete 2008 target witness and is not a text for recitation.",
+        "held": 2,
+        "label": "Historical Latin antecedent (Mame, 1922), not the controlling 2008 Missal",
+        "lang": "la",
+        "rights": "public-domain",
+        "source_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+      },
+      {
+        "acknowledgement": null,
+        "caution": "An independently checked complete old invitation, from a different rite. No old response, rubrics or assignment is transferred. No complete2008 collation or recitation authority is claimed.",
+        "held": 1,
+        "label": "Historical Ambrosian Latin (Milan,1712), not a controlling2008 exemplar",
+        "lang": "la",
+        "rights": "public-domain",
+        "source_id": "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+      },
+      {
+        "acknowledgement": null,
+        "caution": "The complete ancient Apostles Creed from an 1888 Roman Breviary, not the controlling 2008 Missal. Acute accents are explicitly omitted in this normalized study transcription; source ligatures, j, capitals and punctuation remain. Source verification does not establish authenticated complete2008 identity or permission to recite from this finding aid.",
+        "held": 1,
+        "label": "Historical Latin antecedent (NOT the controlling Missal): Roman Breviary, Pustet, 1888",
+        "lang": "la",
+        "rights": "public-domain",
+        "source_id": "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+      }
+    ]
+  },
+  "authority_and_reviews": [
+    {
+      "cohort": "supplices",
+      "candidate": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/central/supplices/candidate.json",
+        "sha256": "8e29f33da419ed985c101115d4fed8ccc4050c92b9028e35ee766f4061f8674d",
+        "bytes": 5577
+      },
+      "independent_acceptance": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/supplices-review/acceptance.json",
+        "sha256": "b021743f7287a52e4f3bfa1493ff4e8d4cc256101ece13d4a831c504d8dec937",
+        "bytes": 4522
+      }
+    },
+    {
+      "cohort": "apostles",
+      "candidate": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogues/apostles-install/candidate.json",
+        "sha256": "02e9c64a3a96f898627c4e9f550ad89bee844ea4f3e4ec19b54cbda447e575ba",
+        "bytes": 4827
+      },
+      "independent_acceptance": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogue-review/ACCEPTANCE-apostles-install-v1.json",
+        "sha256": "24a1b23c726d0da3612741d6c9d527c66238e4bc4d2dbb627c593c06695e9ec4",
+        "bytes": 7795
+      }
+    },
+    {
+      "cohort": "offerte",
+      "candidate": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/peace-prayers/offerte-candidate/candidate.json",
+        "sha256": "310908c1049c67aa08e73f887d7e8e26bd8df82cd4ecfabd35e7618ee166f932",
+        "bytes": 7689
+      },
+      "independent_acceptance": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogue-review/ACCEPTANCE-offerte-v2.json",
+        "sha256": "6a036020c8936ea9ef24d95148c30ca626c03025c0e66d025f6b71390033caca",
+        "bytes": 7233
+      }
+    },
+    {
+      "cohort": "ancient-source-frames",
+      "candidate": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames/candidate.json",
+        "sha256": "167adbfd5fc8b1d3c3ce58cad858ae5c0ee124c19e5707850f1ee20ff9c48d74",
+        "bytes": 46050
+      },
+      "independent_acceptance": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/REVIEW.json",
+        "sha256": "f1de77567e87af6e34cc046e1fcf09d02eb95b5ffa6af10792e5326121ec8722",
+        "bytes": 13015
+      }
+    },
+    {
+      "cohort": "ancient-consumer-shape",
+      "candidate": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames/integration/receipt.json",
+        "sha256": "244a94b8e82955cd96dc6cb542abb6fbd37023d15e794b5b4cd7f68fc314b013",
+        "bytes": 11960
+      },
+      "independent_acceptance": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/CONSUMER-SHAPE-ACCEPTANCE.json",
+        "sha256": "8bae9145b553d87cda60c346d7daa42c67c0c1a6767a722bab6af0efaf59ec47",
+        "bytes": 9798
+      }
+    },
+    {
+      "cohort": "bishop-activation",
+      "candidate": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames/bishop-activation/candidate.json",
+        "sha256": "084e7dbbae2b4b2dfced4ef550945ce0858d84d7f6a8099549471e6a60322bb3",
+        "bytes": 928
+      },
+      "independent_acceptance": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/BISHOP-ACTIVATION-ACCEPTANCE.json",
+        "sha256": "4e21cd3eb94beee93c1df9c95d8fb14bffa2638887db8e27a3e89c4882b51281",
+        "bytes": 12324
+      }
+    },
+    {
+      "cohort": "kyrie",
+      "candidate": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogues/dialogue-install/kyrie-sixfold/candidate.json",
+        "sha256": "c8132250e566db632b97d91d4d0e41f2270e5b55a7681882782c00ae3a4b7817",
+        "bytes": 5350
+      },
+      "independent_acceptance": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogue-review/ACCEPTANCE-kyrie-v2.json",
+        "sha256": "5b9349aae5899d15c174997f763fe25b5f659ac85741fcb15d9d8c524d8597dd",
+        "bytes": 3913
+      }
+    },
+    {
+      "cohort": "domine",
+      "candidate": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/peace-prayers/domine-candidate/candidate.json",
+        "sha256": "9c08a928e70756eabc218bbb2575c64f73d487e53197f928440504d6feb6f3ed",
+        "bytes": 10565
+      },
+      "independent_acceptance": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogue-review/domine-review/ACCEPTANCE-private-v1.json",
+        "sha256": "6dd4666971c2324dcd088a03d58b5ff0cc43b012a472c2aafae601430bced117",
+        "bytes": 9038
+      }
+    },
+    {
+      "cohort": "communicantes-common",
+      "candidate": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/common-communicantes-install/candidate.json",
+        "sha256": "0fa7dd30f67043f294c96dad2900c5856d387548a30e205350ed95a5a4dd2a5c",
+        "bytes": 10896
+      },
+      "independent_acceptance": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/common-communicantes/REVIEW.json",
+        "sha256": "83833e1a48bcb8ea99ad32db48819e08cb9a93cbaba33010438ac8375d3974e0",
+        "bytes": 14352
+      }
+    },
+    {
+      "cohort": "agnus-complete",
+      "candidate": {
+        "path": ".scratch/postconciliar-ordinary-20261029/second-pass/agnus-complete/candidate.json",
+        "sha256": "af9f0c6db3b566d4f81264cec96b111eafa149501fa958c440a13b4d62dcb8e6",
+        "bytes": 6514
+      },
+      "independent_acceptance": {
+        "path": ".scratch/english-ordinary-20261029/pc-agnus-source-review/review.json",
+        "sha256": "2807558099dae154ae5343392543fb7b5e0a4ff4efb677e52fbe3c0da52fed51",
+        "bytes": 5119
+      }
+    }
+  ],
+  "root_rights_adoption": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/domine-rights-adoption.json",
+    "sha256": "6bfe83b76107281005c660733522e4c077f52b225b79418b04bf9fcd07f98381",
+    "bytes": 5742
+  },
+  "common_latin_clause_authority": {
+    "path": "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+    "sha256": "55080a0b002e6045387408025b5fd5e3a3c7b10b545fa5593e097d7ab36146c5",
+    "bytes": 58757
+  },
+  "additional_adopted_metadata_receipts": [
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/peace-prayers/domine-candidate/adoption-metadata-successor.json",
+      "sha256": "ee5168f239f9569be93522937fee8b5a178147d1d8f20bb5d264d1e6f84b57b6",
+      "bytes": 5100
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/common-communicantes-install/metadata-successor-receipt.json",
+      "sha256": "082e10b255a1e86169fc9bb957ec9da296b0296cae5711f906c030491d548945",
+      "bytes": 2230
+    }
+  ],
+  "old_parent_refinements": {
+    "ritus-initiales/introitus": [
+      "ritus-initiales/signum-crucis"
+    ],
+    "ritus-initiales/salutatio": [
+      "ritus-initiales/greeting-trinitarian",
+      "ritus-initiales/greeting-grace-peace",
+      "ritus-initiales/greeting-lord",
+      "ritus-initiales/greeting-response"
+    ],
+    "ritus-communionis/ecce-agnus-dei": [
+      "ritus-communionis/ecce-agnus",
+      "ritus-communionis/beati-ad-cenam",
+      "ritus-communionis/domine-non-sum-dignus"
+    ]
+  },
+  "additional_bishop_child": "ritus-initiales/greeting-bishop",
+  "prior20_english_deliberate_replacement": {
+    "target": "ritus-communionis/agnus-dei",
+    "receipt": {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/agnus-complete/installed.json",
+      "sha256": "63a011738b224732fccddc1210e444841441f91052b6202c12add56cf5e9612b",
+      "bytes": 688
+    },
+    "old_source_artifacts_unchanged": true,
+    "entire_latin_block_unchanged": true
+  },
+  "september8_exact_seat_test": {
+    "path": ".scratch/postconciliar-ordinary-20261029/second-pass/checkpoint-35-en/sept8-seating-check.json",
+    "sha256": "a43c9ae062527b823182c792f7ecdfd8e9669725fe13d84419ff7de753c15f98",
+    "bytes": 368
+  },
+  "pending_excluded": [
+    "Wordframes",
+    "quiet4bodies",
+    "privateCommunion2",
+    "QuiPridie",
+    "commonclosing",
+    "dismissals",
+    "bishopblessingprefix",
+    "Communiondistribution",
+    "Liberaacclamation",
+    "penitentialcores"
+  ],
+  "generated_pc_payload": {
+    "path": "src/web/data/structure/ordinary/postconciliar.json",
+    "sha256": "1935141cdffc8084e214822a4b6ca7f2eb9ac87ffef47868b9b2e68a83fd934f",
+    "bytes": 235245
+  },
+  "source_tests_status": "Focused20 passed; stale same-cohort oracle updates separately pending and not granted by this source seal."
+}

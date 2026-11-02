@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.salesian-society.bollettino-salesiano.1892-april-issue-4.queenship-hymn-stanza-text-20261029"
+edition_id = "edition.salesian-society.bollettino-salesiano.1892-april-issue-4"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Complete15wordreceivedLatinHymnstanza printed in the1892public-domainissue, independentlyreadonitsactualpageimage. No1954or1962targetbodyorarrangement is included."
+rights_jurisdiction = "United States"
+provenance = "Read from wholeartifactpage13/printed77leftcolumntop, with sourceparagraph context. Whole Latinquotation preserved, not merely the matchingtail. Title/issueidentity read onwholepage1."
+retrieved = "2026-10-29"
+sha256 = "c7e703200c4a0e4eb35ea5eed8395c3c45798967d0fc7969f39915e9704c2ae1"
+byte_size = 96
+path = "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/artifacts/queenship-hymn-stanza-text-20261029/stanza.txt"
+derived_from = "artifact.salesian-society.bollettino-salesiano.1892-april-issue-4.publisher-whole-pdf-d7c7795c"
+transformation = "Join printed wraps and remove line-ending hyphenation only; preserve Latinwords, punctuation and capitalization of the receivedstanza. OCRnotusedaswordingauthority."
+indexable = true
+encoding = "utf-8"

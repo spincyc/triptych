@@ -1,0 +1,124 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.004.lacrimabili-native-spacing-da15906c6278",
+      "body_tex": "undated-acta-aas-004-archive-aas-004-046-a0da0cad-la/undated-acta-aas-004-archive-aas-004-046-a0da0cad-la.body.tex",
+      "changed": true,
+      "id": "acta.aas.004.archive.aas.004.046",
+      "language": "la",
+      "pages": 2,
+      "pdf": "undated-acta-aas-004-archive-aas-004-046-a0da0cad-la/undated-acta-aas-004-archive-aas-004-046-a0da0cad-la.pdf",
+      "pdf_sha256": "980c3fed5a66cc040611d837e5aa1103c3006bdb688034b8b7001bd3ae5598b4",
+      "physical_line_ranges": [
+        [
+          1,
+          163
+        ]
+      ],
+      "render_revision": "2026-10-30T06:03:16Z",
+      "segment_id": "segment.acta-papal-archives.aas.004.archive.aas.004.046.native-spacing-2026-10-30",
+      "source_sha256": "da15906c6278c06e66708b94a9e7607417549b335acb3d8e015d1b82ad1b4aa3",
+      "status": "compiled",
+      "stem": "undated-acta-aas-004-archive-aas-004-046-a0da0cad-la",
+      "tex": "undated-acta-aas-004-archive-aas-004-046-a0da0cad-la/undated-acta-aas-004-archive-aas-004-046-a0da0cad-la.tex",
+      "text_fidelity": {
+        "layout_hyphens": 44,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 2,
+        "source_characters": 9021,
+        "source_first_page": 1,
+        "source_last_page": 2,
+        "source_normalized_characters": 7726,
+        "status": "pass"
+      },
+      "warnings": []
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.034.bohemiae-native-spacing-notes-5ebd4c3f1254",
+      "body_tex": "1901-08-20-acta-ass-034-ass-034-l012846-4e8c16c2-la/1901-08-20-acta-ass-034-ass-034-l012846-4e8c16c2-la.body.tex",
+      "changed": true,
+      "id": "acta.ass.034.ass-034-l012846",
+      "language": "la",
+      "pages": 2,
+      "pdf": "1901-08-20-acta-ass-034-ass-034-l012846-4e8c16c2-la/1901-08-20-acta-ass-034-ass-034-l012846-4e8c16c2-la.pdf",
+      "pdf_sha256": "ef5b60185786fb97439ea286994d7f4120fc80a0fb3a6e2714842e3e1251999f",
+      "physical_line_ranges": [
+        [
+          1,
+          121
+        ]
+      ],
+      "render_revision": "2026-10-30T06:03:16Z",
+      "segment_id": "segment.acta-papal-archives.ass.034.ass-034-l012846.native-spacing-2026-10-30.note-blocks",
+      "source_sha256": "5ebd4c3f12542382676aeb8e85b7dbec106ff44b9a809766c1a0f01ab3fbdf21",
+      "status": "compiled",
+      "stem": "1901-08-20-acta-ass-034-ass-034-l012846-4e8c16c2-la",
+      "tex": "1901-08-20-acta-ass-034-ass-034-l012846-4e8c16c2-la/1901-08-20-acta-ass-034-ass-034-l012846-4e8c16c2-la.tex",
+      "text_fidelity": {
+        "layout_hyphens": 24,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 2,
+        "source_characters": 5988,
+        "source_first_page": 1,
+        "source_last_page": 2,
+        "source_normalized_characters": 5081,
+        "status": "pass"
+      },
+      "warnings": []
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.034.eucharistia-native-spacing-notes-6655dba35496",
+      "body_tex": "1902-05-28-acta-ass-034-ass-034-l025902-0165ffbc-la/1902-05-28-acta-ass-034-ass-034-l025902-0165ffbc-la.body.tex",
+      "changed": true,
+      "error": "terminal apparatus creates a page after the complete source body",
+      "id": "acta.ass.034.ass-034-l025902",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          600
+        ]
+      ],
+      "render_revision": "2026-10-30T06:03:16Z",
+      "segment_id": "segment.acta-papal-archives.ass.034.ass-034-l025902.native-spacing-2026-10-30.note-blocks",
+      "source_sha256": "6655dba354966b066d2ef52ce413e7328eadddfe030b03a17d66cfaf7b83a95c",
+      "status": "failed",
+      "stem": "1902-05-28-acta-ass-034-ass-034-l025902-0165ffbc-la",
+      "tex": "1902-05-28-acta-ass-034-ass-034-l025902-0165ffbc-la/1902-05-28-acta-ass-034-ass-034-l025902-0165ffbc-la.tex"
+    }
+  ],
+  "errors": [
+    {
+      "error": "terminal apparatus creates a page after the complete source body",
+      "id": "acta.ass.034.ass-034-l025902",
+      "language": "la"
+    }
+  ],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "08f531b9393e5282448df3e0094190c6a7c59736d002bf74a3dce889a47d76bf",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T06:03:16Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 2,
+    "failed": 1,
+    "selected": 3
+  }
+}

@@ -1,0 +1,409 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+  "documents": [
+    {
+      "id": "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+      "language": "en",
+      "pdf_sha256": "e356647f88f268cf9cb080d0ca858d661ff039049e7d7d0c96a45bc0527efcf0",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            3
+          ],
+          "description": "Page 3 is sparse but retains a continuing source exhortation, blessing, dated closing and Pius X subscription before project apparatus. Quoted ellipses in the source body are retained rather than presented as a project omission. No historical footnote occurs in this identified constituent, as the source note states."
+        }
+      ],
+      "limitations": "Visual layout and source-note-separation review only. Native source images, wording completeness, OCR accuracy, translation equivalence, provenance and rights were not independently certified in this lane. No word-for-word collation or independent AI translation review was performed. Contact-sheet inspection covers every page; full-size inspection is limited to the pages explicitly listed.",
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-15.md",
+      "report_sha256": "b8beecdfb277f5a2bec23e57529e474253b8a6588b39731f3606157a2365a5b3"
+    },
+    {
+      "id": "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+      "language": "en",
+      "pdf_sha256": "5a64d73a84aa7e5d1be5b42b813d6f8f2e9a7de019ad342bda8d508c5daa2fc0",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            2
+          ],
+          "description": "The solid square before 'were quite different' is literal U+25A0 in the rendered body input (PapalSymbolFont), also present in extracted PDF text; it is not missing-font tofu. The remaining words are readable. The OCR subscription 'Pros PP.X.' is retained and specifically qualified in the source note. Dated closing and subscription precede the terminal rule."
+        }
+      ],
+      "limitations": [
+        "Layout review only: no whole-source image collation, translation-accuracy review, rights certification, source-admission decision, full extracted-text fidelity audit, font/metadata audit, or installed-byte verification was performed in this lane. Historical wording/OCR and source identity are subject to the independent source review."
+      ],
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-16.md",
+      "report_sha256": "d7841802426b896c8ce378158ee8214cf7337bf9c0c14ac4817c244f9254f8fa"
+    },
+    {
+      "id": "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+      "language": "en",
+      "pdf_sha256": "ee952c1cb6d95c31d035c17c271311112d264692da8858a5bea6704f861b9349",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "The two historical note blocks are visually separate from body paragraphs. The note-6 asterisk and note-7 label/marker corruption are retained and specifically explained in the terminal source note; no modern numbering has been invented."
+        },
+        {
+          "severity": "info",
+          "pages": [
+            3
+          ],
+          "description": "The closing, dated clause and subscription are retained in the left column. The short common rights colophon alone flows to the top of the right column on that same source-bearing page; no extra page results."
+        }
+      ],
+      "limitations": [
+        "Layout review only: no whole-source image collation, translation-accuracy review, rights certification, source-admission decision, full extracted-text fidelity audit, font/metadata audit, or installed-byte verification was performed in this lane. Historical wording/OCR and source identity are subject to the independent source review."
+      ],
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-16.md",
+      "report_sha256": "d7841802426b896c8ce378158ee8214cf7337bf9c0c14ac4817c244f9254f8fa"
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-24111919-paterno-iam-diu.catholic-mind-1920-01-22-english",
+      "language": "en",
+      "pdf_sha256": "abe4866c361b5f93d65f5cdee48a34352683b8cdc9f8a933852367ff24c8965a",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Page 2 is sparse but retains the continuing source statement about the contribution, blessing, dated closing and Benedict XV subscription before the ruled project apparatus. The retained OCR spelling of the subscription and divided words is qualified; this is not an apparatus-only page."
+        }
+      ],
+      "limitations": "Visual layout and source-note-separation review only. Native source images, wording completeness, OCR accuracy, translation equivalence, provenance and rights were not independently certified in this lane. No word-for-word collation or independent AI translation review was performed. Contact-sheet inspection covers every page; full-size inspection is limited to the pages explicitly listed.",
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-15.md",
+      "report_sha256": "b8beecdfb277f5a2bec23e57529e474253b8a6588b39731f3606157a2365a5b3"
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die.catholic-mind-1921-08-22-english",
+      "language": "en",
+      "pdf_sha256": "458c8f829f84756b897d96859c0ce87a4fab41f25f8f7cffcc1313ee425b22d7",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3
+          ],
+          "description": "The historical section captions remain readable short blocks. On page 3 the source body, blessing, date and subscription finish in the left column; the compact terminal source apparatus begins below a rule and continues at the top of the right column in ordinary column order. This does not create a separate apparatus page."
+        }
+      ],
+      "limitations": "Visual layout and source-note-separation review only. Native source images, wording completeness, OCR accuracy, translation equivalence, provenance and rights were not independently certified in this lane. No word-for-word collation or independent AI translation review was performed. Contact-sheet inspection covers every page; full-size inspection is limited to the pages explicitly listed.",
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-15.md",
+      "report_sha256": "b8beecdfb277f5a2bec23e57529e474253b8a6588b39731f3606157a2365a5b3"
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.catholic-mind-1921-07-08-english",
+      "language": "en",
+      "pdf_sha256": "e87e4555673ec8a2f67afb9c765bbc463f3beb75f1a995dbd22fba680b9a5f5f",
+      "pages": 4,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            4
+          ],
+          "description": "The final page uses only the left column, retaining substantive body continuation, blessing and papal subscription before the apparatus. The source note explicitly discloses that this printed witness has no dating clause; the compact identification still gives the act date."
+        }
+      ],
+      "limitations": [
+        "Layout review only: no whole-source image collation, translation-accuracy review, rights certification, source-admission decision, full extracted-text fidelity audit, font/metadata audit, or installed-byte verification was performed in this lane. Historical wording/OCR and source identity are subject to the independent source review."
+      ],
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-16.md",
+      "report_sha256": "d7841802426b896c8ce378158ee8214cf7337bf9c0c14ac4817c244f9254f8fa"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-01091883-supremi-apostolatus-officio.1883-irish-ecclesiastical-record-english",
+      "language": "en",
+      "pdf_sha256": "0a47dfb9b624eea4b7fa666a138044c2e1adc6a15dffd1987fcc7e2bfef56b7a",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            3
+          ],
+          "description": "The bracketed historical editorial note follows the page 3 subscription as a distinct block and remains above the rule separating project apparatus. The inherited 18S8 date and XIH subscription are visible and expressly disclosed by the source note; this review does not correct or certify them."
+        }
+      ],
+      "limitations": "Visual layout and source-note-separation review only. Native source images, wording completeness, OCR accuracy, translation equivalence, provenance and rights were not independently certified in this lane. No word-for-word collation or independent AI translation review was performed. Contact-sheet inspection covers every page; full-size inspection is limited to the pages explicitly listed.",
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-15.md",
+      "report_sha256": "b8beecdfb277f5a2bec23e57529e474253b8a6588b39731f3606157a2365a5b3"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-03081881-licet-multa.1881-10-dublin-review-english",
+      "language": "en",
+      "pdf_sha256": "4d3d55640dde7091efd59ff3f5f23655a9cd1e8a3f661444c52290ffda6ba993",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "The two columns remain readable with a clear gutter and ordinary continuation. Page 2 retains the source ending, blessing, dated closing and Leo XIII subscription above the ruled project apparatus. Inherited OCR spelling and word divisions are qualified in that apparatus."
+        }
+      ],
+      "limitations": "Visual layout and source-note-separation review only. Native source images, wording completeness, OCR accuracy, translation equivalence, provenance and rights were not independently certified in this lane. No word-for-word collation or independent AI translation review was performed. Contact-sheet inspection covers every page; full-size inspection is limited to the pages explicitly listed.",
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-15.md",
+      "report_sha256": "b8beecdfb277f5a2bec23e57529e474253b8a6588b39731f3606157a2365a5b3"
+    },
+    {
+      "id": "papal.pius-ix.enciclica-ubi-primum-2-febbraio-1849",
+      "language": "en",
+      "pdf_sha256": "1f2272a2e8a89e743cd1bea4637a197a0e7fbc58ffe7988c65d148464c20eafd",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Source OCR distortions and broken words are conspicuous but remain within the disclosed uncorrected historical transcription. The final dated clause is visible at the top of the right column before the source note; the witness's lack of a separate final subscription is disclosed."
+        }
+      ],
+      "limitations": [
+        "Layout review only: no whole-source image collation, translation-accuracy review, rights certification, source-admission decision, full extracted-text fidelity audit, font/metadata audit, or installed-byte verification was performed in this lane. Historical wording/OCR and source identity are subject to the independent source review."
+      ],
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-16.md",
+      "report_sha256": "d7841802426b896c8ce378158ee8214cf7337bf9c0c14ac4817c244f9254f8fa"
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-07061912-lacrimabili-statu.acqr-1912-english",
+      "language": "en",
+      "pdf_sha256": "4bd15920bd2e85f85c240ab00aeec59fe0623db10abe381f834ffc3efe9403ed",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            3
+          ],
+          "description": "Page 3 is very sparse but retains the genuine dated closing and PIUS X subscription before the ruled project apparatus. Its sparseness is therefore qualified source-bearing coverage rather than an apparatus-only page. OCR fragments remain literal."
+        }
+      ],
+      "limitations": "Visual layout and source-note-separation review only. Native source images, wording completeness, OCR accuracy, translation equivalence, provenance and rights were not independently certified in this lane. No word-for-word collation or independent AI translation review was performed. Contact-sheet inspection covers every page; full-size inspection is limited to the pages explicitly listed.",
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-15.md",
+      "report_sha256": "b8beecdfb277f5a2bec23e57529e474253b8a6588b39731f3606157a2365a5b3"
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-21041909-communium-rerum.acqr-1909-english",
+      "language": "en",
+      "pdf_sha256": "e9e7aea6f80870cb591291617ff27c0f8ac94a1fe9a401d852fb8b61ba8638e8",
+      "pages": 13,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            13
+          ],
+          "description": "Page 13 is sparse but retains the continuing source paragraph, blessing, dated closing and PIUS X subscription before the ruled apparatus. Retained OCR word fragments and punctuation remain visible, especially in the opening protocol; the final source note states those limits and the retained pontifical-year disagreement."
+        }
+      ],
+      "limitations": "Visual layout and source-note-separation review only. Native source images, wording completeness, OCR accuracy, translation equivalence, provenance and rights were not independently certified in this lane. No word-for-word collation or independent AI translation review was performed. Contact-sheet inspection covers every page; full-size inspection is limited to the pages explicitly listed.",
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-15.md",
+      "report_sha256": "b8beecdfb277f5a2bec23e57529e474253b8a6588b39731f3606157a2365a5b3"
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-24051911-iamdudum.acqr-1911-english",
+      "language": "en",
+      "pdf_sha256": "dac825d80d5fac5c944fac96d31f8da600efc912551b020399bdd65f3a52e656",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            1,
+            3
+          ],
+          "description": "The opening protocol and final dated closing/subscription are visible. Source hard-line word divisions survive inside reflowed lines and are covered by the visible uncorrected-OCR qualification."
+        }
+      ],
+      "limitations": [
+        "Layout review only: no whole-source image collation, translation-accuracy review, rights certification, source-admission decision, full extracted-text fidelity audit, font/metadata audit, or installed-byte verification was performed in this lane. Historical wording/OCR and source identity are subject to the independent source review."
+      ],
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-16.md",
+      "report_sha256": "d7841802426b896c8ce378158ee8214cf7337bf9c0c14ac4817c244f9254f8fa"
+    },
+    {
+      "id": "papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra",
+      "language": "en",
+      "pdf_sha256": "0cab8030a02606b5d4046ce80b06046f3322ab0c14a3d4c8e34f0ffa1becf1d0",
+      "pages": 8,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            1,
+            2,
+            7,
+            8
+          ],
+          "description": "Historical references occupy separate indented note blocks at source page breaks. Some interrupt the continuation of a body sentence; they are not fused into the body paragraph. OCR note markers and note numbers are sometimes malformed, as the retained-OCR qualification states. The dated closing is visible on page 8; this printing's lack of a final papal-name subscription is expressly disclosed."
+        },
+        {
+          "severity": "info",
+          "pages": [
+            8
+          ],
+          "description": "The terminal source/rights apparatus continues at the top of the right column after its rule at the bottom of the left column. This is visually less compact than a single-column ending, but it shares a source-bearing page and is readable."
+        }
+      ],
+      "limitations": [
+        "Layout review only: no whole-source image collation, translation-accuracy review, rights certification, source-admission decision, full extracted-text fidelity audit, font/metadata audit, or installed-byte verification was performed in this lane. Historical wording/OCR and source identity are subject to the independent source review."
+      ],
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-16.md",
+      "report_sha256": "d7841802426b896c8ce378158ee8214cf7337bf9c0c14ac4817c244f9254f8fa"
+    }
+  ]
+}

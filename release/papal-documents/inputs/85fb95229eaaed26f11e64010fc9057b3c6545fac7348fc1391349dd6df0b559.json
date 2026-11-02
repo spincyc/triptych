@@ -1,0 +1,112 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "94f4e23cc45e17bbd04b87b559d037be21c047586042f6ae1fe69c92a70c7dc6",
+  "documents": [
+    {
+      "id": "acta.ass.026.ass-026-l07664",
+      "language": "la",
+      "pdf_sha256": "03a1f05213713fd2c64ec5ac0bcf1141998600882019fac1f72fe20a434d9f9f",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3
+          ],
+          "description": "The compact 0.65-inch margin composition remains readable in two columns with a clear gutter. Historical citation notes are separate blocks on pages 2 and 3. Scattered native letter spacing, OCR punctuation and hard-line fragments remain literal and disclosed. Page 3 retains blessing, dating and LEO PP. XIII before the ruled apparatus and rights colophon."
+        }
+      ],
+      "limitations": "Independent layout, selected source-boundary, replay and native OCR-PDF geometry acceptance. All reader pages contact- and full-size-inspected; native inspection is bounded to the exact pages listed in the report. No original-print collation, lexical OCR correction, translation accuracy, whole-book completeness or independent rights certification. No raster reuse.",
+      "receipt_sha256": "94f4e23cc45e17bbd04b87b559d037be21c047586042f6ae1fe69c92a70c7dc6",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-23-a.md",
+      "report_sha256": "f8789bc65eb2a6dd63f7e746c9a6be281804b181f665f0bd4d0dd4e32f1adae9"
+    },
+    {
+      "id": "acta.ass.026.ass-026-l10652",
+      "language": "la",
+      "pdf_sha256": "13cf93fed9659e2bdeb8514dd8d868ac46c307bceea3e3c1ce25b28c4ca03778",
+      "pages": 11,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            11
+          ],
+          "description": "The opening protocol and identification are clear. The short retained letter-spaced phrase and displaced k on page 1 remain conspicuous but bounded; the surrounding text is usable and the terminal source note describes this defect. Historical notes start their own indented paragraph blocks, including the five newly partitioned groups. Page 11 retains the continuing source body, blessing, date, LEO PP. XIII subscription and final Psalm note before the ruled apparatus; it is source-bearing."
+        }
+      ],
+      "limitations": "Independent layout, selected source-boundary, replay and native OCR-PDF geometry acceptance. All reader pages contact- and full-size-inspected; native inspection is bounded to the exact pages listed in the report. No original-print collation, lexical OCR correction, translation accuracy, whole-book completeness or independent rights certification. No raster reuse.",
+      "receipt_sha256": "94f4e23cc45e17bbd04b87b559d037be21c047586042f6ae1fe69c92a70c7dc6",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-23-a.md",
+      "report_sha256": "f8789bc65eb2a6dd63f7e746c9a6be281804b181f665f0bd4d0dd4e32f1adae9"
+    },
+    {
+      "id": "acta.ass.026.ass-026-l20748",
+      "language": "la",
+      "pdf_sha256": "f0048ea4b798326226d766bba91d3d8e2ea5b04263b4e2ab202a46e501a1dd4c",
+      "pages": 5,
+      "receipt_sha256": "94f4e23cc45e17bbd04b87b559d037be21c047586042f6ae1fe69c92a70c7dc6",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            3,
+            4
+          ],
+          "description": "Two short retained body lines show damaged letter spacing and displaced source digits. Their native loci and exact unchanged source LF exceptions were checked; the damage is isolated and disclosed in the terminal source note."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "Historical notes remain separate blocks at source-page breaks. The final page retains a dated closing in the left column and the genuine LEO PP. XIII subscription at the top of the right before ruled apparatus; it is source-bearing."
+        }
+      ],
+      "limitations": "Independent visual layout, source-role and bounded source-method review. Every reader page was contact-inspected and opened at full resolution. Native text is a Vatican OCR reconstruction; no lexical/original-print collation, translation judgment or independent rights certification.",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-20-a.md",
+      "report_sha256": "179d15d15d8eed624b571aadccf56326d6375766a79fa5a7faa356cb471c523f"
+    }
+  ]
+}

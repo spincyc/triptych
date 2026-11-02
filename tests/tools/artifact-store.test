@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+"$repo/tools/artifact-store" --help >/dev/null
+for verb in inventory pack check hydrate; do
+    "$repo/tools/artifact-store" "$verb" --help >/dev/null
+done
+python3 -m unittest discover -s "$repo/tools/tests" -p test_artifact_store.py -q

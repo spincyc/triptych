@@ -1,0 +1,76 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "4788f6923ae13d3a80f1d02ce6730e76dc2e648c11054f8110b3b7c796825ad3",
+  "documents": [
+    {
+      "id": "acta.ass.009.ass-009-act-035",
+      "language": "la",
+      "pdf_sha256": "29da4b5f459b2879feb528aad505462794c3a80c774e43c34eedd6cbe2a21e9c",
+      "pages": 5,
+      "status": "PASS",
+      "source_repair_status": "PASS_BOUNDED_SOURCE_SPACING_AND_NOTES",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Archival Vatican OCR reconstruction; bounded native WORD whitespace and LF note separation review, not original-print or whole-source lexical collation.",
+        "Literal OCR spelling, hard hyphens, reference marks and native source-page interruption order retained.",
+        "No translation accuracy, new rights clearance, broader historical intake, installation or deployment approval.",
+        "Initial CLI help-only probes omitted cache/bytecode flags and may have refreshed Python bytecode; all actual source-library loads and checks were explicitly uncached."
+      ],
+      "receipt_sha256": "4788f6923ae13d3a80f1d02ce6730e76dc2e648c11054f8110b3b7c796825ad3",
+      "source_sha256": "85105d054e156fab4f5e1913e15886656fbbfc19f792dd4134d60680bc78d584",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-49.md",
+      "report_sha256": "f514a286118d9df0f5ef204c2288b52f0379b739e18301e06c4f8f4c980b1540",
+      "native_pages_inspected": [
+        644,
+        645,
+        646,
+        647,
+        648,
+        649,
+        650,
+        651,
+        652,
+        653,
+        654,
+        655,
+        656
+      ],
+      "per_page_observations": [
+        {
+          "page": 1,
+          "status": "PASS",
+          "observation": "Full-resolution actual view: title, Gregory XVI, 1844-05-08 and Latin clear. Protocol/addressee retained. Left-to-right columns readable. First Jerome note and second two-reference group are separate indented paragraphs at original native page breaks; body resumes in distinct paragraphs. Literal hard-hyphen splits and numeral-marker positions remain disclosed. No clipping, overlap or missing glyphs seen."
+        },
+        {
+          "page": 2,
+          "status": "PASS",
+          "observation": "Full-resolution actual view: note group 3 begins below top body ending as its own indented paragraph; body resumes quemadmodum separately. Note group 4 starts * In tribus at left bottom, crosses column boundary, ends martii 1564, then body indiciique resumes separately. Note group 5 1 in regulis begins separately in right column and body nuit resumes separately. Dense but readable; no overlap, interletter drift or clipping."
+        },
+        {
+          "page": 3,
+          "status": "PASS",
+          "observation": "Full-resolution actual view: long note group 6 begins 1 Imprimis on left, containing literal 1916 and Italian quotation, ending cen-. Body catholicas oves resumes as its own paragraph. Note continuation group 7 suit eadem starts and ends as a distinct right-column paragraph before body nulloque fructu resumes. Notes remain at native page interruptions. No note/body paragraph fusion, missing glyphs or column-order defect observed."
+        },
+        {
+          "page": 4,
+          "status": "PASS",
+          "observation": "Full-resolution actual view: full body in both columns. Paragraph 12 edoceantur quod is visibly separated correctly. Source-page paragraph interruptions and literal hard-line hyphens retained. No clipping, overlap, missing glyphs or unintended WORD join seen."
+        },
+        {
+          "page": 5,
+          "status": "PASS",
+          "observation": "Full-resolution actual view: source note group 8 1 Ex mandato Leonis XII is a distinct indented paragraph between body ad- and ducere. Body continues through paragraphs 14–16, exact dating and GREGORIUS PP. XVI in left column. Terminal source/OCR qualification and compact rights colophon are readable at top of right column on same source-bearing page; no apparatus-only page. No clipping or overlap."
+        }
+      ]
+    }
+  ]
+}

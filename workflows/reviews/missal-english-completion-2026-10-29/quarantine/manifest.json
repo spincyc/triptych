@@ -1,0 +1,108 @@
+{
+  "schema": "triptych-postconciliar-quarantine-conservation-acceptance/v1",
+  "recorded_on": "2026-10-29",
+  "decision": "coordinator-accepted-exact-reviewed-negative-history-conservation",
+  "scope": "Preserve exact rejected English fingerprints and historical source routes. This grants no English rights, availability, admission, source-batch authority or release approval.",
+  "retained_receipts": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/quarantine/guard-validation.json",
+      "sha256": "444a5d128d43d44959301d949d2710a39032420b76494cd2c7e3062ee82ea08a",
+      "original_locator": ".scratch/pc-quarantine-conservation-20261029/guard-validation.json"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/quarantine/quarantine-review.json",
+      "sha256": "d68665ac4bdbcebbbaca30ce90c964266b1810103cc6412c82441c38daabaa6a",
+      "original_locator": ".scratch/final-integrated-review-20261029/quarantine-review.json"
+    }
+  ],
+  "receipt_preservation": "Original receipt bytes are unchanged, including their historical scratch evidence locators. This manifest makes the accepted snapshot durable; it adds no runtime gate.",
+  "code_and_test_sha256": {
+    "tools/public-alpha": "be3439932971aa0dd0aec482a598351812aab9ece44704440640df84d627434a",
+    "tools/tests/test_public_alpha_quarantine.py": "7cd894b17e714ff13c78e27fc9ec02e56e905c06baae0991c362790b5efe6092",
+    "tools/tests/test_liturgical_rights_surfaces.py": "b38ff784634c5591d532307c7c9502070973270695b1b5aef53e00cfc73727d5",
+    "tools/tests/test_public_alpha.py": "97e44aefd8fd20ee99590f2239a32994e51a68fb6102a7db42a6b9ad556a4ca8",
+    "tools/tests/test_public_alpha_scripture.py": "6bb490548cdf8bfbff79005c8d9f3f08eef5444b6e63df286371981f4315526f",
+    "tools/tests/test_public_alpha_fonts.py": "bdc1eb5dfab747c2051a680e8467d1f56341192a07848f7987172531e4141913"
+  },
+  "baseline": {
+    "commit": "6aeb96a392a61e216310c3bf71834863afb229f8",
+    "inventory_sha256": "f06a68826790a3b828d0f44cccecd52d09ff12c828a01dd330391636bf086128",
+    "projection_sha256": "ba1bb392b8c1ce8803dbc0b0c5794ad58a1faebf73ee7de54d302db990e1ebd9",
+    "target_records": 174,
+    "unique_hashes": 172
+  },
+  "accepted_registry": {
+    "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+    "table": "english_quarantine",
+    "canonical_sha256": "ce137a066538325b65962f763951c92eafaa9a07fcfa0e9c47fcc68c102bd596",
+    "reviewed_sidecar_sha256": "9d3d4542d77cd6b4ca939b28e7b8fa612dadb48fe4cde89c00303b7d8a6c0fee",
+    "scanner_unique_hashes": 172,
+    "admission_receipts": [
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase1-admission.json",
+        "sha256": "336c2eeb280f40fcf291e99a691c21bc0a1025b8b20751815ff8facaa10cc255"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-acclamations-admission.json",
+        "sha256": "6224ba1a95fbeff1af014cad00b03177ad65e356601c06c28bf1d681beb4c31e"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-late-easter-admission.json",
+        "sha256": "c4202aa5c2cf5efb6840a68097f97214bc62c36580762c9cd22bac4c3335d3ff"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-pentecost-extended-admission.json",
+        "sha256": "ab3b863eeef1f4434c6751307f6b32b789f621f622ce383f042a1a02eac767d4"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-september8-admission.json",
+        "sha256": "d9ec4ff8b7f8637068025635c394b4b88c2caaf9e848298231b022e828d1326c"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-virgo-admission.json",
+        "sha256": "32c337acd6aa77053b342e9da372cb7fd687a945647a9535bd7f8358e8cd4967"
+      }
+    ]
+  },
+  "source_conservation_receipt": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/english-quarantine-conservation.json",
+    "sha256": "55866eb537f4941bfcbaeec425843c56a0b60f8036e0b563c65c1e3947810f42"
+  },
+  "validation_environment": {
+    "python": "3.14.8",
+    "Markdown": "3.10.3",
+    "PyYAML": "6.0.3",
+    "dependency_lock": {
+      "path": "requirements-public-alpha.txt",
+      "sha256": "59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762"
+    }
+  },
+  "checks": {
+    "owner_public_alpha_modules": {
+      "passed": 165,
+      "exit_status": 0,
+      "modules": [
+        "tools.tests.test_public_alpha_quarantine",
+        "tools.tests.test_public_alpha",
+        "tools.tests.test_public_alpha_scripture",
+        "tools.tests.test_public_alpha_fonts"
+      ]
+    },
+    "owner_rights_cases": {
+      "passed": 14,
+      "exit_status": 0,
+      "cases": [
+        "tools.tests.test_liturgical_rights_surfaces.TrackedSourceBoundary.test_postconciliar_quarantine_hashes_are_derived_fail_closed",
+        "tools.tests.test_liturgical_rights_surfaces.RightsMutationBoundary"
+      ]
+    },
+    "independent_controls": {
+      "focused_passed": 9,
+      "additional_warm_cache_negatives_passed": 2,
+      "exit_status": 0
+    },
+    "tmt_check": "passed",
+    "focused_diff_check": "passed"
+  },
+  "successor_rule": "This is the immutable six-receipt acceptance snapshot. Further source-owned admissions append exact receipt references atomically with the sidecar change, preserve all prior receipt bytes and the immutable baseline, and retain validation follow-ups separately. Such a successor neither grants English rights nor rewrites this acceptance snapshot."
+}

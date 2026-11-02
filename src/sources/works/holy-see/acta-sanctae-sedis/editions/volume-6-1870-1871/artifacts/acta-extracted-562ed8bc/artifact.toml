@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.ass.006.extracted-text-562ed8bc"
+edition_id = "edition.holy-see.acta-sanctae-sedis.volume-6-1870-1871"
+artifact_type = "mechanical-pdf-text-extraction"
+media_type = "text/plain"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Exact extraction may contain protected text or modern wrappers and remains transient. Separately manifested historical text excludes uncleared material."
+retrieved = "2026-10-26"
+sha256 = "562ed8bc0b25ec27d25c52ad29565c83e699553a49bbd2efa8e8eddf97ad0072"
+byte_size = 4768
+derived_from = "artifact.holy-see.acta-sanctae-sedis.volume-6-1870-1871.vatican-ocr-pdf-7e480931"
+transformation = "LF-only byte split; concatenate each inclusive 1-based ordered_source_line_ranges slice in declared order; preserve each selected line including its original LF; add no words or other bytes."
+notes = "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

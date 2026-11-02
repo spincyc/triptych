@@ -1,0 +1,73 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "editorial-projection",
+   "byte_size": 292,
+   "edition_owned": true,
+   "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-seven-founders.seven-founders-complete-20261026",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Existing body SHA58883b38 remains unchanged. This is an attributed editorial projection, not a new source edition, English admission or lexical-equivalence grant.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "project-created",
+   "rights_basis": "Triptych offers only the editorial layout and disclosed normalization under CC BY4.0. Underlying historical prayer wording is independently witnessed in public-domain Mame Tours1922. Different existing target spellings and pointing are declared editorial choices; the projection is not labeled verbatim Mame. The repository17USC103(b) plus independent public-domain-witness basis applies without clearing the1962facsimile or granting any English spelling/name/completion method.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Project editorial projection, not a Missal edition or liturgical authority",
+  "date": "2026-10-26",
+  "editors": [
+   "Triptych contributors"
+  ],
+  "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-seven-founders",
+  "jurisdiction": "United States",
+  "language": "la",
+  "publication": "Triptych project editorial projection",
+  "title": "Roman1962 Latin Proper Editorial Projection,26October2026, Seven Founders truthful source chain",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-seven-founders.seven-founders-complete-20261026",
+   "artifact_type": "editorial-projection",
+   "context": "Exact unchanged current Latin body with truthful complete Mame historical and conclusion-control attribution; independently verified at the correct1962target locator.",
+   "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-seven-founders.seven-founders-collect-20261026",
+   "locus": "Seven Founders Collect; complete current body, physical lines1-5",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Retain every current calendar byte, wrap and finalLF. Project the complete image-read Mame prayer using declared target pointing, orthographic Genitricis-to-Genetricis and foecundasti-to-fecundasti choices, and the exact target conclusion stop. Preserve those different source words and actual Qui vivis. stop in the separate historical artifact. The longer target words Qui vivis et regnas cum Deo Patre in unitate are independently printed contiguously in the Mame1922 PDF115 conclusion; IX17 onPDF54 identifies the Christ-addressed family. No words after in unitate, reconstructed formula tail or Amen are added.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "Triptych offers only the editorial layout and disclosed normalization under CC BY4.0. Underlying historical prayer wording is independently witnessed in public-domain Mame Tours1922. Different existing target spellings and pointing are declared editorial choices; the projection is not labeled verbatim Mame. The repository17USC103(b) plus independent public-domain-witness basis applies without clearing the1962facsimile or granting any English spelling/name/completion method.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-seven-founders.seven-founders-collect-20261026.json",
+   "verified_on": "2026-10-26",
+   "words": 42
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Triptych contributors",
+  "category": "editorial-source-projection",
+  "description": "A project-created editorial source projection containing bounded Latin prayer bodies in date-specific artifacts. It is neither an edition of a historical hand missal nor an edition of the Missale Romanum. Each artifact records the transformation rule over separate public-domain antecedent and 1962 page-image witnesses; its passages let consumers cite the projected bodies without assigning Triptych's target-controlled collation choices to the antecedent printing.",
+  "id": "work.triptych.roman-1962-latin-proper-editorial-projection",
+  "languages": [
+   "la"
+  ],
+  "title": "Roman 1962 Latin Proper Editorial Projection"
+ }
+}

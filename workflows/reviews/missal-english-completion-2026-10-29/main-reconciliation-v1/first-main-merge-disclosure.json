@@ -1,0 +1,45 @@
+{
+  "all_new_blobs_UTF8_text": true,
+  "blockers": [],
+  "commit": "4e8e9fcf7d8947d5b99068d8f05b21156f70abe4",
+  "commit_tree": "546e3d0a43dba6433982e1cfd43a0acec857cf2d",
+  "comparison_main": "ac620e2f8becd4c354973b5804a2556a990b7ec8",
+  "limits": [
+    "Publication build, test outcomes and live deployment remain owned by their recorded gates, not this disclosure audit.",
+    "Preexisting public-history qualifications remain unchanged; this bounded review does not clear unrelated historical repository objects."
+  ],
+  "new_outgoing_blobs_beyond_prior_reviewed_checkpoint": 63,
+  "novel_blob_inventory_sha256": "0fac156d9834f4526626565062d3e190d383a7302ae831ee69b93f3c6e4bcdd6",
+  "obsolete_commits_reconnected": [],
+  "obsolete_feature_only_commits": 62,
+  "outgoing_commits": [
+    "4e8e9fcf7d8947d5b99068d8f05b21156f70abe4",
+    "0b7da814a9c3d0bbf721565ceac1abc6898faa2a",
+    "e1d0ee4b11a9c04a9ba142d53c10213ace0474f8"
+  ],
+  "outgoing_object_count": 2319,
+  "outgoing_object_types": {
+    "blob": 1818,
+    "commit": 3,
+    "tree": 498
+  },
+  "prior_checkpoint_disclosure_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/checkpoint-commit-disclosure.json",
+    "sha256": "4974d5137768129e1ea00644bdc02dc634855bc399032d721fdd5bd83223a283",
+    "source_revision": "0b7da814a9c3d0bbf721565ceac1abc6898faa2a"
+  },
+  "private_credentials_or_encoded_payload_hits": [],
+  "reconciliation_semantic_review_sha256": "fc9302c788f0ef64da19d7d1f445c2304c2f3d9bb12c0096cb5d53580dc25c4b",
+  "rejected_blobs_reachable": [],
+  "schema": "triptych-final-merge-outgoing-disclosure-review/v1",
+  "source_epoch_exact_committed_pins": 7071,
+  "source_fixture_acceptance": {
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/source-batch-main-nativity-acceptance.json",
+    "receipt_sha256": "e572987bd7e3d5089fc634c8975551e388f66ecfcf58f4da8d0e86ac9b861e85",
+    "status": "accepted"
+  },
+  "source_input_manifest_sha256": "e9cd39f351b23206c7d812c854cbfaaa593b45c3a795c8b53164bb66917da9bd",
+  "status": "PASS-exact-outgoing-graph-source-pins-and-bounded-public-disclosure",
+  "strict_source_guard_unchanged": true,
+  "upstream158_integrity_review_sha256": "72709c07dfe84491e0ab28a526bad5d35a2c8b6f05b1430ce4b5853105122ad1"
+}

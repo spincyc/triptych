@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.cosmas-complete-prayer-20261026"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The identified Tours Mame 1922 printing is public domain in the United States by expiration of its maximum publication term. This separately image-checked bounded historical Latin transcription is excluded from the project CC BY 4.0 grant."
+provenance = "Whole Mame PDF rehashed as 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005, 51720493 bytes. Actual complete September27 Cosmas and Damian Oratio at PDF 839/printed 725 independently read on full 400 dpi page image on 26 October2026; no OCR supplied a word. This historical prayer is Mame 1922, not Pustet 1862 and not the 1962 target."
+retrieved = "2026-10-26"
+sha256 = "01ac30620b95c8dfbb01aab088fd2eb598319f18bc00c998d99242ab592447d3"
+byte_size = 186
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/cosmas-complete-prayer-20261026/latin-only.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Join physical wraps and actual line-end division, remove stress accents, expand ae/oe ligatures and normalize decorative capitalization. Preserve each historical word, received natalitia spelling, punctuation and actual Per Dominum. stop."
+encoding = "utf-8"
+indexable = true
+notes = "Historical Mame prints natalitia; target prints natalicia. This separately declared received noun spelling concerns the same neuter accusative plural object of colimus, not a different name or a generic stem substitution. Historical Mame does not print nostrum in this prayer; separate historical full formula supports only the longer three-word target prefix. No English, target page, images or whole OCR are retained."

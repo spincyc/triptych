@@ -1,0 +1,103 @@
+{
+  "schema": "triptych-bounded-study-english-source-admission/v1",
+  "state": "SOURCE_AND_ENGLISH_ACCEPTED_PARENT_INTEGRATION_PENDING",
+  "created_utc_date": "2026-10-30",
+  "formulary_scope": {
+    "calendar": "roman-1962",
+    "formulary_key": "s-ioseph-opificis-sponsi-beatae-mariae",
+    "date": "05-01",
+    "option": "sancto-ioseph"
+  },
+  "root_adoption_path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption-v2.json",
+  "root_adoption_sha256": "7ae1b0c2cd7acfa62777d7acc0b09b33c37212c7fbcd6c0b410f669ac76e43e6",
+  "corrected_frozen_comparison_sha256": "a08b68725876e8b224f2da98dc16721486b7d156e52e9e852044d2ac82539310",
+  "independent_correction_review_sha256": "76852c4cca3ebcbbe4ca68a6a397dde60a83ad13f0fd8042cfd482226955fe51",
+  "immutable_prior_metadata": {
+    "adoption_path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption.json",
+    "adoption_sha256": "f5893ad8948f13c3740efc8839f7a327d942e3bf0b2d65ed801f6855c39579fe",
+    "comparison_sha256": "2a9f3fdf02256ee216b2aaae063adfd545a7b82a15205759f8632b15f90e00e4",
+    "review_sha256": "7d0ee61f74a2019a786a3ddef91d993436aa9bc5731a973413057e38bd9e68c8"
+  },
+  "english_artifact_id": "artifact.triptych.english-completion-20261029-ordinary-joseph-preface-may1.study-english-20261030.joseph-preface-may1-study-en-240fd178",
+  "english_passage_id": "passage.triptych.english-completion-20261029-ordinary-joseph-preface-may1.study-english-20261030.joseph-preface-may1",
+  "english_payload_sha256": "240fd17875204a9b6902a60f5b7ed46929ff36a463c7b0569c8c4426dea0a0b5",
+  "english_body_sha256": "ffc6b83414c853963c1381227e3f32c7b08afe271872be212b752d43420d9b72",
+  "historical_source_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-ordinary-joseph-preface-may1-source-body",
+  "historical_source_artifact_sha256": "235844b4188dc771ca3e0b33065bf4072f4cb58d118d00742ef48b8bc62417e8",
+  "historical_source_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-ordinary-joseph-preface-may1-source-body",
+  "proof_graph": {
+    "historical_whole": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+    "historical_facsimile": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-ordinary-joseph-preface-may1-facsimile",
+    "historical_checked_body": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-ordinary-joseph-preface-may1-source-body",
+    "target_comparator_only": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+    "new_study_english": "artifact.triptych.english-completion-20261029-ordinary-joseph-preface-may1.study-english-20261030.joseph-preface-may1-study-en-240fd178"
+  },
+  "source_extent": "Complete historical body, printed 337 / original PDF 451; 100 words including both printed alternatives, 99 selecting Festivitate. The only selected May 1 lexical variation at word 25 is separately root-adopted. No target Latin payload or image is retained.",
+  "reading_note": "Triptych study translation for the May 1 Preface of Saint Joseph. This English has no liturgical approval and is not for recitation.",
+  "source_transcription_correction": "Fresh actual-source reading finds Cæli cælorumque, not frozen Cœli cœlorumque. Thus the coeli/caeli comparison transformation and contrary spelling claim are unnecessary and withdrawn for this body. This orthographic research-transcription correction does not change the 99-word counts, sole lexical change at word 25, exact selected target research identity, rights-adopted scope or new English.",
+  "pending_parent_gates": [
+    "Install canonical sanitized review records and preserve immutable rights adoption",
+    "Map new English only to the exact May 1 formulary and retain visible reading_note",
+    "Validate source library, Ordinary generation, applicability and both reader surfaces",
+    "Refresh shared publication-source and release records as required"
+  ],
+  "no_claims": [
+    "No selected modern Latin payload or whole modern image",
+    "No exact historical May 1 source identity",
+    "No human or ecclesiastical approval",
+    "No transfer to March 19, votive or other calendar options",
+    "No whole Missal completion claim"
+  ],
+  "new_source_files": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-ordinary-joseph-preface-may1-facsimile/artifact.toml",
+      "sha256": "5541a927ed4b8e81fa31a555bd931570b76e4334a0659741fa3b6a01fd54ac81",
+      "bytes": 2439
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-ordinary-joseph-preface-may1-facsimile/source.pdf",
+      "sha256": "9724743c3f1bfed03bc44472731885a43769b1a41eab3666b94504a7cfb70e27",
+      "bytes": 51055
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-ordinary-joseph-preface-may1-source-body/artifact.toml",
+      "sha256": "6569754c2567243b6ec203ed97797b4085feaa4820213ab2816d3b46e7c94a92",
+      "bytes": 2794
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-ordinary-joseph-preface-may1-source-body/text.txt",
+      "sha256": "235844b4188dc771ca3e0b33065bf4072f4cb58d118d00742ef48b8bc62417e8",
+      "bytes": 737
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-ordinary-joseph-preface-may1-source-body.toml",
+      "sha256": "ec6db283f18bc693d5b5ac78bdb832c064a15f892acb2971fb652873109f79ae",
+      "bytes": 1454
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/editions/2026-10-30-study-english/artifacts/joseph-preface-may1-study-en-240fd178/artifact.toml",
+      "sha256": "0b932def1c2aaae38f28bfdefef957f9c6ff6a29430717b015b0b9d6e4ba6c87",
+      "bytes": 3870
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/editions/2026-10-30-study-english/artifacts/joseph-preface-may1-study-en-240fd178/text.tsv",
+      "sha256": "240fd17875204a9b6902a60f5b7ed46929ff36a463c7b0569c8c4426dea0a0b5",
+      "bytes": 1208
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/editions/2026-10-30-study-english/edition.toml",
+      "sha256": "3cae8295c4b0c6d033e081a4b96545e2e43b6ad1949d99302cc8d70533ef3d8c",
+      "bytes": 836
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/editions/2026-10-30-study-english/passages/joseph-preface-may1.toml",
+      "sha256": "d2298be08f70e5735e33754164a4465f451d9cd39ac3a79ac7f74479fba79b59",
+      "bytes": 1348
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/work.toml",
+      "sha256": "4e7d41f2341afe11e9154d43b1a9a18ddfb0d8c13d00e5cf88e1af718e311bd6",
+      "bytes": 1067
+    }
+  ]
+}

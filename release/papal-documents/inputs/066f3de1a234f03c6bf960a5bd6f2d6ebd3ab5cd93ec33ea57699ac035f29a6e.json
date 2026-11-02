@@ -1,0 +1,118 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "28005d63d94eac18dbb80967f62b74655355b7ae60fd7a82d2fe1645fe399627",
+  "documents": [
+    {
+      "id": "acta.ass.010.ass-010-act-011",
+      "language": "la",
+      "pdf_sha256": "50ebecd17d34c38a11548fe7a6a337681709122cfaac83b81eae93478d4ac325",
+      "pages": 5,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            3,
+            4
+          ],
+          "description": "The Marcellinum and Ad Goloss. historical notes are separate paragraphs, consistent with exact parent LF anchors and independently mapped native pages 589/590."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            5
+          ],
+          "description": "Sparse final page retains source closing blessing, dating, pontificate statement and LEO PP. XIII. subscription before compact source/rights apparatus; source-bearing sparseness is accepted."
+        }
+      ],
+      "limitations": "Bounded independent source-boundary, mechanical-fidelity and PDF-presentation review. Literal OCR defects and word divisions remain. Native pages are OCR reconstructions; no whole-source lexical or original-print collation, translation certification, new rights/intake approval, installation or deployment.",
+      "receipt_sha256": "28005d63d94eac18dbb80967f62b74655355b7ae60fd7a82d2fe1645fe399627",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-30a.md",
+      "report_sha256": "226d24750ee2d905fd4876ebfcf00c05a7cf123f2446af3d2f47a36dd3437df7"
+    },
+    {
+      "id": "acta.ass.036.ass-036-l020506",
+      "language": "la",
+      "pdf_sha256": "6be1f18ba97f88316afa1faa3b5d05bf40e065c774d61428f06528e9d91ae5cf",
+      "pages": 8,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            6
+          ],
+          "description": "The six-note group at parent LF 21044–21049 is a separate paragraph at the top of the right column, following the left-column body ending dévastant (6). Native page 525 has six smaller page-foot lines below that body; the literal leading i and OCR note labels remain. Both TeX paragraph boundaries are present."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            8
+          ],
+          "description": "Sparse final page is source-bearing: closing blessing, dating clause, PIUS PP. X subscription and two historical source notes precede compact terminal source/rights apparatus. No apparatus-only final page."
+        }
+      ],
+      "limitations": "Independent review of exact final PDF bytes, all eight reader page rasters, bounded source LF boundaries and native OCR reconstruction page 525. No inherited visual coverage or review reuse. No translation accuracy, whole-source lexical collation, original-print image collation, historical-source intake/identity clearance, new rights clearance, installation or deployment certification. Literal OCR word divisions, note labels and isolated marginal glyphs remain preserved.",
+      "receipt_sha256": "28005d63d94eac18dbb80967f62b74655355b7ae60fd7a82d2fe1645fe399627",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-30b.md",
+      "report_sha256": "66cdfa88ce878389051a5847199d2013e2d1b6d4e5012142d21b6782928acc0a"
+    },
+    {
+      "id": "acta.ass.037.ass-037-l023300",
+      "language": "la",
+      "pdf_sha256": "d3f29d0a3f5d763c508bd3a518f470eb11129c0ef5b5c063dded4d535006bf18",
+      "pages": 5,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            3
+          ],
+          "description": "Ephesians/Trent notes occupy their own block at the top of the right column. The retained conside-/ranti source division remains across the historical note position."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            5
+          ],
+          "description": "Exodus/Peter notes occupy a separate paragraph below the dating and PIUS PP. X subscription, above compact source/rights apparatus."
+        }
+      ],
+      "limitations": "Bounded independent source-boundary, mechanical-fidelity and PDF-presentation review. Literal OCR defects and word divisions remain. Native pages are OCR reconstructions; no whole-source lexical or original-print collation, translation certification, new rights/intake approval, installation or deployment.",
+      "receipt_sha256": "28005d63d94eac18dbb80967f62b74655355b7ae60fd7a82d2fe1645fe399627",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-30a.md",
+      "report_sha256": "226d24750ee2d905fd4876ebfcf00c05a7cf123f2446af3d2f47a36dd3437df7"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-seven-founders.seven-founders-complete-20261026"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-seven-founders"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Triptych offers only the editorial layout and disclosed normalization under CC BY4.0. Underlying historical prayer wording is independently witnessed in public-domain Mame Tours1922. Different existing target spellings and pointing are declared editorial choices; the projection is not labeled verbatim Mame. The repository17USC103(b) plus independent public-domain-witness basis applies without clearing the1962facsimile or granting any English spelling/name/completion method."
+provenance = "The entire controlling1962Collect2177 atPDF556/printed475 was read on whole page images at200and400dpi. The entire Mame historical prayer atPDF648/printed534 and its own conclusion controls atPDF54/115 were read at2400and4800pixels. Complete prayer and formula source words, page boundaries, target differences and actual stops are individually recorded. No old Pustet attribution or OCR-based collation claim is carried into this new chain."
+retrieved = "2026-10-26"
+sha256 = "58883b38d04a0503f279b6752f8be4f0653efb980ac5a44a94519238e307ee5b"
+byte_size = 292
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-seven-founders/artifacts/seven-founders-complete-20261026/latin-only.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-completion-seven-founders-prayer-20261026", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-completion-seven-founders-pages-20261026", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Retain every current calendar byte, wrap and finalLF. Project the complete image-read Mame prayer using declared target pointing, orthographic Genitricis-to-Genetricis and foecundasti-to-fecundasti choices, and the exact target conclusion stop. Preserve those different source words and actual Qui vivis. stop in the separate historical artifact. The longer target words Qui vivis et regnas cum Deo Patre in unitate are independently printed contiguously in the Mame1922 PDF115 conclusion; IX17 onPDF54 identifies the Christ-addressed family. No words after in unitate, reconstructed formula tail or Amen are added."
+encoding = "utf-8"
+indexable = true
+notes = "Existing body SHA58883b38 remains unchanged. This is an attributed editorial projection, not a new source edition, English admission or lexical-equivalence grant."

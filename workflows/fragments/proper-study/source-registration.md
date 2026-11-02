@@ -97,7 +97,7 @@ disposition grants reproduction rights.
 Run the handoff check after writing the records:
 
 ```sh
-python3 scripts/_proper_study.py source-dispositions --provider {provider} --document {proper}
+python3 scripts/_proper_study.py source-dispositions --mode source --provider {provider} --document {proper}
 ```
 
 After source-registration changes, run `tools/source-library validate`,

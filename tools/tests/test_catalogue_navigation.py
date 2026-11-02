@@ -26,6 +26,10 @@ ROOT = Path(__file__).resolve().parents[2]
 CATALOGUE = "library/traditional-latin-mass.html"
 PROPER = "web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.html"
 OTHER = "web/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.html"
+SYNTHESIS = PROPER.removesuffix(".html") + "-synthesis.html"
+HOMILY = PROPER.removesuffix(".html") + "-homily.html"
+PRINT_PROPER = PROPER.replace("web/", "print/", 1)
+PRINT_SYNTHESIS = SYNTHESIS.replace("web/", "print/", 1)
 ROW = "[...document.querySelectorAll('tbody tr')].find(r=>r.cells[0].textContent.trim()==='57')"
 TABLE = f"{ROW}.closest('table')"
 
@@ -66,12 +70,21 @@ class CatalogueNavigationTest(unittest.TestCase):
         authorization = tool.artifact_authorization(manifest, included)
         cls.catalogues = {route: source for source, route in tool.PAGE_MAP.items()
                           if source == "README.md" or source.startswith("library/")}
-        for route, source in {**cls.catalogues, PROPER: str(Path(PROPER).with_suffix(".md")),
-                              OTHER: str(Path(OTHER).with_suffix(".md"))}.items():
+        for route, source in cls.catalogues.items():
             target = cls.site / route
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_text(tool.render_source_page(
                 source, route, set(included), False, authorization))
+        # Use the production source-first renderer for both reviewed readers and
+        # truthful print-option pages; no installed PDF is a fixture input.
+        for route in (PROPER, OTHER, SYNTHESIS, HOMILY, PRINT_PROPER, PRINT_SYNTHESIS):
+            _, provider, leaf = route.removesuffix(".html").split("/", 2)
+            if (provider, leaf) not in included:
+                raise AssertionError(f"browser fixture publication is not admitted: {provider}/{leaf}")
+            target = cls.site / route
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(tool.render_publication_print_page(
+                provider, leaf, route, False, authorization))
         for asset in ("site.css", "icon.png", "social-card.png"):
             destination = cls.site / "assets" / asset
             destination.parent.mkdir(parents=True, exist_ok=True)
@@ -82,8 +95,8 @@ class CatalogueNavigationTest(unittest.TestCase):
         destination = cls.site / "shared/catalogue-navigation.js"
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / "src/web/browser/shared/catalogue-navigation.js", destination)
-        for route in ("liturgy/index.html", "texts/index.html", "sources/index.html"):
-            page = tool.render_browser_page(ROOT / "src/web/browser" / route, route, False, {})
+        for route, source in tool.web_browser_pages().items():
+            page = tool.render_browser_page(source, route, False, {})
             if 'class="catalogue-table' in page or 'shared/catalogue-navigation.js' in page:
                 raise AssertionError(f"app opted into landing component: {route}")
         cls.server = http.server.ThreadingHTTPServer(("127.0.0.1", 0),
@@ -228,6 +241,50 @@ class CatalogueNavigationTest(unittest.TestCase):
         self.assertAlmostEqual(self.catalogue_position(), before, delta=2)
         errors = self.command("/log", {"type": "browser"})
         self.assertEqual([entry for entry in errors if entry["level"] == "SEVERE"], [])
+
+    def test_source_first_companions_and_print_return(self):
+        report = []
+        for prefix in ("", "triptych/"):
+            for route in (SYNTHESIS, HOMILY):
+                self.visit(prefix + CATALOGUE)
+                links = self.run_js(f"return [...{ROW}.cells[2].querySelectorAll('a')].map(a=>({{text:a.textContent,path:new URL(a.href).pathname}}))")
+                self.assertEqual({link["path"] for link in links},
+                                 {"/" + prefix + path for path in (PROPER, SYNTHESIS, HOMILY)})
+                self.assertFalse(any("PDF" in link["text"] for link in links), links)
+                self.run_js(f"{ROW}.scrollIntoView({{behavior:'instant',block:'center'}})")
+                before = self.catalogue_position()
+                self.run_js(f"{ROW}.querySelector('a[href$=\"{Path(route).name}\"]').click()")
+                time.sleep(.15)
+                self.assertTrue(self.run_js("return location.pathname").endswith(route))
+                self.assertIn("A browser reading edition is not available for this output.",
+                              self.run_js("return document.querySelector('main').innerText"))
+                self.assertEqual(self.run_js("return document.querySelectorAll('.catalogue-table,script[src$=\"catalogue-navigation.js\"]').length"), 0)
+                self.command("/back")
+                time.sleep(.15)
+                self.assertAlmostEqual(self.catalogue_position(), before, delta=2)
+                self.command("/forward")
+                time.sleep(.15)
+                self.assertTrue(self.run_js("return location.pathname").endswith(route))
+                report.append({"prefix": prefix, "route": route, "catalogueY": before,
+                               "nativeBackForward": True, "printOptionsNotice": True})
+
+            for landing, print_route, destination in (
+                (CATALOGUE, PRINT_PROPER, '.breadcrumb a[href$="traditional-latin-mass.html"]'),
+                ("index.html", PRINT_SYNTHESIS, '.site-header nav a[href$="index.html"]'),
+            ):
+                self.visit(prefix + landing)
+                self.run_js("document.querySelector('main table').scrollIntoView({behavior:'instant',block:'start'});scrollBy({top:100,behavior:'instant'})")
+                before = self.catalogue_position()
+                self.assertGreater(before, 100)
+                self.visit(prefix + print_route)
+                self.assertEqual(self.run_js("return document.querySelectorAll('.catalogue-table,script[src$=\"catalogue-navigation.js\"]').length"), 0)
+                self.run_js(f"document.querySelector({json.dumps(destination)}).click()")
+                time.sleep(.15)
+                self.assertEqual(self.run_js("return location.pathname"), "/" + prefix + landing)
+                self.assertAlmostEqual(self.catalogue_position(), before, delta=2)
+                report.append({"prefix": prefix, "route": print_route, "landing": landing,
+                               "landingY": before, "ordinaryReturn": True})
+        (self.evidence / "source-first-navigation.json").write_text(json.dumps(report, indent=2))
 
     def test_no_script_native_history(self):
         self.command("/goog/cdp/execute", {"cmd": "Emulation.setScriptExecutionDisabled",

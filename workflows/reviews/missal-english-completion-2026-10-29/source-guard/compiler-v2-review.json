@@ -1,0 +1,40 @@
+{
+  "schema": "triptych-independent-bounded-compiler-review/v1",
+  "reviewed_on": "2026-10-29",
+  "decision": "accept-pending-candidate-compiler-only",
+  "review_kind": "independent-AI-code-and-control-review",
+  "subject": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v2.py",
+  "subject_sha256": "4907f5295301cfe7c614e44ee30d80984f98d2308a2b5de5e17ed4bac1724b93",
+  "base_compiler_sha256": "d6623dd274dd4d83e7f0e59d3e6eb627fa10648fd050c0b96e11f692b9205a2f",
+  "support_sha256": "3622fc1bcbf6e21e09e65be3cff50786930564de6be8640edd72b5be279d95ae",
+  "strict_runtime_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+  "test_sha256": "11ab8b5f71c396e82aa0fc036ac46e1307e8383a77933cea8c7b85c52e36664d",
+  "reviewed_scope": [
+    "Complete base compiler, immutable support and strict runtime helper; focused v2 diff and complete v2 control suite.",
+    "Explicit additional input paths remain limited to canonical src/sources paths excluding three shared registries, or same-task JSON review records outside source-guard. Review records are not auto-discovered.",
+    "The exact declared source-delta hash, complete path/before/after equality, retained V4 domain, ancestor-symlink checks, immutable historical fields and replay inverses, and end-of-derive epoch/compiler/support checks remain enforced.",
+    "Only the fixed Roman Palm Sunday first distribution-antiphon identity can change a prior positive dictionary, and only to the entire old/new dictionaries in the code-pinned correction receipt, with its exact linked source review also pinned in the declared input set.",
+    "The correction remains explicit in transition contract and data proof. All other prior positives, unconsumed absences and historical complements retain their strict equality rules."
+  ],
+  "palm_correction": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/palm-distribution-hyphen-correction.json",
+    "sha256": "5e59471a53dba5425468ee10d0d943be1eccaa2dedd936854c63a8485fff56d2",
+    "source_review": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase1-historical-source-review.json",
+    "source_review_sha256": "e9f2985aad413b8add1800b50b156b717de1232cef5648dff19d82897ade9c19",
+    "independent_checks": "Linked source-review bytes match the receipt; current Roman entry equals its entire new_entry. The reviewed correction changes olive-branches to olive branches and retains the old dictionary and original artifacts."
+  },
+  "controls": {
+    "exit_status": 0,
+    "existing_suite": "15/15 pass independently. Only its scratch destination was redirected into this review's exclusive scratch directory; test subject bytes and assertions were unchanged.",
+    "additional_paths": "6/6 pass: absolute path, parent traversal, sibling task-prefix collision, nested source-guard record, doubled separator and normalized traversal all refused.",
+    "log": ".scratch/final-integrated-review-20261029/compiler-v2-independent-controls.log"
+  },
+  "findings": [],
+  "limits": [
+    "This accepts the exact compiler for preparing a pending source-batch candidate. It neither accepts the final source epoch or fixture nor installs or publishes any output.",
+    "Hash inclusion establishes dependency identity, not source inspection, rights, adoption or approval. Source permissions remain expressly unclaimed in compiler outputs.",
+    "Final source freeze, exact pending-candidate review, root adoption, owning generation and affected checks remain the existing integration work.",
+    "This is not human review, real-terminal maintainer acceptance, or evidence of full English, annual textual or product completion."
+  ],
+  "canonical_mutations": 0
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "triptych-scratch-queenship-finite-source-independent-conservation-review/v1",
+  "reviewer": "finite_regular_review",
+  "review_date": "2026-10-30",
+  "initial_review": {
+    "path": ".scratch/roman-english-completion-20261029/chants/late-marian/queen-three/roman-hymn/review/independent-review-initial.json",
+    "sha256": "77bf43361b7f1c6783490455f7ac355ca5bc10c01ade40387415613156120ab5"
+  },
+  "candidate": {
+    "path": ".scratch/roman-english-completion-20261029/chants/late-marian/queen-three/roman-hymn/finite-candidate-v3.json",
+    "sha256": "53f445481a2bcfa102e73296a7ac312916bad6745b535e294782a9d28238808b"
+  },
+  "source_file_pins": {
+    "path": ".scratch/roman-english-completion-20261029/chants/late-marian/queen-three/roman-hymn/source-file-pins-v3.json",
+    "sha256": "488e6b6d6e250692dfdec5d4ce71bbddcc4358c958e54befd8e2799a34f30558",
+    "files": 15,
+    "all_payload_bytes_and_hashes_rechecked": true,
+    "initial_source_pin_rows_unchanged": true
+  },
+  "exact_controllers": {
+    "path": ".scratch/roman-english-completion-20261029/chants/late-marian/queen-three/roman-hymn/exact-controllers-v3.json",
+    "sha256": "000196c679c9af0e4b1bc6e6bb729d8ae61109dda9b448c420986b342d6aab2c",
+    "records": 13,
+    "all_dictionaries_and_file_hashes_match_actual_proposed_or_existing_toml": true,
+    "payload_pin_rows_equal_source_file_pins": true
+  },
+  "conserved_fields": [
+    "target",
+    "old_proper",
+    "old_english_absence",
+    "target_latin",
+    "target_latin_sha256",
+    "source_words",
+    "finite_deltas",
+    "rights_question",
+    "english",
+    "english_sha256",
+    "english_status",
+    "proposed_source_files",
+    "prior_negative_evidence",
+    "source_scope",
+    "candidate_only",
+    "root_publication_decision_required",
+    "publication_adoption"
+  ],
+  "initial_findings_resolved": [
+    {
+      "id": "target-image-relative-paths",
+      "resolution": "Both corrected ../../ paths resolve to the actual target images independently inspected in initial review."
+    },
+    {
+      "id": "presentation-normalization-accounting",
+      "resolution": "Six explicit display normalizations account for accents, ae ligatures, linewrap/hyphenation, versicle marker, j-to-i frame spelling, and separate punctuation/capitalization deltas."
+    }
+  ],
+  "additional_change_review": "The reserved finite authority is explicitly pending, adopted=false, grants_publication=false. Its path/method is a reservation, not evidence of adoption or a publication grant. Supersession metadata changes no source proof, wording, preimage, or payload.",
+  "source_review": "ACCEPT",
+  "whole_original_study_english_semantic_review": "ACCEPT",
+  "finite_word_and_delta_accounting": "ACCEPT",
+  "packet_replayability": "ACCEPT",
+  "publication_adoption": false,
+  "strict_complete_old_arrangement_established": false,
+  "whole_joined_arrangement_rights": "UNRESOLVED and unadopted; root must independently assess this exact case. This receipt grants no publication rights and cannot serve as a blanket method or a strict full-body historical donor proof.",
+  "prior_negative_evidence_preserved": true,
+  "other_queenship_holds_unchanged": true,
+  "tracked_files_written": []
+}

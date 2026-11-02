@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.ebible-usfm-6fedbef9"
+edition_id = "edition.ebible-org.world-english-bible.catholic-eng-web-c"
+artifact_type = "structured-text"
+media_type = "application/zip"
+storage = "remote"
+rights_status = "unresolved"
+rights_jurisdiction = "United States"
+rights_basis = "Underlying Bible text has its separately verified public-domain basis; this whole container also includes modern publisher support files whose exact redistribution basis is unresolved. No package-wide public-domain claim is made and no archive bytes are retained in public source storage."
+source_url = "https://ebible.org/Scriptures/eng-web-c_usfm.zip"
+retrieved = "2026-10-26"
+sha256 = "6fedbef919e0850ecbe7a9480012c2549f327db7aa7bccf79d1bf6261e9992c1"
+byte_size = 3086529
+provenance = "Complete official publisher USFM ZIP acquired and hashed on 2026-10-26 as finite native-marker evidence. It is a distinct source identity from historical parent packages. Only separately manifested complete unchanged USFM book members are retained; the complete archive remains a remote hashed parent."
+notes = "ACCESS LIMITATION: the complete 3086529-byte archive has 77 members (73 USFM files). Its modern support members are excluded from retained public payloads: copr.htm SHA256 749da5f51ee10ab642fdcfd72c3d6542e9c5b6fce3b0dc81690beac1dd236abe; keys.asc SHA256 8659487be35d9a79b8bb41eb68db1e96e9a1933792f683b88e0de50cd3841942; signature.txt.asc SHA256 a09300a897308fdb4ca39c8ad019ca0e0d282de8c2cb08cfb00d50e1820fcdac; gentiumplus.css SHA256 3adda15bba40a70bc8f5513c5e12eff4d4a99994e67277b4ebbb4fa2bc0433f6. Their stylesheets differ from Haiola upstream material and this record does not assert a package-wide redistribution grant. The underlying Bible text permission is separate. Parent archive URL/hash/extent describe the acquired bytes, not an identity claim about earlier deliveries. No CSS, HTML wrapper, public-key file or signature is copied into the retained USFM children."
+indexable = false

@@ -1,0 +1,54 @@
+{
+  "schema": "triptych-independent-study-english-review/v1",
+  "recorded_on": "2026-10-29",
+  "scope": "Complementary English fidelity and finite abridgment policy review for two Common-of-Virgins source-local acclamation seats; source acquisition and OLM referral authentication have a separate independent review.",
+  "verdict": "accepted-without-english-correction",
+  "packet_sha256": "1dfc1a6bc137100c447291272672540410331942f70eaba2c55152188e7f1319",
+  "target_identities": [
+    {
+      "mass": "saint-cecilia-virgin-martyr",
+      "form_id": "main",
+      "proper": "Gospel Acclamation",
+      "cycle": "all",
+      "occurrence": 1
+    },
+    {
+      "mass": "saint-lucy-virgin-martyr",
+      "form_id": "main",
+      "proper": "Gospel Acclamation",
+      "cycle": "all",
+      "occurrence": 1
+    }
+  ],
+  "english_body": "This is a wise virgin, whom the Lord found watching; when the Lord came, she went in with him to the wedding feast.",
+  "english_sha256": "180c9c8a2fd059c019dc7a7747ed21220fb11d7d4771b8c7707b7cb030c0a722",
+  "checks": [
+    "Directly inspected the historical responsory sentence on the supplied 1888 page655 image, printed[93], and the OLM1981 page391 image, printed337/n735,2.",
+    "Verified both inspected image hashes equal the frozen packet.",
+    "Verified the abridged Latin is a monotone word subsequence of one complete historical responsory sentence after declared accents, ligatures, case and punctuation comparison.",
+    "Confirmed every omitted word is in the single middle clause plus its following connective Et; no retained Latin word is replaced or added.",
+    "Read the English clause by clause against that independently established historical abridgment; watching, the Lord coming, entry with him and the wedding are accurately represented.",
+    "Confirmed the two receiving targets carry exactly one identical project-created study English body, with no claimed historical English source or approved translation."
+  ],
+  "omitted_normalized_words": [
+    "quae",
+    "acceptis",
+    "lampadibus",
+    "sumpsit",
+    "secum",
+    "oleum",
+    "et"
+  ],
+  "required_qualifications": [
+    "This is original project-created study English, not received or approved English and not for recitation.",
+    "The existing abridged route applies to the independently established historical Latin selection; it supplies no right to protected modern source words.",
+    "The two source-local OLM1981 appointments, authenticated2008 wording and target Latin publication remain separate; this review does not clear target2008 exactness or the approved-English absence.",
+    "Exclude the following Media nocte versicle and Et veniente repeat; they are outside the finite source sentence and the accepted English body."
+  ],
+  "source_images": {
+    ".scratch/postconciliar-english-completion-20261029/nonseasonal-sources/remaining-acclamations/latin1888-ap655.png": "075fc0bbbb4f18359f447f524dfa96e03c994b0c08fdb07c9c40e040d68509d2",
+    ".scratch/postconciliar-english-completion-20261029/nonseasonal-sources/olm-ap391.png": "7582475fdda50e7b235f52704d774dc0fa38e016d4160e56eee0dbe182e2122f"
+  },
+  "companion_source_review": "A separate independently executed source and exact-referral review is required. This complementary English review does not claim to repeat whole-PDF acquisition and title checks.",
+  "tracked_mutations": []
+}

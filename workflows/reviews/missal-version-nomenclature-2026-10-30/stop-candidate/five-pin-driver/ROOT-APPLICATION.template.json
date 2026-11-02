@@ -1,0 +1,21 @@
+{
+  "Named_calendars_after_sha256": "ca1388f525f672bbc7e344daa45f783fecf8633db9fc49f844bb8da2947c31c0",
+  "historical_snapshot": {
+    "path": "workflows/reviews/missal-version-nomenclature-2026-10-30/historical-code/calendars-before-names.py",
+    "sha256": "54f37042b07ae107a9bea59fe6080d5699f70290335ae7ddee453752f35eb7d4"
+  },
+  "independent_test_review": {
+    "path": "workflows/reviews/missal-version-nomenclature-2026-10-30/test-successors/phase5-calendars-independent-review.json",
+    "sha256": "1d0bdfb6e51ef846a24112a6f8a58fc2e88e1a21825f2c5b4529bd26506160a5"
+  },
+  "parent_git_revision": null,
+  "parent_source_receipt_sha256": "4d35419fbb3f7a9cf59c2e2934addfeba0327f832f436d3f9fe0de83a4c23871",
+  "schema": "triptych-root-Names-phase5-calendars-currentness/v1",
+  "source_epoch_acceptance_or_runtime_permission_created": false,
+  "status": "pending-root-application",
+  "test": {
+    "after_sha256": "c52f31edba2f320b78916eab2e831b5ad59b3984450f181d331bd7a01e1317d1",
+    "before_sha256": "9414a3119e435fd016ff4f6354650440a065c38d86b5dfab0d7052c16c5aaa09",
+    "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+  }
+}

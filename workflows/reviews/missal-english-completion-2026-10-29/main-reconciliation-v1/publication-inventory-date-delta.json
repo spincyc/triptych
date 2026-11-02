@@ -1,0 +1,27 @@
+{
+  "after_sha256": "37674eb1bd4fc5b6aec26da6923a07fce9c1313d23c0bca8e5458eb51a439676",
+  "all_other_bytes_exact": true,
+  "all_parsed_data_except_date_exact": true,
+  "before_sha256": "515a842731a43cd6cf099c044f995425de07e4f9aa28432841204d8defdd913b",
+  "exact_byte_replacement": {
+    "after": "audited_on = \"2026-10-30\"",
+    "before": "audited_on = \"2026-10-26\"",
+    "occurrences": 1
+  },
+  "incoming_main_revision": "ac620e2f8becd4c354973b5804a2556a990b7ec8",
+  "independent_review_sha256": "859f905f4ffbb08da80f9719f8759fb18fefab94256f4e12cdea4bdd3145869c",
+  "owning_check": {
+    "command": [
+      "python",
+      "tools/tpt",
+      "source-inventory",
+      "check"
+    ],
+    "exit": 0
+  },
+  "parent_git_revision": "0b7da814a9c3d0bbf721565ceac1abc6898faa2a",
+  "path": "src/sources/inventories/publications-v1.toml",
+  "schema": "triptych-exact-inventory-date-delta/v1",
+  "source_batch_installation": "Pending exact successor; do not drop or ignore the existing pin.",
+  "source_permission_created": false
+}

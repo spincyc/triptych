@@ -1,0 +1,139 @@
+{
+  "accepted_fixture_core_sha256": "b6779b36e296f0a9345438294f09b60a64b3f6097cff6bb111ec337af42b42b5",
+  "added_paths": [],
+  "changes": [
+    {
+      "after_sha256": "eeabd808b92cb4754b102a700897bf758c0abcc1f656bfb059de70e56d884982",
+      "before_sha256": "0149bd4a6c9ed10d975d17bf91863c06dd86632ff8b42a9680054bffc933fcf4",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "after_sha256": "e9bf4075f1529b48682b6e64363e0d67492b0e5fb12fdb99a2e08ea9cf14db0f",
+      "before_sha256": "2a02299138da22f4f047f4c286f80f0d7efe6f04cb66a633012c8daae300b3f2",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py"
+    },
+    {
+      "after_sha256": "6eac69145f33bca64ea050e95a1c41c2dcea12ced488a002fc64fcd8e56d4a0c",
+      "before_sha256": "8917c73a9c4c0f03d39373271e55df703486e44ba90af600ad6582bbb096941e",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    },
+    {
+      "after_sha256": "cdc06660f2be35e40f94acb44d72c3a9d6cd679089d640e3486256044db5b994",
+      "before_sha256": "a88ad8b7df5c8af8c4e0d3023a0e1864ff68a766bfc51a3b63b019da59ad4124",
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py"
+    },
+    {
+      "after_sha256": "5e04878938801451c88c2d5b0c81afdfffa99bfda4f64f9025d1a8d7de6d5075",
+      "before_sha256": "4ab85f7ee0be0af90267e503dea142b7ce14d5ce2e922f8aab168df092f0d8ba",
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+    }
+  ],
+  "consumer_tests": "Pending after separate root adoption and installation.",
+  "core_serialization": "UTF-8 json.dumps(indent=2, sort_keys=True, ensure_ascii=False), followed by LF; omit acceptance and state.",
+  "dropped_paths": [],
+  "manifest_paths": 7068,
+  "original_replay_results": [
+    {
+      "inverse_rebased": false,
+      "original_sha256": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+      "path": "src/sources/calendars/postconciliar/propers.yaml"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877",
+      "path": "src/sources/calendars/roman-1962/propers.yaml"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "9bf6fe5ecc3b397888a0316f7b5c06e40f65e9dfc1eb96c3bc78d111e7c41597",
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
+      "path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "560e82057dc0480a5b1fe835304ba57ed476b346a38cab6fac550298582016ea",
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "79946d1bc6e015d8624d67ce243b59cf3ee634fc5997310aa6d764953349d815",
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "465e15d42b7301b22c2d93be1b95b00eb326ee0cd2ad1f928520952a89e89faa",
+      "path": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml"
+    },
+    {
+      "inverse_rebased": true,
+      "original_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py"
+    },
+    {
+      "inverse_rebased": true,
+      "original_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "dedf9a58d3f9e6b311bf5caf8f7aa7c51dcc9543d6ee17e4288e834c8cdc0215",
+      "path": "tools/tests/test_roman_1962_english13_phase5.py"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "86b29add67ac575fb147300f4ab6e66c47863a16c4cf5166896a88e710f5335c",
+      "path": "tools/tests/test_roman_1962_english31_phase4.py"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "9c11f0b870c14916dfa2530c1e733f262a5c9f526cd613744a06ea7ce3c05190",
+      "path": "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py"
+    },
+    {
+      "inverse_rebased": true,
+      "original_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    },
+    {
+      "inverse_rebased": true,
+      "original_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py"
+    },
+    {
+      "inverse_rebased": true,
+      "original_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+    }
+  ],
+  "parent_acceptance": {
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/source-batch-test-code-successor-v1.json",
+    "receipt_sha256": "cd6b4eea6810acfd3ce3cef9e4249ab0434e97a62ebea7df15f8b4dd8f17edec",
+    "status": "accepted"
+  },
+  "parent_fixture_sha256": "c77c9d880e6d80d4ff7d07b4691b464568bb509648ab3a318fd232006e64afa9",
+  "parent_manifest_sha256": "b30da8a83c979b551250899aa4b5068ce32ade331b168c5cf2a94da81c428ebd",
+  "pending_fixture_sha256": "ca33e64ea85ec1728d31aade9bcc2447fc83d081ef81a9e90c85086dccf708d4",
+  "proposed_manifest_sha256": "a0e3d98e0bb4de8f9f0509701550ff71312d5c1c11b81fac3ccf0f00a80f8baa",
+  "replay_support_sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc",
+  "schema": "triptych-source-batch-test-code-successor-proposal/v1",
+  "scope": "Exactly five existing test-code pins and their inverse representations; all seventeen reconstructed original byte streams remain exact. No source, source authority, body, owner, coverage or positive partition changes.",
+  "source_permission_created": false,
+  "status": "pending-root-adoption",
+  "strict_runtime_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+  "unchanged_manifest_rows": 7063,
+  "unchanged_replay_specifications": 12
+}

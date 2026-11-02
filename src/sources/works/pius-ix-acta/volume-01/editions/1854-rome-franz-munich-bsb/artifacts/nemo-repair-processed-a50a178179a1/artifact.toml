@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.nemo-repair-processed-a50a178179a1"
+edition_id = "edition.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb"
+artifact_type = "bounded-lossless-ocr-input-crop-comparison"
+media_type = "application/zip"
+storage = "tracked"
+rights_status = "permission"
+rights_basis = "BSB supplies this copy under https://rightsstatements.org/vocab/NoC-NC/1.0/, which permits copying, modification and distribution of the digital representation for non-commercial use. The retained bounded historical page images support this non-commercial research/source edition. No commercial-use permission or project CC licence is asserted over the images. The historical wording has its separate United States expired-term basis. Full modern PDF wrappers are excluded from this bounded package."
+retrieved = "2026-10-30"
+sha256 = "a50a178179a189bcc1cfa36c351d320caa9afbc4afe96664c73f5bdc92ab148b"
+byte_size = 59160
+path = "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/nemo-repair-processed-a50a178179a1/processed.zip"
+rights_jurisdiction = "United States"
+derived_from = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.bounded-images-ca31a9280e5a"
+transformation = "Crop native canvas363 at x220,y2020,width1100,height130; Gray colorspace and8-bit depth. Retain unthresholded,35% and40% threshold lossless PNG inputs with metadata stripped. No viewing JPEG is an OCR input."

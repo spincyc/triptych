@@ -1,0 +1,351 @@
+{
+  "schema": "triptych-independent-Clement-and-Common-four-specific-rights-recommendation/v1",
+  "reviewed_utc": "2026-10-30T03:24:44.555563+00:00",
+  "jurisdiction": "United States",
+  "status": "RECOMMEND_ACCEPT_FOUR_EXACT_QUALIFIED_BASES_ROOT_ADOPTION_REQUIRED",
+  "confidence": "moderate; whole-arrangement originality objection remains explicit",
+  "inputs": {
+    "sanctoral_v3_plan": {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/install-plan.json",
+      "sha256": "d217dab054e604da1fdb7a1c7f6aa6605d11c23f74ada62d21ecd859b00b724a"
+    },
+    "separate_Common2_plan": {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/finite-common-reviewed-install-plan.json",
+      "sha256": "06b8209ec05d518ff662c9546b643fc0662a27c93ee3d1ce7a8a0073704c58c3"
+    },
+    "Clement_source_English_review": {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/review.json",
+      "sha256": "1842100692792b1924396dc44245dc97413d2d7c18c75b6246f3c4c01bc96635"
+    },
+    "Common2_source_English_review": {
+      "path": ".scratch/roman-english-completion-20261029/temporal/holyweek-four/common-two-review/review.json",
+      "sha256": "d85ba6a4b9c3df6ba52f8501a2e5cc50b0d9b336d053f7763d071b0e224e160d"
+    },
+    "Common2_all13_candidate_source_file_hashes_checked": [
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pontiff-secret-postcommunion-collation-20261029.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pontiff-secret-postcommunion-collation-20261029.toml",
+        "sha256": "a540cbe01394bd0a09f75060e8e7cef082d3b78e84c57a2b4ef498efb4b289c3"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/pontiff-common-postcommunion-whole-foundation-20261029.toml",
+        "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/pontiff-common-postcommunion-whole-foundation-20261029.toml",
+        "sha256": "3aaa57840d3ff3f7efebd917c888f9f74b28c12c148d383dad8193065dfdb6ff"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/pontiff-common-secret-whole-foundation-20261029.toml",
+        "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/pontiff-common-secret-whole-foundation-20261029.toml",
+        "sha256": "154022bad8b6eeaf91209881c6edf62848e58749dcf40889554dc927237fae51"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/artifact.toml",
+        "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/artifact.toml",
+        "sha256": "b4a8a78095b4661ddf0398c35d748f90c79c08e9712dcfeff81c3888e071f486"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/english.tsv",
+        "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/english.tsv",
+        "sha256": "dc95b61f0a85f8b3f73f383b0d2b705a5c785e61eedc54b13596dae7daf383bd"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-postcommunion-publish-20261029.toml",
+        "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-postcommunion-publish-20261029.toml",
+        "sha256": "7134b2d46a62f0ab7009c2b8b55ba9f71e850cb0e46ee63f8dbb380ca138b6fc"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-postcommunion-verify-20261029.toml",
+        "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-postcommunion-verify-20261029.toml",
+        "sha256": "0c0945b3ff81ee712fdf7e51f8eef7123ce294b4fe36208cf83be38b6a4d0580"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-secret-publish-20261029.toml",
+        "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-secret-publish-20261029.toml",
+        "sha256": "cab13e69590815941d5eed6472985e7c2d086ace4e6404a8f3d8a6b62661c606"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-secret-verify-20261029.toml",
+        "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-secret-verify-20261029.toml",
+        "sha256": "6671b1390e38b46088b8af80638e2ba876b365a9ed54a076176e536b39fbbc99"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-two-qualified-3920bd77/artifact.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-two-qualified-3920bd77/artifact.toml",
+        "sha256": "5ef1d38cadfc5cee6acbf0c7a8ecccce406834c4e26a1934e25746b5da09d223"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-two-qualified-3920bd77/latin.txt",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-two-qualified-3920bd77/latin.txt",
+        "sha256": "3920bd772a32ebba24b336a71f9bcd30eeff745c60630d5fe20739609e58a75b"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pontiff-postcommunion-qualified.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pontiff-postcommunion-qualified.toml",
+        "sha256": "c510207c1e56a72c358913f839192f73cc2cd59f0fba6ec65ab41c269d1e6d43"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pontiff-secret-qualified.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pontiff-secret-qualified.toml",
+        "sha256": "aa72bfe94da5f95123b6fee091fa5b8df94733fb322d12d1f2d05ad3f6967339"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "identity": [
+        "s-clementis-i-papae-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "plan": "sanctoral-v3",
+      "Latin_sha256_UTF8_including_terminal_LF": "85e15b6f86d5c6f8c122d9c2c70203102ad0659a6006d502467d9e1afb0628de",
+      "English_sha256_UTF8_no_added_LF": "74cdb18eeb765ef8880cf4058948da0500870f8fe56b1fd485edda9fbecb8837",
+      "English_kind": "project-created study translation; accepted fidelity unchanged",
+      "older_whole_foundation_sha256": "fdc2bf11d80c2c291cc2ba671799732e3143594678d06905e747a08dfdd91934",
+      "older_artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+      "older_locus": "Feltoe1896 printed131 lines1-3; PDF155, September episcopal formularies, continuous three-line prayer at top.",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--secret--1",
+      "target_pages": [
+        806
+      ],
+      "target_unit": 4152,
+      "all_measured_deltas": [
+        "Prepend conventional sacrificial adjunct Oblatis muneribus and supplication quaesumus to the same continuous old prayer.",
+        "Move Domine from older Ecclesiam tuam Domine benignus inlumina to target quaesumus, Domine, Ecclesiam tuam benignus illumina. The normalized older transcription expands the printed Dne abbreviation to Domine; this is an explicitly recorded source transformation.",
+        "Expand old conventional per. cue only to the actual complete Clement prefix Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate. The literal contiguous long formula is independently controlled by Mame1922 PDF368; no words beyond target in unitate are supplied.",
+        "Inlumina/illumina spelling, stress accents, case, pointing and layout differ."
+      ],
+      "actual_target_conclusion": "Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.",
+      "conclusion_controllers": [
+        {
+          "passage_record": {
+            "schema": 2,
+            "record_type": "passage",
+            "id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-conclusion-prefix-20261029",
+            "edition_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+            "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+            "artifact_sha256": "976afd4964a6b833ec2bf92ee5cb00825be96a4d7bc789acf34fde0bacac3b6b",
+            "locus": "1922 Tours Mame, printed254, SabbatoSancto, fontblessing prayer Omnipotens...adesto; wholePDF368; extract1",
+            "states": [
+              "cataloged",
+              "acquired",
+              "inspected",
+              "verified"
+            ],
+            "verified_on": "2026-10-29",
+            "context": "Complete historical source control; rights qualification of the modern target is separate.",
+            "notes": "Actual contiguous full formula contains Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: followed by a rubric and the sung Per omnia. The target ends after in unitate; only that literal contiguous prefix is used, with target pointing and no continuation.",
+            "artifact_page_ranges": [
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          "artifact_record": {
+            "schema": 2,
+            "record_type": "artifact",
+            "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+            "edition_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+            "artifact_type": "facsimile-page-extract",
+            "media_type": "application/pdf",
+            "storage": "tracked",
+            "rights_status": "public-domain",
+            "rights_jurisdiction": "United States",
+            "rights_basis": "United States: the identified Tours 1922 printed words and page images have no remaining copyright term in 2026. Mechanical extraction and machine image/OCR layers add no new human authorship. This basis is the identified printing and mechanical reproduction; it does not rely on a host licence or clear the 1962 target contribution. Underlying historical Latin and images remain excluded from the project CC BY 4.0 grant.",
+            "sha256": "976afd4964a6b833ec2bf92ee5cb00825be96a4d7bc789acf34fde0bacac3b6b",
+            "byte_size": 411321,
+            "page_count": 2,
+            "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/source.pdf",
+            "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+            "retrieved": "2026-10-29",
+            "provenance": "Mechanically extracted from the already acquired exact whole 1922 Tours Mame PDF, 51720493 bytes, SHA256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Both complete pages independently read at 200 and 400 dpi on 29 October 2026.",
+            "transformation": "pdfseparate then pdfunite; extract page 1 = whole PDF368/printed254 (actual long conclusion); extract page2 = wholePDF1082/printed[52] (complete historical Lawrence Collect). Full page boxes and original image streams retained.",
+            "notes": "No target1962 image or modern Latin contribution is included. The actual historical petition has consilii, no Doctor title and gloria; it is not represented as the complete modern target prayer.",
+            "indexable": false
+          }
+        }
+      ],
+      "source_English_review_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/review.json",
+      "source_English_review_sha256": "1842100692792b1924396dc44245dc97413d2d7c18c75b6246f3c4c01bc96635",
+      "recommendation": "ACCEPT_EXACT_QUALIFIED_SECTION1_6_BASIS_FOR_ROOT_ADOPTION",
+      "confidence": "moderate"
+    },
+    {
+      "identity": [
+        "s-clementis-i-papae-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "plan": "sanctoral-v3",
+      "Latin_sha256_UTF8_including_terminal_LF": "bfd0be06cd5ff6e036d7a9e22ee73a2bec99a413c24cc12baefc939a3db52bce",
+      "English_sha256_UTF8_no_added_LF": "b0a0a3f7de33960f9bfa9027b2b46a033fbf72666b8569ad23788ffb9ecde6ab",
+      "English_kind": "project-created study translation; accepted fidelity unchanged",
+      "older_whole_foundation_sha256": "645977e3cc77723f71e6778525efae2c62f9cdfdae664a4839ac89bc74335a9c",
+      "older_artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+      "older_locus": "Feltoe1896 printed132 lines9-11; PDF156, September X Itemalia, continuous three-line prayer before XI Itemalia.",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--postcommunion--1",
+      "target_pages": [
+        806
+      ],
+      "target_unit": 4155,
+      "all_measured_deltas": [
+        "Prepend conventional sacramental participial adjunct Refectione sancta enutritam to the unchanged connected old prayer.",
+        "Reorder Guberna Domine quaesumus to guberna quaesumus Domine.",
+        "Expand conventional conclusion per. to Per Dominum.; stress accents, case, pointing and linewrap differ."
+      ],
+      "actual_target_conclusion": "Per Dominum.",
+      "conclusion_controllers": [
+        {
+          "passage_record": {
+            "schema": 2,
+            "record_type": "passage",
+            "id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-conclusion-prefix-20261029",
+            "edition_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+            "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+            "artifact_sha256": "976afd4964a6b833ec2bf92ee5cb00825be96a4d7bc789acf34fde0bacac3b6b",
+            "locus": "1922 Tours Mame, printed254, SabbatoSancto, fontblessing prayer Omnipotens...adesto; wholePDF368; extract1",
+            "states": [
+              "cataloged",
+              "acquired",
+              "inspected",
+              "verified"
+            ],
+            "verified_on": "2026-10-29",
+            "context": "Complete historical source control; rights qualification of the modern target is separate.",
+            "notes": "Actual contiguous full formula contains Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: followed by a rubric and the sung Per omnia. The target ends after in unitate; only that literal contiguous prefix is used, with target pointing and no continuation.",
+            "artifact_page_ranges": [
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          "artifact_record": {
+            "schema": 2,
+            "record_type": "artifact",
+            "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+            "edition_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+            "artifact_type": "facsimile-page-extract",
+            "media_type": "application/pdf",
+            "storage": "tracked",
+            "rights_status": "public-domain",
+            "rights_jurisdiction": "United States",
+            "rights_basis": "United States: the identified Tours 1922 printed words and page images have no remaining copyright term in 2026. Mechanical extraction and machine image/OCR layers add no new human authorship. This basis is the identified printing and mechanical reproduction; it does not rely on a host licence or clear the 1962 target contribution. Underlying historical Latin and images remain excluded from the project CC BY 4.0 grant.",
+            "sha256": "976afd4964a6b833ec2bf92ee5cb00825be96a4d7bc789acf34fde0bacac3b6b",
+            "byte_size": 411321,
+            "page_count": 2,
+            "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/source.pdf",
+            "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+            "retrieved": "2026-10-29",
+            "provenance": "Mechanically extracted from the already acquired exact whole 1922 Tours Mame PDF, 51720493 bytes, SHA256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Both complete pages independently read at 200 and 400 dpi on 29 October 2026.",
+            "transformation": "pdfseparate then pdfunite; extract page 1 = whole PDF368/printed254 (actual long conclusion); extract page2 = wholePDF1082/printed[52] (complete historical Lawrence Collect). Full page boxes and original image streams retained.",
+            "notes": "No target1962 image or modern Latin contribution is included. The actual historical petition has consilii, no Doctor title and gloria; it is not represented as the complete modern target prayer.",
+            "indexable": false
+          }
+        }
+      ],
+      "source_English_review_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/review.json",
+      "source_English_review_sha256": "1842100692792b1924396dc44245dc97413d2d7c18c75b6246f3c4c01bc96635",
+      "recommendation": "ACCEPT_EXACT_QUALIFIED_SECTION1_6_BASIS_FOR_ROOT_ADOPTION",
+      "confidence": "moderate"
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "plan": "separate-Common2",
+      "Latin_sha256_UTF8_including_terminal_LF": "513de5a7dff9120d02f2fcc6cbc4c5a9d19a69ffd18e9075c5325885a98e43ab",
+      "English_sha256_UTF8_no_added_LF": "ade3795a41a53771bb17b5f259548f24e444f9f7d3446ac9b7978481138cbaae",
+      "English_kind": "literal historical human Lasance English from ordinary SaintMartin pages; separate nonrenewal/source basis preserved",
+      "older_whole_foundation_sha256": "fdc2bf11d80c2c291cc2ba671799732e3143594678d06905e747a08dfdd91934",
+      "older_artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+      "older_passage_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.pontiff-common-secret-whole-foundation-20261029",
+      "older_locus": "Feltoe1896 printed131 lines1-3; PDF155, September episcopal formularies, continuous three-line prayer at top.",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.pontiff-secret-postcommunion-collation-20261029",
+      "target_locator": "1962artifact811/printed[3]unit4187",
+      "all_measured_deltas": [
+        "Add conventional sacrificial adjunct Oblatis muneribus and supplication quaesumus before the same continuous prayer.",
+        "Expand conventional printed conclusion per. to Per Dominum nostrum.",
+        "Inlumina/illumina spelling, stress accents, case, pointing and layout differ.",
+        "Move the vocative Domine from after Ecclesiam tuam in the older prayer to before Ecclesiam tuam in the target; this routinewordorder change is explicit and not literal whole-sequence identity."
+      ],
+      "actual_target_conclusion": "Per Dominum nostrum.",
+      "English_publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-two-en-20261029-dc95b61f",
+      "English_publication_artifact_sha256": "dc95b61f0a85f8b3f73f383b0d2b705a5c785e61eedc54b13596dae7daf383bd",
+      "English_publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-secret-publish-20261029",
+      "source_English_review_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-four/common-two-review/review.json",
+      "source_English_review_sha256": "d85ba6a4b9c3df6ba52f8501a2e5cc50b0d9b336d053f7763d071b0e224e160d",
+      "recommendation": "ACCEPT_EXACT_QUALIFIED_SECTION1_6_BASIS_FOR_ROOT_ADOPTION",
+      "confidence": "moderate"
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "plan": "separate-Common2",
+      "Latin_sha256_UTF8_including_terminal_LF": "bfd0be06cd5ff6e036d7a9e22ee73a2bec99a413c24cc12baefc939a3db52bce",
+      "English_sha256_UTF8_no_added_LF": "17708c81cefb954dbe3d980b8daf0583083ee9b1e039547a6f434a3f51a509c2",
+      "English_kind": "literal historical human Lasance English from ordinary SaintMartin pages; separate nonrenewal/source basis preserved",
+      "older_whole_foundation_sha256": "645977e3cc77723f71e6778525efae2c62f9cdfdae664a4839ac89bc74335a9c",
+      "older_artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+      "older_passage_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.pontiff-common-postcommunion-whole-foundation-20261029",
+      "older_locus": "Feltoe1896 printed132 lines9-11; PDF156, September X Itemalia, continuous three-line prayer before XI Itemalia.",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.pontiff-secret-postcommunion-collation-20261029",
+      "target_locator": "1962artifact811/printed[3]unit4190",
+      "all_measured_deltas": [
+        "Prepend conventional sacramental participial adjunct Refectione sancta enutritam to the unchanged connected old prayer.",
+        "Reorder Guberna Domine quaesumus to guberna quaesumus Domine.",
+        "Expand conventional conclusion per. to Per Dominum.; stress accents, case, pointing and linewrap differ."
+      ],
+      "actual_target_conclusion": "Per Dominum.",
+      "English_publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-two-en-20261029-dc95b61f",
+      "English_publication_artifact_sha256": "dc95b61f0a85f8b3f73f383b0d2b705a5c785e61eedc54b13596dae7daf383bd",
+      "English_publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-postcommunion-publish-20261029",
+      "source_English_review_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-four/common-two-review/review.json",
+      "source_English_review_sha256": "d85ba6a4b9c3df6ba52f8501a2e5cc50b0d9b336d053f7763d071b0e224e160d",
+      "recommendation": "ACCEPT_EXACT_QUALIFIED_SECTION1_6_BASIS_FOR_ROOT_ADOPTION",
+      "confidence": "moderate"
+    }
+  ],
+  "whole_contribution_assessment": [
+    "For each Secret, Feltoe1896 printed131/PDF155 preserves one complete connected Ecclesiam tuam prayer and its principal petition order. The target adds Oblatis muneribus and quaesumus, moves the vocative Domine from after Ecclesiam tuam to before it, uses illumina rather than inlumina and prints its actual conventional ending. These are real additions/reordering, not literal whole-word historical identity.",
+    "For each Postcommunion, Feltoe1896 printed132/PDF156 preserves one complete connected Guberna prayer, including governance, freedom and religious-integrity petitions. The target adds the sacramental participial adjunct Refectione sancta enutritam, changes the order of Domine and quaesumus, and prints the actual short Per Dominum cue. The adjunct is not present in Feltoe and cannot be represented as if it were.",
+    "Assessing the additions, vocative reorder and actual conclusions together, the new expressive contribution is a brief conventional offering/communion circumstance and routine supplication order attached to the same complete old governing petition. No new main petition, substantial literary architecture or collage of unrelated older clauses is introduced. The exact conventional formulae and routine reorder support a defensible insufficient-originality judgment under policy section1(6).",
+    "The Copyright Office originality boundary for words/short expressions and derivative-work additions supports this narrower argument; it does not convert shortness into a universal exemption. The complete continuous old foundation matters independently of the number of modern words.",
+    "The modern sacramental setting is meaningful. The conclusion is a qualified project publication judgment at moderate confidence, not a court finding, holder permission, unqualified public-domain status of modern Latin, or authority to translate a new reform-composed prayer generally."
+  ],
+  "strongest_counterargument_and_response": {
+    "counterargument": "A deliberate addition adapting a governance prayer to the offering of gifts or postcommunion thanksgiving, coupled with a reordered invocation, could constitute a creative theological redaction or a new selected arrangement. The originality threshold is low; ordinary words can combine into protected expression, and no current court/holder decision clears these exact forms. Therefore neither public-domain ingredients nor a human English nonrenewal record alone is sufficient.",
+    "response": "Here the full old petition and its connected progression already exist in one independently checked historical prayer for each family. The measured additions are conventional ablative/participial liturgical circumstances and supplication, the moved vocative does not create a new clause and the conclusions are conventional printed formula extents. The combined new expression remains slight and formulaic rather than a new authored main petition or nontrivial recomposition. Under the repository’s explicit ambiguous-but-defensible priority6 this is enough for a narrowly qualified finite adoption, while preserving the adverse argument and exact boundaries.",
+    "nontransferability": "This reasoning cannot be applied automatically to Urban’s unestablished whole arrangement, the three Gregem Collect adaptations, a modern Eucharistic Prayer, other Common forms or any similar incipit. Those are outside these four exact tuples."
+  },
+  "conclusion_and_English_boundaries": [
+    "Clement Secret retains its actual long printed prefix through in unitate and the independently reviewed Mame1922PDF368/printed254 contiguous-formula control and first-class lineage. No later formula words, Amen or response may be added.",
+    "Common Secret retains actual Per Dominum nostrum; Common and Clement Postcommunion retain actual Per Dominum. Their source per. cue is kept distinct from target wording. No historical expansion is passed off as a verbatim Feltoe whole; the source/target delta is explicit.",
+    "Clement English remains the accepted newly composed project study translation, including only its actual ending. Common English remains the accepted unchanged human Lasance translation from ordinary SaintMartin printed1286-1287/PDF1287-1288, outside the excluded lettered insert. It is not relabeled project-created or approved1962 English.",
+    "Lasance’s separately established English nonrenewal/publication basis is preserved but is not the Latin rights basis. No whole Lasance/modern Roman book is cleared by this recommendation.",
+    "Each exact appointment/occurrence is included separately. The identical Postcommunion Latin hash at two targets does not authorise other appointments or source identity fanout."
+  ],
+  "implementation_conditions": [
+    "Root must separately adopt all four exact tuple/full-Latin/English hashes and all source/control/delta records in the finite authority before installation or publication. Existing/prospective singular-Gregem or other finite authorities do not cover these four automatically.",
+    "Keep historical whole-source identity, actual modern changes, conclusion length, qualified-nonoriginal-adaptation basis and moderate-confidence objection explicit. Do not label whole modern target Latin public domain or word-exact to Feltoe.",
+    "Final source/library/projection/publication and browser checks remain required; no canonical admission is performed by this recommendation. Changes to wording, source controller, conclusion, form or full-body hashes require another review."
+  ],
+  "primary_basis": "Policy section1(6); previously freshly read official CopyrightOffice37CFR202.1(a), Circular33 and Circular14, with the same source-page2025-03-14/as-of and circular-overview limitations retained. No new legal survey or automatic extension of a previous finite adoption is claimed.",
+  "evidence_ceiling": "Exact frozen plans, complete measured deltas and accepted independent source/English receipts read; all four body/English hashes and all13 Common2 candidate-source-file hashes rechecked. This turn did not repeat the accepted image/fidelity audit or source graph19records/publication binding tests; those remain the referenced reviewers’ bounded evidence.",
+  "canonical_files_modified": false,
+  "root_adoption_performed": false,
+  "source_English_verdicts_rewritten": false
+}

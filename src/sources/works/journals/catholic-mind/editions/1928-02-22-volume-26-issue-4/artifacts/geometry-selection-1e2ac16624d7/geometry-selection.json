@@ -1,0 +1,2631 @@
+{
+  "schema": "triptych-english-word-geometry-selection/v1",
+  "source_xml": "sim_catholic-mind_1928-02-22_26_4_djvu.xml",
+  "source_xml_sha256": "15ac32dd5c05b494db50c24040e81d6895eb74def00d3c072b0b403a44426457",
+  "source_pdf": "sim_catholic-mind_1928-02-22_26_4.pdf",
+  "source_pdf_sha256": "648aa46c014074e8ae99e6f6e3119534f40ff9d2fedb342e0189ba98393343f1",
+  "selected_artifact_page_range": [
+    1,
+    12
+  ],
+  "method": "Select exact XML WORD text in original XML paragraph/line order within explicit page rectangle; join words/lines with spaces and separate retained XML paragraphs by blank LF. Exclude printed upper running heads/masthead, lower isolated numeric page labels, and wholly neighboring-page words outside main text column. Preserve OCR spelling, punctuation, broken words and source dating.",
+  "output": "papal-act-geometry-text.txt",
+  "output_sha256": "123633d87eefc46a8093a1a9692ee16e1e7d255c66924b8cad5a3d0a8b5c8a26",
+  "output_bytes": 25161,
+  "pages": [
+    {
+      "page": 1,
+      "width": 1730,
+      "height": 2662,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1700,
+      "word_center_y_min": 340,
+      "word_center_y_max": 2662,
+      "excluded_words": [
+        {
+          "text": "wa",
+          "coords": [
+            0,
+            1770,
+            10,
+            1708
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Ww",
+          "coords": [
+            0,
+            1681,
+            8,
+            1657
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "a",
+          "coords": [
+            0,
+            1625,
+            7,
+            1600
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "oe",
+          "coords": [
+            0,
+            1582,
+            16,
+            1560
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Vy",
+          "coords": [
+            0,
+            1533,
+            7,
+            1510
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "5S",
+          "coords": [
+            0,
+            2168,
+            19,
+            2148
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Fewer",
+          "coords": [
+            0,
+            2122,
+            19,
+            2043
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "FF",
+          "coords": [
+            0,
+            2019,
+            19,
+            2001
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Eee",
+          "coords": [
+            0,
+            1979,
+            12,
+            1815
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "oa",
+          "coords": [
+            0,
+            1881,
+            19,
+            1853
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "THE",
+          "coords": [
+            179,
+            262,
+            274,
+            232
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "CATHOLIC",
+          "coords": [
+            297,
+            264,
+            533,
+            231
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "MIND,",
+          "coords": [
+            555,
+            269,
+            689,
+            230
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "Vol.",
+          "coords": [
+            99,
+            301,
+            163,
+            271
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "XXVI,",
+          "coords": [
+            180,
+            308,
+            306,
+            271
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "No.",
+          "coords": [
+            321,
+            303,
+            384,
+            272
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "4,",
+          "coords": [
+            399,
+            309,
+            428,
+            272
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "February",
+          "coords": [
+            442,
+            310,
+            606,
+            271
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "22,",
+          "coords": [
+            621,
+            309,
+            670,
+            272
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "1928",
+          "coords": [
+            683,
+            303,
+            763,
+            270
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "61",
+          "coords": [
+            736,
+            2473,
+            778,
+            2437
+          ],
+          "reason": "isolated printed page number at lower margin"
+        }
+      ],
+      "kept_words": 281
+    },
+    {
+      "page": 2,
+      "width": 1730,
+      "height": 2662,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1700,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2662,
+      "excluded_words": [
+        {
+          "text": "62",
+          "coords": [
+            451,
+            261,
+            497,
+            227
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "PROMOTION",
+          "coords": [
+            589,
+            261,
+            910,
+            227
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            941,
+            261,
+            1010,
+            227
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "RELIGIOUS",
+          "coords": [
+            1040,
+            262,
+            1328,
+            226
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "UNITY",
+          "coords": [
+            1360,
+            262,
+            1528,
+            226
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 357
+    },
+    {
+      "page": 3,
+      "width": 1730,
+      "height": 2662,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1700,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2662,
+      "excluded_words": [
+        {
+          "text": "he",
+          "coords": [
+            5,
+            914,
+            45,
+            880
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "he",
+          "coords": [
+            0,
+            965,
+            47,
+            931
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ns",
+          "coords": [
+            0,
+            1014,
+            48,
+            992
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ay,",
+          "coords": [
+            0,
+            1075,
+            49,
+            1042
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ire",
+          "coords": [
+            0,
+            1114,
+            51,
+            1092
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "re-",
+          "coords": [
+            2,
+            1164,
+            52,
+            1142
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "hy.",
+          "coords": [
+            0,
+            1225,
+            54,
+            1180
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "cen",
+          "coords": [
+            0,
+            1264,
+            53,
+            1242
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "r",
+          "coords": [
+            0,
+            1321,
+            9,
+            1292
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "it",
+          "coords": [
+            35,
+            1313,
+            56,
+            1279
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "te)",
+          "coords": [
+            4,
+            1372,
+            59,
+            1337
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "hat",
+          "coords": [
+            1,
+            1413,
+            57,
+            1379
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ngs",
+          "coords": [
+            0,
+            1483,
+            61,
+            1441
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "on.",
+          "coords": [
+            0,
+            1513,
+            62,
+            1491
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ris-",
+          "coords": [
+            1,
+            1563,
+            63,
+            1528
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "by",
+          "coords": [
+            23,
+            1622,
+            64,
+            1579
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "eat-",
+          "coords": [
+            0,
+            1663,
+            67,
+            1637
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "all",
+          "coords": [
+            27,
+            1712,
+            67,
+            1677
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ina-",
+          "coords": [
+            0,
+            1762,
+            69,
+            1728
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "For",
+          "coords": [
+            2,
+            1812,
+            71,
+            1778
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "will",
+          "coords": [
+            5,
+            1862,
+            70,
+            1827
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "for",
+          "coords": [
+            20,
+            1912,
+            74,
+            1877
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ight",
+          "coords": [
+            4,
+            1971,
+            75,
+            1927
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "5s",
+          "coords": [
+            0,
+            2011,
+            13,
+            1991
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "to",
+          "coords": [
+            45,
+            2011,
+            78,
+            1984
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "istic",
+          "coords": [
+            0,
+            2062,
+            79,
+            2026
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "men",
+          "coords": [
+            2,
+            2112,
+            81,
+            2089
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "for",
+          "coords": [
+            27,
+            2161,
+            81,
+            2127
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "add,",
+          "coords": [
+            5,
+            2212,
+            83,
+            2176
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "‘rom",
+          "coords": [
+            0,
+            2261,
+            84,
+            2227
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "and",
+          "coords": [
+            18,
+            2311,
+            85,
+            2275
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "35.",
+          "coords": [
+            0,
+            2444,
+            37,
+            2412
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "PROMOTION",
+          "coords": [
+            280,
+            247,
+            607,
+            210
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            637,
+            245,
+            706,
+            209
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "RELIGIOUS",
+          "coords": [
+            734,
+            246,
+            1025,
+            208
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "UNITY",
+          "coords": [
+            1053,
+            244,
+            1226,
+            207
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "63",
+          "coords": [
+            1315,
+            241,
+            1361,
+            205
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": ",",
+          "coords": [
+            130,
+            2384,
+            133,
+            2381
+          ],
+          "reason": "outside main page text column"
+        }
+      ],
+      "kept_words": 357
+    },
+    {
+      "page": 4,
+      "width": 1730,
+      "height": 2662,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1700,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2662,
+      "excluded_words": [
+        {
+          "text": "64",
+          "coords": [
+            448,
+            256,
+            494,
+            221
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "PROMOTION",
+          "coords": [
+            582,
+            256,
+            908,
+            220
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            938,
+            255,
+            1006,
+            220
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "RELIGIOUS",
+          "coords": [
+            1035,
+            257,
+            1325,
+            218
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "UNITY",
+          "coords": [
+            1352,
+            254,
+            1524,
+            217
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "f",
+          "coords": [
+            1709,
+            1297,
+            1716,
+            1284
+          ],
+          "reason": "outside main page text column"
+        }
+      ],
+      "kept_words": 396
+    },
+    {
+      "page": 5,
+      "width": 1730,
+      "height": 2662,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1700,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2662,
+      "excluded_words": [
+        {
+          "text": "an",
+          "coords": [
+            0,
+            611,
+            40,
+            588
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "1is",
+          "coords": [
+            0,
+            660,
+            42,
+            625
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ed",
+          "coords": [
+            2,
+            711,
+            45,
+            677
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "in",
+          "coords": [
+            11,
+            760,
+            45,
+            726
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "in-",
+          "coords": [
+            0,
+            810,
+            46,
+            775
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ho",
+          "coords": [
+            3,
+            860,
+            48,
+            825
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "30-",
+          "coords": [
+            0,
+            910,
+            49,
+            887
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ili-",
+          "coords": [
+            0,
+            960,
+            51,
+            925
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "lay",
+          "coords": [
+            0,
+            1020,
+            53,
+            986
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "wn",
+          "coords": [
+            0,
+            1059,
+            53,
+            1037
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Lis",
+          "coords": [
+            0,
+            1108,
+            57,
+            1074
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "we",
+          "coords": [
+            7,
+            1208,
+            58,
+            1185
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "rch",
+          "coords": [
+            0,
+            1258,
+            59,
+            1223
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "hat",
+          "coords": [
+            1,
+            1307,
+            61,
+            1272
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "not",
+          "coords": [
+            2,
+            1357,
+            62,
+            1329
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ex-",
+          "coords": [
+            3,
+            1408,
+            63,
+            1384
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "2ast",
+          "coords": [
+            0,
+            1458,
+            65,
+            1427
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "of",
+          "coords": [
+            27,
+            1506,
+            65,
+            1471
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "one",
+          "coords": [
+            2,
+            1558,
+            68,
+            1532
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "irch",
+          "coords": [
+            0,
+            1606,
+            71,
+            1570
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "om-",
+          "coords": [
+            0,
+            1655,
+            70,
+            1632
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ines",
+          "coords": [
+            0,
+            1705,
+            73,
+            1670
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "d",
+          "coords": [
+            0,
+            1804,
+            28,
+            1770
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "is",
+          "coords": [
+            49,
+            1802,
+            76,
+            1768
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ible,",
+          "coords": [
+            0,
+            1855,
+            77,
+            1819
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ving",
+          "coords": [
+            0,
+            1911,
+            79,
+            1869
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "be-",
+          "coords": [
+            23,
+            1953,
+            79,
+            1919
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "nsa-",
+          "coords": [
+            3,
+            2003,
+            81,
+            1981
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "enly",
+          "coords": [
+            0,
+            2062,
+            82,
+            2018
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "urch",
+          "coords": [
+            2,
+            2103,
+            86,
+            2067
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ek’’.",
+          "coords": [
+            1,
+            2154,
+            84,
+            2118
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "PROMOTION",
+          "coords": [
+            272,
+            211,
+            599,
+            175
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            628,
+            211,
+            698,
+            175
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "RELIGIOUS",
+          "coords": [
+            726,
+            212,
+            1017,
+            176
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "UNITY",
+          "coords": [
+            1045,
+            212,
+            1217,
+            176
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "—",
+          "coords": [
+            1238,
+            227,
+            1262,
+            171
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "65",
+          "coords": [
+            1307,
+            212,
+            1352,
+            176
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 367
+    },
+    {
+      "page": 6,
+      "width": 1730,
+      "height": 2654,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1700,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2654,
+      "excluded_words": [
+        {
+          "text": "66",
+          "coords": [
+            436,
+            218,
+            483,
+            184
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "PROMOTION",
+          "coords": [
+            571,
+            219,
+            896,
+            183
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            926,
+            219,
+            996,
+            183
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "RELIGIOUS",
+          "coords": [
+            1023,
+            219,
+            1314,
+            182
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "UNITY",
+          "coords": [
+            1342,
+            220,
+            1514,
+            182
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 377
+    },
+    {
+      "page": 7,
+      "width": 1730,
+      "height": 2654,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1700,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2654,
+      "excluded_words": [
+        {
+          "text": "PROMOTION",
+          "coords": [
+            273,
+            238,
+            599,
+            202
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            629,
+            238,
+            698,
+            202
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "RELIGIOUS",
+          "coords": [
+            728,
+            238,
+            1018,
+            202
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "UNITY",
+          "coords": [
+            1044,
+            238,
+            1218,
+            202
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "_—",
+          "coords": [
+            1239,
+            253,
+            1268,
+            197
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "67",
+          "coords": [
+            1308,
+            237,
+            1355,
+            201
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": ";",
+          "coords": [
+            1,
+            369,
+            12,
+            316
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": ".",
+          "coords": [
+            0,
+            419,
+            14,
+            398
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "|",
+          "coords": [
+            0,
+            469,
+            15,
+            436
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "\"",
+          "coords": [
+            0,
+            521,
+            18,
+            498
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": ".",
+          "coords": [
+            3,
+            568,
+            19,
+            549
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "h",
+          "coords": [
+            0,
+            618,
+            20,
+            584
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "d",
+          "coords": [
+            3,
+            668,
+            23,
+            635
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "¥",
+          "coords": [
+            0,
+            717,
+            22,
+            684
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "it",
+          "coords": [
+            0,
+            767,
+            21,
+            744
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "n",
+          "coords": [
+            0,
+            818,
+            26,
+            796
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "by",
+          "coords": [
+            0,
+            867,
+            29,
+            833
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "fe",
+          "coords": [
+            4,
+            917,
+            31,
+            874
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ne",
+          "coords": [
+            0,
+            1017,
+            35,
+            995
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ad",
+          "coords": [
+            0,
+            1068,
+            35,
+            1034
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "al",
+          "coords": [
+            0,
+            1117,
+            36,
+            1084
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ad",
+          "coords": [
+            0,
+            1167,
+            39,
+            1134
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Ad",
+          "coords": [
+            0,
+            1216,
+            40,
+            1183
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "~",
+          "coords": [
+            0,
+            1266,
+            42,
+            1245
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "in",
+          "coords": [
+            0,
+            1317,
+            44,
+            1282
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "to",
+          "coords": [
+            13,
+            1366,
+            47,
+            1341
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "wat",
+          "coords": [
+            0,
+            1416,
+            46,
+            1392
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "his",
+          "coords": [
+            0,
+            1466,
+            50,
+            1432
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "mn",
+          "coords": [
+            0,
+            1517,
+            53,
+            1494
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Fa",
+          "coords": [
+            0,
+            1566,
+            55,
+            1532
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ch,",
+          "coords": [
+            4,
+            1616,
+            56,
+            1581
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "er-",
+          "coords": [
+            0,
+            1666,
+            57,
+            1642
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ers",
+          "coords": [
+            0,
+            1716,
+            59,
+            1693
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ese",
+          "coords": [
+            0,
+            1766,
+            61,
+            1743
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "slics",
+          "coords": [
+            0,
+            2062,
+            70,
+            2026
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "you",
+          "coords": [
+            8,
+            2123,
+            72,
+            2086
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "r",
+          "coords": [
+            0,
+            2162,
+            16,
+            2139
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "to",
+          "coords": [
+            41,
+            2160,
+            73,
+            2134
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "r",
+          "coords": [
+            3,
+            2212,
+            19,
+            2189
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "as",
+          "coords": [
+            42,
+            2210,
+            74,
+            2188
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "af-",
+          "coords": [
+            25,
+            2261,
+            76,
+            2225
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "—",
+          "coords": [
+            111,
+            2275,
+            131,
+            2215
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "man",
+          "coords": [
+            1,
+            2311,
+            77,
+            2286
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "—",
+          "coords": [
+            103,
+            2323,
+            119,
+            2264
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "and",
+          "coords": [
+            17,
+            2361,
+            80,
+            2324
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "—",
+          "coords": [
+            104,
+            2376,
+            125,
+            2315
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "but",
+          "coords": [
+            24,
+            2410,
+            80,
+            2376
+          ],
+          "reason": "outside main page text column"
+        }
+      ],
+      "kept_words": 403
+    },
+    {
+      "page": 8,
+      "width": 1730,
+      "height": 2662,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1700,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2662,
+      "excluded_words": [
+        {
+          "text": "68",
+          "coords": [
+            420,
+            253,
+            467,
+            218
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "PROMOTION",
+          "coords": [
+            556,
+            253,
+            881,
+            217
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            911,
+            252,
+            980,
+            216
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "RELIGIOUS",
+          "coords": [
+            1008,
+            252,
+            1299,
+            215
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "UNITY",
+          "coords": [
+            1327,
+            251,
+            1498,
+            214
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 387
+    },
+    {
+      "page": 9,
+      "width": 1730,
+      "height": 2662,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1700,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2662,
+      "excluded_words": [
+        {
+          "text": "—e—w",
+          "coords": [
+            0,
+            821,
+            13,
+            539
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "FF",
+          "coords": [
+            0,
+            711,
+            17,
+            684
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ey",
+          "coords": [
+            0,
+            660,
+            13,
+            589
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "(FY",
+          "coords": [
+            0,
+            569,
+            17,
+            536
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "a.",
+          "coords": [
+            0,
+            959,
+            15,
+            924
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "foe",
+          "coords": [
+            0,
+            912,
+            15,
+            875
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "fel",
+          "coords": [
+            0,
+            860,
+            15,
+            840
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "o",
+          "coords": [
+            0,
+            1010,
+            21,
+            989
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ns",
+          "coords": [
+            0,
+            1512,
+            38,
+            1488
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ng",
+          "coords": [
+            0,
+            1620,
+            41,
+            1590
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ay",
+          "coords": [
+            0,
+            1673,
+            41,
+            1640
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "in",
+          "coords": [
+            10,
+            1712,
+            44,
+            1678
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "be",
+          "coords": [
+            4,
+            1762,
+            45,
+            1729
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ief",
+          "coords": [
+            0,
+            1813,
+            45,
+            1778
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "wn",
+          "coords": [
+            0,
+            1913,
+            50,
+            1891
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ry",
+          "coords": [
+            0,
+            1973,
+            51,
+            1941
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ald",
+          "coords": [
+            0,
+            2014,
+            54,
+            1979
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ety",
+          "coords": [
+            0,
+            2074,
+            55,
+            2035
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "red",
+          "coords": [
+            0,
+            2165,
+            60,
+            2128
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ney",
+          "coords": [
+            0,
+            2225,
+            60,
+            2181
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "vho",
+          "coords": [
+            0,
+            2265,
+            62,
+            2230
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ps,",
+          "coords": [
+            0,
+            2327,
+            64,
+            2292
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "vho",
+          "coords": [
+            0,
+            2366,
+            66,
+            2330
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "PROMOTION",
+          "coords": [
+            254,
+            243,
+            581,
+            206
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            611,
+            244,
+            680,
+            208
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "RELIGIOUS",
+          "coords": [
+            708,
+            245,
+            999,
+            208
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "UNITY",
+          "coords": [
+            1027,
+            245,
+            1200,
+            209
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "69",
+          "coords": [
+            1289,
+            245,
+            1336,
+            209
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "|",
+          "coords": [
+            104,
+            1624,
+            107,
+            1618
+          ],
+          "reason": "outside main page text column"
+        }
+      ],
+      "kept_words": 391
+    },
+    {
+      "page": 10,
+      "width": 1730,
+      "height": 2671,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1700,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2671,
+      "excluded_words": [
+        {
+          "text": "70",
+          "coords": [
+            425,
+            266,
+            471,
+            230
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "PROMOTION",
+          "coords": [
+            560,
+            265,
+            883,
+            230
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            914,
+            265,
+            982,
+            231
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "RELIGIOUS",
+          "coords": [
+            1013,
+            266,
+            1301,
+            230
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "UNITY",
+          "coords": [
+            1333,
+            266,
+            1500,
+            230
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 389
+    },
+    {
+      "page": 11,
+      "width": 1730,
+      "height": 2671,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1700,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2671,
+      "excluded_words": [
+        {
+          "text": "=",
+          "coords": [
+            1303,
+            202,
+            1322,
+            194
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "PROMOTION",
+          "coords": [
+            268,
+            235,
+            592,
+            199
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            622,
+            233,
+            691,
+            199
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "RELIGIOUS",
+          "coords": [
+            721,
+            234,
+            1010,
+            197
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "UNITY",
+          "coords": [
+            1042,
+            232,
+            1210,
+            195
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "71",
+          "coords": [
+            1302,
+            230,
+            1342,
+            195
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "n",
+          "coords": [
+            0,
+            363,
+            18,
+            342
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "s",
+          "coords": [
+            0,
+            408,
+            20,
+            393
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "0",
+          "coords": [
+            5,
+            460,
+            23,
+            443
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "?",
+          "coords": [
+            13,
+            512,
+            24,
+            478
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "e",
+          "coords": [
+            0,
+            562,
+            23,
+            542
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "\"",
+          "coords": [
+            0,
+            603,
+            22,
+            592
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "d",
+          "coords": [
+            5,
+            663,
+            22,
+            630
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "is",
+          "coords": [
+            0,
+            712,
+            26,
+            679
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "n",
+          "coords": [
+            6,
+            762,
+            23,
+            742
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "a",
+          "coords": [
+            3,
+            811,
+            25,
+            792
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ts",
+          "coords": [
+            0,
+            863,
+            28,
+            836
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "n",
+          "coords": [
+            8,
+            912,
+            25,
+            891
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "yf",
+          "coords": [
+            1,
+            962,
+            27,
+            928
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "1",
+          "coords": [
+            0,
+            1012,
+            26,
+            979
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "d",
+          "coords": [
+            0,
+            1062,
+            28,
+            1029
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "1-",
+          "coords": [
+            0,
+            1112,
+            29,
+            1091
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "1-",
+          "coords": [
+            6,
+            1162,
+            29,
+            1129
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "‘",
+          "coords": [
+            0,
+            1212,
+            29,
+            1191
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "1",
+          "coords": [
+            0,
+            1262,
+            30,
+            1241
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "h",
+          "coords": [
+            0,
+            1313,
+            31,
+            1279
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "hs",
+          "coords": [
+            0,
+            1362,
+            33,
+            1341
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "re",
+          "coords": [
+            4,
+            1413,
+            33,
+            1392
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "™",
+          "coords": [
+            0,
+            1620,
+            37,
+            1587
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ioe",
+          "coords": [
+            0,
+            1674,
+            38,
+            1610
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "i",
+          "coords": [
+            0,
+            1721,
+            38,
+            1686
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "*",
+          "coords": [
+            0,
+            1770,
+            38,
+            1737
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "vhs",
+          "coords": [
+            0,
+            1821,
+            39,
+            1778
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "to",
+          "coords": [
+            7,
+            1872,
+            41,
+            1845
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "all",
+          "coords": [
+            0,
+            1921,
+            38,
+            1888
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "we",
+          "coords": [
+            0,
+            1971,
+            42,
+            1949
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "wy",
+          "coords": [
+            0,
+            2021,
+            42,
+            1987
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "om",
+          "coords": [
+            0,
+            2071,
+            43,
+            2049
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "—",
+          "coords": [
+            2,
+            2121,
+            43,
+            2100
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "vat",
+          "coords": [
+            0,
+            2172,
+            45,
+            2149
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ad",
+          "coords": [
+            0,
+            2221,
+            44,
+            2188
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ity",
+          "coords": [
+            0,
+            2281,
+            46,
+            2236
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ir-",
+          "coords": [
+            0,
+            2321,
+            45,
+            2298
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "nk",
+          "coords": [
+            3,
+            2372,
+            48,
+            2337
+          ],
+          "reason": "outside main page text column"
+        }
+      ],
+      "kept_words": 426
+    },
+    {
+      "page": 12,
+      "width": 1730,
+      "height": 2663,
+      "word_center_x_min": 135,
+      "word_center_x_max": 1700,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2663,
+      "excluded_words": [
+        {
+          "text": "72",
+          "coords": [
+            416,
+            223,
+            460,
+            187
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "PROMOTION",
+          "coords": [
+            549,
+            223,
+            875,
+            187
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "OF",
+          "coords": [
+            905,
+            222,
+            974,
+            187
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "RELIGIOUS",
+          "coords": [
+            1002,
+            223,
+            1292,
+            186
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "UNITY",
+          "coords": [
+            1320,
+            222,
+            1493,
+            186
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 329
+    }
+  ]
+}

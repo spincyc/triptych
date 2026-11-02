@@ -1,0 +1,11 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+locus = "1962 target artifact pages [675, 676], printed [\"594\", \"595\"], unit 3117; s-laurentii-brundusio-confessoris-ecclesiae-doctoris Collect"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-29"
+context = "Text-free target comparison controlled by the exact page-image source and the independently accepted source review. This passage grants no permission."
+notes = "Whole actual target body including actual conclusion stop is bound by canonical Latin SHA-256 9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005. Independent source/translation review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Exact source/target contribution: [{\"kind\": \"substantive-lexical\", \"historical\": \"consilii\", \"target\": \"sapientiae\", \"explanation\": \"Counsel changes to wisdom. This is not an orthographic or simply functional change.\"}, {\"kind\": \"factual-title-addition\", \"historical\": \"Confessori tuo\", \"target\": \"Confessori tuo atque Doctori\"}, {\"kind\": \"inflection\", \"historical\": \"gloria\", \"target\": \"gloriam\", \"explanation\": \"The target page image really prints gloriam, despite its grammatical incongruity; no silent repair.\"}, {\"kind\": \"independently-controlled-conclusion-prefix\", \"historical\": \"Per Dominum nostrum.\", \"target\": \"Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.\", \"source\": \"1922 wholePDF368 actual contiguous full formula, stop after in unitate\"}, {\"kind\": \"pointing-and-orthography\", \"explanation\": \"Target omits source comma after qui and salute; adds commas enclosing Confessori...Doctori; replaces source semicolon after cognoscere with comma; declared calendar consonantal-j and accent/ligature normalization.\"}]"

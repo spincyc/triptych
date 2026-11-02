@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-bishop-la"
+edition_id = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The Clementine Vulgate was promulgated in 1592 and its Latin scripture wording is public domain by age. The separately registered eBible latVUC source is explicitly public domain. This finite derivative contains only that ancient scripture wording and mechanical reference columns, with no modern heading, footnote, protected target wording or apparatus."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "f0518b2c6e3de4f9c67c9da4cc60b52b395dae36bd0d6c8cdd04054ec645c24d"
+byte_size = 189
+path = "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-bishop-la/text.tsv"
+derived_from = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-50-john-1542486b"
+provenance = "Mechanical finite extraction from the retained public-domain Clementine verse TSV; each exact parent payload was freshly hashed. No modern Latin book or English text supplies the selected words."
+transformation = "From exact parent artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-50-john-1542486b, SHA256 1542486b92076807c978539845d189be3a28cd8f288eaad0f90a3da4ec1e8016, select book John chapter20 verse19. Retain only the final source direct-speech sentence Pax vobis.; omit the preceding narrative in full. Preserve all retained source characters, including Jesu spelling, ligatures and punctuation. The selected source fragments are at zero-based Unicode-codepoint half-open spans [[172, 182]]; join the retained spans without inserting any character. Emit a new one-row element-keyed TSV so the source boundary is independently addressable; the parent verse remains complete and unchanged."
+indexable = true
+encoding = "utf-8"
+notes = "Historical biblical antecedent only. Source spelling and pointing are intentionally retained; no authenticated complete2008 target collation or liturgical approval is claimed. This bishop-only source body may be joined solely under an explicit bishop-form selection; the source words establish no bishop presence from date or formulary."

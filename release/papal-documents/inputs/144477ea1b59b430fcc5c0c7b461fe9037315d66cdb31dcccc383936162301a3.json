@@ -1,0 +1,67 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.034.eucharistia-native-spacing-notes-6655dba35496",
+      "body_tex": "1902-05-28-acta-ass-034-ass-034-l025902-0165ffbc-la/1902-05-28-acta-ass-034-ass-034-l025902-0165ffbc-la.body.tex",
+      "changed": true,
+      "compact_layout": true,
+      "compact_margin": 0.65,
+      "id": "acta.ass.034.ass-034-l025902",
+      "language": "la",
+      "pages": 6,
+      "pdf": "1902-05-28-acta-ass-034-ass-034-l025902-0165ffbc-la/1902-05-28-acta-ass-034-ass-034-l025902-0165ffbc-la.pdf",
+      "pdf_sha256": "23703acb1b4938e0a3c51bfc8641fb605a621b2753eec8657d43b0a5715a3d8a",
+      "physical_line_ranges": [
+        [
+          1,
+          600
+        ]
+      ],
+      "render_revision": "2026-10-30T06:36:50Z",
+      "segment_id": "segment.acta-papal-archives.ass.034.ass-034-l025902.native-spacing-2026-10-30.note-blocks",
+      "source_sha256": "6655dba354966b066d2ef52ce413e7328eadddfe030b03a17d66cfaf7b83a95c",
+      "status": "compiled",
+      "stem": "1902-05-28-acta-ass-034-ass-034-l025902-0165ffbc-la",
+      "tex": "1902-05-28-acta-ass-034-ass-034-l025902-0165ffbc-la/1902-05-28-acta-ass-034-ass-034-l025902-0165ffbc-la.tex",
+      "text_fidelity": {
+        "layout_hyphens": 118,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 6,
+        "source_characters": 31253,
+        "source_first_page": 1,
+        "source_last_page": 6,
+        "source_normalized_characters": 26617,
+        "status": "pass"
+      },
+      "warnings": []
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "5cffa2c4368535582dba77766cfca518d9a6d15a7e17b284d7c04db3d87aa0c1",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T06:36:50Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

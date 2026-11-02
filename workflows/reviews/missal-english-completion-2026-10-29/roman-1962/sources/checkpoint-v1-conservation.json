@@ -1,0 +1,2724 @@
+{
+  "schema": "triptych-roman-checkpoint-v1-conservation/v1",
+  "recorded_on": "2026-10-30",
+  "state": "verified-installed-checkpoint-not-final-goal",
+  "english": {
+    "baseline_owners": 1188,
+    "current_owners": 1407,
+    "original_positive_dictionaries_unchanged": 1187,
+    "reviewed_old_positive_exception": [
+      "palm-sunday",
+      "main",
+      "First Antiphon at the Distribution of Palms",
+      "all",
+      1
+    ],
+    "exception_receipt": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/palm-distribution-hyphen-correction.json",
+    "new_owners": 219,
+    "project_study_owners": 215,
+    "remaining_gaps": 41,
+    "every_remaining_original_refusal_exact": true,
+    "replaced_original_refusals": 219,
+    "every_replaced_original_refusal_preserved": true,
+    "refusal_archive_map": [
+      {
+        "identity": [
+          "advent-1",
+          "main",
+          "Epistle",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/129",
+        "original_refusal_sha256": "d915ca602bb426d8a7cb60e58c4d6a19d7e3704a98227af36b387ecbcf9c0bb9"
+      },
+      {
+        "identity": [
+          "annuntiatio-beatae-mariae-virginis",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-745c2977907770de.json",
+        "pointer": "/changes/3/old_untranslated",
+        "original_refusal_sha256": "28e5455b73fcc25f5fd62be0efcd5f6f75590da0947fbe1127db4df7d59a4382"
+      },
+      {
+        "identity": [
+          "apparitione-beatae-mariae-virginis-immaculatae",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-745c2977907770de.json",
+        "pointer": "/changes/1/old_untranslated",
+        "original_refusal_sha256": "3eda2d6d6f46be7b622f4977e58a2d55853efc82a67ffd085ef01c1aee0a6700"
+      },
+      {
+        "identity": [
+          "apparitione-beatae-mariae-virginis-immaculatae",
+          "main",
+          "Tract",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-745c2977907770de.json",
+        "pointer": "/changes/2/old_untranslated",
+        "original_refusal_sha256": "caeec7c55a2774f6b629b9af548bbb03e81763d75dd834e258fd6c72a259792f"
+      },
+      {
+        "identity": [
+          "assumptione-beatae-mariae-virginis",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/3/old_untranslated",
+        "original_refusal_sha256": "5ef90f52931493a3e79a4188b926db991ff8889fb12bbd8f0b7f766393afab55"
+      },
+      {
+        "identity": [
+          "beatae-mariae-virginis-a-rosario",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-745c2977907770de.json",
+        "pointer": "/changes/8/old_untranslated",
+        "original_refusal_sha256": "6f1b19309caf4adbb433e1bf5a09530e1b4a23b48e25b6aa7150ed374196496c"
+      },
+      {
+        "identity": [
+          "beatae-mariae-virginis-a-rosario",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/44",
+        "original_refusal_sha256": "909846c2e9b8a7da9519dad25d4074bb5b13b545b87756eb8bb974078321f650"
+      },
+      {
+        "identity": [
+          "beatae-mariae-virginis-a-rosario",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-745c2977907770de.json",
+        "pointer": "/changes/7/old_untranslated",
+        "original_refusal_sha256": "3a6aa1a0ee4b49444dfe5bf3509049dc2f2fd845b3f8859cd20ecb2c3ef2dcbf"
+      },
+      {
+        "identity": [
+          "beatae-mariae-virginis-reginae",
+          "main",
+          "Communion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-745c2977907770de.json",
+        "pointer": "/changes/10/old_untranslated",
+        "original_refusal_sha256": "59e52271ceaae12259f0012f75af4feee6840cfe9ed926395b092108ffe6039d"
+      },
+      {
+        "identity": [
+          "beatae-mariae-virginis-reginae",
+          "main",
+          "Offertory",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/15/old_untranslated",
+        "original_refusal_sha256": "ff50479b8df083e545f3eb3b8686bdb41fea8b1ba5e0c98e9ee13df1a4f09394"
+      },
+      {
+        "identity": [
+          "cathedrae-s-petri-apostoli",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/64",
+        "original_refusal_sha256": "247fba0c711515afd093ba3b8f17985f120422749a0c42db605cb301e3d6b351"
+      },
+      {
+        "identity": [
+          "cathedrae-s-petri-apostoli",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/66",
+        "original_refusal_sha256": "68fd4337fc892d415a3c3677a59c2ba51ec019bf63245c1dc2ddb234b3f5a2c2"
+      },
+      {
+        "identity": [
+          "cathedrae-s-petri-apostoli",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/65",
+        "original_refusal_sha256": "054783daf87aba6209da99223be03272816c3f4a7816549b488ca1f70f954c81"
+      },
+      {
+        "identity": [
+          "chrism-mass",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/12/old_untranslated",
+        "original_refusal_sha256": "6150090e6f82edb873f0125f029fce3ec687d415273999edd9e93bf3cbda4356"
+      },
+      {
+        "identity": [
+          "chrism-mass",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-bc3470f92a65c079.json",
+        "pointer": "/changes/1/old_untranslated",
+        "original_refusal_sha256": "deaf05099f47b02bb40ff758f33d89efb1f49cb2d5b8082c72cfa0c4cdd77699"
+      },
+      {
+        "identity": [
+          "chrism-mass",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-bc3470f92a65c079.json",
+        "pointer": "/changes/0/old_untranslated",
+        "original_refusal_sha256": "4d315ae0a461eee30132a38c97c7a8080e6a7c18252789f6650cc77209b9f5bc"
+      },
+      {
+        "identity": [
+          "comm-s-alexii-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/84",
+        "original_refusal_sha256": "2ba770dec18428ca33df5f2a32ccc5c80637c9de7530f9e2120b30cd2a0a6d21"
+      },
+      {
+        "identity": [
+          "comm-s-bonifatii-martyris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/14",
+        "original_refusal_sha256": "5537b2ad5678f69a58dd7e6d589c03f3f47858770d46e2e6ecdbeb0cf40b4cec"
+      },
+      {
+        "identity": [
+          "comm-s-chrysogoni-martyris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/130",
+        "original_refusal_sha256": "7dc9448717996ca5176b1ee7e05bec84850ff9034a4cb8a194e613cd6be41971"
+      },
+      {
+        "identity": [
+          "comm-s-eusebii-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/16",
+        "original_refusal_sha256": "dfc64ad508c23ffee2ed74f4fe358cddfd1fa5a201ad06af8bf2b3250fd21382"
+      },
+      {
+        "identity": [
+          "comm-s-mennae-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/12",
+        "original_refusal_sha256": "cda6214445ddb19c0d16eb2c163afe2e563418f6e69a4b332ef448d4dfb8c1e9"
+      },
+      {
+        "identity": [
+          "comm-s-praxedis-virginis",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/87",
+        "original_refusal_sha256": "16f055d3a8e7012c8fbccf82f7a9b0e0e6a734e17be550651b91a746dbfded17"
+      },
+      {
+        "identity": [
+          "comm-s-sabbae-abbatis",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/13",
+        "original_refusal_sha256": "672695fe73a596080a94a24cf9e2f137bf35a75a076534a1894ddb28219db500"
+      },
+      {
+        "identity": [
+          "comm-s-sabbae-abbatis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/128",
+        "original_refusal_sha256": "4bcab0bd09fe78e7267e4553ea728bded11be322b75a3ac9b9c7cd464199deb5"
+      },
+      {
+        "identity": [
+          "comm-s-sabbae-abbatis",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/127",
+        "original_refusal_sha256": "07c6faade377849c743d7401c2fddf0df8f5b328ddce2590cd12efa8413d5eb8"
+      },
+      {
+        "identity": [
+          "comm-s-silvestri-i-papae-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/4/old_untranslated",
+        "original_refusal_sha256": "3f42da3f0db7c09fd503381259b2109ed2035e598937e12ddb3a56941775da7e"
+      },
+      {
+        "identity": [
+          "comm-s-theclae-virginis-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/30",
+        "original_refusal_sha256": "90245a02f766ad10c4c81b11a498e7d5d26f83dbab44d0a46524cba324db3cc6"
+      },
+      {
+        "identity": [
+          "comm-s-zephyrini-papae-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/3/old_untranslated",
+        "original_refusal_sha256": "bb1bea1d096002beeae94eccf52ddcdd00ac1b5d0257c230c7ce45d70d81ddfa"
+      },
+      {
+        "identity": [
+          "comm-septem-dolorum-beatae-mariae-virginis",
+          "main",
+          "Offertory",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/32/old_untranslated",
+        "original_refusal_sha256": "1ee04cea57e432d856f27c311a0854162cc3c96ffd4a33fef111f5c946ad79a1"
+      },
+      {
+        "identity": [
+          "comm-ss-chrysanthi-dariae-martyrum",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/116",
+        "original_refusal_sha256": "40c9648124fa1a7513568de03dbe5beaf1fd0fa122c9d399683404d62d285130"
+      },
+      {
+        "identity": [
+          "comm-ss-cypriani-iustinae-virginis-martyrum",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/17",
+        "original_refusal_sha256": "31b86a9f2bc2ad964f3cb6b84ea472abd619911295316965bebf092859059106"
+      },
+      {
+        "identity": [
+          "comm-ss-gervasii-protasii-martyrum",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/75",
+        "original_refusal_sha256": "92c91ef34d8ba9457555d274cc7b3fc02bbf521d8df03d433947210fc0059f61"
+      },
+      {
+        "identity": [
+          "comm-ss-gervasii-protasii-martyrum",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/77",
+        "original_refusal_sha256": "54601c14088aeaed71167c37cd53efe34e9cdde0d0e3784c399edf2885a03303"
+      },
+      {
+        "identity": [
+          "comm-ss-gervasii-protasii-martyrum",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/76",
+        "original_refusal_sha256": "d257e460a38c750aef9d42828d3a4019cc0fc28c74c0706bf4f63ba5fe141db8"
+      },
+      {
+        "identity": [
+          "comm-ss-mauritii-sociorum-martyrum",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/108",
+        "original_refusal_sha256": "1281b4b08e7222a4479843299a12aeb0b683b7663ddd764776db50c0cf37d898"
+      },
+      {
+        "identity": [
+          "comm-ss-placidi-sociorum-martyrum",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/11",
+        "original_refusal_sha256": "36394dc183025e230f21119d2cd5f47d2189480ddf1af840b42e7444c5d60d8d"
+      },
+      {
+        "identity": [
+          "comm-ss-placidi-sociorum-martyrum",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/18",
+        "original_refusal_sha256": "b35ca7c790b4faf09377f966e1b88749137f1793fdbb8953ef70a51056bb5074"
+      },
+      {
+        "identity": [
+          "comm-ss-ursulae-ac-sociarum-virginum",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/122",
+        "original_refusal_sha256": "9d3ef80b4d2ba927796f7375a2c2651a42e1ced6968c4fe86ff7238bcecf9639"
+      },
+      {
+        "identity": [
+          "comm-ss-ursulae-ac-sociarum-virginum",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/131",
+        "original_refusal_sha256": "80d91c48040a4153a4453d0ec7570600ef4d86f33dafd04fab51ceceab40e6af"
+      },
+      {
+        "identity": [
+          "comm-ss-ursulae-ac-sociarum-virginum",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/132",
+        "original_refusal_sha256": "3600a1bbd3c6f829a0d6162d9aa8ce2797f6ffba953142e0e21142e3469dc0e8"
+      },
+      {
+        "identity": [
+          "comm-ss-xysti-ii-papae-felicissimi",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/15",
+        "original_refusal_sha256": "be9cbe1d131bd4d2767eeb3829aaa53252bf10b3326e811ce6d71c8d416ed7f1"
+      },
+      {
+        "identity": [
+          "commemoratione-s-pauli-apostoli",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/12/old_untranslated",
+        "original_refusal_sha256": "7b53e78635ab577a72a3f18728ba575f519bc52f568942a8b9d01dde4d87e330"
+      },
+      {
+        "identity": [
+          "commemoratione-s-pauli-apostoli",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/133",
+        "original_refusal_sha256": "adad01052301498425958304b2abf82055d0df8f45c473b366195558e01660c4"
+      },
+      {
+        "identity": [
+          "commemoratione-s-pauli-apostoli",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/134",
+        "original_refusal_sha256": "0b259fee9b9af20974c674d40620b97210e9980173f8faba4782c37598c5a539"
+      },
+      {
+        "identity": [
+          "commemoratione-s-pauli-apostoli",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/135",
+        "original_refusal_sha256": "633148a2a790eaaeb0491e98aefd15d54213ec46c8593afb6cdef989d0c3a675"
+      },
+      {
+        "identity": [
+          "commune-confessoris-pontificis-1",
+          "main",
+          "Alleluia (Tempore paschali)",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/9/old_untranslated",
+        "original_refusal_sha256": "03afb86fa77bae42f2557d4780f6503ca4332be27c775afa5c424e136d3c218b"
+      },
+      {
+        "identity": [
+          "commune-doctorum-non-pontificis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/27",
+        "original_refusal_sha256": "2d54079540cd09237483e8794f49a1187b1d9f99705f4e06943676fc1d74e511"
+      },
+      {
+        "identity": [
+          "commune-non-virginum-1",
+          "main",
+          "Alleluia (Tempore paschali)",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/10/old_untranslated",
+        "original_refusal_sha256": "c58cc7a74bd40ba44b0d53715407b27221430bf2b6a67d4b73b622e86d298872"
+      },
+      {
+        "identity": [
+          "commune-non-virginum-2",
+          "main",
+          "Alleluia (Tempore paschali)",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/11/old_untranslated",
+        "original_refusal_sha256": "3b8bcca965de7a077e7a09e01c3101a8c545b5f3940d29a06a2ba912233ecedc"
+      },
+      {
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/11/old_untranslated",
+        "original_refusal_sha256": "6879c5fd677c635e2113c82cdaeb85f3cf96937ffa88b4d85befa05ce361c649"
+      },
+      {
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/10/old_untranslated",
+        "original_refusal_sha256": "ce2bceadc6a8c8c4d667dd5b64d3aabf9944a266404f279f0dcb71cbc8d83232"
+      },
+      {
+        "identity": [
+          "commune-unius-martyris-1",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/26",
+        "original_refusal_sha256": "a97fe2d723bd830a56ff4e791187046c5c9a1bc92cfc9897944c37e22f727a9a"
+      },
+      {
+        "identity": [
+          "conversione-s-pauli-apostoli",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/54",
+        "original_refusal_sha256": "093c5cabdb69e6283f0115afad354339b011b9889292f8e83c5f27ff2fa3c03c"
+      },
+      {
+        "identity": [
+          "conversione-s-pauli-apostoli",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/56",
+        "original_refusal_sha256": "47f732a2e6d7be007a52fe3d8ebac7411193656b270e0bf93a51de65abdda7b2"
+      },
+      {
+        "identity": [
+          "conversione-s-pauli-apostoli",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/55",
+        "original_refusal_sha256": "f2a87808b69130e549c3f51982cab235d5b05c4a3796243f63e5929fb0911155"
+      },
+      {
+        "identity": [
+          "dedicatione-s-michaelis-archangeli",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/13/old_untranslated",
+        "original_refusal_sha256": "1bfdab411bd9d948f208dbeb1e7a5609c1da2d131e79dc8ccfccc9d65af6928c"
+      },
+      {
+        "identity": [
+          "easter-monday",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/36",
+        "original_refusal_sha256": "890b05c55a8a03ca49acc07a42a60b936b3f7c12279715ca44d869cfec4417ea"
+      },
+      {
+        "identity": [
+          "easter-sunday",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/23",
+        "original_refusal_sha256": "77fe52ec8bcd085c39a63f4b75d9400ca70a59697464eeff0e12dc190ffb626d"
+      },
+      {
+        "identity": [
+          "easter-vigil",
+          "main",
+          "Litany of the Saints, first part",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/7",
+        "original_refusal_sha256": "e28a8483f06e5c01037e44e2f70a69c36d9f8035d195e6d2bc6b64d2cb459155"
+      },
+      {
+        "identity": [
+          "easter-vigil",
+          "main",
+          "Litany of the Saints, second part",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/9",
+        "original_refusal_sha256": "bb223ae83e747e7f053f1091096dc16c083cc2cfe2bdb5d2ceb453b5296f55cf"
+      },
+      {
+        "identity": [
+          "easter-vigil",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/22",
+        "original_refusal_sha256": "1df154e2d255c19740c5b49a27ce1c3c9a6d5af4b924a7ec314d227473d16736"
+      },
+      {
+        "identity": [
+          "easter-vigil",
+          "main",
+          "Prayer at the Font",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/8",
+        "original_refusal_sha256": "e6793cbfcf1a2ea8e0769bca45928d31b4733b8c28c0d421abb4e878be6dec7f"
+      },
+      {
+        "identity": [
+          "epiphania-domini",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/45",
+        "original_refusal_sha256": "cfd6794ebe53e0b3b0fb79e96d110611dd2a60770b021c36915027a150d3beac"
+      },
+      {
+        "identity": [
+          "exaltatione-s-crucis",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/14/old_untranslated",
+        "original_refusal_sha256": "aaa9ac325742f5d9b9f86262412ae599d84de2e673de5d625a173d130146642b"
+      },
+      {
+        "identity": [
+          "exaltatione-s-crucis",
+          "main",
+          "Communion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/15/old_untranslated",
+        "original_refusal_sha256": "0e7b7b739cc957fe7c7f4ec79c3a8ff3580721f1360097ee0fdd2abe98878903"
+      },
+      {
+        "identity": [
+          "exaltatione-s-crucis",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/16/old_untranslated",
+        "original_refusal_sha256": "3176bafc1e8a47ad1ce7548ae59161665e4d3ca06c415f027213f0724c367358"
+      },
+      {
+        "identity": [
+          "exaltatione-s-crucis",
+          "main",
+          "Offertory",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/13/old_untranslated",
+        "original_refusal_sha256": "a37b16d9c6628b1edd595204ac0cf5593e74c9fd004e28575c98cb73764bc6cf"
+      },
+      {
+        "identity": [
+          "friday-after-ash-wednesday",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/34",
+        "original_refusal_sha256": "1131022efe9f89ec4bd7db03a860befdb9563883755537b594b0ad0442be48fc"
+      },
+      {
+        "identity": [
+          "immaculati-cordis-beatae-mariae-virginis",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/0/old_untranslated",
+        "original_refusal_sha256": "190a4e2bdc1611f52ee2595b6f95dbf98761fc3cc841a86f259956a0ce23e254"
+      },
+      {
+        "identity": [
+          "immaculati-cordis-beatae-mariae-virginis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/1/old_untranslated",
+        "original_refusal_sha256": "aa4cc3ea406686004b4715bade2eb053aea7b546ee33aeda8dcc6726ec58d9e3"
+      },
+      {
+        "identity": [
+          "immaculati-cordis-beatae-mariae-virginis",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/42",
+        "original_refusal_sha256": "ec16ec30a17c66876bc43078c9d29ae5a48177be24bd55fc119c6e49eac93c73"
+      },
+      {
+        "identity": [
+          "lent-1-ember-saturday",
+          "longer",
+          "Hymn (Benedictus es)",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-0ca1db12a7d9dc97.json",
+        "pointer": "/changes/3/old_untranslated",
+        "original_refusal_sha256": "e1862469315915ee4b9014902205e3a6f1b198ad8d9253579831762e662a4a54"
+      },
+      {
+        "identity": [
+          "lent-3-thursday",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-0ca1db12a7d9dc97.json",
+        "pointer": "/changes/1/old_untranslated",
+        "original_refusal_sha256": "99dc38c661c2728670ebb53995562f47327a027b9c8835e3896d1ea92b0f2efc"
+      },
+      {
+        "identity": [
+          "mass-of-the-first-sunday-after-epiphany",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-0ca1db12a7d9dc97.json",
+        "pointer": "/changes/0/old_untranslated",
+        "original_refusal_sha256": "c3659bf1f8cebf0ee895f77e8fbcb3f37d5fb0e6b73d63b4b7c4e30782e229dc"
+      },
+      {
+        "identity": [
+          "mass-of-the-lords-supper",
+          "main",
+          "Hymn at the Translation of the Blessed Sacrament",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-96a9fd2d9054a0ac.json",
+        "pointer": "/changes/0/old_untranslated",
+        "original_refusal_sha256": "a3cfc921b31c37c00b48bcdced82f47b7f5e94004fbf28cc0daceedf049eac5d"
+      },
+      {
+        "identity": [
+          "mass-of-the-lords-supper",
+          "main",
+          "Mandatum Antiphon 8",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/5",
+        "original_refusal_sha256": "d7cd0c26e2d97443b4989bd8381fe5fa85c51f78e940dbb5df2da1761bf670e9"
+      },
+      {
+        "identity": [
+          "mass-of-the-lords-supper",
+          "main",
+          "Prayer of the Mandatum",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/6",
+        "original_refusal_sha256": "2dbbeb559f404d6a9cd489069f48a7d4044999bada1376187c6776c7315e58f4"
+      },
+      {
+        "identity": [
+          "missa-de-s-maria-in-sabbato-4",
+          "main",
+          "Communion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/20",
+        "original_refusal_sha256": "7ea699651ad41a9f63c5c383090e0c85b7ff162e55276524f51b3860a1259388"
+      },
+      {
+        "identity": [
+          "missa-de-s-maria-in-sabbato-4",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/19",
+        "original_refusal_sha256": "a7377defb4859323eb694413c6ddbaa69ab5b119857c98d2fe385a44940846a1"
+      },
+      {
+        "identity": [
+          "nativitate-beatae-mariae-virginis",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/43",
+        "original_refusal_sha256": "322ae588dc7f31866be81dd4ff29bc4a81654e2872d4872c1546aa44cc3f021b"
+      },
+      {
+        "identity": [
+          "nativitate-domini-octave",
+          "dawn",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/47",
+        "original_refusal_sha256": "a4b99a404412da7479dca23ac87ba3db0c5b76e7c9d4b10edcbdcdb3e4987384"
+      },
+      {
+        "identity": [
+          "palm-sunday",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/21",
+        "original_refusal_sha256": "97410a1d46940c03c06a0042d4d5e0a05d7834ec4c9aec55de7709ae1d9a3426"
+      },
+      {
+        "identity": [
+          "palm-sunday",
+          "main",
+          "Hymn to Christ the King",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/4",
+        "original_refusal_sha256": "0839c49e57a479e430d851edd15f3bfec32a4c75aff4dd0527a3dc70cc0c6048"
+      },
+      {
+        "identity": [
+          "palm-sunday",
+          "main",
+          "Procession Antiphon",
+          "all",
+          6
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-a7619040e7b99435.json",
+        "pointer": "/changes/0/old_untranslated",
+        "original_refusal_sha256": "c83f68df3741dce889e8b7cf5886d0defbfc70190ef00cfea2120984a8888c83"
+      },
+      {
+        "identity": [
+          "palm-sunday",
+          "main",
+          "Procession Antiphon",
+          "all",
+          7
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-a7619040e7b99435.json",
+        "pointer": "/changes/1/old_untranslated",
+        "original_refusal_sha256": "731c630245cb392447fa24fdf30f0b8383a019d2de70f2ee09cd7f30689ba2f5"
+      },
+      {
+        "identity": [
+          "passion-thursday",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/35",
+        "original_refusal_sha256": "f53b56d341e83656e1fb91e506fc8c195fdc1da408cf33198ce22f22d98f570d"
+      },
+      {
+        "identity": [
+          "pentecost-18",
+          "main",
+          "Offertory",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/28",
+        "original_refusal_sha256": "2df0786aa01885931a93e7ed409bb16fa826fd624f220607bdd16e9c7dba704f"
+      },
+      {
+        "identity": [
+          "pentecost-2",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/24",
+        "original_refusal_sha256": "1435cd9065c1a4f51822d3ff83bf01dcbff0c098e1e01e481a936b969eca68ef"
+      },
+      {
+        "identity": [
+          "pentecost-9",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/25",
+        "original_refusal_sha256": "875d13c7e12499874c567018a2e7a0420665862c5dc6f933bf326b25a1e0a605"
+      },
+      {
+        "identity": [
+          "pentecost-ember-friday",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-42b521808315e9d3.json",
+        "pointer": "/changes/3/old_untranslated",
+        "original_refusal_sha256": "1abee2c3aeeaf2c93ab6abd07cb699a24ebec71a381c144e720a95432d6870ef"
+      },
+      {
+        "identity": [
+          "pentecost-ember-friday",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/40",
+        "original_refusal_sha256": "309de0144d61f4c54fc55d56442d4aa3f8ba46d5cb2ab8fe6458e9d477430bb2"
+      },
+      {
+        "identity": [
+          "pentecost-ember-wednesday",
+          "main",
+          "Second Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/136",
+        "original_refusal_sha256": "4fa6bc2c24269f28405b917014858a49ba02b0a97291b193f1959de246e15161"
+      },
+      {
+        "identity": [
+          "pentecost-monday",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-42b521808315e9d3.json",
+        "pointer": "/changes/0/old_untranslated",
+        "original_refusal_sha256": "cec3526bda9223fd0b6e826ac8290c63952a30ca25c0fc585a45291285b5ff71"
+      },
+      {
+        "identity": [
+          "pentecost-monday",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/38",
+        "original_refusal_sha256": "207bdcaeac3e92ee17eb9bbfb73f5210ea45cb3b6f661685d8d74f1ea07f3d5d"
+      },
+      {
+        "identity": [
+          "pentecost-monday",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/37",
+        "original_refusal_sha256": "ca6c526160d65d2c6e8c71896ff450587f09e11313ed1c5d332123d9c7945497"
+      },
+      {
+        "identity": [
+          "pentecost-thursday",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-42b521808315e9d3.json",
+        "pointer": "/changes/2/old_untranslated",
+        "original_refusal_sha256": "e7db21fc10d3d40cea0d445c1960d5eafaaf3343616a49dcdf30addf82971ad6"
+      },
+      {
+        "identity": [
+          "pentecost-tuesday",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-42b521808315e9d3.json",
+        "pointer": "/changes/1/old_untranslated",
+        "original_refusal_sha256": "3f6f4cb6b35cef11feba03024ca62aefa486903d854cdb1c9d82639a8a333ece"
+      },
+      {
+        "identity": [
+          "pentecost-tuesday",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/39",
+        "original_refusal_sha256": "f8f0480798bf32d1a352640f026ed322d96eb6b9ab738efe97ef940c6a015b4a"
+      },
+      {
+        "identity": [
+          "praesentatione-beatae-mariae-virginis",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/29",
+        "original_refusal_sha256": "09e0450f6ae90ce691eca55ad636f33f81695a65aa967f6709f0593429508fcd"
+      },
+      {
+        "identity": [
+          "purificatione-beatae-mariae-virginis",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-745c2977907770de.json",
+        "pointer": "/changes/0/old_untranslated",
+        "original_refusal_sha256": "bd2f12f785ed43bf25a4c4e07f3d8178e11b9ab5ad0d9814788a93c9bd5322c3"
+      },
+      {
+        "identity": [
+          "s-agathae-virginis-martyris",
+          "main",
+          "Communion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/17/old_untranslated",
+        "original_refusal_sha256": "761f7d67e4df0f626d386346edd7d2801bf2d496d9a4a4e39ae1bf648f3adaf8"
+      },
+      {
+        "identity": [
+          "s-agathae-virginis-martyris",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/18/old_untranslated",
+        "original_refusal_sha256": "405bf4db13b2f62f1319750e27b8d4a4f5569baca3697b7655f3e30464998b96"
+      },
+      {
+        "identity": [
+          "s-agnetis-virginis-martyris",
+          "main",
+          "Tract",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/19/old_untranslated",
+        "original_refusal_sha256": "beee70165743d5d70d00e24345bbcdaadbcd3f4959c757e6ac64628db3dbec1d"
+      },
+      {
+        "identity": [
+          "s-alfonsi-mariae-ligorio-episcopi-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/90",
+        "original_refusal_sha256": "8b6baa76c345b1625acd12ce65d93bb16295ac4792532d8798ddb627a3d5301e"
+      },
+      {
+        "identity": [
+          "s-alfonsi-mariae-ligorio-episcopi-confessoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/92",
+        "original_refusal_sha256": "fc506c25d5255fd64d0ebb4f1c9413180ddd4523939d9d589e7a166b644591f4"
+      },
+      {
+        "identity": [
+          "s-alfonsi-mariae-ligorio-episcopi-confessoris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/91",
+        "original_refusal_sha256": "f854a0903589feab8b8b54a004e7b2b6aef5e49a83444d1411b75b8033c7e9e7"
+      },
+      {
+        "identity": [
+          "s-andreae-apostoli",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/20/old_untranslated",
+        "original_refusal_sha256": "01d141bc1289cbaaab5f1f8b24fa01297ef0c74d5166fc1ead50a45d2fcf9e4f"
+      },
+      {
+        "identity": [
+          "s-andreae-avellini-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/117",
+        "original_refusal_sha256": "bc8e5ba1c37862f41bb57eabe4626063c2bb1d18b82ea76da7880ace08fe473f"
+      },
+      {
+        "identity": [
+          "s-antonii-abbatis",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/48",
+        "original_refusal_sha256": "bfd8ba35cde62e6c78e7cb7b9ccbb5c62ccdfcf5ec98e62bdc18959c30870ac3"
+      },
+      {
+        "identity": [
+          "s-antonii-abbatis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/50",
+        "original_refusal_sha256": "9f07ad936e5f7e354a874d61f99ed4aa1f704cbc37e86f5416c3d288babc0bd3"
+      },
+      {
+        "identity": [
+          "s-antonii-abbatis",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/49",
+        "original_refusal_sha256": "30b822387c0a314bc3a6b842142ff30470eb47e15d0689706547d992f7eb65ae"
+      },
+      {
+        "identity": [
+          "s-antonii-padua-confessoris-ecclesiae-doctoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/32",
+        "original_refusal_sha256": "9a688aa143268aed5e38295a1a9c9c7beba458d22008123dda195b161fda6662"
+      },
+      {
+        "identity": [
+          "s-antonii-padua-confessoris-ecclesiae-doctoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/124",
+        "original_refusal_sha256": "52d2e0a1460c8474f4c6de28c8e3f18d7d7b63e379cf41a5eb3dfa959f92720e"
+      },
+      {
+        "identity": [
+          "s-antonini-episcopi-confessoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/74",
+        "original_refusal_sha256": "dc544b8f16f4c2b54c0c776cfa9a68d81d44ec38d0c4409be0fb93cb0457bf12"
+      },
+      {
+        "identity": [
+          "s-augustini-episcopi-confessoris-ecclesiae-doctoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/103",
+        "original_refusal_sha256": "98d0f3bc0389f52487c834af9a34df72bfddbb50625b1eeaeacdaf650fc99d73"
+      },
+      {
+        "identity": [
+          "s-augustini-episcopi-confessoris-ecclesiae-doctoris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/102",
+        "original_refusal_sha256": "6323ccddcefd523ab427b048c7892c64fd8b77743eeb0ab72366d29584c11835"
+      },
+      {
+        "identity": [
+          "s-bartholomaei-apostoli",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/21/old_untranslated",
+        "original_refusal_sha256": "8de7997d5e7ec9c19f6828b807c96464a161931f759fa4ac447c214ea89bd339"
+      },
+      {
+        "identity": [
+          "s-bartholomaei-apostoli",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/98",
+        "original_refusal_sha256": "cdc9c5726663c713c4c1df3939fcb0eac41b660d90849afdf9f0bab677b02486"
+      },
+      {
+        "identity": [
+          "s-bartholomaei-apostoli",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/99",
+        "original_refusal_sha256": "932dc7505c6842406d6fb4ce65b9fea59e2489d261f37133e5698b8c3e5c67f3"
+      },
+      {
+        "identity": [
+          "s-bernardi-abbatis-ecclesiae-doctoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/95",
+        "original_refusal_sha256": "1c4d22aa2af56fcd0784f91b963264dcc73fcc6c1e8d5f0d0857f28c542d3fd7"
+      },
+      {
+        "identity": [
+          "s-bernardi-abbatis-ecclesiae-doctoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/97",
+        "original_refusal_sha256": "bb7589c0d2ff07c834f2fa9dec815ea8a17bdf1a3dcb81cd7fc45ddab80babe7"
+      },
+      {
+        "identity": [
+          "s-bernardi-abbatis-ecclesiae-doctoris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/96",
+        "original_refusal_sha256": "ab9ccdd04609f542f321c940ed9114ee5c46c1186f206dccd97d881c46d9cbd9"
+      },
+      {
+        "identity": [
+          "s-bibianae-virginis-martyris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/126",
+        "original_refusal_sha256": "33ad94ff1908fbdddef41e134a6680e2a0208fc320695568becd3e53c02406f7"
+      },
+      {
+        "identity": [
+          "s-bibianae-virginis-martyris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/125",
+        "original_refusal_sha256": "d1374e38f47b853c6c8b8b53ab645b28f68cdacd0869f48bcfdd92ab5a321191"
+      },
+      {
+        "identity": [
+          "s-birgittae-viduae",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/112",
+        "original_refusal_sha256": "2492e300e809a533aa9cbf25283a46e7df038ab65b03bc99e8d4a3d49847cff7"
+      },
+      {
+        "identity": [
+          "s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/81",
+        "original_refusal_sha256": "434b063200d840e84166c30e77c640ccb6caf7d7e4c2d458d195d1af3a250733"
+      },
+      {
+        "identity": [
+          "s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/83",
+        "original_refusal_sha256": "bd86684827c6a5aee2d28a9e0113b8e2fd6faf345e97806be4fb26eecc7dbd6e"
+      },
+      {
+        "identity": [
+          "s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/82",
+        "original_refusal_sha256": "be04c73f52cc9de076775aae7c87f2b4abcd2aef2dac1e9bb2abef7ee4391dd8"
+      },
+      {
+        "identity": [
+          "s-brunonis-confessoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/137",
+        "original_refusal_sha256": "bd0ed906bbbd97d91e15a30ba85dce97f94281fd3563fc28edc46be2e48dc115"
+      },
+      {
+        "identity": [
+          "s-camilli-lellis-confessoris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/85",
+        "original_refusal_sha256": "ed99fff59b83f08e6203bf55bb3139f8a5ef9dcd11bd84ba3f99fbf12d855023"
+      },
+      {
+        "identity": [
+          "s-catharinae-virginis-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/123",
+        "original_refusal_sha256": "aa3b290f82592ecb059aebb379f4e0c731a0681777523b132eaa33d3f9e83b89"
+      },
+      {
+        "identity": [
+          "s-clementis-i-papae-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/2/old_untranslated",
+        "original_refusal_sha256": "60ddc9ec38f1e8a041fcf9b401875b16af8faef398a6f5f11f73b14cb052f66f"
+      },
+      {
+        "identity": [
+          "s-clementis-i-papae-martyris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/6/old_untranslated",
+        "original_refusal_sha256": "a28b22bf46cfdf33e077f4425f34ab9b98b8f41e3e4e95ff30a363d90a281b7a"
+      },
+      {
+        "identity": [
+          "s-clementis-i-papae-martyris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/5/old_untranslated",
+        "original_refusal_sha256": "b48aeced900bc5234d1014a40fe0c68a9a867cb73c254f784c5a0a9cc984256f"
+      },
+      {
+        "identity": [
+          "s-francisci-borgiae-confessoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/138",
+        "original_refusal_sha256": "445b0f0340cbf831f9faffc3f7b4bc2f62a2cbea97fcb79a007128a7106aed85"
+      },
+      {
+        "identity": [
+          "s-francisci-borgiae-confessoris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/139",
+        "original_refusal_sha256": "c8639388c245d2187803a815c7738bdef342879f4626ee3705b3a54eb7f638a8"
+      },
+      {
+        "identity": [
+          "s-francisci-paula-confessoris",
+          "main",
+          "Alleluia (Tempore paschali)",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/22/old_untranslated",
+        "original_refusal_sha256": "1c71ef5827af500b02a41ad5965870cb7b7e8f3632b45ba2e7bb19dc53c16461"
+      },
+      {
+        "identity": [
+          "s-gabrielis-archangeli",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/69",
+        "original_refusal_sha256": "e34bf3d0beea31b0f392713df31cc9c2b4a5476b62fb1121e425b420972e37f2"
+      },
+      {
+        "identity": [
+          "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/71",
+        "original_refusal_sha256": "ffcbdd3ab1d7d8c18cd60d07a825a44ce06d16f909b4eacd5ed2fbb86b64fed5"
+      },
+      {
+        "identity": [
+          "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/73",
+        "original_refusal_sha256": "56dec0072b543ae64e63f5174d816541e9eaf03ff03d41f5d0eb53b40484394c"
+      },
+      {
+        "identity": [
+          "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/72",
+        "original_refusal_sha256": "e21ee013a32e08368144ae41d31b3c03c0a5fb5bc74a2adacc9c2b6e840468be"
+      },
+      {
+        "identity": [
+          "s-gregorii-thaumaturgi-episcopi-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/118",
+        "original_refusal_sha256": "d4d8b4b2e529a98ca526584af6e13ba07e1a4b7948fd6ad5256337d435deed8f"
+      },
+      {
+        "identity": [
+          "s-gregorii-thaumaturgi-episcopi-confessoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/119",
+        "original_refusal_sha256": "a0b001a8198a6ad8f3ba24cb3429afa5dc0d9d1b2e8c5436eb5ed7b6e03b1a15"
+      },
+      {
+        "identity": [
+          "s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/1",
+        "original_refusal_sha256": "c3776e43a5363e8a3658e943fb7075358d4285ad5a805ab43e32bea268e3d065"
+      },
+      {
+        "identity": [
+          "s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/3",
+        "original_refusal_sha256": "b48c343fcb68e6056129ba32872862a4a521df17410338b5867e9f55161651e2"
+      },
+      {
+        "identity": [
+          "s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/2",
+        "original_refusal_sha256": "d09192d1198a3d661370b36424a9cff5d0239f865b823abe9c007216ed556b37"
+      },
+      {
+        "identity": [
+          "s-iacobi-apostoli",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/88",
+        "original_refusal_sha256": "4bd55de56559783a8c454ec30584f6e46e071219753e52ebd4e2decb96783479"
+      },
+      {
+        "identity": [
+          "s-ignatii-episcopi-martyris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/62",
+        "original_refusal_sha256": "21c2fd011c5b2518d6f9963ebb27a411b79794dd077fc24bf8a4c3cc34875c3f"
+      },
+      {
+        "identity": [
+          "s-ioachim-patris-beatae-mariae-virginis",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/93",
+        "original_refusal_sha256": "e1e16a03370b09b9100076af8f4857aec61d6d2342a10fac0240c9f7e7eb28f1"
+      },
+      {
+        "identity": [
+          "s-ioachim-patris-beatae-mariae-virginis",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/94",
+        "original_refusal_sha256": "b99dc47130f1d3ed1d37d22e2743d2c283d0b681a3b75d251bc81f554558bc5c"
+      },
+      {
+        "identity": [
+          "s-ioannis-bosco-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/8/old_untranslated",
+        "original_refusal_sha256": "869d7853b03e0cd6e0bbbcf891c6551df2dfad6dab5a5dd12a33e4fada8ddf84"
+      },
+      {
+        "identity": [
+          "s-ioannis-bosco-confessoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/9/old_untranslated",
+        "original_refusal_sha256": "b2ffe57e4f02b23f4d621d564998e4ed51a58dc610755d47482d5186910affa9"
+      },
+      {
+        "identity": [
+          "s-ioannis-bosco-confessoris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-ea83abec30446f37.json",
+        "pointer": "/changes/0/old_untranslated",
+        "original_refusal_sha256": "a0cae890030d45846632eb5504732ee28f2f17667e1dc9b15d298c85ff9270c1"
+      },
+      {
+        "identity": [
+          "s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/61",
+        "original_refusal_sha256": "89eaad96d6b5b6e449ee34dbe9db17b6111bb59caae7afd0294d27aab79bb9de"
+      },
+      {
+        "identity": [
+          "s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/60",
+        "original_refusal_sha256": "9a3cc75892dc7810b579d9d70959c99db1c5dc48a000d6b4d4a664fa9abd5105"
+      },
+      {
+        "identity": [
+          "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+          "main",
+          "Alleluia (Tempore paschali)",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/23/old_untranslated",
+        "original_refusal_sha256": "3902433af4bcedc0014678387595b29a7b9a26a21e3b3f49b57226954dc41e95"
+      },
+      {
+        "identity": [
+          "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+          "main",
+          "Offertory",
+          "all",
+          2
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/14/old_untranslated",
+        "original_refusal_sha256": "289572e89f29c1141940ebe96f9e38b0e11eec10ec2640908142e5a162720681"
+      },
+      {
+        "identity": [
+          "s-ioannis-gualberti-abbatis",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/78",
+        "original_refusal_sha256": "c8c60a80f8fa6bb33b8a65a6da750f09c8776d1fe8060588d5ad15f20ce6db4e"
+      },
+      {
+        "identity": [
+          "s-ioannis-gualberti-abbatis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/80",
+        "original_refusal_sha256": "50578ae3005d91cdcbae9869765173ad639d71c3dca981a21a6ce1cf11a6f713"
+      },
+      {
+        "identity": [
+          "s-ioannis-gualberti-abbatis",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/79",
+        "original_refusal_sha256": "187e06c3a6a38ea736105733e87fdcc6630501812b185a85f74413906db491bd"
+      },
+      {
+        "identity": [
+          "s-ioannis-mariae-vianney-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/0",
+        "original_refusal_sha256": "786fe495c89f731c5b9a88a8f8e27b2f7a00ad16f6a33d650435f4216eea4d71"
+      },
+      {
+        "identity": [
+          "s-iosaphat-episcopi-martyris",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/24/old_untranslated",
+        "original_refusal_sha256": "e56ad141626311249a7f1980577b337f05f04c010d8793c8d20becf2564dc7f4"
+      },
+      {
+        "identity": [
+          "s-iosaphat-episcopi-martyris",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/25/old_untranslated",
+        "original_refusal_sha256": "5e291d28e0c0e699f9f4b710eac6d366961a17550db6833a7b75a6efd6634efe"
+      },
+      {
+        "identity": [
+          "s-ioseph-opificis-sponsi-beatae-mariae",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-745c2977907770de.json",
+        "pointer": "/changes/9/old_untranslated",
+        "original_refusal_sha256": "f4680b7fb226433f63026e8fdf0def14a9a96f1602314825409d7ae0077340aa"
+      },
+      {
+        "identity": [
+          "s-iosephi-calasanctii-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/101",
+        "original_refusal_sha256": "dbbc36561bcc13ee200e200b302bded62668e0541cfb4288c40095f97e4774b5"
+      },
+      {
+        "identity": [
+          "s-iustini-martyris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/70",
+        "original_refusal_sha256": "42d1bc490090d8d562798edad1d5fb1caa71b298419f492bfcdbb3c533ff4fc8"
+      },
+      {
+        "identity": [
+          "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json",
+        "pointer": "/changes/7/old_untranslated",
+        "original_refusal_sha256": "8a3508d5d16e1569e28d46fc5b3ef50a73525f37fa233b344f835c3bbc93cbf7"
+      },
+      {
+        "identity": [
+          "s-ludovici-regis-confessoris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/100",
+        "original_refusal_sha256": "3efbcf328ff0cf6b41f46fe78cb70f76f8ffb1fb86ad2dc9712abab7b41bfd90"
+      },
+      {
+        "identity": [
+          "s-margaritae-mariae-alacoque-virginis",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/113",
+        "original_refusal_sha256": "4f86ae89cb6e45612fbe5b69353c6c410fea503c321d89743f003785b0bd887b"
+      },
+      {
+        "identity": [
+          "s-margaritae-mariae-alacoque-virginis",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/114",
+        "original_refusal_sha256": "4c570e5477d74b3969c511d6926d5eb7b77a972efe0293ff0fef96915415d170"
+      },
+      {
+        "identity": [
+          "s-marthae-virginis",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/89",
+        "original_refusal_sha256": "a8d4af8475cd9134bdee5da63558d886dea909ea2c82a5c5b09bc4381ea71069"
+      },
+      {
+        "identity": [
+          "s-petri-alcantara-confessoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/115",
+        "original_refusal_sha256": "d233236cf76b237645dd4f5b265fd73655015a8122f5158ad20a9f18a7e73ac4"
+      },
+      {
+        "identity": [
+          "s-petri-chrysologi-episcopi-confessoris-ecclesiae",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/121",
+        "original_refusal_sha256": "661065ff1fff9dc5aafccab486ecc43b9910ed21734d5a2977d5c9a15a3b3f2d"
+      },
+      {
+        "identity": [
+          "s-petri-chrysologi-episcopi-confessoris-ecclesiae",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/120",
+        "original_refusal_sha256": "e9454ff7406da24fe59dcecd66133ccd890d7e662dd0e2e9a9537124e21b3a82"
+      },
+      {
+        "identity": [
+          "s-polycarpi-episcopi-martyris",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/26/old_untranslated",
+        "original_refusal_sha256": "060e3ffb23a22bc8e5af21c797d8a1b3c3f8a596aa1e8bec208e2ac76dc0b983"
+      },
+      {
+        "identity": [
+          "s-polycarpi-episcopi-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/57",
+        "original_refusal_sha256": "cc513518a8528cc5504eed3538913a3347b572734cb09bd3f7aa4f6813881234"
+      },
+      {
+        "identity": [
+          "s-polycarpi-episcopi-martyris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/59",
+        "original_refusal_sha256": "20ea658842bbd96641d868122268de90b5771840d05f4d78011cb39c67b1eabf"
+      },
+      {
+        "identity": [
+          "s-polycarpi-episcopi-martyris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/58",
+        "original_refusal_sha256": "2d721c2077ba3fdc668f0473d9d0a482d91ca96f8ee02a612ccac26c5d49df45"
+      },
+      {
+        "identity": [
+          "s-stephani-regis-confessoris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/104",
+        "original_refusal_sha256": "403a9840980777aff894e53292217cdc59126ebdbac29d09e804b81a8029f8a2"
+      },
+      {
+        "identity": [
+          "s-teresiae-a-iesu-infante-virginis",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/109",
+        "original_refusal_sha256": "1c519d1bb9f8c6764bb4af2ba638bfdf0a5dab774a375fb2555cc5c6ca917457"
+      },
+      {
+        "identity": [
+          "s-teresiae-a-iesu-infante-virginis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/111",
+        "original_refusal_sha256": "05b3f0750f6be0773251bc11519735f7d9815384adcd195349bf443e0193c6f9"
+      },
+      {
+        "identity": [
+          "s-teresiae-a-iesu-infante-virginis",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/110",
+        "original_refusal_sha256": "c50d9b03ac6463bbd1f2b8ea6d3b65f968dd30f82eab147fe64a91a87afbe5b9"
+      },
+      {
+        "identity": [
+          "s-teresiae-virginis",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/31",
+        "original_refusal_sha256": "9e3b949336038a14973585394d3847f951eb5477c7a52ebab250f1826179a281"
+      },
+      {
+        "identity": [
+          "s-thomae-aquino-confessoris-ecclesiae-doctoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/68",
+        "original_refusal_sha256": "a148b524882b6bc2f081a8a54fccd6b421716cbcf5f58a7f5347e13e8f27bb72"
+      },
+      {
+        "identity": [
+          "s-thomae-aquino-confessoris-ecclesiae-doctoris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/67",
+        "original_refusal_sha256": "2a92db054ff28fbcf18583738fb8304518b716d16adcedd49d9ba997f07d6662"
+      },
+      {
+        "identity": [
+          "s-timothei-episcopi-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/51",
+        "original_refusal_sha256": "764ff1d21407546283576deff240ab9de16d32da1632ce35f75d8baa43c901e9"
+      },
+      {
+        "identity": [
+          "s-timothei-episcopi-martyris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/53",
+        "original_refusal_sha256": "bd35a9afdb2a77d2bb40b3138b54f53999ee6053e5aa8b90eb630dbed7d73c23"
+      },
+      {
+        "identity": [
+          "s-timothei-episcopi-martyris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/52",
+        "original_refusal_sha256": "2fcf2aa82497047fe6fbaaa60b75223674073859e1942659c122a27db653f62f"
+      },
+      {
+        "identity": [
+          "s-titi-episcopi-confessoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/63",
+        "original_refusal_sha256": "dc5a0ccf6f475ffe5af0f884348efc1208d755acfb6ac846f2b6d370f95aa965"
+      },
+      {
+        "identity": [
+          "s-vincentii-a-paulo-confessoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/86",
+        "original_refusal_sha256": "5d2e6ef9093e92087eb3f4f6dee653dfdd34d4e4a505164c955edaff414b3a59"
+      },
+      {
+        "identity": [
+          "sanctissimi-nominis-beatae-mariae-virginis",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-745c2977907770de.json",
+        "pointer": "/changes/5/old_untranslated",
+        "original_refusal_sha256": "30520137d78c9a5927113859fa7ff7a8b98f9b8df40fa4155d866338c1f4c026"
+      },
+      {
+        "identity": [
+          "sanctissimi-nominis-beatae-mariae-virginis",
+          "main",
+          "Communion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-745c2977907770de.json",
+        "pointer": "/changes/6/old_untranslated",
+        "original_refusal_sha256": "71814cfe8deb3061b231578c036f45debb591b0fa0eb26ced9995828613e01f6"
+      },
+      {
+        "identity": [
+          "sanctissimi-nominis-beatae-mariae-virginis",
+          "main",
+          "Gradual",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-745c2977907770de.json",
+        "pointer": "/changes/4/old_untranslated",
+        "original_refusal_sha256": "6817a978ba2e6388cf687fd6b4b9a606f6ba2b194a76322fc2bf0f8d72323f93"
+      },
+      {
+        "identity": [
+          "septem-dolorum-beatae-mariae-virginis",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/34/old_untranslated",
+        "original_refusal_sha256": "6c7e24ed109d5dd565d7f90ac03917c733e6f5d275448de31b1baed404d6b59f"
+      },
+      {
+        "identity": [
+          "septem-dolorum-beatae-mariae-virginis",
+          "main",
+          "Communion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/36/old_untranslated",
+        "original_refusal_sha256": "21f731bada91a6e846e6a4895dad8af99afe9b2bd54ddbc0357bebedd7ba9b3e"
+      },
+      {
+        "identity": [
+          "septem-dolorum-beatae-mariae-virginis",
+          "main",
+          "Gradual",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/33/old_untranslated",
+        "original_refusal_sha256": "609d70ac6649ee280182e621d6caf69084c5d2061022a44e75a5a72d77cbfa08"
+      },
+      {
+        "identity": [
+          "septem-dolorum-beatae-mariae-virginis",
+          "main",
+          "Offertory",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/35/old_untranslated",
+        "original_refusal_sha256": "4bc68ad3704b4a4372a739de83cd80f7efd637e8618cf3936a46dec3cc345d63"
+      },
+      {
+        "identity": [
+          "september-ember-wednesday",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/41",
+        "original_refusal_sha256": "b800bc501fc317739c84060a4bb1eed414aa47486267655ba00cbce238ebe7d2"
+      },
+      {
+        "identity": [
+          "ss-cornelii-papae-cypriani-episcopi-martyrum",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/10",
+        "original_refusal_sha256": "966698efc1782911282bd188916c2d60b3cb4a00653ac6717fc8a6051ab0c9f2"
+      },
+      {
+        "identity": [
+          "ss-ianuarii-episcopi-sociorum-martyrum",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/27/old_untranslated",
+        "original_refusal_sha256": "c4c8008f942413865e8045cc96a0ccfcc169417fd241ea272ffd32b86f505c51"
+      },
+      {
+        "identity": [
+          "ss-ianuarii-episcopi-sociorum-martyrum",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/105",
+        "original_refusal_sha256": "f5b8e0e98bec2ca22c753c7224cd196da3a46133fa2f28d4bafda9a0a3fc2c3d"
+      },
+      {
+        "identity": [
+          "ss-ianuarii-episcopi-sociorum-martyrum",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/107",
+        "original_refusal_sha256": "e1ee34277ee4b8a81e93533a9214b770cb95e2b98b4b7ed86eab43138ca69a4a"
+      },
+      {
+        "identity": [
+          "ss-ianuarii-episcopi-sociorum-martyrum",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/106",
+        "original_refusal_sha256": "d4cfa317d407d80646cc3fe7278d762386007326f92e18490397d7fb95f150ec"
+      },
+      {
+        "identity": [
+          "ss-ioannis-pauli-martyrum",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/28/old_untranslated",
+        "original_refusal_sha256": "b56d0183dfdbfc3a97f2cd16bfd9979b07d199b055e24f70520383bf747b07b4"
+      },
+      {
+        "identity": [
+          "ss-nerei-achillei-domitillae-virginis-atque",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/29/old_untranslated",
+        "original_refusal_sha256": "5514ad91cb2bf4c2f2d70b652bc34cb4c9b207e514fbc96a5bfaafa58f1d442d"
+      },
+      {
+        "identity": [
+          "ss-nerei-achillei-domitillae-virginis-atque",
+          "main",
+          "Alleluia",
+          "all",
+          2
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/30/old_untranslated",
+        "original_refusal_sha256": "47550c1ccfb8e0ebf85004c8320ba77085ebaa7ee82bf4caa53a432b060f3762"
+      },
+      {
+        "identity": [
+          "ss-philippi-iacobi-apostolorum",
+          "main",
+          "Collect",
+          "all",
+          2
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/140",
+        "original_refusal_sha256": "700a36eeec39347ce6a4de59c24d98ac7b5db328e2221f6e8e5ca454558bb474"
+      },
+      {
+        "identity": [
+          "ss-septem-fratrum-martyrum-ac-ss",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/31/old_untranslated",
+        "original_refusal_sha256": "3265736688a5497780034e0fdfd92c6d9cfd9340030907b2aa02b6c40c68d377"
+      },
+      {
+        "identity": [
+          "thursday-after-ash-wednesday",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/33",
+        "original_refusal_sha256": "ec3bfca03097e5e7aab560dde3f61d6f19a716c5050f80a85add2fe4cdf1373c"
+      },
+      {
+        "identity": [
+          "transfiguratione-domini-nostri-iesu-christi",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/replaced-absences.json",
+        "pointer": "/untranslated/46",
+        "original_refusal_sha256": "c258bb10a27ef2f5b4685adf3d048c341aab68758995bd70dcdd6173105f2105"
+      },
+      {
+        "identity": [
+          "vigil-assumption",
+          "main",
+          "Communion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/2/old_untranslated",
+        "original_refusal_sha256": "98618265c1c2f8cbe90d3e3239064ed092db05d4da80788802c8ea51d9fe1404"
+      },
+      {
+        "identity": [
+          "vigil-assumption",
+          "main",
+          "Gradual",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/0/old_untranslated",
+        "original_refusal_sha256": "b257922a1b17216dde7fae8a74a4b53ec83fd3d8fe2709982ec4382c8a0578fe"
+      },
+      {
+        "identity": [
+          "vigil-assumption",
+          "main",
+          "Offertory",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/1/old_untranslated",
+        "original_refusal_sha256": "85a031c11073771db71f792055eb36ff1014dc2a09d07e64faf8048df325afb6"
+      },
+      {
+        "identity": [
+          "vigil-of-the-ascension",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-0ca1db12a7d9dc97.json",
+        "pointer": "/changes/2/old_untranslated",
+        "original_refusal_sha256": "9870fadc0b4618111a9a08dc904dd5efd03f08364417edadd535233303fdbc02"
+      },
+      {
+        "identity": [
+          "visitatione-beatae-mariae-virginis",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/6/old_untranslated",
+        "original_refusal_sha256": "f465b7748d778993f43d60369ec52e1d0a5024a5e31b654fc0d58f4c09b561fa"
+      },
+      {
+        "identity": [
+          "visitatione-beatae-mariae-virginis",
+          "main",
+          "Communion",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/8/old_untranslated",
+        "original_refusal_sha256": "c4771c2c10ade33b58193174e47f02c91a84a8bce187d39eb61ed3c5562b80e6"
+      },
+      {
+        "identity": [
+          "visitatione-beatae-mariae-virginis",
+          "main",
+          "Gradual",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/5/old_untranslated",
+        "original_refusal_sha256": "6b9adcb77dd7191f670c5438dc1b1a25b611ef7ffc58d6eb81538d2606cf84d7"
+      },
+      {
+        "identity": [
+          "visitatione-beatae-mariae-virginis",
+          "main",
+          "Introit",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/4/old_untranslated",
+        "original_refusal_sha256": "3ed12b681d702ed2ec5e687afd9de43cfaf809981d4966b3be321df8d50802ad"
+      },
+      {
+        "identity": [
+          "visitatione-beatae-mariae-virginis",
+          "main",
+          "Offertory",
+          "all",
+          1
+        ],
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-4f79b3ec78b690f5.json",
+        "pointer": "/changes/7/old_untranslated",
+        "original_refusal_sha256": "3b417b4481babc00caf882c028fec9ba13f5db5addc0d9e75ae13e5ca84fef03"
+      }
+    ]
+  },
+  "latin": {
+    "baseline_rows": 1346,
+    "current_rows": 1420,
+    "new_rows": 74,
+    "original_decision_dictionaries_unchanged": 1342,
+    "changed_original_decisions": [
+      {
+        "identity": [
+          "comm-s-silvestri-i-papae-confessoris",
+          "",
+          "Collect",
+          "",
+          "",
+          1
+        ],
+        "before": "removed",
+        "after": "permitted"
+      },
+      {
+        "identity": [
+          "mass-of-the-lords-supper",
+          "",
+          "Hymn at the Translation of the Blessed Sacrament",
+          "",
+          "",
+          1
+        ],
+        "before": "permitted",
+        "after": "permitted"
+      },
+      {
+        "identity": [
+          "palm-sunday",
+          "",
+          "Procession Antiphon",
+          "",
+          "",
+          5
+        ],
+        "before": "removed",
+        "after": "permitted"
+      },
+      {
+        "identity": [
+          "palm-sunday",
+          "",
+          "Procession Antiphon",
+          "",
+          "",
+          6
+        ],
+        "before": "removed",
+        "after": "permitted"
+      }
+    ],
+    "recovered_full_body_owners": 77,
+    "existing_Pange_cue_owner_expanded_to_full_hymn": 1
+  },
+  "pre1955_exclusions": {
+    "rows": 57,
+    "first_successor": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/pre1955-inherited-exclusion-successor.json",
+    "after_sixteen_successor": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/pre1955-inherited-exclusion-successor-v2.json",
+    "scope": "Only14 actual parent-kind transitions across two receipts; all57 child exclusions and historical refusal records retained."
+  },
+  "canonical_core_sha256": {
+    "src/sources/calendars/roman-1962/propers.yaml": "1a0b78a3c72803ce56166bc70c4229465a5a8b6c4a2c0c6be73ab431b57e781a",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "4425c42f5e8cf452ffdb76e9e1ba7da404c0eaff4e47525908dec85aa41ec6ea",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "421594738c44c655412cf6454e3ab7f22f971b6f4e6dc47272b2360e28f9ecfd",
+    "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml": "c078838d5b94c858f2f7351607331b0febf16b9c4ea57185115b504c3f09ea17"
+  }
+}

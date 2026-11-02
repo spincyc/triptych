@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.diocese-of-york.manuale-et-processionale.1875-henderson.ave-rex-latin-checked-20261029"
+edition_id = "edition.diocese-of-york.manuale-et-processionale.1875-henderson"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "United States: this identified historical edition was first published in 1875, before 1931, and its publication term has expired. The faithful mechanical page extraction adds no new authorship. This checked transcription contains only the complete Ave rex antiphon from historical printed page 151, excludes the other page contents and modern Google wrapper matter, and asserts no rights over the complete delivery wrapper. Historical source wording remains public domain and is excluded from Triptych project licensing."
+rights_jurisdiction = "United States"
+provenance = "Complete Ave rex paragraph read from sourcePDF186/printed 151 at 200 and 400 dpi. Source words and target words were compared directly against CMAA 1962 PDF215-216/printed 134-135, no. 841,also inspected at 200 and 400 dpi. No OCR supplied any reading."
+retrieved = "2026-10-29"
+sha256 = "56c4adfe058846548747de3a360ca186ca1b09178961d9723772fde08bfb79f7"
+byte_size = 301
+path = "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/artifacts/ave-rex-latin-checked-20261029/text.txt"
+indexable = true
+derived_from = "artifact.diocese-of-york.manuale-et-processionale.1875-henderson.ave-rex-page-151-facsimile"
+transformation = "Transcribe the entire Ave rex paragraph. Join typographical wraps and praedixerunt word break, expand printed ae ligatures, and omit surrounding rubrics and musical notation. Retain source pointing, source capitals, expectabant spelling and both Osanna spellings. Do not replace any word with its target form."
+encoding = "utf-8"

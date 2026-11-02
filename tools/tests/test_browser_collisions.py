@@ -82,6 +82,34 @@ def without_comments(text: str) -> str:
   return re.sub(r"/\*.*?\*/", "", text, flags=re.S)
 
 
+def selector_list(text: str) -> list[str]:
+  """Split selector lists only at top-level commas, including nested :is()."""
+  found = []
+  start = 0
+  depth = 0
+  quote = None
+  escaped = False
+  for index, char in enumerate(text):
+    if escaped:
+      escaped = False
+    elif char == "\\":
+      escaped = True
+    elif quote:
+      if char == quote:
+        quote = None
+    elif char in ("'", '"'):
+      quote = char
+    elif char in "([":
+      depth += 1
+    elif char in ")]":
+      depth -= 1
+    elif char == "," and depth == 0:
+      found.append(text[start:index])
+      start = index + 1
+  found.append(text[start:])
+  return found
+
+
 def subject_classes(path: Path) -> set[str]:
   """The classes a stylesheet sets properties on directly.
 
@@ -96,7 +124,7 @@ def subject_classes(path: Path) -> set[str]:
     selector = block.group(1).strip()
     if not selector or selector.startswith("@"):
       continue
-    for one in selector.split(","):
+    for one in selector_list(selector):
       one = one.strip()
       if not one or re.search(r"[\s>+~]", one):
         continue
@@ -160,6 +188,13 @@ def main_ids() -> dict[str, str]:
 
 
 class SharedNamespaceTest(unittest.TestCase):
+  def test_nested_selector_commas_do_not_discard_instrument_scope(self):
+    scoped = '.reader-instrument .ordinary-element > :is(.text-pair,.composed,:is(.detail,.field))'
+    self.assertEqual(selector_list(scoped), [scoped])
+    self.assertEqual(selector_list(scoped + ', .field'), [scoped, ' .field'])
+    self.assertEqual(selector_list('[data-name="a,b"] .detail, .field'),
+                     ['[data-name="a,b"] .detail', ' .field'])
+
   def test_no_instrument_declares_a_second_component_under_a_shared_name(self):
     """A bare `.field` in history.css shadowed the shared control-bar `.field`.
 

@@ -1,0 +1,99 @@
+{
+  "schema": "triptych-three-act-source-cold-audit/v1",
+  "packet": 4,
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-24111919-paterno-iam-diu.catholic-mind-1920-01-22-english",
+      "en"
+    ],
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die.catholic-mind-1921-08-22-english",
+      "en"
+    ],
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.catholic-mind-1921-07-08-english",
+      "en"
+    ]
+  ],
+  "documents": [
+    {
+      "key": [
+        "papal.benedict-xv.hf-ben-xv-enc-24111919-paterno-iam-diu.catholic-mind-1920-01-22-english",
+        "en"
+      ],
+      "title": "Paterno Iam Diu",
+      "row_sha256": "2985b89a589db5b7e5b75780ff96e7da49232e5c6bcadbb16fa37813159ae7bb",
+      "source_sha256": "13c1f1df67465837622eea44033c3f0ed57c398234d3047f4bd06e9c8c639cd1",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-04/act-01-evidence.json",
+        "sha256": "1673755b226ace25b283f2e3805dcbf3986cd3b91feeecf6a891441c3af5c494",
+        "bytes": 36042
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-04/act-01-selected.txt",
+        "sha256": "13c1f1df67465837622eea44033c3f0ed57c398234d3047f4bd06e9c8c639cd1",
+        "bytes": 5133
+      },
+      "controller_pin": {
+        "id": "segment.papal.benedict-xv.hf-ben-xv-enc-24111919-paterno-iam-diu.1920-01-22-catholic-mind-english.complete-english-reading",
+        "record": "src/sources/works/papal-documents/1919-11-24-papal-benedict-xv-hf-ben-xv-enc-24111919-paterno-iam-diu-1bed8491/editions/1920-01-22-catholic-mind-english/segments/complete-english-reading.toml",
+        "sha256": "6d2077f5154ef786bbddc330e61aa53bbf1c69ff6906adc81a3e5cad7ceb9276"
+      }
+    },
+    {
+      "key": [
+        "papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die.catholic-mind-1921-08-22-english",
+        "en"
+      ],
+      "title": "Fausto Appetente Die",
+      "row_sha256": "d7696470d57b3b4ace65b5aacdd4f747bde583a73425ca654eb7f8594cbfef7f",
+      "source_sha256": "65d6e7c7b07cd5afbe8c98136199b73c55326904390486a0e9e1677f744d9dcb",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-04/act-02-evidence.json",
+        "sha256": "57e4a3acc9db6cc044e08106c7cddc54e062891dedabc8f9b3eeb276b17419a3",
+        "bytes": 30697
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-04/act-02-selected.txt",
+        "sha256": "65d6e7c7b07cd5afbe8c98136199b73c55326904390486a0e9e1677f744d9dcb",
+        "bytes": 12377
+      },
+      "controller_pin": {
+        "id": "segment.papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die.1921-08-22-catholic-mind-english.complete-english-reading",
+        "record": "src/sources/works/papal-documents/1921-06-29-papal-benedict-xv-hf-ben-xv-enc-29061921-fausto-appetente-die-21f315f9/editions/1921-08-22-catholic-mind-english/segments/complete-english-reading.toml",
+        "sha256": "6daac0c04de97622c3b91a2f221553e032e439fa312894981becace65f0343bc"
+      }
+    },
+    {
+      "key": [
+        "papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.catholic-mind-1921-07-08-english",
+        "en"
+      ],
+      "title": "In Praeclara Summorum",
+      "row_sha256": "14a07f86fa00bf7f5e2eeb07b9a559b04a6e273b8641d7e058cb1d01e8f6e21f",
+      "source_sha256": "60800e9e1bba2b7622fb8a2c6a050201f566903ad89d599a666e8d8a62d0307c",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-04/act-03-evidence.json",
+        "sha256": "88046a3c4672ff7da36a7c0da044e1a3da571c6d4f555c74d81c9dbcd5abea84",
+        "bytes": 29662
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-04/act-03-selected.txt",
+        "sha256": "60800e9e1bba2b7622fb8a2c6a050201f566903ad89d599a666e8d8a62d0307c",
+        "bytes": 16872
+      },
+      "controller_pin": {
+        "id": "segment.papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.1921-07-08-catholic-mind-english.complete-english-reading",
+        "record": "src/sources/works/papal-documents/1921-04-30-papal-benedict-xv-hf-ben-xv-enc-30041921-in-praeclara-summorum-05d26bb3/editions/1921-07-08-catholic-mind-english/segments/complete-english-reading.toml",
+        "sha256": "ffae2f28ca2c83407fcd2b9a87452543403cd5f7b94c537b69be8a20bc522394"
+      }
+    }
+  ],
+  "common_pins": {
+    "path": ".scratch/english-intake-recovery/common-pins.json",
+    "sha256": "17f8dc51ed96ec27c7b02254b4edac12df478c97a547e1660c27b8a0996921e9",
+    "bytes": 2847
+  },
+  "scope_limits": "Review source intake and exact selected historical human English witness. Fresh native image checks are required; prior visual claims are not inherited. No PDF compiler/layout review or lexical translation accuracy/full printing collation claimed."
+}

@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v15
+WORKFLOW_DIGEST: 4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83
+RUN_ID: 450355254538c1ba
+COMMIT: 4f52b9ade338f9a9f4f39f312aa45989a0baf2ca
+STAGE: research-preflight
+ITERATION: 2
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-01","proper":"liturgy/roman-rite/1962/propers/temporal/f02-all-saints","provider":"claude","research_handoff":"workflows/reviews/claude-1962-f02-revision-2026-10-27/HANDOFF.md"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"RES-014","location":"research/scope.md section 3.7 (lines 765-769) and section 3.10 (line 971); research/source-dispositions.toml row augustine-de-sermone-domini-i-3-10-i-4-12 (locus 'physical lines 979-1074')","problem":"The sentence 'The eighth, as it were, returns to the starting-point, because it shows and commends what is complete and perfect' is cited as I.4.12. In the NPNF text read (ccel-text-ce371798) it stands in I.3.10, at lines 979-981: Chapter III, section 10 runs from line 932, and section 12 begins at line 1041. The beatitudes 'in order from humility', which the research also gives under I.3.10, are at lines 932-979, so they fall before the locus range given.","required_result":"Cite the 'starting-point' sentence as I.3.10 in sections 3.7 and 3.10, and widen the disposition's locus to begin at line 932.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

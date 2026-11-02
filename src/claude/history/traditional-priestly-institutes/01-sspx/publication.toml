@@ -1,0 +1,109 @@
+schema_version = 1
+id = "claude/history/traditional-priestly-institutes/01-sspx"
+kind = "history-account"
+profile = "guidance/history/historical-accounts.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "claude/history/traditional-priestly-institutes/01-sspx"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "evidence-map"
+source = "research/evidence-map.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "historical-account"
+source = "sections/00-question.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/10-founder.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/20-foundation.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/30-declaration.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/40-suppression.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/50-hot-summer.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/60-expansion.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/70-first-rupture.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/80-after-lefebvre.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/90-remission.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/100-doctrinal-talks.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/110-faculties.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/120-second-rupture.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/130-status.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/140-conclusion.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/150-scope-method.tex"
+
+[[structure]]
+role = "references"
+source = "sections/160-references.tex"

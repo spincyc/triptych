@@ -1,0 +1,49 @@
+{
+  "schema": "triptych-roman-checkpoint-v1-runtime-checks/v1",
+  "recorded_on": "2026-10-30",
+  "state": "passed-at-installed-frontier",
+  "source_library": {
+    "command": "tools/source-library validate",
+    "exit_code": 0,
+    "stdout": "source-library valid: artifact=10373 corpus=5 edition=13738 passage=9512 segment=10186 work=10757 bindings=4311",
+    "log_sha256": "3f7c7bb6b2348070f6ab23e77a56e10d1d147ef8a2d7b0fe0104c636c8e79a07"
+  },
+  "roman_calendar": {
+    "command": "tools/check-calendar-masses --calendar roman-1962",
+    "exit_code": 0,
+    "stdout": "src/sources/calendars/roman-1962/propers.yaml\t491 masses\t3753 propers\nsrc/sources/inventories/roman-1962-proper-translations-v1.toml\t6 read twice\t5 agree\t1 disagree",
+    "log_sha256": "af91d81b3634429a478811379570fd33e51638a170e9dc4adac424784b5804ff"
+  },
+  "english_runtime": {
+    "command": "tools/mass-propers show --calendar roman-1962 --mass commune-summorum-pontificum --mass s-ioannis-bosco-confessoris --mass chrism-mass --mass beatae-mariae-virginis-reginae --lang en --format json",
+    "exit_code": 0,
+    "mass_count": 4,
+    "response_sha256": "2898361a2d69a9e1b16b32f6e5de14c2518f3abe768a4eeb310672ded226dcb3",
+    "stderr_empty": true
+  },
+  "pre1955": {
+    "receipt": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/pre1955-inherited-exclusion-successor-v2.json",
+    "receipt_sha256": "ec4ce81ac2f93db38a01b7d4558559b74b3944a9e0aec8ddbdd3cc1a07bfc250",
+    "calendar_checker": "passed",
+    "census": "passed;zero unmatched or unaccounted"
+  },
+  "actual_sixteen_guard": {
+    "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/source-guard/independent-packet-review-v1/activated-mechanics-review-v1.md",
+    "result": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/source-guard/independent-packet-review-v1/activated-runtime-result-v1.json",
+    "scope": "16 actual owners/bodies;86controllerrecords;27trackedpayloads;96negatives;16inherited resets;old2 routes preserved. Independent mechanical acceptance, no repeated semantic/legal claim."
+  },
+  "resolved_transport_corrections": [
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/target-passage-schema-correction.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/historical-two-context-locator-correction.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/bosco-target-passage-schema-correction.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/sanctoral-target-schema-conservation.json",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/damascene-alternative-group-basis-correction.json"
+  ],
+  "canonical_core_sha256": {
+    "src/sources/calendars/roman-1962/propers.yaml": "1a0b78a3c72803ce56166bc70c4229465a5a8b6c4a2c0c6be73ab431b57e781a",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "4425c42f5e8cf452ffdb76e9e1ba7da404c0eaff4e47525908dec85aa41ec6ea",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "421594738c44c655412cf6454e3ab7f22f971b6f4e6dc47272b2360e28f9ecfd",
+    "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml": "c078838d5b94c858f2f7351607331b0febf16b9c4ea57185115b504c3f09ea17"
+  },
+  "limits": "Checkpoint source/English/runtime verification only; no final all-English, whole-rite, calendar completeness, deployment or newcase admission claim."
+}

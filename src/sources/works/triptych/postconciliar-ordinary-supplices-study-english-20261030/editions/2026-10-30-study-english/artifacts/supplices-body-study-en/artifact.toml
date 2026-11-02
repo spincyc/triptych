@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030.supplices-body-study-en"
+edition_id = "edition.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030"
+artifact_type = "project-study-translation"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "New Triptych-authored study English under CC BY4.0, drafted only from the independently public-domain Mame1922 prayer body. The separately stored Latin column remains public-domain underlying source wording; no approved English or protected modern target text is copied."
+rights_jurisdiction = "United States"
+provenance = "Drafted on2026-10-30 directly from supplices-body in artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-supplices-la after source-image inspection. The complete selected Latin body is preserved in a separate column and translated without its separately recorded historical conclusion. No human review or liturgical approval is claimed."
+retrieved = "2026-10-30"
+sha256 = "041ebf5a31a4b58b95958f9d08d222bd16b9b92576fe93b420a037a3e7e9f25d"
+byte_size = 675
+path = "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/editions/2026-10-30-study-english/artifacts/supplices-body-study-en/text.tsv"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-supplices-la"]
+transformation = "Translate the entire selected source prayer body freshly into English for study. Retain every petition, the plural recipient scope, the source holy-Angel title, altar and divine-presence clauses, participation in the Body and Blood, and both blessing and grace. Append no conclusion, rubric, received English formula or modern adaptation."
+indexable = true
+encoding = "utf-8"
+notes = "One header and one row, element_key supplices-body. Readers must label this project study English and show its non-recitation qualification. This source does not translate an entire Eucharistic Prayer or establish its appointment."

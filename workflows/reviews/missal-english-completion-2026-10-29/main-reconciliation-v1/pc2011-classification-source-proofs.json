@@ -1,0 +1,133 @@
+{
+  "accepted_existing_receipts": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase1-admission.json",
+      "sha256": "336c2eeb280f40fcf291e99a691c21bc0a1025b8b20751815ff8facaa10cc255"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-mariamajor-admission.json",
+      "sha256": "f39ab5cf702893080063dfd8d53bbf3a23b23f1fe701706c12446b31ab25ca97"
+    }
+  ],
+  "actual_owning_checks": {
+    "entries": 3,
+    "mass_propers_actual_publication_binding_with_actual_witnesses": "all pass",
+    "source_checker_source_and_publication": "all pass"
+  },
+  "candidate_sha256": "6739d55adb969ef06f8e0e73e7457e682b61f9bee0759c461a1fb2ded1b0a194",
+  "canonical_writes": 0,
+  "classification_effect": {
+    "added_historical_classes": 2,
+    "all4_existing_verified_approved2011_classes_unchanged": true,
+    "all9_old_classes_unchanged": true,
+    "new_English_or_Latin_bodies": 0,
+    "new_rights_or_publication_permission": false,
+    "new_verified2011_identities": 0
+  },
+  "existing_active_Proper_entries": [
+    {
+      "English": [
+        {
+          "body_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+          "lang": "en",
+          "rights": "public-domain",
+          "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+        }
+      ],
+      "artifact_publication_rights_jurisdiction": "United States",
+      "artifact_publication_rights_status": "public-domain",
+      "edition_date": "1908",
+      "entry_sha256": "fe483d38fcaefbf7cf5ac5b8070e84418d22e4944377da2517a2a56eab4d2ff6",
+      "owning_checker_publication_problems": [],
+      "owning_checker_source_problems": [],
+      "owning_reader_publication_binding": "pass",
+      "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen",
+      "publication_artifact_sha256": "34d4f7ee1e4bfe5d8190df8ca2fc7954f72970cf9833e23137d0cc56cf92c828",
+      "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen-publish-lawrence",
+      "relation": "antecedent-printing",
+      "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+      "source_rights": "public-domain",
+      "target": [
+        "saint-lawrence-brindisi-priest-doctor-church",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "visual_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+      "visual_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-verify-semen",
+      "witness": "bute-1908-breviary",
+      "witness_relation": "antecedent"
+    },
+    {
+      "English": [
+        {
+          "body_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+          "lang": "en",
+          "rights": "public-domain",
+          "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+        }
+      ],
+      "artifact_publication_rights_jurisdiction": "United States",
+      "artifact_publication_rights_status": "public-domain",
+      "edition_date": "1908",
+      "entry_sha256": "617393fdedee2a0b0352cae324f38ec4f70081badddfa642b0f3dd9691c3a089",
+      "owning_checker_publication_problems": [],
+      "owning_checker_source_problems": [],
+      "owning_reader_publication_binding": "pass",
+      "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen",
+      "publication_artifact_sha256": "34d4f7ee1e4bfe5d8190df8ca2fc7954f72970cf9833e23137d0cc56cf92c828",
+      "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen-publish-chrysostom",
+      "relation": "antecedent-printing",
+      "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+      "source_rights": "public-domain",
+      "target": [
+        "saint-john-chrysostom-bishop-doctor-church",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "visual_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+      "visual_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-verify-semen",
+      "witness": "bute-1908-breviary",
+      "witness_relation": "antecedent"
+    },
+    {
+      "English": [
+        {
+          "body_sha256": "7fc7c2650428066c6d58a7b47e1efca29a6d44f3091b7120ba6ac00950a66570",
+          "lang": "en",
+          "rights": "public-domain",
+          "source_id": "edition.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915"
+        }
+      ],
+      "artifact_publication_rights_jurisdiction": "United States",
+      "artifact_publication_rights_status": "public-domain",
+      "edition_date": "1915",
+      "entry_sha256": "03cd2202015645c03acb541fd7d5f2461356ea1ceee96b5a5a542f4a1d491b52",
+      "owning_checker_publication_problems": [],
+      "owning_checker_source_problems": [],
+      "owning_reader_publication_binding": "pass",
+      "publication_artifact_id": "artifact.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915.english-completion-20261029-postconciliar-mariamajor-english",
+      "publication_artifact_sha256": "ef0c4210eb407d37ee2c6a3372f5cc40e3ec3aebd3516def5e12ca930b5400b6",
+      "publication_passage_id": "passage.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915.english-completion-20261029-postconciliar-mariamajor-publish-english",
+      "relation": "antecedent-printing",
+      "source_id": "edition.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915",
+      "source_rights": "public-domain",
+      "target": [
+        "dedication-basilica-saint-mary-major",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "visual_artifact_id": "artifact.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915.english-completion-20261029-postconciliar-mariamajor-pdf",
+      "visual_passage_id": "passage.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915.english-completion-20261029-postconciliar-mariamajor-verify-english",
+      "witness": "benziger-little-office-1915",
+      "witness_relation": "antecedent"
+    }
+  ],
+  "review_role": "Candidate author supplies actual production facts; cold classification review remains separate.",
+  "schema": "triptych-pc2011-classification-existing-source-proof/v1"
+}

@@ -1,0 +1,6 @@
+#!/bin/sh
+# Offline derivation and refusal checks over synthetic and retained inputs.
+set -eu
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+"$repo/tools/papal-source-notes" --help >/dev/null
+exec python3 -m unittest discover -s "$repo/tools/tests" -p test_papal_source_notes.py

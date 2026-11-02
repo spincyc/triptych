@@ -1,0 +1,51 @@
+{
+  "canonical_mutations": 0,
+  "checks": [
+    "Read exact consumer diff and all ten regression cases; independently executed package unittest invocation: ten pass.",
+    "Confirmed unique modeled, held and missing elements remain partitioned independently from per-witness source offers.",
+    "Confirmed typed per-witness offers and raw witness manifest agree exactly; raw relation buckets partition total offers and satisfy typed witness collation bounds.",
+    "Reproduced initial defect: raw own offers could exceed held and contradict typed exact_target; reviewed successor fixes it by deriving target-held exclusively from typed unique exact_target counts.",
+    "Confirmed duplicate own witnesses count three offers but only two target-held elements; fabricated own/not-applicable against uncollated witnesses is refused.",
+    "Reviewed saved owning report values: Roman English197held/198offers; raw own English3Roman/9postconciliar contributes zero exact-target English; Roman Latin retains existing103typed exact.",
+    "Legacy untyped single-offer behavior remains exact."
+  ],
+  "decision": "accept-bounded-consumer-accounting-fix",
+  "independent": true,
+  "inputs": [
+    {
+      "path": "tools/complete-missal",
+      "sha256": "29e923e3a80f5f56727edde1a3a009947558396fc4b2cc27226eca48ca486263"
+    },
+    {
+      "path": "tools/tests/test_complete_missal_source_offers.py",
+      "sha256": "e853c9a442a949b4f40161db90b622759dc7a335625cddc71d031264c43c2e58"
+    },
+    {
+      "path": ".scratch/checkpoint-source-batch-20261030/complete-missal-consumer-validation-v3.json",
+      "sha256": "2b96f157837c85ad5d83fcb8f92d5379899071bf1295abdc9521ca2254033f37"
+    },
+    {
+      "path": ".scratch/checkpoint-independent-review-20261030/complete-missal-focused.log",
+      "sha256": "04e35f0a1383efef3b9260a7afda3a1bc21c7e08111408410c6997b80b54d87c"
+    },
+    {
+      "path": ".scratch/checkpoint-source-batch-20261030/complete-missal-real-offer-validation-v3.json",
+      "sha256": "58235ccae3fb07013b43a55d67fde29dd7e1ca2fe641ddaff381cab76a7d5e3f"
+    }
+  ],
+  "limits": [
+    "This accepts only the consumer accounting code and focused tests; no source-batch fixture, source epoch, source text, release or publication is accepted.",
+    "Saved real report was read rather than rederived during this review. Existing report suite still has the source-epoch-dependent inherited-English1168 versus1373 expectation; update remains separate and root-authorized.",
+    "No human terminal acceptance, annual textual completeness or full English claim."
+  ],
+  "resolved_finding": {
+    "disposition": "Resolved in exact reviewed successor29e923e3a80f5f56727edde1a3a009947558396fc4b2cc27226eca48ca486263.",
+    "finding": "Offer-based own buckets formerly inflated target-held and filled lower bound; exact typed grade was not used.",
+    "initial_subject_sha256": "f17d88a28e1a687f7f8e7d24bdcfbe4fc0cbd330a1219610c9cd2b77dca3a58b",
+    "severity": "material-accounting"
+  },
+  "review_kind": "independent-AI-code-and-control-review",
+  "reviewed_on": "2026-10-30",
+  "role_conflict": false,
+  "schema": "triptych-independent-complete-missal-offer-review/v1"
+}

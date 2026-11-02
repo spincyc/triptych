@@ -1,0 +1,65 @@
+{
+  "helper": {
+    "license": "MIT",
+    "path": "scripts/_papal_native_spacing.py",
+    "sha256": "7c7393f6b366bc986e7d106d217a769fabba5a48edd645a7bd02b463eb64d82c"
+  },
+  "native_first_page": 623,
+  "native_pdf": {
+    "artifact_id": "artifact.acta-papal-archives.ass.034.vatican-pdf-64a68e6e",
+    "artifact_pages": [
+      623,
+      625
+    ],
+    "sha256": "64a68e6efcbf01054672a6bccb274a8ce1dcce4241149ce342d4d478c6786ea8"
+  },
+  "native_raw": {
+    "artifact_id": "artifact.acta-papal-archives.ass.034.gibbons-spacing06-native-raw-90ab7a3d76b8",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1901-acta-ass-034/artifacts/gibbons-spacing06-native-raw-90ab7a3d76b8/text.txt",
+    "sha256": "90ab7a3d76b81446d09c27b1e27e49fbd6eadb9c37d3b7c1fdb541d07dda0156"
+  },
+  "output_sha256": "752985e59338dc91e6f84b4fb110b07c1cf0a790c140666f58558bc8aaf93e6e",
+  "parent": {
+    "artifact_id": "artifact.acta-papal-archives.ass.034.historical-text-817d63a7",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1901-acta-ass-034/artifacts/acta-historical-text-817d63a7/historical.txt",
+    "sha256": "817d63a71b9ee1a6f3ef8155b871fe5105eb668c6c521c3ab73eafa21f240749"
+  },
+  "retained_source_lines": [],
+  "review": {
+    "geometry": "Selected act has one body column. Auspicato has one distinct page-foot citation on each of native146–148; In ipso and Gibbons have no historical notes within their selected extents. Neighboring acts on boundary pages remain excluded.",
+    "limits": "Native OCR reconstruction geometry only; no original-print collation or lexical accuracy certification.",
+    "native_pages_inspected": [
+      623,
+      624,
+      625
+    ],
+    "raw_order_policy": "Preserve parent LF sequence; borrow only whitespace from exact unique same-page native LF lines. Explicit original retention claims no native LF identity."
+  },
+  "reviewed_stream_order_pages": [],
+  "schema": "triptych-papal-native-spacing/v1",
+  "selections": [
+    {
+      "native_page": 623,
+      "source_range": [
+        25151,
+        25190
+      ]
+    },
+    {
+      "native_page": 624,
+      "source_range": [
+        25192,
+        25232
+      ]
+    },
+    {
+      "native_page": 625,
+      "source_range": [
+        25234,
+        25243
+      ]
+    }
+  ],
+  "source_id": "acta.ass.034.ass-034-l025156",
+  "stream_order_difference_pages": []
+}

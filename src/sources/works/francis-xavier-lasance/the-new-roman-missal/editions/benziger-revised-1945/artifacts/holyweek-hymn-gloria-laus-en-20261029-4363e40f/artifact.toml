@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.holyweek-hymn-gloria-laus-en-20261029-4363e40f"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "checked-bilingual-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only the underlying ordinary-page original Lasance/Walsh1937/1945 English expression is retained, under the established United States nonrenewal finding for A110108/A192159 in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. The independently preexisting Latin words accompany their historical translation. No facsimile images, publisher or host framing, scan stamp, annotations, excluded lettered inserts or whole-book scan clearance is claimed."
+rights_jurisdiction = "United States"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Direct page-image transcription; join physical column wraps and line-end division hyphens; omit source headings, Scripture locators and adjacent rubrics; render decorative initial/small-cap openings in running case, retain words, punctuation, sacred-name capitals and actual short response cues. V./R. represent the printed versicle/response signs. Latin expands ae/oe ligatures and omits stress accents without changing words; actual source pointing and received spelling remain. English stanza boundaries are retained."
+provenance = "Complete source page images inspected2026-10-29 at artifact pages[398, 399], printed398-399; byte identity independently verified against registered whole PDF hash before reading. Entire selected English and facing Latin read; OCR used only to locate, not to supply a missing word. The entire historical six-couplet hymn with all five strophes and the refrain was read in both language columns. The source prints a short R. Gloria, laus. / R. Glory, etc. after each couplet; these literal English cues remain unexpanded. Latin inclyta/inclita is the already recorded received-spelling variation; source stress accents and ae/oe ligatures are transcriptional. Pointing differs. The hymn words otherwise agree with the independently qualified target. No neighboring procession rubric or Ingrediente text is included."
+retrieved = "2026-10-29"
+sha256 = "4363e40f424419f977659a98c75b2a293ed9c19950af7758b1394daf5f894f92"
+byte_size = 1544
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/holyweek-hymn-gloria-laus-en-20261029-4363e40f/bilingual.tsv"
+encoding = "utf-8"
+indexable = true

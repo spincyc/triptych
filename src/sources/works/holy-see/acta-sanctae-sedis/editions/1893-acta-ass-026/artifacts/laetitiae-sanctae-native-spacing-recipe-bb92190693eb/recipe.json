@@ -1,0 +1,105 @@
+{
+  "helper": {
+    "path": "scripts/_papal_native_spacing.py",
+    "sha256": "b67f55a5075a11a43f23766d477b32c5209a1144262790476e31c4fde2362b49"
+  },
+  "native_first_page": 193,
+  "native_pdf": {
+    "artifact_id": "artifact.acta-papal-archives.ass.026.vatican-pdf-02f81d1d",
+    "artifact_pages": [
+      193,
+      199
+    ],
+    "sha256": "02f81d1d13781d2f7d27d4aa327d7ec83bbe5ea8ec22f785eda20dd4ce777446"
+  },
+  "native_raw": {
+    "artifact_id": "artifact.acta-papal-archives.ass.026.laetitiae-sanctae-native-raw-8952cec927cd",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/laetitiae-sanctae-native-raw-8952cec927cd/text.txt",
+    "sha256": "8952cec927cd544338f0ddb74adbe69b3ccb9f7f681e4847cf6e9f41ba8cc19a"
+  },
+  "output_sha256": "fb187da8b18b2ab865b235a32e6327196743a2f54ebcb4f0d5b4bb3a83a1c95e",
+  "parent": {
+    "artifact_id": "artifact.acta-papal-archives.ass.026.historical-text-15a33cfd",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/acta-historical-text-15a33cfd/historical.txt",
+    "sha256": "15a33cfd01401e070c0b912e4154be4f7d163d6730ac8f1cd64ed6096d756d3d"
+  },
+  "review": {
+    "full_size_native_pages": [
+      193,
+      196,
+      197,
+      199
+    ],
+    "geometry": "Single body column, separate native page-foot notes. Heading/subscription or page-foot notes appear in different raw stream positions on explicitly listed pages. Original layout order is retained.",
+    "limits": "Vatican OCR PDF reconstruction, not original-print facsimile; no lexical repair or original-print glyph collation.",
+    "native_pages_inspected": [
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199
+    ],
+    "stream_order_policy": "Project only native whitespace onto the unchanged old source LF order. Never adopt raw content-stream order."
+  },
+  "reviewed_stream_order_pages": [
+    193
+  ],
+  "schema": "triptych-papal-native-spacing/v1",
+  "selections": [
+    {
+      "native_page": 193,
+      "source_range": [
+        7659,
+        7700
+      ]
+    },
+    {
+      "native_page": 194,
+      "source_range": [
+        7703,
+        7742
+      ]
+    },
+    {
+      "native_page": 195,
+      "source_range": [
+        7744,
+        7784
+      ]
+    },
+    {
+      "native_page": 196,
+      "source_range": [
+        7786,
+        7827
+      ]
+    },
+    {
+      "native_page": 197,
+      "source_range": [
+        7829,
+        7870
+      ]
+    },
+    {
+      "native_page": 198,
+      "source_range": [
+        7872,
+        7911
+      ]
+    },
+    {
+      "native_page": 199,
+      "source_range": [
+        7913,
+        7943
+      ]
+    }
+  ],
+  "source_id": "acta.ass.026.ass-026-l07664",
+  "stream_order_difference_pages": [
+    193
+  ]
+}

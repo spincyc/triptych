@@ -5,6 +5,10 @@
 
 [Return to the library](../README.md)
 
+**[Papal Encyclicals](../encyclicals/)** — every catalogued encyclical in one
+sortable table, with a short AI-written summary of each and the Latin and
+English texts printed by 1930 where this project holds them.
+
 ## The Creature Before God
 
 ### Trilogy

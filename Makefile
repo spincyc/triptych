@@ -60,7 +60,7 @@ ARCH_CORE_PACKAGES := make bash findutils coreutils diffutils
 ARCH_PYTHON_PACKAGES := python tzdata python-markdown python-yaml
 ARCH_TEX_PACKAGES := texlive-bin texlive-basic texlive-latex \
 	texlive-latexrecommended texlive-latexextra texlive-pictures \
-	texlive-fontsrecommended texlive-fontsextra
+	texlive-fontsrecommended texlive-fontsextra texlive-langother
 ARCH_PDF_PACKAGES := poppler imagemagick
 ARCH_WEB_PACKAGES := pandoc
 # The browser's own derivation, replayed under node against each source's
@@ -145,6 +145,11 @@ RESEARCH_STALENESS_TOOL := tools/tpt research-staleness
 SOURCE_LIBRARY_TOOL := tools/tpt source-library
 SOURCE_INVENTORY_TOOL := tools/tpt source-inventory
 SOURCE_FAMILY_MIGRATION_TOOL := tools/tpt source-family-migration
+DOCUMENT_SCHEMA_TOOL := tools/tpt document-schema
+ARTIFACT_STORE_TOOL := tools/tpt artifact-store
+PRINT_DOCUMENT_TOOL := tools/tpt print-document
+PRINT_EDITION ?= main
+PRINT_OUT ?= .scratch/print-document
 # Complete-text bible editions. These are build artifacts, not publications:
 # they are generated from the tracked verse text of the source library and are
 # never installed into pdf/.
@@ -244,14 +249,16 @@ override _TRIPTYCH_PDF_JOBS_INVALID = $(strip \
 override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),,\
 	$(if $(_TRIPTYCH_PDF_JOBS_INVALID),$(error PDF_JOBS requires a positive integer),--jobs=$(PDF_JOBS)))
 
-.PHONY: all pdf review-pdfs review-all-pdfs install install-all list help clean \
+.PHONY: all pdf _pdf review-pdfs review-all-pdfs install install-all list help clean \
 	distclean check-tools check-tool-registry check-calendar-days \
-	check-calendar-masses check-act-history \
+	check-calendar-masses check-act-history check-act-history-receipt \
 	check-propers-census check-propers-structure \
 	check-metadata check-web-editions \
 	check-proper-components \
 	web-editions install-web-editions check-web-editions-current \
-	check-sources check-deployment-sources check-source-library \
+	check-sources check-research-sources check-deployment-sources check-source-library \
+	check-document-schemas check-document-content check-artifact-delivery \
+	check-source-evidence check-source-projection print-document \
 	check-source-inventory check-source-inventory-tool \
 	check-source-family-migration check-source-family-migration-tool \
 	check-source-family-screening check-source-containment \
@@ -262,9 +269,9 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-expensive \
 	check-promised-deliverables \
 	check-public-alpha prepare-public-alpha \
-	check-pdf-review check-curriculum-rights check-curriculum-sources \
+	check-pdf-review check-curriculum-rights check-curriculum-source-rights check-curriculum-sources \
 	check-curriculum-structure check-source-reader source-projection \
-	check-document-catalogue document-catalogue \
+	check-document-catalogue document-catalogue encyclicals-catalogue \
 	public-site public-preview \
 	dependencies-arch dependencies-arch-browser dependencies-arch-tui install-dependencies-arch \
 	verify-public-site verify-public-preview \
@@ -282,9 +289,11 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 .DELETE_ON_ERROR:
 .SECONDARY: $(BUILD_METADATA_STAMPS)
 
+all: public-site
+
 ifeq ($(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),)
-all:
-	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) pdf
+pdf:
+	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) _pdf
 
 review-pdfs:
 	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) pdf
@@ -298,7 +307,7 @@ review-all-pdfs:
 	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) pdf
 	@$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS)
 else
-all: pdf
+pdf: _pdf
 
 review-pdfs: pdf
 	@if [ -d '$(PDF_ROOT)' ]; then \
@@ -311,7 +320,7 @@ review-all-pdfs: pdf
 	@$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS)
 endif
 
-pdf: check-metadata $(BUILD_METADATA_VERIFICATIONS)
+_pdf: check-metadata $(BUILD_METADATA_VERIFICATIONS)
 
 install: check-metadata $(INSTALLED_PDFS)
 	@set -eu; \
@@ -413,20 +422,47 @@ check-pdf-review:
 check-curriculum-rights:
 	@$(PYTHON) -m unittest tools.tests.test_curriculum_liturgical_rights -v
 
-# Pages runs this target under setup-python before it builds anything. Its
-# workflow must install both requirements-public-alpha.txt and
-# requirements-tools.txt; the latter owns the PyYAML used by these checkers.
+# Keep publication independent of locally installed PDFs and Poppler even on a
+# workstation that happens to have the optional print corpus installed.
+check-curriculum-source-rights:
+	@$(PYTHON) -m unittest -v \
+		tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests.test_hash_only_registry_is_complete_and_well_formed \
+		tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests.test_allowlist_exactly_matches_tracked_curriculum_sources \
+		tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests.test_unavailable_dispositions_cover_affected_stable_ids \
+		tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests.test_scanner_is_location_and_surface_sensitive \
+		tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests.test_tex_control_words_cannot_hide_a_window
+
+# Full derivation belongs to the explicit research lane. Publication authenticates
+# the same projection's complete input and output closure through its receipt.
 check-act-history:
 	@$(PYTHON) tools/tpt act-history structure --check
 
-# The source graph, then the inventories measured against it.
-# `guidance/repository.md` states that order --- validate the reusable source
-# graph and publication bindings, then replay the exhaustive legacy-source
-# inventory --- so it is an edge in the graph rather than an accident of line
-# order inside one recipe, and it survives being run concurrently with
-# everything else.
+check-act-history-receipt:
+	@$(PYTHON) scripts/_act_history_projection_receipt.py check
+
+# Default validation checks logical identities, rights, bindings and the exact
+# external-delivery metadata without hydrating optional evidence bytes.
 check-source-graph:
 	@$(PYTHON) $(SOURCE_LIBRARY_TOOL) validate
+
+check-source-evidence:
+	@$(PYTHON) $(SOURCE_LIBRARY_TOOL) validate --full-evidence
+
+check-document-schemas:
+	@$(PYTHON) $(DOCUMENT_SCHEMA_TOOL) check --include-sources
+	@test -z "$$(git ls-files -- ':(icase)*.pdf')" || { printf '%s\n' 'Tracked PDFs must be preserved outside Git and removed from the source tree.' >&2; exit 1; }
+	@test -z "$$(git ls-files -- ':(icase)*.zip' ':(icase)*.zip.part-*')" || { printf '%s\n' 'Tracked binary archives must be preserved outside Git and replaced by exact manifests.' >&2; exit 1; }
+
+# This deeper phase reports inherited content/profile gaps separately from a
+# successful source publication. A source/schema pass never certifies them.
+check-document-content:
+	@$(PYTHON) $(DOCUMENT_SCHEMA_TOOL) check --phase content --run-gates
+
+check-artifact-delivery:
+	@$(PYTHON) $(ARTIFACT_STORE_TOOL) check
+
+check-source-projection:
+	@$(PYTHON) $(SOURCE_READER_TOOL) structure --check-receipt
 
 check-publication-inventories: check-source-graph
 	@set -eu; for inventory in src/sources/inventories/*publications-v1.toml; do \
@@ -439,60 +475,34 @@ check-publication-inventories: check-source-graph
 		$(PYTHON) $(SOURCE_INVENTORY_TOOL) check --review "$$review" "$$inventory"; \
 	done
 
-# The members of the deployment gate that are independent of one another. They
-# read different trees through different tools and share nothing but three
-# caches under ignored `build/` --- the loaded source library, the reader's
-# corpus projection, and the YAML/TOML parse cache --- every one of which is
-# written to a pid-suffixed file and renamed into place precisely so that
-# sibling processes may run at once (`cached_json` in `scripts/_tooling.py`,
-# `_cached_parse` in `scripts/_calendars.py`). Nothing here writes a tracked
-# path or a shared output path: the `--check` verbs derive into a temporary
-# root and compare.
-DEPLOYMENT_SOURCE_MEMBERS := check-curriculum-rights check-document-catalogue \
-	check-publication-inventories
+# These independent checks are read-only. Large projections use receipts that
+# bind the full source, rights, policy, implementation and output closure; a
+# missing or stale receipt fails publication and must be renewed by full replay.
+DEPLOYMENT_SOURCE_MEMBERS := check-curriculum-source-rights check-document-schemas \
+	check-artifact-delivery check-document-catalogue check-source-graph \
+	check-source-projection
 
-# The gate the Pages workflow runs before it builds anything, and the longest
-# single step on the deploy's critical path. It was one sequential recipe of
-# thirteen commands; the four independent members above now run concurrently.
-#
-# Concurrency uses the wrapper the aggregate PDF builds already use, and for
-# the reason stated where that wrapper is defined: a top-level
-# `make check-deployment-sources` --- which is exactly how the Pages workflow
-# invokes it --- has no jobserver to share, so it bootstraps a bounded
-# recursive Make; a caller who already supplied -j keeps the complete graph in
-# this process, where the members are ordinary prerequisites and cannot race a
-# sibling goal that also names one of them: `check-installed` names
-# `check-document-catalogue` alongside `check-sources`, and in one graph that
-# is one run rather than two.
-#
-# What did not become concurrent, and why:
-#   - `check-act-history` stays a plain prerequisite, ahead of everything. It
-#     is the cheapest member, and it is the one that fails first and most
-#     legibly on a host whose PyYAML the workflow forgot to install; four
-#     concurrent tracebacks say the same thing far worse.
-#   - `check-source-graph` before `check-publication-inventories`, as above.
-#   - the seven commands below stay in this recipe, in this order.
-#     `tools/tests/test_example_replay.py` asserts that the deployment gate
-#     names every generated missal layer, in order, in THIS recipe body, and
-#     that test is the only thing standing behind the claim that a layer cannot
-#     quietly leave the gate. They are independent of each other and of
-#     everything above, so roughly a third of this target's remaining wall time
-#     is still recoverable --- but only together with a change to that test's
-#     shape, which is not this file's to make.
-check-deployment-sources: check-act-history \
+# Bootstrap bounded concurrency when the caller supplied no jobserver. Keep
+# ordinary liturgical derivation and rights checks in the source publication
+# gate; neither this target nor its prerequisites installs or fetches PDFs.
+check-deployment-sources: check-act-history-receipt \
 		$(if $(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),$(DEPLOYMENT_SOURCE_MEMBERS))
 	$(if $(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),,+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) $(DEPLOYMENT_SOURCE_MEMBERS))
-	@$(PYTHON) $(SOURCE_READER_TOOL) check
-	@$(PYTHON) $(SOURCE_READER_TOOL) structure --check
 	@$(PYTHON) tools/tpt calendar-days check
 	@$(PYTHON) tools/tpt check-calendar-masses
 	@$(PYTHON) tools/tpt mass-propers structure --check
 	@$(PYTHON) tools/tpt calendar-rubrics check
 	@$(PYTHON) tools/tpt mass-ordinary check
 
-check-sources: check-deployment-sources check-source-containment \
-		check-commentator-inventories check-commentary-corpus
+# Research replay is explicit and may require already hydrated evidence. It
+# never downloads it automatically. The publication gate above remains useful
+# in a source-only checkout while this lane verifies the complete research set.
+check-research-sources: check-deployment-sources check-source-evidence \
+		check-publication-inventories check-source-reader check-act-history \
+		check-source-containment check-commentator-inventories check-commentary-corpus
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
+
+check-sources: check-research-sources
 
 # A work held only inside another record -- a Migne volume, an NPNF anthology,
 # a whole-volume optical layer filed under one of its constituents -- is
@@ -527,6 +537,7 @@ check-commentary-corpus:
 
 check-source-library:
 	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_source_library.py' -v
+	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_source_delivery.py' -v
 
 check-source-inventory:
 	@$(PYTHON) $(SOURCE_INVENTORY_TOOL) check
@@ -609,8 +620,8 @@ check-curriculum-structure: \
 help:
 	@printf '%s\n' \
 		'Every build, install, review, list, and metadata target honors PROVIDER=<p> (default gpt; claude is the peer branch)' \
-		'make          Build every document with at most $(PDF_JOBS) parallel jobs' \
-		'make pdf      Build incrementally in the current Make jobserver' \
+		'make          Validate sources and build the public website without PDFs' \
+		'make pdf      Explicitly build every document with at most $(PDF_JOBS) parallel jobs, or the current Make jobserver' \
 		'make review-pdfs  Build with at most $(PDF_JOBS) jobs, then raster changed PDFs' \
 		'make review-all-pdfs  Build with at most $(PDF_JOBS) jobs, then raster every PDF' \
 		'make install  Publish built PDFs into the mirrored pdf/ tree' \
@@ -628,7 +639,11 @@ help:
 		'make dependencies-arch-tui  List the package the terminal reader (tools/lectern) needs and this installer omits' \
 		'make check-pdf-review  Test memory-bounded PDF inspection tooling' \
 		'make check-sources  Validate the source library, inventory, and migration ledger' \
-		'make check-deployment-sources  Validate deployable sources, generated structures, and publication inventories' \
+		'make check-research-sources  Replay full evidence, source projections, and research inventories without automatic downloads' \
+		'make check-deployment-sources  Validate source publication, rights, schemas, and projection receipts without PDFs' \
+		'make check-document-schemas  Validate every publication type, identity, and source/output ownership' \
+		'make check-document-content  Audit deeper profile/content requirements and run their source gates' \
+		'make check-artifact-delivery  Validate external evidence delivery metadata without hydration' \
 		'make check-source-library  Test reusable source-library tooling' \
 		'make check-source-inventory  Replay the exhaustive legacy-source inventory' \
 		'make check-source-inventory-tool  Test legacy-source inventory tooling' \
@@ -643,14 +658,16 @@ help:
 		'make web-editions  Generate Markdown for every eligible leaf of $$PROVIDER' \
 		'make install-web-editions  Publish reviewed Markdown into the tracked web/ tree' \
 		'make check-web-editions-current  Prove every tracked web edition matches current sources' \
-		'make check-document-catalogue  Confirm each derived title against its PDF and the catalogue against the sources' \
+		'make check-document-catalogue  Confirm titles, identities, and the catalogue against authoritative sources' \
 		'make document-catalogue  Rewrite the browser catalogue of every document' \
 		'make source-projection  Rewrite the browser reading of the source library' \
+		'make encyclicals-catalogue [INDEX=<path>]  Rewrite the browser catalogue of encyclicals from its index' \
 		'make check-source-reader  Prove no withheld source text is served, and no reading is stale' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \
 		'make prepare-public-alpha  Print current candidate hashes; grants no approval' \
 		'make public-preview  Build a private no-index preview with review candidates' \
 		'make public-site  Build the fail-closed, history-free public artifact' \
+		'make print-document DOCUMENT=<qualified-id> [PRINT_EDITION=main] [PRINT_OUT=.scratch/print-document]  Build one optional PDF and receipt' \
 		'make verify-public-preview  Recheck the existing private preview artifact' \
 		'make verify-public-site  Recheck the existing public artifact' \
 		'make check-release-bindings  Report stale shared site and authorization-record bindings' \
@@ -668,7 +685,7 @@ help:
 		'make reading-structure  Rewrite the browser structure of every abridged plan' \
 		'make check    Run every policy check over tracked sources; names the ones it leaves' \
 		'make check-installed  Install every provider, then run the checks that read pdf/' \
-		'make check-all  Run check and check-installed' \
+		'make check-all  Run all source/research checks without building PDFs' \
 		'make check-calendar-days  Refuse stale generated calendar-day structures' \
 		'make check-calendar-rubrics  Validate the rubrical precedence sources and their solved cases' \
 		'make check-propers-census  Refuse a document whose derived count table has gone stale' \
@@ -680,7 +697,7 @@ help:
 		'make rebaseline-doc DOC=<leaf> [PROVIDER=<p>]  Clear a staleness flag after re-evaluation' \
 		'make clean    Remove transient build artifacts only'
 
-check-metadata: check-tools
+check-metadata:
 	@$(METADATA_CHECKER) --provider $(PROVIDER)
 
 check-promised-deliverables:
@@ -693,12 +710,8 @@ check-web-editions:
 check-proper-components:
 	@$(PYTHON) $(PROPER_COMPONENT_CHECKER) --provider $(PROVIDER)
 
-# Two claims, and the second is the one worth having. `check` re-derives every
-# document's title out of its own preamble and holds it against the title the
-# built PDF actually carries, because a catalogue's characteristic failure is a
-# name that resolves and resolves wrongly. `structure --check` then proves the
-# tracked catalogue is what those sources produce now, so a document added or
-# retitled without regenerating it cannot reach the site as a stale row.
+# Titles, identity and tracked catalogue rows derive from authoritative sources.
+# Render-specific PDF metadata validation remains in the optional print lane.
 check-document-catalogue:
 	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) check
 	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) structure --check
@@ -763,22 +776,22 @@ check-web-editions-current:
 		[ "$$status" -eq 0 ] || exit 1; \
 		echo 'Tracked web editions match current sources.'
 
-check-public-alpha: check-curriculum-rights
+check-public-alpha: check-curriculum-source-rights
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) check
 
-prepare-public-alpha: check-curriculum-rights
+prepare-public-alpha: check-curriculum-source-rights
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) prepare
 
-public-preview: check-curriculum-rights
+public-preview: check-deployment-sources
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --preview
 
-public-site: check-curriculum-rights
+public-site: check-deployment-sources
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build
 
-verify-public-preview: check-curriculum-rights
+verify-public-preview: check-curriculum-source-rights
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify --preview
 
-verify-public-site: check-curriculum-rights
+verify-public-site: check-curriculum-source-rights
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify
 
 # Release bookkeeping; approval text is the operator's act, never invented.
@@ -810,6 +823,16 @@ add-publication:
 		--id '$(ID)' --catalog '$(CATALOG)' --status '$(or $(STATUS),hold)'
 
 # Single-document convenience wrappers: make doc DOC=<id> [PROVIDER=<p>]
+# The qualified print route writes exactly one selected result and its receipt
+# under scratch. It preserves DOC's existing unqualified provider-leaf meaning.
+print-document:
+	@if [ -z '$(DOCUMENT)' ]; then \
+		echo 'print-document requires DOCUMENT=<publication:provider/leaf|bible:edition|reading-plan:volume|papal:selection/lang> [PRINT_EDITION=main|research|synthesis|homily] [PRINT_OUT=.scratch/print-document]' >&2; \
+		exit 2; \
+	fi
+	@$(PYTHON) $(PRINT_DOCUMENT_TOOL) build --document '$(DOCUMENT)' \
+		--edition '$(PRINT_EDITION)' --out '$(PRINT_OUT)'
+
 doc:
 	@if [ -z '$(DOC)' ]; then \
 		echo 'doc requires DOC=<document id below src/$(PROVIDER)/>' >&2; \
@@ -922,39 +945,10 @@ rebaseline-doc:
 	fi
 	@$(PYTHON) $(RESEARCH_STALENESS_TOOL) rebaseline --provider '$(PROVIDER)' --id '$(DOC)'
 
-# The gates that read the installed tree.
-#
-# Installed PDFs stopped being tracked on 2026-09-04 and are built during
-# deployment instead (guidance/repository.md). These gates include checks of
-# build output. Before the source-only catalogue fallback added on 2026-09-17,
-# a tree holding only the six tracked reading tracks produced these results:
-# `check-document-catalogue` reports 204 editions with no installed PDF and a
-# drifted corpus.json, `check-public-alpha` refuses 204 release entries,
-# `check-promised-deliverables` cannot find 23 pieces of evidence, and
-# `check-sources` fails inside `check-deployment-sources`, at the
-# `document-library structure --check` it reaches through
-# `check-document-catalogue`. The projection then replaced recorded PDF paths
-# and extents with local absence, making the whole catalogue drift.
-# `structure --check` now retains those historical artifact facts only when
-# source metadata and issue identity are unchanged. It does not validate an
-# absent PDF: the live catalogue check still needs installed files to compare
-# their titles and extents, changed metadata requires a rebuilt artifact, and
-# new issues without artifacts remain incomplete. The installed-tree grouping
-# stays until these complete targets have been measured again.
-#
-# It was `check-curriculum-rights` that stopped `check-sources` here until
-# 2026-09-05, counting 0 installed curriculum PDFs against 37. That suite now
-# skips its installed-PDF assertions with a reason naming what did not run,
-# so it stopped being that blocker. The catalogue projection was the remaining
-# blocker at that measurement; its fallback above does not itself establish
-# that the complete `check-sources` target is now independent of installed PDFs.
-#
-# `check-release-bindings` is deliberately absent: the six volumes under
-# pdf/reading-plans/ stay tracked, so its recorded site sources are still on
-# disk in a fresh checkout, and it was measured passing there. It belongs here
-# the day that exception ends.
-INSTALLED_TREE_CHECKS := check-sources check-document-catalogue \
-	check-promised-deliverables check-public-alpha
+# Optional typeset-artifact QA. Installation validates every selected render's
+# metadata and structure; this additional scan checks the installed curriculum.
+# None of these builds are prerequisites of source publication or check-all.
+INSTALLED_TREE_CHECKS := check-curriculum-rights
 
 # The third list: gates over tracked sources that are cheap to state and
 # expensive to run. They belong in neither of the two above --- they read
@@ -973,31 +967,15 @@ EXPENSIVE_SOURCE_CHECKS := check-catena-structure
 
 check-expensive: $(EXPENSIVE_SOURCE_CHECKS)
 
-# Staleness stays out of `check`: it flags re-evaluation work, not breakage.
-#
-# `check` is the gate over tracked sources, and it is kept cheap deliberately.
-# Twenty-one of its twenty-two members have nothing to do with PDFs at all and
-# the twenty-second reads only the six tracked reading tracks; not one of them
-# runs pdflatex, though `check-metadata` still asks `check-tools` that it is
-# installed. Putting the build in front of them would have made every source
-# edit pay for two providers' LaTeX runs to answer twenty-two questions,
-# twenty-one of which are not about PDFs.
-#
-# Cheap here means seconds a member, with `check-examples` at about two minutes
-# because replaying every captured invocation is the price of the claim that
-# they are real. A member that costs minutes for any other reason belongs in
-# $(EXPENSIVE_SOURCE_CHECKS) above, which is where `check-catena-structure`
-# went and why.
-#
-# The four that are about installed publications moved to `check-installed`,
-# which orders the build ahead of them, and `check-all` is both. A member that
-# quietly stopped running would be this project's governing defect, so `check`
-# ends by naming what it did not cover and the command that does: the boundary
-# is stated rather than discovered.
-check: check-metadata check-web-editions check-web-editions-current \
-	check-proper-components check-source-reader \
+# Source types and logical output ownership are checked independently of render
+# metadata. Deep evidence replay and optional print inspection have named lanes;
+# a successful publication check does not assert their results.
+check: check-document-schemas check-artifact-delivery check-metadata \
+	check-web-editions check-web-editions-current \
+	check-proper-components check-source-projection check-act-history-receipt \
 	check-roman-sanctuary-artwork check-artwork-manifests \
-	check-release-bindings check-tool-registry \
+	check-release-bindings check-promised-deliverables check-public-alpha \
+	check-tool-registry \
 	check-browser-static \
 	check-calendar-days check-calendar-masses check-calendar-rubrics \
 	check-propers-census check-propers-structure \
@@ -1005,11 +983,12 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-catena-paragraphs \
 	check-commentary-coverage check-commentary-corpus check-scripture-chronology check-examples
 	@printf '%s\n' \
-		'check covers tracked sources. It does not run: $(INSTALLED_TREE_CHECKS)' \
-		'Those read the installed tree; `make check-installed` builds it and runs them.' \
-		'Nor: $(EXPENSIVE_SOURCE_CHECKS) --- tracked sources too, but minutes' \
-		'rather than seconds; `make check-expensive` runs those.' \
-		'`make check-all` runs all three.'
+		'check covers source schemas, publication metadata and browser projections.' \
+		'`make check-research-sources` replays full evidence and source projections.' \
+		'`make check-expensive` runs: $(EXPENSIVE_SOURCE_CHECKS).' \
+		'`make check-all` includes those source/research lanes; it never builds PDFs.' \
+		'`make check-document-content` audits deeper profile/content requirements.' \
+		'`make check-installed` separately builds and checks optional typeset outputs.'
 
 # The same gates, with the build that produces what they read ordered ahead of
 # them. From a clone that has never been built this is correct without a manual
@@ -1019,7 +998,7 @@ check: check-metadata check-web-editions check-web-editions-current \
 check-installed: install-all
 	@$(MAKE) --no-print-directory $(INSTALLED_TREE_CHECKS)
 
-check-all: check check-expensive check-installed
+check-all: check check-expensive check-research-sources
 
 # Seven of the browser scripts are parsed by nothing: no Python test loads
 # them, no node harness runs them, and their only protection is a sha256 pin in
@@ -1932,6 +1911,13 @@ document-catalogue:
 source-projection:
 	@$(PYTHON) $(SOURCE_READER_TOOL) structure
 
+# The catalogue of every encyclical, rewritten from the tracked index and
+# checked reader by reader against release/papal-documents.json. Tracked under
+# src/web/data and served to the `encyclicals` reading page, which reads it and
+# walks nothing itself. INDEX=<path> reads another index, for a trial run.
+encyclicals-catalogue:
+	@$(PYTHON) scripts/_encyclicals.py structure $(if $(INDEX),--index '$(INDEX)',)
+
 $(READING_BUILD_ROOT)/%.tex: $(BIBLE_TYPESET_IMPL) FORCE_BIBLE_RENDER
 	@$(PYTHON) $(BIBLE_TYPESET_TOOL) render --volume '$*' --out '$(READING_BUILD_ROOT)'
 
@@ -1986,3 +1972,142 @@ clean:
 	rm -rf build
 
 distclean: clean
+
+PAPAL_OUT ?= .scratch/papal-pdfs
+PAPAL_JOBS ?= 4
+PAPAL_MANIFEST_ROOT ?= src/sources/papal-documents
+PAPAL_HISTORICAL_SERIES := bullarium-continuatio benedict-xiv-bullarium gregory-xvi-acta pius-ix-acta
+PAPAL_ENGLISH_ADDITIONS := historical-english-supplement historical-english-journal historical-english-book historical-english-completion
+PAPAL_BASE_MANIFESTS ?= latin=typeset-manifest.json \
+	english=historical-english-manifest.json \
+	quanta-syllabus=quanta-syllabus-manifest.json \
+	bullarium=bullarium-manifest.json \
+	bullarium-fragments=bullarium-fragment-manifest.json \
+	acta=acta-manifest.json \
+	$(foreach series,$(PAPAL_ENGLISH_ADDITIONS),$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/$(series)-manifest.json),$(series)=$(series)-manifest.json)) \
+	$(foreach series,$(PAPAL_ENGLISH_ADDITIONS),$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/$(series)-fragment-manifest.json),$(series)-fragments=$(series)-fragment-manifest.json)) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-rescue-manifest.json),bullarium-rescue=bullarium-rescue-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-rescue-fragment-manifest.json),bullarium-rescue-fragments=bullarium-rescue-fragment-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-geometry-manifest.json),bullarium-geometry=bullarium-geometry-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-geometry-fragment-manifest.json),bullarium-geometry-fragments=bullarium-geometry-fragment-manifest.json) \
+	$(foreach series,$(PAPAL_HISTORICAL_SERIES),$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/$(series)-manifest.json),$(series)=$(series)-manifest.json)) \
+	$(foreach series,$(PAPAL_HISTORICAL_SERIES),$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/$(series)-fragment-manifest.json),$(series)-fragments=$(series)-fragment-manifest.json))
+PAPAL_CORRECTION_MANIFESTS ?= \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/historical-english-corrections-manifest.json),historical-english-corrections=historical-english-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/vatican-corrections-manifest.json),vatican-corrections=vatican-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-corrections-manifest.json),bullarium-corrections=bullarium-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/acta-title-corrections-manifest.json),acta-title-corrections=acta-title-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/acta-layout-corrections-manifest.json),acta-layout-corrections=acta-layout-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/acta-visual-corrections-manifest.json),acta-visual-corrections=acta-visual-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/historical-series-corrections-manifest.json),historical-series-corrections=historical-series-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-reading-order-corrections-manifest.json),bullarium-reading-order-corrections=bullarium-reading-order-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-reading-order-withdrawals-manifest.json),bullarium-reading-order-withdrawals=bullarium-reading-order-withdrawals-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-active-withdrawals.json),bullarium-active-withdrawals=bullarium-active-withdrawals.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/encyclicals-classic-manifest.json),encyclicals-classic=encyclicals-classic-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/encyclicals-source-corrections-manifest.json),encyclicals-source-corrections=encyclicals-source-corrections-manifest.json)
+PAPAL_CURRENT_MANIFEST ?= $(PAPAL_OUT)/current-manifest.json
+PAPAL_CURRENT_BATCH ?= $(PAPAL_OUT)/current
+PAPAL_COLLECTION_OUT ?= $(PAPAL_OUT)/collection
+PAPAL_REVIEW_MANIFESTS ?= $(wildcard $(PAPAL_MANIFEST_ROOT)/*-visual-review.json)
+PAPAL_INSTALL_BATCH_PAIRS ?= $(PAPAL_OUT)/batch-pairs.json
+PAPAL_INSTALL_PREPARED ?= $(PAPAL_OUT)/prepared-install.json
+# The typesetter refuses an empty selection. Validate the outer contract first
+# so an honestly empty batch is skipped while malformed JSON still fails.
+PAPAL_MANIFEST_COUNT = $(PYTHON) -c 'import datetime,json,re,sys; \
+	d=json.load(open(sys.argv[1],encoding="utf-8"),object_pairs_hook=lambda p: dict(p) if len(dict(p)) == len(p) else sys.exit("duplicate JSON key"),parse_constant=lambda s: sys.exit("non-finite JSON number")); \
+	(isinstance(d,dict) and d.get("schema") == "triptych-papal-typeset/v1") or sys.exit("invalid papal manifest schema"); \
+	r=d.get("revision"); \
+	(isinstance(r,str) and re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z",r)) or sys.exit("invalid papal manifest revision"); \
+	datetime.datetime.strptime(r,"%Y-%m-%dT%H:%M:%SZ"); \
+	isinstance(d.get("documents"),list) or sys.exit("papal manifest requires a documents array"); \
+	print(len(d["documents"]))'
+
+.PHONY: check-papal check-papal-manifests papal-plan papal-catalog papal-pdfs papal-collection papal-install-plan papal-install check-papal-install
+
+check-papal: check-papal-manifests
+	@$(PYTHON) tools/tpt papal-documents check --json
+	@$(PYTHON) tools/tpt bullarium check --json
+	@$(PYTHON) tools/tpt papal-acta check --json
+	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_papal_*.py'
+	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_bullarium*.py'
+	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_typeset_papal.py'
+
+papal-plan:
+	@set -eu; \
+	set --; \
+	for batch in $(PAPAL_BASE_MANIFESTS); do \
+		name=$${batch%%=*}; \
+		manifest='$(PAPAL_MANIFEST_ROOT)'/$${batch#*=}; \
+		count=$$($(PAPAL_MANIFEST_COUNT) "$$manifest"); \
+		if [ "$$count" -eq 0 ]; then printf '%s: 0 admitted editions; no readers selected\n' "$$name"; fi; \
+		set -- "$$@" --base "$$name" "$$manifest"; \
+	done; \
+	for batch in $(PAPAL_CORRECTION_MANIFESTS); do \
+		name=$${batch%%=*}; \
+		manifest='$(PAPAL_MANIFEST_ROOT)'/$${batch#*=}; \
+		count=$$($(PAPAL_MANIFEST_COUNT) "$$manifest"); \
+		if [ "$$count" -eq 0 ]; then printf '%s: no replacement readers; source-selection directives still apply\n' "$$name"; fi; \
+		set -- "$$@" --correction "$$name" "$$manifest"; \
+	done; \
+	$(PYTHON) tools/tpt typeset-papal plan "$$@" --out '$(PAPAL_CURRENT_MANIFEST)' --json
+
+check-papal-manifests: papal-plan
+	@set -eu; count=$$($(PAPAL_MANIFEST_COUNT) '$(PAPAL_CURRENT_MANIFEST)'); \
+	if [ "$$count" -eq 0 ]; then \
+		printf '%s\n' 'current: 0 admitted editions; skipped'; \
+	else \
+		$(PYTHON) tools/tpt typeset-papal check --manifest '$(PAPAL_CURRENT_MANIFEST)' --json; \
+	fi
+
+papal-catalog:
+	@$(PYTHON) tools/tpt papal-documents export --format json --out '$(PAPAL_OUT)/catalog.json'
+	@$(PYTHON) tools/tpt papal-documents export --format csv --out '$(PAPAL_OUT)/catalog.csv'
+	@$(PYTHON) tools/tpt papal-documents export --format biblatex --out '$(PAPAL_OUT)/papal.bib'
+	@cp -- '$(PAPAL_MANIFEST_ROOT)/archives.json' '$(PAPAL_OUT)/archives.json'
+	@cp -- '$(PAPAL_MANIFEST_ROOT)/bullarium-catalog.json' '$(PAPAL_OUT)/bullarium-catalog.json'
+	@cp -- '$(PAPAL_MANIFEST_ROOT)/acta-catalog.json' '$(PAPAL_OUT)/acta-catalog.json'
+	@set -eu; for series in $(PAPAL_HISTORICAL_SERIES); do \
+		catalog='$(PAPAL_MANIFEST_ROOT)'/"$$series"-catalog.json; \
+		if [ -f "$$catalog" ]; then \
+			cp -- "$$catalog" '$(PAPAL_OUT)'/"$$series"-catalog.json; \
+		fi; \
+	done
+
+papal-pdfs: check-papal-manifests papal-catalog
+	@set -eu; count=$$($(PAPAL_MANIFEST_COUNT) '$(PAPAL_CURRENT_MANIFEST)'); \
+	if [ "$$count" -eq 0 ]; then \
+		printf '%s\n' 'current: no readers selected; no PDFs rendered'; \
+	else \
+		$(PYTHON) tools/tpt typeset-papal render --manifest '$(PAPAL_CURRENT_MANIFEST)' \
+			--out '$(PAPAL_CURRENT_BATCH)' --compile --jobs '$(PAPAL_JOBS)' --json; \
+	fi
+	@$(MAKE) --no-print-directory papal-collection
+
+# Collection reads existing outputs only; it never starts a render or installs PDFs.
+papal-collection: papal-plan
+	@set -eu; count=$$($(PAPAL_MANIFEST_COUNT) '$(PAPAL_CURRENT_MANIFEST)'); \
+	if [ "$$count" -eq 0 ]; then \
+		$(PYTHON) tools/tpt typeset-papal collect --empty-plan '$(PAPAL_CURRENT_MANIFEST)' --out '$(PAPAL_COLLECTION_OUT)' --json; \
+		exit 0; \
+	fi; \
+	set -- --batch current '$(PAPAL_CURRENT_BATCH)/receipt.json' '$(PAPAL_CURRENT_MANIFEST)'; \
+	for manifest in $(PAPAL_REVIEW_MANIFESTS); do \
+		set -- "$$@" --review "$$manifest"; \
+	done; \
+	$(PYTHON) tools/tpt typeset-papal collect "$$@" --out '$(PAPAL_COLLECTION_OUT)' --json
+
+# An explicit inventory names existing immutable receipt/frozen-manifest pairs.
+# Preparing never copies PDFs into the tracked release.
+papal-install-plan: papal-plan
+	@test -f '$(PAPAL_INSTALL_BATCH_PAIRS)' || { printf '%s\n' 'Set PAPAL_INSTALL_BATCH_PAIRS to a hash-pinned inventory of existing receipt/frozen-manifest pairs.' >&2; exit 1; }
+	@set -eu; set --; \
+	for manifest in $(PAPAL_REVIEW_MANIFESTS); do set -- "$$@" --review "$$manifest"; done; \
+	$(PYTHON) tools/tpt typeset-papal prepare-install --plan '$(PAPAL_CURRENT_MANIFEST)' \
+		--batch-pairs '$(PAPAL_INSTALL_BATCH_PAIRS)' --out '$(PAPAL_INSTALL_PREPARED)' "$$@" --json
+
+# Deliberately consume the previously prepared proposal; never silently replace it.
+papal-install:
+	@$(PYTHON) tools/tpt typeset-papal install --prepared '$(PAPAL_INSTALL_PREPARED)' --json
+
+check-papal-install: papal-plan
+	@$(PYTHON) tools/tpt typeset-papal check-install --plan '$(PAPAL_CURRENT_MANIFEST)' --json

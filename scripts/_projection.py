@@ -34,6 +34,7 @@ from pathlib import Path
 from typing import NamedTuple
 
 import _psalms
+from _bible_artifacts import AliasArtifactError, select_verse_aliases
 import _psalter
 from _deuterocanon import ALIAS_COLUMNS
 
@@ -92,6 +93,11 @@ class ProjectionError(RuntimeError):
 
 def _artifact(edition_root: Path, prefix: str, name: str) -> Path | None:
     """The one artifact of a kind under an edition, or None if it has none."""
+    if prefix == "verse-aliases" and name == "verse-aliases.tsv":
+        try:
+            return select_verse_aliases(edition_root)
+        except AliasArtifactError as error:
+            raise ProjectionError(str(error)) from error
     found = sorted(edition_root.glob(f"artifacts/{prefix}-*/{name}"))
     if len(found) > 1:
         raise ProjectionError(

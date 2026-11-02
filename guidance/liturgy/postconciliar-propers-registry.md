@@ -79,7 +79,7 @@ There is no `PC-S` identity for a numbered First Sunday in Ordinary Time. Normal
 
 ### Fixed layout and ownership
 
-Let `<proper-root>` mean `src/<provider>/liturgy/roman-rite/postconciliar/<edition-locale>/propers`. Use these paths exactly; the corresponding publishable PDF mirrors follow the repository-wide `pdf/` and `build/` rules.
+Let `<proper-root>` mean `src/<provider>/liturgy/roman-rite/postconciliar/<edition-locale>/propers`. Use these paths exactly; publication manifests follow [document schemas](../document-schemas.md), and any requested print export follows the repository's output-path rules.
 
 | Material | Required source path | Publication status |
 | --- | --- | --- |
@@ -90,7 +90,7 @@ Let `<proper-root>` mean `src/<provider>/liturgy/roman-rite/postconciliar/<editi
 | A `PC-R` cycle, form, or occurrence guide | `<proper-root>/general-calendar/<full-publication-slug>/` | Publishable leaf with `main.tex` |
 | Canonical `PC-R` Missal formulary owner | `<proper-root>/general-calendar/shared/formularies/<required-slug-stem>/` | Non-publishable shared source |
 
-The shared owner keeps the edition-specific verified Missal record, provenance, rights status, and any reusable source fragment. The publishable leaf owns its resolved liturgical-instance manifest, cycle-specific Lectionary audit, analysis, generation metadata, and PDF; it references or imports the shared owner and must not become a second owner of the formulary. A conditional Scrutiny leaf remains in the temporal Sunday queue but imports the Ritual Mass owner fixed above.
+The shared owner keeps the edition-specific verified Missal record, provenance, rights status, and any reusable source fragment. The publishable leaf owns its resolved liturgical-instance manifest, cycle-specific Lectionary audit, analysis, generation metadata, and declared output entrypoints; it references or imports the shared owner and must not become a second owner of the formulary. A conditional Scrutiny leaf remains in the temporal Sunday queue but imports the Ritual Mass owner fixed above.
 
 Ownership is not optional, and for Ordinary Time it is computable. For `PC-S28`–`PC-S59` the owner is `weeks/NN`, where `NN` is the parent number minus 26 written in two digits: `PC-S28` takes `weeks/02`, `PC-S42` takes `weeks/16`, and `PC-S59` takes `weeks/33`. `PC-S26`, `PC-S27`, and `PC-S60` are Solemnities of the Lord with their own `shared/formularies/<required-slug-stem>/` owners and consume no `weeks/NN`. Create the owner before the first leaf that needs it; a leaf whose owner does not yet exist is not authorized. [Calendar computation](calendar-computation.md) owns this derivation and the annual week arithmetic behind it.
 
@@ -106,7 +106,10 @@ It has no `main.tex`, `generation-metadata.tex`, `web-edition.toml`, PDF mirror,
 
 The dividing test is the received Missal text and the evidence that fixes it, not the volume of prose. The owner alone carries the printed heading and rank, edition and reprint identity, printed pages and digital locators, checksums, variation audit, element boundaries, rights disposition, and collation date. The leaf carries the resolved instance, the ordered inventory of the actual celebration, Lectionary boundaries and cycle-specific branches, relationship classifications, and its own analysis; it names the owner and cites its result, but does not restate the owner's evidence, provenance, or analytic summaries in its own words. A leaf that would still serve as the collation record for the formulary if its owner were deleted has become a second owner; fail closed and move the record to the owner.
 
-Every import or reference outside a publishable leaf is an explicit cross-document build dependency, and a shared-source change requires rebuilding and re-reviewing every consumer.
+Every import or reference outside a publishable leaf is an explicit cross-document
+source dependency, with a matching print-build edge where applicable. A shared
+source change requires validation and review of its affected consumer closure;
+print rendering and exact-artifact inspection apply to selected exports.
 
 ### Formula targets, keys, and fixed order
 

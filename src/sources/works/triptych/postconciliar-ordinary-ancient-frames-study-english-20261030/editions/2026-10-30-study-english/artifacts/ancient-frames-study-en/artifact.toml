@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"
+edition_id = "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
+artifact_type = "project-study-translation"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "New Triptych-authored study English under CC BY4.0, drafted only from the independently public-domain Latin fragments identified per row. Latin source columns remain public domain and are not relicensed. No approved English or protected modern target text is copied."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "f21219d72d3f0fb36b021f6ad1875d22f2c35d2af77f44e26f77baf750490037"
+byte_size = 2063
+path = "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/artifacts/ancient-frames-study-en/text.tsv"
+projected_from = ["artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-trinitarian-la", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-grace-peace-la", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-bishop-la", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-ecce-la", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-beati-ad-cenam-la"]
+provenance = "Drafted directly from the four finite Clementine derivatives and the directly image-checked Mame1922 Ecce derivative on2026-10-30. No human review or liturgical approval is claimed."
+transformation = "Translate each exact selected Latin fragment freshly into English, preserving its whole semantic content and adding no target-supplied phrase. The Revelation row translates the source after the expressly declared deletion of nuptiarum, not the complete verse or a protected modern adaptation. The Mame Ecce row preserves both ecce clauses and plural sins. The 2Cor row has no added final Amen."
+indexable = true
+encoding = "utf-8"
+notes = "Five finite rows only. These are study translations of historical source fragments, not approved wording for liturgical use or recitation. Bishop-only source wording is not eligible as an unconstrained reader option."

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.chrism-two-orations-9b3148f9"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers only editorial selection, orthographic normalization and target-relation record under CC BY4.0. Complete Latin petitions stand independently in Wilson1894, public domain in the United States by publication date. No exclusive right in old prayer words is claimed. No target facsimile or protected apparatus retained."
+rights_jurisdiction = "United States"
+provenance = "Two entire target prayer images and independent old source prayer images inspected2026-10-29; source main texts and actual conclusion cues retained in separate Wilson derivative. Source exact petition word identity does not assert whole-form or whole-book completeness."
+retrieved = "2026-10-29"
+sha256 = "9b3148f940dd5a2d1f36e9ed88a560b2a36667503e1a0e39560364034fac0346"
+byte_size = 293
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/chrism-two-orations-9b3148f9/latin.txt"
+projected_from = ["artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.chrism-three-oration-readings-20261029-33c7ecdf", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Select entire source-established Secret and Postcommunion petitions; omit stress accents and join print line wraps; apply target pointing and actual received conclusion length. Source Per. remains separately recorded; target Secret closes Per Dominum nostrum., Postcommunion Per Dominum. No new petition wording, response, actor, source-name substitution or general ending rule added."
+indexable = true
+encoding = "utf-8"
+notes = "Two prayer blocks: physical line1 Secret; blank line2; physical line3 Postcommunion. The variant Collect is explicitly excluded from this public-domain-exact artifact pending separate qualification."

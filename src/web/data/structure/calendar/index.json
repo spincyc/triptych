@@ -56,22 +56,18 @@
    "path": "structure/calendar/roman-pre-1955/{civil_year}.json",
    "territorial": {
     "ascension": {
-     "options": [
-      "ascension-thursday",
-      "ascension-transferred-to-sunday"
-     ]
+     "computed": "Easter +39 (Thursday)",
+     "transferred_sunday_form": "not computed: no competent pre-1955 territorial Sunday-transfer decision or governing rule is established in the held sources"
     },
     "body_and_blood_of_christ": {
-     "options": [
-      "corpus-christi-thursday",
-      "corpus-christi-transferred-to-sunday"
-     ]
+     "computed": "Easter +60 (Thursday)",
+     "transferred_sunday_form": "not computed: no competent pre-1955 territorial Sunday-transfer decision or governing rule is established in the held sources"
     },
     "epiphany": {
      "computed": "6 January",
-     "transferred_sunday_form": "not computed: the Sundays-after-Epiphany mechanism in guidance/liturgy/calendar-computation.md is stated from January 6, and no rule is given for recounting them after a territorial transfer"
+     "transferred_sunday_form": "not computed: no competent pre-1955 territorial Sunday-transfer decision or governing rule is established in the held sources"
     },
-    "note": "Universal Norms 7 assigns these celebrations to a Sunday only where the competent authority has actually so decided. Both forms are emitted; a candidate tagged with one option holds only under that option, and an untagged candidate holds under both. This file does not know which option applies in any place, and a transfer is never inferred from arithmetic."
+    "note": "The accepted Bonn conformed pre-1955 witness's generic Paschal table supplies the usual Thursday assignments. Postconciliar Universal Norms 7 is not authority for this older calendar. A local transfer or external solemnity requires its own competent source; none is inferred from arithmetic."
    }
   }
  ],

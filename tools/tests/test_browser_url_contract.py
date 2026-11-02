@@ -144,8 +144,8 @@ FROZEN_PROPERS_KEYS = [
 ]
 # The reader-state module extends the retained page hashes with explicit
 # comparison state; these keys are not read by the old day.js/liturgy.js pages.
-READER_DAY_ADDITIONS = ["compare", "peer-missal", "territory"]
-READER_PROPERS_ADDITIONS = ["ordinary-lang", "compare", "peer-orations"]
+READER_DAY_ADDITIONS = ["text-display", "scripture-companion", "compare", "peer-missal", "territory", "proper-choices"]
+READER_PROPERS_ADDITIONS = ["text-display", "scripture-companion", "ordinary-lang", "compare", "peer-orations", "peer-cycle", "peer-alternative", "peer-witness", "peer-bible", "proper-choices"]
 READER_PROPERS_VARIANT_KEYS = ["penitential-act", "creed", "eucharistic-prayer"]
 
 
@@ -1245,9 +1245,10 @@ class FrozenInventoryTest(unittest.TestCase):
   def test_the_guide_still_carries_the_legacy_url_inventory(self):
     rows = self.rows()
     self.assertEqual(sorted(rows), ["Day", "Propers"])
-    self.assertEqual(rows["Day"][0], FROZEN_DAY_KEYS + FROZEN_DAY_VARIANT_KEYS)
+    self.assertEqual(rows["Day"][0], FROZEN_DAY_KEYS + READER_DAY_ADDITIONS)
+    self.assertIn("manifest-declared Ordinary variant keys", self.guidance)
     self.assertEqual(rows["Day"][1], ["data"])
-    self.assertEqual(rows["Propers"][0], FROZEN_PROPERS_KEYS)
+    self.assertEqual(rows["Propers"][0], FROZEN_PROPERS_KEYS + READER_PROPERS_ADDITIONS)
     self.assertEqual(rows["Propers"][1], ["data", "missals"])
 
   @needs_node

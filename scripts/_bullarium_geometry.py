@@ -1,0 +1,2289 @@
+"""Replay explicit page geometry without changing or dropping XML WORD values."""
+from __future__ import annotations
+
+import argparse
+import bisect
+import copy
+from collections import Counter, defaultdict
+import gzip
+import hashlib
+import io
+import json
+import os
+from pathlib import Path
+import re
+import statistics
+import sys
+import tempfile
+import tomllib
+from urllib.parse import urlsplit
+from xml.parsers import expat
+
+from _tooling import Example, with_examples
+
+ROOT = Path(__file__).resolve().parents[1]
+SCHEMA = "triptych-bullarium-geometry-recipe/v1"
+SCHEMA_V2 = "triptych-bullarium-geometry-recipe/v2"
+# v2 rows name their role by code; the replay contract (ROLES) is unchanged.
+ROLE_CODES = {"H": "header", "L": "body-left", "R": "body-right", "ML": "margin-left", "MR": "margin-right",
+              "NL": "notes-left", "NR": "notes-right", "F": "footer", "G": "gutter-ocr"}
+V2_PAGE_FIELDS = {"leaf", "object_ordinal_1", "status"}
+V2_PAGE_OPTIONAL = {"rows", "hold", "measurements", "role_WORD_counts", "inseparable_WORDs", "margin_blocks",
+                    "header_rows", "notes_blocks", "note_suspects", "paragraph_breaks", "source_word_range_1", "source_lf_range_1"}
+ROLES = {"header", "body-left", "body-right", "margin-left", "margin-right",
+         "notes-left", "notes-right", "footer", "uncertain", "gutter-ocr"}
+SHA = re.compile(r"[a-f0-9]{64}")
+LIMITATIONS = ["No OCR character correction, word restoration or translation.",
+              "Unchanged pages retain their original OCR order, including unresolved defects.",
+              "Explicit coordinates, role assignments and order are replayed; their historical meaning is not inferred.",
+              "Geometry replay establishes no act admission, note ownership, authentication or image collation."]
+EXAMPLES = (
+    Example("tools/bullarium geometry --recipe .scratch/bullarium_reconstruction/geometry_engine/absent-recipe.json --out .scratch/bullarium_reconstruction/geometry_engine/preflight --json",
+            ('{"code":"input","error":"geometry recipe is not readable JSON","status":"error","v":1}',),
+            "A missing recipe is refused before creating outputs."),
+    Example("tools/bullarium geometry --recipe .scratch/bullarium_reconstruction/geometry_engine/absent-recipe.json --out .scratch/bullarium_reconstruction/geometry_engine/preflight",
+            ("bullarium geometry: geometry recipe is not readable JSON",),
+            "The same safe preflight refusal in ordinary text."),
+)
+
+
+class GeometryError(ValueError):
+    pass
+
+
+def _require(condition, message):
+    if not condition:
+        raise GeometryError(message)
+
+
+def _sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def _json_bytes(value):
+    return (json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode()
+
+
+def _path(root, value, relative=False):
+    _require(isinstance(value, (str, Path)) and str(value), "path must be nonempty")
+    raw, path = str(value), Path(value)
+    _require("\\" not in raw and not any(ord(c) < 32 for c in raw) and ".." not in path.parts
+             and not (relative and (path.is_absolute() or path.as_posix() != raw)),
+             "input path must be canonical repository-relative without traversal")
+    path = (root / path).resolve()
+    _require(path.is_relative_to(root), "path escapes the repository")
+    return path
+
+
+def _object_pairs(items):
+    result = {}
+    for key, value in items:
+        _require(key not in result, "duplicate recipe JSON key: " + key)
+        result[key] = value
+    return result
+
+
+def _constant(value):
+    raise GeometryError("non-finite recipe JSON value: " + value)
+
+
+def _fields(value, required, optional=(), name="record"):
+    _require(isinstance(value, dict) and set(required) <= set(value)
+             and set(value) <= set(required) | set(optional), name + " has missing or unsupported fields")
+
+
+def _pair(value, name, minimum=0):
+    _require(isinstance(value, list) and len(value) == 2 and all(type(n) is int for n in value)
+             and minimum <= value[0] <= value[1], name + " must be an inclusive-line or half-open-byte pair")
+
+
+def _pin(root, item, frozen, input_map):
+    _fields(item, {"sha256", "byte_size"}, {"path", "artifact_id", "source_url"}, "source pin")
+    _require(isinstance(item["sha256"], str) and SHA.fullmatch(item["sha256"])
+             and type(item["byte_size"]) is int and item["byte_size"] >= 0, "source requires a complete hash and byte size")
+    if "source_url" in item:
+        value = item["source_url"]
+        _require(isinstance(value, str) and not any(c.isspace() for c in value), "source_url must be a public HTTP(S) URL")
+        url = urlsplit(value)
+        _require(url.scheme in {"http", "https"} and url.netloc and not url.username and not url.password,
+                 "source_url must be a public HTTP(S) URL")
+    location = input_map.get(item.get("artifact_id"), input_map.get(item["sha256"], item.get("path")))
+    _require(location is not None, "source bytes unavailable; supply an explicit input_map cache path")
+    path = _path(root, location, True)
+    data = path.read_bytes()
+    _require(len(data) == item["byte_size"] and _sha(data) == item["sha256"], "complete source hash or byte size mismatch")
+    if "artifact_id" in item:
+        _require(isinstance(item["artifact_id"], str) and re.fullmatch(r"artifact\.[a-z0-9.-]+", item["artifact_id"]),
+                 "source artifact_id must be an explicit source-library identity")
+    frozen[path] = item["sha256"]
+    return data
+
+
+def load_recipe(root, recipe_path, input_map=None):
+    """Read the small versioned recipe; reject unpinned inputs and OBJECT attrs."""
+    root = Path(root).resolve()
+    path = _path(root, recipe_path)
+    try:
+        payload = path.read_bytes()
+        recipe = json.loads(payload, object_pairs_hook=_object_pairs, parse_constant=_constant)
+    except (OSError, UnicodeError, json.JSONDecodeError) as error:
+        raise GeometryError("geometry recipe is not readable JSON") from error
+    _require(isinstance(recipe, dict) and recipe.get("schema") in {SCHEMA, SCHEMA_V2}, "unknown geometry recipe schema")
+    if recipe["schema"] == SCHEMA_V2:
+        _fields(recipe, {"schema", "source_txt", "source_xml", "pages"},
+                {"volume", "notes", "limitations", "expected_output", "proposal"}, "recipe")
+        _require(isinstance(recipe["pages"], list) and recipe["pages"], "v2 pages requires a nonempty array")
+    else:
+        _fields(recipe, {"schema", "source_txt", "source_xml", "changed_pages"},
+                {"volume", "notes", "limitations", "evidence", "serialization", "expected_output", "source_evidence_pins"}, "recipe")
+        _require(isinstance(recipe["changed_pages"], list), "changed_pages requires an array")
+    _require(recipe.get("serialization", "recipe-whitespace") in {"recipe-whitespace", "word-per-line"},
+             "unknown page serialization")
+    for name in ("notes", "evidence"):
+        if name in recipe:
+            value = recipe[name]
+            _require(isinstance(value, str) or (isinstance(value, list) and all(isinstance(v, str) for v in value)),
+                     name + " accepts prose only, never OBJECT attributes")
+    if "limitations" in recipe:
+        _require(isinstance(recipe["limitations"], list) and all(isinstance(v, str) for v in recipe["limitations"]),
+                 "limitations must contain strings")
+    frozen = {path: _sha(payload)}
+    if isinstance(input_map, (str, Path)):
+        map_path = _path(root, input_map)
+        map_bytes = map_path.read_bytes()
+        mapped = json.loads(map_bytes, object_pairs_hook=_object_pairs, parse_constant=_constant)
+        _fields(mapped, {"schema", "inputs"}, name="input map")
+        _require(mapped["schema"] == "triptych-bullarium-geometry-input-map/v1", "unknown runtime input-map schema")
+        input_map = mapped["inputs"]
+        frozen[map_path] = _sha(map_bytes)
+    input_map = {} if input_map is None else input_map
+    _require(isinstance(input_map, dict), "input_map requires an artifact-id or SHA256 to cache-path object")
+    allowed = {recipe[name].get("artifact_id") for name in ("source_txt", "source_xml")
+               if isinstance(recipe[name], dict)} | {recipe[name].get("sha256") for name in ("source_txt", "source_xml")
+                                                    if isinstance(recipe[name], dict)}
+    _require(all(isinstance(k, str) and k in allowed for k in input_map), "unknown input_map source identity")
+    raw, xml = (_pin(root, recipe[name], frozen, input_map) for name in ("source_txt", "source_xml"))
+    evidence = recipe.get("source_evidence_pins", {})
+    _require(isinstance(evidence, dict), "source_evidence_pins requires a path/hash object")
+    for value, digest in evidence.items():
+        _require(isinstance(digest, str) and SHA.fullmatch(digest), "evidence requires an exact SHA-256")
+        evidence_path = _path(root, value, True)
+        _require(_sha(evidence_path.read_bytes()) == digest, "source evidence SHA-256 mismatch")
+        frozen[evidence_path] = digest
+    return recipe, raw, xml, frozen
+
+
+def _tokens(data):
+    text = data.decode("utf-8")
+    char_cursor = byte_cursor = 0
+    result = []
+    for match in re.finditer(r"\S+", text):
+        byte_cursor += len(text[char_cursor:match.start()].encode())
+        end = byte_cursor + len(match.group().encode())
+        result.append((byte_cursor, end, match.group()))
+        char_cursor, byte_cursor = match.end(), end
+    return result
+
+
+def _line(newlines, byte):
+    return bisect.bisect_left(newlines, byte) + 1
+
+
+def _tag_end(data, start):
+    quote = None
+    for index in range(start, len(data)):
+        char = data[index]
+        if quote is not None:
+            if char == quote:
+                quote = None
+        elif char in (34, 39):
+            quote = char
+        elif char == 62:
+            return index + 1
+    raise GeometryError("unterminated XML tag")
+
+
+def _xml_pages(xml, raw, tokens, changed):
+    """Expat supplies offsets in the original XML, including encoded entities."""
+    xml.decode("utf-8")
+    parser = expat.ParserCreate()
+    pages, leaves, newlines = [], set(), [m.start() for m in re.finditer(b"\n", raw)]
+    page = word = None
+    token_cursor = word_count = line_count = 0
+    in_line = False
+
+    def start(name, attrs):
+        nonlocal page, word, word_count, line_count, in_line
+        if name == "OBJECT":
+            _require(page is None, "nested XML OBJECT")
+            match = re.search(r"_(\d+)\.djvu$", attrs.get("usemap", ""))
+            _require(match is not None, "XML OBJECT requires an explicit scan leaf")
+            leaf = int(match[1])
+            _require(leaf not in leaves, "duplicate XML scan leaf")
+            leaves.add(leaf)
+            dims = [int(attrs.get(name, "0")) for name in ("width", "height")]
+            _require(all(n > 0 for n in dims), "XML page requires positive dimensions")
+            page = {"artifact_page": len(pages) + 1, "leaf": leaf, "dimensions": dims,
+                    "source_token_range_0": [token_cursor, token_cursor], "source_word_range_1": None,
+                    "words": [], "word_count": 0, "line_count": 0}
+        elif name == "LINE":
+            _require(page is not None and not in_line and word is None, "XML LINE has no unique page owner")
+            in_line = True
+            line_count += 1
+            page["line_count"] += 1
+        elif name == "WORD":
+            _require(page is not None and in_line and word is None, "XML WORD has no unique LINE/page owner")
+            word_count += 1
+            page["word_count"] += 1
+            begin = parser.CurrentByteIndex
+            end = _tag_end(xml, begin)
+            word = {"source_word_global_1": word_count, "source_word_page_1": page["word_count"],
+                    "source_line_global_1": line_count, "source_line_page_1": page["line_count"],
+                    "start": begin, "tag_end": end, "selfclosing": xml[begin:end].endswith(b"/>"),
+                    "chars": [], "attrs": dict(attrs)}
+
+    def chars(value):
+        if word is not None:
+            word["chars"].append(value)
+
+    def end(name):
+        nonlocal page, word, token_cursor, in_line
+        if name == "WORD":
+            value = "".join(word["chars"])
+            parts = value.split()
+            matched = tokens[token_cursor:token_cursor + len(parts)]
+            _require([t[2] for t in matched] == parts, "whole raw TXT/XML WORD token mismatch")
+            if page["leaf"] in changed:
+                coords = word["attrs"].get("coords")
+                # DjVu writes x0,y1,x1,y0 and, in some deliveries, a fifth baseline
+                # value.  The exact attribute string stays pinned in `coords`;
+                # geometry uses the box only.
+                _require(isinstance(coords, str) and re.fullmatch(r"-?\d+,-?\d+,-?\d+,-?\d+(?:,-?\d+)?", coords),
+                         "changed WORD requires exact integer coordinates")
+                x0, y0, x1, y1 = map(int, coords.split(",")[:4])
+                stop = word["tag_end"] if word["selfclosing"] else _tag_end(xml, parser.CurrentByteIndex)
+                page["words"].append({**{k: word[k] for k in ("source_word_global_1", "source_word_page_1", "source_line_global_1", "source_line_page_1")},
+                    "source_xml_byte_range_0": [word["start"], stop], "value": value, "coords": coords,
+                    "source_attrs": word["attrs"], "source_bbox": [min(x0, x1), min(y0, y1), max(x0, x1), max(y0, y1)],
+                    "source_txt_token_byte_ranges_0": [[a, b] for a, b, _ in matched],
+                    "source_txt_physical_lines": sorted({_line(newlines, a) for a, b, _ in matched})})
+            token_cursor += len(parts)
+            word = None
+        elif name == "LINE":
+            in_line = False
+        elif name == "OBJECT":
+            _require(word is None and not in_line, "unterminated page WORD or LINE")
+            page["source_token_range_0"][1] = token_cursor
+            first, last = page["source_token_range_0"]
+            page["source_word_range_1"] = [word_count - page["word_count"] + 1, word_count] if page["word_count"] else None
+            page["source_lf_range_1"] = page["source_byte_range_0"] = None
+            if first < last:
+                a, z = _line(newlines, tokens[first][0]), _line(newlines, tokens[last - 1][1] - 1)
+                begin = newlines[a - 2] + 1 if a > 1 else 0
+                stop = newlines[z - 1] + 1 if z <= len(newlines) else len(raw)
+                page["source_lf_range_1"], page["source_byte_range_0"] = [a, z], [begin, stop]
+            pages.append(page)
+            page = None
+
+    def doctype(name, system, public, subset):
+        _require(name == "DjVuXML" and system is None and public is None and not subset,
+                 "external or entity-bearing XML DOCTYPE is not permitted")
+
+    parser.StartElementHandler, parser.EndElementHandler = start, end
+    parser.CharacterDataHandler, parser.StartDoctypeDeclHandler = chars, doctype
+    parser.XmlDeclHandler = lambda version, encoding, standalone: _require(
+        encoding is None or encoding.lower().replace("-", "") == "utf8", "source XML must use UTF-8")
+    parser.Parse(xml, True)
+    _require(token_cursor == len(tokens), "XML does not account for every raw TXT token")
+    return pages, word_count
+
+
+def _whitespace(value):
+    return isinstance(value, str) and all(char in " \t\r\n" for char in value)
+
+
+def source_pages(root, source_txt, source_xml, leaves, *, input_map=None):
+    """Extract exact native WORD geometry after checking both whole inputs.
+
+    This is a read-only recipe-preparation API. It does not propose column
+    order or assign WORDs to an act; those remain explicit review decisions.
+    """
+    root = Path(root).resolve()
+    _require(isinstance(leaves, list) and leaves and
+             all(type(leaf) is int and leaf >= 0 for leaf in leaves) and len(set(leaves)) == len(leaves),
+             "selected scan leaves must be a nonempty unique integer array")
+    input_map = {} if input_map is None else input_map
+    _require(isinstance(input_map, dict), "input_map requires an artifact-id or SHA256 to cache-path object")
+    allowed = {pin.get(key) for pin in (source_txt, source_xml) if isinstance(pin, dict)
+               for key in ("artifact_id", "sha256")}
+    _require(all(isinstance(key, str) and key in allowed for key in input_map), "unknown input_map source identity")
+    frozen = {}
+    raw, xml = (_pin(root, pin, frozen, input_map) for pin in (source_txt, source_xml))
+    pages, count = _xml_pages(xml, raw, _tokens(raw), {leaf: {} for leaf in leaves})
+    selected = [page for page in pages if page["leaf"] in leaves]
+    _require({page["leaf"] for page in selected} == set(leaves), "selected scan leaf is absent from XML")
+    _require(all(_sha(path.read_bytes()) == digest for path, digest in frozen.items()),
+             "pinned input changed during page extraction")
+    # Source identity is durable; runtime cache locations are deliberately absent.
+    pin_keys = {"artifact_id", "sha256", "byte_size", "source_url"}
+    return {"schema": "triptych-bullarium-native-word-pages/v1",
+            "source_txt": {key: value for key, value in source_txt.items() if key in pin_keys},
+            "source_xml": {key: value for key, value in source_xml.items() if key in pin_keys},
+            "source_WORDs": count, "pages": selected,
+            "limits": "Whole TXT/XML token correspondence and exact WORD byte coordinates are checked. Column order, act ownership and historical authenticity are not inferred."}
+
+
+def _v2_runs(value):
+    _require(isinstance(value, list) and value, "v2 row requires nonempty WORD runs")
+    ids = []
+    for run in value:
+        _require(isinstance(run, list) and len(run) == 2 and all(type(n) is int and n > 0 for n in run)
+                 and run[0] <= run[1], "v2 WORD run must be an ascending positive ordinal pair")
+        ids.extend(range(run[0], run[1] + 1))
+    return ids
+
+
+def expand_v2(recipe, raw, xml):
+    """Expand compact v2 rows into the explicit v1 recipe the replay checks.
+
+    Every page of the XML is listed, in OBJECT order, as ``reordered``,
+    ``held`` or ``empty``.  A reordered page lists output rows ``[code, break,
+    runs]``: one LF per row, a blank line before a row whose break is ``p``,
+    one TAB before a marginal row, and inside a row one SPACE unless the
+    preceding WORD value already ends in whitespace.  Held and empty pages are
+    not changed.  The expansion supplies only pins read from the XML; the v1
+    path then proves every WORD exactly once and every value unchanged.
+    """
+    _require(recipe["schema"] == SCHEMA_V2, "v2 expansion requires a v2 recipe")
+    specs = recipe["pages"]
+    for item in specs:
+        _fields(item, V2_PAGE_FIELDS, V2_PAGE_OPTIONAL, "v2 page")
+        _require(type(item["leaf"]) is int and item["leaf"] >= 0 and type(item["object_ordinal_1"]) is int
+                 and item["status"] in {"reordered", "held", "empty"}, "v2 page identity or status is invalid")
+        _require((item["status"] == "reordered") == ("rows" in item), "only a reordered v2 page carries rows")
+        _require(item["status"] != "held" or isinstance(item.get("hold"), dict), "a held v2 page records its hold")
+    reordered = {item["leaf"]: item for item in specs if item["status"] == "reordered"}
+    _require(len(reordered) == sum(item["status"] == "reordered" for item in specs), "duplicate reordered v2 leaf")
+    pages, _ = _xml_pages(xml, raw, _tokens(raw), reordered)
+    _require([(p["leaf"], p["artifact_page"]) for p in pages] == [(i["leaf"], i["object_ordinal_1"]) for i in specs],
+             "v2 pages must list every XML OBJECT once, in order")
+    changed = []
+    for page, item in zip(pages, specs):
+        if item["status"] == "empty":
+            _require(page["word_count"] == 0, "an empty v2 page has WORDs")
+        if item["status"] != "reordered":
+            continue
+        words = {w["source_word_global_1"]: w for w in page["words"]}
+        rows = item["rows"]
+        _require(isinstance(rows, list) and rows, "a reordered v2 page requires rows")
+        sequence = []
+        for index, row in enumerate(rows):
+            _require(isinstance(row, list) and len(row) == 3 and row[0] in ROLE_CODES and row[1] in {"l", "p"},
+                     "v2 row must be [role code, l|p, runs]")
+            sequence.extend((wid, row[0], index) for wid in _v2_runs(row[2]))
+        entries = []
+        for k, (wid, code, index) in enumerate(sequence):
+            _require(wid in words, "v2 row names a WORD absent from its page")
+            value = words[wid]["value"]
+            if k + 1 == len(sequence):
+                after = "\n"
+            elif sequence[k + 1][2] == index:
+                after = "" if value and value[-1] in " \t\r\n" else " "
+            else:
+                following = rows[sequence[k + 1][2]]
+                after = ("\n\n" if following[1] == "p" else "\n") + ("\t" if following[0] in {"ML", "MR"} else "")
+            entries.append({**{key: words[wid][key] for key in ("source_word_global_1", "source_word_page_1",
+                            "source_line_global_1", "source_line_page_1", "source_xml_byte_range_0", "value", "coords")},
+                            "role": ROLE_CODES[code], "flags": [], "after": after})
+        changed.append({"leaf": page["leaf"], "object_ordinal_1": page["artifact_page"],
+                        "source_byte_range_0": page["source_byte_range_0"], "source_lf_range_1": page["source_lf_range_1"],
+                        "before": "\t" if rows[0][0] in {"ML", "MR"} else "", "words": entries})
+    expanded = {"schema": SCHEMA, "source_txt": recipe["source_txt"], "source_xml": recipe["source_xml"],
+                "serialization": "recipe-whitespace", "changed_pages": changed}
+    for name in ("volume", "notes", "limitations", "expected_output"):
+        if name in recipe:
+            expanded[name] = recipe[name]
+    return expanded
+
+
+def _derive(root, recipe_path, input_map=None):
+    recipe, raw, xml, frozen = load_recipe(root, recipe_path, input_map)
+    source_schema = recipe["schema"]
+    if source_schema == SCHEMA_V2:
+        recipe = expand_v2(recipe, raw, xml)
+    specifications = {}
+    for item in recipe["changed_pages"]:
+        _fields(item, {"leaf", "object_ordinal_1", "source_byte_range_0", "source_lf_range_1", "words"},
+                {"before", "output_byte_range_0", "replacement_sha256"}, "changed page")
+        _require(type(item["leaf"]) is int and item["leaf"] >= 0 and item["leaf"] not in specifications,
+                 "changed scan leaf is invalid or duplicated")
+        specifications[item["leaf"]] = item
+    tokens = _tokens(raw)
+    pages, word_count = _xml_pages(xml, raw, tokens, specifications)
+    found = {p["leaf"] for p in pages}
+    _require(set(specifications) <= found, "changed scan leaf is absent from XML")
+    patches = []
+    serialization = recipe.get("serialization", "recipe-whitespace")
+    for page in pages:
+        if page["leaf"] not in specifications:
+            continue
+        item = specifications[page["leaf"]]
+        _pair(item["source_byte_range_0"], "source byte range")
+        _pair(item["source_lf_range_1"], "source LF range", 1)
+        _require(type(item["object_ordinal_1"]) is int and item["object_ordinal_1"] == page["artifact_page"],
+                 "changed page OBJECT ordinal mismatch")
+        _require(page["source_byte_range_0"] is not None and item["source_byte_range_0"] == page["source_byte_range_0"]
+                 and item["source_lf_range_1"] == page["source_lf_range_1"], "changed page raw byte/LF span mismatch")
+        first, last = page["source_token_range_0"]
+        a, z = item["source_byte_range_0"]
+        _require((first == 0 or tokens[first - 1][1] <= a) and (last == len(tokens) or tokens[last][0] >= z),
+                 "changed page LF span includes a neighboring page token")
+        _require(isinstance(item["words"], list) and len(item["words"]) == len(page["words"]),
+                 "changed page omitted or duplicated a WORD")
+        source_words = {w["source_word_global_1"]: w for w in page["words"]}
+        before = item.get("before", "")
+        _require(_whitespace(before), "page may insert only whitespace around unchanged WORDs")
+        payload, mapped, seen = bytearray(before.encode()), [], set()
+        for selected in item["words"]:
+            required = {"source_word_global_1", "source_word_page_1", "source_line_global_1", "source_line_page_1",
+                        "source_xml_byte_range_0", "value", "coords", "role", "flags", "after"}
+            optional = {"source_attrs", "source_bbox", "source_txt_token_byte_ranges_0", "source_txt_physical_lines", "output_utf8_byte_range_0"}
+            _fields(selected, required, optional, "changed WORD")
+            for key in ("source_word_global_1", "source_word_page_1", "source_line_global_1", "source_line_page_1"):
+                _require(type(selected[key]) is int and selected[key] > 0, "WORD ordinals must be positive integers")
+            number = selected["source_word_global_1"]
+            _require(number in source_words and number not in seen, "WORD is absent, duplicated or belongs to a different page")
+            original = source_words[number]
+            _pair(selected["source_xml_byte_range_0"], "XML WORD byte range")
+            for key in required - {"role", "flags", "after"} | (optional & set(selected)) - {"output_utf8_byte_range_0"}:
+                _require(selected[key] == original[key], "changed WORD source pin mismatch: " + key)
+            _require(isinstance(selected["role"], str) and selected["role"] in ROLES and isinstance(selected["flags"], list)
+                     and all(isinstance(flag, str) and flag for flag in selected["flags"]), "WORD requires a typed role and retained flags")
+            after = selected["after"]
+            _require(_whitespace(after), "only whitespace may be inserted around a WORD")
+            if serialization == "word-per-line":
+                _require(after and all(c == "\n" for c in after), "word-per-line requires an independent LF after every WORD")
+            begin = len(payload)
+            payload.extend(original["value"].encode())
+            mapped.append({**original, "role": selected["role"], "flags": selected["flags"],
+                           "relative_output_byte_range_0": [begin, len(payload)],
+                           "expected_output_byte_range_0": selected.get("output_utf8_byte_range_0")})
+            payload.extend(after.encode())
+            seen.add(number)
+        _require(seen == set(source_words), "changed page does not map all source WORDs exactly once")
+        payload = bytes(payload)
+        expected_tokens = [part for w in item["words"] for part in w["value"].split()]
+        _require([t[2] for t in _tokens(payload)] == expected_tokens, "WORD boundaries merged or introduced output tokens")
+        if "replacement_sha256" in item:
+            _require(isinstance(item["replacement_sha256"], str) and SHA.fullmatch(item["replacement_sha256"])
+                     and _sha(payload) == item["replacement_sha256"], "replacement page SHA-256 mismatch")
+        patches.append({"page": page, "specification": item, "payload": payload, "mapping": mapped})
+    patches.sort(key=lambda p: p["page"]["source_byte_range_0"][0])
+    output, chunks, cursor, word_map = bytearray(), [], 0, []
+
+    def copied(stop):
+        nonlocal cursor
+        if cursor < stop:
+            begin = len(output)
+            data = raw[cursor:stop]
+            output.extend(data)
+            chunks.append({"kind": "copied-raw-ocr", "source_byte_range_0": [cursor, stop],
+                           "output_byte_range_0": [begin, len(output)], "sha256": _sha(data)})
+            cursor = stop
+
+    for patch in patches:
+        page, item = patch["page"], patch["specification"]
+        a, z = page["source_byte_range_0"]
+        _require(cursor <= a < z, "changed page byte spans overlap")
+        copied(a)
+        begin = len(output)
+        output.extend(patch["payload"])
+        page["output_byte_range_0"] = [begin, len(output)]
+        if "output_byte_range_0" in item:
+            _pair(item["output_byte_range_0"], "output page byte range")
+            _require(item["output_byte_range_0"] == page["output_byte_range_0"], "output page byte range mismatch")
+        chunks.append({"kind": "reviewed-page-serialization", "leaf": page["leaf"],
+                       "source_byte_range_0": [a, z], "output_byte_range_0": page["output_byte_range_0"],
+                       "source_sha256": _sha(raw[a:z]), "output_sha256": _sha(patch["payload"])})
+        for word in patch["mapping"]:
+            x, y = word.pop("relative_output_byte_range_0")
+            span = [begin + x, begin + y]
+            expected = word.pop("expected_output_byte_range_0")
+            if expected is not None:
+                _pair(expected, "output WORD byte range")
+                _require(expected == span, "output WORD byte range mismatch")
+            word.update(leaf=page["leaf"], object_ordinal_1=page["artifact_page"], output_utf8_byte_range_0=span)
+            # The XML pin preserves all attributes; the compact map needs only coordinates.
+            word.pop("source_attrs")
+            word_map.append(word)
+        cursor = z
+    copied(len(raw))
+    output = bytes(output)
+    output_tokens = _tokens(output)
+    _require(Counter(t[2] for t in output_tokens) == Counter(t[2] for t in tokens), "whole output token bijection failed")
+    output_lfs = [m.start() for m in re.finditer(b"\n", output)]
+    for word in word_map:
+        a, z = word["output_utf8_byte_range_0"]
+        _require(output[a:z] == word["value"].encode(), "output WORD value changed")
+        word["output_lf_range_1"] = [_line(output_lfs, a), _line(output_lfs, max(a, z - 1))]
+    if serialization == "word-per-line":
+        _require(all(a["output_lf_range_1"][1] < z["output_lf_range_1"][0]
+                     for a, z in zip(word_map, word_map[1:]) if a["leaf"] == z["leaf"]),
+                 "changed WORDs share output LF lines")
+    copy_chunks = [c for c in chunks if c["kind"] == "copied-raw-ocr"]
+    copy_starts = [c["source_byte_range_0"][0] for c in copy_chunks]
+    for page in pages:
+        page.pop("words")
+        if page["leaf"] not in specifications:
+            span = page["source_byte_range_0"]
+            page["output_byte_range_0"] = None
+            if span is not None:
+                index = bisect.bisect_right(copy_starts, span[0]) - 1
+                _require(index >= 0, "unchanged page escapes a copied byte chunk")
+                chunk = copy_chunks[index]
+                a, z = chunk["source_byte_range_0"]
+                _require(a <= span[0] <= span[1] <= z, "unchanged page overlaps a changed page byte span")
+                offset = chunk["output_byte_range_0"][0] - a
+                page["output_byte_range_0"] = [n + offset for n in span]
+        span = page["output_byte_range_0"]
+        page["output_lf_range_1"] = [_line(output_lfs, span[0]), _line(output_lfs, span[1] - 1)] if span else None
+        page["serialization"] = serialization if page["leaf"] in specifications else "unchanged-raw-ocr"
+    if "expected_output" in recipe:
+        expected = recipe["expected_output"]
+        _fields(expected, {"sha256", "byte_size"}, name="expected output")
+        _require(type(expected["byte_size"]) is int and expected["byte_size"] == len(output)
+                 and expected["sha256"] == _sha(output), "whole hybrid output hash or byte size mismatch")
+    compressed = io.BytesIO()
+    with gzip.GzipFile(filename="", fileobj=compressed, mode="wb", mtime=0, compresslevel=6) as stream:
+        for word in word_map:
+            stream.write((json.dumps(word, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode())
+    products = {"hybrid.txt": output,
+                "byte-map.json": _json_bytes({"schema": "triptych-bullarium-hybrid-byte-map/v1", "source_sha256": _sha(raw),
+                                              "output_sha256": _sha(output), "chunks": chunks}),
+                "page-map.json": _json_bytes({"schema": "triptych-bullarium-hybrid-page-map/v1", "pages": pages}),
+                "changed-word-map.jsonl.gz": compressed.getvalue()}
+    info = {"schema": "triptych-bullarium-hybrid-witness/v1", "generator": "bullarium-geometry", "generator_version": 1,
+            "recipe_sha256": frozen[_path(root, recipe_path)], "source_txt": recipe["source_txt"], "source_xml": recipe["source_xml"],
+            "source_evidence_pins": recipe.get("source_evidence_pins", {}), "serialization": serialization,
+            "source_WORDs": word_count, "source_tokens": len(tokens), "source_pages": len(pages),
+            "changed_pages": len(patches), "changed_WORDs": len(word_map), "hybrid_sha256": _sha(output), "hybrid_bytes": len(output),
+            "word_map_coverage": "changed-pages-only; unchanged bytes and page WORD/token ranges are mapped compactly",
+            "roles": dict(sorted(Counter(w["role"] for w in word_map).items())), "limitations": LIMITATIONS + recipe.get("limitations", []),
+            "checks": {name: True for name in ("whole_raw_TXT_XML_token_equality", "whole_output_token_bijection",
+                "every_changed_WORD_exactly_once", "indivisible_WORD_values_unchanged", "exact_XML_byte_offsets_and_coordinates",
+                "unchanged_raw_chunks_byte_identical", "all_source_and_output_bytes_accounted", "no_OBJECT_attributes_serialized")},
+            "outputs": {name: {"sha256": _sha(data), "byte_size": len(data)} for name, data in products.items()}}
+    if "artifact_id" in recipe["source_txt"]:
+        info["derived_from"] = recipe["source_txt"]["artifact_id"]
+    if "volume" in recipe:
+        info["volume"] = recipe["volume"]
+    if source_schema == SCHEMA_V2:   # v1 validation bytes stay exactly as before
+        info["recipe_schema"] = SCHEMA_V2
+    products["validation.json"] = _json_bytes(info)
+    return products, info, frozen
+
+
+def _destination(root, out_dir):
+    out = _path(root, out_dir)
+    _require(any(out.is_relative_to(root / owner) for owner in (".scratch", "build")),
+             "geometry output must remain under .scratch or build")
+    return out
+
+
+def build(root, recipe_path, out_dir, *, input_map=None):
+    """Build five deterministic scratch products, never canonical source records."""
+    root = Path(root).resolve()
+    out = _destination(root, out_dir)
+    products, info, frozen = _derive(root, recipe_path, input_map)
+    for name, data in products.items():
+        path = out / name
+        _require(path not in frozen and (not path.exists() or path.read_bytes() == data),
+                 "refusing to overwrite input or differing geometry output: " + name)
+    _require(all(_sha(path.read_bytes()) == digest for path, digest in frozen.items()), "pinned input changed during geometry replay")
+    out.mkdir(parents=True, exist_ok=True)
+    for name, data in products.items():
+        path = out / name
+        if not path.exists():
+            with tempfile.NamedTemporaryFile(dir=out, delete=False) as staged:
+                temporary = Path(staged.name)
+                staged.write(data)
+            try:
+                try:
+                    os.link(temporary, path)
+                except FileExistsError:
+                    _require(path.read_bytes() == data, "geometry output appeared with differing bytes")
+            finally:
+                temporary.unlink()
+    return info
+
+
+def check(root, recipe_path, out_dir, *, input_map=None):
+    """Independently replay inputs and compare every product, including all maps."""
+    root = Path(root).resolve()
+    out = _destination(root, out_dir)
+    products, info, frozen = _derive(root, recipe_path, input_map)
+    for name, data in products.items():
+        _require((out / name).is_file() and (out / name).read_bytes() == data, "geometry product mismatch: " + name)
+    _require(all(_sha(path.read_bytes()) == digest for path, digest in frozen.items()), "pinned input changed during geometry check")
+    return info
+
+
+# ---------------------------------------------------------------------------
+# Reading-order proposal (`geometry propose`), unit mapping (`geometry
+# map-units`) and registration (`geometry register`).
+#
+# The proposal is the only heuristic step.  It reads WORD boxes, token counts
+# and non-whitespace character counts, never wording, and writes an explicit
+# v2 recipe that the replay above expands and proves.  Pixel thresholds are
+# fractions of the volume's measured column width (M) or a page's line pitch
+# (P); the values were calibrated on volume IV (measure 750 px) and are stated
+# here as px/750 so that the calibration is visible.
+# ---------------------------------------------------------------------------
+PROPOSAL_ALGORITHM = "bullarium-envelope/v1"
+PROPOSAL_PARAMS = {
+    "min_page_words": 60, "line_min_tokens": 3, "line_band_y_H": [0.10, 0.95], "line_max_height_H": 0.04,
+    "line_min_width_W": 0.15, "gutter_search_W": [0.30, 0.70], "gutter_step_W": 4 / 2274,
+    "gutter_max_crossings": 6, "min_lines_per_column": 10, "measure_bin_W": 4 / 2274,
+    "edge_min_support": 8, "edge_bin_M": 6 / 750, "edge_window_M": 30 / 750, "edge_inlier_M": 6 / 750,
+    "edge_max_mad_M": 4 / 750, "edge_max_slope": 0.03, "left_confirm_window_M": 12 / 750, "left_confirm_min": 3,
+    "unconfirmed_extra_M": 8 / 750, "full_line_tol_M": 8 / 750,
+    "left_body_tol_M": 9 / 750, "left_margin_tol_M": 12 / 750, "right_body_tol_M": 2 / 750,
+    "right_margin_tol_M": 4 / 750, "gutter_tol_M": 6 / 750, "right_start_tol_M": 14 / 750,
+    "gutter_ocr_max_chars": 2, "last_word_hang_M": 24 / 750, "merged_line_indent_M": 140 / 750,
+    "margin_absorb_indent_M": 140 / 750, "margin_min_char_M": 5 / 750, "body_min_char_M": 8 / 750,
+    "margin_body_min_gap_M": 8 / 750, "straddle_M": 50 / 750, "straddle_indent_M": 70 / 750,
+    "straddle_resume_M": 120 / 750, "straddle_height_ratio": 0.75, "straddle_row_height_ratio": 0.55,
+    "straddle_merged_ratio": 1.3,
+    "header_band_H": 0.16, "header_row_tol_P": 0.5,
+    "header_isolation_P": 1.2, "text_top_min_tokens": 4, "text_top_min_width_M": 0.4,
+    "text_top_min_height": 0.85, "footer_band_H": 0.88, "footer_gap_P": 1.6, "row_merge_P": 0.45,
+    "margin_row_merge_P": 0.3, "margin_block_gap_factor": 1.5, "margin_block_gap_default_P": 0.9,
+    "margin_block_max_gap_P": 3.0, "margin_anchor_back_rows": 2, "paragraph_indent_M": 22 / 750,
+    "paragraph_short_M": 45 / 750,
+    "note_band_C": 0.5, "note_max_rows": 15, "note_gap_P": 0.9, "note_strong_gap_P": 1.5,
+    "note_strong_min_rows": 3, "note_suspect_gap_P": 1.2, "note_tight_gap_P": 0.6, "note_advance_ratio": 0.88, "note_height_ratio": 0.9,
+    "note_cue_rows": 3, "note_continuation_gap_P": 1.05, "missing_row_gap_P": [1.75, 2.35],
+}
+# A footnote's first WORD often opens with its reference mark: (1), (t), (I) ...
+# A footnote reference mark as OCR renders it: "(1)", "(t)", "(I)", "(1;", "()j",
+# "<1)", "(!)", "1)", "H)", "ri)", ")" ...
+NOTE_MARK = re.compile(r"[\(\[<{][^\s]{0,2}[\)\]}>;j]|[^\s(\[]{0,2}[\)\]]")
+# ... or a bare mark set as its own WORD: 1-9, or "1" misread as I, l, i, ì, t, !, { or \\, or "1."
+BARE_MARK = re.compile(r"[1-9Ilit!{\\]|[ìí]|1\.")
+# ... and "1" misread as f or d, which counts only with editorial wording: a lone
+# "f" opening a row is more often the cross before a subscription ("f Ego ...")
+CUED_MARK = re.compile(r"[fd]")
+# OCR specks printed before a mark (". „, ■ I Cherub."); never a section sign "§"
+SPECK = re.compile(r"[.,„■•●·'\"`:;_~*\-—–]+")
+# a section number after a bare-mark-like token: "§ 2." read as "8 2." or "I 2."
+SECTION_NUMBER = re.compile(r"\d+[.,]?")
+# Editorial-note wording that corroborates a footnote: the editors' sigla "(R. T.)"
+# in OCR variants, register sources and the editions the notes cite.
+NOTE_CUE = re.compile(r"[\(\'\"«]?\s*[RrBbKkHhNnUuPp«»]\s*[\.,]{0,2}\s*[TtIi]\s*[\.,]?\s*[\)\}\]]|\bEx\s+R[eo]g|[RKUH][ce]g[ce]st|Itegest|\bResesi|"
+                      r"\b[Aa]r[cl][hl]i?[il]?v\.|\bAicliiv|"
+                      r"Cherub|Cher\.|Mainard|Raynald|Ughell|Wadd|Rymer|Baluz|\bLegimus\b|\bLeg\.|"
+                      r"\bForsan\b|\bForsitan\b|\b[Ee]dit\.|\bVide\b")
+
+
+def _note_mark(words, cue=False):
+    """A row opens with a footnote reference mark.
+
+    A bare mark counts only when it is a WORD of its own followed by a WORD
+    that opens with a capital, as a note does (a numbered synopsis range such
+    as "1 ad 4." does not), or when editorial-note wording corroborates it.
+    """
+    # tokens, skipping specks OCR'd before the mark (". „, ■" ...); a WORD can
+    # hold the mark and the note's first word together ("ti) Legitur")
+    tokens = [t for w in words for t in w["value"].split()]
+    bullet = False
+    while tokens and SPECK.fullmatch(tokens[0]):
+        bullet = bullet or tokens[0] in ("■", "•", "●")
+        tokens.pop(0)
+    if not tokens:
+        return False
+    first = tokens[0].lstrip("■•●,")
+    if NOTE_MARK.fullmatch(first):
+        return True
+    if bullet and first[:1].isupper() and sum(c.isalpha() for c in first) >= 2 and not BARE_MARK.fullmatch(first):
+        return True      # the mark printed as a lone square or bullet: "■ Haec moderatio ..."
+    # a mark run into its note's first word, "(1)Ex", but not "(juomodolibet":
+    # a "j" or ";" read as the closing bracket must end the WORD
+    prefix = NOTE_MARK.match(first)
+    rest = first[prefix.end():].lstrip("'\"`") if prefix else ""   # "(l)'Leg."
+    if prefix and first[:1] in "([<{" and prefix.group()[-1] in ")]}>" and rest[:1].isupper():
+        return True      # not "[)at." (a dating line's "Dat.")
+    if cue and first[:1] in "([<{" and len(first) <= 3:      # "(IJ Ex Regest." lost its closing bracket
+        return True
+    if first == "1.":       # also how a synopsis numbers its first item: needs editorial wording
+        return cue and len(tokens) > 1
+    if len(tokens) > 2 and tokens[1] in (".", ","):     # "1 . Ex Regest.": the mark's period set apart
+        return cue and BARE_MARK.fullmatch(first) is not None and any(c.isalpha() for c in tokens[2])
+    if len(tokens) < 2 or SECTION_NUMBER.fullmatch(tokens[1]) or not any(c.isalpha() for c in tokens[1]):
+        return False     # "8 2. Cum autem" is a section; a mark is followed by the note's words
+    if CUED_MARK.fullmatch(first):
+        return cue
+    return BARE_MARK.fullmatch(first) is not None and (cue or tokens[1][:1].isupper())
+
+CODE_OF = {role: code for code, role in ROLE_CODES.items()}
+CATALOG = "src/sources/papal-documents/bullarium-catalog.json"
+WITHDRAWALS = "src/sources/papal-documents/bullarium-active-withdrawals.json"
+GEOMETRY_MANIFEST = "src/sources/papal-documents/bullarium-geometry-manifest.json"
+GEOMETRY_FRAGMENT_MANIFEST = "src/sources/papal-documents/bullarium-geometry-fragment-manifest.json"
+MAPPING_SCHEMA = "triptych-bullarium-reading-order-unit-mapping/v1"
+
+
+class Hold(Exception):
+    """A page-level hold: the page keeps its raw OCR bytes and a stated reason."""
+
+    def __init__(self, reason, **detail):
+        super().__init__(reason)
+        self.reason, self.detail = reason, detail
+
+
+def _yc(word):
+    return (word["source_bbox"][1] + word["source_bbox"][3]) / 2
+
+
+def _page_lines(words):
+    lines = {}
+    for word in words:
+        lines.setdefault(word["source_line_global_1"], []).append(word)
+    return [lines[key] for key in sorted(lines)]
+
+
+def _box(words):
+    return (min(w["source_bbox"][0] for w in words), min(w["source_bbox"][1] for w in words),
+            max(w["source_bbox"][2] for w in words), max(w["source_bbox"][3] for w in words))
+
+
+def _ntok(words):
+    return sum(len(w["value"].split()) for w in words)
+
+
+def _nchars(word):
+    return len("".join(word["value"].split()))
+
+
+# OCR renderings of marginal glyphs run on after a body word: quotes, carets, low quotes.
+# (A square or a trade-mark sign is more often an ink blot than a marginal glyph.)
+STRADDLE_JUNK = "'\"`^*°„"
+
+
+def _junk_run_on(value):
+    """A body WORD that carries marginal glyphs after its letters ('operis""\'', 'aliquot^^se,',
+    'pro-„em,', 'eis-mo'), not an ordinary word or a line-end hyphenation ('Iu-')."""
+    core = value.strip().rstrip(".,;:")
+    if sum(c.isalpha() for c in core) < 2 or core.endswith("-"):
+        return False
+    tail = len(core) - len(core.rstrip(STRADDLE_JUNK))
+    return (tail >= 2 or any(c in core for c in "^°«»")
+            or re.search(r"[-„][a-zA-Z„,.]*[„,][a-zA-Z„,.]*$", core) is not None
+            or re.search(r"[a-zA-Z]-[a-z]{1,6}$", core) is not None)     # "eis-" and the margin's "mo"
+
+
+def _garbled(value):
+    """OCR of two printed rows merged into one WORD shows glyphs no Latin word has."""
+    return any(not (c.isalnum() or c in ".,;:-") for c in value.strip())
+
+
+def _theil_sen(points):
+    slopes = [(xj - xi) / (yj - yi) for i, (yi, xi) in enumerate(points) for yj, xj in points[i + 1:] if yj != yi]
+    slope = statistics.median(slopes) if slopes else 0.0
+    return statistics.median(x - slope * y for y, x in points), slope
+
+
+def _at(edge, y):
+    return edge["a"] + edge["b"] * y
+
+
+def _candidate_lines(page, p):
+    width, height = page["dimensions"]
+    out = []
+    for words in _page_lines(page["words"]):
+        x0, y0, x1, y1 = _box(words)
+        if (_ntok(words) >= p["line_min_tokens"] and p["line_band_y_H"][0] * height < (y0 + y1) / 2 < p["line_band_y_H"][1] * height
+                and y1 - y0 < p["line_max_height_H"] * height and x1 - x0 > p["line_min_width_W"] * width):
+            out.append((words, x0, y0, x1, y1))
+    return out
+
+
+def volume_measure(pages, p=PROPOSAL_PARAMS):
+    """The printed measure: modal width of single-column body lines over the volume."""
+    widths, bin_px = [], None
+    for page in pages:
+        if not page["words"]:
+            continue
+        width = page["dimensions"][0]
+        bin_px = bin_px or p["measure_bin_W"] * width
+        widths += [c[3] - c[1] for c in _candidate_lines(page, p) if c[3] - c[1] < 0.5 * width]
+    _require(widths, "no body lines from which to measure the column width")
+    bins = Counter(int(w // bin_px) for w in widths)
+    best = max(sorted(bins), key=lambda k: (bins[k - 1] + bins[k] + bins[k + 1], -k))
+    near = [w for w in widths if abs(w - (best + 0.5) * bin_px) <= 2 * bin_px]
+    return round(statistics.median(near), 1)
+
+
+def _fit_right(points, measure, p, name):
+    if len(points) < p["edge_min_support"]:
+        raise Hold("too-few-lines", edge=name, support=len(points))
+    bin_px = p["edge_bin_M"] * measure
+    bins = Counter(int(x // bin_px) for _, x in points)
+    best = max(sorted(bins), key=lambda k: (bins[k - 1] + bins[k] + bins[k + 1], -k))
+    near = [(y, x) for y, x in points if abs(x - (best + 0.5) * bin_px) <= p["edge_window_M"] * measure]
+    if len(near) < p["edge_min_support"]:
+        raise Hold("edge-no-dominant-cluster", edge=name, support=len(near))
+    a, b = _theil_sen(near)
+    inliers = [(y, x) for y, x in points if abs(x - (a + b * y)) <= p["edge_inlier_M"] * measure]
+    if len(inliers) < p["edge_min_support"]:
+        raise Hold("edge-insufficient-inliers", edge=name, support=len(inliers))
+    a, b = _theil_sen(inliers)
+    mad = statistics.median(abs(x - (a + b * y)) for y, x in inliers)
+    if abs(b) > p["edge_max_slope"] or mad > p["edge_max_mad_M"] * measure:
+        raise Hold("edge-unstable", edge=name, slope=round(b, 5), mad=round(mad, 2))
+    return {"a": round(a, 3), "b": round(b, 6), "support": len(inliers), "mad": round(mad, 3)}
+
+
+def _derive_left(right, starts, measure, p, name):
+    window = p["left_confirm_window_M"] * measure
+    confirm = [(y, x) for y, x in starts if abs(x - (_at(right, y) - measure)) <= window]
+    if len(confirm) < p["left_confirm_min"]:
+        # No line starts at the edge (a page of hanging-indent summary): use the
+        # measure itself; classification widens its dead zone accordingly.
+        return {"a": round(right["a"] - measure, 3), "b": right["b"], "support": len(confirm), "mad": None,
+                "measure_px": measure, "confirmed": False}
+    offset = statistics.median(_at(right, y) - x for y, x in confirm)
+    mad = statistics.median(abs(_at(right, y) - x - offset) for y, x in confirm)
+    if mad > p["edge_max_mad_M"] * measure:
+        raise Hold("edge-unstable", edge=name, mad=round(mad, 2))
+    return {"a": round(right["a"] - offset, 3), "b": right["b"], "support": len(confirm), "mad": round(mad, 3),
+            "measure_px": round(offset, 2), "confirmed": True}
+
+
+def measure_page(page, measure, p=PROPOSAL_PARAMS):
+    """Column envelopes of one two-column page, or Hold."""
+    width, height = page["dimensions"]
+    if page["word_count"] < p["min_page_words"]:
+        raise Hold("too-few-words", words=page["word_count"])
+    cands = _candidate_lines(page, p)
+    step = max(1, int(round(p["gutter_step_W"] * width)))
+    lo, hi = int(p["gutter_search_W"][0] * width), int(p["gutter_search_W"][1] * width)
+    scored = []
+    for x in range(lo, hi, step):
+        cross = sum(1 for c in cands if c[1] < x < c[3])
+        left, right = sum(1 for c in cands if c[3] <= x), sum(1 for c in cands if c[1] >= x)
+        scored.append(((cross, -min(left, right)), x, left, right, cross))
+    if not scored:
+        raise Hold("no-candidate-lines")
+    key = min(s[0] for s in scored)
+    xs = [s[1] for s in scored if s[0] == key]
+    _, _, n_left, n_right, cross = next(s for s in scored if s[0] == key)
+    gutter = (min(xs) + max(xs)) / 2
+    if cross > p["gutter_max_crossings"]:
+        raise Hold("gutter-crossed", crossings=cross)
+    if min(n_left, n_right) < p["min_lines_per_column"]:
+        raise Hold("not-two-column", left_lines=n_left, right_lines=n_right)
+    edges = {}
+    for side, rows in (("L", [c for c in cands if c[3] <= gutter]), ("R", [c for c in cands if c[1] >= gutter])):
+        right = _fit_right([((c[2] + c[4]) / 2, c[3]) for c in rows], measure, p, side + "1")
+        edges[side + "0"] = _derive_left(right, [((c[2] + c[4]) / 2, c[1]) for c in rows], measure, p, side + "0")
+        edges[side + "1"] = right
+    middle = height / 2
+    if _at(edges["R0"], middle) - _at(edges["L1"], middle) < 2 * p["gutter_tol_M"] * measure:
+        raise Hold("gutter-too-narrow")
+    pitches = []
+    for side in ("L", "R"):
+        ys = sorted((c[2] + c[4]) / 2 for c in cands if (c[3] <= gutter if side == "L" else c[1] >= gutter))
+        pitches += [b - a for a, b in zip(ys, ys[1:]) if b - a > 5]
+    return {"W": width, "H": height, "gutter_x": gutter, "gutter_crossings": cross, "edges": edges,
+            "pitch": round(statistics.median(pitches), 2) if pitches else round(measure / 15, 2),
+            "line_height": statistics.median(c[4] - c[2] for c in cands), "measure_px": measure,
+            "candidate_lines": [n_left, n_right]}
+
+
+def _group_rows(fragments, tolerance):
+    rows = []
+    for fragment in sorted(fragments, key=lambda f: (f[0], f[1])):
+        if rows and abs(fragment[0] - rows[-1]["yc"]) <= tolerance:
+            rows[-1]["frags"].append(fragment)
+            rows[-1]["yc"] = statistics.median(f[0] for f in rows[-1]["frags"])
+        else:
+            rows.append({"yc": fragment[0], "frags": [fragment]})
+    out = []
+    for row in rows:
+        words = [w for f in sorted(row["frags"], key=lambda f: f[1]) for w in f[2]]
+        out.append({"yc": row["yc"], "words": words, "x0": min(w["source_bbox"][0] for w in words),
+                    "x1": max(w["source_bbox"][2] for w in words)})
+    return out
+
+
+def _running_head(page, m, p):
+    """WORDs above the text top that form the running head (and specks above it)."""
+    E, gutter, pitch, height, measure = m["edges"], m["gutter_x"], m["pitch"], m["H"], m["measure_px"]
+    tol = p["full_line_tol_M"] * measure
+    tops = []
+    for line in _page_lines(page["words"]):
+        y = statistics.median(_yc(w) for w in line)
+        for a, z in (("L0", "L1"), ("R0", "R1")):
+            e0, e1 = _at(E[a], y), _at(E[z], y)
+            words = [w for w in line if e0 - tol <= w["source_bbox"][0] <= e1 + tol]
+            if _ntok(words) < p["text_top_min_tokens"]:
+                continue
+            starts = abs(words[0]["source_bbox"][0] - e0) <= tol
+            ends = words[-1] is line[-1] and abs(words[-1]["source_bbox"][2] - e1) <= tol
+            tall = (max(w["source_bbox"][3] for w in words) - min(w["source_bbox"][1] for w in words)
+                    >= p["text_top_min_height"] * m["line_height"])
+            wide = words[-1]["source_bbox"][0] - words[0]["source_bbox"][0] >= p["text_top_min_width_M"] * measure
+            if (starts or ends) and tall and wide:
+                tops.append(y)
+    limit = min((min(tops) - p["header_row_tol_P"] * pitch) if tops else float("inf"), p["header_band_H"] * height)
+    clusters = []
+    for word in sorted(page["words"], key=_yc):
+        if _yc(word) >= limit:
+            break
+        if clusters and _yc(word) - clusters[-1][0] <= p["header_row_tol_P"] * pitch:
+            clusters[-1][1].append(word)
+        else:
+            clusters.append([_yc(word), [word]])
+    for k, (y, words) in enumerate(clusters):
+        centres = [(w["source_bbox"][0] + w["source_bbox"][2]) / 2 for w in words]
+        both = min(centres) < gutter < max(centres)
+        isolated = k == len(clusters) - 1 and tops and min(tops) - y >= p["header_isolation_P"] * pitch
+        if both or isolated:
+            return {w["source_word_global_1"] for _, ws in clusters[:k + 1] for w in ws}
+        if _ntok(words) > 2:
+            break
+    return set()
+
+
+def propose_page(page, m, p=PROPOSAL_PARAMS):
+    """Classify every WORD of a measured page and return its explicit rows, or Hold."""
+    E, gutter, pitch, height, measure = m["edges"], m["gutter_x"], m["pitch"], m["H"], m["measure_px"]
+    px = {key[:-2]: value * measure for key, value in p.items() if key.endswith("_M")}
+    words = page["words"]
+    role, uncertain, inseparable, crossings = {}, [], [], []
+    header = _running_head(page, m, p)
+    remaining = [w for w in sorted(words, key=_yc) if w["source_word_global_1"] not in header]
+    footer = set()
+    if remaining and _yc(remaining[-1]) > p["footer_band_H"] * height:
+        bottom = _yc(remaining[-1])
+        row = [w for w in remaining if _yc(w) >= bottom - p["header_row_tol_P"] * pitch]
+        above = [w for w in remaining if _yc(w) < bottom - p["header_row_tol_P"] * pitch]
+        if above and (min(w["source_bbox"][1] for w in row) - max(w["source_bbox"][3] for w in above)
+                      >= p["footer_gap_P"] * pitch - m["line_height"]):
+            footer = {w["source_word_global_1"] for w in row}
+    for word in words:
+        wid = word["source_word_global_1"]
+        if wid in header or wid in footer:
+            role[wid] = "header" if wid in header else "footer"
+            continue
+        x0, x1, y = word["source_bbox"][0], word["source_bbox"][2], _yc(word)
+        L0, L1, R0, R1 = (_at(E[k], y) for k in ("L0", "L1", "R0", "R1"))
+        widen_l = 0 if E["L0"]["confirmed"] else px["unconfirmed_extra"]
+        widen_r = 0 if E["R0"]["confirmed"] else px["unconfirmed_extra"]
+        if x0 <= L0 - px["left_margin_tol"] - widen_l:
+            role[wid] = "margin-left"
+        elif x0 < L0 - px["left_body_tol"]:
+            uncertain.append((wid, "left-edge-dead-zone"))
+        elif x0 <= L1 + px["gutter_tol"]:
+            role[wid] = "body-left"
+        elif x0 < R0 - px["right_start_tol"] - widen_r:
+            if _nchars(word) <= p["gutter_ocr_max_chars"]:
+                role[wid] = "gutter-ocr"
+            else:
+                uncertain.append((wid, "gutter-text"))
+        elif x0 <= R1 + px["right_body_tol"]:
+            role[wid] = "body-right"
+        elif x0 < R1 + px["right_margin_tol"]:
+            uncertain.append((wid, "right-edge-dead-zone"))
+        else:
+            role[wid] = "margin-right"
+        if len(word["value"].split()) > 1:
+            for name, edge in (("outer-left", L0 - px["left_body_tol"]), ("gutter-left", L1 + px["gutter_tol"]),
+                               ("gutter-right", R0 - px["gutter_tol"]), ("outer-right", R1 + px["right_body_tol"])):
+                if x0 < edge < x1:
+                    crossings.append((word, name))
+    lines = _page_lines(words)
+    line_of = {w["source_word_global_1"]: line for line in lines for w in line}
+    for word, name in crossings:
+        wid = word["source_word_global_1"]
+        line = line_of[wid]
+        k = line.index(word)
+        following = role.get(line[k + 1]["source_word_global_1"]) if k + 1 < len(line) else None
+        if name == "outer-left" and following == "body-left":
+            role[wid] = "body-left"
+            inseparable.append((wid, "multitoken-WORD-margin-and-body-start"))
+        elif name == "outer-right" and role.get(wid) == "body-right":
+            inseparable.append((wid, "multitoken-WORD-body-and-right-margin"))
+        else:
+            uncertain.append((wid, "multitoken-WORD-crosses-" + name))
+    # A WORD box crossing the outer body edge is usually padding (into the inter-line gap,
+    # a paragraph indent, blank margin or a marginal block's indented first line).  It
+    # holds text from both sides only with glyph evidence, and the WORD is then recorded
+    # as inseparable (its unit held) without changing its role:
+    # - a margin WORD in body-size type, its OCR LINE resuming body WORDs within a few
+    #   characters of the box's end, the box covering more than a paragraph indent's
+    #   width of the body's start alone -- beyond the widest indent, or with OCR of
+    #   merged rows (a box taller than body type, or glyphs no Latin word has);
+    # - a body WORD whose box runs past the edge into a marginal row printed on its line
+    #   (beyond where the marginal block's other rows start), with marginal glyphs read
+    #   after its letters or a box spanning the whole column ("Tmodj": a line's first
+    #   letter and the margin's glyphs in one WORD).
+    body_words = [w for w in words if str(role.get(w["source_word_global_1"])).startswith("body")]
+    body_h = statistics.median(w["source_bbox"][3] - w["source_bbox"][1] for w in body_words) if body_words else 0
+    # each marginal OCR LINE with lettered text: its start (first marginal WORD) and lettered box
+    margin_rows, margin_any = [], []
+    for line in lines:
+        marginal = [w for w in line if role.get(w["source_word_global_1"]) == "margin-right"]
+        lettered = [w for w in marginal if sum(c.isalpha() for c in w["value"]) >= 2]
+        margin_rows += [(marginal[0]["source_bbox"][0], lettered[0]["source_bbox"])] if lettered else []
+        margin_any += [w["source_bbox"] for w in marginal]
+    for line in lines:
+        for i, word in enumerate(line):
+            wid, r, y = word["source_word_global_1"], role.get(word["source_word_global_1"]), _yc(word)
+            last = i == len(line) - 1
+            x0, top, x1, bottom = word["source_bbox"]
+            if (r == "margin-left" and not last and bottom - top >= p["straddle_height_ratio"] * body_h
+                    and sum(c.isalpha() for c in word["value"]) >= 2):
+                L0 = _at(E["L0"], y)
+                # the body row printed at this WORD's y-centre: lettered WORDs of its LINE spanning
+                # that height in body type -- a word without ascenders ("unum") is shorter, a speck
+                # strewn across an inter-line gap ("i-i") is short and nearly letterless
+                def body_glyphs(w):
+                    letters, h = sum(c.isalpha() for c in w["value"]), w["source_bbox"][3] - w["source_bbox"][1]
+                    return (letters >= 2 and h >= p["straddle_row_height_ratio"] * body_h
+                            and (letters >= 3 or h >= p["straddle_height_ratio"] * body_h))
+                row = [w["source_bbox"] for w in line[i + 1:] if str(role.get(w["source_word_global_1"])).startswith("body")
+                       and body_glyphs(w) and w["source_bbox"][1] <= y <= w["source_bbox"][3]]
+                start = min((b[0] for b in row), default=x1)
+                reach = min(x1, start) - L0
+                if (row and start - x1 <= px["straddle_resume"] and reach > px["straddle"]
+                        and (reach > px["straddle_indent"] or bottom - top > p["straddle_merged_ratio"] * body_h
+                             or _garbled(word["value"]))):
+                    inseparable.append((wid, "margin-WORD-box-holds-body-start"))
+            if (r == "body-right" and not last and role.get(line[i + 1]["source_word_global_1"]) == "margin-right"
+                    and x1 > _at(E["R1"], y) + px["last_word_hang"]):
+                beside = lambda b: top <= (b[1] + b[3]) / 2 <= bottom
+                others = [x for x, b in margin_rows if not beside(b) and abs(_yc({"source_bbox": b}) - y) <= 3 * pitch]
+                past = bool(others) and x1 > statistics.median(others) + px["margin_body_min_gap"]
+                # junk after the letters, beside the marginal row it came from (often read as specks);
+                # a whole-measure box only beside a lettered marginal row
+                # a whole-measure box must also leave a gap of at least a marginal glyph between the
+                # block's edge and where the marginal row beside it is read to start
+                swallowed = bool(others) and x1 > statistics.median(others) + px["last_word_hang"]
+                if past and (_junk_run_on(word["value"]) and any(beside(b) for b in margin_any)
+                             or swallowed and sum(c.isalpha() for c in word["value"]) >= 2 and x1 - x0 >= measure
+                             and any(beside(b) and b[0] >= x1 - px["margin_body_min_gap"] for _, b in margin_rows)):
+                    inseparable.append((wid, "body-WORD-box-runs-into-right-margin"))
+            following = None if last else role.get(line[i + 1]["source_word_global_1"])
+            if last and r == "body-right" and word["source_bbox"][2] > _at(E["R1"], y) + px["last_word_hang"]:
+                inseparable.append((wid, "line-final-body-WORD-overhangs-right-edge"))
+            if last and r == "body-left" and word["source_bbox"][2] > _at(E["L1"], y) + px["last_word_hang"]:
+                uncertain.append((wid, "line-final-body-WORD-overhangs-gutter"))
+            if last and r == "margin-left" and word["source_bbox"][2] > _at(E["L0"], y) + px["left_body_tol"]:
+                inseparable.append((wid, "line-final-margin-WORD-reaches-body"))
+            # A WORD of n characters is at least n * min_char wide: a lower
+            # bound already crossing an envelope proves glyphs on both sides.
+            if r == "margin-left" and (last or following == "body-left"):
+                if word["source_bbox"][0] + _nchars(word) * px["margin_min_char"] > _at(E["L0"], y) - px["margin_body_min_gap"]:
+                    if following == "body-left":
+                        role[wid] = "body-left"
+                        inseparable.append((wid, "margin-WORD-extent-enters-body-start"))
+                    else:
+                        uncertain.append((wid, "margin-WORD-extent-enters-body"))
+            if r == "body-right" and word["source_bbox"][0] + _nchars(word) * px["body_min_char"] > _at(E["R1"], y) + px["margin_body_min_gap"]:
+                inseparable.append((wid, "body-WORD-extent-enters-right-margin"))
+            if r == "body-left" and word["source_bbox"][0] + _nchars(word) * px["body_min_char"] > _at(E["L1"], y) + px["margin_body_min_gap"]:
+                uncertain.append((wid, "body-WORD-extent-enters-gutter"))
+            if r == "margin-left" and following == "body-left" and role.get(wid) == "margin-left":
+                body = [x for x in line[i + 1:] if role.get(x["source_word_global_1"]) == "body-left"]
+                if (body[0]["source_bbox"][0] > _at(E["L0"], y) + px["margin_absorb_indent"]
+                        and body[-1]["source_bbox"][2] >= _at(E["L1"], y) - px["full_line_tol"]):
+                    role[wid] = "body-left"     # the full-measure line's start lies inside this WORD
+                    inseparable.append((wid, "margin-WORD-absorbs-body-start"))
+        sides = [role.get(w["source_word_global_1"]) for w in line]
+        if "body-left" in sides and "body-right" in sides:
+            first = next(w for w in line if role.get(w["source_word_global_1"]) == "body-right")
+            r0 = _at(E["R0"], _yc(first))
+            if not r0 - px["gutter_tol"] <= first["source_bbox"][0] <= r0 + px["merged_line_indent"]:
+                uncertain.append((first["source_word_global_1"], "spanning-row-not-two-column-lines"))
+    if uncertain:
+        raise Hold("uncertain-WORD-role", WORDs=sorted(set(uncertain)))
+    zones = defaultdict(list)
+    for line in lines:
+        groups = defaultdict(list)
+        for word in line:
+            groups[role[word["source_word_global_1"]]].append(word)
+        for r, fragment in groups.items():
+            zones[r].append((statistics.median(_yc(w) for w in fragment), fragment[0]["source_bbox"][0], fragment))
+    rows = {r: _group_rows(f, (p["margin_row_merge_P"] if r.startswith("margin") else p["row_merge_P"]) * pitch)
+            for r, f in zones.items()}
+    # Page-foot footnotes.  A note block is the tail of a column from a row
+    # that opens with a reference mark -- (1), (t), (I) ... -- in the lower
+    # half of the column, below at least note_gap_P of a line pitch, with the tail set in
+    # smaller type than the body above it (fewer pixels per character, or
+    # shorter WORD boxes).  A right-column tail without a mark
+    # is a note's continuation only when the left column of the same page
+    # ends in marked notes, the gap above it is wide, it has at least three
+    # small-type rows and its first row starts at the column edge.  Notes are
+    # emitted at the page break, so no body paragraph runs into one.
+    notes_found, note_suspects, marked_left = [], [], False
+    def advance(row):
+        """Pixels per character: small type sets more characters in the same width."""
+        return (row["x1"] - row["x0"]) / max(1, len(" ".join(w["value"].strip() for w in row["words"])))
+
+    def word_height(row):
+        """WORD box height; bracketed WORDs (reference marks) are tall in any size."""
+        plain = [w for w in row["words"] if not set(w["value"]) & set("()[]")] or row["words"]
+        return statistics.median(w["source_bbox"][3] - w["source_bbox"][1] for w in plain)
+
+    def smaller(tail, above):
+        """Either size measure shows the tail set in smaller type than the body above."""
+        return any(statistics.median(f(r) for r in tail) <= ratio * statistics.median(f(r) for r in above)
+                   for f, ratio in ((advance, p["note_advance_ratio"]), (word_height, p["note_height_ratio"])))
+    for column, side, e0 in (("body-left", "notes-left", E["L0"]), ("body-right", "notes-right", E["R0"])):
+        body = rows.get(column, [])
+        start, floor = max(2, len(body) - p["note_max_rows"]), len(body) - 1
+        while True:
+            marked, continued, suspect, area = None, None, None, None
+            # a note opens in the lower part of the column above the notes found so far
+            lower = body[0]["yc"] + p["note_band_C"] * (body[floor]["yc"] - body[0]["yc"]) if body else 0
+            for i in range(start, len(body)):
+                gap = body[i]["yc"] - body[i - 1]["yc"]
+                if gap < p["note_tight_gap_P"] * pitch or body[i]["yc"] < lower:
+                    continue
+                wide = gap >= p["note_gap_P"] * pitch
+                tail, above = body[i:], body[:i]
+                small = smaller(tail, above)
+                # editorial wording in the candidate row itself, or in the row after a mark
+                text = lambda r: " ".join(w["value"].strip() for w in r["words"])
+                cue_here = NOTE_CUE.search(text(body[i])) is not None
+                # editorial wording in the next row, or a few rows down in small type,
+                # corroborates a mark (a note's sigla usually close it), but only
+                # within this note: the rows below up to the next marked row
+                own = []
+                for r in body[i + 2:i + 1 + p["note_cue_rows"]]:
+                    if _note_mark(r["words"]):
+                        break
+                    own.append(r)
+                cue_tail = (i + 1 < len(body) and NOTE_CUE.search(text(body[i + 1])) is not None
+                            or small and any(NOTE_CUE.search(text(r)) for r in own))
+                mark = _note_mark(body[i]["words"], cue_here or cue_tail)
+                cue = cue_here or (mark and cue_tail)
+                first = body[i]["words"][0]["value"].strip().lstrip("■•●,")
+                if area is None and wide and small and gap >= p["note_suspect_gap_P"] * pitch:
+                    area = i         # small type below a rule's space: a possible note area
+                    if len(first) <= 2 or first[:1] in "([<{":
+                        suspect = i  # opening on a short token, perhaps a garbled mark
+                # A note: a mark in small type, a mark with editorial wording, or small
+                # type with editorial wording (its mark lost entirely).  Below body
+                # leading only a small-type mark with editorial wording counts.
+                # editorial wording alone must also start below a note rule's space
+                cue_start = cue and gap >= p["note_suspect_gap_P"] * pitch
+                if wide and (small and (mark or cue_start) or mark and cue) or small and mark and cue:
+                    marked = marked if marked is not None else i
+                elif (wide and small and column == "body-right" and marked_left and gap >= p["note_strong_gap_P"] * pitch
+                      and len(tail) >= p["note_strong_min_rows"]
+                      and abs(body[i]["x0"] - _at(e0, body[i]["yc"])) <= px["full_line_tol"]
+                      and (continued is None or gap > continued[0])):
+                    continued = (gap, i)
+            # A note area taller than the window: its first marked row opens the
+            # window, or only small-type note lines lie above that row in the
+            # window -- look further up the column with the same tests.
+            if (marked is not None and start > 2
+                    and (marked == start or smaller(body[start:marked], body[:start]))):
+                start, floor = max(2, start - p["note_max_rows"]), marked
+                continue
+            break
+        split = marked if marked is not None else (continued[1] if continued else None)
+        if split is None and area is not None and any(_note_mark(r["words"]) for r in body[area + 1:]):
+            # A note continued from the previous page heads the note area;
+            # the page's own marked notes follow it at note leading.
+            split = area
+        elif (split is not None and area is not None and area < split and split == marked
+              and abs(body[area]["x0"] - _at(e0, body[area]["yc"])) <= px["full_line_tol"]
+              and all(body[k]["yc"] - body[k - 1]["yc"] < p["note_continuation_gap_P"] * pitch
+                      for k in range(area + 1, split + 1))
+              and smaller(body[area:split], body[:area])
+              and NOTE_CUE.search(" ".join(w["value"] for w in body[split - 1]["words"]))):
+            # ... and when that continuation -- a run-on line at the column edge,
+            # at note leading down to the marked notes -- closes with editorial
+            # wording it belongs to the note block too, not to the body above.
+            # (A synopsis closing with the editors' sigla sits below its heading
+            # and above the notes' rule space, so it fails the leading test.)
+            split = area
+        if split is None and suspect is not None:
+            # small type below a wide gap at a column foot, but no reference
+            # mark: listed for review, never split by guess
+            note_suspects.append({"side": side, "first_WORD": body[suspect]["words"][0]["source_word_global_1"],
+                                  "rows": len(body) - suspect})
+        if split is not None:
+            rows[side], rows[column] = body[split:], body[:split]
+            marked_left = marked_left or (column == "body-left" and marked is not None)
+            notes_found.append({"side": side, "rows": len(rows[side]), "marked": split == marked,
+                                "first_WORD": rows[side][0]["words"][0]["source_word_global_1"]})
+    # A printed body row the OCR never read leaves about two line pitches between a full
+    # justified row whose sentence runs on and the column-edge row that continues it
+    # ("eccle-" ... "sub invocatione"): the text is lost, so the page is held.
+    for column, e0, e1 in (("body-left", E["L0"], E["L1"]), ("body-right", E["R0"], E["R1"])):
+        body = rows.get(column, [])
+        for above, below in zip(body, body[1:]):
+            gap = below["yc"] - above["yc"]
+            last = next((w["value"].strip() for w in reversed(above["words"]) if any(c.isalnum() for c in w["value"])), "")
+            if (p["missing_row_gap_P"][0] * pitch <= gap <= p["missing_row_gap_P"][1] * pitch
+                    and above["x1"] >= _at(e1, above["yc"]) - px["full_line_tol"]
+                    and abs(below["x0"] - _at(e0, below["yc"])) <= px["full_line_tol"]
+                    and (last.endswith("-") or last[-1:].isalnum() or last.endswith(","))):
+                raise Hold("body-row-without-WORDs", WORDs=[above["words"][-1]["source_word_global_1"],
+                                                            below["words"][0]["source_word_global_1"]])
+    para_start, previous = {}, None
+    for column in ("body-left", "body-right"):
+        e0 = E["L0"] if column == "body-left" else E["R0"]
+        for i, row in enumerate(rows.get(column, [])):
+            if previous is None:
+                para_start[(column, i)] = True
+            else:
+                prior, prior_column = previous
+                e1 = E["L1"] if prior_column == "body-left" else E["R1"]
+                indented = (len(row["words"][0]["value"].split()) == 1
+                            and row["x0"] > _at(e0, row["yc"]) + px["paragraph_indent"])
+                short = prior["x1"] < _at(e1, prior["yc"]) - px["paragraph_short"]
+                hyphen = prior["words"][-1]["value"].rstrip().endswith("-")
+                para_start[(column, i)] = (indented or short) and not hyphen
+            previous = (row, column)
+    anchors, tails, block_records = defaultdict(list), defaultdict(list), []
+    for side, column in (("margin-left", "body-left"), ("margin-right", "body-right")):
+        body, margin = rows.get(column, []), rows.get(side, [])
+        starts = [body[i]["yc"] for i in range(len(body)) if para_start.get((column, i))]
+        gaps = [b["yc"] - a["yc"] for a, b in zip(margin, margin[1:]) if b["yc"] - a["yc"] < pitch]
+        small = (p["margin_block_gap_factor"] * statistics.median(gaps)) if len(gaps) >= 2 else p["margin_block_gap_default_P"] * pitch
+        blocks = []
+        for row in margin:
+            if blocks:
+                last_y = blocks[-1][-1]["yc"]
+                section = any(last_y + 0.6 * pitch < s <= row["yc"] + 0.6 * pitch for s in starts)
+                if row["yc"] - last_y <= small or (row["yc"] - last_y <= p["margin_block_max_gap_P"] * pitch and not section):
+                    blocks[-1].append(row)
+                    continue
+            blocks.append([row])
+        for block in blocks:
+            y = block[0]["yc"]
+            kind = "column-end"
+            if body:
+                index = min(range(len(body)), key=lambda i: (abs(body[i]["yc"] - y), i))
+                kind = "nearest-row"
+                order = [(0, "paragraph-start")]
+                if index + 1 < len(body) and abs(body[index + 1]["yc"] - y) <= pitch:
+                    order.append((-1, "paragraph-start-below"))
+                order += [(k, "paragraph-start-above") for k in range(1, p["margin_anchor_back_rows"] + 1)]
+                for back, label in order:
+                    if 0 <= index - back < len(body) and para_start.get((column, index - back)):
+                        index, kind = index - back, label
+                        break
+                anchors[(column, index)].append(block)
+            else:
+                index = None
+                tails[column].append(block)
+            block_records.append({"side": side, "anchor_row": index, "anchor_kind": kind, "rows": len(block),
+                                  "first_WORD": block[0]["words"][0]["source_word_global_1"]})
+    plan = []
+
+    def emit(r, brk, ws):
+        plan.append([CODE_OF[r], brk, [w["source_word_global_1"] for w in ws]])
+
+    for row in rows.get("header", []):
+        emit("header", "l" if plan else "p", row["words"])
+    for column, side in (("body-left", "margin-left"), ("body-right", "margin-right")):
+        for i, row in enumerate(rows.get(column, [])):
+            for block in anchors.get((column, i), []):
+                for j, mrow in enumerate(block):
+                    emit(side, "l" if j else "p", mrow["words"])
+            emit(column, "p" if para_start[(column, i)] or (plan and plan[-1][0] in {"ML", "MR"}) else "l", row["words"])
+        for block in tails.get(column, []):
+            for j, mrow in enumerate(block):
+                emit(side, "l" if j else "p", mrow["words"])
+    for side in ("notes-left", "notes-right"):      # at the page break, never inside a paragraph
+        for j, row in enumerate(rows.get(side, [])):
+            marked = _note_mark(row["words"])
+            emit(side, "p" if j == 0 or marked else "l", row["words"])
+    for r in ("gutter-ocr", "footer"):
+        for row in rows.get(r, []):
+            emit(r, "p", row["words"])
+    planned = [wid for _, _, ids in plan for wid in ids]
+    _require(sorted(planned) == sorted(w["source_word_global_1"] for w in words) and len(set(planned)) == len(planned),
+             "internal proposal does not conserve WORDs")
+    seen, recorded = set(), []
+    for wid, reason in inseparable:
+        if wid not in seen:
+            seen.add(wid)
+            recorded.append([wid, reason])
+    counts = Counter()
+    for code, _, ids in plan:
+        counts[ROLE_CODES[code]] += len(ids)
+    return {"rows": [[code, brk, _runs(ids)] for code, brk, ids in plan], "role_WORD_counts": dict(sorted(counts.items())),
+            "inseparable_WORDs": sorted(recorded), "margin_blocks": block_records,
+            "header_rows": [_runs(ids) for code, _, ids in plan if code == "H"], "notes_blocks": notes_found,
+            "note_suspects": note_suspects,
+            "paragraph_breaks": sum(1 for key, value in para_start.items() if value) - (1 if para_start else 0)}
+
+
+def _runs(ids):
+    out = []
+    for wid in ids:
+        if out and out[-1][1] + 1 == wid:
+            out[-1][1] = wid
+        else:
+            out.append([wid, wid])
+    return out
+
+
+def _input_map(root, path):
+    mapped = json.loads(_path(root, path, True).read_bytes(), object_pairs_hook=_object_pairs, parse_constant=_constant)
+    _fields(mapped, {"schema", "inputs"}, name="input map")
+    _require(mapped["schema"] == "triptych-bullarium-geometry-input-map/v1" and isinstance(mapped["inputs"], dict),
+             "unknown runtime input-map schema")
+    return mapped["inputs"]
+
+
+def _record_pin(root, record_path):
+    record = tomllib.loads(_path(root, record_path, True).read_text())
+    _require(record.get("record_type") == "artifact" and SHA.fullmatch(str(record.get("sha256", ""))),
+             "source record is not a hashed artifact record")
+    pin = {key: record[key] for key in ("sha256", "byte_size")}
+    pin["artifact_id"] = record["id"]
+    if record.get("storage") == "tracked" and record.get("path"):
+        pin["path"] = record["path"]
+    if "source_url" in record:
+        pin["source_url"] = record["source_url"]
+    return pin
+
+
+def _source_records(root, volume, txt_record, xml_record):
+    if volume is not None:
+        _require(txt_record is None and xml_record is None, "choose --volume or explicit source records, not both")
+        catalog = json.loads(_path(root, CATALOG, True).read_bytes())
+        matches = [v for v in catalog["volumes"] if str(v["volume"]) == str(volume)]
+        _require(len(matches) == 1, "volume is absent from the Bullarium catalog")
+        artifacts = matches[0]["container"]["artifacts"]
+        return artifacts["ocr"]["manifest"], artifacts["xml"]["manifest"], matches[0]["volume"]
+    _require(txt_record and xml_record, "propose requires --volume or both --source-txt-record and --source-xml-record")
+    return txt_record, xml_record, None
+
+
+def propose(root, out_dir, *, volume=None, source_txt_record=None, source_xml_record=None, input_map=None):
+    """Write recipe.json (v2) and running-heads.tsv under scratch/build; never source records."""
+    root = Path(root).resolve()
+    out = _destination(root, out_dir)
+    txt_record, xml_record, volume_key = _source_records(root, volume, source_txt_record, source_xml_record)
+    pins = {"source_txt": _record_pin(root, txt_record), "source_xml": _record_pin(root, xml_record)}
+    inputs = _input_map(root, input_map) if input_map else {}
+    locations = {pin["artifact_id"]: inputs[pin["artifact_id"]] for pin in pins.values() if pin["artifact_id"] in inputs}
+    frozen = {}
+    raw, xml = (_pin(root, pins[name], frozen, locations) for name in ("source_txt", "source_xml"))
+
+    class _All:
+        def __contains__(self, leaf):
+            return True
+
+    pages, count = _xml_pages(xml, raw, _tokens(raw), _All())
+    measure = volume_measure(pages)
+    entries, statuses = [], Counter()
+    heads, suspects = [], []
+    for page in pages:
+        entry = {"leaf": page["leaf"], "object_ordinal_1": page["artifact_page"],
+                 "source_lf_range_1": page["source_lf_range_1"]}
+        if not page["word_count"]:
+            entry["status"] = "empty"
+        else:
+            try:
+                m = measure_page(page, measure)
+                result = propose_page(page, m)
+            except Hold as hold:
+                entry.update(status="held", hold={"reason": hold.reason, "detail": json.loads(json.dumps(hold.detail))})
+            else:
+                entry.update(status="reordered", measurements=m, **result)
+        statuses[entry["status"]] += 1
+        entries.append(entry)
+        values = {w["source_word_global_1"]: w["value"] for w in page["words"]}
+        if entry["status"] == "reordered":
+            head = " | ".join(" ".join(values[i].strip() for a, z in row for i in range(a, z + 1)) for row in entry["header_rows"])
+        else:
+            head = "(page " + entry["status"] + ")"
+        heads.append(f"{page['leaf']}\t{entry['status']}\t{head}")
+        for suspect in entry.get("note_suspects", []):
+            row = next(r for r in entry["rows"] if any(a <= suspect["first_WORD"] <= z for a, z in r[2]))
+            suspects.append(f"{page['leaf']}\t{suspect['side']}\t{suspect['rows']}\t"
+                            + " ".join(values[i].strip() for a, z in row[2] for i in range(a, z + 1)))
+    # A page sharing a raw LF line with its neighbour cannot be replaced by an
+    # LF-enclosed span; the replay would refuse it, so it is held here.
+    spans = [(i, e["source_lf_range_1"]) for i, e in enumerate(entries) if e["source_lf_range_1"]]
+    for (i, a), (j, b) in zip(spans, spans[1:]):
+        if a[1] >= b[0]:
+            for k in (i, j):
+                if entries[k]["status"] == "reordered":
+                    statuses["reordered"] -= 1
+                    statuses["held"] += 1
+                    entries[k] = {key: entries[k][key] for key in ("leaf", "object_ordinal_1", "source_lf_range_1")}
+                    entries[k].update(status="held", hold={"reason": "raw-LF-line-shared-with-neighbouring-page", "detail": {}})
+    _require(all(_sha(path.read_bytes()) == digest for path, digest in frozen.items()), "pinned input changed during proposal")
+    recipe = {"schema": SCHEMA_V2, **pins, "pages": entries,
+              "proposal": {"algorithm": PROPOSAL_ALGORITHM, "params": PROPOSAL_PARAMS, "measure_px": measure,
+                           "source_WORDs": count, "page_status_counts": dict(sorted(statuses.items())),
+                           "proposer_sha256": _sha(Path(__file__).read_bytes()),
+                           "limits": "Coordinates, token counts and character counts only; no wording is read or changed. "
+                                     "Held pages keep raw OCR. Recorded inseparable WORDs mix body and marginal glyphs."}}
+    if volume_key is not None:
+        recipe["volume"] = volume_key
+    products = {"recipe.json": (json.dumps(recipe, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode(),
+                "running-heads.tsv": ("\n".join(heads) + "\n").encode(),
+                "note-suspects.tsv": ("\n".join(suspects) + "\n").encode()}
+    out.mkdir(parents=True, exist_ok=True)
+    for name, data in products.items():
+        path = out / name
+        _require(not path.exists() or path.read_bytes() == data, "refusing to overwrite a differing proposal: " + name)
+        if not path.exists():
+            path.write_bytes(data)
+    return {"recipe_sha256": _sha(products["recipe.json"]), "page_status_counts": recipe["proposal"]["page_status_counts"],
+            "measure_px": measure, "inseparable_WORDs": sum(len(e.get("inseparable_WORDs", [])) for e in entries),
+            "note_blocks": sum(len(e.get("notes_blocks", [])) for e in entries),
+            "note_suspects": len(suspects)}
+
+
+def _replay_products(root, replay_dir):
+    replay = _path(root, replay_dir)
+    validation = json.loads((replay / "validation.json").read_bytes())
+    for name, pin in validation["outputs"].items():
+        _require(_sha((replay / name).read_bytes()) == pin["sha256"], "replay product hash mismatch: " + name)
+    words = []
+    with gzip.open(replay / "changed-word-map.jsonl.gz", "rt", encoding="utf-8") as stream:
+        for line in stream:
+            words.append(json.loads(line))
+    pages = json.loads((replay / "page-map.json").read_bytes())["pages"]
+    return replay, validation, words, pages
+
+
+def map_units(root, recipe_path, replay_dir, out_path, *, catalog_path=CATALOG, withdrawals_path=WITHDRAWALS):
+    """Locate every catalog unit of the volume in the derivative through WORD identity."""
+    root = Path(root).resolve()
+    target = _destination(root, out_path)
+    recipe_file = _path(root, recipe_path)
+    recipe = json.loads(recipe_file.read_bytes())
+    _require(recipe.get("schema") == SCHEMA_V2 and "volume" in recipe, "map-units requires a Bullarium v2 recipe")
+    replay, validation, words, pages = _replay_products(root, replay_dir)
+    _require(validation.get("recipe_sha256") == _sha(recipe_file.read_bytes()), "replay was not built from this recipe")
+    catalog_bytes = _path(root, catalog_path, True).read_bytes()
+    withdrawals_bytes = _path(root, withdrawals_path, True).read_bytes()
+    catalog, withdrawals = json.loads(catalog_bytes), json.loads(withdrawals_bytes)
+    inseparable = {wid for page in recipe["pages"] for wid, _ in page.get("inseparable_WORDs", [])}
+    # rows that look like a note with a garbled mark but were not split
+    note_suspects = {s["first_WORD"] for page in recipe["pages"] for s in page.get("note_suspects", [])}
+    by_raw, by_out = defaultdict(list), defaultdict(list)
+    for word in words:
+        item = {"id": word["source_word_global_1"], "role": word["role"], "ol": word["output_lf_range_1"][0], "leaf": word["leaf"],
+                "sl": word["source_txt_physical_lines"]}
+        for n in word["source_txt_physical_lines"]:
+            by_raw[n].append(item)
+        by_out[item["ol"]].append(item)
+    for page in pages:   # unchanged pages: raw line n is output line n + offset
+        if page["serialization"] == "unchanged-raw-ocr" and page["source_lf_range_1"]:
+            delta = page["output_lf_range_1"][0] - page["source_lf_range_1"][0]
+            for n in range(page["source_lf_range_1"][0], page["source_lf_range_1"][1] + 1):
+                item = {"id": "raw-line-%d" % n, "role": "unchanged", "ol": n + delta, "leaf": page["leaf"], "sl": [n]}
+                by_raw[n].append(item)
+                by_out[n + delta].append(item)
+    body_roles, margin_roles = {"body-left", "body-right", "unchanged"}, {"margin-left", "margin-right"}
+    # Ownership of separately emitted apparatus (marginal summaries and
+    # page-foot notes) follows the same contiguity rule.
+    apparatus_roles = margin_roles | {"notes-left", "notes-right"}
+    affected = {a["unit_id"]: a for a in withdrawals["affected_units"]}
+    sha_txt = recipe["source_txt"]["sha256"]
+    out_lines = sorted(by_out)
+    results = []
+    for unit in (u for u in catalog["units"] if u["volume"] == recipe["volume"]):
+        active = unit.get("active_render_selection")
+        if isinstance(active, dict):
+            ranges, source_sha = active["physical_line_ranges"], active.get("sha256")
+        elif isinstance(unit.get("review"), dict) and unit["review"].get("physical_line_ranges"):
+            ranges, source_sha = unit["review"]["physical_line_ranges"], unit["review"].get("artifact_sha256", unit["artifact_sha256"])
+        else:
+            ranges, source_sha = unit["physical_line_ranges"], unit["artifact_sha256"]
+        row = {"unit_id": unit["id"], "status": unit["status"], "old_ranges": ranges,
+               "withdrawn_confirmed_fusion": unit["id"] in affected}
+        if source_sha != sha_txt:
+            results.append({**row, "category": "hold:selection-not-on-raw-ocr"})
+            continue
+        inside = lambda n: any(a <= n <= z for a, z in ranges)
+        selected = {}
+        for a, z in ranges:
+            for n in range(a, z + 1):
+                for item in by_raw.get(n, ()):
+                    selected[item["id"]] = item
+        partial = sorted(i["id"] for i in selected.values() if not all(inside(n) for n in i["sl"]))
+        body = [i for i in selected.values() if i["role"] in body_roles]
+        margin = [i for i in selected.values() if i["role"] in apparatus_roles]
+        if not body:
+            results.append({**row, "category": "hold:no-body-WORDs"})
+            continue
+        lo, hi = min(i["ol"] for i in body), max(i["ol"] for i in body)
+        foreign_body = foreign_margin = 0
+        furniture = set()
+        for n in out_lines:
+            if lo <= n <= hi:
+                for item in by_out[n]:
+                    if item["id"] in selected:
+                        continue
+                    if item["role"] in body_roles:
+                        foreign_body += 1
+                    elif item["role"] in apparatus_roles:
+                        foreign_margin += 1
+                    else:
+                        furniture.add(n)
+        lead = [i for i in margin if i["ol"] < lo and all(x["id"] in selected or x["role"] not in body_roles | apparatus_roles
+                                                          for n in out_lines if i["ol"] <= n < lo for x in by_out[n])]
+        trail = [i for i in margin if i["ol"] > hi and all(x["id"] in selected or x["role"] not in body_roles | apparatus_roles
+                                                            for n in out_lines if hi < n <= i["ol"] for x in by_out[n])]
+        escaped = [i for i in margin if not lo <= i["ol"] <= hi and i not in lead and i not in trail]
+        start = min([lo] + [i["ol"] for i in lead])
+        hi = max([hi] + [i["ol"] for i in trail])    # page-foot notes right after the unit's last body row
+        # The unit's own page-foot notes printed after the next unit begins are
+        # selected as an extra range when their lines hold nothing else.
+        note_lines = sorted({i["ol"] for i in escaped})
+        extra = []
+        if escaped and all(i["role"] in {"notes-left", "notes-right"} for i in escaped) and all(
+                x["id"] in selected for n in note_lines for x in by_out[n]):
+            for n in note_lines:
+                k = out_lines.index(n)
+                if extra and out_lines[k - 1] == extra[-1][1]:
+                    extra[-1][1] = n
+                else:
+                    extra.append([n, n])
+            escaped = []
+        # Another unit's page-foot notes emitted at a page break inside this
+        # span are cut out of it (they become that unit's extra range).
+        foreign_note_lines = sorted({n for n in out_lines if start <= n <= hi and by_out[n]
+                                     and all(x["id"] not in selected and x["role"] in {"notes-left", "notes-right"}
+                                             for x in by_out[n])})
+        if foreign_margin and foreign_margin == sum(len(by_out[n]) for n in foreign_note_lines):
+            foreign_margin = 0
+        else:
+            foreign_note_lines = []
+        spans, cursor = [], start
+        for n in foreign_note_lines:
+            if cursor < n:
+                spans.append([cursor, n - 1])
+            cursor = n + 1
+        if cursor <= hi:
+            spans.append([cursor, hi])
+        mixed = sorted(i["id"] for i in selected.values() if i["id"] in inseparable)
+        held = sorted({i["leaf"] for i in selected.values() if i["role"] == "unchanged"})
+        loci = []
+        if unit["id"] in affected:
+            for a, z in affected[unit["id"]]["source_order_evidence"]["affected_physical_line_ranges"]:
+                loci += [n for n in range(a, z + 1) if any(i["role"] == "unchanged" for i in by_raw.get(n, ()))]
+        if partial:
+            category = "hold:partial-WORD-selection"
+        elif foreign_body:
+            category = "hold:body-not-contiguous"
+        elif loci:
+            category = "hold:reviewed-fusion-on-held-page"
+        elif mixed:
+            category = "hold:inseparable-WORD"
+        elif foreign_margin or escaped:
+            category = "review:margin-ownership-at-boundary"
+        elif note_suspects & set(selected):
+            category = "review:possible-unsplit-note"
+        else:
+            category = "clean-with-unchanged-pages" if held else "clean"
+        results.append({**row, "category": category, "new_physical_line_ranges": spans + extra,
+                        "furniture_lines_inside": sorted(furniture), "foreign_body_WORDs": foreign_body,
+                        "foreign_margin_WORDs": foreign_margin, "escaped_margin_WORDs": len(escaped),
+                        "partial_WORDs": partial, "inseparable_WORDs": mixed, "unchanged_leaves": held,
+                        "note_suspect_WORDs": sorted(note_suspects & set(selected)),
+                        "reviewed_fusion_lines_on_held_pages": sorted(set(loci))})
+    loci_report = Counter()
+    for unit_id, a in affected.items():
+        if not any(r["unit_id"] == unit_id for r in results):
+            continue
+        for x, z in a["source_order_evidence"]["affected_physical_line_ranges"]:
+            items = [i for n in range(x, z + 1) for i in by_raw.get(n, ())]
+            roles = {i["role"] for i in items}
+            loci_report["held-page" if "unchanged" in roles else "marginal-WORDs-separated" if roles & margin_roles
+                        else "inseparable-WORD-recorded" if any(i["id"] in inseparable for i in items) else "no-marginal-WORD"] += 1
+    mixed_lines = sum(1 for items in by_raw.values() if {i["role"] for i in items} & {"body-left", "body-right"}
+                      and {i["role"] for i in items} & margin_roles)
+    report = {"schema": MAPPING_SCHEMA, "volume": recipe["volume"],
+              "inputs": {"recipe_sha256": _sha(recipe_file.read_bytes()), "derivative_sha256": validation["hybrid_sha256"],
+                         "catalog_sha256": _sha(catalog_bytes), "withdrawals_sha256": _sha(withdrawals_bytes)},
+              "summary": {"units": len(results), "categories": dict(sorted(Counter(r["category"] for r in results).items())),
+                          "withdrawn_confirmed_fusion_categories": dict(sorted(Counter(
+                              r["category"] for r in results if r["withdrawn_confirmed_fusion"]).items())),
+                          "reviewed_fusion_loci": dict(sorted(loci_report.items())),
+                          "raw_LF_lines_mixing_body_and_margin_roles": mixed_lines},
+              "limits": "Mechanical WORD-identity mapping. Only 'clean' units are registration candidates; every other "
+                        "category is a hold or a review item. Margin ownership follows the block's anchor row.",
+              "units": results}
+    data = (json.dumps(report, ensure_ascii=False, sort_keys=True, indent=1) + "\n").encode()
+    _require(not target.exists() or target.read_bytes() == data, "refusing to overwrite a differing unit mapping")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if not target.exists():
+        target.write_bytes(data)
+    return report["summary"]
+
+
+def _artifact(root, edition_dir, edition_id, key, filename, payload, raw_record, kind, media_type, notes, retrieved,
+              derived_from=None):
+    """Stage one immutable artifact (payload and record) under the volume edition."""
+    digest = _sha(payload)
+    folder = edition_dir / "artifacts" / f"{key}-{digest[:12]}"
+    record = {"schema": 1, "record_type": "artifact", "id": f"artifact.{edition_id.removeprefix('edition.')}.{key}-{digest[:12]}",
+              "edition_id": edition_id, "artifact_type": kind, "media_type": media_type, "storage": "tracked",
+              "rights_status": raw_record["rights_status"], "rights_basis": raw_record["rights_basis"],
+              "rights_jurisdiction": raw_record.get("rights_jurisdiction", "United States"),
+              "path": str((folder / filename).relative_to(root)), "sha256": digest, "byte_size": len(payload),
+              "retrieved": retrieved,
+              "provenance": "Deterministic product of tools/bullarium geometry; whole bytes hashed and replayable.",
+              "notes": notes}
+    if derived_from:
+        record.update(derived_from=derived_from, transformation=notes)
+    if "source_url" in raw_record and media_type == "text/plain":
+        record["source_url"] = raw_record["source_url"]
+    if media_type == "text/plain":
+        record.update(indexable=True, encoding="utf-8")
+    return record, folder / filename, folder / "artifact.toml", payload
+
+
+def _map_lines(raw_lines, by_raw, ranges):
+    out = sorted({ol for n in raw_lines for ol, role in by_raw.get(n, ()) if role in {"body-left", "body-right"}})
+    _require(out and all(any(a <= n <= z for a, z in ranges) for n in out), "attribution lines do not map inside the new range")
+    return [out[0], out[-1]]
+
+
+READING_ORDER_CORRECTIONS = "src/sources/papal-documents/bullarium-reading-order-corrections-manifest.json"
+READER_NOTE = ("Reading order follows native word coordinates; the printing's marginal summaries are kept as separate "
+               "blocks beside the sections they annotate and its page-foot notes as separate blocks at the page break; "
+               "held pages, if any, keep raw OCR order.")
+RAW_LINE_DISCLOSURE = ("The extent statement below comes from the earlier raw-OCR review; its line numbers refer to the raw "
+                       "OCR text, not to this reading-order text: ")
+
+
+def _raw_line_note(text):
+    """Label raw OCR line numbers that a review ran into words or labels."""
+    text = re.sub(r"\bLF (\d{4,}(?:[–-]\d{4,})?)", r"raw OCR line \1", text)
+    text = re.sub(r"(?<=[A-Za-z§)])(\d{4,}(?:[–-]\d{4,})?)", r" (raw OCR line \1)", text)
+    return re.sub(r"(?<=[a-z])(?=[IVXLC]{2,}\b)", " ", text)
+
+
+TITLE_NOTE = ("The reader's title is taken from the act's heading rows in this reading-order text: the earlier "
+              "raw-OCR title was marginal-summary text read beside the heading.")
+ACT_NUMBER = re.compile(r"(?:[IVXLCDM]+|[0-9]+)\s*\.?")
+SUMMARY_HEAD = re.compile(r"S[UVL]MM[A-Z]{2,6}\.?")
+
+
+def _title_is_marginal(unit, title, by_raw_words):
+    """The prior title was read from raw lines below the act number whose WORDs the
+    derivative sets as marginal summary (at least half of them)."""
+    norm = lambda text: re.sub(r"\s+", "", text or "")
+    target, heading = norm(title), unit.get("heading_line")
+    if not target or not isinstance(heading, int):
+        return False
+    words, seen = [], ""
+    for n in range(heading + 1, heading + 41):
+        line = by_raw_words.get(n)
+        if not line:          # blank raw lines between the act number and its title are skipped
+            if words or n > heading + 5:
+                break
+            continue
+        text = norm("".join(value for value, _ in line))
+        if not text or text not in target[len(seen):]:
+            break
+        words += line
+        seen += text
+    margin = sum(role in {"margin-left", "margin-right"} for _, role in words)
+    return bool(words) and len(seen) >= len(target) / 2 and 2 * margin >= len(words)
+
+
+def _heading_title(ranges, hybrid_lines, out_roles, stop):
+    """The act's title as the reading-order text prints it: the body rows after the act
+    number and before the attribution, past any marginal block, up to a synopsis heading."""
+    parts = []
+    for n in range(ranges[0][0], min(stop, ranges[0][1] + 1)):
+        text = hybrid_lines[n - 1] if 0 < n <= len(hybrid_lines) else ""
+        roles = out_roles.get(n, set())
+        if not text.strip() or text.startswith("\t") or (roles and not roles & {"body-left", "body-right"}):
+            continue
+        text = " ".join(text.split())
+        if not parts and ACT_NUMBER.fullmatch(text):
+            continue
+        if SUMMARY_HEAD.fullmatch(text.upper()) or len(parts) == 8:
+            break
+        parts.append(text)
+    title = " ".join(parts)
+    return title if len(re.sub("[^A-Za-zÀ-ÿ]", "", title)) >= 18 else None
+
+
+def _reading_versions(units, unit_id):
+    """Existing reading selections of a unit, oldest first: .reading-order, .reading-order-v2, ..."""
+    found = []
+    for key, unit in units.items():
+        if key == unit_id + ".reading-order":
+            found.append((1, unit))
+        else:
+            match = re.fullmatch(re.escape(unit_id) + r"\.reading-order-v(\d+)", key)
+            if match:
+                found.append((int(match[1]), unit))
+    return sorted(found, key=lambda item: item[0])
+
+
+def register(root, recipe_path, replay_dir, mapping_path, units_path, revision, *, input_map=None,
+             supersede=False, reason=None):
+    """Register the derivative and admit explicitly selected clean units through `bullarium admit`.
+
+    Writes are append-only: artifact payloads and records are absent-or-identical;
+    the catalog gains container declarations only; segments, editions and
+    manifest rows are staged by the existing admission path with its own
+    absent-or-identical rules.  Raw artifacts, prior segments and the withdrawal
+    inventory are read, never written.
+    """
+    import _bullarium as bullarium
+    _require(re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", str(revision)), "revision requires explicit whole-second UTC")
+    root = Path(root).resolve()
+    recipe_file = _path(root, recipe_path)
+    recipe = json.loads(recipe_file.read_bytes())
+    _require(recipe.get("schema") == SCHEMA_V2 and "volume" in recipe, "register requires a Bullarium v2 recipe")
+    replay = _path(root, replay_dir)
+    info = check(root, recipe_path, replay_dir, input_map=input_map)    # full independent replay
+    mapping = json.loads(_path(root, mapping_path, True).read_bytes())
+    _require(mapping.get("schema") == MAPPING_SCHEMA and mapping["inputs"]["derivative_sha256"] == info["hybrid_sha256"]
+             and mapping["inputs"]["recipe_sha256"] == info["recipe_sha256"], "unit mapping is not for this derivative")
+    selected = json.loads(_path(root, units_path, True).read_bytes())
+    _require(isinstance(selected, dict) and selected.get("schema") == "triptych-bullarium-reading-order-selection/v1"
+             and isinstance(selected.get("units"), list) and selected["units"]
+             and len(set(selected["units"])) == len(selected["units"]), "unit selection requires an explicit nonempty list")
+    rows = {r["unit_id"]: r for r in mapping["units"]}
+    for unit_id in selected["units"]:
+        _require(rows.get(unit_id, {}).get("category") == "clean",
+                 "only units mapped 'clean' may be registered: " + unit_id)
+    catalog_file = _path(root, CATALOG, True)
+    catalog = json.loads(catalog_file.read_bytes())
+    current = {u["id"]: u for u in catalog["units"]}
+    for unit_id in selected["units"]:
+        unit = current.get(unit_id)
+        active = (unit or {}).get("active_render_selection")
+        ranges = active["physical_line_ranges"] if isinstance(active, dict) else (unit or {}).get("review", {}).get(
+            "physical_line_ranges", (unit or {}).get("physical_line_ranges"))
+        _require(unit and unit["volume"] == recipe["volume"] and ranges == rows[unit_id]["old_ranges"]
+                 and unit["artifact_sha256"] == recipe["source_txt"]["sha256"], "unit selection changed since mapping: " + unit_id)
+    volume = next(v for v in catalog["volumes"] if v["volume"] == recipe["volume"])
+    container = volume["container"]
+    raw_record_path = _path(root, container["artifacts"]["ocr"]["manifest"], True)
+    raw_record = tomllib.loads(raw_record_path.read_text())
+    _require(raw_record["id"] == recipe["source_txt"]["artifact_id"] and raw_record["sha256"] == recipe["source_txt"]["sha256"],
+             "recipe source is not this volume's raw OCR")
+    edition_dir = _path(root, container["edition_path"], True)
+    edition_id = container["edition_id"]
+    recipe_bytes = recipe_file.read_bytes()
+    pieces = {
+        "recipe": _artifact(root, edition_dir, edition_id, "reading-order-recipe", "recipe.json.gz",
+                            gzip.compress(recipe_bytes, mtime=0), raw_record, "coordinate-reading-order-recipe",
+                            "application/gzip", f"Explicit v2 reading-order recipe (decoded SHA256 {_sha(recipe_bytes)}) "
+                            f"for raw OCR {raw_record['id']} and XML {recipe['source_xml']['artifact_id']}.", revision[:10]),
+        "page_map": _artifact(root, edition_dir, edition_id, "reading-order-page-map", "page-map.json",
+                              (replay / "page-map.json").read_bytes(), raw_record, "coordinate-reading-order-page-map",
+                              "application/json", "Per-page source and output byte/LF spans of the reading-order derivative.", revision[:10]),
+        "validation": _artifact(root, edition_dir, edition_id, "reading-order-validation", "validation.json",
+                                (replay / "validation.json").read_bytes(), raw_record, "coordinate-reading-order-validation",
+                                "application/json", "Replay receipt: input pins, output hashes and the conservation checks.", revision[:10]),
+    }
+    hybrid = (replay / "hybrid.txt").read_bytes()
+    recipe_id = pieces["recipe"][0]["id"]
+    pieces["order"] = _artifact(root, edition_dir, edition_id, "reading-order", "hybrid.txt", hybrid, raw_record,
+                                "coordinate-reading-order-ocr", "text/plain",
+                                f"Deterministic output of tools/bullarium geometry from recipe {recipe_id}; source XML "
+                                f"{recipe['source_xml']['artifact_id']} (SHA256 {recipe['source_xml']['sha256']}). Every native "
+                                "WORD appears exactly once with its value unchanged; only page order, roles and inter-WORD "
+                                "whitespace change. Marginal summaries are separate TAB-led blocks at their anchors; held "
+                                "pages keep raw OCR bytes.", revision[:10], derived_from=raw_record["id"])
+    staged = []
+    for name, (record, payload_path, record_path, payload) in pieces.items():
+        bullarium.check_source_write(payload_path, payload)
+        bullarium.check_source_write(record_path, bullarium.record_bytes(record))
+        staged.append((payload_path, payload, record_path, record))
+    keys = {"order": "reading_order", "recipe": "reading_order_recipe", "page_map": "reading_order_page_map",
+            "validation": "reading_order_validation"}
+    declarations = {}
+    for name, (record, payload_path, record_path, _) in pieces.items():
+        key = f"{keys[name]}_{record['sha256'][:12]}"
+        declaration = {"id": record["id"], "manifest": str(record_path.relative_to(root)), "sha256": record["sha256"]}
+        if name == "order":
+            declaration["line_map_path"] = str(pieces["page_map"][1].relative_to(root))
+        _require(container["artifacts"].get(key, declaration) == declaration, "a container declaration already differs: " + key)
+        declarations[key] = declaration
+    order_record = pieces["order"][0]
+    by_raw, by_raw_words, out_roles = defaultdict(list), defaultdict(list), defaultdict(set)
+    with gzip.open(replay / "changed-word-map.jsonl.gz", "rt", encoding="utf-8") as stream:
+        for line in stream:
+            word = json.loads(line)
+            for n in word["source_txt_physical_lines"]:
+                by_raw[n].append((word["output_lf_range_1"][0], word["role"]))
+            by_raw_words[word["source_txt_physical_lines"][0]].append((word["value"], word["role"]))
+            for n in range(word["output_lf_range_1"][0], word["output_lf_range_1"][1] + 1):
+                out_roles[n].add(word["role"])
+    hybrid_lines = pieces["order"][3].decode("utf-8").split("\n")
+    units = {u["id"]: u for u in catalog["units"]}
+    reviews = []
+    for unit_id in selected["units"]:
+        unit, row = units[unit_id], rows[unit_id]
+        history = [r for r in [unit.get("review")] + list(reversed(unit.get("review_history", [])))
+                   if isinstance(r, dict) and r.get("decision") in {"admit", "fragment"} and r.get("source_attribution_lines")]
+        _require(history, "a registered unit requires its prior admitted boundary review: " + unit_id)
+        prior = history[0]
+        if not supersede:
+            # bullarium admit keys a reading selection's edition as
+            # <printing>-bullarium-volume-NN-<language>; a unit already joined to
+            # a canonical work holds that key, so it needs a separately keyed path.
+            printing = Path(container["edition_path"]).name
+            volume_key = "appendix-01" if recipe["volume"] == "appendix" else f"volume-{int(recipe['volume']):02d}"
+            target = printing.removesuffix("-latin") + f"-bullarium-{volume_key}-latin"
+            _require(not str(unit.get("edition_id", "")).endswith("." + target),
+                     "unit already holds this printing's canonical edition key; register it separately: " + unit_id)
+        ranges = row["new_physical_line_ranges"]
+        a, z = prior["source_attribution_lines"]
+        item = {"unit_id": unit_id + ".reading-order", "parent_unit_id": unit_id, "reading_selection_variant_of": unit_id,
+                "canonical_work_id": unit["work_id"],
+                "identity_evidence": {"existing_work_id": unit["work_id"],
+                                      "basis": "Same printed act: every native WORD of the prior reviewed raw extent maps to this "
+                                               "contiguous reading-order range through WORD identity."},
+                "source_artifact_id": order_record["id"], "artifact_sha256": order_record["sha256"],
+                "physical_line_ranges": ranges, "decision": prior["decision"],
+                "printed_attribution": prior["printed_attribution"], "title": prior["title"],
+                "source_attribution_lines": _map_lines(range(a, z + 1), by_raw, ranges),
+                "review_note": f"Reading-order selection of the reviewed raw extent {unit_id} {prior['physical_line_ranges']}, "
+                               "mapped mechanically through native WORD identity: body WORDs contiguous, no foreign body or "
+                               "marginal WORD inside, no partial or inseparable WORD. " + prior.get("review_note", ""),
+                "reviewed_extent": "WORD-identity mapping of the prior reviewed extent; volume evidence gate on native page "
+                                   "images; no whole-act image collation.",
+                "reader_source_note": READER_NOTE}
+        for key in ("language", "language_label", "document_type", "extent_kind", "source_extent_limit"):
+            if key in prior:
+                item[key] = prior[key]
+        if _title_is_marginal(unit, prior["title"], by_raw_words):
+            heading = _heading_title(ranges, hybrid_lines, out_roles, item["source_attribution_lines"][0])
+            if heading:
+                item["title"] = heading
+                item["reader_source_note"] = item["reader_source_note"] + " " + TITLE_NOTE
+        if prior["decision"] == "fragment":     # the missing-content statement stays first
+            extent = prior.get("reader_source_note", prior.get("source_extent_limit"))
+            item["reader_source_note"] = " ".join(filter(None, [extent and RAW_LINE_DISCLOSURE + _raw_line_note(extent),
+                                                                item["reader_source_note"]]))
+        reviews.append(item)
+    if supersede:
+        return _supersede(root, catalog, catalog_file, container, units, rows, reviews, order_record, pieces,
+                          staged, declarations, revision, reason)
+    review_bytes = bullarium.json_bytes({"schema": "triptych-bullarium-boundary-reviews/v1", "reviews": reviews})
+    review_path = replay / "register-review.json"
+    _require(not review_path.exists() or review_path.read_bytes() == review_bytes, "a differing register review already exists")
+    # Every check passed: write artifacts, then declare them, then admit.
+    for payload_path, payload, record_path, record in staged:
+        bullarium.write_source(payload_path, payload)
+        bullarium.record(record_path, record)
+    if any(container["artifacts"].get(k) != d for k, d in declarations.items()):
+        container["artifacts"].update(declarations)
+        bullarium.write(catalog_file, bullarium.json_bytes(catalog))
+    bullarium.write(review_path, review_bytes)
+    result = bullarium.admit(root, [review_path], revision, GEOMETRY_MANIFEST, GEOMETRY_FRAGMENT_MANIFEST)
+    return {"derivative_artifact_id": order_record["id"], "derivative_sha256": order_record["sha256"],
+            "artifacts": [record["id"] for _, _, _, record in staged], "admitted_units": len(reviews),
+            "additional_reading_selections": result.get("additional_reading_selections")}
+
+
+class _Parser(argparse.ArgumentParser):
+    def error(self, message):
+        raise GeometryError(message)
+
+
+OLD_READER_NOTE = ("Reading order follows native word coordinates; the printing's marginal summaries are kept as "
+                   "separate blocks beside the sections they annotate; held pages, if any, keep raw OCR order.")
+
+
+def _replacement_note(note, prior_key, new_key, ranges, pages, fragment):
+    """The prior reader's source note, re-pointed at the replacement selection."""
+    note = note.replace(prior_key, new_key)
+    note = re.sub(r"Source-derived reading-order LF lines [0-9;\- ]+\.",
+                  "Source-derived reading-order LF lines " + "; ".join(f"{a}-{z}" for a, z in ranges) + ".", note)
+    if pages:
+        note = re.sub(r"Exact scan leaf bounds \d+-\d+;", f"Exact scan leaf bounds {pages[0]['leaf']}-{pages[-1]['leaf']};", note)
+    note = note.replace(" " + OLD_READER_NOTE, "").replace(" " + READER_NOTE, "")
+    marker = "no normalized act date is supplied."
+    if fragment and marker in note:
+        head, tail = note.split(marker, 1)
+        tail = tail.strip()
+        if tail and not tail.startswith(RAW_LINE_DISCLOSURE):
+            tail = RAW_LINE_DISCLOSURE + _raw_line_note(tail)
+        note = head + marker + (" " + tail if tail else "")
+    return note + " " + READER_NOTE
+
+
+def _supersede(root, catalog, catalog_file, container, units, rows, reviews, order_record, pieces, staged,
+               declarations, revision, reason):
+    """Register replacement reading selections that explicitly supersede the newest prior ones.
+
+    Append-only: the prior reading selection's unit, edition, segment, document
+    and artifact stay byte-identical.  Each replacement gets a new edition key
+    (``…-reading-order-vN-<language>``) under the same work, a catalog unit
+    ``<unit>.reading-order-vN`` pointing at its predecessor, a document row and
+    a supersession row in the reading-order corrections manifest.
+    """
+    import _bullarium as bullarium
+    _require(isinstance(reason, str) and reason.strip(), "a superseding registration requires an explicit --reason")
+    manifests = {}
+    for path in (GEOMETRY_MANIFEST, GEOMETRY_FRAGMENT_MANIFEST, READING_ORDER_CORRECTIONS):
+        target = _path(root, path, True)
+        if target.exists():
+            manifests[path] = json.loads(target.read_bytes())
+    documents = {d["id"]: d for m in manifests.values() for d in m["documents"]}
+    corrections_file = _path(root, READING_ORDER_CORRECTIONS, True)
+    corrections = manifests.get(READING_ORDER_CORRECTIONS, {"schema": "triptych-papal-typeset/v1", "documents": [],
+                                                            "supersessions": []})
+    _require(corrections.get("schema") == "triptych-papal-typeset/v1", "unknown reading-order corrections manifest")
+    hybrid_lines = pieces["order"][3].decode("utf-8").split("\n")
+    page_map = json.loads(pieces["page_map"][3])["pages"]
+    records, new_units, new_docs, new_supersessions = {}, [], [], []
+    for item in reviews:
+        base_id = item["parent_unit_id"]
+        versions = _reading_versions(units, base_id)
+        _require(versions, "nothing to supersede: no prior reading selection of " + base_id)
+        if versions[-1][1]["artifact_sha256"] == order_record["sha256"]:     # replay of this registration
+            _require(len(versions) >= 2, "a replayed replacement has no predecessor: " + base_id)
+            new_version, prior = versions[-1][0], versions[-2][1]
+        else:
+            new_version, prior = versions[-1][0] + 1, versions[-1][1]
+        _require(prior.get("segment_path") and prior.get("status") in {"admitted-mechanical-ocr-extent", "admitted-fragment"},
+                 "only an admitted reading selection can be superseded: " + prior["id"])
+        _require(prior["artifact_sha256"] != order_record["sha256"], "a replacement needs a different derivative")
+        fragment = prior["status"] == "admitted-fragment"
+        prior_doc_id = prior["id"] + (".fragment" if fragment else "")
+        prior_doc = documents.get(prior_doc_id)
+        _require(prior_doc is not None and prior_doc.get("segment_id") == prior["segment_id"],
+                 "prior reading document is absent or disagrees with its unit: " + prior_doc_id)
+        new_id = f"{base_id}.reading-order-v{new_version}"
+        prior_segment_path = _path(root, prior["segment_path"], True)
+        prior_edition_dir = prior_segment_path.parents[1]
+        prior_key = prior_edition_dir.name
+        stem, language_suffix = re.sub(r"-reading-order-v\d+", "", prior_key).rsplit("-", 1)
+        new_key = f"{stem}-reading-order-v{new_version}-{language_suffix}"
+        namespace = prior["edition_id"].removeprefix("edition.").removesuffix("." + prior_key)
+        new_edition_dir = prior_edition_dir.parent / new_key
+        edition = tomllib.loads((prior_edition_dir / "edition.toml").read_text())
+        edition.update(id=f"edition.{namespace}.{new_key}", title=edition["title"].replace(" — " + prior_key, " — " + new_key))
+        segment = tomllib.loads(prior_segment_path.read_text())
+        new_segment_id = f"segment.{namespace}.{new_key}.source-ocr"
+        ranges = item["physical_line_ranges"]
+        segment.update(id=new_segment_id, edition_id=edition["id"], artifact_id=order_record["id"],
+                       artifact_sha256=order_record["sha256"], physical_line_ranges=ranges,
+                       context=f"Replacement reading selection superseding {prior['segment_id']}. " + segment.get("context", ""))
+        new_segment_path = new_edition_dir / "segments" / "source-ocr.toml"
+        records[new_edition_dir / "edition.toml"] = edition
+        records[new_segment_path] = segment
+        a, z = item["source_attribution_lines"]
+        pages = [pg for pg in page_map if pg.get("output_lf_range_1")
+                 and any(pg["output_lf_range_1"][0] <= e and pg["output_lf_range_1"][1] >= s for s, e in ranges)]
+        review = {key: value for key, value in item.items()
+                  if key not in {"parent_unit_id", "canonical_work_id", "identity_evidence", "source_artifact_id"}}
+        review.update(unit_id=new_id, reading_selection_variant_of=prior["id"],
+                      review_note=f"Replacement reading selection superseding {prior['id']}. " + item["review_note"])
+        unit = copy.deepcopy(prior)
+        unit.update(id=new_id, artifact_id=order_record["id"], artifact_sha256=order_record["sha256"],
+                    physical_line_ranges=ranges, heading_line=ranges[0][0], edition_id=edition["id"],
+                    segment_id=new_segment_id, segment_path=str(new_segment_path.relative_to(root)),
+                    review=bullarium.durable_review(review),
+                    review_history=list(prior.get("review_history", [])) + [prior["review"]],
+                    reading_selection_variant_of=prior["id"],
+                    prior_reading_selection={key: prior[key] for key in ("id", "artifact_id", "artifact_sha256",
+                                                                          "segment_id", "segment_path")},
+                    reviewed_scan_leaf_ids=[pg["leaf"] for pg in pages],
+                    reviewed_artifact_pages=[pg["artifact_page"] for pg in pages],
+                    reviewed_protocol={"physical_line_ranges": [[a, z]], "artifact_sha256": order_record["sha256"],
+                                       "literal": " ".join(" ".join(hybrid_lines[a - 1:z]).split())})
+        _require(units.get(new_id, unit) == unit, "a differing replacement reading selection already exists: " + new_id)
+        new_units.append(unit)
+        document = copy.deepcopy(prior_doc)
+        new_doc_id = new_id + (".fragment" if fragment else "")
+        source_note = _replacement_note(prior_doc["source_note"], prior_key, new_key, ranges, pages, fragment)
+        retitled = TITLE_NOTE in item["reader_source_note"]
+        if retitled and TITLE_NOTE not in source_note:
+            source_note += " " + TITLE_NOTE
+        document.update(id=new_doc_id, artifact_id=order_record["id"], sha256=order_record["sha256"],
+                        text_path=order_record["path"], segment_id=new_segment_id,
+                        title=item["title"] if retitled else prior_doc["title"],
+                        segment_path=str(new_segment_path.relative_to(root)), physical_line_ranges=ranges,
+                        revision=revision, source_note=source_note)
+        existing = next((d for d in corrections["documents"] if d["id"] == new_doc_id), None)
+        if existing is not None:      # a replay keeps the row it already wrote
+            _require({k: v for k, v in existing.items() if k != "revision"} == {k: v for k, v in document.items() if k != "revision"},
+                     "a differing replacement document already exists: " + new_doc_id)
+            document = existing
+        new_docs.append(document)
+        supersession = {"prior": {"id": prior_doc_id, "language": prior_doc["language"], "artifact_id": prior_doc["artifact_id"],
+                                  "source_sha256": prior_doc["sha256"], "segment_id": prior_doc["segment_id"]},
+                        "replacement": {"id": new_doc_id, "language": document["language"], "artifact_id": document["artifact_id"],
+                                        "source_sha256": document["sha256"], "segment_id": document["segment_id"]},
+                        "reason": reason}
+        earlier = [x for x in corrections["supersessions"] if x["prior"]["id"] == prior_doc_id]
+        _require(not earlier or earlier == [supersession], "the prior reading is already superseded differently: " + prior_doc_id)
+        new_supersessions.append(supersession)
+    for path, record in records.items():          # every check before any write
+        bullarium.check_source_write(path, bullarium.record_bytes(record))
+    for payload_path, payload, record_path, record in staged:
+        bullarium.write_source(payload_path, payload)
+        bullarium.record(record_path, record)
+    for path, record in records.items():
+        bullarium.record(path, record)
+    container["artifacts"].update(declarations)
+    by_id = {u["id"]: u for u in catalog["units"]}
+    by_id.update({u["id"]: u for u in new_units})
+    catalog["units"] = sorted(by_id.values(), key=lambda u: u["id"])
+    catalog["coverage"]["additional_reading_selections"] = sum(bool(u.get("reading_selection_variant_of"))
+                                                                for u in catalog["units"])
+    bullarium.write(catalog_file, bullarium.json_bytes(catalog))
+    ids = {d["id"] for d in corrections["documents"]}
+    corrections["documents"] += [d for d in new_docs if d["id"] not in ids]
+    priors = {x["prior"]["id"] for x in corrections["supersessions"]}
+    corrections["supersessions"] += [x for x in new_supersessions if x["prior"]["id"] not in priors]
+    corrections["revision"] = max([corrections.get("revision", revision), revision])
+    bullarium.write(corrections_file, bullarium.json_bytes(corrections))
+    return {"derivative_artifact_id": order_record["id"], "derivative_sha256": order_record["sha256"],
+            "artifacts": [record["id"] for _, _, _, record in staged], "superseded_readings": len(new_docs),
+            "corrections_manifest": READING_ORDER_CORRECTIONS}
+
+
+READING_ORDER_WITHDRAWALS = "src/sources/papal-documents/bullarium-reading-order-withdrawals-manifest.json"
+RELEASE = "release/papal-documents.json"
+WITHDRAWAL_SELECTION_SCHEMA = "triptych-bullarium-reading-withdrawal-selection/v1"
+
+
+def withdraw(root, units_path, revision, reason, evidence_sha256):
+    """Withdraw registered reading selections with an explicit prior-to-null supersession.
+
+    For each selected reading document: its catalog unit becomes specifically
+    held, with the admission review archived in ``review_history``, a hold
+    review stating the reason and evidence, ``reader_withdrawal`` (the action)
+    and ``reader_withdrawal_evidence_sha256``; the action
+    ``{"prior": <exact pins>, "reason": ..., "replacement": null}`` goes into the
+    reading-order withdrawals manifest, which the source plan reads after the
+    reading-order corrections manifest (so a replacement reading can itself be
+    withdrawn).  An installed reading (a row in release/papal-documents.json) is
+    pinned by its PDF SHA-256; an uninstalled one carries no PDF pin.  Records,
+    segments, artifacts and the base manifests stay byte-identical; an identical
+    rerun changes nothing.
+    """
+    import _bullarium as bullarium
+    _require(re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", str(revision)), "revision requires explicit whole-second UTC")
+    _require(isinstance(reason, str) and reason.strip(), "a withdrawal requires an explicit --reason")
+    _require(isinstance(evidence_sha256, str) and re.fullmatch(r"[0-9a-f]{64}", evidence_sha256),
+             "a withdrawal requires --evidence-sha256 (64 lowercase hex)")
+    root = Path(root).resolve()
+    selection = json.loads(_path(root, units_path, True).read_bytes())
+    readings = selection.get("readings") if isinstance(selection, dict) else None
+    _require(selection.get("schema") == WITHDRAWAL_SELECTION_SCHEMA and isinstance(readings, list) and readings
+             and all(isinstance(r, dict) and isinstance(r.get("id"), str) for r in readings)
+             and len({r["id"] for r in readings}) == len(readings), "withdrawal selection requires an explicit nonempty reading list")
+    manifests = {}
+    for path in (GEOMETRY_MANIFEST, GEOMETRY_FRAGMENT_MANIFEST, READING_ORDER_CORRECTIONS):
+        target = _path(root, path, True)
+        if target.exists():
+            manifests[path] = json.loads(target.read_bytes())
+    documents = {d["id"]: d for m in manifests.values() for d in m["documents"]}
+    superseded = {x["prior"]["id"] for x in manifests.get(READING_ORDER_CORRECTIONS, {}).get("supersessions", [])}
+    withdrawals_file = _path(root, READING_ORDER_WITHDRAWALS, True)
+    withdrawals = (json.loads(withdrawals_file.read_bytes()) if withdrawals_file.exists()
+                   else {"schema": "triptych-papal-typeset/v1", "revision": revision, "documents": [], "supersessions": []})
+    _require(withdrawals.get("schema") == "triptych-papal-typeset/v1" and withdrawals.get("documents") == []
+             and isinstance(withdrawals.get("supersessions"), list), "unknown reading-order withdrawals manifest")
+    release_file = root / RELEASE
+    installed = ({(d["id"], d["language"]): d for d in json.loads(release_file.read_bytes())["documents"]}
+                 if release_file.exists() else {})
+    catalog_file = _path(root, CATALOG, True)
+    catalog = json.loads(catalog_file.read_bytes())
+    units = {u["id"]: u for u in catalog["units"]}
+    actions, changed = [], 0
+    for item in readings:
+        doc_id = item["id"]
+        document = documents.get(doc_id)
+        _require(document is not None, "no registered reading document " + doc_id)
+        unit = units.get(doc_id.removesuffix(".fragment"))
+        _require(unit is not None and unit.get("reading_selection_variant_of") and unit.get("segment_id") == document["segment_id"]
+                 and unit.get("artifact_sha256") == document["sha256"], "reading document disagrees with its catalog unit: " + doc_id)
+        _require(doc_id not in superseded, "a superseded reading is withdrawn through its replacement: " + doc_id)
+        release_row = installed.get((doc_id, document["language"]))
+        pdf = item.get("pdf_sha256")
+        if release_row is not None:
+            _require(pdf == release_row.get("pdf_sha256"), "installed reading requires its exact release PDF SHA-256: " + doc_id)
+        else:
+            _require(pdf is None, "an uninstalled reading has no PDF to pin: " + doc_id)
+        prior = {"id": doc_id, "language": document["language"], "artifact_id": document["artifact_id"],
+                 "source_sha256": document["sha256"], "segment_id": document["segment_id"],
+                 "physical_line_ranges": document["physical_line_ranges"]}
+        if pdf is not None:
+            prior["pdf_sha256"] = pdf
+        action = {"prior": prior, "reason": reason, "replacement": None}
+        earlier = [x for x in withdrawals["supersessions"] if x["prior"]["id"] == doc_id]
+        _require(not earlier or earlier == [action], "the reading is already withdrawn differently: " + doc_id)
+        if unit.get("reader_withdrawal") is not None:     # a replay of this withdrawal
+            _require(unit["reader_withdrawal"] == action and unit.get("reader_withdrawal_evidence_sha256") == evidence_sha256
+                     and earlier, "the reading's unit is already withdrawn differently: " + doc_id)
+            continue
+        _require(unit["status"] in {"admitted-mechanical-ocr-extent", "admitted-fragment"},
+                 "only an admitted reading selection can be withdrawn: " + doc_id)
+        note = f"Reader withdrawn by an explicit prior-to-null supersession: {reason.strip()} Evidence SHA-256 {evidence_sha256}."
+        if isinstance(item.get("note"), str) and item["note"].strip():
+            note += " " + item["note"].strip()
+        unit["review_history"] = list(unit.get("review_history", [])) + [unit["review"]]
+        unit["review"] = bullarium.durable_review({
+            "artifact_sha256": unit["artifact_sha256"], "decision": "hold", "document_id": doc_id,
+            "physical_line_ranges": document["physical_line_ranges"], "review_note": note,
+            "title": unit["review"].get("title")})
+        unit["status"] = "specifically-held"
+        unit["reader_withdrawal"] = action
+        unit["reader_withdrawal_evidence_sha256"] = evidence_sha256
+        if not earlier:
+            actions.append(action)
+        changed += 1
+    if changed or actions:
+        coverage = catalog["coverage"]
+        values = units.values()
+        coverage.update(independent_papal_acts_admitted=sum(u["status"] == "admitted-mechanical-ocr-extent" for u in values),
+                        fragment_witnesses_admitted=sum(u["status"] == "admitted-fragment" for u in values),
+                        units_held=sum(u["status"] in {"held", "specifically-held"} for u in values),
+                        specifically_reviewed_holds=sum(u["status"] == "specifically-held" for u in values))
+        catalog["units"] = sorted(values, key=lambda u: u["id"])
+        withdrawals["supersessions"] += actions
+        withdrawals["revision"] = max(withdrawals.get("revision", revision), revision)
+        bullarium.write(withdrawals_file, bullarium.json_bytes(withdrawals))
+        bullarium.write(catalog_file, bullarium.json_bytes(catalog))
+    return {"withdrawn_readings": changed, "withdrawals_manifest": READING_ORDER_WITHDRAWALS,
+            "manifest_supersessions": len(withdrawals["supersessions"])}
+
+
+VERB_EXAMPLES = {
+    "propose": (
+        Example("tools/bullarium geometry propose --volume 4 --out ../outside --json",
+                ('{"code":"input","error":"input path must be canonical repository-relative without traversal","status":"error","v":1}',),
+                "An output outside scratch/build is refused before any source is read."),
+        Example("tools/bullarium geometry propose --volume 4 --out ../outside",
+                ("bullarium geometry propose: input path must be canonical repository-relative without traversal",),
+                "The same refusal in ordinary text."),
+    ),
+    "map-units": (
+        Example("tools/bullarium geometry map-units --recipe .scratch/absent/recipe.json --replay .scratch/absent --out ../outside.json --json",
+                ('{"code":"input","error":"input path must be canonical repository-relative without traversal","status":"error","v":1}',),
+                "The mapping destination is checked before the recipe, replay or catalog is read."),
+        Example("tools/bullarium geometry map-units --recipe .scratch/absent/recipe.json --replay .scratch/absent --out ../outside.json",
+                ("bullarium geometry map-units: input path must be canonical repository-relative without traversal",),
+                "The same refusal in ordinary text."),
+    ),
+    "register": (
+        Example("tools/bullarium geometry register --recipe .scratch/absent/recipe.json --replay .scratch/absent --mapping .scratch/absent/mapping.json --units .scratch/absent/units.json --revision invalid --json",
+                ('{"code":"input","error":"revision requires explicit whole-second UTC","status":"error","v":1}',),
+                "An invalid revision is refused before replay, catalog reads or any source write."),
+        Example("tools/bullarium geometry register --recipe .scratch/absent/recipe.json --replay .scratch/absent --mapping .scratch/absent/mapping.json --units .scratch/absent/units.json --revision invalid",
+                ("bullarium geometry register: revision requires explicit whole-second UTC",),
+                "The same refusal in ordinary text."),
+    ),
+    "withdraw": (
+        Example("tools/bullarium geometry withdraw --units .scratch/absent/withdraw.json --revision invalid --reason x --evidence-sha256 x --json",
+                ('{"code":"input","error":"revision requires explicit whole-second UTC","status":"error","v":1}',),
+                "An invalid revision is refused before the selection, catalog or any manifest is read."),
+        Example("tools/bullarium geometry withdraw --units .scratch/absent/withdraw.json --revision invalid --reason x --evidence-sha256 x",
+                ("bullarium geometry withdraw: revision requires explicit whole-second UTC",),
+                "The same refusal in ordinary text."),
+    ),
+}
+VERB_HELP = {
+    "propose": "Propose an explicit v2 reading-order recipe from native WORD geometry (scratch/build output only).",
+    "map-units": "Map every catalog unit of the volume onto a replayed derivative through WORD identity.",
+    "register": "Register a replayed derivative and admit explicitly selected 'clean' units via bullarium admit.",
+    "withdraw": "Withdraw registered reading selections by explicit prior-to-null supersessions (no replacement).",
+}
+
+
+def _verb_main(verb, argv, examples):
+    parser = _Parser(prog="bullarium geometry " + verb, description=VERB_HELP[verb])
+    chosen = examples.get("geometry " + verb) if isinstance(examples, dict) else None
+    with_examples(parser, chosen or VERB_EXAMPLES[verb])
+    parser.add_argument("--root", type=Path, default=ROOT)
+    parser.add_argument("--json", action="store_true")
+    if verb == "propose":
+        parser.add_argument("--volume", help="Bullarium catalog volume (1-24 or appendix)")
+        parser.add_argument("--source-txt-record", help="explicit raw OCR artifact.toml (another series)")
+        parser.add_argument("--source-xml-record", help="explicit DjVu XML artifact.toml (another series)")
+        parser.add_argument("--input-map", help="triptych-bullarium-geometry-input-map/v1 locating cached whole inputs")
+        parser.add_argument("--out", required=True)
+    elif verb == "map-units":
+        parser.add_argument("--recipe", required=True)
+        parser.add_argument("--replay", required=True, help="output directory of `bullarium geometry --recipe`")
+        parser.add_argument("--out", required=True)
+        parser.add_argument("--catalog", default=CATALOG)
+        parser.add_argument("--withdrawals", default=WITHDRAWALS)
+    elif verb == "withdraw":
+        for name in ("units", "revision", "reason", "evidence-sha256"):
+            parser.add_argument("--" + name, required=True)
+    else:
+        for name in ("recipe", "replay", "mapping", "units", "revision"):
+            parser.add_argument("--" + name, required=True)
+        parser.add_argument("--input-map")
+        parser.add_argument("--supersede", action="store_true",
+                            help="replace each unit's newest reading selection (append-only; see the corrections manifest)")
+        parser.add_argument("--reason", help="supersession reason recorded for every replaced reading (with --supersede)")
+    try:
+        args = parser.parse_args(argv)
+        if verb == "propose":
+            volume = None if args.volume is None else ("appendix" if args.volume == "appendix" else int(args.volume))
+            info = propose(args.root, args.out, volume=volume, source_txt_record=args.source_txt_record,
+                           source_xml_record=args.source_xml_record, input_map=args.input_map)
+        elif verb == "map-units":
+            info = map_units(args.root, args.recipe, args.replay, args.out, catalog_path=args.catalog,
+                             withdrawals_path=args.withdrawals)
+        elif verb == "withdraw":
+            info = withdraw(args.root, args.units, args.revision, args.reason, args.evidence_sha256)
+        else:
+            info = register(args.root, args.recipe, args.replay, args.mapping, args.units, args.revision,
+                            input_map=args.input_map, supersede=args.supersede, reason=args.reason)
+        result = {"v": 1, "status": "ok", **info}
+        print(json.dumps(result, sort_keys=True, separators=(",", ":")) if args.json else
+              "\n".join(f"{key}: {value}" for key, value in result.items()))
+        return 0
+    except (ValueError, OSError, KeyError, TypeError, StopIteration, expat.ExpatError, tomllib.TOMLDecodeError) as error:
+        print(json.dumps({"v": 1, "status": "error", "code": "input", "error": str(error)}, sort_keys=True, separators=(",", ":"))
+              if "--json" in argv else f"bullarium geometry {verb}: {error}", file=sys.stderr)
+        return 2
+
+
+def main(argv=None, examples=None):
+    argv = list(sys.argv[1:] if argv is None else argv)
+    prefix, rest = [], argv
+    if rest[:1] == ["--root"] and len(rest) > 2:
+        prefix, rest = rest[:2], rest[2:]
+    elif rest and rest[0].startswith("--root="):
+        prefix, rest = rest[:1], rest[1:]
+    if rest and rest[0] in VERB_HELP:
+        return _verb_main(rest[0], prefix + rest[1:], examples)
+    parser = _Parser(prog="bullarium geometry", description=__doc__ + " Verbs `propose`, `map-units` and `register` "
+                     "(see `bullarium geometry VERB --help`) propose, map and register v2 reading-order recipes.")
+    with_examples(parser, examples.get("geometry", EXAMPLES) if isinstance(examples, dict) else examples or EXAMPLES)
+    parser.add_argument("--root", type=Path, default=ROOT)
+    parser.add_argument("--recipe", type=Path, required=True)
+    parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--check", action="store_true")
+    parser.add_argument("--input-map", type=Path, help="explicit versioned artifact-id/SHA256 to acquired-cache path map")
+    parser.add_argument("--json", action="store_true")
+    try:
+        args = parser.parse_args(argv)
+        info = (check if args.check else build)(args.root, args.recipe, args.out, input_map=args.input_map)
+        result = {"v": 1, "status": "valid" if args.check else "built", "hybrid_sha256": info["hybrid_sha256"],
+                  "changed_pages": info["changed_pages"], "changed_WORDs": info["changed_WORDs"]}
+        print(json.dumps(result, sort_keys=True, separators=(",", ":")) if args.json else
+              f"geometry: {result['status']}; {result['changed_pages']} pages; {result['changed_WORDs']} unchanged WORD values")
+        return 0
+    except (ValueError, OSError, KeyError, TypeError, expat.ExpatError) as error:
+        print(json.dumps({"v": 1, "status": "error", "code": "input", "error": str(error)}, sort_keys=True, separators=(",", ":"))
+              if "--json" in argv else f"bullarium geometry: {error}", file=sys.stderr)
+        return 2

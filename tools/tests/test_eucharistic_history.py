@@ -607,10 +607,95 @@ text_set="second-witness"
 unit_ids=["unit.fixture.collect","unit.fixture.second"]
 ''')
 
-    def compare(self):
+    def compare(self, **kwargs):
+        loader = kwargs.pop("adapter_loader", lambda adapter, root: copy.deepcopy(self.payload))
         return history.compare(self.source, self.root, "constructed-pair", ventilator=self.ventilator,
-                               adapter_loader=lambda adapter, root: copy.deepcopy(self.payload),
-                               supported_adapters=("fixture",))
+                               adapter_loader=loader, supported_adapters=("fixture",), **kwargs)
+
+    def linked_context(self):
+        self.source.write_text(self.source.read_text().replace(
+            '[comparisons.left]\n', '[comparisons.left]\nrecord_id="research:manuscript"\n'))
+        return history.catalogue(self.source, self.root, act_loader=lambda path: {})
+
+    def test_checked_catalogue_context_reuses_identical_comparison_without_rebuilding(self):
+        context = self.linked_context()
+        original = copy.deepcopy(context)
+        expected = history.json_bytes(self.compare())
+        with mock.patch.object(history, "catalogue", side_effect=AssertionError("catalogue rebuilt")):
+            actual = self.compare(catalogue_context=context)
+        self.assertEqual(expected, history.json_bytes(actual))
+        self.assertEqual(original, context)
+
+    def test_checked_catalogue_context_refuses_another_valid_routing_source(self):
+        context = self.linked_context()
+        other = self.root / "another-routing.toml"
+        other.write_text(self.source.read_text())
+        with self.assertRaisesRegex(history.HistoryError, "routing input: another-routing.toml"):
+            history.compare(other, self.root, "constructed-pair", ventilator=self.ventilator,
+                            adapter_loader=mock.Mock(side_effect=AssertionError("text reached")),
+                            supported_adapters=("fixture",), catalogue_context=context)
+
+    def test_checked_catalogue_context_refuses_stale_inputs_before_loading_text(self):
+        context = self.linked_context()
+        for name in ("research.toml", "routing.toml"):
+            with self.subTest(name=name):
+                path = self.root / name
+                original = path.read_text()
+                path.write_text(original + "\n")
+                try:
+                    with self.assertRaisesRegex(history.HistoryError, name):
+                        self.compare(catalogue_context=context,
+                                     adapter_loader=mock.Mock(side_effect=AssertionError("text reached")))
+                finally:
+                    path.write_text(original)
+
+    def test_checked_catalogue_context_rechecks_inputs_after_loading_text(self):
+        context = self.linked_context()
+        original = history.verify_adapter
+        changed = False
+
+        def mutate_after_validation(payload, root):
+            nonlocal changed
+            original(payload, root)
+            if not changed:
+                changed = True
+                path = self.root / "research.toml"
+                path.write_text(path.read_text() + "\n")
+
+        with mock.patch.object(history, "verify_adapter", side_effect=mutate_after_validation):
+            with self.assertRaisesRegex(history.HistoryError, "comparison input changed: research.toml"):
+                self.compare(catalogue_context=context)
+
+    def test_checked_catalogue_context_preserves_adapter_publication_and_hash_guards(self):
+        context = self.linked_context()
+        self.payload["units"][0]["publication"]["surfaces"] = []
+        with self.assertRaisesRegex(history.HistoryError, "not permitted"):
+            self.compare(catalogue_context=context)
+        self.payload["units"][0]["publication"]["surfaces"] = ["public-git"]
+        self.payload["units"][0]["text_sha256"] = "0" * 64
+        with self.assertRaisesRegex(history.HistoryError, "text hash mismatch"):
+            self.compare(catalogue_context=context)
+
+    def test_checked_catalogue_context_rechecks_stage_membership_before_and_after_text(self):
+        import _eucharistic_stages as stages
+        context = self.linked_context()
+        directory = self.root / stages.DIRECTORY
+        directory.mkdir(parents=True)
+        new_path = directory / "unexpected.json"
+        new_path.write_text("{}\n")
+        with self.assertRaisesRegex(history.HistoryError, "stage dossier membership changed"):
+            self.compare(catalogue_context=context,
+                         adapter_loader=mock.Mock(side_effect=AssertionError("text reached")))
+        new_path.unlink()
+        original = history.verify_adapter
+
+        def add_dossier_after_validation(payload, root):
+            original(payload, root)
+            new_path.write_text("{}\n")
+
+        with mock.patch.object(history, "verify_adapter", side_effect=add_dossier_after_validation):
+            with self.assertRaisesRegex(history.HistoryError, "stage dossier membership changed"):
+                self.compare(catalogue_context=context)
 
     def test_ordered_group_preserves_members_hashes_paths_and_explicit_gap(self):
         original = copy.deepcopy(self.payload)

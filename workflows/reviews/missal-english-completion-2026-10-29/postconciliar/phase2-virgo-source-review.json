@@ -1,0 +1,82 @@
+{
+  "recorded_on": "2026-10-29",
+  "state": "accepted-source-and-study-translation-candidate-with-scope-clarification",
+  "scope": "One bounded initial1888responsory sentence, its finite abridgment and one original projectEnglish study translation received at two OLM1981 source-local roles",
+  "frozen_candidate_sha256": "1dfc1a6bc137100c447291272672540410331942f70eaba2c55152188e7f1319",
+  "source_whole_pdf_sha256": "a8a789d4c48003cbfaeb440cc22a6970b96d18d9cb19ea60b2a02c83a53582f0",
+  "modern_whole_pdf_sha256": "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d",
+  "source_locus": {
+    "artifact_page": 655,
+    "printed_page": "[93]",
+    "title": "Commune Virginum, initial respond sentence after seventh lesson"
+  },
+  "modern_locus": {
+    "artifact_page": 391,
+    "printed_page": "337",
+    "number": "735.2",
+    "referrals": [
+      {
+        "number": "681",
+        "artifact_page": 370,
+        "printed_page": "316",
+        "modern_locus": "735.2"
+      },
+      {
+        "number": "692",
+        "artifact_page": 372,
+        "printed_page": "318",
+        "modern_locus": "735.2"
+      }
+    ]
+  },
+  "direct_review": "Actual historical1888page and OLM391body directly opened and read. Exact independent PDF renders reproduce inspected source/comparison images byte for byte. Dated OLM370 and372referrals independently rendered and directly read; both point to735.2. Historical book title and wholePDFhash were independently checked in the immediately preceding finite Semen source review; the same exact artifacts control this reading.",
+  "abridgment": "Within the quoted initial response sentence, omit the complete lampadibus clause and the connective Et. All retained words agree under only stress accents, ae-ligature expansion, capital Virgo versus lower virgo, chant-star and pointing differences. No word is added or substituted.",
+  "source_derived_abridgment_sha256": "5c50e7201f6f0e1768c2bf0fb752558657431aacddc9aff698e4e767bd75cc03",
+  "english_fidelity": "The proposed original studyEnglish accurately renders the complete finite abridgment, including the relative whom the Lord found watching and the temporal when the Lord came, followed by she went in with him to the wedding feast. It is not adapted human English and makes no recitation or approval claim.",
+  "verdicts": [
+    {
+      "target": {
+        "mass": "saint-cecilia-virgin-martyr",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "verdict": "accept-source-and-study-English-candidate",
+      "required_registration_clarification": "Explicitly bound the historical input to the initial respond sentence through nuptias. The following Media nocte versicle and abbreviated Et veniente repetition are outside that quoted selection; do not call the selection the entire responsory without this boundary."
+    },
+    {
+      "target": {
+        "mass": "saint-lucy-virgin-martyr",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "verdict": "accept-source-and-study-English-candidate",
+      "required_registration_clarification": "Explicitly bound the historical input to the initial respond sentence through nuptias. The following Media nocte versicle and abbreviated Et veniente repetition are outside that quoted selection; do not call the selection the entire responsory without this boundary."
+    }
+  ],
+  "checks": {
+    "body_images": [
+      {
+        "image": "remaining-acclamations/latin1888-ap655.png",
+        "sha256": "075fc0bbbb4f18359f447f524dfa96e03c994b0c08fdb07c9c40e040d68509d2",
+        "independent_render_matches": true
+      },
+      {
+        "image": "olm-ap391.png",
+        "sha256": "7582475fdda50e7b235f52704d774dc0fa38e016d4160e56eee0dbe182e2122f",
+        "independent_render_matches": true
+      }
+    ],
+    "candidate_hash_exact": true,
+    "abridgment_hash_exact": true
+  },
+  "limits": [
+    "Source and fidelity acceptance only; source registration, renderer qualifications, target bindings and downstream validator checks remain parent-owned.",
+    "No authenticated target2008 body or approved modern English is established.",
+    "One physical source selection and one new studyEnglish body supply two receiving targets; they are not two independently recovered human translations.",
+    "Source Latin whole-body hold remains independent from these studyEnglish offers."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "98fbbebc91340b657497b897cfadf541dce3f1e559647bb78752236b7926df5b",
+  "documents": [
+    {
+      "id": "acta.aas.020.aas-020-l00049",
+      "language": "la",
+      "pdf_sha256": "cf49e91ba2e541d040c6d6c22e2bd776b3bf9088886164d48f1728e54f9ccff5",
+      "pages": 5,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "full_size_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "All five reader pages freshly inspected in contact sheet and full size; ten native source-note groups freshly checked against all12 native excerpt pages and exact separate body.tex paragraph boundaries. No clipping, overlap, note/body fusion, sustained OCR unreadability or apparatus-only terminal page found."
+        },
+        {
+          "severity": "WARNING",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "Literal bounded OCR defects remain: hard-line word divisions, reference digits, residual letter spacing, odd glyphs and damaged date/subscription glyphs. Native OCR reconstruction and exact source preserve these; surrounding sustained text remains readable. Acceptance does not certify wording."
+        }
+      ],
+      "limitations": "Independent exact-byte reader/source-boundary acceptance; no inherited inspection. Vatican archival OCR reconstruction, no original-print image or lexical collation, translation judgment, rights certification, source-state promotion, installation or deployment. Unresolved frozen date is unchanged.",
+      "receipt_sha256": "98fbbebc91340b657497b897cfadf541dce3f1e559647bb78752236b7926df5b",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-21-b-mortalium.md",
+      "report_sha256": "d287cec40ca487e406e5796ff8bf39ab9aed9155c8b73fce60bbf566fe3724d4"
+    }
+  ]
+}

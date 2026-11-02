@@ -1,0 +1,42 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "44e047cf23b4ce0973e9c79a027311ac932243328ceda1ba7ec860e24c7e7601",
+  "documents": [
+    {
+      "id": "acta.ass.006.ass-006-act-015",
+      "language": "la",
+      "pdf_sha256": "b60d4b76d86da89ee3cc992bd3b8aa769478e4d44e6d34f439f600b715511984",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": "Independent exact-byte visual/source-boundary/schema/LF-replay/PDF-fidelity review. All reader pages individually inspected at full resolution. Native contact-sheet coverage includes all five selected pages; individual original-resolution native views: 273,276,277. Native witnesses are OCR reconstructions; no whole-source lexical collation, original-print image collation, translation assessment, new identity/rights clearance, installation or deployment claim. Separate intake/special gates remain independent.",
+      "receipt_sha256": "44e047cf23b4ce0973e9c79a027311ac932243328ceda1ba7ec860e24c7e7601",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-29.md",
+      "report_sha256": "c6f28d32bf53efc5d48ea7a8c49fc4e7064e6506103b50afa7745e51df1fba4a"
+    },
+    {
+      "id": "acta.ass.027.ass-027-l00048",
+      "language": "la",
+      "pdf_sha256": "68ed79954bb983a26235e42aa05a1b4c7293fc0af42a141c80c27a8fb769c27c",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": "Independent exact-byte visual/source-boundary/schema/LF-replay/PDF-fidelity review. All reader pages individually inspected at full resolution. Native contact-sheet coverage includes all five selected pages; individual original-resolution native views: 3,4,7. Native witnesses are OCR reconstructions; no whole-source lexical collation, original-print image collation, translation assessment, new identity/rights clearance, installation or deployment claim. Separate intake/special gates remain independent.",
+      "receipt_sha256": "44e047cf23b4ce0973e9c79a027311ac932243328ceda1ba7ec860e24c7e7601",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-29.md",
+      "report_sha256": "c6f28d32bf53efc5d48ea7a8c49fc4e7064e6506103b50afa7745e51df1fba4a"
+    }
+  ]
+}

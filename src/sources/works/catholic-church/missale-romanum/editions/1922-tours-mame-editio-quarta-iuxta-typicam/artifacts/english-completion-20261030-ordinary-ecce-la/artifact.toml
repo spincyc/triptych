@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-ecce-la"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 1922 Tours Mame printing and its faithful mechanical reproduction have the affirmative United States public-domain basis already recorded on artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a. This whole historical page reproduces that public-domain printing only; no modern book, website wrapper or editorial apparatus is retained. The faithful source transcription claims no new exclusive right in the prayer words."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "a3cab73275a00e1be80c8c46642c6a746de1bef11c0c56d6b85c04a20c1cbb1b"
+byte_size = 259
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-ecce-la/text.tsv"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-ecce-page"
+provenance = "Direct source-image reading of the red spoken quotation on the right column of whole source PDFpage84, printed lxxiv. No OCR supplies any word. The Bible John1:29 has singular peccatum and is explicitly not the source of this plural sentence."
+transformation = "Transcribe only the complete quoted Ecce sentence of Ritus servandus X.6 from the direct source image, retaining source words, capital Agnus Dei, both ecce tokens, plural peccata and terminal full stop. Rejoin the line-ending pec-/cáta as peccáta without the compositor hyphen; remove its stress accent. Preserve the ordinary single spaces between other source words. Omit surrounding ceremonial directions; no other source word or pointing is changed."
+indexable = true
+encoding = "utf-8"
+notes = "One complete historical liturgical source sentence. Its later placement is independently evidenced by secondary2002 n132; full authenticated2008 collation remains unestablished."

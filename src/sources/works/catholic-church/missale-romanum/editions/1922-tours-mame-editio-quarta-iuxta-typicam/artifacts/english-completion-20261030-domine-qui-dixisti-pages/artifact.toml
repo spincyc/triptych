@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-domine-qui-dixisti-pages"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "bounded-facsimile-pages"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 1922 Mame printing and its faithful mechanical reproduction have the affirmative United States public-domain basis recorded on artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a. The retained pages are historical book pages only; no modern target page, website wrapper or new editorial apparatus is copied."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/missaleromanum0000unse/missaleromanum0000unse.pdf"
+provenance = "Recomputed the whole registered 1922 Mame PDF SHA-256 before source use. Freshly rendered and directly inspected original artifact464, printed350, left column, for the complete Domine-qui-dixisti prayer and its old conclusion; and original1022, printed144*, right column, for the complete short Qui-vivis conclusion following Non-intres. The evidence is these named complete pages and their context, not a whole-book textual inspection."
+retrieved = "2026-10-30"
+sha256 = "82ba014aba05e5948c494892990e33bbe35b67b42f1874349512c13c081c3eb9"
+byte_size = 402728
+page_count = 2
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-pages/source.pdf"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Extract complete original artifact pages464 and1022 with pdfseparate; join in that stated order with pdfunite. No crop, rasterisation, OCR reconstruction or content rewriting."
+indexable = false
+notes = "Packet1=original464/printed350; packet2=original1022/printed144*. The second prayer supplies a separately witnessed whole short conclusion, not a deletion inferred from the first prayer. Other source prayers and red rubrics remain context, not modern target counterparts."

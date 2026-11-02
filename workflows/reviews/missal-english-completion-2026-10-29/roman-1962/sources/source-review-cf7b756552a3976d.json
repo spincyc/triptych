@@ -1,0 +1,32 @@
+{
+  "schema": "triptych-finite-three-conditional-structure-check/v1",
+  "candidate_sha256": "f8a94d64d90e3dc82e90a84f1e7587c17d40dba0649b8c82f8ac3acf40c45acb",
+  "checks": {
+    "Latin": {
+      "problems": [],
+      "public_text_structure": {
+        "actions": [
+          {
+            "kind": "rubric",
+            "start": 110,
+            "end": 127
+          }
+        ]
+      }
+    },
+    "English": {
+      "problems": [],
+      "public_text_structure": {
+        "actions": [
+          {
+            "kind": "rubric",
+            "start": 116,
+            "end": 144
+          }
+        ]
+      }
+    }
+  },
+  "scope": "Owning literal conditional-span validator and browser-offset projection only. Actual seasonal execution/rendering remains root integration gate.",
+  "authority_adopted": false
+}

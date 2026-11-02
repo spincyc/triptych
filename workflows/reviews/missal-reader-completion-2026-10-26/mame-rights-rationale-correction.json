@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "recorded_on": "2026-10-26",
+  "status": "PROPOSED_RATIONALE_CORRECTION_ONLY_CURRENT_PD_OUTCOME_UNCHANGED",
+  "artifact": {
+    "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml",
+    "sha256": "72e9a9f73deab975d22e4e665ec891afc931f613549493a65c7b3c38572def45",
+    "bytes": 2649
+  },
+  "field": "rights_basis",
+  "existing_exact_value": "The underlying book was first published at Tours in 1922, before the pre-1931 United States public-domain line applicable in 2026. Its maximum possible United States term expired before URAA restoration, so there was no subsisting term to restore on 1 January 1996. The PDF is a faithful mechanical page reproduction of that public-domain book; its machine-produced image and OCR layers add no human authorship. This conclusion relies on publication date and the mechanical character of the reproduction, not on Internet Archive availability, successful retrieval, or a host licence label.",
+  "unsupported_existing_sentence": "Its maximum possible United States term expired before URAA restoration, so there was no subsisting term to restore on 1 January 1996.",
+  "finding": "The verified 1922 publication date supports no remaining term in2026. It does not establish expiry before1996. A75-year term from1922 could reach1997; the conservative95-year ceiling reaches2017. No actual restoration or precise historic expiry date is decided here. The incorrect earlier-than1996 premise is unnecessary to the current public-domain conclusion.",
+  "proposed_replacement_value": "The identified book was published at Tours in 1922. Its 1922 printed contents have no remaining United States copyright term in 2026: even a 95-year maximum term would have ended before 2026, and any URAA restoration under 17 U.S.C. 104A(a)(1)(B) supplies only the remainder of the otherwise applicable United States term. This conclusion does not depend on asserting that every possible term had already expired on 1 January 1996. The PDF is a faithful mechanical page reproduction of that public-domain book; its machine-produced image and OCR layers add no new human authorship. The basis is publication date and mechanical reproduction, not Internet Archive availability, successful retrieval, or a host licence label.",
+  "primary_sources": [
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/identity-rights/copyright-office-chapter3.html",
+      "url": "https://www.copyright.gov/title17/92chap3.html",
+      "status": 200,
+      "bytes": 72370,
+      "sha256": "121ed92e20b6fc9325e22a2f0f33cadabc56fda923b06902e8f8372292d0db6d"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/identity-rights/copyright-office-circular15a.pdf",
+      "url": "https://www.copyright.gov/circs/circ15a.pdf",
+      "status": 200,
+      "bytes": 273867,
+      "sha256": "6ff3c5612e1cd56469b3eb7d35eba7fd3374843d82744c63ab909225f53b7aef"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/identity-rights/copyright-office-chapter1.html",
+      "url": "https://www.copyright.gov/title17/92chap1.html",
+      "status": 200,
+      "bytes": 675161,
+      "sha256": "97999d678e2877c8142da81a0dce819b210e9f92aa5a405d130bf2f2e50c7d75"
+    }
+  ],
+  "source_reading_scope": [
+    "17 U.S.C.104A(a)(1)(B): restoration supplies the remainder of the otherwise applicable US term; section104A(h)(2): restoration date mechanics.",
+    "17 U.S.C.304: maximum subsisting term and prior term rules; Circular15A pp2-3: 56/75/95-year progression and URAA restored-term duration.",
+    "The relevant paragraphs were independently browser-opened and then read from whole downloaded official documents. Initial default-agent requests received403; explicit normal browser User-Agent returned200 for all three complete official sources."
+  ],
+  "coordination_limit": "No canonical edit. Replacing this fingerprinted field requires the owning coordinator to rebind/regenerate affected references; this scratch proposal does not supersede the current artifact record by itself. A durable correction may be recorded separately if the coordinator preserves exact historical bindings.",
+  "jurisdiction": "United States only",
+  "legal_character": "Bounded repository research conclusion supported by official statute/Office duration guidance; not an opinion of counsel."
+}

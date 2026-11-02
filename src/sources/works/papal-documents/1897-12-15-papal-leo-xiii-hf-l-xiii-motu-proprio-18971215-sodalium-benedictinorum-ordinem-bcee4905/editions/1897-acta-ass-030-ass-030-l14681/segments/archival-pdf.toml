@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.030.ass-030-l14681.pdf"
+edition_id = "edition.acta-papal-archives.ass.030.ass-030-l14681"
+artifact_id = "artifact.acta-papal-archives.ass.030.vatican-pdf-b9366cd4"
+artifact_sha256 = "b9366cd4091305a79cb8aa8f3ed14e74e062efc626f7bd3de11eca569f35cbac"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[362, 364]]
+context = "{\"closing_physical_lines\": [14760, 14763], \"closing_text\": \"   Datum Romae apud S. Petrum die 15 Decembris anno 1897,\\nPontificatus Nostri vicesimo.\\n\\n                         LEO PP. XIII.\", \"end_line\": 14763, \"removed\": \"Running header/page-number lines carrying formfeed and Acta volume/fascicle footers are omitted via disjoint ranges; all remaining source text and notes in selected extent retained.\", \"retained_historical_note_ranges\": [], \"start_line\": 14681}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 362, \"printed_page\": \"362\", \"running_head_text\": \"362                         EPISTOLA   ENCYCLICA\"}, {\"artifact_page\": 363, \"printed_page\": \"363\", \"running_head_text\": \"MOTU   PROURIO                         363\"}, {\"artifact_page\": 364, \"printed_page\": \"364\", \"running_head_text\": \"364                        MOTU    PROPRIO\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

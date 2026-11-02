@@ -1,0 +1,113 @@
+schema = 1
+record_type = "bounded-latin-recovery-receipt"
+recorded_on = "2026-10-26"
+scope = "Twelve exact Latin bodies only; eleven new proof rows and one exact prior removed Anthony Collect row replacement. All English absences, other body/proof/refusal records and ordinary-frame holds are preserved."
+rights_adoption = "workflows/reviews/missal-reader-completion-2026-10-26/latin-seven-rights-adoption.json"
+rights_adoption_sha256 = "073b3ac2c2f42cf38e836a2e931388504135251cdbe0288a056d1af632c23f5e"
+history_rule = "The exact former removed record below stays historical. Its prior body hash is not silently approved or substituted for the new independently received body."
+
+[[previous_removed]]
+mass = "s-antonii-padua-confessoris-ecclesiae-doctoris"
+form = ""
+proper = "Collect"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "4750a85cade3e62f43bc0e1525aea460e04d09f94788450e2f1d911e5baab0dc"
+body_status = "removed"
+
+[[admitted_target]]
+target = ["s-antonii-padua-confessoris-ecclesiae-doctoris", "main", "Postcommunion", "all", 1]
+body_sha256 = "ce4bddd814e9b99aee80ed02a901551ed8f949f13c48662f3c9d4c54770a0696"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-postcommunion"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-postcommunion"
+English_action = "preserve exact current unavailable row"
+ordinary_frame_action = "unchanged"
+
+[[admitted_target]]
+target = ["s-antonii-padua-confessoris-ecclesiae-doctoris", "main", "Collect", "all", 1]
+body_sha256 = "477fc3ccb5b28d6c984eb149d9150b2beac0f0c263bbf7fce39682f2e0ae505e"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-collect"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-collect"
+English_action = "preserve exact current unavailable row"
+ordinary_frame_action = "unchanged"
+
+[[admitted_target]]
+target = ["s-iacobi-apostoli", "main", "Postcommunion", "all", 1]
+body_sha256 = "93d45e7bbd858bbffdb581065cb4304d81ecb0e2c60626c805c8507f97817bcf"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-iacobi-apostoli-postcommunion"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-seven-20261026-s-iacobi-apostoli-postcommunion"
+English_action = "preserve exact current unavailable row"
+ordinary_frame_action = "unchanged"
+
+[[admitted_target]]
+target = ["s-ioachim-patris-beatae-mariae-virginis", "main", "Collect", "all", 1]
+body_sha256 = "091f3c414277631835619a17bc1b6cf748b113d23e91dcbe1a0bb389d5264431"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-ioachim-patris-beatae-mariae-virginis-collect"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-seven-20261026-s-ioachim-patris-beatae-mariae-virginis-collect"
+English_action = "preserve exact current unavailable row"
+ordinary_frame_action = "unchanged"
+
+[[admitted_target]]
+target = ["s-bartholomaei-apostoli", "main", "Collect", "all", 1]
+body_sha256 = "7a241de028830373fc873e86baa38df7e792cec6aeb1314b2d5b934a3a035acd"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-bartholomaei-apostoli-collect"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-seven-20261026-s-bartholomaei-apostoli-collect"
+English_action = "preserve exact current unavailable row"
+ordinary_frame_action = "unchanged"
+
+[[admitted_target]]
+target = ["s-bartholomaei-apostoli", "main", "Secret", "all", 1]
+body_sha256 = "42ee32c39e4ab1e22e48758d436aa9caf10e593ea4fe24dabc950df8fb6b5cbe"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-bartholomaei-apostoli-secret"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-seven-20261026-s-bartholomaei-apostoli-secret"
+English_action = "preserve exact current unavailable row"
+ordinary_frame_action = "unchanged"
+
+[[admitted_target]]
+target = ["ss-philippi-iacobi-apostolorum", "main", "Collect", "all", 2]
+body_sha256 = "d501d42fdc12584740a5f9f42844705335ff64d181f58b91c51506b54e056b87"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-ss-philippi-iacobi-apostolorum-collect-2"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-seven-20261026-ss-philippi-iacobi-apostolorum-collect-2"
+English_action = "preserve exact current unavailable row"
+ordinary_frame_action = "unchanged"
+
+[[admitted_target]]
+target = ["advent-ember-wednesday", "main", "Oratio", "all", 1]
+body_sha256 = "74e442a42a44911f7dcfddf187a9ca60803e4cf8cd1eb0dd12e989bbc8d9e20a"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.advent-ember-wednesday-oratio"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-five-advent-ember-wednesday-oratio-20261026"
+English_action = "preserve exact current unavailable row"
+ordinary_frame_action = "unchanged"
+
+[[admitted_target]]
+target = ["lent-4-wednesday", "main", "Oratio", "all", 1]
+body_sha256 = "ee7635bba04e873cde6b057fe1169f44d69d19b8e2607e9d6682e03f7454ae38"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.lent-4-wednesday-oratio"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-five-lent-4-wednesday-oratio-20261026"
+English_action = "preserve exact current unavailable row"
+ordinary_frame_action = "unchanged"
+
+[[admitted_target]]
+target = ["holy-wednesday", "main", "Oratio", "all", 1]
+body_sha256 = "a1ba771e3c018e3ae52224e1c440e2b97e0e3361c80e8558cb87297b1b7debc2"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.holy-wednesday-oratio"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-five-holy-wednesday-oratio-20261026"
+English_action = "preserve exact current unavailable row"
+ordinary_frame_action = "unchanged"
+
+[[admitted_target]]
+target = ["pentecost-ember-wednesday", "main", "Oratio", "all", 1]
+body_sha256 = "50c254fdba0b7ab1379e983f91442a97976993da9b2ff1e9842cea044dac1175"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.pentecost-ember-wednesday-oratio"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-five-pentecost-ember-wednesday-oratio-20261026"
+English_action = "preserve exact current unavailable row"
+ordinary_frame_action = "unchanged"
+
+[[admitted_target]]
+target = ["september-ember-wednesday", "main", "Oratio", "all", 1]
+body_sha256 = "db5d327e933dcd20e8f9f36b1f03fec9af0958986fbae5ef74225f06b9671c2b"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.september-ember-wednesday-oratio"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-five-september-ember-wednesday-oratio-20261026"
+English_action = "preserve exact current unavailable row"
+ordinary_frame_action = "unchanged"

@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "review": "independent merged run-archive privacy repair confirmation",
+  "verdict": "PASS",
+  "merge_target": "84c2f7e041af77230095987ae7eb86b0f4d2f92e",
+  "workspace_branch": "feature/propers/codex",
+  "reviewed_sha256": {
+    "tools/proper-study-run-archive": "21d18bc66164cc66519f615acc078c374effbf71456c6d72c7ac2fc51720ac82",
+    "tools/tests/test_proper_study_run_archive.py": "509541dfacef05e2501f5edfc4717017db123c9a0424fc0e7af6c98a3a7d277f",
+    "workflows/OPERATOR.md": "7b0ea4bd0972e17c0b68cb57ad282e0df9f6a7af90ea3d81b6db699e2292e1a1",
+    "tmt.json": "1991c06be7c872c8322e2821ce6ce3168da1d52043298a06ac7031489e813020"
+  },
+  "resolved_findings": [
+    {
+      "id": "ARCHIVE-MERGE-001",
+      "resolution": "Decoded packet strings are materialized for reuse. Operation-token checks also inspect raw text so wrapped tokens cannot escape; absolute-path checks use decoded header strings, retaining the main TeX/UNC repair."
+    }
+  ],
+  "independent_checks": [
+    {
+      "command": "python -m unittest tools.tests.test_proper_study_run_archive -v",
+      "runtime": "Pinned repository runtime; isolated reviewer scratch and TMPDIR",
+      "exit_code": 0,
+      "tests_run": 58,
+      "passed": 57,
+      "skipped": 1,
+      "seconds": 3.774,
+      "skip_reason": "Historical ignored run directories needed for optional committed-archive replay are unavailable."
+    },
+    {
+      "command": "sh tests/tools/proper-study-run-archive.test",
+      "exit_code": 0,
+      "result": "CLI smoke PASS; unavailable historical archive reproduction explicitly skipped."
+    },
+    {
+      "result": "Independent raw, decoded JSON-header, escaped-space JSON-header and wrapped raw synthetic packet handles all refuse; native input bytes remain unchanged."
+    },
+    {
+      "result": "Independent decoded-header TeX packet archives byte-exact; genuine UNC path in decoded header refuses."
+    },
+    {
+      "result": "Full suite retains operation-note-only explicit redaction, atomic residual refusals, original-hash verification, deterministic receipts, source URL preservation and legacy path-only golden-byte compatibility."
+    },
+    {
+      "result": "All 58 files of native v15 archive 0880812aa919d648 remain byte-identical to premerge HEAD. No replay export or restamping under the current workflow was performed."
+    },
+    {
+      "command": "git diff --check -- tools/proper-study-run-archive tools/tests/test_proper_study_run_archive.py workflows/OPERATOR.md tmt.json",
+      "exit_code": 0
+    }
+  ],
+  "contract_status": {
+    "main_b38044fe88_decoded_header_fix_preserved": true,
+    "explicit_operation_note_redaction_preserved": true,
+    "combined_privacy_audit_correct": true,
+    "operator_source_first_version16_and_historical_version15_boundaries_preserved": true,
+    "registered_explicit_option_preserved": true
+  },
+  "prior_review": {
+    "verdict": "CHANGES_REQUIRED",
+    "sha256": "8ca45e967a6816ee3d0127ee2a0635651ed5bdd532ad2a882d8cd93cc9191091",
+    "retained_unchanged": true
+  },
+  "open_findings": [],
+  "limits": [
+    "Bounded merged exporter repair confirmation only; final reconciliation, artifact-delivery changes and integration/disclosure require their own frozen-snapshot reviews.",
+    "No source, index, release or historical archive mutation, global build, commit or push performed."
+  ]
+}

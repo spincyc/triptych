@@ -1,0 +1,129 @@
+schema_version = 1
+id = "gpt/devotions/novenas/00-ascension-to-pentecost"
+kind = "novena"
+profile = "guidance/devotions/novenas.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/devotions/novenas/00-ascension-to-pentecost"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "prayer-inventory"
+source = "research/prayer-inventory.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "common-order"
+source = "sections/40-common-order.tex"
+
+[[structure]]
+role = "daily-meditation"
+source = "days/01-ascension-promise.tex"
+
+[[structure]]
+role = "daily-meditation"
+source = "days/02-one-accord.tex"
+
+[[structure]]
+role = "daily-meditation"
+source = "days/03-mary-church.tex"
+
+[[structure]]
+role = "daily-meditation"
+source = "days/04-repentance-remission.tex"
+
+[[structure]]
+role = "daily-meditation"
+source = "days/05-unity-many-tongues.tex"
+
+[[structure]]
+role = "daily-meditation"
+source = "days/06-sevenfold-gift.tex"
+
+[[structure]]
+role = "daily-meditation"
+source = "days/07-fruit-holiness.tex"
+
+[[structure]]
+role = "daily-meditation"
+source = "days/08-charisms-mission.tex"
+
+[[structure]]
+role = "daily-meditation"
+source = "days/09-fire-new-creation.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/90-hymns.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/10-scriptural-archetype.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/20-history-reception.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/30-theology-waiting.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/95-annual-use.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/00-identity-calendar.tex"
+
+[[structure]]
+role = "references"
+source = "sections/99-references.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/00-identity-calendar.tex"
+
+[[structure]]
+role = "daily-prayers"
+source = "prayers/day-*.tex"
+
+[[structure]]
+role = "common-prayers"
+source = "prayers/daily-invocation.tex"
+
+[[structure]]
+role = "common-prayers"
+source = "prayers/veni-creator.tex"
+
+[[structure]]
+role = "common-prayers"
+source = "prayers/veni-sancte.tex"

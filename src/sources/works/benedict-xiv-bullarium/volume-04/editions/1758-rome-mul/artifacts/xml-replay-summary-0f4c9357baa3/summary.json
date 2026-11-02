@@ -1,0 +1,71 @@
+{
+  "alignment_difference_spans": 62999,
+  "alignment_method": "Python difflib SequenceMatcher with autojunk=True; deterministic alignment, not a claim of minimal edits.",
+  "artifacts": {
+    "imprint": {
+      "id": "artifact.benedict-xiv-bullarium.volume-04.1758-rome-mul.imprint-94614d5c6813",
+      "sha256": "94614d5c6813758a4cdc460723db1cad2becc8598b4511a557bd06b8d97f6fba"
+    },
+    "ocr": {
+      "id": "artifact.benedict-xiv-bullarium.volume-04.1758-rome-mul.ocr-f846e3d09d9a",
+      "sha256": "f846e3d09d9a993ebbed212e09a2431b09c78f31f333009909bf13ec48aa86dd"
+    },
+    "offered-ocr": {
+      "id": "artifact.benedict-xiv-bullarium.volume-04.1758-rome-mul.offered-ocr-459bb1400c39",
+      "sha256": "459bb1400c39ad8a7d0387f5b33ad23fe00a519c47ccdd0d34ae4095d8b650e8"
+    },
+    "scandata": {
+      "id": "artifact.benedict-xiv-bullarium.volume-04.1758-rome-mul.scandata-4760d3d38942",
+      "sha256": "4760d3d3894218f99a5683d6b70dae9f4fd0bddea5485b635489e4abcc27f01c"
+    },
+    "xml": {
+      "id": "artifact.benedict-xiv-bullarium.volume-04.1758-rome-mul.xml-1c8a7e89e77d",
+      "sha256": "1c8a7e89e77d2eeeefaa5b36d68293e4b06ca0fae4042b80e04dc0edb526aa6f"
+    }
+  },
+  "canonical_line_map": {
+    "id": "artifact.benedict-xiv-bullarium.volume-04.1758-rome-mul.line-map-03b058be6c82",
+    "layout_flagged_pages": 82,
+    "pages": 444,
+    "physical_lines": 71493,
+    "sha256": "03b058be6c82bfab17c414c2af22851de972ab7f59357e995e9b49c021b40ae6"
+  },
+  "full_native_xml_token_equality": true,
+  "independent_standalone_replay": {
+    "byte_identical_to_derived_txt": true,
+    "byte_size": 2659810,
+    "sha256": "f846e3d09d9a993ebbed212e09a2431b09c78f31f333009909bf13ec48aa86dd"
+  },
+  "limits": [
+    "Exact XML token serialization preserves all native words, including source errors.",
+    "Native XML order can interleave columns or marginalia; exact mapping is not clean reading order.",
+    "No individual act is admitted or authenticated by this summary."
+  ],
+  "native_xml_tokens": 428932,
+  "offered_txt_differs": true,
+  "offered_txt_tokens": 397568,
+  "original_acquisition_audit": {
+    "byte_size": 31320225,
+    "retained_extent": "Hash and compact factual findings only; large lexical mismatch arrays are not needed to reproduce the selected XML representation.",
+    "sha256": "c99d25a0c355a1dff640a8f557eac6b941a5e0d0edbecc2cf8817482c9a9811c"
+  },
+  "original_acquisition_recipe": {
+    "byte_size": 5437,
+    "retained_extent": "Historical acquisition recipe digest only; standalone archived recipe is the current reproducibility controller.",
+    "sha256": "c5db511b6868069819d82e2238d2f6f9ef24365675f7a005e4168180bced233d"
+  },
+  "recipe": {
+    "byte_size": 1824,
+    "id": "artifact.triptych.historical-papal-line-mapping.2026-10-26-xml-line-text-v1-905946c3.recipe-905946c3d583",
+    "sha256": "905946c3d583fe912dca7cde55d82f1419bfea68b91c8445ca0cd8d2913c7523"
+  },
+  "recorded_on": "2026-10-26",
+  "schema": "triptych-historical-xml-input-replay-summary/v1",
+  "scope": "Benedict XIV Bullarium, Rome/Mainardi1758 tomeIV; mechanical representation identity, not lexical collation or reading-order admission.",
+  "source_inputs": {
+    "derived_txt": "ocr.txt",
+    "offered_txt": "offered-ocr.txt",
+    "recipe": "rebuild-xml-line-text.py",
+    "xml": "source.xml"
+  }
+}

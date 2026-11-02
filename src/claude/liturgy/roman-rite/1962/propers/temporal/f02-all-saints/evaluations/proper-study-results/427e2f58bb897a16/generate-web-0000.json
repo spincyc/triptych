@@ -1,0 +1,7 @@
+{
+  "artifact_path": "build/web/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.md",
+  "disposition": "PASS",
+  "iteration": 0,
+  "stage": "generate-web",
+  "summary": "Converted the canonical All Saints study to its web edition with tools/tpt web-edition (exit 0); verified the generated Markdown preserves the whole argument (opening, all fourteen appointed texts with proper-* anchors, element settings, three interpretation lanes with lane-* boundary anchors, comparison, orientation-v2 chronology appendix, scope appendix, References), the four-senses definition lists in each interpretation, the source-position [TOC] marker and section anchors, and the terminal Last-revised timestamp and CC BY 4.0 rights colophon, with no trailing whitespace. Recorded the bytes for independent review via snapshot-web (receipt research/web-artifact.json, sha256 2fd1fa1611e393281e1c98ffe228b1185f4528a075ae8d2dbfdd7aeb11f0c856). Declaration audit check-web-edition for this leaf passed (exit 0). No synthesis or homily web leaves created; no catalogs or release records touched."
+}

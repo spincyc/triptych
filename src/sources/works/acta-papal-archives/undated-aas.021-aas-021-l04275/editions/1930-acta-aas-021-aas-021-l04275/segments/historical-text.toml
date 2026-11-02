@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.aas.021.aas-021-l04275"
+edition_id = "edition.acta-papal-archives.aas.021.aas-021-l04275"
+artifact_id = "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a"
+artifact_sha256 = "c3e4af8a24386821d8b3827235c324e20a4a0a36c0f4dc88b017a3380400357c"
+segment_type = "constituent-work"
+states = ["cataloged", "acquired", "inspected"]
+physical_line_ranges = [[4275, 4290], [4292, 4333], [4335, 4351]]
+context = "{\"context\": \"Formal document under the papal issuer section, distinguished from adjacent curial and editorial sections.\", \"date_clause_line_ranges\": [[4347, 4354]], \"date_identity_index_evidence\": null, \"papal_issuer_or_signature_line_ranges\": [[4279, 4279]], \"source_date_clause_raw\": \"   D a t u m R o m a e apud Sanctum Petrum, sub anulo Piscatoris, die xi\\nmensis Iulii anno MDCCCCXxvni, Pontificatus Nostri septimo.\\n\\n\", \"source_heading_line_ranges\": [[4275, 4278]]}"
+notes = "{\"closing\": \"Source final papal signature, cardinal countersignature, or chancery registration retained, together with the dating clause when present.\", \"closing_line_ranges\": [[4344, 4351]], \"omitted_page_heads_line_ranges\": [[4291, 4291], [4334, 4334]], \"opening\": \"Source act heading and addressee or subject precede the papal issuer/greeting; no incipit supplied by conjecture.\", \"reviewed_exclusions\": [{\"physical_line_ranges\": [[4352, 4356]], \"reason\": \"Exclude subsequent SERMONES container heading after papal chancery closure.\"}]} Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

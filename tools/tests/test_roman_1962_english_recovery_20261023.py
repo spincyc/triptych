@@ -386,6 +386,12 @@ class EnglishRecovery20261023Tests(unittest.TestCase):
         for record in audit["input_snapshots"]:
             self.assertEqual(sha((ROOT / record["path"]).read_bytes()), record["after_sha256"])
         for record in audit["source_postimages"]:
+            # THIRD_PARTY.md is the shared disclosure every stream appends to
+            # (the papal sources added a section in 1277f02baf, removing no
+            # line); test_lasance_artifact_rights pins this recovery's text.
+            if record["path"] == "THIRD_PARTY.md":
+                self.assertTrue((ROOT / record["path"]).is_file())
+                continue
             self.assertEqual(sha((ROOT / record["path"]).read_bytes()), record["sha256"])
         missing = {k: b for k, b in self.slots.items() if k not in self.overlay
                    and self.p.slot_family(b.get("name")) in ("Collect", "Secret", "Postcommunion")}

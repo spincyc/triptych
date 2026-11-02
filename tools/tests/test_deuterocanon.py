@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import _deuterocanon as deuterocanon  # noqa: E402
+from _bible_artifacts import select_verse_aliases
 
 VULGATE = "vulgate"
 GREEK = "greek"
@@ -237,13 +238,9 @@ class DerivedAliases(unittest.TestCase):
     def test_every_aliased_edition_matches_its_derivation(self):
         for edition, (_, where) in sorted(deuterocanon.ALIASED.items()):
             with self.subTest(edition=edition):
-                found = sorted(
-                    (ROOT / "src/sources/works" / where).glob(
-                        "verse-aliases-*/verse-aliases.tsv"
-                    )
-                )
-                self.assertEqual(len(found), 1)
-                with found[0].open(encoding="utf-8", newline="") as handle:
+                selected = select_verse_aliases((ROOT / "src/sources/works" / where).parent)
+                self.assertIsNotNone(selected)
+                with selected.open(encoding="utf-8", newline="") as handle:
                     tracked = [
                         row
                         for row in csv.DictReader(handle, delimiter="\t")

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030.domine-qui-dixisti-study-en"
+edition_id = "edition.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030"
+artifact_type = "project-study-translation"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "The new English is an original Triptych study translation under CC BY4.0. Its old Latin main petition and independently old short conclusion have the separate public-domain basis of artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-domine-qui-dixisti-la. The one substantive possessive revision and conventional whole-conclusion selection have the exact finite n126 basis adopted under publication-policy section1(6) in workflows/reviews/missal-english-completion-2026-10-29/ordinary/domine-rights-adoption.json (SHA-256 6bfe83b76107281005c660733522e4c077f52b225b79418b04bf9fcd07f98381). This is a qualified project judgment with moderate confidence, not rightsholder permission, court adjudication or human legal approval. It adopts only the exact English candidate and extends no existing grant, other prayer or revised whole modern Latin payload. No approved English is acquired or copied."
+rights_jurisdiction = "United States"
+provenance = "Drafted on2026-10-30 directly from the checked old body and separately checked short conclusion in artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-domine-qui-dixisti-la. The source_body_latin column retains the actual old mea; source_revision declares its sole substantive body change to nostra, directly read in artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944 at original367/n126. The old Deus-per-omnia ending remains separately retained and is replaced whole by the first-class old short conclusion. Modern people-Amen assignment comes from that same bounded target image, not from source P/R marks."
+retrieved = "2026-10-30"
+sha256 = "dd4e3f58bf11acba57c5247b582cc112728bf3d0b74ab9eef907e8a5b9ecf859"
+byte_size = 1108
+path = "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/artifacts/domine-qui-dixisti-study-en/text.tsv"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-domine-qui-dixisti-la", "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"]
+transformation = "Translate the full old governing prayer body with the one declared singular-to-plural possessive revision and the separately witnessed complete short conclusion into fresh study English. Preserve Christ as addressee, the Apostles quotation, sins and Church-faith clauses, the Church as the peace-and-unity object, divine will and the live-and-reign conclusion. Keep the priest prayer and modern people Amen as separate rows; no other prayer is added and no approved English is reconstructed."
+indexable = true
+encoding = "utf-8"
+notes = "One header and two rows. Every old Latin body/conclusion column is literal source wording; no revised whole modern Latin prayer is offered as an element payload. The exact source and English candidate was independently accepted in workflows/reviews/missal-english-completion-2026-10-29/ordinary/domine-source-English-review.json (SHA-256 6dd4666971c2324dcd088a03d58b5ff0cc43b012a472c2aafae601430bced117), and its finite English-only underlying-expression basis was adopted in workflows/reviews/missal-english-completion-2026-10-29/ordinary/domine-rights-adoption.json (SHA-256 6bfe83b76107281005c660733522e4c077f52b225b79418b04bf9fcd07f98381). This is newly authored study English, not a whole historical human translation or a liturgical-use text."

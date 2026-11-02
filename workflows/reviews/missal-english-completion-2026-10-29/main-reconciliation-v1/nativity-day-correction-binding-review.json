@@ -1,0 +1,76 @@
+{
+  "accepted_source_confirmation_sha256": "8e9d3b6e940a2c3cf41df0e891309a6d8f1ac6143cbab07645f9d721fcd7ba10",
+  "canonical_writes": 0,
+  "checks": {
+    "all154_other_positive_dictionaries_exact": true,
+    "all3new_source_paths_unused_and_hashes_sizes_exact": true,
+    "all419_refusal_dictionaries_exact": true,
+    "all_nonentry_tables_exact_including8refs_and174baseline_rows": true,
+    "all_words_other_punctuation_and_body_extent_exact": true,
+    "entire_new_artifact_hash_size_source_and_exact_target_row": true,
+    "existing_shared_Lasance_rights_predicate_accepts_with_declared_witnesses": true,
+    "existing_visual_passage_reusable_without_old_English_body_hash": true,
+    "literal_publication_visual_locus_and_leaf_edition_identity": true,
+    "negative172hash_174target_registry_unchanged": true,
+    "old_artifact_payload_passages_phase1_receipt_and8admission_refs_retained": true,
+    "one_colon_to_printed_semicolon_only": true,
+    "only_one_of155_positive_entries_changes": true,
+    "same_predicate_rejects_missing_witnesses": true,
+    "two_physical_TSV_lines_one_correctly_CSV_quoted_English_JSON_row": true
+  },
+  "corrected_finding": {
+    "id": "literal-locus-mismatch",
+    "result": "Only new publication locus now equals unchanged visual locus; other source/body/entry/sidecar bytes unchanged.",
+    "status": "resolved"
+  },
+  "correction_receipt_sha256": "6e61be68d708b5ec1fd2a509d43d2a16b1d16a24d883838bab2dbd7e9e639887",
+  "counts": {
+    "positive": 155,
+    "quarantine_admission_refs": 8,
+    "quarantine_baseline_targets": 174,
+    "quarantine_unique_hashes": 172,
+    "target_coordinates": 574,
+    "untranslated": 419
+  },
+  "decision": "accept-v2-bounded-source-binding-and-conservation-merits",
+  "findings": [],
+  "independent_scope": "Exact byte/dictionary/CSV/body/source-binding/qualification/rights-predicate conservation. Punctuation source reading is supported by the separately hash-verified root direct-image confirmation; this review does not claim another independent image inspection.",
+  "limits": [
+    "Root must retain the exact source confirmation at the canonical receipt path and separately adopt/install the packet.",
+    "Actual complete production checker/reader predicates and source graph must run against installed source files; this merits review is not their completed result.",
+    "Source-batch exact current input/positive/inverse successor remains a separate root acceptance step."
+  ],
+  "new_Latin_English_rights_or_availability_permission_created": false,
+  "new_entry_sha256": "422509d9181b119590f62d345caf1fa829c2849a9844866c77cd5eea5ff6f0e5",
+  "old_entry_sha256": "3b692c6384e7e4484ac0416fb41609476c02fa070c683ab9c4ded1047324c819",
+  "plan_sha256": "8641d6da2228e285ed156e919f161b651456a0c2cfda8737bbd3c22d7814beea",
+  "reviewed_on": "2026-10-30",
+  "schema": "triptych-independent-nativity-punctuation-packet-review/v1",
+  "sidecar_after_sha256": "57123fdfb8472718679284f93698912c296e85fa7e78245554956f3890bc3e6d",
+  "sidecar_before_sha256": "32632b026ac4f06ceeff9a7cec18586e619659b2b44ecc52247a58ca67a2ea5d",
+  "source_files": [
+    {
+      "byte_size": 238,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261030-pc-nativity-day-punctuation-0d801929/text.tsv",
+      "sha256": "0d801929b436514d5db46b3dfbda469c56c88a81bf3cfb342901cd76fafa8576"
+    },
+    {
+      "byte_size": 2152,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261030-pc-nativity-day-punctuation-0d801929/artifact.toml",
+      "sha256": "2310118fd5a9a43bb689b5721a0638241a1a13fa8249148c4190e807906fbf81"
+    },
+    {
+      "byte_size": 1543,
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261030-pc-nativity-day-punctuation-0d801929.toml",
+      "sha256": "767aad0cb7c9f2b1a3a75650ea58f9158afbb10a11874ce80f09ba3ad2d4cdba"
+    }
+  ],
+  "superseded_plan_sha256": "c57d83d16d8df25d738f20a0c1cdaf5f6b868ef9549a2b40324f7ca1d484019a",
+  "target": [
+    "nativity",
+    "day",
+    "Entrance Antiphon",
+    "all",
+    1
+  ]
+}

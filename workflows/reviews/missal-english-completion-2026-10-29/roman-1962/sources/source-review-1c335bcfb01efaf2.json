@@ -1,0 +1,252 @@
+{
+  "schema": "triptych-scratch-independent-pentecost-four-source-review/v1",
+  "reviewed_on": "2026-10-29",
+  "disposition": "accepted",
+  "scope": "Exactly four Roman1962 Pentecost weekday Alleluia source candidates and their original unapproved study-English candidates in the sealed packet. Source/target image collation, per-target identity, data conservation and proposed source records only.",
+  "candidate": {
+    "path": ".scratch/roman-english-completion-20261029/chants/pentecost/candidate.json",
+    "sha256": "566f6b3e907b2a1dd06505937f076597b2939b32b7ed0790c0b12c0b62b830bf"
+  },
+  "reviewed_targets": [
+    [
+      "pentecost-monday",
+      "main",
+      "Alleluia",
+      "all",
+      1
+    ],
+    [
+      "pentecost-tuesday",
+      "main",
+      "Alleluia",
+      "all",
+      1
+    ],
+    [
+      "pentecost-thursday",
+      "main",
+      "Alleluia",
+      "all",
+      1
+    ],
+    [
+      "pentecost-ember-friday",
+      "main",
+      "Alleluia",
+      "all",
+      1
+    ]
+  ],
+  "primary_source_pins": {
+    "mame1922_pdf": {
+      "path": ".scratch/c1-pre1955/download/mame1922.pdf",
+      "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "registered_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+    },
+    "target1962_pdf": {
+      "path": ".scratch/c1-retry-1962/missale62.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "registered_artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+    }
+  },
+  "direct_image_inspections": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/pentecost/target439-200.png",
+      "sha256": "e93af5587333f26c442fb215ad0aaed42e3289ac0f7ac39add828b43b155da85",
+      "bytes": 220530,
+      "inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/pentecost/target439-400.png",
+      "sha256": "3ef0b0fa24b6203a8e8ec7af81ff1a688eecce9f0bb4d44d16a44a9c8a787ee5",
+      "bytes": 247319,
+      "inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/pentecost/mame516-400.png",
+      "sha256": "a2116868074212abb448abb5d467f291775dd2f4e1a694491c2a75de9bb7a3e4",
+      "bytes": 1399617,
+      "inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/pentecost/target441-200.png",
+      "sha256": "b931c854d456e5fce2dc20b18050cd87683c835f967dc5bec87d3c2b5f3a77b5",
+      "bytes": 209395,
+      "inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/pentecost/target441-400.png",
+      "sha256": "8ef08cc29e615bf8ecd4999d5bb371b52fb0e8532dd12dbe8e029fc08b0931ac",
+      "bytes": 232415,
+      "inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/pentecost/mame517-400.png",
+      "sha256": "e5327a2443e1aad0c5396f718b2c7d47abeebb0515f76de5a066bffd0ee9ca6c",
+      "bytes": 1131629,
+      "inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/pentecost/target445-200.png",
+      "sha256": "007c847832e5c951a3f2e2535806cf6bf749a5f9bc46e56e859a11982d3e0663",
+      "bytes": 248075,
+      "inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/pentecost/target445-400.png",
+      "sha256": "f9b900cd7b3485ad74ad935479b46b5761a0d3e532b3a5391c876ca539fb735b",
+      "bytes": 277313,
+      "inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/pentecost/mame522-400.png",
+      "sha256": "1420e94e33792f04ff538fdb0cb681fa8109ae56c74c4ba67ee2d597176357a2",
+      "bytes": 1385369,
+      "inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/pentecost/target446-200.png",
+      "sha256": "2355ee4c35ea972452a6cbbed6fa936be1c57c0293a9b812b073339daa8584b7",
+      "bytes": 226681,
+      "inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/pentecost/target446-400.png",
+      "sha256": "e66fbc05d522afe03ff3ad4550a72c1dc121054e5f82eb0ee20dbffdf2ebbb29",
+      "bytes": 252337,
+      "inspected": true
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/pentecost/mame523-400.png",
+      "sha256": "86ff609addc5dfcf473fdc8d6e0e9cfe455c34ff6f0aecb6334c4f1e2df3bbe5",
+      "bytes": 1265090,
+      "inspected": true
+    }
+  ],
+  "source_findings": [],
+  "translation_findings": [],
+  "advisories": [
+    {
+      "target": [
+        "pentecost-ember-friday",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "severity": "advisory",
+      "finding": "The studyEnglish renders suavis as gentle. This is a defensible contextual rendering; sweet is the more literal option. No required correction or source-body change."
+    }
+  ],
+  "passed_checks": [
+    "All four complete source/target word sequences agree after the explicitly declared spelling/ligature/accent/pointing transformations; no words supplied from similarity or Scripture references.",
+    "Direct target images read at200and400dpi; full Mame page images read at400dpi, including split-column continuations for Tuesday and Friday.",
+    "Each chant includes both initial scriptural versicle and independently uncited Veni versicle. None adds an Alleluia after the actual terminal ignem accende.",
+    "The genuflection direction is present in historical and target witnesses, is classified as a rubric and has an exact checked character offset in Latin and studyEnglish.",
+    "Printed Scripture references, numbered units and headings do not enter the candidate spoken bodies.",
+    "All18postimage byte counts and hashes match the manifest; every TOML parses.",
+    "All four new Latin provenance rows pass the owning _proper_latin._row_problems validator with zero errors.",
+    "All candidateLatin, provenance and text_structure hashes agree; bothLatinandEnglish action offsets point exactly to the rubric text.",
+    "Sourcekind and appointedScripture verses conserved exactly; all four old proper dictionaries and English absence dictionaries still match the live checkout at review.",
+    "All projection passage physical-line bounds reproduce the exact candidateLatinbody. The mechanical PD source extract has exactly four pages.",
+    "No private machineprefix or scratchpath occurs in proposed tracked TOML manifests.",
+    "StudyEnglish preserves every complete semantic clause and ending; it is distinctly identified as an original unapproved projectstudy translation rather than historical or approvedICEL English."
+  ],
+  "postimages": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/pentecost-four-chants-20261029-checked-latin-0097a922/artifact.toml",
+      "sha256": "c03a0f811a47c33cac43a85006d83be90614a6d1d5ab939d75c3d15fb41a343d",
+      "bytes": 1799
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/pentecost-four-chants-20261029-checked-latin-0097a922/latin.txt",
+      "sha256": "0097a9225773e8c7539c88ef30c292cd0dcdb6daa0bd70a30829338b4282ece8",
+      "bytes": 812
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/pentecost-four-chants-20261029-pages/artifact.toml",
+      "sha256": "9c4a14fc396462bb56099c24a6a9d42e126d131993426fd001b34bee6d8c1728",
+      "bytes": 1840
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/pentecost-four-chants-20261029-pages/source.pdf",
+      "sha256": "755f8c2b697bcd75574833f0d4ed5d7339691c230f335287e34fa2579130307a",
+      "bytes": 646169
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/pentecost-four-chants-20261029-pentecost-ember-friday-alleluia-source.toml",
+      "sha256": "142c38843a345b24701be3a1923a49a1d97bafeaa059de200e8b2ee4c162c92a",
+      "bytes": 1278
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/pentecost-four-chants-20261029-pentecost-monday-alleluia-source.toml",
+      "sha256": "2fefd775d4c79469854743ea29634735c144b494ce8dd3c6f3594ff94a128606",
+      "bytes": 1256
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/pentecost-four-chants-20261029-pentecost-thursday-alleluia-source.toml",
+      "sha256": "65c4bbb7757ce64afa8e9826bbe4d40b90d98400395648eb151d52e6b532f395",
+      "bytes": 1308
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/pentecost-four-chants-20261029-pentecost-tuesday-alleluia-source.toml",
+      "sha256": "7f6e5383bef6de38234c1d3152db64d4086ed6af8734c4b4c3b98813200d8a35",
+      "bytes": 1257
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pentecost-four-chants-20261029-pentecost-ember-friday-alleluia-target.toml",
+      "sha256": "4cdd88b738d57f73064bf70685a7fb2b04d29eb1da55b8b44bc349cabb246f2b",
+      "bytes": 945
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pentecost-four-chants-20261029-pentecost-monday-alleluia-target.toml",
+      "sha256": "05d7abd937dde141ae835dae30d8df694df2494f42540192962c68cdc6432d29",
+      "bytes": 920
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pentecost-four-chants-20261029-pentecost-thursday-alleluia-target.toml",
+      "sha256": "d7bee57f6a93dd6a121694bfc7dd8844794a7287059fe37b723946f10eb07f3d",
+      "bytes": 920
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pentecost-four-chants-20261029-pentecost-tuesday-alleluia-target.toml",
+      "sha256": "086cff05dab33c9f8a209b7fd135d616871ba68ef607e3e65afd332245aaa894",
+      "bytes": 943
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pentecost-four-chants-20261029-d074f957/artifact.toml",
+      "sha256": "5eec1a3327ac90a9dcc6f7ea9aad6a5f7bb430f60427ca9e82a2a820ef2ca986",
+      "bytes": 2176
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pentecost-four-chants-20261029-d074f957/latin.txt",
+      "sha256": "d074f957761fb3fbfab186eb899a2ab096ffd62e9ce03e51f776be56dee64f16",
+      "bytes": 808
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pentecost-four-chants-20261029-pentecost-ember-friday-alleluia.toml",
+      "sha256": "b6fe905b3cb5f80ad2728434c17c0781fab33079ec2018af08a6361a9406cf5f",
+      "bytes": 1363
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pentecost-four-chants-20261029-pentecost-monday-alleluia.toml",
+      "sha256": "68b9b978e5057bdab081fdc63316f19d7379046063651514bd7e5d1fa5cd54f4",
+      "bytes": 1316
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pentecost-four-chants-20261029-pentecost-thursday-alleluia.toml",
+      "sha256": "7ddc791659ed1ee0ee763b6bf2d47792083de09c9826f77400a1022567b49c24",
+      "bytes": 1315
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pentecost-four-chants-20261029-pentecost-tuesday-alleluia.toml",
+      "sha256": "e317b32cbebd9a42f31b58f62431e4fc05ad0f7459cf83099adb689f8063b23e",
+      "bytes": 1340
+    }
+  ],
+  "integration_requirements": [
+    "Parent alone must create the shared2026-10-29editorial projection edition record and install only the accepted18files plus exact finite calendar/provenance changes.",
+    "Complete source-library validation, translation-source registration, owning calendar/generation checks and actual reader projection remain integration gates outside this candidate review."
+  ],
+  "review_mutations": "Only this review JSON under its exclusive scratch directory. No tracked source, candidate or postimage bytes changed."
+}

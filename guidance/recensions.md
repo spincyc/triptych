@@ -744,7 +744,9 @@ this prose. Its boundaries are:
   source-recorded absence of St Joseph the Worker and the Queenship of the
   Blessed Virgin Mary from the registered pre-reform witness body;
 - partial precedence through the disclosed linearization;
-- no Proper wording independently transcribed for the target recension;
+- exactly three Pentecost prayer bodies independently transcribed and
+  attested to the identified Bonn c1954 witness state, with generic target
+  relationship unresolved and no civil-date authority;
 - uncollated Commons inherited from `roman-1962`;
 - a partial Ordinary from an identified 1861 lay witness, not the 1920 typical
   edition;
@@ -767,3 +769,54 @@ a distinct account of the restricted 1956–1960 Holy Week state; and exclusion
 of the Pontifical's oil blessing until an identified edition is read. The C1
 identity inventory does not complete any of those wording or runtime tasks.
 No one of them authorizes text to be synthesized from the current projection.
+
+
+### 10.4 Three exact Bonn witness bodies, separately from inherited residence
+
+The bounded inventory `roman-pre-1955-proper-target-overrides-v1.toml` uses
+`triptych-bonn-pentecost-target-propers/v1`. It can replace only the Collect,
+Secret and Postcommunion of Pentecost, main form, occurrence one. The
+mechanical source owner and every English overlay identity remain inherited.
+It changes no calendar admission, conditional applicability, Ordinary option,
+commemoration limit, or territorial rule.
+
+Each row pins the current complete parent body, the replacement body, one
+retained project-projection passage, the exact accepted Bonn witness passage,
+and an evidence-graph fingerprint including source metadata and ancestors.
+The body is read from its one physical UTF-8 artifact line, excluding its LF
+terminator; no wording comes from the inventory or from a similarity match.
+The ordinary Latin provenance/publication checks still govern. A stale body,
+source graph, review receipt, form, occurrence or witness context refuses the
+whole bounded overlay.
+The inventory's evidence digest is defined by its own schema over canonical
+JSON record metadata and identity/evidence ancestors; it is not a source-library
+binding fingerprint and does not change that frozen contract.
+
+The independent source-review receipt is a separate hash-pinned inventory.
+The three literal Bonn transcriptions were independently accepted on
+2026-10-26 by primary-source and code reviewers, then adopted by the
+coordinator. The accepted activation successor records those real review
+identities and recalculates evidence digests for its truthful source metadata;
+the earlier pending proposal remains frozen. No body, owner or source identity
+changes during activation.
+`pending` is valid preparation and publishes none of the three bodies. An
+accepted receipt must independently cover all three exact owner/body/source
+pins; changing only a publication token cannot activate the overlay. Source
+review must check both the prayer and its literal short conclusion. The Bonn
+Collect and Postcommunion do not print the inherited 1962 expanded endings,
+and its Secret's cue differs too, so the inherited full hashes cannot be
+certified by those page readings.
+
+The target is specifically the Bonn 2004 reimpressio of a conformed state of
+about 1954. It is not the Vatican 1920 impression, the whole pre-1955 period,
+or authority to select a formulary for any civil date. Public bodies carry
+this witness-state context beside the words in browser and CLI, including
+print. Generic pre-1955 coverage records a collated witness with the relationship to
+the generic target unresolved, and keeps its `exact-target` count unchanged. All other inherited
+Latin bodies remain governed by the existing withholding rule.
+
+This small inventory is not a change to frozen source-library schema v1. Its
+custom source/publication validator is `_proper_target_overrides.py`, called
+by `_proper_latin.py` and `mass-propers`; the owning calendar check validates
+it too. Its exact three-owner boundary requires an explicit successor schema
+and source-reviewed cohort before expansion.

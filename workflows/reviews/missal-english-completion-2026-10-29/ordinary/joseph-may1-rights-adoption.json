@@ -1,0 +1,51 @@
+{
+  "schema": "triptych-specific-study-english-rights-adoption/v1",
+  "state": "adopted-basis-only",
+  "recorded_at_utc": "2026-10-30T02:56:58Z",
+  "jurisdiction": "United States",
+  "policy": "guidance/liturgical-text-publication-policy.md section 1(6)",
+  "basis": "qualified-nonoriginal-adaptation",
+  "scope": {
+    "calendar": "roman-1962",
+    "element": "praefatio-sancto-ioseph",
+    "context": "May 1 solemnitate option only",
+    "extent": "The complete 99-word Preface body from Vere through dicentes; excludes dialogue, Sanctus, titles, rubrics and page arrangement.",
+    "source_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+    "target_artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+    "target_research_body_sha256_utf8_without_final_lf": "526099a01ae7ae49394d1c2684a89e6d8c60cefd6c5a0a61eea150824b6a346d",
+    "source_word_count": 99,
+    "target_word_count": 99,
+    "only_lexical_change": {"word_index_one_based": 25, "source": "Festivitate", "target": "solemnitate"},
+    "permitted_result": "One separately source-bound, independently reviewed, newly created study-English translation of this exact body and context."
+  },
+  "evidence": {
+    "independent_source_and_rights_review_sha256": "7d0ee61f74a2019a786a3ddef91d993436aa9bc5731a973413057e38bd9e68c8",
+    "frozen_comparison_sha256": "2a9f3fdf02256ee216b2aaae063adfd545a7b82a15205759f8632b15f90e00e4",
+    "source_locus": "1922 Mame PDF 451, printed 337, complete body; PDF 450, printed 336, separately referenced Sanctus.",
+    "target_locus": "1962 PDF 376, printed 295, n. 1084; the rubric distinguishes March 19, May 1 and votive wording.",
+    "source_review_scope": "Independent AI review read the complete source and target images, replayed the 99-word comparison and checked canonical whole-artifact identities. It did not independently rehash the whole source PDFs."
+  },
+  "assessment": "The complete underlying expression is independently witnessed in the public-domain 1922 printing. For this measured body, the sole later lexical contribution is a conventional functional feast designation in an existing syntactic position. Its limited originality supports this explicitly qualified project judgment under section 1(6). This is an application of the standing policy, not a claim that the 1962 edition is public domain or that a rightsholder granted permission.",
+  "contrary_evidence_and_limits": [
+    "The 1922 source has Festivitate and Veneratione, not solemnitate, including at the older Patronage Solemnity. No exact historical May 1 whole-body identity is asserted.",
+    "Declared case, stress, ligature, j/i and coeli/caeli spelling or pointing differences remain explicit; they are not silently called exact typography.",
+    "The existing Saint Joseph Communicantes clause assessment and other finite adoptions supply no authority for this body.",
+    "The Copyright Office regulation page expressly carries data as of 2025-03-14. Fresh retrieval does not establish 2026-current law; the circulars are explanatory. This is a qualified project assessment, not adjudication or human legal approval.",
+    "This record admits no target Latin payload, modern English translation, new rubric, other option, other context or other body."
+  ],
+  "primary_sources": [
+    {"url": "https://www.copyright.gov/title37/202/37cfr202-1.html", "sha256": "550a8131ceaae45be3e138ae11947a8c252f1cfa6e44f973d1a3023a0233107d", "data_as_of": "2025-03-14", "locus": "202.1(a)"},
+    {"url": "https://www.copyright.gov/circs/circ33.pdf", "sha256": "4abb8e07b87a560612f11839fabe7c066afeffc8bdb8816c755f7e47fa07dbf2", "revision": "03/2021", "locus": "printed 2"},
+    {"url": "https://copyright.gov/circs/circ14.pdf", "sha256": "928aa3a506f94d5772bad430bbb01ff54aec812194aff33d3aab6b95a2ceffc1", "revision": "07/2020", "locus": "printed 2"}
+  ],
+  "required_before_english_admission": [
+    "Retain a canonical, source-bounded comparison and this independent review disposition without copying restricted whole-book or target-image payloads.",
+    "Create the English directly from the exact established Latin; do not adapt or relabel Lasance, ICEL or another modern English translation.",
+    "Obtain independent English fidelity review and bind exact English bytes, complete source extent, nonspoken boundaries and May 1 applicability.",
+    "Keep a visible original-study and non-recitation qualification; preserve all other Preface options and their source limits.",
+    "Pass owning source validation, generation, applicability, rendering and integrated checks."
+  ],
+  "english_wording_accepted": false,
+  "target_latin_publication_adopted": false,
+  "whole_missal_completion_claimed": false
+}

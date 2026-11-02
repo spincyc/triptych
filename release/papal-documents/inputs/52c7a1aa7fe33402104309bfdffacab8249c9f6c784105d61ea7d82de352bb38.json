@@ -1,0 +1,41 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "b34fb97521e8d87743bca7125a9fb77dd19fb58065c3f0cad25b8c3d97af2db5",
+  "documents": [
+    {
+      "id": "papal.pius-x.hf-p-x-enc-26051910-editae-saepe.acqr-1910-english",
+      "language": "en",
+      "pdf_sha256": "2f583ddb41710ade2538bbebdd4834d693df46b7b5e350e253f667aa9e124737",
+      "pages": 10,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Source-order PASS is bounded to parent LF28794 after28750 and LF28797 after28780 on native printed p404; prior source359 remains BLOCKED.",
+        "Native image inspection covers printed p404 only; no translation accuracy, lexical repair, comprehensive source-order proof, whole-print collation, new rights clearance, installation or deployment acceptance.",
+        "Literal inherited OCR errors, paragraph divisions and source hyphens are preserved.",
+        "Historical whole-manifest snapshot reference inside the immutable prior blocker is historical-only; current packet32 frozen manifest and exact immutable source/controller/recipe pins pass."
+      ],
+      "receipt_sha256": "b34fb97521e8d87743bca7125a9fb77dd19fb58065c3f0cad25b8c3d97af2db5",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-32.md",
+      "report_sha256": "b82adfe9ba2e41ca7e70a8e0b99c2efebdcb629ae487386332ed0137a9a6fe39",
+      "source_sha256": "8aa2b82572e5c92c450d98cc980c757c835df11fe16d317d09be0f5ba597b6f9",
+      "source_order_status": "PASS",
+      "source_order_scope": "Only the two known native-p404 line moves on replacement8aa2. Prior359 remains BLOCKED.",
+      "inspection_method": "Contact sheet and all ten new original full-page rasters individually opened at full resolution; native printed404 image independently inspected. No prior visual coverage reused."
+    }
+  ]
+}

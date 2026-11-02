@@ -1,0 +1,37 @@
+{
+  "schema": "triptych-historical-credit-apparatus-correction/v1",
+  "recorded_on": "2026-10-29",
+  "purpose": "Keep reader cautions concise while preserving source-page and transcription apparatus in this record and the independently accepted source review. Reader-relevant printed refrain and repetition limits remain visible.",
+  "text_source_and_rights_changed": false,
+  "source_review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-f76ae4fce9a3a9dd.json",
+  "changes": [
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Hymn to Christ the King",
+        "all",
+        1
+      ],
+      "full_source_apparatus": "The entire historical six-couplet hymn with all five strophes and the refrain was read in both language columns. The source prints a short R. Gloria, laus. / R. Glory, etc. after each couplet; these literal English cues remain unexpanded. Latin inclyta/inclita is the already recorded received-spelling variation; source stress accents and ae/oe ligatures are transcriptional. Pointing differs. The hymn words otherwise agree with the independently qualified target. No neighboring procession rubric or Ingrediente text is included.",
+      "before_entry_sha256": "ee5ea7f604685cc5460255a3be29138c2ee516e983194c05f221e7e5528b4c38",
+      "after_entry_sha256": "e7c0c2ce9fea42d272f9d4de3b51e291ffed40f858ae952a8cfd423e3b7e3826",
+      "reader_note": "The historical refrain cues are retained as printed and remain unexpanded."
+    },
+    {
+      "identity": [
+        "mass-of-the-lords-supper",
+        "main",
+        "Mandatum Antiphon 8",
+        "all",
+        1
+      ],
+      "full_source_apparatus": "All three strophes and repeated antiphons were read in the intact1946 page-image witness, not supplied from the damaged1945 PDF466/printed468 page whose horizontal strip omits the third antiphon ending and opening verse. The target marks the antiphon repetition by an instruction before writing its words; the historical source simply prints the antiphon with Ant. markers. Latin words agree apart from pointing and stress accents. The neighboring Mandatum versicles and following Adesto prayer are excluded.",
+      "before_entry_sha256": "52453ed8f42bd1524e271aa3c325390e7b6579125fd5a86dc2907beef7f0c718",
+      "after_entry_sha256": "08ac0ca6e44fd3e5c2c2c20991c8f30e26e147630a3618fed136497fd123c336",
+      "reader_note": "Historical three-strophe text; the antiphon repetitions are retained as printed."
+    }
+  ],
+  "sidecar_before_sha256": "1f9a6984c51cf8dce0c0d370590a612977530e8ac581e83ef5ed554deba05518",
+  "sidecar_after_sha256": "159b5653854788c100612b4ee58923db4ee434d811bfa901b07fb7d08d5f4574"
+}

@@ -26,7 +26,7 @@
     // A counted group owns text in more than the selected Mass. The bounded
     // one-Mass envelope cannot provide its companion; use the complete owner.
     if (Object.values(branch.orations || {}).some(function (series) {
-      return (series || []).some(function (oration) { return Boolean(oration.members); });
+      return (series || []).some(function (oration) { return oration.position > 1 || Boolean(oration.members); });
     })) return null;
     if (framed && ((branch.readable || []).some(function (one) {
       return one.state !== 'said' && one.state !== 'displaced';

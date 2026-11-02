@@ -1,0 +1,100 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "04edda9f22905ccb201809b3f2ab04601ca57e87f231b6e1ccc80dea84307f20",
+  "documents": [
+    {
+      "id": "acta.ass.014.ass-014-act-001",
+      "language": "la",
+      "pdf_sha256": "2b57d1b7b23edbbaf5b48fd55d388d48aa0843cd5e4087c65fb40ed29dc6ced5",
+      "pages": 6,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "resolved",
+          "pages": [
+            4
+          ],
+          "description": "Exact native actual9/10 LF287–290 and329–331 are single stacked note groups. Reader and TeX independently confirm distinct paragraph blocks before/after each; no side-by-side note-column interleaving or note/body fusion."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            4
+          ],
+          "description": "Source-page note interruptions after im- and quantum in remain literal and readable, with body continuation after each separate note block."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            6
+          ],
+          "description": "Sparse final page remains source-bearing, retaining final body, blessing, dating, subscription and final notes above readable terminal apparatus and rights colophon."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Disclosed OCR spelling, source word divisions and spacing remain literal; no clipping, glyph loss, overlap or material column-order defect found. One underfull hbox warning has no material visible consequence."
+        }
+      ],
+      "limitations": [
+        "Independent bounded source/visual review of archival OCR reconstruction. No whole-source lexical or translation collation, original-print image identity, new historical identity/intake/rights certification, installation or deployment acceptance."
+      ],
+      "receipt_sha256": "04edda9f22905ccb201809b3f2ab04601ca57e87f231b6e1ccc80dea84307f20",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-34b.md",
+      "report_sha256": "3ecaf8284d9af33d932e310b7130922e86bb1eff9477db0c76372ef37835186b"
+    },
+    {
+      "id": "acta.ass.032.ass-032-l08224",
+      "language": "la",
+      "pdf_sha256": "ae4b936f4a4c63e77e17336d8dcb3989676e15fcd2c29f931a26c5a5e054692e",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "resolved",
+          "pages": [
+            2
+          ],
+          "description": "Exact native actual217 LF8379–8383 gives stacked notes1–5 below subscription. Reader and TeX confirm a separate indented group after LEO PP. XIII.; no interleaving or fusion."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Literal source OCR remains. Both pages retain readable two-column order and source boundaries; final page contains closing, dating, subscription and notes before terminal apparatus without spill or overlap."
+        }
+      ],
+      "limitations": [
+        "Independent bounded source/visual review of archival OCR reconstruction. No whole-source lexical or translation collation, original-print image identity, new historical identity/intake/rights certification, installation or deployment acceptance."
+      ],
+      "receipt_sha256": "04edda9f22905ccb201809b3f2ab04601ca57e87f231b6e1ccc80dea84307f20",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-34b.md",
+      "report_sha256": "3ecaf8284d9af33d932e310b7130922e86bb1eff9477db0c76372ef37835186b"
+    }
+  ]
+}

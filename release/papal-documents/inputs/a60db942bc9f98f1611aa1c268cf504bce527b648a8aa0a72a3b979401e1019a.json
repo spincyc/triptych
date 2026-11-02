@@ -1,0 +1,59 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.journals.catholic-mind.1930-03-08-volume-28-issue-5.bounded-english-2e8f95fb87ff",
+      "body_tex": "1929-12-23-papal-pius-xi-hf-p-xi-enc-19291223-quinquagesimo-ante-anno-850f2c8f-en/1929-12-23-papal-pius-xi-hf-p-xi-enc-19291223-quinquagesimo-ante-anno-850f2c8f-en.body.tex",
+      "changed": true,
+      "id": "papal.pius-xi.hf-p-xi-enc-19291223-quinquagesimo-ante-anno",
+      "language": "en",
+      "pages": 6,
+      "pdf": "1929-12-23-papal-pius-xi-hf-p-xi-enc-19291223-quinquagesimo-ante-anno-850f2c8f-en/1929-12-23-papal-pius-xi-hf-p-xi-enc-19291223-quinquagesimo-ante-anno-850f2c8f-en.pdf",
+      "pdf_sha256": "7077fc459836358ad500146ef2a6d913b0d3907ba045e0b8757da78747abb7c4",
+      "physical_line_ranges": [
+        [
+          1,
+          131
+        ]
+      ],
+      "render_revision": "2026-10-26T12:58:20Z",
+      "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-19291223-quinquagesimo-ante-anno.1930-03-08-catholic-mind-english.complete-english-text",
+      "source_sha256": "2e8f95fb87ff10b9ca7396ec0c8fc90982d711494b0a9c2d8117f41a018c75e8",
+      "status": "compiled",
+      "stem": "1929-12-23-papal-pius-xi-hf-p-xi-enc-19291223-quinquagesimo-ante-anno-850f2c8f-en",
+      "tex": "1929-12-23-papal-pius-xi-hf-p-xi-enc-19291223-quinquagesimo-ante-anno-850f2c8f-en/1929-12-23-papal-pius-xi-hf-p-xi-enc-19291223-quinquagesimo-ante-anno-850f2c8f-en.tex",
+      "text_fidelity": {
+        "method": "pdf-raw-whitespace-soft-hyphen-nfkc-v2",
+        "pages": 6,
+        "source_characters": 32258,
+        "source_first_page": 1,
+        "source_last_page": 6,
+        "source_normalized_characters": 26561,
+        "status": "pass"
+      },
+      "warnings": []
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 1,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "56186dd915642ccc5e49f2a6d71c8ebeb6707501310502c4e785ef2140718527",
+  "options": {
+    "automatic_hyphenation": false,
+    "body_alignment": "ragged-right",
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-26T12:58:20Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

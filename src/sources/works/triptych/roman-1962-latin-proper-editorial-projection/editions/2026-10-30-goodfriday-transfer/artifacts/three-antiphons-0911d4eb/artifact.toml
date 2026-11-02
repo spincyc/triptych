@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.goodfriday-transfer-2026-10-30.three-antiphons-0911d4eb"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.goodfriday-transfer-2026-10-30"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers only its bounded selection, orthographic normalization and target-relation record under CC BY4.0. The historical expressions have a separately registered 1626 public-domain source basis. No exclusive right in received Latin words is claimed. This editorial carrier supplies no rights in third-party material; publication authority belongs to the separately reviewed per-proper provenance decision."
+rights_jurisdiction = "United States"
+provenance = "Complete historical and target bodies separately read on actual source page images at 200 and 400 dpi on 2026-10-30. Full oldsource wording including Alleluia is retained in its own source artifact; the target exact expressions and modern placement are separately controlled."
+retrieved = "2026-10-30"
+sha256 = "0911d4eb3eb4f93de9ed5a26db304906b9675a8b4f47f971e19ca15165c5b28a"
+byte_size = 325
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/artifacts/three-antiphons-0911d4eb/latin.txt"
+projected_from = ["artifact.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.three-cross-antiphons-checked-20261030", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join source line wraps; normalize typographic long-s, source serui/Saluator/salua to target servi/Salvator/salva, and ampersands to et. Use the target punctuation and capitals; remove target stress accents in the canonical calendar convention. Select the complete first and third source antiphons. Select the complete contiguous second source expression ending Filius Dei redemit nos; the full historical second antiphon then adds Alleluia, retained in its source artifact. No seasonal omission rule is inferred. Keep three separate full target paragraphs in their 1962 transfer order. The historical source has these antiphons in the same order within the July16 third nocturn, separated by Psalms95-97; it does not witness the historical Good Friday transfer placement."
+indexable = true
+encoding = "utf-8"
+notes = "Only the three target Latin expressions are retained. Original source spelling and final Alleluia remain separately inspectable. This editorial artifact records the target relation and does not itself supply publication authority. It reproduces no target images or protected apparatus."

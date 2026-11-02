@@ -1,0 +1,53 @@
+{
+  "containment": {
+    "all_incoming_main_rows_exact": true,
+    "all_non_container_fields_exact_both_parents": true,
+    "containers": 202,
+    "incoming_only_containers": [
+      "work.jacques-paul-migne.patrologia-latina-volume-183",
+      "work.pius-ix-acta.pars-02-volume-01",
+      "work.pius-ix-acta.volume-01",
+      "work.pius-ix-acta.volume-02"
+    ],
+    "root_only_containers": [
+      "work.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-officia-novissima"
+    ],
+    "root_rows_changed_by_exact_incoming_main_expansion": [
+      "work.papal-collections.pii-ix-acta-pars-prima-volume-3"
+    ]
+  },
+  "src/web/data/structure/sources/editions/catholic-church/sacramentarium-gelasianum-vetus/1894-wilson-1894.json": {
+    "artifacts": {
+      "merged_rows": 15,
+      "new_corrected_source_record_ids": [],
+      "retained_all_incoming_main_rows_exact": 11,
+      "retained_all_root_rows_exact": 14
+    },
+    "passages": {
+      "merged_rows": 15,
+      "new_corrected_source_record_ids": [],
+      "retained_all_incoming_main_rows_exact": 3,
+      "retained_all_root_rows_exact": 15
+    }
+  },
+  "src/web/data/structure/sources/editions/francis-xavier-lasance/the-new-roman-missal/1945-benziger-revised-1945.json": {
+    "artifacts": {
+      "merged_rows": 68,
+      "new_corrected_source_record_ids": [
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261030-pc-nativity-day-punctuation-0d801929"
+      ],
+      "retained_all_incoming_main_rows_exact": 55,
+      "retained_all_root_rows_exact": 67
+    },
+    "passages": {
+      "merged_rows": 2104,
+      "new_corrected_source_record_ids": [
+        "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261030-pc-nativity-day-punctuation-0d801929"
+      ],
+      "retained_all_incoming_main_rows_exact": 2052,
+      "retained_all_root_rows_exact": 2103
+    }
+  },
+  "tools/public-alpha": "Every executable AST statement/function/class method is exactly from an accepted parent; only the merged test class combines exact parent methods.",
+  "tools/tests/test_public_alpha.py": "Every executable AST statement/function/class method is exactly from an accepted parent; only the merged test class combines exact parent methods."
+}

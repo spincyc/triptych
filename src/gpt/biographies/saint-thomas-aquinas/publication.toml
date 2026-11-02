@@ -1,0 +1,105 @@
+schema_version = 1
+id = "gpt/biographies/saint-thomas-aquinas"
+kind = "biography"
+profile = "guidance/biographies.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/biographies/saint-thomas-aquinas"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "chronology"
+source = "research/chronology.md"
+
+[[structure]]
+role = "tradition-audit"
+source = "research/tradition-audit.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/00-opening.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/10-household-abbey-and-city.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/20-preachers-and-family-resistance.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/30-albert-and-parisian-formation.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/40-master-and-mendicant-controversy.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/50-italian-years-office-and-summa.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/60-second-paris-disputes.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/70-naples-silence-and-death.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/80-books-workshop-and-method.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/90-teaching-and-historical-limits.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/100-censure-canonization-and-thomisms.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/110-tradition-relics-and-images.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/120-synthesis.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/130-scope-chronology-evidence.tex"
+
+[[structure]]
+role = "references"
+source = "sections/140-references.tex"

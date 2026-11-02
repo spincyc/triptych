@@ -1,0 +1,101 @@
+{
+  "helper": {
+    "path": "scripts/_papal_native_spacing.py",
+    "sha256": "7c7393f6b366bc986e7d106d217a769fabba5a48edd645a7bd02b463eb64d82c"
+  },
+  "native_first_page": 199,
+  "native_pdf": {
+    "artifact_id": "artifact.acta-papal-archives.ass.026.vatican-pdf-02f81d1d",
+    "artifact_pages": [
+      199,
+      203
+    ],
+    "sha256": "02f81d1d13781d2f7d27d4aa327d7ec83bbe5ea8ec22f785eda20dd4ce777446"
+  },
+  "native_raw": {
+    "artifact_id": "artifact.nonmediocri-ass26.nonmediocri-native-word-lines-993d6853bb18",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/nonmediocri-native-word-lines-993d6853bb18/text.txt",
+    "sha256": "993d6853bb1852f51675dcd96537c4f77be51b182235a5d7606934153dad627f"
+  },
+  "output_sha256": "da68d4ac35e8f3774a24f8dda673f42449e3cb41e76ccf21a7a99341a4c59fdf",
+  "parent": {
+    "artifact_id": "artifact.acta-papal-archives.ass.026.historical-text-15a33cfd",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/acta-historical-text-15a33cfd/historical.txt",
+    "sha256": "15a33cfd01401e070c0b912e4154be4f7d163d6730ac8f1cd64ed6096d756d3d"
+  },
+  "retained_source_lines": [],
+  "review": {
+    "limits": "143 unique selected nonblank LF matches; zero retained-original exceptions. Whitespace only; parent LF sequence, every nonwhitespace character and literal hyphen retained. No lexical repair or original-print facsimile collation.",
+    "native_pages_inspected": [
+      199,
+      200,
+      201,
+      202,
+      203
+    ],
+    "native_word_line_preparation": {
+      "all_word_values_preserved_once": true,
+      "bbox": {
+        "artifact_id": "artifact.nonmediocri-ass26.nonmediocri-native-bbox-439437c31735",
+        "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/nonmediocri-native-bbox-439437c31735/bbox.html",
+        "sha256": "439437c317351f32b3d25891abde92ad7ebdd0fde1a985fefbbe396d4275b70b"
+      },
+      "code": {
+        "artifact_id": "artifact.nonmediocri-ass26.nonmediocri-native-word-lines-code-5ceeff1a55cc",
+        "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/nonmediocri-native-word-lines-code-5ceeff1a55cc/replay.py",
+        "sha256": "5ceeff1a55cca986b83d5926210d2701f1e16af740e13ee9ae4ff5410052bf87"
+      },
+      "line_y_min_tolerance_pt": 0.5,
+      "map": {
+        "artifact_id": "artifact.nonmediocri-ass26.nonmediocri-native-word-map-4a337059f206",
+        "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/nonmediocri-native-word-map-4a337059f206/map.json",
+        "sha256": "4a337059f206f0fc7ca910dbd7911c2ec096901e49106f72e79a773489aa0575"
+      },
+      "maximum_joined_gap_pt": 1.9305,
+      "minimum_separated_gap_pt": 2.93931,
+      "native_word_count": 5973,
+      "space_gap_threshold_pt": 2.5
+    }
+  },
+  "reviewed_stream_order_pages": [],
+  "schema": "triptych-papal-native-spacing/v1",
+  "selections": [
+    {
+      "native_page": 199,
+      "source_range": [
+        7948,
+        7955
+      ]
+    },
+    {
+      "native_page": 200,
+      "source_range": [
+        7957,
+        7998
+      ]
+    },
+    {
+      "native_page": 201,
+      "source_range": [
+        8000,
+        8040
+      ]
+    },
+    {
+      "native_page": 202,
+      "source_range": [
+        8042,
+        8081
+      ]
+    },
+    {
+      "native_page": 203,
+      "source_range": [
+        8083,
+        8102
+      ]
+    }
+  ],
+  "source_id": "acta.ass.026.ass-026-l07953",
+  "stream_order_difference_pages": []
+}

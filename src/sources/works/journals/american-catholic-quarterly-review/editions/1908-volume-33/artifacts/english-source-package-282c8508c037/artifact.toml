@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.journals.american-catholic-quarterly-review.1908-volume-33.english-source-package-282c8508c037"
+edition_id = "edition.journals.american-catholic-quarterly-review.1908-volume-33"
+artifact_type = "source-input-package"
+media_type = "application/json"
+rights_status = "licensed"
+rights_basis = "Project-created factual source package, CC BY 4.0."
+license = "CC-BY-4.0"
+retrieved = "2026-10-26"
+encoding = "utf-8"
+indexable = false
+provenance = "Exact whole annual OCR, inspected native title, full-boundary reports, available historical defect images and replay recipe form one offline source package."
+support_artifacts = [{ artifact_id = "artifact.journals.american-catholic-quarterly-review.1908-volume-33.ia-ocr-c194549c999a", embedded_reference = "raw-ocr.txt" }, { artifact_id = "artifact.journals.american-catholic-quarterly-review.1908-volume-33.native-title-0799af6a6884", embedded_reference = "title-page.jpg" }, { artifact_id = "artifact.journals.american-catholic-quarterly-review.1908-volume-33.boundary-review-3bbdc560eec9", embedded_reference = "boundary-review-1.json" }, { artifact_id = "artifact.journals.american-catholic-quarterly-review.1908-volume-33.english-extraction-recipe-f868a306dd48", embedded_reference = "recipe.json" }]
+storage = "tracked"
+sha256 = "282c8508c03740b59c28617ba14f37ed780e894c970a393a7b073db6466169f9"
+byte_size = 785
+path = "src/sources/works/journals/american-catholic-quarterly-review/editions/1908-volume-33/artifacts/english-source-package-282c8508c037/package.json"

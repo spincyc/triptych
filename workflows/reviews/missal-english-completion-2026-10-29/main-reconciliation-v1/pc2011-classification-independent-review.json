@@ -1,0 +1,85 @@
+{
+  "actual_existing_Proper_entries_verified": [
+    {
+      "english_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "entry_sha256": "fe483d38fcaefbf7cf5ac5b8070e84418d22e4944377da2517a2a56eab4d2ff6",
+      "production_payload_and_publication_predicates": "PASS",
+      "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen",
+      "publication_artifact_sha256": "34d4f7ee1e4bfe5d8190df8ca2fc7954f72970cf9833e23137d0cc56cf92c828",
+      "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen-publish-lawrence",
+      "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+      "target": [
+        "saint-lawrence-brindisi-priest-doctor-church",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "witness": "bute-1908-breviary"
+    },
+    {
+      "english_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "entry_sha256": "617393fdedee2a0b0352cae324f38ec4f70081badddfa642b0f3dd9691c3a089",
+      "production_payload_and_publication_predicates": "PASS",
+      "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen",
+      "publication_artifact_sha256": "34d4f7ee1e4bfe5d8190df8ca2fc7954f72970cf9833e23137d0cc56cf92c828",
+      "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen-publish-chrysostom",
+      "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+      "target": [
+        "saint-john-chrysostom-bishop-doctor-church",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "witness": "bute-1908-breviary"
+    },
+    {
+      "english_sha256": "7fc7c2650428066c6d58a7b47e1efca29a6d44f3091b7120ba6ac00950a66570",
+      "entry_sha256": "03cd2202015645c03acb541fd7d5f2461356ea1ceee96b5a5a542f4a1d491b52",
+      "production_payload_and_publication_predicates": "PASS",
+      "publication_artifact_id": "artifact.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915.english-completion-20261029-postconciliar-mariamajor-english",
+      "publication_artifact_sha256": "ef0c4210eb407d37ee2c6a3372f5cc40e3ec3aebd3516def5e12ca930b5400b6",
+      "publication_passage_id": "passage.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915.english-completion-20261029-postconciliar-mariamajor-publish-english",
+      "source_id": "edition.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915",
+      "target": [
+        "dedication-basilica-saint-mary-major",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "witness": "benziger-little-office-1915"
+    }
+  ],
+  "added_classes": 2,
+  "after_sha256": "6739d55adb969ef06f8e0e73e7457e682b61f9bee0759c461a1fb2ded1b0a194",
+  "all_other_fields_and_capabilities_exact": true,
+  "approved_2011_classes_and_quarantine_disposition_unchanged": true,
+  "audit_date_delta": [
+    "2026-10-26",
+    "2026-10-30"
+  ],
+  "before_sha256": "22e2cc7c36c9f0f81b85e335d076f1a1133f7a1da268db064e6e7794205222b8",
+  "canonical_writes": 0,
+  "exact_old_source_classes_retained": 9,
+  "findings": [],
+  "negative_controls_refused": [
+    "2011 promotion",
+    "identity relabelling",
+    "source substitution",
+    "inferred source absence",
+    "old class deletion",
+    "capability permission promotion",
+    "body field addition"
+  ],
+  "no_liturgical_payload_or_rights_authority_added": true,
+  "path": "src/sources/inventories/postconciliar-english-2011-recension-coverage-v1.toml",
+  "production_predicates": "All3 current English payload/publication joins pass CLI and source-checker predicates;4 unchanged classification/finding-aid test methods pass against the scratch candidate.",
+  "schema": "triptych-independent-PC2011-source-classification-review/v1",
+  "scope_limits": [
+    "Classification-only metadata successor; source-epoch acceptance and its exact input/replay checks are separate.",
+    "Checks established rights metadata and exact existing publication bindings; no new rights ruling, historical page collation or translation acceptance is claimed."
+  ],
+  "status": "PASS-bounded-two-source-classifications-and-audit-date"
+}

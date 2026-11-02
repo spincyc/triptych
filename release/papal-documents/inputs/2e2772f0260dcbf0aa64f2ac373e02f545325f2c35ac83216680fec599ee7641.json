@@ -1,0 +1,171 @@
+{
+  "schema": "triptych-rootstop-bounded-recovery-verification/v1",
+  "packet": {
+    "path": ".scratch/encyclical-refinement-package/packets/57b.json",
+    "sha256": "0491dd19474a3966cc61d46c6cd1f10e2a7a04a9019dd8727e12d0626e66644f",
+    "byte_size": 56634
+  },
+  "protocol": {
+    "path": ".scratch/encyclical-refinement-package/ROOTSTOP-57b-recovery-protocol.json",
+    "sha256": "29fa51d850196b8f66dbda5071298f12a0040c7e88539c159c69d2da9272fbfd",
+    "byte_size": 3947
+  },
+  "current_source": {
+    "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-text-0bc35822f5ca/text.txt",
+    "sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+    "byte_size": 40091
+  },
+  "current_pdf": {
+    "path": ".scratch/etsi-english-greeting-recovery/exclusion-successor-1/render/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en.pdf",
+    "sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+    "byte_size": 59346
+  },
+  "receipt": {
+    "path": ".scratch/etsi-english-greeting-recovery/exclusion-successor-1/render/receipt.json",
+    "sha256": "326fc9f3aaf372d4917e7da84674fe62354272b02b6f0ee9f9b5a5f6b6cf0fc2",
+    "byte_size": 2765
+  },
+  "frozen_manifest": {
+    "path": ".scratch/etsi-english-greeting-recovery/exclusion-successor-1/render/frozen-manifest.json",
+    "sha256": "b7d8ab152bd0322f95601b283dcbf99e9867d5058c68597d4c185a9f66ea362a",
+    "byte_size": 8751
+  },
+  "source_row_equals_frozen_manifest": true,
+  "input_pin_check_count": 91,
+  "all_input_pins_match_final_recheck": true,
+  "mechanical_checks": {
+    "validate_document": "PASS",
+    "fidelity": {
+      "status": "pass",
+      "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+      "pages": 7,
+      "source_characters": 39743,
+      "source_normalized_characters": 27650,
+      "layout_hyphens": 53,
+      "source_first_page": 1,
+      "source_last_page": 7
+    },
+    "helper_sha256": "1c14411ed430d51605af66a37ddcb6d758d0eb67c9e8d56a1d4d875e9a0ba146"
+  },
+  "source_library_validation": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 TRIPTYCH_LIBRARY_CACHE=0 tools/source-library validate",
+    "exit_status": 0,
+    "output": "source-library valid: artifact=11181 corpus=5 edition=14310 passage=9532 segment=10892 work=10944 bindings=4398\n",
+    "qualification": "Mechanical graph validation does not confer source judgment."
+  },
+  "license": {
+    "path": "LICENSES/MIT.txt",
+    "sha256": "afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60",
+    "byte_size": 1078
+  },
+  "new_actual_reader_pages": [
+    6,
+    7
+  ],
+  "new_actual_own_folio_pages": [
+    12,
+    15,
+    22
+  ],
+  "reopened_reader_pages": [],
+  "new_full_native_pages": [],
+  "whole_pdf_status": "UNASSIGNED",
+  "source_status": "PASS_BOUNDED_MECHANICAL_OCR_INTAKE",
+  "canonical_role_report": "src/sources/papal-documents/encyclicals-refinement-cold-57b-recovery.md",
+  "canonical_role_report_written": false,
+  "aggregate_target": "src/sources/papal-documents/encyclicals-refinement-cold-57b.md",
+  "evidence": [
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/report.md",
+      "sha256": "06cc974acdde2c260237ec5d367d191f4083edc311795248722f55fba51d0f91",
+      "byte_size": 6720
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/source-decision.json",
+      "sha256": "464e042ff7328ea297971c7abb42f11a9771d4432379cf8897014650b8d63c3f",
+      "byte_size": 5322
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/reviews.json",
+      "sha256": "9e6ed19805748b01d8957a331da0d5c24aecf7dc9bda199ddbbac4079cad635b",
+      "byte_size": 5408
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/observations.jsonl",
+      "sha256": "7b9a498f3ea7a12d1bd8e05ed466f41831a13f4c00ed9f6ec20599bcf4e12d9a",
+      "byte_size": 5300
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/input-checks.json",
+      "sha256": "aed672a772ed96a605f9213026e12e6123baba2fa2158b39e7c74323e5ad20a2",
+      "byte_size": 28120
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/independent-byte-proof.json",
+      "sha256": "1005ebca72add3867024c72173a2c18372f982d35ffa135d33a25c961b1b8e04",
+      "byte_size": 6014
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/pixel-checks.json",
+      "sha256": "708e312acbbd751a5cd09faef8d123c2e20832525bc2c746ccd6533e9bda8332",
+      "byte_size": 3438
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/independent-fidelity.json",
+      "sha256": "7c648256125a3192feea6e6eba09b623ba1fddf4511bcde6e881926a2a9c8b2d",
+      "byte_size": 393
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/source-library-status.json",
+      "sha256": "b4de271b42a2983c9fb800bd250d6a98594ec7408b3ea08256ae3343b8bf0d4b",
+      "byte_size": 332
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/source-library-validate.log",
+      "sha256": "93c87933421bf01b2f9708de04edf23d02746e01013e0b6d3132c2fc000bc451",
+      "byte_size": 112
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/terminal-link-check.json",
+      "sha256": "540fda7e68af40a8df42abe290fcc23da0468838109dc21ca5aa2292a9f28115",
+      "byte_size": 322
+    }
+  ],
+  "prior_source_fact_pins": {
+    "report.md": {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/report.md",
+      "sha256": "95fa2a7019f2bcb0536192890a78d7fdd0f69317a094777819b1a2e3562d9a21",
+      "byte_size": 18176
+    },
+    "reviews.json": {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/reviews.json",
+      "sha256": "29f5be0d92e3b9772402c6fb73d6a8f0a4cab52b715c5b13f9cd935cb3a1b6e1",
+      "byte_size": 4574
+    },
+    "verification.json": {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/verification.json",
+      "sha256": "8b44fd7981eb1f0e77a9bdef4feb5df15c6727b43feac1c672fdd015216bf155",
+      "byte_size": 34725
+    },
+    "observations.jsonl": {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/observations.jsonl",
+      "sha256": "f3c24642ddce7111f9c630525ce451e66e510fe0bbe2c00c1df8663e83220fbc",
+      "byte_size": 21319
+    },
+    "foreign-span-disposition.json": {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/foreign-span-disposition.json",
+      "sha256": "a704482e5f91e8987f319f34ecca6457e427b7ce48d5aac4d594907b29c0e728",
+      "byte_size": 9527
+    },
+    "foreign-span-image-proof.json": {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/foreign-span-image-proof.json",
+      "sha256": "71922475bb632a060e1768982663fa76e1721462e93e091b518786efd0664a96",
+      "byte_size": 7261
+    }
+  },
+  "guarded_environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TRIPTYCH_LIBRARY_CACHE": "0"
+  },
+  "mutation_boundary": "Only exclusive cold-review-57b-recovery scratch written; no source/code/Git/producer/shared-cache/install mutation."
+}

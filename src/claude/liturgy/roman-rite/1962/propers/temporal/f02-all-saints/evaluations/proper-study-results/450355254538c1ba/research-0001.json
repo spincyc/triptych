@@ -1,0 +1,50 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "scope.md 3.0 (Wis 3:1-3 block) and 3.8 record the bounded literal, Greek, citation-form and catalogue search; Bonaventure's direct commentary, Augustine Enarr. 87 n. 5, and Alphonsus's Ninth Consideration with his standing and his contrast with Schuster; Chrysostom, Gregory and Bernard classed as illuminating uses; section 7, 5.5 and interpretations.md Readings B and C Offertory joins and Limits revised; all new sources bound.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "scope.md 3.0 and 3.2 record Augustine's two expositions of Ps 32:1, Basil (PG 29 text layer), Aquinas (Parma) and Bellarmine, with each one's inference and psalter form; held-but-unread expositors listed with reasons; section 7 and every reading's Introit join updated.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-003",
+      "note": "scope.md 3.0 is the passage-by-passage matrix (Ps 32:1, Apoc 7:2-12, Ps 33:10-11, Mt 11:28, Mt 5:1-12a, Wis 3:1-3, Mt 5:8-10) with propers, witnesses, searches, roles and negatives; Bede on 7:10 and 7:12 reported in 3.4; the literal search of liturgical commentators beyond formulary recorded in 3.1.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-004",
+      "note": "Cyprian's conclusion (ANF V 50339-50342) and Augustine's Sermon LXI (NPNF I.6 43174-43216) recorded in 3.4; 5.1 and 6.2 set Cyprian and Schuster against Augustine with what each answer changes; interpretations.md corrected and Augustine's carrying of Reading A restated with the grain-heap image and 'the mass of the saints' kept together.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-005",
+      "note": "scope.md 3.1 and 3.3, interpretations.md and the Durandus binding record intercessionibus against the 1962 intercessoribus and limit his use; heading and element comparisons recorded for Durandus, Beleth, Schuster, Fromage, Sicard, Honorius and the Sarum Missal.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-006",
+      "note": "Every join resting on a locus on another verse is marked editorial with the author's actual locus, in the readings and in the comparison table; where Bonaventure, Alphonsus, Augustine (Ps 87, Ps 32) or Basil now supply a checked witness on the verse itself, that witness replaces the join.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-007",
+      "note": "scope.md 8.6 gives each orientation row's planned occurrence and place phrase with its exact source (Apoc 1:9-11 read in context, Catholic Encyclopedia vols. 1, 10 and 15 at their lines, 1 Kgs 21:10-15), keeps writer's place, event's place and unknown place distinct, and keeps Achimelech beside Achis.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-008",
+      "note": "scope.md 3.11, section 7, context.md and verified.md element 11 record the p. 16 direction (Vigil of the Nativity, PDF p. 97) with both inferences and the wording contrast between RGMR 494 b and the seasonal rubrics; element 11 is kept unresolved with both candidates, this evidence and the ICRSP ordo's direction.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Receipts for the source-registration stage are in the run scratch area .scratch/f02r/work/research-0001/: discover-0.txt to discover-6.txt (commentary-work-index discover per passage), formulary-*.txt, lit-search-2.txt and lit-search-3.txt and wis-search.txt and wis-cite*.txt (literal searches), m62.txt and m62*.png (1962 facsimile text and page renders for the p. 16 direction), fingerprints.tsv (fingerprints), scope-part1/2/3.md (drafts). No remote bytes were newly fetched; every newly used source was already registered. research/source-bindings.toml now has 93 bindings and tools/source-library validate passes; the research-phase gate passes. Existing bindings were edited in place and 36 were appended, so research/source-dispositions.toml (owned by the next stage) is stale for binding indices 14, 15, 18, 19, 28, 29, 30, 38, 42, 43, 46, 47, 48, 49, 56 and has no rows for 58-93. The five PL 107 Rabanus negatives are bound as replayable negative-search receipts (matching_line_count 0). Defects for owners (also in scope.md section 10): author-standing-v1.toml lacks rows for Bernard, Cyprian, Victorinus, Bonaventure, Alphonsus Liguori and Peter of Celle; passage-commentary-index maps no commentary to Wis 3:1-3 although Bonaventure's commentary is registered and contained in Quaracchi vol. 6, and Alphonsus is not mapped; the Quaracchi OCR reads the lemma Iustorum as lustorum; the PL 202 volume that prints Peter of Celle is filed under john-beleth; the Victorinus containment extent defect stands; formulary-loci.yaml maps nothing to omnium-sanctorum or pentecost-23; propers.yaml Gospel/Offertory ranges and the missing Preface case; the chronology generator labels the Lesson row 'Revelation'; tools/tests/test_ordinary_appointments.py lines 261-269; discover reports Cornelius a Lapide as held through title joins and returns duplicate rows; the Honorius Gemma animae work's locus grammar admits book IV only, so book III loci could not be bound as machine loci. For the study authors (sections/*.tex are study-owned and were not edited): the current sections still describe the Offertory's malitiae history and Durandus's intercessionibus in the superseded way; scope.md 3.1, 3.3 and 3.8 give the corrected account.",
+  "stage": "research",
+  "summary": "This dispatch repaired all eight blocking research findings: it added the passage-by-passage reception matrix with recorded searches, read the Offertory's and the Introit verse's own expositors (Bonaventure, Augustine on Ps 87 and Ps 32, Alphonsus, Basil, Aquinas, Bellarmine), corrected the Cyprian/Schuster/Augustine disagreement and the Durandus Collect wording, marked every editorial join, sourced each planned chronology place phrase, recorded the 1962 Missal's p. 16 Preface direction with both inferences, and bound every newly used source."
+}

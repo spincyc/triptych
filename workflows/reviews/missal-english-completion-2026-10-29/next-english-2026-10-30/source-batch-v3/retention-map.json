@@ -1,0 +1,219 @@
+{
+  "already_durable_without_new_copies": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py",
+      "sha256": "29d0add9b330248b4047881310175614d91adc82688bfc695451318696c0865b"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/support_v3.py",
+      "sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc"
+    },
+    {
+      "path": "tools/tests/_source_batch_guards.py",
+      "sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/actual-authority-activation.json",
+      "sha256": "55a3ea92a0d4892607d7376bf16c339b7fc5e1aeb6b82fd1a4af663ded7fadff"
+    }
+  ],
+  "large_pending_fixture_archive": "Omitted intentionally: restore the exact recorded pending acceptance/state in the accepted fixture and serialize canonically to recover f0510da7 byte-exact. Existing candidate-v2/v3 scratch outputs remain frozen.",
+  "original_relative_labels": "Keep exact adapter/declaration/proof bytes. Canonical copies resolve original scratch labels through this mapping; any historical staging of those labels uses exact retained bytes. No path rewrite or rederivation is part of adoption.",
+  "pending_fixture_reconstruction": {
+    "duplicate_pending_fixture_archive_required": false,
+    "expected_pending_fixture_sha256": "f0510da7466a3c79b05c90f038d9b0eea5f3d81e66d8787b6d1538719c07085d",
+    "replace_exact_top_level_fields": {
+      "acceptance": {
+        "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-acceptance.json",
+        "receipt_sha256": null,
+        "status": "pending"
+      },
+      "state": "Bounded source successor candidate; independent source and fixture acceptance pending"
+    },
+    "schema": "triptych-pending-fixture-envelope-reconstruction/v1",
+    "serialization": "UTF-8 json.dumps(indent=2,sort_keys=True,ensure_ascii=False,allow_nan=False) plus LF.",
+    "source": "installed accepted fixture at tools/tests/fixtures/missal-source-batch-20261023.json",
+    "source_fixture_core_sha256": "be05e5928b8be8dd59c23dc8401c431e616ca605ea138dd0bf465d7a18330e3a"
+  },
+  "pending_independent_data_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-independent-review.json",
+    "sha256": "bebf620edc65ef674a6e7d70134e3cfc0779a778a2e0b7b8cddaf93b9356547c",
+    "status": "accepted"
+  },
+  "records": [
+    {
+      "canonical_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+      "disposition": "install-exact-at-existing-runtime-path",
+      "role": "Exact7264-row V3 source manifest; install unchanged.",
+      "sha256": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84",
+      "source_path": ".scratch/next-epoch-semantics-20261030/candidate-v3/postimages/tools/tests/fixtures/missal-source-batch-20261023-inputs.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/data-proof.json",
+      "disposition": "copy-exact-after-root-review",
+      "role": "Original immutable-compiler derivation proof.",
+      "sha256": "68325b619038d8e9872f2c2a468f0a04a01ce1bc57a5a6b35f341cfc1a05d60b",
+      "source_path": ".scratch/next-epoch-semantics-20261030/candidate-v3/data-proof.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/adapter-proof.json",
+      "disposition": "copy-exact-after-root-review",
+      "role": "Actual selected adapter, parent and consumed runtime code proof.",
+      "sha256": "68961eb740d38fd7639a32f2100a5e63d7ffbe0d8753d77a7cbd92d84b3a61b1",
+      "source_path": ".scratch/next-epoch-semantics-20261030/candidate-v3/adapter-proof.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/transition-contract.json",
+      "disposition": "copy-exact-after-root-review",
+      "role": "Exact contract referenced by fixture core.",
+      "sha256": "7495dee6d0d191b9f376d6494e8323dd47a1869a0636deaac0a0c4f1d6a11755",
+      "source_path": ".scratch/next-epoch-semantics-20261030/candidate-v3/transition-contract.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/semantic-adapter.py",
+      "disposition": "copy-exact-after-root-review",
+      "role": "Exact reviewed adapter233; preserve hardcoded original relative labels.",
+      "sha256": "23391e404ec941d3057070c48da95fb538698fb9ce9f0777ab688034c0443a09",
+      "source_path": ".scratch/next-epoch-semantics-20261030/semantic_adapter.py"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/declaration.json",
+      "disposition": "copy-exact-after-root-review",
+      "role": "Exact root-selected declaration e619.",
+      "sha256": "b05cc94593171cea71c6568d512fbf4ab7a6b3443eed42efedb2e197ea3bf26f",
+      "source_path": ".scratch/root-next-english-adoptions-20261030/settled-epoch-v3/declaration.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/source-delta.json",
+      "disposition": "copy-exact-after-root-review",
+      "role": "Exact explicit201-row delta:193 additions plus8 kept paths.",
+      "sha256": "e7e1eb6be7b0e44e0158bafef38afbc0515dece27c1809650934c27d86e6c07c",
+      "source_path": ".scratch/root-next-english-adoptions-20261030/settled-epoch-v3/source-delta.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/SOURCESETTLED.json",
+      "disposition": "copy-exact-after-root-review",
+      "role": "Exact source closure consumed by declaration.",
+      "sha256": "32a27a9c8c6ecd9ab19c4eb5c7d677326e227eabb03088c1d0d9b2a185020d53",
+      "source_path": ".scratch/root-next-english-adoptions-20261030/SOURCESETTLED.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/GENSETTLED.json",
+      "disposition": "copy-exact-after-root-review",
+      "role": "Exact root generator closure consumed by declaration.",
+      "sha256": "e3871f1e2260bcadad4565002a502504f9f5d666b7bffd8b2d7a2c6fdb19773c",
+      "source_path": ".scratch/root-next-english-adoptions-20261030/settled-epoch-v3/GENSETTLED.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/owner-GENSETTLED-v2.json",
+      "disposition": "copy-exact-after-root-review",
+      "role": "Registered owner currentness evidence referenced by root closure.",
+      "sha256": "b37bddc8e9ffd464da8ef139d26b4b3c0ba6b471afed0fd9f6d2dcdddb50b14b",
+      "source_path": ".scratch/english-integration-20261029/next-english-cohort-v1/GENSETTLED-v2.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/adapter-independent-review.json",
+      "disposition": "copy-exact-after-root-review",
+      "role": "Independent exact adapter review,44 supplied plus20 independent controls.",
+      "sha256": "052cce2b141a2a8e3172b196f8ecf8b6b80242a721511826d1577c35d648c9eb",
+      "source_path": ".scratch/merged-publication-audit-20261030/next-epoch-adapter-functional/review.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/finite-helper-ecca.py",
+      "disposition": "copy-exact-after-root-review",
+      "role": "Exact accepted ECCA intermediate, retained as evidence only.",
+      "sha256": "ecca66760debc9c0451e1b6743883c55d59390f575b4503b6af27d9923117fd3",
+      "source_path": ".scratch/next-epoch-semantics-20261030/reviewed-adapter-24113b19/reviewed-intermediate-ecca.py"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/pure-quarantine-code-review.json",
+      "disposition": "already-canonically-retained",
+      "role": "Exact helper review consumed by adapter; canonical byte-exact copy already exists.",
+      "sha256": "b2f859809819b9a24e3a1f488bcd136cae87bcf0b918375244f5c2a349881105",
+      "source_path": ".scratch/roman-english-completion-20261029/v2-consolidation/pure-quarantine-review-v1/review.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/pure-quarantine-regressions.json",
+      "disposition": "already-canonically-retained",
+      "role": "Exact helper review consumed by adapter; canonical byte-exact copy already exists.",
+      "sha256": "dc5542cdc8bdfc5040f98d650a01376fd74dbc2a25512cd2a193a28224a8e030",
+      "source_path": ".scratch/roman-english-completion-20261029/v2-consolidation/pure-quarantine-regression-v1/receipt.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/roman-source-application.json",
+      "disposition": "copy-exact-after-root-review",
+      "role": "Writer closure receipt referenced by SOURCESETTLED.",
+      "sha256": "3a8bdbdc6873021e37fd7beb1cc0344826af6ac3be49107837e31bafd1a49969",
+      "source_path": ".scratch/roman-english-completion-20261029/v2-consolidation/actual-95-application-v1/application-receipt.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/pc-source-installation.json",
+      "disposition": "copy-exact-after-root-review",
+      "role": "Writer closure manifest referenced by SOURCESETTLED.",
+      "sha256": "9375764ee0a7a08a2d56bbaa60f09d041698547248b4e8aa9bbb2cba342d1183",
+      "source_path": ".scratch/postconciliar-english-completion-20261029/first18-authorized-install-v1/INSTALLED-SOURCE-MANIFEST.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/previous-GENSETTLED-v2.json",
+      "disposition": "copy-exact-after-root-review",
+      "role": "Prior root generator closure referenced by V3; generated postimages unchanged.",
+      "sha256": "529fc3ccff92c6cd0702a5c7f6d91d1fe958fe0350536478c1efec37b69fb6f7",
+      "source_path": ".scratch/root-next-english-adoptions-20261030/settled-epoch-v2/GENSETTLED.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/actual-application.json",
+      "disposition": "already-canonically-retained",
+      "role": "Exact root application of three peer-reviewed current test expectation changes.",
+      "sha256": "6e0377d845368085d1a23e74f6b7e5db2c396d942cc43b579b1b4e0a33f9223a",
+      "source_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/actual-application.json"
+    },
+    {
+      "canonical_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/independent-review.json",
+      "disposition": "already-canonically-retained",
+      "role": "Independent bounded test readiness review; no source permission created.",
+      "sha256": "01e832f44734f02058a9599485818b69462bc8959244c34befdb9a8b93fa7d14",
+      "source_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/independent-review.json"
+    }
+  ],
+  "root_retained_independent_reviews": [
+    {
+      "original_path": ".scratch/merged-publication-audit-20261030/candidate-v2-integrated/review.json",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-data-independent-review.json",
+      "sha256": "b34480695b287ab4779693888828c67b7834c4ce6fd49a8c6498a17d65af7967"
+    },
+    {
+      "original_path": ".scratch/merged-publication-audit-20261030/candidate-v3-integrated/review.json",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-independent-review.json",
+      "sha256": "bebf620edc65ef674a6e7d70134e3cfc0779a778a2e0b7b8cddaf93b9356547c"
+    },
+    {
+      "original_path": ".scratch/merged-publication-audit-20261030/candidate-v3-scope/review.json",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/physical-scope-independent-review.json",
+      "sha256": "e4307811f2e6b735b80a77a2cf4b2230c8dbc7e6c57e6a013477dd31faa90a55"
+    },
+    {
+      "original_path": ".scratch/merged-publication-audit-20261030/candidate-v2-english/review.json",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-English_conservation-review.json",
+      "sha256": "03da9962e670de081e63bde7e591cdcb78995a8c3c5ddb63aa6d8c0cca84e693"
+    },
+    {
+      "original_path": ".scratch/merged-publication-audit-20261030/candidate-v2-integrated/data-core-review.json",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-data_core-review.json",
+      "sha256": "a6b194c6f80b509697042b97f2e0f0d2035b5ba955b5970e0df1531141afa844"
+    },
+    {
+      "original_path": ".scratch/merged-publication-audit-20261030/candidate-v2-finite/review.json",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-finite_guards_and_inherited_finding-review.json",
+      "sha256": "9b266b18b1a64f83cc03f0b53529aac43f92710e2a4698109944e744552e2e60"
+    },
+    {
+      "original_path": ".scratch/merged-publication-audit-20261030/candidate-v2-scope/review.json",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-source_scope-review.json",
+      "sha256": "3b400a5b29ce50181faba4a0e8b641b4a571f7d1469f1406dc2bbf244dc6d1b5"
+    }
+  ],
+  "runtime_implementation_retention": "Commit the actual aa925 helper and the three exact EXAMPLES-only tool successors at their existing paths; all other observed runtime code is exact702. The existing source manifest owns source/review bytes; these audit archives do not enlarge it.",
+  "schema": "triptych-pending-source-batch-retention-plan/v1",
+  "source_epoch_paths_remain": 7264,
+  "status": "proposed-only-no-canonical-copies-created-by-this-plan"
+}

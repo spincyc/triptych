@@ -1,0 +1,33 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "107d9c535c430ebdebc6b4bc9dbfc5644d45ee534f8743acc9710ae5493a6a85",
+  "documents": [
+    {
+      "id": "papal.pius-xi.hf-p-xi-enc-19230629-studiorum-ducem",
+      "language": "la",
+      "pdf_sha256": "a7f75e3214fe08f35802100efaecfeff783b1c0f5177a98eeaa5c2200151eeac",
+      "pages": 7,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review only; no whole-source/facsimile or translation collation, rights clearance, font audit or mechanical text-fidelity audit.",
+        "Historical witness: Acta Apostolicae Sedis 15 (1923), pp. 309-326. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+        "P7 contains the continuation of the historical prayer (Oratio), notes1–26 and compact source/rights apparatus; the single occupied column is source-bearing. No apparatus-only page."
+      ],
+      "receipt_sha256": "107d9c535c430ebdebc6b4bc9dbfc5644d45ee534f8743acc9710ae5493a6a85",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-14.md",
+      "report_sha256": "f6f10a3761563bdd37fe12354d684d3df58a3a97b93050d3a49e97f508ba59b2"
+    }
+  ]
+}

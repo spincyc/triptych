@@ -1,0 +1,20 @@
+{
+  "schema": "triptych-source-mass-notes-refresh/v1",
+  "recorded_on": "2026-10-29",
+  "before_sha256": "1bd63d467f5ceaf5a5e1632a03de433e7cb69a14c45c95ef5fe942837b7ece55",
+  "after_sha256": "c01abffaa79b890abc89a4674b3b6c38378b0269b69f1308fb8a5aa4d865796e",
+  "changes": [
+    {
+      "mass": "lent-3-thursday",
+      "old_notes": "The scripture-bearing propers are recorded by their printed citations, and the day's orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated to the controlling 1962 edition, each on the public-domain witness its row in src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names; the day's other composed chants are appointed but not yet transcribed. The Missal prints no scriptural reference for the Introit antiphon Salus populi, only for its psalm verse.",
+      "new_notes": "The scripture-bearing propers are recorded by their printed citations, and the day's orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated to the controlling 1962 edition, each on the public-domain witness its row in src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names. The Missal prints no scriptural reference for the Introit antiphon Salus populi, only for its psalm verse.",
+      "reason": "Remove the obsolete untranscribed-chant claim after the independently accepted complete own chant body admission; source wording and other scope qualifications remain."
+    },
+    {
+      "mass": "vigil-of-the-ascension",
+      "old_notes": "The scripture-bearing propers are recorded by their printed citations, and the day's orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated to the controlling 1962 edition, each on the public-domain witness its row in src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names; the day's other composed chants are appointed but not yet transcribed.",
+      "new_notes": "The scripture-bearing propers are recorded by their printed citations, and the day's orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated to the controlling 1962 edition, each on the public-domain witness its row in src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names.",
+      "reason": "Remove the obsolete untranscribed-chant claim after the independently accepted complete own chant body admission; source wording and other scope qualifications remain."
+    }
+  ]
+}

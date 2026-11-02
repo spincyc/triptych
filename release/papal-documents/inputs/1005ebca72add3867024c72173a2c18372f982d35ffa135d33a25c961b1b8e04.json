@@ -1,0 +1,251 @@
+{
+  "status": "PASS",
+  "parent_sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+  "source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+  "parent_bytes": 40192,
+  "source_bytes": 40091,
+  "source_LF_count": 788,
+  "exact_nine_old_half_open_ranges": [
+    [
+      5502,
+      5505
+    ],
+    [
+      17402,
+      17406
+    ],
+    [
+      19333,
+      19354
+    ],
+    [
+      19470,
+      19474
+    ],
+    [
+      20761,
+      20770
+    ],
+    [
+      23477,
+      23515
+    ],
+    [
+      25524,
+      25528
+    ],
+    [
+      27629,
+      27643
+    ],
+    [
+      39778,
+      39782
+    ]
+  ],
+  "removed_bytes": 101,
+  "foreign_bytes": 82,
+  "own_folio_bytes": 19,
+  "source_word_insertions": 0,
+  "whitespace_normalization": false,
+  "all_complement_bytes_exact": true,
+  "reinsertion_restores_afe": true,
+  "spans": [
+    {
+      "old_range": [
+        5502,
+        5505
+      ],
+      "classification": "OWN_LAYOUT_FURNITURE",
+      "removed_utf8": "6 \n",
+      "complement_old_range": [
+        0,
+        5502
+      ],
+      "complement_new_range": [
+        0,
+        5502
+      ],
+      "complement_sha256": "2f04c9f4725f8d6adc6c9fa8dfa0309e52fc7404160aa941b0431522245fe628"
+    },
+    {
+      "old_range": [
+        17402,
+        17406
+      ],
+      "classification": "OWN_LAYOUT_FURNITURE",
+      "removed_utf8": "12 \n",
+      "complement_old_range": [
+        5505,
+        17402
+      ],
+      "complement_new_range": [
+        5502,
+        17399
+      ],
+      "complement_sha256": "37904dd3c1e23da806d4ee1d86e3d0089f1f1d75dffd2e53b23cf611bd223230"
+    },
+    {
+      "old_range": [
+        19333,
+        19354
+      ],
+      "classification": "FOREIGN_CLIPPED_FACING_PAGE",
+      "removed_utf8": "st \n\nP \n\nf< \n\na \n\nc \n",
+      "complement_old_range": [
+        17406,
+        19333
+      ],
+      "complement_new_range": [
+        17399,
+        19326
+      ],
+      "complement_sha256": "c8f252c68300ce4f7dcab84d20e2dd67fb72d7ae7164687ea17a4086bc4ade4e"
+    },
+    {
+      "old_range": [
+        19470,
+        19474
+      ],
+      "classification": "OWN_LAYOUT_FURNITURE",
+      "removed_utf8": "13 \n",
+      "complement_old_range": [
+        19354,
+        19470
+      ],
+      "complement_new_range": [
+        19326,
+        19442
+      ],
+      "complement_sha256": "b6873cc8762ce6d31e03aa6fa8ef77ed8b83c5e3bb3ceca48e8751b886473cb4"
+    },
+    {
+      "old_range": [
+        20761,
+        20770
+      ],
+      "classification": "EXTRANEOUS_RECOGNITION_OUTPUT",
+      "removed_utf8": "o  o  7 \n",
+      "complement_old_range": [
+        19474,
+        20761
+      ],
+      "complement_new_range": [
+        19442,
+        20729
+      ],
+      "complement_sha256": "05beddd9fb256728c8176036f449be73d4c3bb3ad1afa38aaca5d6af5f33f5db"
+    },
+    {
+      "old_range": [
+        23477,
+        23515
+      ],
+      "classification": "FOREIGN_CLIPPED_FACING_PAGE",
+      "removed_utf8": "ro \n\nal) \n\nlie \n\nv \n\nai \n\nP \n\na \n\n\n< \n",
+      "complement_old_range": [
+        20770,
+        23477
+      ],
+      "complement_new_range": [
+        20729,
+        23436
+      ],
+      "complement_sha256": "44f61c90e5ef0d4369cd6b428abc22740aa3251a4c08648a5582a6e6d33ce341"
+    },
+    {
+      "old_range": [
+        25524,
+        25528
+      ],
+      "classification": "OWN_LAYOUT_FURNITURE",
+      "removed_utf8": "1C \n",
+      "complement_old_range": [
+        23515,
+        25524
+      ],
+      "complement_new_range": [
+        23436,
+        25445
+      ],
+      "complement_sha256": "ff42f1f0713641caa6e1a7d94fc37802c47b6370da6fcf6b5b0d948c9f7cc2c2"
+    },
+    {
+      "old_range": [
+        27629,
+        27643
+      ],
+      "classification": "FOREIGN_CLIPPED_FACING_PAGE",
+      "removed_utf8": "i. \n\nii \n\ntl \n",
+      "complement_old_range": [
+        25528,
+        27629
+      ],
+      "complement_new_range": [
+        25445,
+        27546
+      ],
+      "complement_sha256": "4c659aaaaad9486a2b3125b4e31c297ea03c87f7cb186b6dc6c6141c3b8c8c4d"
+    },
+    {
+      "old_range": [
+        39778,
+        39782
+      ],
+      "classification": "OWN_LAYOUT_FURNITURE",
+      "removed_utf8": "23 \n",
+      "complement_old_range": [
+        27643,
+        39778
+      ],
+      "complement_new_range": [
+        27546,
+        39681
+      ],
+      "complement_sha256": "6a1cddd117f4cc9b2ae718a906260104fafb296972c3ae88bf5175ec363700ce"
+    }
+  ],
+  "retained_suffix_sha256": "3944ebf54bd0cef28902af487c05485804a4ead69596a97b7cffceee95b431b5",
+  "critical_retentions": [
+    {
+      "label": "opening-and-first-body",
+      "sha256": "2f04c9f4725f8d6adc6c9fa8dfa0309e52fc7404160aa941b0431522245fe628",
+      "byte_identity": true
+    },
+    {
+      "label": "all-four-own-historical-notes-on-printed12",
+      "sha256": "4599d2516fc928cf4902e811eac20577fcbd4f1c4658024312b7c123a3820520",
+      "byte_identity": true
+    },
+    {
+      "label": "own-body-before-first-edge-block",
+      "sha256": "38b2d74a47db9ce8af89f3ebeffa38fa2da3759a3f679c687b89e94c7b6e95f1",
+      "byte_identity": true
+    },
+    {
+      "label": "own-body-around-spurious-row-before",
+      "sha256": "48e6c83e401f4a229914b43de8d6a4e8a45ae2685f48b5699a9c58279c4b55d6",
+      "byte_identity": true
+    },
+    {
+      "label": "own-body-around-spurious-row-after",
+      "sha256": "7c8a8a52fad5c0ba53a9fb99e5729439fcacba2f8afc3fc8197f966428862005",
+      "byte_identity": true
+    },
+    {
+      "label": "own-body-before-second-edge-block",
+      "sha256": "228a15c514d677e733e365d2f38a610ba9407a0eb0a564f0c6ba27173deb9444",
+      "byte_identity": true
+    },
+    {
+      "label": "own-body-before-third-edge-block",
+      "sha256": "2020ee8e58ebe07b83632cbad54a995216a68a7c647146a9e5acb875b3e9f921",
+      "byte_identity": true
+    },
+    {
+      "label": "final-blessing-dating-clause-and-subscription",
+      "sha256": "3944ebf54bd0cef28902af487c05485804a4ead69596a97b7cffceee95b431b5",
+      "byte_identity": true
+    }
+  ]
+}

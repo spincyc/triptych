@@ -1,0 +1,204 @@
+{
+  "schema": "triptych-missal-naming-reconciled-next-english-ready/v1",
+  "recorded_at_utc": "2026-10-30T18:35:10.108752+00:00",
+  "state": "READY: exact 53-file scratch reconciliation; canonical integration remains root-owned after the English checkpoint",
+  "manual_paths": 53,
+  "exact_patch": {
+    "path": ".scratch/missal-version-nomenclature-20261030/implementation/reconcile-next-english-v1/rebased-manual.patch",
+    "sha256": "6faa078c210647f7fe3da2b2eaa72353ef87b889fd2e6e2f0dd14ebafd7b5e45",
+    "bytes": 273785
+  },
+  "before_after_paths": {
+    "path": ".scratch/missal-version-nomenclature-20261030/implementation/reconcile-next-english-v1/MANUAL-PATHS.json",
+    "sha256": "66b8a2cbf91b8ab159cae66771f9e2878d9599a1018f37b47c295ade121799b6",
+    "bytes": 15141
+  },
+  "readonly_apply_guard": {
+    "path": ".scratch/missal-version-nomenclature-20261030/implementation/reconcile-next-english-v1/check_preimages.py",
+    "sha256": "697edb0df3bce2cefd261b363eecef375675ff817a06a85f7417a71e6dbdb062",
+    "bytes": 754
+  },
+  "review": {
+    "path": ".scratch/missal-version-nomenclature-20261030/implementation/reconcile-next-english-v1/review/REVIEW-RECEIPT-v1.json",
+    "sha256": "1a658367ad5bfb825051003440bf05def836b1dad7d6768594f1383596930e39",
+    "bytes": 17748
+  },
+  "validation": {
+    "path": ".scratch/missal-version-nomenclature-20261030/implementation/reconcile-next-english-v1/VALIDATION.json",
+    "sha256": "bd7256ff91f4e2fc5fa40b3f0b527e55793c809aa92546cb90ebbffdd6baa44f",
+    "bytes": 11624
+  },
+  "followup": {
+    "path": ".scratch/missal-version-nomenclature-20261030/implementation/reconcile-next-english-v1/FOLLOWUP.md",
+    "sha256": "f2e64f798ce66876e8e5916e9b79f075f5245adf4a1a55a742a1c746882e3e28",
+    "bytes": 3209
+  },
+  "reconciliation": {
+    "original_prototype_commit": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+    "before_basis": "Actual current next-English worktree bytes, recorded per path; no floating main/HEAD ref is used as a preimage substitute.",
+    "upstream_overlap": [
+      "tools/mass-propers"
+    ],
+    "mass_propers_current_before_sha256": "976939c81f4fc1fa9bd7de5eadf518514c1f71bba8aefc755ba922c67f5aa310",
+    "mass_propers_names_after_sha256": "e4316fad06750aac64f6f7133e4833a2a74fa92da4d0b9d49de59e30ffd6f4ed",
+    "resolution": "Current EXAMPLES are unchanged. All non-example AST nodes equal the accepted prototype. The examples are outside every hunk, so the exact rebased patch remains byte-identical to the reviewed manual patch.",
+    "all_other_52_postimages_match_accepted_manual_bytes": true,
+    "all_53_live_before_and_postimage_hashes_rechecked_at_finalization": true,
+    "patch_replay": "All 53 complete outputs match with zero offset/fuzz. Independent review also replayed in memory.",
+    "source_headers": "Both Proper YAML objects differ only in edition, edition_short and advisory; every other body/source/grade/rights/appointment field is exact.",
+    "protected_unchanged_runtime": [
+      {
+        "path": "scripts/_proper_finite_latin_20261029.py",
+        "sha256": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5",
+        "naming_touches": false
+      },
+      {
+        "path": "tools/source-library",
+        "sha256": "ff27c29238af76100b01047dfdeb9f2a808c0937089bd61d1bdecb6d2a7b45f0",
+        "naming_touches": false
+      },
+      {
+        "path": "tools/source-reader",
+        "sha256": "ba07b2f8269ad402edf608f45e6f9e94d92680fd16168b765b3e15e7746ad199",
+        "naming_touches": false
+      },
+      {
+        "path": "tools/tests/_source_batch_guards.py",
+        "sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+        "naming_touches": false
+      }
+    ]
+  },
+  "source_epoch_followup": {
+    "future_base": {
+      "path": ".scratch/root-next-english-adoptions-20261030/settled-epoch-v3/source-inputs.json",
+      "sha256": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84",
+      "bytes": 2029314
+    },
+    "future_base_declaration": {
+      "path": ".scratch/root-next-english-adoptions-20261030/settled-epoch-v3/declaration.json",
+      "sha256": "b05cc94593171cea71c6568d512fbf4ab7a6b3443eed42efedb2e197ea3bf26f",
+      "bytes": 3267
+    },
+    "review_or_acceptance_of_future_base_claimed": false,
+    "four_source_pin_updates": [
+      {
+        "path": "src/sources/calendars/README.md",
+        "before_sha256": "5aa7de5cb58b1e8d38a997d9db90e08c392da19ffbdf832735d5300601712766",
+        "after_sha256": "7733c97139d1da1dc02ccfe4aef61a0fc0b8f0b50414444699ca17eb6c88f831"
+      },
+      {
+        "path": "src/sources/calendars/postconciliar/propers.yaml",
+        "before_sha256": "35964d2d20f339f7201153bae4a7900ebe572c4d12fc67136169059b18952ae7",
+        "after_sha256": "eaeb04262bb70f3ef0e2f989429bc0740f955e2926cfe700f754160df908413e"
+      },
+      {
+        "path": "src/sources/calendars/recensions.json",
+        "before_sha256": "77eed5ec8c76783aeeececb984673f389ab9bb791378d3c22177dd3e31654b13",
+        "after_sha256": "ecbd62f8a76ab6876a135393c73baee41be921da5d004543cab4748ef161b649"
+      },
+      {
+        "path": "src/sources/calendars/roman-pre-1955/propers.yaml",
+        "before_sha256": "b28446e40b74769e7d16de193ad075dab362a9692b005a5e8ff8f97b1928291f",
+        "after_sha256": "a186244aae45846b7f7233f412b82a0ae59be9bdf2a1928983e822029f46325f"
+      }
+    ],
+    "current_manifest_rows": 7264,
+    "current_root_v3_explicit_deltas": 201,
+    "with_four_naming_deltas_if_scope_stays_fixed": 205,
+    "raw_historical_replay": {
+      "path": "src/sources/calendars/postconciliar/propers.yaml",
+      "new_after_sha256": "eaeb04262bb70f3ef0e2f989429bc0740f955e2926cfe700f754160df908413e",
+      "original_historical_before_sha256": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+      "requirement": "Derive and independently review exact new after bytes/slice hashes/replay hunks. Retain all17 original before hashes and all12 historical fixture partitions. This is the only one of the four naming inputs already in fixture.files; do not erase its new header/advisory merely to satisfy an old hash."
+    },
+    "runtime_closure": [
+      {
+        "path": "scripts/_calendars.py",
+        "current_before_sha256": "54f37042b07ae107a9bea59fe6080d5699f70290335ae7ddee453752f35eb7d4",
+        "post_sha256": "ca1388f525f672bbc7e344daa45f783fecf8633db9fc49f844bb8da2947c31c0",
+        "new": false
+      },
+      {
+        "path": "scripts/_missal_versions.py",
+        "current_before_sha256": null,
+        "post_sha256": "f91067f45611c813b7ac10dd7144668a56876d8004941d73bd124053a310cde2",
+        "new": true
+      },
+      {
+        "path": "scripts/_recensions.py",
+        "current_before_sha256": "9c7e049d58a04d3c2bbd92cd4d04ce7e3124e92eb75ab2741109692a3caf0bef",
+        "post_sha256": "da87d780b0a358d007cdc1dedc68029d75ed500bb52fcb45a163cb39a54dc317",
+        "new": false
+      },
+      {
+        "path": "tools/mass-propers",
+        "current_before_sha256": "976939c81f4fc1fa9bd7de5eadf518514c1f71bba8aefc755ba922c67f5aa310",
+        "post_sha256": "e4316fad06750aac64f6f7133e4833a2a74fa92da4d0b9d49de59e30ffd6f4ed",
+        "new": false
+      },
+      {
+        "path": "tools/mass-ordinary",
+        "current_before_sha256": "c0cfd8354d72a8a2be29020a2cc0299fce21b27bf6576ac20591d6bfa1d3dcb9",
+        "post_sha256": "73d701a08f8fcac0266bc6c0bbe6c177efe082a4575bdba753fae1b21bf41dc0",
+        "new": false
+      },
+      {
+        "path": "tools/calendar-days",
+        "current_before_sha256": "78facd78a090a7afe80410b12f8d7054fc047adbc8875b994f9d84b10c5d2c84",
+        "post_sha256": "32c73f9c8f1caf12993a486626ec0e6ce816efaea556477f9216ca9d8e2e08ca",
+        "new": false
+      },
+      {
+        "path": "tools/calendar-rubrics",
+        "current_before_sha256": "b68a8d6befab20e5f04ffb6828512044acf3a70015edd522105ab37bf207f95e",
+        "post_sha256": "0fb6af95b25f22e43bc6ff25ee904638a8810a8526653e74031b22cb393c57b4",
+        "new": false
+      }
+    ],
+    "required_action": "Use the actually accepted English epoch as base. Derive and independently review the exact naming input/manifest/runtime successor. Preserve historical before hashes, 12 fixture partitions, all body/grade/English positive/absence ledgers, current parsed Roman document and unrelated AA/ff27/ba07/f604 bytes. Pending or historical fixture evidence does not authorize new names bytes.",
+    "scan_boundary": "The coordinator earlier verified all 7264 v2 inputs, then root deliberately succeeded one non-naming test input and published v3. That earlier true scan remains historical evidence. This record makes no repeated whole-v3 scan, source acceptance or generation-freshness claim."
+  },
+  "current_narrow_verification": {
+    "exact_53_preimage_guard": "PASS",
+    "all_53_patch_outputs_and_hashes": "PASS",
+    "existing_synthetic_contribution_tests": 6,
+    "postimage_python_node_json_syntax_checks": 39,
+    "independent_strict_guard_controls": 14,
+    "pure_current_public_json_contribution_inputs": 6,
+    "actual_eligible_reader_keys": [
+      "roman-1962",
+      "roman-bonn-2004-study",
+      "roman-2008-study"
+    ],
+    "body_occurrences": {
+      "roman-1962": 3847,
+      "roman-bonn-2004-study": 2064,
+      "roman-2008-study": 256
+    },
+    "count_qualification": "Literal body occurrences include repeated uses and alternatives. They are not unique targets or completeness. All three choices independently contribute actual lawful non-Bible bodies; metadata alone does not qualify.",
+    "current_generated_inputs_unchanged": true,
+    "actual_integrated_full_gates_or_freshness_claimed": false
+  },
+  "excluded_from_this_apply": {
+    "old_generated_reference_files": 709,
+    "old_release_reference_files": 2,
+    "old_derived_examples_reference_files": 2,
+    "other_current_English_source_and_runtime_files": "No overlap except the preserved current examples in mass-propers. No full 702 source/code files are substituted for newer work."
+  },
+  "root_integration_order": [
+    "After the English checkpoint, rerun the read-only 53-preimage guard; resolve any later mismatch narrowly before applying.",
+    "Apply only rebased-manual.patch and verify all 53 after hashes. This proposal does not itself write canonical files.",
+    "Derive/review the current semantic-source fixture and runtime successor described above.",
+    "Regenerate through current mass-propers, mass-ordinary, calendar-rubrics and calendar-days owners, preserving the current calendar span and all body/source/grade/choice/event semantics.",
+    "Recapture current maintained examples/census through actual owners, run actual alias/body/browser/Lectern and source integration checks, then refresh current release bindings and complete release gates."
+  ],
+  "historical_research_and_audit_policy": "Accepted naming/source research receipts, historical source labels/quotes/opaque legacy IDs and sealed audit records retain their actual bytes. New production names explicitly distinguish book manifestation, source witness and partial reader projection.",
+  "mutation_boundary": {
+    "scratch_only": true,
+    "canonical_names_files_written": false,
+    "canonical_index_ref_or_network_writes": false,
+    "private_witness_source_copies": false,
+    "source_or_generated_output_regeneration": false
+  }
+}

@@ -1,0 +1,54 @@
+schema_version = 1
+id = "gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer"
+kind = "novena-companion"
+profile = "guidance/devotions/novenas.md"
+source_format = "latex"
+entrypoint = "main.tex"
+canonical_owner = "gpt/devotions/novenas/00-ascension-to-pentecost"
+
+[[outputs]]
+id = "gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "projection"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "derivation"
+source = "research/derivation.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "scope-appendix"
+source = "main.tex"
+
+[[structure]]
+role = "daily-prayers"
+data = "src/gpt/devotions/novenas/00-ascension-to-pentecost/prayers/day-*.tex"
+
+[[structure]]
+role = "common-prayers"
+data = "src/gpt/devotions/novenas/00-ascension-to-pentecost/prayers/daily-invocation.tex"
+
+[[structure]]
+role = "common-prayers"
+data = "src/gpt/devotions/novenas/00-ascension-to-pentecost/prayers/veni-creator.tex"
+
+[[structure]]
+role = "common-prayers"
+data = "src/gpt/devotions/novenas/00-ascension-to-pentecost/prayers/veni-sancte.tex"

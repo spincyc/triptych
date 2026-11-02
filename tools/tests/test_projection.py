@@ -101,12 +101,19 @@ class ProjectionTest(unittest.TestCase):
         the Clementine was the edition it was least true of: it declares
         `vulgate` and restarts Psalms 115 and 147 at verse 1, so nineteen verses
         answer to different numbers there and `Bible.verse('Ps', 115, 10)`
-        returned the last verse of the psalm. Identity still writes nothing —
-        which is why the Douay, whose printed psalter is the one the numbering is
-        read from, renumbers nowhere.
+        returned the last verse of the psalm. The Douay's Psalter agrees with
+        this numbering, while its reviewed Thessalonian joins retain the
+        edition's native verse numbers rather than assuming identity.
         """
-        douay = _projection.divergence(_projection.project(DOUAY, "vulgate"))
-        self.assertEqual(douay["renumber"], 0)
+        douay_rows = _projection.project(DOUAY, "vulgate")
+        self.assertEqual(
+            {(row.cited_locus, row.resolves_to)
+             for row in douay_rows if row.kind == "renumber"},
+            {(f"1Thess.4.{verse}", f"1Thess.4.{verse - 1}")
+             for verse in range(13, 19)}
+            | {(f"2Thess.2.{verse}", f"2Thess.2.{verse - 1}")
+               for verse in range(12, 18)},
+        )
         clementine = _projection.divergence(_projection.project(CLEMENTINE, "vulgate"))
         self.assertEqual(clementine["renumber"], 19)
         self.assertGreater(clementine["total"], clementine["displaced"])

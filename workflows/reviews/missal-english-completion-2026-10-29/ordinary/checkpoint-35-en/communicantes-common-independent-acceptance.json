@@ -1,0 +1,221 @@
+{
+  "state": "accepted-source-assembly-and-English-fidelity",
+  "candidate_sha256": "1a8b302d536e702194b05745882274e60e147f18360c9b335ce2ae23da71f02e",
+  "initial_candidate_sha256": "d956c58e596ea35a079330b8969e9987f5d973b70abbb625086054ccf317b6f1",
+  "source_scope": "Common Communicantes only, complete full-name body, with the whole old conclusion omitted and retained separately. No seasonal proper form or appointment is supplied.",
+  "resolved_findings": [
+    {
+      "id": "plural-speaking-subject",
+      "initial": "Dangling opening participation/memorial phrase against God-directed grant could obscure who shares and remembers.",
+      "resolution": "Successor explicitly begins We share… and separates the final God-addressed petition. Latin, source boundaries and all names are conserved."
+    }
+  ],
+  "independent_source_checks": {
+    "whole_Mame1922_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+    "fresh_source_image": "Mame1922 artifact455, printed341; left→right continuation directly inspected.",
+    "retained_page_pixel_parity": true,
+    "target_comparator_images": "Secondarydigital2002 artifacts348–349, n86: Joseph, optionalnames, optionalshorterconclusion; not an authenticatedwhole2008 witness.",
+    "source_typography": "Declared accents/ligatures/linehyphens/dropcap normalization only; historicalGenitricis, Jesu, jnames, Thaddaei, capitals and pointing retained.",
+    "historical_full_conclusion": "Per eumdem Christum Dominum nostrum. Amen. remains a complete separate row; it is not shortened, translated or silently lost from the source.",
+    "exact_clause": "The canonical maintainer decision expressly reaches only the exact seven-word Latin Joseph clause in common and propercontinuation. Roman projection source bytes and recorded clause boundary were independently replayed. It supplies no English license.",
+    "unchanged_historical_files": 5,
+    "total_postimages": 9
+  },
+  "assembly_checks": {
+    "candidate_sha256": "1a8b302d536e702194b05745882274e60e147f18360c9b335ce2ae23da71f02e",
+    "predecessor_sha256": "d956c58e596ea35a079330b8969e9987f5d973b70abbb625086054ccf317b6f1",
+    "postimages": [
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-communicantes-common-la/artifact.toml",
+        "sha256": "4563d9f48189cd4db365cb1e1e2a0fb12b9812a10cbf8c2188a51d7121072acf",
+        "bytes": 3019
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-communicantes-common-la/text.tsv",
+        "sha256": "2a07ceacafa17667e2c5d7e371b06c300f495e0d8a787407324460ddca738e9a",
+        "bytes": 673
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-communicantes-common-pages/artifact.toml",
+        "sha256": "33ac600f87d52a3b5b3fff518b19f58b24970371f8b628c9bf94043eeabb4cf2",
+        "bytes": 2276
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-communicantes-common-pages/source.pdf",
+        "sha256": "6fb37010b37f0ad386c2e2104e7594df0814d0a501d0cb51d0681b231de11b33",
+        "bytes": 44933
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-ordinary-communicantes-common.toml",
+        "sha256": "5a35c63e8278d931b676c10d83e6013ee73e36d7abb6629cc6de3a48a165096b",
+        "bytes": 1360
+      },
+      {
+        "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/work.toml",
+        "sha256": "f7c5756ad0fa41cc9cde5cddb1e231196cc0723ae55d2d0d7b773117b83b57a5",
+        "bytes": 1072
+      },
+      {
+        "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/edition.toml",
+        "sha256": "24c15362a2d6f48bf641cfafec1b173cf1f653ed4f4c202138bf3a4c9ac5dab2",
+        "bytes": 917
+      },
+      {
+        "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/artifacts/common-full-names-conclusion-omitted-study-en/text.tsv",
+        "sha256": "72d5e9a3546b78cdef41bc61180c2c6453b930698c78c49700e787233518c882",
+        "bytes": 1611
+      },
+      {
+        "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/artifacts/common-full-names-conclusion-omitted-study-en/artifact.toml",
+        "sha256": "5645a111f1371beac24f3b79ac080cc3705a1de238ee83414fde0d1727b27db1",
+        "bytes": 4180
+      }
+    ],
+    "dependencies": [
+      {
+        "role": "roman_projection_manifest",
+        "path": "src/sources/works/triptych/roman-1962-ordinary-editorial-projection/editions/2026-10-19-editorial-projection/artifacts/canon-proper-forms-651e3482/artifact.toml",
+        "sha256": "d9e82451f237f00809f6903185a9361e5aeb5df832d088dba6ff0533b362e389",
+        "bytes": 5513
+      },
+      {
+        "role": "roman_projection_payload",
+        "path": "src/sources/works/triptych/roman-1962-ordinary-editorial-projection/editions/2026-10-19-editorial-projection/artifacts/canon-proper-forms-651e3482/canon-proper-forms-651e3482.tsv",
+        "sha256": "651e3482bd755a2e3ef46087eab2a734ea4f812ef1a0ee952863b31dade60fc6",
+        "bytes": 4106
+      },
+      {
+        "role": "clause_record",
+        "path": "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+        "sha256": "55080a0b002e6045387408025b5fd5e3a3c7b10b545fa5593e097d7ab36146c5",
+        "bytes": 58757
+      },
+      {
+        "role": "examined_existing_project_english_context",
+        "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph/editions/2026-10-29-study-english/artifacts/continuation-study-en-b83d0df3/text.tsv",
+        "sha256": "b83d0df336dc1cd943a8b295d617c3325384492381a15d7f0426c3f322ff9d72",
+        "bytes": 1869
+      }
+    ],
+    "historical_words": 67,
+    "assembled_words": 73,
+    "inserted_words": 6,
+    "authorized_clause_words": 7,
+    "all67historicalwords_preserved_in_order": true,
+    "source_conclusion_retained_separate_and_unjoined": true,
+    "only_two_project_English_postimages_changed": [
+      "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/artifacts/common-full-names-conclusion-omitted-study-en/text.tsv",
+      "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/artifacts/common-full-names-conclusion-omitted-study-en/artifact.toml"
+    ],
+    "Latin_proof_and_sourceboundaries_conserved": true,
+    "English_plural_speakers_explicit": true,
+    "all26_named_individual_mentions_retained_in_order": true,
+    "script_checks": "pass"
+  },
+  "English_judgment": {
+    "status": "faithful and complete within this finite selected source body",
+    "plural_speakers_explicit": true,
+    "God_is_petition_addressee": true,
+    "all26_named_individual_mentions_retained_in_order": true,
+    "communion_and_memorial_honor_preserved": true,
+    "same_Virgin_relation_preserved": true,
+    "merits_prayers_all_things_protection_help_and_passive_plural_beneficiaries_preserved": true,
+    "conclusion_rubric_Amen_or_new_target_phrase_added": false,
+    "translation_identity": "Fresh projectstudyEnglish; existing projectcontinuation examined as disclosed context; no historicalhuman or approved-English identity claimed.",
+    "source_specific_qualification": "Reading note visibly states common form only, full names, conclusion omitted, seasonalproperformsunfilled and nonapproved/nonrecitation."
+  },
+  "independent_source_graph_validation": {
+    "command": "tools/source-library --root .scratch/postconciliar-ordinary-20261029/second-pass/common-communicantes-install/validation-root validate",
+    "status": 0,
+    "result": "source-library valid: artifact=10333 corpus=5 edition=13731 passage=9449 segment=10186 work=10752 bindings=0",
+    "scope": "Isolatedsourcegraph; emptypublicationbindings, not a complete releasegate."
+  },
+  "file_pins": {
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-communicantes-common-la/artifact.toml": {
+      "sha256": "4563d9f48189cd4db365cb1e1e2a0fb12b9812a10cbf8c2188a51d7121072acf",
+      "bytes": 3019
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-communicantes-common-la/text.tsv": {
+      "sha256": "2a07ceacafa17667e2c5d7e371b06c300f495e0d8a787407324460ddca738e9a",
+      "bytes": 673
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-communicantes-common-pages/artifact.toml": {
+      "sha256": "33ac600f87d52a3b5b3fff518b19f58b24970371f8b628c9bf94043eeabb4cf2",
+      "bytes": 2276
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-communicantes-common-pages/source.pdf": {
+      "sha256": "6fb37010b37f0ad386c2e2104e7594df0814d0a501d0cb51d0681b231de11b33",
+      "bytes": 44933
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-ordinary-communicantes-common.toml": {
+      "sha256": "5a35c63e8278d931b676c10d83e6013ee73e36d7abb6629cc6de3a48a165096b",
+      "bytes": 1360
+    },
+    "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/work.toml": {
+      "sha256": "f7c5756ad0fa41cc9cde5cddb1e231196cc0723ae55d2d0d7b773117b83b57a5",
+      "bytes": 1072
+    },
+    "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/edition.toml": {
+      "sha256": "24c15362a2d6f48bf641cfafec1b173cf1f653ed4f4c202138bf3a4c9ac5dab2",
+      "bytes": 917
+    },
+    "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/artifacts/common-full-names-conclusion-omitted-study-en/text.tsv": {
+      "sha256": "72d5e9a3546b78cdef41bc61180c2c6453b930698c78c49700e787233518c882",
+      "bytes": 1611
+    },
+    "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/artifacts/common-full-names-conclusion-omitted-study-en/artifact.toml": {
+      "sha256": "5645a111f1371beac24f3b79ac080cc3705a1de238ee83414fde0d1727b27db1",
+      "bytes": 4180
+    }
+  },
+  "evidence_receipts": [
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/common-communicantes/check-candidate.py",
+      "sha256": "cb19b8460c62bd774877c931a41c4af16b54821e740757738842a6046b2e224e"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/common-communicantes/mame455-0455.png",
+      "sha256": "a6b461ece68a61d1d5e297e35ee729017a44c9ce62257ee1e0b0304bf40bb062"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/common-communicantes/mechanical-checks.json",
+      "sha256": "70778bd1da87bed4d262972bc5d202e3fcf1c9b5582e679ee68b76ef16c9d71b"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/common-communicantes/render-mame455.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/common-communicantes/render-retained.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/common-communicantes/render-target.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/common-communicantes/retained-1.png",
+      "sha256": "a6b461ece68a61d1d5e297e35ee729017a44c9ce62257ee1e0b0304bf40bb062"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/common-communicantes/source-library-validation.log",
+      "sha256": "bb9a2effaafaf48d8231cdb7bd8fc9e941326f56520b7f0a542fc53e5ca331f9"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/common-communicantes/target-348.png",
+      "sha256": "da86d6da240ea1276e0081401897b9cb778af561683cfcaef42660c7ff2d5fc5"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/common-communicantes/target-349.png",
+      "sha256": "79a2d0ec54a0ac0969f858ca85ee0b5efffc95076d1781c4b7dd3db8858cefa6"
+    }
+  ],
+  "integration_limits": [
+    "Join English only under its truthful new projectedition; never attribute the assembledLatinproof to Mame or publish it as exacttargetLatin.",
+    "This common-source body does not fill seasonalproperheads or establish their appointments; preserve those explicit limits.",
+    "Retain the existing controllingLatin absence and approvedEnglish restriction; no whole2008 or approvedEnglish clearance is accepted.",
+    "Parent owns final witness labels/cautions, exact inventory shape, runtime source notice checks, finalgeneration/currentness and fullpublication/releasebindings."
+  ],
+  "optional_provenance_cleanup": "The artifact provenance phrase root separately authorized may be replaced with the canonical recorded common-clause decision when sanitizing release metadata; this changes no source or fidelity judgment.",
+  "tracked_writes": []
+}

@@ -1,0 +1,89 @@
+{
+  "schema": "triptych-private-finite-source-English-fidelity-acceptance/v1",
+  "decision": "accepted-private-source-and-English-fidelity-only; publication-adoption-pending",
+  "candidate_sha256": "b2ef7af8630f6cf299c5b1dd23c131326f4d466a59edbfd753a3f591a5fd35e4",
+  "files": {
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-la/artifact.toml": {
+      "sha256": "08b2b8ccfa6b0703fe54b566f8147c93be42db025995296e73c70592872b9591",
+      "bytes": 2750
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-la/text.tsv": {
+      "sha256": "c54326753e78c74a0db88e33c938e2e0b3703a1f1c2aaba5ac0e523587063bf8",
+      "bytes": 550
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-pages/artifact.toml": {
+      "sha256": "2060ee236b63cc34f5e5a0eda4e1e353bde34fd0b75c8388c153d24f5133808e",
+      "bytes": 2311
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-domine-qui-dixisti-pages/source.pdf": {
+      "sha256": "82ba014aba05e5948c494892990e33bbe35b67b42f1874349512c13c081c3eb9",
+      "bytes": 402728
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-domine-qui-dixisti-old-prayer.toml": {
+      "sha256": "dc49ad4b5b9bc855213dbc3662f300d6dd39e29d58c74f7a099ac647b183f1e9",
+      "bytes": 1232
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-qui-vivis-short-conclusion.toml": {
+      "sha256": "3753d5d4721da7b22edd9652c31eb7578b22afa17e9880c5c478286aa2096c31",
+      "bytes": 1284
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/artifacts/domine-qui-dixisti-study-en/artifact.toml": {
+      "sha256": "103063204c2686c3b33e6122b3e5ba9d189879473c074a1bfadf03bc73daa6a4",
+      "bytes": 3517
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/artifacts/domine-qui-dixisti-study-en/text.tsv": {
+      "sha256": "dd4e3f58bf11acba57c5247b582cc112728bf3d0b74ab9eef907e8a5b9ecf859",
+      "bytes": 1108
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/edition.toml": {
+      "sha256": "e5adf166015ca1558db3908b98a274b97e3ad6ff1c4c3b12c5491d9aee243734",
+      "bytes": 914
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/work.toml": {
+      "sha256": "671f06e3165103bcd79493d5e6575e520a677618af5eb19bd662b192e8d2b5ce",
+      "bytes": 966
+    }
+  },
+  "scope": "Exact ten private candidate source files, literal historical transcription and complete new study English with expressly declared mea-to-nostra revision and independently old whole short conclusion. No root publication adoption, whole2008 authentication, approved-English status or Latin payload join is certified.",
+  "whole_source_check": {
+    "path": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogues/mame1922-whole.pdf",
+    "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+    "byte_size": 51720493,
+    "review": "Independently recomputed complete parent hash and freshly rendered original464/printed350 and original1022/printed144* at2200pixels. Directly inspected both images and their complete-page context. Each new retained page is byte-identical as a rendered image to its original parent page."
+  },
+  "source_transcription": "All four source rows are faithful to the directly inspected printing under their declared normalization. Row1 preserves singular mea and the final source colon; opening red D plus small-cap OMINE becomes conventional Domine. Tonic accents are removed, ae ligatures expanded, line hyphens joined, j retained and compositor spaces before colons removed openly. Row2 preserves the entire older Qui-vivis-et-regnas-Deus-per-omnia conclusion and Amen. The independent Non-intres page supplies the entire short Qui-vivis-et-regnas-in-saecula-saeculorum conclusion and separately marked Amen, stored as rows3-4. No word of the short conclusion is inferred by deleting words from row2.",
+  "English_fidelity": "The complete new prayer faithfully addresses Lord Jesus Christ, names his Apostles, preserves both quoted peace clauses, the sins-versus-Church-faith contrast, the Church as object, divine will, the requests for peace and unity, and the whole live-and-reign-for-ever conclusion. The only substantive governing-body revision is my sins to our sins, expressly recorded as a singular-to-plural communal change rather than orthography. The older long conclusion is explicitly replaced whole by the independently witnessed short conclusion. The second utterance is the complete Amen. No petition, participant or conclusion meaning is omitted; the English is a new study rendering, not an old human translation or approved liturgical English.",
+  "checked_target_facts": {
+    "artifact": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+    "page": 367,
+    "number": 126,
+    "finding": "Fresh image directly confirms nostra, the priest saying the complete prayer/short conclusion, and Populus respondet before Amen. Its old-source prayer context is secret recitation, but that actor/execution is not inherited. Modern source explicitly says clara voce. No P/R glyph is printed at the selected target span; response role derives from the verbal rubric. This secondary2002 witness does not authenticate the complete2008 state."
+  },
+  "rights_and_graph": "The two historical-page and normalized-Latin artifacts have their named canonical1922 Mame affirmative public-domain basis and exclude modern target pages/wrappers. The same-edition whole-to-pages-to-text derivation and exact two page-passage controllers are correct. The new English artifact names both the old text and bounded secondary2002 revision/role evidence separately. All ten postimage hashes/sizes, absent canonical destinations and five inherited canonical records pass. No revised whole modern-Latin payload is offered; literal source columns retain the actual old mea and the separate source conclusion.",
+  "policy_boundary": {
+    "recommendation_path": ".scratch/translation-policy-20261029/pc-residual-maps/RECOMMENDATION.json",
+    "recommendation_sha256": "97024c11fd5a5262375e2fcdebba83e233f1d831774db6bc8b598aa3097467e4",
+    "reviewed_case": "secondary2002 n126 only",
+    "finding": "The recommendation permits this exact private candidate preparation and independent review only. Its finite underlying-expression publication basis still requires separate root adoption. This source/English fidelity acceptance supplies no adoption, clearance or extension of a prior grant. The English artifact explicitly records that condition."
+  },
+  "validation": {
+    "exit_status": 0,
+    "result": "source-library valid: artifact=5 corpus=0 edition=3 passage=2 segment=0 work=2 bindings=0"
+  },
+  "actual_resolver": "Actual current mass-ordinary witness/source/rights/row/two-turn functions resolve the complete priest prayer and all-Amen with the exact candidate body hashes. Priest has no invented dialogue_role; people Amen is response by explicit modern verbal rubric. No Latin side resolves. This is a private mechanical proof, not authority to serve the pending text.",
+  "checks_receipt": "checks.json",
+  "checks_receipt_sha256": "4e0c199faadf545993858462db4abb8529e9a2083638b56993d29a66a49e1eaa",
+  "page_render_sha256": {
+    "original464_retained1": "13a3fac253cc0fe00891a9e0650e2ed1186517212b87c9bbf3ce2a4a9ee9d5dd",
+    "original1022_retained2": "99ac8b3bd849b999eb666f9f015fb9c7ba82dc35dc2589d1a8393289876b5944"
+  },
+  "integration_limits": [
+    "Record exact finite root adoption before canonical/public admission; this review is not that adoption.",
+    "Keep the existing Latin exact-source gap and approved-English restriction independently typed.",
+    "Retain explicit old mea, source_revision, whole short-conclusion ownership and secondary2002 versus complete2008 limits in any accepted source apparatus.",
+    "The coordinator owns integrated inventory/generation/ledger/browser checks and broader execution conditions."
+  ],
+  "corrections_required": [],
+  "reviewer_mutations": "Exclusive dialogue-review/domine-review scratch only; no tracked writes, generation, commits or push."
+}

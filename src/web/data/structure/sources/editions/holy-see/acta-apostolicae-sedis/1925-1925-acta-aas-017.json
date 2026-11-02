@@ -1,0 +1,71 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "mechanical-pdf-text-extraction",
+   "byte_size": 2410936,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.aas.017.extracted-text-a8956e90",
+   "media_type": "text/plain",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "historical-text-derivative",
+   "byte_size": 2410937,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.aas.017.historical-text-6aa43837",
+   "media_type": "text/plain",
+   "notes": "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations. [\"Official -ocr.pdf is a text reconstruction; mechanical extraction is not facsimile collation.\", \"PDF and derivative hashed in full; no PDF was downloaded twice. Source title and colophon identify the historical printing; no modern prose wrapper was observed.\", \"Dates remain null when OCR or a written-out date does not support safe ISO conversion. Canonical joins remain null absent a unique source-supported agreement.\", \"Only complete source-supported act boundaries are marked complete; unresolved rows are excluded from rendering.\"]",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"basis\": \"The official archival OCR volume identifies the historical AAS title, annual volume and Vatican printing imprint. Constituent source headings, dated issue mastheads, signatures, source notes and historical end indexes belong to that identified printing. This establishes edition testimony through the OCR reconstruction, not image-level collation.\", \"completion_colophon_line_ranges\": [[32444, 32444]], \"completion_colophon_raw\": \"       ABSOLVITUR       DIE    28   DECEMBRIS      1925\", \"edition\": \"Acta Apostolicae Sedis 17 (1925), Rome, Typis Polyglottis Vaticanis.\", \"limitation\": \"Annual title year is nominal; the completion colophon and source issue dates are recorded separately.\", \"title_imprint_line_ranges\": [[1, 17]]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "archival-ocr-pdf",
+   "byte_size": 3443092,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.aas.017.vatican-pdf-c101831e",
+   "media_type": "application/pdf",
+   "page_count": 728,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/archive/aas/documents/AAS-17-1925-ocr.pdf",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1925",
+  "editors": [],
+  "id": "edition.acta-papal-archives.aas.017.1925-acta-aas-017",
+  "jurisdiction": null,
+  "language": "mul",
+  "publication": "{\"basis\": \"The official archival OCR volume identifies the historical AAS title, annual volume and Vatican printing imprint. Constituent source headings, dated issue mastheads, signatures, source notes and historical end indexes belong to that identified printing. This establishes edition testimony through the OCR reconstruction, not image-level collation.\", \"completion_colophon_line_ranges\": [[32444, 32444]], \"completion_colophon_raw\": \"       ABSOLVITUR       DIE    28   DECEMBRIS      1925\", \"edition\": \"Acta Apostolicae Sedis 17 (1925), Rome, Typis Polyglottis Vaticanis.\", \"limitation\": \"Annual title year is nominal; the completion colophon and source issue dates are recorded separately.\", \"title_imprint_line_ranges\": [[1, 17]]}",
+  "title": "Acta Apostolicae Sedis — source witness aas.017",
+  "translators": [],
+  "year": 1925
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "AAS",
+   "Acta Apostolicae Sedis: Commentarium Officiale"
+  ],
+  "author": "Holy See",
+  "category": "official-gazette",
+  "description": "The official gazette of the Holy See. Annual-volume editions and exact delivery artifacts remain container identities distinct from the constitutions, decrees, notifications, rescripts, and other acts printed within them.",
+  "id": "work.holy-see.acta-apostolicae-sedis",
+  "languages": [],
+  "title": "Acta Apostolicae Sedis"
+ }
+}

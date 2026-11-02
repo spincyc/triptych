@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/synthesis.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "VIS-001",
+      "note": "Needspace guard before the apparatus import; page 9 head now 'Detailed Commentary', 'Scope and References' starts on page 10; markers and 11-page count unchanged.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "stage": "derive-synthesis",
+  "summary": "Repaired VIS-001 by adding \\Needspace{12\\baselineskip} before the apparatus import in synthesis.tex, so the 'Scope and References' running head is no longer marked at the foot of page 9: page 9 now reads 'Detailed Commentary' and the head first appears on page 10 where the appendix begins; cleared advisory VIS-003 in sections/concise/10-commentary.tex (inner single quote now closes before the outer double; text layer 100/100 double quotes). Rebuilt the author proof: 11 pages, zref markers unchanged (inventory, overview and four senses p1, chronology p2, themes p3-4, commentary start p5), no overfull/underfull/undefined/rerun warnings, and extracted text differs from the iteration-1 proof only in the quotation mark, the page-9 head and the revision timestamp. check-proper-components (artifacts, synthesis) and every check-content-preflight synthesis check including provenance-matches-run pass. Updated the shared revision timestamp (provenance run line already names this run) and appended the iteration-2 entry to research/production-review.md (word count unchanged, about 6,400 substantive words). Evidence under build/tpt-runs/450355254538c1ba/artifacts/derive-synthesis-0002/: f02-all-saints-synthesis.pdf sha256 b60a84535a2b3bc6e79fafe4d237f5c340a5ffa0e40fb584662a9609cf75e71e; f02-all-saints-synthesis.aux 803e9a36861d8b0511c6cba755827c30416f3f67a56ca7f6f4fe94ee7aa36140; f02-all-saints-synthesis.log 7cb71ba43cae5e6a10c917edcc35a1b77739b46d9dcb99be90b4482889f1510f; build.log 60a70770724c823e7a2990f9b67aa2789d811f60b420fb41c1d0ac94dc0c8c35; checks.log 7901980c9d6289d2eea8529ef17c36c422886b0d505feeb44c4b17a4d640377a; rasters in the rasters/ child. Carried for the study owner: advisory VIS-002 (misnested closing quotes in sections/20-sealed-number-uncounted-crowd.tex) was not touched because that file belongs to the expansive study. The final page carries no running head, as in the iteration-1 proof; not changed. This dispatch contributed the concise study's running-head guard before its apparatus, the page-6 quotation-mark fix, and a fresh author proof."
+}

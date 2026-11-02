@@ -1,0 +1,157 @@
+{
+  "schema": "triptych-Names53-metadata-preparation-cold-review/v1",
+  "recorded_at_utc": "2026-10-30T19:17:57.135895+00:00",
+  "status": "PASS",
+  "scope": "Bounded code/API/closure and synthetic-control review of the prepared Names53 metadata-accounting successor. No actual parent-bound derive, actual source-root producer check or source-epoch acceptance is claimed.",
+  "final_subject": [
+    {
+      "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-successor/names_metadata.py",
+      "sha256": "8cdbfab73005a7699897dc2bf939597dc68473e9c77efdeecce2cc753a35c146",
+      "bytes": 15909
+    },
+    {
+      "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-successor/verify_producers.py",
+      "sha256": "d8fbe265171e8af64191e0e7c5656d957bfb82a94a733d976e9ce8f23cd673c1",
+      "bytes": 6272
+    },
+    {
+      "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-successor/test_names_metadata.py",
+      "sha256": "95cefb840156b7e604c529a5f7c2747585c69e8e7cb4ef805718128504d72dbf",
+      "bytes": 15560
+    },
+    {
+      "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-successor/READINESS.json",
+      "sha256": "5901bcbe904ebee2ee28b34f1cddb9a9ddf3b7efe1a307d75a89ce5e69c1a406",
+      "bytes": 2547
+    },
+    {
+      "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-successor/PLAN.md",
+      "sha256": "b3e7f172676f4ca91e9bd972e60b3556b619f3fccb9ccc0b320147289f9b095d",
+      "bytes": 5188
+    }
+  ],
+  "original_reviewed_subject": [
+    {
+      "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-successor/superseded-v1/names_metadata.py",
+      "sha256": "5ae6fb2e04bececd948cc9dc914e5a5c7fa63e199bf683d8c665379cd749f715",
+      "bytes": 15425
+    },
+    {
+      "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-successor/superseded-v1/verify_producers.py",
+      "sha256": "a9f54f3ddff0b18a1010c0e6543a1b6b0ecb656b2141b02f13b05f75a27d4df4",
+      "bytes": 6220
+    },
+    {
+      "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-successor/superseded-v1/READINESS.json",
+      "sha256": "83637bd71b9335f81324b4ebd2a880237b3fdb36342024e2147275dd9a08150b",
+      "bytes": 1764
+    }
+  ],
+  "findings": [
+    {
+      "id": "R1",
+      "status": "CLOSED",
+      "finding": "Python == admitted int/float/Boolean substitutions in header/catalog guards and producer preservation. The actual producer expression accepted occurrence1→True and choiceFalse→0 despite different canonical JSON.",
+      "evidence": {
+        "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-cold-review-v1/type-equality-counterexamples.json",
+        "sha256": "af686c36c2e995510a2c7494a0f748d5b6e4f95ad2afdca6064aefd4b36d3b80",
+        "bytes": 674
+      },
+      "correction": "Final source guards, producer structures, other16 replay specs, parsed Roman object and contribution comparisons use canonical JSON, preserving JSON types and values.",
+      "correction_diffs": [
+        {
+          "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-cold-review-v1/names_metadata.py.correction.diff",
+          "sha256": "6ac04335eef159438aa24e54801a194d51a6c7172bc644da4a47cf442e56033e",
+          "bytes": 3260
+        },
+        {
+          "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-cold-review-v1/verify_producers.py.correction.diff",
+          "sha256": "b636077287e8b4700039dc64c22acbd044c71d0095484537faeb31b25e11305e",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "status": "CLOSED",
+      "finding": "After the initial owner runtime path correction, a sys.prefix nested in the repository still allowed an interpreter-module symlink to unreviewed repo code outside the real interpreter prefix, without an observed pin.",
+      "evidence": {
+        "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-cold-review-v1/nested-prefix-counterexample.json",
+        "sha256": "bb1828ec633090cbd2f88384f59df13b9a1b287024c1af6612f5b645b349ef87",
+        "bytes": 158
+      },
+      "correction": "Runtime paths reject traversal and external aliases into repo before bypasses. Nested-prefix aliases resolving to repo code outside the real prefix refuse; mandatory repository-named symlinks retain ordinary-file rejection. Independent controls retain legitimate environment-package behavior."
+    }
+  ],
+  "accepted_design_findings": [
+    "The bookkeeping driver has exactly four reviewed source-update keys and an exactly7264-path manifest. It binds the reviewed Names READY, before/post source bytes and mandatory Names7 runtime hashes; unknown bytes are not authorized by a generic accepted receipt.",
+    "Only the PC Proper raw replay spec and the manifest/acceptance/state envelope change. All semantic fixture fields, all12 historical partitions and the other16 replay specs stay exact. Immutable support reconstructs all17 original Git byte streams.",
+    "The current Roman parsed document remains exact. Source catalog v1→v2 changes and its explicit scholarly-identity downgrades are limited to the previously reviewed Names catalog; body/source/rights/grade/choice/event fields remain part of strict canonical producer comparisons.",
+    "Future runtime authority is the exact fresh accepted parent commit supplied by root, with exact English fixture/manifest/receipt pins and all bound immutable source rows. The obsolete702 binding refuses. Unchanged repository modules bind to that actual parent; Names7 modules always require their reviewed final hashes, including the new helper.",
+    "Actual producer verification is a separate entrypoint. Its audited executed repository-module closure uses fresh-parent or exact Names successors; it compares actual source-root Proper/Ordinary output, contribution and public aliases to parent published structures. The metadata proof marks this separate behavior review pending.",
+    "Both drivers emit only pending scratch outputs. No accept flag, permission-upgrade handler, semantic compiler rerun or canonical-writing path is provided. Final parent pin, actual Names apply, fresh outputs and independent exact acceptance remain root responsibilities."
+  ],
+  "independent_checks": [
+    {
+      "check": "New independent synthetic negatives and positives",
+      "tests": 14,
+      "exit_code": 0,
+      "result": "PASS",
+      "source": {
+        "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-cold-review-v1/test_independent_controls.py",
+        "sha256": "8f26e9f3e72372786798ff8f42ee060f27b23c3c9b2171538e3c216678abe526",
+        "bytes": 7586
+      },
+      "log": {
+        "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-cold-review-v1/independent-final.log",
+        "sha256": "e59579f1df1a76f35735bcfc43707a068d946e024b6ba1ed0f3c187cb672aeb7",
+        "bytes": 2203
+      },
+      "coverage": [
+        "actual producer predicate int/bool and int/float drift",
+        "header occurrence and preserved catalog-year type drift",
+        "declared presentation-only producer delta",
+        "runtime audit event mutation",
+        "traversal, external alias and nested interpreter alias",
+        "mandatory repository successor symlink refusal",
+        "legitimate interpreter package and exact current-parent module",
+        "noncommit and generic-receipt parent-binding refusals"
+      ]
+    },
+    {
+      "check": "Independent rerun of the frozen owner controls",
+      "tests": 33,
+      "exit_code": 0,
+      "result": "PASS",
+      "log": {
+        "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-cold-review-v1/owner-controls-independent-final.log",
+        "sha256": "4a3d9d4bd6a985f95713737d5a99545faf2fe57a05762b3351b2e2e83e18f64a",
+        "bytes": 5039
+      },
+      "qualification": "Loaded the frozen test module and redirected HERE to the reviewer tmp directory so all TemporaryDirectory writes remained exclusively in reviewer scratch. Includes in-memory real four-source bookkeeping, all17 original Git replays and pure counts over six previously reviewed public producer JSON inputs. No actual driver main or source-root producer run."
+    }
+  ],
+  "bound_future_inputs": {
+    "parent_commit": null,
+    "parent_fixture_sha256": "ae34d8450f42835523ee6c5c2ec44cf5d99f6289adc83654853aa47c3fbe1b97",
+    "parent_manifest_sha256": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84",
+    "parent_receipt_sha256": "5ae2464f2e7a73218262bf91473de8cbcc98e54840dc19d22b02dcb89b110072",
+    "Names_READY_sha256": "0bd17f84edb995c2e93efd123ba5087dc055e2652a4d2feaab22aa2c8fd33efb",
+    "future_receipt_path": "workflows/reviews/missal-version-nomenclature-2026-10-30/source-batch-acceptance.json"
+  },
+  "limits": [
+    "PASS accepts prepared code and controls at the exact pinned hashes. It grants no source/body/rights admission, final parent authority, actual apply/generation, whole-source-epoch acceptance, browser/Lectern acceptance or release currentness.",
+    "Root has not yet supplied the actual fresh accepted parent commit or actual canonical Names postimages; neither real entrypoint was invoked by this review. Fresh transitive runtime observations and producer behavior proof must be reviewed after that run.",
+    "Interpreter/environment modules outside the controlled repository remain environment inputs. This audit pins executed repository modules with real file paths; it is not a general Python sandbox.",
+    "The CLI alias check asserts return status and stdout equality. It captures stderr but does not compare it; no stderr-parity claim is made here.",
+    "Original5ae6/a9f5 and intermediatee571/a9f5 controls and findings are preserved by the owner as superseded preparation evidence."
+  ],
+  "mutation_boundary": {
+    "writes": "Only naming-metadata-cold-review-v1, including first-party reviewed code snapshots and synthetic tmp; no private source body copies.",
+    "canonical_Names_package_or_driver_subject_edits": false,
+    "actual_application_or_generation": false,
+    "refs_or_index_mutation": false,
+    "network_calls": false,
+    "actual_source_epoch_acceptance": false
+  }
+}

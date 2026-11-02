@@ -1,0 +1,78 @@
+{
+  "changed_WORDs": 1051,
+  "changed_pages": 2,
+  "checks": {
+    "all_source_and_output_bytes_accounted": true,
+    "every_changed_WORD_exactly_once": true,
+    "exact_XML_byte_offsets_and_coordinates": true,
+    "indivisible_WORD_values_unchanged": true,
+    "no_OBJECT_attributes_serialized": true,
+    "unchanged_raw_chunks_byte_identical": true,
+    "whole_output_token_bijection": true,
+    "whole_raw_TXT_XML_token_equality": true
+  },
+  "derived_from": "artifact.bullarium-romanum.volume-08.1883-naples-latin.ocr-516f2693e4a0",
+  "generator": "bullarium-geometry",
+  "generator_version": 1,
+  "hybrid_bytes": 4687260,
+  "hybrid_sha256": "f37197e94c2ba52afabfab11474f88cd13696638562c552fc764f477190765f9",
+  "limitations": [
+    "No OCR character correction, word restoration or translation.",
+    "Unchanged pages retain their original OCR order, including unresolved defects.",
+    "Explicit coordinates, role assignments and order are replayed; their historical meaning is not inferred.",
+    "Geometry replay establishes no act admission, note ownership, authentication or image collation.",
+    "Only changed-page inter-WORD whitespace differs from the earlier explicit page recipe. Exact XML-decoded WORD values, including their internal whitespace/padding, are unchanged and indivisible. No source wording or labels are added."
+  ],
+  "outputs": {
+    "byte-map.json": {
+      "byte_size": 1858,
+      "sha256": "421fac4ff7779151f586a2d47cc114a8f4476aaa8aea622f38ad544c69a41ac4"
+    },
+    "changed-word-map.jsonl.gz": {
+      "byte_size": 66173,
+      "sha256": "4caadfc0e4555c90845985e740529b1091932522d5d73a0e749c8ba4fdad5426"
+    },
+    "hybrid.txt": {
+      "byte_size": 4687260,
+      "sha256": "f37197e94c2ba52afabfab11474f88cd13696638562c552fc764f477190765f9"
+    },
+    "page-map.json": {
+      "byte_size": 706697,
+      "sha256": "d67901da18c06cbc65ebfc21157a9f83453c2e98ba420291d89a53f797cee3f9"
+    }
+  },
+  "recipe_sha256": "664487117d38426f0691730e39d87508f37bc370181b21fbf8ce87bc8c049d60",
+  "roles": {
+    "body-left": 485,
+    "body-right": 472,
+    "footer": 5,
+    "gutter-ocr": 1,
+    "header": 19,
+    "margin-left": 17,
+    "margin-right": 30,
+    "notes-right": 6,
+    "uncertain": 16
+  },
+  "schema": "triptych-bullarium-hybrid-witness/v1",
+  "serialization": "word-per-line",
+  "source_WORDs": 557883,
+  "source_evidence_pins": {
+    "src/sources/works/bullarium-romanum/volume-08/editions/1883-naples-latin/artifacts/coordinate-evidence-v1-c9e80f0cc2f9/evidence.json": "c9e80f0cc2f9e5cb4aa5b00af6a558b07dd4a97b0b09bb20adceff375e36650c"
+  },
+  "source_pages": 1122,
+  "source_tokens": 564370,
+  "source_txt": {
+    "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.ocr-516f2693e4a0",
+    "byte_size": 4687520,
+    "path": "src/sources/works/bullarium-romanum/volume-08/editions/1883-naples-latin/artifacts/ocr-516f2693e4a0/ocr.txt",
+    "sha256": "516f2693e4a068939e3696ae771afd0032a80cd49d59ace3944725b943bad2cc"
+  },
+  "source_xml": {
+    "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.xml-b5e32433ab1f",
+    "byte_size": 45915569,
+    "sha256": "b5e32433ab1f006e9b2ded8e3d144aedd4967b9526208796b2bda88d7e5ae78d",
+    "source_url": "https://archive.org/download/bullarumdiplomat08cath/bullarumdiplomat08cath_djvu.xml"
+  },
+  "volume": 8,
+  "word_map_coverage": "changed-pages-only; unchanged bytes and page WORD/token ranges are mapped compactly"
+}

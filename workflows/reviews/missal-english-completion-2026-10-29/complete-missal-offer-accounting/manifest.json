@@ -1,0 +1,36 @@
+{
+  "accepted_code": {
+    "path": "tools/complete-missal",
+    "sha256": "29e923e3a80f5f56727edde1a3a009947558396fc4b2cc27226eca48ca486263"
+  },
+  "accepted_test": {
+    "path": "tools/tests/test_complete_missal_source_offers.py",
+    "sha256": "e853c9a442a949b4f40161db90b622759dc7a335625cddc71d031264c43c2e58"
+  },
+  "decision": "Root accepts exact independently reviewed bounded consumer accounting fix.",
+  "live_source_assertion": "Exact1168-to1373 current-cohort update remains separately root-authorized after accepted checkpoint source-epoch receipt.",
+  "recorded_on": "2026-10-30",
+  "records": [
+    {
+      "original_path": ".scratch/checkpoint-independent-review-20261030/complete-missal-offer-accounting-review-v1.json",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/complete-missal-offer-accounting/independent-review-v1.json",
+      "retention": "exact original bytes; counters and hashes only, no private body content",
+      "sha256": "927583fd92d012099d175b879554c4c4f77328950ba3e9fd7667235c014e19d0"
+    },
+    {
+      "original_path": ".scratch/checkpoint-source-batch-20261030/complete-missal-consumer-validation-v3.json",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/complete-missal-offer-accounting/validation-v3.json",
+      "retention": "exact original bytes; counters and hashes only, no private body content",
+      "sha256": "2b96f157837c85ad5d83fcb8f92d5379899071bf1295abdc9521ca2254033f37"
+    },
+    {
+      "original_path": ".scratch/checkpoint-source-batch-20261030/complete-missal-real-offer-validation-v3.json",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/complete-missal-offer-accounting/real-offer-validation-v3.json",
+      "retention": "exact original bytes; counters and hashes only, no private body content",
+      "sha256": "58235ccae3fb07013b43a55d67fde29dd7e1ca2fe641ddaff381cab76a7d5e3f"
+    }
+  ],
+  "schema": "triptych-complete-missal-offer-accounting-audit/v1",
+  "scope": "Accounting code and tests only; no source admission, publication rights, source epoch, fixture installation or full English/annual completion claim.",
+  "transcript_successor": "Integration may recapture only EXAMPLES. Preserve accepted core outside that block and document the final whole-file hash separately; do not overwrite the original review."
+}

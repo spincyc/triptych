@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.aas.002.extracted-text-7d4f03f1"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-2-1910"
+artifact_type = "mechanical-pdf-text-extraction"
+media_type = "text/plain"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Exact extraction may contain protected text or modern wrappers and remains transient. Separately manifested historical text excludes uncleared material."
+retrieved = "2026-10-26"
+sha256 = "7d4f03f1f7932885edcd636e692b52d9a325858a8d897d5cba1b4b7f7555180b"
+byte_size = 2813900
+derived_from = "artifact.holy-see.acta-apostolicae-sedis.volume-2-1910.internet-archive-vatican-ocr-pdf-e1d32b09"
+transformation = "[\"/usr/bin/pdftotext\", \"-layout\", \"-enc\", \"UTF-8\", \"-eol\", \"unix\", \"<transient-path>\", \"<transient-path>\"]"
+notes = "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

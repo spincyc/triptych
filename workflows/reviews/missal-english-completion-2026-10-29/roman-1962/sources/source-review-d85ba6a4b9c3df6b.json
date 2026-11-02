@@ -1,0 +1,180 @@
+{
+  "schema": "triptych-independent-source-review/v1",
+  "reviewed_on": "2026-10-29",
+  "disposition": "accept-bounded-source-facts-and-literal-historical-English-fidelity; finite-rights-adoption-pending",
+  "reviewed_plan_sha256": "9258a9dcef56fef5af4ed4c89e701c17bbda7f4e9724b9c02a9e41677256a194",
+  "scope": "Consolidation-only source/collation/transcription/English-binding review of CommonSupremePontiff mainSecret and mainPostcommunion. It confers no qualifiedcopyright determination, rootfiniteauthority adoption, installation or publication acceptance.",
+  "candidates": [
+    {
+      "target": [
+        "commune-summorum-pontificum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "target_latin_sha256": "513de5a7dff9120d02f2fcc6cbc4c5a9d19a69ffd18e9075c5325885a98e43ab",
+      "older_whole_sha256": "fdc2bf11d80c2c291cc2ba671799732e3143594678d06905e747a08dfdd91934",
+      "historical_english_sha256": "ade3795a41a53771bb17b5f259548f24e444f9f7d3446ac9b7978481138cbaae",
+      "source_facts": "accepted",
+      "literal_historical_English": "accepted exactwords/punctuation/case/actualshortcue; receivedhumanEnglish independently bound to ordinaryLasancepages",
+      "finite_deltas": [
+        "Add conventional sacrificial adjunct Oblatis muneribus and supplication quaesumus before the same continuous prayer.",
+        "Expand conventional printed conclusion per. to Per Dominum nostrum.",
+        "Inlumina/illumina spelling, stress accents, case, pointing and layout differ.",
+        "Move the vocative Domine from after Ecclesiam tuam in the older prayer to before Ecclesiam tuam in the target; this routinewordorder change is explicit and not literal whole-sequence identity."
+      ],
+      "strongest_contrary": "Even a short sacrificial adjunct deliberately adapts the purpose of an older prayer, and cumulative redaction may clear low originality threshold. No direct judgment or holder permission establishes this precise later form; Lasance translation nonrenewal does not clear underlying Latin.",
+      "rights_adoption": "outside review; rootpending"
+    },
+    {
+      "target": [
+        "commune-summorum-pontificum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "target_latin_sha256": "bfd0be06cd5ff6e036d7a9e22ee73a2bec99a413c24cc12baefc939a3db52bce",
+      "older_whole_sha256": "645977e3cc77723f71e6778525efae2c62f9cdfdae664a4839ac89bc74335a9c",
+      "historical_english_sha256": "17708c81cefb954dbe3d980b8daf0583083ee9b1e039547a6f434a3f51a509c2",
+      "source_facts": "accepted",
+      "literal_historical_English": "accepted exactwords/punctuation/case/actualshortcue; receivedhumanEnglish independently bound to ordinaryLasancepages",
+      "finite_deltas": [
+        "Prepend conventional sacramental participial adjunct Refectione sancta enutritam to the unchanged connected old prayer.",
+        "Reorder Guberna Domine quaesumus to guberna quaesumus Domine.",
+        "Expand conventional conclusion per. to Per Dominum.; stress accents, case, pointing and linewrap differ."
+      ],
+      "strongest_contrary": "Recasting an older prayer specifically as postcommunion by adding its sacramental opening could constitute expressive adaptation under low originality threshold. No court judgment or holder permission establishes this precise later form; Lasance nonrenewal cannot independently clear Latin.",
+      "rights_adoption": "outside review; rootpending"
+    }
+  ],
+  "findings": [
+    {
+      "id": "PC1",
+      "state": "resolved",
+      "finding": "Secret missing explicit relocation of Domine from after Ecclesiam tuam in Feltoe to before Ecclesiam tuam in target. Candidate differences and related source/projection/provenance statements now expose this routinevocative reorder, without whole-sequence identity claim."
+    },
+    {
+      "id": "PC2",
+      "state": "resolved",
+      "finding": "Historicalverify passages lacked printedpage markers in context/notes required by actual overlayvalidator, despite labels in locus. Explicit printed pp.1286-1287 / printed p.1287 context now binds exactsourcepage."
+    },
+    {
+      "id": "PC3",
+      "state": "resolved",
+      "finding": "Targetpassage artifactpage ranges required page_count absent on frozenCMAA parent artifact. Optionalranges removed; exactsource locator retained. Sharedparent metadata/fingerprints untouched."
+    }
+  ],
+  "checks": {
+    "13sourcefilepins": "pass; exact perfilepins copied below",
+    "allTOML": "pass",
+    "2artifactsizehashjoins": "pass",
+    "twoLatinEnglisholderbodyhashjoins": "pass",
+    "TSVEnglishbinding": "pass",
+    "registeredsource_library": "pass19records zeroerrors; nine newsourcefiles plus existing parent/identity/Lasancerightsclosure; projectprojectionfour excluded awaiting parentowner",
+    "registeredEnglishsourcechecks": "pass2",
+    "registeredEnglishpublicationbindingchecks": "pass2",
+    "sourceimageinspection": "Exact wholeFeltoe155/156 and target811 read from sourceimages, including named200/400 captures; actual ordinaryLasance1287/1288 prayers read across boundaries and reread on my independentregisteredpdf-review2200pixel rasters. All sourcewords, titles and actual conclusions confirmed.",
+    "registeredparenthashes": [
+      "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+      "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70"
+    ]
+  },
+  "finite_controller_identity": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json",
+    "method": "english-completion-20261029-finite-latin-v1",
+    "state": "prospective and not present/adopted at review time; references consistently name the samecontroller",
+    "required_exact_scope": [
+      [
+        "commune-summorum-pontificum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      [
+        "commune-summorum-pontificum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ]
+    ],
+    "limitation": "Existing or prospective singularGregem authority cannot automatically cover these two bodies; root must explicitlyadopt both exact targetLatin hashes and finitewhole-source delta records before installation/publication."
+  },
+  "per_file_pins": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pontiff-secret-postcommunion-collation-20261029.toml",
+      "sha256": "a540cbe01394bd0a09f75060e8e7cef082d3b78e84c57a2b4ef498efb4b289c3",
+      "toml_parses": true
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/pontiff-common-postcommunion-whole-foundation-20261029.toml",
+      "sha256": "3aaa57840d3ff3f7efebd917c888f9f74b28c12c148d383dad8193065dfdb6ff",
+      "toml_parses": true
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/pontiff-common-secret-whole-foundation-20261029.toml",
+      "sha256": "154022bad8b6eeaf91209881c6edf62848e58749dcf40889554dc927237fae51",
+      "toml_parses": true
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/artifact.toml",
+      "sha256": "b4a8a78095b4661ddf0398c35d748f90c79c08e9712dcfeff81c3888e071f486",
+      "toml_parses": true,
+      "artifact_bytes_match": true
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/english.tsv",
+      "sha256": "dc95b61f0a85f8b3f73f383b0d2b705a5c785e61eedc54b13596dae7daf383bd"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-postcommunion-publish-20261029.toml",
+      "sha256": "7134b2d46a62f0ab7009c2b8b55ba9f71e850cb0e46ee63f8dbb380ca138b6fc",
+      "toml_parses": true
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-postcommunion-verify-20261029.toml",
+      "sha256": "0c0945b3ff81ee712fdf7e51f8eef7123ce294b4fe36208cf83be38b6a4d0580",
+      "toml_parses": true
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-secret-publish-20261029.toml",
+      "sha256": "cab13e69590815941d5eed6472985e7c2d086ace4e6404a8f3d8a6b62661c606",
+      "toml_parses": true
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-secret-verify-20261029.toml",
+      "sha256": "6671b1390e38b46088b8af80638e2ba876b365a9ed54a076176e536b39fbbc99",
+      "toml_parses": true
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-two-qualified-3920bd77/artifact.toml",
+      "sha256": "5ef1d38cadfc5cee6acbf0c7a8ecccce406834c4e26a1934e25746b5da09d223",
+      "toml_parses": true,
+      "artifact_bytes_match": true
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-two-qualified-3920bd77/latin.txt",
+      "sha256": "3920bd772a32ebba24b336a71f9bcd30eeff745c60630d5fe20739609e58a75b"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pontiff-postcommunion-qualified.toml",
+      "sha256": "c510207c1e56a72c358913f839192f73cc2cd59f0fba6ec65ab41c269d1e6d43",
+      "toml_parses": true
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pontiff-secret-qualified.toml",
+      "sha256": "aa72bfe94da5f95123b6fee091fa5b8df94733fb322d12d1f2d05ad3f6967339",
+      "toml_parses": true
+    }
+  ],
+  "unresolved_source_fact_or_English_fidelity_blockers": [],
+  "remaining_requirements": [
+    "Root must separately decide finitequalifiednonoriginaladaptation claims with strongestcontrary arguments retained; this reviewer accepts factualcomparisons only.",
+    "Secret historicalsource ends Per Dominum.; target ends Per Dominum nostrum. Their actualcue difference remains explicit; literalEnglishThroughourLord is retained without generatedexpansion.",
+    "The new13source/projectionfiles remain prospective until exactauthority and rootowned2026-10-29projectionedition exist; run fullintegrated source/calendar/translation/projection/publicationgates after installation."
+  ]
+}

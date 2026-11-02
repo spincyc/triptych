@@ -1,0 +1,288 @@
+{
+  "schema": "triptych-independent-three-specific-Latin-rights-recommendation/v1",
+  "reviewed_utc": "2026-10-30T03:17:52.607643+00:00",
+  "jurisdiction": "United States",
+  "status": "RECOMMEND_ACCEPT_THREE_EXACT_QUALIFIED_BASES_ROOT_ADOPTION_REQUIRED",
+  "scope": "Only the three exact Heart Collect/Postcommunion and Lawrence Collect tuples below, their frozen full Latin hashes, actual printed options/conclusion extents and separately reviewed new study-English hashes. No automatic other-target/language/form permission.",
+  "inputs": {
+    "install_plan": {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/install-plan.json",
+      "sha256": "f0e75b76a3fea20d40c241d3ded7ab0a3dbca5d145760f120a9da1860d5f0d37"
+    },
+    "accepted_source_English_review": {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/finite-source-review/review.json",
+      "sha256": "d5755810808b4a744a5eef1af562fcb4f6376622d18fc119e3c82c1dc4cb323b",
+      "verdict_preserved": true
+    },
+    "scoped_candidate_source_file_hashes_verified": [
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-control-pages/artifact.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-control-pages/artifact.toml",
+        "sha256": "29fc4baed38f824ae26c3fa9ca7f4db1be6387769742976f577f94d81e540a16"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-control-pages/source.pdf",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-control-pages/source.pdf",
+        "sha256": "fe425c3ced93d5d48bc9d64af1a83d646035ae60715c33021931179d25169c2a"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/artifact.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/artifact.toml",
+        "sha256": "d633bb457718a0fa58abfcbc0d6477c4cbab60425ffcaa2d04f47557a94bbdee"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/latin.txt",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/latin.txt",
+        "sha256": "834d0e60236511a5ff7f3d4f9186ea1188791eab9706277e7bb488d52f6b6cff"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-collect-images.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-collect-images.toml",
+        "sha256": "b5bb3adcacdd8ba07deb9a3b91c6eb3d54418a6b29bfedae15064316bdfd5744"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-collect.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-collect.toml",
+        "sha256": "5c9208770e496f9a97cf6efc8a2b9e8062e744f8559675a442205a70422209ac"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-postcommunion-images.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-postcommunion-images.toml",
+        "sha256": "aa457b5be0d2b9961ebfb622c4cdf1bf7e61d4251f9411b858ce5048d4fabf1e"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-postcommunion.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-postcommunion.toml",
+        "sha256": "39e9be89666133deb91a0f5e9d8a16a142a6c1ff52f7071ed327e516648660c6"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/heart-two-20261029-collect.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/heart-two-20261029-collect.toml",
+        "sha256": "16f25ae3261b8483aa6c46cbf2e5a71671ddc662d0b13eb452b8bf7942f7b1d3"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/heart-two-20261029-postcommunion.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/heart-two-20261029-postcommunion.toml",
+        "sha256": "9bcd42ca2a91aae4d2e3365e3c0bf603b3d3fe29d8d7f3f79258d9b53237fbe3"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/artifact.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/artifact.toml",
+        "sha256": "8eec30c80657798ee7a4495654a26ce86cd00f52da22268b037d3ebec68c8dee"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/source.pdf",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/source.pdf",
+        "sha256": "976afd4964a6b833ec2bf92ee5cb00825be96a4d7bc789acf34fde0bacac3b6b"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-historical-latin-20261029-5602f33a/artifact.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-historical-latin-20261029-5602f33a/artifact.toml",
+        "sha256": "2a85a0437f586455b6317121b9b190ea39737db0c959d587c0dad1653b8d996d"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-historical-latin-20261029-5602f33a/source.txt",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-historical-latin-20261029-5602f33a/source.txt",
+        "sha256": "5602f33a0dc7039761adac78d736fdb286ea1261404cd7cdd3a0c5bdb9fd66f2"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-conclusion-prefix-20261029.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-conclusion-prefix-20261029.toml",
+        "sha256": "0112c46dfcea6dc6edc66e41e4d234d3dfcf0075970d2bcfdc434e8346e3d46e"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-historical-page-20261029.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-historical-page-20261029.toml",
+        "sha256": "83e262e5e4e12b0ccc0b0c88dd0269f26de1d80f06682e1e890edd8e8a3347a9"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-historical-text-20261029.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-historical-text-20261029.toml",
+        "sha256": "bd34f0536e2a4911dc184a62893d0abda05090aa25afc5b5250b4d763bda13bc"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--collect--1/artifact.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--collect--1/artifact.toml",
+        "sha256": "b9af81cbd60481425a9cbde6c2543fe87aab0ef449af4dc2fb62c7426de4147a"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--collect--1/latin.txt",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--collect--1/latin.txt",
+        "sha256": "c8b53661561aac747517845360d96151db5afb6707c0c3b798b8de710559395a"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/immaculati-cordis-beatae-mariae-virginis--collect--1.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/immaculati-cordis-beatae-mariae-virginis--collect--1.toml",
+        "sha256": "7b75ec071e929b1fbb0e962a971cb7e172a73e7fd89b8550e57fccda2dcc5687"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--postcommunion--1/artifact.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--postcommunion--1/artifact.toml",
+        "sha256": "906d1840aef2e08162fad2daa05fc267a5bcca7b051441fee805cf3de30433f0"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--postcommunion--1/latin.txt",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--postcommunion--1/latin.txt",
+        "sha256": "6c81c9d5ef0912c0e01fc911ab4dc9fe86648e27e49651092086e38d2ca17795"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/immaculati-cordis-beatae-mariae-virginis--postcommunion--1.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/immaculati-cordis-beatae-mariae-virginis--postcommunion--1.toml",
+        "sha256": "418cbf9ffe5df9b5712172eff23cac4173e6aec0ba686e0af97bb19305154a4b"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1.toml",
+        "sha256": "77b99cefba1fda6c72943a71d3c57d1e3e4515c837173e851e20cd338fed286f"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1/artifact.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1/artifact.toml",
+        "sha256": "f1093bb4544af8aa0ea0aabf10492967f9e5579d60be07a45bac9cfc662cbac2"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1/latin.txt",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1/latin.txt",
+        "sha256": "9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v1/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1.toml",
+        "sha256": "ad6c7662d2ea6816f869795237708c0627ba49e934d0c376d4d6b64784ce04f2"
+      }
+    ]
+  },
+  "general_reasoning": [
+    "Policy section1(6) prefers publication on an ambiguous but defensible basis, with explicit reasoning. This recommendation is a qualified project judgment, not a declaration that the1962 edition or every element of its revisions is public domain.",
+    "The source foundation is a complete independently identified1922 prayer for each case, plus the separately identified traditional conclusion control where needed. It is not a reconstruction of a modern whole prayer from scattered older phrases. Those historical expressions retain their own public-domain basis; any later contribution must be assessed separately.",
+    "The Copyright Office’s Circular14 distinguishes preexisting material from new original authorship in derivative works. Circular33 and37CFR202.1(a) support the limited authorship in individual words and short expressions. These provisions do not decide every combination of short changes automatically. All measured modern contributions are assessed in their prayer context together, not merely counted or excused one by one.",
+    "The originality threshold is low and a semantic revision can be original. The affirmative case here is the limited expressive contribution of the exact whole measured revision, with no newly authored petition/clause or new literary architecture beyond the identified conventional substitutions, factual title, case form, options and old conclusion. This supports qualified-nonoriginal-adaptation for these three specific hashes; uncertainty remains explicit.",
+    "Prior latin-seven and Joseph-clause decisions supply examples of separately bounded procedure only. None grants permission for these cases, and none substitutes for the substantive counsel-to-wisdom assessment."
+  ],
+  "cases": [
+    {
+      "identity": [
+        "immaculati-cordis-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "recommendation": "ACCEPT_FOR_SEPARATE_ROOT_FINITE_SECTION1_6_ADOPTION",
+      "candidate_latin_sha256_UTF8_including_terminal_LF": "c8b53661561aac747517845360d96151db5afb6707c0c3b798b8de710559395a",
+      "candidate_english_sha256_UTF8_no_added_LF": "0cb90b2744188032f1232cf3e8a165a6d1c9a04d4ba9b19adad607cb66d19917",
+      "historical_prayer_sha256_including_terminal_LF": "b9f4924c41f5dd422cd84b84bb26d5bf600c0c7b0f7a4f781e8788bcc3228aa4",
+      "historical_artifact_ids": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-historical-prayers",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-control-pages"
+      ],
+      "historical_locus": "1922 Mame artifact page1048, printed[18]; historical source keeps its own full prayer and actual cue.",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.heart-two-20261029-collect",
+      "target_pages": [
+        714
+      ],
+      "target_unit": 3424,
+      "exact_delta": "Replace historical purissimi with immaculati; add functional parenthetical (commemorationem); add nostrum to the actual Per Dominum ... in unitate ejusdem. conclusion prefix; add target comma after ut and capitalise Cor. No other word changes after declared i/j, accent, ligature and line-wrap normalization.",
+      "complete_contribution_assessment": "The replacement purissimi→immaculati is a substantive devotional epithet change, not spelling. In this exact already complete prayer it substitutes the conventional Immaculate Heart designation in the same noun phrase; it adds no new petition, clause or novel sequence of expression. The one-word parenthetical commemoration option supplies an ordinary alternative observance label, not new prayer prose. Assessed together with the source-fixed syntax, pointing and actual conventional ending, the contribution is defensibly too slight in expressive authorship to defeat the independently established old whole prayer. Nostrum is separately present in the same identified1922printing’s full standard conclusion control; it is not inferred from the Heart prayer’s shorter cue. Only the actual target abbreviated prefix and stop are included.",
+      "strong_counterargument_and_response": "The Immaculate wording carries devotional/theological significance and the commemoration alternative changes the permitted reading; they cannot be dismissed as accidental typography or equivalent historical wording. A low originality threshold means significance and the combined revision must be considered. The contrary argument is insufficient here because the actual added expression remains one conventional epithet and one ordinary option word in a wholly preserved earlier prayer, rather than a newly worded petition or creative clause.",
+      "actual_historical_conclusion": "Per Dominum... in unitate ejusdem.",
+      "actual_target_conclusion": "Per Dominum nostrum ... in unitate ejusdem.",
+      "source_review": "Existing independently accepted source review preserved; not repeated here.",
+      "English_review": "Existing accepted project-study-English fidelity verdict and exact bytes preserved; this review assesses the underlying Latin rights basis only."
+    },
+    {
+      "identity": [
+        "immaculati-cordis-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "recommendation": "ACCEPT_FOR_SEPARATE_ROOT_FINITE_SECTION1_6_ADOPTION",
+      "candidate_latin_sha256_UTF8_including_terminal_LF": "6c81c9d5ef0912c0e01fc911ab4dc9fe86648e27e49651092086e38d2ca17795",
+      "candidate_english_sha256_UTF8_no_added_LF": "5313dcbd2b70bbd5afe7cb21803276343442ad3a9d561ec7bfd47e18ef90fafe",
+      "historical_prayer_sha256_including_terminal_LF": "6393ab75d5901bf6daf975b2ac34cf92db0bc06360c618ca6980addec466c60f",
+      "historical_artifact_ids": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-historical-prayers",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-control-pages"
+      ],
+      "historical_locus": "1922 Mame artifact page1049, printed[19]; historical source keeps its own full prayer and actual cue.",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.heart-two-20261029-postcommunion",
+      "target_pages": [
+        715
+      ],
+      "target_unit": 3436,
+      "exact_delta": "Replace historical purissimi with immaculati; add functional parenthetical (memoriam). Historical cujus and target cuius are the declared calendar consonantal-j normalization; no other words or actual conclusion differ.",
+      "complete_contribution_assessment": "The replacement purissimi→immaculati is a substantive devotional epithet change, not spelling. In this exact already complete prayer it substitutes the conventional Immaculate Heart designation in the same noun phrase; it adds no new petition, clause or novel sequence of expression. The one-word parenthetical commemoration option supplies an ordinary alternative observance label, not new prayer prose. Assessed together with the source-fixed syntax, pointing and actual conventional ending, the contribution is defensibly too slight in expressive authorship to defeat the independently established old whole prayer.",
+      "strong_counterargument_and_response": "The Immaculate wording carries devotional/theological significance and the commemoration alternative changes the permitted reading; they cannot be dismissed as accidental typography or equivalent historical wording. A low originality threshold means significance and the combined revision must be considered. The contrary argument is insufficient here because the actual added expression remains one conventional epithet and one ordinary option word in a wholly preserved earlier prayer, rather than a newly worded petition or creative clause.",
+      "actual_historical_conclusion": "Per Dominum.",
+      "actual_target_conclusion": "Per Dominum.",
+      "source_review": "Existing independently accepted source review preserved; not repeated here.",
+      "English_review": "Existing accepted project-study-English fidelity verdict and exact bytes preserved; this review assesses the underlying Latin rights basis only."
+    },
+    {
+      "identity": [
+        "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "recommendation": "ACCEPT_FOR_SEPARATE_ROOT_FINITE_SECTION1_6_ADOPTION",
+      "candidate_latin_sha256_UTF8_including_terminal_LF": "9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005",
+      "candidate_english_sha256_UTF8_no_added_LF": "f915dcad95b7217e16c83e3f1d8c6ee756d1378adc0518b403ac277aafcdecfb",
+      "historical_prayer_sha256_including_terminal_LF": "5602f33a0dc7039761adac78d736fdb286ea1261404cd7cdd3a0c5bdb9fd66f2",
+      "historical_artifact_ids": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-historical-latin-20261029-5602f33a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49"
+      ],
+      "historical_locus": "1922 Mame PDF1082/printed[52] for complete Lawrence prayer; PDF368/printed254 for literal contiguous standard conclusion prefix ending in unitate.",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1",
+      "target_pages": [
+        675,
+        676
+      ],
+      "target_unit": 3117,
+      "exact_delta": "[{\"kind\": \"substantive-lexical\", \"historical\": \"consilii\", \"target\": \"sapientiae\", \"explanation\": \"Counsel changes to wisdom. This is not an orthographic or simply functional change.\"}, {\"kind\": \"factual-title-addition\", \"historical\": \"Confessori tuo\", \"target\": \"Confessori tuo atque Doctori\"}, {\"kind\": \"inflection\", \"historical\": \"gloria\", \"target\": \"gloriam\", \"explanation\": \"The target page image really prints gloriam, despite its grammatical incongruity; no silent repair.\"}, {\"kind\": \"independently-controlled-conclusion-prefix\", \"historical\": \"Per Dominum nostrum.\", \"target\": \"Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.\", \"source\": \"1922 wholePDF368 actual contiguous full formula, stop after in unitate\"}, {\"kind\": \"pointing-and-orthography\", \"explanation\": \"Target omits source comma after qui and salute; adds commas enclosing Confessori...Doctori; replaces source semicolon after cognoscere with comma; declared calendar consonantal-j and accent/ligature normalization.\"}]",
+      "complete_contribution_assessment": "The consilii→sapientiae substitution changes counsel to wisdom and is substantive. It is not functional, orthographic or a historical identity. In this exact source-fixed prayer the new expression is nevertheless one ordinary abstract noun occupying the same existing spiritum ... et fortitudinis construction. Atque Doctori adds a factual rank in the existing Confessori tuo address; gloria→gloriam is a case-ending variation, preserved despite its incongruity, not a new expressive clause. The longer ending is an independently controlled contiguous traditional formula prefix, not newly composed wording. Considering all those changes together, without atomising away their combined effect, the modern contribution remains a slight conventional revision within the same old complete petition, and a qualified insufficient-originality basis is defensible.",
+      "strong_counterargument_and_response": "This is the strongest contrary case: replacing counsel with wisdom in association with a newly stated Doctor rank can be a deliberate theological/editorial revision, and copyright requires little creativity. A semantic change is not immunised by being one word, and a combination of otherwise ordinary words can be original. A court could assess the revision more broadly. The recommendation rests on the measured combined expression and preserved syntax/petition, factual title and separately old conclusion, not on a universal word-count exemption or an assertion that meaning is unchanged.",
+      "actual_historical_conclusion": "Per Dominum nostrum.",
+      "actual_target_conclusion": "Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.",
+      "source_review": "Existing independently accepted source review preserved; not repeated here.",
+      "English_review": "Existing accepted project-study-English fidelity verdict and exact bytes preserved; this review assesses the underlying Latin rights basis only."
+    }
+  ],
+  "publication_and_source_conditions": [
+    "Root must independently adopt these three exact bases in a finite authority and enforce them with a closed tuple/hash/source guard before any canonical/public admission. This review is not adoption.",
+    "Preserve the1922whole-prayer controls and the distinction between actual historical wording and exact target projection. Never mark a modern target as literal historical identity or the entire modern edition as public domain.",
+    "The Heart Collect nostrum requires explicit evidence from passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-conclusion-prefix-20261029 and its retained controls artifact artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49. The plan’s Heart-only historical_artifacts/projected_from list does not itself name this separate control. The finite authority must retain that exact edge; final source dependency/assembly review must represent it. This is a provenance condition, not an invitation to expand the ending.",
+    "Lawrence must preserve substantive sapientiae, factual atque Doctori and the source-confirmed gloriam irregularity. No silent repair to gloria or semantic reclassification is authorised.",
+    "Keep each actual target conclusion prefix and stop. No standard expansion, Spiritus Sancti Deus continuation, Per omnia, Amen or other supplied text follows the printed extent.",
+    "New English remains project-created study translation with explicit authorship. Neither old human English nor approved/official modern-English status is claimed. Preserve the accepted exact English hashes and separate source/translation verdict.",
+    "No source wrapper, whole modern PDF, modern rubric/arrangement, unrelated prayer, another adaptation, historical refusal or other held modern text is cleared. Existing refusals/history remain unless separately superseded.",
+    "Final canonical source-graph, projection, publication and runtime checks remain required. A change to any reviewed full body or measured contribution requires a new exact review."
+  ],
+  "primary_source_support": [
+    {
+      "url": "https://www.copyright.gov/title37/202/37cfr202-1.html",
+      "local_support_path": ".scratch/english-ordinary-20261029/joseph-preface-may1/37cfr202-1.html",
+      "sha256": "550a8131ceaae45be3e138ae11947a8c252f1cfa6e44f973d1a3023a0233107d",
+      "limitation": "The page declares its regulatory data current as of2025-03-14; recent retrieval is not a claim of2026-current regulation."
+    },
+    {
+      "url": "https://www.copyright.gov/circs/circ33.pdf",
+      "local_support_path": ".scratch/english-ordinary-20261029/joseph-preface-may1/circ33.pdf",
+      "sha256": "4abb8e07b87a560612f11839fabe7c066afeffc8bdb8816c755f7e47fa07dbf2",
+      "limitation": "March2021 explanatory overview, not an adjudication of these prayers."
+    },
+    {
+      "url": "https://www.copyright.gov/circs/circ14.pdf",
+      "inspection": "Official full web view freshly opened/read in the earlier May1 review turn; no second legal survey or newly claimed local hash.",
+      "limitation": "Explanatory circular; its registration-practice discussion says the Compendium supersedes it."
+    }
+  ],
+  "evidence_ceiling": "This turn rechecked exact candidate/review/source-file hashes and read the full source/English review and full measured deltas. It did not repeat the independently accepted page-image audit, rehash whole PDFs, decide canonical imprimatur questions, claim counsel/court/human approval or resolve copyright outside this bounded US project judgment.",
+  "canonical_files_modified": false,
+  "root_adoption_performed": false,
+  "source_or_English_verdict_rewritten": false
+}

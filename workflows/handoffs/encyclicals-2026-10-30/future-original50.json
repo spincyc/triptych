@@ -1,0 +1,4657 @@
+{
+  "schema": "triptych-original327-stop-future50/v1",
+  "date": "2026-10-30",
+  "original_keys": 327,
+  "accepted_original_keys": 277,
+  "remaining_original_keys": 50,
+  "method": "Mechanical packaging of existing frozen declarations and coordinator stop facts; zero new source/PDF reviews, adjudications, renders or admissions. Initial census statuses are historical; stop_state records final packaging qualifications.",
+  "strict_role_boundary": "A PDF PASS is not source admission. Producer review is not independent cold acceptance. All candidate data is inactive and awaits manual scoped adoption.",
+  "state_counts": {
+    "CAPTION_CHANGES_REQUIRED_COLD_PENDING": 1,
+    "PRODUCER_COMPLETE_COLD_PENDING": 2,
+    "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING": 25,
+    "METADATA_ADJUDICATION_PENDING": 6,
+    "NEW_PDF_PASS_SOURCE_RECEIPT_RECONCILIATION_PENDING": 1,
+    "STOPPED_UNADMITTED_SOURCE_PARTIAL_NO_NEW_PDF": 1,
+    "FINAL_TWO_PAGE_PDF_PASS_ADMISSION_RECONCILIATION_PENDING": 1,
+    "SOURCE_EXTENT_CHANGES_REQUIRED_COLD_PENDING": 1,
+    "NEW_PRODUCER_CANDIDATE_COLD_PENDING": 2,
+    "READER_PASS_SOURCE_NATIVE_SCOPE_INCOMPLETE": 2,
+    "PDF_PASS_SOURCE_AND_RESPONSIBLE_METADATA_ADJUDICATION_PENDING": 6,
+    "SOURCE_HOLD": 2
+  },
+  "documents": [
+    {
+      "ordinal": 1,
+      "original_key": [
+        "acta.aas.002.archive.aas.002.049",
+        "it"
+      ],
+      "title": "Editae saepe",
+      "stop_state": "CAPTION_CHANGES_REQUIRED_COLD_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.002.archive.aas.002.049",
+        "language": "it",
+        "artifact_id": "artifact.acta-papal-archives.aas.002.editae-it-spacing07-native-spacing-notes-2dd5859c348a",
+        "edition_id": "edition.acta-papal-archives.aas.002.archive.aas.002.049",
+        "segment_id": "segment.acta-papal-archives.aas.002.archive.aas.002.049.spacing07-2026-10-30",
+        "source_sha256": "2dd5859c348a5cb1ce66bf1c8fe30e382f26260f00ded97b0a6a072ec79c931f",
+        "physical_line_ranges": [
+          [
+            1,
+            1121
+          ]
+        ],
+        "render_revision": "2026-10-30T17:55:40Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 10,
+        "pdf_sha256": "d55d13355ca88f516d4032fc360c0a6cd1f4485e6964a9cdf05f42ad14a0b7f2",
+        "receipt_sha256": "b8e86a7f8c92fb82f32062fd4ecdf41b098adba89c1eeade0b4af255f101b37d"
+      },
+      "stop_qualification": "Italian caption358–403 is wrong; actual native Italian381–403. Correction not begun; latest10-page reader producer-only.",
+      "historical_census_status": "PRODUCER_OWNED",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 2,
+      "original_key": [
+        "acta.aas.004.archive.aas.004.066",
+        "la"
+      ],
+      "title": "Singulari quadam",
+      "stop_state": "PRODUCER_COMPLETE_COLD_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.004.archive.aas.004.066",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.004.singulari-spacing07-native-spacing-notes-990006d91e25",
+        "edition_id": "edition.acta-papal-archives.aas.004.archive.aas.004.066",
+        "segment_id": "segment.acta-papal-archives.aas.004.archive.aas.004.066.spacing07-2026-10-30.note-blocks",
+        "source_sha256": "990006d91e25c4cbf9734873d059daf3bcfb53c7c0ef745ea4b73ca8b11bb894",
+        "physical_line_ranges": [
+          [
+            1,
+            199
+          ]
+        ],
+        "render_revision": "2026-10-30T16:46:00Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 3,
+        "pdf_sha256": "dc22d0b0d54edb968d7d2d6db3a99d65a08867b84d299660f9bf3dfb66ecd755",
+        "receipt_sha256": "ea5e9fbb93f4c39ed583008a10231fc371f4641111f3213c1e333c455fdf0c24"
+      },
+      "stop_qualification": "Latest3-page reader/source producer handoff frozen; independent cold scope pending.",
+      "historical_census_status": "PRODUCER_OWNED",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 3,
+      "original_key": [
+        "acta.aas.006.archive.aas.006.056",
+        "de"
+      ],
+      "title": "Ad beatissimi Apostolorum Principis",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.006.archive.aas.006.056",
+        "language": "de",
+        "artifact_id": "artifact.acta-papal-archives.aas.006.ad-beatissimi-de-note-blocks-179739b82709",
+        "edition_id": "edition.acta-papal-archives.aas.006.archive.aas.006.056",
+        "segment_id": "segment.acta-papal-archives.aas.006.archive.aas.006.056.note-blocks-2026-10-30",
+        "source_sha256": "179739b82709d95141434929879c74c310454e796992fe3e83b5b730d253b148",
+        "physical_line_ranges": [
+          [
+            1,
+            795
+          ]
+        ],
+        "render_revision": "2026-10-30T05:31:36Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 9,
+        "pdf_sha256": "e4012872236fad9210a441019a534a4e5ac44c24659d4d1d9a28537610d05f9e",
+        "receipt_sha256": "1605bbe0138ca0f719c6696a4039b12fa18ef89cef6eeffc4db752096f0cecef"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-repairs-24b/reviews.json",
+            "sha256": "2e88dcf310be506b97d62abeb3cc30098f80286836c4552570af124b61672e71"
+          },
+          "declaration": {
+            "id": "acta.aas.006.archive.aas.006.056",
+            "language": "de",
+            "pdf_sha256": "e4012872236fad9210a441019a534a4e5ac44c24659d4d1d9a28537610d05f9e",
+            "source_sha256": "179739b82709d95141434929879c74c310454e796992fe3e83b5b730d253b148",
+            "pages": 9,
+            "status": "PASS",
+            "reader_layout_status": "PASS",
+            "source_boundary_scope": {
+              "native_contact_pages": [
+                630,
+                631,
+                632,
+                633,
+                634,
+                635,
+                636,
+                637,
+                638,
+                639,
+                640,
+                641,
+                642,
+                643,
+                644,
+                645,
+                646
+              ],
+              "native_full_resolution_lower_crops_viewed": [
+                630,
+                631,
+                632
+              ],
+              "source_note_groups_read": 14,
+              "source_lf_boundaries_inspected": true,
+              "reader_note_boundaries_full_size": true,
+              "scope": "PASS for bounded note separation/order and reader layout; native geometry examined at contact scale and LF content directly, not full native lexical collation."
+            },
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "warning",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "description": "Inherited OCR glyph errors, spaced emphasis and literal hard-line divisions remain readable. All 14 note groups are distinct reader blocks in source-page order; source native contact geometry and exact LF boundaries support membership."
+              }
+            ],
+            "limitations": [
+              "Independent reader/source-boundary review only; no translation certification, whole-source lexical collation, original-print collation of Vatican OCR reconstructions, or independent rights opinion.",
+              "Historical OCR spelling, glyph errors, hard-line hyphens, reference marks and source-order note placement remain literal.",
+              "A user-requested stop ended further inspection. Unviewed native crops are generated evidence, not inspection. No successor source/PDF is covered.",
+              "PASS for bounded note separation/order and reader layout; native geometry examined at contact scale and LF content directly, not full native lexical collation."
+            ]
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/cold-repairs-24b/observations.json",
+          "sha256": "ac9441e9c1fe2ebcc55ea1d12dbf66b2cf001696eee5d2c51b8227ebbe17afed",
+          "bytes": 2626
+        },
+        {
+          "path": ".scratch/cold-repairs-24b/verification.json",
+          "sha256": "73dac81a671396bec02fe18fd11cd6239695fdbee56f7a607ba97620a0c2d93d",
+          "bytes": 92665
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 4,
+      "original_key": [
+        "acta.aas.009.i.archive.aas.009.i.l012721",
+        "la"
+      ],
+      "title": "DE PRAEDICATIONE DIVINI VERBI AD PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCOPOS ALIOSQUE LOCORUM ORDINARIOS, PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES.",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.009.i.archive.aas.009.i.l012721",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.009.i.historical-text-1935f4e2.note-blocks-humani-generis-la-7ca42ddf9eb6",
+        "edition_id": "edition.acta-papal-archives.aas.009.i.archive.aas.009.i.l012721",
+        "segment_id": "segment.acta-papal-archives.aas.009.i.archive.aas.009.i.l012721.visual-2026-10-26.bounds-2026-10-30.note-blocks-7ca42ddf9eb6",
+        "source_sha256": "7ca42ddf9eb62e3db3053cac0054b1fa9b589b5df2e8d506cc8be6a28971dda0",
+        "physical_line_ranges": [
+          [
+            1,
+            549
+          ]
+        ],
+        "render_revision": "2026-10-30T06:31:25Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 5,
+        "pdf_sha256": "8f55dabf9e5a88fdea15f1bd450a39c9094d47a0d6070ed6fd8371caf982a3b7",
+        "receipt_sha256": "de0b9daaf706e0e11740d1e0bc51f9877ee22bc8fc0d6136075300725db6e7bd"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-repairs-24a/reviews.json",
+            "sha256": "dc65ecdf047fef54bf6cd8e29e526127012dd7b101eb17d8a567bd52a67b6196"
+          },
+          "declaration": {
+            "id": "acta.aas.009.i.archive.aas.009.i.l012721",
+            "language": "la",
+            "pdf_sha256": "8f55dabf9e5a88fdea15f1bd450a39c9094d47a0d6070ed6fd8371caf982a3b7",
+            "pages": 5,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "description": "All 13 note groups separate; disclosed source spacing and damaged marks retained. Underfull pp1/5 warnings visually qualified."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  5
+                ],
+                "description": "Final Tim. note ownership checked on native p317; recovered LF13270–13271 separate after subscription; next-act LF13245–13269 excluded."
+              }
+            ],
+            "limitations": "Independent cold reader/source-boundary acceptance only. All reader pages contact/full-size inspected; native note/column/exception coverage and exact replays as report details. No lexical OCR or translation certification, original-print collation of archival OCR reconstructions, new rights judgment, installation or deployment. Producer PASS not adopted."
+          }
+        }
+      ],
+      "historical_evidence": [],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 5,
+      "original_key": [
+        "acta.aas.011.archive.aas.011.l008779",
+        "la"
+      ],
+      "title": "In hac tanta",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.011.archive.aas.011.l008779",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.011.historical-text-a371360c.in-hac-tanta-refined-la-text-0711bc971508.note-blocks-in-hac-tanta-refined-la-1889de517805",
+        "edition_id": "edition.acta-papal-archives.aas.011.archive.aas.011.l008779",
+        "segment_id": "segment.acta-papal-archives.aas.011.archive.aas.011.l008779.native-preserved-0711bc971508.note-blocks-1889de517805",
+        "source_sha256": "1889de517805783a3e255346788e720bfcca4ed85ea9521f97e4318f1a5bc80f",
+        "physical_line_ranges": [
+          [
+            1,
+            545
+          ]
+        ],
+        "render_revision": "2026-10-30T11:42:09Z",
+        "compact_layout": true,
+        "compact_margin": 0.65,
+        "pages": 5,
+        "pdf_sha256": "dc3fe3ae4bf9073d602283fc53a3de31fbbabd21ea2bc99b6f7799432c81e821",
+        "receipt_sha256": "90605acc9d55b2ee05de6f797a93dc3dc0ae660ff88d5394f69fa3faf263bbf9"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "PRODUCER_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-notes-03-finalize/reviews.json",
+            "sha256": "3b3ed70608bc0b4a95d2a9491212d869d3757c2f2b1bd8fd644a81464896ab48"
+          },
+          "declaration": {
+            "id": "acta.aas.011.archive.aas.011.l008779",
+            "language": "la",
+            "pdf_sha256": "dc3fe3ae4bf9073d602283fc53a3de31fbbabd21ea2bc99b6f7799432c81e821",
+            "source_sha256": "1889de517805783a3e255346788e720bfcca4ed85ea9521f97e4318f1a5bc80f",
+            "pages": 5,
+            "status": "pass",
+            "reviewed_pages": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-notes-03-finalize/observations.md",
+          "sha256": "9ba0288b5e345180971ad321113ac500d9786e3ca1f29eeeb9e43902bb2eef1a",
+          "bytes": 4778
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 6,
+      "original_key": [
+        "acta.aas.011.archive.aas.011.l018487",
+        "la"
+      ],
+      "title": "AD PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCOPOS ALIOSQUE LOCORUM ORDINARIOS PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES: DE STIPE COLLIGENDA PRO PUERIS EUROPAE MEDIAE PAME LABORANTIBUS.",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.011.archive.aas.011.l018487",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.011.historical-text-a371360c.paterno-protocol-preserved-la-text-b4ed01a1d6f2",
+        "edition_id": "edition.acta-papal-archives.aas.011.archive.aas.011.l018487",
+        "segment_id": "segment.acta-papal-archives.aas.011.archive.aas.011.l018487.native-preserved-b4ed01a1d6f2",
+        "source_sha256": "b4ed01a1d6f27dd867af2e41cc3678c2ebc35466b9df35679ee92c83241f3c1f",
+        "physical_line_ranges": [
+          [
+            1,
+            103
+          ]
+        ],
+        "render_revision": "2026-10-30T10:42:00Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 2,
+        "pdf_sha256": "49e2f0f8dacfda9a767d16ee92ec0c73ddb98186d03cd1ff9d312f41c80a5c95",
+        "receipt_sha256": "f11cd2785083af31b201957fb517e25bc5efffbdf0fc237f9ca86d602386b44b"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "PRODUCER_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-notes-03-finalize/reviews.json",
+            "sha256": "3b3ed70608bc0b4a95d2a9491212d869d3757c2f2b1bd8fd644a81464896ab48"
+          },
+          "declaration": {
+            "id": "acta.aas.011.archive.aas.011.l018487",
+            "language": "la",
+            "pdf_sha256": "49e2f0f8dacfda9a767d16ee92ec0c73ddb98186d03cd1ff9d312f41c80a5c95",
+            "source_sha256": "b4ed01a1d6f27dd867af2e41cc3678c2ebc35466b9df35679ee92c83241f3c1f",
+            "pages": 2,
+            "status": "pass",
+            "reviewed_pages": [
+              1,
+              2
+            ]
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-notes-03-finalize/observations.md",
+          "sha256": "9ba0288b5e345180971ad321113ac500d9786e3ca1f29eeeb9e43902bb2eef1a",
+          "bytes": 4778
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 7,
+      "original_key": [
+        "acta.aas.012.archive.aas.012.l016158",
+        "la"
+      ],
+      "title": "AD PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCOPOS ALIOSQUE LOCORUM ORDINARIOS, PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES, IN NATALI MD S. HIERONYMI ECCLESIAE DOCTORIS.",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.012.archive.aas.012.l016158",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-blocks-spiritus-paraclitus-clean-la-5886afc6a21c",
+        "edition_id": "edition.acta-papal-archives.aas.012.archive.aas.012.l016158",
+        "segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l016158.furniture-clean-2026-10-30.note-blocks-5886afc6a21c",
+        "source_sha256": "5886afc6a21cdad9fed09a76acc24682c333ef8c3fc6cb6f78a0ca8bb2c7e27f",
+        "physical_line_ranges": [
+          [
+            1,
+            1697
+          ]
+        ],
+        "render_revision": "2026-10-30T10:42:00Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 15,
+        "pdf_sha256": "3ffcd9d55d002f5247a0111d5a6e46622d665d87974faa7275743051d4654c50",
+        "receipt_sha256": "f11cd2785083af31b201957fb517e25bc5efffbdf0fc237f9ca86d602386b44b"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "PRODUCER_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-notes-03-finalize/reviews.json",
+            "sha256": "3b3ed70608bc0b4a95d2a9491212d869d3757c2f2b1bd8fd644a81464896ab48"
+          },
+          "declaration": {
+            "id": "acta.aas.012.archive.aas.012.l016158",
+            "language": "la",
+            "pdf_sha256": "3ffcd9d55d002f5247a0111d5a6e46622d665d87974faa7275743051d4654c50",
+            "source_sha256": "5886afc6a21cdad9fed09a76acc24682c333ef8c3fc6cb6f78a0ca8bb2c7e27f",
+            "pages": 15,
+            "status": "pass",
+            "reviewed_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-notes-03-finalize/observations.md",
+          "sha256": "9ba0288b5e345180971ad321113ac500d9786e3ca1f29eeeb9e43902bb2eef1a",
+          "bytes": 4778
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 8,
+      "original_key": [
+        "acta.aas.012.archive.aas.012.l019212",
+        "la"
+      ],
+      "title": "AD PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCOPOS ALIOSQUE LOCORUM ORDINARIOS, PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES, DE SANCTO EPHREM SYRO MONACO EDESSENO DOCTORE ECCLESIAE RE- NUNTIANDO.",
+      "stop_state": "METADATA_ADJUDICATION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.012.archive.aas.012.l019212",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-blocks-principi-apostolorum-la-41b88be5be51",
+        "edition_id": "edition.acta-papal-archives.aas.012.archive.aas.012.l019212",
+        "segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l019212.note-blocks-41b88be5be51",
+        "source_sha256": "41b88be5be51f23b63a8c21918b06590362abf3bb796673c897038d79e7fbf7f",
+        "physical_line_ranges": [
+          [
+            1,
+            638
+          ]
+        ],
+        "render_revision": "2026-10-30T06:31:25Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 6,
+        "pdf_sha256": "72c293bdb0003f648ddd20fd2c2718b2ce4dfd9d3ee2655864ca657f69201e35",
+        "receipt_sha256": "de0b9daaf706e0e11740d1e0bc51f9877ee22bc8fc0d6136075300725db6e7bd"
+      },
+      "stop_qualification": "Adjudicate exact Principi six-page standalone partial PASS or recover its observer final declaration.",
+      "historical_census_status": "NEEDS_METADATA_ADJUDICATION",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [
+        {
+          "path": ".scratch/cold-repairs-22a/reviews.partial.json",
+          "sha256": "580a805b8459fe171fc7d1b37623354a4a4024da4ec2945823fddb86884613cf",
+          "bytes": 3132
+        },
+        {
+          "path": ".scratch/cold-repairs-22a/verification.json",
+          "sha256": "77cba7ed9b326442b82f18b6224dcc3b888550cb101f64a8320889bfb9caf490",
+          "bytes": 73754
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 9,
+      "original_key": [
+        "acta.aas.013.archive.aas.013.l001233",
+        "la"
+      ],
+      "title": "AD PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCOPOS ALIOSQUE LOCORUM ' ORDINARIOS, PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES: SEPTIMO SAECULO EXEUNTE A TERTIO ORDINE FRANCISGALIUM CONDITO.",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.013.archive.aas.013.l001233",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.013.historical-text-9bf27994.note-blocks-sacra-propediem-la-0d05e3d9b605",
+        "edition_id": "edition.acta-papal-archives.aas.013.archive.aas.013.l001233",
+        "segment_id": "segment.acta-papal-archives.aas.013.archive.aas.013.l001233.note-blocks-0d05e3d9b605",
+        "source_sha256": "0d05e3d9b605ad2833da64811b2c093c5bffabed1b05177d26100136e56185af",
+        "physical_line_ranges": [
+          [
+            1,
+            328
+          ]
+        ],
+        "render_revision": "2026-10-30T05:39:50Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 4,
+        "pdf_sha256": "32d8471ef45f281eaa407d635f8b9969de3a136e421ddf52f408caa9b6baca40",
+        "receipt_sha256": "8d475409e97bd34e281ac99d24a8094e0c4cb1aefb6d2748abc5e622f6a1f10a"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "UNOWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-final-unowned-cold/sacra-quod/reviews.json",
+            "sha256": "38755d141770c2713976ef64b7a1e44977ff683a71677aa2b84f7aa786c0b36a"
+          },
+          "declaration": {
+            "id": "acta.aas.013.archive.aas.013.l001233",
+            "language": "la",
+            "pdf_sha256": "32d8471ef45f281eaa407d635f8b9969de3a136e421ddf52f408caa9b6baca40",
+            "pages": 4,
+            "status": "PASS",
+            "source_intake_status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "description": "Independent cold contact and every original-resolution full-size reader page inspected freshly; no reused pages. Native source context, exact body/wrapper TeX replay, source/PDF text fidelity, fonts, metadata, logs and complete closing checked separately. Historical notes remain distinct paragraph blocks."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  2
+                ],
+                "description": "Literal localized OCR damage at source LF116 (parent LF1347), native36/reader2 left, commHinitàìi .hominum»' iù&xïme; one damaged phrase within sustained readable adjoining prose. Limits lexical use of this sentence; native reconstruction carries it and no correction was made."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  4
+                ],
+                "description": "Sparse final page retains clauseI continuation, historical notes, clausesII/III, blessing, Epiphany1921 dating and BenedictXV subscription before apparatus. Source-bearing final page accepted."
+              }
+            ],
+            "limitations": "Fresh independent bounded source intake and whole-reader review. Native Vatican OCR reconstruction geometry only; no original-print, lexical, translation, legal/rights or doctrinal certification. Literal OCR defects and source divisions remain; source admission belongs to coordinator."
+          }
+        }
+      ],
+      "historical_evidence": [],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 10,
+      "original_key": [
+        "acta.aas.013.archive.aas.013.l013842",
+        "la"
+      ],
+      "title": "AD PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCOPOS ALIOSQUE LOCORUM ORDINARIOS, PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES I DE DCC NATALI SANCTI DOMINICI CELEBRANDO.",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.013.archive.aas.013.l013842",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.013.historical-text-9bf27994.note-blocks-fausto-30b3d9d9d2cd",
+        "edition_id": "edition.acta-papal-archives.aas.013.archive.aas.013.l013842",
+        "segment_id": "segment.acta-papal-archives.aas.013.archive.aas.013.l013842.note-blocks-30b3d9d9d2cd",
+        "source_sha256": "30b3d9d9d2cd5b559243bce40f3f412bd1d718380239c4ccaa9fa69e3f0ddf91",
+        "physical_line_ranges": [
+          [
+            1,
+            258
+          ]
+        ],
+        "render_revision": "2026-10-30T15:07:51Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 3,
+        "pdf_sha256": "21e149f0d6512c11548e81309f4406e0e20517170b361aa17e9e8402c5948f3e",
+        "receipt_sha256": "b8e7ff9432c380bed545ec784819210e1672cd516164f0042b27d6b87e007c67"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "UNOWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-final-unowned-cold/fausto-iucunda/reviews.json",
+            "sha256": "89fe3f9c46884f637aa4156a37a2036cfc3ab8b19df3186017f241eb3981de73"
+          },
+          "declaration": {
+            "id": "acta.aas.013.archive.aas.013.l013842",
+            "language": "la",
+            "pdf_sha256": "21e149f0d6512c11548e81309f4406e0e20517170b361aa17e9e8402c5948f3e",
+            "pages": 3,
+            "status": "PASS",
+            "source_intake_status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3
+            ],
+            "reused_pages": [],
+            "findings": [],
+            "limitations": [
+              "Archival -ocr PDF is reconstruction evidence, not original-print facsimile.",
+              "Literal OCR defects and spacing retained; source and PDF PASS does not certify historical word-level accuracy.",
+              "Literal closing BENEDICTUS PP. XT retained from native OCR; no silent correction.",
+              "Bounded mechanical source and whole-PDF review only; no lexical, translation or independent rights certification."
+            ]
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-notes-15/delivery.json",
+          "sha256": "e7248ce7e48f765735356377f9ed2a93f99dc9a4ae096972a54661c1eb1e0d8c",
+          "bytes": 2218
+        },
+        {
+          "path": ".scratch/encyclical-notes-15/fausto-report.md",
+          "sha256": "d0269af24fdd70c2f8012460abadb9b0f41defa9ab17f6ae3f11dd87e0f9e475",
+          "bytes": 2892
+        },
+        {
+          "path": ".scratch/encyclical-notes-15/fausto-reviews.json",
+          "sha256": "e54a31feb026562c95fc663ddf432239faf82d2befc6b839c33ba4ed3b2d1caa",
+          "bytes": 1745
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 11,
+      "original_key": [
+        "acta.aas.014.archive.aas.014.l028693",
+        "la"
+      ],
+      "title": "AD VENERABILES FRATRES PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCO- POS, ALIOSQUE LOCORUM ORDINARIOS PACEM ET COMMUNIONEM CUM APO- STOLICA SEDE HABENTES: DE PACE CHRISTI IN REGNO CHRISTI QUAERENDA.",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.014.archive.aas.014.l028693",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.014.historical-text-ebb251c1.note-blocks-ubi-arcano-la-ec666fde6917",
+        "edition_id": "edition.acta-papal-archives.aas.014.archive.aas.014.l028693",
+        "segment_id": "segment.acta-papal-archives.aas.014.archive.aas.014.l028693.note-blocks-ec666fde6917",
+        "source_sha256": "ec666fde6917ad8821c6b984b8a4162780ad9bf7842eccd6dc7c9b29c6194a86",
+        "physical_line_ranges": [
+          [
+            1,
+            1207
+          ]
+        ],
+        "render_revision": "2026-10-30T06:21:55Z",
+        "compact_layout": true,
+        "compact_margin": 0.65,
+        "pages": 10,
+        "pdf_sha256": "07a3dd25fc72bf4dd805056edc657624c092323adec5c75cb831235dafd3307c",
+        "receipt_sha256": "1f9fd82e440d794605e6314820aecdd0e1185dc8c87e296e67228b5119be009a"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-repairs-24a/reviews.json",
+            "sha256": "dc65ecdf047fef54bf6cd8e29e526127012dd7b101eb17d8a567bd52a67b6196"
+          },
+          "declaration": {
+            "id": "acta.aas.014.archive.aas.014.l028693",
+            "language": "la",
+            "pdf_sha256": "07a3dd25fc72bf4dd805056edc657624c092323adec5c75cb831235dafd3307c",
+            "pages": 10,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "description": "All 20 note groups remain distinct. Literal OCR spacing/broken words/reference defects retained and qualified."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  10
+                ],
+                "description": "Sparse final page retains blessing/date/subscription and final historical note before apparatus."
+              }
+            ],
+            "limitations": "Independent cold reader/source-boundary acceptance only. All reader pages contact/full-size inspected; native note/column/exception coverage and exact replays as report details. No lexical OCR or translation certification, original-print collation of archival OCR reconstructions, new rights judgment, installation or deployment. Producer PASS not adopted."
+          }
+        }
+      ],
+      "historical_evidence": [],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 12,
+      "original_key": [
+        "acta.aas.017.aas-017-l25931",
+        "la"
+      ],
+      "title": "LITTERAE                ENCYCLICAE AD VENERABILES FRATRES PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPI- SCOPOS ALIOSQUE LOCORUM ORDINARIOS PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES : DE FESTO DOMINI NOSTRI IESU CHRISTI REGIS CONSTITUENDO.",
+      "stop_state": "METADATA_ADJUDICATION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.017.aas-017-l25931",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.017.historical-text-6aa43837.note-blocks-quas-primas-la-2a841c4a7812",
+        "edition_id": "edition.acta-papal-archives.aas.017.aas-017-l25931",
+        "segment_id": "segment.acta-papal-archives.aas.017.aas-017-l25931.note-blocks-2a841c4a7812",
+        "source_sha256": "2a841c4a78127b4fca9d83eb2cfccccd69654ce7391baffa5df3a82f10ecb2d3",
+        "physical_line_ranges": [
+          [
+            1,
+            26
+          ],
+          [
+            28,
+            63
+          ],
+          [
+            65,
+            105
+          ],
+          [
+            107,
+            158
+          ],
+          [
+            160,
+            212
+          ],
+          [
+            214,
+            264
+          ],
+          [
+            266,
+            316
+          ],
+          [
+            318,
+            359
+          ],
+          [
+            361,
+            408
+          ],
+          [
+            410,
+            451
+          ],
+          [
+            453,
+            494
+          ],
+          [
+            496,
+            536
+          ],
+          [
+            538,
+            574
+          ],
+          [
+            576,
+            612
+          ],
+          [
+            614,
+            650
+          ],
+          [
+            652,
+            689
+          ],
+          [
+            691,
+            727
+          ],
+          [
+            729,
+            758
+          ]
+        ],
+        "render_revision": "2026-10-30T06:08:37Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 8,
+        "pdf_sha256": "8f3b3af2a406e3c16f9654e4a2c932196537c7a9b6fd39779d6bfbda13368f5e",
+        "receipt_sha256": "98fbbebc91340b657497b897cfadf541dce3f1e559647bb78752236b7926df5b"
+      },
+      "stop_qualification": "Recover final observer declaration or explicitly adjudicate the already-persisted whole-document scope; do not invent PASS.",
+      "historical_census_status": "NEEDS_METADATA_ADJUDICATION",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [
+        {
+          "path": ".scratch/cold-repairs-20b/inspections.json",
+          "sha256": "023ddb554b36956ef33908d888884b9513f9d83b6432876c0fe78f84e6b561f4",
+          "bytes": 1557
+        },
+        {
+          "path": ".scratch/cold-repairs-20b/verification.json",
+          "sha256": "76fd8047773918038d425ec1646fb5065f734b6825de2e9b0fbfe189e8fe1a7c",
+          "bytes": 68931
+        },
+        {
+          "path": ".scratch/cold-repairs-20b/fidelity.json",
+          "sha256": "b67c8f2276e8a645515c730b2bdcb7d2b625fd4e9db355846f6c8cba52c5ba9c",
+          "bytes": 1365
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 13,
+      "original_key": [
+        "acta.aas.018.aas-018-l02616",
+        "la"
+      ],
+      "title": "LITTERAE                ENCYCLICAE AD VENERABILES FRATRES PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, E P I - SCOPOS, ALIOSQUE LOCORUM ORDINARIOS PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES :               DE   SACRIS    MISSIONIBUS PROVEHENDIS.",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.018.aas-018-l02616",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.018.historical-text-da4909a7.note-blocks-rerum-ecclesiae-la-4c99da687579",
+        "edition_id": "edition.acta-papal-archives.aas.018.aas-018-l02616",
+        "segment_id": "segment.acta-papal-archives.aas.018.aas-018-l02616.note-blocks-4c99da687579",
+        "source_sha256": "4c99da6875791f98a771263f4bd074ddce8b0dc1ec2b1a13f1fccd745d2f89c2",
+        "physical_line_ranges": [
+          [
+            1,
+            26
+          ],
+          [
+            28,
+            64
+          ],
+          [
+            66,
+            105
+          ],
+          [
+            107,
+            157
+          ],
+          [
+            159,
+            201
+          ],
+          [
+            203,
+            243
+          ],
+          [
+            245,
+            280
+          ],
+          [
+            282,
+            317
+          ],
+          [
+            319,
+            354
+          ],
+          [
+            356,
+            396
+          ],
+          [
+            398,
+            443
+          ],
+          [
+            445,
+            481
+          ],
+          [
+            483,
+            518
+          ],
+          [
+            520,
+            556
+          ],
+          [
+            558,
+            595
+          ],
+          [
+            597,
+            652
+          ],
+          [
+            654,
+            698
+          ],
+          [
+            700,
+            737
+          ],
+          [
+            739,
+            756
+          ]
+        ],
+        "render_revision": "2026-10-30T06:08:37Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 8,
+        "pdf_sha256": "fb25ef8c8b631e3a8a844e06e6b1afcf03f94f886ea46f349b46187387089070",
+        "receipt_sha256": "98fbbebc91340b657497b897cfadf541dce3f1e559647bb78752236b7926df5b"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-repairs-24b/reviews.json",
+            "sha256": "2e88dcf310be506b97d62abeb3cc30098f80286836c4552570af124b61672e71"
+          },
+          "declaration": {
+            "id": "acta.aas.018.aas-018-l02616",
+            "language": "la",
+            "pdf_sha256": "fb25ef8c8b631e3a8a844e06e6b1afcf03f94f886ea46f349b46187387089070",
+            "source_sha256": "4c99da6875791f98a771263f4bd074ddce8b0dc1ec2b1a13f1fccd745d2f89c2",
+            "pages": 8,
+            "status": "PASS",
+            "reader_layout_status": "PASS",
+            "source_boundary_scope": {
+              "native_contact_pages": [
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83
+              ],
+              "native_full_resolution_lower_crops_viewed": [],
+              "source_note_groups_read": 8,
+              "source_lf_boundaries_inspected": true,
+              "reader_note_boundaries_full_size": true,
+              "scope": "PASS for bounded note separation/order and reader layout; native geometry examined at contact scale and LF content directly, not full native lexical collation."
+            },
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "warning",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "description": "Long literal OCR title, spaced letters and hard-line divisions remain. Eight notes are separate reader blocks. Reader page 6 retains a punctuation-only OCR line between contemplati-/vae; not treated as an inferred omission or lexical repair."
+              }
+            ],
+            "limitations": [
+              "Independent reader/source-boundary review only; no translation certification, whole-source lexical collation, original-print collation of Vatican OCR reconstructions, or independent rights opinion.",
+              "Historical OCR spelling, glyph errors, hard-line hyphens, reference marks and source-order note placement remain literal.",
+              "A user-requested stop ended further inspection. Unviewed native crops are generated evidence, not inspection. No successor source/PDF is covered.",
+              "PASS for bounded note separation/order and reader layout; native geometry examined at contact scale and LF content directly, not full native lexical collation."
+            ]
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/cold-repairs-24b/observations.json",
+          "sha256": "ac9441e9c1fe2ebcc55ea1d12dbf66b2cf001696eee5d2c51b8227ebbe17afed",
+          "bytes": 2626
+        },
+        {
+          "path": ".scratch/cold-repairs-24b/verification.json",
+          "sha256": "73dac81a671396bec02fe18fd11cd6239695fdbee56f7a607ba97620a0c2d93d",
+          "bytes": 92665
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 14,
+      "original_key": [
+        "acta.aas.018.aas-018-l19585",
+        "la"
+      ],
+      "title": "LITTERAE                      ENCYCLICAE AD RR. PP. D D . PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCOPOS ALIOS- QUE LOCORUM ORDINARIOS PACEM. ET COMMUNIONEM CUM APOSTOLICA S E D E HABENTES: DE ASPERRIMA REI CATHOLICAE CONDICIONE IN FOE- DERATIS MEXICI CIVITATIBUS.",
+      "stop_state": "METADATA_ADJUDICATION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.018.aas-018-l19585",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.018.historical-text-da4909a7.note-blocks-iniquis-afflictisque-la-98b7d8a9937b",
+        "edition_id": "edition.acta-papal-archives.aas.018.aas-018-l19585",
+        "segment_id": "segment.acta-papal-archives.aas.018.aas-018-l19585.note-blocks-98b7d8a9937b",
+        "source_sha256": "98b7d8a9937b733a4779439ecfb17f36c5648fca39d2359218d531e02057d74d",
+        "physical_line_ranges": [
+          [
+            1,
+            26
+          ],
+          [
+            28,
+            68
+          ],
+          [
+            70,
+            108
+          ],
+          [
+            110,
+            146
+          ],
+          [
+            148,
+            186
+          ],
+          [
+            188,
+            224
+          ],
+          [
+            226,
+            268
+          ],
+          [
+            270,
+            306
+          ],
+          [
+            308,
+            347
+          ],
+          [
+            349,
+            385
+          ],
+          [
+            387,
+            422
+          ],
+          [
+            424,
+            473
+          ],
+          [
+            475,
+            505
+          ]
+        ],
+        "render_revision": "2026-10-30T06:08:37Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 6,
+        "pdf_sha256": "0ed33b51fdb818b9659214bedaf522389dd6e47d39068fd3ac9d02e48b8faea6",
+        "receipt_sha256": "98fbbebc91340b657497b897cfadf541dce3f1e559647bb78752236b7926df5b"
+      },
+      "stop_qualification": "Recover final observer declaration or explicitly adjudicate the already-persisted whole-document scope; do not invent PASS.",
+      "historical_census_status": "NEEDS_METADATA_ADJUDICATION",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [
+        {
+          "path": ".scratch/cold-repairs-20b/inspections.json",
+          "sha256": "023ddb554b36956ef33908d888884b9513f9d83b6432876c0fe78f84e6b561f4",
+          "bytes": 1557
+        },
+        {
+          "path": ".scratch/cold-repairs-20b/verification.json",
+          "sha256": "76fd8047773918038d425ec1646fb5065f734b6825de2e9b0fbfe189e8fe1a7c",
+          "bytes": 68931
+        },
+        {
+          "path": ".scratch/cold-repairs-20b/fidelity.json",
+          "sha256": "b67c8f2276e8a645515c730b2bdcb7d2b625fd4e9db355846f6c8cba52c5ba9c",
+          "bytes": 1365
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 15,
+      "original_key": [
+        "acta.aas.020.aas-020-l07034",
+        "la"
+      ],
+      "title": "LITTERAE ENCYCLICAE AD RR. PP. D D . PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCOPOS, ALIOSQUE LOCORUM ORDINARIOS PACEM ET COMMUNIONEM CUM APO- STOLICA SEDE HABENTES: DE COMMUNI EXPIATIONE SACRATISSIMO CORDI IESU DEBITA.",
+      "stop_state": "NEW_PDF_PASS_SOURCE_RECEIPT_RECONCILIATION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.aas.020.aas-020-l07034",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.020.historical-text-748f7bf4.note-blocks-miserentissimus-redemptor-la-9b8e3a2c7c58",
+        "edition_id": "edition.acta-papal-archives.aas.020.aas-020-l07034",
+        "segment_id": "segment.acta-papal-archives.aas.020.aas-020-l07034.visual-2026-10-26.note-blocks-9b8e3a2c7c58",
+        "source_sha256": "9b8e3a2c7c58994544faeaf6182b27ccc2f6cf8a141bd61be993faa14c46a33a",
+        "physical_line_ranges": [
+          [
+            1,
+            32
+          ],
+          [
+            34,
+            81
+          ],
+          [
+            83,
+            120
+          ],
+          [
+            122,
+            167
+          ],
+          [
+            169,
+            209
+          ],
+          [
+            211,
+            265
+          ],
+          [
+            267,
+            328
+          ],
+          [
+            330,
+            374
+          ],
+          [
+            376,
+            417
+          ],
+          [
+            419,
+            471
+          ],
+          [
+            473,
+            518
+          ],
+          [
+            520,
+            562
+          ],
+          [
+            564,
+            607
+          ],
+          [
+            609,
+            647
+          ],
+          [
+            649,
+            662
+          ],
+          [
+            664,
+            701
+          ]
+        ],
+        "render_revision": "2026-10-30T13:10:12Z",
+        "compact_layout": true,
+        "compact_margin": 0.65,
+        "pages": 6,
+        "pdf_sha256": "0ca008f130d0e4cb63c407fe4983566d2f916c3a89ab42f1a24df56282936ff8",
+        "receipt_sha256": "683347f88933ce3ff86b8277808bc0e292a02841c1edd76544bcba20dd70ee9f"
+      },
+      "stop_qualification": "Current0ca008f1 six-page heading PDF has its own whole-PDF PASS. Original22b CHANGES_REQUIRED applies only to old218c2189; source/receipt reconciliation is not silently inferred.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [
+        {
+          "path": ".scratch/miserentissimus-heading-cold/reviews.json",
+          "sha256": "f73f5c418a9f32424f2704a4d310797ec0037f39213568ffe1bc55af652b2013",
+          "bytes": 2809
+        },
+        {
+          "path": ".scratch/miserentissimus-heading-cold/encyclicals-miserentissimus-heading-cold.md",
+          "sha256": "1f651cc9d62748dc8f428d13942d0518a384a38ccc011b14ddddeb87113ce9a6",
+          "bytes": 7841
+        },
+        {
+          "path": ".scratch/cold-repairs-22b/observations.json",
+          "sha256": "b33377ea78d0550c5530f7d4afd65a52ad682f5920c08be1628c9410caf28a4f",
+          "bytes": 2132
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 16,
+      "original_key": [
+        "acta.aas.021.aas-021-l27869",
+        "la"
+      ],
+      "title": "LITTERAE ENCYCLICAE AD V E N E R A B I L E S FRATRES, PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPI- SCOPOS, ALIOSQUE         LOCORUM ORDINARIOS               PACEM ET COMMUNIONEM CUM APOSTOLICA S E D E HABENTES : DE USU EXERCITIORUM SPIRITUA- LIUM MAGIS MAGISQUE PROMOVENDO.",
+      "stop_state": "STOPPED_UNADMITTED_SOURCE_PARTIAL_NO_NEW_PDF",
+      "current_candidate_tuple": {
+        "id": "acta.aas.021.aas-021-l27869",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a",
+        "edition_id": "edition.acta-papal-archives.aas.021.aas-021-l27869",
+        "segment_id": "segment.acta-papal-archives.aas.021.aas-021-l27869",
+        "source_sha256": "c3e4af8a24386821d8b3827235c324e20a4a0a36c0f4dc88b017a3380400357c",
+        "physical_line_ranges": [
+          [
+            27869,
+            27912
+          ],
+          [
+            27914,
+            27958
+          ],
+          [
+            27960,
+            28005
+          ],
+          [
+            28007,
+            28044
+          ],
+          [
+            28046,
+            28095
+          ],
+          [
+            28097,
+            28141
+          ],
+          [
+            28143,
+            28189
+          ],
+          [
+            28191,
+            28233
+          ],
+          [
+            28235,
+            28277
+          ],
+          [
+            28280,
+            28322
+          ],
+          [
+            28324,
+            28362
+          ],
+          [
+            28364,
+            28405
+          ],
+          [
+            28407,
+            28450
+          ],
+          [
+            28452,
+            28497
+          ],
+          [
+            28499,
+            28541
+          ],
+          [
+            28543,
+            28591
+          ],
+          [
+            28593,
+            28635
+          ],
+          [
+            28637,
+            28662
+          ]
+        ],
+        "render_revision": null,
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 7,
+        "pdf_sha256": "9fb17e9b8cef6b7794300b8c2d91e18eb315309a5a3e1a9f6d7c18282d4c9951",
+        "receipt_sha256": "3d1d2c53a1be2d8407d36292652f1e87bd6510182d69db50ab22473d25f50a07"
+      },
+      "stop_qualification": "Mens STOP bundle retains18 native facsimile pages,60 crops/180 raw OCR outputs,5083 projected WORDs; source geometry hold, clean replay, canonical registration and all source/PDF gates remain unfinished. Existing7-page public reader is a different historical tuple.",
+      "historical_census_status": "PRODUCER_OWNED",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [
+        {
+          "path": ".scratch/mens-native-resolution/crop-ocr-receipt-v2.json",
+          "sha256": "4b1c1d802eb64f6ff52e27b1006e77c95b03f767fd49a7004ab2fefecaa2c0be",
+          "bytes": 54424
+        },
+        {
+          "path": ".scratch/mens-native-resolution/old-new-accounting.json",
+          "sha256": "9422aeeb9d4fc4afd5e6a243427a2259d608b313a8241eec2f786435cdab4699",
+          "bytes": 234788
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 17,
+      "original_key": [
+        "acta.ass.007.ass-007-act-006",
+        "la"
+      ],
+      "title": "Quartus supra",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.007.ass-007-act-006",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.007.historical-text-5b64eabc.native-spacing-quartus-supra-b3c64c40b824.note-blocks-quartus-supra-6ccfd0522d55",
+        "edition_id": "edition.acta-papal-archives.ass.007.ass-007-act-006",
+        "segment_id": "segment.acta-papal-archives.ass.007.ass-007-act-006.native-spacing-b3c64c40b824.note-blocks-6ccfd0522d55",
+        "source_sha256": "6ccfd0522d553f95f5a09f6456f512b54f15dd35da0668e4b7f3aafc925a8384",
+        "physical_line_ranges": [
+          [
+            1,
+            1288
+          ]
+        ],
+        "render_revision": "2026-10-30T10:49:39Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 12,
+        "pdf_sha256": "9f8a2808c2964e2ac5180dac1e88eb8c06e1c3df837e8b0daabbdbdce7c0d4da",
+        "receipt_sha256": "b0dc2c74217a27a830b4b7e7e4a74f027cc4383ab0f354ba004e657984884e0f"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "READY_EXACT_FINAL",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-refinement-package/cold-review-58/reviews.json",
+            "sha256": "4cb67a562ee7caea93ad6781b58feec437f104d9b048d1d8fe8012e7817b87b3"
+          },
+          "declaration": {
+            "id": "acta.ass.007.ass-007-act-006",
+            "language": "la",
+            "pdf_sha256": "9f8a2808c2964e2ac5180dac1e88eb8c06e1c3df837e8b0daabbdbdce7c0d4da",
+            "source_sha256": "6ccfd0522d553f95f5a09f6456f512b54f15dd35da0668e4b7f3aafc925a8384",
+            "pages": 12,
+            "status": "PASS",
+            "source_status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1
+                ],
+                "description": "Four protocol underfull warnings directly judged: loose but readable; no clipping or collision."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "description": "All12 actual current reader pages inspected original resolution plus contact; all26 historical note paragraphs remain distinct and in order. Literal OCR exceptions readable and disclosed."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  12
+                ],
+                "description": "Source-bearing final page includes body, historical note, blessing, date and PIUS PP. IX, followed by readable ruled terminal apparatus and rights colophon."
+              }
+            ],
+            "limitations": [
+              "Archival OCR reconstruction; no original-print or full lexical collation.",
+              "No newer producer full-prose PASS invented.",
+              "No new rights or historical year determination.",
+              "Root owns adoption and active predecessor disposition.",
+              "Old native geometry observations reused only within explicit eligibility; no old PDF visual acceptance transferred."
+            ]
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-refinement-package/cold-review-58/report.md",
+          "sha256": "17770a6803a2a5815664998d547294769a5c113de270aa07ea78cd1c7febe427",
+          "bytes": 10838
+        },
+        {
+          "path": ".scratch/encyclical-refinement-package/cold-review-58/reviews.json",
+          "sha256": "4cb67a562ee7caea93ad6781b58feec437f104d9b048d1d8fe8012e7817b87b3",
+          "bytes": 4553
+        },
+        {
+          "path": ".scratch/encyclical-refinement-package/acceptance-58.json",
+          "sha256": "0b620225bc1b9ae08a3753d627e6cf34e8bb5f8f20898cbbd73d8a7eaef10e33",
+          "bytes": 1716
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 18,
+      "original_key": [
+        "acta.ass.008.ass-008-act-003",
+        "la"
+      ],
+      "title": "Quod nunquam",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.008.ass-008-act-003",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.008.historical-text-197b329e.native-spacing-quod-nunquam-bf733a255f99.note-blocks-quod-nunquam-bf85ea98c0a0",
+        "edition_id": "edition.acta-papal-archives.ass.008.ass-008-act-003",
+        "segment_id": "segment.acta-papal-archives.ass.008.ass-008-act-003.native-spacing-bf733a255f99.note-blocks-bf85ea98c0a0",
+        "source_sha256": "bf85ea98c0a03faf891d2008552178309ac61663fa7da5a308ca2e11bdf96bbb",
+        "physical_line_ranges": [
+          [
+            1,
+            182
+          ]
+        ],
+        "render_revision": "2026-10-30T06:44:01Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 2,
+        "pdf_sha256": "37a78f9c9e7a3bf5379004af088a0691387e3ea613b865095cdae4ae466fbb31",
+        "receipt_sha256": "a82c99d6e0411906ec1ea3c713a6b1a6a5430ba4a42b62072a3ce6aff434b8cc"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-repairs-22b/reviews.json",
+            "sha256": "e9f832e91e851b45db8b05ae1c9b8992fec02149635c8137893c27caaada4bba"
+          },
+          "declaration": {
+            "id": "acta.ass.008.ass-008-act-003",
+            "language": "la",
+            "pdf_sha256": "37a78f9c9e7a3bf5379004af088a0691387e3ea613b865095cdae4ae466fbb31",
+            "pages": 2,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2
+                ],
+                "description": "All four selected source-note groups occupy separate paragraph blocks. The native spacing projection preserves source order and literal zero-match records; inherited OCR damage remains visible but the body is usable. The page 2 dated closing, PIVS PP. IX subscription and final historical note precede the ruled terminal apparatus. No clipping, overlap or apparatus-only page was observed."
+              }
+            ],
+            "limitations": "Independent reader usability, layout, source-note boundaries and exact bounded transformation replay only. Every reader page was viewed in contact overview and individually at full size; native full-size pages are listed in the report, with other native pages inspected in contact overview. Native Vatican PDFs are OCR reconstructions. This does not certify original-print glyphs, whole-volume or word-for-word collation, lexical OCR accuracy, translation equivalence, source completeness beyond checked boundaries, or rights. No raster or prior reviewer PASS was reused as acceptance; no source/PDF/canonical/cache writes, rerender, installation, commit or push occurred."
+          }
+        }
+      ],
+      "historical_evidence": [],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 19,
+      "original_key": [
+        "acta.ass.016.ass-016-act-007",
+        "la"
+      ],
+      "title": "Humanum genus",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.016.ass-016-act-007",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.016.historical-text-83bd7db6.source-order-humanum-genus-la-a36254d548f6",
+        "edition_id": "edition.acta-papal-archives.ass.016.ass-016-act-007",
+        "segment_id": "segment.acta-papal-archives.ass.016.ass-016-act-007.source-order-a36254d548f6",
+        "source_sha256": "a36254d548f6ae09187428365b6cb09c33acfa695ed4b8fcfb08f20bf25346be",
+        "physical_line_ranges": [
+          [
+            1,
+            48
+          ],
+          [
+            49,
+            107
+          ],
+          [
+            108,
+            148
+          ],
+          [
+            149,
+            190
+          ],
+          [
+            191,
+            234
+          ],
+          [
+            235,
+            278
+          ],
+          [
+            279,
+            319
+          ],
+          [
+            320,
+            364
+          ],
+          [
+            365,
+            405
+          ],
+          [
+            406,
+            447
+          ],
+          [
+            448,
+            488
+          ],
+          [
+            489,
+            528
+          ],
+          [
+            529,
+            572
+          ],
+          [
+            573,
+            613
+          ],
+          [
+            614,
+            654
+          ],
+          [
+            655,
+            695
+          ],
+          [
+            696,
+            706
+          ]
+        ],
+        "render_revision": "2026-10-30T08:50:00Z",
+        "compact_layout": true,
+        "compact_margin": 0.6,
+        "pages": 8,
+        "pdf_sha256": "38a6feff61507fb43b6a181943b4b2f633e06d8208bfaabb930947619411ea3f",
+        "receipt_sha256": "69c5924cea0f4d3c1b0f56e89333c66034f2526cf65a20501d204fa411d4db2d"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-repairs-24a/reviews.json",
+            "sha256": "dc65ecdf047fef54bf6cd8e29e526127012dd7b101eb17d8a567bd52a67b6196"
+          },
+          "declaration": {
+            "id": "acta.ass.016.ass-016-act-007",
+            "language": "la",
+            "pdf_sha256": "38a6feff61507fb43b6a181943b4b2f633e06d8208bfaabb930947619411ea3f",
+            "pages": 8,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  3,
+                  4,
+                  6
+                ],
+                "description": "Five note groups separate; p1 source note columns read left-first with no interleaving. Duplicate (5)/damaged years retained."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  8
+                ],
+                "description": "Sparse final page retains source ending/date and literal OCR-damaged subscription before apparatus."
+              }
+            ],
+            "limitations": "Independent cold reader/source-boundary acceptance only. All reader pages contact/full-size inspected; native note/column/exception coverage and exact replays as report details. No lexical OCR or translation certification, original-print collation of archival OCR reconstructions, new rights judgment, installation or deployment. Producer PASS not adopted."
+          }
+        }
+      ],
+      "historical_evidence": [],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 20,
+      "original_key": [
+        "acta.ass.018.ass-018-005",
+        "la"
+      ],
+      "title": "Litterae encyclicae quibus extraordinarium Iubilaeum indicitur",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.018.ass-018-005",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.018.historical-text-7561964e.quod-auctoritate-text-a4ab2cc95980",
+        "edition_id": "edition.acta-papal-archives.ass.018.ass-018-005",
+        "segment_id": "segment.acta-papal-archives.ass.018.ass-018-005.quod-auctoritate-a4ab2cc95980",
+        "source_sha256": "a4ab2cc95980ae1f7a90500eea763e5712816494e9c47540980c3e696cc92392",
+        "physical_line_ranges": [
+          [
+            1,
+            240
+          ]
+        ],
+        "render_revision": "2026-10-30T08:19:46Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 3,
+        "pdf_sha256": "b130b6e8dd4f91fdeb72e290e9b4e1ab32f4fce63a27bb16e70e389cae8c5ed7",
+        "receipt_sha256": "048b5919f8a6df92243c67c7bb204c3bba9a3fa539489bf9d40fe4e85b0f5644"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "UNOWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-final-unowned-cold/sacra-quod/reviews.json",
+            "sha256": "38755d141770c2713976ef64b7a1e44977ff683a71677aa2b84f7aa786c0b36a"
+          },
+          "declaration": {
+            "id": "acta.ass.018.ass-018-005",
+            "language": "la",
+            "pdf_sha256": "b130b6e8dd4f91fdeb72e290e9b4e1ab32f4fce63a27bb16e70e389cae8c5ed7",
+            "pages": 3,
+            "status": "PASS",
+            "source_intake_status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2,
+                  3
+                ],
+                "description": "Independent cold contact and every original-resolution full-size reader page inspected freshly; no reused pages. Native source context, exact body/wrapper TeX replay, source/PDF text fidelity, fonts, metadata, logs and complete closing checked separately. Historical notes remain distinct paragraph blocks."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  2
+                ],
+                "description": "Exact page259 source units deliberately change row order1,3,2,4 to native column order1,2,3,4; each unit retained once and rendered in separate paragraphs. Global non-LF byte order is not claimed."
+              }
+            ],
+            "limitations": "Fresh independent bounded source intake and whole-reader review. Native Vatican OCR reconstruction geometry only; no original-print, lexical, translation, legal/rights or doctrinal certification. Literal OCR defects and source divisions remain; source admission belongs to coordinator."
+          }
+        }
+      ],
+      "historical_evidence": [],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 21,
+      "original_key": [
+        "acta.ass.020.ass-020-007",
+        "la"
+      ],
+      "title": "Litterae ad Archiepiscopos et Episcopos Bavariae",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.020.ass-020-007",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.020.historical-text-c3d47678.note-blocks-officio-sanctissimo-9f316145741b",
+        "edition_id": "edition.acta-papal-archives.ass.020.ass-020-007",
+        "segment_id": "segment.acta-papal-archives.ass.020.ass-020-007.note-blocks-9f316145741b",
+        "source_sha256": "9f316145741bd007f7c758bed2ced93570d151b98fdfe9135ef4330cad04205b",
+        "physical_line_ranges": [
+          [
+            1,
+            640
+          ]
+        ],
+        "render_revision": "2026-10-30T05:57:41Z",
+        "compact_layout": true,
+        "compact_margin": 0.65,
+        "pages": 7,
+        "pdf_sha256": "5b250a02dffa43935a12f40e9e2bb5f493531e30de7abd5813f4dcf231d9289d",
+        "receipt_sha256": "048b5919f8a6df92243c67c7bb204c3bba9a3fa539489bf9d40fe4e85b0f5644"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-repairs-22b/reviews.json",
+            "sha256": "e9f832e91e851b45db8b05ae1c9b8992fec02149635c8137893c27caaada4bba"
+          },
+          "declaration": {
+            "id": "acta.ass.020.ass-020-007",
+            "language": "la",
+            "pdf_sha256": "5b250a02dffa43935a12f40e9e2bb5f493531e30de7abd5813f4dcf231d9289d",
+            "pages": 7,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "description": "All eight selected historical note groups remain distinguishable from body continuations. Source OCR fragments, hard-line hyphens and occasional spaced letters remain visible without making the body unusable. Page 7 retains the source closing and LEO PP. XIII subscription; the compact apparatus continues in ordinary column order at top right. No clipping, overlap or apparatus-only page was observed."
+              }
+            ],
+            "limitations": "Independent reader usability, layout, source-note boundaries and exact bounded transformation replay only. Every reader page was viewed in contact overview and individually at full size; native full-size pages are listed in the report, with other native pages inspected in contact overview. Native Vatican PDFs are OCR reconstructions. This does not certify original-print glyphs, whole-volume or word-for-word collation, lexical OCR accuracy, translation equivalence, source completeness beyond checked boundaries, or rights. No raster or prior reviewer PASS was reused as acceptance; no source/PDF/canonical/cache writes, rerender, installation, commit or push occurred."
+          }
+        }
+      ],
+      "historical_evidence": [],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 22,
+      "original_key": [
+        "acta.ass.020.ass-020-014",
+        "la"
+      ],
+      "title": "Litterae encyclicae de libertate humana",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.020.ass-020-014",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.020.historical-text-c3d47678.note-blocks-libertas-24ef53f8092a",
+        "edition_id": "edition.acta-papal-archives.ass.020.ass-020-014",
+        "segment_id": "segment.acta-papal-archives.ass.020.ass-020-014.note-blocks-24ef53f8092a",
+        "source_sha256": "24ef53f8092a9cc9e8eaceea7c54f0bb00d20f7eb3644ea991c5effc59fc0721",
+        "physical_line_ranges": [
+          [
+            1,
+            889
+          ]
+        ],
+        "render_revision": "2026-10-30T12:19:46Z",
+        "compact_layout": true,
+        "compact_margin": 0.65,
+        "pages": 10,
+        "pdf_sha256": "73ab8370c244f7452b7c990614977b805338e55a2075d41908ebe66e36904b76",
+        "receipt_sha256": "45a4d03cc49205b4d790e8b3a03be816ec807ed6d3d5f522f611cda9e8f2edb2"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-refinement-package/cold-review-54-replacement/reviews.json",
+            "sha256": "ded4756aebdfb0237c5b1e949d2ab5c60d2d3869af87fe57a4c6bd00cfb678b4"
+          },
+          "declaration": {
+            "id": "acta.ass.020.ass-020-014",
+            "language": "la",
+            "pdf_sha256": "73ab8370c244f7452b7c990614977b805338e55a2075d41908ebe66e36904b76",
+            "source_sha256": "24ef53f8092a9cc9e8eaceea7c54f0bb00d20f7eb3644ea991c5effc59fc0721",
+            "pages": 10,
+            "status": "PASS",
+            "source_status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  6
+                ],
+                "description": "Native604 S.Thomas note was already separated; unchanged source and explicit PDF paragraph confirmed."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  8
+                ],
+                "description": "Only historicalLF24259 Augustine note changed: two LF bytes inserted, all nonLF bytes/order preserved; visibly separate in reader8."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  10
+                ],
+                "description": "Sparse genuine source-bearing blessing, date and subscription precede apparatus and colophon; accepted with this qualification."
+              }
+            ],
+            "limitations": "Bounded LF-only source/geometry and all-page mechanical PDF review. Literal OCR/hard hyphens remain; no lexical, translation, original-print, new rights, installation, admission or deployment certification. No inherited visual coverage. Root owns canonical integration."
+          }
+        }
+      ],
+      "historical_evidence": [],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 23,
+      "original_key": [
+        "acta.ass.021.ass-021-013",
+        "la"
+      ],
+      "title": "Epistola de Lycaeo catholico Washingtoniensi",
+      "stop_state": "FINAL_TWO_PAGE_PDF_PASS_ADMISSION_RECONCILIATION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.021.ass-021-013",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.021.historical-text-babe304f",
+        "edition_id": "edition.acta-papal-archives.ass.021.ass-021-013",
+        "segment_id": "segment.acta-papal-archives.ass.021.ass-021-013",
+        "source_sha256": "babe304ff402937d3173056d7efda817b820345aa01904c6f8b024cbd826cdff",
+        "physical_line_ranges": [
+          [
+            20008,
+            20020
+          ],
+          [
+            20022,
+            20061
+          ],
+          [
+            20063,
+            20093
+          ]
+        ],
+        "render_revision": "2026-10-30T02:56:48Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 2,
+        "pdf_sha256": "bc82e054ded80ff5101d606a172433b9752c78b67976dd37ced53793318e5337",
+        "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e"
+      },
+      "stop_qualification": "Exact whole2-page independent reader PASS retained; root owns final source/release reconciliation.",
+      "historical_census_status": "READY_EXACT_FINAL",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-original02-tail-ass21-013/report.md",
+          "sha256": "40d6bbca27c87ee2f363aa93ac4f07fec2b05e1243e872af18bb8654c44f7b2c",
+          "bytes": 7917
+        },
+        {
+          "path": ".scratch/encyclical-original02-tail-ass21-013/reviews.json",
+          "sha256": "c1cd6e5da227469b23771adbb4215710a275c3f4a46193f0a9427df3bcd26051",
+          "bytes": 2983
+        },
+        {
+          "path": ".scratch/encyclical-original02-tail-ass21-013/final-state.json",
+          "sha256": "1f46a51f5f11fbad218a27fa94168a19376b5a3bc2291940d0d2a9cb0b2382ab",
+          "bytes": 1040
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 24,
+      "original_key": [
+        "acta.ass.022.ass-022-007",
+        "la"
+      ],
+      "title": "Litterae encyclicae de praecipuis civium christianorum officiis",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.022.ass-022-007",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.022.historical-text-5f0e2078.note-blocks-sapientiae-christianae-la-e10a6ecdb2be",
+        "edition_id": "edition.acta-papal-archives.ass.022.ass-022-007",
+        "segment_id": "segment.acta-papal-archives.ass.022.ass-022-007.note-blocks-e10a6ecdb2be",
+        "source_sha256": "e10a6ecdb2bea0588b1f9f8225a6ca8cc2389349aa886edc5caeb913f30d9f0e",
+        "physical_line_ranges": [
+          [
+            1,
+            846
+          ]
+        ],
+        "render_revision": "2026-10-30T06:07:52Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 9,
+        "pdf_sha256": "5d212c8d20b35c897fa4bcc3c9703627a39eac1c9d8e53393b8c7e9d7a35a61c",
+        "receipt_sha256": "c6c3a721509d26aeae0ee1f4a09d74eb7a5e7d5a84d8bd54f5ba868d20d0ce68"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-repairs-22b/reviews.json",
+            "sha256": "e9f832e91e851b45db8b05ae1c9b8992fec02149635c8137893c27caaada4bba"
+          },
+          "declaration": {
+            "id": "acta.ass.022.ass-022-007",
+            "language": "la",
+            "pdf_sha256": "5d212c8d20b35c897fa4bcc3c9703627a39eac1c9d8e53393b8c7e9d7a35a61c",
+            "pages": 9,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "description": "All 15 selected historical note groups have distinct paragraph starts. Retained source hard-line hyphens and occasional interletter spacing remain visible, but the body is usable. The page 9 dated closing, LEO PP. XIII subscription and final historical citation precede ruled terminal apparatus; no apparatus-only page, clipping or overlap was observed."
+              }
+            ],
+            "limitations": "Independent reader usability, layout, source-note boundaries and exact bounded transformation replay only. Every reader page was viewed in contact overview and individually at full size; native full-size pages are listed in the report, with other native pages inspected in contact overview. Native Vatican PDFs are OCR reconstructions. This does not certify original-print glyphs, whole-volume or word-for-word collation, lexical OCR accuracy, translation equivalence, source completeness beyond checked boundaries, or rights. No raster or prior reviewer PASS was reused as acceptance; no source/PDF/canonical/cache writes, rerender, installation, commit or push occurred."
+          }
+        }
+      ],
+      "historical_evidence": [],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 25,
+      "original_key": [
+        "acta.ass.023.ass-023-003",
+        "it"
+      ],
+      "title": "Lettera enciclica ai Vescovi al Clero e al popolo Italiae",
+      "stop_state": "METADATA_ADJUDICATION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.023.ass-023-003",
+        "language": "it",
+        "artifact_id": "artifact.acta-papal-archives.ass.023.ass-023-003-native-spacing-notes-94ba10b55a4b",
+        "edition_id": "edition.acta-papal-archives.ass.023.ass-023-003",
+        "segment_id": "segment.acta-papal-archives.ass.023.ass-023-003.native-spacing-2026-10-30.note-blocks",
+        "source_sha256": "94ba10b55a4b08c1e045252a28fb9b021df25cebd22c260bf9d4e125fbad818a",
+        "physical_line_ranges": [
+          [
+            1,
+            559
+          ]
+        ],
+        "render_revision": "2026-10-30T07:39:53Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 7,
+        "pdf_sha256": "29aebbab1847af0c6556d2f6377079f63899c88b84a5982fb071107291e2f63b",
+        "receipt_sha256": "fdac021cc0aa298770e1889138c9f34f080c649b8c5e631d0a39262ca1bb466b"
+      },
+      "stop_qualification": "Recover final observer declaration or explicitly adjudicate the already-persisted whole-document scope; do not invent PASS.",
+      "historical_census_status": "NEEDS_METADATA_ADJUDICATION",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [
+        {
+          "path": ".scratch/cold-repairs-20b/inspections.json",
+          "sha256": "023ddb554b36956ef33908d888884b9513f9d83b6432876c0fe78f84e6b561f4",
+          "bytes": 1557
+        },
+        {
+          "path": ".scratch/cold-repairs-20b/verification.json",
+          "sha256": "76fd8047773918038d425ec1646fb5065f734b6825de2e9b0fbfe189e8fe1a7c",
+          "bytes": 68931
+        },
+        {
+          "path": ".scratch/cold-repairs-20b/fidelity.json",
+          "sha256": "b67c8f2276e8a645515c730b2bdcb7d2b625fd4e9db355846f6c8cba52c5ba9c",
+          "bytes": 1365
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 26,
+      "original_key": [
+        "acta.ass.024.ass-024-002",
+        "la"
+      ],
+      "title": "Epistola ad Archiepiscopos et Episcopos Regni Lusitani",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.024.ass-024-002",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.024.pastoralis-spacing-repair-native-spacing-4aad6b469b2d",
+        "edition_id": "edition.acta-papal-archives.ass.024.ass-024-002",
+        "segment_id": "segment.acta-papal-archives.ass.024.ass-024-002.pastoralis-spacing-repair-4aad6b469b2d",
+        "source_sha256": "4aad6b469b2d76f5d01eb56403132a1eabe9717957dc219df0c0e1f62d4fc3d7",
+        "physical_line_ranges": [
+          [
+            1,
+            230
+          ]
+        ],
+        "render_revision": "2026-10-30T19:45:37Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 3,
+        "pdf_sha256": "488f21d1675100c4e5c5bc2442ac7a36a4795eeeae3db2361fcb08e6639ff5e3",
+        "receipt_sha256": "7c38344d71fb4f3719a5125d0b7fd45a828c938ba15d208f8f548d6f846f9cdd"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "READY_EXACT_FINAL",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-refinement-package/cold-review-56/reviews.json",
+            "sha256": "8f2c9b7e0dbf698ef632160d44353a8c05b2d7e0ff4705b7853529387b8220b2"
+          },
+          "declaration": {
+            "id": "acta.ass.024.ass-024-002",
+            "language": "la",
+            "pdf_sha256": "488f21d1675100c4e5c5bc2442ac7a36a4795eeeae3db2361fcb08e6639ff5e3",
+            "pages": 3,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "description": "LF2583 praestabiles est more and LF2600 gaudemus now use native whitespace; current reader words are continuous, with regular gau-/demus wrapping.",
+                "pages": [
+                  1,
+                  2
+                ],
+                "severity": "info"
+              },
+              {
+                "description": "Complete original date LF2737 retained exactly because raw native extraction fuses DatumRomae and xxvIunii despite positive WORD-geometry gaps; literal Romae letterspacing remains readable.",
+                "pages": [
+                  3
+                ],
+                "severity": "qualification"
+              },
+              {
+                "description": "Independent current fidelity result is 62 layout hyphens, equal to the final receipt; producer prose saying 61 is stale.",
+                "pages": [
+                  1,
+                  2,
+                  3
+                ],
+                "severity": "info"
+              }
+            ],
+            "limitations": [
+              "Vatican archival OCR reconstructions; no original-print image identity or whole-source lexical collation.",
+              "Historical OCR spelling, glyph errors, punctuation and original hard hyphens remain literal; no corrected-Latin or translation claim.",
+              "Complete original date LF2737 retained byte-exact with Romae letterspacing under preserve_original:true/native_match_count:1.",
+              "Existing edition-specific historical distribution basis remains controlling; no new rights clearance.",
+              "Prior source/PDF/cold pins are candidate history, not a certified installed/public predecessor. Root owns adoption, supersession and broad integration gates.",
+              "PDF is untagged; all three actual reader pages freshly inspected without visual review reuse."
+            ]
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-refinement-package/cold-review-56/report.md",
+          "sha256": "816e7758d03f003a17ef9945aeaba0ca08475043e97069f70e01dcc26dd0b4b3",
+          "bytes": 9950
+        },
+        {
+          "path": ".scratch/encyclical-refinement-package/cold-review-56/reviews.json",
+          "sha256": "8f2c9b7e0dbf698ef632160d44353a8c05b2d7e0ff4705b7853529387b8220b2",
+          "bytes": 2916
+        },
+        {
+          "path": ".scratch/encyclical-refinement-package/acceptance-56.json",
+          "sha256": "d17da1efb642d7882e8e240d6760f280ff944487ccf8336bf068c70f428d66b1",
+          "bytes": 1589
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 27,
+      "original_key": [
+        "acta.ass.024.ass-024-006",
+        "la"
+      ],
+      "title": "Epistola de prava duellorum consuetudine",
+      "stop_state": "SOURCE_EXTENT_CHANGES_REQUIRED_COLD_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.024.ass-024-006",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.024.duellorum-spacing07-native-spacing-f80edee4c9a0",
+        "edition_id": "edition.acta-papal-archives.ass.024.ass-024-006",
+        "segment_id": "segment.acta-papal-archives.ass.024.ass-024-006.spacing07-2026-10-30",
+        "source_sha256": "f80edee4c9a0b6f936190080f6a87705f17ba2e9e70d6aea70bc14fec5a511c2",
+        "physical_line_ranges": [
+          [
+            1,
+            159
+          ]
+        ],
+        "render_revision": "2026-10-30T16:46:00Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 2,
+        "pdf_sha256": "2f1062e6f8051cba331a7d60a56d4c0f89d5fe4872bfc00ecc16901c43a488ec",
+        "receipt_sha256": "ea5e9fbb93f4c39ed583008a10231fc371f4641111f3213c1e333c455fdf0c24"
+      },
+      "stop_qualification": "Current Duellorum still includes foreign Octobri LF7848–7851. Authorized exclusion derivative was not begun. Producer2-page review does not admit this source.",
+      "historical_census_status": "PRODUCER_OWNED",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 28,
+      "original_key": [
+        "acta.ass.026.ass-026-l25716",
+        "la"
+      ],
+      "title": "Inter graves ac multiplices curas",
+      "stop_state": "NEW_PRODUCER_CANDIDATE_COLD_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.026.ass-026-l25716",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.026.inter-graves-spacing-repair-note-blocks-a645c6eec3dd",
+        "edition_id": "edition.acta-papal-archives.ass.026.ass-026-l25716",
+        "segment_id": "segment.acta-papal-archives.ass.026.ass-026-l25716.inter-graves-spacing-repair-a645c6eec3dd",
+        "source_sha256": "a645c6eec3dd2c08dcdc7598e9f8d1913e8cfccc0bada26b3af11f869643e5c6",
+        "physical_line_ranges": [
+          [
+            1,
+            217
+          ]
+        ],
+        "render_revision": "2026-10-30T21:16:19Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 3,
+        "pdf_sha256": "abddea5ae1631e3a3b099b762fbb34de4517c40af118989822e5f6e22f2c6a10",
+        "receipt_sha256": "44b433fc4e7b8cc2130bc3043cc76a00ba59ba2b653a18fcca253e0f62880fb4"
+      },
+      "stop_qualification": "Inter graves new27 canonical files and3-page candidate frozen; exact new source a645c6ee/PDF abddea5a. Old failure remains historical; independent cold pending.",
+      "historical_census_status": "UNOWNED",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-baseline-continuation-10/reviews.json",
+          "sha256": "8c71a654f4b3d1f165b3ba4efd0698f5e1c6baba84615d55f51fed7f61a9560f",
+          "bytes": 15330
+        },
+        {
+          "path": ".scratch/encyclical-repair-queue/queue.json",
+          "sha256": "e6622a7d37778f11b6e6d1c74452595b5bfba4edec1d81857f833430c30de81d",
+          "bytes": 1774880
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 29,
+      "original_key": [
+        "acta.ass.027.ass-027-l06921",
+        "la"
+      ],
+      "title": "Iucunda semper",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.027.ass-027-l06921",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.027.historical-text-76fd18c3.note-blocks-iucunda-4435ef758f69",
+        "edition_id": "edition.acta-papal-archives.ass.027.ass-027-l06921",
+        "segment_id": "segment.acta-papal-archives.ass.027.ass-027-l06921.note-blocks-4435ef758f69",
+        "source_sha256": "4435ef758f69b639a9aedc220ca03de1b834afcce5c7bb4736f6265b9f8eeb89",
+        "physical_line_ranges": [
+          [
+            1,
+            305
+          ]
+        ],
+        "render_revision": "2026-10-30T13:54:09Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 4,
+        "pdf_sha256": "62b8484c02fa1b472023a3d5ccd598fa8c741c2dad9ea1b62ead8eea85bef16c",
+        "receipt_sha256": "3a5116be219002746f02989dd0acbafb8207defa64ba4fb19b2f27754373720a"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "UNOWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-final-unowned-cold/fausto-iucunda/reviews.json",
+            "sha256": "89fe3f9c46884f637aa4156a37a2036cfc3ab8b19df3186017f241eb3981de73"
+          },
+          "declaration": {
+            "id": "acta.ass.027.ass-027-l06921",
+            "language": "la",
+            "pdf_sha256": "62b8484c02fa1b472023a3d5ccd598fa8c741c2dad9ea1b62ead8eea85bef16c",
+            "pages": 4,
+            "status": "PASS",
+            "source_intake_status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "reused_pages": [],
+            "findings": [],
+            "limitations": [
+              "Archival -ocr PDF is reconstruction evidence, not original-print facsimile.",
+              "Literal OCR defects and spacing retained; source and PDF PASS does not certify historical word-level accuracy.",
+              "Terminal note raw-extraction LF7255 is historical-parent LF7250 after five excluded wrapper lines; bytes and ownership independently match.",
+              "Bounded mechanical source and whole-PDF review only; no lexical, translation or independent rights certification."
+            ]
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-notes-15/delivery.json",
+          "sha256": "e7248ce7e48f765735356377f9ed2a93f99dc9a4ae096972a54661c1eb1e0d8c",
+          "bytes": 2218
+        },
+        {
+          "path": ".scratch/encyclical-notes-15/iucunda-report.md",
+          "sha256": "0e624da1847c7c9151db31062f6eeb6662c6de53ab232af6d5383cc4b30754bd",
+          "bytes": 2982
+        },
+        {
+          "path": ".scratch/encyclical-notes-15/iucunda-reviews.json",
+          "sha256": "0531d1d1375ab4d38a843b559d08e7e193619bd8f6938228153b59f060d955c7",
+          "bytes": 1584
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 30,
+      "original_key": [
+        "acta.ass.028.ass-028-l28012",
+        "la"
+      ],
+      "title": "Satis cognitum",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.028.ass-028-l28012",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.028.satis-cognitum-native-spacing-f0f70eaea0d7.note-blocks-satis-cognitum-native-spacing-3df27f88c169",
+        "edition_id": "edition.acta-papal-archives.ass.028.ass-028-l28012",
+        "segment_id": "segment.acta-papal-archives.ass.028.ass-028-l28012.satis-finish-b7a67679c6b9",
+        "source_sha256": "3df27f88c16951c7750aec069f20ca75ec4f464a7ed6966598a5f28927692414",
+        "physical_line_ranges": [
+          [
+            1,
+            1432
+          ]
+        ],
+        "render_revision": "2026-10-30T17:32:38Z",
+        "compact_layout": true,
+        "compact_margin": 0.65,
+        "pages": 13,
+        "pdf_sha256": "ff868830cfc2384b6a96d9bb5850e1366e3ae95cdf55f64f3cd3bafc1f1a86e7",
+        "receipt_sha256": "a5f946999df19e5a5c21a9e1982cb0918d7944c39ff82fd07b86e4bd906a922b"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "READY_EXACT_FINAL",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-refinement-package/cold-review-48-aggregate/reviews.json",
+            "sha256": "30d515a46eeeb00180c2a9d15b79b07116ef738fb13f44200cf6f50f00e1889e"
+          },
+          "declaration": {
+            "id": "acta.ass.028.ass-028-l28012",
+            "language": "la",
+            "pdf_sha256": "ff868830cfc2384b6a96d9bb5850e1366e3ae95cdf55f64f3cd3bafc1f1a86e7",
+            "source_sha256": "3df27f88c16951c7750aec069f20ca75ec4f464a7ed6966598a5f28927692414",
+            "pages": 13,
+            "status": "PASS",
+            "source_status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "qualification",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13
+                ],
+                "description": "Literal OCR spelling, hard hyphens, markers and four explicitly retained original LF contexts remain. Source is archival OCR reconstruction; no original-print or lexical collation."
+              }
+            ],
+            "limitations": [
+              "Coordinator verifies exact final independent evidence union; no new coordinator image views.",
+              "Only persisted source708–713 plus freshpart2 714–739 count; unpersisted primary views excluded.",
+              "No source admission, public predecessor adoption, installation or publication action."
+            ]
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-refinement-package/cold-review-48/report.md",
+          "sha256": "8177063e73375149832f67f7ba0491f3e158b7d56b26797f08ff2ccb2fd1415d",
+          "bytes": 12765
+        },
+        {
+          "path": ".scratch/encyclical-refinement-package/cold-review-48/reviews.json",
+          "sha256": "a45a86f72cfcc6d71bbaceb660e19feb64fd1a7d1aefd1d99441f59af419240e",
+          "bytes": 2715
+        },
+        {
+          "path": ".scratch/encyclical-refinement-package/cold-review-48-source-part2/source-decision.json",
+          "sha256": "e1cbc37dc70d8bdf267808195ebd2ac9279b8294b5f3afd414303e0243b0b7f1",
+          "bytes": 2724
+        },
+        {
+          "path": ".scratch/encyclical-refinement-package/role-decision-48-source-part2.json",
+          "sha256": "05a7a6e209ad31323f3e5a21e817a0388ebfccebbf26e545722a12bfa554cd98",
+          "bytes": 2054
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 31,
+      "original_key": [
+        "acta.ass.030.ass-030-l00052",
+        "la"
+      ],
+      "title": "Militantis Ecclesiae",
+      "stop_state": "PRODUCER_COMPLETE_COLD_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.030.ass-030-l00052",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.030.historical-text-f579c229.militantis-spacing-note-blocks-ffa37ec61594",
+        "edition_id": "edition.acta-papal-archives.ass.030.ass-030-l00052",
+        "segment_id": "segment.acta-papal-archives.ass.030.ass-030-l00052.spacing-note-blocks-ffa37ec61594",
+        "source_sha256": "ffa37ec615946132fb701085b26b457f08d33db37599dfd5dff20982fe42a484",
+        "physical_line_ranges": [
+          [
+            1,
+            297
+          ]
+        ],
+        "render_revision": "2026-10-30T19:17:41Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 4,
+        "pdf_sha256": "460ce10c7f3029af569890bf4fe7f223e4550d88cb3f73f1030c0f2327bd68aa",
+        "receipt_sha256": "f27c8de8dd0b6272a61c06b062ce305ad48efbb523e247cbb2e154ee3c6ee4f9"
+      },
+      "stop_qualification": "Militantis whitespace variant source/PDF producer-only. First three notes11 candidates have separately retained cold54/55/53 judgments.",
+      "historical_census_status": "PRODUCER_OWNED",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 32,
+      "original_key": [
+        "acta.ass.030.ass-030-l05020",
+        "la"
+      ],
+      "title": "Augustissimae Virginis Mariae",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.030.ass-030-l05020",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.030.historical-text-f579c229.note-recovery-augustissimae-a20295376835",
+        "edition_id": "edition.acta-papal-archives.ass.030.ass-030-l05020",
+        "segment_id": "segment.acta-papal-archives.ass.030.ass-030-l05020.note-recovery-a20295376835",
+        "source_sha256": "a20295376835139dcfefc70b18bcae14126ebe5e1944f9c3a13a726b45f6fa27",
+        "physical_line_ranges": [
+          [
+            1,
+            281
+          ]
+        ],
+        "render_revision": "2026-10-30T13:02:18Z",
+        "compact_layout": true,
+        "compact_margin": 0.6,
+        "pages": 3,
+        "pdf_sha256": "860bc2af88e7a1454657b0879f6b9c59f92f63f82c6f0f59a8a58de6e44faf48",
+        "receipt_sha256": "779568d49816c5ea02940d965c552c2b8a686ce966249aa20630ae7c9ddd7cc7"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "READY_EXACT_FINAL",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-refinement-package/cold-review-53/reviews.json",
+            "sha256": "f0e0f9d89904f60e0efff67b7d827f18c85e0b45da8a3e35a581e1c8409db9bc"
+          },
+          "declaration": {
+            "id": "acta.ass.030.ass-030-l05020",
+            "language": "la",
+            "pdf_sha256": "860bc2af88e7a1454657b0879f6b9c59f92f63f82c6f0f59a8a58de6e44faf48",
+            "pages": 3,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1
+                ],
+                "description": "Clear title/issuer/date/Latin and historical encyclical heading. Both columns readable with no clipping, overlap or missing glyphs. Historical note groups at left-column Eccli. XXIV/Io. XIX and right-column Eccli. XXIV/Ps. II/Apolog. are separate indented paragraphs, followed by separate body paragraphs; retained source-page positions remain valid despite body continuation. Literal letter spacing, line-end hyphens and OCR note-marker defects remain disclosed; no material unreadability."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  2
+                ],
+                "description": "Normal column continuation and body legibility; no clipping, overlap or glyph loss. Dialog./In Ps./Act. note group in left column and De orat./Conc. Trid. group in right are discrete indented paragraphs with separate resumed quotation/body. Native source-page note positions remain apparent; literal OCR and spaced words persist as disclosed, without material loss of readability."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  3
+                ],
+                "description": "Page carries substantial body in left column and right-column Iudith quotation ending Fiat, fiat (1), benediction, Datum Romae…die xn Septembris MDCCCXCVII…anno vicesimo and LEO P P . XIII. Recovered literal ii) lud. XIII, 25 et seqq. forms its own paragraph after subscription. S. Th. and Heb./Splendor/Consueverunt note groups are separately indented. Terminal rule, source limitations, revision and compact rights colophon are legible; no clipping, overlap, neighbor Munkacsen text or apparatus-only final. Spaced words/numerals and literal citation defects remain qualified source OCR."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2,
+                  3
+                ],
+                "description": "SOURCE OWNERSHIP/EXTENT PASS: native129–135 freshly inspected. Native135 own Iudith quotation/callout, separate subscription and sole page-foot citation support exact LF5310 recovery beyond excluded Munkacsen neighbor5287–5309. Prior non-LF bytes preserved as prefix plus recovered unit; all expanded selection bytes/order preserved. Three fused note groups now have separate LF paragraphs; literal OCR/reference defects retained."
+              }
+            ],
+            "limitations": "Archival Vatican OCR reconstruction; no original-print, lexical or translation collation. Literal OCR, spaced letters, source hyphens and reference-marker defects remain. Exact compact 0.6-inch/10.5pt/12.5pt candidate reviewed. Predecessor PDF is retained candidate history, not certified installed/public prior. No installation, adoption or new rights clearance."
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-refinement-package/cold-review-53/report.md",
+          "sha256": "7719c6fbea6ee8d7f015ffe3ba39872a548de8189ea116b7a91b2e5139cdf3fa",
+          "bytes": 12568
+        },
+        {
+          "path": ".scratch/encyclical-refinement-package/cold-review-53/reviews.json",
+          "sha256": "f0e0f9d89904f60e0efff67b7d827f18c85e0b45da8a3e35a581e1c8409db9bc",
+          "bytes": 6529
+        },
+        {
+          "path": ".scratch/encyclical-refinement-package/acceptance-53.json",
+          "sha256": "013806b1eeb272213f1a226bd1f0f3f06513c5c86827e6e372abb24eea4079af",
+          "bytes": 1349
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 33,
+      "original_key": [
+        "acta.ass.031.ass-031-l00195",
+        "la"
+      ],
+      "title": "Caritatis studium",
+      "stop_state": "METADATA_ADJUDICATION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.031.ass-031-l00195",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.031.caritatis-studium-native-spacing-notes-d6ae05aa21db",
+        "edition_id": "edition.acta-papal-archives.ass.031.ass-031-l00195",
+        "segment_id": "segment.acta-papal-archives.ass.031.ass-031-l00195.native-spacing-2026-10-30",
+        "source_sha256": "d6ae05aa21db81565df23b1b9781715efeee7c67fba0fa3c6826e579ba779ad7",
+        "physical_line_ranges": [
+          [
+            1,
+            363
+          ]
+        ],
+        "render_revision": "2026-10-30T06:40:13Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 4,
+        "pdf_sha256": "8269ff5a099e435c69cb325f44d9d668258d5d83ea8a82bd1dbeeeb418a91c9c",
+        "receipt_sha256": "ca164d3c04886c0b42693befed248e1b308132af382ab91f337c8cd07384e2d9"
+      },
+      "stop_qualification": "Recover final observer declaration or explicitly adjudicate the already-persisted whole-document scope; do not invent PASS.",
+      "historical_census_status": "NEEDS_METADATA_ADJUDICATION",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [
+        {
+          "path": ".scratch/cold-repairs-20b/inspections.json",
+          "sha256": "023ddb554b36956ef33908d888884b9513f9d83b6432876c0fe78f84e6b561f4",
+          "bytes": 1557
+        },
+        {
+          "path": ".scratch/cold-repairs-20b/verification.json",
+          "sha256": "76fd8047773918038d425ec1646fb5065f734b6825de2e9b0fbfe189e8fe1a7c",
+          "bytes": 68931
+        },
+        {
+          "path": ".scratch/cold-repairs-20b/fidelity.json",
+          "sha256": "b67c8f2276e8a645515c730b2bdcb7d2b625fd4e9db355846f6c8cba52c5ba9c",
+          "bytes": 1365
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 34,
+      "original_key": [
+        "acta.ass.031.ass-031-l12735",
+        "la"
+      ],
+      "title": "Cum diuturnum",
+      "stop_state": "READER_PASS_SOURCE_NATIVE_SCOPE_INCOMPLETE",
+      "current_candidate_tuple": {
+        "id": "acta.ass.031.ass-031-l12735",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.031.cum-diuturnum-native-spacing-23e160e5a95d",
+        "edition_id": "edition.acta-papal-archives.ass.031.ass-031-l12735",
+        "segment_id": "segment.acta-papal-archives.ass.031.ass-031-l12735.native-spacing-2026-10-30",
+        "source_sha256": "23e160e5a95d3d5f803b45847696282a5c6f9e343139b7f5f16ca57522f14f6c",
+        "physical_line_ranges": [
+          [
+            1,
+            56
+          ]
+        ],
+        "render_revision": "2026-10-30T06:40:13Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 1,
+        "pdf_sha256": "adeb4c5bdd5221b8d467e353d097210962005af0081e48648133fdba1ea32654",
+        "receipt_sha256": "ca164d3c04886c0b42693befed248e1b308132af382ab91f337c8cd07384e2d9"
+      },
+      "stop_qualification": "24b reader layout PASS; final overall CHANGES_REQUIRED because native651 (Annum) /321 (Cum) was not actually viewed. No source PASS inferred from generated crops.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-repairs-24b/reviews.json",
+            "sha256": "2e88dcf310be506b97d62abeb3cc30098f80286836c4552570af124b61672e71"
+          },
+          "declaration": {
+            "id": "acta.ass.031.ass-031-l12735",
+            "language": "la",
+            "pdf_sha256": "adeb4c5bdd5221b8d467e353d097210962005af0081e48648133fdba1ea32654",
+            "source_sha256": "23e160e5a95d3d5f803b45847696282a5c6f9e343139b7f5f16ca57522f14f6c",
+            "pages": 1,
+            "status": "CHANGES_REQUIRED",
+            "reader_layout_status": "PASS",
+            "source_boundary_scope": {
+              "native_contact_pages": [],
+              "native_full_resolution_lower_crops_viewed": [],
+              "source_note_groups_read": 0,
+              "source_lf_boundaries_inspected": true,
+              "reader_note_boundaries_full_size": true,
+              "scope": "Reader-layout PASS only; independent native visual footer exclusion acceptance incomplete."
+            },
+            "individually_inspected_pages": [
+              1
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "blocker",
+                "pages": [
+                  1
+                ],
+                "description": "Reader layout passes actual full-page inspection, but independent native visual verification of excluded publishing-footer LF12772 on native page321 was not completed before the user stop. Final source-boundary acceptance remains incomplete."
+              }
+            ],
+            "limitations": [
+              "Independent reader/source-boundary review only; no translation certification, whole-source lexical collation, original-print collation of Vatican OCR reconstructions, or independent rights opinion.",
+              "Historical OCR spelling, glyph errors, hard-line hyphens, reference marks and source-order note placement remain literal.",
+              "A user-requested stop ended further inspection. Unviewed native crops are generated evidence, not inspection. No successor source/PDF is covered.",
+              "Reader-layout PASS only; independent native visual footer exclusion acceptance incomplete."
+            ]
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/cold-repairs-24b/observations.json",
+          "sha256": "ac9441e9c1fe2ebcc55ea1d12dbf66b2cf001696eee5d2c51b8227ebbe17afed",
+          "bytes": 2626
+        },
+        {
+          "path": ".scratch/cold-repairs-24b/verification.json",
+          "sha256": "73dac81a671396bec02fe18fd11cd6239695fdbee56f7a607ba97620a0c2d93d",
+          "bytes": 92665
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 35,
+      "original_key": [
+        "acta.ass.031.ass-031-l26153",
+        "la"
+      ],
+      "title": "Annum sacrum",
+      "stop_state": "READER_PASS_SOURCE_NATIVE_SCOPE_INCOMPLETE",
+      "current_candidate_tuple": {
+        "id": "acta.ass.031.ass-031-l26153",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.031.annum-sacrum-native-spacing-notes-2f28f4133b06",
+        "edition_id": "edition.acta-papal-archives.ass.031.ass-031-l26153",
+        "segment_id": "segment.acta-papal-archives.ass.031.ass-031-l26153.native-spacing-2026-10-30",
+        "source_sha256": "2f28f4133b06116ed8d58457aee0f8febaf283440cb255ab2113fca1559a0218",
+        "physical_line_ranges": [
+          [
+            1,
+            261
+          ]
+        ],
+        "render_revision": "2026-10-30T06:40:13Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 3,
+        "pdf_sha256": "ce26118f140d14f3d264f7137346725d090f16460c7d1014c41cb5c0cb000eda",
+        "receipt_sha256": "ca164d3c04886c0b42693befed248e1b308132af382ab91f337c8cd07384e2d9"
+      },
+      "stop_qualification": "24b reader layout PASS; final overall CHANGES_REQUIRED because native651 (Annum) /321 (Cum) was not actually viewed. No source PASS inferred from generated crops.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-repairs-24b/reviews.json",
+            "sha256": "2e88dcf310be506b97d62abeb3cc30098f80286836c4552570af124b61672e71"
+          },
+          "declaration": {
+            "id": "acta.ass.031.ass-031-l26153",
+            "language": "la",
+            "pdf_sha256": "ce26118f140d14f3d264f7137346725d090f16460c7d1014c41cb5c0cb000eda",
+            "source_sha256": "2f28f4133b06116ed8d58457aee0f8febaf283440cb255ab2113fca1559a0218",
+            "pages": 3,
+            "status": "CHANGES_REQUIRED",
+            "reader_layout_status": "PASS",
+            "source_boundary_scope": {
+              "native_contact_pages": [],
+              "native_full_resolution_lower_crops_viewed": [],
+              "source_note_groups_read": 3,
+              "source_lf_boundaries_inspected": true,
+              "reader_note_boundaries_full_size": true,
+              "scope": "Reader-layout PASS only; independent native visual stream-order exception acceptance incomplete."
+            },
+            "individually_inspected_pages": [
+              1,
+              2,
+              3
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "blocker",
+                "pages": [
+                  1,
+                  2,
+                  3
+                ],
+                "description": "Reader layout and all three note blocks pass actual full-page inspection, but independent native visual inspection of the source stream-order exception on native page651 was not completed before the user stop. Final source-boundary acceptance remains incomplete."
+              }
+            ],
+            "limitations": [
+              "Independent reader/source-boundary review only; no translation certification, whole-source lexical collation, original-print collation of Vatican OCR reconstructions, or independent rights opinion.",
+              "Historical OCR spelling, glyph errors, hard-line hyphens, reference marks and source-order note placement remain literal.",
+              "A user-requested stop ended further inspection. Unviewed native crops are generated evidence, not inspection. No successor source/PDF is covered.",
+              "Reader-layout PASS only; independent native visual stream-order exception acceptance incomplete."
+            ]
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/cold-repairs-24b/observations.json",
+          "sha256": "ac9441e9c1fe2ebcc55ea1d12dbf66b2cf001696eee5d2c51b8227ebbe17afed",
+          "bytes": 2626
+        },
+        {
+          "path": ".scratch/cold-repairs-24b/verification.json",
+          "sha256": "73dac81a671396bec02fe18fd11cd6239695fdbee56f7a607ba97620a0c2d93d",
+          "bytes": 92665
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 36,
+      "original_key": [
+        "acta.ass.032.ass-032-l07351",
+        "fr"
+      ],
+      "title": "Depuis le jour",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.032.ass-032-l07351",
+        "language": "fr",
+        "artifact_id": "artifact.acta-papal-archives.ass.032.historical-text-c2a09d45.note-blocks-depuis-fa1446f5e040",
+        "edition_id": "edition.acta-papal-archives.ass.032.ass-032-l07351",
+        "segment_id": "segment.acta-papal-archives.ass.032.ass-032-l07351.note-blocks-fa1446f5e040",
+        "source_sha256": "fa1446f5e040bdd600ec07c0868dbe36c815b868b9e94e04fad5ea4adb88b6ad",
+        "physical_line_ranges": [
+          [
+            1,
+            876
+          ]
+        ],
+        "render_revision": "2026-10-30T12:19:46Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 10,
+        "pdf_sha256": "922149d69ab2c6391ae824c37d343c37c5a2613fe98e96ae92f3d3fad4b07327",
+        "receipt_sha256": "45a4d03cc49205b4d790e8b3a03be816ec807ed6d3d5f522f611cda9e8f2edb2"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "READY_EXACT_FINAL",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-refinement-package/cold-review-55/reviews.json",
+            "sha256": "28755660ac549dd0d8fe0ec0b068c01e44667f452281d9e9c5d61b75b470deff"
+          },
+          "declaration": {
+            "id": "acta.ass.032.ass-032-l07351",
+            "language": "fr",
+            "pdf_sha256": "922149d69ab2c6391ae824c37d343c37c5a2613fe98e96ae92f3d3fad4b07327",
+            "pages": 10,
+            "status": "PASS",
+            "source_status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  5,
+                  6
+                ],
+                "description": "Native202/204/205 own smaller notes justify the three exact LF groups. Fresh p5left/p6left+right views and explicit TeX paragraph boundaries confirm both boundaries and internal note order."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  8
+                ],
+                "description": "Existing Matth./I Tim. group and p8right pro-/grès interruption remain unchanged and separately paragraphed; interruption alone is not fusion."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  10
+                ],
+                "description": "Source-bearing final page retains substantial source body, closing, date, LEO PP. XIII subscription, own II Cor. V,20 note and readable compact rights colophon."
+              }
+            ],
+            "limitations": "Bounded LF partition/native reconstruction geometry and exact every-page PDF review. No original-print or whole-source lexical/translation certification, new rights clearance, installation or deployment. Root owns actual installed/public replacement reconciliation."
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-refinement-package/cold-review-55/report.md",
+          "sha256": "d6f855b5e0fbe9af0fecf949d59307c9c5081699f0c2a4a65c76fef1d6d6f28e",
+          "bytes": 10064
+        },
+        {
+          "path": ".scratch/encyclical-refinement-package/cold-review-55/reviews.json",
+          "sha256": "28755660ac549dd0d8fe0ec0b068c01e44667f452281d9e9c5d61b75b470deff",
+          "bytes": 2036
+        },
+        {
+          "path": ".scratch/encyclical-refinement-package/acceptance-55.json",
+          "sha256": "46ccf55f16cf2791398db31bbcf55441a5b1959d156b2cae0e9caa4574d53e10",
+          "bytes": 1197
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 37,
+      "original_key": [
+        "acta.ass.033.ass-033-l02448",
+        "la"
+      ],
+      "title": "Omnibus compertum",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "acta.ass.033.ass-033-l02448",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.033.remaining-omnibus-spacing-533493e45fae",
+        "edition_id": "edition.acta-papal-archives.ass.033.ass-033-l02448",
+        "segment_id": "segment.acta-papal-archives.ass.033.ass-033-l02448.remaining-omnibus-native-spacing-533493e45fae",
+        "source_sha256": "533493e45fae6046fd9ce6e4ad68d6468cad1d7eb13435d7835638dc3906d33f",
+        "physical_line_ranges": [
+          [
+            1,
+            109
+          ]
+        ],
+        "render_revision": "2026-10-30T19:08:15Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 2,
+        "pdf_sha256": "03841b6a66e0d9f44ebbc85e2905ef3db7916bfcf749e862796566d99ee73487",
+        "receipt_sha256": "3da3ea6cce3029747eb188e7cf580bb6bb5332f017353780746fdd5cef5f49d3"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "READY_EXACT_FINAL",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-refinement-package/cold-review-53/reviews.json",
+            "sha256": "f0e0f9d89904f60e0efff67b7d827f18c85e0b45da8a3e35a581e1c8409db9bc"
+          },
+          "declaration": {
+            "id": "acta.ass.033.ass-033-l02448",
+            "language": "la",
+            "pdf_sha256": "03841b6a66e0d9f44ebbc85e2905ef3db7916bfcf749e862796566d99ee73487",
+            "pages": 2,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1
+                ],
+                "description": "Title, Leo XIII, date and Latin identification clear. Two columns progress left-to-right with no clipping, overlap or glyph loss; paragraph indents are visible. Retained native hard hyphens produce interior divisions such as Fra- tres and reconcilia- nem, and sparse dissidi um/obtempera verini/eleris remain; these are disclosed literal source defects and reduce fluency without making the body materially unreadable. Roman I–III remain inline as source paragraph limits require."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  2
+                ],
+                "description": "Final page retains substantive exhortation, benediction, actual dating Datum Romae…die X X I Iulii anno MDCCCC…XXIII and LEO PP. XIII. Signature. Retained concordia- and spaced Roman date are literal source defects. Source rule, OCR/spacing limits, edition/source link, revision and compact rights colophon are legible and separated. Right column is blank because the source ends in the left column; page remains source-bearing, with no clipping, collision or apparatus-only final."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2
+                ],
+                "description": "SOURCE-SPACING PASS: 100 unique exact native-line matches, zero exceptions; 5109 non-whitespace characters/order and prior LF paragraph boundaries preserved. Native indentation-based paragraphs are not reconstructed; literal hard hyphens and sparse OCR remain. Native65–67 fresh views support own complete selected body, dating and subscription before separate curial case."
+              }
+            ],
+            "limitations": "Archival Vatican OCR reconstruction; no original-print, lexical or translation collation. Spacing-only repair preserves prior LF paragraphs, not all native indentation-based boundaries. Literal hyphens and sparse OCR reduce fluency. Predecessor PDF is retained candidate history, not certified installed/public prior. No installation, adoption or new rights clearance."
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-refinement-package/cold-review-53/report.md",
+          "sha256": "7719c6fbea6ee8d7f015ffe3ba39872a548de8189ea116b7a91b2e5139cdf3fa",
+          "bytes": 12568
+        },
+        {
+          "path": ".scratch/encyclical-refinement-package/cold-review-53/reviews.json",
+          "sha256": "f0e0f9d89904f60e0efff67b7d827f18c85e0b45da8a3e35a581e1c8409db9bc",
+          "bytes": 6529
+        },
+        {
+          "path": ".scratch/encyclical-refinement-package/acceptance-53.json",
+          "sha256": "013806b1eeb272213f1a226bd1f0f3f06513c5c86827e6e372abb24eea4079af",
+          "bytes": 1349
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 38,
+      "original_key": [
+        "gregory-xvi-acta.volume-03.line-00029558.part-02",
+        "la"
+      ],
+      "title": "Inter ea, quae supremi apostolatus munere urgente — Epistola encyclica ad episcopos Helvetiae de coenobiis",
+      "stop_state": "METADATA_ADJUDICATION_PENDING",
+      "current_candidate_tuple": {
+        "id": "gregory-xvi-acta.volume-03.line-00029558.part-02",
+        "language": "la",
+        "artifact_id": "artifact.gregory-xvi-acta.volume-03.1902-rome-mul.ocr-323a14120941",
+        "edition_id": null,
+        "segment_id": "segment.gregory-xvi-acta.volume-03.line-00029558.part-02.1902-gregory-xvi-acta-volume-03-la.source-ocr",
+        "source_sha256": "323a141209419f4d5ba846bba4381470bb7576e7c54206e5a013da13d94e062e",
+        "physical_line_ranges": [
+          [
+            29647,
+            29693
+          ],
+          [
+            29699,
+            29759
+          ],
+          [
+            29768,
+            29774
+          ]
+        ],
+        "render_revision": "2026-10-30T02:56:48Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 2,
+        "pdf_sha256": "863b41ddf3b5fb83c8163817e6d3f1057bfedffc90628692ee0ae913246c8743",
+        "receipt_sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e"
+      },
+      "stop_qualification": "Root explicit smaller-scope adjudication of already-completed two-page whole-PDF PASS; aggregate parent packet remains not final.",
+      "historical_census_status": "NEEDS_METADATA_ADJUDICATION",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/gregory1842-completed-scope-evidence.json",
+          "sha256": "dfefba3cc6a1dc91c50467e82f3c8d1b17146ce1df8d9a2de5c6ed6d3ee8d879",
+          "bytes": 9052
+        },
+        {
+          "path": ".scratch/encyclical-ready-package/incremental-subsets/original02-01/81c89b9b2e659c44a4bb5230db4c71c184cc220f6a1f01a74396284c1843e3b9/report.md",
+          "sha256": "81c89b9b2e659c44a4bb5230db4c71c184cc220f6a1f01a74396284c1843e3b9",
+          "bytes": 2441
+        },
+        {
+          "path": ".scratch/encyclical-ready-package/incremental-subsets/original02-01/81c89b9b2e659c44a4bb5230db4c71c184cc220f6a1f01a74396284c1843e3b9/reviews.json",
+          "sha256": "2e1ca84896a88cea8a9d519d51c9465df4e086a2c016339f2604f870bbd5a282",
+          "bytes": 1239
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 39,
+      "original_key": [
+        "papal.pius-xi.hf-p-xi-enc-19280106-mortalium-animos",
+        "en"
+      ],
+      "title": "Mortalium Animos",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "papal.pius-xi.hf-p-xi-enc-19280106-mortalium-animos",
+        "language": "en",
+        "artifact_id": "artifact.journals.catholic-mind.1928-02-22-volume-26-issue-4.bounded-english-123633d87eef.mortalium-text-9567cc6cc366",
+        "edition_id": null,
+        "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-19280106-mortalium-animos.1928-02-22-catholic-mind-english.complete-english-text.mortalium-9567cc6cc366",
+        "source_sha256": "9567cc6cc36698f6af7287ab3e776b2c8bc591d0f6367a5cc25c99381d58a295",
+        "physical_line_ranges": [
+          [
+            1,
+            131
+          ]
+        ],
+        "render_revision": "2026-10-30T08:19:46Z",
+        "compact_layout": true,
+        "compact_margin": 0.65,
+        "pages": 5,
+        "pdf_sha256": "f28df3bf6bc039e86c792661af7aed6b6cdfb0d18c5bf3d554103a37b1028507",
+        "receipt_sha256": "048b5919f8a6df92243c67c7bb204c3bba9a3fa539489bf9d40fe4e85b0f5644"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-repairs-24a/reviews.json",
+            "sha256": "dc65ecdf047fef54bf6cd8e29e526127012dd7b101eb17d8a567bd52a67b6196"
+          },
+          "declaration": {
+            "id": "papal.pius-xi.hf-p-xi-enc-19280106-mortalium-animos",
+            "language": "en",
+            "pdf_sha256": "f28df3bf6bc039e86c792661af7aed6b6cdfb0d18c5bf3d554103a37b1028507",
+            "pages": 5,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  5
+                ],
+                "description": "Notes21–26 are separate after literal liv-; note27 separate; ing God resumes body. Native p71/XML boundary supports LF-only repair."
+              },
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "description": "OCR spelling/reference defects remain qualified. Ending/date/subscription/final source notes precede apparatus."
+              }
+            ],
+            "limitations": "Independent cold reader/source-boundary acceptance only. All reader pages contact/full-size inspected; native note/column/exception coverage and exact replays as report details. No lexical OCR or translation certification, original-print collation of archival OCR reconstructions, new rights judgment, installation or deployment. Producer PASS not adopted."
+          }
+        }
+      ],
+      "historical_evidence": [],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 40,
+      "original_key": [
+        "pius-ix-acta.volume-01.line-00000248",
+        "la"
+      ],
+      "title": "Qui pluribus — epistola encyclica de erroribus aetatis",
+      "stop_state": "PDF_PASS_SOURCE_AND_RESPONSIBLE_METADATA_ADJUDICATION_PENDING",
+      "current_candidate_tuple": {
+        "id": "pius-ix-acta.volume-01.line-00000248",
+        "language": "la",
+        "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-mul.ocr-898bc939f063",
+        "edition_id": null,
+        "segment_id": "segment.pius-ix-acta.volume-01.line-00000248.1854-pius-ix-acta-volume-01-la.source-ocr",
+        "source_sha256": "898bc939f063a4b1e2cc87b5bba06d51fccbf14ff329c4bf7c8261b60b595205",
+        "physical_line_ranges": [
+          [
+            251,
+            287
+          ],
+          [
+            289,
+            323
+          ],
+          [
+            325,
+            361
+          ],
+          [
+            363,
+            395
+          ],
+          [
+            397,
+            434
+          ],
+          [
+            436,
+            468
+          ],
+          [
+            473,
+            514
+          ],
+          [
+            516,
+            555
+          ],
+          [
+            557,
+            594
+          ],
+          [
+            596,
+            629
+          ],
+          [
+            631,
+            666
+          ],
+          [
+            668,
+            702
+          ],
+          [
+            704,
+            738
+          ],
+          [
+            740,
+            777
+          ],
+          [
+            782,
+            817
+          ],
+          [
+            819,
+            854
+          ],
+          [
+            856,
+            890
+          ],
+          [
+            892,
+            926
+          ],
+          [
+            928,
+            965
+          ],
+          [
+            967,
+            1003
+          ],
+          [
+            1005,
+            1020
+          ]
+        ],
+        "render_revision": "2026-10-30T04:19:38Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 7,
+        "pdf_sha256": "9a90bc244824ba8f0591d755ddc504a8a7559c954ab376e434a2b4bf4cb735d5",
+        "receipt_sha256": "85685652b14f6df23edc3d8ae11ddb45e21d6201466775afd9d7a4ebda388644"
+      },
+      "stop_qualification": "Issuer17 final PDF usability/layout PASS; original-print/source completeness/rights certification was not performed. Pending responsible-creator work-record changes remain inactive.",
+      "historical_census_status": "NEEDS_METADATA_ADJUDICATION",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-issuer17-finish/reviews.json",
+            "sha256": "141430cc15787530d907d3639450c5ee2e78c8402a11ec852d7d4bc76492a150"
+          },
+          "declaration": {
+            "id": "pius-ix-acta.volume-01.line-00000248",
+            "language": "la",
+            "pdf_sha256": "9a90bc244824ba8f0591d755ddc504a8a7559c954ab376e434a2b4bf4cb735d5",
+            "pages": 7,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "description": "Fresh seven-page body remains continuously usable despite retained interior word divisions and isolated recognition errors. Caption Pius IX / 1846-11-09 / Latin; title, columns and notes fit. Sparse page 7 retains prose, a separately paragraphed S. Leo note, blessing and dating before compact ruled apparatus. Literal paragraph boundaries confirmed around suspicious notes."
+              }
+            ],
+            "limitations": "Review covers exact-byte pins, meaningful reader usability, layout, displayed identification, note/ending/apparatus separation and fresh full-page inspection. No original-print or facsimile collation, historical authentication, independent source completeness certification, translation-equivalence review or rights determination was performed. Uncorrected OCR qualifications remain. No inherited inspection or page-review reuse is claimed."
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/recovery-index.json",
+          "sha256": "bfc551d3d398c7379ade9e624ca5b0d60faadb9eb49f6d23adf2e01c80c0e3bf",
+          "bytes": 293396
+        },
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/rows/cold_issuer17_finish--pius-ix-acta.volume-01.line-00000248--la.json",
+          "sha256": "3802c021504b66167e9e5dc6e6935f329aec91b823317281708c7edc4a61de45",
+          "bytes": 20183
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/report.md",
+          "sha256": "337273d437181f6decbf681e4cfc3dddddac11eec88a56c65cba7a998ea1293b",
+          "bytes": 13585
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/observations.json",
+          "sha256": "018855a33be0333772d0e76dafbee7a72c377a203f3a1bb434778b466aca2a37",
+          "bytes": 6080
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 41,
+      "original_key": [
+        "pius-ix-acta.volume-01.line-00001267.part-01",
+        "la"
+      ],
+      "title": "Praedecessores Nostros — pro regno Hiberniae",
+      "stop_state": "PDF_PASS_SOURCE_AND_RESPONSIBLE_METADATA_ADJUDICATION_PENDING",
+      "current_candidate_tuple": {
+        "id": "pius-ix-acta.volume-01.line-00001267.part-01",
+        "language": "la",
+        "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-mul.ocr-898bc939f063",
+        "edition_id": null,
+        "segment_id": "segment.pius-ix-acta.volume-01.line-00001267.part-01.1854-pius-ix-acta-volume-01-la.source-ocr",
+        "source_sha256": "898bc939f063a4b1e2cc87b5bba06d51fccbf14ff329c4bf7c8261b60b595205",
+        "physical_line_ranges": [
+          [
+            1270,
+            1305
+          ],
+          [
+            1307,
+            1343
+          ],
+          [
+            1345,
+            1379
+          ],
+          [
+            1381,
+            1418
+          ],
+          [
+            1420,
+            1462
+          ],
+          [
+            1464,
+            1473
+          ]
+        ],
+        "render_revision": "2026-10-30T04:19:38Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 2,
+        "pdf_sha256": "bdfc0d3ab3cfe61bae9a0d3818239abdcc64209095454cef7ca1816bceb9992f",
+        "receipt_sha256": "85685652b14f6df23edc3d8ae11ddb45e21d6201466775afd9d7a4ebda388644"
+      },
+      "stop_qualification": "Issuer17 final PDF usability/layout PASS; original-print/source completeness/rights certification was not performed. Pending responsible-creator work-record changes remain inactive.",
+      "historical_census_status": "NEEDS_METADATA_ADJUDICATION",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-issuer17-finish/reviews.json",
+            "sha256": "141430cc15787530d907d3639450c5ee2e78c8402a11ec852d7d4bc76492a150"
+          },
+          "declaration": {
+            "id": "pius-ix-acta.volume-01.line-00001267.part-01",
+            "language": "la",
+            "pdf_sha256": "bdfc0d3ab3cfe61bae9a0d3818239abdcc64209095454cef7ca1816bceb9992f",
+            "pages": 2,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2
+                ],
+                "description": "Fresh two-page body remains usable. Caption Pius IX / 1847-03-25 / Latin. The unmarked nysii Alexandrini historical-note continuation interrupts Avchiepi-/scopos on page 1 but has literal paragraph boundaries before and after in body TeX. Other notes/quotations remain separate. Page 2 retains blessing and dating before compact apparatus. Malformed protocol and isolated OCR/word-division errors are retained."
+              }
+            ],
+            "limitations": "Review covers exact-byte pins, meaningful reader usability, layout, displayed identification, note/ending/apparatus separation and fresh full-page inspection. No original-print or facsimile collation, historical authentication, independent source completeness certification, translation-equivalence review or rights determination was performed. Uncorrected OCR qualifications remain. No inherited inspection or page-review reuse is claimed."
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/recovery-index.json",
+          "sha256": "bfc551d3d398c7379ade9e624ca5b0d60faadb9eb49f6d23adf2e01c80c0e3bf",
+          "bytes": 293396
+        },
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/rows/cold_issuer17_finish--pius-ix-acta.volume-01.line-00001267.part-01--la.json",
+          "sha256": "9ff6af5437a504e205a728aa2876a4177cdbc64e5a8c13da7442515e5261454d",
+          "bytes": 16406
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/report.md",
+          "sha256": "337273d437181f6decbf681e4cfc3dddddac11eec88a56c65cba7a998ea1293b",
+          "bytes": 13585
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/observations.json",
+          "sha256": "018855a33be0333772d0e76dafbee7a72c377a203f3a1bb434778b466aca2a37",
+          "bytes": 6080
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 42,
+      "original_key": [
+        "pius-ix-acta.volume-01.line-00001756.part-01",
+        "la"
+      ],
+      "title": "Ubi primum — ad supremos moderatores ordinum regularium",
+      "stop_state": "PDF_PASS_SOURCE_AND_RESPONSIBLE_METADATA_ADJUDICATION_PENDING",
+      "current_candidate_tuple": {
+        "id": "pius-ix-acta.volume-01.line-00001756.part-01",
+        "language": "la",
+        "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-mul.ocr-898bc939f063",
+        "edition_id": null,
+        "segment_id": "segment.pius-ix-acta.volume-01.line-00001756.part-01.1854-pius-ix-acta-volume-01-la.source-ocr",
+        "source_sha256": "898bc939f063a4b1e2cc87b5bba06d51fccbf14ff329c4bf7c8261b60b595205",
+        "physical_line_ranges": [
+          [
+            1759,
+            1790
+          ],
+          [
+            1792,
+            1825
+          ],
+          [
+            1827,
+            1860
+          ],
+          [
+            1862,
+            1895
+          ],
+          [
+            1897,
+            1931
+          ],
+          [
+            1933,
+            1966
+          ],
+          [
+            1968,
+            2001
+          ],
+          [
+            2003,
+            2036
+          ],
+          [
+            2038,
+            2044
+          ]
+        ],
+        "render_revision": "2026-10-30T04:19:38Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 3,
+        "pdf_sha256": "68f13a0b7a852bd691d71f4d7bd03611e84958186f7b8ab3c260a343c189cf20",
+        "receipt_sha256": "85685652b14f6df23edc3d8ae11ddb45e21d6201466775afd9d7a4ebda388644"
+      },
+      "stop_qualification": "Issuer17 final PDF usability/layout PASS; original-print/source completeness/rights certification was not performed. Pending responsible-creator work-record changes remain inactive.",
+      "historical_census_status": "NEEDS_METADATA_ADJUDICATION",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-issuer17-finish/reviews.json",
+            "sha256": "141430cc15787530d907d3639450c5ee2e78c8402a11ec852d7d4bc76492a150"
+          },
+          "declaration": {
+            "id": "pius-ix-acta.volume-01.line-00001756.part-01",
+            "language": "la",
+            "pdf_sha256": "68f13a0b7a852bd691d71f4d7bd03611e84958186f7b8ab3c260a343c189cf20",
+            "pages": 3,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2,
+                  3
+                ],
+                "description": "Fresh three-page body remains usable despite malformed UD. primum, fuimusB and scattered retained recognition errors. Caption Pius IX / 1847-06-17 / Latin. Page 3 retains source blessing and dated closing in the left column; compact ruled apparatus continues in the right column on the same source-bearing page. No clipping or overlap."
+              }
+            ],
+            "limitations": "Review covers exact-byte pins, meaningful reader usability, layout, displayed identification, note/ending/apparatus separation and fresh full-page inspection. No original-print or facsimile collation, historical authentication, independent source completeness certification, translation-equivalence review or rights determination was performed. Uncorrected OCR qualifications remain. No inherited inspection or page-review reuse is claimed."
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/recovery-index.json",
+          "sha256": "bfc551d3d398c7379ade9e624ca5b0d60faadb9eb49f6d23adf2e01c80c0e3bf",
+          "bytes": 293396
+        },
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/rows/cold_issuer17_finish--pius-ix-acta.volume-01.line-00001756.part-01--la.json",
+          "sha256": "9e8ceeda2d0dbd4e9ac108804f83b811f136ba171e4b47ac1010179596246967",
+          "bytes": 17158
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/report.md",
+          "sha256": "337273d437181f6decbf681e4cfc3dddddac11eec88a56c65cba7a998ea1293b",
+          "bytes": 13585
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/observations.json",
+          "sha256": "018855a33be0333772d0e76dafbee7a72c377a203f3a1bb434778b466aca2a37",
+          "bytes": 6080
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 43,
+      "original_key": [
+        "pius-ix-acta.volume-01.line-00005609.part-03",
+        "la"
+      ],
+      "title": "Ubi primum — de Immaculata Conceptione B. M. V. (Caietae)",
+      "stop_state": "PDF_PASS_SOURCE_AND_RESPONSIBLE_METADATA_ADJUDICATION_PENDING",
+      "current_candidate_tuple": {
+        "id": "pius-ix-acta.volume-01.line-00005609.part-03",
+        "language": "la",
+        "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-mul.ocr-898bc939f063",
+        "edition_id": null,
+        "segment_id": "segment.pius-ix-acta.volume-01.line-00005609.part-03.1854-pius-ix-acta-volume-01-la.source-ocr",
+        "source_sha256": "898bc939f063a4b1e2cc87b5bba06d51fccbf14ff329c4bf7c8261b60b595205",
+        "physical_line_ranges": [
+          [
+            5850,
+            5884
+          ],
+          [
+            5886,
+            5920
+          ],
+          [
+            5922,
+            5959
+          ],
+          [
+            5961,
+            5995
+          ],
+          [
+            5997,
+            6020
+          ]
+        ],
+        "render_revision": "2026-10-30T04:19:38Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 2,
+        "pdf_sha256": "3c206f6c3a0926a72ed295f4a99205b2e56669c65ed480802eafde514e6471ed",
+        "receipt_sha256": "85685652b14f6df23edc3d8ae11ddb45e21d6201466775afd9d7a4ebda388644"
+      },
+      "stop_qualification": "Issuer17 final PDF usability/layout PASS; original-print/source completeness/rights certification was not performed. Pending responsible-creator work-record changes remain inactive.",
+      "historical_census_status": "NEEDS_METADATA_ADJUDICATION",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-issuer17-finish/reviews.json",
+            "sha256": "141430cc15787530d907d3639450c5ee2e78c8402a11ec852d7d4bc76492a150"
+          },
+          "declaration": {
+            "id": "pius-ix-acta.volume-01.line-00005609.part-03",
+            "language": "la",
+            "pdf_sha256": "3c206f6c3a0926a72ed295f4a99205b2e56669c65ed480802eafde514e6471ed",
+            "pages": 2,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2
+                ],
+                "description": "Fresh two-page body remains usable despite malformed Uj primum and scattered OCR errors. Caption Pius IX / 1849-02-02 / Latin. Citation block between consi-/lio on page 1 has literal paragraph boundaries on both sides. Page 2 retains blessing and literal OCR dating Datum £ajetae die 1l februarii...Tertio before compact apparatus. Questionable closing glyphs are not harmonized or certified."
+              }
+            ],
+            "limitations": "Review covers exact-byte pins, meaningful reader usability, layout, displayed identification, note/ending/apparatus separation and fresh full-page inspection. No original-print or facsimile collation, historical authentication, independent source completeness certification, translation-equivalence review or rights determination was performed. Uncorrected OCR qualifications remain. No inherited inspection or page-review reuse is claimed."
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/recovery-index.json",
+          "sha256": "bfc551d3d398c7379ade9e624ca5b0d60faadb9eb49f6d23adf2e01c80c0e3bf",
+          "bytes": 293396
+        },
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/rows/cold_issuer17_finish--pius-ix-acta.volume-01.line-00005609.part-03--la.json",
+          "sha256": "e27938a4af48d9f2ff28504d22ae5ac68183a9e3406fc3e0783bac820386a974",
+          "bytes": 16028
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/report.md",
+          "sha256": "337273d437181f6decbf681e4cfc3dddddac11eec88a56c65cba7a998ea1293b",
+          "bytes": 13585
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/observations.json",
+          "sha256": "018855a33be0333772d0e76dafbee7a72c377a203f3a1bb434778b466aca2a37",
+          "bytes": 6080
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 44,
+      "original_key": [
+        "pius-ix-acta.volume-01.line-00007159",
+        "la"
+      ],
+      "title": "Nostis et Nobiscum — ad archiepiscopos et episcopos Italiae",
+      "stop_state": "PDF_PASS_SOURCE_AND_RESPONSIBLE_METADATA_ADJUDICATION_PENDING",
+      "current_candidate_tuple": {
+        "id": "pius-ix-acta.volume-01.line-00007159",
+        "language": "la",
+        "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-mul.ocr-898bc939f063",
+        "edition_id": null,
+        "segment_id": "segment.pius-ix-acta.volume-01.line-00007159.1854-pius-ix-acta-volume-01-la.source-ocr",
+        "source_sha256": "898bc939f063a4b1e2cc87b5bba06d51fccbf14ff329c4bf7c8261b60b595205",
+        "physical_line_ranges": [
+          [
+            7162,
+            7192
+          ],
+          [
+            7194,
+            7227
+          ],
+          [
+            7229,
+            7265
+          ],
+          [
+            7267,
+            7301
+          ],
+          [
+            7306,
+            7340
+          ],
+          [
+            7342,
+            7377
+          ],
+          [
+            7379,
+            7415
+          ],
+          [
+            7417,
+            7453
+          ],
+          [
+            7456,
+            7458
+          ],
+          [
+            7460,
+            7495
+          ],
+          [
+            7497,
+            7536
+          ],
+          [
+            7538,
+            7579
+          ],
+          [
+            7581,
+            7621
+          ],
+          [
+            7623,
+            7656
+          ],
+          [
+            7658,
+            7690
+          ],
+          [
+            7692,
+            7698
+          ],
+          [
+            7700,
+            7738
+          ],
+          [
+            7740,
+            7780
+          ],
+          [
+            7782,
+            7817
+          ],
+          [
+            7819,
+            7854
+          ],
+          [
+            7856,
+            7891
+          ],
+          [
+            7893,
+            7928
+          ],
+          [
+            7933,
+            7970
+          ],
+          [
+            7972,
+            8007
+          ],
+          [
+            8009,
+            8043
+          ],
+          [
+            8054,
+            8096
+          ],
+          [
+            8101,
+            8136
+          ],
+          [
+            8138,
+            8146
+          ]
+        ],
+        "render_revision": "2026-10-30T04:19:38Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 8,
+        "pdf_sha256": "790bf896075ff4fbb3f6d932c4a0a337ca34309a13a49c5cb3797efd157595c1",
+        "receipt_sha256": "85685652b14f6df23edc3d8ae11ddb45e21d6201466775afd9d7a4ebda388644"
+      },
+      "stop_qualification": "Issuer17 final PDF usability/layout PASS; original-print/source completeness/rights certification was not performed. Pending responsible-creator work-record changes remain inactive.",
+      "historical_census_status": "NEEDS_METADATA_ADJUDICATION",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-issuer17-finish/reviews.json",
+            "sha256": "141430cc15787530d907d3639450c5ee2e78c8402a11ec852d7d4bc76492a150"
+          },
+          "declaration": {
+            "id": "pius-ix-acta.volume-01.line-00007159",
+            "language": "la",
+            "pdf_sha256": "790bf896075ff4fbb3f6d932c4a0a337ca34309a13a49c5cb3797efd157595c1",
+            "pages": 8,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "WARNING",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "description": "Fresh eight-page body remains usable overall. Caption Pius IX / 1849-12-08 / Latin. Separately set notes throughout; page 8 has isolated nonlinguistic debris beginning $1,718 (source LF8092–8093) and adjacent short damaged fragments. Surrounding quotation/body resume usefully; the S. Augustine note has literal paragraph boundaries. This local OCR damage is an explicit qualification, not sustained paragraph gibberish. Final prayer, blessing and literal OCR dating remain before compact apparatus."
+              }
+            ],
+            "limitations": "Review covers exact-byte pins, meaningful reader usability, layout, displayed identification, note/ending/apparatus separation and fresh full-page inspection. No original-print or facsimile collation, historical authentication, independent source completeness certification, translation-equivalence review or rights determination was performed. Uncorrected OCR qualifications remain. No inherited inspection or page-review reuse is claimed."
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/recovery-index.json",
+          "sha256": "bfc551d3d398c7379ade9e624ca5b0d60faadb9eb49f6d23adf2e01c80c0e3bf",
+          "bytes": 293396
+        },
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/rows/cold_issuer17_finish--pius-ix-acta.volume-01.line-00007159--la.json",
+          "sha256": "92bcd0414a379c05d106deb859a285ec65e589fdba076a8c9609af1d4ecec7be",
+          "bytes": 22389
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/report.md",
+          "sha256": "337273d437181f6decbf681e4cfc3dddddac11eec88a56c65cba7a998ea1293b",
+          "bytes": 13585
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/observations.json",
+          "sha256": "018855a33be0333772d0e76dafbee7a72c377a203f3a1bb434778b466aca2a37",
+          "bytes": 6080
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 45,
+      "original_key": [
+        "pius-ix-acta.volume-01.line-00012382",
+        "la"
+      ],
+      "title": "Exultavit cor Nostrum — de fructibus iubilaei",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "pius-ix-acta.volume-01.line-00012382",
+        "language": "la",
+        "artifact_id": "artifact.pius-ix-acta.volume-01.1854-bonarum-artium-oxford.exultavit-ocr-365e1a406d2d",
+        "edition_id": "edition.pius-ix-acta.volume-01.line-00012382.1854-bonarum-artium-oxford-la",
+        "segment_id": "segment.pius-ix-acta.volume-01.line-00012382.1854-bonarum-artium-oxford-la.image-ocr-365e1a406d2d",
+        "source_sha256": "365e1a406d2d683db805d92f91b5e533369f67ff9c69b83dc53bc0cd5fae5eaa",
+        "physical_line_ranges": [
+          [
+            1,
+            178
+          ]
+        ],
+        "render_revision": "2026-10-30T20:12:56Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 2,
+        "pdf_sha256": "7b8b59dbdf85b07e958e5773b933d019efe1b7b7079134f2e4beea55e43f4351",
+        "receipt_sha256": "c9308aa96bdb1f58e2ca9833d949ec562f77e05ea8c8b3dac0bb607545f9ca8d"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-refinement-package/cold-review-59/reviews.json",
+            "sha256": "c0c502e511dfbd186ae2f60621bb10f091d6a73057ff2c469dc210d74bf7c9a4"
+          },
+          "declaration": {
+            "id": "pius-ix-acta.volume-01.line-00012382",
+            "language": "la",
+            "pdf_sha256": "7b8b59dbdf85b07e958e5773b933d019efe1b7b7079134f2e4beea55e43f4351",
+            "source_sha256": "365e1a406d2d683db805d92f91b5e533369f67ff9c69b83dc53bc0cd5fae5eaa",
+            "pages": 2,
+            "status": "PASS",
+            "source_status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "qualification",
+                "pages": [
+                  1,
+                  2
+                ],
+                "description": "SOURCE PASS is a fresh bounded Oxford intake/readability decision with scattered OCR defects at source LF53–56,103,131–135,151–155,175 and elsewhere. No material sustained garble, missing own text or foreign contamination found; no lexical certificate."
+              },
+              {
+                "severity": "qualification",
+                "pages": [
+                  2
+                ],
+                "description": "Own Matthew note remains a separate paragraph at source345 page break between pe-/tram. Full blessing and21November1851 dating precede terminal apparatus on source-bearing PDF2."
+              },
+              {
+                "severity": "info",
+                "pages": [
+                  1,
+                  2
+                ],
+                "description": "Both exact current pages and contact sheet freshly inspected. No clipping, overlap, missing glyphs, column-order defect or apparatus-only final page. Single underfull box warning visually nonmaterial."
+              }
+            ],
+            "limitations": [
+              "Independent new Oxford witness only; printed title undated Bonarum Artium/Habita Facultate,1854 primary Google bibliography only; no Franz/BSB/Harvard physical identity or global wording equality.",
+              "Imperfect OCR with disclosed letter/punctuation errors; no translation, full lexical collation, whole-book completeness or new worldwide rights certificate.",
+              "Nine complete per-page responses only; modern Google footer/stamp/handwriting wrappers remain scratch/metadata-only.",
+              "Old BSB33a HOLD and all failed histories unchanged; outside fifth cutoff. Root owns source admission/family/inventory/replacement/install/publication; reviewer made no such mutation."
+            ]
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/pius-ix-bsb-text-repair/oxford-exultavit/handoff.json",
+          "sha256": "4f3655fcdab93560c7e8fc8c1b236bb1bcb2ae38cdef22dce3b1621f65bb9787",
+          "bytes": 5912
+        },
+        {
+          "path": ".scratch/pius-ix-bsb-text-repair/oxford-exultavit/report.md",
+          "sha256": "e3996988334b8395df9c66694251593ff9c4deb39944649576597ddfc9d751a7",
+          "bytes": 5774
+        },
+        {
+          "path": ".scratch/pius-ix-bsb-text-repair/oxford-exultavit/reviews.json",
+          "sha256": "01c5f0a278bb6067de0b6fee81394c09acbb6cd1cc021623ea4ba8a1fb8fe835",
+          "bytes": 1643
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 46,
+      "original_key": [
+        "pius-ix-acta.volume-01.line-00015347.part-02",
+        "la"
+      ],
+      "title": "Inter multiplices — ad cardinales et episcopos Galliae",
+      "stop_state": "SOURCE_HOLD",
+      "current_candidate_tuple": {
+        "id": "pius-ix-acta.volume-01.line-00015347.part-02",
+        "language": "la",
+        "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-mul.ocr-898bc939f063",
+        "edition_id": null,
+        "segment_id": "segment.pius-ix-acta.volume-01.line-00015347.part-02.1854-pius-ix-acta-volume-01-la.source-ocr",
+        "source_sha256": "898bc939f063a4b1e2cc87b5bba06d51fccbf14ff329c4bf7c8261b60b595205",
+        "physical_line_ranges": [
+          [
+            15833,
+            15867
+          ],
+          [
+            15869,
+            15907
+          ],
+          [
+            15909,
+            15942
+          ],
+          [
+            15944,
+            15978
+          ],
+          [
+            15980,
+            16013
+          ],
+          [
+            16015,
+            16049
+          ],
+          [
+            16051,
+            16085
+          ],
+          [
+            16087,
+            16120
+          ],
+          [
+            16122,
+            16156
+          ],
+          [
+            16158,
+            16166
+          ]
+        ],
+        "render_revision": "2026-10-30T04:19:38Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 3,
+        "pdf_sha256": "ef56e947acef024cbb19826e8a2346b71495f6240bb87d7b2bef3368d2280ddc",
+        "receipt_sha256": "85685652b14f6df23edc3d8ae11ddb45e21d6201466775afd9d7a4ebda388644"
+      },
+      "stop_qualification": "Inter Multiplices / Optime source quality remains unresolved; no accepted successor or new reader row.",
+      "historical_census_status": "SOURCE_HOLD",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-issuer17-finish/reviews.json",
+            "sha256": "141430cc15787530d907d3639450c5ee2e78c8402a11ec852d7d4bc76492a150"
+          },
+          "declaration": {
+            "id": "pius-ix-acta.volume-01.line-00015347.part-02",
+            "language": "la",
+            "pdf_sha256": "ef56e947acef024cbb19826e8a2346b71495f6240bb87d7b2bef3368d2280ddc",
+            "pages": 3,
+            "status": "CHANGES_REQUIRED",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "BLOCKER",
+                "pages": [
+                  2
+                ],
+                "description": "BLOCKER: exact PDF page 2 left contains a sustained garbled body passage, including source LF15947 im ommbus unitawem spiritus im vinculo pacm, LF15958 operzm nuné oátholica istio Eceleszià mni pace and LF15965 atque iDthminntà juventhtis Mestitutio vagis m dies. Damaged content words across the Napoleon paragraph prevent meaningful continuous reading despite clear glyphs and passing fidelity. Recover source text in an identified derivative, then review a replacement; hold these exact bytes. Notes are separate with literal paragraph boundaries; issuer and layout are corrected."
+              }
+            ],
+            "limitations": "Review covers exact-byte pins, meaningful reader usability, layout, displayed identification, note/ending/apparatus separation and fresh full-page inspection. No original-print or facsimile collation, historical authentication, independent source completeness certification, translation-equivalence review or rights determination was performed. Uncorrected OCR qualifications remain. No inherited inspection or page-review reuse is claimed."
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/recovery-index.json",
+          "sha256": "bfc551d3d398c7379ade9e624ca5b0d60faadb9eb49f6d23adf2e01c80c0e3bf",
+          "bytes": 293396
+        },
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/rows/cold_issuer17_finish--pius-ix-acta.volume-01.line-00015347.part-02--la.json",
+          "sha256": "79ab2ecc342e867a0521998fa1d3e86b1be8312d95bae38ffaad563583429fb2",
+          "bytes": 17540
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/report.md",
+          "sha256": "337273d437181f6decbf681e4cfc3dddddac11eec88a56c65cba7a998ea1293b",
+          "bytes": 13585
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/observations.json",
+          "sha256": "018855a33be0333772d0e76dafbee7a72c377a203f3a1bb434778b466aca2a37",
+          "bytes": 6080
+        },
+        {
+          "path": ".scratch/pius-ix-ocr-recovery/extension-handoff.json",
+          "sha256": "477e19552b3b229bf9bca77bbbd97046657ca9a42354d09e6dc8ca7cd324db0c",
+          "bytes": 5430
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 47,
+      "original_key": [
+        "pius-ix-acta.volume-01.line-00020042.part-02",
+        "la"
+      ],
+      "title": "Neminem vestrum latet — ad Armenios catholicos provinciae Constantinopolitanae",
+      "stop_state": "PDF_PASS_SOURCE_AND_RESPONSIBLE_METADATA_ADJUDICATION_PENDING",
+      "current_candidate_tuple": {
+        "id": "pius-ix-acta.volume-01.line-00020042.part-02",
+        "language": "la",
+        "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-mul.ocr-898bc939f063",
+        "edition_id": null,
+        "segment_id": "segment.pius-ix-acta.volume-01.line-00020042.part-02.1854-pius-ix-acta-volume-01-la.source-ocr",
+        "source_sha256": "898bc939f063a4b1e2cc87b5bba06d51fccbf14ff329c4bf7c8261b60b595205",
+        "physical_line_ranges": [
+          [
+            20384,
+            20415
+          ],
+          [
+            20417,
+            20450
+          ],
+          [
+            20452,
+            20486
+          ],
+          [
+            20488,
+            20523
+          ],
+          [
+            20525,
+            20559
+          ],
+          [
+            20561,
+            20595
+          ],
+          [
+            20597,
+            20630
+          ],
+          [
+            20641,
+            20676
+          ],
+          [
+            20678,
+            20713
+          ],
+          [
+            20718,
+            20753
+          ],
+          [
+            20755,
+            20790
+          ],
+          [
+            20792,
+            20825
+          ],
+          [
+            20827,
+            20862
+          ],
+          [
+            20864,
+            20899
+          ],
+          [
+            20901,
+            20935
+          ],
+          [
+            20937,
+            20976
+          ],
+          [
+            20978,
+            21012
+          ],
+          [
+            21014,
+            21049
+          ],
+          [
+            21054,
+            21081
+          ]
+        ],
+        "render_revision": "2026-10-30T04:19:38Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 6,
+        "pdf_sha256": "a3903c6e763de5b3b7949c9610e18bb6f44b051ea9e25bf66121f8305f5504c3",
+        "receipt_sha256": "85685652b14f6df23edc3d8ae11ddb45e21d6201466775afd9d7a4ebda388644"
+      },
+      "stop_qualification": "Issuer17 final PDF usability/layout PASS; original-print/source completeness/rights certification was not performed. Pending responsible-creator work-record changes remain inactive.",
+      "historical_census_status": "NEEDS_METADATA_ADJUDICATION",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-issuer17-finish/reviews.json",
+            "sha256": "141430cc15787530d907d3639450c5ee2e78c8402a11ec852d7d4bc76492a150"
+          },
+          "declaration": {
+            "id": "pius-ix-acta.volume-01.line-00020042.part-02",
+            "language": "la",
+            "pdf_sha256": "a3903c6e763de5b3b7949c9610e18bb6f44b051ea9e25bf66121f8305f5504c3",
+            "pages": 6,
+            "status": "PASS",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "INFO",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "description": "Fresh six-page body remains continuously usable despite numerous retained spelling/punctuation errors and word divisions. Caption Pius IX / 1854-02-02 / Latin; long title wraps into two balanced lines. Citation groups remain separate and suspicious groups have literal paragraph boundaries. Page 6 preserves source prayer, blessing and literal OCR dated closing before compact ruled apparatus. No clipping, overlap or apparatus-only final page."
+              }
+            ],
+            "limitations": "Review covers exact-byte pins, meaningful reader usability, layout, displayed identification, note/ending/apparatus separation and fresh full-page inspection. No original-print or facsimile collation, historical authentication, independent source completeness certification, translation-equivalence review or rights determination was performed. Uncorrected OCR qualifications remain. No inherited inspection or page-review reuse is claimed."
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/recovery-index.json",
+          "sha256": "bfc551d3d398c7379ade9e624ca5b0d60faadb9eb49f6d23adf2e01c80c0e3bf",
+          "bytes": 293396
+        },
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/rows/cold_issuer17_finish--pius-ix-acta.volume-01.line-00020042.part-02--la.json",
+          "sha256": "41d759f131b1aed2fe9330f533120d71d1334d66a5b5a73a268628a5c0af5373",
+          "bytes": 21865
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/report.md",
+          "sha256": "337273d437181f6decbf681e4cfc3dddddac11eec88a56c65cba7a998ea1293b",
+          "bytes": 13585
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/observations.json",
+          "sha256": "018855a33be0333772d0e76dafbee7a72c377a203f3a1bb434778b466aca2a37",
+          "bytes": 6080
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 48,
+      "original_key": [
+        "pius-ix-acta.volume-01.line-00020042.part-03",
+        "la"
+      ],
+      "title": "Optime noscitis — ad archiepiscopos et episcopos Hiberniae",
+      "stop_state": "SOURCE_HOLD",
+      "current_candidate_tuple": {
+        "id": "pius-ix-acta.volume-01.line-00020042.part-03",
+        "language": "la",
+        "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-mul.ocr-898bc939f063",
+        "edition_id": null,
+        "segment_id": "segment.pius-ix-acta.volume-01.line-00020042.part-03.1854-pius-ix-acta-volume-01-la.source-ocr",
+        "source_sha256": "898bc939f063a4b1e2cc87b5bba06d51fccbf14ff329c4bf7c8261b60b595205",
+        "physical_line_ranges": [
+          [
+            21084,
+            21120
+          ],
+          [
+            21122,
+            21155
+          ],
+          [
+            21157,
+            21190
+          ],
+          [
+            21192,
+            21227
+          ],
+          [
+            21229,
+            21263
+          ],
+          [
+            21265,
+            21299
+          ],
+          [
+            21304,
+            21324
+          ]
+        ],
+        "render_revision": "2026-10-30T04:19:38Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 3,
+        "pdf_sha256": "57c083fdcfdb48bd4e03f709221a5fb8d49730665273371e10fd4d716d496fce",
+        "receipt_sha256": "85685652b14f6df23edc3d8ae11ddb45e21d6201466775afd9d7a4ebda388644"
+      },
+      "stop_qualification": "Inter Multiplices / Optime source quality remains unresolved; no accepted successor or new reader row.",
+      "historical_census_status": "SOURCE_HOLD",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/cold-issuer17-finish/reviews.json",
+            "sha256": "141430cc15787530d907d3639450c5ee2e78c8402a11ec852d7d4bc76492a150"
+          },
+          "declaration": {
+            "id": "pius-ix-acta.volume-01.line-00020042.part-03",
+            "language": "la",
+            "pdf_sha256": "57c083fdcfdb48bd4e03f709221a5fb8d49730665273371e10fd4d716d496fce",
+            "pages": 3,
+            "status": "CHANGES_REQUIRED",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "BLOCKER",
+                "pages": [
+                  2,
+                  3
+                ],
+                "description": "BLOCKER: exact PDF page 2 lower-right through page 3 opening/dating contains sustained OCR damage across the prayer/blessing and ending: observàntia quàfn cumuletisgsime, sporitate $0lliciti, divinae $uso, con-/netediti, source LF21317 Vo& cáritatis 4estem, LF21319 JÁratséR, Cunetisque and LF21323–21324 -Detum...Mai-/1li Agno 1954. This exceeds isolated wordbreak/date debris. Recover the ending and review a replacement; hold these exact bytes. The I. Petri note has literal paragraph boundaries. Sparse page 3 is source-bearing but does not cure the degraded ending."
+              }
+            ],
+            "limitations": "Review covers exact-byte pins, meaningful reader usability, layout, displayed identification, note/ending/apparatus separation and fresh full-page inspection. No original-print or facsimile collation, historical authentication, independent source completeness certification, translation-equivalence review or rights determination was performed. Uncorrected OCR qualifications remain. No inherited inspection or page-review reuse is claimed."
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/recovery-index.json",
+          "sha256": "bfc551d3d398c7379ade9e624ca5b0d60faadb9eb49f6d23adf2e01c80c0e3bf",
+          "bytes": 293396
+        },
+        {
+          "path": ".scratch/encyclical-cold-report-recovery/rows/cold_issuer17_finish--pius-ix-acta.volume-01.line-00020042.part-03--la.json",
+          "sha256": "4e04e7f79cc55ef8773669bfc88301e136c536b91ac0e79fbe43d519126a32cf",
+          "bytes": 17252
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/report.md",
+          "sha256": "337273d437181f6decbf681e4cfc3dddddac11eec88a56c65cba7a998ea1293b",
+          "bytes": 13585
+        },
+        {
+          "path": ".scratch/cold-issuer17-finish/observations.json",
+          "sha256": "018855a33be0333772d0e76dafbee7a72c377a203f3a1bb434778b466aca2a37",
+          "bytes": 6080
+        },
+        {
+          "path": ".scratch/pius-ix-ocr-recovery/extension-handoff.json",
+          "sha256": "477e19552b3b229bf9bca77bbbd97046657ca9a42354d09e6dc8ca7cd324db0c",
+          "bytes": 5430
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 49,
+      "original_key": [
+        "pius-ix-acta.volume-02.line-00028165.part-03.page-furniture-omitted-v2",
+        "la"
+      ],
+      "title": "Singulari quidem — ad episcopos ditionis Austriacae",
+      "stop_state": "FINAL_BOUNDED_REVIEW_RETAINED_ADMISSION_PENDING",
+      "current_candidate_tuple": {
+        "id": "pius-ix-acta.volume-02.line-00028165.part-03.remaining-singulari-bsb-ocr-v1",
+        "language": "la",
+        "artifact_id": "artifact.pius-ix-acta.volume-02.1858-rome-franz-munich-bsb.remaining-singulari-bsb-text-43e41fb6a443",
+        "edition_id": null,
+        "segment_id": "segment.pius-ix-acta.volume-02.line-00028165.part-03.1858-rome-franz-munich-bsb-la.remaining-singulari-bsb-43e41fb6a443",
+        "source_sha256": "43e41fb6a443aea6a31972cf7dd27b4f31de97ef63932acde4db7d79b6dd14b4",
+        "physical_line_ranges": [
+          [
+            1,
+            701
+          ]
+        ],
+        "render_revision": "2026-10-30T19:34:54Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 7,
+        "pdf_sha256": "92917bc695bd0fa427f94fc520139766dfb254028d6f8e36a05cccff723103d3",
+        "receipt_sha256": "fedc09291f3cc03b23f58a65d8958d185d57bfd09563b0f176f25daf64a0589f"
+      },
+      "stop_qualification": "Exact SOURCE/PDF roles and qualifications are those expressly declared in the retained reports; no broader source admission is inferred.",
+      "historical_census_status": "REVIEW_OWNED",
+      "final_exact_matching_declarations": [
+        {
+          "evidence": {
+            "path": ".scratch/encyclical-refinement-package/cold-review-60/reviews.json",
+            "sha256": "e11a90ab4f6c233f04a380d0dced7aeee2566daa3227f869778f92da0469d1b1"
+          },
+          "declaration": {
+            "id": "pius-ix-acta.volume-02.line-00028165.part-03.remaining-singulari-bsb-ocr-v1",
+            "language": "la",
+            "pdf_sha256": "92917bc695bd0fa427f94fc520139766dfb254028d6f8e36a05cccff723103d3",
+            "pages": 7,
+            "status": "PASS",
+            "source_status": "PASS_QUALIFIED_UNCORRECTED_OCR",
+            "individually_inspected_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "reused_pages": [],
+            "findings": [
+              {
+                "severity": "qualification",
+                "pages": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "description": "Uncorrected source OCR retains isolated opening/glyph/name/punctuation/citation-numeral defects and physical word divisions. Continuous reading is usable; photographs control quotation. No material source garble/loss/foreign contamination found."
+              },
+              {
+                "severity": "qualification",
+                "pages": [
+                  7
+                ],
+                "description": "Sparse final page includes genuine final prayer, blessing and dating clause; no separate printed signature is present in the witness. Source and rights apparatus share that source-bearing page."
+              }
+            ],
+            "limitations": [
+              "No full lexical or translation accuracy collation.",
+              "No new worldwide rights clearance or whole-volume inspection.",
+              "No predecessor/public supersession/admission/installation/publication authority.",
+              "Fresh independent source and PDF review; no inherited producer acceptance."
+            ]
+          }
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": ".scratch/pius_latin_remaining_repairs/coordinator/singulari-mechanical-handoff/report.json",
+          "sha256": "21341322f24e9f7c055de6273cd024d928684e06774b74f0f515649224145e31",
+          "bytes": 20120
+        },
+        {
+          "path": ".scratch/pius_latin_remaining_repairs/coordinator/singulari-mechanical-handoff/qualified-producer-visual-attestation.json",
+          "sha256": "e363d7d53089b760bd2c7c31aa422f692fcbcfdd91ea67d23ebe34f95759ac89",
+          "bytes": 2553
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    },
+    {
+      "ordinal": 50,
+      "original_key": [
+        "pius-ix-acta.volume-03.line-00021313.part-07",
+        "la"
+      ],
+      "title": "Quanto conficiamur moerore — ad cardinales et episcopos Italiae",
+      "stop_state": "NEW_PRODUCER_CANDIDATE_COLD_PENDING",
+      "current_candidate_tuple": {
+        "id": "pius-ix-acta.volume-03.line-00021313.part-07.remaining-quanto-bsb-ocr-v1",
+        "language": "la",
+        "artifact_id": "artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome-ia-mul.ocr-3a788e20d82b",
+        "edition_id": null,
+        "segment_id": "segment.pius-ix-acta.volume-03.line-00021313.part-07.1864-pius-ix-acta-volume-03-la.source-ocr",
+        "source_sha256": "bfc080c38613b4275a5bd7bbb67851f3f4e686443c86e2ebb356eeb79d5f3b07",
+        "physical_line_ranges": [
+          [
+            23253,
+            23290
+          ],
+          [
+            23292,
+            23324
+          ],
+          [
+            23326,
+            23333
+          ],
+          [
+            23335,
+            23371
+          ],
+          [
+            23373,
+            23375
+          ],
+          [
+            23377,
+            23417
+          ],
+          [
+            23419,
+            23460
+          ],
+          [
+            23462,
+            23501
+          ],
+          [
+            23503,
+            23536
+          ],
+          [
+            23538,
+            23573
+          ],
+          [
+            23575,
+            23610
+          ],
+          [
+            23612,
+            23645
+          ],
+          [
+            23647,
+            23683
+          ],
+          [
+            23685,
+            23722
+          ],
+          [
+            23724,
+            23735
+          ]
+        ],
+        "render_revision": "2026-10-30T02:56:48Z",
+        "compact_layout": null,
+        "compact_margin": null,
+        "pages": 4,
+        "pdf_sha256": "e1ca9cb46f0a5142ade84f4430d9353d444110c3474b816dad43f93435067717",
+        "receipt_sha256": "7b417cccac0cf495d72152b83b2916d4f6061a627881189190be95251af7636e"
+      },
+      "stop_qualification": "Quanto new4-page reader comes from13 historical source pages; source bfc080c3/PDF e1ca9cb4. Independent cold pending. No13-page reader was produced.",
+      "historical_census_status": "PRODUCER_OWNED",
+      "final_exact_matching_declarations": [],
+      "historical_evidence": [
+        {
+          "path": ".scratch/pius_latin_remaining_repairs/coordinator/progress.json",
+          "sha256": "ab74f1720117d237c052b93cf7ad7e4dbd7c9975c0dc083f408e09262286ae2a",
+          "bytes": 8680
+        },
+        {
+          "path": ".scratch/pius_latin_remaining_repairs/quanto-bsb/manifest.json",
+          "sha256": "d4fd2aaea8d36cff8ebc9dce9cfe2cce958b3849bdc0c60c052727006c3c629c",
+          "bytes": 708986
+        },
+        {
+          "path": ".scratch/pius_latin_remaining_repairs/quanto-native-review/report.json",
+          "sha256": "12fb75a85630f91e9924316e158efd8e0c67ecff45cccb251b0c105b6d9270b4",
+          "bytes": 35179
+        }
+      ],
+      "canonical_admission": "PENDING; inactive data only"
+    }
+  ]
+}

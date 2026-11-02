@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "review": "independent merged run-archive privacy contract review",
+  "verdict": "CHANGES_REQUIRED",
+  "merge_target": "84c2f7e041af77230095987ae7eb86b0f4d2f92e",
+  "workspace_branch": "feature/propers/codex",
+  "reviewed_sha256": {
+    "tools/proper-study-run-archive": "dfcda36ff181ec63178a38578a4c09a2e108a1808916cbf718bb0bad1ba933fa",
+    "tools/tests/test_proper_study_run_archive.py": "d516fad2410fc5cca8a239c671f35dddec626fc680ad10159af9b4789e1848fe",
+    "workflows/OPERATOR.md": "7b0ea4bd0972e17c0b68cb57ad282e0df9f6a7af90ea3d81b6db699e2292e1a1",
+    "tmt.json": "1991c06be7c872c8322e2821ce6ce3168da1d52043298a06ac7031489e813020"
+  },
+  "findings": [
+    {
+      "id": "ARCHIVE-MERGE-001",
+      "priority": "P1",
+      "path": "tools/proper-study-run-archive",
+      "line": 400,
+      "problem": "The decoded packet-string generator is exhausted by the absolute-path any() before the operation-handle any() runs. Recognized operation handles in non-JSON packet and generated record text can therefore enter the public archive.",
+      "impact": "Breaks the explicit exporter contract that packets, cycles metadata and every non-note field must refuse recognized operation handles rather than publish them.",
+      "evidence": "Independent synthetic probes archive both a raw packet handle and a decoded JSON-header handle byte for byte with --redact-operation-handles. Existing packet and cycles refusal regressions also fail.",
+      "fix_criterion": "Materialize decoded packet strings for both checks, or apply both privacy predicates in one pass. Add a decoded JSON-header operation-handle refusal regression; retain byte-exact TeX acceptance and genuine UNC-path refusal."
+    }
+  ],
+  "checks": [
+    {
+      "command": "python -m unittest tools.tests.test_proper_study_run_archive -v",
+      "runtime": "Pinned repository runtime; isolated review scratch and TMPDIR",
+      "exit_code": 1,
+      "tests_run": 56,
+      "failure_observations": 7,
+      "skipped": 1,
+      "seconds": 3.571,
+      "interpretation": "Packet and cycles refusals fail directly; later subtests cascade after the incorrect packet export creates the destination. Historical ignored native-run replay is explicitly unavailable."
+    },
+    {
+      "result": "Independent synthetic raw/decoded-header handle probes both publish the forbidden token; decoded TeX passes byte-exact and genuine UNC refuses."
+    },
+    {
+      "result": "All 58 historical native v15 archive files remain byte-identical to premerge HEAD; no archive restamping or native mutation performed."
+    }
+  ],
+  "contract_status": {
+    "main_b38044fe88_decoded_header_fix_present": true,
+    "explicit_operation_note_redaction_present": true,
+    "combined_privacy_audit_correct": false,
+    "operator_source_first_version16_and_historical_version15_boundaries_preserved": true,
+    "registered_explicit_option_preserved": true
+  },
+  "limits": [
+    "Bounded merged exporter review only; the live reconciliation and artifact-delivery extension are outside this verdict.",
+    "No source, index, release or historical archive mutation, full build, commit or push performed."
+  ],
+  "open_findings": [
+    "ARCHIVE-MERGE-001"
+  ]
+}

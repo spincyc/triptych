@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.benedict-xiv-bullarium.volume-03.1754-rome-mul.line-map-1b5cfe4383cd"
+edition_id = "edition.benedict-xiv-bullarium.volume-03.1754-rome-mul"
+artifact_type = "mechanical-line-leaf-map"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC-BY-4.0"
+retrieved = "2026-10-26"
+rights_basis = "Project-created factual correspondence data under CC BY 4.0; source words retain their separately identified historical rights."
+sha256 = "1b5cfe4383cd6aad07b8e5ca2357790c304b311b6dddecb166e929d1b435307f"
+byte_size = 126187
+path = "src/sources/works/benedict-xiv-bullarium/volume-03/editions/1754-rome-mul/artifacts/line-map-1b5cfe4383cd/line-map.json"
+derived_from = "artifact.benedict-xiv-bullarium.volume-03.1754-rome-mul.xml-247d02b12df1"
+support_artifacts = [{ artifact_id = "artifact.benedict-xiv-bullarium.volume-03.1754-rome-mul.ocr-a4eeef26fafd", embedded_reference = "ocr.txt" }]
+transformation = "Compare every whole TXT whitespace token with every XML WORD token; derive raw LF positions and leaf identifiers from explicit XML filenames. Automated labels join by leaf ID. Replay with artifact.triptych.historical-papal-line-mapping.2026-10-26-v1-21d25700.recipe-21d25700861f."
+provenance = "Mechanical correspondence over complete acquired inputs; no generated source text."
+notes = "Mapping pins exact OCR and XML hashes. Layout flags are conservative leads, not verified reading order or printed pagination."

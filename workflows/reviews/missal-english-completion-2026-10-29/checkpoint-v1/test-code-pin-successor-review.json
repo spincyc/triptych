@@ -1,0 +1,157 @@
+{
+  "adoption_retention_required": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/source-epoch-fixture-v1.json",
+      "sha256": "ed919d8d549395ee3d8736fa2cd3ced903e1cccb98fd72a101b25dad8eba00c1"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/source-epoch-inputs-v1.json",
+      "sha256": "a842b22712bce139398aa6e5b86cfd662cfb14ab46de510e5c241265440324fd"
+    }
+  ],
+  "all17_original_streams_equal_actual_Git": true,
+  "all7068_current_file_hashes_verified": true,
+  "all_other_fixture_fields_exact": true,
+  "all_other_manifest_bytes_exact": true,
+  "canonical_mutations": 0,
+  "changed_pins": [
+    {
+      "after_sha256": "0149bd4a6c9ed10d975d17bf91863c06dd86632ff8b42a9680054bffc933fcf4",
+      "before_sha256": "31957a3789b2f6291700098bdb7683fc4d0a19e3e4094c3e8f48ab45395302d6",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "after_sha256": "cb9265ac684392086cfb9347cb9c5e778fda2563e48b5f5d431ed811ae15fa6d",
+      "before_sha256": "208dc6448c764907e500be197f6e112ebd10e4807f1a84eef5c884ba10228dbd",
+      "path": "tools/tests/test_roman_1962_english13_phase5.py"
+    }
+  ],
+  "decision": "accept-mechanical-two-code-pin-and-two-inverse-proposal-only",
+  "findings": [],
+  "fixture_changes_limited_to": [
+    "source_input_manifest_sha256",
+    "acceptance",
+    "files for the two declared test paths only"
+  ],
+  "limits": [
+    "Root must separately author accepted successor receipt and binding and install.",
+    "This creates no new source authority, body, owner, coverage, historical before bytes, positive partition or publication rights.",
+    "Consumer tests remain separate from mechanical successor acceptance."
+  ],
+  "manifest_paths": 7068,
+  "manifest_sha256": "b30da8a83c979b551250899aa4b5068ce32ade331b168c5cf2a94da81c428ebd",
+  "negative_controls_rejected": [
+    "changed-after-hash",
+    "changed-original-replay-bytes"
+  ],
+  "original_before_hashes_preserved": true,
+  "original_receipt": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/source-batch-checkpoint-v1.json",
+    "sha256": "341942539fe1292753f059df0f487c30588ee864c87b923218b3440ffd8a860a",
+    "untouched": true
+  },
+  "original_replay_results": [
+    {
+      "inverse_rebased": false,
+      "original_sha256": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+      "path": "src/sources/calendars/postconciliar/propers.yaml"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877",
+      "path": "src/sources/calendars/roman-1962/propers.yaml"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "9bf6fe5ecc3b397888a0316f7b5c06e40f65e9dfc1eb96c3bc78d111e7c41597",
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
+      "path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "560e82057dc0480a5b1fe835304ba57ed476b346a38cab6fac550298582016ea",
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "79946d1bc6e015d8624d67ce243b59cf3ee634fc5997310aa6d764953349d815",
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "465e15d42b7301b22c2d93be1b95b00eb326ee0cd2ad1f928520952a89e89faa",
+      "path": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml"
+    },
+    {
+      "inverse_rebased": true,
+      "original_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py"
+    },
+    {
+      "inverse_rebased": true,
+      "original_sha256": "dedf9a58d3f9e6b311bf5caf8f7aa7c51dcc9543d6ee17e4288e834c8cdc0215",
+      "path": "tools/tests/test_roman_1962_english13_phase5.py"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "86b29add67ac575fb147300f4ab6e66c47863a16c4cf5166896a88e710f5335c",
+      "path": "tools/tests/test_roman_1962_english31_phase4.py"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "9c11f0b870c14916dfa2530c1e733f262a5c9f526cd613744a06ea7ce3c05190",
+      "path": "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py"
+    },
+    {
+      "inverse_rebased": false,
+      "original_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+    }
+  ],
+  "original_revision": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "parent_fixture_sha256": "ed919d8d549395ee3d8736fa2cd3ced903e1cccb98fd72a101b25dad8eba00c1",
+  "parent_manifest_sha256": "a842b22712bce139398aa6e5b86cfd662cfb14ab46de510e5c241265440324fd",
+  "path_membership_and_order_exact": true,
+  "pending_fixture_sha256": "3b9cefdc626fedf87df429e385897e70a0bb2671695739518c485084e830d4a6",
+  "proposal_sha256": "d9712c5b1eacbb17d2db5074d8f111022e74ca9f4640742dd0395f626fa340bb",
+  "replay_support_sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc",
+  "replay_verified_with_independent_slice_implementation_and_frozen_support": true,
+  "review_scope": "Mechanical byte/pin/original replay conservation only. No independent code-merits claim for the test modules; this reviewer authored one test module but did not prepare the successor.",
+  "reviewed_on": "2026-10-30",
+  "schema": "triptych-independent-mechanical-test-code-pin-review/v2",
+  "strict_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+  "superseded_v1_review_sha256": "0e85bc8c8ea4c68cdf81e84c7f6139c8dfb7bdd60aa4fea42fdf385d77ed02a9",
+  "two_new_inverse_specs_equal_frozen_replay_constructor": true,
+  "unchanged_inverse_specifications": 15,
+  "unchanged_manifest_rows": 7066,
+  "v1_disposition": "Not adoptable: its narrow pin-only conservation omitted required replay-after rebasing. This corrected review verifies operational replay independently."
+}

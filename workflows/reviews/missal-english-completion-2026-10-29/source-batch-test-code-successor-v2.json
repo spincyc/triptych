@@ -1,0 +1,101 @@
+{
+  "accepted_by": "coordinating AI contributor under the maintainer-authorized completion and publication task",
+  "accepted_fixture_core_sha256": "b6779b36e296f0a9345438294f09b60a64b3f6097cff6bb111ec337af42b42b5",
+  "accepted_on": "2026-10-30",
+  "added_paths": [],
+  "all_original_replay_streams_preserved": 17,
+  "all_source_and_semantic_partitions_unchanged": true,
+  "boundaries": [
+    "Only five existing test-code pins and their after-byte inverse representations change. Every reconstructed original byte stream remains exact.",
+    "All source, translation, target, owner, positive/absence, coverage, rights and source-fidelity authorities remain unchanged from the separately accepted source epoch.",
+    "Complete English, whole-book correspondence, human acceptance and deployment remain separate obligations."
+  ],
+  "changed_test_pins": [
+    {
+      "after_sha256": "eeabd808b92cb4754b102a700897bf758c0abcc1f656bfb059de70e56d884982",
+      "before_sha256": "0149bd4a6c9ed10d975d17bf91863c06dd86632ff8b42a9680054bffc933fcf4",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "after_sha256": "e9bf4075f1529b48682b6e64363e0d67492b0e5fb12fdb99a2e08ea9cf14db0f",
+      "before_sha256": "2a02299138da22f4f047f4c286f80f0d7efe6f04cb66a633012c8daae300b3f2",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py"
+    },
+    {
+      "after_sha256": "6eac69145f33bca64ea050e95a1c41c2dcea12ced488a002fc64fcd8e56d4a0c",
+      "before_sha256": "8917c73a9c4c0f03d39373271e55df703486e44ba90af600ad6582bbb096941e",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    },
+    {
+      "after_sha256": "cdc06660f2be35e40f94acb44d72c3a9d6cd679089d640e3486256044db5b994",
+      "before_sha256": "a88ad8b7df5c8af8c4e0d3023a0e1864ff68a766bfc51a3b63b019da59ad4124",
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py"
+    },
+    {
+      "after_sha256": "5e04878938801451c88c2d5b0c81afdfffa99bfda4f64f9025d1a8d7de6d5075",
+      "before_sha256": "4ab85f7ee0be0af90267e503dea142b7ce14d5ce2e922f8aab168df092f0d8ba",
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+    }
+  ],
+  "consumer_tests": "Pending after this acceptance and installation; no pass is asserted by this receipt.",
+  "dropped_paths": [],
+  "fixture_core_serialization": "UTF-8 json.dumps(indent=2, sort_keys=True, ensure_ascii=False), followed by LF; omit acceptance and state.",
+  "historical_fields_preserved": [
+    "schema",
+    "baseline_revision",
+    "baseline_roman_document_sha256",
+    "latin_baseline_rows",
+    "latin_baseline_bodies",
+    "latin_baseline_present_keys",
+    "latin_baseline_supplemented_keys",
+    "projection_baseline_source_files",
+    "english_219_keys",
+    "english_baseline_source_files",
+    "english_historical_source_files",
+    "english_historical_absence_scope"
+  ],
+  "independent_mechanical_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/test-code-successor-v2/review.json",
+    "sha256": "d929a5e3932cc841fd8d8edf61dcfd3c2e35eabe57b276bb1597c34584380f3d"
+  },
+  "original_before_hashes_preserved": true,
+  "original_revision": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "parent_acceptance": {
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/source-batch-test-code-successor-v1.json",
+    "receipt_sha256": "cd6b4eea6810acfd3ce3cef9e4249ab0434e97a62ebea7df15f8b4dd8f17edec",
+    "status": "accepted"
+  },
+  "proposal": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/test-code-successor-v2/proposal.json",
+    "sha256": "02d4cd1c9c13f01104fde01e09094697ef4916dceabeabab68edc6473b95d8d0"
+  },
+  "replay_support_sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc",
+  "retained_exact_parent_inputs": {
+    "fixture": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/test-code-successor-v2/parent-fixture.json",
+      "sha256": "c77c9d880e6d80d4ff7d07b4691b464568bb509648ab3a318fd232006e64afa9"
+    },
+    "inputs": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/test-code-successor-v2/parent-inputs.json",
+      "sha256": "b30da8a83c979b551250899aa4b5068ce32ade331b168c5cf2a94da81c428ebd"
+    }
+  },
+  "root_test_code_review": [
+    "Pange is the exact separately reviewed source-only assembly: old nonspoken cue and complete 1879 hymn remain bound, and target correspondence remains unresolved rather than full-word 1962 collation.",
+    "All other legacy target-exact controls remain; the separate direct twenty-five source proofs retain exact records, body and artifact hashes, actual production decisions and mutation refusals.",
+    "The original status partition 1269/17/3 and twenty removed owners remain exact. Anthony alone preserves the intermediate 1270/16/3 stage; only Silvester and Palm Latin ordinals five and six explain the later current 1273/13/3 and sixteen continuing refusals.",
+    "The literal historical code hash is checked against exact archived 6aeb96a392 bytes; current code and the separately adopted finite-sixteen authority have independent exact hashes.",
+    "Historical post-Anthony nonpermitted/unresolved counts 348/345 remain separate from current 345/342 counts."
+  ],
+  "schema": "triptych-source-batch-acceptance/v1",
+  "scope": "missal-source-batch",
+  "source_epoch_paths": 7068,
+  "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+  "source_input_manifest_sha256": "a0e3d98e0bb4de8f9f0509701550ff71312d5c1c11b81fac3ccf0f00a80f8baa",
+  "source_permission_created_by_this_receipt": false,
+  "status": "accepted",
+  "strict_runtime_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+  "successor_kind": "five-reviewed-test-code-pins-and-original-inverse-rebinding",
+  "unchanged_inverse_specifications": 12,
+  "unchanged_manifest_rows": 7063
+}

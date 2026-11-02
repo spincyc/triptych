@@ -1,0 +1,242 @@
+{
+  "schema": "triptych-independent-common-paschal-review/v1",
+  "reviewed_on": "2026-10-29",
+  "disposition": "accept",
+  "scope": "Independent source and English judgment of precisely the frozen three Common Paschal Alleluia candidate rows and their 13 proposed source files. Acceptance is bounded to these inputs, not integration or publication approval.",
+  "candidate_path": ".scratch/roman-english-completion-20261029/chants/common-paschal/candidates.json",
+  "candidate_sha256": "e4db12460923db98bc98932d172cbc98905ddde56141386e8b7feba1b88c36ee",
+  "source_pdf_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+  "target_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+  "full_pdf_hashes_independently_recomputed": true,
+  "pages_artifact_sha256": "5a89bcc0840aaa39d2ea6ca05962d491d2adeb58a8bae6c86b623f19ce6f4edc",
+  "projection_artifact_sha256": "51e71a00ee2df641e678e26e136d5645602b6dde98b20e3e74b64c849083e005",
+  "proposed_files": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-common-paschal-pages/artifact.toml",
+      "sha256": "d392c5de3eb8cf72e03bca54cf27c51e491311d23f9e95d25fac94a20d859cd0",
+      "byte_size": 2115
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-common-paschal-pages/source.pdf",
+      "sha256": "5a89bcc0840aaa39d2ea6ca05962d491d2adeb58a8bae6c86b623f19ce6f4edc",
+      "byte_size": 591254
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-common-paschal-commune-confessoris-pontificis-1-paschal-alleluia.toml",
+      "sha256": "616931cebfb6254926a8a76409361604771bc084edf02685a9f604a6d4e7295d",
+      "byte_size": 1446
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-common-paschal-commune-non-virginum-1-paschal-alleluia.toml",
+      "sha256": "c5c8a5202179935124f0b9f61d60bf1d718b9aeef044f593485563151c854881",
+      "byte_size": 1437
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-common-paschal-commune-non-virginum-2-paschal-alleluia.toml",
+      "sha256": "244d5370e8ad1120b8630ec37d77b022c446159513baf197209c64c6fcd889d5",
+      "byte_size": 1437
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-common-paschal-commune-confessoris-pontificis-1-paschal-alleluia.toml",
+      "sha256": "644cf3d75a47989d05d40416fe94e2b2dbc2560fa6efcd933153bcda7a84eea6",
+      "byte_size": 1224
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-common-paschal-commune-non-virginum-1-paschal-alleluia.toml",
+      "sha256": "4934961bbd0ca917ddb142a5a1172a97edeefcf53e0bb3f60f75d218b7ce2e18",
+      "byte_size": 1214
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-common-paschal-commune-non-virginum-2-paschal-alleluia.toml",
+      "sha256": "a532437fd99c77105f3534b204eef8d3f32ca923f1cb0b7bcb2c72dc147452c6",
+      "byte_size": 1214
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-common-paschal/artifact.toml",
+      "sha256": "33c803295fc7be2ff122044d84e5a4967deaaa6c034c8b43c612d1bc8046f4f8",
+      "byte_size": 2381
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-common-paschal/latin.txt",
+      "sha256": "51e71a00ee2df641e678e26e136d5645602b6dde98b20e3e74b64c849083e005",
+      "byte_size": 557
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/commune-confessoris-pontificis-1-paschal-alleluia.toml",
+      "sha256": "43606c83ef170b44131ceb8dbc617b09fcf9bd35c8717965ef507eff6106b34e",
+      "byte_size": 1591
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/commune-non-virginum-1-paschal-alleluia.toml",
+      "sha256": "f71de09bb54b598a4b188b30787afbe62c90ee7ed35937c0f4bf95968173dbc8",
+      "byte_size": 1572
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/commune-non-virginum-2-paschal-alleluia.toml",
+      "sha256": "2bcf9c1efc1d6108beb5b6b26eb856e6af3b236074671f1cc5ab70a9bd029fff",
+      "byte_size": 1572
+    }
+  ],
+  "all_13_hash_and_size_pins_independently_rechecked": true,
+  "all_11_toml_manifests_and_passages_independently_read": true,
+  "source_and_target_images": "Each full selected target and source body read at 200 and 400 dpi. Fresh 400-dpi renders of original full PDFs are byte-identical to all six supplied review PNGs. Actual frozen source.pdf was freshly rendered; its three 400-dpi page rasters are byte-identical to original Mame pages 900/920/922.",
+  "image_link_checks": [
+    {
+      "kind": "target",
+      "page": 827,
+      "fresh_png_sha256": "33ec691953f2d9759db7e1b8f6b3dcea066b0c04da90c1baa5ffc2da71b03e8f",
+      "supplied_png_sha256": "33ec691953f2d9759db7e1b8f6b3dcea066b0c04da90c1baa5ffc2da71b03e8f",
+      "byte_identical": true
+    },
+    {
+      "kind": "target",
+      "page": 843,
+      "fresh_png_sha256": "811eb6d97babcaa3e74fa71f4ce2293e534802e4c104e148e072595bff2af493",
+      "supplied_png_sha256": "811eb6d97babcaa3e74fa71f4ce2293e534802e4c104e148e072595bff2af493",
+      "byte_identical": true
+    },
+    {
+      "kind": "target",
+      "page": 846,
+      "fresh_png_sha256": "1b6741627bd39670b9e55c511f7f7b5854837bda773a124a5bfab822857632f1",
+      "supplied_png_sha256": "1b6741627bd39670b9e55c511f7f7b5854837bda773a124a5bfab822857632f1",
+      "byte_identical": true
+    },
+    {
+      "kind": "source",
+      "page": 900,
+      "fresh_png_sha256": "5283e97f0da8a4a408bc31bbb29632cb72145f1fbd24a94bf113bf80cb9c38e1",
+      "supplied_png_sha256": "5283e97f0da8a4a408bc31bbb29632cb72145f1fbd24a94bf113bf80cb9c38e1",
+      "byte_identical": true
+    },
+    {
+      "kind": "source",
+      "page": 920,
+      "fresh_png_sha256": "09d113b041dd8021fb2ee841f14bf80c2dd2d8d8606a56af97120722ba41b634",
+      "supplied_png_sha256": "09d113b041dd8021fb2ee841f14bf80c2dd2d8d8606a56af97120722ba41b634",
+      "byte_identical": true
+    },
+    {
+      "kind": "source",
+      "page": 922,
+      "fresh_png_sha256": "57ec61ff02b2b8facb8889929f03f27e2146feccb1b53f5dbd1ff2ee0dba4c7d",
+      "supplied_png_sha256": "57ec61ff02b2b8facb8889929f03f27e2146feccb1b53f5dbd1ff2ee0dba4c7d",
+      "byte_identical": true
+    },
+    {
+      "kind": "frozen-extract",
+      "extract_page": 1,
+      "parent_page": 900,
+      "fresh_png_sha256": "5283e97f0da8a4a408bc31bbb29632cb72145f1fbd24a94bf113bf80cb9c38e1",
+      "byte_identical": true
+    },
+    {
+      "kind": "frozen-extract",
+      "extract_page": 2,
+      "parent_page": 920,
+      "fresh_png_sha256": "09d113b041dd8021fb2ee841f14bf80c2dd2d8d8606a56af97120722ba41b634",
+      "byte_identical": true
+    },
+    {
+      "kind": "frozen-extract",
+      "extract_page": 3,
+      "parent_page": 922,
+      "fresh_png_sha256": "57ec61ff02b2b8facb8889929f03f27e2146feccb1b53f5dbd1ff2ee0dba4c7d",
+      "byte_identical": true
+    }
+  ],
+  "ownership_context": "1962 p827 names Confessor Bishop I; p843 names Non-Virgins I. Additional fresh context images inspected: 1962 p845/[37] begins Non-Virgins II, continuing into unit4453 at p846/[38]; Mame p899/21* begins Confessor Bishop I, p919/41* begins Non-Virgins I, p921/43* begins Non-Virgins II. Each retained passage is after the local Paschal rubric, distinct from the regular Alleluia and Tract.",
+  "transformations_judgment": "accept: words and full extent agree. Declared wrap joining, accents/ligatures, Alleluja/Alleluia, justitiam/iustitiam, V. sign representation, omission of bibliographic labels, capitalization and pointing cover the observed differences. No changed Latin word, dropped clause, supplied seasonal ending or Bible reconstruction found.",
+  "source_graph_judgment": "accept: Mame extract stays under the identified 1922 printing and derives from its exact registered parent. Target passages remain text-free under the 1962 edition. Project projection separately owns normalized Latin and declares both evidence ancestors; all three physical-line ranges and hashes agree with latin.txt. Distinct non-virgin appointments remain distinct despite identical text.",
+  "english_qualification_judgment": "accept: all candidates say project-created and identify themselves as original Triptych study translations, not approved liturgical English or historical translations. No ICEL or other third-party English attribution or endorsement claim is made.",
+  "rights_review_bound": "Applied the existing registered United States public-domain Mame witness route and repository publication policy to these exact bodies; did not independently reopen legal research or clear the 1962 edition. No 1962 page payload is among the proposed files.",
+  "rows": [
+    {
+      "identity": {
+        "mass": "commune-confessoris-pontificis-1",
+        "form_id": "main",
+        "proper": "Alleluia (Tempore paschali)",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "disposition": "accept",
+      "latin_sha256": "2559a4a8615ec155e161374509641a35a77725abad2bafebc0f323c61eed01d5",
+      "english_sha256": "be0470e96192a6d9ee74d7a7540c19269293742cbb9fbb6d8422c7fb08b83884",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-common-paschal-commune-confessoris-pontificis-1-paschal-alleluia",
+      "source_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-common-paschal-commune-confessoris-pontificis-1-paschal-alleluia",
+      "projection_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-common-paschal-commune-confessoris-pontificis-1-paschal-alleluia",
+      "target_locus": "1962 artifact page 827, printed [19], unit 4312, R lower column; complete Paschal Alleluia strictly after its seasonal rubric and before the Gospel heading",
+      "source_locus": "Mame 1922 original artifact page 900, printed 22*, L upper column; retained extract page 1; complete Paschal Alleluia after the Tempore Paschali rubric and before the Gospel heading",
+      "whole_body_match": true,
+      "two_versicles_and_four_alleluia_words_preserved": true,
+      "target_punctuation_preserved_under_declared_transformations": true,
+      "old_proper_exactly_matches_live_owner": true,
+      "old_english_gap_exactly_matches_live_overlay": true,
+      "source_verses_and_ordinary_disposition_preserved": true,
+      "english_fidelity": "accept: complete independent study translation; no omitted clause, changed speaker, invented petition or historical/approved-translation claim found",
+      "source_and_english_blocking_findings": []
+    },
+    {
+      "identity": {
+        "mass": "commune-non-virginum-1",
+        "form_id": "main",
+        "proper": "Alleluia (Tempore paschali)",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "disposition": "accept",
+      "latin_sha256": "0880a742829a12fa7d70a13ca1132ff6dc0ac5cb90ddcf3766430a4bc47d6e0b",
+      "english_sha256": "4928fed69151858d9149c4ff70963020bcbf45ab2c3da0372bfe3f6e50af20e3",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-common-paschal-commune-non-virginum-1-paschal-alleluia",
+      "source_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-common-paschal-commune-non-virginum-1-paschal-alleluia",
+      "projection_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-common-paschal-commune-non-virginum-1-paschal-alleluia",
+      "target_locus": "1962 artifact page 843, printed [35], unit 4438, R lower column; complete Paschal Alleluia strictly after its seasonal rubric and before the Gospel heading",
+      "source_locus": "Mame 1922 original artifact page 920, printed 42*, L middle column; retained extract page 2; complete Paschal Alleluia after the Tempore Paschali rubric and before the Gospel heading",
+      "whole_body_match": true,
+      "two_versicles_and_four_alleluia_words_preserved": true,
+      "target_punctuation_preserved_under_declared_transformations": true,
+      "old_proper_exactly_matches_live_owner": true,
+      "old_english_gap_exactly_matches_live_overlay": true,
+      "source_verses_and_ordinary_disposition_preserved": true,
+      "english_fidelity": "accept: complete independent study translation; no omitted clause, changed speaker, invented petition or historical/approved-translation claim found",
+      "source_and_english_blocking_findings": []
+    },
+    {
+      "identity": {
+        "mass": "commune-non-virginum-2",
+        "form_id": "main",
+        "proper": "Alleluia (Tempore paschali)",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "disposition": "accept",
+      "latin_sha256": "0880a742829a12fa7d70a13ca1132ff6dc0ac5cb90ddcf3766430a4bc47d6e0b",
+      "english_sha256": "4928fed69151858d9149c4ff70963020bcbf45ab2c3da0372bfe3f6e50af20e3",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-common-paschal-commune-non-virginum-2-paschal-alleluia",
+      "source_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-common-paschal-commune-non-virginum-2-paschal-alleluia",
+      "projection_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-common-paschal-commune-non-virginum-2-paschal-alleluia",
+      "target_locus": "1962 artifact page 846, printed [38], unit 4453, L upper column; complete Paschal Alleluia strictly after its seasonal rubric and before the Gospel heading",
+      "source_locus": "Mame 1922 original artifact page 922, printed 44*, R middle column; retained extract page 3; complete Paschal Alleluia after the Tempore Paschali rubric and before the Gospel heading",
+      "whole_body_match": true,
+      "two_versicles_and_four_alleluia_words_preserved": true,
+      "target_punctuation_preserved_under_declared_transformations": true,
+      "old_proper_exactly_matches_live_owner": true,
+      "old_english_gap_exactly_matches_live_overlay": true,
+      "source_verses_and_ordinary_disposition_preserved": true,
+      "english_fidelity": "accept: complete independent study translation; no omitted clause, changed speaker, invented petition or historical/approved-translation claim found",
+      "source_and_english_blocking_findings": []
+    }
+  ],
+  "blocking_findings": [],
+  "optional_findings": [],
+  "limitations": [
+    "No tracked file was edited; frozen candidate and postimages remained read-only.",
+    "No whole-repository aggregate source, calendar, browser, deployment or publication gate was run in this lane. Those belong to parent integration against its assembled state.",
+    "English is reviewed as the candidate strings in candidates.json. Any later translation overlay/source binding and rendered qualification require parent integration checks; this review makes no claim that those artifacts already exist.",
+    "No whole-Common, whole-Missal, historical English-exemplar or official/approved-English completeness claim is established."
+  ],
+  "changed_resources": [
+    "review/image-link-checks.json",
+    "review/source-english-review.json"
+  ]
+}

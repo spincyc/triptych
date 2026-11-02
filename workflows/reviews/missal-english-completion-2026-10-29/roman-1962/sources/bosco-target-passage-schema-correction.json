@@ -1,0 +1,52 @@
+{
+  "schema": "triptych-target-passage-metadata-correction/v1",
+  "recorded_on": "2026-10-29",
+  "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/bosco-three-orations-target-20261029.toml",
+  "reason": "The actual registered1962CMAA controlling artifact has schema1 and no page_count. Preserve its immutable artifact metadata and use supported schema1 textual page/unit locators; remove only redundant machine page ranges from this new target passage.",
+  "before_file_sha256": "0bf3c946bd9dae441d69a75f24c5bacc74b9dff8f57a3b976f5752ad7be2109e",
+  "after_file_sha256": "aff60ac728844c8622a425415bc6ea3d3174a610e91502393c68c8fe0c7396f6",
+  "before_record": {
+    "schema": 2,
+    "record_type": "passage",
+    "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.bosco-three-orations-target-20261029",
+    "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+    "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+    "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+    "locus": "Printed pp.461-462, units2072,2080,2082; artifact pages542-543, right columns",
+    "artifact_page_ranges": [
+      [
+        542,
+        543
+      ]
+    ],
+    "states": [
+      "cataloged",
+      "acquired",
+      "inspected",
+      "verified"
+    ],
+    "verified_on": "2026-10-29",
+    "context": "Text-free target comparison of the three own orations for31JanuarySaintJohnBosco. Complete page images read at200and400dpi, including exact short and long conclusion stops.",
+    "notes": "Compared against ACS52,24February1930,pp849-850. Collect changes factual Beatum to sanctum and adolescentium to adulescentium; Postcommunion changes Beato to sancto and omits tuo after Confessore; Secret petition agrees word for word. Pointing, capitals, stress accents and conclusion lengths differ separately. This passage establishes readings only, not modern-edition permission."
+  },
+  "after_record": {
+    "schema": 1,
+    "record_type": "passage",
+    "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.bosco-three-orations-target-20261029",
+    "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+    "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+    "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+    "locus": "Printed pp.461-462, units2072,2080,2082; artifact pages542-543, right columns",
+    "states": [
+      "cataloged",
+      "acquired",
+      "inspected",
+      "verified"
+    ],
+    "verified_on": "2026-10-29",
+    "context": "Text-free target comparison of the three own orations for31JanuarySaintJohnBosco. Complete page images read at200and400dpi, including exact short and long conclusion stops.",
+    "notes": "Compared against ACS52,24February1930,pp849-850. Collect changes factual Beatum to sanctum and adolescentium to adulescentium; Postcommunion changes Beato to sancto and omits tuo after Confessore; Secret petition agrees word for word. Pointing, capitals, stress accents and conclusion lengths differ separately. This passage establishes readings only, not modern-edition permission."
+  },
+  "body_source_and_artifact_payloads_changed": false,
+  "source_and_English_review_predicates_retained": true
+}

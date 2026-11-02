@@ -1434,12 +1434,30 @@ class English13SourceTests(unittest.TestCase):
 
     def test_primary_rosary_changed_word_withdrawn_and_virgin_source_period(self):
         key = ("beatae-mariae-virginis-a-rosario", "main", "Collect", "all", 1)
-        self.assertNotIn(key, self.entries)
-        self.assertNotIn(key, self.overlay)
-        absence = [r for r in tomllib.loads(LEDGER.read_text())["untranslated"]
+        historical = tomllib.loads(source_batch.historical_text(LEDGER.relative_to(ROOT).as_posix()))
+        self.assertFalse(any(self.p.translation_record_identity(r, self.doc) == key
+                             for r in historical["entries"]))
+        absence = [r for r in historical["untranslated"]
                    if self.p.translation_record_identity(r, self.doc) == key]
         self.assertEqual(len(absence), 1)
         self.assertEqual(digest(absence[0]), ROSARY_ABSENCE_SHA)
+        # The rejected Lasance word substitution stays rejected. The later
+        # original study English has its own accepted source and review.
+        source_batch.assert_current_english_entries(self.entries)
+        current = self.entries[key]
+        self.assertEqual(self.overlay[key], current)
+        self.assertEqual(current["source_latin_sha256"], BASELINE14_SHA[key])
+        self.assertEqual(current["translation_review"],
+                         "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/translation-review.json")
+        self.assertEqual(current["translations"][0]["rights"], "project-created")
+        self.assertEqual(sha(current["translations"][0]["text"]),
+                         "198f1387d8cea84eccdf910df0c0f8b87560d6c94dd12508afb3d91272327b11")
+        context = self.p.study_translation_source_context("roman-1962", CAL)
+        self.p.validate_study_translation_binding(current, "roman-1962", CAL, LEDGER, context=context)
+        changed_source = copy.deepcopy(current)
+        changed_source["source_latin_sha256"] = "0" * 64
+        with self.assertRaises(ValueError):
+            self.p.validate_study_translation_binding(changed_source, "roman-1962", CAL, LEDGER, context=context)
         for path in RETIRED_PATHS:
             self.assertFalse((ROOT / path).exists(), path)
         for record in self.records.values():

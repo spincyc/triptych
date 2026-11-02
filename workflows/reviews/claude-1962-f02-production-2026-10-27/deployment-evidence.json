@@ -1,0 +1,82 @@
+{
+ "record_type": "deployment-verification",
+ "verified_on": "2026-10-27",
+ "commit": "6f93e73e9",
+ "main_base": "59a9862cc",
+ "integration": "fast-forward; origin/main 59a9862cc was merged into the branch (3c09aec2f) after the accepted publication commit, and origin/main then fast-forwarded to the branch head 6f93e73e9; no rebase or force push",
+ "local_gates": [
+  {
+   "command": "make check-deployment-sources",
+   "exit_code": 0,
+   "log_sha256": "8baf3c33e403e2ff2eca7efaecee661c9ab0ef6fea981c95d70ec1ff22524d6f"
+  },
+  {
+   "command": "make public-site",
+   "exit_code": 0,
+   "log_sha256": "f9c448bd5802a1727906549c6204de6f778aab6303288676a64c263902925712"
+  },
+  {
+   "command": "tools/tpt public-alpha verify --deployment-target github-pages",
+   "exit_code": 0,
+   "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+  }
+ ],
+ "local_gate_environment": "Python Markdown 3.10.3 and PyYAML 6.0.3 from requirements-public-alpha.txt and requirements-tools.txt in the run's scratch virtualenv; the three PDFs deployed are the accepted snapshot bytes (study 3d6f91d0, synthesis 7ad32f84, homily 79283693)",
+ "disclosure": "Outgoing range 59a9862cc..6f93e73e9, 4 commits; added lines scanned for machine paths, usernames, hosts, addresses and credentials with no match; the run archive's result notes were redacted to repository-relative paths by tools/proper-study-run-archive --redact-repository-paths, receipt preserved in the archive.",
+ "workflow_run": "https://github.com/spincyc/triptych/actions/runs/40501677604",
+ "workflow_conclusion": "success",
+ "repository_hygiene_run": "https://github.com/spincyc/triptych/actions/runs/40501678122",
+ "repository_hygiene_conclusion": "success",
+ "publication": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+ "provider": "claude",
+ "routes": [
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf",
+   "http_status": 200,
+   "sha256": "3d6f91d0b5acdab1bbd105f4fa6e6943783649a34f2a82dc1ca60604d6ebd7c6",
+   "physical_pages": 32,
+   "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.pdf",
+   "http_status": 200,
+   "sha256": "7ad32f84edbfd16bdc9414f341b3f9ec1e4f588d9296341562fc19a3cdc23cf8",
+   "physical_pages": 12,
+   "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.pdf",
+   "http_status": 200,
+   "sha256": "792836934fc5f992722a39cf49d1556bc4da94e86a0b3e77ad54b5be2f1b8cfa",
+   "physical_pages": 4,
+   "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/web/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.html",
+   "http_status": 200,
+   "compared_with": "build/public-alpha/site/web/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.html",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/library/traditional-latin-mass.html",
+   "http_status": 200,
+   "compared_with": "build/public-alpha/site/library/traditional-latin-mass.html",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/browse/structure/documents/corpus.json",
+   "http_status": 200,
+   "compared_with": "build/public-alpha/site/browse/structure/documents/corpus.json",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/PUBLICATION-MANIFEST.json",
+   "http_status": 200,
+   "compared_with": "build/public-alpha/site/PUBLICATION-MANIFEST.json",
+   "match": "byte-identical"
+  }
+ ]
+}

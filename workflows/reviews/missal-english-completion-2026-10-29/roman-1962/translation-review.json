@@ -1,0 +1,2458 @@
+{
+  "schema": "triptych-original-study-translations/v1",
+  "recorded_on": "2026-10-29",
+  "calendar": "roman-1962",
+  "route": "Original project-created study English translated directly from already publishable independently witnessed Latin; no approved or human historical English is claimed.",
+  "source_scope": "Existing Latin publication/provenance decisions and their inherited limitations remain controlling; this linguistic review does not claim a new page-image or rights audit. Every actual conclusion cue and rubric-only body remains at its held extent.",
+  "counts": {
+    "new_study_translation_owners": 141,
+    "existing_positive_owners_preserved": 1188,
+    "historical_absences_archived": 141,
+    "remaining_absences_unchanged": 119
+  },
+  "excluded_cue_only_target": [
+    "mass-of-the-lords-supper",
+    "main",
+    "Hymn at the Translation of the Blessed Sacrament",
+    "all",
+    1
+  ],
+  "excluded_cue_only_reason": "A rubric/hymn incipit is not a complete hymn body; original full-body absence remains until complete source recovery.",
+  "before_sidecar_sha256": "1dbc454c7edc0a0e0054ddd57dd65bdc59f07195d193be003e9b200a1f0c57ed",
+  "after_sidecar_sha256": "e87b880744b771cb0311292c8bfd27cbfa592ffa8ce0be05b41d575e0c9c44f9",
+  "rows": [
+    {
+      "target": [
+        "epiphania-domini",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "ed4359d8a448e3b060be85eac19eef773e1a8090c9aeba62cc7fce4e0520a3a0",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.epiphania-domini-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.repair-2-orations-bd3c92ec",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "9b2fd263394c5a518567647ec4789de9179fe3a288a7968c379af5771221cc3f",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "transfiguratione-domini-nostri-iesu-christi",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "88a6a3fc61575d142e7cda68d82daa43f4a02e94d73bbce8ff5545fc329a2166",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.transfiguratione-domini-nostri-iesu-christi-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.repair-2-orations-bd3c92ec",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "7b5c3ec0edf016c8cc0248d593d42a7c430e835f569b105ecd2228c5a20a3830",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "nativitate-domini-octave",
+        "dawn",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "7c0c7d86dc2da4c2c0ec3c46de1517efd96080bbd0f15c7128e04e72b122dee2",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christmas-dawn-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christmas-nine-orations-00f947d9",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4"
+      ],
+      "english_sha256": "6ef2f05e5c9f469f75e7141bca3329726e7996698db150535c7a725929fc2357",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "commune-unius-martyris-1",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "cbfe896505fd560a713fcfdc4bf0fbea2f01768b17d5429d965e6afe25ada8f4",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-unius-martyris-1-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commons-1-orations-349a24c2",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "6b2e8c7a8532eeb5de88b6a3186b59330733e52181d57b17d3849e005fffdb36",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "commune-doctorum-non-pontificis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "6911e4704ca86b71ac314baa9ac7eb099c411b91614ecd67c9fa9c3c1416d699",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-doctorum-non-pontificis-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.repair-1-orations-d8781e74",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "c80612ba8ff1b2786342512c5dd023369f29bc44071f89a5377a6c1725010cbb",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "missa-de-s-maria-in-sabbato-4",
+        "main",
+        "Introit",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "453bdfb331b795e7445e62ee7214af18e292b1e35ea800295dee42770a329461",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-4-introit",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "b79265d278728238bbc440b11c4c1599f600e0004956ebf883808b0f7fe5f506",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "missa-de-s-maria-in-sabbato-4",
+        "main",
+        "Communion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "c23ff184fe80655f5c6ad5dfce4da35ba62cd05776f4553079aab0d2766d04e4",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-4-communion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "8b731ff3a0680e85a371223dbaf1148b3d1fefe085b1885b781bff49e23aef92",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "immaculati-cordis-beatae-mariae-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "7f5b044d27f4c84141bb492ef88677e94c98dd3e279f4cdba95fd58615a032eb",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.immaculati-cordis-beatae-mariae-virginis-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "3e4d1c0b374370384063910bc5fa673a5ae32135d75d895a26d4845c2acfb979",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "nativitate-beatae-mariae-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "f5a44beaf03daa19a63cf286a2980d772fa6bb1b9544d22949cc0dd83e9b1945",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.nativitate-beatae-mariae-virginis-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "e75d04f0e0706f1d1002b3f73987c486bbd3972cd5e232d2e47bc17300c282d9",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "beatae-mariae-virginis-a-rosario",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "e1181b3b428cc4d74b431ba38cbbbe9c0d59ca11cce04cf579fbd67ab0a0de52",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.beatae-mariae-virginis-a-rosario-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "198f1387d8cea84eccdf910df0c0f8b87560d6c94dd12508afb3d91272327b11",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "praesentatione-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "69368314bd2f511650f63b67318340c5408ca6a2edcbefcc456772e96f1ae349",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.praesentatione-beatae-mariae-virginis-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.marian-orations-93c63bef",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "4b8ba96d6b138ded27055713ca749c7ec147007f5373ebda13e3f7587b6d3603",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "ec82651ee4df7823190f3ac86681e551ed52873c3e0d5643acde77f17ecfb860",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-hilarii-episcopi-confessoris-ecclesiae-doctoris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.repair-2-orations-bd3c92ec",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "b469d2df5ece7222049feffd5e81bd1b5fa16a8f091ab930bd2bb48714f87086",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "e61da33f435c15f26b3da3eaca2f6e8ba90ce42ec38e709610252bc2699277bd",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-hilarii-episcopi-confessoris-ecclesiae-doctoris-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ki054-page-reading-orations-7d558094",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "b416db985a294f25c3b24d691ae484a5865fb70f701374b03e8c9d1b5ef19b89",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "7037ccdbaacb3debd53b93d275f320b12899fb9c5f7fbf98b2526dd8c497fab0",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-s-hilarii-episcopi-confessoris-ecclesiae-doctoris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-hilary-postcommunion-20261022",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.phase4-hilary-doctor-pontiff-pages-20261022"
+      ],
+      "english_sha256": "482d89b2f2eef3aa1b9d759b10e667d4f314fbb7317137841cbd4bb4eaa7c883",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-antonii-abbatis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "097f7c0cb294df064889d63fd91d1c7b76d468c3cc8774a11e011601ebe0db24",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-antonii-abbatis-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "a6681d8f96079bb41d80b212e5316aa4f6de0921b004eeb53dccc299d132eb7e",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-antonii-abbatis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "577749bce12f009f7c775e2cdb0f63733ddb14e950403581c28e7aca0d8caa15",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-antonii-abbatis-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "046ddfbf9908e60ca0662c785b54df94b4fd67b2a6fd25c51beaeb9b538dc339",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-antonii-abbatis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "6c5614d6376060e084f5f4c80dbdef4d9d8cf24fd9f640361dcad45235528763",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-antonii-abbatis-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "994899088e4c2dcc1847593fd2fa33ab4166ee3e52bddad831e5fe1e273e6334",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-timothei-episcopi-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "4beeffcce351f10c0318560a3072f37c3e50ddce5221062f849137cb957f3e05",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-timothei-episcopi-martyris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "09c6d7c9fa4282cf480c539e260ecb8a89eac48583178ad26da7879b3a45d7c3",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-timothei-episcopi-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "58c0b5bb3533b04e49a5c445c387c90d5a1d65657608909accc2f78782be2ac5",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-timothei-episcopi-martyris-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "e8b3769b582088423043b97b704d09ea74d06c87ad11a01735e61a130d6ae788",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-timothei-episcopi-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "27902b09390153018fe0b33fc4174704ff9bfe6c3165178b4eebf28f63076be2",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-timothei-episcopi-martyris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "6e9d5b264af84ea162ecbe203e775316f471fc2491b1e95501133bd40418f17e",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "conversione-s-pauli-apostoli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "17079ee97e8a7982f30dcd772ed1344a618ae2d35dd678c114f209649f3ee3e5",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.conversione-s-pauli-apostoli-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "5e6d45e324f5491258fc95edc6a58c0c9d7e8a1de496b385b16b48796747b628",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "conversione-s-pauli-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "5645ce4b211974872761201de670697b79cc5c637022e01665c760f878c839d2",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.conversione-s-pauli-apostoli-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "ef527e4c0ca762d97916afd330baf934cd3ef94c77d00d327473d3189d601f14",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "conversione-s-pauli-apostoli",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "30e08085dd476b0542ba58693d3e6f760cadc09ebb7f3766194ee14f7f1516ee",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.conversione-s-pauli-apostoli-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "12276c4cc18f413a28273c916ee9f4835f22804e55787085ce51b7870818befe",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-polycarpi-episcopi-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "5af10ff8f0a15733f772fdfb6bb8b47b25ab536023c2fa78f4c074223ee80f77",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-polycarpi-episcopi-martyris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "ae671f3decfa4008500eb7d50fb7445110887857c7bb79ee14f142b9b1eb78c1",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-polycarpi-episcopi-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "660fc07d34ddb1ce5f2d97bd2c06a0e2b0a274eeb7b2f900ec66d95ded0399a2",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-polycarpi-episcopi-martyris-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "5c69926565061379eb1b839fcefaf8c86340807bcaf7817c248f5de284eff786",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-polycarpi-episcopi-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "237f940ae37b275d6cf416b5a04351edf58c7172be3cc3b1d404fb82114c3614",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-polycarpi-episcopi-martyris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "e29e0f611bd5231b5711187d83d80cb2dc576e27d97ba87774bd7d97e673e70c",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "ba7575632565dd1cade0e907d21549f0b04b7802ce3c66ba35f195c27b634bec",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "34474b40b9e8c30b98a672c345e2bf6a90a5c320b91e2c30db35c10db7111cb3",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "5a88c7bcdf2c8b016e8aed874be072afd9692221a2ed24c512374e9b8c109a43",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "92cdbc06e4281a6c08e68fef674e89782e0a2be7dbd869fb52abc7f59355478c",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-ignatii-episcopi-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "065c6887ffea243726b7fdc716b379c1088d2c2e523e30009d742cfaa18a379b",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ignatius-postcommunion-proof-successor-20261026",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-text-20261026",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-controls-20261026"
+      ],
+      "english_sha256": "267c18c94a6c26a0b1c7aa63fd26ab1cc6a2dac81606e73096aaeea97a5cec58",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-titi-episcopi-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "2fdc40c52399e80a37c7cafc3858539098e24763be340a1a9aad07ae06dd745e",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-titi-episcopi-confessoris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "87944884e84dce2b71326162fdcf17d3eb94aba7cf1687b8a539e93e68e915ee",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "cathedrae-s-petri-apostoli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "de808fd11353aff95d861910d079f71dad822a2b442ebacd65efbdee14c37774",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.cathedrae-s-petri-apostoli-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "3a37afc1bb607bbe6cf48687efa0c4daa086d4efd27c95ad003ed7e4ca1f3d45",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "cathedrae-s-petri-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "fd5d9eff97985f676a6f42b092659a8581991fc3bcc77ba47a4d8f9fc421797d",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.cathedrae-s-petri-apostoli-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "fbdebdda9a13219f8eca2459255300057f0705a0426230071cc3b7a8a388d44b",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "cathedrae-s-petri-apostoli",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "b9705f22cc638c2208054d5a70b84d759f4149ae40c61629861eef2beca5224f",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.cathedrae-s-petri-apostoli-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.recovery-page-reading-orations-f5b13d07",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+      ],
+      "english_sha256": "0e0102d25bd3bdd650ad825a59f8970c0b5f3663117ea022c8c352d90e509909",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-thomae-aquino-confessoris-ecclesiae-doctoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "5a107c46ab1aa7a3e0be8b7313dc3607057cbd702b2c8bd34913470cdc82242c",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-aquino-confessoris-ecclesiae-doctoris-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "1e14090ccef63a1626b9152d07b7644071222106f52de95238f4810cb9eeb92a",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-thomae-aquino-confessoris-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "11bf239f0a9a48dbcbb031e008af1a30fba455891d34315f76f9dc513d6df29b",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-aquino-confessoris-ecclesiae-doctoris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "b44d9f0eb5f9273a36e2005a053c7e918e6127652eea2aa0d0a78e3648bdf918",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-gabrielis-archangeli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "56f05e4960a0785f4be4b48de2e9af25afb372a0ab0a7f8e6d95df0c09b6be96",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-gabrielis-archangeli-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "30956688fb6442042dc8e95acaf5a1d239255c64ed0c02f3e08e55f6e1fd9126",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-iustini-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "2ad3805147f750c328259c3ccdbd19d18d606638bd900f8e77a1409d12b4c825",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-iustini-martyris-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "1b2f350b6a6918d06051ca18ccf560697b52caf8da109365359e68fa2ae744d5",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "db2acad96f9efb74abfd4319632cb286bdd284c6be79685ff37069e49c6254b9",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-2-orations-b44831ee",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "da0d26c400a116525f0b1dc4abae85c1384133890e562cc53839be062d70a740",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "803dce597b0b2c97a2bc4e9e525470442c5f26393014f7d15a5c4ee3a02f6808",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-2-orations-b44831ee",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "29066eb2bd155ff11886071758e878b33b396d91e6c6cf012d959ac2f68c3410",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "07e9140718f6f035f6358a7b9d4a84a973b3a5b68675ce06ed061202510b99eb",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-2-orations-b44831ee",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "724bbfce8de8432054b4c1ba9c35df995f8abaeef5b3130414aa92fdf2124342",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-antonini-episcopi-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "89be9fd9128546b0108e5ff09eaf198d674fedc7c95a7ef83e794c1f073dd3dc",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-antonini-episcopi-confessoris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-2-orations-b44831ee",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "edbaecc8a8dfa58770cf8c4b7d070e3a7e9d0bb2f73fc7f429a5d6b24b3805a2",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "ss-philippi-iacobi-apostolorum",
+        "main",
+        "Collect",
+        "all",
+        2
+      ],
+      "source_latin_sha256": "d501d42fdc12584740a5f9f42844705335ff64d181f58b91c51506b54e056b87",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-ss-philippi-iacobi-apostolorum-collect-2",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026",
+        "artifact.catholic-church.missale-romanum.unidentified-pre-1955-witness-ia-1947.latin-seven-20261026-philip-historical-prayer"
+      ],
+      "english_sha256": "e17c86d4b56977b619c47cb562ca54dc512814b306e659f4b59cf372f3124af5",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "comm-s-bonifatii-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "5003e0531a176d0ce4d3d1dd0c3476e3a178d3355acbc09b08985dd2386be0c7",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.boniface-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.boniface-three-orations-ae811235",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.boniface-page-445-883fb31d"
+      ],
+      "english_sha256": "ace5300d28b53ad91ae6f71b085f3dbfc94fd4e13b55aa099b8f5678d9fce7bd",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-antonii-padua-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "477fc3ccb5b28d6c984eb149d9150b2beac0f0c263bbf7fce39682f2e0ae505e",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-historical-prayers",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-control-pages"
+      ],
+      "english_sha256": "a7ea1cc7a1187310450e327b7c369bbec4c1aacc9bafd660123353567c62430a",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-antonii-padua-confessoris-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "ce4bddd814e9b99aee80ed02a901551ed8f949f13c48662f3c9d4c54770a0696",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-historical-prayers",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-control-pages"
+      ],
+      "english_sha256": "ccb6ec4e8862b3c01bc00e999ce34d1c05e7c8eb7063da63bab7f8007db26bac",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "comm-ss-gervasii-protasii-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "9c4186a011b85c436d2ec1c8f1c25fee8f93938628d2be8b855ffe238afd2ff0",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-gervasii-protasii-martyrum-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-2-orations-b44831ee",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "6d2f7314c157da0389617a602cc63458e7ecd6854bb43a394688d98525f29035",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "comm-ss-gervasii-protasii-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "61c5935b561740e2c82b40ae4a937be45255fd33fdf1321e1ceda190cefee413",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-gervasii-protasii-martyrum-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-2-orations-b44831ee",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "4bd8db8eaf0735bb788aedb2b9101a277022bf5ccd98e6a712baa3c035d6d911",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "comm-ss-gervasii-protasii-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "b65ad782b16de0754e32cca614016a404ade0cd42950c13e01f7f8bfc371848b",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-gervasii-protasii-martyrum-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-2-orations-b44831ee",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "2cf1053fd4b9fafa35bb4de667747b379037b60e097093a0ee9a94171034f987",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "commemoratione-s-pauli-apostoli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "b2f29e451a2ba64f2a1fb01732ac5c4503f3ba81e70f9c8c483637088e0218b1",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-paul-june30.paul-june30-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-paul-june30.three-primary-petitions-20261023",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.paul-june30-primary-petitions-20261023",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+        "artifact.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-facsimile-e5c044e6",
+        "artifact.joseph-henry-allen.new-latin-grammar.ginn-1903.identity-and-grammar-facsimile-c992ef6b"
+      ],
+      "english_sha256": "394c30d6166cd2eb3cd349c15ea3e9fbae79f83e32172f6ff2964bf62c803646",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "commemoratione-s-pauli-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "5645ce4b211974872761201de670697b79cc5c637022e01665c760f878c839d2",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-paul-june30.paul-june30-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-paul-june30.three-primary-petitions-20261023",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.paul-june30-primary-petitions-20261023",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "2d8c6b327381f7d7bbb9d01f7130e757f9b081f3cf15560b05e9d7b52d20a5e8",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "commemoratione-s-pauli-apostoli",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "c6acaf6d03ca6bd5c165a710d720158596c63031c7439a608cdac76326fa6175",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-paul-june30.paul-june30-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-paul-june30.three-primary-petitions-20261023",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.paul-june30-primary-petitions-20261023",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "e0f318a0b8d6f9bf298f2918021b10907ea89f47ea470f1ea523cf7f83fe79a2",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-ioannis-gualberti-abbatis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "2fd4a0b796ad3365025050903854f7f4d6b881e2fca139d7e6e677281993fdc8",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-ioannis-gualberti-abbatis-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-2-orations-b44831ee",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "7bedfb2672104571bb49b48edf6091d14f2695713f173f7ec560fa464143efef",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-ioannis-gualberti-abbatis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "93364dc171dd2f451cff4468942e926ae13755646a74d472208808e204b6d7dd",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-ioannis-gualberti-abbatis-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-2-orations-b44831ee",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "e34a203c5874034bbcd4a41a8a27c4f57df0d2f9a270d14588f6a24a4cd94230",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-ioannis-gualberti-abbatis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "057be131d476076658fe837a32fef0578f96281c108e0c33265e952b5842c3dd",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-ioannis-gualberti-abbatis-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-2-orations-b44831ee",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "09252b348fcd60428777d644d124673ed3da1c3a158d407b90ad408df75c53ff",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "55eea8d013d46e0191a618241b1420e5eb782b641f1b530e2f47de49c6420604",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "5ffe62d5ac129b0836f273863a4fb9fe54c9117afaaebf099e471d7f7188c64a",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "fd490db5617c1217c7d6813bb589086571ce949b14c01118507ec91348fc90a9",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "222bc9e12064a7fcd6a0b812cb1208d7974d9b6dcf3ab0f07b6edfdb814a1baa",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "6b6b31975c3f0e0cf8a75abebc5dee23d0a50b1909f4d50e90c9e98ec92af5b7",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "7f298a7f2e86a71e95d25e489102fb7898badf56f44a91ff404805ddaf1a69ec",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "comm-s-alexii-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "bef67a7e4b5b366b609b0fb593a677ea042efc95b4e75adbec2b6cd324b537a1",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-s-alexii-confessoris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "405f75fe2643ca60a7a61e11f9204d1920d558d8e7336abe06a741544dc3737d",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-camilli-lellis-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "25d4368f379476e01083d31e575cb2678c8b8ea7cfc4bcb2fa901ff9b46b56e7",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-camilli-lellis-confessoris-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "15e7d920c0cb86da7c101c55344a32e1e56cc7a764dfec268f3493b2eda62411",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-vincentii-a-paulo-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "9b9ebbb60a19b6177d80ff51709a2dabb5fcc9b59b31046963b5f7dcc744d567",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-vincentii-a-paulo-confessoris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "9b04f2c7df59496de5df313fc5325cf4548838bc21ea7e0cb8adeba25b4d541c",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "comm-s-praxedis-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "111b28e5ed2c234dbd008b27ed0550c72bd1f173768ab7b772ff3d3941e223cd",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-s-praxedis-virginis-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "d46517b163142fbb2b66c852dde99c861852ffc59c906130405df2b6dff4841c",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-iacobi-apostoli",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "93d45e7bbd858bbffdb581065cb4304d81ecb0e2c60626c805c8507f97817bcf",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-iacobi-apostoli-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-historical-prayers",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-control-pages"
+      ],
+      "english_sha256": "978f19a107bfb497d2df87bdac5d8736fab532e04ea1be9edbb242a84929d79b",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-marthae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "17b610e6d2ec67a59f0d39a88df79222c8749c519a9d1bbf574b6c65c8135e13",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-marthae-virginis-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "a7ec0406d1dec8c44abdf0feca1a40d06fbca914ed8afa3db0c29205de9f6d10",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-alfonsi-mariae-ligorio-episcopi-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "58daf4b27623a67c204754c22fa1304f2e8cd0971d6e456e365a9d397353e36a",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-alfonsi-mariae-ligorio-episcopi-confessoris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "03caee3cc41051aad39984ab673050eec5b7f37588b7834377fb4d5347468f75",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-alfonsi-mariae-ligorio-episcopi-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "8f32b4dcca0883c381d6115293e0894c468ec8c12be087091c0e703c32b7c101",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-alfonsi-mariae-ligorio-episcopi-confessoris-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "baca85051bd97018de54920849bd57ead2ec1d252ac263e4b0de0ba1c1ad5407",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-alfonsi-mariae-ligorio-episcopi-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "3eeef603999b6ead72e83f1efcf9b2ea5b4bfe3fb317cb356d3dcba1a3446adb",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-alfonsi-mariae-ligorio-episcopi-confessoris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "da5312a9986cf3f7d7ccbaabacfab7542d861d815c8d65c5c9ba85104753ba49",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "comm-ss-xysti-ii-papae-felicissimi",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "5cf813a4797f966ea421bfb74583b53e6cc5c0f10ffe6e1c6e43693630fda8ab",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-xysti-ii-papae-felicissimi-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ki054-page-reading-orations-7d558094",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+      ],
+      "english_sha256": "a729f1ee23c8e2db020cf548ae430a1500f4b272f325907459b814f1fc321460",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-ioannis-mariae-vianney-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "12105ba3649c6e5b37c48e65fd93475d55706432eb8485f495625e32b20ddcb4",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-s-ioannis-mariae-vianney-confessoris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-schott-projection-20261022",
+        "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.phase5-latin22-seven-historical-prayers-20261022"
+      ],
+      "english_sha256": "91deab7c4d6de7a0dfc1f6f8673f1f4222ca3c63145d356de7ab0fc4d0297090",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "comm-s-eusebii-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "15f8ce99b58a51bbe6cd42ba1c7bc549ecd946c76112e135b2a5dccf936c3cf3",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-s-eusebii-confessoris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sanctoral-w-2-orations-f26ac956",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "f7b57e4265445084afafb0fc93f64527e7fe01db9313b0a664f14c40118c036d",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-ioachim-patris-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "091f3c414277631835619a17bc1b6cf748b113d23e91dcbe1a0bb389d5264431",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-ioachim-patris-beatae-mariae-virginis-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-historical-prayers",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-control-pages"
+      ],
+      "english_sha256": "4454892d9a7c524f695735a7d934158c4a02194c709b150f9c7fd2dd3e89e1a2",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-ioachim-patris-beatae-mariae-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "0e09c19929b2682cf4d6fb415749b44c3f7aa3679464abb4e18ac9d2dee15fe1",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-ioachim-patris-beatae-mariae-virginis-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "687422f3baaa64356a557e836828a72b3175985080eed7819073283fca8648d9",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-bernardi-abbatis-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "e34264bb8b03114e1e8bf604bba1861fd095ecefb4429a8d7280ee0903d2e982",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-bernardi-abbatis-ecclesiae-doctoris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "11a19eeb572ea304a7a3a01de4b8df328ed768fd9cc8d0ed50561c0811d25205",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-bernardi-abbatis-ecclesiae-doctoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "2870850bf47b5b5e851b3b4174ab3e496c98a85a72f9e3a19f7effe23e57803a",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-bernardi-abbatis-ecclesiae-doctoris-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "a50af3f811d94211312f82ef4a7de6d886abb8b5bf9b6884f0610402409a2842",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-bernardi-abbatis-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "5845ca075bd9b7947489a60dc9dcd16e5f1537cd8bc74a9949e7d1f083bd7bc7",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-bernardi-abbatis-ecclesiae-doctoris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "61f1c4633c792c4e460dad6cd83df0b368211e4ee78c20c6a21a9aa0dc2ec6df",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-bartholomaei-apostoli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "7a241de028830373fc873e86baa38df7e792cec6aeb1314b2d5b934a3a035acd",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-bartholomaei-apostoli-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-historical-prayers",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-control-pages"
+      ],
+      "english_sha256": "6e3a4f11328427f333592f13b492f26c21ffacabd658b8c1a8711f30f06dcb6f",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-bartholomaei-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "42ee32c39e4ab1e22e48758d436aa9caf10e593ea4fe24dabc950df8fb6b5cbe",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-bartholomaei-apostoli-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-historical-prayers",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-control-pages"
+      ],
+      "english_sha256": "e652021d63ab190c5f974fc5e524f46ae16377162127adf62e4df198b043c680",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-ludovici-regis-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "7ef4baa494c24f348b9d86d975434698a5addd48323c803e7c0ce0c2f6340842",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-ludovici-regis-confessoris-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "83db6c630fe44c4f989969c166e22dd9a8f0a847b811aeced05f1db2c868d988",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-iosephi-calasanctii-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "8eccf0c2a207270588f4a2ced5b50519aa2cbf197fc9a1faa4b233210fbbe391",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs.s-iosephi-calasanctii-confessoris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs.three-reviewed-bodies-20261026",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.sanctoral-repair-complete-prayers-20261026",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.sanctoral-repair-control-pages-20261026",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022"
+      ],
+      "english_sha256": "c30b20fb178bf9e86263eb4a430123d5f0faa23c69c112ef5dfaf381270c94bf",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-augustini-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "557a88c9c82c259e624fc2bf3e5f599a5fda7f9dd2b6736dddb3458d24828756",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-08-28.augustine-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-08-28.augustine-orations-8a2a938d",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "d1acc6ff77502eeb72bd9f2bdd950510f255a0da4310f57c6ca836626d43817e",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-augustini-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "2c627d20091cc66a7526d2600770202f08b59e357575c8db5fda04f7c4d09e3a",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-08-28.augustine-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-08-28.augustine-orations-8a2a938d",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "f58531a94b828308d90c73811f742d98b966b2affbc29f02e495ae7e6794bbba",
+      "review_decision": "accepted"
+    },
+    {
+      "target": [
+        "s-stephani-regis-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "d5cf241c48cd261dea6b506b9b9997bd1aba91561fb7164f29469dc5221e4183",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-stephani-regis-confessoris-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "2498a8655cbb6777a4afeda1e73c08ec1833590ae351c83f9c9fc14debf86c4e",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "ss-cornelii-papae-cypriani-episcopi-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "38338d123fc18f177746ac09a8651960d22560343e9956d117a92a0eae8d556f",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ss-cornelii-papae-cypriani-episcopi-martyrum-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sanctoral-w-3-orations-98936698",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "f8ed4f4fff3dd8b9a795d740dc36bc8928a11061c43e3fe741958772a301502f",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "ss-ianuarii-episcopi-sociorum-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "bd88a2926799b70fd97b32ecbf58cc1267415a570ac12add7c0605cef1cedf59",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ss-ianuarii-episcopi-sociorum-martyrum-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "a76c937531d59c10f3fd649d1c42b6efd5890a53b8df536dd4c93e2cf8abc08c",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "ss-ianuarii-episcopi-sociorum-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "01d6c2376c9d9cabae4923398739d9620d739e25f88366c0dad1dfb1e0033415",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ss-ianuarii-episcopi-sociorum-martyrum-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "9b7499cbd7933cbf48e2126ce78123d81a53613f835b0d027fa9a99eea276c9f",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "ss-ianuarii-episcopi-sociorum-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "1d963594140173db87bd916c94f32daf9ceaf57cf92643f5a2d878ed08fb222c",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ss-ianuarii-episcopi-sociorum-martyrum-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "2c6e6103d004b7193e084c2c3509ce8386352766c3f8fbe564f94a63d639324c",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "comm-ss-mauritii-sociorum-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "c00f6db7981e55c9684f49ea310d96f63a7e2c18532380116a00f5b9fb566b7c",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-mauritii-sociorum-martyrum-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "f24e63e933b881877c5be2b2132f504ef513637bf16073d907dabad608cd1154",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "comm-s-theclae-virginis-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "29304d753509157c946b09013cd2ec748a01e12bf0e12f0df3d8d29efff8fcf5",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-s-theclae-virginis-martyris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.repair-1-orations-d8781e74",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "360084a7ac7bb83b05fb2ec68d25c6b98cdd54b54e8509a7df9470279ca552ab",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "comm-ss-cypriani-iustinae-virginis-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "5dcb665efc9a7fb369dc109c432ff63a537ac19e59cee8373c2de3df8bfbd5a8",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-cypriani-iustinae-virginis-martyrum-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.repair-1-orations-d8781e74",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "f5892965f3a4f4a97a91e9e4612e17bece39a276bcc11a859e95241162ec11ff",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-teresiae-a-iesu-infante-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "af5711fcc13cd77c33978d3406ffa1cb0295a737023cbb6ca95c31531e62c66f",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-s-teresiae-a-iesu-infante-virginis-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-schott-projection-20261022",
+        "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.phase5-latin22-seven-historical-prayers-20261022",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022"
+      ],
+      "english_sha256": "f12f93cecac14e3328620bcadd64b8f10bcdc15e0676e3f399eea5b19fee965e",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-teresiae-a-iesu-infante-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "44ae620a19de8395079129c2c441a1d94df62b63057d618cf37682b000ee32f1",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-s-teresiae-a-iesu-infante-virginis-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-schott-projection-20261022",
+        "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.phase5-latin22-seven-historical-prayers-20261022"
+      ],
+      "english_sha256": "9169f6731e03534c4c5116bbedb0fa0b3f0df7da78e60e8fda5e8942f8e55fc3",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-teresiae-a-iesu-infante-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "bd156cf03db2181218acba1a033684509dd2867ea60aeedcd169291c1f9e7e15",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-s-teresiae-a-iesu-infante-virginis-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-schott-projection-20261022",
+        "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.phase5-latin22-seven-historical-prayers-20261022"
+      ],
+      "english_sha256": "f694252b29f78926ef72f7599fec5de649a14d9e41508ed6bb07db684b5a1b29",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "comm-ss-placidi-sociorum-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "6d377f03ec531164457e7e3f466323c7866027887e9c9efefd6db37d437c8ba0",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-placidi-sociorum-martyrum-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.repair-1-orations-d8781e74",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "d3eb083be8cd2bcc6e25eb57b3bbd924bd2e005a84ca7b9c4d54156bb44cb33b",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "comm-ss-placidi-sociorum-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "ea157130c019122e5a4884a3eb868edb0d28364f8f2ee2dba49795a68f9abf21",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-placidi-sociorum-martyrum-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.repair-1-orations-d8781e74",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "5fde796843b7d1c26e4f0f8b0cc19ee6181caed22d81995e7dd8bb467625a981",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-brunonis-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "fb74a2c272ed52c93d30ff0b79aa0b4c9640f936955798d723b97830b98ca387",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-s-brunonis-confessoris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-mayoct-alexander-twentytwo-orations-20261022",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase4-mayoct-alexander-oration-pages-20261022"
+      ],
+      "english_sha256": "4d6989dcdb15dcef0b3167498be508e6c1d91ee902f8a7f09b0aefb6cd84b869",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-birgittae-viduae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "cc0f5aa6ac798063ee2ff4dbb84cd3080d9ce68a39721b913c5a2a1a5783d28e",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-birgittae-viduae-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "a39e10c1271a3797e3b9870a9c518cfd4f6040d1fd2f0dc807c99a35a5d17cee",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-francisci-borgiae-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "f64aafc8a077836085f6dd5c33464883b5d17116d39ca3242f920eda4017b71b",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-s-francisci-borgiae-confessoris-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-mayoct-alexander-twentytwo-orations-20261022",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase4-mayoct-alexander-oration-pages-20261022"
+      ],
+      "english_sha256": "ebb29f6c79c42f2cb668eb523a967ab3eda896630b9120f76a093d27ec8a178c",
+      "review_decision": "accepted-as-supplied-study-translation"
+    },
+    {
+      "target": [
+        "s-francisci-borgiae-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "a38026d2ecc085e3af8696e19a7979d14ca4ac63525c9c3f552df7b004a953df",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-s-francisci-borgiae-confessoris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-mayoct-alexander-twentytwo-orations-20261022",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase4-mayoct-alexander-oration-pages-20261022"
+      ],
+      "english_sha256": "e58e7bac84385ace47da7605650b682606bf540e9043d5d654c36d8b929c24eb",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "s-teresiae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "c4f0dd127033ab6842554d9ae3f39bf267cad403effd276c9b02d46a692f299a",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-teresiae-virginis-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.repair-1-orations-d8781e74",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "32899a7861e6f3ef13520e0eb16b09ea5aba82de5726bb896fff7112219d20bc",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "s-margaritae-mariae-alacoque-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "6f1bb0e4d3ddb56e423b325a2fc225b1c520ec998c27a22a90c7be337a44b35b",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-margaritae-mariae-alacoque-virginis-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "8fa49b6e72294bcd55ae01199f09d1d37046a3fa7d61fa1c57875568adbe39a5",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "s-margaritae-mariae-alacoque-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "746dc899e3096006ad0a6e9513bea40fc84dee6fa88315ff70494bfdc917ee74",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-margaritae-mariae-alacoque-virginis-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "ef2706857a9f027a939cfac627508d42b9b9c93e182157b78d22f56d6b1a4c9a",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "s-petri-alcantara-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "b69aa35a317bd084e9fb316758e297d7c072ed367258c09be42bcbeca84ff794",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-petri-alcantara-confessoris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "f4f895d5e2c2cab0cb6dfaa1b5ff25aa0201c7d2597ef4b456ecf2b74600d2bf",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "comm-ss-ursulae-ac-sociarum-virginum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "7139a7c7c404dd2114066d8590a6464dedea04cf96a19363a032d188ea828790",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-ursulae-ac-sociarum-virginum-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.repair-1-orations-d8781e74",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "73a1965d0edc12ebd20fdccdcefd59fffc17a612f5eb1fd8fe838612039f9a7a",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "comm-ss-ursulae-ac-sociarum-virginum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "e5f7bdf9955b0c3ff263081dc4e3b3b6b3dd44536443d2a7c58bcb9e5382e012",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase2-comm-ss-ursulae-ac-sociarum-virginum-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase2-octnov-commemorations-20261022",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase2-octnov-commemoration-pages-20261022"
+      ],
+      "english_sha256": "ad79c400b8d2af186cada6358bba2d3eaa9c3f1bf4110ab58e7d356e4adde7f4",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "comm-ss-ursulae-ac-sociarum-virginum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "5a5b9ed5c33e154ea2ca35320f7447da49d6100622ca563537e849b60d0137d2",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-comm-ss-ursulae-ac-sociarum-virginum-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-ursula-postcommunion-20261022",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.phase3-ursula-postcommunion-page-20261022"
+      ],
+      "english_sha256": "a9955d7a23769cf3bf24ff81d7e552995c0e8a9bc5ab00e54d14ff78ae87525f",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "comm-ss-chrysanthi-dariae-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "f67d7c89af69dc6aa9c51f20f3ee1897254fd806b06790d87c26bbb62b5db05b",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-chrysanthi-dariae-martyrum-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "21ce1563507c5409f589564eb527f0f8ae3abcc8d30b6f8787cfcffe69d6b6f3",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "s-andreae-avellini-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "00a3bd39d4a3d45786fa0bdcf235b9e93d516da6e5fcbe4f84f26578d7b8530c",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-andreae-avellini-confessoris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "4d4bb7d4f1ff4d2e0307e6a6a5579cf6932fc30e84cfc4fc1e2848e5a9439d2f",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "comm-s-mennae-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "b46f82f52e55aae42bbe21de5555d90065a8ecfd874f099ec3c959d9121fdaee",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-s-mennae-martyris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sanctoral-w-3-orations-98936698",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "8f6f3474f4b4fac745adf0eaaf0439428362c7bf90968bd7a666fb49e8da9ceb",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "s-gregorii-thaumaturgi-episcopi-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "188d2be3aa23062412ef633dbae62f8b1b909a29203f6b734a4cdc9b6b232cb1",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-gregorii-thaumaturgi-episcopi-confessoris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "bd58f645a44bfd40ccfecd0a7bc13b9b72932466f9d5ad2dd711da74ca57c25d",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "s-gregorii-thaumaturgi-episcopi-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "b00c49c8034c401d96de8232bfa5c7aaab3d852f634f52a70f218ce829e82a17",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-gregorii-thaumaturgi-episcopi-confessoris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "75463b96f79c1705b4c64332607c483b07538de2af0f4df08bafa3fe8ae58873",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "comm-s-chrysogoni-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "a61cd82cc930a26f0cfde418e0d9d0fbf4a6db87a7ffca3ce0501a32e1f3ec3e",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase2-comm-s-chrysogoni-martyris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase2-octnov-commemorations-20261022",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase2-octnov-commemoration-pages-20261022"
+      ],
+      "english_sha256": "5c5dfc568b291320ce5bb020200fc400f6d25fb5aa11365d6913f830e68886e6",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "s-catharinae-virginis-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "416fe94212bfa59cdb3a933da0ebcb77f1bcf9fd66dabc9d1d772453bb512ced",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs.s-catharinae-virginis-martyris-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs.three-reviewed-bodies-20261026",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.sanctoral-repair-complete-prayers-20261026",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.sanctoral-repair-control-pages-20261026",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022"
+      ],
+      "english_sha256": "d0b6ae9a72bf6a9b8f93cf2bf087db7f0b743717c6643747edc64ba3cfe871db",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "s-bibianae-virginis-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "25ab0bc6af50bda4876ef38d7e9b9d85887f39d6554d1ee20eecf63a3c0b302b",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-s-bibianae-virginis-martyris-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-winter-eighteen-orations-20261022",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase3-winter-oration-pages-20261022"
+      ],
+      "english_sha256": "2e3546a41f9919ee83dbd5320860ad3ca8f28b6b1a218b8d931d1674e53633bc",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "s-bibianae-virginis-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "8b3e5ff4a7563bbbd49521b0161a00c7a15bf94803fba18d9a103669b3f07495",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-s-bibianae-virginis-martyris-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-winter-eighteen-orations-20261022",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase3-winter-oration-pages-20261022"
+      ],
+      "english_sha256": "f761b494bb851a0c9d225942126406138232faa1962b617d83f11e7e0c15653a",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "s-petri-chrysologi-episcopi-confessoris-ecclesiae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "ae32997c5f58c0f16e8f6a49045a7b55f6414a1fefbe3676d0255375a87c239d",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-petri-chrysologi-episcopi-confessoris-ecclesiae-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "16b93229217dbe811c1ecca8b27262e77f9e64d40afb87b6b0a90a41169a9556",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "s-petri-chrysologi-episcopi-confessoris-ecclesiae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "1d92213456735f1d25223bb80ba90f80a65baeaa31219c9a0f11bbfc1fdb8584",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-petri-chrysologi-episcopi-confessoris-ecclesiae-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-4-orations-219ac7b1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+      ],
+      "english_sha256": "205f9633c7ccb2f00218c3cc36666bd37d70a279f208a17517ae9da7e365caf0",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "comm-s-sabbae-abbatis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "74502b8c7c784423dc10e8c2bd4fae0dfe865c7301ade470b17a3c53210fc3fb",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-comm-s-sabbae-abbatis-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-winter-eighteen-orations-20261022",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase3-winter-oration-pages-20261022"
+      ],
+      "english_sha256": "afebf6a88019bd34473ca706ccc663985f6759e3fcdb6bf921bde50937f9cffe",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "comm-s-sabbae-abbatis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "148a642ee692c936b0b4c839149f324bb749a27d790646ed791cc3f31fd8a5da",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-comm-s-sabbae-abbatis-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-winter-eighteen-orations-20261022",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase3-winter-oration-pages-20261022"
+      ],
+      "english_sha256": "3f233f9f48bdcf938fe7851cdbba47384668dbe1b5cebe9dd0ea59befe5b980e",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "comm-s-sabbae-abbatis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "aa4f312160889b7632924f4cb6b1060a87cd9462dd158898f7ecbc6d829e56ca",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-comm-s-sabbae-abbatis-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-winter-eighteen-orations-20261022",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase3-winter-oration-pages-20261022"
+      ],
+      "english_sha256": "8b559ab4b9f1de261080b582ba7889572898cefc6f4481276600000068fa26d6",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "advent-1",
+        "main",
+        "Epistle",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "9e3bdf2b62a9048c4261cb60dd9c9e6ae33919ee36a1b9b21d06de0075144115",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.primary-advent-1-epistle",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.adapted-primary-readings-76d61000",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.adapted-primary-readings-la-checked-e3a67098"
+      ],
+      "english_sha256": "e01bdf783feb78b7d0622dd02fd901a0e54046f69de309491194b4651f6bef03",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "thursday-after-ash-wednesday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "e3f22028bc7f70842c060833f18f87c518ce1ee70d573bf01f4fe671b8078463",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.thursday-after-ash-wednesday-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-1-orations-33ba218a",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "1dd824ce0fb76698c07d40f703e20086a0ce7fd91cd49ae6d4d5a0f4c28fc292",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "friday-after-ash-wednesday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "ac408697159e9eaa194807a8f126766c6fb09171ab795e0a3aaade8b7203d579",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.friday-after-ash-wednesday-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-1-orations-33ba218a",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "500e0a98ccf4540b5f25120bb89dbf5c123dbb0ce41119614b126209a400ad08",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "passion-thursday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "8c7e08c0ffc0bd8075c41458d91567cfda3a7f73f1395b3ae59b9d0d67cfe49d",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.passion-thursday-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "f3f3fe26a0ce5842ad3a43ecdfeb244824771fc7e6222f2e12e5e2020253ca8b",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "palm-sunday",
+        "main",
+        "Hymn to Christ the King",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "9fa9831f22966a3865ea1ce602c66e8647751848917715e71c3f8dd655f10a24",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.palm-sunday-hymn-to-christ-the-king",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.passiontide-orations-800ff4a3",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "5c65092cb62e75565515dbe8b395c4e7b5587d4c1c1af8f7afdda5e1fb094ad0",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "palm-sunday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "b7594bdb1016aaf99032a79c08e1e8c85d5fe11fd5c51aa6a9e51e10422738d3",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.palm-sunday-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.passiontide-orations-800ff4a3",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "44511d08ce01661da913863c23038a6fd188122540291616d2f500096f3c7550",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "mass-of-the-lords-supper",
+        "main",
+        "Mandatum Antiphon 8",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "952817e214d3a295524d676d08112cc1e5d11e4078ca45d6321cf42241407899",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mass-of-the-lords-supper-mandatum-antiphon-8",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.triduum-orations-21aa7a98",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "8657cf22bbb2a83a847830eacad7407f804fd84838009ca4f84f1b7191be59d4",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "mass-of-the-lords-supper",
+        "main",
+        "Prayer of the Mandatum",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "e7a248d3cc2d928604efa1643f210e155cff3c9f87ad9e8a2caaebcf11a6bc1f",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mass-of-the-lords-supper-prayer-of-the-mandatum",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.triduum-orations-21aa7a98",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "2a619186033b47a1c8504d5599678dabe54614690be32ef3bc9df5df44a3b481",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "easter-vigil",
+        "main",
+        "Litany of the Saints, first part",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "58091155464c7022bca2c0ade8d97015ba9bc44b13fb7864d42e2c64da1665e8",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-vigil-litany-of-the-saints-first-part",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.chant-vigil-orations-da6ca22d",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "3fd346704ded693238c6474ea62a3fe07fccea6a03fe6a00bc961420e0fac3f6",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "easter-vigil",
+        "main",
+        "Prayer at the Font",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "ae7f12dec913d798932f0694e31a97bb70e876ba180e80073bbbb090b0a7c8c8",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-vigil-prayer-at-the-font",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.triduum-orations-21aa7a98",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "aa464edccdd0bf2dce0976b4209943aa5daabc2a2b6cc885c5f88e6c6104362e",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "easter-vigil",
+        "main",
+        "Litany of the Saints, second part",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "85892ee559b2b905765fe535493694c66ded107a240cf2ea72217fbf84882159",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-vigil-litany-of-the-saints-second-part",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.chant-vigil-orations-da6ca22d",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "b340dfbd5fae6a52bc9eb605fe962abd11deb47d486f7ae489b214f0b0c23811",
+      "review_decision": "accepted-corrected"
+    },
+    {
+      "target": [
+        "easter-vigil",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "2cf4e6e15b85ceb2096ef7ed4324892b04f9a80a7cfbc7b200e7b3f9674514b1",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-vigil-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.triduum-orations-21aa7a98",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "bb081387a70febf3b81ef29414152c27b3a786cd003d4460d532d5d4de99563c",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "easter-sunday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "c13aa5025088ad089560514702aabe243398a51a3125a7d9ed94c9aee0572595",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-sunday-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.paschaltide-orations-1c865518",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "afcec4c7eec00cb69418e251ef72cd2012a25d8c34e31b7113c63d4d2c8f443e",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "easter-monday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "cd1322688c8967f077e8f449d647025a488c01110222d49a9d9e988a9fde30ee",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-monday-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "edd5e4bebe959dce02c6d68de92e83b5f16be10beffedf1af8906a8731cf0829",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "pentecost-monday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "503da04d12a5de1922d1a7963afb953d76fb928cce98b76c3b93c1338c73ee48",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-monday-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "ee9b88c013fa29630907c86f249f7e7d92bebc0b8a19cb0d81e07c993125625f",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "pentecost-monday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "d43135c6c7d92a6c067eb119edf55b4b5771f1ded959afbc140c9d311c7ff679",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-monday-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "71581756f95d14ca7bfee69cd08a371f109b207c6b66e74e53c09cb7c05370bc",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "pentecost-tuesday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "c764d47ce5afcfd6cea8cb16477945c2c66ad38c34e550975173811a8b9937ae",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-tuesday-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "ffab1081d3cbdb1d481bdde70ce55c45e6dd94996fe9df6bc50241132270bbf2",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "pentecost-ember-wednesday",
+        "main",
+        "Second Alleluia",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "ffb81b41664b394f896ca1e4a08258361e4e605285923035f1d2f65a154ba51c",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pentecost-ember-wednesday-second-alleluia",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pustet-projection-20261022",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-petitions-and-formulas-20261022"
+      ],
+      "english_sha256": "9d0540b2b9cb9a42730296ed4704247e1e3a6ca8adac3e64b947801c91cc724b",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "pentecost-ember-friday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "eb1ce08f4fc787f02ee9b3b870cc0f6803ece64342bfaca942633feb1809031f",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-ember-friday-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "101b291facb4d914afd5bb322f7494dc06cf8fa74c3007181ada52e448d24820",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "pentecost-2",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "c70bcf3d765c2038d1af873167d6a0ba7fb6b18327ed38e8ddcb0ce9fa8e780b",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-2-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-1-orations-3866bc7e",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "b4350b043ef01b09c641a22c8042e9454011f3bb4dc452b316b34bc5a9761822",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "pentecost-9",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "f655e30a1e543e2f361fad5014b481f80c8e8d5c0dacc1f7ac94b555d0d80494",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-9-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-1-orations-3866bc7e",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "374caea45fee5a42695981ed7b2ca96eef45550b2420c7974fa346130e575e03",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "september-ember-wednesday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "7124589a58d990e82bde57e5490109b76db17d82ab7d9af302f13b94d51f8793",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21.september-ember-wednesday-collect",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21.september-ember-wednesday-collect-7124589a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.september-ember-wednesday-collect-la-checked-ddf31f59"
+      ],
+      "english_sha256": "d0cdfb34058c533f3b5e450d5d6046381eb351e85ac57592149c5e98a45b3623",
+      "review_decision": "accepted-original"
+    },
+    {
+      "target": [
+        "pentecost-18",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "source_latin_sha256": "983f64453c4dff583f429312c9947c71c46c316ff76f97d9546c761375a33187",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-18-offertory",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-2-orations-9321d81c",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+      ],
+      "english_sha256": "49ced703772be770054b94fffa12ad4f57623c9952808996621d7cb9220fd528",
+      "review_decision": "accepted-original"
+    }
+  ],
+  "independent_reviews": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/translation-review-a.json",
+      "sha256": "87ca4907e62cbd465ec2f925c706e50a82fcc6fbfebe5fa493e1674435b41e0c"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/translation-review-b.json",
+      "sha256": "fe959ef1ea69f0918971f1a84930424719e4063ce081a56f9a6a17ab325e86ad"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/translation-review-c.json",
+      "sha256": "4bc5f59c2baff4832f04d3b850fe567042c3a41d24fc3a36071c8b2f844b452e"
+    }
+  ]
+}

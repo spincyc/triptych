@@ -12,7 +12,6 @@ trusted.
 
 from __future__ import annotations
 
-import copy
 import json
 import re
 import shutil
@@ -22,6 +21,8 @@ import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
+from unittest.mock import patch
+from dataclasses import replace
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -31,6 +32,8 @@ import _corpus  # noqa: E402
 TOOL = ROOT / "tools" / "document-library"
 TRACKED = ROOT / "src/web/data/structure/documents/corpus.json"
 MODEL = ROOT / "src/web/browser/texts/catalogue-model.js"
+SCRATCH = ROOT / ".scratch/document-catalog/tests"
+SCRATCH.mkdir(parents=True, exist_ok=True)
 
 
 def run(*argv: str) -> subprocess.CompletedProcess:
@@ -105,7 +108,7 @@ class TitleAbsenceTests(unittest.TestCase):
     """
 
     def test_a_preamble_with_no_pdftitle_yields_a_stated_absence(self) -> None:
-        with tempfile.TemporaryDirectory(dir=ROOT / "build") as scratch:
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as scratch:
             entry = Path(scratch) / "main.tex"
             entry.write_text(
                 "\\newcommand{\\Nothing}{}\n\\begin{document}\nhello\n\\end{document}\n",
@@ -118,7 +121,7 @@ class TitleAbsenceTests(unittest.TestCase):
 
     def test_a_commented_out_title_states_nothing(self) -> None:
         """A `%`-commented declaration is not a declaration."""
-        with tempfile.TemporaryDirectory(dir=ROOT / "build") as scratch:
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as scratch:
             entry = Path(scratch) / "main.tex"
             entry.write_text(
                 "% \\hypersetup{pdftitle={A Name Nobody Declared}}\n"
@@ -130,7 +133,7 @@ class TitleAbsenceTests(unittest.TestCase):
 
     def test_the_branch_a_flag_selects_is_the_one_read(self) -> None:
         """A synthesis issue must not be catalogued under the full issue's name."""
-        with tempfile.TemporaryDirectory(dir=ROOT / "build") as scratch:
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as scratch:
             body = (
                 "\\ifdefined\\TriptychSynthesisEdition\n"
                 "  \\hypersetup{pdftitle={Short Form}}\n"
@@ -162,7 +165,7 @@ class TrackedCatalogueTests(unittest.TestCase):
 
     def test_structure_check_refuses_a_catalogue_that_has_drifted(self) -> None:
         """The guard has to fail on a real gap, not merely exist."""
-        with tempfile.TemporaryDirectory(dir=ROOT / "build") as scratch:
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as scratch:
             stale = Path(scratch) / "structure" / "documents" / "corpus.json"
             stale.parent.mkdir(parents=True)
             stale.write_text('{"schema": "stale"}\n', encoding="utf-8")
@@ -453,7 +456,7 @@ process.stdout.write(JSON.stringify(
             self.skipTest("node is not installed")
 
     def verdicts(self, editions: list, workflows: list) -> list:
-        with tempfile.TemporaryDirectory() as scratch:
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as scratch:
             payload = Path(scratch) / "input.json"
             payload.write_text(
                 json.dumps({"editions": editions, "workflows": workflows}), "utf-8"
@@ -730,7 +733,7 @@ class DriftIsAdvisoryTests(unittest.TestCase):
 
     def test_a_pipeline_that_declares_no_identity_is_refused_not_skipped(self) -> None:
         """Skipping it removed one side of every comparison without saying so."""
-        with tempfile.TemporaryDirectory(dir=ROOT / "build") as scratch:
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as scratch:
             pipelines = Path(scratch) / "pipelines"
             pipelines.mkdir()
             (pipelines / "nameless.json").write_text('{"stages": []}\n', "utf-8")
@@ -758,66 +761,133 @@ class DriftIsAdvisoryTests(unittest.TestCase):
 
 
 class SourceOnlyCatalogueTests(unittest.TestCase):
-    """The tracked record survives a clone; it is not an artifact-validation pass."""
+    """Availability follows a source recipe, never a workstation's build tree."""
 
     def setUp(self):
         self.tool = _load_tool()
-        self.old = {
-            "schema": self.tool.SCHEMA, "counted": {"pages": 20}, "works": [{
-                "leaf": "proper", "editions": [{
-                    "provider": "gpt", "title": "Study", "revised": "2026-09-17T00:00:00Z",
-                    "status": "alpha", "pages": 20, "pdf": "pdf/gpt/proper.pdf",
-                    "also": [{"kind": "synthesis", "title": "Concise", "pages": 5,
-                              "pdf": "pdf/gpt/proper-synthesis.pdf"},
-                             {"kind": "homily", "title": "Homily", "pages": 3,
-                              "pdf": "pdf/gpt/proper-homily.pdf"}],
-                }],
-            }],
-        }
-        self.built = copy.deepcopy(self.old)
-        self.edition = self.built["works"][0]["editions"][0]
-        for issue in [self.edition, *self.edition["also"]]:
-            issue.update(pdf=None, pages=None, pdf_absent="not installed")
+        self.rows = _corpus.documents()
+        self.by_key = {row.key: row for row in self.rows}
 
-    def test_unchanged_uninstalled_issues_retain_exact_recorded_facts(self):
-        self.tool.preserve_uninstalled_facts(self.built, self.old)
-        self.assertEqual(self.built, self.old)
+    def test_default_discovery_never_reads_pdf_metadata(self):
+        _corpus.documents.cache_clear()
+        with patch.object(_corpus, "read_pdf", side_effect=AssertionError("PDF inspected")):
+            rows = _corpus.documents()
+        self.assertEqual(len(rows), 216)
+        self.assertEqual(sum(len(row.issues) for row in rows), 280)
+        self.assertTrue(all(issue.pages is None for row in rows for issue in row.issues))
 
-    def test_changed_revision_without_artifact_requires_rebuild(self):
-        self.edition["revised"] = "2026-09-18T00:00:00Z"
-        with self.assertRaisesRegex(_corpus.CorpusError, "build and install"):
-            self.tool.preserve_uninstalled_facts(self.built, self.old)
+    def test_a_no_pdf_tree_keeps_source_identity_title_and_print_recipe(self):
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as temporary:
+            fixture = Path(temporary)
+            leaf = "biographies/source-only"
+            directory = fixture / "src/gpt" / leaf
+            directory.mkdir(parents=True)
+            (directory / "main.tex").write_text(
+                "\\newcommand{\\Name}{Exact Source Title}\n"
+                "\\hypersetup{pdftitle={\\Name},pdfsubject={Source subject}}\n"
+                "\\begin{document}\n\\end{document}\n", "utf-8"
+            )
+            (directory / "generation-metadata.tex").write_text(
+                "\\AIDocumentRevisionTimestamp{2026-11-01T00:00:00Z}\n"
+                "\\AIModelContribution{gpt-5}{unexposed: effort}{source fixture}\n", "utf-8"
+            )
+            (directory / "web-edition.toml").write_text(
+                'eligibility = "ineligible"\nreviewed = "2026-11-01"\n', "utf-8"
+            )
+            registry = fixture / "src/common/document-schemas/registry.toml"
+            registry.parent.mkdir(parents=True)
+            shutil.copyfile(ROOT / "src/common/document-schemas/registry.toml", registry)
+            release = fixture / "release/publications/gpt" / f"{leaf}.json"
+            release.parent.mkdir(parents=True)
+            release.write_text(json.dumps({"status": "alpha", "authorization": "fixture"}), "utf-8")
+            with patch.object(_corpus, "read_pdf", side_effect=AssertionError("PDF inspected")):
+                rows = _corpus.documents(root=fixture)
+            self.assertFalse((fixture / "pdf").exists())
+            self.assertEqual(len(rows), 1)
+            issue = rows[0].issues[0]
+            self.assertEqual(issue.title.text, "Exact Source Title")
+            self.assertEqual(issue.pdf, f"pdf/gpt/{leaf}.pdf")
+            targets = self.tool.availability_record(rows[0], issue)
+            self.assertEqual(targets["available"], {"reader": False, "print": True})
+            self.assertEqual(targets["targets"], {"print": f"print/gpt/{leaf}.html"})
+            self.assertEqual(targets["print_mode"], "manual")
+            model = fixture / self.tool.BROWSER_MODEL
+            model.parent.mkdir(parents=True)
+            shutil.copyfile(MODEL, model)
+            arguments = SimpleNamespace(provider=None, sort="leaf", out=str(fixture / ".scratch/out"), check=False)
+            with patch.object(self.tool, "ROOT", fixture), patch.object(
+                self.tool, "documents", side_effect=lambda **kwargs: _corpus.documents(root=fixture, **kwargs)
+            ), patch.object(self.tool, "read_pdf", side_effect=AssertionError("PDF inspected")):
+                self.assertEqual(self.tool.run_list(arguments)["documents"], 1)
+                self.assertEqual(self.tool.run_check(arguments)["confirmed"], 1)
+                self.tool.run_structure(arguments)
+                first = Path(arguments.out, self.tool.STRUCTURE_RELATIVE).read_bytes()
+                self.tool.run_structure(arguments)
+                self.assertEqual(first, Path(arguments.out, self.tool.STRUCTURE_RELATIVE).read_bytes())
 
-    def test_changed_homily_title_without_artifact_requires_rebuild(self):
-        self.edition["also"][1]["title"] = "Rewritten sermon"
-        with self.assertRaisesRegex(_corpus.CorpusError, "proper-homily"):
-            self.tool.preserve_uninstalled_facts(self.built, self.old)
+    def test_check_never_invokes_pdfinfo(self):
+        with patch.object(self.tool, "read_pdf", side_effect=AssertionError("PDF inspected")):
+            report = self.tool.run_check(SimpleNamespace(provider=None, sort="leaf"))
+        self.assertEqual(report["confirmed"], report["issues"])
+        self.assertEqual(report["pages"], 0)
+        self.assertEqual(report["pages_unmeasured"], report["documents"])
 
-    def test_installed_extent_wins_over_history(self):
-        self.edition.update(pages=21, pdf="pdf/gpt/proper.pdf")
-        self.edition.pop("pdf_absent")
-        self.tool.preserve_uninstalled_facts(self.built, self.old)
-        self.assertEqual(self.built["counted"]["pages"], 21)
+    def test_old_catalogue_pages_cannot_become_current_render_extents(self):
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as temporary:
+            arguments = SimpleNamespace(provider=None, sort="leaf", out=temporary, check=False)
+            target = Path(temporary) / self.tool.STRUCTURE_RELATIVE
+            target.parent.mkdir(parents=True)
+            target.write_text(json.dumps({"schema": self.tool.SCHEMA, "counted": {"pages": 99999}}))
+            self.tool.run_structure(arguments)
+            first = target.read_bytes()
+            current = json.loads(first)
+            self.assertEqual(current["counted"]["pages"], 0)
+            self.assertTrue(all(edition["pages"] is None for work in current["works"]
+                                for edition in work["editions"]))
+            self.tool.run_structure(arguments)
+            self.assertEqual(first, target.read_bytes())
 
-    def test_unrecorded_artifact_is_never_invented(self):
-        self.old["works"] = []
-        self.tool.preserve_uninstalled_facts(self.built, self.old)
-        self.assertIsNone(self.edition["pages"])
-        self.assertIsNone(self.edition["pdf"])
+    def test_hold_and_withdrawal_suppress_all_output_routes(self):
+        row = next(row for row in self.rows if row.issues[0].status == "alpha")
+        held = replace(row, issues=tuple(replace(issue, status="hold") for issue in row.issues))
+        withdrawn = replace(row, withdrawn="2026-11-01")
+        for document in (held, withdrawn):
+            edition = self.tool.edition_record(document, self.by_key)
+            for output in [edition, *edition.get("also", [])]:
+                self.assertEqual(output["targets"], {})
+                self.assertEqual(output["available"], {"reader": False, "print": False})
+                self.assertNotIn("pdf", output)
+            self.assertNotIn("web", edition)
 
-    def test_recorded_pdf_cannot_change_identity(self):
-        self.old["works"][0]["editions"][0]["pdf"] = "pdf/gpt/another.pdf"
-        with self.assertRaisesRegex(_corpus.CorpusError, "invalid recorded artifact"):
-            self.tool.preserve_uninstalled_facts(self.built, self.old)
+    def test_source_check_refuses_an_unexpanded_declared_title(self):
+        row = self.rows[0]
+        issue = replace(row.issues[0], title=replace(row.issues[0].title, text="\\UnknownTitle"))
+        broken = replace(row, issues=(issue,))
+        with patch.object(self.tool, "selected", return_value=((broken,), {broken.key: broken})):
+            with self.assertRaisesRegex(_corpus.CorpusError, "unresolved source title"):
+                self.tool.run_check(SimpleNamespace())
 
-    def test_hold_keeps_its_extent_without_exposing_a_pdf_link(self):
-        old = self.old["works"][0]["editions"][0]
-        old["status"] = self.edition["status"] = "hold"
-        old.pop("pdf")
-        self.edition.pop("pdf")
-        self.tool.preserve_uninstalled_facts(self.built, self.old)
-        self.assertEqual(self.edition["pages"], 20)
-        self.assertNotIn("pdf", self.edition)
+    def test_render_check_is_explicit_and_keeps_extent_render_specific(self):
+        row = self.rows[0]
+        issue = row.issues[0]
+        metadata = _corpus.PdfMetadata(pages=19, title=issue.title.text, subject=issue.title.subject or "")
+        arguments = SimpleNamespace(provider=row.provider, document=row.leaf,
+                                    pdf=".scratch/document-catalog/review.pdf", issue="full", sort="leaf")
+        with patch.object(self.tool, "read_pdf", return_value=metadata) as inspect:
+            report = self.tool.run_check_render(arguments)
+        inspect.assert_called_once_with(Path(arguments.pdf))
+        self.assertEqual(report["render"]["pages"], 19)
+        self.assertEqual(report["render"]["compared_source_revision"], row.provenance.revised)
+        self.assertIsNone(issue.pages)
+
+    def test_render_check_refuses_a_title_mismatch(self):
+        row = self.rows[0]
+        arguments = SimpleNamespace(provider=row.provider, document=row.leaf,
+                                    pdf=".scratch/document-catalog/review.pdf", issue="full", sort="leaf")
+        metadata = _corpus.PdfMetadata(pages=19, title="Wrong rendering", subject="")
+        with patch.object(self.tool, "read_pdf", return_value=metadata):
+            with self.assertRaisesRegex(_corpus.CorpusError, "rendering carries"):
+                self.tool.run_check_render(arguments)
 
 
 if __name__ == "__main__":

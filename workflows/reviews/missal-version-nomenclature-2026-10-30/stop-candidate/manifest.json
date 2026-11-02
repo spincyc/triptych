@@ -1,0 +1,74 @@
+{
+  "code_data_parent": "b658058df2b4dc330e9770aa8164749cc74ce646",
+  "files": [
+    {
+      "bytes": 273785,
+      "original_path": ".scratch/missal-version-nomenclature-20261030/implementation/reconcile-next-english-v1/rebased-manual.patch",
+      "retained_path": "workflows/reviews/missal-version-nomenclature-2026-10-30/stop-candidate/manual53.patch",
+      "sha256": "6faa078c210647f7fe3da2b2eaa72353ef87b889fd2e6e2f0dd14ebafd7b5e45"
+    },
+    {
+      "bytes": 15141,
+      "original_path": ".scratch/missal-version-nomenclature-20261030/implementation/reconcile-next-english-v1/MANUAL-PATHS.json",
+      "retained_path": "workflows/reviews/missal-version-nomenclature-2026-10-30/stop-candidate/manual53-paths.json",
+      "sha256": "66b8a2cbf91b8ab159cae66771f9e2878d9599a1018f37b47c295ade121799b6"
+    },
+    {
+      "bytes": 11334,
+      "original_path": ".scratch/missal-version-nomenclature-20261030/implementation/reconcile-next-english-v1/READY.json",
+      "retained_path": "workflows/reviews/missal-version-nomenclature-2026-10-30/stop-candidate/manual53-ready.json",
+      "sha256": "0bd17f84edb995c2e93efd123ba5087dc055e2652a4d2feaab22aa2c8fd33efb"
+    },
+    {
+      "bytes": 17748,
+      "original_path": ".scratch/missal-version-nomenclature-20261030/implementation/reconcile-next-english-v1/review/REVIEW-RECEIPT-v1.json",
+      "retained_path": "workflows/reviews/missal-version-nomenclature-2026-10-30/stop-candidate/manual53-independent-review.json",
+      "sha256": "1a658367ad5bfb825051003440bf05def836b1dad7d6768594f1383596930e39"
+    },
+    {
+      "bytes": 25706,
+      "original_path": ".scratch/missal-version-nomenclature-20261030/design/NAMING-MATRIX-v2.json",
+      "retained_path": "workflows/reviews/missal-version-nomenclature-2026-10-30/stop-candidate/naming-matrix-v2.json",
+      "sha256": "e0dae8d1073d346d312db5af7c7b57bca4944d17def7d51d85591947fe68e604"
+    },
+    {
+      "bytes": 7487,
+      "original_path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/FACTS-AND-RECOMMENDATION.json",
+      "retained_path": "workflows/reviews/missal-version-nomenclature-2026-10-30/stop-candidate/1962-joseph-facts.json",
+      "sha256": "7c40adf3c8ec6ce126dc9f40d240cf7db53b4ec92e2729484c36706031ae6965"
+    },
+    {
+      "bytes": 1453,
+      "original_path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/PROPOSED-CATALOG-QUALIFICATION-v3.patch",
+      "retained_path": "workflows/reviews/missal-version-nomenclature-2026-10-30/stop-candidate/1962-joseph-addendum.patch",
+      "sha256": "2d961e9a951aefbfba4b24ab68795a966dbbd2abfaf2be51c2d81bd1c6666df2"
+    },
+    {
+      "bytes": 11017,
+      "original_path": ".scratch/missal-version-nomenclature-20261030/1962-variation-audit-v1/review/ADDITIVE-REVIEW-RECEIPT-v1.json",
+      "retained_path": "workflows/reviews/missal-version-nomenclature-2026-10-30/stop-candidate/1962-joseph-independent-review.json",
+      "sha256": "fec3bd1306deaf9eefa346c43c63881b5a2a969d77c1fad3cbf93b0be6d80487"
+    },
+    {
+      "bytes": 2060,
+      "original_path": ".scratch/next-epoch-semantics-20261030/naming-phase5-code-expectation/PROPOSAL.json",
+      "retained_path": "workflows/reviews/missal-version-nomenclature-2026-10-30/stop-candidate/phase5-proposal.json",
+      "sha256": "bb8069186f543bc222e8d48f34da4a40084b3d590d981911dc31cfb11da354a3"
+    },
+    {
+      "bytes": 6640,
+      "original_path": ".scratch/next-epoch-semantics-20261030/naming-phase5-code-expectation/test-cold-review/REVIEW-RECEIPT-v1.json",
+      "retained_path": "workflows/reviews/missal-version-nomenclature-2026-10-30/stop-candidate/phase5-independent-review.json",
+      "sha256": "1d0bdfb6e51ef846a24112a6f8a58fc2e88e1a21825f2c5b4529bd26506160a5"
+    }
+  ],
+  "limits": [
+    "Apply no generated reference files from scratch; regenerate with actual final owners.",
+    "Current accepted source fixture is3bcf736d; older READY source-epoch references remain historical and are superseded by the stop handoff.",
+    "Apply manual53 first, then the exact Joseph existing-field addendum; resulting catalog hash must be2e416361e414b5648a17f6aa96c72d8050a00f85097f2cb8c9487a5c93d237a7.",
+    "The phase5 test and snapshot successor requires an explicit five-pin/two-inverse metadata epoch with actual new code validation; it is not installed here.",
+    "Scratch references in exact archived records are historical identifiers; this manifest gives retained counterparts where available."
+  ],
+  "schema": "triptych-unapplied-naming-stop-candidate/v1",
+  "state": "UNAPPLIED: durable candidate evidence only; no naming or source-epoch acceptance inferred"
+}

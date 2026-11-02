@@ -1,0 +1,70 @@
+{
+  "schema": "triptych-independent-common-acclamation-test-successor-review/v1",
+  "disposition": "ACCEPT exact1c87fb05 successor; no corrections",
+  "preimage_sha256": "646dc302f47185c5a69be2581ce8f145e8e8c7a75e16ed285c373518b1709025",
+  "postimage_sha256": "1c87fb057821f2512e9938580c8b477fee0334e45d8c029940a83c36e5e230cf",
+  "patch_sha256": "a0d54b11a18df5ed87b92ecc180f5178b4ea4bd728f6f22aea973b6dea0acefd",
+  "canonical_equals_frozen_postimage": true,
+  "scope": "Mechanical current-test expectation correction only. All four exact positive dictionaries already identical at702f650; they are priorPhase1/Phase2 admissions, not new first18/root6bac cases. No source, rights, fidelity or policy re-adjudication.",
+  "positive_entry_checks": [
+    {
+      "mass": "saint-lawrence-brindisi-priest-doctor-church",
+      "complete_entry_sha256": "fe483d38fcaefbf7cf5ac5b8070e84418d22e4944377da2517a2a56eab4d2ff6",
+      "English_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "rights": "public-domain",
+      "relation": "antecedent-printing",
+      "already_identical_at_702f650": true
+    },
+    {
+      "mass": "saint-john-chrysostom-bishop-doctor-church",
+      "complete_entry_sha256": "617393fdedee2a0b0352cae324f38ec4f70081badddfa642b0f3dd9691c3a089",
+      "English_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "rights": "public-domain",
+      "relation": "antecedent-printing",
+      "already_identical_at_702f650": true
+    },
+    {
+      "mass": "saint-cecilia-virgin-martyr",
+      "complete_entry_sha256": "b2351e9a4f75f7d02802cd2fc208a1855c6f549111f87b877f1ea136f9d564f0",
+      "English_sha256": "180c9c8a2fd059c019dc7a7747ed21220fb11d7d4771b8c7707b7cb030c0a722",
+      "rights": "project-created",
+      "relation": "abridged",
+      "already_identical_at_702f650": true
+    },
+    {
+      "mass": "saint-lucy-virgin-martyr",
+      "complete_entry_sha256": "4e9df70063a9933f7123f8ae50fe86311d8f0b98ff57102035902c7bee5ab64e",
+      "English_sha256": "180c9c8a2fd059c019dc7a7747ed21220fb11d7d4771b8c7707b7cb030c0a722",
+      "rights": "project-created",
+      "relation": "abridged",
+      "already_identical_at_702f650": true
+    }
+  ],
+  "archived_gap_checks": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase1-admission.json",
+      "sha256": "336c2eeb280f40fcf291e99a691c21bc0a1025b8b20751815ff8facaa10cc255",
+      "preserved_selected_old_gaps": 2
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-virgo-admission.json",
+      "sha256": "32c337acd6aa77053b342e9da372cb7fd687a945647a9535bd7f8358e8cd4967",
+      "preserved_selected_old_gaps": 2
+    }
+  ],
+  "test_semantics": {
+    "seven_original_source_identified_gap_facts": "Four exact hash-bound archived dictionaries plus three still-live English absence rows retain their original no-exemplar status, Common referrals and artifact-page notes.",
+    "three_current_English_gaps": "Polycarp, MartinI, Pontian/Hippolytus remain unavailable, without positive overlay entries.",
+    "seven_Latin_holds": "All seven still composed and text_status unavailable/proper-body with witness-gap against exact2008 target; public Latin held/available remain false and no text, verse or incipit is added.",
+    "four_public_English_states": "Exactly four full-text/held/available English states, with exact current body strings and distinct actual rights. Two Bute historicalpublic-domain antecedent-printing routes; two Virgo project-created abridgments.",
+    "source_runtime": "Canonical actual tools/mass-propers, current source library/ledger/calendar and actual admissions are loaded by the test. No G, owner, source library, fixture or current data mocking.",
+    "coverage": "Existing zero unaccounted, outside_the_ledger, unmatched_records and stale_translation_records assertions remain."
+  },
+  "focused_test": {
+    "command": ".scratch/pc-quarantine-conservation-20261029/venv/bin/python -m unittest tools.tests.test_postconciliar_common_acclamation_english -v",
+    "exit_code": 0,
+    "test_methods": 4,
+    "log_sha256": "4f5a4103cf98c0e16aecc05aed87c8c411a291f07b786108e8c340dbdbe33046"
+  },
+  "writes": "Only this review and focused-peer.log under exclusive independent-review directory. No canonical, source, fixture or index writes performed."
+}

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-historical-prayers"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "United States: the identified Tours 1922 printed words and pages have no remaining copyright term in 2026; any restored term supplies only the remainder of the otherwise applicable US term. Faithful mechanical page extraction and machine image/OCR layers add no new human authorship. This does not rely on host licence labels or on an unsupported claim that the maximum term expired before 1996. Historical Latin and source images are excluded from the project CC BY 4.0 offer."
+sha256 = "c95c8d9644fb04be9be0b8eca63331f7f90cb3bbbfad11178f1abbca8a94425c"
+byte_size = 1062
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-seven-20261026-historical-prayers/latin.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-seven-20261026-control-pages"
+retrieved = "2026-10-26"
+encoding = "utf-8"
+indexable = true
+provenance = "Six complete named historical prayers independently read from actual1922Mamepages; exact source-only acceptances dated26October2026 govern all words and actual endings. One complete prayer per physical line, in source-candidate order."
+transformation = "Join physical line wraps and word-division hyphens, remove stress accents and expand ae/oe ligatures. Preserve historical words, pointing, Genitricis spelling and actual Per./Per Dominum. conclusion cues. Do not add atque Doctoris, modern options, longer endings or target pointing to this historical transcription."
+notes = "Lines1-6 are AnthonyPostcommunion,AnthonyCollect,JamesPostcommunion,JoachimCollect,BartholomewCollect,BartholomewSecret. They deliberately differ from the separately admitted target projection."

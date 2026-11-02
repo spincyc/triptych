@@ -1,0 +1,266 @@
+{
+  "schema": "triptych-exact-artifact-preservation/v1",
+  "date": "2026-11-02",
+  "provider": "gpt",
+  "document": "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany",
+  "source_commit": "91ee09d34f86be55e421df5ff9eb67ca75912171",
+  "integration_target": "84c2f7e041af77230095987ae7eb86b0f4d2f92e",
+  "delivery": {
+    "index": "src/sources/artifact-delivery.json",
+    "schema": "triptych-artifact-delivery/v1",
+    "prior_index_sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e",
+    "current_index_sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d",
+    "prior_snapshot_unchanged": true,
+    "prior_archives_unchanged": 10,
+    "prior_entries_unchanged": 5540,
+    "new_archive": {
+      "id": "05e4f8d0b98cd4ba1c7ff62b383406f9cbfc965e56a41097f8174f2bc98f5907",
+      "name": "triptych-binaries-0011-05e4f8d0b98cd4ba.tar",
+      "sha256": "05e4f8d0b98cd4ba1c7ff62b383406f9cbfc965e56a41097f8174f2bc98f5907",
+      "bytes": 2775040,
+      "urls": [],
+      "delivery": "offline-only"
+    },
+    "pack_directory": ".scratch/reconcile-main-20261102/exact-artifacts",
+    "public_delivery_available": false
+  },
+  "preservation": {
+    "payload_count": 4,
+    "payload_bytes": 2762900,
+    "payloads": [
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/resumed-epiphany-5-evidence-pages-20261102/source.pdf",
+        "sha256": "cc43f37e667ebae4b4f7b821e0d8cee22cada4a11969ce047526e7f3c981edd3",
+        "bytes": 1252144,
+        "manifest": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/resumed-epiphany-5-evidence-pages-20261102/artifact.toml",
+        "manifest_sha256": "262182d84540cfff562fd95eca5358e2bc0c4a38a8b901ba656b3cc51e0aa532",
+        "member": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/resumed-epiphany-5-evidence-pages-20261102/source.pdf",
+        "isolated_roundtrip_sha256": "cc43f37e667ebae4b4f7b821e0d8cee22cada4a11969ce047526e7f3c981edd3",
+        "resolver_roundtrip_sha256": "cc43f37e667ebae4b4f7b821e0d8cee22cada4a11969ce047526e7f3c981edd3",
+        "original_removed_after_isolated_verification": true
+      },
+      {
+        "path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-4-1912/artifacts/responsa-marci-lucae-pages-463-465-20261102/source.pdf",
+        "sha256": "dc7612b364f7b214250e1c7d863494f78f679b7ae8c332ae764b8cb3a8f6324a",
+        "bytes": 449941,
+        "manifest": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-4-1912/artifacts/responsa-marci-lucae-pages-463-465-20261102/artifact.toml",
+        "manifest_sha256": "dec75efac8bc66f976586298d9cbbdcd86ad23dfa3954bd454b490ab6599a94e",
+        "member": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-4-1912/artifacts/responsa-marci-lucae-pages-463-465-20261102/source.pdf",
+        "isolated_roundtrip_sha256": "dc7612b364f7b214250e1c7d863494f78f679b7ae8c332ae764b8cb3a8f6324a",
+        "resolver_roundtrip_sha256": "dc7612b364f7b214250e1c7d863494f78f679b7ae8c332ae764b8cb3a8f6324a",
+        "original_removed_after_isolated_verification": true
+      },
+      {
+        "path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/jeremias-29-columns-893-896-20261102/source.pdf",
+        "sha256": "ff581563c75161101d79f961e9b1c664f56e03f56236db8ee49503a1b5c7afbe",
+        "bytes": 406151,
+        "manifest": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/jeremias-29-columns-893-896-20261102/artifact.toml",
+        "manifest_sha256": "a365c053e3f460a41bddeba20164dd7dbc894613bdc188c4e2a7b3a7f9d67001",
+        "member": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/jeremias-29-columns-893-896-20261102/source.pdf",
+        "isolated_roundtrip_sha256": "ff581563c75161101d79f961e9b1c664f56e03f56236db8ee49503a1b5c7afbe",
+        "resolver_roundtrip_sha256": "ff581563c75161101d79f961e9b1c664f56e03f56236db8ee49503a1b5c7afbe",
+        "original_removed_after_isolated_verification": true
+      },
+      {
+        "path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1883-volume-11/artifacts/epiphany-5-appendix-pages-524-528-20261102/source.pdf",
+        "sha256": "f18ad99a00848cdfeea5962955203449d4819e1cd78039344909febff36119cf",
+        "bytes": 654664,
+        "manifest": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1883-volume-11/artifacts/epiphany-5-appendix-pages-524-528-20261102/artifact.toml",
+        "manifest_sha256": "3ef4f15864d68bc16fc4048d0dfd957d2a946d1210f0949f4280e0da96a71427",
+        "member": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1883-volume-11/artifacts/epiphany-5-appendix-pages-524-528-20261102/source.pdf",
+        "isolated_roundtrip_sha256": "f18ad99a00848cdfeea5962955203449d4819e1cd78039344909febff36119cf",
+        "resolver_roundtrip_sha256": "f18ad99a00848cdfeea5962955203449d4819e1cd78039344909febff36119cf",
+        "original_removed_after_isolated_verification": true
+      }
+    ],
+    "pack_sha256": "05e4f8d0b98cd4ba1c7ff62b383406f9cbfc965e56a41097f8174f2bc98f5907",
+    "pack_files": [
+      {
+        "name": "README.txt",
+        "sha256": "29732aa9f26f985c8c073f1ff9c00e92dd74160a7978bc9d85dfbd680cf5f9cc",
+        "bytes": 1302
+      },
+      {
+        "name": "SHA256SUMS",
+        "sha256": "19bf902f819ce0cb0cf08a6750da02b12df3098bc039c24b573547a5677570f0",
+        "bytes": 360
+      },
+      {
+        "name": "artifact-delivery.json",
+        "sha256": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d",
+        "bytes": 2990029
+      },
+      {
+        "name": "artifact-store.py",
+        "sha256": "7313bca67c353182765baaac64cd8f4b91c2546f652e52bccf18a0275979fad6",
+        "bytes": 33634
+      },
+      {
+        "name": "triptych-binaries-0011-05e4f8d0b98cd4ba.tar",
+        "sha256": "05e4f8d0b98cd4ba1c7ff62b383406f9cbfc965e56a41097f8174f2bc98f5907",
+        "bytes": 2775040
+      }
+    ]
+  },
+  "source_fidelity": {
+    "prior_leaf_files_unchanged": 97,
+    "prior_leaf_manifest_sha256": "c94e55667785a7386726fe4573bea249b2e5521d9ffc7d8ea7346d20cd58e332",
+    "native_archive_files_unchanged": 58,
+    "native_archive_manifest_sha256": "f0692dfe0d23f1f847bc675caaa92eeb79b6c060ab3f61b44bb6c7fc36a41d81",
+    "manifest_hash_algorithm": "SHA-256 of sorted lines: <file SHA-256><two spaces><repository-relative path><LF>",
+    "new_file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/publication.toml",
+    "new_file_sha256": "29a3fae6d6b91424163226dfb451725af03206ac099ebb2054abc4e8fbae782e",
+    "outputs": [
+      "canonical",
+      "synthesis",
+      "homily"
+    ],
+    "generation_provenance_preserved": {
+      "workflow": "proper-study",
+      "version": 15,
+      "run_id": "0880812aa919d648"
+    },
+    "original_source_manifests_unchanged": 4
+  },
+  "checks": {
+    "artifact_store_unit_tests": {
+      "tests": 33,
+      "passed": 33,
+      "failed": 0,
+      "fixtures": "isolated scratch roots; legacy public and new offline-only behavior"
+    },
+    "artifact_store_check_local": {
+      "exit_code": 0,
+      "archive_bytes": 4602214400,
+      "archives": 11,
+      "artifacts": 5544,
+      "bytes": 4595508983,
+      "kinds": {
+        "historical-publication": 4837,
+        "source-evidence": 707
+      },
+      "status": "ok"
+    },
+    "document_schema_content_with_owning_gates": {
+      "exit_code": 0,
+      "documents": 1,
+      "outputs": 3,
+      "errors": 0,
+      "gates": [
+        {
+          "id": "generation",
+          "status": "pass",
+          "exit_code": 0
+        },
+        {
+          "id": "proper-components",
+          "status": "pass",
+          "exit_code": 0
+        },
+        {
+          "id": "proper-content",
+          "status": "pass",
+          "exit_code": 0
+        }
+      ]
+    },
+    "example_replay": {
+      "exit_code": 0,
+      "examples": 8,
+      "matched": 8
+    }
+  },
+  "reproduction": {
+    "pack": [
+      "python3",
+      "tools/artifact-store",
+      "pack",
+      "--append",
+      "--offline-only",
+      "--release",
+      "proper-66-20261102",
+      "--out",
+      ".scratch/reconcile-main-20261102/exact-artifacts",
+      "--json",
+      "--path",
+      "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/resumed-epiphany-5-evidence-pages-20261102/source.pdf",
+      "--path",
+      "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-4-1912/artifacts/responsa-marci-lucae-pages-463-465-20261102/source.pdf",
+      "--path",
+      "src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/jeremias-29-columns-893-896-20261102/source.pdf",
+      "--path",
+      "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1883-volume-11/artifacts/epiphany-5-appendix-pages-524-528-20261102/source.pdf"
+    ],
+    "hydrate": [
+      "python3",
+      "tools/artifact-store",
+      "hydrate",
+      "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/resumed-epiphany-5-evidence-pages-20261102/source.pdf",
+      "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-4-1912/artifacts/responsa-marci-lucae-pages-463-465-20261102/source.pdf",
+      "src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/jeremias-29-columns-893-896-20261102/source.pdf",
+      "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1883-volume-11/artifacts/epiphany-5-appendix-pages-524-528-20261102/source.pdf",
+      "--archive-dir",
+      ".scratch/reconcile-main-20261102/exact-artifacts",
+      "--json"
+    ],
+    "metadata_check": [
+      "python3",
+      "tools/artifact-store",
+      "check",
+      "--local",
+      "--json"
+    ],
+    "source_content_check": [
+      "tools/document-schema",
+      "check",
+      "--provider",
+      "gpt",
+      "--document",
+      "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany",
+      "--phase",
+      "content",
+      "--run-gates"
+    ]
+  },
+  "logs": [
+    {
+      "path": ".scratch/reconcile-main-20261102/propers-analysis/artifact-store-tests.log",
+      "sha256": "2805e0d3218733586bbb8c7abad1b2ad4dcb422ce72cd337fb2bab7a3b7b6e55"
+    },
+    {
+      "path": ".scratch/reconcile-main-20261102/propers-analysis/scoped-pack.log",
+      "sha256": "11f1e3ce812389a4fb1ce8644bd1d8522af0498d61079629a20ffbf06427f147"
+    },
+    {
+      "path": ".scratch/reconcile-main-20261102/propers-analysis/offline-roundtrip.log",
+      "sha256": "4a2f139707d85fccdbfe53a82386132268901fbb58fcaf91f1d355d97a11aa01"
+    },
+    {
+      "path": ".scratch/reconcile-main-20261102/propers-analysis/resolver-hydration.log",
+      "sha256": "4a2f139707d85fccdbfe53a82386132268901fbb58fcaf91f1d355d97a11aa01"
+    },
+    {
+      "path": ".scratch/reconcile-main-20261102/propers-analysis/artifact-store-local.json",
+      "sha256": "11f1e3ce812389a4fb1ce8644bd1d8522af0498d61079629a20ffbf06427f147"
+    },
+    {
+      "path": ".scratch/reconcile-main-20261102/propers-analysis/document-schema-content.json",
+      "sha256": "8ef8a2ce0eac13abe8b23a35212bf52626135cf554bb2c5527e2a6757779e09d"
+    },
+    {
+      "path": ".scratch/reconcile-main-20261102/propers-analysis/artifact-store-example-recapture.log",
+      "sha256": "629d6f177cd36096f8573c50c7aeb64ad9d09fcc028498049978bcb46064886f"
+    },
+    {
+      "path": ".scratch/reconcile-main-20261102/propers-analysis/artifact-store-example-replay.json",
+      "sha256": "7bd7bf7a6ce036d522a11ea040f656d22af2ba488f3fe774eb4bfd843eb0a3aa"
+    }
+  ],
+  "limitations": [
+    "The offline pack and hydrated cache are ignored local artifacts; no upload, public URL or continuing remote availability is asserted.",
+    "The four original payloads remain in existing Git history; this migration does not rewrite history.",
+    "The 58-file accepted v15 audit and all prior source bytes remain unchanged; this is no v16 rerun or renewed scholarly/visual acceptance.",
+    "Only four newly added source-evidence payloads were roundtripped; existing public archive routes were preserved, not downloaded or reverified.",
+    "No print PDF or site artifact was built in this migration lane."
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T05:20:04Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.006.historical-text-fb3b4bd1.note-blocks-ad-beatissimi-fr-736e75b41b8a",
+      "date": "1914-11-01",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.aas.006.archive.aas.006.054",
+      "id": "acta.aas.006.archive.aas.006.054",
+      "language": "fr",
+      "physical_line_ranges": [
+        [
+          1,
+          731
+        ]
+      ],
+      "pope": "Benedict XV",
+      "revision": "2026-10-30T05:20:04Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"completion_colophon_line_ranges\": [[33746, 33746]], \"completion_colophon_raw\": \"   ABSOLVITUR DIE 31 DEC. 1914. - TYPIS POLYGLOTTIS VATICANIS\", \"evidence\": \"Annual title/imprint and year at physical LF lines 1–18, confirmed by dated issue headings and official archive annual label. This identifies the historical underlying textual edition; the acquired Vatican -ocr.pdf is a modern OCR/text reconstruction and no image collation is claimed.\", \"imprint\": \"Typis Polyglottis Vaticanis\", \"publication_year\": 1914, \"source_index_url\": \"https://www.vatican.va/archive/aas/index_en.htm\", \"title\": \"Acta Apostolicae Sedis: Commentarium officiale\", \"title_imprint_physical_line_ranges\": [[1, 18]], \"volume\": 6} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.006.archive.aas.006.054.note-blocks-736e75b41b8a",
+      "segment_path": "src/sources/works/acta-papal-archives/1914-11-01-aas.006-archive.aas.006.work-ad-beatissimi/editions/1914-acta-aas-006-archive.aas.006.054/segments/note-blocks-ad-beatissimi-fr-736e75b41b8a.toml",
+      "sha256": "736e75b41b8ac5a720ab1a024af3c3a8a7178fb783dbfbe6d13a0a7ee3819372",
+      "source_note": "AAS 6 (1914). Additional constituent recovered from explicit body heading and source terminal subscription despite absent/OCR-damaged group numbering. No source wording is rewritten. A separately registered bounded LF-only derivative partitions explicitly inspected historical source-note groups into distinct paragraph blocks at their source-page breaks. All selected non-LF bytes and their order are unchanged; literal source OCR, word spacing and reference marks remain. The exact partition spec and raw parent are retained; no original-print image collation is claimed.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-06-1914-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1914-acta-aas-006/artifacts/note-blocks-ad-beatissimi-fr-736e75b41b8a/text.txt",
+      "title": "Ad beatissimi Apostolorum Principis",
+      "work_id": "work.acta-papal-archives.aas.006-archive.aas.006.work-ad-beatissimi",
+      "correction_evidence": {
+        "revision": "2026-10-30T05:20:04Z",
+        "kind": "explicit-source-note-lf-partition",
+        "spec_artifact_id": "artifact.acta-papal-archives.aas.006.historical-text-fb3b4bd1.note-spec-ad-beatissimi-fr-aba94b8ed33a",
+        "spec_sha256": "aba94b8ed33a3125670c2a3d5fa1af120e9ce3e117cfafc7168e9af81064285b",
+        "source_note_physical_line_ranges": [
+          [
+            24802,
+            24807
+          ],
+          [
+            24850,
+            24853
+          ],
+          [
+            24896,
+            24901
+          ],
+          [
+            24945,
+            24958
+          ],
+          [
+            25003,
+            25008
+          ],
+          [
+            25052,
+            25057
+          ],
+          [
+            25143,
+            25144
+          ],
+          [
+            25188,
+            25195
+          ],
+          [
+            25237,
+            25238
+          ],
+          [
+            25281,
+            25282
+          ],
+          [
+            25325,
+            25328
+          ],
+          [
+            25371,
+            25372
+          ],
+          [
+            25415,
+            25424
+          ],
+          [
+            25465,
+            25466
+          ]
+        ],
+        "prior_segment_id": "segment.acta-papal-archives.aas.006.archive.aas.006.054",
+        "selected_non_lf_sha256": "6a591eb7efbb8a13a59074c13d5635bdbabcc2b3824a3f282ef4e16ce9e80927",
+        "selected_non_lf_bytes_preserved": true,
+        "source_order_preserved": true
+      }
+    }
+  ],
+  "supersessions": [
+    {
+      "reason": "Explicit inspected source-footnote LF partitions replace a paragraph-fused reader. Every selected non-LF byte and its source order are preserved; original source and predecessor remain retained.",
+      "prior": {
+        "id": "acta.aas.006.archive.aas.006.054",
+        "language": "fr",
+        "pdf_sha256": "11b6d43e53550cea7e8fc3d79d1699573ed3fadecf4ca826e9dc3c90372124a7",
+        "artifact_id": "artifact.acta-papal-archives.aas.006.historical-text-fb3b4bd1",
+        "source_sha256": "fb3b4bd1a8d41392dc06fc705d97bac09d7aee15780990391456a948f9ea3c67",
+        "segment_id": "segment.acta-papal-archives.aas.006.archive.aas.006.054"
+      },
+      "replacement": {
+        "id": "acta.aas.006.archive.aas.006.054",
+        "language": "fr",
+        "artifact_id": "artifact.acta-papal-archives.aas.006.historical-text-fb3b4bd1.note-blocks-ad-beatissimi-fr-736e75b41b8a",
+        "source_sha256": "736e75b41b8ac5a720ab1a024af3c3a8a7178fb783dbfbe6d13a0a7ee3819372",
+        "segment_id": "segment.acta-papal-archives.aas.006.archive.aas.006.054.note-blocks-736e75b41b8a",
+        "revision": "2026-10-30T05:20:04Z"
+      }
+    }
+  ]
+}

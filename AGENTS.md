@@ -15,11 +15,16 @@ Read these files before changing document content, structure, or build behavior:
 3. `LICENSE` and `THIRD_PARTY.md` for the applicable license boundary and excluded source material.
 4. `guidance/editorial.md` for the universal evidence, attribution, metadata, review, and publication standard.
 5. `guidance/repository.md` for source ownership, target paths, mirrored publications, and build rules.
-6. The one or more profiles that govern the requested document.
+6. `guidance/document-schemas.md` for the publication manifest, semantic roles, and declared outputs.
+7. The one or more profiles that govern the requested document.
 
 Read `guidance/sources.md` before adding, migrating, storing, or reusing a
 repository-wide external source, corpus, edition, artifact, passage record, or
 publication binding.
+
+Papal-document catalogues and mechanical source reading editions additionally
+follow `guidance/papal-documents.md`. These provider-neutral external editions
+remain distinct from AI-authored studies and their provider publications.
 
 The documents above govern publications. A second family governs the tracked
 data and the apparatus over it, and nothing else routes to them — read the one
@@ -31,7 +36,8 @@ largely a register of how that data has already gone wrong:
 | a task requiring external visual, product, source, architectural, or acceptance review | `guidance/external-review-handoffs.md` |
 | a mass, proper, or rubric in `src/sources/calendars/` | `guidance/propers-for-agents.md` |
 | anything the browser fetches from `src/web/data/` | `guidance/web-data.md` |
-| the site layout template, `assets/site.css`, `src/web/browser/shared/`, site navigation, route generation in `tools/public-alpha`, or any non-PDF web surface outside liturgy | `guidance/corpus-browser-implementation.md`, `guidance/corpus-browser-master-plan.md` |
+| the site layout template, `assets/site.css`, `src/web/browser/shared/`, site navigation, route generation in `tools/public-alpha`, or any web surface outside liturgy | `guidance/corpus-browser-implementation.md`, `guidance/corpus-browser-master-plan.md` |
+| producing a print edition or changing a print template | `docs/printing.md`, `guidance/document-schemas.md`, and the owning genre profile |
 | non-liturgy corpus browser work: Home or Publications routes; the web publication Reader; Catena or Sources routes; or shared non-liturgy shell, navigation, search, context, responsive, or print presentation | `guidance/corpus-browser-master-plan.md`, `guidance/corpus-browser-vision.md`, `guidance/corpus-browser-roadmap.md`, `guidance/corpus-browser-implementation.md`, plus the existing universal, profile, and owning-surface guidance as applicable — including `guidance/web-editions.md` for the Reader, the Catena guidance below, `guidance/sources.md` for Sources, and `guidance/web-data.md` for fetched data |
 | liturgy browser HTML, CSS, or JavaScript; Day or Propers routes; shared liturgical rendering; modes or navigation; responsive or print presentation; calendar or source apparatus; comparison views; or browser-visible recension coverage | `guidance/liturgy-browser-vision.md`, `guidance/liturgy-browser-roadmap.md` |
 | a bible edition, its index, or its chapter fragments | `guidance/bibles-for-agents.md` |
@@ -92,6 +98,10 @@ unrelated changes before mutation.
 
 Direct sessions have standing authority to create ordinary coherent commits for authorized work and to push validated checkpoints regularly to `origin/main`. Before each push, verify the exact outgoing range, confirm that every newly reachable object is intended for public disclosure, and run the checks required by the affected guidance. A push to `origin/main` triggers the GitHub Pages workflow and therefore authorizes that automatic deployment attempt. This standing authority does not permit force-pushing, rewriting published history, integrating retained workers, changing remotes, or triggering any other deployment.
 
+An assigned workspace branch and explicit task limits control the session.
+In a `wt` workspace, stay on its declared branch; the standing `main` workflow
+does not authorize switching branches or publishing a different ref.
+
 ## Claude sessions
 
 A Claude session works in its own full checkout on its own branch, never in a
@@ -127,7 +137,7 @@ Before editing:
 1. Inspect the worktree and preserve unrelated user changes.
 2. Identify the document's provider, collection, genre, rite, edition, language or locale, jurisdiction, and as-of date where applicable.
 3. Read the applicable profile completely and inspect the document's source and research records.
-4. Confirm whether the request authorizes content changes, structural moves, installed PDF changes, commits, integration, updating local `main`, pushing a named ref, deployment, or history rewriting; do not infer broader authority from a narrower request.
+4. Confirm whether the request authorizes content changes, structural moves, print output, commits, integration, updating another local target, pushing a named ref, deployment, or history rewriting; do not infer broader authority from a narrower request.
 
 During research and drafting:
 
@@ -144,25 +154,38 @@ When legal rules, current discipline, translations, software, or other mutable f
 
 ## Repository and build discipline
 
-Preserve the provider hierarchy under `src/<provider>/`; the present providers are `gpt` and `claude`. New and migrated documents follow the collection schema in `guidance/repository.md`; their installed PDFs and transient artifacts mirror the same relative path under `pdf/<provider>/` and `build/<provider>/`.
+Preserve the provider hierarchy under `src/<provider>/`; the present providers
+are `gpt` and `claude`. Every publication leaf declares its kind, semantic
+roles, source entrypoints, and output editions in `publication.toml` under
+`guidance/document-schemas.md`. Existing TeX is authoritative plaintext;
+preserve its content, imports, and canonical typed data without a lossy format
+conversion.
 
 - Tracked inputs and audit records belong under `src/`.
-- Provider-neutral reusable external-source records and lawful retained
-  artifacts belong under `src/sources/` and follow `guidance/sources.md`.
-- Reviewed, publishable PDFs belong under `pdf/`.
+- Provider-neutral reusable external-source records and textual payloads belong
+  under `src/sources/` and follow `guidance/sources.md`; exact binary evidence
+  is resolved through its hash-bound delivery sidecar.
 - Reviewed, publishable web editions belong under `web/`, generated from the
   same sources and governed by `guidance/web-editions.md`.
-- LaTeX intermediates, logs, caches, and other reproducible artifacts belong only under ignored `build/`.
+- PDFs are optional, single-document print outputs made with
+  `tools/print-document`; no PDF is tracked or required by normal site deployment.
+- Reproducible build output belongs under ignored `build/`; task-created logs,
+  review output, caches, and experiments belong under `.scratch/` in a workspace.
 - Shared theological or typesetting text has one authoritative source and is imported by its consumers; do not create drifting copies.
-- Never use `pdf/` as a build directory or treat `build/` as an authoritative input.
+- Never treat generated print output, `build/`, or `.scratch/` as an authoritative input.
 
-Use `rg` or `rg --files` first for repository search. Use history-preserving moves for tracked paths, and update imports, build dependencies, catalogs, links, attributes, and installed mirrors coherently. Existing relative TeX imports and shared-fragment consumers must be checked before moving a source directory.
+Use `rg` or `rg --files` first for repository search. Use history-preserving moves for tracked paths, and update imports, build dependencies, manifests, catalogs, links, and attributes coherently. Existing relative TeX imports and shared-fragment consumers must be checked before moving a source directory.
 
-Build each affected document for enough passes to settle references and contents. Inspect logs for fatal errors, undefined references, overflow, and layout warnings. Generate review rasters and contact sheets only as `guidance/repository.md` requires. Visually inspect every rendered page, then install only the reviewed PDF. When a shared source changes, build and inspect every affected consumer. Run the profile's quality gates in addition to the universal gates in `guidance/editorial.md`.
+Validate affected manifests, source/evidence records, and web conversions.
+Source approval and print-layout approval are separate facts. When producing
+or revising a print edition, build and inspect the selected edition under
+`guidance/repository.md` and its profile; exact page and duplex requirements
+remain binding. Run the profile's source and content gates for every affected
+consumer even when no PDF is requested.
 
 ## Commits and history
 
-Keep structural refactors separate from substantive document revisions when the requested order permits it. Stage only the coherent files requested, verify the staged diff, and use a concise commit subject plus the `AI summary:` body required by `guidance/repository.md`. Source records and the installed PDF belong in the same content-revision commit when the profile requires both.
+Keep structural refactors separate from substantive document revisions when the requested order permits it. Stage only the coherent files requested, verify the staged diff, and use a concise commit subject plus the `AI summary:` body required by `guidance/repository.md`. Commit canonical sources, manifests, and durable review records together; keep generated PDFs out of Git.
 
 Do not amend, rebase, filter, force-update a ref, or otherwise rewrite history unless the user explicitly requests history rewriting and its consequences have been assessed. A project rename normally belongs in a new commit; local checkout and hosted-repository names are external operations.
 

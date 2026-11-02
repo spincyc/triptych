@@ -1,0 +1,50 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ordered-source-package-8fdd4840"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "project-source-package"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "Project-created factual source-package metadata is distributed under the repository content license, CC BY 4.0. Each referenced external response retains its separate CC BY-SA 4.0 record; the package grants no new right over those responses."
+license = "CC-BY-4.0"
+provenance = "Project-created deterministic ordered manifest for the1903English collection; exact chapter responses are referenced through support_artifacts, not copied or represented as an external acquired package."
+retrieved = "2026-10-26"
+sha256 = "8fdd48405bccba4226deeacc5fc290777bf4e3ba0987061ef3aa52bd66a39bd8"
+byte_size = 8127
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ordered-source-package-8fdd4840/package.json"
+encoding = "utf-8"
+indexable = false
+notes = "This is a local acquisition recipe and source-package description, not an external historical source witness. Materializing its literal chapter filenames resolves the30separately owned exact response payloads, in printed contents order, to reconstruct the declared normalized transcription."
+support_artifacts = [
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-01-85ae364f", embedded_reference = "chapter-01.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-02-e99bd154", embedded_reference = "chapter-02.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-03-13bb0856", embedded_reference = "chapter-03.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-04-934b7793", embedded_reference = "chapter-04.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-05-79b2bf13", embedded_reference = "chapter-05.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-06-6285c0b1", embedded_reference = "chapter-06.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-07-0e9081eb", embedded_reference = "chapter-07.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-08-e97434af", embedded_reference = "chapter-08.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-09-d445359a", embedded_reference = "chapter-09.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-10-5ea1a0f4", embedded_reference = "chapter-10.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-11-4e2f7bdd", embedded_reference = "chapter-11.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-12-f1b7e3ab", embedded_reference = "chapter-12.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-13-f963cf1b", embedded_reference = "chapter-13.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-14-3afb597b", embedded_reference = "chapter-14.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-15-a9af7d28", embedded_reference = "chapter-15.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-16-9a3e4c9e", embedded_reference = "chapter-16.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-17-654664ba", embedded_reference = "chapter-17.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-18-9c04e6ab", embedded_reference = "chapter-18.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-19-6da7df32", embedded_reference = "chapter-19.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-20-b12fa2cd", embedded_reference = "chapter-20.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-21-2fd960b8", embedded_reference = "chapter-21.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-22-43f873f4", embedded_reference = "chapter-22.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-23-2656a9e9", embedded_reference = "chapter-23.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-24-447b6b43", embedded_reference = "chapter-24.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-25-ff427224", embedded_reference = "chapter-25.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-26-bd3299e6", embedded_reference = "chapter-26.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-27-4a86e538", embedded_reference = "chapter-27.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-28-7686053a", embedded_reference = "chapter-28.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-29-7a640f59", embedded_reference = "chapter-29.json" },
+  { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-30-c6661c2c", embedded_reference = "chapter-30.json" },
+]

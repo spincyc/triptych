@@ -1,0 +1,16 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.humanum-omissions-recipe-a666ecf5b4f7"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "project-source-recipe"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "Project-created recipe metadata is CC BY 4.0; embedded standard-library Python is MIT under its complete program_license grant. Historical wording keeps its separate public-domain status."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "a666ecf5b4f79eab1085d2c3fb2452bf3bb0785b892c733fc650f21d6318b4a4"
+byte_size = 18988
+derived_from = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-reading-text-fc16a357"
+transformation = "Exact two-insertion replay from retained raw OCR slices; validates parent, chapter selection, evidence members, native TSV coordinates/confidence, OCR composition and full-page agreement, output hash and byte-conservation proof."
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/humanum-omissions-recipe-a666ecf5b4f7/recipe.json"

@@ -1,0 +1,177 @@
+{
+  "schema": "triptych-reviewed-source-installation/v1",
+  "recorded_on": "2026-10-29",
+  "source_plans": [
+    {
+      "plan_sha256": "42812e1407af7fffa7e84300031a4fb08da753198fbe8a462ab96715ff8b959e",
+      "plan_name": "install-plan.json",
+      "targets": [
+        [
+          "chrism-mass",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        [
+          "chrism-mass",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ]
+      ],
+      "source_files": [
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/chrism-three-orations-word-collation-20261029.toml",
+          "sha256": "0dc482f9bc9f268c8c963cced10c89a4a882c84d357522ee23a9214e09fbbe90"
+        },
+        {
+          "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/chrism-orations-pages-69-73-16f98b4d/artifact.toml",
+          "sha256": "0edfcb8c11324bf95c4db52fb7cf311f2fe6502f41174ad12baacdeb8371d556"
+        },
+        {
+          "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/chrism-orations-pages-69-73-16f98b4d/pages.pdf",
+          "sha256": "16f98b4d2706347825ab8156e7e5dc83ccab68502326c9540dfb42ec3070360f"
+        },
+        {
+          "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/chrism-three-oration-readings-20261029-33c7ecdf/artifact.toml",
+          "sha256": "bf3e37cd5f0e780fe5f96c1a9a6c6c9573e86649b4f5515ee35113d174fa386e"
+        },
+        {
+          "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/chrism-three-oration-readings-20261029-33c7ecdf/latin.tsv",
+          "sha256": "33c7ecdffc2d25aec50dbf79361a4bf7fb092a25086f7e3f8ac71f7fa08de654"
+        },
+        {
+          "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/chrism-collect-checked-20261029.toml",
+          "sha256": "99de14ef63e9a43ce684b337fbaf63733f6a62aa34058a7bb031680563f663a5"
+        },
+        {
+          "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/chrism-collect-image-20261029.toml",
+          "sha256": "f647cdaeddc8199493d20e6ea2ae7437ceee7c3aee2a724cceba24df27665799"
+        },
+        {
+          "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/chrism-postcommunion-checked-20261029.toml",
+          "sha256": "e8e97836f576d1467d3b0af94a874fa8964fcb7441972b9145130d8068cd5ad8"
+        },
+        {
+          "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/chrism-postcommunion-image-20261029.toml",
+          "sha256": "306fc1b0efc7f0e75e4474aaa0afc3552b0af762060be88b788fe12497429f5a"
+        },
+        {
+          "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/chrism-secret-checked-20261029.toml",
+          "sha256": "5c627ed711c933b0bd2671c5312271220f6eaabde0ebd71cfa2607c4e5ca71a6"
+        },
+        {
+          "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/chrism-secret-image-20261029.toml",
+          "sha256": "27dc340f03118bcc9a03c87429055cf2677a5985e1190a3cad19466042d840f3"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/chrism-two-orations-9b3148f9/artifact.toml",
+          "sha256": "b5ecdec5fe5dd85a1d3eafb490fbf70419a4828bcdb82fb182ac667419d2d0f4"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/chrism-two-orations-9b3148f9/latin.txt",
+          "sha256": "9b3148f940dd5a2d1f36e9ed88a560b2a36667503e1a0e39560364034fac0346"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/chrism-postcommunion.toml",
+          "sha256": "404d90b54a942e8095ec9cca25d8370ee710ba631f6992c548a37c4c05ee20c0"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/chrism-secret.toml",
+          "sha256": "ecfd329cecd941a1762b5763a2587b8fc8f1501d19c4959bcd5f3c27d11ee1ac"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "target": [
+        "chrism-mass",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Secret",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "chrism-mass",
+        "form_id": "main",
+        "proper": "Secret",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "4347ed9ef2490242217f5f902589bc89ac0e8749937c76296edb36ff7146e996",
+      "new_english_sha256": "f729420445bc2e30435e1fc9e1e5bb880fa771b27f1d807b94b83eebffd3569b",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-3fe5122a42a83baf.json"
+    },
+    {
+      "target": [
+        "chrism-mass",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Postcommunion",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "chrism-mass",
+        "form_id": "main",
+        "proper": "Postcommunion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "1865a6bbcae4451b1d900b83f965ce524eb90bff181ae7079c6522d760391cda",
+      "new_english_sha256": "cb4551498a897658bf2a7fec94ccd3f9e691f3f57a360ac859ba78ecdfc05772",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-3fe5122a42a83baf.json"
+    }
+  ],
+  "after_hashes": {
+    "src/sources/calendars/roman-1962/propers.yaml": "407ad5eb064f9a86a53686160d7e8e77b05a0d318aa2e323923c0479eff9716c",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "afaddc86bab4405c5ae0e772016a2cc24871e826d870b703a8cc1d3fc082fbf8",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "79096b10c87d899d2fed24873ac9de941403005283ea346fc111213d027a9cef"
+  }
+}

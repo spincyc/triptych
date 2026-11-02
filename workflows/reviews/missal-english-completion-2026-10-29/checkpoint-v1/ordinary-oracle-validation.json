@@ -1,0 +1,56 @@
+{
+  "scope": "Test-only oracle corrections for accepted PC35/70 and simultaneously accepted Roman/Proper checkpoint. No source/runtime/EXAMPLES changes by this repair.",
+  "source_seal_sha256": "04723c28ab0459f695dd5ff5bb4a9a758a9bdcb0041359902e12819d9d297e5b",
+  "test_files": [
+    {
+      "path": "tools/tests/test_mass_ordinary.py",
+      "sha256": "40c10042e90b06042c3a3c53792f76b5a12cfdf2c1e49979145bd641721124fa"
+    },
+    {
+      "path": "tools/tests/test_postconciliar_ordinary_divergence_recovery.py",
+      "sha256": "b998eb48fc93a619c9d5f644a6e745d2eb880adc1fc04bba3021023378cdb94d"
+    },
+    {
+      "path": "tools/tests/test_liturgy_reader_state.py",
+      "sha256": "be00b72ae3eb74109c57ee3e8b7c2fd8c051f16aa7de82b083fca9de47316792"
+    },
+    {
+      "path": "tools/tests/test_mass_ordinary_source_roles.py",
+      "sha256": "31cd53e1c5cc4ac47890d24c526dc8cd8de847211f432834a4678aded4c073ce"
+    },
+    {
+      "path": "tools/tests/test_mass_ordinary_scoped_english.py",
+      "sha256": "f7015a9ee76a77a44623370194731a7d7ac15bffab2eaa4466fb057df47b8a4d"
+    },
+    {
+      "path": "tools/tests/test_postconciliar_ordinary_source_frames.py",
+      "sha256": "66ced654366cfd9aa76c6a3a923fe35dd538a288673502e7f0628dcac998ab90"
+    },
+    {
+      "path": "tools/tests/postconciliar_ordinary_source_frames.cjs",
+      "sha256": "d6883cefbe3eb8aef36e1beb5c63d517eaa5fb16c9bbd4c313c0bdb5802456c1"
+    }
+  ],
+  "combined_suite": {
+    "tests": 103,
+    "seconds": 35.326,
+    "result": "PASS",
+    "log": ".scratch/postconciliar-ordinary-20261029/second-pass/checkpoint-35-en/final-checkpoint-suite.log",
+    "log_sha256": "b8f5247708c309e4aea286a2fb4e6dc8fa2c2be9c224d55fb2e674af229e643e"
+  },
+  "first_failure_log_sha256": "1cb4180a4686321ceb06cb0d95c0da0b16a15e8e56c73b3ecc60f3288a07b492",
+  "independent_event_and_body_delta_summary": {
+    "path": ".scratch/english-ordinary-20261030/checkpoint-page-oracles/sanitized-summary.json",
+    "sha256": "b4f34c4629844a3e096b0a21a5d316a6eeb0b9f6c36a6959450d099353ac2f07"
+  },
+  "correction_grounds": [
+    "Exact declared fourteen-witness counts and remaining typed absence matrix; approved ICEL body still absent.",
+    "Nineteen original literal Cummiskey English bodies preserved; full Lasance Agnus replacement bound to accepted7dbcb574 body hash, no actor inheritance, unchanged Latin block.",
+    "Three original structural anchors preserve all61IDs and nine accepted source-defined children; explicit bishop is nondefault.",
+    "Common Communicantes/Supplices study sources are qualified; QuiPridie pending body is still absent.",
+    "Language availability counts each element once while disjoint May1/March19 relation offers count separate witnesses.",
+    "Closed source-explicit actor set permits approved deacon/bishop values; negative control uses genuinely unknown actor.",
+    "Damascene Paschal complete Latin is bound to independently admitted e88531b6 source artifact and qualified basis; non-Paschal PD owner and season/foreign-source guards preserved.",
+    "Both prior event text pins replayed before accepted delta capture; Roman178orderedIDs conserved; PC old67sequence recovered after removing exactly6 new default child events."
+  ]
+}

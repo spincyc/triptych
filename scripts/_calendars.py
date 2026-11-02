@@ -2308,9 +2308,10 @@ def _appoint_resolved_proper(found: dict, wrapper: dict, wanted: str) -> dict:
     if ORDINARY_DISPOSITION in wrapper:
         appointed[ORDINARY_DISPOSITION] = wrapper[ORDINARY_DISPOSITION]
     identity = getattr(wrapper, "appointment_identity", None) or getattr(found, "appointment_identity", None)
-    if identity is not None or hasattr(found, "source_proper") or getattr(wrapper, APPOINTMENT_APPLICABILITY, None) is not None:
-        appointed = _AppointmentProper(appointed, identity, getattr(found, "source_proper", found), getattr(wrapper, "appointment_replacement", None) or getattr(found, "appointment_replacement", None), getattr(wrapper, APPOINTMENT_APPLICABILITY, None), getattr(wrapper, SOURCE_PATH_RELATION, None))
-    return appointed
+    # A display-name or disposition wrapper still owns no new wording. Keep
+    # the selected source object even where it has no appointment metadata;
+    # otherwise repeated source names lose their exact occurrence here.
+    return _AppointmentProper(appointed, identity, getattr(found, "source_proper", found), getattr(wrapper, "appointment_replacement", None) or getattr(found, "appointment_replacement", None), getattr(wrapper, APPOINTMENT_APPLICABILITY, None), getattr(wrapper, SOURCE_PATH_RELATION, None))
 
 
 def _public_appointment_proper(proper: dict) -> dict:

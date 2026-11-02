@@ -1,0 +1,4326 @@
+{
+  "layout": "A conservative geometry screen finds some column-order defects; passing it does not establish reading order.",
+  "method": "exact-whitespace-token-equality-v1",
+  "ocr_sha256": "7019568db20715af4e9d5a686f1b122af5e466d78744d07e6c6af26b4c9392d8",
+  "pages": [
+    {
+      "artifact_page": 1,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 1,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": "",
+      "tokens": 0,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 2,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 2,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": "",
+      "tokens": 0,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 3,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 3,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": "",
+      "tokens": 0,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 4,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 4,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": "",
+      "tokens": 0,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 5,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 5,
+      "physical_line_end": 20,
+      "physical_line_start": 1,
+      "source_page_label_raw": "",
+      "tokens": 42,
+      "wide_body_line_count": 3
+    },
+    {
+      "artifact_page": 6,
+      "body_column_sequence": [
+        "R",
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "body-column-order-reverses"
+      ],
+      "leaf": 6,
+      "physical_line_end": 47,
+      "physical_line_start": 23,
+      "source_page_label_raw": "",
+      "tokens": 45,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 7,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 7,
+      "physical_line_end": 54,
+      "physical_line_start": 50,
+      "source_page_label_raw": "",
+      "tokens": 10,
+      "wide_body_line_count": 1
+    },
+    {
+      "artifact_page": 8,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 8,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": "",
+      "tokens": 0,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 9,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 9,
+      "physical_line_end": 89,
+      "physical_line_start": 57,
+      "source_page_label_raw": "",
+      "tokens": 206,
+      "wide_body_line_count": 23
+    },
+    {
+      "artifact_page": 10,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 10,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": "",
+      "tokens": 0,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 11,
+      "body_column_sequence": [
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 11,
+      "physical_line_end": 133,
+      "physical_line_start": 92,
+      "source_page_label_raw": "",
+      "tokens": 129,
+      "wide_body_line_count": 19
+    },
+    {
+      "artifact_page": 12,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 12,
+      "physical_line_end": 147,
+      "physical_line_start": 136,
+      "source_page_label_raw": "",
+      "tokens": 45,
+      "wide_body_line_count": 6
+    },
+    {
+      "artifact_page": 13,
+      "body_column_sequence": [
+        "R",
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 13,
+      "physical_line_end": 184,
+      "physical_line_start": 150,
+      "source_page_label_raw": "",
+      "tokens": 248,
+      "wide_body_line_count": 24
+    },
+    {
+      "artifact_page": 14,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 14,
+      "physical_line_end": 220,
+      "physical_line_start": 187,
+      "source_page_label_raw": "",
+      "tokens": 249,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 15,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 15,
+      "physical_line_end": 256,
+      "physical_line_start": 223,
+      "source_page_label_raw": "",
+      "tokens": 256,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 16,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 16,
+      "physical_line_end": 291,
+      "physical_line_start": 259,
+      "source_page_label_raw": "",
+      "tokens": 279,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 17,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 17,
+      "physical_line_end": 327,
+      "physical_line_start": 294,
+      "source_page_label_raw": "",
+      "tokens": 257,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 18,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 18,
+      "physical_line_end": 362,
+      "physical_line_start": 330,
+      "source_page_label_raw": "",
+      "tokens": 262,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 19,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 19,
+      "physical_line_end": 397,
+      "physical_line_start": 365,
+      "source_page_label_raw": "XV",
+      "tokens": 281,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 20,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 20,
+      "physical_line_end": 440,
+      "physical_line_start": 400,
+      "source_page_label_raw": "XVI",
+      "tokens": 283,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 21,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 21,
+      "physical_line_end": 475,
+      "physical_line_start": 443,
+      "source_page_label_raw": "XVII",
+      "tokens": 259,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 22,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 22,
+      "physical_line_end": 528,
+      "physical_line_start": 478,
+      "source_page_label_raw": "XVIII",
+      "tokens": 274,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 23,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 23,
+      "physical_line_end": 563,
+      "physical_line_start": 531,
+      "source_page_label_raw": "XIX",
+      "tokens": 276,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 24,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 24,
+      "physical_line_end": 598,
+      "physical_line_start": 566,
+      "source_page_label_raw": "XX",
+      "tokens": 273,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 25,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 25,
+      "physical_line_end": 633,
+      "physical_line_start": 601,
+      "source_page_label_raw": "XXI",
+      "tokens": 270,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 26,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 26,
+      "physical_line_end": 668,
+      "physical_line_start": 636,
+      "source_page_label_raw": "XXII",
+      "tokens": 274,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 27,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 27,
+      "physical_line_end": 704,
+      "physical_line_start": 671,
+      "source_page_label_raw": "XXIII",
+      "tokens": 271,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 28,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 28,
+      "physical_line_end": 740,
+      "physical_line_start": 707,
+      "source_page_label_raw": "XXIV",
+      "tokens": 263,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 29,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 29,
+      "physical_line_end": 775,
+      "physical_line_start": 743,
+      "source_page_label_raw": "XXV",
+      "tokens": 269,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 30,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 30,
+      "physical_line_end": 810,
+      "physical_line_start": 778,
+      "source_page_label_raw": "XXVI",
+      "tokens": 277,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 31,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 31,
+      "physical_line_end": 845,
+      "physical_line_start": 813,
+      "source_page_label_raw": "XXVII",
+      "tokens": 273,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 32,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 32,
+      "physical_line_end": 880,
+      "physical_line_start": 848,
+      "source_page_label_raw": "XXVIII",
+      "tokens": 279,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 33,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 33,
+      "physical_line_end": 915,
+      "physical_line_start": 883,
+      "source_page_label_raw": "XXIX",
+      "tokens": 282,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 34,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 34,
+      "physical_line_end": 949,
+      "physical_line_start": 918,
+      "source_page_label_raw": "XXX",
+      "tokens": 266,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 35,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 35,
+      "physical_line_end": 983,
+      "physical_line_start": 952,
+      "source_page_label_raw": "XXXI",
+      "tokens": 253,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 36,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 36,
+      "physical_line_end": 1018,
+      "physical_line_start": 986,
+      "source_page_label_raw": "XXXII",
+      "tokens": 270,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 37,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 37,
+      "physical_line_end": 1052,
+      "physical_line_start": 1021,
+      "source_page_label_raw": "XXXIII",
+      "tokens": 273,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 38,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 38,
+      "physical_line_end": 1086,
+      "physical_line_start": 1055,
+      "source_page_label_raw": "XXXIV",
+      "tokens": 274,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 39,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 39,
+      "physical_line_end": 1121,
+      "physical_line_start": 1089,
+      "source_page_label_raw": "XXXV",
+      "tokens": 268,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 40,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 40,
+      "physical_line_end": 1156,
+      "physical_line_start": 1124,
+      "source_page_label_raw": "",
+      "tokens": 280,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 41,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 41,
+      "physical_line_end": 1192,
+      "physical_line_start": 1159,
+      "source_page_label_raw": "",
+      "tokens": 279,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 42,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 42,
+      "physical_line_end": 1226,
+      "physical_line_start": 1195,
+      "source_page_label_raw": "",
+      "tokens": 280,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 43,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 43,
+      "physical_line_end": 1261,
+      "physical_line_start": 1229,
+      "source_page_label_raw": "",
+      "tokens": 278,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 44,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 44,
+      "physical_line_end": 1296,
+      "physical_line_start": 1264,
+      "source_page_label_raw": "",
+      "tokens": 275,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 45,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 45,
+      "physical_line_end": 1331,
+      "physical_line_start": 1299,
+      "source_page_label_raw": "",
+      "tokens": 265,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 46,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 46,
+      "physical_line_end": 1366,
+      "physical_line_start": 1334,
+      "source_page_label_raw": "",
+      "tokens": 278,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 47,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 47,
+      "physical_line_end": 1402,
+      "physical_line_start": 1369,
+      "source_page_label_raw": "",
+      "tokens": 265,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 48,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 48,
+      "physical_line_end": 1436,
+      "physical_line_start": 1405,
+      "source_page_label_raw": "",
+      "tokens": 253,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 49,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 49,
+      "physical_line_end": 1470,
+      "physical_line_start": 1439,
+      "source_page_label_raw": "",
+      "tokens": 243,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 50,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 50,
+      "physical_line_end": 1496,
+      "physical_line_start": 1473,
+      "source_page_label_raw": "",
+      "tokens": 186,
+      "wide_body_line_count": 18
+    },
+    {
+      "artifact_page": 51,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 51,
+      "physical_line_end": 1499,
+      "physical_line_start": 1499,
+      "source_page_label_raw": "",
+      "tokens": 5,
+      "wide_body_line_count": 1
+    },
+    {
+      "artifact_page": 52,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 52,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": "",
+      "tokens": 0,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 53,
+      "body_column_sequence": [
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 53,
+      "physical_line_end": 1532,
+      "physical_line_start": 1502,
+      "source_page_label_raw": "",
+      "tokens": 153,
+      "wide_body_line_count": 16
+    },
+    {
+      "artifact_page": 54,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 54,
+      "physical_line_end": 1569,
+      "physical_line_start": 1535,
+      "source_page_label_raw": "4",
+      "tokens": 262,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 55,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 55,
+      "physical_line_end": 1604,
+      "physical_line_start": 1572,
+      "source_page_label_raw": "5",
+      "tokens": 269,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 56,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 56,
+      "physical_line_end": 1638,
+      "physical_line_start": 1607,
+      "source_page_label_raw": "6",
+      "tokens": 265,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 57,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 57,
+      "physical_line_end": 1674,
+      "physical_line_start": 1641,
+      "source_page_label_raw": "7",
+      "tokens": 273,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 58,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 58,
+      "physical_line_end": 1710,
+      "physical_line_start": 1677,
+      "source_page_label_raw": "8",
+      "tokens": 267,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 59,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 59,
+      "physical_line_end": 1746,
+      "physical_line_start": 1713,
+      "source_page_label_raw": "9",
+      "tokens": 280,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 60,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 60,
+      "physical_line_end": 1781,
+      "physical_line_start": 1749,
+      "source_page_label_raw": "10",
+      "tokens": 267,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 61,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 61,
+      "physical_line_end": 1817,
+      "physical_line_start": 1784,
+      "source_page_label_raw": "11",
+      "tokens": 259,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 62,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 62,
+      "physical_line_end": 1852,
+      "physical_line_start": 1820,
+      "source_page_label_raw": "12",
+      "tokens": 269,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 63,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 63,
+      "physical_line_end": 1887,
+      "physical_line_start": 1855,
+      "source_page_label_raw": "13",
+      "tokens": 256,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 64,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 64,
+      "physical_line_end": 1922,
+      "physical_line_start": 1890,
+      "source_page_label_raw": "14",
+      "tokens": 269,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 65,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 65,
+      "physical_line_end": 1958,
+      "physical_line_start": 1925,
+      "source_page_label_raw": "15",
+      "tokens": 263,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 66,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 66,
+      "physical_line_end": 1994,
+      "physical_line_start": 1961,
+      "source_page_label_raw": "16",
+      "tokens": 257,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 67,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 67,
+      "physical_line_end": 2029,
+      "physical_line_start": 1997,
+      "source_page_label_raw": "17",
+      "tokens": 278,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 68,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 68,
+      "physical_line_end": 2066,
+      "physical_line_start": 2032,
+      "source_page_label_raw": "18",
+      "tokens": 267,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 69,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 69,
+      "physical_line_end": 2101,
+      "physical_line_start": 2069,
+      "source_page_label_raw": "19",
+      "tokens": 257,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 70,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 70,
+      "physical_line_end": 2137,
+      "physical_line_start": 2104,
+      "source_page_label_raw": "20",
+      "tokens": 270,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 71,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 71,
+      "physical_line_end": 2171,
+      "physical_line_start": 2140,
+      "source_page_label_raw": "21",
+      "tokens": 271,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 72,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 72,
+      "physical_line_end": 2209,
+      "physical_line_start": 2174,
+      "source_page_label_raw": "22",
+      "tokens": 270,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 73,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 73,
+      "physical_line_end": 2250,
+      "physical_line_start": 2212,
+      "source_page_label_raw": "23",
+      "tokens": 263,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 74,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 74,
+      "physical_line_end": 2285,
+      "physical_line_start": 2253,
+      "source_page_label_raw": "24",
+      "tokens": 291,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 75,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 75,
+      "physical_line_end": 2321,
+      "physical_line_start": 2288,
+      "source_page_label_raw": "25",
+      "tokens": 289,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 76,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 76,
+      "physical_line_end": 2357,
+      "physical_line_start": 2324,
+      "source_page_label_raw": "26",
+      "tokens": 278,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 77,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 77,
+      "physical_line_end": 2393,
+      "physical_line_start": 2360,
+      "source_page_label_raw": "27",
+      "tokens": 263,
+      "wide_body_line_count": 25
+    },
+    {
+      "artifact_page": 78,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 78,
+      "physical_line_end": 2429,
+      "physical_line_start": 2396,
+      "source_page_label_raw": "28",
+      "tokens": 291,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 79,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 79,
+      "physical_line_end": 2465,
+      "physical_line_start": 2432,
+      "source_page_label_raw": "29",
+      "tokens": 261,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 80,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 80,
+      "physical_line_end": 2500,
+      "physical_line_start": 2468,
+      "source_page_label_raw": "30",
+      "tokens": 285,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 81,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 81,
+      "physical_line_end": 2536,
+      "physical_line_start": 2503,
+      "source_page_label_raw": "31",
+      "tokens": 270,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 82,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 82,
+      "physical_line_end": 2571,
+      "physical_line_start": 2539,
+      "source_page_label_raw": "32",
+      "tokens": 276,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 83,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 83,
+      "physical_line_end": 2607,
+      "physical_line_start": 2574,
+      "source_page_label_raw": "33",
+      "tokens": 272,
+      "wide_body_line_count": 25
+    },
+    {
+      "artifact_page": 84,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 84,
+      "physical_line_end": 2642,
+      "physical_line_start": 2610,
+      "source_page_label_raw": "34",
+      "tokens": 281,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 85,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 85,
+      "physical_line_end": 2678,
+      "physical_line_start": 2645,
+      "source_page_label_raw": "35",
+      "tokens": 279,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 86,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 86,
+      "physical_line_end": 2713,
+      "physical_line_start": 2681,
+      "source_page_label_raw": "36",
+      "tokens": 278,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 87,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 87,
+      "physical_line_end": 2749,
+      "physical_line_start": 2716,
+      "source_page_label_raw": "37",
+      "tokens": 270,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 88,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 88,
+      "physical_line_end": 2785,
+      "physical_line_start": 2752,
+      "source_page_label_raw": "38",
+      "tokens": 273,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 89,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 89,
+      "physical_line_end": 2820,
+      "physical_line_start": 2788,
+      "source_page_label_raw": "39",
+      "tokens": 280,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 90,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 90,
+      "physical_line_end": 2856,
+      "physical_line_start": 2823,
+      "source_page_label_raw": "40",
+      "tokens": 265,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 91,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 91,
+      "physical_line_end": 2893,
+      "physical_line_start": 2859,
+      "source_page_label_raw": "41",
+      "tokens": 269,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 92,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 92,
+      "physical_line_end": 2927,
+      "physical_line_start": 2896,
+      "source_page_label_raw": "42",
+      "tokens": 261,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 93,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 93,
+      "physical_line_end": 2962,
+      "physical_line_start": 2930,
+      "source_page_label_raw": "43",
+      "tokens": 247,
+      "wide_body_line_count": 25
+    },
+    {
+      "artifact_page": 94,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 94,
+      "physical_line_end": 2998,
+      "physical_line_start": 2965,
+      "source_page_label_raw": "44",
+      "tokens": 277,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 95,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 95,
+      "physical_line_end": 3034,
+      "physical_line_start": 3001,
+      "source_page_label_raw": "45",
+      "tokens": 278,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 96,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 96,
+      "physical_line_end": 3071,
+      "physical_line_start": 3037,
+      "source_page_label_raw": "46",
+      "tokens": 259,
+      "wide_body_line_count": 23
+    },
+    {
+      "artifact_page": 97,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 97,
+      "physical_line_end": 3103,
+      "physical_line_start": 3074,
+      "source_page_label_raw": "47",
+      "tokens": 188,
+      "wide_body_line_count": 18
+    },
+    {
+      "artifact_page": 98,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 98,
+      "physical_line_end": 3139,
+      "physical_line_start": 3106,
+      "source_page_label_raw": "48",
+      "tokens": 272,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 99,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 99,
+      "physical_line_end": 3174,
+      "physical_line_start": 3142,
+      "source_page_label_raw": "49",
+      "tokens": 274,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 100,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 100,
+      "physical_line_end": 3209,
+      "physical_line_start": 3177,
+      "source_page_label_raw": "50",
+      "tokens": 281,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 101,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 101,
+      "physical_line_end": 3245,
+      "physical_line_start": 3212,
+      "source_page_label_raw": "51",
+      "tokens": 264,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 102,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 102,
+      "physical_line_end": 3280,
+      "physical_line_start": 3248,
+      "source_page_label_raw": "52",
+      "tokens": 270,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 103,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 103,
+      "physical_line_end": 3314,
+      "physical_line_start": 3283,
+      "source_page_label_raw": "53",
+      "tokens": 287,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 104,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 104,
+      "physical_line_end": 3350,
+      "physical_line_start": 3317,
+      "source_page_label_raw": "54",
+      "tokens": 273,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 105,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 105,
+      "physical_line_end": 3386,
+      "physical_line_start": 3353,
+      "source_page_label_raw": "55",
+      "tokens": 267,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 106,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 106,
+      "physical_line_end": 3422,
+      "physical_line_start": 3389,
+      "source_page_label_raw": "56",
+      "tokens": 283,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 107,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 107,
+      "physical_line_end": 3465,
+      "physical_line_start": 3425,
+      "source_page_label_raw": "57",
+      "tokens": 286,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 108,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 108,
+      "physical_line_end": 3500,
+      "physical_line_start": 3468,
+      "source_page_label_raw": "58",
+      "tokens": 270,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 109,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 109,
+      "physical_line_end": 3536,
+      "physical_line_start": 3503,
+      "source_page_label_raw": "59",
+      "tokens": 276,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 110,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 110,
+      "physical_line_end": 3572,
+      "physical_line_start": 3539,
+      "source_page_label_raw": "60",
+      "tokens": 272,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 111,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 111,
+      "physical_line_end": 3607,
+      "physical_line_start": 3575,
+      "source_page_label_raw": "61",
+      "tokens": 273,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 112,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 112,
+      "physical_line_end": 3643,
+      "physical_line_start": 3610,
+      "source_page_label_raw": "62",
+      "tokens": 269,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 113,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 113,
+      "physical_line_end": 3678,
+      "physical_line_start": 3646,
+      "source_page_label_raw": "63",
+      "tokens": 279,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 114,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 114,
+      "physical_line_end": 3715,
+      "physical_line_start": 3681,
+      "source_page_label_raw": "64",
+      "tokens": 277,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 115,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 115,
+      "physical_line_end": 3751,
+      "physical_line_start": 3718,
+      "source_page_label_raw": "65",
+      "tokens": 264,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 116,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 116,
+      "physical_line_end": 3786,
+      "physical_line_start": 3754,
+      "source_page_label_raw": "66",
+      "tokens": 275,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 117,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 117,
+      "physical_line_end": 3822,
+      "physical_line_start": 3789,
+      "source_page_label_raw": "67",
+      "tokens": 274,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 118,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 118,
+      "physical_line_end": 3858,
+      "physical_line_start": 3825,
+      "source_page_label_raw": "68",
+      "tokens": 276,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 119,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 119,
+      "physical_line_end": 3882,
+      "physical_line_start": 3861,
+      "source_page_label_raw": "69",
+      "tokens": 130,
+      "wide_body_line_count": 12
+    },
+    {
+      "artifact_page": 120,
+      "body_column_sequence": [
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 120,
+      "physical_line_end": 3917,
+      "physical_line_start": 3885,
+      "source_page_label_raw": "70",
+      "tokens": 180,
+      "wide_body_line_count": 18
+    },
+    {
+      "artifact_page": 121,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 121,
+      "physical_line_end": 3952,
+      "physical_line_start": 3920,
+      "source_page_label_raw": "71",
+      "tokens": 278,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 122,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 122,
+      "physical_line_end": 3988,
+      "physical_line_start": 3955,
+      "source_page_label_raw": "72",
+      "tokens": 274,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 123,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 123,
+      "physical_line_end": 4023,
+      "physical_line_start": 3991,
+      "source_page_label_raw": "73",
+      "tokens": 288,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 124,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 124,
+      "physical_line_end": 4057,
+      "physical_line_start": 4026,
+      "source_page_label_raw": "74",
+      "tokens": 297,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 125,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 125,
+      "physical_line_end": 4091,
+      "physical_line_start": 4060,
+      "source_page_label_raw": "75",
+      "tokens": 283,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 126,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 126,
+      "physical_line_end": 4125,
+      "physical_line_start": 4094,
+      "source_page_label_raw": "76",
+      "tokens": 283,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 127,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 127,
+      "physical_line_end": 4160,
+      "physical_line_start": 4128,
+      "source_page_label_raw": "77",
+      "tokens": 262,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 128,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 128,
+      "physical_line_end": 4199,
+      "physical_line_start": 4163,
+      "source_page_label_raw": "78",
+      "tokens": 267,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 129,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 129,
+      "physical_line_end": 4236,
+      "physical_line_start": 4202,
+      "source_page_label_raw": "79",
+      "tokens": 260,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 130,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 130,
+      "physical_line_end": 4271,
+      "physical_line_start": 4239,
+      "source_page_label_raw": "80",
+      "tokens": 286,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 131,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 131,
+      "physical_line_end": 4305,
+      "physical_line_start": 4274,
+      "source_page_label_raw": "81",
+      "tokens": 280,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 132,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 132,
+      "physical_line_end": 4348,
+      "physical_line_start": 4308,
+      "source_page_label_raw": "82",
+      "tokens": 281,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 133,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 133,
+      "physical_line_end": 4384,
+      "physical_line_start": 4351,
+      "source_page_label_raw": "83",
+      "tokens": 271,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 134,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 134,
+      "physical_line_end": 4441,
+      "physical_line_start": 4387,
+      "source_page_label_raw": "84",
+      "tokens": 274,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 135,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 135,
+      "physical_line_end": 4476,
+      "physical_line_start": 4444,
+      "source_page_label_raw": "85",
+      "tokens": 267,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 136,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 136,
+      "physical_line_end": 4511,
+      "physical_line_start": 4479,
+      "source_page_label_raw": "86",
+      "tokens": 278,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 137,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 137,
+      "physical_line_end": 4546,
+      "physical_line_start": 4514,
+      "source_page_label_raw": "87",
+      "tokens": 289,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 138,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 138,
+      "physical_line_end": 4587,
+      "physical_line_start": 4549,
+      "source_page_label_raw": "88",
+      "tokens": 273,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 139,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 139,
+      "physical_line_end": 4622,
+      "physical_line_start": 4590,
+      "source_page_label_raw": "89",
+      "tokens": 277,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 140,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 140,
+      "physical_line_end": 4657,
+      "physical_line_start": 4625,
+      "source_page_label_raw": "90",
+      "tokens": 268,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 141,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 141,
+      "physical_line_end": 4691,
+      "physical_line_start": 4660,
+      "source_page_label_raw": "91",
+      "tokens": 282,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 142,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 142,
+      "physical_line_end": 4726,
+      "physical_line_start": 4694,
+      "source_page_label_raw": "92",
+      "tokens": 266,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 143,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 143,
+      "physical_line_end": 4761,
+      "physical_line_start": 4729,
+      "source_page_label_raw": "93",
+      "tokens": 277,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 144,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 144,
+      "physical_line_end": 4796,
+      "physical_line_start": 4764,
+      "source_page_label_raw": "94",
+      "tokens": 277,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 145,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 145,
+      "physical_line_end": 4837,
+      "physical_line_start": 4799,
+      "source_page_label_raw": "95",
+      "tokens": 289,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 146,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 146,
+      "physical_line_end": 4875,
+      "physical_line_start": 4840,
+      "source_page_label_raw": "96",
+      "tokens": 241,
+      "wide_body_line_count": 24
+    },
+    {
+      "artifact_page": 147,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 147,
+      "physical_line_end": 4912,
+      "physical_line_start": 4878,
+      "source_page_label_raw": "97",
+      "tokens": 271,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 148,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 148,
+      "physical_line_end": 4927,
+      "physical_line_start": 4915,
+      "source_page_label_raw": "98",
+      "tokens": 65,
+      "wide_body_line_count": 5
+    },
+    {
+      "artifact_page": 149,
+      "body_column_sequence": [
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 149,
+      "physical_line_end": 4962,
+      "physical_line_start": 4930,
+      "source_page_label_raw": "99",
+      "tokens": 183,
+      "wide_body_line_count": 18
+    },
+    {
+      "artifact_page": 150,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 150,
+      "physical_line_end": 4998,
+      "physical_line_start": 4965,
+      "source_page_label_raw": "100",
+      "tokens": 276,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 151,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 151,
+      "physical_line_end": 5034,
+      "physical_line_start": 5001,
+      "source_page_label_raw": "101",
+      "tokens": 252,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 152,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 152,
+      "physical_line_end": 5069,
+      "physical_line_start": 5037,
+      "source_page_label_raw": "102",
+      "tokens": 260,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 153,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 153,
+      "physical_line_end": 5105,
+      "physical_line_start": 5072,
+      "source_page_label_raw": "103",
+      "tokens": 269,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 154,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 154,
+      "physical_line_end": 5140,
+      "physical_line_start": 5108,
+      "source_page_label_raw": "104",
+      "tokens": 282,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 155,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 155,
+      "physical_line_end": 5174,
+      "physical_line_start": 5143,
+      "source_page_label_raw": "105",
+      "tokens": 267,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 156,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 156,
+      "physical_line_end": 5209,
+      "physical_line_start": 5177,
+      "source_page_label_raw": "106",
+      "tokens": 266,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 157,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 157,
+      "physical_line_end": 5244,
+      "physical_line_start": 5212,
+      "source_page_label_raw": "107",
+      "tokens": 281,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 158,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 158,
+      "physical_line_end": 5279,
+      "physical_line_start": 5247,
+      "source_page_label_raw": "108",
+      "tokens": 262,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 159,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 159,
+      "physical_line_end": 5313,
+      "physical_line_start": 5282,
+      "source_page_label_raw": "109",
+      "tokens": 250,
+      "wide_body_line_count": 25
+    },
+    {
+      "artifact_page": 160,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 160,
+      "physical_line_end": 5349,
+      "physical_line_start": 5316,
+      "source_page_label_raw": "110",
+      "tokens": 269,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 161,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 161,
+      "physical_line_end": 5385,
+      "physical_line_start": 5352,
+      "source_page_label_raw": "111",
+      "tokens": 264,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 162,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 162,
+      "physical_line_end": 5422,
+      "physical_line_start": 5388,
+      "source_page_label_raw": "112",
+      "tokens": 271,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 163,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 163,
+      "physical_line_end": 5457,
+      "physical_line_start": 5425,
+      "source_page_label_raw": "113",
+      "tokens": 277,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 164,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 164,
+      "physical_line_end": 5492,
+      "physical_line_start": 5460,
+      "source_page_label_raw": "114",
+      "tokens": 280,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 165,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 165,
+      "physical_line_end": 5512,
+      "physical_line_start": 5495,
+      "source_page_label_raw": "115",
+      "tokens": 96,
+      "wide_body_line_count": 8
+    },
+    {
+      "artifact_page": 166,
+      "body_column_sequence": [
+        "R",
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 166,
+      "physical_line_end": 5547,
+      "physical_line_start": 5515,
+      "source_page_label_raw": "116",
+      "tokens": 190,
+      "wide_body_line_count": 18
+    },
+    {
+      "artifact_page": 167,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 167,
+      "physical_line_end": 5582,
+      "physical_line_start": 5550,
+      "source_page_label_raw": "117",
+      "tokens": 263,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 168,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 168,
+      "physical_line_end": 5617,
+      "physical_line_start": 5585,
+      "source_page_label_raw": "118",
+      "tokens": 272,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 169,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 169,
+      "physical_line_end": 5653,
+      "physical_line_start": 5620,
+      "source_page_label_raw": "119",
+      "tokens": 268,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 170,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 170,
+      "physical_line_end": 5690,
+      "physical_line_start": 5656,
+      "source_page_label_raw": "120",
+      "tokens": 268,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 171,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 171,
+      "physical_line_end": 5730,
+      "physical_line_start": 5693,
+      "source_page_label_raw": "121",
+      "tokens": 277,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 172,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 172,
+      "physical_line_end": 5768,
+      "physical_line_start": 5733,
+      "source_page_label_raw": "122",
+      "tokens": 268,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 173,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 173,
+      "physical_line_end": 5804,
+      "physical_line_start": 5771,
+      "source_page_label_raw": "123",
+      "tokens": 266,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 174,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 174,
+      "physical_line_end": 5840,
+      "physical_line_start": 5807,
+      "source_page_label_raw": "124",
+      "tokens": 275,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 175,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 175,
+      "physical_line_end": 5877,
+      "physical_line_start": 5843,
+      "source_page_label_raw": "125",
+      "tokens": 276,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 176,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 176,
+      "physical_line_end": 5915,
+      "physical_line_start": 5880,
+      "source_page_label_raw": "126",
+      "tokens": 276,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 177,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 177,
+      "physical_line_end": 5950,
+      "physical_line_start": 5918,
+      "source_page_label_raw": "127",
+      "tokens": 275,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 178,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 178,
+      "physical_line_end": 5975,
+      "physical_line_start": 5953,
+      "source_page_label_raw": "128",
+      "tokens": 128,
+      "wide_body_line_count": 11
+    },
+    {
+      "artifact_page": 179,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 179,
+      "physical_line_end": 6011,
+      "physical_line_start": 5978,
+      "source_page_label_raw": "129",
+      "tokens": 184,
+      "wide_body_line_count": 19
+    },
+    {
+      "artifact_page": 180,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 180,
+      "physical_line_end": 6047,
+      "physical_line_start": 6014,
+      "source_page_label_raw": "130",
+      "tokens": 272,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 181,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 181,
+      "physical_line_end": 6086,
+      "physical_line_start": 6050,
+      "source_page_label_raw": "131",
+      "tokens": 258,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 182,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 182,
+      "physical_line_end": 6124,
+      "physical_line_start": 6089,
+      "source_page_label_raw": "132",
+      "tokens": 279,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 183,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 183,
+      "physical_line_end": 6178,
+      "physical_line_start": 6127,
+      "source_page_label_raw": "133",
+      "tokens": 297,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 184,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 184,
+      "physical_line_end": 6213,
+      "physical_line_start": 6181,
+      "source_page_label_raw": "134",
+      "tokens": 292,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 185,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 185,
+      "physical_line_end": 6248,
+      "physical_line_start": 6216,
+      "source_page_label_raw": "135",
+      "tokens": 287,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 186,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 186,
+      "physical_line_end": 6283,
+      "physical_line_start": 6251,
+      "source_page_label_raw": "136",
+      "tokens": 286,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 187,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 187,
+      "physical_line_end": 6319,
+      "physical_line_start": 6286,
+      "source_page_label_raw": "137",
+      "tokens": 273,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 188,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 188,
+      "physical_line_end": 6354,
+      "physical_line_start": 6322,
+      "source_page_label_raw": "138",
+      "tokens": 269,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 189,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 189,
+      "physical_line_end": 6390,
+      "physical_line_start": 6357,
+      "source_page_label_raw": "139",
+      "tokens": 265,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 190,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 190,
+      "physical_line_end": 6424,
+      "physical_line_start": 6393,
+      "source_page_label_raw": "140",
+      "tokens": 268,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 191,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 191,
+      "physical_line_end": 6459,
+      "physical_line_start": 6427,
+      "source_page_label_raw": "141",
+      "tokens": 280,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 192,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 192,
+      "physical_line_end": 6494,
+      "physical_line_start": 6462,
+      "source_page_label_raw": "142",
+      "tokens": 287,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 193,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 193,
+      "physical_line_end": 6529,
+      "physical_line_start": 6497,
+      "source_page_label_raw": "143",
+      "tokens": 270,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 194,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 194,
+      "physical_line_end": 6565,
+      "physical_line_start": 6532,
+      "source_page_label_raw": "144",
+      "tokens": 272,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 195,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 195,
+      "physical_line_end": 6601,
+      "physical_line_start": 6568,
+      "source_page_label_raw": "145",
+      "tokens": 258,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 196,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 196,
+      "physical_line_end": 6636,
+      "physical_line_start": 6604,
+      "source_page_label_raw": "146",
+      "tokens": 274,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 197,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 197,
+      "physical_line_end": 6671,
+      "physical_line_start": 6639,
+      "source_page_label_raw": "147",
+      "tokens": 277,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 198,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 198,
+      "physical_line_end": 6706,
+      "physical_line_start": 6674,
+      "source_page_label_raw": "148",
+      "tokens": 270,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 199,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 199,
+      "physical_line_end": 6742,
+      "physical_line_start": 6709,
+      "source_page_label_raw": "149",
+      "tokens": 265,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 200,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 200,
+      "physical_line_end": 6777,
+      "physical_line_start": 6745,
+      "source_page_label_raw": "150",
+      "tokens": 272,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 201,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 201,
+      "physical_line_end": 6811,
+      "physical_line_start": 6780,
+      "source_page_label_raw": "151",
+      "tokens": 273,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 202,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 202,
+      "physical_line_end": 6850,
+      "physical_line_start": 6814,
+      "source_page_label_raw": "152",
+      "tokens": 279,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 203,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 203,
+      "physical_line_end": 6885,
+      "physical_line_start": 6853,
+      "source_page_label_raw": "153",
+      "tokens": 274,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 204,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 204,
+      "physical_line_end": 6921,
+      "physical_line_start": 6888,
+      "source_page_label_raw": "154",
+      "tokens": 276,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 205,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 205,
+      "physical_line_end": 6956,
+      "physical_line_start": 6924,
+      "source_page_label_raw": "155",
+      "tokens": 288,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 206,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 206,
+      "physical_line_end": 6975,
+      "physical_line_start": 6959,
+      "source_page_label_raw": "156",
+      "tokens": 99,
+      "wide_body_line_count": 9
+    },
+    {
+      "artifact_page": 207,
+      "body_column_sequence": [
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 207,
+      "physical_line_end": 7007,
+      "physical_line_start": 6978,
+      "source_page_label_raw": "157",
+      "tokens": 169,
+      "wide_body_line_count": 17
+    },
+    {
+      "artifact_page": 208,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 208,
+      "physical_line_end": 7042,
+      "physical_line_start": 7010,
+      "source_page_label_raw": "158",
+      "tokens": 271,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 209,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 209,
+      "physical_line_end": 7077,
+      "physical_line_start": 7045,
+      "source_page_label_raw": "159",
+      "tokens": 274,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 210,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 210,
+      "physical_line_end": 7112,
+      "physical_line_start": 7080,
+      "source_page_label_raw": "160",
+      "tokens": 271,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 211,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 211,
+      "physical_line_end": 7151,
+      "physical_line_start": 7115,
+      "source_page_label_raw": "161",
+      "tokens": 293,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 212,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 212,
+      "physical_line_end": 7186,
+      "physical_line_start": 7154,
+      "source_page_label_raw": "162",
+      "tokens": 273,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 213,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 213,
+      "physical_line_end": 7221,
+      "physical_line_start": 7189,
+      "source_page_label_raw": "163",
+      "tokens": 269,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 214,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 214,
+      "physical_line_end": 7256,
+      "physical_line_start": 7224,
+      "source_page_label_raw": "164",
+      "tokens": 279,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 215,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 215,
+      "physical_line_end": 7296,
+      "physical_line_start": 7259,
+      "source_page_label_raw": "165",
+      "tokens": 278,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 216,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 216,
+      "physical_line_end": 7332,
+      "physical_line_start": 7299,
+      "source_page_label_raw": "166",
+      "tokens": 265,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 217,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 217,
+      "physical_line_end": 7371,
+      "physical_line_start": 7335,
+      "source_page_label_raw": "167",
+      "tokens": 259,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 218,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 218,
+      "physical_line_end": 7405,
+      "physical_line_start": 7374,
+      "source_page_label_raw": "168",
+      "tokens": 265,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 219,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 219,
+      "physical_line_end": 7440,
+      "physical_line_start": 7408,
+      "source_page_label_raw": "169",
+      "tokens": 270,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 220,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 220,
+      "physical_line_end": 7475,
+      "physical_line_start": 7443,
+      "source_page_label_raw": "170",
+      "tokens": 267,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 221,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 221,
+      "physical_line_end": 7511,
+      "physical_line_start": 7478,
+      "source_page_label_raw": "171",
+      "tokens": 265,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 222,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 222,
+      "physical_line_end": 7547,
+      "physical_line_start": 7514,
+      "source_page_label_raw": "172",
+      "tokens": 276,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 223,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 223,
+      "physical_line_end": 7581,
+      "physical_line_start": 7550,
+      "source_page_label_raw": "173",
+      "tokens": 283,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 224,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 224,
+      "physical_line_end": 7616,
+      "physical_line_start": 7584,
+      "source_page_label_raw": "174",
+      "tokens": 258,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 225,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 225,
+      "physical_line_end": 7652,
+      "physical_line_start": 7619,
+      "source_page_label_raw": "175",
+      "tokens": 270,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 226,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 226,
+      "physical_line_end": 7687,
+      "physical_line_start": 7655,
+      "source_page_label_raw": "176",
+      "tokens": 278,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 227,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 227,
+      "physical_line_end": 7721,
+      "physical_line_start": 7690,
+      "source_page_label_raw": "177",
+      "tokens": 284,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 228,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 228,
+      "physical_line_end": 7755,
+      "physical_line_start": 7724,
+      "source_page_label_raw": "178",
+      "tokens": 281,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 229,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 229,
+      "physical_line_end": 7789,
+      "physical_line_start": 7758,
+      "source_page_label_raw": "179",
+      "tokens": 275,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 230,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 230,
+      "physical_line_end": 7824,
+      "physical_line_start": 7792,
+      "source_page_label_raw": "180",
+      "tokens": 272,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 231,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 231,
+      "physical_line_end": 7862,
+      "physical_line_start": 7827,
+      "source_page_label_raw": "181",
+      "tokens": 275,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 232,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 232,
+      "physical_line_end": 7900,
+      "physical_line_start": 7865,
+      "source_page_label_raw": "182",
+      "tokens": 270,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 233,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 233,
+      "physical_line_end": 7939,
+      "physical_line_start": 7903,
+      "source_page_label_raw": "183",
+      "tokens": 281,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 234,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 234,
+      "physical_line_end": 7974,
+      "physical_line_start": 7942,
+      "source_page_label_raw": "184",
+      "tokens": 277,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 235,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 235,
+      "physical_line_end": 8013,
+      "physical_line_start": 7977,
+      "source_page_label_raw": "185",
+      "tokens": 286,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 236,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 236,
+      "physical_line_end": 8047,
+      "physical_line_start": 8016,
+      "source_page_label_raw": "186",
+      "tokens": 279,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 237,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 237,
+      "physical_line_end": 8083,
+      "physical_line_start": 8050,
+      "source_page_label_raw": "187",
+      "tokens": 258,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 238,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 238,
+      "physical_line_end": 8101,
+      "physical_line_start": 8086,
+      "source_page_label_raw": "188",
+      "tokens": 76,
+      "wide_body_line_count": 6
+    },
+    {
+      "artifact_page": 239,
+      "body_column_sequence": [
+        "R",
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 239,
+      "physical_line_end": 8136,
+      "physical_line_start": 8104,
+      "source_page_label_raw": "189",
+      "tokens": 183,
+      "wide_body_line_count": 18
+    },
+    {
+      "artifact_page": 240,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 240,
+      "physical_line_end": 8171,
+      "physical_line_start": 8139,
+      "source_page_label_raw": "190",
+      "tokens": 268,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 241,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 241,
+      "physical_line_end": 8207,
+      "physical_line_start": 8174,
+      "source_page_label_raw": "191",
+      "tokens": 268,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 242,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 242,
+      "physical_line_end": 8242,
+      "physical_line_start": 8210,
+      "source_page_label_raw": "192",
+      "tokens": 267,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 243,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 243,
+      "physical_line_end": 8277,
+      "physical_line_start": 8245,
+      "source_page_label_raw": "193",
+      "tokens": 262,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 244,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 244,
+      "physical_line_end": 8311,
+      "physical_line_start": 8280,
+      "source_page_label_raw": "194",
+      "tokens": 276,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 245,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 245,
+      "physical_line_end": 8345,
+      "physical_line_start": 8314,
+      "source_page_label_raw": "195",
+      "tokens": 258,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 246,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 246,
+      "physical_line_end": 8381,
+      "physical_line_start": 8348,
+      "source_page_label_raw": "196",
+      "tokens": 269,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 247,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 247,
+      "physical_line_end": 8415,
+      "physical_line_start": 8384,
+      "source_page_label_raw": "197",
+      "tokens": 289,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 248,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 248,
+      "physical_line_end": 8452,
+      "physical_line_start": 8418,
+      "source_page_label_raw": "198",
+      "tokens": 282,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 249,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 249,
+      "physical_line_end": 8486,
+      "physical_line_start": 8455,
+      "source_page_label_raw": "199",
+      "tokens": 279,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 250,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 250,
+      "physical_line_end": 8522,
+      "physical_line_start": 8489,
+      "source_page_label_raw": "200",
+      "tokens": 266,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 251,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 251,
+      "physical_line_end": 8558,
+      "physical_line_start": 8525,
+      "source_page_label_raw": "201",
+      "tokens": 272,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 252,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 252,
+      "physical_line_end": 8593,
+      "physical_line_start": 8561,
+      "source_page_label_raw": "202",
+      "tokens": 274,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 253,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 253,
+      "physical_line_end": 8628,
+      "physical_line_start": 8596,
+      "source_page_label_raw": "203",
+      "tokens": 265,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 254,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 254,
+      "physical_line_end": 8663,
+      "physical_line_start": 8631,
+      "source_page_label_raw": "204",
+      "tokens": 285,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 255,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 255,
+      "physical_line_end": 8701,
+      "physical_line_start": 8666,
+      "source_page_label_raw": "205",
+      "tokens": 280,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 256,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 256,
+      "physical_line_end": 8736,
+      "physical_line_start": 8704,
+      "source_page_label_raw": "206",
+      "tokens": 273,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 257,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 257,
+      "physical_line_end": 8772,
+      "physical_line_start": 8739,
+      "source_page_label_raw": "207",
+      "tokens": 288,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 258,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 258,
+      "physical_line_end": 8807,
+      "physical_line_start": 8775,
+      "source_page_label_raw": "208",
+      "tokens": 292,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 259,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 259,
+      "physical_line_end": 8842,
+      "physical_line_start": 8810,
+      "source_page_label_raw": "209",
+      "tokens": 274,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 260,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 260,
+      "physical_line_end": 8878,
+      "physical_line_start": 8845,
+      "source_page_label_raw": "210",
+      "tokens": 271,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 261,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 261,
+      "physical_line_end": 8913,
+      "physical_line_start": 8881,
+      "source_page_label_raw": "211",
+      "tokens": 274,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 262,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 262,
+      "physical_line_end": 8949,
+      "physical_line_start": 8916,
+      "source_page_label_raw": "212",
+      "tokens": 275,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 263,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 263,
+      "physical_line_end": 8983,
+      "physical_line_start": 8952,
+      "source_page_label_raw": "213",
+      "tokens": 280,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 264,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 264,
+      "physical_line_end": 9018,
+      "physical_line_start": 8986,
+      "source_page_label_raw": "214",
+      "tokens": 277,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 265,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 265,
+      "physical_line_end": 9054,
+      "physical_line_start": 9021,
+      "source_page_label_raw": "215",
+      "tokens": 262,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 266,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 266,
+      "physical_line_end": 9089,
+      "physical_line_start": 9057,
+      "source_page_label_raw": "216",
+      "tokens": 282,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 267,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 267,
+      "physical_line_end": 9125,
+      "physical_line_start": 9092,
+      "source_page_label_raw": "217",
+      "tokens": 273,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 268,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 268,
+      "physical_line_end": 9159,
+      "physical_line_start": 9128,
+      "source_page_label_raw": "218",
+      "tokens": 293,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 269,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 269,
+      "physical_line_end": 9194,
+      "physical_line_start": 9162,
+      "source_page_label_raw": "219",
+      "tokens": 293,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 270,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 270,
+      "physical_line_end": 9230,
+      "physical_line_start": 9197,
+      "source_page_label_raw": "220",
+      "tokens": 276,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 271,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 271,
+      "physical_line_end": 9264,
+      "physical_line_start": 9233,
+      "source_page_label_raw": "221",
+      "tokens": 288,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 272,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 272,
+      "physical_line_end": 9299,
+      "physical_line_start": 9267,
+      "source_page_label_raw": "222",
+      "tokens": 267,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 273,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 273,
+      "physical_line_end": 9335,
+      "physical_line_start": 9302,
+      "source_page_label_raw": "223",
+      "tokens": 255,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 274,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 274,
+      "physical_line_end": 9370,
+      "physical_line_start": 9338,
+      "source_page_label_raw": "224",
+      "tokens": 268,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 275,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 275,
+      "physical_line_end": 9399,
+      "physical_line_start": 9373,
+      "source_page_label_raw": "225",
+      "tokens": 186,
+      "wide_body_line_count": 18
+    },
+    {
+      "artifact_page": 276,
+      "body_column_sequence": [
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 276,
+      "physical_line_end": 9435,
+      "physical_line_start": 9402,
+      "source_page_label_raw": "226",
+      "tokens": 177,
+      "wide_body_line_count": 18
+    },
+    {
+      "artifact_page": 277,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 277,
+      "physical_line_end": 9470,
+      "physical_line_start": 9438,
+      "source_page_label_raw": "227",
+      "tokens": 284,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 278,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 278,
+      "physical_line_end": 9506,
+      "physical_line_start": 9473,
+      "source_page_label_raw": "228",
+      "tokens": 262,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 279,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 279,
+      "physical_line_end": 9541,
+      "physical_line_start": 9509,
+      "source_page_label_raw": "229",
+      "tokens": 255,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 280,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 280,
+      "physical_line_end": 9576,
+      "physical_line_start": 9544,
+      "source_page_label_raw": "230",
+      "tokens": 269,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 281,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 281,
+      "physical_line_end": 9611,
+      "physical_line_start": 9579,
+      "source_page_label_raw": "231",
+      "tokens": 268,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 282,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 282,
+      "physical_line_end": 9646,
+      "physical_line_start": 9614,
+      "source_page_label_raw": "232",
+      "tokens": 262,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 283,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 283,
+      "physical_line_end": 9684,
+      "physical_line_start": 9649,
+      "source_page_label_raw": "233",
+      "tokens": 284,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 284,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 284,
+      "physical_line_end": 9724,
+      "physical_line_start": 9687,
+      "source_page_label_raw": "234",
+      "tokens": 268,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 285,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 285,
+      "physical_line_end": 9759,
+      "physical_line_start": 9727,
+      "source_page_label_raw": "235",
+      "tokens": 260,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 286,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 286,
+      "physical_line_end": 9794,
+      "physical_line_start": 9762,
+      "source_page_label_raw": "236",
+      "tokens": 277,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 287,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 287,
+      "physical_line_end": 9832,
+      "physical_line_start": 9797,
+      "source_page_label_raw": "237",
+      "tokens": 268,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 288,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 288,
+      "physical_line_end": 9873,
+      "physical_line_start": 9835,
+      "source_page_label_raw": "238",
+      "tokens": 280,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 289,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 289,
+      "physical_line_end": 9908,
+      "physical_line_start": 9876,
+      "source_page_label_raw": "239",
+      "tokens": 274,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 290,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 290,
+      "physical_line_end": 9943,
+      "physical_line_start": 9911,
+      "source_page_label_raw": "240",
+      "tokens": 265,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 291,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 291,
+      "physical_line_end": 9978,
+      "physical_line_start": 9946,
+      "source_page_label_raw": "241",
+      "tokens": 271,
+      "wide_body_line_count": 28
+    },
+    {
+      "artifact_page": 292,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 292,
+      "physical_line_end": 10013,
+      "physical_line_start": 9981,
+      "source_page_label_raw": "242",
+      "tokens": 272,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 293,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 293,
+      "physical_line_end": 10049,
+      "physical_line_start": 10016,
+      "source_page_label_raw": "243",
+      "tokens": 269,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 294,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 294,
+      "physical_line_end": 10085,
+      "physical_line_start": 10052,
+      "source_page_label_raw": "244",
+      "tokens": 260,
+      "wide_body_line_count": 26
+    },
+    {
+      "artifact_page": 295,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 295,
+      "physical_line_end": 10119,
+      "physical_line_start": 10088,
+      "source_page_label_raw": "245",
+      "tokens": 277,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 296,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 296,
+      "physical_line_end": 10155,
+      "physical_line_start": 10122,
+      "source_page_label_raw": "246",
+      "tokens": 278,
+      "wide_body_line_count": 27
+    },
+    {
+      "artifact_page": 297,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 297,
+      "physical_line_end": 10194,
+      "physical_line_start": 10158,
+      "source_page_label_raw": "247",
+      "tokens": 277,
+      "wide_body_line_count": 29
+    },
+    {
+      "artifact_page": 298,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 298,
+      "physical_line_end": 10228,
+      "physical_line_start": 10197,
+      "source_page_label_raw": "248",
+      "tokens": 211,
+      "wide_body_line_count": 22
+    },
+    {
+      "artifact_page": 299,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 299,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": "",
+      "tokens": 0,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 300,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 300,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": "",
+      "tokens": 0,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 301,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 301,
+      "physical_line_end": 10231,
+      "physical_line_start": 10231,
+      "source_page_label_raw": "",
+      "tokens": 1,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 302,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 302,
+      "physical_line_end": 10243,
+      "physical_line_start": 10234,
+      "source_page_label_raw": "",
+      "tokens": 6,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 303,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 303,
+      "physical_line_end": 10252,
+      "physical_line_start": 10246,
+      "source_page_label_raw": "",
+      "tokens": 14,
+      "wide_body_line_count": 1
+    },
+    {
+      "artifact_page": 304,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 304,
+      "physical_line_end": 10255,
+      "physical_line_start": 10255,
+      "source_page_label_raw": "",
+      "tokens": 1,
+      "wide_body_line_count": 0
+    }
+  ],
+  "pagination": "Leaf IDs are exact XML filename suffixes. Automated page labels are unverified; blank separator lines are unmapped.",
+  "physical_line_count": 10257,
+  "schema": "triptych-english-line-map/v1",
+  "token_count": 75743,
+  "xml_sha256": "c973a7a658ca608ed423f599c0a8f1df7f1fdbd09f73205b651302ec688db903"
+}
