@@ -56,12 +56,14 @@ class PublicAlphaBrowserProductsTest(unittest.TestCase):
         for relative in ("release/browser-products.json", "scripts/_browser_products.py",
                          "scripts/_browser_product_recipes.py"):
             self.fixture.write(relative, b"fixture product contract\n")
+        self.fixture.write_json("release/browser-products.json", {"products": []})
         self.bindings = {"release/browser-products.json", "scripts/_browser_products.py",
                          "scripts/_browser_product_recipes.py"}
         self.held = None
         self.failure = None
         self.snapshots = []
         self.prepared = []
+        self.delivery = {}
 
         @contextmanager
         def verified_products(root, cache_root=None):
@@ -78,6 +80,8 @@ class PublicAlphaBrowserProductsTest(unittest.TestCase):
                 product = SimpleNamespace(
                     data_root=data_root,
                     files={p.relative_to(data_root).as_posix(): p for p in data_root.rglob("*.json")},
+                    delivery_by_path={p.relative_to(data_root).as_posix(): self.delivery.get(p.relative_to(data_root).as_posix(), "browser-data")
+                                      for p in data_root.rglob("*.json")},
                     source_paths=set(self.bindings),
                     projected_source_paths=set(),
                     products_identity="a" * 64,
@@ -142,6 +146,16 @@ class PublicAlphaBrowserProductsTest(unittest.TestCase):
         self.tool.write_checksums(output)
         with self.assertRaisesRegex(self.tool.ReleaseError, "copied browser/data file does not match"):
             self.tool.verify_output(self.manifest, publications, output, False)
+
+    def test_private_preparation_is_not_copied_or_expected_in_public_artifact(self):
+        relative = "unusual/private-preparation.json"
+        self.write_product(relative, {"html": "Private preparation serialization"})
+        self.delivery[relative] = "print-preparation"
+        publications, output = self.build()
+        self.assertFalse((output / "browse" / relative).exists())
+        self.assertFalse(any("Private preparation serialization" in path.read_text()
+                             for path in output.rglob("*.json")))
+        self.tool.verify_output(self.manifest, publications, output, False)
 
     def test_product_failure_is_checked_again_by_direct_independent_verify(self):
         publications, output = self.build()

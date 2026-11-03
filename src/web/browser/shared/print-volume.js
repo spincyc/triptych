@@ -200,5 +200,8 @@
         if (generation === selected) start.disabled = false;
       }
     });
+    if (new URLSearchParams(window.location.search).get('print') === '1') {
+      queueMicrotask(() => start.click());
+    }
   }
 }());

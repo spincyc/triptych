@@ -20,7 +20,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from tools.tests.test_browser_truthfulness import HARNESS, browser
+from tools.tests.test_web_print_controller import HARNESS, browser
 
 ROOT = Path(__file__).resolve().parents[2]
 SCRATCH = ROOT / ".scratch/browser-print/volume"
@@ -144,6 +144,27 @@ def plan_for(volume, responses):
 
 
 class VolumePrintTests(unittest.TestCase):
+    def test_print_query_uses_the_same_complete_guarded_path_without_a_second_click(self):
+        for missing in [False, True]:
+            with self.subTest(missing=missing):
+                volume,responses=fixture()
+                route=f"reading-plans/{volume}.html"
+                responses[route]=responses[route].replace('<script src="../shared/print-volume.js">','<script>'+PRINT_STUB+'</script><script src="../shared/print-volume.js">')
+                if missing:del responses[f"reading-plans/{volume}/period-p07.html"]
+                plan={"responses":responses,"acts":[
+                    {"do":"navigate","url":f"/reading-plans/{volume}.html?print=1"},
+                    wait("window.printCalls===1 || document.querySelector('[data-print-volume-status]')?.textContent.startsWith('Print unavailable:')"),
+                    action("({calls:printCalls,snapshot:window.printSnapshot,ready:document.querySelector('[data-print-volume]').dataset.printVolumeReady,parts:document.querySelector('[data-print-volume-periods]').children.length})","result")
+                ]}
+                result=drive(plan)["result"]
+                self.assertEqual(result["calls"],int(not missing),result)
+                self.assertEqual(result["ready"],str(not missing).lower())
+                if not missing:
+                    self.assertEqual(result["parts"],12)
+                    self.assertEqual(len(result["snapshot"]["readings"]),24)
+                    self.assertTrue(result["snapshot"]["url"].endswith("?print=1"))
+                else:self.assertEqual(result["parts"],0)
+
     def test_all_twelve_periods_and_every_source_row_are_present_before_print(self):
         volume, responses = fixture()
         seen = drive(plan_for(volume, responses))["result"]

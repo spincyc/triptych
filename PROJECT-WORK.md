@@ -5,7 +5,149 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-02.
+Last reconciled: 2026-11-03.
+
+## Source-first publication and complete browser printing, 2026-11-02
+
+<!-- promised-deliverable: source-first-print-on-demand-2026-11-02 -->
+
+**In progress.** The requested outcome is to remove all tracked PDF and ZIP
+corpora, deliver exact binary evidence through `spincyc/triptych-artifacts`,
+declare per-document manifests and type schemas including propers and
+timelines, and offer automatic **Print / Save as PDF** from the web for every
+admitted edition. Central styles should make publication consistent and fast.
+The proposal table and cold review were required before implementation, followed
+by validation and publication to main. No history rewrite was authorized.
+
+The recovered prior checkpoint explicitly records that the proposal table was
+presented and cold-reviewed before the maintainer authorized implementation.
+The exact earlier conversation is unavailable; this records that known sequence
+without inventing a quotation, timestamp or retained review transcript. The
+controlling table and contracts are in `guidance/document-schemas.md` and
+`src/common/document-schemas/`, introduced in
+`84c2f7e041af77230095987ae7eb86b0f4d2f92e`. Current code and tests establish
+their implementation, not the historical ordering of the conversation.
+
+The earlier source-first main snapshot
+`7b9daae87c00b0e4d84fe958372d520300374c08` deployed successfully in 782 seconds,
+against the original 1,415-second measurement. The tracked working tree fell
+from 7,617,113,929 bytes to approximately 2,008,724,253 bytes, a 73.6% reduction;
+no PDF or ZIP remains tracked. The full Git history is unchanged. Hash-bound
+external delivery preserves exact evidence and archived print identities;
+historical page counts describe those archived bytes only. Reproducible browser
+JSON also moved outside Git into the verified content cache. These are completed
+migration results, separate from the universal browser-print candidate below.
+
+The workspace fast-forwarded to `cb8ede344f`, preserving the incoming ordinary
+Fifth Sunday after Epiphany catalogue reference and every other deliverable.
+Current discovery contains 217 publication leaves and 283 declared outputs:
+281 admitted outputs and two holds. The complete-print implementation is validated locally and awaiting
+publication. A preliminary thirteen-family two-fresh-build record
+against the integrated source passed in 1,108.790 seconds: 27,836 files and
+382,659,164 bytes, descriptor SHA-256
+`29728e7561ea75a996eaae5930ba89d99b118011875443a67db78e821a76cd75`.
+The source-metadata corpus check also passed using the real verified cache.
+A subsequent final adversarial check exposed a Bible context-schema gap:
+removing titles or rights apparatus before initial body sealing could still
+pass verse-only coverage. Current edition contents were present. The canonical pre-render context proof
+and refusal regressions are now repaired and independently retested: 17 tests
+pass, all 696 part bodies and source digests remain byte-identical across seven
+editions, and all 252,288 native verses remain unchanged. Final recording
+against the repaired implementation was stopped after the consolidated owner
+audit found two further pre-seal gaps: dictionary descriptions/qualifications
+and server-card text could disappear while identity-only assembly checks still
+passed. Both are now repaired and independently retested. Dictionary canonical
+fields, qualifiers, artwork and references are checked before sealing; all 18
+tests pass and all six bodies remain identical. Server source-occurrence
+schedules are checked against final text, roles, ordering, symbols and assets;
+all 20 tests pass and all seven bodies remain identical. Seventy-five finite
+template definitions reject unsupported direct and nested wording changes
+before conversion. Original omission attacks now refuse before sealing. The
+generic, curriculum, source-volume and repaired Bible proofs have no additional
+concrete marker-only gap in that audit. This preliminary descriptor is not the final
+candidate after that repair. **Main publication and live deployment of the complete browser-print change
+remain pending.** No new
+publication timing or editorial approval is claimed.
+
+The implementation covers 644 complete print roots: 281 provider outputs,
+seven Bibles, 350 papal source selections and six reading-plan volumes. There
+are 642 new descriptors and two retained complete-volume controllers. The 141
+reviewed web readers retain their bodies and reading presentation; their quiet
+Print action opens the canonical complete edition with `?print=1`. Source and
+rights notices, declared companions, notes, appendices, answers, card faces,
+illustrations and source ordering remain owned by their actual type adapters.
+The browser verifies every required part and asset before opening its print
+dialog. Browser reflow does not certify native page counts, printer alignment
+or physical duplex behavior; optional native recipes retain their own review
+contracts.
+
+Completed candidate verification is recorded here with its durable code and
+regression owners; these results do not stand in for the pending full record
+and publication gates:
+
+| Completed proof | Result | Source and regression owners |
+| --- | --- | --- |
+| Publication and Bible source/reread coverage | All 288 selections pass: 1,172 parts, 181,203 source units and 7,723 geometry events; all 288 DOM checks pass. | `scripts/_web_print_products.py`, `scripts/_web_print_prepare.py`, `tools/tests/test_web_print_products.py`, `tools/tests/test_web_print_publication.py`, `tools/tests/test_web_print_bibles.py` |
+| Source-volume envelope | 354 inline source selections, two legacy complete roots and 24 components pass. | `scripts/_web_print_sources.py`, `tools/tests/test_web_print_sources.py` |
+| Browser controller and native geometry | 37 controller tests and ten legacy cases pass; all 37 native geometry selections pass. | `src/web/browser/shared/web-print.js`, `tools/tests/test_web_print_controller.py`, `tools/tests/test_web_print_flow.py` |
+| Server and dictionary coverage | Seven server outputs retain 497 source-bound units, 188 distinct card faces across three decks, 42 guide SVG instances (39 prepared variants), five Low Mass duplex instructions, three rights notices and two terminal appendices. Deck word order and native 7/13/12-page counts pass; six dictionaries retain 319 images. | `scripts/_web_print_server.py`, `scripts/_web_print_dictionaries.py`, `tools/tests/test_web_print_server.py`, `tools/tests/test_web_print_dictionaries.py` |
+| Other complete source selections | Full Clementine, mathematical content, calendar and proper selections pass. | `tools/tests/test_web_print_bibles.py`, `tools/tests/test_web_print_common.py`, `tools/tests/test_web_print_publication.py` |
+| Fonts, source marks and review repairs | Ten final fonts comprise eight Libertinus faces, Punctus Elevatus and the five-character Source Marks supplement. Missing glyph findings are resolved; five native custom glyphs and all 16 mark tests pass. | `src/common/browser-print-assets.json`, `src/common/browser-print-marks.json`, `src/web/browser/shared/fonts/README.md`, `tools/tests/test_web_print_marks.py` |
+
+Independent cold implementation review identified P2 defects in admission and
+source notices, links and language, raw-body identity, and orphaned or hidden
+geometry. Those defects are repaired and covered by the source, browser and
+mark regressions. Exact source-bound SVG and font releases are live in the
+artifact repository, whose main is `86b0eb4`. The central browser style and
+controller are `src/web/browser/shared/web-print.css` and `web-print.js`;
+`docs/printing.md`, `guidance/document-schemas.md` and `guidance/web-data.md`
+explain the source, style, cache, review and print boundaries. This work grants
+no new editorial approval. Fifteen inherited chronology findings, one inherited
+source-audit defect and four inherited JavaScript findings remain unresolved;
+their scope and the existing holds are unchanged.
+
+All implementation owners are frozen and the consolidated independent review
+has cleared the repaired source-coverage boundaries. Validate two independent fresh
+thirteen-family cold builds and exact descriptor/cache delivery; run the
+normal promise checker only after that cache is ready; then run the current
+deployment-source gates, full local site build and Pages artifact verification.
+Complete final independent integration/disclosure review, inspect and commit
+the coherent source and operational records, and push authorized main without
+rewriting history or losing the incoming catalogue change. Verify the automatic
+Pages result and affected live catalogue, reader, print and asset routes, then
+record the actual new timings and update the open requirements. Operational
+status-only pushes touching just this register and the TOML ledger are excluded
+from Pages triggers because neither file is a browser-product or published-site
+input. Mixed source/status pushes still build, and manual dispatch is retained. The earlier
+twelve-family descriptor and superseded recording are not proof of this
+candidate's completion.
+
+The final frozen implementation now passes two independent fresh builds in
+1,106.683 seconds: 13 families, 27,836 files and 382,659,292 generated bytes.
+Descriptor SHA-256: `fc8ad52c86d30b21fce184750ecb26e51a840f94f5bf0a32a523bf1cf773d368`.
+The normal verified-cache source-metadata corpus test passes, as does the full
+promise ledger (107 tracked deliverables). The exact cache candidate has been
+exported; its publication, current local site gates and live deployment remain
+pending. These results supersede the preliminary descriptor above.
+
+The full local source-gated site build passes in 293.406 seconds with Pandoc,
+PDF/TeX, native authoring and network CLI tools blocked. All seven actual local
+browser cases pass under the project prefix, including complete Clementine and
+legacy reading-plan automatic printing. The independent verifier then refused
+892 existing dependencies absent from the site-source bindings: 281 admitted
+edition release records, 610 canonical Bible-source files and one Bible schema.
+The initial refresh had covered changed files rather than all newly used
+dependencies. Every missing path is in the sealed print source closure and is
+byte-identical to main; independent review confirms the exact scope. The narrow
+892-path refresh now passes without changing source text, frozen compiler
+bytes, the descriptor, approval policy or rights wording. The corrected full
+artifact build passes in 199.955 seconds; independent artifact and GitHub Pages
+compatibility verification passes in 182.186 seconds. The only changed outputs
+are `PUBLICATION-MANIFEST.json` and `SHA256SUMS`; all 38,920 files retain the
+same membership and all browser-tested pages, scripts, styles, fonts and images
+remain byte-identical. Final independent integration and disclosure review is clear, including the
+exact descriptor, current inputs, source closure, admission set and corrected
+site. No main push or live publication is claimed yet.
 
 ## Fifth Sunday after Epiphany catalogue reference, 2026-11-02
 

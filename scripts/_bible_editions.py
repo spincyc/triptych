@@ -178,3 +178,20 @@ EDITIONS: dict[str, dict[str, object]] = {
         "artifacts": "knox/artifacts",
     },
 }
+
+
+def browser_print_offer(edition_id: str) -> dict[str, str]:
+    """The stable full-edition browser route for a publishable registry entry.
+
+    This declaration does not inspect generated products. Publication separately
+    proves that its complete source-backed print product exists.
+    """
+    edition = EDITIONS.get(edition_id)
+    if edition is None or edition.get("publishable") is not True:
+        raise ValueError(f"no publishable full Bible print edition: {edition_id}")
+    return {
+        "id": f"bible:{edition_id}",
+        "kind": "bible",
+        "format": "browser",
+        "href": f"print/bibles/{edition_id}.html?print=1",
+    }

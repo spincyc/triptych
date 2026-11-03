@@ -61,6 +61,7 @@
   }
 
   function printLabel(issue) {
+    if (issue.print_mode === 'browser') return 'Print / Save as PDF';
     return issue.print_mode === 'manual' ? 'Export instructions' : 'Print view';
   }
 

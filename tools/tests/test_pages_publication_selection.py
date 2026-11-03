@@ -49,6 +49,7 @@ GENERATED_CONSUMERS = {
 }
 CACHE_ACTION = "55cc8345863c7cc4c66a329aec7e433d2d1c52a9"
 PRODUCT_IDENTITY = "a" * 64
+PRINT_IDENTITY = "b" * 64
 RIGHTS_TESTS = {
     "test_hash_only_registry_is_complete_and_well_formed",
     "test_allowlist_exactly_matches_tracked_curriculum_sources",
@@ -71,6 +72,15 @@ class DeploymentFixture:
         self.write("src/gpt/study/main.tex", "Canonical source, with no installed PDF.\n")
         self.write("src/gpt/held/main.tex", "Held canonical source.\n")
         self.write("src/common/preamble.tex", "% fixture\n")
+        # The real workflow's presence probe runs unchanged. Descriptor authority
+        # and bytes are checked at the browser-products boundary, not this stub.
+        self.write("scripts/_browser_products.py", '''import json
+from pathlib import Path
+def load_manifest(root):
+    return json.loads((root / "release/browser-products.json").read_text())
+def cache_directory(root):
+    return root / "build/browser-data"
+''')
         self.bin = self.root / "bin"
         self.log = self.root / "commands.jsonl"
         self.env = {**os.environ, "PATH": f"{self.bin}{os.pathsep}{os.environ['PATH']}",
@@ -80,6 +90,7 @@ class DeploymentFixture:
                     "DEPLOYMENT_TEST_GENERATED_CONSUMERS": json.dumps(sorted(GENERATED_CONSUMERS | AUDIT_COMMANDS)),
                     "DEPLOYMENT_TEST_PRODUCT_IDENTITY": PRODUCT_IDENTITY,
                     "GITHUB_OUTPUT": str(self.root / "workflow-output"),
+                    "GITHUB_PATH": str(self.root / "workflow-path"),
                     "DEPLOYMENT_TEST_RIGHTS": json.dumps(sorted(RIGHTS_TESTS))}
         for name in ("MAKEFLAGS", "MFLAGS", "MAKELEVEL", "MAKEOVERRIDES"):
             self.env.pop(name, None)
@@ -98,7 +109,9 @@ generated = {tuple(command) for command in json.loads(os.environ["DEPLOYMENT_TES
 ready = root / "build/browser-data/verified-ready"
 if " ".join(args) == os.environ.get("DEPLOYMENT_TEST_FAIL"):
     raise SystemExit("deliberate source gate failure")
-if args == ["tools/tpt", "browser-products", "key"]:
+if args == ["-"]:
+    exec(compile(sys.stdin.read(), "workflow-stdin", "exec"))
+elif args == ["tools/tpt", "browser-products", "key"]:
     print(os.environ["DEPLOYMENT_TEST_PRODUCT_IDENTITY"])
 elif args == ["tools/tpt", "browser-products", "build"]:
     ready.parent.mkdir(parents=True, exist_ok=True)
@@ -107,7 +120,14 @@ elif args == ["tools/tpt", "browser-products", "prune"]:
     if not ready.is_file():
         raise SystemExit("cache retention ran before product verification")
 elif args == ["scripts/_browser_cache_bootstrap.py", "--fetch"]:
-    pass  # Explicit CI candidate delivery; real archive safety has its own suite.
+    if os.environ.get("DEPLOYMENT_TEST_BOOTSTRAP_PRINT") == "1":
+        (root / "build/browser-data" / ("b" * 64) / "data").mkdir(parents=True)
+elif args == ["scripts/_install_web_print_pandoc.py", "--fetch", "--bin-dir", ".scratch/web-print-toolchain/bin"]:
+    pass  # Pinned package and binary authentication have their own fixture tests.
+elif args == ["scripts/_web_print_assets.py", "hydrate", "--fetch"]:
+    pass  # Explicit source-bound delivery; publication itself cannot fetch.
+elif args == ["scripts/_web_print_marks.py", "hydrate", "--fetch"]:
+    pass  # The separate source-mark face is needed only by a cold print family.
 elif tuple(args) in allowed:
     if tuple(args) in generated and not ready.is_file():
         raise SystemExit("generated consumer ran before browser product preparation")
@@ -157,9 +177,20 @@ else:
         return yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8"))
 
     def run_pages_commands(self, *, env=None, cache_hit=False):
+        descriptor = self.root / "release/browser-products.json"
+        if not descriptor.exists():
+            self.write("release/browser-products.json", json.dumps({"products": [
+                {"id": "print-editions", "key": PRINT_IDENTITY},
+                {"id": "calendar-days", "key": "c" * 64},
+            ]}))
         for step in self.pages()["jobs"]["deploy"]["steps"]:
             if cache_hit and step.get("if") == "steps.browser-cache.outputs.cache-hit != 'true'":
                 continue
+            if step.get("if") == "steps.browser-print.outputs.required == 'true'":
+                outputs = Path((env or self.env)["GITHUB_OUTPUT"]).read_text().splitlines()
+                required = [line for line in outputs if line.startswith("required=")][-1]
+                if required != "required=true":
+                    continue
             if "run" in step:
                 result = self.shell(step["run"], env=env)
                 if result.returncode:
@@ -265,9 +296,13 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
 
     def test_each_new_source_gate_failure_prevents_artifact_construction(self):
         for gate in ["tools/tpt browser-products key", "scripts/_browser_cache_bootstrap.py --fetch",
+                     "scripts/_install_web_print_pandoc.py --fetch --bin-dir .scratch/web-print-toolchain/bin",
+                     "scripts/_web_print_assets.py hydrate --fetch",
+                     "scripts/_web_print_marks.py hydrate --fetch",
                      *sorted(" ".join(command) for command in SOURCE_COMMANDS)]:
             with self.subTest(gate=gate):
                 self.log.unlink(missing_ok=True)
+                Path(self.env["GITHUB_OUTPUT"]).unlink(missing_ok=True)
                 shutil.rmtree(self.root / "build", ignore_errors=True)
                 result = self.run_pages_commands(env={**self.env, "DEPLOYMENT_TEST_FAIL": gate})
                 self.assertNotEqual(result.returncode, 0)
@@ -304,6 +339,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         ready = self.root / "build/browser-data/verified-ready"
         ready.parent.mkdir(parents=True)
         ready.write_text("restored candidate bytes, still requiring verification\n")
+        (ready.parent / PRINT_IDENTITY / "data").mkdir(parents=True)
         result = self.run_pages_commands(cache_hit=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         commands = self.commands()
@@ -312,6 +348,40 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertNotIn(("tools/tpt", "document-library", "structure", "--check"), commands)
         self.assertNotIn(("tools/tpt", "act-history", "structure", "--check"), commands)
         self.assertFalse(AUDIT_COMMANDS & set(commands))
+        self.assertFalse(any(command[0] in {"scripts/_install_web_print_pandoc.py", "scripts/_web_print_assets.py", "scripts/_web_print_marks.py"}
+                             for command in commands))
+
+    def test_bootstrapped_print_family_skips_compiler_and_asset_delivery_on_actions_miss(self):
+        result = self.run_pages_commands(env={**self.env, "DEPLOYMENT_TEST_BOOTSTRAP_PRINT": "1"})
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        commands = self.commands()
+        self.assertIn(("scripts/_browser_cache_bootstrap.py", "--fetch"), commands)
+        self.assertFalse(any(command[0] in {"scripts/_install_web_print_pandoc.py", "scripts/_web_print_assets.py", "scripts/_web_print_marks.py"}
+                             for command in commands))
+        self.assertIn(("tools/tpt", "browser-products", "build"), commands)
+
+    def test_cold_print_dependencies_precede_product_build_and_warm_presence_is_not_authority(self):
+        result = self.run_pages_commands()
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        commands = self.commands()
+        compiler = ("scripts/_install_web_print_pandoc.py", "--fetch", "--bin-dir", ".scratch/web-print-toolchain/bin")
+        assets = ("scripts/_web_print_assets.py", "hydrate", "--fetch")
+        marks = ("scripts/_web_print_marks.py", "hydrate", "--fetch")
+        build = ("tools/tpt", "browser-products", "build")
+        self.assertLess(commands.index(compiler), commands.index(build))
+        self.assertLess(commands.index(assets), commands.index(build))
+        self.assertLess(commands.index(assets), commands.index(marks))
+        self.assertLess(commands.index(marks), commands.index(build))
+        (self.root / "build/browser-data" / PRINT_IDENTITY / "data").mkdir(parents=True)
+        self.log.unlink()
+        Path(self.env["GITHUB_OUTPUT"]).unlink()
+        result = self.run_pages_commands(cache_hit=True, env={**self.env, "DEPLOYMENT_TEST_FAIL": " ".join(build)})
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("deliberate source gate failure", result.stderr)
+        self.assertNotIn(compiler, self.commands())
+        self.assertNotIn(assets, self.commands())
+        self.assertNotIn(marks, self.commands())
+        self.assertNotIn(("tools/tpt", "public-alpha", "verify", "--deployment-target", "github-pages"), self.commands())
 
     def test_cache_keys_are_content_addressed_and_candidates_are_verified_before_save(self):
         steps = self.pages()["jobs"]["deploy"]["steps"]
@@ -335,7 +405,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertLess(names.index(save["name"]), names.index("Verify artifact and GitHub Pages compatibility"))
         self.assertEqual(save["if"], "steps.browser-cache.outputs.cache-hit != 'true'")
 
-    def test_pages_never_restores_print_artifacts_or_installs_a_print_toolchain(self):
+    def test_pages_uses_only_pinned_html_conversion_without_a_pdf_toolchain(self):
         steps = self.pages()["jobs"]["deploy"]["steps"]
         actions = [step["uses"].partition("@")[0] for step in steps if "uses" in step]
         self.assertEqual(actions, ["actions/checkout", "actions/setup-python", "actions/cache/restore",
@@ -346,6 +416,14 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertTrue(upload["with"]["include-hidden-files"])
         checkout = next(step for step in steps if step.get("uses", "").startswith("actions/checkout@"))
         self.assertFalse(checkout["with"]["persist-credentials"])
+        converter = next(step for step in steps if step["name"] == "Install pinned HTML converter for cold print preparation")
+        assets = next(step for step in steps if step["name"] == "Hydrate source-bound assets for cold print preparation")
+        marks = next(step for step in steps if step["name"] == "Hydrate source-bound marks for cold print preparation")
+        self.assertEqual(converter["if"], "steps.browser-print.outputs.required == 'true'")
+        self.assertEqual(assets["if"], converter["if"])
+        self.assertEqual(marks["if"], converter["if"])
+        commands = "\n".join(step.get("run", "") for step in steps)
+        self.assertNotRegex(commands, r"(?i)\b(?:texlive|pdflatex|xelatex|lualatex|pdfinfo|poppler|docker|apt-get|pacman)\b")
 
 
 if __name__ == "__main__":

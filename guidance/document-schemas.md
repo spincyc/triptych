@@ -52,8 +52,8 @@ prove that its content meets the profile.
 
 ## Genre routing
 
-The registry provides the exact required-role lists. These families preserve
-the material differences between genres:
+The registry provides the 37 kinds and their exact required-role lists. These
+families preserve the material differences between genres:
 
 | Registered kinds | Structure retained by the owning profile |
 | --- | --- |
@@ -107,6 +107,51 @@ Keep source/evidence review, print-template review, and actual render
 inspection distinct. An existing full-page receipt remains a fact about its
 exact old output. A current schema PASS cannot extend it to changed sources,
 another renderer, or pages nobody inspected. Ordinary source/web release does
-not generate PDFs or compare their bytes. Producing a print edition follows
+not generate PDFs or compare their bytes. Issuing a reviewed native print edition follows
 [`docs/printing.md`](../docs/printing.md) and every exact pagination, paired-page,
 card, image, and physical-use rule in the owning profile.
+
+## Browser-print projections
+
+The canonical kind and manifest also select a source-owned browser-print
+adapter. They do not replace the native print recipe. General prose and proper
+studies, curricula, server guides and cards, pictorial dictionaries, Bibles, and
+provider-neutral source volumes retain their own selection and apparatus rules.
+The browser controller accepts a finite HTML tag, class, and attribute vocabulary
+for each print type, implemented in
+[`web-print.js`](../src/web/browser/shared/web-print.js); source-style normalization
+is bounded by [`_web_print_common.py`](../scripts/_web_print_common.py). An
+unknown executed source construct or untyped formatting requires an adapter
+repair, never silent omission or a smaller output.
+
+Independent coverage enumerates the selected canonical source units before
+conversion and checks their content, identity, occurrence, and order against
+the complete print output. Each adapter retains these additional obligations:
+
+| Print family | Canonical content checked before final sealing |
+| --- | --- |
+| General publications and propers | Complete semantic ledger, including title qualifiers, headings, source text, notes, references and rights. |
+| Curricula | Selected canonical lesson/companion DSL, answers and apparatus, plus the independently derived writing-space and strut geometry. |
+| Server guides and cards | Complete selected macro/argument/definition occurrence schedule and unmarked context; final assembly retains every audited fragment, face, label, note, diagram and rights notice. |
+| Pictorial dictionaries | Selected object fields, claims, qualifications, audience notes, references, artwork/captions and native cover/plate/terminal context. |
+| Bibles | Native verses, labels and order, plus canonical introduction, division/book/chapter headings, source bounds, transformations, rights, links and language. |
+| Papal sources and reading plans | Canonical body/reading units and the complete title, extent, period context, source/rights apparatus, attribution links and language envelope. |
+
+An identity count or a list of successful fragment conversions cannot prove
+that the final document retained their content. Expectations come from the
+canonical source before rendering; the final assembled output must satisfy
+them before its text and HTML hashes are sealed. Two identical cold builds
+establish reproducibility and do not substitute for that completeness proof.
+
+Parts carry bounded transport, text and structure
+hashes, semantic counts, ordered unit inventories, and exact asset identities.
+Measuring converted output alone cannot establish this source proof. The browser
+rechecks the assembled selection and current print styles before opening Print;
+an absent appendix, card face, note, image, or source unit fails at its owning
+boundary. These are executable completeness checks, not source verification,
+editorial approval, or certification of physical pagination or duplex alignment.
+
+[Web data](web-data.md#complete-browser-print-products) owns cold preparation and
+hot assembly. [Web editions](web-editions.md#browser-printing) owns the reviewed
+reader's complete-print action; [printing](../docs/printing.md) explains the
+browser and optional native choices.

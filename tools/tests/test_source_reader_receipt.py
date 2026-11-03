@@ -131,7 +131,7 @@ class ProjectionReceiptTests(unittest.TestCase):
         shutil.rmtree(self.target.parent.parent)
         (self.root / "release").mkdir()
         cache = self.root / ".scratch/sealed-cache"
-        recipes = [{"id": "sources", "version": 1, "output_prefixes": ["structure/sources"],
+        recipes = [{"id": "sources", "version": 1, "delivery": "browser-data", "output_prefixes": ["structure/sources"],
                     "argv": ["tools/source-reader", "structure", "--strict"],
                     "input_trees": ["src/sources", "src/gpt"], "input_files": [], "exclude_paths": []}]
 

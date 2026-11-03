@@ -16,12 +16,49 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import _browser_product_recipes as recipes
 import _browser_products as products
 
-SCRATCH = ROOT / ".scratch/next-projection-inventory/tests"
+SCRATCH = ROOT / ".scratch/print-product-store/recipe-tests"
 
 
 class RecipeTests(unittest.TestCase):
     def setUp(self):
         SCRATCH.mkdir(parents=True, exist_ok=True)
+
+    def test_all_thirteen_recipes_declare_delivery_and_print_owns_private_json(self):
+        actual = products._recipes()
+        self.assertEqual(len(actual), 13)
+        private = [recipe for recipe in actual if recipe["delivery"] == "print-preparation"]
+        self.assertEqual([recipe["id"] for recipe in private], ["print-editions"])
+        self.assertTrue(all(recipe["delivery"] == "browser-data" for recipe in actual if recipe["id"] != "print-editions"))
+        self.assertEqual(private[0]["output_prefixes"], ["print/preparation"])
+        self.assertEqual(private[0]["argv"], ["scripts/_web_print_products.py", "--root", "{root}", "--out", "{out}"])
+        for scope in ("src/sources", "src/gpt", "src/claude", "src/common", "web", "release/papal-documents"):
+            self.assertIn(scope, private[0]["input_trees"])
+
+    def test_recipe_factory_requires_delivery_and_runner_expands_out_once(self):
+        with self.assertRaises(TypeError):
+            recipes._recipe("missing", "missing", ["producer.py"], [])
+        private = next(recipe for recipe in recipes.RECIPES if recipe["id"] == "print-editions")
+        from types import SimpleNamespace
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as temporary:
+            out = Path(temporary) / "output"
+            with patch.object(recipes.subprocess, "run", return_value=SimpleNamespace(returncode=0)) as run:
+                recipes._run(ROOT, out, private, {})
+            command = run.call_args.args[0]
+            self.assertEqual(command.count("--out"), 1)
+            self.assertEqual(command[command.index("--out") + 1], str(out))
+            self.assertNotIn("{out}", command)
+
+    def test_private_recipe_cannot_emit_public_paths_or_raw_asset_files(self):
+        for name in ("structure/documents/corpus.json", "print/preparation/font.woff2"):
+            def wrong(root, out, recipe, environment):
+                target = out / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text("{}")
+            with self.subTest(name=name), tempfile.TemporaryDirectory(dir=SCRATCH) as temporary, patch.object(recipes, "_run", side_effect=wrong):
+                out = Path(temporary) / "output"
+                with self.assertRaises(recipes.RecipeError):
+                    recipes.generate(ROOT, out, ["print-editions"])
+                self.assertEqual(list(out.iterdir()), [])
 
     def test_selected_cold_family_has_no_unrequested_products(self):
         with tempfile.TemporaryDirectory(dir=SCRATCH) as temporary:
@@ -80,7 +117,7 @@ class RecipeTests(unittest.TestCase):
                 "parser = argparse.ArgumentParser(); parser.add_argument('--out'); args = parser.parse_args()\n"
                 "root = Path(__file__).parent\n"
             )
-            recipe = recipes._recipe("probe", "bibles.json", ["producer.py"], [])
+            recipe = recipes._recipe("probe", "bibles.json", ["producer.py"], [], delivery="browser-data")
             for label, body in (
                 ("path", "(root / 'release/papal-documents/inputs/snapshot.json').read_bytes()\n"),
                 ("descriptor", "parent = os.open(root / 'release/papal-documents', os.O_RDONLY | os.O_DIRECTORY)\nos.open('inputs/snapshot.json', os.O_RDONLY, dir_fd=parent)\n"),

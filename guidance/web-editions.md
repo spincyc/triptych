@@ -58,6 +58,10 @@ default to eligible by silence.
   canonical sources and optional print editions: ineligibility describes layout,
   not about quality, importance, or release status.
 
+These states govern the reviewed web reader. A layout-ineligible publication
+still has a complete browser-print projection when its admitted output passes
+its own typed adapter and independent source-coverage checks.
+
 Declaring `eligible` against a document that uses a blocking construct is a
 gate failure, not a judgment call. Reclassify the leaf or remove the
 construct.
@@ -292,8 +296,10 @@ canonical research study remains the sole web owner. Its `-synthesis` and
 `-homily` editions contain separately authored concise and spoken presentations
 within that same source leaf and have no separate web declarations. The
 canonical HTML supplies their research and citations, not a claim that it
-reproduces their distinct prose verbatim. The reader catalog exposes each
-declared edition with an honest reader link or page explaining print options.
+reproduces their distinct prose verbatim. Each admitted output also has a
+complete browser-print edition selected from its own canonical entrypoint,
+including the concise study's or homily's distinct prose. This print rendition
+does not create a second editable source or a separate reviewed web declaration.
 
 Component boundaries become semantic headings, stable element keys become
 durable anchors, and relation evidence classes remain readable text rather
@@ -319,10 +325,27 @@ loss of a correctly placed label in conversion belongs to the converter.
 
 ## Browser printing
 
-Reader pages may provide flowing browser print or the browser's Save as PDF.
-It prints the current reader surface under that surface's rights and content
-limits. It does not reproduce a fixed-page edition or establish compliance
-with a profile's page count, paired-page, or duplex contract. Use
-`tools/print-document` for a declared fixed-layout print edition, as described
-in `docs/printing.md`. Print controls must identify the format they actually
-produce; a source archive or an HTML information page is not a PDF download.
+**Print / Save as PDF** prepares the complete selected canonical output, rather
+than printing only the current reader's loaded content. The 141 reviewed web
+readers navigate to `print/<provider>/<output>.html?print=1`; other admitted
+outputs have their own complete print routes. The selected source includes its
+declared body, notes, appendices, references, revision, and rights notices.
+Existing rights and hold/withdrawal rules still govern admission.
+
+The print adapters and independent source-coverage checks are described in
+[document schemas](document-schemas.md); the private preparation family and hot
+assembly are governed by [web data](web-data.md#complete-browser-print-products).
+`src/web/browser/shared/web-print.js` validates finite per-type markup,
+source/selection identities, ordered units, bounded parts, assets, fonts, and
+the exact current `src/web/browser/shared/web-print.css` before opening Print.
+Missing or changed content refuses preparation. Native browser Print and Ctrl+P
+show a preparation notice instead of presenting a partial reviewed reader as a
+complete print edition.
+
+Browser pagination does not establish a profile's fixed-page, paired-page, or
+physical duplex contract, even when card faces and source order are retained.
+Use `tools/print-document` for the optional native recipe and its exact-artifact
+review, as described in [printing](../docs/printing.md). Neither mechanical
+source coverage nor a successful print dialog confers editorial or physical
+printer approval. Print controls must name the format they produce; an HTML
+route is not a prebuilt PDF download.

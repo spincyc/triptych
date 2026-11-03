@@ -1,0 +1,357 @@
+{
+  "schema": "triptych-browser-print-marks/v1",
+  "font": {
+    "family": "Triptych Source Marks",
+    "weight": "400",
+    "style": "normal",
+    "unicode_range": "U+211F,U+2123,U+21A9,U+2610,U+2720",
+    "path": "web-print-marks/2731146f3f4febfcaee16a2db7e02b4b50dacc4cad305f36c9d522de4469d488.woff2",
+    "sha256": "2731146f3f4febfcaee16a2db7e02b4b50dacc4cad305f36c9d522de4469d488",
+    "bytes": 2440,
+    "media_type": "font/woff2"
+  },
+  "upstream": {
+    "repository": "https://github.com/psb1558/Junicode-font",
+    "commit": "180ce3c94bf051f9457422b87e87e9b1cb41107e",
+    "tag": "v2.218",
+    "url": "https://raw.githubusercontent.com/psb1558/Junicode-font/180ce3c94bf051f9457422b87e87e9b1cb41107e/webfiles/JunicodeVF-Roman.woff2",
+    "sha256": "a5838c9ed2cd6eca5a013220932bcddd1825523b85ceb5561393313c754e4639",
+    "bytes": 1001940,
+    "ttf_sha256": "dee372223b0124472d7bd2076c8ad2e71d137f667785a4a784b1ff26d08145dc",
+    "embedded_version": "Version 2.003"
+  },
+  "license": {
+    "path": "src/web/browser/shared/fonts/OFL-Junicode.txt",
+    "sha256": "6078ed582d53a416f761fd2fdeb384320b69191bf316234c21aabe71e2416822",
+    "bytes": 4356,
+    "spdx": "OFL-1.1",
+    "reserved_font_names": [],
+    "font_copyright": "© 1998–2023 Peter S. Baker",
+    "license_file_copyright": "Copyright 2025 by Peter S. Baker",
+    "source_url": "https://raw.githubusercontent.com/psb1558/Junicode-font/180ce3c94bf051f9457422b87e87e9b1cb41107e/OFL.txt",
+    "derivative_status": "The whole renamed derivative, including the new project-authored U+2610 geometry, remains font software under OFL-1.1, not CC BY. Original upstream copyright and embedded origin/license name records remain unchanged."
+  },
+  "recipe_reference": {
+    "path": "src/web/browser/shared/fonts/README.md",
+    "sha256": "0e0886bf397483b9e4be2d76c4a0281723fd04262ad415506a74338ce7f4db4b",
+    "bytes": 11081
+  },
+  "derivation": {
+    "recipe": "harfbuzz-four-default-marks-plus-project-checkbox-renamed/v1",
+    "unicode_range": "U+211F,U+2123,U+21A9,U+2610,U+2720",
+    "static_default_axes": true,
+    "added_ballot_box": {
+      "codepoint": "U+2610",
+      "origin": "project-authored geometric glyph under OFL-1.1; absent from upstream Junicode",
+      "source_units_per_em": 1000,
+      "source_cap_height": 663,
+      "sizing_rule": "side=OS/2.sCapHeight; stroke=round(7% cap height); sidebearings=round(6% unitsPerEm); baseline=0",
+      "stroke": 46,
+      "sidebearing": 60,
+      "advance": 783,
+      "outer_clockwise": [
+        [
+          60,
+          0
+        ],
+        [
+          60,
+          663
+        ],
+        [
+          723,
+          663
+        ],
+        [
+          723,
+          0
+        ]
+      ],
+      "inner_counterclockwise": [
+        [
+          106,
+          46
+        ],
+        [
+          677,
+          46
+        ],
+        [
+          677,
+          617
+        ],
+        [
+          106,
+          617
+        ]
+      ],
+      "center_winding": 0
+    },
+    "input_woff2_sha256": "a5838c9ed2cd6eca5a013220932bcddd1825523b85ceb5561393313c754e4639",
+    "input_ttf_sha256": "dee372223b0124472d7bd2076c8ad2e71d137f667785a4a784b1ff26d08145dc",
+    "output_ttf_sha256": "a7167ed74df5c2e9c1de0d44869618995e02adaad59e7ed5f90b1ca1cee0b023",
+    "output_ttf_bytes": 4384,
+    "output_woff2_sha256": "2731146f3f4febfcaee16a2db7e02b4b50dacc4cad305f36c9d522de4469d488",
+    "output_woff2_bytes": 2440,
+    "source_cmap_sha256": "c60c4cb2984315b3aad34e43a2cfd7e2184b4a485a635e29149a4936168d7715",
+    "cmap_sha256": "2bf65af62fd1d19eefbea3b515d40876288558ec854dc575b094e3277fe5c59f",
+    "cmap": {
+      "U+211F": 3,
+      "U+2123": 4,
+      "U+21A9": 5,
+      "U+2610": 6,
+      "U+2720": 2
+    },
+    "glyphs": 7,
+    "source_glyphs": {
+      "U+211F": {
+        "gid": 3596,
+        "advance": 785,
+        "extents": [
+          40,
+          666,
+          740,
+          -938
+        ],
+        "outline_sha256": "37d140b35439ec577c6c99d4d5631e64c9a314a73b60cf5af78513606c04d701",
+        "outline_commands": 90
+      },
+      "U+2123": {
+        "gid": 3633,
+        "advance": 628,
+        "extents": [
+          9,
+          760,
+          639,
+          -1032
+        ],
+        "outline_sha256": "03ccbd0b7521a3fefcec0e266a1f69fc8da77d0223dcd2fefc60447ede320757",
+        "outline_commands": 62
+      },
+      "U+21A9": {
+        "gid": 3773,
+        "advance": 727,
+        "extents": [
+          24,
+          480,
+          666,
+          -411
+        ],
+        "outline_sha256": "16e9bbe44f0dc4f15aabe295a4ba4849248b8937341655e71dfd8724ee5e81ce",
+        "outline_commands": 30
+      },
+      "U+2720": {
+        "gid": 3522,
+        "advance": 798,
+        "extents": [
+          42,
+          690,
+          714,
+          -714
+        ],
+        "outline_sha256": "c1aee81930d6a018718353eb35f9792b182e12da18434032760175502865619f",
+        "outline_commands": 58
+      }
+    },
+    "output_glyphs": {
+      "U+211F": {
+        "gid": 3,
+        "advance": 785,
+        "extents": [
+          40,
+          666,
+          740,
+          -938
+        ],
+        "outline_sha256": "37d140b35439ec577c6c99d4d5631e64c9a314a73b60cf5af78513606c04d701",
+        "outline_commands": 90
+      },
+      "U+2123": {
+        "gid": 4,
+        "advance": 628,
+        "extents": [
+          9,
+          760,
+          639,
+          -1032
+        ],
+        "outline_sha256": "03ccbd0b7521a3fefcec0e266a1f69fc8da77d0223dcd2fefc60447ede320757",
+        "outline_commands": 62
+      },
+      "U+21A9": {
+        "gid": 5,
+        "advance": 727,
+        "extents": [
+          24,
+          480,
+          666,
+          -411
+        ],
+        "outline_sha256": "16e9bbe44f0dc4f15aabe295a4ba4849248b8937341655e71dfd8724ee5e81ce",
+        "outline_commands": 30
+      },
+      "U+2610": {
+        "gid": 6,
+        "advance": 783,
+        "extents": [
+          60,
+          663,
+          663,
+          -663
+        ],
+        "outline_sha256": "30c92e8155b3befae00a5eadd46686a3a5b17d7398f0c54339637c3d2f5f3c23",
+        "outline_commands": 12
+      },
+      "U+2720": {
+        "gid": 2,
+        "advance": 798,
+        "extents": [
+          42,
+          690,
+          714,
+          -714
+        ],
+        "outline_sha256": "c1aee81930d6a018718353eb35f9792b182e12da18434032760175502865619f",
+        "outline_commands": 58
+      }
+    },
+    "preserved_name_ids": [
+      0,
+      5,
+      13,
+      14
+    ],
+    "changed_name_ids": [
+      1,
+      3,
+      4,
+      6
+    ],
+    "added_name_ids": [
+      10
+    ],
+    "source_protected_names": {
+      "0": "aa1e938ab23efa5b52b0b3064af86f773e593a18675bb5032ef29cebd2a78f5f",
+      "5": "9e28ed4e31d0bab4fb48daa22f3fdef1bc96ee1bacb0703d86dc638292674f6f",
+      "13": "566ac55a8c498a839142595eb55afc87c7033c7a930798ac1e19e7c35161a5bd",
+      "14": "c6e0bbc10754a2c39106db5b1059fcd3ebc962a5a7020091f16bce5f19870c7b"
+    },
+    "output_protected_names": {
+      "0": "aa1e938ab23efa5b52b0b3064af86f773e593a18675bb5032ef29cebd2a78f5f",
+      "5": "9e28ed4e31d0bab4fb48daa22f3fdef1bc96ee1bacb0703d86dc638292674f6f",
+      "13": "566ac55a8c498a839142595eb55afc87c7033c7a930798ac1e19e7c35161a5bd",
+      "14": "c6e0bbc10754a2c39106db5b1059fcd3ebc962a5a7020091f16bce5f19870c7b"
+    },
+    "woff2_roundtrip_verified": true,
+    "roundtrip_glyphs": {
+      "U+211F": {
+        "gid": 3,
+        "advance": 785,
+        "extents": [
+          40,
+          666,
+          740,
+          -938
+        ],
+        "outline_sha256": "37d140b35439ec577c6c99d4d5631e64c9a314a73b60cf5af78513606c04d701",
+        "outline_commands": 90
+      },
+      "U+2123": {
+        "gid": 4,
+        "advance": 628,
+        "extents": [
+          9,
+          760,
+          639,
+          -1032
+        ],
+        "outline_sha256": "03ccbd0b7521a3fefcec0e266a1f69fc8da77d0223dcd2fefc60447ede320757",
+        "outline_commands": 62
+      },
+      "U+21A9": {
+        "gid": 5,
+        "advance": 727,
+        "extents": [
+          24,
+          480,
+          666,
+          -411
+        ],
+        "outline_sha256": "16e9bbe44f0dc4f15aabe295a4ba4849248b8937341655e71dfd8724ee5e81ce",
+        "outline_commands": 30
+      },
+      "U+2610": {
+        "gid": 6,
+        "advance": 783,
+        "extents": [
+          60,
+          663,
+          663,
+          -663
+        ],
+        "outline_sha256": "30c92e8155b3befae00a5eadd46686a3a5b17d7398f0c54339637c3d2f5f3c23",
+        "outline_commands": 12
+      },
+      "U+2720": {
+        "gid": 2,
+        "advance": 798,
+        "extents": [
+          42,
+          690,
+          714,
+          -714
+        ],
+        "outline_sha256": "c1aee81930d6a018718353eb35f9792b182e12da18434032760175502865619f",
+        "outline_commands": 58
+      }
+    },
+    "roundtrip_table_policy": "All tables byte-identical except head checksum/required bit11 and WOFF2 glyf/loca serialization; each retained glyph outline, advance and extents is independently identical after decompression.",
+    "harfbuzz_version": "15.0.0",
+    "authoring_tools": {
+      "compress": {
+        "program": "woff2_compress",
+        "sha256": "cc7e0a999038e6a009e62a42e7c672cfd14759c49fe4503cb9ad7b6813ea60ad"
+      },
+      "decompress": {
+        "program": "woff2_decompress",
+        "sha256": "8212b031b71cac802c0e8d2ff263102538a5808280ab2f631eb8cbbd771dcf7b"
+      }
+    },
+    "axes": "all upstream variable axes pinned to defaults; no variable tables retained",
+    "outline_scope": "Four retained Junicode glyph outlines/advances match their upstream default instance; U+2610 matches the separately recorded project geometry. All five survive WOFF2 roundtrip unchanged; no broader shaping/corpus claim.",
+    "two_fresh_passes_identical": true,
+    "authoring_code": {
+      "path": "scripts/_web_print_marks.py",
+      "sha256": "d7cfee5c02a077012e9274b65ce3c203328594b81c09741a266fb7d8e4907f6d",
+      "bytes": 30384,
+      "git_commit": null,
+      "state": "uncommitted authoring implementation at derivation preparation"
+    }
+  },
+  "delivery": {
+    "schema": "triptych-browser-print-marks-delivery/v1",
+    "archives": [
+      {
+        "id": "63e9ca37ed29c542d733c1fe5ea74e78ea3bbd196fc70e5d089d27fd6a1cd0f6",
+        "name": "triptych-web-print-marks-0001-63e9ca37ed29c542.tar",
+        "sha256": "63e9ca37ed29c542d733c1fe5ea74e78ea3bbd196fc70e5d089d27fd6a1cd0f6",
+        "bytes": 10240,
+        "urls": [
+          "https://github.com/spincyc/triptych-artifacts/releases/download/web-print-marks-junicode-2.218-v1/triptych-web-print-marks-0001-63e9ca37ed29c542.tar"
+        ]
+      }
+    ],
+    "artifacts": [
+      {
+        "path": "web-print-marks/2731146f3f4febfcaee16a2db7e02b4b50dacc4cad305f36c9d522de4469d488.woff2",
+        "sha256": "2731146f3f4febfcaee16a2db7e02b4b50dacc4cad305f36c9d522de4469d488",
+        "bytes": 2440,
+        "media_type": "font/woff2",
+        "kind": "font-software",
+        "archive": "63e9ca37ed29c542d733c1fe5ea74e78ea3bbd196fc70e5d089d27fd6a1cd0f6",
+        "member": "web-print-marks/2731146f3f4febfcaee16a2db7e02b4b50dacc4cad305f36c9d522de4469d488.woff2"
+      }
+    ]
+  },
+  "manifest_digest": "cd2f2b8185a973bf90eff2dc545dbdf0842419deeaa70ae0e3d357097733533c"
+}

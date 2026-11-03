@@ -3,6 +3,10 @@ name: Publish GitHub Pages
 on:
   push:
     branches: [main]
+    # Operational status has no browser-product or published-site inputs.
+    paths-ignore:
+      - PROJECT-WORK.md
+      - promised-deliverables.toml
   workflow_dispatch:
 
 permissions:
@@ -77,6 +81,43 @@ jobs:
       - name: Bootstrap optional browser product candidates
         if: steps.browser-cache.outputs.cache-hit != 'true'
         run: python scripts/_browser_cache_bootstrap.py --fetch
+
+      # Presence only schedules cold dependencies; make still authenticates the
+      # complete descriptor, inputs, membership and bytes. The private print
+      # product embeds its SVG/font bytes, so warm builds need neither delivery
+      # archives nor an HTML compiler.
+      - name: Check for cached browser print preparation
+        id: browser-print
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          import sys
+          root = Path.cwd()
+          sys.path.insert(0, str(root / "scripts"))
+          import _browser_products as products
+          manifest = products.load_manifest(root)
+          selected = [product for product in manifest["products"] if product["id"] == "print-editions"]
+          if len(selected) != 1:
+              raise SystemExit("Expected exactly one browser print preparation family")
+          cached = products.cache_directory(root) / selected[0]["key"] / "data"
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write("required=" + str(not cached.is_dir()).lower() + "\n")
+          PY
+
+      - name: Install pinned HTML converter for cold print preparation
+        if: steps.browser-print.outputs.required == 'true'
+        run: |
+          python scripts/_install_web_print_pandoc.py --fetch --bin-dir .scratch/web-print-toolchain/bin
+          printf '%s\n' "$GITHUB_WORKSPACE/.scratch/web-print-toolchain/bin" >> "$GITHUB_PATH"
+
+      - name: Hydrate source-bound assets for cold print preparation
+        if: steps.browser-print.outputs.required == 'true'
+        run: python scripts/_web_print_assets.py hydrate --fetch
+
+      - name: Hydrate source-bound marks for cold print preparation
+        if: steps.browser-print.outputs.required == 'true'
+        run: python scripts/_web_print_marks.py hydrate --fetch
 
       # public-site prepares and verifies the committed product descriptor before
       # source gates and consumers. Missing families reproduce its exact bytes

@@ -40,7 +40,7 @@ class PromisedBrowserProductsTests(unittest.TestCase):
         self.write("scripts/_browser_products.py", "Fixture product declaration.\n")
         (self.root / "release").mkdir()
         self.recipes = [{
-            "id": "demo", "version": 1, "output_prefixes": ["structure/demo"],
+            "id": "demo", "version": 1, "delivery": "browser-data", "output_prefixes": ["structure/demo"],
             "argv": [["offline", "demo"]], "input_trees": ["src/demo"],
             "input_files": [], "exclude_paths": [],
         }]

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 from contextlib import contextmanager, nullcontext
 import hashlib
 import html
@@ -19,6 +20,7 @@ import sys
 import tempfile
 import tomllib
 import unicodedata
+import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 from collections.abc import Callable, Iterable
 from datetime import date, datetime, timedelta, timezone
@@ -1596,13 +1598,20 @@ def projected_document_catalogue(
     if relative != (SITE_DATA_ROOT / "structure/documents/corpus.json").as_posix():
         return None
     corpus = load_json_file(source, relative)
+    complete_browser_print = web_print_declared()
     for work in corpus.get("works", []):
         for edition in work.get("editions", []):
             for issue in [edition, *edition.get("also", [])]:
                 canonical = issue.get("pdf")
+                if canonical is None and isinstance(issue.get("id"), str):
+                    canonical = "pdf/" + issue["id"] + ".pdf"
                 if canonical in aliases:
                     issue.pop("pdf", None)
-                    issue.setdefault("targets", {})["print"] = aliases[canonical].replace("web/", "print/", 1)
+                    target = aliases[canonical].replace("web/", "print/", 1)
+                    if complete_browser_print:
+                        issue["print_mode"] = "browser"
+                        target += "?print=1"
+                    issue.setdefault("targets", {})["print"] = target
                     issue.setdefault("available", {})["print"] = True
     return json.dumps(corpus, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
 
@@ -2746,6 +2755,16 @@ def prepare_browser_products() -> None:
         raise ReleaseError(f"browser products: {exc}") from exc
 
 
+def browser_delivery_files(products) -> dict[str, Path]:
+    """Copy only products whose verified recipe declares public data delivery."""
+    delivery = products.delivery_by_path
+    if (set(delivery) != set(products.files)
+            or set(delivery.values()) - {"browser-data", "print-preparation"}):
+        raise ReleaseError("browser products have incomplete or unknown delivery ownership")
+    return {relative: path for relative, path in products.files.items()
+            if delivery[relative] == "browser-data"}
+
+
 def browser_product_source_paths(products, manifest: dict) -> set[str]:
     """Bind canonical inputs while the descriptor binds derived output bytes.
 
@@ -2859,7 +2878,7 @@ def _scan_web_data_files() -> dict[str, Path]:
     files.update(browser_font_files())
     products = held_browser_products()
     data_root = browser_data_root()
-    inputs = (sorted(products.files.items()) if products is not None else
+    inputs = (sorted(browser_delivery_files(products).items()) if products is not None else
               [(path.relative_to(data_root).as_posix(), path) for path in sorted(data_root.rglob("*"))])
     for relative, path in inputs:
         if path.is_dir() and not path.is_symlink():
@@ -3012,6 +3031,7 @@ def site_source_paths(manifest: dict | None = None) -> set[str]:
         source_inputs.add(PRINT_ARCHIVE_RELATIVE.as_posix())
         if (ROOT / PRINT_ARCHIVE_PAGES_RELATIVE).exists():
             source_inputs.add(PRINT_ARCHIVE_PAGES_RELATIVE.as_posix())
+    source_inputs.update(web_print_catalog()["source_paths"])
     # Bind canonical source/schema and public projections, never optional
     # generated PDF bytes. External evidence hashes remain in their records.
     return (
@@ -3997,6 +4017,9 @@ def expected_artifact_files(
         expected.update(card["destination"] for card in pictorial_gallery_data())
     expected.update(included_document_pages(set(included)).values())
     expected.update(source_print_pages())
+    print_catalog = web_print_catalog()
+    expected.update(print_catalog["pages"])
+    expected.update(print_catalog["assets"])
     for provider, leaf in included:
         expected.add(publication_reader_path(provider, leaf))
         expected.add(publication_print_path(provider, leaf))
@@ -4725,6 +4748,13 @@ def render_page(
     if catalogue:
         content = mark_catalogue_tables(content)
     reject_unrendered_code_fences(source_relative, content)
+    print_head = print_body = ""
+    inventory = web_print_catalog()
+    if output_relative in inventory["reader_actions"]:
+        from _web_print import decorate_reader
+        content, print_head, print_body = decorate_reader(
+            content, output_relative, inventory, relative_link=relative_link,
+        )
     return wrap_in_layout(
         source_relative,
         output_relative,
@@ -4734,10 +4764,11 @@ def render_page(
         content,
         preview,
         authorization,
+        head_extra=print_head,
         body_extra=(
             '<script src="' + relative_link(output_relative, "shared/catalogue-navigation.js")
             + '"></script>' if catalogue else ""
-        ),
+        ) + print_body,
     )
 
 
@@ -5035,11 +5066,413 @@ def render_source_page(
     )
 
 
+def web_print_declared() -> bool:
+    """A missing print preparation never means that the corpus is empty."""
+    if (ROOT / "scripts/_web_print.py").is_file():
+        return True
+    if browser_products_declared():
+        descriptor = load_json_file(ROOT / BROWSER_PRODUCTS_RELATIVE, "browser product declaration")
+        return any(product.get("id") == "print-editions"
+                   for product in descriptor.get("products", []) if isinstance(product, dict))
+    return False
+
+
+def print_relative(value: str) -> str:
+    if (not isinstance(value, str) or not value or "\\" in value or "\0" in value
+            or value.startswith("/") or any(part in {"", ".", ".."} for part in value.split("/"))
+            or any(part in {"src", "guidance", "build", ".scratch", ".git", "__pycache__"}
+                   for part in value.split("/"))):
+        raise ReleaseError(f"unsafe print artifact route: {value!r}")
+    return value
+
+
+def print_unit_inventory(values: list[str]) -> dict:
+    if not isinstance(values, list) or any(not isinstance(value, str) or not value for value in values) or len(set(values)) != len(values):
+        raise ReleaseError("print inventory has invalid or duplicate unit identities")
+    return {"count": len(values), "sha256": hashlib.sha256(
+        json.dumps(values, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()}
+
+
+def print_canonical_source(relative: str, label: str) -> Path:
+    if not isinstance(relative, str) or "\\" in relative or "\0" in relative or any(part in {"", ".", ".."} for part in relative.split("/")):
+        raise ReleaseError(f"unsafe {label}: {relative!r}")
+    path = safe_relative_path(relative, label)
+    current = ROOT
+    for component in PurePosixPath(relative).parts:
+        current /= component
+        if current.is_symlink():
+            raise ReleaseError(f"{label} has a symlink: {relative}")
+    if not path.is_file():
+        raise ReleaseError(f"missing {label}: {relative}")
+    return path
+
+
+def validate_print_coverage(identifier: str, product: dict) -> None:
+    if (product.get("schema") != "triptych-web-print-document/v1"
+            or product.get("id") != identifier or product.get("output_id") != identifier
+            or product.get("print_type") not in {"flow", "proper", "curriculum", "guide", "cards", "plates", "bible", "source-volume", "server-cards", "server-guide"}
+            or any(not isinstance(product.get(field), str) or not SHA256_RE.fullmatch(product[field])
+                   for field in ("source_digest", "selection_digest"))):
+        raise ReleaseError(f"{identifier}: invalid exact print source/selection identity")
+    proof = product.get("coverage_result", {})
+    if (not isinstance(proof, dict) or proof.get("status") != "pass"
+            or proof.get("output_id") != identifier
+            or any(proof.get(field) != product[field] for field in ("source_digest", "selection_digest"))):
+        raise ReleaseError(f"{identifier}: print coverage does not bind this exact source selection")
+    units = product.get("expected_units")
+    if units is not None:
+        if (not isinstance(units, list) or not units
+                or any(not isinstance(unit, dict) or not unit.get("id")
+                       or not unit.get("source") or not unit.get("occurrence") for unit in units)
+                or proof.get("expected_units") != units):
+            raise ReleaseError(f"{identifier}: invalid canonical print unit ledger")
+        expected = print_unit_inventory([unit["id"] for unit in units])
+        parts = product.get("parts", [])
+        if parts and all(isinstance(part.get("units"), list) for part in parts):
+            if [unit for part in parts for unit in part["units"]] != [unit["id"] for unit in units]:
+                raise ReleaseError(f"{identifier}: print parts omit, repeat or reorder source units")
+    else:
+        expected = product.get("unit_inventory")
+        if (not isinstance(expected, dict) or set(expected) != {"count", "sha256"}
+                or type(expected["count"]) is not int or expected["count"] <= 0
+                or not isinstance(expected["sha256"], str) or not SHA256_RE.fullmatch(expected["sha256"])
+                or proof.get("unit_inventory") != expected):
+            raise ReleaseError(f"{identifier}: invalid compact canonical print inventory")
+
+
+def validate_static_print_svg(body: bytes) -> None:
+    """Static diagrams may embed PNG bytes and local definitions only."""
+    try:
+        text = body.decode("utf-8")
+        if re.search(r"<!DOCTYPE|<!ENTITY|<\?(?!xml\s)", text, re.I):
+            raise ValueError("active SVG declaration")
+        root = ET.fromstring(body)
+        namespace = "{http://www.w3.org/2000/svg}"
+        allowed = {"svg", "g", "defs", "path", "rect", "circle", "ellipse", "line", "polyline",
+                   "polygon", "text", "tspan", "use", "image", "clipPath", "mask", "linearGradient",
+                   "radialGradient", "stop", "title", "desc", "symbol", "pattern"}
+        if root.tag != namespace + "svg":
+            raise ValueError("missing namespaced SVG root")
+        for node in root.iter():
+            if not node.tag.startswith(namespace) or node.tag[len(namespace):] not in allowed:
+                raise ValueError("active or unsupported SVG element")
+            for qualified, value in node.attrib.items():
+                name = qualified.rsplit("}", 1)[-1]
+                if (qualified == "{http://www.w3.org/XML/1998/namespace}base" or name.lower().startswith("on") or "\\" in value
+                        or name == "style" and ("\\" in value or "@" in value)
+                        or re.search(r"@import|@font-face|expression\s*\(|javascript:|behavior\s*:", value, re.I)):
+                    raise ValueError("active SVG attribute or style")
+                if any(not target.strip(" \t\r\n'\"").startswith("#") for target in re.findall(r"url\(([^)]*)\)", value, re.I)):
+                    raise ValueError("external SVG style resource")
+                if name == "href" and not value.startswith("#"):
+                    if node.tag != namespace + "image" or not value.startswith("data:image/png;base64,"):
+                        raise ValueError("external SVG resource")
+                    if not base64.b64decode(value.split(",", 1)[1], validate=True).startswith(b"\x89PNG\r\n\x1a\n"):
+                        raise ValueError("embedded SVG image is not PNG")
+    except (ValueError, ET.ParseError) as exc:
+        raise ReleaseError(f"unsafe print diagram: {exc}") from exc
+
+
+def validate_print_part_inventory(inventory: dict, sources: dict) -> None:
+    """Measure canonical emitted parts independently of cached descriptor pins."""
+    from _web_print_common import part_statistics
+    source_fragments = {}
+    for identifier, product in inventory["products"].items():
+        parts = product.get("parts")
+        if not isinstance(parts, list) or not parts or "unit_inventory" not in product:
+            raise ReleaseError(f"{identifier}: missing compact complete print parts")
+        root = product["root_route"]
+        part_ids, all_units = set(), []
+        for part in parts:
+            part_id = part.get("id") if isinstance(part, dict) else None
+            if (not isinstance(part_id, str) or not part_id or part_id in part_ids
+                    or ("href" in part) == ("selector" in part)):
+                raise ReleaseError(f"{identifier}: ambiguous print part identity or selection")
+            part_ids.add(part_id)
+            if not isinstance(part.get("counts"), dict):
+                raise ReleaseError(f"{identifier}: print part has no typed semantic counts")
+            if "href" in part:
+                if not isinstance(part["href"], str):
+                    raise ReleaseError(f"{identifier}: invalid print part href")
+                uri = urlsplit(part["href"])
+                if uri.scheme or uri.netloc or not uri.path or uri.path.startswith("/") or uri.query or uri.fragment:
+                    raise ReleaseError(f"{identifier}: print part is not a portable local page")
+                route = print_relative(posixpath.normpath(posixpath.join(PurePosixPath(root).parent.as_posix(), unquote(uri.path))))
+            else:
+                if part["selector"] != '[data-print-part="' + part_id + '"]':
+                    raise ReleaseError(f"{identifier}: inline print selector does not bind its exact part")
+                route = root
+            page = inventory["pages"].get(route)
+            if page is None and route in sources:
+                if route not in source_fragments:
+                    from _web_print import decorate_source_page
+                    source_fragments[route] = decorate_source_page(route, sources[route], inventory)
+                page = source_fragments[route]
+            if not isinstance(page, dict) or page.get("output_id", identifier) != identifier:
+                raise ReleaseError(f"{identifier}: print part has no matching canonical page: {route}")
+            owner = sources.get(root, {}).get("print_product")
+            if isinstance(owner, dict) and owner.get("mode") == "inline":
+                from _print_catalog import _check_print_envelope
+                try:
+                    _check_print_envelope(owner["envelope"], page["html"], part_id=part_id)
+                except (ValueError, KeyError) as exc:
+                    raise ReleaseError(f"{identifier}: emitted source print envelope differs from its current owner: {exc}") from exc
+            try:
+                measured = part_statistics(page["html"], part_id=part_id, selectors=tuple(part.get("counts", {})))
+            except (ValueError, KeyError) as exc:
+                raise ReleaseError(f"{identifier}: invalid print part {part_id}: {exc}") from exc
+            for field in ("text_sha256", "structure_sha256", "counts"):
+                if measured[field] != part.get(field):
+                    raise ReleaseError(f"{identifier}: print part {part_id} differs from its {field} pin")
+            for field in ("expected_ids", "units"):
+                if print_unit_inventory(measured[field]) != part.get(field):
+                    raise ReleaseError(f"{identifier}: print part {part_id} differs from its ordered {field} inventory")
+            all_units.extend(measured["units"])
+        if print_unit_inventory(all_units) != product["unit_inventory"]:
+            raise ReleaseError(f"{identifier}: emitted print parts omit, repeat or reorder canonical source units")
+
+
+def validate_web_print_catalog(value: dict, included: set[tuple[str, str]], sources: dict) -> dict:
+    """Close public admission independently of cached product self-claims."""
+    required = {"products", "pages", "assets", "reader_actions", "source_paths"}
+    if not isinstance(value, dict) or set(value) != required or any(not isinstance(value[key], dict) for key in required - {"source_paths"}):
+        raise ReleaseError("invalid full browser print catalog shape")
+    provider_ids = {"publication:" + provider + "/" + leaf for provider, leaf in included}
+    allowed = set(provider_ids)
+    source_owners = {}
+    source_proofs = {}
+    for relative, page in sources.items():
+        metadata = page.get("print_product")
+        if isinstance(metadata, dict):
+            identifier = metadata.get("output_id", metadata.get("id"))
+            if isinstance(identifier, str):
+                if metadata.get("mode") not in {"inline", "legacy-volume"}:
+                    raise ReleaseError(f"{relative}: invalid current source print mode")
+                allowed.add(identifier)
+                source_owners[relative] = identifier
+                source_proofs[identifier] = metadata
+    if web_data_manifest_path().is_file():
+        from _bible_editions import EDITIONS
+        allowed.update("bible:" + identifier for identifier in offered_bible_ids()
+                       if identifier in EDITIONS and EDITIONS[identifier].get("publishable") is True)
+    inline_source_ids = {identifier for identifier, proof in source_proofs.items() if proof["mode"] == "inline"}
+    missing = (provider_ids | inline_source_ids) - value["products"].keys()
+    if missing:
+        raise ReleaseError("missing complete provider or inline source print products: " + ", ".join(sorted(missing)))
+    for identifier, product in value["products"].items():
+        if identifier not in allowed or not isinstance(product, dict):
+            raise ReleaseError(f"held, withdrawn, unoffered or unknown print product: {identifier}")
+        validate_print_coverage(identifier, product)
+        if identifier in source_proofs:
+            owner_proof = source_proofs[identifier]
+            if (product.get("print_type") != "source-volume"
+                    or any(product.get(field) != owner_proof.get(field)
+                           for field in ("source_id", "source_digest", "selection_digest"))
+                    or product.get("unit_inventory") != print_unit_inventory(
+                        [unit["id"] for unit in owner_proof.get("expected_units", [])])):
+                raise ReleaseError(f"{identifier}: print descriptor differs from its current source-owner proof")
+        root = product.get("root_route")
+        print_relative(root)
+        expected_root = ("print/" + identifier.removeprefix("publication:") + ".html"
+                         if identifier.startswith("publication:") else
+                         "print/bibles/" + identifier.removeprefix("bible:") + ".html"
+                         if identifier.startswith("bible:") else next(
+                             (route for route, owner in source_owners.items() if owner == identifier), None))
+        if root != expected_root:
+            raise ReleaseError(f"{identifier}: print root does not match its canonical owner")
+        if root not in value["pages"] and root not in sources:
+            raise ReleaseError(f"{identifier}: missing complete print root page")
+    reviewed = set(included_document_pages(included).values())
+    source_routes = set(sources)
+    for relative, page in value["pages"].items():
+        print_relative(relative)
+        if (not relative.endswith(".html") or not isinstance(page, dict)
+                or page.get("output_id") not in value["products"]
+                or not isinstance(page.get("title"), str) or not page["title"].strip()
+                or not isinstance(page.get("html"), str) or re.search(r"<\s*(?:html|head|body)\b", page["html"], re.I)):
+            raise ReleaseError(f"invalid complete print page fragment: {relative}")
+        owner = page["output_id"]
+        root = value["products"][owner]["root_route"]
+        alias = "web/" + owner.removeprefix("publication:") + ".html"
+        if (relative in reviewed or not (relative == root or relative.startswith(root.removesuffix(".html") + "/")
+                or owner.startswith("publication:") and relative == alias
+                or source_owners.get(relative) == owner)):
+            raise ReleaseError(f"print page collides with an existing reader surface: {relative}")
+    inputs = value["source_paths"]
+    if not isinstance(inputs, (list, set, tuple)):
+        raise ReleaseError("invalid canonical print input inventory")
+    for relative in inputs:
+        source = print_canonical_source(relative, "canonical print input")
+        if relative.startswith(("build/", ".scratch/", "pdf/", "src/web/data/")) or source.suffix.lower() == ".pdf" or not source.is_file():
+            raise ReleaseError(f"generated or missing canonical print input: {relative}")
+    for relative, asset in value["assets"].items():
+        print_relative(relative)
+        if (not isinstance(asset, dict) or ("path" in asset) == ("body" in asset)
+                or not isinstance(asset.get("owners"), (list, set, tuple)) or not asset["owners"]
+                or set(asset["owners"]) - value["products"].keys()
+                or type(asset.get("bytes")) is not int or asset["bytes"] <= 0
+                or not isinstance(asset.get("sha256"), str) or not SHA256_RE.fullmatch(asset["sha256"])):
+            raise ReleaseError(f"invalid exact print asset declaration: {relative}")
+        if "body" in asset:
+            body = asset["body"]
+            if type(body) is not bytes:
+                raise ReleaseError(f"print asset requires immutable bytes: {relative}")
+        else:
+            path = Path(asset["path"])
+            if not path.is_absolute():
+                path = ROOT / path
+            try:
+                canonical = path.relative_to(ROOT).as_posix()
+            except ValueError as exc:
+                raise ReleaseError(f"print asset is outside canonical repository inputs: {relative}") from exc
+            path = print_canonical_source(canonical, "print asset source")
+            if canonical.startswith(("build/", ".scratch/")) or not path.is_file():
+                raise ReleaseError(f"print asset is not a held canonical file: {relative}")
+            body = path.read_bytes()
+        if len(body) != asset["bytes"] or hashlib.sha256(body).hexdigest() != asset["sha256"]:
+            raise ReleaseError(f"print asset exact bytes differ: {relative}")
+        suffix = PurePosixPath(relative).suffix
+        if suffix == ".svg":
+            if asset.get("role") != "diagram" or asset.get("mime") != "image/svg+xml":
+                raise ReleaseError(f"print SVG lacks typed diagram disposition: {relative}")
+            validate_static_print_svg(body)
+        elif suffix == ".woff2":
+            if (asset.get("role") != "font" or asset.get("mime") != "font/woff2" or not body.startswith(b"wOF2")
+                    or not asset.get("family") or asset.get("license") not in value["assets"]):
+                raise ReleaseError(f"print font lacks bound family, licence or WOFF2 bytes: {relative}")
+        elif suffix not in {".js", ".css", ".png", ".txt"}:
+            raise ReleaseError(f"unsupported typed print asset: {relative}")
+    if value["products"]:
+        stylesheet = value["assets"].get("shared/web-print.css", {})
+        if any(product.get("style_sha256") != stylesheet.get("sha256") or not stylesheet
+               for product in value["products"].values()):
+            raise ReleaseError("print products do not bind the exact common stylesheet bytes")
+    readers = {publication_reader_path(provider, leaf) for provider, leaf in included} | source_routes
+    for relative, action in value["reader_actions"].items():
+        owner = ("publication:" + relative.removeprefix("web/").removesuffix(".html")
+                 if relative.startswith("web/") else source_owners.get(relative))
+        legacy = isinstance(action, dict) and action.get("mode") == "legacy-volume"
+        if (relative not in readers or not isinstance(action, dict) or action.get("output_id") != owner
+                or action.get("output_id") not in value["products"] and not legacy
+                or action.get("mode") not in {"navigate", "inline", "legacy-volume"}
+                or legacy and sources.get(relative, {}).get("print_product", {}).get("mode") != "legacy-volume"
+                or action.get("mode") == "navigate" and (
+                    action.get("target") not in value["pages"]
+                    or value["pages"][action["target"]]["output_id"] != owner)):
+            raise ReleaseError(f"invalid complete-print reader relation: {relative}")
+    expected_actions = {
+        publication_reader_path(provider, leaf): {
+            "output_id": "publication:" + provider + "/" + leaf,
+            "mode": "navigate", "target": publication_print_path(provider, leaf),
+        } for provider, leaf in included
+    }
+    expected_actions.update({
+        relative: {"output_id": identifier, "mode": source_proofs[identifier]["mode"]}
+        for relative, identifier in source_owners.items()
+    })
+    for relative, expected in expected_actions.items():
+        action = value["reader_actions"].get(relative)
+        if not isinstance(action, dict) or any(action.get(field) != expected_value for field, expected_value in expected.items()):
+            raise ReleaseError(f"missing or mismatched complete-print reader action: {relative}")
+    validate_bible_print_offers(value)
+    validate_print_part_inventory(value, sources)
+    return value
+
+
+def validate_bible_print_offers(inventory: dict) -> None:
+    if not web_data_manifest_path().is_file():
+        return
+    from _bible_editions import EDITIONS
+    rows = load_json_file(web_data_manifest_path(), "offered Bible print editions")["bibles"]
+    for row in rows:
+        identifier = row["id"]
+        edition = EDITIONS.get(identifier)
+        offer = row.get("print")
+        if (not edition or edition.get("publishable") is not True or row.get("source_id") != edition["source_id"]
+                or offer != {"id": "bible:" + identifier, "kind": "bible", "format": "browser",
+                             "href": f"print/bibles/{identifier}.html?print=1"}):
+            raise ReleaseError(f"{identifier}: Bible print offer is not the canonical publishable edition")
+        product = inventory["products"].get(offer["id"], {})
+        route = f"print/bibles/{identifier}.html"
+        if (product.get("print_type") != "bible" or product.get("source_id") != edition["source_id"]
+                or product.get("root_route") != route or route not in inventory["pages"]
+                or inventory["pages"][route].get("output_id") != offer["id"]):
+            raise ReleaseError(f"{identifier}: advertised complete Bible has no matching full print product")
+        validate_print_coverage(offer["id"], product)
+
+
+def web_print_catalog() -> dict:
+    """Consume current-key prepared products, never convert or acquire sources."""
+    empty = {"products": {}, "pages": {}, "assets": {}, "reader_actions": {}, "source_paths": []}
+    if not web_print_declared():
+        return empty
+    if not _HELD_SOURCE_INVENTORIES:
+        with held_repository_inputs():
+            return web_print_catalog()
+    def derive():
+        try:
+            from _web_print import catalog
+            manifest = load_manifest()
+            included = set(included_publications(publication_map(manifest), False))
+            sources = source_print_pages()
+            assets = {
+                card["source"].relative_to(ROOT).as_posix(): card["destination"]
+                for card in pictorial_gallery_data()
+            } if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file() else {}
+            return validate_web_print_catalog(catalog(
+                ROOT, tuple(sorted(included)), browser_data_root=browser_data_root(), source_pages=sources,
+                site_routes={**PAGE_MAP, **included_document_pages(included)},
+                canonical_asset_routes=assets,
+            ), included, sources)
+        except (ImportError, ValueError, OSError) as exc:
+            if isinstance(exc, ReleaseError):
+                raise
+            raise ReleaseError(f"full browser print catalog: {exc}") from exc
+    return held_source_inventory("web-print-catalog", derive)
+
+
+def declared_print_binary_asset(relative: str) -> bool:
+    asset = web_print_catalog()["assets"].get(relative)
+    return bool(asset and ((relative.endswith(".svg") and asset.get("role") == "diagram" and asset.get("mime") == "image/svg+xml")
+                           or (relative.endswith(".woff2") and asset.get("role") == "font" and asset.get("mime") == "font/woff2")))
+
+
+def render_web_print_page(relative: str, page: dict, preview: bool, authorization: dict) -> str:
+    rendered = wrap_in_layout(
+        relative, relative, page_classes(relative, relative), page["title"],
+        breadcrumb(relative, relative), page["html"], preview, authorization,
+        head_extra=page.get("head_extra", ""), body_extra=page.get("body_extra", ""),
+    )
+    if len(rendered.encode("utf-8")) > PREVIEW_DOCUMENT_LIMIT:
+        raise ReleaseError(f"{relative}: complete print HTML exceeds the existing 1 MB budget")
+    return rendered
+
+
+def verify_web_print_files(output: Path, preview: bool, authorization: dict) -> list[str]:
+    errors = []
+    inventory = web_print_catalog()
+    for relative, page in inventory["pages"].items():
+        path = output / relative
+        if path.is_file() and path.read_text(encoding="utf-8") != render_web_print_page(relative, page, preview, authorization):
+            errors.append(f"{relative}: print page does not match its exact canonical selection")
+    for relative, asset in inventory["assets"].items():
+        path = output / relative
+        if path.is_file() and (path.stat().st_size != asset["bytes"] or sha256(path) != asset["sha256"]):
+            errors.append(f"{relative}: print asset does not match its exact declared bytes")
+    return errors
+
+
 def render_publication_print_page(
     provider: str, leaf: str, output_relative: str, preview: bool,
     authorization: dict,
 ) -> str:
     """A truthful print action for an output, including fixed-layout works."""
+    if web_print_declared():
+        page = web_print_catalog()["pages"].get(output_relative)
+        if page is None:
+            raise ReleaseError(f"{provider}/{leaf}: missing complete browser print product: {output_relative}")
+        return render_web_print_page(output_relative, page, preview, authorization)
     from _print_document import publication_recipe
     recipe = held_source_inventory(
         f"print-recipe:{provider}/{leaf}",
@@ -5092,10 +5525,13 @@ def render_source_print_page(
     title = page.get("title")
     if not isinstance(title, str) or not title.strip():
         raise ReleaseError(f"source reader has no title: {relative}")
-    return wrap_in_layout(
-        relative, relative, page_classes(relative, relative), title,
-        breadcrumb(relative, relative), page["html"], preview, authorization,
-    )
+    if web_print_declared():
+        inventory = web_print_catalog()
+        if relative in inventory["pages"]:
+            return render_web_print_page(relative, inventory["pages"][relative], preview, authorization)
+        from _web_print import decorate_source_page
+        page = decorate_source_page(relative, page, inventory)
+    return render_web_print_page(relative, page, preview, authorization)
 
 
 def render_pictorial_gallery(preview: bool, authorization: dict) -> str:
@@ -5548,6 +5984,7 @@ def _artifact_topology_errors(
                 path.name not in {".nojekyll", "SHA256SUMS", "robots.txt", "_headers"}
                 and path.suffix not in TEXT_SUFFIXES | {".pdf", ".png"}
                 and relative not in WEB_BROWSER_FONT_ASSETS
+                and not declared_print_binary_asset(relative)
             ):
                 errors.append(f"artifact contains an unexpected file type: {relative}")
         elif not stat.S_ISDIR(entry.st_mode):
@@ -5766,6 +6203,7 @@ def _verify_snapshot_contents(
                 path.name not in {".nojekyll", "SHA256SUMS", "robots.txt", "_headers"}
                 and path.suffix not in TEXT_SUFFIXES | {".png"}
                 and relative not in WEB_BROWSER_FONT_ASSETS
+                and not declared_print_binary_asset(relative)
             ):
                 errors.append(f"artifact contains an unexpected file type: {relative}")
         elif not path.is_dir():
@@ -5837,6 +6275,7 @@ def _verify_snapshot_contents(
         if path.is_file() and path.read_text(encoding="utf-8") != render_source_print_page(relative, page, preview, expected_authorization):
             errors.append(f"{relative}: source reader does not match its canonical text")
 
+    errors.extend(verify_web_print_files(output, preview, expected_authorization))
     for output_relative, source in sorted(web_browser_pages().items()):
         html_path = output / output_relative
         if html_path.is_file() and html_path.read_text(
@@ -5919,7 +6358,7 @@ def _verify_snapshot_contents(
         ("BEGIN PRIVATE KEY", re.compile(r"BEGIN PRIVATE KEY"), "private key marker"),
     )
     for path in output.rglob("*"):
-        if not path.is_file() or path.suffix not in TEXT_SUFFIXES and path.name not in {"robots.txt", "SHA256SUMS", "_headers"}:
+        if not path.is_file() or path.suffix not in TEXT_SUFFIXES | {".svg"} and path.name not in {"robots.txt", "SHA256SUMS", "_headers"}:
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         relative = path.relative_to(output).as_posix()
@@ -6335,6 +6774,11 @@ class StagingWriter:
                 iter(lambda: stream.read(1024 * 1024), b""),
             )
 
+    def bytes(self, relative: str, value: bytes) -> None:
+        if type(value) is not bytes:
+            raise ReleaseError("print asset body must be immutable bytes")
+        self._write(relative, (value,))
+
     def text(self, relative: str, value: str) -> None:
         self._write(relative, (value.encode("utf-8"),))
 
@@ -6471,6 +6915,23 @@ def _build_site_contents(
                 )
     for relative, page in source_print_pages().items():
         writer.text(relative, render_source_print_page(relative, page, preview, authorization))
+    print_inventory = web_print_catalog()
+    existing_routes = set(rendered_pages.values()) | set(source_print_pages())
+    existing_routes.update(publication_reader_path(provider, leaf) for provider, leaf in included)
+    existing_routes.update(publication_print_path(provider, leaf) for provider, leaf in included)
+    for relative, page in print_inventory["pages"].items():
+        if relative not in existing_routes:
+            writer.text(relative, render_web_print_page(relative, page, preview, authorization))
+    for relative, asset in print_inventory["assets"].items():
+        if relative not in writer.files:
+            if "body" in asset:
+                writer.bytes(relative, asset["body"])
+            else:
+                source = Path(asset["path"])
+                writer.copy(source if source.is_absolute() else ROOT / source, relative)
+        digest, status = writer.files[relative]
+        if digest != asset["sha256"] or status.st_size != asset["bytes"]:
+            raise ReleaseError(f"{relative}: written print asset differs from its exact byte pins")
     if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
         writer.text(
             PICTORIAL_GALLERY_OUTPUT,

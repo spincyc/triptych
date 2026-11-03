@@ -1,10 +1,14 @@
-# Web data: fragments, structure, and why nothing is pre-rendered
+# Web data: fragments, structure, and prepared print editions
 
 The published pages are assemblers. The repository carries structured data; a
 page fetches the structure it needs, fetches only the fragments that structure
 names, and puts them together in the browser. Canonical TSV, TOML, YAML and TeX
 remain tracked sources; the generated browser products formerly under
 `src/web/data/` are reproducible outputs outside Git.
+
+Complete browser-print editions are a separate bounded projection of admitted
+outputs, described [below](#complete-browser-print-products). They do not
+precompute every possible reader selection or replace canonical sources.
 
 ## Generated products and canonical inputs
 
@@ -74,8 +78,8 @@ Those fragments retain their existing owner and checks. It also does not move
 source artifacts, reinterpret their rights, or turn generated JSON into a new
 canonical authoring format.
 
-Pre-rendering is the thing to avoid, and it is worth being explicit about why.
-A propers browser offers a mass and a translation. Rendering those combinations
+Do not pre-render every possible reader state. A propers browser offers a mass
+and a translation. Rendering those combinations
 ahead of time is every mass times however many translations — 1,248 mass pages
 across the three calendars as this is written, and the figure only grows — and
 adding a
@@ -823,10 +827,10 @@ which `guidance/editorial.md` forbids in an apparatus a reader cannot argue with
 
 ## Assembling the site
 
-`scripts/_browser_product_recipes.py` owns the twelve offline producer families
+`scripts/_browser_product_recipes.py` owns the thirteen offline producer families
 and their exact logical output prefixes. The families are `bibles`, `encyclicals`, `act-history`,
 `calendar`, `catena`, `documents`, `ordinary`, `paragraphs`, `propers`, `readings`,
-`rubrics`, and `sources`. Each output path has one producer. A new directory or
+`rubrics`, `sources`, and `print-editions`. Each output path has one producer. A new directory or
 family requires a recorded recipe and complete descriptor membership; it cannot
 enter publication merely because a directory walk finds it.
 
@@ -858,6 +862,60 @@ For isolated producer work, use an unsealed destination, for example
 not a published cache entry. Public assembly uses the verified products and
 preserves the same logical data routes; it does not copy an arbitrary working
 tree or fetch binary evidence to fill a miss.
+
+### Complete browser-print products
+
+The thirteenth family, `print-editions`, owns private JSON under
+`print/preparation/` with delivery `print-preparation`. The other twelve use
+`browser-data` delivery. The private family prepares all 281 admitted provider
+outputs and seven Bibles; it is not copied into public `data/`. Existing
+source-reader owners add 350 papal selections and six reading-plan roots during
+assembly, for 644 print roots. Two large reading-plan roots retain their existing
+complete-volume controller. The reader-facing choices are documented in
+[printing](../docs/printing.md).
+
+Cold preparation runs [`_web_print_products.py`](../scripts/_web_print_products.py)
+against canonical sources and exact release dispositions. Its adapters preserve
+the selected output's full body and declared apparatus, rights, card faces,
+answers, and source-owned ordering. Independent source-coverage checks refuse
+missing, repeated, or reordered units; converted-output statistics alone cannot
+prove completeness. [`_web_print_prepare.py`](../scripts/_web_print_prepare.py)
+stores bounded HTML parts, compact ordered-unit proofs, and exact asset bytes
+inside JSON. Detailed source ledgers remain private audit output.
+
+A genuine cold miss needs Pandoc 3.11 pinned by
+[`browser-print-toolchain.toml`](../src/common/browser-print-toolchain.toml),
+plus source-bound SVG assets and eight Libertinus WOFF2 faces verified through
+the external asset registry and delivery index. The separately pinned
+`Triptych Source Marks` supplement supplies five source characters absent from
+those faces; its metadata and delivery are in `src/common/browser-print-marks.json`.
+Explicit CI bootstrap may fetch
+those pinned dependencies; preparation itself uses their verified local bytes.
+Neither cold preparation nor normal Pages assembly runs TeX or builds PDFs.
+Warm products already contain the required asset bytes and need no converter or
+asset-archive fetch.
+
+Hot assembly in [`_web_print.py`](../scripts/_web_print.py) consumes the held,
+verified preparation JSON, checks exact current admitted membership, projects
+route links without changing words or unit order, and attaches the current
+[`web-print.css`](../src/web/browser/shared/web-print.css) and
+[`web-print.js`](../src/web/browser/shared/web-print.js). These publish as
+`shared/web-print.css` and `shared/web-print.js`. Prepared source products carry
+no final stylesheet; a style change binds new current CSS without rebuilding a
+PDF corpus or rerunning source conversion. Source-volume assembly retains its
+own complete owner proofs and source extents.
+
+Public descriptors bind the selected source and output, finite print-type
+markup, text and structure hashes, semantic counts, ordered parts and units,
+illustrations, fonts, and exact stylesheet. The browser fetches and verifies
+every part and asset before opening Print, rejects hidden, clipped, changed,
+or incomplete content, and guards native Print against partial readers.
+The 141 reviewed web readers keep their reading layout and navigate their
+Print action to the complete selected print route. Executable type and coverage
+contracts live in [document schemas](document-schemas.md#browser-print-projections).
+They confer neither editorial approval nor certification of a physical printer's
+pagination or duplex alignment; optional native recipes retain their separate
+profile and exact-artifact review gates.
 
 The act-history catalogue keeps a stage's legacy single `text_binding`,
 `text_projection_path` and `text_binding_sha256` unchanged. A stage with authored

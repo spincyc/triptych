@@ -77,6 +77,24 @@ window.Triptych = (function () {
    * --------------------------------------------------------------------- */
 
   const PARAMS = new URLSearchParams(window.location.search);
+  // Product links belong to the served site, independently of ?data= fixtures.
+  // Capture while this shared script is executing, before currentScript clears.
+  const SHARED_SCRIPT_SOURCE = typeof document !== 'undefined' &&
+    document.currentScript ? document.currentScript.src : null;
+
+  function sitePath(path) {
+    const relative = typeof path === 'string' ? path.split(/[?#]/)[0] : '';
+    if (!SHARED_SCRIPT_SOURCE || !/^[A-Za-z0-9][A-Za-z0-9._/-]*$/.test(relative) ||
+        relative.split('/').some(function (part) {
+          return !part || part === '.' || part === '..';
+        })) throw new Error('Expected a site-relative product path');
+    const root = new URL('../', SHARED_SCRIPT_SOURCE);
+    const target = new URL(path, root);
+    if (target.origin !== root.origin || !target.pathname.startsWith(root.pathname)) {
+      throw new Error('Product path leaves the served site');
+    }
+    return target.href;
+  }
 
   // A page sits in its own directory and the data sits in a sibling one, so
   // that one copy of the corpus serves both pages.
@@ -3194,6 +3212,7 @@ window.Triptych = (function () {
     params: PARAMS,
     dataRoot: DATA_ROOT,
     dataPath: dataPath,
+    sitePath: sitePath,
 
     // fetching
     NotFound: NotFound,

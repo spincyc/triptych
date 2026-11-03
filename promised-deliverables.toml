@@ -1,6 +1,78 @@
 schema_version = 1
 
 [[deliverables]]
+id = "source-first-print-on-demand-2026-11-02"
+owner = "PROJECT-WORK.md"
+promise = "Remove all tracked PDF and ZIP corpora and deliver exact binary evidence through spincyc/triptych-artifacts; declare per-document manifests and type schemas including propers and timelines; provide automatic browser Print / Save as PDF for every admitted edition with central styling and faster publication; present and cold-review the proposal table before implementation, then validate and publish main without rewriting Git history."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "proposal-table-and-prior-cold-review"
+  criterion = "The type/schema proposal table is presented and cold-reviewed before implementation, its controlling contracts are retained, and the operational record distinguishes recovered checkpoint evidence of that sequence from tests or an unavailable exact conversation transcript."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/document-schemas.md", "src/common/document-schemas/registry.toml", "tools/tests/test_document_schema.py"]
+
+  [[deliverables.requirements]]
+  id = "exact-external-artifacts-and-zero-tracked-corpora"
+  criterion = "No PDF or ZIP remains tracked in the current checkout; exact binary evidence and historical print identities retain hash-bound delivery through spincyc/triptych-artifacts, with rights and historical page facts preserved and no Git history rewrite."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/sources/artifact-delivery.json", "release/print-archive.json", "release/print-archive-pages.json", "scripts/_artifact_store.py", "tools/tests/test_artifact_store.py"]
+
+  [[deliverables.requirements]]
+  id = "source-manifests-types-and-catalogue"
+  criterion = "Every provider publication leaf declares its exact outputs and genre-specific source structure; propers and provider-neutral timeline/source types retain their own owners and contracts; ordinary discovery and title checks need no installed PDF and preserve holds, withdrawals, review, rights and provenance distinctions."
+  status = "pass"
+  evidence = ["guidance/document-schemas.md", "src/common/document-schemas/registry.toml", "src/common/document-schemas/source-types.toml", "scripts/_document_schema.py", "scripts/_corpus.py", "tools/document-library", "tools/tests/test_document_library.py"]
+
+  [[deliverables.requirements]]
+  id = "generated-products-and-earlier-publication"
+  criterion = "Reproducible browser JSON is outside Git and keyed from current canonical inputs with rights and membership checks; the earlier twelve-family source-first deployment and its measured publication time are recorded separately from the pending thirteen-family print candidate."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/web-data.md", "scripts/_browser_products.py", "scripts/_browser_product_recipes.py", "tools/tests/test_browser_products.py"]
+
+  [[deliverables.requirements]]
+  id = "complete-admitted-browser-print-implementation"
+  criterion = "Source adapters and fail-closed browser preparation cover every admitted publication, Bible, papal selection and reading-plan root, including companions and source-owned apparatus; full source/reread and DOM proofs and controller regressions pass without claiming current deployment or new editorial approval."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "docs/printing.md", "scripts/_web_print_products.py", "scripts/_web_print.py", "scripts/_web_print_sources.py", "tools/tests/test_web_print_products.py", "tools/tests/test_web_print_controller.py", "tools/tests/test_public_alpha_web_print.py"]
+
+  [[deliverables.requirements]]
+  id = "central-style-assets-and-implementation-review"
+  criterion = "Complete print routes use central current styles and verified fonts, glyphs and illustrations; reviewed reader bodies are preserved; native geometry and source coverage regressions pass, and independent implementation-review repairs retain admission, source notices, links, language, body identity and visible complete geometry. Browser reflow does not certify native pagination or physical duplex alignment."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/web/browser/shared/web-print.css", "src/web/browser/shared/web-print.js", "src/common/browser-print-assets.json", "src/common/browser-print-marks.json", "tools/tests/test_web_print_marks.py", "tools/tests/test_web_print_server.py", "tools/tests/test_web_print_dictionaries.py"]
+
+  [[deliverables.requirements]]
+  id = "current-thirteen-family-two-cold-record"
+  criterion = "Two independent fresh cold builds against the final integrated source agree for all thirteen families, the current descriptor is recorded and validated, and its exact immutable cache delivery is verified without relying on superseded recording or stale twelve-family bindings."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "release/browser-products.json", "scripts/_browser_product_recipes.py"]
+
+  [[deliverables.requirements]]
+  id = "current-local-site-and-source-verification"
+  criterion = "The final thirteen-family candidate passes the required local deployment-source gates, full site build and GitHub Pages artifact verification; affected reader and complete-print routes are checked, and inherited chronology, source-audit and JavaScript findings are accurately distinguished from new regressions."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "Makefile", "tools/public-alpha"]
+
+  [[deliverables.requirements]]
+  id = "final-current-candidate-review"
+  criterion = "Independent final integration and disclosure review covers the exact recorded source and publication candidate, resolves any new blocking finding, and retains the existing holds and unresolved editorial or source backlogs without manufacturing approval."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/repository.md"]
+
+  [[deliverables.requirements]]
+  id = "main-publication-with-history-preserved"
+  criterion = "The validated integrated work is committed and pushed to authorized main through ordinary history-preserving integration, the remote ref and exact outgoing range are verified, the assigned workspace branch is retained, and the incoming Epiphany catalogue change and all other deliverables are preserved."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "promised-deliverables.toml"]
+
+  [[deliverables.requirements]]
+  id = "live-print-and-publication-performance"
+  criterion = "The automatic Pages workflow for the final main source succeeds; affected live catalogue, reader and complete Print / Save as PDF routes and assets are verified, and actual publication timings and limits are recorded without presenting the earlier 782-second deployment as a measurement of this candidate."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml", "docs/printing.md"]
+
+[[deliverables]]
 id = "gpt-epiphany-fifth-catalogue-reference-2026-11-02"
 owner = "PROJECT-WORK.md"
 promise = "Expose the existing resumed Fifth Sunday study and companions from the ordinary Fifth Sunday after Epiphany row, preserve their distinct formularies and canonical ownership, validate and publish the corrected catalogue."

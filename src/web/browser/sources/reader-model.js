@@ -225,6 +225,26 @@
     return (readable.length ? readable : editions || [])[0] || null;
   }
 
+  /** An explicit source edition joins exactly one declared full Bible offer.
+   * Rights and product completeness are established by the producer/publisher;
+   * the reader accepts their typed route, with no default or label matching.
+   */
+  function biblePrintForEdition(bibles, editionId) {
+    if (!Array.isArray(bibles) || typeof editionId !== 'string' || !editionId) return null;
+    const matches = bibles.filter(function (one) {
+      return one && one.source_id === editionId;
+    });
+    if (matches.length !== 1) return null;
+    const bible = matches[0];
+    const offer = bible.print;
+    if (typeof bible.id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(bible.id) ||
+        typeof bible.label !== 'string' || !bible.label.trim() || !offer ||
+        offer.id !== 'bible:' + bible.id || offer.kind !== 'bible' ||
+        offer.format !== 'browser' ||
+        offer.href !== 'print/bibles/' + bible.id + '.html?print=1') return null;
+    return { id: bible.id, label: bible.label, href: offer.href };
+  }
+
   return {
     ANY: ANY,
     blank: blank,
@@ -235,6 +255,7 @@
     order: order,
     tally: tally,
     editionPath: editionPath,
-    openingEdition: openingEdition
+    openingEdition: openingEdition,
+    biblePrintForEdition: biblePrintForEdition
   };
 }));

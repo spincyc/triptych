@@ -1,13 +1,33 @@
 # Printing Triptych
 
-Read in the existing browser readers. Use the browser's Print or Save as PDF
-for a flowing copy of the current page. That copy follows the page's content
-and rights limits; its line and page breaks depend on the browser, paper and
-printer settings.
+Use an edition's **Print / Save as PDF** action. It prepares the complete
+selected edition from its canonical sources, including its notes, appendices,
+references, revision, and rights notices where the source includes them, then
+opens the browser's print dialog. Choose a printer or Save as PDF there.
+Preparation checks every required part, illustration, font, and source-unit
+sequence; an incomplete or changed edition is refused.
 
-For a publication's designed print layout, generate one selected edition from
-the canonical source. PDFs are optional local outputs. The repository and
-normal site deployment do not keep or rebuild a PDF corpus.
+The current print choices cover 644 admitted edition roots:
+
+| Family | Editions |
+| --- | ---: |
+| Provider publications, including declared companions | 281 |
+| Bibles | 7 |
+| Papal source selections | 350 |
+| Reading-plan volumes | 6 |
+
+The 141 reviewed web readers keep their reading presentation; their Print action
+opens the corresponding complete print edition. Two large reading-plan volumes
+retain **Print complete volume**, which loads and checks every section before
+printing. Use these page actions: direct browser Print or Ctrl+P is guarded
+against printing a partial reader or an unprepared edition.
+
+Browser print preserves the selected source content, card front/back order,
+and apparatus. Page breaks and physical printer alignment depend on the browser,
+paper, scale, margins, and printer. It does not certify the native recipe's
+fixed page counts, paired pages, or physical duplex alignment. For that designed
+layout, generate the selected native print edition below. PDFs are optional
+local outputs; normal site deployment uses no TeX and builds no PDF corpus.
 
 Where an edition offers **Archived PDF**, that link preserves a verified
 historical fixed layout in the external archive. It is distinct from browser
@@ -60,8 +80,7 @@ The print command validates the selected canonical inputs and uses the owning
 typesetter. A PDF build needs that recipe's TeX engine, packages and fonts;
 the command reports a missing dependency instead of generating a substitute.
 Existing authored typography, artwork, content selection and source notices
-remain part of the recipe. A browser printout does not reproduce duplex cards,
-paired course pages or other fixed-page contracts.
+remain part of the recipe.
 
 Source and evidence review, print-template review, and inspection of one
 rendering are separate facts. A successful build is not a new visual review

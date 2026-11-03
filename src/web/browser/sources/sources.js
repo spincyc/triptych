@@ -55,6 +55,7 @@
   };
 
   let spine = null;
+  let biblePrints = [];
   let state = M.blank();
   // The edition currently open, its fetched payload, and where in it we are.
   let open = null;
@@ -317,6 +318,19 @@
     renderFinder();
   }
 
+  function appendCompleteBiblePrint(head, edition) {
+    if (head.querySelector('[data-complete-bible-print]')) return;
+    const complete = M.biblePrintForEdition(biblePrints, edition.id);
+    if (!complete) return;
+    const line = T.el('p', 'complete-bible-print');
+    const link = T.el('a', null, 'Print complete edition');
+    link.href = T.sitePath(complete.href);
+    link.setAttribute('aria-label', 'Print complete edition — ' + complete.label);
+    link.dataset.completeBiblePrint = complete.id;
+    line.appendChild(link);
+    head.appendChild(line);
+  }
+
   function renderReader() {
     const payload = open.payload;
     const work = payload.work || {};
@@ -347,6 +361,7 @@
     if (edition.publication) {
       head.appendChild(T.el('p', 'reader-publication', edition.publication));
     }
+    appendCompleteBiblePrint(head, edition);
     elements.reader.appendChild(head);
 
     if (!passages.length) {
@@ -868,6 +883,17 @@
       return;
     }
     T.doneBootstrapping();
+
+    // This optional discovery request never holds up the corpus or chooses an
+    // edition. If it finishes after navigation, update only the current header.
+    T.loadJSON('bibles.json').then(function (manifest) {
+      biblePrints = Array.isArray(manifest.bibles) ? manifest.bibles : [];
+      if (!open) return;
+      const head = elements.reader.querySelector('.reader-head');
+      if (head) appendCompleteBiblePrint(head, open.payload.edition || {});
+    }).catch(function () {
+      // Without an owner-declared offer, no complete-edition link is invented.
+    });
 
     elements.advisory.textContent = spine.advisory || '';
     fillControls();

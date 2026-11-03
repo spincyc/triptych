@@ -33,6 +33,7 @@ POLICY_SCHEMA = "triptych-browser-publication-policy/v1"
 PROOF = "two-independent-cold-builds-byte-parity"
 CANDIDATE_INDEX = ".browser-products-candidates-v1.json"
 CANDIDATE_SCHEMA = "triptych-browser-product-candidates/v1"
+DELIVERIES = frozenset({"browser-data", "print-preparation"})
 INPUT_TREES = ("src", "scripts", "tools", "guidance", "workflows", "web", "release/publications", "release/rights", "release/papal-documents")
 INPUT_FILES = ("AGENTS.md", "LICENSE", "THIRD_PARTY.md", "Makefile", "tmt.json", ".gitattributes", ".gitignore", "requirements-tools.txt", "requirements-public-alpha.txt", "requirements-tui.txt", "release/public-alpha.json", "release/papal-documents.json")
 EXCLUDED = frozenset({MANIFEST_RELATIVE, *receipt.MECHANICAL_RECEIPTS})
@@ -54,6 +55,7 @@ class VerifiedProducts:
     source_paths: set[str]
     products_identity: str
     projected_source_paths: set[str]
+    delivery_by_path: dict[str, str]
 
 
 def _json(value: Any) -> bytes:
@@ -361,23 +363,37 @@ def _validate_inputs(value):
         raise ProductError("invalid browser product input digest")
 
 
-def _recipes():
-    from _browser_product_recipes import RECIPES
-    recipes = json.loads(_json(RECIPES))
+def _validate_recipes(recipes):
+    if not isinstance(recipes, list) or not recipes:
+        raise ProductError("browser recipes must be a nonempty list")
     ids = set()
+    prefixes = []
     for recipe in recipes:
-        _keys(recipe, {"id", "version", "output_prefixes", "argv", "input_trees", "input_files", "exclude_paths"}, "browser recipe")
+        _keys(recipe, {"id", "version", "output_prefixes", "argv", "input_trees", "input_files", "exclude_paths", "delivery"}, "browser recipe")
         if not isinstance(recipe["id"], str) or recipe["id"] in ids or not isinstance(recipe["version"], (str, int)):
             raise ProductError("invalid browser recipe identity/version")
+        if not isinstance(recipe["delivery"], str) or recipe["delivery"] not in DELIVERIES:
+            raise ProductError("unsupported browser recipe delivery")
         ids.add(recipe["id"])
         for field in ("output_prefixes", "input_trees", "input_files", "exclude_paths"):
             if not isinstance(recipe[field], list):
                 raise ProductError(f"invalid recipe paths: {field}")
             for name in recipe[field]:
                 _relative(name)
+        if not recipe["output_prefixes"]:
+            raise ProductError("browser recipe has no output ownership")
+        for prefix in recipe["output_prefixes"]:
+            if any(prefix == prior or prefix.startswith(prior + "/") or prior.startswith(prefix + "/") for prior in prefixes):
+                raise ProductError("browser recipe output prefixes overlap")
+            prefixes.append(prefix)
         if not isinstance(recipe["argv"], list):
             raise ProductError("recipe argv must be a list")
     return recipes
+
+
+def _recipes():
+    from _browser_product_recipes import RECIPES
+    return _validate_recipes(json.loads(_json(RECIPES)))
 
 
 def _validate_manifest(value):
@@ -387,6 +403,7 @@ def _validate_manifest(value):
     _validate_inputs(value["inputs"])
     if not isinstance(value["recipes"], list) or not value["recipes"] or not isinstance(value["products"], list) or not value["products"]:
         raise ProductError("browser product descriptor needs recipes and products")
+    _validate_recipes(value["recipes"])
     if value["recipes"] != _recipes():
         raise ProductError("browser product recipes changed; run `browser-products record` after reviewing the change")
     seen = set()
@@ -435,6 +452,20 @@ def load_manifest(root: Path) -> dict:
 
 def _expected(manifest):
     return {name: value for product in manifest["products"] for name, value in product["files"].items()}
+
+
+def _deliveries(manifest, selected):
+    recipes = {recipe["id"]: recipe for recipe in _validate_recipes(manifest["recipes"])}
+    result = {}
+    for product in selected:
+        recipe = recipes.get(product["id"])
+        if recipe is None:
+            raise ProductError("browser product has no delivery owner")
+        for name in product["files"]:
+            if name in result or not any(name == prefix or name.startswith(prefix + "/") for prefix in recipe["output_prefixes"]):
+                raise ProductError(f"browser product has ambiguous or missing delivery ownership: {name}")
+            result[name] = recipe["delivery"]
+    return result
 
 
 def products_identity(manifest: dict) -> str:
@@ -695,7 +726,8 @@ def verified_products(root: Path, *, cache_root=None, product_ids=None) -> Itera
         result = VerifiedProducts(snapshot, {name: snapshot / name for name in expected},
                                   {name for name in current[None]["source_paths"] if _component(name) in {"generator", "lock"}} | {MANIFEST_RELATIVE},
                                   products_identity(manifest),
-                                  {name for name in current[None]["source_paths"] if name == "release/public-alpha.json" or name.startswith("release/rights/")})
+                                  {name for name in current[None]["source_paths"] if name == "release/public-alpha.json" or name.startswith("release/rights/")},
+                                  _deliveries(manifest, selected))
         key = _held_key(root, cache_root, product_ids)
         token = _HELD.set({**_HELD.get(), key: result})
         try:

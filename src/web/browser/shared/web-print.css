@@ -1,0 +1,239 @@
+/* Styles for complete browser print editions and guarded reader actions. */
+[data-web-print-notice], [data-web-print-reader-notice] { display: none; }
+@media print {
+  [data-web-print-reader] [data-web-print-reader-content] { display: none !important; }
+  [data-web-print-reader] [data-web-print-reader-notice] { display: block !important; color: #000; background: #fff; }
+  [data-web-print-document] [data-web-print-start],
+  [data-web-print-document] [data-web-print-cancel],
+  [data-web-print-document] [data-web-print-status],
+  [data-web-print-document] [data-web-print-content] { display: none !important; }
+  [data-web-print-document] [data-web-print-notice] { display: block !important; color: #000; background: #fff; }
+}
+@page { size: letter; margin: 0.5in; }
+@page landscape { size: letter landscape; margin: 0.5in; }
+@page full-bleed { size: letter portrait; margin: 0; }
+body[data-print-type] { margin: 0; color: #000; background: #fff; font: 11pt/1.35 'Libertinus Serif', 'Triptych Punctus Elevatus', 'Triptych Source Marks', Georgia, 'Times New Roman', serif; }
+[data-web-print-paper] { width: 7.5in; margin: 0; padding: 0; background: #fff; overflow: visible; }
+[data-print-page="letter-landscape"] [data-web-print-paper] { width: 10in; page: landscape; }
+[data-print-page="letter-full-bleed"] [data-web-print-paper] { width: 8.5in; page: full-bleed; }
+[data-web-print-paper], [data-web-print-paper] * { box-sizing: border-box; max-height: none; }
+[data-web-print-paper] p, [data-web-print-paper] li, [data-web-print-paper] dd { orphans: 3; widows: 3; overflow-wrap: anywhere; }
+[data-web-print-paper] h1, [data-web-print-paper] h2, [data-web-print-paper] h3,
+[data-web-print-paper] h4, [data-web-print-paper] summary, [data-web-print-paper] figcaption { break-after: avoid; }
+[data-web-print-paper] h1 { font-size: 20pt; margin: 0.5em 0; }
+[data-web-print-paper] h2 { font-size: 15pt; margin: 1em 0 0.5em; }
+[data-web-print-paper] h3 { font-size: 12pt; margin: 0.85em 0 0.4em; }
+[data-web-print-paper] h4 { font-size: 11pt; margin: 0.7em 0 0.3em; }
+[data-web-print-paper] p { margin: 0.45em 0; }
+[data-web-print-paper] a { color: #000; text-decoration: underline; overflow-wrap: anywhere; }
+[data-web-print-paper] pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+[data-web-print-paper] code, [data-web-print-paper] pre { font-family: 'Triptych Punctus Elevatus', 'Triptych Source Marks', monospace; }
+[data-web-print-paper] img { max-width: 100%; height: auto; object-fit: contain; }
+[data-web-print-paper] table { width: 100%; border-collapse: collapse; table-layout: auto; margin: 0.75em 0; }
+[data-web-print-paper] th, [data-web-print-paper] td { border: 0.5pt solid #777; padding: 0.3em; overflow-wrap: anywhere; vertical-align: top; }
+[data-web-print-paper] thead { display: table-header-group; }
+[data-web-print-paper] .print-align-left { text-align: left; }
+[data-web-print-paper] .print-align-center { text-align: center; }
+[data-web-print-paper] .print-align-right { text-align: right; }
+[data-web-print-paper] .print-form-field-row { display: flex; align-items: baseline; }
+[data-web-print-paper] .print-fill-gap { flex: 1; }
+[data-web-print-paper] .print-fill-line { display: inline-block; flex: none; min-height: 1em; border-bottom: 0.4pt solid currentColor; vertical-align: baseline; }
+[data-web-print-paper] .print-fill-line-20 { width: 20%; }
+[data-web-print-paper] .print-fill-line-28 { width: 28%; }
+[data-web-print-paper] .smallcaps { font-variant: small-caps; }
+[data-web-print-paper] .sans-serif { font-family: 'Libertinus Sans', 'Triptych Punctus Elevatus', 'Triptych Source Marks', sans-serif; }
+body[data-print-type="curriculum"] { font-family: 'Libertinus Serif', 'Triptych Punctus Elevatus', 'Triptych Source Marks', Georgia, serif; }
+[data-print-type="curriculum"] math { font-family: 'Libertinus Math', math; }
+[data-print-type="curriculum"] .poetry-source-window { margin: 1em 0; }
+[data-print-type="curriculum"] .poetry-verse-line { margin: 0; }
+[data-print-type="curriculum"] .poetry-scansion { break-inside: avoid; }
+/* Empty source fields remain measurable content. Baseline gaps intentionally
+   follow the loaded browser font; physical inch widths/heights remain literal. */
+[data-print-type="curriculum"] .response-space { display: block; break-inside: avoid; }
+[data-print-type="curriculum"] :is(.response-blank-short, .response-blank-long, .response-rule) { display: inline-block; height: 0; border-bottom: 0.4pt solid currentColor; vertical-align: baseline; }
+[data-print-type="curriculum"] .response-blank-short { width: 1.3in; }
+[data-print-type="curriculum"] .response-blank-long { width: 2.6in; }
+[data-print-type="curriculum"] .response-rule { width: 100%; }
+[data-print-type="curriculum"] p:has(> .response-rule) { display: flex; align-items: baseline; gap: 0.25em; }
+[data-print-type="curriculum"] p > .response-rule { flex: 1 1 0; width: auto; min-width: 1em; }
+[data-print-type="curriculum"] .response-cell { height: 2.2lh; border-bottom: 0.4pt solid currentColor; }
+[data-print-type="curriculum"] :is(.response-lines-2, .response-lines-4) { display: grid; row-gap: 1.1lh; margin-block-start: 6pt; }
+[data-print-type="curriculum"] .response-ruled-line { display: block; height: 0; border-bottom: 0.4pt solid currentColor; }
+[data-print-type="curriculum"] :is(.response-block-022, .response-block-038, .response-block-065, .response-block-070, .response-block-080, .response-block-090, .response-block-100, .response-block-110, .response-block-115, .response-block-120, .response-block-130, .response-block-140, .response-block-baseline110) { box-sizing: content-box; border-bottom: 0.4pt solid currentColor; }
+[data-print-type="curriculum"] .response-block-022 { height: 0.22in; }
+[data-print-type="curriculum"] .response-block-038 { height: 0.38in; }
+[data-print-type="curriculum"] .response-block-065 { height: 0.65in; }
+[data-print-type="curriculum"] .response-block-070 { height: 0.7in; }
+[data-print-type="curriculum"] .response-block-080 { height: 0.8in; }
+[data-print-type="curriculum"] .response-block-090 { height: 0.9in; }
+[data-print-type="curriculum"] .response-block-100 { height: 1in; }
+[data-print-type="curriculum"] .response-block-110 { height: 1.1in; }
+[data-print-type="curriculum"] .response-block-115 { height: 1.15in; }
+[data-print-type="curriculum"] .response-block-120 { height: 1.2in; }
+[data-print-type="curriculum"] .response-block-130 { height: 1.3in; }
+[data-print-type="curriculum"] .response-block-140 { height: 1.4in; }
+[data-print-type="curriculum"] .response-block-baseline110 { height: 1.1lh; }
+[data-print-type="curriculum"] :is(.response-strut-050, .response-strut-052, .response-strut-055, .response-strut-062, .response-strut-065, .response-strut-072, .response-strut-076, .response-strut-078, .response-strut-082) { width: 0; }
+[data-print-type="curriculum"] .response-strut-050 { height: 0.5in; }
+[data-print-type="curriculum"] .response-strut-052 { height: 0.52in; }
+[data-print-type="curriculum"] .response-strut-055 { height: 0.55in; }
+[data-print-type="curriculum"] .response-strut-062 { height: 0.62in; }
+[data-print-type="curriculum"] .response-strut-065 { height: 0.65in; }
+[data-print-type="curriculum"] .response-strut-072 { height: 0.72in; }
+[data-print-type="curriculum"] .response-strut-076 { height: 0.76in; }
+[data-print-type="curriculum"] .response-strut-078 { height: 0.78in; }
+[data-print-type="curriculum"] .response-strut-082 { height: 0.82in; }
+[data-print-type="server-guide"] .server-samepage { break-inside: avoid; }
+[data-web-print-paper] blockquote { margin: 0.7em 1.25em; }
+[data-web-print-paper] .footnotes, [data-web-print-paper] .footnote, [data-web-print-paper] .print-local-notes, [data-web-print-paper] .source-apparatus, .web-print-identity { font-size: 8.5pt; overflow-wrap: anywhere; }
+.web-print-identity { border-bottom: 0.5pt solid #777; margin-bottom: 1em; padding-bottom: 0.6em; }
+.web-print-frame-refusal { display: none; }
+.web-print-frame-blocked [data-web-print-paper] { display: none !important; }
+.web-print-frame-blocked .web-print-frame-refusal { display: block !important; }
+[data-web-print-paper] details::details-content { content-visibility: visible; }
+[data-web-print-paper] summary { list-style: none; font-weight: bold; }
+[data-web-print-paper] .print-columns { columns: 2; column-gap: 0.25in; }
+[data-web-print-paper] .print-trainer-pair { display: grid; grid-template-columns: 1fr 2.3fr; gap: 0.18in; }
+[data-web-print-paper] .print-card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.08in; break-after: page; }
+[data-web-print-paper] .print-card-grid:last-child { break-after: auto; }
+[data-web-print-paper] .print-sheet + .print-sheet { break-before: page; }
+[data-web-print-paper] .print-card-face { height: 2.9in; border: 0.5pt solid #000; padding: 0.1in; overflow: visible; break-inside: avoid; }
+[data-web-print-paper] .print-card-grid[data-print-grid="eight"] .print-card-face { height: 2.2in; }
+[data-web-print-paper] .print-plate, [data-web-print-paper] .dictionary-plate, [data-web-print-paper] .plate { break-before: page; }
+[data-web-print-paper] .print-plate-artwork, [data-web-print-paper] .dictionary-artwork, [data-web-print-paper] .plate-artwork { width: 100%; max-height: 7in; object-fit: contain; }
+[data-print-type="cards"] .web-print-identity { font-size: 7pt; margin-bottom: 0.1in; padding-bottom: 0.05in; }
+[data-print-type="cards"] .print-card-face { font-size: 11.5pt; }
+[data-print-type="plates"] .plate-objects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.12in; }
+[data-print-type="plates"] .dictionary-object { break-inside: avoid; }
+[data-print-type="plates"] .object-artwork { display: flex; flex-wrap: wrap; gap: 0.05in; align-items: start; }
+[data-print-type="plates"] .object-artwork figure { flex: 1 1 45%; margin: 0; min-width: 0; }
+[data-print-type="plates"] .object-artwork img { display: block; max-height: 2.3in; max-width: 100%; object-fit: contain; }
+[data-print-type="plates"] .title-artwork img { max-height: 2.3in; max-width: 31%; object-fit: contain; }
+[data-print-type="plates"] .dictionary-title, [data-print-type="plates"] .title-caption, [data-web-print-paper] .source-center { text-align: center; }
+[data-web-print-paper] .source-uppercase { text-transform: uppercase; }
+/* Canonical dictionary prototype styling, scoped to its print-type profile.
+   Its print metrics are unconditional so preparation checks the same layout. */
+[data-print-type="plates"] { font-size: 10pt; }
+[data-print-type="plates"] h1, [data-print-type="plates"] h2, [data-print-type="plates"] h3 { font-family: 'Libertinus Sans', 'Triptych Punctus Elevatus', 'Triptych Source Marks', sans-serif; }
+[data-print-type="plates"] .title-artwork, [data-print-type="plates"] .object-artwork { display: flex; gap: 1rem; justify-content: center; }
+[data-print-type="plates"] .title-artwork figure { width: 30%; }
+[data-print-type="plates"] figure { margin: 0.5rem 0; }
+[data-print-type="plates"] img { display: block; width: 100%; height: 16rem; object-fit: contain; }
+[data-print-type="plates"] figcaption { font-weight: bold; text-align: center; font-size: 0.85rem; }
+[data-print-type="plates"] .dictionary-plate { margin: 0; padding-top: 1rem; border-top: 2px solid black; break-before: page; }
+[data-print-type="plates"] .plate-objects { gap: 0.2in; }
+[data-print-type="plates"] .dictionary-object { font-size: 8.5pt; }
+[data-print-type="plates"] .dictionary-object img { height: 2.7in; max-height: none; }
+[data-print-type="plates"] .latin { font-style: italic; }
+[data-print-type="plates"] .canonical-qualifications { font-size: 7.5pt; border-left: 2px solid #777; padding-left: 0.75rem; }
+[data-print-type="plates"] .source-notes, [data-print-type="plates"] .print-review { font-size: 8pt; }
+[data-print-type="plates"] .source-notes code { overflow-wrap: anywhere; }
+[data-print-type="plates"] .plate-footer { padding: 1rem 0; border-top: 1px solid #777; }
+[data-print-type="plates"] .opening-composition img { height: 30rem; }
+[data-print-type="plates"] .reader-appendix, [data-print-type="plates"] .source-notes,
+[data-print-type="plates"] #dictionary-rights { break-before: page; }
+[data-print-type="plates"] .source-minipage { display: inline-block; vertical-align: top; margin: 0.5rem; max-width: 100%; overflow-wrap: break-word; }
+[data-print-type="plates"] .opening-composition > .source-minipage { display: block; width: 100%; margin-inline: 0; }
+[data-print-type="plates"] .print-review { border: 1px solid #555; padding: 1rem; }
+[data-print-type="plates"] .canonical-plate-header { font-weight: bold; font-family: 'Libertinus Sans', 'Triptych Punctus Elevatus', 'Triptych Source Marks', sans-serif; }
+
+/* Fixed server-card and trainer geometry from the source-owned profile.
+   Metrics apply during preparation as well as printing. */
+body:is([data-print-type="server-guide"], [data-print-type="server-cards"]) { font-size: 12pt; line-height: normal; }
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) * {box-sizing:border-box}
+body:is([data-print-type="server-guide"], [data-print-type="server-cards"]) {font-family:'Libertinus Serif','Triptych Punctus Elevatus', 'Triptych Source Marks',Georgia,serif;color:#111;background:white;margin:0}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-guide-part {max-width:69rem;margin:1.5rem auto;padding:1rem}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-guide-part table {border-collapse:collapse;width:100%}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) th, :is([data-print-type="server-guide"], [data-print-type="server-cards"]) td {border:1px solid #888;padding:.35rem;vertical-align:top}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) blockquote, :is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-branch, :is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-action, :is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-guide-part .server-response, :is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-role {border:1px solid #777;padding:.65rem;margin:.8rem 0}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-scene {border-top:3px solid #222;margin:1.4rem 0;padding-top:1rem}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-paired-lanes {display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-paired-lanes>div+div {border-left:1px solid;padding-left:1rem}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-trainer-layout {display:grid;grid-template-columns:1fr 3.5fr;gap:1rem}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-trainer-rail {border-right:1px solid;padding-right:1rem;font-size:.9rem}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-diagram img {display:block;width:100%;height:auto}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-diagram {break-inside:avoid}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-sheet {position:relative;width:8.5in;height:11in;margin:1rem auto;background:#fff;box-shadow:0 0 0 1px #777;break-after:page;overflow:hidden}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-grid {display:grid;grid-template-columns:repeat(2,1fr);position:absolute}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-low .server-grid {left:.25in;top:.27in;width:8in;height:10.01in;column-gap:.10in;row-gap:.07in;grid-template-columns:3.95in 3.95in;grid-template-rows:repeat(4,2.45in)}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-sung .server-grid {left:.5in;top:.5in;width:7.5in;height:9.14in;column-gap:.11in;row-gap:.09in;grid-template-rows:repeat(3,2.986in)}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-face {border:1px solid #111;display:flex;flex-direction:column;overflow:hidden;padding:.11in;font-size:10.5pt;line-height:1.15;text-align:center}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-face p {margin:.06in 0}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-face-header {display:flex;justify-content:space-between;gap:.06in;font-size:8pt;font-weight:bold;border-bottom:1px solid;padding-bottom:.06in;margin-bottom:.12in}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-low .server-face {font-size:11.5pt;line-height:13.5pt;padding:0 .18in .1in}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-low .server-face-header {margin:0 -.18in .20in;padding:.10in .18in;font-size:8pt;line-height:9.5pt}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-answer {font-weight:bold}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-face .server-field {margin:.035in 0}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-field-label {display:block;font-size:7.5pt;font-weight:bold;letter-spacing:.04em}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-face .server-small {font-size:8.5pt}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-face .server-tiny {font-size:7.5pt}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-face-footer {border-top:1px solid;margin-top:auto;padding-top:.04in;font-size:7.5pt}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-blank {visibility:hidden}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-sheet-notice {position:absolute;bottom:.08in;left:.25in;right:.25in;font-size:7pt;line-height:1.1;text-align:center}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-sung .server-face {font-size:11pt}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-sung .server-field-label {font-size:8pt}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-sung .server-face-footer {font-size:6pt}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-field.server-response {font-size:10pt;font-style:italic}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-field.server-learner, :is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-field.server-sound {font-family:'Libertinus Sans','Triptych Punctus Elevatus', 'Triptych Source Marks',sans-serif}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-field-label {font-style:normal;font-family:'Libertinus Serif','Triptych Punctus Elevatus', 'Triptych Source Marks',Georgia,serif}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-field.server-learner {font-size:8pt}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-field.server-sound {font-size:10pt}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-field.server-meaning {font-size:8pt}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-dense .server-field {font-size:8pt}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-source-size-6 {font-size:6pt!important}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-source-size-8 {font-size:8pt!important}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-source-size-9 {font-size:9pt!important}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-source-size-10 {font-size:10pt!important}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-source-size-11 {font-size:11pt!important}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-sung .server-face p {margin:0}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-sung .server-face-header {margin-bottom:.08in}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-action-body {font-size:10.5pt;line-height:12.5pt}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-sheet-notice p, :is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-sheet-duplex p {margin:0}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-sheet-duplex {position:absolute;bottom:.44in;left:.25in;right:.25in;text-align:center;font-size:7.5pt;line-height:9pt;font-weight:bold}
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-apparatus {max-width:7in;padding:.65in;margin:auto;break-before:page}
+[data-print-type="server-cards"] .server-sheet { margin: 0; box-shadow: none; }
+[data-print-type="server-cards"] .server-grid { grid-template-rows: none; }
+[data-print-type="server-cards"] .server-low .server-grid { grid-template-rows: repeat(4, 2.45in); }
+[data-print-type="server-cards"] .server-sung .server-grid { grid-template-rows: repeat(3, 2.986in); }
+[data-print-type="server-guide"] .server-guide-part { margin: 0; padding: 0.5in; max-width: none; }
+[data-print-type="server-guide"] .server-guide-part > * { max-width: 100%; }
+[data-print-type="server-guide"] .server-action,
+[data-print-type="server-guide"] .server-response,
+[data-print-type="server-guide"] .server-role { break-inside: avoid; }
+[data-print-type="server-guide"] .server-scene { break-before: page; }
+[data-print-type="server-guide"] .server-scene.server-continuation { break-before: auto; }
+[data-print-type="server-guide"] .server-trainer-rail { font-size: 9pt; }
+[data-print-type="server-guide"] .server-guide-part:last-child { break-after: auto; }
+[data-print-type="server-guide"] .web-print-identity { margin: 0.5in; }
+:is([data-print-type="server-guide"], [data-print-type="server-cards"]) .server-smallcaps { font-variant: small-caps; }
+[data-print-type="server-guide"] .server-align-left { text-align: left; }
+
+/* Finite canonical table proportions from the owning source schemas. */
+[data-web-print-paper] table.print-table-width-83 { width: 83%; }
+[data-web-print-paper] table.print-table-width-85 { width: 85%; }
+[data-web-print-paper] table.print-table-width-87 { width: 87%; }
+[data-web-print-paper] table.print-table-width-92 { width: 92%; }
+[data-web-print-paper] table.print-table-width-93 { width: 93%; }
+[data-web-print-paper] table.print-table-width-95 { width: 95%; }
+[data-web-print-paper] table.print-table-width-96 { width: 96%; }
+[data-web-print-paper] col.print-column-width-7 { width: 7%; }
+[data-web-print-paper] col.print-column-width-8 { width: 8%; }
+[data-web-print-paper] col.print-column-width-9 { width: 9%; }
+[data-web-print-paper] col.print-column-width-10 { width: 10%; }
+[data-web-print-paper] col.print-column-width-11 { width: 11%; }
+[data-web-print-paper] col.print-column-width-12 { width: 12%; }
+[data-web-print-paper] col.print-column-width-13 { width: 13%; }
+[data-web-print-paper] col.print-column-width-14 { width: 14%; }
+[data-web-print-paper] col.print-column-width-15 { width: 15%; }
+[data-web-print-paper] col.print-column-width-17 { width: 17%; }
+[data-web-print-paper] col.print-column-width-18 { width: 18%; }
+[data-web-print-paper] col.print-column-width-19 { width: 19%; }
+[data-web-print-paper] col.print-column-width-20 { width: 20%; }
+[data-web-print-paper] col.print-column-width-21 { width: 21%; }
+[data-web-print-paper] col.print-column-width-25 { width: 25%; }
+[data-web-print-paper] col.print-column-width-26 { width: 26%; }
+[data-web-print-paper] col.print-column-width-27 { width: 27%; }
+[data-web-print-paper] col.print-column-width-31 { width: 31%; }
+[data-web-print-paper] col.print-column-width-34 { width: 34%; }
+body[data-print-type="plates"] { font-size: 10pt; }
+[data-print-type="plates"] .dictionary-title > .source-minipage { width: 30%; }

@@ -9,6 +9,7 @@ in requirements-public-alpha.txt.
 from __future__ import annotations
 
 import argparse
+from contextlib import ExitStack
 from collections import Counter
 import html
 from html.parser import HTMLParser
@@ -2015,6 +2016,25 @@ def resolve_anchors(markdown: str, anchors: list[str] | None = None) -> str:
     )
 
 
+def selected_markdown_anchors(markdown: str) -> list[str]:
+    """Read actual Markdown heading and raw-HTML targets for selected print.
+
+    A literal label can render as an HTML span rather than a heading attribute.
+    Keep its references only when that concrete target survives; the ordinary
+    reader retains its historical anchor selection.
+    """
+    class RawIds(HTMLParser):
+        def __init__(self):
+            super().__init__(); self.ids: list[str] = []
+        def handle_starttag(self, tag, attrs):
+            value = dict(attrs).get("id")
+            if value is not None:
+                self.ids.append(value)
+        handle_startendtag = handle_starttag
+    raw = RawIds(); raw.feed(markdown); raw.close()
+    return ANCHOR_DEFINITION_RE.findall(markdown) + raw.ids
+
+
 def normalize_unnumbered_headings(markdown: str, labels: set[str]) -> str:
     """Drop Pandoc-only heading metadata without discarding source labels."""
     return UNNUMBERED_HEADING_ATTRIBUTE_RE.sub(
@@ -2151,13 +2171,13 @@ def prose_blocks(markdown: str) -> list[str]:
     return blocks
 
 
-def reflowed_sentences(sources: str, markdown: str) -> list[str]:
+def reflowed_sentences(sources: str, markdown: str, extra_openings: set[str] | None = None) -> list[str]:
     """Name every paragraph the output opened in the middle of a sentence."""
     # Without the leaf's own files there is nothing to judge an opening against,
     # and a check with no reference would report every lowercase opening there is.
     if not sources.strip():
         return []
-    openings = source_openings(sources)
+    openings = source_openings(sources) | set(extra_openings or ())
     blocks = prose_blocks(markdown)
     broken = []
     for index, block in enumerate(blocks[1:], start=1):
@@ -2527,6 +2547,7 @@ def cell_opening(cell: str, macros: dict[str, Macro] | None = None) -> tuple[str
 def table_source_openings(
     body: str, definitions: str, lifted_notes: bool = False,
     assignments: list[str] | None = None,
+    preserve_titlepage: bool = False,
 ) -> tuple[Counter[tuple[str, bool]], Counter[str], Counter[str]]:
     """Cell openings, lifted-note openings, and skipped cells by reason.
 
@@ -2547,7 +2568,7 @@ def table_source_openings(
     # The converter drops the title page, and so does the audit.
     boundaries: list[str] = []
     segments = fold_definitions(
-        TITLEPAGE_RE.sub("", strip_tex_comments(body)), MacroTable(defined), scoped=True,
+        (strip_tex_comments(body) if preserve_titlepage else TITLEPAGE_RE.sub("", strip_tex_comments(body))), MacroTable(defined), scoped=True,
         boundaries=boundaries,
     )
     for position, (text, macros) in enumerate(segments):
@@ -2604,7 +2625,7 @@ def table_openings_in(
             nested.append((inner.start(), len(region) if finish < 0 else finish + len(closing)))
         for start, finish in reversed(nested):
             region = region[:start] + "$" + region[finish:]
-        if lifted_notes and name == "dossiertable":
+        if lifted_notes and name in {"dossiertable", "concisedossiertable"}:
             for note in LIFTED_NOTES:
                 def lift(arguments: list[str]) -> str:
                     opening, _, reason = cell_opening(arguments[0], macros)
@@ -2677,9 +2698,10 @@ def match_openings(wanted: Counter[tuple[str, bool]], unused: list[str | None]) 
 def lost_cell_openings(
     body: str, markdown: str, definitions: str, lifted_notes: bool = False,
     assignments: list[str] | None = None,
+    preserve_titlepage: bool = False,
 ) -> list[str]:
     """Source openings no output cell (or, for a lifted note, paragraph) holds."""
-    cells, paragraphs, _ = table_source_openings(body, definitions, lifted_notes, assignments)
+    cells, paragraphs, _ = table_source_openings(body, definitions, lifted_notes, assignments, preserve_titlepage)
     lost = match_openings(cells, list(output_cell_openings(markdown)))
     lost += match_openings(
         Counter({(opening, False): count for opening, count in paragraphs.items()}),
@@ -2829,6 +2851,9 @@ def audit_output(
     lifted_notes: bool = False,
     quotations: int | None = None,
     list_items: list[tuple[int, int]] | None = None,
+    preserve_titlepage: bool = False,
+    source_block_openings: set[str] | None = None,
+    raw_html_notes: set[str] | None = None,
 ) -> list[str]:
     """Compare critical macro payloads in the LaTeX body against the Markdown.
 
@@ -2897,7 +2922,7 @@ def audit_output(
     assignments: list[str] = []
     lost = lost_cell_openings(
         body if source_body is None else source_body, markdown, definitions, lifted_notes,
-        assignments,
+        assignments, preserve_titlepage,
     )
     if lost:
         failures.append("table cell opening(s) lost in conversion: " + "; ".join(lost))
@@ -2915,7 +2940,7 @@ def audit_output(
             f"{len(severed)} paragraph break(s) fell inside a run of words the "
             "leaf's sources keep unbroken: " + "; ".join(severed)
         )
-    reflowed = reflowed_sentences(sources, markdown)
+    reflowed = reflowed_sentences(sources, markdown, source_block_openings)
     if reflowed:
         failures.append(
             f"{len(reflowed)} paragraph(s) opened on a lowercase word the leaf's "
@@ -2963,6 +2988,14 @@ def audit_output(
     # searched for as the continuous run of words it is.
     flat = flatten(markdown.replace("|", " "))
     notes, kept = len(NOTE_MACRO_RE.findall(body)), len(FOOTNOTE_DEF_RE.findall(markdown))
+    if raw_html_notes is not None:
+        # Only the selected print adapter may supply source-bound native HTML
+        # notes. Count each independently owned note occurrence exactly once;
+        # final selected-source coverage still proves its complete text/order.
+        raw_notes = re.findall(r'<li\b[^>]*\bdata-semantic-note="([^"]+)"', markdown)
+        if len(raw_notes) != len(set(raw_notes)) or set(raw_notes) != raw_html_notes:
+            failures.append("raw HTML note identities disagree with canonical note occurrences")
+        kept += len(raw_notes)
     if kept < notes:
         failures.append(f"{notes} endnote/footnote calls became {kept} footnotes")
     # URLs and file locators must survive verbatim; prose payloads are only
@@ -3034,12 +3067,28 @@ def declared_contents(leaf: Path) -> bool:
     return contents
 
 
-def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
-    main = SRC / provider / leaf / "main.tex"
+def convert(provider: str, leaf: str, out: Path = OUT, *, selected: dict | None = None) -> Path:
+    """Convert the canonical reader, or an explicitly selected print source.
+
+    ``selected`` is an owning-adapter contract, never a release decision. It
+    supplies exact entrypoint/edition/source/input graph, optional canonical
+    body, print shim, titlepage preservation and semantic Lua filters. The
+    caller separately proves public admission, expected units and assets.
+    Default canonical conversion retains the existing reader behavior.
+    """
+    if selected is not None:
+        if selected.get("edition") not in {"main", "synthesis", "homily"}:
+            raise ConversionError("unknown selected publication edition")
+        main = Path(selected["entrypoint"]).resolve()
+        if not main.is_relative_to((SRC / provider).resolve()):
+            raise ConversionError("selected entrypoint escapes its provider")
+    else:
+        main = SRC / provider / leaf / "main.tex"
+    shim_path = Path(selected.get("shim", SHIM)) if selected is not None else SHIM
     if not main.is_file():
         raise ConversionError(f"no such document: {main}")
     contents = declared_contents(main.parent)
-    source = main.read_text(encoding="utf-8")
+    source = selected["source"] if selected is not None else main.read_text(encoding="utf-8")
     proper = (main.parent / "proper-components.toml").is_file()
     components = None
     semantic_graph = None
@@ -3055,12 +3104,12 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     head, tail = split_document(source)
     # Preamble includes supply definitions but never content, so they are not
     # scanned; only what reaches the body can lose scholarship.
-    preamble_sources: dict[Path, str] = {}
+    preamble_sources: dict[Path, str] = dict(selected["sources"]) if selected is not None else {}
     preamble = assemble(head, provider, preamble_sources, proper=proper)
     sources: dict[Path, str] = {main: tail}
     body = assemble(tail, provider, sources, proper=proper)
     # The row-opening audit reads the body as assembled, before any rewriting.
-    assembled_body = body
+    assembled_body = selected.get("audit_body", body) if selected is not None else body
     if semantic_graph is not None:
         assembled_graph = {main.resolve(), *preamble_sources, *sources}
         if assembled_graph != semantic_graph:
@@ -3083,14 +3132,14 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
                     raise ValueError("element_keys must use stable lowercase kebab-case")
             except ValueError as exc:
                 raise ConversionError(str(exc)) from exc
-            required_anchors = {f"proper-{key}" for key in keys}
+            required_anchors = ({f"proper-{key}" for key in keys} if selected is None or selected["edition"] == "main" else {key for key in LABEL_RE.findall(body) if key.startswith("proper-")})
         else:
             body = anchor_appointed_elements(body, set(components.get("element_keys", [])))
     body = set_text_dashes(PERIOD_CENTERED_RE.sub("\N{MIDDLE DOT}", body))
     body = PRE_CONVERSION_BREAKS_RE.sub("", body)
     body, chronology_annotations = expand_chronology_annotations(body, preamble)
     title, subtitle = pdf_metadata(preamble)
-    body = TITLEPAGE_RE.sub("", body)
+    body = body if selected is not None and selected.get("preserve_titlepage") else TITLEPAGE_RE.sub("", body)
     toc_count = body.count(r"\tableofcontents")
     if required_anchors is not None:
         # Keep the Contents at the author's chosen location.  A plain sentinel
@@ -3130,7 +3179,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         if failures:
             raise ConversionError("\n".join(failures))
     shim_text, shim_bracketed = guard_opening_brackets(
-        terminate_swallowers(fix_column_specs(set_text_dashes(SHIM.read_text(encoding="utf-8"))))
+        terminate_swallowers(fix_column_specs(set_text_dashes(shim_path.read_text(encoding="utf-8"))))
     )
     locals_text, locals_bracketed = guard_opening_brackets(drop_continuation_heads(
         terminate_swallowers(fix_column_specs(
@@ -3144,10 +3193,10 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     bracketed.update(locals_bracketed)
     bracketed.update(shim_bracketed)
     failures = undefined_uses(sources, defined_names(shim_text + locals_text))
-    failures.extend(definition_refusals(SHIM.read_text(encoding="utf-8"), preamble, assembled_body))
+    failures.extend(definition_refusals(shim_path.read_text(encoding="utf-8"), preamble, assembled_body))
     if failures:
         raise ConversionError("\n".join(failures))
-    with tempfile.NamedTemporaryFile(
+    with ExitStack() as extra_filter_stack, tempfile.NamedTemporaryFile(
         "w", suffix=".lua", encoding="utf-8"
     ) as table_filter, tempfile.NamedTemporaryFile(
         "w", suffix=".lua", encoding="utf-8"
@@ -3171,13 +3220,18 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         # than ASCII stand-ins no downstream renderer would resolve.
         dialect = (
             PROPER_STUDY_MARKDOWN_DIALECT
-            if required_anchors is not None
+            if required_anchors is not None or selected is not None
             else MARKDOWN_DIALECT
         )
         command = ["pandoc", "-f", "latex", "-t", dialect, "--wrap=none",
                    "--shift-heading-level-by=1", f"--lua-filter={table_filter.name}",
                    f"--lua-filter={quotation_filter.name}",
                    f"--lua-filter={list_filter.name}", handle.name]
+        for filter_source in selected.get("lua_filters", []) if selected is not None else []:
+            extra = extra_filter_stack.enter_context(tempfile.NamedTemporaryFile("w", suffix=".lua", encoding="utf-8"))
+            extra.write(filter_source)
+            extra.flush()
+            command.insert(-1, f"--lua-filter={extra.name}")
         result = subprocess.run(command, capture_output=True, text=True)
     if result.returncode != 0:
         raise ConversionError(f"pandoc failed:\n{result.stderr.strip()}")
@@ -3194,6 +3248,8 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         for depth, blocks in (item.split(":") for item in list_report.group(1).split())
     ]
     converted = nest_lists_for_site(clean_markdown_line_endings(result.stdout))
+    if selected is not None and selected.get("markdown_projection") is not None:
+        converted = selected["markdown_projection"](converted)
     converted = letter_appendix_references(converted, body)
     if required_anchors is not None and toc_count:
         converted_toc_count = converted.count(WEB_TOC_SENTINEL)
@@ -3211,9 +3267,11 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         heading += "\n[TOC]\n"
     rendered_anchors = None
     if required_anchors is None:
+        if selected is not None:
+            rendered_anchors = selected_markdown_anchors(converted)
         markdown = strip_contentless_breaks(
             normalize_unnumbered_headings(
-                resolve_anchors(converted), set(LABEL_RE.findall(body))
+                resolve_anchors(converted, rendered_anchors), set(LABEL_RE.findall(body))
             )
         )
     else:
@@ -3233,10 +3291,11 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     # The paragraph audit is judged against the leaf's files as they stand on
     # disk, before any branch was selected or any macro resolved, so a rewriting
     # that introduced a break cannot supply the reference that excuses it.
-    raw_sources = "\n\n".join(
+    raw_sources = selected.get("canonical_body", selected["body"]) if selected is not None else "\n\n".join(
         path.read_text(encoding="utf-8") for path in sorted(sources)
     )
-    failures = audit_output(
+    output_audit = selected.get("audit_callback", audit_output) if selected is not None else audit_output
+    failures = output_audit(
         body,
         markdown,
         table_count(body, shim_text + locals_text),
@@ -3245,11 +3304,14 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         rendered_anchors,
         required_anchors,
         bracketed,
-        SHIM.read_text(encoding="utf-8") + "\n" + local_definitions(preamble),
+        shim_path.read_text(encoding="utf-8") + "\n" + local_definitions(preamble),
         assembled_body,
         semantic_graph is not None,
         int(quotation_count.group(1)),
         list_items,
+        bool(selected is not None and selected.get("preserve_titlepage")),
+        set(selected.get("source_openings", ())) if selected is not None else None,
+        set(selected.get("raw_html_notes", ())) if selected is not None else None,
     )
     if failures:
         raise ConversionError("\n".join(failures))

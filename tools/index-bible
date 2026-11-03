@@ -199,7 +199,7 @@ ELISION = " ... "
 SPACING = re.compile(r"\s+")
 
 # The source-index registry has one low-dependency owner for all alias readers.
-from _bible_editions import EDITIONS
+from _bible_editions import EDITIONS, browser_print_offer
 from _bible_artifacts import select_book_index
 
 # A psalm reference resolves against a psalter, and the Latin psalters differ in
@@ -986,6 +986,10 @@ def run_manifest(arguments: argparse.Namespace) -> dict:
             # stays available for provenance.
             "label": str(edition.get("label") or edition["edition"]),
             "edition": str(edition["edition"]),
+            # Join the explicit source edition to its complete print product;
+            # no consumer guesses an edition from a label or a default Bible.
+            "source_id": str(edition["source_id"]),
+            "print": browser_print_offer(name),
             "language": str(edition["language"]),
             "numbering": str(edition["numbering"]),
             "psalter": str(edition["psalter"]),

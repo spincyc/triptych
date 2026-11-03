@@ -16,7 +16,7 @@ import subprocess
 import sys
 import tempfile
 
-from _browser_products import ProductError, assert_working_output
+from _browser_products import ProductError, _validate_recipes, assert_working_output
 
 
 _BROAD = ["src/sources", "src/gpt", "src/claude", "src/common", "web", "workflows"]
@@ -28,31 +28,33 @@ _EXCLUDE = [
 ]
 
 
-def _recipe(identifier, prefix, argv, trees, files=()):
+def _recipe(identifier, prefix, argv, trees, files=(), *, delivery):
     return {
         "id": identifier, "version": 1, "output_prefixes": [prefix],
         "argv": argv, "input_trees": list(trees), "input_files": list(files),
-        "exclude_paths": list(_EXCLUDE),
+        "exclude_paths": list(_EXCLUDE), "delivery": delivery,
     }
 
 
 # Tokens are expanded as complete argv entries, never as shell text. Options
 # that determine corpus membership or civil dates are explicit and timeless.
 RECIPES = (
-    _recipe("bibles", "bibles.json", ["tools/index-bible", "manifest", "--bible-root", "{root}/src/sources/bibles"], _SOURCE),
+    _recipe("bibles", "bibles.json", ["tools/index-bible", "manifest", "--bible-root", "{root}/src/sources/bibles"], _SOURCE, delivery="browser-data"),
     _recipe("encyclicals", "encyclicals", ["scripts/_encyclicals.py", "--root", "{root}", "structure"],
-            ["src/sources/papal-documents", "release/papal-documents"], ["release/papal-documents.json"]),
-    _recipe("act-history", "structure/act-history", ["tools/act-history", "structure"], _BROAD),
-    _recipe("calendar", "structure/calendar", ["tools/calendar-days", "structure", "--root", "{root}/src/sources/calendars", "--first", "2020", "--last", "2120"], _CALENDAR),
-    _recipe("catena", "structure/catena", ["scripts/_catena.py", "--root", "{root}", "structure"], _SOURCE),
+            ["src/sources/papal-documents", "release/papal-documents"], ["release/papal-documents.json"], delivery="browser-data"),
+    _recipe("act-history", "structure/act-history", ["tools/act-history", "structure"], _BROAD, delivery="browser-data"),
+    _recipe("calendar", "structure/calendar", ["tools/calendar-days", "structure", "--root", "{root}/src/sources/calendars", "--first", "2020", "--last", "2120"], _CALENDAR, delivery="browser-data"),
+    _recipe("catena", "structure/catena", ["scripts/_catena.py", "--root", "{root}", "structure"], _SOURCE, delivery="browser-data"),
     _recipe("documents", "structure/documents", ["tools/document-library", "structure"],
-            ["src/gpt", "src/claude", "src/common", "web", "workflows"]),
-    _recipe("ordinary", "structure/ordinary", ["tools/mass-ordinary", "structure", "--root", "{root}/src/sources"], _SOURCE),
-    _recipe("paragraphs", "structure/paragraphs", ["scripts/_catena.py", "--root", "{root}", "paragraphs"], _SOURCE),
-    _recipe("propers", "structure/propers", ["tools/mass-propers", "structure", "--root", "{root}/src/sources/calendars"], _SOURCE),
-    _recipe("readings", "structure/readings", ["tools/reading-plan", "structure", "--root", "{root}/src/sources/reading-plans"], _SOURCE),
-    _recipe("rubrics", "structure/rubrics", ["tools/calendar-rubrics", "structure", "--root", "{root}/src/sources/calendars"], _CALENDAR),
-    _recipe("sources", "structure/sources", ["tools/source-reader", "structure", "--strict"], _BROAD),
+            ["src/gpt", "src/claude", "src/common", "web", "workflows"], delivery="browser-data"),
+    _recipe("ordinary", "structure/ordinary", ["tools/mass-ordinary", "structure", "--root", "{root}/src/sources"], _SOURCE, delivery="browser-data"),
+    _recipe("paragraphs", "structure/paragraphs", ["scripts/_catena.py", "--root", "{root}", "paragraphs"], _SOURCE, delivery="browser-data"),
+    _recipe("propers", "structure/propers", ["tools/mass-propers", "structure", "--root", "{root}/src/sources/calendars"], _SOURCE, delivery="browser-data"),
+    _recipe("readings", "structure/readings", ["tools/reading-plan", "structure", "--root", "{root}/src/sources/reading-plans"], _SOURCE, delivery="browser-data"),
+    _recipe("rubrics", "structure/rubrics", ["tools/calendar-rubrics", "structure", "--root", "{root}/src/sources/calendars"], _CALENDAR, delivery="browser-data"),
+    _recipe("sources", "structure/sources", ["tools/source-reader", "structure", "--strict"], _BROAD, delivery="browser-data"),
+    _recipe("print-editions", "print/preparation", ["scripts/_web_print_products.py", "--root", "{root}", "--out", "{out}"],
+            [*_BROAD, "release/papal-documents"], ["release/papal-documents.json"], delivery="print-preparation"),
 )
 
 
@@ -118,8 +120,10 @@ def _files(out: Path) -> set[str]:
 
 
 def _run(root: Path, out: Path, recipe: dict, environment: dict) -> None:
-    arguments = [value.replace("{root}", str(root)) for value in recipe["argv"]]
+    arguments = [value.replace("{root}", str(root)).replace("{out}", str(out)) for value in recipe["argv"]]
     arguments[0] = str(root / arguments[0])
+    if "--out" not in arguments:
+        arguments.extend(["--out", str(out)])
     program = _COLD_INPUT_GUARD + (
         "\nimport runpy\n"
         "tool_arguments = sys.argv[2:]\n"
@@ -127,7 +131,7 @@ def _run(root: Path, out: Path, recipe: dict, environment: dict) -> None:
         "sys.argv = tool_arguments\n"
         "runpy.run_path(tool_arguments[0], run_name='__main__')\n"
     )
-    command = [sys.executable, "-B", "-c", program, str(root), *arguments, "--out", str(out)]
+    command = [sys.executable, "-B", "-c", program, str(root), *arguments]
     if recipe["id"] == "act-history":
         # The owning replay supplies fresh isolated source parsers without
         # consulting the former installed projection or a receipt baseline.
@@ -155,6 +159,7 @@ def generate(root: Path, out: Path, product_ids=None) -> dict:
     Source parsers may share newly populated process caches, but inherited
     stat-keyed disk caches and stale Python bytecode cannot seed a cold build.
     """
+    _validate_recipes(list(RECIPES))
     root, out = Path(root).resolve(), Path(out).absolute()
     if out.is_symlink() or out == root / "src/web/data":
         raise RecipeError("cold generation requires a separate unsealed staging root")

@@ -761,6 +761,18 @@ The PDFs embed subsetted font programs. TeX packages and other build
 dependencies are external software governed by their own licenses; they are
 not vendored merely because the build invokes them.
 
+Complete browser-print editions serve eight unsubsetted Libertinus 7.051
+Serif, Sans and Math faces converted from the pinned CTAN OTF distribution
+to WOFF2. These remain font software under SIL Open Font License 1.1,
+separate from the document and project licenses. The exact upstream inputs,
+conversion and delivered hashes are recorded in
+`src/common/browser-print-assets.json`; the copyright and license notice is
+retained at `src/common/browser-print-fonts/OFL.txt` and served with the fonts.
+Binary delivery is preserved in the immutable `web-print-fonts-libertinus-7.051-v1`
+release of `spincyc/triptych-artifacts`. Browser-print SVG render products
+likewise retain the source project's contribution terms and third-party
+exclusions; their delivery does not relicense underlying source material.
+
 The classic encyclical readers use Latin Modern Roman under the
 [GUST Font License](https://www.gust.org.pl/projects/e-foundry/licenses/GUST-FONT-LICENSE.txt).
 Earlier papal source readers use TeX Gyre Pagella by B. Jackowski, J. M. Nowacki
@@ -1262,6 +1274,18 @@ is retained at `src/web/browser/shared/fonts/OFL-Junicode.txt`,
 served with the font at `shared/fonts/OFL-Junicode.txt`.
 Source pins and the deterministic subset/rename recipe are recorded in
 `src/web/browser/shared/fonts/README.md`.
+
+The separate **Triptych Source Marks** browser-print fallback derives from the
+same pinned Junicode VF source and retains the same copyright and SIL OFL 1.1
+notice. It supplies U+211F, U+2123, U+21A9, U+2610 and U+2720 without changing
+source text. The four other characters retain Junicode outlines; U+2610 is
+a deterministic project-created empty-box outline added to the derivative,
+because that upstream font has no checkbox glyph. The complete font derivative
+remains under SIL OFL 1.1. Its exact subset, static axes, renamed metadata, delivered bytes,
+and reconstruction are recorded in `src/common/browser-print-marks.json` and
+`scripts/_web_print_marks.py`. The binary is delivered through the external
+artifact repository; `src/web/browser/shared/fonts/OFL-Junicode.txt` remains
+the canonical license notice.
 
 ### Batch 3: Cistercian 1657 complete two-form Pater and source damage (2026-10-20)
 

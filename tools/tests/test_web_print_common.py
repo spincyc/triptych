@@ -1,0 +1,135 @@
+"""Source-bound normalization and compact print proof invariants."""
+from __future__ import annotations
+
+import copy
+import hashlib
+import json
+from pathlib import Path
+import sys
+import unittest
+
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'scripts'))
+import _web_print_common as common
+
+
+def descriptor():
+    source='a'*64;identity='publication:fixture'
+    html=(f'<section data-print-part="p" data-print-document="{identity}" data-print-source="{source}">'
+          '<h2 id="heading">Source heading</h2><p id="u-1" data-print-unit="u-1">Complete source text.</p></section>')
+    units=[{'id':'u-1','source':'fixture:canonical#1','occurrence':'1'}]
+    return {'schema':'triptych-web-print-document/v1','id':identity,'title':'Source fixture','print_type':'flow',
+            'source_digest':source,'selection_digest':'b'*64,'style_sha256':'c'*64,'expected_units':units,
+            'coverage_result':{'status':'pass','output_id':identity,'source_digest':source,'selection_digest':'b'*64,'expected_units':copy.deepcopy(units)},
+            'parts':[{'id':'p','href':'fixture/p.html',**common.part_statistics(html)}],
+            'assets':[],'fonts':[]}
+
+
+class CommonPrintTests(unittest.TestCase):
+    def test_typed_source_styles_preserve_text_and_declared_dimensions(self):
+        source=('<section><table style="width:85%;"><colgroup><col style="width: 10%"></colgroup><tbody><tr>'
+                '<th style="text-align: right;">Source</th><td style="text-align: left;">same &amp; complete</td>'
+                '</tr></tbody></table><p class="poetry-verse-line" style="margin:0">Arma virumque.</p>'
+                '<div class="response-space" aria-label="Response space" style="min-height:0.65in"></div></section>')
+        normalized,audit=common.normalize_html_with_projections(source,profile='curriculum')
+        self.assertEqual(common.part_statistics(source)['text_sha256'],common.part_statistics(normalized)['text_sha256'])
+        self.assertNotIn(' style=',normalized)
+        for name in ['print-table-width-85','print-column-width-10','print-align-right','print-align-left','response-space-065']:
+            self.assertIn(name,normalized)
+        self.assertEqual(len(audit),6)
+        self.assertEqual(common.normalize_html(normalized,profile='curriculum'),normalized)
+
+    def test_unbound_visibility_styles_and_wrong_element_styles_refuse(self):
+        for source in ['<p style="display:none">source</p>','<p style="text-align:left">source</p>',
+                       '<table style="width:1%"></table>','<col style="width:99%">',
+                       '<div class="response-space" style="min-height:0.1in"></div>',
+                       '<p style="margin:0">untyped source</p>']:
+            with self.subTest(source=source),self.assertRaises(common.ProfileError):common.normalize_html(source)
+
+    def test_only_real_attribute_spans_are_rewritten_and_fold_state_is_typed(self):
+        source='<details open class="source"><summary>Source</summary><p>complete</p></details>'
+        result=common.normalize_html(source)
+        self.assertEqual(result,'<details class="source"><summary>Source</summary><p>complete</p></details>')
+        source='''<td title="literal style='display:none' class='example'" style="text-align: left;">source</td>'''
+        result=common.normalize_html(source)
+        self.assertIn('''title="literal style='display:none' class='example'"''',result)
+        self.assertIn('class="print-align-left"',result)
+        self.assertEqual(common.structure_sha256('<details open><p>x</p></details>'),common.structure_sha256('<details><p>x</p></details>'))
+
+    def test_server_metadata_namespacing_and_known_grid_normalization_are_idempotent(self):
+        source=('<section class="sheet low" data-side="front" data-sheet="1"><div class="grid" style="--rows:4">'
+                '<article class="face" data-unit-id="LM-F01:front" data-pair-id="LM-F01"><p>Complete cue.</p></article>'
+                '<div class="face blank" aria-hidden="true"></div></div></section>')
+        result=common.normalize_html(source,profile='server-cards')
+        self.assertIn('class="server-sheet server-low"',result)
+        self.assertIn('data-print-unit="LM-F01:front"',result)
+        self.assertNotIn('data-unit-id',result)
+        self.assertNotIn('aria-hidden',result)
+        self.assertNotIn(' style=',result)
+        self.assertEqual(common.normalize_html(result,profile='server-cards'),result)
+        with self.assertRaises(common.ProfileError):common.normalize_html('<p aria-hidden="true">source</p>',profile='server-guide')
+
+    def test_part_measurements_keep_exact_nested_unit_and_id_order(self):
+        source=('<section id="part-root" data-print-unit="plate-1"><h2 id="title">Plate</h2>'
+                '<article id="obj-1" data-print-unit="obj-1" class="object object"><p>complete</p></article>'
+                '<math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mtext>Γ</mtext></mrow></math></section>')
+        stats=common.part_statistics(source,selectors=['article','.object','[data-print-unit]','math'])
+        self.assertEqual(stats['expected_ids'],['title','obj-1'])
+        self.assertEqual(stats['units'],['plate-1','obj-1'])
+        self.assertEqual(stats['counts'],{'article':1,'.object':1,'[data-print-unit]':1,'math':1})
+        self.assertEqual(common.inventory(['verse-Γ-⛪']),{'count':1,'sha256':hashlib.sha256('["verse-Γ-⛪"]'.encode()).hexdigest()})
+
+    def test_structure_does_not_repair_source_html_or_discard_raw_attributes(self):
+        for source in ['<section><p>missing close</section>','<section><span/></section>',
+                       '<section class="a" class="b"></section>','<section></section>lost source']:
+            with self.subTest(source=source),self.assertRaises(common.StructureError):common.structure_events(source)
+        implicit='<section><table><tr><td>source</td></tr></table></section>'
+        explicit='<section><table><tbody><tr><td>source</td></tr></tbody></table></section>'
+        self.assertNotEqual(common.structure_sha256(implicit),common.structure_sha256(explicit))
+        self.assertNotEqual(common.structure_sha256('<ol start="1"><li>x</li></ol>'),common.structure_sha256('<ol start="2"><li>x</li></ol>'))
+
+    def test_compaction_preserves_proof_without_copying_or_exposing_large_audit(self):
+        class Ledger(list):
+            def __deepcopy__(self,memo):raise AssertionError('large canonical ledger must not be deep-copied')
+        full=descriptor();full['expected_units']=Ledger(full['expected_units'])
+        full['coverage_result']['expected_units']=full['expected_units']
+        full['sources']={'detailed':'audit-only'};full['parts'][0]['html']='audit-only source body'
+        full['fonts']=[{'family':'Triptych Punctus Elevatus','href':'fonts/glyph.woff2','sha256':'d'*64,'unicode_range':'U+2E4E','source':'audit-only'}]
+        compact=common.compact_descriptor(full,audit_sha256='e'*64)
+        self.assertNotIn('sources',compact)
+        self.assertNotIn('expected_units',compact)
+        self.assertNotIn('html',compact['parts'][0])
+        self.assertNotIn('source',compact['fonts'][0])
+        self.assertEqual(compact['fonts'][0]['unicode_range'],'U+2E4E')
+        self.assertEqual(compact['coverage_result']['audit_sha256'],'e'*64)
+        self.assertEqual(compact['unit_inventory'],common.inventory(['u-1']))
+        self.assertEqual(compact['coverage_result']['unit_inventory'],compact['unit_inventory'])
+        self.assertIsInstance(full['expected_units'],Ledger)
+
+    def test_compaction_never_invents_source_coverage_or_accepts_another_selection(self):
+        for mutation in ['unverified','wrong-output','wrong-source','wrong-selection','wrong-units','missing-structure']:
+            with self.subTest(mutation=mutation):
+                full=descriptor()
+                if mutation=='unverified':full['coverage_result']['status']='complete-mechanical-selection'
+                elif mutation=='wrong-output':full['coverage_result']['output_id']='publication:other'
+                elif mutation=='wrong-source':full['coverage_result']['source_digest']='0'*64
+                elif mutation=='wrong-selection':full['coverage_result']['selection_digest']='0'*64
+                elif mutation=='wrong-units':full['parts'][0]['units']=[]
+                else:full['parts'][0].pop('structure_sha256')
+                with self.assertRaises(ValueError):common.compact_descriptor(full)
+
+    def test_a_thousand_source_parts_keep_public_transport_below_500kb(self):
+        full=descriptor();units=[];parts=[]
+        for index in range(1000):
+            unit='unit-'+str(index);part='part-'+str(index)
+            units.append({'id':unit,'source':'fixture:canonical#'+str(index),'occurrence':'1'})
+            body=f'<section data-print-part="{part}"><p id="{unit}" data-print-unit="{unit}">Complete source {index}.</p></section>'
+            parts.append({'id':part,'href':'parts/'+part+'.html',**common.part_statistics(body)})
+        full['parts']=parts;full['expected_units']=units;full['coverage_result']['expected_units']=copy.deepcopy(units)
+        compact=common.compact_descriptor(full)
+        self.assertEqual(compact['unit_inventory']['count'],1000)
+        self.assertLess(len(common.canonical_json(compact).encode()),500000)
+        self.assertTrue(all('structure_sha256' in part for part in compact['parts']))
+
+
+if __name__=='__main__':unittest.main()
