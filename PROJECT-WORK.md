@@ -11,196 +11,110 @@ Last reconciled: 2026-11-03.
 
 <!-- promised-deliverable: source-first-print-on-demand-2026-11-02 -->
 
-**In progress: complete browser printing is live; publication speed remains open.**
-The requested outcome is to remove all tracked PDF and ZIP
-corpora, deliver exact binary evidence through `spincyc/triptych-artifacts`,
-declare per-document manifests and type schemas including propers and
-timelines, and offer automatic **Print / Save as PDF** from the web for every
-admitted edition. Central styles should make publication consistent and fast.
-The proposal table and cold review were required before implementation, followed
-by validation and publication to main. No history rewrite was authorized.
+**Published: functional/storage migration complete; the larger publication-speed
+ambition remains open.** The maintainer requested source-first publishing across
+the project, per-type schemas, external exact binary evidence, automatic web
+Print / Save as PDF, independent review and publication to main. No history
+rewrite was authorized.
 
-The recovered prior checkpoint explicitly records that the proposal table was
-presented and cold-reviewed before the maintainer authorized implementation.
-The exact earlier conversation is unavailable; this records that known sequence
-without inventing a quotation, timestamp or retained review transcript. The
-controlling table and contracts are in `guidance/document-schemas.md` and
-`src/common/document-schemas/`, introduced in
-`84c2f7e041af77230095987ae7eb86b0f4d2f92e`. Current code and tests establish
-their implementation, not the historical ordering of the conversation.
+Implementation main is `f3ba2288bc263e4014661596f38c0df8d404bd38`;
+`spincyc/triptych-artifacts` main is
+`72387d6084959c7656b85158d0415d9e9dfd81aa`. Both workspace clones remain on
+`feature/no-pdfs`. All pushes preserve existing history. The tracked checkout
+falls from 7,617,113,929 bytes to approximately 2.014 GB, a 73.6% reduction.
+No PDF or ZIP is tracked or installed in the public artifact. Historical Git
+objects remain; this is not a claim that a full-history clone shrank by 73.6%.
 
-The earlier source-first main snapshot
-`7b9daae87c00b0e4d84fe958372d520300374c08` deployed successfully in 782 seconds,
-against the original 1,415-second measurement. The tracked working tree fell
-from 7,617,113,929 bytes to approximately 2,008,724,253 bytes, a 73.6% reduction;
-no PDF or ZIP remains tracked. The full Git history is unchanged. Hash-bound
-external delivery preserves exact evidence and archived print identities;
-historical page counts describe those archived bytes only. Reproducible browser
-JSON also moved outside Git into the verified content cache. These are completed
-migration results, separate from the universal browser-print candidate below.
+The recovered checkpoint records that the type/schema proposal table was
+presented and cold-reviewed before implementation was authorized. The exact
+old conversation is unavailable; no quotation or review transcript is invented.
+The controlling contracts are in `guidance/document-schemas.md` and
+`src/common/document-schemas/`, introduced by `84c2f7e041`. They cover 37
+provider document kinds and 13 provider-neutral source families. Current
+source gates pass for 217 publication leaves and 283 declared outputs: 281
+admitted outputs and two preserved holds. The incoming Fifth Sunday after
+Epiphany catalogue reference and all 106 prior deliverables are retained.
 
-The workspace fast-forwarded to `cb8ede344f`, preserving the incoming ordinary
-Fifth Sunday after Epiphany catalogue reference and every other deliverable.
-Current discovery contains 217 publication leaves and 283 declared outputs:
-281 admitted outputs and two holds. The complete-print implementation is committed and pushed to main as
-`c7ab71a774e0fc545ee6ef85d485563cc49c9ad7`. A preliminary thirteen-family two-fresh-build record
-against the integrated source passed in 1,108.790 seconds: 27,836 files and
-382,659,164 bytes, descriptor SHA-256
-`29728e7561ea75a996eaae5930ba89d99b118011875443a67db78e821a76cd75`.
-The source-metadata corpus check also passed using the real verified cache.
-A subsequent final adversarial check exposed a Bible context-schema gap:
-removing titles or rights apparatus before initial body sealing could still
-pass verse-only coverage. Current edition contents were present. The canonical pre-render context proof
-and refusal regressions are now repaired and independently retested: 17 tests
-pass, all 696 part bodies and source digests remain byte-identical across seven
-editions, and all 252,288 native verses remain unchanged. Final recording
-against the repaired implementation was stopped after the consolidated owner
-audit found two further pre-seal gaps: dictionary descriptions/qualifications
-and server-card text could disappear while identity-only assembly checks still
-passed. Both are now repaired and independently retested. Dictionary canonical
-fields, qualifiers, artwork and references are checked before sealing; all 18
-tests pass and all six bodies remain identical. Server source-occurrence
-schedules are checked against final text, roles, ordering, symbols and assets;
-all 20 tests pass and all seven bodies remain identical. Seventy-five finite
-template definitions reject unsupported direct and nested wording changes
-before conversion. Original omission attacks now refuse before sealing. The
-generic, curriculum, source-volume and repaired Bible proofs have no additional
-concrete marker-only gap in that audit. This preliminary descriptor is not the final
-candidate after that repair. **The first complete-print main deployment and live checks pass; the
-optimized publication candidate remains in progress.** No new
-publication timing or editorial approval is claimed.
+Complete browser printing covers 644 roots: 281 provider outputs, seven Bibles,
+350 papal selections and six reading-plan volumes. There are 642 new complete
+print descriptors and two retained complete-volume controllers. The 141
+reviewed web readers retain their bodies and reading presentation. Print opens
+the complete styled edition automatically; the controller verifies all parts,
+fonts and images before opening the dialog. Type owners conserve source text,
+rights notices, language, companions, notes, appendices, answers, images, card
+faces, worksheet geometry and order. Browser reflow does not certify native
+pagination, printer alignment or physical duplex behavior. Optional native
+recipes keep their separate review contracts.
 
-The implementation covers 644 complete print roots: 281 provider outputs,
-seven Bibles, 350 papal source selections and six reading-plan volumes. There
-are 642 new descriptors and two retained complete-volume controllers. The 141
-reviewed web readers retain their bodies and reading presentation; their quiet
-Print action opens the canonical complete edition with `?print=1`. Source and
-rights notices, declared companions, notes, appendices, answers, card faces,
-illustrations and source ordering remain owned by their actual type adapters.
-The browser verifies every required part and asset before opening its print
-dialog. Browser reflow does not certify native page counts, printer alignment
-or physical duplex behavior; optional native recipes retain their own review
-contracts.
+Exact evidence, historical print identities and the original frozen papal
+input snapshots retain hash-bound external delivery. Historical page counts
+refer to archived bytes. Reproducible browser data, including private print
+preparation, is outside Git. Current descriptor SHA-256 is
+`348d2ad0526095b6dcaa956fe11c3de7b8958c043390d40c46e103b1c70cbccf`:
+13 families, 27,836 files and 382,659,292 bytes. Two independent fresh builds
+agree in 1,077.846 seconds. Every output path/hash/size map equals the first
+complete-print candidate `c7ab71a774`; only generator commitments changed.
+The current immutable candidate is `browser-products-348d2ad05260-v1`.
+Its three server asset digests match; anonymous fresh retrieval and current
+build pass with thirteen exact families and zero generation. Cache transport
+is not source, editorial or publication authority.
 
-Completed candidate verification is recorded here with its durable code and
-regression owners; these results do not stand in for the pending full record
-and publication gates:
+| Verification | Result and durable owners |
+| --- | --- |
+| Complete source/DOM coverage | All 288 publication/Bible selections, 1,172 parts, 181,203 source units and 7,723 geometry events pass. See `scripts/_web_print_products.py`, `_web_print_prepare.py` and their focused tests. |
+| Source volumes | 354 inline selections, two legacy roots and 24 components pass; canonical envelopes are checked before sealing and again at publication. See `_web_print_sources.py` and `test_source_print_metadata.py`. |
+| Geometry, cards and illustrations | All 37 curriculum selections retain writing spaces/struts. Seven server outputs retain 497 units, 188 card faces, 42 SVG instances, instructions and appendices. Six dictionaries retain 319 images. Owning source, browser and adapter tests preserve these contracts. |
+| Independent omission checks | Bible context, dictionary fields and server final-assembly schedules reject omissions before sealing. Seventy-five finite server template definitions reject unsupported direct/nested source changes. See the owning adapter tests and `test_web_print_common.py`. |
+| Performance-only equivalence | All 1,172 part-statistic objects match C7; all thirteen recipe identities plus aggregate match C7 on the same 82,534-input tree. Forty-one common/routing and 67 store tests pass; independent review clears all three patches. |
+| Current publication | Source-gated make passes in 274.907 seconds and independent GitHub Pages artifact verification in 153.996 seconds. Only publication metadata/checksums differ from C7; every printed page, script, style, font and image is identical. |
+| Current live interface | All seven cases pass at `https://mystago.gy/`: dictionary, calendar, proper click/auto, Math, complete Clementine and legacy Douay plan. Each invokes Print once after complete-content/font/image checks. Live manifest and checksums match the current validated artifact. |
 
-| Completed proof | Result | Source and regression owners |
-| --- | --- | --- |
-| Publication and Bible source/reread coverage | All 288 selections pass: 1,172 parts, 181,203 source units and 7,723 geometry events; all 288 DOM checks pass. | `scripts/_web_print_products.py`, `scripts/_web_print_prepare.py`, `tools/tests/test_web_print_products.py`, `tools/tests/test_web_print_publication.py`, `tools/tests/test_web_print_bibles.py` |
-| Source-volume envelope | 354 inline source selections, two legacy complete roots and 24 components pass. | `scripts/_web_print_sources.py`, `tools/tests/test_web_print_sources.py` |
-| Browser controller and native geometry | 37 controller tests and ten legacy cases pass; all 37 native geometry selections pass. | `src/web/browser/shared/web-print.js`, `tools/tests/test_web_print_controller.py`, `tools/tests/test_web_print_flow.py` |
-| Server and dictionary coverage | Seven server outputs retain 497 source-bound units, 188 distinct card faces across three decks, 42 guide SVG instances (39 prepared variants), five Low Mass duplex instructions, three rights notices and two terminal appendices. Deck word order and native 7/13/12-page counts pass; six dictionaries retain 319 images. | `scripts/_web_print_server.py`, `scripts/_web_print_dictionaries.py`, `tools/tests/test_web_print_server.py`, `tools/tests/test_web_print_dictionaries.py` |
-| Other complete source selections | Full Clementine, mathematical content, calendar and proper selections pass. | `tools/tests/test_web_print_bibles.py`, `tools/tests/test_web_print_common.py`, `tools/tests/test_web_print_publication.py` |
-| Fonts, source marks and review repairs | Ten final fonts comprise eight Libertinus faces, Punctus Elevatus and the five-character Source Marks supplement. Missing glyph findings are resolved; five native custom glyphs and all 16 mark tests pass. | `src/common/browser-print-assets.json`, `src/common/browser-print-marks.json`, `src/web/browser/shared/fonts/README.md`, `tools/tests/test_web_print_marks.py` |
+Independent review found and repaired admission/notices, link/language,
+raw-body, geometry and pre-seal source-conservation defects. Later optimization
+reuses validated structural events, freezes routing maps once per held
+catalogue, and precompiles selectors/classifications within each fresh input
+phase. No source/rights/part/asset/negative check or freshness phase was removed.
+The exact-path release-binding refresh also includes 892 previously unused
+existing print dependencies; all are in the sealed print source closure and
+were byte-identical to main. Approval policy and normative rights prose remain
+unchanged. No new editorial, ecclesiastical or whole-corpus physical-print
+approval is claimed. Fifteen inherited chronology findings, one source-audit
+finding and four JavaScript findings remain unresolved outside this migration.
 
-Independent cold implementation review identified P2 defects in admission and
-source notices, links and language, raw-body identity, and orphaned or hidden
-geometry. Those defects are repaired and covered by the source, browser and
-mark regressions. Exact source-bound SVG and font releases are live in the
-artifact repository, whose main is `86b0eb4`. The central browser style and
-controller are `src/web/browser/shared/web-print.css` and `web-print.js`;
-`docs/printing.md`, `guidance/document-schemas.md` and `guidance/web-data.md`
-explain the source, style, cache, review and print boundaries. This work grants
-no new editorial approval. Fifteen inherited chronology findings, one inherited
-source-audit defect and four inherited JavaScript findings remain unresolved;
-their scope and the existing holds are unchanged.
+The optimized automatic Pages run
+[41612572249](https://github.com/spincyc/triptych/actions/runs/41612572249),
+job `125837882894`, succeeds for `f3ba2288bc` in **1,336 seconds (22m16s)**.
+The first complete-print run `41593389653` took 1,976 seconds; the original
+comparison run took 1,415 seconds. Latest publishing is **32.4% shorter than
+the first complete-print candidate but only 5.6% shorter than the original**.
+The requested substantial speed improvement is therefore not established.
+The bounded migration, profiling, optimizations and opportunity research are
+complete; that remaining performance ambition is explicitly open.
 
-All implementation owners are frozen and the consolidated independent review
-has cleared the repaired source-coverage boundaries. Validate two independent fresh
-thirteen-family cold builds and exact descriptor/cache delivery; run the
-normal promise checker only after that cache is ready; then run the current
-deployment-source gates, full local site build and Pages artifact verification.
-Complete final independent integration/disclosure review, inspect and commit
-the coherent source and operational records, and push authorized main without
-rewriting history or losing the incoming catalogue change. Verify the automatic
-Pages result and affected live catalogue, reader, print and asset routes, then
-record the actual new timings and update the open requirements. Operational
-status-only pushes touching just this register and the TOML ledger are excluded
-from Pages triggers because neither file is a browser-product or published-site
-input. Mixed source/status pushes still build, and manual dispatch is retained. The earlier
-twelve-family descriptor and superseded recording are not proof of this
-candidate's completion.
+Controlled local build+verify improves 9.817%. Matched Python 3.13.17 and
+3.14.9 direct builds measure 167.197 and 165.689 seconds with identical output;
+there is no material runtime-speed evidence and CI stays on 3.13. Runner
+variation and faster untouched gates prevent attributing the entire CI gain
+to the patches. The latest run imports all thirteen exact cache keys, skips
+Pandoc/font/diagram setup, and retains every source and artifact gate. Further
+cold-projection caching needs a versioned protocol/shared canonical routing
+plan; its estimated profile ceiling is not a measured wall-time saving.
+Operational-only changes to this register and the ledger are excluded from
+Pages triggers because neither is a generated-product or published-site input.
 
-The final frozen implementation now passes two independent fresh builds in
-1,106.683 seconds: 13 families, 27,836 files and 382,659,292 generated bytes.
-Descriptor SHA-256: `fc8ad52c86d30b21fce184750ecb26e51a840f94f5bf0a32a523bf1cf773d368`.
-The normal verified-cache source-metadata corpus test passes, as does the full
-promise ledger (107 tracked deliverables). The exact cache candidate has been
-exported; its publication, current local site gates and live deployment remain
-pending. These results supersede the preliminary descriptor above.
+| Further opportunity, not an approved deletion set | Tracked bytes / files | Boundary |
+| --- | ---: | --- |
+| Generated Bible chapter JSON | 34,753,120 / 9,387 | Materialize from canonical verse data with `tools/index-bible`; retain edition, numbering and rights owners. |
+| Historical papal control snapshots | 62,278,519 / 6 | Preserve current structured owners, original dated byte identities and replay evidence; needs narrow text-delivery policy/resolver work. |
+| Non-indexable scan/layout markup | 34,593,060 / 49 | Review individually; canonical TEI and indexable scan XML are excluded. |
 
-The full local source-gated site build passes in 293.406 seconds with Pandoc,
-PDF/TeX, native authoring and network CLI tools blocked. All seven actual local
-browser cases pass under the project prefix, including complete Clementine and
-legacy reading-plan automatic printing. The independent verifier then refused
-892 existing dependencies absent from the site-source bindings: 281 admitted
-edition release records, 610 canonical Bible-source files and one Bible schema.
-The initial refresh had covered changed files rather than all newly used
-dependencies. Every missing path is in the sealed print source closure and is
-byte-identical to main; independent review confirms the exact scope. The narrow
-892-path refresh now passes without changing source text, frozen compiler
-bytes, the descriptor, approval policy or rights wording. The corrected full
-artifact build passes in 199.955 seconds; independent artifact and GitHub Pages
-compatibility verification passes in 182.186 seconds. The only changed outputs
-are `PUBLICATION-MANIFEST.json` and `SHA256SUMS`; all 38,920 files retain the
-same membership and all browser-tested pages, scripts, styles, fonts and images
-remain byte-identical. Final independent integration and disclosure review is clear, including the
-exact descriptor, current inputs, source closure, admission set and corrected
-site. Main is pushed through an ordinary fast-forward; live deployment is pending.
-
-The exact cache candidate `browser-products-fc8ad52c86d3-v1` is public and
-immutable in `spincyc/triptych-artifacts`, whose main is `266998f`. All three
-server asset digests match. Anonymous fresh-cache hydration and current-product
-build pass with zero generation. Source main was pushed without rewriting
-history and its exact remote ref was verified. Automatic Pages run
-`41593389653` succeeds in 1,976 seconds (32m56s). All seven live complete-print
-cases pass at the configured canonical domain `https://mystago.gy/`, including
-the complete Clementine Bible and legacy Douay plan. The initial GitHub-prefix
-Bible expectation was a test-harness assumption after the configured domain
-redirect; live source assets match the signed artifact and no production UI
-change was needed.
-The committed tree has 82,005 files and 2,013,718,159 bytes, 73.563% less than
-the original tree; no PDF or ZIP is tracked. Existing Git history is preserved.
-
-The storage and functional results are complete at `c7ab71a774`, but that first
-complete-print deployment is 39.65% slower than the original 1,415-second run.
-The publication-speed objective is explicitly still open. Cache transport is
-working: all thirteen exact family keys are imported and no generation is
-needed. Publication building (661.48 seconds) and independent verification
-(607 seconds) consume 64.2% of the job. The source-gated make total is 1,082
-seconds. These timings do not support claiming a speed improvement.
-
-One actual-worker profile reproduces the signed artifact exactly. Its measured
-repeated work supports three narrow optimizations: reuse validated structural
-events for part hashes, freeze routing maps once per held catalogue, and
-precompile input selectors/classifications within each fresh hashing phase.
-All three are independently reviewed, all 41 common/routing and 67 store tests
-pass, and all 1,172 prepared-part statistics match `c7ab71a774`. The actual-tree
-identity comparison remains exact over 82,534 inputs and thirteen recipes plus
-the aggregate; that hashing phase measures 9.421 to 7.924 seconds. Source text,
-rights, admission, negative checks and freshness phases remain unchanged.
-The eight implementation/test files are frozen. Two independent fresh builds
-pass in 1,077.846 seconds and record descriptor
-`348d2ad0526095b6dcaa956fe11c3de7b8958c043390d40c46e103b1c70cbccf`.
-All 13 output path/hash/size maps exactly match `c7ab71a774`; content, rights,
-lock and membership identities remain unchanged. Current scoped release
-bindings preserve approval policy and rights prose. Required source-gated make
-passes in 274.907 seconds and independent Pages artifact verification in
-153.996 seconds. Only `PUBLICATION-MANIFEST.json` and `SHA256SUMS` differ from
-the browser-tested live candidate. The combined local path is 9.817% faster,
-which does not establish the requested major publication-speed improvement.
-
-Matched isolated builds of the same optimized source measure 167.197 seconds
-on Python 3.13.17 and 165.689 seconds on Python 3.14.9, with every output file
-identical. The 0.9% difference provides no material interpreter-speed evidence;
-the workflow runtime remains unchanged. The validated optimization checkpoint
-is being prepared for publication while further measured storage/build-cost
-opportunities are evaluated. Its immutable cache delivery, main publication
-and deployment measurement remain pending. The earlier live result is not a
-measurement of this optimization.
-
+These disjoint screening pools total 131,624,699 bytes, 6.54% of the measured
+tracked tree, not a predicted CI gain. Bible materialization has the strongest
+file-count opportunity. One 32,435,033-byte withdrawal snapshot retains all
+712 historical supersession rows and 712 affected-unit rows in the current
+1,025-row owner; its dated header and exact original bytes still require
+preservation. Keep 759 MB of TXT witnesses, reviewed source/rights inventories
+and current papal extraction shards. No further migration was performed.
 
 ## Fifth Sunday after Epiphany catalogue reference, 2026-11-02
 

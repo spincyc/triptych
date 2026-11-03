@@ -45,7 +45,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "current-thirteen-family-two-cold-record"
   criterion = "Two independent fresh cold builds against the final integrated source agree for all thirteen families, the current descriptor is recorded and validated, and its exact immutable cache delivery is verified without relying on superseded recording or stale twelve-family bindings."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", "release/browser-products.json", "scripts/_browser_product_recipes.py"]
 
   [[deliverables.requirements]]
@@ -63,14 +63,20 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "main-publication-with-history-preserved"
   criterion = "The validated integrated work is committed and pushed to authorized main through ordinary history-preserving integration, the remote ref and exact outgoing range are verified, the assigned workspace branch is retained, and the incoming Epiphany catalogue change and all other deliverables are preserved."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", "promised-deliverables.toml"]
 
   [[deliverables.requirements]]
   id = "live-print-and-publication-performance"
   criterion = "The automatic Pages workflow for the final main source succeeds; affected live catalogue, reader and complete Print / Save as PDF routes and assets are verified, and actual publication timings and limits are recorded without presenting the earlier 782-second deployment as a measurement of this candidate."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml", "docs/printing.md"]
+
+  [[deliverables.requirements]]
+  id = "substantial-publication-speed-improvement"
+  criterion = "Complete-print publication achieves a substantial measured improvement over the original 1,415-second baseline while retaining every source, rights and artifact gate; a modest original-baseline gain or comparison only against the slower first complete-print candidate does not establish this ambition."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml", "tools/public-alpha"]
 
 [[deliverables]]
 id = "gpt-epiphany-fifth-catalogue-reference-2026-11-02"
