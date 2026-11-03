@@ -99,6 +99,32 @@ authorized main publication and measured deployment remain pending. The earlier
 substantial-publication-speed ambition remains open; local preparation timings
 are not a claim of a faster production deployment.
 
+The first local implementation is `9c5195135a`. Its required source-gated site
+build passes in 333.244 seconds. Seven actual built-site Print actions and
+browser downloads pass without response or compiler overrides: article,
+All Saints concise timeline, cards, dictionary, complete Clementine, English
+papal edition and full Douay reading plan. Every PDF's full extracted text,
+title, page count and embedded fonts match the complete native baseline;
+no HTML Print, script or resource error occurs. Source-only publication and
+final live checks remain distinct from that local result.
+
+A final scope audit explicitly licenses only three newly authored software
+paths under MIT: `native-tex.js`, `native-print.js` and
+`tools/native-print-service`. It does not relicense existing browser files,
+the upstream GPL engines, fonts or document content. The follow-up is a
+LICENSE-only change; compiler, font, template and canonical document bytes
+remain unchanged. The final licensed descriptor passes two independent cold
+builds in 1,147.808 seconds, SHA-256
+`c1dd7ce66819acb7caabff1d1547c0be037b3339bd52edc2691444b82440dd60`.
+Its 13 families retain 27,836 files and 382,659,292 bytes. Twelve inventories
+are unchanged; seven Bible preparation identities and digest attributes renew,
+while all 696 underlying HTML parts retain their other bytes. The final cache
+candidate passes strict offline import and current-source build/check with
+generation refused in 66.880 seconds. Its 100,817,800-byte archive is SHA-256
+`905ad96c8408a5fa148c01cfa96dbf13994ace8be3d0a278eb3daf1b605e0765`.
+Only LICENSE and descriptor binding rows are refreshed for this follow-up;
+final local publication checks and the authorized push remain pending.
+
 ## Source-first publication and complete browser printing, 2026-11-02
 
 <!-- promised-deliverable: source-first-print-on-demand-2026-11-02 -->

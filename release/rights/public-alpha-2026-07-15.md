@@ -1750,7 +1750,7 @@ release attachment, announcement, or promotion.
 | --- | --- |
 | `ABOUT.md` | `596655ae5faaadbaa7b9168a09150be60ebc35666e497ba9f7b9f20c0139a4be` |
 | `CONTRIBUTING.md` | `87f10a26810177860d3c274071e4e043f19432e697f72c7bc70009e2680cd9ca` |
-| `LICENSE` | `49e30162cadcc57d93ca6027b750ab11bcfd012e76e4da2dbb0219d9aa1652f7` |
+| `LICENSE` | `62bb21ebeadfd5a4bce31d3632a6780723a3e730e12565bc7facff9b586b08ef` |
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
 | `Makefile` | `473912a7f40988764b7a56ac75d532c9df400fc78b0c09ef40ef97cb2885c2ab` |
@@ -1792,7 +1792,7 @@ release attachment, announcement, or promotion.
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
 | `library/traditional-latin-mass.md` | `07986efe5af8dbda01681e038efeadd8cff7160c0310b47c35f7c0c832e42f10` |
-| `release/browser-products.json` | `3da49470345fec2661a3255e5500dfad4ee698dd51687d14d3fea29acac4b547` |
+| `release/browser-products.json` | `c1dd7ce66819acb7caabff1d1547c0be037b3339bd52edc2691444b82440dd60` |
 | `release/papal-documents.json` | `b20c05f8999ff2391e9c7ad15124d519d710e60ac7aa648b297e70be1eb0e17e` |
 | `release/papal-documents/input-delivery.json` | `2aefdce41b2f33be61f9bd455a407d94497d87c7e5fdef76ed3e562777d39fd6` |
 | `release/papal-documents/input-records.json` | `22e755c5b11d957a3f621b12a895cf7fa059a7ac42edeb882ac856a80388766c` |
