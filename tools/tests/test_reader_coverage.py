@@ -10,6 +10,9 @@ import subprocess
 import sys
 import unittest
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 import _missal_coverage as coverage
@@ -199,7 +202,7 @@ class ReaderCoverageTests(unittest.TestCase):
         self.assertEqual(node(op="oration", proper=row, witness="project-created")["text"], "Project study words")
 
     def test_all_souls_witness_gap_does_not_deny_another_held_english_body(self):
-        data = json.loads((ROOT / "src/web/data/structure/propers/roman-1962.json").read_text())
+        data = json.loads((browser_data_root(ROOT) / 'structure/propers/roman-1962.json').read_text())
         mass = next(row for row in data["masses"]
                     if row["key"] == "commemoratione-omnium-fidelium-defunctorum")
         caswall = "edition.edward-caswall.lyra-catholica.london-1849"
@@ -302,7 +305,7 @@ class ReaderCoverageTests(unittest.TestCase):
         self.assertEqual(actual["counts"]["occurrences"], 1)
 
     def test_generated_corpus_reports_match_browser_aggregation(self):
-        data_root = Path(os.environ.get("TRIPTYCH_COVERAGE_DATA", ROOT / "src/web/data"))
+        data_root = Path(os.environ["TRIPTYCH_COVERAGE_DATA"]) if os.environ.get("TRIPTYCH_COVERAGE_DATA") else browser_data_root(ROOT)
         for family in ("propers", "ordinary"):
             for calendar in ("roman-1962", "postconciliar", "roman-pre-1955"):
                 with self.subTest(family=family, calendar=calendar):
@@ -319,7 +322,7 @@ class ReaderCoverageTests(unittest.TestCase):
                     self.assertEqual(published, expected)
 
     def test_real_easter_sequence_aliases_leave_one_readable_witness(self):
-        data_root = Path(os.environ.get("TRIPTYCH_COVERAGE_DATA", ROOT / "src/web/data"))
+        data_root = Path(os.environ["TRIPTYCH_COVERAGE_DATA"]) if os.environ.get("TRIPTYCH_COVERAGE_DATA") else browser_data_root(ROOT)
         data = json.loads((data_root / "structure/propers/roman-1962.json").read_text())
         data["masses"] = [mass for mass in data["masses"] if mass["key"] == "easter-sunday"]
         data["masses"][0]["kind"] = "contract"
@@ -330,7 +333,7 @@ class ReaderCoverageTests(unittest.TestCase):
         self.assertTrue(sequence["text"])
 
     def test_real_mixed_only_proper_accepts_its_body_witness(self):
-        data_root = Path(os.environ.get("TRIPTYCH_COVERAGE_DATA", ROOT / "src/web/data"))
+        data_root = Path(os.environ["TRIPTYCH_COVERAGE_DATA"]) if os.environ.get("TRIPTYCH_COVERAGE_DATA") else browser_data_root(ROOT)
         data = json.loads((data_root / "structure/propers/roman-1962.json").read_text())
         mass = next(mass for mass in data["masses"] if mass["key"] == "pentecost-19")
         mixed = next(row for row in mass["propers"] if row["name"] == "Introit")

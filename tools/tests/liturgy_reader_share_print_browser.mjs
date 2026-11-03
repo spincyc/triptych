@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 
 /* Source-served Chromium coverage for both reader Share/Print entrances. */
 
@@ -174,7 +175,7 @@ function server() {
       const file = resolve(ROOT, relative || 'README.md');
       if (!file.startsWith(ROOT + sep)) throw new Error('outside repository');
       response.writeHead(200, { 'content-type': mime(file), 'cache-control': 'no-store' });
-      response.end(await readFile(file));
+      response.end(await readFile(repositoryPath(ROOT, file)));
     } catch (_error) { response.writeHead(404); response.end('not found'); }
   });
 }

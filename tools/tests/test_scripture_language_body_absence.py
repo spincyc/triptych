@@ -3,6 +3,9 @@ from pathlib import Path
 from importlib.machinery import SourceFileLoader
 from importlib.util import spec_from_loader,module_from_spec
 import copy,json,sys,tomllib,unittest,subprocess
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
 import _missal_coverage as V
@@ -57,7 +60,7 @@ class ScriptureLanguageBodyTests(unittest.TestCase):
    mass=next(m for m in structure['masses'] if m['key']==row['mass'])
    proper=next(p for p in mass['propers'] if p['name']==row['proper'])
    cases.append({'mass':mass,'proper':proper,'target':row})
-  payload={'structure':structure,'cases':cases,'expectedCoverage':{mass['key']:V.summarize(V.proper_units(mass),'selection') for mass in (c['mass'] for c in cases)},'input':{'bibles':json.loads((ROOT/'src/web/data/bibles.json').read_text())}}
+  payload={'structure':structure,'cases':cases,'expectedCoverage':{mass['key']:V.summarize(V.proper_units(mass),'selection') for mass in (c['mass'] for c in cases)},'input':{'bibles':json.loads((browser_data_root(ROOT) / 'bibles.json').read_text())}}
   result=subprocess.run(['node',str(ROOT/'tools/tests/scripture_language_body_read.mjs')],input=json.dumps(payload),text=True,capture_output=True,cwd=ROOT)
   self.assertEqual(result.returncode,0,result.stderr)
   proof=json.loads(result.stdout);self.assertEqual(proof['actualCases'],7);self.assertEqual(proof['actualCarrierRenders'],49)

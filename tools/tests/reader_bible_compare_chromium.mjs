@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 
 /* Explicit published Bible renderings over exact source occurrences. */
 
@@ -31,8 +32,8 @@ function server() {
       const file = resolve(ROOT, relative || 'README.md');
       if (!file.startsWith(ROOT + sep)) throw new Error('outside repository');
       response.writeHead(200, { 'content-type': mime(file), 'cache-control': 'no-store' });
-      const body = OVERLAY ? await readFile(resolve(OVERLAY, relative)).catch(() => readFile(file))
-        : await readFile(file);
+      const body = OVERLAY ? await readFile(resolve(OVERLAY, relative)).catch(() => readFile(repositoryPath(ROOT, file)))
+        : await readFile(repositoryPath(ROOT, file));
       response.end(body);
     } catch (_error) { response.writeHead(404); response.end('not found'); }
   });

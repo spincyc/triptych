@@ -7,6 +7,10 @@ import tomllib
 import unittest
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 PUS = (
     ROOT
@@ -14,7 +18,7 @@ PUS = (
     / "pustet-ratisbon-1862"
 )
 INVENTORY = ROOT / "src/sources/inventories/postconciliar-ordo-missae-v1.toml"
-STRUCTURE = ROOT / "src/web/data/structure/ordinary/postconciliar.json"
+STRUCTURE = browser_data_root(ROOT) / 'structure/ordinary/postconciliar.json'
 TARGET_CANON = (
     ROOT
     / "src/sources/works/catholic-church/missale-romanum/editions"

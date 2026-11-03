@@ -11,7 +11,7 @@ Last reconciled: 2026-11-02.
 
 <!-- promised-deliverable: gpt-propers-main-source-reconciliation-2026-11-02 -->
 
-**In progress.** The maintainer requested reconciliation with current `main`,
+**Validated candidate; commit and push pending.** The maintainer requested reconciliation with current `main`,
 which no longer stores or publishes a PDF corpus. The incoming main snapshot
 is `84c2f7e041af77230095987ae7eb86b0f4d2f92e`; this workspace starts from
 `a98aa06a7e9c743a78d1b914811c04b5d051fe45` on `feature/propers/codex`.
@@ -50,16 +50,284 @@ Receipt hashes are respectively
 and `b709c9ef18b5f2767a83155dc8c76bf5e344fb615e742c3162b93ac9db3c99a3`.
 These are mechanical freshness facts, without new editorial approval.
 
-Before the first merge checkpoint was committed, remote main advanced to
+The first source-only site build passed, and the reviewed merge tree
+`ab4d7ac275a2c96f884cdf28426b34bb62ec69b9` was committed normally as
+`0ba4c1db0ffb5ed7f73ff8645733b387e852c3ee`, with parents
+`91ee09d34f86be55e421df5ff9eb67ca75912171` and the pinned `84c2f7e041`.
+This checkpoint was kept local pending final integration and verification.
+
+Before that checkpoint was committed, remote main advanced to
 `e1ca91ba734219cefa92315c5520820c2c603607`. That follow-up also removes generated
 browser products and frozen papal input snapshots from Git. Preserve the first
 merge as a normal local checkpoint, then merge this additional main commit and
-adopt its descriptor-bound, outside-Git product model. Do not restore deleted
-generated products as tracked files. The latest integration, final site gates,
+adopt its descriptor-bound, outside-Git product model. The second merge accepts
+all generated-data deletions, including the feature's changed projections;
+fresh products must derive from the merged canonical inputs. Its shared exact
+archive helpers must also preserve the feature's bounded offline delivery.
+The real browser fixture adopts the new held-product context. Do not restore
+deleted generated products as tracked files. The latest integration, final site gates,
 independent review and branch push remain in progress. Historical PDF delivery
 and review statements below describe the earlier branch checkpoint; this
 reconciliation supersedes its current download surfaces without rewriting
 those historical audit facts.
+
+The second merge's shared archive repair passes all 63 focused tests: 36 for
+artifact delivery and 27 for frozen snapshot delivery. The artifact wrapper
+explicitly enables offline-only declarations; the shared validator's default
+and snapshot adapter retain their public-route requirement. The refactored
+packer independently reproduces the original four-source archive exactly,
+SHA-256 `05e4f8d0b98cd4ba1c7ff62b383406f9cbfc965e56a41097f8174f2bc98f5907`,
+2,775,040 bytes, and isolated hydration reproduces all four payloads. Original
+delivery records and the preservation proof remain unchanged. The tool registry
+now validates all 60 main tools, and `tmt check` passes.
+
+The explicit deeper `source-library validate --full-evidence` audit exits 1:
+exactly 703 old witnesses are unhydrated, totaling 4,480,837,219 bytes. Its whole
+failure set equals the source-evidence entries already declared by pinned
+`e1ca91ba73`; all their manifests are unchanged. None of the four new witnesses
+fails, and there are no other errors. No evidence download was attempted.
+The complete missing-manifest set digest is
+`fb52ee2c3636fc9d5c8f140c2a2e0e530e954ed3c3809c40305c74b2946a24a0`;
+the actual failure-log digest is
+`49972f241d818461195a5f5d9dfa49aa620c8c27289bf7e84fedd2c63e23f05c`.
+This is an exact inherited evidence-availability limit, not a full research
+replay pass. Ordinary source-only publication checks require no hydration.
+
+Two independent cold builds of all twelve browser families agree exactly:
+27,414 JSON outputs, 200,711,303 bytes. The accepted descriptor SHA-256 is
+`7a214fb20258a387f9cc9196dfc2ca1f910c6011e19a373ce1f2a3dfb2da5c73`,
+with product identity
+`71d4955a26bc73980b4d96848be43a471b238d242271d7a945e1560c281c487e`.
+The read-only cache check passes. Eight families are byte-identical to incoming
+main. The changes are bounded to the proper's document catalogue, accepted
+source records, four Catena files and mechanical act-history provenance.
+Independent review confirms every changed Catena byte equals the previously
+accepted feature snapshot; all 2,047 other Catena files are unchanged.
+
+All 557 act-history files retain their membership and substantive values.
+Relative to the first merge, 526 remain byte-identical and 31 change only tool
+fingerprints. Relative to incoming main, 525 remain identical and 32 change
+only delivery/tool fingerprints. Normalizing exactly those provenance stamps
+gives the same semantic tree digest for all three snapshots:
+`52b46bfe258d239db5747c7f36f7930a96ac06bdd02db78e16383d0bdba04fa5`.
+The independently checked source receipt has 80,666 input identities, digest
+`71712d2fe1f20017cf42b25839923ad94a7b7c9f0e71579dd1af37238e7543c2`,
+and all 18,443 source outputs retain the first merge's exact output digest.
+Fresh latest-main tests pass all 231 affected cases and 57 archive cases with
+one explicit unavailable-historical-run skip. Browser acceptance and final
+site verification remain pending.
+
+The first latest-main full browser run had ten passes and one failure: after
+an immediate resize, Law's heading was 103.125 pixels high while its stored
+measurement was still 35.84375. Native focus scrolled a link under that heading
+before the observer delivered its new measurement. A passing isolated rerun
+did not erase the original failure. Deterministic stale-height probes at 393,
+320 and enlarged-text 320 pixels reproduced the occlusion; the bounded repair
+remeasures and uses nearest, instant scrolling for focused table-body targets,
+while leaving header controls alone. Already-visible controls move zero pixels.
+The production helper hash is
+`1a8fe2d0fee5eec259c608abe1edbe022abcbe847410b0f0a47e9332e8a6149b`.
+The existing browser assertions remain unchanged.
+
+An explicit product record after this UI fix validates and retains all twelve
+exact family keys and all 27,414 output identities from the two cold builds.
+Only the aggregate identity changes because the landing helper is outside the
+JSON producers' family inputs. The final descriptor SHA-256 is
+`c8b59cae32ce3fdc3495f9e730f3230509c05f937caae61bf580a81c20c3a682`,
+and the final product identity is
+`7455dd9ff099aa3641207413ada1ec3ddb132ca042ae97fa8ff62d2101fc1c33`.
+Both standalone projection receipts remain current against identical inputs;
+their hashes are `7b63dd88c35efea8b7b6f85b89b2b72a8a22caf1d03b74e0b9ee6430cfcd0bef`
+and `2d39910f739ee31667a3627cce29520c098bde718425ef67d31b0cc4ae5d0355`.
+The unchanged final browser suite passes all eleven cases in 56.663 seconds.
+Three forced-stale cases and eight immediate-resize sweeps, covering 56 links,
+have no obscured focus; the three already-visible controls move zero pixels.
+All 51 landing/viewport combinations, 129 sticky checks, 480 keyboard
+observations and 1,806 contrast observations pass; minimum contrast is 4.6975:1.
+The final browser evidence summary digest is
+`3ebc3bc69f1666c549244242492502813a6077c44dc5f4dae5a8827d074f577e`.
+Independent real-browser reproduction confirms the three baseline failures
+and three repaired passes. Source hashes remain frozen. The final normal
+`make public-site` passes, including all deployment source prerequisites.
+The generated site has all six proper-66 reader/print-option routes and the
+three catalogue destinations, with zero physical PDF or ZIP files. Release
+bindings are exact with zero stale entries. Both optional projection receipt
+checks also pass after the final asset update. The whole promise ledger
+validates: 104 tracked entries, 81 complete, with only historical archived-PDF
+page checks and no current render measurement. The separate
+`public-alpha verify --deployment-target github-pages` also passes. The normal
+site-build and verifier log digests are respectively
+`4a364966d6dd2849d9b0553f8ced5e1a8d900a9d851ca79873a627209c1cb367`
+and `b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14`.
+These prove a local source-only artifact; no main publication or live-site
+deployment is claimed. Final independent integration and public-disclosure review
+passes with no findings at tree `75e39e778f782d1e420716a108390f099c58ba0e`.
+The normal merge commit and verified workspace push remain pending.
+
+Final independent report, preserved verbatim (SHA-256
+`43d79ae5ba351e7f0c086a24f21a95e1c65641678ee4b580b9590a3663f265c2`).
+Only truthful root operational bookkeeping may follow its reviewed tree.
+
+```json
+{
+  "schema": 1,
+  "review": "independent final latest-main integration and public-disclosure review",
+  "verdict": "PASS",
+  "reviewed_snapshot": {
+    "branch": "feature/propers/codex",
+    "staged_tree": "75e39e778f782d1e420716a108390f099c58ba0e",
+    "pinned_main": "e1ca91ba734219cefa92315c5520820c2c603607",
+    "premerge_checkpoint": "0ba4c1db0ffb5ed7f73ff8645733b387e852c3ee",
+    "accepted_feature_source": "91ee09d34f86be55e421df5ff9eb67ca75912171",
+    "changed_paths_vs_main": 181,
+    "text_only": true,
+    "index_matches_tree": true,
+    "scope": "Normal history-preserving reconciliation of the accepted proper 66, bounded Jeremiah/Mark corrections and reusable static landing tables with the source-first main model."
+  },
+  "integration_findings": [
+    "All 97 prior canonical proper files, including all 58 native v15 audit files, remain byte-identical to the accepted feature source. The new typed manifest declares the existing three authored outputs without rewriting prose, source identities, provenance or historical acceptance.",
+    "The canonical web Markdown remains 73,696 bytes with SHA-256 c730f32518cf5e6f684b23313ed04f162241db25bb8b3aceaa5449267bc5de33. All 21 added canonical source TOMLs retain their accepted feature bytes; the four witness manifests remain unchanged.",
+    "No PDF, ZIP, generated browser-product tree or raw papal input snapshot remains tracked. Normal source deployment uses verified browser products and truthful reader/print routes; it does not require or regenerate a PDF corpus.",
+    "Merged archive protections retain decoded-header TeX acceptance, real UNC refusal and explicit top-level operation-note redaction, including raw wrapped and escaped-header residual refusals.",
+    "The shared artifact API keeps public transport as its default. Offline delivery requires the source adapter’s explicit opt-in and remains rejected by the papal snapshot adapter.",
+    "Catalogue ownership preserves legacy PDF-plus-Read counting and correctly supports local source-only reader/print identities, mixed-provider markers, queries/fragments and held-edition filtering.",
+    "All 17 static landing pages share the opt-in table component. Existing app source markup and presentation remain the pinned main version; no app adopts the landing component or navigation helper. Existing shared site foundations make deliberate future adoption possible without extracting another stylesheet now."
+  ],
+  "product_proof": {
+    "descriptor_sha256": "c8b59cae32ce3fdc3495f9e730f3230509c05f937caae61bf580a81c20c3a682",
+    "product_identity": "7455dd9ff099aa3641207413ada1ec3ddb132ca042ae97fa8ff62d2101fc1c33",
+    "families": 12,
+    "outputs": 27414,
+    "bytes": 200711303,
+    "independent_cache_verification": "Complete membership, SHA-256 and sizes match the descriptor.",
+    "cold_record": "Coordinator’s two independent cold passes agree. All twelve family keys remain exact after the aggregate-only focus-helper renewal.",
+    "semantic_delta": "Eight families retain exact main output bytes. All four changed Catena files equal the accepted feature bytes; 2,047 other Catena identities are unchanged. Independent actor evidence preserves all 557 act-history results, with only 32 provenance metadata files changed. Documents and Sources are derived from the accepted canonical additions.",
+    "optional_receipts": {
+      "source_sha256": "7b63dd88c35efea8b7b6f85b89b2b72a8a22caf1d03b74e0b9ee6430cfcd0bef",
+      "act_sha256": "2d39910f739ee31667a3627cce29520c098bde718425ef67d31b0cc4ae5d0355",
+      "input_count": 80666,
+      "external_count": 707,
+      "input_sha256": "71712d2fe1f20017cf42b25839923ad94a7b7c9f0e71579dd1af37238e7543c2",
+      "current_checks": "PASS",
+      "editorial_approval": false
+    }
+  },
+  "landing_evidence": {
+    "final_browser_tests": 11,
+    "seconds": 56.663,
+    "static_viewports": 51,
+    "sticky_checks": 129,
+    "real_keyboard_observations": 480,
+    "obscured": 0,
+    "contrast_observations": 1806,
+    "minimum_contrast": 4.697497508197537,
+    "desktop_tlm_complete_rows": 18,
+    "independent_focus_probe": "The previous helper fails three forced-stale-heading cases; the final helper clears all three at 393px, 320px and 320px with 200% text. Already-visible controls move zero pixels.",
+    "final_resize_probe": "Eight immediate resize sweeps, 56 focused links, zero obscured.",
+    "history": "Back/Forward and ordinary reader/print returns pass at root and project-subdirectory deployment, with explicit-anchor and no-script fallbacks."
+  },
+  "public_disclosure": {
+    "result": "PASS",
+    "staged_scan": "All 181 changed text blobs inspected; candidates are privacy validator literals, loopback test addresses or explicitly synthetic fixtures. No actual private paths, credentials or transient operation handles were found.",
+    "new_source_bodies": "Two accepted public-domain Chrysostom passages; modern wrapper, Ordo and NABRE restricted records remain metadata-only. No protected raw body was added.",
+    "binary_preservation": {
+      "new_witnesses": 4,
+      "payload_bytes": 2762900,
+      "archive_bytes": 2775040,
+      "archive_sha256": "05e4f8d0b98cd4ba1c7ff62b383406f9cbfc965e56a41097f8174f2bc98f5907",
+      "delivery": "offline-only",
+      "urls": [],
+      "prior_public_archives_unchanged": 10,
+      "prior_entries_unchanged": 5540,
+      "proof": "Exact tar reproduction and four-payload cache roundtrip; original manifest and source hashes preserved. No upload or continuing public availability asserted."
+    },
+    "binding_scope": "71 reviewed main-delta paths and 8 byte-exact previously approved checkpoint inputs; subsequent focus bindings are exact. Final binding status has zero stale entries."
+  },
+  "checks": [
+    {
+      "command": "make public-site",
+      "exit_code": 0,
+      "log_sha256": "4a364966d6dd2849d9b0553f8ced5e1a8d900a9d851ca79873a627209c1cb367",
+      "result": "Normal deployment prerequisites and renderer pass."
+    },
+    {
+      "command": "tools/public-alpha verify --deployment-target github-pages",
+      "exit_code": 0,
+      "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+    },
+    {
+      "command": "Affected public-alpha/release/static/schema/selected-print unit suites",
+      "passed": 231,
+      "seconds": 34.449
+    },
+    {
+      "command": "Merged archive suite",
+      "passed": 57,
+      "skipped": 1,
+      "seconds": 3.784,
+      "skip": "Historical ignored native-run replay inputs are unavailable."
+    },
+    {
+      "command": "Independent artifact and snapshot suites",
+      "passed": 63,
+      "seconds": 0.908
+    },
+    {
+      "command": "Final real Chromium landing suite",
+      "passed": 11,
+      "seconds": 56.663
+    },
+    {
+      "command": "Product cache, both optional receipt currentness checks, scoped release bindings, tool registry, tmt and ledger",
+      "result": "PASS; 60 registered tools; binding status exact."
+    },
+    {
+      "command": "Independent staged/source/audit/delivery/Catena/product/focus/disclosure checks",
+      "result": "PASS; source and data hashes reconciled with the reviewed tree."
+    }
+  ],
+  "site_result": {
+    "proper_66_html_routes": 6,
+    "catalogue_source_first_routes": 3,
+    "physical_pdfs": 0,
+    "physical_zips": 0,
+    "site_proof_sha256": "5c97c1bf811a038d9814059aaf48c5a5255f015fe066ac19539070d499d392a2",
+    "live_deployment_claimed": false
+  },
+  "frozen_sha256": {
+    "tools/public-alpha": "4196be0824802a80753c68e6bcc7970176d41fae8b4cd40c127320c2aa466abc",
+    "tools/tests/test_public_alpha.py": "c22d12003701728689068404da40438033d135f7c1da3681906f84e2afed07f9",
+    "scripts/_artifact_store.py": "09656286ee086bf4d9dd0da2548615c84d700ad7dae9d26a72944dcadcc26322",
+    "tools/tests/test_artifact_store.py": "147f716c42c0ff7baa7f01f0b0b7eecefc741fba8a6181dbc839d4f5a63ea13a",
+    "tools/proper-study-run-archive": "21d18bc66164cc66519f615acc078c374effbf71456c6d72c7ac2fc51720ac82",
+    "tools/tests/test_proper_study_run_archive.py": "509541dfacef05e2501f5edfc4717017db123c9a0424fc0e7af6c98a3a7d277f",
+    "src/web/browser/shared/catalogue-navigation.js": "1a8fe2d0fee5eec259c608abe1edbe022abcbe847410b0f0a47e9332e8a6149b",
+    "tools/tests/test_catalogue_navigation.py": "1fc0798f9bfc2266901892764fe5266f31268388bb8dc6da3d421e8204550fd5",
+    "release/public-alpha/assets/site.css": "8d03c9e69e515170383b7bd57850a653f0d48a66ef2bdb887e3e2468884472cb",
+    "release/browser-products.json": "c8b59cae32ce3fdc3495f9e730f3230509c05f937caae61bf580a81c20c3a682",
+    "src/sources/artifact-delivery.json": "c65f0754a89d85990f76343c47d588a62f80bb9b97783d11d5ded08fa9b2707d",
+    "src/sources/inventories/source-reader-projection-receipt-v1.json": "7b63dd88c35efea8b7b6f85b89b2b72a8a22caf1d03b74e0b9ee6430cfcd0bef",
+    "src/sources/inventories/act-history-projection-receipt-v1.json": "2d39910f739ee31667a3627cce29520c098bde718425ef67d31b0cc4ae5d0355"
+  },
+  "open_findings": [],
+  "limits": [
+    "The actual full-evidence check exits 1 for exactly 703 unchanged inherited source witnesses, totaling 4,480,837,219 bytes, that are not hydrated. Independent comparison proves the exact missing set and unchanged main manifests; the four new witnesses have zero failures and there are zero other failures. No automatic fetch or full-research PASS is claimed.",
+    "All 165 source-family review units remain honestly pending. Mechanical product/receipt/schema success does not renew source inspection, editorial approval or historical v15 acceptance.",
+    "The user deleted scratch output during the work. Lost prior logs and the initial catalogue review file are not claimed as available; retained historical reports and new current checks are distinguished. Historical print receipts do not establish a newly rendered or inspected print edition.",
+    "The accepted canonical web review retains nonblocking WEB-001 (later Latin Preface paragraphs lose italics, with complete text and language boundaries). Homily timing remains an estimate, not a timed rehearsal.",
+    "This verifies a local site artifact and an uncommitted staged merge. It does not claim a live website, completed push or publication to main."
+  ],
+  "post_review_allowance": {
+    "review_boundary": "This exact report remains in reviewer scratch; it is outside the tree it reviews.",
+    "allowed_changes": [
+      "Embed this report verbatim with its hash in PROJECT-WORK.md.",
+      "Update only PROJECT-WORK.md and promised-deliverables.toml with truthful verdict, source commit/ref, actual push/remote verification and promise status."
+    ],
+    "constraint": "Root reconciles exact staged and outgoing changes before each workspace-branch push. No source, code, policy, workflow report, descriptor, receipt or release-binding bytes change after this reviewed tree. Such a change requires renewed review.",
+    "target": "Normal merge and push on feature/propers/codex only; no main ref update, history rewrite or live-deployment promise."
+  }
+}
+```
 
 ## GPT resumed Fifth Sunday and web catalogue, 2026-11-02
 

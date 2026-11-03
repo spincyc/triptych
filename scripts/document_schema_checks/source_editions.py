@@ -7,6 +7,7 @@ Owning semantic gates that are not executed are explicitly reported as such.
 from __future__ import annotations
 
 import csv
+from contextlib import contextmanager
 import json
 from pathlib import Path
 import re
@@ -16,6 +17,55 @@ import _print_catalog
 from _bible_artifacts import select_book_index
 
 REGISTRY = "src/common/document-schemas/source-types.toml"
+BROWSER_DATA = "src/web/data"
+BROWSER_DESCRIPTOR = "release/browser-products.json"
+
+
+@contextmanager
+def _held_browser_products(root):
+    """Real product repositories never fall back to an unverified work tree."""
+    module = root / "scripts/_browser_products.py"
+    descriptor = root / BROWSER_DESCRIPTOR
+    declared = any(path.exists() or path.is_symlink() for path in (module, descriptor))
+    if not declared:
+        yield None  # Sparse historical fixtures have no product contract.
+        return
+    _need(module.is_file() and not module.is_symlink(), "browser products require scripts/_browser_products.py")
+    _need(descriptor.is_file() and not descriptor.is_symlink(),
+          f"browser products require {BROWSER_DESCRIPTOR}; prepare the verified cache first")
+    from _browser_products import ProductError, verified_products
+    try:
+        with verified_products(root) as products:
+            yield products
+    except ProductError as error:
+        raise ValueError(f"{BROWSER_DESCRIPTOR}: {error}") from error
+
+
+def _family_paths(root, patterns, products):
+    """Pair stable logical identities with held bytes, never cache authority."""
+    paths = {}
+    for pattern in patterns:
+        projected = pattern == BROWSER_DATA or pattern.startswith(BROWSER_DATA + "/")
+        if projected and products is not None:
+            suffix = pattern[len(BROWSER_DATA):].lstrip("/") or "."
+            for path in products.data_root.glob(suffix):
+                relative = path.relative_to(products.data_root).as_posix()
+                logical = BROWSER_DATA + "/" + relative
+                _need(relative in products.files and products.files[relative] == path
+                      and path.is_file() and not path.is_symlink(),
+                      f"{logical}: file is not in the verified browser product snapshot")
+                paths[logical] = path
+        else:
+            for path in root.glob(pattern):
+                paths[path.relative_to(root).as_posix()] = path
+    return sorted(paths.items())
+
+
+def _stable_error(error, root, products=None):
+    message = str(error)
+    if products is not None:
+        message = message.replace(str(products.data_root), BROWSER_DATA)
+    return message.replace(str(root) + "/", "")
 
 
 def _need(condition, message):
@@ -190,7 +240,7 @@ def _papal_manifests(root):
     return rows, selections
 
 
-def check_source_editions(root):
+def _check_source_editions(root, products=None):
     root = Path(root).resolve()
     report = {"id": "source-editions", "phase": "source", "ok": False, "status": "fail",
               "families": [], "errors": [], "external_gates": [], "warnings": [
@@ -201,29 +251,36 @@ def check_source_editions(root):
         bibles = _bibles(root, by_id["bible-edition"])
         plans, volumes = _plans(root)
         manifests, selections = _papal_manifests(root)
-        readers = _print_catalog._papal_pages(root)
+        readers = _print_catalog._papal_pages(root, **({
+            "data_root": products.data_root,
+            "data_source_paths": sorted(products.source_paths),
+        } if products is not None else {}))
         special = {"bible-edition": bibles, "reading-plan": plans, "reading-plan-volume": volumes,
                    "papal-selection": [{"manifests": manifests, "selections": selections}],
                    "papal-reader": [{"route": route} for route in readers]}
         for family in families:
             identifier = family["id"]
-            paths = sorted({path for pattern in family["paths"] for path in root.glob(pattern)})
+            paths = _family_paths(root, family["paths"], products)
             members = manifests if identifier == "papal-selection" else (
                 len(special[identifier]) if identifier in special else len(paths))
-            _need(members >= family["minimum_members"], f"{identifier}: fewer members than declared minimum")
+            _need(members >= family["minimum_members"],
+                  f"{identifier}: fewer members than declared minimum ({', '.join(family['paths'])})")
             if identifier not in special and identifier != "source-record":
-                for path in paths:
-                    data = _read(path)
+                for logical, path in paths:
+                    try:
+                        data = _read(path)
+                    except (ValueError, OSError, UnicodeError) as error:
+                        raise ValueError(f"{logical}: {error}") from error
                     _need(isinstance(data, dict) and all(field in data for field in family["required_fields"]),
-                          f"{path}: required canonical schema fields missing")
+                          f"{logical}: required canonical schema fields missing")
                     schema = "acts_schema/" + str(data["acts_schema"]) if "acts_schema" in data else data.get("schema")
-                    _need(schema in family["schema_ids"], f"{path}: unexpected canonical schema {schema}")
+                    _need(schema in family["schema_ids"], f"{logical}: unexpected canonical schema {schema}")
                     if identifier == "source-reader-projection":
                         counted = data["counted"]
                         _need(isinstance(counted, dict) and isinstance(data["works"], list)
                               and all(type(value) is int and value >= 0 for value in counted.values())
                               and len(data["works"]) == counted.get("works"),
-                              f"{path}: projection identity/counts disagree")
+                              f"{logical}: projection identity/counts disagree")
             semantic = identifier in special
             report["families"].append({"id": identifier, "schema_ids": family["schema_ids"],
                 "members": members, "status": "pass", "semantic_checks": "performed" if semantic else "owning-gate",
@@ -232,6 +289,25 @@ def check_source_editions(root):
                 report["external_gates"].append({"id": identifier, "command": family["validator"], "status": "not-run"})
     except (ValueError, OSError, KeyError, TypeError) as error:
         report["errors"].append(str(error))
+    report["ok"] = not report["errors"]
+    report["status"] = "pass" if report["ok"] else "fail"
+    return report
+
+
+def check_source_editions(root):
+    """Keep verified browser products held for the entire neutral source audit."""
+    root = Path(root).resolve()
+    products = None
+    report = {"id": "source-editions", "phase": "source", "ok": False, "status": "fail",
+              "families": [], "errors": [], "external_gates": [], "warnings": []}
+    try:
+        with _held_browser_products(root) as products:
+            report = _check_source_editions(root, products)
+            if products is not None:
+                report["browser_products_identity"] = products.products_identity
+    except (ValueError, OSError, KeyError, TypeError) as error:
+        report["errors"].append(_stable_error(error, root, products))
+    report["errors"] = [_stable_error(error, root, products) for error in report["errors"]]
     report["ok"] = not report["errors"]
     report["status"] = "pass" if report["ok"] else "fail"
     return report

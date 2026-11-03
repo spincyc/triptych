@@ -26,6 +26,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from _browser_products import ProductError, assert_working_output, committed_data_root, working_data_root  # noqa: E402
+
 from _projection import (  # noqa: E402
     ALIAS_COLUMNS,
     OVERRIDES,
@@ -65,29 +67,29 @@ from _loci import (  # noqa: E402
 EXAMPLES = {
     "manifest": (
         Example(
-            "tools/index-bible manifest --out build/example-index",
+            "tools/index-bible manifest --out .scratch/example-index",
             (
-                "offered: douay-rheims, douay-rheims-american-1899, clementine-vulgate, catholic-public-domain-ve... [+112 chars]",
+                "offered: douay-rheims, douay-rheims-american-1899, clementine-vulgate, catholic-public-domain-ve... [+173 chars]",
                 "withheld as unpublishable: knox",
             ),
-            "WRITES bibles.json. --out here is untracked; the default writes tracked src/web/data",
+            "WRITES bibles.json. --out here is untracked; the default writes the mutable browser-data working tree",
         ),
         Example(
-            "tools/index-bible manifest --out build/example-index --json",
+            "tools/index-bible manifest --out .scratch/example-index --json",
             (
-                "{\"bible\":\"manifest\",\"offered\":[\"douay-rheims\",\"douay-rheims-american-1899\",\"clementine-vulgate\",... [+206 chars]",
+                "{\"bible\":\"manifest\",\"offered\":[\"douay-rheims\",\"douay-rheims-american-1899\",\"clementine-vulgate\",... [+267 chars]",
             ),
             "WRITES bibles.json",
         ),
     ),
     "check": (
         Example(
-            "tools/index-bible check --bible douay-rheims",
+            "tools/index-bible check --bible douay-rheims --bible-root .scratch/example-bibles",
             (
-                "douay-rheims: 3665 passages -> src/sources/bibles/douay-rheims/index.yaml",
-                "  postconciliar: 2568/2574 references resolved (99.8%)",
-                "  roman-1962: 1462/1465 references resolved (99.8%)",
-                "  roman-pre-1955: 1408/1411 references resolved (99.8%)",
+                "douay-rheims: 3669 passages -> .scratch/example-bibles/douay-rheims/index.yaml",
+                "  postconciliar: 2575/2581 references resolved (99.8%)",
+                "  roman-1962: 1466/1469 references resolved (99.8%)",
+                "  roman-pre-1955: 1412/1415 references resolved (99.8%)",
                 "  projection: 39 rules (renumber 12, merge 7, displaced 16, unrecorded 4)",
                 "  unresolved: 12",
             ),
@@ -96,25 +98,25 @@ EXAMPLES = {
             "rising total is an edition drifting from the others",
         ),
         Example(
-            "tools/index-bible check --bible clementine-vulgate --json",
+            "tools/index-bible check --bible clementine-vulgate --bible-root .scratch/example-bibles --json",
             (
-                "{\"bible\":\"clementine-vulgate\",\"calendars\":{\"postconciliar\":{\"cited\":2574,\"resolved\":2569},\"roman... [+298 chars]",
+                "{\"bible\":\"clementine-vulgate\",\"calendars\":{\"postconciliar\":{\"cited\":2581,\"resolved\":2576},\"roman... [+303 chars]",
             ),
             "one key-sorted object; the elided part carries `projection` with a count per "
             "override kind and `total`, which is the diffable form of the same summary",
         ),
         Example(
-            "tools/index-bible check --bible king-james-version --verbose",
+            "tools/index-bible check --bible king-james-version --bible-root .scratch/example-bibles --verbose",
             (
-                "king-james-version: 3483 passages -> src/sources/bibles/king-james-version/index.yaml",
-                "  postconciliar: 2467/2574 references resolved (95.8%)",
-                "  roman-1962: 1370/1465 references resolved (93.5%)",
-                "  roman-pre-1955: 1317/1411 references resolved (93.3%)",
-                "  projection: 4314 rules (renumber 2698, merge 2, absent 4, displaced 16, unrecorded 1594)",
+                "king-james-version: 3498 passages -> .scratch/example-bibles/king-james-version/index.yaml",
+                "  postconciliar: 2486/2581 references resolved (96.3%)",
+                "  roman-1962: 1375/1469 references resolved (93.6%)",
+                "  roman-pre-1955: 1322/1415 references resolved (93.4%)",
+                "  projection: 4330 rules (renumber 2710, merge 2, absent 4, displaced 16, unrecorded 1598)",
+                "  rule renumber Bar.3.38 -> Bar.3.37",
                 "  rule renumber Dan.13.1 -> Sus.1.1",
                 "  rule renumber Dan.13.10 -> Sus.1.10",
-                "  rule renumber Dan.13.11 -> Sus.1.11",
-                "... 4607 more lines",
+                "... 4609 more lines",
             ),
             "--verbose prints every rule and every unresolved citation. A rule whose target "
             "reads `(refused)` says where the text is not: this edition does not carry it, or "
@@ -125,8 +127,8 @@ EXAMPLES = {
         Example(
             "tools/index-bible projection",
             (
-                "catholic-public-domain-version: 538 recorded, 16 derived from the concordance -> src/sources/bibles/catholic-public-domain-version/projection.tsv (current)",
-                "  recorded: renumber 27, merge 2, split 3, absent 504, unrecorded 2; concordance: displaced 16",
+                "catholic-public-domain-version: 546 recorded, 16 derived from the concordance -> src/sources/bibles/catholic-public-domain-version/projection.tsv (current)",
+                "  recorded: renumber 33, merge 2, split 3, absent 504, unrecorded 4; concordance: displaced 16",
                 "... 12 more lines",
             ),
             "exit 0 and nothing written: every tracked projection.tsv is byte for byte what a "
@@ -143,9 +145,9 @@ EXAMPLES = {
             "rising refusal count is a diff and not a console line",
         ),
         Example(
-            "tools/index-bible projection --bible douay-rheims --bible-root build/example-bibles --write",
+            "tools/index-bible projection --bible douay-rheims --bible-root .scratch/example-bibles --write",
             (
-                "douay-rheims: 23 recorded, 16 derived from the concordance -> build/example-bibles/douay-rheims/projection.tsv (written)",
+                "douay-rheims: 23 recorded, 16 derived from the concordance -> .scratch/example-bibles/douay-rheims/projection.tsv (written)",
                 "  recorded: renumber 12, merge 7, unrecorded 4; concordance: displaced 16",
             ),
             "WRITES projection.tsv. --bible-root here is untracked; the default writes tracked "
@@ -155,24 +157,24 @@ EXAMPLES = {
     ),
     "build": (
         Example(
-            "tools/index-bible check --bible douay-rheims",
+            "tools/index-bible check --bible douay-rheims --bible-root .scratch/example-bibles",
             (
-                "douay-rheims: 3665 passages -> src/sources/bibles/douay-rheims/index.yaml",
-                "  postconciliar: 2568/2574 references resolved (99.8%)",
-                "  roman-1962: 1462/1465 references resolved (99.8%)",
-                "  roman-pre-1955: 1408/1411 references resolved (99.8%)",
+                "douay-rheims: 3669 passages -> .scratch/example-bibles/douay-rheims/index.yaml",
+                "  postconciliar: 2575/2581 references resolved (99.8%)",
+                "  roman-1962: 1466/1469 references resolved (99.8%)",
+                "  roman-pre-1955: 1412/1415 references resolved (99.8%)",
                 "  projection: 39 rules (renumber 12, merge 7, displaced 16, unrecorded 4)",
                 "  unresolved: 12",
             ),
             "read-only first: `check` rebuilds in memory and reports the same drift, writing nothing",
         ),
         Example(
-            "tools/index-bible build --bible douay-rheims --bible-root build/example-bibles",
+            "tools/index-bible build --bible douay-rheims --bible-root .scratch/example-bibles",
             (
-                "douay-rheims: 3665 passages -> build/example-bibles/douay-rheims/index.yaml",
-                "  postconciliar: 2568/2574 references resolved (99.8%)",
-                "  roman-1962: 1462/1465 references resolved (99.8%)",
-                "  roman-pre-1955: 1408/1411 references resolved (99.8%)",
+                "douay-rheims: 3669 passages -> .scratch/example-bibles/douay-rheims/index.yaml",
+                "  postconciliar: 2575/2581 references resolved (99.8%)",
+                "  roman-1962: 1466/1469 references resolved (99.8%)",
+                "  roman-pre-1955: 1412/1415 references resolved (99.8%)",
                 "  projection: 39 rules (renumber 12, merge 7, displaced 16, unrecorded 4)",
                 "  unresolved: 12",
             ),
@@ -1001,7 +1003,8 @@ def run_manifest(arguments: argparse.Namespace) -> dict:
         )
         if edition["publishable"] and name in servable
     ]
-    path = Path(arguments.out) / "bibles.json"
+    out = assert_working_output(ROOT, working_data_root(ROOT) if arguments.out is None else Path(arguments.out))
+    path = out / "bibles.json"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
         json.dumps({"bibles": offered}, ensure_ascii=False, sort_keys=True, indent=1) + "\n",
@@ -1129,7 +1132,7 @@ def main(argv: list[str] | None = None) -> int:
         help="list every citation that did not resolve, and every projection rule",
     )
     shared.add_argument(
-        "--out", default="src/web/data", help="where `manifest` writes bibles.json"
+        "--out", default=None, help="where `manifest` writes bibles.json"
     )
     shared.add_argument(
         "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
@@ -1187,7 +1190,7 @@ def main(argv: list[str] | None = None) -> int:
         dependency_message="install PyYAML (requirements-tools.txt)",
         # A projection that will not derive is bad tracked data, not a defect in
         # this tool: report it as an input failure rather than as an internal one.
-        mapped_errors={
+        mapped_errors={ProductError: ("input", 2),
             KeyError: ("not-found", 3),
             ProjectionError: ("input", 2),
             ValueError: ("input", 2),

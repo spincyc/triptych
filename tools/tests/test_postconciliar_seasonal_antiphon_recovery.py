@@ -4,6 +4,9 @@ from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec,spec_from_loader
 from collections import Counter
 import copy,json,sys,tomllib,unittest,yaml
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT=Path(__file__).resolve().parents[2]
 SOURCE=ROOT/'src/sources/calendars/postconciliar/propers.yaml'
 EVIDENCE=ROOT/'src/sources/inventories/postconciliar-seasonal-collation-v1.toml'
@@ -15,7 +18,7 @@ def tool(name):
 class SeasonalAntiphonRecoveryTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.document=yaml.safe_load(SOURCE.read_text());cls.masses={m['key']:m for s in cls.document['sections'].values() for m in s['masses']};cls.evidence=tomllib.loads(EVIDENCE.read_text())['seasonal_antiphon_recovery_2026_10_21'];cls.english=tomllib.loads(ENGLISH.read_text())['untranslated'];cls.check=tool('check-calendar-masses');cls.canon=tool('citations');cls.owner=tool('mass-propers');cls.ordinary=tool('mass-ordinary');cls.frame=json.loads((ROOT/'src/web/data/structure/ordinary/postconciliar.json').read_text())
+  cls.document=yaml.safe_load(SOURCE.read_text());cls.masses={m['key']:m for s in cls.document['sections'].values() for m in s['masses']};cls.evidence=tomllib.loads(EVIDENCE.read_text())['seasonal_antiphon_recovery_2026_10_21'];cls.english=tomllib.loads(ENGLISH.read_text())['untranslated'];cls.check=tool('check-calendar-masses');cls.canon=tool('citations');cls.owner=tool('mass-propers');cls.ordinary=tool('mass-ordinary');cls.frame=json.loads((browser_data_root(ROOT) / 'structure/ordinary/postconciliar.json').read_text())
  def test_exact_source_cues_and_positions_bind_all_213_provisions(self):
   facts=self.evidence['rows'];self.assertEqual(len(facts),213);self.assertEqual(len({r['mass'] for r in facts}),106)
   self.assertEqual(Counter(r['proper'] for r in facts),Counter({'Entrance Antiphon':107,'Communion Antiphon':106}))

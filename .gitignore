@@ -26,3 +26,7 @@ __pycache__/
 /src/sources/works/**/*.tar
 /src/sources/works/**/*.traineddata
 /src/sources/works/**/*.iff
+
+# Frozen evidence and generated browser deliveries are resolved outside Git.
+/release/papal-documents/inputs/
+/src/web/data/

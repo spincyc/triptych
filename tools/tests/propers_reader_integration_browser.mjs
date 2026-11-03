@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { browserDataRoot, repositoryPath } from './_product_data.cjs';
 
 /* Real-Chromium interaction, race, reflow, parity, and review gates for W3. */
 
@@ -188,7 +189,7 @@ function server() {
       }
       const file = resolve(ROOT, relative || 'README.md');
       if (file !== ROOT && !file.startsWith(ROOT + sep)) throw new Error('outside root');
-      let body = await readFile(file);
+      let body = await readFile(repositoryPath(ROOT, file));
       if (cycleUntranslated && relative.endsWith('/structure/propers/postconciliar.json')) {
         body = Buffer.from(JSON.stringify(withCycleUntranslated(body.toString('utf8'))));
       }
@@ -2707,8 +2708,8 @@ async function captures(cdp, base) {
 }
 
 if (process.argv.includes('--check-fixtures')) {
-  const read = async (edition) => readFile(resolve(ROOT,
-    'src/web/data/structure/propers', edition + '.json'), 'utf8');
+  const read = async (edition) => readFile(resolve(browserDataRoot(ROOT),
+    'structure/propers', edition + '.json'), 'utf8');
   const { T, A } = readerTools(ROOT);
   const roman = await read('roman-1962');
   const empty = withoutWitness(roman);

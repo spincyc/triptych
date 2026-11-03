@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-propers-main-source-reconciliation-2026-11-02"
 owner = "PROJECT-WORK.md"
 promise = "Reconcile feature/propers/codex with source-first main, preserve its removal of stored/published PDF corpora and the reviewed Sunday content and modular landing-table behavior, validate and independently review the integration, and push the assigned workspace branch."
-state = "in_progress"
+state = "candidate"
 
   [[deliverables.requirements]]
   id = "main-merged-without-history-rewrite"
@@ -15,13 +15,13 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "proper-and-evidence-source-first"
   criterion = "Proper 66 declares all three output roles in the current source schema, preserves its accepted prose, source identities and immutable historical audit, adopts exact-artifact delivery, and introduces no stored PDF or normal site PDF publishing/build requirement."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "landing-behavior-retained"
   criterion = "All current landing pages retain consistent compact tables, sticky headings and navigation-position behavior with readable mobile/keyboard presentation; the component remains opt-in and existing app interfaces retain main's behavior."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
   [[deliverables.requirements]]

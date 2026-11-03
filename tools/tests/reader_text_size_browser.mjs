@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 
 /* Source-served Chromium coverage for reader text size and semantic reflow. */
 
@@ -30,7 +31,7 @@ function server() {
       const file = resolve(ROOT, relative || 'README.md');
       if (!file.startsWith(ROOT + sep)) throw new Error('outside repository');
       response.writeHead(200, { 'content-type': mime(file), 'cache-control': 'no-store' });
-      let body = await readFile(file);
+      let body = await readFile(repositoryPath(ROOT, file));
       if (process.env.TRIPTYCH_TEXT_SIZE_INJECT === '1' && extname(file) === '.html') {
         const text = body.toString();
         if (!text.includes('src="reader-text-size.js"')) {

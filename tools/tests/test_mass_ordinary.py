@@ -35,9 +35,13 @@ import tomllib
 import unittest
 from pathlib import Path
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
-DATA = ROOT / "src" / "web" / "data" / "structure" / "ordinary"
-PROPERS = ROOT / "src" / "web" / "data" / "structure" / "propers"
+DATA = browser_data_root(ROOT) / 'structure/ordinary'
+PROPERS = browser_data_root(ROOT) / 'structure/propers'
 DAY_JS = ROOT / "src" / "web" / "browser" / "liturgy" / "day.js"
 DAY_HTML = ROOT / "src" / "web" / "browser" / "liturgy" / "day.html"
 FORMULARY_JS = ROOT / "src" / "web" / "browser" / "liturgy" / "liturgy.js"
@@ -3918,6 +3922,8 @@ class ProperPlacementNotesPage(unittest.TestCase):
 # `versicled` would pass while the page they actually load did something else.
 # Only the things that reach the network or the URL are replaced.
 HARNESS = r"""
+const productFixturePath = file => require(require('path').join(process.cwd(), 'tools/tests/_product_data.cjs')).repositoryPath(process.cwd(), file);
+
 const fs = require('fs');
 const documentListeners = {};
 function node(tag) {
@@ -3982,7 +3988,7 @@ src = src.replace('  start();',
   'seats, seatPropers, shownElements, massEvents };');
 eval(src);
 const P = global.__probe;
-const read = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
+const read = (p) => JSON.parse(fs.readFileSync(productFixturePath(p), 'utf8'));
 const pc = read('src/web/data/structure/ordinary/postconciliar.json');
 const tlm = read('src/web/data/structure/ordinary/roman-1962.json');
 const all = (f) => f.sections.flatMap((s) => s.elements);
@@ -4566,6 +4572,8 @@ process.stdout.write(JSON.stringify(report));
 
 
 PLACEMENT_NOTES_HARNESS = r"""
+const productFixturePath = file => require(require('path').join(process.cwd(), 'tools/tests/_product_data.cjs')).repositoryPath(process.cwd(), file);
+
 const fs = require('fs');
 const Seating = require('./src/web/browser/liturgy/ordinary-seating.js');
 global.window = {};
@@ -4573,10 +4581,10 @@ eval(fs.readFileSync(
   'src/web/browser/liturgy/proper-placement-notes.js', 'utf8'));
 
 function events(calendar, massKey) {
-  const ordinary = JSON.parse(fs.readFileSync(
-    'src/web/data/structure/ordinary/' + calendar + '.json', 'utf8'));
-  const structure = JSON.parse(fs.readFileSync(
-    'src/web/data/structure/propers/' + calendar + '.json', 'utf8'));
+  const ordinary = JSON.parse(fs.readFileSync(productFixturePath(
+    'src/web/data/structure/ordinary/' + calendar + '.json'), 'utf8'));
+  const structure = JSON.parse(fs.readFileSync(productFixturePath(
+    'src/web/data/structure/propers/' + calendar + '.json'), 'utf8'));
   const mass = structure.masses.find((one) => one.key === massKey);
   const shown = Seating.shownElements(ordinary);
   const placed = Seating.seatPropers(mass.propers, Seating.seats(ordinary, shown));

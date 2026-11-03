@@ -8,13 +8,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from _tooling import Example
 from _history_browser_acceptance import main
 
-# Both invocations were run without the required plan and rejected before
+# These invocations were rejected before
 # creating evidence or starting a browser. These are not acceptance passes.
 EXAMPLES = {
     "": (
         Example(
             "tools/history-browser-acceptance --url http://127.0.0.1:0/history/ "
-            "--catalogue src/web/data/structure/act-history/catalogue.json "
+            "--plan ../outside-plan.json --out .scratch/history-browser-example/rejected --json",
+            ('{"code": "invalid-input", "error": "path escapes selected repository root", "exit_status": 2, "status": "error", "v": 1}',),
+            "Reject a plan outside the repository before opening inputs or starting a browser.",
+        ),
+        Example(
+            "tools/history-browser-acceptance --url http://127.0.0.1:0/history/ "
             "--plan .scratch/history-browser-example/plan.json "
             "--site .scratch/history-browser-example/site "
             "--out .scratch/history-browser-example/owned-server --json",
@@ -27,7 +32,6 @@ EXAMPLES = {
         ),
         Example(
             "tools/history-browser-acceptance --url http://127.0.0.1:8000/history/ "
-            "--catalogue src/web/data/structure/act-history/catalogue.json "
             "--plan .scratch/history-browser-example/plan.json "
             "--out .scratch/history-browser-example/existing-server --json",
             (

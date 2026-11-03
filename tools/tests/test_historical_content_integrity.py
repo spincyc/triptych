@@ -19,10 +19,13 @@ from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 CALENDARS = ROOT / "src" / "sources" / "calendars"
-PROPER_STRUCTURES = ROOT / "src" / "web" / "data" / "structure" / "propers"
-ORDINARY_STRUCTURES = ROOT / "src" / "web" / "data" / "structure" / "ordinary"
+PROPER_STRUCTURES = browser_data_root(ROOT) / 'structure/propers'
+ORDINARY_STRUCTURES = browser_data_root(ROOT) / 'structure/ordinary'
 ORDINARY_INVENTORIES = ROOT / "src" / "sources" / "inventories"
 HISTORICAL_CALENDARS = ("roman-1962", "roman-pre-1955")
 ORDINARY_FRAME_APPLICABILITY = {"full", "none", "unavailable"}

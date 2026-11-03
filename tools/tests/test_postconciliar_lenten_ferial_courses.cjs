@@ -1,4 +1,6 @@
 'use strict';
+const { repositoryPath } = require('./_product_data.cjs');
+
 // stdin: fresh canonical reading owners; no generated fixture or source words.
 const fs = require('node:fs');
 const path = require('node:path');
@@ -6,7 +8,7 @@ const assert = require('node:assert/strict');
 const root = path.resolve(__dirname, '../..');
 const S = require(path.join(root, 'src/web/browser/liturgy/ordinary-seating.js'));
 const source = JSON.parse(fs.readFileSync(0, 'utf8'));
-const ordinary = JSON.parse(fs.readFileSync(path.join(root, 'src/web/data/structure/ordinary/postconciliar.json')));
+const ordinary = JSON.parse(fs.readFileSync(repositoryPath(root, 'src/web/data/structure/ordinary/postconciliar.json')));
 const before = JSON.stringify(source);
 const fact = 'lent-5-sunday-john-8-1-11-actually-read';
 let executions = 0, negatives = 0, staticForms = 0;

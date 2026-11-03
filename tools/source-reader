@@ -82,7 +82,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # an older same-size, same-mtime .pyc from executing in their place.
 if any(flag in sys.argv for flag in ("--record-receipt", "--check-receipt")):
     sys.dont_write_bytecode = True
-    sys.pycache_prefix = str(ROOT / ".scratch/source-projection-receipt" / ("python-" + os.urandom(16).hex()))
+    sys.pycache_prefix = str(ROOT / ".scratch/next-source-receipt" / ("python-" + os.urandom(16).hex()))
 # Below this the derivation is cheap and the tree is a sandbox, not the corpus.
 CORPUS_CACHE_FLOOR = 1000
 # Shared CLI helpers live outside tools/ so that tmt's registry scan, which
@@ -157,7 +157,7 @@ ATTRIBUTION_REQUIRED = ("licensed",)
 PROSE_MEDIA_PREFIX = "text/plain"
 
 SCHEMA = "triptych-source-reader/v1"
-DEFAULT_OUT = "src/web/data"
+DEFAULT_OUT = "build/browser-data-work"
 STRUCTURE_RELATIVE = Path("structure") / "sources"
 INDEX_NAME = "index.json"
 EDITION_DIRECTORY = "editions"
@@ -979,23 +979,45 @@ def run_structure(arguments: argparse.Namespace) -> dict:
     if sum(bool(one) for one in (arguments.check, check_receipt, record_receipt)) > 1:
         raise ReaderError("choose one of --check, --check-receipt or --record-receipt")
     if check_receipt or record_receipt:
+        if getattr(arguments, "out", None) is not None:
+            raise ReaderError("receipt flags read committed browser products; use --cache-root instead of --out")
         from _source_projection_receipt import (
             RECEIPT_PATH, ReceiptError, check_receipt as check_proof,
-            record_receipt as record_proof,
+            record_receipt as record_proof, write_receipt,
         )
-        out = Path(arguments.out)
-        out = out if out.is_absolute() else ROOT / out
-        if out != ROOT / DEFAULT_OUT:
-            raise ReaderError("projection receipts govern the tracked default output; omit --out")
+        from _browser_products import ProductError, verified_products
         try:
-            proof = (record_proof if record_receipt else check_proof)(
-                ROOT, out / STRUCTURE_RELATIVE, SCHEMA)
-        except ReceiptError as error:
+            with verified_products(ROOT, cache_root=getattr(arguments, "cache_root", None),
+                                   product_ids=["sources"]) as products:
+                if record_receipt:
+                    proof = record_proof(ROOT, products.data_root / STRUCTURE_RELATIVE,
+                                         SCHEMA, write=False)
+                else:
+                    proof = check_proof(ROOT, products.data_root / STRUCTURE_RELATIVE, SCHEMA)
+                product_identity = products.products_identity
+            if record_receipt:
+                write_receipt(ROOT, proof)
+        except (ReceiptError, ProductError) as error:
             raise ReaderError(str(error)) from error
         return {**proof["counted"], "files": proof["outputs"]["count"],
-                "current": str(Path(arguments.out) / STRUCTURE_RELATIVE),
+                "current": STRUCTURE_RELATIVE.as_posix(),
+                "products_identity": product_identity,
                 "receipt": RECEIPT_PATH, "receipt_recorded": record_receipt,
                 "editorial_approval": False, "status": "ok"}
+
+    if getattr(arguments, "cache_root", None) is not None:
+        raise ReaderError("--cache-root requires --check-receipt or --record-receipt")
+    from _browser_products import ProductError, assert_working_output, working_data_root
+    explicit_out = getattr(arguments, "out", None)
+    out = Path(explicit_out) if explicit_out is not None else working_data_root(ROOT)
+    out = out if out.is_absolute() else ROOT / out
+    target = out / STRUCTURE_RELATIVE
+    reported_target = Path(explicit_out) / STRUCTURE_RELATIVE if explicit_out is not None else target
+    if not arguments.check:
+        try:
+            target = assert_working_output(ROOT, target)
+        except ProductError as error:
+            raise ReaderError(str(error)) from error
 
     library = load(arguments)
     works = corpus(library)
@@ -1038,7 +1060,6 @@ def run_structure(arguments: argparse.Namespace) -> dict:
                     }
                 )
 
-    target = Path(arguments.out) / STRUCTURE_RELATIVE
     if arguments.check:
         held = _existing(target)
         drifted = sorted(
@@ -1049,9 +1070,9 @@ def run_structure(arguments: argparse.Namespace) -> dict:
                 f"{target} has drifted from the sources at "
                 + ", ".join(drifted[:3])
                 + (f" (and {len(drifted) - 3} more)" if len(drifted) > 3 else "")
-                + "; run `source-reader structure` and commit the result"
+                + "; regenerate the working projection, review it, then record browser products explicitly"
             )
-        return {**counted, "files": len(files), "current": str(target), "status": "ok"}
+        return {**counted, "files": len(files), "current": str(reported_target), "status": "ok"}
 
     # This pass owns the directory and removes what it did not write. A file
     # left behind after the record that produced it stopped being derived is the
@@ -1063,7 +1084,7 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         path = target / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(body, encoding="utf-8")
-    return {**counted, "files": len(files), "written": str(target), "status": "ok"}
+    return {**counted, "files": len(files), "written": str(reported_target), "status": "ok"}
 
 
 def _existing(target: Path) -> dict[str, str]:
@@ -1417,7 +1438,7 @@ EXAMPLES = {
         Example(
             "tools/source-reader check",
             (
-                "10937 works, 14267 editions, 10610 artifacts, 9612 passages; 4137 readable here.",
+                "10944 works, 14301 editions, 10917 artifacts, 9612 passages; 4137 readable here.",
                 "  passages the rights records withhold: 5475",
                 "  every one of them listed with its reason: yes",
                 "  the page's own derivation, replayed: src/web/browser/sources/reader-model.js",
@@ -1464,20 +1485,20 @@ EXAMPLES = {
     ),
     "structure": (
         Example(
-            "tools/source-reader structure --out build/example-sources",
+            "tools/source-reader structure --out .scratch/example-sources",
             (
-                "10937 works, 14267 editions, 10610 artifacts, 9612 passages; 4137 readable here.",
-                "  -> build/example-sources/structure/sources (18405 files)",
+                "10944 works, 14301 editions, 10917 artifacts, 9612 passages; 4137 readable here.",
+                "  -> .scratch/example-sources/structure/sources (18439 files)",
             ),
-            "WRITES. --out here is untracked; the default writes the tracked src/web/data",
+            "WRITES. --out here is untracked; the default is the unsealed browser-data working tree",
         ),
         Example(
-            "tools/source-reader structure --check",
+            "tools/source-reader structure --check --out .scratch/example-sources",
             (
-                "10937 works, 14267 editions, 10610 artifacts, 9612 passages; 4137 readable here.",
-                "  src/web/data/structure/sources is current (18405 files)",
+                "10944 works, 14301 editions, 10917 artifacts, 9612 passages; 4137 readable here.",
+                "  .scratch/example-sources/structure/sources is current (18439 files)",
             ),
-            "writes nothing; refuses when the tracked projection has drifted from the records",
+            "writes nothing; compares the unsealed working projection with a full source replay",
         ),
     ),
 }
@@ -1505,18 +1526,21 @@ def main(argv: list[str] | None = None) -> int:
     shared.add_argument(
         "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
     )
-    shared.add_argument("--out", default=DEFAULT_OUT, help="where `structure` writes")
+    shared.add_argument("--out", default=argparse.SUPPRESS,
+                        help="`structure`: unsealed working output root (default: browser-data working tree)")
+    shared.add_argument("--cache-root", default=argparse.SUPPRESS,
+                        help="receipt flags: select the committed browser-product cache root")
     shared.add_argument(
         "--check",
         action="store_true",
-        help="`structure`: prove the tracked projection matches the records, and write nothing",
+        help="`structure`: fully replay sources against the selected working output, and write nothing",
     )
     shared.add_argument(
-        "--check-receipt", action="store_true",
+        "--check-receipt", action="store_true", default=argparse.SUPPRESS,
         help="`structure`: check governing input and complete output hashes without replay or artifact hydration",
     )
     shared.add_argument(
-        "--record-receipt", action="store_true",
+        "--record-receipt", action="store_true", default=argparse.SUPPRESS,
         help="`structure`: independently replay the full strict check, then record a mechanical projection receipt",
     )
     shared.add_argument(

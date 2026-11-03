@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { browserDataRoot } from './_product_data.cjs';
 /* Form-qualified discovery behavior against generated public indexes. */
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -8,8 +9,8 @@ import { resolve } from 'node:path';
 const root = resolve(import.meta.dirname, '../..');
 const require = createRequire(import.meta.url);
 const search = require(resolve(root, 'src/web/browser/liturgy/proper-search.js'));
-const load = async (id) => JSON.parse(await readFile(resolve(root,
-  `src/web/data/structure/propers/search/${id}.json`), 'utf8'));
+const load = async (id) => JSON.parse(await readFile(resolve(browserDataRoot(root),
+  `structure/propers/search/${id}.json`), 'utf8'));
 const roman = await load('roman-1962');
 const post = await load('postconciliar');
 const earlier = await load('roman-pre-1955');

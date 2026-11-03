@@ -10,6 +10,10 @@ import unittest
 from pathlib import Path
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 INVENTORIES = ROOT / "src" / "sources" / "inventories"
 WORKS = ROOT / "src" / "sources" / "works"
@@ -80,16 +84,7 @@ PSP_PASSAGE_IDS = {
     for number in ("2", "3", "40")
 }
 PSP_PROJECTION = (
-    ROOT
-    / "src"
-    / "web"
-    / "data"
-    / "structure"
-    / "sources"
-    / "editions"
-    / "congregation-for-divine-worship-and-the-discipline-of-the-sacraments"
-    / "decree-implementing-canon-838-2021"
-    / "2021-2021-english-press-office-bulletin.json"
+    browser_data_root(ROOT) / 'structure/sources/editions/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/decree-implementing-canon-838-2021/2021-2021-english-press-office-bulletin.json'
 )
 
 

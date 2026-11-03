@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+"""Verify or reproduce the browser's disposable content-addressed JSON products."""
+from pathlib import Path
+import sys
+import secrets
+
+sys.dont_write_bytecode = True
+sys.pycache_prefix = str(Path(__file__).resolve().parents[1] / ".scratch/next-product-store" / ("python-" + secrets.token_hex(12)))
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from _browser_products import main
+from _tooling import Example
+
+EXAMPLES = {
+    'key': (
+        Example('tools/browser-products key --root .scratch/browser-products-missing-example', ('browser-products: browser product descriptor is missing, invalid, or stale: missing or unsafe browser product directory: <repo>/.scratch/browser-products-missing-example: No such file or directory',), 'Reject a missing checkout before calculating a key or attempting a cache restore.'),
+        Example('tools/browser-products key --root .scratch/browser-products-missing-example --json', ('{"error": "browser product descriptor is missing, invalid, or stale: missing or unsafe browser product directory: <repo>/.scratch/browser-products-missing-example: No such file or directory", "status": "error"}',), 'Return the same missing-checkout refusal as JSON before generation or cache mutation.'),
+    ),
+    'check': (
+        Example('tools/browser-products check', ('browser-products: 12 products, 27408 files; ok',), 'Check current canonical identities and all cached bytes, with no generation or network.'),
+        Example('tools/browser-products check --root .scratch/browser-products-missing-example --json', ('{"error": "missing or unsafe browser product directory: <repo>/.scratch/browser-products-missing-example: No such file or directory", "status": "error"}',), 'Return the same missing-checkout refusal as JSON before generation or cache mutation.'),
+    ),
+    'build': (
+        Example('tools/browser-products build', ('browser-products: 12 products, 27408 files; ok',), 'On an exact cache miss, reproduce committed bytes offline from canonical sources.'),
+        Example('tools/browser-products build --root .scratch/browser-products-missing-example --json', ('{"error": "missing or unsafe browser product directory: <repo>/.scratch/browser-products-missing-example: No such file or directory", "status": "error"}',), 'Return the same missing-checkout refusal as JSON before generation or cache mutation.'),
+    ),
+    'record': (
+        Example('tools/browser-products record', ('browser-products: 12 products, 27408 files; ok',), 'Explicitly refresh the mechanical descriptor after independent cold builds agree.'),
+        Example('tools/browser-products record --root .scratch/browser-products-missing-example --json', ('{"error": "missing or unsafe browser product directory: <repo>/.scratch/browser-products-missing-example: No such file or directory", "status": "error"}',), 'Return the same missing-checkout refusal as JSON before generation or cache mutation.'),
+    ),
+    'prune': (
+        Example('tools/browser-products prune', ('browser-products: 12 products, 27408 files; ok',), 'Verify current products and retain only their exact content keys in this disposable cache.'),
+        Example('tools/browser-products prune --root .scratch/browser-products-missing-example --json', ('{"error": "missing or unsafe browser product directory: <repo>/.scratch/browser-products-missing-example: No such file or directory", "status": "error"}',), 'Return the same missing-checkout refusal as JSON before generation or cache mutation.'),
+    ),
+}
+
+if __name__ == "__main__":
+    raise SystemExit(main(examples=EXAMPLES))

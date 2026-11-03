@@ -132,7 +132,8 @@ The new `proper-study` workflow owns the machine-checked format and examples
 in `workflows/fragments/proper-study/source-registration.md`; its standalone
 `scripts/_proper_study.py source-dispositions` command can check an adopted
 record after the author preserves the handoff in the leaf. This older `proper`
-stage still writes only `src/sources/` and its generated projections, as below;
+stage still writes only `src/sources/`, its generated projections and the
+mechanical browser-product descriptor, as below;
 its pipeline does not require that new schema and does
 not acquire its enforcement merely by reading this fragment. Do not restamp
 historical records or infer an admission from an existing artifact.
@@ -145,29 +146,38 @@ edition as an original that is missing. Do not add a variant.
 
 ## Verify before you return
 
-```
+```sh
+export TRIPTYCH_BROWSER_DATA_ROOT=.scratch/browser-data
 tools/source-library validate
-make source-projection
+tools/browser-products record
+tools/browser-products check
 make check-sources
 ```
 
-`make source-projection` rewrites the tracked reading projection under
-`src/web/data/structure/sources/` from the records you registered. It is
-deterministic and it is yours to run: the deployment gate refuses a stale
-projection, and one registration of 112 artifacts left the gate red for a
-console to notice because no stage owned the regeneration.
+`guidance/web-data.md` owns the generated browser products outside Git.
+After reviewed source changes, explicitly record and check the complete
+descriptor at `release/browser-products.json`; it derives source and affected
+Catena/paragraph families from canonical inputs and verifies exact outputs in
+the sealed cache. Direct producer experiments use an unsealed working output,
+never `src/web/data/` or a sealed cache entry. A descriptor is a mechanical
+proof, not source or publication approval.
 
-All must pass over what you wrote. Regenerate the Catena structure and
-paragraphs under its owning guidance after passage or edge changes.
-`make check-sources` is the ordinary
-non-completion gate: it validates the canonical source graph and bindings and
-replays the inventory. A record that does not validate is not registered, and
+The former `make source-projection` path regenerated tracked JSON. One
+registration of 112 artifacts left its stale-data gate red for a console to
+notice because no stage owned regeneration. This stage still owns the refresh;
+its current output and verification contract is the browser descriptor.
+
+All must pass over what you wrote. Keep passage and edge changes consistent
+with the Catena owner; recording the complete descriptor rebuilds the affected
+families. `make check-sources` retains the explicit full research audit of the
+canonical source graph, bindings and inventories. A record that does not validate is not registered, and
 returning `PASS` over one hands `author-proper` a fingerprint that will refuse.
 
 ## What you may not do
 
-You write `src/sources/`, and the projection `make source-projection`
-generates from it, and nothing else. Not the canonical leaf, not
+You write `src/sources/`, generated unsealed products, and the mechanical
+`release/browser-products.json` descriptor needed to verify those products,
+and nothing else. Do not change other release decisions. Not the canonical leaf, not
 `research/scope.md`, not `propers/verified.md`, not guidance, not `tools/`. You
 do not retrieve: the lanes did that, and a source you fetch here is evidence no
 research lane swept, no coverage audit saw, and no rights check cleared. Where

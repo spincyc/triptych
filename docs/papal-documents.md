@@ -85,9 +85,13 @@ withdrawals or missing review evidence.
 ```sh
 make papal-install-plan PAPAL_INSTALL_BATCH_PAIRS=.scratch/papal-pdfs/batch-pairs.json
 # Inspect .scratch/papal-pdfs/prepared-install.json before copying the release.
-make papal-install
-make check-papal-install
+tools/typeset-papal stage-inputs --prepared .scratch/papal-pdfs/prepared-install.json
 ```
+
+Continue with the [staged snapshot delivery and installation sequence](../guidance/papal-documents.md#explicit-input-staging-for-reviewed-print-maintenance).
+That sequence requires verified archive delivery declarations before installing
+the prepared release, followed by extraction renewal and the final checks.
+Staging alone changes no installed PDF, release record or approval.
 
 `PAPAL_INSTALL_PREPARED` changes the prepared JSON path. Installation consumes
 that existing proposal and repeats the checks; it refuses a changed proposal
@@ -98,9 +102,11 @@ They do not accept a source subset as a release of the whole collection.
 Installed readers live in `pdf/papal-documents/` with date, identity and
 language in their names. `release/papal-documents.json` binds their exact
 bytes and records the remaining delivery states. Frozen source selections,
-receipts, review records and full-page reports are retained by content hash
-under `release/papal-documents/`, so deleting `.scratch` does not erase the
-release's evidence. Standalone TeX and body fragments remain reproducible
+receipts and review records retain their original content-hash references
+through the [snapshot delivery contract](../guidance/papal-documents.md#frozen-input-snapshots-and-compact-records);
+full-page Markdown reports remain tracked under `release/papal-documents/`.
+Deleting `.scratch` can remove local cached originals, whose exact bytes remain
+preserved in the registered archives. Standalone TeX and body fragments remain reproducible
 build outputs. The release record's `documents[].pdf` paths can supply
 appendices or a presentation's source-reader list without introducing an
 AI-provider publication.

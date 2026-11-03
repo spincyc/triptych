@@ -15,6 +15,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 import _print_catalog as catalog
+import _browser_products as browser_products
 
 
 def digest(payload):
@@ -200,6 +201,8 @@ class SourceFixture(unittest.TestCase):
 
 class CorpusTests(unittest.TestCase):
     def test_all_admitted_papal_and_six_full_tracks_without_pdf_reads(self):
+        products = self.enterContext(browser_products.verified_products(
+            ROOT, product_ids={"encyclicals"}))
         original_read = Path.read_bytes
         original_open = Path.open
         original_validate = catalog.papal.validate_document
@@ -222,7 +225,9 @@ class CorpusTests(unittest.TestCase):
 
         with patch.object(Path, "read_bytes", no_pdf_read), patch.object(Path, "open", no_pdf_open), \
                 patch.object(catalog.papal, "validate_document", retain_selection):
-            pages = catalog.source_pages(ROOT)
+            pages = catalog.source_pages(
+                ROOT, data_root=products.data_root,
+                data_source_paths=[browser_products.MANIFEST_RELATIVE])
         papal_pages = {k: v for k, v in pages.items() if k.startswith("papal-documents/")}
         plans = {k: v for k, v in pages.items() if k.startswith("reading-plans/") and v.get("legacy_pdf")}
         parts = {k: v for k, v in pages.items() if k.startswith("reading-plans/") and not v.get("legacy_pdf")}

@@ -18,9 +18,11 @@ from pathlib import Path
 
 from tools.tests.test_browser_truthfulness import HARNESS, browser
 
+from tools.tests._product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 SCRATCH = ROOT / ".scratch/browser-print"
-DATA = ROOT / "src/web/data"
+DATA = browser_data_root(ROOT)
 SOURCE_EDITION = (
     "structure/sources/editions/irenaeus/adversus-haereses/"
     "1887-roberts-rambaut-coxe-anf1-1887.json"

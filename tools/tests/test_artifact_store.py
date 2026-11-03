@@ -422,6 +422,56 @@ class ArtifactStoreTests(unittest.TestCase):
         self.assertEqual(data["archives"][:-1], original["archives"])
         self.assertEqual([entry["path"] for entry in data["artifacts"][len(original["artifacts"]):]], [relative])
 
+    def test_shared_validator_requires_domain_opt_in_for_offline_archives(self):
+        import _snapshot_store as snapshots
+
+        self.pack()
+        relative, _, _ = self.extra_source()
+        source_index = self.append_offline([relative])
+        store._validate(source_index)
+        with self.assertRaisesRegex(store.ArtifactStoreError, "archive fields"):
+            store.validate_delivery_index(source_index)
+        store.validate_delivery_index(source_index, allow_offline=True)
+
+        original_index = (self.root / store.INDEX_PATH).read_bytes()
+        content = b'{"historical":"unchanged"}\n'
+        digest = hashlib.sha256(content).hexdigest()
+        path = self.root / snapshots.PREFIX / (digest + ".json")
+        path.parent.mkdir(parents=True)
+        path.write_bytes(content)
+        snapshot_index = snapshots.pack(self.root, self.out / "snapshots", release="snapshot-fixture")
+        snapshots._validate(snapshot_index)
+        self.assertEqual((self.root / store.INDEX_PATH).read_bytes(), original_index)
+        snapshot_index["archives"][0].update(delivery="offline-only", urls=[])
+        with self.assertRaisesRegex(store.ArtifactStoreError, "archive fields"):
+            snapshots._validate(snapshot_index)
+
+    def test_shared_packer_defaults_public_and_validates_before_writing(self):
+        entries = store._inventory(self.root)
+        target = self.out / "shared"
+        with self.assertRaisesRegex(store.ArtifactStoreError, "URL template"):
+            store.pack_delivery_archives(self.root, target, entries, resolver=store.resolve,
+                                         release="fixture", url_template="http://example.org/{archive}")
+        self.assertFalse(target.exists())
+        with self.assertRaisesRegex(store.ArtifactStoreError, "positive integer"):
+            store.pack_delivery_archives(self.root, target, entries, resolver=store.resolve,
+                                         release="fixture", start_ordinal=0)
+        self.assertFalse(target.exists())
+        archives, packed = store.pack_delivery_archives(
+            self.root, target, entries, resolver=store.resolve, release="fixture")
+        self.assertNotIn("delivery", archives[0])
+        self.assertTrue(archives[0]["urls"])
+        self.assertTrue(archives[0]["name"].startswith("triptych-binaries-0001-"))
+        self.assertEqual({entry["path"] for entry in packed}, self.payloads.keys())
+        self.assertFalse((self.root / store.INDEX_PATH).exists())
+
+    def test_scoped_append_keeps_archive_ordinal_with_shared_packer(self):
+        previous = self.pack()
+        relative, _, _ = self.extra_source()
+        data = self.append_offline([relative])
+        expected = len(previous["archives"]) + 1
+        self.assertTrue(data["archives"][-1]["name"].startswith(f"triptych-binaries-{expected:04d}-"))
+
 
 if __name__ == "__main__":
     unittest.main()

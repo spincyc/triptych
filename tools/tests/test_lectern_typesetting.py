@@ -27,6 +27,8 @@ class SharedTypesettingTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         done = subprocess.run([NODE, "-e", r"""
+const productFixturePath = file => require(require('path').join(process.cwd(), 'tools/tests/_product_data.cjs')).repositoryPath(process.cwd(), file);
+
 const fs=require('fs'), vm=require('vm'), dom=require('./scripts/lectern/dom.js');
 globalThis.window=globalThis;
 globalThis.document=dom.document;
@@ -47,10 +49,10 @@ const turns=[
   turn(null,'A source gloss.',null,null,{gloss:true}),
 ];
 const body=T.ordinaryText(element,{lang:'en',text:turns.map(t=>t.text).join('\n'),turns});
-const post=JSON.parse(fs.readFileSync('src/web/data/structure/ordinary/postconciliar.json','utf8'));
+const post=JSON.parse(fs.readFileSync(productFixturePath('src/web/data/structure/ordinary/postconciliar.json'),'utf8'));
 const pater=post.sections.flatMap(s=>s.elements).find(e=>e.key==='ritus-communionis/pater-noster');
 const latin=pater.translations.find(t=>t.lang==='la');
-const properFile=JSON.parse(fs.readFileSync('src/web/data/structure/propers/roman-1962.json','utf8'));
+const properFile=JSON.parse(fs.readFileSync(productFixturePath('src/web/data/structure/propers/roman-1962.json'),'utf8'));
 const introit=properFile.masses.find(m=>m.key==='pentecost').propers[0];
 const translation=T.orationFor(introit,'en');
 translation.notice='Required acknowledgement, retained verbatim.';

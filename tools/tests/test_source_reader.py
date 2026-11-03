@@ -25,10 +25,13 @@ import sys
 import unittest
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 
 TOOL = ROOT / "tools" / "source-reader"
-TRACKED = ROOT / "src/web/data/structure/sources"
+TRACKED = browser_data_root(ROOT) / 'structure/sources'
 MODEL = ROOT / "src/web/browser/sources/reader-model.js"
 PAGE = ROOT / "src/web/browser/sources/index.html"
 

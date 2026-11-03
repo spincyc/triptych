@@ -24,6 +24,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from _browser_products import ProductError, assert_working_output, committed_data_root, working_data_root  # noqa: E402
+
 from _psalms import (  # noqa: E402
     PSALMS,
     SYSTEMS,
@@ -58,19 +60,19 @@ EXAMPLES = {
     ),
     "structure": (
         Example(
-            "tools/reading-plan structure --out build/example-reading",
+            "tools/reading-plan structure --out .scratch/example-reading",
             (
                 "narrative-spine: 357 readings",
-                "  -> build/example-reading/structure/readings/narrative-spine.json",
+                "  -> <repo>/.scratch/example-reading/structure/readings/narrative-spine.json",
                 "  refused: 0",
             ),
-            "WRITES. --out here is untracked; the default writes the tracked src/web/data",
+            "WRITES. --out here is untracked; the default writes the mutable browser-data working tree",
         ),
         Example(
-            "tools/reading-plan structure --out build/example-reading --verbose",
+            "tools/reading-plan structure --out .scratch/example-reading --verbose",
             (
                 "narrative-spine: 357 readings",
-                "  -> build/example-reading/structure/readings/narrative-spine.json",
+                "  -> <repo>/.scratch/example-reading/structure/readings/narrative-spine.json",
             ),
             "WRITES. --verbose names each refused reading instead of counting them",
         ),
@@ -317,7 +319,7 @@ def run_check(arguments: argparse.Namespace) -> dict:
 
 def run_structure(arguments: argparse.Namespace) -> dict:
     tokens, bounds = verse_text()
-    out = Path(arguments.out)
+    out = assert_working_output(ROOT, working_data_root(ROOT) if arguments.out is None else Path(arguments.out))
     written, counts, refused = [], {}, []
     for path in plans(Path(arguments.root)):
         document = load_plan(path)
@@ -366,7 +368,7 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
 def main(argv: list[str] | None = None) -> int:
     shared = argparse.ArgumentParser(add_help=False)
     shared.add_argument("--root", default=str(DEFAULT_ROOT), help="reading-plan directory")
-    shared.add_argument("--out", default="src/web/data", help="where `structure` writes")
+    shared.add_argument("--out", default=None, help="where `structure` writes")
     shared.add_argument("--format", choices=("text", "json"), default="text")
     shared.add_argument("--verbose", action="store_true", help="list every refused reading")
     shared.add_argument(
@@ -398,7 +400,7 @@ def main(argv: list[str] | None = None) -> int:
         argv=argv,
         default_verb="check",
         dependency_message="install PyYAML (requirements-tools.txt)",
-        mapped_errors={ValueError: ("input", 2)},
+        mapped_errors={ProductError: ("input", 2), ValueError: ("input", 2)},
     )
 
 

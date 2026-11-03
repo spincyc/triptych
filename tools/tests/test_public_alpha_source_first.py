@@ -594,10 +594,10 @@ class PublicAlphaSourceReaderIntegrationTest(unittest.TestCase):
             "reading-plans/narrative-spine-full-account-king-james-version.html",
         }
         with (
+            tool.held_repository_inputs(),
             mock.patch.object(subprocess, "Popen", side_effect=AssertionError("source-reader regression invoked a subprocess")),
             mock.patch.object(tool, "papal_reader_pdfs", side_effect=AssertionError("source-reader regression read installed papal PDFs")),
             mock.patch.object(tool, "reading_plan_pdfs", side_effect=AssertionError("source-reader regression read installed reading-plan PDFs")),
-            tool.held_repository_inputs(),
         ):
             pages = tool.source_print_pages()
             self.assertTrue(pages, "real source-reader inventory is empty")

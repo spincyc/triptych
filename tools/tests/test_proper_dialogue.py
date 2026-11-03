@@ -7,6 +7,10 @@ import subprocess
 import unittest
 from pathlib import Path
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(os.environ.get("TRIPTYCH_REVIEW_ROOT", Path(__file__).resolve().parents[2]))
 CORE = Path(os.environ.get("TRIPTYCH_CORE_PATH", ROOT / "src/web/browser/shared/browser-core.js"))
 
@@ -60,7 +64,7 @@ def render(*cases: dict) -> list[dict]:
 
 
 def proper(key: str, name: str) -> dict:
-    payload = json.loads((ROOT / f"src/web/data/structure/propers/mass/roman-1962/{key}.json").read_text())
+    payload = json.loads((browser_data_root(ROOT) / f"structure/propers/mass/roman-1962/{key}.json").read_text())
     return next(row for row in payload["mass"]["propers"] if row["name"] == name)
 
 

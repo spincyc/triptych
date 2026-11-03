@@ -7,6 +7,10 @@ import subprocess
 import unittest
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
@@ -245,7 +249,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       "pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
       "pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
     }
-    corpus = json.loads((ROOT / "src/web/data/structure/documents/corpus.json").read_text())
+    corpus = json.loads((browser_data_root(ROOT) / 'structure/documents/corpus.json').read_text())
     for owner, catalog in (
         ("liturgy/roman-rite/1962/propers/temporal/f02-all-saints", "library/traditional-latin-mass.md"),
         ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"

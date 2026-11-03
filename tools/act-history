@@ -3,11 +3,14 @@
 
 Usage: act-history {check,graph,structure,plate,commonality,emit,catalogue,corpus,compare} [--source PATH]
 
-`structure` without `--source` owns the complete tracked browser projection:
+`structure` without `--source` owns the complete browser projection:
 it derives every `*-acts-v1.toml` slice into an empty tree, then replaces the
-owned directory so retired fragments cannot survive. `structure --check`
-performs that same derivation read-only and refuses changed, missing, or orphan
-files. Pass `--source` only for an explicitly scoped, non-pruning build.
+owned working directory so retired fragments cannot survive. Default writes
+use the unsealed browser-data working tree. `structure --check` independently
+derives and compares the descriptor-bound product cache; explicit `--out`
+selects a separate tree for generation or full comparison. Sealed product
+caches are never ordinary writer targets. Pass `--source` only for an
+explicitly scoped, non-pruning build.
 
 Two kinds of slice, one shape. A missal's units are prayers standing in a Mass;
 a code's units are canons standing in a division of the code. Everything else --
@@ -97,6 +100,9 @@ from _tooling import (
     with_examples,
 )
 import _eucharistic_history as eucharistic_history
+from _browser_products import (
+    ProductError, assert_working_output, verified_products, working_data_root,
+)
 from _eucharistic_texts import AdapterError
 from _act_history_preview import PreviewError
 
@@ -107,7 +113,7 @@ DEFAULT_OUT = ROOT / "build/act-history/roman-holy-week"
 # build/ is gitignored. Nothing is tracked: it is derived from the inventory in
 # one pass and regenerating it is cheaper than reviewing a diff of it.
 DEFAULT_PLATE = ROOT / "build/act-history/plate"
-DEFAULT_DATA = ROOT / "src" / "web" / "data"
+DEFAULT_DATA = working_data_root(ROOT)
 SOURCE_ARTIFACTS = ROOT / "src" / "sources" / "works"
 STRUCTURE_SOURCES = ROOT / "src" / "sources" / "inventories"
 STRUCTURE_SOURCE_GLOB = "*-acts-v1.toml"
@@ -384,7 +390,7 @@ EXAMPLES = {
         Example(
             "tools/act-history compare --comparison roman-canon-memento-wilson-r-and-cummiskey-1861",
             (
-                "{\"apparatus_caveat\":\"Wilson page 2 note 6 already reports pro quibus tibi offerimus vel in O (Ottobonianus 313). Its presence in Cummiskey and absence from Wilson's main text do not establish a nineteenth-century introduction. Printed editi... [+265098 chars]",
+                "{\"apparatus_caveat\":\"Wilson page 2 note 6 already reports pro quibus tibi offerimus vel in O (Ottobonianus 313). Its presence in Cummiskey and absence from Wilson's main text do not establish a nineteenth-century introduction. Printed editi... [+265511 chars]",
             ),
             note="Omitting --out prints the complete comparison, including its source members, diff and apparatus caveat.",
         ),
@@ -428,7 +434,7 @@ EXAMPLES = {
             "tools/act-history structure --out .scratch/history-engine-expansion/example-browser-data",
             (
                 "wrote: 557 files for 3 slices, 118 stations on 23 lines",
-                "  -> .scratch/history-engine-expansion/example-browser-data/structure/act-history",
+                "  -> <repo>/.scratch/history-engine-expansion/example-browser-data/structure/act-history",
                 "  updated: 557",
             ),
             note="writes the complete projection into a disposable data root before the read-only check below",
@@ -450,8 +456,8 @@ EXAMPLES = {
             " --out .scratch/history-engine-expansion/example-structure-latin-missal",
             (
                 "59 stations on 17 lines",
-                "  -> .scratch/history-engine-expansion/example-structure-latin-missal/structure/act-history/latin-missal.json",
-                "  -> .scratch/history-engine-expansion/example-structure-latin-missal/structure/act-history/index.json",
+                "  -> <repo>/.scratch/history-engine-expansion/example-structure-latin-missal/structure/act-history/latin-missal.json",
+                "  -> <repo>/.scratch/history-engine-expansion/example-structure-latin-missal/structure/act-history/index.json",
                 "  slices there: latin-missal; opens on latin-missal",
             ),
             note="the manifest names the slices the browser may open, one per source",
@@ -5183,7 +5189,8 @@ def main(argv: list[str] | None = None) -> int:
             sub.add_argument("--comparison", required=True, help="explicit comparison id in the routing inventory")
             sub.add_argument("--out", type=Path, help="write the complete comparison JSON here; omit to print it")
         if verb == "structure":
-            sub.add_argument("--out", type=Path, default=DEFAULT_DATA)
+            sub.add_argument("--out", type=Path,
+                             help="unsealed generation/check data root; default writes use the browser-data working tree")
             sub.add_argument(
                 "--check",
                 action="store_true",
@@ -5216,7 +5223,13 @@ def main(argv: list[str] | None = None) -> int:
                 return eucharistic_history.write_catalogue(payload, arguments.out, check=arguments.check)
             return payload
         if arguments.command == "structure" and arguments.source is None:
-            return structure_all(arguments.out, check_only=arguments.check)
+            if arguments.check and arguments.out is None:
+                with verified_products(ROOT, product_ids=["act-history"]) as products:
+                    return structure_all(products.data_root, check_only=True)
+            output = arguments.out or working_data_root(ROOT)
+            if not arguments.check:
+                output = assert_working_output(ROOT, output)
+            return structure_all(output, check_only=arguments.check)
         if arguments.command == "structure" and arguments.check:
             raise Problem(
                 "structure --check proves the complete tracked projection; "
@@ -5229,7 +5242,7 @@ def main(argv: list[str] | None = None) -> int:
             return graph(data)
         check(data)
         if arguments.command == "structure":
-            return structure(data, arguments.out)
+            return structure(data, assert_working_output(ROOT, arguments.out or working_data_root(ROOT)))
         if arguments.command == "plate":
             payload = plate(data, arguments.out)
             if arguments.preview:
@@ -5261,7 +5274,7 @@ def main(argv: list[str] | None = None) -> int:
         prefix="act-history",
         argv=argv,
         default_verb="check",
-        mapped_errors={Problem: ("invalid-history", 1), eucharistic_history.HistoryError: ("invalid-history", 1), AdapterError: ("invalid-history", 1), PreviewError: ("preview-unavailable", 1)},
+        mapped_errors={Problem: ("invalid-history", 1), eucharistic_history.HistoryError: ("invalid-history", 1), AdapterError: ("invalid-history", 1), PreviewError: ("preview-unavailable", 1), ProductError: ("invalid-products", 1)},
     )
 
 

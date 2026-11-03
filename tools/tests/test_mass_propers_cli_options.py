@@ -130,7 +130,7 @@ class MassPropersCliOptions(unittest.TestCase):
         expected = dict(
             root=str(mass_propers.DEFAULT_ROOT), calendar=None, mass=None,
             format="text", bible=None, lang="la", witness=None,
-            bible_root=str(mass_propers.BIBLE_ROOT), out="src/web/data",
+            bible_root=str(mass_propers.BIBLE_ROOT), out=None,
             doc_root=str(mass_propers.ROOT), write=False, check=False,
             verbose=False, json=False,
         )

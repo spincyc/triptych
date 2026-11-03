@@ -13,6 +13,9 @@ import tempfile
 import unittest
 
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(os.environ.get("TRIPTYCH_RG110_PUBLICATION_ROOT", Path(__file__).resolve().parents[2]))
 TOOL = Path(os.environ.get("TRIPTYCH_RG110_PUBLICATION_TOOL", ROOT / "tools/public-alpha"))
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -31,13 +34,13 @@ class Rg110Publication(unittest.TestCase):
     def setUpClass(cls):
         cls.tool = load_tool(TOOL, "_rg110_publication_guard")
         cls.producer = load_tool(ROOT / "tools/mass-propers", "_rg110_publication_producer")
-        cls.rubrics = json.loads((ROOT / "src/web/data/structure/rubrics/roman-1962.json").read_bytes())
+        cls.rubrics = json.loads((browser_data_root(ROOT) / 'structure/rubrics/roman-1962.json').read_bytes())
         pairs = cls.rubrics["commemoration"]["inseparable"]["pairs"]
         cls.keys = [pair[field] for pair in pairs for field in ("host", "companion")]
-        cls.structure = json.loads((ROOT / "src/web/data/structure/propers/roman-1962.json").read_bytes())
+        cls.structure = json.loads((browser_data_root(ROOT) / 'structure/propers/roman-1962.json').read_bytes())
         cls.structure["masses"] = [mass for mass in cls.structure["masses"] if mass["key"] in cls.keys]
         assert len(cls.structure["masses"]) == 6
-        cls.index = json.loads((ROOT / "src/web/data/structure/propers/index.json").read_bytes())
+        cls.index = json.loads((browser_data_root(ROOT) / 'structure/propers/index.json').read_bytes())
         scratch = ROOT / ".scratch"
         scratch.mkdir(exist_ok=True)
         cls.temporary = tempfile.TemporaryDirectory(prefix="rg110-publication-test-", dir=scratch)
@@ -64,7 +67,7 @@ class Rg110Publication(unittest.TestCase):
         return data
 
     def test_current_whole_generated_source_and_six_owner_fixture_are_accepted(self):
-        self.tool.validate_propers_read_payload_sources(ROOT / "src/web/data")
+        self.tool.validate_propers_read_payload_sources(browser_data_root(ROOT))
         self.tool.validate_propers_read_payload_sources(self.fixture())
 
     def test_matching_generations_do_not_license_changed_missing_or_extra_relation_fields(self):
@@ -99,7 +102,7 @@ class Rg110Publication(unittest.TestCase):
             self.tool.validate_propers_read_payload_sources(self.fixture(structure))
 
     def test_relation_cannot_be_attached_to_an_unlisted_mass(self):
-        generated = json.loads((ROOT / "src/web/data/structure/propers/roman-1962.json").read_bytes())
+        generated = json.loads((browser_data_root(ROOT) / 'structure/propers/roman-1962.json').read_bytes())
         unrelated = copy.deepcopy(next(mass for mass in generated["masses"] if mass["key"] == "advent-1"))
         unrelated["oration_relation"] = copy.deepcopy(self.structure["masses"][0]["oration_relation"])
         structure = copy.deepcopy(self.structure)

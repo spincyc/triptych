@@ -156,7 +156,7 @@ if ! cmp -s "$catalogue" "$sandbox/again/structure/documents/corpus.json"; then
 fi
 
 # The tracked catalogue is what the sources produce now.
-run_tool structure --check >/dev/null
+run_tool structure --check --out "$sandbox/data" >/dev/null
 
 # `list` is one line a document, and narrowing narrows it.
 whole="$(run_tool list | wc -l | tr -d ' ')"

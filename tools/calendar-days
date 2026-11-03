@@ -55,6 +55,8 @@ ROOT = Path(__file__).resolve().parents[1]
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from _browser_products import ProductError, assert_working_output, committed_data_root, working_data_root  # noqa: E402
+
 import _calendars  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
@@ -95,18 +97,18 @@ EXAMPLES = {
     ),
     "check": (
         Example(
-            "tools/calendar-days check",
+            "tools/calendar-days check --out .scratch/example-days --first 2026 --last 2026",
             (
-                "postconciliar: 38421 placements",
-                "roman-1962: 12667 placements",
-                "roman-pre-1955: 12565 placements",
+                "postconciliar: 754 placements",
+                "roman-1962: 248 placements",
+                "roman-pre-1955: 246 placements",
                 "checked against the worked tables in guidance/liturgy/calendar-computation.md",
             ),
         ),
         Example(
-            "tools/calendar-days check --json",
+            "tools/calendar-days check --out .scratch/example-days --first 2026 --last 2026 --json",
             (
-                "{\"calendars\":{\"postconciliar\":{\"placements\":38421,\"rules_suppressed_by_recension\":[],\"rules_with... [+502 chars]",
+                "{\"calendars\":{\"postconciliar\":{\"placements\":754,\"rules_suppressed_by_recension\":[],\"rules_withou... [+496 chars]",
             ),
         ),
     ),
@@ -132,22 +134,22 @@ EXAMPLES = {
     ),
     "structure": (
         Example(
-            "tools/calendar-days check",
+            "tools/calendar-days check --out .scratch/example-days --first 2026 --last 2026",
             (
-                "postconciliar: 38421 placements",
-                "roman-1962: 12667 placements",
-                "roman-pre-1955: 12565 placements",
+                "postconciliar: 754 placements",
+                "roman-1962: 248 placements",
+                "roman-pre-1955: 246 placements",
                 "checked against the worked tables in guidance/liturgy/calendar-computation.md",
             ),
             "read-only first: `check` verifies the same computation `structure` writes out",
         ),
         Example(
-            "tools/calendar-days structure --out build/example-days --first 2026 --last 2026",
+            "tools/calendar-days structure --out .scratch/example-days --first 2026 --last 2026",
             (
                 "wrote 4 files for 2026-2026",
-                "  -> build/example-days/structure/calendar/index.json",
+                "  -> <repo>/.scratch/example-days/structure/calendar/index.json",
             ),
-            "WRITES one file per date. --out here is untracked; the default writes tracked src/web/data",
+            "WRITES one file per date. --out here is untracked; the default writes the mutable browser-data working tree",
         ),
     ),
 }
@@ -2574,7 +2576,7 @@ def run_check(arguments: argparse.Namespace) -> dict:
         raise ValueError(head + (f" (and {len(problems) - 4} more)" if len(problems) > 4 else ""))
     documents, expected_index = structure_projection(indexes, first, last)
     freshness = freshness_of(
-        Path(arguments.out),
+        (committed_data_root(ROOT) if arguments.out is None else Path(arguments.out)),
         documents,
         expected_index,
         {
@@ -2676,7 +2678,7 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         raise ValueError(
             "the computation does not agree with " + GUIDANCE + "; run `calendar-days check`"
         )
-    out = Path(arguments.out)
+    out = assert_working_output(ROOT, working_data_root(ROOT) if arguments.out is None else Path(arguments.out))
     written: list[str] = []
     documents, index_document = structure_projection(indexes, first, last)
     base = out / "structure" / "calendar"
@@ -2887,7 +2889,7 @@ def main(argv: list[str] | None = None) -> int:
             help="calendar directory"
         )
         shared.add_argument(
-            "--out", default=argparse.SUPPRESS if verb else "src/web/data",
+            "--out", default=argparse.SUPPRESS if verb else None,
             help="where `structure` writes"
         )
         shared.add_argument("--calendar", default=missing, help="limit to one calendar")
@@ -2957,7 +2959,7 @@ def main(argv: list[str] | None = None) -> int:
         argv=argv,
         default_verb="check",
         dependency_message="install PyYAML (requirements-tools.txt)",
-        mapped_errors={ValueError: ("input", 2)},
+        mapped_errors={ProductError: ("input", 2), ValueError: ("input", 2)},
     )
 
 

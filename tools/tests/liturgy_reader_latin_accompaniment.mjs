@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 /* Owner-level prayer language pairs; synthetic words never assert liturgical coverage. */
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -16,7 +17,7 @@ const State = require(modulePath('reader-state.js'));
 const Adapters = require(modulePath('reader-state-adapters.js'));
 const Compare = require(modulePath('reader-comparison.js'));
 const Actions = require(modulePath('reader-share-print.js'));
-const read = (name) => JSON.parse(readFileSync(resolve(ROOT, name), 'utf8'));
+const read = (name) => JSON.parse(readFileSync(repositoryPath(ROOT, name), 'utf8'));
 
 class Element {
   constructor(tag, text = '') {

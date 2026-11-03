@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+"$repo/tools/snapshot-store" --help >/dev/null
+for verb in inventory pack check hydrate; do
+    "$repo/tools/snapshot-store" "$verb" --help >/dev/null
+done
+python3 -m unittest discover -s "$repo/tools/tests" -p test_snapshot_store.py -q

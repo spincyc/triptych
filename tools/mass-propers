@@ -22,6 +22,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from _browser_products import ProductError, assert_working_output, committed_data_root, working_data_root  # noqa: E402
+
 import _calendars  # noqa: E402
 import _missal_coverage  # noqa: E402
 import _oration_execution  # noqa: E402
@@ -128,28 +130,28 @@ EXAMPLES = {
             "read-only first: `list` names the masses `structure` will write",
         ),
         Example(
-            "tools/mass-propers structure --out build/example-propers",
+            "tools/mass-propers structure --out .scratch/example-propers",
             (
                 "postconciliar: 619 masses, 4076 citations",
                 "roman-1962: 491 masses, 4729 citations",
                 "roman-pre-1955: 489 masses, 4667 citations",
-                "  -> build/example-propers/structure/propers/postconciliar.json",
-                "  -> build/example-propers/structure/propers/search/postconciliar.json",
-                "  -> build/example-propers/structure/propers/roman-1962.json",
-                "  -> build/example-propers/structure/propers/catalog/roman-1962.json",
+                "  -> <repo>/.scratch/example-propers/structure/propers/postconciliar.json",
+                "  -> <repo>/.scratch/example-propers/structure/propers/search/postconciliar.json",
+                "  -> <repo>/.scratch/example-propers/structure/propers/roman-1962.json",
+                "  -> <repo>/.scratch/example-propers/structure/propers/catalog/roman-1962.json",
                 "... 497 more lines",
             ),
-            "WRITES structure and search files per missal, the 1962 catalog and exact Mass files, plus the manifest. --out here is untracked; the default writes tracked src/web/data",
+            "WRITES structure and search files per missal, the 1962 catalog and exact Mass files, plus the manifest. --out here is untracked; the default writes the mutable browser-data working tree",
         ),
         Example(
-            "tools/mass-propers structure --check",
+            "tools/mass-propers structure --check --out .scratch/example-propers",
             (
                 "postconciliar: 619 masses, 4076 citations",
                 "roman-1962: 491 masses, 4729 citations",
                 "roman-pre-1955: 489 masses, 4667 citations",
-                "  499 tracked file(s) are current",
+                "  499 generated file(s) are current",
             ),
-            "writes nothing: exits 1 naming each tracked file the sources no longer produce. The calendar-Mass check target runs this",
+            "writes nothing: exits 1 naming each generated file the sources no longer produce. The calendar-Mass check target runs this",
         ),
     ),
     "census": (
@@ -4124,7 +4126,9 @@ def run_structure(arguments: argparse.Namespace) -> dict:
     with nothing reporting it, which is the failure that looks like success —
     the page renders, and renders a missal the sources stopped describing.
     """
-    out = Path(arguments.out)
+    out = (committed_data_root(ROOT) if arguments.check and arguments.out is None else working_data_root(ROOT) if arguments.out is None else Path(arguments.out))
+    if not arguments.check:
+        out = assert_working_output(ROOT, out)
     propers_dir = out / "structure" / "propers"
     refuse_symlink_output(out, propers_dir)
     search_dir = propers_dir / "search"
@@ -5878,7 +5882,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.set_defaults(
         root=str(DEFAULT_ROOT), calendar=None, mass=None, format="text",
         bible=None, lang="la", witness=None, bible_root=str(BIBLE_ROOT),
-        out="src/web/data", doc_root=str(ROOT), write=False, check=False,
+        out=None, doc_root=str(ROOT), write=False, check=False,
         verbose=False, json=False,
     )
     examples_live_on_the_verbs(parser, "mass-propers")
@@ -5964,7 +5968,7 @@ def main(argv: list[str] | None = None) -> int:
                     file=sys.stderr,
                 )
                 return 1
-            print(f"  {len(payload['checked'])} tracked file(s) are current")
+            print(f"  {len(payload['checked'])} generated file(s) are current")
             return 0
         if "written" in payload:
             for calendar, counts in payload["calendars"].items():
@@ -6023,7 +6027,7 @@ def main(argv: list[str] | None = None) -> int:
         argv=argv,
         default_verb="show",
         dependency_message="install PyYAML (requirements-tools.txt)",
-        mapped_errors={KeyError: ("not-found", 3), ValueError: ("input", 2)},
+        mapped_errors={ProductError: ("input", 2), KeyError: ("not-found", 3), ValueError: ("input", 2)},
     )
 
 

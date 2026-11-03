@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 
 /* Real production-data checks for the pure two-side Proper comparison. */
 
@@ -16,7 +17,7 @@ const Comparison = require(resolve(ROOT, 'src/web/browser/liturgy/reader-compari
 const DATA = 'src/web/data/structure/';
 const FIXTURES = 'tools/tests/fixtures/liturgy-reader-comparison/v1/';
 
-function json(path) { return JSON.parse(readFileSync(resolve(ROOT, path), 'utf8')); }
+function json(path) { return JSON.parse(readFileSync(repositoryPath(ROOT, path), 'utf8')); }
 function fixture(id) { return json(FIXTURES + id + '.json'); }
 function clone(value) { return structuredClone(value); }
 

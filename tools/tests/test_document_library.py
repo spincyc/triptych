@@ -30,9 +30,9 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import _corpus  # noqa: E402
 
 TOOL = ROOT / "tools" / "document-library"
-TRACKED = ROOT / "src/web/data/structure/documents/corpus.json"
+GENERATED = ROOT / ".scratch/next-projection-inventory/tests/catalogue/structure/documents/corpus.json"
 MODEL = ROOT / "src/web/browser/texts/catalogue-model.js"
-SCRATCH = ROOT / ".scratch/document-catalog/tests"
+SCRATCH = ROOT / ".scratch/next-projection-inventory/tests"
 SCRATCH.mkdir(parents=True, exist_ok=True)
 
 
@@ -40,6 +40,14 @@ def run(*argv: str) -> subprocess.CompletedProcess:
     return subprocess.run(
         [sys.executable, str(TOOL), *argv], capture_output=True, text=True, cwd=ROOT
     )
+
+
+def _generated_catalogue() -> Path:
+    tool = _load_tool()
+    rows, by_key = tool.selected(SimpleNamespace(provider=None, sort="leaf"))
+    GENERATED.parent.mkdir(parents=True, exist_ok=True)
+    GENERATED.write_text(tool._serialise(tool.catalogue(rows, by_key)), "utf-8")
+    return GENERATED
 
 
 class CorpusReadingTests(unittest.TestCase):
@@ -157,10 +165,10 @@ class TrackedCatalogueTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        cls.catalogue = json.loads(TRACKED.read_text(encoding="utf-8"))
+        cls.catalogue = json.loads(_generated_catalogue().read_text(encoding="utf-8"))
 
     def test_the_tracked_catalogue_is_what_the_sources_produce_now(self) -> None:
-        result = run("structure", "--check")
+        result = run("structure", "--check", "--out", str(_generated_catalogue().parents[2]))
         self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_structure_check_refuses_a_catalogue_that_has_drifted(self) -> None:
@@ -230,7 +238,7 @@ class BrowserModelTests(unittest.TestCase):
         tool = importlib.util.module_from_spec(spec)
         loader.exec_module(tool)
 
-        built = json.loads(TRACKED.read_text(encoding="utf-8"))
+        built = json.loads(_generated_catalogue().read_text(encoding="utf-8"))
         problems, skipped, _ = tool.replay_browser_model(built)
         self.assertEqual((problems, skipped), ([], ""))
         built["counted"]["documents"] += 1
@@ -263,7 +271,7 @@ class ProductionProvenanceTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        cls.catalogue = json.loads(TRACKED.read_text(encoding="utf-8"))
+        cls.catalogue = json.loads(_generated_catalogue().read_text(encoding="utf-8"))
         cls.documents = _corpus.documents(extents=False)
 
     def test_the_record_round_trips_from_the_source_into_the_catalogue(self) -> None:
@@ -619,7 +627,7 @@ process.stdout.write(JSON.stringify(
         self.assertFalse(verdict["ahead"])
 
     def test_the_real_catalogue_claims_nothing_it_cannot_support(self) -> None:
-        catalogue = json.loads(TRACKED.read_text(encoding="utf-8"))
+        catalogue = json.loads(_generated_catalogue().read_text(encoding="utf-8"))
         editions = [
             edition
             for work in catalogue["works"]
@@ -644,7 +652,7 @@ class DriftIsAdvisoryTests(unittest.TestCase):
     def test_a_corpus_entirely_behind_still_passes_the_catalogue_check(self) -> None:
         """Put every document behind its workflow and the gate must not care."""
         tool = _load_tool()
-        built = json.loads(TRACKED.read_text(encoding="utf-8"))
+        built = json.loads(_generated_catalogue().read_text(encoding="utf-8"))
         built["workflows"] = [{"id": "proper", "version": "9999"}]
         for work in built["works"]:
             for edition in work["editions"]:
@@ -722,7 +730,7 @@ class DriftIsAdvisoryTests(unittest.TestCase):
         feature could be switched off and nothing would say so.
         """
         tool = _load_tool()
-        built = json.loads(TRACKED.read_text(encoding="utf-8"))
+        built = json.loads(_generated_catalogue().read_text(encoding="utf-8"))
         built["workflows"] = []
         problems, _, drift = tool.replay_browser_model(built)
         self.assertTrue(problems, "an empty declared-workflow list passed silently")

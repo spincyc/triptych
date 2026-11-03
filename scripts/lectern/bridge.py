@@ -1,14 +1,19 @@
 """Ask the browser's own scripts, under node, for what they alone derive."""
 from __future__ import annotations
 
+import atexit
 import itertools
+from contextvars import Context
 import json
 import selectors
 import shutil
 import subprocess
+import sys
 import threading
 from pathlib import Path
 from typing import Any
+
+from _browser_products import ProductError, verified_products
 
 from .repo import ROOT, Refused
 
@@ -29,21 +34,47 @@ class Bridge:
         self._closing = False
         self.ids = itertools.count(1)
         self.waiting = 0  # calls under way, which a snapshot waits out
+        self._products: dict[subprocess.Popen[str], tuple[Any, Any]] = {}
 
     def _start(self) -> subprocess.Popen[str]:
         node = shutil.which("node")
         if node is None:
             raise Refused("node is not installed, and this view is derived by the browser's model under node")
-        return subprocess.Popen(
-            [node, str(BRIDGE)],
-            cwd=ROOT,
-            stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.DEVNULL,
-            text=True,
-            encoding="utf-8",
-            bufsize=1,
-        )
+        # Requests and shutdown can run in different reader workers. Enter and
+        # leave the product context in this same explicit Context so its tokens
+        # and cache lock belong to the child's whole lifetime, across threads.
+        # A fresh context must not borrow an outer operation's snapshot: that
+        # operation could finish while this interactive child is still alive.
+        context = Context()
+        try:
+            manager = verified_products(ROOT)
+            products = context.run(manager.__enter__)
+        except (ProductError, OSError) as error:
+            raise Refused(f"published browser data is unavailable: {error}") from error
+        # Temporary snapshots can install their own exit cleanup. Re-register
+        # after every acquisition so this verification and child teardown run
+        # first, including after a bridge restart.
+        atexit.unregister(self.close)
+        atexit.register(self.close)
+        try:
+            process = subprocess.Popen(
+                [node, str(BRIDGE), str(products.data_root)],
+                cwd=ROOT,
+                stdin=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,
+                text=True,
+                encoding="utf-8",
+                bufsize=1,
+            )
+        except BaseException:
+            try:
+                context.run(manager.__exit__, *sys.exc_info())
+            finally:
+                atexit.unregister(self.close)
+            raise
+        self._products[process] = (context, manager)
+        return process
 
     def call(self, adapter: str, fn: str, *args: Any) -> Any:
         with self._state:
@@ -100,8 +131,7 @@ class Bridge:
                 return None
         return stream.readline()
 
-    @staticmethod
-    def _dispose(process: subprocess.Popen[str] | None) -> None:
+    def _dispose(self, process: subprocess.Popen[str] | None) -> None:
         if process is None:
             return
         if process.poll() is None:
@@ -110,13 +140,29 @@ class Bridge:
         for stream in (process.stdin, process.stdout):
             if stream is not None:
                 stream.close()
+        # Release only after termination is confirmed. A failed teardown keeps
+        # the process and snapshot owned, so a later close can finish it.
+        lifetime = self._products.pop(process, None)
+        try:
+            if lifetime is not None:
+                context, manager = lifetime
+                try:
+                    context.run(manager.__exit__, None, None, None)
+                except (ProductError, OSError) as error:
+                    raise Refused(f"published browser data changed during reading: {error}") from error
+        finally:
+            if not self._products:
+                atexit.unregister(self.close)
 
     def _drop(self, process: subprocess.Popen[str] | None) -> None:
         # The serial caller (or close after that caller exits) owns the pipes.
-        with self._state:
-            if self.process is process:
-                self.process = None
-        self._dispose(process)
+        try:
+            self._dispose(process)
+        finally:
+            if process is None or process.poll() is not None:
+                with self._state:
+                    if self.process is process:
+                        self.process = None
 
     def close(self) -> None:
         # Kill without taking the request lock: its owner may be in select.

@@ -24,6 +24,10 @@ import unittest
 from pathlib import Path
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 READER = ROOT / "src/web/browser/liturgy/day-reader.js"
 
@@ -56,13 +60,15 @@ DAY_HASH_KEYS = {
 }
 
 NODE_PRELUDE = r"""
+const productFixturePath = file => require(require('path').join(process.cwd(), 'tools/tests/_product_data.cjs')).repositoryPath(process.cwd(), file);
+
 const fs = require('fs');
 const C = require('./src/web/browser/liturgy/reader-state.js');
 const A = require('./src/web/browser/liturgy/reader-state-adapters.js');
 const M = require('./src/web/browser/liturgy/assembly-model.js');
 const input = JSON.parse(fs.readFileSync(0, 'utf8'));
 const base = 'src/web/data/structure/';
-const read = (path) => JSON.parse(fs.readFileSync(path, 'utf8'));
+const read = (path) => JSON.parse(fs.readFileSync(productFixturePath(path), 'utf8'));
 
 function derive(id, date) {
   return M.derive({
@@ -462,7 +468,7 @@ class DayMissalSwitchTests(unittest.TestCase):
         self.assertEqual(resolved["resolved"], EASTER_4)
 
     def test_edition_changes_clear_all_ordinary_variants_but_date_changes_keep_them(self) -> None:
-        ordinary = json.loads((ROOT / "src/web/data/structure/ordinary/postconciliar.json")
+        ordinary = json.loads((browser_data_root(ROOT) / 'structure/ordinary/postconciliar.json')
                               .read_text(encoding="utf-8"))
         variants = {
             group["group"]: group["options"][-1]["id"]

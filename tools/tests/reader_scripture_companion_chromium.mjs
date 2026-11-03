@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 
 /* Named Latin Scripture companions over independently addressed citation fragments. */
 
@@ -32,8 +33,8 @@ function server(overlay = OVERLAY) {
       const file = resolve(ROOT, relative || 'README.md');
       if (!file.startsWith(ROOT + sep)) throw new Error('outside repository');
       response.writeHead(200, { 'content-type': mime(file), 'cache-control': 'no-store' });
-      const body = overlay ? await readFile(resolve(overlay, relative)).catch(() => readFile(file))
-        : await readFile(file);
+      const body = overlay ? await readFile(resolve(overlay, relative)).catch(() => readFile(repositoryPath(ROOT, file)))
+        : await readFile(repositoryPath(ROOT, file));
       response.end(body);
     } catch (_error) { response.writeHead(404); response.end('not found'); }
   });

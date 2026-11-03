@@ -12,8 +12,12 @@ from argparse import Namespace
 from pathlib import Path
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
-DATA = ROOT / "src/web/data/structure/propers"
+DATA = browser_data_root(ROOT) / 'structure/propers'
 
 
 def load_tool(path: Path, name: str):

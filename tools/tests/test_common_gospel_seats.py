@@ -11,6 +11,9 @@ import sys
 import tomllib
 import unittest
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(os.environ.get('TRIPTYCH_REVIEW_ROOT', Path(__file__).resolve().parents[2]))
 SOURCE_ROOT = Path(os.environ.get('TRIPTYCH_COMMON_SOURCE_ROOT', ROOT))
 ORDINARY_ROOT = Path(os.environ.get('TRIPTYCH_COMMON_ORDINARY_SOURCE_ROOT', ROOT))
@@ -34,7 +37,7 @@ class CommonGospelSeats(unittest.TestCase):
     def setUpClass(cls):
         cls.source = C.read_yaml(SOURCE_ROOT / 'src/sources/calendars/roman-1962/propers.yaml')
         cls.inventory = tomllib.loads((ORDINARY_ROOT / 'src/sources/inventories/roman-1962-ordo-missae-v1.toml').read_text())
-        cls.ordinary = json.loads((ROOT / 'src/web/data/structure/ordinary/roman-1962.json').read_text())
+        cls.ordinary = json.loads((browser_data_root(ROOT) / 'structure/ordinary/roman-1962.json').read_text())
         cls.ordinary['slots'] = O.slot_table(cls.inventory, cls.ordinary['sections'], 'roman-1962')
 
     def test_each_exact_label_is_a_source_anchored_gospel_with_same_ordinary_seat(self):

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 
 /* Source-served keyboard check for the shared Day/Propers mode radiogroup. */
 
@@ -35,7 +36,7 @@ function server() {
       const mime = ({ '.css': 'text/css', '.html': 'text/html', '.js': 'text/javascript',
         '.json': 'application/json' })[extname(file)] || 'application/octet-stream';
       response.writeHead(200, { 'content-type': mime, 'cache-control': 'no-store' });
-      response.end(await readFile(file));
+      response.end(await readFile(repositoryPath(ROOT, file)));
     } catch (_error) { response.writeHead(404); response.end('not found'); }
   });
 }

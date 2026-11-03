@@ -65,40 +65,41 @@ class CatalogueNavigationTest(unittest.TestCase):
         spec = importlib.util.spec_from_loader(loader.name, loader)
         tool = importlib.util.module_from_spec(spec)
         loader.exec_module(tool)
-        manifest = tool.load_manifest()
-        included = tool.included_publications(tool.publication_map(manifest), False)
-        authorization = tool.artifact_authorization(manifest, included)
-        cls.catalogues = {route: source for source, route in tool.PAGE_MAP.items()
-                          if source == "README.md" or source.startswith("library/")}
-        for route, source in cls.catalogues.items():
-            target = cls.site / route
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_text(tool.render_source_page(
-                source, route, set(included), False, authorization))
-        # Use the production source-first renderer for both reviewed readers and
-        # truthful print-option pages; no installed PDF is a fixture input.
-        for route in (PROPER, OTHER, SYNTHESIS, HOMILY, PRINT_PROPER, PRINT_SYNTHESIS):
-            _, provider, leaf = route.removesuffix(".html").split("/", 2)
-            if (provider, leaf) not in included:
-                raise AssertionError(f"browser fixture publication is not admitted: {provider}/{leaf}")
-            target = cls.site / route
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_text(tool.render_publication_print_page(
-                provider, leaf, route, False, authorization))
-        for asset in ("site.css", "icon.png", "social-card.png"):
-            destination = cls.site / "assets" / asset
+        with tool.held_repository_inputs():
+            manifest = tool.load_manifest()
+            included = tool.included_publications(tool.publication_map(manifest), False)
+            authorization = tool.artifact_authorization(manifest, included)
+            cls.catalogues = {route: source for source, route in tool.PAGE_MAP.items()
+                              if source == "README.md" or source.startswith("library/")}
+            for route, source in cls.catalogues.items():
+                target = cls.site / route
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text(tool.render_source_page(
+                    source, route, set(included), False, authorization))
+            # Use the production source-first renderer for both reviewed readers and
+            # truthful print-option pages; no installed PDF is a fixture input.
+            for route in (PROPER, OTHER, SYNTHESIS, HOMILY, PRINT_PROPER, PRINT_SYNTHESIS):
+                _, provider, leaf = route.removesuffix(".html").split("/", 2)
+                if (provider, leaf) not in included:
+                    raise AssertionError(f"browser fixture publication is not admitted: {provider}/{leaf}")
+                target = cls.site / route
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text(tool.render_publication_print_page(
+                    provider, leaf, route, False, authorization))
+            for asset in ("site.css", "icon.png", "social-card.png"):
+                destination = cls.site / "assets" / asset
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                source = ROOT / "release/public-alpha/assets" / asset
+                if asset == "site.css" and os.environ.get("TRIPTYCH_CATALOGUE_CSS"):
+                    source = Path(os.environ["TRIPTYCH_CATALOGUE_CSS"])
+                shutil.copyfile(source, destination)
+            destination = cls.site / "shared/catalogue-navigation.js"
             destination.parent.mkdir(parents=True, exist_ok=True)
-            source = ROOT / "release/public-alpha/assets" / asset
-            if asset == "site.css" and os.environ.get("TRIPTYCH_CATALOGUE_CSS"):
-                source = Path(os.environ["TRIPTYCH_CATALOGUE_CSS"])
-            shutil.copyfile(source, destination)
-        destination = cls.site / "shared/catalogue-navigation.js"
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(ROOT / "src/web/browser/shared/catalogue-navigation.js", destination)
-        for route, source in tool.web_browser_pages().items():
-            page = tool.render_browser_page(source, route, False, {})
-            if 'class="catalogue-table' in page or 'shared/catalogue-navigation.js' in page:
-                raise AssertionError(f"app opted into landing component: {route}")
+            shutil.copyfile(ROOT / "src/web/browser/shared/catalogue-navigation.js", destination)
+            for route, source in tool.web_browser_pages().items():
+                page = tool.render_browser_page(source, route, False, {})
+                if 'class="catalogue-table' in page or 'shared/catalogue-navigation.js' in page:
+                    raise AssertionError(f"app opted into landing component: {route}")
         cls.server = http.server.ThreadingHTTPServer(("127.0.0.1", 0),
             functools.partial(QuietServer, directory=cls.site))
         cls.thread = threading.Thread(target=cls.server.serve_forever, daemon=True)

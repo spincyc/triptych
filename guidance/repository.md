@@ -22,6 +22,11 @@ Apply these rules in order:
 - `build/` contains ignored, reproducible site and build intermediates. In a
   workspace, task-created logs, review output, caches, and experiments go under
   the owning `.scratch/` directory.
+- Generated browser data is outside Git. `release/browser-products.json` binds
+  per-family canonical inputs and exact expected outputs; `tools/browser-products`
+  verifies warm caches and rebuilds exact misses offline. Workspace caches use
+  `TRIPTYCH_BROWSER_DATA_ROOT=.scratch/browser-data`; direct producers write to
+  an unsealed sibling working tree. `guidance/web-data.md` owns this contract.
 - PDF files are optional print outputs, generated one edition at a time by
   `tools/print-document`. They are neither tracked publications nor inputs to
   normal checks, catalog generation, or site deployment.
@@ -72,6 +77,15 @@ their own authorization; this source migration grants none of them.
 External source records remain under `src/sources/`, not a generated provider
 branch. Generated indexes and reports are reproducible outputs, not source
 identity records.
+
+Frozen papal installation/review input snapshots use the separate delivery
+index `release/papal-documents/input-delivery.json`. Exact original bytes are
+preserved externally; compact, mechanically attested input records retain
+complete headers and selected rows at unchanged original indices. Routine
+metadata checks use those records without opening or fetching raw snapshots.
+`guidance/papal-documents.md` owns the extraction and explicit full-audit
+contract. Historical evidence is preserved; generated browser caches remain
+disposable and are never substituted for that evidence.
 
 Generated documents retain a provider branch. The present providers are `gpt` (documents authored by OpenAI ChatGPT/Codex) and `claude` (documents authored by Anthropic Claude); do not flatten a provider from existing paths. Each provider branch uses this collection hierarchy:
 
@@ -271,6 +285,7 @@ the terminal they happen to be printed at. Detection is tested by table in
 The normal lifecycle validates sources and builds the reader site:
 
 ```sh
+export TRIPTYCH_BROWSER_DATA_ROOT=.scratch/browser-data  # workspace cache
 make                       # source-only public site
 tools/document-schema check
 make check
@@ -299,6 +314,13 @@ the source graph, publication bindings, legacy inventory, and reviewed family
 ledger; honestly pending family review remains permitted. The separate
 `make check-source-family-screening` target is a completion audit. Neither
 source-schema validation nor source release confers print-layout approval.
+
+Normal deployment uses the complete browser-product descriptor for source and
+act-history projection freshness. Its strict cold producers, exact input/output
+closure and held publication snapshot replace the separate warm receipt gates.
+The older receipt checks remain explicit standalone audits and part of
+`make check-research-sources`, without becoming publication authorities. This
+consolidation retains the other rights, source, schema and currentness gates.
 
 When producing a reviewed print edition, compile enough passes to settle
 contents and references. Reject fatal errors, undefined references, overflow,

@@ -14,6 +14,9 @@ import tomllib
 import unittest
 from unittest.mock import patch
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(os.environ.get('TRIPTYCH_REVIEW_ROOT', Path(__file__).resolve().parents[2]))
 CODE = Path(os.environ.get('TRIPTYCH_ORDINARY_GATE_ROOT', ROOT))
 PYTHON = Path(os.environ.get('TRIPTYCH_APPOINTMENT_MODULE_ROOT', ROOT))
@@ -70,7 +73,7 @@ def conditioned(name='Gradual'):
 class CommonOrdinaryGate(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.ordinary = json.loads((ROOT / 'src/web/data/structure/ordinary/roman-1962.json').read_text())
+        cls.ordinary = json.loads((browser_data_root(ROOT) / 'structure/ordinary/roman-1962.json').read_text())
         inventory = tomllib.loads((ORDINARY_SOURCE / 'src/sources/inventories/roman-1962-ordo-missae-v1.toml').read_text())
         cls.ordinary['slots'] = O.slot_table(inventory, cls.ordinary['sections'], 'roman-1962')
         cls.source = C.read_yaml(SOURCE / 'src/sources/calendars/roman-1962/propers.yaml')

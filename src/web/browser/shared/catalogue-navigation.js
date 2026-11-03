@@ -17,7 +17,10 @@
   }
   addEventListener('focusin', function (event) {
     const table = event.target.closest && event.target.closest('.catalogue-table');
-    if (table && table.tHead) measureHeading(table.tHead);
+    if (table && table.tHead && !table.tHead.contains(event.target)) {
+      measureHeading(table.tHead);
+      event.target.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
+    }
   });
   if (!document.querySelector('.page-catalog, .page-home')) return;
 

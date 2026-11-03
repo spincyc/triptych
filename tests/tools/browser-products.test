@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+"$repo/tools/browser-products" --help >/dev/null
+for verb in check build record key prune; do
+    "$repo/tools/browser-products" "$verb" --help >/dev/null
+done
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s "$repo/tools/tests" -p test_browser_products.py -q

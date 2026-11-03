@@ -11,6 +11,10 @@ from pathlib import Path
 import yaml
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 EDITION_DIR = (
     ROOT
@@ -26,9 +30,7 @@ ACQUISITION = (
     / "src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml"
 )
 STRUCTURE_EDITION = (
-    ROOT
-    / "src/web/data/structure/sources/editions/catholic-church/missale-romanum"
-    / "1922-1922-tours-mame-editio-quarta-iuxta-typicam.json"
+    browser_data_root(ROOT) / 'structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json'
 )
 
 EDITION_ID = (

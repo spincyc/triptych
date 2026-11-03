@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 
 /* Focused source-served C4/G16 regression: unit-local options and partial witnesses. */
 
@@ -22,7 +23,7 @@ const failures = [];
 const consoleProblems = [];
 const failedRequests = [];
 const httpProblems = [];
-const structure = JSON.parse(await readFile(resolve(ROOT,
+const structure = JSON.parse(await readFile(repositoryPath(ROOT,
   'src/web/data/structure/propers/roman-1962.json')));
 const pentecost = structure.masses.find((mass) => mass.key === MASS);
 assert.ok(pentecost, 'source-served Pentecost formulary is absent');
@@ -49,7 +50,7 @@ const server = createServer(async (request, response) => {
     }
     const file = resolve(ROOT, relative);
     if (!file.startsWith(ROOT + sep)) throw new Error('outside repository');
-    const body = await readFile(file);
+    const body = await readFile(repositoryPath(ROOT, file));
     response.writeHead(200, { 'content-type': mime(file), 'cache-control': 'no-store' });
     response.end(body);
   } catch (_error) {

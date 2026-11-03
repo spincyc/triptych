@@ -6,13 +6,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = r'''
+const productFixturePath = file => require(require('path').join(root, 'tools/tests/_product_data.cjs')).repositoryPath(root, file);
+
 const assert = require('node:assert/strict');
 const fs = require('node:fs'), path = require('node:path');
 const root = process.argv[1];
 const C = require(path.join(root,'src/web/browser/liturgy/reader-state.js'));
 const A = require(path.join(root,'src/web/browser/liturgy/reader-state-adapters.js'));
 const M = require(path.join(root,'src/web/browser/liturgy/assembly-model.js'));
-const read = p => JSON.parse(fs.readFileSync(path.join(root,'src/web/data/structure',p),'utf8'));
+const read = p => JSON.parse(fs.readFileSync(productFixturePath(path.join(root,'src/web/data/structure',p)),'utf8'));
 function sample(calendar,date) {
  const derived=M.derive({date,year:read('calendar/'+calendar+'/'+date.slice(0,4)+'.json'),rubrics:read('rubrics/'+calendar+'.json')});
  const request={schema:C.STATE_SCHEMA,entrance:'day',civilDate:date,

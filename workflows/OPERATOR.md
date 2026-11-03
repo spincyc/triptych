@@ -1640,8 +1640,10 @@ treats the canonical edition's statements about the companion — `format.tex`'s
 companion-conformance lane owns them. `check-proper-components --aux` requires
 the brief synthesis to begin on page 3: it verified only that three anchors
 were adjacent, and accepted a whole reader order displaced by a page-1
-overflow. `source-registration` regenerates the tracked source projection it
-drifts. Every agent's brief says it is the whole of its dispatch and spawns
+overflow. That version made `source-registration` regenerate the then-tracked
+source projection it changed. Current source-only runs instead use the
+outside-Git browser products and descriptor checks in `guidance/web-data.md`.
+Every agent's brief says it is the whole of its dispatch and spawns
 nothing, after a lane that fanned out inside itself exhausted a host's budget
 and took four siblings down with it. And `author-proper` and
 `derive-synthesis` declare the component manifest in the profile's reader

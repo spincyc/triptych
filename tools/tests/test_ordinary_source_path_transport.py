@@ -11,10 +11,13 @@ import sys
 import unittest
 from unittest.mock import patch
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(os.environ.get('TRIPTYCH_REVIEW_ROOT', Path(__file__).resolve().parents[2]))
 CODE = Path(os.environ.get('TRIPTYCH_ORDINARY_GATE_ROOT', ROOT))
 SEATING = Path(os.environ.get('TRIPTYCH_APPOINTMENT_SEATING', ROOT / 'src/web/browser/liturgy/ordinary-seating.js'))
-STRUCTURE = Path(os.environ.get('TRIPTYCH_SOURCE_PATH_STRUCTURE', ROOT / 'src/web/data/structure/propers/postconciliar.json'))
+STRUCTURE = Path(os.environ['TRIPTYCH_SOURCE_PATH_STRUCTURE']) if os.environ.get('TRIPTYCH_SOURCE_PATH_STRUCTURE') else browser_data_root(ROOT) / 'structure/propers/postconciliar.json'
 sys.path.insert(0, str(ROOT / 'scripts'))
 loader = SourceFileLoader('_source_path_ordinary_transport', str(CODE / 'tools/mass-ordinary'))
 spec = spec_from_loader(loader.name, loader)
@@ -28,7 +31,7 @@ O.SEATING_MODEL = SEATING
 class OrdinarySourcePathTransport(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.ordinary = json.loads((ROOT / 'src/web/data/structure/ordinary/postconciliar.json').read_text())
+        cls.ordinary = json.loads((browser_data_root(ROOT) / 'structure/ordinary/postconciliar.json').read_text())
         cls.structure = json.loads(STRUCTURE.read_text())
         # Exercise all held source-path forms. The fixture is canonical producer
         # output, and root's normal generated file is the durable default.

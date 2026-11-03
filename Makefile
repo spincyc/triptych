@@ -147,6 +147,8 @@ SOURCE_INVENTORY_TOOL := tools/tpt source-inventory
 SOURCE_FAMILY_MIGRATION_TOOL := tools/tpt source-family-migration
 DOCUMENT_SCHEMA_TOOL := tools/tpt document-schema
 ARTIFACT_STORE_TOOL := tools/tpt artifact-store
+SNAPSHOT_STORE_TOOL := tools/tpt snapshot-store
+BROWSER_PRODUCTS_TOOL := tools/tpt browser-products
 PRINT_DOCUMENT_TOOL := tools/tpt print-document
 PRINT_EDITION ?= main
 PRINT_OUT ?= .scratch/print-document
@@ -258,6 +260,8 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	web-editions install-web-editions check-web-editions-current \
 	check-sources check-research-sources check-deployment-sources check-source-library \
 	check-document-schemas check-document-content check-artifact-delivery \
+	check-snapshot-delivery check-papal-inputs \
+	prepare-browser-data check-browser-products deployment-source-gates \
 	check-source-evidence check-source-projection print-document \
 	check-source-inventory check-source-inventory-tool \
 	check-source-family-migration check-source-family-migration-tool \
@@ -434,11 +438,21 @@ check-curriculum-source-rights:
 
 # Full derivation belongs to the explicit research lane. Publication authenticates
 # the same projection's complete input and output closure through its receipt.
-check-act-history:
+check-act-history: | prepare-browser-data
 	@$(PYTHON) tools/tpt act-history structure --check
 
-check-act-history-receipt:
+check-act-history-receipt: | prepare-browser-data
 	@$(PYTHON) scripts/_act_history_projection_receipt.py check
+
+# The committed descriptor binds exact canonical inputs and output membership.
+# Warm builds verify cached bytes; misses derive only missing families offline.
+prepare-browser-data:
+	@$(PYTHON) $(BROWSER_PRODUCTS_TOOL) build
+
+# A strictly read-only diagnostic; publication preparation already performs this
+# verification, so it does not run a duplicate full cache check here.
+check-browser-products:
+	@$(PYTHON) $(BROWSER_PRODUCTS_TOOL) check
 
 # Default validation checks logical identities, rights, bindings and the exact
 # external-delivery metadata without hydrating optional evidence bytes.
@@ -448,10 +462,13 @@ check-source-graph:
 check-source-evidence:
 	@$(PYTHON) $(SOURCE_LIBRARY_TOOL) validate --full-evidence
 
-check-document-schemas:
+check-document-schemas: | prepare-browser-data
 	@$(PYTHON) $(DOCUMENT_SCHEMA_TOOL) check --include-sources
 	@test -z "$$(git ls-files -- ':(icase)*.pdf')" || { printf '%s\n' 'Tracked PDFs must be preserved outside Git and removed from the source tree.' >&2; exit 1; }
 	@test -z "$$(git ls-files -- ':(icase)*.zip' ':(icase)*.zip.part-*')" || { printf '%s\n' 'Tracked binary archives must be preserved outside Git and replaced by exact manifests.' >&2; exit 1; }
+	@test -z "$$(git ls-files -- src/web/data)" || { printf '%s\n' 'Generated browser products must live in the validated content cache, not Git.' >&2; exit 1; }
+	@test -z "$$(git ls-files -- release/papal-documents/inputs)" || { printf '%s\n' 'Historical papal input snapshots must be preserved outside Git and replaced by exact delivery and extraction records.' >&2; exit 1; }
+	@test -z "$$(git ls-files -- build/browser-data)" || { printf '%s\n' 'Browser product caches must remain untracked under build/.' >&2; exit 1; }
 
 # This deeper phase reports inherited content/profile gaps separately from a
 # successful source publication. A source/schema pass never certifies them.
@@ -461,7 +478,16 @@ check-document-content:
 check-artifact-delivery:
 	@$(PYTHON) $(ARTIFACT_STORE_TOOL) check
 
-check-source-projection:
+# Frozen original snapshots stay outside the ordinary checkout. These gates
+# validate their exact delivery declarations and extracted release records;
+# neither opens the archives nor fetches original bytes.
+check-snapshot-delivery:
+	@$(PYTHON) $(SNAPSHOT_STORE_TOOL) check
+
+check-papal-inputs:
+	@$(PYTHON) scripts/_papal_input_receipt.py check
+
+check-source-projection: | prepare-browser-data
 	@$(PYTHON) $(SOURCE_READER_TOOL) structure --check-receipt
 
 check-publication-inventories: check-source-graph
@@ -475,19 +501,24 @@ check-publication-inventories: check-source-graph
 		$(PYTHON) $(SOURCE_INVENTORY_TOOL) check --review "$$review" "$$inventory"; \
 	done
 
-# These independent checks are read-only. Large projections use receipts that
-# bind the full source, rights, policy, implementation and output closure; a
-# missing or stale receipt fails publication and must be renewed by full replay.
+# The two-build product descriptor covers the complete input, policy and output
+# closure. Publication verifies it once before consumers; legacy projection
+# receipt checks remain explicit research audits rather than duplicate warm gates.
 DEPLOYMENT_SOURCE_MEMBERS := check-curriculum-source-rights check-document-schemas \
-	check-artifact-delivery check-document-catalogue check-source-graph \
-	check-source-projection
+	check-artifact-delivery check-snapshot-delivery check-papal-inputs \
+	check-document-catalogue check-source-graph
 
 # Bootstrap bounded concurrency when the caller supplied no jobserver. Keep
 # ordinary liturgical derivation and rights checks in the source publication
 # gate; neither this target nor its prerequisites installs or fetches PDFs.
-check-deployment-sources: check-act-history-receipt \
-		$(if $(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),$(DEPLOYMENT_SOURCE_MEMBERS))
-	$(if $(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),,+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) $(DEPLOYMENT_SOURCE_MEMBERS))
+ifeq ($(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),)
+check-deployment-sources:
+	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) deployment-source-gates
+else
+check-deployment-sources: deployment-source-gates
+endif
+
+deployment-source-gates: $(DEPLOYMENT_SOURCE_MEMBERS) | prepare-browser-data
 	@$(PYTHON) tools/tpt calendar-days check
 	@$(PYTHON) tools/tpt check-calendar-masses
 	@$(PYTHON) tools/tpt mass-propers structure --check
@@ -498,7 +529,8 @@ check-deployment-sources: check-act-history-receipt \
 # never downloads it automatically. The publication gate above remains useful
 # in a source-only checkout while this lane verifies the complete research set.
 check-research-sources: check-deployment-sources check-source-evidence \
-		check-publication-inventories check-source-reader check-act-history \
+		check-publication-inventories check-source-projection check-act-history-receipt \
+		check-source-reader check-act-history \
 		check-source-containment check-commentator-inventories check-commentary-corpus
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
 
@@ -641,9 +673,13 @@ help:
 		'make check-sources  Validate the source library, inventory, and migration ledger' \
 		'make check-research-sources  Replay full evidence, source projections, and research inventories without automatic downloads' \
 		'make check-deployment-sources  Validate source publication, rights, schemas, and projection receipts without PDFs' \
+		'make prepare-browser-data  Verify exact cached browser products or derive missing families offline' \
+		'make check-browser-products  Check current browser product inputs and cached bytes without generation' \
 		'make check-document-schemas  Validate every publication type, identity, and source/output ownership' \
 		'make check-document-content  Audit deeper profile/content requirements and run their source gates' \
 		'make check-artifact-delivery  Validate external evidence delivery metadata without hydration' \
+		'make check-snapshot-delivery  Validate exact historical-input delivery metadata without archives or network' \
+		'make check-papal-inputs  Validate mechanically extracted release records against current canonical selections' \
 		'make check-source-library  Test reusable source-library tooling' \
 		'make check-source-inventory  Replay the exhaustive legacy-source inventory' \
 		'make check-source-inventory-tool  Test legacy-source inventory tooling' \
@@ -700,7 +736,7 @@ help:
 check-metadata:
 	@$(METADATA_CHECKER) --provider $(PROVIDER)
 
-check-promised-deliverables:
+check-promised-deliverables: | prepare-browser-data
 	@$(PYTHON) tools/tpt check-promised-deliverables
 
 # Absence of a leaf's declaration is an error: nothing defaults to eligible.
@@ -710,21 +746,20 @@ check-web-editions:
 check-proper-components:
 	@$(PYTHON) $(PROPER_COMPONENT_CHECKER) --provider $(PROVIDER)
 
-# Titles, identity and tracked catalogue rows derive from authoritative sources.
-# Render-specific PDF metadata validation remains in the optional print lane.
-check-document-catalogue:
+# Source titles and identities are checked independently of the descriptor's
+# exact catalogue projection. PDF metadata belongs to the optional print lane.
+check-document-catalogue: | prepare-browser-data
 	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) check
-	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) structure --check
 
 # Two claims again, and the first is the one that governs. `check` proves that
 # no passage the rights records withhold carries any text in what is emitted,
 # that every withheld passage states its reason, and that a licensed text never
 # reaches the page without the acknowledgement its licence requires. It then
 # replays the browser's own narrowing against the spine's facet counts.
-# `structure --check` proves the tracked projection is what the records produce
+# `structure --check` proves the cached projection is what the records produce
 # now, so a source record added, corrected or withdrawn without regenerating it
 # cannot reach the site as a stale reading.
-check-source-reader:
+check-source-reader: | prepare-browser-data
 	@$(PYTHON) $(SOURCE_READER_TOOL) check
 	@$(PYTHON) $(SOURCE_READER_TOOL) structure --check
 
@@ -776,10 +811,10 @@ check-web-editions-current:
 		[ "$$status" -eq 0 ] || exit 1; \
 		echo 'Tracked web editions match current sources.'
 
-check-public-alpha: check-curriculum-source-rights
+check-public-alpha: check-curriculum-source-rights | prepare-browser-data
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) check
 
-prepare-public-alpha: check-curriculum-source-rights
+prepare-public-alpha: check-curriculum-source-rights | prepare-browser-data
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) prepare
 
 public-preview: check-deployment-sources
@@ -788,14 +823,14 @@ public-preview: check-deployment-sources
 public-site: check-deployment-sources
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build
 
-verify-public-preview: check-curriculum-source-rights
+verify-public-preview: check-curriculum-source-rights | prepare-browser-data
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify --preview
 
-verify-public-site: check-curriculum-source-rights
+verify-public-site: check-curriculum-source-rights | prepare-browser-data
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify
 
 # Release bookkeeping; approval text is the operator's act, never invented.
-check-release-bindings:
+check-release-bindings: | prepare-browser-data
 	@$(PYTHON) $(RELEASE_BINDINGS_TOOL) status
 
 # ONLY="path [path ...]" re-records just those paths and carries every other
@@ -970,7 +1005,8 @@ check-expensive: $(EXPENSIVE_SOURCE_CHECKS)
 # Source types and logical output ownership are checked independently of render
 # metadata. Deep evidence replay and optional print inspection have named lanes;
 # a successful publication check does not assert their results.
-check: check-document-schemas check-artifact-delivery check-metadata \
+check: check-document-schemas check-artifact-delivery check-snapshot-delivery \
+	check-papal-inputs check-metadata \
 	check-web-editions check-web-editions-current \
 	check-proper-components check-source-projection check-act-history-receipt \
 	check-roman-sanctuary-artwork check-artwork-manifests \
@@ -1061,10 +1097,9 @@ check-tool-registry:
 	@if command -v tmt >/dev/null; then tmt check; \
 	else echo "tmt not installed; skipping tool-registry check"; fi
 
-# Refuses a stale generated date projection and writes nothing;
-# `calendar-days structure` is what fixes a failure. Needs PyYAML, skipped
-# rather than failed without it.
-check-calendar-days:
+# Replays date computation against the prepared, sealed browser projection and
+# writes nothing. Needs PyYAML, skipped rather than failed without it.
+check-calendar-days: | prepare-browser-data
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) tools/tpt calendar-days check; \
 	else echo "PyYAML missing; skipping calendar-day check"; fi
@@ -1077,7 +1112,7 @@ check-calendar-days:
 # lines of roman-pre-1955.json that no source change accounted for — the served
 # recension had drifted that far with nothing reporting it. `structure --check`
 # writes nothing; `mass-propers structure` is what fixes a failure.
-check-calendar-masses:
+check-calendar-masses: | prepare-browser-data
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) tools/tpt check-calendar-masses && \
 		$(PYTHON) -m unittest tools.tests.test_lasance_source_printing_1946 -v && \
@@ -1090,7 +1125,7 @@ check-calendar-masses:
 # failure inside the tool and not a skip: the solved cases are the only thing
 # holding assembly-model.js to the tracked tables, and a run that could not
 # exercise them has confirmed nothing to report as a pass.
-check-calendar-rubrics:
+check-calendar-rubrics: | prepare-browser-data
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) tools/tpt calendar-rubrics check; \
 	else echo "PyYAML missing; skipping calendar-rubric check"; fi
@@ -1104,16 +1139,15 @@ check-propers-census:
 		$(PYTHON) tools/tpt mass-propers census --check; \
 	else echo "PyYAML missing; skipping propers-census check"; fi
 
-# The browser and the day reader do not read propers.yaml. They read the derived
-# JSON under src/web/data/structure/propers/, which is tracked, and which goes
-# stale the moment a calendar gains a body. `mass-propers structure --check` has
+# The browser and the day reader read the descriptor's derived propers JSON.
+# `mass-propers structure --check` has
 # always known that, but it lived only in `check-deployment-sources`, which
 # `check` does not reach -- so on 2026-09-03 the seasonal backfill landed 198
 # Latin bodies with `check-calendar-masses`, `check-propers-census` and 175
 # rights tests all passing while every reader still showed the old
 # rights-withheld shape. Nothing reported it. `mass-propers structure` writes
 # the fix; this only refuses the drift.
-check-propers-structure:
+check-propers-structure: | prepare-browser-data
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) tools/tpt mass-propers structure --check; \
 	else echo "PyYAML missing; skipping propers-structure check"; fi
@@ -1122,7 +1156,7 @@ check-propers-structure:
 # the artifacts they draw on and against the source library's own rights record,
 # and refuses a browser file that no longer matches. Needs no third-party
 # module, so it is a plain failure and never a skip.
-check-mass-ordinary:
+check-mass-ordinary: | prepare-browser-data
 	@$(PYTHON) tools/tpt mass-ordinary check
 
 # An indexed bible is keyed by the reference strings the calendars actually
@@ -1170,12 +1204,12 @@ check-catena:
 # Guarded on PyYAML for the reason `check-catena` above them is --- the script
 # reads the calendars through it --- and the skip says so rather than
 # reporting a check that did not run.
-check-catena-structure:
+check-catena-structure: | prepare-browser-data
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) scripts/_catena.py structure --check; \
 	else echo "PyYAML missing; skipping catena structure check"; fi
 
-check-catena-paragraphs:
+check-catena-paragraphs: | prepare-browser-data
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) scripts/_catena.py paragraphs --check; \
 	else echo "PyYAML missing; skipping catena paragraph check"; fi
@@ -1894,27 +1928,23 @@ check-tracks: check-plan-sources
 check-plan-sources:
 	@$(PYTHON) $(READING_PLAN_TOOL) check
 
-# The browser's structure of every abridged plan, rewritten from the plan
-# sources. Tracked under src/web/data and served as the site's reading data.
+# Producer diagnostics write an unsealed working tree. Only browser-products
+# record may update the two-build descriptor; prepare-browser-data reproduces it.
 reading-structure:
 	@$(PYTHON) $(READING_PLAN_TOOL) structure
 
-# The catalogue of every document, rewritten from the documents' own sources
-# and from the PDFs they build. Tracked under src/web/data and served to the
-# `texts` reading page, which reads it and walks nothing itself.
+# The catalogue's unsealed working projection, derived from canonical sources.
 document-catalogue:
 	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) structure
 
 # The reading projection of the source library, rewritten from the work,
-# edition, artifact, segment and passage records. Tracked under src/web/data and
-# served to the `sources` reading page, which reads it and walks nothing itself.
+# edition, artifact, segment and passage records into the unsealed working tree.
 source-projection:
 	@$(PYTHON) $(SOURCE_READER_TOOL) structure
 
 # The catalogue of every encyclical, rewritten from the tracked index and
-# checked reader by reader against release/papal-documents.json. Tracked under
-# src/web/data and served to the `encyclicals` reading page, which reads it and
-# walks nothing itself. INDEX=<path> reads another index, for a trial run.
+# checked reader by reader against release/papal-documents.json, into the
+# unsealed working tree. INDEX=<path> reads another index, for a trial run.
 encyclicals-catalogue:
 	@$(PYTHON) scripts/_encyclicals.py structure $(if $(INDEX),--index '$(INDEX)',)
 

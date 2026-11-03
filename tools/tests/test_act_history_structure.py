@@ -1,16 +1,17 @@
-"""The tracked act-history browser projection is exact and orphan-free.
+"""Prepared act-history browser products are exact and orphan-free.
 
 The structure writer used to update one slice in a shared directory.  That
 could leave both changed fragments and files whose source row had disappeared,
 and no deployment gate compared what the browser served with a fresh
 derivation.  These tests exercise the complete projection and, critically, the
 three distinct drift shapes against temporary copies so the refusal itself is
-proved without touching tracked data.
+proved without changing a committed product or requiring the removed snapshot.
 """
 
 from __future__ import annotations
 
 import json
+from functools import lru_cache
 import importlib.machinery
 import importlib.util
 import os
@@ -19,13 +20,22 @@ import shutil
 import subprocess
 import tempfile
 import tomllib
+from types import SimpleNamespace
 import unittest
 from unittest import mock
+
+from tools.tests._product_data import browser_data_root
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 TPT = ROOT / "tools" / "tpt"
-TRACKED = ROOT / "src" / "web" / "data" / "structure" / "act-history"
+FAMILY = pathlib.Path("structure/act-history")
+SCRATCH = ROOT / ".scratch/next-act-receipt/structure-tests"
+
+
+def temporary_directory(**kwargs):
+    SCRATCH.mkdir(parents=True, exist_ok=True)
+    return tempfile.TemporaryDirectory(dir=SCRATCH, **kwargs)
 
 
 def comparison_paths() -> set[str]:
@@ -47,7 +57,7 @@ def native_text_paths() -> set[str]:
             for binding in stage.get("text_bindings", [stage["text_binding"]] if stage.get("text_binding") else [])}
 
 
-def load_tool():
+def load_tool(*, captured_projection=True):
     loader = importlib.machinery.SourceFileLoader(
         "test_act_history_structure_tool", str(ROOT / "tools" / "act-history")
     )
@@ -55,17 +65,32 @@ def load_tool():
     if spec is None:
         raise RuntimeError("could not load tools/act-history")
     module = importlib.util.module_from_spec(spec)
-    loader.exec_module(module)
+    path = ROOT / "tools/act-history"
+    exec(compile(path.read_bytes(), str(path), "exec"), module.__dict__)
+    # All adversarial cases exercise the real reader/writer boundary against
+    # the same complete prepared source-derived family. Repeating the full
+    # semantic corpus replay for every inode race would test the generator
+    # dozens of times. The complete real replay remains an integration test
+    # below; production code does not use this test-only captured builder.
+    if captured_projection:
+        _, summary, contents = projection_fixture()
+        def captured(sources, out):
+            return {**summary, "root": out / FAMILY, "contents": dict(contents)}
+        module.build_structure_projection = captured
+    module.tempfile = SimpleNamespace(TemporaryDirectory=temporary_directory)
     return module
 
 
 def run(*arguments: str) -> subprocess.CompletedProcess[str]:
+    SCRATCH.mkdir(parents=True, exist_ok=True)
     return subprocess.run(
         [str(TPT), "act-history", *arguments],
         cwd=ROOT,
         capture_output=True,
         text=True,
         check=False,
+        env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1",
+             "PYTHONPYCACHEPREFIX": str(SCRATCH / "cli-bytecode"), "TMPDIR": str(SCRATCH)},
     )
 
 
@@ -79,37 +104,60 @@ def files(root: pathlib.Path) -> dict[str, bytes]:
     }
 
 
+@lru_cache(maxsize=2)
+def _capture_projection(root: pathlib.Path):
+    payloads = files(root)
+    if len(payloads) != expected_file_count():
+        raise RuntimeError("prepared act-history fixture is incomplete; run tools/browser-products build")
+    index = json.loads(payloads["index.json"])
+    summary = {"files": len(payloads), "slices": sorted(row["id"] for row in index["slices"]),
+               "stations": sum(row["stations"] for row in index["slices"]),
+               "lines": sum(row["lines"] for row in index["slices"]), "default": index["default"]}
+    return root, summary, {name: ("file", body) for name, body in payloads.items()}
+
+
+def projection_fixture():
+    # The shared helper only locates committed products or an explicitly
+    # selected regression fixture. Missing data fails with preparation steps;
+    # discovery never generates a corpus or silently skips these checks.
+    return _capture_projection(browser_data_root(ROOT) / FAMILY)
+
+
 class ActHistoryStructureTests(unittest.TestCase):
+    @property
+    def projection_root(self):
+        return projection_fixture()[0]
+
     def temporary_projection(self) -> tuple[tempfile.TemporaryDirectory, pathlib.Path]:
-        # A clean checkout need not have the ignored build/ directory yet.
-        # System temporary space is removed by the context owner and makes the
-        # refusal tests independent of invocation order.
-        held = tempfile.TemporaryDirectory()
+        # Adversarial cases receive private copies of authenticated/prepared
+        # data. Neither the sealed cache nor another case can be changed.
+        held = temporary_directory()
         out = pathlib.Path(held.name)
-        shutil.copytree(TRACKED, out / "structure" / "act-history")
+        shutil.copytree(self.projection_root, out / FAMILY)
         return held, out
 
-    def test_the_tracked_projection_is_a_fresh_complete_derivation(self) -> None:
-        checked = run("structure", "--check")
+    def test_prepared_projection_is_a_fresh_complete_derivation(self) -> None:
+        checked = run("structure", "--check", "--out", str(browser_data_root(ROOT)))
         self.assertEqual(checked.returncode, 0, checked.stdout + checked.stderr)
         self.assertIn(f"current: {expected_file_count()} files for 3 slices", checked.stdout)
-        self.assertTrue((TRACKED / "catalogue.json").is_file())
-        catalogue = json.loads((TRACKED / "catalogue.json").read_text())
-        self.assertEqual(comparison_paths(), {path.relative_to(TRACKED).as_posix()
-                                             for path in (TRACKED / "comparisons").rglob("*") if path.is_file()})
+        projected = self.projection_root
+        self.assertTrue((projected / "catalogue.json").is_file())
+        catalogue = json.loads((projected / "catalogue.json").read_text())
+        self.assertEqual(comparison_paths(), {path.relative_to(projected).as_posix()
+                                             for path in (projected / "comparisons").rglob("*") if path.is_file()})
         self.assertEqual(comparison_paths(), {row["projection_path"] for row in catalogue["comparisons"]})
         self.assertEqual(native_text_paths(), {row["projection_path"] for row in catalogue["native_texts"]})
-        self.assertEqual(native_text_paths(), {path.relative_to(TRACKED).as_posix()
-                                              for path in (TRACKED / "native-texts").rglob("*.json")})
+        self.assertEqual(native_text_paths(), {path.relative_to(projected).as_posix()
+                                              for path in (projected / "native-texts").rglob("*.json")})
         for stage in catalogue["stage_history"]["stages"]:
             for binding in stage.get("text_projections", [stage] if stage.get("text_binding") else []):
-                native = json.loads((TRACKED / binding["text_projection_path"]).read_text())
+                native = json.loads((projected / binding["text_projection_path"]).read_text())
                 self.assertEqual(binding["text_binding"], native["adapter_id"])
                 self.assertEqual(binding["text_binding_sha256"], native["binding_sha256"])
                 self.assertIn(stage["id"], native["stage_ids"])
                 self.assertTrue(native["units"])
         for declaration in catalogue["comparisons"]:
-            comparison = json.loads((TRACKED / declaration["projection_path"]).read_text())
+            comparison = json.loads((projected / declaration["projection_path"]).read_text())
             self.assertEqual(comparison["id"], declaration["id"])
             self.assertFalse(comparison["historical_ancestry_claimed"])
             self.assertTrue(comparison["left"]["members"])
@@ -171,10 +219,11 @@ class ActHistoryStructureTests(unittest.TestCase):
                     os.mkfifo(projection / name)
 
                 before = files(projection)
-                checked = run("structure", "--check", "--out", str(out))
-                self.assertEqual(checked.returncode, 1, checked.stdout + checked.stderr)
-                self.assertIn("has drifted", checked.stderr)
-                self.assertIn(name, checked.stderr)
+                tool = load_tool()
+                with self.assertRaises(tool.Problem) as failure:
+                    tool.structure_all(out, check_only=True)
+                self.assertIn("has drifted", str(failure.exception))
+                self.assertIn(name, str(failure.exception))
                 self.assertEqual(before, files(projection), "read-only check changed output")
 
     def test_descendant_swap_never_opens_or_reads_external_file(self) -> None:
@@ -184,7 +233,7 @@ class ActHistoryStructureTests(unittest.TestCase):
         projection = out / "structure" / "act-history"
         before = files(projection)
 
-        with tempfile.TemporaryDirectory() as external:
+        with temporary_directory() as external:
             sentinel = pathlib.Path(external) / "must-not-open.txt"
             sentinel.write_bytes(b"outside sentinel\n")
             sentinel_stat = sentinel.stat()
@@ -259,7 +308,7 @@ class ActHistoryStructureTests(unittest.TestCase):
         (projection / "index.json").write_text('{"stale":true}\n', encoding="utf-8")
         refreshed = tool.structure_all(out, check_only=False)
         self.assertIn("index.json", refreshed["updated"])
-        self.assertEqual(files(TRACKED), files(projection))
+        self.assertEqual(files(self.projection_root), files(projection))
 
     def test_descendant_directory_exchange_is_rejected_before_traversal(self) -> None:
         tool = load_tool()
@@ -342,8 +391,8 @@ class ActHistoryStructureTests(unittest.TestCase):
         self.assertEqual(expected_file_count(), checked["files"])
 
     def test_scoped_manifest_discovery_refuses_a_symlinked_map(self) -> None:
-        tool = load_tool()
-        with tempfile.TemporaryDirectory() as held, tempfile.TemporaryDirectory() as external:
+        tool = load_tool(captured_projection=False)
+        with temporary_directory() as held, temporary_directory() as external:
             root = pathlib.Path(held)
             sentinel = pathlib.Path(external) / "outside.json"
             sentinel.write_text(
@@ -377,13 +426,12 @@ class ActHistoryStructureTests(unittest.TestCase):
         sibling = out / "structure" / "not-owned-by-act-history.txt"
         sibling.write_text("keep\n", encoding="utf-8")
 
-        refreshed = run("structure", "--out", str(out), "--json")
-        self.assertEqual(refreshed.returncode, 0, refreshed.stdout + refreshed.stderr)
-        payload = json.loads(refreshed.stdout)
+        tool = load_tool()
+        payload = tool.structure_all(out, check_only=False)
         self.assertIn("latin-missal/unit/retired-prayer.json", payload["removed"])
         self.assertIn("index.json", payload["updated"])
         self.assertIn("roman-holy-week/units.json", payload["updated"])
-        self.assertEqual(files(TRACKED), files(projection))
+        self.assertEqual(files(self.projection_root), files(projection))
         self.assertEqual("keep\n", sibling.read_text(encoding="utf-8"))
 
     def test_scoped_check_is_refused_instead_of_masquerading_as_complete(self) -> None:
@@ -398,7 +446,7 @@ class ActHistoryStructureTests(unittest.TestCase):
 
     def test_check_does_not_create_repository_build_or_a_missing_output(self) -> None:
         tool = load_tool()
-        with tempfile.TemporaryDirectory() as held:
+        with temporary_directory() as held:
             sandbox = pathlib.Path(held) / "repository"
             sandbox.mkdir()
             output = sandbox / "data"
@@ -411,7 +459,8 @@ class ActHistoryStructureTests(unittest.TestCase):
             self.assertFalse(output.exists())
 
     def test_writer_and_check_reject_symlinked_and_non_directory_parents(self) -> None:
-        with tempfile.TemporaryDirectory() as held, tempfile.TemporaryDirectory() as external:
+        tool = load_tool()
+        with temporary_directory() as held, temporary_directory() as external:
             root = pathlib.Path(held)
             external_root = pathlib.Path(external)
             sentinel = external_root / "must-survive.txt"
@@ -419,24 +468,24 @@ class ActHistoryStructureTests(unittest.TestCase):
             linked = root / "linked"
             linked.symlink_to(external_root, target_is_directory=True)
 
-            for verb in (("structure", "--out", str(linked)), ("structure", "--check", "--out", str(linked))):
-                with self.subTest(arguments=verb):
-                    result = run(*verb)
-                    self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
-                    self.assertIn("symlinked structure output component", result.stderr)
+            for check_only in (False, True):
+                with self.subTest(check_only=check_only):
+                    with self.assertRaises(tool.Problem) as failure:
+                        tool.structure_all(linked, check_only=check_only)
+                    self.assertIn("symlinked structure output component", str(failure.exception))
                     self.assertEqual("external\n", sentinel.read_text(encoding="utf-8"))
 
             regular = root / "regular-file"
             regular.write_text("not a directory\n", encoding="utf-8")
-            result = run("structure", "--out", str(regular))
-            self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
-            self.assertIn("not a directory", result.stderr)
+            with self.assertRaises(tool.Problem) as failure:
+                tool.structure_all(regular, check_only=False)
+            self.assertIn("not a directory", str(failure.exception))
 
     def test_cleanup_swap_cannot_redirect_writer_deletion(self) -> None:
         tool = load_tool()
         held, out = self.temporary_projection()
         self.addCleanup(held.cleanup)
-        with tempfile.TemporaryDirectory() as external:
+        with temporary_directory() as external:
             external_root = pathlib.Path(external)
             sentinel = external_root / "must-survive.txt"
             sentinel.write_text("outside\n", encoding="utf-8")
@@ -478,7 +527,7 @@ class ActHistoryStructureTests(unittest.TestCase):
         held, out = self.temporary_projection()
         self.addCleanup(held.cleanup)
         projection = out / "structure" / "act-history"
-        with tempfile.TemporaryDirectory() as external:
+        with temporary_directory() as external:
             external_root = pathlib.Path(external)
             sentinel = external_root / "must-survive.txt"
             sentinel.write_text("outside\n", encoding="utf-8")

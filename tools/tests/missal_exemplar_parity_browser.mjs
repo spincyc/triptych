@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 /* Source-served Chromium observations for the 1962 Pentecost parity test. */
 
 import { spawn } from 'node:child_process';
@@ -29,7 +30,7 @@ function server() {
       }
       const file = resolve(root, path);
       if (!file.startsWith(root + sep)) throw new Error('path outside root');
-      const body = await readFile(file);
+      const body = await readFile(repositoryPath(root, file));
       const mime = {
         '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
         '.css': 'text/css; charset=utf-8', '.json': 'application/json'

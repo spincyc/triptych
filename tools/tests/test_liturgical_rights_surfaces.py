@@ -45,9 +45,20 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _scanning import markers_for, present  # noqa: E402
 from _tooling import code_fingerprint, prune_cache  # noqa: E402
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 TPT = ROOT / "tools" / "tpt"
-STRUCTURE_ROOT = ROOT / "src" / "web" / "data" / "structure"
+STRUCTURE_ROOT = browser_data_root(ROOT) / 'structure'
+
+
+def repository_relative(path: Path) -> Path:
+    """Keep generated-product diagnostics in their logical source namespace."""
+    if path.is_relative_to(STRUCTURE_ROOT):
+        return Path("src/web/data/structure") / path.relative_to(STRUCTURE_ROOT)
+    return path.relative_to(ROOT)
+
 WORKS_ROOT = ROOT / "src" / "sources" / "works"
 ICEL_MARKER = "international-commission-on-english-in-the-liturgy"
 FDLC_WORK_ROOT = (
@@ -1149,7 +1160,7 @@ def archive_protected_findings(
                     )
                 )
 
-    visit(path.read_bytes(), str(path.relative_to(ROOT)), path.name, 0)
+    visit(path.read_bytes(), str(repository_relative(path)), path.name, 0)
     return findings
 
 
@@ -2164,7 +2175,7 @@ class TrackedSourceBoundary(unittest.TestCase):
             document = tomllib.loads(path.read_text(encoding="utf-8"))
             failures.extend(
                 source_inventory_findings(
-                    document, identities, str(path.relative_to(ROOT))
+                    document, identities, str(repository_relative(path))
                 )
             )
         assert_no_findings(
@@ -2329,7 +2340,7 @@ class TrackedSourceBoundary(unittest.TestCase):
             value = decoded_text(path)
             self.assertIsNotNone(value, f"{path}: FDLC metadata is not UTF-8 text")
             assert value is not None
-            label = str(path.relative_to(ROOT))
+            label = str(repository_relative(path))
             failures.extend(protected_snippet_findings(value, label))
             if re.search(r"\(c\)\s*2010\b", value, re.IGNORECASE):
                 failures.append(f"{label}: substitutes (c) for the copyright symbol")
@@ -2342,7 +2353,7 @@ class TrackedSourceBoundary(unittest.TestCase):
 
         for path in sorted(FDLC_WORK_ROOT.glob("editions/*/edition.toml")):
             edition = tomllib.loads(path.read_text(encoding="utf-8"))
-            label = str(path.relative_to(ROOT))
+            label = str(repository_relative(path))
             if edition.get("translators"):
                 failures.append(
                     f"{label}: attributes the composite reflection edition to a translator"
@@ -2376,7 +2387,7 @@ class TrackedSourceBoundary(unittest.TestCase):
         by_edition: dict[str, list[tuple[Path, dict]]] = defaultdict(list)
         failures: list[str] = []
         for path, record in manifests:
-            label = str(path.relative_to(ROOT))
+            label = str(repository_relative(path))
             edition_id = str(record.get("edition_id") or "")
             by_edition[edition_id].append((path, record))
             for key, expected in (
@@ -2450,7 +2461,7 @@ class TrackedSourceBoundary(unittest.TestCase):
             expected_ids = {record.get("id") for _, record in records}
             if set(projected) != expected_ids:
                 failures.append(
-                    f"{projection_path.relative_to(ROOT)}: projected artifact ids drift"
+                    f"{repository_relative(projection_path)}: projected artifact ids drift"
                 )
                 continue
             for _, record in records:
@@ -2468,7 +2479,7 @@ class TrackedSourceBoundary(unittest.TestCase):
                 ):
                     if row.get(public_key) != record.get(source_key):
                         failures.append(
-                            f"{projection_path.relative_to(ROOT)}: {record['id']} "
+                            f"{repository_relative(projection_path)}: {record['id']} "
                             f"{public_key} does not match its manifest"
                         )
 
@@ -2679,7 +2690,7 @@ class TrackedSourceBoundary(unittest.TestCase):
             value = decoded_text(path)
             if value is None:
                 continue
-            label = str(path.relative_to(ROOT))
+            label = str(repository_relative(path))
             failures.extend(protected_snippet_findings(value, label))
             for match in contradiction.finditer(value):
                 line = value.count("\n", 0, match.start()) + 1
@@ -2702,7 +2713,7 @@ class TrackedSourceBoundary(unittest.TestCase):
             document = yaml.safe_load(path.read_text(encoding="utf-8"))
             failures.extend(
                 rubric_latin_findings(
-                    document, calendar, str(path.relative_to(ROOT))
+                    document, calendar, str(repository_relative(path))
                 )
             )
         assert_no_findings(
@@ -2740,7 +2751,7 @@ class PublicDataBoundary(unittest.TestCase):
             protected_text_findings(
                 encoded,
                 set(),
-                str(path.relative_to(ROOT)),
+                str(repository_relative(path)),
                 path=path,
                 text_fingerprints=frozenset({PALM_SIMPLE_NORMALIZED_SHA256}),
             ),
@@ -2769,7 +2780,7 @@ class PublicDataBoundary(unittest.TestCase):
         findings = protected_text_findings(
             encoded,
             set(),
-            str(path.relative_to(ROOT)),
+            str(repository_relative(path)),
             path=path,
             text_fingerprints=FALSE_ICEL_ACCLAMATION_SHA256,
         )
@@ -2807,14 +2818,14 @@ class PublicDataBoundary(unittest.TestCase):
                 continue
             if suffix in HANDOFF_OPAQUE_SUFFIXES:
                 failures.append(
-                    f"{path.relative_to(ROOT)}: opaque binary handoff payload "
+                    f"{repository_relative(path)}: opaque binary handoff payload "
                     f"{suffix or '<none>'} must remain in ignored review output"
                 )
                 continue
             value = decoded_text(path)
             if value is None:
                 failures.append(
-                    f"{path.relative_to(ROOT)}: unclassified binary handoff payload"
+                    f"{repository_relative(path)}: unclassified binary handoff payload"
                 )
                 continue
             textual += 1
@@ -2822,12 +2833,12 @@ class PublicDataBoundary(unittest.TestCase):
                 protected_text_findings(
                     value,
                     identities,
-                    str(path.relative_to(ROOT)),
+                    str(repository_relative(path)),
                     path=path,
                     exact_text_fingerprints=unresolved_body_hashes,
                 )
             )
-            relative = str(path.relative_to(ROOT))
+            relative = str(repository_relative(path))
             if path.suffix.casefold() == ".json":
                 try:
                     document = json.loads(value)
@@ -2865,7 +2876,7 @@ class PublicDataBoundary(unittest.TestCase):
             document = json.loads(path.read_text(encoding="utf-8"))
             failures.extend(
                 source_inventory_findings(
-                    document, identities, str(path.relative_to(ROOT))
+                    document, identities, str(repository_relative(path))
                 )
             )
         assert_no_findings(
@@ -2916,7 +2927,7 @@ class PublicDataBoundary(unittest.TestCase):
                             document,
                             calendar,
                             identities,
-                            f"{surface} {path.relative_to(ROOT) if path.is_relative_to(ROOT) else path.name}",
+                            f"{surface} {repository_relative(path) if path.is_relative_to(ROOT) else path.name}",
                         )
                     )
                 index = root / "index.json"
@@ -2956,7 +2967,7 @@ class PublicDataBoundary(unittest.TestCase):
                     document,
                     identities,
                     ellc,
-                    str(path.relative_to(ROOT)),
+                    str(repository_relative(path)),
                     bodies,
                 )
             )
@@ -2975,7 +2986,7 @@ class PublicDataBoundary(unittest.TestCase):
             for path in sorted(PUBLIC_SOURCE_TEXT.glob("*.json")):
                 document = json.loads(path.read_text(encoding="utf-8"))
                 if identities_in(document, identities):
-                    leaked.append(str(path.relative_to(ROOT)))
+                    leaked.append(str(repository_relative(path)))
             self.assertEqual(
                 leaked,
                 [],
@@ -3582,7 +3593,7 @@ class EllcAssemblyBoundary(unittest.TestCase):
         """Tracked print evidence and liturgy PDFs obey the same text boundary."""
         pdfs = []
         for path in tracked_files("build/agent-handoffs", "pdf"):
-            relative = path.relative_to(ROOT)
+            relative = repository_relative(path)
             parts = set(relative.parts)
             is_handoff_print = (
                 relative.parts[0] == "build"
@@ -3621,7 +3632,7 @@ class EllcAssemblyBoundary(unittest.TestCase):
                 protected_text_findings(
                     run.stdout,
                     identities,
-                    str(path.relative_to(ROOT)),
+                    str(repository_relative(path)),
                     exact_text_fingerprints=unresolved_body_hashes,
                 )
             )

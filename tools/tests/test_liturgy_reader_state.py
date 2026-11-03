@@ -17,9 +17,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 FIXTURES = ROOT / "tools/tests/fixtures/liturgy-reader-state/v1"
-DATA = ROOT / "src/web/data"
+DATA = browser_data_root(ROOT)
 CONTRACT = ROOT / "src/web/browser/liturgy/reader-state.js"
 ADAPTERS = ROOT / "src/web/browser/liturgy/reader-state-adapters.js"
 ASSEMBLY = ROOT / "src/web/browser/liturgy/assembly-model.js"
@@ -45,6 +48,8 @@ MASS_PROPERS_MODULE = load_tool_module(
 
 
 NODE_BRIDGE = r"""
+const productFixturePath = file => require(require('path').join(process.cwd(), 'tools/tests/_product_data.cjs')).repositoryPath(process.cwd(), file);
+
 const fs = require('fs');
 const C = require('./src/web/browser/liturgy/reader-state.js');
 const A = require('./src/web/browser/liturgy/reader-state-adapters.js');
@@ -53,7 +58,7 @@ const input = JSON.parse(fs.readFileSync(0, 'utf8'));
 const reads = [];
 const read = (path) => {
   reads.push(path);
-  return JSON.parse(fs.readFileSync(path, 'utf8'));
+  return JSON.parse(fs.readFileSync(productFixturePath(path), 'utf8'));
 };
 const base = 'src/web/data/structure/';
 

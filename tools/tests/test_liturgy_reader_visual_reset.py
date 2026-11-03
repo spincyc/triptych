@@ -7,6 +7,10 @@ import re
 import unittest
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 LITURGY = ROOT / "src/web/browser/liturgy"
 DAY = LITURGY / "reader-visual-reset-day.html"
@@ -224,7 +228,7 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
         css = held(INSTRUMENT)
 
         ordinary = json.loads(held(
-            ROOT / "src/web/data/structure/ordinary/postconciliar.json"
+            browser_data_root(ROOT) / 'structure/ordinary/postconciliar.json'
         ))
         elements = [
             element

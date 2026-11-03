@@ -1,4 +1,6 @@
 'use strict';
+const { repositoryPath } = require('./_product_data.cjs');
+
 const assert=require('node:assert/strict');const path=require('node:path');const fs=require('node:fs');
 const root=path.resolve(__dirname,'../..');const S=require(path.join(root,'src/web/browser/liturgy/ordinary-seating.js'));
 const A=require(path.join(root,'src/web/browser/liturgy/reader-state-adapters.js'));const C=require(path.join(root,'src/web/browser/liturgy/reader-state.js'));
@@ -83,7 +85,7 @@ test('unbound prototype-named Masses and inherited binding maps cannot establish
 });
 test('static source gate validates both source candidates without choosing a reading',()=>{
  // Use the held frame vocabulary rather than making a new Lesson policy.
- const ordinary=JSON.parse(fs.readFileSync(path.join(root,'src/web/data/structure/ordinary/roman-1962.json')));
+ const ordinary=JSON.parse(fs.readFileSync(repositoryPath(root, 'src/web/data/structure/ordinary/roman-1962.json')));
  const result=S.validateProperSeating(ordinary,propers,{calendar:edition,mass:key,form_id:'main',full:true,facts:structure.proper_appointment_facts});
  assert.equal(result.candidates,2);assert.equal(result.choice_groups,1);
 });

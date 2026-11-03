@@ -198,6 +198,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SEATING_MODEL = ROOT / 'src/web/browser/liturgy/ordinary-seating.js'
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from _browser_products import ProductError, assert_working_output, committed_data_root, working_data_root  # noqa: E402
+
 import _calendars  # noqa: E402
 import _missal_coverage  # noqa: E402
 from _ordinary_text import element_lines  # noqa: E402
@@ -214,7 +216,7 @@ from _tooling import (  # noqa: E402
 EXAMPLES = {
     "check": (
         Example(
-            "tools/mass-ordinary check",
+            "tools/mass-ordinary check --out .scratch/example-ordinary",
             (
                 "postconciliar: 7 sections, 70 elements, 14 witnesses, 4 variants, 12 slots; en 35 held/35 missing, la 32 held/38 missing; relations en antecedent/uncollated 26, en own/not-applicable 9, la antecedent/collated 5, la antecedent/uncollated 27; 0 target-recension exclusions",
                 "roman-1962: 6 sections, 200 elements, 10 witnesses, 0 variants, 9 slots; en 197 held/3 missing, la 126 held/74 missing; relations en antecedent/collated 1, en antecedent/uncollated 194, en own/not-applicable 3, la antecedent/collated 124, la antecedent/uncollated 2; 12 target-recension exclusions",
@@ -224,7 +226,7 @@ EXAMPLES = {
             "check reads the inventories, joins the artifacts, and reports whether the tracked output is current; it writes nothing",
         ),
         Example(
-            "tools/mass-ordinary check --calendar roman-1962 --json",
+            "tools/mass-ordinary check --calendar roman-1962 --out .scratch/example-ordinary --json",
             (
                 "{\"calendars\":[{\"absent\":3,\"calendar\":\"roman-1962\",\"elements\":200,\"exclusions\":12,\"language_coverage\"... [+29503 chars]",
             ),
@@ -337,31 +339,31 @@ EXAMPLES = {
     ),
     "structure": (
         Example(
-            "tools/mass-ordinary check",
+            "tools/mass-ordinary check --out .scratch/example-ordinary",
             (
                 "postconciliar: 7 sections, 70 elements, 14 witnesses, 4 variants, 12 slots; en 35 held/35 missing, la 32 held/38 missing; relations en antecedent/uncollated 26, en own/not-applicable 9, la antecedent/collated 5, la antecedent/uncollated 27; 0 target-recension exclusions",
                 "roman-1962: 6 sections, 200 elements, 10 witnesses, 0 variants, 9 slots; en 197 held/3 missing, la 126 held/74 missing; relations en antecedent/collated 1, en antecedent/uncollated 194, en own/not-applicable 3, la antecedent/collated 124, la antecedent/uncollated 2; 12 target-recension exclusions",
                 "roman-pre-1955: 6 sections, 209 elements, 4 witnesses, 0 variants, 9 slots; en 206 held/3 missing, la 113 held/96 missing; relations en antecedent/uncollated 206, la antecedent/uncollated 113; 0 target-recension exclusions",
                 "the written files are current",
             ),
-            "read-only first: `check` validates the inventories and reports whether tracked output is current",
+            "read-only first: `check` validates the inventories and reports whether the explicit working output is current",
         ),
         Example(
-            "tools/mass-ordinary structure --out build/example-ordinary",
+            "tools/mass-ordinary structure --out .scratch/example-ordinary",
             (
                 "postconciliar: 7 sections, 70 elements, 14 witnesses, 4 variants, 12 slots; en 35 held/35 missing, la 32 held/38 missing; relations en antecedent/uncollated 26, en own/not-applicable 9, la antecedent/collated 5, la antecedent/uncollated 27; 0 target-recension exclusions",
                 "roman-1962: 6 sections, 200 elements, 10 witnesses, 0 variants, 9 slots; en 197 held/3 missing, la 126 held/74 missing; relations en antecedent/collated 1, en antecedent/uncollated 194, en own/not-applicable 3, la antecedent/collated 124, la antecedent/uncollated 2; 12 target-recension exclusions",
                 "roman-pre-1955: 6 sections, 209 elements, 4 witnesses, 0 variants, 9 slots; en 206 held/3 missing, la 113 held/96 missing; relations en antecedent/uncollated 206, la antecedent/uncollated 113; 0 target-recension exclusions",
                 "wrote 4 files",
-                "  -> build/example-ordinary/structure/ordinary/index.json",
+                "  -> <repo>/.scratch/example-ordinary/structure/ordinary/index.json",
             ),
-            "WRITES the browser's ordinary files. --out here is untracked; the default writes tracked src/web/data",
+            "WRITES the browser's ordinary files. --out here is untracked; the default writes the mutable browser-data working tree",
         ),
     ),
 }
 
 DEFAULT_SOURCES = ROOT / "src" / "sources"
-DEFAULT_DATA = ROOT / "src" / "web" / "data"
+DEFAULT_DATA = working_data_root(ROOT)
 CALENDARS = ROOT / "src" / "sources" / "calendars"
 SCHEMA = "triptych-ordo-missae/v1"
 OUT_SCHEMA = "triptych-ordinary-structure/v1"
@@ -3896,7 +3898,7 @@ def check_calendar_seating(ordinary: dict, propers_file: dict) -> dict:
 
 
 def run_check(arguments: argparse.Namespace) -> dict:
-    out = Path(arguments.out)
+    out = (committed_data_root(ROOT) if arguments.out is None else Path(arguments.out))
     refuse_symlink_output(out, out / "structure" / "ordinary")
     built = build(arguments)
     files = relative_paths(built, arguments.calendar is None)
@@ -3929,7 +3931,7 @@ def run_check(arguments: argparse.Namespace) -> dict:
 
 
 def run_structure(arguments: argparse.Namespace) -> dict:
-    out = Path(arguments.out)
+    out = assert_working_output(ROOT, working_data_root(ROOT) if arguments.out is None else Path(arguments.out))
     refuse_symlink_output(out, out / "structure" / "ordinary")
     built = build(arguments)
     files = relative_paths(built, arguments.calendar is None)
@@ -4211,7 +4213,7 @@ def render(payload: dict, arguments: argparse.Namespace) -> int:
 def main(argv: list[str] | None = None) -> int:
     shared = argparse.ArgumentParser(add_help=False)
     shared.add_argument("--root", default=str(DEFAULT_SOURCES), help="the source library root")
-    shared.add_argument("--out", default=str(DEFAULT_DATA), help="the browser's data root")
+    shared.add_argument("--out", default=None, help="the browser's data root")
     shared.add_argument("--calendar", default=None, help="limit to one calendar")
     shared.add_argument("--format", choices=("text", "yaml", "json"), default="text")
     shared.add_argument(
@@ -4272,7 +4274,7 @@ def main(argv: list[str] | None = None) -> int:
         prefix="mass-ordinary",
         argv=argv,
         default_verb="check",
-        mapped_errors={SourceError: ("input", 2), ValueError: ("input", 2)},
+        mapped_errors={ProductError: ("input", 2), SourceError: ("input", 2), ValueError: ("input", 2)},
     )
 
 

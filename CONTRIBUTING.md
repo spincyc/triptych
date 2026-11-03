@@ -27,6 +27,12 @@ Git keeps the project’s files and history. An AI coding agent can edit, check,
    Current-tree PDF removal does not shrink a full-history clone. If a workspace
    assigns a branch, keep that branch and follow its local instructions.
 2. From the repository’s top-level folder, start Codex directly. The current checkout is the ordinary workspace; do not create, move, delete, or administer worktrees yourself.
+   Browser data is generated outside Git from the canonical sources. In a
+   workspace set `TRIPTYCH_BROWSER_DATA_ROOT=.scratch/browser-data`; the build
+   verifies exact cached outputs or rebuilds an absent cache offline. Do not
+   commit generated browser JSON or edit a sealed cache. See
+   [Web data](guidance/web-data.md) for isolated producer work and explicit
+   descriptor refreshes after an intentional source change.
 3. Give the agent an ordinary request, including any sources, concerns, emphases, or limits that matter.
    The agent must first read `PROJECT-WORK.md` and
    `promised-deliverables.toml`, record any new promised outcome there, and

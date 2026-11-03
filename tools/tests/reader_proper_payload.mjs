@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -17,7 +18,7 @@ const indexPath = 'structure/propers/index.json';
 const catalogPath = 'structure/propers/catalog/roman-1962.json';
 const massPath = 'structure/propers/mass/roman-1962/' + key + '.json';
 const monolithPath = 'structure/propers/roman-1962.json';
-const data = async (path) => JSON.parse(await readFile(resolve(ROOT, 'src/web/data', path)));
+const data = async (path) => JSON.parse(await readFile(repositoryPath(ROOT, 'src/web/data/' + path)));
 const clone = (value) => structuredClone(value);
 const chosen = (index) => index.missals.find((row) => row.id === calendar);
 

@@ -19,7 +19,10 @@ const readline = require('readline');
 const vm = require('vm');
 
 const ROOT = path.resolve(__dirname, '..', '..');
-const DATA = path.join(ROOT, 'src', 'web', 'data');
+// The Python owner holds this private, verified snapshot until this child exits.
+// A direct node invocation must not silently read an unverified working tree.
+if (!process.argv[2]) throw new Error('a verified browser-product snapshot is required');
+const DATA = path.resolve(process.argv[2]);
 const BIBLES = path.join(ROOT, 'src', 'sources', 'bibles');
 const BROWSER = path.join(ROOT, 'src', 'web', 'browser');
 
@@ -33,12 +36,9 @@ let offered = null;
  * copies only those (guidance/web-data.md, "Assembling the site"). */
 function offeredEditions() {
   if (offered) return offered;
-  try {
-    const manifest = JSON.parse(fs.readFileSync(path.join(DATA, 'bibles.json'), 'utf8'));
-    offered = new Set((manifest.bibles || []).map((one) => one && one.id).filter(Boolean));
-  } catch (error) {
-    offered = new Set();
-  }
+  const manifest = JSON.parse(fs.readFileSync(path.join(DATA, 'bibles.json'), 'utf8'));
+  if (!Array.isArray(manifest.bibles)) throw new Error('published Bible manifest is invalid');
+  offered = new Set(manifest.bibles.map((one) => one && one.id).filter(Boolean));
   return offered;
 }
 

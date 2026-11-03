@@ -41,6 +41,8 @@ performed — every `work_id` in the harvested index is still null.
 from __future__ import annotations
 
 import argparse
+from contextvars import ContextVar
+import copy
 import csv
 import functools
 import importlib.machinery
@@ -57,6 +59,7 @@ from typing import Any, Iterable, NamedTuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from _browser_products import ProductError, assert_working_output, committed_data_root, working_data_root  # noqa: E402
 import _canon  # noqa: E402
 import _loci  # noqa: E402
 import _paragraphs  # noqa: E402
@@ -313,11 +316,38 @@ def _yaml():
     return yaml
 
 
+_COMMAND_YAML: ContextVar[dict | None] = ContextVar("catena_command_yaml", default=None)
+
+
+def _command_yaml(function):
+    """Reuse parsed identical bytes only within one structure derivation."""
+    @functools.wraps(function)
+    def scoped(*args, **kwargs):
+        token = _COMMAND_YAML.set({})
+        try:
+            return function(*args, **kwargs)
+        finally:
+            _COMMAND_YAML.reset(token)
+    return scoped
+
+
 def _load_yaml(path: Path) -> Any:
     if not path.is_file():
         raise CatenaError(f"{path}: not found")
-    with path.open(encoding="utf-8") as handle:
-        return _yaml().safe_load(handle)
+    cache = _COMMAND_YAML.get()
+    if cache is None:
+        with path.open(encoding="utf-8") as handle:
+            return _yaml().safe_load(handle)
+    # Read actual bytes on every access: unchanged mtimes, equal sizes and a
+    # reused path are never evidence that a source is unchanged.
+    body = path.read_bytes()
+    key = path.resolve()
+    previous = cache.get(key)
+    if previous is not None and previous[0] == body:
+        return copy.deepcopy(previous[1])
+    parsed = _yaml().safe_load(body.decode("utf-8"))
+    cache[key] = (body, parsed)
+    return copy.deepcopy(parsed)
 
 
 # ---------------------------------------------------------------------------
@@ -1970,15 +2000,12 @@ def _emit(directory: Path, files: dict[Path, str]) -> None:
 
 
 def _drift(directory: Path, files: dict[Path, str]) -> tuple[list[Path], list[Path]]:
-    """What is tracked here, against what the sources produce NOW: (checked, drifted).
+    """Compare the selected output with current sources: (checked, drifted).
 
     BYTES, NOT A SUMMARY, and nothing written — not even a directory, because a
-    check that writes is not a check. Every file under `src/web/data/structure/`
-    is bound by an exact SHA-256 in `release/public-alpha.json`; a change to a
-    generator, or to an input one reads, moves those bytes silently, and until
-    this existed nothing here compared them. `check` validates the edge and
-    replays the chapter derivation, which says nothing at all about whether the
-    tracked emit is the emit these sources produce.
+    check that writes is not a check. The browser-product descriptor binds
+    generated files by exact SHA-256. This explicit research audit also replays
+    their derivation rather than relying on the descriptor's cached proof.
     """
     drifted = [
         path
@@ -2095,6 +2122,7 @@ def _fold_shared(rows: list[dict[str, Any]]) -> tuple[dict[str, dict[str, Any]],
     return shared, slim
 
 
+@_command_yaml
 def _structure_files(
     root: Path = ROOT, out: Path | None = None
 ) -> tuple[Path, dict[Path, str], list[Path]]:
@@ -2139,7 +2167,7 @@ def _structure_files(
     anything — and so the write cannot serialise by one rule and the check by
     another.
     """
-    out = out or (root / "src/web/data")
+    out = out or working_data_root(root)
     written: list[Path] = []
     files: dict[Path, str] = {}
     directory = out / "structure" / "catena"
@@ -2314,6 +2342,7 @@ def _structure_files(
 
 def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
     """Write what the browser fetches; `_structure_files` says what, and why."""
+    out = assert_working_output(root, out or working_data_root(root))
     directory, files, written = _structure_files(root, out)
     _emit(directory, files)
     return written
@@ -2323,7 +2352,7 @@ def structure_drift(
     root: Path = ROOT, out: Path | None = None
 ) -> tuple[list[Path], list[Path]]:
     """Is the tracked `structure/catena` what these sources produce? Writes nothing."""
-    directory, files, _written = _structure_files(root, out)
+    directory, files, _written = _structure_files(root, out or committed_data_root(root))
     return _drift(directory, files)
 
 
@@ -2384,7 +2413,7 @@ def _paragraph_files(
     `_structure_files` gives: one serialisation, shared by the write and the
     check.
     """
-    out = out or (root / "src/web/data")
+    out = out or working_data_root(root)
     module = _index_bible(root)
     folders = path_forms(root)
     width = _canon.chapter_width(root)
@@ -2440,6 +2469,7 @@ def _paragraph_files(
 
 def paragraph_structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
     """Write where each edition opens a paragraph; `_paragraph_files` builds it."""
+    out = assert_working_output(root, out or working_data_root(root))
     directory, files, written = _paragraph_files(root, out)
     _emit(directory, files)
     return written
@@ -2449,7 +2479,7 @@ def paragraph_drift(
     root: Path = ROOT, out: Path | None = None
 ) -> tuple[list[Path], list[Path]]:
     """Is the tracked `structure/paragraphs` what these editions produce? Writes nothing."""
-    directory, files, _written = _paragraph_files(root, out)
+    directory, files, _written = _paragraph_files(root, out or committed_data_root(root))
     return _drift(directory, files)
 
 
@@ -2627,7 +2657,7 @@ def main(argv: list[str] | None = None) -> int:
         for path in structure(root, args.out):
             print(_shown(path, root))
         return 0
-    except CatenaError as error:
+    except (CatenaError, ProductError) as error:
         print(f"catena: {error}", file=sys.stderr)
         return 2
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 
 /* Source-served Chromium checks for the Day resolved Read payload. */
 
@@ -33,7 +34,7 @@ function server() {
       }
       const file = resolve(ROOT, path || 'README.md');
       if (!file.startsWith(ROOT + sep)) throw new Error('outside root');
-      let body = await readFile(file);
+      let body = await readFile(repositoryPath(ROOT, file));
       if (fault === 'catalog-generation' && path.endsWith('/catalog/roman-1962.json')) {
         const changed = JSON.parse(body); changed.generation = '0'.repeat(64);
         body = JSON.stringify(changed);

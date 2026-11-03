@@ -28,6 +28,7 @@ RECEIPT_SCHEMA = "triptych-source-reader-projection-receipt/v1"
 MECHANICAL_RECEIPTS = frozenset({
     RECEIPT_PATH,
     "src/sources/inventories/act-history-projection-receipt-v1.json",
+    "release/browser-products.json",
 })
 # Broad scopes deliberately include rights authorities and helper imports that
 # are not reached by the generator's ordinary manifest traversal. Provider
@@ -119,7 +120,7 @@ def read_file(root: Path, relative: str) -> bytes:
 
 def atomic_write(root: Path, relative: str, body: bytes, *, scratch: Path | None = None) -> None:
     """Replace proof data safely; transient bytes remain under caller's scratch."""
-    scratch = scratch or root / ".scratch/source-projection-receipt"
+    scratch = scratch or root / ".scratch/next-source-receipt"
     scratch.mkdir(parents=True, exist_ok=True)
     aside = "receipt-" + secrets.token_hex(12)
     try:
@@ -394,14 +395,18 @@ def check_receipt(root: Path, target: Path, projection_schema: str) -> dict:
     return receipt
 
 
-def record_receipt(root: Path, target: Path, projection_schema: str) -> dict:
-    """Prove tracked output by independent replay before recording any identity."""
+def record_receipt(root: Path, target: Path, projection_schema: str, *, write: bool = True) -> dict:
+    """Prove an explicit, held family snapshot by independent read-only replay.
+
+    The caller owns product-cache verification and keeps its private snapshot
+    alive throughout this operation. No cache pathname enters the receipt.
+    """
     inputs = input_identity(root)
     outputs = output_identity(root, target)
     environment = {**os.environ, "TRIPTYCH_LIBRARY_CACHE": "0", "TRIPTYCH_CORPUS_CACHE": "0"}
     completed = subprocess.run(
         [sys.executable, "-B", "-X",
-         "pycache_prefix=" + str(root / ".scratch/source-projection-receipt" / ("python-" + secrets.token_hex(16))),
+         "pycache_prefix=" + str(root / ".scratch/next-source-receipt" / ("python-" + secrets.token_hex(16))),
          str(root / "tools/source-reader"), "structure", "--check", "--strict", "--json", "--out", str(target.parent.parent)],
         cwd=root, env=environment, capture_output=True, text=True, check=False,
     )
@@ -420,6 +425,12 @@ def record_receipt(root: Path, target: Path, projection_schema: str) -> dict:
     receipt = {"schema": RECEIPT_SCHEMA, "projection_schema": projection_schema,
                "proof": "independent-full-structure-check", "editorial_approval": False,
                "inputs": inputs, "outputs": outputs, "counted": counted}
+    if write:
+        write_receipt(root, receipt)
+    return receipt
+
+
+def write_receipt(root: Path, receipt: dict) -> None:
+    """Commit a prepared proof only after its product context exits successfully."""
     atomic_write(root, RECEIPT_PATH,
                  (json.dumps(receipt, ensure_ascii=False, sort_keys=True, indent=1) + "\n").encode("utf-8"))
-    return receipt

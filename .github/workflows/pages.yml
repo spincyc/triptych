@@ -34,6 +34,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      TRIPTYCH_BROWSER_DATA_ROOT: build/browser-data
 
     steps:
       - name: Check out repository
@@ -49,15 +51,47 @@ jobs:
       - name: Install source publication dependencies
         run: python -m pip install --disable-pip-version-check -r requirements-public-alpha.txt -r requirements-tools.txt
 
-      # public-site owns the source gate, so it runs once here and also protects
-      # local builds. Receipts authenticate full projection input/output hashes;
-      # missing or stale receipts fail instead of downloading evidence or doing
-      # a whole-corpus research replay during deployment.
+      - name: Identify exact browser products
+        id: browser-products
+        run: |
+          set -euo pipefail
+          identity="$(python tools/tpt browser-products key)"
+          [[ "$identity" =~ ^[0-9a-f]{64}$ ]] || { echo 'Invalid browser product content identity' >&2; exit 1; }
+          printf 'identity=%s\n' "$identity" >> "$GITHUB_OUTPUT"
+
+      # A prefix match supplies candidate family entries only. The source gate
+      # verifies current family identities and every byte before any consumer
+      # reads them; a miss derives the exact products offline from sources.
+      - name: Restore browser product candidates
+        id: browser-cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: build/browser-data
+          key: triptych-browser-products-v1-${{ steps.browser-products.outputs.identity }}
+          restore-keys: |
+            triptych-browser-products-v1-
+
+      # public-site prepares and verifies the committed product descriptor before
+      # source gates and consumers. Missing families reproduce its exact bytes
+      # offline; stale inputs fail without a whole-corpus research replay.
       - name: Validate sources and build public artifact
         run: make public-site
 
       - name: Verify artifact and GitHub Pages compatibility
         run: python tools/tpt public-alpha verify --deployment-target github-pages
+
+      # Keep the restored path constant so GitHub can reuse older per-family
+      # candidates. Only exact current entries survive into the next cache.
+      - name: Retain verified current browser products
+        if: steps.browser-cache.outputs.cache-hit != 'true'
+        run: python tools/tpt browser-products prune
+
+      - name: Save verified browser products
+        if: steps.browser-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: build/browser-data
+          key: triptych-browser-products-v1-${{ steps.browser-products.outputs.identity }}
 
       - name: Configure Pages
         uses: actions/configure-pages@v6

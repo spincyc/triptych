@@ -65,13 +65,15 @@ def structure():
 
 
 HARNESS = r"""
+const productFixturePath = file => require(require('path').join(root, 'tools/tests/_product_data.cjs')).repositoryPath(root, file);
+
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const root=process.argv[1], modules=process.argv[2];
 const A=require(path.join(modules,'src/web/browser/liturgy/reader-state-adapters.js'));
 const C=require(path.join(modules,'src/web/browser/liturgy/reader-state.js'));
 const M=require(path.join(root,'src/web/browser/liturgy/assembly-model.js'));
-const year=JSON.parse(fs.readFileSync(path.join(root,'src/web/data/structure/calendar/roman-1962/2026.json')));
-const rubrics=JSON.parse(fs.readFileSync(path.join(root,'src/web/data/structure/rubrics/roman-1962.json')));
+const year=JSON.parse(fs.readFileSync(productFixturePath(path.join(root,'src/web/data/structure/calendar/roman-1962/2026.json'))));
+const rubrics=JSON.parse(fs.readFileSync(productFixturePath(path.join(root,'src/web/data/structure/rubrics/roman-1962.json'))));
 const clone=x=>JSON.parse(JSON.stringify(x));
 const derive=date=>M.derive({date,year,rubrics});
 function request(date,key,entrance='day') {

@@ -35,7 +35,7 @@ largely a register of how that data has already gone wrong:
 | --- | --- |
 | a task requiring external visual, product, source, architectural, or acceptance review | `guidance/external-review-handoffs.md` |
 | a mass, proper, or rubric in `src/sources/calendars/` | `guidance/propers-for-agents.md` |
-| anything the browser fetches from `src/web/data/` | `guidance/web-data.md` |
+| generated browser data, its canonical inputs, `release/browser-products.json`, or the browser-product cache | `guidance/web-data.md` |
 | the site layout template, `assets/site.css`, `src/web/browser/shared/`, site navigation, route generation in `tools/public-alpha`, or any web surface outside liturgy | `guidance/corpus-browser-implementation.md`, `guidance/corpus-browser-master-plan.md` |
 | producing a print edition or changing a print template | `docs/printing.md`, `guidance/document-schemas.md`, and the owning genre profile |
 | non-liturgy corpus browser work: Home or Publications routes; the web publication Reader; Catena or Sources routes; or shared non-liturgy shell, navigation, search, context, responsive, or print presentation | `guidance/corpus-browser-master-plan.md`, `guidance/corpus-browser-vision.md`, `guidance/corpus-browser-roadmap.md`, `guidance/corpus-browser-implementation.md`, plus the existing universal, profile, and owning-surface guidance as applicable — including `guidance/web-editions.md` for the Reader, the Catena guidance below, `guidance/sources.md` for Sources, and `guidance/web-data.md` for fetched data |
@@ -171,6 +171,12 @@ conversion.
   `tools/print-document`; no PDF is tracked or required by normal site deployment.
 - Reproducible build output belongs under ignored `build/`; task-created logs,
   review output, caches, and experiments belong under `.scratch/` in a workspace.
+- Browser JSON formerly under `src/web/data/` is generated outside Git from
+  canonical inputs. In a workspace set
+  `TRIPTYCH_BROWSER_DATA_ROOT=.scratch/browser-data`; use
+  `tools/browser-products` for sealed cache validation and offline rebuilding,
+  and an unsealed working destination for direct producer edits. The existing
+  `src/sources/bibles/` chapter fragments remain in place.
 - Shared theological or typesetting text has one authoritative source and is imported by its consumers; do not create drifting copies.
 - Never treat generated print output, `build/`, or `.scratch/` as an authoritative input.
 

@@ -52,13 +52,15 @@ import unittest
 from pathlib import Path
 
 
+from tools.tests._product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 BROWSER = ROOT / "src/web/browser"
 CORE_CSS = BROWSER / "shared/browser-core.css"
 CORE_JS = BROWSER / "shared/browser-core.js"
 LAYOUT = ROOT / "release/public-alpha/layout.html"
 GENERATOR = ROOT / "tools/public-alpha"
-ACT_HISTORY = ROOT / "src/web/data/structure/act-history"
+ACT_HISTORY = browser_data_root(ROOT) / "structure/act-history"
 NODE = shutil.which("node")
 
 # Five instrument rules keep a shared name. Each re-tunes the SAME component for

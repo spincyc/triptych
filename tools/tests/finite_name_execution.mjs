@@ -1,5 +1,6 @@
+import { repositoryPath } from './_product_data.cjs';
 import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import vm from 'node:vm';import {createRequire} from 'node:module';
-const root=path.resolve(process.argv[2]||path.join(import.meta.dirname,'../..')),require=createRequire(import.meta.url),load=p=>JSON.parse(fs.readFileSync(root+'/'+p));
+const root=path.resolve(process.argv[2]||path.join(import.meta.dirname,'../..')),require=createRequire(import.meta.url),load=p=>JSON.parse(fs.readFileSync(repositoryPath(root, p)));
 const A=require(root+'/src/web/browser/liturgy/reader-state-adapters.js'),M=require(root+'/src/web/browser/liturgy/assembly-model.js'),Study=require(root+'/src/web/browser/liturgy/reader-study-view.js');
 const structure=load('src/web/data/structure/propers/roman-1962.json'),rubrics=load('src/web/data/structure/rubrics/roman-1962.json'),ordinary=load('src/web/data/structure/ordinary/roman-1962.json'),year=load('src/web/data/structure/calendar/roman-1962/2026.json'),fixture=load('tools/tests/fixtures/liturgy-reader-state/v1/day-roman-1962-2026-08-02.json'),clone=v=>structuredClone(v);let positives=0,negatives=0;
 const request=(date,mode='read',lang='en')=>{const q=clone(fixture.requested);delete q.selectedReadableFormulary;q.civilDate=date;q.requestedMode=mode;q.options.ordinary=mode==='missal';q.languages.orations=lang;return q;};

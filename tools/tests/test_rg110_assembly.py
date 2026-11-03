@@ -13,6 +13,10 @@ import yaml
 
 from test_rg110_diagnostic import ROOT, SOURCE, run_model, tool
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 CODE = Path(os.environ.get("TRIPTYCH_RG110_TEST_CODE", ROOT))
 
 
@@ -20,7 +24,7 @@ class Rg110Assembly(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.source = yaml.safe_load(SOURCE.read_text())
-        cls.rubrics = json.loads((ROOT / "src/web/data/structure/rubrics/roman-1962.json").read_text())
+        cls.rubrics = json.loads((browser_data_root(ROOT) / 'structure/rubrics/roman-1962.json').read_text())
         cls.rubrics["commemoration"] = copy.deepcopy(cls.source["commemoration"])
         cls.dates = ["2027-02-22", "2028-02-22", "2060-02-22", "2027-01-25", "2026-06-30",
                      "2026-02-22", "2026-01-25", "2030-06-30", "2026-06-29", "2027-02-23"]
@@ -36,7 +40,7 @@ class Rg110Assembly(unittest.TestCase):
 
     @classmethod
     def case(cls, date, identifier=None):
-        year = json.loads((ROOT / f"src/web/data/structure/calendar/roman-1962/{date[:4]}.json").read_text())
+        year = json.loads((browser_data_root(ROOT) / f"structure/calendar/roman-1962/{date[:4]}.json").read_text())
         return {"id": identifier or date, "date": date, "year": year, "rubrics": copy.deepcopy(cls.rubrics)}
 
     def branch(self, date):
@@ -134,13 +138,15 @@ class Rg110Assembly(unittest.TestCase):
 
     def test_missing_principal_or_companion_slot_refuses_instead_of_losing_a_group_member(self):
         harness = r"""
+const productFixturePath = file => require(require('path').join(root, 'tools/tests/_product_data.cjs')).repositoryPath(root, file);
+
 const fs=require('fs'), root=process.argv[1], code=process.argv[2];
 const A=require(code+'/src/web/browser/liturgy/reader-state-adapters.js');
 const fixture=JSON.parse(fs.readFileSync(root+'/tools/tests/fixtures/liturgy-reader-state/v1/day-roman-1962-2026-08-02.json'));
 let raw='';process.stdin.on('data',s=>raw+=s);process.stdin.on('end',()=>{
  const derived=JSON.parse(raw), results=[];
  for(const key of ['cathedrae-s-petri-apostoli','comm-s-pauli-apostoli']) {
-  const structure=JSON.parse(fs.readFileSync(root+'/src/web/data/structure/propers/roman-1962.json'));
+  const structure=JSON.parse(fs.readFileSync(productFixturePath(root+'/src/web/data/structure/propers/roman-1962.json')));
   const mass=structure.masses.find(m=>m.key===key);mass.propers=mass.propers.filter(p=>p.name!=='Collect');
   const request=JSON.parse(JSON.stringify(fixture.requested));delete request.selectedReadableFormulary;request.civilDate=derived.date;
   try{A.adaptDay({request,derived,structure});results.push(false);}catch(error){results.push(/inseparable/.test(String(error)) || ['principal-oration-slot-unbound','oration-source-slot-unbound'].includes(error.code));}
@@ -155,13 +161,15 @@ let raw='';process.stdin.on('data',s=>raw+=s);process.stdin.on('end',()=>{
 
     def test_direct_propers_preserves_raw_bodies_and_exposes_source_qualified_unknown_use(self):
         harness = r"""
+const productFixturePath = file => require(require('path').join(root, 'tools/tests/_product_data.cjs')).repositoryPath(root, file);
+
 const fs=require('fs'),vm=require('vm'),root=process.argv[1],code=process.argv[2],relations=JSON.parse(process.argv[3]);
 const A=require(code+'/src/web/browser/liturgy/reader-state-adapters.js');
 const dom=require(root+'/scripts/lectern/dom.js');globalThis.window=globalThis;globalThis.document=dom.document;
 globalThis.location={search:''};globalThis.addEventListener=()=>{};
 vm.runInThisContext(fs.readFileSync(code+'/src/web/browser/shared/browser-core.js','utf8'));
-const structure=JSON.parse(fs.readFileSync(root+'/src/web/data/structure/propers/roman-1962.json'));
-const ordinary=JSON.parse(fs.readFileSync(root+'/src/web/data/structure/ordinary/roman-1962.json'));
+const structure=JSON.parse(fs.readFileSync(productFixturePath(root+'/src/web/data/structure/propers/roman-1962.json')));
+const ordinary=JSON.parse(fs.readFileSync(productFixturePath(root+'/src/web/data/structure/ordinary/roman-1962.json')));
 const fixture=JSON.parse(fs.readFileSync(root+'/tools/tests/fixtures/liturgy-reader-state/v1/propers-roman-1962-advent-1.json'));
 for(const mass of structure.masses)if(relations[mass.key])mass.oration_relation=relations[mass.key];
 const results=[];
@@ -195,6 +203,8 @@ process.stdout.write(JSON.stringify(results));
 
     def test_read_and_missal_keep_every_member_exact_and_do_not_fill_english_or_latin_holds(self):
         harness = r"""
+const productFixturePath = file => require(require('path').join(root, 'tools/tests/_product_data.cjs')).repositoryPath(root, file);
+
 const fs = require('fs'), vm = require('vm');
 const root = process.argv[1], code = process.argv[2];
 const A = require(code + '/src/web/browser/liturgy/reader-state-adapters.js');
@@ -202,8 +212,8 @@ const dom = require(root + '/scripts/lectern/dom.js');
 globalThis.window = globalThis; globalThis.document = dom.document;
 globalThis.location = { search: '' }; globalThis.addEventListener = () => {};
 vm.runInThisContext(fs.readFileSync(code + '/src/web/browser/shared/browser-core.js', 'utf8'));
-const structure = JSON.parse(fs.readFileSync(root + '/src/web/data/structure/propers/roman-1962.json'));
-const ordinary = JSON.parse(fs.readFileSync(root + '/src/web/data/structure/ordinary/roman-1962.json'));
+const structure = JSON.parse(fs.readFileSync(productFixturePath(root + '/src/web/data/structure/propers/roman-1962.json')));
+const ordinary = JSON.parse(fs.readFileSync(productFixturePath(root + '/src/web/data/structure/ordinary/roman-1962.json')));
 const fixture = JSON.parse(fs.readFileSync(root + '/tools/tests/fixtures/liturgy-reader-state/v1/day-roman-1962-2026-08-02.json'));
 let raw = ''; process.stdin.on('data', s => raw += s); process.stdin.on('end', () => {
   const reports = [];
@@ -263,6 +273,10 @@ let raw = ''; process.stdin.on('data', s => raw += s); process.stdin.on('end', (
         preload = r"""
 const fs = require('fs'), path = require('path'), Module = require('module');
 const root = process.argv[1], code = process.argv[2], rubrics = JSON.parse(process.argv[3]), relations = JSON.parse(process.argv[4]);
+const products = require(root + '/tools/tests/_product_data.cjs');
+const dataRoot = products.browserDataRoot(root);
+const rubricsPath = path.join(dataRoot, 'structure/rubrics/roman-1962.json');
+const propersPath = path.join(dataRoot, 'structure/propers/roman-1962.json');
 const read = fs.readFileSync, extension = Module._extensions['.js'];
 function proposed(file) {
   if (typeof file !== 'string' || !file.startsWith(root + path.sep)) return file;
@@ -275,11 +289,11 @@ Module._extensions['.js'] = (mod, file) => {
   mod._compile(read(candidate, 'utf8'), file);
 };
 fs.readFileSync = function(file, options) {
-  if (file === path.join(root, 'src/web/data/structure/rubrics/roman-1962.json')) {
+  if (file === rubricsPath) {
     const body = JSON.stringify(rubrics);
     return typeof options === 'string' || options && options.encoding ? body : Buffer.from(body);
   }
-  if (file === path.join(root, 'src/web/data/structure/propers/roman-1962.json')) {
+  if (file === propersPath) {
     const structure = JSON.parse(read(file, 'utf8'));
     structure.masses.forEach(mass => { if (relations[mass.key]) mass.oration_relation = relations[mass.key]; });
     const body = JSON.stringify(structure);
@@ -287,6 +301,7 @@ fs.readFileSync = function(file, options) {
   }
   return read(proposed(file), options);
 };
+process.argv[2] = dataRoot;
 require(root + '/scripts/lectern/bridge.js');
 """
         commands = [

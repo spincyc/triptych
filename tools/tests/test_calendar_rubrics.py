@@ -20,6 +20,9 @@ from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
 from unittest import mock
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
@@ -35,7 +38,7 @@ from _calendars import (  # noqa: E402
 
 CALENDARS = ROOT / "src" / "sources" / "calendars"
 TOOL = ROOT / "tools" / "calendar-rubrics"
-DATA = ROOT / "src" / "web" / "data" / "structure" / "rubrics"
+DATA = browser_data_root(ROOT) / 'structure/rubrics'
 
 
 def load_tool(name: str):
@@ -329,7 +332,7 @@ class LayerTests(unittest.TestCase):
     def test_the_layer_states_precedence_where_the_day_files_refuse_to(self) -> None:
         index = json.loads((DATA / "index.json").read_text(encoding="utf-8"))
         self.assertTrue(all(row["precedence_stated"] for row in index["calendars"]))
-        days = ROOT / "src" / "web" / "data" / "structure" / "calendar" / "index.json"
+        days = browser_data_root(ROOT) / 'structure/calendar/index.json'
         if days.is_file():
             self.assertFalse(json.loads(days.read_text(encoding="utf-8"))["precedence"]["stated"])
 
@@ -368,7 +371,7 @@ class UnrunIsNotPassedTests(unittest.TestCase):
 
     def arguments(self) -> argparse.Namespace:
         return argparse.Namespace(
-            root=str(CALENDARS), out=str(ROOT / "src" / "web" / "data"),
+            root=str(CALENDARS), out=str(browser_data_root(ROOT)),
             calendar=None, verbose=False, json=False, format="text",
         )
 

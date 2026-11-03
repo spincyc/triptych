@@ -29,8 +29,10 @@ import subprocess
 import unittest
 from pathlib import Path
 
+from tools.tests._product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
-DATA = ROOT / "src/web/data"
+DATA = browser_data_root(ROOT)
 CORE = ROOT / "src/web/browser/shared/browser-core.js"
 BIBLES = ROOT / "src/sources/bibles"
 

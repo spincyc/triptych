@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { browserDataRoot, repositoryPath } from './_product_data.cjs';
 
 /* Focused real-browser contract for first-class Day and Proper-form choices. */
 
@@ -152,11 +153,11 @@ function staticServer() {
       const builtData = 'build/public-alpha/preview/browse/';
       if (relative.startsWith(builtData)) {
         const sourceRelative = 'src/web/data/' + relative.slice(builtData.length);
-        if (await exists(resolve(ROOT, sourceRelative))) relative = sourceRelative;
+        if (await exists(repositoryPath(ROOT, sourceRelative))) relative = sourceRelative;
       }
       const file = resolve(ROOT, relative || 'README.md');
       if (file !== ROOT && !file.startsWith(ROOT + sep)) throw new Error('outside root');
-      let body = await readFile(file);
+      let body = await readFile(repositoryPath(ROOT, file));
       if (relative === 'src/web/browser/liturgy/assembly-model.js') {
         body = Buffer.from(withAuthorizedCalendarChoices(body.toString('utf8')));
       }
@@ -893,8 +894,8 @@ async function main() {
 }
 
 if (process.argv.includes('--check-fixtures')) {
-  const read = async (kind, edition) => readFile(resolve(ROOT,
-    'src/web/data/structure', kind, edition + '.json'), 'utf8');
+  const read = async (kind, edition) => readFile(resolve(browserDataRoot(ROOT),
+    'structure', kind, edition + '.json'), 'utf8');
   const { T, A } = readerTools(ROOT);
   const forms = JSON.parse(withAuthoredForms(await read('propers', 'postconciliar')));
   const mass = forms.masses.find(row => row.key === 'advent-1');

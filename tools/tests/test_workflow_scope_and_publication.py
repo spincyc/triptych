@@ -974,50 +974,66 @@ class SiteValidationTests(unittest.TestCase):
                       checks["site-public-alpha"])
         self.assertIn("release/publications/{provider}/{proper}-synthesis.json",
                       checks["site-public-alpha"])
-        corpus = "src/web/data/structure/documents/corpus.json"
-        self.assertIn(corpus, checks["site-document-catalogue"])
-        self.assertTrue((ROOT / corpus).is_file())
+        self.assertIn("tools/document-library show --provider {provider} --document {proper} --json",
+                      checks["site-document-catalogue"])
+        self.assertNotIn("src/web/data/", checks["site-document-catalogue"])
+        self.assertNotIn("pdf/", checks["site-document-catalogue"])
         self.assertIn("web/{provider}/{proper}.md",
                       checks["site-web-editions-current"])
 
     def test_the_corpus_clause_finds_a_published_proper_and_not_an_unwired_one(self):
-        """Run the clause the document catalogue check carries, alone.
-
-        The `make` half is the slow, whole-repository one; the clause is what
-        binds it to this publication, and it is run here against the real
-        tracked corpus for a published identity and for the unpublished
-        neighbour of one.
-        """
+        """Read logical identities from the canonical API, without a product path."""
         command = gate_check("publication-gates", "site-document-catalogue")
         clause = command.split(" && ", 1)[1]
-        corpus = json.loads(
-            (ROOT / "src/web/data/structure/documents/corpus.json").read_text(
-                encoding="utf-8"))
-        published = None
-        for work in corpus.get("works", []):
-            leaf = work.get("leaf", "")
-            if "/propers/temporal/" not in leaf:
-                continue
-            for edition in work.get("editions", []):
-                web = edition.get("web") or ""
-                pdf = edition.get("pdf") or ""
-                companions = [also.get("pdf") or ""
-                              for also in edition.get("also", [])]
-                if (web.endswith(f"{leaf}.html") and pdf.endswith(f"{leaf}.pdf")
-                        and any(also.endswith(f"{leaf}-synthesis.pdf")
-                                for also in companions)):
-                    published = (web.split("/")[1], leaf)
-                    break
-            if published:
-                break
-        if published is None:
-            self.skipTest("no catalogued proper edition in this tree")
-        provider, proper = published
-        self.assertEqual(
-            run_check(clause, proper, provider, ROOT).returncode, 0)
-        self.assertNotEqual(
-            run_check(clause, UNREGISTERED, provider, ROOT).returncode, 0,
-            "an identity the corpus does not carry is not catalogued")
+        proper = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
+        self.assertEqual(run_check(clause, proper, "gpt", ROOT).returncode, 0)
+        self.assertNotEqual(run_check(clause, UNREGISTERED, "gpt", ROOT).returncode, 0,
+                            "an identity absent from the source catalogue must fail")
+
+    def test_catalogue_clause_rejects_held_outputs_and_wrong_source_or_reader_identity(self):
+        scratch = ROOT / ".scratch/next-workflow-consumers"
+        scratch.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=scratch) as directory:
+            root = Path(directory)
+            tool = root / "tools/document-library"
+            tool.parent.mkdir()
+            tool.write_text("#!/usr/bin/env python3\nimport pathlib,sys\nsys.stdout.write(pathlib.Path('descriptor.json').read_text())\n")
+            tool.chmod(0o755)
+            owner = "gpt/" + DOC
+            reader = "web/" + owner + ".html"
+            original = {"status": "ok", "documents_shown": [{
+                "provider": "gpt", "leaf": DOC, "web": reader,
+                "issues": [
+                    {"kind": "full", "id": owner, "available": {"reader": True},
+                     "targets": {"reader": reader}},
+                    {"kind": "synthesis", "id": owner + "-synthesis", "available": {"print": True},
+                     "targets": {"print": "print/" + owner + "-synthesis.html"}}]}]}
+            descriptor = root / "descriptor.json"
+            for name in ("proper", "proper-finish"):
+                workflow = json.loads((ROOT / "workflows/pipelines" / (name + ".json")).read_text())
+                command = next(check["command"] for stage in workflow["stages"]
+                               for check in stage.get("checks", []) if check["id"] == "site-document-catalogue")
+                clause = command.split(" && ", 1)[1]
+                descriptor.write_text(json.dumps(original))
+                self.assertEqual(run_check(clause, DOC, "gpt", root).returncode, 0)
+                for defect in ("held-research", "held-synthesis", "research-id", "synthesis-id", "reader-route"):
+                    data = json.loads(json.dumps(original))
+                    full, concise = data["documents_shown"][0]["issues"]
+                    if defect == "held-research":
+                        full["available"]["reader"] = False
+                        full["targets"] = {}
+                    elif defect == "held-synthesis":
+                        concise["available"]["print"] = False
+                        concise["targets"] = {}
+                    elif defect == "research-id":
+                        full["id"] += "-wrong"
+                    elif defect == "synthesis-id":
+                        concise["id"] += "-wrong"
+                    else:
+                        full["targets"]["reader"] = "web/claude/" + DOC + ".html"
+                    descriptor.write_text(json.dumps(data))
+                    with self.subTest(workflow=name, defect=defect):
+                        self.assertNotEqual(run_check(clause, DOC, "gpt", root).returncode, 0)
 
     def test_the_installer_no_longer_attests_to_them(self):
         """The authority is the gate's, and it is not held in two places."""

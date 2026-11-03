@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 /* Optional source-served Chromium proof: native hints reuse responses; split validation stays authoritative. */
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
@@ -26,7 +27,7 @@ const server = createServer(async (request, response) => {
     if (OVERLAY) {
       try { body = await readFile(resolve(OVERLAY, relative)); } catch { /* unchanged source */ }
     }
-    body ??= await readFile(file);
+    body ??= await readFile(repositoryPath(ROOT, file));
     if (corrupt && relative.includes('/propers/mass/roman-1962/')) {
       const value = JSON.parse(body.toString());
       value.generation = '0'.repeat(64);

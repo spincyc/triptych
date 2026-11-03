@@ -11,6 +11,10 @@ import unittest
 
 import yaml
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(os.environ.get('TRIPTYCH_ORATION_TEST_ROOT', Path(__file__).resolve().parents[2]))
 loader = SourceFileLoader('_oration_calendar_rubrics', str(ROOT / 'tools/calendar-rubrics'))
 spec = spec_from_loader(loader.name, loader)
@@ -41,7 +45,7 @@ class CommemoratedOrations(unittest.TestCase):
     def test_cli_retains_typed_shared_planner_refusal(self):
         loader=SourceFileLoader('_oration_mass_today', str(ROOT / 'tools/mass-today'))
         spec=spec_from_loader(loader.name,loader);today=module_from_spec(spec);loader.exec_module(today)
-        source=json.loads((ROOT / 'src/web/data/structure/rubrics/roman-1962.json').read_text())
+        source=json.loads((browser_data_root(ROOT) / 'structure/rubrics/roman-1962.json').read_text())
         execution={**source['orations']['execution'], 'slots': [{'slot':'Collect'},{'slot':'Secret'},{'slot':'Postcommunion'}]}
         with self.assertRaisesRegex(today.Refused, 'unsupported-oration-context'):
             today.mass_events(None, [], None, oration_context={'active':True,'calendar':'roman-pre-1955','execution':execution})
