@@ -71,9 +71,12 @@ class Events(HTMLParser):
 def structure_events(fragment, part_id=None):
     return Events(fragment,part_id).events
 
-def structure_sha256(fragment, part_id=None):
-    data=json.dumps(structure_events(fragment,part_id),ensure_ascii=False,separators=(',',':'))
+def _structure_events_sha256(events):
+    data=json.dumps(events,ensure_ascii=False,separators=(',',':'))
     return hashlib.sha256(data.encode()).hexdigest()
+
+def structure_sha256(fragment, part_id=None):
+    return _structure_events_sha256(structure_events(fragment,part_id))
 
 def canonical_json(value):
     return json.dumps(value,ensure_ascii=False,separators=(',',':'))
@@ -175,7 +178,7 @@ def part_statistics(fragment,part_id=None,selectors=None):
                 key=selector[1:-1];counts[selector]=sum(key in attrs for _,attrs in descendants)
             else:counts[selector]=measured.get(selector,0)
     return {'text_sha256':sha256(normalize_text(''.join(parsed.text))),
-            'structure_sha256':structure_sha256(fragment,part_id),
+            'structure_sha256':_structure_events_sha256(parsed.events),
             'expected_ids':ids,'units':units,'counts':counts}
 
 

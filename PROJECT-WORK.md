@@ -11,7 +11,8 @@ Last reconciled: 2026-11-03.
 
 <!-- promised-deliverable: source-first-print-on-demand-2026-11-02 -->
 
-**In progress.** The requested outcome is to remove all tracked PDF and ZIP
+**In progress: complete browser printing is live; publication speed remains open.**
+The requested outcome is to remove all tracked PDF and ZIP
 corpora, deliver exact binary evidence through `spincyc/triptych-artifacts`,
 declare per-document manifests and type schemas including propers and
 timelines, and offer automatic **Print / Save as PDF** from the web for every
@@ -41,8 +42,8 @@ migration results, separate from the universal browser-print candidate below.
 The workspace fast-forwarded to `cb8ede344f`, preserving the incoming ordinary
 Fifth Sunday after Epiphany catalogue reference and every other deliverable.
 Current discovery contains 217 publication leaves and 283 declared outputs:
-281 admitted outputs and two holds. The complete-print implementation is validated locally and awaiting
-publication. A preliminary thirteen-family two-fresh-build record
+281 admitted outputs and two holds. The complete-print implementation is committed and pushed to main as
+`c7ab71a774e0fc545ee6ef85d485563cc49c9ad7`. A preliminary thirteen-family two-fresh-build record
 against the integrated source passed in 1,108.790 seconds: 27,836 files and
 382,659,164 bytes, descriptor SHA-256
 `29728e7561ea75a996eaae5930ba89d99b118011875443a67db78e821a76cd75`.
@@ -65,8 +66,8 @@ template definitions reject unsupported direct and nested wording changes
 before conversion. Original omission attacks now refuse before sealing. The
 generic, curriculum, source-volume and repaired Bible proofs have no additional
 concrete marker-only gap in that audit. This preliminary descriptor is not the final
-candidate after that repair. **Main publication and live deployment of the complete browser-print change
-remain pending.** No new
+candidate after that repair. **The first complete-print main deployment and live checks pass; the
+optimized publication candidate remains in progress.** No new
 publication timing or editorial approval is claimed.
 
 The implementation covers 644 complete print roots: 281 provider outputs,
@@ -147,7 +148,59 @@ are `PUBLICATION-MANIFEST.json` and `SHA256SUMS`; all 38,920 files retain the
 same membership and all browser-tested pages, scripts, styles, fonts and images
 remain byte-identical. Final independent integration and disclosure review is clear, including the
 exact descriptor, current inputs, source closure, admission set and corrected
-site. No main push or live publication is claimed yet.
+site. Main is pushed through an ordinary fast-forward; live deployment is pending.
+
+The exact cache candidate `browser-products-fc8ad52c86d3-v1` is public and
+immutable in `spincyc/triptych-artifacts`, whose main is `266998f`. All three
+server asset digests match. Anonymous fresh-cache hydration and current-product
+build pass with zero generation. Source main was pushed without rewriting
+history and its exact remote ref was verified. Automatic Pages run
+`41593389653` succeeds in 1,976 seconds (32m56s). All seven live complete-print
+cases pass at the configured canonical domain `https://mystago.gy/`, including
+the complete Clementine Bible and legacy Douay plan. The initial GitHub-prefix
+Bible expectation was a test-harness assumption after the configured domain
+redirect; live source assets match the signed artifact and no production UI
+change was needed.
+The committed tree has 82,005 files and 2,013,718,159 bytes, 73.563% less than
+the original tree; no PDF or ZIP is tracked. Existing Git history is preserved.
+
+The storage and functional results are complete at `c7ab71a774`, but that first
+complete-print deployment is 39.65% slower than the original 1,415-second run.
+The publication-speed objective is explicitly still open. Cache transport is
+working: all thirteen exact family keys are imported and no generation is
+needed. Publication building (661.48 seconds) and independent verification
+(607 seconds) consume 64.2% of the job. The source-gated make total is 1,082
+seconds. These timings do not support claiming a speed improvement.
+
+One actual-worker profile reproduces the signed artifact exactly. Its measured
+repeated work supports three narrow optimizations: reuse validated structural
+events for part hashes, freeze routing maps once per held catalogue, and
+precompile input selectors/classifications within each fresh hashing phase.
+All three are independently reviewed, all 41 common/routing and 67 store tests
+pass, and all 1,172 prepared-part statistics match `c7ab71a774`. The actual-tree
+identity comparison remains exact over 82,534 inputs and thirteen recipes plus
+the aggregate; that hashing phase measures 9.421 to 7.924 seconds. Source text,
+rights, admission, negative checks and freshness phases remain unchanged.
+The eight implementation/test files are frozen. Two independent fresh builds
+pass in 1,077.846 seconds and record descriptor
+`348d2ad0526095b6dcaa956fe11c3de7b8958c043390d40c46e103b1c70cbccf`.
+All 13 output path/hash/size maps exactly match `c7ab71a774`; content, rights,
+lock and membership identities remain unchanged. Current scoped release
+bindings preserve approval policy and rights prose. Required source-gated make
+passes in 274.907 seconds and independent Pages artifact verification in
+153.996 seconds. Only `PUBLICATION-MANIFEST.json` and `SHA256SUMS` differ from
+the browser-tested live candidate. The combined local path is 9.817% faster,
+which does not establish the requested major publication-speed improvement.
+
+Matched isolated builds of the same optimized source measure 167.197 seconds
+on Python 3.13.17 and 165.689 seconds on Python 3.14.9, with every output file
+identical. The 0.9% difference provides no material interpreter-speed evidence;
+the workflow runtime remains unchanged. The validated optimization checkpoint
+is being prepared for publication while further measured storage/build-cost
+opportunities are evaluated. Its immutable cache delivery, main publication
+and deployment measurement remain pending. The earlier live result is not a
+measurement of this optimization.
+
 
 ## Fifth Sunday after Epiphany catalogue reference, 2026-11-02
 

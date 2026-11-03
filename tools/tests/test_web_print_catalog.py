@@ -215,6 +215,24 @@ class WebPrintCatalogTest(unittest.TestCase):
         self.assertEqual(result["assets"]["assets/gallery/plate.png"]["path"], self.root / self.image_path)
         self.assertFalse(any(path.startswith(PREFIX) for path in result["pages"] | result["assets"]))
 
+    def test_each_catalog_validates_one_fresh_context_shared_only_by_its_projections(self):
+        before = copy.deepcopy(self.publication)
+        with mock.patch.object(web, "RoutingContext", wraps=web.RoutingContext) as construct, \
+                mock.patch.object(web, "project_parts", wraps=web.project_parts) as project:
+            first = self.catalog()
+            self.assertEqual(construct.call_count, 1)
+            first_calls = list(project.call_args_list)
+            self.assertEqual(len(first_calls), 2)
+            context = first_calls[0].kwargs["context"]
+            self.assertTrue(all(call.kwargs["context"] is context for call in first_calls))
+            self.assertTrue(all(set(call.kwargs) == {"entrypoint", "context"} for call in first_calls))
+            second = self.catalog()
+            self.assertEqual(construct.call_count, 2)
+            self.assertIsNot(project.call_args_list[2].kwargs["context"], context)
+            self.assertIs(project.call_args_list[2].kwargs["context"], project.call_args_list[3].kwargs["context"])
+        self.assertEqual(first, second)
+        self.assertEqual(self.publication, before)
+
     def test_source_marks_face_refuses_an_unbound_or_broadened_unicode_range(self):
         path = self.destination / "assets" / (self.marks_id + ".json")
         record = json.loads(path.read_bytes())

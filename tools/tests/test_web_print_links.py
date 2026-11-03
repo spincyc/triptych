@@ -5,6 +5,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 import posixpath
 import sys
+from types import SimpleNamespace
 import unittest
 from urllib.parse import unquote, urlsplit
 
@@ -162,6 +163,150 @@ class WebPrintLinksTest(unittest.TestCase):
         changed, _ = project([{"id": "body", "route": "print/gpt/guide.html", "html": original, "text_sha256": pin}])
         self.assertEqual(changed[0]["html"], original)
         self.assertEqual(changed[0]["text_sha256"], pin)
+
+    def routing_options(self, **kwargs):
+        return {"publication_routes": {}, "site_routes": {}, "repository_paths": set(),
+                "repository_ref": "a" * 40, **kwargs}
+
+    def test_raw_and_context_projection_have_identical_html_events_and_source_semantics(self):
+        entrypoint = "src/gpt/guide/main.tex"
+        parts = self.parts()
+        parts[0]["html"] = parts[0]["html"].replace('</section>',
+            '<p><a href="../../../README.md#intro">Library</a> '
+            '<a href="../../../pdf/gpt/other.pdf#section">Other study</a> '
+            '<a href="research/audit.md#proof">Audit</a> '
+            '<a href="other.html">Source context first</a> '
+            '<a href="https://example.org/witness.pdf#page=4">External witness</a> '
+            '<a href="urn:triptych:source:artifact.fixture#paragraph-4">Source ID</a> '
+            '<a href="bare.example">bare.example</a></p></section>')
+        source = "src/gpt/guide/research/audit.md"
+        options = self.routing_options(
+            publication_routes={"pdf/gpt/other.pdf": "web/gpt/other.html"},
+            site_routes={"README.md": "index.html", "src/gpt/guide/other.html": "library/owned.html",
+                         "print/gpt/other.html": "print/gpt/other.html"},
+            site_ids={"index.html": {"intro"}, "web/gpt/other.html": {"section"}},
+            repository_paths={source}, repository_ids={source: {"proof"}},
+            repository_ref="main", live_repository_navigation=True,
+            repository_origin="https://example.org/public/project/",
+            inert_source_urls={entrypoint: {"bare.example"}})
+        overrides = {"body": "web/gpt/guide.html"}
+        raw = links.project_parts(parts, entrypoint=entrypoint, route_overrides=overrides, **options)
+        frozen = links.project_parts(parts, entrypoint=entrypoint, route_overrides=overrides,
+                                     context=links.RoutingContext(**options))
+        self.assertEqual(raw, frozen)
+        self.assertTrue(raw[1])
+        self.assertIn('href="../../library/owned.html"', raw[0][0]["html"])
+        for before, after in zip(parts, frozen[0], strict=True):
+            for field in ("text_sha256", "ids", "units", "tags"):
+                self.assertEqual(getattr(links.Identity(before["html"]), field),
+                                 getattr(links.Identity(after["html"]), field))
+
+    def test_context_copies_nested_caller_policy_and_rejects_mutation(self):
+        entrypoint = "src/gpt/guide/main.tex"
+        source = "src/gpt/guide/audit.md"
+        options = self.routing_options(
+            publication_routes={"pdf/gpt/other.pdf": "web/gpt/other.html"},
+            site_routes={"README.md": "index.html"}, site_ids={"index.html": {"intro"}},
+            repository_paths={source}, repository_ids={source: {"proof"}},
+            inert_source_urls={entrypoint: {"bare.example"}})
+        part = {"id": "body", "route": "print/gpt/guide.html", "html":
+            '<p><a href="../../../README.md#intro">Library</a> '
+            '<a href="../../../pdf/gpt/other.pdf">Other</a> '
+            '<a href="audit.md#proof">Audit</a> <a href="bare.example">Bare</a></p>'}
+        context = links.RoutingContext(**options)
+        expected = links.project_parts([part], entrypoint=entrypoint, context=context)
+        for key in ("publication_routes", "site_routes", "repository_paths"):
+            options[key].clear()
+        for key in ("site_ids", "repository_ids", "inert_source_urls"):
+            for values in options[key].values():
+                values.clear()
+                values.add("added.example")
+            options[key].clear()
+        options.update(repository_ref="main", live_repository_navigation=True,
+                       repository_origin="https://changed.example/project")
+        self.assertEqual(expected, links.project_parts([part], entrypoint=entrypoint, context=context))
+        with self.assertRaises(TypeError):
+            context._site_routes["README.md"] = "withdrawn.html"
+        with self.assertRaises(AttributeError):
+            context._site_ids["index.html"].add("new")
+        with self.assertRaises(AttributeError):
+            context._inert_source_urls[entrypoint].add("added.example")
+        with self.assertRaises(AttributeError):
+            context._repository_ref = "main"
+        for href in ("added.example", "../../../README.md#added.example", "audit.md#added.example"):
+            added = {**part, "html": '<p><a href="' + href + '">Added policy</a></p>'}
+            with self.subTest(href=href), self.assertRaises(links.LinkError):
+                links.project_parts([added], entrypoint=entrypoint, context=context)
+
+    def test_new_context_reflects_withdrawn_public_routes_and_files(self):
+        cases = (("repository_paths", {"src/gpt/guide/audit.md"}, "audit.md"),
+                 ("site_routes", {"README.md": "index.html"}, "../../../README.md"),
+                 ("publication_routes", {"pdf/gpt/other.pdf": "web/gpt/other.html"}, "../../../pdf/gpt/other.pdf"))
+        for field, values, href in cases:
+            with self.subTest(field=field):
+                options = self.routing_options(**{field: values})
+                part = {"id": "body", "route": "print/gpt/guide.html",
+                        "html": '<p><a href="' + href + '">Withdrawn target</a></p>'}
+                original = links.RoutingContext(**options)
+                options[field].clear()
+                withdrawn = links.RoutingContext(**options)
+                links.project_parts([part], entrypoint="src/gpt/guide/main.tex", context=original)
+                with self.assertRaisesRegex(links.LinkError, "unresolved source-relative"):
+                    links.project_parts([part], entrypoint="src/gpt/guide/main.tex", context=withdrawn)
+
+    def test_context_construction_refuses_invalid_paths_revisions_and_inert_policy(self):
+        cases = (
+            {"site_routes": {"../private": "index.html"}},
+            {"publication_routes": {"pdf/gpt/work.pdf": "/absolute.html"}},
+            {"repository_paths": {"../../private"}}, {"repository_paths": None},
+            {"repository_ref": "main"}, {"repository_ref": "feature/branch", "live_repository_navigation": True},
+            {"repository_ref": "main", "live_repository_navigation": "yes"},
+            {"repository_origin": None},
+            {"site_ids": {"../private": {"anchor"}}}, {"site_ids": {"index.html": "substring"}},
+            {"repository_ids": {"src/gpt/guide/main.tex": {None}}},
+            {"inert_source_urls": {"../private": {"bare.example"}}},
+            {"inert_source_urls": {"src/gpt/guide/main.tex": {"bare.example/../escape"}}},
+        )
+        for invalid in cases:
+            with self.subTest(invalid=invalid), self.assertRaises(links.LinkError):
+                links.RoutingContext(**self.routing_options(**invalid))
+
+    def test_context_rejects_every_mixed_raw_argument_including_none_and_empty(self):
+        context = links.RoutingContext(**self.routing_options())
+        names = ("publication_routes", "site_routes", "repository_paths", "repository_ref", "site_ids",
+                 "repository_ids", "repository_origin", "live_repository_navigation", "inert_source_urls")
+        for name in names:
+            for value in (None, {}):
+                with self.subTest(name=name, value=value), self.assertRaisesRegex(links.LinkError, "mixed"):
+                    links.project_parts(self.parts(), entrypoint="src/gpt/guide/main.tex", context=context, **{name: value})
+        for invalid in (None, SimpleNamespace(**{name: getattr(context, name) for name in context.__slots__})):
+            with self.subTest(context=invalid), self.assertRaisesRegex(links.LinkError, "validated routing context"):
+                links.project_parts(self.parts(), entrypoint="src/gpt/guide/main.tex", context=invalid)
+
+    def test_context_inert_policy_remains_qualified_by_each_current_entrypoint(self):
+        entrypoint = "src/gpt/guide/main.tex"
+        context = links.RoutingContext(**self.routing_options(inert_source_urls={entrypoint: {"bare.example"}}))
+        part = {"id": "body", "route": "print/gpt/guide.html", "html": '<p><a href="bare.example">Bare</a></p>'}
+        changed, _ = links.project_parts([part], entrypoint=entrypoint, context=context)
+        self.assertEqual(Hrefs(changed[0]["html"]).hrefs, [])
+        with self.assertRaisesRegex(links.LinkError, "unresolved source-relative"):
+            links.project_parts([part], entrypoint="src/gpt/another/main.tex", context=context)
+
+    def test_context_retains_per_part_entrypoint_anchor_and_link_refusals(self):
+        context = links.RoutingContext(**self.routing_options())
+        for href in ("#missing", "../../../pdf/gpt/held.pdf", "research/private.md", "javascript:bad()",
+                     "urn:triptych:bad%00id", "/src/private", "../../../../secret"):
+            with self.subTest(href=href), self.assertRaises(links.LinkError):
+                links.project_parts([{"id": "body", "route": "print/gpt/guide.html",
+                    "html": '<p><a href="' + href + '">Words</a></p>'}],
+                    entrypoint="src/gpt/guide/main.tex", context=context)
+        cases = (("../private", {}, self.parts()),
+                 ("src/gpt/guide/main.tex", {"body": "../private"}, self.parts()),
+                 ("src/gpt/guide/main.tex", {}, self.parts() + [self.parts()[0]]),
+                 ("src/gpt/guide/main.tex", {}, [{**self.parts()[0], "text_sha256": "0" * 64}]))
+        for entrypoint, overrides, parts in cases:
+            with self.subTest(entrypoint=entrypoint, overrides=overrides), self.assertRaises(links.LinkError):
+                links.project_parts(parts, entrypoint=entrypoint, route_overrides=overrides, context=context)
 
 
 if __name__ == "__main__":

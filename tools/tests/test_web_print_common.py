@@ -88,6 +88,40 @@ class CommonPrintTests(unittest.TestCase):
         self.assertNotEqual(common.structure_sha256(implicit),common.structure_sha256(explicit))
         self.assertNotEqual(common.structure_sha256('<ol start="1"><li>x</li></ol>'),common.structure_sha256('<ol start="2"><li>x</li></ol>'))
 
+    def test_statistics_preserve_existing_structural_identities(self):
+        vectors=[
+            ('<section><p title="Γ &amp; ☩">Æ &amp; œ\u00a0℣</p></section>',None,
+             'a0f6fa2ce01747df07209657f58489334ecf5233f0a030c49b0e8dc3056acf92'),
+            ('<section>one\r\n<p id="p">two\rthree</p></section>',None,
+             '37c7e1bd42daf35b8d1dac8e5d925e94f782db42f74af4088e36a4d2bbdc04bb'),
+            ('<details open><summary>Title</summary><p>text</p></details>',None,
+             '9bafb7edc5fc806b0eba6262193b106c2545e4a9ad193d51de33efea68ac22e6'),
+            ('<section><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>Γ</mi>'
+             '<mspace width="1em"/></mrow></math><br/></section>',None,
+             'f9ec98be193489fcf1ea7741c5ec4a007211e0efb74bffb32fc6a0516d51672d'),
+            ('<aside>outside</aside><section data-print-part="p"><p id="u" data-print-unit="u">'
+             'Inside</p></section><footer>outside</footer>','p',
+             '4aa3a4121b493b13741883b47551b1eb1a59a81f97c803326ed9b48667dd46f2'),
+            ('<section data-print-unit="root"><p id="u" class="a a b" data-print-unit="u">'
+             'same</p></section>',None,
+             '733275eca2966639ed1103a32e55652bac8ee89d4b16902c94d813a8aac465cd'),
+        ]
+        for source,part,expected in vectors:
+            with self.subTest(part=part,source=source):
+                self.assertEqual(common.structure_sha256(source,part),expected)
+                self.assertEqual(common.part_statistics(source,part)['structure_sha256'],expected)
+
+    def test_statistics_still_reject_malformed_structure_and_duplicate_units(self):
+        for source in ['<section><p>unclosed</section>','<section><span/></section>',
+                       '<section class="a" class="b"></section>','<section></section>outside',
+                       '<section>bad\0text</section>',
+                       '<section><p id="same"></p><p id="same"></p></section>',
+                       '<section data-print-unit="same"><p data-print-unit="same"></p></section>']:
+            with self.subTest(source=source),self.assertRaises(common.PrintError):
+                common.part_statistics(source)
+        with self.assertRaises(common.StructureError):
+            common.part_statistics('<section data-print-part="other"></section>','missing')
+
     def test_compaction_preserves_proof_without_copying_or_exposing_large_audit(self):
         class Ledger(list):
             def __deepcopy__(self,memo):raise AssertionError('large canonical ledger must not be deep-copied')

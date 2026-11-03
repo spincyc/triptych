@@ -1792,7 +1792,7 @@ release attachment, announcement, or promotion.
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
 | `library/traditional-latin-mass.md` | `07986efe5af8dbda01681e038efeadd8cff7160c0310b47c35f7c0c832e42f10` |
-| `release/browser-products.json` | `fc8ad52c86d30b21fce184750ecb26e51a840f94f5bf0a32a523bf1cf773d368` |
+| `release/browser-products.json` | `348d2ad0526095b6dcaa956fe11c3de7b8958c043390d40c46e103b1c70cbccf` |
 | `release/papal-documents.json` | `b20c05f8999ff2391e9c7ad15124d519d710e60ac7aa648b297e70be1eb0e17e` |
 | `release/papal-documents/input-delivery.json` | `2aefdce41b2f33be61f9bd455a407d94497d87c7e5fdef76ed3e562777d39fd6` |
 | `release/papal-documents/input-records.json` | `22e755c5b11d957a3f621b12a895cf7fa059a7ac42edeb882ac856a80388766c` |
@@ -2414,7 +2414,7 @@ release attachment, announcement, or promotion.
 | `scripts/_book_audit.py` | `d41a8afcc9f7a325eba5eafe90cb95aea7282348a4c8ed541689b97f1da8eab8` |
 | `scripts/_browser_cache_bootstrap.py` | `3ef234470837e5399ee82489f59882103fe40c0002fe95a9e9b926040f3449b2` |
 | `scripts/_browser_product_recipes.py` | `b09088bc4874b0118e7b718d15dcc45022a30b7155c0c2c78d1f86f22317ebb4` |
-| `scripts/_browser_products.py` | `7ded50a8ade85012c0f89a6c3a7aff447021d412b331fd77d60f69d3cb116a7c` |
+| `scripts/_browser_products.py` | `e7c733962ad4b4ae488b9aff2936cd13709550ee4d927a5f39e5ffaf1c4ee0bf` |
 | `scripts/_bullarium.py` | `3f6b56609f4aca765cb9c721b1cda8f093ba947de9ab8d6a692ab58c2c02e419` |
 | `scripts/_bullarium_character_geometry.py` | `9ef0769b1cd3cf80e628007dfb520ea22fc29b9c7a2e6d776e635376bfe3b369` |
 | `scripts/_bullarium_corrections.py` | `2d6ef491fd96d157a693e20328beff77dc7e181152eb3b37cdc9ba48009517c4` |
@@ -2484,10 +2484,10 @@ release attachment, announcement, or promotion.
 | `scripts/_standing.py` | `3da768a799a4a076f7f2edb62499f27d348fb3d6e71d5189a4ca663b5f57771a` |
 | `scripts/_tooling.py` | `e189a1ce035bb54ac6ff6126a512076ca395736be2e9a20af2608d57e93f0440` |
 | `scripts/_typeset_papal.py` | `8cc61d277af39c79a60e6d76b8fc53ae8bf6b5fd5eebf606fc0a8308d04e83cc` |
-| `scripts/_web_print.py` | `e30f9ebde8b8f0f39bcb871789e11a69d5a75332ed95c41048d70a069c756c0e` |
+| `scripts/_web_print.py` | `b07bbd4c765579d621465ebb062ca99fcb9800f954ad694efa8775d54e288e35` |
 | `scripts/_web_print_assets.py` | `b35a4e77df309bba646e6427451ba578ad66f019dcc3a5c99d4e5dcf0f59eef9` |
 | `scripts/_web_print_bibles.py` | `d140aec5a5ceba55cef1f8f5959d71f6f8df0f55c1a847af6f6f1f29f6480f5e` |
-| `scripts/_web_print_common.py` | `6e0bfa2d95a89c15d3cc755cef6017b66c7498f1d761ea9a1cd8352ac02e8ced` |
+| `scripts/_web_print_common.py` | `3555c2e6f7a300f8e5fd95989110cda2cfb4184aa2eed5d6b888c4b670e35326` |
 | `scripts/_web_print_curriculum/__init__.py` | `1bb9d8835afd38db56f7a58449b814db1ce097d595b302cd305a174b00b9e3fc` |
 | `scripts/_web_print_curriculum/_literal_coverage.py` | `97294d6f2b116f715aab1ede5f02dec9e620dead1fa39fb57ed3208e8c21c8aa` |
 | `scripts/_web_print_curriculum/assessments.py` | `c328a1c0b264d763f9675ba3118802d6b4053a6b8f5173528b2a91a702b3ae2c` |
@@ -2501,7 +2501,7 @@ release attachment, announcement, or promotion.
 | `scripts/_web_print_dictionaries.py` | `f366eb1de764e31acd2bc8bc4d093a1e6e6444282c009bc33008154caa40ceba` |
 | `scripts/_web_print_dictionary_context.py` | `8bb44a85d5ecf6db90d6c47316dc82c8f11134c4c82aa7bce9733ed7f16f6c63` |
 | `scripts/_web_print_flow.py` | `3c6ec90177f39227dfcd6f41f41f671475488c7a903d85fc684c9e5adacdcee8` |
-| `scripts/_web_print_links.py` | `55b929e07468cef1f999370d9ea969978b651f2b643b732a78aaf936114b6725` |
+| `scripts/_web_print_links.py` | `329105148ee70a42ce8228820c1d8740e1152049fe8426ca7e2d56f3f1838499` |
 | `scripts/_web_print_marks.py` | `d7cfee5c02a077012e9274b65ce3c203328594b81c09741a266fb7d8e4907f6d` |
 | `scripts/_web_print_prepare.py` | `dad0f89b05f0ce285b6aafc771024c1e0921c41b5168ef73ca0b164cc026955e` |
 | `scripts/_web_print_products.py` | `933f61c290eb5623dfc38682f3bc2b38aee33166c03dd829919efba53b0309f8` |
@@ -25259,7 +25259,7 @@ release attachment, announcement, or promotion.
 | `tools/tests/test_browser_harnesses.py` | `0531a601ad7a68c80f934fbb29da1cbf4ce2bac58609314f5b287f51516e4071` |
 | `tools/tests/test_browser_print_selection.py` | `36efb95042fdf03ced0fb93331da26e278c3323b54f5a74a5ebe03ae672e6880` |
 | `tools/tests/test_browser_product_recipes.py` | `57f80f55c51d9f40361f689855856b701fee42315309fdb30f9488e9c6128b22` |
-| `tools/tests/test_browser_products.py` | `3f1e49dfbd673caba213f9a980a56226958779c099f394f4b42bcd5bf8946aa7` |
+| `tools/tests/test_browser_products.py` | `9836bc5b737874be85cf2229c48f9ec1cec63192f74f4538a8836357fef023e6` |
 | `tools/tests/test_browser_psalm_loci.py` | `ec38980b0dc522a08d8332e44f4a6b5d12e0e76581f13e81b5e86faacbeec697` |
 | `tools/tests/test_browser_static.py` | `eb0ef1ef364cd69edd68ca691fa2bd6875d02d46bab3f06fe8a4826c91857543` |
 | `tools/tests/test_browser_truthfulness.py` | `da86321a31b53719af896b83639f5a37a55358fc254017f301adc107a128a54f` |
@@ -25647,14 +25647,14 @@ release attachment, announcement, or promotion.
 | `tools/tests/test_web_edition_pageref.py` | `0c6eca38f2a55a4981bba75140768f83225ee23e970de7a1b9592804bae7ed3c` |
 | `tools/tests/test_web_print_assets.py` | `73cf41d9cf6ebaa4510cf37a827337ac22cd272b7d99b5c0a6c8943e8bb7de05` |
 | `tools/tests/test_web_print_bibles.py` | `0450e03b66a10bae075e2b6a777a0ab35271ba5f9df9ae455953bfcbaffbb252` |
-| `tools/tests/test_web_print_catalog.py` | `1de996d29621783803dfeb7f1667960f6ecb4328208ac33efc81066416ae72d2` |
-| `tools/tests/test_web_print_common.py` | `a707870ae2247e692e2ad5bd6e968cb53072246bfa7268efdf884051d0383d9f` |
+| `tools/tests/test_web_print_catalog.py` | `405d20a8d9adee23f9f2202d6b75900f95df78c758d16a2560b609398a0f2d51` |
+| `tools/tests/test_web_print_common.py` | `4d9743171e999d9a558a41391d2f634520b9da352ac01b8d05a224b0e4249188` |
 | `tools/tests/test_web_print_controller.py` | `4029757007fbffde95229f22439625a791990cdeba927a6c75541dd3955220ee` |
 | `tools/tests/test_web_print_curriculum.py` | `3062a2cf0a2e6d4860f0df73a607fb9c60aab260b1407ee3794c2aed6130f072` |
 | `tools/tests/test_web_print_diagrams.py` | `5d2a810be6b397f2af0db1e79142f53595ab6a49fb70742129e3af0d923c9baf` |
 | `tools/tests/test_web_print_dictionaries.py` | `3bee67ff7cb0bf00a0f57576818066ae0f53196002336b09e30f4b9a9322f5c2` |
 | `tools/tests/test_web_print_flow.py` | `267a95ba1776ad4eac1b4b72c6677a0d221a9fd54dbe0c13f64c73b8e230d6b2` |
-| `tools/tests/test_web_print_links.py` | `e71b93471d2781a2c110550d9870757e9ba08994ebede9288b9924feed7ddb2c` |
+| `tools/tests/test_web_print_links.py` | `7d301a3bdb6f3bb37f9a64541999c08796ceca2f6b4ecda1e350c2e84e3415e2` |
 | `tools/tests/test_web_print_marks.py` | `56f68359d812a373dbbf20b52a5bdedd38c6f9df6aca0ef85873542ebabe4966` |
 | `tools/tests/test_web_print_products.py` | `d73cfe3d738ae678083a49db4cd42c94fe4632f807b5bb1dccf04809e8e15ecc` |
 | `tools/tests/test_web_print_publication.py` | `e1ccca8054703d30930f66ed1cdb749b9d6ce7fb7d5699f534ce56c0a082e914` |

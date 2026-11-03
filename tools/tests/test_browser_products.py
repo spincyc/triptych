@@ -1,6 +1,7 @@
 """Cold regeneration, content identity, and hostile cache filesystem contracts."""
 from contextlib import ExitStack
 import copy
+from collections import Counter
 import json
 import os
 from pathlib import Path
@@ -574,6 +575,159 @@ class BrowserDeliveryTests(unittest.TestCase):
         after = products.input_identity(self.root, "print-editions")
         self.assertIn("src/common/browser-print-assets.json", after["source_paths"])
         self.assertNotEqual(before["sha256"], after["sha256"])
+
+
+def _c7_identity_reference(root, recipes):
+    """Frozen C7 membership/classification algorithm, sharing unchanged IO."""
+    specs = {None: products._input_spec(), **{recipe["id"]: products._input_spec(recipe) for recipe in recipes}}
+    trees = sorted({tree for spec in specs.values() for tree in spec[0]})
+    trees = tuple(tree for tree in trees if not any(tree.startswith(parent + "/") for parent in trees if parent != tree))
+    files = tuple(sorted({name for spec in specs.values() for name in spec[1]}))
+    def discover():
+        found = products._paths(root, trees, files)
+        selected = {}
+        for key, (scopes, exact, excludes) in specs.items():
+            selected[key] = {name for name in found
+                             if (name in exact or any(name.startswith(tree + "/") for tree in scopes)
+                                 or "/" not in name and (name.startswith("requirements") or name.endswith((".lock", "-lock.json"))))
+                             and not any(name == excluded or name.startswith(excluded + "/") for excluded in excludes)}
+        selected[None] = set().union(*selected.values())
+        return selected
+    memberships = discover()
+    external = products.receipt._external_identities(root, memberships[None])
+    memberships[None].update(external)
+    for key in memberships:
+        if key is not None:
+            memberships[key].update(name for name, value in external.items() if value["manifest"] in memberships[key] or name in memberships[key])
+    values = {}
+    for name in sorted(memberships[None]):
+        if name in external:
+            value = {"path": name, "external": external[name]}
+        else:
+            body = products._read(root, name)
+            if name == "release/public-alpha.json":
+                body = products._json(products._policy(body))
+            elif name.startswith("release/rights/"):
+                body = products._rights(body)
+            value = {"path": name, "sha256": products._sha(body), "bytes": len(body)}
+        values[name] = value
+    after = discover()
+    after[None].update(external)
+    for key in after:
+        if key is not None:
+            after[key].update(name for name, value in external.items() if value["manifest"] in after[key] or name in after[key])
+    if memberships != after:
+        raise products.ProductError("canonical input membership changed while hashing")
+    result = {}
+    for key, members in memberships.items():
+        components = {category: [] for category in ("content", "rights", "generator", "lock")}
+        for name in sorted(members):
+            components[products._component(name)].append(values[name])
+        identity = {"schema": products.INPUT_SCHEMA,
+                    **{category: products._sha(products._json(items)) for category, items in components.items()},
+                    "membership": products._sha(products._json(sorted(members))), "count": len(members), "source_paths": sorted(members)}
+        identity["sha256"] = products._sha(products._json({name: value for name, value in identity.items() if name != "source_paths"}))
+        result[key] = identity
+    return result
+
+
+class BrowserIdentityLoopTests(unittest.TestCase):
+    def setUp(self):
+        scratch = Path(__file__).resolve().parents[2] / ".scratch/browser-product-store-performance/tests"
+        scratch.mkdir(parents=True, exist_ok=True)
+        temporary = self.enterContext(tempfile.TemporaryDirectory(dir=scratch))
+        self.root = Path(temporary)
+        for name in ("src/a/live.txt", "src/a/excluded/omit.txt", "src/a/excluded-neighbor/keep.txt",
+                     "src/a/omit.json", "src/a/omit.json-neighbor", "src/a-neighbor/keep.txt",
+                     "src/a/rights-record.json", "scripts/requirements-tool.txt", "guidance/policy.md",
+                     "other/exact.txt", "other/exact.txt-neighbor", "other/nested/package-lock.json",
+                     "requirements-tools.txt", "requirements-custom.txt", "requirements-doc.md",
+                     "requirements-dir/one.txt", "package-lock.json", "Gemfile.lock",
+                     "src/sources/external/artifact.toml"):
+            path = self.root / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("one\n")
+        self.recipes = [
+            self.recipe("a", ["src/a"], ["other/exact.txt", "requirements-doc.md"], ["src/a/excluded", "src/a/omit.json"]),
+            self.recipe("neighbor", ["src/a-neighbor", "src/sources/external"], [], ["requirements-custom.txt"]),
+            self.recipe("empty", [], [], []),
+            self.recipe("other", ["other", "requirements-dir"], [], []),
+        ]
+        self.external = {
+            "src/sources/external/absent.pdf": {"manifest": "src/sources/external/artifact.toml", "sha256": "a" * 64, "bytes": 12},
+            "src/sources/external/rights-original.pdf": {"manifest": "src/sources/external/artifact.toml", "sha256": "b" * 64, "bytes": 13},
+        }
+
+    @staticmethod
+    def recipe(identifier, trees, files, excludes):
+        return {"id": identifier, "input_trees": trees, "input_files": files, "exclude_paths": excludes}
+
+    def test_complete_identity_matches_c7_on_scopes_exclusions_locks_and_externals(self):
+        with patch.object(products.receipt, "_external_identities", return_value=self.external):
+            actual = products._identity_batch(self.root, self.recipes)
+            self.assertEqual(actual, _c7_identity_reference(self.root, self.recipes))
+        a = set(actual["a"]["source_paths"])
+        self.assertIn("src/a/excluded-neighbor/keep.txt", a)
+        self.assertIn("src/a/omit.json-neighbor", a)
+        self.assertNotIn("src/a/excluded/omit.txt", a)
+        self.assertNotIn("src/a/omit.json", a)
+        self.assertNotIn("src/a-neighbor/keep.txt", a)
+        self.assertIn("other/exact.txt", a)
+        self.assertNotIn("other/exact.txt-neighbor", a)
+        self.assertNotIn("other/nested/package-lock.json", a)
+        self.assertIn("requirements-doc.md", actual["empty"]["source_paths"])
+        self.assertNotIn("requirements-dir/one.txt", actual["empty"]["source_paths"])
+        self.assertNotIn("requirements-custom.txt", actual["neighbor"]["source_paths"])
+        self.assertIn("src/sources/external/absent.pdf", actual["neighbor"]["source_paths"])
+        self.assertNotIn("src/sources/external/absent.pdf", a)
+
+    def test_literal_scope_is_not_a_descendant_or_an_exact_file_prefix(self):
+        found = {"scope", "scope/child", "scope/drop", "scope/drop/child", "scope/drop-neighbor/child",
+                 "scope-neighbor/child", "exact", "exact/child", "requirements-note", "project.lock"}
+        recipes = [self.recipe("a", ["scope"], ["exact"], ["scope/drop"]),
+                   self.recipe("b", ["scope-neighbor", "exact"], ["scope"], [])]
+        with patch.object(products, "_paths", return_value=found), \
+             patch.object(products, "_read", side_effect=lambda root, name: name.encode()), \
+             patch.object(products.receipt, "_external_identities", return_value={}):
+            actual = products._identity_batch(self.root, recipes)
+            self.assertEqual(actual, _c7_identity_reference(self.root, recipes))
+        self.assertEqual(set(actual["a"]["source_paths"]), {"scope/child", "scope/drop-neighbor/child", "exact", "requirements-note", "project.lock"})
+        self.assertEqual(set(actual["b"]["source_paths"]), {"scope", "scope-neighbor/child", "exact/child", "requirements-note", "project.lock"})
+
+    def test_classification_runs_once_per_union_member_including_external_inputs(self):
+        with patch.object(products.receipt, "_external_identities", return_value=self.external), \
+             patch.object(products, "_component", wraps=products._component) as component:
+            actual = products._identity_batch(self.root, self.recipes)
+        self.assertEqual(Counter(call.args[0] for call in component.call_args_list),
+                         Counter(actual[None]["source_paths"]))
+
+    def test_both_discoveries_remain_fresh_and_reject_membership_mutation(self):
+        reading = products._read
+        paths = products._paths
+        def mutate(root, name):
+            body = reading(root, name)
+            if name == "src/a/live.txt":
+                (self.root / "src/a/new.txt").write_text("new member")
+            return body
+        with patch.object(products.receipt, "_external_identities", return_value={}), \
+             patch.object(products, "_paths", wraps=paths) as discoveries, \
+             patch.object(products, "_read", side_effect=mutate):
+            with self.assertRaisesRegex(products.ProductError, "membership changed"):
+                products._identity_batch(self.root, self.recipes)
+        self.assertEqual(discoveries.call_count, 2)
+
+    def test_separate_phases_rehash_same_size_restored_mtime_input(self):
+        with patch.object(products.receipt, "_external_identities", return_value={}):
+            before = products._identity_batch(self.root, self.recipes)
+            path = self.root / "src/a/live.txt"
+            stamp = path.stat()
+            path.write_text("two\n")
+            os.utime(path, ns=(stamp.st_atime_ns, stamp.st_mtime_ns))
+            after = products._identity_batch(self.root, self.recipes)
+            self.assertEqual(after, _c7_identity_reference(self.root, self.recipes))
+        self.assertNotEqual(before[None]["sha256"], after[None]["sha256"])
+        self.assertNotEqual(before["a"]["sha256"], after["a"]["sha256"])
+        self.assertEqual(before["neighbor"], after["neighbor"])
 
 
 class BrowserCandidateReuseTests(unittest.TestCase):

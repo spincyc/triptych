@@ -19,7 +19,7 @@ from urllib.parse import urlsplit, urlunsplit
 import _browser_products as core
 from _source_projection_receipt import read_file
 from _web_print_common import inventory, part_statistics, sha256
-from _web_print_links import AnchorRewriter, Identity, project_parts
+from _web_print_links import AnchorRewriter, Identity, RoutingContext, project_parts
 from _web_print_prepare import PREFIX, read_index, read_product, read_asset, need, source_path
 
 SHARED = "src/web/browser/shared/"
@@ -295,6 +295,10 @@ def catalog(root, included, *, browser_data_root, source_pages, site_routes=None
             publication_routes[page["legacy_pdf"]] = route
     known_paths = _public_paths(root, source_inputs | set(site_routes))
     site_ids = _site_anchors(root, site_routes, source_pages)
+    routing = RoutingContext(
+        publication_routes=publication_routes, site_routes=site_routes,
+        site_ids=site_ids, repository_paths=known_paths, repository_ref="main",
+        live_repository_navigation=True, inert_source_urls=INERT_SOURCE_URLS)
     for row in index["products"]:
         product = read_product(data_root, row)
         descriptor = copy.deepcopy(product["descriptor"])
@@ -305,10 +309,7 @@ def catalog(root, included, *, browser_data_root, source_pages, site_routes=None
             _measure(part, expected)
         source_inputs.update(product["source_paths"])
         entrypoint = product["metadata"].get("entrypoint", "src/sources/bibles/print-source.tsv")
-        parts, _ = project_parts(product["parts"], entrypoint=entrypoint,
-                                 publication_routes=publication_routes, site_routes=site_routes,
-                                 site_ids=site_ids, repository_paths=known_paths, repository_ref="main",
-                                 live_repository_navigation=True, inert_source_urls=INERT_SOURCE_URLS)
+        parts, _ = project_parts(product["parts"], entrypoint=entrypoint, context=routing)
         public_assets, used_assets, units = [], set(), []
         for semantic, asset_id in product["asset_ids"].items():
             need(asset_id in asset_routes, "print product refers to an absent held asset")

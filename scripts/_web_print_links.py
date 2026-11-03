@@ -3,11 +3,14 @@
 No converter, Pandoc, TeX, source acquisition or shared-cache write occurs.
 """
 from __future__ import annotations
+from collections.abc import Iterable, Mapping
+from dataclasses import dataclass
 import hashlib
 import html
 from html.parser import HTMLParser
 import posixpath
 import re
+from types import MappingProxyType
 from urllib.parse import quote, unquote, urlsplit, urlunsplit
 
 
@@ -26,6 +29,71 @@ def path(value):
     normalized = posixpath.normpath(value)
     need(normalized != ".." and not normalized.startswith("../"), "path escapes repository")
     return normalized
+
+
+@dataclass(frozen=True, slots=True, init=False, eq=False)
+class RoutingContext:
+    """A private, immutable copy of one held catalog's validated route policy."""
+    _publication_routes: Mapping[str, str]
+    _site_routes: Mapping[str, str]
+    _repository_paths: frozenset[str]
+    _repository_ref: str
+    _site_ids: Mapping[str, frozenset[str]]
+    _repository_ids: Mapping[str, frozenset[str]]
+    _repository_origin: str
+    _live_repository_navigation: bool
+    _inert_source_urls: Mapping[str, frozenset[str]]
+
+    def __init__(self, *, publication_routes, site_routes, repository_paths,
+                 repository_ref, site_ids=None, repository_ids=None,
+                 repository_origin="https://github.com/spincyc/triptych",
+                 live_repository_navigation=False, inert_source_urls=None):
+        need(type(live_repository_navigation) is bool,
+             "live source navigation requires an explicit boolean opt-in")
+        need(isinstance(repository_ref, str) and (
+            re.fullmatch(r"[0-9a-f]{40}", repository_ref)
+            or live_repository_navigation and repository_ref == "main"),
+            "source-repository links require an exact published commit or explicitly enabled main navigation")
+        need(isinstance(repository_origin, str), "source-repository origin must be a string")
+        need(isinstance(repository_paths, Iterable) and not isinstance(repository_paths, (str, bytes)),
+             "public repository paths must be a collection of paths")
+
+        def routes(values):
+            need(isinstance(values, Mapping), "route policy must be a mapping")
+            return MappingProxyType({path(key): path(value) for key, value in values.items()})
+
+        def identifiers(values):
+            values = {} if values is None else values
+            need(isinstance(values, Mapping), "anchor policy must be a mapping")
+            copied = {}
+            for route, ids in values.items():
+                need(path(route) == route and isinstance(ids, (list, tuple, set, frozenset))
+                     and all(isinstance(identifier, str) for identifier in ids),
+                     "invalid route-qualified anchor policy")
+                copied[route] = frozenset(ids)
+            return MappingProxyType(copied)
+
+        inert_source_urls = {} if inert_source_urls is None else inert_source_urls
+        need(isinstance(inert_source_urls, dict), "inert source URLs require an explicit source-qualified map")
+        inert = {}
+        for source, targets in inert_source_urls.items():
+            need(path(source) == source and isinstance(targets, (list, tuple, set, frozenset))
+                 and all(isinstance(target, str) and re.fullmatch(
+                     r"[a-z0-9][a-z0-9.-]*\.[a-z]{2,}(?:/[A-Za-z0-9][A-Za-z0-9._~-]*)*", target)
+                         for target in targets), "invalid source-qualified inert URL policy")
+            inert[source] = frozenset(targets)
+        object.__setattr__(self, "_publication_routes", routes(publication_routes))
+        object.__setattr__(self, "_site_routes", routes(site_routes))
+        object.__setattr__(self, "_repository_paths", frozenset(path(value) for value in repository_paths))
+        object.__setattr__(self, "_repository_ref", repository_ref)
+        object.__setattr__(self, "_site_ids", identifiers(site_ids))
+        object.__setattr__(self, "_repository_ids", identifiers(repository_ids))
+        object.__setattr__(self, "_repository_origin", repository_origin)
+        object.__setattr__(self, "_live_repository_navigation", live_repository_navigation)
+        object.__setattr__(self, "_inert_source_urls", MappingProxyType(inert))
+
+
+_UNSET = object()
 
 
 class Identity(HTMLParser):
@@ -141,10 +209,11 @@ class AnchorRewriter(HTMLParser):
         return output
 
 
-def project_parts(parts, *, entrypoint, publication_routes, site_routes,
-                  repository_paths, repository_ref, site_ids=None, repository_ids=None,
-                  route_overrides=None, repository_origin="https://github.com/spincyc/triptych",
-                  live_repository_navigation=False, inert_source_urls=None):
+def project_parts(parts, *, entrypoint, context=_UNSET, publication_routes=_UNSET,
+                  site_routes=_UNSET, repository_paths=_UNSET, repository_ref=_UNSET,
+                  site_ids=_UNSET, repository_ids=_UNSET, route_overrides=None,
+                  repository_origin=_UNSET, live_repository_navigation=_UNSET,
+                  inert_source_urls=_UNSET):
     """Project links after splitting and before computing HTML transport hashes.
 
     Route/admission maps are supplied by the publisher, not inferred from a
@@ -165,27 +234,35 @@ def project_parts(parts, *, entrypoint, publication_routes, site_routes,
     wording but lose href, with a source-URL title if no title already exists.
     This records an unresolved source URL without inventing a protocol. Other
     bare hosts and the same literal outside its declared source still refuse.
+
+    A held catalog may supply one RoutingContext instead of the raw global
+    policy arguments. Every entrypoint, part, anchor and link is still checked
+    on each projection. Raw arguments and a context must never be mixed.
     """
     entrypoint = path(entrypoint)
-    need(type(live_repository_navigation) is bool, "live source navigation requires an explicit boolean opt-in")
-    need(isinstance(repository_ref, str) and (
-        re.fullmatch(r"[0-9a-f]{40}", repository_ref)
-        or live_repository_navigation and repository_ref == "main"),
-        "source-repository links require an exact published commit or explicitly enabled main navigation")
+    raw = (publication_routes, site_routes, repository_paths, repository_ref,
+           site_ids, repository_ids, repository_origin, live_repository_navigation,
+           inert_source_urls)
+    if context is not _UNSET:
+        need(type(context) is RoutingContext, "expected a validated routing context")
+        need(all(value is _UNSET for value in raw), "routing context cannot be mixed with raw policy arguments")
+    else:
+        need(all(value is not _UNSET for value in raw[:4]), "raw routing requires all route maps, paths and revision")
+        context = RoutingContext(
+            publication_routes=publication_routes, site_routes=site_routes,
+            repository_paths=repository_paths, repository_ref=repository_ref,
+            site_ids=None if site_ids is _UNSET else site_ids,
+            repository_ids=None if repository_ids is _UNSET else repository_ids,
+            repository_origin="https://github.com/spincyc/triptych" if repository_origin is _UNSET else repository_origin,
+            live_repository_navigation=False if live_repository_navigation is _UNSET else live_repository_navigation,
+            inert_source_urls=None if inert_source_urls is _UNSET else inert_source_urls)
     index = anchor_index(parts)
-    site_ids, repository_ids = site_ids or {}, repository_ids or {}
+    publication_routes, site_routes = context._publication_routes, context._site_routes
+    repository_paths, repository_ref = context._repository_paths, context._repository_ref
+    site_ids, repository_ids = context._site_ids, context._repository_ids
+    repository_origin = context._repository_origin
     route_overrides = route_overrides or {}
-    site_routes = {path(k): path(v) for k, v in site_routes.items()}
-    publication_routes = {path(k): path(v) for k, v in publication_routes.items()}
-    repository_paths = {path(p) for p in repository_paths}
-    inert_source_urls = {} if inert_source_urls is None else inert_source_urls
-    need(isinstance(inert_source_urls, dict), "inert source URLs require an explicit source-qualified map")
-    for source, targets in inert_source_urls.items():
-        need(path(source) == source and isinstance(targets, (list, tuple, set, frozenset))
-             and all(isinstance(target, str) and re.fullmatch(
-                 r"[a-z0-9][a-z0-9.-]*\.[a-z]{2,}(?:/[A-Za-z0-9][A-Za-z0-9._~-]*)*", target)
-                     for target in targets), "invalid source-qualified inert URL policy")
-    inert_targets = set(inert_source_urls.get(entrypoint, ()))
+    inert_targets = context._inert_source_urls.get(entrypoint, frozenset())
     original_routes = {part["route"]: part["id"] for part in parts}
     events, projected = [], []
     for part in parts:

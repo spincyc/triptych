@@ -274,17 +274,22 @@ def _identity_batch(root: Path, recipes=None) -> dict:
     root = _safe_directory(root)
     recipes = _recipes() if recipes is None else recipes
     specs = {None: _input_spec(), **{recipe["id"]: _input_spec(recipe) for recipe in recipes}}
+    selectors = {
+        key: (tuple(scope + "/" for scope in scopes), frozenset(exact),
+              frozenset(excludes), tuple(excluded + "/" for excluded in excludes))
+        for key, (scopes, exact, excludes) in specs.items()
+    }
     trees = sorted({tree for spec in specs.values() for tree in spec[0]})
     trees = tuple(tree for tree in trees if not any(tree.startswith(parent + "/") for parent in trees if parent != tree))
     files = tuple(sorted({name for spec in specs.values() for name in spec[1]}))
     def discover():
         found = _paths(root, trees, files)
         selected = {}
-        for key, (scopes, exact, excludes) in specs.items():
+        for key, (prefixes, exact, excludes, excluded_prefixes) in selectors.items():
             selected[key] = {name for name in found
-                             if (name in exact or any(name.startswith(tree + "/") for tree in scopes)
+                             if (name in exact or name.startswith(prefixes)
                                  or "/" not in name and (name.startswith("requirements") or name.endswith((".lock", "-lock.json"))))
-                             and not any(name == excluded or name.startswith(excluded + "/") for excluded in excludes)}
+                             and name not in excludes and not name.startswith(excluded_prefixes)}
         selected[None] = set().union(*selected.values())
         return selected
     memberships = discover()
@@ -299,6 +304,7 @@ def _identity_batch(root: Path, recipes=None) -> dict:
     for key in memberships:
         if key is not None:
             memberships[key].update(name for name, value in external.items() if value["manifest"] in memberships[key] or name in memberships[key])
+    categories = {name: _component(name) for name in memberships[None]}
     values = {}
     for name in sorted(memberships[None]):
         if name in external:
@@ -325,7 +331,7 @@ def _identity_batch(root: Path, recipes=None) -> dict:
     for key, members in memberships.items():
         components = {category: [] for category in ("content", "rights", "generator", "lock")}
         for name in sorted(members):
-            components[_component(name)].append(values[name])
+            components[categories[name]].append(values[name])
         identity = {"schema": INPUT_SCHEMA, **{category: _sha(_json(items)) for category, items in components.items()},
                     "membership": _sha(_json(sorted(members))), "count": len(members), "source_paths": sorted(members)}
         identity["sha256"] = _sha(_json({name: value for name, value in identity.items() if name != "source_paths"}))
