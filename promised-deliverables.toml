@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-propers-main-publication-2026-11-02"
 owner = "PROJECT-WORK.md"
 promise = "Publish the validated Sunday and landing-table work to origin/main through a normal fast-forward and verify the automatic Pages workflow and affected production routes."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "reviewed-main-fast-forward"
@@ -15,7 +15,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "automatic-pages-verification"
   criterion = "The automatic Pages run for the published source is observed to succeed and production landing, proper reader and print-option routes are verified, with exact source and deployment evidence retained."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]

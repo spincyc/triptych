@@ -11,7 +11,7 @@ Last reconciled: 2026-11-02.
 
 <!-- promised-deliverable: gpt-propers-main-publication-2026-11-02 -->
 
-**In progress.** The maintainer explicitly requested publication to `main`
+**Complete: main published and production verified.** The maintainer explicitly requested publication to `main`
 after the validated feature checkpoint `34f165c33af0eb6c3dadaa3f46b806a07ca2c9a7`.
 This adds authority to update `origin/main` and observe its automatic Pages
 workflow. Keep local commits on `feature/propers/codex`; do not switch branches,
@@ -29,8 +29,8 @@ Main and the feature remote were both verified at
 `08c10e59a88aec944654e5f94efd43ec30ec6c55` after the normal fast-forward.
 The automatic Pages run is
 [41555590855](https://github.com/spincyc/triptych/actions/runs/41555590855).
-Deployment verification remains in progress; no live-publication claim is
-made until the workflow and production routes are checked.
+The first run was superseded by the budget-only checkpoint below. The final
+workflow and production verification outcomes are recorded here.
 
 The predecessor Pages run `41546329370` passed its build after 25 minutes but
 was canceled during verification. GitHub records the explicit failure
@@ -39,6 +39,30 @@ Pages job timeout from 30 to 60 minutes; keep all steps and checks unchanged.
 This workflow-only budget adjustment does not change any reviewed producer,
 publication input, receipt, descriptor or asset. Replace the superseded
 automatic run with the run from that ordinary main push.
+
+The budget-only checkpoint is `57fa4f39b3b19eb7776adfd43d80a7080bb77795`,
+verified on both main and the feature branch. Its automatic Pages run is
+[41555998948](https://github.com/spincyc/triptych/actions/runs/41555998948).
+The earlier publication run `41555590855` is intentionally superseded and
+cancellation was requested; this is not an artifact-validation failure.
+
+The automatic run `41555998948` succeeded: source validation and generation
+24m 53s, artifact verification 5m 34s, total deployment job 33m 58s. All steps,
+including cache saving, upload and Pages deployment, passed. The exact browser
+product cache is now saved under the unchanged aggregate identity
+`7455dd9ff099aa3641207413ada1ec3ddb132ca042ae97fa8ff62d2101fc1c33`.
+
+Production at [mystago.gy](https://mystago.gy/) was checked after deployment:
+all eight sampled HTML routes (home, TLM catalogue and the six proper-66
+reader/print-option routes) returned HTTP 200. Both live landing assets match
+the reviewed repository bytes exactly. The catalogue includes all three
+source-first proper destinations. The HTTP proof digest is
+`ffab24825f0673fcde32f509aacc358cb038328dc5eb0941ed43d083246ef329`. Both publication requirements pass.
+
+The follow-up completion commit changes only this register and the ledger;
+all published application, source, descriptor, receipt, asset and workflow
+bytes remain exactly those of the successful source deployment. A later
+metadata-only automatic run does not change the reviewed reader inputs.
 
 ## Sunday and catalogue reconciliation with source-first main, 2026-11-02
 
