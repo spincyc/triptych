@@ -362,6 +362,7 @@ FIXED_ARTIFACT_INPUT_PATHS = {
     "scripts/_proper_components.py",
     "scripts/_markdown_render.py",
     "scripts/_document_schema.py",
+    "scripts/_publication_reader.py",
     "scripts/_print_document.py",
     "scripts/_print_catalog.py",
     "scripts/_native_tex_publication.py",
@@ -4331,8 +4332,21 @@ def rewrite_links(
             if rewritten is None:
                 restricted_record = re.match(r"^(?:\.\./)*(?:src|guidance)/", target) is not None
                 return "" if catalog_entry and restricted_record else label
-            if PDF_LINK_RE.search(target):
-                label = re.sub(r"\bPDF\b", "Generate PDF" if native_tex_declared() else "print view", label)
+            pdf_link = PDF_LINK_RE.search(target)
+            if pdf_link:
+                legacy_proper_labels = {
+                    "PDF", "Full PDF", "Full", "Research PDF", "Full print view",
+                    "Synthesis PDF", "Synthesis print view", "Concise print options",
+                    "Homily PDF", "Homily print view", "Homily print options",
+                }
+                declaration = (publication_source_records().get(pdf_link.groups())
+                               if "/propers/" in target and label in legacy_proper_labels else None)
+                if declaration and declaration[0]["kind"].startswith("proper-"):
+                    from _publication_reader import treatment_label
+                    label = treatment_label(declaration[1]["role"], declaration[0]["kind"])
+                else:
+                    label = re.sub(r"\bPDF\b", "Generate PDF" if native_tex_declared()
+                                   else "Print / Save as PDF", label)
             return f"[{label}]({rewritten})"
 
         rewritten_line = MARKDOWN_LINK_RE.sub(replace, line)
@@ -4779,6 +4793,7 @@ def render_page(
         content, print_head, print_body = decorate_reader(
             content, output_relative, inventory, relative_link=relative_link,
         )
+    content, reader_head, reader_body = publication_reader_shell(content, output_relative)
     return wrap_in_layout(
         source_relative,
         output_relative,
@@ -4788,11 +4803,11 @@ def render_page(
         content,
         preview,
         authorization,
-        head_extra=print_head,
+        head_extra=print_head + reader_head,
         body_extra=(
             '<script src="' + relative_link(output_relative, "shared/catalogue-navigation.js")
             + '"></script>' if catalogue else ""
-        ) + print_body,
+        ) + print_body + reader_body,
     )
 
 
@@ -5507,11 +5522,43 @@ def declared_print_binary_asset(relative: str) -> bool:
                            or (relative.endswith(".woff2") and asset.get("role") == "font" and asset.get("mime") == "font/woff2")))
 
 
+def publication_reader_contexts() -> dict:
+    """One navigation projection of the current admitted, structured outputs."""
+    def derive():
+        from _publication_reader import contexts
+        manifest = load_manifest()
+        admitted = set(included_publications(publication_map(manifest), False))
+        inventory = web_print_catalog()
+        routes = set(inventory["pages"]) | set(included_document_pages(admitted).values())
+        return contexts(publication_source_records(), admitted, inventory["products"], routes)
+    return held_source_inventory("publication-reader-contexts", derive)
+
+
+def publication_reader_shell(content: str, relative: str, output_id: str = "") -> tuple[str, str, str]:
+    """Add screen navigation outside the exact canonical content/print parts."""
+    parts = PurePosixPath(relative).parts
+    if len(parts) < 3 or parts[0] not in {"web", "print"}:
+        return content, "", ""
+    _, providers = declared_providers(load_manifest())
+    if parts[1] not in providers:
+        return content, "", ""
+    provider, separator, leaf = output_id.removeprefix("publication:").partition("/") if output_id else (parts[1], "/", "/".join(parts[2:]).removesuffix(".html"))
+    context = publication_reader_contexts().get((provider, leaf)) if separator else None
+    if context is None:
+        return content, "", ""
+    from _publication_reader import wrap
+    head = '<link rel="stylesheet" href="' + html.escape(relative_link(relative, "shared/publication-reader.css"), quote=True) + '">'
+    body = ''.join('<script src="' + html.escape(relative_link(relative, "shared/" + name), quote=True) + '" defer></script>'
+                   for name in ("catalogue-navigation.js", "publication-reader.js"))
+    return wrap(content, context, relative), head, body
+
+
 def render_web_print_page(relative: str, page: dict, preview: bool, authorization: dict) -> str:
+    content, reader_head, reader_body = publication_reader_shell(page["html"], relative, page.get("output_id", ""))
     rendered = wrap_in_layout(
         relative, relative, page_classes(relative, relative), page["title"],
-        breadcrumb(relative, relative), page["html"], preview, authorization,
-        head_extra=page.get("head_extra", ""), body_extra=page.get("body_extra", ""),
+        breadcrumb(relative, relative), content, preview, authorization,
+        head_extra=page.get("head_extra", "") + reader_head, body_extra=page.get("body_extra", "") + reader_body,
     )
     if len(rendered.encode("utf-8")) > PREVIEW_DOCUMENT_LIMIT:
         raise ReleaseError(f"{relative}: complete print HTML exceeds the existing 1 MB budget")

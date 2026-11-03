@@ -1788,7 +1788,7 @@ release attachment, announcement, or promotion.
 | `library/law-and-church-discipline.md` | `23c168cb77e2efd6735778a57500f1b1b287f785c1bc7baf57a461dd96a7a744` |
 | `library/liturgy.md` | `ceddcd0f3e4c3c164917299ad7fc4fcedea6552d835687f55747787dc338a334` |
 | `library/mariology.md` | `01b55285b49898753023f97480dd32577bed1174684bc257fbfdc84f1c73362e` |
-| `library/novus-ordo-liturgy.md` | `654073381934f1e266531045327f8138d18c582038d35714a4e16a9d83bbbb63` |
+| `library/novus-ordo-liturgy.md` | `ee85f7990bad2f31725f0ff8243f72758791e2d36e9c7bf4be846ac6e1ce6980` |
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
 | `library/traditional-latin-mass.md` | `07986efe5af8dbda01681e038efeadd8cff7160c0310b47c35f7c0c832e42f10` |
@@ -2480,6 +2480,7 @@ release attachment, announcement, or promotion.
 | `scripts/_proper_target_overrides.py` | `5f002ec8ee444c26c17399f5dcf7c761203d099bcd42a871d5fbf112bb4b1e66` |
 | `scripts/_psalms.py` | `87312f2aef24dfa0990bceec392f6d8ec264a2593555fe46ff72ec80849bacf7` |
 | `scripts/_psalter.py` | `9e430145e6ef0abb4bfa8654112fac59d1ff67e6f77dddd3459b12ed0c94e4fc` |
+| `scripts/_publication_reader.py` | `36bfb001459604bf06313648d38a5e1d46be1312e9c25a78d8339cd5fe5cb7ac` |
 | `scripts/_reachability.py` | `030736a834d89ac88bf4324626f60faba9659ab54397f8b027b8ab52de3ab26b` |
 | `scripts/_recensions.py` | `9c7e049d58a04d3c2bbd92cd4d04ce7e3124e92eb75ab2741109692a3caf0bef` |
 | `scripts/_scanning.py` | `ac55e8cff701b5d95bf3e582d9b09c49ec3614a7a1a97921dde74f94203108d1` |
@@ -25108,7 +25109,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/scripture/track.js` | `6353c665777bc7bffc6d2f020644dc507a047f703a759eb7375ccaf378f16b42` |
 | `src/web/browser/shared/browser-core.css` | `52694dd9bde2ab3a666eb690dcc6b1ad8597a6aa1d679344a131916ed8062b56` |
 | `src/web/browser/shared/browser-core.js` | `81085c3eb41662ffdb780dc8b4bc180eee712f33637040e1c3512617456c5d18` |
-| `src/web/browser/shared/catalogue-navigation.js` | `1a8fe2d0fee5eec259c608abe1edbe022abcbe847410b0f0a47e9332e8a6149b` |
+| `src/web/browser/shared/catalogue-navigation.js` | `0487d8b82c6fc1114745a55498336e8feeba9dabde088c2bf19bc241e6569e24` |
 | `src/web/browser/shared/fonts/OFL-Junicode.txt` | `6078ed582d53a416f761fd2fdeb384320b69191bf316234c21aabe71e2416822` |
 | `src/web/browser/shared/fonts/triptych-punctus-elevatus.woff2` | `93fdffe7318755b04f77de90b1bec035513b60a8c4315369344ea9aee9b4abac` |
 | `src/web/browser/shared/native-print.css` | `d523407924a413d3c88133aec6312aec3df296af80a98140c2c84637ce9bf7a5` |
@@ -25263,6 +25264,7 @@ release attachment, announcement, or promotion.
 | `tools/tests/postconciliar_ordinary_source_frames.cjs` | `b1e951236235192b0ea6e00b974e76d91f741790edfc3ee63634851a5152c1dc` |
 | `tools/tests/pre1955_public_witness_context.cjs` | `d9a1ae70baf26bb8a1d32b98925894ee5e6945c4670c6214fc31607f6dac2269` |
 | `tools/tests/propers_reader_integration_browser.mjs` | `49ac12b9be01efed1c02c4963e13b1fd470cae52d2145f558e60ea7a887c973a` |
+| `tools/tests/publication_reader.cjs` | `38f3ded479c29223c198330db2a93c4686ee4d9bb5ab32aef140b1dd1ee90290` |
 | `tools/tests/reader_alternative_compare_chromium.mjs` | `500fe92c38320de4c2e093f3ebcdd05cf180caaec9794f3927106dec99af14f0` |
 | `tools/tests/reader_bible_compare_chromium.mjs` | `08436be4de2a8ac1d36948b4af9e39ff8ea430edc3515766fbc4bbc56ecfe0d0` |
 | `tools/tests/reader_coverage_fixture.mjs` | `5f67b9eabec3a74810e55309f11f7234e17ca93e25fdb3905ca4ba6b32f11dc8` |
@@ -25585,6 +25587,8 @@ release attachment, announcement, or promotion.
 | `tools/tests/test_public_alpha_source_first.py` | `be8e7a1b83e03c916b0300a418d4107278368e7de26fb04b752748dbbad2552b` |
 | `tools/tests/test_public_alpha_web_print.py` | `d55f06efeb52931e183ba91fced97dc94ba26ccb277c2b0cd12edcbd0fe8c05c` |
 | `tools/tests/test_publication_links.py` | `2dd10765a4abc50ff77d05ef863541634f9606dfd291b5303c383ef6611b9e40` |
+| `tools/tests/test_publication_reader.py` | `1f791738c47662b703f4be99bc6631a95d78b567c3774511c6d45370b79fe9f2` |
+| `tools/tests/test_publication_reader_browser.py` | `d3a1fd794ed2f6cc63926d65dfd6b3d92d795c9dd33baba8787e1aebf483e8d0` |
 | `tools/tests/test_qualified_latin_basis.py` | `b6f2c3538bf2fc377561d13f444a75f16b5ea0691e474f3c697ab1207149436f` |
 | `tools/tests/test_qualified_public_projection.py` | `5334be3c38c1cd3649b59a65cb3bc1a64f7aa7428c8652237a102339bb2f8130` |
 | `tools/tests/test_reader_alternative_compare.py` | `6ac7628cf335b9816810f4003761ade8986bcb73893cd1ff52992a868acbf5b6` |
