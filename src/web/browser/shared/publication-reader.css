@@ -1,0 +1,612 @@
+/* Publication reading surface. This module is deliberately independent of the
+   Missal instrument and of web-print.css: canonical print preparation keeps its
+   own geometry and content identity. All reading adaptations are screen-only. */
+@media screen {
+  html:has(.publication-reader) { scroll-behavior: auto; }
+
+  body:has(.publication-reader) {
+    background: var(--paper, #ece7de);
+  }
+
+  body:has(.publication-reader) > .site-header {
+    max-width: 88rem;
+    padding-inline: clamp(1rem, 3vw, 2rem);
+  }
+
+  .page-shell.reading:has(.publication-reader) {
+    width: calc(100% - 3rem);
+    max-width: 88rem;
+    margin: .75rem auto 2.5rem;
+    padding: 1.25rem clamp(1.25rem, 2.5vw, 2rem) 3.5rem;
+    border: 1px solid var(--line, #d2c8ba);
+    border-top: 3px solid var(--section-accent, var(--rubric, #8f3540));
+    border-radius: .2rem;
+    background: var(--surface, #f8f5ef);
+    box-shadow: none;
+  }
+
+  .page-shell:has(.publication-reader) > .breadcrumb {
+    margin-block: 0 .85rem;
+    font-size: .78rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .publication-reader {
+    --reader-panel: var(--surface, #f8f5ef);
+    --reader-ink: var(--ink, #302d29);
+    --reader-muted: var(--muted, #6a635a);
+    --reader-line: var(--line, #d2c8ba);
+    --reader-accent: var(--section-ink, var(--rubric-dark, #6f2831));
+    --reader-focus: #1f5d8b;
+    --reader-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --reader-toolbar-height: 5.25rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    min-width: 0;
+    color: var(--reader-ink);
+  }
+
+  .publication-reader [hidden] { display: none !important; }
+
+  .publication-reader :is(a, button, select, input, summary):focus-visible {
+    outline: 3px solid var(--reader-focus);
+    outline-offset: 3px;
+  }
+
+  .publication-reader :is(button, select, input) {
+    max-width: 100%;
+    min-height: 2.75rem;
+    border: 1px solid var(--reader-muted);
+    border-radius: .2rem;
+    background: var(--reader-panel);
+    color: var(--reader-ink);
+    font: inherit;
+  }
+
+  .publication-reader :is(button, select) { cursor: pointer; }
+  .publication-reader button { padding: .6rem .9rem; }
+  .publication-reader button:disabled { cursor: wait; }
+
+  .publication-reader__toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 12;
+    display: flex;
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .65rem 1.25rem;
+    padding: .8rem 0;
+    border-block: 1px solid var(--reader-line);
+    background: var(--reader-panel);
+    font: 500 .85rem/1.4 var(--reader-sans);
+  }
+
+  .publication-reader__browse {
+    display: flex;
+    flex: 1 1 34rem;
+    align-items: end;
+    gap: .5rem;
+    min-width: 0;
+  }
+
+  .publication-reader__browse > a,
+  .publication-reader__browse > span[aria-disabled] {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: .6rem .8rem;
+    border: 1px solid var(--reader-line);
+    border-radius: .2rem;
+    color: var(--reader-ink);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  .publication-reader__browse > span[aria-disabled] {
+    color: var(--reader-muted);
+    border-style: dashed;
+  }
+
+  .publication-reader__document {
+    display: grid;
+    flex: 1 1 24rem;
+    gap: .3rem;
+    min-width: 0;
+  }
+
+  .publication-reader__browse label {
+    color: var(--reader-muted);
+    font-size: .72rem;
+    font-weight: 650;
+    letter-spacing: .035em;
+  }
+
+  .publication-reader__browse select {
+    width: 100%;
+    min-width: 0;
+    padding: .55rem 2rem .55rem .65rem;
+    font: 550 .88rem/1.4 var(--reader-sans);
+    text-overflow: ellipsis;
+  }
+
+  .publication-reader__actions {
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .4rem .75rem;
+    min-width: 0;
+  }
+
+  .publication-reader__actions button { border-color: var(--reader-line); }
+
+  .publication-reader [data-reader-status] {
+    max-width: 23rem;
+    color: var(--reader-muted);
+    font-size: .78rem;
+    overflow-wrap: anywhere;
+  }
+
+  .publication-reader [data-reader-status]:empty { display: none; }
+
+  .publication-reader [data-reader-progress] {
+    position: absolute;
+    inset: auto 0 -1px;
+    display: block;
+    width: 100%;
+    height: 2px;
+    overflow: hidden;
+    border: 0;
+    border-radius: 0;
+    appearance: none;
+    background: transparent;
+    color: var(--reader-accent);
+  }
+
+  .publication-reader [data-reader-progress]::-webkit-progress-bar { background: transparent; }
+  .publication-reader [data-reader-progress]::-webkit-progress-value { background: var(--reader-accent); }
+  .publication-reader [data-reader-progress]::-moz-progress-bar { background: var(--reader-accent); }
+
+  .publication-reader__share-field {
+    display: grid;
+    flex: 1 1 100%;
+    gap: .3rem;
+    min-width: 0;
+    font-size: .8rem;
+  }
+
+  .publication-reader__share-field input {
+    width: 100%;
+    padding: .55rem .65rem;
+    font-size: .8rem;
+  }
+
+  .publication-reader__treatments {
+    display: flex;
+    grid-column: 1;
+    grid-row: 2;
+    flex-wrap: wrap;
+    gap: .2rem 1.5rem;
+    margin: 0 0 1.75rem;
+    padding: .35rem 0 0;
+    border: 0;
+    border-bottom: 1px solid var(--reader-line);
+    font: 550 .85rem/1.4 var(--reader-sans);
+  }
+
+  .publication-reader__identity {
+    display: flex;
+    grid-column: 2;
+    grid-row: 2;
+    align-items: center;
+    margin: 0 0 1.75rem;
+    padding: .65rem 0 .65rem 1.25rem;
+    border-bottom: 1px solid var(--reader-line);
+    color: var(--reader-muted);
+    font: .75rem/1.5 var(--reader-sans);
+  }
+
+  .publication-reader__treatments a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: .65rem .1rem;
+    border-bottom: 3px solid transparent;
+    color: var(--reader-muted);
+    text-decoration: none;
+  }
+
+  .publication-reader__treatments a[aria-current="page"] {
+    border-bottom-color: var(--reader-accent);
+    color: var(--reader-accent);
+    font-weight: 700;
+  }
+
+  .publication-reader__layout {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  /* Closing Contents releases its column as well as hiding its links. */
+  .publication-reader__layout:has(> .publication-reader__toc:not([open])) {
+    grid-template-columns: 7rem minmax(0, 1fr);
+  }
+
+  .publication-reader__layout:not(:has(> .publication-reader__toc)) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .publication-reader__toc {
+    position: sticky;
+    top: calc(var(--reader-toolbar-height) + 1rem);
+    min-width: 0;
+    max-height: calc(100dvh - var(--reader-toolbar-height) - 2rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    font: .8rem/1.5 var(--reader-sans);
+  }
+
+  .publication-reader__toc summary {
+    min-height: 2.75rem;
+    padding: .75rem .35rem;
+    border-bottom: 1px solid var(--reader-line);
+    color: var(--reader-ink);
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .publication-reader__toc summary::marker { color: var(--reader-accent); }
+
+  .publication-reader__toc nav {
+    display: block;
+    margin-top: .5rem;
+    border: 0;
+    font: inherit;
+  }
+
+  .publication-reader__toc :is(ol, ul) {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .publication-reader__toc li + li { margin-top: .1rem; }
+  .publication-reader__toc .publication-reader__section-level-2:not(:first-child) { margin-top: .5rem; }
+  .publication-reader__toc .publication-reader__section-level-3 { padding-inline-start: .55rem; }
+  .publication-reader__toc .publication-reader__section-level-4 { padding-inline-start: 1.1rem; }
+  .publication-reader__toc :is(ol, ul) :is(ol, ul) { padding-inline-start: .7rem; }
+
+  .publication-reader__toc a {
+    display: block;
+    min-height: 2.75rem;
+    padding: .6rem .65rem;
+    border-left: 2px solid transparent;
+    color: var(--reader-muted);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  .publication-reader__toc a[aria-current="location"] {
+    border-left-color: var(--reader-accent);
+    background: color-mix(in srgb, var(--reader-accent) 6%, var(--reader-panel));
+    color: var(--reader-accent);
+    font-weight: 650;
+  }
+
+  .publication-reader__content {
+    min-width: 0;
+    padding-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    overflow-wrap: break-word;
+  }
+
+  .publication-reader__content [id] {
+    scroll-margin-top: calc(var(--reader-toolbar-height) + 1.5rem);
+  }
+
+  .publication-reader__content h1 {
+    margin: .75rem 0 1.1rem;
+    color: var(--reader-ink);
+    font-size: clamp(2rem, 3.2vw, 3.25rem);
+    line-height: 1.12;
+    letter-spacing: -.025em;
+  }
+
+  .publication-reader__content h2 {
+    margin-block: 2.65rem .9rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--reader-line);
+    color: var(--reader-accent);
+    font-size: clamp(1.5rem, 2.2vw, 1.95rem);
+  }
+
+  .publication-reader__content h3 {
+    margin-block: 1.75rem .65rem;
+    color: var(--reader-ink);
+    font-size: 1.3rem;
+  }
+
+  .publication-reader__content :is(p, ul, ol, dl, blockquote) { max-width: 80ch; }
+  .publication-reader__content :is(p, dd) { text-wrap: pretty; }
+  .publication-reader__content p { margin-block: .8rem 1.1rem; }
+  .publication-reader__content a { overflow-wrap: anywhere; }
+
+  .publication-reader__content blockquote {
+    margin: 1.25rem 0;
+    padding: .4rem 1.25rem;
+    border: 0;
+    border-left: 3px solid var(--reader-accent);
+    background: color-mix(in srgb, var(--reader-accent) 4%, var(--reader-panel));
+    color: var(--reader-ink);
+  }
+
+  .publication-reader__content blockquote > :first-child { margin-top: .4rem; }
+  .publication-reader__content blockquote > :last-child { margin-bottom: .4rem; }
+
+  .page-shell.reading .publication-reader__content table {
+    /* Override the older dossier table display, while its narrow row reflow
+       remains intact. Intrinsically wide tables scroll at every viewport. */
+    display: block !important;
+    width: 100% !important; /* Some source converters retain an inline percentage. */
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-color: var(--reader-muted) var(--reader-panel);
+    container-type: inline-size;
+    margin: 1.5rem 0;
+    table-layout: auto;
+    border: 1px solid var(--reader-line);
+    font: .92rem/1.6 var(--reader-sans);
+    animation: none;
+    mask-image: none;
+  }
+
+  /* A block table creates an anonymous inner table. Give that grid the full
+     scrollport measure without changing native column proportions or adding
+     source markup. Its intrinsic minimum may still be wider and scroll. */
+  .publication-reader__content table::before {
+    content: "";
+    display: table-caption;
+    width: 100cqw;
+    height: 0;
+  }
+
+  .publication-reader__content table:focus-visible {
+    outline: 3px solid var(--reader-focus);
+    outline-offset: 3px;
+  }
+
+  .publication-reader__content :is(th, td) {
+    min-width: 0;
+    padding: .7rem .8rem;
+    border-color: var(--reader-line);
+    vertical-align: top;
+    overflow-wrap: normal;
+  }
+
+  .publication-reader__content th {
+    background: color-mix(in srgb, var(--reader-ink) 7%, var(--reader-panel));
+    color: var(--reader-ink);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .01em;
+  }
+
+  .publication-reader__content tbody tr:nth-child(odd) {
+    background: color-mix(in srgb, var(--reader-ink) 2%, var(--reader-panel));
+  }
+
+  .publication-reader__content tbody tr:nth-child(even) { background: var(--reader-panel); }
+  .publication-reader__content :is(th, td) > p { margin-block: .25rem; }
+
+  .page-shell.reading .publication-reader__content .toc {
+    margin: 1.5rem 0 2rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--reader-line);
+    border-radius: .15rem;
+    background: transparent;
+    font: .87rem/1.65 var(--reader-sans);
+  }
+
+  .publication-reader__content .toc::before { color: var(--reader-muted); }
+  .publication-reader__content .toc li { margin-top: .25rem; }
+
+  .publication-reader__content .print-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem 1rem;
+    margin: 0 0 1.75rem;
+    padding: 0 0 1rem;
+    border-bottom: 1px solid var(--reader-line);
+    font: .8rem/1.5 var(--reader-sans);
+  }
+
+  .publication-reader__content .print-actions :is(a, button) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: .6rem .85rem;
+    border: 1px solid var(--reader-line);
+    border-radius: .2rem;
+    color: var(--reader-accent);
+    font: 600 .8rem/1.4 var(--reader-sans);
+    text-decoration: none;
+  }
+
+  .publication-reader__content .print-actions [data-web-print-status] {
+    flex-basis: 100%;
+    color: var(--reader-muted);
+  }
+
+  .publication-reader__content .print-actions [data-web-print-status]:empty { display: none; }
+  .publication-reader__content :is(pre, code) { overflow-wrap: anywhere; }
+  .publication-reader__content pre { max-width: 100%; overflow-x: auto; }
+
+  @media (hover: hover) {
+    .publication-reader__browse > a:hover,
+    .publication-reader__actions button:hover,
+    .publication-reader__toc a:hover,
+    .publication-reader__content .print-actions :is(a, button):hover {
+      background: color-mix(in srgb, var(--reader-accent) 6%, var(--reader-panel));
+      color: var(--reader-accent);
+    }
+
+    .publication-reader__treatments a:hover { color: var(--reader-accent); }
+  }
+
+  @media (max-width: 64rem) {
+    .page-shell.reading:has(.publication-reader) {
+      width: calc(100% - 2rem);
+      padding-inline: 1.25rem;
+    }
+
+    .publication-reader__toolbar { gap: .5rem; }
+    .publication-reader__browse { flex-basis: 30rem; }
+
+    .publication-reader__layout,
+    .publication-reader__layout:has(> .publication-reader__toc:not([open])) {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.25rem;
+    }
+
+    .publication-reader__toc {
+      position: static;
+      max-height: none;
+      overflow: visible;
+      border: 1px solid var(--reader-line);
+      border-radius: .2rem;
+    }
+
+    .publication-reader__toc summary { padding-inline: .85rem; }
+    .publication-reader__toc:not([open]) summary { border-bottom: 0; }
+    .publication-reader__toc nav { padding: 0 .3rem .3rem; }
+    .publication-reader__treatments,
+    .publication-reader__identity { margin-bottom: 1.25rem; }
+  }
+
+  @media (max-width: 47.5rem) {
+    /* Preserve whole words and useful column measures on narrow screens. */
+    .publication-reader__content table :is(th, td) { min-width: 11rem; }
+    .publication-reader__content table tr > :first-child { min-width: 8rem; }
+    .publication-reader__content table tr > :last-child { min-width: 16rem; }
+
+    /* The existing chronology dossier already reflows into two-cell rows.
+       Keep that source-specific adaptation instead of widening its grid. */
+    .page-shell.reading .publication-reader__content :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"], h2[id="historical-appendix"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"], h2[id="historical-appendix"]) ~ h2 ~ table) :is(th, td) {
+      min-width: 0;
+    }
+  }
+
+  @media (max-width: 40rem) {
+    body:has(.publication-reader) > .site-header {
+      padding-block: .75rem .35rem;
+    }
+
+    body:has(.publication-reader) > .site-header .brand span { display: none; }
+
+    .page-shell.reading:has(.publication-reader) {
+      width: 100%;
+      margin-top: .5rem;
+      padding: 1rem 1rem 2.5rem;
+      border-inline: 0;
+      border-radius: 0;
+    }
+
+    .publication-reader__toolbar {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .4rem;
+      padding-block: .6rem;
+    }
+
+    .publication-reader__browse,
+    .publication-reader__actions { display: contents; }
+
+    .publication-reader__document { grid-column: 1 / -1; order: -1; }
+
+    .publication-reader__browse > :is(a, span[aria-disabled]),
+    .publication-reader__actions button {
+      align-self: stretch;
+      min-width: 0;
+      min-height: 2.75rem;
+      padding: .45rem .35rem;
+      font-size: .77rem;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
+
+    .publication-reader [data-reader-status],
+    .publication-reader__share-field { grid-column: 1 / -1; }
+    .publication-reader__identity {
+      grid-column: 1 / -1;
+      margin: .5rem 0 0;
+      padding: 0;
+      border: 0;
+    }
+    .publication-reader__treatments {
+      grid-column: 1 / -1;
+      grid-row: 3;
+      gap: 0 .65rem;
+      font-size: .79rem;
+    }
+    .publication-reader__content { font-size: 1.05rem; line-height: 1.7; }
+    .publication-reader__content h1 { font-size: clamp(1.9rem, 7.5vw, 2.6rem); }
+    .publication-reader__content blockquote { padding-inline: .85rem; }
+    .publication-reader__content :is(th, td) { padding: .6rem .45rem; }
+    .page-shell.reading .publication-reader__content table { font-size: .84rem; }
+    .publication-reader__content .print-actions {
+      gap: .4rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .publication-reader *, .publication-reader *::before, .publication-reader *::after {
+      scroll-behavior: auto;
+      animation: none;
+      transition: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .publication-reader {
+      --reader-panel: Canvas;
+      --reader-ink: CanvasText;
+      --reader-muted: CanvasText;
+      --reader-line: ButtonText;
+      --reader-accent: LinkText;
+      --reader-focus: Highlight;
+    }
+
+    .publication-reader :is(a, button, select, input, summary):focus-visible {
+      outline-color: Highlight;
+    }
+
+    .publication-reader__toc a[aria-current="location"],
+    .publication-reader__treatments a[aria-current="page"] {
+      border-color: Highlight;
+      color: LinkText;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Native printing remains owned by the existing complete-edition guard. */
+@media print {
+  .publication-reader__toolbar,
+  .publication-reader__identity,
+  .publication-reader__treatments,
+  .publication-reader__toc { display: none !important; }
+}

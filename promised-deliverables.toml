@@ -1,6 +1,24 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-publication-reader-redesign-2026-11-03"
+owner = "PROJECT-WORK.md"
+promise = "Polish publication readers with consistent treatment labels, spacious responsive layouts, section permalinks and simple Sunday/treatment navigation; preserve complete browser printing, obtain cold review and push to main."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "consistent-reader-and-navigation"
+  criterion = "Publication links use Full Study Guide, Synthesis and Homily where applicable; representative readers share a polished wide desktop and usable mobile layout, real section permalinks and accessible navigation between published Sundays and treatments with history position preserved."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "validated-cold-review-and-publication"
+  criterion = "Complete browser printing and source/rights/hold boundaries remain sound; appropriate browser and publication checks pass, a fresh cold review of frozen code and rendered evidence has no unresolved blocker before main publication, and both authorized remote refs are verified with truthful deployment status."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "source-first-print-on-demand-2026-11-02"
 owner = "PROJECT-WORK.md"
 promise = "Remove all tracked PDF and ZIP corpora and deliver exact binary evidence through spincyc/triptych-artifacts; declare per-document manifests and type schemas including propers and timelines; provide automatic browser Print / Save as PDF for every admitted edition with central styling and faster publication; present and cold-review the proposal table before implementation, then validate and publish main without rewriting Git history."

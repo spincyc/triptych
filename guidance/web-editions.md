@@ -323,6 +323,31 @@ reference or a combined heading. Label placement remains a source-review
 judgment. A missing or misplaced source label belongs to the study author;
 loss of a correctly placed label in conversion belongs to the converter.
 
+## Publication reading interface
+
+Provider publication readers and their complete browser-print routes share a
+scoped reading interface. Proper-study actions are named **Full Study Guide**,
+**Synthesis** and **Homily** according to their declared output roles;
+**Print / Save as PDF** remains the separate printing action. The shared
+presentation uses a broad responsive reading plane, collapsible section
+contents and stable section permalinks. Preserve source text, existing heading
+IDs, footnote targets, revision and rights notices. Reader controls belong
+outside source-owned and print-verified content.
+
+Previous/next and selection controls expose admitted publications within their
+declared collection and provider. Treatment links come from the publication's
+declared outputs; unavailable outputs are never invented. Sunday names and
+civil dates remain distinct: do not infer a civil occurrence from a title or
+series number. Ordinary links and fragment addresses remain usable without
+enhancement JavaScript. Session/history position recovery yields to explicit
+section links and remains usable with storage unavailable.
+
+Keep this interface opt-in. It does not restyle the Missal or other browser
+apps, and screen layout does not alter the complete print edition's source
+coverage or physical geometry. Verify wide tables, narrow-screen reflow,
+keyboard focus, history and the complete Print action on actual generated
+documents before accepting a reader presentation change.
+
 ## Browser printing
 
 **Print / Save as PDF** prepares the complete selected canonical output, rather

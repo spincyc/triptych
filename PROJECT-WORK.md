@@ -7,6 +7,83 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-03.
 
+## Publication reader redesign, 2026-11-03
+
+<!-- promised-deliverable: gpt-publication-reader-redesign-2026-11-03 -->
+
+**Implementation, cold reviews and final publication checks passed; the
+authorized main push is next.** The maintainer requested consistent Full Study
+Guide, Synthesis and Homily labels, a polished wide document reader, stable
+section links, simple celebration/treatment navigation, preserved return
+positions, maximum useful parallel work, and cold review before pushing main.
+The task began at `7f2d697ae50aad790c58ace3da9d231304992706` and retains
+main's complete browser printing and source-first storage model.
+
+The shared opt-in interface wraps exact source-owned bodies. It uses a broad
+responsive reading plane, collapsible contents, stable existing fragments,
+copy links, reading progress, and declared-owner/provider/collection navigation.
+No occurrence date or unavailable treatment is inferred. Desktop reading/table
+width is approximately 1,044 pixels rather than 619 pixels at a 1440-pixel
+viewport. Wide tables scroll locally at every width while retaining whole
+words, native table semantics and keyboard access. Print-frame styling and
+coverage retain their existing owner; the Missal and other apps retain their
+own interface. Catalogue edits replace 129 labels without changing targets,
+ownership/reference markers, qualifications or unrelated links. The rendered
+Fifth Sunday and resumed Fifth Sunday rows still share the same three targets.
+
+Implementation lanes separately owned rendering, stylesheet, client behavior,
+catalogue labels and browser acceptance. Fresh code and visual reviewers had
+no implementation role. Their original findings are preserved and resolved:
+
+| Finding | Correction and independent evidence |
+| --- | --- |
+| Narrow table cells split ordinary words | Whole-word columns and local scrolling; native Tab/arrow access and table semantics checked. |
+| Copy at the opening skipped to a future section | No active section before its threshold; page URL at the opening and after returning upward. Twelve real-document states checked. |
+| Mobile correction allowed wide reference tables to overflow larger screens | Local scrolling at every viewport; eighteen wide-reference cases and fifteen original-treatment cases pass. Authored captions and source DOM remain intact. |
+
+The final production stylesheet is
+`735b1ed548294f0c82b2e90a115826588fe8004a6054858bdc0d87736923e3d5`;
+reader client is
+`c2467f25f3d6abc4da726e6a1b8d8932c78ff30d626584b4396a045511ef3e84`.
+The actual-artifact visual review passed twenty-five route/viewport cases,
+section/copy/treatment/keyboard behavior, and recorded eleven primary plus
+three ancillary HTML/asset hashes. History varied by six pixels in one
+independent probe; this was nonblocking. The final rebuild preserves all
+1,866 HTML pages and every reviewed HTML/CSS/JavaScript hash byte-for-byte.
+
+Validation already completed: 115 focused Python checks plus 168 final
+publisher/integration checks, sixteen client checks, nine actual-artifact
+reader methods, ten existing landing regression methods, twelve additional
+provider/article cases and six narrow-table keyboard cases. The first focused
+run's one real-data case correctly awaited fresh products and passed in the
+168-test run. The new browser test's legacy print-inventory assumption was
+corrected to verify main's compact ordered count/hash and sample the guard
+after beforeprint; its final nine-method run passes. Its frozen SHA-256 is
+`d3a1fd794ed2f6cc63926d65dfd6b3d92d795c9dd33baba8787e1aebf483e8d0`.
+
+An independent print probe passes six root/project-path cases: 352 full-study,
+183 synthesis and 35 homily units match their complete ordered inventories;
+fonts load, guards permit printing, sealed body/manifest bytes remain intact,
+and one frame/print call occurs with no reader stylesheet in the print frame.
+The complete site build and deployment source gates passed, release bindings
+reported zero stale inputs, and the ledger and tool registry passed. Browser
+printing was instrumented; no physical printer/device or human assistive-
+technology trial is claimed.
+
+The final two-pass product record preserves all 27,836 baseline outputs in
+thirteen families byte-for-byte (382,659,292 bytes), including 422 complete-print
+preparation files. Its descriptor SHA-256 is
+`2f6e9093ca5810efe42a61c3901ca4a570009f0eaf3cd90c1e91c9068bc76fd6`.
+The final scoped bindings are exact with zero stale inputs. The complete final
+artifact build and independent GitHub Pages-target verification both exited
+zero. Fresh code and visual reviewers both issued PASS with no unresolved
+blocker. Rights prose, source content, admission/hold records and protected app
+sources are unchanged. The final source/binding audit and reviewed-byte equality
+carry the actual browser acceptance to the final artifact.
+
+The history-preserving main/workspace push remains pending. Automatic deployment
+status will be reported as observed, separately from source publication.
+
 ## Source-first publication and complete browser printing, 2026-11-02
 
 <!-- promised-deliverable: source-first-print-on-demand-2026-11-02 -->
