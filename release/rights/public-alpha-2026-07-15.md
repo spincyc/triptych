@@ -1792,7 +1792,7 @@ release attachment, announcement, or promotion.
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
 | `library/traditional-latin-mass.md` | `c4b95660f29aef62e27d50feee2e61f944ccbe389d6d3fac2a4cbfde25c6046c` |
-| `release/browser-products.json` | `79915d3fc4670aa60a848ad14d56f3e42ec8b35cf19f2418e213d44ce5efac17` |
+| `release/browser-products.json` | `3c5520c4b53dcbc3af8d05cd0c52de1076930da308a04ba0bbd98b98956ded43` |
 | `release/papal-documents.json` | `b20c05f8999ff2391e9c7ad15124d519d710e60ac7aa648b297e70be1eb0e17e` |
 | `release/papal-documents/input-delivery.json` | `2aefdce41b2f33be61f9bd455a407d94497d87c7e5fdef76ed3e562777d39fd6` |
 | `release/papal-documents/input-records.json` | `22e755c5b11d957a3f621b12a895cf7fa059a7ac42edeb882ac856a80388766c` |
@@ -25180,7 +25180,7 @@ release attachment, announcement, or promotion.
 | `tools/print-document` | `9c686a8499cd72c16778f00baaedc2ae9a3b615b75fc628f8c89bd672e461ab5` |
 | `tools/proper-chronology` | `df44d8062834649792053285705d1b8476d472750afba183448be8d15cc77851` |
 | `tools/proper-study-run-archive` | `21d18bc66164cc66519f615acc078c374effbf71456c6d72c7ac2fc51720ac82` |
-| `tools/public-alpha` | `60971ab07ce852c145d14ded9f57cdbedcdf88fb152969c7cd80d6235589dc69` |
+| `tools/public-alpha` | `00598fec22fdd7f643d4e1d4e7c2092f238a04dcb9c3bede47896ee346882222` |
 | `tools/reading-plan` | `2ccbef02341493532755d044cf6045bdf4c94f8132b326f07d709dc76ba5b3f9` |
 | `tools/release-bindings` | `7a10dda302714fef2692387446980603b09974f87734594681d07d77a71044da` |
 | `tools/render-sanctuary-dictionary` | `1a6f10a4aff799813c0ad7914439fe7228dfb898efdbbba7f19481bcbe1d166d` |
@@ -25446,7 +25446,7 @@ release attachment, announcement, or promotion.
 | `tools/tests/test_native_print_frontend.py` | `315b9feea40864fa340f85769e8fc3461ac1bed4cab3f13663972974eb1a7e0f` |
 | `tools/tests/test_native_print_service.py` | `e428529045ff90c20313e9ff4a4c9fc99a78da43d63abc3cbad08203bd77b0e0` |
 | `tools/tests/test_native_tex_assets.py` | `10041dbf7ecf2860ad39814176760b901aa546b213b4153cc0daf675f8959575` |
-| `tools/tests/test_native_tex_publication.py` | `a6a9b59b50bf14ece388eccfce375ccd1824a5e324da1d085780da54433180e1` |
+| `tools/tests/test_native_tex_publication.py` | `fcdd38dd6203b02e876bbf9975590cb9e51aba72cddbd04a24e256100ff0b8cc` |
 | `tools/tests/test_oration_execution_source.py` | `52714c88c0385d9d1f9a6ba5af7def87597a3e1165262818af038333a67c83e3` |
 | `tools/tests/test_ordinary_additional_text.py` | `e17f4e92dd33a997595ffde5712bddc030bec83744e907885b582202b8f61feb` |
 | `tools/tests/test_ordinary_appointments.py` | `320f33734574291de52a315439477e6977b1abd3478405a73494b6973f0748f1` |

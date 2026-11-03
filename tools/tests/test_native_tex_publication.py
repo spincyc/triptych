@@ -246,6 +246,56 @@ class PublicAlphaNativeTeXTest(unittest.TestCase):
             "library/test.md", "library/test.html", "../pdf/gpt/held.pdf", {("gpt", "work")},
         ))
 
+    def install_reviewed_loader(self, extra=""):
+        route = "native-tex/wasmtex-2026-47ff73bab1a2e548/wasmtex-pdftex.js"
+        text = ('FS.mkdir("/home/web_user");var env={"HOME":"/home/web_user"};'
+                'function isFileURI(filename){return filename.startsWith("file://")}' + extra)
+        body = text.encode()
+        identity = digest(body), len(body)
+        self.catalog["assets"][route] = {"body": body, "sha256": identity[0],
+                                         "bytes": identity[1], "kind": "runtime"}
+        # A tiny synthetic core exercises the exact path/pin policy without
+        # checking generated engine binaries into Git or requiring an archive.
+        patch = mock.patch.dict(self.tool.PUBLIC_NATIVE_LOADER_PRIVACY_IDENTITIES, {route: identity})
+        patch.start()
+        self.addCleanup(patch.stop)
+        return route, text
+
+    def test_reviewed_virtual_home_and_uri_predicate_pass_privacy_verification(self):
+        route, text = self.install_reviewed_loader()
+        with self.tool.held_repository_inputs():
+            filtered = self.tool.public_native_loader_privacy_text(route, text)
+        self.assertNotIn("/home/web_user", filtered)
+        self.assertNotIn("file://", filtered)
+        self.base.build_verified()
+
+    def test_additional_private_paths_and_local_urls_still_fail_inside_pinned_runtime(self):
+        for extra, label in (( ';var leaked="/home/private-user/secret";', "home-directory path"),
+                             (';var leaked="file:///private/path";', "local file URL"),
+                             (';var leaked="ghp_private";', "GitHub token pattern")):
+            # Recompute the synthetic reviewed pin: this proves the narrow
+            # masking preserves the scanners, rather than only rejecting hashes.
+            self.install_reviewed_loader(extra)
+            with self.subTest(extra=extra), self.assertRaisesRegex(self.tool.ReleaseError, label):
+                self.base.build_verified()
+
+    def test_unregistered_path_wrong_pin_or_modified_bytes_do_not_receive_runtime_exception(self):
+        route, text = self.install_reviewed_loader()
+        with self.tool.held_repository_inputs():
+            self.assertEqual(self.tool.public_native_loader_privacy_text(
+                route.replace("wasmtex-pdftex.js", "unreviewed.js"), text), text)
+            changed = text + ';var leaked="/home/private-user/secret";'
+            self.assertEqual(self.tool.public_native_loader_privacy_text(route, changed), changed)
+            self.catalog["assets"][route]["sha256"] = "b" * 64
+            self.assertEqual(self.tool.public_native_loader_privacy_text(route, text), text)
+
+    def test_virtual_home_and_file_scheme_in_other_contexts_remain_scanned(self):
+        self.install_reviewed_loader(';var path="/home/web_user/private";var uri="file://";')
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.base.build_verified()
+        self.assertIn("home-directory path", str(failure.exception))
+        self.assertIn("local file URL", str(failure.exception))
+
 
 if __name__ == "__main__":
     unittest.main()

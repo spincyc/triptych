@@ -158,6 +158,37 @@ incoming liturgy catalogue, reader CSS/JS, combined publisher, reader browser
 test and final descriptor. The reader assets retain exact incoming bytes.
 No authorization prose or earlier source, hold or approval record changes.
 
+The combined `cce283d0cc` source-gated site build passes in 314.793 seconds,
+and seven actual browser UI/download cases pass, including the incoming reader
+Print link and Synthesis treatment menu. Every PDF retains the expected full
+text, title, page count and embedded fonts, with no script or resource errors.
+The independent artifact verifier then correctly stops publication because
+three upstream Emscripten loaders contain generic filesystem expressions.
+Independent byte inspection identifies only the virtual `/home/web_user`
+directory/default and a `file://` prefix predicate, without personal paths.
+The privacy fix recognizes those three complete expressions only for the
+independently pinned public loader routes, SHA-256 values and byte sizes, after
+matching the declared runtime assets and actual content. Other private paths,
+file URLs, altered bytes and future upstream versions remain subject to the
+normal checks. Runtime, compiler, font and document bytes are unchanged.
+This verifier-only code change requires a fresh canonical product record and
+final artifact verification; no failed snapshot has been pushed.
+
+The reviewed privacy classification passes 17 publisher regressions and
+independent checks against all three actual pinned loaders. Added private
+paths, local URLs, changed bytes and changed registry pins still fail. The
+fresh final two-cold record passes in 1,108.255 seconds: 13 families, 27,836
+files and 382,659,292 bytes, descriptor SHA-256
+`3c5520c4b53dcbc3af8d05cd0c52de1076930da308a04ba0bbd98b98956ded43`.
+Earlier cache candidates remain distinct, unpublished predecessors. Final
+artifact verification and public/live gates remain pending.
+The final 100,814,734-byte cache archive is SHA-256
+`373dc75fd5344588f4e00164d978b06275e230cd41a003ff13925196ebbcaa03`;
+strict offline import, current-source warm build and full checking all pass
+with generation refused in 68.091 seconds. Its bootstrap hint names this
+exact archive. The final narrow binding update covers only the publisher,
+its focused native-publication test and the replacement descriptor.
+
 ## Publication reader redesign, 2026-11-03
 
 <!-- promised-deliverable: gpt-publication-reader-redesign-2026-11-03 -->

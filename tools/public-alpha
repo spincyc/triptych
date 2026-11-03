@@ -5139,6 +5139,38 @@ def declared_native_tex_asset(relative: str) -> bool:
     return relative.startswith("native-tex/") and relative in native_tex_catalog()["assets"]
 
 
+# Reviewed upstream Emscripten cores contain a virtual /home/web_user and a
+# file-URI predicate. These exact public bytes are not machine-local evidence.
+# Keep this privacy-policy allowlist independent of the runtime registry: a new
+# upstream build needs a fresh review rather than inheriting the exception.
+PUBLIC_NATIVE_LOADER_PRIVACY_IDENTITIES = {
+    "native-tex/wasmtex-2026-47ff73bab1a2e548/wasmtex-pdftex.js":
+        ("de4d948569653e054975d95abf96fb86fb86b6d2719c33a1c70d00a6ef6ab20d", 107252),
+    "native-tex/wasmtex-2026-47ff73bab1a2e548/wasmtex-dvipdfm.js":
+        ("5ef4528725ab2475a9a00d4eabe7b216d5637e2620bcaae494b91503056c5312", 86724),
+    "native-tex/wasmtex-2026-47ff73bab1a2e548/wasmtex-xetex.js":
+        ("87a1a4a6dc407fcaddf1f51f7772265bc152967ce3a5eb775adf328f827e4063", 108974),
+}
+
+
+def public_native_loader_privacy_text(relative: str, text: str) -> str:
+    """Mask only reviewed virtual-runtime expressions, never the whole file."""
+    identity = PUBLIC_NATIVE_LOADER_PRIVACY_IDENTITIES.get(relative)
+    if identity is None:
+        return text
+    asset = native_tex_catalog()["assets"].get(relative, {})
+    if (asset.get("kind") != "runtime"
+            or (asset.get("sha256"), asset.get("bytes")) != identity):
+        return text
+    body = text.encode("utf-8")
+    if (hashlib.sha256(body).hexdigest(), len(body)) != identity:
+        return text
+    for expression in ('FS.mkdir("/home/web_user")', '"HOME":"/home/web_user"',
+                       'filename.startsWith("file://")'):
+        text = text.replace(expression, "/* reviewed upstream virtual-runtime expression */")
+    return text
+
+
 def verify_native_tex_files(output: Path) -> list[str]:
     errors = []
     for relative, asset in native_tex_catalog()["assets"].items():
@@ -6489,8 +6521,9 @@ def _verify_snapshot_contents(
                 and relative not in native_source_texts):
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
+        privacy_text = public_native_loader_privacy_text(relative, text)
         for literal, pattern, label in privacy_patterns:
-            if literal in text and pattern.search(text):
+            if literal in privacy_text and pattern.search(privacy_text):
                 errors.append(f"{relative}: contains {label}")
         # The links a page carries are a property of the page, so it is parsed
         # once here rather than once per excluded publication.
