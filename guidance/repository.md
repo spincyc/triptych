@@ -560,7 +560,19 @@ appendix and in its owning record, and never substitutes successful build,
 review, installation, or distribution for fulfillment of the promised
 deliverable.
 
-The authorization inventory also binds every reader-facing Markdown file, template, stylesheet, copied license text, generator, and dependency lock capable of changing the artifact. The public generator may copy only authorized reader HTML, browser data, styles, licenses, and narrowly scoped host-control or verification files. It does not build or copy PDFs or binary evidence packs. It must not copy authoring sources, research records, intermediates, repository metadata, history, or private-preview output.
+The authorization inventory also binds every reader-facing Markdown file, template, stylesheet, copied license text, generator, and dependency lock capable of changing the artifact. The public generator may copy only authorized reader HTML, browser data, styles, licenses, and narrowly scoped host-control or verification files. It does not build or copy PDFs or binary evidence packs. It must not copy authoring sources, research records, intermediates, repository metadata, history, or private-preview output, except for the explicitly bounded native print source bundles below.
+
+The maintainer's 2026-11-03 native-print request authorizes one narrow static
+transport: the current admitted edition's exact native TeX render inputs,
+identified and hash-bound under the native source-bundle protocol. These
+bundles preserve canonical source bytes and original virtual paths; they
+exclude research, repository metadata, held/withdrawn outputs and unrelated
+source-library material. Verified native engine, package and font assets may
+be published alongside them under their own delivery and license manifests.
+This exception permits actual TeX generation in a browser worker on GitHub
+Pages; it does not authorize copying source directories or generating a PDF
+corpus during deployment. A separately configured compiler service must use
+the same public admission boundary and isolated native recipes.
 
 Preparation, build, verification, push, and deployment are distinct. A preparation command may print current candidate hashes but grants no approval and changes nothing. Verification must independently prove the complete artifact file set, approved repository hashes, dependency lock, local links and fragments, checksums, excluded identifiers, and absence of machine-private paths.
 

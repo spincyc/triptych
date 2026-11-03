@@ -744,6 +744,30 @@ passages does not establish a checked transcription of the whole volume.
 
 ## Fonts and External Software
 
+Native PDF generation in the browser uses the separately distributed WasmTex
+TeX Live 2026 runtime. The host interface and the compiler units retain
+different licenses: pdfTeX and XeTeX units are GPL-2.0-only, dvipdfmx is
+GPL-2.0-or-later, and the resolver interface is MIT. Linked libraries, format
+inputs and TeX packages retain their individual notices and terms. The exact
+runtime, package and font bytes, upstream release, notices and complete
+corresponding-source offers are bound in
+[`src/common/native-tex-runtime.json`](src/common/native-tex-runtime.json).
+Runtime software and font files are not licensed as Triptych document content.
+
+The delivery preserves the complete matching engine source, build patches,
+rebuild/relink instructions and applicable library notices in the external
+artifact release. Selected font software likewise retains its notices and
+complete distribution or corresponding-source offers: Latin Modern under the
+GUST Font License; Libertinus Type 1 and AMS font programs under OFL-1.1 with
+separately licensed TeX support; TIPA under LPPL; Computer Modern under its
+original unmodified-name condition; EC with its complete redistribution set;
+Junicode under OFL-1.1; and GNU FreeFont under GPL-3.0-or-later with its
+document-embedding exception. The raw FreeSerif font distribution and its
+matching editable sources are both preserved. Font and engine source archives
+are offered alongside the runtime rather than checked into Git or downloaded
+to generate each PDF. Generated documents retain their own content licenses
+and third-party exclusions.
+
 Published PDFs embed Latin Modern font programs. The altar-server guides and the
 reading-plan tracks embed Libertinus Serif, Sans, and Mono font programs as used;
 the tracks were reset in Libertinus on 1 August 2026, having been set in Latin

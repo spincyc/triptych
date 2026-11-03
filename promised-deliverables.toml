@@ -1,6 +1,42 @@
 schema_version = 1
 
 [[deliverables]]
+id = "native-tex-print-on-demand-2026-11-03"
+owner = "PROJECT-WORK.md"
+promise = "Restore the web Print action to generate native TeX PDFs on demand from current admitted canonical sources, preserving original elegant layouts and fonts across document types with zero PDFs checked into Git and no corpus PDF build in normal publishing."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "native-layout-and-font-fidelity"
+  criterion = "The generation path uses original canonical TeX recipes, engines, styles and fonts; representative flow, proper timeline, companion and card editions are compared with their original native renderings, without claiming corpus-wide visual or physical approval."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "scripts/_print_document.py", "workflows/reviews/native-tex-print-2026-11-03/visual.json"]
+
+  [[deliverables.requirements]]
+  id = "automatic-public-native-generation"
+  criterion = "An anonymous web Print click automatically generates or retrieves the matching current native PDF, with visible progress, correct source/output identity and actionable errors; HTML browser printing, historical downloads and manual workflow dispatch are not substitutes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "admission-coverage-and-isolated-rendering"
+  criterion = "Every admitted publication, Bible, papal selection and reading-plan print root maps to its actual native recipe; held, withdrawn, stale and unadmitted selections fail; inputs, runtime, output and reusable cache entries are bounded and verified."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "scripts/_native_print.py", "scripts/_native_print_bundles.py", "src/web/browser/shared/native-tex.js", "tools/tests/test_native_print_bundles.py", "tools/tests/native_tex_runtime.mjs"]
+
+  [[deliverables.requirements]]
+  id = "zero-tracked-pdfs-source-first-publishing"
+  criterion = "No PDF is tracked or required by routine site publishing; authoritative text, schemas, rights, source controls and original print templates remain intact, and the toolchain is reproducible without unnecessary font substitutions."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "docs/printing.md", "src/common/native-tex-runtime.json", ".github/workflows/pages.yml"]
+
+  [[deliverables.requirements]]
+  id = "independent-review-and-real-interface-verification"
+  criterion = "Independent review covers the final native-generation implementation, representative PDFs and complete route/admission mapping; required source and site gates and real browser request/download checks pass, with deployment state and limits reported accurately."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "source-first-print-on-demand-2026-11-02"
 owner = "PROJECT-WORK.md"
 promise = "Remove all tracked PDF and ZIP corpora and deliver exact binary evidence through spincyc/triptych-artifacts; declare per-document manifests and type schemas including propers and timelines; provide automatic browser Print / Save as PDF for every admitted edition with central styling and faster publication; present and cold-review the proposal table before implementation, then validate and publish main without rewriting Git history."

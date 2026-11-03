@@ -9,6 +9,9 @@
   };
 
   for (const root of document.querySelectorAll('[data-print-volume]')) {
+    // Complete-volume PDF generation is owned by the native request controller.
+    // Keep period reading links, but never auto-print a browser substitute.
+    if (document.querySelector('[data-native-print]')) continue;
     const volume = root.dataset.printVolume;
     const sourceDigest = root.dataset.printVolumeDigest;
     const start = root.querySelector('[data-print-volume-start]');

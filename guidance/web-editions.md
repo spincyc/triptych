@@ -325,26 +325,34 @@ loss of a correctly placed label in conversion belongs to the converter.
 
 ## Browser printing
 
-**Print / Save as PDF** prepares the complete selected canonical output, rather
-than printing only the current reader's loaded content. The 141 reviewed web
+The complete-edition **Generate PDF** action renders the selected canonical
+TeX output with its original engine, templates and fonts. The reviewed web
 readers navigate to `print/<provider>/<output>.html?print=1`; other admitted
 outputs have their own complete print routes. The selected source includes its
 declared body, notes, appendices, references, revision, and rights notices.
 Existing rights and hold/withdrawal rules still govern admission.
+
+The maintainer's 2026-11-03 request supersedes browser reflow as the primary
+complete-edition print format. Native WebAssembly TeX can execute on the
+static site; an explicitly configured compiler service may use the same
+native recipes. A service must remain optional unless its deployment is
+actually configured and verified. Neither a historical PDF nor a successful
+HTML print dialog substitutes for current native generation. Show progress
+and errors; never silently change the typesetting engine or fonts.
 
 The print adapters and independent source-coverage checks are described in
 [document schemas](document-schemas.md); the private preparation family and hot
 assembly are governed by [web data](web-data.md#complete-browser-print-products).
 `src/web/browser/shared/web-print.js` validates finite per-type markup,
 source/selection identities, ordered units, bounded parts, assets, fonts, and
-the exact current `src/web/browser/shared/web-print.css` before opening Print.
+the exact current `src/web/browser/shared/web-print.css` for the HTML projection.
 Missing or changed content refuses preparation. Native browser Print and Ctrl+P
 show a preparation notice instead of presenting a partial reviewed reader as a
 complete print edition.
 
 Browser pagination does not establish a profile's fixed-page, paired-page, or
 physical duplex contract, even when card faces and source order are retained.
-Use `tools/print-document` for the optional native recipe and its exact-artifact
+Use `tools/print-document` for the corresponding local native recipe and its exact-artifact
 review, as described in [printing](../docs/printing.md). Neither mechanical
 source coverage nor a successful print dialog confers editorial or physical
 printer approval. Print controls must name the format they produce; an HTML

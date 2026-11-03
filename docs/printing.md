@@ -1,11 +1,10 @@
 # Printing Triptych
 
-Use an edition's **Print / Save as PDF** action. It prepares the complete
-selected edition from its canonical sources, including its notes, appendices,
-references, revision, and rights notices where the source includes them, then
-opens the browser's print dialog. Choose a printer or Save as PDF there.
-Preparation checks every required part, illustration, font, and source-unit
-sequence; an incomplete or changed edition is refused.
+Use an edition's **Generate PDF** action. The native print implementation runs
+the actual TeX engine against that edition's canonical sources, original
+templates and fonts. It produces a PDF with the authored page layout, tables,
+footnotes and illustrations. Open the completed PDF to print it or save it.
+The PDF is generated when requested and is never checked into Git.
 
 The current print choices cover 644 admitted edition roots:
 
@@ -16,22 +15,27 @@ The current print choices cover 644 admitted edition roots:
 | Papal source selections | 350 |
 | Reading-plan volumes | 6 |
 
-The 141 reviewed web readers keep their reading presentation; their Print action
-opens the corresponding complete print edition. Two large reading-plan volumes
-retain **Print complete volume**, which loads and checks every section before
-printing. Use these page actions: direct browser Print or Ctrl+P is guarded
-against printing a partial reader or an unprepared edition.
+The reviewed web readers keep their reading presentation. Their Print action
+opens the corresponding complete edition and starts PDF generation. The
+selected edition includes its own notes, appendices, references, revision and
+rights notices. Companions, such as a proper's concise study or homily, select
+their own TeX entrypoint.
 
-Browser print preserves the selected source content, card front/back order,
-and apparatus. Page breaks and physical printer alignment depend on the browser,
-paper, scale, margins, and printer. It does not certify the native recipe's
-fixed page counts, paired pages, or physical duplex alignment. For that designed
-layout, generate the selected native print edition below. PDFs are optional
-local outputs; normal site deployment uses no TeX and builds no PDF corpus.
+Native PDF generation replaces browser reflow as the complete-edition print
+format. A browser's Print or Save as PDF command applied to an HTML reader uses
+different typography and pagination. Use the generated PDF for the designed
+layout; follow its paper, scale and duplex instructions when printing cards or
+paired pages. Generation alone is not a new physical-printer inspection.
 
-Where an edition offers **Archived PDF**, that link preserves a verified
+The browser-native implementation uses WebAssembly TeX and verified source,
+package and font files. A configured native compiler service can use the same
+selected-edition recipes. Neither approach requires a PDF corpus in Git or a
+corpus-wide PDF build during site publication. A first request may download
+the required engine and fonts; progress and errors remain visible.
+
+Where an edition offers **Earlier printed edition**, that link preserves a verified
 historical fixed layout in the external archive. It is distinct from browser
-reflow and from a newly generated print edition. The exact public snapshot,
+reflow and from a newly generated current print edition. The exact public snapshot,
 PDF hashes and delivery are recorded in `release/print-archive.json`.
 
 ## Generate one edition

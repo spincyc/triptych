@@ -1349,7 +1349,7 @@ set -eu; \
 	settled=0; \
 	while [ "$$pass" -lt $(PDFLATEX_MAX_PASSES) ]; do \
 		pass=$$((pass + 1)); \
-		( cd $(SOURCE_ROOT) && TEXINPUTS=..: $(PDFLATEX) -recorder \
+		( cd $(SOURCE_ROOT) && TEXINPUTS=..: $(PDFLATEX) -no-shell-escape -recorder \
 			-interaction=nonstopmode \
 			-halt-on-error -jobname='$(1)' \
 			-output-directory='$(abspath $(@D))' '$(2)' ); \
@@ -1825,9 +1825,9 @@ $(BIBLE_BUILD_ROOT)/%.tex: $(BIBLE_TYPESET_IMPL) FORCE_BIBLE_RENDER
 
 # Two passes: the list of books carries the page each book begins on.
 $(BIBLE_BUILD_ROOT)/%.pdf: $(BIBLE_BUILD_ROOT)/%.tex | check-tools
-	$(PDFLATEX) -interaction=nonstopmode -halt-on-error \
+	$(PDFLATEX) -no-shell-escape -interaction=nonstopmode -halt-on-error \
 		-output-directory='$(BIBLE_BUILD_ROOT)' '$<'
-	$(PDFLATEX) -interaction=nonstopmode -halt-on-error \
+	$(PDFLATEX) -no-shell-escape -interaction=nonstopmode -halt-on-error \
 		-output-directory='$(BIBLE_BUILD_ROOT)' '$<'
 	@if grep -q 'undefined references' '$(BIBLE_BUILD_ROOT)/$*.log'; then \
 		echo 'Undefined references remain after two passes: $*' >&2; \
@@ -1966,7 +1966,7 @@ $(READING_BUILD_ROOT)/%.pdf: $(READING_BUILD_ROOT)/%.tex | check-tools
 		pass=0; \
 		while [ "$$pass" -lt 5 ]; do \
 			pass=$$((pass + 1)); \
-			$(PDFLATEX) -interaction=nonstopmode -halt-on-error \
+			$(PDFLATEX) -no-shell-escape -interaction=nonstopmode -halt-on-error \
 				-output-directory='$(READING_BUILD_ROOT)' '$<' >/dev/null; \
 			if ! grep -q 'Rerun to get cross-references right' "$$log" \
 				&& ! grep -q 'undefined references' "$$log" \

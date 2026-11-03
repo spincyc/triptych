@@ -1,0 +1,6 @@
+schema_version = 1
+
+# Public HTTPS base URL of the native TeX print service, without /v1.
+# An empty endpoint is an explicit unavailable state, never browser printing.
+# Operators may supply TRIPTYCH_NATIVE_PRINT_ENDPOINT while building the site.
+endpoint = ""

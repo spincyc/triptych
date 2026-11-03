@@ -1,0 +1,8 @@
+#!/bin/sh
+# The smoke gate exercises the HTTP contract without starting a public service.
+set -eu
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+"$repo/tools/native-print-service" --help >/dev/null
+"$repo/tools/native-print-service" serve --help >/dev/null
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s "$repo/tools/tests" -p test_native_print_service.py
+echo ok

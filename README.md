@@ -41,5 +41,5 @@ authors, its extent, and when it was last revised — open
 [Papal Documents](docs/papal-documents.md)
 
 The repository keeps the plaintext, structured data, sources, and tools behind
-these readers. For browser printing or a single optional print edition, see
+these readers. To generate a typeset PDF or print one edition, see
 [Printing](docs/printing.md).

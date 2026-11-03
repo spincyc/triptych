@@ -207,7 +207,7 @@ def _plan_records(root: Path) -> list[dict]:
 def _papal_plan(root: Path) -> dict:
     # Make owns the ordered component set, including optional new withdrawals.
     # Resolving metadata writes only a disposable plan, never a reader PDF.
-    scratch = root / ".scratch/print-document"
+    scratch = _scratch_root(root)
     scratch.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="source-plan-", dir=scratch) as folder:
         target = Path(folder) / "current.json"
@@ -292,10 +292,23 @@ def select(identity: str, edition: str = "main", *, root: Path = ROOT) -> dict:
     return matches[0]
 
 
+def _scratch_root(root: Path) -> Path:
+    """Allow a service to isolate every request without moving canonical sources."""
+    configured = os.environ.get("TRIPTYCH_PRINT_WORK_ROOT")
+    scratch = root / ".scratch/print-document" if configured is None else Path(configured)
+    if configured is not None and (not configured or not scratch.is_absolute()):
+        raise PrintError("TRIPTYCH_PRINT_WORK_ROOT must be a nonempty absolute path")
+    if scratch == Path(scratch.anchor):
+        raise PrintError("print scratch must not be the filesystem root")
+    if any(path.is_symlink() for path in (scratch, *scratch.parents)):
+        raise PrintError("print scratch directories must not contain symlinks")
+    return _destination(scratch, root)
+
+
 def _work_root(root: Path, recipe: dict) -> Path:
     digest = hashlib.sha256(recipe["id"].encode()).hexdigest()[:16]
-    work = root / ".scratch/print-document" / digest
-    if any(path.is_symlink() for path in (root / ".scratch", work.parent, work)):
+    work = _scratch_root(root) / digest
+    if work.is_symlink():
         raise PrintError("print scratch directories must not be symlinks")
     return work
 
@@ -324,8 +337,12 @@ def _declared_dependencies(root: Path, recipe: dict) -> list[str]:
     line = next((line for line in run.stdout.splitlines() if line.startswith(prefix)), None)
     if line is None:
         raise PrintError("selected PDF target is absent from Make's dependency graph")
+    return _dependencies_from_line(root, recipe, line[len(prefix):])
+
+
+def _dependencies_from_line(root: Path, recipe: dict, prerequisites: str) -> list[str]:
     dependencies = set(recipe["dependencies"])
-    for value in line[len(prefix):].split("|", 1)[0].split():
+    for value in prerequisites.split("|", 1)[0].split():
         path = Path(value)
         if not path.is_absolute():
             path = root / path
@@ -334,6 +351,39 @@ def _declared_dependencies(root: Path, recipe: dict) -> list[str]:
         elif path.is_file() and path.resolve().is_relative_to(root):
             dependencies.add(_relative(root, path))
     return sorted(dependencies)
+
+
+def _declared_dependencies_many(root: Path, recipes: list[dict]) -> dict[str, list[str]]:
+    """Read the selected targets together, with the same Make-owned edges."""
+    if len({recipe["id"] for recipe in recipes}) != len(recipes):
+        raise PrintError("batch print recipes must have unique document identities")
+    dependencies = {}
+    for provider in PROVIDERS:
+        selected = [recipe for recipe in recipes if recipe["provider"] == provider]
+        if not selected:
+            continue
+        work = _scratch_root(root) / "dependency-query" / provider
+        base, _ = _make_arguments(selected[0], work)
+        targets = {str(_make_arguments(recipe, work)[1]): recipe for recipe in selected}
+        variables = [argument for argument in base[3:]
+                     if not argument.startswith(("DOC=", "DOCUMENTS="))]
+        variables.append("DOCUMENTS=" + " ".join(sorted(recipe["document"] for recipe in selected)))
+        command = ["make", "--no-print-directory", "-qp", *targets, *variables]
+        run = subprocess.run(command, cwd=root, env=_environment(), capture_output=True, text=True)
+        if run.returncode not in (0, 1):
+            raise PrintError("cannot inspect the selected Make dependency graph: " + run.stderr[-2000:])
+        pending = set(targets)
+        for line in run.stdout.splitlines():
+            target, separator, prerequisites = line.partition(":")
+            if separator and target in pending:
+                recipe = targets[target]
+                dependencies[recipe["id"]] = _dependencies_from_line(root, recipe, prerequisites)
+                pending.remove(target)
+        if pending:
+            raise PrintError("selected PDF target is absent from Make's dependency graph")
+    if len(dependencies) != len(recipes):
+        raise PrintError("batch print recipes require known publication providers")
+    return dependencies
 
 
 def public_recipe(recipe: dict) -> dict:
@@ -361,6 +411,30 @@ def check(recipe: dict, *, root: Path = ROOT) -> dict:
     recipe["validation"] = validation
     recipe["status"] = "valid"
     return recipe
+
+
+def check_many(recipes: list[dict], *, root: Path = ROOT) -> list[dict]:
+    """Check one held selection without repeating Make discovery per edition.
+
+    Metadata and non-publication checks remain the owning single-document gates.
+    No result is cached across calls, and no Make recipe or TeX engine runs.
+    """
+    root = Path(root).resolve()
+    recipes = list(recipes)
+    publications = [recipe for recipe in recipes if recipe["family"] == "publication"]
+    for recipe in publications:
+        _run(_tool(root, "check-generation-metadata", "--provider", recipe["provider"],
+                   "--document", recipe["document"]), root)
+    dependencies = _declared_dependencies_many(root, publications)
+    checked = []
+    for recipe in recipes:
+        if recipe["family"] != "publication":
+            checked.append(check(recipe, root=root))
+            continue
+        result = dict(recipe, dependencies=dependencies[recipe["id"]], status="valid",
+                      validation={"source_metadata": "pass", "declared_build_graph": "pass"})
+        checked.append(result)
+    return checked
 
 
 def _destination(path: Path, root: Path) -> Path:
@@ -457,6 +531,10 @@ def _portable_receipt(result: dict, root: Path, work: Path, destination: Path) -
 
     def clean(value):
         if isinstance(value, str):
+            if value == sys.executable:
+                value = "<python>"
+            elif value == "PYTHON=" + sys.executable:
+                value = "PYTHON=<python>"
             for physical, logical in replacements:
                 value = value.replace(physical, logical)
             if re.search(r"(?<![A-Za-z0-9:/])/(?:home|Users|tmp|var/tmp)/", value):

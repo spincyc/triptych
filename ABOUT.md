@@ -10,7 +10,7 @@ important claims against the authorities themselves.
 
 Publications retain separate GPT and Claude editions where available. Each
 catalog row links the available editions, so the two can be read against each
-other. Read online, print the browser page, or make a selected print edition
+other. Read online or generate a typeset PDF of a selected edition
 using [Printing](docs/printing.md).
 
 If something is wrong, unclear, incomplete, or unbalanced, send a short note.

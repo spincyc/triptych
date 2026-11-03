@@ -52,20 +52,31 @@ def _extras(route):
             '<script src="' + js + '" defer></script>')
 
 
-def _page(descriptor, fragment, route, *, source_paths=(), base=None):
+def _page(descriptor, fragment, route, *, source_paths=(), base=None, native_context=None):
     """Surround canonical part bytes with controls outside the printable body."""
     css = html.escape(relative_link(route, CSS), quote=True)
     title = html.escape(descriptor["title"])
-    body = ('<section data-web-print-document="' + html.escape(descriptor["id"], quote=True)
-            + '" data-web-print-style="' + css + '"><div class="print-actions">'
+    controls = ('<div class="print-actions">'
             + '<button type="button" data-web-print-start>Print / Save as PDF</button> '
             + '<button type="button" data-web-print-cancel hidden>Cancel</button>'
-            + '<p data-web-print-status role="status" aria-live="polite"></p></div>'
-            + '<p data-web-print-notice>Use Print / Save as PDF on this page to prepare the complete edition of '
+            + '<p data-web-print-status role="status" aria-live="polite"></p></div>')
+    if native_context is not None:
+        from _native_print import controls as native_controls
+        controls = native_controls(descriptor["id"], route, native_context)
+    notice = ("Use Generate PDF on this page to typeset the complete edition of "
+              if native_context is not None else "Use Print / Save as PDF on this page to prepare the complete edition of ")
+    body = ('<section data-web-print-document="' + html.escape(descriptor["id"], quote=True)
+            + '" data-web-print-style="' + css + '">' + controls
+            + '<p data-web-print-notice>' + notice
             + title + '.</p><div data-web-print-content>' + fragment + '</div>'
             + '<script type="application/json" data-web-print-manifest>' + _json(descriptor)
             + '</script></section>')
     head, tail = _extras(route)
+    if native_context is not None:
+        from _native_print import extras
+        native_head, native_tail = extras(route, wasm=native_context.get("native_catalog") is not None)
+        head += native_head
+        tail += native_tail
     page = dict(base or {})
     page.update(output_id=descriptor["id"], title=descriptor["title"], html=body,
                 head_extra=page.get("head_extra", "") + head,
@@ -77,7 +88,7 @@ def _page(descriptor, fragment, route, *, source_paths=(), base=None):
 def _part_page(descriptor, part, source_paths):
     route = part["route"]
     target = html.escape(relative_link(route, descriptor["root_route"]) + "?print=1", quote=True)
-    link = '<a href="' + target + '">Print complete edition / Save as PDF</a>'
+    link = '<a href="' + target + '">Print complete edition / Download PDF</a>'
     fragment = ('<section data-web-print-reader><p class="print-actions">' + link + '</p>'
                 + '<p data-web-print-reader-notice>Use ' + link + ' to prepare the complete edition.</p>'
                 + '<div data-web-print-reader-content>' + part["html"] + '</div></section>')
@@ -130,7 +141,7 @@ def _measure(part, expected):
     return measured
 
 
-def _alias_page(descriptor, parts, alias, source_paths, fonts_for_route, asset_routes, product):
+def _alias_page(descriptor, parts, alias, source_paths, fonts_for_route, asset_routes, product, native_context=None):
     """Render the same reading parts with a descriptor pinned to this route."""
     cloned = copy.deepcopy(descriptor)
     cloned["fonts"] = fonts_for_route(alias)
@@ -161,7 +172,8 @@ def _alias_page(descriptor, parts, alias, source_paths, fonts_for_route, asset_r
         expected["structure_sha256"] = measured["structure_sha256"]
         inline.append(fragment)
     navigation = '<nav aria-label="Edition parts"><ul>' + ''.join(links) + '</ul></nav>' if links else ''
-    return _page(cloned, ''.join(inline) + navigation, alias, source_paths=source_paths)
+    return _page(cloned, ''.join(inline) + navigation, alias, source_paths=source_paths,
+                 native_context=native_context)
 
 
 def _public_paths(root, known):
@@ -228,9 +240,13 @@ def _asset_envelopes(root, data_root, index, canonical_asset_routes):
     return assets, routes, fonts, source_paths
 
 
-def catalog(root, included, *, browser_data_root, source_pages, site_routes=None, canonical_asset_routes=None):
+def catalog(root, included, *, browser_data_root, source_pages, site_routes=None, canonical_asset_routes=None,
+            native_context=None):
     """Join complete admitted editions; never convert, download or hydrate."""
     root = Path(root).resolve()
+    if native_context is None and (root / "scripts/_native_print.py").is_file():
+        from _native_print import site_context
+        native_context = site_context(root)
     held = core.require_products(root)
     data_root = Path(browser_data_root).resolve()
     need(data_root == held.data_root.resolve(), "print data must be the caller's held verified snapshot")
@@ -276,6 +292,21 @@ def catalog(root, included, *, browser_data_root, source_pages, site_routes=None
             font_records.append(asset)
         assets[public] = asset
         source_inputs.add(canonical)
+    if native_context is not None:
+        from _native_print import HELPERS, SCRIPT, STYLE
+        source_inputs.update(HELPERS)
+        source_inputs.add("release/print-archive.json")
+        for public, mime, role in ((SCRIPT, "text/javascript", "controller"), (STYLE, "text/css", "stylesheet")):
+            canonical = "src/web/browser/" + public
+            body = read_file(root, canonical)
+            assets[public] = {"path": root / canonical, "bytes": len(body), "sha256": sha256(body),
+                              "mime": mime, "role": role, "owners": set()}
+        if native_context.get("native_catalog") is not None:
+            canonical, public = SHARED + "native-tex.js", "shared/native-tex.js"
+            body = read_file(root, canonical)
+            source_inputs.add(canonical)
+            assets[public] = {"path": root / canonical, "bytes": len(body), "sha256": sha256(body),
+                              "mime": "text/javascript", "role": "controller", "owners": set()}
     style_sha = assets[CSS]["sha256"]
 
     def fonts_for_route(route):
@@ -347,7 +378,8 @@ def catalog(root, included, *, browser_data_root, source_pages, site_routes=None
                         + '">' + html.escape(part["id"].replace("-", " ")) + '</a></li>'
                         for part in parts if "href" in part)
         fragment = ''.join(inline) + ('<nav aria-label="Edition parts"><ul>' + links + '</ul></nav>' if links else '')
-        result["pages"][route] = _page(descriptor, fragment, route, source_paths=product["source_paths"])
+        result["pages"][route] = _page(descriptor, fragment, route, source_paths=product["source_paths"],
+                                        native_context=native_context)
         for part in parts:
             if part["route"] != route:
                 need(part["route"] not in result["pages"], "print part routes collide")
@@ -357,7 +389,7 @@ def catalog(root, included, *, browser_data_root, source_pages, site_routes=None
             result["reader_actions"][alias] = {"output_id": identifier, "mode": "navigate", "target": route}
             if alias not in reviewed_routes:
                 result["pages"][alias] = _alias_page(descriptor, parts, alias, product["source_paths"],
-                                                     fonts_for_route, asset_routes, product)
+                                                     fonts_for_route, asset_routes, product, native_context)
     from _web_print_sources import prepare_sources
     source_catalog = prepare_sources(source_pages, stylesheet_sha256=style_sha, fonts_for_route=fonts_for_route)
     for identifier, descriptor in source_catalog["products"].items():
@@ -365,8 +397,21 @@ def catalog(root, included, *, browser_data_root, source_pages, site_routes=None
         result["products"][identifier] = descriptor
     for route, page in source_catalog["pages"].items():
         result["pages"][route] = _page(result["products"][page["output_id"]], page["html"], route,
-                                      source_paths=page.get("source_paths", ()), base=page)
+                                      source_paths=page.get("source_paths", ()), base=page,
+                                      native_context=native_context)
     result["reader_actions"].update(source_catalog["reader_actions"])
+    if native_context is not None:
+        from _native_print import controls, extras
+        for route, action in result["reader_actions"].items():
+            if action["mode"] == "legacy-volume":
+                head, tail = extras(route, wasm=native_context.get("native_catalog") is not None)
+                action.update(native_controls=controls(action["output_id"], route, native_context),
+                              native_head_extra=head, native_body_extra=tail)
+        expected_native = set(result["products"]) | {
+            action["output_id"] for action in result["reader_actions"].values()
+            if action["mode"] == "legacy-volume"}
+        need(set(native_context["documents"]) == expected_native,
+             "native PDF admissions differ from the complete public print universe")
     source_inputs.update(source_catalog["source_paths"])
     all_owners = set(result["products"])
     for route, asset in assets.items():
@@ -388,7 +433,7 @@ def decorate_reader(content, output_relative, inventory, *, relative_link):
     action = inventory["reader_actions"][output_relative]
     need(action["mode"] == "navigate", "publication reader has no complete print destination")
     target = html.escape(relative_link(output_relative, action["target"]) + "?print=1", quote=True)
-    link = '<a href="' + target + '">Print / Save as PDF</a>'
+    link = '<a href="' + target + '">Print / Download PDF</a>'
     body = ('<section data-web-print-reader><p class="print-actions">' + link + '</p>'
             + '<p data-web-print-reader-notice>Use ' + link + ' to prepare the complete edition.</p>'
             + '<div data-web-print-reader-content>' + content + '</div></section>')
@@ -399,4 +444,9 @@ def decorate_reader(content, output_relative, inventory, *, relative_link):
 def decorate_source_page(relative, page, inventory):
     if relative in inventory["pages"]:
         return inventory["pages"][relative]
+    action = inventory["reader_actions"].get(relative, {})
+    if action.get("native_controls"):
+        return {**page, "html": action["native_controls"] + page["html"],
+                "head_extra": page.get("head_extra", "") + action["native_head_extra"],
+                "body_extra": page.get("body_extra", "") + action["native_body_extra"]}
     return page

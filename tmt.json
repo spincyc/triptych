@@ -463,6 +463,19 @@
       "stage": "draft",
       "usage": "papal-acta {acquire,index,register,manifest,list,check} [--series ASS|AAS] [--json]"
     },
+    "native-print-service": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Generate admitted native TeX print editions through a bounded PDF service.",
+      "requires": [
+        "print-document"
+      ],
+      "stage": "draft",
+      "usage": "native-print-service serve [--root DIR] [--host HOST] [--port PORT] [--cache-root DIR] [--origin ORIGIN]"
+    },
     "papal-documents": {
       "idempotent": true,
       "json": true,

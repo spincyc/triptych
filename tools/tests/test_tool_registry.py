@@ -415,7 +415,7 @@ class ReachTests(unittest.TestCase):
         r"\b("
         r"urlopen|urllib\.request|urllib\.error"
         r"|requests\.(?:get|post|put|patch|delete|head|request|Session)"
-        r"|httpx\.|aiohttp\.|http\.client|socket\.(?:socket|create_connection)"
+        r"|httpx\.|aiohttp\.|http\.(?:client|server)|socket\.(?:socket|create_connection)"
         r"|ftplib|smtplib|telnetlib|paramiko"
         r")"
     )
@@ -449,13 +449,19 @@ class ReachTests(unittest.TestCase):
             "artifact-store": "_artifact_store.py",
             "bullarium": "_bullarium.py",
             "history-browser-acceptance": "_history_browser_acceptance.py",
+            "native-print-service": "_native_print_service.py",
             "papal-acta": "_papal_acta.py",
             "papal-documents": "_papal_documents.py",
             "papal-sources": "_papal_sources.py",
+            "snapshot-store": "_snapshot_store.py",
             "typeset-papal": "_typeset_papal.py",
         }.get(name)
         if implementation:
             text += "\n" + (ROOT / "scripts" / implementation).read_text(encoding="utf-8")
+        if name == "snapshot-store":
+            # Frozen-snapshot retrieval delegates its sockets to the shared
+            # exact-byte transport; include that implementation in its reach.
+            text += "\n" + (ROOT / "scripts/_artifact_store.py").read_text(encoding="utf-8")
         head, marker, tail = text.partition("\nEXAMPLES = {")
         if marker:
             text = head + tail.partition("\n}\n")[2]
@@ -511,7 +517,7 @@ class ReachTests(unittest.TestCase):
         declared = self.declarations()
         network = sorted(n for n, r in declared.items() if r == "network")
         self.assertEqual(network, [
-            "artifact-store", "bullarium", "knox-bible", "papal-acta", "papal-documents", "papal-sources",
+            "artifact-store", "bullarium", "knox-bible", "papal-acta", "papal-documents", "papal-sources", "snapshot-store",
         ], "the network reach story has changed")
         self.assertEqual(sorted(n for n, r in declared.items() if r == "model"), ["harvest"])
         listing = subprocess.run(
@@ -528,8 +534,8 @@ class ReachTests(unittest.TestCase):
             [str(LAUNCHER), "--list", "--json"], capture_output=True, text=True, cwd=ROOT,
         ).stdout)
         local = [row for row in rows if row["reaches"] == "local"]
-        self.assertEqual([row["name"] for row in local], ["history-browser-acceptance"])
-        self.assertEqual(local[0]["group"], "release")
+        self.assertEqual([row["name"] for row in local], ["history-browser-acceptance", "native-print-service"])
+        self.assertTrue(all(row["group"] == "release" for row in local))
         listing = subprocess.run(
             [str(LAUNCHER), "--list"], capture_output=True, text=True, cwd=ROOT,
         ).stdout

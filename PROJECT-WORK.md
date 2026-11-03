@@ -7,6 +7,98 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-03.
 
+## Restore native TeX printing on demand, 2026-11-03
+
+<!-- promised-deliverable: native-tex-print-on-demand-2026-11-03 -->
+
+**In progress: native generation implemented; final publication gates pending.**
+The maintainer rejected browser print typography and requires the web Print
+action to create native TeX PDFs, retaining original layouts and fonts with
+zero PDFs checked into Git. This supersedes browser reflow as the primary
+complete-edition print implementation. The source-first storage and schema
+contracts remain binding.
+
+Actual TeX Live 2026 pdfTeX and XeTeX/dvipdfmx now run in a browser WebAssembly
+worker on static GitHub Pages, so no additional server account is required.
+The publisher supplies exact admitted source bundles and separately verified
+compiler, package and font assets. Original TeX classes, templates, virtual
+paths and fonts remain authoritative. References settle to a finite auxiliary
+fixed point; changed assets, missing glyphs, font substitutions and fatal or
+reference failures refuse a PDF. Cancellation terminates the worker. No HTML
+print fallback silently replaces native typesetting.
+
+The complete source-only preparation passes for all 644 admitted roots in
+49.660 seconds: 281 provider outputs, seven Bibles, 350 papal selections and
+six reading-plan volumes. It emits 734 transport files, 212,256,797 bytes,
+including 90 deduplicated illustrations (52,317,892 bytes). Every one of 2,705
+canonical render files remains byte-identical. Independent per-edition review
+proves exact positive artwork membership: dictionary 62, server 22, Ark six;
+held and obsolete artwork is excluded. The larger native recipe catalogue
+does not authorize the two held provider outputs or unadmitted papal works.
+
+Actual browser acceptance generates all 644 PDFs against one identical final
+published runtime, without fatal, missing-font, glyph or reference errors.
+All 278 provider outputs with historical page receipts match those page counts;
+three newer outputs have no historical comparator. The exact published runtime
+JSON is `c106b1bd54ff23f5dba3c1509b2a4cf699febf75dfb2c3ec5982408169a910dd`.
+The earlier mixed-subset pass and resource repairs remain distinct from this
+second complete, identical-runtime proof. All acceptance processes are closed.
+
+Four selected desktop-native builds reproduce archived PDFs byte for byte.
+The portable internal visual regression record is
+`workflows/reviews/native-tex-print-2026-11-03/visual.json`: 29 article, proper
+timeline and card pages compared at 200 dpi; 28 raster files are identical.
+One article line shifts by at most 0.205031 points without changing text,
+fonts, line breaks, page geometry or pagination. Actual pages were inspected;
+this is not new editorial, external, whole-corpus or physical-duplex approval.
+
+Current desktop-native comparisons also distinguish inherited layout facts:
+Italian papal 11 pages, Latin papal eight pages and CPDV Bible 716 pages agree
+with WASM. The Latin comparison matches all 5,807 word boxes exactly. Three
+outputs (CPDV, WEB Catholic and that Latin selection) have tiny existing
+overfull warnings, at most 0.87852 points, reproduced by desktop TeX with
+identical complete layout text. The other 641 outputs are warning-free.
+These inherited facts remain separate from successful PDF generation.
+Historical papal receipts used native generator version one;
+the current version two explains the older 9/7-page counts. No source wording
+or template was changed to hide those differences.
+
+The frozen runtime registry is
+`ab0a1b3f0db35536ecb1ba19b0ceb2897ee35e8f7e455e1931f58ae8745780e4`:
+3,048 exact payloads, 93,181,285 bytes and 5,489 lookup keys, including complete
+native Latin Modern and Libertinus Type 1 resource families. The external
+release retains complete engine, font and applicable language-package sources,
+rebuild materials and individual notices; these source archives are excluded
+from Pages runtime delivery. The immutable native runtime/source release is
+`native-tex-runtime-2026-47ff73bab1a2e548-v1` in `spincyc/triptych-artifacts`,
+whose main is `65908af`. All 20 uploaded asset hashes and 321,821,157 bytes
+match. Fresh anonymous retrieval verifies all 3,048 runtime payloads.
+No generated PDF enters Git or normal publishing.
+An optional bounded HTTP compiler service and container packaging are also
+available; no public service is configured, and Docker runtime was not tested
+because Docker/Podman are unavailable.
+
+Focused Python, browser, source-bundle, protocol, asset and admission checks
+pass; `tmt check` reports no failures or warnings. Independent review repairs
+cover binary admission, omitted native environment, exact proxy prefixes,
+worker failures, font substitutions and service streaming isolation. Batched
+Make graph discovery preserves every dependency list for all 281 provider
+outputs and retains their metadata gates: 16.825 seconds for full checking,
+versus 141.463 seconds for individual graph discovery alone.
+
+Two independent cold browser-product builds pass in 1,225.931 seconds: 13
+families, 27,836 files and 382,659,292 bytes. Descriptor SHA-256 is
+`3da49470345fec2661a3255e5500dfad4ee698dd51687d14d3fea29acac4b547`.
+Its optional immutable cache pack passes strict offline import, current-source
+warm build and full checking with generation refused. Exact-path release
+binding refresh covers 66 reviewed inputs, including 34 previously unbound
+canonical files proved byte-identical to main; rights prose is unchanged.
+
+Required local source/site gates, actual generated-site and live Print actions,
+authorized main publication and measured deployment remain pending. The earlier
+substantial-publication-speed ambition remains open; local preparation timings
+are not a claim of a faster production deployment.
+
 ## Source-first publication and complete browser printing, 2026-11-02
 
 <!-- promised-deliverable: source-first-print-on-demand-2026-11-02 -->

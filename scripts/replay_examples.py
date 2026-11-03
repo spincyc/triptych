@@ -159,6 +159,10 @@ PREPARE: dict[str, tuple[object, ...]] = {
 # checked. Every entry is printed on every run: an exemption nobody sees is the
 # failure this replay exists to end.
 EXEMPT: dict[str, str] = {
+    'tools/native-print-service serve --toolchain-id "$TRIPTYCH_PRINT_TOOLCHAIN"':
+        "starts a persistent HTTP compiler service and requires an actual immutable toolchain identity",
+    'tools/native-print-service serve --port 8081 --origin http://localhost:8000 --toolchain-id "$TRIPTYCH_PRINT_TOOLCHAIN"':
+        "starts a persistent HTTP compiler service and requires an actual immutable toolchain identity",
     "tools/browser-products record":
         "rewrites the tracked mechanical product descriptor after independent generation; refresh is explicit",
     "tools/history-browser-acceptance --url http://127.0.0.1:0/history/ "

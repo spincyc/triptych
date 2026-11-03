@@ -25,7 +25,7 @@ from collections import Counter, defaultdict
 from collections.abc import Callable, Iterable
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path, PurePosixPath
-from urllib.parse import unquote, urlsplit
+from urllib.parse import parse_qsl, unquote, urlsplit
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 # Shared CLI helpers live outside tools/ so that tmt's registry scan, which
 # requires every file in tools/ to be a registered tool, stays clean.
@@ -364,6 +364,7 @@ FIXED_ARTIFACT_INPUT_PATHS = {
     "scripts/_document_schema.py",
     "scripts/_print_document.py",
     "scripts/_print_catalog.py",
+    "scripts/_native_tex_publication.py",
     "scripts/_artifact_store.py",
     "scripts/_source_delivery_policy.py",
     "scripts/_corpus.py",
@@ -1609,7 +1610,7 @@ def projected_document_catalogue(
                     issue.pop("pdf", None)
                     target = aliases[canonical].replace("web/", "print/", 1)
                     if complete_browser_print:
-                        issue["print_mode"] = "browser"
+                        issue["print_mode"] = "native-pdf" if native_tex_declared() else "browser"
                         target += "?print=1"
                     issue.setdefault("targets", {})["print"] = target
                     issue.setdefault("available", {})["print"] = True
@@ -3032,6 +3033,7 @@ def site_source_paths(manifest: dict | None = None) -> set[str]:
         if (ROOT / PRINT_ARCHIVE_PAGES_RELATIVE).exists():
             source_inputs.add(PRINT_ARCHIVE_PAGES_RELATIVE.as_posix())
     source_inputs.update(web_print_catalog()["source_paths"])
+    source_inputs.update(native_tex_catalog()["source_paths"])
     # Bind canonical source/schema and public projections, never optional
     # generated PDF bytes. External evidence hashes remain in their records.
     return (
@@ -3991,7 +3993,7 @@ def artifact_manifest_data(
         "release_id": manifest["release_id"],
         "mode": "private-preview" if preview else "published-alpha",
         "history_included": False,
-        "source_included": False,
+        "source_included": native_tex_declared(),
         "authorization": artifact_authorization(manifest, included),
         "publications": publication_entries,
     }
@@ -4001,6 +4003,20 @@ def artifact_manifest_data(
             "manifest": BROWSER_PRODUCTS_RELATIVE.as_posix(),
             "identity": products.products_identity,
             "editorial_approval": False,
+        }
+    native = native_tex_catalog()
+    if native["selections"]:
+        result["native_print"] = {
+            "renderer": "tex-webassembly",
+            "source_scope": "admitted-native-print-bundles",
+            "source_revision": native["source_revision"],
+            "runtime": native["runtime"],
+            "editions": len(native["selections"]),
+            "selection_sha256": hashlib.sha256(json.dumps(
+                native["selections"], ensure_ascii=False, sort_keys=True,
+                separators=(",", ":"),
+            ).encode("utf-8")).hexdigest(),
+            "stored_pdfs": False,
         }
     return result
 
@@ -4020,6 +4036,7 @@ def expected_artifact_files(
     print_catalog = web_print_catalog()
     expected.update(print_catalog["pages"])
     expected.update(print_catalog["assets"])
+    expected.update(native_tex_catalog()["assets"])
     for provider, leaf in included:
         expected.add(publication_reader_path(provider, leaf))
         expected.add(publication_print_path(provider, leaf))
@@ -4221,6 +4238,7 @@ def source_to_output(
     resolved_text = resolved.as_posix()
 
     destination = PAGE_MAP.get(resolved_text)
+    native_pdf_request = False
     # A reading page is rendered from browser HTML rather than from a source
     # document, so a link to one matches no entry above and would be dropped as
     # dangling; resolve it against the served set, and only when the data those
@@ -4261,9 +4279,12 @@ def source_to_output(
     if destination is None and resolved_text.startswith("pdf/"):
         pdf_match = re.fullmatch(r"pdf/([a-z0-9-]+)/(.+)\.pdf", resolved_text)
         if pdf_match and (pdf_match.group(1), pdf_match.group(2)) in included_ids:
-            destination = publication_reader_path(pdf_match.group(1), pdf_match.group(2))
+            native_pdf_request = native_tex_declared()
+            route = publication_print_path if native_pdf_request else publication_reader_path
+            destination = route(pdf_match.group(1), pdf_match.group(2))
         elif pdf_match and pdf_match.group(1) in {"papal-documents", "reading-plans"}:
             destination = source_reader_routes().get(resolved_text)
+            native_pdf_request = destination is not None and native_tex_declared()
     if destination is None:
         # A web edition's page exists only for an included publication, so the
         # link resolves against inclusion rather than against a bare path match.
@@ -4275,8 +4296,11 @@ def source_to_output(
 
     start = PurePosixPath(output_relative).parent.as_posix()
     relative = posixpath.relpath(destination, start if start != "." else ".")
-    if target_parts.query:
-        relative += "?" + target_parts.query
+    query = target_parts.query
+    if native_pdf_request and not any(key == "print" for key, _ in parse_qsl(query)):
+        query = "print=1" + ("&" + query if query else "")
+    if query:
+        relative += "?" + query
     if target_parts.fragment:
         relative += "#" + target_parts.fragment
     return relative
@@ -4308,7 +4332,7 @@ def rewrite_links(
                 restricted_record = re.match(r"^(?:\.\./)*(?:src|guidance)/", target) is not None
                 return "" if catalog_entry and restricted_record else label
             if PDF_LINK_RE.search(target):
-                label = re.sub(r"\bPDF\b", "print view", label)
+                label = re.sub(r"\bPDF\b", "Generate PDF" if native_tex_declared() else "print view", label)
             return f"[{label}]({rewritten})"
 
         rewritten_line = MARKDOWN_LINK_RE.sub(replace, line)
@@ -5066,6 +5090,50 @@ def render_source_page(
     )
 
 
+def native_tex_declared() -> bool:
+    """A real checkout cannot silently lose its native runtime declaration."""
+    return ((ROOT / "scripts/_native_tex_publication.py").is_file()
+            or (ROOT / "src/common/native-tex-runtime.json").exists())
+
+
+def native_tex_catalog() -> dict:
+    empty = {"selections": {}, "assets": {}, "source_paths": []}
+    if not native_tex_declared():
+        return empty
+    if not _HELD_SOURCE_INVENTORIES:
+        with held_repository_inputs():
+            return native_tex_catalog()
+    def derive():
+        from _native_tex_publication import catalog
+        return catalog(ROOT)
+    return held_source_inventory("native-tex-catalog", derive)
+
+
+def native_tex_context() -> dict | None:
+    if not native_tex_declared():
+        return None
+    from _native_print import site_context
+    native = native_tex_catalog()
+    return held_source_inventory("native-tex-controls", lambda: site_context(
+        ROOT, documents=native["documents"], revision=native["source_revision"],
+        native_catalog=native,
+    ))
+
+
+def declared_native_tex_asset(relative: str) -> bool:
+    return relative.startswith("native-tex/") and relative in native_tex_catalog()["assets"]
+
+
+def verify_native_tex_files(output: Path) -> list[str]:
+    errors = []
+    for relative, asset in native_tex_catalog()["assets"].items():
+        path = output / relative
+        if path.is_file() and (path.stat().st_size != asset["bytes"]
+                              or sha256(path) != asset["sha256"]):
+            errors.append(f"{relative}: native TeX asset differs from its exact source/runtime bytes")
+    return errors
+
+
 def web_print_declared() -> bool:
     """A missing print preparation never means that the corpus is empty."""
     if (ROOT / "scripts/_web_print.py").is_file():
@@ -5424,6 +5492,7 @@ def web_print_catalog() -> dict:
                 ROOT, tuple(sorted(included)), browser_data_root=browser_data_root(), source_pages=sources,
                 site_routes={**PAGE_MAP, **included_document_pages(included)},
                 canonical_asset_routes=assets,
+                native_context=native_tex_context(),
             ), included, sources)
         except (ImportError, ValueError, OSError) as exc:
             if isinstance(exc, ReleaseError):
@@ -5707,7 +5776,7 @@ def verify_catalog_reachability(
     included: dict[tuple[str, str], dict],
     output: Path,
 ) -> list[str]:
-    """Require every copied publication PDF to be visibly linked by its catalog."""
+    """Require each admitted edition's reader or native print action in its catalog."""
     errors: list[str] = []
     primary, _ = declared_providers(manifest)
     # A catalog carries the rows of many publications, so its links are read
@@ -5726,8 +5795,10 @@ def verify_catalog_reachability(
         catalog_path = output / catalog_output
         if not catalog_path.is_file():
             continue
-        destination = publication_reader_path(provider, leaf)
-        expected_href = relative_link(catalog_output, destination)
+        destinations = {publication_reader_path(provider, leaf)}
+        if native_tex_declared():
+            destinations.add(publication_print_path(provider, leaf))
+        expected_hrefs = {relative_link(catalog_output, destination) for destination in destinations}
         local_paths = catalog_local_paths.get(catalog_output)
         if local_paths is None:
             local_paths = set()
@@ -5736,7 +5807,7 @@ def verify_catalog_reachability(
                 if not parts.scheme and not parts.netloc:
                     local_paths.add(unquote(parts.path))
             catalog_local_paths[catalog_output] = local_paths
-        if expected_href not in local_paths:
+        if not expected_hrefs & local_paths:
             errors.append(
                 f"{publication_label(key, primary)}: publication is not reachable "
                 f"from {catalog_output}"
@@ -5985,6 +6056,7 @@ def _artifact_topology_errors(
                 and path.suffix not in TEXT_SUFFIXES | {".pdf", ".png"}
                 and relative not in WEB_BROWSER_FONT_ASSETS
                 and not declared_print_binary_asset(relative)
+                and not declared_native_tex_asset(relative)
             ):
                 errors.append(f"artifact contains an unexpected file type: {relative}")
         elif not stat.S_ISDIR(entry.st_mode):
@@ -6204,6 +6276,7 @@ def _verify_snapshot_contents(
                 and path.suffix not in TEXT_SUFFIXES | {".png"}
                 and relative not in WEB_BROWSER_FONT_ASSETS
                 and not declared_print_binary_asset(relative)
+                and not declared_native_tex_asset(relative)
             ):
                 errors.append(f"artifact contains an unexpected file type: {relative}")
         elif not path.is_dir():
@@ -6276,6 +6349,7 @@ def _verify_snapshot_contents(
             errors.append(f"{relative}: source reader does not match its canonical text")
 
     errors.extend(verify_web_print_files(output, preview, expected_authorization))
+    errors.extend(verify_native_tex_files(output))
     for output_relative, source in sorted(web_browser_pages().items()):
         html_path = output / output_relative
         if html_path.is_file() and html_path.read_text(
@@ -6357,11 +6431,17 @@ def _verify_snapshot_contents(
         ("ghp_", re.compile(r"ghp_"), "GitHub token pattern"),
         ("BEGIN PRIVATE KEY", re.compile(r"BEGIN PRIVATE KEY"), "private key marker"),
     )
+    native_source_texts = {
+        relative for relative, asset in native_tex_catalog()["assets"].items()
+        if asset.get("kind") == "source-text"
+    }
     for path in output.rglob("*"):
-        if not path.is_file() or path.suffix not in TEXT_SUFFIXES | {".svg"} and path.name not in {"robots.txt", "SHA256SUMS", "_headers"}:
+        relative = path.relative_to(output).as_posix()
+        if (not path.is_file() or path.suffix not in TEXT_SUFFIXES | {".svg"}
+                and path.name not in {"robots.txt", "SHA256SUMS", "_headers"}
+                and relative not in native_source_texts):
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
-        relative = path.relative_to(output).as_posix()
         for literal, pattern, label in privacy_patterns:
             if literal in text and pattern.search(text):
                 errors.append(f"{relative}: contains {label}")
@@ -6389,7 +6469,7 @@ def _verify_snapshot_contents(
                             f"{relative}: links to excluded publication "
                             f"{publication_label(excluded_key, primary)}"
                         )
-            elif path.suffix == ".json" and any(
+            elif (path.suffix == ".json" or relative in native_source_texts) and any(
                 target in text for target in excluded_targets
             ):
                 errors.append(
@@ -6932,6 +7012,14 @@ def _build_site_contents(
         digest, status = writer.files[relative]
         if digest != asset["sha256"] or status.st_size != asset["bytes"]:
             raise ReleaseError(f"{relative}: written print asset differs from its exact byte pins")
+    for relative, asset in native_tex_catalog()["assets"].items():
+        if "body" in asset:
+            writer.bytes(relative, asset["body"])
+        else:
+            writer.copy(asset["path"], relative)
+        digest, status = writer.files[relative]
+        if digest != asset["sha256"] or status.st_size != asset["bytes"]:
+            raise ReleaseError(f"{relative}: written native TeX payload differs from its exact byte pins")
     if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
         writer.text(
             PICTORIAL_GALLERY_OUTPUT,

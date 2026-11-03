@@ -56,6 +56,18 @@ jobs:
       - name: Install source publication dependencies
         run: python -m pip install --disable-pip-version-check -r requirements-public-alpha.txt -r requirements-tools.txt
 
+      # These are native browser compiler inputs, not generated PDFs. Cached
+      # bytes remain untrusted until the committed runtime manifest verifies
+      # every engine, package, font and notice. No TeX engine runs in Pages CI.
+      - name: Restore native TeX runtime candidates
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .scratch/native-tex-runtime
+          key: triptych-native-tex-v1-${{ hashFiles('src/common/native-tex-runtime.json') }}
+
+      - name: Hydrate and verify native TeX runtime assets
+        run: python scripts/_native_tex_assets.py hydrate --fetch
+
       - name: Identify exact browser products
         id: browser-products
         run: |

@@ -60,6 +60,53 @@ class RecipeTests(unittest.TestCase):
         self.assertNotIn("install", command)
         self.assertTrue(pdf.is_relative_to(self.root / ".scratch/run"))
 
+    def test_request_scratch_roots_keep_auxiliaries_separate(self):
+        recipe = self.recipe()
+        with patch.dict(printing.os.environ, {}, clear=True):
+            default = printing._work_root(self.root, recipe)
+        self.assertEqual(default.parent, self.root / ".scratch/print-document")
+        first = self.root / ".scratch/request-one"
+        second = self.root / ".scratch/request-two"
+        with patch.dict(printing.os.environ, {"TRIPTYCH_PRINT_WORK_ROOT": str(first)}):
+            first_work = printing._work_root(self.root, recipe)
+            _, first_pdf = printing._make_arguments(recipe, first_work)
+            first_pdf.parent.mkdir(parents=True)
+            first_pdf.with_suffix(".aux").write_text("references from the first request")
+        with patch.dict(printing.os.environ, {"TRIPTYCH_PRINT_WORK_ROOT": str(second)}):
+            second_work = printing._work_root(self.root, recipe)
+            command, second_pdf = printing._make_arguments(recipe, second_work)
+        self.assertEqual(first_work.name, second_work.name)
+        self.assertTrue(first_pdf.is_relative_to(first))
+        self.assertTrue(second_pdf.is_relative_to(second))
+        self.assertFalse(second_pdf.with_suffix(".aux").exists())
+        self.assertIn("BUILD_ROOT=" + str(second_work / "build/gpt"), command)
+
+    def test_request_scratch_refuses_ambiguous_protected_or_symlink_paths(self):
+        protected = self.root / "src/reused-work"
+        link = self.root / ".scratch/request-link"
+        link.parent.mkdir(parents=True)
+        link.symlink_to(self.leaf, target_is_directory=True)
+        for value in ("", "relative/job", "/", str(protected), str(link / "job")):
+            with self.subTest(value=value), patch.dict(printing.os.environ, {"TRIPTYCH_PRINT_WORK_ROOT": value}):
+                with self.assertRaises(printing.PrintError):
+                    printing._work_root(self.root, self.recipe())
+
+    def test_papal_selection_plan_uses_request_scratch(self):
+        scratch = self.root / ".scratch/papal-request"
+        plan = {"schema": "triptych-papal-typeset/v1", "documents": []}
+
+        def make_plan(argv, root):
+            filename = next(value.split("=", 1)[1] for value in argv
+                            if value.startswith("PAPAL_CURRENT_MANIFEST="))
+            target = Path(filename)
+            self.assertTrue(target.is_relative_to(scratch))
+            target.write_text(json.dumps(plan))
+
+        with patch.dict(printing.os.environ, {"TRIPTYCH_PRINT_WORK_ROOT": str(scratch)}), \
+                patch.object(printing, "_run", side_effect=make_plan):
+            self.assertEqual(printing._papal_plan(self.root), plan)
+        self.assertEqual(list(scratch.iterdir()), [])
+
     def test_declared_graph_is_queried_without_running_recipes(self):
         recipe = self.recipe()
         _, target = printing._make_arguments(recipe, printing._work_root(self.root, recipe))
@@ -70,6 +117,93 @@ class RecipeTests(unittest.TestCase):
         self.assertIn("-qp", run.call_args.args[0])
         self.assertIn(source, dependencies)
         self.assertNotIn("source-check", dependencies)
+
+    def test_batch_checks_preserve_each_selected_dependency_set_and_metadata_gate(self):
+        first = self.recipe()
+        second = dict(first, id="publication:gpt/articles/faith/second", document="articles/faith/second")
+        peer = dict(first, id="publication:claude/articles/faith/example", provider="claude")
+        shared = self.root / "src/common"
+        shared.mkdir(parents=True)
+        (shared / "format.tex").write_text("shared format")
+        order_only = self.root / "source-check"
+        order_only.write_text("order-only validator")
+        selected = [first, peer, second]
+
+        def database(argv, **kwargs):
+            lines = [f"{target}: src/common {first['entrypoint']} | source-check"
+                     for target in argv if target.endswith(".pdf")]
+            return subprocess.CompletedProcess(argv, 1, "\n".join(lines), "")
+
+        with patch.object(printing.subprocess, "run", side_effect=database):
+            individual = {recipe["id"]: printing._declared_dependencies(self.root, recipe)
+                          for recipe in selected}
+        with patch.object(printing.subprocess, "run", side_effect=database) as make, \
+                patch.object(printing, "_run") as metadata:
+            result = printing.check_many(selected, root=self.root)
+        self.assertEqual([recipe["id"] for recipe in result], [recipe["id"] for recipe in selected])
+        self.assertEqual({recipe["id"]: recipe["dependencies"] for recipe in result}, individual)
+        self.assertEqual(make.call_count, 2)
+        for call in make.call_args_list:
+            command = call.args[0]
+            self.assertIn("-qp", command)
+            self.assertNotIn("doc", command)
+            documents = next(value for value in command if value.startswith("DOCUMENTS="))
+            expected = "DOCUMENTS=articles/faith/example"
+            if "PROVIDER=gpt" in command:
+                expected += " articles/faith/second"
+            self.assertEqual(documents, expected)
+        self.assertEqual(metadata.call_count, len(selected))
+        for call, recipe in zip(metadata.call_args_list, selected):
+            self.assertEqual(call.args[0], printing._tool(self.root, "check-generation-metadata",
+                             "--provider", recipe["provider"], "--document", recipe["document"]))
+        self.assertTrue(all(recipe["status"] == "valid" for recipe in result))
+        self.assertTrue(all("source-check" not in recipe["dependencies"] for recipe in result))
+
+    def test_batch_make_failure_or_absent_target_does_not_return_partial_checks(self):
+        recipe = self.recipe()
+        for result in (subprocess.CompletedProcess([], 2, "", "bad make graph"),
+                       subprocess.CompletedProcess([], 1, "unrelated.pdf: absent.tex", "")):
+            with self.subTest(result=result), patch.object(printing, "_run"), \
+                    patch.object(printing.subprocess, "run", return_value=result):
+                with self.assertRaises(printing.PrintError):
+                    printing.check_many([recipe], root=self.root)
+
+    def test_batch_metadata_failure_stops_before_make_discovery(self):
+        with patch.object(printing, "_run", side_effect=printing.PrintError("invalid source metadata")), \
+                patch.object(printing.subprocess, "run") as make:
+            with self.assertRaisesRegex(printing.PrintError, "invalid source metadata"):
+                printing.check_many([self.recipe()], root=self.root)
+        make.assert_not_called()
+
+    def test_batch_has_no_cross_call_cache_and_keeps_nonpublication_checks(self):
+        recipe = self.recipe()
+        first = self.root / "src/common/first.tex"
+        second = self.root / "src/common/second.tex"
+        first.parent.mkdir(parents=True)
+        first.write_text("first")
+        second.write_text("second")
+        _, target = printing._make_arguments(recipe, printing._scratch_root(self.root) / "dependency-query/gpt")
+        responses = [subprocess.CompletedProcess([], 1, f"{target}: {value}", "")
+                     for value in ("src/common/first.tex", "src/common/second.tex")]
+        source = {"family": "bible", "id": "bible:fixture"}
+        with patch.object(printing, "_run"), patch.object(printing, "check", return_value=source) as gate, \
+                patch.object(printing.subprocess, "run", side_effect=responses) as make:
+            one = printing.check_many([recipe, source], root=self.root)
+            two = printing.check_many([source, recipe], root=self.root)
+        self.assertIn("src/common/first.tex", one[0]["dependencies"])
+        self.assertNotIn("src/common/first.tex", two[1]["dependencies"])
+        self.assertIn("src/common/second.tex", two[1]["dependencies"])
+        self.assertEqual(make.call_count, 2)
+        self.assertEqual(gate.call_count, 2)
+        self.assertIs(one[1], source)
+        self.assertIs(two[0], source)
+
+    def test_batch_rejects_duplicate_publication_identities(self):
+        recipe = self.recipe()
+        with patch.object(printing, "_run"), patch.object(printing.subprocess, "run") as make:
+            with self.assertRaisesRegex(printing.PrintError, "unique document identities"):
+                printing.check_many([recipe, recipe], root=self.root)
+        make.assert_not_called()
 
     def test_publication_source_check_is_not_a_pdf_check(self):
         recipe = self.recipe()
@@ -201,9 +335,13 @@ class RecipeTests(unittest.TestCase):
         work = self.root / ".scratch/print-document/job"
         destination = self.root / ".scratch/export"
         result = {"output": str(destination / "selected.pdf"), "receipt": str(destination / "selected.print.json"),
-                  "mechanical_validation": {"command": ["make", "BUILD_ROOT=" + str(work / "build")]}}
-        saved = printing._portable_receipt(result, self.root, work, destination)
+                  "mechanical_validation": {"command": ["make", "BUILD_ROOT=" + str(work / "build"),
+                                                        "PYTHON=/home/build-user/venv/bin/python"]}}
+        with patch.object(printing.sys, "executable", "/home/build-user/venv/bin/python"):
+            saved = printing._portable_receipt(result, self.root, work, destination)
         self.assertEqual(saved["mechanical_validation"]["command"][1], "BUILD_ROOT=<print-work>/build")
+        self.assertEqual(saved["mechanical_validation"]["command"][2], "PYTHON=<python>")
+        result["mechanical_validation"]["command"].pop()
         result["machine_path"] = "/home/unrelated-user/private-font"
         with self.assertRaisesRegex(printing.PrintError, "machine-local path"):
             printing._portable_receipt(result, self.root, work, destination)

@@ -111,6 +111,24 @@ not generate PDFs or compare their bytes. Issuing a reviewed native print editio
 [`docs/printing.md`](../docs/printing.md) and every exact pagination, paired-page,
 card, image, and physical-use rule in the owning profile.
 
+## Native print sources
+
+The complete-edition web Print action uses the canonical native TeX recipe,
+including its original engine, source graph, typesetting templates and fonts.
+It may execute in a browser WebAssembly worker or an explicitly configured
+compiler service. The schema does not authorize flattening TeX into HTML for
+that PDF. Source-only preparation may generate deterministic native TeX for
+structured families without compiling or storing a PDF during publication.
+
+A browser source bundle is a bounded transport of one admitted output's
+render inputs, with exact file hashes, entrypoint, virtual paths, engine and
+source identity. It must preserve imports and source-owned apparatus and
+exclude research records and unadmitted selections. Engine, package and font
+delivery is separately hash-bound. The public admission set controls every
+bundle and service request; the larger local native recipe catalogue is not
+public authorization. Changing shared print templates invalidates generated
+PDF cache identities without rebuilding the PDF corpus.
+
 ## Browser-print projections
 
 The canonical kind and manifest also select a source-owned browser-print

@@ -1,0 +1,43 @@
+# SPDX-License-Identifier: MIT
+services:
+  native-print:
+    image: "${TRIPTYCH_PRINT_IMAGE:?Set the exact locally inspected worker image}"
+    platform: linux/amd64
+    environment:
+      # This identifies the complete prepared worker image, including fonts
+      # and the XeTeX/language layer, rather than just its older base image.
+      TRIPTYCH_PRINT_TOOLCHAIN: "${TRIPTYCH_PRINT_TOOLCHAIN:?Set the complete worker image sha256 identity}"
+    user: "10001:10001"
+    read_only: true
+    init: true
+    restart: unless-stopped
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    cpus: 2
+    mem_limit: 4g
+    pids_limit: 256
+    stop_grace_period: 30s
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,noexec,size=256m,mode=1777
+    volumes:
+      - native-print-state:/var/lib/triptych-print
+      # Current native source-selection helpers also use repository scratch.
+      - native-print-work:/app/.scratch
+    ports:
+      - "127.0.0.1:8080:8080"
+    networks:
+      - print-internal
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+networks:
+  print-internal:
+    internal: true
+
+volumes:
+  native-print-state:
+  native-print-work:

@@ -1,0 +1,7 @@
+.native-print-actions { border-block: 1px solid #b8b0a3; padding-block: 1rem; margin-block: 1rem; }
+.native-print-actions button, .native-print-actions [data-native-print-download] { min-height: 2.75rem; padding: .5rem .75rem; }
+.native-print-actions [data-native-print-download] { display: inline-block; }
+.native-print-actions [hidden] { display: none !important; }
+.native-print-archive { font-size: .9em; }
+[data-native-print-status] { min-height: 1.5em; }
+@media print { .native-print-actions { display: none !important; } }

@@ -628,6 +628,9 @@
 
   function bootstrap() {
     for (const root of document.querySelectorAll('[data-web-print-document]')) {
+      // The primary edition action requests its authored TeX PDF. Retained
+      // browser bodies remain readable without binding a second Print action.
+      if (root.querySelector('[data-native-print]')) continue;
       try {
         const manifest = root.querySelector('script[data-web-print-manifest]');
         need(manifest && manifest.type === 'application/json', 'The canonical print descriptor is missing.');
