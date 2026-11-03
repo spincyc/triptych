@@ -11,8 +11,7 @@ Last reconciled: 2026-11-03.
 
 <!-- promised-deliverable: native-tex-print-on-demand-2026-11-03 -->
 
-**Pushed to main: native generation validated; automatic deployment and live
-Print verification pending.**
+**Complete: native TeX PDF generation is live and verified.**
 The maintainer rejected browser print typography and requires the web Print
 action to create native TeX PDFs, retaining original layouts and fonts with
 zero PDFs checked into Git. This supersedes browser reflow as the primary
@@ -217,6 +216,56 @@ for that exact implementation was queued at 2026-11-03 15:40 UTC. Publication
 is confirmed; successful deployment and live Print downloads are not yet
 claimed. The native task remains in progress until those checks pass. The
 earlier substantial-publication-speed requirement remains open.
+
+The exact `aa6ca92675` [Pages run](https://github.com/spincyc/triptych/actions/runs/41666276644)
+completed successfully at 2026-11-03 16:15:30 UTC. All source, asset, cache,
+artifact and deployment gates pass. Observed job timings are:
+
+| Phase | Time |
+| --- | ---: |
+| Native runtime hydration and verification | 3 seconds |
+| Browser cache bootstrap | 9 seconds |
+| Source-gated site build | 18m17s |
+| Cache retention / save | 65 / 6 seconds |
+| Independent Pages artifact verification | 12m03s |
+| Artifact upload / deployment | 25 / 42 seconds |
+| Whole job | **35m12s** |
+
+This is slower than the original 23m35s baseline and the prior optimized
+22m16s run. Runner differences limit causal attribution, but this result does
+not meet the earlier substantial-publication-speed promise. That requirement
+remains open; native printing completion does not waive it.
+
+Canonical live acceptance at `https://mystago.gy/` passes all seven real
+Print/download cases for implementation
+`aa6ca926752ab89c019291e115ceb226ae3412fc`, publication manifest SHA-256
+`9e4a8e5ffb629030b335a4576bd30cfda198ecc3140cea649ba9aa648836e8f3` and
+the final runtime `c106b1bd54ff23f5dba3c1509b2a4cf699febf75dfb2c3ec5982408169a910dd`.
+The actual article reader Print link, Synthesis treatment menu, native buttons
+and automatic `?print=1` routes are exercised without compiler or response
+overrides. Exact complete extracted text, titles, page counts and font counts
+match the validated native outputs; every font is embedded. Six pdfTeX PDFs
+are byte-identical to the complete native proof; the XeTeX papal output retains
+only expected metadata variance, with matching complete text, pages and fonts.
+
+| Live edition / entry route | Pages | Embedded fonts |
+| --- | ---: | ---: |
+| [How the Catholic Church Teaches](https://mystago.gy/web/gpt/articles/faith/catholic-doctrinal-authority.html) | 7 | 12 |
+| [All Saints Synthesis](https://mystago.gy/web/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.html) | 10 | 15 |
+| [Missa Cantata Cue Cards](https://mystago.gy/print/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.html) | 13 | 10 |
+| [MC and Trainer's Visual Dictionary](https://mystago.gy/print/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.html) | 10 | 17 |
+| [Complete Clementine Vulgate](https://mystago.gy/print/bibles/clementine-vulgate.html?print=1) | 597 | 5 |
+| [Quod Iam Diu](https://mystago.gy/papal-documents/1918-12-01--papal.benedict-xv.hf-ben-xv-enc-01121918-quod-iam-diu.catholic-mind-1919-02-08-english--en--7e2588b63d4aa6f6.html) | 1 | 4 |
+| [Full Account, Douay-Rheims](https://mystago.gy/reading-plans/narrative-spine-full-account-douay-rheims.html?print=1) | 298 | 5 |
+
+The first cold live typesetter/resource load takes 82.187 seconds; following
+Synthesis and card jobs take 2.678 and 2.994 seconds. The illustrated dictionary
+takes 43.711 seconds and the complete Clementine 18.884 seconds. These measured
+desktop Chromium results do not establish mobile or physical-printer/duplex
+approval. There are no browser HTML Print calls, script/console errors, failed
+HTTP requests or network errors, and no CDN source-revision mismatch. All
+browser, server, profile, cache-proof and deployment-monitor processes are
+closed. No generated PDF is tracked or compiled during routine publication.
 
 ## Publication reader redesign, 2026-11-03
 

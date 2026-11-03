@@ -4,7 +4,7 @@ schema_version = 1
 id = "native-tex-print-on-demand-2026-11-03"
 owner = "PROJECT-WORK.md"
 promise = "Restore the web Print action to generate native TeX PDFs on demand from current admitted canonical sources, preserving original elegant layouts and fonts across document types with zero PDFs checked into Git and no corpus PDF build in normal publishing."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "native-layout-and-font-fidelity"
@@ -15,8 +15,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "automatic-public-native-generation"
   criterion = "An anonymous web Print click automatically generates or retrieves the matching current native PDF, with visible progress, correct source/output identity and actionable errors; HTML browser printing, historical downloads and manual workflow dispatch are not substitutes."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/web/browser/shared/native-print.js", "src/web/browser/shared/native-tex.js", "scripts/_native_print.py"]
 
   [[deliverables.requirements]]
   id = "admission-coverage-and-isolated-rendering"
@@ -33,8 +33,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "independent-review-and-real-interface-verification"
   criterion = "Independent review covers the final native-generation implementation, representative PDFs and complete route/admission mapping; required source and site gates and real browser request/download checks pass, with deployment state and limits reported accurately."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/native-tex-print-2026-11-03/visual.json", "tools/tests/test_native_tex_publication.py", "tools/tests/test_native_print_frontend.py"]
 
 [[deliverables]]
 id = "gpt-publication-reader-redesign-2026-11-03"
