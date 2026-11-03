@@ -676,6 +676,107 @@ class PublicAlphaTest(unittest.TestCase):
         with self.assertRaisesRegex(self.tool.ReleaseError, "expected one catalog link, found 2"):
             self.tool.validate_manifest(self.manifest)
 
+    def prepare_related_source_catalogue(self):
+        scope = self.prepare_scoped_proper()
+        catalog = self.root / "library/test.md"
+        text = catalog.read_text()
+        references = []
+        for leaf in ("proper", "proper-synthesis", "proper-homily"):
+            text = text.replace(f"../pdf/gpt/{leaf}.pdf", f"../web/gpt/{leaf}.html")
+            references.append(
+                f"[Related {leaf}](../web/gpt/{leaf}.html) "
+                f"<!-- triptych-publication-reference: {leaf} -->"
+            )
+        text += "\n| Related setting | " + " · ".join(references) + " |\n"
+        catalog.write_text(text)
+        shutil.rmtree(self.root / "pdf")
+        self.authorize_current_inputs()
+        return scope, text
+
+    def test_related_source_outputs_retain_one_canonical_owner(self) -> None:
+        scope, text = self.prepare_related_source_catalogue()
+        publications = self.tool.validate_manifest(self.manifest, installed_scope=scope)
+        occurrences, _, _, _, _ = self.tool.catalog_occurrences("gpt", ["gpt"], publications)
+        for key in scope:
+            self.assertEqual(occurrences[key], ["library/test.md"])
+            self.assertEqual(text.count(f"../web/gpt/{key[1]}.html"), 2)
+        self.assertNotIn(("gpt", "related-setting"), publications)
+
+    def test_related_source_link_cannot_replace_its_owner(self) -> None:
+        scope, text = self.prepare_related_source_catalogue()
+        self.write("library/test.md", text.replace("[proper](../web/gpt/proper.html)", "").encode())
+        self.authorize_current_inputs()
+        with self.assertRaisesRegex(self.tool.ReleaseError, "expected one catalog link, found 0"):
+            self.tool.validate_manifest(self.manifest, installed_scope=scope)
+
+    def test_related_source_reference_requires_registry(self) -> None:
+        self.prepare_related_source_catalogue()
+        with self.assertRaisesRegex(self.tool.ReleaseError, "undeclared output"):
+            self.tool.catalog_occurrences("gpt", ["gpt"])
+
+    def test_related_source_reference_rejects_invalid_declarations(self) -> None:
+        scope, text = self.prepare_related_source_catalogue()
+        marker = "<!-- triptych-publication-reference: proper -->"
+        cases = (
+            (text.replace(marker, "<!-- triptych-publication-reference: missing -->"), "undeclared output"),
+            (text.replace(marker, "<!-- triptych-publication-reference: other:proper -->"), "undeclared provider"),
+            (text.replace(marker, "<!-- triptych-publication-reference: INVALID -->"), "malformed"),
+            (text.replace(marker, marker + " " + marker), "duplicate publication reference"),
+            (text.replace("[Related proper](../web/gpt/proper.html)", "Related proper"), "visible HTML link on the same row"),
+            (text.replace(marker, marker + " <!-- triptych-publication-id: proper -->"), "conflicts with ownership"),
+            (text.replace(marker, marker + " [Own](../pdf/gpt/proper.pdf)"), "conflicts with ownership"),
+        )
+        for changed, message in cases:
+            with self.subTest(message=message):
+                self.write("library/test.md", changed.encode())
+                self.authorize_current_inputs()
+                with self.assertRaisesRegex(self.tool.ReleaseError, message):
+                    self.tool.validate_manifest(self.manifest, installed_scope=scope)
+
+    def test_related_source_reference_cannot_move_to_another_catalogue(self) -> None:
+        scope, _ = self.prepare_related_source_catalogue()
+        self.write("library/other.md", b"# Other\n\n[Related](../web/gpt/proper.html) <!-- triptych-publication-reference: proper -->\n")
+        self.authorize_current_inputs()
+        with self.assertRaisesRegex(self.tool.ReleaseError, "must stay in its owning catalog"):
+            self.tool.validate_manifest(self.manifest, installed_scope=scope)
+
+    def test_related_source_reference_rejects_rendered_nonlinks(self) -> None:
+        scope, text = self.prepare_related_source_catalogue()
+        related = "[Related proper](../web/gpt/proper.html)"
+        related_row = next(line for line in text.splitlines() if line.startswith("| Related setting"))
+        cases = (
+            text.replace(related, "\\" + related),
+            text.replace(related, "`" + related + "`"),
+            text.replace(related_row, "```markdown\n" + related_row + "\n```"),
+            text.replace(related_row, "<pre>\n" + related_row + "\n</pre>"),
+            text.replace(related, "[Related proper](../web/gpt/proper.html invalid-title)"),
+        )
+        for index, changed in enumerate(cases):
+            with self.subTest(case=index):
+                self.write("library/test.md", changed.encode())
+                self.authorize_current_inputs()
+                with self.assertRaisesRegex(self.tool.ReleaseError, "visible HTML link on the same row"):
+                    self.tool.validate_manifest(self.manifest, installed_scope=scope)
+
+    def test_related_sources_filter_held_links_and_strip_metadata(self) -> None:
+        scope, text = self.prepare_related_source_catalogue()
+        included = scope - {("gpt", "proper-synthesis")}
+        filtered = self.tool.filter_catalog("library/test.md", text, included)
+        self.assertIn("[Related proper](../web/gpt/proper.html)", filtered)
+        self.assertIn("[Related proper-homily](../web/gpt/proper-homily.html)", filtered)
+        self.assertNotIn("proper-synthesis.html", filtered)
+        self.assertNotIn("triptych-publication-reference", filtered)
+        self.assertNotIn("triptych-publication-reference", self.tool.filter_catalog("library/test.md", text, set()))
+
+    def test_related_source_can_share_row_with_a_different_owner(self) -> None:
+        scope, _ = self.prepare_related_source_catalogue()
+        text = "# Shelf\n\n[Work](../pdf/gpt/work.pdf) <!-- triptych-publication-id: work --> "
+        text += "[Related](../web/gpt/proper.html) <!-- triptych-publication-reference: proper -->\n"
+        text += "\n".join(f"[{leaf}](../web/gpt/{leaf}.html)" for _, leaf in sorted(scope)) + "\n"
+        self.write("library/test.md", text.encode())
+        self.authorize_current_inputs()
+        self.assertTrue(scope <= self.tool.validate_manifest(self.manifest, installed_scope=scope).keys())
+
     def test_source_first_catalogue_rejects_undeclared_html_provider(self) -> None:
         self.write("library/test.md", b"# Shelf\n\n[Read](../web/gpt/work.html)\n[Other](../print/other/work.html)\n")
         self.authorize_current_inputs()

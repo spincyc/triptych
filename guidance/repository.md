@@ -397,7 +397,15 @@ work was built. `ABOUT.md` is the consumer overview: it begins with
 name in ordinary language.
 
 Each publication has exactly one
-owning catalog under `library/`. The root landing tables expose exactly seven
+owning catalog under `library/`. A related-resource link on another row of
+that same catalog uses an explicit
+`<!-- triptych-publication-reference: [provider:]output-id -->` for each
+repeated HTML destination. A reference must name a declared output owned by
+this catalog and visibly linked on that row; it never supplies a missing owner
+or declares another publication. Ordinary duplicate-owner, provider and hold
+checks still apply, and the markers are removed from rendered pages.
+
+The root landing tables expose exactly seven
 reader portals, in this order and with these muted liturgical-color identities:
 white `Faith`, gold `Scripture`, red `Liturgy`, green `History`, violet
 `Formation`, rose `Mary`, and black `Law`. Gold is an interface category for

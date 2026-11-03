@@ -51,6 +51,13 @@ The stable 1962 temporal series in liturgical-year order, beginning with the
 First Sunday of Advent. Each approved installed guide is linked; unavailable
 editions are shown as `Planned`.
 
+The Fifth Sunday after Epiphany and its resumed observance share their
+orations, Epistle and Gospel. In resumed use, the five chants come from the
+Twenty-third Sunday after Pentecost
+([1962 Missal, RGMR 298](https://www.clerus.org/bibliaclerusonline/fr/irt.htm)).
+Row 16 also links the existing resumed study and its companions for their
+shared readings; a dedicated guide to the winter formulary remains planned.
+
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost -->
@@ -108,7 +115,7 @@ editions are shown as `Planned`.
 | 13 | **Second Sunday after the Epiphany** | Planned | Planned |
 | 14 | **Third Sunday after the Epiphany** | Planned | Planned |
 | 15 | **Fourth Sunday after the Epiphany** | Planned | Planned |
-| 16 | **Fifth Sunday after the Epiphany** | Planned | Planned |
+| 16 | **Fifth Sunday after the Epiphany** | Shared readings, resumed setting: [Full study](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.html) · [Concise print options](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.html) · [Homily print options](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily.html) <!-- triptych-publication-reference: liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany --> <!-- triptych-publication-reference: liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis --> <!-- triptych-publication-reference: liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily --> | Planned |
 | 17 | **Sixth Sunday after the Epiphany** | Planned | Planned |
 | 18 | **Septuagesima Sunday** | Planned | Planned |
 | 19 | **Sexagesima Sunday** | Planned | Planned |

@@ -7,6 +7,292 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-02.
 
+## Fifth Sunday after Epiphany catalogue reference, 2026-11-02
+
+<!-- promised-deliverable: gpt-epiphany-fifth-catalogue-reference-2026-11-02 -->
+
+**Validated; publication pending.** The maintainer requested that the ordinary Fifth Sunday after
+Epiphany row expose the resources already produced for the resumed Fifth.
+The direct study, concise print-option and homily print-option destinations
+will match on rows 16 and 66. The row-16 labels identify the resumed setting
+and a note explains the shared readings without claiming a completed winter
+formulary guide or changing either permanent identity.
+
+The controlling 1962 Missal rubric RGMR 298, rechecked in the Vatican Clerus
+transcription at `https://www.clerus.org/bibliaclerusonline/fr/irt.htm`, retains
+the Epiphany Sunday's orations, Epistle and Gospel while supplying the five
+chants from the Twenty-third Sunday after Pentecost. The accepted proper-66
+context record already documents this distinction and excludes the winter
+form's chants. Keep its reviewed content and native audit unchanged.
+
+Use explicit, validated non-owning catalogue references for the three repeated
+links. Each reference must point to a declared output owned by this same
+catalogue and present on that row; it must not create a second ownership home,
+mask missing or duplicate owners, or expose held outputs. Retain all existing
+ownership, provider, release and link checks. Validate and review the change,
+refresh only affected mechanical products/bindings, and publish the assigned
+feature and main refs under the maintainer's existing main-push authority.
+
+
+The feature workspace fast-forwarded to incoming main
+`7b9daae87c00b0e4d84fe958372d520300374c08` before final mechanical recording.
+Its verified cache-candidate reuse, immutable optional bootstrap and Pages
+ordering remain unchanged. The older in-flight recording was stopped before
+writing a descriptor; only the recording against current main is relevant.
+
+The independent code/source review found a rendered-link eligibility gap
+(EPIPHANY-REFERENCE-001). Validation now renders a tagged validation-only copy
+of the complete catalogue and requires genuine anchors on each reference row.
+Published Markdown and destinations are unchanged. The repair passes 17 focused
+regressions and independent adversarial probes. Product and release checks are
+pending; the following original and repair reports are preserved verbatim.
+
+```json
+{
+  "schema": 1,
+  "review": "independent ordinary Fifth Sunday related-resource catalogue review",
+  "verdict": "CHANGES_REQUIRED",
+  "reviewed_sha256": {
+    "tools/public-alpha": "1b97e50093a3a3810d2ae62378b19a6a67f202073b04d58d450c50bc1f56119d",
+    "tools/tests/test_public_alpha.py": "ae05010b0c931626b6bb5202c8470b2dcec8f161984e479fedbf755410fdf78f",
+    "library/traditional-latin-mass.md": "07986efe5af8dbda01681e038efeadd8cff7160c0310b47c35f7c0c832e42f10",
+    "guidance/repository.md": "6b7d5774278acf6aac7cca422db3d50ea0e4c2b6b4c7a34885aa28e5d2d8fb95"
+  },
+  "finding": {
+    "id": "EPIPHANY-REFERENCE-001",
+    "priority": "P2",
+    "path": "tools/public-alpha",
+    "line": 3517,
+    "problem": "Reference validation treats escaped or inline-code Markdown link lookalikes as a visible HTML link. The regex supplies the identity even when the pinned renderer creates no anchor on that reference row.",
+    "impact": "A non-clickable reference can pass the new explicit visible-link contract. The current row 16 is correct, but malformed future reference rows are accepted.",
+    "evidence": "Independent escaped-link and backticked-link probes both pass catalogue validation with exactly one canonical owner, while rendered reference-row HTML has no anchor to the referenced output; the ordinary Markdown control has the anchor.",
+    "fix_criterion": "Exclude escaped/code link lookalikes from reference eligibility, or otherwise verify genuine rendered Markdown links while retaining raw-HTML refusal. Add both negative regressions; retain the normal related-link and ownership cases."
+  },
+  "checks": [
+    {
+      "command": "python -m unittest tools.tests.test_public_alpha -k related_source -k source_first -v",
+      "runtime": "Pinned packages, browser-cache environment and exclusive review scratch",
+      "exit_code": 0,
+      "tests": 16,
+      "seconds": 0.523
+    },
+    {
+      "result": "Independent raw-HTML, absolute-URL, reference-style Markdown, comment-only link and same-identity PDF conflict probes refuse as intended."
+    },
+    {
+      "result": "Actual current registry confirms identical three resource URLs in rows 16 and 66, exactly one canonical ownership link for each output, and no ordinary Fifth Sunday publication record."
+    },
+    {
+      "result": "Pinned Markdown rendering confirms two non-link lookalikes are incorrectly accepted."
+    }
+  ],
+  "source_context": {
+    "primary_source": "https://www.clerus.org/bibliaclerusonline/fr/irt.htm",
+    "locus": "RGMR 298",
+    "result": "Independently checked shared orations, Epistle and Gospel, with resumed chants supplied from the Twenty-third Sunday after Pentecost. The resumed-setting qualifier and winter-guide-planned note accurately preserve that distinction."
+  },
+  "open_findings": [
+    "EPIPHANY-REFERENCE-001"
+  ],
+  "limits": [
+    "Bounded code/source review only; full suite, product recording, site validation and final delivery remain pending.",
+    "No authoritative source, index, release, producer or cache mutation performed."
+  ]
+}
+```
+
+```json
+{
+  "schema": 1,
+  "review": "independent ordinary Fifth Sunday catalogue-reference repair confirmation",
+  "verdict": "PASS",
+  "reviewed_sha256": {
+    "tools/public-alpha": "e8faca2cacc7f8d9514507af860bdb003444a299de0f5c01a5af7db58e7fbebf",
+    "tools/tests/test_public_alpha.py": "7d07703095c799a7eae892873a3b519cd7d4bf163383c225e525f066a10febd7",
+    "library/traditional-latin-mass.md": "07986efe5af8dbda01681e038efeadd8cff7160c0310b47c35f7c0c832e42f10",
+    "guidance/repository.md": "6b7d5774278acf6aac7cca422db3d50ea0e4c2b6b4c7a34885aa28e5d2d8fb95"
+  },
+  "resolved_findings": [
+    {
+      "id": "EPIPHANY-REFERENCE-001",
+      "resolution": "A validation-only copy tags each row/identity reference target with an unpredictable nonce, renders the complete catalogue with the pinned Markdown renderer, and requires the nonce on a real anchor with the expected normalized local identity. Escaped/code/HTML context and invalid title lookalikes no longer pass. Published Markdown and destination URLs are unchanged."
+    }
+  ],
+  "contract_findings": [
+    "Each reference requires a declared provider and output, the same owning catalogue, a genuine rendered inline Markdown link on that row, and no same-identity owner-marker or PDF conflict. Duplicate or malformed reference markers fail.",
+    "References omit only their explicitly identified HTML ownership occurrences. They cannot replace a missing canonical owner, manufacture another publication, or move ownership to another catalogue. The five-value return shape and unmarked legacy counting remain intact.",
+    "Independent nonce tags separate reference rows, so a valid link on another row cannot satisfy a non-link lookalike. LinkParser adds anchor collection without changing its existing links or IDs.",
+    "Existing inclusion/hold filtering applies to reference targets; metadata is removed before rendering and the private-label guard rejects residual reference markers."
+  ],
+  "independent_checks": [
+    {
+      "command": "python -m unittest tools.tests.test_public_alpha -k related_source -k source_first -v",
+      "runtime": "Pinned renderer packages, browser-cache environment and exclusive review scratch",
+      "exit_code": 0,
+      "tests": 17,
+      "seconds": 0.682
+    },
+    {
+      "result": "Nine negative probes refuse: escaped Markdown, inline code, fenced code, HTML preformatted context, invalid title grammar, raw HTML anchor, absolute URL, reference-style Markdown, and another row’s valid link attempting to satisfy a fake reference."
+    },
+    {
+      "result": "A valid query, fragment and quoted title pass unchanged. Repeated nonce validations return the same five-value result and preserve exactly one canonical owner."
+    },
+    {
+      "result": "The actual registry and catalogue have identical three URLs in rows 16 and 66; all three resumed outputs retain one owner, ordinary row 16 gains no publication record, and validation leaves catalogue bytes unchanged."
+    },
+    {
+      "command": "git diff --check on the four reviewed files",
+      "exit_code": 0
+    }
+  ],
+  "source_context": {
+    "source": "https://www.clerus.org/bibliaclerusonline/fr/irt.htm",
+    "locus": "1962 Missal, RGMR 298",
+    "result": "Shared orations, Epistle and Gospel coexist with the resumed chant setting. The shared-readings/resumed-setting qualifier and winter-guide-planned note preserve this distinction."
+  },
+  "prior_review": {
+    "verdict": "CHANGES_REQUIRED",
+    "finding": "EPIPHANY-REFERENCE-001",
+    "sha256": "90333ddbdbae7bf83b35f2d296fb04fca431e8c98276d4f48515def0f1137f46",
+    "original_file_retained_unchanged": true
+  },
+  "open_findings": [],
+  "limits": [
+    "This confirms the bounded code/source repair before product recording. Full-suite, product-currentness, site and final-delivery checks remain coordinator-owned and are not claimed complete.",
+    "No publication, audit, corpus, app, CSS, JavaScript, source/index/release or generated-product mutation was performed by the reviewer; all writes were isolated review scratch."
+  ]
+}
+```
+
+
+Mechanical recording against current main passed both independent cold
+builds. All twelve families retain exactly the same output membership, SHA-256
+and sizes: 27,414 files, 200,711,303 bytes. The refreshed descriptor SHA-256 is
+`76d7a50c343a0ac01f055d263fd374947d845cf2eb7beb6f9f6f5611fc3b088f`;
+its aggregate identity is
+`cc8b17a6e3e07bb560ce62a495c09c9d6f6e9e2f771da55864978a48dca9b570`.
+Only governing-input identities change. Reviewed study, source, native audit,
+application, CSS, navigation JavaScript and incoming workflow bytes are unchanged.
+The older standalone source/act receipts remain untouched; normal deployment
+uses the complete current descriptor rather than those optional audit receipts.
+Final site and release checks now pass; commit and publication remain pending.
+
+The full source-only `make public-site` and
+`tools/tpt public-alpha verify --deployment-target github-pages` both exited 0.
+The final binding status is `exact: 0 stale binding(s)`. All 230 affected
+site/release tests, 89 incoming cache/Pages tests and 11 real Chromium landing
+checks pass. The tool registry and diff checks pass.
+
+The generated catalogue has exactly the same three existing HTML destinations
+on rows 16 and 66, visible resumed-setting and winter-guide-planned wording,
+and no internal reference markers. The public artifact contains no PDF or ZIP.
+The catalogue HTML SHA-256 is
+`b07d1b23acb4df63e7fc4e072dcc7759890bf3deba39b4daedae3c89afcc40e6`.
+The build log SHA-256 is
+`62f7f852ebdb966f04c032d7d334be0fd2a24d73b7601445e15773466ce120af`;
+the Pages verification log SHA-256 is
+`b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14`.
+The bounded final independent review below passes; its pending build/Pages
+items are now satisfied by those actual coordinator results. Publication is
+still pending. The initial review and its repaired recheck remain above.
+
+```json
+{
+  "schema": 1,
+  "review": "bounded final Epiphany catalogue integration, authorization and disclosure review",
+  "verdict": "PASS",
+  "verdict_scope": "The frozen catalogue-reference implementation and its derived product/authorization updates. Remaining operational checks are explicitly pending below.",
+  "reviewed_snapshot": {
+    "base_commit": "7b9daae87c00b0e4d84fe958372d520300374c08",
+    "branch": "feature/propers/codex",
+    "delta_paths": [
+      "PROJECT-WORK.md",
+      "guidance/repository.md",
+      "library/traditional-latin-mass.md",
+      "promised-deliverables.toml",
+      "release/browser-products.json",
+      "release/public-alpha.json",
+      "release/rights/public-alpha-2026-07-15.md",
+      "tools/public-alpha",
+      "tools/tests/test_public_alpha.py"
+    ],
+    "frozen_sha256": {
+      "guidance/repository.md": "6b7d5774278acf6aac7cca422db3d50ea0e4c2b6b4c7a34885aa28e5d2d8fb95",
+      "library/traditional-latin-mass.md": "07986efe5af8dbda01681e038efeadd8cff7160c0310b47c35f7c0c832e42f10",
+      "release/browser-products.json": "76d7a50c343a0ac01f055d263fd374947d845cf2eb7beb6f9f6f5611fc3b088f",
+      "release/public-alpha.json": "d5b512cde65775675cb5ce4c2861f3fb4fbba1eb3db2d59bc3dd0532eaf72b70",
+      "release/rights/public-alpha-2026-07-15.md": "751321bd529149c903efe68ad888a122b7a78d17a0de42780bc49966554b65b6",
+      "tools/public-alpha": "e8faca2cacc7f8d9514507af860bdb003444a299de0f5c01a5af7db58e7fbebf",
+      "tools/tests/test_public_alpha.py": "7d07703095c799a7eae892873a3b519cd7d4bf163383c225e525f066a10febd7"
+    }
+  },
+  "findings": [
+    "Rows 16 and 66 contain the same three existing resource URLs. Each resumed output retains exactly one canonical owner; ordinary row 16 gains no publication record or new guide. The shared-readings/resumed-setting qualifier preserves the RGMR 298 distinction.",
+    "The repaired marker validates declared output/provider, same owning catalogue and actual rendered Markdown anchors on the reference row. References cannot substitute for missing owners; legacy duplicate/provider/hold guards remain. Validation nonces do not alter published source or URLs.",
+    "The release manifest changes only the four reviewed site-source hashes and the derived rights-record hash. All authority, publication membership, provider, policy and other fields remain exactly equal to the baseline.",
+    "The rights Markdown is exactly the baseline with those four table hashes substituted. Its normative text, scope and permissions are unchanged, and the manifest pins its actual new hash.",
+    "All twelve browser-product recipes and complete output maps remain unchanged: 27,414 outputs, 200,711,303 bytes. Only derived input/family/aggregate identities change. No source corpus, publication/audit content, app, asset or workflow file changes.",
+    "The nine-path outgoing delta is limited to the four reviewed files, product descriptor, two derived authorization records and PROJECT/ledger bookkeeping. Added-diff disclosure checks found no accidental private values or unrelated payloads."
+  ],
+  "product_identity": {
+    "descriptor_sha256": "76d7a50c343a0ac01f055d263fd374947d845cf2eb7beb6f9f6f5611fc3b088f",
+    "aggregate": "cc8b17a6e3e07bb560ce62a495c09c9d6f6e9e2f771da55864978a48dca9b570",
+    "families": 12,
+    "files": 27414,
+    "bytes": 200711303,
+    "all_output_membership_hashes_sizes_equal_baseline": true
+  },
+  "validation": {
+    "independent_focused_tests": {
+      "passed": 17,
+      "seconds": 0.682
+    },
+    "independent_probes": "Nine invalid reference/context cases refuse; valid title/query/fragment remain unchanged; another row cannot satisfy a fake reference; actual registry ownership and source immutability pass.",
+    "coordinator_suites": [
+      {
+        "tests": 230,
+        "seconds": 96.666,
+        "result": "PASS",
+        "log_sha256": "06d1686f53aeb63863cd5a92bbd3f7b0ec0e742f887576d3c2867727e2e49b11"
+      },
+      {
+        "tests": 89,
+        "seconds": 6.39,
+        "result": "PASS",
+        "log_sha256": "b649ac622201638b17a01e64a72faa932cd2206e64e182f957de92746068dd58"
+      },
+      {
+        "tests": 11,
+        "seconds": 55.765,
+        "result": "PASS",
+        "log_sha256": "1b0b979262f28aa414eebf07b5656729c8cf08ecbfd6f6698ca1354fdfa27498"
+      }
+    ],
+    "scoped_binding_refresh": "PASS: four source rows plus derived rights table/hash.",
+    "independent_diff_check": "PASS"
+  },
+  "prior_finding": {
+    "id": "EPIPHANY-REFERENCE-001",
+    "status": "resolved",
+    "initial_report_sha256": "90333ddbdbae7bf83b35f2d296fb04fca431e8c98276d4f48515def0f1137f46",
+    "repair_report_sha256": "0f0aedd1ab5a6b46cd813ac5d926a2ffaa5b11162e3826eae55514323512650e",
+    "both_reports_preserved_unchanged": true
+  },
+  "open_findings": [],
+  "pending_checks": [
+    "Complete normal make public-site build (source prerequisites have passed; renderer exit was pending at review).",
+    "GitHub Pages artifact verification after the build.",
+    "Coordinator commit, push, remote verification and truthful deployment bookkeeping."
+  ],
+  "limits": [
+    "This bounded PASS does not claim completion of the pending checks, a live deployment, new publication/editorial acceptance or research-receipt renewal.",
+    "No producer, cache, source, index, descriptor, binding, PROJECT or ledger mutation was performed by this reviewer; all writes were exclusive review scratch.",
+    "Subsequent operational evidence may be added truthfully to PROJECT/ledger by the coordinator. Changes to the seven frozen files require renewed review."
+  ]
+}
+```
+
 ## Sunday and catalogue publication to main, 2026-11-02
 
 <!-- promised-deliverable: gpt-propers-main-publication-2026-11-02 -->

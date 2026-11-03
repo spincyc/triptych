@@ -1,6 +1,24 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-epiphany-fifth-catalogue-reference-2026-11-02"
+owner = "PROJECT-WORK.md"
+promise = "Expose the existing resumed Fifth Sunday study and companions from the ordinary Fifth Sunday after Epiphany row, preserve their distinct formularies and canonical ownership, validate and publish the corrected catalogue."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "matching-resources-distinct-formularies"
+  criterion = "Rows 16 and 66 expose the same three existing output destinations, with the row-16 related-study context and the RGMR 298 chant distinction clear; no new winter guide, source identity or content acceptance is invented."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "library/traditional-latin-mass.md"]
+
+  [[deliverables.requirements]]
+  id = "guarded-reference-and-publication"
+  criterion = "Explicit references preserve canonical ownership, provider checks and hold filtering; affected regression and source-only site checks pass, independent review passes, and the corrected catalogue is pushed to the authorized refs with truthful deployment status."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "gpt-propers-main-publication-2026-11-02"
 owner = "PROJECT-WORK.md"
 promise = "Publish the validated Sunday and landing-table work to origin/main through a normal fast-forward and verify the automatic Pages workflow and affected production routes."

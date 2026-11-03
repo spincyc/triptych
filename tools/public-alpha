@@ -414,6 +414,11 @@ CATALOG_PUBLICATION_ID_RE = re.compile(
     r"(?:([a-z0-9-]+):)?"
     r"([a-z0-9][a-z0-9./-]*[a-z0-9])\s*-->"
 )
+CATALOG_PUBLICATION_REFERENCE_RE = re.compile(
+    r"<!--\s*triptych-publication-reference:\s*"
+    r"(?:([a-z0-9-]+):)?"
+    r"([a-z0-9][a-z0-9./-]*[a-z0-9])\s*-->"
+)
 MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)\n]+)\)")
 EXTERNAL_RE = re.compile(r"^[A-Za-z][A-Za-z0-9+.-]*:")
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
@@ -3444,7 +3449,10 @@ def source_catalog_ids(text: str) -> list[tuple[str, str]]:
     return ids
 
 
-def catalog_occurrences(primary: str, providers: list[str]) -> tuple[
+def catalog_occurrences(
+    primary: str, providers: list[str],
+    publications: dict[tuple[str, str], dict] | None = None,
+) -> tuple[
     dict[tuple[str, str], list[str]],
     list[tuple[str, list[tuple[str, str]]]],
     dict[tuple[str, str], list[str]],
@@ -3467,6 +3475,8 @@ def catalog_occurrences(primary: str, providers: list[str]) -> tuple[
             r"<!--.*?-->", lambda match: "\n" * match.group(0).count("\n"),
             text, flags=re.DOTALL,
         )
+        reference_checks: dict[str, tuple[str, str]] = {}
+        reference_lines: list[str] = []
         for line, visible_line in zip(text.split("\n"), visible.split("\n")):
             ids: list[tuple[str, str]] = []
             for link_provider, leaf in PDF_LINK_RE.findall(visible_line):
@@ -3479,9 +3489,7 @@ def catalog_occurrences(primary: str, providers: list[str]) -> tuple[
             marked_ids: list[tuple[str, str]] = []
             source_ids = source_catalog_ids(visible_line)
             for link_provider, leaf in source_ids:
-                if link_provider in provider_set:
-                    source_occurrences[(link_provider, leaf)].append(relative)
-                else:
+                if link_provider not in provider_set:
                     undeclared_provider_references.append(
                         (relative, f"web/print {link_provider}/{leaf}.html")
                     )
@@ -3493,15 +3501,71 @@ def catalog_occurrences(primary: str, providers: list[str]) -> tuple[
                     undeclared_provider_references.append(
                         (relative, f"{marked_provider}:{leaf}")
                     )
+            reference_tokens = CATALOG_PUBLICATION_REFERENCE_RE.findall(line)
+            if len(re.findall(r"<!--\s*triptych-publication-reference:", line)) != len(reference_tokens):
+                raise ReleaseError(f"{relative}: malformed publication reference marker")
+            references: set[tuple[str, str]] = set()
+            for reference_provider, leaf in reference_tokens:
+                key = (reference_provider or primary, leaf)
+                if key[0] not in provider_set:
+                    raise ReleaseError(f"{relative}: publication reference uses undeclared provider {key[0]}")
+                if key in references:
+                    raise ReleaseError(f"{relative}: duplicate publication reference marker for {key}")
+                publication = publications.get(key) if publications is not None else None
+                if publication is None:
+                    raise ReleaseError(f"{relative}: publication reference names undeclared output {key}")
+                if publication.get("catalog") != relative:
+                    raise ReleaseError(f"{relative}: publication reference must stay in its owning catalog: {key}")
+                if key not in source_ids:
+                    raise ReleaseError(f"{relative}: publication reference requires a visible HTML link on the same row: {key}")
+                if key in ids or key in marked_ids:
+                    raise ReleaseError(f"{relative}: publication reference conflicts with ownership on the same row: {key}")
+                references.add(key)
+            reference_tokens_by_key = {}
+            for key in references:
+                token = secrets.token_hex(16)
+                reference_checks[token] = key
+                reference_tokens_by_key[key] = token
+
+            def probe_reference(match: re.Match[str]) -> str:
+                linked = source_catalog_ids(match.group(0))
+                if not linked or linked[0] not in reference_tokens_by_key:
+                    return match.group(0)
+                raw_target = match.group(2)
+                target = raw_target.strip().split(maxsplit=1)[0]
+                start = raw_target.index(target)
+                token = reference_tokens_by_key[linked[0]]
+                probed = raw_target[:start] + target + "#" + token + raw_target[start + len(target):]
+                return f"[{match.group(1)}]({probed})"
+
+            # Probe the complete Markdown context without changing a published
+            # target. A nonce fragment identifies only genuinely rendered links,
+            # including when escapes, code blocks or HTML hide a source lookalike.
+            reference_lines.append(MARKDOWN_LINK_RE.sub(probe_reference, line) if references else line)
+            for key in source_ids:
+                if key[0] in provider_set and key not in references:
+                    source_occurrences[key].append(relative)
             for key in ids:
                 occurrences[key].append(relative)
             for key in marked_ids:
                 marked_occurrences[key].append(relative)
             if len(ids) > 1:
                 multi_pdf_lines.append((relative, ids))
-            linked_ids = ids + [key for key in source_ids if key not in ids]
+            linked_ids = ids + [key for key in source_ids if key not in ids and key not in references]
             if linked_ids and marked_ids and set(linked_ids) != set(marked_ids):
                 mismatched_identity_lines.append((relative, linked_ids, marked_ids))
+        if reference_checks:
+            parsed = LinkParser()
+            parsed.feed(render_markdown("\n".join(reference_lines), ROOT))
+            rendered_references = set()
+            for href in parsed.anchors:
+                token = urlsplit(href).fragment.rsplit("#", 1)[-1]
+                expected = reference_checks.get(token)
+                if expected is not None and source_catalog_ids(f"[reference]({href})") == [expected]:
+                    rendered_references.add(token)
+            if missing := reference_checks.keys() - rendered_references:
+                key = reference_checks[next(iter(missing))]
+                raise ReleaseError(f"{relative}: publication reference requires a visible HTML link on the same row: {key}")
     # Legacy PDF identities keep their existing ownership count even when a
     # catalogue also offers Read links. Source-only editions own their HTML link.
     for key, homes in source_occurrences.items():
@@ -3655,7 +3719,7 @@ def validate_manifest(
         marked_occurrences,
         mismatched_identity_lines,
         undeclared_provider_references,
-    ) = catalog_occurrences(primary, providers)
+    ) = catalog_occurrences(primary, providers, publications)
     for catalog, reference in undeclared_provider_references:
         errors.append(f"{catalog}: catalog references undeclared provider edition {reference}")
     for key, publication in publications.items():
@@ -4047,7 +4111,8 @@ def filter_catalog(
     source: str, markdown_text: str, included_ids: set[tuple[str, str]]
 ) -> str:
     if not (PDF_LINK_RE.search(markdown_text) or source_catalog_ids(markdown_text)
-            or CATALOG_PUBLICATION_ID_RE.search(markdown_text)):
+            or CATALOG_PUBLICATION_ID_RE.search(markdown_text)
+            or CATALOG_PUBLICATION_REFERENCE_RE.search(markdown_text)):
         return markdown_text
 
     def degrade_excluded_link(match: re.Match[str]) -> str:
@@ -4093,7 +4158,7 @@ def filter_catalog(
                 # Source-only marked identities of excluded works are dropped.
                 continue
             any_included = True
-        retained.append(CATALOG_PUBLICATION_ID_RE.sub("", line))
+        retained.append(CATALOG_PUBLICATION_REFERENCE_RE.sub("", CATALOG_PUBLICATION_ID_RE.sub("", line)))
     if any_included:
         return "\n".join(retained) + "\n"
 
@@ -4634,6 +4699,7 @@ def reject_internal_reader_labels(source_relative: str, rendered_html: str) -> N
         forbidden = {
             "PC-ANN": "internal postconciliar registry identifier",
             "triptych-publication-id": "internal publication marker",
+            "triptych-publication-reference": "internal publication reference marker",
         }
         for token, description in forbidden.items():
             if re.search(re.escape(token), rendered_html, flags=re.IGNORECASE):
@@ -5145,10 +5211,13 @@ class LinkParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
         self.links: list[str] = []
+        self.anchors: list[str] = []
         self.ids: set[str] = set()
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
+        if tag == "a" and values.get("href"):
+            self.anchors.append(values["href"])
         if values.get("id"):
             self.ids.add(values["id"] or "")
         for attribute in ("href", "src"):
