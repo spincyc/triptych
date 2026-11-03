@@ -7,6 +7,24 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-02.
 
+## Sunday and catalogue publication to main, 2026-11-02
+
+<!-- promised-deliverable: gpt-propers-main-publication-2026-11-02 -->
+
+**In progress.** The maintainer explicitly requested publication to `main`
+after the validated feature checkpoint `34f165c33af0eb6c3dadaa3f46b806a07ca2c9a7`.
+This adds authority to update `origin/main` and observe its automatic Pages
+workflow. Keep local commits on `feature/propers/codex`; do not switch branches,
+force-push, rewrite history or trigger a separate deployment.
+
+Remote main remains `e1ca91ba734219cefa92315c5520820c2c603607`, an ancestor of
+the reviewed feature. Reuse the completed independent disclosure review, exact
+implementation hashes and successful source-only site/Pages-target checks
+recorded below. Only these two operational records change for publication.
+Verify the main ref after its normal fast-forward push, then verify the
+workflow and affected production routes before claiming a live deployment.
+The inherited 703-witness full-evidence limit remains unchanged.
+
 ## Sunday and catalogue reconciliation with source-first main, 2026-11-02
 
 <!-- promised-deliverable: gpt-propers-main-source-reconciliation-2026-11-02 -->

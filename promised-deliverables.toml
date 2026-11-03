@@ -1,6 +1,24 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-propers-main-publication-2026-11-02"
+owner = "PROJECT-WORK.md"
+promise = "Publish the validated Sunday and landing-table work to origin/main through a normal fast-forward and verify the automatic Pages workflow and affected production routes."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "reviewed-main-fast-forward"
+  criterion = "The reviewed source and allowed operational records are pushed to main without history rewriting, the remote ref is verified, and the assigned local workspace branch is retained."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "automatic-pages-verification"
+  criterion = "The automatic Pages run for the published source is observed to succeed and production landing, proper reader and print-option routes are verified, with exact source and deployment evidence retained."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "gpt-propers-main-source-reconciliation-2026-11-02"
 owner = "PROJECT-WORK.md"
 promise = "Reconcile feature/propers/codex with source-first main, preserve its removal of stored/published PDF corpora and the reviewed Sunday content and modular landing-table behavior, validate and independently review the integration, and push the assigned workspace branch."
