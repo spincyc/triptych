@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-publication-reader-redesign-2026-11-03"
 owner = "PROJECT-WORK.md"
 promise = "Polish publication readers with consistent treatment labels, spacious responsive layouts, section permalinks and simple Sunday/treatment navigation; preserve complete browser printing, obtain cold review and push to main."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "consistent-reader-and-navigation"
@@ -15,7 +15,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "validated-cold-review-and-publication"
   criterion = "Complete browser printing and source/rights/hold boundaries remain sound; appropriate browser and publication checks pass, a fresh cold review of frozen code and rendered evidence has no unresolved blocker before main publication, and both authorized remote refs are verified with truthful deployment status."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]

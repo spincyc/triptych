@@ -11,8 +11,7 @@ Last reconciled: 2026-11-03.
 
 <!-- promised-deliverable: gpt-publication-reader-redesign-2026-11-03 -->
 
-**Implementation, cold reviews and final publication checks passed; the
-authorized main push is next.** The maintainer requested consistent Full Study
+**Pushed to main after cold review; automatic Pages deployment is in progress.** The maintainer requested consistent Full Study
 Guide, Synthesis and Homily labels, a polished wide document reader, stable
 section links, simple celebration/treatment navigation, preserved return
 positions, maximum useful parallel work, and cold review before pushing main.
@@ -81,8 +80,20 @@ blocker. Rights prose, source content, admission/hold records and protected app
 sources are unchanged. The final source/binding audit and reviewed-byte equality
 carry the actual browser acceptance to the final artifact.
 
-The history-preserving main/workspace push remains pending. Automatic deployment
-status will be reported as observed, separately from source publication.
+Implementation commit `a84fd24c558556692fb2a0665b0548aef0accd21` reached
+both `origin/main` and `origin/feature/propers/codex` through an ordinary atomic
+push; both remote refs were verified. The local branch remains
+`feature/propers/codex`. The automatic
+[Pages run](https://github.com/spincyc/triptych/actions/runs/41649945125)
+for that commit was observed in progress at 2026-11-03 14:03 UTC. Source
+publication is complete; no successful live deployment is claimed yet.
+
+The final cold-review package was created at
+`.scratch/reader-redesign-20261103/handoffs/20261103T140153Z-publication-reader-final`
+with a verified sibling ZIP, SHA-256
+`faf05ff3abcae1721fab2df5e3b30dca6fe39a59d20050ee8b0ba2c3e1fe846c`.
+It retains the focused patch, exact source hashes, before/after screenshots,
+checks, original findings, corrections and final independent dispositions.
 
 ## Source-first publication and complete browser printing, 2026-11-02
 
