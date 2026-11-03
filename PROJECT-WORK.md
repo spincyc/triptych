@@ -25,6 +25,21 @@ Verify the main ref after its normal fast-forward push, then verify the
 workflow and affected production routes before claiming a live deployment.
 The inherited 703-witness full-evidence limit remains unchanged.
 
+Main and the feature remote were both verified at
+`08c10e59a88aec944654e5f94efd43ec30ec6c55` after the normal fast-forward.
+The automatic Pages run is
+[41555590855](https://github.com/spincyc/triptych/actions/runs/41555590855).
+Deployment verification remains in progress; no live-publication claim is
+made until the workflow and production routes are checked.
+
+The predecessor Pages run `41546329370` passed its build after 25 minutes but
+was canceled during verification. GitHub records the explicit failure
+“The job has exceeded the maximum execution time of 30m0s.” Increase only the
+Pages job timeout from 30 to 60 minutes; keep all steps and checks unchanged.
+This workflow-only budget adjustment does not change any reviewed producer,
+publication input, receipt, descriptor or asset. Replace the superseded
+automatic run with the run from that ordinary main push.
+
 ## Sunday and catalogue reconciliation with source-first main, 2026-11-02
 
 <!-- promised-deliverable: gpt-propers-main-source-reconciliation-2026-11-02 -->

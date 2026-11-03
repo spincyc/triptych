@@ -9,7 +9,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "reviewed-main-fast-forward"
   criterion = "The reviewed source and allowed operational records are pushed to main without history rewriting, the remote ref is verified, and the assigned local workspace branch is retained."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
