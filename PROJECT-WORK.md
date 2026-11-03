@@ -11,13 +11,21 @@ Last reconciled: 2026-11-02.
 
 <!-- promised-deliverable: gpt-propers-main-source-reconciliation-2026-11-02 -->
 
-**Validated candidate; commit and push pending.** The maintainer requested reconciliation with current `main`,
-which no longer stores or publishes a PDF corpus. The incoming main snapshot
-is `84c2f7e041af77230095987ae7eb86b0f4d2f92e`; this workspace starts from
-`a98aa06a7e9c743a78d1b914811c04b5d051fe45` on `feature/propers/codex`.
-Use a history-preserving merge on that assigned branch. Preserve main's
-unrelated work, source-first publication manifests, exact-artifact delivery,
-optional selected print exports and PDF-free normal site build.
+**Complete: reconciled, independently reviewed and pushed to
+`feature/propers/codex`.** Source commit
+`d86ba01498070b5fd16abaa098339591c479eb9c` normally merges
+`0ba4c1db0ffb5ed7f73ff8645733b387e852c3ee` and current pinned main
+`e1ca91ba734219cefa92315c5520820c2c603607`; both histories are preserved.
+The remote feature ref was verified at that exact source commit. Main itself
+was not updated by this work, and no live-site deployment is claimed.
+
+The maintainer requested reconciliation with main's removal of stored and
+published PDF corpora, retaining the reviewed Sunday and landing-page work.
+The workspace began at `a98aa06a7e9c743a78d1b914811c04b5d051fe45`; the first
+incoming main snapshot was `84c2f7e041af77230095987ae7eb86b0f4d2f92e`.
+Normal merges on the assigned feature branch preserve unrelated main work,
+typed publication manifests, exact evidence delivery, optional selected print
+exports and the PDF-free normal site build.
 
 The new proper 66 must adopt that model without losing its accepted full,
 concise or homily source, canonical web content, exact source identities or
@@ -40,8 +48,9 @@ source witnesses. All prior prose, source identities and 58 native audit files
 remain unchanged. Independent review confirms the artifact migration, repaired
 combined archive audit, source catalogue ownership and HTML route handling.
 
-Fresh runs pass all 231 affected tests, all 11 browser tests, the 58-tool
-registry, source inventory and source-family currency. Both final mechanical
+At the first merge checkpoint, fresh runs passed all 231 affected tests, all
+11 browser tests, the then-current 58-tool registry, source inventory and
+source-family currency. Both final mechanical
 receipts independently pass against the same 80,650 input identities, digest
 `fa751816af07e42cb1212940ac9485945f21b337b2906867d4c99e987b572725`.
 The source projection has 18,443 outputs; the act-history projection has 557.
@@ -65,8 +74,8 @@ all generated-data deletions, including the feature's changed projections;
 fresh products must derive from the merged canonical inputs. Its shared exact
 archive helpers must also preserve the feature's bounded offline delivery.
 The real browser fixture adopts the new held-product context. Do not restore
-deleted generated products as tracked files. The latest integration, final site gates,
-independent review and branch push remain in progress. Historical PDF delivery
+deleted generated products as tracked files. At that checkpoint the latest integration, final site gates,
+independent review and branch push remained in progress. Historical PDF delivery
 and review statements below describe the earlier branch checkpoint; this
 reconciliation supersedes its current download surfaces without rewriting
 those historical audit facts.
@@ -153,7 +162,7 @@ The generated site has all six proper-66 reader/print-option routes and the
 three catalogue destinations, with zero physical PDF or ZIP files. Release
 bindings are exact with zero stale entries. Both optional projection receipt
 checks also pass after the final asset update. The whole promise ledger
-validates: 104 tracked entries, 81 complete, with only historical archived-PDF
+validates: 104 tracked entries, 82 complete, with only historical archived-PDF
 page checks and no current render measurement. The separate
 `public-alpha verify --deployment-target github-pages` also passes. The normal
 site-build and verifier log digests are respectively
@@ -162,7 +171,11 @@ and `b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14`.
 These prove a local source-only artifact; no main publication or live-site
 deployment is claimed. Final independent integration and public-disclosure review
 passes with no findings at tree `75e39e778f782d1e420716a108390f099c58ba0e`.
-The normal merge commit and verified workspace push remain pending.
+The normal merge is committed as `d86ba01498070b5fd16abaa098339591c479eb9c`
+and its feature-branch push is verified. All four reconciliation requirements
+are met. Only these two root operational records change after the reviewed
+source tree; the exact report and every frozen implementation hash remain
+unchanged.
 
 Final independent report, preserved verbatim (SHA-256
 `43d79ae5ba351e7f0c086a24f21a95e1c65641678ee4b580b9590a3663f265c2`).

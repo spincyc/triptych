@@ -4,12 +4,12 @@ schema_version = 1
 id = "gpt-propers-main-source-reconciliation-2026-11-02"
 owner = "PROJECT-WORK.md"
 promise = "Reconcile feature/propers/codex with source-first main, preserve its removal of stored/published PDF corpora and the reviewed Sunday content and modular landing-table behavior, validate and independently review the integration, and push the assigned workspace branch."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "main-merged-without-history-rewrite"
   criterion = "The pinned incoming main is an ancestor of the reconciled workspace branch through a normal merge; unrelated main work and the existing feature history are preserved."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
@@ -27,7 +27,7 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "reviewed-validated-branch-push"
   criterion = "The reconciled current source/publication and site checks and affected regressions pass or have an exact inherited-failure comparison, final independent integration/disclosure review passes, and the workspace commit is pushed and the remote ref verified."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
