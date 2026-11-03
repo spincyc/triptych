@@ -36,6 +36,7 @@ jobs:
     timeout-minutes: 60
     env:
       TRIPTYCH_BROWSER_DATA_ROOT: build/browser-data
+      PYTHONDONTWRITEBYTECODE: "1"
 
     steps:
       - name: Check out repository
@@ -71,17 +72,21 @@ jobs:
           restore-keys: |
             triptych-browser-products-v1-
 
+      # This optional public pack contains untrusted candidates, never authority.
+      # Only explicit CI bootstrap may fetch it; ordinary builds remain offline.
+      - name: Bootstrap optional browser product candidates
+        if: steps.browser-cache.outputs.cache-hit != 'true'
+        run: python scripts/_browser_cache_bootstrap.py --fetch
+
       # public-site prepares and verifies the committed product descriptor before
       # source gates and consumers. Missing families reproduce its exact bytes
       # offline; stale inputs fail without a whole-corpus research replay.
       - name: Validate sources and build public artifact
         run: make public-site
 
-      - name: Verify artifact and GitHub Pages compatibility
-        run: python tools/tpt public-alpha verify --deployment-target github-pages
-
       # Keep the restored path constant so GitHub can reuse older per-family
-      # candidates. Only exact current entries survive into the next cache.
+      # candidates. Save mechanically verified products before the independent
+      # site verification, so a later failure does not repeat the cold build.
       - name: Retain verified current browser products
         if: steps.browser-cache.outputs.cache-hit != 'true'
         run: python tools/tpt browser-products prune
@@ -92,6 +97,9 @@ jobs:
         with:
           path: build/browser-data
           key: triptych-browser-products-v1-${{ steps.browser-products.outputs.identity }}
+
+      - name: Verify artifact and GitHub Pages compatibility
+        run: python tools/tpt public-alpha verify --deployment-target github-pages
 
       - name: Configure Pages
         uses: actions/configure-pages@v6

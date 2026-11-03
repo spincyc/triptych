@@ -106,6 +106,8 @@ elif args == ["tools/tpt", "browser-products", "build"]:
 elif args == ["tools/tpt", "browser-products", "prune"]:
     if not ready.is_file():
         raise SystemExit("cache retention ran before product verification")
+elif args == ["scripts/_browser_cache_bootstrap.py", "--fetch"]:
+    pass  # Explicit CI candidate delivery; real archive safety has its own suite.
 elif tuple(args) in allowed:
     if tuple(args) in generated and not ready.is_file():
         raise SystemExit("generated consumer ran before browser product preparation")
@@ -262,7 +264,8 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(list(self.root.rglob("*.pdf")), [])
 
     def test_each_new_source_gate_failure_prevents_artifact_construction(self):
-        for gate in ["tools/tpt browser-products key", *sorted(" ".join(command) for command in SOURCE_COMMANDS)]:
+        for gate in ["tools/tpt browser-products key", "scripts/_browser_cache_bootstrap.py --fetch",
+                     *sorted(" ".join(command) for command in SOURCE_COMMANDS)]:
             with self.subTest(gate=gate):
                 self.log.unlink(missing_ok=True)
                 shutil.rmtree(self.root / "build", ignore_errors=True)
@@ -326,9 +329,10 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         names = [step["name"] for step in steps]
         self.assertLess(names.index("Identify exact browser products"), names.index(restore["name"]))
         self.assertLess(names.index(restore["name"]), names.index("Validate sources and build public artifact"))
-        self.assertLess(names.index("Verify artifact and GitHub Pages compatibility"),
-                        names.index("Retain verified current browser products"))
         self.assertLess(names.index("Retain verified current browser products"), names.index(save["name"]))
+        self.assertLess(names.index("Validate sources and build public artifact"),
+                        names.index("Retain verified current browser products"))
+        self.assertLess(names.index(save["name"]), names.index("Verify artifact and GitHub Pages compatibility"))
         self.assertEqual(save["if"], "steps.browser-cache.outputs.cache-hit != 'true'")
 
     def test_pages_never_restores_print_artifacts_or_installs_a_print_toolchain(self):

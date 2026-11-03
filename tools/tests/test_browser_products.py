@@ -493,5 +493,178 @@ class BrowserProductsTests(unittest.TestCase):
             self.assertEqual(products.working_data_root(self.root), self.root / ".scratch/browser-data-work")
 
 
+class BrowserCandidateReuseTests(unittest.TestCase):
+    """New input keys may reuse bytes, never another input proof."""
+
+    generate = BrowserProductsTests.generate
+    family = BrowserProductsTests.family
+    payload = BrowserProductsTests.payload
+
+    def setUp(self):
+        BrowserProductsTests.setUp(self)
+        self.old_manifest = copy.deepcopy(self.manifest)
+        self.old_family = next(item for item in self.old_manifest["products"] if item["id"] == "a")
+        self.old_data = self.cache / self.old_family["key"] / "data"
+        self.index_path = self.cache / products.CANDIDATE_INDEX
+
+    def new_input_epoch(self, *, changed_bytes=False):
+        path = self.root / ("src/a/input.txt" if changed_bytes else "scripts/generator.py")
+        path.write_text("new source bytes\n" if changed_bytes else "changed generator; same output bytes\n")
+        self.generated.clear()
+        self.manifest = products.record(self.root, cache_root=self.cache)
+        self.generated.clear()
+        current_a = self.family()
+        self.assertNotEqual(current_a["key"], self.old_family["key"])
+        shutil.rmtree(self.cache / current_a["key"])
+        shutil.rmtree(self.cache / products.products_identity(self.manifest))
+        return current_a
+
+    def write_index(self, value):
+        self.index_path.write_text(json.dumps(value))
+
+    def test_new_input_key_reuses_only_current_committed_identical_bytes(self):
+        current = self.new_input_epoch()
+        before = (self.root / products.MANIFEST_RELATIVE).read_bytes()
+        products.build(self.root, cache_root=self.cache)
+        self.assertEqual(self.generated, [])
+        self.assertEqual(products.last_build_stats(), {"reused_families": ["a"], "generated_families": []})
+        self.assertEqual(before, (self.root / products.MANIFEST_RELATIVE).read_bytes())
+        self.assertEqual(products.validate_candidate_entry(self.cache, current["key"], products.candidate_hint(current["files"])), current["files"])
+
+    def test_changed_expected_bytes_generate_only_the_changed_family(self):
+        self.new_input_epoch(changed_bytes=True)
+        products.build(self.root, cache_root=self.cache)
+        self.assertEqual(self.generated, [("a",)])
+        self.assertEqual(products.last_build_stats(), {"reused_families": [], "generated_families": ["a"]})
+
+    def test_unhinted_bytes_and_unrelated_hints_are_not_opened(self):
+        self.new_input_epoch()
+        index = products.load_candidate_index(self.cache)
+        index["entries"][self.old_family["key"]]["files_sha256"] = "0" * 64
+        self.write_index(index)
+        with patch.object(products, "validate_candidate_entry", side_effect=AssertionError("unrelated candidate opened")):
+            products.build(self.root, cache_root=self.cache)
+        self.assertEqual(self.generated, [("a",)])
+
+    def test_current_corruption_is_fatal_with_a_matching_alternate(self):
+        current = self.new_input_epoch()
+        shutil.copytree(self.old_data.parent, self.cache / current["key"])
+        self.payload().write_text("bad current bytes")
+        with self.assertRaisesRegex(products.ProductError, "differ"):
+            products.build(self.root, cache_root=self.cache)
+        self.assertEqual(self.generated, [])
+
+    def test_matching_candidate_missing_extra_or_changed_bytes_are_fatal(self):
+        for kind in ("missing", "extra", "hash", "size", "envelope"):
+            with self.subTest(kind=kind), tempfile.TemporaryDirectory(dir=self.root / ".scratch") as backup:
+                saved = Path(backup) / "entry"
+                shutil.copytree(self.old_data.parent, saved)
+                current = self.new_input_epoch() if kind == "missing" else self.family()
+                target = self.old_data / "structure/a/index.json"
+                original = target.read_bytes()
+                if kind == "missing": target.unlink()
+                elif kind == "extra": (self.old_data / "extra.json").write_text("{}")
+                elif kind == "hash":
+                    stamp = target.stat()
+                    target.write_bytes(b"x" * len(original))
+                    os.utime(target, ns=(stamp.st_atime_ns, stamp.st_mtime_ns))
+                elif kind == "size": target.write_bytes(original + b" ")
+                else: (self.old_data.parent / "receipt.json").write_text("{}")
+                with self.assertRaises(products.ProductError):
+                    products.build(self.root, cache_root=self.cache)
+                self.assertFalse((self.cache / current["key"]).exists())
+                self.assertEqual(self.generated, [])
+                shutil.rmtree(self.old_data.parent)
+                shutil.copytree(saved, self.old_data.parent)
+
+    def test_matching_candidate_links_and_special_files_are_never_followed(self):
+        current = self.new_input_epoch()
+        target = self.old_data / "structure/a/index.json"
+        original = target.read_bytes()
+        outside = self.root / ".scratch/outside.json"
+        outside.write_bytes(original)
+        for kind in ("symlink", "hardlink", "fifo"):
+            with self.subTest(kind=kind):
+                target.unlink()
+                if kind == "symlink": target.symlink_to(outside)
+                elif kind == "hardlink": os.link(outside, target)
+                else: os.mkfifo(target)
+                try:
+                    with self.assertRaises(products.ProductError):
+                        products.build(self.root, cache_root=self.cache)
+                    self.assertFalse((self.cache / current["key"]).exists())
+                    self.assertEqual(outside.read_bytes(), original)
+                    self.assertEqual(self.generated, [])
+                finally:
+                    target.unlink()
+                    target.write_bytes(original)
+
+    def test_matching_missing_entry_hint_is_fatal(self):
+        current = self.new_input_epoch()
+        shutil.rmtree(self.old_data.parent)
+        with self.assertRaises(products.ProductError):
+            products.build(self.root, cache_root=self.cache)
+        self.assertFalse((self.cache / current["key"]).exists())
+        self.assertEqual(self.generated, [])
+
+    def test_candidate_membership_race_cannot_promote_a_current_key(self):
+        current = self.new_input_epoch()
+        before = self.index_path.read_bytes()
+        reading = products._read
+        def mutate(root, name):
+            body = reading(root, name)
+            if root == self.old_data:
+                (self.old_data / "raced.json").write_text("{}")
+            return body
+        with patch.object(products, "_read", side_effect=mutate):
+            with self.assertRaisesRegex(products.ProductError, "differ"):
+                products.build(self.root, cache_root=self.cache)
+        self.assertFalse((self.cache / current["key"]).exists())
+        self.assertEqual(self.index_path.read_bytes(), before)
+        self.assertEqual(self.generated, [])
+
+    def test_candidate_reuse_still_brackets_current_inputs_and_descriptor(self):
+        self.new_input_epoch()
+        reading = products._read
+        def mutate(root, name):
+            body = reading(root, name)
+            if root == self.old_data:
+                (self.root / "src/a/input.txt").write_text("concurrent source edit")
+            return body
+        with patch.object(products, "_read", side_effect=mutate):
+            with self.assertRaisesRegex(products.ProductError, "inputs changed"):
+                products.build(self.root, cache_root=self.cache)
+
+    def test_hint_schema_rejects_unknown_fields_types_and_duplicate_keys(self):
+        self.new_input_epoch()
+        good = products.load_candidate_index(self.cache)
+        for field, value in (("count", True), ("bytes", True), ("files_sha256", "bad"), ("unknown", "ignored")):
+            index = copy.deepcopy(good)
+            index["entries"][self.old_family["key"]][field] = value
+            self.write_index(index)
+            with self.subTest(field=field), self.assertRaises(products.ProductError):
+                products.build(self.root, cache_root=self.cache)
+        self.index_path.write_text('{"schema":"triptych-browser-product-candidates/v1","entries":{},"entries":{}}')
+        with self.assertRaisesRegex(products.ProductError, "duplicate"):
+            products.load_candidate_index(self.cache)
+
+    def test_record_with_changed_inputs_still_runs_two_fresh_producers(self):
+        (self.root / "scripts/generator.py").write_text("new input, unchanged bytes")
+        with patch.object(products, "_reuse_candidate", side_effect=AssertionError("record reused candidate bytes")):
+            products.record(self.root, cache_root=self.cache)
+        self.assertEqual(self.generated, [("a", "b"), ("a", "b")])
+
+    def test_prune_keeps_only_current_hints_and_still_rejects_arbitrary_files(self):
+        self.new_input_epoch()
+        products.build(self.root, cache_root=self.cache)
+        products.prune(self.root, cache_root=self.cache)
+        expected = {products.products_identity(self.manifest), *(item["key"] for item in self.manifest["products"])}
+        self.assertEqual(set(products.load_candidate_index(self.cache)["entries"]), expected)
+        self.assertTrue(self.index_path.is_file())
+        (self.cache / "arbitrary.json").write_text("{}")
+        with self.assertRaises(products.ProductError):
+            products.prune(self.root, cache_root=self.cache)
+
+
 if __name__ == "__main__":
     unittest.main()

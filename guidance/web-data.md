@@ -30,6 +30,25 @@ data must trigger that rebuild or an explicit failure, never a smaller library,
 empty catalog, or fewer print editions. A stale descriptor or corrupt entry
 fails closed; a build must not adopt new output hashes to make itself pass.
 
+An older family key can supply identical bytes after inputs change. The typed
+`.browser-products-candidates-v1.json` at the cache root only selects a possible
+match; the current committed descriptor still supplies every expected path,
+hash and size. Existing current-key entries are checked first. A corrupt current
+entry or matching candidate fails without repair or a generation fallback.
+Unrelated candidates have no effect. Promotion verifies complete membership
+before and after copying, then repeats the current-input checks. Cache entries
+still contain only `data/`; the candidate index is disposable metadata, never
+an input identity or a validation receipt. `record` retains its independent
+cold-build proof and does not use candidate reuse to establish new bytes.
+
+Pages explicitly bootstraps optional cache candidates from the immutable public
+archive pinned by `.github/browser-products-bootstrap.json`. The bounded
+bootstrap checks transport bytes and safe archive membership; ordinary build
+and check commands remain offline and establish acceptance independently.
+After a successful source/site build, CI saves verified current products before
+the independent artifact check, so an interrupted deployment can reuse that
+work. Artifact verification still precedes publication.
+
 Family identities include content, generators/options, locks, rights and
 publication decisions, and their dependency membership. Shared or uncertain
 policy ownership is conservative. Neither Git state, timestamps, mtimes, a

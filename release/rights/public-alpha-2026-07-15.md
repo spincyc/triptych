@@ -1792,7 +1792,7 @@ release attachment, announcement, or promotion.
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
 | `library/traditional-latin-mass.md` | `6dd7ed8b92cc2ab9f4cafc425117a5c1b04ec0640031394d7215e087c629c8a1` |
-| `release/browser-products.json` | `c8b59cae32ce3fdc3495f9e730f3230509c05f937caae61bf580a81c20c3a682` |
+| `release/browser-products.json` | `e300fe6332cb935caded01527e6755aa4581fb56dfbe86ff830b3f5c2512f172` |
 | `release/papal-documents.json` | `b20c05f8999ff2391e9c7ad15124d519d710e60ac7aa648b297e70be1eb0e17e` |
 | `release/papal-documents/input-delivery.json` | `2aefdce41b2f33be61f9bd455a407d94497d87c7e5fdef76ed3e562777d39fd6` |
 | `release/papal-documents/input-records.json` | `22e755c5b11d957a3f621b12a895cf7fa059a7ac42edeb882ac856a80388766c` |
@@ -2131,8 +2131,9 @@ release attachment, announcement, or promotion.
 | `scripts/_bible_artifacts.py` | `b662b5f65144af78c7d708627963f16e4aafdd254ed128c51d927984354c4069` |
 | `scripts/_bible_editions.py` | `31202019c51aed4d251a6d4abdedc36119aeeed46dedeb1a4bc79c4e86debc3d` |
 | `scripts/_book_audit.py` | `d41a8afcc9f7a325eba5eafe90cb95aea7282348a4c8ed541689b97f1da8eab8` |
+| `scripts/_browser_cache_bootstrap.py` | `3ef234470837e5399ee82489f59882103fe40c0002fe95a9e9b926040f3449b2` |
 | `scripts/_browser_product_recipes.py` | `dde1c9cd3c77ad745e54770f5fccf051ae7c4b42bf75fa071fa49f029789222d` |
-| `scripts/_browser_products.py` | `ebe82d78c48ee93940b6783c856b1e2d06cc46913860f22dd88ec700e0b9f2b5` |
+| `scripts/_browser_products.py` | `19efd30ef49d86e3307a767b62f5ee85a04ba78b8708ca4de1667b64e00a5eb8` |
 | `scripts/_bullarium.py` | `3f6b56609f4aca765cb9c721b1cda8f093ba947de9ab8d6a692ab58c2c02e419` |
 | `scripts/_bullarium_character_geometry.py` | `9ef0769b1cd3cf80e628007dfb520ea22fc29b9c7a2e6d776e635376bfe3b369` |
 | `scripts/_bullarium_corrections.py` | `2d6ef491fd96d157a693e20328beff77dc7e181152eb3b37cdc9ba48009517c4` |
@@ -24322,12 +24323,13 @@ release attachment, announcement, or promotion.
 | `tools/tests/test_baruch_source_joins.py` | `e26a76e886ad165d31a3339adca8df405236617e4e4a767d9a8c080a67e7d35b` |
 | `tools/tests/test_bible_alias_artifacts.py` | `f3245df9bd0f214eb956e149deae3779ddb1111d621d4aa5dd6bf95c808913cd` |
 | `tools/tests/test_bible_open_bounds.py` | `7f2f8d7fe75b52675401013cf24a1187921a8bdb941877b7c9dc5c84bcdc257d` |
+| `tools/tests/test_browser_cache_bootstrap.py` | `c13ac71cb223637c32c5bb8ad3bc21f8ba1510dfecba9992244b731fb13b7054` |
 | `tools/tests/test_browser_citation_truth.py` | `646c29514d730035774fb20e083b45400dc7970c5c11f71fb5957cd7cd0a8091` |
 | `tools/tests/test_browser_collisions.py` | `90a4fbe6a5f587d2ecc91574a4cccc815df469fdadc1a0115f3f252dae69e66f` |
 | `tools/tests/test_browser_harnesses.py` | `0531a601ad7a68c80f934fbb29da1cbf4ce2bac58609314f5b287f51516e4071` |
 | `tools/tests/test_browser_print_selection.py` | `36efb95042fdf03ced0fb93331da26e278c3323b54f5a74a5ebe03ae672e6880` |
 | `tools/tests/test_browser_product_recipes.py` | `0d283486ec931b632b992f93abfbc36148ef46d3261f67794eca0425dba5e7e1` |
-| `tools/tests/test_browser_products.py` | `9b29c7dc3b8e49991695c4f469bc186faf16c5a43685ff051328a43c9755326d` |
+| `tools/tests/test_browser_products.py` | `482625ccd570fc16757ccea5679d8a36a4f1f051fe1a7759b5953e2bb1a77dcc` |
 | `tools/tests/test_browser_psalm_loci.py` | `ec38980b0dc522a08d8332e44f4a6b5d12e0e76581f13e81b5e86faacbeec697` |
 | `tools/tests/test_browser_static.py` | `eb0ef1ef364cd69edd68ca691fa2bd6875d02d46bab3f06fe8a4826c91857543` |
 | `tools/tests/test_browser_truthfulness.py` | `da86321a31b53719af896b83639f5a37a55358fc254017f301adc107a128a54f` |
@@ -24472,7 +24474,7 @@ release attachment, announcement, or promotion.
 | `tools/tests/test_ordinary_source_path_transport.py` | `2d844361ac9d0b4f97f67c582defc49ca2f26be63b15147b55fd46ec56aeb02c` |
 | `tools/tests/test_ordinary_text_qualification.py` | `339227ccb99925b9a3753d522bdb7e5a6c3100894612a748376d921d65b960ab` |
 | `tools/tests/test_ordinary_translation_applicability.py` | `b74b77520ab46d11a953647cc9e1f18a28d410461c89198c8bd9193e436ac5a5` |
-| `tools/tests/test_pages_publication_selection.py` | `e74b2861d25b6aa0b8d796b53fba4b57b28a9b831ab14257c6816ebc134e7f08` |
+| `tools/tests/test_pages_publication_selection.py` | `80d4505bd5c1dfab7686faadb65cb9e3903f29466fbc5d939718eb344f51df1a` |
 | `tools/tests/test_papal_acta.py` | `18359f0fa42fd5d9ae7f9699d9349aff5190883a8b757c144617a40bad07c319` |
 | `tools/tests/test_papal_collection.py` | `7dcf2f3ca1d58aab07bc080303ce2dff61c978d28267729ea89f0ec3fae73f84` |
 | `tools/tests/test_papal_documents.py` | `1809e40980ff205a4fdb35ebf05e0b1f531fe90480464ae849649f26742d7503` |

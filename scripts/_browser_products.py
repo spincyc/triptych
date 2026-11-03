@@ -31,6 +31,8 @@ SCHEMA = "triptych-browser-products/v1"
 INPUT_SCHEMA = "triptych-browser-product-inputs/v1"
 POLICY_SCHEMA = "triptych-browser-publication-policy/v1"
 PROOF = "two-independent-cold-builds-byte-parity"
+CANDIDATE_INDEX = ".browser-products-candidates-v1.json"
+CANDIDATE_SCHEMA = "triptych-browser-product-candidates/v1"
 INPUT_TREES = ("src", "scripts", "tools", "guidance", "workflows", "web", "release/publications", "release/rights", "release/papal-documents")
 INPUT_FILES = ("AGENTS.md", "LICENSE", "THIRD_PARTY.md", "Makefile", "tmt.json", ".gitattributes", ".gitignore", "requirements-tools.txt", "requirements-public-alpha.txt", "requirements-tui.txt", "release/public-alpha.json", "release/papal-documents.json")
 EXCLUDED = frozenset({MANIFEST_RELATIVE, *receipt.MECHANICAL_RECEIPTS})
@@ -38,6 +40,7 @@ POLICY_FIELDS = {"schema_version", "release_id", "provider", "providers", "autho
 AUTH_FIELDS = {"basis", "authority_role", "authority_scope", "rights_record", "rights_record_sha256", "site_sources", "approved_on", "duration", "effective_at", "expires_at", "timezone", "conditions"}
 _HELD: ContextVar[dict] = ContextVar("browser_products_held", default={})
 _LOCKS: ContextVar[dict] = ContextVar("browser_product_locks", default={})
+_BUILD_STATS: ContextVar[dict] = ContextVar("browser_product_build_stats", default={})
 
 
 class ProductError(ValueError):
@@ -511,23 +514,108 @@ def _current(root, manifest):
     return current
 
 
-def _cache_data(root, product, cache_root=None):
-    parent = cache_directory(root, cache_root)
-    target = parent / product["key"]
+def _validate_candidate_hint(hint):
+    _keys(hint, {"files_sha256", "count", "bytes"}, "browser candidate hint")
+    _digest(hint["files_sha256"])
+    if (type(hint["count"]) is not int or hint["count"] <= 0
+            or type(hint["bytes"]) is not int or hint["bytes"] < 0):
+        raise ProductError("invalid browser candidate count or byte total")
+
+
+def candidate_hint(files: dict) -> dict:
+    """Canonical inventory selector; it conveys no source or output authority."""
+    if not isinstance(files, dict) or not files:
+        raise ProductError("browser candidate inventory must contain files")
+    for name, identity in files.items():
+        _relative(name)
+        _keys(identity, {"sha256", "bytes"}, "browser candidate file")
+        _digest(identity["sha256"])
+        if not name.endswith(".json") or type(identity["bytes"]) is not int or identity["bytes"] < 0:
+            raise ProductError("invalid browser candidate file extent or suffix")
+    return {"files_sha256": _sha(_json(files)), "count": len(files),
+            "bytes": sum(identity["bytes"] for identity in files.values())}
+
+
+def load_candidate_index(cache_root: Path) -> dict:
+    """Read strictly typed hints only; payloads remain entirely untrusted."""
+    parent = _absolute(cache_root)
+    empty = {"schema": CANDIDATE_SCHEMA, "entries": {}}
+    if not os.path.lexists(parent):
+        return empty
     _safe_directory(parent)
+    if not os.path.lexists(parent / CANDIDATE_INDEX):
+        return empty
+    value = _decode(_read(parent, CANDIDATE_INDEX))
+    _keys(value, {"schema", "entries"}, "browser candidate index")
+    if value["schema"] != CANDIDATE_SCHEMA or not isinstance(value["entries"], dict):
+        raise ProductError("unsupported browser candidate index schema")
+    for key, hint in value["entries"].items():
+        _digest(key)
+        _validate_candidate_hint(hint)
+    return value
+
+
+def _cache_keys(parent: Path) -> set[str]:
+    parent = _safe_directory(parent)
+    keys = set()
     with receipt._open_directory(Path("/"), parent.as_posix().lstrip("/")) as cache_fd:
+        before = os.fstat(cache_fd)
         with os.scandir(cache_fd) as entries:
             for entry in entries:
-                mode = entry.stat(follow_symlinks=False).st_mode
-                if entry.name == ".browser-products-cache-v1" and stat.S_ISREG(mode):
+                original = entry.stat(follow_symlinks=False)
+                if entry.name in {".browser-products-cache-v1", CANDIDATE_INDEX} and stat.S_ISREG(original.st_mode) and original.st_nlink == 1:
                     continue
-                if re.fullmatch(r"[0-9a-f]{64}", entry.name) is None or not stat.S_ISDIR(mode):
+                if re.fullmatch(r"[0-9a-f]{64}", entry.name) is None or not stat.S_ISDIR(original.st_mode):
                     raise ProductError(f"unexpected or unsafe browser cache entry: {entry.name}")
+                keys.add(entry.name)
+        if receipt._file_stamp(before) != receipt._file_stamp(os.fstat(cache_fd)):
+            raise ProductError("browser cache membership changed during verification")
+    load_candidate_index(parent)
+    return keys
+
+
+def _cache_entry_data(parent: Path, key: str) -> Path:
+    _digest(key)
+    parent = _absolute(parent)
+    _cache_keys(parent)
+    target = parent / key
     _safe_directory(target)
     with receipt._open_directory(Path("/"), target.as_posix().lstrip("/")) as descriptor:
         if set(os.listdir(descriptor)) != {"data"}:
             raise ProductError("unexpected files in sealed browser product cache entry")
     return _safe_directory(target / "data")
+
+
+def _cache_data(root, product, cache_root=None):
+    return _cache_entry_data(cache_directory(root, cache_root), product["key"])
+
+
+def validate_candidate_entry(cache_root: Path, key: str, hint: dict) -> dict:
+    """Verify a complete entry against a hint, without accepting its old key."""
+    _validate_candidate_hint(hint)
+    actual = _inventory(_cache_entry_data(cache_root, key))
+    if candidate_hint(actual) != hint:
+        raise ProductError(f"browser candidate {key} does not match its inventory hint")
+    return actual
+
+
+def _write_candidate_index(root: Path, cache_root: Path, value: dict) -> None:
+    # The same writer as mechanical receipts pins both ancestry chains and
+    # refuses links. Temporary bytes remain in the repository's ignored scratch.
+    body = (json.dumps(value, sort_keys=True, indent=1) + "\n").encode("utf-8")
+    try:
+        receipt.atomic_write(Path("/"), (cache_root / CANDIDATE_INDEX).as_posix().lstrip("/"),
+                             body, scratch=_scratch(root))
+    except (OSError, receipt.ReceiptError) as error:
+        raise ProductError(f"cannot safely update browser candidate index: {error}") from error
+
+
+def _remember_candidate(root: Path, cache_root: Path, product: dict) -> None:
+    value = load_candidate_index(cache_root)
+    hint = candidate_hint(product["files"])
+    if value["entries"].get(product["key"]) != hint:
+        value["entries"][product["key"]] = hint
+        _write_candidate_index(root, cache_root, value)
 
 
 def check(root: Path, *, cache_root=None, product_ids=None) -> dict:
@@ -625,7 +713,7 @@ def _generate(root, out, product_ids=None):
     generate(root, out, product_ids=product_ids)
 
 
-def _install(root, product, generated, cache_root):
+def _install(root, product, generated, cache_root, *, source_files=None):
     parent = _safe_directory(cache_directory(root, cache_root), create=True)
     with receipt._open_directory(Path("/"), parent.as_posix().lstrip("/")) as cache_fd:
         marker_fd = os.open(".browser-products-cache-v1", os.O_WRONLY | os.O_CREAT | os.O_NOFOLLOW | os.O_NONBLOCK, 0o644, dir_fd=cache_fd)
@@ -637,6 +725,7 @@ def _install(root, product, generated, cache_root):
     destination = parent / product["key"]
     if destination.exists() or destination.is_symlink():
         _compare(_inventory(_cache_data(root, product, cache_root)), product["files"])
+        _remember_candidate(root, parent, product)
         return
     # Cache entries and private build trees share the conventional repository
     # filesystem. Refuse a cross-device promotion instead of partial copying.
@@ -651,6 +740,10 @@ def _install(root, product, generated, cache_root):
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(body)
         _compare(_inventory(staged / "data"), product["files"])
+        if source_files is not None:
+            # A matching hint only selected this source. Recheck its entire
+            # membership after copying, before any current key is promoted.
+            _compare(_inventory(generated), source_files)
         try:
             with receipt._open_directory(Path("/"), parent.as_posix().lstrip("/")) as cache_fd:
                 with receipt._open_directory(Path("/"), staged.parent.as_posix().lstrip("/")) as staging_fd:
@@ -660,6 +753,7 @@ def _install(root, product, generated, cache_root):
                 _compare(_inventory(_cache_data(root, product, cache_root)), product["files"])
             else:
                 raise ProductError(f"cannot atomically install browser products: {error}") from error
+    _remember_candidate(root, parent, product)
 
 
 def committed_data_root(root: Path, *, cache_root=None) -> Path:
@@ -700,6 +794,7 @@ def _assemble(root, manifest, cache_root):
     entry = cache_directory(root, cache_root) / combined["key"]
     if entry.exists() or entry.is_symlink():
         _compare(_inventory(_cache_data(root, combined, cache_root)), combined["files"])
+        _remember_candidate(root, cache_directory(root, cache_root), combined)
         return
     with tempfile.TemporaryDirectory(prefix="aggregate-", dir=_scratch(root)) as temporary:
         out = Path(temporary) / "data"
@@ -716,8 +811,31 @@ def _assemble(root, manifest, cache_root):
         _install(root, combined, out, cache_root)
 
 
+def _reuse_candidate(root, product, entries, cache_root):
+    expected_hint = candidate_hint(product["files"])
+    for key, hint in sorted(entries.items()):
+        if key == product["key"] or hint != expected_hint:
+            continue
+        # Matching hinted corruption is an error, not permission to repair or
+        # skip an alleged copy of these exact bytes. Unrelated hints are never
+        # opened, and never authorize serving an older input identity.
+        actual = validate_candidate_entry(cache_directory(root, cache_root), key, hint)
+        _compare(actual, product["files"])
+        data = _cache_entry_data(cache_directory(root, cache_root), key)
+        _install(root, product, data, cache_root, source_files=product["files"])
+        return True
+    return False
+
+
+def last_build_stats() -> dict:
+    """Noncanonical diagnostics from the current operation only."""
+    return {key: list(value) for key, value in _BUILD_STATS.get().items()}
+
+
 def build(root: Path, *, cache_root=None) -> dict:
     root = _safe_directory(root)
+    stats = {"reused_families": [], "generated_families": []}
+    _BUILD_STATS.set(stats)
     before = _read(root, MANIFEST_RELATIVE)
     manifest = _validate_manifest(_decode(before))
     _current(root, manifest)
@@ -728,10 +846,19 @@ def build(root: Path, *, cache_root=None) -> dict:
             _compare(_inventory(_cache_data(root, product, cache_root)), product["files"])
         else:
             missing.append(product)
+    entries = load_candidate_index(cache_directory(root, cache_root))["entries"]
+    cold = []
+    for product in missing:
+        if _reuse_candidate(root, product, entries, cache_root):
+            stats["reused_families"].append(product["id"])
+        else:
+            cold.append(product)
+    missing = cold
     if missing:
         with tempfile.TemporaryDirectory(prefix="cold-", dir=_scratch(root)) as temporary:
             out = Path(temporary) / "data"
             _generate(root, out, [product["id"] for product in missing])
+            stats["generated_families"] = [product["id"] for product in missing]
             expected = {name: value for product in missing for name, value in product["files"].items()}
             _compare(_inventory(out), expected)
             _current(root, manifest)
@@ -739,8 +866,15 @@ def build(root: Path, *, cache_root=None) -> dict:
                 raise ProductError("browser product descriptor changed during cold build")
             for product in missing:
                 _install(root, product, out, cache_root)
+    if stats["reused_families"] and not missing:
+        _current(root, manifest)
+    if before != _read(root, MANIFEST_RELATIVE):
+        raise ProductError("browser product descriptor changed during build")
     _assemble(root, manifest, cache_root)
-    return check(root, cache_root=cache_root)
+    checked = check(root, cache_root=cache_root)
+    if checked != manifest or before != _read(root, MANIFEST_RELATIVE):
+        raise ProductError("browser product descriptor changed during build")
+    return checked
 
 
 def _family_products(files, recipes, inputs):
@@ -801,6 +935,8 @@ def record(root: Path, *, cache_root=None) -> dict:
         _validate_manifest(manifest)
         for product in products:
             _install(root, product, first, cache_root)
+        for product in manifest["products"]:
+            _remember_candidate(root, cache_directory(root, cache_root), product)
         _assemble(root, manifest, cache_root)
         if inputs != _commitment(input_identity(root)):
             raise ProductError("canonical inputs changed before descriptor write")
@@ -828,7 +964,7 @@ def prune(root: Path, *, cache_root=None) -> dict:
             obsolete = []
             with os.scandir(descriptor) as entries:
                 for entry in entries:
-                    if entry.name == ".browser-products-cache-v1":
+                    if entry.name in {".browser-products-cache-v1", CANDIDATE_INDEX}:
                         continue
                     if re.fullmatch(r"[0-9a-f]{64}", entry.name) is None or not stat.S_ISDIR(entry.stat(follow_symlinks=False).st_mode):
                         raise ProductError(f"refusing to prune an unknown or unsafe cache entry: {entry.name}")
@@ -838,6 +974,9 @@ def prune(root: Path, *, cache_root=None) -> dict:
                 raise ProductError("this platform cannot safely prune cache directories")
             for name in obsolete:
                 shutil.rmtree(name, dir_fd=descriptor)
+        products = [*manifest["products"], {"key": products_identity(manifest), "files": _expected(manifest)}]
+        _write_candidate_index(root, parent, {"schema": CANDIDATE_SCHEMA,
+                                            "entries": {product["key"]: candidate_hint(product["files"]) for product in products}})
     except (OSError, receipt.ReceiptError) as error:
         raise ProductError(f"cannot safely prune browser cache: {error}") from error
     return manifest
@@ -914,6 +1053,8 @@ def main(argv=None, *, examples=None):
         else:
             manifest = globals()[args.verb](args.root, cache_root=args.cache_root)
         result = {"status": "ok", "products_identity": products_identity(manifest), "family_keys": {product["id"]: product["key"] for product in manifest["products"]}, "products": len(manifest["products"]), "files": len(_expected(manifest)), "bytes": sum(value["bytes"] for value in _expected(manifest).values())}
+        if args.verb == "build":
+            result.update({key: len(value) for key, value in last_build_stats().items()})
         print(json.dumps(result, sort_keys=True) if args.json else products_identity(manifest) if args.verb == "key" else f"browser-products: {result['products']} products, {result['files']} files; ok")
         return 0
     except (ProductError, OSError) as error:
