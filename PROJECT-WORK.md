@@ -11,7 +11,8 @@ Last reconciled: 2026-11-03.
 
 <!-- promised-deliverable: native-tex-print-on-demand-2026-11-03 -->
 
-**In progress: native generation implemented; final publication gates pending.**
+**Pushed to main: native generation validated; automatic deployment and live
+Print verification pending.**
 The maintainer rejected browser print typography and requires the web Print
 action to create native TeX PDFs, retaining original layouts and fonts with
 zero PDFs checked into Git. This supersedes browser reflow as the primary
@@ -188,6 +189,34 @@ strict offline import, current-source warm build and full checking all pass
 with generation refused in 68.091 seconds. Its bootstrap hint names this
 exact archive. The final narrow binding update covers only the publisher,
 its focused native-publication test and the replacement descriptor.
+
+Final implementation `aa6ca926752ab89c019291e115ceb226ae3412fc` reached both
+`origin/main` and `origin/feature/no-pdfs` through ordinary pushes, and both
+remote refs were verified. The final source-gated site build passes in 320.190
+seconds; independent GitHub Pages artifact verification passes in 223.183
+seconds. Seven actual final-revision UI/download cases pass, including the new
+reader and treatment menu: article seven pages, All Saints Synthesis ten,
+cards thirteen, illustrated dictionary ten, complete Clementine 597, papal one
+and the legacy full Douay reading plan 298. All expected complete text, titles,
+page counts and embedded fonts match. There are no browser HTML Print calls,
+script errors or resource failures. Six pdfTeX downloads match the complete
+native baseline bytes; XeTeX retains expected metadata variance without text,
+font or pagination changes. All local browsers and servers are closed.
+
+Artifact metadata main and feature are
+`ed1e65a7401c4d9bd473bbfe15951d99c74b14eb`. The immutable cache release is
+`browser-products-3c5520c4b53d-v1`, bound to the public final source commit;
+all three uploaded asset sizes and hashes match. Fresh anonymous retrieval
+through the exact committed bootstrap hint, strict thirteen-family import,
+current-source warm build and full checking pass in 62.922 seconds with zero
+generation calls and no authentication or local-archive fallback. Earlier
+immutable releases and records are preserved; no binary enters Git.
+
+The automatic [Pages run](https://github.com/spincyc/triptych/actions/runs/41666276644)
+for that exact implementation was queued at 2026-11-03 15:40 UTC. Publication
+is confirmed; successful deployment and live Print downloads are not yet
+claimed. The native task remains in progress until those checks pass. The
+earlier substantial-publication-speed requirement remains open.
 
 ## Publication reader redesign, 2026-11-03
 
