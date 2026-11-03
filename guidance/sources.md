@@ -534,6 +534,10 @@ or historical download is available before the actual delivery is verified.
 Keep publication binaries, source evidence and other historical binaries
 distinguishable in the sidecar. Historical PDF receipts remain exact records
 even when a current reader or print edition has a different identity.
+Current PDFs are generated on demand under [repository guidance](repository.md);
+they are not a maintained collection in this source-evidence delivery layer.
+Preserve the evidence and historical receipts without using them as substitutes
+for a requested current rendering.
 
 Before deleting an in-tree binary, prove that every owned byte is in a
 verified pack and that archive/member hashes reproduce the prior payload.

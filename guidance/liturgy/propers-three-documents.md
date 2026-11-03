@@ -444,15 +444,18 @@ a formerly date-free study's approval does not cover newly added dates.
 
 The page answers three connected questions: which appointed passage is this,
 what happens or is written and where, and when does that particular thing
-belong? Declare `chronology_presentation = "orientation-v2"` and use the
-generated row interface defined in [Scripture chronology
+belong? Declare `chronology_presentation = "orientation-v3"` and import the
+complete generated table defined in [Scripture chronology
 §14.1](../scripture-chronology.md#141-the-propers-wired), in the shared
-`chronologyorientationtable`. Its columns are **Passage**, **Occurrence and
-place**, and **Date**. The generator supplies the passage, dated subject,
-relation and concise date alternatives; the author supplies a short, sourced
-place or contextual phrase. The Passage cell already names each psalm
-citation's numbering; the place phrase does not restate it. Leaves published
-under `orientation-v1` keep that declaration and its rows. A row must never pair one passage's label with
+`chronologysharedtable`. Its columns are **Passage**, **Context**, and **Date**.
+The generator supplies every cell and row, including concise source-owned
+subject and episode labels. Each psalm citation names its numbering explicitly;
+the table explains `Vg.` and `Heb.` once. Retain fuller source-owned geographic
+context in the research historical appendix, precisely referenced from the
+concise page; sites already named in shared subjects remain in the table.
+Providers must not author separate table wording or silently omit alternatives.
+Leaves published under `orientation-v1` or `orientation-v2` retain their
+declarations until explicitly migrated. A row must never pair one passage's label with
 an entire composite element's unrelated dates.
 
 Keep narrated events, remembered historical settings, traditional attribution

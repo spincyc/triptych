@@ -1,0 +1,57 @@
+# Descriptive labels only. These identify a narrated episode when its date is
+# unresolved; they supply no date, inferred chronology, or composition claim.
+schema: triptych-chronology-orientation/v1
+numbering: vulgate
+# Presentation names for these existing temporal subjects. The source title,
+# all original claim labels and source citations remain in the audit record.
+subject_labels:
+  composition.gospel-of-matthew: Matthew
+  composition.gospel-of-mark: Mark
+  composition.gospel-of-john: John
+  composition.apocalypse: Apocalypse
+  composition.book-of-wisdom: Wisdom
+  composition.book-of-daniel: Daniel
+  composition.first-epistle-of-st-john: First John
+  composition.first-epistle-to-the-thessalonians: First Thessalonians
+  composition.epistle-to-the-philippians: Philippians
+  composition.epistle-to-the-colossians: Colossians
+  critical.gospel-of-matthew: Greek Matthew
+  critical.gospel-of-mark: Mark
+contexts:
+  - scope: {book: Matt, chapter: 5, first: 1, last: 12}
+    label: Jesus teaches the Beatitudes on a mountain
+    sources:
+      - bible:douay-rheims:Matt.5.1
+      - bible:douay-rheims:Matt.5.2
+      - bible:douay-rheims:Matt.5.3
+      - bible:douay-rheims:Matt.5.12
+    basis: >-
+      Matthew 5:1-2 sets Jesus' teaching on an unnamed mountain; verses 3-12
+      give the blessings. The narrative does not supply an absolute year.
+  - scope: {book: Matt, chapter: 13, first: 24, last: 30}
+    label: Jesus tells the parable of the wheat and cockle
+    sources:
+      - bible:douay-rheims:Matt.13.24
+      - bible:douay-rheims:Matt.13.25
+      - bible:douay-rheims:Matt.13.30
+    basis: >-
+      Matthew expressly introduces a parable. The narrated event is Jesus'
+      telling it, not the fictional sowing or an inferred date for the harvest.
+  - scope: {book: Matt, chapter: 22, first: 15, last: 21}
+    label: Jesus answers the question about tribute to Caesar
+    sources:
+      - bible:douay-rheims:Matt.22.15
+      - bible:douay-rheims:Matt.22.17
+      - bible:douay-rheims:Matt.22.21
+    basis: >-
+      The Pharisees' disciples and the Herodians question Jesus about tribute;
+      his reply distinguishes what belongs to Caesar and what belongs to God.
+  - scope: {book: John, chapter: 18, first: 33, last: 37}
+    label: Jesus before Pilate in the governor's hall
+    sources:
+      - bible:douay-rheims:John.18.28
+      - bible:douay-rheims:John.18.33
+      - bible:douay-rheims:John.18.37
+    basis: >-
+      The governor's hall is named in verse 28. Pilate returns inside and
+      questions Jesus in verse 33; their dialogue continues through verse 37.

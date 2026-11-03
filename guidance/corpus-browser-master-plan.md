@@ -61,9 +61,12 @@ disciplined measure, restrained chrome, useful first content, source honesty,
 responsive reflow, and accessible operation. It is also a protected exception,
 not a template to be wrapped in new global chrome.
 
-Installed reviewed PDFs remain the canonical printable editions. Browser
-print is a useful non-canonical fallback and must not become a collateral
-typesetting project.
+Native PDFs are generated on demand from canonical sections and current shared
+styles. [Repository guidance](repository.md) and [printing](../docs/printing.md)
+own that pipeline, its disposable browser cache and its review requirements.
+The 2026-11-03 clarification rejects a maintained PDF collection in Git or
+elsewhere; style and structure changes do not require a PDF corpus rebuild.
+This corpus program does not independently redesign the native print layout.
 
 ## Non-negotiable boundaries
 
@@ -196,7 +199,7 @@ geometry remain real-data decisions.
 | F0 Source Library | **Accepted** | Design contract accepted; production implementation remains separately owned |
 | Shared non-Liturgy shell | **Accepted** | Design contract accepted; final production cutover remains blocked |
 | Accessibility and resilience | **Accepted as a requirement** | Production proof outstanding |
-| Browser print | **Accepted only as a non-canonical fallback** | Canonical PDF remains authoritative |
+| Browser print | **Accepted only as a non-canonical fallback in this design review** | Current native PDF generation follows the separate printing contract above |
 
 The four accepted surface compositions are closed to redesign in the review-fix
 checkpoint. A shell correction may appear on their evidence routes, but it may
@@ -225,11 +228,11 @@ spacing are optional production polish, not authority to redesign the page.
 ### D0 Publication Reader contract
 
 Preserve the dominant reading plane, measure, provider qualification,
-canonical-PDF action, revision/rights access, and on-demand Contents. Production
+native PDF-generation action, revision/rights access, and on-demand Contents. Production
 must make provider and PDF truth available without optional enhancement
 JavaScript, preserve heading fragments and history, implement dialog focus
-semantics, and make wide tables labelled keyboard-scroll regions. Browser print
-does not replace the installed PDF.
+semantics, and make wide tables labelled keyboard-scroll regions. HTML browser
+print does not replace native TeX generation.
 
 ### E0 Catena contract
 
@@ -283,8 +286,9 @@ Production must prove, rather than merely promise:
 - durable public routes and route-owned hash/history behavior;
 - relative links that work at the `https://mystago.gy/` root and beneath a
   GitHub Pages project-path preview such as `/triptych/`;
-- useful identity, content, browse entry, legal/source truth, and canonical PDF
-  access without enhancement JavaScript; and
+- useful identity, content, browse entry, legal/source truth, and truthful PDF
+  options without enhancement JavaScript, including the browser generator's
+  JavaScript requirement; and
 - clean browser print that hides interactive chrome and points to the canonical
   PDF rather than imitating it.
 
@@ -329,7 +333,7 @@ over the generated preview and recapture at least:
 - visible keyboard focus on the changed wide Browse control.
 
 Evidence uses existing real routes, data, rights states, and hash contracts. It
-must prove protected Liturgy production assets, installed PDFs, publication
+must prove protected Liturgy production assets, native print inputs, publication
 prose, production browser sources, release bindings, and public deployment
 state are unchanged.
 

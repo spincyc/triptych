@@ -270,25 +270,25 @@ class OrientationV2Tests(unittest.TestCase):
         self.assertEqual(chronology.psalm_numbering_note(chronology.Citation(
             "Isaiah 45:1", "Isaiah", "vulgate", (((45, 1, ""), (45, 1, "")),))), "")
 
-    def test_presentations_validate_and_new_runs_require_v2(self):
+    def test_presentations_validate_and_new_runs_require_v3(self):
         with tempfile.TemporaryDirectory() as directory:
             leaf = Path(directory)
             manifest = leaf / "proper-components.toml"
             for value in chronology.ORIENTATION_PRESENTATIONS:
                 manifest.write_text(f'schema = 2\nchronology_presentation = "{value}"\n')
                 self.assertEqual(chronology.presentation_contract(leaf, required=True), value)
-            self.assertEqual(chronology.presentation_contract(leaf, current=True), "orientation-v2")
+            self.assertEqual(chronology.presentation_contract(leaf, current=True), "orientation-v3")
             manifest.write_text('schema = 2\nchronology_presentation = "orientation-v1"\n')
             with self.assertRaisesRegex(chronology.ChronologyWiringError, "new proper-study runs"):
                 chronology.presentation_contract(leaf, current=True)
-            manifest.write_text('schema = 2\nchronology_presentation = "orientation-v3"\n')
+            manifest.write_text('schema = 2\nchronology_presentation = "orientation-v4"\n')
             with self.assertRaisesRegex(chronology.ChronologyWiringError, "schema-2"):
                 chronology.presentation_contract(leaf)
             manifest.unlink()
             (leaf / "research").mkdir()
             (leaf / chronology.ANNOTATIONS_RECORD).write_text("% presentation: orientation-v2\n")
             self.assertEqual(chronology.presentation_contract(leaf), "orientation-v2")
-        self.assertEqual(chronology.ORIENTATION_PRESENTATION, chronology.ORIENTATION_V2)
+        self.assertEqual(chronology.ORIENTATION_PRESENTATION, chronology.ORIENTATION_V3)
         self.assertEqual(load_tool("web-edition").ORIENTATION_PRESENTATIONS,
                          chronology.ORIENTATION_PRESENTATIONS)
 

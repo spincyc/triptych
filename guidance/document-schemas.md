@@ -106,28 +106,44 @@ inputs; none is a PDF hash or an editorial PASS.
 Keep source/evidence review, print-template review, and actual render
 inspection distinct. An existing full-page receipt remains a fact about its
 exact old output. A current schema PASS cannot extend it to changed sources,
-another renderer, or pages nobody inspected. Ordinary source/web release does
-not generate PDFs or compare their bytes. Issuing a reviewed native print edition follows
+another renderer, or pages nobody inspected. Ordinary source/web release
+verifies canonical inputs and their delivery without generating PDF outputs
+or comparing them with historical printings. Issuing a reviewed native print
+edition follows
 [`docs/printing.md`](../docs/printing.md) and every exact pagination, paired-page,
 card, image, and physical-use rule in the owning profile.
 
 ## Native print sources
 
-The complete-edition web Print action uses the canonical native TeX recipe,
-including its original engine, source graph, typesetting templates and fonts.
-It may execute in a browser WebAssembly worker or an explicitly configured
-compiler service. The schema does not authorize flattening TeX into HTML for
-that PDF. Source-only preparation may generate deterministic native TeX for
-structured families without compiling or storing a PDF during publication.
+The complete-edition web Print action assembles the selected canonical sections
+with current shared styles and runs the native TeX recipe in a browser
+WebAssembly worker, retaining its original engine, source graph, templates and
+fonts. The schema does not authorize flattening TeX into HTML for that PDF.
+Source-only preparation may generate deterministic native TeX for structured
+families without compiling or storing a PDF during publication. PDF output
+remains downstream of this assembly; changing a style or section does not
+require rebuilding a PDF corpus before deployment.
 
 A browser source bundle is a bounded transport of one admitted output's
 render inputs, with exact file hashes, entrypoint, virtual paths, engine and
 source identity. It must preserve imports and source-owned apparatus and
 exclude research records and unadmitted selections. Engine, package and font
 delivery is separately hash-bound. The public admission set controls every
-bundle and service request; the larger local native recipe catalogue is not
-public authorization. Changing shared print templates invalidates generated
-PDF cache identities without rebuilding the PDF corpus.
+bundle; the larger local native recipe catalogue is not public authorization.
+Changing shared print templates invalidates affected generated-PDF cache
+identities without rebuilding the PDF corpus. A disposable browser cache must
+match the current source, style and typesetter inputs; it is never a maintained
+publication collection. [Repository guidance](repository.md) owns this boundary.
+
+The additive `render_sha256` binds document, output and edition identity,
+engine and format, entrypoint, working directory, environment and options,
+and the sorted virtual file paths with each file's SHA-256 and size. It excludes
+transport packaging and `source_revision`, which remains provenance. Moving
+identical source bytes into a shared transport object does not change the
+render; changing an included style does. The browser validates the current
+bundle before cache reuse and combines this render identity with the runtime
+identity and compiler implementation version. Older bundles without the field
+retain their exact transport-bound cache identity.
 
 ## Browser-print projections
 
@@ -163,11 +179,12 @@ establish reproducibility and do not substitute for that completeness proof.
 
 Parts carry bounded transport, text and structure
 hashes, semantic counts, ordered unit inventories, and exact asset identities.
-Measuring converted output alone cannot establish this source proof. The browser
-rechecks the assembled selection and current print styles before opening Print;
-an absent appendix, card face, note, image, or source unit fails at its owning
-boundary. These are executable completeness checks, not source verification,
-editorial approval, or certification of physical pagination or duplex alignment.
+Measuring converted output alone cannot establish this source proof. The retained
+HTML-print controller can recheck that projection and its styles; it does not
+provide the native TeX generation action. An absent appendix, card face, note,
+image, or source unit fails at its owning boundary. These are executable
+completeness checks, not source verification, editorial approval, or
+certification of physical pagination or duplex alignment.
 
 [Web data](web-data.md#complete-browser-print-products) owns cold preparation and
 hot assembly. [Web editions](web-editions.md#browser-printing) owns the reviewed

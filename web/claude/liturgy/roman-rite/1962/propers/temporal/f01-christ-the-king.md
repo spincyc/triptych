@@ -523,27 +523,49 @@ Each also draws on a different clause of the Preface’s one sentence. The first
 
 ## Scriptural Date and Location {#sec:date-location}
 
-Each passage the Mass reads or sings from Scripture, in canonical order, with what is dated, where it belongs, and its date. Where several texts of the Mass share one date, the row names them all. The table also includes the Tract printed for votive Masses after Septuagesima, which is never said on this feast; its rows say so. The three orations and the Preface have no biblical date. The notes beneath give each passage’s setting, attribution and dating evidence.
+Each passage the Mass reads or sings from Scripture, in canonical order, with what is dated, where it belongs, and its date. Where several texts of the Mass share one date, the row names them all. The table covers the feast’s appointed passages. The Tract printed for votive Masses after Septuagesima, never said on this feast, is discussed in the setting notes below. The three orations and the Preface have no biblical date. The notes beneath give each passage’s setting, attribution and dating evidence.
 
-| **Passage** | **Occurrence and place** | **Date** |
+| **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29) | Historical setting. Psalms of a king and of the Lord as King. Ps 71 is titled “on Solomon” and closes with the praises of David (71:20); Ps 2, where the king is set on Sion, is ascribed to David in Acts 4:25; Ps 28, which ends with the Lord sitting as King for ever, is titled “for David, at the finishing of the tabernacle” (28:1). No occasion is dated. | Occasion date unresolved |
-| Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Tract: Psalms 88:27–28,30 (Vulgate numbering; Hebrew 89); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29) | Composition: Psalms. The psalms of this Mass, under the titles above. Ps 88, titled “for Ethan the Ezrahite” (88:1), is the psalm of the Tract, printed for votive Masses after Septuagesima, never said on this feast. | Before c. 165 B.C. |
-| Tract: Psalms 88:27–28,30 (Vulgate numbering; Hebrew 89) | Historical setting: Jerusalem’s destruction under Sedecias. The Tract, printed for votive Masses after Septuagesima, never said on this feast. The setting dated is the psalm’s lament that God has rejected his anointed and cast his throne down to the ground (Ps 88:39–45). | Preferred: A.M. 3416 (Haydock reporting Ussher); alternatives: B.C. 586 (Reid and Meistermann), B.C. 587 (Schets), B.C. 588 (Petavius via Sloet; transcription only) |
-| Alleluia: Daniel 7:14 | Historical setting: The seventy years of servitude to Babylon. Daniel’s night vision “in the first year of Baltasar, king of Babylon” (Dan 7:1), among the exiles of Juda in Babylon. | “seventy years” (duration) |
-| Alleluia: Daniel 7:14 | Composition: The Book of Daniel. The book that presents Daniel, a youth of Juda carried to Babylon (Dan 1:1–6). The same verse opens the paschal Alleluia, printed for Paschaltide, never said on this feast; its second verse, Apoc 19:16, has no row. A later dating is noted below. | B.C. 570–536 |
-| Gospel: John 18:33–37 | Event. Jesus questioned by Pilate inside the governor’s hall, the praetorium, at Jerusalem, on the morning before the Pasch (Jn 18:28, 33). | Date unresolved |
-| Gospel: John 18:33–37 | Composition: The Gospel of St John. John writes his Gospel, by early tradition at Ephesus (Irenaeus, as Fonck reports him). | Disputed: c. A.D. 90–100; A.D. 96–100 |
-| Epistle: Colossians 1:12–20 | Composition: The Epistle to the Colossians. Paul writes in bonds (Col 4:3, 18) to the saints at Colossa (1:2); the common view places the letters of the captivity at Rome. | Disputed: A.D. 61; A.D. 61–63 |
-| Introit: Apoc 1:6, Apoc 5:12 | Composition: The Apocalypse of St John. John writes the visions he saw “in the island which is called Patmos” (Apoc 1:9). | Disputed: A.D. 81–96; c. A.D. 90–100 |
+| Introit: Ps 71:1 (Vg.; Heb. 72); Gradual: Ps. 71:8,11 (Vg.; Heb. 72); Offertory: Ps. 2:8 (Vg./Heb.); Communion: Ps. 28:10–11 (Vg.; Heb. 29) | Traditional attribution: David’s reign | Disputed: B.C. 1055–1015 |
+| Introit: Ps 71:1 (Vg.; Heb. 72); Gradual: Ps. 71:8,11 (Vg.; Heb. 72); Offertory: Ps. 2:8 (Vg./Heb.); Communion: Ps. 28:10–11 (Vg.; Heb. 29) | Historical setting | Occasion date unresolved |
+| Introit: Ps 71:1 (Vg.; Heb. 72); Gradual: Ps. 71:8,11 (Vg.; Heb. 72); Offertory: Ps. 2:8 (Vg./Heb.); Communion: Ps. 28:10–11 (Vg.; Heb. 29) | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Dan. 7:14 | Historical setting: The seventy years of servitude to Babylon | “seventy years” (duration) |
+| Alleluia: Dan. 7:14 | Composition: Daniel | B.C. 570–536 |
+| Gospel: John 18:33–37 | Narrated event: Jesus before Pilate in the governor’s hall | Date unresolved |
+| Gospel: John 18:33–37 | Composition: John | Disputed: c. A.D. 90–100; A.D. 96–100 |
+| Epistle: Col. 1:12–20 | Composition: Colossians | Disputed: A.D. 61; A.D. 61–63 |
+| Introit: Apoc 1:6, Apoc 5:12 | Composition: Apocalypse | Disputed: A.D. 81–96; c. A.D. 90–100 |
+
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+##### Setting notes.
+
+**Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29)**. Psalms of a king and of the Lord as King. Ps 71 is titled “on Solomon” and closes with the praises of David (71:20); Ps 2, where the king is set on Sion, is ascribed to David in Acts 4:25; Ps 28, which ends with the Lord sitting as King for ever, is titled “for David, at the finishing of the tabernacle” (28:1). No occasion is dated.
+
+**Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Tract: Psalms 88:27–28,30 (Vulgate numbering; Hebrew 89); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29)**. The psalms of this Mass, under the titles above. Ps 88, titled “for Ethan the Ezrahite” (88:1), is the psalm of the Tract, printed for votive Masses after Septuagesima, never said on this feast.
+
+**Tract: Psalms 88:27–28,30 (Vulgate numbering; Hebrew 89)**. The Tract, printed for votive Masses after Septuagesima, never said on this feast. The setting dated is the psalm’s lament that God has rejected his anointed and cast his throne down to the ground (Ps 88:39–45).
+
+**Alleluia: Daniel 7:14**. Daniel’s night vision “in the first year of Baltasar, king of Babylon” (Dan 7:1), among the exiles of Juda in Babylon.
+
+**Alleluia: Daniel 7:14**. The book that presents Daniel, a youth of Juda carried to Babylon (Dan 1:1–6). The same verse opens the paschal Alleluia, printed for Paschaltide, never said on this feast; its second verse, Apoc 19:16, has no row. A later dating is noted below.
+
+**Gospel: John 18:33–37**. Jesus questioned by Pilate inside the governor’s hall, the praetorium, at Jerusalem, on the morning before the Pasch (Jn 18:28, 33).
+
+**Gospel: John 18:33–37**. John writes his Gospel, by early tradition at Ephesus (Irenaeus, as Fonck reports him).
+
+**Epistle: Colossians 1:12–20**. Paul writes in bonds (Col 4:3, 18) to the saints at Colossa (1:2); the common view places the letters of the captivity at Rome.
+
+**Introit: Apoc 1:6, Apoc 5:12**. John writes the visions he saw “in the island which is called Patmos” (Apoc 1:9).
 
 ### Psalms 2, 28 (29) and 71 (72): the Introit verse, Gradual, Offertory and Communion {#sec:date-psalms}
 
-The four chants drawn from the psalms share the first two rows of the table. No occasion is dated for any of them. Their titles name a king and a moment without placing either in time: Psalm 71 is *in Salomonem*, “on Solomon,” and its last verse closes “the praises of David, the son of Jesse”; Psalm 28 is “for David, at the finishing of the tabernacle”; Psalm 2 opens without a title, and Acts 4:25 ascribes it to David. These attributions are the texts’ own, and no king’s reign is used to date any of the three psalms. Commentators also read the titles differently: for Bellarmine Psalm 71 is literally David’s prayer for Solomon, while Augustine, Cassiodorus and Theodoret hold that it fits Solomon in no way and speaks of Christ.
+The four chants drawn from the psalms share the first three rows of the table. No occasion is dated for any of them. Their titles name a king and a moment without placing either in time: Psalm 71 is *in Salomonem*, “on Solomon,” and its last verse closes “the praises of David, the son of Jesse”; Psalm 28 is “for David, at the finishing of the tabernacle”; Psalm 2 opens without a title, and Acts 4:25 ascribes it to David. The table’s traditional-attribution row gives David’s reference era, not a date of composition or an occasion for every attributed psalm. Commentators also read the titles differently: for Bellarmine Psalm 71 is literally David’s prayer for Solomon, while Augustine, Cassiodorus and Theodoret hold that it fits Solomon in no way and speaks of Christ.
 
-The composition date is the bound that the introduction to the Psalms in the *New American Bible, Revised Edition* sets for the whole Psalter, in the same sentence in which it holds that no individual psalm can be dated securely. It dates the book of Psalms as a whole, not any of these psalms. The table’s entry for that composition date also names the Tract’s Psalm 88, titled for Ethan the Ezrahite; the Tract is printed for votive Masses after Septuagesima and is never said on this feast.
+The composition date is the bound that the introduction to the Psalms in the *New American Bible, Revised Edition* sets for the whole Psalter, in the same sentence in which it holds that no individual psalm can be dated securely. It dates the book of Psalms as a whole, not any of these psalms. The Tract’s Psalm 88, titled for Ethan the Ezrahite, stands outside this feast’s table; the Tract is printed for votive Masses after Septuagesima and is never said on this feast.
 
-For the Tract the table dates the destruction of Jerusalem under Sedecias, taken as the setting of the psalm’s lament for the anointed rejected and the throne cast down (Ps 88:39–45). The preferred figure is the one Haydock’s Douay commentary prints in a chronological paragraph attributed to Ussher; the alternatives are those of the *Catholic Encyclopedia*’s articles “Captivities of the Israelites” (Reid) and “Temple of Jerusalem” (Meistermann), “Third and Fourth Books of Kings” (Schets), and “Chronology of the Kings” (Sloet, reporting Petavius).
+For that Tract, the research considers Jerusalem’s destruction under Sedecias as the setting of the psalm’s lament for the anointed rejected and the throne cast down (Ps 88:39–45). Its chronology is discussed in Haydock’s Douay commentary, in a chronological paragraph attributed to Ussher, and in the *Catholic Encyclopedia*’s articles “Captivities of the Israelites” (Reid) and “Temple of Jerusalem” (Meistermann), “Third and Fourth Books of Kings” (Schets), and “Chronology of the Kings” (Sloet, reporting Petavius).
 
 ### Daniel 7:14: the Alleluia {#sec:date-daniel}
 
@@ -643,6 +665,6 @@ The two composition dates are those of Christian Van den Biesen’s “Apocalyps
 
 - *New American Bible, Revised Edition*, introduction to the Psalms (USCCB website), summarized.
 
-**Last revised (UTC):** 2026-10-21T19:35:18Z
+**Last revised (UTC):** 2026-11-03T21:06:51Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -423,18 +423,97 @@ def hydrate(root, *, archive_dir=None, fetch=False):
     return dict(validate_registry(root, local_bytes=True), hydrated=hydrated)
 
 
+def refresh_compression_binding(root, previous_preamble: Path):
+    """Rebind identical render products after one PDF-only compression insertion.
+
+    This deliberately cannot refresh a general style or source change. Original
+    render receipts, payloads, rights, and delivery records remain unchanged.
+    """
+    import _print_document as printing
+    import _web_print_diagrams as diagrams
+    import _web_print_publication as publication
+    root, held, delivery = _domain(root)
+    original = transport._path(root, INDEX_PATH).read_bytes()
+    old = Path(previous_preamble).read_bytes()
+    source = "src/common/preamble.tex"
+    current = transport._path(root, source).read_bytes()
+    insertion = re.compile(rb"(?m)^(?:[ \t]*%[^\r\n]*\r?\n)*[ \t]*\\ifdefined[ \t]*\\pdfcompresslevel[ \t]*\r?\n"
+                           rb"[ \t]*\\pdfcompresslevel[ \t]*=[ \t]*[0-9][ \t]*\r?\n[ \t]*\\fi[ \t]*(?:\r?\n|$)")
+    matches = list(insertion.finditer(current))
+    _require(len(matches) == 1 and not insertion.search(old)
+             and current[:matches[0].start()] + current[matches[0].end():] == old,
+             "refresh requires only one literal PDF compression guard insertion")
+    before, after = digest(old), digest(current)
+    data = copy.deepcopy(held)
+    closures = [data["server"]["source_inputs"], *[row["source_closure"] for row in data["generic"]["outputs"].values()]]
+    for closure in closures:
+        _require(closure.get(source) == before, "previous preamble differs from registered source identity")
+        _verify_sources(root, {path: pin for path, pin in closure.items() if path != source})
+    _verify_definitions(root, data["server"])
+    _font_metadata(root, data)
+    # Verify every retained asset independently before renewing any provenance.
+    for src in data["payloads"]:
+        _bytes(root, data, delivery, src)
+    library = publication.load_library(root)
+    for output_id, row in data["generic"]["outputs"].items():
+        provider, output = output_id.split("/", 1)
+        recipe = printing.publication_recipe(provider, output, root=root)
+        selection = publication.selected_source(root, recipe, library)
+        declared = selection["selection"]
+        closure = {item["path"]: item["sha256"] for item in diagrams.closure(selection)}
+        _require(closure == {**row["source_closure"], source: after}, "selected source closure changed beyond compression")
+        expected = {"head_sha256": digest(selection["head"]), "body_sha256": digest(selection["body"]),
+                    "entrypoint": declared["entrypoint"], "role": declared["role"], "flags": declared["flags"]}
+        _require(all(row[key] == value for key, value in expected.items()), "selected output semantics changed")
+        spans = diagrams.diagram_spans(selection["body"])
+        _require(len(spans) == len(row["diagrams"]), "selected diagram inventory changed")
+        for span, unit in zip(spans, row["diagrams"], strict=True):
+            _require(all(unit[key] == value for key, value in span.items()), "selected diagram span changed")
+            labels = diagrams.node_labels(selection["body"][span["start"]:span["end"]])
+            refs = diagrams.selected_source_refs(selection, span["start"], span["end"])
+            _require(unit["labels_sha256"] == digest(canonical_json(labels)) and unit["source_refs"] == refs,
+                     "selected diagram labels or source references changed")
+            unit["selection_digest"] = declared["selection_digest"]
+            unit["source_closure_digest"] = digest(canonical_json(diagrams.closure(selection)))
+        row["selection_digest"] = declared["selection_digest"]
+        row["source_closure"] = closure
+    data["server"]["source_inputs"][source] = after
+    data["provenance"]["source_binding_refresh"] = {
+        "method": "literal-pdf-compression-insertion-only/v1", "path": source,
+        "previous_sha256": before, "current_sha256": after,
+        "render_payloads_unchanged": True,
+    }
+    data["registry_digest"] = digest(canonical_json({key: value for key, value in data.items() if key != "registry_digest"}))
+    _validate(data, delivery)
+    _require(transport._path(root, INDEX_PATH).read_bytes() == original, "asset registry changed during refresh")
+    _require(transport._path(root, source).read_bytes() == current, "preamble changed during refresh")
+    for closure in [data["server"]["source_inputs"], *[row["source_closure"] for row in data["generic"]["outputs"].values()]]:
+        _verify_sources(root, closure)
+    transport._json(transport._path(root, INDEX_PATH), data)
+    return dict(validate_registry(root, local_bytes=True), refreshed_outputs=len(data["generic"]["outputs"]))
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("check", "hydrate"))
+    parser.add_argument("command", choices=("check", "hydrate", "refresh-compression-bindings"))
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--local-bytes", action="store_true", help="check every cached exact payload (offline)")
     parser.add_argument("--archive-dir", type=Path, help="explicit offline delivery pack directory")
     parser.add_argument("--fetch", action="store_true", help="explicitly download pinned immutable archives")
+    parser.add_argument("--previous-preamble", type=Path, help="exact previous registered preamble for a compression-only binding refresh")
     args = parser.parse_args(argv)
     if args.command == "check" and (args.fetch or args.archive_dir):
         parser.error("check never fetches or hydrates; use hydrate explicitly")
+    if args.command == "refresh-compression-bindings":
+        if args.previous_preamble is None or args.fetch or args.archive_dir:
+            parser.error("compression binding refresh requires --previous-preamble and verified local assets")
+    elif args.previous_preamble is not None:
+        parser.error("--previous-preamble belongs to refresh-compression-bindings")
     try:
-        value = hydrate(args.root, archive_dir=args.archive_dir, fetch=args.fetch) if args.command == "hydrate" else validate_registry(args.root, local_bytes=args.local_bytes)
+        if args.command == "refresh-compression-bindings":
+            value = refresh_compression_binding(args.root, args.previous_preamble)
+        else:
+            value = hydrate(args.root, archive_dir=args.archive_dir, fetch=args.fetch) if args.command == "hydrate" else validate_registry(args.root, local_bytes=args.local_bytes)
     except (AssetError, transport.ArtifactStoreError, OSError) as error:
         parser.exit(1, str(error) + "\n")
     print(json.dumps(value, sort_keys=True))

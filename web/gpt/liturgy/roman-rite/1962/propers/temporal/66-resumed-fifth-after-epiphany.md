@@ -460,19 +460,45 @@ Their common ground is visible in Colossians. Those who have received forgivenes
 
 The passages below have several different dated subjects. Jeremias’s letter has its own relation to the deportees’ departure; the received book has a separate history of enlargement. Psalm titles identify a tradition of singers without fixing a particular occasion. The dates proposed for writing a Gospel concern its composition, while the scene in which Jesus teaches concerns the narrated event. The chant’s selection of a verse does not enlarge its liturgical appointment to the complete chapter discussed in the commentary.
 
-| **Passage** | **Occurrence and place** | **Date** |
+| **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Introit: Ps 84:2 (Vulgate numbering; Hebrew 85); Gradual: Psalm 43:8–9 (Vulgate numbering; Hebrew 44); Alleluia: Psalm 129:1–2 (Vulgate numbering; Hebrew 130); Offertory: Psalm 129:1–2 (Vulgate numbering; Hebrew 130) | Historical setting. Israel recalls rescue and cries for mercy; individual occasions and exact places remain unidentified. | Occasion date unresolved |
-| Introit: Ps 84:2 (Vulgate numbering; Hebrew 85); Gradual: Psalm 43:8–9 (Vulgate numbering; Hebrew 44) | Composition: The Psalms of the Sons of Korah. Temple-singer tradition of the sons of Korah; Jerusalem is its worship horizon, with each writing site uncertain. | Between the days of Isaias and the return from exile |
-| Alleluia: Psalm 129:1–2 (Vulgate numbering; Hebrew 130); Offertory: Psalm 129:1–2 (Vulgate numbering; Hebrew 130) | Composition: Psalms. Israel is called to hope; the individual psalm’s writing place and date are insecure. The displayed bound is Psalter-wide. | Before c. 165 B.C. |
-| Introit: Jer 29:11–12,14 | Composition: Jeremias’s letter to the exiles after Jechonias’s deportation. From Jerusalem to exiles in Babylon; Jer 29:1–3. | After Jechonias and the deportees had departed from Jerusalem |
-| Introit: Jer 29:11–12,14 | Final formation: The received Book of Jeremias after enlargement. The prophet’s Judah/Jerusalem ministry and later enlargement; no single final-redaction site established. | After the first authentic recension |
-| Gospel: Matthew 13:24–30 | Event. Jesus teaches the crowds beside the sea; the subsequent explanation is in a house (Matt 13:1–3,36). | Date unresolved |
-| Gospel: Matthew 13:24–30 | Composition: The Gospel of St Matthew. The traditional original is associated with Matthew’s departure from Palestine; its relation to the received Greek text is distinguished below. | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
-| Gospel: Matthew 13:24–30 | Composition (Catholic critical chronology, for comparison): The Greek Gospel of Matthew in the NABRE introduction. The NABRE introduction reports a probable majority account, with Antioch in Roman Syria plausible. The dating remains a scholarly proposal. | Post-A.D. 70 date |
-| Communion: Mark 11:24 | Composition: The Gospel of St Mark. Rome in the reported tradition; the instruction itself occurs within the Jerusalem/Bethania narrative. | Disputed: A.D. 38–40; A.D. 40; A.D. 43; A.D. 50–67; A.D. 60–70; After Matthew, and not as late as the destruction of Jerusalem |
-| Communion: Mark 11:24 | Composition (Catholic critical chronology, for comparison): The Gospel of Mark under the NABRE’s tentative modern dating proposal. Tentative anonymous-author proposal, with Syria possible; applies to Mark through 16:8, including this verse. | Perhaps shortly after A.D. 70 |
-| Epistle: Colossians 3:12–17 | Composition: The Epistle to the Colossians. Traditional Roman captivity; recipients at Colossae and neighbouring Laodicea. The modern introduction leaves the prison site and authorship uncertain. | Disputed: A.D. 61; A.D. 61–63 |
+| Introit: Ps 84:2 (Vg.; Heb. 85); Gradual: Ps. 43:8–9 (Vg.; Heb. 44); Alleluia: Ps. 129:1–2 (Vg.; Heb. 130); Offertory: Ps. 129:1–2 (Vg.; Heb. 130) | Historical setting | Occasion date unresolved |
+| Introit: Ps 84:2 (Vg.; Heb. 85); Gradual: Ps. 43:8–9 (Vg.; Heb. 44) | Composition: The Psalms of the Sons of Korah | Between the days of Isaias and the return from exile |
+| Alleluia: Ps. 129:1–2 (Vg.; Heb. 130); Offertory: Ps. 129:1–2 (Vg.; Heb. 130) | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Jer 29:11–12,14 | Composition: Jeremias’s letter to the exiles after Jechonias’s deportation | After Jechonias and the deportees had departed from Jerusalem |
+| Introit: Jer 29:11–12,14 | Final formation: The received Book of Jeremias after enlargement | After the first authentic recension |
+| Gospel: Matt. 13:24–30 | Narrated event: Jesus tells the parable of the wheat and cockle | Date unresolved |
+| Gospel: Matt. 13:24–30 | Composition: Matthew | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Gospel: Matt. 13:24–30 | Composition (Catholic critical chronology, for comparison): Greek Matthew | Post-A.D. 70 date |
+| Communion: Mark 11:24 | Composition: Mark | Disputed: A.D. 38–40; A.D. 40; A.D. 43; A.D. 50–67; A.D. 60–70; After Matthew, and not as late as the destruction of Jerusalem |
+| Communion: Mark 11:24 | Composition (Catholic critical chronology, for comparison): Mark | Perhaps shortly after A.D. 70 |
+| Epistle: Col. 3:12–17 | Composition: Colossians | Disputed: A.D. 61; A.D. 61–63 |
+
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+##### Setting notes.
+
+**Introit: Ps 84:2 (Vulgate numbering; Hebrew 85); Gradual: Psalm 43:8–9 (Vulgate numbering; Hebrew 44); Alleluia: Psalm 129:1–2 (Vulgate numbering; Hebrew 130); Offertory: Psalm 129:1–2 (Vulgate numbering; Hebrew 130)**. Israel recalls rescue and cries for mercy; individual occasions and exact places remain unidentified.
+
+**Introit: Ps 84:2 (Vulgate numbering; Hebrew 85); Gradual: Psalm 43:8–9 (Vulgate numbering; Hebrew 44)**. Temple-singer tradition of the sons of Korah; Jerusalem is its worship horizon, with each writing site uncertain.
+
+**Alleluia: Psalm 129:1–2 (Vulgate numbering; Hebrew 130); Offertory: Psalm 129:1–2 (Vulgate numbering; Hebrew 130)**. Israel is called to hope; the individual psalm’s writing place and date are insecure. The displayed bound is Psalter-wide.
+
+**Introit: Jer 29:11–12,14**. From Jerusalem to exiles in Babylon; Jer 29:1–3.
+
+**Introit: Jer 29:11–12,14**. The prophet’s Judah/Jerusalem ministry and later enlargement; no single final-redaction site established.
+
+**Gospel: Matthew 13:24–30**. Jesus teaches the crowds beside the sea; the subsequent explanation is in a house (Matt 13:1–3,36).
+
+**Gospel: Matthew 13:24–30**. The traditional original is associated with Matthew’s departure from Palestine; its relation to the received Greek text is distinguished below.
+
+**Gospel: Matthew 13:24–30**. The NABRE introduction reports a probable majority account, with Antioch in Roman Syria plausible. The dating remains a scholarly proposal.
+
+**Communion: Mark 11:24**. Rome in the reported tradition; the instruction itself occurs within the Jerusalem/Bethania narrative.
+
+**Communion: Mark 11:24**. Tentative anonymous-author proposal, with Syria possible; applies to Mark through 16:8, including this verse.
+
+**Epistle: Colossians 3:12–17**. Traditional Roman captivity; recipients at Colossae and neighbouring Laodicea. The modern introduction leaves the prison site and authorship uncertain.
 
 ### Psalms: attribution, occasion and collection {#hist-psalms}
 
@@ -546,7 +572,7 @@ The inherited Latin and historical English retain their recorded United States p
 
 The historical appendix gives the exact articles, official introductions and AAS responses used for its chronological and geographical claims. All online witnesses were inspected in the research completed on 2 November 2026; their exact identities and source-local limits remain in the binding record.
 
-**Last revised (UTC):** 2026-11-02T20:21:44Z
+**Last revised (UTC):** 2026-11-03T21:06:51Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

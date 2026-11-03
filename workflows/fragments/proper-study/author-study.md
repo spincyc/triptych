@@ -53,7 +53,10 @@ the future concise opening roles. Declare
 qualifies them to support the interpretation. Follow the checker and owning profile for exact
 fields. Each interpretive lane
 is a separate component. Keep shared source ownership and references explicit.
-Declare `chronology_presentation = "orientation-v2"` for the concise table.
+Declare `chronology_presentation = "orientation-v3"` for the shared table.
+Import `research/chronology-table.tex` once in the historical appendix, with
+`research/chronology-annotations.tex` imported once in that edition. Declare
+both generated files as component references. Do not author cells or row order.
 Give its generated dates and contextual claims a reviewed home in the study,
 with exact historical-appendix references for fuller alternatives and evidence.
 

@@ -136,6 +136,108 @@ class WebPrintAssetTests(unittest.TestCase):
         with self.assertRaisesRegex(assets.AssetError, "label/source"):
             assets.generic_assets(self.root, self.output_id, self.selection)
 
+    def compression_fixture(self):
+        source = "src/common/preamble.tex"
+        old = b"\\documentclass{article}\n\\newcommand{\\Rights}{Exact rights notice.}\n"
+        self.previous_preamble = self.root / ".scratch/previous-preamble.tex"
+        self.previous_preamble.write_bytes(old)
+        new = old.replace(b"\\newcommand", b"% Stream compression only.\n\\ifdefined\\pdfcompresslevel\n  \\pdfcompresslevel=1\n\\fi\n\\newcommand", 1)
+        self.write(source, new)
+        self.data["server"]["source_inputs"][source] = assets.digest(old)
+        row = self.data["generic"]["outputs"][self.output_id]
+        row["source_closure"][source] = assets.digest(old)
+        row["diagrams"][0]["source_closure_digest"] = assets.digest(assets.canonical_json([
+            {"path": path, "sha256": pin} for path, pin in sorted(row["source_closure"].items())]))
+        self.selection["selection"]["ordered_inputs"].append({"path": source, "occurrence": 1,
+            "sha256": assets.digest(new), "selected_sha256": assets.digest(old)})
+        declared = self.selection["selection"]
+        declared["selection_digest"] = assets.digest(assets.canonical_json({key: value for key, value in declared.items() if key != "selection_digest"}))
+        self.save()
+        # Hydration refuses the intentionally stale source. The exact archived
+        # payloads are already available through the normal artifact reader.
+        for archive in self.delivery["archives"]:
+            expected = [entry for entry in self.delivery["artifacts"] if entry["archive"] == archive["id"]]
+            transport._read_archive(self.pack / archive["name"], expected, self.root, {entry["path"] for entry in expected})
+        return old, new
+
+    def refresh_compression(self):
+        import _print_document as printing
+        import _web_print_publication as publication
+        with patch.object(printing, "publication_recipe", return_value={}), \
+                patch.object(publication, "load_library", return_value=object()), \
+                patch.object(publication, "selected_source", return_value=self.selection), \
+                patch.object(transport, "urlopen", side_effect=AssertionError("refresh must be offline")):
+            return assets.refresh_compression_binding(self.root, self.previous_preamble)
+
+    def test_compression_refresh_changes_only_current_source_bindings(self):
+        self.compression_fixture()
+        before = copy.deepcopy(self.data)
+        with self.assertRaisesRegex(assets.AssetError, "source closure"):
+            assets.validate_registry(self.root)
+        result = self.refresh_compression()
+        after = assets.load_index(self.root)
+        self.assertEqual(result["refreshed_outputs"], 1)
+        for key in ("payloads", "fonts"):
+            self.assertEqual(before[key], after[key])
+        for key in ("origin", "entries", "definitions", "variants"):
+            self.assertEqual(before["server"][key], after["server"][key])
+        before_unit = before["generic"]["outputs"][self.output_id]["diagrams"][0]
+        after_unit = after["generic"]["outputs"][self.output_id]["diagrams"][0]
+        for key in before_unit.keys() - {"selection_digest", "source_closure_digest"}:
+            self.assertEqual(before_unit[key], after_unit[key])
+        self.assertEqual(assets.generic_assets(self.root, self.output_id, self.selection)[0]["body"], self.payloads[after_unit["payload"]])
+
+    def test_compression_refresh_refuses_noncompression_or_unverified_source_changes(self):
+        old, new = self.compression_fixture()
+        original = (self.root / assets.INDEX_PATH).read_bytes()
+        for bad in (new + b"Changed rights.\n", new.replace(b"=1", b"=10"),
+                    new.replace(b"=1", b"=\\Unknown"), new.replace(b"\\fi", b"Visible text.\\fi"),
+                    new.replace(b"\\fi", b"\\else\\fi")):
+            with self.subTest(bad=bad):
+                self.write("src/common/preamble.tex", bad)
+                with self.assertRaisesRegex(assets.AssetError, "compression guard"):
+                    self.refresh_compression()
+                self.assertEqual((self.root / assets.INDEX_PATH).read_bytes(), original)
+        self.write("src/common/preamble.tex", new)
+        self.previous_preamble.write_bytes(old + b"false previous source")
+        with self.assertRaises(assets.AssetError):
+            self.refresh_compression()
+
+    def test_compression_refresh_refuses_changed_selection_or_asset_bytes(self):
+        self.compression_fixture()
+        original = (self.root / assets.INDEX_PATH).read_bytes()
+        self.selection["body"] += " Changed content."
+        with self.assertRaisesRegex(assets.AssetError, "semantics changed"):
+            self.refresh_compression()
+        self.assertEqual((self.root / assets.INDEX_PATH).read_bytes(), original)
+        self.selection["body"] = self.selection["body"].removesuffix(" Changed content.")
+        entry = self.delivery["artifacts"][0]
+        path = transport.cache_path(self.root, entry)
+        path.chmod(0o600)
+        path.write_bytes(path.read_bytes() + b"tampered")
+        with self.assertRaisesRegex(ValueError, "hash or size"):
+            self.refresh_compression()
+        self.assertEqual((self.root / assets.INDEX_PATH).read_bytes(), original)
+
+    def test_compression_refresh_refuses_changed_diagram_bindings_and_other_sources(self):
+        self.compression_fixture()
+        original = copy.deepcopy(self.data)
+        for mutate in (lambda unit: unit.update(context=["different"]),
+                       lambda unit: unit.update(labels_sha256="f" * 64),
+                       lambda unit: unit["source_refs"][0].update(selected_line=2)):
+            self.data = copy.deepcopy(original)
+            mutate(self.data["generic"]["outputs"][self.output_id]["diagrams"][0])
+            self.save()
+            before = (self.root / assets.INDEX_PATH).read_bytes()
+            with self.assertRaisesRegex(assets.AssetError, "diagram"):
+                self.refresh_compression()
+            self.assertEqual((self.root / assets.INDEX_PATH).read_bytes(), before)
+        self.data = original
+        self.save()
+        self.write(self.generic_source, b"Different canonical diagram source.")
+        with self.assertRaisesRegex(assets.AssetError, "source closure"):
+            self.refresh_compression()
+
     def test_missing_generic_projection_fails_only_for_active_diagram(self):
         with self.assertRaisesRegex(assets.AssetError, "no verified"):
             assets.generic_assets(self.root, "gpt/missing", self.selection)

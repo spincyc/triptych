@@ -391,9 +391,13 @@ def presentation_contract(data: dict, *, required: bool = False) -> bool:
 def presentation_sources(data: dict, leaf: Path, provider_root: Path,
                          records: dict, *, check_files: bool) -> None:
     """Check declared membership and source-owned markers, not prose quality."""
-    from _proper_chronology import presentation_contract as chronology_presentation
+    from _proper_chronology import (presentation_contract as chronology_presentation,
+                                   ORIENTATION_V3, ORIENTATION_TABLE_RECORD)
 
-    orientation = bool(chronology_presentation(leaf))
+    presentation = chronology_presentation(leaf)
+    orientation = bool(presentation)
+    shared = presentation == ORIENTATION_V3
+    table_path = (leaf / ORIENTATION_TABLE_RECORD).resolve()
     mapping = data.get("presentation")
     if not isinstance(mapping, dict) or set(mapping) != set(PRESENTATION_ROLES):
         raise ValueError("presentation must map inventory, overview, chronology, themes, commentary")
@@ -414,6 +418,8 @@ def presentation_sources(data: dict, leaf: Path, provider_root: Path,
     annotations = "research/chronology-annotations.tex"
     if annotations not in chronology.get("references", []):
         raise ValueError("presentation chronology must declare canonical chronology annotations")
+    if shared and ORIENTATION_TABLE_RECORD not in chronology.get("references", []):
+        raise ValueError("orientation-v3 chronology must declare the canonical shared table")
     if not check_files:
         return
     entry = leaf / "synthesis.tex"
@@ -428,6 +434,7 @@ def presentation_sources(data: dict, leaf: Path, provider_root: Path,
             continue
         text = re.sub(r"(?<!\\)%[^\n]*", "", path.read_text())
         if (path.resolve() != (leaf / chronology["path"]).resolve()
+                and not (shared and path.resolve() == table_path)
                 and re.search(r"\\(?:chronodate|chronologyorientationrow)\s*\{", text)):
             raise ValueError("synthesis chronology cells must have the sole page-two source owner")
         labels = label_pattern.findall(text)
@@ -443,6 +450,7 @@ def presentation_sources(data: dict, leaf: Path, provider_root: Path,
 
     # Follow actual include order, including repeated imports, rather than set order.
     annotation_imports = []
+    table_imports = []
     def ordered(path: Path) -> list[str]:
         text = re.sub(r"(?<!\\)%[^\n]*", "", path.read_text())
         result = []
@@ -457,6 +465,8 @@ def presentation_sources(data: dict, leaf: Path, provider_root: Path,
                 if target in reached:
                     if target == (leaf / annotations).resolve():
                         annotation_imports.append(target)
+                    if target == table_path:
+                        table_imports.append(target)
                     result.extend(ordered(target))
                     break
         return result
@@ -468,7 +478,18 @@ def presentation_sources(data: dict, leaf: Path, provider_root: Path,
     if (leaf / annotations).resolve() not in include_graph(owner, leaf, provider_root):
         raise ValueError("presentation chronology must import canonical chronology annotations")
     text = re.sub(r"(?<!\\)%[^\n]*", "", owner.read_text())
-    if orientation:
+    if shared:
+        if (len(table_imports) != 1
+                or table_path not in include_graph(owner, leaf, provider_root)):
+            raise ValueError("orientation-v3 chronology must import the canonical shared table exactly once")
+        if re.search(r"\\(?:chronodate|chronologyorientationrow)\s*\{", text):
+            raise ValueError("orientation-v3 chronology imports its complete generated table; no authored rows")
+        markers = list(label_pattern.finditer(text))
+        imports = [match for match in re.finditer(r"\\(?:input|include)\s*\{([^{}]+)\}", text)
+                   if match[1].removesuffix(".tex").endswith("/research/chronology-table")]
+        if len(imports) != 1 or not markers[0].end() <= imports[0].start() < markers[-1].start():
+            raise ValueError("shared chronology table must lie between its physical start/end markers")
+    elif orientation:
         if (r"\begin{chronologyorientationtable}" not in text
                 or not re.search(r"\\chronologyorientationrow\s*\{", text)):
             raise ValueError("orientation chronology must use generated rows in chronologyorientationtable")

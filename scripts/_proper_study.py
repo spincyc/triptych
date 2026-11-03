@@ -928,6 +928,7 @@ def check(root: Path, provider: str, document: str, phase: str,
           edition: str | None, *, require_presentation: bool = False,
           require_format: bool = False, require_authority: bool = False,
           require_orientation: bool = False, require_orientation_v2: bool = False,
+          require_orientation_v3: bool = False,
           require_source_dispositions: bool = False, mode: str = "print") -> None:
     if mode not in {"source", "print"}:
         raise ValueError("publication mode must be source or print")
@@ -957,7 +958,10 @@ def check(root: Path, provider: str, document: str, phase: str,
     # authors wherever the manifest declares the contract.
     authority_contract(manifest(leaf), required=require_authority)
     from _proper_chronology import presentation_contract as chronology_presentation
-    chronology_presentation(leaf, required=require_orientation, current=require_orientation_v2)
+    declared = chronology_presentation(leaf, required=require_orientation or require_orientation_v2,
+                                       current=require_orientation_v3)
+    if require_orientation_v2 and declared == "orientation-v1":
+        raise ValueError("orientation-v2 or later is required")
     if phase == "content":
         components(root, provider, document, "content", edition)
     elif phase == "artifacts":
@@ -989,7 +993,9 @@ def main() -> int:
     parser.add_argument("--require-orientation", action="store_true",
                         help="require generated passage/subject/date rows (proper-study v10)")
     parser.add_argument("--require-orientation-v2", action="store_true",
-                        help="require the orientation-v2 declaration that new runs use (proper-study v12)")
+                        help="require orientation-v2 or later (historical proper-study v12 gate)")
+    parser.add_argument("--require-orientation-v3", action="store_true",
+                        help="require the complete provider-neutral chronology table")
     parser.add_argument("--require-source-dispositions", action="store_true",
                         help="require exact source registration and explicit fragment admission dispositions (proper-study v15)")
     parser.add_argument("--date", default="undated")
@@ -1034,6 +1040,7 @@ def main() -> int:
                   require_authority=args.require_authority,
                   require_orientation=args.require_orientation,
                   require_orientation_v2=args.require_orientation_v2,
+                  require_orientation_v3=args.require_orientation_v3,
                   require_source_dispositions=args.require_source_dispositions, mode=args.mode)
     except (OSError, ValueError, KeyError, subprocess.TimeoutExpired) as error:
         print(f"proper-study: {error}", file=sys.stderr)

@@ -4,9 +4,11 @@ Use an edition's **Generate PDF** action. The native print implementation runs
 the actual TeX engine against that edition's canonical sources, original
 templates and fonts. It produces a PDF with the authored page layout, tables,
 footnotes and illustrations. Open the completed PDF to print it or save it.
-The PDF is generated when requested and is never checked into Git.
+The PDF is generated in your browser when requested and is never checked into
+Git. The site does not depend on a separately maintained collection of PDFs.
 
-The current print choices cover 644 admitted edition roots:
+The admitted print catalogue at the 2026-11-03 migration has 644 edition roots.
+These are generation choices, not a stored collection of 644 PDFs:
 
 | Family | Editions |
 | --- | ---: |
@@ -28,19 +30,49 @@ layout; follow its paper, scale and duplex instructions when printing cards or
 paired pages. Generation alone is not a new physical-printer inspection.
 
 The browser-native implementation uses WebAssembly TeX and verified source,
-package and font files. A configured native compiler service can use the same
-selected-edition recipes. Neither approach requires a PDF corpus in Git or a
-corpus-wide PDF build during site publication. A first request may download
-the required engine and fonts; progress and errors remain visible.
+package and font files. It assembles the requested edition from its canonical
+sections and current shared styles, then typesets that selection. Changes to
+style or structure update these inputs without rebuilding gigabytes of PDFs
+before site publication. A first request may download the required engine and
+fonts; progress and errors remain visible. Generation time depends on the
+edition, device and connection.
+
+The runtime loads common TeX files first and fetches additional verified font
+data when the typesetter needs it. It retries from fresh inputs when more font
+data is required and can use the complete original inventory. The edition
+retains its original fonts throughout.
+
+Repeated sections and styles share verified source objects across editions;
+bounded compressed transfers reduce repetition without changing the TeX files
+the engine sees. Illustrated HTML readers may defer offscreen images, while
+PDF generation still includes every image selected by the edition.
+
+A generated file can be saved by the reader. A disposable browser cache may
+reuse an exact result only while its source, style and typesetter identities
+still match. That cache is optional and supplies no publication authority;
+neither a saved file nor an earlier printing substitutes for current inputs.
+Native TeX remains responsible for the authored layout; printing the HTML
+reader does not reproduce that layout.
 
 Where an edition offers **Earlier printed edition**, that link preserves a verified
 historical fixed layout in the external archive. It is distinct from browser
 reflow and from a newly generated current print edition. The exact public snapshot,
 PDF hashes and delivery are recorded in `release/print-archive.json`.
 
-## Generate one edition
+The shared provider style uses fast lossless PDF stream compression. In one
+recorded 11-page dictionary comparison, changing compression level 9 to 1
+reduced generation from 36.553 to 4.424 seconds and increased the PDF from
+17.73 to 19.78 MB. All eleven page rasters at 144 DPI, extracted text and font
+inventories matched. This was a desktop Chromium case with local delivery,
+not a physical-device or cold-network timing promise. The
+[compression review](../workflows/reviews/no-pdfs-recovery-2026-11-03/compression.json)
+records the exact outputs and limits; Bible, reading-plan and papal styles
+are separate and unchanged by this setting.
 
-Run these commands from the repository root:
+## Generate one edition locally
+
+For a local build using the selected recipe's installed TeX toolchain, run
+these commands from the repository root:
 
 ```sh
 tools/print-document list --family publication --provider gpt

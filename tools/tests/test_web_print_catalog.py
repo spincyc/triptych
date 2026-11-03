@@ -35,6 +35,7 @@ class Elements(HTMLParser):
     def __init__(self, fragment):
         super().__init__(convert_charrefs=True)
         self.ids, self.hrefs, self.images, self.manifests = set(), [], [], []
+        self.image_attrs = []
         self.manifest = None
         self.feed(fragment)
     def handle_starttag(self, tag, attrs):
@@ -45,6 +46,7 @@ class Elements(HTMLParser):
             self.hrefs.append(values["href"])
         if tag == "img":
             self.images.append(values["src"])
+            self.image_attrs.append(attrs)
         if tag == "script" and "data-web-print-manifest" in values:
             self.manifest = []
     def handle_data(self, data):
@@ -232,6 +234,57 @@ class WebPrintCatalogTest(unittest.TestCase):
             self.assertIs(project.call_args_list[2].kwargs["context"], project.call_args_list[3].kwargs["context"])
         self.assertEqual(first, second)
         self.assertEqual(self.publication, before)
+
+    def test_verified_image_geometry_defers_root_alias_and_fetched_parts_without_changing_source(self):
+        self.publication["parts"][1]["html"] += '<figure><img data-print-asset="plate" src="plate.png" alt="Repeated source illustration"></figure>'
+        self.publication["parts"][1]["html_sha256"] = digest(self.publication["parts"][1]["html"])
+        self.store_product(self.publication, asset_ids={"plate": self.image_id})
+        self.save_index()
+        with mock.patch.object(web, "_png_dimensions", return_value=None):
+            eager = self.catalog()
+        result = self.catalog()
+        image_pages = 0
+        for route, page in result["pages"].items():
+            before, after = Elements(eager["pages"][route]["html"]), Elements(page["html"])
+            self.assertEqual(after.images, before.images)
+            self.assertEqual(after.ids, before.ids)
+            self.assertEqual(after.hrefs, before.hrefs)
+            if after.images:
+                image_pages += 1
+            for old, new in zip(before.image_attrs, after.image_attrs, strict=True):
+                self.assertEqual(new, old + [("width", "1"), ("height", "1"), ("loading", "lazy")])
+                self.assertEqual(len(new), len(dict(new)), "alias must not duplicate image attributes")
+            for descriptor in after.manifests:
+                for part in descriptor["parts"]:
+                    body = page["html"] if "selector" in part else result["pages"][posixpath.normpath(
+                        posixpath.join(posixpath.dirname(route), part["href"]))]["html"]
+                    measured = part_statistics(body, part_id=part["id"], selectors=tuple(part["counts"]))
+                    for field in ("text_sha256", "structure_sha256", "counts"):
+                        self.assertEqual(measured[field], part[field])
+                    self.assertEqual(inventory(measured["units"]), part["units"])
+        self.assertEqual(image_pages, 3)
+
+    def test_image_projection_preserves_authored_geometry_loading_and_unknown_dimensions(self):
+        for attributes in (' width="42"', ' height="17"', ' loading="eager"',
+                           ' width="42" height="17" loading="lazy"'):
+            with self.subTest(attributes=attributes):
+                body = '<img data-print-asset="plate" src="old.png" alt="Source"' + attributes + ' />'
+                self.assertEqual(web._Images(body, {"plate": "new.png"}, {"plate": (1, 1)}).result(),
+                                 body.replace("old.png", "new.png"))
+        body = '<img data-print-asset="plate" src="old.svg" alt="Source"/>'
+        self.assertEqual(web._Images(body, {"plate": "new.svg"}).result(), body.replace("old.svg", "new.svg"))
+        projected = web._Images(body, {"plate": "new.png"}, {"plate": (1, 1)}).result()
+        self.assertTrue(projected.endswith('width="1" height="1" loading="lazy"/>'))
+
+    def test_geometry_requires_intact_png_header_and_positive_bounded_dimensions(self):
+        png = (self.root / self.image_path).read_bytes()
+        self.assertEqual(web._png_dimensions(png), (1, 1))
+        for body in (png[:32], b"not a PNG" + png, png[:29] + b"\0\0\0\0" + png[33:]):
+            self.assertIsNone(web._png_dimensions(body))
+        for width in (0, 2**31):
+            body = png[:16] + width.to_bytes(4, "big") + png[20:]
+            body = body[:29] + web.zlib.crc32(body[12:29]).to_bytes(4, "big") + body[33:]
+            self.assertIsNone(web._png_dimensions(body))
 
     def test_source_marks_face_refuses_an_unbound_or_broadened_unicode_range(self):
         path = self.destination / "assets" / (self.marks_id + ".json")

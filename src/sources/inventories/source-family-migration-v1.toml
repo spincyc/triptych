@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-11-02"
+audited_on = "2026-11-03"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:cd2d9fe2e553c8d5e7337f00e22bec8042bfdea046f48ecdde8a9f6f7c560f5e"
+inventory_snapshot = "sha256:e316c658d75c0aa1b2accbbdc89e0286b6ba566cc84382dd60d99a8f7f35f175"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:39680fdb5c6abc8cf3fbf866bcc2f2e8d9f599c3d46bc25799ddcd2ebebf4d97"
 canonical_catalog_snapshot = "sha256:65ce895aa61a686b6809a751819284ada1555e4d1240ad3ad7bc75e90f0bbad5"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:39b0402bfcd9203c7a611d9eefaec3d0e5021de0be42bb377b25b22bccb36ae6"
+snapshot = "sha256:9f999dd55f129e06de125a0810784c0d257101c099d2ba857f34ceb4a002a143"
 families = []
 
 [[review_units]]
@@ -503,17 +503,17 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany"
-surface_snapshot = "sha256:03374c53d1f0aa50317d8df03e4925180cd11f9cc058a4b707585e1d57e18f54"
+surface_snapshot = "sha256:47698c96952395084c0b6d19855fd8cdbb528bbfe96b08cd37cf5ea78fc23864"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
-surface_snapshot = "sha256:6abcde93d5742caf00a774519a451312e4eb55423043f84cd0d758eed466eeb7"
+surface_snapshot = "sha256:d5b304bcd56e58ec84a4c46ca20b0cdfe40b0b589ad5bc79f2951833a65a9b62"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
-surface_snapshot = "sha256:7d2abf45c4e7301e94f996bc9fad7a399316f7bf07b7ee4df664d3faec9645a0"
+surface_snapshot = "sha256:fffd04ab4bd5af4558fe545a3090ec8b892a9489496748fae697c4d5c0fa8499"
 review_state = "pending"
 
 [[review_units]]
@@ -603,7 +603,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"
-surface_snapshot = "sha256:b964bdaf3ddda9db58298b71ebf5b23c0ccbce5625df4bc77ec79174b067ea91"
+surface_snapshot = "sha256:2849466d091737ce0f1b4f8bbf54a135960b2a05235304cfff753029a59066c5"
 review_state = "pending"
 
 [[review_units]]

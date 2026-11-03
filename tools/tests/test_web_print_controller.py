@@ -558,6 +558,33 @@ return {box,centre:[...pixels.slice((y*120+x)*4,(y*120+x)*4+4)],horizontalRuns:r
         self.assertFalse(seen['snapshot']['blocked'])
         self.assertIn('Exact source rights',seen['snapshot']['words'])
 
+    def test_lazy_reader_image_is_eager_and_decoded_in_offscreen_print_frame(self):
+        descriptor,responses=fixture(inline=True,image=True,font=True)
+        root='print/example.html'
+        responses[root]=responses[root].replace('<img data-print-asset=', '<img loading="lazy" width="100" height="50" data-print-asset=')
+        changed=copy.deepcopy(descriptor)
+        changed['parts'][2]['structure_sha256']=structure_sha256(responses[root],'part-3')
+        responses[root]=responses[root].replace(json.dumps(descriptor),json.dumps(compact_descriptor(changed)))
+        p=plan(responses);p['delays']=[{'match':'diagram.svg','ms':150}]
+        p['acts'].append(act("(()=>{const frame=document.querySelector('[data-web-print-frame]');const image=frame.contentDocument.querySelector('img');return {reader:document.querySelector('[data-web-print-content] img').loading,printed:image.loading,decoded:image.complete&&image.naturalWidth===100,offscreen:frame.getBoundingClientRect().right<0};})()",'images'))
+        seen=drive(p)
+        self.assertEqual(seen['result']['calls'],1,seen)
+        self.assertEqual(seen['result']['snapshot']['images'],[True])
+        self.assertEqual(seen['result']['snapshot']['units'],['u-1','u-2','u-3'])
+        self.assertEqual(seen['result']['snapshot']['fonts'],'loaded')
+        self.assertEqual(seen['images'],{'reader':'lazy','printed':'eager','decoded':True,'offscreen':True})
+
+    def test_image_loading_attribute_refuses_values_outside_finite_contract(self):
+        descriptor,responses=fixture(image=True)
+        path='print/example/part-3.html'
+        responses[path]=responses[path].replace('<img data-print-asset=', '<img loading="automatic" data-print-asset=')
+        changed=copy.deepcopy(descriptor)
+        changed['parts'][2]['structure_sha256']=structure_sha256(responses[path],'part-3')
+        responses['print/example.html']=responses['print/example.html'].replace(json.dumps(descriptor),json.dumps(compact_descriptor(changed)))
+        seen=drive(plan(responses))['result']
+        self.assertEqual(seen['calls'],0,seen)
+        self.assertEqual(seen['state'],'error')
+
     def test_complete_inline_edition_print_query_and_actual_native_print_events(self):
         _,responses=fixture(inline=True,native=True)
         seen=drive(plan(responses,auto=True))['result']

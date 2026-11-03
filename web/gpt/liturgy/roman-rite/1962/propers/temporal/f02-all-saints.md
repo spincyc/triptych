@@ -465,16 +465,36 @@ The feast’s final petitions allow both subjects to remain concrete. The people
 
 The dates below distinguish traditional attribution, a remembered occasion, the composition of a book, and the event narrated in the Gospel. The Gradual appoints only the latter clause of its second verse; the Gospel ends before the last clause of verse 12; the Wisdom chant is selected and adapted. The whole-verse references in this chronological orientation identify the passages queried without enlarging those liturgical selections.
 
-| **Passage** | **Occurrence and place** | **Date** |
+| **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33); Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34) | Traditional attribution: David’s reign. Davidic titles in the received Psalter; royal reference era, not a common occasion. | Disputed: B.C. 1055–1015 |
-| Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33) | Historical setting. No particular occasion or place is identified for the Introit verse. | Occasion date unresolved |
-| Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33); Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34) | Composition: Psalms. Collection-wide composition boundary; individual writing places uncertain. | Before c. 165 B.C. |
-| Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34) | Superscription setting: David’s flight to Achis, king of Geth. David before accession, at Geth (Gath); inherited chronological marker, with its source qualification. | A.M. 2944 (Haydock edition reporting Ussher) |
-| Offertory: Wisdom 3:1–3 | Composition: The Book of Wisdom. Alexandria in Gigot’s account; either persecution horizon permits later publication. | Disputed: In or after the time of Ptolemy IV Philopator (221-204 B.C.); In or after the time of Ptolemy VII Physicon (145-117 B.C.) |
-| Gospel: Matthew 5:1–12 | Event. Jesus teaches on an unnamed mountain after Galilean ministry (Matt. 4:23–5:1). | Date unresolved |
-| Alleluia: Matthew 11:28; Gospel: Matthew 5:1–12; Communion: Matthew 5:8–10 | Composition: The Gospel of St Matthew. Palestinian original in the traditional account; Greek rendering distinguished. Speech sites are a separate question. | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
-| Lesson: Revelation 7:2–12 | Composition: The Apocalypse of St John. John on Patmos; the visionary throne is not an earthly writing place. | Disputed: A.D. 81–96; c. A.D. 90–100 |
+| Introit: Ps. 32:1 (Vg.; Heb. 33); Gradual: Ps. 33:10–11 (Vg.; Heb. 34) | Traditional attribution: David’s reign | Disputed: B.C. 1055–1015 |
+| Introit: Ps. 32:1 (Vg.; Heb. 33) | Historical setting | Occasion date unresolved |
+| Introit: Ps. 32:1 (Vg.; Heb. 33); Gradual: Ps. 33:10–11 (Vg.; Heb. 34) | Composition: Psalms | Before c. 165 B.C. |
+| Gradual: Ps. 33:10–11 (Vg.; Heb. 34) | Superscription setting: David’s flight to Achis, king of Geth | A.M. 2944 (Haydock edition reporting Ussher) |
+| Offertory: Wis. 3:1–3 | Composition: Wisdom | Disputed: In or after the time of Ptolemy IV Philopator (221–204 B.C.); In or after the time of Ptolemy VII Physicon (145–117 B.C.) |
+| Gospel: Matt. 5:1–12 | Narrated event: Jesus teaches the Beatitudes on a mountain | Date unresolved |
+| Alleluia: Matt. 11:28; Gospel: Matt. 5:1–12; Communion: Matt. 5:8–10 | Composition: Matthew | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Lesson: Apoc. 7:2–12 | Composition: Apocalypse | Disputed: A.D. 81–96; c. A.D. 90–100 |
+
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+##### Setting notes.
+
+**Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33); Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34)**. Davidic titles in the received Psalter; royal reference era, not a common occasion.
+
+**Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33)**. No particular occasion or place is identified for the Introit verse.
+
+**Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33); Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34)**. Collection-wide composition boundary; individual writing places uncertain.
+
+**Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34)**. David before accession, at Geth (Gath); inherited chronological marker, with its source qualification.
+
+**Offertory: Wisdom 3:1–3**. Alexandria in Gigot’s account; either persecution horizon permits later publication.
+
+**Gospel: Matthew 5:1–12**. Jesus teaches on an unnamed mountain after Galilean ministry (Matt. 4:23–5:1).
+
+**Alleluia: Matthew 11:28; Gospel: Matthew 5:1–12; Communion: Matthew 5:8–10**. Palestinian original in the traditional account; Greek rendering distinguished. Speech sites are a separate question.
+
+**Lesson: Revelation 7:2–12**. John on Patmos; the visionary throne is not an earthly writing place.
 
 Fuller source qualifications: Psalms, <a href="#hist-psalms">Psalms: attribution, flight, and composition</a>; Wisdom, <a href="#hist-wisdom">Wisdom: the author’s city and the persecution in view</a>; Matthew, <a href="#hist-matthew">Matthew: the unnamed mountain and the written Gospel</a>; Apocalypse, <a href="#hist-apocalypse">Apocalypse: Patmos and the heavenly vision</a>.
 
@@ -544,7 +564,7 @@ The Latin and historical English retain their recorded United States public-doma
 
 The historical appendix cites the particular *Catholic Encyclopedia* articles, USCCB introduction, and Haydock facsimile loci used for its chronological and geographical claims.
 
-**Last revised (UTC):** 2026-10-25T23:52:03Z
+**Last revised (UTC):** 2026-11-03T21:06:51Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

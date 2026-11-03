@@ -1,0 +1,31 @@
+{
+  "schema": "triptych-html-asset-binding-review/v1",
+  "date": "2026-11-03",
+  "scope": "Refresh source provenance after the shared preamble's content-free PDF compression insertion; no artwork or PDFs regenerated.",
+  "independent_review": "pass",
+  "findings": [],
+  "generic_outputs": 12,
+  "generic_diagrams": 21,
+  "server_entries": 39,
+  "verified_payloads": 68,
+  "verified_payload_bytes": 57746126,
+  "font_faces": 8,
+  "independent_test_cases": 24,
+  "command": "python3 scripts/_web_print_assets.py refresh-compression-bindings --previous-preamble <verified-prior-preamble>",
+  "boundary": "The previous bytes must match every recorded preamble pin. Removing exactly one literal, comment-delimited compression guard from the current preamble must recover those bytes. Other source, selected content, diagram, definition, font or asset changes refuse before writing.",
+  "preserved": [
+    "Every payload and delivery byte",
+    "Original render receipts and rights-bearing inputs",
+    "Server definitions and usage",
+    "Generic selected body and head hashes",
+    "Diagram spans, labels, source references and geometry",
+    "Every non-preamble source hash"
+  ],
+  "reviewed_sha256": {
+    "scripts/_web_print_assets.py": "10a7e374139da7bc028131f4e5d31ab5ebcb7e9e63d05e2865ce2727c971f311",
+    "tools/tests/test_web_print_assets.py": "9ec604df00bca3ed9763414d85640d935a778b7199252c57d3c65fd71a58fe41",
+    "src/common/browser-print-assets.json": "ee7a485f89c34a29bb307dd68f9c10c8329b81f4ecbf4b7a95cce76d6ebc2e95",
+    "src/common/browser-print-assets-delivery.json": "443339e5be467930c8fe77bdc4d0648c1db707d5c7e6cf9cc49f9f741cee6b9b"
+  },
+  "limit": "Complete browser-product recording and site verification are separate integration gates."
+}

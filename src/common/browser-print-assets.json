@@ -4,7 +4,14 @@
     "role": "Disposable generated render products and redistributable font software; no editorial or source-evidence approval.",
     "source_snapshot": "7b9daae87c00b0e4d84fe958372d520300374c08",
     "normal_lookup_requires_renderer": false,
-    "normal_lookup_requires_network": false
+    "normal_lookup_requires_network": false,
+    "source_binding_refresh": {
+      "method": "literal-pdf-compression-insertion-only/v1",
+      "path": "src/common/preamble.tex",
+      "previous_sha256": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "current_sha256": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
+      "render_payloads_unchanged": true
+    }
   },
   "payloads": {
     "web-print-assets/04a0202846250de2264d3ab10468772598b9867ecd3f6c072d76a09a1d336c73.svg": {
@@ -435,7 +442,7 @@
       ]
     },
     "source_inputs": {
-      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/preamble.tex": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
       "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual/main.tex": "6723c694d81219085e37f27f730727ab14b11e012ec79a55b59412a5ee7cee57",
       "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass/main.tex": "c69a975acbfdd47ca52212aed00f850322c1043914c74309bca6ccd245b124da",
       "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata/main.tex": "b80edf4a0cd84840a99ca8c251cd183ba63a948eb0f820f881779a17bd4de0d0",
@@ -1990,7 +1997,7 @@
     },
     "outputs": {
       "claude/theology/mariology/ark-of-the-covenant": {
-        "selection_digest": "9f291dc1cecfe6ad4b4944c870ff570318c09232d972e45e4162cc8399ad581f",
+        "selection_digest": "da57335acb4fc30348af0e461e012b38c2248fbd1b4ed6332855b3ad950d9007",
         "head_sha256": "2134cf1ae98a90c393338843cbea1a511672a9b03edbb298294168e36765c625",
         "body_sha256": "6d53def6ac99cf4c886627782c7e7b2a004dd646771f33ced7e1f88e7672a7ed",
         "source_closure": {
@@ -2019,7 +2026,7 @@
           "src/claude/theology/mariology/ark-of-the-covenant/sections/40-carrying-the-presence.tex": "7bfbe62e8cbf1be12a5292104dcfb7218162c8a68c9a85f439b644221dd91bdf",
           "src/claude/theology/mariology/ark-of-the-covenant/sections/90-scope-status-qualifications.tex": "b0f291c0217432e49c497382245666a5af7d0d935cd5be5f4c6991bf4ae87813",
           "src/claude/theology/mariology/ark-of-the-covenant/sections/99-references.tex": "78be9b4a57db5bf72c545d3909fb0629bdc4896c0f4c697cfcedf1a3d3dc4dff",
-          "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b"
+          "src/common/preamble.tex": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920"
         },
         "entrypoint": "src/claude/theology/mariology/ark-of-the-covenant/main.tex",
         "role": "main",
@@ -2054,8 +2061,8 @@
                 "selected_fragment_sha256": "9a4baf34f0bf606eb2726b1c043f9b47b34a1aa7aa54d7502e5476bf26aa5771"
               }
             ],
-            "selection_digest": "9f291dc1cecfe6ad4b4944c870ff570318c09232d972e45e4162cc8399ad581f",
-            "source_closure_digest": "02f7fa8d908952031c7e3ca60137ddce6d133dd56592da490b4127ca257d5766",
+            "selection_digest": "da57335acb4fc30348af0e461e012b38c2248fbd1b4ed6332855b3ad950d9007",
+            "source_closure_digest": "3244288e62191ded174044a26385d0274aebd3b8123e162812b09d6e7c787a8a",
             "includes_caption": false,
             "payload": "web-print-assets/e673990010ed6fa81934645cd82d3031b8055af6155eaf7a802767b7fb4f4a2f.svg",
             "labels_sha256": "5af5e13fc284f0629a2f1b188609209dda9f93c63eb53d0e940c17b390f92d26",
@@ -2088,8 +2095,8 @@
                 "selected_fragment_sha256": "acd1c9498ce0abf58fc7e4d43f2de1545d8d02830a7cffbb94a21e380488d50c"
               }
             ],
-            "selection_digest": "9f291dc1cecfe6ad4b4944c870ff570318c09232d972e45e4162cc8399ad581f",
-            "source_closure_digest": "02f7fa8d908952031c7e3ca60137ddce6d133dd56592da490b4127ca257d5766",
+            "selection_digest": "da57335acb4fc30348af0e461e012b38c2248fbd1b4ed6332855b3ad950d9007",
+            "source_closure_digest": "3244288e62191ded174044a26385d0274aebd3b8123e162812b09d6e7c787a8a",
             "includes_caption": false,
             "payload": "web-print-assets/f63ae30413acec71df4d595ee14764d994790cc54cf93b69eb5d9ec768d0b3f2.svg",
             "labels_sha256": "3fee57cf9556881c42e4c7a8dca34ac1c85322532c9dc2394dd393b206a0e943",
@@ -2121,8 +2128,8 @@
                 "selected_fragment_sha256": "3fd6e47b16ff915327df8521a07e7f54bbdb83d7445691b33c4ac45d5e9934b7"
               }
             ],
-            "selection_digest": "9f291dc1cecfe6ad4b4944c870ff570318c09232d972e45e4162cc8399ad581f",
-            "source_closure_digest": "02f7fa8d908952031c7e3ca60137ddce6d133dd56592da490b4127ca257d5766",
+            "selection_digest": "da57335acb4fc30348af0e461e012b38c2248fbd1b4ed6332855b3ad950d9007",
+            "source_closure_digest": "3244288e62191ded174044a26385d0274aebd3b8123e162812b09d6e7c787a8a",
             "includes_caption": false,
             "payload": "web-print-assets/8b722ce6f9ab0e5d16c0ee154750fd336364f0f78c60deb3efead9109fa2e6d0.svg",
             "labels_sha256": "6deca18fdabc223aa36f11f9fb0125710e32cb4670d7f99e5a9b6fd54563434f",
@@ -2154,8 +2161,8 @@
                 "selected_fragment_sha256": "239dd54ed7f89bd6954eca3f0ee0a2d5ccf3ad50bd9e39c3a611b8f16b3cde86"
               }
             ],
-            "selection_digest": "9f291dc1cecfe6ad4b4944c870ff570318c09232d972e45e4162cc8399ad581f",
-            "source_closure_digest": "02f7fa8d908952031c7e3ca60137ddce6d133dd56592da490b4127ca257d5766",
+            "selection_digest": "da57335acb4fc30348af0e461e012b38c2248fbd1b4ed6332855b3ad950d9007",
+            "source_closure_digest": "3244288e62191ded174044a26385d0274aebd3b8123e162812b09d6e7c787a8a",
             "includes_caption": false,
             "payload": "web-print-assets/123a3e0f201cad47b4fe6d47f62739802d9efd3d6772c93a0c0cffb7379d3d12.svg",
             "labels_sha256": "75a570835dcbfab758c23bb9098689aea3157efc1a506796c9048e392b59b249",
@@ -2187,8 +2194,8 @@
                 "selected_fragment_sha256": "a7d68dbd5ffe7981fd9b20d0800d5a6f7f900b818436b1708e085c72b1f66ec6"
               }
             ],
-            "selection_digest": "9f291dc1cecfe6ad4b4944c870ff570318c09232d972e45e4162cc8399ad581f",
-            "source_closure_digest": "02f7fa8d908952031c7e3ca60137ddce6d133dd56592da490b4127ca257d5766",
+            "selection_digest": "da57335acb4fc30348af0e461e012b38c2248fbd1b4ed6332855b3ad950d9007",
+            "source_closure_digest": "3244288e62191ded174044a26385d0274aebd3b8123e162812b09d6e7c787a8a",
             "includes_caption": false,
             "payload": "web-print-assets/e1446750090b38c0e009fea7c64b7ae7e7da586c52b3a6728ff6e0ae6df635be.svg",
             "labels_sha256": "d87bd38511d69a816136add63e6b24bf84bc45aca38d010b5c1875e19a4e9837",
@@ -2221,8 +2228,8 @@
                 "selected_fragment_sha256": "53b09fe94c7d9e4c58e4f61513ac2c314627430ec8128b676db0bb53ac269dd7"
               }
             ],
-            "selection_digest": "9f291dc1cecfe6ad4b4944c870ff570318c09232d972e45e4162cc8399ad581f",
-            "source_closure_digest": "02f7fa8d908952031c7e3ca60137ddce6d133dd56592da490b4127ca257d5766",
+            "selection_digest": "da57335acb4fc30348af0e461e012b38c2248fbd1b4ed6332855b3ad950d9007",
+            "source_closure_digest": "3244288e62191ded174044a26385d0274aebd3b8123e162812b09d6e7c787a8a",
             "includes_caption": false,
             "payload": "web-print-assets/b7aaf3424adce9b7b0120c59ce33e116f2167456b41d50bf88a24d599f64380f.svg",
             "labels_sha256": "b2ef376fce6b83b3012ce1e9f6eccdf4754171f628321328dc01e5b6206cc25c",
@@ -2255,8 +2262,8 @@
                 "selected_fragment_sha256": "750c550d9281d655e5268e4a8e5368398db29c43b3966125c7f7409133438cb6"
               }
             ],
-            "selection_digest": "9f291dc1cecfe6ad4b4944c870ff570318c09232d972e45e4162cc8399ad581f",
-            "source_closure_digest": "02f7fa8d908952031c7e3ca60137ddce6d133dd56592da490b4127ca257d5766",
+            "selection_digest": "da57335acb4fc30348af0e461e012b38c2248fbd1b4ed6332855b3ad950d9007",
+            "source_closure_digest": "3244288e62191ded174044a26385d0274aebd3b8123e162812b09d6e7c787a8a",
             "includes_caption": false,
             "payload": "web-print-assets/6a0bc273a41b16973c378c332d7804c1a5ee3c0bc7db21e21d2769b0e0fec026.svg",
             "labels_sha256": "d50f56a3fa6d8b2f2fdb23a6e722f693311621d7e137a1b209eb093ab89025db",
@@ -2266,11 +2273,11 @@
         ]
       },
       "gpt/articles/faith/freemasonry-and-the-catholic-church": {
-        "selection_digest": "4f350418d667b989c3aefec9fec0d206697af8736c21acfd3d2e4bb61632e6dd",
+        "selection_digest": "ba8755a8433b44bc35ac3a172340c5749565f3c63c71fcf10210216fca48acc1",
         "head_sha256": "36895844f075af4fcd1b6a975a1e6bfe4967f75a668c1fab07ae97b2e7d36664",
         "body_sha256": "66b06cc23094266fc36072d1ec7219a81e2eeec8863c6dba56114b716a08f758",
         "source_closure": {
-          "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+          "src/common/preamble.tex": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
           "src/gpt/articles/faith/freemasonry-and-the-catholic-church/generation-metadata.tex": "c6f28ecc090644bf70a4bd9b10f2ed05756c05506306991faacaf863793657eb",
           "src/gpt/articles/faith/freemasonry-and-the-catholic-church/main.tex": "736f95ed2f811ebbf2a759289533eac582ee9608e0434973ee4e5914e561f664",
           "src/gpt/articles/faith/freemasonry-and-the-catholic-church/sections/00-question-thesis.tex": "b6d6d34b773b15ae09100b05424e7efd4a56b7ef7ab82b262924de6c69090f70",
@@ -2322,8 +2329,8 @@
                 "selected_fragment_sha256": "f8cebe2e688fc8fb6c79bfebdd67a5ce4aaca4d522d5b9afa43c57748bb102f2"
               }
             ],
-            "selection_digest": "4f350418d667b989c3aefec9fec0d206697af8736c21acfd3d2e4bb61632e6dd",
-            "source_closure_digest": "7522a9ef5588941f8aa91e1f2071eb0911e5d2ddb7f98230ae181bb7163cea37",
+            "selection_digest": "ba8755a8433b44bc35ac3a172340c5749565f3c63c71fcf10210216fca48acc1",
+            "source_closure_digest": "e76756025f59d99ee9f6321ac14fd6188b3a1e4b989b6a8607c0892a7bd88d77",
             "includes_caption": false,
             "payload": "web-print-assets/0165041926e6f1a3654ea198c4cbcc93cb2410027216454efed3561b69fd358a.svg",
             "labels_sha256": "4b8cbf82b346893b405ee22f32feb9e8f3b6df5475f6838749b187292ffead49",
@@ -2355,8 +2362,8 @@
                 "selected_fragment_sha256": "b442e1a1297f127916d5d8b3ff0944d8d49b96c5e21c10bb3f90265500899bc7"
               }
             ],
-            "selection_digest": "4f350418d667b989c3aefec9fec0d206697af8736c21acfd3d2e4bb61632e6dd",
-            "source_closure_digest": "7522a9ef5588941f8aa91e1f2071eb0911e5d2ddb7f98230ae181bb7163cea37",
+            "selection_digest": "ba8755a8433b44bc35ac3a172340c5749565f3c63c71fcf10210216fca48acc1",
+            "source_closure_digest": "e76756025f59d99ee9f6321ac14fd6188b3a1e4b989b6a8607c0892a7bd88d77",
             "includes_caption": false,
             "payload": "web-print-assets/b485588420a527b76859d90c979ccdde149f8bc583491877826f2edf477884f9.svg",
             "labels_sha256": "9e178ddbf4ece2e396c9e1d9a13c32d5b2f3ac650efdfbd9cb8faa9258dd1e44",
@@ -2366,11 +2373,11 @@
         ]
       },
       "gpt/articles/faith/trustful-surrender-to-divine-providence": {
-        "selection_digest": "0287d8c2bbe9894c2c7faec51b3f9f4f3cbdd19f606e6fc7d1cebcefbb55728f",
+        "selection_digest": "1388a39a3b906fe6bedc0ae94f10c246d10703e011571d113079be3d1d4d7911",
         "head_sha256": "6f86c914e46ebb1e33436920161097524156de2b60f3fc3dc263fa9dd215a09d",
         "body_sha256": "4e4da3b6025e34940bba7babeb9cfb45dd8f0c0b3cba0ece5a129dab64a442ab",
         "source_closure": {
-          "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+          "src/common/preamble.tex": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
           "src/gpt/articles/faith/trustful-surrender-to-divine-providence/generation-metadata.tex": "815f542b68a25026cf0cd8a068f2ba94d27664141979aaec64842223e6cf379a",
           "src/gpt/articles/faith/trustful-surrender-to-divine-providence/main.tex": "2841c4ab243e898d3efa333483af37c05d4bf0f9521635fd24839755bb2c7b74",
           "src/gpt/articles/faith/trustful-surrender-to-divine-providence/sections/00-question-thesis.tex": "a5ffe832822af513de0ee4e40904dd78160ad5b931200b96ff4d7c01c205c0af",
@@ -2417,8 +2424,8 @@
                 "selected_fragment_sha256": "b0fba6d65bcfaea24a33434e0f76376992c667d3db91af776e5336092f0c9478"
               }
             ],
-            "selection_digest": "0287d8c2bbe9894c2c7faec51b3f9f4f3cbdd19f606e6fc7d1cebcefbb55728f",
-            "source_closure_digest": "e2ff55ef97b41be3d5957dddf5009c939bea52e0a92d3816895014394b538de2",
+            "selection_digest": "1388a39a3b906fe6bedc0ae94f10c246d10703e011571d113079be3d1d4d7911",
+            "source_closure_digest": "57dd4c4b0e5abe3d6e3665c518d91ce72faa9ca700341650895381e92aa57bc9",
             "includes_caption": false,
             "payload": "web-print-assets/a6d376810ffc97bdd08a0bf67f25b7b212bf1c9de7374db9441231379179412a.svg",
             "labels_sha256": "9b91bda1a6cf508d4e7b6ef1f0e880e4ce879fb5cb565f9c95d3f880aafa231a",
@@ -2450,8 +2457,8 @@
                 "selected_fragment_sha256": "b8ec45c89b5f26d2789c04b82f39d8c8a668498d10a60e792c13d9898e9b7ad1"
               }
             ],
-            "selection_digest": "0287d8c2bbe9894c2c7faec51b3f9f4f3cbdd19f606e6fc7d1cebcefbb55728f",
-            "source_closure_digest": "e2ff55ef97b41be3d5957dddf5009c939bea52e0a92d3816895014394b538de2",
+            "selection_digest": "1388a39a3b906fe6bedc0ae94f10c246d10703e011571d113079be3d1d4d7911",
+            "source_closure_digest": "57dd4c4b0e5abe3d6e3665c518d91ce72faa9ca700341650895381e92aa57bc9",
             "includes_caption": false,
             "payload": "web-print-assets/a73659f22857ef8d2d171468ea000f6bf86a34cf48f20fbe0622102b3372744c.svg",
             "labels_sha256": "5b6f22dcfa6eb4cef092593bd305873090215401a84a17e1d5f2d29dc33a2feb",
@@ -2483,8 +2490,8 @@
                 "selected_fragment_sha256": "91d7cff01776b99ec10cddf8d1b5cb9e99787a0680cb3879bad8942f2ab76826"
               }
             ],
-            "selection_digest": "0287d8c2bbe9894c2c7faec51b3f9f4f3cbdd19f606e6fc7d1cebcefbb55728f",
-            "source_closure_digest": "e2ff55ef97b41be3d5957dddf5009c939bea52e0a92d3816895014394b538de2",
+            "selection_digest": "1388a39a3b906fe6bedc0ae94f10c246d10703e011571d113079be3d1d4d7911",
+            "source_closure_digest": "57dd4c4b0e5abe3d6e3665c518d91ce72faa9ca700341650895381e92aa57bc9",
             "includes_caption": false,
             "payload": "web-print-assets/55e3e5bcfc2fcf0351554fb8fac89fcbcda6cceee988fa4d26f4fb298ad1f646.svg",
             "labels_sha256": "b082146e8fe1ea84081d0042f0d7b3d1d180937bde665e9b34e8c58672d47559",
@@ -2494,11 +2501,11 @@
         ]
       },
       "gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass": {
-        "selection_digest": "eb0cf2825a1b64e4437535194cf8b1ed00e05823da9a8d2e2764c9895c7936ea",
+        "selection_digest": "3fb30acab2f42a61b4261e736331d88df217d4af75b8dd1f1f7f91622fe97f0c",
         "head_sha256": "f967a13bf314a058f754d8359268aebec38c5b0220e8d7744d963c5af4c01bd2",
         "body_sha256": "1324e6e8940910bee552c9304d3f386d336006ed2337f04e760358236adf32b8",
         "source_closure": {
-          "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+          "src/common/preamble.tex": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
           "src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/generation-metadata.tex": "370189b01e7a62ffc3386bb32d698ef9e6eed3e65e2e09de71d0028acaa8c909",
           "src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/main.tex": "d61f2b0ea513e7531f2cb3c4e454076bcf788a073693a273e891a0d1cda5cc49",
           "src/gpt/theology/sacraments/summaries/matrimony.tex": "3d37e19f641e03f34139186fc88dc28dfb3949a74436ab4b33cb79e9dba44e87",
@@ -2537,8 +2544,8 @@
                 "selected_fragment_sha256": "031bc7a21ff7ab043b8e4298e8d107d6b004041a498eb3e0179abef173961631"
               }
             ],
-            "selection_digest": "eb0cf2825a1b64e4437535194cf8b1ed00e05823da9a8d2e2764c9895c7936ea",
-            "source_closure_digest": "f697b2184a9464b0cc98e02575c1f97d104b82a3f64b566f834501048e8208d8",
+            "selection_digest": "3fb30acab2f42a61b4261e736331d88df217d4af75b8dd1f1f7f91622fe97f0c",
+            "source_closure_digest": "c687688504b239c6ff2c1d5e2e8bc2dc303124c9fede45920c51531ab9f2e4d9",
             "includes_caption": false,
             "payload": "web-print-assets/19db899d16133f35a202a9fbe187e75faaf93589eabd6b82857b250104c6a1d3.svg",
             "labels_sha256": "ba856a783a3f3f2af378b217e9d9b6102cff7911022147a1fc5287a8575007f5",
@@ -2548,11 +2555,11 @@
         ]
       },
       "gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday": {
-        "selection_digest": "5c501f25b64c71e02836d3403f53ed656450d972af8cdc9b945b0c34a5f6255e",
+        "selection_digest": "dda0cab6c256d100c5d848323402bc107f54e32edc988db4708e3282a272d8fa",
         "head_sha256": "30e245e50ab0c5a36b6925f6cc4984270a8c3282a5c16d9bc8812b2bac145e61",
         "body_sha256": "2c3e08dbbca9654aa005e2f8316160a33a29fed79a5d313df1f3abf5df428e6c",
         "source_closure": {
-          "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+          "src/common/preamble.tex": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
           "src/gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday/generation-metadata.tex": "6969fe44750ea08824fbbed7560cebd5eab46f645f53466035ad002df74b9651",
           "src/gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday/main.tex": "3023180f3e38f280bd390c9895e197459b336f8217f1d82795827876ecaa4dc6"
         },
@@ -2589,8 +2596,8 @@
                 "selected_fragment_sha256": "de49ee804ec3ab887525dd2ad5cd52dbc4e42b32e93967ede467fc8f0636ef69"
               }
             ],
-            "selection_digest": "5c501f25b64c71e02836d3403f53ed656450d972af8cdc9b945b0c34a5f6255e",
-            "source_closure_digest": "f6939d7a89bf7529603d65cd0bb8fecb060043e62c8aeb78b4c1522d64171009",
+            "selection_digest": "dda0cab6c256d100c5d848323402bc107f54e32edc988db4708e3282a272d8fa",
+            "source_closure_digest": "d4d35236674433900a6379bde92451ba798f204000751c2430efdfd386c781f0",
             "includes_caption": false,
             "payload": "web-print-assets/5411793e2a571e59259cccadd59481f6df963be36f43bf6e6cef8503774b00b0.svg",
             "labels_sha256": "58096ce34281c23ca0ee0c9403d7a10eb946d38ee4c33d6d95bbdf978b194dce",
@@ -2600,11 +2607,11 @@
         ]
       },
       "gpt/liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost": {
-        "selection_digest": "bc36aaf95834f8b64df1d8932f9e16140169569704aed812bf6ee4edac48a5f4",
+        "selection_digest": "ad5f7e74d0fe37a314851664feb3588b06b91b21f87fb4a05e3ee6b88097c939",
         "head_sha256": "0c6a6be9cff7035d526c26ac0354d3632eead3d776b44157d522631da77b5ea0",
         "body_sha256": "0dcd04f572e856da01f9034c75d5ae3b923973dbd09f3049fe19e309f6cc8167",
         "source_closure": {
-          "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+          "src/common/preamble.tex": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
           "src/gpt/liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost/generation-metadata.tex": "7b3c71b3ef51047af42ffab47d707b607cc362e2fc9b7d4382b79d683151af6c",
           "src/gpt/liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost/main.tex": "37b0d178c194362cea9a390ea4041187a594e227b31349679734567d1ea212f8"
         },
@@ -2641,8 +2648,8 @@
                 "selected_fragment_sha256": "098f9aa71a865ab060b9c3ab498567375dfede238a15ef67042950d0c4d94304"
               }
             ],
-            "selection_digest": "bc36aaf95834f8b64df1d8932f9e16140169569704aed812bf6ee4edac48a5f4",
-            "source_closure_digest": "44fee0d4182a75c4650cd191e37e4d06efe27d70d8cbda585f7cd7709e2aea41",
+            "selection_digest": "ad5f7e74d0fe37a314851664feb3588b06b91b21f87fb4a05e3ee6b88097c939",
+            "source_closure_digest": "d2bb267c22f440805b5ab2ca2f70a41b90b479df1cb3901b138073c5e68cdc3f",
             "includes_caption": false,
             "payload": "web-print-assets/78308d224adbc620b73c2a9ef1b7584054340234136a315d258d360914b6ac04.svg",
             "labels_sha256": "42e93c71a338d0c09d1f24945a80955e5663d36435f956f659da6e0d18d61d2d",
@@ -2652,11 +2659,11 @@
         ]
       },
       "gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost": {
-        "selection_digest": "04020bc5e14580bb43c17dfcbeb1f2c307703f68a05462b2658925dda125b7e7",
+        "selection_digest": "98316be9db706a2b53e58a4326a84be2849ecea48c2763993e382f3f0443e86d",
         "head_sha256": "f0e3cd119a1b3c8afad3e48c67165253bb613ae18a6f94f8379e120167d5f82b",
         "body_sha256": "043a46b04109d0ef034cacb53f54f0430871f71363717d83879c4a246b33c287",
         "source_closure": {
-          "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+          "src/common/preamble.tex": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
           "src/gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost/generation-metadata.tex": "0928aa0ed03dde2c70e37662d23e6ded8bd2364b7af8a82a1959cc6d4833ca22",
           "src/gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost/main.tex": "28a8cd0e6ddd25e120dec69bbec8c261d4de42cd3ca3db7bd0bb7f1be827694a"
         },
@@ -2693,8 +2700,8 @@
                 "selected_fragment_sha256": "5702625d5a8b6e7a1a6635a9dd47aa633c42dbdd2b2af095d749435268a4577d"
               }
             ],
-            "selection_digest": "04020bc5e14580bb43c17dfcbeb1f2c307703f68a05462b2658925dda125b7e7",
-            "source_closure_digest": "c629f77a69bc7b6fb088c592f37470dedfd40b151ecce2a8ce3336211c131db9",
+            "selection_digest": "98316be9db706a2b53e58a4326a84be2849ecea48c2763993e382f3f0443e86d",
+            "source_closure_digest": "8e57fd48c50625dfda54ddf900675deccbe2999ac03bede7de5f5f01d5497072",
             "includes_caption": false,
             "payload": "web-print-assets/0ad5c67dab0bb637771aafd8a6b828d9ea3bb537564e2f4e14834ee9f44c980c.svg",
             "labels_sha256": "0b038bdc0bb7e0b7e570bc1463bd1e5110a67e5e23bd69e3b35cb86f6b004505",
@@ -2704,11 +2711,11 @@
         ]
       },
       "gpt/liturgy/roman-rite/1962/propers/temporal/46-sixth-after-pentecost": {
-        "selection_digest": "f29a00270154b356b3de4306d9d96ad4645ed948c8fc32599bb566f14c78393f",
+        "selection_digest": "adadbef0d8e4bb08501a87b234143b48681fa118900ffb64d5b880bfb4fe29e7",
         "head_sha256": "0b74b9be79b81a1d4ba6d770e68d11b7a39f2105d03ad695bc32e630e1793b3a",
         "body_sha256": "a07ae86aadf35e260bf855a75c298fd932e91e3035a95ad54e003f7592871da1",
         "source_closure": {
-          "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+          "src/common/preamble.tex": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
           "src/gpt/liturgy/roman-rite/1962/propers/temporal/46-sixth-after-pentecost/generation-metadata.tex": "f08c7600d9b4971f298546fb40a7656a14557c7bec257b460e99bb9ff1cb19ce",
           "src/gpt/liturgy/roman-rite/1962/propers/temporal/46-sixth-after-pentecost/main.tex": "bb022563bd36f50b571432307b57a297507cae6c39312c32e309a7edfefa7101"
         },
@@ -2745,8 +2752,8 @@
                 "selected_fragment_sha256": "9bca0a838b483b641694b9a823456fc79c2014972a5a600e3155f0c2726cddbd"
               }
             ],
-            "selection_digest": "f29a00270154b356b3de4306d9d96ad4645ed948c8fc32599bb566f14c78393f",
-            "source_closure_digest": "1784e50dae936e0138b01b1bc16e38c8a9e279c43f31206bff5824b44fa62697",
+            "selection_digest": "adadbef0d8e4bb08501a87b234143b48681fa118900ffb64d5b880bfb4fe29e7",
+            "source_closure_digest": "fb395d24bd71efbf633e42fa3367092f92e1a788bce90a9dee2792694ff63c33",
             "includes_caption": false,
             "payload": "web-print-assets/46003be34a79bf2e7e067b86bad3841fb5d873589de0314c2c72bfc2fa722bf8.svg",
             "labels_sha256": "84d4b5999e9174a4bd814d8c24d0a8ed8d5b8efff5947a012278ef600edf5593",
@@ -2756,11 +2763,11 @@
         ]
       },
       "gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost": {
-        "selection_digest": "75607899cdf8aae58ed887760606e638210bd17287a8578c33d73bd42886788b",
+        "selection_digest": "83b19ad1ca4cb246c5676ca260ab3268845cd697ed04916b6bc00c2a506cc939",
         "head_sha256": "44e98f02955e8abb7e2c88920d6a93ec79a9401651dc44502223536b80b9409b",
         "body_sha256": "b24aa103adf08abbf92294d2892ffe93a8b513ce9beec9eac50e0ee27ded93b0",
         "source_closure": {
-          "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+          "src/common/preamble.tex": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
           "src/gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost/generation-metadata.tex": "d3cf1627daf1548645f37ba19d51e3992db8842ec30c3f2e81ccb1d96dd918e1",
           "src/gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost/main.tex": "431ed4cc0a6e0213753c9885d54a1d8c059130afd5931cc6b3222e2b974879ec"
         },
@@ -2797,8 +2804,8 @@
                 "selected_fragment_sha256": "8d9959b686f6993e80056f5b1765ea6449e051e54decdb257c5e112abeae1645"
               }
             ],
-            "selection_digest": "75607899cdf8aae58ed887760606e638210bd17287a8578c33d73bd42886788b",
-            "source_closure_digest": "c08dccb643c1277cd6db7558d6fd49aa800fc66b6d57c0afaa42c1a255d56501",
+            "selection_digest": "83b19ad1ca4cb246c5676ca260ab3268845cd697ed04916b6bc00c2a506cc939",
+            "source_closure_digest": "c837e2f37d69def1ebfed997edf7eea5a055cf6f6a5fb980688fce4ee0da6f20",
             "includes_caption": false,
             "payload": "web-print-assets/610b55df5da44480dfe24ce75dcd4c5c7966cc6bf8bf9b417f18c34c2becb2fe.svg",
             "labels_sha256": "d41eb2cd760edb96e4fe0aa478a3e41a3e3552a033267b4ad47e8b7e59904697",
@@ -2808,11 +2815,11 @@
         ]
       },
       "gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost": {
-        "selection_digest": "180bb6d34a8c5ae3a5fe620f02178f21a6fc2b403683eb8e38a22e3d0469d01e",
+        "selection_digest": "8b52c44c24c5da714a85a4c3b36b5c15254267950e8f56986ce784c227bbbced",
         "head_sha256": "b546cbec42bbf516706bb89081604a929028fc199bb37184df3d5bbeafdef3f1",
         "body_sha256": "85aea9c8186ce8620e95699427678a36889012ca4c0bf092479893b9548adeec",
         "source_closure": {
-          "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+          "src/common/preamble.tex": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
           "src/gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost/generation-metadata.tex": "a0e58dbbb8c221483b1a447ad8ead34b1db47c83c5f974a2630c945dfa52d6d2",
           "src/gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost/main.tex": "510b2484f69012bd9ac7f46d391140633a8a96d1b840c213ddea1a886dc2c538"
         },
@@ -2849,8 +2856,8 @@
                 "selected_fragment_sha256": "22f1031798a69cd0c8bb7378e465d712cbcd456b246bb54733477870ed8558e5"
               }
             ],
-            "selection_digest": "180bb6d34a8c5ae3a5fe620f02178f21a6fc2b403683eb8e38a22e3d0469d01e",
-            "source_closure_digest": "00c3ee48250c3cc402e3463832df71475a96b4751dbde6ae49d110bd2400b8dd",
+            "selection_digest": "8b52c44c24c5da714a85a4c3b36b5c15254267950e8f56986ce784c227bbbced",
+            "source_closure_digest": "f0d9d174310e5c997cf388915f885e1ccb1ebc0018ca5a79046a4a7618f6fd3d",
             "includes_caption": false,
             "payload": "web-print-assets/6665782a9b55aaef65222e8482a94751c22b95c78afbf25c82abbaa93b8057bb.svg",
             "labels_sha256": "61f9072628ec30b20d8d76e4735409a454577c09c5dd2e28d9bf421b31f89df5",
@@ -2860,11 +2867,11 @@
         ]
       },
       "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a": {
-        "selection_digest": "624b6a80c98ccda09c1522a81a34b13fc5f2fd187a75699f04bb223b6fd1c5c4",
+        "selection_digest": "1cc3b1073e78bcaf63465c64eaf1b89f74ca4de57fe2c8eb0dcc7a13c1d8aa63",
         "head_sha256": "e7c715fa108096854f3ca4a4358b116f13749303f9223b317403a880e3018bef",
         "body_sha256": "e71394e4780e0df44ddade07f972f5c1d915cb724e268a7af3edf3b3111b46d3",
         "source_closure": {
-          "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+          "src/common/preamble.tex": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
           "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format.tex": "aab38e081a7948f5fc05b1632fb89b04798631d579ac0c1e83be948df74beed3",
           "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a/generation-metadata.tex": "4bbcf92b6f3b7f5d6daf58ffcf99c2ba00e1cebfe60c0ceadd6e76cc9f821b6f",
           "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a/main.tex": "b26bf3144d4490d98ed280d83e28b8e1470748962e608f17fa395c89b1447f79"
@@ -2902,8 +2909,8 @@
                 "selected_fragment_sha256": "a95635f97395f389564f7595eb83d09496117c62a1fb45037b72f38902b7e07e"
               }
             ],
-            "selection_digest": "624b6a80c98ccda09c1522a81a34b13fc5f2fd187a75699f04bb223b6fd1c5c4",
-            "source_closure_digest": "d799716e0a2ddcd8886a78b3ef955922a35bd1091f033f2d61eee2ab641cc1c3",
+            "selection_digest": "1cc3b1073e78bcaf63465c64eaf1b89f74ca4de57fe2c8eb0dcc7a13c1d8aa63",
+            "source_closure_digest": "09fdc2e7c485cef52edb3ace894660f233edec7e2024bde9065998a2109392ee",
             "includes_caption": false,
             "payload": "web-print-assets/949c0bdbadae8a612bd1ec277be2a64b37b92dc5169ca6aa07f908ed316188f5.svg",
             "labels_sha256": "6cb4a3d8ad53d653e3c72ffee0bce193caf5915d6bd7cec8533c2176d862cabf",
@@ -2913,11 +2920,11 @@
         ]
       },
       "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a": {
-        "selection_digest": "9da0c07d9125d22a00417659048b100ff6a6c83b85dffa9c39fc7878970f0856",
+        "selection_digest": "e5365af962db6f2f36026f9e965cc8fb04b2a554817f7cebc008c299f4bf75c2",
         "head_sha256": "1a5225cbbf3c9e1805003d48a947b85cca6b9c9db6c865ae55651066fb98cb37",
         "body_sha256": "da9a01e6c15b67cee7a8109bcd24ab363c841ecee53811c9e0a96cf9b5572ffd",
         "source_closure": {
-          "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+          "src/common/preamble.tex": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
           "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format.tex": "aab38e081a7948f5fc05b1632fb89b04798631d579ac0c1e83be948df74beed3",
           "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a/generation-metadata.tex": "24ca5df9abbf5b8cebb4762d130748c42997ee0d8c123c1cd55a3b1de42b3d1e",
           "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a/main.tex": "cf28230bf7b207e436e69fc48e7c77ce53c77a67e04e60c5d8720e42bdc535ad"
@@ -2955,8 +2962,8 @@
                 "selected_fragment_sha256": "295fdc6a8ad5d31d593e93af3f7c0dd7a154fbe9dc6c683f6a7e68776f716dee"
               }
             ],
-            "selection_digest": "9da0c07d9125d22a00417659048b100ff6a6c83b85dffa9c39fc7878970f0856",
-            "source_closure_digest": "4ed8efc133f93885573596a7f35832b0665033fdfa682481d95f7e7a4b772ca9",
+            "selection_digest": "e5365af962db6f2f36026f9e965cc8fb04b2a554817f7cebc008c299f4bf75c2",
+            "source_closure_digest": "10cf9ef2f2f5be8b47838d2e4f42df137513cd7f8e251d0d4c95e532397cc7df",
             "includes_caption": false,
             "payload": "web-print-assets/c63e3170384426e370564a19fa2092ffac65ae483317e392c86fee8322b5c81c.svg",
             "labels_sha256": "24abea610c2b5ea8a153927ba5f33bcc29d33ca5cfae4eeb7100c04e95d51fd7",
@@ -3164,5 +3171,5 @@
       "bytes": 2430
     }
   },
-  "registry_digest": "dc01d3cf53a7d50bb9f31a5b43decc5b683c051b867c81f18825c6423ef33200"
+  "registry_digest": "1e3f951a014c2b732c77a988ac7f12aee8a1f7f589e77ef54b822fc07ff86052"
 }

@@ -1,0 +1,82 @@
+{
+  "schema": "triptych-source-transport-review/v1",
+  "date": "2026-11-03",
+  "scope": "Transport transformation over the retained 644-bundle source snapshot; no PDFs compiled. Canonical virtual paths and bytes preserved.",
+  "bundles": 644,
+  "before_bundle_bytes": 159939186,
+  "after_bundle_bytes": 79430262,
+  "shared_raw_bytes": 9757119,
+  "shared_pack_bytes": 3104725,
+  "shared_raw_objects": 920,
+  "shared_pack_objects": 220,
+  "exact_inline_source_bytes_verified": 147765920,
+  "publication_median_source_bytes_before": 192052,
+  "publication_median_source_bytes_after": 110855,
+  "publication_median_extra_requests": 4,
+  "publication_max_extra_requests": 20,
+  "examples": [
+    {
+      "id": "publication:gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan",
+      "before": 1208074,
+      "json": 114277,
+      "source_transport": 296580,
+      "pack_requests": 4,
+      "raw_requests": 0
+    },
+    {
+      "id": "publication:gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer",
+      "before": 1207788,
+      "json": 113991,
+      "source_transport": 296294,
+      "pack_requests": 4,
+      "raw_requests": 0
+    },
+    {
+      "id": "publication:gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive",
+      "before": 1210039,
+      "json": 116242,
+      "source_transport": 298545,
+      "pack_requests": 4,
+      "raw_requests": 0
+    },
+    {
+      "id": "publication:gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader",
+      "before": 1209389,
+      "json": 115592,
+      "source_transport": 297895,
+      "pack_requests": 4,
+      "raw_requests": 0
+    },
+    {
+      "id": "publication:gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies",
+      "before": 1211984,
+      "json": 118187,
+      "source_transport": 300490,
+      "pack_requests": 4,
+      "raw_requests": 0
+    },
+    {
+      "id": "publication:gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server",
+      "before": 1208829,
+      "json": 115032,
+      "source_transport": 297335,
+      "pack_requests": 4,
+      "raw_requests": 0
+    }
+  ],
+  "after_complete_source_transport_bytes": 92292106,
+  "producer_sha256": "760c939558bf4900369062efec6dc40a6faf3ee7cb33b25720ce3c72909288f0",
+  "render_identity": "Exact mounted path, byte count and SHA-256 for each file; document, output, edition, engine, format, working directory, entrypoint, environment and options. Transport representation and revision provenance are separate.",
+  "independent_cold_review": {
+    "status": "pass",
+    "python_source_publisher_tests": 25,
+    "included_node_transport_cases": 6,
+    "additional_helper_cases": 12,
+    "hostile_inputs_refused": 10,
+    "findings": []
+  },
+  "limits": [
+    "Measurements transform the retained pre-recovery source snapshot; final current site totals are recorded separately.",
+    "No print-layout, whole-corpus typesetting or deployment claim is made by this transport test."
+  ]
+}

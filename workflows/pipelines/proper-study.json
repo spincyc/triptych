@@ -194,7 +194,7 @@
       "checks": [
         {
           "id": "component-contract",
-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition research --require-presentation --require-format --require-authority --require-orientation --require-orientation-v2 --mode source",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition research --require-presentation --require-format --require-authority --require-orientation --require-orientation-v3 --mode source",
           "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
         },
         {
@@ -330,7 +330,7 @@
       "checks": [
         {
           "id": "component-contract",
-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition synthesis --require-presentation --require-format --require-authority --require-orientation --require-orientation-v2 --mode source",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition synthesis --require-presentation --require-format --require-authority --require-orientation --require-orientation-v3 --mode source",
           "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
         },
         {
@@ -465,7 +465,7 @@
       "checks": [
         {
           "id": "component-contract",
-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition homily --require-presentation --require-format --require-authority --require-orientation --require-orientation-v2 --mode source",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition homily --require-presentation --require-format --require-authority --require-orientation --require-orientation-v3 --mode source",
           "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
         },
         {
@@ -604,7 +604,7 @@
       "checks": [
         {
           "id": "source-output-contract",
-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase artifacts --require-presentation --require-format --require-authority --require-orientation --require-orientation-v2 --mode source",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase artifacts --require-presentation --require-format --require-authority --require-orientation --require-orientation-v3 --mode source",
           "required_result": "The typed publication manifest, all three source outputs, metadata, content and evidence contracts must validate without print artifacts.",
           "repair_target": "study"
         }
@@ -725,7 +725,7 @@
       "checks": [
         {
           "id": "three-document-publication",
-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase publication --require-presentation --require-format --require-authority --require-orientation --require-orientation-v2 --mode source",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase publication --require-presentation --require-format --require-authority --require-orientation --require-orientation-v3 --mode source",
           "required_result": "Current source identities, canonical reviewed web bytes, exact release IDs and the owning catalog must match this provider and family; no PDF is required.",
           "repair_target": "study"
         },

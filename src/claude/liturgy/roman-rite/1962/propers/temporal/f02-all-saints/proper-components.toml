@@ -9,7 +9,7 @@ synthesis_entrypoint = "synthesis.tex"
 homily_entrypoint = "homily.tex"
 appointed_text_completeness = "complete"
 presentation_contract = "interpretive-pagination-v1"
-chronology_presentation = "orientation-v2"
+chronology_presentation = "orientation-v3"
 
 # The fourteen elements said in the Mass of Sunday 1 November 2026, in the
 # order of the Mass: the feast's ten texts (printed pp. 702-703, nos.
@@ -117,7 +117,7 @@ path = "sections/80-date-location.tex"
 modes = ["research"]
 depends_on = []
 element_keys = ["introit", "lesson", "gradual", "alleluia", "gospel", "offertory", "communion"]
-references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/scope.md"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology-table.tex", "research/chronology.toml", "research/scope.md"]
 
 [[components]]
 key = "study-apparatus"
@@ -155,7 +155,7 @@ path = "sections/concise/03-date-location.tex"
 modes = ["synthesis"]
 depends_on = []
 element_keys = ["introit", "lesson", "gradual", "alleluia", "gospel", "offertory", "communion"]
-references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology-table.tex", "research/chronology.toml"]
 
 [[components]]
 key = "concise-themes"

@@ -534,7 +534,11 @@ check-research-sources: check-deployment-sources check-source-evidence \
 		check-source-containment check-commentator-inventories check-commentary-corpus
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
 
-check-sources: check-research-sources
+# Ordinary source maintenance validates the metadata graph, inventory and
+# reviewed ledgers without requiring optional acquired binary evidence.
+check-sources: check-source-graph check-publication-inventories \
+		check-source-containment check-commentator-inventories check-commentary-corpus
+	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
 
 # A work held only inside another record -- a Migne volume, an NPNF anthology,
 # a whole-volume optical layer filed under one of its constituents -- is

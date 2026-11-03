@@ -43,7 +43,10 @@ Git keeps the project’s files and history. An AI coding agent can edit, check,
    workflow. An assigned workspace branch or narrower task instruction governs
    instead; do not switch it to `main`.
 5. Read the revised source or reader edition as well as the line-by-line view
-   of what changed. A PDF is generated only when a print edition is requested.
+   of what changed. Canonical sections and shared styles are the inputs; a PDF
+   is generated only when an edition is requested. Style or structure changes
+   do not require rebuilding or publishing a PDF corpus. See
+   [Printing](docs/printing.md).
 6. Before each push, the agent must inspect the exact outgoing range, confirm
    that every newly reachable object is intended for public disclosure, and
    run the checks required by the affected guidance. Pushing `origin/main`

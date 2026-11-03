@@ -10,7 +10,7 @@ important claims against the authorities themselves.
 
 Publications retain separate GPT and Claude editions where available. Each
 catalog row links the available editions, so the two can be read against each
-other. Read online or generate a typeset PDF of a selected edition
+other. Read online or generate a typeset PDF of a selected edition in your browser
 using [Printing](docs/printing.md).
 
 If something is wrong, unclear, incomplete, or unbalanced, send a short note.
@@ -38,8 +38,10 @@ goes as deep as the evidence allows.
 Everything here is built in the open at
 [github.com/spincyc/triptych](https://github.com/spincyc/triptych) — the sources,
 the tools that render them, and the checks that gate a release. Canonical
-plaintext and structured data stay in the repository; optional PDFs are made
-on demand. Exact binary source evidence is kept separately with recorded
+plaintext, structured sections and shared styles stay in the repository;
+optional PDFs are assembled on demand from those sources. Updating the text or
+style does not require maintaining or rebuilding a collection of PDFs. Exact
+binary source evidence is kept separately with recorded
 hashes and rights, and can be opened offline after the relevant verified pack
 has been obtained. A checkout alone does not contain every scan or other
 binary witness. Corrections and

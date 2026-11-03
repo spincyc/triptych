@@ -107,6 +107,71 @@ class SourceSchemaTests(unittest.TestCase):
         self.assertTrue(all(gate["status"] == "not-run" for gate in report["external_gates"]))
 
 
+class ChronologySourceSchemaTests(unittest.TestCase):
+    """Exercise the real neutral checker with current chronology source files.
+
+    Only unrelated Bible/plan/papal semantics are fixture values. This sparse
+    fixture declares no browser-product contract; production still uses its
+    normal verified-product gate and never bypasses its freshness checks.
+    """
+
+    def setUp(self):
+        scratch = ROOT / ".scratch/source-edition-schema-tests"
+        scratch.mkdir(parents=True, exist_ok=True)
+        self.temp = tempfile.TemporaryDirectory(dir=scratch)
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        families = [family for family in schemas.source_types(ROOT)
+                    if family["id"] in {"bible-edition", "scripture-chronology-source"}]
+        lines = ['schema_version = 1', 'record_type = "source-document-family-registry"']
+        for family in families:
+            lines.append("[[families]]")
+            lines.extend(key + " = " + json.dumps(value) for key, value in family.items())
+            owner = self.root / family["owner"]
+            owner.parent.mkdir(parents=True, exist_ok=True)
+            owner.write_text("# Fixture owner; semantic execution is not claimed.\n")
+        registry = self.root / schemas.REGISTRY
+        registry.parent.mkdir(parents=True, exist_ok=True)
+        registry.write_text("\n".join(lines) + "\n")
+        destination = self.root / "src/sources/chronology"
+        destination.mkdir(parents=True)
+        for source in (ROOT / "src/sources/chronology").glob("*.yaml"):
+            (destination / source.name).write_bytes(source.read_bytes())
+        self.orientation = destination / "orientation.yaml"
+
+    def report(self):
+        with patch.object(schemas, "_bibles", return_value=[{"id": "fixture"}]), \
+                patch.object(schemas, "_plans", return_value=([], [])), \
+                patch.object(schemas, "_papal_manifests", return_value=(0, 0)), \
+                patch.object(schemas._print_catalog, "_papal_pages", return_value={}):
+            return schemas.check_source_editions(self.root)
+
+    def test_orientation_is_admitted_with_its_existing_semantic_owner(self):
+        report = self.report()
+        self.assertTrue(report["ok"], report["errors"])
+        chronology = next(row for row in report["families"]
+                          if row["id"] == "scripture-chronology-source")
+        self.assertEqual(chronology["members"], 6)
+        self.assertIn("triptych-chronology-orientation/v1", chronology["schema_ids"])
+        self.assertEqual(chronology["semantic_checks"], "owning-gate")
+        self.assertEqual(report["external_gates"], [{
+            "id": "scripture-chronology-source",
+            "command": ["tools/scripture-chronology", "validate"], "status": "not-run"}])
+
+    def test_unregistered_orientation_version_is_still_refused(self):
+        self.orientation.write_text(self.orientation.read_text().replace(
+            "triptych-chronology-orientation/v1", "triptych-chronology-orientation/v999"))
+        report = self.report()
+        self.assertFalse(report["ok"])
+        self.assertIn("orientation.yaml: unexpected canonical schema", report["errors"][0])
+
+    def test_current_chronology_family_requires_all_six_source_members(self):
+        self.orientation.unlink()
+        report = self.report()
+        self.assertFalse(report["ok"])
+        self.assertIn("scripture-chronology-source: fewer members", report["errors"][0])
+
+
 class VerifiedProductSourceTests(unittest.TestCase):
     """Cold protocol fixtures; product-store cryptography has its own tests.
 

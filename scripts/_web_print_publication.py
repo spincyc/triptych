@@ -121,7 +121,7 @@ def load_library(root: Path, *, owner: Path | None = None):
 CONDITIONAL=re.compile(r'\\(?:if[A-Za-z@]*|else|fi)\b')
 FLAGS={'TriptychPrintEdition':False,'TriptychSynthesisEdition':False,'TriptychHomilyEdition':False}
 
-def select_branches(text: str, mode: str, library) -> str:
+def select_branches(text: str, mode: str, library, *, allow_pdf_compression=False) -> str:
     """Balanced edition switches; choose the selected output, never research by default."""
     text=library.LEAD_COMMENT_RE.sub('',text)
     values={**FLAGS,'TriptychSynthesisEdition':mode=='synthesis','TriptychHomilyEdition':mode=='homily'}
@@ -132,7 +132,7 @@ def select_branches(text: str, mode: str, library) -> str:
         if not start:pieces.append(text[cursor:]);break
         a,b=cursor+start.start(),cursor+start.end()
         name=start.group(1)
-        if name not in values:
+        if name not in values and not (name=='pdfcompresslevel' and allow_pdf_compression):
             raise Refused('unsupported conditional flag: '+name)
         depth=1; middle=None; ending=None
         for token in CONDITIONAL.finditer(masked,b):
@@ -144,7 +144,14 @@ def select_branches(text: str, mode: str, library) -> str:
         if ending is None:raise Refused('unclosed edition conditional')
         yes=text[b:middle.start() if middle else ending.start()]
         no=text[middle.end():ending.start()] if middle else ''
-        branch=select_branches(yes if values[name] else no,mode,library)
+        if name=='pdfcompresslevel':
+            # HTML has no PDF stream compression. Admit only its literal,
+            # content-free setting; engine-dependent prose still refuses.
+            if middle is not None or not re.fullmatch(r'\s*\\pdfcompresslevel\s*=\s*[0-9]\s*',library.mask_tex_comments(yes)):
+                raise Refused('unsupported PDF compression conditional')
+            branch=''
+        else:
+            branch=select_branches(yes if values[name] else no,mode,library,allow_pdf_compression=allow_pdf_compression)
         # Preserve the established converter's inline/block seam semantics.
         if text[ending.end():].startswith('{}'):
             branch=library.BRANCH_TAIL_RE.sub('',branch.lstrip())
@@ -163,7 +170,7 @@ def selected_source(root: Path, recipe: dict, library) -> dict:
         if not path.is_relative_to(root/'src'/provider) and not path.is_relative_to(root/'src/common'):
             raise Refused('source escapes provider/common owner')
         if path in stack:raise Refused('input cycle')
-        raw=path.read_text(); selected=select_branches(raw,mode,library)
+        raw=path.read_text(); selected=select_branches(raw,mode,library,allow_pdf_compression=path==root/'src/common/preamble.tex')
         rel=path.relative_to(root).as_posix(); occurrences[rel]+=1
         occurrence=occurrences[rel]
         events.append({'path':rel,'occurrence':occurrence,'sha256':hashlib.sha256(raw.encode()).hexdigest(),'selected_sha256':hashlib.sha256(selected.encode()).hexdigest()})

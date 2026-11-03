@@ -543,16 +543,36 @@ St Augustine and St Thomas Aquinas stand behind all three, and they argue differ
 
 Each passage the Mass reads or sings from Scripture, in canonical order, with what is dated, where it belongs, and its date. Where several texts of the Mass share one date, the row names them all. The Introit antiphon, the three orations of the feast and the three of the Sunday have no biblical date. The notes beneath give each passage’s setting, attribution and dating evidence.
 
-| **Passage** | **Occurrence and place** | **Date** |
+| **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33); Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34) | Traditional attribution: David’s reign. Two psalms of praise and of the fear of the Lord. The Clementine prints “A psalm for David” inside Ps 32:1, where the Hebrew has no title; Ps 33 is titled “For David” (33:1). | Disputed: B.C. 1055–1015 |
-| Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33) | Historical setting. A hymn bidding the just rejoice and praise the Lord with the harp and a new canticle. | Occasion date unresolved |
-| Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33); Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34) | Composition: Psalms. The Psalter, the book in which both psalms stand. | Before c. 165 B.C. |
-| Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34) | Superscription setting: David’s flight to Achis, king of Geth. David at the court of Achis, king of Geth, among the Philistines (1 Kings 21:10–15), the occasion the psalm’s title names under the name Achimelech (Ps 33:1). | A.M. 2944 (Haydock edition reporting Ussher) |
-| Offertory: Wisdom 3:1–3 | Composition: The Book of Wisdom. The Book of Wisdom, whose answer to the wicked (Wis 2–3) the Offertory adapts; the proposed dates are reigns of Ptolemaic kings of Egypt. | Disputed: In or after the time of Ptolemy IV Philopator (221-204 B.C.); In or after the time of Ptolemy VII Physicon (145-117 B.C.) |
-| Gospel: Matthew 5:1–12 | Event. “A mountain” (Mt 5:1), not named, after Jesus has gone “about all Galilee” and the multitudes have followed him (4:23–25). | Date unresolved |
-| Alleluia: Matthew 11:28; Gospel: Matthew 5:1–12; Communion: Matthew 5:8–10 | Composition: The Gospel of St Matthew. The Gospel according to St Matthew, from which the Alleluia verse, the Gospel and the Communion are taken. | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
-| Lesson: Revelation 7:2–12 | Composition: The Apocalypse of St John. John writes the visions he saw “in the island which is called Patmos” (Apoc 1:9). | Disputed: A.D. 81–96; c. A.D. 90–100 |
+| Introit: Ps. 32:1 (Vg.; Heb. 33); Gradual: Ps. 33:10–11 (Vg.; Heb. 34) | Traditional attribution: David’s reign | Disputed: B.C. 1055–1015 |
+| Introit: Ps. 32:1 (Vg.; Heb. 33) | Historical setting | Occasion date unresolved |
+| Introit: Ps. 32:1 (Vg.; Heb. 33); Gradual: Ps. 33:10–11 (Vg.; Heb. 34) | Composition: Psalms | Before c. 165 B.C. |
+| Gradual: Ps. 33:10–11 (Vg.; Heb. 34) | Superscription setting: David’s flight to Achis, king of Geth | A.M. 2944 (Haydock edition reporting Ussher) |
+| Offertory: Wis. 3:1–3 | Composition: Wisdom | Disputed: In or after the time of Ptolemy IV Philopator (221–204 B.C.); In or after the time of Ptolemy VII Physicon (145–117 B.C.) |
+| Gospel: Matt. 5:1–12 | Narrated event: Jesus teaches the Beatitudes on a mountain | Date unresolved |
+| Alleluia: Matt. 11:28; Gospel: Matt. 5:1–12; Communion: Matt. 5:8–10 | Composition: Matthew | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Lesson: Apoc. 7:2–12 | Composition: Apocalypse | Disputed: A.D. 81–96; c. A.D. 90–100 |
+
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+##### Setting notes.
+
+**Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33); Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34)**. Two psalms of praise and of the fear of the Lord. The Clementine prints “A psalm for David” inside Ps 32:1, where the Hebrew has no title; Ps 33 is titled “For David” (33:1).
+
+**Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33)**. A hymn bidding the just rejoice and praise the Lord with the harp and a new canticle.
+
+**Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33); Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34)**. The Psalter, the book in which both psalms stand.
+
+**Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34)**. David at the court of Achis, king of Geth, among the Philistines (1 Kings 21:10–15), the occasion the psalm’s title names under the name Achimelech (Ps 33:1).
+
+**Offertory: Wisdom 3:1–3**. The Book of Wisdom, whose answer to the wicked (Wis 2–3) the Offertory adapts; the proposed dates are reigns of Ptolemaic kings of Egypt.
+
+**Gospel: Matthew 5:1–12**. “A mountain” (Mt 5:1), not named, after Jesus has gone “about all Galilee” and the multitudes have followed him (4:23–25).
+
+**Alleluia: Matthew 11:28; Gospel: Matthew 5:1–12; Communion: Matthew 5:8–10**. The Gospel according to St Matthew, from which the Alleluia verse, the Gospel and the Communion are taken.
+
+**Lesson: Revelation 7:2–12**. John writes the visions he saw “in the island which is called Patmos” (Apoc 1:9).
 
 ### Psalms 32 (33) and 33 (34): the Introit verse and the Gradual {#sec:date-psalms}
 
@@ -680,6 +700,6 @@ The two composition dates are those of Christian Van den Biesen’s “Apocalyps
 
 - *New American Bible, Revised Edition*, introduction to the Psalms (USCCB website), summarized.
 
-**Last revised (UTC):** 2026-10-28T17:52:51Z
+**Last revised (UTC):** 2026-11-03T21:06:51Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

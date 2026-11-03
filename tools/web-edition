@@ -1210,7 +1210,7 @@ def chronology_projection(body: str) -> str:
 
 # The compact chronology presentations whose leaves carry literal page
 # references; `_proper_chronology.ORIENTATION_PRESENTATIONS` owns the list.
-ORIENTATION_PRESENTATIONS = ("orientation-v1", "orientation-v2")
+ORIENTATION_PRESENTATIONS = ("orientation-v1", "orientation-v2", "orientation-v3")
 
 
 def expand_chronology_annotations(

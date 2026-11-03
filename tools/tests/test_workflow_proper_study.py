@@ -97,7 +97,7 @@ class DefinitionTests(unittest.TestCase):
         self.assertTrue(all("proper-study/contract.md" in stage.get("fragments", [])
                             for stage in self.stages.values() if stage["type"] != "gate"))
 
-    def test_v12_gates_and_research_require_orientation_v2(self):
+    def test_current_gates_and_research_require_orientation_v3(self):
         self.assertGreaterEqual(self.workflow["version"], 12)
         gates = [check["command"] for stage in self.workflow["stages"]
                  for check in stage.get("checks", [])
@@ -105,20 +105,21 @@ class DefinitionTests(unittest.TestCase):
                  and any("--phase " + name in check["command"]
                          for name in ("content", "artifacts", "publication"))]
         self.assertEqual(len(gates), 5)
-        self.assertTrue(all("--require-orientation-v2" in command for command in gates))
+        self.assertTrue(all("--require-orientation-v3" in command for command in gates))
         fragments = ROOT / "workflows/fragments/proper-study"
-        self.assertIn("--presentation orientation-v2 --write", (fragments / "research.md").read_text())
+        self.assertIn("--presentation orientation-v3 --write", (fragments / "research.md").read_text())
         for path in fragments.glob("*.md"):
             self.assertNotIn("orientation-v1", path.read_text(), path.name)
+            self.assertNotIn("orientation-v2", path.read_text(), path.name)
         with tempfile.TemporaryDirectory(dir=SCRATCH) as directory:
             leaf = Path(directory)
             (leaf / "proper-components.toml").write_text(
                 'schema = 2\nchronology_presentation = "orientation-v1"\n')
             with patch.object(study, "scope"), patch.object(study, "leaf_path", return_value=leaf), \
                     patch.object(study, "manifest", return_value={"schema": 2}), \
-                    self.assertRaisesRegex(ValueError, "orientation-v2"):
+                    self.assertRaisesRegex(ValueError, "orientation-v3"):
                 study.check(ROOT, "gpt", TLM, "content", "research", require_orientation=True,
-                            require_orientation_v2=True)
+                            require_orientation_v3=True)
 
     def test_date_and_audience_change_run_identity(self):
         args = {"proper": TLM, "provider": "gpt", "date": "2026-09-20"}

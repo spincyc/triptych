@@ -3,9 +3,11 @@ from __future__ import annotations
 
 import copy
 import hashlib
+import gzip
 import json
 from pathlib import Path
 import sys
+import subprocess
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -19,7 +21,7 @@ import _print_document as printing
 
 class NativeSourceBundleTests(unittest.TestCase):
     def setUp(self):
-        base = ROOT / ".scratch/native-print-bundles/tests"
+        base = ROOT / ".scratch/prepared-publisher/source-assembly/tests"
         base.mkdir(parents=True, exist_ok=True)
         self.temporary = tempfile.TemporaryDirectory(dir=base)
         self.addCleanup(self.temporary.cleanup)
@@ -233,6 +235,141 @@ class NativeSourceBundleTests(unittest.TestCase):
         with self.assertRaisesRegex(bundles.BundleError, "unadmitted or duplicate"):
             bundles.prepare_catalog(self.root, documents=self.documents, revision=self.revision,
                                     output_ids=[self.identity, self.identity])
+
+
+class SharedNativeSourceTests(unittest.TestCase):
+    setUp = NativeSourceBundleTests.setUp
+    prepare = NativeSourceBundleTests.prepare
+
+    def test_browser_source_transport_adversarial_cases(self):
+        run = subprocess.run(["node", "--test", str(ROOT / "tools/tests/native_source_transport.mjs")],
+                             cwd=ROOT, capture_output=True, text=True, timeout=30)
+        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+
+    def test_revision_is_provenance_and_exact_render_inputs_are_identity(self):
+        original = self.prepare()
+        later = self.prepare(revision="b" * 40)
+        self.assertNotEqual(original["content_sha256"], later["content_sha256"])
+        self.assertEqual(original["render_sha256"], later["render_sha256"])
+        for field, value in (("entrypoint", "src/gpt/articles/faith/example/body.tex"),
+                             ("cwd", "src"), ("engine", "xetex"), ("format", "xelatex"),
+                             ("document", "other"), ("output_id", "other"), ("edition", "synthesis"),
+                             ("environment", {"TEXINPUTS": ".:"}), ("options", {})):
+            with self.subTest(field=field):
+                changed = dict(original, **{field: value})
+                self.assertNotEqual(original["render_sha256"], bundles.render_identity(changed))
+        changed = copy.deepcopy(original)
+        changed["files"][0]["sha256"] = "c" * 64
+        changed["content_sha256"] = bundles._sha(bundles.canonical({k: v for k, v in changed.items() if k != "content_sha256"}))
+        with self.assertRaises(bundles.BundleError):
+            bundles.validate_bundle(changed)
+
+    def shared(self):
+        # Compression is beneficial for these exact canonical style bytes.
+        (self.root / "src/common/preamble.tex").write_bytes(b"\\documentclass{article}\r\n" + b"% exact shared typography\r\n" * 100)
+        (self.leaf / "body.tex").write_text("Original æ, œ, †.\r\n" * 100, encoding="utf-8", newline="")
+        original = self.prepare()
+        assets = {}
+        result = bundles._externalize(original, assets, shared_text={row["sha256"] for row in original["files"]})
+        return original, result, assets
+
+    def test_shared_transports_preserve_every_byte_path_and_render_identity(self):
+        original, result, assets = self.shared()
+        self.assertEqual(original["render_sha256"], result["render_sha256"])
+        self.assertNotEqual(original["content_sha256"], result["content_sha256"])
+        self.assertEqual([row["path"] for row in original["files"]], [row["path"] for row in result["files"]])
+        expected = {row["sha256"]: bundles.file_bytes(row) for row in original["files"]}
+        for row in result["files"]:
+            self.assertEqual(assets["native-tex/" + row["href"][3:]], expected[row["sha256"]])
+        self.assertTrue(result["sourcePacks"])
+        for pack in result["sourcePacks"]:
+            payload = assets["native-tex/" + pack["href"][3:]]
+            self.assertEqual(hashlib.sha256(payload).hexdigest(), pack["sha256"])
+            self.assertEqual(payload[4:8], b"\0" * 4)
+            self.assertEqual(payload[9], 255)
+            expanded = gzip.decompress(payload)
+            self.assertEqual(len(expanded), pack["expanded_bytes"])
+            for member in pack["files"]:
+                self.assertEqual(expanded[member["offset"]:member["offset"] + member["bytes"]], expected[member["sha256"]])
+        first_assets = dict(assets)
+        repeated = bundles._externalize(original, assets, shared_text=set(expected))
+        self.assertEqual(repeated, result)
+        self.assertEqual(first_assets, assets)
+        # The controller consumes the Python producer's real canonical hash.
+        fixture = self.root / ".scratch" / "controller-fixture.json"
+        fixture.write_text(json.dumps({"bundle": result, "assets": {key: list(value) for key, value in assets.items()}}), encoding="utf-8")
+        run = subprocess.run(["node", str(ROOT / "tools/tests/native_source_transport.mjs"), "--fixture", str(fixture)],
+                             cwd=ROOT, capture_output=True, text=True, timeout=30)
+        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+
+    def test_pack_metadata_refuses_substitution_duplicate_gaps_and_oversize(self):
+        _, original, _ = self.shared()
+        mutations = [lambda p: p.update(href="../assets/elsewhere.bin"),
+                     lambda p: p.update(expanded_bytes=8 * 1024 * 1024 + 1),
+                     lambda p: p.update(bytes=True), lambda p: p.update(compression="zip"),
+                     lambda p: p.update(extra="unowned"),
+                     lambda p: p["files"][0].update(sha256="f" * 64),
+                     lambda p: p["files"][0].update(offset=1),
+                     lambda p: p["files"][0].update(bytes=True),
+                     lambda p: p["files"].append(copy.deepcopy(p["files"][0])),
+                     lambda p: p.update(expanded_bytes=p["expanded_bytes"] + 1)]
+        for index, mutate in enumerate(mutations):
+            with self.subTest(index=index):
+                changed = copy.deepcopy(original)
+                mutate(changed["sourcePacks"][0])
+                changed["content_sha256"] = bundles._sha(bundles.canonical({k: v for k, v in changed.items() if k != "content_sha256"}))
+                with self.assertRaises(bundles.BundleError):
+                    bundles.validate_bundle(changed)
+
+    def test_unprofitable_and_oversize_packs_keep_exact_raw_transport(self):
+        original = self.prepare()
+        with patch.object(bundles, "_SOURCE_PACK_BYTES", 1):
+            assets = {}
+            result = bundles._externalize(original, assets, shared_text={row["sha256"] for row in original["files"]})
+        self.assertNotIn("sourcePacks", result)
+        self.assertTrue(all(row["encoding"] == "url" for row in result["files"]))
+        self.assertEqual(result["render_sha256"], original["render_sha256"])
+
+    def test_catalog_style_changes_only_affected_render_inputs_and_transports(self):
+        self.shared()
+        companion = self.leaf / "synthesis.tex"
+        companion.write_text("Distinct companion words.\n")
+        identity = self.identity + "-synthesis"
+        documents = {**self.documents, identity: {"id": identity, "document": self.identity, "edition": "synthesis", "title": "Concise"},
+                     "bible:unrelated": {"id": "bible:unrelated", "document": "bible:unrelated", "edition": "main", "title": "Unrelated"}}
+        other = dict(self.recipe, id=identity, edition="synthesis", entrypoint=companion.relative_to(self.root).as_posix(),
+                     dependencies=[*self.recipe["dependencies"], companion.relative_to(self.root).as_posix()])
+        recipes = {(self.identity, "main"): self.recipe, (self.identity, "synthesis"): other,
+                   ("bible:unrelated", "main"): {"id": "bible:unrelated", "family": "bible", "document": "unrelated", "dependencies": ["Makefile"]}}
+        def catalog(revision):
+            with patch.object(printing, "select", side_effect=lambda document, edition, **_: recipes[document, edition]), \
+                    patch.object(printing, "check_many", side_effect=lambda recipes, **_: [dict(r, status="valid", validation={"source": "pass"}) for r in recipes]), \
+                    patch.object(bundles, "_generated_files", return_value=({"native/bible/unrelated/main.tex": b"Independent Bible source.\n"}, "native/bible/unrelated/main.tex", "native/bible/unrelated")), \
+                    patch.object(bundles, "_run") as compiler:
+                result = bundles.prepare_catalog(self.root, documents=documents, revision=revision)
+                compiler.assert_not_called()
+                return result
+        original = catalog(self.revision)
+        later = catalog("b" * 40)
+        read = lambda cat, identity: json.loads(cat["assets"][cat["bundles"][identity]["route"]])
+        for selected in documents:
+            self.assertEqual(read(original, selected)["render_sha256"], read(later, selected)["render_sha256"])
+        style = self.root / "src/common/preamble.tex"
+        style.write_bytes(style.read_bytes() + b"% changed style only\n")
+        restyled = catalog(self.revision)
+        for selected in (self.identity, identity):
+            before, after = read(original, selected), read(restyled, selected)
+            self.assertNotEqual(before["render_sha256"], after["render_sha256"])
+            before_files = {row["path"]: row for row in before["files"]}
+            after_files = {row["path"]: row for row in after["files"]}
+            for path in before_files:
+                if path != "src/common/preamble.tex":
+                    self.assertEqual(before_files[path], after_files[path])
+            before_packs = {p["href"] for p in before.get("sourcePacks", [])}
+            after_packs = {p["href"] for p in after.get("sourcePacks", [])}
+            self.assertEqual(len(before_packs - after_packs), 1)
+            self.assertEqual(len(after_packs - before_packs), 1)
+        self.assertEqual(read(original, "bible:unrelated"), read(restyled, "bible:unrelated"))
 
 
 if __name__ == "__main__":

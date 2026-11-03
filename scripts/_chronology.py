@@ -160,7 +160,7 @@ def scripture_systems() -> dict[str, frozenset[str] | None]:
 
 # The documents that carry Scripture loci and must therefore declare the system
 # those loci are numbered in. Profiles and events name no verse.
-LOCUS_BEARING = ("composition", "bindings", "gaps")
+LOCUS_BEARING = ("composition", "bindings", "gaps", "orientation")
 
 SCHEMAS = {
     "profiles": "triptych-chronology-profiles/v1",
@@ -168,6 +168,7 @@ SCHEMAS = {
     "composition": "triptych-chronology-composition/v1",
     "bindings": "triptych-chronology-bindings/v1",
     "gaps": "triptych-chronology-gaps/v1",
+    "orientation": "triptych-chronology-orientation/v1",
 }
 
 # --- Vocabulary -------------------------------------------------------------
@@ -1480,6 +1481,15 @@ class Cascade(NamedTuple):
     selection: str
 
 
+class OrientationContext(NamedTuple):
+    """A sourced description of a passage, making no chronological assertion."""
+
+    scope: tuple[Span, ...]
+    label: str
+    sources: tuple[str, ...]
+    basis: str
+
+
 class Corpus(NamedTuple):
     """Everything authored, validated, and keyed the way a query asks for it."""
 
@@ -1492,6 +1502,8 @@ class Corpus(NamedTuple):
     policies: dict[str, Policy]
     cascades: dict[str, Cascade]
     default_profile: str
+    orientation_contexts: tuple[OrientationContext, ...] = ()
+    orientation_subject_labels: dict[str, str] = {}
 
     def answers_with(self, claim: Claim) -> bool:
         """Whether the profile the claim was authored under answers with it.
@@ -1966,6 +1978,52 @@ def _load_gaps(
     return tuple(gaps)
 
 
+def _load_orientation_contexts(root: Path, books: dict[str, int]) -> tuple[OrientationContext, ...]:
+    # Older corpus snapshots need no display metadata to answer dates.
+    if not (root / "orientation.yaml").is_file():
+        return ()
+    data = _document("orientation", root)
+    _keys(data, {"schema", "numbering", "contexts", "subject_labels"}, "orientation")
+    if not isinstance(data.get("contexts"), list):
+        raise ChronologyError("orientation: contexts must be a list")
+    contexts = []
+    for index, raw in enumerate(data["contexts"]):
+        where = f"orientation context {index + 1}"
+        if not isinstance(raw, dict):
+            raise ChronologyError(f"{where}: expected a mapping")
+        _keys(raw, {"scope", "label", "sources", "basis"}, where)
+        context = OrientationContext(
+            _scope(raw.get("scope"), where, books),
+            _text(raw, "label", where, required=True),
+            _sources(raw, where, required=True),
+            _text(raw, "basis", where, required=True))
+        if len(context.label) > 100 or re.search(r"[0-9]|[\\{}]", context.label):
+            raise ChronologyError(f"{where}: label must be concise plain prose without dates")
+        for span in context.scope:
+            if span.system != CANONICAL_SYSTEM or span.chapter is None or span.first is None or span.last is None:
+                raise ChronologyError(f"{where}: context requires an exact canonical verse scope")
+            for previous in contexts:
+                if any(_scope_covers(previous.scope, span.token, span.chapter, verse)
+                       for verse in range(span.first, span.last + 1)):
+                    raise ChronologyError(f"{where}: overlapping orientation descriptions")
+        contexts.append(context)
+    return tuple(contexts)
+
+
+def _load_orientation_subject_labels(root: Path, subjects: set[str]) -> dict[str, str]:
+    if not (root / "orientation.yaml").is_file():
+        return {}
+    labels = _document("orientation", root).get("subject_labels", {})
+    if not isinstance(labels, dict):
+        raise ChronologyError("orientation: subject_labels must be a mapping")
+    for subject, label in labels.items():
+        if subject not in subjects:
+            raise ChronologyError(f"orientation: unknown temporal subject {subject!r}")
+        if not isinstance(label, str) or not label.strip() or len(label) > 100 or re.search(r"[\\{}]", label):
+            raise ChronologyError(f"orientation: {subject}: expected a concise plain subject label")
+    return labels
+
+
 @lru_cache(maxsize=4)
 def load(root: Path | None = None) -> Corpus:
     """Read and validate the whole corpus, or refuse with the reason."""
@@ -1980,7 +2038,8 @@ def load(root: Path | None = None) -> Corpus:
     _refuse_duplicated_native_scopes(units, bindings, gaps, where)
     return Corpus(
         profiles, events, units, bindings, gaps, books, policies, cascades,
-        default_profile,
+        default_profile, _load_orientation_contexts(where, books),
+        _load_orientation_subject_labels(where, set(events) | set(units)),
     )
 
 
@@ -3830,6 +3889,7 @@ def audit(root: Path | None = None, repo: Path | None = None) -> list[str]:
         *(("unit", unit.id, unit.claims) for unit in corpus.units.values()),
     ]
     source_holders: list[tuple[str, str, tuple[str, ...]]] = [
+        *(("orientation", context.label, context.sources) for context in corpus.orientation_contexts),
         *(
             (kind, identifier, claim.sources)
             for kind, identifier, claims in holders
@@ -3880,6 +3940,7 @@ def audit(root: Path | None = None, repo: Path | None = None) -> list[str]:
 
     counts = verse_counts()
     for kind, identifier, scope in (
+        *(("orientation", context.label, context.scope) for context in corpus.orientation_contexts),
         *(("unit", unit.id, unit.scope) for unit in corpus.units.values()),
         *(
             ("binding", f"{binding.relation} -> {binding.event}", binding.scope)

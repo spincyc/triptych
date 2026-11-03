@@ -76,9 +76,11 @@ page 2; and The Propers: Themes and Movement on pages 3–4. Developed commentar
 begins on page 5 and interleaves alternatives at their points of comparison.
 Follow the presentation contract and canonical chronology requirements in the
 owning profile; a print export counts terminal apparatus within the page limits. The new
-chronology presentation is `orientation-v2`: generated passage/subject/date
-rows with concise sourced place descriptions and complete evidence retained in
-the historical appendix. It replaces the legacy exhaustive dossier display.
+chronology presentation is `orientation-v3`: a complete provider-neutral
+Passage/Context/Date table generated from the shared typed corpus, including
+sourced episode descriptions, explicit Psalm numbering and every date alternative.
+Import its complete generated file in both study and concise chronology components.
+Retain fuller geographic context and evidence in the historical appendix.
 The homily speaks one intelligible exegetical argument to an adult parish assembly,
 unless `ARGS.audience` names another audience, ordinarily for 10–12 minutes.
 It is finished prose, not an outline or advice to

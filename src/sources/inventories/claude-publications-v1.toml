@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-11-02"
+audited_on = "2026-11-03"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 64
-source_surface_file_count = 2220
-snapshot = "sha256:6b2ca948adbed4b52fc47ac4cde7a71b3c90f1e48972041050c9c6dfc44ba493"
+source_surface_file_count = 2223
+snapshot = "sha256:1d0f6d7b139b1edf21e163d2be171d44bc654e94f6952efae2e2efcf2f18ff70"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -8813,7 +8813,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/proper-components.toml"
-sha256 = "e3b55c78d6e1a9b8f6ddac810cfaa4e9db6b20b1e22c898b3e6d6cf274c44619"
+sha256 = "1ee84a5684c04355a5c87dc5ae5173796ebb2a03a3a33182aa7c1040424148eb"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
@@ -8831,19 +8831,25 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/publication.toml"
-sha256 = "6e06d1fb1fe3284cbda77e4939298a1c72182c0df3042505498073174595bb87"
+sha256 = "d155b1649fcf13c2c1cbfcf2e5a1afa1fd319192b92d0387aa99d556efeab221"
 kind = "publication-contract"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology-annotations.tex"
-sha256 = "af2c35d8036178cb960e10ecd6b0aa4257bda8546627fad01626cde3d19b99ac"
+sha256 = "6bae56fa1af83c44a6fa01dee707343f8b73c0d00df3d71f6122a011772ba413"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology-table.tex"
+sha256 = "d65678a7e5dd7a83cd199a90b4114297ee5509356ddfe0fb909f77dc655a3689"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology.toml"
-sha256 = "27873806725ed5b4bc8b87f199400f654b42689ec1a4afb95c5e8e94919d50cb"
+sha256 = "144544a0893a38c2d1ff4d2c22c566b2c18400fa9cfe6e69d24a3f5437055906"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
@@ -8927,7 +8933,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/80-date-location.tex"
-sha256 = "1a6e0377bff49898d5099cb2247d2f85b558fc7b2b0383126f02e1a98961c951"
+sha256 = "05ff7ce37a15a7cd80f4e565482a7beb5eeb2d6ce584076b28c9a2864007e0a7"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
@@ -8951,7 +8957,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/03-date-location.tex"
-sha256 = "887520fa526acdeafbc51e3a958f0cd2dd14e91f71f6a6deb7e8cef282603104"
+sha256 = "b0df63237079cf18b8665e9fa48ce1f1c001ea9641cc20ef47dbce136584ed04"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
@@ -9617,7 +9623,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/proper-components.toml"
-sha256 = "8d05991b37a91afb5e466a8abbeb2571fb45dd279503c564b9c377233af758a8"
+sha256 = "a46956bc5f82688bc3edd4b1f6834b598a5f699ee45bf42eb500b499cb07eb2d"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
@@ -9635,13 +9641,19 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/publication.toml"
-sha256 = "5c33971cc3b0d95dc130dba89b237d07cf424f373d7164f5aab27804361055a0"
+sha256 = "1bab9fd21133ae7e79619a5bf47920784c5b32a37db40bf3363ec84ad1a33ee1"
 kind = "publication-contract"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/chronology-annotations.tex"
-sha256 = "d396816f55517a7918ac3d74bed09420c977a11f524ec904a923668d7bbf3c51"
+sha256 = "a443cc326a1cf4cbb76e04c223bc3492aa598e4d19e900ba083bc8207abe2259"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/chronology-table.tex"
+sha256 = "3761d6baed90dd84d2ed1821fd42f89747d96caa77a5cce9a6e47c3badf608d4"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
@@ -9737,7 +9749,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/80-date-location.tex"
-sha256 = "d24752ed8971234d90e80bde986b569157e432ea7b8daa9f680b8ab7886bfd9e"
+sha256 = "a7653cff01e060a2872a70f717f802e381b44eaca19cc1f3d5a45fb4d04375df"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
@@ -9761,7 +9773,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/03-date-location.tex"
-sha256 = "0a59dda2a305b24944b4a3eb0e972b133f4460f6d85d43abf85a815be58f184b"
+sha256 = "681befdebf104656971e77a2f09857102690ce6a77f44bd5d08737e28353b0d4"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
@@ -12353,7 +12365,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/proper-components.toml"
-sha256 = "53c9adb1a52cd4dee82eb4ba5dbcf0bd7938598cddb33fd71e83945285155582"
+sha256 = "1f3242d7d5a20ae625eacb039088f416a8a866e644f193fdec85967722282fe4"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
 
@@ -12365,19 +12377,25 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/publication.toml"
-sha256 = "98da18b0152700715670d036068d22ba1afc26f91ecd568e0a8720288091bce9"
+sha256 = "e5657500b1542ce257f4beef7e80138d10c25995001e8c47dbd03c580f1c4313"
 kind = "publication-contract"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex"
-sha256 = "a74339c634bafbeff2c6e1156f4e2d66a39e88ef236dd9b0a0e8751e3863649e"
+sha256 = "fa84be76b6ebc0087011cce796fb065f1b543c0b388b0f7402d5b97c19ec3160"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-inputs.toml"
 sha256 = "74b304d2a00fe93a00d5c5fa36737eb3507d2c1e4a69a95284967b0b8f0354f1"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-table.tex"
+sha256 = "3deb85b22fd594d6390f1e1fc7b9777dc2273c602b4f03456c1bb5c3d1a9eb57"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
 
@@ -12467,7 +12485,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/80-date-location.tex"
-sha256 = "44befe8121eef843134710e5cc57cbcd70a63e397a56ccf9f98b623f7963159d"
+sha256 = "64a6335666846701e7a98c7b0223dacd777607575e2c1a101761d5c3ee63c254"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
 
@@ -12497,7 +12515,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/concise/03-date-location.tex"
-sha256 = "845c146afb7baf817142094236318550ddc8e01609e991446f93c9c26b164eb8"
+sha256 = "a2c403b17778bf57736223351e10eac7268ade7137821ea4e087423f067e84bd"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
 

@@ -1,0 +1,40 @@
+{
+  "schema": "triptych-native-runtime-cold-review/v1",
+  "date": "2026-11-03",
+  "scope": "Independent integrity and behavior review of exact source/style transport, browser cache identity, deferred verified fonts, and pristine native retries.",
+  "status": "no actionable blockers found within reviewed scope",
+  "hashes": {
+    "scripts/_native_print_bundles.py": "760c939558bf4900369062efec6dc40a6faf3ee7cb33b25720ce3c72909288f0",
+    "scripts/_native_tex_publication.py": "9f6499008f34db4aa172de4181160e40c5d1951dd266665da87940b27f72df16",
+    "src/web/browser/shared/native-tex.js": "5d884a5ab759a6fb7bb534c90a815150cffec61ffe1a02f182a89dff2eff45f3",
+    "src/common/preamble.tex": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
+    "tools/tests/test_native_print_bundles.py": "417c9a68b3d85fc5f7b824061a0518784a38d67ea00dca1dd20323cb40364c38",
+    "tools/tests/test_native_source_publication.py": "dda449c0cdd5fe052008a6249218bccf95e0e48a0c39642f848df4095a80f3e4",
+    "tools/tests/native_source_transport.mjs": "76caae974616fc37ebdb994ee3361cdb59fe7e684c21e49e39367d2e4bdb2619",
+    "tools/tests/native_tex_runtime.mjs": "124b2c1d4c187032c038dd4b3376ead327a78956d72b26528c5d99776e248bbd",
+    "tools/tests/test_native_tex_publication.py": "b763bebadbc9173fdcc28879880caebf673898ae1290aed517aa37c81d64640c"
+  },
+  "checks": {
+    "source_python_tests": 25,
+    "publication_python_tests": 31,
+    "runtime_node_tests": 53,
+    "source_node_tests_included_in_python": 6,
+    "independent_source_transport_cases": 12,
+    "real_chromium_runs": 8
+  },
+  "limits": [
+    "Representative synthetic browser probes, not whole-corpus typesetting acceptance.",
+    "Cold local transport probes are integrity checks, not physical-device performance measurements.",
+    "Unicode PDF metadata timestamps differ; exact text, fonts and all page pixels match.",
+    "Parent owns final site integration and canonical representative fidelity gates.",
+    "Shared preamble compression evidence independently checked text/font/PDF identities; all 11-page raster equality came from reviewed recorded evidence."
+  ],
+  "behavior": [
+    "The complete original package namespace and metadata remain available.",
+    "Any observed access to an omitted payload makes the attempt provisional; no PDF is accepted from it.",
+    "Missing verified font groups are fetched and a new worker starts with original source and clean auxiliary state.",
+    "After at most three provisional attempts, the fourth uses the complete original inventory.",
+    "XeTeX converter-only discovery retries the entire native chain.",
+    "Only current source/style/runtime identities permit disposable browser PDF reuse."
+  ]
+}

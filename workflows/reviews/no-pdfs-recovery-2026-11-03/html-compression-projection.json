@@ -1,0 +1,23 @@
+{
+  "schema": "triptych-html-compression-projection-review/v1",
+  "date": "2026-11-03",
+  "problem": "HTML edition selection rejected the valid native compression guard in the shared preamble.",
+  "scope": "Only canonical src/common/preamble.tex may contain this content-free conditional: a literal pdfcompresslevel assignment from 0 through 9. All other conditional flags retain their existing policy.",
+  "hashes": {
+    "scripts/_web_print_publication.py": "3db2e545ce2c5817f237425630e8e736e32d34289d4f40b27033e6444e6630b4",
+    "tools/tests/test_web_print_publication.py": "ff287b91dedaea2523d49fd9761eef0dbaf5aa23ce5b9fa2971bba1530e50918"
+  },
+  "checks": {
+    "author_focused_tests": 75,
+    "independent_focused_tests": 21,
+    "actual_cold_products": [
+      "gpt/articles/faith/catholic-doctrinal-authority",
+      "gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king: synthesis",
+      "gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary: sacristan"
+    ]
+  },
+  "independent_review": "pass",
+  "source_boundary": "Raw preamble and selected-source hashes remain recorded. Document-level macro shadowing, unknown conditional rights definitions, prose, else branches, nesting, dynamic values and imports refuse.",
+  "native_source_and_runtime_changed": false,
+  "limit": "Complete browser-product recording and site verification are separate integration gates."
+}

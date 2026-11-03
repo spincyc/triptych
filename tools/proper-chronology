@@ -335,12 +335,26 @@ def annotations(arguments: argparse.Namespace) -> dict[str, object]:
             payload["output"] = _wiring.render_annotations_text(found)
         elif output_format == "tex":
             payload["output"] = _wiring.render_annotations_tex(found)
+        elif output_format == "table-tex":
+            payload["output"] = _wiring.render_orientation_table(found)
         return payload
 
     rendered = _wiring.render_annotations_tex(found)
     path = _wiring.annotations_path(_leaf(arguments))
     root = Path(arguments.root).resolve() if arguments.root else ROOT
     shown = path.relative_to(root)
+    table_changed = False
+    if found.presentation == _wiring.ORIENTATION_V3:
+        table_path = _leaf(arguments) / _wiring.ORIENTATION_TABLE_RECORD
+        table = _wiring.render_orientation_table(found)
+        if arguments.check:
+            if not table_path.is_file() or table_path.read_text(encoding="utf-8") != table:
+                raise ValueError(f"{table_path.relative_to(root)} is not the current shared chronology table; regenerate with --write")
+        else:
+            table_path.parent.mkdir(parents=True, exist_ok=True)
+            if not table_path.is_file() or table_path.read_text(encoding="utf-8") != table:
+                table_path.write_text(table, encoding="utf-8")
+                table_changed = True
     if arguments.check:
         if not path.is_file():
             raise ValueError(
@@ -357,7 +371,7 @@ def annotations(arguments: argparse.Namespace) -> dict[str, object]:
         return payload
 
     path.parent.mkdir(parents=True, exist_ok=True)
-    changed = not path.is_file() or path.read_text(encoding="utf-8") != rendered
+    changed = table_changed or not path.is_file() or path.read_text(encoding="utf-8") != rendered
     if changed:
         path.write_text(rendered, encoding="utf-8")
     payload["written"] = str(shown)
@@ -508,7 +522,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     annotation_writer.add_argument(
         "--format",
-        choices=("text", "json", "tex"),
+        choices=("text", "json", "tex", "table-tex"),
         help="projection format (default: text; write/check imply tex)",
     )
     annotation_action = annotation_writer.add_mutually_exclusive_group()

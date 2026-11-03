@@ -14,6 +14,7 @@ import os
 from pathlib import Path, PurePosixPath
 import posixpath
 import re
+import zlib
 from urllib.parse import urlsplit, urlunsplit
 
 import _browser_products as core
@@ -98,10 +99,11 @@ def _part_page(descriptor, part, source_paths):
 
 
 class _Images(HTMLParser):
-    """Replace only declared IMG source attributes, retaining source text."""
-    def __init__(self, fragment, replacements):
+    """Project declared image routes and verified geometry, retaining source text."""
+    def __init__(self, fragment, replacements, dimensions=None):
         super().__init__(convert_charrefs=False)
         self.fragment, self.replacements, self.edits, self.seen = fragment, replacements, [], set()
+        self.dimensions = dimensions or {}
         self.lines = [0]
         self.lines.extend(match.end() for match in re.finditer("\n", fragment))
         self.feed(fragment)
@@ -121,6 +123,13 @@ class _Images(HTMLParser):
         start = self.lines[row - 1] + column
         self.edits.append((start + match.start(2), start + match.end(2),
                            html.escape(self.replacements[key], quote=True)))
+        # Reserve the intrinsic aspect ratio before deferring a screen image.
+        # Leave authored geometry/loading alone; aliases retain these additions.
+        if key in self.dimensions and not {"width", "height", "loading"}.intersection(attrs):
+            width, height = self.dimensions[key]
+            end = len(raw) - (2 if raw.endswith("/>") else 1)
+            self.edits.append((start + end, start + end,
+                               f' width="{width}" height="{height}" loading="lazy"'))
         self.seen.add(key)
 
     handle_startendtag = handle_starttag
@@ -202,8 +211,17 @@ def _site_anchors(root, site_routes, source_pages):
     return anchors
 
 
+def _png_dimensions(body):
+    """Read a valid PNG IHDR from already hash-verified illustration bytes."""
+    if (len(body) < 33 or body[:16] != b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR"
+            or zlib.crc32(body[12:29]) != int.from_bytes(body[29:33], "big")):
+        return None
+    width, height = (int.from_bytes(body[offset:offset + 4], "big") for offset in (16, 20))
+    return (width, height) if 0 < width < 2**31 and 0 < height < 2**31 else None
+
+
 def _asset_envelopes(root, data_root, index, canonical_asset_routes):
-    assets, routes, fonts, source_paths = {}, {}, [], set()
+    assets, routes, fonts, source_paths, dimensions = {}, {}, [], set(), {}
     for row in index["assets"]:
         record = read_asset(data_root, row)
         declared = record["asset"]
@@ -222,6 +240,10 @@ def _asset_envelopes(root, data_root, index, canonical_asset_routes):
         routes[row["id"]] = route
         asset = {**declared, **payload, "owners": set()}
         assets[route] = asset
+        if asset["role"] == "illustration" and asset["mime"] == "image/png":
+            size = _png_dimensions(body)
+            if size is not None:
+                dimensions[route] = size
         if asset["role"] == "font":
             fonts.append(asset)
     for font in fonts:
@@ -237,7 +259,7 @@ def _asset_envelopes(root, data_root, index, canonical_asset_routes):
     need(len(fonts) == 9 and len(base_fonts) == 8 and len(marks) == 1 and
          marks[0].get("unicode_range") == "U+211F,U+2123,U+21A9,U+2610,U+2720",
          "complete print editions require eight Libertinus faces and the exact source-mark supplement")
-    return assets, routes, fonts, source_paths
+    return assets, routes, fonts, source_paths, dimensions
 
 
 def catalog(root, included, *, browser_data_root, source_pages, site_routes=None, canonical_asset_routes=None,
@@ -276,7 +298,7 @@ def catalog(root, included, *, browser_data_root, source_pages, site_routes=None
             site_routes[route] = route
     for route in {*site_routes.values(), *source_pages}:
         site_routes[route] = route
-    assets, asset_routes, font_records, source_inputs = _asset_envelopes(
+    assets, asset_routes, font_records, source_inputs, image_dimensions = _asset_envelopes(
         root, data_root, index, canonical_asset_routes or {})
     source_inputs.update(index["source_paths"])
     for public, canonical, mime, role in ((CSS, SHARED + "web-print.css", "text/css", "stylesheet"),
@@ -352,7 +374,10 @@ def catalog(root, included, *, browser_data_root, source_pages, site_routes=None
         for part, expected in zip(parts, descriptor["parts"], strict=True):
             replacements = {semantic: relative_link(part["route"], asset_routes[asset_id])
                             for semantic, asset_id in product["asset_ids"].items()}
-            projection = _Images(part["html"], replacements)
+            dimensions = {semantic: image_dimensions[asset_routes[asset_id]]
+                          for semantic, asset_id in product["asset_ids"].items()
+                          if asset_routes[asset_id] in image_dimensions}
+            projection = _Images(part["html"], replacements, dimensions)
             part["html"] = projection.result()
             used_assets.update(projection.seen)
             measured = part_statistics(part["html"], selectors=tuple(expected["counts"]))

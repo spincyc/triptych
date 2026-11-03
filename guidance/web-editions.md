@@ -108,9 +108,10 @@ the PDF.
 ## Fidelity
 
 A web edition never introduces content absent from its declared source edition,
-and never silently omits content present in it. A generated PDF is optional
-and is not the fidelity oracle. Permitted differences are layout
-adaptations only: reflow, single-column collapse, table linearization,
+and never silently omits content present in it. Web conversion does not require
+a generated PDF and uses the canonical source as its fidelity reference.
+Permitted differences are layout adaptations only: reflow, single-column
+collapse, table linearization,
 substitution of a described equivalent for a purely decorative rule or
 frame. Any material omission — a dropped appendix, matrix, diagram, or
 apparatus — is declared in the record's rationale and visibly in the web
@@ -357,13 +358,15 @@ outputs have their own complete print routes. The selected source includes its
 declared body, notes, appendices, references, revision, and rights notices.
 Existing rights and hold/withdrawal rules still govern admission.
 
-The maintainer's 2026-11-03 request supersedes browser reflow as the primary
-complete-edition print format. Native WebAssembly TeX can execute on the
-static site; an explicitly configured compiler service may use the same
-native recipes. A service must remain optional unless its deployment is
-actually configured and verified. Neither a historical PDF nor a successful
-HTML print dialog substitutes for current native generation. Show progress
-and errors; never silently change the typesetting engine or fonts.
+The maintainer's 2026-11-03 clarification requires generation on demand from
+canonical sections and current shared styles, without a maintained PDF corpus
+in Git or elsewhere. The current implementation uses native WebAssembly TeX in
+the browser. Source and style changes do not require a corpus PDF rebuild before
+deployment. Disposable browser results may be reused only under the current
+input identities. Neither a historical PDF nor a successful HTML print dialog
+substitutes for current native generation. Show progress and errors; never
+silently change the typesetting engine or fonts. The
+[repository contract](repository.md) owns this output and cache boundary.
 
 The print adapters and independent source-coverage checks are described in
 [document schemas](document-schemas.md); the private preparation family and hot
@@ -371,9 +374,10 @@ assembly are governed by [web data](web-data.md#complete-browser-print-products)
 `src/web/browser/shared/web-print.js` validates finite per-type markup,
 source/selection identities, ordered units, bounded parts, assets, fonts, and
 the exact current `src/web/browser/shared/web-print.css` for the HTML projection.
-Missing or changed content refuses preparation. Native browser Print and Ctrl+P
-show a preparation notice instead of presenting a partial reviewed reader as a
-complete print edition.
+Missing or changed content refuses HTML preparation. The native TeX generation
+action uses its separate exact source bundle. Browser Print and Ctrl+P show a
+notice directing readers to that action instead of presenting a partial
+reviewed reader as a complete print edition.
 
 Browser pagination does not establish a profile's fixed-page, paired-page, or
 physical duplex contract, even when card faces and source order are retained.

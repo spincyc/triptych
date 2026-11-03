@@ -1344,16 +1344,16 @@ The rule above binds the 1962 production workflow from `proper` v17. The
 postconciliar adapter uses the owning edition's reviewed appointment input;
 it does not import the 1962 calendar, source owner, or research judgments.
 
-**Compact orientation rows (2026-10-12; v2 2026-10-16).** A schema-2 study
+**Compact orientation rows (2026-10-12; v2 2026-10-16; v3 2026-11-03).** A schema-2 study
 opts into a compact presentation in `proper-components.toml`. New runs declare
-`chronology_presentation = "orientation-v2"`; `proper-study` v12 requires that
-value from study preflight onward (`--require-orientation-v2`).
-`orientation-v1`, which v10 and v11 required, stays valid only for the leaves
-published under it, and regenerates their bytes unchanged. During research,
+`chronology_presentation = "orientation-v3"`; the current `proper-study` requires
+that value from study preflight onward (`--require-orientation-v3`).
+Published `orientation-v1` and `orientation-v2` leaves remain valid and regenerate
+their own bytes until explicitly migrated. During research,
 before that manifest exists, generate with:
 
 ```sh
-tools/tpt proper-chronology annotations --document <document> --provider <provider> --presentation orientation-v2 --write
+tools/tpt proper-chronology annotations --document <document> --provider <provider> --presentation orientation-v3 --write
 ```
 
 The explicit option must agree with a declaration once present. The same
@@ -1366,7 +1366,37 @@ presentation header and recomputes the entire orientation artifact from the
 corpus. That header grants no authority to its carried dates. Once the manifest
 exists its declaration governs; study preflight requires the schema-2 opt-in.
 
-Place every generated row once inside `chronologyorientationtable`:
+**The complete shared table (v3).** The same command writes and checks
+`research/chronology-table.tex` as well as the sealed annotations. Import that
+complete file once in each research and concise chronology component; declare
+both generated files among the component's references. Its `chronologysharedtable`
+has **Passage**, **Context**, and **Date** columns. All cells, rows and their order
+are generated. Identical appointments and evidence selections produce identical
+tables across providers; differing appointments or profiles are not harmonized.
+Preflight refuses altered, reordered, omitted, additional or provider-authored
+rows. `--format table-tex` previews the complete table without writing it.
+
+The passage display abbreviates book names from canonical tokens and names
+each Psalm's own numbering and its counterpart explicitly (`Vg.` / `Heb.`),
+with a legend. The corpus's `orientation.yaml` owns short subject labels and
+sourced, exactly scoped descriptions of episodes whose dates remain unresolved.
+Descriptions are not chronology assertions: Jesus telling a parable is the
+narrated episode, not a date assigned to its fictional characters. Different
+episodes do not merge just because both dates are unresolved. New labels need
+source review; they may never supply dates or overwrite the original claim
+labels. `_chronology.py` alone reads and validates this metadata. Source seals
+include the descriptive sources actually used by a projection.
+
+Retain material geographic and source qualifications in the research historical
+appendix and point there from the concise page. A site already named by a shared
+temporal subject or episode remains in its Context cell. Do not force a guessed
+place into every row or copy a writer's location into a narrated-event row.
+Migration preserves existing source-owned setting prose beside the research
+table; it does not grant that prose a new historical review. Classical eras,
+approximation, disputes, A.M. attributions and all alternatives remain visible;
+typographic range dashes and nonbreaking era/year spaces change no dates.
+
+**Historical row interface (v1/v2).** Place every generated row once inside `chronologyorientationtable`:
 `\chronologyorientationrow{row-key}{short sourced place or context phrase}`.
 The generator owns the entire three-column row: **Passage**, **Occurrence and
 place**, **Date**. The author supplies only the short place/context phrase,

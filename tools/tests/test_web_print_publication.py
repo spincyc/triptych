@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import hashlib
 import re
 import sys
 import tempfile
@@ -95,6 +96,50 @@ class PublicationTests(unittest.TestCase):
         self.assertNotIn("Research", selected)
         with self.assertRaises(printing.Refused):
             printing.select_branches(r"\ifdefined\UnknownFlag Amen.\fi", "main", self.library)
+
+    def test_pdf_compression_guard_projects_only_its_literal_layout_setting(self):
+        for level in (0, 1, 9):
+            source = "Before.\n" + r"\ifdefined\pdfcompresslevel" + "\n" + \
+                r"\pdfcompresslevel=" + str(level) + " % layout only\n" + r"\fi" + "\nAfter."
+            self.assertEqual(printing.select_branches(source, "main", self.library, allow_pdf_compression=True), "Before.\n\nAfter.")
+        for body in (r"\pdfcompresslevel=10", r"\pdfcompresslevel=-1", r"\pdfcompresslevel=\ChosenLevel",
+                     r"\pdfcompresslevel=1 Visible content.", r"\pdfcompresslevel=1\else Other content.",
+                     r"\pdfcompresslevel=1\else", r"\ifdefined\TriptychPrintEdition\pdfcompresslevel=1\fi",
+                     r"\pdfcompresslevel=1\input{hidden}"):
+            with self.subTest(body=body), self.assertRaisesRegex(printing.Refused, "PDF compression"):
+                printing.select_branches(r"\ifdefined\pdfcompresslevel " + body + r"\fi", "main", self.library, allow_pdf_compression=True)
+
+    def test_pdf_compression_guard_is_not_a_general_edition_flag(self):
+        with self.assertRaisesRegex(printing.Refused, "unsupported conditional flag"):
+            printing.select_branches(r"\ifdefined\pdfcompresslevel\pdfcompresslevel=1\fi", "main", self.library)
+        with self.assertRaisesRegex(printing.Refused, "unsupported conditional flag"):
+            printing.select_branches(r"\ifdefined\UnknownFlag Hidden rights.\fi", "main", self.library, allow_pdf_compression=True)
+
+    def test_current_preamble_compression_remains_hashed_in_selected_source(self):
+        from _print_document import publication_recipe
+        recipe = publication_recipe("gpt", "articles/faith/catholic-doctrinal-authority", root=ROOT)
+        selected = printing.selected_source(ROOT, recipe, self.library)
+        source = ROOT / "src/common/preamble.tex"
+        event = next(row for row in selected["selection"]["ordered_inputs"] if row["path"] == "src/common/preamble.tex")
+        self.assertEqual(event["sha256"], hashlib.sha256(source.read_text().encode()).hexdigest())
+        projected = printing.select_branches(source.read_text(), recipe["edition"], self.library, allow_pdf_compression=True)
+        self.assertEqual(event["selected_sha256"], hashlib.sha256(projected.encode()).hexdigest())
+        self.assertNotIn(r"\pdfcompresslevel", selected["source"])
+        self.assertIn(r"\pdfcompresslevel=1", source.read_text())
+
+    def test_source_walk_keeps_document_guards_and_unknown_preamble_guards_closed(self):
+        from _print_document import publication_recipe
+        recipe = publication_recipe("gpt", "articles/faith/catholic-doctrinal-authority", root=ROOT)
+        read = Path.read_text
+        for target, inserted in (
+            (ROOT / recipe["entrypoint"], r"\def\pdfcompresslevel{Visible}\ifdefined\pdfcompresslevel\pdfcompresslevel=1\fi"),
+            (ROOT / "src/common/preamble.tex", r"\ifdefined\UnknownFlag\newcommand{\HiddenRights}{Hidden notice.}\fi"),
+        ):
+            def changed(path, *args, **kwargs):
+                return (inserted if path == target else "") + read(path, *args, **kwargs)
+            with self.subTest(target=target), patch.object(Path, "read_text", changed):
+                with self.assertRaisesRegex(printing.Refused, "unsupported conditional flag"):
+                    printing.selected_source(ROOT, recipe, self.library)
 
     def test_scoped_heading_alias_does_not_escape_its_group(self):
         body = r"\begingroup\let\section\subsection\section{Inner}\endgroup\section{Outer}"

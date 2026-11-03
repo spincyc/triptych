@@ -18,7 +18,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 
 class MakefileBuildGraphTests(unittest.TestCase):
     def setUp(self) -> None:
-        scratch = REPOSITORY_ROOT / ".scratch/next-product-ci"
+        scratch = REPOSITORY_ROOT / ".scratch/prepared-publisher/make-tests"
         scratch.mkdir(parents=True, exist_ok=True)
         self.temporary_directory = tempfile.TemporaryDirectory(prefix="makefile-", dir=scratch)
         self.root = Path(self.temporary_directory.name)
@@ -424,6 +424,27 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         inventory.parent.mkdir(parents=True, exist_ok=True)
         inventory.write_text("")
         self.run_make("check-sources")
+        self.assertEqual(self.lines(self.source_library_log), ["validate"])
+        self.assertEqual(self.lines(self.source_reader_log), [])
+        self.assertEqual(self.lines(self.source_inventory_log), [
+            "check --review src/sources/inventories/classification-review-v1.toml "
+            "src/sources/inventories/publications-v1.toml"])
+        self.assertEqual(self.lines(self.source_family_migration_log), ["check"])
+        self.assertEqual(self.lines(self.commentary_work_index_log),
+                         ["containment", "standing", "formulary", "build-corpus --check"])
+        self.assertEqual(self.lines(self.source_gate_order_log), ["library", "inventory", "family"])
+        self.assertEqual(self.lines(self.harvest_log), ["promote --check --json"])
+        self.assertEqual(self.lines(self.commentary_corpus_log),
+                         ["test_harvest_work_identity", "test_commentary_mass_inheritance"])
+        self.assertEqual(self.lines(self.curriculum_rights_log), [])
+        self.assertEqual(self.lines(self.latex_log), [])
+        self.assertEqual(self.lines(self.check_log), [])
+
+    def test_explicit_research_gate_retains_full_evidence_and_projection_audits(self) -> None:
+        inventory = self.root / "src/sources/inventories/publications-v1.toml"
+        inventory.parent.mkdir(parents=True, exist_ok=True)
+        inventory.write_text("")
+        self.run_make("check-research-sources")
         self.assertEqual(self.lines(self.curriculum_rights_log), ["check"] * 5)
         self.assertEqual(self.lines(self.source_library_log),
                          ["validate", "validate --full-evidence", "validate"])

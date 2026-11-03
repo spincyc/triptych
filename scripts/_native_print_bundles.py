@@ -8,6 +8,8 @@ The separately delivered runtime owns the engine, packages, formats and fonts.
 from __future__ import annotations
 
 import base64
+from collections import Counter, defaultdict
+import gzip
 import hashlib
 import json
 from pathlib import Path, PurePosixPath
@@ -26,6 +28,9 @@ _RENDER_SUFFIXES = {".tex", ".sty", ".cls", ".bib", ".bst", ".png", ".jpg", ".jp
 _TEXT_SUFFIXES = {".tex", ".sty", ".cls", ".bib", ".bst"}
 _DICTIONARY = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
 _REVISION = re.compile(r"[0-9a-f]{40}\Z")
+_SOURCE_PACK_FILES = 32
+_SOURCE_PACK_BYTES = 8 * 1024 * 1024
+_RENDER_FIELDS = ("document", "output_id", "edition", "engine", "format", "entrypoint", "cwd", "environment", "options")
 
 
 class BundleError(ValueError):
@@ -119,17 +124,28 @@ def file_bytes(row: dict) -> bytes:
     return payload
 
 
-def _externalize(bundle: dict, assets: dict[str, bytes]) -> dict:
-    """Share each native binary once without placing it in source control."""
+def render_identity(bundle: dict) -> str:
+    """Bind the exact mounted project and invocation, independently of transport."""
+    value = {key: bundle[key] for key in _RENDER_FIELDS}
+    value["files"] = [{key: row[key] for key in ("path", "bytes", "sha256")}
+                      for row in sorted(bundle["files"], key=lambda row: row["path"])]
+    return _sha(canonical(value))
+
+
+def _externalize(bundle: dict, assets: dict[str, bytes], *, shared_text=()) -> dict:
+    """Share exact artwork and repeated text; keep their canonical virtual paths."""
     files = []
+    groups = defaultdict(list)
     for row in bundle["files"]:
-        if row["encoding"] != "base64":
+        shared = (row["encoding"] == "utf8" and row["sha256"] in shared_text and row["bytes"] > 0
+                  and PurePosixPath(row["path"]).suffix.lower() in _TEXT_SUFFIXES)
+        if row["encoding"] != "base64" and not shared:
             files.append(row)
             continue
         payload = file_bytes(row)
         suffix = PurePosixPath(row["path"]).suffix.lower()
         _need(suffix in _RENDER_SUFFIXES, "unsupported external native artwork format")
-        name = row["sha256"] + suffix
+        name = row["sha256"] + (".bin" if shared else suffix)
         route = "native-tex/assets/" + name
         if route in assets:
             _need(assets[route] == payload, "conflicting native artwork content identity")
@@ -137,8 +153,42 @@ def _externalize(bundle: dict, assets: dict[str, bytes]) -> dict:
             assets[route] = payload
         files.append({"path": row["path"], "encoding": "url", "href": "../assets/" + name,
                       "bytes": row["bytes"], "sha256": row["sha256"]})
+        if shared:
+            groups[str(PurePosixPath(row["path"]).parent)].append((row, payload))
     result = {key: value for key, value in bundle.items() if key != "content_sha256"}
     result["files"] = files
+    packs, packed = [], set()
+    for directory in sorted(groups):
+        rows = sorted(groups[directory], key=lambda pair: pair[0]["path"])
+        # Fixed canonical-path groups avoid reshuffling later packs when a
+        # stylesheet changes length or content hash. Oversize groups use URLs.
+        for start in range(0, len(rows), _SOURCE_PACK_FILES):
+            members, chunks, offset = [], [], 0
+            selected = set()
+            for row, payload in rows[start:start + _SOURCE_PACK_FILES]:
+                if row["sha256"] in packed or row["sha256"] in selected:
+                    continue
+                selected.add(row["sha256"])
+                members.append({"sha256": row["sha256"], "bytes": len(payload), "offset": offset})
+                chunks.append(payload)
+                offset += len(payload)
+            if not members or offset > _SOURCE_PACK_BYTES:
+                continue
+            compressed = bytearray(gzip.compress(b"".join(chunks), compresslevel=9, mtime=0))
+            compressed[9] = 255  # Portable gzip OS marker, independent of the host.
+            payload = bytes(compressed)
+            if len(payload) >= offset:
+                continue
+            digest = _sha(payload)
+            route = "native-tex/source-packs/" + digest + ".bin"
+            _need(route not in assets or assets[route] == payload, "conflicting native source pack")
+            assets[route] = payload
+            packs.append({"href": "../source-packs/" + digest + ".bin", "sha256": digest,
+                          "bytes": len(payload), "compression": "gzip", "expanded_bytes": offset,
+                          "files": members})
+            packed.update(selected)
+    if packs:
+        result["sourcePacks"] = packs
     result["content_sha256"] = _sha(canonical(result))
     validate_bundle(result)
     return result
@@ -385,6 +435,7 @@ def prepare_bundle(output_id: str, *, root: Path = ROOT, scratch_root: Path | No
         _need(inputs == _fingerprints(root, dependencies, fingerprint_cache), "canonical native print inputs changed during preparation")
         _need(guarded_inputs == _fingerprints(root, (row["path"] for row in guarded_inputs), fingerprint_cache),
               "canonical native print inputs changed during selection")
+    bundle["render_sha256"] = render_identity(bundle)
     bundle["content_sha256"] = _sha(canonical(bundle))
     validate_bundle(bundle)
     return _externalize(bundle, external_assets) if external_assets is not None else bundle
@@ -413,8 +464,9 @@ def validate_bundle(bundle: dict) -> dict:
                   "invalid native artwork delivery record")
             _relative(row["path"])
             suffix = PurePosixPath(row["path"]).suffix.lower()
+            suffixes = {suffix, ".bin"} if suffix in _TEXT_SUFFIXES else {suffix}
             _need(suffix in _RENDER_SUFFIXES
-                  and row["href"] == "../assets/" + row["sha256"] + suffix,
+                  and row["href"] in {"../assets/" + row["sha256"] + ending for ending in suffixes},
                   "native artwork delivery must use its exact content-addressed route")
         else:
             file_bytes(row)
@@ -423,6 +475,34 @@ def validate_bundle(bundle: dict) -> dict:
           and bundle["entrypoint"] in paths, "invalid native source file order or entrypoint")
     _need(bundle.get("options") == {"shell_escape": False, "minimum_passes": 2, "max_passes": 8,
                                     "settle_auxiliary_files": True}, "unsupported native compilation options")
+    if "render_sha256" in bundle:
+        _need(bundle["render_sha256"] == render_identity(bundle), "native source render identity mismatch")
+    if "sourcePacks" in bundle:
+        packs = bundle["sourcePacks"]
+        expected = {row["sha256"]: row["bytes"] for row in records
+                    if row["encoding"] == "url" and PurePosixPath(row["path"]).suffix.lower() in _TEXT_SUFFIXES}
+        _need(isinstance(packs, list) and len(packs) <= len(expected), "invalid native source packs")
+        packed = set()
+        for pack in packs:
+            _need(isinstance(pack, dict) and set(pack) == {"href", "sha256", "bytes", "compression", "expanded_bytes", "files"}
+                  and isinstance(pack["sha256"], str) and re.fullmatch(r"[0-9a-f]{64}", pack["sha256"])
+                  and pack["href"] == "../source-packs/" + pack["sha256"] + ".bin"
+                  and type(pack["bytes"]) is int and pack["bytes"] > 0
+                  and pack["compression"] == "gzip" and type(pack["expanded_bytes"]) is int
+                  and 0 < pack["expanded_bytes"] <= _SOURCE_PACK_BYTES
+                  and isinstance(pack["files"], list) and 0 < len(pack["files"]) <= _SOURCE_PACK_FILES,
+                  "invalid native source pack")
+            offset = 0
+            for member in pack["files"]:
+                _need(isinstance(member, dict) and set(member) == {"sha256", "bytes", "offset"}
+                      and isinstance(member["sha256"], str) and member["sha256"] in expected
+                      and member["sha256"] not in packed and type(member["bytes"]) is int
+                      and member["bytes"] == expected[member["sha256"]]
+                      and type(member["offset"]) is int and member["offset"] == offset,
+                      "invalid native source pack inventory")
+                packed.add(member["sha256"])
+                offset += member["bytes"]
+            _need(offset == pack["expanded_bytes"], "incomplete native source pack inventory")
     return bundle
 
 
@@ -444,17 +524,25 @@ def prepare_catalog(root: Path = ROOT, *, scratch_root: Path | None = None,
     recipes = [papal.get(identity) or printing.select(documents[identity]["document"],
                documents[identity]["edition"], root=root) for identity in wanted]
     checked = printing.check_many(recipes, root=root)
-    routes, assets, source_paths, cache = {}, {}, set(), {}
+    routes, assets, source_paths, cache, prepared = {}, {}, set(), {}, {}
     for identity, recipe in zip(wanted, checked, strict=True):
         bundle = prepare_bundle(identity, root=root, scratch_root=scratch_root, documents=documents,
                                 revision=revision, recipe=recipe, fingerprint_cache=cache,
                                 external_assets=assets, _checked=True)
+        prepared[identity] = bundle
+        source_paths.update(row["path"] for row in bundle["source_inputs"])
+    occurrences = Counter(row["sha256"] for bundle in prepared.values() for row in bundle["files"]
+                          if row["encoding"] == "utf8" and row["bytes"] > 0
+                          and PurePosixPath(row["path"]).suffix.lower() in _TEXT_SUFFIXES)
+    shared_text = {digest for digest, count in occurrences.items() if count > 1}
+    for identity in wanted:
+        original = prepared.pop(identity)
+        bundle = _externalize(original, assets, shared_text=shared_text)
         payload = canonical(bundle) + b"\n"
         route = SOURCE_ROUTE + "/" + bundle["content_sha256"] + ".json"
         _need(route not in assets, "duplicate native source bundle transport")
         assets[route] = payload
         routes[identity] = {"route": route, "bytes": len(payload), "sha256": _sha(payload)}
-        source_paths.update(row["path"] for row in bundle["source_inputs"])
     return {"schema": CATALOG_SCHEMA, "source_revision": revision, "bundles": routes,
             "assets": assets, "source_paths": sorted(source_paths)}
 

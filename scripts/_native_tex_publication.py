@@ -7,7 +7,9 @@ current public admission set and re-derives the join during verification.
 """
 from __future__ import annotations
 
+import gzip
 import hashlib
+import io
 import json
 from pathlib import Path, PurePosixPath
 import posixpath
@@ -25,6 +27,10 @@ INPUT_PATHS = (
 )
 _SHA = re.compile(r"[0-9a-f]{64}\Z")
 _REVISION = re.compile(r"[0-9a-f]{40}\Z")
+_TEX_PACK_BYTES = 8 * 1024 * 1024
+_MAX_RUNTIME_RESOURCE = 256 * 1024 * 1024
+_COMPRESS_MIN_BYTES = 256 * 1024
+_COMPRESS_MIN_SAVING = 32 * 1024
 
 
 class NativeTeXPublicationError(ValueError):
@@ -88,6 +94,7 @@ def _runtime_records(value, found=None):
         for item in value:
             _runtime_records(item, found)
     elif isinstance(value, dict):
+        _need("transport" not in value, "native TeX transports must be derived by the publisher")
         if "url" in value:
             route = _route(value["url"])
             _need(isinstance(value.get("sha256"), str) and _SHA.fullmatch(value["sha256"])
@@ -103,11 +110,182 @@ def _runtime_records(value, found=None):
     return found
 
 
+def _gzip_runtime_payloads(group: list, runtime_assets: dict) -> tuple[dict, list, int]:
+    files, expanded_bytes = [], 0
+    buffer = io.BytesIO()
+    # GzipFile fixes both the timestamp and the platform-dependent header.
+    with gzip.GzipFile(fileobj=buffer, filename="", mode="wb", mtime=0, compresslevel=6) as packed:
+        for (sha256, byte_count), route in group:
+            path = Path(runtime_assets[route]["path"])
+            _need(path.is_file() and not path.is_symlink(),
+                  "native runtime payload is redirected or missing")
+            digest, received = hashlib.sha256(), 0
+            with path.open("rb") as source:
+                while chunk := source.read(1024 * 1024):
+                    received += len(chunk)
+                    _need(received <= byte_count, "native runtime payload changed while packing: " + route)
+                    digest.update(chunk)
+                    packed.write(chunk)
+            _need(received == byte_count and digest.hexdigest() == sha256,
+                  "native runtime payload changed while packing: " + route)
+            files.append({"sha256": sha256, "bytes": byte_count, "offset": expanded_bytes})
+            expanded_bytes += byte_count
+    asset = _asset(buffer.getvalue(), kind="runtime")
+    return asset, files, expanded_bytes
+
+
+def _pack_tex_files(tex_files: list, runtime_assets: dict) -> tuple[list, dict]:
+    """Package exact runtime payloads once; lookup aliases keep their own registry rows."""
+    _need(isinstance(tex_files, list) and len(tex_files) <= 50000,
+          "invalid native TeX package inventory")
+    payloads = {}
+    deferred = {}
+    font_groups = {}
+    for row in tex_files:
+        _need(isinstance(row, dict), "invalid native TeX package record")
+        route = _route(row.get("url"))
+        asset = runtime_assets.get(route)
+        _need(asset is not None and asset.get("kind") == "runtime" and "path" in asset
+              and all(row.get(field) == asset[field] for field in ("sha256", "bytes"))
+              and type(row.get("bytes")) is int and 0 < row["bytes"] <= _MAX_RUNTIME_RESOURCE,
+              "native TeX package is not an exact admitted runtime payload: " + route)
+        key = row["sha256"], row["bytes"]
+        payloads[key] = min(route, payloads.get(key, route))
+        # This changes transport scheduling only. The browser mounts every
+        # lookup and must restart with verified bytes if it probes an omitted
+        # font; these suffixes are never an admission or dependency allowlist.
+        heavy_font = row.get("format") in {32, 36, 47} or PurePosixPath(row.get("name", "")).suffix.lower() in {
+            ".pfb", ".otf", ".ttf", ".ttc",
+        }
+        deferred[key] = deferred.get(key, True) and heavy_font
+        if heavy_font:
+            suffix = PurePosixPath(row.get("name", "")).suffix.lower()
+            suffix = suffix if suffix in {".pfb", ".otf", ".ttf", ".ttc"} else {
+                32: ".pfb", 36: ".ttf", 47: ".otf",
+            }[row["format"]]
+            group = suffix, row.get("name", "")[:2].casefold()
+            font_groups[key] = min(group, font_groups.get(key, group))
+
+    groups, current, size = [], [], 0
+    for identity, route in sorted(payloads.items()):
+        if deferred[identity]:
+            continue
+        if current and size + identity[1] > _TEX_PACK_BYTES:
+            groups.append((current, False))
+            current, size = [], 0
+        current.append((identity, route))
+        size += identity[1]
+    if current:
+        groups.append((current, False))
+    # A native failure can stop at the first needed face. Coarse, deterministic
+    # filename-prefix packs bring related faces together without guessing which
+    # fonts a document uses. The same expansion bound applies to every group.
+    for family in sorted({font_groups[key] for key in payloads if deferred[key]}):
+        current, size = [], 0
+        for identity, route in sorted(payloads.items()):
+            if not deferred[identity] or font_groups[identity] != family:
+                continue
+            if current and size + identity[1] > _TEX_PACK_BYTES:
+                groups.append((current, _digest(_json(family))))
+                current, size = [], 0
+            current.append((identity, route))
+            size += identity[1]
+        if current:
+            groups.append((current, _digest(_json(family))))
+
+    packs, assets = [], {}
+    for group, on_demand in groups:
+        asset, files, expanded_bytes = _gzip_runtime_payloads(group, runtime_assets)
+        _need(asset["bytes"] <= _MAX_RUNTIME_RESOURCE,
+              "compressed native TeX package exceeds its browser resource limit")
+        route = "native-tex/packs/" + asset["sha256"] + ".bin"
+        _need(route not in runtime_assets and route not in assets, "native TeX package route collision")
+        assets[route] = asset
+        pack = {"url": route, "sha256": asset["sha256"], "bytes": asset["bytes"],
+                "compression": "gzip", "expanded_bytes": expanded_bytes, "files": files}
+        if on_demand:
+            pack["deferred"] = True
+            pack["font_group"] = on_demand
+        packs.append(pack)
+    return packs, assets
+
+
+def _engine_transports(engines: dict, runtime_assets: dict) -> tuple[dict, dict]:
+    """Compress large raw engines while retaining their original identity and fallback."""
+    _need(isinstance(engines, dict), "invalid native TeX engine inventory")
+    result, assets, prepared = {}, {}, {}
+    for engine, resources in engines.items():
+        _need(isinstance(resources, dict), "invalid native TeX engine descriptor")
+        result[engine] = dict(resources)
+        for role in ("wasm", "icu", "format"):
+            if role not in resources:
+                continue
+            pin = resources[role]
+            _need(isinstance(pin, dict), "invalid native TeX engine resource")
+            route = _route(pin.get("url"))
+            asset = runtime_assets.get(route)
+            _need(asset is not None and asset.get("kind") == "runtime" and "path" in asset
+                  and all(pin.get(field) == asset[field] for field in ("sha256", "bytes"))
+                  and type(pin.get("bytes")) is int and 0 < pin["bytes"] <= _MAX_RUNTIME_RESOURCE,
+                  "native TeX engine is not an exact admitted runtime payload: " + route)
+            if pin["bytes"] < _COMPRESS_MIN_BYTES or route.endswith(".gz") or pin.get("compression"):
+                continue
+            # pdfTeX's .fmt has no .gz suffix, but its controller already inflates it.
+            with Path(asset["path"]).open("rb") as stream:
+                if stream.read(2) == b"\x1f\x8b":
+                    continue
+            identity = pin["sha256"], pin["bytes"]
+            if identity not in prepared:
+                packed, _, _ = _gzip_runtime_payloads([(identity, route)], runtime_assets)
+                saving = pin["bytes"] - packed["bytes"]
+                if saving < _COMPRESS_MIN_SAVING or saving * 10 < pin["bytes"]:
+                    prepared[identity] = None
+                else:
+                    target = "native-tex/transports/" + packed["sha256"] + ".bin"
+                    _need(target not in runtime_assets and target not in assets,
+                          "native TeX transport route collision")
+                    assets[target] = packed
+                    prepared[identity] = {"url": target, "sha256": packed["sha256"],
+                                          "bytes": packed["bytes"], "compression": "gzip"}
+            if prepared[identity] is not None:
+                result[engine][role] = {**pin, "transport": dict(prepared[identity])}
+    return result, assets
+
+
+def _source_pack_assets(bundle: dict, source_assets: dict) -> dict:
+    """Admit only bounded, lossless transports of this bundle's exact text."""
+    if "sourcePacks" not in bundle and "render_sha256" not in bundle:
+        return {}
+    from _native_print_bundles import BundleError, validate_bundle
+    try:
+        validate_bundle(bundle)
+    except (BundleError, KeyError, TypeError) as error:
+        raise NativeTeXPublicationError("invalid native source transport: " + str(error)) from error
+    result = {}
+    for pack in bundle.get("sourcePacks", []):
+        route = _route("native-tex/" + pack["href"][3:])
+        asset = _asset(source_assets.get(route), kind="source-pack")
+        _need(all(pack[field] == asset[field] for field in ("sha256", "bytes")),
+              "native source pack differs from its exact byte identity")
+        try:
+            with gzip.GzipFile(fileobj=io.BytesIO(asset["body"])) as stream:
+                expanded = stream.read(pack["expanded_bytes"] + 1)
+        except (OSError, EOFError, ValueError) as error:
+            raise NativeTeXPublicationError("invalid compressed native source pack") from error
+        _need(len(expanded) == pack["expanded_bytes"], "native source pack expanded size differs")
+        for member in pack["files"]:
+            payload = expanded[member["offset"]:member["offset"] + member["bytes"]]
+            _need(_digest(payload) == member["sha256"], "native source pack member differs from its source identity")
+        result[route] = asset
+    return result
+
+
 def build_catalog(root: Path, *, documents: dict, revision: str,
                   source_catalog: dict, runtime_manifest: dict,
                   runtime_paths: dict) -> dict:
     """Validate a complete join.  Arguments expose the seam for focused tests."""
     root = Path(root).resolve()
+    _need("texPacks" not in runtime_manifest, "native TeX packs must be derived by the publisher")
     # Registry URLs are relative to the site root, not this JSON's directory.
     # A relative base preserves both custom-domain and /project/ deployments.
     runtime_manifest = {**runtime_manifest, "asset_base": "../"}
@@ -164,6 +342,10 @@ def build_catalog(root: Path, *, documents: dict, revision: str,
                   "native artwork transport collision")
             declared_source_assets.add(target)
             assets[target] = artwork
+        for target, packed in _source_pack_assets(bundle, source_catalog["assets"]).items():
+            _need(target not in assets or assets[target] == packed, "native source pack transport collision")
+            declared_source_assets.add(target)
+            assets[target] = packed
         selections[identity] = {"bundle_href": route,
                                 "bundle_sha256": asset["sha256"],
                                 "bundle_bytes": asset["bytes"]}
@@ -186,6 +368,12 @@ def build_catalog(root: Path, *, documents: dict, revision: str,
               "native runtime payload differs from its pinned bytes: " + route)
         assets[route] = {"path": path, **identity, "kind": "runtime"}
 
+    packs, packed_assets = _pack_tex_files(runtime_manifest.get("texFiles", []), assets)
+    if packs:
+        runtime_manifest["texPacks"] = packs
+        assets.update(packed_assets)
+    runtime_manifest["engines"], compressed_assets = _engine_transports(runtime_manifest.get("engines"), assets)
+    assets.update(compressed_assets)
     runtime_asset = _asset(_json(runtime_manifest), kind="runtime-manifest")
     assets[RUNTIME_ROUTE] = runtime_asset
     source_paths = source_catalog.get("source_paths")

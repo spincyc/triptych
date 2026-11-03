@@ -1,0 +1,358 @@
+{
+  "schema": "triptych-native-fidelity-review/v1",
+  "purpose": "Bounded renderer fidelity on identical current canonical inputs; no maintained PDF collection or new editorial review",
+  "checked_utc": "2026-11-03T21:50:44.473938+00:00",
+  "controllers": {
+    "before.js": {
+      "sha256": "5b62d200ae7087846c558c1e94e6ea0c2a9c422a600c51334e08fb457915a193",
+      "bytes": 43480
+    },
+    "after.js": {
+      "sha256": "5d884a5ab759a6fb7bb534c90a815150cffec61ffe1a02f182a89dff2eff45f3",
+      "bytes": 55766
+    }
+  },
+  "producer_hashes": {
+    "scripts/_native_print_bundles.py": "760c939558bf4900369062efec6dc40a6faf3ee7cb33b25720ce3c72909288f0",
+    "scripts/_native_tex_publication.py": "9f6499008f34db4aa172de4181160e40c5d1951dd266665da87940b27f72df16",
+    "scripts/_native_tex_assets.py": "daf8415b3554d9b7c4d8553bfca2e69ddf75e13de532a51c0e421a83891a8dc3"
+  },
+  "runtime": {
+    "href": "native-tex/runtime.json",
+    "sha256": "e05fc8cdd4d28caac30fc1b99881d045ef62df8c00c765d11598bb47a54dd8ae",
+    "bytes": 1830585
+  },
+  "shared_preamble_sha256": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
+  "source_input_count": 1002,
+  "source_inputs_changed_after_run": [],
+  "input_receipt_sha256": "18caec631a5442ca68f9f2c6b63add499fef17a825452f54e673d03d7900b17e",
+  "representatives": [
+    {
+      "pass": true,
+      "pdf_bytes_identical": true,
+      "page_count_equal": true,
+      "text_equal": true,
+      "font_lists_equal": true,
+      "all_fonts_embedded": true,
+      "word_boxes_equal": true,
+      "all_page_pixels_equal": true,
+      "raster_check": "unnecessary: entire PDF bytes match",
+      "name": "article",
+      "id": "publication:gpt/articles/faith/catholic-doctrinal-authority",
+      "pages": 7,
+      "words": 3077,
+      "font_count": 12,
+      "before_sha256": "e77f854a5216ac541d1ef9eb0a09913b4a0cae0c201eb8b3198d3a774a456b98",
+      "after_sha256": "e77f854a5216ac541d1ef9eb0a09913b4a0cae0c201eb8b3198d3a774a456b98",
+      "text_sha256": "a2b75c4fcf0c92f568054433af8d6038b57bb9a86d3f5f77e34c605cecef8fca",
+      "source_bundle_sha256": "6db7a3169226c448b5c67422c37ae10822479b4aaac079854adab96b7eeefc49",
+      "render_sha256": "031f6039f034f899645f931d70f57d6a3193b588a735f827359808b7407eee6e"
+    },
+    {
+      "pass": true,
+      "pdf_bytes_identical": true,
+      "page_count_equal": true,
+      "text_equal": true,
+      "font_lists_equal": true,
+      "all_fonts_embedded": true,
+      "word_boxes_equal": true,
+      "all_page_pixels_equal": true,
+      "raster_check": "unnecessary: entire PDF bytes match",
+      "name": "saints",
+      "id": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis",
+      "pages": 10,
+      "words": 5124,
+      "font_count": 15,
+      "before_sha256": "94ee2a00872e484c0ce56ee9b698f2d6af706fe6e6a0f06cc4d60103115e3854",
+      "after_sha256": "94ee2a00872e484c0ce56ee9b698f2d6af706fe6e6a0f06cc4d60103115e3854",
+      "text_sha256": "b53a18a49048272f29bb5f01619652a5672f39ffb65e4d54dbc9b8db7f2c192c",
+      "source_bundle_sha256": "c86eaf5d17205e8d733219c1d802477d28afac5bf44b29999e6837a14cbd341a",
+      "render_sha256": "768c563309f2767c57fdf92e45e117720fa37830672f14507a4cb05706a5a99f"
+    },
+    {
+      "pass": true,
+      "pdf_bytes_identical": true,
+      "page_count_equal": true,
+      "text_equal": true,
+      "font_lists_equal": true,
+      "all_fonts_embedded": true,
+      "word_boxes_equal": true,
+      "all_page_pixels_equal": true,
+      "raster_check": "unnecessary: entire PDF bytes match",
+      "name": "cards",
+      "id": "publication:gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards",
+      "pages": 13,
+      "words": 3136,
+      "font_count": 10,
+      "before_sha256": "aa57a9ebe44c00af36de05fb7100c9a9b1ccc4c326603b31ae326b84c4fc7ed1",
+      "after_sha256": "aa57a9ebe44c00af36de05fb7100c9a9b1ccc4c326603b31ae326b84c4fc7ed1",
+      "text_sha256": "6a82d2d347d2aa2b2e45167abaa587aa1d3c7ac78383ec1b72cdaeaf2c07e83f",
+      "source_bundle_sha256": "34f2ec434c5f12a11561bc0f3b8ab92e7661c03eba2ed3503b83b3c7cdf587dd",
+      "render_sha256": "046c8956c56272fb26aad2ed280f2c696d68ff726d7da37b83348141f9c851ee"
+    },
+    {
+      "pass": true,
+      "pdf_bytes_identical": true,
+      "page_count_equal": true,
+      "text_equal": true,
+      "font_lists_equal": true,
+      "all_fonts_embedded": true,
+      "word_boxes_equal": true,
+      "all_page_pixels_equal": true,
+      "raster_check": "unnecessary: entire PDF bytes match",
+      "name": "dictionary",
+      "id": "publication:gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer",
+      "pages": 10,
+      "words": 2978,
+      "font_count": 17,
+      "before_sha256": "297f1e71e39498dcabde49efc192c4a8f790d5e1242896c5204f036d9edb9321",
+      "after_sha256": "297f1e71e39498dcabde49efc192c4a8f790d5e1242896c5204f036d9edb9321",
+      "text_sha256": "736889df244fd6561efe63e31567e0aefb3fb579158bcfa09e400024dab39e40",
+      "source_bundle_sha256": "d7ad463b4faca4329e6a29d9750034e9ec40264b8d5223a228e68622b0ff2f0e",
+      "render_sha256": "bf1c5ea9bc866e95da32838b87205ac34fd434d31aad7698769648bb5e1a59a0"
+    },
+    {
+      "pass": true,
+      "pdf_bytes_identical": true,
+      "page_count_equal": true,
+      "text_equal": true,
+      "font_lists_equal": true,
+      "all_fonts_embedded": true,
+      "word_boxes_equal": true,
+      "all_page_pixels_equal": true,
+      "raster_check": "unnecessary: entire PDF bytes match",
+      "name": "bible",
+      "id": "bible:clementine-vulgate",
+      "pages": 597,
+      "words": 666095,
+      "font_count": 5,
+      "before_sha256": "05876afc4f5ad201ee141f756d153d0d15955f901f9d47b50337d7125b55d76e",
+      "after_sha256": "05876afc4f5ad201ee141f756d153d0d15955f901f9d47b50337d7125b55d76e",
+      "text_sha256": "f020cb2c20694c884c568a068ca31a4ebcb85d6a21ce65389201ec01c8a6b73e",
+      "source_bundle_sha256": "6dc11090b50ac61b2e1167a1a4691802b276f5e67d34851af3fb0f7258775a76",
+      "render_sha256": "eb743d164ddbd619092c63c884766a795a6016dcdc2916615d95fc2a53fcd24c"
+    },
+    {
+      "pass": true,
+      "pdf_bytes_identical": false,
+      "page_count_equal": true,
+      "text_equal": true,
+      "font_lists_equal": true,
+      "all_fonts_embedded": true,
+      "word_boxes_equal": true,
+      "all_page_pixels_equal": true,
+      "raster_check": "every page rendered independently with pdf-review at2200-pixel full-page scale",
+      "name": "papal",
+      "id": "papal:papal.benedict-xv.hf-ben-xv-enc-01121918-quod-iam-diu.catholic-mind-1919-02-08-english/en",
+      "pages": 1,
+      "words": 626,
+      "font_count": 4,
+      "before_sha256": "872059462f52132356c044eb5ed056f26d8a50c3e6643a8bfc993f9db7c88414",
+      "after_sha256": "e5d4d3d3fefa97bac047e8ff9227b4c7896b0fc053bab6ff5c99955b2941be16",
+      "text_sha256": "a470d62bd45dc771aa7d06a274563f7f41e0b5ecabb55bb1ccd494b67c361217",
+      "source_bundle_sha256": "1d837c344ec5ff700a7cc5cdf70dabaf164a99e854e707e49bf2edc3056e04d5",
+      "render_sha256": "acb564038518860dec242b6944e447601410fb7ddd771c89e426ec486f9c99e1"
+    },
+    {
+      "pass": true,
+      "pdf_bytes_identical": true,
+      "page_count_equal": true,
+      "text_equal": true,
+      "font_lists_equal": true,
+      "all_fonts_embedded": true,
+      "word_boxes_equal": true,
+      "all_page_pixels_equal": true,
+      "raster_check": "unnecessary: entire PDF bytes match",
+      "name": "legacy",
+      "id": "reading-plan:narrative-spine-full-account-douay-rheims",
+      "pages": 298,
+      "words": 402181,
+      "font_count": 5,
+      "before_sha256": "5c70226a0c3908f33a96a05ecb3ad4aee4607ff3e01def1b50d4422a92dcfbdc",
+      "after_sha256": "5c70226a0c3908f33a96a05ecb3ad4aee4607ff3e01def1b50d4422a92dcfbdc",
+      "text_sha256": "4a888301306e130dba8585edd6a255e64cfc496c12978c2956b55014eb4e6ca2",
+      "source_bundle_sha256": "8853e384a7cdebb99cf784197f88116d23115a0627ec7e7c6230a8f30f3df6fa",
+      "render_sha256": "eed9969351086dd190f0c5e78335655f3647a7114e7f416bb5e63dc54ea074cc"
+    }
+  ],
+  "representative_total_pages": 936,
+  "chronology": [
+    {
+      "id": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis",
+      "pages": 10,
+      "before_sha256": "e047dae5e03bc47ef80ff0e766ac01f61a0f15a335d8ef7a04bddcc08f7b9235",
+      "after_sha256": "94ee2a00872e484c0ce56ee9b698f2d6af706fe6e6a0f06cc4d60103115e3854",
+      "text_sha256": "b53a18a49048272f29bb5f01619652a5672f39ffb65e4d54dbc9b8db7f2c192c",
+      "font_count": 15,
+      "pass": true,
+      "page_count_equal": true,
+      "text_equal": true,
+      "font_lists_equal": true,
+      "all_fonts_embedded": true,
+      "word_boxes_equal": true,
+      "page2_pixels_equal": true,
+      "changed_mounted_files": [
+        "src/common/preamble.tex"
+      ],
+      "page2_raster": {
+        "page": 1,
+        "before_sha256": "dd68969099b9dbec36387b0b3c0328b5d8bd97adbf50aba6b77a751efbc0b5dc",
+        "after_sha256": "dd68969099b9dbec36387b0b3c0328b5d8bd97adbf50aba6b77a751efbc0b5dc",
+        "identical": true
+      }
+    },
+    {
+      "id": "publication:claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis",
+      "pages": 12,
+      "before_sha256": "11d809614afdd9b9013e35899af11731df17459b82021002678598f9c34c2758",
+      "after_sha256": "dfa5d158c2877338aaaf4348cb5c4530f6af6856de67627dedd5ade6301d9a0e",
+      "text_sha256": "b4a049cceae92a6381258134495b9a15547b668cfd4a3ee667433a32cde79acf",
+      "font_count": 14,
+      "pass": true,
+      "page_count_equal": true,
+      "text_equal": true,
+      "font_lists_equal": true,
+      "all_fonts_embedded": true,
+      "word_boxes_equal": true,
+      "page2_pixels_equal": true,
+      "changed_mounted_files": [
+        "src/common/preamble.tex"
+      ],
+      "page2_raster": {
+        "page": 2,
+        "before_sha256": "917b0e7d6f002cdcc4ca30dd12505203b58975dee75898adf603f5dbe7df7945",
+        "after_sha256": "917b0e7d6f002cdcc4ca30dd12505203b58975dee75898adf603f5dbe7df7945",
+        "identical": true
+      }
+    },
+    {
+      "id": "publication:claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis",
+      "pages": 11,
+      "before_sha256": "6d169d3d3ed5375f8c45b1da88f34b0a4422fec2b4035de8a247d2c8942753c1",
+      "after_sha256": "71c09c67078e9fd615a806571fc9ca4ecf799e7b121e0ff07fd67003d3824a7f",
+      "text_sha256": "793fc776464ffad7a928f23a96ec4b0275761d02370b4847eacc7c74c0c6d290",
+      "font_count": 14,
+      "pass": true,
+      "page_count_equal": true,
+      "text_equal": true,
+      "font_lists_equal": true,
+      "all_fonts_embedded": true,
+      "word_boxes_equal": true,
+      "page2_pixels_equal": true,
+      "changed_mounted_files": [
+        "src/common/preamble.tex"
+      ],
+      "page2_raster": {
+        "page": 3,
+        "before_sha256": "9b3cf4923b0b16482c5ef02a66055c27169e82306f76c9f6aee16b8e96cd7319",
+        "after_sha256": "9b3cf4923b0b16482c5ef02a66055c27169e82306f76c9f6aee16b8e96cd7319",
+        "identical": true
+      }
+    },
+    {
+      "id": "publication:claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis",
+      "pages": 12,
+      "before_sha256": "2f290e02b86c04bc7bae3bc88c7b24ba3ece5825ed3ac425c77a6c68d5b9d436",
+      "after_sha256": "a96f0dfd4d4ebea095789aa62a7b6004e390ec488e4f5582c9f9e7e4b8e145a7",
+      "text_sha256": "620c1dc231a2e32f9d8a9894e036330c0a2de00f6a863766cb6d6b47d7a17c16",
+      "font_count": 16,
+      "pass": true,
+      "page_count_equal": true,
+      "text_equal": true,
+      "font_lists_equal": true,
+      "all_fonts_embedded": true,
+      "word_boxes_equal": true,
+      "page2_pixels_equal": true,
+      "changed_mounted_files": [
+        "src/common/preamble.tex"
+      ],
+      "page2_raster": {
+        "page": 4,
+        "before_sha256": "6563b48aa6304e0197746ac9f206050fec3c668a564bbd73af68e57afec1b914",
+        "after_sha256": "6563b48aa6304e0197746ac9f206050fec3c668a564bbd73af68e57afec1b914",
+        "identical": true
+      }
+    },
+    {
+      "id": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis",
+      "pages": 10,
+      "before_sha256": "5ba61620aa46bdc4681279e42da20d03f1eb0e40ca3fff649efd07f6165c2119",
+      "after_sha256": "675441a9757c2f4c0d1f530f23dcb524be964d92a4a0a35d5c421829fb6a3485",
+      "text_sha256": "30dfc5ef505b64d7ccdb8543c59104c61f5dc995d1104be246842bf39bf2bcd8",
+      "font_count": 15,
+      "pass": true,
+      "page_count_equal": true,
+      "text_equal": true,
+      "font_lists_equal": true,
+      "all_fonts_embedded": true,
+      "word_boxes_equal": true,
+      "page2_pixels_equal": true,
+      "changed_mounted_files": [
+        "src/common/preamble.tex"
+      ],
+      "page2_raster": {
+        "page": 5,
+        "before_sha256": "dc78eee955704d302e43858aefde51eca4c6f5047cf749d5e089a63507be458a",
+        "after_sha256": "dc78eee955704d302e43858aefde51eca4c6f5047cf749d5e089a63507be458a",
+        "identical": true
+      }
+    },
+    {
+      "id": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis",
+      "pages": 10,
+      "before_sha256": "0f63ede9b8ae5b95b896674306d18857f9b73e97ab58f37e090fb4c1d72cad43",
+      "after_sha256": "501bd40d17f4c71453bd71cceea8a581ae454727733f2a8bb270a990e946e727",
+      "text_sha256": "b4286e692e77a5fa4ca81a58d40697ca73b51bfe67ad6eb73bcccae33919b55b",
+      "font_count": 15,
+      "pass": true,
+      "page_count_equal": true,
+      "text_equal": true,
+      "font_lists_equal": true,
+      "all_fonts_embedded": true,
+      "word_boxes_equal": true,
+      "page2_pixels_equal": true,
+      "changed_mounted_files": [
+        "src/common/preamble.tex"
+      ],
+      "page2_raster": {
+        "page": 6,
+        "before_sha256": "d52774377fe682b6cbc00dcaf84af9d6e9f3fe5be1bfe1aaf86d6464395a9fbc",
+        "after_sha256": "d52774377fe682b6cbc00dcaf84af9d6e9f3fe5be1bfe1aaf86d6464395a9fbc",
+        "identical": true
+      }
+    },
+    {
+      "id": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis",
+      "pages": 10,
+      "before_sha256": "03884fefa905e86bc3b911b4f08eda00697f849a9cb64ef4cdc1fe3453c80925",
+      "after_sha256": "469cc23d0d42706b53e6b7c3efe820e12a7709fb5ba213253fb8cd60b139e364",
+      "text_sha256": "7d3899b177d6711ee3542651e6237ebb10cd4168857b10bd6872241a92831f5f",
+      "font_count": 15,
+      "pass": true,
+      "page_count_equal": true,
+      "text_equal": true,
+      "font_lists_equal": true,
+      "all_fonts_embedded": true,
+      "word_boxes_equal": true,
+      "page2_pixels_equal": true,
+      "changed_mounted_files": [
+        "src/common/preamble.tex"
+      ],
+      "page2_raster": {
+        "page": 7,
+        "before_sha256": "cc32e3eb36bbe5613c8cd604263c0dd275d254f2d071d651b42fc508f34dbb9b",
+        "after_sha256": "cc32e3eb36bbe5613c8cd604263c0dd275d254f2d071d651b42fc508f34dbb9b",
+        "identical": true
+      }
+    }
+  ],
+  "all_processes_closed": true,
+  "pass": true,
+  "limitations": [
+    "This is output-equivalence evidence, not a new theological, source, artwork, or physical-printer review.",
+    "Timing from concurrently running isolated browsers is not a performance benchmark.",
+    "Unicode papal PDF bytes differ; pdfinfo identifies different xdvipdfmx CreationDate values while tracked ModDate matches. Full text, fonts, coordinates and every rendered pixel match.",
+    "Poppler pdfunite emits recursive-dictionary warnings only while combining the seven isolated page2 review derivatives; it exits successfully. Original selected PDF inspections and bounded extraction return no warnings. Both derivative sets have identical pixels and full original documents also have equal text, font inventories and word coordinates."
+  ],
+  "raster_method": "tools/pdf-review, full-page maximum dimension2200pixels (approximately200dpi on USLetter); exact PDF-byte equality skips redundant raster work."
+}

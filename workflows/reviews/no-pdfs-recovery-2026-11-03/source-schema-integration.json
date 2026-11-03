@@ -1,0 +1,39 @@
+{
+  "schema": "triptych-chronology-schema-integration-review/v1",
+  "date": "2026-11-03",
+  "scope": [
+    "src/common/document-schemas/source-types.toml",
+    "tools/tests/test_source_edition_schemas.py"
+  ],
+  "independent_code_review": "pass",
+  "findings": [],
+  "changes": [
+    "Admit exactly triptych-chronology-orientation/v1 in the existing chronology family",
+    "Require six current YAML members",
+    "Name scripture-chronology validate as semantic owner; retain separate check for coverage freshness",
+    "Add three actual-dispatch fixtures without changing production validation"
+  ],
+  "checks": {
+    "independent_registration_cases": 3,
+    "semantic_probes": 8,
+    "semantic_probe_result": "Valid current metadata passes; malformed labels, unknown source identities and out-of-range scopes/citations refuse.",
+    "actual_validate": "pass",
+    "actual_check": "pass; 1898 coverage rows current",
+    "full_module_before_record": {
+      "passed": 15,
+      "failed": 1,
+      "reason": "The actual-current-family case correctly refuses stale browser-product inputs."
+    }
+  },
+  "unknown_schema_rejection": "preserved; production generic source checker and chronology CLI unchanged",
+  "reviewed_sha256": {
+    "src/common/document-schemas/source-types.toml": "dbd0da358bb2a13761d2d394017b3dbb7de044cb6acde086c28c31ee9f2f0dd1",
+    "tools/tests/test_source_edition_schemas.py": "e587094ae257a0b7ec120059610a18afc9a6f5b9529a586a610446b3b4fb5a8c",
+    "scripts/document_schema_checks/source_editions.py": "0c8945051cb153135d5541a8ce42076c9dda35c896849398911977462995dc9c",
+    "scripts/_chronology.py": "714d404ebef0d82c3718a0fbb6aaaad86c7dcf69f10d2404ed2de506f33cc77e",
+    "tools/scripture-chronology": "1b839f5568582021ec032eecc77661648dc02aa979cbca85b62333b78dc46ff1",
+    "src/sources/chronology/orientation.yaml": "efc87d8130f294a8388c5c2ddfdb160ebf47628f9bb756fffbb82b2c78da7aa7"
+  },
+  "render_inputs_changed": false,
+  "integration": "Fresh browser-product recording and the complete deployment gate remain separate required checks, recorded in PROJECT-WORK.md."
+}

@@ -171,6 +171,12 @@ def span(s):
 
 corpus = C.load(Path(sys.argv[1]))
 out = {"claims": {}, "bindings": [], "gaps": [], "profiles": {}}
+out["orientation"] = {
+    "subject_labels": getattr(corpus, "orientation_subject_labels", {}),
+    "contexts": [{"scope": [span(s) for s in item.scope], "label": item.label,
+                  "sources": list(item.sources), "basis": item.basis}
+                 for item in getattr(corpus, "orientation_contexts", ())],
+}
 # The profile mapping AS AUTHORED. Normalisation happens on the other side of
 # the boundary, so both revisions are normalised by one function.
 for pid, entry in corpus.profiles.items():
@@ -664,13 +670,13 @@ def diff_paths(repo: Path, base: str, head: str, pathspec: str, kind: str) -> li
 
 # --- CLI -------------------------------------------------------------------
 
-SECTIONS = ("claims", "profiles", "answerability", "bindings", "gaps",
+SECTIONS = ("claims", "profiles", "answerability", "bindings", "gaps", "orientation",
             "sources", "contracts", "code")
 
 
 def build(repo: Path, base: str, head: str, sections, fieldset: str) -> dict:
     result: dict[str, list[dict]] = {}
-    if {"claims", "profiles", "answerability", "bindings", "gaps"} & set(sections):
+    if {"claims", "profiles", "answerability", "bindings", "gaps", "orientation"} & set(sections):
         with tempfile.TemporaryDirectory(prefix="chronology-review-") as tmp:
             work = Path(tmp)
             old = load_revision(repo, base, work)
@@ -687,6 +693,11 @@ def build(repo: Path, base: str, head: str, sections, fieldset: str) -> dict:
             result["bindings"] = diff_bindings(old, new, full=(fieldset == "full"))
         if "gaps" in sections:
             result["gaps"] = diff_gaps(old, new)
+        if "orientation" in sections:
+            result["orientation"] = ([] if old.get("orientation") == new.get("orientation") else [{
+                "kind": "orientation", "id": "shared presentation", "why": "changed",
+                "detail": json.dumps({"before": old.get("orientation"), "after": new.get("orientation")},
+                                     sort_keys=True, ensure_ascii=False)}])
     if "sources" in sections:
         result["sources"] = diff_sources(repo, base, head)
     if "contracts" in sections:

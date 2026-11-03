@@ -63,7 +63,7 @@ class DeploymentFixture:
     """No real print program, package install, cache restore or network runs."""
 
     def setUp(self):
-        scratch = ROOT / ".scratch/next-product-ci"
+        scratch = ROOT / ".scratch/prepared-publisher/ci-tests"
         scratch.mkdir(parents=True, exist_ok=True)
         temporary = tempfile.TemporaryDirectory(prefix="source-pages-", dir=scratch)
         self.addCleanup(temporary.cleanup)
@@ -128,6 +128,8 @@ elif args == ["scripts/_web_print_assets.py", "hydrate", "--fetch"]:
     pass  # Explicit source-bound delivery; publication itself cannot fetch.
 elif args == ["scripts/_web_print_marks.py", "hydrate", "--fetch"]:
     pass  # The separate source-mark face is needed only by a cold print family.
+elif args == ["scripts/_native_tex_assets.py", "hydrate", "--fetch"]:
+    pass  # Verify browser compiler inputs; no compiler executes in deployment.
 elif tuple(args) in allowed:
     if tuple(args) in generated and not ready.is_file():
         raise SystemExit("generated consumer ran before browser product preparation")
@@ -289,13 +291,17 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         for command in SOURCE_COMMANDS:
             self.assertLess(commands.index(command), commands.index(build))
         self.assertLess(commands.index(rights[0]), commands.index(build))
+        runtime = ("scripts/_native_tex_assets.py", "hydrate", "--fetch")
+        self.assertEqual(commands.count(runtime), 1)
+        self.assertLess(commands.index(runtime), commands.index(build))
         self.assertLess(commands.index(build), commands.index(verify))
         self.assertFalse(AUDIT_COMMANDS & set(commands))
         self.assertFalse((self.root / "pdf").exists())
         self.assertEqual(list(self.root.rglob("*.pdf")), [])
 
     def test_each_new_source_gate_failure_prevents_artifact_construction(self):
-        for gate in ["tools/tpt browser-products key", "scripts/_browser_cache_bootstrap.py --fetch",
+        for gate in ["scripts/_native_tex_assets.py hydrate --fetch",
+                     "tools/tpt browser-products key", "scripts/_browser_cache_bootstrap.py --fetch",
                      "scripts/_install_web_print_pandoc.py --fetch --bin-dir .scratch/web-print-toolchain/bin",
                      "scripts/_web_print_assets.py hydrate --fetch",
                      "scripts/_web_print_marks.py hydrate --fetch",
@@ -344,6 +350,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         commands = self.commands()
         self.assertEqual(commands.count(("tools/tpt", "browser-products", "build")), 1)
+        self.assertEqual(commands.count(("scripts/_native_tex_assets.py", "hydrate", "--fetch")), 1)
         self.assertNotIn(("tools/tpt", "browser-products", "prune"), commands)
         self.assertNotIn(("tools/tpt", "document-library", "structure", "--check"), commands)
         self.assertNotIn(("tools/tpt", "act-history", "structure", "--check"), commands)
@@ -405,10 +412,10 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertLess(names.index(save["name"]), names.index("Verify artifact and GitHub Pages compatibility"))
         self.assertEqual(save["if"], "steps.browser-cache.outputs.cache-hit != 'true'")
 
-    def test_pages_uses_only_pinned_html_conversion_without_a_pdf_toolchain(self):
+    def test_pages_assembles_browser_compiler_assets_without_executing_pdf_toolchain(self):
         steps = self.pages()["jobs"]["deploy"]["steps"]
         actions = [step["uses"].partition("@")[0] for step in steps if "uses" in step]
-        self.assertEqual(actions, ["actions/checkout", "actions/setup-python", "actions/cache/restore",
+        self.assertEqual(actions, ["actions/checkout", "actions/setup-python", "actions/cache", "actions/cache/restore",
                                    "actions/cache/save", "actions/configure-pages",
                                    "actions/upload-pages-artifact", "actions/deploy-pages"])
         upload = next(step for step in steps if step.get("uses", "").startswith("actions/upload-pages-artifact@"))
@@ -416,6 +423,11 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertTrue(upload["with"]["include-hidden-files"])
         checkout = next(step for step in steps if step.get("uses", "").startswith("actions/checkout@"))
         self.assertFalse(checkout["with"]["persist-credentials"])
+        runtime = next(step for step in steps if step["name"] == "Restore native TeX runtime candidates")
+        self.assertEqual(runtime["uses"], f"actions/cache@{CACHE_ACTION}")
+        self.assertEqual(runtime["with"]["path"], ".scratch/native-tex-runtime")
+        self.assertEqual(runtime["with"]["key"],
+                         "triptych-native-tex-v1-${{ hashFiles('src/common/native-tex-runtime.json') }}")
         converter = next(step for step in steps if step["name"] == "Install pinned HTML converter for cold print preparation")
         assets = next(step for step in steps if step["name"] == "Hydrate source-bound assets for cold print preparation")
         marks = next(step for step in steps if step["name"] == "Hydrate source-bound marks for cold print preparation")

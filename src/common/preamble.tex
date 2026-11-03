@@ -1,4 +1,9 @@
 \documentclass[11pt]{article}
+% Fast lossless stream compression keeps image-heavy on-demand rendering
+% responsive, with a modest file-size increase and unchanged page content.
+\ifdefined\pdfcompresslevel
+  \pdfcompresslevel=1
+\fi
 \usepackage[margin=0.75in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}

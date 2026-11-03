@@ -17,8 +17,9 @@ corrections to F0 Sources and the shared non-Liturgy shell. Independent review
 of correction head `ecbd93a0575c4b890cc814af7cd20d01f5af7beb` then recorded
 **F0 Source Library — ACCEPT** and **Shared non-Liturgy shell — ACCEPT**,
 closing those design-review gates. Accessibility and resilience remain
-accepted production requirements with production proof outstanding; browser
-print remains accepted only as a non-canonical fallback. A prototype, passing
+accepted production requirements with production proof outstanding; that review
+accepted HTML browser print only as a non-canonical fallback. Current native
+generation follows the separate printing contract below. A prototype, passing
 local gate, branch push, or coherent appearance does not authorize production
 cutover.
 
@@ -38,8 +39,11 @@ restrained chrome, useful first viewport, source honesty, responsive reflow,
 and accessibility principles. It does not weaken or casually replace the
 Liturgical Instrument.
 
-PDFs remain the canonical printable editions. This vision neither redesigns
-their typography nor makes browser print a substitute for them.
+Native PDFs retain the authored printable layout and are generated on demand
+from canonical sections and current shared styles. [Repository guidance](repository.md)
+and [printing](../docs/printing.md) own their assembly, cache and review contract.
+This vision neither redesigns native typography nor makes HTML browser print a
+substitute for it.
 
 ## Product promise
 
@@ -258,7 +262,7 @@ of the way:
 
 1. breadcrumb or compact corpus/domain context;
 2. work title and concise provider, edition, and revision qualification;
-3. primary actions: canonical PDF when available, Contents, and Source details;
+3. primary actions: native PDF generation when admitted, Contents, and Source details;
 4. optional in-page Contents that does not permanently squeeze the text;
 5. one primary text column with stable heading, paragraph, and footnote
    anchors;
@@ -266,7 +270,7 @@ of the way:
 7. typed contextual objects after the reading or in one deliberate surface.
 
 Contents reflects actual headings. A browser-readable treatment never hides
-its canonical PDF, and a PDF-only treatment remains discoverable with an
+its native PDF action, and a print-only treatment remains discoverable with an
 explicit availability state rather than a dead Reader. Citation copy uses a
 stable public URL and visible human locator; it does not imply that a current
 mutable page hash is an immutable research citation.
@@ -490,7 +494,9 @@ intentional and remains unchanged.
 ## Static architecture and performance
 
 The no-JavaScript page owns identity, primary content or an honest browse
-entry, canonical PDF action, essential source qualification, and legal links.
+entry, truthful print options, essential source qualification, and legal links.
+Browser-native generation requires JavaScript; its unavailability must remain
+explicit when JavaScript is disabled rather than implying a stored PDF exists.
 JavaScript progressively enhances navigation, filtering, relationship panels,
 and later Search. Public projections are generated, versioned, deterministic,
 additive, public-only, and lazy by route. A page must not load the whole corpus
@@ -520,11 +526,16 @@ appropriate derivatives and dimensions.
 
 ## Relationship to canonical PDFs
 
-The browser is the navigable, responsive corpus view. The installed reviewed
-PDF is the canonical printable edition. Reader and Catalogue surfaces expose
-the PDF whenever one exists, name PDF-only availability honestly, and never
-silently regenerate or alter canonical pagination. Browser print is a useful
-fallback and research aid, not the canonical edition.
+The browser is the navigable, responsive corpus view. Its native PDF action
+assembles a selected edition's current canonical sections and shared styles,
+then typesets that request under the [printing contract](../docs/printing.md).
+Reader and Catalogue surfaces expose admitted generation choices and name
+print-only availability honestly. Historical printings remain separately
+identified; a past review does not approve a new rendering. The 2026-11-03
+clarification supersedes this design review's installed-PDF assumption:
+there is no maintained PDF collection in Git or elsewhere, and a style or
+structure change does not require rebuilding that collection before deployment.
+Disposable browser results remain optional and bound to current inputs.
 
 ## Rejected directions
 

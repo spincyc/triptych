@@ -27,9 +27,11 @@ Apply these rules in order:
   verifies warm caches and rebuilds exact misses offline. Workspace caches use
   `TRIPTYCH_BROWSER_DATA_ROOT=.scratch/browser-data`; direct producers write to
   an unsealed sibling working tree. `guidance/web-data.md` owns this contract.
-- PDF files are optional print outputs, generated one edition at a time by
-  `tools/print-document`. They are neither tracked publications nor inputs to
-  normal checks, catalog generation, or site deployment.
+- PDF files are downstream print outputs, generated on demand from canonical
+  sections and current shared styles. Browser native TeX supplies the public
+  action; `tools/print-document` builds one selected local edition. No PDF
+  corpus is tracked, maintained externally, or required by normal checks,
+  catalog generation, or site deployment.
 
 Anything needed to understand or reproduce a publication belongs in tracked
 source or a declared exact-artifact delivery record. The current authoring
@@ -52,6 +54,23 @@ equality with old PDF bytes. When a print edition is requested, apply the
 owning profile's print gates to that edition. Strict page counts, paired pages,
 duplex geometry, and physically meaningful layouts remain exact unless the
 maintainer explicitly changes the profile.
+
+The maintainer's 2026-11-03 clarification rejects a separately maintained PDF
+collection as well as PDFs in Git. Canonical sections, manifests, source-owned
+apparatus and shared styles are the inputs; selection and assembly precede
+typesetting, and a PDF is produced only for a requested edition. A style or
+structure change updates those inputs without requiring a corpus PDF rebuild
+before deployment. This supersedes the intervening prepared-download proposal.
+The current public implementation runs native WebAssembly TeX in the browser
+against exact source bundles, original packages and fonts.
+
+An ephemeral output or disposable browser cache is permitted. Reuse must bind
+the selected current source graph, shared styles and exact typesetter; changed
+inputs invalidate the affected result. Neither a cache nor an archived printing
+can become the authoritative source or silently satisfy a request for changed
+inputs. Normal publication assembles and verifies the source/runtime transport
+without producing PDF outputs. The browser's actual current-edition generation
+and its performance require separate evidence.
 
 Exact binary evidence has a separate preservation and delivery layer governed
 by `guidance/sources.md`. Its source identity, acquired hashes, rights, passage
@@ -307,6 +326,14 @@ output. Keep revision timestamps source-controlled; omit build-clock PDF
 dates and automatic trailer IDs. Repeating unchanged inputs under a pinned
 toolchain should reproduce a render, but ordinary source releases do not
 compare rebuilt PDFs with historical publication bytes.
+
+The shared provider preamble owns its guarded `\pdfcompresslevel=1` setting.
+It trades some output size for faster lossless stream compression without
+altering source wording or page layout. Keep the setting in that authoritative
+style, so its source identity invalidates affected browser results naturally;
+do not introduce an untracked compiler override or regenerate a PDF corpus to
+adopt it. Other print families retain their own styles. The bounded comparison
+and review limits are linked from [printing](../docs/printing.md).
 
 Source-bearing changes run the universal and profile content/evidence gates,
 `tools/document-schema check`, and `make check-sources`. The latter validates
@@ -571,8 +598,9 @@ source-library material. Verified native engine, package and font assets may
 be published alongside them under their own delivery and license manifests.
 This exception permits actual TeX generation in a browser worker on GitHub
 Pages; it does not authorize copying source directories or generating a PDF
-corpus during deployment. A separately configured compiler service must use
-the same public admission boundary and isolated native recipes.
+corpus during deployment. The public action uses client-side native TeX;
+alternative execution methods remain separate design work and do not authorize
+a persistent prepared-PDF collection or a deploy-time corpus rebuild.
 
 Preparation, build, verification, push, and deployment are distinct. A preparation command may print current candidate hashes but grants no approval and changes nothing. Verification must independently prove the complete artifact file set, approved repository hashes, dependency lock, local links and fragments, checksums, excluded identifiers, and absence of machine-private paths.
 

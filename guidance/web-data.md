@@ -895,6 +895,37 @@ Neither cold preparation nor normal Pages assembly runs TeX or builds PDFs.
 Warm products already contain the required asset bytes and need no converter or
 asset-archive fetch.
 
+This family prepares the complete HTML reading projection. The native PDF action
+separately assembles current canonical sections and shared styles into an exact
+native source bundle, then typesets the requested edition in the browser under
+the [repository contract](repository.md). A style or structure change may
+invalidate source products and disposable browser results; it does not require
+generating, storing or uploading a PDF corpus. Source/runtime delivery and
+historical source-evidence packs remain distinct from generated PDF output.
+
+Native source-bundle version 1 also permits repeated UTF-8 sections and styles
+to use content-addressed raw objects. Unique text remains inline. Optional
+`sourcePacks` group shared files by canonical parent directory and path, with
+at most 32 members and 8 MiB expanded bytes per gzip pack. Raw objects remain
+available for fallback. The publisher and browser verify compressed and
+expanded identities and complete declared membership; mounting restores the
+original paths and bytes. These objects are generated source transport, not
+another editable source or a PDF collection. Render identity is owned by
+[document schemas](document-schemas.md#native-print-sources), independently of
+this transport packaging.
+
+The browser runtime initially loads common TeX infrastructure and defers pinned
+font groups until native access requires their bodies. The complete filesystem
+namespace and exact file metadata remain available during discovery. Any access
+to an omitted font body makes the whole attempt provisional, even if the engine
+produces output: fetch and verify the required group, then restart with fresh
+workers, source inputs and auxiliary files. At most three provisional attempts
+precede a fourth attempt with the complete original inventory. This applies to
+pdfTeX and to XeTeX with its PDF converter; optional unknown-file misses retain
+their existing meaning. Only a completed, verified result may enter the
+disposable requested-PDF cache. Deferral changes transfer timing, never font
+selection, source rights or the pinned bytes.
+
 Hot assembly in [`_web_print.py`](../scripts/_web_print.py) consumes the held,
 verified preparation JSON, checks exact current admitted membership, projects
 route links without changing words or unit order, and attaches the current
@@ -907,9 +938,18 @@ own complete owner proofs and source extents.
 
 Public descriptors bind the selected source and output, finite print-type
 markup, text and structure hashes, semantic counts, ordered parts and units,
-illustrations, fonts, and exact stylesheet. The browser fetches and verifies
-every part and asset before opening Print, rejects hidden, clipped, changed,
-or incomplete content, and guards native Print against partial readers.
+illustrations, fonts, and exact stylesheet. The retained HTML-print controller
+verifies every part and asset and rejects hidden, clipped, changed or incomplete
+content when that projection is exercised. Native TeX generation has its own
+source-bundle and runtime integrity checks.
+
+For screen illustrations, assembly may add intrinsic dimensions and
+`loading="lazy"` from an already verified PNG's valid header when the source
+declares no dimensions or loading policy. Authored attributes remain unchanged.
+The separate offscreen HTML-print frame explicitly switches every required
+illustration to eager loading and awaits decoding after byte verification;
+screen deferral must never produce a partial print edition.
+
 The 141 reviewed web readers keep their reading layout and navigate their
 Print action to the complete selected print route. Executable type and coverage
 contracts live in [document schemas](document-schemas.md#browser-print-projections).

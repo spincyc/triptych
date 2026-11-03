@@ -125,10 +125,10 @@ validator = ["tools/act-history", "check"]
 
 [[families]]
 id = "scripture-chronology-source"
-schema_ids = ["triptych-chronology-events/v1", "triptych-chronology-composition/v1", "triptych-chronology-bindings/v1", "triptych-chronology-profiles/v1", "triptych-chronology-gaps/v1"]
+schema_ids = ["triptych-chronology-events/v1", "triptych-chronology-composition/v1", "triptych-chronology-bindings/v1", "triptych-chronology-profiles/v1", "triptych-chronology-gaps/v1", "triptych-chronology-orientation/v1"]
 owner = "tools/scripture-chronology"
 paths = ["src/sources/chronology/*.yaml"]
 required_fields = ["schema"]
-minimum_members = 5
-cardinality = "Existing distinct event, composition, binding, profile and gap schemas, checked by their owning resolver."
-validator = ["tools/scripture-chronology", "check"]
+minimum_members = 6
+cardinality = "Distinct event, composition, binding, profile, gap and orientation display schemas; validate checks their content, exact source citations and verse bounds. The separate scripture-chronology check retains derived coverage-table freshness."
+validator = ["tools/scripture-chronology", "validate"]

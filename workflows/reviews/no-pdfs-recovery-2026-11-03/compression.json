@@ -1,0 +1,79 @@
+{
+  "schema": "triptych-native-compression-review/v1",
+  "date": "2026-11-03",
+  "scope": "Lossless compression in the shared provider-publication style; one illustrated General Reader edition measured.",
+  "all_page_rasters_equal": true,
+  "text_equal": true,
+  "fonts_equal": true,
+  "runs": [
+    {
+      "level": 9,
+      "generation_ms": 36553,
+      "pdf_bytes": 17731155,
+      "pages": 11,
+      "passes": 2,
+      "compression_log": [
+        "TRIPTYCH-COMPRESS=9"
+      ],
+      "tex_run_ms": [
+        17652,
+        17621
+      ]
+    },
+    {
+      "level": 1,
+      "generation_ms": 4424,
+      "pdf_bytes": 19780917,
+      "pages": 11,
+      "passes": 2,
+      "compression_log": [
+        "TRIPTYCH-COMPRESS=1"
+      ],
+      "tex_run_ms": [
+        1621,
+        1484
+      ]
+    },
+    {
+      "level": 3,
+      "generation_ms": 4824,
+      "pdf_bytes": 19170599,
+      "pages": 11,
+      "passes": 2,
+      "compression_log": [
+        "TRIPTYCH-COMPRESS=3"
+      ],
+      "tex_run_ms": [
+        1823,
+        1699
+      ]
+    }
+  ],
+  "adopted_shared_preamble": {
+    "path": "src/common/preamble.tex",
+    "sha256": "7abe232d12c9e9a36ee79b0d1ab2d899d22fc32649ac69ce5e06f1c6a60ef920",
+    "generation_ms": 4306,
+    "pdf_sha256": "1423177099588041382a09d3bbde5e745d1f89c28035a0322ea3b60cd7074ea2",
+    "exact_bytes_equal_to_level1_probe": true
+  },
+  "controller_sha256": "5b62d200ae7087846c558c1e94e6ea0c2a9c422a600c51334e08fb457915a193",
+  "runtime_manifest_sha256": "0b7c7feb9e4cd5b7a4b5b96d43b7498b2bc212c4c119a25259a244df34ceef12",
+  "limitations": [
+    "One selected General Reader dictionary in Chromium 156 on desktop; mobile viewport emulation with CPU1 and local10000Mbps delivery; not a physical-device or network cold-start promise.",
+    "All11pages compared at144DPI plus exact extractedtext and fontinventories; equality is a rendering-equivalence test, not a new theological, source, or physical-print review.",
+    "Only common/preamble.tex adopted; Bible, reading-plan and XeTeX defaults unchanged."
+  ],
+  "previous_preamble_sha256": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+  "comparison_method": "Each PDF was independently rasterized at 144 DPI; all 11 complete-page PPM streams, extracted text and font inventories agree.",
+  "independent_cold_review": {
+    "status": "pass",
+    "findings": [],
+    "checks": [
+      "Current guarded preamble bytes match the recorded SHA-256.",
+      "Actual level-9, level-1 and shared-preamble outputs each have 11 pages, identical extracted text and font inventories.",
+      "Shared-preamble output is byte-identical to the level-1 probe.",
+      "The admitted source closure contains the preamble in exactly 281 provider outputs and excludes 350 papal selections, seven Bibles and six reading-plan outputs."
+    ],
+    "limit": "Reviewer inspected the recorded complete-page raster comparison; did not repeat that rasterization."
+  }
+}

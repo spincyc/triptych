@@ -420,17 +420,39 @@ Their agreement includes a narrower exegetical difference. Augustine introduces 
 
 The table distinguishes the date of an attributed person, a historical setting, a narrated event and the writing of a book. A date for one subject does not date the others. Its passage references identify the complete verse envelopes used for chronology; the actual chant selections remain those printed above. The three Psalm rows share passages because attribution, occasion and composition answer different questions. The numbered discussions following the table identify the historical evidence and its limits.
 
-| **Passage** | **Occurrence and place** | **Date** |
+| **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29) | Traditional attribution: David’s reign. Israel and Judah in the received Davidic frame; see H1. | Disputed: B.C. 1055–1015 |
-| Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29) | Historical setting. Royal prayer, Sion and the nations, and the storm world of the Psalter; precise occasions unknown. See H1. | Occasion date unresolved |
-| Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29) | Composition: Psalms. Israel’s Psalter; individual writing places uncertain. See H1. | Before c. 165 B.C. |
-| Alleluia: Daniel 7:14 | Historical setting: The seventy years of servitude to Babylon. Daniel’s Babylonian royal setting; the court is a vision. See H2. | “seventy years” (duration) |
-| Alleluia: Daniel 7:14 | Composition: The Book of Daniel. Babylon in the received authorial setting; formation disputed. See H2. | B.C. 570–536 |
-| Gospel: John 18:33–37 | Event. Jesus before Pilate in the governor’s hall at Jerusalem, John 18:28,33. See H3. | Date unresolved |
-| Gospel: John 18:33–37 | Composition: The Gospel of St John. Ephesus traditionally; writing place and formation disputed. See H3. | Disputed: c. A.D. 90–100; A.D. 96–100 |
-| Epistle: Colossians 1:12–20 | Composition: The Epistle to the Colossians. Rome traditionally; authorship and prison location disputed. Colossae is the recipients’ city. See H4. | Disputed: A.D. 61; A.D. 61–63 |
-| Introit: Apoc 1:6, Apoc 5:12 | Composition: The Apocalypse of St John. Patmos in the received seer’s setting; heaven is the scene of the vision. See H5. | Disputed: A.D. 81–96; c. A.D. 90–100 |
+| Introit: Ps 71:1 (Vg.; Heb. 72); Gradual: Ps. 71:8,11 (Vg.; Heb. 72); Offertory: Ps. 2:8 (Vg./Heb.); Communion: Ps. 28:10–11 (Vg.; Heb. 29) | Traditional attribution: David’s reign | Disputed: B.C. 1055–1015 |
+| Introit: Ps 71:1 (Vg.; Heb. 72); Gradual: Ps. 71:8,11 (Vg.; Heb. 72); Offertory: Ps. 2:8 (Vg./Heb.); Communion: Ps. 28:10–11 (Vg.; Heb. 29) | Historical setting | Occasion date unresolved |
+| Introit: Ps 71:1 (Vg.; Heb. 72); Gradual: Ps. 71:8,11 (Vg.; Heb. 72); Offertory: Ps. 2:8 (Vg./Heb.); Communion: Ps. 28:10–11 (Vg.; Heb. 29) | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Dan. 7:14 | Historical setting: The seventy years of servitude to Babylon | “seventy years” (duration) |
+| Alleluia: Dan. 7:14 | Composition: Daniel | B.C. 570–536 |
+| Gospel: John 18:33–37 | Narrated event: Jesus before Pilate in the governor’s hall | Date unresolved |
+| Gospel: John 18:33–37 | Composition: John | Disputed: c. A.D. 90–100; A.D. 96–100 |
+| Epistle: Col. 1:12–20 | Composition: Colossians | Disputed: A.D. 61; A.D. 61–63 |
+| Introit: Apoc 1:6, Apoc 5:12 | Composition: Apocalypse | Disputed: A.D. 81–96; c. A.D. 90–100 |
+
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+##### Setting notes.
+
+**Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29)**. Israel and Judah in the received Davidic frame; see H1.
+
+**Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29)**. Royal prayer, Sion and the nations, and the storm world of the Psalter; precise occasions unknown. See H1.
+
+**Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29)**. Israel’s Psalter; individual writing places uncertain. See H1.
+
+**Alleluia: Daniel 7:14**. Daniel’s Babylonian royal setting; the court is a vision. See H2.
+
+**Alleluia: Daniel 7:14**. Babylon in the received authorial setting; formation disputed. See H2.
+
+**Gospel: John 18:33–37**. Jesus before Pilate in the governor’s hall at Jerusalem, John 18:28,33. See H3.
+
+**Gospel: John 18:33–37**. Ephesus traditionally; writing place and formation disputed. See H3.
+
+**Epistle: Colossians 1:12–20**. Rome traditionally; authorship and prison location disputed. Colossae is the recipients’ city. See H4.
+
+**Introit: Apoc 1:6, Apoc 5:12**. Patmos in the received seer’s setting; heaven is the scene of the vision. See H5.
 
 ### H1. The Psalms: attribution, occasion and writing {#history-psalms}
 
@@ -532,7 +554,7 @@ The historical appendix preserves the canonical chronology’s alternatives and 
 
 - **Modern Catholic historical introductions.** USCCB, NABRE introductions to [Psalms](https://bible.usccb.org/bible/psalms/0), superscriptions and dating; [John](https://bible.usccb.org/bible/john/0), paragraphs 5–7 and 10; [Colossians](https://bible.usccb.org/bible/colossians/0?bk=Colossians&ch=), paragraphs 2 and 5. Reviewed October 2026 deliveries; original historical analysis only, with no reproduction of protected page bodies.
 
-**Last revised (UTC):** 2026-10-23T19:40:04Z
+**Last revised (UTC):** 2026-11-03T21:06:51Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

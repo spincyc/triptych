@@ -14,11 +14,12 @@ begins on page 5. Declare the presentation component roles and place the
 profile's physical-page zref markers around their actual content. No cover
 may shift these positions. Use the same owner's reviewed generated chronology;
 preserve its exact dates, alternatives, relation labels and unresolved states.
-Use `chronology_presentation = "orientation-v2"` and the generated row interface
-in `chronologyorientationtable` as the profile directs. Pair each passage with
-the actual occurrence or dated subject, its place and concise date alternatives.
-Consolidate identical answers; keep full evidence in the reviewed historical
-appendix. Do not paste detailed annotation blocks or audit statuses into cells.
+Use `chronology_presentation = "orientation-v3"` and import the complete
+`research/chronology-table.tex` between the chronology markers, with the canonical
+annotations imported exactly once. Declare both generated files as component
+references. The generator owns the Passage/Context/Date cells and row order;
+do not author, reorder or omit rows. Point to the reviewed historical appendix
+for fuller geographic context and evidence. An unresolved event remains undated.
 
 Write a standalone developed argument organized around cross-proper questions
 or movements. Interleave the authors' alternatives where they address the same

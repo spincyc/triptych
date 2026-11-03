@@ -523,20 +523,48 @@ The first and the third can be preached together without strain: render yourself
 
 Each passage the Mass reads or sings from Scripture, in canonical order, with what is dated, where it belongs, and the date the Scripture chronology corpus gives for it. A passage whose parts are dated differently has a row for each part; rows that share one answer name every element that uses it. The Entrance Antiphon, both Communion antiphons and the Alleluia verse are placed at the verses they adapt or excerpt; the three orations carry no biblical date. The notes beneath give each passage’s setting, attribution and dating evidence.
 
-| **Passage** | **Occurrence and place** | **Date** |
+| **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Entrance Antiphon: Cf. Psalm 16:6, 8 (Vulgate numbering; Hebrew 17); Communion Antiphon (first): Cf. Psalm 32:18–19 (Vulgate numbering; Hebrew 33) | Historical setting. Occasion and place unknown; the psalms’ titles name none. | Occasion date unresolved |
-| Entrance Antiphon: Cf. Psalm 16:6, 8 (Vulgate numbering; Hebrew 17); Responsorial Psalm: Psalm 96:1, 3, 4–5, 7–8, 9–10a, 10c, Psalm 96:7b (Hebrew numbering; Vulgate 95); Communion Antiphon (first): Cf. Psalm 32:18–19 (Vulgate numbering; Hebrew 33) | Composition: Psalms. Place of composition unknown. | Before c. 165 B.C. |
-| Communion Antiphon (first): Cf. Psalm 32:18–19 (Vulgate numbering; Hebrew 33) | Traditional attribution: David’s reign. Ascribed to David by its Latin and Greek title; David reigns at Hebron, then at Jerusalem. The reign dates David, not the psalm. | Disputed: B.C. 1055–1015 |
-| Responsorial Psalm: Psalm 96:1, 3, 4–5, 7–8, 9–10a, 10c, Psalm 96:7b (Hebrew numbering; Vulgate 95) | Superscription setting: The raising of the second Temple by Zorobabel. The house rebuilt after the captivity, named in the psalm’s Latin and Greek title: the Temple at Jerusalem. | B.C. 537 |
-| Responsorial Psalm: Psalm 96:1, 3, 4–5, 7–8, 9–10a, 10c, Psalm 96:7b (Hebrew numbering; Vulgate 95) | Prophetic referent: The Nativity of Our Lord. The Messiah’s coming that the Fathers read in this psalm, taken as the Nativity at Bethlehem. | Disputed: B.C. 3; c. B.C. 7 |
-| First Reading: Isaiah 45:1, 4–6 | Traditional attribution: Isaias (ministry in Souvay’s traditional account). Isaias, a citizen of Jerusalem, prophesies concerning Juda and Jerusalem. | B.C. 740–701 |
-| First Reading: Isaiah 45:1, 4–6 | Prophecy given: The prophetic activity behind Isaiah 40-55 in the NABRE introduction. An unnamed prophet, place not stated; his oracles bid the exiles go out of Babylon. | Toward the end of the Babylonian exile |
-| Gospel: Matthew 22:15–21 | Event. Jesus answers the tribute question while teaching in the temple at Jerusalem. | Date unresolved |
-| Gospel: Matthew 22:15–21 | Composition: The Gospel of St Matthew. Matthew writes for Jewish readers; the place is not fixed (Eusebius: on leaving Palestine). | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
-| Communion Antiphon (alternative): Mark 10:45 | Composition: The Gospel of St Mark. Mark writes at Rome for Roman Christians (Chrysostom names Egypt). | Disputed: A.D. 38–40; A.D. 40; A.D. 43; A.D. 50–67; A.D. 60–70; After Matthew, and not as late as the destruction of Jerusalem |
-| Alleluia Verse: Philippians 2:15d, 16a | Composition: The Epistle to the Philippians. Paul writes from captivity at Rome (some say Caesarea) to the church at Philippi. | Disputed: A.D. 61; A.D. 62–64 |
-| Second Reading: 1 Thessalonians 1:1–5b | Composition: The First Epistle to the Thessalonians. Paul writes from Corinth (an ancient subscription says Athens) to the church at Thessalonica. | Disputed: A.D. 52; A.D. 53–54 |
+| Entrance Antiphon: Cf. Psalm 16:6, 8 (Vg.; Heb. 17); Communion Antiphon (first): Cf. Psalm 32:18–19 (Vg.; Heb. 33) | Historical setting | Occasion date unresolved |
+| Entrance Antiphon: Cf. Psalm 16:6, 8 (Vg.; Heb. 17); Responsorial Psalm: Ps. 96:1, 3, 4–5, 7–8, 9–10a, 10c (Heb.; Vg. 95), Ps. 96:7b (Heb.; Vg. 95); Communion Antiphon (first): Cf. Psalm 32:18–19 (Vg.; Heb. 33) | Composition: Psalms | Before c. 165 B.C. |
+| Communion Antiphon (first): Cf. Psalm 32:18–19 (Vg.; Heb. 33) | Traditional attribution: David’s reign | Disputed: B.C. 1055–1015 |
+| Responsorial Psalm: Ps. 96:1, 3, 4–5, 7–8, 9–10a, 10c (Heb.; Vg. 95), Ps. 96:7b (Heb.; Vg. 95) | Superscription setting: The raising of the second Temple by Zorobabel | B.C. 537 |
+| Responsorial Psalm: Ps. 96:1, 3, 4–5, 7–8, 9–10a, 10c (Heb.; Vg. 95), Ps. 96:7b (Heb.; Vg. 95) | Prophetic referent: The Nativity of Our Lord | Disputed: B.C. 3; c. B.C. 7 |
+| First Reading: Is. 45:1, 4–6 | Traditional attribution: Isaias (ministry in Souvay’s traditional account) | B.C. 740–701 |
+| First Reading: Is. 45:1, 4–6 | Prophecy given: The prophetic activity behind Isaiah 40-55 in the NABRE introduction | Toward the end of the Babylonian exile |
+| Gospel: Matt. 22:15–21 | Narrated event: Jesus answers the question about tribute to Caesar | Date unresolved |
+| Gospel: Matt. 22:15–21 | Composition: Matthew | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Communion Antiphon (alternative): Mark 10:45 | Composition: Mark | Disputed: A.D. 38–40; A.D. 40; A.D. 43; A.D. 50–67; A.D. 60–70; After Matthew, and not as late as the destruction of Jerusalem |
+| Alleluia Verse: Phil. 2:15d, 16a | Composition: Philippians | Disputed: A.D. 61; A.D. 62–64 |
+| Second Reading: 1 Thess. 1:1–5b | Composition: First Thessalonians | Disputed: A.D. 52; A.D. 53–54 |
+
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+##### Setting notes.
+
+**Entrance Antiphon: Cf. Psalm 16:6, 8 (Vulgate numbering; Hebrew 17); Communion Antiphon (first): Cf. Psalm 32:18–19 (Vulgate numbering; Hebrew 33)**. Occasion and place unknown; the psalms’ titles name none.
+
+**Entrance Antiphon: Cf. Psalm 16:6, 8 (Vulgate numbering; Hebrew 17); Responsorial Psalm: Psalm 96:1, 3, 4–5, 7–8, 9–10a, 10c, Psalm 96:7b (Hebrew numbering; Vulgate 95); Communion Antiphon (first): Cf. Psalm 32:18–19 (Vulgate numbering; Hebrew 33)**. Place of composition unknown.
+
+**Communion Antiphon (first): Cf. Psalm 32:18–19 (Vulgate numbering; Hebrew 33)**. Ascribed to David by its Latin and Greek title; David reigns at Hebron, then at Jerusalem. The reign dates David, not the psalm.
+
+**Responsorial Psalm: Psalm 96:1, 3, 4–5, 7–8, 9–10a, 10c, Psalm 96:7b (Hebrew numbering; Vulgate 95)**. The house rebuilt after the captivity, named in the psalm’s Latin and Greek title: the Temple at Jerusalem.
+
+**Responsorial Psalm: Psalm 96:1, 3, 4–5, 7–8, 9–10a, 10c, Psalm 96:7b (Hebrew numbering; Vulgate 95)**. The Messiah’s coming that the Fathers read in this psalm, taken as the Nativity at Bethlehem.
+
+**First Reading: Isaiah 45:1, 4–6**. Isaias, a citizen of Jerusalem, prophesies concerning Juda and Jerusalem.
+
+**First Reading: Isaiah 45:1, 4–6**. An unnamed prophet, place not stated; his oracles bid the exiles go out of Babylon.
+
+**Gospel: Matthew 22:15–21**. Jesus answers the tribute question while teaching in the temple at Jerusalem.
+
+**Gospel: Matthew 22:15–21**. Matthew writes for Jewish readers; the place is not fixed (Eusebius: on leaving Palestine).
+
+**Communion Antiphon (alternative): Mark 10:45**. Mark writes at Rome for Roman Christians (Chrysostom names Egypt).
+
+**Alleluia Verse: Philippians 2:15d, 16a**. Paul writes from captivity at Rome (some say Caesarea) to the church at Philippi.
+
+**Second Reading: 1 Thessalonians 1:1–5b**. Paul writes from Corinth (an ancient subscription says Athens) to the church at Thessalonica.
 
 ### Psalms 17 (16), 33 (32) and 96 (95): the antiphons and the psalm {#sec:date-psalms}
 
@@ -713,6 +741,6 @@ The figures shown are those of the *Catholic Encyclopedia*’s “St. Paul” (
 
 - Pontifical Biblical Commission, *De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam*, *Acta Apostolicae Sedis* 4 (1912), pp. 463–465, responses I–IX, as the chronology corpus records them.
 
-**Last revised (UTC):** 2026-10-16T23:16:24Z
+**Last revised (UTC):** 2026-11-03T21:06:51Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

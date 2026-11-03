@@ -119,6 +119,7 @@
         if (['TH', 'TD'].includes(node.tagName) && ['colspan', 'rowspan', 'scope', 'headers'].includes(name)) allowed = true;
         if (node.tagName === 'OL' && ['start', 'type'].includes(name)) allowed = true;
         if (node.tagName === 'IMG' && ['src', 'alt', 'width', 'height', 'data-print-asset'].includes(name)) allowed = true;
+        if (node.tagName === 'IMG' && name === 'loading') allowed = ['lazy', 'eager'].includes(attribute.value);
         if (node.tagName === 'DETAILS' && name === 'open') allowed = true;
         if (node.tagName === 'DIV' && name === 'data-print-grid') allowed = ['six', 'eight'].includes(attribute.value);
         if (['flow','proper','curriculum','guide'].includes(descriptor.print_type)) {
@@ -571,7 +572,9 @@
           need(await hash(bytes) === asset.sha256, 'A required illustration failed verification.');
           unchanged();
           const url = URL.createObjectURL(new Blob([bytes], {type: asset.mime})); urls.push(url);
-          await Promise.all(uses.map(async (image) => { image.src = url; await image.decode(); }));
+          // The prepared frame is offscreen: resume lazy reader images before
+          // awaiting decoding, so every verified illustration precedes print.
+          await Promise.all(uses.map(async (image) => { image.loading = 'eager'; image.src = url; await image.decode(); }));
           unchanged();
         }
         need(images.every((image) => (descriptor.assets || []).some((asset) => asset.id === image.dataset.printAsset)), 'An illustration was not declared by the canonical selection.');

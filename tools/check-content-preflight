@@ -2710,6 +2710,12 @@ def check_chronology_annotations_current(
     found = _corpus_answer(leaf, root)
     projection = wiring.annotations(found)
     rendered = wiring.render_annotations_tex(projection)
+    if found.presentation == wiring.ORIENTATION_V3:
+        table_path = leaf / wiring.ORIENTATION_TABLE_RECORD
+        if (not table_path.is_file()
+                or table_path.read_text(encoding="utf-8") != wiring.render_orientation_table(projection)):
+            problems.append(f"{wiring.ORIENTATION_TABLE_RECORD} is not the complete shared chronology table; "
+                            f"regenerate with `{_annotations_remedy(leaf, root)}`")
     if path.read_text(encoding="utf-8") != rendered:
         problems.append(
             f"{path.relative_to(leaf)} is not the complete annotation "
@@ -2734,11 +2740,14 @@ def check_chronology_annotations_current(
 
 def _orientation_tables(printed, found, leaf, *, required):
     """A row's passage, subject and dates are generated as one indivisible unit."""
-    expected = {row.key: row for row in _wiring().annotations(found).orientation_rows}
+    wiring = _wiring()
+    projection = wiring.annotations(found)
+    expected = {row.key: row for row in projection.orientation_rows}
+    shared = found.presentation == wiring.ORIENTATION_V3
     problems, cleaned, seen = [], {}, 0
     tables_seen = 0
-    table_re = re.compile(r"\\begin\{chronologyorientationtable\}(.*?)"
-                          r"\\end\{chronologyorientationtable\}", re.S)
+    table_re = re.compile(r"\\begin\{chronology(?:orientation|shared)table\}(.*?)"
+                          r"\\end\{chronology(?:orientation|shared)table\}", re.S)
     for path, text in printed.items():
         name = path.relative_to(leaf)
         try:
@@ -2748,6 +2757,11 @@ def _orientation_tables(printed, found, leaf, *, required):
             cleaned[path] = text
             continue
         tables = list(table_re.finditer(text))
+        if shared and (tables or calls):
+            if (path.resolve() != (leaf / wiring.ORIENTATION_TABLE_RECORD).resolve()
+                    or text != active_tex(wiring.render_orientation_table(projection))):
+                problems.append(f"{name}: orientation-v3 must import the complete canonical shared table; "
+                                "its cells, order and context cannot be authored")
         tables_seen += len(tables)
         for table in tables:
             contained = [(args, start, end) for args, start, end in calls
@@ -2784,7 +2798,7 @@ def _orientation_tables(printed, found, leaf, *, required):
             text = text[:start] + place + text[end:]
         cleaned[path] = text
     if required and tables_seen != 1:
-        problems.append("orientation-v1 and orientation-v2 require exactly one complete "
+        problems.append("orientation presentations require exactly one complete "
                         "orientation table on page two")
     return problems, cleaned, seen
 
@@ -2866,12 +2880,14 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
     orientation_problems = []
     if orientation:
         orientation_problems, printed, orientation_seen = _orientation_tables(
-            printed, found, leaf, required=macros)
+            printed, found, leaf, required=macros or (
+                found.presentation == _wiring().ORIENTATION_V3
+                and edition in {RESEARCH_EDITION, SYNTHESIS_EDITION}))
         if macros and any(r"\chronodate" in text for text in printed.values()):
             orientation_problems.append("orientation page two uses generated rows, not element-wide date cells")
     elif any(r"\chronologyorientationrow" in text for text in printed.values()):
         orientation_problems.append("orientation rows require chronology_presentation = "
-                                    "'orientation-v1' or 'orientation-v2'")
+                                    "'orientation-v1', 'orientation-v2' or 'orientation-v3'")
     # `claims` is the complete per-locus audit union. Only
     # `publication_claims` is the exact assertion-identity intersection across
     # every locus an element appoints, and therefore safe to print once as the

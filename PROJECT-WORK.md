@@ -7,11 +7,252 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-03.
 
+## Recovery and shared proper chronology, 2026-11-03
+
+<!-- promised-deliverable: shared-proper-chronology-2026-11-03 -->
+
+The resumed task restores PDF generation downstream of shared style and
+assembly, and requires independent cold review of the recovered implementation. The current
+Git tree tracks no PDFs; historical objects remain in full-history clones.
+History rewriting is outside this task. Native typesetting, source fidelity,
+fast browser access and verified delivery remain separate acceptance facts.
+
+The additional chronology requirement is to derive the propers' biblical-time
+tables consistently across providers from shared typed evidence, with concise,
+appropriate descriptions, classical dates and readable table composition.
+Identical passage/profile inputs must produce identical chronology; differing
+appointments and documented uncertainty must remain distinguishable. The
+existing chronology corpus now supplies the complete orientation-v3 table.
+All seven v2 consumers use generated tables and regenerated web editions;
+historical v1 publications retain their prior contract. Matching provider
+F01/F02 tables are byte-identical. Independent review preserves all 660 claim
+reaches and 63 context passages, with no new event dates or unresolved source
+findings. All seven concise PDF table pages pass visual and exact-cell-text
+review (63 rows); all required source gates pass. The durable scoped evidence is
+`workflows/reviews/no-pdfs-recovery-2026-11-03/chronology.json`. Final HTML
+review passes all seven tables at 1440×900 and 390×852: 378 exact cell
+comparisons, complete visible/reachable rows, no page overflow, working section
+links and clean browser consoles. Mobile rows place passage/context above a
+full-width date. All fourteen complete-table captures passed independent visual
+inspection. The compact HTML receipt SHA-256 is
+`bc8355c3a795f4eb828db0028e32a35c2283197e91e707f1ba64d0285fed3768`.
+The final source-schema module passes all sixteen cases, and the required
+deployment-source, site-build and artifact-verification gates pass. This
+chronology deliverable is complete within the seven migrated v2 consumers;
+historical v1 publications retain their existing contracts.
+
+## Prepared native PDF downloads, 2026-11-03
+
+<!-- promised-deliverable: prepared-native-pdf-delivery-2026-11-03 -->
+
+**Superseded by the maintainer's explicit correction.** This recovered proposal
+moved current PDF generation to a build host and maintained verified PDF files
+outside Git. The maintainer rejected that architecture: the documents must
+remain structured sections, with PDFs downstream of shared style and assembly;
+a style or structure change must not require regenerating gigabytes of PDFs.
+The incomplete preparation run was stopped. Its tooling, deployment integration
+and direct-download UI were removed from the active tree. No prepared-PDF
+manifest, external upload, commit or deployment resulted. Scratch experiments
+remain evidence only. The ledger requirements are explicitly waived by this
+correction; that disposition does not claim the proposed delivery was built.
+
+## Source and style assembly on demand, 2026-11-03
+
+<!-- promised-deliverable: native-style-on-demand-recovery-2026-11-03 -->
+
+**Complete in the reviewed feature-branch candidate.** Git retains canonical
+structured sections, typed data and shared styles. The browser assembles only
+the requested admitted native PDF. Ordinary publication builds no PDF corpus
+and maintains no current PDF collection elsewhere. Exact render inputs and
+runtime/compiler identities govern optional browser PDF reuse; Git revision and
+transport provenance remain separate. No PDFs are tracked, and existing Git
+history is preserved.
+
+Source transport shares exact UTF-8 objects and bounded gzip packs without
+changing virtual paths or mounted bytes. The final site has 644 native bundles:
+79,443,846 bytes of bundle JSON, 9,740,789 bytes of shared raw text and 3,100,786
+bytes of source packs, totaling 92,285,421 bytes. Original font names, metadata,
+aliases and byte identities remain available. Font bodies load as needed;
+any missing-body read invalidates that provisional run before output acceptance,
+and retries start with pristine workers and auxiliaries. The bounded final
+fallback loads the complete original inventory. Reader images reserve verified
+geometry and load lazily; HTML print clones load and decode every image.
+
+The shared preamble uses fast lossless stream compression. In the controlled
+local General Reader comparison, level 1 takes 4.424 seconds versus 36.553 at
+level 9, with 19,780,917 versus 17,731,155 PDF bytes. All eleven page rasters at
+144 DPI, extracted text and font inventories agree. This isolates compression;
+it is not a cold mobile timing. The actual final-site dictionary download is
+byte-identical to that reviewed level-1 PDF. The final article download likewise
+matches its independent fidelity proof byte for byte.
+
+Final real-browser measurements use fresh desktop Chromium profiles, actual
+touch Generate actions and completed downloads, 390×844 at DPR 3, 10 Mbps,
+80 ms latency and fourfold page-CPU throttling. The earlier recovered-candidate
+values below use the same declared network/viewport settings; these are scoped
+measurements, not physical-phone guarantees.
+
+| Selection | Earlier → final cold generation | Final cached PDF | Final HTTP-warm generation with PDF cache removed |
+| --- | ---: | ---: | ---: |
+| Seven-page article | 29.412 → 19.665 s | 32–33 ms | 3.394 s |
+| Eleven-page illustrated dictionary | 87.130 → 41.301 s | 157–171 ms | 7.519 s |
+| One-page Unicode papal selection | 40.514 → 25.035 s | 22 ms | 4.616 s |
+
+Final native transfer is 20,409,893, 41,656,649 and 25,383,622 bytes respectively;
+other cold page resources are 257,754, 2,231,277 and 195,947 bytes. Cached-PDF
+hits start no workers and fetch no native source/runtime assets. All four
+outputs per route preserve exact extracted text. Cancellation responds in
+48 ms for the article and 26 ms for the papal selection, leaves no download or
+cached partial PDF, terminates its worker and permits a successful retry whose
+text matches the original. All owned browser processes closed. The integrated browser receipt SHA-256 is
+`df867fb8c6354d560b319a55d3aa45082af57ab7281d196ddaf28e8cc0ab7ba6`.
+
+Independent final native fidelity covers seven editions and 936 pages. Six
+PDFs are byte-identical against the recovered full-runtime controller; the
+Unicode papal output retains full text, embedded fonts, word coordinates and
+all page pixels, with a creation-timestamp difference. All seven chronology
+companions retain their reviewed table pixels after the compression change.
+All 1,002 inspected canonical inputs stayed current, and all seven proof render
+identities match bundles in the final site. Durable scoped proofs are under
+`workflows/reviews/no-pdfs-recovery-2026-11-03/`.
+
+The final combined regression run passes 133 Python tests, including 53 runtime
+and six source-transport Node cases. The separate sixteen-case source-schema
+module, tool-registry checks and independent cold reviews pass. The shared
+compression guard needed a narrowly scoped HTML projection rule and a proven
+metadata-only refresh of unchanged diagrams; neither native source nor artwork
+was substituted. The complete HTML producer passes 288 products, 133 assets
+and 4,818 source paths. The final official record proves byte parity between
+two independent builds: thirteen families, 27,836 files and 382,666,815 bytes.
+The initially omitted orientation schema registration is corrected, with
+`validate` as semantic owner and separate coverage freshness checks.
+
+`make check-deployment-sources`, `make public-site` and
+`public-alpha verify --deployment-target github-pages` all pass with PDF,
+rendering and download executables rejected through PATH. The verified site
+contains 43,865 files and 829,369,746 bytes, with zero PDFs. This records local
+feature-branch acceptance, not a production deployment.
+
+Limits remain explicit. Worker-CPU calibration stays roughly 77–81 ms while the
+main thread slows from roughly 59 to 234–246 ms, so page throttling does not model
+phone TeX performance. No physical Android/iOS, thermal or storage-pressure
+claim is made. The largest measured main-thread long task is 160 ms; cooperative
+yielding is not an absolute per-operation ceiling. Fidelity is representative,
+not whole-corpus visual acceptance. An unrelated earlier broad tool-example
+check has three inherited failures (native-service example exemptions and local
+Python-package dependency classification); those test files are unchanged.
+Required affected source/site gates and scoped reviews pass.
+
+## Faster browser PDF generation, 2026-11-03
+
+<!-- promised-deliverable: native-tex-print-performance-2026-11-03 -->
+
+**Recovered local performance evidence; active architecture restored.** These
+measurements describe the frozen earlier proposal. The later prepared-download
+approach was rejected by the maintainer in favor of assembly from current
+structured sections and shared styles on demand. This evidence informs the
+active recovery above; it is not a new measurement or acceptance of its final
+implementation.
+The mobile follow-up compares matched first-proposal and revised-candidate
+runs using fresh desktop Chromium 156.0.8078.79 profiles, actual
+touch taps, a 390×844 viewport at DPR 3, 10,000,000 bit/s in each direction,
+80 ms latency and fourfold page-CPU throttling:
+
+| Selection | First PDF: first proposal → revised candidate | Page and generation network bytes: first → revised |
+| --- | ---: | ---: |
+| Seven-page article | 30.327 → 29.412 s | 35,645,177 → 34,554,110 |
+| One-page Unicode papal selection | 56.096 → 40.514 s | 67,058,888 → 47,141,512 |
+| Eleven-page illustrated dictionary | 87.595 → 87.130 s | 78,856,744 → 77,765,677 |
+
+Under the same constraints, the original unpacked article takes 146.743 seconds,
+2,962 generation fetches and 56,882,768 page-plus-generation network bytes.
+The first proposal reduces that to 30.327 seconds, 13 fetches and 35,645,177 bytes;
+its completed-PDF hits replace the original 4.129–4.178-second recompilations.
+
+The revised dictionary's native generation transfers 56,451,565 bytes; other
+page assets account for 21,314,112 bytes. Revised completed-PDF hits launch no
+source/runtime fetches and take 16–106 ms. HTTP-warm generation after deleting
+only the PDF cache takes 4.051, 4.773 and 40.172 seconds respectively; the
+illustrated sample still requires substantial typesetting work. Main-thread
+calibration slows from 58.8 to 244 ms, while the dedicated worker stays
+at 75–75.8 ms: page-CPU throttling does not emulate mobile TeX CPU performance.
+These are network-constrained desktop measurements, without real Android/iOS,
+thermal, backgrounding or storage-pressure coverage. The revised candidate adds
+compressed compiler/runtime transport, fewer memory copies and acknowledgement
+messages, early capability checks and yields during decompression and
+verification. Original runtime
+pins, assets and source coverage remain authoritative; no guessed package
+allowlist is introduced. Revised measurements, fidelity checks, independent
+review, current source/site gates and the fresh-artifact functional check pass.
+The observed Unicode expansion/verification responsiveness regression is resolved.
+Final maximum main-thread long tasks are 115, 107 and 94 ms respectively;
+the cooperative 8 ms scheduling budget is not a per-operation ceiling.
+Actual touch cancellation takes 43 ms for the article and 24 ms for the papal
+selection, terminates the worker without a partial download/cache entry, and
+permits an immediate successful retry. Maximum measured main-thread worker
+message submission falls from roughly 80 ms to at most 1.5 ms. Sampled aggregate
+desktop-renderer PSS peaks are about 640–801 MiB in 250 ms samples. Process counts
+and shared-memory attribution vary; this is not a phone RAM requirement or a
+reliable percentage memory saving.
+The revised measured controller SHA-256 is
+`5b62d200ae7087846c558c1e94e6ea0c2a9c422a600c51334e08fb457915a193`.
+
+Independent fidelity comparisons cover seven editions, 936 pages and 1,083,310
+word boxes across article, proper, cards, MC/Trainer dictionary, Clementine
+Vulgate, Unicode papal and Full Account Douay-Rheims reading-plan layouts.
+The timing sample instead uses the dictionary's general-reader edition.
+Six complete PDFs are byte-identical. The XeTeX papal PDF retains identical full
+text, embedded fonts, every word coordinate and all
+independently rendered 100 dpi page pixels. This is representative native-output
+fidelity, not whole-corpus or physical-device acceptance. All 43 runtime tests,
+their discovery wrapper, 30 publisher tests, 63 surrounding native checks and
+the tool-registry check pass on the frozen candidate.
+
+Runtime packs transport the existing exact package and font bytes; canonical
+TeX, original paths, engines, templates, admitted editions and rights remain
+authoritative. Completed-PDF reuse is bounded by the exact source bundle and
+runtime commitments and verifies the stored output. The mutable runtime manifest
+is revalidated to avoid stale cached metadata after deployment.
+Cache failure leaves ordinary generation available, and cancellation or a failed
+download stops the remaining work. XeTeX releases its worker before conversion.
+
+The first proposal remains the comparison baseline, with controller SHA-256
+`a3cc56c4d7928e38a1d0fe803296a23d684272b7c9aa8fb62100258c9a77a6cf`.
+Its seven shared runtime packs transport 49,557,459 raw bytes as 27,988,553
+compressed bytes. The revision additionally compresses three WASM payloads and
+XeTeX ICU data while preserving the original descriptors and raw assets.
+Controlled candidate timings use a production-derived transport overlay and
+the exact final controller. Both baseline and candidate use a local HTTP server
+with `Cache-Control: public, max-age=3600`; they are not deployed-site timings.
+
+Two final independent cold builds agree on all 13 browser-product families,
+27,836 files and 382,659,292 bytes; recording took 1,105 seconds and preserved
+every first-proposal product output byte. The exact scoped binding refresh
+changes five source hashes, without changing inventory membership or approval
+prose. Current deployment source gates and the site build pass in 315 seconds,
+producing 42,719 files. The built controller matches the revised controller's
+fingerprint recorded above; its runtime manifest is
+`0b7c7feb9e4cd5b7a4b5b96d43b7498b2bc212c4c119a25259a244df34ceef12`.
+The fresh-site functional smoke passes without overlays: four actual touch
+Generate/download or reuse operations yield the same seven-page article bytes,
+and PDF hits use no worker or print fetch. Independent GitHub Pages artifact
+verification passes in 223 seconds. Binding acceptance uses the verifier's exact
+hashes and both directions of source-inventory comparison under the current
+deployment path, replacing the older preview workflow's separate
+binding-status invocation. The smoke ran alongside that verification and does
+not supply comparative performance claims.
+
+No commit, push or deployment was included in this proposal. The earlier
+native-print completion remains a historical fact; the on-demand recovery
+above and the separate publication-speed requirement remain open.
+
 ## Restore native TeX printing on demand, 2026-11-03
 
 <!-- promised-deliverable: native-tex-print-on-demand-2026-11-03 -->
 
-**Complete: native TeX PDF generation is live and verified.**
+**Historical completion: native TeX PDF generation was deployed and verified.**
+The acceptance facts below describe the earlier deployment. The active recovery
+above retains on-demand assembly and evaluates its performance and integration.
 The maintainer rejected browser print typography and requires the web Print
 action to create native TeX PDFs, retaining original layouts and fonts with
 zero PDFs checked into Git. This supersedes browser reflow as the primary

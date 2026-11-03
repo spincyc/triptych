@@ -1,6 +1,122 @@
 schema_version = 1
 
 [[deliverables]]
+id = "shared-proper-chronology-2026-11-03"
+owner = "PROJECT-WORK.md"
+promise = "Make proper chronology tables consistent across agent providers through shared biblical-time encoding, with terse accurate descriptions, classical dates and attractive tables, verified by independent cold review."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "deterministic-shared-chronology"
+  criterion = "The same appointed passages and chronology profile produce identical dates and descriptions across providers, while differing appointments, narrated events, composition dates and sourced uncertainty retain their distinctions."
+  status = "pass"
+  evidence = ["workflows/reviews/no-pdfs-recovery-2026-11-03/chronology.json", "tools/tests/test_chronology_shared_table.py"]
+
+  [[deliverables.requirements]]
+  id = "concise-classical-presentation"
+  criterion = "Representative current proper tables use terse appropriate descriptions and classical date notation with readable print and browser composition; shared generation and validation prevent provider-specific drift."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/no-pdfs-recovery-2026-11-03/chronology.json"]
+
+  [[deliverables.requirements]]
+  id = "reviewed-chronology-integration"
+  criterion = "Affected chronology and source checks pass, representative rendered output is inspected, and an independent cold review has no unresolved blocking findings."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/no-pdfs-recovery-2026-11-03/chronology.json"]
+
+[[deliverables]]
+id = "prepared-native-pdf-delivery-2026-11-03"
+owner = "PROJECT-WORK.md"
+promise = "Recovered proposal to maintain prepared current native PDF downloads outside Git; explicitly superseded by the maintainer's requirement for assembly from current structured sections and shared styles on demand."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "current-native-output-identity"
+  criterion = "Prepared outputs bind the selected current canonical source graph, original native recipe, pinned build-host typesetter and exact PDF bytes; render keys follow actual inputs independently of unrelated repository revisions, and representative source, layout, font and apparatus checks preserve existing profile requirements without substituting historical renderings."
+  status = "waived"
+  evidence = ["PROJECT-WORK.md"]
+  waiver_reason = "The maintainer rejected maintaining prepared PDFs outside Git: PDFs must be assembled on demand from structured sections and shared styles, without rebuilding a corpus for style changes."
+  waiver_authority = "Explicit maintainer correction on 2026-11-03, recorded in PROJECT-WORK.md."
+
+  [[deliverables.requirements]]
+  id = "verified-delivery-and-admission"
+  criterion = "The prepared inventory covers every currently admitted edition with verified exact bytes and delivery, rechecks current rights and publication dispositions, and refuses missing, stale, altered or unadmitted outputs; historical print receipts and source evidence retain their separate identities."
+  status = "waived"
+  evidence = ["PROJECT-WORK.md"]
+  waiver_reason = "The maintainer rejected maintaining prepared PDFs outside Git: PDFs must be assembled on demand from structured sections and shared styles, without rebuilding a corpus for style changes."
+  waiver_authority = "Explicit maintainer correction on 2026-11-03, recorded in PROJECT-WORK.md."
+
+  [[deliverables.requirements]]
+  id = "direct-browser-downloads"
+  criterion = "Actual generated-page browser actions retrieve prepared native PDFs without downloading a compiler or running browser TeX; mobile-shaped touch, repeat requests and failure behavior are checked under declared conditions, with real-device and deployment limits stated."
+  status = "waived"
+  evidence = ["PROJECT-WORK.md"]
+  waiver_reason = "The maintainer rejected maintaining prepared PDFs outside Git: PDFs must be assembled on demand from structured sections and shared styles, without rebuilding a corpus for style changes."
+  waiver_authority = "Explicit maintainer correction on 2026-11-03, recorded in PROJECT-WORK.md."
+
+  [[deliverables.requirements]]
+  id = "reviewed-local-replacement"
+  criterion = "Independent cold reviews, focused regressions and current required source/site gates pass; the concrete local proposal reconciles governing guidance, keeps PDF bytes out of Git and corpus compilation out of ordinary site publication, and distinguishes preparation from authorized external publication."
+  status = "waived"
+  evidence = ["PROJECT-WORK.md"]
+  waiver_reason = "The maintainer rejected maintaining prepared PDFs outside Git: PDFs must be assembled on demand from structured sections and shared styles, without rebuilding a corpus for style changes."
+  waiver_authority = "Explicit maintainer correction on 2026-11-03, recorded in PROJECT-WORK.md."
+
+[[deliverables]]
+id = "native-style-on-demand-recovery-2026-11-03"
+owner = "PROJECT-WORK.md"
+promise = "Generate high-quality PDFs on demand in the browser from current structured sections and shared style/assembly inputs, without tracking or maintaining a prebuilt PDF collection or requiring corpus-wide PDF regeneration for style changes."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "source-style-assembly-boundary"
+  criterion = "Publishing current structured content and shared styles requires no PDF compilation or PDF delivery collection; browser generation uses the current admitted recipe and invalidates any reusable PDF when source, style, assembly or runtime inputs change."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/no-pdfs-recovery-2026-11-03/native-fidelity.json", "src/web/browser/shared/native-tex.js"]
+
+  [[deliverables.requirements]]
+  id = "native-quality-and-performance"
+  criterion = "Representative real browser actions generate complete high-quality native PDFs; cold and warm costs, responsiveness and failures are measured under stated conditions, with concrete improvements and remaining limits reported accurately."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/no-pdfs-recovery-2026-11-03/native-fidelity.json", "src/web/browser/shared/native-tex.js"]
+
+  [[deliverables.requirements]]
+  id = "reviewed-source-first-integration"
+  criterion = "Independent cold reviews and affected source/site checks pass, no PDFs are tracked, guidance matches actual behavior, and publication state is reported separately from local validation."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/no-pdfs-recovery-2026-11-03/native-fidelity.json", "src/web/browser/shared/native-tex.js"]
+
+[[deliverables]]
+id = "native-tex-print-performance-2026-11-03"
+owner = "PROJECT-WORK.md"
+promise = "Prepare a measured, independently cold-reviewed improvement to on-demand browser PDF generation, preserving original native layouts, sources and admission boundaries, and present the concrete proposal before committing."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "measured-cold-and-repeat-generation"
+  criterion = "Comparable cold and repeated browser requests demonstrate the transport and completed-PDF reuse improvements, with request counts, timings, exact test conditions and deployment limits recorded."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "scripts/_native_tex_publication.py", "src/web/browser/shared/native-tex.js"]
+
+  [[deliverables.requirements]]
+  id = "native-fidelity-and-cache-integrity"
+  criterion = "Runtime packs preserve every existing file byte and virtual path; representative native PDFs preserve complete text, layout and fonts; completed-PDF reuse validates exact source/runtime/output commitments, remains optional, and preserves failure and cancellation behavior."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "tools/tests/test_native_tex_publication.py", "tools/tests/native_tex_runtime.mjs"]
+
+  [[deliverables.requirements]]
+  id = "cold-review-and-local-proposal"
+  criterion = "Independent cold reviews address architecture, integrity and real-browser behavior, all blocking findings are resolved, current required source/site checks pass, and the final concrete uncommitted proposal states the remaining limits before any commit or publication."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "docs/printing.md"]
+
+  [[deliverables.requirements]]
+  id = "mobile-cold-start-and-responsiveness"
+  criterion = "Fresh cache-empty pdfTeX and Unicode/XeTeX comparisons under declared bandwidth, latency and page-CPU constraints demonstrate lower transfer cost and first-PDF latency, preserve responsive progress and cancellation, and clearly distinguish worker-CPU and real-device limits; unsupported capabilities fail early, and original runtime bytes, pins and complete package coverage remain intact."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/web/browser/shared/native-tex.js", "scripts/_native_tex_publication.py", "tools/tests/native_tex_runtime.mjs", "tools/tests/test_native_tex_publication.py"]
+
+[[deliverables]]
 id = "native-tex-print-on-demand-2026-11-03"
 owner = "PROJECT-WORK.md"
 promise = "Restore the web Print action to generate native TeX PDFs on demand from current admitted canonical sources, preserving original elegant layouts and fonts across document types with zero PDFs checked into Git and no corpus PDF build in normal publishing."

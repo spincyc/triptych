@@ -167,8 +167,11 @@ conversion.
   is resolved through its hash-bound delivery sidecar.
 - Reviewed, publishable web editions belong under `web/`, generated from the
   same sources and governed by `guidance/web-editions.md`.
-- PDFs are optional, single-document print outputs made with
-  `tools/print-document`; no PDF is tracked or required by normal site deployment.
+- PDFs are downstream print outputs generated on demand from the selected
+  canonical sections and current shared styles. The web action uses browser
+  native TeX; `tools/print-document` builds one local edition. No maintained PDF
+  corpus, in Git or elsewhere, is a normal deployment input. Follow
+  `guidance/repository.md` for source assembly and disposable cache identities.
 - Reproducible build output belongs under ignored `build/`; task-created logs,
   review output, caches, and experiments belong under `.scratch/` in a workspace.
 - Browser JSON formerly under `src/web/data/` is generated outside Git from

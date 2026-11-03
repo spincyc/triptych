@@ -432,14 +432,30 @@ Both accounts require grace, willing action and perseverance. Their common futur
 
 Composition, narrated event and remembered setting answer different historical questions. The table locates each biblical appointment once, consolidating overlapping uses in Matthew. The following notes explain the source judgments and alternatives behind the displayed dates.
 
-| **Passage** | **Occurrence and place** | **Date** |
+| **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Responsorial Psalm: Psalm 24:1bc-2,3–4ab,5–6, Cf. Psalm 24:6 (Hebrew numbering; Vulgate 23) | Historical setting. Seeking admission to the Lord’s mountain and sanctuary; original occasion unknown. See Psalm note below. | Occasion date unresolved |
-| Responsorial Psalm: Psalm 24:1bc-2,3–4ab,5–6, Cf. Psalm 24:6 (Hebrew numbering; Vulgate 23) | Composition: Psalms. Individual writing place unknown; the date is a bound for the collection. See Psalm note below. | Before c. 165 B.C. |
-| Gospel: Matthew 5:1–12a | Event. Jesus teaches disciples on a mountain during his Galilean ministry; exact hill unknown. See Matthew note below. | Date unresolved |
-| Gospel acclamation: Matthew 11:28; Gospel: Matthew 5:1–12a; Communion antiphon: Matthew 5:8–10 | Composition: The Gospel of St Matthew. Tradition associates an earlier Hebrew form with Palestine; the Greek text’s relation is disputed. See Matthew note below. | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
-| Second Reading: 1 John 3:1–3 | Composition: The First Epistle of St John. Probably associated with Ephesus; the immediate recipients’ town is uncertain. See First John note below. | c\. A.D. 90–100 |
-| First Reading: Revelation 7:2–4,9–14 | Composition: The Apocalypse of St John. The seer names Patmos; the book addresses seven churches in Asia. See Revelation note below. | Disputed: A.D. 81–96; c. A.D. 90–100 |
+| Responsorial Psalm: Ps. 24:1bc–2,3–4ab,5–6 (Heb.; Vg. 23), Cf. Psalm 24:6 (Heb.; Vg. 23) | Historical setting | Occasion date unresolved |
+| Responsorial Psalm: Ps. 24:1bc–2,3–4ab,5–6 (Heb.; Vg. 23), Cf. Psalm 24:6 (Heb.; Vg. 23) | Composition: Psalms | Before c. 165 B.C. |
+| Gospel: Matt. 5:1–12a | Narrated event: Jesus teaches the Beatitudes on a mountain | Date unresolved |
+| Gospel acclamation: Matt. 11:28; Gospel: Matt. 5:1–12a; Communion antiphon: Matt. 5:8–10 | Composition: Matthew | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Second Reading: 1 John. 3:1–3 | Composition: First John | c. A.D. 90–100 |
+| First Reading: Apoc. 7:2–4,9–14 | Composition: Apocalypse | Disputed: A.D. 81–96; c. A.D. 90–100 |
+
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+##### Setting notes.
+
+**Responsorial Psalm: Psalm 24:1bc-2,3–4ab,5–6, Cf. Psalm 24:6 (Hebrew numbering; Vulgate 23)**. Seeking admission to the Lord’s mountain and sanctuary; original occasion unknown. See Psalm note below.
+
+**Responsorial Psalm: Psalm 24:1bc-2,3–4ab,5–6, Cf. Psalm 24:6 (Hebrew numbering; Vulgate 23)**. Individual writing place unknown; the date is a bound for the collection. See Psalm note below.
+
+**Gospel: Matthew 5:1–12a**. Jesus teaches disciples on a mountain during his Galilean ministry; exact hill unknown. See Matthew note below.
+
+**Gospel acclamation: Matthew 11:28; Gospel: Matthew 5:1–12a; Communion antiphon: Matthew 5:8–10**. Tradition associates an earlier Hebrew form with Palestine; the Greek text’s relation is disputed. See Matthew note below.
+
+**Second Reading: 1 John 3:1–3**. Probably associated with Ephesus; the immediate recipients’ town is uncertain. See First John note below.
+
+**First Reading: Revelation 7:2–4,9–14**. The seer names Patmos; the book addresses seven churches in Asia. See Revelation note below.
 
 ### Psalm 24: a sanctuary setting and a collection bound {#history-psalm}
 
@@ -515,7 +531,7 @@ Chronological alternatives follow the generated canonical record and the histori
 
 - **Historical orientation.** USCCB, NABRE, “The Book of Psalms,” introduction. E. Jacquier, “Gospel of St. Matthew,” *Catholic Encyclopedia* X (1911). Walter Drum, “Epistles of Saint John,” VIII (1910). A. Durand, “The New Testament,” XIV (1912). F. Van den Biesen, “Apocalypse,” I (1907). Exact date/place discussions are cited in the historical appendix.
 
-**Last revised (UTC):** 2026-10-26T12:59:00Z
+**Last revised (UTC):** 2026-11-03T21:06:51Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

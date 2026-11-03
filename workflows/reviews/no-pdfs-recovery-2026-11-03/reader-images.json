@@ -1,0 +1,96 @@
+{
+  "schema": "triptych-reader-image-performance-review/v1",
+  "date": "2026-11-03",
+  "scope": "Selected dictionary print reader, page loading only; no native PDF generation timed.",
+  "conditions": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 3,
+    "mobile": true,
+    "touch": true,
+    "latency_ms": 80,
+    "mbps": 10,
+    "cpu_slowdown": 4,
+    "cache_disabled": true
+  },
+  "route": "print/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.html",
+  "runs": [
+    {
+      "name": "baseline",
+      "load_ms": 17832,
+      "settled_ms": 17832,
+      "initial_encoded_bytes": 21324386,
+      "initial_requests": 58,
+      "initial_body_bytes": 21314112,
+      "initial_image_requests": 48,
+      "initial_image_bytes": 20984773,
+      "loaded_content_images": 50,
+      "total_content_images": 50,
+      "lazy_content_images": 0,
+      "native_runtime_requests": 0,
+      "errors": []
+    },
+    {
+      "name": "lazy",
+      "load_ms": 1034,
+      "settled_ms": 2536,
+      "initial_encoded_bytes": 2220785,
+      "initial_requests": 13,
+      "initial_body_bytes": 2218471,
+      "initial_image_requests": 3,
+      "initial_image_bytes": 1886753,
+      "loaded_content_images": 3,
+      "total_content_images": 50,
+      "lazy_content_images": 50,
+      "native_runtime_requests": 0,
+      "errors": []
+    }
+  ],
+  "limitations": [
+    "Desktop Chromium mobile emulation, not physical Android or iOS Safari.",
+    "Existing generated route with declared HTML/controller overlay; no complete site build and no PDF generation.",
+    "Local uncompressed HTTP body counts; production compression and native lazy distance heuristics may differ."
+  ],
+  "browser": "Chrome/156.0.8078.79",
+  "baseline_source_sha256": "368b42e7c4b90b700a98d09d055d132542e378602f769244cae8acab1d2987fa",
+  "lazy_source_sha256": "368b42e7c4b90b700a98d09d055d132542e378602f769244cae8acab1d2987fa",
+  "fragment": {
+    "id": "obj-tunicle",
+    "documentTop": 44246.203125,
+    "partOffset": 43474.890625,
+    "imageBox": {
+      "x": 56,
+      "y": 44330.09375,
+      "width": 278,
+      "height": 185.328125,
+      "top": 44330.09375,
+      "right": 334,
+      "bottom": 44515.421875,
+      "left": 56
+    }
+  },
+  "fragment_after": {
+    "id": "obj-tunicle",
+    "documentTop": 44249.5625,
+    "partOffset": 43474.890625,
+    "screenTop": 167.5625,
+    "imageBox": {
+      "x": 56,
+      "y": 251.453125,
+      "width": 278,
+      "height": 185.328125,
+      "top": 251.453125,
+      "right": 334,
+      "bottom": 436.78125,
+      "left": 56
+    },
+    "hash": "#obj-tunicle"
+  },
+  "status": "pass",
+  "independent_code_review": {
+    "status": "pass",
+    "focused_tests": 19,
+    "scope": "Catalog projections, finite image attributes, exact image pins, and real-Chromium eager decode before HTML printing."
+  },
+  "timing_definition": "load_ms records page readiness plus a 600 ms observation interval; settled_ms waits for network idle. These are not first-contentful-paint measurements."
+}

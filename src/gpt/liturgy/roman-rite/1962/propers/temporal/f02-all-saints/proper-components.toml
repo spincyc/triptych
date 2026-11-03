@@ -3,7 +3,7 @@ record_type = "proper-components"
 format_contract = "propers-format-v1"
 presentation_contract = "interpretive-pagination-v1"
 authority_contract = "authority-standing-v1"
-chronology_presentation = "orientation-v2"
+chronology_presentation = "orientation-v3"
 document = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
 calendar = "roman-1962"
 entrypoint = "main.tex"
@@ -89,7 +89,7 @@ path = "sections/70-date-location.tex"
 modes = ["research"]
 depends_on = []
 element_keys = ["introit", "lesson", "gradual", "alleluia", "gospel", "offertory", "communion"]
-references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml", "research/chronology.toml", "research/chronology-annotations.tex"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml", "research/chronology.toml", "research/chronology-annotations.tex", "research/chronology-table.tex"]
 
 [[components]]
 key = "study-apparatus"
@@ -125,7 +125,7 @@ path = "sections/concise/03-chronology.tex"
 modes = ["synthesis"]
 depends_on = []
 element_keys = ["introit", "lesson", "gradual", "alleluia", "gospel", "offertory", "communion"]
-references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml", "research/chronology.toml", "research/chronology-annotations.tex"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml", "research/chronology.toml", "research/chronology-annotations.tex", "research/chronology-table.tex"]
 
 [[components]]
 key = "concise-themes"

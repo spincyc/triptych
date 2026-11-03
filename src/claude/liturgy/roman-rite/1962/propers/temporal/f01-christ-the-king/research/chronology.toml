@@ -117,6 +117,34 @@ locus = "Ps.71.1"
 inherited = true
 scope = "Ps"
 
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Ps.71.1"
+inherited = false
+scope = "Ps.2.8 Ps.28.10-11 Ps.71.1 Ps.71.8 Ps.71.11"
+
+[[elements]]
+key = "collect"
+name = "Collect"
+refs = []
+loci = []
+status = ""
+reason = ""
+publication_status = ""
+publication_reason = ""
+
 [[elements]]
 key = "epistle"
 name = "Epistle"
@@ -392,6 +420,29 @@ locus = "Ps.71.8"
 inherited = true
 scope = "Ps"
 
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Ps.71.11"
+inherited = false
+scope = "Ps.2.8 Ps.28.10-11 Ps.71.1 Ps.71.8 Ps.71.11"
+
+[[elements.claims.reaches]]
+locus = "Ps.71.8"
+inherited = false
+scope = "Ps.2.8 Ps.28.10-11 Ps.71.1 Ps.71.8 Ps.71.11"
+
 [[elements.publication_claims]]
 relation = "composition"
 subject = "critical.psalms.latest-composition-boundary"
@@ -414,6 +465,29 @@ scope = "Ps"
 locus = "Ps.71.8"
 inherited = true
 scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.71.11"
+inherited = false
+scope = "Ps.2.8 Ps.28.10-11 Ps.71.1 Ps.71.8 Ps.71.11"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.71.8"
+inherited = false
+scope = "Ps.2.8 Ps.28.10-11 Ps.71.1 Ps.71.8 Ps.71.11"
 
 [[elements]]
 key = "alleluia"
@@ -496,296 +570,6 @@ sources = ["bible:douay-rheims:Jer.25.11", "bible:douay-rheims:Jer.25.12"]
 locus = "Dan.7.14"
 inherited = true
 scope = "Dan"
-
-[[elements]]
-key = "tract"
-name = "Tract"
-refs = ["Psalms 88:27-28,30"]
-loci = ["Ps.88.27", "Ps.88.28", "Ps.88.30"]
-status = "dated"
-reason = ""
-publication_status = "dated"
-publication_reason = ""
-
-[[elements.claims]]
-relation = "composition"
-subject = "critical.psalms.latest-composition-boundary"
-title = "The latest composition boundary shared by the Psalms"
-label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
-date = "before c. 165 B.C."
-precision = "boundary"
-disposition = "preferred"
-answerability = "answerable"
-basis_class = "catholic-critical"
-profile = "catholic-critical-v1"
-sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
-
-[[elements.claims.reaches]]
-locus = "Ps.88.27"
-inherited = true
-scope = "Ps"
-
-[[elements.claims.reaches]]
-locus = "Ps.88.28"
-inherited = true
-scope = "Ps"
-
-[[elements.claims.reaches]]
-locus = "Ps.88.30"
-inherited = true
-scope = "Ps"
-
-[[elements.claims]]
-relation = "historical-setting"
-subject = "israel.exile.third-captivity"
-title = "The third captivity of Juda: the destruction of Jerusalem under Sedecias"
-label = "A.M. 3416"
-date = "3416 A.M."
-precision = "year"
-disposition = "preferred"
-answerability = "answerable"
-basis_class = "reported-excluded"
-profile = "catholic-traditional-v1"
-sources = ["passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology"]
-
-[[elements.claims.reaches]]
-locus = "Ps.88.27"
-inherited = true
-scope = "Ps.88"
-
-[[elements.claims.reaches]]
-locus = "Ps.88.28"
-inherited = true
-scope = "Ps.88"
-
-[[elements.claims.reaches]]
-locus = "Ps.88.30"
-inherited = true
-scope = "Ps.88"
-
-[[elements.claims]]
-relation = "historical-setting"
-subject = "israel.exile.third-captivity"
-title = "The third captivity of Juda: the destruction of Jerusalem under Sedecias"
-label = "586 B.C."
-date = "586 B.C."
-precision = "year"
-disposition = "alternate"
-answerability = "answerable"
-basis_class = "traditional-catholic"
-profile = "catholic-traditional-v1"
-sources = ["artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03315a-9cb437e2", "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14499a-82b12b6e"]
-
-[[elements.claims.reaches]]
-locus = "Ps.88.27"
-inherited = true
-scope = "Ps.88"
-
-[[elements.claims.reaches]]
-locus = "Ps.88.28"
-inherited = true
-scope = "Ps.88"
-
-[[elements.claims.reaches]]
-locus = "Ps.88.30"
-inherited = true
-scope = "Ps.88"
-
-[[elements.claims]]
-relation = "historical-setting"
-subject = "israel.exile.third-captivity"
-title = "The third captivity of Juda: the destruction of Jerusalem under Sedecias"
-label = "the fall of Jerusalem (587 B.C.)"
-date = "587 B.C."
-precision = "year"
-disposition = "alternate"
-answerability = "answerable"
-basis_class = "traditional-catholic"
-profile = "catholic-traditional-v1"
-sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08652a-189e1a8f"]
-
-[[elements.claims.reaches]]
-locus = "Ps.88.27"
-inherited = true
-scope = "Ps.88"
-
-[[elements.claims.reaches]]
-locus = "Ps.88.28"
-inherited = true
-scope = "Ps.88"
-
-[[elements.claims.reaches]]
-locus = "Ps.88.30"
-inherited = true
-scope = "Ps.88"
-
-[[elements.claims]]
-relation = "historical-setting"
-subject = "israel.exile.third-captivity"
-title = "The third captivity of Juda: the destruction of Jerusalem under Sedecias"
-label = "B.C. 588"
-date = "588 B.C."
-precision = "year"
-disposition = "alternate"
-answerability = "answerable"
-basis_class = "reported-traditional"
-profile = "catholic-traditional-v1"
-sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c"]
-
-[[elements.claims.reaches]]
-locus = "Ps.88.27"
-inherited = true
-scope = "Ps.88"
-
-[[elements.claims.reaches]]
-locus = "Ps.88.28"
-inherited = true
-scope = "Ps.88"
-
-[[elements.claims.reaches]]
-locus = "Ps.88.30"
-inherited = true
-scope = "Ps.88"
-
-[[elements.publication_claims]]
-relation = "composition"
-subject = "critical.psalms.latest-composition-boundary"
-title = "The latest composition boundary shared by the Psalms"
-label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
-date = "before c. 165 B.C."
-precision = "boundary"
-disposition = "preferred"
-answerability = "answerable"
-basis_class = "catholic-critical"
-profile = "catholic-critical-v1"
-sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.27"
-inherited = true
-scope = "Ps"
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.28"
-inherited = true
-scope = "Ps"
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.30"
-inherited = true
-scope = "Ps"
-
-[[elements.publication_claims]]
-relation = "historical-setting"
-subject = "israel.exile.third-captivity"
-title = "The third captivity of Juda: the destruction of Jerusalem under Sedecias"
-label = "A.M. 3416"
-date = "3416 A.M."
-precision = "year"
-disposition = "preferred"
-answerability = "answerable"
-basis_class = "reported-excluded"
-profile = "catholic-traditional-v1"
-sources = ["passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology"]
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.27"
-inherited = true
-scope = "Ps.88"
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.28"
-inherited = true
-scope = "Ps.88"
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.30"
-inherited = true
-scope = "Ps.88"
-
-[[elements.publication_claims]]
-relation = "historical-setting"
-subject = "israel.exile.third-captivity"
-title = "The third captivity of Juda: the destruction of Jerusalem under Sedecias"
-label = "586 B.C."
-date = "586 B.C."
-precision = "year"
-disposition = "alternate"
-answerability = "answerable"
-basis_class = "traditional-catholic"
-profile = "catholic-traditional-v1"
-sources = ["artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03315a-9cb437e2", "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14499a-82b12b6e"]
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.27"
-inherited = true
-scope = "Ps.88"
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.28"
-inherited = true
-scope = "Ps.88"
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.30"
-inherited = true
-scope = "Ps.88"
-
-[[elements.publication_claims]]
-relation = "historical-setting"
-subject = "israel.exile.third-captivity"
-title = "The third captivity of Juda: the destruction of Jerusalem under Sedecias"
-label = "the fall of Jerusalem (587 B.C.)"
-date = "587 B.C."
-precision = "year"
-disposition = "alternate"
-answerability = "answerable"
-basis_class = "traditional-catholic"
-profile = "catholic-traditional-v1"
-sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08652a-189e1a8f"]
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.27"
-inherited = true
-scope = "Ps.88"
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.28"
-inherited = true
-scope = "Ps.88"
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.30"
-inherited = true
-scope = "Ps.88"
-
-[[elements.publication_claims]]
-relation = "historical-setting"
-subject = "israel.exile.third-captivity"
-title = "The third captivity of Juda: the destruction of Jerusalem under Sedecias"
-label = "B.C. 588"
-date = "588 B.C."
-precision = "year"
-disposition = "alternate"
-answerability = "answerable"
-basis_class = "reported-traditional"
-profile = "catholic-traditional-v1"
-sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c"]
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.27"
-inherited = true
-scope = "Ps.88"
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.28"
-inherited = true
-scope = "Ps.88"
-
-[[elements.publication_claims.reaches]]
-locus = "Ps.88.30"
-inherited = true
-scope = "Ps.88"
 
 [[elements]]
 key = "gospel"
@@ -977,6 +761,24 @@ locus = "Ps.2.8"
 inherited = true
 scope = "Ps"
 
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Ps.2.8"
+inherited = false
+scope = "Ps.2.8 Ps.28.10-11 Ps.71.1 Ps.71.8 Ps.71.11"
+
 [[elements.publication_claims]]
 relation = "composition"
 subject = "critical.psalms.latest-composition-boundary"
@@ -994,6 +796,34 @@ sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bi
 locus = "Ps.2.8"
 inherited = true
 scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.2.8"
+inherited = false
+scope = "Ps.2.8 Ps.28.10-11 Ps.71.1 Ps.71.8 Ps.71.11"
+
+[[elements]]
+key = "secret"
+name = "Secret"
+refs = []
+loci = []
+status = ""
+reason = ""
+publication_status = ""
+publication_reason = ""
 
 [[elements]]
 key = "communion"
@@ -1028,6 +858,29 @@ locus = "Ps.28.11"
 inherited = true
 scope = "Ps"
 
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Ps.28.10"
+inherited = false
+scope = "Ps.2.8 Ps.28.10-11 Ps.71.1 Ps.71.8 Ps.71.11"
+
+[[elements.claims.reaches]]
+locus = "Ps.28.11"
+inherited = false
+scope = "Ps.2.8 Ps.28.10-11 Ps.71.1 Ps.71.8 Ps.71.11"
+
 [[elements.publication_claims]]
 relation = "composition"
 subject = "critical.psalms.latest-composition-boundary"
@@ -1050,3 +903,36 @@ scope = "Ps"
 locus = "Ps.28.11"
 inherited = true
 scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.28.10"
+inherited = false
+scope = "Ps.2.8 Ps.28.10-11 Ps.71.1 Ps.71.8 Ps.71.11"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.28.11"
+inherited = false
+scope = "Ps.2.8 Ps.28.10-11 Ps.71.1 Ps.71.8 Ps.71.11"
+
+[[elements]]
+key = "postcommunion"
+name = "Postcommunion"
+refs = []
+loci = []
+status = ""
+reason = ""
+publication_status = ""
+publication_reason = ""
