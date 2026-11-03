@@ -11,10 +11,10 @@ Last reconciled: 2026-11-02.
 
 <!-- promised-deliverable: gpt-epiphany-fifth-catalogue-reference-2026-11-02 -->
 
-**Validated; publication pending.** The maintainer requested that the ordinary Fifth Sunday after
+**Complete: corrected catalogue validated and pushed to main.** The maintainer requested that the ordinary Fifth Sunday after
 Epiphany row expose the resources already produced for the resumed Fifth.
 The direct study, concise print-option and homily print-option destinations
-will match on rows 16 and 66. The row-16 labels identify the resumed setting
+now match on rows 16 and 66. The row-16 labels identify the resumed setting
 and a note explains the shared readings without claiming a completed winter
 formulary guide or changing either permanent identity.
 
@@ -292,6 +292,19 @@ still pending. The initial review and its repaired recheck remain above.
   ]
 }
 ```
+
+The reviewed correction is committed as
+`b93a2f36b0840deca73de6c7f972ace91055f1e2`. A normal atomic fast-forward
+pushed that exact commit to both `origin/main` and
+`origin/feature/propers/codex`; both remote refs were then independently read
+and verified. The assigned local branch remains `feature/propers/codex`.
+Its automatic Pages run is [41570732805](https://github.com/spincyc/triptych/actions/runs/41570732805),
+observed `in_progress` with conclusion `pending`.
+No live deployment is claimed. The required result is validated source and
+publication with truthful deployment status, not a new live-verification
+promise. This completion bookkeeping changes only this register and the ledger;
+all seven independently frozen implementation and derived release files remain
+exact. Both catalogue-reference requirements pass.
 
 ## Sunday and catalogue publication to main, 2026-11-02
 
