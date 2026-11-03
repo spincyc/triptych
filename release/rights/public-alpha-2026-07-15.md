@@ -1791,8 +1791,8 @@ release attachment, announcement, or promotion.
 | `library/novus-ordo-liturgy.md` | `ee85f7990bad2f31725f0ff8243f72758791e2d36e9c7bf4be846ac6e1ce6980` |
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
-| `library/traditional-latin-mass.md` | `07986efe5af8dbda01681e038efeadd8cff7160c0310b47c35f7c0c832e42f10` |
-| `release/browser-products.json` | `c1dd7ce66819acb7caabff1d1547c0be037b3339bd52edc2691444b82440dd60` |
+| `library/traditional-latin-mass.md` | `c4b95660f29aef62e27d50feee2e61f944ccbe389d6d3fac2a4cbfde25c6046c` |
+| `release/browser-products.json` | `79915d3fc4670aa60a848ad14d56f3e42ec8b35cf19f2418e213d44ce5efac17` |
 | `release/papal-documents.json` | `b20c05f8999ff2391e9c7ad15124d519d710e60ac7aa648b297e70be1eb0e17e` |
 | `release/papal-documents/input-delivery.json` | `2aefdce41b2f33be61f9bd455a407d94497d87c7e5fdef76ed3e562777d39fd6` |
 | `release/papal-documents/input-records.json` | `22e755c5b11d957a3f621b12a895cf7fa059a7ac42edeb882ac856a80388766c` |
@@ -25116,6 +25116,8 @@ release attachment, announcement, or promotion.
 | `src/web/browser/shared/native-print.js` | `ba6a1f1e69127898f7d5ecb64dcaba59cd53ddde6e348580de581cd63367d09c` |
 | `src/web/browser/shared/native-tex.js` | `e33f4358c4535f4ac47ca2da8d136022c3cc695449b3ff419d47e23347fbf9e2` |
 | `src/web/browser/shared/print-volume.js` | `49e1bb843d657a393f8e0ae565c376dee989d20c635914bb1e50ce802b0eea7a` |
+| `src/web/browser/shared/publication-reader.css` | `735b1ed548294f0c82b2e90a115826588fe8004a6054858bdc0d87736923e3d5` |
+| `src/web/browser/shared/publication-reader.js` | `c2467f25f3d6abc4da726e6a1b8d8932c78ff30d626584b4396a045511ef3e84` |
 | `src/web/browser/shared/web-print.css` | `a13fb05a7f6916b1be49d4b250b5a078d94d665ca959e0c61e93e5cccbb771ea` |
 | `src/web/browser/shared/web-print.js` | `51c436af3e7e6df8a5851ab176a1b7f380b6cfc45bc2b1363c953e21e89c9b7f` |
 | `src/web/browser/sources/index.html` | `0c7c34677ebe7f2d3c09fd8079cea8b6e136ccdd3ddbf1cec8d5d90627febd63` |
@@ -25178,7 +25180,7 @@ release attachment, announcement, or promotion.
 | `tools/print-document` | `9c686a8499cd72c16778f00baaedc2ae9a3b615b75fc628f8c89bd672e461ab5` |
 | `tools/proper-chronology` | `df44d8062834649792053285705d1b8476d472750afba183448be8d15cc77851` |
 | `tools/proper-study-run-archive` | `21d18bc66164cc66519f615acc078c374effbf71456c6d72c7ac2fc51720ac82` |
-| `tools/public-alpha` | `7bcfd83cf598893e0f12a7516e6015c2c2c3fb05892999d4d100d3d48a944210` |
+| `tools/public-alpha` | `60971ab07ce852c145d14ded9f57cdbedcdf88fb152969c7cd80d6235589dc69` |
 | `tools/reading-plan` | `2ccbef02341493532755d044cf6045bdf4c94f8132b326f07d709dc76ba5b3f9` |
 | `tools/release-bindings` | `7a10dda302714fef2692387446980603b09974f87734594681d07d77a71044da` |
 | `tools/render-sanctuary-dictionary` | `1a6f10a4aff799813c0ad7914439fe7228dfb898efdbbba7f19481bcbe1d166d` |
@@ -25588,7 +25590,7 @@ release attachment, announcement, or promotion.
 | `tools/tests/test_public_alpha_web_print.py` | `d55f06efeb52931e183ba91fced97dc94ba26ccb277c2b0cd12edcbd0fe8c05c` |
 | `tools/tests/test_publication_links.py` | `2dd10765a4abc50ff77d05ef863541634f9606dfd291b5303c383ef6611b9e40` |
 | `tools/tests/test_publication_reader.py` | `1f791738c47662b703f4be99bc6631a95d78b567c3774511c6d45370b79fe9f2` |
-| `tools/tests/test_publication_reader_browser.py` | `d3a1fd794ed2f6cc63926d65dfd6b3d92d795c9dd33baba8787e1aebf483e8d0` |
+| `tools/tests/test_publication_reader_browser.py` | `8409d55aa5632d51c7a59232c1ae613d5e8b73a5cabe089390f2b09a4e2d297e` |
 | `tools/tests/test_qualified_latin_basis.py` | `b6f2c3538bf2fc377561d13f444a75f16b5ea0691e474f3c697ab1207149436f` |
 | `tools/tests/test_qualified_public_projection.py` | `5334be3c38c1cd3649b59a65cb3bc1a64f7aa7428c8652237a102339bb2f8130` |
 | `tools/tests/test_reader_alternative_compare.py` | `6ac7628cf335b9816810f4003761ade8986bcb73893cd1ff52992a868acbf5b6` |

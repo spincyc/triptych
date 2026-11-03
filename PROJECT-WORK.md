@@ -134,6 +134,30 @@ retains automatic native Print routes. Combined fixture/browser acceptance,
 fresh mechanical recording and exact bindings are required before this merge
 is pushed; earlier standalone source/site passes do not describe that merge.
 
+The combined implementation is merged as `d686ae1ccf` without rewriting
+history. A fresh independent merge/disclosure review passes: the incoming
+reader, navigation and library bytes are preserved, six native publisher and
+routing functions retain identical syntax trees, all 109 ledger entries are
+the exact union of both parents, and 23 focused fixtures pass. All 78 newly
+reachable source blobs are UTF-8 plaintext; disclosure matches are existing
+privacy checks and synthetic negative-test data. The final combined descriptor
+passes two independent cold builds in 1,069.245 seconds: 13 families, 27,836
+files and 382,659,292 bytes, SHA-256
+`79915d3fc4670aa60a848ad14d56f3e42ec8b35cf19f2418e213d44ce5efac17`.
+Final scoped binding, site, cache-delivery and live-interface gates remain
+pending; the native task remains in progress.
+
+The matching final cache candidate passes strict offline import, current-source
+warm build and full checking with generation explicitly refused in 66.694
+seconds. Its archive is 100,815,378 bytes, SHA-256
+`b9b05cde138149496d9e6a56d91840ce407353f3216de7f40486d0b66b1ac721`.
+The optional bootstrap hint names that exact candidate; the committed
+descriptor and current canonical inputs remain its acceptance authority.
+Scoped release reconciliation covers only six reviewed input paths: the
+incoming liturgy catalogue, reader CSS/JS, combined publisher, reader browser
+test and final descriptor. The reader assets retain exact incoming bytes.
+No authorization prose or earlier source, hold or approval record changes.
+
 ## Publication reader redesign, 2026-11-03
 
 <!-- promised-deliverable: gpt-publication-reader-redesign-2026-11-03 -->
