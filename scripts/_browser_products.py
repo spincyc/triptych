@@ -24,7 +24,7 @@ import sys
 import tempfile
 from typing import Any, Iterator
 
-import _source_projection_receipt as receipt
+import _safe_files as safe_files
 from _browser_product_inputs import ClosureError, family_code
 
 MANIFEST_RELATIVE = "release/browser-products.json"
@@ -36,7 +36,7 @@ PROOF = "two-independent-cold-builds-byte-parity"
 CANDIDATE_INDEX = ".browser-products-candidates-v1.json"
 CANDIDATE_SCHEMA = "triptych-browser-product-candidates/v1"
 DELIVERIES = frozenset({"browser-data"})
-EXCLUDED = frozenset({MANIFEST_RELATIVE, *receipt.MECHANICAL_RECEIPTS})
+EXCLUDED = frozenset({MANIFEST_RELATIVE})
 POLICY_FIELDS = {"schema_version", "release_id", "provider", "providers", "authorizations"}
 AUTH_FIELDS = {"basis", "authority_role", "authority_scope", "rights_record", "rights_record_sha256", "site_sources", "approved_on", "duration", "effective_at", "expires_at", "timezone", "conditions"}
 _HELD: ContextVar[dict] = ContextVar("browser_products_held", default={})
@@ -101,8 +101,8 @@ def _digest(value):
 
 def _read(root: Path, name: str) -> bytes:
     try:
-        return receipt.read_file(Path("/"), (_absolute(root) / _relative(name)).as_posix().lstrip("/"))
-    except (receipt.ReceiptError, OSError) as error:
+        return safe_files.read_file(Path("/"), (_absolute(root) / _relative(name)).as_posix().lstrip("/"))
+    except (safe_files.SafeFileError, OSError) as error:
         raise ProductError(str(error)) from error
 
 
@@ -162,10 +162,10 @@ def _paths(root: Path, trees, files, excludes=()) -> set[str]:
             if stat.S_ISDIR(original.st_mode):
                 child = os.open(entry.name, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=directory)
                 try:
-                    if not receipt._same_inode(original, os.fstat(child)):
+                    if not safe_files._same_inode(original, os.fstat(child)):
                         raise ProductError(f"canonical directory changed: {name}")
                     walk(child, name + "/")
-                    receipt._require_entry(directory, entry.name, child)
+                    safe_files._require_entry(directory, entry.name, child)
                 finally:
                     os.close(child)
             elif stat.S_ISREG(original.st_mode):
@@ -173,13 +173,13 @@ def _paths(root: Path, trees, files, excludes=()) -> set[str]:
                     result.add(name)
             else:
                 raise ProductError(f"canonical input must be a regular file or directory: {name}")
-        if receipt._file_stamp(before) != receipt._file_stamp(os.fstat(directory)):
+        if safe_files._file_stamp(before) != safe_files._file_stamp(os.fstat(directory)):
             raise ProductError(f"canonical membership changed: {prefix}")
 
     try:
         for tree in trees:
             try:
-                with receipt._open_directory(root, tree) as directory:
+                with safe_files._open_directory(root, tree) as directory:
                     walk(directory, tree + "/")
             except FileNotFoundError:
                 continue
@@ -187,7 +187,7 @@ def _paths(root: Path, trees, files, excludes=()) -> set[str]:
             if _excluded_namespace(name) or any(name == path or name.startswith(path + "/") for path in excludes):
                 continue
             try:
-                with receipt._open_parent(root, name) as (parent, leaf):
+                with safe_files._open_parent(root, name) as (parent, leaf):
                     mode = os.stat(leaf, dir_fd=parent, follow_symlinks=False).st_mode
                     if not stat.S_ISREG(mode):
                         raise ProductError(f"canonical input must be regular: {name}")
@@ -195,7 +195,7 @@ def _paths(root: Path, trees, files, excludes=()) -> set[str]:
                         result.add(name)
             except FileNotFoundError:
                 continue
-    except (OSError, receipt.ReceiptError) as error:
+    except (OSError, safe_files.SafeFileError) as error:
         raise ProductError(f"unsafe canonical inputs: {error}") from error
     for entry in os.scandir(root):
         if entry.name.startswith("requirements") and entry.name.endswith(".txt") or entry.name.endswith((".lock", "-lock.json")):
@@ -310,8 +310,8 @@ def _identity_batch(root: Path, recipes=None) -> dict:
     memberships = discover()
     names = set().union(*memberships.values())
     try:
-        external = receipt._external_identities(root, names)
-    except (receipt.ReceiptError, OSError, ValueError) as error:
+        external = safe_files._external_identities(root, names)
+    except (safe_files.SafeFileError, OSError, ValueError) as error:
         raise ProductError(f"invalid external source identities: {error}") from error
     names.update(external)
     for key in memberships:
@@ -356,7 +356,7 @@ def input_identity(root: Path, product=None) -> dict:
     """Hash current canonical content/rights/code/locks and exact membership.
 
     Source membership is independently discovered. No output, descriptor,
-    mechanical receipt, cache path, Git ref or timestamp supplies source identity.
+    cache path, Git ref or timestamp supplies source identity.
     """
     key = product["id"] if isinstance(product, dict) else product
     result = _identity_batch(root)
@@ -536,26 +536,26 @@ def _inventory(target: Path) -> dict:
             if stat.S_ISDIR(original.st_mode):
                 child = os.open(entry.name, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=directory)
                 try:
-                    if not receipt._same_inode(original, os.fstat(child)):
+                    if not safe_files._same_inode(original, os.fstat(child)):
                         raise ProductError(f"product directory changed: {name}")
                     count_before = len(files)
                     walk(child, name + "/")
                     if len(files) == count_before:
                         raise ProductError(f"unexpected empty browser product directory: {name}")
-                    receipt._require_entry(directory, entry.name, child)
+                    safe_files._require_entry(directory, entry.name, child)
                 finally:
                     os.close(child)
             elif stat.S_ISREG(original.st_mode) and original.st_nlink == 1 and name.endswith(".json"):
-                digest, size = receipt._file_hash_at(directory, entry.name, name)
+                digest, size = safe_files._file_hash_at(directory, entry.name, name)
                 files[name] = {"sha256": digest, "bytes": size}
             else:
                 raise ProductError(f"unexpected or unsafe product output: {name}")
-        if receipt._file_stamp(before) != receipt._file_stamp(os.fstat(directory)):
+        if safe_files._file_stamp(before) != safe_files._file_stamp(os.fstat(directory)):
             raise ProductError("product membership changed during verification")
     try:
-        with receipt._open_directory(Path("/"), target.as_posix().lstrip("/")) as descriptor:
+        with safe_files._open_directory(Path("/"), target.as_posix().lstrip("/")) as descriptor:
             walk(descriptor, "")
-    except (OSError, receipt.ReceiptError) as error:
+    except (OSError, safe_files.SafeFileError) as error:
         raise ProductError(f"cannot verify product outputs: {error}") from error
     if not files:
         raise ProductError("browser products have no outputs")
@@ -622,7 +622,7 @@ def load_candidate_index(cache_root: Path) -> dict:
 def _cache_keys(parent: Path) -> set[str]:
     parent = _safe_directory(parent)
     keys = set()
-    with receipt._open_directory(Path("/"), parent.as_posix().lstrip("/")) as cache_fd:
+    with safe_files._open_directory(Path("/"), parent.as_posix().lstrip("/")) as cache_fd:
         before = os.fstat(cache_fd)
         with os.scandir(cache_fd) as entries:
             for entry in entries:
@@ -632,7 +632,7 @@ def _cache_keys(parent: Path) -> set[str]:
                 if re.fullmatch(r"[0-9a-f]{64}", entry.name) is None or not stat.S_ISDIR(original.st_mode):
                     raise ProductError(f"unexpected or unsafe browser cache entry: {entry.name}")
                 keys.add(entry.name)
-        if receipt._file_stamp(before) != receipt._file_stamp(os.fstat(cache_fd)):
+        if safe_files._file_stamp(before) != safe_files._file_stamp(os.fstat(cache_fd)):
             raise ProductError("browser cache membership changed during verification")
     load_candidate_index(parent)
     return keys
@@ -644,7 +644,7 @@ def _cache_entry_data(parent: Path, key: str) -> Path:
     _cache_keys(parent)
     target = parent / key
     _safe_directory(target)
-    with receipt._open_directory(Path("/"), target.as_posix().lstrip("/")) as descriptor:
+    with safe_files._open_directory(Path("/"), target.as_posix().lstrip("/")) as descriptor:
         if set(os.listdir(descriptor)) != {"data"}:
             raise ProductError("unexpected files in sealed browser product cache entry")
     return _safe_directory(target / "data")
@@ -664,13 +664,13 @@ def validate_candidate_entry(cache_root: Path, key: str, hint: dict) -> dict:
 
 
 def _write_candidate_index(root: Path, cache_root: Path, value: dict) -> None:
-    # The same writer as mechanical receipts pins both ancestry chains and
+    # The descriptor's own writer pins both ancestry chains and
     # refuses links. Temporary bytes remain in the repository's ignored scratch.
     body = (json.dumps(value, sort_keys=True, indent=1) + "\n").encode("utf-8")
     try:
-        receipt.atomic_write(Path("/"), (cache_root / CANDIDATE_INDEX).as_posix().lstrip("/"),
+        safe_files.atomic_write(Path("/"), (cache_root / CANDIDATE_INDEX).as_posix().lstrip("/"),
                              body, scratch=_scratch(root))
-    except (OSError, receipt.ReceiptError) as error:
+    except (OSError, safe_files.SafeFileError) as error:
         raise ProductError(f"cannot safely update browser candidate index: {error}") from error
 
 
@@ -780,7 +780,7 @@ def _generate(root, out, product_ids=None):
 
 def _install(root, product, generated, cache_root, *, source_files=None):
     parent = _safe_directory(cache_directory(root, cache_root), create=True)
-    with receipt._open_directory(Path("/"), parent.as_posix().lstrip("/")) as cache_fd:
+    with safe_files._open_directory(Path("/"), parent.as_posix().lstrip("/")) as cache_fd:
         marker_fd = os.open(".browser-products-cache-v1", os.O_WRONLY | os.O_CREAT | os.O_NOFOLLOW | os.O_NONBLOCK, 0o644, dir_fd=cache_fd)
         try:
             if not stat.S_ISREG(os.fstat(marker_fd).st_mode):
@@ -810,8 +810,8 @@ def _install(root, product, generated, cache_root, *, source_files=None):
             # membership after copying, before any current key is promoted.
             _compare(_inventory(generated), source_files)
         try:
-            with receipt._open_directory(Path("/"), parent.as_posix().lstrip("/")) as cache_fd:
-                with receipt._open_directory(Path("/"), staged.parent.as_posix().lstrip("/")) as staging_fd:
+            with safe_files._open_directory(Path("/"), parent.as_posix().lstrip("/")) as cache_fd:
+                with safe_files._open_directory(Path("/"), staged.parent.as_posix().lstrip("/")) as staging_fd:
                     os.rename(staged.name, destination.name, src_dir_fd=staging_fd, dst_dir_fd=cache_fd)
         except OSError as error:
             if error.errno in {errno.EEXIST, errno.ENOTEMPTY}:
@@ -1014,8 +1014,8 @@ def record(root: Path, *, cache_root=None) -> dict:
         if descriptor_before != descriptor_after:
             raise ProductError("browser product descriptor changed during recording; no descriptor was written")
         try:
-            receipt.atomic_write(root, MANIFEST_RELATIVE, (json.dumps(manifest, ensure_ascii=False, sort_keys=True, indent=1) + "\n").encode("utf-8"), scratch=_scratch(root))
-        except (OSError, receipt.ReceiptError) as error:
+            safe_files.atomic_write(root, MANIFEST_RELATIVE, (json.dumps(manifest, ensure_ascii=False, sort_keys=True, indent=1) + "\n").encode("utf-8"), scratch=_scratch(root))
+        except (OSError, safe_files.SafeFileError) as error:
             raise ProductError(f"cannot safely write product descriptor: {error}") from error
     return manifest
 
@@ -1027,7 +1027,7 @@ def prune(root: Path, *, cache_root=None) -> dict:
     parent = _safe_directory(cache_directory(root, cache_root))
     keep = {products_identity(manifest), *(product["key"] for product in manifest["products"])}
     try:
-        with receipt._open_directory(Path("/"), parent.as_posix().lstrip("/")) as descriptor:
+        with safe_files._open_directory(Path("/"), parent.as_posix().lstrip("/")) as descriptor:
             marker = os.stat(".browser-products-cache-v1", dir_fd=descriptor, follow_symlinks=False)
             if not stat.S_ISREG(marker.st_mode):
                 raise ProductError("refusing to prune a cache without its regular ownership marker")
@@ -1047,7 +1047,7 @@ def prune(root: Path, *, cache_root=None) -> dict:
         products = [*manifest["products"], {"key": products_identity(manifest), "files": _expected(manifest)}]
         _write_candidate_index(root, parent, {"schema": CANDIDATE_SCHEMA,
                                             "entries": {product["key"]: candidate_hint(product["files"]) for product in products}})
-    except (OSError, receipt.ReceiptError) as error:
+    except (OSError, safe_files.SafeFileError) as error:
         raise ProductError(f"cannot safely prune browser cache: {error}") from error
     return manifest
 

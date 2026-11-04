@@ -482,8 +482,6 @@ class GateTests(unittest.TestCase):
         self.assertNotIn("check-act-history", reached)
         self.assertNotIn("check-source-evidence", reached)
         self.assertNotIn("check-curriculum-rights", reached)
-        self.assertNotIn("check-source-projection", reached)
-        self.assertNotIn("check-act-history-receipt", reached)
         body = "\n".join(recipe for _, recipe in sorted(reached.items()))
         for command in (
             "$(BROWSER_PRODUCTS_TOOL) build",
@@ -511,8 +509,6 @@ class GateTests(unittest.TestCase):
         self.assertFalse({"check-typeset", "_typeset-tree", "pdf", "all"} & reached.keys())
         research = "\n".join(make_reached("check-research-sources", text).values())
         for command in ("$(SOURCE_LIBRARY_TOOL) validate --full-evidence",
-                        "$(SOURCE_READER_TOOL) structure --check-receipt",
-                        "scripts/_act_history_projection_receipt.py check",
                         "$(SOURCE_READER_TOOL) check",
                         "$(SOURCE_READER_TOOL) structure --check",
                         "tools/tpt act-history structure --check"):

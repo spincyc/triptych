@@ -28,7 +28,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _tooling import prune_cache, tree_fingerprint  # noqa: E402
 import _artifact_store  # noqa: E402
-from _source_delivery_policy import PROJECTION_RECEIPTS  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -2285,79 +2284,6 @@ def _owned_papal_inventory(library: Library, entry: Path, relative: Path) -> boo
     return True
 
 
-def _owned_projection_receipt(library: Library, entry: Path, relative: Path) -> bool:
-    """Admit the named mechanical receipt; its owning tool proves freshness."""
-
-    contract = PROJECTION_RECEIPTS.get(relative.as_posix())
-    if contract is None:
-        return False
-    source_receipt = contract["summary_field"] == "counted"
-
-    def unique_pairs(pairs):
-        result = {}
-        for key, value in pairs:
-            if key in result:
-                raise ValueError(f"duplicate JSON key {key!r}")
-            result[key] = value
-        return result
-
-    try:
-        data = json.loads(entry.read_text(encoding="utf-8"), object_pairs_hook=unique_pairs)
-    except (OSError, ValueError) as error:
-        library.error(entry, f"owned projection receipt must be valid JSON: {error}")
-        return True
-    fields = {"schema", "proof", "editorial_approval", "inputs", "outputs"}
-    fields |= {"projection_schema", "counted"} if source_receipt else {"generator", "summary"}
-    if (
-        not isinstance(data, dict) or set(data) != fields
-        or any(data.get(key) != value for key, value in contract.items() if key != "summary_field")
-        or data.get("editorial_approval") is not False
-    ):
-        library.error(entry, "expected mechanical projection receipt ownership envelope")
-        return True
-    inputs, outputs = data["inputs"], data["outputs"]
-    if (
-        not isinstance(inputs, dict)
-        or set(inputs) != {"count", "path_set_sha256", "sha256", "external_count"}
-        or not _is_positive_int(inputs.get("count"))
-        or type(inputs.get("external_count")) is not int or inputs["external_count"] < 0
-        or any(not isinstance(inputs.get(key), str) or not SHA256_PATTERN.fullmatch(inputs[key])
-               for key in ("path_set_sha256", "sha256"))
-    ):
-        library.error(entry, "projection receipt requires exact input closure hashes and counts")
-    if (
-        not isinstance(outputs, dict) or set(outputs) != {"count", "sha256", "files"}
-        or not _is_positive_int(outputs.get("count"))
-        or not isinstance(outputs.get("sha256"), str) or not SHA256_PATTERN.fullmatch(outputs["sha256"])
-        or not isinstance(outputs.get("files"), dict)
-        or len(outputs["files"]) != outputs["count"]
-        or any(not _is_safe_embedded_reference(path) or not isinstance(digest, str)
-               or not SHA256_PATTERN.fullmatch(digest) for path, digest in outputs["files"].items())
-    ):
-        library.error(entry, "projection receipt requires exact output paths, hashes, and count")
-    if source_receipt:
-        counted = data["counted"]
-        if (
-            not isinstance(counted, dict)
-            or set(counted) != {"works", "editions", "artifacts", "passages", "readable"}
-            or any(type(value) is not int or value < 0 for value in counted.values())
-        ):
-            library.error(entry, "projection receipt requires nonnegative mechanical source counts")
-    else:
-        summary = data["summary"]
-        if (
-            not isinstance(summary, dict)
-            or set(summary) != {"files", "slices", "stations", "lines", "default"}
-            or any(type(summary.get(key)) is not int or summary[key] < 0
-                   for key in ("files", "stations", "lines"))
-            or not isinstance(outputs, dict) or summary["files"] != outputs.get("count")
-            or not _is_string_list(summary.get("slices"))
-            or not _is_string(summary.get("default"))
-        ):
-            library.error(entry, "projection receipt requires a bounded mechanical history summary")
-    return True
-
-
 def _validate_source_tree(library: Library) -> None:
     """Reject files that evade a manifest, schema, or inventory owner."""
 
@@ -2386,8 +2312,6 @@ def _validate_source_tree(library: Library) -> None:
         if relative.parts[0] == "schema" and entry.suffix in {".json", ".md", ".toml"}:
             continue
         if relative.parts[0] == "inventories" and entry.suffix in {".md", ".toml"}:
-            continue
-        if _owned_projection_receipt(library, entry, relative):
             continue
         if _owned_history_inventory(library, entry, relative):
             continue

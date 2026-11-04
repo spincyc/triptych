@@ -65,13 +65,13 @@ validator = ["tools/source-library", "check"]
 
 [[families]]
 id = "source-reader-projection"
-schema_ids = ["triptych-source-reader/v1", "triptych-source-reader-projection-receipt/v1"]
+schema_ids = ["triptych-source-reader/v1"]
 owner = "tools/source-reader"
 paths = ["src/web/data/structure/sources/index.json"]
 required_fields = ["schema", "counted", "works"]
 minimum_members = 1
-cardinality = "Projection identity and counts only here; the hash-bound receipt owns freshness, not a heavy replay or a new completeness claim."
-validator = ["tools/source-reader", "structure", "--check-receipt"]
+cardinality = "Projection identity and counts only here; the browser-product descriptor owns freshness, not a heavy replay or a new completeness claim."
+validator = ["tools/browser-products", "check"]
 
 [[families]]
 id = "calendar-masses"
@@ -120,7 +120,7 @@ owner = "tools/act-history"
 paths = ["src/sources/inventories/*acts-v1.toml"]
 required_fields = ["acts_schema", "slice", "lines", "acts"]
 minimum_members = 1
-cardinality = "The existing act schema owns lines, acts, relations and inherited history, with its projection receipt checked separately."
+cardinality = "The existing act schema owns lines, acts, relations and inherited history, with its browser projection bound by the browser-product descriptor."
 validator = ["tools/act-history", "check"]
 
 [[families]]

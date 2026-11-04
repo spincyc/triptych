@@ -37,10 +37,6 @@ SOURCE_COMMANDS = {
     ("-m", "unittest", "tools.tests.test_generated_proper_chronology_freshness", "-v"),
     ("-m", "unittest", "tools.tests.test_generated_documents_freshness", "-v"),
 }
-AUDIT_COMMANDS = {
-    ("scripts/_act_history_projection_receipt.py", "check"),
-    ("tools/tpt", "source-reader", "structure", "--check-receipt"),
-}
 GENERATED_CONSUMERS = {
     ("tools/tpt", "document-schema", "check", "--include-sources"),
     ("tools/tpt", "document-library", "check"),
@@ -87,8 +83,8 @@ def cache_directory(root):
         self.env = {**os.environ, "PATH": f"{self.bin}{os.pathsep}{os.environ['PATH']}",
                     "GITHUB_WORKSPACE": str(self.root), "PYTHONDONTWRITEBYTECODE": "1",
                     "DEPLOYMENT_TEST_LOG": str(self.log), "DEPLOYMENT_TEST_ROOT": str(self.root),
-                    "DEPLOYMENT_TEST_SOURCE_COMMANDS": json.dumps(sorted(SOURCE_COMMANDS | AUDIT_COMMANDS)),
-                    "DEPLOYMENT_TEST_GENERATED_CONSUMERS": json.dumps(sorted(GENERATED_CONSUMERS | AUDIT_COMMANDS)),
+                    "DEPLOYMENT_TEST_SOURCE_COMMANDS": json.dumps(sorted(SOURCE_COMMANDS)),
+                    "DEPLOYMENT_TEST_GENERATED_CONSUMERS": json.dumps(sorted(GENERATED_CONSUMERS)),
                     "DEPLOYMENT_TEST_PRODUCT_IDENTITY": PRODUCT_IDENTITY,
                     "GITHUB_OUTPUT": str(self.root / "workflow-output"),
                     "GITHUB_PATH": str(self.root / "workflow-path"),
@@ -257,7 +253,6 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         for command in SOURCE_COMMANDS:
             with self.subTest(command=command):
                 self.assertEqual(self.commands().count(command), 1)
-        self.assertFalse(AUDIT_COMMANDS & set(self.commands()))
 
     def test_actual_pages_commands_run_each_source_gate_once_without_pdf_outputs(self):
         self.assertFalse((self.root / "pdf").exists())
@@ -283,7 +278,6 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(commands.count(runtime), 1)
         self.assertLess(commands.index(runtime), commands.index(build))
         self.assertLess(commands.index(build), commands.index(verify))
-        self.assertFalse(AUDIT_COMMANDS & set(commands))
         self.assertFalse((self.root / "pdf").exists())
         self.assertEqual(list(self.root.rglob("*.pdf")), [])
 
@@ -306,16 +300,13 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
             with self.subTest(jobs=jobs):
                 self.log.unlink(missing_ok=True)
                 shutil.rmtree(self.root / "build", ignore_errors=True)
-                result = self.shell(f"make {jobs} check-document-schemas check-document-catalogue check-source-projection check-act-history-receipt")
+                result = self.shell(f"make {jobs} check-document-schemas check-document-catalogue")
                 self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
                 commands = self.commands()
                 prepared = ("tools/tpt", "browser-products", "build")
                 self.assertEqual(commands.count(prepared), 1)
                 for consumer in GENERATED_CONSUMERS & set(commands):
                     self.assertLess(commands.index(prepared), commands.index(consumer))
-                for audit in AUDIT_COMMANDS:
-                    self.assertEqual(commands.count(audit), 1)
-                    self.assertLess(commands.index(prepared), commands.index(audit))
 
     def test_invalid_product_identity_never_reaches_cache_preparation(self):
         for identity in ("", "not-a-content-hash", PRODUCT_IDENTITY + "\nextra=untrusted"):
@@ -338,7 +329,6 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertNotIn(("tools/tpt", "browser-products", "prune"), commands)
         self.assertNotIn(("tools/tpt", "document-library", "structure", "--check"), commands)
         self.assertNotIn(("tools/tpt", "act-history", "structure", "--check"), commands)
-        self.assertFalse(AUDIT_COMMANDS & set(commands))
 
     def test_cache_keys_are_content_addressed_and_candidates_are_verified_before_save(self):
         steps = self.pages()["jobs"]["build"]["steps"]

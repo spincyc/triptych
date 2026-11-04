@@ -30,7 +30,7 @@ from tools.tests._product_data import browser_data_root
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 TPT = ROOT / "tools" / "tpt"
 FAMILY = pathlib.Path("structure/act-history")
-SCRATCH = ROOT / ".scratch/next-act-receipt/structure-tests"
+SCRATCH = ROOT / ".scratch/act-history-replay/structure-tests"
 
 
 def temporary_directory(**kwargs):

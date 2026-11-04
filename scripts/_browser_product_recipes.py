@@ -41,17 +41,13 @@ _EXECUTION_AUTHORITIES = [
     "workflows/reviews/reader-completion-2026-10-26/finite-name-two-root-adoption.json",
     "workflows/reviews/reader-completion-2026-10-26/oration-execution-six-authority.json",
 ]
-_EXCLUDE = [
-    "src/sources/inventories/source-reader-projection-receipt-v1.json",
-    "src/sources/inventories/act-history-projection-receipt-v1.json",
-]
 
 
 def _recipe(identifier, prefix, argv, trees, files=(), *, delivery):
     return {
         "id": identifier, "version": 1, "output_prefixes": [prefix],
         "argv": argv, "input_trees": list(trees), "input_files": list(files),
-        "exclude_paths": list(_EXCLUDE), "delivery": delivery,
+        "exclude_paths": [], "delivery": delivery,
     }
 
 
@@ -156,7 +152,7 @@ def _run(root: Path, out: Path, recipe: dict, environment: dict) -> None:
     command = [sys.executable, "-B", "-c", program, str(root), *arguments]
     if recipe["id"] in ADAPTERS:
         # The owning replay supplies fresh isolated source parsers without
-        # consulting the former installed projection or a receipt baseline.
+        # consulting the former installed projection.
         # The adapter module is part of the family's code closure.
         adapter = Path(ADAPTERS[recipe["id"]])
         program = _COLD_INPUT_GUARD + "\n" + (

@@ -256,38 +256,14 @@ class SourceDeliveryTests(unittest.TestCase):
         self.assertNotEqual(0, result.returncode)
         self.assertIn("--fetch requires --full-evidence", result.stderr)
 
-    def test_projection_receipts_have_exact_mechanical_ownership(self) -> None:
-        digest = "a" * 64
-        shared = {
-            "editorial_approval": False,
-            "inputs": {"count": 1, "external_count": 0, "path_set_sha256": digest, "sha256": digest},
-            "outputs": {"count": 1, "sha256": digest, "files": {"work.json": digest}},
-        }
-        receipts = (
-            ("source-reader", {
-                **shared, "schema": "triptych-source-reader-projection-receipt/v1",
-                "projection_schema": "triptych-source-reader/v1",
-                "proof": "independent-full-structure-check",
-                "counted": {"works": 1, "editions": 1, "artifacts": 1, "passages": 1, "readable": 1},
-            }),
-            ("act-history", {
-                **shared, "schema": "triptych-act-history-projection-receipt/v1",
-                "generator": "tools/act-history structure --check",
-                "proof": "independent-replay-and-exact-installed-byte-comparison",
-                "summary": {"files": 1, "slices": ["demo"], "stations": 1, "lines": 1, "default": "demo"},
-            }),
-        )
-        for name, receipt in receipts:
+    def test_retired_projection_receipts_have_no_owner(self) -> None:
+        # The browser-product descriptor is the one freshness proof for these
+        # projections; a reintroduced receipt is unowned source-tree data.
+        for name in ("source-reader", "act-history"):
             with self.subTest(name=name):
                 path = f"src/sources/inventories/{name}-projection-receipt-v1.json"
-                self.write(path, json.dumps(receipt))
-                self.assertEqual("", self.errors())
-                self.write(path, json.dumps({**receipt, "editorial_approval": True}))
-                self.assertIn("mechanical projection receipt ownership", self.errors())
-                self.write(path, json.dumps({**receipt, "outputs": {
-                    "count": 1, "sha256": digest, "files": {"../escape.json": digest},
-                }}))
-                self.assertIn("exact output paths", self.errors())
+                self.write(path, "{}")
+                self.assertIn("outside the source-library schema", self.errors())
                 (self.root / path).unlink()
 
     def test_receipt_name_is_not_a_general_json_exemption(self) -> None:

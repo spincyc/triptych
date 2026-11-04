@@ -37,7 +37,7 @@ HARNESS = (
 )
 # Families whose cold runner is not their argv entrypoint. The recipe runner
 # reads this same table, so the closure and the executed code cannot diverge.
-ADAPTERS = {"act-history": "scripts/_act_history_projection_receipt.py"}
+ADAPTERS = {"act-history": "scripts/_act_history_replay.py"}
 _IMPORTERS = {"import_module", "__import__"}
 _PATH_CALLS = {"Path", "PurePath", "PurePosixPath", "with_name", "joinpath", "join", "open",
                "SourceFileLoader", "spec_from_file_location", "run_path"}
@@ -489,8 +489,8 @@ def audit(root: Path, product_ids=None, *, log=None) -> dict:
       arguments are judged as reads. Its own further reads are not observed,
       so a child program that opens other files needs its own review.
 
-    Reads of the mechanical receipts that identities exclude by design (the
-    source library validates their envelope) are reported, not failed.
+    Reads of the descriptor, which identities exclude by design, are
+    reported, not failed.
     """
     import _browser_products as products
     import _browser_product_recipes as recipes
@@ -529,7 +529,7 @@ def audit(root: Path, product_ids=None, *, log=None) -> dict:
 
 CACHE_MARKER = ".browser-products-cache-v1"
 _PRIVATE = (".scratch/browser-product-audit", ".scratch/browser-product-recipes",
-            ".scratch/next-act-receipt", ".scratch/next-product-store")
+            ".scratch/act-history-replay", ".scratch/next-product-store")
 
 
 def _judge(root: Path, recipe: dict, identity: dict, events: list, excluded=frozenset()) -> dict:

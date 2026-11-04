@@ -252,7 +252,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 
 .PHONY: all pdf _pdf review-pdfs review-all-pdfs list help clean \
 	distclean check-tools check-tool-registry check-calendar-days \
-	check-calendar-masses check-act-history check-act-history-receipt \
+	check-calendar-masses check-act-history \
 	check-propers-census check-propers-structure \
 	check-metadata check-web-editions \
 	check-proper-components \
@@ -261,7 +261,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-document-schemas check-document-content check-artifact-delivery \
 	check-snapshot-delivery check-papal-inputs \
 	prepare-browser-data check-browser-products deployment-source-gates \
-	check-source-evidence check-source-projection print-document \
+	check-source-evidence print-document \
 	check-source-inventory check-source-inventory-tool \
 	check-source-family-migration check-source-family-migration-tool \
 	check-source-family-screening check-source-containment \
@@ -431,12 +431,9 @@ check-curriculum-source-rights:
 		tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests.test_tex_control_words_cannot_hide_a_window
 
 # Full derivation belongs to the explicit research lane. Publication authenticates
-# the same projection's complete input and output closure through its receipt.
+# the same projection's inputs and outputs through the browser-product descriptor.
 check-act-history: | prepare-browser-data
 	@$(PYTHON) tools/tpt act-history structure --check
-
-check-act-history-receipt: | prepare-browser-data
-	@$(PYTHON) scripts/_act_history_projection_receipt.py check
 
 # The committed descriptor binds exact canonical inputs and output membership.
 # Warm builds verify cached bytes; misses derive only missing families offline.
@@ -481,9 +478,6 @@ check-snapshot-delivery:
 check-papal-inputs:
 	@$(PYTHON) scripts/_papal_input_receipt.py check
 
-check-source-projection: | prepare-browser-data
-	@$(PYTHON) $(SOURCE_READER_TOOL) structure --check-receipt
-
 check-publication-inventories: check-source-graph
 	@set -eu; for inventory in src/sources/inventories/*publications-v1.toml; do \
 		[ -e "$$inventory" ] || continue; \
@@ -496,8 +490,7 @@ check-publication-inventories: check-source-graph
 	done
 
 # The two-build product descriptor covers the complete input, policy and output
-# closure. Publication verifies it once before consumers; legacy projection
-# receipt checks remain explicit research audits rather than duplicate warm gates.
+# closure. Publication verifies it once before consumers.
 DEPLOYMENT_SOURCE_MEMBERS := check-curriculum-source-rights check-document-schemas \
 	check-artifact-delivery check-snapshot-delivery check-papal-inputs \
 	check-document-catalogue check-source-graph check-proper-chronology-current \
@@ -524,8 +517,7 @@ deployment-source-gates: $(DEPLOYMENT_SOURCE_MEMBERS) | prepare-browser-data
 # never downloads it automatically. The publication gate above remains useful
 # in a source-only checkout while this lane verifies the complete research set.
 check-research-sources: check-deployment-sources check-source-evidence \
-		check-publication-inventories check-source-projection check-act-history-receipt \
-		check-source-reader check-act-history \
+		check-publication-inventories check-source-reader check-act-history \
 		check-source-containment check-commentator-inventories check-commentary-corpus
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
 
@@ -679,7 +671,7 @@ help:
 		'make check-pdf-review  Test memory-bounded PDF inspection tooling' \
 		'make check-sources  Validate the source library, inventory, and migration ledger' \
 		'make check-research-sources  Replay full evidence, source projections, and research inventories without automatic downloads' \
-		'make check-deployment-sources  Validate source publication, rights, schemas, and projection receipts without PDFs' \
+		'make check-deployment-sources  Validate source publication, rights, and schemas without PDFs' \
 		'make prepare-browser-data  Verify exact cached browser products or derive missing families offline' \
 		'make check-browser-products  Check current browser product inputs and cached bytes without generation' \
 		'make check-document-schemas  Validate every publication type, identity, and source/output ownership' \
@@ -966,7 +958,7 @@ check-expensive: $(EXPENSIVE_SOURCE_CHECKS)
 check: check-document-schemas check-artifact-delivery check-snapshot-delivery \
 	check-papal-inputs check-metadata \
 	check-web-editions check-web-editions-current \
-	check-proper-components check-source-projection check-act-history-receipt \
+	check-proper-components \
 	check-roman-sanctuary-artwork check-artwork-manifests \
 	check-release-bindings check-promised-deliverables check-public-alpha \
 	check-tool-registry \

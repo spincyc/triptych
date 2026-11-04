@@ -78,11 +78,6 @@ from pathlib import Path
 from typing import Any, Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
-# Recording binds current Python source bytes. A fresh cache namespace prevents
-# an older same-size, same-mtime .pyc from executing in their place.
-if any(flag in sys.argv for flag in ("--record-receipt", "--check-receipt")):
-    sys.dont_write_bytecode = True
-    sys.pycache_prefix = str(ROOT / ".scratch/next-source-receipt" / ("python-" + os.urandom(16).hex()))
 # Below this the derivation is cheap and the tree is a sandbox, not the corpus.
 CORPUS_CACHE_FLOOR = 1000
 # Shared CLI helpers live outside tools/ so that tmt's registry scan, which
@@ -974,39 +969,6 @@ def edition_payload(work: dict, edition: dict) -> dict:
 
 
 def run_structure(arguments: argparse.Namespace) -> dict:
-    check_receipt = getattr(arguments, "check_receipt", False)
-    record_receipt = getattr(arguments, "record_receipt", False)
-    if sum(bool(one) for one in (arguments.check, check_receipt, record_receipt)) > 1:
-        raise ReaderError("choose one of --check, --check-receipt or --record-receipt")
-    if check_receipt or record_receipt:
-        if getattr(arguments, "out", None) is not None:
-            raise ReaderError("receipt flags read committed browser products; use --cache-root instead of --out")
-        from _source_projection_receipt import (
-            RECEIPT_PATH, ReceiptError, check_receipt as check_proof,
-            record_receipt as record_proof, write_receipt,
-        )
-        from _browser_products import ProductError, verified_products
-        try:
-            with verified_products(ROOT, cache_root=getattr(arguments, "cache_root", None),
-                                   product_ids=["sources"]) as products:
-                if record_receipt:
-                    proof = record_proof(ROOT, products.data_root / STRUCTURE_RELATIVE,
-                                         SCHEMA, write=False)
-                else:
-                    proof = check_proof(ROOT, products.data_root / STRUCTURE_RELATIVE, SCHEMA)
-                product_identity = products.products_identity
-            if record_receipt:
-                write_receipt(ROOT, proof)
-        except (ReceiptError, ProductError) as error:
-            raise ReaderError(str(error)) from error
-        return {**proof["counted"], "files": proof["outputs"]["count"],
-                "current": STRUCTURE_RELATIVE.as_posix(),
-                "products_identity": product_identity,
-                "receipt": RECEIPT_PATH, "receipt_recorded": record_receipt,
-                "editorial_approval": False, "status": "ok"}
-
-    if getattr(arguments, "cache_root", None) is not None:
-        raise ReaderError("--cache-root requires --check-receipt or --record-receipt")
     from _browser_products import ProductError, assert_working_output, working_data_root
     explicit_out = getattr(arguments, "out", None)
     out = Path(explicit_out) if explicit_out is not None else working_data_root(ROOT)
@@ -1426,9 +1388,6 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         print(f"  -> {payload['written']} ({payload['files']} files)")
     if payload.get("current"):
         print(f"  {payload['current']} is current ({payload['files']} files)")
-    if payload.get("receipt"):
-        action = "recorded" if payload.get("receipt_recorded") else "checked"
-        print(f"  mechanical projection receipt {action}; no editorial approval")
     return 0
 
 
@@ -1528,20 +1487,10 @@ def main(argv: list[str] | None = None) -> int:
     )
     shared.add_argument("--out", default=argparse.SUPPRESS,
                         help="`structure`: unsealed working output root (default: browser-data working tree)")
-    shared.add_argument("--cache-root", default=argparse.SUPPRESS,
-                        help="receipt flags: select the committed browser-product cache root")
     shared.add_argument(
         "--check",
         action="store_true",
         help="`structure`: fully replay sources against the selected working output, and write nothing",
-    )
-    shared.add_argument(
-        "--check-receipt", action="store_true", default=argparse.SUPPRESS,
-        help="`structure`: check governing input and complete output hashes without replay or artifact hydration",
-    )
-    shared.add_argument(
-        "--record-receipt", action="store_true", default=argparse.SUPPRESS,
-        help="`structure`: independently replay the full strict check, then record a mechanical projection receipt",
     )
     shared.add_argument(
         "--strict",

@@ -1,4 +1,4 @@
-"""Shared metadata contracts for exact source delivery and projection receipts.
+"""Shared metadata contracts for exact source delivery.
 
 These declarations identify records; they never run a projection command or
 retrieve evidence. Source manifests retain their frozen identity and hashes.
@@ -9,22 +9,6 @@ from pathlib import Path, PurePosixPath
 import tomllib
 
 import _artifact_store
-
-
-PROJECTION_RECEIPTS = {
-    "inventories/source-reader-projection-receipt-v1.json": {
-        "schema": "triptych-source-reader-projection-receipt/v1",
-        "proof": "independent-full-structure-check",
-        "projection_schema": "triptych-source-reader/v1",
-        "summary_field": "counted",
-    },
-    "inventories/act-history-projection-receipt-v1.json": {
-        "schema": "triptych-act-history-projection-receipt/v1",
-        "proof": "independent-replay-and-exact-installed-byte-comparison",
-        "generator": "tools/act-history structure --check",
-        "summary_field": "summary",
-    },
-}
 
 
 def external_source_identity(root: Path, relative: str, *, metadata: dict | None = None) -> dict | None:

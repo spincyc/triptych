@@ -19,7 +19,7 @@ import urllib.request
 
 from _browser_products import verified_products
 import _artifact_store
-from _source_projection_receipt import read_file
+from _safe_files import read_file
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = 'triptych-history-browser-plan/v1'

@@ -337,7 +337,7 @@ future research is an artifact under `src/sources/`, not a build cache.
 Reader-facing projections instead follow `guidance/web-data.md`: their exact
 expected products are declared in `release/browser-products.json` and generated
 outside Git. They are rebuilt offline from the canonical source graph when an
-exact cache entry is absent. A cache key or projection receipt is never a new
+exact cache entry is absent. A cache key or product descriptor is never a new
 source identity, rights finding, or inspection event.
 
 ## Source-first acquisition and storage
@@ -813,43 +813,21 @@ as bytes. `tools/tpt source-reader list` reports the library's current extent â€
 works, editions, artifacts, passages, and how many of those are readable here â€”
 and is the derivation to quote rather than a count typed into prose.
 
-Normal deployment proves generated-source freshness through the complete
-`release/browser-products.json` descriptor under `guidance/web-data.md`.
-Source and act-history receipts remain explicit standalone audits, also run by
-`make check-research-sources`; they are not additional warm-deployment gates
-or publication authorities. All other source, rights, schema and currentness
-requirements remain in force.
+The source-reader and act-history projections are browser-product families.
+Their freshness, inputs and complete output membership are proved once, by the
+`release/browser-products.json` descriptor under `guidance/web-data.md`, which
+also owns why their former projection receipts were retired. All other source,
+rights, schema and currentness requirements remain in force.
 
-`source-reader structure --check-receipt` checks the complete declared input
-membership and hashes plus the complete projection output set and hashes,
-without loading or hydrating binary evidence. Its receipt is
-`src/sources/inventories/source-reader-projection-receipt-v1.json`.
-Receipt operations read descriptor-bound browser products, selected with `--cache-root`;
-ordinary `structure --out` writes only an unsealed working tree and cannot
-select a receipt target. The source and act-history receipt commands follow
-this same separation.
+Ordinary `source-reader structure --out` and `act-history structure --out`
+write only an unsealed working tree. `structure --check` fully replays the
+sources against that tree; for act-history it replays against verified
+products when `--out` is absent. `make check-research-sources` runs both
+replays.
 
-`--record-receipt` independently runs the full uncached `structure --check
---strict` replay and writes only after unchanged inputs and outputs are proven.
-When renewing this explicit audit, record it after browser-product inputs and
-outputs are frozen, so later policy, code, rights or source changes correctly
-invalidate it. For a workspace:
-
-```sh
-tools/source-reader structure --check-receipt --cache-root .scratch/browser-data
-tools/source-reader structure --record-receipt --cache-root .scratch/browser-data
-```
-
-Act-history uses `python3 scripts/_act_history_projection_receipt.py check`
-or `record`, with the same optional `--cache-root .scratch/browser-data`.
-Its `record` also performs a full replay against the exact cache. Ordinary
-`act-history structure --out` selects an unsealed working tree; an explicit
-`structure --check` fully replays against that tree, or against verified
-products when `--out` is absent.
-
-These receipts and the browser-product descriptor have
-`editorial_approval = false`. They prove mechanical freshness, not source
-inspection, rights clearance, or renewed approval. Frozen historical papal
+The browser-product descriptor has `editorial_approval = false`. It proves
+mechanical freshness, not source inspection, rights clearance, or renewed
+approval. Frozen historical papal
 input snapshots have a separate preservation/extraction contract in
 `guidance/papal-documents.md`; disposable generated products do not replace them.
 

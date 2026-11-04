@@ -266,13 +266,9 @@ class BrowserProductsTests(unittest.TestCase):
         with self.assertRaises(products.ProductError):
             products.check(self.root, cache_root=self.cache)
 
-    def test_no_receipt_or_descriptor_self_reference(self):
+    def test_no_descriptor_self_reference(self):
         before = products.input_identity(self.root)
         self.write_manifest({"irrelevant": True})
-        for name in products.receipt.MECHANICAL_RECEIPTS:
-            path = self.root / name
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text("different")
         self.assertEqual(before, products.input_identity(self.root))
 
     def test_two_build_disagreement_never_writes_descriptor(self):
@@ -406,7 +402,7 @@ class BrowserProductsTests(unittest.TestCase):
     def test_check_never_starts_a_producer_network_or_evidence_fetch(self):
         with patch("subprocess.run", side_effect=AssertionError("producer/research command")), \
              patch("urllib.request.urlopen", side_effect=AssertionError("network")), \
-             patch.object(products.receipt._artifact_store, "hydrate", side_effect=AssertionError("evidence fetch")):
+             patch.object(products.safe_files._artifact_store, "hydrate", side_effect=AssertionError("evidence fetch")):
             products.check(self.root, cache_root=self.cache)
         self.assertEqual(self.generated, [])
 
@@ -534,23 +530,6 @@ class BrowserProductsTests(unittest.TestCase):
                     finally:
                         path.unlink()
 
-    def test_excluded_mechanical_receipts_still_receive_filesystem_preflight(self):
-        self.recipes[1]["input_trees"].append("src/sources/inventories")
-        for name in products.receipt.MECHANICAL_RECEIPTS - {products.MANIFEST_RELATIVE}:
-            for kind in ("symlink", "fifo"):
-                with self.subTest(name=name, kind=kind):
-                    path = self.root / name
-                    path.parent.mkdir(parents=True, exist_ok=True)
-                    if kind == "symlink":
-                        path.symlink_to(self.root / "requirements-tools.txt")
-                    else:
-                        os.mkfifo(path)
-                    try:
-                        with self.assertRaises(products.ProductError):
-                            products.input_identity(self.root)
-                    finally:
-                        path.unlink()
-
     def test_working_root_never_points_at_sealed_cache(self):
         with patch.dict(os.environ, {"TRIPTYCH_BROWSER_DATA_ROOT": ".scratch/browser-data"}):
             self.assertEqual(products.working_data_root(self.root), self.root / ".scratch/browser-data-work")
@@ -622,7 +601,7 @@ def _c7_identity_reference(root, recipes):
         return selected
     memberships = discover()
     union = set().union(*memberships.values())
-    external = products.receipt._external_identities(root, union)
+    external = products.safe_files._external_identities(root, union)
     union.update(external)
     for key in memberships:
         memberships[key].update(name for name, value in external.items() if value["manifest"] in memberships[key] or name in memberships[key])
@@ -691,7 +670,7 @@ class BrowserIdentityLoopTests(unittest.TestCase):
         return {"id": identifier, "input_trees": trees, "input_files": files, "exclude_paths": excludes}
 
     def test_complete_identity_matches_c7_on_scopes_exclusions_locks_and_externals(self):
-        with patch.object(products.receipt, "_external_identities", return_value=self.external):
+        with patch.object(products.safe_files, "_external_identities", return_value=self.external):
             actual = products._identity_batch(self.root, self.recipes)
             self.assertEqual(actual, _c7_identity_reference(self.root, self.recipes))
         a = set(actual["a"]["source_paths"])
@@ -719,14 +698,14 @@ class BrowserIdentityLoopTests(unittest.TestCase):
                    self.recipe("b", ["scope-neighbor", "exact"], ["scope"], [])]
         with patch.object(products, "_paths", return_value=found), \
              patch.object(products, "_read", side_effect=lambda root, name: name.encode()), \
-             patch.object(products.receipt, "_external_identities", return_value={}):
+             patch.object(products.safe_files, "_external_identities", return_value={}):
             actual = products._identity_batch(self.root, recipes)
             self.assertEqual(actual, _c7_identity_reference(self.root, recipes))
         self.assertEqual(set(actual["a"]["source_paths"]), {"scope/child", "scope/drop-neighbor/child", "exact", "requirements-note", "project.lock"})
         self.assertEqual(set(actual["b"]["source_paths"]), {"scope", "scope-neighbor/child", "exact/child", "requirements-note", "project.lock"})
 
     def test_classification_runs_once_per_union_member_including_external_inputs(self):
-        with patch.object(products.receipt, "_external_identities", return_value=self.external), \
+        with patch.object(products.safe_files, "_external_identities", return_value=self.external), \
              patch.object(products, "_component", wraps=products._component) as component:
             actual = products._identity_batch(self.root, self.recipes)
         self.assertEqual(Counter(call.args[0] for call in component.call_args_list),
@@ -740,7 +719,7 @@ class BrowserIdentityLoopTests(unittest.TestCase):
             if name == "src/a/live.txt":
                 (self.root / "src/a/new.txt").write_text("new member")
             return body
-        with patch.object(products.receipt, "_external_identities", return_value={}), \
+        with patch.object(products.safe_files, "_external_identities", return_value={}), \
              patch.object(products, "_paths", wraps=paths) as discoveries, \
              patch.object(products, "_read", side_effect=mutate):
             with self.assertRaisesRegex(products.ProductError, "membership changed"):
@@ -748,7 +727,7 @@ class BrowserIdentityLoopTests(unittest.TestCase):
         self.assertEqual(discoveries.call_count, 2)
 
     def test_separate_phases_rehash_same_size_restored_mtime_input(self):
-        with patch.object(products.receipt, "_external_identities", return_value={}):
+        with patch.object(products.safe_files, "_external_identities", return_value={}):
             before = products._identity_batch(self.root, self.recipes)
             path = self.root / "src/a/live.txt"
             stamp = path.stat()

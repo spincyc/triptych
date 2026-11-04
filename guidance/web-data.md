@@ -53,16 +53,28 @@ After a successful source/site build, CI saves verified current products before
 the independent artifact check, so an interrupted deployment can reuse that
 work. Artifact verification still precedes publication.
 
-The complete browser descriptor is the normal deployment proof for generated
-source and act-history projections. Its input closure is the audited set those
-producers read ([below](#what-a-family-key-covers)), narrower than the older
-receipts' deliberately broad scopes, and its cold path runs the same strict
-producers in two fresh passes. Exact SHA-256, size and membership comparisons,
-fresh inputs before and after generation, current code without inherited
-bytecode, and the publisher's held private snapshot establish mechanical reuse.
-The older source/act receipt checks remain explicit standalone audits and part
-of `make check-research-sources`; normal deployment does not require them as
-additional warm-cache gates. No mechanical proof confers publication authority.
+The complete browser descriptor is the one freshness proof for every generated
+family, the source-reader and act-history projections included. Its input
+closure is the audited set each producer reads ([below](#what-a-family-key-covers)),
+and its cold path runs the strict producers (`source-reader structure --strict`,
+the act-history cold replay) in two fresh passes. Exact SHA-256, size and
+membership comparisons, fresh inputs before and after generation, current code
+without inherited bytecode, and the publisher's held private snapshot establish
+mechanical reuse. The full research replays (`source-reader structure --check`,
+`act-history structure --check`) stay in `make check-research-sources`. No
+mechanical proof confers publication authority.
+
+**Projection receipts retired, 2026-11-04.** The source-reader and act-history
+projections each also carried a tracked receipt under `src/sources/inventories/`.
+Each copied its family's complete output table (18,443 and 557 per-file hashes,
+about 3.5 MB) that the descriptor already records, and keyed freshness to a
+second, broad input scope (`src/sources`, both provider trees, `scripts/`,
+`tools/`, `guidance/`, `workflows/`) that staled on any guidance or test edit.
+Their other fields were tallies of the projection bytes the descriptor binds;
+the source index carries its `counted` block itself. Do not reintroduce a
+per-family receipt: a projection that needs a stronger proof gets it in its
+recipe or its family key. The last receipts are in commit
+`935940abe2de9f04ae0253362034188d5149b0b1`.
 
 This storage change does not move `src/sources/bibles/<edition>/chapters/`.
 Those fragments retain their existing owner and checks. It also does not move
@@ -84,8 +96,7 @@ a translation adds that translation's fragments and changes nothing else.
 A family's input identity covers what its producer can read, and nothing else:
 
 - the data trees and files its recipe declares in
-  [`_browser_product_recipes.py`](../scripts/_browser_product_recipes.py),
-  less the mechanical receipts;
+  [`_browser_product_recipes.py`](../scripts/_browser_product_recipes.py);
 - the code closure of its producer, which
   [`_browser_product_inputs.py`](../scripts/_browser_product_inputs.py)
   computes from the current source and never takes from a list: modules
@@ -115,9 +126,8 @@ mandatory gates.
 The descriptor's aggregate identity commits to the sorted family input
 commitments and to nothing else, so a change outside every family's key stales
 nothing. Neither Git state, timestamps, mtimes, a cache pathname nor a restored
-cache supplies trust. The descriptor and the mechanical receipts are excluded
-from their own input identities; the source library reads the receipts only to
-validate their envelope. Only complete verified families are promoted;
+cache supplies trust. The descriptor is excluded from its own input identity.
+Only complete verified families are promoted;
 publication consumes a verified snapshot for its whole operation and binds the
 union of the family keys as the products' canonical site sources.
 
@@ -906,9 +916,7 @@ covers](#what-a-family-key-covers) says when), review the effects and run
 families whose recipe or inputs changed before updating the mechanical
 descriptor; every other family keeps its exact prior proof after fresh input
 and byte checks. Recording is explicit and grants no editorial or publication
-approval. A separately requested source or act-history receipt audit runs after
-this product state is frozen; renewing those audit receipts is not a normal
-deployment prerequisite.
+approval.
 
 For isolated producer work, use an unsealed destination, for example
 `tools/mass-propers structure --out .scratch/browser-data-work`. Such output is

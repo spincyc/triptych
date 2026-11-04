@@ -204,9 +204,6 @@ with open(os.environ["MAKE_TEST_SOURCE_READER_LOG"], "a", encoding="utf-8") as l
             fake = library / tool_name
             fake.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
             fake.chmod(0o755)
-        (scripts / "_act_history_projection_receipt.py").write_text(
-            "import sys\nassert sys.argv[1:] == ['check']\n", encoding="utf-8"
-        )
         (scripts / "_papal_input_receipt.py").write_text(
             "import sys\nassert sys.argv[1:] == ['check']\n", encoding="utf-8"
         )
@@ -449,7 +446,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.assertEqual(self.lines(self.source_library_log),
                          ["validate", "validate --full-evidence", "validate"])
         self.assertEqual(self.lines(self.source_reader_log),
-                         ["structure --check-receipt", "check", "structure --check"])
+                         ["check", "structure --check"])
         self.assertEqual(
             self.lines(self.source_inventory_log),
             [
