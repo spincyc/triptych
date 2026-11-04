@@ -11,7 +11,8 @@ Last reconciled: 2026-11-03.
 
 <!-- promised-deliverable: explicit-print-and-proper-quality-2026-11-03 -->
 
-**Source and PDF review passed; final site integration and publication pending.**
+**Local final review passed and the reviewed candidate reached main; deployment
+is blocked by a confirmed input-identity mismatch being repaired.**
 The maintainer reported automatic PDF generation when opening a proper page
 and mixed, repeated Scripture groups in the Claude Twenty-first Sunday after
 Pentecost synthesis. The correction keeps canonical structured sections, typed
@@ -26,7 +27,19 @@ scheduling reduces the controlled unchanged sample's cold generation from
 the 12-page output is byte-identical. Warm compilation stays about 3.6 seconds;
 cached downloads take 35–41 milliseconds. These are desktop Chromium emulation
 measurements with unthrottled workers, not physical mobile-device acceptance.
-The final corrected document still needs its assembled-site measurement.
+The corrected document's final local measurement is 14.722 seconds cold with
+13,722,233 native-transfer bytes, 3.683 seconds with warm runtime and PDF cache
+cleared, and 34/39 milliseconds from the completed-PDF cache. All four downloads
+exactly match the reviewed corrected twelve-page, 453,257-byte PDF, SHA-256
+`1d6326fd6372aaa2b762d3a21b6fcf68de4d8ac43450a6de7ea26d0b4997a0c6`.
+The compact benchmark receipt has SHA-256
+`637fd9a64b69afb06a2d506aff42482c31b6d663aaeb6af0eb3e13770d559ce1`.
+It uses desktop Chromium at 390×844/DPR3, 10 Mbps, 80 ms latency and fourfold
+page throttling; calibration confirms workers remain unthrottled. Sampled peak
+renderer PSS is 646,324 KiB (about 631 MiB). Physical phones, Safari, thermal and
+low-memory operation are not established; sampling can miss intervening peaks.
+Local cache/compression behavior also differs from production. Both recorded
+arrivals remain idle, and all benchmark-owned processes closed.
 
 All ten orientation consumers, including three missed by the earlier seven-leaf
 acceptance, now use distinct component/passage groups. Independent review
@@ -73,9 +86,9 @@ approved legacy chronology updates, and ten follow the expanded authored
 census corrections. Thirty-one readers preserve 277 semantic spans in fifty
 tables, including three newly added notes. Desktop/mobile previews pass 100
 current states and 364 full-width chronology checks, with matched before
-captures. Final acceptance must still check actual assembled pages: all ten
-orientation print routes and all 54 ordinary readers, including the exact
-reported `?print=1` route remaining idle.
+captures. Subsequent actual-site review covers all ten orientation print routes
+and all 54 ordinary readers, plus the further mobile-row routes described below;
+the exact reported `?print=1` route remains idle.
 
 The complete print-output integration exposed additional compatibility gaps:
 source-declared column and table widths, typed span receipts in curriculum
@@ -89,12 +102,11 @@ payloads, geometry, labels and rights remain unchanged. The original strict
 producer now succeeds for all 288 admitted HTML print outputs and 133 assets;
 separate validation confirms every output hash. A scratch observer used the
 wrong final catalog path after successful generation; its failure is preserved
-alongside the successful validation at the actual path. Independent two-build
-publication reproduction now passes: thirteen families, 27,836 files and
+alongside the successful validation at the actual path. Independent local
+two-build publication reproduction passes: thirteen families, 27,836 files and
 382,696,591 bytes agree exactly. The deployment source gate and deliverables
 validation pass. All 151 converter tests also pass at the recorded candidate.
-The later mobile-row correction still requires final assembled-site acceptance
-and main publication.
+These local results precede the deployment failure and identity repair below.
 
 The first assembled-site review found a further mobile defect before main
 publication: source-one-column chronology tables inherited the two-column
@@ -107,33 +119,77 @@ passes after the CSS correction at desktop, 390px and 320px widths. The
 independent actual-site acceptance scope is expanded from 64 to 80 routes
 (160 desktop/mobile states), with checks on every visible cell. Candidate
 `41a27f5` remains a retained pre-fix checkpoint; it was never pushed to main.
-The new two-build descriptor passes, and all thirteen product file inventories
+The local two-build descriptor passes, and all thirteen product file inventories
 remain byte-identical to `41a27f5`: 27,836 files and 382,696,591 bytes. Only
-input/cache identities change. Updated bindings and final assembled-site
-validation are still required before publication. The completed 151 converter tests and 66 retained PDF reviews
-remain evidence at their recorded inputs; this site-only delta does not claim
-fresh native PDF captures or a new full converter-suite run.
+input/cache identities change. The completed 151 converter tests and 66 retained
+PDF reviews remain evidence at their recorded inputs; this site-only delta does
+not claim fresh native PDF captures or a new full converter-suite run.
+
+The final local candidate `d6b5f339ec6ba3d2e71306ac40a5cba997b5fa20` passes
+independent actual-site review of 80 routes, 160 desktop/mobile states and
+26,052 cell states. Forty query states create no native-runtime/bundle fetches
+or workers. The two targeted browser methods pass sixteen cases without skips
+in 2.878 seconds. `make public-site` and artifact verification exit zero in
+319.366 and 226.862 seconds. The site manifest SHA-256 is
+`bc3a6db4de65c20e4734e5e701e626f72d9804dd0bc14505ea976a537c600de2`;
+the compact actual-site receipt has SHA-256
+`2cb06994152617f4c07fe15eb4869260bb1e415529c17fe8051905dac2f8018b`.
+All review-owned processes closed. The final prepublication cold review finds
+no unresolved blockers for that exact local candidate and artifact, receipt
+SHA-256 `b10d8172114eda3575bbee0bd5c6dbd638e747140fb936c08cfa9df436a7be9b`.
+That verdict does not certify the later failed deployment or a repaired candidate.
 
 Independent source/PDF review covers 66 retained outputs: ten orientation,
 28 legacy and 28 authored. The later registry-binding and diagnostic-message
 deltas are explicitly bounded as non-rendering changes; no new 66-PDF capture
-is claimed. The durable pre-site receipts are under
+is claimed. The seven frozen scoped receipts are under
 `workflows/reviews/print-correctness-2026-11-03/`; `proper-quality.json` has SHA-256
 `74d41a6d1ab5b185741b4088705699857fa97f81343a236b446312758211a820`.
-Those frozen receipts explicitly leave assembled-site acceptance separate.
+Those receipts retain their historical scope; later local site and benchmark
+receipts supply separate evidence. The earlier recovery's seven-edition,
+936-page fidelity proof also remains separate.
 The 28-edition legacy preflight retains 35 inherited diagnostics in five
 editions, exactly matching its baseline. An additional Claude52 house-voice
 finding is also unchanged from baseline. These qualifications do not claim an
-entirely green historical editorial suite. The 58 controller integration tests,
-focused chronology/runtime tests and registry checks pass.
+entirely green historical editorial suite. Three inherited broad tool-example
+failures concern service example exemptions and local Python-package dependency
+classification. The 58 controller integration tests, focused chronology/runtime
+tests and registry checks pass within their recorded scopes.
 
 The feature baseline is `40bea725b14b16e711b922bacd6368b6755c8bed`; the initial
 live revision is `aa6ca926752ab89c019291e115ceb226ae3412fc`. Live and feature
-validation remain separate. The maintainer explicitly authorized main
-publication after final independent cold review. Work stays on
-`feature/no-pdfs`; the validated candidate will be pushed to main without
-rewriting history only after the final source/site gates and review. The Pages
-workflow, live idle arrival and explicit PDF generation remain pending.
+validation remain separate. After the maintainer-authorized independent review,
+a non-forced fast-forward pushed `d6b5f339ec6ba3d2e71306ac40a5cba997b5fa20`
+to both the feature remote and main. Main advanced from
+`24cbc933d74ced79b515c855c9dbd5454dfa8e4c`; work stayed on `feature/no-pdfs`.
+Hygiene run `41787636499` succeeded, but Pages run `41787636435` failed on the
+browser-products key: clean CI's canonical input identity differs from the
+locally recorded identity. Git publication is not a deployment or live pass.
+
+Independent diagnosis identifies one ignored, untracked canonical member:
+`src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/__pycache__/validate_inventory.cpython-314.pyc`,
+57,067 bytes, SHA-256
+`1a7337d0ca076bf6154b2179bfad7988ce6d3377415ee0e35f8a8d95a706bb85`.
+It was present in the local input closure but absent from the clean Git checkout.
+The file has been quarantined outside canonical trees. The existing identity
+policy remains unchanged: bytecode under canonical source paths is intentionally
+governed, so this repair does not add an exclusion or weaken source identity.
+
+The clean record passed in 948.616 seconds: four affected families received
+two fresh cold builds, and nine unchanged families retained verified products.
+All thirteen product inventories exactly match `d6b5f339`: 27,836 files and
+382,696,591 bytes. The clean product-equivalence receipt has SHA-256
+`ea2195b08951280d1bb88e28daccc5b095bf878978856ae00b6e9db55f5e0679`;
+the new browser-product identity is
+`251654006a296d70622e0e3952f2e4a2d65c2eb9681539027376f50b9860e282`.
+Scoped release-binding refresh is in progress. The repair still requires the
+committed descriptor/bindings, clean-checkout key checks, source/build/artifact
+verification and independent review of the repaired candidate. A subsequent
+non-forced push, successful Pages deployment and exact live
+idle-arrival/explicit-generation checks must follow. These are pending gates;
+the deliverable and ledger remain open. No new 66-PDF capture or full 151-test
+rerun is implied by this identity repair, and the preserved local receipts are
+not relabeled as clean-CI acceptance.
 
 ## Recovery and shared proper chronology, 2026-11-03
 

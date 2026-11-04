@@ -1792,7 +1792,7 @@ release attachment, announcement, or promotion.
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
 | `library/traditional-latin-mass.md` | `c4b95660f29aef62e27d50feee2e61f944ccbe389d6d3fac2a4cbfde25c6046c` |
-| `release/browser-products.json` | `5b289ba1cf2d7524faa1b99288e23b3c8bfd00bee92a819bb7bf89fc635335d1` |
+| `release/browser-products.json` | `9d7abab51c20808c61a40917edb1f8d81f31b46faeeb3aaa5b6759f15c113d19` |
 | `release/papal-documents.json` | `b20c05f8999ff2391e9c7ad15124d519d710e60ac7aa648b297e70be1eb0e17e` |
 | `release/papal-documents/input-delivery.json` | `2aefdce41b2f33be61f9bd455a407d94497d87c7e5fdef76ed3e562777d39fd6` |
 | `release/papal-documents/input-records.json` | `22e755c5b11d957a3f621b12a895cf7fa059a7ac42edeb882ac856a80388766c` |
