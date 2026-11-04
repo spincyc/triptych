@@ -87,6 +87,21 @@ class PageTests(unittest.TestCase):
             "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass", provider="gpt")
         self.assertEqual(page.absent_reason(projected, absent), wiring.NO_CALENDAR_FORMULARY)
 
+    def test_a_proper_without_a_formulary_gets_its_record_and_no_rows(self):
+        import _document_types as types
+        from document_projections import scriptural_date_location as projection
+        document = "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"
+        context = types.LeafContext(ROOT, "gpt", document, ROOT / "src/gpt" / document,
+                                    "proper-1962", "proper-guide-v1", ("main",), ("sheet", "evidence"))
+        files = projection.render(context)
+        self.assertEqual(sorted(files), [
+            "generated/scriptural-date-location-evidence.tex",
+            "generated/scriptural-date-location-sheet.tex",
+            wiring.RECORD,
+        ])
+        self.assertIn(page.ABSENT[wiring.NO_CALENDAR_FORMULARY],
+                      files["generated/scriptural-date-location-sheet.tex"])
+
     def test_a_postconciliar_leaf_without_its_appointment_input_is_pending(self):
         document = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
                     "propers/temporal/pc-s26-most-holy-trinity-year-a")

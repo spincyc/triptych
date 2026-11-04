@@ -37,8 +37,11 @@ def render(context) -> dict[str, str]:
     }
     if found is not None and projected is not None:
         files[wiring.RECORD] = wiring.render(found)
-        files[wiring.ANNOTATIONS_RECORD] = wiring.render_annotations_tex(projected)
-        files[wiring.ORIENTATION_TABLE_RECORD] = wiring.render_orientation_table(projected)
+        # A proper with no appointed formulary has a record saying so and no
+        # rows: the page prints its absent state and inputs neither file.
+        if not page.absent_reason(projected, absent):
+            files[wiring.ANNOTATIONS_RECORD] = wiring.render_annotations_tex(projected)
+            files[wiring.ORIENTATION_TABLE_RECORD] = wiring.render_orientation_table(projected)
     return files
 
 
