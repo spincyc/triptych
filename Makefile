@@ -1109,9 +1109,10 @@ check-calendar-rubrics: | prepare-browser-data
 	else echo "PyYAML missing; skipping calendar-rubric check"; fi
 
 # The count of both calendars is derived, not typed: one census, written into
-# every document that carries it. This refuses a document whose block has
-# drifted from the calendars, and writes nothing — `mass-propers census --write`
-# is what fixes it. Needs PyYAML, skipped rather than failed without it.
+# the one document that carries it, which the others link to. This refuses a
+# block that has drifted from the calendars or a copy of it elsewhere, and
+# writes nothing — `mass-propers census --write` is what fixes a drifted block.
+# Needs PyYAML, skipped rather than failed without it.
 check-propers-census:
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) tools/tpt mass-propers census --check; \

@@ -15,12 +15,12 @@ differently, and read scripture on entirely different schedules. This repository
 models both, side by side, and refuses to harmonize them where they genuinely
 differ.
 
-Every count below is derived from the repository's own files by
-`tools/tpt mass-propers census`, and lands in one table under
-[What is actually here](#what-is-actually-here). That command is the only thing
-that writes the table, and the prose around it states no figure the table does
-not. It had to become one derived table because it was three typed ones: this
-page, [`guidance/propers-for-agents.md`](https://github.com/spincyc/triptych/blob/main/guidance/propers-for-agents.md)
+Every count of the propers is derived from the repository's own files by
+`tools/tpt mass-propers census`, and lands in one table, the
+[census in the calendars' README](https://github.com/spincyc/triptych/blob/main/src/sources/calendars/README.md#current-contents).
+That command is the only thing that writes the table, and this page states no
+figure the table does not. It had to become one derived table because it was
+three typed ones: this page, [`guidance/propers-for-agents.md`](https://github.com/spincyc/triptych/blob/main/guidance/propers-for-agents.md)
 and the calendars' own README each carried a retyped copy of the same census,
 and all three disagreed.
 
@@ -111,14 +111,14 @@ What varies falls into three kinds:
 Only scripture-bearing propers contribute anything to a passage-keyed index; the
 orations contribute nothing, because their words are their own. Set the
 placeholders aside and rather more than half of what remains carries scripture
-in either book; the census below counts both.
+in either book; the [census](https://github.com/spincyc/triptych/blob/main/src/sources/calendars/README.md#current-contents) counts both.
 
 Propers are also not a fixed template. The repository stores each Mass's propers
 **in the order the edition appoints them**, so Tracts, Sequences, the palm-rite
 antiphons, the Improperia, the Exsultet, the Holy Saturday prophecies and the
 litanies appear only where they are actually appointed, and a ten-row Sunday
 template is never imposed on a day that does not have ten rows. Each file uses
-scores of distinct slot names — the census below counts them — and many occur
+scores of distinct slot names — the [census](https://github.com/spincyc/triptych/blob/main/src/sources/calendars/README.md#current-contents) counts them — and many occur
 exactly once: *First Antiphon at the Imposition of Ashes*, *Exsultet
 (Praeconium paschale)*, *Improperia*, *Washing of Feet, Antiphon 4*, *Chant at
 the Place of Reposition*.
@@ -188,7 +188,7 @@ derived from the other.
 
 In the repository's data the propers that carry a `cycles` mapping are the
 Gospels, the Second and First Readings, the Responsorial Psalms and the Gospel
-Acclamations, plus a handful of Holy Week items; the census below counts them.
+Acclamations, plus a handful of Holy Week items; the [census](https://github.com/spincyc/triptych/blob/main/src/sources/calendars/README.md#current-contents) counts them.
 Every one of them is postconciliar. No 1962 proper carries a cycle, and none
 ever should.
 
@@ -303,114 +303,18 @@ mass exists and where it falls, and records nothing of what is said at it.
 Coverage is wide and shallow by design, and a reader who sees a Mass listed
 should not infer that its texts are here.
 
-The table below is derived, not typed. `tools/tpt mass-propers census --write`
-rewrites it in place, `make check-propers-census` fails when it has drifted from
-the calendars, and nothing else on this page states a figure it gives.
-
-<!-- census:begin — derived; edit nothing between these markers -->
-
-| Calendar | Section | Masses | Propers | Masses holding only placeholders |
-| --- | --- | ---: | ---: | ---: |
-| roman-pre-1955 | seasonal | 6 | 0 | 0 |
-| roman-pre-1955 | marian | 1 | 0 | 0 |
-| roman-pre-1955 | sanctoral | 1 | 0 | 0 |
-| roman-1962 | seasonal | 128 | 1424 | 0 |
-| roman-1962 | christological | 8 | 99 | 0 |
-| roman-1962 | marian | 18 | 163 | 0 |
-| roman-1962 | sanctoral | 307 | 1685 | 0 |
-| roman-1962 | common | 30 | 382 | 0 |
-| postconciliar | seasonal | 390 | 2483 | 0 |
-| postconciliar | christological | 7 | 79 | 0 |
-| postconciliar | marian | 14 | 72 | 0 |
-| postconciliar | sanctoral | 201 | 903 | 0 |
-| postconciliar | common | 7 | 0 | 0 |
-
-| Calendar | Rank | Entries | Celebrations |
-| --- | --- | ---: | ---: |
-| roman-pre-1955 | (no rank) | 6 | 6 |
-| roman-pre-1955 | I | 1 | 1 |
-| roman-pre-1955 | II | 1 | 1 |
-| roman-1962 | (no rank) | 93 | 93 |
-| roman-1962 | Comm. | 104 | 104 |
-| roman-1962 | I | 37 | 37 |
-| roman-1962 | II | 46 | 47 |
-| roman-1962 | III | 211 | 211 |
-| postconciliar | (no rank) | 394 | 394 |
-| postconciliar | All Souls commemoration | 1 | 1 |
-| postconciliar | Feast | 24 | 24 |
-| postconciliar | Memorial | 69 | 69 |
-| postconciliar | Optional memorial | 120 | 120 |
-| postconciliar | Solemnity | 11 | 11 |
-
-| Measure | roman-pre-1955 | roman-1962 | postconciliar |
-| --- | ---: | ---: | ---: |
-| Masses | 8 | 491 | 619 |
-| Propers | 0 | 3753 | 3537 |
-| — named `Placeholder` | 0 | 0 | 0 |
-| — inside a `forms` block | 0 | 211 | 222 |
-| — carrying a `cycles` mapping | 0 | 0 | 306 |
-| — carrying a `weekday_cycles` mapping | 0 | 0 | 410 |
-| Masses holding only placeholders | 0 | 0 | 0 |
-| Masses taking a formulary from another entry | 0 | 166 | 0 |
-| Propers taking their text from another entry | 0 | 101 | 51 |
-| Propers that are not placeholders | 0 | 3753 | 3537 |
-| — of those, scripture-bearing | 0 | 2270 | 3061 |
-| Encoded passages | 0 | 2757 | 4040 |
-| Distinct books cited | 0 | 58 | 73 |
-| Distinct slot names | 0 | 128 | 108 |
-
-Counted from `src/sources/calendars/*/propers.yaml` and written here by
-`tools/mass-propers census --write`, which is the only thing that writes the
-block above; `make check-propers-census` refuses a copy that has drifted. What
-each row counts, because two honest counts of “propers” differ by hundreds
-when they key differently: a **mass** is one entry under `sections[*].masses`.
-A **proper** is one entry in a mass's `propers`, or in the `propers` of one of
-its `forms`; a proper carrying `cycles` counts once, not three times.
-Placeholders are **inside** the proper and mass totals, and are also given
-their own rows. A mass **holds only placeholders** when every proper it holds,
-those inside `forms` included, is named `Placeholder` — keying on the mass's
-own `propers` alone undercounts, because it misses the masses whose
-placeholders sit inside a `forms` block. **Scripture-bearing** means a
-`source` of `scripture` or `mixed`, or a `cycles` entry that is. **Encoded
-passages** and **distinct books** are `tools/citations check`'s own counts,
-one passage per encoded citation entry and books counted distinct within a
-file. **Distinct slot names** counts distinct proper `name` values, with
-`Placeholder` among them. The two **taking** rows count the entries that name
-where their text is printed instead of printing it — a feria taking the
-preceding Sunday, a saint taking a Mass of the Common. Such an entry holds few
-propers or none, so it lowers the proper count while raising what the calendar
-can actually show: every row above counts what a file **carries**, and these
-two count what it **appoints** from elsewhere. Neither is a placeholder.
-
-The rank rows count **entries**, and a calendar's rank rows sum to its
-`Masses` above. `(no rank)` is a row and not an omission: the temporal cycle
-prints no rank at all, so unranked entries are a large group in both indexes,
-and a table that dropped them would invite the ranks it does show to be read
-as the whole book. **Celebrations** counts what those entries name. One entry
-can print more than one celebration — a pair of optional memorials falling on
-the same day, or the Greater Litanies kept with Saint Mark — and the index
-records the join only in the entry's `name`, joined with `;`, so that is where
-it is read from; the plural rank word marks some such entries and not others,
-and it never says how many. Where the two columns differ the index is keeping
-more celebrations than it holds entries: reading the entry count as a count of
-celebrations understates the calendar, and folding the celebrations into the
-entry count would break the sum against `Masses`, so both are given and
-neither replaces the other. A **rank** is reproduced exactly as the file
-prints it. `Optional memorial` and `Optional memorials` are two rows because
-they are two different words in the index, and the two Missals' rank
-vocabularies are not one scale — no row of this table is comparable across
-calendars, which is why rank is tabulated down the page and not across it.
-This table answers what an index is scoped to; it does not answer which
-entries are Sundays, because no entry states that and it is not derived here.
-
-<!-- census:end -->
+The count of what is here is derived, not typed, and is kept in one place: the
+[census in the calendars' README](https://github.com/spincyc/triptych/blob/main/src/sources/calendars/README.md#current-contents),
+which `tools/tpt mass-propers census --write` rewrites and
+`make check-propers-census` holds to the calendars. Nothing on this page states
+a figure it gives.
 
 ### The 1962 temporal expansion, and what it deliberately omits
 
 The 1962 seasonal section began as 59 Masses — the Sunday run plus the Triduum
 and Palm Sunday. Its largest single expansion added 63 temporal days, and the
 three Christmas octave placeholders came with it; a few more entries have landed
-since, and the census above holds the current figure. The 63 cover the days the
+since, and the [census](https://github.com/spincyc/triptych/blob/main/src/sources/calendars/README.md#current-contents) holds the current figure. The 63 cover the days the
 Missal keeps and the file did not — the Ember Days of all four seasons, Ash
 Wednesday and the days after it, the ferias of Lent and Passiontide and of Holy
 Week to Wednesday, the Chrism Mass, the Easter and Whitsun octaves, the Rogation

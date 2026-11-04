@@ -171,12 +171,13 @@ EXAMPLES = {
         Example(
             "tools/mass-propers census --check",
             (
-                "current\tdocs/the-mass.md",
-                "current\tguidance/propers-for-agents.md",
                 "current\tsrc/sources/calendars/README.md",
+                "refers\tdocs/the-mass.md",
+                "refers\tguidance/propers-for-agents.md",
             ),
-            "one line a document, `current` or `stale`; a stale one exits 1 and "
-            "`--write` rewrites it in place",
+            "one line a document: the census `current` or `stale`, each page "
+            "linking to it `refers`, `duplicate` or `unlinked`. Anything else "
+            "exits 1, and `--write` rewrites only a stale census in place",
         ),
     ),
 }
@@ -4330,7 +4331,8 @@ def run_structure(arguments: argparse.Namespace) -> dict:
 # — and all three disagreed, because each was retyped at a different hour and
 # none was rederived when the calendars moved. The 1962 sanctoral section alone
 # read 247 in one document and 307 in the file. So the count is derived here,
-# once, and the documents carry the derivation rather than a transcription of it.
+# once, and one document carries the derivation rather than a transcription of
+# it; the others link to that one (see CENSUS_DOCUMENTS).
 #
 # Every figure below is a decision about what to count, not a fact about the
 # corpus, and two honest counters differ by hundreds if they key differently.
@@ -4354,12 +4356,25 @@ CALENDAR_ORDER = ("roman-pre-1955", "roman-1962", "postconciliar")
 # is where a reader is actually reading.
 CENSUS_BEGIN = "<!-- census:begin — derived; edit nothing between these markers -->"
 CENSUS_END = "<!-- census:end -->"
-# Every document that carries the derived block. A document not listed here
-# carries no census figures at all; that is the point of the list.
-CENSUS_DOCUMENTS = (
+# The one document that carries the derived block. Until 2026-11-04 the block
+# was written byte-identical into three documents, and the maintainer decided
+# the repository keeps no duplicated data: it now lives once, beside the
+# calendars it counts and under the heading the other two link to. The public
+# page `docs/the-mass.md` links to it on GitHub rather than deriving a copy at
+# site-build time, because the block is written for repository readers (its
+# keys are YAML paths and tool verbs) and deriving it in the deploy would add
+# PyYAML and the calendar walk to the site build.
+CENSUS_DOCUMENTS = ("src/sources/calendars/README.md",)
+# What a referrer must contain: the canonical document and its heading anchor.
+# Both a relative link and a GitHub blob URL to it contain this text.
+CENSUS_LINK = "src/sources/calendars/README.md#current-contents"
+# Documents that point at the census instead of carrying it. Each must link to
+# CENSUS_LINK and must carry no census markers; `census --check` reports one
+# that does as `duplicate` and one that lost its link as `unlinked`. Neither is
+# repaired by `--write`, because both are edits to prose this tool does not own.
+CENSUS_REFERRERS = (
     "docs/the-mass.md",
     "guidance/propers-for-agents.md",
-    "src/sources/calendars/README.md",
 )
 
 # The emitted prose names the direct paths, `tools/mass-propers` and
@@ -5185,9 +5200,9 @@ CENSUS_MEASURES = (
     ("Distinct books cited", "books"),
     ("Distinct slot names", "slot_names"),
 )
-# Measures printed only where some calendar carries one. The block is tracked in
-# two documents and compared byte for byte by `census --check`, so a row for a
-# measure no file yet holds would put both documents into a stale state on the
+# Measures printed only where some calendar carries one. The block is tracked
+# and compared byte for byte by `census --check`, so a row for a
+# measure no file yet holds would put the document into a stale state on the
 # day the KEY was added rather than on the day the first DATA arrives — a red
 # gate reporting nothing but zeroes, cleared by a `--write` that says nothing.
 # Every row of the table as it stands is nonzero in at least one calendar, so
@@ -5197,7 +5212,7 @@ CENSUS_MEASURES_WHEN_CARRIED = frozenset({"weekday_cycle_propers"})
 
 
 def render_census(counted: dict[str, dict]) -> str:
-    """The block both documents carry, byte-identical in each."""
+    """The block the census document carries."""
     names = list(counted)
     lines = [CENSUS_BEGIN, ""]
     lines.append("| Calendar | Section | Masses | Propers | Masses holding only placeholders |")
@@ -5246,6 +5261,15 @@ def replace_census(text: str, block: str) -> str:
     if end < begin:
         raise ValueError("census region is inverted: the end marker precedes the begin")
     return text[:begin] + block + text[end + len(CENSUS_END) + 1 :]
+
+
+def referrer_state(text: str) -> str:
+    """`refers`, or why a CENSUS_REFERRERS document is not a pointer."""
+    if CENSUS_BEGIN in text or CENSUS_END in text:
+        return "duplicate"
+    if CENSUS_LINK not in text:
+        return "unlinked"
+    return "refers"
 
 
 def run_census(arguments: argparse.Namespace) -> dict:
@@ -5301,6 +5325,13 @@ def run_census(arguments: argparse.Namespace) -> dict:
         else:
             state = "stale"
             stale = True
+        documents.append({"path": relative, "state": state})
+    for relative in CENSUS_REFERRERS:
+        path = Path(arguments.doc_root) / relative
+        if not path.is_file():
+            raise ValueError(f"no document at {path}")
+        state = referrer_state(path.read_text(encoding="utf-8"))
+        stale = stale or state != "refers"
         documents.append({"path": relative, "state": state})
     payload["documents"] = documents
     payload["status"] = "stale" if stale else "ok"
@@ -5856,7 +5887,7 @@ def main(argv: list[str] | None = None) -> int:
     shared.add_argument(
         "--write",
         action="store_true",
-        help="`census`: rewrite the derived block in every document carrying it",
+        help="`census`: rewrite the derived block in the document carrying it",
     )
     shared.add_argument(
         "--check",
@@ -5948,10 +5979,19 @@ def main(argv: list[str] | None = None) -> int:
             for row in rows:  # type: ignore[union-attr]
                 print(f"{row['state']}\t{row['path']}")
             if payload["status"] == "stale":
-                print(
-                    "mass-propers census: stale; rerun with --write",
-                    file=sys.stderr,
-                )
+                states = {row["state"] for row in rows}  # type: ignore[union-attr]
+                if states & {"duplicate", "unlinked"}:
+                    print(
+                        "mass-propers census: the census lives only in "
+                        f"{CENSUS_DOCUMENTS[0]}; a referrer must carry no "
+                        f"census block and must link to {CENSUS_LINK}",
+                        file=sys.stderr,
+                    )
+                if "stale" in states:
+                    print(
+                        "mass-propers census: stale; rerun with --write",
+                        file=sys.stderr,
+                    )
                 return 1
             return 0
         if "checked" in payload:

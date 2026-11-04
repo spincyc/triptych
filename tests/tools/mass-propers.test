@@ -578,14 +578,15 @@ fi
 
 # Machine output preserves the same stale exit status as text output.
 mkdir -p stale-docs/docs stale-docs/guidance stale-docs/src/sources/calendars
-for path in docs/the-mass.md guidance/propers-for-agents.md src/sources/calendars/README.md; do
-	cat >"stale-docs/$path" <<'EOF'
+cat >stale-docs/src/sources/calendars/README.md <<'EOF'
 before
 <!-- census:begin — derived; edit nothing between these markers -->
 stale
 <!-- census:end -->
 after
 EOF
+for path in docs/the-mass.md guidance/propers-for-agents.md; do
+	printf 'see src/sources/calendars/README.md#current-contents\n' >"stale-docs/$path"
 done
 status=0
 run_tool census --doc-root stale-docs --check --json >stale-census.json || status=$?
@@ -894,39 +895,63 @@ fi
 run_tool census --check >/dev/null
 
 # A drifted document is named and exits 1; `--write` restores it and leaves the
-# prose outside the region alone.
+# prose outside the region alone. The census lives in one document; the other
+# two only link to it.
 begin="$(head -1 census-one.md)"
+census_doc=docroot/src/sources/calendars/README.md
 mkdir -p docroot/docs docroot/guidance docroot/src/sources/calendars
-printf 'before\n\n%s\nstale\n<!-- census:end -->\n\nafter\n' "$begin" >docroot/docs/the-mass.md
-cp docroot/docs/the-mass.md docroot/guidance/propers-for-agents.md
-cp docroot/docs/the-mass.md docroot/src/sources/calendars/README.md
+printf 'before\n\n%s\nstale\n<!-- census:end -->\n\nafter\n' "$begin" >"$census_doc"
+link='see [the census](../src/sources/calendars/README.md#current-contents)'
+printf '%s\n' "$link" >docroot/docs/the-mass.md
+printf '%s\n' "$link" >docroot/guidance/propers-for-agents.md
 status=0
 run_tool census --check --doc-root docroot >stale.txt 2>/dev/null || status=$?
 if [ "$status" -ne 1 ]; then
 	echo "a stale document should exit 1, got $status" >&2
 	exit 1
 fi
-if [ "$(grep -c '^stale	' stale.txt)" -ne 3 ]; then
-	echo "all three stale documents should be named" >&2
+if [ "$(grep -c '^stale	' stale.txt)" -ne 1 ] || [ "$(grep -c '^refers	' stale.txt)" -ne 2 ]; then
+	echo "the stale census document and both referrers should be named" >&2
 	exit 1
 fi
 run_tool census --write --doc-root docroot >/dev/null
 run_tool census --check --doc-root docroot >/dev/null
 for kept in '^before$' '^after$'; do
-	if ! grep -q "$kept" docroot/docs/the-mass.md; then
+	if ! grep -q "$kept" "$census_doc"; then
 		echo "census --write did not leave the prose outside the region alone" >&2
 		exit 1
 	fi
 done
+
+# A referrer that grows a copy of the block, or loses its link, is refused, and
+# `--write` repairs neither: both are edits to prose the tool does not own.
+cp "$census_doc" docroot/docs/the-mass.md
+status=0
+run_tool census --write --doc-root docroot >dup.txt 2>/dev/null || status=$?
+if [ "$status" -ne 1 ] || ! grep -q '^duplicate	docs/the-mass.md$' dup.txt; then
+	echo "a referrer carrying the block should be refused as duplicate" >&2
+	exit 1
+fi
+if ! cmp -s "$census_doc" docroot/docs/the-mass.md; then
+	echo "census --write must not rewrite a referrer" >&2
+	exit 1
+fi
+printf 'no link here\n' >docroot/docs/the-mass.md
+status=0
+run_tool census --check --doc-root docroot >unlinked.txt 2>/dev/null || status=$?
+if [ "$status" -ne 1 ] || ! grep -q '^unlinked	docs/the-mass.md$' unlinked.txt; then
+	echo "a referrer without the census link should be refused as unlinked" >&2
+	exit 1
+fi
+printf '%s\n' "$link" >docroot/docs/the-mass.md
 
 # `--check` gates the rank rows exactly as it gates the older ones. Proved by
 # altering one rank count in an otherwise current copy: a document whose rank
 # table alone has drifted is refused, so the new rows cannot rot quietly behind
 # a table that still looks right.
 sed 's/^| \(.*\) | (no rank) | \([0-9]*\) |/| \1 | (no rank) | 999 |/' \
-	census-one.md >docroot/docs/the-mass.md
-cp docroot/docs/the-mass.md docroot/guidance/propers-for-agents.md
-if cmp -s census-one.md docroot/docs/the-mass.md; then
+	census-one.md >"$census_doc"
+if cmp -s census-one.md "$census_doc"; then
 	echo "the rank drift fixture changed nothing; the row shape moved" >&2
 	exit 1
 fi
@@ -1104,12 +1129,12 @@ assert found == {
 PY
 
 # A document carrying no markers is refused rather than appended to.
-printf 'no markers here\n' >docroot/docs/the-mass.md
+printf 'no markers here\n' >"$census_doc"
 if run_tool census --check --doc-root docroot >/dev/null 2>&1; then
 	echo "expected failure for a document with no census region" >&2
 	exit 1
 fi
-if grep -q 'census:begin' docroot/docs/the-mass.md; then
+if grep -q 'census:begin' "$census_doc"; then
 	echo "a markerless document must not be written to" >&2
 	exit 1
 fi

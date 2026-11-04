@@ -1398,6 +1398,16 @@ class RegionTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             propers.replace_census("no markers here\n", "block\n")
 
+    def test_a_referrer_is_a_pointer_and_never_a_copy(self) -> None:
+        link = f"see [the census](../{propers.CENSUS_LINK})\n"
+        self.assertEqual("refers", propers.referrer_state(link))
+        self.assertEqual("unlinked", propers.referrer_state("see the census\n"))
+        copy_of_it = f"{link}{propers.CENSUS_BEGIN}\nblock\n{propers.CENSUS_END}\n"
+        self.assertEqual("duplicate", propers.referrer_state(copy_of_it))
+        self.assertEqual(
+            "duplicate", propers.referrer_state(f"{link}{propers.CENSUS_END}\n")
+        )
+
     def test_an_inverted_region_is_refused(self) -> None:
         text = f"{propers.CENSUS_END}\n{propers.CENSUS_BEGIN}\n"
         with self.assertRaises(ValueError):
@@ -1420,9 +1430,33 @@ class CarriedBlockTests(unittest.TestCase):
                 self.assertEqual(text.count(propers.CENSUS_BEGIN), 1)
                 self.assertEqual(text.count(propers.CENSUS_END), 1)
 
-    def test_the_documents_carry_one_identical_block(self) -> None:
-        regions = {relative: self.region(relative) for relative in propers.CENSUS_DOCUMENTS}
-        self.assertEqual(len(set(regions.values())), 1, regions.keys())
+    def test_the_census_lives_in_exactly_one_tracked_document(self) -> None:
+        """No copy anywhere: until 2026-11-04 three documents carried it."""
+        import subprocess
+
+        self.assertEqual(len(propers.CENSUS_DOCUMENTS), 1)
+        listed = subprocess.run(
+            ["git", "grep", "-l", "-F", propers.CENSUS_BEGIN, "--", "*.md"],
+            cwd=ROOT, capture_output=True, text=True, check=False,
+        )
+        self.assertIn(listed.returncode, (0, 1), listed.stderr)
+        self.assertEqual(
+            list(propers.CENSUS_DOCUMENTS), listed.stdout.splitlines()
+        )
+
+    def test_every_referrer_links_the_census_and_carries_no_copy(self) -> None:
+        self.assertTrue(
+            propers.CENSUS_LINK.startswith(propers.CENSUS_DOCUMENTS[0] + "#")
+        )
+        for relative in propers.CENSUS_REFERRERS:
+            with self.subTest(document=relative):
+                text = (ROOT / relative).read_text(encoding="utf-8")
+                self.assertNotIn(propers.CENSUS_BEGIN, text)
+                self.assertNotIn(propers.CENSUS_END, text)
+                self.assertIn(propers.CENSUS_LINK, text)
+        # The anchor the referrers name is a real heading of the census document.
+        canonical = (ROOT / propers.CENSUS_DOCUMENTS[0]).read_text(encoding="utf-8")
+        self.assertIn("\n## Current contents\n", canonical)
 
     def test_the_carried_block_still_matches_the_calendars(self) -> None:
         """The same assertion `make check-propers-census` makes."""
@@ -1463,9 +1497,13 @@ class CarriedBlockTests(unittest.TestCase):
             for counted in propers.census(ROOT / "src" / "sources" / "calendars").values()
             for key in ("masses", "propers", "placeholder_only_masses", "substantive_propers")
         }
-        for relative in propers.CENSUS_DOCUMENTS:
+        for relative in (*propers.CENSUS_DOCUMENTS, *propers.CENSUS_REFERRERS):
             text = (ROOT / relative).read_text(encoding="utf-8")
-            outside = text.replace(self.region(relative), "")
+            outside = (
+                text.replace(self.region(relative), "")
+                if propers.CENSUS_BEGIN in text
+                else text
+            )
             for total in sorted(totals):
                 with self.subTest(document=relative, total=total):
                     if len(total) < shortest:
