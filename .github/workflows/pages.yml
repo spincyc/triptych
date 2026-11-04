@@ -113,10 +113,10 @@ jobs:
       # public-site prepares and verifies the committed product descriptor before
       # source gates and consumers. Missing families reproduce its exact bytes
       # offline; stale inputs fail without a whole-corpus research replay. Its
-      # web-figures step compiles each web edition's TikZ figures, twice and
-      # refused unless byte-identical, inside the pinned TeX image (no network);
-      # the SVGs are not committed products, and the site build checks every
-      # reader's figure set against them.
+      # figure step (tools/web-edition figures) compiles each web edition's TikZ
+      # figures, twice and refused unless byte-identical, inside the pinned TeX
+      # image (no network); the SVGs are not committed products, and the site
+      # build checks every reader's figure set against them.
       - name: Validate sources and build public artifact
         run: |
           set -euo pipefail

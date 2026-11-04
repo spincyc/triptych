@@ -773,8 +773,9 @@ web-editions:
 # left alone while current. Locally they compile with the host's TeX; Pages sets
 # WEB_FIGURES_RUNNER=docker:<pinned TEXLIVE_IMAGE> (.github/workflows/pages.yml).
 WEB_FIGURES_RUNNER ?= host
+WEB_FIGURES = $(PYTHON) $(WEB_EDITION_TOOL) figures --runner '$(WEB_FIGURES_RUNNER)'
 web-figures: | prepare-browser-data
-	@$(PYTHON) $(WEB_EDITION_TOOL) figures --runner '$(WEB_FIGURES_RUNNER)'
+	@$(WEB_FIGURES)
 
 # Every reader output converts from its current TeX with every fidelity audit,
 # whatever state the product cache is in. Nothing is written.
@@ -787,10 +788,15 @@ check-public-alpha: check-curriculum-source-rights | prepare-browser-data
 prepare-public-alpha: check-curriculum-source-rights | prepare-browser-data
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) prepare
 
-public-preview: check-deployment-sources web-figures
+# check-deployment-sources has verified the products, in a sub-make when the
+# caller gave no jobserver, so the site compiles its figures in its own recipe:
+# web-figures would verify the products a second time.
+public-preview: check-deployment-sources
+	@$(WEB_FIGURES)
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --preview
 
-public-site: check-deployment-sources web-figures
+public-site: check-deployment-sources
+	@$(WEB_FIGURES)
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build
 
 verify-public-preview: check-curriculum-source-rights | prepare-browser-data
