@@ -44,10 +44,15 @@ jobs:
       PYTHONDONTWRITEBYTECODE: "1"
 
     steps:
+      # Full commit and tree history, blobs only for HEAD: each edition's
+      # "Last revised" stamp is derived from `git log` over its sources
+      # (scripts/_edition_revision.py), which refuses a shallow clone.
       - name: Check out repository
         uses: actions/checkout@v7
         with:
           persist-credentials: false
+          fetch-depth: 0
+          filter: blob:none
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -151,10 +156,13 @@ jobs:
       PRINT_COMPILE_OUT: .scratch/native-print-compile
 
     steps:
+      # Bundles carry each edition's derived revision stamp; see `build`.
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
+          fetch-depth: 0
+          filter: blob:none
 
       - name: Set up Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6

@@ -28,10 +28,14 @@ jobs:
       PRINT_OUT: .scratch/print-document-ci
 
     steps:
+      # A publication's derived revision stamp needs full commit history;
+      # see the `build` job of pages.yml.
       - name: Check out repository
         uses: actions/checkout@v7
         with:
           persist-credentials: false
+          fetch-depth: 0
+          filter: blob:none
 
       - name: Set up Python
         uses: actions/setup-python@v6
