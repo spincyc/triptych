@@ -103,3 +103,50 @@ source = "sections/99-references.tex"
 [[structure]]
 role = "scope-appendix"
 source = "sections/00-method-and-boundaries.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'Heresies in Catholic History: A Comprehensive Documentary Survey'
+pdfsubject = 'Condemned propositions, ecclesial responses, historical aftermaths, and an audited chronology from the apostolic age through the present'
+title = 'Heresies in Catholic History'
+subtitle = 'A Documentary History of Propositions and Responses'
+kind-line = 'Condemned propositions, ecclesial responses,\\historical aftermaths, and an audited chronology'
+note = 'Not an ecclesiastical judgment on any person or community; see the terminal Scope, Terms, and Qualifications appendix.'
+emergencystretch = '3em'
+closing = 'none'
+# Define the terminal scope apparatus without rendering it before the history.
+preamble = [
+  'sections/00-method-and-boundaries',
+]
+body = [
+  'sections/05-apostolic-boundary',
+  'sections/10-second-and-third-centuries',
+  'sections/20-fourth-to-sixth-centuries',
+  'sections/30-seventh-to-tenth-centuries',
+  'sections/40-eleventh-to-thirteenth-centuries',
+  'sections/50-fourteenth-and-fifteenth-centuries',
+  'sections/60-reformations',
+  'sections/70-post-reformation-controversies',
+  'sections/80-modern-and-contemporary',
+  'sections/90-historical-synthesis',
+]
+appendix = [
+  'sections/95-timeline',
+  'sections/96-census-accounting',
+  '''
+\heresyapparatusappendix
+\begingroup
+\linespread{0.98}\selectfont''',
+  'sections/99-references',
+  '''
+\titleformat{\section}
+  {\large\bfseries}{\thesection}{0.55em}{}
+\titlespacing*{\section}{0pt}{0.5em}{0.25em}''',
+  '''
+
+{\scriptsize\setlength{\parskip}{0.15em}%
+\input{theology/heresies/heresies-in-catholic-history/generation-metadata}}
+\endgroup''',
+]

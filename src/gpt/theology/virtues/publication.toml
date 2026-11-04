@@ -95,3 +95,37 @@ source = "sections/95-synoptic-table.tex"
 [[structure]]
 role = "references"
 source = "sections/90-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'The Virtues: Habit, Mean, Grace, and Human Flourishing'
+pdfsubject = 'An Aristotelian, Augustinian, and Thomistic reference to the theological, cardinal, intellectual, and annexed virtues'
+title = 'The Virtues'
+subtitle = 'Habit, mean, grace, and human flourishing'
+kind-line = 'An Aristotelian, Augustinian, and Thomistic reference'
+note = '''Not spiritual direction or a method for judging another person's character; see the terminal Scope, Corpus, and Taxonomy appendix.'''
+tocdepth = '3'
+emergencystretch = '3em'
+headings = 'titlesec-deep'
+body = [
+  'sections/00-scope-method',
+  'sections/10-philosophical-grammar',
+  'sections/20-theological-virtues',
+  'sections/25-cardinal-virtues',
+  '\let\virtuedossier\cardinaldossier',
+  'sections/30-prudence-family',
+  'sections/40-justice-family',
+  'sections/50-fortitude-family',
+  'sections/60-temperance-family',
+  '\let\virtuedossier\standardvirtuedossier',
+  'sections/65-other-moral-virtues',
+  'sections/70-intellectual-virtues',
+  'sections/80-integration-formation',
+]
+appendix = [
+  '\virtuesapparatusappendix',
+  'sections/95-synoptic-table',
+  'sections/90-references',
+]

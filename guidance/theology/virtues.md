@@ -7,6 +7,9 @@ article, or instrument for diagnosing another person.
 Declare the leaf's type, source roles, contract version, and ordered outputs in
 `publication.toml` under [document schemas](../document-schemas.md), preserving
 the inventory, taxonomy, terminology, and opposition classifications below.
+Its `main.tex` is generated from the `theology-reference-v1`
+[document type](../document-schemas.md#document-types): change the leaf's
+`[document]` table or `format.tex`, never the entrypoint.
 
 ## Governing priorities
 

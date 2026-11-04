@@ -1,0 +1,26 @@
+% Leaf-local preamble: the packages and macros this study alone uses. The
+% document type named in publication.toml [document] owns the skeleton.
+
+\usepackage{pdflscape}
+\usepackage{ragged2e}
+\input{theology/sacraments/summary-preamble}
+\renewcommand{\sectionguard}{\Needspace*{7\baselineskip}}
+
+\newcommand{\sacramentMatrixTitle}{Appendix \thesection: The Seven Sacraments}
+\newcommand{\sacramentMatrixPageHook}{%
+  \refstepcounter{section}%
+  \label{app:seven-sacrament-matrix}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}The Seven-Sacrament Comparative Matrix}%
+}
+
+\newcommand{\churchesInitiationTitle}{Appendix \thesection: The Twenty-Four Catholic Churches and the Order of Initiation}
+\newcommand{\churchesInitiationPageHook}{%
+  \refstepcounter{section}%
+  \label{app:initiation-table}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}The Twenty-Four Catholic Churches and the Order of Initiation}%
+}
+
+\newcommand{\sacramentLexiconPageHook}{%
+  \phantomsection
+  \addcontentsline{toc}{subsection}{Metaphysical and Sacramental Lexicon}%
+}

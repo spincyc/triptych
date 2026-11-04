@@ -1,0 +1,36 @@
+% Leaf-local preamble: the packages and macros this study alone uses. The
+% document type named in publication.toml [document] owns the skeleton.
+
+\usepackage{pdflscape}
+
+\newcommand{\virtuedossierbody}[6]{%
+  \begin{studyframe}
+  \textbf{Class and provenance:} #1\par
+  \textbf{Formal object:} #2\par
+  \textbf{Characteristic act:} #3\par
+  \textbf{Defect-side opposition:} #4\par
+  \textbf{Excess-side opposition:} #5\par
+  \textbf{Boundary:} #6
+  \end{studyframe}}
+
+\newcommand{\virtuedossier}[7]{%
+  \Needspace{20\baselineskip}%
+  \subsection{#1}
+  \virtuedossierbody{#2}{#3}{#4}{#5}{#6}{#7}}
+
+\newcommand{\cardinaldossier}[7]{%
+  \Needspace{20\baselineskip}%
+  \subsubsection{#1}
+  \virtuedossierbody{#2}{#3}{#4}{#5}{#6}{#7}}
+
+\newcommand{\cardinalgroup}[1]{%
+  \Needspace{12\baselineskip}%
+  \subsection{#1}}
+
+\newcommand{\virtuegrouplabel}[1]{%
+  \Needspace{5\baselineskip}%
+  \par\medskip\noindent{\normalsize\bfseries #1}\par\smallskip}
+
+\let\standardvirtuedossier\virtuedossier
+
+\newcommand{\oppositioncode}[1]{\textsf{#1}}

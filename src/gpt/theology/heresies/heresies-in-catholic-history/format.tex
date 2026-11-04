@@ -1,0 +1,33 @@
+% Leaf-local preamble: the packages and macros this study alone uses. The
+% document type named in publication.toml [document] owns the skeleton.
+
+\usepackage{pdflscape}
+
+\newenvironment{heresydossier}[2]{%
+  \sectionguard
+  \subsection{#1}\label{#2}
+  \begin{studyframe}
+}{%
+  \end{studyframe}
+}
+
+\newcommand{\objectfield}{\textbf{Object and setting:} }
+\newcommand{\propositionfield}{\par\textbf{Propositions at issue:} }
+\newcommand{\responsefield}{\par\textbf{Ecclesial response:} }
+\newcommand{\aftermathfield}{\par\textbf{Aftermath and qualification:} }
+
+\newenvironment{historytimeline}{%
+  \begingroup\scriptsize\renewcommand{\arraystretch}{1.13}
+  \begin{longtable}{>{\raggedright\arraybackslash}p{0.075\linewidth}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.27\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}}
+  \toprule
+  \textbf{Date} & \textbf{Place / authority} & \textbf{Object} & \textbf{Response and positive doctrine} & \textbf{Aftermath / evidence}\\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Date} & \textbf{Place / authority} & \textbf{Object} & \textbf{Response and positive doctrine} & \textbf{Aftermath / evidence}\\
+  \midrule
+  \endhead
+}{%
+  \bottomrule
+  \end{longtable}\endgroup
+}

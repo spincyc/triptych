@@ -1,0 +1,27 @@
+% Leaf-local preamble: the packages and macros this study alone uses. The
+% document type named in publication.toml [document] owns the skeleton.
+
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.6em}{}
+\newcommand{\ST}[1]{\emph{ST}~#1}
+\newcommand{\gk}[1]{\textit{#1}}
+\newcommand{\angeldossier}[4]{%
+\Needspace{9\baselineskip}
+\begin{studyframe}
+\textbf{Summa:} #1\par
+\textbf{Grade:} #2\par
+\textbf{Authorities:} #3\par
+\textbf{Contrary opinion:} #4
+\end{studyframe}}
+\newcommand{\angeldossiersettled}[3]{%
+\Needspace{9\baselineskip}
+\begin{studyframe}
+\textbf{Summa:} #1\par
+\textbf{Grade:} #2\par
+\textbf{Authorities:} #3
+\end{studyframe}}

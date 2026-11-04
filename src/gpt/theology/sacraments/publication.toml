@@ -103,3 +103,60 @@ source = "sections/91-scope-terms-qualifications.tex"
 [[structure]]
 role = "exposition"
 source = "sections/14-churches-initiation.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'The Seven Sacraments'
+pdfsubject = 'Patristic, Thomistic, scriptural, and canonical sacramental theology'
+title = 'The Seven Sacraments'
+subtitle = 'Visible words of the Word made flesh'
+kind-line = 'A patristic and Thomistic synthesis of sign, causality, grace, communion, and glory'
+note = 'Study instrument; not an official catechism, canonical opinion, or liturgical book. Scope, terms, and qualifications appear in the terminal appendices.'
+tocdepth = '2'
+emergencystretch = '0pt'
+contents-style = '\footnotesize'
+headings = 'standard'
+closing = 'none'
+body = [
+  'sections/10-initiation-introduction',
+  'sections/11-baptism',
+  'sections/12-confirmation',
+  'sections/13-eucharist',
+  'sections/20-healing-introduction',
+  'sections/21-penance',
+  'sections/22-anointing',
+  'sections/30-communion-introduction',
+  'sections/31-orders',
+  'sections/32-matrimony',
+  'sections/40-synthesis',
+  'sections/90-references',
+  '\clearpage',
+]
+appendix = [
+  'sections/91-scope-terms-qualifications',
+  'fragments/full-matrix',
+  'sections/14-churches-initiation',
+  '''
+\renewcommand{\sacramentSummaryPageHook}[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1 at a Glance}%
+}
+\renewcommand{\sacramentSummaryTitlePrefix}{Appendix \thesection:\space}''',
+  'summaries/baptism',
+  'summaries/confirmation',
+  'summaries/eucharist',
+  'summaries/penance',
+  'summaries/anointing',
+  'summaries/orders',
+  '\renewcommand{\sacramentSummaryEnd}{\par\endgroup}',
+  'summaries/matrimony',
+  '''
+\clearpage
+\begin{minipage}{\linewidth}
+\smallskip
+\scriptsize''',
+  'generation-metadata',
+  '\end{minipage}',
+]

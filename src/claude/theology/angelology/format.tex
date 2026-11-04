@@ -1,0 +1,31 @@
+% Leaf-local preamble: the packages and macros this study alone uses. The
+% document type named in publication.toml [document] owns the skeleton.
+
+\makeatletter\renewcommand*\l@subsection{\@dottedtocline{2}{1.5em}{2.8em}}\makeatother
+
+% Greek is given in italic transliteration; the source fonts carry no Greek.
+\newcommand{\gk}[1]{\textit{#1}}
+\newcommand{\ST}[1]{\emph{ST}~#1}
+
+\newcommand{\angeldossier}[4]{%
+  \Needspace{10\baselineskip}%
+  \begin{studyframe}
+  \textbf{Summa:} #1\par
+  \textbf{Grade:} #2\par
+  \textbf{Authorities:} #3\par
+  \textbf{Contrary opinion:} #4
+  \end{studyframe}}
+
+\newcommand{\angeldossiersettled}[3]{%
+  \Needspace{10\baselineskip}%
+  \begin{studyframe}
+  \textbf{Summa:} #1\par
+  \textbf{Grade:} #2\par
+  \textbf{Authorities:} #3
+  \end{studyframe}}
+
+\newcommand{\chchapter}[4]{%
+  \Needspace{10\baselineskip}%
+  \subsection{#1}\label{#4}
+  \textbf{Locus:} #2\par
+  \textbf{Reception in Aquinas:} #3\par}

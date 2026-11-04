@@ -151,3 +151,53 @@ source = "appendices/90-scope.tex"
 [[structure]]
 role = "references"
 source = "appendices/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'Angels and the Gift of Being: A Thomistic Study of Nature, Grace, and Ministry'
+pdfsubject = 'Angelology through Scripture, the Fathers, the Celestial Hierarchy, and Summa theologiae I questions 50-64 and 106-114'
+title = 'Angels and the\\[0.2em]Gift of Being'
+subtitle = 'A Thomistic Study of\\Nature, Grace, and Ministry'
+kind-line = 'With the \emph{Celestial Hierarchy}\\and the witness of the Fathers'
+overline = 'Triptych'
+tocdepth = '2'
+emergencystretch = '3em'
+headings = 'standard'
+penalties = 'none'
+titlepage = 'overline'
+closing = 'none'
+body = [
+  'sections/00-scripture',
+  'sections/05-creation-and-faith',
+  'sections/10-fathers',
+  'sections/15-celestial-hierarchy',
+  'sections/20-reception',
+  'sections/30-nature',
+  'sections/32-knowledge',
+  'sections/34-love-and-grace',
+  'sections/36-fall',
+  'sections/40-illumination-and-order',
+  'sections/42-government-and-guardians',
+  'sections/44-assault-and-providence',
+  'sections/50-christ-mary',
+  'sections/55-disputed-and-eastern',
+  'sections/60-liturgy-and-devotion',
+  '\clearpage',
+]
+appendix = [
+  'appendices/01-orders',
+  'appendices/02-article-census',
+  'appendices/03-aquinas-parallels',
+  'appendices/04-dionysian-concordance',
+  'appendices/04-magisterial-chronology',
+  'appendices/05-calendar-and-names',
+  'appendices/06-scripture-and-powers',
+  'appendices/07-first-sin',
+  'appendices/08-terminology-and-witnesses',
+  'appendices/90-scope',
+  'appendices/99-references',
+  '\par\medskip{}',
+  '{\raggedright\scriptsize\input{theology/angelology/generation-metadata}\par}',
+]

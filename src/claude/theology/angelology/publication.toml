@@ -227,3 +227,79 @@ source = "appendices/90-scope-corpus-qualifications.tex"
 [[structure]]
 role = "references"
 source = "appendices/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry'
+pdfsubject = 'A Thomistic reference on the angels following Summa theologiae I qq. 50-64 and 106-114, with a chapter-by-chapter exposition of the Celestial Hierarchy and the patristic, magisterial, and liturgical witness'
+title = 'The Angels'
+subtitle = 'Nature, Knowledge, Will, Fall, Order, and Ministry'
+kind-line = 'The treatise of Saint Thomas Aquinas,\\with the \emph{Celestial Hierarchy} and the witness of the Fathers'
+overline = 'A Triptych Reference'
+tocdepth = '2'
+emergencystretch = '3em'
+contents-style = '''
+\footnotesize
+\linespread{0.96}\selectfont'''
+headings = 'titlesec-deep'
+titlepage = 'overline'
+closing = 'none'
+# Body, in the order guidance/theology/angelology.md fixes. A commented line
+# is a planned section not yet drafted; research/production-plan.md tracks it.
+body = [
+  'sections/00-scripture',
+  'sections/05-faith-of-the-church',
+  'sections/07-israel-before-christ',
+  'sections/08-philosophers-before-christ',
+  'sections/10-fathers-before-dionysius',
+  'sections/11-greek-fathers-nicene',
+  'sections/12-latin-fathers-before-dionysius',
+  'sections/13-augustine',
+  'sections/15-celestial-hierarchy',
+  'sections/20-fathers-after-dionysius',
+  'sections/21-medieval-doctors',
+  'sections/30-angelic-substance',
+  'sections/32-bodies-place-motion',
+  'sections/34-intellect-and-knowledge',
+  'sections/36-will-and-love',
+  'sections/38-creation-grace-glory',
+  'sections/40-fall-and-punishment',
+  'sections/50-illumination-and-speech',
+  'sections/52-hierarchies-and-orders',
+  'sections/54-government-and-mission',
+  'sections/56-guardian-angels',
+  'sections/58-assaults-of-demons',
+  'sections/60-christ-mary-and-the-angels',
+  'sections/70-disputed-questions',
+  'sections/72-byzantine-line',
+  'sections/80-liturgy',
+  'sections/82-devotion-and-its-regulation',
+  'sections/84-the-saints-and-the-angels',
+  'sections/88-the-order-of-the-universe',
+  '\clearpage',
+]
+appendix = [
+  'appendices/01-the-nine-orders',
+  'appendices/02-comparative-orderings',
+  'appendices/02a-pre-christian-continuities',
+  'appendices/03-article-census',
+  'appendices/04-parallels-in-aquinas',
+  'appendices/05-dionysius-in-the-summa',
+  'appendices/06-magisterial-chronology',
+  'appendices/07-calendar',
+  'appendices/08-scripture-index',
+  'appendices/09-names',
+  'appendices/10-demons-powers-and-limits',
+  'appendices/11-the-first-sin',
+  'appendices/12-terminology',
+  'appendices/13-witness-register',
+  'appendices/90-scope-corpus-qualifications',
+  'appendices/99-references',
+  '''
+\begingroup
+\setlength{\parskip}{0pt}
+{\scriptsize\input{theology/angelology/generation-metadata}}
+\endgroup''',
+]

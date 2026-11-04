@@ -7,6 +7,9 @@ They are not juridical determinations of a living person's culpability.
 Declare the leaf's type, source roles, contract version, and ordered outputs in
 `publication.toml` under [document schemas](../document-schemas.md), preserving
 the census, dossier, evidence-grade, and response-event distinctions below.
+Its `main.tex` is generated from the `theology-reference-v1`
+[document type](../document-schemas.md#document-types): change the leaf's
+`[document]` table or `format.tex`, never the entrypoint.
 
 ## Governing priorities
 

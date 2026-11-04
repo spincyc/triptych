@@ -9,6 +9,9 @@ of angel names, or a history of exorcism; the exorcism study under
 Declare the leaf's type, source roles, contract version, and ordered outputs in
 `publication.toml` under [document schemas](../document-schemas.md), preserving
 the question, order, terminology, and source-binding owners below.
+Its `main.tex` is generated from the `theology-reference-v1`
+[document type](../document-schemas.md#document-types): change the leaf's
+`[document]` table or `format.tex`, never the entrypoint.
 
 ## Governing priorities
 

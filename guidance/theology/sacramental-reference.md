@@ -6,6 +6,11 @@ its mechanically derived at-a-glance companion, and their shared fragments.
 Declare each leaf's type, canonical imports, derivation, and ordered outputs in
 `publication.toml` under [document schemas](../document-schemas.md). One-page
 summaries and physical table fit remain [print-export gates](../../docs/printing.md).
+The treatise's `main.tex` is generated from the `theology-reference-v1`
+[document type](../document-schemas.md#document-types); change its `[document]`
+table or `format.tex`, never the entrypoint. The companion's entrypoint stays
+hand-written: it has no title page, contents or study frame, and it declares
+its inherited provenance before its first imported fragment.
 
 ## Governing priorities
 
