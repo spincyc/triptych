@@ -1519,7 +1519,11 @@ def _validate_external_deliveries(library: Library) -> None:
                 f"external delivery does not match artifact {', '.join(mismatches)}",
             )
             continue
-        if _is_searchable_media(record.data.get("media_type")) or record.data.get("indexable") is True:
+        # A git-history reference keeps its JSON in this repository's history;
+        # anything indexed for search must still be in the working tree.
+        if record.data.get("indexable") is True or (
+            _is_searchable_media(record.data.get("media_type")) and "git_commit" not in entry
+        ):
             library.error(record.path, "searchable text payload must remain in the checkout")
             continue
         library.external_payloads[path] = entry
@@ -1557,7 +1561,9 @@ def artifact_path(
                 raise SourceLibraryQueryError(
                     f"external delivery does not match artifact {', '.join(mismatches)}: {record.record_id}"
                 )
-            if _is_searchable_media(record.data.get("media_type")) or record.data.get("indexable") is True:
+            if record.data.get("indexable") is True or (
+                _is_searchable_media(record.data.get("media_type")) and "git_commit" not in entry
+            ):
                 raise SourceLibraryQueryError("searchable text payload must remain in the checkout")
             # The store verifies the bytes against the delivery identity we
             # just matched to the source manifest. Do not hash a large witness

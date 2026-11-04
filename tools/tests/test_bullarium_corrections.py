@@ -777,5 +777,65 @@ class CorrectionTests(unittest.TestCase):
                 self.assertEqual(self.out.read_bytes(), self.base_bytes)
 
 
+class PriorInventoryTests(unittest.TestCase):
+    """A dropped input snapshot is an exact projection of the current inventory."""
+
+    def withdrawal(self, unit, pdf):
+        pin = {"id": unit + ".doc", "language": "la", "pdf_sha256": pdf}
+        return ({"unit_id": unit, "withdrawn_documents": [pin]},
+                {"prior": pin, "replacement": None, "reason": "held"})
+
+    def test_withdrawal_and_correction_history_rebuild_exact_bytes(self):
+        (a, sa), (b, sb) = self.withdrawal("u.a", "1" * 64), self.withdrawal("u.b", "2" * 64)
+        first = {"schema": "s", "revision": "2026-01-01T00:00:00Z", "documents": [],
+                 "supersessions": [sa], "affected_units": [a]}
+        entry = {"revision": first["revision"], "sha256": hashlib.sha256(source.json_bytes(first)).hexdigest(),
+                 "affected_unit_ids": ["u.a"], "supersession_count": 1}
+        current = {"schema": "s", "revision": "2026-01-02T00:00:00Z", "documents": [],
+                   "supersessions": [sa, sb], "affected_units": [a, b], "input_history": [entry]}
+        self.assertEqual(corrections.prior_inventory(current, 0), source.json_bytes(first))
+        older = {"schema": "s", "revision": "2026-01-01T00:00:00Z", "documents": [{"id": "d1"}], "supersessions": [{"x": 1}]}
+        entry = {"revision": older["revision"], "sha256": hashlib.sha256(source.json_bytes(older)).hexdigest(),
+                 "document_count": 1, "supersession_count": 1}
+        later = {"schema": "s", "revision": "2026-01-02T00:00:00Z", "documents": [{"id": "d1"}, {"id": "d2"}],
+                 "supersessions": [{"x": 1}, {"x": 2}], "input_history": [entry]}
+        self.assertEqual(corrections.prior_inventory(later, 0), source.json_bytes(older))
+
+    def test_changed_row_or_hash_is_refused(self):
+        (a, sa), = (self.withdrawal("u.a", "1" * 64),)
+        first = {"schema": "s", "revision": "2026-01-01T00:00:00Z", "documents": [],
+                 "supersessions": [sa], "affected_units": [a]}
+        entry = {"revision": first["revision"], "sha256": hashlib.sha256(source.json_bytes(first)).hexdigest(),
+                 "affected_unit_ids": ["u.a"], "supersession_count": 1}
+        changed = copy.deepcopy(a)
+        changed["active_disposition"] = "released"
+        current = {"schema": "s", "revision": "2026-01-02T00:00:00Z", "documents": [],
+                   "supersessions": [sa], "affected_units": [changed], "input_history": [entry]}
+        with self.assertRaisesRegex(corrections.CorrectionError, "SHA-256"):
+            corrections.prior_inventory(current, 0)
+        with self.assertRaisesRegex(corrections.CorrectionError, "absent"):
+            corrections.prior_inventory(current, 1)
+
+    def test_declared_git_history_derivations_rebuild_their_references(self):
+        """Every sidecar derivation reproduces its reference from the named inventory."""
+        import _artifact_store
+        derived = [entry for entry in _artifact_store.delivery_entries(ROOT) if "derivation" in entry]
+        for entry in derived:
+            derivation = entry["derivation"]
+            with self.subTest(path=entry["path"]):
+                current = ROOT / derivation["projection_of"]
+                payload = current.read_bytes() if current.is_file() else b""
+                if hashlib.sha256(payload).hexdigest() != derivation["sha256"]:
+                    found = subprocess.run(
+                        ["git", "-C", str(ROOT), "cat-file", "blob", derivation["git_commit"] + ":" + derivation["projection_of"]],
+                        capture_output=True, check=False, env={**os.environ, "GIT_NO_LAZY_FETCH": "1"})
+                    if found.returncode:
+                        self.skipTest("the derivation's source inventory is not in this checkout")
+                    payload = found.stdout
+                self.assertEqual(hashlib.sha256(payload).hexdigest(), derivation["sha256"])
+                rebuilt = corrections.prior_inventory(json.loads(payload), derivation["input_history"])
+                self.assertEqual((hashlib.sha256(rebuilt).hexdigest(), len(rebuilt)), (entry["sha256"], entry["bytes"]))
+
+
 if __name__ == "__main__":
     unittest.main()

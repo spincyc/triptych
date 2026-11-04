@@ -3,6 +3,11 @@
 The tracked sidecar describes immutable bytes and bounded release archives.
 Validation and resolution never use the network unless ``fetch=True`` is
 explicit. Run this module directly to bootstrap a checkout from an offline pack.
+
+A git-history entry instead names the commit whose tree holds the exact bytes
+at the entry's own path. It resolves offline from this checkout's object
+database (never by a lazy fetch), and its bytes, size and top-level JSON array
+lengths are verified before they reach the cache.
 """
 from __future__ import annotations
 
@@ -33,6 +38,7 @@ BINARY_SUFFIXES = frozenset({
     ".jpeg", ".png", ".webp", ".tif", ".tiff", ".jp2", ".iff", ".traineddata",
 })
 _DIGEST = re.compile(r"[0-9a-f]{64}\Z")
+_COMMIT = re.compile(r"[0-9a-f]{40}\Z")
 _SLUG = re.compile(r"[a-zA-Z0-9][a-zA-Z0-9._-]*\Z")
 _CHUNK = 1024 * 1024
 
@@ -80,9 +86,34 @@ def _verify(path: Path, entry: dict[str, Any]) -> Path:
     return path
 
 
+def _validate_git_entry(entry: dict[str, Any], path: str) -> None:
+    """A committed blob replaces a tracked copy; it never names a mutable ref."""
+    if not isinstance(entry["git_commit"], str) or not _COMMIT.fullmatch(entry["git_commit"]):
+        raise ArtifactStoreError(f"git-history delivery requires a full commit object ID: {path}")
+    items = entry["items"]
+    if (not isinstance(items, dict) or not items
+            or any(not isinstance(key, str) or not key or type(count) is not int or count < 0
+                   for key, count in items.items())):
+        raise ArtifactStoreError(f"git-history delivery requires top-level JSON array lengths: {path}")
+    if entry["media_type"] != "application/json":
+        raise ArtifactStoreError(f"git-history delivery is limited to JSON inventories: {path}")
+    derivation = entry.get("derivation")
+    if derivation is None:
+        return
+    if (not isinstance(derivation, dict)
+            or set(derivation) != {"projection_of", "git_commit", "sha256", "input_history"}
+            or not isinstance(derivation["git_commit"], str) or not _COMMIT.fullmatch(derivation["git_commit"])
+            or not isinstance(derivation["sha256"], str) or not _DIGEST.fullmatch(derivation["sha256"])
+            or type(derivation["input_history"]) is not int or derivation["input_history"] < 0):
+        raise ArtifactStoreError(f"invalid git-history derivation: {path}")
+    if _relative(derivation["projection_of"]) == path:
+        raise ArtifactStoreError(f"a derivation must name a different inventory: {path}")
+
+
 def validate_delivery_index(data: Any, *, schema: str = SCHEMA,
                             kinds: Collection[str] = ("source-evidence", "historical-publication", "historical-binary"),
-                            path_prefix: str | None = None, allow_offline: bool = False) -> None:
+                            path_prefix: str | None = None, allow_offline: bool = False,
+                            allow_git: bool = False) -> None:
     """Validate transport metadata without changing a domain index's meaning.
 
     Domain adapters additionally enforce their own ownership, path grammar,
@@ -132,10 +163,14 @@ def validate_delivery_index(data: Any, *, schema: str = SCHEMA,
     members: set[tuple[str, str]] = set()
     referenced: set[str] = set()
     for entry in data["artifacts"]:
-        required = {"path", "sha256", "bytes", "kind", "media_type", "archive", "member"}
-        if not isinstance(entry, dict) or not required <= entry.keys() or entry.keys() - required - {"origin_url"}:
+        git = allow_git and isinstance(entry, dict) and "git_commit" in entry
+        required = ({"path", "sha256", "bytes", "kind", "media_type", "git_commit", "items"} if git
+                    else {"path", "sha256", "bytes", "kind", "media_type", "archive", "member"})
+        optional = {"derivation"} if git else {"origin_url"}
+        if not isinstance(entry, dict) or not required <= entry.keys() or entry.keys() - required - optional:
             raise ArtifactStoreError("invalid artifact delivery entry fields")
-        path, member = _relative(entry["path"]), _relative(entry["member"])
+        path = _relative(entry["path"])
+        member = path if git else _relative(entry["member"])
         if path_prefix is not None and not path.startswith(path_prefix):
             raise ArtifactStoreError(f"artifact is outside the delivery ownership prefix: {path}")
         if path in paths or member != path:
@@ -148,6 +183,10 @@ def validate_delivery_index(data: Any, *, schema: str = SCHEMA,
             raise ArtifactStoreError(f"invalid artifact kind: {path}")
         if not isinstance(entry["media_type"], str) or not re.fullmatch(r"[\w.+-]+/[\w.+-]+", entry["media_type"]):
             raise ArtifactStoreError(f"invalid artifact media type: {path}")
+        if git:
+            _validate_git_entry(entry, path)
+            paths.add(path)
+            continue
         if entry["archive"] not in archives:
             raise ArtifactStoreError(f"artifact names an unknown archive: {path}")
         if entry["bytes"] > archives[entry["archive"]]["bytes"]:
@@ -168,7 +207,7 @@ def validate_delivery_index(data: Any, *, schema: str = SCHEMA,
 
 
 def _validate(data: Any) -> None:
-    validate_delivery_index(data, allow_offline=True)
+    validate_delivery_index(data, allow_offline=True, allow_git=True)
 
 
 def _unique_keys(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
@@ -222,6 +261,57 @@ def cache_path(root: Path | str, entry: dict[str, Any]) -> Path:
     return _path(Path(root), f".scratch/artifact-cache/{entry['sha256']}/{PurePosixPath(entry['path']).name}")
 
 
+def git_history_bytes(root: Path | str, entry: dict[str, Any]) -> bytes:
+    """Read and verify a git-history entry's exact blob without touching refs.
+
+    Replacement objects and lazy promisor fetches are disabled, so only this
+    checkout's own object database can supply the bytes.
+    """
+    root = Path(root).resolve()
+    commit, path = entry["git_commit"], _relative(entry["path"])
+    if not isinstance(commit, str) or not _COMMIT.fullmatch(commit):
+        raise ArtifactStoreError(f"git-history delivery requires a full commit object ID: {path}")
+    environment = {**os.environ, "GIT_NO_LAZY_FETCH": "1", "GIT_NO_REPLACE_OBJECTS": "1"}
+
+    def git(*args: str) -> bytes:
+        result = subprocess.run(["git", "-C", str(root), *args], capture_output=True, env=environment, check=False)
+        if result.returncode:
+            raise FileNotFoundError(f"git-history artifact is unavailable in this checkout: {path} at {commit}; "
+                                    "a shallow or partial clone needs that commit's objects")
+        return result.stdout
+
+    if Path(git("rev-parse", "--show-toplevel").decode("utf-8").strip()).resolve() != root:
+        raise ArtifactStoreError(f"git-history delivery must read this checkout's own repository: {path}")
+    if git("cat-file", "-t", commit).strip() != b"commit":
+        raise ArtifactStoreError(f"git-history delivery object is not a commit: {path}")
+    payload = git("cat-file", "blob", f"{commit}:{path}")
+    if len(payload) != entry["bytes"] or hashlib.sha256(payload).hexdigest() != entry["sha256"]:
+        raise ArtifactStoreError(f"artifact hash or size mismatch: {path}")
+    try:
+        document = json.loads(payload)
+    except (UnicodeError, json.JSONDecodeError) as error:
+        raise ArtifactStoreError(f"git-history artifact is not JSON: {path}") from error
+    counts = {key: len(value) for key, value in document.items() if isinstance(value, list)} if isinstance(document, dict) else None
+    if counts != entry["items"]:
+        raise ArtifactStoreError(f"git-history artifact item counts differ from its delivery entry: {path}")
+    return payload
+
+
+def _hydrate_git(root: Path, entry: dict[str, Any]) -> Path:
+    payload = git_history_bytes(root, entry)
+    target = cache_path(root, entry)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    fd, temporary = tempfile.mkstemp(prefix=".hydrate-", dir=target.parent)
+    try:
+        with os.fdopen(fd, "wb") as output:
+            output.write(payload)
+        os.chmod(temporary, 0o444)
+        os.replace(temporary, target)
+    finally:
+        Path(temporary).unlink(missing_ok=True)
+    return _verify(target, entry)
+
+
 def validate_index(root: Path | str, local_bytes: bool = False) -> list[str]:
     """Return diagnostics; local byte checks never require absent payloads."""
     try:
@@ -251,6 +341,9 @@ def resolve(root: Path | str, repo_relative_path: str | Path, fetch: bool = Fals
     cached = cache_path(root, entry)
     if cached.exists():
         return _verify(cached, entry)
+    if "git_commit" in entry:
+        # The object database is part of this checkout; no network is used.
+        return _hydrate_git(root, entry)
     if fetch:
         hydrate(root, [relative], fetch=True)
         return _verify(cached, entry)
@@ -361,7 +454,7 @@ def hydrate(root: Path | str, paths: list[str], *, archive_dir: Path | str | Non
         except FileNotFoundError:
             missing.add(path)
     for archive in data["archives"]:
-        members = [entry for entry in data["artifacts"] if entry["archive"] == archive["id"]]
+        members = [entry for entry in data["artifacts"] if entry.get("archive") == archive["id"]]
         if missing.intersection(entry["path"] for entry in members):
             local = _archive_path(root, archive, Path(archive_dir) if archive_dir else None, fetch)
             _read_archive(local, members, root, missing)
@@ -370,9 +463,11 @@ def hydrate(root: Path | str, paths: list[str], *, archive_dir: Path | str | Non
 
 def _inventory(root: Path, selected: set[str] | None = None) -> list[dict[str, Any]]:
     result = subprocess.run(["git", "ls-files", "-z"], cwd=root, check=True, stdout=subprocess.PIPE)
-    previous = {entry["path"]: entry for entry in delivery_entries(root)}
+    # Git-history entries are already exact references; they are never packed.
+    previous = {entry["path"]: entry for entry in delivery_entries(root) if "git_commit" not in entry}
     paths = {p.decode("utf-8") for p in result.stdout.split(b"\0") if p}
     paths.update(previous)
+    paths.difference_update(entry["path"] for entry in delivery_entries(root) if "git_commit" in entry)
     if selected is not None:
         if selected - paths:
             raise ArtifactStoreError(f"selected artifacts are not tracked or declared: {sorted(selected - paths)[:3]}")
@@ -542,7 +637,8 @@ def pack(root: Path | str, out: Path | str, *, release: str,
     )
     if previous is None:
         snapshot = subprocess.run(["git", "rev-parse", "HEAD"], cwd=root, check=True, text=True, stdout=subprocess.PIPE).stdout.strip()
-        data = {"schema": SCHEMA, "snapshot": snapshot, "archives": archives, "artifacts": packed}
+        retained = [entry for entry in delivery_entries(root) if "git_commit" in entry]
+        data = {"schema": SCHEMA, "snapshot": snapshot, "archives": archives, "artifacts": packed + retained}
     else:
         data = dict(previous, archives=previous["archives"] + archives,
                     artifacts=previous["artifacts"] + packed)
@@ -661,7 +757,7 @@ def main(argv: list[str] | None = None, *, examples: dict | None = None) -> int:
                     archive_dir = args.archive_dir or root / ".scratch/artifact-store"
                     for archive in data["archives"]:
                         local = _archive_path(root, archive, archive_dir, False)
-                        _read_archive(local, [entry for entry in data["artifacts"] if entry["archive"] == archive["id"]])
+                        _read_archive(local, [entry for entry in data["artifacts"] if entry.get("archive") == archive["id"]])
             else:
                 if args.all == bool(args.paths):
                     raise ArtifactStoreError("select explicit paths or --all")

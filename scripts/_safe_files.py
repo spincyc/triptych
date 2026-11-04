@@ -178,7 +178,9 @@ def _external_identities(root: Path, names: set[str]) -> dict[str, dict]:
         if not name.startswith("src/sources/works/"):
             continue
         manifest_name = str(PurePosixPath(name).parent / "artifact.toml")
-        if (PurePosixPath(name).suffix.lower() not in _artifact_store.BINARY_SUFFIXES
+        # A git-history reference may name a JSON inventory; others are binary.
+        binary = PurePosixPath(name).suffix.lower() in _artifact_store.BINARY_SUFFIXES
+        if ((not binary and "git_commit" not in entry)
                 or entry["kind"] != "source-evidence" or manifest_name not in names):
             raise SafeFileError(f"external source requires its exact binary artifact manifest: {name}")
         try:

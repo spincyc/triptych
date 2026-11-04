@@ -473,5 +473,79 @@ class ArtifactStoreTests(unittest.TestCase):
         self.assertTrue(data["archives"][-1]["name"].startswith(f"triptych-binaries-{expected:04d}-"))
 
 
+class GitHistoryDeliveryTests(unittest.TestCase):
+    """A committed JSON inventory replaces its tracked copy by exact reference."""
+
+    def setUp(self):
+        scratch = ROOT / ".scratch/artifact-store/tests"
+        scratch.mkdir(parents=True, exist_ok=True)
+        self.temporary = tempfile.TemporaryDirectory(dir=scratch)
+        self.addCleanup(self.temporary.cleanup)
+        self.root = Path(self.temporary.name)
+        self.path = "src/sources/works/project/inputs/editions/snapshot/artifacts/input/frozen-inventory.json"
+        self.payload = (json.dumps({"affected_units": [{"unit_id": "a"}, {"unit_id": "b"}], "documents": [],
+                                    "revision": "2026-10-26T16:11:07Z"}, indent=2, sort_keys=True) + "\n").encode()
+        target = self.root / self.path
+        target.parent.mkdir(parents=True)
+        target.write_bytes(self.payload)
+        self.git("init", "-q")
+        self.git("add", "src")
+        self.git("-c", "user.name=Artifact test", "-c", "user.email=artifact@example.invalid", "commit", "-qm", "snapshot")
+        self.commit = subprocess.run(["git", "rev-parse", "HEAD"], cwd=self.root, check=True, text=True,
+                                     stdout=subprocess.PIPE).stdout.strip()
+        self.git("rm", "-q", self.path)
+        self.git("-c", "user.name=Artifact test", "-c", "user.email=artifact@example.invalid", "commit", "-qm", "reference")
+        self.entry = {"path": self.path, "sha256": hashlib.sha256(self.payload).hexdigest(),
+                      "bytes": len(self.payload), "kind": "source-evidence", "media_type": "application/json",
+                      "git_commit": self.commit, "items": {"affected_units": 2, "documents": 0}}
+        self.write_index([self.entry])
+
+    def git(self, *args):
+        subprocess.run(["git", *args], cwd=self.root, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    def write_index(self, entries):
+        store._json(self.root / store.INDEX_PATH, {"schema": store.SCHEMA, "archives": [], "artifacts": entries})
+
+    def test_reference_resolves_offline_to_exact_bytes(self):
+        self.assertFalse((self.root / self.path).exists())
+        with patch.object(store, "urlopen", side_effect=AssertionError("network forbidden")):
+            resolved = store.resolve(self.root, self.path)
+        self.assertIn(".scratch/artifact-cache/", str(resolved))
+        self.assertEqual(resolved.read_bytes(), self.payload)
+        self.assertEqual(store.hydrate(self.root, [self.path]), [resolved])
+        self.assertEqual(store.validate_index(self.root, local_bytes=True), [])
+
+    def test_tampered_reference_fails_and_installs_nothing(self):
+        cases = {"sha256": dict(self.entry, sha256="0" * 64),
+                 "bytes": dict(self.entry, bytes=self.entry["bytes"] + 1),
+                 "items": dict(self.entry, items={"affected_units": 3, "documents": 0}),
+                 "commit": dict(self.entry, git_commit="1" * 40),
+                 "path": dict(self.entry, path=self.path.replace("frozen-inventory", "other"))}
+        for name, entry in cases.items():
+            with self.subTest(name=name):
+                self.write_index([entry])
+                with self.assertRaises((store.ArtifactStoreError, FileNotFoundError)):
+                    store.resolve(self.root, entry["path"])
+                self.assertFalse((self.root / ".scratch/artifact-cache").exists())
+
+    def test_reference_requires_full_commit_counts_and_json(self):
+        for change in ({"git_commit": "HEAD"}, {"git_commit": self.commit[:12]}, {"items": {}},
+                       {"items": {"affected_units": -1}}, {"media_type": "application/pdf"},
+                       {"archive": "a" * 64}, {"derivation": {"projection_of": self.path, "git_commit": self.commit,
+                                                              "sha256": "a" * 64, "input_history": 0}}):
+            with self.subTest(change=change):
+                self.write_index([dict(self.entry, **change)])
+                with self.assertRaises(store.ArtifactStoreError):
+                    store.load_index(self.root)
+        domain = {"schema": store.SCHEMA, "archives": [], "artifacts": [self.entry]}
+        with self.assertRaises(store.ArtifactStoreError):
+            store.validate_delivery_index(domain)
+
+    def test_pack_never_repacks_a_git_reference(self):
+        data = store.pack(self.root, self.root / ".scratch/pack", release="fixture-v1")
+        self.assertEqual(data["archives"], [])
+        self.assertEqual(data["artifacts"], [self.entry])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -486,6 +486,28 @@ records retain their original fields and nonempty HTTPS routes. An offline-only
 archive cannot advertise a URL, and `--fetch` fails clearly if that archive is
 not already local. Ordinary metadata checks still work without its bytes.
 
+A delivery entry may instead be a **git-history reference**: `git_commit`, a
+full commit ID, replaces `archive` and `member`, and the exact bytes are the
+blob at that commit and the entry's own path. The entry also records `items`,
+the length of every top-level JSON array, and, when the bytes are an exact
+projection of a later tracked file, a `derivation` naming that file, the commit
+and SHA-256 it was checked against, and the `input_history` index from which
+its owner rebuilds them (`prior_inventory` in `scripts/_bullarium_corrections.py`).
+`tools/artifact-store hydrate` (and any `resolve`) reads such an entry offline
+from this checkout's own object database, never by a lazy fetch, and verifies
+SHA-256, size and item counts before caching; a shallow or partial clone that
+lacks the commit fails clearly. Packing never repacks it. Use this only for a
+JSON input snapshot already in published history whose content a tracked
+successor duplicates; it is not a route for new evidence, and an `indexable`
+artifact must stay in the working tree. On 2026-11-04 four frozen Bullarium
+inventory inputs under `historical-papal-line-mapping` (one correction and
+three withdrawal inventories, 62 MB) became such references: each is an exact
+projection of the live inventory that superseded it, so the tracked copies
+duplicated it. Their manifests, paths, hashes, and the live inventories'
+`input_history` provenance are unchanged. The `132549z` withdrawal and
+`121719z` geometry inputs stay tracked because their rows were revised later
+and are not projections.
+
 For a bounded addition, `tools/artifact-store pack --append --offline-only
 --path <source-evidence-path> --release <safe-label> --out <scratch-directory>`
 preserves only the selected tracked source-evidence binaries. Repeat `--path`

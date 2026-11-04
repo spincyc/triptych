@@ -432,6 +432,40 @@ def _cumulative_result(state, documents, supersessions, revision):
             "supersessions": copy.deepcopy(base["supersessions"]) + supersessions, "input_history": history}
 
 
+def prior_inventory(current, index):
+    """Rebuild the exact inventory bytes that ``input_history[index]`` records.
+
+    Both cumulative writers only extend their prior input: corrections append
+    documents and supersessions after the frozen rows, and withdrawals re-sort
+    rows keyed by unit and prior PDF pin. The prior inventory is therefore a
+    projection of the current one, selected by the history entry, and its
+    SHA-256 must match that entry before the bytes are returned.
+    """
+    history = current.get("input_history")
+    _require(isinstance(history, list) and 0 <= index < len(history), "input_history entry is absent")
+    entry = history[index]
+    if "affected_units" in current:
+        wanted = set(entry["affected_unit_ids"])
+        units = [unit for unit in current["affected_units"] if unit["unit_id"] in wanted]
+        _require(len(units) == len(wanted), "prior withdrawal units are absent from the current inventory")
+        pins = {(pin["id"], pin["language"], pin["pdf_sha256"]) for unit in units for pin in unit["withdrawn_documents"]}
+        supersessions = [row for row in current["supersessions"]
+                         if (row["prior"]["id"], row["prior"]["language"], row["prior"]["pdf_sha256"]) in pins]
+        _require(len(supersessions) == entry["supersession_count"], "prior withdrawal supersessions are incomplete")
+        result = {"schema": current["schema"], "revision": entry["revision"], "documents": [],
+                  "supersessions": supersessions, "affected_units": units}
+    else:
+        result = {"schema": current["schema"], "revision": entry["revision"],
+                  "documents": current["documents"][:entry["document_count"]],
+                  "supersessions": current["supersessions"][:entry["supersession_count"]]}
+    if index:
+        result["input_history"] = history[:index]
+    payload = source.json_bytes(result)
+    _require(hashlib.sha256(payload).hexdigest() == entry["sha256"],
+             "rebuilt prior inventory does not match its recorded SHA-256")
+    return payload
+
+
 def _install_cumulative(root, out_path, output, state):
     """Replace only the exact state checked under the cooperating-builder lock."""
     if out_path.read_bytes() == output:

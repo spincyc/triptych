@@ -78,7 +78,7 @@ def source_owner_pins(root, declarations, *, expected=None):
             if external is None:
                 raw=read_file(root,_artifact_store.INDEX_PATH)
                 delivery=json.loads(raw,object_pairs_hook=_artifact_store._unique_keys)
-                _artifact_store.validate_delivery_index(delivery)
+                _artifact_store._validate(delivery)
                 external={entry['path']:entry for entry in delivery['artifacts']}
                 delivery_hash=digest(raw)
             entry=external.get(relative)
