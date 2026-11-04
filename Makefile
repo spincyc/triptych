@@ -105,7 +105,9 @@ WEB_BUILD_ROOT := build/web/$(PROVIDER)
 WEB_ROOT := web/$(PROVIDER)
 # The drift gate compares every provider's tracked tree, not only $(PROVIDER).
 WEB_CURRENT_ROOT := build/.web-current
-ALL_MAIN_SOURCES := $(shell find src -mindepth 2 -type f -name main.tex 2>/dev/null | sort)
+# src/common holds shared sources and document-type templates, never a provider:
+# a template named main.tex is not a publication entrypoint.
+ALL_MAIN_SOURCES := $(shell find src -mindepth 2 -path 'src/common/*' -prune -o -type f -name main.tex -print 2>/dev/null | sort)
 PROVIDERS := $(sort $(foreach path,$(ALL_MAIN_SOURCES),$(word 2,$(subst /, ,$(path)))))
 
 MAIN_SOURCES := $(shell find $(SOURCE_ROOT) -type f -name main.tex 2>/dev/null | sort)
