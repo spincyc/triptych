@@ -42,7 +42,11 @@ PAGE_NUMBER = re.compile(r"\A\s*[0-9ivxlc]+\s*\Z")
 
 
 def _run(command: list[str], **kwargs) -> subprocess.CompletedProcess:
-    return subprocess.run(command, check=True, capture_output=True, text=True, **kwargs)
+    run = subprocess.run(command, capture_output=True, text=True, **kwargs)
+    if run.returncode:
+        raise SystemExit(f"{' '.join(command[:4])} ... failed ({run.returncode}):\n"
+                         + (run.stderr or run.stdout)[-3000:])
+    return run
 
 
 def editions(leaf: str) -> list[str]:

@@ -1400,6 +1400,14 @@ in an authored file is refused by `refresh --check`. Its two variants:
   evidence an earlier passage already gave points back to that passage by name.
 - `page`, the concise study's physical page 2: heading, the table between the
   page-two markers, and a fixed legend and pointer to the expansive section.
+- `sheet` and `evidence`, for a one- or two-document guide whose page 2 must
+  stay one page: the table with its legend alone on page 2, and the same
+  evidence notes as a terminal appendix before the guide's other appendices.
+
+A subject whose only dates the corpus admits by a reporting exception, without
+the source-owned qualification an orientation row must print beside them, is
+shown as a date pending that qualification rather than printed bare or left to
+refuse the whole table.
 
 No sentence refers to a row by its position, and a book is named one way: the
 table's abbreviation in passage labels, the corpus's own subject titles

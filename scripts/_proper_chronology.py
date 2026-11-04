@@ -1198,7 +1198,12 @@ PSALM_OCCASION_RELATIONS = frozenset({
     "retrospective-event", "utterance",
 })
 
+# An orientation row whose only dates were admitted by a reporting exception
+# that the corpus has not yet qualified; see `orientation_rows`.
+QUALIFICATION_PENDING = "qualification-pending"
+
 GAP_DISPLAY = {
+    QUALIFICATION_PENDING: "Date withheld until its source qualification is recorded",
     "undated-in-tradition": "Undated in the traditional chronology corpus",
     "research-pending": "Chronology research pending",
     "not-alignable": "Chronology not alignable",
@@ -1681,6 +1686,15 @@ def orientation_rows(found: Dossier, presentation: str | None = None) -> tuple[O
                 if any(reach.locus == locus for reach in claim.reaches):
                     groups.setdefault((claim.relation, claim.subject), []).append(claim)
             for (relation, _subject), candidates in groups.items():
+                if any(claim.reporting_exception and not claim.orientation_qualification
+                       for claim in candidates):
+                    # A date admitted only by a reporting exception may not be
+                    # printed without its source-owned qualification. Until
+                    # the corpus records one, the row says the date is pending
+                    # rather than printing the subject's other alternatives
+                    # alone or refusing the whole table.
+                    add(element, (locus,), _gap_group(relation, QUALIFICATION_PENDING, ""))
+                    continue
                 claims = tuple(_orientation_claim(claim)._replace(
                     reaches=tuple(reach for reach in claim.reaches if reach.locus == locus))
                     for claim in sorted(candidates, key=lambda claim: (
@@ -1799,6 +1813,8 @@ def orientation_subject(row: OrientationRow, presentation: str = "") -> str:
 def orientation_date(row: OrientationRow) -> str:
     group = row.group
     if not group.claims:
+        if group.status == QUALIFICATION_PENDING:
+            return "Date pending its source qualification"
         return "Occasion date unresolved" if group.relation == "historical-setting" else "Date unresolved"
     prefix = "Disputed: " if _group_status(group.claims) == "disputed" else ""
     return prefix + _candidate_display(group, lambda claim: claim.display_label)
@@ -1957,10 +1973,17 @@ def _passage_display_v3(name: str, citations: tuple[Citation, ...]) -> str:
         text = citation.ref
         book = citation.book
         short = _short_book_names().get(book, book)
+        # A split row's envelope is spelled with the corpus token ("Ps 8:2",
+        # "Tob 12:6"); it takes the same short name as an appointed citation,
+        # so one book is never printed two ways in one table.
+        token = _tokens().get(book, "")
         if book == "Psalms":
             text = re.sub(r"^Psalms?\b", "Ps.", text)
+            text = re.sub(r"^Ps(?= )", "Ps.", text)
         elif text.startswith(book + " "):
             text = short + text[len(book):]
+        elif token and token != book and text.startswith(token + " "):
+            text = short + text[len(token):]
         # Parsed appointment parts include suffixes such as 1bc, not just 1b.
         text = re.sub(r"(?<=[0-9])([a-z]*)-(?=[0-9])", lambda match: match[1] + "\N{EN DASH}", text)
         note = psalm_numbering_note(citation)

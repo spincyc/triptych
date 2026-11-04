@@ -38,6 +38,9 @@ EXAMPLES = {
         Example(
             "tools/document-types types",
             (
+                "proper-guide-v1",
+                "  main       -> main.tex       regions: apparatus, body, opening, lead-in?, preamble?  options: metadata  slots: scriptural-date-location/sheet, scriptural-date-location/evidence",
+                "  synthesis  -> synthesis.tex  regions: apparatus?, body?, lead-in?, opening?, preamble?  options: form, metadata  slots: scriptural-date-location/sheet, scriptural-date-location/evidence",
                 "proper-study-v1",
                 "  main       -> main.tex       regions: body, apparatus?, preamble?  options: closing, front  slots: scriptural-date-location/section",
                 "  synthesis  -> synthesis.tex  regions: body, opening, preamble?  options: closing  slots: scriptural-date-location/page",
@@ -49,7 +52,7 @@ EXAMPLES = {
         Example(
             "tools/document-types types --json",
             (
-                "{\"status\":\"ok\",\"types\":[{\"description\":\"The three documents of one Sunday... [+1639 chars]",
+                "{\"status\":\"ok\",\"types\":[{\"description\":\"A one- or two-document proper gui... [+3401 chars]",
             ),
             "the same, as the machine contract",
         ),

@@ -1,0 +1,12 @@
+% The shared Scripture chronology table (orientation-v3), defined once.
+% src/common/propers-format.tex inputs it for the three-document studies; the
+% proper-guide-v1 document type inputs it for one- and two-document guides,
+% which do not load propers-format. Its rows are generated: see
+% guidance/scripture-chronology.md section 14.1.
+\newenvironment{chronologysharedtable}
+  {\fontsize{9.5}{11.5}\selectfont\renewcommand{\arraystretch}{1.0}%
+   \setlength{\LTpre}{.1em}\setlength{\LTpost}{0pt}%
+   \begin{longtable}{@{}>{\raggedright\arraybackslash}p{.29\linewidth}>{\raggedright\arraybackslash}p{.31\linewidth}>{\raggedright\arraybackslash}p{\dimexpr.40\linewidth-4\tabcolsep\relax}@{}}
+   \toprule\textbf{Passage} & \textbf{Context} & \textbf{Date}\\
+   \midrule\endhead}
+  {\bottomrule\end{longtable}}

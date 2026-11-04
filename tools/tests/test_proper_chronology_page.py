@@ -69,9 +69,13 @@ class PageTests(unittest.TestCase):
             for variant in page.VARIANTS:
                 with self.subTest(reason=reason, variant=variant):
                     text = page.render(None, document="x", variant=variant, absent=reason)
-                    self.assertIn(page.ABSENT[reason], text)
                     self.assertNotIn("\\input", text)
                     self.assertIsNone(re.search(r"\b(?:A\.D\.|B\.C\.|A\.M\.)", text))
+                    if variant == page.EVIDENCE:
+                        # Nothing is dated, so no appendix is printed at all.
+                        self.assertNotIn("\\section", text)
+                    else:
+                        self.assertIn(page.ABSENT[reason], text)
 
     def test_a_ritual_mass_reports_its_missing_calendar_formulary(self):
         found, projected, absent = page.projection(
@@ -85,6 +89,30 @@ class PageTests(unittest.TestCase):
             self.skipTest("the leaf now has its reviewed appointment input")
         self.assertEqual(page.projection(document, provider="gpt"),
                          (None, None, "appointment-input-pending"))
+
+    def test_a_guide_takes_a_one_page_sheet_and_a_terminal_evidence_appendix(self):
+        sheet = page.render(self.projected, document=ALL_SAINTS, variant=page.SHEET)
+        evidence = page.render(self.projected, document=ALL_SAINTS, variant=page.EVIDENCE)
+        self.assertIn("\\section*{Scriptural Date and Location}", sheet)
+        self.assertIn(f"\\input{{{ALL_SAINTS}/research/chronology-table}}", sheet)
+        self.assertIn("Evidence for the Scriptural Dates", sheet)
+        self.assertNotIn("\\begin{itemize}", sheet)
+        self.assertNotRegex(sheet, r"\\(?:zlabel|runninghead)\b")
+        self.assertIn("\\section*{" + page.EVIDENCE_HEADING + "}", evidence)
+        self.assertNotIn("chronology-table", evidence)
+        # The guide's appendix carries the same notes as the study's section.
+        notes = lambda text: text[text.index("{\\small\n"):]
+        self.assertEqual(notes(evidence), notes(self.section))
+
+    def test_an_unqualified_reporting_exception_is_withheld_not_refused(self):
+        found, projected, _ = page.projection(
+            "liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost", provider="claude")
+        pending = [row for row in projected.orientation_rows
+                   if row.group.status == wiring.QUALIFICATION_PENDING]
+        self.assertTrue(pending, "the Maon setting is no longer withheld; update this test")
+        for row in pending:
+            self.assertEqual(row.group.claims, ())
+            self.assertEqual(wiring.orientation_date(row), "Date pending its source qualification")
 
     def test_source_labels_come_from_the_library(self):
         self.assertEqual(

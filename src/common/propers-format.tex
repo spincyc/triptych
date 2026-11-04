@@ -6,6 +6,9 @@
 \usepackage{fancyhdr}
 \usepackage{zref-user,zref-abspage}
 \usepackage{graphicx}
+% The shared Scripture chronology table environment has one owner, which a
+% one- or two-document guide's document type also inputs.
+\input{common/chronology-table}
 \setcounter{secnumdepth}{0}
 \setcounter{tocdepth}{1}
 \setlength{\emergencystretch}{2em}
@@ -132,15 +135,6 @@
  \toprule}
 {\bottomrule\end{longtable}}
 
-% Opt-in orientation rows keep the dated subject beside its own place and date.
-% Legacy dossiers above retain their published measurements and rendering.
-\newenvironment{chronologysharedtable}
-  {\fontsize{9.5}{11.5}\selectfont\renewcommand{\arraystretch}{1.0}%
-   \setlength{\LTpre}{.1em}\setlength{\LTpost}{0pt}%
-   \begin{longtable}{@{}>{\raggedright\arraybackslash}p{.29\linewidth}>{\raggedright\arraybackslash}p{.31\linewidth}>{\raggedright\arraybackslash}p{\dimexpr.40\linewidth-4\tabcolsep\relax}@{}}
-   \toprule\textbf{Passage} & \textbf{Context} & \textbf{Date}\\
-   \midrule\endhead}
-  {\bottomrule\end{longtable}}
 
 \newenvironment{chronologyorientationtable}
 {\fontsize{9.5}{11.5}\selectfont\renewcommand{\arraystretch}{1.0}%

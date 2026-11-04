@@ -295,6 +295,15 @@ class RepositoryTypeTests(unittest.TestCase):
                          ["scriptural-date-location/page"])
         self.assertEqual(types.template_slots(found, found.editions["homily"]), [])
 
+    def test_a_guide_places_its_sheet_on_page_two_and_its_evidence_before_its_appendices(self):
+        found = types.discover_types(ROOT)["proper-guide-v1"]
+        both = ["scriptural-date-location/sheet", "scriptural-date-location/evidence"]
+        self.assertEqual(types.template_slots(found, found.editions["main"]), both)
+        # The shell form slots nothing itself: it inputs the full edition.
+        self.assertEqual(types.template_slots(found, found.editions["synthesis"]), both)
+        self.assertEqual(found.option_values("form"), ("shell", "standalone"))
+        self.assertEqual(found.option_values("metadata"), ("edition-branch", "single"))
+
 
 if __name__ == "__main__":
     unittest.main()

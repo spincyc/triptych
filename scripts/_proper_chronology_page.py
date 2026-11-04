@@ -15,6 +15,10 @@ Two variants share one row model. ``section`` is the expansive study's terminal
 appendix: heading, a fixed introduction, the complete table, and evidence notes
 for every row. ``page`` is the concise study's physical page 2: heading, the
 same table, a fixed legend and a fixed pointer to the expansive section.
+A one- or two-document guide, whose page 2 must stay one page, takes the other
+two: ``sheet`` (the table with its legend, pointing to the appendix) on page 2
+and ``evidence`` (the same notes) as a terminal appendix before its scope
+appendix.
 
 Nothing here is written by an author and nothing here refers to a row by its
 position: a note is headed by exactly the Passage cell the table prints, so a
@@ -38,7 +42,10 @@ PROJECTION = "scriptural-date-location"
 VERSION = 1
 SECTION = "section"
 PAGE = "page"
-VARIANTS = (SECTION, PAGE)
+SHEET = "sheet"
+EVIDENCE = "evidence"
+VARIANTS = (SECTION, PAGE, SHEET, EVIDENCE)
+EVIDENCE_HEADING = "Appendix: Evidence for the Scriptural Dates"
 HEADING = "Scriptural Date and Location"
 SECTION_LABEL = "sec:date-location"
 EVIDENCE_LABEL = "sec:date-location-evidence"
@@ -58,7 +65,8 @@ SECTION_INTRO = (
     "the table."
 )
 EVIDENCE_INTRO = (
-    "For each passage, as the table names it: what is dated, how the corpus "
+    "For each passage, as the Scriptural Date and Location table names it: what "
+    "is dated, how the corpus "
     "weighs each answer, the source's own words, and the sources cited. A "
     "subject the corpus does not date is reported as such and given no date."
 )
@@ -67,6 +75,10 @@ PAGE_LEGEND = (
     "\\emph{(derived)}: computed by the corpus from a stated relation, not "
     "printed by a source. \\emph{Date unresolved}: the corpus gives this "
     "subject no date."
+)
+SHEET_POINTER = (
+    "The evidence for every date, with its sources, is set out in the "
+    "appendix \\emph{Evidence for the Scriptural Dates}."
 )
 PAGE_POINTER = (
     "The evidence for every date, with its sources, is set out in the "
@@ -94,6 +106,9 @@ ABSENT = {
 }
 
 GAP_SENTENCES = {
+    wiring.QUALIFICATION_PENDING: ("The corpus holds a date for this that it reports from another "
+                                   "edition by exception, which is not printed until the corpus "
+                                   "records the source's own qualification of it (research pending)."),
     "research-pending": "The chronology corpus has not yet dated this (research pending).",
     "undated-in-tradition": "The traditional chronology gives this no date (undated in tradition).",
     wiring.NONUNIFORM: "The appointed verses do not share one answer, so none is given for the passage as a whole.",
@@ -273,7 +288,9 @@ def _candidate(claim: wiring.AnnotationClaim, *, mixed: bool, primary: str,
     if mixed:
         value = f"{DISPOSITION_WORDS.get(claim.disposition, claim.disposition)}: {value}"
     details = []
-    if claim.label.strip() and claim.label.strip() != claim.display_label.strip():
+    raw = claim.label.strip()
+    # The source's words are shown unless the display already prints them.
+    if raw and raw.rstrip(".").casefold() not in claim.display_label.casefold():
         details.append("``" + wiring.tex_escape(claim.label.strip()) + "''")
     if claim.profile != primary:
         details.append(wiring.tex_escape(names.get(claim.profile) or claim.profile))
@@ -391,6 +408,8 @@ def render(found: wiring.AnnotationProjection | None, *, document: str, variant:
         raise wiring.ChronologyWiringError("the generated page reads orientation-v3 rows")
     why = absent_reason(found, absent)
     lines = _header(document, variant)
+    if variant in (SHEET, EVIDENCE):
+        return "\n".join(lines + _guide_variant(found, why, document, variant, root, corpus_root)) + "\n"
     lines += ["\\runninghead{" + HEADING + "}", "\\section{" + HEADING + "}"]
     if variant == SECTION:
         lines += ["\\label{" + SECTION_LABEL + "}", "", "{\\small " + SECTION_INTRO + "\\par}",
@@ -413,6 +432,25 @@ def render(found: wiring.AnnotationProjection | None, *, document: str, variant:
             lines += ["\\smallskip", "{\\footnotesize\\noindent " + PAGE_LEGEND + " " + PAGE_POINTER + "\\par}"]
         lines.append("\\zlabel{triptych:concise:chronology:end}")
     return "\n".join(lines) + "\n"
+
+
+def _guide_variant(found, why: str, document: str, variant: str, root: Path,
+                   corpus_root: Path | None) -> list[str]:
+    """The two variants of a one- or two-document guide (unnumbered headings,
+    no page-two markers or running head, which those guides do not load)."""
+    if variant == EVIDENCE:
+        if why:
+            return ["% No passage is dated, so there is no evidence appendix."]
+        return (["\\section*{" + EVIDENCE_HEADING + "}", "\\label{" + EVIDENCE_LABEL + "}",
+                 "{\\small " + EVIDENCE_INTRO + "\\par}", "{\\small"]
+                + _notes(found, root, corpus_root) + ["\\par}"])
+    lines = ["\\section*{" + HEADING + "}", "\\label{" + SECTION_LABEL + "}"]
+    if why:
+        return lines + ["{\\small\\noindent " + ABSENT.get(why, ABSENT["appointment-input-pending"]) + "\\par}"]
+    return lines + ["\\input{" + document + "/" + ANNOTATIONS + "}",
+                    "\\input{" + document + "/" + TABLE + "}",
+                    "\\smallskip",
+                    "{\\footnotesize\\noindent " + PAGE_LEGEND + " " + SHEET_POINTER + "\\par}"]
 
 
 def projection(document: str, *, root: Path = wiring.ROOT, provider: str = "claude",

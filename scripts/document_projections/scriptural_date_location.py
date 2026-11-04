@@ -18,6 +18,8 @@ NAME = "scriptural-date-location"
 OUTPUTS = {
     page.SECTION: "generated/scriptural-date-location.tex",
     page.PAGE: "generated/scriptural-date-location-page.tex",
+    page.SHEET: "generated/scriptural-date-location-sheet.tex",
+    page.EVIDENCE: "generated/scriptural-date-location-evidence.tex",
 }
 KINDS = ("proper-1962", "proper-postconciliar")
 

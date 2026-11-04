@@ -1,0 +1,13 @@
+%% A full edition whose synthesis shell inputs it carries both editions'
+%% metadata, chosen by the synthesis flag.
+\ifdefined\TriptychSynthesisEdition
+  \hypersetup{
+    pdftitle={@{synthesis-pdftitle}},
+    pdfsubject={@{synthesis-pdfsubject}}
+  }
+\else
+  \hypersetup{
+    pdftitle={@{pdftitle}},
+    pdfsubject={@{pdfsubject}}
+  }
+\fi

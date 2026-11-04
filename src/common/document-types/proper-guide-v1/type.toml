@@ -1,0 +1,36 @@
+schema = 1
+record_type = "document-type"
+id = "proper-guide-v1"
+description = """
+A one- or two-document proper guide written before the three-document studies
+(guidance/liturgy/roman-1962-propers.md, guidance/liturgy/postconciliar-propers.md):
+a full edition and, for some, a synthesis edition. The type owns the shared
+preamble and table environment, the PDF metadata (one edition's, or both
+editions' behind the synthesis flag), the document environment, the generated
+Scriptural Date and Location sheet alone on physical page 2 between forced page
+boundaries, and the generated evidence appendix before the guide's terminal
+appendices. A leaf supplies its preamble lines and its own regions: the opening
+(title block, propers map and four senses), an optional lead-in before the sheet,
+the body, and the apparatus from its first terminal appendix to the end. A
+synthesis edition either repeats that skeleton with its own regions or is the
+established shell that sets the synthesis flag and inputs the full edition.
+"""
+kinds = ["proper-1962", "proper-postconciliar"]
+
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"
+fields = ["pdftitle", "pdfsubject"]
+optional_fields = { synthesis-pdftitle = "", synthesis-pdfsubject = "" }
+regions = ["opening", "body", "apparatus"]
+optional_regions = ["preamble", "lead-in"]
+options = { metadata = "single" }
+
+[editions.synthesis]
+role = "synthesis"
+template = "synthesis.tex"
+entrypoint = "synthesis.tex"
+optional_fields = { pdftitle = "", pdfsubject = "" }
+optional_regions = ["preamble", "opening", "lead-in", "body", "apparatus"]
+options = { form = "shell", metadata = "single" }
