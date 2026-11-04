@@ -13,8 +13,8 @@ those rules but does not establish a divergent one.
 Declare the leaf's document type and its ordered, role-bearing sections in
 `publication.toml` under [document schemas](../document-schemas.md); the
 normative inventory and amendment cutoff remain independent of year-specific
-computation. A leaf on the `liturgy-reference-v1` [document
-type](../document-schemas.md#document-types) has a generated entrypoint: its
+computation. Every calendar reference is on the `liturgy-reference-v1` [document
+type](../document-schemas.md#document-types) and has a generated entrypoint: its
 `[document]` table declares its title lines, section order and front, notes and
 closing options, and its `format.tex` holds its own macros.
 

@@ -1,0 +1,60 @@
+% Low Mass Flash Cards: leaf-local sheet settings and card-face commands.
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1em}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+\newlength{\LowMassCardWidth}
+\newlength{\LowMassCardHeight}
+\setlength{\LowMassCardWidth}{3.95in}
+\setlength{\LowMassCardHeight}{2.45in}
+
+\newcommand{\LowMassFlashHeader}[1]{%
+  {\fontsize{8}{9.5}\selectfont\bfseries #1}}
+
+\newcommand{\LowMassFlashFrame}[4]{%
+  \draw[line width=0.75pt] (#1,#2)
+    rectangle ++(\LowMassCardWidth,\LowMassCardHeight);
+  \draw[line width=0.5pt] (#1,#2+2.04) -- ++(\LowMassCardWidth,0);
+  \node[anchor=west,inner sep=0pt]
+    at (#1+0.18,#2+2.245) {\LowMassFlashHeader{#3}};
+  \node[anchor=center,inner sep=0pt]
+    at (#1+1.975,#2+2.245) {\LowMassFlashHeader{LOW MASS}};
+  \node[anchor=east,inner sep=0pt]
+    at (#1+3.77,#2+2.245) {\LowMassFlashHeader{#4}};}
+
+\newcommand{\LowMassFrontCard}[5]{%
+  \LowMassFlashFrame{#1}{#2}{#3 \textperiodcentered\ PRIEST}{#4}%
+  \node[anchor=north,align=center,text width=3.59in,inner sep=0pt]
+    at (#1+1.975,#2+1.79)
+    {{\fontsize{11.5}{13.5}\selectfont\SpokenCue{#5}}};}
+
+\newcommand{\LowMassQualifiedCue}[2]{%
+  \parbox[t][1.48in][t]{3.35in}{%
+    #2\par\vfill
+    \rule{\linewidth}{0.35pt}\par\vspace{0.12em}%
+    {\bfseries\MakeUppercase{#1}}}}
+
+\newcommand{\LowMassBackCard}[5]{%
+  \LowMassFlashFrame{#1}{#2}{#3 \textperiodcentered\ BOTH}{#4}%
+  \node[anchor=north,align=center,text width=3.59in,inner sep=0pt]
+    at (#1+1.975,#2+1.79)
+    {{\fontsize{11.5}{13.5}\selectfont\bfseries
+      \SpokenResponse{#5}}};}
+
+\newcommand{\LowMassSheetFooter}[1]{%
+  \node[anchor=center,font=\fontsize{7.5}{9}\selectfont\bfseries]
+    at (4.25,0.50) {#1};}
+
+\newcommand{\LowMassFinalNotice}{%
+  \node[anchor=south,align=center,text width=8.00in,inner sep=0pt]
+    at (4.25,0.06)
+    {{\fontsize{7}{7.8}\selectfont
+      Last revised (UTC): \AIDocumentRevisionTimestampValue\
+      \textperiodcentered\ Project-created content and design: CC BY 4.0.
+      Received liturgical text and third-party material retain their status.
+      Identify changes; attribution implies no ecclesiastical approval.
+      See \texttt{LICENSE} and \texttt{THIRD\_PARTY.md}.}};}

@@ -1,105 +1,38 @@
-schema_version = 1
-id = "claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
-kind = "calendar-reference"
-profile = "guidance/liturgy/roman-calendar-references.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "edition-manifest"
-source = "research/edition-manifest.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
-[[structure]]
-role = "evidence-map"
-source = "research/evidence-map.md"
-
-[[structure]]
-role = "calendar-inventory"
-source = "research/calendar-inventory.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
 
-[[structure]]
-role = "exposition"
-source = "sections/00-front.tex"
+[document]
+type = "liturgy-reference-v1"
 
-[[structure]]
-role = "exposition"
-source = "sections/10-year.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/20-ranks.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/30-table.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/40-occurrence.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/50-movable.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/60-ordinary-time.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/70-cycles.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/80-particular.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/85-worked-years.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/88-synthesis.tex"
-
-[[structure]]
-role = "timeline"
-source = "sections/90-timeline.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/95-scope.tex"
-
-[[structure]]
-role = "references"
-source = "sections/99-references.tex"
+[document.main]
+pdftitle = 'The Liturgical Calendar of the Roman Missal, Third Edition'
+pdfsubject = 'A source-first reference to the norms of the postconciliar liturgical year for the dioceses of the United States of America: the structure of the year, the table of liturgical days, ranks, occurrence and transfer, the movable cycle, Ordinary Time and its omitted week, the Sunday and weekday Lectionary cycles, and the proper calendars of nation, diocese and church'
+headings = "class"
+front = "none"
+appendix = "none"
+closing = "small-tight"
+# This reference is set at the class's normal size rather than the deep-study
+# sequence's \small, so its body opens by restoring it; its first section sets
+# its own title block and contents.
+body = [
+  '\normalsize',
+  '\pagestyle{plain}',
+  'sections/00-front',
+  '\clearpage',
+  'sections/10-year',
+  'sections/20-ranks',
+  'sections/30-table',
+  'sections/40-occurrence',
+  'sections/50-movable',
+  'sections/60-ordinary-time',
+  'sections/70-cycles',
+  'sections/80-particular',
+  'sections/85-worked-years',
+  'sections/88-synthesis',
+]
+apparatus = [
+  { source = 'sections/90-timeline', roles = ['timeline'] },
+  { source = 'sections/95-scope', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
+]

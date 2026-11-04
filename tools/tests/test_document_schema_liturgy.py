@@ -18,6 +18,8 @@ from document_schema_checks import liturgy
 
 SERVER = Path("liturgy/roman-rite/1962/reference/altar-server-guides")
 DICTIONARY = Path("liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary")
+LOW_MASS_CARDS = Path("01-low-mass-flash-cards")
+LOW_MASS_SHEETS = LOW_MASS_CARDS / "sections/response-cards.tex"
 
 
 def copy_sources(source: Path, destination: Path) -> None:
@@ -188,12 +190,20 @@ class LiturgySchemaTests(unittest.TestCase):
             r"\actionrowid{SO-006}{Entrance}", 1))
         self.assertIn("actionrowid SO-006", "\n".join(liturgy.check(self.root, publication)))
 
+    def test_actual_low_mass_deck_passes_through_its_generated_entrypoint(self):
+        owner, publication = self.server("01-low-mass-flash-cards")
+        # The entrypoint is generated: its sheets and face commands are inputs.
+        main = (owner / LOW_MASS_CARDS / "main.tex").read_text()
+        self.assertNotIn("LowMassFrontCard", main)
+        self.assertEqual(liturgy.check(self.root, publication), [])
+
     def test_removed_low_mass_pair_cannot_shrink_the_declared_deck(self):
         owner, publication = self.server("01-low-mass-flash-cards")
-        path = owner / "01-low-mass-flash-cards/main.tex"
+        path = owner / LOW_MASS_SHEETS
         text = liturgy._text(path)
         removals = [(start, end) for command in ("LowMassFrontCard", "LowMassBackCard")
                     for args, start, end in liturgy._calls(text, command, 5) if args[2] == "01"]
+        self.assertEqual(len(removals), 2)
         for start, end in sorted(removals, reverse=True):
             text = text[:start] + text[end:]
         path.write_text(text)
@@ -201,9 +211,36 @@ class LiturgySchemaTests(unittest.TestCase):
 
     def test_card_back_cannot_read_another_existing_response(self):
         owner, publication = self.server("01-low-mass-flash-cards")
-        path = owner / "01-low-mass-flash-cards/main.tex"
-        path.write_text(path.read_text().replace("{01}{FOOT/ALTAR}{\\ServerLatinData{A1}}", "{01}{FOOT/ALTAR}{\\ServerLatinData{A2}}"))
+        path = owner / LOW_MASS_SHEETS
+        text = path.read_text()
+        changed = text.replace("{01}{FOOT/ALTAR}{\\ServerLatinData{A1}}", "{01}{FOOT/ALTAR}{\\ServerLatinData{A2}}")
+        self.assertNotEqual(changed, text)
+        path.write_text(changed)
         self.assertIn("detached from canonical response A1", "\n".join(liturgy.check(self.root, publication)))
+
+    def test_low_mass_sheets_the_entrypoint_does_not_read_are_no_deck(self):
+        owner, publication = self.server("01-low-mass-flash-cards")
+        path = owner / LOW_MASS_CARDS / "main.tex"
+        text = path.read_text()
+        detached = "".join(line for line in text.splitlines(keepends=True)
+                           if not line.startswith("\\input{") or "/sections/" not in line)
+        self.assertNotEqual(detached, text)
+        path.write_text(detached)
+        # The sheet file still exists in the leaf, but nothing reads it.
+        self.assertTrue((owner / LOW_MASS_SHEETS).is_file())
+        errors = "\n".join(liturgy.check(self.root, publication))
+        self.assertIn("complete front/back sheet pairs", errors)
+        self.assertIn("manifest ID", errors)
+
+    def test_commented_out_low_mass_sheet_input_is_not_read(self):
+        owner, publication = self.server("01-low-mass-flash-cards")
+        path = owner / LOW_MASS_CARDS / "main.tex"
+        text = path.read_text()
+        commented = text.replace("\\input{" + (SERVER / LOW_MASS_SHEETS.with_suffix("")).as_posix() + "}",
+                                 "% \\input{" + (SERVER / LOW_MASS_SHEETS.with_suffix("")).as_posix() + "}")
+        self.assertNotEqual(commented, text)
+        path.write_text(commented)
+        self.assertIn("manifest ID", "\n".join(liturgy.check(self.root, publication)))
 
     def test_unmirrored_source_card_row_is_refused(self):
         owner, publication = self.server()

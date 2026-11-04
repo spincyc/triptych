@@ -305,6 +305,39 @@ def _duplex(text: str, *, low_mass: bool = False) -> list[str]:
     return errors
 
 
+def _leaf_reading(root: Path, record: dict, leaf: Path) -> str:
+    """The entrypoint as TeX reads the leaf's own sources, comments removed.
+
+    Each literal input of a ``.tex`` file inside the leaf is replaced by that
+    file's text, recursively and in reading order, resolved as the literal
+    closure resolves it. Inputs outside the leaf (the shared bank and format)
+    and computed inputs stay as written: the closure owns those. A source the
+    entrypoint does not reach contributes nothing.
+    """
+    from _document_schema import INPUT_RE
+    leaf = leaf.resolve()
+    bases = (root / "src" / record["provider"], root / "src")
+
+    def read(path: Path, active: tuple[Path, ...]) -> str:
+        def inline(match: re.Match) -> str:
+            argument = match.group(1).strip()
+            if "\\" in argument or "#" in argument:
+                return match.group(0)
+            for base in (path.parent,) + bases:
+                for candidate in (base / argument, base / f"{argument}.tex"):
+                    if candidate.is_file():
+                        target = candidate.resolve()
+                        if (target.suffix == ".tex" and target.is_relative_to(leaf)
+                                and target not in active):
+                            return read(target, active + (target,))
+                        return match.group(0)
+            return match.group(0)
+        return INPUT_RE.sub(inline, _text(path))
+
+    entrypoint = (leaf / record["entrypoint"]).resolve()
+    return read(entrypoint, (entrypoint,))
+
+
 def _server(root: Path, record: dict) -> list[str]:
     from _document_schema import _literal_closure
     leaf = root / record["source_dir"]
@@ -389,7 +422,9 @@ def _server(root: Path, record: dict) -> list[str]:
             if set(_card_ids(response_deck, (("integratedresponsefront", 3),))) != _manifest_card_ids(card_manifest, "R01"):
                 errors.append("response cards must retain every physical-card manifest ID")
     elif record["kind"] == "server-cards":
-        deck = _text(leaf / record["entrypoint"])
+        # The generated entrypoint inputs the leaf's format.tex and sheets; the
+        # deck is what the entrypoint reads of the leaf's own sources.
+        deck = _leaf_reading(root, record, leaf)
         errors.extend(_duplex(deck, low_mass=True))
         selected = _rows(card_manifest, r"LM-F\d{2} / \d{2}", 4)
         expected = {row[0].split(" / ")[1]: row for row in selected}

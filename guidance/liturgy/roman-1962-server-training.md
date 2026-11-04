@@ -11,8 +11,8 @@ model server roster where ceremonial training is in scope.
 
 The series belongs under
 `src/<provider>/liturgy/roman-rite/1962/reference/altar-server-guides/`. Its
-owner root is non-publishable; its seven leaves declare their type, canonical
-selections, derivation, and output entrypoints in `publication.toml` under
+owner root is non-publishable; its seven leaves declare their document type and
+canonical selections in `publication.toml` under
 [document schemas](../document-schemas.md). Physical page matching, card
 imposition, duplex, and PDF requirements below remain
 [print-export gates](../../docs/printing.md). Universal evidence, rights,
@@ -61,11 +61,13 @@ altar-server-guides/
 ```
 
 Each leaf has its own `main.tex`, `generation-metadata.tex`, and local guide
-map. Except for the flash cards, whose exact-geometry sheets are authored in
-`main.tex` itself, `main.tex` is generated from a
+map. Every leaf's `main.tex` is generated from a
 [document type](../document-schemas.md#document-types): `server-booklet-v1`
 for the Low Mass booklet and trainer manual, `server-sung-guide-v1` for the two
-sung-form guides, and `server-cue-cards-v1` for their card companions. Change
+sung-form guides, `server-cue-cards-v1` for their card companions, and
+`server-flash-cards-v1` for the Low Mass flash cards, whose exact-geometry
+sheets are authored in the leaf's `sections/response-cards.tex` and their
+macros in its `format.tex`. Change
 the leaf's `[document]` declaration or the type, never the generated file.
 The Low Mass child booklet and trainer manual and the two sung-form full
 guides are substantive publications and keep independent generation metadata.

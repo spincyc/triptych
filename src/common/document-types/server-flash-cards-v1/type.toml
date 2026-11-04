@@ -1,0 +1,25 @@
+schema = 1
+record_type = "document-type"
+id = "server-flash-cards-v1"
+description = """
+The Low Mass response flash cards of the altar-server guides
+(guidance/liturgy/roman-1962-server-training.md): eight faces on each
+zero-margin portrait letter sheet, every front sheet followed by its
+row-mirrored back for long-edge duplex printing. The type owns the preamble and
+the family's server-guide format, the Low Mass and response-data-only flags,
+the zero-margin letter geometry, the PDF metadata, the leaf's generation
+metadata and the shared response bank ahead of the cards, and the close, which
+marks the revision and rights notice rendered (the leaf's last back sheet
+prints them in its margin) and appends the card companion's uncut terminal
+sheet. A leaf supplies its PDF title and subject and its sheets, fronts and
+mirrored backs in duplex order; its card-face commands and sheet settings stay
+in its format.tex.
+"""
+kinds = ["server-cards"]
+
+[editions.main]
+role = "canonical"
+template = "main.template.tex"
+entrypoint = "main.tex"
+fields = ["pdftitle", "pdfsubject"]
+regions = ["sheets"]

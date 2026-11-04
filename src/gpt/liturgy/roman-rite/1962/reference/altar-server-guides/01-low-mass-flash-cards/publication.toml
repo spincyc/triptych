@@ -1,42 +1,3 @@
-schema_version = 1
-id = "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards"
-kind = "server-cards"
-profile = "guidance/liturgy/roman-1962-server-training.md"
-source_format = "latex"
-entrypoint = "main.tex"
-canonical_owner = "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"
-
-[[outputs]]
-id = "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "projection"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "guide-map"
-source = "research/guide-map.md"
-
-[[structure]]
-role = "response-inventory"
-data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/response-inventory.md"
-
-[[structure]]
-role = "flash-card-manifest"
-data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/flash-card-manifest.md"
-
 [[structure]]
 role = "scope"
 data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/scope.md"
@@ -68,3 +29,11 @@ data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/res
 [[structure]]
 role = "card-faces"
 data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/response-reference.tex"
+
+[document]
+type = "server-flash-cards-v1"
+
+[document.main]
+pdftitle = 'Low Mass Flash Cards'
+pdfsubject = 'Eight-up priest-cue and acolyte-response flash cards for young Low Mass servers'
+sheets = ['sections/response-cards']
