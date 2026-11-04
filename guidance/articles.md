@@ -7,7 +7,7 @@ repeatable liturgical, historical, devotional, biographical, or theological
 reference. A mixed article names its primary profile and applies each additional
 profile only to the claims in its field.
 
-Declare the leaf's type, source roles, contract version, and ordered outputs in
+Declare the leaf's document type and its ordered, role-bearing sections in
 `publication.toml` under [document schemas](document-schemas.md). That contract
 preserves the article's free argumentative form and canonical sources.
 

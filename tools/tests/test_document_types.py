@@ -278,6 +278,63 @@ derivation = "authored"
             types.declaration(self.root, self.leaf)
         self.assertIn("would stay hand-written", str(caught.exception))
 
+    def test_regions_are_the_one_section_list_with_their_roles(self):
+        type_toml = self.root / types.TYPES_DIR / "fixture-v1/type.toml"
+        type_toml.write_text(TYPE.replace(
+            'options = { closing = "plain" }',
+            'options = { closing = "plain" }\nsection_roles = { body = "argument" }', 1))
+        (self.leaf / "publication.toml").write_text(PUBLICATION + """
+[document]
+type = "fixture-v1"
+
+[document.main]
+pdftitle = 'Title'
+body = ["sections/10-a", { source = "sections/20-b", roles = ["argument", "scope-appendix"] }]
+apparatus = [{ source = "sections/90-c", roles = ["references"] }, "generation-metadata"]
+""")
+        decl = types.declaration(self.root, self.leaf)
+        text = types.render_edition(decl, "main", self.projections)[0]
+        # A table entry is placed exactly as a plain path entry would be.
+        self.assertIn("\\input{fixture/leaf/sections/20-b}\n", text)
+        self.assertIn("\\input{fixture/leaf/sections/90-c}\n", text)
+        self.assertEqual(
+            [(item.source, item.roles, item.outputs) for item in types.sections(decl)],
+            [("sections/10-a.tex", ("argument",), ("canonical",)),
+             ("sections/20-b.tex", ("argument", "scope-appendix"), ("canonical",)),
+             ("sections/90-c.tex", ("references",), ("canonical",)),
+             ("generation-metadata.tex", (), ("canonical",))])
+
+    def test_a_region_places_a_proper_component_by_its_key_only(self):
+        (self.leaf / "proper-components.toml").write_text(
+            '[[components]]\nkey = "lead"\npath = "sections/10-a.tex"\n')
+        self.declare()
+        with self.assertRaisesRegex(types.DocumentTypeError, "place component 'lead' as"):
+            types.declaration(self.root, self.leaf)
+        text = (self.leaf / "publication.toml").read_text().replace(
+            'body = ["sections/10-a",', 'body = [{ component = "lead" },')
+        (self.leaf / "publication.toml").write_text(text)
+        decl = types.declaration(self.root, self.leaf)
+        self.assertIn("\\input{fixture/leaf/sections/10-a}\n", types.render_edition(decl, "main", self.projections)[0])
+        self.assertEqual(types.sections(decl)[0].component, "lead")
+        (self.leaf / "publication.toml").write_text(text.replace('"lead"', '"absent"'))
+        with self.assertRaisesRegex(types.DocumentTypeError, "no component 'absent'"):
+            types.declaration(self.root, self.leaf)
+
+    def test_a_region_entry_is_a_string_or_a_known_table(self):
+        for entry in ('{ source = "sections/10-a", role = "x" }', '{ path = "sections/10-a" }',
+                      '{ source = "a b" }', '{ source = "sections/10-a", roles = ["X"] }', "1"):
+            with self.subTest(entry=entry):
+                (self.leaf / "publication.toml").write_text(PUBLICATION + f"""
+[document]
+type = "fixture-v1"
+
+[document.main]
+pdftitle = 'Title'
+body = [{entry}]
+""")
+                with self.assertRaises(types.DocumentTypeError):
+                    types.declaration(self.root, self.leaf)
+
     def test_opted_in_leaves_are_found_by_their_declaration(self):
         self.assertEqual(types.opted_in_leaves(self.root), [])
         self.declare()

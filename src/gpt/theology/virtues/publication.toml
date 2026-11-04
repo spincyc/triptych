@@ -1,100 +1,6 @@
-schema_version = 1
-id = "gpt/theology/virtues"
-kind = "virtues"
-profile = "guidance/theology/virtues.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "gpt/theology/virtues"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
-[[structure]]
-role = "virtue-inventory"
-source = "research/virtue-inventory.md"
-
-[[structure]]
-role = "terminology-audit"
-source = "research/terminology-audit.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/00-scope-method.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/10-philosophical-grammar.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/20-theological-virtues.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/25-cardinal-virtues.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/30-prudence-family.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/40-justice-family.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/50-fortitude-family.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/60-temperance-family.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/65-other-moral-virtues.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/70-intellectual-virtues.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/80-integration-formation.tex"
-
-[[structure]]
-role = "synopsis"
-source = "sections/95-synoptic-table.tex"
-
-[[structure]]
-role = "references"
-source = "sections/90-references.tex"
 
 [document]
 type = 'theology-reference-v1'
@@ -110,7 +16,7 @@ tocdepth = '3'
 emergencystretch = '3em'
 headings = 'titlesec-deep'
 body = [
-  'sections/00-scope-method',
+  { source = 'sections/00-scope-method', roles = ['scope-appendix'] },
   'sections/10-philosophical-grammar',
   'sections/20-theological-virtues',
   'sections/25-cardinal-virtues',
@@ -126,6 +32,6 @@ body = [
 ]
 appendix = [
   '\virtuesapparatusappendix',
-  'sections/95-synoptic-table',
-  'sections/90-references',
+  { source = 'sections/95-synoptic-table', roles = ['synopsis'] },
+  { source = 'sections/90-references', roles = ['references'] },
 ]

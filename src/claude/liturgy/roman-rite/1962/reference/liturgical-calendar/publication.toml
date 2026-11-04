@@ -1,109 +1,3 @@
-schema_version = 1
-id = "claude/liturgy/roman-rite/1962/reference/liturgical-calendar"
-kind = "calendar-reference"
-profile = "guidance/liturgy/roman-calendar-references.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "claude/liturgy/roman-rite/1962/reference/liturgical-calendar"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "edition-manifest"
-source = "research/edition-manifest.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
-[[structure]]
-role = "evidence-map"
-source = "research/evidence-map.md"
-
-[[structure]]
-role = "calendar-inventory"
-source = "research/calendar-inventory.md"
-
-[[structure]]
-role = "exposition"
-source = "sections/00-promulgation.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/10-grammar-of-the-day.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/20-temporal-cycle.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/30-vigils-octaves-ember-rogation.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/40-movable-computation.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/50-resumed-sundays.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/60-sanctoral.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/70-precedence-and-occurrence.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/80-commemorations.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/85-worked-years.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/88-synthesis.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/90-collation.tex"
-
-[[structure]]
-role = "timeline"
-source = "sections/92-timeline.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/95-scope.tex"
-
-[[structure]]
-role = "references"
-source = "sections/99-references.tex"
-
 [document]
 type = "liturgy-reference-v1"
 
@@ -134,10 +28,10 @@ body = [
   'sections/85-worked-years',
   'sections/88-synthesis',
   'sections/90-collation',
-  'sections/92-timeline',
+  { source = 'sections/92-timeline', roles = ['timeline'] },
   '\Needspace{10\baselineskip}',
 ]
 apparatus = [
-  'sections/95-scope',
-  'sections/99-references',
+  { source = 'sections/95-scope', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
 ]

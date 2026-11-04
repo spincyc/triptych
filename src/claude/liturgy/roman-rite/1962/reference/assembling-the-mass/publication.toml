@@ -1,108 +1,6 @@
-schema_version = 1
-id = "claude/liturgy/roman-rite/1962/reference/assembling-the-mass"
-kind = "assembly-reference"
-profile = "guidance/liturgy/roman-1962-assembly.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "claude/liturgy/roman-rite/1962/reference/assembling-the-mass"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "edition-manifest"
-source = "research/edition-manifest.md"
-
-[[structure]]
-role = "rubric-index"
-source = "research/rubric-index.md"
-
-[[structure]]
-role = "worked-cases"
-source = "research/worked-cases.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "exposition"
-source = "sections/00-five-decisions.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/10-the-day.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/20-precedence.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/30-impediment.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/40-mass-category.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/50-assembly-map.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/55-preface-last-gospel.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/60-worked-cases-a.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/65-worked-cases-b.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/80-contested.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/85-worksheet.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/90-scope.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/95-concordance.tex"
-
-[[structure]]
-role = "references"
-source = "sections/99-references.tex"
 
 [document]
 type = "liturgy-reference-v1"
@@ -130,7 +28,7 @@ body = [
   'sections/65-worked-cases-b',
   'sections/80-contested',
   'sections/85-worksheet',
-  'sections/90-scope',
+  { source = 'sections/90-scope', roles = ['scope-appendix'] },
   'sections/95-concordance',
-  'sections/99-references',
+  { source = 'sections/99-references', roles = ['references'] },
 ]

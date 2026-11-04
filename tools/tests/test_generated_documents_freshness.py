@@ -9,7 +9,6 @@ runs it over every opted-in leaf from the ordinary source gates.
 from __future__ import annotations
 
 import importlib.machinery
-import re
 import importlib.util
 import sys
 import tempfile
@@ -55,9 +54,12 @@ class EveryProperLeafIsOnADocumentTypeTests(unittest.TestCase):
 
     def test_every_proper_leaf_declares_a_type_that_slots_the_date_page(self):
         found = types.discover_types(ROOT)
+        import _document_schema  # noqa: PLC0415
+
+        # A leaf's kind is derived from its path by the schema registry.
         leaves = [manifest.parent for provider in types.PROVIDERS
                   for manifest in sorted((ROOT / "src" / provider).rglob("publication.toml"))
-                  if re.search(r'^kind = "proper-', manifest.read_text(), re.M)]
+                  if _document_schema.classify(ROOT, manifest.parent).startswith("proper-")]
         self.assertTrue(leaves)
         for leaf in leaves:
             with self.subTest(leaf=str(leaf.relative_to(ROOT))):

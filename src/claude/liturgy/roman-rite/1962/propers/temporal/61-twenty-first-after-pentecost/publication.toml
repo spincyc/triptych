@@ -1,77 +1,3 @@
-schema_version = 1
-id = "claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
-kind = "proper-1962"
-profile = "guidance/liturgy/roman-1962-propers.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[contracts]
-appointed_text_completeness = "complete"
-authority_contract = "authority-standing-v1"
-chronology_presentation = "orientation-v3"
-component_schema = 2
-format_contract = "propers-format-v1"
-presentation_contract = "interpretive-pagination-v1"
-
-[[outputs]]
-id = "claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[outputs]]
-id = "claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis"
-role = "synthesis"
-entrypoint = "synthesis.tex"
-derivation = "authored"
-
-[[outputs]]
-id = "claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily"
-role = "homily"
-entrypoint = "homily.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "appointed-source"
-source = "propers/verified.md"
-
-[[structure]]
-role = "retrieved-source"
-source = "propers/retrieved.txt"
-
-[[structure]]
-role = "proper-components"
-source = "proper-components.toml"
-
-[[structure]]
-role = "chronology-record"
-source = "research/chronology.toml"
-
-[[structure]]
-role = "chronology-projection"
-source = "research/chronology-annotations.tex"
-
-[[structure]]
-role = "interpretations"
-source = "research/interpretations.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
@@ -79,117 +5,6 @@ source = "research/source-bindings.toml"
 [[structure]]
 role = "review-dependencies"
 source = "research/review-dependencies.toml"
-
-[[structure]]
-role = "front-matter"
-source = "sections/00-opening.tex"
-outputs = ["canonical"]
-key = "component-opening"
-
-[[structure]]
-role = "appointed-text"
-source = "sections/05-appointed-texts.tex"
-outputs = ["canonical"]
-key = "component-appointed-texts"
-
-[[structure]]
-role = "proper-treatment"
-source = "sections/10-each-element.tex"
-outputs = ["canonical"]
-key = "component-each-element"
-depends_on = ["component-appointed-texts"]
-
-[[structure]]
-role = "interpretive-lane"
-source = "sections/20-armour-under-providence.tex"
-outputs = ["canonical"]
-key = "component-armour-under-providence"
-depends_on = ["component-each-element"]
-
-[[structure]]
-role = "interpretive-lane"
-source = "sections/30-debt-forgiven-from-the-heart.tex"
-outputs = ["canonical"]
-key = "component-debt-forgiven-from-the-heart"
-depends_on = ["component-each-element"]
-
-[[structure]]
-role = "interpretive-lane"
-source = "sections/40-last-exodus-of-the-church.tex"
-outputs = ["canonical"]
-key = "component-last-exodus-of-the-church"
-depends_on = ["component-each-element"]
-
-[[structure]]
-role = "interpretation-comparison"
-source = "sections/50-comparison.tex"
-outputs = ["canonical"]
-key = "component-comparison"
-depends_on = ["component-armour-under-providence", "component-debt-forgiven-from-the-heart", "component-last-exodus-of-the-church"]
-
-[[structure]]
-role = "chronology-display"
-source = "generated/scriptural-date-location.tex"
-outputs = ["canonical"]
-key = "component-scriptural-date-location"
-
-[[structure]]
-role = "terminal-apparatus"
-source = "sections/90-apparatus.tex"
-outputs = ["canonical"]
-key = "component-study-apparatus"
-
-[[structure]]
-role = "appointed-inventory"
-source = "sections/concise/01-inventory.tex"
-outputs = ["synthesis"]
-key = "component-concise-inventory"
-
-[[structure]]
-role = "four-senses"
-source = "sections/concise/02-overview.tex"
-outputs = ["synthesis"]
-key = "component-concise-overview"
-depends_on = ["component-concise-inventory"]
-
-[[structure]]
-role = "chronology-display"
-source = "generated/scriptural-date-location-page.tex"
-outputs = ["synthesis"]
-key = "component-concise-date-location"
-
-[[structure]]
-role = "themes"
-source = "sections/concise/04-themes.tex"
-outputs = ["synthesis"]
-key = "component-concise-themes"
-depends_on = ["component-concise-overview"]
-
-[[structure]]
-role = "integrated-commentary"
-source = "sections/concise/10-commentary.tex"
-outputs = ["synthesis"]
-key = "component-concise-commentary"
-depends_on = ["component-concise-themes"]
-
-[[structure]]
-role = "terminal-apparatus"
-source = "sections/concise/90-apparatus.tex"
-outputs = ["synthesis"]
-key = "component-concise-apparatus"
-
-[[structure]]
-role = "homily"
-source = "sections/homily/10-homily.tex"
-outputs = ["homily"]
-key = "component-homily-body"
-
-[[structure]]
-role = "terminal-apparatus"
-source = "sections/homily/90-note.tex"
-outputs = ["homily"]
-key = "component-homily-note"
-depends_on = ["component-homily-body"]
 
 [[structure]]
 role = "chronology-comparisons"
@@ -208,22 +23,20 @@ subtitle = 'Dominica vigesima prima post Pentecosten'
 source-line = 'Missale Romanum 1962 \quad\textperiodcentered\quad Proper of Time'
 occasion-line = '''The war God bounds, the debt forgiven from the heart, and the Church's exodus:\\
 a study of the proper in three readings'''
-front = 'toc'
-closing = 'colophon'
 body = [
-  'sections/00-opening',
-  'sections/05-appointed-texts',
-  'sections/10-each-element',
+  { component = "opening" },
+  { component = "appointed-texts" },
+  { component = "each-element" },
   '\clearpage',
-  'sections/20-armour-under-providence',
+  { component = "armour-under-providence" },
   '\Needspace{12\baselineskip}',
-  'sections/30-debt-forgiven-from-the-heart',
+  { component = "debt-forgiven-from-the-heart" },
   '\Needspace{12\baselineskip}',
-  'sections/40-last-exodus-of-the-church',
-  'sections/50-comparison',
+  { component = "last-exodus-of-the-church" },
+  { component = "comparison" },
 ]
 apparatus = [
-  'sections/90-apparatus',
+  { component = "study-apparatus" },
 ]
 
 [document.synthesis]
@@ -232,16 +45,15 @@ pdfsubject = 'Concise study of the 1962 Missale Romanum proper for the Twenty-fi
 subtitle = 'Dominica vigesima prima post Pentecosten'
 source-line = 'Missale Romanum 1962 \quad\textperiodcentered\quad Proper of Time \quad\textperiodcentered\quad 18 October 2026'
 occasion-line = '''The war God bounds, the debt forgiven from the heart, and the Church's exodus: three readings compared'''
-closing = 'colophon'
 opening = [
-  'sections/concise/01-inventory',
-  'sections/concise/02-overview',
+  { component = "concise-inventory" },
+  { component = "concise-overview" },
 ]
 body = [
-  'sections/concise/04-themes',
+  { component = "concise-themes" },
   '\clearpage',
-  'sections/concise/10-commentary',
-  'sections/concise/90-apparatus',
+  { component = "concise-commentary" },
+  { component = "concise-apparatus" },
 ]
 
 [document.homily]
@@ -250,10 +62,9 @@ pdfsubject = '''A homily for an adult parish assembly on the 1962 Missale Romanu
 subtitle = 'The Words That Saved Him'
 source-line = 'Missale Romanum 1962 \quad\textperiodcentered\quad Proper of Time \quad\textperiodcentered\quad 18 October 2026'
 occasion-line = 'A homily'
-closing = 'colophon'
 homily = [
-  'sections/homily/10-homily',
+  { component = "homily-body" },
 ]
 apparatus = [
-  'sections/homily/90-note',
+  { component = "homily-note" },
 ]

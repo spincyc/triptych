@@ -1,104 +1,6 @@
-schema_version = 1
-id = "claude/biographies/origen"
-kind = "biography"
-profile = "guidance/biographies.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "claude/biographies/origen"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
-[[structure]]
-role = "chronology"
-source = "research/chronology.md"
-
-[[structure]]
-role = "tradition-audit"
-source = "research/tradition-audit.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/00-question.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/10-alexandria.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/20-martyrs-son.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/30-catechist.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/40-report.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/50-scholar.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/60-rupture.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/70-late-works.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/80-decius.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/90-controversies.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/100-reception.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/110-conclusion.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/120-scope-chronology-evidence.tex"
-
-[[structure]]
-role = "references"
-source = "sections/130-references.tex"
 
 [document]
 type = 'biography-v1'
@@ -124,6 +26,6 @@ body = [
   'sections/110-conclusion',
 ]
 appendix = [
-  'sections/120-scope-chronology-evidence',
-  'sections/130-references',
+  { source = 'sections/120-scope-chronology-evidence', roles = ['scope-appendix'] },
+  { source = 'sections/130-references', roles = ['references'] },
 ]

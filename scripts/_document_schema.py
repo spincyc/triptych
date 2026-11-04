@@ -38,8 +38,16 @@ CONTRACT_FIELDS = {
 }
 DERIVED_FIELDS = {
     "provider", "leaf", "source_dir", "manifest_path", "manifest_origin",
-    "discovery_error", "profile_definition",
+    "discovery_error", "profile_definition", "manifest_declared",
 }
+# What a leaf's path, its registered kind or its other records already state.
+# The loader supplies these; a manifest that spells one out must agree
+# (guidance/document-schemas.md § Derived fields). `structure` is completed the
+# same way: the body, generation and web-declaration records, every required
+# research record at its one registered path, and the roles of the sections the
+# leaf's [document] regions place.
+DERIVED_MANIFEST_FIELDS = ("schema_version", "id", "kind", "profile", "source_format",
+                           "entrypoint", "outputs", "contracts", "canonical_owner")
 OUTPUT_ROLES = ("canonical", "synthesis", "homily")
 TEXT_SUFFIXES = {".tex", ".sty", ".cls", ".md", ".toml", ".yaml", ".yml",
                  ".json", ".txt", ".tsv", ".csv", ".bib", ".html", ".css", ".js"}
@@ -317,6 +325,133 @@ def _find_role(root: Path, leaf_dir: Path, owner: Path, role: str) -> list[dict]
     return []
 
 
+def _source_format(kind: str) -> str:
+    return "structured" if kind == "pictorial-dictionary" else "latex"
+
+
+def _contracts(components: dict) -> dict:
+    if not components:
+        return {}
+    result = {"component_schema": components["schema"]}
+    for key in sorted(CONTRACT_FIELDS - {"component_schema"}):
+        if key in components:
+            result[key] = components[key]
+    return result
+
+
+def _canonical_owner(leaf_dir: Path, provider: str) -> str | None:
+    metadata = leaf_dir / "generation-metadata.tex"
+    inherited = INHERIT_RE.search(metadata.read_text(encoding="utf-8")) if metadata.is_file() else None
+    return f"{provider}/{inherited.group(1)}" if inherited else None
+
+
+def _required_roles(definition: dict, components: dict) -> list[str]:
+    required = list(definition["required_roles"])
+    if components.get("schema") == 2:
+        required += ["proper-components", "interpretations"]
+        if components.get("chronology_presentation"):
+            required += ["chronology-record", "chronology-projection"]
+    return list(dict.fromkeys(required))
+
+
+def derived_kind_and_outputs(root: Path, leaf_dir: Path, data: dict) -> tuple[str, list[dict]]:
+    """The leaf's kind and outputs: its declaration's, or else the derived ones."""
+    root = Path(root).resolve()
+    leaf_dir = Path(leaf_dir)
+    if not leaf_dir.is_absolute():
+        leaf_dir = root / leaf_dir
+    provider, leaf = _identity(root, leaf_dir)
+    try:
+        kind = classify(root, leaf_dir)
+    except SchemaError:
+        # An unregistered path has no derived kind; schema validation refuses
+        # it, while a declaration may still be read by itself.
+        if not isinstance(data.get("kind"), str):
+            raise
+        kind = data["kind"]
+    if "kind" in data and data["kind"] != kind:
+        raise SchemaError("kind disagrees with the registered genre of its owning path")
+    outputs = data.get("outputs")
+    if outputs is None:
+        outputs = _expected_outputs(root, provider, leaf)
+    return kind, outputs if isinstance(outputs, list) else []
+
+
+def _complete(root: Path, data: dict, provider: str, leaf: str) -> dict:
+    """The manifest as written plus everything derived (DERIVED_MANIFEST_FIELDS).
+
+    Only absent fields are supplied: an explicit value stays, and the checks in
+    `_normalise` refuse one that contradicts its derivation.
+    """
+    leaf_dir = root / "src" / provider / leaf
+    result = dict(data)
+    kind = classify(root, leaf_dir)
+    kind = result.get("kind", kind) if isinstance(result.get("kind"), str) else kind
+    try:
+        definition = _definition(root, kind)
+    except SchemaError:
+        definition = {"profile": None, "required_roles": []}
+    components = _component_data(leaf_dir)
+    derived = {
+        "schema_version": 1,
+        "id": f"{provider}/{leaf}",
+        "kind": kind,
+        "profile": definition["profile"],
+        "source_format": _source_format(kind),
+        "entrypoint": "main.tex",
+    }
+    for key, value in derived.items():
+        result.setdefault(key, value)
+    if result.get("source_format") in {"latex", "structured"}:
+        result.setdefault("outputs", _expected_outputs(root, provider, leaf))
+    if "contracts" not in result and components:
+        result["contracts"] = _contracts(components)
+    owner = _canonical_owner(leaf_dir, provider)
+    if owner is not None:
+        result.setdefault("canonical_owner", owner)
+    explicit = [item for item in data.get("structure", []) if isinstance(item, dict)] \
+        if isinstance(data.get("structure", []), list) else data.get("structure")
+    if not isinstance(explicit, list):
+        return result
+    sections = _section_items(root, leaf_dir, explicit)
+    declared = {item.get("role") for item in explicit + sections}
+    items = []
+    if "body" not in declared:
+        items.append({"role": "body", "source": result["entrypoint"], "outputs": ["canonical"]})
+    for role, name in (("generation", "generation-metadata.tex"), ("web-declaration", "web-edition.toml")):
+        if role not in declared and (leaf_dir / name).is_file():
+            items.append({"role": role, "source": name})
+    owner_dir = _owner(root, provider, leaf)
+    for role in _required_roles(definition, components) + (["proper-components"] if components else []):
+        if role not in declared and role not in {item["role"] for item in items}:
+            items.extend(_find_role(root, leaf_dir, owner_dir, role))
+    items.extend(explicit)
+    items.extend(sections)
+    result["structure"] = items
+    return result
+
+
+def _section_items(root: Path, leaf_dir: Path, explicit: list[dict]) -> list[dict]:
+    """Structure roles of the sections the leaf's [document] regions place."""
+    if not (leaf_dir / MANIFEST).is_file():
+        return []
+    import _document_types  # noqa: PLC0415
+
+    try:
+        decl = _document_types.declaration(root, leaf_dir)
+    except _document_types.DocumentTypeError:
+        return []  # `_normalise` reports the declaration's own error
+    if decl is None:
+        return []
+    held = {(item.get("role"), item.get("source")) for item in explicit}
+    items = []
+    for section in _document_types.sections(decl):
+        for role in section.roles:
+            if (role, section.source) not in held:
+                items.append({"role": role, "source": section.source, "outputs": list(section.outputs)})
+    return items
+
+
 def adapter_manifest(root: Path, leaf_dir: Path) -> dict:
     """Propose declarations of existing files; never fabricate missing research."""
     root = Path(root).resolve()
@@ -371,6 +506,10 @@ def _structure_paths(root: Path, record: dict, item: dict) -> list[Path]:
 
 def _normalise(root: Path, data: dict, manifest_path: Path | None) -> dict:
     _strict(data, MANIFEST_FIELDS, "publication")
+    declared = data
+    if manifest_path is not None:
+        provider, leaf = _identity(root, manifest_path.parent)
+        data = _complete(root, data, provider, leaf)
     if type(data.get("schema_version")) is not int or data["schema_version"] != 1:
         raise SchemaError("schema_version must be 1")
     provider, leaf = _id(data.get("id"))
@@ -386,6 +525,8 @@ def _normalise(root: Path, data: dict, manifest_path: Path | None) -> dict:
     source_format = data.get("source_format")
     if source_format not in {"latex", "structured", "markdown"}:
         raise SchemaError("source_format must be latex, structured or markdown")
+    if source_format != "markdown" and source_format != _source_format(kind):
+        raise SchemaError(f"source_format of a {kind} is {_source_format(kind)}")
     entrypoint = _relative(data.get("entrypoint"), "entrypoint")
     if source_format == "markdown" and not entrypoint.endswith(".md"):
         raise SchemaError("markdown entrypoint must have .md extension")
@@ -394,7 +535,7 @@ def _normalise(root: Path, data: dict, manifest_path: Path | None) -> dict:
     result = dict(data, provider=provider, leaf=leaf, source_dir=f"src/{provider}/{leaf}",
                   manifest_path=manifest_path.relative_to(root).as_posix() if manifest_path else None,
                   manifest_origin="declared" if manifest_path else "adapter",
-                  profile_definition=definition)
+                  profile_definition=definition, manifest_declared=declared)
     if "document" in data:
         # A [document] table opts the leaf into a document type; its own
         # module owns the declaration's rules (guidance/document-schemas.md).
@@ -437,6 +578,15 @@ def _normalise(root: Path, data: dict, manifest_path: Path | None) -> dict:
     body = [item for item in structure if isinstance(item, dict) and item.get("role") == "body"]
     if len(body) != 1 or body[0].get("source") != entrypoint:
         raise SchemaError("structure must declare one canonical body at its exact entrypoint")
+    if "document" in data:
+        # A generated entrypoint holds no section of its own: a role naming one
+        # describes text that now lives in the regions' section files.
+        generated = {output.get("entrypoint") for output in data.get("outputs", []) if isinstance(output, dict)}
+        stale = sorted({item.get("role") for item in structure if isinstance(item, dict)
+                        and item.get("role") != "body" and item.get("source") in generated})
+        if stale:
+            raise SchemaError("a role cannot name a generated entrypoint; place its section "
+                              "in a [document] region instead: " + ", ".join(stale))
     nodes = {}
     for index, item in enumerate(structure):
         _strict(item, STRUCTURE_FIELDS, "structure")
@@ -585,6 +735,19 @@ def _raw_manifest(data: dict) -> dict:
     if isinstance(raw.get("outputs"), list):
         raw["outputs"] = [{k: v for k, v in item.items() if k != "source_path"}
                           if isinstance(item, dict) else item for item in raw["outputs"]]
+    return raw
+
+
+def minimal_manifest(root: Path, data: dict) -> dict:
+    """The declaration without anything its path, kind or records derive."""
+    root = Path(root).resolve()
+    provider, leaf = _id(data["id"])
+    completed = _complete(root, {k: v for k, v in data.items() if k not in DERIVED_MANIFEST_FIELDS
+                                 and k != "structure"} | {"structure": []}, provider, leaf)
+    derived = {json.dumps(item, sort_keys=True) for item in completed["structure"]}
+    raw = {k: v for k, v in _raw_manifest(data).items() if k not in DERIVED_MANIFEST_FIELDS}
+    raw["structure"] = [item for item in data.get("structure", [])
+                        if json.dumps(item, sort_keys=True) not in derived]
     return raw
 
 
@@ -1014,8 +1177,9 @@ def validate(root: Path, record: dict, *, phase: str = "source", run_gates: bool
     try:
         if record.get("discovery_error"):
             raise SchemaError(record["discovery_error"])
-        raw = _raw_manifest(record)
         path = root / record["manifest_path"] if record.get("manifest_path") else None
+        raw = record["manifest_declared"] if path is not None and "manifest_declared" in record \
+            else _raw_manifest(record)
         checked = _normalise(root, raw, path)
         if require_manifest and checked["manifest_origin"] != "declared":
             report["errors"].append("missing publication.toml; adapter discovery is not a manifest")

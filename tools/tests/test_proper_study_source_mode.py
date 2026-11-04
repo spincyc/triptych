@@ -108,8 +108,11 @@ class SourceFixture(unittest.TestCase):
         self.assertFalse(any("--pdf" in str(call) for call in commands))
 
     def test_missing_required_semantic_role_fails_source_gate(self):
+        # A required record is declared by its registered path, so the role
+        # fails only when the record itself is missing.
         self.declaration["structure"] = [item for item in self.declaration["structure"] if item["role"] != "scope"]
         self.write_manifest()
+        (self.leaf / "research/scope.md").unlink()
         with self.assertRaisesRegex(ValueError, "missing required role: scope"):
             self.source_state()
 

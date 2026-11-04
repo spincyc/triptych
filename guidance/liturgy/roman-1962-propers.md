@@ -11,8 +11,8 @@ identity, language, and rights rules
 below remain in force. Schema-1 guides retain the older presentation below.
 
 The per-leaf `publication.toml` follows
-[document schemas](../document-schemas.md) and declares the actual component or
-legacy contract without converting it. Existing TeX, source records, and typed
+[document schemas](../document-schemas.md), which derives the leaf's component or
+legacy contract from its `proper-components.toml` without converting it. Existing TeX, source records, and typed
 chronology remain canonical. Physical-page and PDF requirements below govern
 [optional print exports](../../docs/printing.md); source/HTML publication uses
 the declared source and evidence review closure. PDF labels below name print

@@ -1,77 +1,3 @@
-schema_version = 1
-id = "claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"
-kind = "proper-postconciliar"
-profile = "guidance/liturgy/postconciliar-propers.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[contracts]
-appointed_text_completeness = "rights-limited"
-authority_contract = "authority-standing-v1"
-chronology_presentation = "orientation-v3"
-component_schema = 2
-format_contract = "propers-format-v1"
-presentation_contract = "interpretive-pagination-v1"
-
-[[outputs]]
-id = "claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[outputs]]
-id = "claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis"
-role = "synthesis"
-entrypoint = "synthesis.tex"
-derivation = "authored"
-
-[[outputs]]
-id = "claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-homily"
-role = "homily"
-entrypoint = "homily.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "instance-manifest"
-source = "instance/manifest.md"
-
-[[structure]]
-role = "appointed-source"
-source = "propers/verified.md"
-
-[[structure]]
-role = "proper-components"
-source = "proper-components.toml"
-
-[[structure]]
-role = "chronology-record"
-source = "research/chronology.toml"
-
-[[structure]]
-role = "chronology-projection"
-source = "research/chronology-annotations.tex"
-
-[[structure]]
-role = "interpretations"
-source = "research/interpretations.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
@@ -79,123 +5,6 @@ source = "research/source-bindings.toml"
 [[structure]]
 role = "review-dependencies"
 source = "research/review-dependencies.toml"
-
-[[structure]]
-role = "front-matter"
-source = "sections/00-opening.tex"
-outputs = ["canonical"]
-key = "component-opening"
-
-[[structure]]
-role = "appointed-text"
-source = "sections/05-appointed-texts.tex"
-outputs = ["canonical"]
-key = "component-appointed-texts"
-
-[[structure]]
-role = "proper-treatment"
-source = "sections/10-each-element.tex"
-outputs = ["canonical"]
-key = "component-each-element"
-depends_on = ["component-appointed-texts"]
-
-[[structure]]
-role = "interpretive-lane"
-source = "sections/20-afterward-he-repented.tex"
-outputs = ["canonical"]
-key = "component-afterward-he-repented"
-depends_on = ["component-each-element"]
-
-[[structure]]
-role = "interpretive-lane"
-source = "sections/30-the-publicans-go-before-you.tex"
-outputs = ["canonical"]
-key = "component-the-publicans-go-before-you"
-depends_on = ["component-each-element"]
-
-[[structure]]
-role = "interpretive-lane"
-source = "sections/40-the-mind-of-christ-jesus.tex"
-outputs = ["canonical"]
-key = "component-the-mind-of-christ-jesus"
-depends_on = ["component-each-element"]
-
-[[structure]]
-role = "interpretation-comparison"
-source = "sections/50-comparison.tex"
-outputs = ["canonical"]
-key = "component-comparison"
-depends_on = ["component-afterward-he-repented", "component-the-publicans-go-before-you", "component-the-mind-of-christ-jesus"]
-
-[[structure]]
-role = "chronology-display"
-source = "generated/scriptural-date-location.tex"
-outputs = ["canonical"]
-key = "component-scriptural-date-location"
-
-[[structure]]
-role = "terminal-apparatus"
-source = "sections/85-liturgical-resolution.tex"
-outputs = ["canonical"]
-key = "component-liturgical-resolution"
-
-[[structure]]
-role = "terminal-apparatus"
-source = "sections/90-apparatus.tex"
-outputs = ["canonical"]
-key = "component-study-apparatus"
-
-[[structure]]
-role = "appointed-inventory"
-source = "sections/concise/01-inventory.tex"
-outputs = ["synthesis"]
-key = "component-concise-inventory"
-
-[[structure]]
-role = "four-senses"
-source = "sections/concise/02-overview.tex"
-outputs = ["synthesis"]
-key = "component-concise-overview"
-depends_on = ["component-concise-inventory"]
-
-[[structure]]
-role = "chronology-display"
-source = "generated/scriptural-date-location-page.tex"
-outputs = ["synthesis"]
-key = "component-concise-date-location"
-
-[[structure]]
-role = "themes"
-source = "sections/concise/04-themes.tex"
-outputs = ["synthesis"]
-key = "component-concise-themes"
-depends_on = ["component-concise-overview"]
-
-[[structure]]
-role = "integrated-commentary"
-source = "sections/concise/10-commentary.tex"
-outputs = ["synthesis"]
-key = "component-concise-commentary"
-depends_on = ["component-concise-themes"]
-
-[[structure]]
-role = "terminal-apparatus"
-source = "sections/concise/90-apparatus.tex"
-outputs = ["synthesis"]
-key = "component-concise-apparatus"
-
-[[structure]]
-role = "homily"
-source = "sections/homily/10-homily.tex"
-outputs = ["homily"]
-key = "component-homily-body"
-
-[[structure]]
-role = "terminal-apparatus"
-source = "sections/homily/90-note.tex"
-outputs = ["homily"]
-key = "component-homily-note"
-depends_on = ["component-homily-body"]
 
 [[structure]]
 role = "chronology-inputs"
@@ -214,39 +23,37 @@ subtitle = "Dominica XXVI ``per annum''"
 source-line = 'Roman Missal, Third Edition \quad\textperiodcentered\quad Lectionary for Mass, no.~136'
 occasion-line = '''The two sons and the way of the Lord:\\
 a study of the proper in three interpretations'''
-front = 'toc'
 closing = 'body-colophon-unguarded'
 body = [
-  'sections/00-opening',
-  'sections/05-appointed-texts',
-  'sections/10-each-element',
-  'sections/20-afterward-he-repented',
-  'sections/30-the-publicans-go-before-you',
-  'sections/40-the-mind-of-christ-jesus',
-  'sections/50-comparison',
+  { component = "opening" },
+  { component = "appointed-texts" },
+  { component = "each-element" },
+  { component = "afterward-he-repented" },
+  { component = "the-publicans-go-before-you" },
+  { component = "the-mind-of-christ-jesus" },
+  { component = "comparison" },
 ]
 apparatus = [
-  'sections/85-liturgical-resolution',
-  'sections/90-apparatus',
+  { component = "liturgical-resolution" },
+  { component = "study-apparatus" },
 ]
 
 [document.synthesis]
 pdftitle = 'Twenty-sixth Sunday in Ordinary Time, Year A: A Concise Study of the Proper in the Roman Missal, Third Edition'
 pdfsubject = 'Concise study of the proper of the Twenty-sixth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 136: the appointed elements, four overview senses, the scriptural dossier, the movement of the formulary, and a commentary comparing three interpretations of the whole Mass'
 title = 'The Twenty-sixth Sunday in Ordinary Time, Year A'
-subtitle = ''
 source-line = 'Roman Missal, Third Edition \quad\textperiodcentered\quad Lectionary for Mass, no.~136'
 occasion-line = 'the two sons and the way of the Lord: three interpretations compared'
 closing = 'body-colophon-unguarded'
 opening = [
-  'sections/concise/01-inventory',
-  'sections/concise/02-overview',
+  { component = "concise-inventory" },
+  { component = "concise-overview" },
 ]
 body = [
-  'sections/concise/04-themes',
+  { component = "concise-themes" },
   '\clearpage',
-  'sections/concise/10-commentary',
-  'sections/concise/90-apparatus',
+  { component = "concise-commentary" },
+  { component = "concise-apparatus" },
 ]
 
 [document.homily]
@@ -258,8 +65,8 @@ source-line = 'Roman Missal, Third Edition \quad\textperiodcentered\quad Lection
 occasion-line = 'A homily'
 closing = 'body-colophon'
 homily = [
-  'sections/homily/10-homily',
+  { component = "homily-body" },
 ]
 apparatus = [
-  'sections/homily/90-note',
+  { component = "homily-note" },
 ]

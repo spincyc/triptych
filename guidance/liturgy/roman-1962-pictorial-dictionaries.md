@@ -8,8 +8,7 @@ review, and publication rules remain in force.
 
 The family belongs under
 `src/<provider>/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/`.
-The owner root is non-publishable. Each leaf declares its type, canonical object
-and artwork selections, and output entrypoints in `publication.toml` under
+The owner root is non-publishable. Each leaf declares its document type in `publication.toml` under
 [document schemas](../document-schemas.md). Each edition's `main.tex` is
 generated from the `sanctuary-dictionary-v1`
 [document type](../document-schemas.md#document-types) around the shared

@@ -23,3 +23,6 @@ fields = ["pdftitle", "pdfsubject", "title", "subtitle", "kind-line"]
 regions = ["body", "appendix"]
 optional_regions = ["preamble"]
 options = { penalties = "none", closing = "rights" }
+# The structure role of each plain section path in the body region; an
+# entry with other roles spells them: { source = PATH, roles = [...] }.
+section_roles = { body = "life-narrative" }

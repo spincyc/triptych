@@ -4,7 +4,7 @@ This profile governs source-first histories of condemned propositions, persons,
 schools, movements, and ecclesial responses beneath `src/<provider>/theology/heresies/`.
 They are not juridical determinations of a living person's culpability.
 
-Declare the leaf's type, source roles, contract version, and ordered outputs in
+Declare the leaf's document type and its ordered, role-bearing sections in
 `publication.toml` under [document schemas](../document-schemas.md), preserving
 the census, dossier, evidence-grade, and response-event distinctions below.
 Its `main.tex` is generated from the `theology-reference-v1`

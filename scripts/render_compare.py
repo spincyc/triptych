@@ -33,7 +33,6 @@ import shutil
 import subprocess
 import sys
 import tempfile
-import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -50,8 +49,13 @@ def _run(command: list[str], **kwargs) -> subprocess.CompletedProcess:
 
 
 def editions(leaf: str) -> list[str]:
+    # The outputs are derived from the leaf's records, not spelled in its
+    # publication.toml; the schema loader is their one reader.
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import _document_schema  # noqa: PLC0415
+
     provider, _, document = leaf.partition("/")
-    data = tomllib.loads((ROOT / "src" / provider / document / "publication.toml").read_text())
+    data = _document_schema.load_manifest(ROOT, ROOT / "src" / provider / document / "publication.toml")
     return [EDITIONS[item["role"]] for item in data.get("outputs", []) if item.get("role") in EDITIONS]
 
 

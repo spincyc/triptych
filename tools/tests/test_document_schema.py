@@ -43,6 +43,44 @@ class DocumentSchemaTests(unittest.TestCase):
         self.assertTrue(schema.validate(self.root, record)["ok"])
         self.assertEqual(schema.dumps_manifest(record), schema.dumps_manifest(self.data))
 
+    def test_a_minimal_manifest_derives_everything_its_path_and_records_state(self):
+        # The leaf's path, its registered kind and its research records say
+        # all of this; the manifest need not (guidance/document-schemas.md).
+        (self.leaf / "publication.toml").write_text("", encoding="utf-8")
+        record = schema.load_manifest(self.root, self.leaf / "publication.toml")
+        for key in ("schema_version", "id", "kind", "profile", "source_format", "entrypoint", "outputs"):
+            with self.subTest(field=key):
+                self.assertEqual(record[key], self.data[key] if key != "outputs" else record[key])
+        self.assertEqual([{k: o[k] for k in schema.OUTPUT_FIELDS} for o in record["outputs"]],
+                         self.data["outputs"])
+        self.assertEqual(sorted((item["role"], item.get("source")) for item in record["structure"]),
+                         sorted((item["role"], item.get("source")) for item in self.data["structure"]))
+        self.assertTrue(schema.validate(self.root, record, phase="content")["ok"])
+        self.assertEqual(schema.minimal_manifest(self.root, record), {"structure": []})
+
+    def test_an_explicit_value_must_agree_with_its_derivation(self):
+        for line in ('kind = "article-scripture"', 'id = "gpt/articles/faith/other"',
+                     'profile = "guidance/biographies.md"', 'entrypoint = "body.tex"',
+                     'schema_version = 2', 'source_format = "structured"',
+                     'canonical_owner = "gpt/articles/faith/other"',
+                     '[[outputs]]\nid = "gpt/articles/faith/example"\nrole = "canonical"\n'
+                     'entrypoint = "main.tex"\nderivation = "projection"'):
+            with self.subTest(line=line):
+                path = self.leaf / "publication.toml"
+                path.write_text(line + "\n", encoding="utf-8")
+                with self.assertRaises(schema.SchemaError):
+                    schema.load_manifest(self.root, path)
+        # An explicit value that agrees is redundant, not wrong.
+        path.write_text('kind = "article-faith"\nid = "gpt/articles/faith/example"\n', encoding="utf-8")
+        self.assertEqual(schema.load_manifest(self.root, path)["kind"], "article-faith")
+
+    def test_a_missing_required_record_is_still_refused(self):
+        (self.leaf / "publication.toml").write_text("", encoding="utf-8")
+        (self.leaf / "research/source-audit.md").unlink()
+        record = schema.load_manifest(self.root, self.leaf / "publication.toml")
+        report = schema.validate(self.root, record, phase="content")
+        self.assertIn("missing required role: source-audit", report["errors"])
+
     def test_discovery_retains_missing_and_invalid_manifest_leaves(self):
         missing = schema.discover(self.root)
         self.assertEqual(len(missing), 1)

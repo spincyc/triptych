@@ -1,232 +1,6 @@
-schema_version = 1
-id = "claude/theology/angelology"
-kind = "angelology"
-profile = "guidance/theology/angelology.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "claude/theology/angelology"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
-[[structure]]
-role = "question-inventory"
-source = "research/question-inventory.md"
-
-[[structure]]
-role = "order-inventory"
-source = "research/order-inventory.md"
-
-[[structure]]
-role = "terminology-audit"
-source = "research/terminology-audit.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "exposition"
-source = "sections/00-scripture.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/05-faith-of-the-church.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/07-israel-before-christ.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/08-philosophers-before-christ.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/10-fathers-before-dionysius.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/11-greek-fathers-nicene.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/12-latin-fathers-before-dionysius.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/13-augustine.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/15-celestial-hierarchy.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/20-fathers-after-dionysius.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/21-medieval-doctors.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/30-angelic-substance.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/32-bodies-place-motion.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/34-intellect-and-knowledge.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/36-will-and-love.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/38-creation-grace-glory.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/40-fall-and-punishment.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/50-illumination-and-speech.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/52-hierarchies-and-orders.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/54-government-and-mission.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/56-guardian-angels.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/58-assaults-of-demons.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/60-christ-mary-and-the-angels.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/70-disputed-questions.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/72-byzantine-line.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/80-liturgy.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/82-devotion-and-its-regulation.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/84-the-saints-and-the-angels.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/88-the-order-of-the-universe.tex"
-
-[[structure]]
-role = "exposition"
-source = "appendices/01-the-nine-orders.tex"
-
-[[structure]]
-role = "exposition"
-source = "appendices/02-comparative-orderings.tex"
-
-[[structure]]
-role = "exposition"
-source = "appendices/02a-pre-christian-continuities.tex"
-
-[[structure]]
-role = "exposition"
-source = "appendices/03-article-census.tex"
-
-[[structure]]
-role = "exposition"
-source = "appendices/04-parallels-in-aquinas.tex"
-
-[[structure]]
-role = "exposition"
-source = "appendices/05-dionysius-in-the-summa.tex"
-
-[[structure]]
-role = "chronology-display"
-source = "appendices/06-magisterial-chronology.tex"
-
-[[structure]]
-role = "exposition"
-source = "appendices/07-calendar.tex"
-
-[[structure]]
-role = "exposition"
-source = "appendices/08-scripture-index.tex"
-
-[[structure]]
-role = "exposition"
-source = "appendices/09-names.tex"
-
-[[structure]]
-role = "exposition"
-source = "appendices/10-demons-powers-and-limits.tex"
-
-[[structure]]
-role = "exposition"
-source = "appendices/11-the-first-sin.tex"
-
-[[structure]]
-role = "exposition"
-source = "appendices/12-terminology.tex"
-
-[[structure]]
-role = "exposition"
-source = "appendices/13-witness-register.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "appendices/90-scope-corpus-qualifications.tex"
-
-[[structure]]
-role = "references"
-source = "appendices/99-references.tex"
 
 [document]
 type = 'theology-reference-v1'
@@ -281,22 +55,22 @@ body = [
   '\clearpage',
 ]
 appendix = [
-  'appendices/01-the-nine-orders',
-  'appendices/02-comparative-orderings',
-  'appendices/02a-pre-christian-continuities',
-  'appendices/03-article-census',
-  'appendices/04-parallels-in-aquinas',
-  'appendices/05-dionysius-in-the-summa',
-  'appendices/06-magisterial-chronology',
-  'appendices/07-calendar',
-  'appendices/08-scripture-index',
-  'appendices/09-names',
-  'appendices/10-demons-powers-and-limits',
-  'appendices/11-the-first-sin',
-  'appendices/12-terminology',
-  'appendices/13-witness-register',
-  'appendices/90-scope-corpus-qualifications',
-  'appendices/99-references',
+  { source = 'appendices/01-the-nine-orders', roles = ['exposition'] },
+  { source = 'appendices/02-comparative-orderings', roles = ['exposition'] },
+  { source = 'appendices/02a-pre-christian-continuities', roles = ['exposition'] },
+  { source = 'appendices/03-article-census', roles = ['exposition'] },
+  { source = 'appendices/04-parallels-in-aquinas', roles = ['exposition'] },
+  { source = 'appendices/05-dionysius-in-the-summa', roles = ['exposition'] },
+  { source = 'appendices/06-magisterial-chronology', roles = ['chronology-display'] },
+  { source = 'appendices/07-calendar', roles = ['exposition'] },
+  { source = 'appendices/08-scripture-index', roles = ['exposition'] },
+  { source = 'appendices/09-names', roles = ['exposition'] },
+  { source = 'appendices/10-demons-powers-and-limits', roles = ['exposition'] },
+  { source = 'appendices/11-the-first-sin', roles = ['exposition'] },
+  { source = 'appendices/12-terminology', roles = ['exposition'] },
+  { source = 'appendices/13-witness-register', roles = ['exposition'] },
+  { source = 'appendices/90-scope-corpus-qualifications', roles = ['scope-appendix'] },
+  { source = 'appendices/99-references', roles = ['references'] },
   '''
 \begingroup
 \setlength{\parskip}{0pt}

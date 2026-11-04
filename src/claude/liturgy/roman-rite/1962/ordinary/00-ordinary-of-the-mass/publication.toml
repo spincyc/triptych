@@ -1,100 +1,6 @@
-schema_version = 1
-id = "claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
-kind = "mass-ordinary"
-profile = "guidance/liturgy/ordinary-expositions.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "edition-manifest"
-source = "research/edition-manifest.md"
-
-[[structure]]
-role = "sequence-inventory"
-source = "research/sequence-inventory.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "exposition"
-source = "sections/00-map.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/10-ad-gradum.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/20-kyrie-gloria.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/30-verbum.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/40-offertorium.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/50-praefatio.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/60-canon.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/70-communio.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/80-conclusio.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/85-synthesis.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/90-scope.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/92-development.tex"
-
-[[structure]]
-role = "references"
-source = "sections/99-references.tex"
 
 [document]
 type = "liturgy-reference-v1"
@@ -117,7 +23,7 @@ body = [
   'sections/70-communio',
   'sections/80-conclusio',
   'sections/85-synthesis',
-  'sections/90-scope',
+  { source = 'sections/90-scope', roles = ['scope-appendix'] },
   'sections/92-development',
-  'sections/99-references',
+  { source = 'sections/99-references', roles = ['references'] },
 ]

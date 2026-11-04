@@ -26,18 +26,33 @@ library; another provider's authored substance cannot become a dependency.
 
 ## Manifest fields
 
+A manifest states only what is the leaf's own. Everything its path, its
+registered kind or its other records already state is derived by the loader
+(`scripts/_document_schema.py`) and is not written; a manifest that spells a
+derived value out must agree with it, or it is refused. Since 2026-11-04 the
+maintainer's rule is one canonical source for every fact: no record repeats
+another.
+
 | Field | Contract |
 | --- | --- |
-| `schema_version` | Version of this manifest contract; currently `1`. |
-| `id` | Provider-qualified leaf identity, for example `gpt/articles/faith/example`; it matches the owning directory. |
-| `kind`, `profile` | The registered genre and its owning profile. A title or similar-looking layout does not determine genre. |
-| `source_format`, `entrypoint` | Explicit canonical format and leaf-relative entrypoint. Existing `latex` and `structured` sources keep their complete import/data graphs; `markdown` is supported only when it is actually authoritative. |
-| `[[outputs]]` | Ordered output identities, roles, entrypoints and `derivation`. Exactly one `canonical` output uses the canonical entrypoint; declared companions use `synthesis` or `homily`. |
-| `[[structure]]` | Semantic role with exactly one leaf-relative `source` or repository-relative `data` path under `src/`. Optional `key`, `outputs`, and `depends_on` declare stable nodes, output membership and an acyclic dependency graph. |
-| `canonical_owner` | Another same-provider publication that owns a mechanical companion's content, when applicable. It does not transfer research ownership or manufacture another authored work. |
-| `[contracts]` | Existing component schema, presentation, format, authority, chronology, and appointed-text-completeness contracts. Values must agree with the owning `proper-components.toml`. |
-| `[document]` | Optional opt-in to a [document type](#document-types): the `type`, the leaf's metadata fields, per-edition region lists and option choices. Its edition entrypoints are then generated. |
+| `[document]` | The leaf's [document type](#document-types): the `type`, the leaf's metadata fields, per-edition region lists and option choices. Its edition entrypoints are generated, and its regions are the leaf's one ordered section list. |
+| `[[structure]]` | A record the loader cannot derive: a semantic role with exactly one leaf-relative `source` or repository-relative `data` path under `src/`, such as `research/source-bindings.toml` or a curriculum's shared data. Optional `key`, `outputs`, and `depends_on` declare stable nodes, output membership and an acyclic dependency graph. Sections are never listed here. |
 | `content_inputs`, `evidence_inputs`, `render_inputs` | Additional repository-relative dependencies when controlled discovery is insufficient. Evidence inputs name metadata, never binary witness payloads. |
+
+### Derived fields
+
+| Field | Derived from |
+| --- | --- |
+| `schema_version` | This contract: `1`. |
+| `id` | The owning directory, provider-qualified (`gpt/articles/faith/example`). |
+| `kind` | The registry pattern matching the path; a title or similar-looking layout does not determine genre. |
+| `profile` | The kind's registered owning profile. |
+| `source_format`, `entrypoint` | The kind: `structured` for a pictorial dictionary, otherwise `latex`; `main.tex`. Only an authoritative `markdown` source states its own. |
+| `[[outputs]]` | The canonical output, plus `synthesis` (and `homily` for component schema 2) when the leaf carries `proper-components.toml`; `derivation` is `projection` for an inherited companion and schema-1 synthesis. |
+| `[contracts]` | The component schema and contract versions of the leaf's `proper-components.toml`. |
+| `canonical_owner` | The inherited generation declaration of `generation-metadata.tex`: another same-provider publication that owns a mechanical companion's content. It does not transfer research ownership. |
+| `[[structure]]` records | The body at the entrypoint, `generation-metadata.tex` and `web-edition.toml` when present, and each required role of the kind (and of component schema 2) at its registered path when that record exists. A missing required record still fails as a missing role. |
+| Section roles | The leaf's `[document]` regions (below). |
 
 `derivation = "authored"` identifies authored output; `"projection"` identifies
 a mechanical selection or companion. Schema-1 proper synthesis is a projection;
@@ -49,7 +64,8 @@ Roles identify meaning and ownership; they need not become visible headings.
 One canonical fragment may fulfill several roles without copied text. A
 declared required role must point to its actual nonempty record or content,
 not an unrelated file renamed to pass a check. A role declaration does not
-prove that its content meets the profile.
+prove that its content meets the profile. A role never names a generated
+entrypoint: its text lives in the section files the regions place.
 
 ## Genre routing
 
@@ -89,7 +105,7 @@ carrying its version (`proper-study-v1`), holding a `type.toml` and one TeX
 template per edition, named `<edition>.template.tex` (a template named
 `main.tex` would itself be discovered as a publication). Types are found by directory: adding one edits no list.
 `tools/tpt document-types types` lists them with each edition's fields,
-regions, options and slots.
+regions, section roles, options and slots.
 
 **A leaf opts in** with a `[document]` table in its `publication.toml` naming
 the `type`. The table supplies only what is the leaf's own:
@@ -99,7 +115,17 @@ the `type`. The table supplies only what is the leaf's own:
   that declares that field; `[document.<edition>]` overrides it.
 - *regions*, per edition: the ordered list of the leaf's own section files
   (leaf-relative, without `.tex`), and any raw TeX between them that the leaf's
-  layout needs (`'\Needspace{12\baselineskip}'`), copied as written.
+  layout needs (`'\Needspace{12\baselineskip}'`), copied as written. The
+  regions are the leaf's **one section list**: no other record lists its
+  sections again. A section's semantic roles are stated where it is placed. A
+  type may give a region's plain path entries a default role
+  (`section_roles = { body = "argument" }`); an entry with other roles, or
+  several, is a table, `{ source = 'sections/90-scope', roles = ['scope-appendix'] }`.
+  A proper places each of its components by key, `{ component = 'opening' }`:
+  the component's path, kind, modes, dependencies and references are its
+  `proper-components.toml` record, and a region may not restate that path.
+  The schema loader derives each section's structure role from the regions;
+  the proper component checker reads each component from its manifest.
 - *options*: a choice among the type's fragments `<type>/<option>/<value>.tex`,
   such as a closing block; the type names the default.
 
@@ -134,7 +160,8 @@ Scriptural Date and Location page; its content contract is
   `record_type = "document-type"`, `id` equal to the directory name, a
   `description`, the admitted publication `kinds`, and per edition its output
   `role`, `template`, `entrypoint`, `fields`/`optional_fields`,
-  `regions`/`optional_regions` and `options` with defaults) and its templates.
+  `regions`/`optional_regions`, `options` with defaults and any
+  `section_roles`) and its templates.
   A changed skeleton that would move published pages is a new versioned
   directory, so leaves keep their bytes until they are migrated.
 - **To move a leaf onto a type,** record its editions first with

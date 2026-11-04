@@ -1,42 +1,3 @@
-schema_version = 1
-id = "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards"
-kind = "server-cards"
-profile = "guidance/liturgy/roman-1962-server-training.md"
-source_format = "latex"
-entrypoint = "main.tex"
-canonical_owner = "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"
-
-[[outputs]]
-id = "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "projection"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "guide-map"
-source = "research/guide-map.md"
-
-[[structure]]
-role = "response-inventory"
-data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/response-inventory.md"
-
-[[structure]]
-role = "flash-card-manifest"
-data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/flash-card-manifest.md"
-
 [[structure]]
 role = "scope"
 data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/scope.md"
@@ -79,6 +40,5 @@ type = "server-cue-cards-v1"
 [document.main]
 pdftitle = 'Missa Cantata Cue Cards'
 pdfsubject = 'Six-up integrated response and action cards for young Missa Cantata servers'
-form = "missa-cantata"
 terminal-sheet = "with"
 front = ['\pagestyle{empty}']

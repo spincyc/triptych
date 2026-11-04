@@ -5,7 +5,7 @@ identified 1962 or postconciliar Roman Missal. It does not inherit a proper-guid
 template. Edition-specific works belong under that edition's `ordinary/` path;
 cross-edition studies belong under `liturgy/roman-rite/comparative/`.
 
-Declare the leaf's type, source roles, contract version, and ordered outputs in
+Declare the leaf's document type and its ordered, role-bearing sections in
 `publication.toml` under [document schemas](../document-schemas.md); preserve
 the edition-specific sequence inventory without imposing uniform dossiers. The
 entrypoint is generated from the `liturgy-reference-v1` [document

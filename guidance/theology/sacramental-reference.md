@@ -3,7 +3,7 @@
 This profile governs the canonical treatise at `src/<provider>/theology/sacraments/`,
 its mechanically derived at-a-glance companion, and their shared fragments.
 
-Declare each leaf's type, canonical imports, derivation, and ordered outputs in
+Declare each leaf's document type and its ordered sections in
 `publication.toml` under [document schemas](../document-schemas.md). One-page
 summaries and physical table fit remain [print-export gates](../../docs/printing.md).
 The treatise's `main.tex` is generated from the `theology-reference-v1`

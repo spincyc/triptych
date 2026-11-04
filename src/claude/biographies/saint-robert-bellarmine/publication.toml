@@ -1,116 +1,6 @@
-schema_version = 1
-id = "claude/biographies/saint-robert-bellarmine"
-kind = "biography"
-profile = "guidance/biographies.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "claude/biographies/saint-robert-bellarmine"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
-[[structure]]
-role = "chronology"
-source = "research/chronology.md"
-
-[[structure]]
-role = "tradition-audit"
-source = "research/tradition-audit.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/00-question.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/10-sources.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/20-montepulciano.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/30-louvain.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/40-controversies.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/50-legation-vulgate.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/60-cardinal.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/70-capua.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/80-pen-wars.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/90-galileo.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/100-last-years.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/110-cause.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/120-traditions.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/130-reception.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/140-conclusion.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/150-scope-chronology-evidence.tex"
-
-[[structure]]
-role = "references"
-source = "sections/160-references.tex"
 
 [document]
 type = 'biography-v1'
@@ -139,7 +29,7 @@ body = [
   'sections/140-conclusion',
 ]
 appendix = [
-  'sections/150-scope-chronology-evidence',
-  'sections/160-references',
+  { source = 'sections/150-scope-chronology-evidence', roles = ['scope-appendix'] },
+  { source = 'sections/160-references', roles = ['references'] },
   '\clearpage',
 ]

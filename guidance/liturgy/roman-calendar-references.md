@@ -10,7 +10,7 @@ week, and resumed-Sunday arithmetic is owned by
 `guidance/liturgy/calendar-computation.md`; a publication states and applies
 those rules but does not establish a divergent one.
 
-Declare the leaf's type, source roles, contract version, and ordered outputs in
+Declare the leaf's document type and its ordered, role-bearing sections in
 `publication.toml` under [document schemas](../document-schemas.md); the
 normative inventory and amendment cutoff remain independent of year-specific
 computation. A leaf on the `liturgy-reference-v1` [document

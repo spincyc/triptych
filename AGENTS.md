@@ -155,9 +155,10 @@ When legal rules, current discipline, translations, software, or other mutable f
 ## Repository and build discipline
 
 Preserve the provider hierarchy under `src/<provider>/`; the present providers
-are `gpt` and `claude`. Every publication leaf declares its kind, semantic
-roles, source entrypoints, and output editions in `publication.toml` under
-`guidance/document-schemas.md`. Existing TeX is authoritative plaintext;
+are `gpt` and `claude`. Every publication leaf owns a `publication.toml`
+under `guidance/document-schemas.md`: its document type and ordered section
+list, and the records nothing else derives; its kind, outputs and entrypoints
+follow from its path and records. Existing TeX is authoritative plaintext;
 preserve its content, imports, and canonical typed data without a lossy format
 conversion.
 

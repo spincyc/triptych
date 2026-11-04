@@ -27,3 +27,6 @@ optional_fields = { kicker = "", subkicker = "", subtitle = "", series = "", des
 regions = ["body"]
 optional_regions = ["preamble", "appendices"]
 options = { headings = "sections", contents = "small", widows = "strict", title-page = "kicker", notes = "none", closing = "scriptsize" }
+# The structure role of each plain section path in the body region; an
+# entry with other roles spells them: { source = PATH, roles = [...] }.
+section_roles = { body = "argument" }

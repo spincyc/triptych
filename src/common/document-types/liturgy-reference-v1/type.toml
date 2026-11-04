@@ -29,3 +29,6 @@ optional_fields = { pdfkeywords = "", series-line = "", title = "", subtitle = "
 regions = ["body"]
 optional_regions = ["apparatus", "end"]
 options = { headings = "titlesec", front = "title-page", title-style = "plain", notes = "none", appendix = "lettered", closing = "scriptsize" }
+# The structure role of each plain section path in the body region; an
+# entry with other roles spells them: { source = PATH, roles = [...] }.
+section_roles = { body = "exposition" }

@@ -1,104 +1,6 @@
-schema_version = 1
-id = "gpt/liturgy/roman-rite/1962/reference/assembling-the-mass"
-kind = "assembly-reference"
-profile = "guidance/liturgy/roman-1962-assembly.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "gpt/liturgy/roman-rite/1962/reference/assembling-the-mass"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "edition-manifest"
-source = "research/edition-manifest.md"
-
-[[structure]]
-role = "rubric-index"
-source = "research/rubric-index.md"
-
-[[structure]]
-role = "worked-cases"
-source = "research/worked-cases.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/00-scope.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/10-method.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/20-classes.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/30-precedence.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/40-occurrence.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/50-mass-kinds.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/60-assembly.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/70-devotional-votives.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/80-requiem-ritual.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/90-cases-calendar.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/91-cases-assembly.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/95-checklist.tex"
-
-[[structure]]
-role = "references"
-source = "sections/99-references.tex"
 
 [document]
 type = "liturgy-reference-v1"
@@ -106,14 +8,12 @@ type = "liturgy-reference-v1"
 [document.main]
 pdftitle = 'Assembling the Mass'
 pdfsubject = 'A practical source-audited guide to combining the Ordinary, propers, calendar, and rubrics of the 1962 Roman Missal'
-title-style = "plain"
-closing = "scriptsize"
 title = 'Assembling the Mass'
 subtitle = 'The Ordinary, Propers, Calendar, and Rubrics'
 title-detail = 'A practical guide to the 1962 Roman Missal'
 title-notice = 'Not an official liturgical book or a statement of present canonical authorization; see the terminal Scope, Editions, and Qualifications appendix.'
 body = [
-  'sections/00-scope',
+  { source = 'sections/00-scope', roles = ['scope-appendix'] },
   'sections/10-method',
   'sections/20-classes',
   'sections/30-precedence',
@@ -131,7 +31,7 @@ apparatus = [
   '\footnotesize',
   '\setlength{\parskip}{0.25em}',
   '\assemblyscopeappendix',
-  'sections/99-references',
+  { source = 'sections/99-references', roles = ['references'] },
   '\phantomsection',
   '\par\smallskip',
   '\vspace{0.15\baselineskip}',

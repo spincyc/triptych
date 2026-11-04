@@ -1,97 +1,3 @@
-schema_version = 1
-id = "gpt/biographies/saint-jerome"
-kind = "biography"
-profile = "guidance/biographies.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "gpt/biographies/saint-jerome"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
-[[structure]]
-role = "chronology"
-source = "research/chronology.md"
-
-[[structure]]
-role = "tradition-audit"
-source = "research/tradition-audit.md"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/00-opening.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/02-world-education-and-ascetic-turn.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/03-rome-and-bethlehem.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/04-making-latin-scripture.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/05-relationships-and-controversies.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/06-writings-asceticism-and-hagiography.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/07-final-years-death-and-memory.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/08-tradition-under-review.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/09-synthesis.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/01-method-and-orientation.tex"
-
-[[structure]]
-role = "chronology-display"
-source = "sections/10-detailed-chronology.tex"
-
-[[structure]]
-role = "references"
-source = "sections/11-references.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/01-method-and-orientation.tex"
-
 [document]
 type = 'biography-v1'
 
@@ -115,7 +21,7 @@ body = [
   'sections/09-synthesis',
 ]
 appendix = [
-  'sections/01-method-and-orientation',
-  'sections/10-detailed-chronology',
-  'sections/11-references',
+  { source = 'sections/01-method-and-orientation', roles = ['life-narrative', 'scope-appendix'] },
+  { source = 'sections/10-detailed-chronology', roles = ['chronology-display'] },
+  { source = 'sections/11-references', roles = ['references'] },
 ]

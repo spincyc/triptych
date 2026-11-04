@@ -1,120 +1,6 @@
-schema_version = 1
-id = "claude/history/traditional-priestly-institutes/02-fssp"
-kind = "history-account"
-profile = "guidance/history/historical-accounts.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "claude/history/traditional-priestly-institutes/02-fssp"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
-[[structure]]
-role = "evidence-map"
-source = "research/evidence-map.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "historical-account"
-source = "sections/00-question.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/10-branch-point.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/20-hauterive.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/30-faculties.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/40-erection.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/50-institution.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/60-tenth-anniversary.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/70-1999.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/80-2000.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/90-constitutions.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/100-summorum.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/110-traditionis.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/120-decree-2022.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/130-visitation.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/140-synthesis.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/150-status.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/160-conclusion.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/170-scope-method.tex"
-
-[[structure]]
-role = "references"
-source = "sections/180-references.tex"
 
 [document]
 type = "historical-account-v1"
@@ -149,6 +35,6 @@ body = [
   'sections/160-conclusion',
 ]
 appendices = [
-  'sections/170-scope-method',
-  'sections/180-references',
+  { source = 'sections/170-scope-method', roles = ['scope-appendix'] },
+  { source = 'sections/180-references', roles = ['references'] },
 ]

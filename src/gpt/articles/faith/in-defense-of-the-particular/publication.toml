@@ -1,73 +1,3 @@
-schema_version = 1
-id = "gpt/articles/faith/in-defense-of-the-particular"
-kind = "article-faith"
-profile = "guidance/articles.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "gpt/articles/faith/in-defense-of-the-particular"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
-[[structure]]
-role = "argument"
-source = "sections/00-under-pontius-pilate.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/10-universal-cause.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/20-chosen-for-all.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/30-whole-in-the-part.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/40-water-bread-person.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/50-who-do-you-say.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/80-notes.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/90-scope-method-qualifications.tex"
-
-[[structure]]
-role = "references"
-source = "sections/99-references.tex"
-
 [document]
 type = "article-v1"
 pdftitle = 'In Defense of the Particular'
@@ -89,6 +19,6 @@ body = [
   '\clearpage',
 ]
 appendices = [
-  'sections/90-scope-method-qualifications',
-  'sections/99-references',
+  { source = 'sections/90-scope-method-qualifications', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
 ]

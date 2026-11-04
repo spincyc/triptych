@@ -18,8 +18,8 @@ rights, metadata, review, and publication rules remain in
 `guidance/editorial.md`; repository paths and build rules remain in
 `guidance/repository.md`.
 
-Declare each packet or companion's type, canonical selections, source roles,
-and contract version in `publication.toml` under
+Declare each packet or companion's document type and canonical selections in
+`publication.toml` under
 [document schemas](../document-schemas.md). Existing teaching, exercise, answer,
 and vocabulary owners remain canonical. Page hierarchy, writable space, duplex
 usability, and other physical provisions below govern

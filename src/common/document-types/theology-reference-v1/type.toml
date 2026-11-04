@@ -42,3 +42,6 @@ optional_fields = { kind-line = "", note = "", description = "", overline = "", 
 regions = ["body", "appendix"]
 optional_regions = ["preamble"]
 options = { headings = "titlesec", penalties = "strict", titlepage = "qualified", closing = "footnotesize" }
+# The structure role of each plain section path in the body region; an
+# entry with other roles spells them: { source = PATH, roles = [...] }.
+section_roles = { body = "exposition" }

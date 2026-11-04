@@ -1,84 +1,6 @@
-schema_version = 1
-id = "claude/articles/faith/against-the-instrumentalists"
-kind = "article-faith"
-profile = "guidance/articles.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "claude/articles/faith/against-the-instrumentalists"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "argument"
-source = "sections/00-the-case-for-the-instruments.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/05-a-genealogy-of-the-criterion.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/10-the-criterion-meets-itself.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/20-what-the-laboratory-already-knows.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/30-from-effects-to-their-ground.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/40-what-the-church-stakes-on-reason.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/45-the-scientistic-residue.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/50-the-sciences-given-back.tex"
-
-[[structure]]
-role = "synopsis"
-source = "sections/85-positions-synopsis.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/90-scope-method-qualifications.tex"
-
-[[structure]]
-role = "references"
-source = "sections/99-references.tex"
 
 [document]
 type = "article-v1"
@@ -104,7 +26,7 @@ body = [
 ]
 appendices = [
   '\clearpage',
-  'sections/85-positions-synopsis',
-  'sections/90-scope-method-qualifications',
-  'sections/99-references',
+  { source = 'sections/85-positions-synopsis', roles = ['synopsis'] },
+  { source = 'sections/90-scope-method-qualifications', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
 ]

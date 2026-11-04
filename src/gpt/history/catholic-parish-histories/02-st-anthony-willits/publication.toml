@@ -1,113 +1,3 @@
-schema_version = 1
-id = "gpt/history/catholic-parish-histories/02-st-anthony-willits"
-kind = "history-parish"
-profile = "guidance/history/historical-accounts.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "gpt/history/catholic-parish-histories/02-st-anthony-willits"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
-[[structure]]
-role = "evidence-map"
-source = "research/evidence-map.md"
-
-[[structure]]
-role = "pastor-succession"
-source = "sections/*historical-pastors*.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/00-governing-thesis.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/10-land-town-and-catholic-geography.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/20-ukiah-mission.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/30-church-before-parish.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/40-resident-turn-1923.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/50-capuchin-network.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/60-reservation-stations.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/70-midcentury-parish.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/80-diocese-of-santa-rosa.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/90-capuchin-handoff-and-covelo.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/100-bilingual-community.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/110-parish-at-cutoff.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/120-conclusion.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/130-scope-method-coordinates.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/140-status-building-ledger.tex"
-
-[[structure]]
-role = "timeline"
-source = "sections/150-timeline.tex"
-
-[[structure]]
-role = "references"
-source = "sections/160-references.tex"
-
 [document]
 type = "historical-account-v1"
 pdftitle = 'Saint Anthony in Willits: Mission, Parish, and a Catholic Geography of Northern Mendocino County'
@@ -134,9 +24,9 @@ body = [
   'sections/120-conclusion',
 ]
 appendices = [
-  'sections/130-scope-method-coordinates',
-  'sections/140-status-building-ledger',
+  { source = 'sections/130-scope-method-coordinates', roles = ['scope-appendix'] },
+  { source = 'sections/140-status-building-ledger', roles = ['historical-account'] },
   'sections/145-historical-pastors',
-  'sections/150-timeline',
-  'sections/160-references',
+  { source = 'sections/150-timeline', roles = ['timeline'] },
+  { source = 'sections/160-references', roles = ['references'] },
 ]

@@ -1,112 +1,6 @@
-schema_version = 1
-id = "claude/biographies/tertullian"
-kind = "biography"
-profile = "guidance/biographies.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "claude/biographies/tertullian"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
-[[structure]]
-role = "chronology"
-source = "research/chronology.md"
-
-[[structure]]
-role = "tradition-audit"
-source = "research/tradition-audit.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/00-question.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/10-carthage.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/20-life-evidence.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/25-corpus.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/30-apologist.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/40-church-practice.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/50-boundary.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/60-theology.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/65-latin-father.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/70-new-prophecy.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/80-schism.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/90-end.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/100-reception.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/110-conclusion.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/120-scope-chronology-evidence.tex"
-
-[[structure]]
-role = "references"
-source = "sections/130-references.tex"
 
 [document]
 type = 'biography-v1'
@@ -134,7 +28,7 @@ body = [
   'sections/110-conclusion',
 ]
 appendix = [
-  'sections/120-scope-chronology-evidence',
-  'sections/130-references',
+  { source = 'sections/120-scope-chronology-evidence', roles = ['scope-appendix'] },
+  { source = 'sections/130-references', roles = ['references'] },
   '\clearpage',
 ]

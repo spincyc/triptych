@@ -1,84 +1,6 @@
-schema_version = 1
-id = "gpt/theology/mariology/doctrinal-authority"
-kind = "marian-authority"
-profile = "guidance/theology/mariology.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "gpt/theology/mariology/doctrinal-authority"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "exposition"
-source = "sections/10-kinds-of-claim.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/20-authority-map.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/30-four-dogmas.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/40-patristic-substance.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/50-authoritative-doctrine.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/60-typology-liturgy-titles.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/70-devotion-private-revelation.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/80-objections.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/90-practical-test.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/95-scope-status-qualifications.tex"
-
-[[structure]]
-role = "references"
-source = "sections/99-references.tex"
 
 [document]
 type = 'theology-reference-v1'
@@ -104,6 +26,6 @@ body = [
   'sections/90-practical-test',
 ]
 appendix = [
-  'sections/95-scope-status-qualifications',
-  'sections/99-references',
+  { source = 'sections/95-scope-status-qualifications', roles = ['scope-appendix'] },
+  { source = 'sections/99-references', roles = ['references'] },
 ]

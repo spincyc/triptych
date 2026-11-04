@@ -1,116 +1,6 @@
-schema_version = 1
-id = "gpt/articles/canon-law/natural-positive-divine-human-law"
-kind = "article-canon-law"
-profile = "guidance/articles.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "gpt/articles/canon-law/natural-positive-divine-human-law"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "argument"
-source = "sections/00-question-thesis.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/10-map-and-vocabulary.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/20-why-law.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/30-greek-sources.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/40-roman-sources.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/50-scripture-and-fathers.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/60-medieval-synthesis.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/70-church-and-civil-order.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/80-modern-doctrinal-synthesis.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/90-current-sources-of-canon-law.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/100-current-authorities-and-forums.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/110-civil-law-holy-see-vatican.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/115-concurrent-obligations.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/120-applied-dossiers.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/150-conclusion.tex"
-
-[[structure]]
-role = "timeline"
-source = "sections/75-historical-synoptic-timeline.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/15-fields-and-methods.tex"
-
-[[structure]]
-role = "references"
-source = "sections/160-references.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/00-question-thesis.tex"
 
 [document]
 type = "article-v1"
@@ -126,7 +16,7 @@ closing = "footnotesize"
 
 [document.main]
 body = [
-  'sections/00-question-thesis',
+  { source = 'sections/00-question-thesis', roles = ['argument', 'scope-appendix'] },
   'sections/10-map-and-vocabulary',
   'sections/20-why-law',
   'sections/30-greek-sources',
@@ -143,8 +33,8 @@ body = [
   'sections/150-conclusion',
 ]
 appendices = [
-  'sections/75-historical-synoptic-timeline',
-  'sections/15-fields-and-methods',
+  { source = 'sections/75-historical-synoptic-timeline', roles = ['timeline'] },
+  { source = 'sections/15-fields-and-methods', roles = ['argument'] },
   '\lawscopeappendix',
-  'sections/160-references',
+  { source = 'sections/160-references', roles = ['references'] },
 ]

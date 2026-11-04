@@ -26,3 +26,6 @@ optional_fields = { numeral = "", epigraph = "", epigraph-source = "", notes-par
 regions = ["body", "appendices"]
 optional_regions = ["preamble"]
 options = { front = "epigraph", notes = "endnotes", closing = "unindented" }
+# The structure role of each plain section path in the body region; an
+# entry with other roles spells them: { source = PATH, roles = [...] }.
+section_roles = { body = "argument" }

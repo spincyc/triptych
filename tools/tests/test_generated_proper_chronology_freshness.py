@@ -33,8 +33,17 @@ def generated_leaves(root: Path) -> list[Path]:
                    for path in (root / "src" / provider).rglob(name)
                    if path.parent.name == "research"
                    and (path.parent.parent / "publication.toml").is_file()
-                   and tomllib.loads((path.parent.parent / "publication.toml").read_text())
-                   .get("kind") in ("proper-1962", "proper-postconciliar")})
+                   and _kind(root, path.parent.parent) in ("proper-1962", "proper-postconciliar")})
+
+
+def _kind(root: Path, leaf: Path) -> str | None:
+    """The registered kind of a leaf, which its path determines."""
+    import _document_schema
+
+    try:
+        return _document_schema.classify(root, leaf)
+    except _document_schema.SchemaError:
+        return None
 
 
 class GeneratedProperChronologyFreshnessTests(unittest.TestCase):

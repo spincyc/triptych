@@ -6,7 +6,7 @@ to discerning or combating spiritual assault in a particular case, a catalogue
 of angel names, or a history of exorcism; the exorcism study under
 `history/catholic-exorcism/` owns rites, discipline, and pastoral practice.
 
-Declare the leaf's type, source roles, contract version, and ordered outputs in
+Declare the leaf's document type and its ordered, role-bearing sections in
 `publication.toml` under [document schemas](../document-schemas.md), preserving
 the question, order, terminology, and source-binding owners below.
 Its `main.tex` is generated from the `theology-reference-v1`

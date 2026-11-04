@@ -1,77 +1,3 @@
-schema_version = 1
-id = "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"
-kind = "proper-postconciliar"
-profile = "guidance/liturgy/postconciliar-propers.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[contracts]
-appointed_text_completeness = "rights-limited"
-authority_contract = "authority-standing-v1"
-chronology_presentation = "orientation-v3"
-component_schema = 2
-format_contract = "propers-format-v1"
-presentation_contract = "interpretive-pagination-v1"
-
-[[outputs]]
-id = "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[outputs]]
-id = "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis"
-role = "synthesis"
-entrypoint = "synthesis.tex"
-derivation = "authored"
-
-[[outputs]]
-id = "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily"
-role = "homily"
-entrypoint = "homily.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "instance-manifest"
-source = "instance/manifest.md"
-
-[[structure]]
-role = "appointed-source"
-source = "propers/verified.md"
-
-[[structure]]
-role = "proper-components"
-source = "proper-components.toml"
-
-[[structure]]
-role = "chronology-record"
-source = "research/chronology.toml"
-
-[[structure]]
-role = "chronology-projection"
-source = "research/chronology-annotations.tex"
-
-[[structure]]
-role = "interpretations"
-source = "research/interpretations.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
@@ -79,108 +5,6 @@ source = "research/source-bindings.toml"
 [[structure]]
 role = "review-dependencies"
 source = "research/review-dependencies.toml"
-
-[[structure]]
-role = "front-matter"
-source = "sections/00-opening.tex"
-outputs = ["canonical"]
-key = "component-opening"
-
-[[structure]]
-role = "front-matter"
-source = "sections/01-map.tex"
-outputs = ["canonical"]
-key = "component-study-map"
-
-[[structure]]
-role = "proper-treatment"
-source = "sections/10-treatment.tex"
-outputs = ["canonical"]
-key = "component-treatment"
-
-[[structure]]
-role = "appointed-text"
-source = "sections/20-texts.tex"
-outputs = ["canonical"]
-key = "component-texts"
-
-[[structure]]
-role = "interpretive-lane"
-source = "sections/30-charity.tex"
-outputs = ["canonical"]
-key = "component-charity"
-
-[[structure]]
-role = "interpretive-lane"
-source = "sections/40-abundance.tex"
-outputs = ["canonical"]
-key = "component-abundance"
-
-[[structure]]
-role = "interpretation-comparison"
-source = "sections/50-comparison.tex"
-outputs = ["canonical"]
-key = "component-comparison"
-
-[[structure]]
-role = "terminal-apparatus"
-source = "generated/scriptural-date-location.tex"
-outputs = ["canonical"]
-key = "component-history"
-
-[[structure]]
-role = "terminal-apparatus"
-source = "sections/70-apparatus.tex"
-outputs = ["canonical"]
-key = "component-apparatus"
-
-[[structure]]
-role = "appointed-inventory"
-source = "sections/synthesis-01-inventory.tex"
-outputs = ["synthesis"]
-key = "component-concise-inventory"
-
-[[structure]]
-role = "four-senses"
-source = "sections/synthesis-02-overview.tex"
-outputs = ["synthesis"]
-key = "component-concise-overview"
-
-[[structure]]
-role = "chronology-display"
-source = "generated/scriptural-date-location-page.tex"
-outputs = ["synthesis"]
-key = "component-concise-chronology"
-
-[[structure]]
-role = "themes"
-source = "sections/synthesis-04-themes.tex"
-outputs = ["synthesis"]
-key = "component-concise-themes"
-
-[[structure]]
-role = "integrated-commentary"
-source = "sections/synthesis-05-commentary.tex"
-outputs = ["synthesis"]
-key = "component-concise-commentary"
-
-[[structure]]
-role = "terminal-apparatus"
-source = "sections/synthesis-90-apparatus.tex"
-outputs = ["synthesis"]
-key = "component-concise-apparatus"
-
-[[structure]]
-role = "homily"
-source = "sections/homily-10-spoken.tex"
-outputs = ["homily"]
-key = "component-spoken"
-
-[[structure]]
-role = "terminal-apparatus"
-source = "sections/homily-90-notes.tex"
-outputs = ["homily"]
-key = "component-homily-notes"
 
 [[structure]]
 role = "chronology-inputs"
@@ -206,16 +30,16 @@ occasion-line = '11 October 2026'
 front = 'none'
 closing = 'raggedright'
 body = [
-  'sections/00-opening',
-  'sections/01-map',
-  'sections/10-treatment',
-  'sections/20-texts',
-  'sections/30-charity',
-  'sections/40-abundance',
-  'sections/50-comparison',
+  { component = "opening" },
+  { component = "study-map" },
+  { component = "treatment" },
+  { component = "texts" },
+  { component = "charity" },
+  { component = "abundance" },
+  { component = "comparison" },
 ]
 apparatus = [
-  'sections/70-apparatus',
+  { component = "apparatus" },
 ]
 
 [document.synthesis]
@@ -225,13 +49,13 @@ subtitle = 'The feast and the life it gives'
 occasion-line = '11 October 2026 · Concise study'
 closing = 'raggedright'
 opening = [
-  'sections/synthesis-01-inventory',
-  'sections/synthesis-02-overview',
+  { component = "concise-inventory" },
+  { component = "concise-overview" },
 ]
 body = [
-  'sections/synthesis-04-themes',
-  'sections/synthesis-05-commentary',
-  'sections/synthesis-90-apparatus',
+  { component = "concise-themes" },
+  { component = "concise-commentary" },
+  { component = "concise-apparatus" },
 ]
 
 [document.homily]
@@ -241,8 +65,8 @@ subtitle = 'The table and the shared need'
 occasion-line = '11 October 2026 · Homily'
 closing = 'raggedright'
 homily = [
-  'sections/homily-10-spoken',
+  { component = "spoken" },
 ]
 apparatus = [
-  'sections/homily-90-notes',
+  { component = "homily-notes" },
 ]

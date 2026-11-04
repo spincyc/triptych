@@ -6,8 +6,8 @@ ninefold pious exercise, not automatically liturgy, an approved public text, a
 sacrament or sacramental, private revelation, or a mechanism that compels an
 outcome.
 
-Declare the guide or companion type, canonical prayer sources, derivation, and
-ordered outputs in `publication.toml` under
+Declare the guide or companion's document type and its ordered sections in
+`publication.toml` under
 [document schemas](../document-schemas.md). Received prayer remains exact;
 manifest validation does not establish collation or approval.
 

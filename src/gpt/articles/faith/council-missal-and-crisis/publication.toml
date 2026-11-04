@@ -1,108 +1,6 @@
-schema_version = 1
-id = "gpt/articles/faith/council-missal-and-crisis"
-kind = "article-faith"
-profile = "guidance/articles.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "gpt/articles/faith/council-missal-and-crisis"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "argument"
-source = "sections/00-question-thesis.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/10-road-to-vatican-i.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/20-vatican-i.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/30-infallibility-formula.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/40-between-councils.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/50-vatican-ii.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/60-conciliar-authority.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/70-postconciliar-event.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/80-missal-development.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/90-missal-assessment.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/100-institutional-contraction.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/110-lay-belief.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/120-causal-judgment.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/130-sspx-and-traditional-communities.tex"
-
-[[structure]]
-role = "argument"
-source = "sections/140-conclusion.tex"
-
-[[structure]]
-role = "timeline"
-source = "sections/150-timeline.tex"
-
-[[structure]]
-role = "references"
-source = "sections/160-references.tex"
 
 [document]
 type = "article-v1"
@@ -136,7 +34,7 @@ body = [
   'sections/140-conclusion',
 ]
 appendices = [
-  'sections/150-timeline',
+  { source = 'sections/150-timeline', roles = ['timeline'] },
   '\crisisapparatusappendix',
-  'sections/160-references',
+  { source = 'sections/160-references', roles = ['references'] },
 ]

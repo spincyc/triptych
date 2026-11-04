@@ -12,8 +12,8 @@ Triptych is a source-first library of Catholic study documents. Apply these prio
 
 A genre profile may add stricter requirements but may not weaken this standard. Profiles are delta specifications: do not import another genre's template, repeat universal rules, or substitute layout conventions for source judgment. Define or revise a profile before multiplying a repeatable series for which none fits.
 
-`guidance/document-schemas.md` maps each genre to explicit source roles and
-declared editions in `publication.toml`. Those checks establish structure,
+`guidance/document-schemas.md` maps each genre to its source roles and
+editions, declared in or derived from `publication.toml`. Those checks establish structure,
 not theological fidelity, evidence sufficiency, or visual approval. Source and
 evidence review identifies the exact canonical inputs. A print-template review
 and an inspection receipt identify separate facts about a particular rendering.

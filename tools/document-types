@@ -122,6 +122,7 @@ def _type_payload(found: types.DocumentType) -> dict[str, object]:
             "entrypoint": edition.entrypoint,
             "fields": list(edition.fields),
             "regions": dict(sorted(edition.regions.items())),
+            "section_roles": dict(sorted(edition.section_roles.items())),
             "options": {name: list(found.option_values(name)) for name in sorted(edition.options)},
             "slots": slots,
         })

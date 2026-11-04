@@ -1,108 +1,6 @@
-schema_version = 1
-id = "gpt/history/biblical-translations/02-vulgate"
-kind = "history-translation"
-profile = "guidance/history/historical-accounts.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "gpt/history/biblical-translations/02-vulgate"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
-[[structure]]
-role = "evidence-map"
-source = "research/evidence-map.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "historical-account"
-source = "sections/00-object-method.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/10-old-latin-world.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/20-damasus-gospels.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/30-jerome-projects.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/40-hebrew-truth-dispute.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/50-composite-bible.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/60-medieval-transmission.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/70-print-trent-roman.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/80-critical-editions.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/90-nova-vulgata.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/100-language-culture.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/110-claim-audit.tex"
-
-[[structure]]
-role = "historical-account"
-source = "sections/120-conclusion.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/125-scope-terms-evidence.tex"
-
-[[structure]]
-role = "timeline"
-source = "sections/130-timeline.tex"
-
-[[structure]]
-role = "references"
-source = "sections/140-references.tex"
 
 [document]
 type = "historical-account-v1"
@@ -131,7 +29,7 @@ body = [
   'sections/120-conclusion',
 ]
 appendices = [
-  'sections/125-scope-terms-evidence',
-  'sections/130-timeline',
-  'sections/140-references',
+  { source = 'sections/125-scope-terms-evidence', roles = ['scope-appendix'] },
+  { source = 'sections/130-timeline', roles = ['timeline'] },
+  { source = 'sections/140-references', roles = ['references'] },
 ]

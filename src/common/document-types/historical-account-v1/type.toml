@@ -29,3 +29,6 @@ optional_fields = { title = "", subtitle = "", description = "", series = "", no
 regions = ["body"]
 optional_regions = ["preamble", "front", "appendices"]
 options = { title-page = "stacked", notes = "none", closing = "metadata" }
+# The structure role of each plain section path in the body region; an
+# entry with other roles spells them: { source = PATH, roles = [...] }.
+section_roles = { body = "historical-account" }

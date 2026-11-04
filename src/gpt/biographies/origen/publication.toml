@@ -1,104 +1,6 @@
-schema_version = 1
-id = "gpt/biographies/origen"
-kind = "biography"
-profile = "guidance/biographies.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "gpt/biographies/origen"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
-[[structure]]
-role = "chronology"
-source = "research/chronology.md"
-
-[[structure]]
-role = "tradition-audit"
-source = "research/tradition-audit.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/00-opening.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/10-alexandria-and-martyr-household.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/20-teaching-asceticism-and-school.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/30-travel-ordination-and-rupture.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/40-caesarea-workshop-and-churches.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/50-confession-death-and-absence.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/60-books-and-their-survival.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/70-scripture-theology-and-open-questions.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/80-relationships-debate-and-cost.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/90-origen-after-origen.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/100-tradition-under-review.tex"
-
-[[structure]]
-role = "life-narrative"
-source = "sections/110-synthesis.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/120-scope-chronology-evidence.tex"
-
-[[structure]]
-role = "references"
-source = "sections/130-references.tex"
 
 [document]
 type = 'biography-v1'
@@ -126,6 +28,6 @@ body = [
   'sections/110-synthesis',
 ]
 appendix = [
-  'sections/120-scope-chronology-evidence',
-  'sections/130-references',
+  { source = 'sections/120-scope-chronology-evidence', roles = ['scope-appendix'] },
+  { source = 'sections/130-references', roles = ['references'] },
 ]

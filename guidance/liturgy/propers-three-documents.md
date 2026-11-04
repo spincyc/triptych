@@ -23,9 +23,9 @@ in force for schema-1 publications, which the legacy `proper` and
 run (`workflows/OPERATOR.md`), so new and revised guides use `proper-study`. A new contract does not silently invalidate previously reviewed
 documents or reopen the collection's production boundary.
 
-Each canonical leaf declares its type, source roles, ordered output entrypoints,
-and actual contract versions in `publication.toml` under
-[document schemas](../document-schemas.md). Existing TeX and typed records remain
+Each canonical leaf declares its document type and places its components in
+`publication.toml` under [document schemas](../document-schemas.md); its three
+outputs and contract versions are derived from its `proper-components.toml`. Existing TeX and typed records remain
 the lossless canonical sources; the publication manifest references
 `proper-components.toml` rather than replacing its semantics. Source migration
 does not promote schema-1 or pre-component leaves to schema 2, restamp research,

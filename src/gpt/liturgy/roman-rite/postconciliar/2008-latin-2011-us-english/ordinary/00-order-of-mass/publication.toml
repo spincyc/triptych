@@ -1,108 +1,6 @@
-schema_version = 1
-id = "gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
-kind = "mass-ordinary"
-profile = "guidance/liturgy/ordinary-expositions.md"
-source_format = "latex"
-entrypoint = "main.tex"
-
-[[outputs]]
-id = "gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
-role = "canonical"
-entrypoint = "main.tex"
-derivation = "authored"
-
-[[structure]]
-role = "body"
-source = "main.tex"
-outputs = ["canonical"]
-
-[[structure]]
-role = "generation"
-source = "generation-metadata.tex"
-
-[[structure]]
-role = "web-declaration"
-source = "web-edition.toml"
-
-[[structure]]
-role = "scope"
-source = "research/scope.md"
-
-[[structure]]
-role = "edition-manifest"
-source = "research/edition-manifest.md"
-
-[[structure]]
-role = "sequence-inventory"
-source = "research/sequence-inventory.md"
-
-[[structure]]
-role = "source-audit"
-source = "research/source-audit.md"
-
 [[structure]]
 role = "source-bindings"
 source = "research/source-bindings.toml"
-
-[[structure]]
-role = "exposition"
-source = "sections/00-object-method.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/05-structural-map.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/20-introductory-rites.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/30-liturgy-of-the-word.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/40-preparation-of-the-gifts.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/50-eucharistic-prayer-common.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/51-principal-eucharistic-prayers.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/52-special-eucharistic-prayers.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/60-communion-rite.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/70-concluding-rites.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/80-whole-action.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/10-history.tex"
-
-[[structure]]
-role = "exposition"
-source = "sections/90-sources.tex"
-
-[[structure]]
-role = "scope-appendix"
-source = "sections/00-object-method.tex"
-
-[[structure]]
-role = "references"
-source = "sections/90-sources.tex"
 
 [document]
 type = "liturgy-reference-v1"
@@ -110,14 +8,13 @@ type = "liturgy-reference-v1"
 [document.main]
 pdftitle = 'The Order of Mass: A Mystagogy of the Postconciliar Roman Rite'
 pdfsubject = 'A movement-by-movement, source-critical exposition of the postconciliar Roman Order of Mass in the 2008 Latin third typical edition and its current United States English implementation'
-title-style = "plain"
 closing = "footnotesize-rights"
 title = 'The Order of Mass'
 subtitle = 'A Mystagogy of the Postconciliar Roman Rite'
 title-detail = 'The gathering, Word, thanksgiving, sacrifice, Communion, and mission interpreted movement by movement'
 title-notice = 'A Triptych study instrument. See the appendices for the exact edition, date cutoff, method, provenance, and use qualifications.'
 body = [
-  'sections/00-object-method',
+  { source = 'sections/00-object-method', roles = ['exposition', 'scope-appendix'] },
   'sections/05-structural-map',
   'sections/20-introductory-rites',
   'sections/30-liturgy-of-the-word',
@@ -131,6 +28,6 @@ body = [
 ]
 apparatus = [
   '\postordinaryapparatusappendix',
-  'sections/10-history',
-  'sections/90-sources',
+  { source = 'sections/10-history', roles = ['exposition'] },
+  { source = 'sections/90-sources', roles = ['exposition', 'references'] },
 ]

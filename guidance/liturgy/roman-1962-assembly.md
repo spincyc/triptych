@@ -7,7 +7,7 @@ rubricarum* as incorporated into the Missal, the general rubrics, *Ritus
 servandus*, and the edition's formularies. Present authorization to use the book
 is a separate, mutable question unless deliberately researched and dated.
 
-Declare the leaf's type, source roles, contract version, and ordered outputs in
+Declare the leaf's document type and its ordered, role-bearing sections in
 `publication.toml` under [document schemas](../document-schemas.md), retaining
 the five decisions and their checked rubric and case records. The entrypoint is
 generated from the `liturgy-reference-v1` [document

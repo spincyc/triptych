@@ -49,8 +49,20 @@ Template language (line oriented; everything else is copied verbatim):
                         ``\\input{@{document}/generation-metadata}%``)
 
 A region entry that looks like a leaf-relative path (no backslash, braces or
-whitespace) becomes ``\\input{<document>/<entry>}``; any other entry is raw TeX
+whitespace) becomes ``\\input{<document>/<entry>}``; any other string is raw TeX
 copied as written, which is how a leaf keeps its own spacing between sections.
+Two table entries name a section with more to say about it:
+
+``{ source = PATH, roles = [ROLE, ...] }``  a section with the semantic roles
+                        it fulfils (``publication.toml`` structure roles)
+``{ component = KEY }`` a proper's component, whose path, kind, modes and
+                        dependencies its ``proper-components.toml`` owns
+
+The regions are the leaf's one ordered section list. A type may name a
+default role for a region's plain path entries (``section_roles``); the schema
+loader derives every section's structure role from the regions, and the
+proper component checker reads each component's path from its manifest, so no
+other record lists the sections again (guidance/document-schemas.md).
 """
 
 from __future__ import annotations
@@ -99,6 +111,8 @@ class Edition:
     fields: dict[str, str | None]  # name -> default; None is required
     regions: dict[str, bool]  # name -> required
     options: dict[str, str | None]  # name -> default value; None is required
+    # region -> the structure role of its plain path entries
+    section_roles: dict[str, str] = field(default_factory=dict)
 
     def names(self) -> set[str]:
         return set(self.fields) | set(self.regions) | set(self.options)
@@ -166,7 +180,7 @@ def load_type(path: Path) -> DocumentType:
         if not NAME.match(name) or not isinstance(raw, dict):
             raise DocumentTypeError(f"{at}: edition names are lower-case words naming a table")
         extra = set(raw) - {"role", "template", "entrypoint", "fields", "optional_fields",
-                            "regions", "optional_regions", "options"}
+                            "regions", "optional_regions", "options", "section_roles"}
         if extra:
             raise DocumentTypeError(f"{at}: unknown keys {sorted(extra)}")
         role = raw.get("role")
@@ -196,7 +210,13 @@ def load_type(path: Path) -> DocumentType:
             raise DocumentTypeError(f"{at}: field, region and option names must be distinct lower-case words")
         if set(declared) & set(BUILTIN_FIELDS):
             raise DocumentTypeError(f"{at}: {sorted(set(declared) & set(BUILTIN_FIELDS))} is a built-in reference")
-        editions[name] = Edition(name, role, template, entrypoint, fields, regions, options)
+        section_roles = _string_map(raw.get("section_roles", {}), f"{at} section_roles")
+        for region, section_role in section_roles.items():
+            if region not in regions or not NAME.match(section_role):
+                raise DocumentTypeError(
+                    f"{at}: section_roles maps a declared region to a lower-case role, not {region!r}")
+        editions[name] = Edition(name, role, template, entrypoint, fields, regions, options,
+                                 section_roles)
     found = DocumentType(identifier, path, description.strip(), kinds, editions)
     for edition in editions.values():
         for option, default in edition.options.items():
@@ -297,6 +317,8 @@ class Declaration:
     shared: dict[str, str]
     editions: dict[str, dict]
     outputs: dict[str, str] = field(default_factory=dict)  # role -> entrypoint
+    # key -> leaf-relative path of each component in proper-components.toml
+    components: dict[str, str] = field(default_factory=dict)
 
     def context(self, root: Path) -> LeafContext:
         return LeafContext(root, self.provider, self.document, self.leaf, self.kind,
@@ -328,7 +350,14 @@ def declaration(root: Path, leaf: Path, types: dict[str, DocumentType] | None = 
     if identifier not in types:
         raise DocumentTypeError(f"{where}: type {identifier!r} is not a directory under {TYPES_DIR}")
     found_type = types[identifier]
-    kind = data.get("kind", "")
+    # kind and outputs are derived from the leaf's path and records; the schema
+    # loader owns that derivation (and refuses an explicit contradiction).
+    import _document_schema  # noqa: PLC0415
+
+    try:
+        kind, declared_outputs = _document_schema.derived_kind_and_outputs(root, leaf, data)
+    except _document_schema.SchemaError as exc:
+        raise DocumentTypeError(f"{where}: {exc}") from exc
     if kind not in found_type.kinds:
         raise DocumentTypeError(f"{where}: type {identifier!r} does not admit publication kind {kind!r}")
     shared: dict[str, str] = {}
@@ -352,7 +381,8 @@ def declaration(root: Path, leaf: Path, types: dict[str, DocumentType] | None = 
         if key not in usable:
             raise DocumentTypeError(f"{where}: shared {key!r} is no field or option of a declared edition")
     outputs = {item.get("role"): item.get("entrypoint")
-               for item in data.get("outputs", []) if isinstance(item, dict)}
+               for item in declared_outputs if isinstance(item, dict)}
+    components = _component_paths(leaf)
     for name in editions:
         edition = found_type.editions[name]
         if outputs.get(edition.role) != edition.entrypoint:
@@ -363,8 +393,10 @@ def declaration(root: Path, leaf: Path, types: dict[str, DocumentType] | None = 
             if key not in edition.names():
                 raise DocumentTypeError(f"{where}: {name}.{key} is not declared by {identifier!r}")
             if key in edition.regions:
-                if not isinstance(value, list) or not all(isinstance(item, str) for item in value):
-                    raise DocumentTypeError(f"{where}: region {name}.{key} must be a list of strings")
+                if not isinstance(value, list):
+                    raise DocumentTypeError(f"{where}: region {name}.{key} must be a list")
+                for item in value:
+                    _region_entry(item, components, f"{where}: region {name}.{key}")
             elif not isinstance(value, str):
                 raise DocumentTypeError(f"{where}: {name}.{key} must be a string")
     # A companion declared among the outputs but not written yet may gain its
@@ -377,7 +409,110 @@ def declaration(root: Path, leaf: Path, types: dict[str, DocumentType] | None = 
                 f"[{DECLARATION}.<edition>] table, so it would stay hand-written")
     provider, document = leaf_identity(root, leaf)
     return Declaration(provider, document, leaf, kind, found_type, shared, editions,
-                       {key: value for key, value in outputs.items() if isinstance(key, str)})
+                       {key: value for key, value in outputs.items() if isinstance(key, str)},
+                       components)
+
+
+COMPONENTS = "proper-components.toml"
+
+
+def _component_paths(leaf: Path) -> dict[str, str]:
+    """Each proper component's path, keyed as a region's ``component`` names it."""
+    path = leaf / COMPONENTS
+    if not path.is_file():
+        return {}
+    data = tomllib.loads(path.read_text(encoding="utf-8"))
+    return {item["key"]: item["path"] for item in data.get("components", [])
+            if isinstance(item, dict) and isinstance(item.get("key"), str)
+            and isinstance(item.get("path"), str)}
+
+
+def _region_entry(item, components: dict[str, str], where: str) -> None:
+    if isinstance(item, str):
+        path = item if item.endswith(".tex") else item + ".tex"
+        named = {value: key for key, value in components.items()}
+        if PATH_ENTRY.match(item) and path in named:
+            # The component's manifest owns its path; a region names it by key.
+            raise DocumentTypeError(f"{where}: place component {named[path]!r} as "
+                                    f"{{ component = {named[path]!r} }}, not by its path")
+        return
+    if not isinstance(item, dict):
+        raise DocumentTypeError(f"{where}: an entry is a string or a table")
+    if set(item) == {"component"}:
+        key = item["component"]
+        if key not in components:
+            raise DocumentTypeError(f"{where}: no component {key!r} in {COMPONENTS}")
+        if not components[key].endswith(".tex") or components[key].startswith(GENERATED_DIR + "/"):
+            raise DocumentTypeError(
+                f"{where}: component {key!r} is not an authored .tex section a region can place")
+        return
+    if set(item) - {"source", "roles"} or "source" not in item:
+        raise DocumentTypeError(
+            f"{where}: a table entry is {{ source = PATH, roles = [...] }} or {{ component = KEY }}")
+    source = item["source"]
+    roles = item.get("roles", [])
+    if not isinstance(source, str) or not PATH_ENTRY.match(source):
+        raise DocumentTypeError(f"{where}: source {source!r} must be a leaf-relative path")
+    _region_entry(source, components, where)
+    if (not isinstance(roles, list) or not all(isinstance(role, str) and NAME.match(role) for role in roles)
+            or len(roles) != len(set(roles))):
+        raise DocumentTypeError(f"{where}: roles of {source!r} must be distinct lower-case words")
+
+
+def _entry_path(decl: Declaration, item) -> str | None:
+    """The leaf-relative section path a region entry places, or None for raw TeX."""
+    if isinstance(item, dict):
+        if "component" in item:
+            return decl.components[item["component"]].removesuffix(".tex")
+        return item["source"].removesuffix(".tex")
+    return item.removesuffix(".tex") if PATH_ENTRY.match(item) else None
+
+
+@dataclass(frozen=True)
+class Section:
+    """One section a leaf's regions place, as the schema and gates read it."""
+
+    source: str  # leaf-relative, with .tex
+    roles: tuple[str, ...]
+    outputs: tuple[str, ...]  # output roles of the editions that place it
+    component: str | None = None
+
+
+def sections(decl: Declaration) -> list[Section]:
+    """The leaf's one section list: every region entry naming a file, in order.
+
+    A plain path entry takes its region's default role (``section_roles``), a
+    ``{ source, roles }`` entry its own roles, and a component entry none: its
+    meaning is its proper-components kind. A section placed by more than one
+    edition is listed once, with every edition's output role.
+    """
+    found: dict[str, Section] = {}
+    for name, local in decl.editions.items():
+        edition = decl.type.editions[name]
+        for region in edition.regions:
+            for item in local.get(region, []) if isinstance(local.get(region), list) else []:
+                path = _entry_path(decl, item)
+                if path is None:
+                    continue
+                if isinstance(item, dict) and "component" in item:
+                    roles: tuple[str, ...] = ()
+                    component = item["component"]
+                elif isinstance(item, dict):
+                    roles, component = tuple(item.get("roles", [])), None
+                else:
+                    default = edition.section_roles.get(region)
+                    roles, component = ((default,) if default else ()), None
+                source = path + ".tex"
+                held = found.get(source)
+                if held is None:
+                    found[source] = Section(source, roles, (edition.role,), component)
+                    continue
+                if held.roles != roles or held.component != component:
+                    raise DocumentTypeError(
+                        f"{decl.document}: {source} is placed with different roles in different regions")
+                if edition.role not in held.outputs:
+                    found[source] = replace(held, outputs=held.outputs + (edition.role,))
+    return list(found.values())
 
 
 def opted_in_leaves(root: Path = ROOT) -> list[Path]:
@@ -456,7 +591,8 @@ def _expand(decl: Declaration, edition: Edition, template: Path, projections: di
             if argument not in edition.regions:
                 raise DocumentTypeError(f"{template}: region {argument!r} is not declared by its edition")
             for entry in _resolved(decl, edition, argument, "region"):
-                lines.append(_input(decl, entry) if PATH_ENTRY.match(entry) else entry)
+                path = _entry_path(decl, entry)
+                lines.append(_input(decl, path) if path is not None else entry)
         elif verb == "slot":
             slots.append(argument)
             path = slot_path(argument, projections)
