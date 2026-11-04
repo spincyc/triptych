@@ -61,10 +61,11 @@ class Fixture(unittest.TestCase):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
 
-    def commit(self, message: str) -> int:
+    def commit(self, message: str, *, committed_later: int = 0) -> int:
         self.clock += 3600
         when = f"@{self.clock} +0000"
-        self.__dict__["GIT_COMMITTER_DATE"] = {"GIT_COMMITTER_DATE": when, "GIT_AUTHOR_DATE": when}
+        later = f"@{self.clock + committed_later} +0000"
+        self.__dict__["GIT_COMMITTER_DATE"] = {"GIT_COMMITTER_DATE": later, "GIT_AUTHOR_DATE": when}
         self.git("add", "-A")
         self.git("commit", "-q", "-m", message)
         return self.clock
@@ -87,6 +88,32 @@ class ClosureAndHistoryTests(Fixture):
         self.assertEqual(value.display, stamp(revised))
         self.assertNotIn("src/common/preamble.tex", value.closure)
         self.assertNotIn("src/claude/doc/generation-metadata.tex", value.closure)
+
+    def test_the_stamp_is_author_time_which_cherry_pick_and_rebase_keep(self) -> None:
+        self.write("src/claude/doc/sections/body.tex", "Body, revised.\n")
+        authored = self.commit("revise", committed_later=86_400)
+        self.assertEqual(self.derive().timestamp, stamp(authored))
+
+    def test_a_none_trailer_is_looked_past_and_an_untrailered_commit_is_not(self) -> None:
+        self.write("src/claude/doc/sections/body.tex", "Body, revised.\n")
+        revised = self.commit("revise the body")
+        self.write("src/claude/doc/sections/body.tex", "Body,\nrevised.\n")
+        self.commit("move the body's text unchanged\n\nEdition-Revision: none")
+        self.assertEqual(self.derive().timestamp, stamp(revised))
+        self.write("src/claude/doc/sections/body.tex", "Body, revised again.\n")
+        again = self.commit("revise the body again")
+        self.assertEqual(self.derive().timestamp, stamp(again))
+
+    def test_only_none_is_a_valid_trailer_value(self) -> None:
+        self.write("src/claude/doc/sections/body.tex", "Body, revised.\n")
+        self.commit("revise\n\nEdition-Revision: minor")
+        with self.assertRaisesRegex(revision.RevisionError, "only value"):
+            self.derive()
+
+    def test_an_edition_whose_every_commit_is_marked_none_has_no_stamp(self) -> None:
+        self.git("commit", "-q", "--amend", "-m", "create\n\nEdition-Revision: none")
+        with self.assertRaisesRegex(revision.RevisionError, "no commit in this history revised"):
+            self.derive()
 
     def test_each_edition_of_a_leaf_has_its_own_stamp(self) -> None:
         self.write("src/claude/doc/generated/date.tex", "Dates, regenerated.\n")

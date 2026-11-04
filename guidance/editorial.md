@@ -513,8 +513,8 @@ comparison and is shown none.
 ### Revision timestamp
 
 Each edition's "Last revised (UTC)" timestamp is derived from Git at build
-time and is never tracked or hand-written. It is the greatest committer time,
-in whole-second UTC, of the commits that changed a file in the edition's
+time and is never tracked or hand-written. It is the greatest author time, in
+whole-second UTC, of the commits that changed a file in the edition's
 source closure: the provider-tree files its entrypoint reaches through
 `\input`/`\include` (macro-built paths expanded), their literal artwork, and
 the publication's declared generator data. Shared `src/common/` typesetting,
@@ -527,10 +527,18 @@ states the closure exactly, and every surface — the PDF's line and `ModDate`,
 the native print bundle, the web reader, the document library, and the
 metadata gate — takes the value from it. Each edition of a leaf has its own
 stamp, so a homily that reads none of a changed chronology page keeps its
-date. Moving text between files changes those files and is a revision under
-this rule. Committer time moves when a commit is rebased or amended, so
-records keyed on rendered output (the browser-products descriptor) are
-refreshed after integration, not before.
+date. Author time, unlike committer time, survives cherry-pick and rebase, so
+integrating a commit does not move the editions it revised.
+
+A commit that changes closure files without revising any edition's text must
+carry the trailer `Edition-Revision: none` in its message; the derivation
+then looks past it to the next older commit. That covers mechanical
+refactors that move authored text byte for byte between files, and changes
+confined to generated skeletons or shared templates. A commit that changes
+any edition's wording, or regenerates a page a reader sees from changed data
+(a chronology page, for instance), must not carry it, and a commit that
+mixes the two is split. `none` is the trailer's only value; any other fails
+the derivation.
 
 Without usable history the value is never guessed. A shallow clone, or a tree
 that is not a Git work tree, fails the build with a request for full history;

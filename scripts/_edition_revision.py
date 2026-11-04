@@ -10,10 +10,15 @@ Nothing writes the stamp into a tracked file.
 The rule
 --------
 
-An edition's stamp is the greatest committer time, in UTC whole seconds, of the
+An edition's stamp is the greatest author time, in UTC whole seconds, of the
 commits reachable from ``HEAD`` that changed a file in the edition's *source
 closure*, as ``git log -- <closure>`` reports them under git's default history
-simplification.
+simplification, skipping every commit that carries the trailer
+``Edition-Revision: none``. Author time survives cherry-pick and rebase, which
+reset committer time. The trailer marks a commit that revised no edition's
+text -- a byte-for-byte move between files, or a change confined to generated
+skeletons or shared templates -- so the stamp looks past it to the next older
+commit; ``none`` is its only value, and any other fails the derivation.
 
 The source closure of an edition (one declared entrypoint: ``main.tex``,
 ``synthesis.tex`` or ``homily.tex``) is:
@@ -87,6 +92,8 @@ GENERATION_METADATA = "generation-metadata.tex"
 RENDER_DATA_ROLES = ("dictionary-schema", "dictionary-selections", "object-records", "artwork-manifest")
 RENDER_DATA_SUFFIXES = {".toml"}
 UNCOMMITTED = "uncommitted sources"
+TRAILER = "Edition-Revision"
+TRAILER_NONE = "none"
 STAMP_SUFFIX = ".revision.tex"
 TEXT_SUFFIXES = {".tex", ".sty", ".cls"}
 GRAPHIC_SUFFIXES = ("", ".pdf", ".png", ".jpg", ".jpeg", ".eps")
@@ -373,6 +380,29 @@ def closure(root: Path, provider: str, entry: Path) -> Closure:
                    frozenset(relative(path) for path in generated))
 
 
+def history_of(root: Path, paths, revision: str = "HEAD") -> list[tuple[int, str, bool]]:
+    """(author time, commit, carries ``Edition-Revision: none``) per commit touching paths.
+
+    Trailers are read by ``git log`` formatting, from commit objects alone, so
+    a blob-less partial clone answers as a full one does.
+    """
+    log = _git(root, "log", f"--format=%x1e%at %H%x1f%(trailers:key={TRAILER},valueonly,separator=%x1d)",
+               revision, "--", *paths)
+    result = []
+    for record in log.split("\x1e"):
+        if not record.strip():
+            continue
+        head, _, trailers = record.partition("\x1f")
+        seconds, commit = head.split()
+        values = [value.strip() for value in trailers.strip().split("\x1d") if value.strip()]
+        if any(value != TRAILER_NONE for value in values):
+            raise RevisionError(
+                f"commit {commit[:12]} carries {TRAILER}: {', '.join(values)}; "
+                f"{TRAILER_NONE!r} is the only value it may take")
+        result.append((int(seconds), commit, bool(values)))
+    return result
+
+
 def _now() -> dt.datetime:
     return dt.datetime.now(dt.timezone.utc)
 
@@ -393,11 +423,12 @@ def revision_of(root: Path, provider: str, document: str, entry: Path, *,
     history = [path for path in found.paths if path not in found.generated]
     if not history:
         raise RevisionError(f"{provider}/{document}: the edition reads no authored provider source")
-    log = _git(root, "log", "--format=%ct %H", "--", *history)
-    commits = [(int(seconds), commit) for seconds, commit in
-               (line.split() for line in log.splitlines() if line.strip())]
+    commits = [(seconds, commit) for seconds, commit, skipped in history_of(root, history)
+               if not skipped]
     if not commits:
-        raise RevisionError(f"{provider}/{document}: no commit in this history changed its sources")
+        raise RevisionError(
+            f"{provider}/{document}: no commit in this history revised its sources "
+            f"(every one that changed them carries {TRAILER}: {TRAILER_NONE})")
     chosen = max(commits)
     moment = dt.datetime.fromtimestamp(chosen[0], dt.timezone.utc)
     return Revision(provider, document, moment.strftime(TIMESTAMP_FORMAT), chosen[1], False, found.paths, root)

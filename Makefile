@@ -1287,10 +1287,10 @@ $(foreach document,$(PROPER_HOMILY_DOCUMENTS),\
 # preamble reads it as \jobname.revision.tex through the job's output
 # directory on TEXINPUTS. Its rule runs on every invocation but rewrites the
 # file only when the stamp changes, so a PDF is retypeset exactly when its
-# derived stamp moves: a commit, an edit that leaves the tree uncommitted, or a
-# rebase that rewrote the commit. It shares the job's prefix, so the declared-
-# input check below treats it as the job's own file, and it is precious so that
-# Make does not delete it as an intermediate and retypeset next time.
+# derived stamp moves: a commit, or an edit that leaves the tree uncommitted.
+# It shares the job's prefix, so the declared-input check below treats it as
+# the job's own file, and it is precious so that Make does not delete it as an
+# intermediate and retypeset next time.
 EDITION_REVISION_SUFFIX := .revision.tex
 EDITION_REVISION_TOOL := scripts/_edition_revision.py
 FORCE_EDITION_REVISION:
