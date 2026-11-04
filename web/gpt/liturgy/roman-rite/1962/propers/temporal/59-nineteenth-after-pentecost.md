@@ -429,53 +429,84 @@ The last request is therefore a fitting answer to the Gospel’s searching endin
 
 ## Scriptural Date and Location {#sec:date-location}
 
-The appointed biblical units appear below in canonical and verse order. The psalm composition dates are broad limits, not dates of each poem’s particular occasion. For Pss 137 and 140, whose Vulgate titles name David, his reign in Corbett’s “usual chronology” frames the traditional attribution; it does not date either poem’s writing. The orations and the Introit’s composed antiphon have no biblical composition-date entry.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Introit verse | Ps 77(78):1 | Israel; instruction addressed to the people | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Introit: Ps. 77:1 (Vg.; Heb. 78) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Ps. 104:1 (Vg.; Heb. 105) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: Ps. 118:4–5 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Offertory: Ps. 137:7 (Vg.; Heb. 138) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gradual: Ps. 140:2 (Vg.; Heb. 141) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gospel: Matt. 22:1–14 | Narrated event: The parable of the marriage feast, proposed in the Temple | A.D. 29 (derived) |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+|  | Composition, Catholic critical comparison: Greek Matthew; Antioch suggested | Post-A.D. 70 date |
+| Epistle: Eph. 4:23–28 | Composition: Ephesians; Rome or Caesarea; recipients in Asia Minor | Disputed: A.D. 58–63; A.D. 61 |
+|  | Composition, Catholic critical comparison: Ephesians (later-disciple hypothesis) | Disputed: c. A.D. 80–100 |
 
-The psalm teaches through Israel’s deliverances and failures and ends with David’s shepherding. Augustine hears God through the prophet; Bellarmine identifies David as immediate speaker. These interpret the voice; they date no occasion of composition. The USCCB introduction supplies the broad boundary and warns that individual psalms cannot be securely dated.
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Alleluia | Ps 104(105):1 | Israel’s covenant memory; proclamation among nations | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+### Evidence for each date {#sec:date-location-evidence}
 
-The psalm recalls covenant, Joseph, Exodus, and land. Those recalled events are distinct from the writing of the psalm and its later Christian reception. No single composition site or individual life stage is established.
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Communion | Ps 118(119):4–5 | Prayer within Israel’s life under God’s law | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+*Introit: Ps. 77:1 (Vg.; Heb. 78)*
 
-The speaker’s wish for directed ways belongs to the opening of an alphabetic meditation on divine instruction. Its recurring prayers, afflictions, promises, and confessions do not identify one recoverable biographical occasion. The displayed boundary does not date every constituent of the Psalter together.
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Offertory | Ps 137(138):7 | Thanksgiving and trust amid hostile surroundings | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-The psalm gives thanks for answered prayer and trusts God’s continuing work. Neither the named trouble nor the enemies establish an individually dated event. The Offertory’s verbal adaptation belongs to its liturgical use.
+*Alleluia: Ps. 104:1 (Vg.; Heb. 105)*
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Gradual | Ps 140(141):2 | Prayer imaged through incense and evening sacrifice | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+- **Historical setting**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
 
-The fuller prayer concerns speech, temptation, correction, and danger. Its sacrificial language supplies the image, not a securely located occasion of composition. Augustine’s Passion reading is distinct from the poem’s composition chronology.
+- **Composition**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Gospel | Matt 22:1–14 | Jesus teaching in the Temple, Jerusalem; traditional composition associated with Palestine | **Event**: The parable of the marriage feast, proposed in the Temple, A.D. 29 (derived). **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Composition (Catholic critical chronology, for comparison)**: The Greek Gospel of Matthew in the NABRE introduction, post-A.D. 70 date. |
+*Communion: Ps. 118:4–5 (Vg.; Heb. 119)*
 
-Traditional attribution names Matthew. Jacquier reports several composition proposals; Durand’s early proposal concerns a hypothesized Aramaic original and does not date the Greek rendering. The separately displayed critical comparison concerns the Greek Gospel: the USCCB introduction treats authorship and dependence on Mark as critical questions and suggests Antioch as a plausible location. The proposals concern distinguishable literary objects and arguments, not one agreed date.
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-*Narrated setting: Matthew 21:23 places the controversy in the Temple; 21:45 identifies the chief priests and Pharisees, and 22:1 continues the speech. Jerusalem is the event’s setting. Maas places the parable on the Tuesday after the entry into Jerusalem, in a journey he dates by the years of Rome; the displayed year is derived from that dating, not stated by him.*
+- **Historical setting**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Epistle | Eph 4:23–28 | Traditional Pauline captivity; Rome preferred to Caesarea in Ladeuze’s account; recipients associated with Ephesus in Asia Minor | **Composition** – disputed: A.D. 58–63; A.D. 61. **Composition (Catholic critical chronology, for comparison)** – disputed: Ephesians under the later-disciple hypothesis (approximate), c. A.D. 80–100. |
+- **Composition**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
 
-Ladeuze’s captivity range and Prat’s narrower Pauline chronology remain distinct alternatives. The USCCB Ephesians introduction, paragraphs 3–4, retains traditional Pauline captivity but reports doubts about direct authorship based on style, vocabulary, comparison with Colossians, and ecclesiology. It allows a secretary under Paul’s direction or a later disciple developing his thought. The separate comparison’s approximate interval belongs only to the later-disciple hypothesis; no composition city or separate secretarial date is supplied for those alternatives. The absence of personal greetings and omission of the Ephesian address in important early manuscripts support proposals for circulation among Asian churches or a Laodicean destination. These proposed recipients do not establish the writer’s location.
+*Offertory: Ps. 137:7 (Vg.; Heb. 138)*
 
-The Gospel’s Temple encounter remains distinct from Matthew’s composition and transmission. The chronology witnesses listed in the references supply the displayed dates and alternatives.
+- **Traditional attribution**. As under Communion: Ps. 118:4–5 (Vg.; Heb. 119).
+
+- **Historical setting**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
+
+- **Composition**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
+
+*Gradual: Ps. 140:2 (Vg.; Heb. 141)*
+
+- **Traditional attribution**. As under Communion: Ps. 118:4–5 (Vg.; Heb. 119).
+
+- **Historical setting**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
+
+- **Composition**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
+
+*Gospel: Matt. 22:1–14*
+
+- **Narrated event** (preferred). The parable of the marriage feast, proposed in the Temple: A.D. 29 (derived) (“derived A.D. 29 from February, A.U.C. 782- Passover, 782”; The Catholic Encyclopedia, Volume 8 (New York, 1910), article ’Jesus Christ,’ III.B.3, printed p. 378 and pp. 380-381: chronological calibration and Sixth, Seventh, and Ninth Journeys).
+
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
+
+- **Composition, Catholic critical comparison** (preferred). The Greek Gospel of Matthew in the NABRE introduction: Post-A.D. 70 date (Catholic critical chronology; New American Bible, Revised Edition: USCCB web state (2026), Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25). Place: Antioch suggested (New American Bible, Revised Edition: USCCB web state (2026), Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25).
+
+*Epistle: Eph. 4:23–28*
+
+- **Composition** (disputed). The Epistle to the Ephesians: A.D. 58–63 (“a period between 58 and 63”; The Catholic Encyclopedia, Volume 5 (New York, 1909)); A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)). Place: Rome or Caesarea; recipients in Asia Minor (The Catholic Encyclopedia, Volume 5 (New York, 1909)).
+
+- **Composition, Catholic critical comparison** (disputed). Ephesians under the later-disciple hypothesis (approximate): c. A.D. 80–100 (“around A.D. 80–100”; Catholic critical chronology; New American Bible, Revised Edition: USCCB web state (2026), The Letter to the Ephesians, complete introduction; especially prose paragraphs 3-4, physical HTML lines 626 and 628).
 
 ## Appendix: Scope and Qualifications
 
@@ -525,7 +556,7 @@ Scriptural chronology and location
 
 : Paulin Ladeuze, “Epistle to the Ephesians,” *Catholic Encyclopedia* 5 (1909), “Date and place of composition; occasion” and destination discussion; <https://www.newadvent.org/cathen/05485a.htm>. Ferdinand Prat, “St. Paul,” vol. 11 (1911), “Chronology,” concluding table; <https://www.newadvent.org/cathen/11567b.htm>. E. Jacquier, “Gospel of St. Matthew,” vol. 10 (1911), “Date and place of composition”; <https://www.newadvent.org/cathen/10057a.htm>. Alfred Durand, “The New Testament,” vol. 14 (1912), “Origin,” Aramaic original and Greek rendering; <https://www.newadvent.org/cathen/14530a.htm>. Anthony J. Maas, “Chronology of the Life of Jesus Christ,” vol. 8 (1910), the Ninth Journey and the Tuesday of its closing week, with the article’s equation of the Roman and Christian years; <https://www.newadvent.org/cathen/08377a.htm>. John Corbett, “King David,” vol. 4 (1908), opening paragraph, the “usual chronology” of his reign; <https://www.newadvent.org/cathen/04642b.htm>. USCCB, NABRE introductions to Psalms and Matthew, consulted 28 September 2026: <https://bible.usccb.org/bible/psalms/0> and <https://bible.usccb.org/bible/matthew/0>. USCCB, NABRE introduction to Ephesians, paragraphs 3–4, destination and authorship alternatives, consulted 28 September 2026: <https://bible.usccb.org/bible/ephesians/0>. The introductions supply bounded historical judgments, not liturgical English.
 
-**Last revised (UTC):** 2026-11-04T03:34:08Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

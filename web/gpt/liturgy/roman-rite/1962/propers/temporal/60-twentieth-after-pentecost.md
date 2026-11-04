@@ -465,61 +465,98 @@ The prayers gather the two movements. Pardon and peace prepare a petitioner for 
 
 ## Scriptural Date and Location {#sec:date-location}
 
-The passages appear in Catholic canonical and verse order, with Vulgate psalm numbering first. The dates distinguish attribution, historical setting, and composition. A received author’s reference era does not date a poem’s particular occasion. The Psalter-wide composition boundary comes from the USCCB introduction’s broader account; it is not an individual estimate for each appointed psalm.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Alleluia | Ps. 107:2 (108) | Davidic title; Israel’s praise and threatened dependence | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Alleluia: Ps. 107:2 (Vg.; Heb. 108) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ps. 118:1 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: Ps. 118:49–50 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Offertory: Ps. 136:1 (Vg.; Heb. 137) | Historical setting: The Babylonian captives’ lament | After Jerusalem’s destruction under Sedecias (derived) |
+|  | Historical setting: The seventy years of servitude to Babylon; Judah and Babylon | “seventy years” (duration) |
+|  | Composition: Psalms | Before c. 165 B.C. |
+|  | Historical background: Jerusalem’s destruction under Sedecias; setting after this event, possibly in the same year | Preferred: A.M. 3416 (Haydock reporting Ussher); alternatives: B.C. 586 (Reid and Meistermann), B.C. 587 (Schets), B.C. 588 (Petavius via Sloet; transcription only) |
+| Gradual: Ps. 144:15–16 (Vg.; Heb. 145) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Dan. 3:29,31,35 | Historical setting: The seventy years of servitude to Babylon; Judah and Babylon | “seventy years” (duration) |
+|  | Composition: Prayer of Azarias and Song of the Three Children | Most likely long after the Exile |
+| Gospel: John 4:46–53 | Narrated event: The healing of the ruler’s son at Cana | A.D. 26–27 (derived) |
+|  | Composition: John; Ephesus traditionally | Disputed: c. A.D. 90–100; A.D. 96–100 |
+| Epistle: Eph. 5:15–21 | Composition: Ephesians; Rome or Caesarea; recipients in Asia Minor | Disputed: A.D. 58–63; A.D. 61 |
+|  | Composition, Catholic critical comparison: Ephesians (later-disciple hypothesis) | Disputed: c. A.D. 80–100 |
 
-The inherited title names David. Corbett’s customary regnal chronology supplies the reference era, with its disputed status; neither it nor the psalm’s reuse of earlier material locates a composition site or biographical occasion. Augustine, Ps. 107.1–2, recognizes the reused psalm passages. The USCCB Psalms introduction denies secure dating of individual poems.
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Introit verse | Ps. 118:1 (119) | Israel’s prayer under the law; received Davidic attribution | **Historical setting** – No single occasion date applies across every cited locus. **Composition** – No single date applies across every cited locus. |
+### Evidence for each date {#sec:date-location-evidence}
 
-This appointment also contains the Daniel antiphon, whose separate setting appears below; hence no date governs the Introit as a whole. Ps 118:1: B.C. 1055–1015 is David’s reign as a traditional-attribution reference; Ps 118:1: before c. 165 B.C. is the broad Psalter composition boundary. Haydock’s note at 118:1 reports Davidic attribution, instruction of Solomon, David’s persecution by Saul, and a proposal associating Daniel with the captives’ consolation. He favors David over conjectures of another author. These alternatives locate no single writing occasion or site.
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Communion | Ps. 118:49–50 (119) | The servant’s hope amid humiliation; the same poem and attribution | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+*Alleluia: Ps. 107:2 (Vg.; Heb. 108)*
 
-The promise and humiliation belong to the poem’s extended prayer for faithful life. Haydock’s received authorship and occasion alternatives apply here as to its opening verse. The displayed regnal span remains a reference for the traditional attribution, not a date for this humiliation. The composition boundary applies to the Psalter’s broad formation, not an identified episode in the speaker’s life.
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Offertory | Ps. 136:1 (137) | Babylonian captivity; Jerusalem remembered by displaced Israelites | **Historical setting**: The Babylonian captives’ lament, after Jerusalem’s destruction under Sedecias (derived). **Historical setting**: The seventy years of servitude to Babylon, “seventy years” (duration). **Composition**: Before c. 165 B.C. **Historical background: The third captivity of Juda: the destruction of Jerusalem under Sedecias**: Preferred: A.M. 3416 (Haydock reporting Ussher; A.M. is not converted); alternatives: B.C. 586 (Reid and Meistermann, Catholic Encyclopedia), B.C. 587 (Schets, Catholic Encyclopedia), B.C. 588 (Petavius table reported by Sloet; retained transcription checked, printed-page verification still pending). The represented event is after this historical event. These dates belong to that historical event, not to the passage or its composition. Both events could occur in the same year. |
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-Haydock, Ps. 136, preserves variant or absent headings and proposals involving captivity, return, and prophetic composition. The represented lament and the destruction it remembers are not the same event; neither by itself identifies the poem’s writing date or site. Jeremiah 25 supplies the servitude’s duration, not an absolute date for the lament. The background alternatives above date Jerusalem’s destruction. Haydock reports Ussher’s era; Sloet reports Petavius’s table, with the displayed verification limit. Reid and Meistermann differ from Schets. The alternatives remain separate, not a merged interval or a newly calculated lower bound for this verse.
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Gradual | Ps. 144:15–16 (145) | Davidic praise; creatures dependent on the divine king | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+*Introit: Ps. 118:1 (Vg.; Heb. 119)*
 
-The psalm’s Davidic title supplies traditional attribution. Its universal nourishment and kingdom language name neither a particular incident nor a certain place of composition. Corbett supplies the customary regnal reference; the USCCB introduction supplies only the broader Psalter boundary. Christian Eucharistic reception belongs to the passage’s later liturgical life.
+- **Traditional attribution**. As under Alleluia: Ps. 107:2 (Vg.; Heb. 108).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Introit antiphon | Dan. 3:29,31,35 | Azarias and his companions in Babylon’s furnace | Prayer’s composition: most likely long after the Exile (Gigot); represented setting: servitude to Babylon. |
+- **Historical setting**. As under Alleluia: Ps. 107:2 (Vg.; Heb. 108).
 
-*Narrated event: Daniel 3:23–25 places Azarias’s prayer within the furnace after refusal of the king’s image. The servitude’s “seventy years” is a duration supplied by Jeremiah 25, not the furnace episode’s length or a calendar year.*
+- **Composition**. As under Alleluia: Ps. 107:2 (Vg.; Heb. 108).
 
-Gigot, “Book of Daniel,” concluding section on the deuterocanonical portions, distinguishes the Prayer and Song from whole-book composition theories. He reports widespread early attribution but favors an unknown Jewish author long after the Exile for this portion. That relative proposal concerns writing, not the narrated event. The prayer speaks within Israel’s displaced worship and covenant memory; no more precise author, composition site, or life stage is established. The Introit adapts and reorders its verses.
+*Communion: Ps. 118:49–50 (Vg.; Heb. 119)*
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Gospel | John 4:46b–53 | Jesus at Cana; child at Capharnaum, both in Galilee; traditional Johannine writing associated with Ephesus | **Event**: The healing of the ruler’s son at Cana, A.D. 26–27 (derived). **Composition** – disputed: c. A.D. 90–100; A.D. 96–100. |
+- **Traditional attribution**. As under Alleluia: Ps. 107:2 (Vg.; Heb. 108).
 
-*Narrated event: Cana is named in the unappointed first part of John 4:46. The father seeks Jesus there; his child is at Capharnaum. Maas’s encompassing journey supplies the derived event range. It is not an absolute date printed beside the healing, and the matching seventh hour does not supply a modern clock-time.*
+- **Historical setting**. As under Alleluia: Ps. 107:2 (Vg.; Heb. 108).
 
-Fonck and Durand give the displayed traditional composition alternatives for the Gospel, associated with John’s later life and an audience beyond the original event. Composition in the Johannine tradition and the event in Galilee are separate horizons. The healing’s report and the household’s belief belong to the narrative; the work’s publication is not dated by their hour.
+- **Composition**. As under Alleluia: Ps. 107:2 (Vg.; Heb. 108).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Epistle | Eph. 5:15–21 | Traditional Pauline captivity; Rome favored over Caesarea in Ladeuze; recipients associated with Ephesus and Asia Minor | **Composition** – disputed: A.D. 58–63; A.D. 61. **Composition (Catholic critical chronology, for comparison)** – disputed: Ephesians under the later-disciple hypothesis (approximate), c. A.D. 80–100. |
+*Offertory: Ps. 136:1 (Vg.; Heb. 137)*
 
-Ladeuze’s captivity range and Prat’s narrower chronology are retained as alternatives. The USCCB Ephesians introduction distinguishes direct Pauline authorship, composition through a secretary, and a later disciple’s development of Pauline teaching; style, vocabulary, ecclesiology, and comparison with Colossians inform the debate. The critical comparison’s approximate interval dates only the later-disciple proposal, not the secretarial hypothesis. The impersonal address and omitted place-name in early witnesses leave destination debated. Proposed Asian circulation does not identify the writer’s location.
+- **Historical setting** (preferred). The Babylonian captives’ lament: After Jerusalem’s destruction under Sedecias (derived) (“For the time of Jeremias, and the captivity of Babylon”; The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 136:1, 136:3, 136:7; Douay Rheims Edition of the Holy Catholic Bible with a Comprehensive Catholic Commentary, William Peter Feeney 2014 Memorial Edition, Ps.136.1).
 
-These chronology proposals concern distinguishable claims and witnesses. The source locators in the references identify the accounts behind them; the date of the present liturgical occurrence is a separate fact.
+- **Historical setting** (preferred). The seventy years of servitude to Babylon: “seventy years” (duration) (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Jer. 25:11, 25:12). Place: Judah and Babylon (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Jer. 25:11, 25:12).
+
+- **Composition**. As under Alleluia: Ps. 107:2 (Vg.; Heb. 108).
+
+- **Historical background** (answers differ). Jerusalem’s destruction under Sedecias: preferred: A.M. 3416 (Haydock reporting Ussher) (Douay Rheims Edition of the Holy Catholic Bible with a Comprehensive Catholic Commentary, William Peter Feeney 2014 Memorial Edition, Ps.70.1); alternative: B.C. 586 (Reid and Meistermann) (“586 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908); The Catholic Encyclopedia, Volume 14 (New York, 1912)); alternative: B.C. 587 (Schets) (“the fall of Jerusalem (587 B.C.)”; The Catholic Encyclopedia, Volume 8 (New York, 1910)); alternative: B.C. 588 (Petavius via Sloet; transcription only) (The Catholic Encyclopedia, Volume 8 (New York, 1910)). These dates belong to that event, not to the passage or its composition, and the two could fall in the same year.
+
+*Gradual: Ps. 144:15–16 (Vg.; Heb. 145)*
+
+- **Traditional attribution**. As under Alleluia: Ps. 107:2 (Vg.; Heb. 108).
+
+- **Historical setting**. As under Alleluia: Ps. 107:2 (Vg.; Heb. 108).
+
+- **Composition**. As under Alleluia: Ps. 107:2 (Vg.; Heb. 108).
+
+*Introit: Dan. 3:29,31,35*
+
+- **Historical setting**. As under Offertory: Ps. 136:1 (Vg.; Heb. 137).
+
+- **Composition** (preferred). Prayer of Azarias and Song of the Three Children: Most likely long after the Exile (The Catholic Encyclopedia, Volume 4 (New York, 1908)).
+
+*Gospel: John 4:46–53*
+
+- **Narrated event** (preferred). The healing of the ruler’s son at Cana: A.D. 26–27 (derived) (“Passover, A.U.C. 779 - about Pentecost, 780”; The Catholic Encyclopedia, Volume 8 (New York, 1910), Second journey: Cana and the dying son at Capharnaum; source-internal chronological calibration).
+
+- **Composition** (disputed). The Gospel of St John: c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); A.D. 96–100 (“96 or one of the succeeding years”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Ephesus traditionally (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
+
+*Epistle: Eph. 5:15–21*
+
+- **Composition** (disputed). The Epistle to the Ephesians: A.D. 58–63 (“a period between 58 and 63”; The Catholic Encyclopedia, Volume 5 (New York, 1909)); A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)). Place: Rome or Caesarea; recipients in Asia Minor (The Catholic Encyclopedia, Volume 5 (New York, 1909)).
+
+- **Composition, Catholic critical comparison** (disputed). Ephesians under the later-disciple hypothesis (approximate): c. A.D. 80–100 (“around A.D. 80–100”; Catholic critical chronology; New American Bible, Revised Edition: USCCB web state (2026), The Letter to the Ephesians, complete introduction; especially prose paragraphs 3-4, physical HTML lines 626 and 628).
 
 ## Appendix: Scope and Qualifications
 
@@ -569,7 +606,7 @@ Jerusalem background and modern comparisons
 
 : *Catholic Encyclopedia*: Reid, “Captivities of the Israelites,” destruction paragraph; Meistermann, “Temple of Jerusalem,” opening; Schets, “Third and Fourth Books of Kings,” authorship discussion; Sloet, “Chronology of the Kings,” Petavius table, retained transcription (printed page unverified). USCCB, NABRE introductions to Psalms and Ephesians, consulted 5 October 2026, especially the Psalter’s dating qualification and Ephesians’ authorship/destination paragraphs: <https://bible.usccb.org/bible/psalms/0>; <https://bible.usccb.org/bible/ephesians/0>. These contemporary introductions are summarized, not reproduced; their copyright does not pass to the project’s prose license.
 
-**Last revised (UTC):** 2026-10-05T17:56:39Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

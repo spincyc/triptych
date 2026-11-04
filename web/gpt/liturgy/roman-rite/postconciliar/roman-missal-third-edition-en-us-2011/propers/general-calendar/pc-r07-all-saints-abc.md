@@ -428,9 +428,9 @@ Augustine and Aquinas understand the promised earth as a future inheritance. Chr
 
 Both accounts require grace, willing action and perseverance. Their common future is communion with God in perfected charity. The prayers ask for help on the way and describe the saints’ continued concern for those still seeking salvation. That communion lets the congregation rejoice in the saints while still asking to grow in the love whose completion it celebrates.
 
-## Appendix: Scriptural Date and Location {#historical-appendix}
+## Scriptural Date and Location {#sec:date-location}
 
-Composition, narrated event and remembered setting answer different historical questions. The table locates each biblical appointment once, consolidating overlapping uses in Matthew. The following notes explain the source judgments and alternatives behind the displayed dates.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
@@ -445,47 +445,41 @@ Composition, narrated event and remembered setting answer different historical q
 
 Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-##### Setting notes.
+### Evidence for each date {#sec:date-location-evidence}
 
-**Responsorial Psalm: Psalm 24:1bc-2,3–4ab,5–6, Cf. Psalm 24:6 (Hebrew numbering; Vulgate 23)**. Seeking admission to the Lord’s mountain and sanctuary; original occasion unknown. See Psalm note below.
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-**Responsorial Psalm: Psalm 24:1bc-2,3–4ab,5–6, Cf. Psalm 24:6 (Hebrew numbering; Vulgate 23)**. Individual writing place unknown; the date is a bound for the collection. See Psalm note below.
+*Responsorial Psalm: Ps. 24:1bc–2,3–4ab,5–6 (Heb.; Vg. 23), Cf. Psalm 24:6 (Heb.; Vg. 23)*
 
-**Gospel: Matthew 5:1–12a**. Jesus teaches disciples on a mountain during his Galilean ministry; exact hill unknown. See Matthew note below.
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-**Gospel acclamation: Matthew 11:28; Gospel: Matthew 5:1–12a; Communion antiphon: Matthew 5:8–10**. Tradition associates an earlier Hebrew form with Palestine; the Greek text’s relation is disputed. See Matthew note below.
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-**Second Reading: 1 John 3:1–3**. Probably associated with Ephesus; the immediate recipients’ town is uncertain. See First John note below.
+*Gospel: Matt. 5:1–12a*
 
-**First Reading: Revelation 7:2–4,9–14**. The seer names Patmos; the book addresses seven churches in Asia. See Revelation note below.
+- **Narrated event**. Jesus teaches the Beatitudes on an unnamed mountain in Galilee (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 4:23, 4:25, 5:1, 5:2, 5:3, 5:12). No date: the chronology corpus has not yet dated this (research pending).
 
-### Psalm 24: a sanctuary setting and a collection bound {#history-psalm}
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
 
-The Douay–Rheims superscription names David and the first day of the week. Augustine reads that first day through the Lord’s resurrection and glorification. That is his Christian exposition of the superscription, and does not identify a dated occasion of the original psalm. The ascent, holy place and seekers describe worship at God’s sanctuary. An exact occasion and individual writing place remain unknown.[^42]
+*Communion antiphon: Matt. 5:8–10*
 
-The collection boundary above derives from the official Psalms introduction’s account of the collection before the Maccabean period and its warning that individual psalms cannot be dated securely. It is a latest bound, not the year this psalm was composed. The traditional author label and that collection boundary therefore describe different facts. No reign-era date has been substituted for a missing occasion.[^43]
+- **Composition**. As under Gospel: Matt. 5:1–12a.
 
-### Matthew: the mountain and the writing of the Gospel {#history-matthew}
+*Gospel acclamation: Matt. 11:28*
 
-The event row concerns Jesus’ teaching on a mountain. Matthew 4:23–5:2 places it in the Galilean ministry and names the disciples who approach him, with the crowds in context. It names no particular hill. The event’s exact year is unresolved in the chronology evidence. The scene is a narrated occurrence; it is separate from the question when the evangelist wrote the Gospel.
+- **Composition**. As under Gospel: Matt. 5:1–12a.
 
-The composition alternatives preserve the differing ancient and modern reckonings reported by Jacquier. His discussion includes the tradition of a Palestinian Hebrew original and the disputed relation of the Greek Gospel to it. The earlier and later estimates cannot all be treated as agreed dates of one demonstrably identical textual event. No particular one is preferred here. The table retains their disagreement rather than silently assigning a proposed Hebrew date to the extant Greek work.[^44]
+*Second Reading: 1 John. 3:1–3*
 
-The acclamation from chapter 11 and Communion’s repetition of three blessings share the Gospel’s composition question. They create no independent composition occasions. Chrysostom’s exposition of the acclamation reads it with the Son’s revelation of the Father and the following invitation to learn his humility. That literary setting helps explain the verse, while adding no exact date to the event table.
+- **Composition** (preferred). The First Epistle of St John: c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912); The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Ephesus probable (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
 
-### First John: probable Ephesian setting {#history-john}
+*First Reading: Apoc. 7:2–4,9–14*
 
-The date displayed derives from Durand’s approximate span for the Johannine writings collectively. It is not a separately pinpointed occasion for this epistle. Drum considers an Ephesian association and the end of the first century probable, rather than certain. The immediate recipients’ town is not established. First John 3:1–3 is instruction about present sonship and future manifestation; it narrates no separately datable earthly event.[^45]
-
-### Revelation: Patmos and the churches in Asia {#history-apocalypse}
-
-Revelation 1:9 identifies Patmos in the seer’s account; the opening addresses seven churches in Asia. The throne in chapter 7 belongs to the vision. It is neither a recovered writing room nor a date for the saints’ arrival in heaven. The heavenly scene and the circumstances in which the book was written remain distinct.
-
-Van den Biesen reports the traditional Domitianic window while discussing the difficulty raised by a Vespasian interpretation. Durand gives the approximate Johannine span displayed as another composition alternative. Their overlap is compatible with a late first-century setting, but the two sources have different scopes and do not provide one agreed exact year. The traditional attribution to John and historical questions about composition are preserved as the cited sources state them.[^46]
+- **Composition** (disputed). The Apocalypse of St John: A.D. 81–96 (“the reign of Domitian ... A.D. 81-96”; The Catholic Encyclopedia, Volume 1 (New York, 1907)); c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: seer on Patmos; heavenly scenes are visions (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Apoc. 1:9, 4:1, 7:9).
 
 ## Appendix: Liturgical Resolution
 
-This is All Saints, Solemnity, white, in the national calendar for the dioceses of the United States of America, Sunday 1 November 2026. It replaces the Thirty-first Sunday in Ordinary Time. The surrounding Sunday cycle is A, while these annual readings are common to A, B and C. The weekday cycle is inapplicable. The governing books are the U.S. *Roman Missal*, Third Edition (2011), with the third typical Latin edition’s amended state, and the U.S. second typical *Lectionary for Mass*, no. 667. There is no separate appointed Vigil Mass; an anticipated celebration uses this Mass.[^47]
+This is All Saints, Solemnity, white, in the national calendar for the dioceses of the United States of America, Sunday 1 November 2026. It replaces the Thirty-first Sunday in Ordinary Time. The surrounding Sunday cycle is A, while these annual readings are common to A, B and C. The weekday cycle is inapplicable. The governing books are the U.S. *Roman Missal*, Third Edition (2011), with the third typical Latin edition’s amended state, and the U.S. second typical *Lectionary for Mass*, no. 667. There is no separate appointed Vigil Mass; an anticipated celebration uses this Mass.[^42]
 
 The permanent identity is PC-R07-ABC. The canonical reusable Missal evidence belongs to the same edition’s All Saints shared owner; the composition audit and instance record identify its relationship to this leaf. No local calendar or ritual overlay has been established. Required prayers and readings are distinguished from general permissions and documented local selections below; none of the latter is asserted.
 
@@ -533,7 +527,7 @@ Chronological alternatives follow the generated canonical record and the histori
 
 - **Historical orientation.** USCCB, NABRE, “The Book of Psalms,” introduction. E. Jacquier, “Gospel of St. Matthew,” *Catholic Encyclopedia* X (1911). Walter Drum, “Epistles of Saint John,” VIII (1910). A. Durand, “The New Testament,” XIV (1912). F. Van den Biesen, “Apocalypse,” I (1907). Exact date/place discussions are cited in the historical appendix.
 
-**Last revised (UTC):** 2026-11-04T03:13:49Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
@@ -619,14 +613,4 @@ Chronological alternatives follow the generated canonical record and the histori
 
 [^41]: Augustine, *First John* IV.4.
 
-[^42]: Psalm 23, superscription and verses 1–6; Augustine, *Expositions*, Psalm 23.1–6.
-
-[^43]: USCCB, NABRE, “The Book of Psalms,” introduction, discussion of dating and collection; exact public delivery inspected for this research on 26 October 2026.
-
-[^44]: E. Jacquier, “Gospel of St. Matthew,” *Catholic Encyclopedia*, X (1911), discussions of original language, date and place of composition.
-
-[^45]: A. Durand, “The New Testament,” *Catholic Encyclopedia*, XIV (1912), “Origin,” on the Johannine writings; Walter Drum, “Epistles of Saint John,” VIII (1910), First Epistle, “Time and Place” and “Destination and Purpose.”
-
-[^46]: F. Van den Biesen, “Apocalypse,” *Catholic Encyclopedia*, I (1907), date and authorship discussion; Durand, “The New Testament,” “Origin.”
-
-[^47]: USCCB, *Liturgical Calendar for the Dioceses of the United States of America 2026*, printed pp. 5,42; *Ordo lectionum Missae* (1981), no. 667, printed p. 313; official U.S. daily readings, 1 November 2026.
+[^42]: USCCB, *Liturgical Calendar for the Dioceses of the United States of America 2026*, printed pp. 5,42; *Ordo lectionum Missae* (1981), no. 667, printed p. 313; official U.S. daily readings, 1 November 2026.

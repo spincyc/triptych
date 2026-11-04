@@ -456,21 +456,21 @@ The first interpretation gives special weight to fallible judgement. An accurate
 
 Their common ground is visible in Colossians. Those who have received forgiveness must forgive. Those who need instruction must let Christ’s word dwell abundantly. The Secret asks mercy for the offerers themselves, and the Postcommunion seeks the effect of a gift they have received. The Gospel’s wheat is gathered into the owner’s barn; the people who pray these prayers seek to reach that end through the Lord’s mercy.
 
-## Historical appendix: Scriptural Date and Location {#historical-appendix}
+## Scriptural Date and Location {#sec:date-location}
 
-The passages below have several different dated subjects. Jeremias’s letter has its own relation to the deportees’ departure; the received book has a separate history of enlargement. Psalm titles identify a tradition of singers without fixing a particular occasion. The dates proposed for writing a Gospel concern its composition, while the scene in which Jesus teaches concerns the narrated event. The chant’s selection of a verse does not enlarge its liturgical appointment to the complete chapter discussed in the commentary.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
 | Gradual: Ps. 43:8–9 (Vg.; Heb. 44) | Historical setting | Occasion date unresolved |
 |  | Composition: The Psalms of the Sons of Korah | Between the days of Isaias and the return from exile |
-| Introit: Ps 84:2 (Vg.; Heb. 85) | Historical setting | Occasion date unresolved |
+| Introit: Ps. 84:2 (Vg.; Heb. 85) | Historical setting | Occasion date unresolved |
 |  | Composition: The Psalms of the Sons of Korah | Between the days of Isaias and the return from exile |
 | Alleluia: Ps. 129:1–2 (Vg.; Heb. 130) | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
 | Offertory: Ps. 129:1–2 (Vg.; Heb. 130) | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
-| Introit: Jer 29:11–12,14 | Composition: Jeremias’s letter to the exiles after Jechonias’s deportation; Jerusalem to Babylon | After Jechonias and the deportees had departed from Jerusalem |
+| Introit: Jer. 29:11–12,14 | Composition: Jeremias’s letter to the exiles after Jechonias’s deportation; Jerusalem to Babylon | After Jechonias and the deportees had departed from Jerusalem |
 |  | Final formation: The received Book of Jeremias after enlargement; Judah ministry; final writing site unspecified | After the first authentic recension |
 | Gospel: Matt. 13:24–30 | Narrated event: Jesus tells the parable of the wheat and cockle beside the sea | Date unresolved |
 |  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
@@ -481,63 +481,57 @@ The passages below have several different dated subjects. Jeremias’s letter ha
 
 Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-##### Setting notes.
+### Evidence for each date {#sec:date-location-evidence}
 
-**Introit: Ps 84:2 (Vulgate numbering; Hebrew 85); Gradual: Psalm 43:8–9 (Vulgate numbering; Hebrew 44); Alleluia: Psalm 129:1–2 (Vulgate numbering; Hebrew 130); Offertory: Psalm 129:1–2 (Vulgate numbering; Hebrew 130)**. Israel recalls rescue and cries for mercy; individual occasions and exact places remain unidentified.
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-**Introit: Ps 84:2 (Vulgate numbering; Hebrew 85); Gradual: Psalm 43:8–9 (Vulgate numbering; Hebrew 44)**. Temple-singer tradition of the sons of Korah; Jerusalem is its worship horizon, with each writing site uncertain.
+*Gradual: Ps. 43:8–9 (Vg.; Heb. 44)*
 
-**Alleluia: Psalm 129:1–2 (Vulgate numbering; Hebrew 130); Offertory: Psalm 129:1–2 (Vulgate numbering; Hebrew 130)**. Israel is called to hope; the individual psalm’s writing place and date are insecure. The displayed bound is Psalter-wide.
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-**Introit: Jer 29:11–12,14**. From Jerusalem to exiles in Babylon; Jer 29:1–3.
+- **Composition** (preferred). The Psalms of the Sons of Korah: Between the days of Isaias and the return from exile (The Catholic Encyclopedia, Volume 12 (1911)).
 
-**Introit: Jer 29:11–12,14**. The prophet’s Judah/Jerusalem ministry and later enlargement; no single final-redaction site established.
+*Introit: Ps. 84:2 (Vg.; Heb. 85)*
 
-**Gospel: Matthew 13:24–30**. Jesus teaches the crowds beside the sea; the subsequent explanation is in a house (Matt 13:1–3,36).
+- **Historical setting**. As under Gradual: Ps. 43:8–9 (Vg.; Heb. 44).
 
-**Gospel: Matthew 13:24–30**. The traditional original is associated with Matthew’s departure from Palestine; its relation to the received Greek text is distinguished below.
+- **Composition**. As under Gradual: Ps. 43:8–9 (Vg.; Heb. 44).
 
-**Gospel: Matthew 13:24–30**. The NABRE introduction reports a probable majority account, with Antioch in Roman Syria plausible. The dating remains a scholarly proposal.
+*Alleluia: Ps. 129:1–2 (Vg.; Heb. 130)*
 
-**Communion: Mark 11:24**. Rome in the reported tradition; the instruction itself occurs within the Jerusalem/Bethania narrative.
+- **Historical setting**. As under Gradual: Ps. 43:8–9 (Vg.; Heb. 44).
 
-**Communion: Mark 11:24**. Tentative anonymous-author proposal, with Syria possible; applies to Mark through 16:8, including this verse.
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-**Epistle: Colossians 3:12–17**. Traditional Roman captivity; recipients at Colossae and neighbouring Laodicea. The modern introduction leaves the prison site and authorship uncertain.
+*Offertory: Ps. 129:1–2 (Vg.; Heb. 130)*
 
-### Psalms: attribution, occasion and collection {#hist-psalms}
+- **Historical setting**. As under Gradual: Ps. 43:8–9 (Vg.; Heb. 44).
 
-Psalms 43 and 84 have the sons-of-Korah attribution in the received Psalter. Their words concern communal rescue and the Lord’s land, but the headings identify no particular event that fixes either poem’s occasion. Psalm 43 recalls the ancestors’ victories and then laments later defeat; the recalled victories cannot simply date the lament. Psalm 84’s thanksgiving for restoration is followed by petitions for further restoration. Psalm 129 is a gradual canticle without a named author or composition site.
+- **Composition**. As under Alleluia: Ps. 129:1–2 (Vg.; Heb. 130).
 
-The historical *Catholic Encyclopedia*’s account of the Korahite psalms supplies the composition horizon printed above. Attribution to a guild permits the work of collection as well as composition by a single author. The temple-singer tradition gives Jerusalem as a worship horizon, while leaving the actual writing place of each poem uncertain. The USCCB Psalms introduction stresses the difficulty of secure dating for individual psalms. Its latest collection-wide boundary, also printed above, gives a limit rather than an individual occasion.[^22]
+*Introit: Jer. 29:11–12,14*
 
-Augustine’s accounts of sin’s captivity, the martyrs’ trials and the resurrection are theological expositions of these psalms. They do not identify the poems’ composition dates. His NPNF headings use the Hebrew psalm number while the present study follows the Missal’s Vulgate numbering. The particular English Bible used here numbers the Gradual’s verses as 43:8–9. Conversion to an English Bible under Psalm 44 requires attention to that edition’s verse numbering as well as to its psalm number.
+- **Composition** (preferred). Jeremias’s letter to the exiles after Jechonias’s deportation: After Jechonias and the deportees had departed from Jerusalem (“After that Jechonias the king ... were departed out of Jerusalem”; The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Jer. 29:1, 29:2, 29:3, 29:24). Place: Jerusalem to Babylon (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Jer. 29:1, 29:3).
 
-### Jeremias: the letter and the enlarged book {#hist-jeremias}
+- **Final formation** (preferred). The received Book of Jeremias after enlargement: After the first authentic recension (“the first transcript was enlarged by various insertions and additions”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Judah ministry; final writing site unspecified (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
 
-Jeremias 29:1–3 identifies the letter’s addressees and route: from Jerusalem to people carried to Babylon after Jechonias’s departure. That relationship, printed in the table, dates the letter relatively. The letter’s first unit ends at verse 23. The Introit selects verses 11, 12 and 14 rather than appointing the entire unit.
+*Gospel: Matt. 13:24–30*
 
-Faulhaber’s account distinguishes the book’s first authentic recension from its later enlargement. The original recension is discussed in relation to Jeremias 36; it is a different subject from the later constituent letter to the exiles. Received-book formation is consequently printed as a separate relation. No single final-redaction place is established by this account.[^23] The Introit’s psalm constituent has its own attribution and chronological questions. A common chant cannot give these separately composed texts one composition date.
+- **Narrated event**. Jesus tells the parable of the wheat and cockle beside the sea (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 13:1, 13:2, 13:24, 13:25, 13:30). No date: the chronology corpus has not yet dated this (research pending).
 
-### Matthew: teaching by the sea and the written Gospel {#hist-matthew}
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
 
-Matthew 13:1–3 locates Jesus with crowds beside the sea, and verse 36 places the subsequent explanation in the house. The teaching occasion has no resolved calendar date in the evidence above. The sowing and harvest depicted in the parable are its narrated comparison rather than dated events in an identified farmer’s life.
+- **Composition, Catholic critical comparison** (preferred). The Greek Gospel of Matthew in the NABRE introduction: Post-A.D. 70 date (Catholic critical chronology; New American Bible, Revised Edition: USCCB web state (2026), Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25). Place: Antioch suggested (New American Bible, Revised Edition: USCCB web state (2026), Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25).
 
-Jacquier reports several traditional estimates for Matthew’s composition. His account distinguishes an original Hebrew or Aramaic form from the received Greek Gospel. The *Catholic Encyclopedia*’s “New Testament” article supplies another estimate for the original and leaves the date of its rendering into Greek indefinite. The early and late alternatives above remain distinct proposals rather than one continuous range of confidence.[^24]
+*Communion: Mark 11:24*
 
-The modern Catholic-critical comparison concerns the received Greek Gospel. The USCCB introduction describes a probable majority account of an unnamed Greek evangelist using Mark and other traditions. It regards a later decade as probable and Antioch as a plausible place, while the generated table states the open lower bound retained for this comparison. The probabilistic authorship, date and place proposal concerns this Greek composition; it neither dates an Aramaic predecessor nor assigns a year to Jesus’s teaching.[^25]
+- **Composition** (disputed). The Gospel of St Mark: A.D. 38–40 (“the tenth or twelfth year after the Ascension (A.D. 38-40)”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 40 (The Catholic Encyclopedia, Volume 9 (1910)); A.D. 43 (“the third year of Claudius (A.D. 43)”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 50–67 (“somewhere between A.D. 50 and 67”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 60–70 (“between 60 and 70”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); After Matthew, and not as late as the destruction of Jerusalem (De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam (1912), responsa-i-ix). Place: Rome traditionally; Egypt reported by Chrysostom (The Catholic Encyclopedia, Volume 9 (1910)).
 
-### Mark: reported tradition and a tentative modern proposal {#hist-mark}
+- **Composition, Catholic critical comparison** (preferred). The Gospel of Mark under the NABRE’s tentative modern dating proposal: Perhaps shortly after A.D. 70 (“perhaps shortly after the year 70”; Catholic critical chronology; New American Bible, Revised Edition: USCCB web state, 2 November 2026). Place: Syria possible (New American Bible, Revised Edition: USCCB web state, 2 November 2026).
 
-Mark 11:11–12 and 20–27 locate the instruction within journeys between Jerusalem and Bethania. That narrative location differs from the place where the Gospel was written. MacRory reports the Roman composition tradition and several historical dating proposals, explaining his own conclusion separately. The “New Testament” article reports another range. The Biblical Commission’s response adds a relative order and bound, retained above in its own terms.[^26]
+*Epistle: Col. 3:12–17*
 
-The USCCB introduction distinguishes the John Mark/Petrine tradition from a tentative modern account of an anonymous Hellenistic Jewish Christian author, possibly writing in Syria. Its dating proposal remains open and expressly tentative. It applies to the Gospel through Mark 16:8, within which the Communion verse falls; the added endings are a separate textual subject. Neither the traditional alternatives nor the modern comparison dates the fig-tree episode itself.[^27]
-
-### Colossians: the captive writer and the recipients {#hist-colossians}
-
-The traditional orientation places Paul in Roman captivity and the recipients at Colossae, with a neighbouring community at Laodicea. The letter names its recipients at the beginning and names messengers and neighbouring churches in its conclusion (Col 1:2; 4:7–18). The writer’s captivity and the recipients’ location answer different geographical questions. Prat and Aherne supply the two traditional composition alternatives printed above.[^28]
-
-The USCCB introduction leaves both prison location and precise composition date uncertain. It includes Roman custody among proposals, with Caesarea and Ephesus also considered, and reports the possibility of a pupil writing in Paul’s name. That alternative receives no numeric date here. The table’s Roman description is attached to the traditional account, while the uncertainty qualifies the wider historical question.[^29]
+- **Composition** (disputed). The Epistle to the Colossians: A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 61–63 (“some time between A.D. 61 and 63”; The Catholic Encyclopedia, Volume 4 (New York, 1908)). Place: Rome traditionally; addressed to Colossae (The Catholic Encyclopedia, Volume 4 (New York, 1908); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Col. 1:2).
 
 ## Appendix: Scope and Qualifications
 
@@ -545,7 +539,7 @@ This study concerns the resumed Fifth Sunday after the Epiphany in the Vatican t
 
 The appointed Latin is the research’s collated transcription, with stress accents suppressed, ligatures resolved and line-break hyphens joined. The printed doxology cue and abbreviated prayer conclusions are retained. The Preface includes the dialogue and Sanctus. The English Scripture reproduces the identified Douay–Rheims/Challoner biblical basis, whose wording and extent differ from the adapted chants. Cummiskey’s historical English supplies the three orations and Preface, including his own abbreviations and same-witness expansions. Neither English witness is an approved proclaimed translation of the 1962 Missal.
 
-The two interpretations are editorial syntheses of this Mass. The Fathers and saints are credited with their cited passage explanations and doctrinal arguments. The literal exiles, the Gospel’s world and the Christian assembly are distinguished. Chrysostom’s immediate identification of tares with heretics and Augustine’s broader address to wicked Christians remain attributed. Chrysostom’s permission of nonlethal suppression qualifies his prohibition of killing. These passages do not settle every question of civil force or ecclesiastical discipline. Fromage’s continuation corroborates ten shared texts without developed exposition or the Trinity Preface.[^30]
+The two interpretations are editorial syntheses of this Mass. The Fathers and saints are credited with their cited passage explanations and doctrinal arguments. The literal exiles, the Gospel’s world and the Christian assembly are distinguished. Chrysostom’s immediate identification of tares with heretics and Augustine’s broader address to wicked Christians remain attributed. Chrysostom’s permission of nonlethal suppression qualifies his prohibition of killing. These passages do not settle every question of civil force or ecclesiastical discipline. Fromage’s continuation corroborates ten shared texts without developed exposition or the Trinity Preface.[^22]
 
 The research used historical English patristic translations, retained Latin transcriptions and the specified printed-page witnesses. No new Greek collation is claimed. Bellarmine’s English is O’Sullivan’s abridgment; Bede’s Mark exposition is used from its retained transcription, with no new printed-page collation. Aquinas’s checked Colossians page covers 3:16–17; the preceding missing scan pages supply no claim. The bounded reception sweep, uninspected leads, exact evidence states and source limits remain in `research/scope.md`, `research/interpretations.md`, `research/chronology-notes.md`, `research/source-bindings.toml` and `propers/verified.md`. The historical appendix retains the distinction between traditional attributions and modern critical proposals.
 
@@ -577,7 +571,7 @@ The inherited Latin and historical English retain their recorded United States p
 
 The historical appendix gives the exact articles, official introductions and AAS responses used for its chronological and geographical claims. All online witnesses were inspected in the research completed on 2 November 2026; their exact identities and source-local limits remain in the binding record.
 
-**Last revised (UTC):** 2026-11-04T03:13:49Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
@@ -623,20 +617,4 @@ The historical appendix gives the exact articles, official introductions and AAS
 
 [^21]: Chrysostom, *Homilies on Colossians*, VIII–IX; Aquinas, *Commentary on Colossians*, chapter 3, lectio 3, on 3:16–17, Dessain II, p. 442.
 
-[^22]: Walter Drum, [“Psalms,”](https://www.newadvent.org/cathen/12533a.htm) *Catholic Encyclopedia* XII (1911), titles/authorship, sons-of-Korah paragraph; USCCB, [Psalms introduction](https://bible.usccb.org/bible/psalms/0), “Historical Settings.”
-
-[^23]: Michael Faulhaber, [“Jeremias,”](https://www.newadvent.org/cathen/08334a.htm) *Catholic Encyclopedia* VIII (1910), “Analysis of contents” and “Literary criticism of the book”; Jer 29:1–3, 36.
-
-[^24]: E. Jacquier, [“Gospel of St. Matthew,”](https://www.newadvent.org/cathen/10057a.htm) *Catholic Encyclopedia* X (1911), “Date and place of composition” and concluding Biblical Commission account; [“The New Testament,”](https://www.newadvent.org/cathen/14530a.htm) XIV (1912), origin of the books, Matthew paragraph.
-
-[^25]: USCCB, [Matthew introduction](https://bible.usccb.org/bible/matthew/0), final authorship/source/date and place paragraphs beginning “The questions of authorship” and “As for the place.”
-
-[^26]: Joseph MacRory, [“Gospel of St. Mark,”](https://www.newadvent.org/cathen/09674b.htm) *Catholic Encyclopedia* IX (1910), place/date/destination paragraphs; “The New Testament,” XIV (1912), Mark paragraph; Pontifical Biblical Commission, *De auctore, de tempore compositionis, et de historica veritate Evangeliorum secundum Marcum et secundum Lucam*, AAS 4 (1912), pp. 463–465, especially responses V–VI on p. 464.
-
-[^27]: USCCB, [Mark introduction](https://bible.usccb.org/bible/mark/0), final historical paragraphs, complete inspected text extraction, lines 72–75.
-
-[^28]: Ferdinand Prat, [“St. Paul,”](https://www.newadvent.org/cathen/11567b.htm) *Catholic Encyclopedia* XI (1911), chronology summary and Captivity Epistles; Cornelius Aherne, [“Epistle to the Colossians,”](https://www.newadvent.org/cathen/04131b.htm) IV (1908), opening captivity paragraph and recipients.
-
-[^29]: USCCB, [Colossians introduction](https://bible.usccb.org/bible/colossians/0), final historical paragraph.
-
-[^30]: Fromage’s continuation of *The Liturgical Year*, trans. Shepherd, XI (Duffy, 1883), appendix, Fifth Sunday after the Epiphany, pp. 524–528.
+[^22]: Fromage’s continuation of *The Liturgical Year*, trans. Shepherd, XI (Duffy, 1883), appendix, Fifth Sunday after the Epiphany, pp. 524–528.

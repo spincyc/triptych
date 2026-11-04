@@ -556,19 +556,19 @@ The Communion prevents either reading from becoming sentimental. The merciful pe
 
 The prayers bring both movements to the same altar without making them the same argument. Restoration is God’s gift; immortal nourishment must reach the interior life. The mission additions extend that gift outward to all peoples, and Luke’s admitted commemoration gives cross-bearing service a place within the household’s intercession. Mercy must not close upon its recipient, and hope must not stop at the first deliverance. The family asks to live what it receives and to reach the life for which it is fed.
 
-## Historical appendix: Scriptural Date and Location {#historical-appendix}
+## Scriptural Date and Location {#sec:date-location}
 
-The date of a narrated event, the composition of a book, and a traditional attribution are different claims. The following orientation preserves those distinctions. A book-wide span does not date each verse separately. An unresolved occasion is left unresolved; the prayers of the Mass are not assigned biblical dates merely because they echo biblical language. The rows reproduce the reviewed chronology, with fuller source qualifications immediately below. They are an orientation to the sources used here, not a survey of every proposed modern chronology.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Introit: Esth 13:9–11 | Composition: Esther; story at Susa; writing in Persia conjectured | B.C. 465–425 (Conjectural early dating; later date possible) |
+| Introit: Esth. 13:9–11 | Composition: Esther; story at Susa; writing in Persia conjectured | B.C. 465–425 (Conjectural early dating; later date possible) |
 | Offertory: Job 1:1, Job 1:12, Job 2:6–7 | Composition: Job; story in Hus; writing site unspecified | Probably sometime between the seventh and fifth centuries B.C. |
 | Gradual: Ps. 89:1–2 (Vg.; Heb. 90) | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
 | Alleluia: Ps. 113:1 (Vg.; Heb. 114) | Retrospective event: The Exodus from Egypt; departure from Egypt; interval to Jerusalem’s Temple | Preferred: Temple begun in the 480th year after the Exodus (Vulgate); alternative: Temple begun in the 440th year after the Exodus (Septuagint) |
 |  | Composition: Psalms | Before c. 165 B.C. |
-| Introit: Ps 118:1 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+| Introit: Ps. 118:1 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
 |  | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
 | Communion: Ps. 118:81, 84, 86 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
@@ -580,51 +580,55 @@ The date of a narrated event, the composition of a book, and a traditional attri
 
 Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-##### Setting notes.
+### Evidence for each date {#sec:date-location-evidence}
 
-**Introit: Esth 13:9–11**. Persian court narrative at Susa; the book’s place and date of composition remain conjectural.
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-**Offertory: Job 1:1, Job 1:12, Job 2:6-7**. The story names Hus (Uz), not the book’s place of composition.
+*Introit: Esth. 13:9–11*
 
-**Introit: Ps 118:1; Gradual: Psalm 89:1-2; Communion: Psalm 118:81, 84, 86**. No secure individual occasion or place is established for these verses.
+- **Composition** (preferred). The Book of Esther: B.C. 465–425 (Conjectural early dating; later date possible) (“at the end of the reign of Xerxes I (485-465 B.C.) or during the reign of his son Artaxerxes I (465-425 B.C.)”; The Catholic Encyclopedia, Volume 5 (New York, 1909)). Place: story at Susa; writing in Persia conjectured (The Catholic Encyclopedia, Volume 5 (New York, 1909); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Esth. 1:2).
 
-**Introit: Ps 118:1; Gradual: Psalm 89:1-2; Alleluia: Psalm 113:1; Communion: Psalm 118:81, 84, 86**. Collection-wide outer boundary, not one date or place for all four liturgical uses.
+*Offertory: Job 1:1, Job 1:12, Job 2:6–7*
 
-**Alleluia: Psalm 113:1**. Departure from Egypt remembered in song. The interval ends at the beginning of Solomon’s Temple, not at the Psalm’s composition.
+- **Composition** (preferred). The Book of Job: Probably sometime between the seventh and fifth centuries B.C. (Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Job introduction). Place: story in Hus; writing site unspecified (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Job 1:1).
 
-**Introit: Ps 118:1; Communion: Psalm 118:81, 84, 86**. Traditional royal era, conditional upon Davidic attribution; not a dated occasion for Psalm 118.
+*Gradual: Ps. 89:1–2 (Vg.; Heb. 90)*
 
-**Gospel: Matthew 18:23-35**. Galilean discourse after the Capharnaum scene and before the departure for Judea; precise teaching venue unspecified.
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-**Gospel: Matthew 18:23-35**. Competing historical estimates, some concerning a posited Hebrew or Aramaic original. They do not date the parable’s delivery.
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-**Epistle: Ephesians 6:10-17**. Pauline captivity hypotheses: Rome favored, Caesarea an alternative; recipients in Asia Minor, with a circular-letter theory.
+*Alleluia: Ps. 113:1 (Vg.; Heb. 114)*
 
-Sources and fuller qualifications: Esther, <a href="#hist-esther">Esther: a threatened people in the Persian court</a>; Job, <a href="#hist-job">Job: the land of the story and the date of the book</a>; Psalms, <a href="#hist-psalms">The Psalms: remembered events and undated prayers</a>; Matthew, <a href="#hist-matthew">Matthew: the location of the discourse and competing composition dates</a>; Ephesians, <a href="#hist-ephesians">Ephesians: an imprisoned writer and the readers of the letter</a>.
+- **Retrospective event** (answers differ). The Exodus from Egypt: preferred: Temple begun in the 480th year after the Exodus (Vulgate) (“the four hundred and eightieth year after the children of Israel came out of the land of Egypt”; The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 3 Kings 6:1); alternative: Temple begun in the 440th year after the Exodus (Septuagint) (“the Septuagint gives 440 years”; The Catholic Encyclopedia, Volume 3 (New York, 1908)). Place: departure from Egypt; interval to Jerusalem’s Temple (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 113:1, 3 Kings 6:1, 2 Par. 3:1).
 
-### Esther: a threatened people in the Persian court {#hist-esther}
+- **Composition**. As under Gradual: Ps. 89:1–2 (Vg.; Heb. 90).
 
-The Introit takes its principal words from Mardochai’s prayer, not from a speech of the Persian king. Esther 13:8 identifies the speaker; verses 15–18 identify the threatened people and their appeal to the God who redeemed them from Egypt. Susa belongs to the narrative setting of the court (Esth. 1:2;2:5). It is not an established writing desk for the final book. The historical *Catholic Encyclopedia* article “Esther” places its conjectural early composition near the end of Xerxes’ reign or in the reign of Artaxerxes, while explicitly allowing later composition from older materials. The table’s compact span is therefore not a secure date of Mardochai’s prayer, and still less a secure date of the chant’s selection. Nor does a hypothesis about the whole book independently date the Greek prayer material preserved in the Vulgate additions.[^39]
+*Introit: Ps. 118:1 (Vg.; Heb. 119)*
 
-### Job: the land of the story and the date of the book {#hist-job}
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-Hus is the Douay–Rheims form of Uz. Job 1:1 names it but supplies no chronological synchronism. The reviewed USCCB introduction describes a probable range for the book’s composition spanning the seventh through fifth centuries before Christ. That is a literary dating judgment, not a date of Job’s losses, nor a settled identification of the place where the author worked. The Offertory compresses Job 1–2: it joins the initial portrait, permitted loss of possessions and children, and the second, bodily trial. Its order must not be flattened into a single uninterrupted quotation or treated as evidence that the first permission already included the body.[^40]
+- **Historical setting**. As under Gradual: Ps. 89:1–2 (Vg.; Heb. 90).
 
-### The Psalms: remembered events and undated prayers {#hist-psalms}
+- **Composition**. As under Gradual: Ps. 89:1–2 (Vg.; Heb. 90).
 
-Psalm 89 bears a Mosaic heading in the biblical witness; Augustine explicitly cautions that this need not mean Moses wrote it. The Gradual sings the refuge and eternity clauses without that heading. Psalm 118 does not give these selected verses an independently fixed occasion. Haydock generally attributes Psalm 118 to David, while reporting three conjectures: David writing to instruct the young Solomon, David writing in his youth under Saul’s persecution, or Daniel consoling the captives. The displayed reign follows the historical *Catholic Encyclopedia*’s “usual chronology” of David. Conditional on Davidic attribution, it dates neither the Psalm’s occasion nor the utterance of verse 81.[^41]
+*Communion: Ps. 118:81, 84, 86 (Vg.; Heb. 119)*
 
-The collection-wide outer boundary comes from the reviewed USCCB Psalms introduction. It does not establish a common composition date for Psalms 89, 113, and 118, or resolve their individual occasions. The Alleluia’s Exodus is different again: an event remembered by a later song. The historical “Biblical Chronology” article gives the Vulgate and Septuagint intervals between Exodus and the beginning of the Temple, discusses substantial chronological difficulties, and proposes its own reconstruction. The table preserves the two transmitted relative intervals used in the reviewed chronology, with their actual endpoint. It does not convert either into an absolute Exodus year or claim that the Psalm was composed when the Temple was begun.[^42]
+- **Traditional attribution**. As under Introit: Ps. 118:1 (Vg.; Heb. 119).
 
-### Matthew: the location of the discourse and competing composition dates {#hist-matthew}
+- **Historical setting**. As under Gradual: Ps. 89:1–2 (Vg.; Heb. 90).
 
-Matthew 17:21 places Jesus and the disciples in Galilee; 17:23 names Capharnaum. Chapter 18 begins “At that hour,” and 19:1 narrates the subsequent departure from Galilee toward Judea beyond Jordan. These boundaries locate the discourse in the Gospel’s narrative movement. They do not identify a particular room for the parable or assign it a day or year. The parable itself depicts a king and servants without supplying their geographical coordinates.
+- **Composition**. As under Gradual: Ps. 89:1–2 (Vg.; Heb. 90).
 
-The historical “St. Matthew” article reports several competing composition estimates, including traditions about the apostles’ departure from Palestine and an uncertain interpretation of Irenaeus. It discusses whether the first written form was Hebrew or Aramaic and how that relates to the extant Greek Gospel. The Matthew article also reports the early estimate favored by many Catholic critics of its period; “New Testament” supplies the estimate around the middle of the first century. The table deliberately retains the distinct estimates rather than averaging them or treating the earliest as the date of the extant Greek form. They are bounded historical proposals represented in the reviewed corpus, not a claimed present consensus. Their disagreement has no power to relocate the parable within Matthew’s own sequence.[^43]
+*Gospel: Matt. 18:23–35*
 
-### Ephesians: an imprisoned writer and the readers of the letter {#hist-ephesians}
+- **Narrated event**. Jesus tells the parable of the unforgiving servant; Capharnaum by narrative continuity (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 17:23, 18:1, 19:1, 18:21, 18:22, 18:23, 18:35). No date: the chronology corpus has not yet dated this (research pending).
 
-Ephesians 6:20 describes the speaker as an ambassador in a chain. The historical “Epistle to the Ephesians” article reasons within Pauline authorship and captivity, distinguishing possible imprisonment at Caesarea from the greater freedom of action associated with Rome. Its broader interval and the more precise year in “St. Paul” are different historical estimates, not two episodes of composition. The recipient question is also distinct from the writing-place question: Ephesus and neighboring communities or a wider circular readership in Asia Minor are alternatives discussed by the article. The passage does not say that the armor exhortation was spoken on a battlefield at Ephesus. Its martial images address Christian endurance and prayer.[^44]
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
+
+*Epistle: Eph. 6:10–17*
+
+- **Composition** (disputed). The Epistle to the Ephesians: A.D. 58–63 (“a period between 58 and 63”; The Catholic Encyclopedia, Volume 5 (New York, 1909)); A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)). Place: Rome or Caesarea; recipients in Asia Minor (The Catholic Encyclopedia, Volume 5 (New York, 1909)).
 
 ## Appendix: Scope and Qualifications
 
@@ -672,7 +676,7 @@ The work’s substantive boundaries are deliberate: no new local calendar decisi
 
 Historical date sources are cited individually in the preceding appendix.
 
-**Last revised (UTC):** 2026-11-04T03:13:49Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
@@ -751,15 +755,3 @@ Historical date sources are cited individually in the preceding appendix.
 [^37]: Augustine, Ps. 118, Caph, on vv. 86–88.
 
 [^38]: Schuster, *Sacramentary* III, p. 181.
-
-[^39]: *Catholic Encyclopedia* V (1909), “Esther,” authorship and date discussion, [retained New Advent article](https://www.newadvent.org/cathen/05549a.htm); Esth. 1:2;2:5;13:8–18, Douay–Rheims/Challoner.
-
-[^40]: Job 1–2; USCCB, [“Job: Introduction,”](https://bible.usccb.org/bible/job/0) reviewed source underlying the canonical composition claim. This modern introduction is cited and paraphrased, not used as study-text English.
-
-[^41]: Augustine, Ps. 89 §2 (NPNF Ps. 90); Haydock Bible (1859), p. 781, Ps. 118:1; *Catholic Encyclopedia* IV (1908), [“David,”](https://www.newadvent.org/cathen/04642b.htm) reign chronology.
-
-[^42]: USCCB, [“Psalms: Introduction”](https://bible.usccb.org/bible/psalms/0); *Catholic Encyclopedia* III (1908), [“Biblical Chronology,”](https://www.newadvent.org/cathen/03731a.htm) Exodus-to-Temple discussion; 3 Kings 6:1 in Vulgate numbering.
-
-[^43]: Matt. 17:21–19:1; *Catholic Encyclopedia* X (1911), [“St. Matthew,”](https://www.newadvent.org/cathen/10057a.htm) date, language, and composition sections; XIV (1912), [“New Testament,”](https://www.newadvent.org/cathen/14530a.htm) origin and composition discussion.
-
-[^44]: Eph. 6:18–24; *Catholic Encyclopedia* V (1909), [“Epistle to the Ephesians,”](https://www.newadvent.org/cathen/05485a.htm) readers and composition discussion; XI (1911), [“St. Paul,”](https://www.newadvent.org/cathen/11567b.htm) chronological table and captivity epistles.

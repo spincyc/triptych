@@ -93,7 +93,7 @@ references = []
 
 [[components]]
 key = "history"
-path = "sections/60-history.tex"
+path = "generated/scriptural-date-location.tex"
 kind = "terminal-apparatus"
 modes = ["research"]
 element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-psalm", "communion-mark", "after-communion"]
@@ -129,12 +129,12 @@ references = []
 
 [[components]]
 key = "concise-chronology"
-path = "sections/synthesis-03-chronology.tex"
+path = "generated/scriptural-date-location-page.tex"
 kind = "front-matter"
 modes = ["synthesis"]
 element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-psalm", "communion-mark", "after-communion"]
 depends_on = []
-references = ["research/chronology-annotations.tex", "research/chronology-table.tex"]
+references = ["research/chronology-annotations.tex", "research/chronology-table.tex", "research/chronology.toml"]
 
 [[components]]
 key = "concise-themes"

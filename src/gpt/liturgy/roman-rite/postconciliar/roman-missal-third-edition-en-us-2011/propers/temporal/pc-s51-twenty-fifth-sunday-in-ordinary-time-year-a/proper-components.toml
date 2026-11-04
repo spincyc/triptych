@@ -8,6 +8,7 @@ synthesis_entrypoint = "synthesis.tex"
 homily_entrypoint = "homily.tex"
 appointed_text_completeness = "rights-limited"
 presentation_contract = "interpretive-pagination-v1"
+chronology_presentation = "orientation-v3"
 element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
 
 [outputs]
@@ -101,11 +102,11 @@ references = ["research/source-audit.md", "research/interpretations.md"]
 [[components]]
 key = "scriptural-date-location"
 kind = "front-matter"
-path = "sections/70-date-location.tex"
+path = "generated/scriptural-date-location.tex"
 modes = ["research"]
 element_keys = ["entrance", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "communion-ps119", "communion-jn10"]
 depends_on = []
-references = ["research/chronology-annotations.tex", "research/chronology.toml", "research/source-audit.md"]
+references = ["research/chronology-annotations.tex", "research/chronology.toml", "research/source-audit.md", "research/chronology-table.tex"]
 
 [[components]]
 key = "study-apparatus"
@@ -137,11 +138,11 @@ references = ["research/source-audit.md", "research/interpretations.md"]
 [[components]]
 key = "concise-date-location"
 kind = "front-matter"
-path = "sections/concise/03-date-location.tex"
+path = "generated/scriptural-date-location-page.tex"
 modes = ["synthesis"]
 element_keys = ["entrance", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "communion-ps119", "communion-jn10"]
 depends_on = []
-references = ["research/chronology-annotations.tex", "research/chronology.toml", "research/source-audit.md"]
+references = ["research/chronology-annotations.tex", "research/chronology.toml", "research/source-audit.md", "research/chronology-table.tex"]
 
 [[components]]
 key = "concise-themes"

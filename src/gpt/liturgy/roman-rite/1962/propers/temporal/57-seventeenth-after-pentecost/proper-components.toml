@@ -1,6 +1,7 @@
 schema = 2
 format_contract = "propers-format-v1"
 presentation_contract = "interpretive-pagination-v1"
+chronology_presentation = "orientation-v3"
 record_type = "proper-components"
 document = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
 calendar = "roman-1962"
@@ -110,11 +111,11 @@ references = ["research/interpretations.md", "research/source-audit.md", "resear
 [[components]]
 key = "scriptural-date-location"
 kind = "front-matter"
-path = "sections/70-date-location.tex"
+path = "generated/scriptural-date-location.tex"
 modes = ["research"]
 depends_on = []
 element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
-references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/scope.md"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/scope.md", "research/chronology-table.tex"]
 
 [[components]]
 key = "study-apparatus"
@@ -146,11 +147,11 @@ references = ["format.tex", "research/interpretations.md"]
 [[components]]
 key = "concise-date-location"
 kind = "front-matter"
-path = "sections/concise/03-date-location.tex"
+path = "generated/scriptural-date-location-page.tex"
 modes = ["synthesis"]
 depends_on = []
 element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
-references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/chronology-table.tex"]
 
 [[components]]
 key = "concise-themes"

@@ -461,9 +461,9 @@ Both interpretations distinguish present participation from final completion. Au
 
 The feast’s final petitions allow both subjects to remain concrete. The people who have honored the saints ask to rejoice in them always, to be helped by their prayers, and to withstand human dangers. They seek a holiness already displayed in Christ’s members and still needing to be formed in their own lives.
 
-## Historical appendix: Scriptural Date and Location {#historical-appendix}
+## Scriptural Date and Location {#sec:date-location}
 
-The dates below distinguish traditional attribution, a remembered occasion, the composition of a book, and the event narrated in the Gospel. The Gradual appoints only the latter clause of its second verse; the Gospel ends before the last clause of verse 12; the Wisdom chant is selected and adapted. The whole-verse references in this chronological orientation identify the passages queried without enlarging those liturgical selections.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
@@ -482,49 +482,47 @@ The dates below distinguish traditional attribution, a remembered occasion, the 
 
 Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-##### Setting notes.
+### Evidence for each date {#sec:date-location-evidence}
 
-**Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33); Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34)**. Davidic titles in the received Psalter; royal reference era, not a common occasion.
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-**Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33)**. No particular occasion or place is identified for the Introit verse.
+*Introit: Ps. 32:1 (Vg.; Heb. 33)*
 
-**Introit: Psalms 32:1 (Vulgate numbering; Hebrew 33); Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34)**. Collection-wide composition boundary; individual writing places uncertain.
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-**Gradual: Psalms 33:10–11 (Vulgate numbering; Hebrew 34)**. David before accession, at Geth (Gath); inherited chronological marker, with its source qualification.
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-**Offertory: Wisdom 3:1–3**. Alexandria in Gigot’s account; either persecution horizon permits later publication.
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-**Gospel: Matthew 5:1–12**. Jesus teaches on an unnamed mountain after Galilean ministry (Matt. 4:23–5:1).
+*Gradual: Ps. 33:10–11 (Vg.; Heb. 34)*
 
-**Alleluia: Matthew 11:28; Gospel: Matthew 5:1–12; Communion: Matthew 5:8–10**. Palestinian original in the traditional account; Greek rendering distinguished. Speech sites are a separate question.
+- **Traditional attribution**. As under Introit: Ps. 32:1 (Vg.; Heb. 33).
 
-**Lesson: Revelation 7:2–12**. John on Patmos; the visionary throne is not an earthly writing place.
+- **Superscription setting** (preferred). David’s flight to Achis, king of Geth: A.M. 2944 (Haydock edition reporting Ussher) (“A. M. 2944, A. C. 1060”; Douay Rheims Edition of the Holy Catholic Bible with a Comprehensive Catholic Commentary, William Peter Feeney 2014 Memorial Edition, 1K.21.1-15; Douay Rheims Edition of the Holy Catholic Bible with a Comprehensive Catholic Commentary, William Peter Feeney 2014 Memorial Edition, Ps.70.1). Place: Geth, at the Philistine court (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 33:1, 1 Kings 21:10, 21:15).
 
-Fuller source qualifications: Psalms, <a href="#hist-psalms">Psalms: attribution, flight, and composition</a>; Wisdom, <a href="#hist-wisdom">Wisdom: the author’s city and the persecution in view</a>; Matthew, <a href="#hist-matthew">Matthew: the unnamed mountain and the written Gospel</a>; Apocalypse, <a href="#hist-apocalypse">Apocalypse: Patmos and the heavenly vision</a>.
+- **Composition**. As under Introit: Ps. 32:1 (Vg.; Heb. 33).
 
-### Psalms: attribution, flight, and composition {#hist-psalms}
+*Offertory: Wis. 3:1–3*
 
-Both Psalms have Davidic titles in the Douay–Rheims/Challoner Psalter. Psalm 32 supplies no particular occasion; Psalm 33 names the dismissal associated with David’s altered behavior. The reign shown above follows Corbett’s “usual chronology” in the historical *Catholic Encyclopedia*. Corbett immediately records alternatives placing the reign thirty to fifty years later. A royal era attached to an attributed author does not date each attributed poem.[^51]
+- **Composition** (disputed). The Book of Wisdom: In or after the time of Ptolemy IV Philopator (221–204 B.C.) (“the time of ... Ptolemy IV Philopator (221-204 B.C.)”; The Catholic Encyclopedia, Volume 15 (1912)); In or after the time of Ptolemy VII Physicon (145–117 B.C.) (“the time of ... Ptolemy VII Physicon (145-117 B.C.)”; The Catholic Encyclopedia, Volume 15 (1912)). Place: Alexandria in Gigot’s account (The Catholic Encyclopedia, Volume 15 (1912)).
 
-The flight to Achis, king of Geth, is before accession and is separate from that royal era. The received Psalm title names Achimelech; the narrative in 1 Kings 21 names Achis. The Haydock edition’s chronological marker is inherited from the surrounding narrative, rather than freshly printed beside the flight itself. Its attribution to Ussher is retained in the table. The related Haydock note explicitly mentioning Usher is at Ps. 70:1; that separate note identifies the chronology’s source, without supplying the occasion of Psalm 33.[^52]
+*Gospel: Matt. 5:1–12*
 
-The USCCB Psalms introduction supplies the displayed collection-wide upper composition boundary and states the difficulty of securely dating an individual psalm. It neither fixes one occasion for these two poems nor establishes a shared place of composition. The traditional titles, the flight narrative, and this composition judgment answer different questions.[^53]
+- **Narrated event**. Jesus teaches the Beatitudes on an unnamed mountain in Galilee (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 4:23, 4:25, 5:1, 5:2, 5:3, 5:12). No date: the chronology corpus has not yet dated this (research pending).
 
-### Wisdom: the author’s city and the persecution in view {#hist-wisdom}
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
 
-Gigot distinguishes the book’s Solomonic literary voice from its actual unknown authorship. His argument for Alexandria appeals to Greek language and thought, Egyptian circumstances, and the intended Jewish audience amid surrounding idolatry. Alexandria is therefore his proposed place of composition, rather than the named site of an individual death in Wisdom 3.[^54]
+*Communion: Matt. 5:8–10*
 
-The two reigns in the table identify alternative periods of persecution which Gigot considers to be in the author’s view. He expressly permits publication after those rulers’ deaths. The visible “in or after” qualification retains that possibility: neither reign’s end is a latest possible date of writing. The alternatives are the historical source’s proposals, not a claim that every later scholar accepts either one.
+- **Composition**. As under Gospel: Matt. 5:1–12.
 
-### Matthew: the unnamed mountain and the written Gospel {#hist-matthew}
+*Alleluia: Matt. 11:28*
 
-Matthew 4:23–5:1 places Jesus’ teaching after activity in Galilee. The mountain is not named. The Alleluia’s invitation belongs to the wider Galilean narrative, without a named site for its delivery. The table’s unresolved event date is independent of the dates proposed for writing the Gospel.
+- **Composition**. As under Gospel: Matt. 5:1–12.
 
-Jacquier reports several estimates in the historical *Catholic Encyclopedia*’s account of Matthew’s composition. His discussion distinguishes proposed early dates for an original Hebrew or Aramaic form from questions about the extant Greek Gospel. Durand similarly proposes an Aramaic original and calls the time of its rendering into Greek indefinite. The several estimates above retain their distinct qualifications; averaging them would supply a date neither source asserts.[^55]
+*Lesson: Apoc. 7:2–12*
 
-### Apocalypse: Patmos and the heavenly vision {#hist-apocalypse}
-
-Apocalypse 1:9 identifies John’s setting as Patmos; 1:4 addresses churches in Asia. The throne and worshippers in chapter 7 belong to the vision, rather than to a second earthly address. Van den Biesen reports the tradition placing John’s exile near the end of Domitian’s reign. The table’s broader reign span is a reference period, not a claim that the book took that entire period to write. Durand gives the other approximate range displayed above and acknowledges a different earlier proposal among critics of his period. The generated orientation preserves the returned alternatives without inventing a new event date for the heavenly worship. [^56]
+- **Composition** (disputed). The Apocalypse of St John: A.D. 81–96 (“the reign of Domitian ... A.D. 81-96”; The Catholic Encyclopedia, Volume 1 (New York, 1907)); c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: seer on Patmos; heavenly scenes are visions (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Apoc. 1:9, 4:1, 7:9).
 
 ## Appendix: Scope and Qualifications
 
@@ -568,7 +566,7 @@ The Latin and historical English retain their recorded United States public-doma
 
 The historical appendix cites the particular *Catholic Encyclopedia* articles, USCCB introduction, and Haydock facsimile loci used for its chronological and geographical claims.
 
-**Last revised (UTC):** 2026-11-04T03:13:49Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
@@ -671,15 +669,3 @@ The historical appendix cites the particular *Catholic Encyclopedia* articles, U
 [^49]: Gregory, *Moralia*, XII.5.7.
 
 [^50]: Schuster, *Sacramentary*, III, p. 189; V, p. 211.
-
-[^51]: John Corbett, “King David,” *Catholic Encyclopedia*, IV (1908), opening paragraph; Ps. 32 and 33 titles, Douay–Rheims/Challoner.
-
-[^52]: Haydock, *Douay–Rheims Bible with commentary*, Loreto/Feeney memorial facsimile (2014), pp. 366, 368–369, artifact pp. 396, 398–399, 1 Kings 20–21; p. 740, artifact p. 776, Ps. 70:1. This is inspection of a modern facsimile of historical commentary, not a newly established independent date.
-
-[^53]: USCCB, [ “Psalms: Introduction,”](https://bible.usccb.org/bible/psalms/0) dated source state inspected 25 October 2026; the registered response is the 28 September 2026 artifact.
-
-[^54]: Francis E. Gigot, [“Book of Wisdom,”](https://www.newadvent.org/cathen/15666a.htm) *Catholic Encyclopedia*, XV (1912), authorship and “Place and date of composition.”
-
-[^55]: E. Jacquier, [“Gospel of St. Matthew,”](https://www.newadvent.org/cathen/10057a.htm) *Catholic Encyclopedia*, X (1911), “Date and place of composition”; Alfred Durand, [“The New Testament,”](https://www.newadvent.org/cathen/14530a.htm) XIV (1912), origin and composition of the books.
-
-[^56]: Apoc. 1:4,9; Christian van den Biesen, [“Apocalypse,”](https://www.newadvent.org/cathen/01594b.htm) *Catholic Encyclopedia*, I (1907), “Time and place”; Durand, “The New Testament,” Johannine writings paragraph.

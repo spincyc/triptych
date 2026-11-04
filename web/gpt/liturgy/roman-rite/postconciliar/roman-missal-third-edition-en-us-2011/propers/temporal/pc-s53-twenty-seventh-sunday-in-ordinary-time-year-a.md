@@ -496,59 +496,72 @@ The psalm and Epistle consequently carry different weight. In the first, quicken
 
 Neither Communion option cancels either reading. Lamentations keeps fruitfulness and restoration patient before the Lord whose goodness is sought amid grief. First Corinthians makes their communal consequence explicit: charity is fruit within one body, and restoration is incorporation that obliges the members to love. The prayer after Communion gathers both concerns into the effect of reception upon life. The giver is not finished with his vineyard; the vineyard is not released from bearing his fruit.
 
-## Appendix: Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-The dates below distinguish composition, traditional attribution and narrated event. The Catholic Encyclopedia proposals are dated historical judgments, not a present scholarly consensus. Book-level dates do not establish the age of a liturgical adaptation or every constituent passage. The entries follow canonical order; Isaiah’s response is consolidated with its first-reading locus. The composed orations have no biblical dates.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Entrance | Esther 13:9–11; Missal cf. 4:17 | Persian court narrative at Susan; exact prayer setting not independently dated. | **Composition**: B.C. 465–425. |
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Entrance antiphon: Esth. 13:9–11 | Composition: Esther; story at Susa; writing in Persia conjectured | B.C. 465–425 (Conjectural early dating; later date possible) |
+| Responsorial psalm: Ps. 79:9,12–16,19–20 (Vg.; Heb. 80) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| First reading: Is. 5:1–7 | Traditional attribution: Isaias (ministry in Souvay’s traditional account); Judah and Jerusalem | B.C. 740–701 |
+| Responsorial psalm: Is. 5:7 | Traditional attribution: Isaias (ministry in Souvay’s traditional account); Judah and Jerusalem | B.C. 740–701 |
+| Communion antiphon: Lamentations option: Lam. 3:25 | Composition: The poems of Lamentations after Jerusalem’s destruction | Responses to Jerusalem’s destruction in 587 B.C. |
+| Gospel: Matt. 21:33–43 | Narrated event | Date unresolved |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Gospel acclamation: Cf. John 15:16 | Narrated event: The Last Supper | Disputed: the fourteenth day of Nisan |
+|  | Composition: John; Ephesus traditionally | Disputed: c. A.D. 90–100; A.D. 96–100 |
+| Communion antiphon: Corinthians option: Cf. 1 Corinthians 10:17, 1 Cor. 10:16 | Composition: The First Epistle to the Corinthians | Disputed: A.D. 56; A.D. 57 |
+| Second reading: Phil. 4:6–9 | Composition: Philippians; Rome to Philippi in the cited account | Disputed: A.D. 61; A.D. 62–64 |
 
-McMahon’s traditional book-level proposal is concessive and calls authorship conjectural. It does not date the exact wording of Mordecai’s addition. The court narrative’s location and the book’s composition remain different questions.
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Psalm | Psalm 80 (Vulgate 79), selected verses; response Isaiah 5:7a | Israel recalled from Egypt; sea and river in the poem. | **Historical setting** – Occasion date unresolved. **Composition** – No single date applies across every cited locus. |
+### Evidence for each date {#sec:date-location-evidence}
 
-The psalm’s broad pre-Maccabean composition limit in the NABRE introduction does not securely date this individual psalm; the response has Isaiah’s different attribution horizon. Augustine’s Jordan and Bellarmine’s Euphrates are distinct interpretations, not an agreed composition location.
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| First reading and response | Isaiah 5:1–7; 5:7a | Jerusalem and Judah addressed; Israel named as vineyard. | **Traditional attribution**: Isaias (ministry in Souvay’s traditional account), B.C. 740–701. |
+*Entrance antiphon: Esth. 13:9–11*
 
-Souvay dates Isaiah’s ministry in the traditional account. This is neither the composition date of chapter 5 nor the date of a particular performance of the song. His endpoint is the apparent last prophecy, not a known date of death.
+- **Composition** (preferred). The Book of Esther: B.C. 465–425 (Conjectural early dating; later date possible) (“at the end of the reign of Xerxes I (485-465 B.C.) or during the reign of his son Artaxerxes I (465-425 B.C.)”; The Catholic Encyclopedia, Volume 5 (New York, 1909)). Place: story at Susa; writing in Persia conjectured (The Catholic Encyclopedia, Volume 5 (New York, 1909); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Esth. 1:2).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Communion alternative | Lamentations 3:25 | Jerusalem’s ruin is the communal horizon; the speaker’s precise identity is not established. | **Composition**: Responses to Jerusalem’s destruction in 587 B.C. |
+*Responsorial psalm: Ps. 79:9,12–16,19–20 (Vg.; Heb. 80)*
 
-The critical fallback in the NABRE introduction gives a lower composition boundary after the destruction, not a date for this verse. Traditional Jeremiah attribution differs from that introduction’s judgment that the poems are anonymous. Separate poems may have been grouped later at an unknown time.
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Gospel | Matthew 21:33–43 | Jesus’ controversy in Jerusalem’s temple (21:23); composition setting distinct. | **Event** – No narrated-event date in the chronology corpus. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. |
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-Jacquier’s proposals depend upon differing testimonies: the early dispersal premise is unreliable, the Eusebian reckoning conditional, and the Irenaean evidence inconclusive. Durand’s proposal concerns an Aramaic original and leaves the Greek rendering undated. These are not six secure dates for the same Greek text.
+*First reading: Is. 5:1–7*
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Acclamation | Cf. John 15:16 | Farewell discourse to the disciples; proposed Gospel composition at Ephesus is a different location. | **Event** – disputed: The Last Supper, 01-14. **Composition** – disputed: c. A.D. 90–100; A.D. 96–100. |
+- **Traditional attribution** (preferred). Isaias (ministry in Souvay’s traditional account): B.C. 740–701 (“from the closing year of Ozias, King of Juda (740 B.C.); no prophecies appear to be later than 701 B.C.”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Judah and Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Is. 1:1).
 
-*Narrated event: 01-14 means 14 Nisan, not 14 January; no year is supplied. Maas’s disputed Supper reconstruction binds John 13–17 broadly and does not locate each sentence in an exact room.*
+*Responsorial psalm: Is. 5:7*
 
-Durand and Fonck supply separate late-first-century composition proposals. Fonck’s Ephesus concerns composition, not the place where Jesus speaks. The event date belongs to Maas’s complete Passion reconstruction and cannot be spliced into a different reconstruction.
+- **Traditional attribution**. As under First reading: Is. 5:1–7.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Communion alternative | Cf. 1 Corinthians 10:17; context 10:16 | Corinth is the audience; Aherne locates Paul’s correspondence in his Ephesian mission. | **Composition** – disputed: A.D. 56; A.D. 57. |
+*Communion antiphon: Lamentations option: Lam. 3:25*
 
-Prat’s Pauline table and Aherne’s approximate Easter dating differ. They date the epistle, not the institution of the Eucharist or the antiphon’s compilation.
+- **Composition** (preferred). The poems of Lamentations after Jerusalem’s destruction: Responses to Jerusalem’s destruction in 587 B.C. (“after Jerusalem’s destruction in 587 B.C.; grouped later at an unknown date”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Lamentations introduction).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Second reading | Philippians 4:6–9 | Philippi is the audience; the historical sources locate composition in Roman imprisonment. | **Composition** – disputed: A.D. 61; A.D. 62–64. |
+*Gospel: Matt. 21:33–43*
 
-Prat and Vander Heeren give different imprisonment chronologies. Vander Heeren’s confident language is his 1911 position, not current unanimity. The place of writing is not the recipients’ city or an exact prison room.
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
+
+*Gospel acclamation: Cf. John 15:16*
+
+- **Narrated event** (disputed). The Last Supper: the fourteenth day of Nisan (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
+
+- **Composition** (disputed). The Gospel of St John: c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); A.D. 96–100 (“96 or one of the succeeding years”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Ephesus traditionally (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
+
+*Communion antiphon: Corinthians option: Cf. 1 Corinthians 10:17, 1 Cor. 10:16*
+
+- **Composition** (disputed). The First Epistle to the Corinthians: A.D. 56 (“(1 and 2 Corinthians; Galatians), 56”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 57 (“about Easter A.D. 57”; The Catholic Encyclopedia, Volume 4 (New York, 1908)).
+
+*Second reading: Phil. 4:6–9*
+
+- **Composition** (disputed). The Epistle to the Philippians: A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 62–64 (“at Rome (A.D. 62-64)”; The Catholic Encyclopedia, Volume 12 (1911)). Place: Rome to Philippi in the cited account (The Catholic Encyclopedia, Volume 12 (1911); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Phil. 1:1).
 
 ## Appendix: Liturgical Resolution
 
@@ -605,7 +618,7 @@ The Catholic Encyclopedia chronology witnesses are historical reference judgment
 
 - NABRE introductions to Psalms and Lamentations, official USCCB witnesses: broad psalm composition limits and the setting, authorship and grouping of Lamentations. Used for chronology and orientation; protected Bible translation not reproduced.
 
-**Last revised (UTC):** 2026-11-04T03:34:08Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

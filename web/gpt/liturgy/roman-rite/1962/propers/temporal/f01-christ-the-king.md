@@ -416,9 +416,9 @@ Their different starting points also explain how they approach the kingdom’s u
 
 Their agreement includes a narrower exegetical difference. Augustine introduces Christ as the true Solomon in Psalm 71; Bellarmine allows the opening prayer its immediate Davidic petition for Solomon’s just rule before tracing its fulfillment beyond him. Augustine begins with the promised peacemaker, while Bellarmine explains how a prayer within Israel’s royal life exceeds its historical king. This difference concerns the opening petition. On universal homage, Bellarmine’s three alternatives still distinguish present conversion, final acknowledgment and the authority Christ already possesses over unwilling subjects.
 
-## Appendix: Scriptural Date and Location {#sec:date-location}
+## Scriptural Date and Location {#sec:date-location}
 
-The table distinguishes the date of an attributed person, a historical setting, a narrated event and the writing of a book. A date for one subject does not date the others. Its passage references identify the complete verse envelopes used for chronology; the actual chant selections remain those printed above. The three Psalm rows share passages because attribution, occasion and composition answer different questions. The numbered discussions following the table identify the historical evidence and its limits.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
@@ -428,7 +428,7 @@ The table distinguishes the date of an attributed person, a historical setting, 
 | Communion: Ps. 28:10–11 (Vg.; Heb. 29) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
 |  | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
-| Introit: Ps 71:1 (Vg.; Heb. 72) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+| Introit: Ps. 71:1 (Vg.; Heb. 72) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
 |  | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
 | Gradual: Ps. 71:8,11 (Vg.; Heb. 72) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
@@ -439,65 +439,65 @@ The table distinguishes the date of an attributed person, a historical setting, 
 | Gospel: John 18:33–37 | Narrated event: Jesus before Pilate in the governor’s hall at Jerusalem | Date unresolved |
 |  | Composition: John; Ephesus traditionally | Disputed: c. A.D. 90–100; A.D. 96–100 |
 | Epistle: Col. 1:12–20 | Composition: Colossians; Rome traditionally; addressed to Colossae | Disputed: A.D. 61; A.D. 61–63 |
-| Introit: Apoc 1:6, Apoc 5:12 | Composition: Apocalypse; seer on Patmos; heavenly scenes are visions | Disputed: A.D. 81–96; c. A.D. 90–100 |
+| Introit: Apoc. 1:6, Apoc. 5:12 | Composition: Apocalypse; seer on Patmos; heavenly scenes are visions | Disputed: A.D. 81–96; c. A.D. 90–100 |
 
 Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-##### Setting notes.
+### Evidence for each date {#sec:date-location-evidence}
 
-**Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29)**. Israel and Judah in the received Davidic frame; see H1.
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-**Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29)**. Royal prayer, Sion and the nations, and the storm world of the Psalter; precise occasions unknown. See H1.
+*Offertory: Ps. 2:8 (Vg./Heb.)*
 
-**Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29)**. Israel’s Psalter; individual writing places uncertain. See H1.
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-**Alleluia: Daniel 7:14**. Daniel’s Babylonian royal setting; the court is a vision. See H2.
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-**Alleluia: Daniel 7:14**. Babylon in the received authorial setting; formation disputed. See H2.
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-**Gospel: John 18:33–37**. Jesus before Pilate in the governor’s hall at Jerusalem, John 18:28,33. See H3.
+*Communion: Ps. 28:10–11 (Vg.; Heb. 29)*
 
-**Gospel: John 18:33–37**. Ephesus traditionally; writing place and formation disputed. See H3.
+- **Traditional attribution**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-**Epistle: Colossians 1:12–20**. Rome traditionally; authorship and prison location disputed. Colossae is the recipients’ city. See H4.
+- **Historical setting**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-**Introit: Apoc 1:6, Apoc 5:12**. Patmos in the received seer’s setting; heaven is the scene of the vision. See H5.
+- **Composition**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-### H1. The Psalms: attribution, occasion and writing {#history-psalms}
+*Introit: Ps. 71:1 (Vg.; Heb. 72)*
 
-The Davidic reference era comes from John Corbett’s *King David* in the *Catholic Encyclopedia*, IV, opening paragraph. Corbett calls it the usual chronology and immediately records proposals that place the reign thirty to fifty years later. The displayed range dates the attributed figure. It neither locates every poem within his reign nor supplies the date of a particular performance.
+- **Traditional attribution**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-The three Psalms reach David through different evidence. Psalm 28’s title names him. Psalm 2 has no such name in the inspected title, but Acts 4:24–28 gives its Davidic attribution in apostolic reception. Psalm 71’s title concerns Solomon; Bellarmine understands its opening as David’s prayer for the newly anointed king. That is his interpretation of the speaker, not the wording of a title that explicitly names David as author. Augustine begins directly from Christ, the true Solomon. The difference belongs to the reception of the psalm and does not establish a new composition date.
+- **Historical setting**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-The historical occasions remain uncertain. Psalm 28’s tabernacle-completion title does not identify a securely dated building project; its Libanus and Cades belong to the psalm’s storm world. Psalm 2 names Sion and the nations without dating the appointment of its royal speaker. Bellarmine’s accession setting for Psalm 71 is an exegetical identification. No shared precise place of writing follows from these different settings.
+- **Composition**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-The composition boundary comes from the USCCB NABRE introduction to Psalms, in its discussion of superscriptions and dating. It describes a pre-Maccabean limit alongside the inability to date individual psalms securely. Thus “before” remains part of the answer. The boundary is not an estimate that these poems were written near its endpoint. The complete contemporary introduction was independently checked in the reviewed research; its historical judgment is distinct from Corbett’s conventional chronology and the received attributions.[^26]
+*Gradual: Ps. 71:8,11 (Vg.; Heb. 72)*
 
-### H2. Daniel: Babylon and the heavenly court {#history-daniel}
+- **Traditional attribution**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-Daniel 7:1 places the vision in the first year of Baltasar, king of Babylon. The heavenly court is the visionary scene, not a terrestrial place of composition. The table’s seventy years describes Babylonian servitude in the received historical frame, supported by Jeremiah 25:11–12. A duration cannot be used as a calendar year for the Son of Man’s reception of dominion.
+- **Historical setting**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-Francis Gigot’s *Book of Daniel*, CE IV, authorship discussion, reports the displayed traditional composition range and the competing theory locating the book’s formation in the Maccabean crisis under Antiochus IV. Those are different accounts of the book’s history. Jerome’s rejection of a fulfillment exhausted by the Maccabees concerns the meaning and endurance of the promised kingdom; it is not a modern critical judgment about the date of composition. The interpretation of the prophecy and the circumstances of the book’s formation remain distinguishable questions.[^27]
+- **Composition**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-### H3. John: the trial and the Gospel’s formation {#history-john}
+*Alleluia: Dan. 7:14*
 
-The narrated scene is at Jerusalem, in the governor’s hall, in the morning of the Passion sequence. John 18:28 and 33 locate the interrogation; John 19:14–18 carries the narrative toward sentence and execution. A chronological binding for the Crucifixion cannot simply be attached to this distinct scene. The table therefore retains an unresolved date for the interrogation. Howlett’s *Biblical Chronology*, CE III, Passion discussion, preserves several alternative years and expressly declines certainty; its disagreement supplies context rather than a selected date for this row.
+- **Historical setting** (preferred). The seventy years of servitude to Babylon: “seventy years” (duration) (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Jer. 25:11, 25:12). Place: Judah and Babylon (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Jer. 25:11, 25:12).
 
-The received attribution names John son of Zebedee, and Ephesus is the traditional writing place. The *Catholic Encyclopedia* articles *New Testament*, XIV, dating discussion, and *Gospel of St John*, VIII, circumstances of composition, supply the two displayed late composition ranges. The latter acknowledges the lack of certain historical information and proposes a year within the last decade rather than an exact completion date established by contemporary documentation.
+- **Composition** (preferred). The Book of Daniel: B.C. 570–536 (“admits 570-536 B.C. as its date of composition”; The Catholic Encyclopedia, Volume 4 (New York, 1908)). Place: Babylonian setting (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Dan. 1:1, 1:6, 7:1).
 
-The USCCB NABRE introduction to John distinguishes the eyewitness testimony underlying the tradition from authorship of the finished Gospel. It reports that most modern scholars do not confidently identify that witness with Zebedee’s son. Its account of successive editing points to chapter 21, the adapted prologue hymn and discontinuities in the farewell discourse. Neither the number nor identities of all contributors are established. Alongside Ephesus it reports proposals for Syria, possibly Antioch, and Alexandria. These concern the writing and formation of the Gospel; the trial remains at Jerusalem. The displayed composition ranges are not reassigned as exact dates for particular editorial layers.[^28]
+*Gospel: John 18:33–37*
 
-### H4. Colossians: the prison and the recipients {#history-colossians}
+- **Narrated event**. Jesus before Pilate in the governor’s hall at Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: John 18:1, 18:28, 18:33, 18:37). No date: the chronology corpus has not yet dated this (research pending).
 
-Pauline authorship and Roman captivity form the received setting used by the displayed chronology. The *Catholic Encyclopedia*’s *St Paul*, XI, chronology list, supplies the single-year answer; *Epistle to the Colossians*, IV, opening and captivity discussion, supplies the wider range. Different precision need not imply a direct contradiction. The figures date the letter’s writing, not the creation or reconciliation it proclaims. Colossae is the recipients’ city and cannot be substituted for the prison’s location.
+- **Composition** (disputed). The Gospel of St John: c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); A.D. 96–100 (“96 or one of the succeeding years”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Ephesus traditionally (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
 
-The USCCB NABRE introduction notes that the letter does not identify the prison and that Paul’s several imprisonments complicate dating. It reports Roman, Caesarean and Ephesian proposals, and also the possibility of a pupil or follower writing in Paul’s name. It does not decide between that account and direct Pauline authorship or supply the follower with a definite city and date. The traditional Roman chronology therefore remains identified as such, beside the distinct uncertainties of authorship and imprisonment.[^29]
+*Epistle: Col. 1:12–20*
 
-### H5. Apocalypse: the seer’s place and the vision {#history-apocalypse}
+- **Composition** (disputed). The Epistle to the Colossians: A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 61–63 (“some time between A.D. 61 and 63”; The Catholic Encyclopedia, Volume 4 (New York, 1908)). Place: Rome traditionally; addressed to Colossae (The Catholic Encyclopedia, Volume 4 (New York, 1908); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Col. 1:2).
 
-The two Apocalypse passages in the Introit share a book-composition answer. The Psalm verse does not share that answer. The *Catholic Encyclopedia*’s *Apocalypse*, I, time-and-place section, presents Patmos and testimony connecting the work with the end of Domitian’s reign. The whole reign provides a broad bound, not a statement that each year is equally probable. The *New Testament* article supplies the alternative approximate late range and acknowledges an earlier Neronian proposal. The selected late chronology does not exhaust the history of scholarly positions.
+*Introit: Apoc. 1:6, Apoc. 5:12*
 
-Patmos belongs to the received seer’s setting; the heavenly throne room belongs to the vision. Neither should be mistaken for the other. Apocalypse 1 situates the witness amid suffering and patient endurance, while chapter 5 displays worship around the Lamb. That literary relation supports the study’s interpretation without assigning a historical date to the eternal kingship being acclaimed.[^30]
+- **Composition** (disputed). The Apocalypse of St John: A.D. 81–96 (“the reign of Domitian ... A.D. 81-96”; The Catholic Encyclopedia, Volume 1 (New York, 1907)); c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: seer on Patmos; heavenly scenes are visions (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Apoc. 1:9, 4:1, 7:9).
 
 ## Appendix: Seasonal Votive Texts
 
@@ -563,7 +563,7 @@ The historical appendix preserves the canonical chronology’s alternatives and 
 
 - **Modern Catholic historical introductions.** USCCB, NABRE introductions to [Psalms](https://bible.usccb.org/bible/psalms/0), superscriptions and dating; [John](https://bible.usccb.org/bible/john/0), paragraphs 5–7 and 10; [Colossians](https://bible.usccb.org/bible/colossians/0?bk=Colossians&ch=), paragraphs 2 and 5. Reviewed October 2026 deliveries; original historical analysis only, with no reproduction of protected page bodies.
 
-**Last revised (UTC):** 2026-11-04T03:13:49Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
@@ -616,13 +616,3 @@ The historical appendix preserves the canonical chronology’s alternatives and 
 [^24]: Bellarmine, *Commentary on Psalms*, Ps 71, comments 11–13, on the deliverance passage following biblical v. 11.
 
 [^25]: Chrysostom, *Homilies on Colossians* III, practical application following the exposition of heavenly reconciliation.
-
-[^26]: Corbett, *King David*, CE IV, opening; USCCB, *Psalms: Introduction*, superscriptions and dating discussion; Bellarmine, Ps 71, opening; Augustine, Ps 71.1–2.
-
-[^27]: Gigot, *Book of Daniel*, authorship discussion; Dan 7:1,13–14,17–18,27; Jer 25:11–12; Jerome, *Commentary on Daniel*, VII, on 13–18.
-
-[^28]: CE, *Gospel of St John*, circumstances of composition; *New Testament*, dating discussion; Howlett, *Biblical Chronology*, Passion discussion. USCCB, *John: Introduction*, paragraphs beginning “Critical analysis,” “Other difficulties,” “The gospel contains,” and “The final editing,” inspected 20 October 2026.
-
-[^29]: CE, *St Paul*, chronology list; *Epistle to the Colossians*, opening and captivity discussion; USCCB, *Colossians: Introduction*, paragraphs 2 and 5, especially “Paul wrote,” inspected 20 October 2026.
-
-[^30]: CE, *Apocalypse*, time-and-place section; *New Testament*, dating discussion; Apoc 1:1–20; 5:1–14.

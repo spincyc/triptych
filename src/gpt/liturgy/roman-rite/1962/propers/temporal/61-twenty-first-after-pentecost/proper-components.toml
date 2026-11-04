@@ -85,7 +85,7 @@ references = ["research/scope.md", "research/interpretations.md", "research/sour
 [[components]]
 key = "scriptural-date-location"
 kind = "front-matter"
-path = "sections/70-date-location.tex"
+path = "generated/scriptural-date-location.tex"
 modes = ["research"]
 depends_on = []
 element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
@@ -121,7 +121,7 @@ references = ["research/scope.md", "research/interpretations.md", "research/sour
 [[components]]
 key = "concise-chronology"
 kind = "front-matter"
-path = "sections/concise/03-chronology.tex"
+path = "generated/scriptural-date-location-page.tex"
 modes = ["synthesis"]
 depends_on = []
 element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]

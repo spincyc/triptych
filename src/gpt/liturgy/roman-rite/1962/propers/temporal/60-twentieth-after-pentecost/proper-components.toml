@@ -2,6 +2,7 @@ schema = 2
 record_type = "proper-components"
 format_contract = "propers-format-v1"
 presentation_contract = "interpretive-pagination-v1"
+chronology_presentation = "orientation-v3"
 authority_contract = "authority-standing-v1"
 document = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"
 calendar = "roman-1962"
@@ -84,11 +85,11 @@ references = ["research/scope.md", "research/interpretations.md", "research/sour
 [[components]]
 key = "scriptural-date-location"
 kind = "front-matter"
-path = "sections/70-date-location.tex"
+path = "generated/scriptural-date-location.tex"
 modes = ["research"]
 depends_on = []
 element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
-references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml", "research/chronology-annotations.tex", "research/chronology.toml"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml", "research/chronology-annotations.tex", "research/chronology.toml", "research/chronology-table.tex"]
 
 [[components]]
 key = "study-apparatus"
@@ -120,11 +121,11 @@ references = ["research/scope.md", "research/interpretations.md", "research/sour
 [[components]]
 key = "concise-chronology"
 kind = "front-matter"
-path = "sections/concise/03-chronology.tex"
+path = "generated/scriptural-date-location-page.tex"
 modes = ["synthesis"]
 depends_on = []
 element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
-references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml", "research/chronology-annotations.tex", "research/chronology.toml"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml", "research/chronology-annotations.tex", "research/chronology.toml", "research/chronology-table.tex"]
 
 [[components]]
 key = "concise-themes"

@@ -386,7 +386,9 @@ The second asks how a person becomes capable of such fidelity. Aquinas’s inwar
 
 Either reading becomes incomplete when isolated. An account of obligations can leave the will unchanged; an account of inward renewal can lose sight of real public duties. The coin remains a coin, and the person who renders it remains God’s image. The same person needs shelter, a sincere will, purification, nourishment and hope. The Psalm Communion option emphasizes mercy in need; the Mark option emphasizes the saving gift received in faith. The final prayer gives both readings their horizon: present service tends toward a good beyond the power of the servant to produce.
 
-## Appendix: Scriptural Date and Location {#historical-appendix}
+## Scriptural Date and Location {#sec:date-location}
+
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
@@ -408,63 +410,55 @@ Either reading becomes incomplete when isolated. An account of obligations can l
 
 Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-Composition dates concern the writing of a work. Narrated events, received attributions, superscription settings and Christian prophetic referents answer different questions. The historical Catholic sources below preserve alternative judgments rather than a single agreed chronology. The modern NABRE introductions supply the identified critical horizons for the Psalms and Isaiah. Neither the date of the Sunday nor the date of a Missal is a date for its biblical passages.
+### Evidence for each date {#sec:date-location-evidence}
 
-### Psalms of shelter, mercy and universal praise {#history-psalms}
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-**Entrance: cf. Psalm 16:6,8 (Vulgate; Hebrew 17).** **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C.
+*Entrance antiphon: Cf. Psalm 16:6,8 (Vg.; Heb. 17)*
 
-The Psalm’s received title names a prayer of David but identifies no particular occasion. Enemies and sheltering wings do not date a battle, flight or place of composition. The place and occasion of this prayer remain unresolved. Augustine’s Christ-and-body speaker is an interpretation of its voice, not a newly dated event in David’s biography.
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-**Communion option: cf. Psalm 32:18–19 (Vulgate; Hebrew 33).** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C.
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-The Davidic heading in the Douay and Clementine traditions likewise names no event. The reign era in Corbett’s *King David* is explicitly his “usual chronology”; his opening account also acknowledges later datings influenced by Assyrian evidence. That disputed reference era dates the attributed author’s kingship, not this Psalm’s composition. Israel and Judah are its broad geographic frame, not a recovered room in which the poem was written.[^30]
+*Communion: psalm option: Cf. Psalm 32:18–19 (Vg.; Heb. 33)*
 
-For all three Psalms the common latest boundary comes from the NABRE Psalms introduction, which states the uncertainty of dating individual Psalms. It does not assert that they were written together or precisely at the displayed boundary. Their individual writing places are likewise uncertain.[^31]
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-**Responsorial Psalm: Hebrew 96 / Vulgate 95.** **Superscription setting**: The raising of the second Temple by Zorobabel, B.C. 537. **Composition**: Before c. 165 B.C. **Prophetic referent** – disputed: The Nativity of Our Lord, B.C. 3; The Nativity of Our Lord, c. B.C. 7.
+- **Historical setting**. As under Entrance antiphon: Cf. Psalm 16:6,8 (Vg.; Heb. 17).
 
-The Greek and Vulgate superscription refers to a house built after captivity; the Hebrew title does not carry the same superscription. The historical association above is with Zorobabel’s raising of Jerusalem’s second Temple, as described at the opening of the encyclopedia’s Temple article. The superscription does not securely distinguish that raising from the later completion. Its associated date is therefore not a demonstrated composition date or an unambiguous date of dedication.[^32]
+- **Composition**. As under Entrance antiphon: Cf. Psalm 16:6,8 (Vg.; Heb. 17).
 
-The Nativity alternatives concern the Psalm’s Christian prophetic referent. Gerard’s *General Chronology* reports a correction attributed to interpreters of Dionysius; James Howlett’s *Biblical Chronology* weighs Herod and infancy evidence and reaches a probable date. Both answers remain disputed. The Psalm itself gives neither a Nativity year nor a locality for the birth. Augustine’s Christian reading and John Paul II’s account of the cross therefore belong to reception, not to the dating of an ancient sanctuary scene.[^33]
+*Responsorial Psalm: Ps. 96:1,3,4–5,7–8,9,10a,10c (Heb.; Vg. 95), Ps. 96:7b (Heb.; Vg. 95)*
 
-### Isaiah’s address to Cyrus {#history-isaiah}
+- **Superscription setting** (preferred). The raising of the second Temple by Zorobabel: B.C. 537 (“(537 B.C.)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Temple at Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 95:1, 1 Esd. 3:8).
 
-**Traditional attribution**: Isaias (ministry in Souvay’s traditional account), B.C. 740–701. **Prophecy given**: The prophetic activity behind Isaiah 40-55 in the NABRE introduction, toward the end of the Babylonian exile.
+- **Composition**. As under Entrance antiphon: Cf. Psalm 16:6,8 (Vg.; Heb. 17).
 
-The traditional ministry horizon in Souvay’s *Isaias* concerns the prophet in Judah and Jerusalem and the attribution of the book to him. It is not a separately established date of an encounter between Isaiah and Cyrus. The NABRE introduction treats the activity behind chapters 40–55 within the late Babylonian exile. That is a different account of the prophetic horizon, not the same event shifted within one scheme. Nor does it imply that the final arrangement of every word of the book was completed at once.[^34]
+- **Prophetic referent** (disputed). The Nativity of Our Lord: B.C. 3 (“the year of Rome 750 which he styles 3 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)); c. B.C. 7 (“probably the year 7 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)). Place: Bethlehem as the Christian referent (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 2:1).
 
-Babylonian exile supplies the critical horizon; Jerusalem and its Temple are the destination of the promised restoration in Isaiah 44:26–28. Neither answer above dates Cyrus’s capture of Babylon or a decree. No such year is needed to identify the appointed oracle’s argument. The distinction between a named ruler and the Lord who calls him survives both source frameworks.
+*First reading: Is. 45:1,4–6*
 
-### Matthew’s temple controversy {#history-matthew}
+- **Traditional attribution** (preferred). Isaias (ministry in Souvay’s traditional account): B.C. 740–701 (“from the closing year of Ozias, King of Juda (740 B.C.); no prophecies appear to be later than 701 B.C.”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Judah and Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Is. 1:1).
 
-**Event** – No narrated-event date in the chronology corpus. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50.
+- **Prophecy given** (preferred). The prophetic activity behind Isaiah 40-55 in the NABRE introduction: Toward the end of the Babylonian exile (Catholic critical chronology; New American Bible, Revised Edition: USCCB web state (2026), Isaiah introduction, especially the final two prose paragraphs before the outline). Place: exiles from Babylon; restoration to Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Is. 48:20, 52:9).
 
-Matthew 21:23 and the continuing controversies establish the Jerusalem temple setting of the tribute question. Its exact narrated date remains unresolved here. The composition alternatives date the Gospel, not this exchange. The temple is the scene of the narrative; it does not identify the writer’s place.
+*Gospel: Matt. 22:15–21*
 
-Jacquier’s Matthew article reports competing early testimony and the subsequent dates drawn from it. He notes uncertainty in interpreting Irenaeus’s account. The first five alternatives above belong to that discussion, which distinguishes early reported dates from a later proposed interval and another interpretation centred on the preaching and deaths of Peter and Paul. Durand’s *The New Testament* article assigns the sixth alternative, about A.D. 50, to an Aramaic original; he leaves the date of its Greek rendering undetermined. Overlap between intervals does not make them independent confirmations of one exact year.[^35]
+- **Narrated event**. Jesus answers about tribute to Caesar in the Temple at Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 21:10, 21:23, 22:15, 22:17, 22:21). No date: the chronology corpus has not yet dated this (research pending).
 
-### Mark’s journey toward Jerusalem {#history-mark}
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
 
-**Composition** – disputed: A.D. 38–40; A.D. 40; A.D. 43; A.D. 50–67; A.D. 60–70; After Matthew, and not as late as the destruction of Jerusalem.
+*Communion: Mark option: Mark 10:45*
 
-Mark 10:32–45 places the teaching on service and ransom on the ascent toward Jerusalem, after the Passion prediction and the request for seats of honour. Verse 46 reaches Jericho after the saying. The precise roadside locality of the teaching is not named. None of the composition dates above supplies an event date for that journey or for the Passion.
+- **Composition** (disputed). The Gospel of St Mark: A.D. 38–40 (“the tenth or twelfth year after the Ascension (A.D. 38-40)”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 40 (The Catholic Encyclopedia, Volume 9 (1910)); A.D. 43 (“the third year of Claudius (A.D. 43)”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 50–67 (“somewhere between A.D. 50 and 67”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 60–70 (“between 60 and 70”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); After Matthew, and not as late as the destruction of Jerusalem (De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam (1912), responsa-i-ix). Place: Rome traditionally; Egypt reported by Chrysostom (The Catholic Encyclopedia, Volume 9 (1910)).
 
-MacRory’s Mark article reports early subscriptions and chronicles, considers their possible derivation and weighs conflicting testimony toward a broader preferred interval. Its reported early dates and its preferred interval remain distinguishable answers. Durand’s *The New Testament* article gives the other numerical interval. The Pontifical Biblical Commission’s responsa V–VI of 26 June 1912 supply relative order and a limit before Jerusalem’s destruction or the beginning of its siege, not a numerical year. A relative answer must remain relative.[^36]
+*Gospel acclamation: Phil. 2:15d,16a*
 
-### Philippians: writer and recipients {#history-philippians}
+- **Composition** (disputed). The Epistle to the Philippians: A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 62–64 (“at Rome (A.D. 62-64)”; The Catholic Encyclopedia, Volume 12 (1911)). Place: Rome to Philippi in the cited account (The Catholic Encyclopedia, Volume 12 (1911); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Phil. 1:1).
 
-**Composition** – disputed: A.D. 61; A.D. 62–64.
+*Second reading: 1 Thess. 1:1–5b*
 
-The two historical composition schemes give different dates within a Roman-captivity account. Prat’s schedule supplies the first; the encyclopedia’s separate Philippians article supplies the second and argues for Rome rather than Caesarea, while discussing the stage of captivity. Rome is the writer’s location in that account, Philippi the recipients’ city. The account is not a claim that every scholarly proposal places the writing at Rome. The short acclamation does not date its own delivery as an exhortation.[^37]
-
-### Thessalonians: thanksgiving sent from Corinth {#history-thessalonians}
-
-**Composition** – disputed: A.D. 52; A.D. 53–54.
-
-Prat’s schedule supplies one traditional scheme; Drum’s article supplies the other. Drum argues for Corinth by joining the letter’s three senders, Acts 18:5 and the report brought by Timothy. Thessalonica is the receiving community’s city. The writing date does not automatically date every act of faith and love remembered in the thanksgiving. Drum also discusses a critical alternative outside the returned comparison; it is not silently made a third date here.[^38]
-
-The Collect, Prayer over the Offerings and Prayer after Communion are composed prayers with no appointed biblical citation. They receive no biblical chronology from a resemblance to a verse. The Scripture references of the Missal antiphons identify adaptations or an excerpt; their dates concern the underlying passages, not the composition of those liturgical adaptations.
+- **Composition** (disputed). The First Epistle to the Thessalonians: A.D. 52 (“(1 and 2 Thessalonians), 52”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 53–54 (“in the year 53 or 54 according to the commonly received scheme of Pauline chronology”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Corinth to Thessalonica (The Catholic Encyclopedia, Volume 14 (New York, 1912); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 1 Thess. 1:1).
 
 ## Appendix: Liturgical Resolution
 
@@ -536,7 +530,7 @@ Historical orientation
 
 : The *Catholic Encyclopedia* articles by Corbett, Gerard, Howlett, Souvay, Meistermann, Jacquier, Durand, MacRory, Vander Heeren, Prat and Drum are identified at their claims in the historical appendix. PBC, responsa of 26 June 1912, *AAS* 4 (1912), pp.463–465. USCCB, NABRE introductions to Psalms and Isaiah, official web deliveries read in the research of 13 October 2026. Historical source judgments and modern critical horizons remain distinct.
 
-**Last revised (UTC):** 2026-11-04T03:13:49Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
@@ -597,21 +591,3 @@ Historical orientation
 [^28]: Aquinas, *Super Psalmos*, 32, §16; Augustine, *Expositions*, XXXII, §§18–22.
 
 [^29]: Bede, *In Marci*, III, Mark 10:45, PL 92, col.236B.
-
-[^30]: John Corbett, “King David,” *Catholic Encyclopedia*, IV (1908), opening chronology and account of David.
-
-[^31]: USCCB, NABRE, “The Book of Psalms,” introduction, paragraph on dating and collection; official web delivery checked 13 October 2026.
-
-[^32]: Barnabas Meistermann, “Temple of Jerusalem,” *Catholic Encyclopedia*, XIV (1912), opening historical account, together with the Psalm’s superscription.
-
-[^33]: John Gerard, “General Chronology,” and James Howlett, “Biblical Chronology,” *Catholic Encyclopedia*, III (1908), Christian-era and Nativity discussions.
-
-[^34]: Charles Souvay, “Isaias,” *Catholic Encyclopedia*, VIII (1910), life and ministry; USCCB, NABRE, “The Book of Isaiah,” introduction, discussion of chapters 40–55.
-
-[^35]: Eugène Jacquier, “Gospel of St. Matthew,” *Catholic Encyclopedia*, X (1911), “Date and Place of Composition”; Alfred Durand, “The New Testament,” XIV (1912), origins of the Gospels.
-
-[^36]: Joseph MacRory, “Gospel of Saint Mark,” *Catholic Encyclopedia*, IX (1910), “Time of Composition”; Durand, “The New Testament”; PBC, responsa on Mark and Luke, V–VI, *Acta Apostolicae Sedis* 4 (1912), pp.463–465.
-
-[^37]: Ferdinand Prat, “St. Paul,” *Catholic Encyclopedia*, XI (1911), chronology; Achille Vander Heeren, “Epistle to the Philippians,” XII (1911), occasion and date/place of composition.
-
-[^38]: Prat, “St. Paul,” chronology; Walter Drum, “Epistles to the Thessalonians,” *Catholic Encyclopedia*, XIV (1912), time, place and occasion of writing.
