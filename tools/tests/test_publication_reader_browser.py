@@ -255,6 +255,57 @@ class PublicationReaderBrowserTest(unittest.TestCase):
         (self.evidence / "source-spanned-chronology.json").write_text(
             json.dumps(report, indent=2) + "\n")
 
+    def test_single_column_chronology_rows_keep_the_reading_width(self):
+        routes = tuple(
+            f"web/{provider}/liturgy/roman-rite/1962/propers/temporal/{leaf}.html"
+            for provider in ("claude", "gpt")
+            for leaf in ("55-fifteenth-after-pentecost", "56-sixteenth-after-pentecost")
+        )
+        report = []
+        for route in routes:
+            self.visit(route)
+            for width, height in ((1440, 900), (390, 844), (320, 852)):
+                self.browser.viewport(width, height)
+                metrics = self.browser.js("""const content=document.querySelector('[data-reader-content]');
+                    const headings=new Set(['sec:date-location','scriptural-date-and-location',
+                      'appendix-scriptural-date-and-location','historical-appendix']);
+                    const tables=[...content.querySelectorAll('table')].filter(table=>{
+                      let prior=table.previousElementSibling;
+                      while(prior && prior.tagName!=='H2') prior=prior.previousElementSibling;
+                      return prior && headings.has(prior.id)
+                        && !table.querySelector('tr > :nth-child(2), [colspan]');
+                    });
+                    return {width:innerWidth,documentWidth:document.documentElement.scrollWidth,
+                      tables:tables.length,rows:tables.flatMap(table=>[...table.querySelectorAll('td')].map(cell=>{
+                        const bounds=cell.getBoundingClientRect(),row=cell.parentElement.getBoundingClientRect();
+                        const walker=document.createTreeWalker(cell,NodeFilter.SHOW_TEXT);
+                        let node,overflow=0;
+                        while(node=walker.nextNode()){
+                          if(!node.textContent.trim()) continue;
+                          const range=document.createRange();range.selectNodeContents(node);
+                          for(const rect of range.getClientRects()) if(rect.width)
+                            overflow=Math.max(overflow,bounds.left-rect.left,rect.right-bounds.right);
+                        }
+                        return {text:cell.innerText.length,cells:cell.parentElement.children.length,
+                          width:bounds.width,rowWidth:row.width,left:bounds.left-row.left,
+                          client:cell.clientWidth,scroll:cell.scrollWidth,textOverflow:overflow};
+                      }))};""")
+                report.append({"route": route, **metrics})
+                with self.subTest(route=route, width=width):
+                    self.assertEqual(metrics["tables"], 1, "Source single-column chronology was lost")
+                    self.assertTrue(metrics["rows"])
+                    self.assertLessEqual(metrics["documentWidth"], metrics["width"] + 1)
+                    for row in metrics["rows"]:
+                        self.assertGreater(row["text"], 0)
+                        self.assertEqual(row["cells"], 1)
+                        self.assertLessEqual(abs(row["left"]), 2)
+                        self.assertLessEqual(abs(row["width"] - row["rowWidth"]), 2)
+                        self.assertLessEqual(row["scroll"], row["client"] + 1)
+                        self.assertLessEqual(row["textOverflow"], 1)
+                self.assert_console_clean()
+        (self.evidence / "single-column-chronology.json").write_text(
+            json.dumps(report, indent=2) + "\n")
+
     def test_section_links_focus_reload_and_back(self):
         for prefix in ("", "triptych/"):
             self.visit(prefix + FULL)

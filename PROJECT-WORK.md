@@ -92,8 +92,27 @@ wrong final catalog path after successful generation; its failure is preserved
 alongside the successful validation at the actual path. Independent two-build
 publication reproduction now passes: thirteen families, 27,836 files and
 382,696,591 bytes agree exactly. The deployment source gate and deliverables
-validation pass. The full conversion suite, assembled-site acceptance and main
-publication remain pending.
+validation pass. All 151 converter tests also pass at the recorded candidate.
+The later mobile-row correction still requires final assembled-site acceptance
+and main publication.
+
+The first assembled-site review found a further mobile defect before main
+publication: source-one-column chronology tables inherited the two-column
+mobile grid. The GPT55 label `proemium/argumentum` overflowed a half-width
+cell. A full artifact census found twenty affected web/print routes across ten
+editions. The bounded CSS correction makes every sole chronology cell fill its
+row, covering both true one-column sources and declared spans. The new browser
+regression reproduces eight narrow-view failures on candidate `41a27f5` and
+passes after the CSS correction at desktop, 390px and 320px widths. The
+independent actual-site acceptance scope is expanded from 64 to 80 routes
+(160 desktop/mobile states), with checks on every visible cell. Candidate
+`41a27f5` remains a retained pre-fix checkpoint; it was never pushed to main.
+The new two-build descriptor passes, and all thirteen product file inventories
+remain byte-identical to `41a27f5`: 27,836 files and 382,696,591 bytes. Only
+input/cache identities change. Updated bindings and final assembled-site
+validation are still required before publication. The completed 151 converter tests and 66 retained PDF reviews
+remain evidence at their recorded inputs; this site-only delta does not claim
+fresh native PDF captures or a new full converter-suite run.
 
 Independent source/PDF review covers 66 retained outputs: ten orientation,
 28 legacy and 28 authored. The later registry-binding and diagnostic-message

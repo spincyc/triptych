@@ -742,8 +742,8 @@ a.footnote-backref { text-decoration: none; }
   .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"], h2[id="historical-appendix"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"], h2[id="historical-appendix"]) ~ h2 ~ table) tr:has(> :nth-child(2):empty):has(> :nth-child(3):empty):has(> :nth-child(4):empty) > :empty {
     display: none;
   }
-  /* Preserve a source-declared full-width note after semantic colspan conversion. */
-  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"], h2[id="historical-appendix"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"], h2[id="historical-appendix"]) ~ h2 ~ table) tr > :is(th, td)[colspan]:only-child {
+  /* A sole cell fills the row, whether the source uses one column or a span. */
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"], h2[id="historical-appendix"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"], h2[id="historical-appendix"]) ~ h2 ~ table) tr > :is(th, td):only-child {
     grid-column: 1 / -1;
   }
   /* A three-column dossier (Passage, Occurrence and place, Date) on the same

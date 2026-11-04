@@ -1,0 +1,363 @@
+{
+  "schema": "triptych-mobile-single-column-review/v1",
+  "review": "Independent bounded mobile chronology CSS review",
+  "verdict": "pass for declared CSS-only overlay; final rebuilt candidate still pending",
+  "baseline_candidate": "41a27f5d3b6be2be0d315b8af5fc1af6c66f6070",
+  "baseline_publication_manifest_sha256": "e3c2e4a68f3202805553d8b01c896208f783e49f5dd1eb39f8c2a5fa42219943",
+  "prior_source_native_review_sha256": "74d41a6d1ab5b185741b4088705699857fa97f81343a236b446312758211a820",
+  "change": {
+    "path": "release/public-alpha/assets/site.css",
+    "before_sha256": "53ae3b2dcdbcae03e9aff296b0443afb3beb562ec75b2d30c836bf07e6f28d20",
+    "after_sha256": "01e7578ed42a04500f7e7d34b9b56e8739e76408962d4abb780d0eb722af9f68",
+    "lines": [
+      745,
+      748
+    ],
+    "exact_behavioral_delta": "Within the existing chronology-only mobile selector, remove the [colspan] attribute requirement from the sole-cell full-row rule. Comment updated. No other CSS bytes differ."
+  },
+  "original_blocker": {
+    "route": "web/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.html",
+    "viewport_px": 390,
+    "table": 1,
+    "row": 22,
+    "cell_width_px": 169.5,
+    "row_width_px": 341,
+    "text_overflow_px": 6.484375,
+    "cause": "Single source-column rows were assigned one half of the two-column mobile grid.",
+    "evidence_sha256": "f9ffc133632a8b15f7953f9b55133aa9e97b0519db2c020f96b48157b7d031c7",
+    "screenshot_sha256": "5c3b9916a6adfc13c6e8ee6616d34b1c8d5f02443549527e1796f2a6c2a8a358"
+  },
+  "census": {
+    "html_routes_examined": 1446,
+    "tables_examined": 3690,
+    "chronology_tables_examined": 514,
+    "affected_routes": 20,
+    "affected_source_one_cell_rows": 478,
+    "mixed_chronology_tables_with_unspanned_sole_cells": 0,
+    "routes": [
+      {
+        "route": "web/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 24,
+        "cells": 24,
+        "html_sha256": "37d0c00e988956fdb4d26857cac4710d30533c1de8d172b97200e1b59f0c8454"
+      },
+      {
+        "route": "web/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 23,
+        "cells": 23,
+        "html_sha256": "20c12b3b14c200789e411e3dfcdf684f4a5ad3e604a2776d42a634aa84828a7e"
+      },
+      {
+        "route": "web/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 23,
+        "cells": 23,
+        "html_sha256": "ac91f3afb426b2935c5dfe5cf51afafbfbe951624e3b3f66973ecfe8d4b5a0e2"
+      },
+      {
+        "route": "web/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 22,
+        "cells": 22,
+        "html_sha256": "202a2ab595897e839925b4bd55e82109c4340f1153cb90548a899c36f75013d2"
+      },
+      {
+        "route": "web/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 23,
+        "cells": 23,
+        "html_sha256": "f95e0f004b1f291422c6298f1714b56ef0c5955ab41a23f6a579f7ab9aed0d03"
+      },
+      {
+        "route": "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 30,
+        "cells": 30,
+        "html_sha256": "351a27230cfc7378fd426f0e0ec94e71da007fa64d53ecaa5825a2cb9013cd38"
+      },
+      {
+        "route": "web/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.html",
+        "table": 1,
+        "section": "scriptural-date-and-location",
+        "rows": 24,
+        "cells": 24,
+        "html_sha256": "531dfa57d60b54d871b1d748fbfb7cc53bf3336e518ac334ae96caf16658a444"
+      },
+      {
+        "route": "web/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.html",
+        "table": 1,
+        "section": "scriptural-date-and-location",
+        "rows": 23,
+        "cells": 23,
+        "html_sha256": "c14c4e942c0a3a5e9a1e285e2b3fdfe84c7aa47745e68645351b80d184a17fa0"
+      },
+      {
+        "route": "web/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 23,
+        "cells": 23,
+        "html_sha256": "416388429f3b4ee883868980af3bab368097dde585db9a4f969f83bf942b02c0"
+      },
+      {
+        "route": "web/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 22,
+        "cells": 22,
+        "html_sha256": "aa8e72500b5f5586475ed7dca30c446536aaaa7f6c5de481ea75683b488a51de"
+      },
+      {
+        "route": "print/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 24,
+        "cells": 24,
+        "html_sha256": "2f530bfa41af0ef2b49d4f1fe9f473172bc754be6cc1b10be32e4f46c474aa1f"
+      },
+      {
+        "route": "print/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 24,
+        "cells": 24,
+        "html_sha256": "b27d4bbc7fb1b18d31d44e6c7d4a2abac59495db72cf8ec8d53263522456c602"
+      },
+      {
+        "route": "print/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 23,
+        "cells": 23,
+        "html_sha256": "17040f854324f6daace850b11029796bf99fdd1e1b86f2c6f1a1e089668b0143"
+      },
+      {
+        "route": "print/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 23,
+        "cells": 23,
+        "html_sha256": "69972d9c0287052290a33f905774d335506536362ac2e5a54b0cd743f583f16a"
+      },
+      {
+        "route": "print/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 23,
+        "cells": 23,
+        "html_sha256": "8f1d35f011bc4e6cf7447ee3b336848ff55c4e6bcb880123bf52c6e19abe4513"
+      },
+      {
+        "route": "print/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 30,
+        "cells": 30,
+        "html_sha256": "42267e58401867ac3708bbf2ec08c0b4053c32efaa6b044ce110482623d8c573"
+      },
+      {
+        "route": "print/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.html",
+        "table": 1,
+        "section": "scriptural-date-and-location",
+        "rows": 24,
+        "cells": 24,
+        "html_sha256": "3a876be0774c648ca671b82fe6cd6cf8ac17af8b45fbcc3ff92692bc64bac447"
+      },
+      {
+        "route": "print/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.html",
+        "table": 1,
+        "section": "scriptural-date-and-location",
+        "rows": 24,
+        "cells": 24,
+        "html_sha256": "9555c69dc890bbd81c18db23e5b4a9f5a7e2b8e8735311b1e76ceb97aa0eba70"
+      },
+      {
+        "route": "print/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 23,
+        "cells": 23,
+        "html_sha256": "92dfecf3f8ffc04db84f296505d59f837966b99914bd8b3d4b8ea3e44512391f"
+      },
+      {
+        "route": "print/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.html",
+        "table": 2,
+        "section": "scriptural-date-and-location",
+        "rows": 23,
+        "cells": 23,
+        "html_sha256": "75b3d29602cc7b50ba23285c2ada43433139dfc74ee7b4416d8aa2af1f8000ec"
+      }
+    ]
+  },
+  "browser_validation": {
+    "viewports_px": [
+      1400,
+      390
+    ],
+    "primary_routes": 64,
+    "primary_states": 128,
+    "supplementary_routes": 16,
+    "supplementary_states": 32,
+    "total_states": 160,
+    "table_states": 902,
+    "cell_states": 26052,
+    "affected_route_states": 40,
+    "affected_visible_sole_cell_row_states": 956,
+    "cell_text_overflow_failures": 0,
+    "narrow_sole_cell_row_failures": 0,
+    "document_overflow_failures": 0,
+    "table_text_order_spans_heading_id_mismatches": 0,
+    "print_query_states": 40,
+    "native_runtime_or_bundle_fetches": 0,
+    "workers_created": 0,
+    "original_problem_cell_after_width_px": 339,
+    "original_problem_cell_after_overflow_px": 0,
+    "source_basis": "Original64 routes compared to frozen canonical source tables; supplementary16 route table semantics compared exactly to the frozen41a actual HTML. All80 actual HTML file hashes are unchanged in the declared overlay."
+  },
+  "controls": {
+    "primary_desktop_table_geometry_unchanged": true,
+    "primary_explicit_span_cell_geometry_states_unchanged": 562,
+    "primary_unaffected_table_geometry_unchanged": true,
+    "only_geometry_changes": [
+      {
+        "route": "web/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.html",
+        "viewport": 390,
+        "table": 2,
+        "height_before_after_px": [
+          5842.3125,
+          2853.8125
+        ]
+      },
+      {
+        "route": "web/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.html",
+        "viewport": 390,
+        "table": 2,
+        "height_before_after_px": [
+          6058.625,
+          2898.125
+        ]
+      },
+      {
+        "route": "web/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.html",
+        "viewport": 390,
+        "table": 1,
+        "height_before_after_px": [
+          6035.8125,
+          2875.3125
+        ]
+      },
+      {
+        "route": "web/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.html",
+        "viewport": 390,
+        "table": 2,
+        "height_before_after_px": [
+          5499.625,
+          2554.125
+        ]
+      }
+    ],
+    "nonempty_table_cells_spans_order_and_nearest_h2_ids_conserved": true,
+    "empty_head_normalization": "Existing six wholly empty thead removals in five readers remain the same; exact source-versus-actual qualification retained in the prior actual-site receipt."
+  },
+  "native_and_content_scope": {
+    "reviewed_native_pdfs": 66,
+    "new_native_compilations": 0,
+    "native_tex_sources_or_shared_native_styles_changed": false,
+    "canonical_reader_bytes_changed": false,
+    "date_place_claims_or_appointed_passages_changed": false,
+    "qualification": "This CSS-only overlay review preserves the prior66 native PDF review; it is not a native recapture or final publication-site acceptance."
+  },
+  "evidence": [
+    {
+      "label": "primary128 browser states",
+      "sha256": "4f6bc07aa0f11fbaa78dce4f4d9fa8222f0d04da001d11eb2842d03f9d933b44"
+    },
+    {
+      "label": "supplement32 browser states",
+      "sha256": "58cd5d086ad231c8c1d2d7c206546b55bddca241e057a946f5a3cc521eac9b72"
+    },
+    {
+      "label": "complete one-column static census",
+      "sha256": "e08cd7168d3b5772945ca1dbc1ae259b663da80d5c435eeed1771c560db24f95"
+    },
+    {
+      "label": "corrected citation cell probe",
+      "sha256": "01be97a540a3c07b90f7259ebff9f89a127647cfd0df7cdbd38c2818d79c5ab3"
+    },
+    {
+      "label": "corrected citation cell screenshot",
+      "sha256": "3f303cd5fcd914ddc8fdc729cbf6ef3653ec93bde04e3557a02eb751a5ad3c07"
+    },
+    {
+      "label": "independent browser verifier",
+      "sha256": "17d97efc4eccf995324dd9c634ad95fadce645f697c3ea956d20f33668590686"
+    }
+  ],
+  "processes_closed": true,
+  "final_rebuilt_candidate_site_review": "pending; repeat160 actual route/viewport states against committed rebuilt candidate",
+  "files_sha256": {
+    "release/public-alpha/assets/site.css": "01e7578ed42a04500f7e7d34b9b56e8739e76408962d4abb780d0eb722af9f68",
+    "tools/tests/test_publication_reader_browser.py": "a64d17cc67b5d72dca7a2ced9555cb5f9d4cee93a0408f9cb3b06f42633447fe"
+  },
+  "independent_final_reviewer": {
+    "status": "bounded-delta-pass; final rebuilt candidate pending",
+    "code_audit": "Exact CSS delta is removal of one colspan attribute condition plus its explanatory comment. Exact test delta is one new actual-route regression method. Existing chronology scope and mobile breakpoint remain unchanged; ordinary multi-cell rows cannot match only-child.",
+    "overlay_audit": "Every path and asset resolves to the frozen41a site except the exact reviewed site.css file. Original site CSS remains unchanged.",
+    "before_regression": {
+      "command": "python -m unittest -v tools.tests.test_publication_reader_browser.PublicationReaderBrowserTest.test_single_column_chronology_rows_keep_the_reading_width",
+      "site": "frozen41a actual site",
+      "exit": 1,
+      "expected_narrow_failures": 8,
+      "route_viewport_cases": 12,
+      "viewports": [
+        1440,
+        390,
+        320
+      ],
+      "log": {
+        "path": ".scratch/final-main-cold-review/single-column-before.log",
+        "sha256": "f4fab691e8eac6beee0f0e6cab9be633594453dc0d44ed1cf65173eea1e3cfba"
+      }
+    },
+    "after_regression": {
+      "command": "python -m unittest -v tools.tests.test_publication_reader_browser.PublicationReaderBrowserTest.test_single_column_chronology_rows_keep_the_reading_width tools.tests.test_publication_reader_browser.PublicationReaderBrowserTest.test_source_spanned_chronology_notes_keep_the_reading_width",
+      "site": "declared CSS-only overlay",
+      "exit": 0,
+      "tests": 2,
+      "route_viewport_cases": 16,
+      "seconds": 3.02,
+      "log": {
+        "path": ".scratch/final-main-cold-review/single-column-after.log",
+        "sha256": "6ce804657f33b9b06ff8f54ddd1310c9667feec69e82f707308ae46c5c0b75c4"
+      }
+    },
+    "browser_receipt_audit": "All160 current HTML hashes, source parity results,902 table states,26,052 cell states, zero errors/overflows/runtime fetches/workers independently checked against the two raw report hashes. All20 affected HTML file hashes match frozen41a.",
+    "visual_audit": "Independently viewed the original and corrected GPT55 mobile citation cell; corrected text uses the full readable row and retains dates, references and uncertainty.",
+    "unchanged_native_converter_and_shared_print_files_sha256": {
+      "tools/web-edition": "9be3fed135b8f83b7c8ca5895fa50b14bbf99fb32e74cadc44d227feef554311",
+      "scripts/web-shim.tex": "13e017f8b7dab94b226561c1d096021241ab9189be01de754f1422daeba22b41",
+      "tools/tests/test_web_edition_conversion.py": "2faaeec4d30154463efb37360b385dab0c7356bc2c4714edfd65bddc0425b27a",
+      "scripts/_native_tex_publication.py": "2ba6d9d942d28d323b8080d4692b97714bc2e362c7b631f529751d666e90b3d2",
+      "src/web/browser/shared/native-tex.js": "d5c554011171256b6cd17cff34a15df238855718f7fce23d69897d906a9e3ca9",
+      "src/web/browser/shared/native-print.js": "f9525e8881212f74d446752ab434e193b5bdbb6a8868ccc612392337e1702555",
+      "src/web/browser/shared/web-print.js": "008c65bbae959d671573e01de8f760f47ec7c7e08218027be7d8e09ac55926fd",
+      "src/web/browser/shared/web-print.css": "a12e63dcf0b1da73c340651563ee2f4863d9eff2cce41d3fcb9902f509dce985",
+      "src/web/browser/shared/print-volume.js": "2de888bfb583c5b9a105a42af915a50d8ef56fddb062c5a70aa0da479d5cc524",
+      "src/common/propers-format.tex": "8efe7c2c28eee077f98f74fc8998cf54eae9883228e523e966eaee7a7280ea3f"
+    },
+    "quality_proof": {
+      "path": ".scratch/proper-quality-cold-review/mobile-single-column-public.json",
+      "sha256": "f0a61e17ece10868f90350309e0a11913dafb5b29f2ea0c18417f9c339ed39d8"
+    },
+    "review_processes_closed": true
+  },
+  "historical_evidence_qualification": "This proof covers the bounded CSS/test delta on a declared41a overlay. The original41a capture and full151/66-native receipts remain historical. A new browser-product record, exact committed candidate build,160 actual-site states and final verdict are still required; this is not publication approval."
+}
