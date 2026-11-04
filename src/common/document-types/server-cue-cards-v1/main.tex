@@ -1,0 +1,27 @@
+%% server-cue-cards-v1: response and action cards from the shared card sources.
+\input{common/preamble}
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/server-guide-format}
+%@ option form
+\CardsOnlyGuidetrue
+
+\hypersetup{
+  pdftitle={@{pdftitle}},
+  pdfsubject={@{pdfsubject}}
+}
+
+% The cards-only profile permits the compact revision and rights notice below
+% the last back grid; a terminal reference sheet follows only where the
+% profile admits one.
+\renewcommand{\CardCompanionEndHook}{%
+  \input{@{document}/generation-metadata}%
+  \CardCompanionRightsNotice
+%@ option terminal-sheet
+}
+
+\begin{document}
+%@ region front
+\begin{deepstudy}
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/response-reference}
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/@{form}-action-cards}
+\end{deepstudy}
+\end{document}

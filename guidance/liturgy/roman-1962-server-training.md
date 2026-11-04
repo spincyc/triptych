@@ -61,7 +61,13 @@ altar-server-guides/
 ```
 
 Each leaf has its own `main.tex`, `generation-metadata.tex`, and local guide
-map. The Low Mass child booklet and trainer manual and the two sung-form full
+map. Except for the flash cards, whose exact-geometry sheets are authored in
+`main.tex` itself, `main.tex` is generated from a
+[document type](../document-schemas.md#document-types): `server-booklet-v1`
+for the Low Mass booklet and trainer manual, `server-sung-guide-v1` for the two
+sung-form guides, and `server-cue-cards-v1` for their card companions. Change
+the leaf's `[document]` declaration or the type, never the generated file.
+The Low Mass child booklet and trainer manual and the two sung-form full
 guides are substantive publications and keep independent generation metadata.
 A cards-only leaf is a card-face-only mechanical companion and may inherit
 generation provenance only from the teaching publication named in its guide

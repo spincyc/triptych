@@ -1,0 +1,24 @@
+%% server-booklet-v1: a Low Mass booklet drawn whole from the shared route.
+%% The shared low-mass-book-format calls \LMRenderGenerationMetadata on the
+%% final page; the leaf's own metadata file is the only per-leaf input.
+\input{common/preamble}
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/server-guide-format}
+\LowMassGuidetrue
+%@ option audience
+\ResponseDataOnlyGuidetrue
+
+\newcommand{\LMRenderGenerationMetadata}{%
+  \input{@{document}/generation-metadata}}
+
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-book-format}
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-diagrams}
+
+\hypersetup{
+  pdftitle={@{pdftitle}},
+  pdfsubject={@{pdfsubject}}
+}
+
+\begin{document}
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/response-reference}
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-ceremony}
+\end{document}

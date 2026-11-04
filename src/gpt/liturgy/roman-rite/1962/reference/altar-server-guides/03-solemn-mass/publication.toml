@@ -71,3 +71,42 @@ data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/sol
 [[structure]]
 role = "role-sheets"
 data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/solemn-role-sheets.tex"
+
+[document]
+type = "server-sung-guide-v1"
+
+[document.main]
+pdftitle = 'Serving Solemn Mass'
+pdfsubject = 'A complete model-roster action, response, memorization, and Roman-pronunciation guide for young servers of the 1962 Roman Missal'
+title = 'Serving Solemn Mass'
+subtitle = 'Know your part. Move with the team.'
+audience-line = 'Responses, pronunciation, roles, and actions for servers ages 8--14'
+form = "solemn"
+preamble = ['\addtolength{\textheight}{1pt}']
+title-overlay = ['sections/00-start-here']
+opening = ['sections/00-begin']
+before-apparatus = [
+  '% Keep the terminal heading with the opening scope paragraph.',
+  '\Needspace{0.16\textheight}',
+]
+form-statement = '''Non-pontifical Solemn Mass with celebrant,
+deacon, and subdeacon, according to the Order and rubrics of the 1962 Roman
+Missal.'''
+boundary-statement = '''The guide accounts for the complete
+ordinary route of its declared lay-server roster. Sacred-minister and choir
+acts appear only as cues or handoff points; their offices are not reassigned to
+young servers. Special rites require their own sheets.'''
+roster-statement = '''The core model uses an MC, thurifer, boat
+bearer, two acolytes, and four torchbearers. A processional cross-bearer is an
+optional local addition, not part of the core roster. This teaching route
+requires the separate thurifer and boat-bearer roles; it states how the
+optional cross-bearer rejoins the route. Local traffic remains subject to the
+priest and MC.'''
+safety-statement = '''A young server needs supervised,
+site-specific practice before handling flames, hot charcoal, vessels, a
+Communion plate, or unfamiliar steps.'''
+ceremonial-references = '''A.\ Fortescue and J.\ B.\ O'Connell,
+\textit{The Ceremonies of the Roman Rite Described}, 12th revised edition
+(1962), names the selected ceremonial family. The directly read 1917 edition
+and the Archconfraternity of Saint Stephen's 2022 handbook were used only as
+subordinate traffic and discrepancy controls; the 1962 Missal overrides both.'''

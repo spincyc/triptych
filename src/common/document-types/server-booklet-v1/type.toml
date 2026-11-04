@@ -1,0 +1,20 @@
+schema = 1
+record_type = "document-type"
+id = "server-booklet-v1"
+description = """
+The page-aligned Low Mass server booklets of the 1962 altar-server guides
+(guidance/liturgy/roman-1962-server-training.md): the child field guide and its
+trainer manual. Both draw every page from the family's shared response bank and
+paired Low Mass ceremony; the type owns the preamble, the Low Mass flags, the
+generation-metadata hook the shared booklet format calls, the PDF metadata and
+the two shared inputs. A leaf supplies its PDF title and subject and chooses its
+audience, which selects the child or trainer layout of the same pages.
+"""
+kinds = ["server-low-mass", "server-trainer"]
+
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"
+fields = ["pdftitle", "pdfsubject"]
+options = { audience = "child-booklet" }

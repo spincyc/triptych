@@ -72,3 +72,12 @@ data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/res
 [[structure]]
 role = "action-card-faces"
 data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/solemn-action-cards.tex"
+
+[document]
+type = "server-cue-cards-v1"
+
+[document.main]
+pdftitle = 'Solemn Mass Cue Cards'
+pdfsubject = 'Printable response and action faces paired with the Solemn Mass training guide'
+form = "solemn"
+terminal-sheet = "without"

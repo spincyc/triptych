@@ -72,3 +72,13 @@ data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/res
 [[structure]]
 role = "action-card-faces"
 data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/missa-cantata-action-cards.tex"
+
+[document]
+type = "server-cue-cards-v1"
+
+[document.main]
+pdftitle = 'Missa Cantata Cue Cards'
+pdfsubject = 'Six-up integrated response and action cards for young Missa Cantata servers'
+form = "missa-cantata"
+terminal-sheet = "with"
+front = ['\pagestyle{empty}']

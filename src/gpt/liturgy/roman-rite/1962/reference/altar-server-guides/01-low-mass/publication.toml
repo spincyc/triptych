@@ -71,3 +71,11 @@ data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low
 [[structure]]
 role = "ceremonial-diagrams"
 data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-diagrams.tex"
+
+[document]
+type = "server-booklet-v1"
+
+[document.main]
+pdftitle = 'Serving Low Mass: Child Field Guide'
+pdfsubject = 'An action-first ceremonial and response guide for First and Second Acolytes using the 1962 Roman Missal'
+audience = "child-booklet"

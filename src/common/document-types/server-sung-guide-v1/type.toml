@@ -1,0 +1,29 @@
+schema = 1
+record_type = "document-type"
+id = "server-sung-guide-v1"
+description = """
+The complete sung-Mass altar-server guides of the 1962 family
+(guidance/liturgy/roman-1962-server-training.md): Missa Cantata and Solemn
+Mass. The type owns the preamble, the form flag, the guide root, the PDF
+metadata, the shared diagrams, the title block, the learner route through the
+form's shared role sheets, the appendix of the form's chronological ceremony and
+the response bank, the five guide statements the shared terminal apparatus
+prints, that apparatus and the closing revision line. A leaf supplies its
+metadata and title lines, the five statements, its opening section, and any raw
+preamble setting, title-page overlay or keep-together before the apparatus.
+"""
+kinds = ["server-sung"]
+
+# The three title lines are \serverguidetitle's title, motto and audience.
+# The statements fill \GuideFormStatement, \GuideBoundaryStatement,
+# \GuideRosterStatement, \GuideSafetyStatement and \GuideCeremonialReferences.
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"
+fields = ["pdftitle", "pdfsubject", "title", "subtitle", "audience-line",
+          "form-statement", "boundary-statement", "roster-statement",
+          "safety-statement", "ceremonial-references"]
+regions = ["opening"]
+optional_regions = ["preamble", "title-overlay", "before-apparatus"]
+options = { form = "missa-cantata" }

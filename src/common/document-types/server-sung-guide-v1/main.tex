@@ -1,0 +1,42 @@
+%% server-sung-guide-v1: a sung-Mass server guide from its shared route.
+\input{common/preamble}
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/server-guide-format}
+%@ option form
+%@ region preamble
+
+\newcommand{\GuideRoot}{@{document}}
+\hypersetup{
+  pdftitle={@{pdftitle}},
+  pdfsubject={@{pdfsubject}}
+}
+
+\begin{document}
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/sung-mass-diagrams}
+%@ region title-overlay
+\serverguidetitle
+  {@{title}}
+  {@{subtitle}}
+  {@{audience-line}}
+
+\begin{deepstudy}
+%@ region opening
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/@{form}-role-sheets}
+
+\appendix
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/@{form}-ceremony}
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/response-reference}
+
+\newcommand{\GuideFormStatement}{@{form-statement}}
+\newcommand{\GuideBoundaryStatement}{@{boundary-statement}}
+\newcommand{\GuideRosterStatement}{@{roster-statement}}
+\newcommand{\GuideSafetyStatement}{@{safety-statement}}
+\newcommand{\GuideCeremonialReferences}{@{ceremonial-references}}
+% The learner route already entered appendix mode before the planning and
+% trainer material. Do not let the shared terminal apparatus restart its
+% appendix lettering.
+\let\appendix\relax
+%@ region before-apparatus
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/terminal-apparatus}
+{\scriptsize\input{@{document}/generation-metadata}}
+\end{deepstudy}
+\end{document}

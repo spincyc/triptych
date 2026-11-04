@@ -1,0 +1,11 @@
+\AddToHookNext{shipout/foreground}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=center,text width=0.72\paperwidth,align=center,
+      draw=black,line width=0.8pt,inner xsep=12pt,inner ysep=9pt]
+      at ([yshift=-0.06\paperheight]current page.center)
+      {\large\bfseries START HERE\par\smallskip
+       \normalsize
+       1.\ Find your assigned role.\quad
+       2.\ Learn its seven scenes.\quad
+       3.\ Rehearse every handoff with cold, empty practice objects.};
+  \end{tikzpicture}}
