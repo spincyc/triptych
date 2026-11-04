@@ -20,7 +20,7 @@ kinds = ["curriculum-guide", "curriculum-reference", "curriculum-memory"]
 # the Document line of the cover table.
 [editions.main]
 role = "canonical"
-template = "main.tex"
+template = "main.template.tex"
 entrypoint = "main.tex"
 fields = ["companion-id", "companion-title", "title", "subtitle", "summary", "document-line", "pacing", "pdfsubject", "boundary", "pacing-note"]
 regions = ["body"]

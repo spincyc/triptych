@@ -14,7 +14,7 @@ kinds = ["server-low-mass", "server-trainer"]
 
 [editions.main]
 role = "canonical"
-template = "main.tex"
+template = "main.template.tex"
 entrypoint = "main.tex"
 fields = ["pdftitle", "pdfsubject"]
 options = { audience = "child-booklet" }

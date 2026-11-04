@@ -20,7 +20,7 @@ kinds = ["article-faith", "article-canon-law", "article-scripture"]
 # A field left empty leaves no line and no space behind.
 [editions.main]
 role = "canonical"
-template = "main.tex"
+template = "main.template.tex"
 entrypoint = "main.tex"
 fields = ["pdftitle", "pdfsubject", "title"]
 optional_fields = { kicker = "", subkicker = "", subtitle = "", series = "", description = "", note = "", tocdepth = "1", emergencystretch = "2em", notes-font = '\small', notes-parskip = "0.3em" }

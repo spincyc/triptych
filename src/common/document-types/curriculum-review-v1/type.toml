@@ -17,7 +17,7 @@ kinds = ["curriculum-assessment"]
 
 [editions.main]
 role = "canonical"
-template = "main.tex"
+template = "main.template.tex"
 entrypoint = "main.tex"
 fields = ["companion-id", "companion-title", "subtitle", "assessment-selection", "boundary", "pacing-note"]
 optional_fields = { review-source-set = "", review-reader-set = "" }

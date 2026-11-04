@@ -22,7 +22,7 @@ kinds = ["calendar-reference", "assembly-reference", "mass-ordinary", "mass-comp
 # foot of the title page or beneath the compact heading.
 [editions.main]
 role = "canonical"
-template = "main.tex"
+template = "main.template.tex"
 entrypoint = "main.tex"
 fields = ["pdftitle", "pdfsubject"]
 optional_fields = { pdfkeywords = "", series-line = "", title = "", subtitle = "", title-detail = "", title-notice = "" }

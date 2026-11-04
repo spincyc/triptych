@@ -19,7 +19,7 @@ kinds = ["server-sung"]
 # \GuideRosterStatement, \GuideSafetyStatement and \GuideCeremonialReferences.
 [editions.main]
 role = "canonical"
-template = "main.tex"
+template = "main.template.tex"
 entrypoint = "main.tex"
 fields = ["pdftitle", "pdfsubject", "title", "subtitle", "audience-line",
           "form-statement", "boundary-statement", "roster-statement",

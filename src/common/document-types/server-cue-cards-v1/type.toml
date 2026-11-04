@@ -17,7 +17,7 @@ kinds = ["server-cards"]
 
 [editions.main]
 role = "canonical"
-template = "main.tex"
+template = "main.template.tex"
 entrypoint = "main.tex"
 fields = ["pdftitle", "pdfsubject"]
 optional_regions = ["front"]

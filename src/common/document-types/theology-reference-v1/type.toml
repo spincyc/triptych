@@ -35,7 +35,7 @@ kinds = [
 # size inside its group.
 [editions.main]
 role = "canonical"
-template = "main.tex"
+template = "main.template.tex"
 entrypoint = "main.tex"
 fields = ["pdftitle", "pdfsubject", "title", "subtitle", "emergencystretch"]
 optional_fields = { kind-line = "", note = "", description = "", overline = "", tocdepth = "1", contents-style = '\small' }

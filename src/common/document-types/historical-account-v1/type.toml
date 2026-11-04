@@ -22,7 +22,7 @@ kinds = ["history-account", "history-parish", "history-translation"]
 # form takes the leaf's own title page from its front region.
 [editions.main]
 role = "canonical"
-template = "main.tex"
+template = "main.template.tex"
 entrypoint = "main.tex"
 fields = ["pdftitle", "pdfsubject", "family-format"]
 optional_fields = { title = "", subtitle = "", description = "", series = "", notes-font = '\small', notes-parskip = "0.45em" }

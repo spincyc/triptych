@@ -167,7 +167,7 @@ apparatus = ["sections/90-c"]
     def test_a_template_may_name_the_leaf_path_and_a_chosen_option(self):
         self.declare()
         kind = self.root / types.TYPES_DIR / "fixture-v1"
-        (kind / "main.tex").write_text(TEMPLATE.replace(
+        (kind / "main.template.tex").write_text(TEMPLATE.replace(
             "\\begin{document}\n",
             "\\newcommand{\\Meta}{\\input{@{document}/generation-metadata}%}\n"
             "\\input{shared/@{closing}-sheet}\n\\begin{document}\n"))

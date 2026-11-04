@@ -22,7 +22,7 @@ kinds = ["novena", "novena-companion"]
 # shared recitation-companion format.
 [editions.main]
 role = "canonical"
-template = "main.tex"
+template = "main.template.tex"
 entrypoint = "main.tex"
 fields = ["pdftitle", "pdfsubject", "title"]
 optional_fields = { subtitle = "", description = "", guide-title = "", note = "" }

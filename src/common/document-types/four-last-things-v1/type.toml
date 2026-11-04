@@ -19,7 +19,7 @@ kinds = ["article-faith"]
 # series) sets the title and subtitle on a print-only title page.
 [editions.main]
 role = "canonical"
-template = "main.tex"
+template = "main.template.tex"
 entrypoint = "main.tex"
 fields = ["pdftitle", "pdfsubject", "title", "subtitle"]
 optional_fields = { numeral = "", epigraph = "", epigraph-source = "", notes-parskip = "0.3em" }

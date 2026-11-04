@@ -20,7 +20,7 @@ kinds = ["pictorial-dictionary"]
 
 [editions.main]
 role = "canonical"
-template = "main.tex"
+template = "main.template.tex"
 entrypoint = "main.tex"
 fields = ["title", "subtitle", "edition-line", "opening-title", "opening-text", "selection"]
 optional_fields = { opening-composition = "" }
