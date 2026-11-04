@@ -1099,7 +1099,13 @@ def presentation_contract(leaf: Path, *, required: bool = False,
     """
     required = required or current
     path = leaf / "proper-components.toml"
-    if not path.is_file() and not required:
+    data = tomllib.loads(path.read_text()) if path.is_file() else {}
+    # A leaf whose manifest cannot or does not declare a presentation (no
+    # manifest, or one without the key -- every schema-1 manifest) reads the
+    # header of its generated annotations. The generated Scriptural Date and
+    # Location page writes orientation-v3 for every proper, so this is how a
+    # legacy manifest's leaf states the rows its page prints.
+    if "chronology_presentation" not in data and not required:
         generated = leaf / ANNOTATIONS_RECORD
         if generated.is_file():
             declarations = re.findall(r"^% presentation: (.*)$", generated.read_text(), re.M)
@@ -1110,7 +1116,6 @@ def presentation_contract(leaf: Path, *, required: bool = False,
                 # selects format only. Currency still regenerates every byte
                 # from the corpus, never trusting a claim in the carried file.
                 return declarations[0]
-    data = tomllib.loads(path.read_text()) if path.is_file() else {}
     value = data.get("chronology_presentation", "")
     if not value and not required:
         return ""

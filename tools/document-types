@@ -1,0 +1,242 @@
+#!/usr/bin/env python3
+"""Instantiate document-type templates into leaf entrypoints and generated pages.
+
+Usage: document-types {types,render,refresh} [options]
+
+A document type is a directory under `src/common/document-types/`: a
+`type.toml` and one TeX template per edition. A leaf opts in with a
+`[document]` table in its `publication.toml`; its edition entrypoints and
+every deterministic page its templates slot are then generated, never
+authored. `refresh` writes them; `refresh --check` refuses any that differs
+from its regeneration. `guidance/document-schemas.md` § Document types is the
+convention.
+"""
+
+from __future__ import annotations
+
+import argparse
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+import _document_types as types  # noqa: E402
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+ROOT = Path(__file__).resolve().parents[1]
+PREFIX = "document-types error"
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "types": (
+        Example(
+            "tools/document-types types",
+            (
+                "proper-study-v1",
+                "  main       -> main.tex       regions: body, apparatus?, preamble?  options: closing, front  slots: scriptural-date-location/section",
+                "  synthesis  -> synthesis.tex  regions: body, opening, preamble?  options: closing  slots: scriptural-date-location/page",
+                "  homily     -> homily.tex     regions: homily, apparatus?, preamble?  options: closing",
+            ),
+            "every type found under src/common/document-types, with what a leaf "
+            "supplies to each edition and the generated slots the type fills",
+        ),
+        Example(
+            "tools/document-types types --json",
+            (
+                "{\"status\":\"ok\",\"types\":[{\"description\":\"The three documents of one Sunday... [+1639 chars]",
+            ),
+            "the same, as the machine contract",
+        ),
+    ),
+    "render": (
+        Example(
+            "tools/document-types render --leaf claude/liturgy/roman-rite/1962/"
+            "propers/temporal/48-eighth-after-pentecost --edition main",
+            (
+                "document-types error: claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost: declares no [document] type",
+            ),
+            "exits 1: a leaf that has not opted in has no generated entrypoint",
+        ),
+        Example(
+            "tools/document-types render --leaf claude/liturgy/roman-rite/1962/"
+            "propers/temporal/48-eighth-after-pentecost --edition main --json",
+            (
+                "{\"code\":\"refused\",\"error\":\"claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost: declares no [document] type\",\"status\":\"error\",\"v\":1}",
+            ),
+            "the same refusal, as the machine contract",
+        ),
+    ),
+    "refresh": (
+        Example(
+            "tools/document-types refresh --check --leaf claude/liturgy/"
+            "roman-rite/1962/propers/temporal/48-eighth-after-pentecost",
+            (
+                "document-types error: src/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost: declares no [document] type",
+            ),
+            "exits 1; --check writes nothing and fails on any generated file "
+            "that differs from its regeneration",
+        ),
+        Example(
+            "tools/document-types refresh --check --all --json",
+            (
+                "{\"leaves\":[],\"stale\":0,\"status\":\"ok\",\"v\":1}",
+            ),
+            "every opted-in leaf; without --check the same call rewrites what "
+            "is stale and reports what it changed",
+        ),
+    ),
+}
+
+
+def _leaf(value: str) -> Path:
+    provider, _, document = value.partition("/")
+    if provider not in types.PROVIDERS or not document or ".." in Path(document).parts:
+        raise ValueError(f"--leaf takes <provider>/<document>, not {value!r}")
+    leaf = ROOT / "src" / provider / document
+    if not (leaf / types.PUBLICATION).is_file():
+        raise ValueError(f"{value}: no publication.toml")
+    return leaf
+
+
+def _type_payload(found: types.DocumentType) -> dict[str, object]:
+    projections = types.discover_projections()
+    editions = []
+    for edition in found.editions.values():
+        slots = types.template_slots(found, edition)
+        for slot in slots:
+            types.slot_path(slot, projections)
+        editions.append({
+            "name": edition.name,
+            "role": edition.role,
+            "entrypoint": edition.entrypoint,
+            "fields": list(edition.fields),
+            "regions": dict(sorted(edition.regions.items())),
+            "options": {name: list(found.option_values(name)) for name in sorted(edition.options)},
+            "slots": slots,
+        })
+    return {"id": found.id, "description": found.description, "kinds": list(found.kinds),
+            "editions": editions}
+
+
+def types_verb(arguments: argparse.Namespace) -> dict[str, object]:
+    """Every document type, found by directory convention."""
+    return {"status": "ok",
+            "types": [_type_payload(found) for found in types.discover_types(ROOT).values()]}
+
+
+def render_verb(arguments: argparse.Namespace) -> dict[str, object]:
+    """One edition's entrypoint as the leaf's declaration renders it."""
+    leaf = _leaf(arguments.leaf)
+    decl = types.declaration(ROOT, leaf)
+    if decl is None:
+        raise ValueError(f"{arguments.leaf}: declares no [{types.DECLARATION}] type")
+    if arguments.edition not in decl.editions:
+        raise ValueError(f"{arguments.leaf}: declares no edition {arguments.edition!r}")
+    text, slots = types.render_edition(decl, arguments.edition)
+    return {"status": "ok", "leaf": arguments.leaf, "edition": arguments.edition,
+            "slots": slots, "output": text}
+
+
+def refresh_verb(arguments: argparse.Namespace) -> dict[str, object]:
+    """Write or check every generated file of the selected leaves."""
+    if arguments.all == bool(arguments.leaf):
+        raise ValueError("name leaves with --leaf, or use --all")
+    leaves = types.opted_in_leaves(ROOT) if arguments.all else [_leaf(item) for item in arguments.leaf]
+    results = types.refresh(ROOT, leaves, check=arguments.check)
+    stale = sum(len(result.changed) for result in results)
+    conflicts = [f"src/{result.leaf}/{path}" for result in results for path in result.conflicts]
+    if conflicts:
+        raise ValueError("authored copies of generated pages: " + ", ".join(conflicts)
+                         + "; delete them and let the document type's slot place the page")
+    payload: dict[str, object] = {
+        "status": "ok",
+        "stale": stale if arguments.check else 0,
+        "leaves": [{"leaf": result.leaf, "changed": list(result.changed),
+                    "current": len(result.current)} for result in results],
+    }
+    if arguments.check and stale:
+        names = [f"src/{result.leaf.split('/', 1)[0]}/{result.leaf.split('/', 1)[1]}/{path}"
+                 for result in results for path in result.changed]
+        raise ValueError(
+            f"{stale} generated file(s) differ from regeneration; run "
+            f"`tools/tpt document-types refresh` rather than editing them: " + ", ".join(names))
+    return payload
+
+
+def _render(payload: object, arguments: argparse.Namespace) -> int:
+    if not isinstance(payload, dict):
+        return 0
+    if getattr(arguments, "json", False):
+        print_json(payload)
+        return 0
+    verb = arguments.command
+    if verb == "types":
+        for found in payload["types"]:
+            print(found["id"])
+            for edition in found["editions"]:
+                regions = ", ".join(name + ("" if required else "?")
+                                    for name, required in sorted(
+                                        edition["regions"].items(), key=lambda item: (not item[1], item[0])))
+                options = ", ".join(edition["options"])
+                line = (f"  {edition['name']:<10} -> {edition['entrypoint']:<14} regions: {regions}"
+                        + (f"  options: {options}" if options else "")
+                        + (f"  slots: {', '.join(edition['slots'])}" if edition["slots"] else ""))
+                print(line)
+        return 0
+    if verb == "render":
+        sys.stdout.write(payload["output"])
+        return 0
+    for result in payload["leaves"]:
+        state = ("current" if not result["changed"] else
+                 ("rewrote " if not arguments.check else "stale: ") + ", ".join(result["changed"]))
+        print(f"{result['leaf']}: {state}")
+    if not payload["leaves"]:
+        print("no leaf declares a document type")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        prog="document-types",
+        description=(
+            "Instantiate document-type templates into leaf entrypoints and the "
+            "deterministic pages their slots name."
+        ),
+    )
+    examples_live_on_the_verbs(parser, "document-types")
+    sub = parser.add_subparsers(dest="command")
+    listing = sub.add_parser("types", help="list every document type and its editions")
+    listing.add_argument("--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)")
+    with_examples(listing, EXAMPLES["types"])
+
+    show = sub.add_parser("render", help="print one edition's generated entrypoint")
+    show.add_argument("--leaf", required=True, help="<provider>/<document>, e.g. claude/liturgy/...")
+    show.add_argument("--edition", required=True, help="an edition the leaf declares (main, synthesis, ...)")
+    show.add_argument("--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)")
+    with_examples(show, EXAMPLES["render"])
+
+    writer = sub.add_parser("refresh", help="write, or --check, every generated file of opted-in leaves")
+    writer.add_argument("--leaf", action="append", default=[], help="<provider>/<document>; repeatable")
+    writer.add_argument("--all", action="store_true", help="every leaf whose publication.toml declares a type")
+    writer.add_argument("--check", action="store_true", help="write nothing; fail on any stale generated file")
+    writer.add_argument("--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)")
+    with_examples(writer, EXAMPLES["refresh"])
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"types": types_verb, "render": render_verb, "refresh": refresh_verb},
+        renderer=_render,
+        prefix=PREFIX,
+        argv=argv,
+        mapped_errors={types.DocumentTypeError: ("refused", 1), ValueError: ("refused", 1)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

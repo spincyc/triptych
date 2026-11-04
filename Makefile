@@ -265,6 +265,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-source-family-screening check-source-containment \
 	check-commentator-inventories check-commentary-corpus \
 	check-source-graph check-publication-inventories check-proper-chronology-current \
+	check-generated-documents-current \
 	check-artwork-manifests \
 	check-catena check-catena-structure check-catena-paragraphs \
 	check-expensive \
@@ -497,7 +498,8 @@ check-publication-inventories: check-source-graph
 # receipt checks remain explicit research audits rather than duplicate warm gates.
 DEPLOYMENT_SOURCE_MEMBERS := check-curriculum-source-rights check-document-schemas \
 	check-artifact-delivery check-snapshot-delivery check-papal-inputs \
-	check-document-catalogue check-source-graph check-proper-chronology-current
+	check-document-catalogue check-source-graph check-proper-chronology-current \
+	check-generated-documents-current
 
 # Bootstrap bounded concurrency when the caller supplied no jobserver. Keep
 # ordinary liturgical derivation and rights checks in the source publication
@@ -529,13 +531,19 @@ check-research-sources: check-deployment-sources check-source-evidence \
 # reviewed ledgers without requiring optional acquired binary evidence.
 check-sources: check-source-graph check-publication-inventories \
 		check-source-containment check-commentator-inventories check-commentary-corpus \
-		check-proper-chronology-current
+		check-proper-chronology-current check-generated-documents-current
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
 
 # Adopted proper chronology remains current with the canonical corpus, including
 # older dossiers. This source-only gate neither migrates legacy prose nor prints.
 check-proper-chronology-current:
 	@$(PYTHON) -m unittest tools.tests.test_generated_proper_chronology_freshness -v
+
+# Every leaf that opts into a document type (src/common/document-types/) has
+# generated entrypoints and deterministic pages; each must equal its
+# regeneration, and none may be authored. One check for every projection.
+check-generated-documents-current:
+	@$(PYTHON) -m unittest tools.tests.test_generated_documents_freshness -v
 
 # A work held only inside another record -- a Migne volume, an NPNF anthology,
 # a whole-volume optical layer filed under one of its constituents -- is

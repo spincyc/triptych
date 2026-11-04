@@ -1,0 +1,47 @@
+schema = 1
+record_type = "document-type"
+id = "proper-study-v1"
+description = """
+The three documents of one Sunday's or feast's proper study
+(guidance/liturgy/propers-three-documents.md): the expansive study, its concise
+companion and its homily. The type owns the preamble, PDF metadata, title
+block, the generated Scriptural Date and Location page in each study edition
+-- the expansive study's terminal appendix before its apparatus, and the
+concise study's physical page 2 between forced page boundaries -- and the
+closing provenance block. A leaf supplies its metadata fields, the ordered
+lists of its own section files in each region, and its option choices.
+"""
+kinds = ["proper-1962", "proper-postconciliar"]
+
+# The four \propertitle arguments are title, subtitle, source-line and
+# occasion-line: the large title, the large second line, and the two small
+# lines beneath, in that order. Either small line may be empty.
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"
+fields = ["pdftitle", "pdfsubject", "title"]
+optional_fields = { subtitle = "", source-line = "", occasion-line = "", running-head = "" }
+regions = ["body"]
+optional_regions = ["preamble", "apparatus"]
+options = { front = "toc", closing = "colophon" }
+
+[editions.synthesis]
+role = "synthesis"
+template = "synthesis.tex"
+entrypoint = "synthesis.tex"
+fields = ["pdftitle", "pdfsubject", "title"]
+optional_fields = { subtitle = "", source-line = "", occasion-line = "", running-head = "" }
+regions = ["opening", "body"]
+optional_regions = ["preamble"]
+options = { closing = "colophon" }
+
+[editions.homily]
+role = "homily"
+template = "homily.tex"
+entrypoint = "homily.tex"
+fields = ["pdftitle", "pdfsubject", "title"]
+optional_fields = { subtitle = "", source-line = "", occasion-line = "", running-head = "" }
+regions = ["homily"]
+optional_regions = ["preamble", "apparatus"]
+options = { closing = "colophon" }

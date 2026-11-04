@@ -1,0 +1,12 @@
+%% The revision timestamp once, after the References, then the rights
+%% colophon on the same final page. \Needspace ends the page ahead of the
+%% colophon whenever the block cannot stand where the References end, so the
+%% colophon never lands on a page of its own.
+\begingroup
+\hbadness=10000
+\footnotesize
+\setlength{\parindent}{0pt}
+%@ input generation-metadata
+\Needspace{3\baselineskip}
+\TriptychRightsNotice
+\endgroup

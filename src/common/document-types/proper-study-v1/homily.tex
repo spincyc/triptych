@@ -1,0 +1,25 @@
+%% proper-study-v1, homily edition.
+\input{common/preamble}
+\input{common/propers-format}
+\input{common/propers-homily}
+\renewcommand{\tptheadsunday}{@{running-head}}
+%@ input? format
+%@ region preamble
+\hypersetup{
+  pdftitle={@{pdftitle}},
+  pdfsubject={@{pdfsubject}}
+}
+
+\begin{document}
+\propertitle{@{title}}
+{@{subtitle}}
+{@{source-line}}
+{@{occasion-line}}
+
+\begin{properhomily}
+%@ region homily
+\end{properhomily}
+
+%@ region apparatus
+%@ option closing
+\end{document}

@@ -28,7 +28,7 @@ KEY = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 MANIFEST_FIELDS = {
     "schema_version", "id", "kind", "profile", "source_format", "entrypoint",
     "outputs", "structure", "content_inputs", "evidence_inputs", "render_inputs",
-    "contracts", "canonical_owner",
+    "contracts", "canonical_owner", "document",
 }
 OUTPUT_FIELDS = {"id", "role", "entrypoint", "derivation"}
 STRUCTURE_FIELDS = {"role", "source", "data", "key", "outputs", "depends_on"}
@@ -395,6 +395,15 @@ def _normalise(root: Path, data: dict, manifest_path: Path | None) -> dict:
                   manifest_path=manifest_path.relative_to(root).as_posix() if manifest_path else None,
                   manifest_origin="declared" if manifest_path else "adapter",
                   profile_definition=definition)
+    if "document" in data:
+        # A [document] table opts the leaf into a document type; its own
+        # module owns the declaration's rules (guidance/document-schemas.md).
+        import _document_types  # noqa: PLC0415
+
+        try:
+            _document_types.declaration(root, leaf_dir)
+        except _document_types.DocumentTypeError as exc:
+            raise SchemaError(f"document type: {exc}") from exc
     if not isinstance(data.get("outputs"), list) or not data["outputs"]:
         raise SchemaError("outputs must be a nonempty array of tables")
     result["outputs"] = []

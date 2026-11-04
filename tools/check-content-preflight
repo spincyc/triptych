@@ -408,6 +408,19 @@ def leaf_tex(leaf: Path, edition: str = LEAF_EDITION) -> list[Path]:
     return [path for path in paths if path in typeset]
 
 
+# The directory a document type's projections write into; see
+# scripts/_document_types.py.
+GENERATED_DIR = "generated"
+
+
+def generated_page(leaf: Path, path: Path) -> bool:
+    """A projection's page in a leaf on a document type, held by its check."""
+    manifest = leaf / "publication.toml"
+    return (path.relative_to(leaf).parts[:1] == (GENERATED_DIR,) and manifest.is_file()
+            and re.search(r"^\[document\]\s*$", manifest.read_text(encoding="utf-8"), re.M)
+            is not None)
+
+
 URL_ARG = re.compile(r"\\(?:url|nolinkurl|href)\{[^{}]*\}")
 SOURCEURL = re.compile(r"\\sourceurl\{[^{}]*\}")
 TEXTTT = re.compile(r"\\texttt\{[^{}]*\}")
@@ -2859,9 +2872,14 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
             details.append(f"{mode}: {detail}")
         return problems, "; ".join(details)
     annotation_required, annotation_why = _annotations_scope(leaf)
+    # A document type's generated pages (`generated/`) are projections of the
+    # same record, held byte for byte by `tools/tpt document-types refresh
+    # --check`; their dates are the record's by construction, so they are not
+    # scanned as authored prose. The rows they input are still read here.
     printed = {
         path: active_tex(edition_text(leaf, path, edition))
         for path in leaf_tex(leaf, edition)
+        if not generated_page(leaf, path)
     }
     # THE CORPUS IS NOT CONSULTED WHEN THERE IS NOTHING TO HOLD AGAINST IT. A
     # leaf that prints no chronology claim and is not yet bound by the macro

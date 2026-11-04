@@ -324,6 +324,19 @@
       "stage": "draft",
       "usage": "document-schema {check,list,show,types,propose,identities} [OPTIONS]"
     },
+    "document-types": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Generate document-type entrypoints and deterministic pages; hold them current.",
+      "requires": [
+        "tpt"
+      ],
+      "stage": "draft",
+      "usage": "document-types {types,render,refresh} [--leaf PROVIDER/DOCUMENT ...|--all] [--edition E] [--check] [--json]"
+    },
     "harvest": {
       "idempotent": true,
       "json": true,

@@ -1,0 +1,25 @@
+%% proper-study-v1, main edition: the expansive study.
+%% The Scriptural Date and Location appendix is generated and stands after the
+%% leaf's body and before its terminal apparatus, on a page of its own.
+\input{common/preamble}
+\input{common/propers-format}
+\renewcommand{\tptheadsunday}{@{running-head}}
+%@ input? format
+%@ region preamble
+\hypersetup{
+  pdftitle={@{pdftitle}},
+  pdfsubject={@{pdfsubject}}
+}
+
+\begin{document}
+\propertitle{@{title}}
+{@{subtitle}}
+{@{source-line}}
+{@{occasion-line}}
+%@ option front
+%@ region body
+\clearpage
+%@ slot scriptural-date-location/section
+%@ region apparatus
+%@ option closing
+\end{document}

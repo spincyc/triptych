@@ -1,0 +1,27 @@
+%% proper-study-v1, synthesis edition: the concise study.
+%% Physical page 1 is the leaf's opening region (inventory and overview); the
+%% generated Scriptural Date and Location sheet is physical page 2, between
+%% forced page boundaries; the leaf's body follows from page 3. No cover or
+%% contents page stands before page 1.
+\input{common/preamble}
+\input{common/propers-format}
+\renewcommand{\tptheadsunday}{@{running-head}}
+%@ input? format
+%@ region preamble
+\hypersetup{
+  pdftitle={@{pdftitle}},
+  pdfsubject={@{pdfsubject}}
+}
+
+\begin{document}
+\propertitle{@{title}}
+{@{subtitle}}
+{@{source-line}}
+{@{occasion-line}}
+%@ region opening
+\clearpage
+%@ slot scriptural-date-location/page
+\clearpage
+%@ region body
+%@ option closing
+\end{document}
