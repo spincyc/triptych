@@ -34,6 +34,8 @@ SOURCE_COMMANDS = {
     ("tools/tpt", "mass-propers", "structure", "--check"),
     ("tools/tpt", "calendar-rubrics", "check"),
     ("tools/tpt", "mass-ordinary", "check"),
+    ("-m", "unittest", "tools.tests.test_generated_proper_chronology_freshness", "-v"),
+    ("-m", "unittest", "tools.tests.test_generated_documents_freshness", "-v"),
 }
 AUDIT_COMMANDS = {
     ("scripts/_act_history_projection_receipt.py", "check"),
