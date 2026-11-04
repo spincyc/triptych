@@ -42,4 +42,38 @@ source = "research/evidence-map.md"
 
 [[structure]]
 role = "scope-appendix"
-source = "main.tex"
+source = "sections/120-scope-method-and-qualifications.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'The Linen Cloths at the Empty Tomb'
+pdfsubject = 'GPT study of what John 20 and Luke 24 attribute to Peter and the other disciple'
+kicker = 'Scripture'
+subkicker = 'A Source-First Study of John 20:3--10 and Luke 24:12'
+title = 'The Linen Cloths at the Empty Tomb'
+subtitle = 'John 20:3--10, Luke 24:12, and the Difference between Seeing and Inferring'
+emergencystretch = '2.5em'
+headings = "section"
+widows = "class"
+contents = "normal"
+closing = "plain"
+
+[document.main]
+body = [
+  'sections/00-one-claim-three-questions',
+  'sections/10-the-canonical-scene',
+  'sections/20-what-the-greek-and-ancient-versions',
+  'sections/30-who-believed-and-what-did-belief',
+  'sections/40-four-ways-readers-reconcile-john-and',
+  'sections/50-what-the-arrangement-can-establish',
+  'sections/60-the-folded-napkin-return-story',
+  'sections/70-independent-provenance-replay',
+  'sections/80-exegetical-alternatives-tested',
+  'sections/90-textual-history-of-luke-24-12',
+  'sections/100-search-boundary',
+  'sections/110-a-sober-synthesis',
+]
+appendices = [
+  'sections/120-scope-method-and-qualifications',
+  'sections/130-working-references',
+]

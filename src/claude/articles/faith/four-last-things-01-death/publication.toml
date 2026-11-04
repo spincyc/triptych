@@ -91,3 +91,33 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "four-last-things-v1"
+pdftitle = 'The Debt of Nature'
+pdfsubject = 'On Death and the Preparation for It. The Four Last Things, I'
+numeral = 'I'
+title = 'The Debt of Nature'
+subtitle = 'On Death and the Preparation for It'
+epigraph = 'In all thy works remember thy last end, and thou shalt never sin.'
+epigraph-source = 'Ecclesiasticus 7:40'
+
+[document.main]
+body = [
+  'sections/00-remember-thy-last-end',
+  'sections/10-the-debt-of-nature',
+  'sections/20-through-death-he-destroyed-death',
+  'sections/30-at-what-hour',
+  'sections/40-not-lost-but-sent-before',
+  'sections/50-at-the-lords-altar',
+  'sections/60-the-craft-of-dying',
+  'sections/70-the-sacraments-of-the-departing',
+  'sections/75-the-churchs-last-words',
+  'sections/80-a-day-each-month',
+  'sections/82-the-commendation-of-a-soul',
+]
+appendices = [
+  'sections/85-graded-teaching',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

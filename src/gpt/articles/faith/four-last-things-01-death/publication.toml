@@ -38,4 +38,39 @@ source = "research/source-bindings.toml"
 
 [[structure]]
 role = "scope-appendix"
-source = "main.tex"
+source = "sections/170-scope-method-and-qualifications.tex"
+
+[document]
+type = "four-last-things-v1"
+pdftitle = 'The Four Last Things: The Hour That Cannot Be Delegated'
+pdfsubject = 'Death: a Catholic study of mortality, Christian preparation, and resurrection'
+title = 'The Hour That Cannot Be Delegated'
+subtitle = 'Death'
+front = "print-title"
+notes = "none"
+closing = "scriptsize"
+
+[document.main]
+body = [
+  'sections/00-to-die-in-christ',
+  'sections/10-the-wound-of-death',
+  'sections/20-an-enemy-made-to-serve-life',
+  'sections/30-the-lord-who-entered-death',
+  'sections/40-freedom-from-the-fear-of-death',
+  'sections/50-the-dying-begun-in-baptism',
+  'sections/60-the-same-self-awaiting-wholeness',
+  'sections/70-the-hour-we-have-not-been',
+  'sections/80-the-mercy-beside-the-cross',
+  'sections/90-what-we-must-learn-to-release',
+  'sections/100-cyprian-s-school-of-mortal-life',
+  'sections/110-polycarp-s-long-fidelity',
+  'sections/120-from-penance-to-viaticum',
+  'sections/130-keeping-faith-with-the-dying',
+  'sections/140-monica-s-farewell-and-augustine-s',
+  'sections/150-the-mother-of-god-and-the',
+  'sections/160-we-are-the-lord-s',
+]
+appendices = [
+  'sections/170-scope-method-and-qualifications',
+  'references',
+]

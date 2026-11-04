@@ -99,3 +99,37 @@ source = "sections/140-references.tex"
 [[structure]]
 role = "scope-appendix"
 source = "sections/00-question-thesis.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Clerical Celibacy, Chastity, and Continence'
+pdfsubject = 'Historical, patristic, theological, and canonical treatment in the Catholic Churches, including the permanent diaconate'
+title = 'Clerical Celibacy, Chastity,\\ and Continence'
+subtitle = 'History, patristic witness, canon law,\\ the permanent diaconate, and the Catholic Churches'
+description = 'A historical, theological, and canonical study'
+note = 'Not legal advice or a canonical opinion in an individual case; see the terminal Scope and Qualifications appendix.'
+emergencystretch = '3em'
+title-page = "stacked"
+closing = "footnotesize"
+
+[document.main]
+body = [
+  'sections/00-question-thesis',
+  'sections/10-terms-and-distinctions',
+  'sections/20-scriptural-apostolic-foundations',
+  'sections/30-patristic-witness',
+  'sections/40-historical-development',
+  'sections/50-theological-juridic-synthesis',
+  'sections/60-current-latin-law',
+  'sections/70-current-eastern-law',
+  'sections/80-permanent-diaconate',
+  'sections/90-exceptions-transitions-widowhood',
+  'sections/100-pastoral-canonical-questions',
+  'sections/110-conclusion',
+]
+appendices = [
+  'sections/120-appendix-churches-sui-iuris',
+  'sections/130-timeline',
+  '\clericalscopeappendix',
+  'sections/140-references',
+]

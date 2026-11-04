@@ -71,3 +71,30 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'At the End of Every Why'
+pdfsubject = 'A discursive essay on the last end of the creature: beatitude, the vision of God, charity as friendship with God, hope in the meantime, and the everlasting sabbath. The Creature Before God, Part III'
+kicker = 'A Triptych Article'
+title = 'At the End of Every Why'
+subtitle = 'On the End for Which the Creature Was Made'
+series = 'The Creature Before God --- Part III'
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-the-question-that-survives-its-answers',
+  'sections/10-what-everyone-wants',
+  'sections/20-the-ceiling-of-the-ascent',
+  'sections/30-the-end-that-is-offered',
+  'sections/40-the-friendship',
+  'sections/50-the-meantime',
+  'sections/60-the-end-without-end',
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

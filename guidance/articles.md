@@ -144,6 +144,12 @@ may name the controlling law, jurisdiction, and as-of date when omission would
 make the conclusions unsafe; a local exception or uncertainty stays with the
 conclusion it changes.
 
+The [`article-v1` document type](document-schemas.md#document-types) writes
+this skeleton -- title page, contents, endnotes, appendices and closing
+metadata -- and a Four Last Things essay takes `four-last-things-v1`; a leaf
+declares its title-page fields and section lists rather than writing
+`main.tex`.
+
 ## Profile gate
 
 The thesis must be answered from exact, fit-for-purpose sources; serious

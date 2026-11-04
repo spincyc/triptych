@@ -42,8 +42,46 @@ source = "research/evidence-map.md"
 
 [[structure]]
 role = "scope-appendix"
-source = "main.tex"
+source = "sections/160-scope-method-and-qualifications.tex"
 
 [[structure]]
 role = "references"
-source = "main.tex"
+source = "sections/170-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Abraham and the Daylight Stars'
+pdfsubject = 'An independent source-first study of the narrated hour of Genesis 15:5'
+kicker = 'Scripture'
+subkicker = 'A Source-First Study of Genesis 15:5'
+title = 'Abraham and the Daylight Stars'
+subtitle = 'Genesis 15:5 and the Time Kept by Its Own Narrative'
+emergencystretch = '2.5em'
+headings = "section"
+widows = "class"
+contents = "normal"
+closing = "plain"
+
+[document.main]
+body = [
+  'sections/00-the-question-is-older-than-it',
+  'sections/10-the-clock-genesis-prints',
+  'sections/20-hebrew-sequence-and-vision',
+  'sections/30-greek-and-latin-do-not-preserve',
+  'sections/40-historical-answers-at-the-verified-evidence',
+  'sections/50-abarbanel-s-dilemma-in-its-own',
+  'sections/60-versions-as-interpretive-evidence',
+  'sections/70-what-the-bound-reception-witnesses-establish',
+  'sections/80-counting-seeing-and-believing',
+  'sections/90-what-daylight-does-and-does-not',
+  'sections/100-a-claim-by-claim-witness-register',
+  'sections/110-testing-the-rival-reconstructions',
+  'sections/120-sign-visibility-and-the-logic-of',
+  'sections/130-canonical-reception-without-retrojection',
+  'sections/140-pastoral-use-without-turning-a-reading',
+  'sections/150-verdict',
+]
+appendices = [
+  'sections/160-scope-method-and-qualifications',
+  'sections/170-references',
+]

@@ -99,3 +99,40 @@ source = "sections/95-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Abraham and the Daylight Stars'
+pdfsubject = 'A close exegetical study of Genesis 15:5 and the hour at which the star-promise was given'
+kicker = 'Scripture'
+subkicker = 'A Single-Passage Study'
+title = 'Abraham and the Daylight Stars'
+subtitle = 'Genesis 15:5 and the Hour of the Promise'
+tocdepth = '2'
+emergencystretch = '2.5em'
+notes-parskip = '0.45em'
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-the-hour-nobody-asks-about',
+  'sections/10-the-chapters-own-clock',
+  'sections/20-what-the-hebrew-does',
+  'sections/30-the-vision-at-the-head',
+  'sections/40-the-greek-and-the-latin',
+  'sections/45-the-count-that-fails',
+  'sections/50-abarbanels-seventh-question',
+  'sections/55-five-answers-kept-apart',
+  'sections/60-brought-out-from-where',
+  'sections/70-the-fathers-did-not-ask',
+  'sections/80-where-the-promise-recurs',
+  'sections/85-paul-and-the-hour',
+  'sections/90-project-synthesis',
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  'sections/92-witness-register',
+  'sections/95-scope-method-qualifications',
+  'sections/99-references',
+]

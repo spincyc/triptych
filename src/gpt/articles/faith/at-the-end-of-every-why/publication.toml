@@ -83,3 +83,32 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'At the End of Every Why'
+pdfsubject = 'Part III of The Creature Before God: a patristic, Thomistic, and mystical study of charity and creaturely freedom'
+kicker = 'The Creature Before God'
+subkicker = 'Part III'
+title = 'At the End of Every Why'
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-commanded-love',
+  'sections/10-law-within',
+  'sections/20-no-longer-servants',
+  'sections/30-charity-forms-justice',
+  'sections/32-when-presence-is-not-felt',
+  'sections/34-asking-the-unchanging-god',
+  'sections/36-the-hunger-of-charity',
+  'sections/38-the-shape-of-the-cross',
+  'sections/40-whole-not-equal',
+  'sections/50-at-the-end',
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

@@ -79,3 +79,32 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Ontological Vertigo'
+pdfsubject = 'A discursive essay on the reflexive apprehension of asymmetric ontological dependence: received being, present conservation, and the fork of recoil or consent. The Creature Before God, Part I'
+kicker = 'A Triptych Article'
+title = 'Ontological Vertigo'
+subtitle = 'On Being Held in Being'
+series = 'The Creature Before God --- Part I'
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-the-song-and-the-house',
+  'sections/10-what-the-greeks-reached',
+  'sections/20-what-a-thing-is-and-that-it-is',
+  'sections/25-the-first-way-and-its-limits',
+  'sections/30-the-present-tense-of-creation',
+  'sections/40-this-is-true-of-me',
+  'sections/50-the-reading-that-recoils',
+  'sections/60-the-shape-of-the-gift',
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  'sections/85-positions-synopsis',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

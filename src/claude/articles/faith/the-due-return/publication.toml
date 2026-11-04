@@ -71,3 +71,30 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'The Due Return'
+pdfsubject = 'A discursive essay on the virtue of religion as justice toward God: the unpayable debt of gratitude, worship, adoration, sacrifice, and the freedom of the due return. The Creature Before God, Part II'
+kicker = 'A Triptych Article'
+title = 'The Due Return'
+subtitle = 'On Rendering What Cannot Be Repaid'
+series = 'The Creature Before God --- Part II'
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-the-question-the-psalmist-asked',
+  'sections/10-a-debt-unlike-the-others',
+  'sections/20-the-virtue-annexed-to-justice',
+  'sections/30-what-the-body-knows',
+  'sections/40-sacrifice-visible-and-invisible',
+  'sections/50-a-due-that-cannot-be-compelled',
+  'sections/60-the-open-account',
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

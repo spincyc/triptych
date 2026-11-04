@@ -87,3 +87,35 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'In Defense of the Particular'
+pdfsubject = 'A discursive theological article on the scandal of particularity: why the concrete and singular is fitting to divine action'
+kicker = 'Faith and Theology'
+subkicker = 'A Discursive Article'
+title = 'In Defense of the Particular'
+subtitle = 'On the Scandal of Particularity'
+notes-parskip = '0.45em'
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-the-offense-at-nazareth',
+  'sections/10-the-objection-at-full-strength',
+  'sections/20-what-actually-exists',
+  'sections/30-the-fewest-of-any-people',
+  'sections/40-the-word-in-a-part',
+  'sections/50-this-water-this-bread',
+  'sections/52-the-ugly-broad-ditch',
+  'sections/55-the-objection-in-its-newest-form',
+  'sections/57-the-size-of-the-sky',
+  'sections/60-a-name-which-no-man-knoweth',
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  'sections/85-objections-synopsis',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

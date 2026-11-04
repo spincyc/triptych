@@ -79,3 +79,34 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Freemasonry and the Catholic Church'
+pdfsubject = '''A discursive article on the Catholic Church's relationship to Freemasonry: the condemnation history from In eminenti (1738) through Humanum genus (1884), the penal law of the 1917 and 1983 Codes, the 1983 Declaration on Masonic Associations and its 1985 explanation, the 2023 response of the Dicastery for the Doctrine of the Faith, the theological grounds, the differences among the lodges, and the claims the record does and does not support.'''
+kicker = 'A Triptych Article'
+title = 'Freemasonry and the\\ Catholic Church'
+subtitle = 'On What Rome Has Actually Said, from \emph{In eminenti}\\ to the Present Discipline'
+note = 'The church discipline stated here rests on mutable law and dicasterial acts, stated as of 25 July 2026; see the terminal Scope, Method, and Qualifications appendix. This is a study aid, not canonical advice.'
+notes-font = '\footnotesize'
+notes-parskip = '0.28em'
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-a-question-that-keeps-returning',
+  'sections/10-the-thing-itself',
+  'sections/20-the-first-condemnations',
+  'sections/30-humanum-genus',
+  'sections/40-the-two-codes',
+  'sections/50-the-grounds-stated-plainly',
+  'sections/60-the-lodges-that-differ',
+  'sections/70-the-2023-answer',
+  'sections/80-the-claims-and-the-record',
+  '\Needspace{10\baselineskip}',
+]
+appendices = [
+  '\Needspace{14\baselineskip}',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

@@ -79,3 +79,32 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Against the Instrumentalists'
+pdfsubject = '''A discursive essay on verificationist exclusivism, its self-defeat, and the Catholic account of reason's natural reach toward God'''
+kicker = 'A Triptych Article'
+title = 'Against the Instrumentalists'
+subtitle = 'Verification, Its Limits, and the Reach of Reason'
+tocdepth = '2'
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-the-case-for-the-instruments',
+  'sections/05-a-genealogy-of-the-criterion',
+  'sections/10-the-criterion-meets-itself',
+  'sections/20-what-the-laboratory-already-knows',
+  'sections/30-from-effects-to-their-ground',
+  'sections/40-what-the-church-stakes-on-reason',
+  'sections/45-the-scientistic-residue',
+  'sections/50-the-sciences-given-back',
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  'sections/85-positions-synopsis',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

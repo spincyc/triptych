@@ -38,8 +38,41 @@ source = "research/source-bindings.toml"
 
 [[structure]]
 role = "scope-appendix"
-source = "main.tex"
+source = "sections/150-scope-method-and-qualifications.tex"
 
 [[structure]]
 role = "references"
-source = "main.tex"
+source = "sections/160-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'The Supper, the Cross, and the Mass'
+pdfsubject = 'A theological study of sacramental presence, anamnesis, and time'
+title = 'The Supper, the Cross, and the Mass'
+subtitle = 'Sacramental Presence Without Time Travel'
+note = 'A source-first theological study'
+headings = "section"
+title-page = "stacked"
+
+[document.main]
+body = [
+  'sections/00-a-powerful-image-under-examination',
+  'sections/10-four-new-testament-controls',
+  'sections/20-chronology-is-part-of-the-evidence',
+  'sections/30-passover-new-exodus-and-covenant',
+  'sections/40-anamnesis-offering-and-sacrifice',
+  'sections/50-the-last-supper-anticipation-without-fiction',
+  'sections/60-what-the-fathers-actually-say',
+  'sections/70-aquinas-sign-sacrament-and-sacrifice',
+  'sections/80-the-church-s-deliberate-vocabulary',
+  'sections/90-doctrine-and-theological-models',
+  'sections/100-liturgical-theology-one-prayer-whole-pasch',
+  'sections/110-objections-and-replies',
+  'sections/120-a-more-exact-map',
+  'sections/130-what-the-image-may-and-may',
+  'sections/140-conclusion-one-act-sacramentally-given',
+]
+appendices = [
+  'sections/150-scope-method-and-qualifications',
+  'sections/160-references',
+]

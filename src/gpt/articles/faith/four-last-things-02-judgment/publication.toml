@@ -38,4 +38,36 @@ source = "research/source-bindings.toml"
 
 [[structure]]
 role = "scope-appendix"
-source = "main.tex"
+source = "sections/140-scope-method-and-qualifications.tex"
+
+[document]
+type = "four-last-things-v1"
+pdftitle = 'The Four Last Things: The Truth of a Life'
+pdfsubject = 'Judgment: a Catholic study of particular and final judgment, grace, works, mercy, and justice'
+title = 'The Truth of a Life'
+subtitle = 'Judgment'
+front = "print-title"
+notes = "none"
+closing = "scriptsize"
+
+[document.main]
+body = [
+  'sections/00-before-jesus-christ',
+  'sections/10-the-judgment-at-death',
+  'sections/20-the-resurrection-and-the-whole-of',
+  'sections/30-the-heart-laid-open',
+  'sections/40-the-words-we-shall-answer-for',
+  'sections/50-faith-made-living-by-charity',
+  'sections/60-christ-in-the-person-before-us',
+  'sections/70-oil-for-the-lamps-fruit-from',
+  'sections/80-the-people-entrusted-to-our-care',
+  'sections/90-justice-for-the-wronged-mercy-for',
+  'sections/100-coming-into-the-light-in-confession',
+  'sections/110-purified-for-the-vision-of-god',
+  'sections/120-holy-fear-and-persevering-hope',
+  'sections/130-the-year-still-given',
+]
+appendices = [
+  'sections/140-scope-method-and-qualifications',
+  'references',
+]

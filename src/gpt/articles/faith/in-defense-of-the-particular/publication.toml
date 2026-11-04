@@ -67,3 +67,28 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'In Defense of the Particular'
+pdfsubject = 'A companion essay in The Creature Before God'
+kicker = 'The Creature Before God'
+subkicker = 'Companion Essay'
+title = 'In Defense of the Particular'
+
+[document.main]
+body = [
+  'sections/00-under-pontius-pilate',
+  'sections/10-universal-cause',
+  'sections/20-chosen-for-all',
+  'sections/30-whole-in-the-part',
+  'sections/40-water-bread-person',
+  'sections/50-who-do-you-say',
+  '\clearpage',
+  'sections/80-notes',
+  '\clearpage',
+]
+appendices = [
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

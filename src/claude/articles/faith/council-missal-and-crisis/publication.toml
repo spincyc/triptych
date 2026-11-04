@@ -75,3 +75,33 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Council, Missal, and Crisis'
+pdfsubject = 'A discursive essay on the Second Vatican Council, the liturgical reform culminating in the Missal of Paul VI, and the postconciliar crisis narrative: what the Council mandated, what was made of it, what the numbers will and will not say, and how the Church has governed the disagreement.'
+kicker = 'A Triptych Article'
+title = 'Council, Missal, and Crisis'
+subtitle = 'On What Was Mandated, What Was Made, and What the Numbers Will Not Say'
+note = 'The discipline governing the older Roman Missal is mutable law, stated here as of 25 July 2026; see the terminal Scope, Method, and Qualifications appendix.'
+notes-font = '\footnotesize'
+notes-parskip = '0.28em'
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-the-coincidence',
+  'sections/10-what-the-council-was-called-to-do',
+  'sections/20-what-the-constitution-says',
+  'sections/30-from-constitution-to-missal',
+  'sections/40-the-crisis-measured',
+  'sections/50-the-hermeneutical-fork',
+  'sections/60-the-critique-and-its-limits',
+  'sections/70-the-discipline-of-memory',
+  '\clearpage',
+]
+appendices = [
+  '\Needspace{14\baselineskip}',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

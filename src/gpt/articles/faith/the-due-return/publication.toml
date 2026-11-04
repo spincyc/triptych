@@ -87,3 +87,35 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'The Due Return'
+pdfsubject = 'Part II of The Creature Before God: religion, living sacrifice, and the justice of creaturehood'
+kicker = 'The Creature Before God'
+subkicker = 'Part II'
+title = 'The Due Return'
+notes-parskip = '0.45em'
+widows = "class"
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-the-question-after-vertigo',
+  'sections/10-the-gift-that-cannot-be-repaid',
+  'sections/20-justice-without-equivalence',
+  'sections/30-the-living-sacrifice',
+  'sections/40-gift-before-command',
+  'sections/50-a-grammar-of-the-due',
+  'sections/60-the-due-made-common',
+  'sections/70-the-return-passes-through-the-neighbor',
+  'sections/75-what-action-cannot-close',
+  'sections/80-the-grace-of-the-answer',
+  'sections/85-gethsemane',
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

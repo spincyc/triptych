@@ -79,3 +79,34 @@ source = "sections/99-references.tex"
 [[structure]]
 role = "scope-appendix"
 source = "sections/00-question-thesis.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Trustful Surrender to Divine Providence'
+pdfsubject = 'A patristic and Thomistic study of omnipotent providence, willed permission, freedom, agency, culpability, and charity'
+title = 'Trustful Surrender\\ to Divine Providence'
+subtitle = 'Freedom under charity in the order of created causes'
+description = 'A patristic and Thomistic theological study'
+note = 'Not spiritual direction or a substitute for urgent pastoral, medical, legal, or safeguarding help; see the terminal Scope and Qualifications appendix.'
+# The article's argument is navigable at section level; a one-page contents
+# preserves that map without creating a mostly empty continuation page.
+tocdepth = '1'
+widows = "class"
+title-page = "stacked"
+
+[document.main]
+body = [
+  'sections/00-question-thesis',
+  'sections/10-providence',
+  'sections/20-causal-order',
+  'sections/30-freedom',
+  'sections/40-agency-culpability',
+  'sections/50-evil-suffering',
+  'sections/60-patristic-witness',
+  'sections/70-augustine-love',
+  'sections/90-practice',
+]
+appendices = [
+  '\providencescopeappendix',
+  'sections/99-references',
+]

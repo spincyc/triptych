@@ -83,3 +83,34 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'The Linen Cloths at the Empty Tomb'
+pdfsubject = 'A close exegetical study of John 20:3-10 with Luke 24:12: the burial cloths, who is said to have believed, and two explanations of why the arrangement mattered'
+kicker = 'Scripture'
+subkicker = 'A Study of One Passage'
+title = 'The Linen Cloths at the Empty Tomb'
+subtitle = 'John 20:3--10, and What Peter Is Said to Have Known'
+notes-parskip = '0.45em'
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-the-claim-under-test',
+  'sections/10-the-passage',
+  'sections/20-the-vocabulary',
+  'sections/30-who-believed',
+  'sections/40-the-harmonizations',
+  'sections/50-the-argument-from-arrangement',
+  'sections/55-the-reception',
+  'sections/60-the-folded-napkin',
+  'sections/70-project-synthesis',
+  'sections/80-boundaries',
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

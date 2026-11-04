@@ -103,3 +103,40 @@ source = "sections/150-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/160-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Council, Missal, and Crisis'
+pdfsubject = '''Vatican I, Vatican II, Paul VI's liturgical reform, institutional contraction, lay belief, and the traditionalist rupture'''
+title = 'Council, Missal, and Crisis'
+subtitle = '''Vatican I, Vatican II, Paul VI's liturgical reform,\\ and the Catholic aftermath'''
+description = 'A historical, theological, liturgical, canonical, and empirical study'
+note = 'Not an ecclesiastical judgment or canonical opinion on an individual case; see the terminal Objects, Method, and Qualifications appendix.'
+emergencystretch = '3em'
+widows = "class"
+title-page = "stacked"
+closing = "footnotesize"
+
+[document.main]
+body = [
+  'sections/00-question-thesis',
+  'sections/10-road-to-vatican-i',
+  'sections/20-vatican-i',
+  'sections/30-infallibility-formula',
+  'sections/40-between-councils',
+  'sections/50-vatican-ii',
+  'sections/60-conciliar-authority',
+  'sections/70-postconciliar-event',
+  'sections/80-missal-development',
+  'sections/90-missal-assessment',
+  'sections/100-institutional-contraction',
+  'sections/110-lay-belief',
+  'sections/120-causal-judgment',
+  'sections/130-sspx-and-traditional-communities',
+  'sections/140-conclusion',
+]
+appendices = [
+  'sections/150-timeline',
+  '\crisisapparatusappendix',
+  'sections/160-references',
+]

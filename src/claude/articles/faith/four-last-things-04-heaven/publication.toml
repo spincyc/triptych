@@ -83,3 +83,32 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "four-last-things-v1"
+pdftitle = 'Then Face to Face'
+pdfsubject = 'On Heaven and the Vision of God. The Four Last Things, IV'
+numeral = 'IV'
+title = 'Then Face to Face'
+subtitle = 'On Heaven and the Vision of God'
+epigraph = 'We see now through a glass in a dark manner: but then face to face.'
+epigraph-source = '1 Corinthians 13:12'
+notes-parskip = '0.2em'
+
+[document.main]
+body = [
+  'sections/00-they-shall-see-his-face',
+  'sections/10-the-vision-of-god',
+  'sections/20-the-restless-heart',
+  'sections/30-star-differeth-from-star',
+  'sections/40-the-body-of-glory',
+  'sections/50-those-we-love',
+  'sections/60-without-which-no-man-shall-see-god',
+  'sections/70-the-last-of-the-last-things',
+  'sections/80-in-paradisum',
+]
+appendices = [
+  'sections/85-graded-teaching',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

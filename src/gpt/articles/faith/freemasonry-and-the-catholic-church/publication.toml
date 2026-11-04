@@ -99,3 +99,37 @@ source = "sections/130-references.tex"
 [[structure]]
 role = "scope-appendix"
 source = "sections/00-question-thesis.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Freemasonry and the Catholic Church'
+pdfsubject = 'History, principles, spiritual warfare, exorcism-prayer provenance, magisterial judgment, and current Latin canonical discipline'
+title = 'Freemasonry and the Catholic Church'
+subtitle = 'History, principles, spiritual warfare,\\ magisterial judgment, and canonical discipline'
+description = 'A historical, theological, and canonical study'
+note = '''Not a canonical opinion or a judgment of any person's culpability; see the terminal Scope and Qualifications appendix.'''
+emergencystretch = '3em'
+title-page = "stacked"
+closing = "footnotesize"
+
+[document.main]
+body = [
+  'sections/00-question-thesis',
+  'sections/10-definitions',
+  'sections/20-origins',
+  'sections/30-expansion-divergence',
+  'sections/40-catholic-response',
+  'sections/50-humanum-genus',
+  'sections/60-theological-analysis',
+  'sections/65-exorcism-prayer-provenance',
+  'sections/70-law-and-discipline',
+  'sections/80-global-effects',
+  'sections/90-myths-and-evidence',
+  'sections/100-pastoral-response',
+]
+appendices = [
+  'sections/110-documentary-corpus',
+  'sections/120-timeline-claim-audit',
+  '\masonryapparatusappendix',
+  'sections/130-references',
+]

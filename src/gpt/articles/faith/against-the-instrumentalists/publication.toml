@@ -63,3 +63,27 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Against the Instrumentalists'
+pdfsubject = 'A companion essay to The Creature Before God on measurement, reason, and metaphysical inquiry'
+kicker = 'The Creature Before God'
+subkicker = 'Companion Essay'
+title = 'Against the Instrumentalists'
+
+[document.main]
+body = [
+  'sections/00-a-superb-servant',
+  'sections/10-no-reading-reads-itself',
+  'sections/20-the-rule-no-instrument-reports',
+  'sections/30-from-phenomenon-to-foundation',
+  'sections/40-the-instrument-restored',
+  '\clearpage',
+  'sections/80-notes',
+  '\clearpage',
+]
+appendices = [
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

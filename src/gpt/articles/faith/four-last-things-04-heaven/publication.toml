@@ -38,4 +38,38 @@ source = "research/source-bindings.toml"
 
 [[structure]]
 role = "scope-appendix"
-source = "main.tex"
+source = "sections/160-scope-method-and-qualifications.tex"
+
+[document]
+type = "four-last-things-v1"
+pdftitle = 'The Four Last Things: The End for Which We Were Made'
+pdfsubject = 'Heaven: a Catholic study of the beatific vision, communion of saints, resurrection, and the new creation'
+title = 'The End for Which We Were Made'
+subtitle = 'Heaven'
+front = "print-title"
+notes = "none"
+closing = "scriptsize"
+
+[document.main]
+body = [
+  'sections/00-the-life-for-which-we-were',
+  'sections/10-desire-and-the-gift-of-god',
+  'sections/20-to-see-god-face-to-face',
+  'sections/30-love-freedom-and-joy-without-end',
+  'sections/40-the-worship-of-heaven',
+  'sections/50-the-communion-of-the-blessed',
+  'sections/60-learning-to-desire-what-heaven-gives',
+  'sections/70-the-blessedness-christ-teaches',
+  'sections/80-the-same-person-raised-in-glory',
+  'sections/90-creation-awaiting-its-freedom',
+  'sections/100-love-and-memory-made-whole',
+  'sections/110-the-blessed-and-the-justice-of',
+  'sections/120-the-eucharistic-foretaste',
+  'sections/130-prayer-and-the-enlargement-of-love',
+  'sections/140-the-growth-of-christian-hope',
+  'sections/150-a-hope-to-renew-each-year',
+]
+appendices = [
+  'sections/160-scope-method-and-qualifications',
+  'references',
+]

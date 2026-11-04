@@ -99,3 +99,40 @@ source = "sections/140-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/150-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Chastity, Continence, Celibacy'
+pdfsubject = 'A discursive canon-law article on the clerical discipline of the Catholic Churches: the three distinct obligations of chastity, continence, and celibacy; the Latin discipline of the 1983 Code (cc. 277, 1031, 1036-1037, 1042, 1078, 1087, 1394, 290-293); the Eastern common law of the 1990 Codex Canonum Ecclesiarum Orientalium (cc. 1-2, 180, 373-375, 758, 762, 804, 394-398) quoted from the Acta Apostolicae Sedis promulgation text; the twenty-four Churches sui iuris; the permanent diaconate; the historical development from Elvira to Trent; convert-clergy and ordinariate provisions; and the modern magisterial file from Presbyterorum ordinis to Querida Amazonia.'
+kicker = 'A Triptych Article'
+title = 'Chastity, Continence,\\ Celibacy'
+subtitle = 'Three Obligations, Two Codes,\\ and Twenty-Four Churches'
+note = 'Governing law: the 1983 \emph{Codex Iuris Canonici} for the Latin Church and the 1990 \emph{Codex Canonum Ecclesiarum Orientalium} for the Eastern Catholic Churches, each as amended, stated as of 25 July 2026; see the terminal Scope, Method, and Qualifications appendix. This is a study aid, not canonical advice: no personal case is decided here.'
+tocdepth = '2'
+notes-font = '\footnotesize'
+notes-parskip = '0.14em'
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-three-obligations',
+  'sections/10-fixing-the-terms',
+  'sections/20-canon-277',
+  'sections/30-how-it-attaches',
+  'sections/40-impediment-and-penalty',
+  'sections/50-loss-and-dispensation',
+  'sections/60-the-eastern-law',
+  'sections/70-twenty-four-churches',
+  'sections/80-permanent-diaconate',
+  'sections/90-how-it-was-built',
+  'sections/100-convert-clergy',
+  'sections/110-the-modern-file',
+  'sections/120-arguments',
+  'sections/130-not-decided',
+  '\Needspace{10\baselineskip}',
+]
+appendices = [
+  '\Needspace{14\baselineskip}',
+  'sections/140-scope-method-qualifications',
+  'sections/150-references',
+]

@@ -75,3 +75,32 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Ontological Vertigo'
+pdfsubject = 'Part I of The Creature Before God: a patristic, Thomistic, and mystical study of asymmetric dependence'
+kicker = 'The Creature Before God'
+subkicker = 'Part I'
+title = 'Ontological Vertigo'
+notes-parskip = '0.45em'
+widows = "class"
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-the-weight-of-is',
+  'sections/10-ancient-grammar',
+  'sections/20-patristic-dependence',
+  'sections/30-the-thomistic-center',
+  'sections/40-dependence-without-rivalry',
+  'sections/50-mystical-apprehension',
+  'sections/60-after-the-scholastics',
+  'sections/70-what-the-vertigo-sees',
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

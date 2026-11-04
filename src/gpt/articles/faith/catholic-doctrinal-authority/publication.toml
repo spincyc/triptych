@@ -38,8 +38,41 @@ source = "research/source-bindings.toml"
 
 [[structure]]
 role = "scope-appendix"
-source = "main.tex"
+source = "sections/100-scope-method-and-qualifications.tex"
 
 [[structure]]
 role = "references"
-source = "main.tex"
+source = "sections/110-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'How the Catholic Church Teaches'
+pdfsubject = 'Dogma, definitive doctrine, authentic teaching, discipline, theological opinion, and the assent proper to each'
+title = 'How the Catholic Church Teaches'
+subtitle = 'Dogma, doctrine, discipline, and theological opinion'
+description = 'Their authority, purposes, history, and proper reception'
+note = 'A Catholic theological study; not an ecclesiastical judgment or a canonical opinion on an individual case. See the terminal Scope, Method, and Qualifications appendix.'
+emergencystretch = '3em'
+headings = "class"
+widows = "class"
+contents = "normal"
+title-page = "stacked"
+closing = "footnotesize"
+
+[document.main]
+body = [
+  'sections/00-why-a-church-that-has-received',
+  'sections/10-the-map-object-mode-authority-and',
+  'sections/20-dogma-and-the-deposit-of-faith',
+  'sections/30-definitive-teachings-that-are-not-proposed',
+  'sections/40-authentic-teaching-and-religious-submission',
+  'sections/50-doctrine-discipline-prudence-and-fact',
+  'sections/60-before-the-modern-taxonomy-scripture-fathers',
+  'sections/70-from-vatican-i-to-the-present',
+  'sections/80-serious-objections',
+  'sections/90-the-unity-beneath-the-distinctions',
+]
+appendices = [
+  'sections/100-scope-method-and-qualifications',
+  'sections/110-references',
+]

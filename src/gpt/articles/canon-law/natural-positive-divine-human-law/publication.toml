@@ -111,3 +111,40 @@ source = "sections/160-references.tex"
 [[structure]]
 role = "scope-appendix"
 source = "sections/00-question-thesis.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Natural and Positive, Divine and Human Law'
+pdfsubject = 'A historical and juridical study of responsible action across overlapping orders of law'
+title = 'Natural and Positive,\\ Divine and Human Law'
+subtitle = 'Sources, historical development,\\ and responsible action across legal orders'
+description = 'A philosophical, theological, historical, and canonical study'
+note = 'Not legal advice or a canonical opinion in an individual case; see the terminal Scope and Qualifications appendix.'
+emergencystretch = '3em'
+title-page = "stacked"
+closing = "footnotesize"
+
+[document.main]
+body = [
+  'sections/00-question-thesis',
+  'sections/10-map-and-vocabulary',
+  'sections/20-why-law',
+  'sections/30-greek-sources',
+  'sections/40-roman-sources',
+  'sections/50-scripture-and-fathers',
+  'sections/60-medieval-synthesis',
+  'sections/70-church-and-civil-order',
+  'sections/80-modern-doctrinal-synthesis',
+  'sections/90-current-sources-of-canon-law',
+  'sections/100-current-authorities-and-forums',
+  'sections/110-civil-law-holy-see-vatican',
+  'sections/115-concurrent-obligations',
+  'sections/120-applied-dossiers',
+  'sections/150-conclusion',
+]
+appendices = [
+  'sections/75-historical-synoptic-timeline',
+  'sections/15-fields-and-methods',
+  '\lawscopeappendix',
+  'sections/160-references',
+]

@@ -1,0 +1,7 @@
+\makeatletter
+\renewcommand{\enoteheading}{%
+  \section*{\phantomsection\notesname}%
+  \addcontentsline{toc}{section}{\notesname}%
+  \@mkboth{\MakeUppercase{\notesname}}{\MakeUppercase{\notesname}}}
+\makeatother
+\renewcommand{\makeenmark}{\hbox{\textsuperscript{\normalfont\theenmark}}}

@@ -91,3 +91,38 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Natural and Positive, Divine and Human'
+pdfsubject = '''A discursive canon-law article on the classical taxonomy of law and its canonical reception: eternal law, natural law, divine positive law, and human law in Aquinas's treatise on law (ST I-II qq. 90-97), its sources in Isidore of Seville, its reception in Gratian's opening distinctions, the 1983 Code of Canon Law's working uses of the distinctions (divine law, merely ecclesiastical law, custom, dispensation), the Catechism's and Veritatis splendor's natural-law expositions, and the boundaries of what the Church claims to declare rather than constitute.'''
+kicker = 'A Triptych Article'
+title = 'Natural and Positive,\\ Divine and Human'
+subtitle = 'The Classical Taxonomy of Law and Its Reception\\ in the Canon Law of the Latin Church'
+note = 'Governing law: the 1983 \emph{Codex Iuris Canonici} for the Latin Church, as amended, stated as of 25 July 2026; see the terminal Scope, Method, and Qualifications appendix. This is a study aid, not canonical advice.'
+tocdepth = '2'
+notes-font = '\footnotesize'
+notes-parskip = '0.28em'
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-two-canons-and-a-question',
+  'sections/10-the-inherited-vocabulary',
+  'sections/20-the-treatise-on-law-i',
+  'sections/25-the-treatise-on-law-ii',
+  'sections/28-the-treatise-on-law-iii',
+  'sections/30-the-shape-of-the-taxonomy',
+  'sections/40-gratians-opening-distinctions',
+  'sections/50-the-code',
+  'sections/60-custom-in-the-code',
+  'sections/70-dispensation-and-its-limits',
+  'sections/80-the-magisterial-exposition',
+  'sections/85-boundaries-and-debates',
+  '\Needspace{10\baselineskip}',
+]
+appendices = [
+  '\Needspace{14\baselineskip}',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

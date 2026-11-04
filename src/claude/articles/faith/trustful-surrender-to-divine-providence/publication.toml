@@ -79,3 +79,33 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Trustful Surrender to Divine Providence'
+pdfsubject = 'A discursive article on the classic abandonment treatise, its composite textual history, the Thomistic architecture of providence, and the boundaries between surrender, quietism, fatalism, and presumption'
+kicker = 'A Triptych Article'
+title = 'Trustful Surrender to Divine Providence'
+subtitle = 'A Composite Text, a Thomistic Architecture,\\and the Boundaries of Abandonment'
+tocdepth = '2'
+contents = "compact"
+notes = "endnotes"
+
+[document.main]
+body = [
+  'sections/00-the-counsel-under-pressure',
+  'sections/10-the-book-and-its-title-page',
+  'sections/20-what-scripture-hands-over',
+  'sections/30-the-architecture-of-providence',
+  'sections/40-abandonment-and-its-history',
+  'sections/50-the-boundaries',
+  'sections/60-suffering-and-secondary-causes',
+  'sections/70-what-surrender-is',
+  '\clearpage',
+]
+appendices = [
+  '\clearpage',
+  'sections/85-witnesses-and-editions',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

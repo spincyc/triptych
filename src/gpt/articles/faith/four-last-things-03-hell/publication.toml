@@ -38,4 +38,36 @@ source = "research/source-bindings.toml"
 
 [[structure]]
 role = "scope-appendix"
-source = "main.tex"
+source = "sections/140-scope-method-and-qualifications.tex"
+
+[document]
+type = "four-last-things-v1"
+pdftitle = 'The Four Last Things: Hell'
+pdfsubject = 'Eternal Punishment and the Call to Conversion'
+title = 'Hell'
+subtitle = 'Eternal Punishment and the Call to Conversion'
+front = "print-title"
+notes = "none"
+closing = "scriptsize"
+
+[document.main]
+body = [
+  'sections/00-hell-is-eternal-punishment',
+  'sections/10-hear-the-warning-from-christ',
+  'sections/20-the-loss-of-god',
+  'sections/30-the-fire-and-the-resurrection-of',
+  'sections/40-a-punishment-that-does-not-end',
+  'sections/50-mortal-sin-and-the-life-of',
+  'sections/60-do-not-become-another-person-s',
+  'sections/70-mercy-received-and-mercy-abused',
+  'sections/80-the-divided-will-and-the-grace',
+  'sections/90-fear-brought-before-the-savior',
+  'sections/100-the-fear-that-grows-with-love',
+  'sections/110-renew-the-heart-with-st-francis',
+  'sections/120-compassion-for-souls',
+  'sections/130-persevere-in-the-mercy-you-have',
+]
+appendices = [
+  'sections/140-scope-method-and-qualifications',
+  'references',
+]

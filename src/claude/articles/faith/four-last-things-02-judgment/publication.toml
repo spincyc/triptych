@@ -83,3 +83,31 @@ source = "sections/90-scope-method-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "four-last-things-v1"
+pdftitle = 'What Death Does Not Finish'
+pdfsubject = 'On the Particular and the General Judgment. The Four Last Things, II'
+numeral = 'II'
+title = 'What Death Does Not Finish'
+subtitle = 'On the Particular and the General Judgment'
+epigraph = 'For we must all be manifested before the judgment seat of Christ, that every one may receive the proper things of the body, according as he hath done, whether it be good or evil.'
+epigraph-source = '2 Corinthians 5:10'
+
+[document.main]
+body = [
+  'sections/00-the-son-of-man-in-his-majesty',
+  'sections/10-at-the-evening-of-life',
+  'sections/20-nonetheless-on-the-day-of-judgment',
+  'sections/30-the-judge-who-was-judged',
+  'sections/40-the-books-were-opened',
+  'sections/50-a-mercy-shown-to-the-saved',
+  'sections/60-remember-me-at-the-altar',
+  'sections/70-the-fear-of-that-day',
+  'sections/80-the-sequence-for-the-dead',
+]
+appendices = [
+  'sections/85-graded-teaching',
+  'sections/90-scope-method-qualifications',
+  'sections/99-references',
+]

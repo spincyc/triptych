@@ -42,8 +42,42 @@ source = "research/evidence-map.md"
 
 [[structure]]
 role = "scope-appendix"
-source = "main.tex"
+source = "sections/120-scope-method-and-qualifications.tex"
 
 [[structure]]
 role = "references"
-source = "main.tex"
+source = "sections/130-references.tex"
+
+[document]
+type = "article-v1"
+pdftitle = 'Bread from Heaven'
+pdfsubject = 'A source-first study of the ancient reception joining John 6 to Bethlehem and the manger'
+kicker = 'Scripture'
+subkicker = 'Source-First Scripture Study'
+title = 'Bread from Heaven'
+subtitle = 'John 6, the Flesh Given for the World, and the Child in the Manger'
+emergencystretch = '2.5em'
+headings = "section"
+widows = "class"
+contents = "normal"
+closing = "plain"
+
+[document.main]
+body = [
+  'sections/00-the-claim-under-test',
+  'sections/10-what-john-6-actually-does',
+  'sections/20-passover-signs-and-the-shape-of',
+  'sections/30-greek-words-that-control-the-argument',
+  'sections/40-text-numbering-and-questions-the-draft',
+  'sections/50-the-fathers-do-not-speak-with',
+  'sections/60-medieval-synthesis-and-a-doctrinal-boundary',
+  'sections/70-catholic-doctrinal-reception-after-the-fathers',
+  'sections/80-interpretive-pressures-and-objections',
+  'sections/90-bethlehem-swaddling-cloths-and-the-manger',
+  'sections/100-what-the-typology-may-and-may',
+  'sections/110-conclusion',
+]
+appendices = [
+  'sections/120-scope-method-and-qualifications',
+  'sections/130-references',
+]
