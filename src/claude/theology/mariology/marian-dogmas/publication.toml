@@ -83,3 +83,39 @@ source = "sections/90-scope-status-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'The Four Marian Dogmas: What the Church Has Defined about Mary'
+pdfsubject = 'A source-audited reference on the defined Marian dogmas: divine motherhood, perpetual virginity, Immaculate Conception, and Assumption'
+title = 'The Four Marian Dogmas'
+subtitle = 'What the Church Has Defined about Mary'
+kind-line = 'A source-audited doctrinal reference'
+emergencystretch = '2.2em'
+headings = 'standard'
+titlepage = 'series'
+closing = 'rights'
+body = [
+  'sections/00-the-four-dogmas',
+  'sections/05-scriptural-foundations',
+  'sections/10-divine-motherhood',
+  'sections/20-perpetual-virginity',
+  'sections/30-immaculate-conception',
+  'sections/40-assumption',
+  'sections/45-systematic-coherence',
+  'sections/50-titles-and-boundaries',
+  'sections/55-reception-and-ecumenism',
+  'sections/60-synopses',
+  '''
+\begingroup
+\parindent 0pt
+\theendnotes
+\endgroup''',
+]
+appendix = [
+  'sections/90-scope-status-qualifications',
+  'sections/99-references',
+  '\sectionguard',
+]

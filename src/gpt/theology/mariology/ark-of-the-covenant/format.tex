@@ -1,0 +1,87 @@
+% Leaf-local preamble: the packages and macros this study alone uses. The
+% document type named in publication.toml [document] owns the skeleton.
+
+\usepackage{graphicx}
+\usetikzlibrary{decorations.pathmorphing}
+
+% The thesis opens the body directly as prose: no box and no label, as the
+% reader-first rule of guidance/editorial.md requires.
+\newcommand{\arkthesis}[1]{#1\par}
+
+\newcommand{\arkaxis}[3]{%
+  \begin{studyframe}
+  \textbf{Ark locus and movement:} #1\par
+  \textbf{New-Covenant correspondence:} #2\par
+  \textbf{Interpretive limit and spiritual fruit:} #3
+  \end{studyframe}}
+
+\newcommand{\arksourceboundary}[3]{%
+  \begin{studyframe}
+  \textbf{Witness:} #1\par
+  \textbf{What it establishes:} #2\par
+  \textbf{What it does not establish alone:} #3
+  \end{studyframe}}
+
+\newcommand{\sourceboundary}[3]{%
+  \begin{studyframe}
+  \textbf{Witness:} #1\par
+  \textbf{What it establishes:} #2\par
+  \textbf{What it cannot establish alone:} #3
+  \end{studyframe}}
+
+\newcommand{\interpretivekey}[2]{%
+  \begin{studybox}{Interpretive key: #1}
+  #2
+  \end{studybox}}
+
+\newcommand{\arkapparatusappendix}{%
+  \section{Scope, Status, and Qualifications}
+
+  \subsection{Catholic standpoint and governing confession}
+
+  This study is a faithful Catholic exposition.  It receives Sacred Scripture
+  as the inspired word of God, reads the two Testaments within the unity of
+  God's saving economy, and receives the Marian dogmas according to the
+  Church's authoritative teaching.  Christ is the New Covenant and definitive
+  divine Presence in person.  Mary is called the living Ark because the
+  eternal Son took flesh in her and was borne by her; her dignity is created,
+  graced, wholly dependent on Christ, and ordered to him.
+
+  \subsection{Kinds of evidence}
+
+  The exposition distinguishes the literal sense of a biblical passage,
+  canonical typology, patristic and liturgical reception, magisterial teaching,
+  later theological fittingness, project synthesis, and spiritual application.
+  These distinctions protect truthful Catholic reasoning and accurate
+  attribution; they do not impose a secular presumption against miracle,
+  providence, canonical unity, Tradition, or Marian doctrine.  A correspondence
+  may be theologically luminous without being a repeated word, an exact road,
+  or an independent proof of a dogma.
+
+  \subsection{Material limits}
+
+  The map presents narrative geography and explicitly graded site
+  identifications, not a recovered ancient itinerary.  The Ark image relates
+  to the four Marian dogmas in unequal ways and gathers their Christological
+  coherence without replacing their proper scriptural, traditional, and
+  magisterial grounds.  Uzzah is not treated as a canonical figure of Joseph;
+  Joseph's vocation is the positive obedience of a true husband who receives,
+  names, guards, and serves the incarnate Lord within a freely embraced
+  virginal marriage.  No Father, saint, lexical statistic, archaeological
+  identification, quotation, or motive is attributed beyond the source state
+  recorded in the research apparatus.
+
+  \subsection{Use and review status}
+
+  This publication is intended for study, catechesis, meditation, and adult
+  formation.  It supplies neither ecclesiastical approval nor independent
+  specialist review, and it should not be used as a substitute for the
+  biblical text, the Church's doctrinal documents, or competent pastoral and
+  theological judgment.  Source status, attribution controls, translation and
+  rights limits, and production review belong to the tracked research record.}
+
+% The PDF includes two full-width graphite atlas plates. The web converter selects the empty branch
+% around only the TikZ construct in sections/55-map.tex; both editions retain
+% the introduction, interpretive caption, correspondences, and textual route
+% key.
+\def\TriptychPrintEdition{}

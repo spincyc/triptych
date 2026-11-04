@@ -63,3 +63,29 @@ source = "sections/90-scope-status-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'The Angelus: Incarnation Remembered Through the Day'
+pdfsubject = 'A bilingual prayer text and source-first study of the Angelus, its scriptural structure, history, daily rhythm, and current discipline'
+title = 'The Angelus'
+subtitle = 'Incarnation remembered through the day'
+kind-line = 'A bilingual prayer text and source-first study'
+note = 'The received prayer comes first; source, rights, and use qualifications appear in the appendices.'
+emergencystretch = '2em'
+body = [
+  'sections/00-prayer',
+  'sections/10-scripture-doctrine',
+  'sections/20-history-reception',
+  'sections/30-practice-discipline',
+]
+appendix = [
+  'sections/90-scope-status-qualifications',
+  '''
+\begingroup
+\setlist[itemize]{leftmargin=1.25em,itemsep=0pt,parsep=0pt,topsep=0.2em}''',
+  'sections/99-references',
+  '\endgroup',
+]

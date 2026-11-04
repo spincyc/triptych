@@ -83,3 +83,41 @@ source = "sections/90-scope-status-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'Lourdes 1858: Apparitions, Judgment, and the Discernment of Cures'
+pdfsubject = '''A source-audited apparition study of Lourdes: the eighteen reported apparitions of 1858 in their nearest witnesses, the Gascon self-identification of 25 March, Bishop Laurence's judgment of 18 January 1862, the medical discernment of cures from the Bureau des Constatations to the 72nd recognition, Bernadette's canonization, liturgical and papal reception, and the current standing of the judgment'''
+title = 'Lourdes 1858'
+subtitle = 'Apparitions, Judgment, and the Discernment of Cures'
+kind-line = 'A source-audited apparition study'
+description = 'What the Church has judged, on what record, how reported cures are examined, and what that judgment does and does not oblige'
+tocdepth = '2'
+emergencystretch = '2.2em'
+contents-style = '\footnotesize'
+headings = 'standard'
+titlepage = 'series-described'
+closing = 'rights'
+body = [
+  'sections/00-judgment-first',
+  'sections/10-events-1858',
+  'sections/20-self-identification',
+  'sections/30-commission-judgment',
+  'sections/40-cures-medical',
+  'sections/50-bernadette',
+  'sections/60-reception',
+  'sections/70-what-approval-obliges',
+  'sections/80-current-standing',
+  '''
+\begingroup
+\parindent 0pt
+\theendnotes
+\endgroup''',
+]
+appendix = [
+  'sections/90-scope-status-qualifications',
+  'sections/99-references',
+  '\sectionguard',
+]

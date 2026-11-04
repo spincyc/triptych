@@ -7,13 +7,6 @@
 % overflowing the measure.
 \usepackage{xurl}
 
-\setcounter{tocdepth}{2}
-\setlength{\emergencystretch}{2.6em}
-
-\widowpenalty=10000
-\clubpenalty=10000
-\displaywidowpenalty=10000
-
 % Work titles and untranslated technical terms are set through semantic
 % commands so a later style change never requires editing the prose.
 \newcommand{\work}[1]{\textit{#1}}
@@ -21,14 +14,11 @@
 
 % The contents fit one page only if the inter-section gaps are tightened;
 % without this the final line spills to an otherwise empty second page.
-\newcommand{\CompactContents}{%
-  \begingroup
-  \footnotesize
-  \setlength{\parskip}{0pt}%
+% publication.toml [document] contents-style applies this inside the contents
+% group.
+\newcommand{\ChampionCompactContents}{%
   \let\ChampionSavedAddvspace\addvspace
-  \renewcommand{\addvspace}[1]{\ChampionSavedAddvspace{0.42em}}%
-  \tableofcontents
-  \endgroup}
+  \renewcommand{\addvspace}[1]{\ChampionSavedAddvspace{0.42em}}}
 
 % The thesis opens the body directly as prose: no box and no label, as the
 % reader-first rule of guidance/editorial.md requires.

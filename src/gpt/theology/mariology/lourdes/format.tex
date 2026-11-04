@@ -1,0 +1,20 @@
+% Leaf-local preamble: the packages and macros this study alone uses. The
+% document type named in publication.toml [document] owns the skeleton.
+
+% The thesis opens the body directly as prose: no box and no label, as the
+% reader-first rule of guidance/editorial.md requires.
+\newcommand{\lourdesthesis}[1]{#1\par}
+
+\newcommand{\sourceboundary}[3]{%
+  \begin{studyframe}
+  \textbf{Witness:} #1\par
+  \textbf{What it establishes:} #2\par
+  \textbf{What it cannot establish alone:} #3
+  \end{studyframe}}
+
+\newcommand{\claimboundary}[3]{%
+  \begin{studyframe}
+  \textbf{Claim:} #1\par
+  \textbf{Evidence status:} #2\par
+  \textbf{Necessary limit:} #3
+  \end{studyframe}}

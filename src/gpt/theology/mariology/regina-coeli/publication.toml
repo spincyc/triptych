@@ -63,3 +63,25 @@ source = "sections/90-scope-status-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'The Regina Coeli: Easter Joy with the Mother of the Risen Lord'
+pdfsubject = 'A bilingual prayer text and source-first study of the Regina Coeli, its scriptural structure, liturgical and devotional uses, history, Easter rhythm, and current discipline'
+title = 'The Regina Coeli'
+subtitle = 'Easter joy with the Mother of the risen Lord'
+kind-line = 'A bilingual prayer text and source-first study'
+note = 'The received prayer comes first; source, rights, and use qualifications appear in the appendices.'
+emergencystretch = '2em'
+body = [
+  'sections/00-prayer',
+  'sections/10-scripture-doctrine',
+  'sections/20-history-reception',
+  'sections/30-practice-discipline',
+]
+appendix = [
+  'sections/90-scope-status-qualifications',
+  'sections/99-references',
+]

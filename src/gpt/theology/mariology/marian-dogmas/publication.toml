@@ -87,3 +87,35 @@ source = "sections/95-one-page-synopses.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'The Marian Dogmas: Mother of God, Ever-Virgin, Immaculate, Assumed'
+pdfsubject = 'A biblical, patristic, Thomistic, historical, and magisterial exposition of the four Marian dogmas and related Marian titles'
+title = 'The Marian Dogmas'
+subtitle = 'Mother of God, Ever-Virgin, Immaculate, Assumed'
+kind-line = 'Scripture, Tradition, patristic witness, Thomistic theology,\\historical development, and magisterial definition'
+note = 'Authority, method, and use qualifications appear in the appendices.'
+emergencystretch = '2em'
+penalties = 'none'
+body = [
+  'sections/00-method-dogma',
+  'sections/10-economy-scripture',
+  'sections/20-divine-motherhood',
+  'sections/30-perpetual-virginity',
+  'sections/40-immaculate-conception',
+  'sections/50-assumption',
+  'sections/60-fourfold-synthesis',
+  'sections/70-doctrines-titles',
+  'sections/80-cooperation-titles',
+  'sections/90-reception-errors',
+  'sections/95-one-page-synopses',
+]
+appendix = [
+  '''
+\dogmaauthorityappendix
+\dogmauseappendix''',
+  'sections/99-references',
+]

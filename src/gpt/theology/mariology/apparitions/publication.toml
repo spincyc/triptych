@@ -91,3 +91,33 @@ source = "sections/99-references.tex"
 [[structure]]
 role = "scope-appendix"
 source = "sections/00-question-method.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'Marian Apparitions in Catholic Ecclesial Judgment'
+pdfsubject = 'Recognized events, received traditions, and a bounded ecclesial-status index'
+title = 'Marian Apparitions\\in Catholic Ecclesial Judgment'
+subtitle = 'Recognized events, pastorally authorized experiences,\\and received traditions'
+kind-line = 'A doctrinal, historical, and comparative study'
+note = 'Scope, status, date, method, and use qualifications appear in the appendices.'
+emergencystretch = '2em'
+body = [
+  'sections/00-question-method',
+  'sections/10-doctrine-discernment',
+  'sections/30-legacy-origins',
+  'sections/40-legacy-expansion',
+  'sections/50-legacy-modern',
+  'sections/60-post-2024',
+  'sections/70-received-traditions',
+  'sections/80-comparative-synthesis',
+  'sections/90-boundaries-practice',
+]
+appendix = [
+  '\apparitionsapparatusappendix',
+  'sections/20-status-map',
+  '\apparitionsboundaryappendix',
+  'sections/95-moderate-renown-index',
+  'sections/99-references',
+]

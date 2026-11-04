@@ -91,3 +91,43 @@ source = "sections/90-scope-status-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'La Salette 1846: The Judgment, the Public Message, and the Secrets'
+pdfsubject = '''A source-audited apparition study of La Salette: the reported encounter of 19 September 1846 above Corps, the public discourse in its earliest recorded and later received forms, the doctrinal mandement of Bishop Philibert de Bruillard of 19 September 1851 quoted at its operative clause, the shrine and the Missionaries of Our Lady of La Salette, the secrets sent to Pius IX in 1851 and Melanie Calvat's expanded publications, the Holy Office decrees of 1915 and 1923 verified in Acta Apostolicae Sedis with the standing juridic question they leave open, the 1879 Lecce text published and analyzed against the 1851 manuscripts under a stated disclosure, and what approval does and does not oblige'''
+title = 'La Salette 1846'
+subtitle = 'The Judgment, the Public Message, and the Secrets'
+kind-line = 'A source-audited apparition study'
+description = 'What the Church judged in 1851, on what record; how the reported discourse is transmitted; what the Holy See decreed about the secret in 1915 and 1923; whether the text published in 1879 is the text sent to Pius~IX in 1851; and what remains open'
+tocdepth = '2'
+emergencystretch = '2.4em'
+contents-style = '\footnotesize'
+headings = 'standard'
+titlepage = 'series-described'
+closing = 'rights'
+body = [
+  'sections/00-judgment-first',
+  'sections/10-event-1846',
+  'sections/20-public-message',
+  'sections/30-inquiry-judgment-1851',
+  'sections/40-secrets',
+  'sections/45-secret-analysis',
+  'sections/50-seers',
+  'sections/60-shrine-missionaries-cult',
+  'sections/70-reception',
+  'sections/80-what-approval-obliges',
+  'sections/85-current-standing',
+  '''
+\begingroup
+\parindent 0pt
+\theendnotes
+\endgroup''',
+]
+appendix = [
+  'sections/90-scope-status-qualifications',
+  'sections/99-references',
+  '\sectionguard',
+]

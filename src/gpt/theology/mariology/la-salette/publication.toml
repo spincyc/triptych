@@ -87,3 +87,33 @@ source = "sections/95-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'La Salette: Apparition, Public Message, and Contested Secrets'
+pdfsubject = 'The 1846 event, its public message, the Grenoble judgments, the sealed 1851 texts, later secret publications, Roman discipline, and Catholic theological reception'
+title = 'La Salette'
+subtitle = 'Apparition, Public Message,\\and Contested Secrets'
+kind-line = 'The 1846 encounter, the Grenoble judgments,\\the sealed manuscripts, and the ministry of reconciliation'
+note = 'Status, corpus, date, method, and use qualifications appear in the appendices.'
+emergencystretch = '2.5em'
+penalties = 'none'
+body = [
+  'sections/00-method-status',
+  'sections/10-context-witnesses-sources',
+  'sections/20-event-public-message',
+  'sections/30-investigation-judgments',
+  'sections/40-symbols-theology',
+  'sections/50-secrets-corpus',
+  'sections/55-roman-discipline',
+  'sections/60-witness-lives-controversy',
+  'sections/70-reception',
+  'sections/80-pastoral-synthesis',
+]
+appendix = [
+  '\lasaletteapparatusappendix',
+  'sections/95-timeline',
+  'sections/99-references',
+]

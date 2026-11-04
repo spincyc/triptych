@@ -1,0 +1,13 @@
+% Leaf-local preamble: the packages and macros this study alone uses. The
+% document type named in publication.toml [document] owns the skeleton.
+
+% The thesis opens the body directly as prose: no box and no label, as the
+% reader-first rule of guidance/editorial.md requires.
+\newcommand{\rosarythesis}[1]{#1\par}
+
+\newcommand{\mysteryaxis}[3]{%
+  \begin{studyframe}
+  \textbf{Principal loci:} #1\par
+  \textbf{Doctrinal center:} #2\par
+  \textbf{Contemplative fruit:} #3
+  \end{studyframe}}

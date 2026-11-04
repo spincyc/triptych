@@ -37,9 +37,73 @@ role = "source-bindings"
 source = "research/source-bindings.toml"
 
 [[structure]]
+role = "exposition"
+source = "sections/10-kinds-of-claim.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/20-authority-map.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/30-four-dogmas.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/40-patristic-substance.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/50-authoritative-doctrine.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/60-typology-liturgy-titles.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/70-devotion-private-revelation.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/80-objections.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/90-practical-test.tex"
+
+[[structure]]
 role = "scope-appendix"
-source = "main.tex"
+source = "sections/95-scope-status-qualifications.tex"
 
 [[structure]]
 role = "references"
-source = "main.tex"
+source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'Dogma, Doctrine, and Devotion in Mariology'
+pdfsubject = 'Catholic authority, assent, Marian dogmas, doctrines, titles, devotion, and private revelation'
+title = 'Dogma, Doctrine, and Devotion in Mariology'
+subtitle = 'How Catholic authority and assent govern claims about Mary'
+note = 'Public Revelation is complete in Christ. No Marian devotion or private revelation creates a new dogma. See the terminal Scope, Status, and Qualifications appendix.'
+emergencystretch = '3em'
+headings = 'standard'
+penalties = 'none'
+body = [
+  'sections/10-kinds-of-claim',
+  'sections/20-authority-map',
+  'sections/30-four-dogmas',
+  'sections/40-patristic-substance',
+  'sections/50-authoritative-doctrine',
+  'sections/60-typology-liturgy-titles',
+  'sections/70-devotion-private-revelation',
+  'sections/80-objections',
+  'sections/90-practical-test',
+]
+appendix = [
+  'sections/95-scope-status-qualifications',
+  'sections/99-references',
+]

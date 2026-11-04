@@ -87,3 +87,33 @@ source = "sections/95-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'Fátima: Event, Message, and Ecclesial Reception'
+pdfsubject = 'The 1917 apparitions, three-part secret, later Fátima cycle, theological interpretation, and response of the Church'
+title = 'Fátima'
+subtitle = 'Event, Message, and Ecclesial Reception'
+kind-line = 'The 1917 apparitions, the three-part secret,\\the later Fátima cycle, and the response of the Church'
+note = 'Status, sources, date, and use qualifications appear in the appendices.'
+emergencystretch = '2.5em'
+penalties = 'none'
+body = [
+  'sections/00-method-status',
+  'sections/10-context-sources',
+  'sections/20-preparatory-cycle',
+  'sections/30-six-encounters',
+  'sections/40-sign-response',
+  'sections/50-three-part-secret',
+  'sections/60-interpretation',
+  'sections/70-later-cycle',
+  'sections/80-ecclesial-reception',
+  'sections/90-theological-synthesis',
+]
+appendix = [
+  '\fatimaapparatusappendix',
+  'sections/95-timeline',
+  'sections/99-references',
+]

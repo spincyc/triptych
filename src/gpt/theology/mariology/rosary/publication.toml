@@ -83,3 +83,31 @@ source = "sections/90-practice.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'The Holy Rosary: The Gospel Contemplated with Mary'
+pdfsubject = 'A biblical, doctrinal, patristic, historical, and spiritual exposition of the Rosary and its twenty mysteries'
+title = 'The Holy Rosary'
+subtitle = 'The Gospel contemplated with Mary'
+kind-line = 'A biblical, doctrinal, patristic, historical, and spiritual exposition'
+note = 'Doctrinal, method, and use qualifications appear in the appendices.'
+emergencystretch = '2em'
+body = [
+  'sections/00-identity-thesis',
+  'sections/10-prayer-form',
+  'sections/20-history',
+  'sections/30-whole-cycle',
+  'sections/40-joyful',
+  'sections/50-luminous',
+  'sections/60-sorrowful',
+  'sections/70-glorious',
+  'sections/80-revelation-tradition',
+  'sections/90-practice',
+]
+appendix = [
+  '\rosaryapparatusappendix',
+  'sections/99-references',
+]

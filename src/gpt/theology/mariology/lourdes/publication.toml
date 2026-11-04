@@ -87,3 +87,32 @@ source = "sections/95-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'Lourdes: Apparitions, Immaculate Conception, and the Ministry of Healing'
+pdfsubject = 'The eighteen apparitions to Bernadette Soubirous, the 1862 judgment, the message of Lourdes, and medical and ecclesial discernment of cures'
+title = 'Lourdes'
+subtitle = 'Apparitions, Immaculate Conception,\\and the Ministry of Healing'
+kind-line = 'The eighteen encounters at Massabielle, the 1862 judgment,\\Saint Bernadette, and the discernment of cures'
+note = 'Status, sources, date, and use qualifications appear in the appendices.'
+emergencystretch = '2.5em'
+body = [
+  'sections/00-method-status',
+  'sections/10-place-witness-sources',
+  'sections/20-bernadette',
+  'sections/30-eighteen-apparitions',
+  'sections/40-message-signs',
+  'sections/50-immaculate-conception',
+  'sections/60-water-healing',
+  'sections/70-medical-canonical-process',
+  'sections/80-reception',
+  'sections/90-theological-synthesis',
+]
+appendix = [
+  '\lourdesapparatusappendix',
+  'sections/95-timeline',
+  'sections/99-references',
+]

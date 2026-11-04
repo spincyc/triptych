@@ -1,0 +1,32 @@
+% Leaf-local preamble: the packages and macros this study alone uses. The
+% document type named in publication.toml [document] owns the skeleton.
+
+% The thesis opens the body directly as prose: no box and no label, as the
+% reader-first rule of guidance/editorial.md requires.
+\newcommand{\apparitionthesis}[1]{#1\par}
+
+\newcommand{\statusbox}[2]{%
+  \begin{studybox}{Ecclesial status: #1}
+  #2
+  \end{studybox}}
+
+\newtcolorbox{dossierframe}{
+  enhanced,
+  breakable,
+  colback=black!1,
+  frame hidden,
+  borderline west={1.1pt}{0pt}{black!40},
+  left=0.9em,
+  right=0.55em,
+  top=0.55em,
+  bottom=0.55em,
+  before skip=0.8em,
+  after skip=0.9em
+}
+
+\newcommand{\dossieraxis}[3]{%
+  \begin{dossierframe}
+  \textbf{Event or tradition:} #1\par\smallskip
+  \textbf{Ecclesial reception or judgment:} #2\par\smallskip
+  \textbf{Limit of that reception:} \emph{#3}
+  \end{dossierframe}}

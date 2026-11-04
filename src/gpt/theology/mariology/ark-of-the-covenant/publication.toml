@@ -115,3 +115,47 @@ source = "sections/99-references.tex"
 [[structure]]
 role = "scope-appendix"
 source = "main.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'The Ark and the Mother of the Lord: The Journey of the Covenant Presence'
+pdfsubject = '''The Ark's scriptural journey, its fulfillment in Mary, patristic and saintly reception, the four Marian dogmas, virginal marriage, and spiritual application'''
+title = 'The Ark and the Mother of the Lord'
+subtitle = 'The journey of the Covenant Presence'
+kind-line = 'From Sinai and Zion to the overshadowed Virgin\\Scripture, the Fathers, the Marian dogmas, and the interior life'
+note = 'Scope, evidence, status, and use qualifications appear in the appendix.'
+emergencystretch = '2.5em'
+body = [
+  'sections/00-prologue',
+  'sections/10-fashioned-for-presence',
+  'sections/20-ark-goes-before',
+  'sections/30-glory-in-captivity',
+  'sections/40-fear-blessing-dance',
+  'sections/45-rest-hiddenness',
+  'sections/50-overshadowing-hill-country',
+  '\section{The journey in two atlas plates}',
+  'sections/55-map',
+  'sections/55-map-text-equivalent',
+  '''
+\clearpage
+\section{The Ark and Its Sanctuaries}
+\ifdefined\TriptychPrintEdition''',
+  'sections/57-ark-and-sanctuaries',
+  '''
+\else
+\fi''',
+  'sections/57-ark-and-sanctuaries-text-equivalent',
+  'sections/60-scripture-recognizes-scripture',
+  'sections/70-choir-of-witnesses',
+  'sections/75-virginal-marriage',
+  'sections/80-four-dogmas',
+  'sections/90-where-glory-dwells',
+  'sections/95-study-guide',
+  'sections/96-synopsis',
+]
+appendix = [
+  '\arkapparatusappendix',
+  'sections/99-references',
+]

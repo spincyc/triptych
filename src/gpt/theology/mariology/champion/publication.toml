@@ -87,3 +87,36 @@ source = "sections/95-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'Champion: Apparitions, Catechetical Mission, and Ecclesial Judgment'
+pdfsubject = 'The 1859 apparitions to Adele Brise, documentary strata, catechetical mission, 1871 fire tradition, 2010 decree, and later ecclesial reception'
+title = 'Champion'
+subtitle = 'Apparitions, Catechetical Mission,\\and Ecclesial Judgment'
+kind-line = '''Adele Brise, the documentary strata,\\the 1871 preservation, and the Church's reception'''
+note = 'Status, corpus, date, method, and use qualifications appear in the appendices.'
+emergencystretch = '2.5em'
+body = [
+  'sections/00-method-status',
+  'sections/10-frontier-adele',
+  'sections/20-source-strata',
+  'sections/30-three-encounters-message',
+  'sections/40-catechetical-mission',
+  'sections/50-fire-preservation',
+  'sections/60-inquiry-decree',
+  'sections/70-shrine-liturgy-name-cause',
+  'sections/80-theological-synthesis',
+  'sections/90-pastoral-reception',
+]
+appendix = [
+  '\championapparatusappendix',
+  'sections/95-timeline',
+  'sections/99-references',
+  '''
+\phantomsection
+\par\medskip
+\smallskip''',
+]

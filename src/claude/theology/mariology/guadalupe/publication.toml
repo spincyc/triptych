@@ -83,3 +83,46 @@ source = "sections/90-scope-status-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'Guadalupe: The Tepeyac Tradition, Its Documents, and Its Ecclesial Reception'
+pdfsubject = '''A source-audited apparition study of Guadalupe: what competent ecclesiastical authority has actually done, the documentary strata of the 1531 tradition from the 1648 Sanchez and 1649 Nahuatl witnesses backward, the silence problem and the 1556 Montufar-Bustamante controversy, the historicity dispute stated at strength on both sides, the beatification and canonization of Juan Diego, what the examinations of the image do and do not establish, the Nahuatl text's own rhetoric, and what approval obliges under the 2024 DDF norms'''
+title = 'Guadalupe'
+subtitle = 'The Tepeyac Tradition, Its Documents, and Its Ecclesial Reception'
+kind-line = 'A source-audited apparition study'
+description = 'What the Church has actually done, what the surviving record will and will not carry, how the historicity dispute stands, and what any of it obliges'
+tocdepth = '2'
+emergencystretch = '2.6em'
+# The contents of this study run to nine sections with fifty-odd subsections.
+# Suppressing the inter-section vertical skips keeps the whole table on one
+# page rather than spilling four lines onto a second, nearly empty one.
+contents-style = '''
+\footnotesize
+\renewcommand{\addvspace}[1]{}'''
+headings = 'standard'
+titlepage = 'series-described'
+closing = 'rights'
+body = [
+  'sections/00-judgment-first',
+  'sections/10-documentary-strata',
+  'sections/20-silence-problem',
+  'sections/30-historicity-dispute',
+  'sections/40-juan-diego',
+  'sections/50-the-image',
+  'sections/60-nahuatl-text',
+  'sections/70-reception',
+  'sections/80-what-approval-obliges',
+  '''
+\begingroup
+\parindent 0pt
+\theendnotes
+\endgroup''',
+]
+appendix = [
+  'sections/90-scope-status-qualifications',
+  'sections/99-references',
+  '\sectionguard',
+]

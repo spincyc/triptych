@@ -83,3 +83,45 @@ source = "sections/90-scope-status-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'Champion 1859: An Approved Apparition and Its Documentary Record'
+pdfsubject = '''A source-audited apparition study of Champion, Wisconsin: the reported October 1859 apparitions to Adele Brise read in their two earliest published witnesses, Eliza Allen Starr's account of 1871 and Peter Pernin's of 1874; the stratigraphy of the received message; the fire of 8 October 1871 separated into contemporary record and later devotional narration; the decree of Bishop David L. Ricken of 8 December 2010 quoted at its operative clause and read against the 1978 norms then in force; and what a diocesan approval of a private revelation does and does not oblige'''
+title = 'Champion 1859'
+subtitle = 'An Approved Apparition and Its Documentary Record'
+kind-line = 'A source-audited apparition study'
+description = 'What the earliest published witnesses say, what the 1871 fire record will and will not carry, what the bishop judged in 2010, and what that judgment obliges'
+tocdepth = '2'
+emergencystretch = '2.6em'
+# format.tex's \ChampionCompactContents tightens the inter-section gaps so the
+# contents fit one page.
+contents-style = '''
+\footnotesize
+\ChampionCompactContents'''
+headings = 'standard'
+titlepage = 'series-described'
+closing = 'rights'
+body = [
+  'sections/00-decree-first',
+  'sections/10-documentary-situation',
+  'sections/20-starr-1871',
+  'sections/30-pernin-1874',
+  'sections/40-collation',
+  'sections/50-fire',
+  'sections/60-inquiry-and-decree',
+  'sections/70-after-2010',
+  'sections/80-synthesis',
+  '''
+\begingroup
+\parindent 0pt
+\theendnotes
+\endgroup''',
+]
+appendix = [
+  'sections/90-scope-status-qualifications',
+  'sections/99-references',
+  '\sectionguard',
+]

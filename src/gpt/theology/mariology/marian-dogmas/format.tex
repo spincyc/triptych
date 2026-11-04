@@ -1,0 +1,13 @@
+% Leaf-local preamble: the packages and macros this study alone uses. The
+% document type named in publication.toml [document] owns the skeleton.
+
+% The thesis opens the body directly as prose: no box and no label, as the
+% reader-first rule of guidance/editorial.md requires.
+\newcommand{\dogmathesis}[1]{#1\par}
+
+\newcommand{\definitionaxis}[3]{%
+  \begin{studyframe}
+  \textbf{Proposition:} #1\par
+  \textbf{Controlling authority:} #2\par
+  \textbf{Necessary boundary:} #3
+  \end{studyframe}}

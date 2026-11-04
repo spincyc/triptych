@@ -103,3 +103,44 @@ source = "sections/90-scope-status-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'Fatima 1917: Event, Message, and Ecclesial Reception'
+pdfsubject = '''A source-audited apparition study of Fatima: the 1917 events in their contemporary witnesses, the 1930 diocesan judgment, the textual history and published text of the three-part secret, the 2000 Holy See interpretation, a sustained and labeled project analysis of the secret's mode, figures, controversies, and obligations, and the current standing of the ecclesial judgments'''
+title = '''F\'atima 1917'''
+subtitle = 'Event, Message, and Ecclesial Reception'
+kind-line = 'A source-audited apparition study'
+description = 'What the Church has judged, on what record, what the published secret says, and what it does and does not mean'
+emergencystretch = '2.2em'
+headings = 'standard'
+titlepage = 'series-described'
+closing = 'rights'
+body = [
+  'sections/00-judgment-first',
+  'sections/10-events-1917',
+  'sections/20-diocesan-judgment',
+  'sections/30-memoirs-and-secret',
+  'sections/34-published-text',
+  'sections/40-interpretation-2000',
+  'sections/44-mode-of-the-vision',
+  'sections/46-bishop-in-white',
+  'sections/48-withheld-text',
+  'sections/49-the-1960-question',
+  'sections/50-consecration',
+  'sections/60-reception-standing',
+  'sections/70-what-approval-obliges',
+  'sections/80-synthesis',
+  '''
+\begingroup
+\parindent 0pt
+\theendnotes
+\endgroup''',
+]
+appendix = [
+  'sections/90-scope-status-qualifications',
+  'sections/99-references',
+  '\sectionguard',
+]

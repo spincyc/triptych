@@ -87,3 +87,36 @@ source = "sections/95-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'Guadalupe: Tradition, Image, and Ecclesial Reception'
+pdfsubject = 'The Tepeyac tradition, Nican Mopohua, Guadalupe image, historical evidence, and ecclesial reception'
+title = 'Guadalupe'
+subtitle = 'Tradition, Image, and Ecclesial Reception'
+kind-line = '''Tepeyac, the \emph{Nican Mopohua}, the sacred image,\\historical evidence, and the Church's reception'''
+note = 'Status, corpus, date, and use qualifications appear in the appendices.'
+emergencystretch = '2.5em'
+body = [
+  'sections/00-method-status',
+  'sections/10-conquest-tepeyac',
+  'sections/20-source-strata',
+  'sections/30-received-narrative',
+  'sections/40-language-inculturation',
+  'sections/50-image-theology',
+  'sections/60-history-controversy',
+  'sections/70-ecclesial-reception',
+  'sections/80-image-claim-audit',
+  'sections/90-theological-synthesis',
+]
+appendix = [
+  '\guadalupeapparatusappendix',
+  'sections/95-timeline',
+  'sections/99-references',
+  '''
+\phantomsection
+\par\medskip
+\smallskip''',
+]

@@ -99,3 +99,41 @@ source = "sections/90-scope-status-qualifications.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = 'theology-reference-v1'
+
+[document.main]
+pdftitle = 'The Ark of the Covenant: From Sinai to the Woman Clothed with the Sun'
+pdfsubject = '''A source-audited study of the ark of the covenant: its canonical journey from Sinai to its disappearance, the theology of presence and holiness it teaches, and the Church's reading of the Virgin Mary as the ark of the new covenant, with every parallel graded by attestation and reception'''
+title = 'The Ark of the Covenant'
+subtitle = 'From Sinai to the Woman Clothed with the Sun'
+kind-line = 'A source-audited Mariological study'
+emergencystretch = '2.2em'
+headings = 'standard'
+titlepage = 'series'
+closing = 'rights'
+body = [
+  'sections/00-overture',
+  'sections/10-sinai',
+  'sections/11-into-the-land',
+  'sections/12-catastrophe',
+  'sections/13-processions',
+  'sections/14-temple-and-silence',
+  'sections/20-the-pattern',
+  'sections/21-reading-forward',
+  'sections/30-luke',
+  'sections/31-fathers',
+  'sections/32-reception',
+  'sections/33-assumption-and-the-woman',
+  'sections/40-carrying-the-presence',
+  '''
+\begingroup
+\parindent 0pt
+\theendnotes
+\endgroup''',
+]
+appendix = [
+  'sections/90-scope-status-qualifications',
+  'sections/99-references',
+]

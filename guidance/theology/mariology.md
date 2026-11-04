@@ -9,6 +9,9 @@ Declare the leaf's actual Marian genre, source roles, contract version, and
 ordered outputs in `publication.toml` under
 [document schemas](../document-schemas.md). Physical synopsis-page and final-page
 requirements below remain [print-export gates](../../docs/printing.md).
+Each study's `main.tex` is generated from the `theology-reference-v1`
+[document type](../document-schemas.md#document-types): change the leaf's
+`[document]` table or `format.tex`, never the entrypoint.
 
 ## Governing priorities
 
