@@ -257,7 +257,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-propers-census check-propers-structure \
 	check-metadata check-web-editions \
 	check-proper-components \
-	web-editions install-web-editions check-web-editions-current \
+	web-editions install-web-editions check-web-editions-current web-figures \
 	check-sources check-research-sources check-deployment-sources check-source-library \
 	check-document-schemas check-document-content check-artifact-delivery \
 	check-snapshot-delivery check-papal-inputs \
@@ -694,6 +694,7 @@ help:
 		'make web-editions  Generate Markdown for every eligible leaf of $$PROVIDER' \
 		'make install-web-editions  Publish reviewed Markdown into the tracked web/ tree' \
 		'make check-web-editions-current  Prove every tracked web edition matches current sources' \
+		'make web-figures  Compile every web edition figure (TikZ to SVG) for the site build' \
 		'make check-document-catalogue  Confirm titles, identities, and the catalogue against authoritative sources' \
 		'make document-catalogue  Rewrite the browser catalogue of every document' \
 		'make source-projection  Rewrite the browser reading of the source library' \
@@ -810,16 +811,23 @@ check-web-editions-current:
 		[ "$$status" -eq 0 ] || exit 1; \
 		echo 'Tracked web editions match current sources.'
 
+# Figures are compiled from the TikZ sources the web-edition products name, and
+# left alone while current. Locally they compile with the host's TeX; Pages sets
+# WEB_FIGURES_RUNNER=docker:<pinned TEXLIVE_IMAGE> (.github/workflows/pages.yml).
+WEB_FIGURES_RUNNER ?= host
+web-figures: | prepare-browser-data
+	@$(PYTHON) $(WEB_EDITION_TOOL) figures --runner '$(WEB_FIGURES_RUNNER)'
+
 check-public-alpha: check-curriculum-source-rights | prepare-browser-data
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) check
 
 prepare-public-alpha: check-curriculum-source-rights | prepare-browser-data
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) prepare
 
-public-preview: check-deployment-sources
+public-preview: check-deployment-sources web-figures
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --preview
 
-public-site: check-deployment-sources
+public-site: check-deployment-sources web-figures
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build
 
 verify-public-preview: check-curriculum-source-rights | prepare-browser-data

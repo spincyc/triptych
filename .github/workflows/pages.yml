@@ -21,8 +21,8 @@ concurrency:
 # These declarations are the shared immutable TeX baseline. The manual print
 # and toolchain-image workflows read them from this file, and the
 # `print-compile` job below builds its compiler from TEXLIVE_IMAGE and
-# ARCH_SNAPSHOT. The `build` job never pulls this image or installs these
-# packages.
+# ARCH_SNAPSHOT. The `build` job runs TEXLIVE_IMAGE only to compile web-edition
+# figures (TikZ to SVG); it installs none of these packages.
 env:
   ARCH_IMAGE: archlinux@sha256:82b1b08faae9d61e3e7e13d562f4d09114d939105b0d59ff34140f3bd418593a
   ARCH_SNAPSHOT: "2026/09/04"
@@ -112,9 +112,16 @@ jobs:
 
       # public-site prepares and verifies the committed product descriptor before
       # source gates and consumers. Missing families reproduce its exact bytes
-      # offline; stale inputs fail without a whole-corpus research replay.
+      # offline; stale inputs fail without a whole-corpus research replay. Its
+      # web-figures step compiles each web edition's TikZ figures, twice and
+      # refused unless byte-identical, inside the pinned TeX image (no network);
+      # the SVGs are not committed products, and the site build checks every
+      # reader's figure set against them.
       - name: Validate sources and build public artifact
-        run: make public-site
+        run: |
+          set -euo pipefail
+          [[ "$TEXLIVE_IMAGE" =~ ^ghcr\.io/[a-z0-9._/-]+@sha256:[0-9a-f]{64}$ ]] || { echo 'TEXLIVE_IMAGE must name an immutable digest' >&2; exit 1; }
+          make public-site WEB_FIGURES_RUNNER="docker:$TEXLIVE_IMAGE"
 
       # Keep the restored path constant so GitHub can reuse older per-family
       # candidates. Save mechanically verified products before the independent

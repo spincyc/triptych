@@ -794,6 +794,12 @@ def requires_unadvertised_controls(authorization: dict) -> bool:
 WEB_EDITION_INDEX = "web-editions/index.json"
 WEB_EDITION_INDEX_SCHEMA = "triptych-web-editions/v1"
 WEB_EDITION_SCHEMA = "triptych-web-edition/v1"
+WEB_FIGURE_ROUTE = "web-figures"
+WEB_FIGURES_DEFAULT = PurePosixPath("build/web-figures")
+# A reader whose declaration says its single page is long (the Claude angelology)
+# is not split for the web; its reader page may exceed the link-preview document
+# limit, up to this ceiling (guidance/web-editions.md).
+LONG_READER_PAGE_LIMIT = 4_000_000
 
 
 def web_edition_products() -> dict[tuple[str, str], dict] | None:
@@ -857,6 +863,58 @@ def source_markdown(source_relative: str) -> str:
     if key is not None:
         return web_edition_record(*key)["markdown"]
     return (ROOT / source_relative).read_text(encoding="utf-8")
+
+
+def web_figures_root() -> Path:
+    """Where the site build finds compiled web figures (never a source)."""
+    value = os.environ.get("TRIPTYCH_WEB_FIGURES_ROOT", WEB_FIGURES_DEFAULT.as_posix())
+    path = Path(value)
+    return path if path.is_absolute() else ROOT / path
+
+
+def included_web_figures(included_ids: set[tuple[str, str]]) -> dict[str, Path]:
+    """Every figure an included reader shows, with its verified compiled SVG.
+
+    Figures are compiled from their TikZ sources by `tools/web-edition figures`
+    (in CI inside the pinned TeX image) before the site is assembled. Their
+    identity is the source's; a missing, extra or altered SVG fails the build.
+    """
+    readers = web_edition_products()
+    if readers is None:
+        return {}
+    wanted = sorted({figure for key in set(readers) & set(included_ids)
+                     for figure in readers[key].get("figures", [])})
+    if not wanted:
+        return {}
+
+    def derive():
+        import _web_edition_figures as figures
+        root = web_figures_root()
+        problems = [problem for problem in figures.check(root, wanted)
+                    if not problem.startswith("figure compiled for no edition")]
+        if problems:
+            raise ReleaseError("web figures are missing or stale; run "
+                               "`make web-figures`: " + "; ".join(problems[:3]))
+        return {figure: root / f"{figure}.svg" for figure in wanted}
+    return held_source_inventory("web-figures", derive)
+
+
+def web_figure_route(figure: str) -> str:
+    return f"{WEB_FIGURE_ROUTE}/{figure}.svg"
+
+
+def declared_web_figure(relative: str) -> bool:
+    match = re.fullmatch(WEB_FIGURE_ROUTE + r"/([0-9a-f]{64})\.svg", relative)
+    readers = web_edition_products() or {}
+    return match is not None and any(
+        match.group(1) in row.get("figures", []) for row in readers.values())
+
+
+def long_reader_pages() -> set[str]:
+    """Reader routes whose leaf declares a long single page for the web."""
+    readers = web_edition_products() or {}
+    return {publication_reader_path(*key) for key, row in readers.items()
+            if "single-page-length" in row.get("blocking_constructs", [])}
 
 
 def eligible_document_ids() -> set[tuple[str, str]]:
@@ -3894,6 +3952,7 @@ def expected_artifact_files(
         expected.add(PICTORIAL_GALLERY_OUTPUT)
         expected.update(card["destination"] for card in pictorial_gallery_data())
     expected.update(included_document_pages(set(included)).values())
+    expected.update(web_figure_route(figure) for figure in included_web_figures(set(included)))
     expected.update(source_print_pages())
     expected.update(native_print_pages()["pages"])
     expected.update(native_tex_catalog()["assets"])
@@ -4650,6 +4709,12 @@ def render_page(
     if catalogue:
         content = mark_catalogue_tables(content)
     reject_unrendered_code_fences(source_relative, content)
+    if output_relative.startswith("web/"):
+        from _web_reader_markup import ReaderMarkupError, expand
+        try:
+            content = expand(content, output_relative)
+        except ReaderMarkupError as exc:
+            raise ReleaseError(f"{output_relative}: {exc}") from exc
     target = native_print_pages()["readers"].get(output_relative)
     if target is not None:
         from _native_print import reader_action
@@ -5697,6 +5762,7 @@ def _artifact_topology_errors(
                 and path.suffix not in TEXT_SUFFIXES | {".pdf", ".png"}
                 and relative not in WEB_BROWSER_FONT_ASSETS
                 and not declared_native_tex_asset(relative)
+                and not declared_web_figure(relative)
             ):
                 errors.append(f"artifact contains an unexpected file type: {relative}")
         elif not stat.S_ISDIR(entry.st_mode):
@@ -5916,6 +5982,7 @@ def _verify_snapshot_contents(
                 and path.suffix not in TEXT_SUFFIXES | {".png"}
                 and relative not in WEB_BROWSER_FONT_ASSETS
                 and not declared_native_tex_asset(relative)
+                and not declared_web_figure(relative)
             ):
                 errors.append(f"artifact contains an unexpected file type: {relative}")
         elif not path.is_dir():
@@ -5973,6 +6040,10 @@ def _verify_snapshot_contents(
         ):
             errors.append(f"{output_relative}: rendered page does not match its approved source")
 
+    for figure, source_path in included_web_figures(included_ids).items():
+        artifact_path = output / web_figure_route(figure)
+        if artifact_path.is_file() and sha256(artifact_path) != sha256(source_path):
+            errors.append(f"{web_figure_route(figure)}: figure does not match its compiled source")
     publication_prints = {publication_print_path(provider, leaf) for provider, leaf in included}
     reviewed_pages = set(included_document_pages(included_ids).values())
     landings = publication_reader_routes(included_ids) - reviewed_pages
@@ -6254,13 +6325,15 @@ def verify_link_previews(output: Path, preview: bool, authorization: dict) -> li
                 f"square and at least {PREVIEW_ICON_MINIMUM_SIDE} pixels a side"
             )
 
+    long_pages = long_reader_pages()
     for path in sorted(output.rglob("*.html")):
         relative = path.relative_to(output).as_posix()
         page = path.read_text(encoding="utf-8", errors="replace")
         size = path.stat().st_size
-        if size > PREVIEW_DOCUMENT_LIMIT:
+        limit = LONG_READER_PAGE_LIMIT if relative in long_pages else PREVIEW_DOCUMENT_LIMIT
+        if size > limit:
             errors.append(
-                f"{relative}: {size} bytes exceeds the {PREVIEW_DOCUMENT_LIMIT}-byte "
+                f"{relative}: {size} bytes exceeds the {limit}-byte "
                 "document limit a link preview will fetch"
             )
         names = dict(SOCIAL_NAME_RE.findall(page))
@@ -6627,6 +6700,8 @@ def _build_site_contents(
                 authorization,
             ),
         )
+    for figure, path in included_web_figures(included_ids).items():
+        writer.copy(path, web_figure_route(figure))
     for provider, leaf in included:
         for relative in (publication_reader_path(provider, leaf), publication_print_path(provider, leaf)):
             if relative not in rendered_pages.values() and (

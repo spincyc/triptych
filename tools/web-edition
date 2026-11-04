@@ -32,6 +32,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _tooling import Example, with_examples  # noqa: E402
 from _markdown_render import MarkdownRenderError, render_markdown  # noqa: E402
+import _web_edition_figures as web_figures  # noqa: E402
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
@@ -375,7 +376,7 @@ KNOWN_COMMANDS = set(
     centering RaggedRight Centering sloppy vspace hspace hfill vfill smallskip medskip bigskip
     quad qquad enspace thinspace negthinspace baselineskip linewidth textwidth textheight
     columnwidth parskip parindent arraystretch tabcolsep emergencystretch arraybackslash
-    itemsep topsep parsep partopsep columnsep columnseprule
+    itemsep topsep parsep partopsep columnsep columnseprule aleph
     arrayrulewidth extrarowheight LTpre LTpost linespread clearpage newpage pagebreak
     thispagestyle pagestyle enlargethispage pagenumbering appendix tableofcontents addcontentsline
     phantomsection setcounter addtocounter refstepcounter value the thesection thesubsection
@@ -393,7 +394,7 @@ KNOWN_COMMANDS = set(
 KNOWN_ENVIRONMENTS = set(
     """
     document itemize enumerate description quote quotation verse center flushleft flushright
-    tabular tabularx longtable table figure minipage titlepage abstract multicols verbatim
+    tabular tabularx longtable table figure minipage titlepage abstract multicols verbatim landscape
     equation align thebibliography
     """.split()
 )
@@ -2994,7 +2995,10 @@ def audit_output(
     # A table pandoc could not write as a pipe table becomes an HTML table; a
     # table it dropped becomes neither.  A repeated-header longtable may split
     # into several tables, so only a shortfall is a loss.
-    written = len(OUTPUT_TABLE_RE.findall(markdown)) + markdown.count("<table")
+    # A table set inside a quotation (a curriculum's worked example) is written
+    # with the quotation's prefix on every row.
+    unquoted_markdown = re.sub(r"^(?:[ \t]*>[ \t]?)+", "", markdown, flags=re.MULTILINE)
+    written = len(OUTPUT_TABLE_RE.findall(unquoted_markdown)) + markdown.count("<table")
     if written < tables:
         failures.append(f"{tables} table environments became {written} tables")
     # A headerless source table legitimately writes an empty header row, which
@@ -3149,7 +3153,14 @@ def audit_output(
         failures.append("rights colophon missing from output")
     if "Last revised (UTC):" not in markdown:
         failures.append("revision timestamp missing from output")
-    if re.search(r"\bModel\s*:", markdown, re.IGNORECASE):
+    # Model metadata is a contribution's model named on the page, or a bold
+    # "Model:" field label. The word alone is not: the Ecclesiastical Latin
+    # course prints model answers and model texts after "Model:".
+    contributed = {name.strip() for name in re.findall(
+        r"\\AIModelContribution(?:Repeat)?\s*\{([^{}]+)\}", sources) if len(name.strip()) > 3}
+    if (re.search(r"\*\*Model\s*:\s*\*\*|\*\*Model\*\*\s*:", markdown, re.IGNORECASE)
+            or any(re.search(r"(?<!\w)" + re.escape(name) + r"(?!\w)", markdown)
+                   for name in contributed)):
         failures.append("reader-visible model metadata remains in output")
     if re.search(r"\beffort\s*=", markdown, re.IGNORECASE):
         failures.append("reader-visible model effort remains in output")
@@ -3178,7 +3189,8 @@ def declared_contents(leaf: Path) -> bool:
     return contents
 
 
-def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None) -> str:
+def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None,
+                     figures: list | None = None) -> str:
     """Convert the canonical reader, or an explicitly selected edition source.
 
     ``selected`` is an owning-adapter contract, never a release decision. It
@@ -3218,9 +3230,20 @@ def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None) 
     preamble_sources: dict[Path, str] = dict(selected["sources"]) if selected is not None else {}
     preamble = assemble(head, provider, preamble_sources, proper=proper)
     sources: dict[Path, str] = {main: tail}
-    body = assemble(tail, provider, sources, proper=proper)
+    body = project_heading_aliases(assemble(tail, provider, sources, proper=proper))
+    # A TikZ picture becomes a figure token here and an image after pandoc; its
+    # SVG is compiled from the same standalone source at site-build time.
+    try:
+        body, figure_records = web_figures.extract(
+            body, head, root=SRC.parent, provider=provider, entrypoint=main)
+    except web_figures.FigureError as exc:
+        raise ConversionError(f"web figure: {exc}") from exc
+    if figure_records:
+        sources = {path: web_figures.strip_figures(text) for path, text in sources.items()}
     # The row-opening audit reads the body as assembled, before any rewriting.
-    assembled_body = selected.get("audit_body", body) if selected is not None else body
+    assembled_body = (project_heading_aliases(selected.get("audit_body", body))
+                      if selected is not None else body)
+    body = number_counter_macros(body, preamble)
     if semantic_graph is not None:
         assembled_graph = {main.resolve(), *preamble_sources, *sources}
         if assembled_graph != semantic_graph:
@@ -3295,8 +3318,9 @@ def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None) 
         failures = proper_anchor_failures(LABEL_RE.findall(strip_for_scan(body)), required_anchors, "source")
         if failures:
             raise ConversionError("\n".join(failures))
+    shim_source = shim_path.read_text(encoding="utf-8") + "\n" + web_figures.SHIM_ADDITIONS
     shim_text, shim_bracketed = guard_opening_brackets(
-        terminate_swallowers(fix_column_specs(set_text_dashes(shim_path.read_text(encoding="utf-8"))))
+        terminate_swallowers(fix_column_specs(set_text_dashes(shim_source)))
     )
     locals_text, locals_bracketed = guard_opening_brackets(drop_continuation_heads(
         terminate_swallowers(fix_column_specs(
@@ -3368,7 +3392,8 @@ def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None) 
         (int(depth), int(blocks))
         for depth, blocks in (item.split(":") for item in list_report.group(1).split())
     ]
-    converted = nest_lists_for_site(clean_markdown_line_endings(result.stdout))
+    converted = project_construct_divs(
+        nest_lists_for_site(clean_markdown_line_endings(result.stdout)))
     if selected is not None and selected.get("markdown_projection") is not None:
         converted = selected["markdown_projection"](converted)
     converted = letter_appendix_references(converted, body)
@@ -3412,9 +3437,15 @@ def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None) 
     # The paragraph audit is judged against the leaf's files as they stand on
     # disk, before any branch was selected or any macro resolved, so a rewriting
     # that introduced a break cannot supply the reference that excuses it.
-    raw_sources = selected.get("canonical_body", selected["body"]) if selected is not None else "\n\n".join(
-        path.read_text(encoding="utf-8") for path in sorted(sources)
+    raw_sources = web_figures.strip_figures(
+        selected.get("canonical_body", selected["body"]) if selected is not None else "\n\n".join(
+            path.read_text(encoding="utf-8") for path in sorted(sources)
+        )
     )
+    try:
+        markdown = web_figures.project(markdown, figure_records)
+    except web_figures.FigureError as exc:
+        raise ConversionError(f"web figure: {exc}") from exc
     output_audit = selected.get("audit_callback", audit_output) if selected is not None else audit_output
     failures = output_audit(
         body,
@@ -3438,6 +3469,8 @@ def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None) 
         failures.append("source multicolumn spans changed in site-rendered tables")
     if failures:
         raise ConversionError("\n".join(failures))
+    if figures is not None:
+        figures.extend(figure_records)
     return clean_markdown_line_endings(f"{heading}\n{markdown}")
 
 
@@ -3448,6 +3481,143 @@ def convert(provider: str, leaf: str, out: Path = OUT, *, selected: dict | None 
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(text, encoding="utf-8")
     return destination
+
+
+# --- Print constructs the reader sets in its own way -------------------------
+
+# Pandoc writes a landscape or minipage environment as a fenced div. Neither
+# is a Markdown construct the site reads, so the projection turns each into a
+# reader comment that the site expands after rendering
+# (scripts/_web_reader_markup.py): a landscape's tables scroll sideways at a
+# readable width instead of squeezing their columns, and adjacent minipages
+# (the paired bilingual columns) sit side by side, stacking on narrow screens.
+# Any other fenced div is still a lost construct and the audit refuses it.
+FENCED_DIV_LINE_RE = re.compile(
+    r"^((?:[ \t]*>[ \t]?)*)[ \t]*(:{3,})[ \t]*(?:\{\.?([A-Za-z][\w-]*)[^}]*\}|([A-Za-z][\w-]*))?[ \t]*$"
+)
+READER_DIVS = {"landscape": "wide", "minipage": "column"}
+
+
+def project_construct_divs(markdown: str) -> str:
+    """Turn pandoc's landscape and minipage divs into balanced reader comments."""
+    lines, stack = markdown.split("\n"), []
+    for index, line in enumerate(lines):
+        match = FENCED_DIV_LINE_RE.match(line)
+        if match is None:
+            continue
+        prefix, colons = match.group(1), match.group(2)
+        name = match.group(3) or match.group(4)
+        # Pandoc sets a div's fences flush against its content; a comment must
+        # stand as a block of its own, inside the same quotation, to reach the
+        # page as a block rather than inside the paragraph beside it.
+        blank = prefix.rstrip()
+        if name is not None:
+            # A box inside a box of the same kind (a caption's minipage within
+            # the minipage that keeps a figure together) is content, not a
+            # column of its own; only the outermost is marked.
+            marked = name in READER_DIVS and all(opened != name for _, opened, _ in stack)
+            stack.append((len(colons), name, marked))
+            if marked:
+                lines[index] = f"{prefix}<!-- triptych:{READER_DIVS[name]} -->\n{blank}"
+            elif name in READER_DIVS:
+                lines[index] = blank
+        elif stack and stack[-1][0] == len(colons):
+            _, opened, marked = stack.pop()
+            if marked:
+                lines[index] = f"{blank}\n{prefix}<!-- /triptych:{READER_DIVS[opened]} -->"
+            elif opened in READER_DIVS:
+                lines[index] = blank
+    return "\n".join(lines)
+
+
+COUNTER_RE = re.compile(r"\\newcounter\s*\{([A-Za-z@]+)\}")
+STEP_COUNTER_RE = re.compile(r"\\(?:refstepcounter|stepcounter)\s*\{([A-Za-z@]+)\}")
+
+
+def number_counter_macros(body: str, definitions: str) -> str:
+    r"""Give each call of a counter-stepping macro the number TeX sets.
+
+    Pandoc keeps no LaTeX counters, so `\thesketchfigure` in a caption macro
+    set "Drawing ." where the PDF sets "Drawing 1.". For a leaf's own counter
+    (`\newcounter{c}`) stepped inside one of its macros, `\def\thec{n}` is
+    written before the macro's n-th call in document order. A counter set or
+    stepped any other way is refused rather than numbered wrongly.
+    """
+    counters = set(COUNTER_RE.findall(mask_tex_comments(definitions)))
+    if not counters:
+        return body
+    stepping = {}
+    for match in DEFINITION_RE.finditer(mask_tex_comments(definitions)):
+        name = match.group(1)
+        if name is None:
+            continue
+        start = skip_gap(definitions, match.end())
+        while definitions[start:start + 1] == "[":
+            start = skip_gap(definitions, definitions.index("]", start) + 1)
+        if definitions[start:start + 1] != "{":
+            continue
+        replacement = brace_group(definitions, start)[0]
+        stepped = set(STEP_COUNTER_RE.findall(replacement)) & counters
+        if len(stepped) > 1:
+            raise ConversionError(f"\\{name} steps more than one counter")
+        if stepped:
+            stepping[name] = stepped.pop()
+    masked = mask_tex_comments(body)
+    if re.search(r"\\(?:setcounter|addtocounter|refstepcounter|stepcounter)\s*\{(?:"
+                 + "|".join(map(re.escape, sorted(counters))) + r")\}", masked):
+        raise ConversionError("a counter set or stepped in the body is not modelled")
+    if not stepping:
+        return body
+    call = re.compile(r"\\(" + "|".join(map(re.escape, sorted(stepping))) + r")(?![A-Za-z@])")
+    values, pieces, cursor = {counter: 0 for counter in counters}, [], 0
+    for match in call.finditer(masked):
+        counter = stepping[match.group(1)]
+        values[counter] += 1
+        pieces.extend((body[cursor:match.start()],
+                       f"\\def\\the{counter}{{{values[counter]}}}"))
+        cursor = match.start()
+    pieces.append(body[cursor:])
+    return "".join(pieces)
+
+
+HEADINGS = ("section", "subsection", "subsubsection", "paragraph", "subparagraph")
+HEADING_ALIAS_RE = re.compile(
+    r"\\let\s*\\(" + "|".join(HEADINGS) + r")(?![A-Za-z@])\s*=?\s*\\("
+    + "|".join(HEADINGS) + r")(?![A-Za-z@])"
+)
+SCOPE_RE = re.compile(r"\\begingroup(?![A-Za-z@])|\\endgroup(?![A-Za-z@])|\\bgroup(?![A-Za-z@])"
+                      r"|\\egroup(?![A-Za-z@])|(?<!\\)[{}]")
+HEADING_USE_RE = re.compile(r"\\(" + "|".join(HEADINGS) + r")(?![A-Za-z@])")
+
+
+def project_heading_aliases(body: str) -> str:
+    r"""Set the headings a scoped `\let\section\subsection` makes as TeX does.
+
+    A shared fragment written with top-level headings is demoted where its
+    consumer includes it under a section. From the assignment to the end of
+    the group holding it, each aliased heading command becomes the one it was
+    made equal to, and the assignment goes. Nothing changes in a body without
+    such an alias; a second alias inside the first's scope is refused.
+    """
+    masked = mask_tex_comments(body)
+    pieces, cursor = [], 0
+    while (alias := HEADING_ALIAS_RE.search(masked, cursor)) is not None:
+        depth, close = 0, len(body)
+        for scope in SCOPE_RE.finditer(masked, alias.end()):
+            depth += 1 if scope.group() in ("{", "\\begingroup", "\\bgroup") else -1
+            if depth < 0:
+                close = scope.start()
+                break
+        mapping = {name: name for name in HEADINGS}
+        mapping[alias.group(1)] = alias.group(2)
+        if HEADING_ALIAS_RE.search(masked, alias.end(), close):
+            raise ConversionError("a heading alias inside another's scope is not modelled")
+        pieces.append(body[cursor:alias.start()])
+        span = body[alias.end():close]
+        pieces.append(HEADING_USE_RE.sub(lambda m: "\\" + mapping[m.group(1)], span))
+        cursor = close
+    pieces.append(body[cursor:])
+    return "".join(pieces)
 
 
 # --- Editions selected by their own entrypoints -----------------------------
@@ -3573,7 +3743,7 @@ def publication_outputs() -> list[dict]:
 
 def reader_outputs() -> list[dict]:
     """The outputs that have a web reader: every admitted output of a leaf
-    whose declaration is eligible, companions included.
+    whose declaration is eligible or conditional, companions included.
 
     Admission follows the native print universe: a withdrawn leaf or a held
     output has no reader. An ineligible leaf keeps only its print page.
@@ -3581,7 +3751,7 @@ def reader_outputs() -> list[dict]:
     rows = []
     for row in publication_outputs():
         declaration = row["declaration"]
-        if (declaration.get("eligibility") != "eligible"
+        if (declaration.get("eligibility") not in {"eligible", "conditional"}
                 or declaration.get("withdrawn") or row["release_status"] == "hold"):
             continue
         if row["release_status"] != "alpha":
@@ -3591,16 +3761,35 @@ def reader_outputs() -> list[dict]:
     return rows
 
 
-def convert_output(row: dict) -> str:
+def curriculum_adapter():
+    import _web_edition_curriculum
+    return _web_edition_curriculum
+
+
+def convert_output(row: dict, figures: list | None = None) -> str:
     """Convert one reader output from its own canonical entrypoint."""
     provider, edition = row["provider"], row["edition"]
     entrypoint = ROOT / row["entrypoint"]
+    if row["kind"].startswith("curriculum-"):
+        return convert_markdown(provider, row["document"], figures=figures,
+                                selected=curriculum_adapter().selection(
+                                    ROOT, provider, row["canonical"], _self_module()))
     if edition == "main":
         if entrypoint.resolve() != (SRC / provider / row["canonical"] / "main.tex").resolve():
             raise ConversionError(f"{row['id']}: canonical entrypoint is not main.tex")
-        return convert_markdown(provider, row["canonical"])
-    return convert_markdown(provider, row["document"],
+        return convert_markdown(provider, row["canonical"], figures=figures)
+    return convert_markdown(provider, row["document"], figures=figures,
                             selected=edition_selection(provider, entrypoint, edition))
+
+
+def _self_module():
+    """This converter as a module object, however it was started."""
+    module = sys.modules.get(__name__)
+    if module is None or module.__dict__ is not globals():
+        import types
+        module = types.ModuleType("web_edition")
+        module.__dict__.update(globals())
+    return module
 
 
 PRODUCT_PREFIX = "web-editions"
@@ -3610,7 +3799,8 @@ INDEX_SCHEMA = "triptych-web-editions/v1"
 
 def product_record(row: dict) -> dict:
     declaration = row["declaration"]
-    markdown = convert_output(row)
+    figures: list[dict] = []
+    markdown = convert_output(row, figures)
     return {
         "schema": PRODUCT_SCHEMA,
         "id": row["provider"] + "/" + row["document"],
@@ -3623,7 +3813,8 @@ def product_record(row: dict) -> dict:
         "blocking_constructs": list(declaration.get("blocking_constructs", [])),
         "markdown": markdown,
         "markdown_sha256": hashlib.sha256(markdown.encode("utf-8")).hexdigest(),
-        "figures": [],
+        "figures": [{key: figure[key] for key in ("id", "alt", "provider", "tex", "inputs")}
+                    for figure in figures],
     }
 
 
@@ -3705,6 +3896,52 @@ def product_json(identity: str) -> int:
     return 0
 
 
+def figure_records_from_products() -> list[dict]:
+    """Every figure record of the verified web-edition products."""
+    from _browser_products import ProductError, verified_products
+    try:
+        with verified_products(ROOT, product_ids=["web-editions"]) as products:
+            index = json.loads(products.files[f"{PRODUCT_PREFIX}/index.json"].read_bytes())
+            if index.get("schema") != INDEX_SCHEMA:
+                raise ConversionError("unsupported web-edition product index")
+            records = []
+            for row in index["editions"]:
+                if row["figures"]:
+                    record = json.loads(products.files[row["path"]].read_bytes())
+                    records.extend(record["figures"])
+            return records
+    except (ProductError, KeyError) as error:
+        raise ConversionError(f"web-edition products are not available: {error}") from error
+
+
+def figures_main(argv: list[str]) -> int:
+    parser = argparse.ArgumentParser(
+        prog="web-edition figures",
+        description="Compile every web edition's TikZ figures to SVG for the site build.")
+    parser.add_argument("--out", type=Path, default=ROOT / "build/web-figures",
+                        help="figure directory the site build reads (default build/web-figures)")
+    parser.add_argument("--runner", default="host",
+                        help="host, or docker:<image> to compile in the pinned TeX image")
+    parser.add_argument("--force", action="store_true",
+                        help="recompile even when the directory already holds every current figure")
+    arguments = parser.parse_args(argv)
+    try:
+        records = figure_records_from_products()
+        wanted = sorted({record["id"] for record in records})
+        if not arguments.force and not web_figures.check(arguments.out, wanted):
+            print(json.dumps({"figures": len(wanted), "out": str(arguments.out),
+                              "status": "current"}, sort_keys=True))
+            return 0
+        manifest = web_figures.compile_figures(records, arguments.out, root=ROOT,
+                                               runner=arguments.runner)
+    except (ConversionError, web_figures.FigureError) as error:
+        print(f"web-edition figures: {error}", file=sys.stderr)
+        return 1
+    print(json.dumps({"figures": len(manifest["figures"]), "out": str(arguments.out),
+                      "toolchain": manifest["toolchain"]}, sort_keys=True))
+    return 0
+
+
 def products_main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(
         prog="web-edition products",
@@ -3725,6 +3962,8 @@ def products_main(argv: list[str]) -> int:
 def main() -> int:
     if sys.argv[1:2] == ["products"]:
         return products_main(sys.argv[2:])
+    if sys.argv[1:2] == ["figures"]:
+        return figures_main(sys.argv[2:])
     if sys.argv[1:2] == ["--product-json"] and len(sys.argv) == 3:
         return product_json(sys.argv[2])
     parser = argparse.ArgumentParser(description=__doc__)

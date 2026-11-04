@@ -446,6 +446,83 @@
   .publication-reader__content :is(pre, code) { overflow-wrap: anywhere; }
   .publication-reader__content pre { max-width: 100%; overflow-x: auto; }
 
+  /* Print constructs a web edition sets in its own way; guidance/web-editions.md
+     "Conditional constructs" owns the decisions, scripts/_web_reader_markup.py
+     the markup. Paired (bilingual) columns sit side by side and stack when a
+     column would fall below a readable measure. */
+  .publication-reader__content .web-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    gap: .25rem 1.75rem;
+    margin: .8rem 0 1.1rem;
+  }
+
+  .publication-reader__content .web-column > :first-child { margin-top: 0; }
+  .publication-reader__content .web-column > :last-child { margin-bottom: 0; }
+
+  /* A landscape page's tables keep a readable width and scroll sideways
+     rather than squeezing every column into the reading measure. */
+  .publication-reader__content table.web-wide-table::before { width: max(100cqw, 64rem); }
+
+  /* A figure compiled from its TikZ source; the SVG is drawn on white. */
+  .publication-reader__content .web-figure { margin: 1.5rem 0; text-align: center; }
+  .publication-reader__content .web-figure img {
+    max-width: 100%;
+    height: auto;
+    padding: .5rem;
+    background: #fff;
+  }
+
+  /* Write-in space stays visible: ruled answer lines and inline blanks. */
+  .publication-reader__content .web-response {
+    --web-response-lines: 1;
+    display: block;
+    height: calc(var(--web-response-lines) * 2rem);
+    margin: .35rem 0 .9rem;
+    background: repeating-linear-gradient(to bottom, transparent 0 calc(2rem - 1px),
+      var(--reader-muted) calc(2rem - 1px) 2rem);
+  }
+
+  .publication-reader__content .web-response[data-lines="2"] { --web-response-lines: 2; }
+  .publication-reader__content .web-response[data-lines="3"] { --web-response-lines: 3; }
+  .publication-reader__content .web-response[data-lines="4"] { --web-response-lines: 4; }
+  .publication-reader__content .web-response[data-lines="5"] { --web-response-lines: 5; }
+  .publication-reader__content .web-response[data-lines="6"] { --web-response-lines: 6; }
+
+  .publication-reader__content .web-blank {
+    display: inline-block;
+    width: 7em;
+    height: 1em;
+    vertical-align: baseline;
+    border-bottom: 1px solid var(--reader-muted);
+  }
+
+  .publication-reader__content .web-blank[data-size="long"] { width: 14em; }
+  .publication-reader__content .web-blank[data-size="fill"] { width: 100%; min-width: 4em; }
+
+  /* An answer key is collapsed under its own heading, never hidden. */
+  .publication-reader__content .web-answer-key {
+    margin: 1rem 0;
+    border: 1px solid var(--reader-line);
+    border-radius: .2rem;
+    background: var(--reader-panel);
+  }
+
+  .publication-reader__content .web-answer-key > summary {
+    padding: .55rem .85rem;
+    color: var(--reader-accent);
+    font: 600 .92rem/1.45 var(--reader-sans);
+    cursor: pointer;
+  }
+
+  .publication-reader__content .web-answer-key[open] > summary {
+    border-bottom: 1px solid var(--reader-line);
+  }
+
+  .publication-reader__content .web-answer-key > :not(summary) {
+    margin-inline: .85rem;
+  }
+
   @media (hover: hover) {
     .publication-reader__browse > a:hover,
     .publication-reader__actions button:hover,
@@ -593,6 +670,11 @@
       border-color: Highlight;
       color: LinkText;
       text-decoration: underline;
+    }
+
+    .publication-reader__content .web-response {
+      background: none;
+      border-bottom: 1px solid CanvasText;
     }
   }
 }

@@ -124,6 +124,11 @@ elif args == ["scripts/_native_tex_assets.py", "hydrate", "--fetch"]:
     pass  # Verify browser compiler inputs; no compiler executes in deployment.
 elif args[:3] == ["scripts/_install_web_edition_pandoc.py", "--fetch", "--bin-dir"] and len(args) == 4:
     pass  # The pinned web-edition converter, for a cold web-editions family.
+elif args[:4] == ["tools/tpt", "web-edition", "figures", "--runner"] and len(args) == 5:
+    if not ready.is_file():
+        raise SystemExit("web figures compiled before product verification")
+    if not args[4].startswith(("docker:", "host")):
+        raise SystemExit("web figures need an explicit runner")
 elif tuple(args) in allowed:
     if tuple(args) in generated and not ready.is_file():
         raise SystemExit("generated consumer ran before browser product preparation")
@@ -375,7 +380,11 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(runtime["with"]["key"],
                          "triptych-native-tex-v1-${{ hashFiles('src/common/native-tex-runtime.json') }}")
         commands = "\n".join(step.get("run", "") for step in steps)
-        self.assertNotRegex(commands, r"(?i)\b(?:texlive|pdflatex|xelatex|lualatex|pdfinfo|poppler|docker|apt-get|pacman)\b")
+        # The build host installs no TeX. The only TeX it runs is web figure
+        # compilation, inside the pinned TEXLIVE_IMAGE, through make.
+        self.assertNotRegex(commands, r"(?i)\b(?:texlive|pdflatex|xelatex|lualatex|pdfinfo|poppler|apt-get|pacman)\b")
+        self.assertEqual(re.findall(r"(?i)docker\S*", commands), ['docker:$TEXLIVE_IMAGE"'])
+        self.assertIn('make public-site WEB_FIGURES_RUNNER="docker:$TEXLIVE_IMAGE"', commands)
         # Browser-reflow print preparation was removed. Web readers are converted
         # at build time by the pinned Pandoc, installed by its own verified lock.
         self.assertNotRegex(commands, r"(?i)_web_print|print-editions")

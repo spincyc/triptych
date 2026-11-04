@@ -884,7 +884,6 @@ def documents(
                     f"{main.relative_to(ROOT)}: no {GENERATION_METADATA} beside it"
                 )
             eligibility = str(record.get("eligibility", ""))
-            web = repository / "web" / provider / f"{leaf}.md"
             found.append(
                 Document(
                     provider=provider,
@@ -897,9 +896,14 @@ def documents(
                     basis=record.get("basis"),
                     rationale=record.get("rationale"),
                     blocking_constructs=tuple(record.get("blocking_constructs") or ()),
+                    # The reader route is a property of the declaration: an
+                    # eligible or conditional leaf that is not withdrawn has
+                    # one, built from its TeX with the site
+                    # (guidance/web-editions.md). No file decides it.
                     web_page=(
                         f"web/{provider}/{leaf}.html"
-                        if eligibility == "eligible" and web.is_file()
+                        if eligibility in {"eligible", "conditional"}
+                        and not record.get("withdrawn")
                         else None
                     ),
                     issues=_issues_of(publication, extents, repository),

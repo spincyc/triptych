@@ -20,8 +20,6 @@
 \newcommand{\raggedcolumns}{}
 % pandoc drops \fbox with its contents.
 \newcommand{\fbox}[1]{#1}
-% Page orientation, not structure: the content must pass through.
-\newenvironment{landscape}{}{}
 % Column balancing is print geometry: the web sets one column. Pandoc would
 % otherwise write a fenced div and publish the column count as text.
 \renewenvironment{multicols}[1]{}{}
