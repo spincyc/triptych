@@ -1,0 +1,26 @@
+schema = 1
+record_type = "document-type"
+id = "curriculum-review-v1"
+description = """
+One cumulative self-review companion of the self-paced Ecclesiastical Latin
+curriculum (guidance/curriculums/ecclesiastical-latin.md). The type owns the
+preamble, PDF metadata composed from the review ID and title, the course cover,
+compact contents, the Using This Review part with the shared self-review
+method, the Included Latin part when the review names source or reader sets,
+the Review Forms and Answers and Models rendered from the one canonical review
+source, and the Scope and Sources part with the terminal generation metadata.
+A leaf supplies its review ID, title, subtitle, form selection, included source
+and reader sets, scope boundary and pacing note as fields, and its protocol
+text as section files.
+"""
+kinds = ["curriculum-assessment"]
+
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"
+fields = ["companion-id", "companion-title", "subtitle", "assessment-selection", "boundary", "pacing-note"]
+optional_fields = { review-source-set = "", review-reader-set = "" }
+regions = ["protocol"]
+optional_regions = ["protocol-details"]
+options = { contents = "small" }

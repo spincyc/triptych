@@ -3,11 +3,18 @@
 The existing curriculum checker owns stable lessons, worksheet IDs, variants,
 course registry coverage and the shared layout machinery.  Its source audit is
 separate from its rendered hierarchy/PDF audit.  These publication checks use
-that source audit and connect each leaf to the actual packet/assessment shell.
+that source audit and connect each leaf to its packet or review skeleton.
+
+That skeleton is a document type (src/common/document-types/curriculum-packet-v1
+and curriculum-review-v1): each leaf's entrypoint is generated from it, and
+`make check-generated-documents-current` refuses one that differs from its
+regeneration.  These checks therefore read the Part structure from the
+entrypoint itself, and require the leaf to declare its type.
 """
 from __future__ import annotations
 
 import re
+import tomllib
 from functools import lru_cache
 from pathlib import Path
 
@@ -55,6 +62,19 @@ def _require_import(text: str, candidates: set[str], label: str) -> list[str]:
         f"curriculum entrypoint must import its canonical {label} exactly once"]
 
 
+def _declared_type(leaf: Path, family: str) -> list[str]:
+    """The leaf must take its skeleton from a version of the family's type."""
+    try:
+        declared = tomllib.loads((leaf / "publication.toml").read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError) as error:
+        return [f"curriculum publication manifest unreadable: {error}"]
+    document_type = (declared.get("document") or {}).get("type", "")
+    if not re.fullmatch(re.escape(family) + r"-v[0-9]+", str(document_type)):
+        return [f"curriculum leaf must declare [document] type {family}-v<N>, "
+                f"so that its entrypoint is generated from the shared skeleton"]
+    return []
+
+
 def _exercise_answers(owner: Path) -> list[str]:
     errors = []
     for path in sorted((owner / "shared/exercises").rglob("*.tex")):
@@ -87,13 +107,10 @@ def _packet(root: Path, record: dict, owner: Path, checker) -> list[str]:
     errors = []
     if checker._macro_value(entry, "CourseRoot", leaf) != course_id:
         errors.append("packet CourseRoot must name its canonical curriculum owner")
-    if checker._macro_value(entry, "ModuleLeaf", leaf) != record["leaf"]:
-        errors.append("packet ModuleLeaf must name this publication")
-    errors.extend(_require_import(entry, {r"\ModuleLeaf/module-data", record["leaf"] + "/module-data"}, "module selection"))
-    errors.extend(_require_import(entry, {r"\CourseRoot/shared/module-shell", course_id + "/shared/module-shell"}, "six-Part shell"))
+    errors.extend(_require_import(entry, {record["leaf"] + "/module-data"}, "module selection"))
+    errors.extend(_declared_type(leaf, "curriculum-packet"))
     errors.extend(_bound(root, record, "module-selection", {data_path}))
-    shell_path = owner / "shared/module-shell.tex"
-    shell = _text(shell_path)
+    shell = entry
     parts = list(_calls(shell, "part", 1))
     if [args[0] for args, _, _ in parts] != list(checker.MODULE_PARTS):
         errors.append("packet shell must retain the six canonical Parts in order")
@@ -132,18 +149,18 @@ def _packet(root: Path, record: dict, owner: Path, checker) -> list[str]:
 def _assessment(root: Path, record: dict, owner: Path, checker) -> list[str]:
     leaf = root / record["source_dir"]
     entry = _text(leaf / record["entrypoint"])
-    course_id = owner.relative_to(root / "src" / record["provider"]).as_posix()
-    errors = _require_import(entry, {r"\CourseRoot/shared/assessment-shell", course_id + "/shared/assessment-shell"}, "review shell")
-    shell = _text(owner / "shared/assessment-shell.tex").split(r"\begin{document}", 1)[-1]
+    errors = _declared_type(leaf, "curriculum-review")
+    reviews = owner.relative_to(root / "src" / record["provider"]).as_posix() + "/shared/assessments/all"
+    shell = entry.split(r"\begin{document}", 1)[-1]
     parts = list(_calls(shell, "part", 1))
     if _parts(shell) != list(checker.ASSESSMENT_PARTS):
         return errors + ["assessment shell must retain task-before-answer Part order"]
     for name, start, end in (("Review Forms", parts[1][2], parts[2][1]),
                              ("Answers and Models", parts[2][2], parts[3][1])):
         body = shell[start:end]
-        if [args[0] for args, _, _ in _calls(body, "SelectAssessments", 1)] != [r"\AssessmentSelection"] or _imports(body).count(r"\CourseRoot/shared/assessments/all") != 1:
+        if [args[0] for args, _, _ in _calls(body, "SelectAssessments", 1)] != [r"\AssessmentSelection"] or _imports(body).count(reviews) != 1:
             errors.append(f"{name} must use the same canonical review IDs and answer source")
-        if not _solution_mode(body, r"\CourseRoot/shared/assessments/all", "false" if name == "Review Forms" else "true"):
+        if not _solution_mode(body, reviews, "false" if name == "Review Forms" else "true"):
             errors.append(f"{name} must select its solution mode before rendering the canonical review source")
     return errors
 

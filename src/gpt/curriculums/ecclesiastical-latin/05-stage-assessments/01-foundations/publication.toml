@@ -75,3 +75,15 @@ data = "src/gpt/curriculums/ecclesiastical-latin/shared/assessments/all.tex"
 [[structure]]
 role = "answers"
 data = "src/gpt/curriculums/ecclesiastical-latin/shared/assessments/all.tex"
+
+[document]
+type = "curriculum-review-v1"
+
+[document.main]
+companion-id = 'EL-REVIEW-I'
+companion-title = 'Foundations Cumulative Review'
+subtitle = 'Fresh forms F-A and F-B after packet M06'
+assessment-selection = 'F-A,F-B'
+boundary = "It contains two parallel Foundations review forms and their complete answers. It does not repeat the six packets' teaching or memory sheets."
+pacing-note = 'Use F-A when M01--M06 feel reasonably secure; return to F-B later with other Latin in between.'
+protocol = ['sections/protocol']

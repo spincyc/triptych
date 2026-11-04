@@ -79,3 +79,16 @@ data = "src/gpt/curriculums/ecclesiastical-latin/shared/assessments/all.tex"
 [[structure]]
 role = "answers"
 data = "src/gpt/curriculums/ecclesiastical-latin/shared/assessments/all.tex"
+
+[document]
+type = "curriculum-review-v1"
+
+[document.main]
+companion-id = 'EL-REVIEW-III'
+companion-title = 'Missal Reading Cumulative Review'
+subtitle = 'Identified formularies M-A/M-B and fixed fresh-formulary transfer M-C after packet M18'
+assessment-selection = 'M-A,M-B,M-C'
+review-source-set = 'MR62-FORM-ADV1,MR62-FORM-PENT,MR62-FORM-XII-PENT,MR62-FORM-XXIII-PENT'
+boundary = 'It contains two identified complete-formulary reviews, an unfamiliar two-Mass transfer form, and complete models. The work may be spread across as many sittings as sustained attention needs.'
+pacing-note = 'Use M-A when M13--M18 feel reasonably secure, M-B on a later return, and M-C when unfamiliar complete formularies would be useful practice.'
+protocol = ['sections/protocol']

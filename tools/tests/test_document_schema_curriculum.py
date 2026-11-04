@@ -35,21 +35,27 @@ class CurriculumSchemaTests(unittest.TestCase):
     def errors(self):
         return "\n".join(curriculum.check(self.root, self.record))
 
-    def test_real_source_registry_and_six_part_shell_pass_without_pdfs(self):
+    def test_real_source_registry_and_six_part_skeleton_pass_without_pdfs(self):
         self.assertEqual(self.errors(), "")
 
     def test_deleting_a_required_part_is_refused(self):
-        path = self.owner / "shared/module-shell.tex"
+        path = self.leaf / "main.tex"
         path.write_text(path.read_text().replace(r"\part{Reading and Composition}", ""))
         self.assertIn("six canonical Parts", self.errors())
 
-    def test_detaching_a_leaf_from_the_shell_is_refused(self):
+    def test_detaching_a_leaf_from_its_document_type_is_refused(self):
+        path = self.leaf / "publication.toml"
+        text = path.read_text()
+        path.write_text(text[:text.index("[document]")])
+        self.assertIn("must declare [document] type curriculum-packet-v<N>", self.errors())
+
+    def test_detaching_a_leaf_from_its_module_selection_is_refused(self):
         path = self.leaf / "main.tex"
-        path.write_text(path.read_text().replace(r"\input{\CourseRoot/shared/module-shell}", ""))
-        self.assertIn("six-Part shell", self.errors())
+        path.write_text(path.read_text().replace("\\input{" + PACKET.as_posix() + "/module-data}", ""))
+        self.assertIn("module selection exactly once", self.errors())
 
     def test_answers_cannot_consume_a_different_existing_exercise_source(self):
-        path = self.owner / "shared/module-shell.tex"
+        path = self.leaf / "main.tex"
         text = path.read_text()
         position = text.rfind(r"\input{\ModuleExerciseSource}")
         text = text[:position] + text[position:].replace(r"\input{\ModuleExerciseSource}", r"\input{\ModuleLessonSource}", 1)
@@ -96,7 +102,7 @@ class CurriculumSchemaTests(unittest.TestCase):
     def test_assessment_task_and_answer_selections_share_one_owner(self):
         self.record = self.publication(COURSE / "05-stage-assessments/01-foundations")
         self.assertEqual(self.errors(), "")
-        path = self.owner / "shared/assessment-shell.tex"
+        path = self.owner / "05-stage-assessments/01-foundations/main.tex"
         text = path.read_text()
         position = text.rfind(r"\SelectAssessments{\AssessmentSelection}")
         text = text[:position] + text[position:].replace(r"\SelectAssessments{\AssessmentSelection}", r"\SelectAssessments{C-A,C-B}", 1)
@@ -105,7 +111,7 @@ class CurriculumSchemaTests(unittest.TestCase):
 
     def test_review_answer_mode_must_precede_the_source_rendering(self):
         self.record = self.publication(COURSE / "05-stage-assessments/01-foundations")
-        path = self.owner / "shared/assessment-shell.tex"
+        path = self.owner / "05-stage-assessments/01-foundations/main.tex"
         path.write_text(path.read_text().replace(r"\solutionstrue", r"\solutionsfalse"))
         self.assertIn("select its solution mode before rendering", self.errors())
 

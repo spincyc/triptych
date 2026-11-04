@@ -1,0 +1,21 @@
+schema = 1
+record_type = "document-type"
+id = "curriculum-packet-v1"
+description = """
+One substantial packet of the self-paced Ecclesiastical Latin curriculum, in
+the common trunk or the advanced poetry branch
+(guidance/curriculums/ecclesiastical-latin.md). The type owns the whole
+edition: preamble, PDF metadata composed from the packet ID and title, the
+packet cover, compact contents, the six Parts in their canonical order with
+learner and solution renderings of the same sources, the Scope and Sources
+part and the terminal generation metadata. The leaf owns only its
+module-data.tex, which selects the stable lessons, worksheets, memory set,
+reader set and packet practice the shared course sources render; its
+publication.toml declares no fields, regions or options.
+"""
+kinds = ["curriculum-packet", "curriculum-poetry"]
+
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"

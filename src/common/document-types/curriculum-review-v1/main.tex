@@ -1,15 +1,29 @@
+%% curriculum-review-v1, main edition: one cumulative self-review companion of
+%% the self-paced Ecclesiastical Latin curriculum
+%% (guidance/curriculums/ecclesiastical-latin.md): cover, compact contents,
+%% Using This Review, the Included Latin the forms need, Review Forms, Answers
+%% and Models from the same canonical review source, then Scope and Sources
+%% closed by the generation metadata. The leaf supplies its identity, form
+%% selection, included-Latin sets and protocol text.
+\input{common/preamble}
+\input{curriculums/ecclesiastical-latin/shared/course-format.sty}
+\newcommand{\CourseRoot}{curriculums/ecclesiastical-latin}
+\newcommand{\CompanionID}{@{companion-id}}
+\newcommand{\CompanionTitle}{@{companion-title}}
+\newcommand{\CompanionSubtitle}{@{subtitle}}
+\newcommand{\AssessmentSelection}{@{assessment-selection}}
+\newcommand{\ReviewSourceSet}{@{review-source-set}}
+\newcommand{\ReviewReaderSet}{@{review-reader-set}}
+\newcommand{\CompanionBoundary}{@{boundary}}
+\newcommand{\CompanionPacingNote}{@{pacing-note}}
 \hypersetup{
   pdftitle={Ecclesiastical Latin — \CompanionID: \CompanionTitle},
   pdfsubject={A cumulative self-review with fresh Latin work and complete answers for the self-paced Ecclesiastical Latin curriculum}
 }
 
 \renewcommand{\CoursePacing}{Use when fresh cumulative work would clarify what is dependable and what deserves another return}
-\providecommand{\AssessmentProtocolDetails}{}
-\providecommand{\CompanionContentsSize}{\small}
 \providecommand{\RenderModuleReaderSet}[1]{}
-\InputIfFileExists{\CourseRoot/shared/readers/renderers.tex}{}{}
-\providecommand{\ReviewSourceSet}{}
-\providecommand{\ReviewReaderSet}{}
+\InputIfFileExists{curriculums/ecclesiastical-latin/shared/readers/renderers.tex}{}{}
 \providecommand{\RenderReviewSourceSet}[1]{}
 \newcommand{\RenderIncludedLatinIfAny}{%
   \ifdefempty{\ReviewSourceSet}{%
@@ -40,7 +54,7 @@
 
 \pagenumbering{roman}
 \begingroup
-\CompanionContentsSize
+%@ option contents
 \sloppy
 \hbadness=10000
 \setlength{\parskip}{0pt}
@@ -51,9 +65,9 @@
 
 \part{Using This Review}
 \chapter{Purpose and method}
-\AssessmentProtocol
-\input{\CourseRoot/shared/assessments/protocol}
-\AssessmentProtocolDetails
+%@ region protocol
+\input{curriculums/ecclesiastical-latin/shared/assessments/protocol}
+%@ region protocol-details
 
 \RenderIncludedLatinIfAny
 
@@ -62,23 +76,25 @@
 \solutionsfalse
 \SelectAssessments{\AssessmentSelection}
 \BeginExerciseBank{REVIEW}
-\input{\CourseRoot/shared/assessments/all}
+\input{curriculums/ecclesiastical-latin/shared/assessments/all}
 
 \clearpage
 \part{Answers and Models}
-\input{\CourseRoot/shared/content/80-answer-key-notice}
+\input{curriculums/ecclesiastical-latin/shared/content/80-answer-key-notice}
 \solutionstrue
 \SelectAssessments{\AssessmentSelection}
 \BeginExerciseBank{REVIEW}
-\input{\CourseRoot/shared/assessments/all}
+\input{curriculums/ecclesiastical-latin/shared/assessments/all}
 \solutionsfalse
 
 \clearpage
 \part{Scope and Sources}
-\input{\CourseRoot/shared/companion-scope}
-\input{\CourseRoot/shared/content/shared/sources}
+\input{curriculums/ecclesiastical-latin/shared/companion-scope}
+\input{curriculums/ecclesiastical-latin/shared/content/shared/sources}
 \Needspace{18\baselineskip}
 
-{\footnotesize\CompanionGenerationMetadata}
+{\footnotesize
+%@ input generation-metadata
+}
 
 \end{document}

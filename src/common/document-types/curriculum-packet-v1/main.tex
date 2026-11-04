@@ -1,9 +1,20 @@
-% Packet-data integration contract. New leaves provide the named keys and
-% sources. Fallbacks keep the shell usable while the grouped leaves and the
-% shared memory/reader registries are assembled.
-\InputIfFileExists{\CourseRoot/shared/memory/renderers.tex}{}{}
+%% curriculum-packet-v1, main edition: one substantial packet of the
+%% self-paced Ecclesiastical Latin curriculum, trunk or poetry branch
+%% (guidance/curriculums/ecclesiastical-latin.md, "Reader order and terminal
+%% apparatus"): cover, compact contents, the six Parts in order, then Scope and
+%% Sources closed by the generation metadata. The leaf's module-data.tex
+%% selects its stable lessons, worksheets, memory and reader sets; the course's
+%% shared sources own every lesson, form and answer.
+\input{common/preamble}
+\input{curriculums/ecclesiastical-latin/shared/course-format.sty}
+\newcommand{\CourseRoot}{curriculums/ecclesiastical-latin}
+%@ input module-data
+\input{curriculums/ecclesiastical-latin/shared/module-components}
+%% Packet-data integration contract: module-data.tex provides the named keys
+%% and sources; these fallbacks are the defaults a leaf may leave unset.
+\InputIfFileExists{curriculums/ecclesiastical-latin/shared/memory/renderers.tex}{}{}
 \providecommand{\RenderModuleReaderSet}[1]{}
-\InputIfFileExists{\CourseRoot/shared/readers/renderers.tex}{}{}
+\InputIfFileExists{curriculums/ecclesiastical-latin/shared/readers/renderers.tex}{}{}
 \providecommand{\ModuleIDKey}{\ModuleID}
 \providecommand{\ModuleMemorySet}{\ModuleIDKey}
 \providecommand{\ModuleReaderSet}{\ModuleIDKey}
@@ -37,9 +48,9 @@ reasonably dependable and what deserves another return before continuing.}
 \part{Teaching}
 \SelectCourseUnits{\ModuleUnit}
 \BeginWorkedPassageBank{\ModuleWorkedBank}
-% Stable lessons retain their source-owned readiness statements for reference,
-% but the grouped packet prints one integrated qualitative boundary after its
-% cumulative practice.
+%% Stable lessons retain their source-owned readiness statements for reference,
+%% but the grouped packet prints one integrated qualitative boundary after its
+%% cumulative practice.
 \begingroup
 \renewcommand{\BeforeContinuing}[1]{}
 \input{\ModuleLessonSource}
@@ -69,7 +80,7 @@ reasonably dependable and what deserves another return before continuing.}
 
 \clearpage
 \part{Answers and Models}
-\input{\CourseRoot/shared/content/80-answer-key-notice}
+\input{curriculums/ecclesiastical-latin/shared/content/80-answer-key-notice}
 \solutionstrue
 \chapter{Memory-work answers}
 \RenderModuleMemorySolutions{\ModuleMemorySet}
@@ -84,10 +95,12 @@ reasonably dependable and what deserves another return before continuing.}
 
 \clearpage
 \part{Scope and Sources}
-\input{\CourseRoot/shared/module-scope}
-\input{\CourseRoot/shared/content/shared/sources}
+\input{curriculums/ecclesiastical-latin/shared/module-scope}
+\input{curriculums/ecclesiastical-latin/shared/content/shared/sources}
 \Needspace{18\baselineskip}
 
-{\footnotesize\ModuleGenerationMetadata}
+{\footnotesize
+%@ input generation-metadata
+}
 
 \end{document}
