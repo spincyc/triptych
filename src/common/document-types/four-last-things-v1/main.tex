@@ -1,0 +1,35 @@
+%% four-last-things-v1, main edition: one essay of the Four Last Things.
+%% The series format sets the page, the headings and the title and navigation
+%% macros; the leaf's format.tex holds its own macros.
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\input{articles/faith/four-last-things-shared/format}
+%@ input? format
+%@ region preamble
+
+\hypersetup{
+  pdftitle={@{pdftitle}},
+  pdfsubject={@{pdfsubject}}
+}
+
+\begin{document}
+
+%@ option front
+
+%@ region body
+
+%% The print edition returns to one column for the terminal apparatus.
+\ifdefined\TriptychPrintEdition
+\onecolumn
+\else
+\fi
+%@ option notes
+\appendix
+%@ region appendices
+%@ option closing
+
+\end{document}

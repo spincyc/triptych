@@ -1,0 +1,29 @@
+schema = 1
+record_type = "document-type"
+id = "article-v1"
+description = """
+A discursive article (guidance/articles.md): title page and contents, then the
+argument; the endnotes when the article has them; the appendices, which end
+with the Scope, Method, and Qualifications appendix and the references; and the
+generation metadata last. The type owns the preamble, the heading and
+paragraph-breaking defaults, the PDF metadata, the title page in one of the
+collection's two forms, the contents page and the closing provenance block. A
+leaf supplies its metadata and title-page fields, its body and appendix
+section lists and its option choices; its own macros stay in its format.tex.
+"""
+kinds = ["article-faith", "article-canon-law", "article-scripture"]
+
+# Title-page fields. The kicker form sets kicker and sub-kicker in small type
+# above the title, the subtitle beneath it and an italic series line under
+# that; the stacked form sets the subtitle in italic and a description line
+# beneath it. Either form sets the qualifying note at the foot of the page.
+# A field left empty leaves no line and no space behind.
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"
+fields = ["pdftitle", "pdfsubject", "title"]
+optional_fields = { kicker = "", subkicker = "", subtitle = "", series = "", description = "", note = "", tocdepth = "1", emergencystretch = "2em", notes-font = '\small', notes-parskip = "0.3em" }
+regions = ["body"]
+optional_regions = ["preamble", "appendices"]
+options = { headings = "sections", contents = "small", widows = "strict", title-page = "kicker", notes = "none", closing = "scriptsize" }

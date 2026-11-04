@@ -1,0 +1,21 @@
+%% The full guide: title, italic subtitle and description, and the qualifying
+%% note at the foot of the page.
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.12\textheight}
+{\Huge\bfseries @{title}\par}
+%@ if subtitle
+\vspace{0.7em}
+{\Large\itshape @{subtitle}\par}
+%@ end
+%@ if description
+\vspace{0.7em}
+{\large @{description}\par}
+%@ end
+\vfill
+%@ if note
+{\small @{note}\par}
+%@ end
+\end{titlepage}

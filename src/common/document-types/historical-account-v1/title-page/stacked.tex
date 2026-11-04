@@ -1,0 +1,20 @@
+%% The stacked form: title, italic subtitle and description, and the series
+%% line centred in the lower page.
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.11\textheight}
+{\Huge\bfseries @{title}\par}
+%@ if subtitle
+\vspace{0.45em}
+{\Large\itshape @{subtitle}\par}
+%@ end
+%@ if description
+\vspace{0.85em}
+{\large @{description}\par}
+%@ end
+\vfill
+{\small Historical Accounts \textbullet{} @{series}\par}
+\vfill
+\end{titlepage}

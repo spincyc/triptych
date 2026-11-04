@@ -1,0 +1,12 @@
+%% The endnotes, unindented, under a Notes entry in the contents; the
+%% appendices start a new page.
+\phantomsection
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\small
+\setlength{\parskip}{@{notes-parskip}}
+\setlength{\parindent}{0pt}
+\theendnotes
+\endgroup
+
+\clearpage

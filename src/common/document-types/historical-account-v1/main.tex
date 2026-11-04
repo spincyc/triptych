@@ -1,0 +1,37 @@
+%% historical-account-v1, main edition: a source-first historical account.
+%% The collection's shared format follows the common preamble; the leaf's
+%% format.tex holds its own macros and the preamble region adds any one-line
+%% declaration it needs after them.
+\input{common/preamble}
+\input{@{family-format}}
+%@ input? format
+%@ region preamble
+
+\hypersetup{
+  pdftitle={@{pdftitle}},
+  pdfsubject={@{pdfsubject}}
+}
+
+\begin{document}
+
+%@ option title-page
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+%@ region body
+%@ option notes
+\appendix
+%@ region appendices
+%@ option closing
+\end{deepstudy}
+
+\end{document}

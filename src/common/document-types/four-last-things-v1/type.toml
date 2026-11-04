@@ -1,0 +1,28 @@
+schema = 1
+record_type = "document-type"
+id = "four-last-things-v1"
+description = """
+One essay of a provider's Four Last Things series, a set of four discursive
+articles (guidance/articles.md) that share a series format
+(articles/faith/four-last-things-shared/format.tex under the provider): its
+title page, the sibling navigation and contents, and a two-column body that
+returns to one column for the terminal apparatus. The type owns the preamble,
+the PDF metadata, the series front matter in the provider's form, the return
+to one column, the endnotes, the appendices and the closing provenance block.
+A leaf supplies its metadata and title-page fields and its body and appendix
+section lists.
+"""
+kinds = ["article-faith"]
+
+# The epigraph form (the Claude series) sets a numbered series line, the title
+# and subtitle, and an epigraph with its source; the print-title form (the GPT
+# series) sets the title and subtitle on a print-only title page.
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"
+fields = ["pdftitle", "pdfsubject", "title", "subtitle"]
+optional_fields = { numeral = "", epigraph = "", epigraph-source = "", notes-parskip = "0.3em" }
+regions = ["body", "appendices"]
+optional_regions = ["preamble"]
+options = { front = "epigraph", notes = "endnotes", closing = "unindented" }

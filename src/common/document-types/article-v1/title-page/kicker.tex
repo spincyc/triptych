@@ -1,0 +1,31 @@
+%% The kicker form: a small-capital kicker and a small sub-kicker above the
+%% title, the subtitle and an italic series line beneath it, and the
+%% qualifying note at the foot of the page.
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+%@ if kicker
+{\large\scshape @{kicker}\par}
+%@ end
+%@ if subkicker
+\vspace{0.35em}
+{\small @{subkicker}\par}
+%@ end
+\vspace{1.5em}
+{\Huge\bfseries @{title}\par}
+%@ if subtitle
+\vspace{0.9em}
+{\Large @{subtitle}\par}
+%@ end
+%@ if series
+\vspace{1.4em}
+{\normalsize\itshape @{series}\par}
+%@ end
+\vfill
+%@ if note
+{\footnotesize @{note}\par}
+\vspace{1.2em}
+%@ end
+\end{titlepage}

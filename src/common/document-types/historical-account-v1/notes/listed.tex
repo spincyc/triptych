@@ -1,0 +1,9 @@
+%% The endnotes under a Notes entry in the contents. Any break before them
+%% closes the body region.
+\phantomsection
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+@{notes-font}
+\setlength{\parskip}{@{notes-parskip}}
+\theendnotes
+\endgroup

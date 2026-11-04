@@ -1,0 +1,7 @@
+%% The GPT series: a title page in print only, then the sibling navigation,
+%% which in print sets the contents and numbers the body from 1.
+\ifdefined\TriptychPrintEdition
+\FourLastThingsTitle{@{title}}{@{subtitle}}
+\else
+\fi
+\FourLastThingsNavigation

@@ -1,0 +1,31 @@
+schema = 1
+record_type = "document-type"
+id = "novena-v1"
+description = """
+A numbered novena or its daily-prayer companion (guidance/devotions/novenas.md):
+title page and contents, then the common order, the nine days and the
+exposition; the terminal appendices, ending with the Scope, Calendar, and
+Qualifications appendix (Scope and Status in a companion) and the references;
+and the generation metadata last. The type owns the preamble with the shared
+novena format and common prayers, the PDF metadata, the title page (the full
+guide's, or the companion's from the shared recitation-companion macro), the
+contents page and the closing provenance block. A leaf supplies its metadata
+and title-page fields, its body and appendix section lists and its option
+choices; its own macros stay in its format.tex or its preamble region.
+"""
+kinds = ["novena", "novena-companion"]
+
+# The guide form sets the title, an italic subtitle, a description line and
+# the qualifying note at the foot of the page. The companion form passes the
+# title, subtitle, the full guide's title and the qualifying note to
+# \recitationcompaniontitle, which the leaf's preamble region loads with the
+# shared recitation-companion format.
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"
+fields = ["pdftitle", "pdfsubject", "title"]
+optional_fields = { subtitle = "", description = "", guide-title = "", note = "" }
+regions = ["body"]
+optional_regions = ["preamble", "appendices"]
+options = { title-page = "guide", closing = "metadata" }

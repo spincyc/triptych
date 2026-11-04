@@ -1,0 +1,31 @@
+schema = 1
+record_type = "document-type"
+id = "historical-account-v1"
+description = """
+A source-first historical account (guidance/history/historical-accounts.md):
+title page and contents, then the governing thesis and the account; the
+endnotes when the account has them; the terminal appendices, ending with the
+Scope, Method, and Historical Coordinates appendix, any timeline and the
+references; and the generation metadata last. The type owns the preamble with
+the collection's shared format, the PDF metadata, the title page in the
+provider's form, the contents page and the closing provenance block. A leaf
+supplies its metadata and title-page fields, its collection format, its body
+and appendix section lists and its option choices; its own macros stay in its
+format.tex.
+"""
+kinds = ["history-account", "history-parish", "history-translation"]
+
+# The account form (Claude) sets the title, the subtitle, the line "A
+# source-first historical account" and the collection series line, with the
+# project name at the foot; the stacked form (GPT) sets the title, an italic
+# subtitle, a description and the series line in the lower page. The authored
+# form takes the leaf's own title page from its front region.
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"
+fields = ["pdftitle", "pdfsubject", "family-format"]
+optional_fields = { title = "", subtitle = "", description = "", series = "", notes-font = '\small', notes-parskip = "0.45em" }
+regions = ["body"]
+optional_regions = ["preamble", "front", "appendices"]
+options = { title-page = "stacked", notes = "none", closing = "metadata" }

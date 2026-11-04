@@ -1,0 +1,10 @@
+%% The endnotes under a Notes entry in the contents, after the argument. Any
+%% break before them closes the body region; any break after them opens the
+%% appendices.
+\phantomsection
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+@{notes-font}
+\setlength{\parskip}{@{notes-parskip}}
+\theendnotes
+\endgroup
