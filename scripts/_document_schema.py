@@ -494,8 +494,8 @@ def release_record(root: Path, path: Path) -> dict:
     result = dict(data)
     for key, value in derived.items():
         if key in result and result[key] != value:
-            raise SchemaError(f"{path.relative_to(root)}: {key} {result[key]!r} contradicts "
-                              f"its derivation {value!r}")
+            raise SchemaError(f"release record {path.relative_to(root)}: {key} {result[key]!r} "
+                              f"contradicts its derivation {value!r}")
         result.setdefault(key, value)
     return result
 

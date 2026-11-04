@@ -1618,6 +1618,20 @@ orientation table; existing dossiers retain their original interface.
   `research/chronology.toml` and writes or verifies it; `annotations` projects
   that record into compact text, JSON, or the generated
   `research/chronology-annotations.tex` publication interface.
+- **The records stay in each leaf (examined 2026-11-04).** The maintainer asked
+  for provider-independent records to be stored once per Mass. They are not
+  yet, for three reasons a move would have to answer first. Seven of the
+  seventeen Masses both providers carry produce different records, because a
+  record fingerprints its provider's own research input (a profile-comparison
+  selection or a postconciliar appointment input) by path. A proper-study
+  research review seals the records at the leaf's `research/` path, and
+  contracts `proper-study-v3` to `v5` keep that seal shape; a shared location
+  needs a new contract and workflow version, adopted when no run is live, and
+  leaves the archived seals verifiable only at their own commit. And the
+  reviewed prose of several guides (both 1962 Fourteenth Sundays, Claude's
+  Fifteenth and Sixteenth) names "this leaf's `research/chronology.toml`". A move
+  that left some records in leaves and others in a shared store would give the
+  record two homes, so none was made.
 - The record is where the stable ids are carried, as §14 asks. It holds, per
   appointed element, every locus-specific answer for audit and a separate
   `publication_claims` intersection containing only assertions true at every

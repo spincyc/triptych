@@ -60,7 +60,7 @@ EXAMPLES = {
                 "profile = \"guidance/articles.md\"",
                 "source_format = \"latex\"",
                 "entrypoint = \"main.tex\"",
-                "... 71 more lines",
+                "... 81 more lines",
             ),
             "the canonical manifest in TOML",
         ),
@@ -73,7 +73,7 @@ EXAMPLES = {
                 "profile = \"guidance/articles.md\"",
                 "source_format = \"latex\"",
                 "entrypoint = \"main.tex\"",
-                "... 75 more lines",
+                "... 86 more lines",
             ),
             "the canonical manifest in TOML",
         ),
@@ -95,7 +95,7 @@ EXAMPLES = {
         Example(
             "tools/document-schema types --json",
             (
-                "{\"status\":\"ok\",\"types\":[{\"kind\":\"article-faith\",\"patterns\":[\"articles/faith/*\"],\"profile\":\"guidance/articles.md\",\"required_roles\":[\"scope\",\"source-audit\"],\"requ... [+15152 chars]",
+                "{\"status\":\"ok\",\"types\":[{\"catalog\":\"library/faith.md\",\"kind\":\"article-faith\",\"patterns\":[\"articles/faith/*\"],\"profile\":\"guidance/articles.md\",\"required_roles\":[... [+16447 chars]",
             ),
             "the machine-readable genre registry",
         ),
@@ -104,26 +104,16 @@ EXAMPLES = {
         Example(
             "tools/document-schema propose --provider gpt --document articles/faith/ontological-vertigo",
             (
-                "schema_version = 1",
-                "id = \"gpt/articles/faith/ontological-vertigo\"",
-                "kind = \"article-faith\"",
-                "profile = \"guidance/articles.md\"",
-                "source_format = \"latex\"",
-                "entrypoint = \"main.tex\"",
-                "... 27 more lines",
+                "# Nothing beyond the leaf's [document] declaration: its path, kind and",
+                "# records derive every other field (guidance/document-schemas.md).",
             ),
             "prints a declaration of existing sources; writes nothing",
         ),
         Example(
             "tools/document-schema propose --provider claude --document articles/faith/ontological-vertigo",
             (
-                "schema_version = 1",
-                "id = \"claude/articles/faith/ontological-vertigo\"",
-                "kind = \"article-faith\"",
-                "profile = \"guidance/articles.md\"",
-                "source_format = \"latex\"",
-                "entrypoint = \"main.tex\"",
-                "... 27 more lines",
+                "# Nothing beyond the leaf's [document] declaration: its path, kind and",
+                "# records derive every other field (guidance/document-schemas.md).",
             ),
             "prints a declaration of existing sources; writes nothing",
         ),
@@ -132,14 +122,14 @@ EXAMPLES = {
         Example(
             "tools/document-schema identities --provider gpt --document articles/faith/ontological-vertigo --json",
             (
-                "{\"content\":{\"inputs\":[\"src/common/preamble.tex\",\"src/gpt/articles/faith/ontological-vertigo/generation-metadata.tex\",\"src/gpt/articles/faith/ontological-vertigo... [+10841 chars]",
+                "{\"content\":{\"inputs\":[\"src/common/preamble.tex\",\"src/gpt/articles/faith/ontological-vertigo/generation-metadata.tex\",\"src/gpt/articles/faith/ontological-vertigo... [+12049 chars]",
             ),
             "source, evidence-metadata and render identities for one owner",
         ),
         Example(
             "tools/document-schema identities --provider claude --document articles/faith/ontological-vertigo --json",
             (
-                "{\"content\":{\"inputs\":[\"src/claude/articles/faith/ontological-vertigo/generation-metadata.tex\",\"src/claude/articles/faith/ontological-vertigo/main.tex\",\"src/clau... [+11947 chars]",
+                "{\"content\":{\"inputs\":[\"src/claude/articles/faith/ontological-vertigo/generation-metadata.tex\",\"src/claude/articles/faith/ontological-vertigo/main.tex\",\"src/clau... [+13155 chars]",
             ),
             "source, evidence-metadata and render identities for one owner",
         ),
@@ -223,7 +213,12 @@ def main(argv=None) -> int:
             elif args.command == "propose":
                 data = schema.adapter_manifest(root, root / records[0]["source_dir"])
                 if args.format != "json" and not args.json:
-                    print(schema.dumps_manifest(data), end="")
+                    # Propose only what the leaf's path, kind and records do
+                    # not already derive (guidance/document-schemas.md).
+                    proposal = schema.dumps_manifest(schema.minimal_manifest(root, data))
+                    print(proposal if proposal.strip() else
+                          "# Nothing beyond the leaf's [document] declaration: its path, kind and\n"
+                          "# records derive every other field (guidance/document-schemas.md).\n", end="")
                     return 0
                 result = {"v": 1, "status": "ok", "manifest": data}
             elif args.command == "show" and args.format == "toml" and not args.json:
