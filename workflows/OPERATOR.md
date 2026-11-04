@@ -16,7 +16,7 @@ preserves the established first four pages for the concise companion when
 printed, while its remaining argument and the expansive study follow their
 distinct roles. Read
 `guidance/liturgy/propers-three-documents.md` for the owning standard. The
-`proper-study` workflow is at version 16. Its current path publishes source
+`proper-study` workflow is at version 17. Its current path publishes source
 and reader editions; optional print rendering is separate. The version
 paragraphs below retain the contracts of earlier runs.
 
@@ -47,7 +47,7 @@ complete adopted expansion; mixed or partial shapes fail closed. Other
 postconciliar families require an explicit registry resolver rather than a
 grammar-only pass.
 
-### Current source and reader path: version 16
+### Current source and reader path: version 17
 
 The sequence is context, research, reusable source registration, cold research
 review, expansive study and cold review, concise study and cold review, homily
@@ -70,6 +70,15 @@ new worker with no authoring conversation history, exactly the compiled packet
 and its result destination. Never prefill a PASS from preparatory work or use
 an author as the cold reviewer of that work. Follow each packet's repair route;
 the linear diagram shows the passing path, not permission to bypass a loop.
+
+Version 17 starts every leaf from a document type (the convention is owned by
+`guidance/document-schemas.md`). Authors write section files and the
+`publication.toml` `[document]` declaration; `tools/tpt document-types refresh`
+writes `main.tex`, `synthesis.tex`, `homily.tex` and the Scriptural Date and
+Location page from that declaration and the leaf's chronology record. No stage
+writes date-location prose. The study, synthesis and homily preflights and the
+artifact gates run `document-types refresh --check`; reviews do not review the
+generated page as prose. A run seeded against version 16 fails closed.
 
 Version 16 adopts the source-first publication contract in
 `guidance/document-schemas.md`. The existing `build-artifacts` name now means
@@ -122,7 +131,7 @@ replay remain available with their original identity and `deterministic: null`.
 ### Historical proper-study print path: through version 15
 
 The following receipt behavior and version narratives describe earlier print
-runs. They do not add PDF stages or approvals to version 16. Omitting `--mode`
+runs. They do not add PDF stages or approvals to version 17. Omitting `--mode`
 from the standalone `_proper_study.py` CLI, or passing `--mode print`, retains
 the historical exact-PDF checks; every current engine invocation opts into
 source mode explicitly.
