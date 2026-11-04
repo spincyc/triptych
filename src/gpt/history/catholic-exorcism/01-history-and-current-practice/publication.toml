@@ -111,3 +111,24 @@ source = "sections/140-dated-orientation.tex"
 [[structure]]
 role = "references"
 source = "sections/150-references.tex"
+
+[document]
+type = "historical-account-v1"
+pdftitle = 'Catholic Exorcism: History, Discipline, and Pastoral Practice'
+pdfsubject = 'A bounded comprehensive historical study'
+family-format = 'history/biblical-translations/account-format'
+title-page = "authored"
+notes = "listed"
+
+[document.main]
+preamble = [
+  '\usepackage{endnotes}',
+  '\def\TriptychPrintEdition{}',
+]
+front = [
+  'sections/title-page',
+]
+body = [
+  'sections/all',
+  '\Needspace{8\baselineskip}',
+]

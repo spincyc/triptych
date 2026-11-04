@@ -90,6 +90,10 @@ rights, and review state. A timeline distinguishes event, surviving witness,
 edition, and later judgment. Dates that are narrative facts and uncertainty that
 changes a claim remain in the narrative.
 
+The [`historical-account-v1` document type](../document-schemas.md#document-types)
+writes this skeleton around the collection's shared format; a leaf declares
+its title-page fields and section lists rather than writing `main.tex`.
+
 ### Catholic parish histories
 
 Every Catholic parish-history leaf includes a terminal `Historical List of

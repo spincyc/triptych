@@ -95,3 +95,36 @@ source = "sections/120-scope-method.tex"
 [[structure]]
 role = "references"
 source = "sections/130-references.tex"
+
+[document]
+type = "historical-account-v1"
+pdftitle = 'The Septuagint: How the Hebrew Scriptures Became Greek'
+pdfsubject = 'A source-first historical account of the Greek translation of the Jewish Scriptures (BT-01)'
+family-format = 'history/biblical-translations/account-format'
+title = 'The Septuagint'
+subtitle = 'How the Hebrew Scriptures Became Greek'
+series = 'Biblical Translation Histories, BT-01'
+title-page = "account"
+closing = "rights-notice"
+notes = "plain"
+
+[document.main]
+body = [
+  'sections/00-question',
+  'sections/10-alexandria',
+  'sections/20-aristeas',
+  'sections/30-legend',
+  'sections/40-beyond-torah',
+  'sections/50-texts',
+  'sections/60-use',
+  'sections/70-versions',
+  'sections/80-hexapla',
+  'sections/90-christian-bible',
+  'sections/100-modern',
+  'sections/110-conclusion',
+]
+appendices = [
+  'sections/120-scope-method',
+  'sections/130-references',
+  '\clearpage',
+]

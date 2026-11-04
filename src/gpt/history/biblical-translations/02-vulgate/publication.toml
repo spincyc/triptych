@@ -103,3 +103,35 @@ source = "sections/130-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/140-references.tex"
+
+[document]
+type = "historical-account-v1"
+pdftitle = '''The Vulgate: Jerome's Work and the Making of the Latin Bible'''
+pdfsubject = '''Old Latin versions, Jerome's translation projects, medieval transmission, printing, Trent, critical editions, and the Nova Vulgata'''
+family-format = 'history/biblical-translations/account-format'
+title = 'The Vulgate'
+subtitle = '''Jerome's Work and the Making\\ of the Latin Bible'''
+description = 'Old Latin plurality, several translation projects,\\ textual stewardship, authority, and reception'
+series = 'Biblical Translation Histories \textbullet{} BT-02'
+
+[document.main]
+body = [
+  'sections/00-object-method',
+  'sections/10-old-latin-world',
+  'sections/20-damasus-gospels',
+  'sections/30-jerome-projects',
+  'sections/40-hebrew-truth-dispute',
+  'sections/50-composite-bible',
+  'sections/60-medieval-transmission',
+  'sections/70-print-trent-roman',
+  'sections/80-critical-editions',
+  'sections/90-nova-vulgata',
+  'sections/100-language-culture',
+  'sections/110-claim-audit',
+  'sections/120-conclusion',
+]
+appendices = [
+  'sections/125-scope-terms-evidence',
+  'sections/130-timeline',
+  'sections/140-references',
+]

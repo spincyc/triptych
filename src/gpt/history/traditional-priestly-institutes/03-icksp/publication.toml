@@ -119,3 +119,40 @@ source = "sections/180-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/190-references.tex"
+
+[document]
+type = "historical-account-v1"
+pdftitle = 'The Institute of Christ the King Sovereign Priest: African Origins, Canonial Identity, and Global Expansion'
+pdfsubject = 'The ICKSP from Roman formation and its Gabonese foundation through Gricigliano, pontifical-right status, global expansion, changing liturgical law, supervision, and governance in 2026'
+family-format = 'history/traditional-priestly-institutes/institution-format'
+title = 'The Institute of Christ the King\\ Sovereign Priest'
+subtitle = 'African Origins, Canonial Identity,\\ and Global Expansion'
+description = 'From Roman formation and Mouila\\ to Gricigliano and a worldwide apostolate'
+series = 'Traditional Priestly Institutes \textbullet{} TPI-03'
+
+[document.main]
+body = [
+  'sections/00-object-method',
+  'sections/10-roman-formation',
+  'sections/20-opus-moissac',
+  'sections/30-mouila-foundation',
+  'sections/40-gricigliano-formation',
+  'sections/50-canonical-anatomy',
+  'sections/60-canonial-spirituality',
+  'sections/70-institutional-family',
+  'sections/80-expansion-apostolates',
+  'sections/90-pontifical-right',
+  'sections/100-visitation-constitutions',
+  'sections/110-government-scale',
+  'sections/120-summorum-transfer',
+  'sections/130-traditionis-custodes',
+  'sections/140-local-variation',
+  'sections/150-papal-audience',
+  'sections/160-scrutiny-oversight',
+  'sections/170-synthesis-claim-audit',
+]
+appendices = [
+  'sections/175-scope-evidence-limits',
+  'sections/180-timeline',
+  'sections/190-references',
+]

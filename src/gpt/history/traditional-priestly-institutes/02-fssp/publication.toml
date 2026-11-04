@@ -119,3 +119,40 @@ source = "sections/180-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/190-references.tex"
+
+[document]
+type = "historical-account-v1"
+pdftitle = 'The Priestly Fraternity of Saint Peter: Foundation, Growth, and Liturgical Patrimony'
+pdfsubject = 'The FSSP from its July 1988 foundation through its canonical development, worldwide apostolate, changing liturgical law, papal decrees, visitation, and governance in 2026'
+family-format = 'history/traditional-priestly-institutes/institution-format'
+title = 'The Priestly Fraternity\\ of Saint Peter'
+subtitle = 'Foundation, Growth, and Liturgical Patrimony'
+description = 'From its founding branch point\\ to a worldwide apostolate and mature government'
+series = 'Traditional Priestly Institutes \textbullet{} TPI-02'
+
+[document.main]
+body = [
+  'sections/00-object-method',
+  'sections/10-branch-point',
+  'sections/20-founding-acts',
+  'sections/30-canonical-anatomy',
+  'sections/40-wigratzbad-first-growth',
+  'sections/50-transatlantic-expansion',
+  'sections/60-patrimony-formation',
+  'sections/70-crisis-2000',
+  'sections/80-constitutional-settlement',
+  'sections/90-summorum-growth',
+  'sections/100-government-apostolate',
+  'sections/110-transfer-traditionis',
+  'sections/120-francis-decree',
+  'sections/130-visitation-audiences',
+  'sections/140-scale-snapshot',
+  'sections/150-comparative-map',
+  'sections/160-claim-audit',
+  'sections/170-conclusion',
+]
+appendices = [
+  'sections/175-scope-evidence-limits',
+  'sections/180-timeline',
+  'sections/190-references',
+]

@@ -107,3 +107,36 @@ source = "sections/150-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/160-references.tex"
+
+[document]
+type = "historical-account-v1"
+pdftitle = 'Saint Anthony in Willits: Mission, Parish, and a Catholic Geography of Northern Mendocino County'
+pdfsubject = 'The Ukiah mission, 1923 resident transition, Irish Capuchin ministry, reservation-station record, Diocese of Santa Rosa, Covelo mission, and present bilingual parish'
+family-format = 'history/catholic-parish-histories/parish-history-format'
+title = 'Saint Anthony in Willits'
+subtitle = 'Mission, Parish, and a Catholic Geography\\ of Northern Mendocino County'
+series = 'Catholic Parish Histories \textbullet{} CPH-02'
+
+[document.main]
+body = [
+  'sections/00-governing-thesis',
+  'sections/10-land-town-and-catholic-geography',
+  'sections/20-ukiah-mission',
+  'sections/30-church-before-parish',
+  'sections/40-resident-turn-1923',
+  'sections/50-capuchin-network',
+  'sections/60-reservation-stations',
+  'sections/70-midcentury-parish',
+  'sections/80-diocese-of-santa-rosa',
+  'sections/90-capuchin-handoff-and-covelo',
+  'sections/100-bilingual-community',
+  'sections/110-parish-at-cutoff',
+  'sections/120-conclusion',
+]
+appendices = [
+  'sections/130-scope-method-coordinates',
+  'sections/140-status-building-ledger',
+  'sections/145-historical-pastors',
+  'sections/150-timeline',
+  'sections/160-references',
+]

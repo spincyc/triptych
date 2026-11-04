@@ -107,3 +107,37 @@ source = "sections/150-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/160-references.tex"
+
+[document]
+type = "historical-account-v1"
+pdftitle = 'The Society of Saint Pius X: Foundation, Conflict, and Two Episcopal Ruptures'
+pdfsubject = '''Marcel Lefebvre, Écône, postconciliar traditionalism, the episcopal consecrations of 1988 and 2026, and the Society's institutional and canonical history'''
+family-format = 'history/traditional-priestly-institutes/institution-format'
+title = 'The Society of Saint Pius X'
+subtitle = 'Foundation, Conflict, and\\ Two Episcopal Ruptures'
+description = 'From the Écône seminary\\ to a worldwide institution in conflict'
+series = 'Traditional Priestly Institutes \textbullet{} TPI-01'
+
+[document.main]
+body = [
+  'sections/00-object-method',
+  'sections/10-founder-council',
+  'sections/20-fribourg-econe',
+  'sections/30-visitation-suppression',
+  'sections/40-crisis-1976',
+  'sections/50-expansion-fractures',
+  'sections/60-protocol-1988',
+  'sections/70-after-lefebvre',
+  'sections/80-benedict-dialogue',
+  'sections/90-francis-faculties',
+  'sections/100-second-rupture',
+  'sections/110-institutional-life',
+  'sections/120-conflict-map',
+  'sections/130-claim-audit',
+  'sections/140-conclusion',
+]
+appendices = [
+  'sections/145-scope-evidence-limits',
+  'sections/150-timeline',
+  'sections/160-references',
+]

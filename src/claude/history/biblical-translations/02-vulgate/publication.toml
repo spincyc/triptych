@@ -91,3 +91,35 @@ source = "sections/110-scope-method.tex"
 [[structure]]
 role = "references"
 source = "sections/120-references.tex"
+
+[document]
+type = "historical-account-v1"
+pdftitle = 'The Vulgate: How the Latin West Got Its Bible'
+pdfsubject = 'A source-first historical account of the Latin Bible associated with Jerome (BT-02)'
+family-format = 'history/biblical-translations/account-format'
+title = 'The Vulgate'
+subtitle = 'How the Latin West Got Its Bible'
+series = 'Biblical Translation Histories, BT-02'
+title-page = "account"
+closing = "rights-notice"
+notes = "plain"
+
+[document.main]
+body = [
+  'sections/00-question',
+  'sections/10-old-latin',
+  'sections/20-damasus',
+  'sections/30-psalters',
+  'sections/40-hebrew-verity',
+  'sections/50-resistance',
+  'sections/60-becoming-vulgate',
+  'sections/70-trent',
+  'sections/80-sixtine-clementine',
+  'sections/90-modern',
+  'sections/100-conclusion',
+]
+appendices = [
+  'sections/110-scope-method',
+  'sections/120-references',
+  '\clearpage',
+]

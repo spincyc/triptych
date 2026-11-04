@@ -115,3 +115,40 @@ source = "sections/170-scope-method.tex"
 [[structure]]
 role = "references"
 source = "sections/180-references.tex"
+
+[document]
+type = "historical-account-v1"
+pdftitle = 'The Priestly Fraternity of Saint Peter: A Foundation and Its Constitutional Question'
+pdfsubject = 'A source-first historical account of the Priestly Fraternity of Saint Peter, 1988-2026 (TPI-02)'
+family-format = 'history/traditional-priestly-institutes/institution-format'
+title = 'The Priestly Fraternity of Saint Peter'
+subtitle = 'A Foundation and Its Constitutional Question, 1988--2026'
+series = 'Traditional Priestly Institutes, TPI-02'
+title-page = "account"
+closing = "rights-notice"
+notes = "plain"
+
+[document.main]
+body = [
+  'sections/00-question',
+  'sections/10-branch-point',
+  'sections/20-hauterive',
+  'sections/30-faculties',
+  'sections/40-erection',
+  'sections/50-institution',
+  'sections/60-tenth-anniversary',
+  'sections/70-1999',
+  'sections/80-2000',
+  'sections/90-constitutions',
+  'sections/100-summorum',
+  'sections/110-traditionis',
+  'sections/120-decree-2022',
+  'sections/130-visitation',
+  'sections/140-synthesis',
+  'sections/150-status',
+  'sections/160-conclusion',
+]
+appendices = [
+  'sections/170-scope-method',
+  'sections/180-references',
+]

@@ -107,3 +107,38 @@ source = "sections/150-scope-method.tex"
 [[structure]]
 role = "references"
 source = "sections/160-references.tex"
+
+[document]
+type = "historical-account-v1"
+pdftitle = 'The Society of Saint Pius X: Erection, Rupture, and the Record of the Acts'
+pdfsubject = 'A source-first historical account of the Society of Saint Pius X, 1970-2026 (TPI-01)'
+family-format = 'history/traditional-priestly-institutes/institution-format'
+title = 'The Society of Saint Pius X'
+subtitle = 'Erection, Rupture, and the Record of the Acts, 1970--2026'
+series = 'Traditional Priestly Institutes, TPI-01'
+title-page = "account"
+closing = "rights-notice"
+notes = "plain"
+
+[document.main]
+body = [
+  'sections/00-question',
+  'sections/10-founder',
+  'sections/20-foundation',
+  'sections/30-declaration',
+  'sections/40-suppression',
+  'sections/50-hot-summer',
+  'sections/60-expansion',
+  'sections/70-first-rupture',
+  'sections/80-after-lefebvre',
+  'sections/90-remission',
+  'sections/100-doctrinal-talks',
+  'sections/110-faculties',
+  'sections/120-second-rupture',
+  'sections/130-status',
+  'sections/140-conclusion',
+]
+appendices = [
+  'sections/150-scope-method',
+  'sections/160-references',
+]

@@ -107,3 +107,36 @@ source = "sections/150-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/160-references.tex"
+
+[document]
+type = "historical-account-v1"
+pdftitle = 'Saint Stanislaus in Milwaukee: A Polish Immigrant Parish Built, Imperiled, and Restored'
+pdfsubject = 'The immigrant foundation, successive church and campus projects, civic and ecclesial life, demographic decline, ICKSP entrustment, and restoration of Saint Stanislaus Parish and Oratory in Milwaukee'
+family-format = 'history/catholic-parish-histories/parish-history-format'
+title = 'Saint Stanislaus in Milwaukee'
+subtitle = 'A Polish Immigrant Parish\\ Built, Imperiled, and Restored'
+series = 'Catholic Parish Histories \textbullet{} CPH-01'
+
+[document.main]
+body = [
+  'sections/00-governing-thesis',
+  'sections/10-polonia-before-parish',
+  'sections/20-founding-1866',
+  'sections/30-building-the-church',
+  'sections/40-school-and-campus',
+  'sections/50-mother-parish-and-public-life',
+  'sections/60-elaboration-and-contest',
+  'sections/70-midcentury-remaking',
+  'sections/80-decline-and-danger',
+  'sections/90-parish-and-oratory',
+  'sections/100-restoration',
+  'sections/110-resurrection-in-use',
+  'sections/120-conclusion',
+]
+appendices = [
+  'sections/130-scope-method-coordinates',
+  'sections/140-building-ledger',
+  'sections/145-historical-pastors',
+  'sections/150-timeline',
+  'sections/160-references',
+]

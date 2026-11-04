@@ -99,3 +99,34 @@ source = "sections/120-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/130-references.tex"
+
+[document]
+type = "historical-account-v1"
+pdftitle = 'The Septuagint: The Making and Afterlife of the Greek Jewish Scriptures'
+pdfsubject = 'Ptolemaic origins, Greek translation, textual plurality, Jewish and Christian reception, manuscript transmission, and critical editions'
+family-format = 'history/biblical-translations/account-format'
+title = 'The Septuagint'
+subtitle = 'The Making and Afterlife\\ of the Greek Jewish Scriptures'
+description = 'Ptolemaic translation, textual plurality,\\ and the Scriptures of Jews and Christians'
+series = 'Biblical Translation Histories \textbullet{} BT-01'
+
+[document.main]
+body = [
+  'sections/00-object-method',
+  'sections/10-alexandria-context',
+  'sections/20-aristeas-origin',
+  'sections/30-torah-translation',
+  'sections/40-beyond-torah',
+  'sections/50-textual-case-studies',
+  'sections/60-jewish-revision',
+  'sections/70-christian-scripture',
+  'sections/80-origen-codices',
+  'sections/90-critical-editions',
+  'sections/100-claim-audit',
+  'sections/110-conclusion',
+]
+appendices = [
+  'sections/115-scope-terms-evidence',
+  'sections/120-timeline',
+  'sections/130-references',
+]
