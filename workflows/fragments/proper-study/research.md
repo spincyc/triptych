@@ -70,20 +70,21 @@ the concise table must not print a composite element's dates beside one of its
 constituent passages or repeat identical dates for nested Gospel forms.
 Before the component manifest exists, generate them with
 `tools/tpt proper-chronology annotations --provider {provider} --document {proper} --presentation orientation-v3 --write`.
-This writes the sealed annotations and `research/chronology-table.tex`; authors
-import the complete table without editing cells, row selection or order.
+This writes the sealed annotations and `research/chronology-table.tex`. No
+stage authors the Scriptural Date and Location page: the study's document type
+generates it whole, in both studies, from these records.
 Verify any shared episode description against its scoped Scripture sources;
 a description does not establish a date. Fuller geographic evidence belongs
-in the research appendix and remains distinct from dates of composition.
+in the research records and remains distinct from dates of composition.
 For Psalms, verify the traditional attribution and any identified occasion or
 remembered event separately from composition; an era attached to an author is
 not an event date. Inspect a composition-only answer for missing event evidence,
 and preserve an unresolved occasion when the sources supply none.
 Inspect the controlling chronology source owners in this research boundary.
-A prior date-free study's approval does not cover new date claims.
-Provide those claims a reviewed home in the expansive study as well, such as
-a same-owner terminal historical appendix. Complete these records before
-drafting reader-facing study prose. A fresh research reviewer follows.
+A prior date-free study's approval does not cover new date claims; the
+generated appendix of the expansive study is their reviewed home. Complete
+these records before drafting reader-facing study prose. A fresh research
+reviewer follows.
 
 On reentry, address all research-owned findings and update every affected
 source or interpretation record. Downstream authoring and reviews will rerun.

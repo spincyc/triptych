@@ -356,11 +356,19 @@ Later proper-focused headings may use quiet parenthetical cues in liturgical ord
 
 ### Page 2: Scriptural date and location
 
-For new schema-2 runs, the [three-document profile's orientation
-table](propers-three-documents.md#a-table-that-locates-the-passage) supersedes
-the dossier layout below. Its shorter display retains the evidence distinctions
-and canonical chronology source requirement here. Existing dossier consumers
-keep their original presentation until an authorized substantive revision.
+**The page is generated, never authored** (maintainer decision, 2026-11-04). A
+leaf on a [document type](../document-schemas.md#document-types) receives this
+page from the `scriptural-date-location` projection, placed where its type puts
+page 2, with the content model of
+[Scripture chronology §14.1](../scripture-chronology.md#141-the-propers-wired):
+the shared orientation-v3 table, generated whole from the leaf's chronology
+record, with generated evidence notes in the expansive study. The evidence
+requirements below -- the inventory, the distinctions between attribution,
+setting, event and composition, the traditional answer foregrounded and the
+alternatives kept -- are what that record and the corpus carry. The
+two-tier dossier layout, its cells and its explanatory prose describe leaves
+not yet on a document type, which keep them only until they are moved onto
+one; no new page is written by hand.
 
 Begin and end physical page 2 with forced page boundaries. It contains only `Scriptural Date and Location` and always occupies exactly one page. Inventory every distinct directly appointed biblical passage once, in Catholic canonical order and then verse order; consolidate repetitions and do not mislabel loose echoes in composed orations as direct quotations. Use the columns `Proper`, `Citation`, `Location`, and `Date`. The citation cell does not reproduce Scripture.
 

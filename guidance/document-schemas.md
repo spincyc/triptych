@@ -36,6 +36,7 @@ library; another provider's authored substance cannot become a dependency.
 | `[[structure]]` | Semantic role with exactly one leaf-relative `source` or repository-relative `data` path under `src/`. Optional `key`, `outputs`, and `depends_on` declare stable nodes, output membership and an acyclic dependency graph. |
 | `canonical_owner` | Another same-provider publication that owns a mechanical companion's content, when applicable. It does not transfer research ownership or manufacture another authored work. |
 | `[contracts]` | Existing component schema, presentation, format, authority, chronology, and appointed-text-completeness contracts. Values must agree with the owning `proper-components.toml`. |
+| `[document]` | Optional opt-in to a [document type](#document-types): the `type`, the leaf's metadata fields, per-edition region lists and option choices. Its edition entrypoints are then generated. |
 | `content_inputs`, `evidence_inputs`, `render_inputs` | Additional repository-relative dependencies when controlled discovery is insufficient. Evidence inputs name metadata, never binary witness payloads. |
 
 `derivation = "authored"` identifies authored output; `"projection"` identifies
@@ -76,6 +77,73 @@ Provider-neutral Bibles, reading-plan volumes and papal source readers retain
 their existing typed canonical schemas and source identities. They are listed
 by `tools/print-document` without fabricated GPT/Claude leaves or duplicate
 publication manifests.
+
+## Document types
+
+A *document type* writes a kind of edition's skeleton once -- preamble,
+PDF metadata, title block, the order of the leaf's own sections, the
+deterministic pages placed between them, and the closing provenance block --
+so that no leaf hand-codes it and a change to it reaches every leaf of the
+type. A type is a directory `src/common/document-types/<type>/`, its name
+carrying its version (`proper-study-v1`), holding a `type.toml` and one TeX
+template per edition. Types are found by directory: adding one edits no list.
+`tools/tpt document-types types` lists them with each edition's fields,
+regions, options and slots.
+
+**A leaf opts in** with a `[document]` table in its `publication.toml` naming
+the `type`. The table supplies only what is the leaf's own:
+
+- *fields*, the metadata the type declares (PDF title and subject, title-block
+  lines, running head). A string at the `[document]` level serves every edition
+  that declares that field; `[document.<edition>]` overrides it.
+- *regions*, per edition: the ordered list of the leaf's own section files
+  (leaf-relative, without `.tex`), and any raw TeX between them that the leaf's
+  layout needs (`'\Needspace{12\baselineskip}'`), copied as written.
+- *options*: a choice among the type's fragments `<type>/<option>/<value>.tex`,
+  such as a closing block; the type names the default.
+
+Doc-local macros stay in the leaf's `format.tex`, which a template inputs when
+it exists. An output whose entrypoint file exists must have its edition table;
+a companion that is declared but not yet written may gain one later.
+
+**Entrypoints are generated.** `tools/tpt document-types refresh --leaf
+<provider>/<document>` instantiates the type's templates with the declaration
+and writes each declared edition's entrypoint (`main.tex`, `synthesis.tex`,
+`homily.tex`) as ordinary literal TeX headed "Do not edit". Change the
+declaration or the template, never the entrypoint. The entrypoint is literal on
+purpose: Make's dependency graph and recorder check, print bundles,
+`web-edition`, the schema closure and every content gate follow literal
+`\input` paths, so they serve every type without type-specific code.
+
+**Deterministic pages fill slots.** A template line `%@ slot
+<projection>/<output>` places a generated page. A projection is one module in
+`scripts/document_projections/`, found by file name, that returns every file it
+owns for one leaf: its pages under the leaf's `generated/`, and any record it
+regenerates. `refresh` runs each projection a leaf's templates slot, then writes
+the entrypoints; `refresh --check`, run by `make
+check-generated-documents-current`, refuses any generated file that differs from
+its regeneration and any authored copy of a generated page. The template
+directives and the projection contract are stated in
+`scripts/_document_types.py` and `scripts/document_projections/__init__.py`.
+The first projection, `scriptural-date-location`, is the proper studies'
+Scriptural Date and Location page; its content contract is
+[Scripture chronology §14.1](scripture-chronology.md#141-the-propers-wired).
+
+- **To add a type,** create its directory: `type.toml` (`schema = 1`,
+  `record_type = "document-type"`, `id` equal to the directory name, a
+  `description`, the admitted publication `kinds`, and per edition its output
+  `role`, `template`, `entrypoint`, `fields`/`optional_fields`,
+  `regions`/`optional_regions` and `options` with defaults) and its templates.
+  A changed skeleton that would move published pages is a new versioned
+  directory, so leaves keep their bytes until they are migrated.
+- **To move a leaf onto a type,** record its editions first with
+  `scripts/render_compare.py snapshot`, write the declaration (moving any body
+  held in the entrypoint into section files byte for byte), run `refresh`,
+  snapshot again and `compare`. Every difference outside a page the migration
+  intends to change is either repaired or reported with its cause.
+- **To add a deterministic page to every leaf of a type,** write its projection
+  module, add one slot line to the template, and run `tools/tpt document-types
+  refresh --all`. No leaf is edited by hand.
 
 ## Validation and review
 

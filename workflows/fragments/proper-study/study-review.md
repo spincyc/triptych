@@ -40,7 +40,9 @@ inference at its cited locus, then judge whether the prose teaches the question
 and makes the inference intelligible. Record a concrete locus and outcome.
 Repeated general applications cannot supply development that the reader has
 not been given.
-Check the reviewed chronology needed by the concise opening in its appropriate
-place here. No padding, gallery, proposal appendix, or global four-senses table
+The Scriptural Date and Location appendix is generated; preflight has proved
+it current, and its dates were judged at research review. Do not review it as
+authored prose. Report any authored sentence elsewhere that restates or
+contradicts its dates. No padding, gallery, proposal appendix, or global four-senses table
 can satisfy this contract. Use `STU-` findings: `research` for missing or false evidence;
 `study` for how reviewed evidence is selected, reasoned through or written.

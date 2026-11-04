@@ -1369,12 +1369,49 @@ exists its declaration governs; study preflight requires the schema-2 opt-in.
 **The complete shared table (v3).** The same command writes and checks
 `research/chronology-table.tex` as well as the sealed annotations. Import that
 complete file once in each research and concise chronology component; declare
-both generated files among the component's references. Its `chronologysharedtable`
+both generated files among the component's references. On a document type the
+generated page below is that component and makes both imports itself. Its `chronologysharedtable`
 has **Passage**, **Context**, and **Date** columns. All cells, rows and their order
 are generated. Identical appointments and evidence selections produce identical
 tables across providers; differing appointments or profiles are not harmonized.
 Preflight refuses altered, reordered, omitted, additional or provider-authored
 rows. `--format table-tex` previews the complete table without writing it.
+
+**The page, generated whole (2026-11-04).** The maintainer decided that the
+Scriptural Date and Location page "is meant to be deterministic, not derived by
+agents". For a proper on a [document type](document-schemas.md#document-types)
+the page is the `scriptural-date-location` projection
+(`scripts/_proper_chronology_page.py`), placed by the type's slot and written
+by `tools/tpt document-types refresh`. It is built only from the leaf's
+chronology record, the orientation metadata above and the source library's
+labels for the cited source ids, and it regenerates the record, the sealed
+annotations and the shared table with it. No author writes, edits or annotates
+it: an authored date page, setting note, date footnote or import of the table
+in an authored file is refused by `refresh --check`. Its two variants:
+
+- `section`, the expansive study's terminal appendix: heading, a fixed
+  introduction, the complete table, and evidence notes. One note list per
+  passage, headed by exactly the Passage cell the table prints; one item per
+  row giving the relation, the dated subject's corpus title, each candidate's
+  concise date with the source's own label, the evidence profile where it is
+  not the cascade's first, and the library labels of its sources; the place and
+  its sources; and an absent state stated as research pending, undated in
+  tradition, or no single answer across the appointed verses. A row whose
+  evidence an earlier passage already gave points back to that passage by name.
+- `page`, the concise study's physical page 2: heading, the table between the
+  page-two markers, and a fixed legend and pointer to the expansive section.
+
+No sentence refers to a row by its position, and a book is named one way: the
+table's abbreviation in passage labels, the corpus's own subject titles
+elsewhere (the Apocalypse, never "Revelation"). A proper with no dossier prints
+its absent state instead of a table: a ritual Mass's missing calendar formulary,
+or a postconciliar leaf whose reviewed appointment input is not yet written.
+Because `refresh --check` holds every byte, the content preflight's scan of
+authored prose for dates does not read `generated/`; the rows the page inputs
+are still checked. A leaf whose manifest cannot declare a presentation (no
+schema-2 manifest) states `orientation-v3` through its generated annotations'
+header. The rules below about author-supplied place phrases, authored
+appendices and dossier cells describe published leaves not yet on a type.
 
 Group the table by appointed passage and component, never by a shared date.
 Each group prints its passage once, followed by that passage's separate
@@ -1407,7 +1444,8 @@ labels. `_chronology.py` alone reads and validates this metadata. Source seals
 include the descriptive sources actually used by a projection.
 
 Retain concise geographic context in the Context cell, with its uncertainty;
-the research historical appendix keeps the fuller source discussion. A
+the generated page's evidence notes name its sources, and the research
+records keep the fuller source discussion. A
 `settings` entry has a known subject, an explicit relation, a concise date-free
 label, source ids and a basis. The loader and source validator check these
 fields, and the projection attaches it only to that subject and relation.

@@ -18,7 +18,10 @@ in this packet.
 
 Produce one expansive source-first study, one concise study, and one standalone
 homily from one canonical research owner. The three entrypoints are `main.tex`,
-`synthesis.tex`, and `homily.tex`; outputs are the bare ID, `-synthesis`, and
+`synthesis.tex`, and `homily.tex`, generated from the `proper-study-v1`
+document type by `tools/tpt document-types refresh` (`guidance/document-schemas.md`,
+Document types); agents author only the leaf's own section files and its
+`[document]` declaration. Outputs are the bare ID, `-synthesis`, and
 `-homily`. `proper-components.toml` uses schema 2. The sole web edition belongs
 to the canonical study. No second research owner or companion leaf is created.
 
@@ -79,8 +82,10 @@ owning profile; a print export counts terminal apparatus within the page limits.
 chronology presentation is `orientation-v3`: a complete provider-neutral
 Passage/Context/Date table generated from the shared typed corpus, including
 sourced episode descriptions, explicit Psalm numbering and every date alternative.
-Import its complete generated file in both study and concise chronology components.
-Retain fuller geographic context and evidence in the historical appendix.
+The document type generates the complete Scriptural Date and Location page in
+both studies from the leaf's own record, with its evidence notes in the
+expansive study; no stage writes or reviews it as prose, and preflight holds
+it current.
 The homily speaks one intelligible exegetical argument to an adult parish assembly,
 unless `ARGS.audience` names another audience, ordinarily for 10–12 minutes.
 It is finished prose, not an outline or advice to

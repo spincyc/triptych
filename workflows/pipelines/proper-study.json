@@ -1,6 +1,6 @@
 {
   "id": "proper-study",
-  "version": 16,
+  "version": 17,
   "description": "Source-first proper study, concise study and standalone homily, with independent reviews",
   "default_effort": "high",
   "document_argument": "proper",
@@ -193,6 +193,11 @@
       },
       "checks": [
         {
+          "id": "generated-documents-current",
+          "command": "tools/tpt document-types refresh --check --leaf {provider}/{proper}",
+          "required_result": "Every entrypoint and the Scriptural Date and Location page must be exactly what the proper-study-v1 document type generates from publication.toml [document] and the leaf's chronology record, and no authored file may be or import a date page. Run tools/tpt document-types refresh; never edit a generated file."
+        },
+        {
           "id": "component-contract",
           "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition research --require-presentation --require-format --require-authority --require-orientation --require-orientation-v3 --mode source",
           "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
@@ -329,6 +334,11 @@
       },
       "checks": [
         {
+          "id": "generated-documents-current",
+          "command": "tools/tpt document-types refresh --check --leaf {provider}/{proper}",
+          "required_result": "Every entrypoint and the Scriptural Date and Location page must be exactly what the proper-study-v1 document type generates from publication.toml [document] and the leaf's chronology record, and no authored file may be or import a date page. Run tools/tpt document-types refresh; never edit a generated file."
+        },
+        {
           "id": "component-contract",
           "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition synthesis --require-presentation --require-format --require-authority --require-orientation --require-orientation-v3 --mode source",
           "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
@@ -463,6 +473,11 @@
         "mode": "program"
       },
       "checks": [
+        {
+          "id": "generated-documents-current",
+          "command": "tools/tpt document-types refresh --check --leaf {provider}/{proper}",
+          "required_result": "Every entrypoint and the Scriptural Date and Location page must be exactly what the proper-study-v1 document type generates from publication.toml [document] and the leaf's chronology record, and no authored file may be or import a date page. Run tools/tpt document-types refresh; never edit a generated file."
+        },
         {
           "id": "component-contract",
           "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition homily --require-presentation --require-format --require-authority --require-orientation --require-orientation-v3 --mode source",
@@ -606,6 +621,12 @@
           "id": "source-output-contract",
           "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase artifacts --require-presentation --require-format --require-authority --require-orientation --require-orientation-v3 --mode source",
           "required_result": "The typed publication manifest, all three source outputs, metadata, content and evidence contracts must validate without print artifacts.",
+          "repair_target": "study"
+        },
+        {
+          "id": "generated-documents-current",
+          "command": "tools/tpt document-types refresh --check --leaf {provider}/{proper}",
+          "required_result": "Every entrypoint and the Scriptural Date and Location page must be exactly what the proper-study-v1 document type generates from publication.toml [document] and the leaf's chronology record, and no authored file may be or import a date page. Run tools/tpt document-types refresh; never edit a generated file.",
           "repair_target": "study"
         }
       ],

@@ -1,10 +1,14 @@
 # Derive the concise comparison
 
-Read the accepted expansive study and write `synthesis.tex` and its components.
-Import `common/preamble` then `common/propers-format`, using the shared title,
-inventory, overview and dossier forms. Do not re-derive their layouts, change
-fonts or margins, or import the homily column helper. Emit literal unconditional
-component imports and keep literal markers in their declared source owners.
+Read the accepted expansive study and write the concise components. Declare
+`[document.synthesis]` in `publication.toml` -- its metadata fields, the
+`opening` region (the inventory and overview components of page 1) and the
+`body` region (themes, commentary and apparatus) -- and run
+`tools/tpt document-types refresh --leaf {provider}/{proper}`, which writes
+`synthesis.tex` and the generated page 2; never write either by hand. Use the
+shared inventory and overview forms. Do not re-derive their layouts, change
+fonts or margins, or import the homily column helper. Keep literal markers in
+their declared source owners.
 The print-export profile targets 10–12 physical pages. Author the opening
 semantic blocks in the fixed order and preserve the first four print pages
 specified in `guidance/liturgy/propers-three-documents.md`: page 1, complete
@@ -12,14 +16,10 @@ propers map and four senses overview; page 2, Scriptural Date and Location;
 pages 3–4, The Propers: Themes and Movement. Developed interleaved commentary
 begins on page 5. Declare the presentation component roles and place the
 profile's physical-page zref markers around their actual content. No cover
-may shift these positions. Use the same owner's reviewed generated chronology;
-preserve its exact dates, alternatives, relation labels and unresolved states.
-Use `chronology_presentation = "orientation-v3"` and import the complete
-`research/chronology-table.tex` between the chronology markers, with the canonical
-annotations imported exactly once. Declare both generated files as component
-references. The generator owns the Passage/Context/Date cells and row order;
-do not author, reorder or omit rows. Point to the reviewed historical appendix
-for fuller geographic context and evidence. An unresolved event remains undated.
+may shift these positions. Page 2 is generated whole, with its chronology
+markers, from the same owner's record: declare its component at `generated/scriptural-date-location-page.tex`
+with both generated research files as references, and author nothing on it or
+about its dates.
 
 Write a standalone developed argument organized around cross-proper questions
 or movements. Interleave the authors' alternatives where they address the same

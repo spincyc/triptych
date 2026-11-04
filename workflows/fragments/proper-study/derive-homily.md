@@ -1,7 +1,6 @@
 # Write the speakable homily
 
-Read both reviewed studies. Write `homily.tex` and its homily-only components
-as a finished homily to `ARGS.audience` (default adult parish assembly), ordinarily 10–12 minutes at
+Read both reviewed studies. Write the homily-only components as a finished homily to `ARGS.audience` (default adult parish assembly), ordinarily 10–12 minutes at
 an unhurried pace. Choose one coherent reading or a demonstrably compatible
 combination. The speech need not inventory every minor proper, but its
 exegetical argument must meaningfully join the Gospel, other appointed
@@ -38,11 +37,15 @@ Rehearse the prose for sense and oral clarity; do not
 claim an audible or human rehearsal that did not happen. End as preaching;
 any recited prayer must reproduce an exact received human witness.
 
-Import `common/preamble`, `common/propers-format`, and `common/propers-homily`
-literally, in that order. Use the full-width shared title, then enclose only
-the literal spoken-component import in `properhomily`: two Latin Modern
-columns at the shared 11-point baseline. Place the terminal apparatus after
-the environment's closing page break. Never put columns in the studies.
+Declare `[document.homily]` in `publication.toml` -- its metadata fields, the
+`homily` region holding the spoken component and the `apparatus` region holding
+the terminal note -- and run `tools/tpt document-types refresh --leaf
+{provider}/{proper}`, which writes `homily.tex`; never write it by hand. The
+type imports `common/preamble`, `common/propers-format` and
+`common/propers-homily`, sets the full-width shared title, and encloses only
+the `homily` region in `properhomily`: two Latin Modern columns at the shared
+11-point baseline, with the terminal apparatus after the environment's closing
+page break. Never put columns in the studies.
 Do not add local font, geometry or title overrides. Keep
 components local and update the common generation timestamp. Add no new
 source-dependent claims or repairs to the accepted study. Report upstream

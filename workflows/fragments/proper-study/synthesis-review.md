@@ -12,18 +12,17 @@ Require the complete opening semantic blocks in the established order. For a
 requested print edition, require approximately 10–12 physical pages with the
 established first four:
 the complete appointed map followed by exactly four senses overview rows on
-page 1; the sole Scriptural Date and Location dossier on page 2; two complete,
+page 1; the generated Scriptural Date and Location sheet alone on page 2; two complete,
 substantive pages of The Propers: Themes and Movement on pages 3–4; developed
 interleaved commentary beginning on page 5. Check the actual material and
 settled physical-page evidence, not just labels or declared roles. Source/HTML
 review checks the same content and relationships without claiming pagination.
 Every appointed option remains recognizable. The overview cannot replace the full
-study's individual four-sense distillations. Verify canonical chronology and
-claim-local qualifications, and reject padding or compressed unreadable tables.
-Use the profile's passage-to-occurrence/place/date lookup on the actual
-orientation table. Check the subject and scope of each visible date, shared
-answers and appendix references; complete detailed annotations in a narrow
-cell are not a concise table. Record the concrete lookup and outcome.
+study's individual four-sense distillations. Page 2 is generated and preflight has proved it current: do not review its
+wording. Use the profile's passage-to-occurrence/place/date lookup on the
+actual table to judge that the page is usable, and record the concrete lookup
+and outcome; a usability defect belongs to the shared projection, not to this
+synthesis. Reject padding elsewhere.
 
 Check that it introduces no new source-dependent claim and that the four-sense
 distinctions remain clear where they affect the argument. Judge it as a useful

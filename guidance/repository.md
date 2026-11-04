@@ -412,7 +412,9 @@ publishing a different ref.
 For a new work:
 
 1. select provider, collection, profile, edition, locale, jurisdiction, and stable identity;
-2. create the publishable leaf and all required records;
+2. create the publishable leaf and all required records, opting into the
+   genre's [document type](document-schemas.md#document-types) where one
+   exists rather than hand-writing its entrypoints;
 3. register exceptional shared dependencies;
 4. validate its manifest, source records, and eligible reader edition; and
 5. add it to its one owning `library/` page.

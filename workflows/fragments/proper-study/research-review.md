@@ -42,8 +42,9 @@ subject and relation. Each psalm citation's generated numbering note must
 agree with the numbering its controlling witness prints. Check the research supporting the planned occurrence
 and place phrases, and that
 an author's era or a collection-wide bound has not become a passage date.
-Full evidence remains in the research; the study author subsequently supplies
-the historical appendix and precise references, judged at study review. Reader rows
+Full evidence remains in the research; the document type generates the
+study's appendix and the concise page from these records, so what you accept
+here is what both pages will print. Reader rows
 retain material alternatives and concise qualifications without audit prose.
 
 Test every proposed interpretation as a complete argument, supported by

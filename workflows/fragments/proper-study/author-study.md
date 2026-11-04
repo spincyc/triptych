@@ -7,9 +7,15 @@ liturgical bodies. Explain the texts through original scholarship without
 substitute translation or close paraphrase, and state the omitted full texts
 once in the terminal scope appendix.
 
-Write the canonical `main.tex` and research-mode components only from reviewed
-research. Author the complete source-first study: substantive opening and map,
-lawful study texts or locators, detailed explanation of each appointed element,
+Write the research-mode components only from reviewed research. Start the
+leaf from the `proper-study-v1` document type (`guidance/document-schemas.md`,
+Document types): declare `[document]` and `[document.main]` in
+`publication.toml` with the study's metadata fields and the ordered `body` and
+`apparatus` region lists of its own section files, then run
+`tools/tpt document-types refresh --leaf {provider}/{proper}`. That command
+writes `main.tex` and the Scriptural Date and Location appendix; never write or
+edit either by hand. Author the complete source-first study: substantive
+opening and map, lawful study texts or locators, detailed explanation of each appointed element,
 two to five coherent whole-formulary interpretations, each with its own four
 senses, and a short concluding comparison. Develop the actual exegetical moves
 of multiple checked Fathers or saints, as the three-document profile defines
@@ -54,11 +60,11 @@ qualifies them to support the interpretation. Follow the checker and owning prof
 fields. Each interpretive lane
 is a separate component. Keep shared source ownership and references explicit.
 Declare `chronology_presentation = "orientation-v3"` for the shared table.
-Import `research/chronology-table.tex` once in the historical appendix, with
-`research/chronology-annotations.tex` imported once in that edition. Declare
-both generated files as component references. Do not author cells or row order.
-Give its generated dates and contextual claims a reviewed home in the study,
-with exact historical-appendix references for fuller alternatives and evidence.
+Declare the study's chronology component at the generated appendix,
+`generated/scriptural-date-location.tex`, with
+`research/chronology-annotations.tex` and `research/chronology-table.tex` as
+its references. Write no date prose, setting notes or date footnotes; where the
+study needs the chronology it names the appendix (`\ref{sec:date-location}`).
 
 Follow `guidance/web-editions.md` for appointed-text anchors: author exactly
 one explicit `\label{proper-<element-key>}` for every declared element key,
@@ -68,21 +74,21 @@ before its paragraph when a heading groups texts. Do not repeat it in the map
 or commentary, or add an undeclared proper key. The converter requires unique,
 complete source and rendered targets; it does not infer them from headings.
 
-Import `common/preamble` then `common/propers-format` literally and declare
-`format_contract = "propers-format-v1"`. Use the shared title, table, dossier,
-keyed lane-heading and four-senses forms described in the three-document
+The document type imports `common/preamble` then `common/propers-format`;
+declare `format_contract = "propers-format-v1"`. Use the shared title, table,
+dossier, keyed lane-heading and four-senses forms described in the three-document
 profile. Keep ordinary semantic subsections and precise citations; supply
 content fields rather than local presentation implementations. Latin Modern,
 11-point article, 0.75-inch margins and monochrome are required. The expansive study has no fixed
 opening-page positions; the concise companion's first four pages are fixed
-by the owning three-document profile. Give its required reviewed chronology
-a home here, normally a shared terminal historical appendix.
+by the owning three-document profile. Its chronology's home here is the
+generated appendix the type places before the terminal apparatus.
 Do not repeat the concise four-page opening for every interpretation.
-Keep every component import literal and unconditional; a template macro may
-format its arguments but never choose or import a component dynamically.
-Put work-wide scope and used references at the end; display the one canonical
-generation timestamp and compact rights colophon. Set exact provenance from
-this packet and declare canonical web eligibility.
+Every component appears once in a region list; a template macro may format
+its arguments but never choose or import a component dynamically. Put
+work-wide scope and used references in the `apparatus` region; the type
+prints the one canonical generation timestamp and compact rights colophon. Set
+exact provenance from this packet and declare canonical web eligibility.
 
 Before submission, run the research-mode source/component checks and validate
 the publication manifest and its available source roles. The study's future
