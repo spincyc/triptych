@@ -1,0 +1,58 @@
+#!/bin/sh
+# Test for `tools/tpt document-types`: exit 0 = pass (the stable gate).
+#
+# Every opted-in leaf's entrypoints and generated pages must equal their
+# regeneration, the listing must be byte-stable, and the tool must refuse
+# what it cannot honestly generate rather than write something plausible.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="document-types"
+unopted="claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+fail() {
+	echo "$1" >&2
+	exit 1
+}
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		fail "expected failure: $*"
+	fi
+}
+
+run_tool --help >/dev/null
+run_tool types --help >/dev/null
+run_tool render --help >/dev/null
+run_tool refresh --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# Types are found by directory, and the proper study slots its date page.
+run_tool types >"$sandbox/types.txt"
+grep -q '^proper-study-v1$' "$sandbox/types.txt" || fail "proper-study-v1 is not discovered"
+grep -q 'slots: scriptural-date-location/section' "$sandbox/types.txt" ||
+	fail "the expansive study does not slot the generated date page"
+grep -q 'slots: scriptural-date-location/page' "$sandbox/types.txt" ||
+	fail "the concise study does not slot the generated date page"
+run_tool types --json >"$sandbox/a.json"
+run_tool types --json >"$sandbox/b.json"
+cmp -s "$sandbox/a.json" "$sandbox/b.json" || fail "the type listing is not byte-stable"
+
+# Every opted-in leaf is current; --check writes nothing.
+run_tool refresh --check --all >/dev/null || fail "an opted-in leaf is stale"
+
+# Refusals: no selection, a malformed leaf, and a leaf that has not opted in.
+reject refresh
+reject refresh --check --leaf ../etc
+reject render --leaf "$unopted" --edition main
+reject refresh --check --leaf "$unopted"
+reject
+
+echo ok
