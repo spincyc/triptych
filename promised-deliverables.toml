@@ -257,13 +257,17 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "complete-admitted-browser-print-implementation"
   criterion = "Source adapters and fail-closed browser preparation cover every admitted publication, Bible, papal selection and reading-plan root, including companions and source-owned apparatus; full source/reread and DOM proofs and controller regressions pass without claiming current deployment or new editorial approval."
-  status = "pass"
+  status = "waived"
+  waiver_reason = "Superseded 2026-11-04: the maintainer directed deletion of the browser-reflow print system; native TeX generation from canonical sources (print pages with Generate PDF, gated by the print-compile CI job) replaces it. The evidence paths record what was delivered and remain in Git history."
+  waiver_authority = "Maintainer instruction in the 2026-11-04 Claude Code session (\"delete\" the older print path)."
   evidence = ["PROJECT-WORK.md", "docs/printing.md", "scripts/_web_print_products.py", "scripts/_web_print.py", "scripts/_web_print_sources.py", "tools/tests/test_web_print_products.py", "tools/tests/test_web_print_controller.py", "tools/tests/test_public_alpha_web_print.py"]
 
   [[deliverables.requirements]]
   id = "central-style-assets-and-implementation-review"
   criterion = "Complete print routes use central current styles and verified fonts, glyphs and illustrations; reviewed reader bodies are preserved; native geometry and source coverage regressions pass, and independent implementation-review repairs retain admission, source notices, links, language, body identity and visible complete geometry. Browser reflow does not certify native pagination or physical duplex alignment."
-  status = "pass"
+  status = "waived"
+  waiver_reason = "Superseded 2026-11-04: the maintainer directed deletion of the browser-reflow print system; native TeX generation from canonical sources (print pages with Generate PDF, gated by the print-compile CI job) replaces it. The evidence paths record what was delivered and remain in Git history."
+  waiver_authority = "Maintainer instruction in the 2026-11-04 Claude Code session (\"delete\" the older print path)."
   evidence = ["PROJECT-WORK.md", "src/web/browser/shared/web-print.css", "src/web/browser/shared/web-print.js", "src/common/browser-print-assets.json", "src/common/browser-print-marks.json", "tools/tests/test_web_print_marks.py", "tools/tests/test_web_print_server.py", "tools/tests/test_web_print_dictionaries.py"]
 
   [[deliverables.requirements]]
@@ -2159,7 +2163,7 @@ state = "in_progress"
   id = "psalm-event-chronology"
   criterion = "The causal gap is documented and repaired with meaningful regression checks; Psalm dates distinguish the traditional setting and narrated or remembered events from composition, preserving sourced alternatives and uncertainty. The new documents expose that distinction."
   status = "pass"
-  evidence = ["workflows/reviews/propers-quality-2026-10-05/RECORD.md", "workflows/reviews/propers-quality-2026-10-05/ANCHOR-CONTEXT-REREVIEW.md", "workflows/reviews/propers-quality-2026-10-05/BINDING-SOURCE-REVIEW.md", "tools/tests/test_chronology_anchor_context.py", "tools/tests/test_chronology_binding_sources.py", "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/70-date-location.tex", "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/03-chronology.tex", "workflows/reviews/gpt-1962-60-production-2026-10-05/DRIVER-RECORD.md"]
+  evidence = ["workflows/reviews/propers-quality-2026-10-05/RECORD.md", "workflows/reviews/propers-quality-2026-10-05/ANCHOR-CONTEXT-REREVIEW.md", "workflows/reviews/propers-quality-2026-10-05/BINDING-SOURCE-REVIEW.md", "tools/tests/test_chronology_anchor_context.py", "tools/tests/test_chronology_binding_sources.py", "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/generated/scriptural-date-location.tex", "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/generated/scriptural-date-location-page.tex", "workflows/reviews/gpt-1962-60-production-2026-10-05/DRIVER-RECORD.md"]
   check = "path_exists"
   note = "Shared implementation and source-seal repairs passed independent review. Both new studies passed actual content review with the qualified historical dates visible; the concise table fits physical page two. Attribution, unresolved occasions, remembered events, composition, and duration remain distinct. Older publications remain their reviewed snapshots and have not been silently rebuilt or reapproved. Final family and deployment acceptance are separately tracked below."
 
@@ -2975,10 +2979,10 @@ state = "complete"
   id = "eighteenth-sunday-introit-dated"
   criterion = "At the Eighteenth Sunday leaf's first revision, its Introit dossier rows in the expansive and concise studies give Ecclus 36:18 its generated date beside Ps 121:1's."
   status = "pass"
-  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/80-date-location.tex", "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/03-date-location.tex", "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/production-review.md"]
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/generated/scriptural-date-location.tex", "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/generated/scriptural-date-location-page.tex", "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/production-review.md"]
   check = "contains"
-  path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/03-date-location.tex"
-  needle = "Ecclus~36:18: B.C.~190--170 or c.~B.C.~280"
+  path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/generated/scriptural-date-location.tex"
+  needle = "Ecclesiasticus: preferred: B.C.~190--170"
   note = "Reconciled 2026-10-01 (KI-064): c408cf346 already supplied the per-passage date in both studies after review. This records that completed narrow revision, not completion of the current five-leaf revision program or a research-staleness rebaseline."
 
 [[deliverables]]
@@ -4604,9 +4608,9 @@ state = "complete"
   criterion = "The canonical study contains the bounded archaeological and funerary context."
   status = "pass"
   check = "contains"
-  path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/main.tex"
+  path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/50-what-the-arrangement-can-establish.tex"
   needle = "\\subsection{Burial practice and material limits}"
-  evidence = ["src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/main.tex"]
+  evidence = ["src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/50-what-the-arrangement-can-establish.tex"]
 
   [[deliverables.requirements]]
   id = "hard-review"
