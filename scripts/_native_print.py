@@ -92,9 +92,40 @@ def service_endpoint(root: Path) -> str:
     return value.rstrip("/")
 
 
+def _admitted_recipes(root: Path, inputs: set | None = None) -> list[dict]:
+    """Every declared publication output and Bible, less withdrawals and holds."""
+    from _print_document import recipes
+    result = []
+    for recipe in recipes(root, family="publication"):
+        declared = "src/" + recipe["provider"] + "/" + recipe["canonical"] + "/web-edition.toml"
+        disposition = "release/publications/" + recipe["provider"] + "/" + recipe["document"] + ".json"
+        if inputs is not None:
+            inputs.update((declared, disposition))
+        try:
+            declaration = tomllib.loads((root / declared).read_text(encoding="utf-8"))
+            release = json.loads((root / disposition).read_bytes())
+        except (OSError, ValueError) as error:
+            raise NativePrintError("cannot read publication disposition: " + recipe["id"]) from error
+        _need(release.get("id") == recipe["document"] and release.get("status") in {"alpha", "hold"},
+              "publication release identity or disposition is invalid: " + recipe["id"])
+        if not declaration.get("withdrawn") and release["status"] != "hold":
+            result.append(recipe)
+    result.extend(recipes(root, family="bible"))
+    result.sort(key=lambda row: row["id"])
+    _need(result and len({row["id"] for row in result}) == len(result),
+          "public print selection is empty or duplicated")
+    return result
+
+
+def admission_inputs(root: Path) -> list[str]:
+    """The declarations and release dispositions that decide publication admission."""
+    inputs = set()
+    _admitted_recipes(Path(root).resolve(), inputs)
+    return sorted(inputs)
+
+
 def admitted_documents(root: Path) -> dict[str, dict]:
     """Return the public output universe, never the unrestricted native list."""
-    from _web_print_products import admitted_recipes
     from _print_document import _plan_records
     root = Path(root).resolve()
     result = {}
@@ -105,8 +136,7 @@ def admitted_documents(root: Path) -> dict[str, dict]:
         result[identity] = dict(id=identity, output_id=identity, document=document,
                                 edition=edition, title=title or identity, **extra)
 
-    # This is the existing cold producer's exact withdrawal/hold disposition.
-    for row in admitted_recipes(root):
+    for row in _admitted_recipes(root):
         identity = row["id"]
         if row["family"] == "publication":
             document = "publication:" + row["provider"] + "/" + row["canonical"]

@@ -230,45 +230,11 @@ def _dictionary_files(root: Path, recipe: dict, work: Path) -> dict[str, bytes]:
 
 def _binary_selection(root: Path, recipe: dict, kind: str, dependencies: set[str]):
     """Positive selected artwork only; a Make shared-directory glob is not admission."""
-    if kind == "pictorial-dictionary":
-        from _web_print_dictionaries import render_dictionary
-        product = render_dictionary(root, recipe["provider"], recipe["id"])
-        selected = set()
-        for row in product["assets"]:
-            path = _source(root, row["source"])
-            _need(_sha(path.read_bytes()) == row["sha256"], "selected dictionary artwork identity changed")
-            selected.add(row["source"])
-        dependencies.update(product["source_paths"])
-        dependencies.update(value for value in ("scripts/_web_print_dictionaries.py",
-                            "scripts/_web_print_dictionary_context.py", "scripts/_web_print_common.py")
-                            if (root / value).is_file())
-        return selected
-    if kind.startswith("server-"):
-        from _web_print_server import expected_card_print_selection, expected_guide_print_selection
-        import _web_print_server_diagrams as diagrams
-        name = recipe["canonical"].rsplit("/", 1)[-1]
-        cards = name.endswith(("flash-cards", "cue-cards"))
-        expectation = (expected_card_print_selection if cards else expected_guide_print_selection)(
-            root, recipe["provider"], recipe["document"])
-        dependencies.update(expectation["source_selection"]["source_inputs"])
-        dependencies.update(value for value in ("scripts/_web_print_server.py",
-                            "scripts/_web_print_server_diagrams.py", "scripts/document_schema_checks/liturgy.py",
-                            "tools/web-edition") if (root / value).is_file())
-        if cards:
-            return set()
-        variant = "trainer" if "trainer-manual" in name else "child" if name.startswith("01-") else "sung"
-        inventory = diagrams.inventory(root)
-        pattern = re.compile(re.escape(diagrams.TEX_OWNER) + r"/shared/artwork/pencil/[A-Za-z0-9._-]+\.png")
-        selected = set()
-        for unit in expectation["print_unit_expectations"]:
-            if unit["kind"] != "diagram":
-                continue
-            macro = unit["source_refs"][0]["macro"]
-            entry = inventory["entries"].get(variant + ":" + macro)
-            _need(entry is not None, "selected native server diagram has no canonical definition")
-            for definition in entry["definition_closure"].values():
-                selected.update("src/" + recipe["provider"] + "/" + value
-                                for value in pattern.findall(definition["definition_tex"]))
+    if kind == "pictorial-dictionary" or kind.startswith("server-"):
+        from _native_print_artwork import dictionary_artwork, server_artwork
+        select = dictionary_artwork if kind == "pictorial-dictionary" else server_artwork
+        selected, inputs = select(root, recipe["provider"], recipe["canonical"])
+        dependencies.update(inputs)
         return selected
     # The other current illustrated owner is the Ark study: five project plate
     # calls and one PGF raster. Read bounded actual graphics arguments, never
