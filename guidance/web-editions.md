@@ -58,9 +58,8 @@ default to eligible by silence.
   canonical sources and optional print editions: ineligibility describes layout,
   not about quality, importance, or release status.
 
-These states govern the reviewed web reader. A layout-ineligible publication
-still has a complete browser-print projection when its admitted output passes
-its own typed adapter and independent source-coverage checks.
+These states govern the reviewed web reader. An admitted output without one
+still has its print page and native PDF; it has no HTML reading surface.
 
 Declaring `eligible` against a document that uses a blocking construct is a
 gate failure, not a judgment call. Reclassify the leaf or remove the
@@ -301,9 +300,9 @@ canonical research study remains the sole web owner. Its `-synthesis` and
 `-homily` editions contain separately authored concise and spoken presentations
 within that same source leaf and have no separate web declarations. The
 canonical HTML supplies their research and citations, not a claim that it
-reproduces their distinct prose verbatim. Each admitted output also has a
-complete browser-print edition selected from its own canonical entrypoint,
-including the concise study's or homily's distinct prose. This print rendition
+reproduces their distinct prose verbatim. Each admitted output also has its own
+print page, whose native PDF is typeset from its own canonical entrypoint,
+including the concise study's or homily's distinct prose. That print edition
 does not create a second editable source or a separate reviewed web declaration.
 
 Component boundaries become semantic headings, stable element keys become
@@ -330,7 +329,7 @@ loss of a correctly placed label in conversion belongs to the converter.
 
 ## Publication reading interface
 
-Provider publication readers and their complete print routes share a
+Provider publication readers and their print pages share a
 scoped reading interface. Proper-study actions are named **Full Study Guide**,
 **Synthesis** and **Homily** according to their declared output roles;
 **Generate PDF** remains the separate native printing action. The shared
@@ -348,43 +347,36 @@ enhancement JavaScript. Session/history position recovery yields to explicit
 section links and remains usable with storage unavailable.
 
 Keep this interface opt-in. It does not restyle the Missal or other browser
-apps, and screen layout does not alter the complete print edition's source
-coverage or physical geometry. Verify wide tables, narrow-screen reflow,
-keyboard focus, history and the complete Print action on actual generated
-documents before accepting a reader presentation change.
+apps, and screen layout does not alter the native print edition's source or
+physical geometry. Verify wide tables, narrow-screen reflow, keyboard focus,
+history and the Print action on actual generated documents before accepting a
+reader presentation change.
 
 ## Browser printing
 
 The complete-edition **Generate PDF** action renders the selected canonical
-TeX output with its original engine, templates and fonts. The reviewed web
-readers navigate to `print/<provider>/<output>.html?print=1`; other admitted
-outputs have their own complete print routes. The selected source includes its
+TeX output with its original engine, templates and fonts. It lives on the
+output's print page, `print/<provider>/<output>.html`; each reviewed web reader
+carries a Print action that navigates there. The selected source includes its
 declared body, notes, appendices, references, revision, and rights notices.
-Existing rights and hold/withdrawal rules still govern admission.
+Existing rights and hold/withdrawal rules still govern admission. The print
+page and its route rule are owned by [web data](web-data.md#native-print-pages-and-source-bundles).
 
 The maintainer's 2026-11-03 clarification requires generation on demand from
 canonical sections and current shared styles, without a maintained PDF corpus
 in Git or elsewhere. The current implementation uses native WebAssembly TeX in
 the browser. Source and style changes do not require a corpus PDF rebuild before
 deployment. Disposable browser results may be reused only under the current
-input identities. Neither a historical PDF nor a successful HTML print dialog
+input identities. Neither a historical PDF nor a browser's own print dialog
 substitutes for current native generation. Show progress and errors; never
 silently change the typesetting engine or fonts. The
 [repository contract](repository.md) owns this output and cache boundary.
 
-The print adapters and independent source-coverage checks are described in
-[document schemas](document-schemas.md); the private preparation family and hot
-assembly are governed by [web data](web-data.md#complete-browser-print-products).
-`src/web/browser/shared/web-print.js` validates finite per-type markup,
-source/selection identities, ordered units, bounded parts, assets, fonts, and
-the exact current `src/web/browser/shared/web-print.css` for the HTML projection.
-Missing or changed content refuses HTML preparation. The native TeX generation
-action uses its separate exact source bundle. Browser Print and Ctrl+P show a
-notice directing readers to that action instead of presenting a partial
-reviewed reader as a complete print edition.
+The site no longer lays HTML editions out for the browser's own Print or Save
+as PDF; that reflow system was removed on 2026-11-04 by maintainer decision,
+superseded by native generation. A browser print of a reader page prints that
+page as shown; it is not a print edition.
 
-Browser pagination does not establish a profile's fixed-page, paired-page, or
-physical duplex contract, even when card faces and source order are retained.
 Use `tools/print-document` for the corresponding local native recipe and its exact-artifact
 review, as described in [printing](../docs/printing.md). Neither mechanical
 source coverage nor a successful print dialog confers editorial or physical

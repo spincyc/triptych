@@ -444,7 +444,7 @@ class PublicationReaderBrowserTest(unittest.TestCase):
         payload = b"%PDF-1.4\n% Synthetic native-print protocol fixture\n%%EOF\n"
         published = json.loads((self.site / "PUBLICATION-MANIFEST.json").read_text())
         self.visit(FULL)
-        address = self.browser.js("return document.querySelector('[data-web-print-reader] .print-actions a').href")
+        address = self.browser.js("return document.querySelector('.publication-reader__content > .print-actions a').href")
         self.assertEqual(address, self.origin + "print/" + LEAF + ".html?print=1")
         for route in ("print/" + LEAF + ".html", SYNTHESIS, HOMILY):
             self.visit(route)
@@ -469,7 +469,7 @@ class PublicationReaderBrowserTest(unittest.TestCase):
             result = self.browser.js("""return {
                 selection:JSON.parse(document.querySelector('[data-native-print-manifest]').textContent),
                 compiler:window.readerCompilerCalls,printCalls:window.readerPrintCalls,
-                frames:document.querySelectorAll('[data-web-print-frame]').length,
+                reflow:!!document.querySelector('[data-web-print-document],script[src$="web-print.js"]'),
                 download:document.querySelector('[data-native-print-download]').download,
                 downloadVisible:!document.querySelector('[data-native-print-download]').hidden};""")
             self.assertEqual(result["selection"]["id"], "publication:" + route.removeprefix("print/").removesuffix(".html"))
@@ -482,7 +482,7 @@ class PublicationReaderBrowserTest(unittest.TestCase):
             self.assertEqual(result["compiler"][0]["bundle_sha256"], result["selection"]["wasm"]["bundle_sha256"])
             self.assertEqual(result["compiler"][0]["runtime_sha256"], result["selection"]["wasm"]["runtime_sha256"])
             self.assertEqual(result["printCalls"], 0)
-            self.assertEqual(result["frames"], 0)
+            self.assertFalse(result["reflow"])
             self.assertTrue(result["downloadVisible"])
             downloaded = downloads / result["download"]
             self.browser.wait(lambda: downloaded.is_file(), timeout=15)

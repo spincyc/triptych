@@ -16,40 +16,35 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import _browser_product_recipes as recipes
 import _browser_products as products
 
-SCRATCH = ROOT / ".scratch/print-product-store/recipe-tests"
+SCRATCH = ROOT / ".scratch/browser-product-recipe-tests"
 
 
 class RecipeTests(unittest.TestCase):
     def setUp(self):
         SCRATCH.mkdir(parents=True, exist_ok=True)
 
-    def test_all_thirteen_recipes_declare_delivery_and_print_owns_private_json(self):
+    def test_all_twelve_recipes_declare_public_browser_data_delivery(self):
         actual = products._recipes()
-        self.assertEqual(len(actual), 13)
-        private = [recipe for recipe in actual if recipe["delivery"] == "print-preparation"]
-        self.assertEqual([recipe["id"] for recipe in private], ["print-editions"])
-        self.assertTrue(all(recipe["delivery"] == "browser-data" for recipe in actual if recipe["id"] != "print-editions"))
-        self.assertEqual(private[0]["output_prefixes"], ["print/preparation"])
-        self.assertEqual(private[0]["argv"], ["scripts/_web_print_products.py", "--root", "{root}", "--out", "{out}"])
-        for scope in ("src/sources", "src/gpt", "src/claude", "src/common", "web", "release/papal-documents"):
-            self.assertIn(scope, private[0]["input_trees"])
+        self.assertEqual(len(actual), 12)
+        self.assertTrue(all(recipe["delivery"] == "browser-data" for recipe in actual))
+        self.assertFalse(any(prefix.startswith("print") for recipe in actual for prefix in recipe["output_prefixes"]))
 
     def test_recipe_factory_requires_delivery_and_runner_expands_out_once(self):
         with self.assertRaises(TypeError):
             recipes._recipe("missing", "missing", ["producer.py"], [])
-        private = next(recipe for recipe in recipes.RECIPES if recipe["id"] == "print-editions")
+        selected = next(recipe for recipe in recipes.RECIPES if recipe["id"] == "bibles")
         from types import SimpleNamespace
         with tempfile.TemporaryDirectory(dir=SCRATCH) as temporary:
             out = Path(temporary) / "output"
             with patch.object(recipes.subprocess, "run", return_value=SimpleNamespace(returncode=0)) as run:
-                recipes._run(ROOT, out, private, {})
+                recipes._run(ROOT, out, selected, {})
             command = run.call_args.args[0]
             self.assertEqual(command.count("--out"), 1)
             self.assertEqual(command[command.index("--out") + 1], str(out))
             self.assertNotIn("{out}", command)
 
-    def test_private_recipe_cannot_emit_public_paths_or_raw_asset_files(self):
-        for name in ("structure/documents/corpus.json", "print/preparation/font.woff2"):
+    def test_recipe_cannot_emit_another_family_or_raw_asset_files(self):
+        for name in ("structure/documents/corpus.json", "bibles.json/font.woff2"):
             def wrong(root, out, recipe, environment):
                 target = out / name
                 target.parent.mkdir(parents=True, exist_ok=True)
@@ -57,8 +52,7 @@ class RecipeTests(unittest.TestCase):
             with self.subTest(name=name), tempfile.TemporaryDirectory(dir=SCRATCH) as temporary, patch.object(recipes, "_run", side_effect=wrong):
                 out = Path(temporary) / "output"
                 with self.assertRaises(recipes.RecipeError):
-                    recipes.generate(ROOT, out, ["print-editions"])
-                self.assertEqual(list(out.iterdir()), [])
+                    recipes.generate(ROOT, out, ["bibles"])
 
     def test_selected_cold_family_has_no_unrequested_products(self):
         with tempfile.TemporaryDirectory(dir=SCRATCH) as temporary:

@@ -498,42 +498,21 @@ class BrowserProductsTests(unittest.TestCase):
 class BrowserDeliveryTests(unittest.TestCase):
     family = BrowserProductsTests.family
     payload = BrowserProductsTests.payload
+    generate = BrowserProductsTests.generate
 
     def setUp(self):
         BrowserProductsTests.setUp(self)
 
-    def generate(self, root, out, product_ids=None):
-        ids = product_ids or [recipe["id"] for recipe in self.recipes]
-        public = [name for name in ids if name != "print-editions"]
-        if public:
-            BrowserProductsTests.generate(self, root, out, public)
-        if "print-editions" in ids:
-            self.generated.append(("print-editions",))
-            target = out / "print/preparation/editions.json"
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_text('{"html":"<p>Prepared from canonical source</p>"}')
-
-    def add_print_family(self):
-        self.recipes.append({"id": "print-editions", "version": 1,
-                             "output_prefixes": ["print/preparation"], "delivery": "print-preparation",
-                             "argv": ["scripts/_web_print_products.py", "--root", "{root}", "--out", "{out}"],
-                             "input_trees": ["src/common"], "input_files": [], "exclude_paths": []})
-        self.manifest = products.record(self.root, cache_root=self.cache)
-
     def test_every_full_and_selected_snapshot_has_exact_explicit_deliveries(self):
-        self.add_print_family()
+        self.assertEqual(products.DELIVERIES, {"browser-data"})
         with products.verified_products(self.root, cache_root=self.cache) as held:
             self.assertEqual(set(held.delivery_by_path), set(held.files))
-            self.assertEqual(held.delivery_by_path["structure/a/index.json"], "browser-data")
-            self.assertEqual(held.delivery_by_path["print/preparation/editions.json"], "print-preparation")
-        with products.verified_products(self.root, cache_root=self.cache, product_ids=["print-editions"]) as held:
-            self.assertEqual(held.delivery_by_path, {"print/preparation/editions.json": "print-preparation"})
-            self.assertEqual(set(held.delivery_by_path), set(held.files))
+            self.assertEqual(set(held.delivery_by_path.values()), {"browser-data"})
         with products.verified_products(self.root, cache_root=self.cache, product_ids=["a"]) as held:
             self.assertEqual(held.delivery_by_path, {"structure/a/index.json": "browser-data"})
 
     def test_missing_unknown_and_untyped_delivery_are_rejected_without_defaults(self):
-        for value in (None, True, "private", "browser-data "):
+        for value in (None, True, "private", "browser-data ", "print-preparation"):
             recipes = copy.deepcopy(self.recipes)
             recipes[0]["delivery"] = value
             with self.subTest(value=value), self.assertRaises(products.ProductError):
@@ -547,34 +526,17 @@ class BrowserDeliveryTests(unittest.TestCase):
         with self.assertRaises(products.ProductError):
             products._validate_manifest(descriptor)
 
-    def test_ambiguous_private_prefix_and_unknown_owners_are_rejected(self):
-        self.add_print_family()
+    def test_ambiguous_prefix_and_unknown_owners_are_rejected(self):
         recipes = copy.deepcopy(self.recipes)
-        recipes[0]["output_prefixes"] = ["print"]
+        recipes[0]["output_prefixes"] = ["structure"]
         with self.assertRaisesRegex(products.ProductError, "prefixes overlap"):
             products._validate_recipes(recipes)
-        selected = [{"id": "unknown", "files": {"print/preparation/unowned.json": {}}}]
+        selected = [{"id": "unknown", "files": {"structure/c/unowned.json": {}}}]
         with self.assertRaisesRegex(products.ProductError, "no delivery owner"):
             products._deliveries(self.manifest, selected)
-        selected = [{"id": "a", "files": {"print/preparation/unowned.json": {}}}]
+        selected = [{"id": "a", "files": {"structure/b/unowned.json": {}}}]
         with self.assertRaisesRegex(products.ProductError, "delivery ownership"):
             products._deliveries(self.manifest, selected)
-
-    def test_asset_manifest_is_bound_but_browser_style_is_not_a_print_input(self):
-        self.add_print_family()
-        before = products.input_identity(self.root, "print-editions")
-        global_before = products.input_identity(self.root)
-        style = self.root / "src/web/browser/shared/print.css"
-        style.parent.mkdir(parents=True)
-        style.write_text("body { color: black; }")
-        self.assertEqual(before, products.input_identity(self.root, "print-editions"))
-        self.assertNotEqual(global_before, products.input_identity(self.root))
-        asset_manifest = self.root / "src/common/browser-print-assets.json"
-        asset_manifest.parent.mkdir(parents=True)
-        asset_manifest.write_text('{"assets":[]}')
-        after = products.input_identity(self.root, "print-editions")
-        self.assertIn("src/common/browser-print-assets.json", after["source_paths"])
-        self.assertNotEqual(before["sha256"], after["sha256"])
 
 
 def _c7_identity_reference(root, recipes):

@@ -13,8 +13,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 import _native_print as native
-import _web_print as web
-from .test_web_print_controller import drive, act, wait, idle_arrivals
+from ._cdp_drive import drive, act, wait, idle_arrivals
 
 
 class NativeAdmissionTests(unittest.TestCase):

@@ -1,8 +1,10 @@
-"""Public native-print selections and their deliberately small web controls.
+"""Public native-print selections, their print pages and small web controls.
 
 The native typesetters can build more documents than the public site admits.
 This module narrows them to the site's publication dispositions, declared
 reading volumes, publishable Bible editions and advertised papal witnesses.
+Each admitted edition has one thin print page that carries the Generate PDF
+controls; a reader page carries only a Print action that leads there.
 It never builds a PDF, fetches a source, or treats an archive as current text.
 """
 from __future__ import annotations
@@ -205,6 +207,59 @@ def _archives(root: Path):
         _need("publication:" + identity not in result, "duplicate historical native print")
         result["publication:" + identity] = {**row, "snapshot": snapshot}
     return result
+
+
+def print_route(identity: str, reader: str | None = None) -> str:
+    """The print page of one admitted edition.
+
+    Publications and Bibles keep their established `print/` routes. A source
+    reader's edition (papal document, reading-plan volume) prints from the same
+    path under `print/`.
+    """
+    family, _, name = identity.partition(":")
+    _identifier(name)
+    if family == "publication":
+        return "print/" + name + ".html"
+    if family == "bible":
+        return "print/bibles/" + name + ".html"
+    _need(family in {"papal", "reading-plan"} and isinstance(reader, str) and reader.endswith(".html")
+          and not reader.startswith("print/") and _identifier(reader.removesuffix(".html")),
+          "a source edition's print page requires its reader route")
+    return "print/" + reader
+
+
+def _link(route: str, target: str) -> str:
+    path, hash_, fragment = target.partition("#")
+    return html.escape(posixpath.relpath(path, posixpath.dirname(route) or ".") + hash_ + fragment, quote=True)
+
+
+def reader_action(route: str, target: str) -> str:
+    """The Print action a reader page carries to its edition's print page."""
+    _need(target.startswith("print/") and target.endswith(".html"), "invalid print page route")
+    return ('<p class="print-actions"><a href="' + _link(route, target) + '?print=1">'
+            'Print / Generate PDF</a></p>')
+
+
+def landing(identity: str, route: str, context: dict, *, label: str, reader: str | None = None,
+            reader_label: str = "Read this edition online") -> dict:
+    """One small print page: identity, the native controls and a way back to reading."""
+    row = context["documents"].get(identity)
+    _need(row is not None, "native print output is not publicly admitted: " + identity)
+    _need(isinstance(label, str) and label.strip(), "print page requires its edition label")
+    wasm = context.get("native_catalog") is not None
+    note = ("Generate PDF typesets this edition in your browser from its current TeX sources, "
+            "with the edition's own fonts and page layout. The first run downloads the "
+            "typesetting engine and can take a minute." if wasm else
+            "Generate PDF requests this edition newly typeset from its current TeX sources, "
+            "with the edition's own fonts and page layout.")
+    reading = ('<p class="native-print-landing__reader"><a href="' + _link(route, reader)
+               + '">' + html.escape(reader_label) + '</a></p>') if reader else ""
+    head, tail = extras(route, wasm=wasm)
+    body = ('<article class="native-print-landing" data-print-edition="' + html.escape(identity, quote=True) + '">'
+            + '<header><h1>' + html.escape(row["title"]) + '</h1><p class="native-print-landing__label">'
+            + html.escape(label) + '</p></header><p>' + note + '</p>'
+            + controls(identity, route, context) + reading + '</article>')
+    return {"output_id": identity, "title": row["title"], "html": body, "head_extra": head, "body_extra": tail}
 
 
 def site_context(root: Path, *, documents=None, revision=None, endpoint=None, native_catalog=None):

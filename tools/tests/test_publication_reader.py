@@ -67,14 +67,13 @@ class PublicationReaderTest(unittest.TestCase):
         self.routes.add("print/gpt/reference.html")
         self.assertEqual(self.contexts()[key]["current"]["href"], "print/gpt/reference.html")
 
-    def test_body_and_sealed_print_parts_survive_byte_for_byte(self):
+    def test_source_owned_body_survives_byte_for_byte(self):
         key = self.add("propers/temporal/66-sunday")
-        body = ('<section data-web-print-document="publication:gpt/example">'
-                '<div data-web-print-content><section data-print-part="complete">'
+        body = ('<section data-native-print="publication:gpt/example">'
                 '<h1>Title</h1><h2 id="sec:appointed">Appointed <em>texts</em></h2>'
                 '<p>Exact source &amp; qualification.</p><h3 id="note-one">Note</h3>'
-                '<table><tr><td>Latin</td></tr></table></section></div>'
-                '<script type="application/json" data-web-print-manifest>{"complete":true}</script></section>')
+                '<table><tr><td>Latin</td></tr></table>'
+                '<script type="application/json" data-native-print-manifest>{"complete":true}</script></section>')
         page = reader.wrap(body, self.contexts()[key], "print/gpt/propers/temporal/66-sunday.html")
         self.assertEqual(page.count(body), 1)
         self.assertIn('href="#sec%3Aappointed">Appointed texts</a>', page)
@@ -103,11 +102,11 @@ class PublicationReaderTest(unittest.TestCase):
         self.assertIn('href="#reader-content">Document</a>', page)
         self.assertIn('id="reader-content"', page)
 
-    def test_real_publisher_wraps_both_routes_and_preserves_print_descriptor(self):
+    def test_real_publisher_wraps_reader_and_print_routes_and_preserves_body(self):
         from .test_public_alpha import load_tool
         tool = load_tool()
         key = self.add("propers/temporal/66-sunday")
-        body = '<section data-web-print-document><div data-web-print-content><h2 id="body">Body</h2></div></section>'
+        body = '<article class="native-print-landing"><h2 id="body">Body</h2></article>'
         manifest = {"provider": "gpt", "providers": ["gpt", "claude"]}
         with mock.patch.object(tool, "load_manifest", return_value=manifest), \
                 mock.patch.object(tool, "publication_reader_contexts", return_value=self.contexts()):

@@ -237,6 +237,7 @@ class CorpusTests(unittest.TestCase):
         released = {row["pdf"]: row for row in json.loads((ROOT / "release/papal-documents.json").read_text())["documents"]}
         for page in papal_pages.values():
             row = released[page["legacy_pdf"]]
+            self.assertEqual(page["output_id"], f'papal:{row["id"]}/{row["language"]}')
             document = checked[(row["id"], row["language"])]
             rendered = re.search(r'<div class="source-text">(.*?)</div>', page["html"], re.S).group(1)
             words = html.unescape(re.sub(r"<[^>]*>", " ", rendered))
@@ -262,9 +263,10 @@ class CorpusTests(unittest.TestCase):
         for edition, expected_sha in historical_text_hashes.items():
             page = plans[f"reading-plans/narrative-spine-full-account-{edition}.html"]
             self.assertEqual(len(page["part_routes"]), 12)
-            self.assertIn("src/web/browser/shared/print-volume.js", page["source_paths"])
-            self.assertIn('data-print-volume-ready="false"', page["html"])
-            self.assertIn('data-print-volume-notice', page["html"])
+            self.assertEqual(page["output_id"], "reading-plan:narrative-spine-full-account-" + edition)
+            self.assertIn('aria-label="Volume sections"', page["html"])
+            self.assertNotIn("data-print-volume", page["html"])
+            self.assertFalse(any("print-volume" in path for path in page["source_paths"]))
             self.assertNotIn('class="verse-number"', page["html"])
             text, keys = [], []
             for route in page["part_routes"]:

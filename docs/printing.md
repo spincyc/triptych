@@ -17,18 +17,21 @@ These are generation choices, not a stored collection of 644 PDFs:
 | Papal source selections | 350 |
 | Reading-plan volumes | 6 |
 
-The reviewed web readers keep their reading presentation. Their Print action
-opens the corresponding complete edition. Select **Generate PDF** on that page
-to start generation; opening or reloading the page does not start it. The
-selected edition includes its own notes, appendices, references, revision and
-rights notices. Companions, such as a proper's concise study or homily, select
-their own TeX entrypoint.
+Each edition has a small print page under `print/`: its title and edition or
+companion label, the **Generate PDF** controls, any earlier printed edition,
+and a link to read it online where a web reader exists. The reviewed web
+readers keep their reading presentation; their Print action opens that print
+page. Select **Generate PDF** there to start generation; opening or reloading
+the page does not start it. The selected edition includes its own notes,
+appendices, references, revision and rights notices. Companions, such as a
+proper's concise study or homily, select their own TeX entrypoint.
 
-Native PDF generation replaces browser reflow as the complete-edition print
-format. A browser's Print or Save as PDF command applied to an HTML reader uses
-different typography and pagination. Use the generated PDF for the designed
-layout; follow its paper, scale and duplex instructions when printing cards or
-paired pages. Generation alone is not a new physical-printer inspection.
+Native PDF generation is the only print format. The site no longer prepares
+HTML editions for the browser's own Print or Save as PDF command; applied to a
+web reader, that command prints the page as shown, with different typography
+and pagination. Use the generated PDF for the designed layout; follow its
+paper, scale and duplex instructions when printing cards or paired pages.
+Generation alone is not a new physical-printer inspection.
 
 The browser-native implementation uses WebAssembly TeX and verified source,
 package and font files. It assembles the requested edition from its canonical
@@ -45,19 +48,17 @@ retains its original fonts throughout.
 
 Repeated sections and styles share verified source objects across editions;
 bounded compressed transfers reduce repetition without changing the TeX files
-the engine sees. Illustrated HTML readers may defer offscreen images, while
-PDF generation still includes every image selected by the edition.
+the engine sees. PDF generation includes every image selected by the edition.
 
 A generated file can be saved by the reader. A disposable browser cache may
 reuse an exact result only while its source, style and typesetter identities
 still match. That cache is optional and supplies no publication authority;
 neither a saved file nor an earlier printing substitutes for current inputs.
-Native TeX remains responsible for the authored layout; printing the HTML
-reader does not reproduce that layout.
+Native TeX remains responsible for the authored layout.
 
 Where an edition offers **Earlier printed edition**, that link preserves a verified
-historical fixed layout in the external archive. It is distinct from browser
-reflow and from a newly generated current print edition. The exact public snapshot,
+historical fixed layout in the external archive. It is distinct from a newly
+generated current print edition. The exact public snapshot,
 PDF hashes and delivery are recorded in `release/print-archive.json`.
 
 The shared provider style uses fast lossless PDF stream compression. In one

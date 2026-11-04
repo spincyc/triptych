@@ -147,15 +147,12 @@ class PublicAlphaBrowserProductsTest(unittest.TestCase):
         with self.assertRaisesRegex(self.tool.ReleaseError, "copied browser/data file does not match"):
             self.tool.verify_output(self.manifest, publications, output, False)
 
-    def test_private_preparation_is_not_copied_or_expected_in_public_artifact(self):
+    def test_product_without_public_data_delivery_is_refused(self):
         relative = "unusual/private-preparation.json"
         self.write_product(relative, {"html": "Private preparation serialization"})
         self.delivery[relative] = "print-preparation"
-        publications, output = self.build()
-        self.assertFalse((output / "browse" / relative).exists())
-        self.assertFalse(any("Private preparation serialization" in path.read_text()
-                             for path in output.rglob("*.json")))
-        self.tool.verify_output(self.manifest, publications, output, False)
+        with self.assertRaisesRegex(self.tool.ReleaseError, "unknown delivery ownership"):
+            self.build()
 
     def test_product_failure_is_checked_again_by_direct_independent_verify(self):
         publications, output = self.build()

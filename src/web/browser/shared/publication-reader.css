@@ -1,6 +1,6 @@
 /* Publication reading surface. This module is deliberately independent of the
-   Missal instrument and of web-print.css: canonical print preparation keeps its
-   own geometry and content identity. All reading adaptations are screen-only. */
+   Missal instrument; native TeX printing keeps its own geometry and content
+   identity. All reading adaptations are screen-only. */
 @media screen {
   html:has(.publication-reader) { scroll-behavior: auto; }
 
@@ -443,12 +443,6 @@
     text-decoration: none;
   }
 
-  .publication-reader__content .print-actions [data-web-print-status] {
-    flex-basis: 100%;
-    color: var(--reader-muted);
-  }
-
-  .publication-reader__content .print-actions [data-web-print-status]:empty { display: none; }
   .publication-reader__content :is(pre, code) { overflow-wrap: anywhere; }
   .publication-reader__content pre { max-width: 100%; overflow-x: auto; }
 

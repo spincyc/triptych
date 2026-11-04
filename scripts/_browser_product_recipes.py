@@ -53,8 +53,6 @@ RECIPES = (
     _recipe("readings", "structure/readings", ["tools/reading-plan", "structure", "--root", "{root}/src/sources/reading-plans"], _SOURCE, delivery="browser-data"),
     _recipe("rubrics", "structure/rubrics", ["tools/calendar-rubrics", "structure", "--root", "{root}/src/sources/calendars"], _CALENDAR, delivery="browser-data"),
     _recipe("sources", "structure/sources", ["tools/source-reader", "structure", "--strict"], _BROAD, delivery="browser-data"),
-    _recipe("print-editions", "print/preparation", ["scripts/_web_print_products.py", "--root", "{root}", "--out", "{out}"],
-            [*_BROAD, "release/papal-documents"], ["release/papal-documents.json"], delivery="print-preparation"),
 )
 
 

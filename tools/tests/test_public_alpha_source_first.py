@@ -578,29 +578,35 @@ class PublicAlphaSourceFirstTest(unittest.TestCase):
 
 
 class PublicAlphaSourceReaderIntegrationTest(unittest.TestCase):
-    def test_real_source_readers_fit_page_budget_and_ship_full_volume_controller(self) -> None:
+    def test_real_source_readers_fit_page_budget_and_carry_their_print_action(self) -> None:
         tool = fixtures.load_tool()
-        controller = "src/web/browser/shared/print-volume.js"
         expected_roots = {
             "reading-plans/narrative-spine-full-account-douay-rheims.html",
             "reading-plans/narrative-spine-full-account-king-james-version.html",
         }
-        with (
-            tool.held_repository_inputs(),
-            mock.patch.object(subprocess, "Popen", side_effect=AssertionError("source-reader regression invoked a subprocess")),
-        ):
-            pages = tool.source_print_pages()
-            self.assertTrue(pages, "real source-reader inventory is empty")
-            self.assertTrue(expected_roots <= pages.keys(), "full-account source roots are missing")
-            files = tool.web_data_files()
-            self.assertEqual(files["shared/print-volume.js"], tool.ROOT / controller)
-            for relative, page in pages.items():
-                with self.subTest(page=relative):
-                    rendered = tool.render_source_print_page(relative, page, False, {})
-                    self.assertLessEqual(len(rendered.encode("utf-8")), tool.PREVIEW_DOCUMENT_LIMIT)
-                    if relative in expected_roots:
-                        self.assertIn(controller, page["source_paths"])
-                        self.assertIn('src="../shared/print-volume.js"', page["html"])
+        with tool.held_repository_inputs():
+            # Native admission prepares source bundles with its own producers;
+            # the reader rendering below must not need another subprocess.
+            readers = tool.native_print_pages()["readers"]
+            with (
+                mock.patch.object(subprocess, "Popen", side_effect=AssertionError("source-reader regression invoked a subprocess")),
+            ):
+                self.check_source_readers(tool, expected_roots, readers)
+
+    def check_source_readers(self, tool, expected_roots, readers) -> None:
+        pages = tool.source_print_pages()
+        self.assertTrue(pages, "real source-reader inventory is empty")
+        self.assertTrue(expected_roots <= pages.keys(), "full-account source roots are missing")
+        self.assertNotIn("shared/print-volume.js", tool.web_data_files())
+        for relative, page in pages.items():
+            with self.subTest(page=relative):
+                rendered = tool.render_source_print_page(relative, page, False, {})
+                self.assertLessEqual(len(rendered.encode("utf-8")), tool.PREVIEW_DOCUMENT_LIMIT)
+                self.assertNotIn("print-volume", rendered)
+                if page.get("output_id"):
+                    target = readers[relative]
+                    self.assertEqual(target, "print/" + relative)
+                    self.assertIn('href="' + tool.relative_link(relative, target) + '?print=1"', rendered)
 
 
 if __name__ == "__main__":

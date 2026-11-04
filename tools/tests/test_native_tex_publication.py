@@ -429,7 +429,8 @@ class PublicAlphaNativeTeXTest(unittest.TestCase):
         self.body = b'{"schema":"test-native-bundle","body":"Exact canonical TeX"}\n'
         self.wasm = b"\0asm\1\0\0\0"
         self.catalog = {"schema": "triptych-native-tex-publication/v1", "source_revision": "a" * 40,
-                        "documents": {self.identity: {"document": self.identity, "edition": "main"}},
+                        "documents": {self.identity: {"id": self.identity, "document": self.identity,
+                                                      "edition": "main", "title": "Work"}},
                         "runtime": {"href": RUNTIME_ROUTE, "sha256": digest(b"{}\n"), "bytes": 3},
                         "selections": {self.identity: {"bundle_href": "native-tex/sources/work.json",
                             "bundle_sha256": digest(self.body), "bundle_bytes": len(self.body)}},
@@ -438,6 +439,10 @@ class PublicAlphaNativeTeXTest(unittest.TestCase):
                             ("native-tex/engine/engine.wasm", self.wasm), (RUNTIME_ROUTE, b"{}\n")):
             self.catalog["assets"][route] = {"body": body, "bytes": len(body), "sha256": digest(body)}
         self.base.write("scripts/_native_tex_publication.py", b"# fixture native transport\n")
+        self.base.write("src/common/native-print-service.toml", b'schema_version = 1\nendpoint = ""\n')
+        for helper in ("scripts/_native_print.py", "src/web/browser/shared/native-print.js",
+                       "src/web/browser/shared/native-print.css"):
+            self.base.write(helper, (fixtures.fixtures.REPOSITORY_ROOT / helper).read_bytes())
         module = type("NativePublication", (), {"catalog": lambda _, root: self.catalog})()
         patch = mock.patch.dict("sys.modules", {"_native_tex_publication": module})
         patch.start()
@@ -494,7 +499,7 @@ class PublicAlphaNativeTeXTest(unittest.TestCase):
         original = json.dumps(corpus).encode()
         relative = "src/web/data/structure/documents/corpus.json"
         self.base.write(relative, original)
-        with mock.patch.object(self.tool, "web_print_declared", return_value=True):
+        with mock.patch.object(self.tool, "native_tex_declared", return_value=True):
             projected = self.tool.projected_document_catalogue(
                 "browse/structure/documents/corpus.json", self.root / relative,
                 {"pdf/gpt/work.pdf": "web/gpt/work.html"},
@@ -515,6 +520,15 @@ class PublicAlphaNativeTeXTest(unittest.TestCase):
         self.assertIsNone(self.tool.source_to_output(
             "library/test.md", "library/test.html", "../pdf/gpt/held.pdf", {("gpt", "work")},
         ))
+
+    def test_reader_link_without_a_reviewed_reader_leads_to_its_print_page(self):
+        rewritten = self.tool.rewrite_links(
+            "library/test.md", "library/test.html",
+            "[Read](../web/gpt/work.html) · [Synthesis](../web/gpt/work-synthesis.html#top)\n",
+            {("gpt", "work"), ("gpt", "work-synthesis")},
+        )
+        self.assertEqual(rewritten,
+            "[Read](../web/gpt/work.html) · [Synthesis](../print/gpt/work-synthesis.html#top)\n")
 
     def install_reviewed_loader(self, extra=""):
         route = "native-tex/wasmtex-2026-47ff73bab1a2e548/wasmtex-pdftex.js"
