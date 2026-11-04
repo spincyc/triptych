@@ -79,118 +79,9 @@ PC-S39-A
 | Moral | Prefer Christ without despising creaturely duties; carry the cross without seeking harm; practice prudent hospitality even in a cup of water; live the baptismal death to sin. |
 | Anagogical | Those dead with Christ hope to live with him; mercy is sung forever, faithful service receives its reward, and Communion gives life ordered to lasting union in charity. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-*Canonical order governs; composition and narrated event remain distinct, and inherited and modern judgments remain separate where the evidence is uncertain.*
-
-<table style="width:90%;">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 34%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">First Reading</td>
-<td style="text-align: left;">2 Kgs. 4:8–11, 14–16a</td>
-<td style="text-align: left;">Judah or Babylonian exile horizon; exact place of final formation unresolved</td>
-<td style="text-align: left;">Exilic or early postexilic final form; precise date unresolved</td>
-</tr>
-<tr>
-<td style="text-align: left;">Narrated event</td>
-<td style="text-align: left;">2 Kgs. 4:8–37</td>
-<td style="text-align: left;">Shunem, northern kingdom of Israel</td>
-<td style="text-align: left;">Ninth century BC; precise date not recoverable</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Kings is received prophetic history; modern study locates its Deuteronomistic formation across monarchic and exilic transmission. Event: at Shunem (modern Sulam), a prominent woman provides a permanent upper room; the promise belongs to a longer birth–death–restoration story.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Entrance</td>
-<td style="text-align: left;">Ps. 47:2</td>
-<td style="text-align: left;">Israel’s worship; exact writing place unknown</td>
-<td style="text-align: left;">Korahite title; historical date uncertain</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The sons-of-Korah psalm acclaims God’s universal kingship. Its Entrance use summons all peoples.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Responsorial Psalm</td>
-<td style="text-align: left;">Ps. 89:2–3, 16–17, 18–19</td>
-<td style="text-align: left;">Israel / Jerusalem royal and covenant horizon</td>
-<td style="text-align: left;">Title names Ethan the Ezrahite; date uncertain</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Enduring covenant mercy precedes lament over the fallen Davidic king. Appointed verses retain praise, worship, and God-given strength while omitting that lament; the canonical tension remains relevant.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Comm. A</td>
-<td style="text-align: left;"><em>cf.</em> Ps. 103:1</td>
-<td style="text-align: left;">Israel; exact place unknown</td>
-<td style="text-align: left;">Traditional Davidic attribution; historical date uncertain</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The whole self is called to bless and remember; forgiveness, healing, compassion, and creaturely dependence follow. Communion A appoints the opening summons.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Gospel</td>
-<td style="text-align: left;">Matt. 10:37–42</td>
-<td style="text-align: left;">Canonical Gospel: traditional Palestine; modern Antioch proposal uncertain</td>
-<td style="text-align: left;">Traditionally early apostolic period; modern majority c. AD 80–90</td>
-</tr>
-<tr>
-<td style="text-align: left;">Narrated event</td>
-<td style="text-align: left;">Matt. 4:23; 10:1–42</td>
-<td style="text-align: left;">Galilee; exact speaking site unrecorded</td>
-<td style="text-align: left;">Public ministry, c. AD 28–29</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Tradition: the Apostle Matthew writing for Jewish believers. Modern judgment: the canonical Greek Gospel after AD 70. The missionary discourse closes by moving from costly allegiance and the cross to receiving apostles, prophets, righteous persons, and little ones.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Comm. B</td>
-<td style="text-align: left;">John 17:20–21</td>
-<td style="text-align: left;">Canonical Gospel: traditional Ephesus; modern history debated</td>
-<td style="text-align: left;">Late first century</td>
-</tr>
-<tr>
-<td style="text-align: left;">Narrated event</td>
-<td style="text-align: left;">John 13:1; 17:1–26</td>
-<td style="text-align: left;">Jerusalem, final supper</td>
-<td style="text-align: left;">c. AD 29–30</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Tradition associates the Apostle John with Ephesus. Christ’s prayer reaches future believers and orders unity toward the world’s belief. The Missal appoints it as Communion B.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Second Reading</td>
-<td style="text-align: left;">Rom. 6:3–4, 8–11</td>
-<td style="text-align: left;">Corinth, Achaia (present-day Greece), to churches at Rome</td>
-<td style="text-align: left;">c. AD 56–58</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Paul rejects the inference that abundant grace licenses sin. Baptism joins believers to Christ’s death and burial and orders new life; the reading omits vv. 5–7, then resumes with dying and living with Christ.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Acclamation</td>
-<td style="text-align: left;">1 Pet. 2:9</td>
-<td style="text-align: left;">From “Babylon” (received as Rome) to Christians in Asia Minor</td>
-<td style="text-align: left;">Traditional Petrine setting in AD 60s; authorship and date disputed</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Audience: Pontus, Galatia, Cappadocia, Asia, and Bithynia. Royal-priestly and holy-nation language receives Exodus in Christological ecclesial identity; the clause calls from darkness to light and to proclamation of God’s mighty acts.</td>
-</tr>
-</tbody>
-</table>
+No passage is dated here yet. This proper’s appointed citations have not been entered as a reviewed query input for the Scripture chronology corpus (research pending), so the corpus has been asked about no passage and no date is supplied from anywhere else.
 
 ## The Propers: Themes and Movement
 
@@ -383,6 +274,6 @@ The Prayer after Communion names the Eucharistic gift as the offered and receive
 
 - Edith Wharton, [“A Cup of Cold Water”](https://www.gutenberg.org/cache/epub/9190/pg9190-images.html), in *The Greater Inclination* (New York: Charles Scribner’s Sons, 1899), Project Gutenberg eBook 9190; story and U.S. public-domain status checked 2026-07-19.
 
-**Last revised (UTC):** 2026-11-04T03:59:07Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -79,117 +79,9 @@ PC-S37-A
 | Moral | Compassion must become prayer, obedient labor, gratuitous service, and action sustained by grace. Mission rejects both self-sufficiency and covetous possession of holy gifts. |
 | Anagogical | Reconciliation promises salvation through Christ’s risen life and perfected unity; unselected Communion A adds the image of lasting dwelling in God’s house. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-*Canonical order governs; composition and narrated event remain distinct, and inherited and modern judgments remain separate where the evidence is uncertain.*
-
-<table style="width:90%;">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 34%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">First Reading</td>
-<td style="text-align: left;">Exod. 19:2–6a</td>
-<td style="text-align: left;">Israel; exact place of final Pentateuchal formation unresolved</td>
-<td style="text-align: left;">First-millennium BC final form; precise date unresolved</td>
-</tr>
-<tr>
-<td style="text-align: left;">Narrated event</td>
-<td style="text-align: left;">Exod. 19:1–6a</td>
-<td style="text-align: left;">Sinai wilderness</td>
-<td style="text-align: left;">After deliverance from Egypt; exact historical date unresolved</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Tradition associates the Pentateuch with Moses; modern Catholic study recognizes extended transmission and literary formation. Date and Sinai’s geographical identity remain disputed. Event horizon: after deliverance and before covenant ratification, Israel is first borne by God and then called to covenant obedience.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Entrance; Communion A</td>
-<td style="text-align: left;">Ps. 27:<br />
-Entrance: <em>cf.</em> 7, 9;<br />
-Communion A: 4</td>
-<td style="text-align: left;">Israel; exact composition place unknown</td>
-<td style="text-align: left;">Traditional Davidic attribution; historical date uncertain</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Davidic title; historical date and site unrecoverable. Danger and petition yield to desire for God’s house. The Entrance plea and contemplative Communion A share one source.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Responsorial Psalm</td>
-<td style="text-align: left;">Ps. 100:1–2, 3, 5</td>
-<td style="text-align: left;">Israel’s worship; precise place unknown</td>
-<td style="text-align: left;">Date and human author unknown</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Anonymous thanksgiving summons all lands to service and confesses creaturely and covenant belonging. After Exodus 19, “people” and “flock” become the assembly’s answer to election and vocation.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Gospel</td>
-<td style="text-align: left;">Matt. 9:36–10:8</td>
-<td style="text-align: left;">Canonical Gospel: traditional Palestine; modern Antioch proposal uncertain</td>
-<td style="text-align: left;">Traditionally early apostolic period; modern majority c. AD 80–90</td>
-</tr>
-<tr>
-<td style="text-align: left;">Narrated event</td>
-<td style="text-align: left;">Matt. 4:23; 9:35–10:8</td>
-<td style="text-align: left;">Galilee; exact town unrecorded</td>
-<td style="text-align: left;">Public ministry, c. AD 28–29</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Tradition: the Apostle Matthew writing for Jewish believers. Modern judgment: the canonical Greek Gospel after AD 70. Event arc: Jesus’ teaching and healing circuit, compassion, harvest prayer, and the named Twelve’s first commission.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Acclamation</td>
-<td style="text-align: left;">Mark 1:15</td>
-<td style="text-align: left;">Canonical Gospel: traditional Rome; modern place debated</td>
-<td style="text-align: left;">Traditional AD 60s; modern proposals c. AD 65–70</td>
-</tr>
-<tr>
-<td style="text-align: left;">Narrated event</td>
-<td style="text-align: left;">Mark 1:14–15</td>
-<td style="text-align: left;">Galilee</td>
-<td style="text-align: left;">Opening ministry, c. AD 28</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Tradition associates Mark with Peter’s Roman preaching. The verse condenses fulfilled time, the near Kingdom, conversion, and faith; its role is to welcome the Gospel, not become another reading.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Comm. B</td>
-<td style="text-align: left;">John 17:11</td>
-<td style="text-align: left;">Canonical Gospel: traditional Ephesus; modern compositional history debated</td>
-<td style="text-align: left;">Late first century in tradition and many modern judgments</td>
-</tr>
-<tr>
-<td style="text-align: left;">Narrated event</td>
-<td style="text-align: left;">John 13:1; 17:1–26</td>
-<td style="text-align: left;">Jerusalem, final supper</td>
-<td style="text-align: left;">c. AD 29–30</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Tradition identifies the Apostle John and Ephesus. The final-supper clause prays for the disciples’ unity. Communion B is an appointed alternative, not evidence of use at every celebration.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Second Reading</td>
-<td style="text-align: left;">Rom. 5:6–11</td>
-<td style="text-align: left;">Corinth, Achaia (present-day Greece), to churches at Rome</td>
-<td style="text-align: left;">c. AD 56–58</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Paul addresses unvisited mixed Jewish and Gentile house churches at Rome. Helplessness and enmity yield through Christ’s death and reconciliation to salvation through his life. The Romans sequence remains semi-continuous.</td>
-</tr>
-</tbody>
-</table>
+No passage is dated here yet. This proper’s appointed citations have not been entered as a reviewed query input for the Scripture chronology corpus (research pending), so the corpus has been asked about no passage and no date is supplied from anywhere else.
 
 ## The Propers: Themes and Movement
 
@@ -372,6 +264,6 @@ The appointed John verse asks preservation in the Father’s name before it stat
 
 - Bible SuperSearch, [*Universal Client*, repository readme at revision 041936](https://sourceforge.net/p/biblesuper/ui-standalone/ci/master/tree/), GPL and commercial-use notice, checked 2026-07-19.
 
-**Last revised (UTC):** 2026-11-04T03:50:06Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

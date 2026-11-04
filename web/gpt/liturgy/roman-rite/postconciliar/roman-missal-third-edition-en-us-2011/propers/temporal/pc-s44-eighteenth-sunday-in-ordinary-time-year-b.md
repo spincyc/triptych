@@ -83,91 +83,9 @@ PC-S44-B
 | Moral | The baptized put away the old manner of life, let their minds be renewed, and seek Christ rather than reducing his gifts to immediate satisfaction. |
 | Anagogical | Food that perishes yields to the bread enduring to eternal life; the final prayer directs heavenly refreshment toward eternal redemption. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-<table style="width:90%;">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 34%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">First Reading</td>
-<td style="text-align: left;">Exod. 16:2–4, 12–15</td>
-<td style="text-align: left;">The wilderness of Sin, between Elim and Sinai</td>
-<td style="text-align: left;">Narrated in Israel’s wilderness journey</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Exodus presents Israel’s murmuring and God’s provision within the journey from Egypt to Sinai. The book’s final literary form addresses Israel through remembered deliverance and covenant formation; the narrated event and the composition of the received text are not the same date.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Entrance</td>
-<td style="text-align: left;">Ps. 69:2, 6 (modern 70)</td>
-<td style="text-align: left;">No place named in the appointed verses</td>
-<td style="text-align: left;">Before c. 165 BC; individual date uncertain</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The Douay–Rheims title names David, but neither that attribution nor the appointed pleas for help establishes an occasion or composition year. The <a href="https://bible.usccb.org/bible/psalms/0">NABRE Psalms introduction</a> supplies only the collection’s latest composition boundary and denies secure dating of an individual psalm.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Psalm</td>
-<td style="text-align: left;">Ps. 78:3–4, 23–25, 54</td>
-<td style="text-align: left;">Israel; the remembered route runs from Egypt and wilderness to the sanctuary land</td>
-<td style="text-align: left;">A historical psalm looking back over generations</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The psalm speaks as instruction received from the ancestors and retold to a later generation. Its rehearsal of manna interprets the wilderness event inside a longer history of divine fidelity and human forgetfulness.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Communion A</td>
-<td style="text-align: left;">Wis. 16:20</td>
-<td style="text-align: left;">Alexandria in Gigot’s account</td>
-<td style="text-align: left;">In or after 221–204 BC or 145–117 BC; disputed alternatives</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">In <a href="https://www.newadvent.org/cathen/15666a.htm">“Book of Wisdom,” <em>Catholic Encyclopedia</em></a>, Francis E. Gigot relates the book’s persecution setting to either Ptolemy IV (221–204 BC) or Ptolemy VII (145–117 BC), allowing publication after their deaths. These are alternative lower bounds, not a closed date range. The verse recalls wilderness manna without establishing its event date.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Acclamation</td>
-<td style="text-align: left;">Matt. 4:4b</td>
-<td style="text-align: left;">The wilderness of Judea in Matthew’s narrative</td>
-<td style="text-align: left;">Narrated at the beginning of Jesus’ public ministry</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The liturgical line is an excerpt from Jesus’ answer to the tempter and itself cites Deuteronomy. Matthew’s Gospel reached its early Christian audience after the narrated event; the excerpt does not transfer the temptation scene into John 6.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Gospel; Communion B</td>
-<td style="text-align: left;">John 6:<br />
-Gospel: 24–35;<br />
-Communion B: 35</td>
-<td style="text-align: left;">Across the Sea of Galilee; the discourse begins at Capharnaum</td>
-<td style="text-align: left;">First-century narrated ministry; Gospel composed later</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">John places the exchange on the day after the feeding and the crossing. The crowd seeks Jesus, invokes manna, and hears the discourse move from perishing food to the Father’s present gift and Christ’s self-identification as bread of life. Communion B repeats v. 35.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Second Reading</td>
-<td style="text-align: left;">Eph. 4:17, 20–24</td>
-<td style="text-align: left;">Addressed to gentile Christians in Asia Minor</td>
-<td style="text-align: left;">First century; Pauline authorship is traditional, while modern scholarship disputes direct authorship</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The selected verses belong to the letter’s transition from ecclesial confession to baptismal conduct. Verses 18–19 are not appointed; the boundary therefore moves directly from the prohibition in v. 17 to learning Christ in vv. 20–24.</td>
-</tr>
-</tbody>
-</table>
+No passage is dated here yet. This proper’s appointed citations have not been entered as a reviewed query input for the Scripture chronology corpus (research pending), so the corpus has been asked about no passage and no date is supplied from anywhere else.
 
 <span id="triptych:brief-synthesis:start" data-label="triptych:brief-synthesis:start"></span>
 
@@ -415,6 +333,6 @@ The reception search concentrated on direct exposition: Chrysostom’s *Homilies
 
 - GIRM 46–90, 352–367; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
 
-**Last revised (UTC):** 2026-11-04T03:59:07Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

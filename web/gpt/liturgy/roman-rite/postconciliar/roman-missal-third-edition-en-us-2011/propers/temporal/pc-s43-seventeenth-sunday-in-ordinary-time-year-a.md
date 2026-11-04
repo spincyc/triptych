@@ -79,124 +79,9 @@ PC-S43-A
 | Moral | Ask for wisdom rather than advantage; value God’s word beyond gain; choose the Kingdom joyfully; refuse fatalism and prosperity slogans; under the Communion alternatives, remember benefits or practice mercy and purity of heart. |
 | Anagogical | Eternal goods, the final sorting of the long-form net, conformity to the firstborn Son, Communion B’s promised vision, and salvation at work direct temporal choices toward communion with God. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-*Canonical order governs. Each dossier first locates the text’s formation and then, where distinct, its narrated event; inherited attribution and modern historical judgment are kept visible together.*
-
-<table style="width:83%;">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 18%" />
-<col style="width: 35%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>First Reading</strong></td>
-<td style="text-align: left;">1 Kgs. 3:5, 7–12</td>
-<td style="text-align: left;">Israel and Judah; final compilation place unknown</td>
-<td style="text-align: left;">Final literary form commonly exilic</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">1 Kgs. 3:4–15</td>
-<td style="text-align: left;">Gibeon, at the principal high place</td>
-<td style="text-align: left;">Early reign of Solomon, conventionally c. 970 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Kings belongs to the Deuteronomistic History and addresses the divided kingdoms through disputed editorial stages; the final form is commonly placed in the exile. That literary horizon is distinct from the dream scene in which a young king confesses inadequacy before the people entrusted to him (First Kings introduction and 3, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Entrance adaptation</strong></td>
-<td style="text-align: left;"><em>Cf.</em> Ps. 67:6–7, 36 (modern 68)</td>
-<td style="text-align: left;">Israelite liturgical tradition; exact place and first audience unknown</td>
-<td style="text-align: left;">Davidic superscription inherited; historical date unknown</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">This complex processional hymn praises God as warrior, defender of the vulnerable, giver of a household, and source of strength. Its superscription belongs to the received text but does not securely date its composition; the Entrance adapts selected clauses rather than relocating the entire Psalm (Psalms introduction and Psalm 68, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Communion A</strong></td>
-<td style="text-align: left;">Ps. 102:2 (modern 103)</td>
-<td style="text-align: left;">Israel; exact composition place and first audience unknown</td>
-<td style="text-align: left;">Davidic superscription inherited; historical date unknown</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The inherited superscription is not a recoverable event notice. The whole hymn summons the self to bless and remember, then unfolds divine mercy, healing, rescue, compassion, and creaturely frailty (Psalms introduction and Psalm 103, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Responsorial Psalm</strong></td>
-<td style="text-align: left;">Ps. 119:57, 72, 76–77, 97a, 127–130</td>
-<td style="text-align: left;">Israel’s Torah and wisdom tradition; exact place unknown</td>
-<td style="text-align: left;">Anonymous; date unknown</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The alphabetic meditation supplies no author, narrated event, or site. These separated stanzas name the Lord as portion, value instruction beyond wealth, ask covenant mercy, love the commands, and welcome the understanding their unfolding gives (Psalm 119, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Communion B</strong></td>
-<td style="text-align: left;">Matt. 5:7–8</td>
-<td style="text-align: left;">Greek Matthew; probably Syria, with Antioch plausible</td>
-<td style="text-align: left;">Commonly c. AD 80–90</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">Matt. 5:1–12</td>
-<td style="text-align: left;">Galilee; mountain site unrecorded</td>
-<td style="text-align: left;">Public ministry, conventionally c. AD 28</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Ancient tradition attributes the Gospel to the apostle Matthew; modern study commonly identifies an otherwise unknown Jewish Christian author writing for a mixed Jewish and Gentile community after AD 70. The final Greek Gospel’s setting is distinct from the Galilean sermon it narrates (Matthew introduction and 5, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Acclamation source</strong></td>
-<td style="text-align: left;"><em>Cf.</em> Matt. 11:25</td>
-<td style="text-align: left;">Greek Matthew; probably Syria, with Antioch plausible</td>
-<td style="text-align: left;">Commonly c. AD 80–90</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">Matt. 11:20–30</td>
-<td style="text-align: left;">Galilee; exact place unrecorded</td>
-<td style="text-align: left;">Public ministry, conventionally c. AD 28–29</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The adaptation draws from Jesus’ thanksgiving after judgment sayings concerning Galilean towns. The Gospel’s traditional attribution and modern compositional judgment remain as above, while the narrated setting belongs to Jesus’ ministry rather than the evangelist’s later audience (Matthew introduction and 11, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Gospel: long / short</strong></td>
-<td style="text-align: left;">Matt. 13:44–52 / 13:44–46</td>
-<td style="text-align: left;">Greek Matthew; probably Syria, with Antioch plausible</td>
-<td style="text-align: left;">Commonly c. AD 80–90</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">Matt. 13:36, 44–52</td>
-<td style="text-align: left;">A house in the Sea-of-Galilee teaching region; town unrecorded</td>
-<td style="text-align: left;">Galilean ministry, conventionally c. AD 28</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The short branch proclaims treasure and pearl only. The long branch also proclaims the net, final sorting, the disciples’ response, and the trained householder’s new and old treasures. The Gospel’s compositional audience must not be confused with the house and ministry region inside the narrative (Matthew introduction and 13, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Second Reading</strong></td>
-<td style="text-align: left;">Rom. 8:28–30</td>
-<td style="text-align: left;">Corinth in Achaia, to established house churches at Rome</td>
-<td style="text-align: left;">c. AD 56–58</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Paul writes near the end of his eastern mission to a Roman community he did not found, comprising believers from Jewish and Gentile backgrounds. These verses stand within groaning, Spirit-aided prayer, suffering, and inseparable divine love; the Lectionary reads them semi-continuously (Romans introduction and 8, <em>NABRE</em>).</td>
-</tr>
-</tbody>
-</table>
+No passage is dated here yet. This proper’s appointed citations have not been entered as a reviewed query input for the Scripture chronology corpus (research pending), so the corpus has been asked about no passage and no date is supplied from anywhere else.
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -542,6 +427,6 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 
 - Margaret Murray Robertson, [*Christie Redfern’s Troubles*](https://www.gutenberg.org/files/21226/21226-h/21226-h.htm) (1866), ch. XVII; Romans 8:28 within a narrative dispute over trust and suffering. Public domain in the United States.
 
-**Last revised (UTC):** 2026-09-24T18:04:15Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

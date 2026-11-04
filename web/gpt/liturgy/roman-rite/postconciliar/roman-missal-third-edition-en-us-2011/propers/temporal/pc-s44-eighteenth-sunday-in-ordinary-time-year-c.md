@@ -83,98 +83,9 @@ PC-S44-C
 | Moral | Numbered days, poverty of spirit, and the putting away of greed train a responsible freedom for stewardship and mercy. |
 | Anagogical | The hidden life will appear with Christ in glory, while goods stored only for oneself end at death. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-<table style="width:90%;">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 34%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Entrance</td>
-<td style="text-align: left;">Ps. 69:2, 6 (modern 70)</td>
-<td style="text-align: left;">No place named in the appointed verses</td>
-<td style="text-align: left;">Before c. 165 BC; individual date uncertain</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The Douay–Rheims title names David, but neither that attribution nor the appointed pleas for help establishes an occasion or composition year. The <a href="https://bible.usccb.org/bible/psalms/0">NABRE Psalms introduction</a> supplies only the collection’s latest composition boundary and denies secure dating of an individual psalm.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Responsorial Psalm</td>
-<td style="text-align: left;">Ps. 90:3–6, 12–14, 17; response Ps. 95:8</td>
-<td style="text-align: left;">Israel/Judah; exact setting unknown</td>
-<td style="text-align: left;">Undated; received heading associates Moses</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The psalm moves from dust, passing time, and grass to numbered days, mercy, and the work of human hands. The heading is inherited attribution, not proof of individual Mosaic composition. The appointed response is drawn from another psalm.</td>
-</tr>
-<tr>
-<td style="text-align: left;">First Reading</td>
-<td style="text-align: left;">Eccl. 1:2; 2:21–23</td>
-<td style="text-align: left;">Probably Judea, commonly Jerusalem; exact place unknown</td>
-<td style="text-align: left;">Late Persian or early Hellenistic period, often placed in the third century BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The book frames Qoheleth as a Davidic royal wisdom speaker. Its unnamed author, exact date, and place remain debated. The discontinuous selection joins the programmatic “vanity” saying to toil, anxiety, and property left to another; Hebrew <em>hevel</em> can suggest breath, transience, or enigma, not simple nihilism.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Communion A</td>
-<td style="text-align: left;">Wis. 16:20</td>
-<td style="text-align: left;">Alexandrian Jewish setting commonly proposed</td>
-<td style="text-align: left;">Late Hellenistic period, before the first century AD</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The verse recalls divinely given food in Israel’s wilderness history; here it functions as a Missal antiphon, not a Lectionary reading.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Acclamation</td>
-<td style="text-align: left;">Matt. 5:3</td>
-<td style="text-align: left;">Galilee in the narrated discourse; composition setting uncertain</td>
-<td style="text-align: left;">Canonical Greek Matthew commonly dated late first century</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The beatitude supplies an authorized liturgical lens of poverty of spirit; it is not part of Luke’s narrated inheritance dispute.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Gospel</td>
-<td style="text-align: left;">Luke 12:13–21</td>
-<td style="text-align: left;">Journey-to-Jerusalem teaching scene; exact narrated location unstated</td>
-<td style="text-align: left;">Canonical Greek Luke commonly dated about AD 80–90; exact place unknown</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">An inheritance request prompts Jesus to refuse the requested adjudication and warn the crowd about greed through the rich-fool parable. The narrative does not establish either brother’s civil merits.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Communion B</td>
-<td style="text-align: left;">John 6:35</td>
-<td style="text-align: left;">Capernaum in the narrated discourse</td>
-<td style="text-align: left;">Canonical John commonly placed late first century</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Jesus identifies himself as the bread of life. This alternative remains distinct from the Wisdom antiphon.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Second Reading</td>
-<td style="text-align: left;">Col. 3:1–5, 9–11</td>
-<td style="text-align: left;">Addressed to the church at Colossae in Asia Minor</td>
-<td style="text-align: left;">Traditionally a Pauline imprisonment, about AD 60–62; authorship and circumstances debated</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The canonical letter names Paul and Timothy and presents a prison setting. The appointed cut is discontinuous: it moves from life hidden with Christ and the mortification of greed to the old and new person and unity in Christ.</td>
-</tr>
-</tbody>
-</table>
+No passage is dated here yet. This proper’s appointed citations have not been entered as a reviewed query input for the Scripture chronology corpus (research pending), so the corpus has been asked about no passage and no date is supplied from anywhere else.
 
 <span id="triptych:brief-synthesis:start" data-label="triptych:brief-synthesis:start"></span>
 
@@ -407,6 +318,6 @@ This source-first guide treats the recurring U.S. Year C formula, not a parish r
 
 - Charles Ives, *Psalm 90* (1923–24).
 
-**Last revised (UTC):** 2026-11-04T03:59:07Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

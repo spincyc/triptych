@@ -83,118 +83,9 @@ PC-S44-A
 | Moral | Hear before spending on what cannot satisfy; bring inadequate resources to Christ; distribute what is received; resist scarcity’s temptation to dismiss the needy; remain confident without treating suffering as unreal. |
 | Anagogical | The everlasting covenant, universal satisfaction, inseparable love, heavenly bread, and eternal redemption direct present hunger toward the final communion God alone gives. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-*Canonical order governs. Composition and narrated event are distinguished, and inherited attribution is not silently identified with modern historical judgment.*
-
-<table style="width:90%;">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 34%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Entrance</td>
-<td style="text-align: left;">Ps. 69:2, 6 (modern 70)</td>
-<td style="text-align: left;">Israelite worship; exact place unresolved</td>
-<td style="text-align: left;">Davidic superscription; historical date uncertain</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">A brief urgent lament adapted from Psalm 40 asks immediate aid. The Missal appoints its opening and closing pleas; its use does not establish the psalm’s original date or a cycle-specific relation to Matthew.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Responsorial Psalm</td>
-<td style="text-align: left;">Ps. 145:8–9, 15–18</td>
-<td style="text-align: left;">Israelite worship, likely Jerusalem horizon</td>
-<td style="text-align: left;">Traditional Davidic attribution; many modern studies place final form after the exile</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">This alphabetic hymn praises God’s kingship, compassion, justice, and care for the vulnerable. The appointed strophes place creaturely dependence and God’s open hand beside nearness to those who call in truth.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Comm. A</td>
-<td style="text-align: left;">Wis. 16:20</td>
-<td style="text-align: left;">Alexandrian Jewish setting, written in Greek</td>
-<td style="text-align: left;">Usually late first century BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Wisdom retells manna within an address to God, contrasting Israel’s nourishment with judgments upon oppressors. The antiphon selects its richly theological description of heavenly food.</td>
-</tr>
-<tr>
-<td style="text-align: left;">First Reading</td>
-<td style="text-align: left;">Isa. 55:1–3</td>
-<td style="text-align: left;">Exilic audience associated with Babylon; final literary setting addresses Zion’s restoration</td>
-<td style="text-align: left;">Sixth century BC; commonly placed near the end of the Babylonian exile</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The book is traditionally received under Isaiah’s name; modern study ordinarily identifies chapters 40–55 with an exilic prophetic voice. The invitation closes that collection: the displaced poor are summoned to hear, live, and receive the enduring Davidic covenant without price.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Acclamation</td>
-<td style="text-align: left;">Matt. 4:4b</td>
-<td style="text-align: left;">Canonical Gospel: traditional Palestine; modern Antioch proposal remains debated</td>
-<td style="text-align: left;">Traditionally apostolic; modern majority c. AD 80–90</td>
-</tr>
-<tr>
-<td style="text-align: left;">Narrated event</td>
-<td style="text-align: left;">Matt. 4:1–11</td>
-<td style="text-align: left;">Judean wilderness</td>
-<td style="text-align: left;">Beginning of Jesus’ public ministry, c. AD 27–28</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Jesus answers the tempter with Deuteronomy 8:3: bodily bread is real but not sufficient apart from God’s life-giving word. The acclamation prepares hearing without denying the Gospel crowd’s bodily hunger.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Gospel</td>
-<td style="text-align: left;">Matt. 14:13–21</td>
-<td style="text-align: left;">Canonical Gospel as above</td>
-<td style="text-align: left;">As above</td>
-</tr>
-<tr>
-<td style="text-align: left;">Narrated event</td>
-<td style="text-align: left;">Matt. 14:13–21</td>
-<td style="text-align: left;">A deserted place reached from the Galilean lakeshore; exact site uncertain</td>
-<td style="text-align: left;">Galilean ministry, c. AD 28–29</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">After John the Baptist’s death, Jesus withdraws, receives the pursuing crowd with compassion, heals, and feeds them. Twelve baskets remain after the disciples distribute the blessed and broken loaves.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Comm. B</td>
-<td style="text-align: left;">John 6:35</td>
-<td style="text-align: left;">Canonical Gospel: traditionally associated with Ephesus; compositional history debated</td>
-<td style="text-align: left;">Late first century</td>
-</tr>
-<tr>
-<td style="text-align: left;">Narrated event</td>
-<td style="text-align: left;">John 6:22–59</td>
-<td style="text-align: left;">Capernaum synagogue after the feeding across the sea</td>
-<td style="text-align: left;">Galilean ministry, c. AD 28–29</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Within the Bread of Life discourse Christ identifies himself as the bread satisfying those who come and believe. This appointed alternative is not evidence that it was selected on the dated occurrence.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Second Reading</td>
-<td style="text-align: left;">Rom. 8:35, 37–39</td>
-<td style="text-align: left;">Written from Corinth to Christians at Rome</td>
-<td style="text-align: left;">c. AD 56–58</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Paul concludes the chapter’s movement through suffering, Spirit-aided prayer, and divine purpose. The omitted v. 36 cites persecuted Israel; the appointed conclusion names afflictions and cosmic powers while grounding victory in God’s love in Christ.</td>
-</tr>
-</tbody>
-</table>
+No passage is dated here yet. This proper’s appointed citations have not been entered as a reviewed query input for the Scripture chronology corpus (research pending), so the corpus has been asked about no passage and no date is supplied from anywhere else.
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -549,6 +440,6 @@ The feeding ends in visible abundance, but Romans locates security in inseparabl
 
 - Matthew Arnold, [*Dover Beach*](https://anthology.lib.virginia.edu/exist/apps/LiC/work/Arnold/arnold-dover-beach.xml), lines 29–37, in *New Poems* (Macmillan, 1867), Literature in Context first-edition transcription.
 
-**Last revised (UTC):** 2026-11-04T03:59:07Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
