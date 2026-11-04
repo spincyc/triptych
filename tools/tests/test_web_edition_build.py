@@ -68,7 +68,7 @@ class EditionSelectionTests(unittest.TestCase):
 
 
 class ReaderUniverseTests(unittest.TestCase):
-    """Every eligible leaf has readers, companions included."""
+    """Every eligible and conditional leaf has readers, companions included."""
 
     def test_reader_outputs_are_exactly_the_admitted_eligible_and_conditional_outputs(self):
         rows = DRIVER.reader_outputs()
@@ -76,7 +76,7 @@ class ReaderUniverseTests(unittest.TestCase):
         self.assertEqual(len(ids), len(rows))
         for row in rows:
             declaration = row["declaration"]
-            self.assertEqual(declaration["eligibility"], "eligible")
+            self.assertIn(declaration["eligibility"], {"eligible", "conditional"})
             self.assertNotIn("withdrawn", declaration)
             self.assertEqual(row["release_status"], "alpha")
         companions = [row for row in rows if row["edition"] != "main"]
@@ -89,6 +89,11 @@ class ReaderUniverseTests(unittest.TestCase):
                 provider = path.relative_to(ROOT / "src").parts[0]
                 self.assertNotIn(f"publication:{provider}/{declaration['document']}", ids)
 
+    def test_no_copy_of_a_web_edition_is_tracked(self):
+        import subprocess
+        tracked = subprocess.run(["git", "ls-files", "--", "web"], cwd=ROOT, check=True,
+                                 capture_output=True, text=True).stdout
+        self.assertEqual(tracked, "")
 
 
 if __name__ == "__main__":

@@ -642,14 +642,14 @@
           "required_result": "the web-edition declaration must be valid for this leaf, and a leaf declared eligible must use no blocking construct"
         },
         {
-          "id": "web-edition-tracked",
-          "command": "test -f web/{provider}/{proper}.md && git ls-files --error-unmatch web/{provider}/{proper}.md >/dev/null 2>&1",
-          "required_result": "the canonical web edition must exist at web/{provider}/{proper}.md and be tracked, not merely generated into the build tree"
+          "id": "web-edition-converts",
+          "command": "python3 tools/tpt web-edition check --leaf {provider}/{proper} && ! git ls-files --error-unmatch web/{provider}/{proper}.md >/dev/null 2>&1",
+          "required_result": "the canonical web edition and its companions must convert from current sources with every fidelity audit; no copy of their text is tracked, since the site converts the same sources when it is built"
         },
         {
           "id": "no-synthesis-web-edition",
-          "command": "test ! -e web/{provider}/{proper}-synthesis.md && test ! -e src/{provider}/{proper}-synthesis/web-edition.toml",
-          "required_result": "the synthesis is a derived companion of the canonical leaf and has no web edition of its own; a separate -synthesis web leaf is a second prose authority"
+          "command": "test ! -e src/{provider}/{proper}-synthesis/web-edition.toml",
+          "required_result": "the synthesis is a derived companion of the canonical leaf: its reader is converted from its own entrypoint under the leaf's declaration, and a separate -synthesis web leaf would be a second prose authority"
         },
         {
           "id": "canonical-release-record",
@@ -673,8 +673,8 @@
         },
         {
           "id": "catalog-read-link-resolves",
-          "command": "awk -v p={provider} -v d={proper} 'index($0, \"](../pdf/\" p \"/\" d \".pdf)\") > 0 && index($0, \"](../web/\" p \"/\" d \".html)\") > 0 { found = 1 } END { exit !found }' library/traditional-latin-mass.md && git ls-files --error-unmatch web/{provider}/{proper}.md >/dev/null 2>&1 && test ! -e web/{provider}/{proper}.html",
-          "required_result": "the catalog's `Read` link must name this provider's own web edition in the same row as this provider's PDF link, and the tracked Markdown the site renders that `.html` from must exist; the `.html` itself is generated at site build time from web/{provider}/{proper}.md and is never tracked, so a tracked `.html` beside it would be a second, hand-made page the build does not produce"
+          "command": "awk -v p={provider} -v d={proper} 'index($0, \"](../pdf/\" p \"/\" d \".pdf)\") > 0 && index($0, \"](../web/\" p \"/\" d \".html)\") > 0 { found = 1 } END { exit !found }' library/traditional-latin-mass.md && python3 tools/tpt web-edition check --leaf {provider}/{proper} && test ! -e web/{provider}/{proper}.html",
+          "required_result": "the catalog's `Read` link must name this provider's own web edition in the same row as this provider's PDF link, and that reader must be one the site builds: the leaf's outputs convert from current sources. The `.html` is generated at site build time and never tracked, so a file beside it would be a second, hand-made page the build does not produce"
         },
         {
           "id": "other-provider-cell-unchanged",
@@ -688,8 +688,8 @@
         },
         {
           "id": "site-release-bindings",
-          "command": "make check-release-bindings && grep -qF -- web/{provider}/{proper}.md release/public-alpha.json",
-          "required_result": "every recorded site source must still hash to what is on disk, and this publication's tracked web edition must be one of them; `ADOPT=1` is what records a newly tracked edition, and an unrecorded source is a page the site authorization does not cover"
+          "command": "make check-release-bindings && grep -qF -- src/{provider}/{proper}/publication.toml release/public-alpha.json",
+          "required_result": "every recorded site source must still hash to what is on disk, and this publication's manifest must be one of them; `ADOPT=1` is what records a newly recognized source, and an unrecorded source is a page the site authorization does not cover. Web editions are built from these sources and are not themselves recorded"
         },
         {
           "id": "site-public-alpha",
@@ -703,8 +703,8 @@
         },
         {
           "id": "site-web-editions-current",
-          "command": "make check-web-editions-current && test -f web/{provider}/{proper}.md",
-          "required_result": "every tracked web edition must be exactly what current sources produce, this one included; the installed edition is the reviewed one only while the source it was converted from has not moved under it"
+          "command": "make check-web-editions PROVIDER={provider} && python3 tools/tpt web-edition check --leaf {provider}/{proper}",
+          "required_result": "every web reader output of this proper, companions included, must convert from its current canonical TeX with every fidelity audit; no copy of a web edition is tracked, so the reader is current by construction"
         }
       ],
       "pass_transition": "ACCEPTED",

@@ -909,18 +909,25 @@ def publication(root: Path, provider: str, document: str, *, mode: str = "print"
     marker = f"<!-- triptych-publication-id: {publication_id} -->"
     if text.splitlines().count(marker) != 1:
         raise ValueError("catalog must carry exactly one canonical publication marker")
-    web = root / "web" / provider / f"{document}.md"
+    # No copy of a web edition is tracked: the site converts it from the TeX
+    # when it is built (guidance/web-editions.md). The reviewed conversion is
+    # current only while a fresh conversion of today's sources is the same
+    # bytes, and every reader output of the leaf, companions included, must
+    # convert with its fidelity audits.
     receipt = json.loads((leaf / WEB_RECEIPT).read_text())
     generated = root / "build/web" / provider / f"{document}.md"
     if receipt != {"schema": 1, "provider": provider, "document": document,
                    "web": str(generated.relative_to(root)), "sha256": digest(generated)}:
         raise ValueError("web edition differs from the snapshot prepared for web review")
-    if digest(web) != digest(generated):
-        raise ValueError("installed web edition differs from the reviewed conversion")
-    run(root, "git", "ls-files", "--error-unmatch", str(web.relative_to(root)))
-    for suffix in ("-synthesis", "-homily"):
-        if (root / "web" / provider / f"{document}{suffix}.md").exists():
-            raise ValueError("derived companions must not create separate web prose authorities")
+    fresh_root = root / ".scratch/proper-study-web" / provider
+    fresh = fresh_root / provider / f"{document}.md"
+    fresh.unlink(missing_ok=True)
+    run(root, sys.executable, str(root / "tools/web-edition"), "--provider", provider,
+        "--output", str(fresh_root), document)
+    if digest(fresh) != digest(generated):
+        raise ValueError("the reviewed web conversion is not what current sources convert to")
+    run(root, sys.executable, str(root / "tools/web-edition"), "check",
+        "--leaf", f"{provider}/{document}")
     run(root, sys.executable, str(root / "tools/check-web-edition"),
         "--provider", provider, "--document", document)
 

@@ -1,10 +1,10 @@
 """A web edition, set for a terminal by the site's own renderer and pandoc.
 
-The tracked, reviewed Markdown under `web/<provider>/<leaf>.md` is what the
-site renders (guidance/web-editions.md), and the catalogue names the page it
-becomes, `web/<provider>/<leaf>.html`: the generator writes that name from
-this very file (scripts/_corpus.py:837-854), so the one is followed back to the
-other and no path is composed from anything else.
+A web edition's Markdown is converted from its canonical TeX when the site is
+built, into the `web-editions` browser product (guidance/web-editions.md); no
+copy of it is tracked. The catalogue names the page it becomes,
+`web/<provider>/<output>.html`, and that page names the output whose verified
+product is read here, so no path is composed from anything else.
 
 The Markdown is turned into HTML by `scripts/_markdown_render.render_markdown`,
 the site's one locked primitive, the call `tools/public-alpha`'s `render_page`
@@ -16,11 +16,14 @@ set by pandoc's `ansi` writer at the reading width; measured over all 137
 editions, not one visible letter or digit of the site's HTML is lost, tables
 are wrapped to the width, and only an unbreakable URL runs past it.
 
-Nothing falls back. If the renderer refuses or pandoc is missing, the reason
-is what the reader is shown, in the place of the text.
+Nothing falls back. If the products are not built, the renderer refuses or
+pandoc is missing, the reason is what the reader is shown, in the place of the
+text.
 """
 from __future__ import annotations
 
+import hashlib
+import json
 import re
 import shutil
 import subprocess
@@ -35,17 +38,36 @@ _SEQUENCE = re.compile(r"\x1b\[([0-9;]*)m|\x1b\]8;[^;\x1b\x07]*;([^\x1b\x07]*)(?
 _SAFE_URL = re.compile(r"[A-Za-z][A-Za-z0-9+.-]*:[^\s\"'<>\\]+")
 
 
-def source_of(web: str) -> Path:
-    """The tracked Markdown a catalogue's `web` page is rendered from."""
+_EDITIONS: dict = {}
+
+
+def edition_of(web: str) -> tuple[str, str]:
+    """The output identity and Markdown a catalogue's `web` page is rendered from."""
     if not (web.startswith("web/") and web.endswith(".html")):
         raise Refused(f"The catalogue names {web!r} as a web edition, which is not a page under web/.")
-    path = (ROOT / (web[: -len(".html")] + ".md")).resolve()
-    if ROOT / "web" not in path.parents:
-        raise Refused(f"The catalogue names {web!r}, which leads outside web/.")
-    if not path.is_file():
-        raise Refused(f"The catalogue names {web}, but its tracked source {path.relative_to(ROOT)} "
-                      "is not in this checkout, so there is nothing here to set.")
-    return path
+    identity = web[len("web/"):-len(".html")]
+    if not re.fullmatch(r"[a-z0-9-]+/[a-z0-9][a-z0-9./-]*", identity) or ".." in identity.split("/"):
+        raise Refused(f"The catalogue names {web!r}, which is not a web edition's page.")
+    if "files" not in _EDITIONS:
+        try:
+            from _browser_products import ProductError, verified_products
+        except ImportError as error:  # scripts/ is on the path whenever lectern is
+            raise Refused(f"The browser product store could not be loaded: {error}") from error
+        try:
+            with verified_products(ROOT, product_ids=["web-editions"]) as products:
+                _EDITIONS["files"] = {
+                    name: path.read_bytes() for name, path in products.files.items()
+                    if name.startswith("web-editions/")}
+        except ProductError as error:
+            raise Refused(
+                "Web editions are converted from their TeX when the site is built, and that "
+                f"product is not ready here: {error}. Build it with `tools/browser-products build` "
+                "(the pinned pandoc in src/common/web-edition-toolchain.toml) and read again."
+            ) from error
+    body = _EDITIONS["files"].get(f"web-editions/{identity}.json")
+    if body is None:
+        raise Refused(f"The catalogue names {web}, but no web edition of {identity} was built.")
+    return identity, json.loads(body)["markdown"]
 
 
 def _html(markdown_text: str) -> str:
@@ -185,18 +207,18 @@ def set_for_terminal(web: str, columns: int) -> dict:
 
     Raises Refused, with the reason, where the text cannot be set faithfully.
     """
-    source = source_of(web)
+    identity, markdown_text = edition_of(web)
     columns = max(30, int(columns))
-    key = (str(source), source.stat().st_mtime_ns, columns)
+    key = (identity, hashlib.sha256(markdown_text.encode("utf-8")).hexdigest(), columns)
     held = _SET.get(key)
     if held is not None:
         return held
-    html = _html(source.read_text(encoding="utf-8"))
+    html = _html(markdown_text)
     runs = _runs(_ansi(html, columns))
     from importlib.metadata import version
 
     return _SET.put(key, {
-        "source": str(source.relative_to(ROOT)),
+        "source": f"web-editions/{identity}",
         "runs": runs,
         "columns": columns,
         "markdown": version("Markdown"),

@@ -767,8 +767,8 @@
         },
         {
           "id": "web-editions-current",
-          "command": "make check-web-editions-current",
-          "required_result": "The reviewed web editions must derive from their current canonical sources."
+          "command": "python3 tools/tpt web-edition check --leaf {provider}/{proper}",
+          "required_result": "Every web reader output of this study, companions included, must convert from its current canonical TeX with every fidelity audit."
         }
       ],
       "pass_transition": "ACCEPTED",

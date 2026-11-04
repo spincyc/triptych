@@ -4,9 +4,10 @@
 
 Generate the reader-facing web edition of the canonical leaf into the build
 tree, so the next stage can judge whether the conversion is faithful before
-anything is installed. Generation is tier one and installs nothing: the
-tracked artifact under `web/{provider}/` is written later, by
-`install-publication`, and only from an edition that passed evaluation.
+anything is published. Generation produces the edition for evaluation only:
+no web edition is tracked, and the site converts the same sources itself when
+it is built, so the evaluated bytes are what readers get only while the
+sources stand.
 
 The web edition is generated from the **canonical** leaf. The synthesis is a
 derived companion of that leaf and has no web edition of its own; do not

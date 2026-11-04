@@ -394,19 +394,34 @@ class WebEditionTests(unittest.TestCase):
                          "the pinned Markdown (requirements-public-alpha.txt) or pandoc is not installed, "
                          "so a web edition is not set here")
     def test_a_web_edition_is_set_whole(self) -> None:
-        done = webedition.set_for_terminal("web/claude/biographies/origen.html", 80)
+        # The edition is converted from its TeX here, exactly as the site's
+        # web-editions product converts it, and read by its output identity.
+        converted = subprocess.run(
+            [sys.executable, str(ROOT / "tools/web-edition"), "--product-json", "claude/biographies/origen"],
+            cwd=ROOT, check=True, capture_output=True, text=True).stdout
+        files = {"web-editions/claude/biographies/origen.json": converted.encode("utf-8")}
+        with patch.dict(webedition._EDITIONS, {"files": files}):
+            done = webedition.set_for_terminal("web/claude/biographies/origen.html", 80)
         text = "".join(run for run, _ in done["runs"])
         self.assertIn("Last revised (UTC):", text)
         self.assertIn("Reuse and rights.", text)
+        self.assertEqual(done["source"], "web-editions/claude/biographies/origen")
 
     @unittest.skipIf(_markdown_at_the_pin(), "the pinned Markdown is installed, so there is no refusal to see")
     def test_the_renderer_refuses_any_markdown_but_the_pinned_one(self) -> None:
-        with self.assertRaises(Refused):
+        files = {"web-editions/claude/biographies/origen.json": b'{"markdown": "# Origen"}'}
+        with patch.dict(webedition._EDITIONS, {"files": files}), self.assertRaises(Refused):
             webedition.set_for_terminal("web/claude/biographies/origen.html", 80)
 
     def test_a_path_outside_web_is_refused(self) -> None:
-        with self.assertRaises(Refused):
-            webedition.source_of("web/claude/../../etc/passwd.html")
+        for web in ("web/claude/../../etc/passwd.html", "print/claude/origen.html", "web/Claude/X.html"):
+            with self.subTest(web=web), self.assertRaises(Refused):
+                webedition.edition_of(web)
+
+    def test_an_edition_that_was_not_built_is_refused(self) -> None:
+        with patch.dict(webedition._EDITIONS, {"files": {}}):
+            with self.assertRaisesRegex(Refused, "no web edition"):
+                webedition.edition_of("web/claude/biographies/origen.html")
 
 
 @unittest.skipUnless(TEXTUAL, "Textual is not installed (python-textual); the reader's drawing is not tested here")
@@ -1464,30 +1479,29 @@ class ReaderOptionTrimTests(unittest.TestCase):
         import tempfile
         from lectern.repo import _Cache
 
-        lock = (ROOT / "requirements-public-alpha.txt").read_bytes()
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            (root / "web").mkdir()
-            source = root / "web" / "reader-control.md"
-            source.write_text("**Strong** and [link](https://example.invalid/reader).", encoding="utf-8")
-            (root / "requirements-public-alpha.txt").write_bytes(lock)
-            with patch.object(webedition, "ROOT", root), patch.object(webedition, "_SET", _Cache(24)):
-                first = webedition.set_for_terminal("web/reader-control.html", 80)
-                self.assertIs(webedition.set_for_terminal("web/reader-control.html", 80), first)
-                self.assertEqual(first["source"], "web/reader-control.md")
-                self.assertTrue(any("$texts-color" in style for _, style in first["runs"]))
-                self.assertEqual(next(iter(webedition._SET.items)),
-                                 (str(source), source.stat().st_mtime_ns, 80))
-                other_width = webedition.set_for_terminal("web/reader-control.html", 81)
-                self.assertIsNot(other_width, first)
-                self.assertEqual(other_width["columns"], 81)
-                before = source.stat()
-                os.utime(source, ns=(before.st_atime_ns, before.st_mtime_ns + 1000000000))
-                self.assertIsNot(webedition.set_for_terminal("web/reader-control.html", 80), first)
-                other = root / "web" / "other-control.md"
-                other.write_bytes(source.read_bytes())
-                self.assertEqual(webedition.set_for_terminal("web/other-control.html", 80)["source"],
-                                 "web/other-control.md")
+        import hashlib
+        import json as json_module
+
+        def edition(markdown):
+            return json_module.dumps({"markdown": markdown}).encode("utf-8")
+
+        markdown = "**Strong** and [link](https://example.invalid/reader)."
+        files = {"web-editions/reader/control.json": edition(markdown)}
+        with patch.dict(webedition._EDITIONS, {"files": files}), patch.object(webedition, "_SET", _Cache(24)):
+            first = webedition.set_for_terminal("web/reader/control.html", 80)
+            self.assertIs(webedition.set_for_terminal("web/reader/control.html", 80), first)
+            self.assertEqual(first["source"], "web-editions/reader/control")
+            self.assertTrue(any("$texts-color" in style for _, style in first["runs"]))
+            self.assertEqual(next(iter(webedition._SET.items)),
+                             ("reader/control", hashlib.sha256(markdown.encode()).hexdigest(), 80))
+            other_width = webedition.set_for_terminal("web/reader/control.html", 81)
+            self.assertIsNot(other_width, first)
+            self.assertEqual(other_width["columns"], 81)
+            files["web-editions/reader/control.json"] = edition(markdown + " Changed.")
+            self.assertIsNot(webedition.set_for_terminal("web/reader/control.html", 80), first)
+            files["web-editions/reader/other.json"] = edition(markdown)
+            self.assertEqual(webedition.set_for_terminal("web/reader/other.html", 80)["source"],
+                             "web-editions/reader/other")
 
     def test_locked_dependency_and_pandoc_refusals_have_no_fallback(self) -> None:
         import _markdown_render

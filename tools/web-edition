@@ -3850,6 +3850,32 @@ def convert_rows(rows: list[dict], *, jobs: int | None = None) -> list[dict]:
     return records
 
 
+def check_main(argv: list[str]) -> int:
+    parser = argparse.ArgumentParser(
+        prog="web-edition check",
+        description="Convert every web reader output (or one leaf's) with all fidelity "
+                    "audits, writing nothing.")
+    parser.add_argument("--leaf", action="append", default=[],
+                        help="provider/leaf: check only that leaf's outputs, companions included")
+    parser.add_argument("--jobs", type=int, default=None)
+    arguments = parser.parse_args(argv)
+    try:
+        rows = reader_outputs()
+        if arguments.leaf:
+            wanted = set(arguments.leaf)
+            rows = [row for row in rows if f"{row['provider']}/{row['canonical']}" in wanted]
+            missing = wanted - {f"{row['provider']}/{row['canonical']}" for row in rows}
+            if missing:
+                raise ConversionError("no web reader for: " + ", ".join(sorted(missing)))
+        records = convert_rows(rows, jobs=arguments.jobs)
+    except ConversionError as error:
+        print(f"web-edition check: {error}", file=sys.stderr)
+        return 1
+    figures = sum(len(record["figures"]) for record in records)
+    print(f"Web editions convert: {len(records)} reader output(s), {figures} figure(s).")
+    return 0
+
+
 def build_products(out: Path, *, jobs: int | None = None) -> dict:
     """Write every reader output as one JSON product below ``out``.
 
@@ -3964,6 +3990,8 @@ def main() -> int:
         return products_main(sys.argv[2:])
     if sys.argv[1:2] == ["figures"]:
         return figures_main(sys.argv[2:])
+    if sys.argv[1:2] == ["check"]:
+        return check_main(sys.argv[2:])
     if sys.argv[1:2] == ["--product-json"] and len(sys.argv) == 3:
         return product_json(sys.argv[2])
     parser = argparse.ArgumentParser(description=__doc__)

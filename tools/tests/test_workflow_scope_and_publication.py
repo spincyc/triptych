@@ -384,7 +384,7 @@ class PublicationAcceptanceTests(unittest.TestCase):
             "site-document-catalogue", "site-public-alpha",
             "site-release-bindings", "site-web-editions-current",
             "synthesis-pdf-installed", "synthesis-release-record",
-            "web-edition-declared", "web-edition-tracked", "web-edition-valid",
+            "web-edition-converts", "web-edition-declared", "web-edition-valid",
         ])
         self.assertIn(PLAN, checks["authorized-scope"])
         self.assertIn("pdf/{provider}/{proper}.pdf",
@@ -395,9 +395,9 @@ class PublicationAcceptanceTests(unittest.TestCase):
         self.assertIn("pdf/{provider}/{proper}.pdf",
                       checks["generation-metadata"])
         self.assertIn("check-web-edition", checks["web-edition-valid"])
-        self.assertIn("web/{provider}/{proper}.md", checks["web-edition-tracked"])
-        self.assertIn("git ls-files", checks["web-edition-tracked"])
-        self.assertIn("web/{provider}/{proper}-synthesis.md",
+        self.assertIn("web-edition check --leaf {provider}/{proper}", checks["web-edition-converts"])
+        self.assertIn("git ls-files", checks["web-edition-converts"])
+        self.assertIn("src/{provider}/{proper}-synthesis/web-edition.toml",
                       checks["no-synthesis-web-edition"])
         self.assertIn("release/publications/{provider}/{proper}.json",
                       checks["canonical-release-record"])
@@ -843,7 +843,7 @@ class CatalogWiringTests(PublicationTree):
         rendered = _substitute_args(command, {"proper": DOC,
                                               "provider": self.PROVIDER},
                                     quote=True)
-        awk = rendered.split(" && git ls-files")[0]
+        awk = rendered.split(" && python3 tools/tpt web-edition")[0]
         self.assertEqual(subprocess.run(awk, shell=True, cwd=self.tree,
                                         capture_output=True).returncode, 0)
         catalog.write_text(
@@ -853,22 +853,18 @@ class CatalogWiringTests(PublicationTree):
             subprocess.run(awk, shell=True, cwd=self.tree,
                            capture_output=True).returncode, 0)
 
-    def test_the_read_link_is_bound_to_the_tracked_markdown_source(self):
-        """The site renders the `.html`; the `.md` is what can be tracked.
+    def test_the_read_link_is_bound_to_a_reader_the_site_builds(self):
+        """The site converts the reader from TeX; nothing under `web/` is tracked.
 
-        `release/public-alpha.json`'s page map turns
-        `web/<provider>/<leaf>.md` into `web/<provider>/<leaf>.html` at site
-        build time, and no `.html` under `web/` is tracked. So the check
-        proves the source the catalog's link is rendered from, and refuses a
-        hand-made `.html` sitting beside it.
+        The catalog's `Read` link names `web/<provider>/<leaf>.html`, which the
+        site builds from the leaf's canonical TeX (guidance/web-editions.md). So
+        the check proves the leaf's outputs convert, and refuses a hand-made
+        `.html` sitting where the build writes one.
         """
         command = gate_check("publication-gates", "catalog-read-link-resolves")
-        self.assertIn("git ls-files --error-unmatch web/{provider}/{proper}.md",
-                      command)
+        self.assertIn("web-edition check --leaf {provider}/{proper}", command)
         self.assertIn("test ! -e web/{provider}/{proper}.html", command)
-        self.assertEqual(
-            len(list((ROOT / "web").rglob("*.html"))), 0,
-            "the tracked web tree holds Markdown; the HTML is the build's")
+        self.assertFalse((ROOT / "web").exists(), "no web edition is tracked")
 
     def test_the_wired_catalog_passes_every_catalog_check_together(self):
         self.wire()
@@ -926,7 +922,7 @@ class SiteValidationTests(unittest.TestCase):
         "site-release-bindings": "check-release-bindings",
         "site-public-alpha": "check-public-alpha",
         "site-document-catalogue": "check-document-catalogue",
-        "site-web-editions-current": "check-web-editions-current",
+        "site-web-editions-current": "check-web-editions",
     }
 
     def test_the_gate_runs_the_site_checks_itself(self):
@@ -943,8 +939,7 @@ class SiteValidationTests(unittest.TestCase):
         for check_id, target in self.SITE_CHECKS.items():
             with self.subTest(check=check_id):
                 command = gate_check("publication-gates", check_id)
-                self.assertTrue(command.startswith(f"make {target} && "),
-                                command)
+                self.assertRegex(command, rf"^make {re.escape(target)}(?: [A-Z_]+=\S+)* && ")
                 self.assertRegex(makefile, rf"(?m)^{re.escape(target)}:")
 
     def test_each_site_check_is_bound_to_this_publication(self):
@@ -969,7 +964,7 @@ class SiteValidationTests(unittest.TestCase):
     def test_the_binding_clauses_name_the_surface_each_check_validated(self):
         checks = {check_id: gate_check("publication-gates", check_id)
                   for check_id in self.SITE_CHECKS}
-        self.assertIn("web/{provider}/{proper}.md release/public-alpha.json",
+        self.assertIn("src/{provider}/{proper}/publication.toml release/public-alpha.json",
                       checks["site-release-bindings"])
         self.assertIn("release/publications/{provider}/{proper}.json",
                       checks["site-public-alpha"])
@@ -979,7 +974,7 @@ class SiteValidationTests(unittest.TestCase):
                       checks["site-document-catalogue"])
         self.assertNotIn("src/web/data/", checks["site-document-catalogue"])
         self.assertNotIn("pdf/", checks["site-document-catalogue"])
-        self.assertIn("web/{provider}/{proper}.md",
+        self.assertIn("web-edition check --leaf {provider}/{proper}",
                       checks["site-web-editions-current"])
 
     def test_the_corpus_clause_finds_a_published_proper_and_not_an_unwired_one(self):

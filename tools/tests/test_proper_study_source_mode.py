@@ -66,9 +66,9 @@ class SourceFixture(unittest.TestCase):
         self.generated = self.root / "build/web/gpt" / f"{DOCUMENT}.md"
         self.generated.parent.mkdir(parents=True)
         self.generated.write_text("# Isolated canonical conversion fixture\n\nComplete fixture text.\n")
-        self.web = self.root / "web/gpt" / f"{DOCUMENT}.md"
-        self.web.parent.mkdir(parents=True)
-        shutil.copyfile(self.generated, self.web)
+        # No web edition is tracked; the gate converts current sources afresh,
+        # which this fixture's converter double reproduces byte for byte.
+        self.fresh_conversion = self.generated.read_text()
         study.snapshot(self.root, "gpt", DOCUMENT, web=True)
 
     def write_manifest(self):
@@ -80,9 +80,15 @@ class SourceFixture(unittest.TestCase):
         with patch.object(schema.subprocess, "run", return_value=subprocess.CompletedProcess([], 0, "", "")):
             return study.source_state(self.root, "gpt", DOCUMENT)
 
+    def convert(self, root, *arguments):
+        if "tools/web-edition" in str(arguments[1]) and "--output" in arguments:
+            out = Path(arguments[arguments.index("--output") + 1]) / "gpt" / f"{arguments[-1]}.md"
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(self.fresh_conversion)
+
     def publish(self, **kwargs):
         with patch.object(study, "scope", return_value=CATALOG), \
-                patch.object(study, "run") as commands, \
+                patch.object(study, "run", side_effect=self.convert) as commands, \
                 patch.object(schema.subprocess, "run", return_value=subprocess.CompletedProcess([], 0, "", "")):
             study.publication(self.root, "gpt", DOCUMENT, **kwargs)
             return commands.call_args_list
@@ -105,7 +111,13 @@ class SourceFixture(unittest.TestCase):
         self.assertEqual(list(state["identities"]["outputs"]), ["canonical", "synthesis", "homily"])
         self.assertEqual(state["publication_mode"], "source")
         self.assertTrue(any("check-web-edition" in str(call) for call in commands))
+        self.assertTrue(any("'check', '--leaf'" in str(call) for call in commands))
         self.assertFalse(any("--pdf" in str(call) for call in commands))
+
+    def test_a_reviewed_conversion_current_sources_no_longer_produce_fails(self):
+        self.fresh_conversion = "# Isolated canonical conversion fixture\n\nChanged since review.\n"
+        with self.assertRaisesRegex(ValueError, "not what current sources convert to"):
+            self.publish(mode="source")
 
     def test_missing_required_semantic_role_fails_source_gate(self):
         # A required record is declared by its registered path, so the role

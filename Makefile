@@ -103,9 +103,6 @@ ARCH_OS_RELEASE ?= /etc/os-release
 SOURCE_ROOT := src/$(PROVIDER)
 BUILD_ROOT := build/$(PROVIDER)
 WEB_BUILD_ROOT := build/web/$(PROVIDER)
-WEB_ROOT := web/$(PROVIDER)
-# The drift gate compares every provider's tracked tree, not only $(PROVIDER).
-WEB_CURRENT_ROOT := build/.web-current
 # src/common holds shared sources and document-type templates, never a provider:
 # a template named main.tex is not a publication entrypoint.
 ALL_MAIN_SOURCES := $(shell find src -mindepth 2 -path 'src/common/*' -prune -o -type f -name main.tex -print 2>/dev/null | sort)
@@ -257,7 +254,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-propers-census check-propers-structure \
 	check-metadata check-web-editions \
 	check-proper-components \
-	web-editions install-web-editions check-web-editions-current web-figures \
+	web-editions web-figures check-web-edition-conversions \
 	check-sources check-research-sources check-deployment-sources check-source-library \
 	check-document-schemas check-document-content check-artifact-delivery \
 	check-snapshot-delivery check-papal-inputs \
@@ -691,10 +688,9 @@ help:
 		'make check-curriculum-structure  Build and audit every Ecclesiastical Latin publication hierarchy' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
 		'make check-web-editions  Validate per-leaf web-edition eligibility declarations' \
-		'make web-editions  Generate Markdown for every eligible leaf of $$PROVIDER' \
-		'make install-web-editions  Publish reviewed Markdown into the tracked web/ tree' \
-		'make check-web-editions-current  Prove every tracked web edition matches current sources' \
+		'make web-editions  Generate Markdown for every eligible leaf of $$PROVIDER into build/web for inspection' \
 		'make web-figures  Compile every web edition figure (TikZ to SVG) for the site build' \
+		'make check-web-edition-conversions  Convert every web reader from its TeX with all fidelity audits' \
 		'make check-document-catalogue  Confirm titles, identities, and the catalogue against authoritative sources' \
 		'make document-catalogue  Rewrite the browser catalogue of every document' \
 		'make source-projection  Rewrite the browser reading of the source library' \
@@ -763,53 +759,15 @@ check-source-reader: | prepare-browser-data
 	@$(PYTHON) $(SOURCE_READER_TOOL) check
 	@$(PYTHON) $(SOURCE_READER_TOOL) structure --check
 
-# Generation is tier one: reproducible Markdown for review, never installed here.
+# Web readers are browser products: `tools/browser-products` converts every
+# reader output from its canonical TeX (the `web-editions` family) and no copy
+# of their text is tracked. This target writes Markdown under build/web for
+# inspecting one provider's eligible leaves; it is never an input.
 web-editions:
 	@set -eu; \
 		leaves=$$($(PYTHON) $(WEB_EDITION_CHECKER) --provider '$(PROVIDER)' --list-eligible); \
 		[ -n "$$leaves" ] || { echo 'No eligible leaf declares a web edition: $(PROVIDER)' >&2; exit 1; }; \
 		$(PYTHON) $(WEB_EDITION_TOOL) --provider '$(PROVIDER)' $$leaves
-
-# Installation is tier two: the reviewed Markdown becomes the tracked artifact.
-install-web-editions:
-	@set -eu; \
-		for leaf in $$($(PYTHON) $(WEB_EDITION_CHECKER) --provider '$(PROVIDER)' --list-eligible); do \
-			generated='$(WEB_BUILD_ROOT)/'"$$leaf.md"; \
-			destination='$(WEB_ROOT)/'"$$leaf.md"; \
-			[ -f "$$generated" ] || { echo "Missing generated web edition: $$generated" >&2; exit 1; }; \
-			mkdir -p "$${destination%/*}"; \
-			temporary="$$destination.tmp.$$$$"; \
-			trap 'rm -f -- "$$temporary"' 0 1 2 15; \
-			$(INSTALL) -m 0644 "$$generated" "$$temporary"; \
-			mv -f -- "$$temporary" "$$destination"; \
-			trap - 0 1 2 15; \
-		done
-
-# Anti-drift: the tracked artifact must be exactly what current sources produce.
-check-web-editions-current:
-	@set -eu; \
-		rm -rf -- '$(WEB_CURRENT_ROOT)'; \
-		status=0; \
-		for provider in $(PROVIDERS); do \
-			leaves=$$($(PYTHON) $(WEB_EDITION_CHECKER) --provider "$$provider" --list-eligible); \
-			$(PYTHON) $(WEB_EDITION_TOOL) --provider "$$provider" \
-				--output '$(WEB_CURRENT_ROOT)' $$leaves > /dev/null; \
-			for leaf in $$leaves; do \
-				tracked="web/$$provider/$$leaf.md"; \
-				if [ ! -f "$$tracked" ]; then \
-					echo "Missing tracked web edition: $$tracked" >&2; status=1; \
-				elif ! cmp -s -- "$$tracked" '$(WEB_CURRENT_ROOT)'"/$$provider/$$leaf.md"; then \
-					echo "Tracked web edition is stale: $$tracked" >&2; status=1; \
-				fi; \
-			done; \
-		done; \
-		for tracked in $$(find web -type f -name '*.md' 2>/dev/null | sort); do \
-			[ -f '$(WEB_CURRENT_ROOT)/'"$${tracked#web/}" ] || { \
-				echo "Tracked web edition has no eligible source: $$tracked" >&2; status=1; }; \
-		done; \
-		rm -rf -- '$(WEB_CURRENT_ROOT)'; \
-		[ "$$status" -eq 0 ] || exit 1; \
-		echo 'Tracked web editions match current sources.'
 
 # Figures are compiled from the TikZ sources the web-edition products name, and
 # left alone while current. Locally they compile with the host's TeX; Pages sets
@@ -817,6 +775,11 @@ check-web-editions-current:
 WEB_FIGURES_RUNNER ?= host
 web-figures: | prepare-browser-data
 	@$(PYTHON) $(WEB_EDITION_TOOL) figures --runner '$(WEB_FIGURES_RUNNER)'
+
+# Every reader output converts from its current TeX with every fidelity audit,
+# whatever state the product cache is in. Nothing is written.
+check-web-edition-conversions:
+	@$(PYTHON) $(WEB_EDITION_TOOL) check
 
 check-public-alpha: check-curriculum-source-rights | prepare-browser-data
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) check
@@ -966,7 +929,7 @@ check-expensive: $(EXPENSIVE_SOURCE_CHECKS)
 # a successful publication check does not assert their results.
 check: check-document-schemas check-artifact-delivery check-snapshot-delivery \
 	check-papal-inputs check-metadata \
-	check-web-editions check-web-editions-current \
+	check-web-editions check-web-edition-conversions \
 	check-proper-components \
 	check-roman-sanctuary-artwork check-artwork-manifests \
 	check-release-bindings check-promised-deliverables check-public-alpha \

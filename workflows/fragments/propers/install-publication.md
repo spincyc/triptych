@@ -2,29 +2,23 @@
 
 ## Your task
 
-Make the reviewed work reachable: install the evaluated web edition as the
-tracked artifact, create the per-publication release records, wire this
+Make the reviewed work reachable: confirm the evaluated web edition is what
+the site will build, create the per-publication release records, wire this
 provider's catalog cell, and refresh the release bindings. Everything this
 stage installs has already been accepted or evaluated. Nothing here judges
 the work again, and nothing here rewrites it.
 
 ## Steps
 
-### 1. Install the web edition
+### 1. Confirm the web edition
 
-Install the reviewed Markdown as the tracked artifact:
-
-```
-install -m 0644 build/web/{provider}/{proper}.md \
-    web/{provider}/{proper}.md
-```
-
-Create the destination directory first if it does not exist. Install exactly
-the file the evaluator read; do not regenerate it here, because the reviewed
-edition and the installed edition must be the same bytes.
-
-Do not create `web/{provider}/{proper}-synthesis.md`. The synthesis is a
-derived companion of the canonical leaf and has no web edition.
+No web edition is installed or tracked: the site converts this proper and its
+companions from their canonical TeX when it is built (`guidance/web-editions.md`).
+Confirm that the file the evaluator read, `build/web/{provider}/{proper}.md`, is
+still what current sources convert to, and that
+`tools/tpt web-edition check --leaf {provider}/{proper}` passes. Record the
+evaluation in the leaf's `web-edition.toml` as its inspection (`inspected`,
+`inspected_by`, `inspection`).
 
 ### 2. Create the release records
 
@@ -71,19 +65,20 @@ no row, return `BLOCKED` naming the missing row rather than inventing one.
 
 ### 4. Refresh the release bindings
 
-The catalog and the new web edition are reader-facing sources, so their
-hashes and the site source list must be brought up to date:
+The catalog is a reader-facing source, so its hash and the site source list
+must be brought up to date:
 
 ```
 make refresh-release-bindings ADOPT=1
 ```
 
-`ADOPT=1` is what admits the newly tracked web edition as a site source.
+`ADOPT=1` is what admits a newly recognized source, such as the leaf's
+sources, into the site source list.
 
 Do not run the site checks yourself and report that they passed. Since
 version 13 the publication gates run `check-release-bindings`,
 `check-public-alpha`, `check-document-catalogue` and
-`check-web-editions-current` as gate checks of their own, judged by exit
+`web-edition check` as gate checks of their own, judged by exit
 code. A stale binding or an unrecorded source is a wiring defect for those
 gates to catch and for `publication-revision` to repair, and a worker's
 account of a check it ran is not the evidence acceptance rests on.
@@ -91,9 +86,9 @@ account of a check it ran is not the evidence acceptance rests on.
 ## Result
 
 Return a worker result with `disposition: "PASS"`, `artifact_path` set to
-`web/{provider}/{proper}.md`, and a summary naming: the installed web
-edition, both release records and whether each was created or already
-present, the catalog row and cell you filled, and the marker you added.
+`release/publications/{provider}/{proper}.json`, and a summary naming: the
+recorded web inspection, both release records and whether each was created or
+already present, the catalog row and cell you filled, and the marker you added.
 
 Return `disposition: "BLOCKED"` when the publication cannot be wired from
 here: no catalog row for this identity is the standing case, because writing

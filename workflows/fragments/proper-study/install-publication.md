@@ -7,11 +7,16 @@ this source/HTML stage. No generated PDF belongs in Git or the ordinary site
 artifact. A changed source or evidence closure returns to its actual review
 owner; a receipt cannot renew acceptance.
 
-Install the reviewed canonical Markdown from
-`build/web/{provider}/{proper}.md` to `web/{provider}/{proper}.md`, byte for
-byte, and include that Markdown with the canonical source changes for the
-publication gate. Do not create a separate companion web authority. Confirm
-that its exact conversion identity still matches the independent web review.
+There is no web edition to install. The site converts this study and its
+synthesis and homily companions from their canonical TeX whenever it is built,
+and no copy of their text is tracked (`guidance/web-editions.md`). Confirm that
+the reviewed conversion `build/web/{provider}/{proper}.md` is still exactly what
+current sources convert to and that `tools/tpt web-edition check --leaf
+{provider}/{proper}` passes. Record the passed web review in the leaf's
+`web-edition.toml` as its inspection: `inspected` (the review date),
+`inspected_by` (the reviewing provider and run) and `inspection` (the method and
+conversion hash), following `guidance/web-editions.md`. A companion reader is
+converter-verified unless a review of its own conversion passed.
 
 Create or confirm one per-publication release record for each declared source
 output using the repository's release tooling. The catalog is
