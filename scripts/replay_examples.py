@@ -31,7 +31,7 @@ than a tool, and each one printed on every run:
   EXEMPT    an invocation that must not be run: it reaches a model or the
             network, or it writes tracked release state.
   REQUIRES  an invocation whose precondition this checkout may not hold, such
-            as a built PDF or the locked dependency set.
+            as a built PDF, the locked dependency set or a TeX program.
   STALE     a transcript already known to be wrong when this landed, with what
             moved. It can only shrink: an entry that starts matching fails.
 """
@@ -81,6 +81,7 @@ SCRATCH: dict[str, tuple[str, ...]] = {
     "index-bible": (".scratch/example-index", ".scratch/example-bibles"),
     "mass-propers": (".scratch/example-propers",),
     "mass-ordinary": (".scratch/example-ordinary",),
+    "native-print-compile": (".scratch/example-native-print-compile",),
     "source-reader": (".scratch/example-sources",),
     "pdf-review": ("build/example-review",),
     "reading-plan": (".scratch/example-reading",),
@@ -226,6 +227,14 @@ REQUIRES: dict[str, tuple[str, str]] = {
     "tools/pdf-review --output build/example-review build/core-last-20.pdf": (
         "path:build/core-last-20.pdf",
         "a built PDF; no target produces this one, so a fresh clone has no copy",
+    ),
+    "tools/native-print-compile compile --out .scratch/example-native-print-compile/proper": (
+        ("program:pdflatex", "program:pdfinfo"),
+        "host pdfTeX and poppler; the Pages gate runs them in the pinned TeX Live image",
+    ),
+    "tools/native-print-compile compile --out .scratch/example-native-print-compile/papal": (
+        ("program:xelatex", "program:xdvipdfmx", "program:pdfinfo"),
+        "host XeTeX and poppler; the Pages gate runs them in the pinned TeX Live image",
     ),
     "tools/lectern snapshot --surface day --date 2026-10-22 --size 120x36": (
         "pins:requirements-tui.txt",
@@ -486,6 +495,9 @@ def unmet(requirement: str | tuple[str, ...]) -> str | None:
                 return entry
         elif kind == "pins":
             if not pins_installed(ROOT / value):
+                return entry
+        elif kind == "program":
+            if not shutil.which(value):
                 return entry
         else:
             raise AssertionError(f"unknown requirement kind: {entry}")

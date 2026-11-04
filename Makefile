@@ -284,6 +284,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	add-publication doc review-doc install-doc check check-installed \
 	check-all check-tests \
 	check-browser-static check-browser-gate check-browser-harnesses \
+	check-native-print-compile \
 	check-examples recapture-examples \
 	altar-server-guides review-altar-server-guides install-altar-server-guides \
 	check-staleness measure-staleness explain-staleness rebaseline-doc \
@@ -1066,6 +1067,19 @@ check-browser-static:
 # how the site looks, because no visual contract has been accepted.
 check-browser-gate:
 	@node tools/tests/corpus_browser_gate.mjs
+
+# Every admitted native print edition, compiled from the exact source bundle
+# the site serves and the engine that bundle names, under the browser's pass
+# policy. It fails on any compile failure, missing PDF, unsettled edition,
+# admitted/materialized set difference, or file opened outside the bundle and
+# the pinned browser runtime's `texFiles`. Pages runs this as its own job in the
+# pinned TeX Live image before deploying; here it needs host pdfTeX, XeTeX,
+# xdvipdfmx and poppler, with Latin Babel support. Outside `check` because it
+# typesets the whole print universe (about 12 CPU-minutes).
+NATIVE_PRINT_COMPILE_OUT ?= .scratch/native-print-compile
+check-native-print-compile:
+	@$(PYTHON) tools/tpt native-print-compile prepare --out '$(NATIVE_PRINT_COMPILE_OUT)'
+	@$(PYTHON) tools/tpt native-print-compile compile --out '$(NATIVE_PRINT_COMPILE_OUT)'
 
 # The five reader harnesses drive real Chromium over the preview build, and
 # until this target existed nothing ran them: the suite only syntax-checked

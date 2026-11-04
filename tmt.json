@@ -463,6 +463,21 @@
       "stage": "draft",
       "usage": "papal-acta {acquire,index,register,manifest,list,check} [--series ASS|AAS] [--json]"
     },
+    "native-print-compile": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Compile every admitted native print edition from its bundle; fail closed.",
+      "requires": [
+        "print-document",
+        "render-sanctuary-dictionary",
+        "typeset-bible"
+      ],
+      "stage": "draft",
+      "usage": "native-print-compile {prepare,compile} [--out DIR] [--only ID]... [--runtime PATH] [--jobs N]"
+    },
     "native-print-service": {
       "idempotent": true,
       "json": true,
