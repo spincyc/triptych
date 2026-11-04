@@ -28,95 +28,27 @@
 | Moral | Read God’s command so that it becomes merciful action: receive sufficiency as gift, bless God in every circumstance, approach the wounded, intercede for sinners, and spend oneself without self-justification. |
 | Anagogical | The promised destination is eternal life: day-and-night prayer, new-covenant glory, the Samaritan’s promised return, and vivifying Communion draw the pilgrim through the Church toward resurrection, judgment, and unbroken praise. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-<table style="width:83%;">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 18%" />
-<col style="width: 35%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Proper</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Offertory</td>
-<td style="text-align: left;">Exod. 32:11–14 (adapted; cf. v. 12)</td>
-<td style="text-align: left;">Sinai/Horeb, the covenant mountain in the wilderness</td>
-<td style="text-align: left;">2014 Loreto/Feeney edition’s uninitialled apparatus: AM 2518; its Exodus frame also prints 1491 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;"><em>Narrated event: the golden-calf crisis after Moses’ first forty days on the mountain. A compiled note drawing on Jerome records a fast on the seventeenth day of the fourth month as a memorial of the shattered tablets; it does not demonstrate the event’s date.</em></td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Catholic tradition receives Moses as the Pentateuch’s principal inspired author. The 1906 Pontifical Biblical Commission allows pre-Mosaic sources, secretarial aid, inspired additions, and later linguistic updating while maintaining substantial Mosaic authenticity. The 2014 Loreto/Feeney edition’s uninitialled chronological apparatus places the calf chapter in AM 2518 and elsewhere prints 1491 BC for this Exodus frame; the old edition’s two systems are reported without harmonizing them. The 1908 <em>Catholic Encyclopedia</em> instead concluded for about 1277 BC. Current chronologies dispute both date and the mountain’s modern coordinates.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Gradual</td>
-<td style="text-align: left;">Ps. 33:2–3 (modern 34:1–2)</td>
-<td style="text-align: left;">The court of Achis at Geth and David’s escape</td>
-<td style="text-align: left;">Traditional Achis episode: AM 2944 / c. 1060 BC; before accession</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The traditional title connects the psalm with David’s feigned madness and escape during Saul’s persecution (1 Sam. 21). It calls the ruler Abimelech where Samuel names Achis; Basil, Augustine, and other Catholic commentators preserve solutions to the name. The alphabetic form orders praise from beginning to end; modern authorship and dating remain debated.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Introit</td>
-<td style="text-align: left;">Ps. 69:2–4 (modern 70:1–3)</td>
-<td style="text-align: left;">David in danger; traditionally during Absalom’s revolt</td>
-<td style="text-align: left;">Traditional Absalom setting: c. 1024–1023 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The received title assigns the psalm to David “in remembrance.” Theodoret and the Haydock tradition place its urgent prayer during Absalom’s rebellion; no exact day or site is supplied. The poem repeats Ps. 39:14–18, and modern composition judgments remain unsettled.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Alleluia</td>
-<td style="text-align: left;">Ps. 87:2 (modern 88:1)</td>
-<td style="text-align: left;">Korahite maskil of Heman/Eman the Ezrahite, or David speaking in his name; no exact site</td>
-<td style="text-align: left;">Traditional Davidic–early Solomonic horizon, c. 1055–975 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Haydock’s preferred identification makes Heman young under David and renowned for wisdom under Solomon; other received commentators allow David to speak in his name. The ancient heading supplies attribution rather than an episode. The psalm is also received as the voice of Christ in his Passion, death, and burial; modern dating remains open.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Communion</td>
-<td style="text-align: left;">Ps. 103:13–15 (modern 104:13–15)</td>
-<td style="text-align: left;">The created world under God’s providence; no single human site</td>
-<td style="text-align: left;">Davidic attribution: traditionally 1085–1015 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The Latin psalter’s heading, “For David himself,” places the hymn within the conventional Davidic lifetime without naming an occasion. The Hebrew lacks that heading, and modern dating is undetermined. Bread, wine, and oil first praise created providence; their liturgical and sacramental fullness belongs to the Church’s received spiritual reading.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Gospel</td>
-<td style="text-align: left;">Luke 10:23–37</td>
-<td style="text-align: left;">Traditional provenance: Achaia; Aherne reports many writers: Caesarea; Jesus’ speaking place unnamed</td>
-<td style="text-align: left;">Composition c. AD 58–64; Lapide: Oct.–Nov. AD 33; Maas: Sept.–Dec. AD 28</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;"><em>Narrated teaching: Cornelius a Lapide’s expressly probable harmony places the return of the Seventy-two, the lawyer, and the Samaritan between Tabernacles and the November visit to Martha and Mary in AD 33. A. J. Maas gives a distinct Catholic harmony: the Seventh Journey, September–December AD 28, the Seventy-two probably returning in lower Peraea, and the discourse in the vicinity of Jericho. The two chronologies remain unmerged. Luke leaves the speaking place unnamed: Jerusalem–Jericho is the parable’s road, not by itself a location notice for the discourse.</em></td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The ancient Church receives Luke the physician and companion of Paul as author, writing according to Paul’s preaching. An early <em>Argumentum</em> names Achaia, and Aherne reports that many writers placed composition during Paul’s Caesarean imprisonment. The 1912 Pontifical Biblical Commission requires Luke to precede Acts and the end of Paul’s Roman captivity; Howlett’s <em>Catholic Encyclopedia</em> chronology places that terminus at about AD 64. Modern Catholic introductions commonly offer c. AD 80–90 as an alternative critical horizon.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Epistle</td>
-<td style="text-align: left;">2 Cor. 3:4–9</td>
-<td style="text-align: left;">St Paul at Philippi in Macedonia, addressing Corinth in Achaia</td>
-<td style="text-align: left;">Summer or autumn AD 57; some schemes shift about one year</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Catholic tradition and the letter itself identify the Apostle. After meeting Titus in Macedonia, Paul writes a few months after First Corinthians to prepare the community for his coming. The appointed verses belong to his defense of a God-given new-covenant ministry and presuppose Exod. 34.</td>
-</tr>
-</tbody>
-</table>
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Offertory: Ex. 32:11, 13, 14 | Narrated event | Date pending its source qualification |
+| Gradual: Ps. 33:2–3 (Vg.; Heb. 34) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Superscription setting: David’s flight to Achis, king of Geth; Geth, at the Philistine court | A.M. 2944 (Haydock edition reporting Ussher) |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ps. 69:2–3 (Vg.; Heb. 70), Ps. 69:4 (Vg.; Heb. 70) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Ps. 87:2 (Vg.; Heb. 88) | Historical setting | Occasion date unresolved |
+|  | Composition: The Psalms of the Sons of Korah | Between the days of Isaias and the return from exile |
+| Communion: Ps. 103:13–15 (Vg.; Heb. 104) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gospel: Luke 10:23–37 | Narrated event | Date unresolved |
+|  | Composition: The Gospel of St Luke | Disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished |
+| Epistle: 2 Cor. 3:4–9 | Composition: The Second Epistle to the Corinthians | Disputed: A.D. 56; A few months after the First |
+
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+*Disputed*: the sources disagree and the corpus prefers none. *(derived)*: computed by the corpus from a stated relation, not printed by a source. *Date unresolved*: the corpus gives this subject no date. The evidence for every date, with its sources, is set out in the appendix *Evidence for the Scriptural Dates*.
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -606,6 +538,50 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Limit:** The psalm’s literal created goods and the parable’s practical care must not be dissolved into Eucharistic allegory.
 
+## Appendix: Evidence for the Scriptural Dates {#sec:date-location-evidence}
+
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
+
+*Offertory: Ex. 32:11, 13, 14*
+
+- **Narrated event**. No date: the corpus holds a date for this that it reports from another edition by exception, which is not printed until the corpus records the source’s own qualification of it (research pending).
+
+*Gradual: Ps. 33:2–3 (Vg.; Heb. 34)*
+
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
+
+- **Superscription setting** (preferred). David’s flight to Achis, king of Geth: A.M. 2944 (Haydock edition reporting Ussher) (“A. M. 2944, A. C. 1060”; Douay Rheims Edition of the Holy Catholic Bible with a Comprehensive Catholic Commentary, William Peter Feeney 2014 Memorial Edition, 1K.21.1-15; Douay Rheims Edition of the Holy Catholic Bible with a Comprehensive Catholic Commentary, William Peter Feeney 2014 Memorial Edition, Ps.70.1). Place: Geth, at the Philistine court (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 33:1, 1 Kings 21:10, 21:15).
+
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
+
+*Introit: Ps. 69:2–3 (Vg.; Heb. 70), Ps. 69:4 (Vg.; Heb. 70)*
+
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition**. As under Gradual: Ps. 33:2–3 (Vg.; Heb. 34).
+
+*Alleluia: Ps. 87:2 (Vg.; Heb. 88)*
+
+- **Historical setting**. As under Introit: Ps. 69:2–3 (Vg.; Heb. 70), Ps. 69:4 (Vg.; Heb. 70).
+
+- **Composition** (preferred). The Psalms of the Sons of Korah: Between the days of Isaias and the return from exile (The Catholic Encyclopedia, Volume 12 (1911)).
+
+*Communion: Ps. 103:13–15 (Vg.; Heb. 104)*
+
+- **Historical setting**. As under Introit: Ps. 69:2–3 (Vg.; Heb. 70), Ps. 69:4 (Vg.; Heb. 70).
+
+- **Composition**. As under Gradual: Ps. 33:2–3 (Vg.; Heb. 34).
+
+*Gospel: Luke 10:23–37*
+
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Luke: c. A.D. 70 (“About the year 70”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); Before the end of the Roman imprisonment, when the Acts was finished (De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam (1912), responsa-i-ix).
+
+*Epistle: 2 Cor. 3:4–9*
+
+- **Composition** (disputed). The Second Epistle to the Corinthians: A.D. 56 (“(1 and 2 Corinthians; Galatians), 56”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A few months after the First (The Catholic Encyclopedia, Volume 4 (New York, 1908)).
+
 ## Appendix: Scope and Qualifications
 
 > **Edition and use.** This companion studies the recurring *Dominica Duodecima post Pentecosten*, II class, in the 1962 Vatican typical Roman Missal. It is not an official liturgical book, homily, civil-date assembly sheet, or ruling on present authorization. Occurrence, precedence, commemorations, and particular calendars remain outside the reusable formulary.
@@ -672,6 +648,6 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 
 - *United States ex rel. Knauff v. Shaughnessy*, 338 U.S. 537, 548, 550 (1950) (Frankfurter, J., dissenting).
 
-**Last revised (UTC):** 2026-11-04T03:59:07Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

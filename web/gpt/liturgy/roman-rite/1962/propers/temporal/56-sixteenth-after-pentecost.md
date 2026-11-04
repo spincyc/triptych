@@ -28,32 +28,33 @@
 | Moral | Mercy relieves distress; humility receives honor without grasping it. Grace sustains good works and the perseverance taught by Augustine, Cyril and Aquinas. |
 | Anagogical | Paul’s ecclesial doxology reaches all generations; Augustine (abridged NPNF) and Bellarmine see Christ’s glorious judgement in the Gradual. The Postcommunion seeks bodily help hereafter. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-|  |
-|:---|
-| **Offertory — Ps. 39 (40):14–15, selected**. Davidic title; an endangered petitioner. |
-| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
-| Corbett’s “usual chronology” supplies the Davidic regnal frame (*Catholic Encyclopedia*, IV, p. 642). Rescue and obedience return to threatened life; writing-place and enemy are unnamed. USCCB’s composition bound is shared by the Psalter, not an individual date. <span class="nodecor">(Ps. 39:1–18; USCCB, Psalms introduction.)</span> |
-| **Communion — Ps. 70 (71):16–18, selected**. An aging speaker; Davidic and captivity settings remain distinct. |
-| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Superscription setting**: Preferred: The first captivity of Juda, under Joakim, In the third year of the reign of Joakim, king of Juda; alternative: The first captivity of Juda, under Joakim, A.M. 3398. **Historical setting**: David’s flight from the face of Absalom, when he fled from the face of his son Absalom. **Composition**: Before c. 165 B.C. |
-| Youth, failing strength and future hearers frame Bellarmine’s Davidic reading; writing-place is unestablished. The composition bound is general; the alternate A.M. figure concerns the superscription, not the preferred historical setting. <span class="nodecor">(Ps. 70:1–24; Bellarmine, pp. 212–213; chronology sources in References.)</span> |
-| **Introit — Ps. 85 (86):3,5; v. 1**. Davidic title; a needy servant threatened by attackers. |
-| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
-| The title names David, without a particular crisis or writing-place. Prayer opens toward the nations’ worship; individual composition remains insecure within the common critical bound. <span class="nodecor">(Ps. 85:1–17; USCCB, Psalms introduction.)</span> |
-| **Alleluia — Ps. 97 (98):1, opening**. Israel’s salvation before the nations and creation. |
-| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. **Prophetic referent** – disputed: The Nativity of Our Lord, B.C. 3; The Nativity of Our Lord, c. B.C. 7. |
-| The Douay title names David, without a particular rescue or writing-place. The composition bound is common; the Nativity dates concern prophecy, with Gerard reporting one as others’ opinion. <span class="nodecor">(Ps. 97:1–9; USCCB, Psalms introduction; Gerard, “General Chronology,” “Christian era,” first paragraph; “Chronology of the Life of Jesus Christ.”)</span> |
-| **Gradual — Ps. 101 (102):16–17**. Sion/Jerusalem restored; peoples gathered for worship. |
-| **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
-| The afflicted speaker contrasts his frailty with God’s permanence. Jerusalem is the subject; writing-place, restoration date and individual composition date are unestablished. <span class="nodecor">(Ps. 101:1–29; USCCB, Psalms introduction.)</span> |
-| **Gospel — Luke 14:1–11**. St Luke’s Gospel; an unnamed leading Pharisee’s house. |
-| **Event** – No narrated-event date in the chronology corpus. **Composition** – disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished. |
-| *Event: Sabbath meal and cure in the journey-to-Jerusalem context (Luke 13:22; 14:1–11); town and host unnamed. The wedding is the seating parable’s setting.* |
-| Composition alternatives follow the *Catholic Encyclopedia* and Biblical Commission; writing-place, first-audience geography and a full modern authorship account remain unestablished. USCCB notes son/ox beside the ass/ox variant retained by the Missal. |
-| **Epistle — Eph. 3:13–21**. St Paul, imprisoned for his Gentile mission; saints sharing one inheritance. |
-| **Composition** – disputed: A.D. 58–63; A.D. 61. |
-| Affliction and the Gentile mission frame the prayer (Eph. 2–4). The Encyclopedia supplies the traditional dates; prison city, destination geography and a full modern authorship account remain unestablished. USCCB treats wording and interpretation. |
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Offertory: Ps. 39:14–15 (Vg.; Heb. 40) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: Ps. 70:16–18 (Vg.; Heb. 71) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Superscription setting | Date pending its source qualification |
+|  | Historical setting: David’s flight from the face of Absalom | When he fled from the face of his son Absalom |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ps. 85:3, 5 (Vg.; Heb. 86), Ps. 85:1 (Vg.; Heb. 86) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Ps. 97:1 (Vg.; Heb. 98) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+|  | Prophetic referent: The Nativity of Our Lord; Bethlehem as the Christian referent | Disputed: B.C. 3; c. B.C. 7 |
+| Gradual: Ps. 101:16–17 (Vg.; Heb. 102) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gospel: Luke 14:1–11 | Narrated event | Date unresolved |
+|  | Composition: The Gospel of St Luke | Disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished |
+| Epistle: Eph. 3:13–21 | Composition: Ephesians; Rome or Caesarea; recipients in Asia Minor | Disputed: A.D. 58–63; A.D. 61 |
+
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+*Disputed*: the sources disagree and the corpus prefers none. *(derived)*: computed by the corpus from a stated relation, not printed by a source. *Date unresolved*: the corpus gives this subject no date. The evidence for every date, with its sources, is set out in the appendix *Evidence for the Scriptural Dates*.
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -525,6 +526,62 @@ Jesus asks who would not rescue “an ox fall into a pit” even on the Sabbath 
 
 **Strongest limit.** The chants do not identify their historical speakers as one person. Spiritual renewal promises no reversal of biological aging, and the bounded precedent result supports no claim of universal novelty or priority.
 
+## Appendix: Evidence for the Scriptural Dates {#sec:date-location-evidence}
+
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
+
+*Offertory: Ps. 39:14–15 (Vg.; Heb. 40)*
+
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
+
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
+
+*Communion: Ps. 70:16–18 (Vg.; Heb. 71)*
+
+- **Traditional attribution**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+- **Superscription setting**. No date: the corpus holds a date for this that it reports from another edition by exception, which is not printed until the corpus records the source’s own qualification of it (research pending).
+
+- **Historical setting** (preferred). David’s flight from the face of Absalom: When he fled from the face of his son Absalom (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 3:1).
+
+- **Composition**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+*Introit: Ps. 85:3, 5 (Vg.; Heb. 86), Ps. 85:1 (Vg.; Heb. 86)*
+
+- **Traditional attribution**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+- **Historical setting**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+- **Composition**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+*Alleluia: Ps. 97:1 (Vg.; Heb. 98)*
+
+- **Traditional attribution**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+- **Historical setting**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+- **Composition**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+- **Prophetic referent** (disputed). The Nativity of Our Lord: B.C. 3 (“the year of Rome 750 which he styles 3 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)); c. B.C. 7 (“probably the year 7 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)). Place: Bethlehem as the Christian referent (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 2:1).
+
+*Gradual: Ps. 101:16–17 (Vg.; Heb. 102)*
+
+- **Historical setting**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+- **Composition**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+*Gospel: Luke 14:1–11*
+
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Luke: c. A.D. 70 (“About the year 70”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); Before the end of the Roman imprisonment, when the Acts was finished (De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam (1912), responsa-i-ix).
+
+*Epistle: Eph. 3:13–21*
+
+- **Composition** (disputed). The Epistle to the Ephesians: A.D. 58–63 (“a period between 58 and 63”; The Catholic Encyclopedia, Volume 5 (New York, 1909)); A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)). Place: Rome or Caesarea; recipients in Asia Minor (The Catholic Encyclopedia, Volume 5 (New York, 1909)).
+
 ## Appendix: Scope and Qualifications
 
 This study concerns the *Missale Romanum*, Vatican typical edition of 1962, *Dominica decima sexta post Pentecosten*, II class, printed pp. 397–398, nos. 1592–1601. The formulary orders the Creed and Trinity Preface; civil-date occurrence, commemorations and particular calendars belong to Mass assembly. No non-Eucharistic ritual-sacrament appendix applies.
@@ -599,6 +656,6 @@ The Latin’s publication basis is its independently witnessed public-domain ant
 
 Online research witnesses were accessed on 5 September 2026; chronology retains its separately recorded corpus source states.
 
-**Last revised (UTC):** 2026-11-04T03:34:08Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

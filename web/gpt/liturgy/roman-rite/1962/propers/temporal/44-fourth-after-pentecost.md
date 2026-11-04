@@ -28,97 +28,30 @@
 | Moral | The disciple tells the truth about failure, obeys Christ’s word before seeing a result, confesses sin amid abundance, and asks for illuminated sight and the merciful compelling of a rebellious will toward God. |
 | Anagogical | Creation’s travail tends toward freedom from corruption, the body toward glory, and the present mixed catch toward the final communion Augustine sees figured by John 21. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-*Canonical order governs; proper rows give traditional composition data under Location and Date, Luke’s additional row gives the narrated setting, spanning rows distinguish inherited attribution from historical judgment, and Psalm numbers follow the Vulgate with common modern numbers in parentheses.*
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Alleluia: Ps. 9:5, 10 (Vg./Heb.) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Offertory: Ps. 12:4–5 (Vg.; Heb. 13) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: Ps. 17:3 (Vg.; Heb. 18) | Superscription setting: David’s deliverance from all his enemies and from the hand of Saul | In the day that the Lord delivered him out of the hand of all his enemies, and out of the hand of Saul |
+|  | Historical setting: The reign of Saul | “Saul was a child of one year when he began to reign, and he reigned two years over Israel” (duration) |
+|  | Utterance: David’s deliverance from all his enemies and from the hand of Saul | In the day that the Lord delivered him out of the hand of all his enemies, and out of the hand of Saul |
+|  | Composition: Psalms | Before c. 165 B.C. |
+|  | Prophetic referent: The Nativity of Our Lord; Bethlehem as the Christian referent | Disputed: B.C. 3; c. B.C. 7 |
+| Introit: Ps. 26:1–2 (Vg.; Heb. 27), Ps. 26:3 (Vg.; Heb. 27) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gradual: Ps. 78:9 (Vg.; Heb. 79), Ps. 78:10 (Vg.; Heb. 79) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gospel: Luke 5:1–11 | Narrated event | Date unresolved |
+|  | Composition: The Gospel of St Luke | Disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished |
+| Epistle: Rom. 8:18–23 | Composition: The Epistle to the Romans | Disputed: A.D. 57; A.D. 58 |
 
-<table style="width:84%;">
-<colgroup>
-<col style="width: 15%" />
-<col style="width: 18%" />
-<col style="width: 35%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Proper</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Alleluia</strong></td>
-<td style="text-align: left;">Ps. 9:5, 10</td>
-<td style="text-align: left;">Israel; exact site unrecorded</td>
-<td style="text-align: left;">c. 1000 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The title traditionally attributes the acrostic hymn to David but names no episode or writing site; Israel’s worshippers are its inherited audience. The royal petitioner moves from victory to God’s judgment of the nations and refuge for the poor, placing Davidic kingship beneath universal justice. Modern scholarship treats Psalms 9–10 as one poem and cannot securely recover author, date, or place (Ps. 9 and notes, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Offertory</strong></td>
-<td style="text-align: left;">Ps. 12:4–5 (modern 13:4–5)</td>
-<td style="text-align: left;">Israel; exact site unrecorded</td>
-<td style="text-align: left;">c. 1000 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The title traditionally attributes this lament to David but names no life episode or site; its prayer trains threatened Israel to speak before God. Apparent abandonment and enemy pressure yield to petition and trust, carrying personal danger into Israel’s durable worship. Modern scholarship calls it a typical lament but cannot recover its historical author, date, or place (Ps. 13 and notes, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Communion</strong></td>
-<td style="text-align: left;">Ps. 17:3 (modern 18:3)</td>
-<td style="text-align: left;">Kingdom of Israel; exact site unrecorded</td>
-<td style="text-align: left;">c. 1000 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The title and 2 Samuel 22 attribute the song to David after deliverance from Saul and all enemies: a mature king looks back over dangers through which the kingdom was established and bears witness to Israel. Rescue enters Davidic-covenant and messianic history; the final form’s date and place remain uncertain (Ps. 18 and notes, <em>NABRE</em>; 2 Sam. 22).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Introit</strong></td>
-<td style="text-align: left;">Ps. 26:1–3 (modern 27:1–3)</td>
-<td style="text-align: left;">Judah / Israel; exact site unrecorded</td>
-<td style="text-align: left;">c. 1010 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The Greek and Latin title attributes the psalm to David before anointing, placing him traditionally amid threatened pre-royal life in Judah; because Scripture records several anointings, the exact stage is unclear. He addresses God and worshipping Israel, joining courage before armies to desire for God’s dwelling. Modern authorship, date, and site remain uncertain (Ps. 27 and notes, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Gradual</strong></td>
-<td style="text-align: left;">Ps. 78:9–10 (modern 79:9–10)</td>
-<td style="text-align: left;">Jerusalem sanctuary (traditional Asaph association)</td>
-<td style="text-align: left;">c. 1000 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The title names Asaph, the Levitical singer linked to worship ordered under David; a strict personal reading of the title therefore hears him prophetically voicing devastated Israel after nations ruin Jerusalem and profane the Temple. Catholic scholarship also allows an Asaph family or collection, and modern judgment places the poem probably after Babylon’s destruction in 587 BC; its individual composer and site remain unknown (Ps. 79 and notes, <em>NABRE</em>; <em>Catholic Encyclopedia</em>, “Psalms”).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Gospel</strong></td>
-<td style="text-align: left;">Luke 5:1–11</td>
-<td style="text-align: left;">Achaia (present-day Greece)</td>
-<td style="text-align: left;">c. AD 60</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">Luke 4:31–44; 5:1–11</td>
-<td style="text-align: left;">Lake Gennesaret, Galilee (present-day Sea of Galilee)</td>
-<td style="text-align: left;">Early public ministry, c. AD 27</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Ancient tradition identifies St. Luke, Antiochene physician and Paul’s companion, as the evangelist. The row joins an ancient tradition that he wrote in Achaia for Theophilus and other catechized Christians to an early chronology placing the Gospel before Acts, after years in apostolic mission. The modern majority dates it c. AD 80–90, with its city unknown. Much earlier at the lake, Jesus turns Israel’s hearing, Peter’s confession, and the catch toward apostolic mission to the nations (Luke introduction and 5, <em>NABRE</em>; <em>Catholic Encyclopedia</em>, “Gospel of Saint Luke”).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Epistle</strong></td>
-<td style="text-align: left;">Rom. 8:18–23</td>
-<td style="text-align: left;">Corinth, Achaia (present-day Greece)</td>
-<td style="text-align: left;">c. AD 57</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Tradition and scholarship identify St. Paul, with Tertius as scribe, writing to Jewish and Gentile house churches in Rome he had not visited. His eastern mission was nearly complete and the Jerusalem collection came next; Spain lay beyond Rome. Creation’s travail places Israel, Church, body, and cosmos within hoped-for liberation and resurrection (Romans introduction; Rom. 15–16, <em>NABRE</em>).</td>
-</tr>
-</tbody>
-</table>
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+*Disputed*: the sources disagree and the corpus prefers none. *(derived)*: computed by the corpus from a stated relation, not printed by a source. *Date unresolved*: the corpus gives this subject no date. The evidence for every date, with its sources, is set out in the appendix *Evidence for the Scriptural Dates*.
 
 ## The Propers: Themes and Movement
 
@@ -291,6 +224,56 @@ The Postcommunion preserves the same dependence after reception. The mysteries a
 
 **A visible result still awaits a true word. (*Gosp., Off., Comm.*)** The Offertory imagines the enemy naming a fall as victory, *Praevalui adversus eum*; Peter names an overwhelming success by confessing, *homo peccator sum*; Christ then says *Noli timere* and names a future vocation; Communion finally names the Lord as strength and refuge. The mechanism is a contest of interpretations around visible outcomes, resolved neither by the enemy’s verdict nor by the recipient’s self-assessment alone. Element-by-element reading misses how danger and abundance can both be misread until judgment is received from a trustworthy speaker. The fruit is a communal discipline of refusing to identify success, failure, fear, or self-condemnation with God’s final word. The disconfirming condition is that these speakers do not address one event: the proposal is a liturgical comparison of speech acts, not a concealed narrative parallel or a denial of prudent empirical judgment.
 
+## Appendix: Evidence for the Scriptural Dates {#sec:date-location-evidence}
+
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
+
+*Alleluia: Ps. 9:5, 10 (Vg./Heb.)*
+
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
+
+*Offertory: Ps. 12:4–5 (Vg.; Heb. 13)*
+
+- **Historical setting**. As under Alleluia: Ps. 9:5, 10 (Vg./Heb.).
+
+- **Composition**. As under Alleluia: Ps. 9:5, 10 (Vg./Heb.).
+
+*Communion: Ps. 17:3 (Vg.; Heb. 18)*
+
+- **Superscription setting** (preferred). David’s deliverance from all his enemies and from the hand of Saul: In the day that the Lord delivered him out of the hand of all his enemies, and out of the hand of Saul (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 22:1, Ps. 17:1).
+
+- **Historical setting** (preferred). The reign of Saul: “Saul was a child of one year when he began to reign, and he reigned two years over Israel” (duration) (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 1 Kings 13:1).
+
+- **Utterance** (preferred). David’s deliverance from all his enemies and from the hand of Saul: In the day that the Lord delivered him out of the hand of all his enemies, and out of the hand of Saul (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 22:1, Ps. 17:1).
+
+- **Composition**. As under Alleluia: Ps. 9:5, 10 (Vg./Heb.).
+
+- **Prophetic referent** (disputed). The Nativity of Our Lord: B.C. 3 (“the year of Rome 750 which he styles 3 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)); c. B.C. 7 (“probably the year 7 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)). Place: Bethlehem as the Christian referent (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 2:1).
+
+*Introit: Ps. 26:1–2 (Vg.; Heb. 27), Ps. 26:3 (Vg.; Heb. 27)*
+
+- **Historical setting**. As under Alleluia: Ps. 9:5, 10 (Vg./Heb.).
+
+- **Composition**. As under Alleluia: Ps. 9:5, 10 (Vg./Heb.).
+
+*Gradual: Ps. 78:9 (Vg.; Heb. 79), Ps. 78:10 (Vg.; Heb. 79)*
+
+- **Historical setting**. As under Alleluia: Ps. 9:5, 10 (Vg./Heb.).
+
+- **Composition**. As under Alleluia: Ps. 9:5, 10 (Vg./Heb.).
+
+*Gospel: Luke 5:1–11*
+
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Luke: c. A.D. 70 (“About the year 70”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); Before the end of the Roman imprisonment, when the Acts was finished (De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam (1912), responsa-i-ix).
+
+*Epistle: Rom. 8:18–23*
+
+- **Composition** (disputed). The Epistle to the Romans: A.D. 57 (“(Romans), 57”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 58 (“the Epistle to the Romans (58)”; The Catholic Encyclopedia, Volume 5 (New York, 1909)).
+
 ## Appendix: Scope and Qualifications
 
 > **Text.** Ten propers collated with the 1962 typical-edition facsimile, pp. 382–383. **History.** Seven direct passages in canonical order; tradition, narrated setting, and historical judgment distinguished. **Reception.** Direct exposition of all five psalm chants, Romans 8, and Luke 5; Greek, Latin, and Antonian witnesses illuminate order, resurrection, John 21, grace, and Eucharistic reception. **Limits.** Psalm origins and Luke’s setting remain disputed; the public survey is not exhaustive. **Full records.** `propers/verified.md`; `research/scope.md`.
@@ -329,6 +312,6 @@ The Postcommunion preserves the same dependence after reception. The mysteries a
 
 - Traditional orientation: New Advent Bible titles for Psalms [9](https://www.newadvent.org/bible/psa009.htm), [12](https://www.newadvent.org/bible/psa012.htm), [17](https://www.newadvent.org/bible/psa017.htm), [26](https://www.newadvent.org/bible/psa026.htm), [78](https://www.newadvent.org/bible/psa078.htm); *Catholic Encyclopedia*, [“Psalms”](https://www.newadvent.org/cathen/12533a.htm), [“King David”](https://www.newadvent.org/cathen/04642b.htm), [“Luke”](https://www.newadvent.org/cathen/09420a.htm), [“Chronology of Jesus”](https://www.newadvent.org/cathen/08377a.htm), [“Genesareth”](https://www.newadvent.org/cathen/06413a.htm); accessed 2026-07-10.
 
-**Last revised (UTC):** 2026-09-24T18:45:21Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

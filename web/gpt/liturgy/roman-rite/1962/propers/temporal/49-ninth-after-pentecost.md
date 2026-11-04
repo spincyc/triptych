@@ -28,103 +28,31 @@
 | Moral | Receive the warning as addressed to the baptized Church: ask rightly, recognize visitation, accept correction, keep God’s judgments, and seek communion rather than private mastery. |
 | Anagogical | Rescue from evil, the reckoning of visitation, redemption enacted in mystery, mutual abiding, purification, and unity orient the temporal assembly toward perfected communion in God. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-*Canonical order governs; proper rows give inherited composition data under Location and Date, narrated-event rows locate the episode, spanning rows distinguish tradition from historical judgment, and Psalm numbers follow the Vulgate with modern numbers in parentheses.*
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Gradual: Ps. 8:2 (Vg./Heb.) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Offertory: Ps. 18:9–12 (Vg.; Heb. 19) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ps. 53:6–7 (Vg.; Heb. 54), Ps. 53:3 (Vg.; Heb. 54) | Superscription setting | Date pending its source qualification |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Ps. 58:2 (Vg.; Heb. 59) | Superscription setting: The reign of Saul | “Saul was a child of one year when he began to reign, and he reigned two years over Israel” (duration) |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gospel: Luke 19:41–42 | Narrated event | Date unresolved |
+|  | Composition: The Gospel of St Luke | Disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished |
+| Gospel: Luke 19:43–44 | Narrated event | Date unresolved |
+|  | Composition: The Gospel of St Luke | Disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished |
+|  | Prophetic referent: The Fall of Jerusalem to the Romans | the eighth day of Elul (1 August) |
+| Gospel: Luke 19:45–47 | Narrated event | Date unresolved |
+|  | Composition: The Gospel of St Luke | Disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished |
+| Communion: John 6:57 | Composition: John; Ephesus traditionally | Disputed: c. A.D. 90–100; A.D. 96–100 |
+| Epistle: 1 Cor. 10:6–13 | Composition: The First Epistle to the Corinthians | Disputed: A.D. 56; A.D. 57 |
 
-<table style="width:83%;">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 18%" />
-<col style="width: 35%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Proper</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Gradual</strong></td>
-<td style="text-align: left;">Ps. 8:2 (modern 8:2)</td>
-<td style="text-align: left;">Kingdom of Israel; exact place unrecorded</td>
-<td style="text-align: left;">c. 1000 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The superscription traditionally attributes the hymn to David but fixes no life stage, writing site, or first performance. Israel receives its praise of the Creator and human dignity in worship; modern author, place, and date remain unknown (Ps. 8 and notes, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Offertory</strong></td>
-<td style="text-align: left;">Ps. 18:9–12 (modern 19:9–12)</td>
-<td style="text-align: left;">Kingdom of Israel; exact place unrecorded</td>
-<td style="text-align: left;">c. 1000 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The superscription names David but no episode or writing site. Israel’s worshiping community receives the poem’s movement from creation’s witness to the Lord’s instruction and the servant’s cleansing; modern authorship, place, and date are not securely recoverable (Ps. 19 and notes, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Introit</strong></td>
-<td style="text-align: left;">Ps. 53:3, 6–7 (modern 54)</td>
-<td style="text-align: left;">Wilderness of Ziph, Judah (narrated setting)</td>
-<td style="text-align: left;">c. 1010 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The title associates the prayer with the Ziphites’ reports to Saul during David’s pre-royal flight (1 Sam. 23:19; 26:1). It supplies an inherited narrative horizon, not a recovered writing desk; Israel later receives the lament in worship, while modern author, place, and date remain uncertain.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Alleluia</strong></td>
-<td style="text-align: left;">Ps. 58:2 (modern 59:2)</td>
-<td style="text-align: left;">David’s house in Saul’s territory (narrated setting)</td>
-<td style="text-align: left;">c. 1010 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The title links the lament to Saul’s agents watching David’s house to kill him (1 Sam. 19:11), before his flight toward Samuel at Ramah. This inherited pre-royal horizon does not prove composition place or date. Israel later receives the lament in worship; its first liturgical audience and modern historical coordinates remain unknown.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Gospel</strong></td>
-<td style="text-align: left;">Luke 19:41–47</td>
-<td style="text-align: left;">Achaia (present-day Greece), in ancient tradition</td>
-<td style="text-align: left;">c. AD 60</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">Luke 19:28–48</td>
-<td style="text-align: left;">Mount of Olives, Jerusalem, and the Temple</td>
-<td style="text-align: left;">Final ministry, c. AD 29–30</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Tradition identifies St. Luke, the Antiochene physician and Pauline companion, writing in Achaia. Modern Catholic orientation commonly dates the final Gospel about AD 80–90 for a substantially Gentile Christian audience outside Palestine but cannot securely name its city. The narrated approach, tears, siege oracle, Temple correction, and daily teaching remain distinct from composition and from the later AD 70 siege (Luke introduction and 19, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Communion</strong></td>
-<td style="text-align: left;">John 6:57 in the missal’s numbering</td>
-<td style="text-align: left;">Ephesus (present-day Türkiye), in ancient tradition</td>
-<td style="text-align: left;">Late first century</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">John 6:1–71</td>
-<td style="text-align: left;">Galilee and the synagogue at Capernaum</td>
-<td style="text-align: left;">Galilean ministry, c. AD 29</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Ancient tradition identifies John the Apostle at Ephesus; modern Catholic orientation commonly places the Gospel’s final form near the end of the first century while preserving debate about its compositional stages and first audience. John locates the discourse after the Galilean feeding and, at 6:59, in Capernaum (John introduction and 6, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Epistle</strong></td>
-<td style="text-align: left;">1 Cor. 10:6–13</td>
-<td style="text-align: left;">Ephesus (present-day Türkiye)</td>
-<td style="text-align: left;">c. AD 56</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">St. Paul writes during his third missionary journey to the mixed Jewish and Gentile church he founded at Corinth. Within the idol-meal dispute of chapters 8–10, he calls the wilderness generation “our fathers,” applies their history to the baptized, and proceeds from warning to the Eucharistic cup, bread, and one body (1 Corinthians introduction and 8–10, <em>NABRE</em>).</td>
-</tr>
-</tbody>
-</table>
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+*Disputed*: the sources disagree and the corpus prefers none. *(derived)*: computed by the corpus from a stated relation, not printed by a source. *Date unresolved*: the corpus gives this subject no date. The evidence for every date, with its sources, is set out in the appendix *Evidence for the Scriptural Dates*.
 
 ## The Appointed Formulary in Full
 
@@ -434,6 +362,62 @@ The complete source-grounded movement is therefore: help received, desire reform
 
 - **Gospel, Luke 19:46 — Harry Graham, *The Mother of Parliaments* (1910).** Graham recounts Judge David Jenkins calling the House of Commons a “den of thieves” during seventeenth-century political conflict. A prophetic Temple accusation becomes a dangerous parliamentary insult, and Graham’s anecdote carries it into political afterlife.
 
+## Appendix: Evidence for the Scriptural Dates {#sec:date-location-evidence}
+
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
+
+*Gradual: Ps. 8:2 (Vg./Heb.)*
+
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
+
+*Offertory: Ps. 18:9–12 (Vg.; Heb. 19)*
+
+- **Historical setting**. As under Gradual: Ps. 8:2 (Vg./Heb.).
+
+- **Composition**. As under Gradual: Ps. 8:2 (Vg./Heb.).
+
+*Introit: Ps. 53:6–7 (Vg.; Heb. 54), Ps. 53:3 (Vg.; Heb. 54)*
+
+- **Superscription setting**. No date: the corpus holds a date for this that it reports from another edition by exception, which is not printed until the corpus records the source’s own qualification of it (research pending).
+
+- **Composition**. As under Gradual: Ps. 8:2 (Vg./Heb.).
+
+*Alleluia: Ps. 58:2 (Vg.; Heb. 59)*
+
+- **Superscription setting** (preferred). The reign of Saul: “Saul was a child of one year when he began to reign, and he reigned two years over Israel” (duration) (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 1 Kings 13:1).
+
+- **Composition**. As under Gradual: Ps. 8:2 (Vg./Heb.).
+
+*Gospel: Luke 19:41–42*
+
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Luke: c. A.D. 70 (“About the year 70”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); Before the end of the Roman imprisonment, when the Acts was finished (De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam (1912), responsa-i-ix).
+
+*Gospel: Luke 19:43–44*
+
+- **Narrated event**. As under Gospel: Luke 19:41–42.
+
+- **Composition**. As under Gospel: Luke 19:41–42.
+
+- **Prophetic referent** (preferred). The Fall of Jerusalem to the Romans: the eighth day of Elul (1 August) (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
+
+*Gospel: Luke 19:45–47*
+
+- **Narrated event**. As under Gospel: Luke 19:41–42.
+
+- **Composition**. As under Gospel: Luke 19:41–42.
+
+*Communion: John 6:57*
+
+- **Composition** (disputed). The Gospel of St John: c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); A.D. 96–100 (“96 or one of the succeeding years”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Ephesus traditionally (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
+
+*Epistle: 1 Cor. 10:6–13*
+
+- **Composition** (disputed). The First Epistle to the Corinthians: A.D. 56 (“(1 and 2 Corinthians; Galatians), 56”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 57 (“about Easter A.D. 57”; The Catholic Encyclopedia, Volume 4 (New York, 1908)).
+
 ## Appendix: Scope and Qualifications
 
 > **Scope.** This companion studies the recurring *Dominica Nona post Pentecosten*, II class, in the 1962 typical Missal. Its formulary and rubrics were facsimile-collated, and its appointed texts were read in canonical context against a bounded public corpus of ancient, medieval, and later reception. It is not a civil-date assembly sheet or exhaustive corpus survey. External liturgical wording retains its own rights status. The guide is internally source-audited and its exact published snapshots have distribution authorization under the release record; independent specialist, liturgical, theological, rights, and ecclesiastical review remain outstanding, and no imprimatur or ecclesiastical approval is claimed. **Full records.** `propers/verified.md`; `research/scope.md`.
@@ -492,6 +476,6 @@ The complete source-grounded movement is therefore: help received, desire reform
 
 - Harry Graham, [*The Mother of Parliaments*](https://www.gutenberg.org/cache/epub/41304/pg41304-images.html) (London: Methuen, 1910), Judge Jenkins episode checked in Project Gutenberg ebook 41304; public domain in the United States.
 
-**Last revised (UTC):** 2026-09-24T18:14:31Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

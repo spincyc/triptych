@@ -95,33 +95,30 @@
 | Moral | Humility becomes gentle correction, self-examination, reciprocal aid, personal accountability, generosity, perseverance, and good done while opportunity remains. |
 | Anagogical | Eternal harvest and Christ’s life-giving flesh promise fulfillment beyond present mortal restoration; Augustine distinguishes present union and future bodily resurrection (John 26.15–18). |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-|  |
-|:---|
-| **Offertory — Ps. 39:2–4 (40), selected clauses**<span id="chronology-offertory" data-label="chronology-offertory"></span>. Davidic prayer; public thanksgiving |
-| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
-| Psalm 39 moves from rescue and public testimony to obedience and renewed petition (vv. 2–18). The Davidic title and Theodoret (PG 80:1151B–1154C) supply the attribution; Corbett’s “usual chronology” supplies its regnal frame (*Catholic Encyclopedia*, IV, p. 642). The critical date is a Psalter boundary, not this psalm’s individual date (USCCB, Psalms introduction); the text establishes no exact writing place, first audience, or Davidic life stage. |
-| **Introit — Ps. 85:1–4 (86), selected clauses**<span id="chronology-introit" data-label="chronology-introit"></span>. Davidic prayer addressed to God |
-| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
-| The superscription names David; petition embraces the nations’ worship and returns to danger (Ps. 85:1–17). Theodoret reads David and Hezekiah here (PG 80:1553C–1556B). Those received allocations establish no precise writing place or first audience; the critical date bounds the Psalter, not an individual historical occasion. |
-| **Gradual — Ps. 91:2–3 (92)**<span id="chronology-gradual" data-label="chronology-gradual"></span>. Sabbath canticle; praise of God |
-| **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
-| The Sabbath heading frames praise and the contrast between passing wicked prosperity and lasting righteous fruitfulness (Ps. 91:1–16). Theodoret also receives its future rest (PG 80:1615C–1618A). The psalm supplies no named writer’s life stage, precise composition place, or first congregation; the critical boundary applies to the Psalter. |
-| **Alleluia — Ps. 94:3 (95), adapted**<span id="chronology-alleluia" data-label="chronology-alleluia"></span>. Israel’s worship of the great King |
-| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
-| The Clementine title names David. Praise of the Creator and Shepherd leads to Israel’s wilderness warning (Ps. 94:1–11; Heb. 3–4). Theodoret’s Josiah allocation is his received interpretation (PG 80:1639B–1642A), not an established composition setting. The first congregation and writing place remain unestablished; the critical date is the Psalter boundary. Ps. 46:3 supplies a verbal parallel, not another appointed dossier. |
-| **Gospel — Luke 7:11–16**<span id="chronology-gospel" data-label="chronology-gospel"></span>. Naim’s gate; writing place unestablished |
-| **Event**: The raising of the widow’s son at Naim, A.D. 27 (derived). **Composition** – disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished. |
-| *Event: Christ meets a widow’s funeral procession at Naim’s gate (Luke 7:11–12), between the centurion’s healing and John’s inquiry (7:1–23).* |
-| Luke’s first composition position comes from the Catholic Encyclopedia XIV (1912), “The New Testament”; the Roman-imprisonment bound is the Biblical Commission’s 1912 response, I–IX. No precise composition city, first community, author’s life stage, modern settlement identification, or independent modern critical composition horizon is established here. |
-| **Communion — John 6:52, final clause (6:51b)**<span id="chronology-communion" data-label="chronology-communion"></span>. Capharnaum synagogue; writing place unestablished |
-| **Event**: The Bread of Life discourse at Capharnaum, A.D. 28 (derived). **Composition** – disputed: c. A.D. 90–100; A.D. 96–100. |
-| *Event: the Bread of Life discourse follows feeding and travel around the Galilean/Tiberias sea; John 6:60 explicitly names the synagogue at Capharnaum.* |
-| John 6 joins manna, flesh given for life, refusal and Peter’s confession. The first composition position is the Catholic Encyclopedia XIV (1912), “The New Testament”; the second is VIII (1910), “Gospel of St. John.” A precise writing place, first community, author’s life stage and independent modern critical composition horizon remain unestablished. |
-| **Epistle — Gal. 5:25–6:10**. Paul to the Galatian churches |
-| **Composition**: Preferred: A.D. 58; alternatives: A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58. |
-| Paul joins grace, faith, freedom and the Spirit to charity (Gal. 1–6). A Lapide (1614), Galatians proemium/argumentum, holds the preferred position. The Catholic Encyclopedia VI (1909), “Epistle to the Galatians,” supplies the first, second and fourth alternatives; XI (1911), “St. Paul,” the third. Northern/southern Galatia, writing city, modern recipient geography, missionary stage and an independent modern critical date remain unadjudicated. |
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Offertory: Ps. 39:2–4 (Vg.; Heb. 40) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ps. 85:1–3 (Vg.; Heb. 86), Ps. 85:4 (Vg.; Heb. 86) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gradual: Ps. 91:2–3 (Vg.; Heb. 92) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Ps. 94:3 (Vg.; Heb. 95) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gospel: Luke 7:11–16 | Narrated event: The raising of the widow’s son at Naim | A.D. 27 (derived) |
+|  | Composition: The Gospel of St Luke | Disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished |
+| Communion: John 6:52 | Narrated event: The Bread of Life discourse at Capharnaum | A.D. 28 (derived) |
+|  | Composition: John; Ephesus traditionally | Disputed: c. A.D. 90–100; A.D. 96–100 |
+| Epistle: Gal. 5:25–6:10 | Composition: The Epistle to the Galatians | Preferred: A.D. 58; alternatives: A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58 |
+
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+*Disputed*: the sources disagree and the corpus prefers none. *(derived)*: computed by the corpus from a stated relation, not printed by a source. *Date unresolved*: the corpus gives this subject no date. The evidence for every date, with its sources, is set out in the appendix *Evidence for the Scriptural Dates*.
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -439,6 +436,56 @@ Luke says, “And he gave him to his mother” (American 1899 Challoner, 7:15). 
 
 **Strongest limit.** The divine ear is not human anatomy. Jesus touches the bier, not the corpse. Hearing, seeing, touch and speech form no established developmental ladder, single speaker, or demonstrated program of the formulary’s compiler.
 
+## Appendix: Evidence for the Scriptural Dates {#sec:date-location-evidence}
+
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
+
+*Offertory: Ps. 39:2–4 (Vg.; Heb. 40)*
+
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
+
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
+
+*Introit: Ps. 85:1–3 (Vg.; Heb. 86), Ps. 85:4 (Vg.; Heb. 86)*
+
+- **Traditional attribution**. As under Offertory: Ps. 39:2–4 (Vg.; Heb. 40).
+
+- **Historical setting**. As under Offertory: Ps. 39:2–4 (Vg.; Heb. 40).
+
+- **Composition**. As under Offertory: Ps. 39:2–4 (Vg.; Heb. 40).
+
+*Gradual: Ps. 91:2–3 (Vg.; Heb. 92)*
+
+- **Historical setting**. As under Offertory: Ps. 39:2–4 (Vg.; Heb. 40).
+
+- **Composition**. As under Offertory: Ps. 39:2–4 (Vg.; Heb. 40).
+
+*Alleluia: Ps. 94:3 (Vg.; Heb. 95)*
+
+- **Traditional attribution**. As under Offertory: Ps. 39:2–4 (Vg.; Heb. 40).
+
+- **Historical setting**. As under Offertory: Ps. 39:2–4 (Vg.; Heb. 40).
+
+- **Composition**. As under Offertory: Ps. 39:2–4 (Vg.; Heb. 40).
+
+*Gospel: Luke 7:11–16*
+
+- **Narrated event** (preferred). The raising of the widow’s son at Naim: A.D. 27 (derived) (“derived A.D. 27 from About Pentecost, A.U.C. 780- Autumn, 780”; The Catholic Encyclopedia, Volume 8 (New York, 1910), article ’Jesus Christ,’ III.B.3, printed pp. 378 and 380: chronological calibration and Third and Fifth Journeys).
+
+- **Composition** (disputed). The Gospel of St Luke: c. A.D. 70 (“About the year 70”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); Before the end of the Roman imprisonment, when the Acts was finished (De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam (1912), responsa-i-ix).
+
+*Communion: John 6:52*
+
+- **Narrated event** (preferred). The Bread of Life discourse at Capharnaum: A.D. 28 (derived) (“derived Spring A.D. 28 from Spring, A.U.C. 781”; The Catholic Encyclopedia, Volume 8 (New York, 1910), article ’Jesus Christ,’ III.B.3, printed pp. 378 and 380: chronological calibration and Third and Fifth Journeys).
+
+- **Composition** (disputed). The Gospel of St John: c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); A.D. 96–100 (“96 or one of the succeeding years”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Ephesus traditionally (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
+
+*Epistle: Gal. 5:25–6:10*
+
+- **Composition** (answers differ). The Epistle to the Galatians: preferred: A.D. 58 (“anno Christi 58”; Commentaria in omnes D. Pauli epistolas (1614), prooemium; Commentaria in omnes D. Pauli epistolas (1614), epistola-ad-galatas-argumentum); alternative: A.D. 49–50 (“A.D. 49-50”; The Catholic Encyclopedia, Volume 6 (1909)); alternative: c. A.D. 53–54 (“about A.D. 53, 54”; The Catholic Encyclopedia, Volume 6 (1909)); alternative: A.D. 56 (“(1 and 2 Corinthians; Galatians), 56”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); alternative: A.D. 57–58 (“A.D. 57 or 58”; The Catholic Encyclopedia, Volume 6 (1909)).
+
 ## Appendix: Scope and Qualifications
 
 This study concerns the recurring *Dominica Decima Quinta post Pentecosten*, II classis, in the 1962 Vatican typical Missal, printed pp. 396–397, nos. 1582–1591. Civil-date occurrence, precedence, commemorations and particular calendars lie outside it. It is a study companion, not an official liturgical book or a ruling on present use.
@@ -503,6 +550,6 @@ The recorded source checks and this guide’s interpretation confer no imprimatu
 
 Web witnesses were accessed 5 September 2026; appointed-text and chronology checks retain their separate recorded dates.
 
-**Last revised (UTC):** 2026-11-04T03:34:08Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

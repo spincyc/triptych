@@ -28,95 +28,27 @@
 | Moral | Receive before speaking, hand on what was received, return gifts in thanksgiving and service, and bring conscience, weakness, possessions, mind, and body under divine mercy. |
 | Anagogical | The holy dwelling, risen body, renewed flesh, abundant storehouse, and fullness of heavenly remedy point toward the concord and incorruption of God’s completed household. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-<table style="width:83%;">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 18%" />
-<col style="width: 31%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Proper</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Gradual</td>
-<td style="text-align: left;">Ps. 27:7, 1 Vulg. (modern 28:7, 1)</td>
-<td style="text-align: left;">David fleeing Saul, away from the tabernacle</td>
-<td style="text-align: left;">Traditional: before David’s accession, before 1055 BC (older chronology)</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The title names David. Theodoret places him fleeing Saul and away from the tabernacle; exact site and first audience are unknown, while Israel receives his prayer. Aquinas reads David and Christ. The older accession bounds this horizon; NABRE leaves the poem’s origin open. <em>Sources: Theodoret, PG 80:1057–1060; Aquinas, <em>Super Ps.</em> 27; Catholic Encyclopedia; NABRE Ps. 28.</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">Offertory</td>
-<td style="text-align: left;">Ps. 29:2–3 Vulg. (modern 30:2–3)</td>
-<td style="text-align: left;">Jerusalem: David’s palace or Araunah’s future-Temple site</td>
-<td style="text-align: left;">Traditional: after c. 1047 or late in the reign before 1015 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Aquinas and Bellarmine give the palace; Patrizi the census-plague altar. The dates derive from the older reign; the first audience is unknown. NABRE Ps. 30:1 records a later Temple-dedication adaptation, with its 164 BC horizon in 1 Maccabees. <em>Sources: 2 Sam. 5:11; 24:18–25; Aquinas, <em>Super Ps.</em> 29; Patrizi, pp. 115–116; 1 Macc. 4:52–59; NABRE Ps. 30.</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">Introit</td>
-<td style="text-align: left;">Ps. 67:2, 6–7, 36 Vulg. (modern 68:2, 6–7, 36)</td>
-<td style="text-align: left;">Traditional Davidic procession: the Ark brought to Zion</td>
-<td style="text-align: left;">Traditional: soon after c. 1047 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Haydock, citing Houbigant, joins the Davidic title to the Ark’s procession; Bellarmine notes the Mosaic echo. Israel before the Ark is the received audience. The date derives from David’s Jerusalem reign; NABRE does not securely date the poem. <em>Sources: Num. 10:35; 1 Chr. 15–16; Haydock at Ps. 67:1; Bellarmine; Catholic Encyclopedia; NABRE Ps. 68.</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">Alleluia</td>
-<td style="text-align: left;">Ps. 80:2–3 Vulg. (modern 81:2–3)</td>
-<td style="text-align: left;">Israel’s sanctuary; Asaph before the Ark in Jerusalem</td>
-<td style="text-align: left;">Traditional: Asaph, or David for Asaph, c. 1047–1015 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Bossuet records Jerome’s attribution to Asaph and Ambrose’s to David for Asaph to sing. Chronicles places Asaph before the Ark; Israel’s festival assembly receives the song, though the feast is debated. NABRE secondarily allows later guild transmission. <em>Sources: 1 Chr. 15–16; Bossuet on Asaphic psalms; NABRE Ps. 81.</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">Communion</td>
-<td style="text-align: left;">Prov. 3:9–10</td>
-<td style="text-align: left;">Royal, parental wisdom in Israel</td>
-<td style="text-align: left;">Traditional: tenth century BC (older c. 1015–975)</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Proverbs 1:1 associates the collection with Solomon; chapters 1–9 form a son in trust and the neighbor’s due. The first addressee is unknown; Israel receives the wisdom. Later collections are named, and NABRE places final gathering postexilically or early in the Second-Temple period. <em>Sources: Prov. 1:1; 3:1–35; 25:1; Catholic Encyclopedia; NABRE introduction.</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">Gospel</td>
-<td style="text-align: left;">Mark 7:31–37</td>
-<td style="text-align: left;">Rome; Mark as Peter’s interpreter for Roman Christians</td>
-<td style="text-align: left;">Traditional: AD 50–67; PBC: before AD 70</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">Mark 7:31–37 (context 7:24–8:10)</td>
-<td style="text-align: left;">Tyre–Sidon–Sea of Galilee–Decapolis; town unknown</td>
-<td style="text-align: left;">Maas: May–Sept. AD 28; a Lapide: about May AD 33</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Papias transmits Mark’s Petrine relation; Clement, Irenaeus, and Jerome supply Rome. Maas and a Lapide give incompatible event harmonies; Mark names Jesus, the afflicted man, and unnamed bearers. NABRE dates composition around AD 70: Rome shortly before, or Syria shortly after. <em>Sources: Eusebius, <em>HE</em> III.39.15; VI.14.6–7; Irenaeus III.1.1; Jerome, <em>Vir. ill.</em> 8; Maas; a Lapide; PBC 1912; NABRE.</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">Epistle</td>
-<td style="text-align: left;">1 Cor. 15:1–10</td>
-<td style="text-align: left;">St. Paul at Ephesus, to the Church at Corinth</td>
-<td style="text-align: left;">Traditional: about Easter AD 57</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Paul writes during his Ephesian mission to Corinth and recalls received Resurrection tradition in vv. 3–7; NABRE dates the letter about AD 56. The lesson stops within v. 10 after grace was not void, before labor and grace “with me.” <em>Sources: Acts 18–19; 1 Cor. 15:1–11; Catholic Encyclopedia; NABRE introduction and notes.</em></td>
-</tr>
-</tbody>
-</table>
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Gradual: Ps. 27:7 (Vg.; Heb. 28), Ps. 27:1 (Vg.; Heb. 28) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Offertory: Ps. 29:2–3 (Vg.; Heb. 30) | Superscription setting: The building of David’s house at Jerusalem | And they built a house for David |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ps. 67:6–7, 36 (Vg.; Heb. 68), Ps. 67:2 (Vg.; Heb. 68) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+|  | Prophetic referent: The Nativity of Our Lord; Bethlehem as the Christian referent | Disputed: B.C. 3; c. B.C. 7 |
+| Alleluia: Ps. 80:2–3 (Vg.; Heb. 81) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: Prov. 3:9–10 | Final formation: The final editorial formation of the Book of Proverbs | Edited as a whole in the early postexilic period |
+| Gospel: Mark 7:31–37 | Narrated event | Date unresolved |
+|  | Composition: Mark; Rome traditionally; Egypt reported by Chrysostom | Disputed: A.D. 38–40; A.D. 40; A.D. 43; A.D. 50–67; A.D. 60–70; After Matthew, and not as late as the destruction of Jerusalem |
+| Epistle: 1 Cor. 15:1–10 | Composition: The First Epistle to the Corinthians | Disputed: A.D. 56; A.D. 57 |
+
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+*Disputed*: the sources disagree and the corpus prefers none. *(derived)*: computed by the corpus from a stated relation, not printed by a source. *Date unresolved*: the corpus gives this subject no date. The evidence for every date, with its sources, is set out in the appendix *Evidence for the Scriptural Dates*.
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -526,6 +458,50 @@ These four afterlives move appointed wording into aesthetic, commercial, militar
 
 **From unvoid grace to heavenly fullness. (*Coll., Ep., Comm., Postcomm.*)** *Classification: near analogue located.* The formulary develops a verbal scale of abundance: divine goodness surpasses what prayer can measure; grace in Paul is not *vacua*; barns fill and presses overflow; the received sacrament tends toward *plenitudo caelestis remedii*. The intermediate propers show how fullness travels: Gospel is received, senses are opened, praise is returned, service is accepted, and firstfruits are given. Abundance is therefore not stockpiled surplus but grace reaching apostolic, liturgical, economic, and eschatological fruit. Honorius, Bede, Aquinas, and Schuster provide partial analogues, not the entire chain. The proposal fails when converted into prosperity teaching; its final measure is the common salvation of mind and body, not private accumulation.
 
+## Appendix: Evidence for the Scriptural Dates {#sec:date-location-evidence}
+
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
+
+*Gradual: Ps. 27:7 (Vg.; Heb. 28), Ps. 27:1 (Vg.; Heb. 28)*
+
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
+
+*Offertory: Ps. 29:2–3 (Vg.; Heb. 30)*
+
+- **Superscription setting** (preferred). The building of David’s house at Jerusalem: And they built a house for David (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:7, 5:11; The Catholic Encyclopedia, Volume 4 (New York, 1908)).
+
+- **Composition**. As under Gradual: Ps. 27:7 (Vg.; Heb. 28), Ps. 27:1 (Vg.; Heb. 28).
+
+*Introit: Ps. 67:6–7, 36 (Vg.; Heb. 68), Ps. 67:2 (Vg.; Heb. 68)*
+
+- **Historical setting**. As under Gradual: Ps. 27:7 (Vg.; Heb. 28), Ps. 27:1 (Vg.; Heb. 28).
+
+- **Composition**. As under Gradual: Ps. 27:7 (Vg.; Heb. 28), Ps. 27:1 (Vg.; Heb. 28).
+
+- **Prophetic referent** (disputed). The Nativity of Our Lord: B.C. 3 (“the year of Rome 750 which he styles 3 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)); c. B.C. 7 (“probably the year 7 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)). Place: Bethlehem as the Christian referent (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 2:1).
+
+*Alleluia: Ps. 80:2–3 (Vg.; Heb. 81)*
+
+- **Historical setting**. As under Gradual: Ps. 27:7 (Vg.; Heb. 28), Ps. 27:1 (Vg.; Heb. 28).
+
+- **Composition**. As under Gradual: Ps. 27:7 (Vg.; Heb. 28), Ps. 27:1 (Vg.; Heb. 28).
+
+*Communion: Prov. 3:9–10*
+
+- **Final formation** (preferred). The final editorial formation of the Book of Proverbs: Edited as a whole in the early postexilic period (Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Proverbs introduction).
+
+*Gospel: Mark 7:31–37*
+
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Mark: A.D. 38–40 (“the tenth or twelfth year after the Ascension (A.D. 38-40)”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 40 (The Catholic Encyclopedia, Volume 9 (1910)); A.D. 43 (“the third year of Claudius (A.D. 43)”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 50–67 (“somewhere between A.D. 50 and 67”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 60–70 (“between 60 and 70”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); After Matthew, and not as late as the destruction of Jerusalem (De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam (1912), responsa-i-ix). Place: Rome traditionally; Egypt reported by Chrysostom (The Catholic Encyclopedia, Volume 9 (1910)).
+
+*Epistle: 1 Cor. 15:1–10*
+
+- **Composition** (disputed). The First Epistle to the Corinthians: A.D. 56 (“(1 and 2 Corinthians; Galatians), 56”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 57 (“about Easter A.D. 57”; The Catholic Encyclopedia, Volume 4 (New York, 1908)).
+
 ## Appendix: Scope and Qualifications
 
 > **Scope.** This hand-missal companion studies the recurring *Dominica Undecima post Pentecosten*, II class, in the Vatican 1962 typical Missal. It is not an official liturgical book, critical edition, homily, civil-date assembly sheet, or exhaustive census of Christian interpretation. Latin was collated from the identified facsimile; English is quoted from registered public-domain historical witnesses and is not official 1962 liturgical English. Scripture, ancient Greek and Latin reception, medieval Doctors, later saints, liturgical history, Catholic doctrine, and cultural afterlives were researched within the audited bounds. The precise Epistle cutoff, textual variants, attribution disputes, disability guardrail, Jewish-relations boundary, and historical changes of formulary pairing remain claim-local throughout. No compiler intent, universal consensus, guaranteed temporal cure, prosperity promise, or universal novelty is inferred. Independent content, citation/binding, profile/component, originality, and visual audits through 21 August 2026 supplied findings incorporated into this revision. The accompanying research scope records its local validation and page-inspection disposition. Maintainer acceptance and installation remain separate publication steps; no PDF or web output was installed from this leaf. **Records.** `propers/verified.md`; `research/scope.md`.
@@ -580,6 +556,6 @@ These four afterlives move appointed wording into aesthetic, commercial, militar
 
 - William Morris, [*The Earthly Paradise*](https://archive.org/details/earthlyparadise00morr) (London, 1868), “Apology,” stanza 4, p. 2; [*Perth Amboy Evening News*](https://www.loc.gov/resource/sn85035720/1912-06-19/ed-2/?sp=2), 19 June 1912, ed. 2, p. 2; John Hodgson, *Original Memoirs* (Edinburgh, 1806), pp. 147–148; Thomas Carlyle, *Oliver Cromwell’s Letters and Speeches* (1861), II, 332–333, III, 171–172; [*Scranton Tribune*](https://www.loc.gov/resource/sn84026355/1895-11-14/ed-1/?sp=3), 14 November 1895, p. 3; [*Norwich Bulletin*](https://www.loc.gov/resource/sn82014086/1912-06-22/ed-1/?sp=6), 22 June 1912, p. 6; [*Council Membership Directory 1969*](https://eric.ed.gov/?id=ED032704), printed pp. 11, 25.
 
-**Last revised (UTC):** 2026-09-24T18:07:02Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -1,0 +1,44 @@
+# Generated. Do not edit.
+#
+# What the Scripture chronology corpus answers about this proper's appointed
+# loci, written by `tools/tpt proper-chronology record` and held
+# against the corpus by `check-content-preflight`. Every field
+# here is the corpus's, carried so that the guide's prose can be regenerated
+# without re-researching the fact: `guidance/scripture-chronology.md` §14.
+#
+# `formulary` is `appointed` when the calendar appoints this identity a Mass
+# formulary, and `no-calendar-formulary` when it does not — a ritual Mass,
+# appointed by a rite rather than by a day, which the calendar sources here do
+# not encode. In that state the record lists no element, `formulary_reason`
+# says why, and no date may be supplied from anywhere else to fill the gap.
+#
+# `label` is the source's own words and the only value a manually authored
+# guide may display. `date` is the normalized form, for comparison and never
+# for a manual page. The sole permitted display exception is the deterministic
+# `tools/tpt proper-chronology annotations` projection: it may render its
+# concise `display_label` because the same generated contract retains the raw
+# `label` and claim `profile`. No manual consumer may mint or edit one. An
+# element's `claims` are the full audit union of assertions resolved at any of
+# its appointed loci; each claim's nested `reaches` records every locus, corpus
+# scope, and inheritance route by which it was returned. `publication_claims`
+# is the exact across-all-loci intersection that the generated one-cell
+# annotation may display. `status` and `reason` summarize the audit answer;
+# `publication_status` and `publication_reason` describe that safe
+# intersection. An element with no `status` cites no Scripture; one whose
+# publication status is
+# `undated-in-tradition` or `research-pending` has no date to print, and the
+# guide states that absence rather than filling it. `nonuniform` means its loci
+# have chronology but share no one assertion an element-wide Date cell could
+# truthfully print.
+
+
+schema = 2
+record_type = "proper-chronology"
+document = "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"
+calendar = "roman-1962"
+mass = ""
+system = "vulgate"
+profile = "catholic-comprehensive-v1"
+formulary = "no-calendar-formulary"
+formulary_reason = "identity 'm01' is a ritual Mass, appointed by a rite and not by a day, and no mass entry in the roman-1962 calendar carries an M registry value; this wiring reaches Scripture through the calendar, so it can resolve no appointed loci here. That is a limit of the calendar sources, not a statement that the rite appoints no Scripture, and no date may be supplied from anywhere else to fill it"
+generated_by = "tools/tpt proper-chronology record"

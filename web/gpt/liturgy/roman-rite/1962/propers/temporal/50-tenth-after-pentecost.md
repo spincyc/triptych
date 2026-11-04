@@ -28,97 +28,27 @@
 | Moral | Refuse comparison as the measure of justice; receive every gift as grace for service, lift the soul in trust, confess sin, and await divine acceptance. |
 | Anagogical | The people running toward the promises anticipate heavenly goods, Zion’s praise, equitable judgment, exaltation by God, and worship wholly accepted in the restored city. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-*Canonical order governs. Psalm headings supply received frames, not recovered writing scenes; Gospel composition and its parabolic setting remain distinct. Psalm numbers follow the Vulgate, with common modern numbering in parentheses.*
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Gradual: Ps. 16:8 (Vg.; Heb. 17), Ps. 16:2 (Vg.; Heb. 17) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Offertory: Ps. 24:1–3 (Vg.; Heb. 25) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: Ps. 50:21 (Vg.; Heb. 51) | Superscription setting: David’s sin with Bethsabee and his repentance under Nathan’s rebuke | When Nathan the prophet came to him, after he had sinned with Bethsabee |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ps. 54:17–18, 20, 23 (Vg.; Heb. 55), Ps. 54:2 (Vg.; Heb. 55) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Ps. 64:2 (Vg.; Heb. 65) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gospel: Luke 18:9–14 | Narrated event | Date unresolved |
+|  | Composition: The Gospel of St Luke | Disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished |
+| Epistle: 1 Cor. 12:2–11 | Composition: The First Epistle to the Corinthians | Disputed: A.D. 56; A.D. 57 |
 
-<table style="width:83%;">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 18%" />
-<col style="width: 35%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Proper</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Gradual</strong></td>
-<td style="text-align: left;">Ps. 16:2, 8 (modern 17)</td>
-<td style="text-align: left;">Israel; place unknown</td>
-<td style="text-align: left;">Date unknown</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The received heading calls this a prayer of David but supplies no episode. The whole poem is an individual plea for vindication, guarded conduct, and refuge from violent enemies. Neither its author and life stage nor its first audience, composition place, and date can be securely recovered; Israel nevertheless received it as prayer (Psalm 17 and notes, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Offertory</strong></td>
-<td style="text-align: left;">Ps. 24:1–3 (modern 25)</td>
-<td style="text-align: left;">Israel; place unknown</td>
-<td style="text-align: left;">Date unknown</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The received heading associates the partly irregular alphabetic prayer with David but names no event or site. Its petitions for guidance, pardon, covenant fidelity, and rescue combine lament with instruction. The speaker’s life stage, historical setting, first audience, place, and date remain unknown (Psalm 25 and notes, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Communion</strong></td>
-<td style="text-align: left;">Ps. 50:21 (modern 51:21)</td>
-<td style="text-align: left;">Judah; David–Nathan frame received</td>
-<td style="text-align: left;">Final layer disputed</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The heading places David after Nathan’s confrontation over Bathsheba (2 Sam. 11–12); that is the psalm’s received penitential frame, not a recovered writing scene. The complete psalm moves from an individual’s confession and cleansing to Zion and restored sacrifice. Many modern interpreters judge vv. 20–21 a post-587 BC liturgical addition, but the poem’s compositional stages, authors, audiences, and places cannot be fixed with certainty.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Introit</strong></td>
-<td style="text-align: left;">Ps. 54:2, 17–18, 20, 23 (modern 55)</td>
-<td style="text-align: left;">Israel; perhaps an urban sanctuary horizon</td>
-<td style="text-align: left;">Date unknown</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The Davidic heading names no episode. The whole individual lament describes betrayal by a companion, violence within a city, desire for flight, repeated prayer, and renewed trust. Those literary coordinates do not identify Jerusalem or a particular crisis. Author, life stage, first audience, composition place, and date remain unrecoverable (Psalm 55 and notes, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Alleluia</strong></td>
-<td style="text-align: left;">Ps. 64:2 (modern 65:2)</td>
-<td style="text-align: left;">Zion/Jerusalem worship horizon</td>
-<td style="text-align: left;">Date unknown</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">This communal hymn gathers praise and vows at Zion, forgiveness, God’s mastery of creation, and harvest thanksgiving. Its Greek and Latin title supplies an exilic-return orientation, while the Hebrew heading calls it Davidic; neither heading recovers a writing scene. Author, first audience, composition place, date, and the relation of the hymn’s cultic and agricultural horizons remain uncertain (Psalm 65 and notes, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Gospel</strong></td>
-<td style="text-align: left;">Luke 18:9–14</td>
-<td style="text-align: left;">Outside Palestine; city unknown</td>
-<td style="text-align: left;">c. AD 80–90</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Parabolic setting, not a dated event</em></td>
-<td style="text-align: left;">Luke 18:9–14</td>
-<td style="text-align: left;">Jerusalem Temple</td>
-<td style="text-align: left;">No independent date</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Ancient tradition identifies Luke, the Antiochene physician and Pauline companion, and associates his writing with Achaia; the traditional c. AD 60 orientation is not the modern historical judgment. Modern Catholic orientation commonly places the Gospel’s final composition about AD 80–90, outside Palestine, for a substantially Gentile Christian audience, with the city unknown. Within Luke’s final-journey sequence, Jesus tells a parable whose two fictional worshipers go up to the Jerusalem Temple. The text does not report an independently locatable incident involving those men (Luke introduction and 18, <em>NABRE</em>).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Epistle</strong></td>
-<td style="text-align: left;">1 Cor. 12:2–11</td>
-<td style="text-align: left;">Ephesus to Corinth</td>
-<td style="text-align: left;">c. AD 56</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Paul, with Sosthenes named in the letter’s opening, writes from Ephesus during the third missionary journey, in the mature missionary and pastoral stage after he had founded the Corinthian church. The recipients are the mixed Jewish and Gentile Christian community at Corinth in Roman Achaia (present-day Greece). The unit opens the sustained treatment of manifestations, members, love, and ordered assembly in chapters 12–14. Catholic scholarship commonly treats First Corinthians as coherent while preserving composite proposals (1 Corinthians introduction and 12–14, <em>NABRE</em>).</td>
-</tr>
-</tbody>
-</table>
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+*Disputed*: the sources disagree and the corpus prefers none. *(derived)*: computed by the corpus from a stated relation, not printed by a source. *Date unresolved*: the corpus gives this subject no date. The evidence for every date, with its sources, is set out in the appendix *Evidence for the Scriptural Dates*.
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -500,6 +430,50 @@ The result is ecclesial as well as personal. The common-benefit criterion, Zion�
 
 **Many voices remain one heard prayer. (*Int., Ep., All.*)** *Classification: near analogue located.* Prophecy, tongues, and interpretation stand between one afflicted cry heard by God and praise owed in Zion. Charismatic plurality may be framed by prayer and praise rather than display. Chrysostom’s common-benefit reading is the nearest analogue; no source ties chant to Pauline tongues, and liturgical song must not be identified mechanically with a charism.
 
+## Appendix: Evidence for the Scriptural Dates {#sec:date-location-evidence}
+
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
+
+*Gradual: Ps. 16:8 (Vg.; Heb. 17), Ps. 16:2 (Vg.; Heb. 17)*
+
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
+
+*Offertory: Ps. 24:1–3 (Vg.; Heb. 25)*
+
+- **Historical setting**. As under Gradual: Ps. 16:8 (Vg.; Heb. 17), Ps. 16:2 (Vg.; Heb. 17).
+
+- **Composition**. As under Gradual: Ps. 16:8 (Vg.; Heb. 17), Ps. 16:2 (Vg.; Heb. 17).
+
+*Communion: Ps. 50:21 (Vg.; Heb. 51)*
+
+- **Superscription setting** (preferred). David’s sin with Bethsabee and his repentance under Nathan’s rebuke: When Nathan the prophet came to him, after he had sinned with Bethsabee (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 50:1, 50:2, 2 Kings 12:13).
+
+- **Composition**. As under Gradual: Ps. 16:8 (Vg.; Heb. 17), Ps. 16:2 (Vg.; Heb. 17).
+
+*Introit: Ps. 54:17–18, 20, 23 (Vg.; Heb. 55), Ps. 54:2 (Vg.; Heb. 55)*
+
+- **Historical setting**. As under Gradual: Ps. 16:8 (Vg.; Heb. 17), Ps. 16:2 (Vg.; Heb. 17).
+
+- **Composition**. As under Gradual: Ps. 16:8 (Vg.; Heb. 17), Ps. 16:2 (Vg.; Heb. 17).
+
+*Alleluia: Ps. 64:2 (Vg.; Heb. 65)*
+
+- **Historical setting**. As under Gradual: Ps. 16:8 (Vg.; Heb. 17), Ps. 16:2 (Vg.; Heb. 17).
+
+- **Composition**. As under Gradual: Ps. 16:8 (Vg.; Heb. 17), Ps. 16:2 (Vg.; Heb. 17).
+
+*Gospel: Luke 18:9–14*
+
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Luke: c. A.D. 70 (“About the year 70”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); Before the end of the Roman imprisonment, when the Acts was finished (De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam (1912), responsa-i-ix).
+
+*Epistle: 1 Cor. 12:2–11*
+
+- **Composition** (disputed). The First Epistle to the Corinthians: A.D. 56 (“(1 and 2 Corinthians; Galatians), 56”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 57 (“about Easter A.D. 57”; The Catholic Encyclopedia, Volume 4 (New York, 1908)).
+
 ## Appendix: Scope and Qualifications
 
 > **Scope.** This hand-missal companion studies the recurring *Dominica Decima post Pentecosten*, II class, in the 1962 typical Missal. It is not an official liturgical book, homily, civil-date assembly sheet, or exhaustive corpus survey. Latin was visually collated against the identified facsimile; complete English comes from registered public-domain historical witnesses and is not official 1962 text. Ancient, medieval, Eastern, magisterial, and cultural reception was searched within the bounds recorded in the audit; no compiler intent or universal novelty is inferred. **Full records.** `propers/verified.md`; `research/scope.md`.
@@ -560,6 +534,6 @@ The result is ecclesial as well as personal. The common-benefit criterion, Zion�
 
 - Martin Luther King Jr., [“Pride Versus Humility: The Parable of the Pharisee and the Publican,”](https://kinginstitute.stanford.edu/king-papers/documents/pride-versus-humility-parable-pharisee-and-publican-sermon-dexter-avenue) Dexter Avenue sermon manuscript, probably 25 September 1955.
 
-**Last revised (UTC):** 2026-11-04T03:59:07Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
