@@ -155,7 +155,8 @@ class LiturgySchemaTests(unittest.TestCase):
     def test_generated_orientation_cannot_drop_an_appointed_row(self):
         leaf, publication = self.chronology_proper()
         self.assertEqual(liturgy.check(self.root, publication), [])
-        path = leaf / "sections/70-date-location.tex"
+        # The rows live in the generated shared table the generated page inputs.
+        path = leaf / "research/chronology-table.tex"
         text = path.read_text()
         _, start, end = next(liturgy._calls(text, "chronologyorientationrow", 2))
         path.write_text(text[:start] + text[end:])

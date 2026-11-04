@@ -365,10 +365,13 @@ the shared orientation-v3 table, generated whole from the leaf's chronology
 record, with generated evidence notes in the expansive study. The evidence
 requirements below -- the inventory, the distinctions between attribution,
 setting, event and composition, the traditional answer foregrounded and the
-alternatives kept -- are what that record and the corpus carry. The
-two-tier dossier layout, its cells and its explanatory prose describe leaves
-not yet on a document type, which keep them only until they are moved onto
-one; no new page is written by hand.
+alternatives kept -- are what that record and the corpus carry. Since
+2026-11-04 every proper is on a type: the three-document studies on
+`proper-study-v1`, and the one- and two-document guides written before them on
+`proper-guide-v1`, whose page 2 is the generated table alone and whose
+generated evidence notes stand as an appendix before the guide's terminal
+appendices. The two-tier dossier layout, its cells and its explanatory prose
+below are historical: no leaf uses them, and no page is written by hand.
 
 Begin and end physical page 2 with forced page boundaries. It contains only `Scriptural Date and Location` and always occupies exactly one page. Inventory every distinct directly appointed biblical passage once, in Catholic canonical order and then verse order; consolidate repetitions and do not mislabel loose echoes in composed orations as direct quotations. Use the columns `Proper`, `Citation`, `Location`, and `Date`. The citation cell does not reproduce Scripture.
 

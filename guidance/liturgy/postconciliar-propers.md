@@ -284,8 +284,8 @@ states for both families: a leaf on a document type receives it from the
 builds from the reviewed appointment input described in
 [Scripture chronology §14.1](../scripture-chronology.md#141-the-propers-wired).
 A leaf without that input prints the generated page's research-pending state
-until the input is reviewed. The dossier layout below describes leaves not yet
-on a document type.
+until the input is reviewed. The dossier layout below is historical: every
+postconciliar proper is on a document type since 2026-11-04.
 
 `Scriptural Date and Location` inventories every distinct directly appointed biblical passage and book-identified scriptural adaptation: readings, psalms, scriptural acclamations, and scriptural Missal or ritual texts. Label `Cf.` and equivalent wording as adaptation or allusion; exclude loose echoes in composed orations. Order dossiers by Catholic canonical book order and then chapter and verse. Consolidate repeated passages while naming every unit and branch. Use these conceptual columns:
 

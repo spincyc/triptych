@@ -1418,8 +1418,10 @@ Because `refresh --check` holds every byte, the content preflight's scan of
 authored prose for dates does not read `generated/`; the rows the page inputs
 are still checked. A leaf whose manifest cannot declare a presentation (no
 schema-2 manifest) states `orientation-v3` through its generated annotations'
-header. The rules below about author-supplied place phrases, authored
-appendices and dossier cells describe published leaves not yet on a type.
+header. Since 2026-11-04 every proper leaf is on a document type and prints
+this page; the rules below about author-supplied place phrases, authored
+appendices and dossier cells record interfaces no leaf now uses, kept for
+reading published history.
 
 Group the table by appointed passage and component, never by a shared date.
 Each group prints its passage once, followed by that passage's separate

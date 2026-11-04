@@ -9,6 +9,7 @@ runs it over every opted-in leaf from the ordinary source gates.
 from __future__ import annotations
 
 import importlib.machinery
+import re
 import importlib.util
 import sys
 import tempfile
@@ -45,6 +46,26 @@ class GeneratedDocumentsFreshnessTests(unittest.TestCase):
                 self.assertEqual(result.changed, (), "regenerate with tools/tpt document-types refresh")
                 self.assertEqual(result.conflicts, (), "an authored date page remains")
                 self.assertEqual(result.orphans, (), "a generated file nothing generates")
+
+
+class EveryProperLeafIsOnADocumentTypeTests(unittest.TestCase):
+    """The maintainer's decision of 2026-11-04: the Scriptural Date and
+    Location page of every proper is generated, which needs every proper on a
+    document type whose template places it."""
+
+    def test_every_proper_leaf_declares_a_type_that_slots_the_date_page(self):
+        found = types.discover_types(ROOT)
+        leaves = [manifest.parent for provider in types.PROVIDERS
+                  for manifest in sorted((ROOT / "src" / provider).rglob("publication.toml"))
+                  if re.search(r'^kind = "proper-', manifest.read_text(), re.M)]
+        self.assertTrue(leaves)
+        for leaf in leaves:
+            with self.subTest(leaf=str(leaf.relative_to(ROOT))):
+                decl = types.declaration(ROOT, leaf, found)
+                self.assertIsNotNone(decl, "a proper leaf without a [document] type")
+                slots = {slot for name in decl.editions
+                         for slot in types.render_edition(decl, name)[1]}
+                self.assertTrue(any(slot.startswith("scriptural-date-location/") for slot in slots))
 
 
 class AuthoredDatePageTests(unittest.TestCase):

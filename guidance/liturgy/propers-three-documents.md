@@ -518,8 +518,9 @@ The chronology component is the generated page
 `research/chronology-annotations.tex` and `research/chronology-table.tex` as
 references, and the page imports each once and carries its own page-two
 markers.
-Historical manifests not yet on a document type retain their existing
-`\chronodate{element-key}{\chronologyannotation{element-key}}` cells.
+The authored `\chronodate{element-key}{\chronologyannotation{element-key}}`
+cells of earlier manifests are historical: every proper now prints the
+generated page.
 
 Use `zref-user` and `zref-abspage` in the concise entrypoint so settled auxiliary
 evidence records physical pages, independent of printed page counters. Place

@@ -9,7 +9,7 @@ set -eu
 repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
 tool="$repo/tools/tpt"
 tool_id="document-types"
-unopted="claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost"
+missing="claude/no/such/leaf"
 
 run_tool() {
 	"$tool" "$tool_id" "$@"
@@ -48,11 +48,16 @@ cmp -s "$sandbox/a.json" "$sandbox/b.json" || fail "the type listing is not byte
 # Every opted-in leaf is current; --check writes nothing.
 run_tool refresh --check --all >/dev/null || fail "an opted-in leaf is stale"
 
-# Refusals: no selection, a malformed leaf, and a leaf that has not opted in.
+# Every proper leaf has opted in, so one renders...
+run_tool render --leaf claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints \
+	--edition main | grep -q 'generated/scriptural-date-location}' ||
+	fail "the expansive study does not input its generated date page"
+
+# Refusals: no selection, a malformed leaf, and a leaf that does not exist.
 reject refresh
 reject refresh --check --leaf ../etc
-reject render --leaf "$unopted" --edition main
-reject refresh --check --leaf "$unopted"
+reject render --leaf "$missing" --edition main
+reject refresh --check --leaf "$missing"
 reject
 
 echo ok
