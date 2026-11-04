@@ -139,3 +139,41 @@ source = "prayers/hail-mary.tex"
 [[structure]]
 role = "common-prayers"
 source = "prayers/short-flos-carmeli.tex"
+
+[document]
+type = "novena-v1"
+pdftitle = 'The Novena of Our Lady of Mount Carmel'
+pdfsubject = 'A source-audited nine-day preparation for the memorial of Our Lady of Mount Carmel'
+title = 'The Novena of Our Lady of Mount Carmel'
+subtitle = 'Nine days toward the holy mountain who is Christ'
+description = 'Scripture, Carmelite memory, the Brown Scapular, and a life clothed in Christ'
+note = 'Not an official Carmelite novena, liturgical book, enrollment rite, or ecclesiastically approved devotional arrangement; see the terminal Scope, Calendar, and Qualifications appendix.'
+
+[document.main]
+preamble = [
+  'prayers/format',
+  '\newcommand{\CarmelFlosVariantReference}{Section~\ref{sec:carmel-received-prayers}}',
+]
+body = [
+  'sections/50-common-order',
+  'days/01-carmel-decision',
+  'days/02-sound-silence',
+  'days/03-allegiance-christ',
+  'days/04-mary-word',
+  'days/05-mother-sister',
+  'days/06-clothed-christ',
+  'days/07-pure-heart',
+  'days/08-common-good',
+  'days/09-holy-mountain',
+  'sections/90-received-prayers',
+  'sections/10-biblical-carmel',
+  'sections/20-history-order-feast',
+  'sections/30-marian-spirituality',
+  'sections/40-scapular-tradition',
+  '\clearpage',
+]
+appendices = [
+  'sections/95-annual-use',
+  'sections/00-identity-calendar',
+  'sections/99-references',
+]

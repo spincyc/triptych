@@ -52,3 +52,29 @@ data = "src/gpt/devotions/novenas/00-ascension-to-pentecost/prayers/veni-creator
 [[structure]]
 role = "common-prayers"
 data = "src/gpt/devotions/novenas/00-ascension-to-pentecost/prayers/veni-sancte.tex"
+
+[document]
+type = "novena-v1"
+pdftitle = 'The First Novena: Daily Prayer Book'
+pdfsubject = 'A condensed bilingual recitation companion for the Ascension-to-Pentecost novena'
+title = 'The First Novena'
+subtitle = 'From Ascension to Pentecost'
+guide-title = 'The First Novena: From Ascension to Pentecost'
+note = 'This is not an official liturgical book or an ecclesiastically approved prayer book; see \textit{Scope and Status} for its source and use limits.'
+title-page = "companion"
+
+[document.main]
+preamble = [
+  '\input{devotions/novenas/shared/recitation-companion-format}',
+]
+body = [
+  'sections/00-the-vocal-order',
+  'sections/10-opening-prayers',
+  'sections/20-the-daily-received-collects',
+  'sections/30-the-daily-hymn',
+  'sections/40-day-9-the-pentecost-sequence',
+  'sections/50-closing-prayers',
+]
+appendices = [
+  'sections/60-scope-and-status',
+]

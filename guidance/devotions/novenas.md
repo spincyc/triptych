@@ -116,6 +116,10 @@ and review state. A compact immediate notice may distinguish pious exercise from
 liturgy or reject a mechanical promise; a prayer-specific status, translation,
 promise, or apparition limit stays with that item.
 
+The [`novena-v1` document type](../document-schemas.md#document-types) writes
+the skeleton of a full guide and of its companion; a leaf declares its
+title-page fields and section lists rather than writing `main.tex`.
+
 Daily meditations must develop rather than paraphrase one another and connect
 doctrine to repentance, virtue, vocation, mercy, unity, or mission. They may
 invite prudent fasting, almsgiving, confession, reading, or service, but may not

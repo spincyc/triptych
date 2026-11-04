@@ -127,3 +127,39 @@ source = "prayers/veni-creator.tex"
 [[structure]]
 role = "common-prayers"
 source = "prayers/veni-sancte.tex"
+
+[document]
+type = "novena-v1"
+pdftitle = 'The First Novena: From Ascension to Pentecost'
+pdfsubject = 'A source-audited bilingual nine-day pious exercise for the coming of the Holy Spirit'
+title = 'The First Novena'
+subtitle = 'From Ascension to Pentecost'
+description = 'Nine days with Mary and the apostles, awaiting the promised Spirit'
+note = 'Not an official liturgical book or an ecclesiastically approved prayer book; see the terminal Scope, Calendar, and Qualifications appendix.'
+closing = "scriptsize"
+
+[document.main]
+body = [
+  'sections/40-common-order',
+  'days/01-ascension-promise',
+  'days/02-one-accord',
+  'days/03-mary-church',
+  'days/04-repentance-remission',
+  'days/05-unity-many-tongues',
+  'days/06-sevenfold-gift',
+  'days/07-fruit-holiness',
+  'days/08-charisms-mission',
+  'days/09-fire-new-creation',
+  'sections/90-hymns',
+  'sections/10-scriptural-archetype',
+  'sections/20-history-reception',
+  'sections/30-theology-waiting',
+]
+appendices = [
+  'sections/95-annual-use',
+  'sections/00-identity-calendar',
+  'sections/99-references',
+  '\phantomsection',
+  '\par\medskip',
+  '\smallskip',
+]

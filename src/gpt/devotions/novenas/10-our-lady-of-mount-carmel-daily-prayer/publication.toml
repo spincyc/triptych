@@ -60,3 +60,30 @@ data = "src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/prayers/hail-mary.
 [[structure]]
 role = "common-prayers"
 data = "src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/prayers/short-flos-carmeli.tex"
+
+[document]
+type = "novena-v1"
+pdftitle = 'The Novena of Our Lady of Mount Carmel: Daily Prayer Book'
+pdfsubject = 'A condensed recitation companion for the novena of Our Lady of Mount Carmel'
+title = 'The Novena of Our Lady of Mount Carmel'
+subtitle = 'Nine days toward the holy mountain who is Christ'
+guide-title = 'The Novena of Our Lady of Mount Carmel'
+note = 'This is not an official Carmelite novena, liturgical book, enrollment rite, or ecclesiastically approved text; see \textit{Scope and Status} for its source and use limits.'
+title-page = "companion"
+
+[document.main]
+preamble = [
+  '\input{devotions/novenas/10-our-lady-of-mount-carmel/prayers/format}',
+  '\input{devotions/novenas/shared/recitation-companion-format}',
+  '\newcommand{\CarmelFlosVariantReference}{the canonical full guide}',
+]
+body = [
+  'sections/00-the-vocal-order',
+  'sections/10-common-opening-prayers',
+  'sections/20-the-daily-received-collects',
+  'sections/30-common-closing-prayers',
+  'sections/40-day-9-the-complete-flos-carmeli',
+]
+appendices = [
+  'sections/50-scope-and-status',
+]
