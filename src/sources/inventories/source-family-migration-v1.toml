@@ -1,694 +1,694 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-11-03"
+audited_on = "2026-11-04"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:d35682df1c1edc21f7f1b4ecb532c5a2b39a3c609d5b29c9c6f6edf8db6bc7f0"
+inventory_snapshot = "sha256:53908585785ddd942f2f83e3f8e47ce6111d77058c044dd0f0ac1d7f878b08be"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:39680fdb5c6abc8cf3fbf866bcc2f2e8d9f599c3d46bc25799ddcd2ebebf4d97"
 canonical_catalog_snapshot = "sha256:65ce895aa61a686b6809a751819284ada1555e4d1240ad3ad7bc75e90f0bbad5"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:256a66a1d810a99ba68ebc2c2c44ca842746d8f68f2ad44f4bdd99537f32f9cb"
+snapshot = "sha256:51b7d0307ddbeccc020fab9c42287eeeff6087e950dc5b63f681429d35924501"
 families = []
 
 [[review_units]]
 owner_id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
-surface_snapshot = "sha256:59ccae82b2edc1427435ec2e357d8407131d449316a0cf708c810ecc2b620292"
+surface_snapshot = "sha256:7ae3e74335d7d054c5e1f5f1e3ca416be655599a348f9d0b16de9979967ca2bd"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/canon-law/natural-positive-divine-human-law"
-surface_snapshot = "sha256:09b17e84eeeae303045ed92ea569254f1b2ec20473b6901b4348d2996c49088b"
+surface_snapshot = "sha256:bb75d584a21d5f06b5fc36f0c0188934516fd14a86b49e4ceb95330f2f1159eb"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/against-the-instrumentalists"
-surface_snapshot = "sha256:463208ad0518b6a019e10826b46d65e0e677a78b855648526d453ce18fe93ca2"
+surface_snapshot = "sha256:640a3f37c51acb2b1e3c59016d6d41259baa185577fd498c6913c8ecad1aeee1"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/at-the-end-of-every-why"
-surface_snapshot = "sha256:feb5b0ae331ee14595439f07746b89946bf37378162ffff6bf2de192e2b5353c"
+surface_snapshot = "sha256:7c6f6c4af2c5fa8569f62f646756212529c55ecb3cf9ef4d83fdaae9da8bbcb6"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/catholic-doctrinal-authority"
-surface_snapshot = "sha256:ca66fe232be860b11fe9d29a29d88fd5949fad9c7068f1f8a548851d69c04038"
+surface_snapshot = "sha256:e130dc9a93bf418df825d04f38cced9cc3b3847bcd78fa6dca3e3958b489cf48"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/council-missal-and-crisis"
-surface_snapshot = "sha256:f6230743c34597fd2e0b6662c125ae5cec1ecd662bb0e7766d0982a86065e8dc"
+surface_snapshot = "sha256:c46bfe154c5a7a6b217fd587e0b676bc060f265abc796f8c30a60523970121b0"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-01-death"
-surface_snapshot = "sha256:feb13f5a417a5e9c9b54192f94c3b93f96c9605e8757e99eb748f0df0fe59f7d"
+surface_snapshot = "sha256:738a1880fd4529a2365c64929c51c61a14ecc369f202ab306cf245d8ec980863"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-02-judgment"
-surface_snapshot = "sha256:d6bdda7756d59ca5144dc829529665145e2b7828d0d660c938e75e5e64033df4"
+surface_snapshot = "sha256:78308a1c3f3d9fcaf564409f70ad017c9ef1caa69ad4b03e9977e833548088d6"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-03-hell"
-surface_snapshot = "sha256:08463f20da2cffb49177d7a67ef67d1707d33d39e0c437754843e0c126dc958e"
+surface_snapshot = "sha256:74d86aaa28ecf2a02346830a6bfd67b3c01c977893e1e783aeda08ba043ddd45"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-04-heaven"
-surface_snapshot = "sha256:e9803afda50a0ddf6b172c61297a257ff6e0aa11ef340d902650dd55a07e5f43"
+surface_snapshot = "sha256:25467c61e845a61809495c55bfe4aa556ad4b679e30936263ac95e2d7f67640d"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/freemasonry-and-the-catholic-church"
-surface_snapshot = "sha256:5bc3770d52094ab5735c453b32b0727d8b8625ff9ee73c8ecb17d849a48aa482"
+surface_snapshot = "sha256:ec0696142dde41cf67645323bda13d19ad5d478b9bdc4726796e786e1bbcec45"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/in-defense-of-the-particular"
-surface_snapshot = "sha256:34f6eae6a91bd849898be4832cb75050438f41dbbbfcb81a3e6a4aa95124cc4f"
+surface_snapshot = "sha256:daf3d37f96f868b59adb1fff54d262b0c4393e3339ab1875e47945102d6be22b"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/last-supper-calvary-and-the-mass"
-surface_snapshot = "sha256:1a9cd8bd00ee42f6c3c5d9ae6301938cf745bae7bad7734b4872b83d032e3b12"
+surface_snapshot = "sha256:507753c0a6eb3c2a8bd807706370fd4d16ddda140620bf2bb8654d3a7170509b"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/ontological-vertigo"
-surface_snapshot = "sha256:1e8659c510f7d8d2468583e808a48fadd2d40a6967db61a729f0afa81cfd4cb7"
+surface_snapshot = "sha256:1f489f3956e3a24e8073a64d1e3d6ca8eb7149df24123fd13fc266ac982e5f4d"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/the-due-return"
-surface_snapshot = "sha256:c2e67e3278f925040207f9cd866d366fe1d07f8ad9c2c81392903b5b6490b795"
+surface_snapshot = "sha256:a049758b110416bbd469cc6e4512dfda86b7ab5313de4a5a8283b808f33dcf63"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/trustful-surrender-to-divine-providence"
-surface_snapshot = "sha256:8e78876a52fca616455488b4e45dd091a3b4f835fe35b8cce7ef471c5c7c2b0d"
+surface_snapshot = "sha256:a06530eed2dbf58fadc878b3902954cdad419982210a0c70cac08ba34a82c4a3"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/scripture/abraham-and-the-daylight-stars"
-surface_snapshot = "sha256:ac6b7210adaba9af6e09d1cf51b3017d09aaa56b4e3cccaa12cfdbe237181a84"
+surface_snapshot = "sha256:a761e82b58bc954c1b1578c69361aef3dbe2fca2cb248a5ba1ce081846d24386"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/scripture/john-6-bread-from-heaven"
-surface_snapshot = "sha256:39253fcc7ab4b756bc9ebc102e6ee535fad2989b1069fc0a6fc200cb478ce86c"
+surface_snapshot = "sha256:a807b5a7443c2e5ed6681f9c6b66ea56af0019d007b30525cf3252f21e085d62"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/scripture/the-linen-cloths-at-the-empty-tomb"
-surface_snapshot = "sha256:d83555a4065c1fc03c0373603c1d238c9a2cc72aca100ab98f35219003a13be7"
+surface_snapshot = "sha256:9bf9b37fccccde5dcda2b45805442a6db9b224ca10cf15a671cae895df159752"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "biographies/origen"
-surface_snapshot = "sha256:17fff2f6968f193ca0b17e751b58737a4fee85d4dccd84d6214eab5a6ec551c5"
+surface_snapshot = "sha256:036c0b7fd6ee3c13bbadb1a2617e70d82ff7d34ad2915d7e1cb5567f247b8dda"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "biographies/saint-augustine-of-hippo"
-surface_snapshot = "sha256:df2303ed63777c861d6cce7ba0bab9bbc30b144a2e249524509703b0fb0b980e"
+surface_snapshot = "sha256:4e015d6381f56e988d64e993f7f2df9234e3b1fd8e575f8b585d7f0234d046b9"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "biographies/saint-jerome"
-surface_snapshot = "sha256:530861129532d63817b1f62438bd9c2fb7a51af0251c562724631c64b12975f1"
+surface_snapshot = "sha256:6afccf5e7bece9fe8a55cefe6820d2ea81fa923ec88cfb0cd97f58a1693f23fe"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "biographies/saint-paul"
-surface_snapshot = "sha256:769351ac3ba8abfec8127bd15f2050c81c8d01bea70ef725dee8b3f57e079093"
+surface_snapshot = "sha256:7e43d787d05af1042759995c5952d009c3f6a47982d6f56095b4a4bba94fa342"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "biographies/saint-peter"
-surface_snapshot = "sha256:b4c1826a059fdad8eadc1938588c71eb0dc78ac3466f9a6093b5e7b4872f6d65"
+surface_snapshot = "sha256:f51b51c8c7fd6f2e3542182b0773e2579ffdfa724ad607fba313b31f12311f24"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "biographies/saint-robert-bellarmine"
-surface_snapshot = "sha256:d02ca9369e4881b5489561c3c1271cb950f3b9bd07f1537f05ef271cf0627055"
+surface_snapshot = "sha256:9a824ce3e4193a3907d2304e129b42e62f62bb0a4c5dbfb8d7ec833174ef3239"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "biographies/saint-thomas-aquinas"
-surface_snapshot = "sha256:22ff3f54c1c200fcc1c7d880459b69655ab85e6f481f4ec94d17920f5e1604c0"
+surface_snapshot = "sha256:71659b5750672dabb7eebd9bfbe1f12ec960d2f91447b018ce70c9a9787e4e68"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "biographies/tertullian"
-surface_snapshot = "sha256:64d36f7a00d63a11034d720f52bf455b48040438a20feee128f9fe099d7b301a"
+surface_snapshot = "sha256:dc112afaedc7d510ffd1298ce7adf04f5e4be098d22b666717686de725ced34c"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/00-course-guide"
-surface_snapshot = "sha256:51c9b1c15fed1edc323dc12367432af9d06cb9f550e884a0224a33b2c9cb6c62"
+surface_snapshot = "sha256:49fc53f2cc93ab514c7cfc6d70ddbb3ea9e7994b0b47c9a4abc071ba9ac632cb"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/00-memory-workbook"
-surface_snapshot = "sha256:89e58078877a7d541698e7252016684eae52d4e9177f150724c8517e0b64604e"
+surface_snapshot = "sha256:43e4e7126dc155bb6b272fa84e570a4737c7c5494ae9bf82afd6ec2f4c1f107e"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/00-reference-grammar"
-surface_snapshot = "sha256:05209670e7eb93e10ed3eeb6b09358a4216a3936d53e509ff0c2ec916bfbef75"
+surface_snapshot = "sha256:c895056d16b218872a7bbb5a0488e6951c1942d5f3ed7e8908c8110e6aa9b42c"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement"
-surface_snapshot = "sha256:d24ec221e5cfaeef07631e9af706dd9d830fc6d86985f6275d891a95804a838b"
+surface_snapshot = "sha256:35d9a26cd4a244c6483d6aa54453d9f0906d2fb612b1b7110d57946887031e71"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/02-noun-systems"
-surface_snapshot = "sha256:faee832cae998ec19374ff69aeb70df1f3c4bbe8b9cd8d5eab4b1d2c77f627c1"
+surface_snapshot = "sha256:f871e03eb78c2becc4fb92fd0a72f197c0e1c7d23214a31c45fdc37f627e5877"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives"
-surface_snapshot = "sha256:703facffec13b2be02f0865ffafe741831d5ba74d066a202696a3b7d5bcb096d"
+surface_snapshot = "sha256:fa45818c3df35efc6a8cc37566bca8e35fef59af6f24683b5b048950cbb99575"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/04-being-and-present-action"
-surface_snapshot = "sha256:c943d1d2f58588807433679d9d9e5e213d6231512032707d908b46eab87a84c9"
+surface_snapshot = "sha256:06e7b8f83284f06bc322b8ad81350902d04f4900688bbc7201c63294946e445a"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents"
-surface_snapshot = "sha256:0648df87a2512a1199cd4ad7854e6c4b138b41a8b45928c238368f82d6203561"
+surface_snapshot = "sha256:df6685172c34d88838c1c118ddeadaee3fcc821056a45eaaada71cf71a600cdd"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading"
-surface_snapshot = "sha256:54cf095400f844d0b44834db4c07c8f3e0c9eba6c137d390e597f662f4a644f7"
+surface_snapshot = "sha256:979c201da371dbd6d80295e9f49145440391c3cd62f34f9dd09e10b3e2977a3b"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number"
-surface_snapshot = "sha256:558576bc9eae1544cc0ba171e8b7b18f155a039f6a38571cd1781d755f93a3bf"
+surface_snapshot = "sha256:f3e884bd5318ca7254a1426f84e0dbd7f97858d1f3023c0ca88e4c373ad2bbce"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes"
-surface_snapshot = "sha256:277279a4976a7bb948effd2cf1dbb9535c875c3a015d789a152ce37d21ed2822"
+surface_snapshot = "sha256:bf80f1cbd3f27997d007c61a1352ab3915d636c651eb5009481b233a3b4291cd"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/09-subjunctive-system-purpose-result"
-surface_snapshot = "sha256:9baa08cf6e7477cdcbd2d0e43feae2965eea58504653409974d9370f7aae9993"
+surface_snapshot = "sha256:a522e69d6ecf572758ee5b9988bed0114caf426989c8c77217b918ba8aa31c33"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/10-circumstance-conditions-characteristic"
-surface_snapshot = "sha256:475ad77207fdf761516da21d85417216834c7b8bbaca9b395670d57e31efaee0"
+surface_snapshot = "sha256:be45d5e87b642dffb341485600521ae981bf51bfb544f4f89189249ef4a0d8f8"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/11-commands-wishes-verbal-nouns"
-surface_snapshot = "sha256:3ce03d3b153594ba6cfa0f400545d2d54cf3e507922b57cce5f54a9daae3612a"
+surface_snapshot = "sha256:7d2e99b3b86beb5ee37899a004fe84ca08388068af6a031d8a2a62dd87e69978"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression"
-surface_snapshot = "sha256:b331b1c43ab0030b6f98396a61260d3405112426cc5f850d4d4c97eca5f83dda"
+surface_snapshot = "sha256:3fc8a4fca490c3802884e1f0e8076065e4f7537bdaa1a980acee10418dc5a56b"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/13-reader-method-and-ordinary"
-surface_snapshot = "sha256:c6679175502df8c012ab2f5192455ada0694dcbc3dae29f0e526a26f18f17b54"
+surface_snapshot = "sha256:1098e5674052813786f670ced5de3086392bd98ff056862c0e0efb138bdc6d33"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/14-orations-and-petitions"
-surface_snapshot = "sha256:f60b9ba6a0e50afae9bf7143a178d5397d625529544c7627a09fcd50a8bb6ab8"
+surface_snapshot = "sha256:7bf513ea3b5249ca6f37eabccb64d9a80b59530112ace26e39dd3b9c436ef007"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/15-lessons-epistles-and-gospels"
-surface_snapshot = "sha256:bcd12c8439fb22f265741f1d23ca86630b08144713987ba1119cd620d3fd6aa5"
+surface_snapshot = "sha256:e437bd0f4ec303697bbf5a653319b4765ff78fe2c7cbef1250cb8026762037d0"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon"
-surface_snapshot = "sha256:48d706f7eba4fc2e94ac8d5d5f871f8cc0d45bd74896629b2aa05c9714bdba96"
+surface_snapshot = "sha256:a431a60e5c4af8364c52a25dc4f8ad0e245777bd0b60a7035fe725bfcc0880a9"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons"
-surface_snapshot = "sha256:4d236fbc74a5a4a42f68ea247a4220c0075ffd8c26adc75f6aa493d1d386a6f4"
+surface_snapshot = "sha256:adbaa8d7d23d878874eb1b33b1d80d6f71264d519bf82bf5d25cd807fa5c4388"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass"
-surface_snapshot = "sha256:72f40e32fac7b4cefa64e1432a15f7bad195b6e922b26c337a643a1341ceeaa1"
+surface_snapshot = "sha256:32f6dae7a47395ebf74476dadb6777a4edbcd93ebfdb09e0133c4cda89f891f3"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture"
-surface_snapshot = "sha256:eabaadf3378786c5eb29ab072bfd15ff65fa8267245c8de4c139aa974e73b4e3"
+surface_snapshot = "sha256:08c8bd50f8134e702eba0a7cd8975ddf24254293842c162f1a1b5b96a1d89851"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose"
-surface_snapshot = "sha256:3cc9afadecf06098024116c8e35d6987da727c491c409a12273b1ad1dcc59ba5"
+surface_snapshot = "sha256:4ce869eb174b7194580a4d96a15a59fb4a8dbdfb5b60275185025e386856bf69"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation"
-surface_snapshot = "sha256:75c7ecae777bbbe7192e668e6c5d25f63cd092b0205191637172d74708009bc7"
+surface_snapshot = "sha256:d98b080512ff38bfce126f51ac6962656f893c1125dadc6b73f8646cb02bf3b4"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research"
-surface_snapshot = "sha256:ab6b10fb2055ba0b63a950bcf54305a9144d20ad1e33276b0e67e287d2d440ee"
+surface_snapshot = "sha256:52bfa654784340d5e614bf64dd0258f20a746faddf8119cc2c8317fdd9dc5134"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/01-textual-prosody"
-surface_snapshot = "sha256:99311eb3a3cd5523bbe8e1d2aaaaaf92e0f83b2f3a12236f66b1428eff45c391"
+surface_snapshot = "sha256:541dc303d5d3baa6f790f6bad7067d9a5f3605e52ada6564bbe1a326d8fdd385"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/02-hexameter"
-surface_snapshot = "sha256:a30d662d696823453969f57c2513cd342aa6a50004ba5cd75019c3d9911fa3d1"
+surface_snapshot = "sha256:73409c64268faef7c1c5367fc7d8bfbf06d08f02e53c1d8bd427af334397c29f"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/03-elegiac-verse"
-surface_snapshot = "sha256:5564ba706110072c10f499fe1bd7ee18f3662a8e8fb7eef65c2639e4f31a16eb"
+surface_snapshot = "sha256:628e55bd23f1f7e1f2cce9423e32c0635172e357329063fb382a47b62d3cca40"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/04-lyric-meters"
-surface_snapshot = "sha256:44d59d79fcff53c6cf56c0d5024f3ccc867f888726fee1fb42ea6d73678e5ddc"
+surface_snapshot = "sha256:195ea4cb3bd3dc0ac94cde6d2c41dac49d01e01487bf59a803c8f230d995a87e"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics"
-surface_snapshot = "sha256:bde49c4af96276a68b82b43afdd64be9647c8ce967fa0aeda676f8a719325a5a"
+surface_snapshot = "sha256:2363fc17c93f8984ba231670ff919ee65a2ea4712dd6f08730396e27e3e03aa4"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences"
-surface_snapshot = "sha256:39751bb39a3471d80ffecd5fbb9f21fd1ee3f7e157318d39a719c1258dddcf49"
+surface_snapshot = "sha256:add0462bf9440976bccb05982a8a6dbd9a0a722ff1e8c38f87c01f0c531e38a5"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary"
-surface_snapshot = "sha256:47beb549599643373d8c53f953937861539d7e0dc69e7585af10fb959c4905a0"
+surface_snapshot = "sha256:4192250776793239dc086cbb05a2af9519886ce9f98a23cd9ef20b63544db6d8"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition"
-surface_snapshot = "sha256:cf1b1108ec05cdaab8434b0c1c157611468c7e75d79aedb130cef1ca652bdb21"
+surface_snapshot = "sha256:450ef6c1b8f02eb010df167f57ba34d7224ca136e3d1e81330bd5ad88d24f9e1"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations"
-surface_snapshot = "sha256:884da034b300867b3031e67fa6085091d69074e2f0d72234d63d1a07279d3936"
+surface_snapshot = "sha256:3de5b0d8c69b9c086c2c0335c510bf9391937051fddd177aff5064c3b4520b8a"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/02-core-grammar"
-surface_snapshot = "sha256:b4cc76efe778995154e7f0ba2aecff8428e81ee390678f0e5dc32c0b8acbb112"
+surface_snapshot = "sha256:2d1e80ecf3a72083809299ee54490cb8eba3de419291d7dd4184907c062ced4c"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading"
-surface_snapshot = "sha256:e570eb9cb8f80194523f54f5632f3c2e20f900a9f26446a89f8c5c7276ded6b4"
+surface_snapshot = "sha256:76d0f57232d7276ae9b7eb43813ee3c6b234a68936f4ae538b7d4c1992b5e29a"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"
-surface_snapshot = "sha256:3f1a8ffdbe7f74b8efaeb52b210be8ef720eddf2a3b3d50e413a31ca2144b379"
+surface_snapshot = "sha256:e40ff472f840ea2cf27c406b8cda8f9adbb963b287907c92ba4de4b615c9ce47"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "devotions/novenas/00-ascension-to-pentecost"
-surface_snapshot = "sha256:747d66e504564143c458f5747d6fcea2fa4874aeb2e57676e25d6bfbef9bac5f"
+surface_snapshot = "sha256:f7f715bd6b6e4ba25ea4d571c39eff4d1c015b9fb8b3ee2222ea77d937596611"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "devotions/novenas/00-ascension-to-pentecost-daily-prayer"
-surface_snapshot = "sha256:cd3703781a054020790977ad55410530e6e839b1c69a462d25c7173fe074011d"
+surface_snapshot = "sha256:6e6a13265f10c49315bb93891dea18c77e6a77d1ab49b34c87c88b7c04a98617"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "devotions/novenas/10-our-lady-of-mount-carmel"
-surface_snapshot = "sha256:48f2e2c2f64723c66b8193157dc6ca4502e53526e89d9c72eba825056fbca936"
+surface_snapshot = "sha256:8bf36ae9247ddd6fd41a6dd275a329ba18e25092f88d481a6e2335594e4215d0"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer"
-surface_snapshot = "sha256:5f3b37dcc2cdb30638ca948a5c59023e104b894fff486cbf0f261607155001cb"
+surface_snapshot = "sha256:56f383f1198911adb4620c10e390a6748189c5294aeafc486accac58623139f6"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "history/biblical-translations/01-septuagint"
-surface_snapshot = "sha256:8845d4bcf8d2b9d3b6f2de04619993b983933a75b8035a10991baba90a35c812"
+surface_snapshot = "sha256:06151da44be34b12daa49c4c5dc392c41e7fc98ff25a9714f0dfdf3dbcd0a65b"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "history/biblical-translations/02-vulgate"
-surface_snapshot = "sha256:7211b9ef423ea8bd8d98dfad82b5fa264b9e274ff840d29d50c75f4318915623"
+surface_snapshot = "sha256:697ff647b9323cfc54c5f9f00745a26b76a8970241828acd041315a66d930022"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "history/catholic-exorcism/01-history-and-current-practice"
-surface_snapshot = "sha256:7ece37a6f8a09666a8d7a25249f1fc159edd88eb9c6a4f7ff2e50a12e33b04a5"
+surface_snapshot = "sha256:760dec15918d39c87d7f74a6ecaddcb75c74e3564531606e380a219a0037a6c6"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "history/catholic-parish-histories/01-st-stanislaus-milwaukee"
-surface_snapshot = "sha256:1d256daa5e139b51d40c7e2e87c356e5e0a3c6ec08b7e5115d2952ef7dd68618"
+surface_snapshot = "sha256:2ad0c70ff0f0f14ccb488c1423c504b89bbfcc792895f66376e07c3411b4dc9d"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "history/catholic-parish-histories/02-st-anthony-willits"
-surface_snapshot = "sha256:e66422d6a927e9d03685aac16a402e673783583a0127b2d9bea39825c4faca18"
+surface_snapshot = "sha256:ccfee033b334ccb94c8f10334163981875b0e35a177f12605ff5308e036045ce"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "history/traditional-priestly-institutes/01-sspx"
-surface_snapshot = "sha256:fd5ac4ab95ebabdc5d2d81db994dd7c2e707d155fb637a46927c91f0e6046066"
+surface_snapshot = "sha256:6d0cf572cc598069803ee926397d35121da2a1687b26e4b1f2f741ecec0fbe68"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "history/traditional-priestly-institutes/02-fssp"
-surface_snapshot = "sha256:21a2b62de9d4f0a752a20061356996addeef8a21684ef8a0bf123ef1c6a888b9"
+surface_snapshot = "sha256:e9fac0cb9d45acc624b87d858196c6e20658a8072191169128d297682a91cb78"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "history/traditional-priestly-institutes/03-icksp"
-surface_snapshot = "sha256:eb04ca892eb926462b3ba0e6143b02690a503c4ee1c0f1e418b94f099dd1d107"
+surface_snapshot = "sha256:e58056e8f2c1daf555503d3a9c4974208a2862af57efaa6741620086b40d2c84"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
-surface_snapshot = "sha256:aad58e1494347d6f0a8cb988057a697802a8b987d7a853b8145f239895e7b097"
+surface_snapshot = "sha256:b8248e18b9a100dc46b1ab9c3d5c07b6b2e726bc424ae882e41a15a2d9f532b7"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"
-surface_snapshot = "sha256:3a49fecd7dcf8245aa6c91ce7e4bef8fe36e7bc015096bd5f48e0a9a7e24e070"
+surface_snapshot = "sha256:c774b1a0dad38275ea4e405fb2ce2d7cc120c94e0e5ae8eb7d92a65b05b5d3fb"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday"
-surface_snapshot = "sha256:1dea5cff54a246518476b515cad0cc7fd4ff2ba97807de36a84fdcf0597c46c2"
+surface_snapshot = "sha256:27b6240f691813d434573eecd6d1e88c52cf459a4017a484d51a5d8c9f2c85ab"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost"
-surface_snapshot = "sha256:4d53339489fec9ef1d94f980151f823bbe70afa5dfac14336c52f1a4a41f75fb"
+surface_snapshot = "sha256:628fd90e53916ccfef91fc92554e22ef400b8a94bebb0040a7c7757814fa5b2f"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost"
-surface_snapshot = "sha256:ca5fa171e442746cb97761258a5ee0d29afe4daa2bb4c26c9fcd04e9a8145969"
+surface_snapshot = "sha256:76fa44b2b2f27989c0eb2bee7e3c2e7e0c3e69cc8ee7237120fdfca129da899c"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/44-fourth-after-pentecost"
-surface_snapshot = "sha256:68c9cc8a67226a870f1624322650973e4b6efed4ae45f158f7c3114f9d80b6fb"
+surface_snapshot = "sha256:8eca88dc62a0b51e374a37ff311721993c15a14816d92204099892d829ed6fb6"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost"
-surface_snapshot = "sha256:9b9d1432ad3925ed49f03c34be3b2be27a276f4c9833e3cbefe3bf83049169a1"
+surface_snapshot = "sha256:66e52fb8deb0cdb7816e05faaeec2f908f9e9d989cf65152a4a7d09b07379fe0"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/46-sixth-after-pentecost"
-surface_snapshot = "sha256:7b7e1e399e42050783aa7f62efa735cb56f9b900f575d597e772f8ade57b35f9"
+surface_snapshot = "sha256:21055723f0002d0f4fc93ef31a056f49895ef1918f19731624818d42e4ffa85e"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost"
-surface_snapshot = "sha256:06dcd5bcb0e759dc3e862a1380ba6a0871aa95e594100ffcbde3756b439a4186"
+surface_snapshot = "sha256:3aa10fa7ec24d6d02d322bfbb7abcc76682e06006c6962be9bf73b0a2c031bdb"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost"
-surface_snapshot = "sha256:a2086d79701d28009ab38b87c65b3425777e4feae21dbd06c6e5e81014e1c70d"
+surface_snapshot = "sha256:3cd4f4f8962dfc0b7f7493e00fee0c2437737432d42bdbb4e8414d962d199458"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"
-surface_snapshot = "sha256:8f650463c51e591c46fd97628c823e5b16ac220f27f6d11e3fc62e3e62f7f063"
+surface_snapshot = "sha256:2bf597961943a2cb218548f149be6cd2557fc16e04238e5329b03c7da39faa5c"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost"
-surface_snapshot = "sha256:795e020fa31bdf046caad60d3a95a856535f5cdfefa15ddd7dc4b2f3895ceeaf"
+surface_snapshot = "sha256:21e9a72366d370ccd7ce77a799ed6edacf2d2ddd9bc8c366715caa5ed38eb028"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost"
-surface_snapshot = "sha256:fa61b2da87f1340173fe7fa88dcc41d7793c7fe16e47928b1c881cdf5f6c12c0"
+surface_snapshot = "sha256:d5df9515566f7d66041a5e6364bf06eeed7272a8843c88f34b255da619303aea"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost"
-surface_snapshot = "sha256:aeee12cf085c46f82181750d412067c41231b64f294aea84d5149c1b031e95de"
+surface_snapshot = "sha256:db8e294d8458ff98666b47c177102ac279056f773c627150e454bab85dbd29fd"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"
-surface_snapshot = "sha256:b9612b48d726cf233f280a00531fcb74927b69946393d80319be56f08fa467d3"
+surface_snapshot = "sha256:6e6ce2d0c9ceda881d1dd384251affbd63fa514261441d4a70a904600e9d4191"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
-surface_snapshot = "sha256:65186e8dcf450eb066a188b269295e45e5e8d2aa16b1b74000e70f5561e3d762"
+surface_snapshot = "sha256:25700759bc6e6c51fcfdbcfe7ec48528bde1f865422df80b77f6d3b95904c5b0"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"
-surface_snapshot = "sha256:947cbb9ac67b5e8fa8b96fe4e251217fa70a3be90977ad36bee923971f7351e3"
+surface_snapshot = "sha256:a9832be63d1eecc51913693113a6983d36d0235c2f8c4ec96a291b1490a93d68"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"
-surface_snapshot = "sha256:acb5a4a26a1191c0b62d4b0968293826b67a1970a3e30e6415908a78b179e58e"
+surface_snapshot = "sha256:d122d190e22829cd3befd2fe3ebce07a7963cf3747173fd36154fdd5d9b94f17"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
-surface_snapshot = "sha256:3185aed3c58d81562b2b4f245f12c1376f69727eff0ee8776445498a8bc8b154"
+surface_snapshot = "sha256:ca47206212322ecf20285d3f0d5545655f5423b273d2e7dab7a38eba2ffaa00a"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"
-surface_snapshot = "sha256:d145649e618d086240f01fb4435c5bbdb496e5d92aaf75af5c5e085a12ce77d3"
+surface_snapshot = "sha256:619988e2f7a3a2f208429d5113039e83fa668c388d6d644cc527234637680d70"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"
-surface_snapshot = "sha256:08cc3a97df181a5f3144b8f28da6351ffc7a3bee2db40b91327ef45c20955cb9"
+surface_snapshot = "sha256:17d4515f1bf134314d1548f9a2a0f37e6f12eca82f936698f8009c1ef349273b"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
-surface_snapshot = "sha256:f117f238d83422d83227d0587926682a9e6a88f2b111e92882c754c99cbe445f"
+surface_snapshot = "sha256:5bbcec91790ece648d2ebade6de0b43bb7e42810d8a119577af635b0de770614"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany"
-surface_snapshot = "sha256:b99ce0c68e78cd293068d83bfa376191a9e59bdbb97bbb2aa8be64d14c512a20"
+surface_snapshot = "sha256:be59f37bdd8768c467c0c8a13ced1a329772d7a3416f45fddcdf03e179901a6c"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
-surface_snapshot = "sha256:7934ab9c97f8db8186310e3652cb2fc1ab0f21691327f77d71bcc8e8a2a1eb95"
+surface_snapshot = "sha256:46d256f71902f84034c00ba4ff34c4af3f46238f57978a0faab012c3af3a5a03"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
-surface_snapshot = "sha256:cbd2cab1a41aa685290d9c3c373f83d4d5a63a7f9b3cb25a5f4eba4ef8be4fac"
+surface_snapshot = "sha256:781032cb3f0f00c9b033eb64a5301c1872b03dceb20a8d1fb918530873d77d36"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
-surface_snapshot = "sha256:1d632daff1aed3ea723463d97290064c3910724f3db199fa3c02f5e55781b511"
+surface_snapshot = "sha256:2d475489e61d9f8077cee94e929e28eaaeefb78311ff798e19cb3218ef4ea5bc"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards"
-surface_snapshot = "sha256:6ea7700babb773cc2be1e612fbad1bc4789adab503b02bb5be208b3628841b13"
+surface_snapshot = "sha256:f6a38c46f7114a770effe7e5b728ed1655ac6b01cfc53bc142ea038818273118"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"
-surface_snapshot = "sha256:c6c25c432f3dcf3e0a710ac8bac76735f7301d57f891749c1d723e125413bc59"
+surface_snapshot = "sha256:52d012a9f79dd18479fa5a733c4e2adf4454f9459c5abfea3b5f5539d7ad83c6"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"
-surface_snapshot = "sha256:134500d713b7058dc4c9c8b80d89aab0c03d6bb04939bd89376b34700c54e615"
+surface_snapshot = "sha256:07972c973ce13a3bde6f7efba31989551417f89c8c69be1a6533a135fcdd323b"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards"
-surface_snapshot = "sha256:26a2fc09ab73aaffc626b7120cba999f090092b8fcc79bbd3a87d2d5fdbee329"
+surface_snapshot = "sha256:4dff641e825e6430d4d7717d0f4e13a5979a5cfb74f87bfb5bec1da227b15035"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
-surface_snapshot = "sha256:51cbbb14314e3a354dce89433d4e6b041f31a2a1679e141131345242ab6777fb"
+surface_snapshot = "sha256:b73cd3cfaaa05a7788382318f1c55884d7bbcee085f18300e70710a3d2028e3c"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards"
-surface_snapshot = "sha256:bf12e6398095fc091ce268ef2d2696ce93eb5e0c64ab4d87a2e71699cd3896e2"
+surface_snapshot = "sha256:88dcef03e95b92d6b02b108048033823e65b99efd4e5096ee881210967aecd94"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
-surface_snapshot = "sha256:65f0f55d2a73b1817073dab87a67eee6c2dec25507207ba49e4841290fcbe5c3"
+surface_snapshot = "sha256:36753e6dc28393c241b236831b918a942a069113f0855ac102ae8bb975e64dd1"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/liturgical-calendar"
-surface_snapshot = "sha256:a8c1403c4b1e55b956f02ccfa86ab38ac6a96b3f0330a6a7dede83d52afc5b93"
+surface_snapshot = "sha256:d4bbdd8f2db3d978ba7607bcb8f721ec4b69c81ea3deb7c3b11f0b0d046bd413"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"
-surface_snapshot = "sha256:9f22e0cba7bf163eabc8266634e707a047556e25972855386bf471257cd07ae0"
+surface_snapshot = "sha256:6b911268662fe91e8d7592a27afd968e122c42e74db1460174fea26c3388d37b"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive"
-surface_snapshot = "sha256:1cb115989cf5d1eac44c7cc17bf9dac23439f0f14420ebe7f1d49e5bd4b25a95"
+surface_snapshot = "sha256:f4dd06f5dc124fb55cda61ff21c4956e1fe923a3bddac9b04d967d49da954f98"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader"
-surface_snapshot = "sha256:25e6c9e771e3263852e2e46688d228daf870093896c6d091dc432d9e51931b1a"
+surface_snapshot = "sha256:bdb5c3f90138129b0c576791a6ad89bc481ae49588456437417b6b9324052a20"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer"
-surface_snapshot = "sha256:91c7c08aeb213999473513ba7617a792e0a68e34fc9a3914c68f698087327d3a"
+surface_snapshot = "sha256:713b570237a47b9b58e1d4ade2572f97eb5d6e0617916b9a339377e1d9c4e866"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies"
-surface_snapshot = "sha256:6fa79725951c03367b54ac321ae958175a716e17df2a6caa1af3072a68bfbbfe"
+surface_snapshot = "sha256:c5ff72a642d7836b5611ff56ea4ca7c8f74752720d4f554643c579e9aa05f17d"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan"
-surface_snapshot = "sha256:fefee59f519e97189afe9ad90d2800d3c5eb0e792f0cebdb060049c42353b1af"
+surface_snapshot = "sha256:64dd07aafc374de39aca0b0c5de07fe3202f7de79518d1b14df085a600fbd688"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
-surface_snapshot = "sha256:ad065280175e0120ac9fd454afaa68ee6f845d31a03144e4225f9855622f87be"
+surface_snapshot = "sha256:8fec9dc393aa44a1846a81d7f9bd7b92da7f0c26e34be8c116d3528572f66353"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
-surface_snapshot = "sha256:02ddc956ec70eef71a780e0acda1dc69196c5a9440b880e822368155a3ad3f5b"
+surface_snapshot = "sha256:c6d9b6c30cae68c217564d29de2c827fd32f9dab025c4dfd49a64fbaa25dd851"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"
-surface_snapshot = "sha256:034e88ac865b2ef967e4b8b75e19df117155a863d69c41fa7b12ac3a33e88584"
+surface_snapshot = "sha256:d031b45916ab41cbb0690dea90353fcbc86609f208eab8385716d6078ba5da16"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a"
-surface_snapshot = "sha256:2fc9514da7ad45d1873bd832dd65ac18df21c80d3075865a60a1f0e8d2594039"
+surface_snapshot = "sha256:9f260deba19fcd70216812c5fe37d630b4618faa92c2c051ccfd885700379db0"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a"
-surface_snapshot = "sha256:6fe463eab4e95eb1a618e0ad947982c2747e04a91f9bb2f8c4e988847eea0585"
+surface_snapshot = "sha256:6482322f39b07ccb93b6b0d48689e5ad439c1c1de9db4c9596771e638a229635"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:ad7496cf2aa6114d510c7f651f028ed6aac9f33b71af4bc271dd851d62ef4a2b"
+surface_snapshot = "sha256:096bd85487b99855840c314ff5bac7a1fab05de191659620280f962b18741c85"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-twelfth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:24ae1be3cc68f19566c01ebd2933ca4172956fe307d049ce4772c4b51b481723"
+surface_snapshot = "sha256:5f5a3aa6d9617df7555f0e00dcfba3bcef70ddad64cd98336669a707c6756bc8"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-thirteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:488c64f16e8146be4b4845dfc4bc7bf58942c825567daa51c907614e4e2c5ee0"
+surface_snapshot = "sha256:692c1b59d6929f2862115517c71eac6db74ffb30f2a6e94281490042890a2095"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-fourteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:901a9c913e25031a173b6b1d81e6d8a0176255b5c267b51f6027619265e9fbfc"
+surface_snapshot = "sha256:63cad5cda3500785339c688a12033dee2864d6e91dfeb8d3cdd967380413b76e"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-fifteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:1f685a01bbebddf186d699f0d388946c28d395bfccf8a41b3b098840fce7b94c"
+surface_snapshot = "sha256:84c71c32a17411994a99ac1c4088c395b5222ec77993c1f950ae36fc6ac5eda9"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:ba73fadd658b056abba65509279e24be596465d8fc4cd62b95c2d043d007fede"
+surface_snapshot = "sha256:7e3aa2f6d8782eac1a3dd4a5ef9f3a05bf4d5b74a621a98040bd5dc6ac19847c"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:6ebae01a024636f50ebe734285be86c6bd100c0e6cfd551dd587c233d75232df"
+surface_snapshot = "sha256:a53c420927ffa08e2f8a4149ad185b81cdfbcf385765dd5c090e16b383f429a1"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:df38df22413b4b33418234effb87ab8ad42abc06ed70d28adbd93360b1c1d36c"
+surface_snapshot = "sha256:a8ffea4fa72bdba8cfcd0d84907c75dff0db3c0e8f84d7bf994b3b03d081d4d6"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b"
-surface_snapshot = "sha256:cb1a08a2438fc7e2d4bfbc631e3221ec9686d7be2f9696ffbb8663114b729f94"
+surface_snapshot = "sha256:184fb02e975854e4e4087d52624834236af9e4a06bb874bc48c520c6180928ea"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c"
-surface_snapshot = "sha256:918587ce5816f0030a99d8c7593d0b1c01c9c523afb7fecbe38d3f8dbf69aa85"
+surface_snapshot = "sha256:2cd1f691817b300769afd6d838e093671873df050d8006f938738e56da1e3fb6"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:b0e1c016b899903617cdec795a5591cecd49d0a4826aa2ea27c9daf4e426d698"
+surface_snapshot = "sha256:6625748787839faded773c32dea908d8d85a1b5044a1deba7ad572e997f0e57a"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:0389570b8d76939f982fa219766c7f6653a2738e5aed8e57136ac73d539b9d09"
+surface_snapshot = "sha256:e5b1924b84c9b711ad99985fc2984d679a8ead5f1f2084cdafe9a43500a2f695"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:f2d81dcf080f7605398b554730ab5171a660138912d5c8d1dbd0d4061e81df1b"
+surface_snapshot = "sha256:9655b16e5aa70c520d32381fd1e3713693e3ece0dd36ec3d318e1016033932fb"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:7edea3413d3b8652373317c22e514efc57eb6584a41a6fda82e0df698a303dd6"
+surface_snapshot = "sha256:f75a924c6d33f3b62fe31c1d93c272cc319b2363783189cd0cd4d49b9a156718"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
-surface_snapshot = "sha256:9158833bc75d5443b082276e641f6ff4fbf13bfcfccf4c6d789aab386f84196d"
+surface_snapshot = "sha256:42932d44473d95df06af258fe457502e2ca03be212ebc8736231ccd5dc23e5b8"
 review_state = "pending"
 
 [[review_units]]
@@ -703,7 +703,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.curriculums.ecclesiastical-latin"
-surface_snapshot = "sha256:2b7b4345b0ae81cd277012f48aeb7ea9574d7c3b16de4dd63d0176d809653e25"
+surface_snapshot = "sha256:887666d51a5b6106b7606dacb6817d362f685f6fe5d8c080a95b1752b26bda30"
 review_state = "pending"
 
 [[review_units]]
@@ -728,7 +728,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
-surface_snapshot = "sha256:170f037bdf8318c43a5fa1aa26f801540fcc4b78ae5f1f0f90dac97f01fb9e61"
+surface_snapshot = "sha256:59bfd7716d7b975e2036d1803c4dc1d300e9502d8cf08ba25ac86dad64d56a10"
 review_state = "pending"
 
 [[review_units]]
@@ -753,85 +753,85 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/angelology"
-surface_snapshot = "sha256:c60852e906e3a2deb41408c470f20d38dd08fc80f406cc3228881cb03869b058"
+surface_snapshot = "sha256:c04e080f0916d95bae6e55dbed6b34a5ea7b831d0dda64a1e91e3de1b45199c8"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/heresies/heresies-in-catholic-history"
-surface_snapshot = "sha256:859ef20cded9deea51578039210a988543c76298e74204880fb28b694d5f6b8d"
+surface_snapshot = "sha256:9cc23a4a7f5bbfc2451c61b92d196be002f103d7c709657603b26616c446e943"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/mariology/angelus"
-surface_snapshot = "sha256:29d3165add76cb8e9212b913a1bf17929566d7a1caecd3ccbae9ac97be3f7a95"
+surface_snapshot = "sha256:f98d4ca7c73ac18cbdc44fbd5658fe4c3ac6dfc8c281e76b78af9a1eda7c11b7"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/mariology/apparitions"
-surface_snapshot = "sha256:547abdb02839f2b70c16c36f69ca1cbb5f6365b99f5f8f237e00b7e160b99b0e"
+surface_snapshot = "sha256:c12ec0313f423d6ff0d935f2d07daaa9df389519495387b3899e31686a184ae8"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/mariology/ark-of-the-covenant"
-surface_snapshot = "sha256:de7d3304f6b1e0d4415b862870e595f1108400084453a823cf9c0c6441d3695f"
+surface_snapshot = "sha256:29bc13cd0ab3909e46801ad7771e35e1031f9f0f593763e47cb21b00332c180a"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/mariology/champion"
-surface_snapshot = "sha256:cc8024166bc4fd980ef46f2f1ff701b153483e499c6ca11abd6098edccb258de"
+surface_snapshot = "sha256:7053bea3f6cd5cfb3c78b6e1ff57d68692729b5c093f5bfdc0c8f4b5f395e657"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/mariology/doctrinal-authority"
-surface_snapshot = "sha256:2df795495b442bb4467bb72b491eb71046b9d7221fa75cd2299139fac10714cd"
+surface_snapshot = "sha256:e9d4ae5951e67b499cbd8533e11e56854275978cd2ed8fbf3df5390a19ea1af3"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/mariology/fatima"
-surface_snapshot = "sha256:e07fa1c4b96923e20f874fe91940b2591ad8c7c41448ac4147bd6a54272c3491"
+surface_snapshot = "sha256:136b0d9ed13fb99411b808f0424ec405524f31b729641e5bef14a649ea1d4cb7"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/mariology/guadalupe"
-surface_snapshot = "sha256:074fa4b409e770baed0c8f0fc80d03deaa6ee57d333a93cefa8419125cc0d201"
+surface_snapshot = "sha256:98a282977925d6f155c17a6c37a6a5c3dad36e9ffd17aeda850bef2f19c80f12"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/mariology/la-salette"
-surface_snapshot = "sha256:0d01df01a8c0b2abc15e74f5dd384e9a9dcfc77248973521bac04bb496560479"
+surface_snapshot = "sha256:129a26a77726d82c8258bae055464df25632a74d77b81fac09a6dffafb9f9bed"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/mariology/lourdes"
-surface_snapshot = "sha256:7184f015870894d5a84341a81e410524fc4c9f023352c0c6addc991cdb17bd57"
+surface_snapshot = "sha256:4c9dbcf0eb56030b52d51580e9c6a09fafa783b6c1358176797a72159815fc55"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/mariology/marian-dogmas"
-surface_snapshot = "sha256:091a3a7cc251f088a1f14059ca99de56fe43fc796765c36a5c7d59f783d59e5b"
+surface_snapshot = "sha256:2d44738c6b3ab3ea6a1a93d05ac8623037bd96433f28a35d6077262ae09305f4"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/mariology/regina-coeli"
-surface_snapshot = "sha256:6ca7190de1a063820f68247117ec0827931e61efa083fc0d48baaec2f156274a"
+surface_snapshot = "sha256:bebce0c7f1e7e94a25f57582073842785bd7b2b81d7b6b41d6dd2588278b9ae8"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/mariology/rosary"
-surface_snapshot = "sha256:0af72f538be2f429c0f12b06d106c830466db3ad09e2cc0124f23d04724e6959"
+surface_snapshot = "sha256:2562d1001c2d01967d6dc5e34b4f49bd35dc56b1d004b3f8c79733e245564d3b"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/sacraments"
-surface_snapshot = "sha256:412ff169cd3d9b79c5671f89bec7346dd72ebcdff700c6770ee9bd030b23d0c3"
+surface_snapshot = "sha256:ad0e441d51e205837db9ab73dea8fb47705065c93d9406460951480b2080e5f2"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/sacraments-at-a-glance"
-surface_snapshot = "sha256:07d8e88ff87cae9c721402c13ab6d8e6a5f20efd730ff97e3f7436da6f19de1a"
+surface_snapshot = "sha256:7f394c94cab7e3ae046a829591a678c4c211991529c787090e96e50ec87390b9"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/virtues"
-surface_snapshot = "sha256:74b29aa580b832bcee905c635124faf294a4b9a72ab4d32c7a6e1881726d227a"
+surface_snapshot = "sha256:94b9e0634f9a96c948929ba73114b5f23dd193bd09bd6109c9f16225e9682335"
 review_state = "pending"
