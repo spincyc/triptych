@@ -74,11 +74,14 @@ TEMPLATE = """\
 
 
 def fake_projection(calls: list):
+    outputs = {"page": "generated/fake.tex", "unslotted": "generated/other.tex"}
+
     def render(context):
-        calls.append(context.document)
-        return {"generated/fake.tex": f"% generated for {context.document}\n",
-                "research/fake.toml": "x = 1\n"}
-    return SimpleNamespace(NAME="fake", OUTPUTS={"page": "generated/fake.tex"}, render=render)
+        calls.append((context.document, context.outputs))
+        files = {outputs[key]: f"% {key} for {context.document}\n" for key in context.outputs}
+        files["research/fake.toml"] = "x = 1\n"
+        return files
+    return SimpleNamespace(NAME="fake", OUTPUTS=outputs, render=render)
 
 
 class FixtureTests(unittest.TestCase):
@@ -228,7 +231,19 @@ apparatus = ["sections/90-c"]
         self.assertEqual(first[0].changed, ("generated/fake.tex", "main.tex", "research/fake.toml"))
         second = types.refresh(self.root, [self.leaf], check=False, projections=self.projections)
         self.assertEqual(second[0].changed, ())
-        self.assertEqual(self.calls, ["fixture/leaf", "fixture/leaf"])
+        # Only the output a template slots is asked for, once per refresh.
+        self.assertEqual(self.calls, [("fixture/leaf", ("page",))] * 2)
+
+    def test_a_generated_file_nothing_generates_is_reported_then_removed(self):
+        self.declare()
+        types.refresh(self.root, [self.leaf], check=False, projections=self.projections)
+        stray = self.leaf / "generated/retired.tex"
+        stray.write_text("% a page whose slot was removed\n")
+        found = types.refresh(self.root, [self.leaf], check=True, projections=self.projections)
+        self.assertEqual(found[0].orphans, ("generated/retired.tex",))
+        self.assertTrue(stray.is_file(), "--check must write nothing")
+        types.refresh(self.root, [self.leaf], check=False, projections=self.projections)
+        self.assertFalse(stray.exists())
 
     def test_check_refuses_a_hand_edited_generated_file(self):
         self.declare()

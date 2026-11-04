@@ -44,6 +44,7 @@ class GeneratedDocumentsFreshnessTests(unittest.TestCase):
             with self.subTest(leaf=result.leaf):
                 self.assertEqual(result.changed, (), "regenerate with tools/tpt document-types refresh")
                 self.assertEqual(result.conflicts, (), "an authored date page remains")
+                self.assertEqual(result.orphans, (), "a generated file nothing generates")
 
 
 class AuthoredDatePageTests(unittest.TestCase):

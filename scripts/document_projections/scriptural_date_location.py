@@ -27,10 +27,11 @@ def render(context) -> dict[str, str]:
         raise ValueError(f"{context.document}: {NAME} serves proper leaves, not {context.kind!r}")
     found, projected, absent = page.projection(
         context.document, root=context.root, provider=context.provider)
+    wanted = context.outputs or tuple(OUTPUTS)
     files = {
-        path: page.render(projected, document=context.document, variant=variant,
-                          root=context.root, absent=absent)
-        for variant, path in OUTPUTS.items()
+        OUTPUTS[variant]: page.render(projected, document=context.document, variant=variant,
+                                      root=context.root, absent=absent)
+        for variant in wanted
     }
     if found is not None and projected is not None:
         files[wiring.RECORD] = wiring.render(found)

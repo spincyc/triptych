@@ -59,7 +59,7 @@ import importlib
 import pkgutil
 import re
 import tomllib
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -71,6 +71,7 @@ DECLARATION = "document"
 PUBLICATION = "publication.toml"
 PROVIDERS = ("claude", "gpt")
 GENERATED_BY = "tools/tpt document-types refresh"
+GENERATED_DIR = "generated"
 NAME = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 FIELD_REFERENCE = re.compile(r"@\{([a-z0-9]+(?:-[a-z0-9]+)*)\}")
 DIRECTIVE = re.compile(r"%@\s*(region|slot|input\??|option|if)\s+(\S+)\s*\Z")
@@ -226,6 +227,10 @@ class LeafContext:
     kind: str
     type_id: str
     editions: tuple[str, ...]
+    # The output keys of this projection that the leaf's templates slot. A
+    # projection renders these (and its support files) and need not render
+    # outputs no template of this leaf places.
+    outputs: tuple[str, ...] = ()
 
 
 def discover_projections() -> dict[str, object]:
@@ -506,17 +511,18 @@ def render_leaf(root: Path, decl: Declaration, projections: dict | None = None) 
     """
     projections = discover_projections() if projections is None else projections
     files: dict[str, str] = {}
-    slotted: dict[str, None] = {}
+    slotted: dict[str, dict[str, None]] = {}
     for name in decl.editions:
         text, slots = render_edition(decl, name, projections)
         files[decl.type.editions[name].entrypoint] = text
         for slot in slots:
-            slotted[slot.partition("/")[0]] = None
-    context = decl.context(root)
-    for name in slotted:
+            projection, _, output = slot.partition("/")
+            slotted.setdefault(projection, {})[output] = None
+    for name, outputs in slotted.items():
         module = projections[name]
+        context = replace(decl.context(root), outputs=tuple(outputs))
         produced = module.render(context)  # type: ignore[attr-defined]
-        missing = set(module.OUTPUTS.values()) - set(produced)  # type: ignore[attr-defined]
+        missing = {module.OUTPUTS[output] for output in outputs} - set(produced)  # type: ignore[attr-defined]
         if missing:
             raise DocumentTypeError(f"projection {name} did not produce {sorted(missing)}")
         for path, text in produced.items():
@@ -537,6 +543,10 @@ class Refresh:
     # copy of a generated page. A projection reports them through an optional
     # ``authored_conflicts(context, generated)`` hook.
     conflicts: tuple[str, ...] = ()
+    # Files under the leaf's generated/ that nothing generates any more, such
+    # as a page whose slot left the leaf's type. ``refresh`` deletes them;
+    # ``--check`` reports them.
+    orphans: tuple[str, ...] = ()
 
 
 def refresh(root: Path, leaves: list[Path], *, check: bool,
@@ -556,6 +566,13 @@ def refresh(root: Path, leaves: list[Path], *, check: bool,
             hook = getattr(projections[name], "authored_conflicts", None)
             if hook is not None:
                 conflicts.extend(hook(decl.context(root), frozenset(files)))
+        generated = leaf / GENERATED_DIR
+        orphans = sorted(path.relative_to(leaf).as_posix() for path in generated.rglob("*")
+                         if path.is_file() and path.relative_to(leaf).as_posix() not in files) \
+            if generated.is_dir() else []
+        if not check:
+            for relative in orphans:
+                (leaf / relative).unlink()
         changed, current = [], []
         for relative, text in sorted(files.items()):
             path = leaf / relative
@@ -568,7 +585,7 @@ def refresh(root: Path, leaves: list[Path], *, check: bool,
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(text, encoding="utf-8")
         results.append(Refresh(f"{decl.provider}/{decl.document}", tuple(changed), tuple(current),
-                               tuple(conflicts)))
+                               tuple(conflicts), tuple(orphans)))
     return results
 
 

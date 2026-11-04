@@ -151,6 +151,10 @@ def refresh_verb(arguments: argparse.Namespace) -> dict[str, object]:
     results = types.refresh(ROOT, leaves, check=arguments.check)
     stale = sum(len(result.changed) for result in results)
     conflicts = [f"src/{result.leaf}/{path}" for result in results for path in result.conflicts]
+    orphans = [f"src/{result.leaf}/{path}" for result in results for path in result.orphans]
+    if arguments.check and orphans:
+        raise ValueError("generated files nothing generates any more: " + ", ".join(orphans)
+                         + "; run `tools/tpt document-types refresh` to remove them")
     if conflicts:
         raise ValueError("authored copies of generated pages: " + ", ".join(conflicts)
                          + "; delete them and let the document type's slot place the page")
@@ -158,7 +162,8 @@ def refresh_verb(arguments: argparse.Namespace) -> dict[str, object]:
         "status": "ok",
         "stale": stale if arguments.check else 0,
         "leaves": [{"leaf": result.leaf, "changed": list(result.changed),
-                    "current": len(result.current)} for result in results],
+                    "current": len(result.current), "removed": list(result.orphans)}
+                   for result in results],
     }
     if arguments.check and stale:
         names = [f"src/{result.leaf.split('/', 1)[0]}/{result.leaf.split('/', 1)[1]}/{path}"
@@ -195,6 +200,8 @@ def _render(payload: object, arguments: argparse.Namespace) -> int:
     for result in payload["leaves"]:
         state = ("current" if not result["changed"] else
                  ("rewrote " if not arguments.check else "stale: ") + ", ".join(result["changed"]))
+        if result.get("removed"):
+            state += "; removed " + ", ".join(result["removed"])
         print(f"{result['leaf']}: {state}")
     if not payload["leaves"]:
         print("no leaf declares a document type")
