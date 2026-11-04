@@ -210,6 +210,21 @@ class CompileTests(unittest.TestCase):
         again = figures.compile_figures(records, out, root=tree.root)
         self.assertEqual(again["figures"], manifest["figures"])
 
+    def test_a_preamble_that_demands_a_revision_stamp_still_compiles(self):
+        # The shared preamble errors without \jobname.revision.tex; a figure job
+        # supplies a fixed stamp rather than deriving one from git.
+        tree = FixtureTree()
+        self.addCleanup(tree.cleanup)
+        (tree.root / "src/common/preamble.tex").write_text(PREAMBLE + (
+            "\\newcommand{\\AIDocumentRevisionTimestamp}[1]{}\n"
+            "\\InputIfFileExists{\\jobname.revision}{}{\\errmessage{No edition revision stamp}}\n"),
+            encoding="utf-8")
+        _, records = figures.extract(BODY, HEAD, root=tree.root, provider="gpt", entrypoint=tree.entry)
+        out = tree.root / "build/web-figures"
+        manifest = figures.compile_figures(records, out, root=tree.root)
+        self.assertEqual(figures.check(out, [records[0]["id"]]), [])
+        self.assertIn(records[0]["id"], manifest["figures"])
+
     def test_changed_source_no_longer_matches_its_identity(self):
         tree = FixtureTree()
         self.addCleanup(tree.cleanup)

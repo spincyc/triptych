@@ -41,6 +41,13 @@ CAPTION_MACROS = ("caption", "sketchcaption")
 # Margin around the picture's own bounding box, as preview's tightpage sets it.
 PREVIEW_BORDER = "2pt"
 PDFLATEX = ("pdflatex", "-no-shell-escape", "-interaction=nonstopmode", "-halt-on-error")
+# The shared preamble refuses to typeset without the edition's derived revision
+# stamp (\jobname.revision.tex, scripts/_edition_revision.py). A figure is not
+# an edition and prints no "Last revised" line; the stamp only sets the PDF's
+# ModDate, which the SVG does not carry. The job fixes it at the epoch its
+# SOURCE_DATE_EPOCH already pins, so no figure depends on git history.
+FIGURE_REVISION = ("% Supplied by scripts/_web_edition_figures.py: a figure is not an edition.\n"
+                   "\\AIDocumentRevisionTimestamp{1970-01-01T00:00:00Z}\n")
 
 _ID = re.compile(r"[0-9a-f]{64}")
 _BEGIN = re.compile(r"\\begin\s*\{tikzpicture\}")
@@ -445,6 +452,7 @@ def compile_figures(records: list[dict], out: Path, *, root: Path, runner: str =
                 job = work / figure / copy
                 job.mkdir(parents=True)
                 (job / "figure.tex").write_text(record["tex"], encoding="utf-8")
+                (job / "figure.revision.tex").write_text(FIGURE_REVISION, encoding="utf-8")
                 (job / "run.sh").write_text(_SCRIPT_JOB.format(
                     job=shlex.quote(str(job)), figure=figure, texinputs=shlex.quote(texinputs),
                     pdflatex=" ".join(PDFLATEX)), encoding="utf-8")
