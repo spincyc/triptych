@@ -32,87 +32,27 @@
 | Moral | The day’s petitions are verbs of growth and return: ask the increase of faith, hope and charity <span class="nodecor">(*Coll.*)</span>; put your times into God’s hands as you offer <span class="nodecor">(*Off.*)</span>; come back and give thanks — nine did not <span class="nodecor">(*Gosp.*)</span>; ask that what was received not stop there <span class="nodecor">(*Postcomm.*)</span>. |
 | Anagogical | The refuge held from generation to generation <span class="nodecor">(*All.*)</span> answers the plea not to be forsaken *in finem* <span class="nodecor">(*Int.*)</span>. The last increase asked is *redemptiónis ætérnæ … augméntum* <span class="nodecor">(*Postcomm.*)</span>; the promise is given *credéntibus* <span class="nodecor">(*Ep.*)</span>; the Gospel’s last word is that faith has saved <span class="nodecor">(*Gosp.*)</span>. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-Six passages are directly appointed. Each has one dossier: a four-field summary, the narrated event where there is one, then a short explanation. Composed orations are not listed; their biblical echoes are not quotations. Psalm citations give the missal’s Vulgate number with the English-Bible equivalent; the appendix adds the Masoretic series.
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Offertory: Ps. 30:15–16 (Vg.; Heb. 31) | Historical setting | Date pending its source qualification |
+|  | Historical setting: David’s flight from the face of Absalom | When he fled from the face of his son Absalom |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ps. 73:20 (Vg.; Heb. 74), Ps. 73:19 (Vg.; Heb. 74), Ps. 73:23 (Vg.; Heb. 74), Ps. 73:1 (Vg.; Heb. 74) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gradual: Ps. 73:20 (Vg.; Heb. 74), Ps. 73:19 (Vg.; Heb. 74), Ps. 73:22 (Vg.; Heb. 74) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Ps. 89:1 (Vg.; Heb. 90) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: Wis. 16:20 | Composition: Wisdom; Alexandria in Gigot’s account | Disputed: In or after the time of Ptolemy IV Philopator (221–204 B.C.); In or after the time of Ptolemy VII Physicon (145–117 B.C.) |
+| Gospel: Luke 17:11–19 | Narrated event | Date unresolved |
+|  | Composition: The Gospel of St Luke | Disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished |
+| Epistle: Gal. 3:16–22 | Composition: The Epistle to the Galatians | Preferred: A.D. 58; alternatives: A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58 |
 
-<table style="width:83%;">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 18%" />
-<col style="width: 35%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Proper</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Offertory</td>
-<td style="text-align: left;">Ps. 30:15–16 Vulg. (Eng. 31:14–15)</td>
-<td style="text-align: left;">Superscription <em>In finem. Psalmus David, pro extasi.</em> No episode or place named</td>
-<td style="text-align: left;">Traditional: Davidic, <em>c.</em> 1000 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The title claims David and nothing else; no narrative anchors it. The 1910 <em>Catholic Encyclopedia</em> defends the titles as ancient and canonical while conceding many are obscure; the NABRE reads the psalm as a lament with a strong emphasis on trust. Its v. 6 is <em>In manus tuas commendo spiritum meum</em>, the verse Christ dies with at Lk. 23:46 — so the antiphon’s surrender of <em>témpora mea</em> is sung from a psalm the Passion made its own.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Introit, Gradual</td>
-<td style="text-align: left;">Ps. 73 Vulg. (Eng. 74):<br />
-Introit: 1, 19–20, 22–23;<br />
-Gradual: 19–20, 22</td>
-<td style="text-align: left;">Superscription <em>Intellectus Asaph.</em> The psalm laments a ravaged sanctuary; no place of writing named</td>
-<td style="text-align: left;">Traditional: Asaphite; modern: after 587 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Asaph is David’s chief musician, so the bare title suggests a Davidic-era horizon — yet the psalm mourns a sanctuary already destroyed. The NABRE calls it “a communal lament sung when the enemy invaded the temple; it would be especially appropriate at the destruction of Jerusalem in 587 B.C.” Witnesses since antiquity have resolved the tension as prophecy or as a later Asaphite’s voice; this sheet reports it unresolved.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Alleluia</td>
-<td style="text-align: left;">Ps. 89:1 Vulg. (Eng. 90:1)</td>
-<td style="text-align: left;">Superscription <em>Oratio Moysi, hominis Dei.</em> No place named</td>
-<td style="text-align: left;">Traditional: Mosaic, <em>c.</em> 13th c. BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The one psalm in the Psalter bearing Moses’ name. A title associating a prayer with a figure is received tradition, not proof of composition; the NABRE reads it as a communal lament naming its distress only in general terms, contrasting God’s eternity with human brevity. The chant takes exactly the clause that carries that contrast: refuge <em>a generatióne et progénie</em>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Communion</td>
-<td style="text-align: left;">Wis. 16:20</td>
-<td style="text-align: left;">Written in Greek at Alexandria, in Egypt, by an unknown Jew of that community</td>
-<td style="text-align: left;"><em>c.</em> 100 BC; older range 221–117 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Solomonic attribution is the book’s own literary fiction, set aside on all sides. The <em>Catholic Encyclopedia</em> places the author under Ptolemy IV (221–204 BC) or Ptolemy VII (145–117 BC); the NABRE says “about a hundred years before the coming of Christ,” written “in Greek, in a style patterned on that of Hebrew verse” to edify an oppressed community. The verse remembers the wilderness manna — narrated event Ex. 16, in the Sinai desert — from Hellenistic Egypt, a millennium later.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Gospel</td>
-<td style="text-align: left;">Lk. 17:11–19</td>
-<td style="text-align: left;">Writing: place unknown; traditionally Achaia. Audience largely Gentile and non-Palestinian, through Theophilus</td>
-<td style="text-align: left;">Traditional: by AD 62–63. Modern: AD 80–90</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;"><em>Event: on the final journey to Jerusalem, “through the midst of Samaria and Galilee” (v. 11) — the border country in the north of present-day Israel and the West Bank; an unnamed village. Months before the Passover of the Passion: AD 29 on the <em>Catholic Encyclopedia</em>’s computation, commonly AD 30–33 later; not settled here.</em></td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The <em>Catholic Encyclopedia</em> identifies Luke the physician and Pauline companion, reports Julius Africanus for Achaia, and argues the Gospel was finished before Acts, by about AD 62–63; the NABRE reports the same attribution — “Luke, a Syrian from Antioch” — but proposes AD 80–90 and leaves the place unstated.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Epistle</td>
-<td style="text-align: left;">Gal. 3:16–22</td>
-<td style="text-align: left;">From Ephesus (NABRE) or Antioch (older South-Galatian view), to the churches of Galatia in central Asia Minor, around present-day Ankara</td>
-<td style="text-align: left;">Third journey, AD 54–55; or AD 48–50</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Pauline authorship is traditional and the mainstream modern judgment alike. Who the Galatians were is not settled: the NABRE holds them “most likely among the descendants of Celts” of North Galatia and dates the letter “around A.D. 54 or 55 … most likely from Ephesus”; the <em>Catholic Encyclopedia</em> favours the South-Galatian theory, under which the letter goes to the churches of the first journey, perhaps from Antioch before the council, AD 48–50. Occasion on either view: converts from paganism pressed by judaizing missionaries to add circumcision and the law — the pressure the appointed argument answers.</td>
-</tr>
-</tbody>
-</table>
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+*Disputed*: the sources disagree and the corpus prefers none. *(derived)*: computed by the corpus from a stated relation, not printed by a source. *Date unresolved*: the corpus gives this subject no date. The evidence for every date, with its sources, is set out in the appendix *Evidence for the Scriptural Dates*.
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -886,6 +826,50 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 >
 > **Strongest limit:** The Collect and Postcommunion were not composed for this Gospel — the pair already travels together in the Gelasian sacramentary’s unnumbered Sunday masses, centuries before any fixed pericope — so the bracket is a fact of the printed formulary, not of anyone’s design; and Bede’s distinction concerns the Gospel alone, not the orations.
 
+## Appendix: Evidence for the Scriptural Dates {#sec:date-location-evidence}
+
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
+
+*Offertory: Ps. 30:15–16 (Vg.; Heb. 31)*
+
+- **Historical setting**. No date: the corpus holds a date for this that it reports from another edition by exception, which is not printed until the corpus records the source’s own qualification of it (research pending).
+
+- **Historical setting** (preferred). David’s flight from the face of Absalom: When he fled from the face of his son Absalom (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 3:1).
+
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
+
+*Introit: Ps. 73:20 (Vg.; Heb. 74), Ps. 73:19 (Vg.; Heb. 74), Ps. 73:23 (Vg.; Heb. 74), Ps. 73:1 (Vg.; Heb. 74)*
+
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition**. As under Offertory: Ps. 30:15–16 (Vg.; Heb. 31).
+
+*Gradual: Ps. 73:20 (Vg.; Heb. 74), Ps. 73:19 (Vg.; Heb. 74), Ps. 73:22 (Vg.; Heb. 74)*
+
+- **Historical setting**. As under Introit: Ps. 73:20 (Vg.; Heb. 74), Ps. 73:19 (Vg.; Heb. 74), Ps. 73:23 (Vg.; Heb. 74), Ps. 73:1 (Vg.; Heb. 74).
+
+- **Composition**. As under Offertory: Ps. 30:15–16 (Vg.; Heb. 31).
+
+*Alleluia: Ps. 89:1 (Vg.; Heb. 90)*
+
+- **Historical setting**. As under Introit: Ps. 73:20 (Vg.; Heb. 74), Ps. 73:19 (Vg.; Heb. 74), Ps. 73:23 (Vg.; Heb. 74), Ps. 73:1 (Vg.; Heb. 74).
+
+- **Composition**. As under Offertory: Ps. 30:15–16 (Vg.; Heb. 31).
+
+*Communion: Wis. 16:20*
+
+- **Composition** (disputed). The Book of Wisdom: In or after the time of Ptolemy IV Philopator (221–204 B.C.) (“the time of ... Ptolemy IV Philopator (221-204 B.C.)”; The Catholic Encyclopedia, Volume 15 (1912)); In or after the time of Ptolemy VII Physicon (145–117 B.C.) (“the time of ... Ptolemy VII Physicon (145-117 B.C.)”; The Catholic Encyclopedia, Volume 15 (1912)). Place: Alexandria in Gigot’s account (The Catholic Encyclopedia, Volume 15 (1912)).
+
+*Gospel: Luke 17:11–19*
+
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Luke: c. A.D. 70 (“About the year 70”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); Before the end of the Roman imprisonment, when the Acts was finished (De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam (1912), responsa-i-ix).
+
+*Epistle: Gal. 3:16–22*
+
+- **Composition** (answers differ). The Epistle to the Galatians: preferred: A.D. 58 (“anno Christi 58”; Commentaria in omnes D. Pauli epistolas (1614), prooemium; Commentaria in omnes D. Pauli epistolas (1614), epistola-ad-galatas-argumentum); alternative: A.D. 49–50 (“A.D. 49-50”; The Catholic Encyclopedia, Volume 6 (1909)); alternative: c. A.D. 53–54 (“about A.D. 53, 54”; The Catholic Encyclopedia, Volume 6 (1909)); alternative: A.D. 56 (“(1 and 2 Corinthians; Galatians), 56”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); alternative: A.D. 57–58 (“A.D. 57 or 58”; The Catholic Encyclopedia, Volume 6 (1909)).
+
 ## Appendix: Scope and Qualifications
 
 **As of 20 August 2026.** Everything below states the boundaries of this guide at that date. Retrieval mechanics, checksums, query detail, discarded leads, the complete passage-by-passage reception matrix, and the notable-and-quotable and interpretive-proposal audits are in `propers/verified.md`, `research/scope.md` and `research/source-bindings.toml` beside this document’s source; they are not repeated here.
@@ -1014,6 +998,6 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 - Robert Browning, “Rabbi Ben Ezra,” stanza 1, in *Dramatis Personæ* (London: Chapman & Hall, 1864).
 
-**Last revised (UTC):** 2026-11-04T03:09:25Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

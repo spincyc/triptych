@@ -32,34 +32,33 @@
 | Moral | Bede ties the first place at table to *de meritis gloriando* and argues that the parable must be read *typice*; Cyril of Alexandria makes seizing an honour not due a theft with restitution owed; Ambrose has the lesson taught gently <span class="nodecor">(*Gosp.*)</span>. Augustine at the Introit’s psalm verse: God draws near the humbled and departs far from the exalted <span class="nodecor">(*Int.*)</span>. |
 | Anagogical | Augustine, Cassiodorus and Bellarmine read the Gradual’s *vidébitur* of the Judgment; **Theodoret reads it of Sion rebuilt in this world** <span class="nodecor">(*Grad.*)</span>. **Bede holds *Tunc erit tibi glória* in an eschatological and a daily sense together and does not choose** <span class="nodecor">(*Gosp.*)</span>. In *usque in senéctam et sénium* Augustine hears the Church’s voice, her youth the age of the apostles; Theodoret hears the age of Moses, and old age the end of the Law <span class="nodecor">(*Comm.*)</span>. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-Seven passages are directly appointed; the orations quote no Scripture. Psalms carry the missal’s Vulgate number, with the modern number in parentheses. **An attributed author’s regnal era dates neither composition nor occasion**: the Communion dossier distinguishes all three.
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Offertory: Ps. 39:14–15 (Vg.; Heb. 40) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: Ps. 70:16–18 (Vg.; Heb. 71) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Superscription setting | Date pending its source qualification |
+|  | Historical setting: David’s flight from the face of Absalom | When he fled from the face of his son Absalom |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ps. 85:3, 5 (Vg.; Heb. 86), Ps. 85:1 (Vg.; Heb. 86) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Ps. 97:1 (Vg.; Heb. 98) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+|  | Prophetic referent: The Nativity of Our Lord; Bethlehem as the Christian referent | Disputed: B.C. 3; c. B.C. 7 |
+| Gradual: Ps. 101:16–17 (Vg.; Heb. 102) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gospel: Luke 14:1–11 | Narrated event | Date unresolved |
+|  | Composition: The Gospel of St Luke | Disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished |
+| Epistle: Eph. 3:13–21 | Composition: Ephesians; Rome or Caesarea; recipients in Asia Minor | Disputed: A.D. 58–63; A.D. 61 |
 
-|  |
-|:---|
-| **Offertory — Ps. 39:14–15 (Hebr. 40:14–15; Eng. 40:13–14)**. Title names David, no place or occasion |
-| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
-| The Clementine title at v. 1, *In finem. Psalmus ipsi David*, names no place, episode or audience, nor does the psalm. Individual composition remains insecure within the whole-Psalter critical bound. Hebrew numbers the title; English omits its number, so English 40:14–15 would begin one verse too late. |
-| **Communion — Ps. 70:16-17 et 18 (Eng. 71:16–18)**. Title: the sons of Jonadab, the former captives |
-| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Superscription setting**: Preferred: The first captivity of Juda, under Joakim, In the third year of the reign of Joakim, king of Juda; alternative: The first captivity of Juda, under Joakim, A.M. 3398. **Historical setting**: David’s flight from the face of Absalom, when he fled from the face of his son Absalom. **Composition**: Before c. 165 B.C. |
-| The title reads *Psalmus David, filiorum Jonadab, et priorum captivorum*. Absalom’s setting comes through Ps. 62 and Ps. 3’s title; Joakim’s third year from Dan. 1:1. The A.M. alternative is Haydock’s reported Ussher figure, excluded from the corpus’s own basis. The settings remain unresolved. These traditional settings remain distinct from the attributed reign and the critical whole-Psalter composition bound. |
-| **Introit — Ps. 85:3, 5, with v. 1 (Eng. 86:3, 5, 1)**. Title names David, no occasion |
-| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
-| The Clementine’s *Oratio ipsi David*, inside v. 1 and omitted by the chant, names no place, episode or audience. The composition bound is the Psalter’s. Augustine’s sermon asks no chronological question; his v. 1 lemma has *egenus et inops ego sum* against the Missal’s *inops et pauper sum ego*. |
-| **Alleluia — Ps. 97:1 (Eng. 98:1)**. Title names David, no place |
-| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. **Prophetic referent** – disputed: The Nativity of Our Lord, B.C. 3; The Nativity of Our Lord, c. B.C. 7. |
-| The chant omits the Clementine’s *Psalmus ipsi David* within v. 1. Both disputed Nativity dates are prophetic referents from the grouping of Pss. 67, 95, 96 and 97, not dates of composition or claims about Ps. 97 alone. Composition has only the Psalter’s bound. |
-| **Gradual — Ps. 101:16–17 (Hebr. 102:16–17; Eng. 102:15–16)**. Title: a poor man; no name, no place |
-| **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
-| The unsung title, *Oratio pauperis, cum anxius fuerit, et in conspectu Domini effuderit precem suam*, names a condition, not an author, place or occasion. Davidic attribution does not apply. Hebrew numbers the title; English does not, so English 102:16–17 begins one verse too late. Augustine, *Enarratio in Ps. 101* I §§16–17, reads *aedificabit* and *in gloria sua*. |
-| **Gospel — Luke 14:1–11**. Written by Luke; no place, no audience |
-| **Event** – No narrated-event date in the chronology corpus. **Composition** – disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished. |
-| *Event: a sabbath meal in the house of one of the chief of the Pharisees (14:1), the third and last of the sabbath-healing controversies in Luke after 6:6–11 and 13:10–17, inside the journey narrative and closing immediately before the parable of the great supper (14:16–24). **The corpus makes no dated assertion about this sabbath dinner**: it carries no narrated-event claim for the pericope at all.* |
-| Composition alternatives are traditional: *Catholic Encyclopedia* XIV, “The New Testament” (14530a), and the Biblical Commission’s 1912 response on Mark and Luke, which dates writing relative to Acts and the Roman imprisonment. Place, first audience and life stage are unresolved; no critical-profile claim is returned. |
-| **Epistle — Eph. 3:13–21**. Paul in captivity; Rome or Caesarea |
-| **Composition** – disputed: A.D. 58–63; A.D. 61. |
-| The Missal attributes the letter to Paul. The pericope’s *tribulatiónibus meis pro vobis* names his affliction. Both disputed dates are traditional (*Catholic Encyclopedia*, V, 05485a; XI, 11567b), the selected default profile. Ladeuze favours Rome over Caesarea and considers a circular letter to north-eastern Asia Minor beside the traditional Ephesian destination. |
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+*Disputed*: the sources disagree and the corpus prefers none. *(derived)*: computed by the corpus from a stated relation, not printed by a source. *Date unresolved*: the corpus gives this subject no date. The evidence for every date, with its sources, is set out in the appendix *Evidence for the Scriptural Dates*.
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -764,6 +763,62 @@ Five afterlives of wording from the scriptural propers, each a use that moves th
 >
 > **Controlling limit:** **The strongest form of this rests on the Introit’s psalm verse rather than on its antiphon.** The verse is appointed text: it is printed inside marginal no. 1592 under the formulary’s own rubric *Ps. ibid., 1*, which is what settles the boundary question here — but a psalm verse is not sung in the same way an antiphon is, and a reader who counts only antiphons will not find the poverty. **And this formulary’s poverty language is mostly in the context of the appointed texts and not in them**: only Ps. 85:1 is actually sung, *Oratio pauperis* is Ps. 101’s unappointed title, *mendicus sum et pauper* is Ps. 39’s unappointed v. 18, and the Gospel’s *pauperes, debiles, claudos, et cæcos* falls two verses past the end of the pericope. A theme built from that context is built from around the appointed text, and the difference has to stay visible. **And the poverty word the proposal turns on is not the word a second Latin witness lemmatizes**: Cassiodorus reads *quoniam egenus et pauper sum ego* at Ps. 85:1, so a commentator quoted in support may be expounding *egenus* where the chant sings *inops*.
 
+## Appendix: Evidence for the Scriptural Dates {#sec:date-location-evidence}
+
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
+
+*Offertory: Ps. 39:14–15 (Vg.; Heb. 40)*
+
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
+
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
+
+*Communion: Ps. 70:16–18 (Vg.; Heb. 71)*
+
+- **Traditional attribution**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+- **Superscription setting**. No date: the corpus holds a date for this that it reports from another edition by exception, which is not printed until the corpus records the source’s own qualification of it (research pending).
+
+- **Historical setting** (preferred). David’s flight from the face of Absalom: When he fled from the face of his son Absalom (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 3:1).
+
+- **Composition**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+*Introit: Ps. 85:3, 5 (Vg.; Heb. 86), Ps. 85:1 (Vg.; Heb. 86)*
+
+- **Traditional attribution**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+- **Historical setting**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+- **Composition**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+*Alleluia: Ps. 97:1 (Vg.; Heb. 98)*
+
+- **Traditional attribution**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+- **Historical setting**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+- **Composition**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+- **Prophetic referent** (disputed). The Nativity of Our Lord: B.C. 3 (“the year of Rome 750 which he styles 3 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)); c. B.C. 7 (“probably the year 7 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)). Place: Bethlehem as the Christian referent (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 2:1).
+
+*Gradual: Ps. 101:16–17 (Vg.; Heb. 102)*
+
+- **Historical setting**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+- **Composition**. As under Offertory: Ps. 39:14–15 (Vg.; Heb. 40).
+
+*Gospel: Luke 14:1–11*
+
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Luke: c. A.D. 70 (“About the year 70”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); Before the end of the Roman imprisonment, when the Acts was finished (De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam (1912), responsa-i-ix).
+
+*Epistle: Eph. 3:13–21*
+
+- **Composition** (disputed). The Epistle to the Ephesians: A.D. 58–63 (“a period between 58 and 63”; The Catholic Encyclopedia, Volume 5 (New York, 1909)); A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)). Place: Rome or Caesarea; recipients in Asia Minor (The Catholic Encyclopedia, Volume 5 (New York, 1909)).
+
 ## Appendix: Scope and Qualifications
 
 This appendix carries the work-wide bounds. Claim-local qualifications stand beside their claims above; retrieval mechanics, checksums, query detail, discarded leads and the operational audit are in `propers/verified.md` and `research/scope.md`, which are tracked beside this guide and are not repeated here.
@@ -960,6 +1015,6 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 - Negative corpora for the gallery: E. C. Brewer, *Dictionary of Phrase and Fable*; John Camden Hotten, *The Slang Dictionary*; Francis Grose, *A Classical Dictionary of the Vulgar Tongue*; Webster’s Unabridged of 1913; and a ninety-volume Project Gutenberg sample of English and American literature, including seven novels of Dickens and Scott’s *Waverley* and *Rob Roy*. *Searched without result for “inner man”.*
 
-**Last revised (UTC):** 2026-11-04T03:34:08Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

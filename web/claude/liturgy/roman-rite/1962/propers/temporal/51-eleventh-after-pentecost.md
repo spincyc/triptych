@@ -32,94 +32,27 @@
 | Moral | Bede reads the firstfruits as those of *every* good work, honoured to God by crediting it to grace <span class="nodecor">(*Comm.*)</span> — which is the Epistle’s *grátia Dei sum id quod sum* in the first person <span class="nodecor">(*Ep.*)</span>. Theophylact draws from the command of silence an ethic of benefaction without applause <span class="nodecor">(*Gosp.*)</span>. |
 | Anagogical | St. Hilary, Augustine and St. Robert Bellarmine read the Introit’s power and strength of the resurrection of the body <span class="nodecor">(*Int.*)</span>; Bede reads the filled barns as heavenly satiety <span class="nodecor">(*Comm.*)</span>; Schuster reads help to mind and body as the pledge of the final resurrection <span class="nodecor">(*Postcomm.*)</span>. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-Seven passages are directly appointed, in four books; composed orations are not listed, their resemblances to Scripture being echoes rather than quotations. Each dossier is a summary row, an event row where a passage narrates one, then a short explanation. Psalm citations give the missal’s Vulgate number with the English-Bible equivalent; the appendix supplies the Masoretic series and the two witnesses’ general judgments on the psalm titles.
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Gradual: Ps. 27:7 (Vg.; Heb. 28), Ps. 27:1 (Vg.; Heb. 28) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Offertory: Ps. 29:2–3 (Vg.; Heb. 30) | Superscription setting: The building of David’s house at Jerusalem | And they built a house for David |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ps. 67:6–7, 36 (Vg.; Heb. 68), Ps. 67:2 (Vg.; Heb. 68) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+|  | Prophetic referent: The Nativity of Our Lord; Bethlehem as the Christian referent | Disputed: B.C. 3; c. B.C. 7 |
+| Alleluia: Ps. 80:2–3 (Vg.; Heb. 81) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: Prov. 3:9–10 | Final formation: The final editorial formation of the Book of Proverbs | Edited as a whole in the early postexilic period |
+| Gospel: Mark 7:31–37 | Narrated event | Date unresolved |
+|  | Composition: Mark; Rome traditionally; Egypt reported by Chrysostom | Disputed: A.D. 38–40; A.D. 40; A.D. 43; A.D. 50–67; A.D. 60–70; After Matthew, and not as late as the destruction of Jerusalem |
+| Epistle: 1 Cor. 15:1–10 | Composition: The First Epistle to the Corinthians | Disputed: A.D. 56; A.D. 57 |
 
-<table style="width:83%;">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 18%" />
-<col style="width: 35%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Proper</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Gradual</td>
-<td style="text-align: left;">Ps. 27:7, 1 Vulg. (Eng. 28:7, 1)</td>
-<td style="text-align: left;">Superscription <em>Psalmus ipsi David</em>. No episode, occasion or place</td>
-<td style="text-align: left;">Traditional: Davidic, <em>c.</em> 1000 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">A bare attribution: no occasion and no musical direction, so nothing fixes a place or a stage of David’s life. Theodoret’s reading of the psalm as David in flight from Saul is exegesis, not a dated setting.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Offertory</td>
-<td style="text-align: left;">Ps. 29:2–3 Vulg. (Eng. 30:1–2)</td>
-<td style="text-align: left;">Superscription <em>Psalmus cantici in dedicatione domus David</em>: an occasion named, no place</td>
-<td style="text-align: left;">Traditional: Davidic, <em>c.</em> 1000 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The only title of the four naming a dedication, and it drives the psalm’s whole reception. Aquinas notes the historical difficulty — David did not dedicate the Lord’s house — and Theodoret argues that the letter cannot be David’s own building.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Introit</td>
-<td style="text-align: left;">Ps. 67:6–7, 36, with v. 2 Vulg. (Eng. 68:5–6, 35, with v. 1)</td>
-<td style="text-align: left;">Superscription <em>In finem, psalmus cantici ipsi David</em>. No occasion or place</td>
-<td style="text-align: left;">Traditional: Davidic, <em>c.</em> 1000 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;"><em>In finem</em> renders a term the <em>Catholic Encyclopedia</em> says is “now generally interpreted ‘of the Director’,” marking a collection rather than a date or an event; Jerome rendered it <em>victori</em>. The psalm is a processional but anchors no episode, and the missal takes three clauses from it.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Alleluia</td>
-<td style="text-align: left;">Ps. 80:2–3 Vulg. (Eng. 81:1–2)</td>
-<td style="text-align: left;">Superscription <em>In finem, pro torcularibus, psalmus ipsi Asaph</em>. Levitical temple choir</td>
-<td style="text-align: left;">Traditional: Asaph or his family, under the monarchy</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The one appointed psalm not ascribed to David. The <em>Catholic Encyclopedia</em> makes Asaph a Levite, one of the three chiefs of the Levitical choir, and judges it probable that his family composed the psalms later gathered into an Asaph psalter; <em>pro torcularibus</em> renders a term that “may mean that these psalms were to be sung to some vintage-melody.”</td>
-</tr>
-<tr>
-<td style="text-align: left;">Communion</td>
-<td style="text-align: left;">Prov. 3:9–10</td>
-<td style="text-align: left;">A father’s wisdom instruction; no place named. Traditionally Solomon at Jerusalem</td>
-<td style="text-align: left;">Traditional: Solomonic, 10th c. BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The two witnesses disagree. The <em>Catholic Encyclopedia</em> (Gigot, 1911) reports Catholic writers “wellnigh unanimous” in ascribing chapters i–ix to Solomon and dates the arrangement only to “either under Ezechias, or as late as Esdras”; the <em>NABRE</em> makes chapters 1–9 an early postexilic introduction. Neither is preferred here.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Gospel</td>
-<td style="text-align: left;">Mk. 7:31–37</td>
-<td style="text-align: left;">Writing: Rome, for Roman Christians (<em>Cath. Enc.</em>); the <em>NABRE</em> adds a possible Syrian setting</td>
-<td style="text-align: left;">AD 50–67 (<em>Cath. Enc.</em>); often after AD 70</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;"><em>Event: out of the district of Tyre (Arabic Sour) north through Sidon (Saida), both in present-day Lebanon, then to the Sea of Galilee through the Decapolis — for the <em>Catholic Encyclopedia</em>, which names Mk. 7:31 among its three New Testament loci, a region east and south of that lake whose cities lie east of the Jordan but for Scythopolis. Largely Gentile territory, in the Galilean ministry; no year is settled here.</em></td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The <em>Catholic Encyclopedia</em> takes the evangelist to be Peter’s interpreter, holds that “it is certain that the Gospel was written at Rome,” says “the date of the Gospel is uncertain,” and settles for AD 50–67; the <em>NABRE</em> reports the attribution to John Mark, notes that the book is anonymous, and prefers a date shortly after AD 70.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Epistle</td>
-<td style="text-align: left;">1 Cor. 15:1–10</td>
-<td style="text-align: left;">From Ephesus, near present-day Selçuk, Türkiye, to Corinth in Greece</td>
-<td style="text-align: left;">About Easter AD 57 (<em>Cath. Enc.</em>); about AD 56 (<em>NABRE</em>)</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Pauline authorship is both traditional and the mainstream modern judgment, and the letter names its own writing place at 16:8, “But I will tarry at Ephesus, until Pentecost.” The <em>Catholic Encyclopedia</em> reaches Ephesus by Paul’s itinerary instead, and has Titus carry the letter to a church founded about the end of AD 51; chapter 15 answers people there saying there is no resurrection of the dead.</td>
-</tr>
-</tbody>
-</table>
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+*Disputed*: the sources disagree and the corpus prefers none. *(derived)*: computed by the corpus from a stated relation, not printed by a source. *Date unresolved*: the corpus gives this subject no date. The evidence for every date, with its sources, is set out in the appendix *Evidence for the Scriptural Dates*.
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -795,6 +728,50 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 >
 > **Strongest limit:** The arc is not a property of the texts, and two checked witnesses break it: Cassiodorus moralises the Introit’s last clause into patience and faith with no resurrection at all, and Theodoret reads the Gradual’s *reflóruit* of a hunted man’s recovered bodily vigour. Against design, the chant-cue drift recorded at the Collect shows these chants and these orations were not paired when either was composed. And the convergence is partly an artefact of which witnesses survive: it is strongest in the Latin line that runs from Augustine through Cassiodorus to Aquinas.
 
+## Appendix: Evidence for the Scriptural Dates {#sec:date-location-evidence}
+
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
+
+*Gradual: Ps. 27:7 (Vg.; Heb. 28), Ps. 27:1 (Vg.; Heb. 28)*
+
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
+
+*Offertory: Ps. 29:2–3 (Vg.; Heb. 30)*
+
+- **Superscription setting** (preferred). The building of David’s house at Jerusalem: And they built a house for David (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:7, 5:11; The Catholic Encyclopedia, Volume 4 (New York, 1908)).
+
+- **Composition**. As under Gradual: Ps. 27:7 (Vg.; Heb. 28), Ps. 27:1 (Vg.; Heb. 28).
+
+*Introit: Ps. 67:6–7, 36 (Vg.; Heb. 68), Ps. 67:2 (Vg.; Heb. 68)*
+
+- **Historical setting**. As under Gradual: Ps. 27:7 (Vg.; Heb. 28), Ps. 27:1 (Vg.; Heb. 28).
+
+- **Composition**. As under Gradual: Ps. 27:7 (Vg.; Heb. 28), Ps. 27:1 (Vg.; Heb. 28).
+
+- **Prophetic referent** (disputed). The Nativity of Our Lord: B.C. 3 (“the year of Rome 750 which he styles 3 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)); c. B.C. 7 (“probably the year 7 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)). Place: Bethlehem as the Christian referent (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 2:1).
+
+*Alleluia: Ps. 80:2–3 (Vg.; Heb. 81)*
+
+- **Historical setting**. As under Gradual: Ps. 27:7 (Vg.; Heb. 28), Ps. 27:1 (Vg.; Heb. 28).
+
+- **Composition**. As under Gradual: Ps. 27:7 (Vg.; Heb. 28), Ps. 27:1 (Vg.; Heb. 28).
+
+*Communion: Prov. 3:9–10*
+
+- **Final formation** (preferred). The final editorial formation of the Book of Proverbs: Edited as a whole in the early postexilic period (Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Proverbs introduction).
+
+*Gospel: Mark 7:31–37*
+
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Mark: A.D. 38–40 (“the tenth or twelfth year after the Ascension (A.D. 38-40)”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 40 (The Catholic Encyclopedia, Volume 9 (1910)); A.D. 43 (“the third year of Claudius (A.D. 43)”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 50–67 (“somewhere between A.D. 50 and 67”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 60–70 (“between 60 and 70”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); After Matthew, and not as late as the destruction of Jerusalem (De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam (1912), responsa-i-ix). Place: Rome traditionally; Egypt reported by Chrysostom (The Catholic Encyclopedia, Volume 9 (1910)).
+
+*Epistle: 1 Cor. 15:1–10*
+
+- **Composition** (disputed). The First Epistle to the Corinthians: A.D. 56 (“(1 and 2 Corinthians; Galatians), 56”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 57 (“about Easter A.D. 57”; The Catholic Encyclopedia, Volume 4 (New York, 1908)).
+
 ## Appendix: Scope and Qualifications
 
 **As of 20 August 2026.** Everything below states the boundaries of this guide as at that date. Retrieval mechanics, checksums, query detail, discarded leads, and the full reception, notable-and-quotable and interpretive-proposal audits are in `propers/verified.md` and `research/scope.md` beside this document’s source; they are not repeated here.
@@ -917,6 +894,6 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 - “Ephphatha Guild Services,” *The Scranton Tribune*, 14 November 1895, p. 3, in *Chronicling America*; Council of Organizations Serving the Deaf, *Council Membership Directory 1969*, ERIC document ED032704, <https://eric.ed.gov/?id=ED032704>.
 
-**Last revised (UTC):** 2026-09-24T17:05:09Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

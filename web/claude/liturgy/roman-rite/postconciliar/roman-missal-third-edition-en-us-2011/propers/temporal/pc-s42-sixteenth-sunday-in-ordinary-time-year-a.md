@@ -117,118 +117,9 @@ Formula `PC-S42-A` ⋅ Lectionary 106
 | **Moral** | The servants’ question is answered by a prohibition, not by a permission: judgment about what may be pulled up is reserved (Matthew 13:29). The Collect asks for a vigilance directed at keeping the commandments; the Entrance Antiphon offers sacrifice *willingly*; and Romans supplies the reason a petitioner may be wrong about his own petition. |
 | **Anagogical** | The harvest is the end of the age; the furnace and the shining of the just are its two terms (Matthew 13:40–43). The Prayer over the Offerings sets every particular gift inside one sacrifice ordered to the salvation of all, and the Prayer after Communion asks passage out of oldness into newness of life. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-<table style="width:87%;">
-<colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 34%" />
-<col style="width: 21%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Entrance Antiphon</strong></td>
-<td style="text-align: left;">Psalm 54:6, 8<br />
-(Vulgate 53:6, 8)</td>
-<td style="text-align: left;">Judahite temple prayer; transmitted in the Psalter of Jerusalem worship</td>
-<td style="text-align: left;">Final form uncertain; collection closed in the Second Temple period</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">1 Samuel 23:19; 26:1</td>
-<td style="text-align: left;">Wilderness of Ziph, Judean hill country south-east of Hebron</td>
-<td style="text-align: left;">Reign of Saul, traditionally eleventh century BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The superscription assigns the psalm to David when the Ziphites betrayed his hiding place; inherited attribution is not a dated autograph, and historical judgment leaves author and date open. The two half-verses the Missal prints stand at the psalm’s turn from danger to willing sacrifice. The Missal cites the psalm as 53 in the Vulgate series; the same text is numbered 54 in the Hebrew series used by the United States Lectionary.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Responsorial Psalm</strong></td>
-<td style="text-align: left;">Psalm 86:5–6, 9–10, 15–16; response from 86:5a</td>
-<td style="text-align: left;">An individual’s plea, composed largely of phrases drawn from older psalms and from Exodus 34:6</td>
-<td style="text-align: left;">Uncertain; the borrowing suggests a relatively late compilation</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The psalm carries a Davidic heading but no narrated occasion. Verse 9—all the nations coming to worship—places an individual petition inside a universal horizon; verse 15 quotes the divine self-description of Exodus 34:6. The appointed verses omit the psalm’s complaint against violent adversaries (86:14).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Communion Antiphon, first</strong></td>
-<td style="text-align: left;">Psalm 111:4–5<br />
-(Vulgate 110:4–5)</td>
-<td style="text-align: left;">Praise sung in the assembly of the upright (111:1); temple setting</td>
-<td style="text-align: left;">Post-exilic; commonly placed in the Persian or early Hellenistic period</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">An alphabetic acrostic in Hebrew: each half-line begins with a successive letter, a form that survives in neither Latin nor English. The remembered wonders are the Exodus deeds; the food given is, in the psalm’s own frame, the covenant provision, not yet the Eucharist.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>First Reading</strong></td>
-<td style="text-align: left;">Wisdom 12:13, 16–19</td>
-<td style="text-align: left;">Written in Greek at Alexandria in Egypt for a Jewish community living under Hellenistic and then Roman rule</td>
-<td style="text-align: left;">Commonly placed in the last century BC</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">Wisdom 12:3–11</td>
-<td style="text-align: left;">The land of Canaan, in the book’s retrospect on its earlier inhabitants</td>
-<td style="text-align: left;">Israel’s occupation of the land, in the book’s own frame</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The book speaks in the persona of Solomon and is preserved only in Greek; Catholic canons receive it, and it is not in the Hebrew Bible. The appointed verses belong to a defence of God’s slowness against Canaan; the Lectionary omits verses 14–15, which deny that any king or tyrant may call God to account and state that God’s justice is the reason he governs justly.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Gospel Acclamation</strong></td>
-<td style="text-align: left;">Cf. Matthew 11:25</td>
-<td style="text-align: left;">Adapted, not quoted: Jesus’ thanksgiving in Galilee, before the parable discourse</td>
-<td style="text-align: left;">See the Gospel dossier below</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The verse is a liturgical adaptation, marked <em>Cf.</em> in the Lectionary; it compresses Matthew 11:25 and supplies the phrase <em>mysteries of the kingdom</em>, which in Matthew belongs to 13:11 rather than to 11:25. It is an acclamation greeting the Gospel, not a passage read in course.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Gospel (both forms)</strong></td>
-<td style="text-align: left;">Matthew 13:24–43; shorter form 13:24–30</td>
-<td style="text-align: left;">Composed in Greek for a largely Jewish-Christian readership; Syria, and Antioch in particular, is the common modern proposal</td>
-<td style="text-align: left;">Ancient tradition names the apostle Matthew; the modern majority dates the Greek Gospel after AD 70, often c. AD 80–90</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">Matthew 13:1, 36</td>
-<td style="text-align: left;">Beside the Sea of Galilee, then indoors in a house—two distinct settings inside one appointed passage</td>
-<td style="text-align: left;">Galilean ministry, c. AD 28–30</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The longer form crosses from public parable to private explanation; the shorter form stops inside the first parable and never leaves the shore. At 13:35 Matthew cites Psalm 78:2 (Vulgate 77:2) as fulfilled; that quotation is part of Matthew’s argument and is not separately appointed.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Second Reading</strong></td>
-<td style="text-align: left;">Romans 8:26–27</td>
-<td style="text-align: left;">Written from Corinth to house churches at Rome of mixed Jewish and Gentile membership</td>
-<td style="text-align: left;">c. AD 56–58</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Undisputed Pauline authorship; the letter names Tertius as the scribe (16:22). These two verses continue the groaning sequence of 8:22–23 and are read in course.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Communion Antiphon, second</strong></td>
-<td style="text-align: left;">Revelation 3:20</td>
-<td style="text-align: left;">Written on Patmos; addressed to the church at Laodicea in the Lycus valley of the Roman province of Asia</td>
-<td style="text-align: left;">Traditionally the last years of Domitian, c. AD 95; an earlier date in the 60s is argued</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The verse stands inside a rebuke: Laodicea is lukewarm, self-satisfied, and counselled to buy gold refined by fire (3:14–19). The knock is addressed to a community that thinks it needs nothing, and the promised meal is the offer that follows the reproof.</td>
-</tr>
-</tbody>
-</table>
+No passage is dated here yet. This proper’s appointed citations have not been entered as a reviewed query input for the Scripture chronology corpus (research pending), so the corpus has been asked about no passage and no date is supplied from anywhere else.
 
 ## The Propers: Themes and Movement
 
@@ -688,6 +579,6 @@ Completed: source research and same-day verification of every witness quoted; cl
 
 - *Easton’s Bible Dictionary* (1897), s.v. “Tares,” <https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/R-Z>; *Chambers’s Twentieth Century Dictionary* (1908), s.v. “Darnel,” <https://en.wikisource.org/wiki/Chambers%27s_Twentieth_Century_Dictionary_1908/D_Defect>.
 
-**Last revised (UTC):** 2026-09-24T18:04:15Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -98,122 +98,9 @@ Year A · Lectionary no. 109 · Ordinary Time Week XVII formulary
 | **Moral** | The petitions turn value into conduct: the Collect asks that passing goods be so used now that what abides may already be held, and the Prayer over the Offerings returns what came from God’s own bounty. Solomon’s refusal of long life, riches and his enemies’ lives is the reading’s own contrast, and the psalm’s ranking of the commandments above gold and topaz is the assembly’s answer to it. |
 | **Anagogical** | Only the longer Gospel form reaches the shore, the sorting and the furnace; the shorter ends in joy and purchase. Romans carries its chain of verbs through to *glorified*, a past tense for what is not yet seen, and the Prayer after Communion names the sacrament a perpetual memorial of the Passion ordered to salvation. What is hoped for is adherence to what remains, not the securing of a possession. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-<table style="width:87%;">
-<colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 34%" />
-<col style="width: 21%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>First Reading</strong></td>
-<td style="text-align: left;">1 Kings 3:5, 7–12</td>
-<td style="text-align: left;">Written: Judah, or Babylonia during the exile; place unnamed by the book</td>
-<td style="text-align: left;">Final form commonly placed in the sixth century BC</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">The dream at Gibeon</td>
-<td style="text-align: left;">The high place at Gibeon, about ten km north-west of Jerusalem</td>
-<td style="text-align: left;">Early in Solomon’s reign, conventionally about 970–960 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The book names no author. Jewish tradition credits Jeremiah; modern accounts generally place Kings within a longer Deuteronomistic history reaching its present shape in or after the exile, with earlier court and annalistic material behind it. Neither reconstruction is a premise here. The audience of the finished book is a people who have lost the monarchy and are asked to judge it. Verse 6, Solomon’s recital of God’s mercy to David, falls inside the appointed span but is not proclaimed.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Entrance Antiphon <em>(adaptation)</em></strong></td>
-<td style="text-align: left;"><em>Cf.</em> Ps 67:6–7, 36</td>
-<td style="text-align: left;">Israel; a sanctuary and procession setting is internal to the psalm</td>
-<td style="text-align: left;">Uncertain; the psalm is widely judged archaic in parts</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The received heading assigns the psalm to David; modern study treats it as one of the most textually difficult in the Psalter and does not settle its date. The Missal splices the end of v. 6, the opening of v. 7, and the closing v. 36, and marks the result <em>Cf.</em> It is therefore an adaptation, not a proclamation of the psalm.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Communion Antiphon A <em>(alternative)</em></strong></td>
-<td style="text-align: left;">Ps 102:2</td>
-<td style="text-align: left;">Israel; no locale is named in the psalm</td>
-<td style="text-align: left;">Uncertain; postexilic language is often noted</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The received heading assigns the psalm to David. The antiphon quotes the opening summons to bless and not to forget, without the psalm’s later catalogue of benefits. Selection of this antiphon rather than the alternative is a local decision that this guide does not resolve.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Responsorial Psalm</strong></td>
-<td style="text-align: left;">Ps 119:57, 72, 76–77, 127–128, 129–130; response <em>Cf.</em> Ps 119:97a</td>
-<td style="text-align: left;">Israel; no narrative setting</td>
-<td style="text-align: left;">Uncertain; a postexilic Torah piety is commonly proposed</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Psalm 119 is anonymous and alphabetic: twenty-two stanzas of eight verses, each stanza’s verses beginning with the same Hebrew letter. The appointed verses are drawn from six stanzas and the refrain from a seventh, so the sung text is a liturgical selection and not a continuous biblical pericope. Its horizon is Israel’s delight in <em>torah</em>.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Communion Antiphon B <em>(alternative)</em></strong></td>
-<td style="text-align: left;">Matthew 5:7–8</td>
-<td style="text-align: left;">Written: eastern Mediterranean, Antioch often proposed and unproved</td>
-<td style="text-align: left;">Composed after AD 70; often placed about AD 80–90</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">Two of the Beatitudes</td>
-<td style="text-align: left;">A mountainside in Galilee, before a crowd and the disciples</td>
-<td style="text-align: left;">Within the Galilean ministry</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Ancient tradition, reported by Papias through Eusebius, names Matthew the apostle and a Semitic-language original; the canonical Greek text’s relation to that report is disputed. The two beatitudes are adjacent but distinct sayings, and the antiphon quotes them without their surrounding series.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Gospel Acclamation <em>(adaptation)</em></strong></td>
-<td style="text-align: left;"><em>Cf.</em> Matthew 11:25</td>
-<td style="text-align: left;">Same written setting as above</td>
-<td style="text-align: left;">Same as above</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">Jesus’s thanksgiving to the Father</td>
-<td style="text-align: left;">Galilee, after the woes on the unrepentant towns</td>
-<td style="text-align: left;">Within the Galilean ministry</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The acclamation abbreviates and adapts the verse; it does not proclaim it whole, and Matthew 11 is a distinct scene from Matthew 13. The Latin of this verse and of the appointed Ps 118:130 share the word <em>parvuli</em>, the little ones to whom understanding is given.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Gospel <em>(long and short forms)</em></strong></td>
-<td style="text-align: left;">Matthew 13:44–52; short form 13:44–46</td>
-<td style="text-align: left;">Same written setting as above</td>
-<td style="text-align: left;">Same as above</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;">Close of the parable discourse</td>
-<td style="text-align: left;">By the Sea of Galilee, then indoors with the disciples</td>
-<td style="text-align: left;">Within the Galilean ministry</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Matthew’s third discourse begins in a boat before crowds and continues in a house with the disciples alone; the treasure, pearl, net and scribe belong to the indoor portion. The short form ends with the purchase of the pearl; the long form alone reaches the shore, the separation and the householder’s new and old.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Second Reading</strong></td>
-<td style="text-align: left;">Romans 8:28–30</td>
-<td style="text-align: left;">Written from Corinth, or its port Cenchreae, to believers at Rome</td>
-<td style="text-align: left;">About AD 56–58</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Authorship by Paul is undisputed; Tertius names himself as the scribe at 16:22. The Roman congregations included Jewish and gentile believers whom Paul had not yet met. These verses stand inside a long argument that runs from present suffering to the assurance that nothing separates from God’s love; that frame is not proclaimed with them.</td>
-</tr>
-</tbody>
-</table>
+No passage is dated here yet. This proper’s appointed citations have not been entered as a reviewed query input for the Scripture chronology corpus (research pending), so the corpus has been asked about no passage and no date is supplied from anywhere else.
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -997,6 +884,6 @@ Only sources actually used are listed. Where an online witness was read, the del
 
 - “Dragnet,” *Online Etymology Dictionary*, for the negative result reported in the gallery.
 
-**Last revised (UTC):** 2026-09-24T18:04:15Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

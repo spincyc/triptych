@@ -30,99 +30,36 @@ The book also prints inside this formulary **Credo** after the Gospel and **Præ
 | Moral | Everything in hand is administered, not owned, and the audit is already announced. The Collect therefore asks not for one right act but for a standing *spíritus cogitándi et agéndi*; the Offertory supplies the posture, humility, that the steward never reaches. |
 | Anagogical | The Gospel’s *aétérna tabernácula* and the Secret’s *gáudia sempitérna* name the same end; the Postcommunion asks that its effect be felt already, and the Communion’s *gustáte* gives the mode — the end is tasted before it is seen. |
 
-## Scriptural Date and Location
+## Scriptural Date and Location {#sec:date-location}
 
-Seven passages are directly appointed; the composed orations quote none of Scripture directly and are not inventoried. Psalm numbers follow the missal’s Vulgate reckoning, with the modern number in parentheses.
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Offertory: Ps. 17:28 (Vg.; Heb. 18), Ps. 17:32 (Vg.; Heb. 18) | Superscription setting: David’s deliverance from all his enemies and from the hand of Saul | In the day that the Lord delivered him out of the hand of all his enemies, and out of the hand of Saul |
+|  | Historical setting: The reign of Saul | “Saul was a child of one year when he began to reign, and he reigned two years over Israel” (duration) |
+|  | Utterance: David’s deliverance from all his enemies and from the hand of Saul | In the day that the Lord delivered him out of the hand of all his enemies, and out of the hand of Saul |
+|  | Composition: Psalms | Before c. 165 B.C. |
+|  | Prophetic referent: The Nativity of Our Lord; Bethlehem as the Christian referent | Disputed: B.C. 3; c. B.C. 7 |
+| Gradual: Ps. 30:3 (Vg.; Heb. 31) | Historical setting | Date pending its source qualification |
+|  | Historical setting: David’s flight from the face of Absalom | When he fled from the face of his son Absalom |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: Ps. 33:9 (Vg.; Heb. 34) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Superscription setting: David’s flight to Achis, king of Geth; Geth, at the Philistine court | A.M. 2944 (Haydock edition reporting Ussher) |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Ps. 47:2 (Vg.; Heb. 48) | Historical setting | Occasion date unresolved |
+|  | Composition: The Psalms of the Sons of Korah | Between the days of Isaias and the return from exile |
+| Introit: Ps. 47:10–11 (Vg.; Heb. 48), Ps. 47:2 (Vg.; Heb. 48) | Historical setting | Occasion date unresolved |
+|  | Composition: The Psalms of the Sons of Korah | Between the days of Isaias and the return from exile |
+| Gradual: Ps. 70:1 (Vg.; Heb. 71) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Superscription setting | Date pending its source qualification |
+|  | Historical setting: David’s flight from the face of Absalom | When he fled from the face of his son Absalom |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gospel: Luke 16:1–9 | Narrated event | Date unresolved |
+|  | Composition: The Gospel of St Luke | Disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished |
+| Epistle: Rom. 8:12–17 | Composition: The Epistle to the Romans | Disputed: A.D. 57; A.D. 58 |
 
-<table style="width:83%;">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 18%" />
-<col style="width: 35%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong>Proper</strong></th>
-<th style="text-align: left;"><strong>Citation</strong></th>
-<th style="text-align: left;"><strong>Location</strong></th>
-<th style="text-align: left;"><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Offertory</td>
-<td style="text-align: left;">Ps. 17 (18), 28 and 32</td>
-<td style="text-align: left;">Israel; royal thanksgiving in the mouth of David after deliverance</td>
-<td style="text-align: left;">Setting claimed: united monarchy, c. 1000 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The title assigns the psalm to David “in the day that the Lord delivered him … from the hand of Saul”; the same canticle stands again at 2 Kings (2 Samuel) 22 with the same occasion clause, a doublet observable in the text itself. Modern study fixes no author, date, or place of writing. Verse 28 turns from rescue to a rule about the low and the high; verse 32 denies any other God.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Grad. resp.</td>
-<td style="text-align: left;">Ps. 30 (31), 3</td>
-<td style="text-align: left;">Israel; an individual under threat, no place named</td>
-<td style="text-align: left;">Setting claimed: Davidic; composition undated</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The Vulgate title reads only <em>In finem. Psalmus David, pro exstasi</em>, which Augustine took as a transport of mind, not a place or occasion. No event, city, or reign is named, so historical placement is unavailable; only the literary situation is, a speaker encircled and asking to be hidden.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Comm.</td>
-<td style="text-align: left;">Ps. 33 (34), 9</td>
-<td style="text-align: left;">Israel; Philistine Geth, in the title’s setting</td>
-<td style="text-align: left;">Setting claimed: David’s flight from Saul, c. 1000 BC</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The Latin title places the psalm “when he changed his countenance before Achimelech.” The narrative pointed to, 1 Kings (1 Samuel) 21:10–15, names the king of Geth <em>Achis</em>; title and narrative disagree, and the disagreement is old enough that Augustine expounds the psalm using <em>Achis</em>. It is an alphabetic thanksgiving with no further anchor.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Introit; Alleluia</td>
-<td style="text-align: left;">Ps. 47 (48):<br />
-Introit: 2, 10–11;<br />
-Alleluia: 2</td>
-<td style="text-align: left;">Jerusalem: Mount Zion and the temple precinct</td>
-<td style="text-align: left;">Setting claimed: monarchic Jerusalem; composition undated</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">A Korahite Zion song — the title assigns it to “the sons of Core,” the temple singers’ guild — whose horizon is one city and one mountain, with the kings of the earth troubled before them. It is the only appointed psalm whose place is unambiguous and the only one naming a temple: verse 10 speaks from inside that sanctuary, verse 11 carries the praise to the ends of the earth. No reign or festival is securely identifiable behind it.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Grad. v.</td>
-<td style="text-align: left;">Ps. 70 (71), 1</td>
-<td style="text-align: left;">Israel; an old man’s prayer, no place named</td>
-<td style="text-align: left;">Claimed by the Latin title: the Rechabites and the first exiles</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">The Hebrew psalm has no title; the Greek and Latin supply one — “of the sons of Jonadab, and of the first captives” — pointing to the family praised for obedience in Jeremiah 35 and to the deportations of 597 BC. That is an inherited liturgical ascription, not a datable authorship claim. The speaker is aged; verses 1–3 repeat Psalm 30:2–4 almost word for word.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Gosp.</td>
-<td style="text-align: left;">Luc. 16, 1–9</td>
-<td style="text-align: left;"><em>Composition:</em> a Greek-writing author, for Theophilus and a largely Gentile readership; place disputed</td>
-<td style="text-align: left;"><em>Composition:</em> commonly c. AD 62–90</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Narrated event</em></td>
-<td style="text-align: left;"><em>Lk 16:1, with 15:1–2 and 16:14</em></td>
-<td style="text-align: left;"><em>On the journey to Jerusalem (Lk 9:51–19:44); no town named; Pharisees within earshot</em></td>
-<td style="text-align: left;"><em>c. AD 28–33; day and season unstated</em></td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Tradition names Luke, physician and companion of Paul; the attribution is early and uncontested in antiquity. Modern judgment divides over whether the author travelled with Paul, and over dating before Paul’s death, after AD 70, or later; Antioch, Achaia, Ephesus, and Rome are each proposed as the place of writing, none established. The narrated setting is firmer in shape than in coordinates: the parable falls inside Luke’s travel narrative, follows three parables spoken against complaining Pharisees, and is overheard by the covetous Pharisees of 16:14.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Ep.</td>
-<td style="text-align: left;">Rom. 8, 12–17</td>
-<td style="text-align: left;"><em>Writer:</em> Corinth or Cenchreae; <em>recipients:</em> the Christians at Rome</td>
-<td style="text-align: left;"><em>Composition:</em> c. AD 56–58</td>
-</tr>
-<tr>
-<td colspan="4" style="text-align: left;">Pauline authorship is not seriously contested. The letter places its own writing at the close of the Aegean mission, the collection gathered and Spain still intended (15:22–28); Phoebe of Cenchreae carries it and Gaius of Corinth hosts the writer (16:1, 16:23), which is why Corinth is the standard identification. Paul writes to a church he did not found and had not seen; the appointed verses report no event.</td>
-</tr>
-</tbody>
-</table>
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+*Disputed*: the sources disagree and the corpus prefers none. *(derived)*: computed by the corpus from a stated relation, not printed by a source. *Date unresolved*: the corpus gives this subject no date. The evidence for every date, with its sources, is set out in the appendix *Evidence for the Scriptural Dates*.
 
 ## The Propers: Themes and Movement
 
@@ -639,6 +576,70 @@ Throughout, the English phrases that entered the language are the Authorised Ver
 >
 > **Strongest limit.** The parallel is formal, not material. The Epistle’s two words are two *languages*, which is exactly what carries Augustine’s and Aquinas’s argument; the Gradual’s two psalms are both Latin, and its doubling is far more plausibly explained by the ordinary practice of pairing a responsory with a verse drawn from elsewhere in the Psalter. No source consulted connects them, and the resemblance may be nothing more than a resemblance.
 
+## Appendix: Evidence for the Scriptural Dates {#sec:date-location-evidence}
+
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
+
+*Offertory: Ps. 17:28 (Vg.; Heb. 18), Ps. 17:32 (Vg.; Heb. 18)*
+
+- **Superscription setting** (preferred). David’s deliverance from all his enemies and from the hand of Saul: In the day that the Lord delivered him out of the hand of all his enemies, and out of the hand of Saul (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 22:1, Ps. 17:1).
+
+- **Historical setting** (preferred). The reign of Saul: “Saul was a child of one year when he began to reign, and he reigned two years over Israel” (duration) (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 1 Kings 13:1).
+
+- **Utterance** (preferred). David’s deliverance from all his enemies and from the hand of Saul: In the day that the Lord delivered him out of the hand of all his enemies, and out of the hand of Saul (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 22:1, Ps. 17:1).
+
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
+
+- **Prophetic referent** (disputed). The Nativity of Our Lord: B.C. 3 (“the year of Rome 750 which he styles 3 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)); c. B.C. 7 (“probably the year 7 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)). Place: Bethlehem as the Christian referent (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 2:1).
+
+*Gradual: Ps. 30:3 (Vg.; Heb. 31)*
+
+- **Historical setting**. No date: the corpus holds a date for this that it reports from another edition by exception, which is not printed until the corpus records the source’s own qualification of it (research pending).
+
+- **Historical setting** (preferred). David’s flight from the face of Absalom: When he fled from the face of his son Absalom (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 3:1).
+
+- **Composition**. As under Offertory: Ps. 17:28 (Vg.; Heb. 18), Ps. 17:32 (Vg.; Heb. 18).
+
+*Communion: Ps. 33:9 (Vg.; Heb. 34)*
+
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
+
+- **Superscription setting** (preferred). David’s flight to Achis, king of Geth: A.M. 2944 (Haydock edition reporting Ussher) (“A. M. 2944, A. C. 1060”; Douay Rheims Edition of the Holy Catholic Bible with a Comprehensive Catholic Commentary, William Peter Feeney 2014 Memorial Edition, 1K.21.1-15; Douay Rheims Edition of the Holy Catholic Bible with a Comprehensive Catholic Commentary, William Peter Feeney 2014 Memorial Edition, Ps.70.1). Place: Geth, at the Philistine court (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 33:1, 1 Kings 21:10, 21:15).
+
+- **Composition**. As under Offertory: Ps. 17:28 (Vg.; Heb. 18), Ps. 17:32 (Vg.; Heb. 18).
+
+*Alleluia: Ps. 47:2 (Vg.; Heb. 48)*
+
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (preferred). The Psalms of the Sons of Korah: Between the days of Isaias and the return from exile (The Catholic Encyclopedia, Volume 12 (1911)).
+
+*Introit: Ps. 47:10–11 (Vg.; Heb. 48), Ps. 47:2 (Vg.; Heb. 48)*
+
+- **Historical setting**. As under Alleluia: Ps. 47:2 (Vg.; Heb. 48).
+
+- **Composition**. As under Alleluia: Ps. 47:2 (Vg.; Heb. 48).
+
+*Gradual: Ps. 70:1 (Vg.; Heb. 71)*
+
+- **Traditional attribution**. As under Communion: Ps. 33:9 (Vg.; Heb. 34).
+
+- **Superscription setting**. No date: the corpus holds a date for this that it reports from another edition by exception, which is not printed until the corpus records the source’s own qualification of it (research pending).
+
+- **Historical setting**. As under Gradual: Ps. 30:3 (Vg.; Heb. 31).
+
+- **Composition**. As under Offertory: Ps. 17:28 (Vg.; Heb. 18), Ps. 17:32 (Vg.; Heb. 18).
+
+*Gospel: Luke 16:1–9*
+
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Luke: c. A.D. 70 (“About the year 70”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); Before the end of the Roman imprisonment, when the Acts was finished (De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam (1912), responsa-i-ix).
+
+*Epistle: Rom. 8:12–17*
+
+- **Composition** (disputed). The Epistle to the Romans: A.D. 57 (“(Romans), 57”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 58 (“the Epistle to the Romans (58)”; The Catholic Encyclopedia, Volume 5 (New York, 1909)).
+
 ## Appendix: Scope and Qualifications
 
 **Edition and formulary identity.** This guide covers one formulary: the Mass of the Eighth Sunday after Pentecost, *Dominica Octava post Pentecosten*, *II classis*, as printed at pages 387–388 of the *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), marginal numbers 1512–1521. The rank and its occurrence effects come from the same book’s *Rubricæ generales*, nn. 10–18, printed page XII. In the repository’s stable temporal series this leaf is catalogue identity `48`, a catalogue position and not an occurrence schedule; the Sunday fell on 19 July in 2026, but the guide is dated to no civil year.
@@ -721,7 +722,7 @@ Only sources actually used for a published claim are listed. Loci are given at t
 
 - United Kingdom, House of Commons, Representation of the People (No. 2) Bill, 3 February 1931, HC Deb vol. 247, cc. 1662–1664. Historic Hansard, <https://api.parliament.uk/historic-hansard/commons/1931/feb/03/representation-of-the-people-no-2-bill>, read 2026-07-25. Parliamentary copyright; quoted under the Open Parliament Licence.
 
-**Last revised (UTC):** 2026-11-04T03:50:06Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
