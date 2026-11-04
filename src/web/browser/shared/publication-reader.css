@@ -464,10 +464,17 @@
      rather than squeezing every column into the reading measure. */
   .publication-reader__content table.web-wide-table::before { width: max(100cqw, 64rem); }
 
-  /* A figure compiled from its TikZ source; the SVG is drawn on white. */
-  .publication-reader__content .web-figure { margin: 1.5rem 0; text-align: center; }
+  /* A figure compiled from its TikZ source, drawn on white at its print size.
+     Its labels are set in the figure, so a narrow screen scrolls it sideways
+     rather than shrinking them below legibility (inspected 2026-11-04). */
+  .publication-reader__content .web-figure {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    text-align: center;
+  }
   .publication-reader__content .web-figure img {
-    max-width: 100%;
+    max-width: none;
     height: auto;
     padding: .5rem;
     background: #fff;
