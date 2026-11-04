@@ -103,3 +103,35 @@ source = "sections/140-scope-chronology-evidence.tex"
 [[structure]]
 role = "references"
 source = "sections/150-references.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Saint Robert Bellarmine: Controversy, Office, Pastoral Rule, and Reception'
+pdfsubject = 'A source-first historical and hagiographic biography of Saint Robert Bellarmine'
+title = 'Saint Robert Bellarmine'
+subtitle = 'Controversy, Office, Pastoral Rule, and Reception'
+kind-line = 'A source-first historical and hagiographic biography'
+penalties = 'strict'
+body = [
+  'sections/00-opening',
+  'sections/10-household-schools-and-vocation',
+  'sections/20-louvain-ordination-and-method',
+  'sections/30-roman-college-and-disputationes',
+  'sections/40-legation-index-and-vulgate',
+  'sections/50-governance-catechisms-and-curia',
+  'sections/60-bruno-coercion-and-cardinalate',
+  'sections/70-grace-capua-and-conclaves',
+  'sections/80-venice-england-and-indirect-power',
+  'sections/90-scripture-and-galileo',
+  'sections/100-retreat-death-and-memory',
+  'sections/110-books-teaching-and-pastoral-ideal',
+  'sections/120-cult-doctor-and-tradition',
+  'sections/130-synthesis',
+]
+appendix = [
+  'sections/140-scope-chronology-evidence',
+  'sections/150-references',
+  '\clearpage',
+]

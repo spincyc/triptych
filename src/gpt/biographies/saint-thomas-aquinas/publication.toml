@@ -103,3 +103,34 @@ source = "sections/130-scope-chronology-evidence.tex"
 [[structure]]
 role = "references"
 source = "sections/140-references.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Saint Thomas Aquinas: Friar, Teacher, and the Work of Wisdom'
+pdfsubject = 'A source-first historical and hagiographic biography of Saint Thomas Aquinas'
+title = 'Saint Thomas Aquinas'
+subtitle = 'Friar, Teacher, and the Work of Wisdom'
+kind-line = 'A source-first historical and hagiographic biography'
+penalties = 'strict'
+body = [
+  'sections/00-opening',
+  'sections/10-household-abbey-and-city',
+  'sections/20-preachers-and-family-resistance',
+  'sections/30-albert-and-parisian-formation',
+  'sections/40-master-and-mendicant-controversy',
+  'sections/50-italian-years-office-and-summa',
+  'sections/60-second-paris-disputes',
+  'sections/70-naples-silence-and-death',
+  'sections/80-books-workshop-and-method',
+  'sections/90-teaching-and-historical-limits',
+  'sections/100-censure-canonization-and-thomisms',
+  'sections/110-tradition-relics-and-images',
+  'sections/120-synthesis',
+]
+appendix = [
+  'sections/130-scope-chronology-evidence',
+  'sections/140-references',
+  '\clearpage',
+]

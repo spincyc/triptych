@@ -111,3 +111,35 @@ source = "sections/140-scope-chronology-evidence.tex"
 [[structure]]
 role = "references"
 source = "sections/150-references.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Saint Peter: The Fisherman and the Keys'
+pdfsubject = 'A source-first historical biography of Saint Peter the Apostle'
+title = 'Saint Peter'
+subtitle = 'The Fisherman and the Keys'
+kind-line = 'A source-first historical biography'
+body = [
+  'sections/00-question',
+  'sections/10-galilee',
+  'sections/20-call',
+  'sections/30-confession',
+  'sections/35-rock',
+  'sections/40-denials',
+  'sections/50-easter',
+  'sections/60-jerusalem',
+  'sections/70-antioch',
+  'sections/80-writings',
+  'sections/90-rome',
+  'sections/100-legends',
+  'sections/110-tomb',
+  'sections/120-reception',
+  'sections/130-conclusion',
+]
+appendix = [
+  'sections/140-scope-chronology-evidence',
+  'sections/150-references',
+  '\clearpage',
+]

@@ -91,3 +91,31 @@ source = "sections/11-references.tex"
 [[structure]]
 role = "scope-appendix"
 source = "sections/01-method-and-orientation.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Saint Jerome: Scripture, Asceticism, and the Labor of Words'
+pdfsubject = 'A source-first historical and hagiographic biography of Saint Jerome'
+title = 'Saint Jerome'
+subtitle = 'Scripture, Asceticism, and the Labor of Words'
+kind-line = 'A historical and hagiographic biography'
+penalties = 'strict'
+closing = 'plain'
+body = [
+  'sections/00-opening',
+  'sections/02-world-education-and-ascetic-turn',
+  'sections/03-rome-and-bethlehem',
+  'sections/04-making-latin-scripture',
+  'sections/05-relationships-and-controversies',
+  'sections/06-writings-asceticism-and-hagiography',
+  'sections/07-final-years-death-and-memory',
+  'sections/08-tradition-under-review',
+  'sections/09-synthesis',
+]
+appendix = [
+  'sections/01-method-and-orientation',
+  'sections/10-detailed-chronology',
+  'sections/11-references',
+]

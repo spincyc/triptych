@@ -95,3 +95,31 @@ source = "sections/110-scope-chronology-evidence.tex"
 [[structure]]
 role = "references"
 source = "sections/120-references.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Saint Thomas Aquinas: The Common Doctor'
+pdfsubject = 'A source-first historical biography of Saint Thomas Aquinas'
+title = 'Saint Thomas Aquinas'
+subtitle = 'The Common Doctor'
+kind-line = 'A source-first historical biography'
+body = [
+  'sections/00-question',
+  'sections/10-aquino',
+  'sections/20-paris-cologne',
+  'sections/30-master',
+  'sections/40-italy',
+  'sections/50-second-paris',
+  'sections/60-naples-end',
+  'sections/70-aftermath',
+  'sections/80-traditions',
+  'sections/90-reception',
+  'sections/100-conclusion',
+]
+appendix = [
+  'sections/110-scope-chronology-evidence',
+  'sections/120-references',
+  '\clearpage',
+]

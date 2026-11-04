@@ -99,3 +99,33 @@ source = "sections/120-scope-chronology-evidence.tex"
 [[structure]]
 role = "references"
 source = "sections/130-references.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Origen: Scripture, School, and the Long Trial of a Teacher'
+pdfsubject = 'A source-first historical biography of Origen of Alexandria'
+title = 'Origen'
+subtitle = 'Scripture, School, and the Long Trial of a Teacher'
+kind-line = 'A source-first historical biography'
+penalties = 'strict'
+closing = 'plain'
+body = [
+  'sections/00-opening',
+  'sections/10-alexandria-and-martyr-household',
+  'sections/20-teaching-asceticism-and-school',
+  'sections/30-travel-ordination-and-rupture',
+  'sections/40-caesarea-workshop-and-churches',
+  'sections/50-confession-death-and-absence',
+  'sections/60-books-and-their-survival',
+  'sections/70-scripture-theology-and-open-questions',
+  'sections/80-relationships-debate-and-cost',
+  'sections/90-origen-after-origen',
+  'sections/100-tradition-under-review',
+  'sections/110-synthesis',
+]
+appendix = [
+  'sections/120-scope-chronology-evidence',
+  'sections/130-references',
+]

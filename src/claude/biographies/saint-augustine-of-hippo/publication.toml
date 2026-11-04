@@ -99,3 +99,32 @@ source = "sections/120-scope-chronology-evidence.tex"
 [[structure]]
 role = "references"
 source = "sections/130-references.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Saint Augustine of Hippo: The Restless Heart'
+pdfsubject = 'A source-first historical biography of Saint Augustine of Hippo'
+title = 'Saint Augustine of Hippo'
+subtitle = 'The Restless Heart'
+kind-line = 'A source-first historical biography'
+body = [
+  'sections/00-question',
+  'sections/10-thagaste',
+  'sections/20-manichee',
+  'sections/30-milan',
+  'sections/40-cassiciacum',
+  'sections/50-hippo',
+  'sections/60-donatists',
+  'sections/70-writings',
+  'sections/80-pelagians',
+  'sections/90-death',
+  'sections/100-reception',
+  'sections/110-conclusion',
+]
+appendix = [
+  'sections/120-scope-chronology-evidence',
+  'sections/130-references',
+  '\clearpage',
+]

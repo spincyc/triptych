@@ -107,3 +107,34 @@ source = "sections/120-scope-chronology-evidence.tex"
 [[structure]]
 role = "references"
 source = "sections/130-references.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Tertullian: Father of Latin Theology, Enemy of Compromise'
+pdfsubject = 'A source-first historical biography of Tertullian of Carthage'
+title = 'Tertullian'
+subtitle = 'Father of Latin Theology, Enemy of Compromise'
+kind-line = 'A source-first historical biography'
+body = [
+  'sections/00-question',
+  'sections/10-carthage',
+  'sections/20-life-evidence',
+  'sections/25-corpus',
+  'sections/30-apologist',
+  'sections/40-church-practice',
+  'sections/50-boundary',
+  'sections/60-theology',
+  'sections/65-latin-father',
+  'sections/70-new-prophecy',
+  'sections/80-schism',
+  'sections/90-end',
+  'sections/100-reception',
+  'sections/110-conclusion',
+]
+appendix = [
+  'sections/120-scope-chronology-evidence',
+  'sections/130-references',
+  '\clearpage',
+]

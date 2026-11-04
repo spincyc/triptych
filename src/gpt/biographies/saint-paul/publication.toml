@@ -103,3 +103,37 @@ source = "sections/13-detailed-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/14-references.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Saint Paul: Apostle to the Nations'
+pdfsubject = 'A source-first historical and hagiographic biography of Saint Paul'
+title = 'Saint Paul'
+subtitle = 'Apostle to the Nations'
+kind-line = 'A historical and hagiographic biography'
+closing = 'footnotesize'
+body = [
+  'sections/00-opening',
+  'sections/03-world-and-identity',
+  'sections/04-persecutor-called-apostle',
+  'sections/05-mission-and-communities',
+  'sections/06-relationships-and-conflict',
+  'sections/07-teaching-and-office',
+  'sections/08-letters-and-authorship',
+  'sections/09-final-years-martyrdom-and-burial',
+  'sections/10-cult-iconography-and-patronage',
+  'sections/11-tradition-under-review',
+  'sections/12-contested-legacy-and-synthesis',
+]
+appendix = [
+  'sections/01-scope-and-method',
+  'sections/02-chronological-orientation',
+  'sections/13-detailed-timeline',
+  '''
+\begingroup
+\footnotesize''',
+  'sections/14-references',
+  '\endgroup',
+]

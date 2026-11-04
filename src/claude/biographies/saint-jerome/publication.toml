@@ -95,3 +95,31 @@ source = "sections/110-scope-chronology-evidence.tex"
 [[structure]]
 role = "references"
 source = "sections/120-references.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Saint Jerome: Doctor of the Sacred Page'
+pdfsubject = 'A source-first historical biography of Saint Jerome of Stridon'
+title = 'Saint Jerome'
+subtitle = 'Doctor of the Sacred Page'
+kind-line = 'A source-first historical biography'
+body = [
+  'sections/00-question',
+  'sections/10-stridon',
+  'sections/20-desert',
+  'sections/30-ordination',
+  'sections/40-rome',
+  'sections/50-bethlehem',
+  'sections/60-vulgate',
+  'sections/70-controversies',
+  'sections/80-pelagians-end',
+  'sections/90-reception',
+  'sections/100-conclusion',
+]
+appendix = [
+  'sections/110-scope-chronology-evidence',
+  'sections/120-references',
+  '\clearpage',
+]

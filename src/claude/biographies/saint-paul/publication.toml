@@ -107,3 +107,34 @@ source = "sections/140-scope-chronology-evidence.tex"
 [[structure]]
 role = "references"
 source = "sections/150-references.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Saint Paul: The Least of the Apostles'
+pdfsubject = 'A source-first historical biography of Saint Paul the Apostle'
+title = 'Saint Paul'
+subtitle = 'The Least of the Apostles'
+kind-line = 'A source-first historical biography'
+body = [
+  'sections/00-question',
+  'sections/10-sources',
+  'sections/20-pharisee',
+  'sections/30-damascus',
+  'sections/40-chronology',
+  'sections/50-journeys',
+  'sections/60-council',
+  'sections/70-letters',
+  'sections/80-captivity',
+  'sections/90-end',
+  'sections/100-tomb',
+  'sections/110-legends',
+  'sections/120-reception',
+  'sections/130-conclusion',
+]
+appendix = [
+  'sections/140-scope-chronology-evidence',
+  'sections/150-references',
+  '\clearpage',
+]

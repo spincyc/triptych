@@ -99,3 +99,32 @@ source = "sections/12-detailed-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/13-references.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Saint Peter: Apostle, Witness, and Martyr'
+pdfsubject = 'A source-first historical and hagiographic biography of Saint Peter'
+title = 'Saint Peter'
+subtitle = 'Apostle, Witness, and Martyr'
+kind-line = 'A historical and hagiographic biography'
+closing = 'plain'
+body = [
+  'sections/00-opening',
+  'sections/03-world-and-identity',
+  'sections/04-disciple-and-witness',
+  'sections/05-jerusalem-and-the-nations',
+  'sections/06-relationships-and-conflict',
+  'sections/07-office-teaching-and-writings',
+  'sections/08-rome-martyrdom-and-burial',
+  'sections/09-cult-iconography-and-patronage',
+  'sections/10-tradition-under-review',
+  'sections/11-legacy-and-synthesis',
+]
+appendix = [
+  'sections/01-scope-and-method',
+  'sections/02-chronological-orientation',
+  'sections/12-detailed-timeline',
+  'sections/13-references',
+]

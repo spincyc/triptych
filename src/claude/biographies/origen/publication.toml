@@ -99,3 +99,31 @@ source = "sections/120-scope-chronology-evidence.tex"
 [[structure]]
 role = "references"
 source = "sections/130-references.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Origen: Man of Adamant, Trial of the Church'
+pdfsubject = 'A source-first historical biography of Origen of Alexandria'
+title = 'Origen'
+subtitle = 'Man of Adamant, Trial of the Church'
+kind-line = 'A source-first historical biography'
+body = [
+  'sections/00-question',
+  'sections/10-alexandria',
+  'sections/20-martyrs-son',
+  'sections/30-catechist',
+  'sections/40-report',
+  'sections/50-scholar',
+  'sections/60-rupture',
+  'sections/70-late-works',
+  'sections/80-decius',
+  'sections/90-controversies',
+  'sections/100-reception',
+  'sections/110-conclusion',
+]
+appendix = [
+  'sections/120-scope-chronology-evidence',
+  'sections/130-references',
+]

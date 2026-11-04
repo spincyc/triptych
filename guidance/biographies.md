@@ -6,7 +6,11 @@ legendaries, critical editions, canonization dossiers, or general articles.
 
 Declare the leaf's type, source roles, contract version, and ordered outputs in
 `publication.toml` under [document schemas](document-schemas.md); the chronology
-and tradition records keep their distinct canonical roles.
+and tradition records keep their distinct canonical roles. Each life's
+`main.tex` is generated from the `biography-v1`
+[document type](document-schemas.md#document-types), which owns the title page,
+contents, study frame and closing: a new life starts from a `[document]` table,
+never from a copied entrypoint.
 
 ## Governing priorities
 

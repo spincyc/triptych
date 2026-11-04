@@ -111,3 +111,35 @@ source = "sections/150-scope-chronology-evidence.tex"
 [[structure]]
 role = "references"
 source = "sections/160-references.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Saint Robert Bellarmine: The Disputer of This Age'
+pdfsubject = 'A source-first historical biography of Saint Robert Bellarmine'
+title = 'Saint Robert Bellarmine'
+subtitle = 'The Disputer of This Age'
+kind-line = 'A source-first historical biography'
+body = [
+  'sections/00-question',
+  'sections/10-sources',
+  'sections/20-montepulciano',
+  'sections/30-louvain',
+  'sections/40-controversies',
+  'sections/50-legation-vulgate',
+  'sections/60-cardinal',
+  'sections/70-capua',
+  'sections/80-pen-wars',
+  'sections/90-galileo',
+  'sections/100-last-years',
+  'sections/110-cause',
+  'sections/120-traditions',
+  'sections/130-reception',
+  'sections/140-conclusion',
+]
+appendix = [
+  'sections/150-scope-chronology-evidence',
+  'sections/160-references',
+  '\clearpage',
+]

@@ -95,3 +95,31 @@ source = "sections/11-references.tex"
 [[structure]]
 role = "scope-appendix"
 source = "sections/01-method-and-orientation.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Saint Augustine of Hippo: Conversion, Episcopacy, and the Work of Grace'
+pdfsubject = 'A source-first historical and hagiographic biography of Saint Augustine of Hippo'
+title = 'Saint Augustine of Hippo'
+subtitle = 'Conversion, Episcopacy, and the Work of Grace'
+kind-line = 'A historical and hagiographic biography'
+penalties = 'strict'
+closing = 'plain'
+body = [
+  'sections/00-opening',
+  'sections/02-world-youth-and-search',
+  'sections/03-milan-conversion-and-return',
+  'sections/04-priest-and-bishop',
+  'sections/05-controversies-and-hard-legacy',
+  'sections/06-writings-and-thought',
+  'sections/07-final-years-death-and-memory',
+  'sections/08-tradition-under-review',
+  'sections/09-synthesis',
+]
+appendix = [
+  'sections/01-method-and-orientation',
+  'sections/10-detailed-chronology',
+  'sections/11-references',
+]

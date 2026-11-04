@@ -103,3 +103,34 @@ source = "sections/130-scope-chronology-evidence.tex"
 [[structure]]
 role = "references"
 source = "sections/140-references.tex"
+
+[document]
+type = 'biography-v1'
+
+[document.main]
+pdftitle = 'Tertullian: The Rhetorician of Carthage and the Cost of Rigor'
+pdfsubject = 'A source-first historical biography of Tertullian of Carthage'
+title = 'Tertullian'
+subtitle = 'The Rhetorician of Carthage and the Cost of Rigor'
+kind-line = 'A source-first historical biography'
+penalties = 'strict'
+body = [
+  'sections/00-opening',
+  'sections/10-carthage-and-the-first-voice',
+  'sections/20-conversion-household-and-discipline',
+  'sections/30-apology-and-public-christianity',
+  'sections/40-church-at-worship',
+  'sections/50-scripture-rule-and-rival-christianities',
+  'sections/60-flesh-soul-and-trinity',
+  'sections/70-new-prophecy-and-the-cost-of-rigor',
+  'sections/80-marriage-women-and-authority',
+  'sections/90-books-revision-and-survival',
+  'sections/100-ancient-and-catholic-reception',
+  'sections/110-tradition-under-review',
+  'sections/120-synthesis',
+]
+appendix = [
+  'sections/130-scope-chronology-evidence',
+  'sections/140-references',
+  '\clearpage',
+]
