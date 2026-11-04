@@ -192,12 +192,80 @@ def site_context(root: Path, *, documents=None, revision=None, endpoint=None, na
     return result
 
 
+# Classification directories that say where a publication is filed, not what it
+# is. They are dropped from download names; every other directory is kept, so a
+# series member keeps its series ("roman-sanctuary-dictionary-comprehensive").
+_FILING = frozenset((
+    "liturgy roman-rite propers temporal sanctoral ritual general-calendar ordinary reference "
+    "articles faith canon-law scripture biographies theology mariology heresies history "
+    "devotions novenas curriculums roman-missal-third-edition-en-us-2011 2008-latin-2011-us-english").split())
+# Vatican page identities embed the act's date and incipit:
+# ``hf-l-xiii-enc-15051891-rerum-novarum`` (DDMMYYYY) or ``...-19260430-...``.
+_VATICAN = re.compile(r"(?:^|\.)hf-[a-z0-9-]*?-([0-9]{8})-([a-z0-9-]+?)(?:\.([a-z0-9.-]+))?\Z")
+
+
+def _slug(value: str, words: int | None = None) -> str:
+    import unicodedata
+    text = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode().lower()
+    parts = [part for part in re.split(r"[^a-z0-9]+", text) if part]
+    return "-".join(parts[:words] if words else parts)
+
+
+def _vatican_date(digits: str) -> str | None:
+    for day, month, year in ((digits[:2], digits[2:4], digits[4:]), (digits[6:], digits[4:6], digits[:4])):
+        if 1 <= int(day) <= 31 and 1 <= int(month) <= 12 and 1500 <= int(year) <= 2100:
+            return year + "-" + month + "-" + day
+    return None
+
+
+def download_name(identity: str, row: dict) -> str:
+    """A portable PDF file name that is unique across the admitted editions.
+
+    Publications: kept directories, the leaf (which carries -synthesis/-homily)
+    and the provider: ``1962-f02-all-saints-synthesis-claude.pdf``. Papal
+    witnesses end in a bare language code, so they are named by date and incipit
+    where the identity carries them (``1891-05-15-rerum-novarum-en.pdf``),
+    otherwise by the opening words of the title plus the witness identity.
+    """
+    family, _, rest = identity.partition(":")
+    if family == "publication":
+        provider, *path = rest.split("/")
+        leaf = path[-1]
+        kept = [part for part in path[:-1] if part not in _FILING
+                and not (part == "postconciliar" and leaf.startswith("pc-"))]
+        stem = _slug("-".join(kept + [leaf])) + "-" + provider
+    elif family == "bible":
+        stem = _slug(rest) + "-bible"
+    elif family == "reading-plan":
+        stem = "reading-plan-" + _slug(rest)
+    else:
+        witness, _, language = rest.rpartition("/")
+        match = _VATICAN.search(witness)
+        date = match and _vatican_date(match.group(1))
+        if date:
+            stem = "-".join(part for part in (date, match.group(2), _slug(match.group(3) or "")) if part)
+        elif witness.startswith("papal."):
+            stem = _slug(witness.removeprefix("papal."))
+        else:
+            parts = witness.split(".")
+            if parts[0] == "acta" and len(parts) >= 4:
+                # acta.aas.012.archive.aas.012.l019212 -> aas-012-l019212
+                prefix = parts[1] + "-" + parts[2]
+                witness = prefix + "-" + parts[-1].removeprefix(prefix + "-")
+            stem = _slug(row["title"], 6) + "-" + _slug(witness)
+        stem += "-" + language
+    stem = stem.strip("-")[:190].rstrip("-")
+    _need(re.fullmatch(r"[a-z0-9][a-z0-9-]*", stem or ""), "cannot name native print output: " + identity)
+    return stem + ".pdf"
+
+
 def controls(identity: str, route: str, context: dict) -> str:
     """Small, inert selection manifest; the browser never receives a credential."""
     row = context["documents"].get(identity)
     _need(row is not None, "native print output is not publicly admitted: " + identity)
     value = {"schema": SCHEMA, "id": identity,
              **{field: row[field] for field in ("document", "edition", "title")},
+             "filename": download_name(identity, row),
              "source_revision": context["source_revision"], "endpoint": context["endpoint"]}
     if context.get("native_catalog") is not None:
         catalog = context["native_catalog"]
@@ -220,7 +288,8 @@ def controls(identity: str, route: str, context: dict) -> str:
             + '<button type="button" data-native-print-start>Generate PDF</button> '
             + '<button type="button" data-native-print-cancel hidden>Cancel</button> '
             + '<a data-native-print-download hidden>Download PDF</a>'
-            + '<p data-native-print-status role="status" aria-live="polite"></p>' + historical
+            + '<p data-native-print-status role="status" aria-live="polite"></p>'
+            + '<p class="native-print-progress" data-native-print-progress></p>' + historical
             + '<noscript><p>JavaScript is required to request a newly typeset PDF.</p></noscript>'
             + '<script type="application/json" data-native-print-manifest>' + descriptor + '</script></section>')
 

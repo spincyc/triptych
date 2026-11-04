@@ -79,6 +79,29 @@ class NativeAdmissionTests(unittest.TestCase):
         self.assertEqual(legacy["html"], "NATIVE-CONTROLSCANONICAL-READING")
         self.assertEqual(legacy["body_extra"], "NATIVE-TAIL")
 
+    def test_download_names_are_unique_portable_and_carry_the_identity(self):
+        names = {identity: native.download_name(identity, row) for identity, row in self.documents.items()}
+        repeated = {name: count for name, count in Counter(names.values()).items() if count > 1}
+        self.assertEqual(repeated, {})
+        self.assertEqual(len(set(names.values())), len(self.documents))
+        for identity, name in names.items():
+            self.assertRegex(name, r"\A[a-z0-9][a-z0-9-]*\.pdf\Z", identity)
+            self.assertLessEqual(len(name), 195, identity)
+            if identity.startswith("papal:"):
+                self.assertTrue(name.endswith("-" + identity.rpartition("/")[2] + ".pdf"), name)
+            if identity.startswith("publication:"):
+                self.assertTrue(name.endswith("-" + identity.split(":")[1].split("/")[0] + ".pdf"), name)
+        prefix = "publication:{}/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis"
+        self.assertEqual(names[prefix.format("claude")], "1962-f02-all-saints-synthesis-claude.pdf")
+        self.assertEqual(names[prefix.format("gpt")], "1962-f02-all-saints-synthesis-gpt.pdf")
+        self.assertEqual(names["publication:gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive"],
+                         "1962-roman-sanctuary-dictionary-comprehensive-gpt.pdf")
+        self.assertEqual(names["papal:papal.leo-xiii.hf-l-xiii-enc-15051891-rerum-novarum/en"], "1891-05-15-rerum-novarum-en.pdf")
+        self.assertEqual(names["bible:douay-rheims"], "douay-rheims-bible.pdf")
+        context = native.site_context(ROOT, documents=self.documents, revision="a" * 40, endpoint="")
+        identity = "papal:papal.leo-xiii.hf-l-xiii-enc-15051891-rerum-novarum/la"
+        self.assertIn('"filename":"1891-05-15-rerum-novarum-la.pdf"', native.controls(identity, "papal/x.html", context))
+
     def test_compiler_bundles_bind_every_admitted_output_and_project_relative_routes(self):
         identity = next(iter(self.documents))
         catalog = {"selections": {key: {"bundle_href": "native-tex/sources/" + "c" * 64 + ".json",
@@ -192,14 +215,6 @@ class NativeBrowserTests(unittest.TestCase):
                     self.assertEqual(len([request for request in seen['result']['requests'] if request['method'] == 'POST']),
                                      int(not wasm), seen)
 
-    def test_keyboard_print_requests_native_pdf_instead_of_browser_print(self):
-        p = plan(fixture())
-        p["acts"][2] = {"do": "key", "key": "p", "code": "KeyP", "modifiers": 2}
-        result = drive(p)["result"]
-        self.assertEqual(result["state"], "ready", result)
-        self.assertEqual(result["calls"], 0)
-        self.assertEqual(result["downloads"], 1)
-
     def test_service_paths_keep_the_configured_reverse_proxy_prefix(self):
         result = drive(plan(fixture(service_prefix=True), print_query=True))["result"]
         self.assertEqual(result["state"], "ready", result)
@@ -223,7 +238,7 @@ class NativeBrowserTests(unittest.TestCase):
         self.assertEqual(request["bundleSHA256"], "c" * 64)
         self.assertEqual(request["runtimeSHA256"], "d" * 64)
         self.assertEqual(request["bundleBytes"], 123)
-        self.assertEqual(observed["compiler"]["type"], "example.pdf")
+        self.assertEqual(observed["compiler"]["type"], "example-gpt.pdf")
 
     def test_changed_compiler_pdf_is_refused_without_browser_or_service_fallback(self):
         result = drive(plan(fixture(wasm=True, failure="wasm-sha"), print_query=True))["result"]
@@ -275,6 +290,160 @@ class NativeBrowserTests(unittest.TestCase):
         self.assertTrue(result["hidden"])
         self.assertEqual(result["calls"], 0)
         self.assertEqual(result["downloads"], 0)
+
+
+def interactive_fixture():
+    """A held compiler the test releases or fails, on a page with in-page links."""
+    identity = "papal:papal.leo-xiii.hf-l-xiii-enc-15051891-rerum-novarum/en"
+    row = {"id": identity, "output_id": identity, "document": identity, "edition": "main", "title": "Rerum Novarum"}
+    context = {"documents": {identity: row}, "source_revision": "a" * 40, "endpoint": "", "archives": {},
+               "native_catalog": {"selections": {identity: {
+                   "bundle_href": "native-tex/sources/" + "c" * 64 + ".json", "bundle_sha256": "c" * 64, "bundle_bytes": 123}},
+                   "runtime": {"href": "native-tex/runtime.json", "sha256": "d" * 64, "bytes": 456}}}
+    head, tail = native.extras("papal-documents/example.html")
+    hook = """
+      window.calls=[];window.announcements=0;window.keys=[];window.progressTexts=[];
+      window.TriptychNativeTeX={generate:(options)=>new Promise((resolve,reject)=>{
+        const call={aborted:false};calls.push(call);
+        options.signal.addEventListener('abort',()=>{call.aborted=true;reject(new DOMException('Cancelled','AbortError'));},{once:true});
+        const stage='Checking the original sources and print runtime';
+        for(let index=0;index<=60;index++){options.onProgress({stage,loadedBytes:index*1048576,totalBytes:60*1048576,
+          message:stage+' ('+index+'.0 of 60.0 MiB)… Keep this page visible until it finishes.'});
+          progressTexts.push(document.querySelector('[data-native-print-progress]').textContent);}
+        for(let pass=1;pass<=2;pass++)for(let repeat=0;repeat<3;repeat++)
+          options.onProgress({message:'Typesetting with the original TeX layout (pass '+pass+')… Keep this page visible until it finishes.'});
+        options.onProgress({stage:'ready',message:'The typeset PDF is ready.'});
+        call.release=async()=>{const bytes=new TextEncoder().encode('%PDF-1.4\\nheld fixture\\n%%EOF');
+          const hash=await crypto.subtle.digest('SHA-256',bytes);
+          resolve({bytes,byteLength:bytes.byteLength,sha256:Array.from(new Uint8Array(hash),n=>n.toString(16).padStart(2,'0')).join('')});};
+        call.fail=()=>reject(new Error('Native TeX compilation failed.'));
+      })};
+      addEventListener('keydown',event=>{if(event.key==='p')keys.push({prevented:event.defaultPrevented,shift:event.shiftKey});});
+    """
+    body = ('<nav><a id="toc" href="#part-2">Part 2</a> <a id="elsewhere" href="#part-3">Part 3</a></nav>'
+            + native.controls(identity, "papal-documents/example.html", context)
+            + '<div style="height:3000px"></div><h2 id="part-2">Part 2</h2><div style="height:3000px"></div>'
+            + '<h2 id="part-3">Part 3</h2><script>' + hook + '</script>' + tail
+            + '<script>window.downloads=0;document.querySelector("[data-native-print-download]").addEventListener("click",'
+            + 'event=>{event.preventDefault();downloads++;});new MutationObserver(records=>{announcements+=records.length;})'
+            + '.observe(document.querySelector("[data-native-print-status]"),{childList:true,characterData:true,subtree:true});</script>')
+    page = ('<!doctype html><html><head>' + head + '</head><body style="font-family:Georgia,serif">'
+            + body + '</body></html>')
+    return {"papal-documents/example.html": page,
+            "shared/native-print.js": (ROOT / "src/web/browser/shared/native-print.js").read_text(),
+            "shared/native-print.css": (ROOT / "src/web/browser/shared/native-print.css").read_text()}
+
+
+SNAPSHOT = """(()=>{const root=document.querySelector('[data-native-print]'),q=s=>root.querySelector(s);
+  const download=q('[data-native-print-download]');
+  return {state:root.dataset.nativePrintState,status:q('[data-native-print-status]').textContent,
+    progress:q('[data-native-print-progress]').textContent,startDisabled:q('[data-native-print-start]').disabled,
+    cancelHidden:q('[data-native-print-cancel]').hidden,downloadHidden:download.hidden,href:download.getAttribute('href'),
+    filename:download.download,focus:document.activeElement.dataset&&Object.keys(document.activeElement.dataset)[0]||document.activeElement.id||document.activeElement.tagName,
+    calls:calls.length,aborted:calls.map(call=>call.aborted),hash:location.hash,announcements,downloads};})()"""
+
+
+def held(name):
+    return act(SNAPSHOT, name)
+
+
+class NativeInteractionTests(unittest.TestCase):
+    """In-page navigation, keyboard print, focus, announcements and file name."""
+
+    def test_in_page_navigation_keyboard_print_focus_and_announcements(self):
+        observed = drive({"responses": interactive_fixture(), "acts": [
+            {"do": "navigate", "url": "/papal-documents/example.html"},
+            wait("document.querySelector('[data-native-print]').dataset.nativePrintState==='idle'"),
+            act("(()=>{const style=getComputedStyle(document.querySelector('[data-native-print-start]'));"
+                "return {font:style.fontFamily,border:style.borderTopStyle,radius:style.borderTopLeftRadius,"
+                "statusHeight:document.querySelector('[data-native-print-status]').getBoundingClientRect().height};})()", "style"),
+            {"do": "key", "key": "p", "code": "KeyP", "modifiers": 2},
+            {"do": "key", "key": "p", "code": "KeyP", "modifiers": 10},
+            held("afterKeys"),
+            {"do": "click", "selector": "[data-native-print-start]"},
+            wait("calls.length===1"), held("started"),
+            {"do": "key", "key": "p", "code": "KeyP", "modifiers": 2},
+            {"do": "click", "selector": "#toc"}, wait("location.hash==='#part-2'"),
+            act("scrollTo(0,0);history.back()"), wait("location.hash===''"),
+            held("duringNavigation"),
+            act("calls[0].release()"), wait("document.querySelector('[data-native-print]').dataset.nativePrintState==='ready'"),
+            held("ready"),
+            {"do": "click", "selector": "#toc"}, wait("location.hash==='#part-2'"),
+            act("scrollTo(0,0);history.back()"), wait("location.hash===''"),
+            act("location.hash='part-3'"), wait("location.hash==='#part-3'"),
+            held("afterNavigation"),
+            act("fetch(document.querySelector('[data-native-print-download]').href).then(response=>response.text())", "blob"),
+            act("keys", "keys"), act("progressTexts", "progressTexts"),
+        ]})
+        self.assertEqual(observed["style"]["font"], "Georgia, serif", observed)
+        self.assertEqual(observed["style"]["border"], "solid")
+        self.assertEqual(observed["style"]["statusHeight"], 0)
+        self.assertEqual(observed["keys"], [{"prevented": False, "shift": False}, {"prevented": False, "shift": True},
+                                            {"prevented": False, "shift": False}])
+        self.assertEqual(observed["afterKeys"]["state"], "idle")
+        self.assertEqual(observed["afterKeys"]["calls"], 0)
+        started = observed["started"]
+        self.assertEqual((started["state"], started["focus"], started["startDisabled"], started["cancelHidden"]),
+                         ("preparing", "nativePrintCancel", True, False), started)
+        during = observed["duringNavigation"]
+        self.assertEqual((during["state"], during["aborted"], during["calls"]), ("preparing", [False], 1), during)
+        # Bytes went to the non-live line; the typesetting stage then cleared it.
+        self.assertEqual(during["progress"], "")
+        self.assertIn("30.0 of 60.0 MiB", observed["progressTexts"])
+        self.assertIn("60.0 of 60.0 MiB", observed["progressTexts"])
+        self.assertIn("pass 2", during["status"])
+        ready = observed["ready"]
+        self.assertEqual((ready["state"], ready["focus"], ready["downloadHidden"], ready["downloads"]),
+                         ("ready", "nativePrintDownload", False, 1), ready)
+        self.assertEqual(ready["filename"], "1891-05-15-rerum-novarum-en.pdf")
+        self.assertEqual(ready["progress"], "")
+        # Preparing, one byte stage, two typesetting passes and ready: not one per progress event.
+        self.assertEqual(ready["announcements"], 5, ready)
+        after = observed["afterNavigation"]
+        self.assertEqual((after["state"], after["downloadHidden"], after["href"], after["status"]),
+                         ("ready", False, ready["href"], ready["status"]), after)
+        self.assertTrue(after["href"].startswith("blob:"))
+        self.assertTrue(observed["blob"].startswith("%PDF-"))
+
+    def test_leaving_cancelling_failing_and_returning_keep_controls_coherent(self):
+        hide = "dispatchEvent(new PageTransitionEvent('pagehide',{persisted:true}))"
+        show = "dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true}))"
+        state = "document.querySelector('[data-native-print]').dataset.nativePrintState"
+        observed = drive({"responses": interactive_fixture(), "acts": [
+            {"do": "navigate", "url": "/papal-documents/example.html"}, wait(state + "==='idle'"),
+            {"do": "click", "selector": "[data-native-print-start]"}, wait("calls.length===1"),
+            act(hide), held("leftDuringBuild"), act(show), held("returnedAfterBuildStopped"),
+            {"do": "click", "selector": "[data-native-print-start]"}, wait("calls.length===2"),
+            act("calls[1].release()"), wait(state + "==='ready'"),
+            act(hide), act(show), held("returnedToReady"),
+            act("fetch(document.querySelector('[data-native-print-download]').href).then(response=>response.text())", "blob"),
+            {"do": "click", "selector": "[data-native-print-start]"}, wait("calls.length===3"),
+            {"do": "click", "selector": "[data-native-print-cancel]"}, wait(state + "==='cancelled'"),
+            held("cancelled"),
+            {"do": "click", "selector": "[data-native-print-start]"}, wait("calls.length===4"),
+            act("calls[3].fail()"), wait(state + "==='error'"), held("failed"),
+            {"do": "click", "selector": "[data-native-print-start]"}, wait("calls.length===5"),
+            act("document.querySelector('#elsewhere').focus()"),
+            act("calls[4].release()"), wait(state + "==='ready'"), held("readerMovedOn"),
+        ]})
+        left = observed["leftDuringBuild"]
+        self.assertEqual((left["state"], left["aborted"], left["startDisabled"], left["cancelHidden"]),
+                         ("cancelled", [True], False, True), left)
+        self.assertIn("left this page", left["status"])
+        back = observed["returnedAfterBuildStopped"]
+        self.assertEqual((back["state"], back["downloadHidden"], back["startDisabled"]), ("cancelled", True, False), back)
+        ready = observed["returnedToReady"]
+        self.assertEqual((ready["state"], ready["downloadHidden"], ready["cancelHidden"]), ("ready", False, True), ready)
+        self.assertIn("ready", ready["status"])
+        self.assertTrue(observed["blob"].startswith("%PDF-"))
+        cancelled = observed["cancelled"]
+        self.assertEqual((cancelled["focus"], cancelled["downloadHidden"], cancelled["aborted"][2]),
+                         ("nativePrintStart", True, True), cancelled)
+        failed = observed["failed"]
+        self.assertEqual((failed["focus"], failed["downloadHidden"], failed["startDisabled"]),
+                         ("nativePrintStart", True, False), failed)
+        self.assertIn("compilation failed", failed["status"])
+        self.assertEqual(observed["readerMovedOn"]["focus"], "elsewhere")
 
 
 if __name__ == "__main__":

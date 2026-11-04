@@ -6,6 +6,8 @@
   const need = (condition, message) => { if (!condition) throw new Error(message); };
   const hex40 = (value) => typeof value === 'string' && /^[0-9a-f]{40}$/.test(value);
   const hex64 = (value) => typeof value === 'string' && /^[0-9a-f]{64}$/.test(value);
+  // One portable, lower-case file name per admitted edition, chosen at build time.
+  const downloadName = (value) => typeof value === 'string' && /^[a-z0-9][a-z0-9-]{0,190}\.pdf$/.test(value);
   const identity = (value) => typeof value === 'string' &&
     /^(?:publication:(?:gpt|claude)\/|bible:|reading-plan:|papal:)[a-z0-9][a-z0-9./-]*$/.test(value) &&
     !value.includes('..') && !value.includes('//') && !value.endsWith('/');
@@ -29,6 +31,7 @@
       hex40(value.source_revision) && typeof value.title === 'string' && value.title.trim(),
     'The native PDF selection is incomplete.');
     endpoint(value.endpoint);
+    need(value.filename == null || downloadName(value.filename), 'The PDF file name is invalid.');
     if (value.wasm != null) {
       need(value.wasm && typeof value.wasm === 'object', 'The TeX compiler selection is invalid.');
       resourceURL(value.wasm.bundle);
@@ -64,7 +67,7 @@
       runtimeSHA256: chosen.wasm.runtime_sha256, runtimeBytes: chosen.wasm.runtime_bytes,
       signal: options.signal, onProgress: (value) => {
         const message = typeof value === 'string' ? value : value && value.message;
-        if (message && options.onStatus) options.onStatus(message);
+        if (message && options.onStatus) options.onStatus(message, value && typeof value === 'object' ? value : null);
       }
     });
     need(generated && generated.bytes instanceof Uint8Array && generated.byteLength === generated.bytes.byteLength &&
@@ -148,6 +151,16 @@
     return {url: apiURL(base, '/v1/jobs/' + current.key + '/pdf'), job: current};
   }
 
+  function fallbackName(id) {
+    // Only reached for a manifest without a build-time name: the whole identity
+    // is unique, unlike its final segment (".../la", ".../en").
+    return id.replace(/^publication:/, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') + '.pdf';
+  }
+
+  function mebibytes(value) {
+    return (value / (1024 * 1024)).toFixed(1);
+  }
+
   function install(root, descriptor, options) {
     if (installations.has(root)) return installations.get(root);
     options = options || {};
@@ -158,93 +171,140 @@
     const download = root.querySelector('[data-native-print-download]');
     const status = root.querySelector('[data-native-print-status]');
     need(start && cancel && download && status, 'The PDF controls are incomplete.');
+    // Byte counts change many times a second; they belong outside the polite
+    // live region, which announces only stage changes.
+    let progress = root.querySelector('[data-native-print-progress]');
+    if (!progress) {
+      progress = document.createElement('p');
+      progress.className = 'native-print-progress';
+      progress.setAttribute('data-native-print-progress', '');
+      status.after(progress);
+    }
+    const filename = chosen.filename || fallbackName(chosen.id);
     let generation = 0;
     let active = null;
     let currentURL = null;
+    let state = 'idle';
 
-    function reset(message) {
-      generation += 1;
-      if (active) active.abort();
-      active = null;
+    function announce(message) {
+      if (status.textContent !== message) status.textContent = message;
+    }
+
+    function render(next) {
+      state = next;
+      root.dataset.nativePrintState = next;
+      const busy = next === 'preparing';
+      start.disabled = busy;
+      cancel.hidden = !busy;
+      download.hidden = !currentURL;
+      if (!currentURL) download.removeAttribute('href');
+      if (!busy) progress.textContent = '';
+    }
+
+    // Move focus only when it is still with these controls (or was dropped to
+    // the page by disabling a button): a reader who has gone on reading during
+    // a build keeps their place.
+    function focus(target) {
+      const current = document.activeElement;
+      if (!current || current === document.body || current === document.documentElement || root.contains(current)) {
+        target.focus();
+      }
+    }
+
+    function discard() {
       if (currentURL && currentURL.startsWith('blob:')) URL.revokeObjectURL(currentURL);
       currentURL = null;
-      download.hidden = true;
-      download.removeAttribute('href');
-      start.disabled = false;
-      cancel.hidden = true;
-      root.removeAttribute('aria-busy');
-      status.textContent = message || '';
+    }
+
+    function report(message, detail) {
+      if (detail && detail.stage === 'ready') return;
+      if (detail && typeof detail.stage === 'string' && Number.isFinite(detail.loadedBytes) &&
+          Number.isFinite(detail.totalBytes) && detail.totalBytes > 0) {
+        announce(detail.stage + '… Keep this page visible until it finishes.');
+        progress.textContent = mebibytes(detail.loadedBytes) + ' of ' + mebibytes(detail.totalBytes) + ' MiB';
+      } else {
+        announce(message);
+        progress.textContent = '';
+      }
+    }
+
+    // Abort an in-flight build only. A finished PDF is left alone.
+    function stop(message) {
+      if (!active) return false;
+      generation += 1;
+      active.abort();
+      active = null;
+      render('cancelled');
+      announce(message);
+      return true;
     }
 
     async function generate() {
-      reset();
+      generation += 1;
       const ownGeneration = generation;
-      const address = location.href;
+      if (active) active.abort();
+      discard();
       const controller = new AbortController();
       active = controller;
-      start.disabled = true;
-      cancel.hidden = false;
-      root.setAttribute('aria-busy', 'true');
-      status.textContent = 'Preparing the TeX PDF…';
-      root.dataset.nativePrintState = 'preparing';
+      render('preparing');
+      announce('Preparing the TeX PDF…');
+      focus(cancel);
       try {
         const transport = options.transport || (chosen.wasm ? wasmTransport : serviceTransport);
         const result = await transport(chosen, {
           ...options, signal: controller.signal,
-          onStatus: (message) => { if (generation === ownGeneration) status.textContent = message; }
+          onStatus: (message, detail) => { if (generation === ownGeneration) report(message, detail); }
         });
-        if (generation !== ownGeneration || address !== location.href || controller.signal.aborted) return false;
+        if (generation !== ownGeneration || controller.signal.aborted) return false;
         need(result && typeof result.url === 'string', 'The typesetter returned no PDF.');
         const target = new URL(result.url, location.href);
         need(target.protocol === 'blob:' || target.protocol === 'https:' ||
           target.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(target.hostname),
         'The typesetter returned an invalid PDF address.');
+        active = null;
         currentURL = target.href;
         download.href = currentURL;
-        download.download = chosen.id.split('/').pop().replace(':', '-') + '.pdf';
-        download.hidden = false;
+        download.download = filename;
         download.setAttribute('aria-label', 'Download PDF — ' + chosen.title);
-        root.dataset.nativePrintState = 'ready';
-        status.textContent = 'The TeX PDF is ready. Use Download PDF to open or save it.';
+        render('ready');
+        announce('The TeX PDF is ready. Use Download PDF to open or save it.');
+        focus(download);
         // A plain link remains visible even where automatic downloads are blocked.
         // No window.print() or HTML-to-PDF renderer participates in this action.
         if (options.autoDownload !== false) download.click();
         return true;
       } catch (error) {
         if (generation === ownGeneration) {
-          reset('PDF unavailable: ' + (error.message || error));
-          root.dataset.nativePrintState = 'error';
+          active = null;
+          discard();
+          render('error');
+          announce('PDF unavailable: ' + (error.message || error));
+          focus(start);
         }
         return false;
-      } finally {
-        if (generation === ownGeneration) {
-          active = null;
-          start.disabled = false;
-          cancel.hidden = true;
-          root.removeAttribute('aria-busy');
-        }
       }
     }
+
     const controls = {start: generate, cancel: () => {
-      reset('PDF request cancelled.'); root.dataset.nativePrintState = 'cancelled';
+      if (stop('PDF request cancelled.')) focus(start);
     }};
     installations.set(root, controls);
     start.addEventListener('click', generate);
     cancel.addEventListener('click', controls.cancel);
-    window.addEventListener('keydown', (event) => {
-      if ((event.ctrlKey || event.metaKey) && !event.altKey && event.key.toLowerCase() === 'p') {
-        event.preventDefault();
-        if (!start.disabled) generate();
-      }
+    // In-page navigation (table-of-contents links, history within the page)
+    // neither cancels a build nor discards a finished PDF. Leaving the page
+    // stops an unfinished build; a finished one stays for a back/forward
+    // restore, and the browser frees its blob when the document is destroyed.
+    window.addEventListener('pagehide', () => {
+      stop('PDF generation stopped when you left this page. Use Generate PDF to start again.');
     });
-    window.addEventListener('beforeprint', () => {
-      const refusal = document.querySelector('[data-print-volume-notice]');
-      if (refusal) refusal.textContent = 'Use Generate PDF on this page for the complete edition in its original TeX layout.';
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) render(state === 'preparing' && !active ? 'cancelled' : state);
     });
-    for (const event of ['hashchange', 'popstate', 'pagehide']) window.addEventListener(event, controls.cancel);
-    root.dataset.nativePrintState = 'idle';
+    render('idle');
     // A URL or installation option is not a request to run the typesetter.
     // Retained ?print=1 links stay readable until the reader invokes Generate PDF.
+    // Browser print (Ctrl/Cmd+P) is left to the browser.
     return controls;
   }
 

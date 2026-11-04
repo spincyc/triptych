@@ -1,7 +1,52 @@
-.native-print-actions { border-block: 1px solid #b8b0a3; padding-block: 1rem; margin-block: 1rem; }
-.native-print-actions button, .native-print-actions [data-native-print-download] { min-height: 2.75rem; padding: .5rem .75rem; }
-.native-print-actions [data-native-print-download] { display: inline-block; }
+/* Generate PDF controls. Self-contained so papal readers, source pages and
+   publication pages render them alike; the :is() selectors outrank
+   page-family button rules such as `.publication-reader button`. */
+.native-print-actions { border-block: 1px solid var(--line, #b8b0a3); padding-block: 1rem; margin-block: 1rem; }
+.native-print-actions :is(button, [data-native-print-download]) {
+  display: inline-block;
+  box-sizing: border-box;
+  min-height: 2.75rem;
+  margin-block: .25rem;
+  padding: .55rem .9rem;
+  border: 1px solid var(--muted, #6a635a);
+  border-radius: .2rem;
+  background: var(--surface, #f8f5ef);
+  color: var(--ink, #302d29);
+  font: inherit;
+  line-height: 1.5;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.native-print-actions [data-native-print-download] {
+  border-color: var(--rubric-dark, #6f2831);
+  background: var(--rubric-dark, #6f2831);
+  color: #fff;
+}
+.native-print-actions :is(button, [data-native-print-download]):hover:not(:disabled) {
+  border-color: var(--ink, #302d29);
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.native-print-actions :is(button, [data-native-print-download]):focus-visible {
+  outline: 3px solid #1f5d8b;
+  outline-offset: 2px;
+}
+.native-print-actions button:disabled {
+  border-style: dashed;
+  color: var(--muted, #6a635a);
+  cursor: progress;
+}
 .native-print-actions [hidden] { display: none !important; }
-.native-print-archive { font-size: .9em; }
-[data-native-print-status] { min-height: 1.5em; }
+.native-print-actions [data-native-print-status] { min-height: 1.5em; margin-block: .5rem 0; }
+/* An empty status leaves no gap; the live region stays in place for later messages. */
+.native-print-actions [data-native-print-status]:empty { min-height: 0; margin: 0; }
+.native-print-progress { margin-block: .25rem 0; color: var(--muted, #6a635a); font-size: .9em; font-variant-numeric: tabular-nums; }
+.native-print-progress:empty { display: none; }
+.native-print-archive { font-size: .9em; margin-block: .75rem 0; }
+@media (forced-colors: active) {
+  .native-print-actions :is(button, [data-native-print-download]) { border-color: ButtonText; }
+  .native-print-actions button:disabled { border-color: GrayText; color: GrayText; }
+  .native-print-actions :is(button, [data-native-print-download]):focus-visible { outline-color: Highlight; }
+}
 @media print { .native-print-actions { display: none !important; } }
