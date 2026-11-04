@@ -7,12 +7,12 @@ import importlib.util
 import io
 import json
 import pathlib
+import sys
 import tempfile
 import unittest
 
-TOOL_PATH = (
-    pathlib.Path(__file__).resolve().parents[2] / "tools" / "release-bindings"
-)
+REPO = pathlib.Path(__file__).resolve().parents[2]
+TOOL_PATH = REPO / "tools" / "release-bindings"
 
 
 def load_tool():
@@ -27,6 +27,14 @@ def load_tool():
 
 def sha(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
+
+def inventory_digest(site_sources: dict) -> str:
+    """The record's stated definition, derived here without the tool."""
+    text = "".join(
+        f"{site_sources[path]}  {path}\n" for path in sorted(site_sources)
+    )
+    return sha(text.encode("utf-8"))
 
 
 RIGHTS_TEMPLATE = """# Rights record
@@ -154,7 +162,9 @@ class ReleaseBindingsTests(unittest.TestCase):
         record_text = self.record.read_text()
         self.assertNotIn(sha(b"claude pdf v2"), record_text)
         self.assertIn("## Exact approved snapshots", original_record)
-        self.assertIn(sha(b"readme v2"), record_text)
+        self.assertIn(
+            inventory_digest({"README.md": sha(b"readme v2")}), record_text
+        )
         self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
 
     def test_changed_legacy_review_pdf_needs_no_shared_refresh(self):
@@ -299,7 +309,7 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.assertIn("retired site README.md", changes)
         recorded = self.read_manifest()["authorizations"]["auth-1"]["site_sources"]
         self.assertEqual({"web/gpt/articles/example.md": sha(b"web edition v1")}, recorded)
-        self.assertIn("web/gpt/articles/example.md", self.record.read_text())
+        self.assertIn(inventory_digest(recorded), self.record.read_text())
         self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
 
     def test_refresh_without_adoption_keeps_the_recorded_input_set(self):
@@ -470,6 +480,141 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.assertIn("assets/icon.png", message)
         self.assertIn("refresh-release-bindings ADOPT=1", message)
         self.assertEqual(before, self.record.read_text())
+
+    # The record binds the manifest's site inventory by one digest. Until
+    # 2026-11-04 it carried a second copy of every (path, SHA-256) pair.
+
+    def test_record_binds_the_inventory_by_digest_and_does_not_copy_it(self):
+        self.tool.refresh(self.tool.load_manifest())
+
+        record_text = self.record.read_text()
+        recorded = self.read_manifest()["authorizations"]["auth-1"]["site_sources"]
+        self.assertNotIn("`README.md`", record_text)
+        self.assertNotIn(sha(b"readme v1"), record_text)
+        self.assertIn(
+            f"| `release/public-alpha.json:site_sources` | `{inventory_digest(recorded)}` |",
+            record_text,
+        )
+        self.assertEqual(
+            inventory_digest(recorded), self.tool.recorded_site_digest(record_text)
+        )
+        # Every other section survives byte for byte.
+        original = RIGHTS_TEMPLATE.format(
+            gpt_hash=sha(b"gpt pdf v1"),
+            claude_hash=sha(b"claude pdf v1"),
+            readme_hash=sha(b"readme v1"),
+        )
+        header = self.tool.SITE_HEADER
+        self.assertEqual(
+            original[: original.index(header)], record_text[: record_text.index(header)]
+        )
+        self.assertTrue(record_text.endswith("## Operational controls\n\nControls text.\n"))
+
+    def test_a_refresh_moves_only_the_digest_row(self):
+        self.tool.refresh(self.tool.load_manifest())
+        before = self.record.read_text().splitlines()
+        self.readme.write_bytes(b"readme v2")
+
+        self.tool.refresh(self.tool.load_manifest())
+
+        after = self.record.read_text().splitlines()
+        changed = [(old, new) for old, new in zip(before, after) if old != new]
+        self.assertEqual(len(before), len(after))
+        self.assertEqual(1, len(changed))
+        self.assertIn(inventory_digest({"README.md": sha(b"readme v2")}), changed[0][1])
+
+    def test_status_fails_when_one_inventory_byte_is_tampered(self):
+        """A hand edit to the manifest's inventory no longer matches the record."""
+        self.tool.refresh(self.tool.load_manifest())
+        self.assertEqual(0, self.capture_status()[0])
+        manifest = self.read_manifest()
+        site_sources = manifest["authorizations"]["auth-1"]["site_sources"]
+        honest = inventory_digest(site_sources)
+        recorded_hash = site_sources["README.md"]
+        site_sources["README.md"] = (
+            ("1" if recorded_hash[0] == "0" else "0") + recorded_hash[1:]
+        )
+        self.manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
+
+        code, lines = self.capture_status()
+
+        self.assertEqual(1, code)
+        digest_lines = [line for line in lines if "site-source digest" in line]
+        self.assertEqual(1, len(digest_lines), lines)
+        self.assertIn(f"recorded {honest}", digest_lines[0])
+        self.assertIn(f"manifest {inventory_digest(site_sources)}", digest_lines[0])
+        self.assertIn("stale: 2 stale binding(s)", lines[-1])
+
+    def test_status_fails_when_the_recorded_digest_is_tampered(self):
+        self.tool.refresh(self.tool.load_manifest())
+        text = self.record.read_text()
+        digest = self.tool.recorded_site_digest(text)
+        forged = ("1" if digest[0] == "0" else "0") + digest[1:]
+        self.record.write_text(text.replace(digest, forged))
+
+        code, lines = self.capture_status()
+
+        self.assertEqual(1, code)
+        self.assertEqual(
+            [
+                f"stale site-source digest: recorded {forged}, manifest {digest}",
+                "stale rights_record_sha256",
+                "stale: 2 stale binding(s)",
+            ],
+            lines,
+        )
+
+    def test_status_refuses_a_per_path_table_or_edited_prose(self):
+        """Only the generated form is read; a legacy copy is a divergence."""
+        manifest = self.read_manifest()
+        manifest["authorizations"]["auth-1"]["rights_record_sha256"] = sha(
+            self.record.read_bytes()
+        )
+        self.manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
+
+        code, lines = self.capture_status()
+
+        self.assertEqual(1, code)
+        self.assertEqual(
+            "stale site-source digest: rights record site-source section is not "
+            "in its generated digest form",
+            lines[0],
+        )
+
+        self.tool.refresh(self.tool.load_manifest())
+        self.record.write_text(
+            self.record.read_text().replace("authoritative inventory", "inventory")
+        )
+        with self.assertRaises(self.tool.BindingError):
+            self.tool.recorded_site_digest(self.record.read_text())
+
+    def test_approval_states_the_digest_it_verified(self):
+        self.tool.refresh(self.tool.load_manifest())
+        recorded = self.read_manifest()["authorizations"]["auth-1"]["site_sources"]
+
+        self.tool.approve(
+            self.tool.load_manifest(), "Approve the snapshot.", "America/Chicago"
+        )
+
+        supplement = self.record.read_text().split("## Exact approved snapshots")[0]
+        self.assertIn(f"`{inventory_digest(recorded)}`", supplement)
+        self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
+
+    def test_digest_row_stays_out_of_the_browser_product_identity(self):
+        """A refresh must not invalidate browser products, as the rows never did."""
+        sys.path.insert(0, str(REPO / "scripts"))
+        try:
+            import _browser_products as products
+        finally:
+            sys.path.remove(str(REPO / "scripts"))
+        self.tool.refresh(self.tool.load_manifest())
+        before = self.record.read_bytes()
+        self.readme.write_bytes(b"readme v2")
+        self.tool.refresh(self.tool.load_manifest())
+        after = self.record.read_bytes()
+
+        self.assertNotEqual(before, after)
+        self.assertEqual(products._rights(before), products._rights(after))
 
 
 if __name__ == "__main__":

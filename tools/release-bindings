@@ -141,6 +141,36 @@ PUBLIC_ALPHA = Path(__file__).with_name("public-alpha")
 
 SNAPSHOT_HEADER = "## Exact approved snapshots"
 SITE_HEADER = "## Exact approved reader-facing site sources"
+# The one row the site-source section keeps. Its shape, a backticked name and a
+# backticked SHA-256, is the generated-row shape `scripts/_browser_products.py`
+# omits from the rights record's cache identity, so a refresh that moves only
+# the digest leaves browser products current, exactly as the per-path rows did.
+SITE_DIGEST_NAME = "release/public-alpha.json:site_sources"
+SITE_DIGEST_ROW = re.compile(
+    r"^\| `" + re.escape(SITE_DIGEST_NAME) + r"` \| `([0-9a-f]{64})` \|$",
+    flags=re.MULTILINE,
+)
+# Fixed prose: only the digest in the row below it ever changes. Until
+# 2026-11-04 this section repeated every (path, SHA-256) pair of the manifest's
+# `site_sources`, some 24,000 rows rewritten on every refresh; the manifest is
+# now the only copy and the record binds it by `site_source_digest`.
+SITE_SECTION_PROSE = """\
+The exact approved reader-facing site sources are inventoried once, in the
+`site_sources` object of this authorization in `release/public-alpha.json`:
+every repository path with the SHA-256 of its exact approved bytes. That
+manifest object is the authoritative inventory, and this record does not repeat
+it. Supplements that describe these inputs as inventoried below refer to that
+inventory, which this section reproduced row for row until 4 November 2026 and
+binds by digest since.
+
+The digest below binds the exact approved set. It is the SHA-256 of the UTF-8
+text made of one line `<sha256>  <path>` (two spaces, newline-terminated: the
+`sha256sum` line format) for every `site_sources` entry, sorted by path in
+code-point order. `tools/release-bindings refresh` writes it from the manifest,
+and `tools/release-bindings status` fails while it differs from the manifest.
+To recompute it:
+`jq -r '.authorizations[].site_sources | to_entries | sort_by(.key)[] | "\\(.value)  \\(.key)"' release/public-alpha.json | sha256sum`.
+"""
 PUBLICATION_RECORD_ROOT = "release/publications"
 
 
@@ -487,18 +517,60 @@ def compute_site_hashes(
     return hashes
 
 
-def rewrite_table(text: str, header: str, label: str, rows: list[tuple[str, str]]) -> str:
-    pattern = re.compile(
-        rf"^{re.escape(header)}\s*$([\s\S]*?)(?=^## |\Z)", flags=re.MULTILINE
+def site_source_digest(site_sources: dict[str, str]) -> str:
+    """One SHA-256 over the sorted ``(path, sha256)`` pairs the manifest binds.
+
+    Each pair is the ``sha256sum`` line ``<sha256>  <path>\\n``; the lines are
+    sorted by path in code-point order and hashed as UTF-8. The rights record
+    states the same definition in prose so that it can be checked without this
+    tool.
+    """
+    lines = "".join(
+        f"{sha256}  {path}\n" for path, sha256 in sorted(site_sources.items())
     )
-    if not pattern.search(text):
-        raise BindingError(f"rights record lacks section: {header}")
-    body_lines = ["", f"| {label} | SHA-256 |", "| --- | --- |"]
-    for key, value in rows:
-        body_lines.append(f"| `{key}` | `{value}` |")
-    body_lines.append("")
-    replacement = header + "\n" + "\n".join(body_lines) + "\n"
-    return pattern.sub(lambda _: replacement, text, count=1)
+    return hashlib.sha256(lines.encode("utf-8")).hexdigest()
+
+
+def site_section(digest: str) -> str:
+    """The whole generated site-source section, header to trailing blank line."""
+    return (
+        f"{SITE_HEADER}\n\n{SITE_SECTION_PROSE}\n"
+        "| Inventory | SHA-256 |\n"
+        "| --- | --- |\n"
+        f"| `{SITE_DIGEST_NAME}` | `{digest}` |\n\n"
+    )
+
+
+SITE_SECTION_PATTERN = re.compile(
+    rf"^{re.escape(SITE_HEADER)}\s*$[\s\S]*?(?=^## |\Z)", flags=re.MULTILINE
+)
+
+
+def rewrite_site_section(text: str, digest: str) -> str:
+    matches = list(SITE_SECTION_PATTERN.finditer(text))
+    if len(matches) != 1:
+        raise BindingError(f"rights record must have exactly one section: {SITE_HEADER}")
+    replacement = site_section(digest)
+    return SITE_SECTION_PATTERN.sub(lambda _: replacement, text, count=1)
+
+
+def recorded_site_digest(text: str) -> str:
+    """The digest the rights record binds, refusing any other section shape.
+
+    The section must be byte-for-byte what `site_section` writes for its own
+    digest, so an edited sentence or a leftover per-path table is reported
+    rather than read past.
+    """
+    matches = list(SITE_SECTION_PATTERN.finditer(text))
+    if len(matches) != 1:
+        raise BindingError(f"rights record must have exactly one section: {SITE_HEADER}")
+    section = matches[0].group(0)
+    rows = SITE_DIGEST_ROW.findall(section)
+    if len(rows) != 1 or section != site_section(rows[0]):
+        raise BindingError(
+            "rights record site-source section is not in its generated digest form"
+        )
+    return rows[0]
 
 
 def refresh(manifest: dict, adopt: bool = False, only: list[str] | None = None) -> list[str]:
@@ -530,8 +602,7 @@ def refresh(manifest: dict, adopt: bool = False, only: list[str] | None = None) 
     authorization["site_sources"] = dict(sorted(site_hashes.items()))
 
     text = record_path.read_text(encoding="utf-8")
-    site_rows = sorted(site_hashes.items())
-    new_text = rewrite_table(text, SITE_HEADER, "Repository path", site_rows)
+    new_text = rewrite_site_section(text, site_source_digest(site_hashes))
     if new_text != text:
         record_path.write_text(new_text, encoding="utf-8")
         changes.append(f"rights tables {record_path.relative_to(ROOT)}")
@@ -583,7 +654,9 @@ def approve(manifest: dict, note: str, timezone_name: str) -> None:
         "`no-project-initiated-promotion`.\n\n"
         + publication_clearance_summary(publication_schema, counts)
         + f"all {len(site_sources)} exact recognized\n"
-        "artifact-affecting reader-site inputs inventoried below, which were\n"
+        "artifact-affecting reader-site inputs inventoried in\n"
+        "`release/public-alpha.json`, whose site-source digest is\n"
+        f"`{site_source_digest(site_sources)}`, which were\n"
         "compared against the renderer's recognized set and their current\n"
         "bytes before this approval was recorded. It is an\n"
         "exact-byte distribution clearance only: it does not represent\n"
@@ -688,6 +761,22 @@ def report_status(manifest: dict) -> int:
         print(f"{divergence.kind} site source {divergence.source}: {describe(divergence)}")
         stale += 1
     record_path = rights_record_path(authorization)
+    # The record binds the manifest's inventory by one digest instead of a copy
+    # of it, so this is the comparison that ties the two together: an inventory
+    # edited outside `refresh`, or a record edited by hand, diverges here.
+    manifest_digest = site_source_digest(recorded_site_sources(authorization))
+    try:
+        record_digest = recorded_site_digest(record_path.read_text(encoding="utf-8"))
+    except BindingError as exc:
+        print(f"stale site-source digest: {exc}")
+        stale += 1
+    else:
+        if record_digest != manifest_digest:
+            print(
+                f"stale site-source digest: recorded {record_digest}, "
+                f"manifest {manifest_digest}"
+            )
+            stale += 1
     if authorization.get("rights_record_sha256") != sha256_file(record_path):
         print("stale rights_record_sha256")
         stale += 1

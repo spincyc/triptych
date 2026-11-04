@@ -15,8 +15,12 @@ The standing authorization is recorded in `public-alpha.json` and
 `rights/public-alpha-2026-07-15.md`. Publication records reference that
 authorization without storing PDF hashes. Current PDF hashes, the aggregate
 publication inventory, and `SHA256SUMS` are generated during artifact
-construction. Historical snapshot and site-source hash tables in the rights
-record remain audit history; ordinary publication changes do not rewrite them.
+construction. The historical snapshot hash table in the rights record remains
+audit history; ordinary publication changes do not rewrite it. The exact
+approved site sources are inventoried only in the `site_sources` object of
+`public-alpha.json`; the rights record binds that inventory by one digest,
+defined in its site-source section, which `tools/release-bindings refresh`
+writes and `status` verifies.
 
 Each publication's own source and research records retain material source,
 rights, safety, edition, jurisdiction, currentness, and scope facts. Catalogs

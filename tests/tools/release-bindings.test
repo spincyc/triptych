@@ -203,7 +203,7 @@ esac
 # outside the authorization.  The recognized set can only come from the
 # renderer, so the oracle asks it for the set and then does its own arithmetic.
 expected="$(python3 - <<'PY'
-import hashlib, importlib.machinery, importlib.util, json, pathlib
+import hashlib, importlib.machinery, importlib.util, json, pathlib, re
 
 loader = importlib.machinery.SourceFileLoader("oracle_public_alpha", "tools/public-alpha")
 spec = importlib.util.spec_from_loader(loader.name, loader)
@@ -223,6 +223,17 @@ for authorization in manifest.get("authorizations", {}).values():
             count += 1
     count += len(recognized - set(site_sources))
     record = pathlib.Path(authorization["rights_record"])
+    # The record binds the inventory by the digest its own prose defines:
+    # sha256sum lines `<sha256>  <path>`, sorted by path, hashed as UTF-8.
+    lines = "".join(f"{site_sources[path]}  {path}\n" for path in sorted(site_sources))
+    digest = hashlib.sha256(lines.encode("utf-8")).hexdigest()
+    rows = re.findall(
+        r"^\| `release/public-alpha\.json:site_sources` \| `([0-9a-f]{64})` \|$",
+        record.read_text(encoding="utf-8"),
+        re.MULTILINE,
+    )
+    if rows != [digest]:
+        count += 1
     if hashlib.sha256(record.read_bytes()).hexdigest() != authorization["rights_record_sha256"]:
         count += 1
 print(count)
