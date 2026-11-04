@@ -165,15 +165,15 @@ EXAMPLES = {
         Example(
             "tools/document-library check",
             (
-                "154 works, 216 documents, 280 issues, page extents unmeasured.",
-                "  titles derived and checked against current source declarations: 280",
+                "155 works, 217 documents, 283 issues, page extents unmeasured.",
+                "  titles derived and checked against current source declarations: 283",
                 "  titles the sources do not state: 0",
-                "  documents with no current rendered page count: 216",
+                "  documents with no current rendered page count: 217",
                 "  the page's own derivation, replayed: src/web/browser/texts/catalogue-model.js",
                 "  editions whose production record makes no comparable claim: 188",
-                "  editions produced under a workflow version since superseded: 27 (advisory; nothing gates on it)",
+                "  editions produced under a workflow version since superseded: 28 (advisory; nothing gates on it)",
                 "  editions produced under a workflow version later than the one declared: 0",
-                "  editions whose workflow source has been revised since they were produced: 0",
+                "  editions whose workflow source has been revised since they were produced: 1",
                 "  workflows the comparison is measured against: 3",
             ),
         ),
@@ -188,7 +188,7 @@ EXAMPLES = {
                 "  editions whose production record makes no comparable claim: 50",
                 "  editions produced under a workflow version since superseded: 13 (advisory; nothing gates on it)",
                 "  editions produced under a workflow version later than the one declared: 0",
-                "  editions whose workflow source has been revised since they were produced: 0",
+                "  editions whose workflow source has been revised since they were produced: 1",
                 "  workflows the comparison is measured against: 3",
             ),
             "one edition's leaves only",
@@ -253,7 +253,7 @@ EXAMPLES = {
         Example(
             "tools/document-library structure --out .scratch/document-catalog/example-catalogue",
             (
-                "154 works, 216 documents, 280 issues, page extents unmeasured.",
+                "155 works, 217 documents, 283 issues, page extents unmeasured.",
                 "  -> <repo>/.scratch/document-catalog/example-catalogue/structure/documents/corpus.json",
             ),
             "WRITES. --out here is untracked; the default writes the mutable browser-data working tree",
@@ -261,7 +261,7 @@ EXAMPLES = {
         Example(
             "tools/document-library structure --check --out .scratch/document-catalog/example-catalogue",
             (
-                "154 works, 216 documents, 280 issues, page extents unmeasured.",
+                "155 works, 217 documents, 283 issues, page extents unmeasured.",
                 "  .scratch/document-catalog/example-catalogue/structure/documents/corpus.json is current",
             ),
             "writes nothing; refuses when the tracked catalogue has drifted from the sources",

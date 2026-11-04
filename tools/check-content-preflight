@@ -37,10 +37,10 @@ EXAMPLES = {
             "53-thirteenth-after-pentecost",
             (
                 "bindings-valid: 98 bindings, every id registered and every reviewed state fingerprinted as the library computes it",
-                "chronology-annotations-current: not in scope: the leaf states no recognized provenance record and carries no research/chronology-annotations.tex, so it predates the generated annotation contract, which binds from proper v24 or proper-finish v2",
-                "chronology-claims-supported: no chronology claim printed (the leaf states no recognized provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17 or proper-finish v1)",
-                "chronology-record-current: not in scope: the leaf states no recognized provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17 or proper-finish v1",
-                "house-voice: 13 reader-facing files, no sentence taking the guide, its apparatus or the repository as its subject; not screened: sections/50-interpretive.tex:2 marks no \\pfield in 'The Propers: Interpretive Possibilities', so the protected exploratory notice cannot be told from the proposals and no rule ran over that section",
+                "chronology-annotations-current: research/chronology-annotations.tex carries the complete live projection for 7 scriptural elements and 15 projected candidates",
+                "chronology-claims-supported: 13 generated orientation rows with exact passage reach and complete candidates",
+                "chronology-record-current: 7 scriptural elements, 15 corpus assertions carried, current with the corpus",
+                "house-voice: 17 reader-facing files, no sentence taking the guide, its apparatus or the repository as its subject; not screened: sections/50-interpretive.tex:2 marks no \\pfield in 'The Propers: Interpretive Possibilities', so the protected exploratory notice cannot be told from the proposals and no rule ran over that section",
                 "identifiers-resolve: the leaf prints no source identifier",
                 "proposal-fields: not in scope: sections/50-interpretive.tex marks no proposal with \\begin{proposal}, so no proposal's fields can be read from the source",
                 "references-used: 29 entries, every one used in the body",
@@ -116,19 +116,18 @@ EXAMPLES = {
             "liturgy/roman-rite/1962/propers/temporal/"
             "50-tenth-after-pentecost --check chronology-claims-supported",
             (
-                "chronology-claims-supported: no chronology claim printed (the leaf states no recognized provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17 or proper-finish v1)",
+                "chronology-claims-supported: 13 generated orientation rows with exact passage reach and complete candidates",
             ),
-            "the chronology contract binds from `proper` v17 and the leaf "
-            "says which version produced it, so a leaf published before the "
-            "wiring existed is reported out of scope rather than passed in "
-            "silence",
+            "a leaf on a document type carries the chronology record its "
+            "generated date page is built from, so the check holds every "
+            "generated row to the corpus whatever version the leaf states",
         ),
         Example(
             "tools/check-content-preflight --provider gpt --document "
             "liturgy/roman-rite/1962/propers/temporal/"
             "54-fourteenth-after-pentecost --check house-voice",
             (
-                "house-voice: 13 reader-facing files, no sentence taking the guide, its apparatus or the repository as its subject",
+                "house-voice: 16 reader-facing files, no sentence taking the guide, its apparatus or the repository as its subject",
             ),
             "exits 0; the revised Fourteenth Sunday source passes the "
             "reader-facing voice check, including its marked exploratory proposals",

@@ -105,11 +105,11 @@ EXAMPLES = {
             "liturgy/roman-rite/1962/propers/temporal/"
             "49-ninth-after-pentecost --provider claude --check",
             (
-                "proper-chronology error: src/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/research/chronology.toml does not exist; write it with `tools/tpt proper-chronology record --document liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost --provider claude --write`",
+                "src/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/research/chronology.toml: current with the chronology corpus",
             ),
-            "exits 1; this leaf was authored before the wiring existed and "
-            "carries no record, which is the refusal the content-preflight "
-            "gate is built on",
+            "a leaf's record is generated with its Scriptural Date and "
+            "Location page; a missing or drifted record exits 1, which is the "
+            "refusal the content-preflight gate is built on",
         ),
     ),
     "annotations": (
@@ -118,33 +118,19 @@ EXAMPLES = {
             "liturgy/roman-rite/1962/propers/temporal/"
             "55-fifteenth-after-pentecost --format text",
             (
-                "introit",
-                "  Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055–1015.",
-                "  Historical setting -- Occasion date unresolved.",
-                "  Composition: Before c. 165 B.C.",
-                "epistle",
-                "  Composition: Preferred: A.D. 58; alternatives: A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58.",
-                "gradual",
-                "  Historical setting -- Occasion date unresolved.",
-                "  Composition: Before c. 165 B.C.",
-                "alleluia",
-                "  Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055–1015.",
-                "  Historical setting -- Occasion date unresolved.",
-                "  Composition: Before c. 165 B.C.",
-                "gospel",
-                "  Event: The raising of the widow's son at Naim, A.D. 27 (derived).",
-                "  Composition -- disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished.",
-                "offertory",
-                "  Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055–1015.",
-                "  Historical setting -- Occasion date unresolved.",
-                "  Composition: Before c. 165 B.C.",
-                "communion",
-                "  Event: The Bread of Life discourse at Capharnaum, A.D. 28 (derived).",
-                "  Composition -- disputed: c. A.D. 90–100; A.D. 96–100.",
+                "row-e9287546777c878f",
+                "  Offertory: Ps. 39:2–4 (Vg.; Heb. 40)",
+                "  Traditional attribution: David's reign; Hebron, then Jerusalem",
+                "  Disputed: B.C. 1055–1015",
+                "row-aeae1f955d1cb22b",
+                "  Offertory: Ps. 39:2–4 (Vg.; Heb. 40)",
+                "  Historical setting",
+                "  Occasion date unresolved",
+                "... 56 more lines",
             ),
-            "the compact display preserves every dated alternative, labels "
-            "relation and uncertainty, and keeps Gospel composition separate "
-            "from the narrated event",
+            "the leaf's orientation rows: each passage once, with every dated "
+            "alternative, its relation and uncertainty, and the Gospel's "
+            "composition kept apart from the narrated event",
         ),
         Example(
             "tools/proper-chronology annotations --document "
@@ -153,14 +139,14 @@ EXAMPLES = {
             (
                 "% Generated. Do not edit.",
                 "% Deterministic projection of research/chronology.toml.",
-                "% schema: 2",
+                "% schema: 5",
                 "% document: liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost",
                 "% generated-by: tools/tpt proper-chronology annotations",
                 "\\newcommand{\\chronologyannotationclaim}[6]{#6}",
                 "\\newcommand{\\chronologyannotationreach}[3]{}",
                 "\\newcommand{\\chronologyannotationgroup}[3]{#3}",
                 "\\newcommand{\\chronologyannotation}[1]{%",
-                "... 42 more lines",
+                "... 97 more lines",
             ),
             "the generated definitions retain each raw source label in a "
             "non-displaying macro argument, carry its evidence profile, and "
