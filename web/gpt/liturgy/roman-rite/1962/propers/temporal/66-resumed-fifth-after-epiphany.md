@@ -553,7 +553,7 @@ The inherited Latin and historical English retain their recorded United States p
 
 - *Missale Romanum*, Pustet, Ratisbon (1862), pp. 42–44, 357–358, Latin antecedents; Trinity opening and clause, pp. 239–240. Eugene Cummiskey, *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia, 1861), own Fifth-Sunday prayers, pp. 101–102; Preface dialogue, opening, Trinity clause and Sanctus, pp. xxvii–xxix. Historical wording retains its independent public-domain status.
 
-- *Douay–Rheims Bible*, Challoner revision, composite electronic witness [Gutenberg 1581](https://www.gutenberg.org/ebooks/1581): Jer 29, 36; Ps 43, 84, 129 (Vulgate numbering); Col 1:2; 3:1–17; 4:7–18; Matt 13; Mark 11. The appointed selections and complete literary context are distinguished in the commentary.
+- *Douay–Rheims Bible*, Challoner revision, composite electronic witness [Gutenberg 1581](https://www.gutenberg.org/ebooks/1581): Jer 29, 36; Ps 43, 84, 129 (Vulgate numbering); Col 1:2; 3:1–17; Matt 13; Mark 11. The appointed selections and complete literary context are distinguished in the commentary.
 
 ### Exegesis and theology
 

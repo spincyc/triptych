@@ -486,7 +486,7 @@ The source research received an independent workflow review before authoring. Th
 
 2.  *The Roman Missal Translated into the English Language for the Use of the Laity* (Philadelphia: Eugene Cummiskey, 1861), pp. 431–433, three orations for the Seventeenth Sunday after Pentecost; [facsimile](https://archive.org/details/romanmissaltran00churgoog), PDF pp. 440–442. Anonymous human translation; underlying historical text public domain.
 
-3.  *Douay–Rheims Bible*, American 1899 edition, registered eBible transcription: Matt. 21:23; 22; 26:1–2; Eph. 1:1; 2:11–18; 4; Dan. 9; Pss. 32,75,101,118. Exact appointed verses and canonical/liturgical distinctions accompany the texts above. Public-domain study English.
+3.  *Douay–Rheims Bible*, American 1899 edition, registered eBible transcription: Matt. 21:23; 22; 26:1–2; Eph. 1:1; 4; Dan. 9; Pss. 32,75,101,118. Exact appointed verses and canonical/liturgical distinctions accompany the texts above. Public-domain study English.
 
 4.  John Chrysostom, *Homilies on Matthew*, hom. 71, opening exposition of Matt. 22:34–46, trans. George Prevost, revised M. B. Riddle, NPNF1, vol. 10 (1888), retained CCEL text. [Comparison reading locator](https://www.newadvent.org/fathers/200171.htm). The later moral continuation is not independently used here.
 
