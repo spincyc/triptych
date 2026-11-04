@@ -18,7 +18,7 @@ kinds = ["proper-1962", "proper-postconciliar"]
 # lines beneath, in that order. Either small line may be empty.
 [editions.main]
 role = "canonical"
-template = "main.tex"
+template = "main.template.tex"
 entrypoint = "main.tex"
 fields = ["pdftitle", "pdfsubject", "title"]
 optional_fields = { subtitle = "", source-line = "", occasion-line = "", running-head = "" }
@@ -28,7 +28,7 @@ options = { front = "toc", closing = "colophon" }
 
 [editions.synthesis]
 role = "synthesis"
-template = "synthesis.tex"
+template = "synthesis.template.tex"
 entrypoint = "synthesis.tex"
 fields = ["pdftitle", "pdfsubject", "title"]
 optional_fields = { subtitle = "", source-line = "", occasion-line = "", running-head = "" }
@@ -38,7 +38,7 @@ options = { closing = "colophon" }
 
 [editions.homily]
 role = "homily"
-template = "homily.tex"
+template = "homily.template.tex"
 entrypoint = "homily.tex"
 fields = ["pdftitle", "pdfsubject"]
 optional_fields = { title = "", subtitle = "", source-line = "", occasion-line = "", running-head = "" }

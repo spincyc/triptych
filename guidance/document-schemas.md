@@ -86,7 +86,8 @@ deterministic pages placed between them, and the closing provenance block --
 so that no leaf hand-codes it and a change to it reaches every leaf of the
 type. A type is a directory `src/common/document-types/<type>/`, its name
 carrying its version (`proper-study-v1`), holding a `type.toml` and one TeX
-template per edition. Types are found by directory: adding one edits no list.
+template per edition, named `<edition>.template.tex` (a template named
+`main.tex` would itself be discovered as a publication). Types are found by directory: adding one edits no list.
 `tools/tpt document-types types` lists them with each edition's fields,
 regions, options and slots.
 

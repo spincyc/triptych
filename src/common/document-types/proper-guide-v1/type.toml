@@ -19,7 +19,7 @@ kinds = ["proper-1962", "proper-postconciliar"]
 
 [editions.main]
 role = "canonical"
-template = "main.tex"
+template = "main.template.tex"
 entrypoint = "main.tex"
 fields = ["pdftitle", "pdfsubject"]
 optional_fields = { synthesis-pdftitle = "", synthesis-pdfsubject = "" }
@@ -29,7 +29,7 @@ options = { metadata = "single" }
 
 [editions.synthesis]
 role = "synthesis"
-template = "synthesis.tex"
+template = "synthesis.template.tex"
 entrypoint = "synthesis.tex"
 optional_fields = { pdftitle = "", pdfsubject = "" }
 optional_regions = ["preamble", "opening", "lead-in", "body", "apparatus"]

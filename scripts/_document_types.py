@@ -80,6 +80,7 @@ PATH_ENTRY = re.compile(r"[A-Za-z0-9_][A-Za-z0-9_./-]*\Z")
 OUTPUT_ROLES = ("canonical", "synthesis", "homily")
 # A reference every template may make without declaring it.
 BUILTIN_FIELDS = ("document",)
+RESERVED_TEMPLATE_NAMES = frozenset({"main.tex", "synthesis.tex", "homily.tex"})
 
 
 class DocumentTypeError(ValueError):
@@ -175,6 +176,10 @@ def load_type(path: Path) -> DocumentType:
         template = path / str(raw.get("template", ""))
         if not raw.get("template") or not template.is_file() or template.parent != path:
             raise DocumentTypeError(f"{at}: template must name a file in the type directory")
+        # A template named like an entrypoint would be discovered as a
+        # publication (Make finds every main.tex under src/).
+        if template.name in RESERVED_TEMPLATE_NAMES:
+            raise DocumentTypeError(f"{at}: name the template <edition>.template.tex, not {template.name}")
         entrypoint = raw.get("entrypoint")
         if not isinstance(entrypoint, str) or "/" in entrypoint or not entrypoint.endswith(".tex"):
             raise DocumentTypeError(f"{at}: entrypoint must be a leaf-level .tex file name")
