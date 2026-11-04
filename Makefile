@@ -27,7 +27,8 @@ INSTALL ?= install
 #     and Atkinson Hyperlegible (atkinson.sty)
 #   PDF metadata/text/raster and bounded PNG/contact-sheet processing:
 #     poppler (pdfinfo, pdftotext, pdftoppm) and imagemagick (magick 7)
-#   LaTeX-to-Markdown conversion for the tracked web editions:
+#   LaTeX-to-Markdown conversion for the web editions built with the site
+#   (the products refuse any version but src/common/web-edition-toolchain.toml's):
 #     pandoc
 #   repository/review/isolated-agent workflow:
 #     git github-cli openai-codex ripgrep

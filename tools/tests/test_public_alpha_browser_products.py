@@ -43,6 +43,9 @@ class PublicAlphaBrowserProductsTest(unittest.TestCase):
             "rights": "public-domain",
         }]})
         self.write_product("structure/sources/index.json", {"works": []})
+        # Web readers are a site-build product; this fixture publishes none.
+        self.write_product("web-editions/index.json", {
+            "schema": "triptych-web-editions/v1", "toolchain": {"pandoc": "3.11"}, "editions": []})
         self.fixture.write("src/sources/bibles/offered/chapters/Ps/1.json", b"{}\n")
         self.fixture.write("src/web/browser/shared/browser-core.js", b"// shared fixture\n")
         self.fixture.write("src/web/browser/shared/fixture.css", b"body {}\n")
@@ -63,7 +66,7 @@ class PublicAlphaBrowserProductsTest(unittest.TestCase):
         self.failure = None
         self.snapshots = []
         self.prepared = []
-        self.delivery = {}
+        self.delivery = {"web-editions/index.json": "site-build"}
 
         @contextmanager
         def verified_products(root, cache_root=None):

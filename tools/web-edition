@@ -9,11 +9,16 @@ in requirements-public-alpha.txt.
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 from contextlib import ExitStack
 from collections import Counter
+import hashlib
 import html
 from html.parser import HTMLParser
+import json
+import os
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -53,6 +58,9 @@ ROOT = Path(__file__).resolve().parents[1]
 SHIM = Path(__file__).resolve().parents[1] / "scripts" / "web-shim.tex"
 SRC = ROOT / "src"
 OUT = ROOT / "build" / "web"
+# The converter is pinned: `products` refuses any Pandoc but this version, and
+# CI installs its exact official binary. TRIPTYCH_PANDOC names another binary.
+TOOLCHAIN_LOCK = "src/common/web-edition-toolchain.toml"
 # The legacy dialect disables constructs established conversions did not ask
 # the site to interpret: space-aligned tables, `:   ` definitions,
 # trailing-backslash breaks, `$...$` math, and caret-delimited superscripts.
@@ -367,6 +375,7 @@ KNOWN_COMMANDS = set(
     centering RaggedRight Centering sloppy vspace hspace hfill vfill smallskip medskip bigskip
     quad qquad enspace thinspace negthinspace baselineskip linewidth textwidth textheight
     columnwidth parskip parindent arraystretch tabcolsep emergencystretch arraybackslash
+    itemsep topsep parsep partopsep columnsep columnseprule
     arrayrulewidth extrarowheight LTpre LTpost linespread clearpage newpage pagebreak
     thispagestyle pagestyle enlargethispage pagenumbering appendix tableofcontents addcontentsline
     phantomsection setcounter addtocounter refstepcounter value the thesection thesubsection
@@ -758,6 +767,41 @@ RAW_CHRONOLOGY_TOKEN_RE = re.compile(
 
 class ConversionError(RuntimeError):
     """A conversion that would lose content, reported instead of written."""
+
+
+def pandoc_binary() -> str:
+    """The converter binary: `TRIPTYCH_PANDOC` when set, else `pandoc` on PATH."""
+    return os.environ.get("TRIPTYCH_PANDOC") or "pandoc"
+
+
+def pinned_pandoc() -> dict:
+    """Refuse any converter but the version the toolchain lock pins.
+
+    Ordinary conversions accept the installed Pandoc. The browser product is a
+    committed, reproduced output, so it is built only with the pinned version;
+    a host whose build of that version differed would still be caught by the
+    descriptor's two-build proof and by CI's offline reproduction.
+    """
+    from _install_web_edition_pandoc import InstallError, load_lock
+    try:
+        pin = load_lock(ROOT)
+    except InstallError as exc:
+        raise ConversionError(str(exc)) from exc
+    binary = shutil.which(pandoc_binary())
+    if binary is None:
+        raise ConversionError(
+            "pandoc is not installed; install the pinned converter with "
+            "scripts/_install_web_edition_pandoc.py --fetch --bin-dir <dir>"
+        )
+    first = subprocess.run(
+        [binary, "--version"], capture_output=True, text=True, check=False
+    ).stdout.splitlines()[:1]
+    if first != ["pandoc " + pin["version"]]:
+        raise ConversionError(
+            f"web editions require pandoc {pin['version']} ({TOOLCHAIN_LOCK}); "
+            f"found {first[0] if first else 'no version'} at {binary}"
+        )
+    return {"pandoc": pin["version"]}
 
 
 def brace_group(text: str, start: int) -> tuple[str, int]:
@@ -3134,8 +3178,8 @@ def declared_contents(leaf: Path) -> bool:
     return contents
 
 
-def convert(provider: str, leaf: str, out: Path = OUT, *, selected: dict | None = None) -> Path:
-    """Convert the canonical reader, or an explicitly selected print source.
+def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None) -> str:
+    """Convert the canonical reader, or an explicitly selected edition source.
 
     ``selected`` is an owning-adapter contract, never a release decision. It
     supplies exact entrypoint/edition/source/input graph, optional canonical
@@ -3296,7 +3340,7 @@ def convert(provider: str, leaf: str, out: Path = OUT, *, selected: dict | None 
             if required_anchors is not None or selected is not None
             else MARKDOWN_DIALECT
         )
-        command = ["pandoc", "-f", "latex", "-t", dialect, "--wrap=none",
+        command = [pandoc_binary(), "-f", "latex", "-t", dialect, "--wrap=none",
                    "--shift-heading-level-by=1", f"--lua-filter={table_filter.name}",
                    f"--lua-filter={quotation_filter.name}",
                    f"--lua-filter={list_filter.name}", handle.name]
@@ -3394,13 +3438,295 @@ def convert(provider: str, leaf: str, out: Path = OUT, *, selected: dict | None 
         failures.append("source multicolumn spans changed in site-rendered tables")
     if failures:
         raise ConversionError("\n".join(failures))
+    return clean_markdown_line_endings(f"{heading}\n{markdown}")
+
+
+def convert(provider: str, leaf: str, out: Path = OUT, *, selected: dict | None = None) -> Path:
+    """Write one edition's Markdown below ``out``; see `convert_markdown`."""
+    text = convert_markdown(provider, leaf, selected=selected)
     destination = out / provider / f"{leaf}.md"
     destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(clean_markdown_line_endings(f"{heading}\n{markdown}"), encoding="utf-8")
+    destination.write_text(text, encoding="utf-8")
     return destination
 
 
+# --- Editions selected by their own entrypoints -----------------------------
+
+EDITIONS = ("main", "synthesis", "homily")
+EDITION_SWITCH_RE = re.compile(
+    r"\\ifdefined\s*\\(Triptych(?:Print|Synthesis|Homily)Edition)(?![A-Za-z@])"
+)
+CONDITIONAL_TOKEN_RE = re.compile(r"\\(?:if[A-Za-z@]*|else|fi)(?![A-Za-z@])")
+
+
+def select_edition_branches(text: str, edition: str) -> str:
+    r"""Resolve every edition switch for one edition, nested ones included.
+
+    The web is never the print edition. A companion is the edition its
+    entrypoint selects, so its synthesis or homily branch is the one kept.
+    Other conditionals are left to the converter. Seams follow
+    `select_branch`: an inline branch (`\fi{}`) is spliced flush and a block
+    branch contributes no newline of its own.
+    """
+    if edition not in EDITIONS:
+        raise ConversionError(f"unknown edition: {edition!r}")
+    flags = {"TriptychPrintEdition": False,
+             "TriptychSynthesisEdition": edition == "synthesis",
+             "TriptychHomilyEdition": edition == "homily"}
+    text = LEAD_COMMENT_RE.sub("", text)
+    masked = mask_tex_comments(text)
+    pieces, cursor = [], 0
+    while (match := EDITION_SWITCH_RE.search(masked, cursor)) is not None:
+        depth, middle, end = 1, None, None
+        for token in CONDITIONAL_TOKEN_RE.finditer(masked, match.end()):
+            word = token.group()
+            if word.startswith("\\if"):
+                if masked[max(0, token.start() - 6):token.start()] != "\\newif":
+                    depth += 1
+            elif word == "\\fi":
+                depth -= 1
+                if depth == 0:
+                    end = token
+                    break
+            elif depth == 1 and middle is None:
+                middle = token
+        if end is None:
+            raise ConversionError(f"unclosed \\ifdefined\\{match.group(1)}")
+        chosen = (text[match.end():middle.start() if middle else end.start()]
+                  if flags[match.group(1)]
+                  else (text[middle.end():end.start()] if middle else ""))
+        branch = select_edition_branches(chosen, edition)
+        if text[end.end():end.end() + len(INLINE_BRANCH_MARKER)] == INLINE_BRANCH_MARKER:
+            branch = BRANCH_TAIL_RE.sub("", branch.lstrip())
+        else:
+            if text[match.start() - 1:match.start()] == "\n" and branch.startswith("\n"):
+                branch = branch[1:]
+            if text[end.end():end.end() + 1] == "\n" and branch.endswith("\n"):
+                branch = branch[:-1]
+        pieces.extend((text[cursor:match.start()], branch))
+        cursor = end.end()
+    pieces.append(text[cursor:])
+    return "".join(pieces)
+
+
+def edition_selection(provider: str, entrypoint: Path, edition: str) -> dict:
+    """The `selected` contract for one companion's own entrypoint.
+
+    Every literal input is inlined with this edition's branches; the shared
+    preamble stays an input because the shim replaces it. The paragraph audits
+    judge against the raw files the edition reads, as for a canonical reader.
+    """
+    entry = entrypoint.resolve()
+    if not entry.is_relative_to((SRC / provider).resolve()):
+        raise ConversionError("edition entrypoint escapes its provider")
+    walked: dict[Path, str] = {}
+    raw: dict[Path, str] = {}
+
+    def walk(path: Path, stack: frozenset) -> str:
+        if path in stack:
+            raise ConversionError(f"input cycle at {path}")
+        text = path.read_text(encoding="utf-8")
+        selected_text = select_edition_branches(text, edition)
+        raw[path], walked[path] = text, selected_text
+        out, index = [], 0
+        for match in INPUT_RE.finditer(mask_tex_comments(selected_text)):
+            name = match.group(1).strip()
+            out.append(selected_text[index:match.start()])
+            index = match.end()
+            if name.endswith("common/preamble"):
+                out.append(match.group(0))
+                continue
+            target = resolve_input(name, provider)
+            if target is None:
+                raise ConversionError(f"cannot resolve \\input{{{name}}}")
+            out.append(walk(target.resolve(), stack | {path}))
+        out.append(selected_text[index:])
+        return "".join(out)
+
+    source = walk(entry, frozenset())
+    _, body = split_document(source)
+    return {
+        "edition": edition,
+        "entrypoint": str(entry),
+        "source": source,
+        "sources": walked,
+        "body": body,
+        "audit_body": body,
+        "canonical_body": "\n\n".join(raw[path] for path in sorted(raw)),
+    }
+
+
+def publication_outputs() -> list[dict]:
+    """Every declared publication output with its leaf's web declaration."""
+    from _print_document import recipes
+    rows = []
+    for recipe in recipes(ROOT, family="publication"):
+        leaf = SRC / recipe["provider"] / recipe["canonical"]
+        declaration = tomllib.loads((leaf / "web-edition.toml").read_text(encoding="utf-8"))
+        release_path = ROOT / "release/publications" / recipe["provider"] / f"{recipe['document']}.json"
+        release = json.loads(release_path.read_text(encoding="utf-8")) if release_path.is_file() else {}
+        manifest = tomllib.loads((leaf / "publication.toml").read_text(encoding="utf-8"))
+        rows.append({**recipe, "declaration": declaration, "release_status": release.get("status"),
+                     "kind": manifest.get("kind", "")})
+    return rows
+
+
+def reader_outputs() -> list[dict]:
+    """The outputs that have a web reader: every admitted output of a leaf
+    whose declaration is eligible, companions included.
+
+    Admission follows the native print universe: a withdrawn leaf or a held
+    output has no reader. An ineligible leaf keeps only its print page.
+    """
+    rows = []
+    for row in publication_outputs():
+        declaration = row["declaration"]
+        if (declaration.get("eligibility") != "eligible"
+                or declaration.get("withdrawn") or row["release_status"] == "hold"):
+            continue
+        if row["release_status"] != "alpha":
+            raise ConversionError(f"{row['id']}: publication has no alpha or hold disposition")
+        rows.append(row)
+    rows.sort(key=lambda row: row["id"])
+    return rows
+
+
+def convert_output(row: dict) -> str:
+    """Convert one reader output from its own canonical entrypoint."""
+    provider, edition = row["provider"], row["edition"]
+    entrypoint = ROOT / row["entrypoint"]
+    if edition == "main":
+        if entrypoint.resolve() != (SRC / provider / row["canonical"] / "main.tex").resolve():
+            raise ConversionError(f"{row['id']}: canonical entrypoint is not main.tex")
+        return convert_markdown(provider, row["canonical"])
+    return convert_markdown(provider, row["document"],
+                            selected=edition_selection(provider, entrypoint, edition))
+
+
+PRODUCT_PREFIX = "web-editions"
+PRODUCT_SCHEMA = "triptych-web-edition/v1"
+INDEX_SCHEMA = "triptych-web-editions/v1"
+
+
+def product_record(row: dict) -> dict:
+    declaration = row["declaration"]
+    markdown = convert_output(row)
+    return {
+        "schema": PRODUCT_SCHEMA,
+        "id": row["provider"] + "/" + row["document"],
+        "provider": row["provider"],
+        "output": row["document"],
+        "canonical": row["canonical"],
+        "edition": row["edition"],
+        "entrypoint": row["entrypoint"],
+        "eligibility": declaration["eligibility"],
+        "blocking_constructs": list(declaration.get("blocking_constructs", [])),
+        "markdown": markdown,
+        "markdown_sha256": hashlib.sha256(markdown.encode("utf-8")).hexdigest(),
+        "figures": [],
+    }
+
+
+def canonical_json(value) -> bytes:
+    return (json.dumps(value, ensure_ascii=False, sort_keys=True, indent=1,
+                       allow_nan=False) + "\n").encode("utf-8")
+
+
+def convert_rows(rows: list[dict], *, jobs: int | None = None) -> list[dict]:
+    """Convert each output in its own interpreter, in parallel, in row order.
+
+    One leaf's macro state can never reach another's. Any failure fails the
+    whole set, with every failing output named.
+    """
+    def one(row):
+        finished = subprocess.run(
+            [sys.executable, "-B", str(Path(__file__).resolve()), "--product-json",
+             row["provider"] + "/" + row["document"]],
+            capture_output=True, text=True, cwd=ROOT, check=False)
+        if finished.returncode:
+            return row, None, finished.stderr.strip()
+        return row, json.loads(finished.stdout), ""
+
+    failures, records = [], []
+    with ThreadPoolExecutor(max_workers=jobs or os.cpu_count() or 1) as pool:
+        for row, record, error in pool.map(one, rows):
+            if record is None:
+                failures.append(f"{row['provider']}/{row['document']}: {error}")
+            else:
+                records.append(record)
+    if failures:
+        raise ConversionError(f"{len(failures)} web edition(s) failed:\n" + "\n".join(failures))
+    return records
+
+
+def build_products(out: Path, *, jobs: int | None = None) -> dict:
+    """Write every reader output as one JSON product below ``out``.
+
+    Each output converts in its own interpreter, so one leaf's macro state can
+    never reach another's, and outputs are collected in identity order. The
+    run fails if any output fails; nothing partial is left to adopt.
+    """
+    toolchain = pinned_pandoc()
+    rows = reader_outputs()
+    if not rows:
+        raise ConversionError("no web reader outputs are declared")
+    destination = out / PRODUCT_PREFIX
+    if destination.exists():
+        raise ConversionError(f"product destination already exists: {destination}")
+    records = convert_rows(rows, jobs=jobs)
+    index = []
+    for record in records:
+        relative = f"{PRODUCT_PREFIX}/{record['provider']}/{record['output']}.json"
+        path = out / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(canonical_json(record))
+        index.append({key: record[key] for key in (
+            "id", "provider", "output", "canonical", "edition", "eligibility",
+            "blocking_constructs", "markdown_sha256")}
+            | {"path": relative, "figures": [figure["id"] for figure in record["figures"]]})
+    (destination / "index.json").write_bytes(canonical_json(
+        {"schema": INDEX_SCHEMA, "toolchain": toolchain, "editions": index}))
+    return {"editions": len(index)}
+
+
+def product_json(identity: str) -> int:
+    provider, _, output = identity.partition("/")
+    rows = [row for row in reader_outputs()
+            if row["provider"] == provider and row["document"] == output]
+    if len(rows) != 1:
+        print(f"web-edition: no reader output {identity}", file=sys.stderr)
+        return 1
+    try:
+        record = product_record(rows[0])
+    except ConversionError as error:
+        print(str(error), file=sys.stderr)
+        return 1
+    sys.stdout.write(json.dumps(record, ensure_ascii=False, sort_keys=True))
+    return 0
+
+
+def products_main(argv: list[str]) -> int:
+    parser = argparse.ArgumentParser(
+        prog="web-edition products",
+        description="Build every web reader output as a browser product.")
+    parser.add_argument("--out", type=Path, required=True,
+                        help="empty unsealed destination; writes web-editions/ below it")
+    parser.add_argument("--jobs", type=int, default=None)
+    arguments = parser.parse_args(argv)
+    try:
+        summary = build_products(arguments.out.resolve(), jobs=arguments.jobs)
+    except ConversionError as error:
+        print(f"web-edition products: {error}", file=sys.stderr)
+        return 1
+    print(json.dumps(summary, sort_keys=True))
+    return 0
+
+
 def main() -> int:
+    if sys.argv[1:2] == ["products"]:
+        return products_main(sys.argv[2:])
+    if sys.argv[1:2] == ["--product-json"] and len(sys.argv) == 3:
+        return product_json(sys.argv[2])
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--provider", required=True)
     parser.add_argument("documents", nargs="*")

@@ -73,6 +73,10 @@ RECIPES = (
     _recipe("rubrics", "structure/rubrics", ["tools/calendar-rubrics", "structure", "--root", "{root}/src/sources/calendars"], _CALENDAR, delivery="browser-data"),
     _recipe("sources", "structure/sources", ["tools/source-reader", "structure", "--strict"], _BROAD,
             _LATIN_AUTHORITIES, delivery="browser-data"),
+    # Every web reader's Markdown, converted at build time from canonical TeX
+    # (guidance/web-editions.md). Consumed by the site build, never published as
+    # browser data; the pinned Pandoc lock lives under src/common.
+    _recipe("web-editions", "web-editions", ["tools/web-edition", "products"], ["src"], delivery="site-build"),
 )
 
 

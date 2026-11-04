@@ -10,6 +10,7 @@ from collections import Counter
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
@@ -88,6 +89,7 @@ def cache_directory(root):
                     "DEPLOYMENT_TEST_PRODUCT_IDENTITY": PRODUCT_IDENTITY,
                     "GITHUB_OUTPUT": str(self.root / "workflow-output"),
                     "GITHUB_PATH": str(self.root / "workflow-path"),
+                    "RUNNER_TEMP": str(self.root / "runner-temp"),
                     "DEPLOYMENT_TEST_RIGHTS": json.dumps(sorted(RIGHTS_TESTS))}
         for name in ("MAKEFLAGS", "MFLAGS", "MAKELEVEL", "MAKEOVERRIDES"):
             self.env.pop(name, None)
@@ -120,6 +122,8 @@ elif args == ["scripts/_browser_cache_bootstrap.py", "--fetch"]:
     pass  # Optional untrusted candidates; the product build authenticates them.
 elif args == ["scripts/_native_tex_assets.py", "hydrate", "--fetch"]:
     pass  # Verify browser compiler inputs; no compiler executes in deployment.
+elif args[:3] == ["scripts/_install_web_edition_pandoc.py", "--fetch", "--bin-dir"] and len(args) == 4:
+    pass  # The pinned web-edition converter, for a cold web-editions family.
 elif tuple(args) in allowed:
     if tuple(args) in generated and not ready.is_file():
         raise SystemExit("generated consumer ran before browser product preparation")
@@ -169,6 +173,8 @@ else:
         return yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8"))
 
     def run_pages_commands(self, *, env=None, cache_hit=False):
+        # The workflow-level declarations every step sees, such as TEXLIVE_IMAGE.
+        env = {**(env or self.env), **{name: str(value) for name, value in self.pages()["env"].items()}}
         descriptor = self.root / "release/browser-products.json"
         if not descriptor.exists():
             self.write("release/browser-products.json", json.dumps({"products": [
@@ -370,8 +376,11 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
                          "triptych-native-tex-v1-${{ hashFiles('src/common/native-tex-runtime.json') }}")
         commands = "\n".join(step.get("run", "") for step in steps)
         self.assertNotRegex(commands, r"(?i)\b(?:texlive|pdflatex|xelatex|lualatex|pdfinfo|poppler|docker|apt-get|pacman)\b")
-        # Browser-reflow print preparation was removed; Pages needs no HTML converter.
-        self.assertNotRegex(commands, r"(?i)pandoc|_web_print|print-editions")
+        # Browser-reflow print preparation was removed. Web readers are converted
+        # at build time by the pinned Pandoc, installed by its own verified lock.
+        self.assertNotRegex(commands, r"(?i)_web_print|print-editions")
+        self.assertEqual(re.findall(r"(?i)\S*pandoc\S*", commands),
+                         ["scripts/_install_web_edition_pandoc.py"])
 
     def test_only_deploy_publishes_and_it_waits_for_the_print_compile_gate(self):
         workflow = self.pages()

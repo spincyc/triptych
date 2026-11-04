@@ -23,11 +23,20 @@ class RecipeTests(unittest.TestCase):
     def setUp(self):
         SCRATCH.mkdir(parents=True, exist_ok=True)
 
-    def test_all_twelve_recipes_declare_public_browser_data_delivery(self):
+    def test_twelve_public_data_recipes_and_one_site_build_recipe(self):
         actual = products._recipes()
-        self.assertEqual(len(actual), 12)
-        self.assertTrue(all(recipe["delivery"] == "browser-data" for recipe in actual))
+        self.assertEqual(len(actual), 13)
+        deliveries = {recipe["id"]: recipe["delivery"] for recipe in actual}
+        # Web readers are read while the site is assembled, never published as data.
+        self.assertEqual(deliveries.pop("web-editions"), "site-build")
+        self.assertEqual(set(deliveries.values()), {"browser-data"})
         self.assertFalse(any(prefix.startswith("print") for recipe in actual for prefix in recipe["output_prefixes"]))
+
+    def test_web_editions_recipe_converts_every_reader_from_canonical_sources(self):
+        recipe = next(recipe for recipe in products._recipes() if recipe["id"] == "web-editions")
+        self.assertEqual(recipe["argv"], ["tools/web-edition", "products"])
+        self.assertEqual(recipe["output_prefixes"], ["web-editions"])
+        self.assertEqual(recipe["input_trees"], ["src"])
 
     def test_recipe_factory_requires_delivery_and_runner_expands_out_once(self):
         with self.assertRaises(TypeError):

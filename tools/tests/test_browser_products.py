@@ -544,7 +544,7 @@ class BrowserDeliveryTests(unittest.TestCase):
         BrowserProductsTests.setUp(self)
 
     def test_every_full_and_selected_snapshot_has_exact_explicit_deliveries(self):
-        self.assertEqual(products.DELIVERIES, {"browser-data"})
+        self.assertEqual(products.DELIVERIES, {"browser-data", "site-build"})
         with products.verified_products(self.root, cache_root=self.cache) as held:
             self.assertEqual(set(held.delivery_by_path), set(held.files))
             self.assertEqual(set(held.delivery_by_path.values()), {"browser-data"})

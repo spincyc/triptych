@@ -791,14 +791,88 @@ def requires_unadvertised_controls(authorization: dict) -> bool:
     return "unadvertised-public-hosting" in set(authorization.get("conditions", []))
 
 
-def eligible_document_ids() -> set[tuple[str, str]]:
-    """Every leaf whose own record declares a publishable web edition.
+WEB_EDITION_INDEX = "web-editions/index.json"
+WEB_EDITION_INDEX_SCHEMA = "triptych-web-editions/v1"
+WEB_EDITION_SCHEMA = "triptych-web-edition/v1"
 
-    The walk itself is scripts/_corpus.py's, so this tool and the catalogue
-    cannot come to different answers about which documents are publishable. The
-    tree it walks is this tool's `ROOT`, read at call time, because that is what
-    a test repoints at a fixture.
+
+def web_edition_products() -> dict[tuple[str, str], dict] | None:
+    """The verified web-edition product index by (provider, output).
+
+    Web readers are converted from canonical TeX at build time into the
+    `web-editions` browser-product family; no copy of their text is tracked.
+    A small imported-tool fixture without browser products has none.
     """
+    products = held_browser_products()
+    if products is None:
+        return None
+
+    def derive():
+        path = products.files.get(WEB_EDITION_INDEX)
+        if path is None:
+            raise ReleaseError("browser products carry no web-edition index")
+        index = load_json_file(path, "web-edition product index")
+        if not isinstance(index, dict) or index.get("schema") != WEB_EDITION_INDEX_SCHEMA:
+            raise ReleaseError("unsupported web-edition product index")
+        rows = {}
+        for row in index.get("editions", []):
+            key = (row.get("provider"), row.get("output"))
+            if (not all(isinstance(value, str) for value in key) or key in rows
+                    or row.get("path") not in products.files):
+                raise ReleaseError(f"invalid or duplicate web-edition product: {key!r}")
+            rows[key] = row
+        return rows
+    return held_source_inventory("web-edition-products", derive)
+
+
+def web_edition_record(provider: str, output: str) -> dict:
+    """One verified web edition: its Markdown and figure records."""
+    rows = web_edition_products()
+    if rows is None or (provider, output) not in rows:
+        raise ReleaseError(f"no web edition for {provider}/{output}")
+    row = rows[(provider, output)]
+
+    def derive():
+        record = load_json_file(held_browser_products().files[row["path"]], "web edition")
+        markdown = record.get("markdown") if isinstance(record, dict) else None
+        if (record.get("schema") != WEB_EDITION_SCHEMA or not isinstance(markdown, str)
+                or (record.get("provider"), record.get("output")) != (provider, output)
+                or hashlib.sha256(markdown.encode("utf-8")).hexdigest() != row["markdown_sha256"]):
+            raise ReleaseError(f"web edition does not match its index: {provider}/{output}")
+        return record
+    return held_source_inventory(f"web-edition:{provider}/{output}", derive)
+
+
+def web_edition_key(source_relative: str) -> tuple[str, str] | None:
+    """The (provider, output) a reader's logical Markdown key names, if any."""
+    match = re.fullmatch(r"web/([a-z0-9-]+)/(.+)\.md", source_relative)
+    if match is None or web_edition_products() is None:
+        return None
+    return match.group(1), match.group(2)
+
+
+def source_markdown(source_relative: str) -> str:
+    """A page's Markdown: a web reader's from its verified product, else the file."""
+    key = web_edition_key(source_relative)
+    if key is not None:
+        return web_edition_record(*key)["markdown"]
+    return (ROOT / source_relative).read_text(encoding="utf-8")
+
+
+def eligible_document_ids() -> set[tuple[str, str]]:
+    """Every output that has a web reader.
+
+    With browser products these are the outputs the `web-editions` family
+    converted: eligible and conditional leaves and their companions, less
+    withdrawals and holds (tools/web-edition `reader_outputs`). A fixture without
+    products keeps the declarations' own walk, scripts/_corpus.py's, so this
+    tool and the catalogue cannot come to different answers. The tree it walks is
+    this tool's `ROOT`, read at call time, because that is what a test repoints
+    at a fixture.
+    """
+    readers = web_edition_products()
+    if readers is not None:
+        return set(readers)
     try:
         return set(held_source_inventory(
             "web-eligible", lambda: corpus_eligible_document_ids(ROOT / "src")
@@ -808,10 +882,13 @@ def eligible_document_ids() -> set[tuple[str, str]]:
 
 
 def document_pages(keys: set[tuple[str, str]] | None = None) -> dict[str, str]:
-    """Map each reviewed web edition's tracked Markdown to its rendered page.
+    """Map each web reader's logical Markdown key to its rendered page.
 
-    Computed at use time so a caller that narrows the key set — or a test that
-    replaces the fixed page map — sees exactly the pages it asked for.
+    The key `web/<provider>/<output>.md` names the reader by output identity;
+    with browser products it is not a file, and `source_markdown` resolves it
+    from the verified `web-editions` product. Computed at use time so a caller
+    that narrows the key set — or a test that replaces the fixed page map —
+    sees exactly the pages it asked for.
     """
     if keys is None:
         keys = eligible_document_ids()
@@ -2535,7 +2612,7 @@ def browser_delivery_files(products) -> dict[str, Path]:
     """Copy only products whose verified recipe declares public data delivery."""
     delivery = products.delivery_by_path
     if (set(delivery) != set(products.files)
-            or set(delivery.values()) - {"browser-data"}):
+            or set(delivery.values()) - {"browser-data", "site-build"}):
         raise ReleaseError("browser products have incomplete or unknown delivery ownership")
     return {relative: path for relative, path in products.files.items()
             if delivery[relative] == "browser-data"}
@@ -2811,9 +2888,13 @@ def site_source_paths(manifest: dict | None = None) -> set[str]:
     source_inputs.update(native_tex_catalog()["source_paths"])
     # Bind canonical source/schema and public projections, never optional
     # generated PDF bytes. External evidence hashes remain in their records.
+    # A web reader's Markdown is a browser product whose descriptor binds its
+    # bytes and its canonical TeX inputs; only a fixture without products
+    # still reads reader Markdown from files.
+    reader_markdown = set(included_document_pages(set(included))) if web_edition_products() is None else set()
     return (
         set(SITE_SOURCE_PATHS)
-        | set(included_document_pages(set(included)))
+        | reader_markdown
         | pictorial_gallery_source_paths()
         | browser
         | publication_inputs
@@ -4868,7 +4949,7 @@ def render_source_page(
     preview: bool,
     authorization: dict,
 ) -> str:
-    markdown_text = (ROOT / source_relative).read_text(encoding="utf-8")
+    markdown_text = source_markdown(source_relative)
     if source_relative.startswith("library/"):
         markdown_text = filter_catalog(source_relative, markdown_text, included_ids)
     markdown_text = rewrite_links(
@@ -5111,7 +5192,8 @@ def render_publication_print_page(
     title = recipe.get("title") or leaf.rsplit("/", 1)[-1].replace("-", " ").title()
     reader = publication_reader_path(provider, leaf)
     tracked = f"web/{provider}/{leaf}.md"
-    has_reader = tracked in included_document_pages({(provider, leaf)}) and (ROOT / tracked).is_file()
+    has_reader = tracked in included_document_pages({(provider, leaf)}) and (
+        web_edition_key(tracked) is not None or (ROOT / tracked).is_file())
     if has_reader:
         return render_source_page(tracked, output_relative, {(provider, leaf)}, preview, authorization)
     paragraphs = [

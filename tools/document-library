@@ -808,8 +808,11 @@ def availability_record(document: Document, issue) -> dict:
         and issue.status in {"alpha", "published", "review"}
     )
     targets = {}
-    if included and issue.kind == FULL and document.web_page:
-        targets["reader"] = document.web_page
+    # Every output of a leaf with a web reader has its own reader, companions
+    # included: each is converted from its own entrypoint.
+    if included and document.web_page:
+        targets["reader"] = (document.web_page if issue.kind == FULL
+                             else f"web/{document.provider}/{issue.stem}.html")
     if included and issue.print_recipe:
         targets["print"] = f"print/{document.provider}/{issue.stem}.html"
     record = {

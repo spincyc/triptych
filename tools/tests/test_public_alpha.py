@@ -572,10 +572,13 @@ class PublicAlphaTest(unittest.TestCase):
         import markdown
 
         tool = load_tool()
-        included = tool.included_publications(tool.publication_map(tool.load_manifest()), False)
-        for source_relative in sorted({**tool.PAGE_MAP, **tool.included_document_pages(set(included))}):
+        with tool.held_repository_inputs():
+            included = tool.included_publications(tool.publication_map(tool.load_manifest()), False)
+            # A web reader's Markdown is its verified product, not a file.
+            texts = {source: tool.source_markdown(source) for source in sorted(
+                {**tool.PAGE_MAP, **tool.included_document_pages(set(included))})}
+        for source_relative, text in texts.items():
             with self.subTest(source=source_relative):
-                text = (REPOSITORY_ROOT / source_relative).read_text(encoding="utf-8")
                 tool.reject_unrendered_code_fences(
                     source_relative,
                     markdown.markdown(
@@ -1614,8 +1617,14 @@ class PublicAlphaTest(unittest.TestCase):
                     [("h2", expected_id)],
                 )
         headings = 0
-        for path in sorted((REPOSITORY_ROOT / "web").rglob("*.md")):
-            text = path.read_text(encoding="utf-8")
+        # Every web reader, converted from its TeX into the verified product.
+        tool = load_tool()
+        with tool.held_repository_inputs():
+            editions = {
+                f"web/{provider}/{output}.md": tool.web_edition_record(provider, output)["markdown"]
+                for provider, output in sorted(tool.web_edition_products())
+            }
+        for source, text in editions.items():
             if not re.search(r"^#+\s+" + heading_text + r"\b", text, flags=re.M | re.I):
                 continue
             rendered = self.tool.render_markdown(text, REPOSITORY_ROOT)
@@ -1624,7 +1633,7 @@ class PublicAlphaTest(unittest.TestCase):
                 rendered,
                 flags=re.I,
             )
-            with self.subTest(edition=path.relative_to(REPOSITORY_ROOT).as_posix()):
+            with self.subTest(edition=source):
                 self.assertEqual(len(found), 1)
                 level, heading_id = found[0]
                 self.assertEqual(level, "h2")
@@ -1691,7 +1700,7 @@ class PublicAlphaTest(unittest.TestCase):
             "python tools/tpt public-alpha verify --deployment-target github-pages",
             workflow,
         )
-        self.assertLess(workflow.index("run: make public-site"), workflow.index("--deployment-target github-pages"))
+        self.assertLess(workflow.index("make public-site"), workflow.index("--deployment-target github-pages"))
         self.assertLess(
             workflow.index("--deployment-target github-pages"),
             workflow.index("actions/upload-pages-artifact"),

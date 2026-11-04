@@ -35,7 +35,9 @@ POLICY_SCHEMA = "triptych-browser-publication-policy/v1"
 PROOF = "two-independent-cold-builds-byte-parity"
 CANDIDATE_INDEX = ".browser-products-candidates-v1.json"
 CANDIDATE_SCHEMA = "triptych-browser-product-candidates/v1"
-DELIVERIES = frozenset({"browser-data"})
+# browser-data is copied into the published data/ tree; site-build products are
+# read while the site is assembled and never published as files of their own.
+DELIVERIES = frozenset({"browser-data", "site-build"})
 EXCLUDED = frozenset({MANIFEST_RELATIVE})
 POLICY_FIELDS = {"schema_version", "release_id", "provider", "providers", "authorizations"}
 AUTH_FIELDS = {"basis", "authority_role", "authority_scope", "rights_record", "rights_record_sha256", "site_sources", "approved_on", "duration", "effective_at", "expires_at", "timezone", "conditions"}

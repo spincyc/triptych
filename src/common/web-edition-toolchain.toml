@@ -1,0 +1,18 @@
+schema_version = 1
+record_type = "web-edition-toolchain"
+
+# The LaTeX-to-Markdown converter that builds every web edition from its
+# canonical TeX at site-build time (tools/web-edition products). The
+# web-editions browser-product family refuses any other Pandoc version; CI
+# installs exactly this official binary with
+# scripts/_install_web_edition_pandoc.py. On 2026-11-04 this binary and the
+# Arch Linux pandoc-cli 3.11 build produced byte-identical editions for all
+# 141 then-tracked web editions.
+[pandoc]
+version = "3.11"
+archive_url = "https://github.com/jgm/pandoc/releases/download/3.11/pandoc-3.11-linux-amd64.tar.gz"
+archive_sha256 = "37edb3bbcf722f921a009941bf5874e2e0c09263226c9b4a2d980788cb062ab6"
+archive_bytes = 34940580
+binary_sha256 = "870b811354a230a1864dd2b50dec3b850a981926ff4659ae460aea96ab6b8d28"
+binary_bytes = 163653648
+member = "pandoc-3.11/bin/pandoc"

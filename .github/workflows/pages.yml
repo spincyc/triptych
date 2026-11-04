@@ -101,6 +101,15 @@ jobs:
         if: steps.browser-cache.outputs.cache-hit != 'true'
         run: python scripts/_browser_cache_bootstrap.py --fetch
 
+      # Web readers are converted from canonical TeX at build time (the
+      # `web-editions` product family). Install exactly the pinned official
+      # converter so a cold family reproduces the committed bytes.
+      - name: Install the pinned web-edition converter
+        run: |
+          set -euo pipefail
+          python scripts/_install_web_edition_pandoc.py --fetch --bin-dir "$RUNNER_TEMP/web-edition-toolchain"
+          printf '%s\n' "$RUNNER_TEMP/web-edition-toolchain" >> "$GITHUB_PATH"
+
       # public-site prepares and verifies the committed product descriptor before
       # source gates and consumers. Missing families reproduce its exact bytes
       # offline; stale inputs fail without a whole-corpus research replay.
