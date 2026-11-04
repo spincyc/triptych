@@ -4,7 +4,7 @@ schema_version = 1
 id = "explicit-print-and-proper-quality-2026-11-03"
 owner = "PROJECT-WORK.md"
 promise = "Require an explicit user action before PDF generation, repair grouped and repeated proper chronology tables across their current consumers, improve measured browser performance without quality loss, and independently cold-review source correctness and actual rendered output."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "explicit-generation-action"
@@ -45,13 +45,13 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "independent-output-and-integration-review"
   criterion = "Independent cold review checks the exact reported PDF, chronology pages of every affected synthesis, desktop/mobile tables and semantic coverage; affected source/site checks pass with no unresolved blocking findings, and publication state is explicit."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "reviewed-main-publication"
   criterion = "After independent final cold review, the validated change reaches main without history rewriting; the Pages workflow and exact live reported route are checked, including idle arrival and explicit generation."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]

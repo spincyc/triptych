@@ -5,191 +5,129 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-03.
+Last reconciled: 2026-11-04.
 
 ## Explicit printing and passage-level chronology correction, 2026-11-03
 
 <!-- promised-deliverable: explicit-print-and-proper-quality-2026-11-03 -->
 
-**Local final review passed and the reviewed candidate reached main; deployment
-is blocked by a confirmed input-identity mismatch being repaired.**
-The maintainer reported automatic PDF generation when opening a proper page
-and mixed, repeated Scripture groups in the Claude Twenty-first Sunday after
-Pentecost synthesis. The correction keeps canonical structured sections, typed
-evidence and shared styles in Git, with PDF generation downstream of an explicit
-browser action. No current PDF collection is maintained in Git or elsewhere.
+**Complete: independently reviewed, pushed to main, deployed and verified live.**
+All three print controllers remain idle on navigation, initialization, query
+flags and reload; explicit activation generates the selected edition. Canonical
+sections, typed evidence and shared styles remain authoritative in Git. PDFs
+are requested downstream outputs, with no maintained current PDF collection.
 
-All three print controllers now remain idle on navigation, initialization,
-query flags and reload. Independent real-browser review confirms explicit click
-and Ctrl-P generation, cancellation and failure handling. Exact Type1 font
-scheduling reduces the controlled unchanged sample's cold generation from
-20.012 to 14.674 seconds and native transfer from 20,489,590 to 13,722,040 bytes;
-the 12-page output is byte-identical. Warm compilation stays about 3.6 seconds;
-cached downloads take 35–41 milliseconds. These are desktop Chromium emulation
-measurements with unthrottled workers, not physical mobile-device acceptance.
-The corrected document's final local measurement is 14.722 seconds cold with
-13,722,233 native-transfer bytes, 3.683 seconds with warm runtime and PDF cache
-cleared, and 34/39 milliseconds from the completed-PDF cache. All four downloads
-exactly match the reviewed corrected twelve-page, 453,257-byte PDF, SHA-256
-`1d6326fd6372aaa2b762d3a21b6fcf68de4d8ac43450a6de7ea26d0b4997a0c6`.
-The compact benchmark receipt has SHA-256
-`637fd9a64b69afb06a2d506aff42482c31b6d663aaeb6af0eb3e13770d559ce1`.
-It uses desktop Chromium at 390×844/DPR3, 10 Mbps, 80 ms latency and fourfold
-page throttling; calibration confirms workers remain unthrottled. Sampled peak
-renderer PSS is 646,324 KiB (about 631 MiB). Physical phones, Safari, thermal and
-low-memory operation are not established; sampling can miss intervening peaks.
-Local cache/compression behavior also differs from production. Both recorded
-arrivals remain idle, and all benchmark-owned processes closed.
+The source census covers 62 proper publications: ten orientation consumers,
+nineteen older generated consumers and thirty-three authored tables. Distinct
+component/passage groups preserve 996 default facts, 29 comparison facts and
+302 appointed loci with sourced geography and uncertainty. All nineteen older
+dossiers and annotations are current; freshness checks cover all 29 generated
+consumers. The expanded authored census includes abbreviated labels and shared
+postconciliar owners. Twenty authored tables were corrected, including false
+assignments, adaptation qualifiers, canonical order and three omitted appointed
+passages. This is bounded source correction, not a new historical investigation
+of every claim. The initial census missed an abbreviated false Gradual mapping;
+independent review caught it and the affected sources were reviewed again.
 
-All ten orientation consumers, including three missed by the earlier seven-leaf
-acceptance, now use distinct component/passage groups. Independent review
-confirms preservation of 996 default facts, 29 comparison facts and 302
-appointed loci, plus qualified source-bound geography. Partial comparison and
-anchor ranges are partitioned without overlapping verses. Identical inputs and
-profiles share deterministic dates and descriptions; different appointments
-and documented uncertainty remain distinguishable. All ten current native
-chronology sheets fit page two.
+The converter preserves source-declared spans and finite widths, validates
+curriculum receipts and refuses unsupported styles or nonempty padding.
+Fifty-four readers were regenerated, changing 44; thirty-one readers preserve
+277 semantic spans in fifty tables. Five illustration rebindings preserve all
+68 image payloads, geometry, labels and rights. The strict producer passed all
+288 HTML print outputs and 133 assets. The retained native review covers 66
+PDFs: ten orientation, 28 legacy and 28 authored. Claude48 retains chronology
+on physical page three; the other authored chronology sheets remain on page
+two. Existing page totals and warning sets are preserved.
 
-All nineteen older generated consumers now have current dossiers and
-annotations. Eight stale records and fourteen annotation files were refreshed;
-existing assertions remain, with disputed David attribution restored from the
-canonical corpus. A regression checks all 29 generated consumers and is required
-by both maintenance and deployment. Six older layouts were repaired at 9pt;
-all fourteen affected syntheses keep chronology on page two and Themes on page
-three. All 28 affected native editions render successfully.
+The retained pre-fix checkpoint `41a27f5` was never pushed to main. Its actual
+site review found sole-cell chronology rows occupying half a mobile grid,
+affecting twenty routes. The bounded CSS repair and regression were checked on
+an explicit overlay, then candidate `d6b5f339ec6ba3d2e71306ac40a5cba997b5fa20`
+passed independent actual-site review of 80 routes, 160 desktop/mobile states
+and 26,052 cell states. Forty `?print=1` states created no native fetch or
+worker; two targeted browser methods passed sixteen cases without skips.
 
-The full source census covers 62 proper publications: ten orientation,
-nineteen older generated, and thirty-three authored tables. The authored audit
-checks 227 component/citation rows separately from 24 contextual rows; fourteen
-postconciliar publications were also checked against their shared edition
-owners. Twenty authored tables were corrected. Changes include explicit
-component assignments, adaptation qualifiers, five canonical-order repairs,
-and three omitted appointed passages with sourced date bounds and uncertainty.
-PC-S44C's wrong-Sunday Entrance and Offering identities were corrected in both
-its local research record and visible orientation. Existing historical wording
-is preserved outside these bounded corrections. This is not a new historical
-investigation of every claim in all 62 publications.
-
-The initial full-word census missed an abbreviated false Gradual assignment;
-independent review caught it before publication. The first browser-product
-record was stopped, the complete authored-label audit was added as a required
-criterion, and the affected sources and outputs were reviewed again. The final
-selected authored closure has 28 unique PDFs and 226 source inputs, with the
-reviewed registry-pin and Makefile-message deltas recorded separately.
-Claude48 retains its inherited chronology on physical page three; the other
-27 authored outputs have chronology on page two. All corrected outputs retain
-their prior page totals and warning sets.
-
-The converter now preserves declared table spans. The final union regenerates
-54 readers, changing 44: thirty retain identical visible text, fourteen follow
-approved legacy chronology updates, and ten follow the expanded authored
-census corrections. Thirty-one readers preserve 277 semantic spans in fifty
-tables, including three newly added notes. Desktop/mobile previews pass 100
-current states and 364 full-width chronology checks, with matched before
-captures. Subsequent actual-site review covers all ten orientation print routes
-and all 54 ordinary readers, plus the further mobile-row routes described below;
-the exact reported `?print=1` route remains idle.
-
-The complete print-output integration exposed additional compatibility gaps:
-source-declared column and table widths, typed span receipts in curriculum
-exporters, empty formatting in Pandoc's trailing padding, and stale selected
-illustration bindings. The fixes admit only the observed finite widths,
-validate exact receipts and final spans, and retain refusals for unknown styles,
-nonempty padding and arbitrary diagnostics. All 54 readers regenerate byte for
-byte unchanged after this converter follow-up. The five illustration bindings
-were independently checked against the approved citation edits; all 68 image
-payloads, geometry, labels and rights remain unchanged. The original strict
-producer now succeeds for all 288 admitted HTML print outputs and 133 assets;
-separate validation confirms every output hash. A scratch observer used the
-wrong final catalog path after successful generation; its failure is preserved
-alongside the successful validation at the actual path. Independent local
-two-build publication reproduction passes: thirteen families, 27,836 files and
-382,696,591 bytes agree exactly. The deployment source gate and deliverables
-validation pass. All 151 converter tests also pass at the recorded candidate.
-These local results precede the deployment failure and identity repair below.
-
-The first assembled-site review found a further mobile defect before main
-publication: source-one-column chronology tables inherited the two-column
-mobile grid. The GPT55 label `proemium/argumentum` overflowed a half-width
-cell. A full artifact census found twenty affected web/print routes across ten
-editions. The bounded CSS correction makes every sole chronology cell fill its
-row, covering both true one-column sources and declared spans. The new browser
-regression reproduces eight narrow-view failures on candidate `41a27f5` and
-passes after the CSS correction at desktop, 390px and 320px widths. The
-independent actual-site acceptance scope is expanded from 64 to 80 routes
-(160 desktop/mobile states), with checks on every visible cell. Candidate
-`41a27f5` remains a retained pre-fix checkpoint; it was never pushed to main.
-The local two-build descriptor passes, and all thirteen product file inventories
-remain byte-identical to `41a27f5`: 27,836 files and 382,696,591 bytes. Only
-input/cache identities change. The completed 151 converter tests and 66 retained
-PDF reviews remain evidence at their recorded inputs; this site-only delta does
-not claim fresh native PDF captures or a new full converter-suite run.
-
-The final local candidate `d6b5f339ec6ba3d2e71306ac40a5cba997b5fa20` passes
-independent actual-site review of 80 routes, 160 desktop/mobile states and
-26,052 cell states. Forty query states create no native-runtime/bundle fetches
-or workers. The two targeted browser methods pass sixteen cases without skips
-in 2.878 seconds. `make public-site` and artifact verification exit zero in
-319.366 and 226.862 seconds. The site manifest SHA-256 is
-`bc3a6db4de65c20e4734e5e701e626f72d9804dd0bc14505ea976a537c600de2`;
-the compact actual-site receipt has SHA-256
-`2cb06994152617f4c07fe15eb4869260bb1e415529c17fe8051905dac2f8018b`.
-All review-owned processes closed. The final prepublication cold review finds
-no unresolved blockers for that exact local candidate and artifact, receipt
-SHA-256 `b10d8172114eda3575bbee0bd5c6dbd638e747140fb936c08cfa9df436a7be9b`.
-That verdict does not certify the later failed deployment or a repaired candidate.
-
-Independent source/PDF review covers 66 retained outputs: ten orientation,
-28 legacy and 28 authored. The later registry-binding and diagnostic-message
-deltas are explicitly bounded as non-rendering changes; no new 66-PDF capture
-is claimed. The seven frozen scoped receipts are under
-`workflows/reviews/print-correctness-2026-11-03/`; `proper-quality.json` has SHA-256
-`74d41a6d1ab5b185741b4088705699857fa97f81343a236b446312758211a820`.
-Those receipts retain their historical scope; later local site and benchmark
-receipts supply separate evidence. The earlier recovery's seven-edition,
-936-page fidelity proof also remains separate.
-The 28-edition legacy preflight retains 35 inherited diagnostics in five
-editions, exactly matching its baseline. An additional Claude52 house-voice
-finding is also unchanged from baseline. These qualifications do not claim an
-entirely green historical editorial suite. Three inherited broad tool-example
-failures concern service example exemptions and local Python-package dependency
-classification. The 58 controller integration tests, focused chronology/runtime
-tests and registry checks pass within their recorded scopes.
-
-The feature baseline is `40bea725b14b16e711b922bacd6368b6755c8bed`; the initial
-live revision is `aa6ca926752ab89c019291e115ceb226ae3412fc`. Live and feature
-validation remain separate. After the maintainer-authorized independent review,
-a non-forced fast-forward pushed `d6b5f339ec6ba3d2e71306ac40a5cba997b5fa20`
-to both the feature remote and main. Main advanced from
-`24cbc933d74ced79b515c855c9dbd5454dfa8e4c`; work stayed on `feature/no-pdfs`.
-Hygiene run `41787636499` succeeded, but Pages run `41787636435` failed on the
-browser-products key: clean CI's canonical input identity differs from the
-locally recorded identity. Git publication is not a deployment or live pass.
-
-Independent diagnosis identifies one ignored, untracked canonical member:
+That reviewed candidate reached main without force, but Pages run
+`41787636435` failed: one ignored, untracked canonical member was present in
+the local input closure and absent from clean Git:
 `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/__pycache__/validate_inventory.cpython-314.pyc`,
 57,067 bytes, SHA-256
 `1a7337d0ca076bf6154b2179bfad7988ce6d3377415ee0e35f8a8d95a706bb85`.
-It was present in the local input closure but absent from the clean Git checkout.
-The file has been quarantined outside canonical trees. The existing identity
-policy remains unchanged: bytecode under canonical source paths is intentionally
-governed, so this repair does not add an exclusion or weaken source identity.
+It was quarantined outside canonical trees. The existing policy intentionally
+governs bytecode in source paths; no exclusion or identity weakening was added.
 
-The clean record passed in 948.616 seconds: four affected families received
-two fresh cold builds, and nine unchanged families retained verified products.
-All thirteen product inventories exactly match `d6b5f339`: 27,836 files and
-382,696,591 bytes. The clean product-equivalence receipt has SHA-256
-`ea2195b08951280d1bb88e28daccc5b095bf878978856ae00b6e9db55f5e0679`;
-the new browser-product identity is
+The four-path metadata repair `0c1eb557fb83b1389ef83ff649eb4a12cd2fae73`
+changes this work record, the product descriptor and release/rights bindings.
+Its clean record passed in 948.616 seconds: four affected families received two
+fresh cold builds and nine unchanged families retained verified products. All
+thirteen inventories match `d6b5f339`: 27,836 files and 382,696,591 bytes. A
+fresh committed Git export passes the official key check in 8.95 seconds,
+matching product identity
 `251654006a296d70622e0e3952f2e4a2d65c2eb9681539027376f50b9860e282`.
-Scoped release-binding refresh is in progress. The repair still requires the
-committed descriptor/bindings, clean-checkout key checks, source/build/artifact
-verification and independent review of the repaired candidate. A subsequent
-non-forced push, successful Pages deployment and exact live
-idle-arrival/explicit-generation checks must follow. These are pending gates;
-the deliverable and ledger remain open. No new 66-PDF capture or full 151-test
-rerun is implied by this identity repair, and the preserved local receipts are
-not relabeled as clean-CI acceptance.
+The clean site build and artifact verification pass in 329.902 and 224.15
+seconds. Independent bounded comparison preserves all eighty routes' rendered
+HTML: 54 files are byte-identical and 26 differ only in embedded native
+revision/bundle provenance. Twenty native bundles retain their rendering
+fields; 339 payloads, 72 packs and nine linked assets are byte-identical.
+Independent final repair review found no unresolved local publication blocker.
+
+The isolated local `d6b5f339` benchmark remains separate from deployment
+observations: 14.722 seconds cold with 13,722,233 native-transfer bytes,
+3.683 seconds with warm runtime and PDF cache cleared, and 34/39 milliseconds
+from the completed-PDF cache. Its four downloads exactly match the reviewed
+corrected twelve-page, 453,257-byte PDF, SHA-256
+`1d6326fd6372aaa2b762d3a21b6fcf68de4d8ac43450a6de7ea26d0b4997a0c6`.
+The repair retains that evidence through exact payload comparison; it does not
+claim a fresh local benchmark, 160-state browser traversal, 66-PDF capture or
+151-case converter-suite run. The seven frozen proofs under
+`workflows/reviews/print-correctness-2026-11-03/` keep their original scopes.
+The earlier recovery's seven-edition, 936-page fidelity proof is also separate.
+
+Both remote refs advanced from `d6b5f339` to the repaired `0c1eb557` without
+force; work stayed on `feature/no-pdfs`. [Pages run 41792131186](https://github.com/spincyc/triptych/actions/runs/41792131186)
+and [hygiene run 41792131226](https://github.com/spincyc/triptych/actions/runs/41792131226)
+succeeded at that exact commit, including deployment. The live manifest matches
+the clean artifact byte for byte, SHA-256
+`4c61520c17c71c89b270f39a631a1e74ddb77d447fff82f47056862f829c8f98`;
+it identifies source `0c1eb557fb83b1389ef83ff649eb4a12cd2fae73` and
+`stored_pdfs: false`.
+
+The [exact reported live route](https://mystago.gy/print/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.html?print=1)
+passes the live probe with exit zero in 23.082 seconds. Arrival and reload
+start zero workers, native fetches or downloads. Four explicit downloads each
+match the same reviewed twelve-page PDF hash above. The actual reported HTML
+and all nine reviewed CSS/JS assets match the clean local artifact byte for
+byte. Observed live generation
+takes 13.746 seconds cold, 3.543 seconds with warm runtime and 34/38 milliseconds
+from the PDF cache; these are deployment observations under actual CDN behavior,
+not a controlled before/after comparison with local timings. All owned review,
+benchmark and live-probe processes closed.
+
+Receipt hashes distinguish the recorded scopes:
+
+| Evidence | SHA-256 |
+| --- | --- |
+| `d6b5f339` actual-site review | `2cb06994152617f4c07fe15eb4869260bb1e415529c17fe8051905dac2f8018b` |
+| `d6b5f339` local benchmark | `637fd9a64b69afb06a2d506aff42482c31b6d663aaeb6af0eb3e13770d559ce1` |
+| Clean product equivalence | `ea2195b08951280d1bb88e28daccc5b095bf878978856ae00b6e9db55f5e0679` |
+| Clean site/payload comparison | `e5ffa59f141ef5f594cec358f88f48c16a16a7b65dadde2ea560626638e0ee57` |
+| Final independent repair review | `1639009531a5cf0514a18a5291c613b9e22fd1aeed72dee2bd02cd9d6d92db16` |
+| Live verification | `d90974a26375055fbfe3caabd760618c220a34960a1c4df424239e92a7ed7d3d` |
+| Live HTML and asset identity | `e8f4a95ea218f4fdc883ac92609ca6a59476efc1356f3f2e781ae1bab56df6ad` |
+
+Limits remain: desktop Chromium emulation at 390×844/DPR3, 10 Mbps and 80 ms
+does not establish physical Android/iOS, Safari, thermal or low-memory behavior.
+Fourfold page throttling leaves native workers unthrottled; sampled local peak
+renderer PSS was 646,324 KiB. The 35 inherited legacy diagnostics in five
+editions, unchanged Claude52 house-voice finding and three earlier broad
+tool-example failures remain qualified. No whole-corpus visual or historical
+approval is implied, and historical Git objects remain intact.
+
+The task baseline is `40bea725b14b16e711b922bacd6368b6755c8bed`; prior main
+was `24cbc933d74ced79b515c855c9dbd5454dfa8e4c`. Only this operational record
+and the deliverables ledger change in the final status-only follow-up. They
+are excluded from Pages triggers and source-product inputs; the deployed source
+revision remains `0c1eb557fb83b1389ef83ff649eb4a12cd2fae73`.
 
 ## Recovery and shared proper chronology, 2026-11-03
 
