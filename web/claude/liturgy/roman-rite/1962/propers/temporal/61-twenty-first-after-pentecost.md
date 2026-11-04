@@ -528,17 +528,17 @@ Each reading meets a demanding feature of the formulary that the others leave in
 
 ## Scriptural Date and Location {#sec:date-location}
 
-The table groups each appointed passage with its dated subjects. The notes below give its setting, attribution and dating evidence.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Introit: Esth 13:9–11 | Composition: Esther; story at Susa; writing in Persia conjectured | B.C. 465–425 (Conjectural early dating; later date possible) |
+| Introit: Esth. 13:9–11 | Composition: Esther; story at Susa; writing in Persia conjectured | B.C. 465–425 (Conjectural early dating; later date possible) |
 | Offertory: Job 1:1, Job 1:12, Job 2:6–7 | Composition: Job; story in Hus; writing site unspecified | Probably sometime between the seventh and fifth centuries B.C. |
 | Gradual: Ps. 89:1–2 (Vg.; Heb. 90) | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
 | Alleluia: Ps. 113:1 (Vg.; Heb. 114) | Retrospective event: The Exodus from Egypt; departure from Egypt; interval to Jerusalem’s Temple | Preferred: Temple begun in the 480th year after the Exodus (Vulgate); alternative: Temple begun in the 440th year after the Exodus (Septuagint) |
 |  | Composition: Psalms | Before c. 165 B.C. |
-| Introit: Ps 118:1 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+| Introit: Ps. 118:1 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
 |  | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
 | Communion: Ps. 118:81, 84, 86 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
@@ -552,55 +552,59 @@ The table groups each appointed passage with its dated subjects. The notes below
 
 Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-##### Setting notes.
+### Evidence for each date {#sec:date-location-evidence}
 
-**Introit: Esth 13:9–11**. Written in Persia, as the article “Esther” in the Catholic Encyclopedia holds; the story is set at the Persian court in Susa (Esth 1:2), and Mardochai’s prayer stands in the Greek chapters (13:8–18).
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-**Offertory: Job 1:1, Job 1:12, Job 2:6-7**. Place of writing unknown; the story is set in the land of Hus (Job 1:1), which Lam 4:21 joins to Edom.
+*Introit: Esth. 13:9–11*
 
-**Introit: Ps 118:1; Gradual: Psalm 89:1-2; Communion: Psalm 118:81, 84, 86**. No psalm names an occasion or a place; the unsung title of Ps 89 names Moses, and Ps 118 names no author.
+- **Composition** (preferred). The Book of Esther: B.C. 465–425 (Conjectural early dating; later date possible) (“at the end of the reign of Xerxes I (485-465 B.C.) or during the reign of his son Artaxerxes I (465-425 B.C.)”; The Catholic Encyclopedia, Volume 5 (New York, 1909)). Place: story at Susa; writing in Persia conjectured (The Catholic Encyclopedia, Volume 5 (New York, 1909); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Esth. 1:2).
 
-**Introit: Ps 118:1; Gradual: Psalm 89:1-2; Alleluia: Psalm 113:1; Communion: Psalm 118:81, 84, 86**. The Psalter as a collection; no individual psalm is dated, and no place of writing is named.
+*Offertory: Job 1:1, Job 1:12, Job 2:6–7*
 
-**Alleluia: Psalm 113:1**. The psalm remembers Israel going out of Egypt and through the sea (Ps 113:1–3); the years are reckoned from the founding of the Temple (3 Kgs 6:1).
+- **Composition** (preferred). The Book of Job: Probably sometime between the seventh and fifth centuries B.C. (Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Job introduction). Place: story in Hus; writing site unspecified (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Job 1:1).
 
-**Introit: Ps 118:1; Communion: Psalm 118:81, 84, 86**. David, king in Jerusalem, to whom tradition attributes Ps 118; the reign dates David, not the psalm.
+*Gradual: Ps. 89:1–2 (Vg.; Heb. 90)*
 
-**Gospel: Matthew 18:23-35**. Jesus tells the parable to his disciples at Capharnaum in Galilee (Mt 17:23; 18:1); its king and servants are characters of a parable.
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-**Gospel: Matthew 18:23-35**. St Matthew writes in Palestine, by the tradition the Catholic Encyclopedia reports.
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-**Gospel: Matthew 18:23-35**. Writing place: Antioch in Syria, which the NABRE introduction offers as a plausible suggestion.
+*Alleluia: Ps. 113:1 (Vg.; Heb. 114)*
 
-**Epistle: Ephesians 6:10-17**. Paul writes in chains (Eph 6:20), at Rome or Caesarea, to Ephesus or to a group of churches.
+- **Retrospective event** (answers differ). The Exodus from Egypt: preferred: Temple begun in the 480th year after the Exodus (Vulgate) (“the four hundred and eightieth year after the children of Israel came out of the land of Egypt”; The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 3 Kings 6:1); alternative: Temple begun in the 440th year after the Exodus (Septuagint) (“the Septuagint gives 440 years”; The Catholic Encyclopedia, Volume 3 (New York, 1908)). Place: departure from Egypt; interval to Jerusalem’s Temple (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 113:1, 3 Kings 6:1, 2 Par. 3:1).
 
-**Epistle: Ephesians 6:10-17**. A later disciple developing Paul’s thought, as one hypothesis the NABRE introduction offers; no place is given.
+- **Composition**. As under Gradual: Ps. 89:1–2 (Vg.; Heb. 90).
 
-### Esther 13:9–11, the Introit {#sec:date-esther}
+*Introit: Ps. 118:1 (Vg.; Heb. 119)*
 
-The Introit’s prayer belongs to the chapters of Esther that the Vulgate prints after the end of the Hebrew book (10:4–16:24), which St Jerome translated from the Greek and set apart; the *Catholic Encyclopedia*’s “Esther” (vol. 5, 1909) says that no trace of them is found in the Hebrew Bible and that they are most probably translations from a Hebrew or Chaldaic original. The story is set at the court of Assuerus, king of Persia, in Susa (1:2; 11:3); the prayer is said there, in the days of Aman’s decree. The date shown is that article’s for the writing of the book, placed at the end of the reign of Xerxes I or under his son Artaxerxes I; the article calls it an early dating and allows a later one. The chronology record applies the book’s date to the Greek chapters as well, and it dates no event of the story. The colophon at 11:1, which names the fourth year of a Ptolemy and Cleopatra as the time this “epistle of Phurim” was brought, is the book’s own note on its Greek form and is not the date shown.
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-### Job 1–2, the Offertory {#sec:date-job}
+- **Historical setting**. As under Gradual: Ps. 89:1–2 (Vg.; Heb. 90).
 
-The Offertory narrates Job 1:1, 1:12, 1:13–19 and 2:6–7 in words of its own; the chronology record answers every locus it cites with the same claim for the whole book. The date shown is the modern critical judgment of the introduction to Job in the *New American Bible, Revised Edition*, summarised there as a probable period of writing; the record holds no traditional attribution and no date for Job’s life. St Gregory the Great reports that some held Moses to be the writer and others one of the prophets, says that it is superfluous to ask who wrote it since the Holy Spirit is its author, and then judges it the more probable that Job himself, who bore the conflict, also told of his victory, speaking of himself as of another, as Moses does (*Moralia*, Preface 1–3). The land of Hus, where the story is set, is not the place of writing, which is unknown.
+- **Composition**. As under Gradual: Ps. 89:1–2 (Vg.; Heb. 90).
 
-### Psalms 89, 113 and 118, the Gradual, Alleluia, Introit verse and Communion {#sec:date-psalms}
+*Communion: Ps. 118:81, 84, 86 (Vg.; Heb. 119)*
 
-None of the four psalm elements has an occasion in the record, and the “Historical setting” row says so for the Gradual, the Introit’s verse and the Communion. The composition date shown for all four is the bound that the introduction to the Psalms in the *New American Bible, Revised Edition* sets for the whole Psalter, within which, it says, no individual psalm can be dated securely.
+- **Traditional attribution**. As under Introit: Ps. 118:1 (Vg.; Heb. 119).
 
-Ps 89 is titled *Oratio Moysi, hominis Dei*, “A prayer of Moses the man of God”, a title the Gradual does not sing. The chronology record holds no attribution for it, and no date is shown for Moses. The title names Moses. St Augustine holds that the psalm was not “entirely the composition of that Moses”, since it lacks the expressions of Moses’ songs (*Enarrationes* 89.2). St Robert Bellarmine, in the general prefaces of his *Explanation of the Psalms*, admits as acceptable, and in the preface that survives only in manuscript as not unlikely, the opinion that those named in the titles, Moses among them, wrote their psalms; in both he prefers as the more probable the opinion that David wrote all the psalms, which he gives to St Augustine and St John Chrysostom. Neither Doctor makes Moses the whole psalm’s author; they differ only in that Bellarmine still admits Moses’ authorship as a tenable opinion. The exposition of the psalms printed under St Athanasius’s name says that Moses wrote the prayer and handed it on for those who would come after (PG 27, col. 395). No witness read names an occasion or a date.
+- **Historical setting**. As under Gradual: Ps. 89:1–2 (Vg.; Heb. 90).
 
-Ps 113 names no author. The row for the Alleluia dates the event the psalm remembers, the going out of Egypt, not the psalm: the preferred reckoning is the Vulgate’s statement that the Temple was begun in the four hundred and eightieth year after the Exodus (3 Kgs 6:1), and the alternative, kept beside it, is the Septuagint’s figure, reported in the *Catholic Encyclopedia*’s “Biblical Chronology” (vol. 3, 1908).
+- **Composition**. As under Gradual: Ps. 89:1–2 (Vg.; Heb. 90).
 
-Ps 118 has no author in its title. The tradition attributes it to David: Haydock’s note at the first verse says that it is generally attributed to him and records several proposed occasions without settling one. The reign shown is David’s in the “usual chronology” of the *Catholic Encyclopedia*’s “David” (vol. 4, 1908), marked disputed because the article reports a later dating beside it. It is the reference point of the attribution and not a date of the psalm. The same rows serve the Introit’s verse, Ps 118:1, and the Communion’s three half-verses.
+*Gospel: Matt. 18:23–35*
 
-### Matthew 18:23–35, the Gospel {#sec:date-matthew}
+- **Narrated event**. Jesus tells the parable of the unforgiving servant; Capharnaum by narrative continuity (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 17:23, 18:1, 19:1, 18:21, 18:22, 18:23, 18:35). No date: the chronology corpus has not yet dated this (research pending).
 
-The parable is told in the discourse of Mt 18, after the arrival at Capharnaum (17:23) and before Jesus leaves Galilee (19:1). The record holds no date for that discourse, and the “Event” row says so; the king, the servants and their debts belong to a parable and have no date. The composition dates shown are the *Catholic Encyclopedia*’s, from “Gospel of Saint Matthew” (vol. 10, 1911) and “The New Testament” (vol. 14, 1912), all marked disputed; the first of these reports the tradition that Matthew wrote in Hebrew in Palestine, according to Eusebius when he was leaving it. The comparison row is the modern critical horizon of the introduction to Matthew in the *New American Bible, Revised Edition*, which concerns the Greek Gospel; it is shown beside the default answer and does not enter it. For the place where that Gospel was composed, the introduction calls Antioch, the capital of the Roman province of Syria, a plausible suggestion, not a settled fact.
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
 
-### Ephesians 6:10–17, the Epistle {#sec:date-ephesians}
+- **Composition, Catholic critical comparison** (preferred). The Greek Gospel of Matthew in the NABRE introduction: Post-A.D. 70 date (Catholic critical chronology; New American Bible, Revised Edition: USCCB web state (2026), Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25). Place: Antioch suggested (New American Bible, Revised Edition: USCCB web state (2026), Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25).
 
-Paul names himself (1:1) and writes as a prisoner (3:1; 4:1) and “an ambassador in a chain” (6:20). The first range shown is that of the *Catholic Encyclopedia*’s “Epistle to the Ephesians” (vol. 5, 1909), which sets the letter in an imprisonment no earlier than the captivity at Caesarea and reports that the greater number of interpreters take it as a circular letter; the year is from the table in its “St. Paul” (vol. 11, 1911), which places the letter in the Roman captivity with Philemon, Colossians and Philippians. Both are marked disputed. The comparison row is the hypothesis that the introduction to Ephesians in the *New American Bible, Revised Edition* offers as one possible explanation of the letter’s style and teaching, a later disciple developing Paul’s thought; it is shown beside the default answer and does not enter it.
+*Epistle: Eph. 6:10–17*
+
+- **Composition** (disputed). The Epistle to the Ephesians: A.D. 58–63 (“a period between 58 and 63”; The Catholic Encyclopedia, Volume 5 (New York, 1909)); A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)). Place: Rome or Caesarea; recipients in Asia Minor (The Catholic Encyclopedia, Volume 5 (New York, 1909)).
+
+- **Composition, Catholic critical comparison** (disputed). Ephesians under the later-disciple hypothesis (approximate): c. A.D. 80–100 (“around A.D. 80–100”; Catholic critical chronology; New American Bible, Revised Edition: USCCB web state (2026), The Letter to the Ephesians, complete introduction; especially prose paragraphs 3-4, physical HTML lines 626 and 628).
 
 ## Appendix: Scope and Qualifications {#sec:scope}
 
@@ -684,6 +688,6 @@ Paul names himself (1:1) and writes as a prisoner (3:1; 4:1) and “an ambassado
 
 - United States Conference of Catholic Bishops, *New American Bible, Revised Edition*, introductions to Job, the Psalms, Matthew and Ephesians, on their dating; summarised, not reproduced.
 
-**Last revised (UTC):** 2026-11-04T03:13:49Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

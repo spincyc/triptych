@@ -463,62 +463,79 @@ The Missal’s prayers are open to all three hearings because they say something
 
 ## Scriptural Date and Location {#sec:date-location}
 
-Each passage the Mass reads or sings from Scripture, once, in canonical order; beneath each, its attribution, its setting and the dates the shared chronology corpus holds for it. The Entrance Antiphon and the first Communion antiphon adapt Scripture and are placed at the verses they adapt; the three orations carry no biblical date.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Responsorial Psalm | Ps 25 (24):4–5, 6–7, 8–9; response v. 6a | No place named in the verses | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Responsorial Psalm: Ps. 25:4–5, 6–7, 8–9 (Heb.; Vg. 24), Ps. 25:6a (Heb.; Vg. 24) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion Antiphon (first): Cf. Psalm 118:49–50 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| First Reading: Ezech. 18:25–28 | Historical setting | Date pending its source qualification |
+|  | Prophecy given: The prophetic ministry of Ezechiel among the exiles by the river Chobar | “he prophesied during at least twenty-two years” (duration) |
+| Entrance Antiphon: Dan. 3:31, 29, 30, 43, 42 | Historical setting: The seventy years of servitude to Babylon; Judah and Babylon | “seventy years” (duration) |
+|  | Composition: Prayer of Azarias and Song of the Three Children | Most likely long after the Exile |
+| Gospel: Matt. 21:28–32 | Narrated event | Date unresolved |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Alleluia Verse: John 10:27 | Composition: John; Ephesus traditionally | Disputed: c. A.D. 90–100; A.D. 96–100 |
+| Second Reading (longer form): Phil. 2:1–11 | Composition: Philippians; Rome to Philippi in the cited account | Disputed: A.D. 61; A.D. 62–64 |
+| Second Reading (shorter form): Phil. 2:1–5 | Composition: Philippians; Rome to Philippi in the cited account | Disputed: A.D. 61; A.D. 62–64 |
+| Communion Antiphon (alternative): 1 John. 3:16 | Composition: First John; Ephesus probable | c. A.D. 90–100 |
 
-Inherited attribution: the Vulgate title *In finem. Psalmus David*, in the Douay–Rheims “Unto the end, a psalm for David” (24:1), ascribes the psalm to David; the title gives no date and does not place the psalm in his reign. An alphabetic prayer for guidance and pardon. The date shown is the Psalter’s common critical bound, taken from the introduction to the Psalms in the New American Bible Revised Edition, which holds that no individual psalm can be dated securely; it is not a date for this psalm.
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Communion Antiphon, first option | cf. Ps 119 (118):49–50, an adaptation | No place named in the verses | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+### Evidence for each date {#sec:date-location-evidence}
 
-The strophe of the letter Zain in the long alphabetic psalm on God’s law. The psalm has no attributive title, the Vulgate printing only *Alleluia*. Haydock reports its general attribution to David with competing occasions. The regnal era identifies David; the separate composition bound is the same common critical limit.
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| First Reading | Ezek 18:25–28 | Among the captives “by the river Chobar”, “in the land of the Chaldeans” (1:1–3); addressed to “the house of Israel” (18:25) | **Historical setting**: Preferred: The second captivity of Juda, under Jechonias, in the eighth year of his reign; alternatives: The second captivity of Juda, under Jechonias, A.M. 3405, The second captivity of Juda, under Jechonias, B.C. 597, The second captivity of Juda, under Jechonias, B.C. 598. **Prophecy given**: The prophetic ministry of Ezechiel among the exiles by the river Chobar, “he prophesied during at least twenty-two years” (duration). |
+*Responsorial Psalm: Ps. 25:4–5, 6–7, 8–9 (Heb.; Vg. 24), Ps. 25:6a (Heb.; Vg. 24)*
 
-Traditional attribution: “Ezechiel the priest the son of Buzi” (1:3). Chapter 18 carries no date formula; in the book’s order it falls between the oracles dated to the sixth year of the captivity (8:1) and the seventh (20:1). The setting answers date the captivity on which the book is framed, not this oracle. The preferred label is the Douay–Rheims phrase for Joachin’s surrender to Nabuchodonosor in the second captivity (4 Kgs 24:12), the year being that of Nabuchodonosor’s reign; the A.M. figure is Usher’s reckoning as Haydock reports it in his note on Psalm 70; and the first figure before the Christian era is the year of the surrender in the *Catholic Encyclopedia*’s article on the captivities (Reid). The prophecy row gives the length of Ezekiel’s ministry that the *Catholic Encyclopedia*’s article on the prophet (Schets) reads from 29:17; that article dates his deportation a year earlier than the article on the captivities.
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Entrance Antiphon | Dan 3:29–31, 42–43 (Vulgate), adapted | The furnace of Nabuchodonosor, “of the province of Babylon” (3:1, 20–25) | **Historical setting**: The seventy years of servitude to Babylon, “seventy years” (duration). **Composition**: Most likely long after the Exile. |
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-*Narrated event: the prayer of Azarias in the midst of the fire.*
+*Communion Antiphon (first): Cf. Psalm 118:49–50 (Vg.; Heb. 119)*
 
-The Missal cites the verses in the order 31, 29, 30, 43, 42. The prayer belongs to the portion of Daniel 3 that the Greek Bible and the Vulgate carry and the Hebrew does not, as Jerome notes. The setting answer is the seventy years of service to the king of Babylon foretold by Jeremias (Jer 25:11–12), the frame of the exile in which the book places the scene. The composition answer is the judgment of the *Catholic Encyclopedia*’s article on Daniel (Gigot), which ascribes chapter 3:24–90 to “some unknown Jewish author who lived long after the Exile”; the same paragraph reports that “nearly all Catholic writers” of its day referred the prayer to Daniel’s time, and it calls the difficulties against so early a date “wellnigh insuperable”.
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Gospel | Mt 21:28–32 | In the temple at Jerusalem, to “the chief priests and ancients of the people” (21:23) | **Event** – No narrated-event date in the chronology corpus. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. |
+- **Historical setting**. As under Responsorial Psalm: Ps. 25:4–5, 6–7, 8–9 (Heb.; Vg. 24), Ps. 25:6a (Heb.; Vg. 24).
 
-*Narrated event: a parable spoken in the temple after the question about Jesus’ authority and John’s baptism (21:23–27).*
+- **Composition**. As under Responsorial Psalm: Ps. 25:4–5, 6–7, 8–9 (Heb.; Vg. 24), Ps. 25:6a (Heb.; Vg. 24).
 
-Traditional attribution: St Matthew the Apostle. No date is held for the narrated event. The Date column keeps as disputed alternatives the figures the *Catholic Encyclopedia* reports. Its article on the Gospel (Jacquier) begins “Ancient ecclesiastical writers are at variance”, reports four figures from them and from a tradition of the apostles’ dispersal, and gives the years that “Catholic critics, in general, favour” where “opinion is rather divided”. The last figure is said in its article on the New Testament (Durand) of the original text of Matthew, which that author holds to have been Aramaic. These are dates of the book, not of the saying.
+*First Reading: Ezech. 18:25–28*
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Alleluia verse | Jn 10:27, with a speaker formula added | In Jerusalem, in the temple, “in Solomon’s porch”, at the feast of the Dedication, in winter (10:22–23) | **Composition** – disputed: c. A.D. 90–100; A.D. 96–100. |
+- **Historical setting**. No date: the corpus holds a date for this that it reports from another edition by exception, which is not printed until the corpus records the source’s own qualification of it (research pending).
 
-*Narrated event: Jesus’ answer to those who asked him to say plainly whether he was the Christ.*
+- **Prophecy given** (preferred). The prophetic ministry of Ezechiel among the exiles by the river Chobar: “he prophesied during at least twenty-two years” (duration) (The Catholic Encyclopedia, Volume 5 (New York, 1909); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ezech. 1:2, 29:17).
 
-Traditional attribution: St John the Apostle. The first range is the one the *Catholic Encyclopedia*’s article on the New Testament (Durand) gives for “the Johannine writings”; the second is “the general opinion” reported by its article on the Gospel (Fonck), after the admission that “we possess no certain historical information”. They date the book, not the discourse.
+*Entrance Antiphon: Dan. 3:31, 29, 30, 43, 42*
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Second Reading, longer form | Phil 2:1–11 | From Paul “in my bands” (1:7, 13), at Rome in the sources cited; to “all the saints in Christ Jesus who are at Philippi” (1:1) | **Composition** – disputed: A.D. 61; A.D. 62–64. |
-| Second Reading, shorter form | Phil 2:1–5 | As for the longer form | **Composition** – disputed: A.D. 61; A.D. 62–64. |
+- **Historical setting** (preferred). The seventy years of servitude to Babylon: “seventy years” (duration) (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Jer. 25:11, 25:12). Place: Judah and Babylon (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Jer. 25:11, 25:12).
 
-Traditional attribution: St Paul, writing in captivity. The first figure is the year the *Catholic Encyclopedia*’s chronology of St Paul (Prat) gives the letters of the captivity, within his Roman captivity; the second is the range its article on the letter (Vander Heeren) gives for Paul “at Rome”, where it adds that critics disagree whether the letter falls early or late in the Roman stay.
+- **Composition** (preferred). Prayer of Azarias and Song of the Three Children: Most likely long after the Exile (The Catholic Encyclopedia, Volume 4 (New York, 1908)).
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Communion Antiphon, second option | 1 Jn 3:16 | No place named in the letter | **Composition**: c. A.D. 90–100. |
+*Gospel: Matt. 21:28–32*
 
-Traditional attribution: St John the Apostle. The range is the one the *Catholic Encyclopedia*’s article on the New Testament (Durand) gives for “the Johannine writings”; its article on the Epistles of St John (Drum) finds the arguments “probable in favour of Ephesus and also for the last few years of the first century”.
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
+
+*Alleluia Verse: John 10:27*
+
+- **Composition** (disputed). The Gospel of St John: c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); A.D. 96–100 (“96 or one of the succeeding years”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Ephesus traditionally (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
+
+*Second Reading (longer form): Phil. 2:1–11*
+
+- **Composition** (disputed). The Epistle to the Philippians: A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 62–64 (“at Rome (A.D. 62-64)”; The Catholic Encyclopedia, Volume 12 (1911)). Place: Rome to Philippi in the cited account (The Catholic Encyclopedia, Volume 12 (1911); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Phil. 1:1).
+
+*Second Reading (shorter form): Phil. 2:1–5*
+
+- **Composition**. As under Second Reading (longer form): Phil. 2:1–11.
+
+*Communion Antiphon (alternative): 1 John. 3:16*
+
+- **Composition** (preferred). The First Epistle of St John: c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912); The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Ephesus probable (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
 
 ## Appendix: Liturgical Resolution {#sec:liturgical-resolution}
 
@@ -639,7 +656,7 @@ Traditional attribution: St John the Apostle. The range is the one the *Catholi
 
 - John Corbett, “David, King”, *The Catholic Encyclopedia*, vol. 4 (1908), p. 642: the usual chronology of David’s reign.
 
-**Last revised (UTC):** 2026-11-04T03:34:08Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

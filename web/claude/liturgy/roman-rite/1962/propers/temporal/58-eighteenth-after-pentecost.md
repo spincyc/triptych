@@ -496,53 +496,74 @@ Each reading ends where the Mass sends its people. The first leaves them at the 
 
 ## Scriptural Date and Location {#sec:date-location}
 
-Each passage the Mass reads or sings from Scripture, once, in canonical order; beneath each, its historical judgment and critical horizon.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Offertory | Ex 24:4–5, compiled | Sinai: an altar at the foot of the mount, with twelve titles for the twelve tribes of Israel (24:4) | **Event**: The sealing of the covenant at the foot of the mount, rising in the morning. |
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Offertory: Ex. 24:4–5 | Narrated event: The sealing of the covenant at the foot of the mount | Rising in the morning |
+| Communion: Ps. 95:8–9 (Vg.; Heb. 96) | Superscription setting: The raising of the second Temple by Zorobabel; Temple at Jerusalem | B.C. 537 |
+|  | Composition: Psalms | Before c. 165 B.C. |
+|  | Prophetic referent: The Nativity of Our Lord; Bethlehem as the Christian referent | Disputed: B.C. 3; c. B.C. 7 |
+| Alleluia: Ps. 101:16 (Vg.; Heb. 102) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gradual: Ps. 121:1 (Vg.; Heb. 122), Ps. 121:7 (Vg.; Heb. 122) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ps. 121:1 (Vg.; Heb. 122) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ecclus. 36:18 | Composition: Ecclesiasticus | Preferred: B.C. 190–170; alternative: c. B.C. 280 |
+| Gospel: Matt. 9:1–8 | Narrated event | Date unresolved |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Epistle: 1 Cor. 1:4–8 | Composition: The First Epistle to the Corinthians | Disputed: A.D. 56; A.D. 57 |
 
-*Narrated event: the ratifying of the covenant at Sinai, after Moses has told the people all the words of the Lord and they have answered with one voice (24:3); the altar is built “rising in the morning” (24:4), a relative date within the narrative.*
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-The chronology record dates the narrated event only, and only relatively; it holds no composition date for the Book of Exodus at these verses, and none is given here. The antiphon is the liturgy’s own compilation: beside the altar, holocausts and victims of 24:4–5 it sets the verb of Moses’ consecration of the altar (Lev 8:11; Num 7:1), the evening sacrifice and odour of sweetness of the daily offering (Ex 29:41; Ps 140:2), and the closing *in conspectu filiorum Israel* of 24:17, where the glory of the Lord is seen on the mountain.
+### Evidence for each date {#sec:date-location-evidence}
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Communion | Ps 95:8–9 (Heb. 96) | The house of God and its courts; by the title, the house built after the captivity, at Jerusalem | **Superscription setting**: The raising of the second Temple by Zorobabel, B.C. 537. **Composition**: Before c. 165 B.C. **Prophetic referent** – disputed: The Nativity of Our Lord, B.C. 3; The Nativity of Our Lord, c. B.C. 7. |
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-Titled in the Vulgate *Canticum ipsi David, quando domus aedificabatur post captivitatem*, “A canticle for David himself, when the house was built after the captivity” (v. 1). The title names David and a setting after the exile together; the chronology record reads that setting against the raising of the Temple from its ruins under Zorobabel after the return (the *Catholic Encyclopedia*, “Temple of Jerusalem”), and holds no Davidic era for the psalm. For its composition the record gives only the modern critical boundary for the whole Psalter, within which no single psalm can be dated securely. The third date is not a date of the psalm: the record reads Ps 95, with Pss 67, 96 and 97, as looking prophetically to Christ’s coming, and the two years it gives are two *Catholic Encyclopedia* articles’ dates for the Nativity.
+*Offertory: Ex. 24:4–5*
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Alleluia | Ps 101:16 (Heb. 102) | Sion, to be rebuilt and seen in glory (vv. 14, 17) | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+- **Narrated event** (preferred). The sealing of the covenant at the foot of the mount: Rising in the morning (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ex. 24:3, 24:4).
 
-Titled “The prayer of the poor man, when he was anxious, and poured out his supplication before the Lord” (v. 1); the title names no author, and the chronology record holds no traditional date for the psalm. Its lament turns at verse 14 to Sion, on which the Lord will have mercy, and verse 17 gives the reason for the nations’ fear: “the Lord hath built up Sion”. The date is the Psalter’s critical boundary only.
+*Communion: Ps. 95:8–9 (Vg.; Heb. 96)*
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Gradual | Ps 121:1, 7 (Heb. 122); verse 1 is also the Introit’s verse | Jerusalem: the house of the Lord, and the city’s courts, walls and towers (vv. 1–7) | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+- **Superscription setting** (preferred). The raising of the second Temple by Zorobabel: B.C. 537 (“(537 B.C.)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Temple at Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 95:1, 1 Esd. 3:8).
 
-Titled in the Vulgate *Canticum graduum*, one of the Songs of Ascents (from Ps 119 to Ps 133 in the Missal’s numbering), sung by pilgrims going up to the house of the Lord; the Vulgate title names no author, and the chronology record holds no traditional date for the psalm. Among its ancient interpreters St John Chrysostom and Theodoret set it at the return from the Babylonian exile, of a city whose walls and towers lay in ruins. The date is the Psalter’s critical boundary only.
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Introit | Ecclus 36:18 (the antiphon, adapted); its verse, Ps 121:1, stands with the Gradual | “Jesus the son of Sirach, of Jerusalem” (50:29), praying for Jerusalem and Sion (36:14–16) | **Historical setting** – Occasion date unresolved. **Composition** – No single date applies across every cited locus. |
+- **Prophetic referent** (disputed). The Nativity of Our Lord: B.C. 3 (“the year of Rome 750 which he styles 3 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)); c. B.C. 7 (“probably the year 7 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)). Place: Bethlehem as the Christian referent (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 2:1).
 
-Traditional attribution: Jesus the son of Sirach, whom the Greek prologue names and whom the Greek and Latin text calls a man of Jerusalem (50:29); his grandson rendered the book into Greek after coming into Egypt (*Catholic Encyclopedia*, “Ecclesiasticus”, which calls the authorship universally assigned to him). The chapter is a prayer for Israel’s deliverance, for Jerusalem, and for the fulfilment of the prophets’ words. The chronology record dates the element’s composition passage by passage. Ecclus 36:18: B.C. 190–170 or c. B.C. 280, the composition of the Book of Ecclesiasticus under the traditional Catholic profile, the interval preferred and the approximate year its alternate, both from the *Catholic Encyclopedia*’s article “Ecclesiasticus” (1909). Ps 121:1: before c. 165 B.C., the Psalter’s critical composition boundary, already given with the Gradual. Neither date holds at both loci, so the Date cell gives the element none. The antiphon’s wording is liturgical: at its opening and its close it is neither the Vulgate’s nor the Greek’s.
+*Alleluia: Ps. 101:16 (Vg.; Heb. 102)*
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Gospel | Mt 9:1–8 | Matthew in Judea, for the Jews, before his departure from Jerusalem. Event: “his own city” across the lake (9:1), Capernaum for Chrysostom, Nazareth for Jerome | **Event** – No narrated-event date in the chronology corpus. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. |
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-*Narrated event: the healing of the paralytic, after the crossing from the country of the Gerasens (8:28–9:1) and before the call of Matthew (9:9); the chronology record gives the episode no date.*
+- **Composition**. As under Communion: Ps. 95:8–9 (Vg.; Heb. 96).
 
-Traditional attribution: St Matthew the Apostle, whom the Missal’s heading names (*secundum Matthaeum*). The Date column keeps the *Catholic Encyclopedia*’s ranges as disputed alternatives, not equally established estimates. The article “Gospel of St. Matthew” (1911) reports early writers who count eight or fifteen years after the Ascension; a dispersal of the Apostles by a tradition it calls “admittedly not too reliable”; the Catholic critics of its own day; a later apostolic departure after Eusebius; and St Irenaeus, whose statement it finds too uncertain for any positive conclusion. The article “The New Testament” (1912) dates the Aramaic original alone and says nothing definite of its rendering into Greek. The Matthew article gives the first hearers and the place: the ecclesiastical writers “agree in declaring that St. Matthew wrote his Gospel for the Jews”, and the Evangelist, having preached to the Hebrews, wrote in his mother tongue “before his departure from Jerusalem”. The same article reports the Protestant and liberal critics of its day as widely divided, from shortly before the fall of Jerusalem to well into the second century. The town in the Location column locates the healing the Gospel narrates, not the writing of the Gospel.
+*Gradual: Ps. 121:1 (Vg.; Heb. 122), Ps. 121:7 (Vg.; Heb. 122)*
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Epistle | 1 Cor 1:4–8 | Paul at Ephesus (16:8), to “the church of God that is at Corinth” (1:2) | **Composition** – disputed: A.D. 56; A.D. 57. |
+- **Historical setting**. As under Alleluia: Ps. 101:16 (Vg.; Heb. 102).
 
-Traditional attribution: St Paul, with Sosthenes named beside him (1:1). The *Catholic Encyclopedia*’s article on the Epistles to the Corinthians (1908) has Paul, at Ephesus, learn of party strife and other disorders at Corinth and of a letter from the Corinthians, write at once, and send the Epistle by Titus; the chronological table in the article “St. Paul” (1911) gives the year of the letters to Corinth and Galatia. The two dates are two Catholic authorities disagreeing, and both are shown. The first article calls the historical and internal evidence for Paul’s authorship so strong that the most advanced critical schools of its day admitted it. The same article describes Corinth as a centre of traffic and wealth, in which Paul had spent upwards of eighteen months.
+- **Composition**. As under Communion: Ps. 95:8–9 (Vg.; Heb. 96).
+
+*Introit: Ps. 121:1 (Vg.; Heb. 122)*
+
+- **Historical setting**. As under Alleluia: Ps. 101:16 (Vg.; Heb. 102).
+
+- **Composition**. As under Communion: Ps. 95:8–9 (Vg.; Heb. 96).
+
+*Introit: Ecclus. 36:18*
+
+- **Composition** (answers differ). Ecclesiasticus: preferred: B.C. 190–170 (“between 190 and 170 B.C.”; The Catholic Encyclopedia, Volume 5 (New York, 1909)); alternative: c. B.C. 280 (“about 280 B.C.”; The Catholic Encyclopedia, Volume 5 (New York, 1909)).
+
+*Gospel: Matt. 9:1–8*
+
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
+
+*Epistle: 1 Cor. 1:4–8*
+
+- **Composition** (disputed). The First Epistle to the Corinthians: A.D. 56 (“(1 and 2 Corinthians; Galatians), 56”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 57 (“about Easter A.D. 57”; The Catholic Encyclopedia, Volume 4 (New York, 1908)).
 
 ## Appendix: Scope and Qualifications {#sec:scope}
 
@@ -658,6 +679,6 @@ Traditional attribution: St Paul, with Sosthenes named beside him (1:1). The *Ca
 
 - Fraternité Saint-Pierre (France), *Ordo du mois*, entry for 27 September 2026; Institut du Christ Roi Souverain Prêtre (France), *Ordo*, entry for 27 September 2026.
 
-**Last revised (UTC):** 2026-11-04T03:34:08Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -493,60 +493,79 @@ The shorter form of the Gospel changes the balance. Where it is read, the third 
 
 ## Scriptural Date and Location {#sec:date-location}
 
-Each passage the Mass reads or sings from Scripture, once, in canonical order; beneath each, its attribution, its setting and the dates the shared chronology corpus holds for it. The Entrance Antiphon, both Communion antiphons and the Alleluia verse adapt Scripture and are placed at the verses they adapt; the three orations carry no biblical date.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Responsorial Psalm | Ps 23 (22):1–3a, 3b–4, 5, 6; response v. 6cd | No place named in the verses | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Responsorial Psalm: Ps. 23:1–3a, 3b–4, 5, 6 (Heb.; Vg. 22), Ps. 23:6cd (Heb.; Vg. 22) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion Antiphon (first): Cf. Psalm 33:11 (Vg.; Heb. 34) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Superscription setting: David’s flight to Achis, king of Geth; Geth, at the Philistine court | A.M. 2944 (Haydock edition reporting Ussher) |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Entrance Antiphon: Ps. 129:3–4 (Vg.; Heb. 130) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| First Reading: Is. 25:6–10a | Traditional attribution: Isaias (ministry in Souvay’s traditional account); Judah and Jerusalem | B.C. 740–701 |
+| Gospel (longer form): Matt. 22:1–14 | Narrated event: The parable of the marriage feast, proposed in the Temple | A.D. 29 (derived) |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Gospel (shorter form): Matt. 22:1–10 | Narrated event: The parable of the marriage feast, proposed in the Temple | A.D. 29 (derived) |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Alleluia Verse: Cf. Ephesians 1:17–18 | Composition: Ephesians; Rome or Caesarea; recipients in Asia Minor | Disputed: A.D. 58–63; A.D. 61 |
+| Second Reading: Phil. 4:12–14, 19–20 | Composition: Philippians; Rome to Philippi in the cited account | Disputed: A.D. 61; A.D. 62–64 |
+| Communion Antiphon (alternative): 1 John. 3:2 | Composition: First John; Ephesus probable | c. A.D. 90–100 |
 
-Inherited attribution: the Vulgate title *Psalmus David*, in the Douay–Rheims “A psalm for David” (22:1), ascribes the psalm to David; the title gives no date or occasion, and the corpus holds no date for the ascription. The setting answer is unresolved because the psalm names no occasion. The composition date shown is the Psalter’s common critical bound, taken from the introduction to the Psalms in the New American Bible Revised Edition, which holds that no individual psalm can be dated securely; it is not a date for this psalm.
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Communion Antiphon, first option | cf. Ps 34 (33):11, an adaptation | By the title, the court of Geth, where David fled from Saul to Achis (1 Kgs 21:10) | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Superscription setting**: David’s flight to Achis, king of Geth, A.M. 2944. **Composition**: Before c. 165 B.C. |
+### Evidence for each date {#sec:date-location-evidence}
 
-*Narrated event, by the title: David changing his countenance before Achimelech (33:1); the Douay–Rheims refers the title to 1 Kings 21, where David feigns madness before Achis, king of Geth (21:10–15).*
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-Inherited attribution: the title “For David” (33:1). The attribution answer is David’s reign in the usual chronology reported by the *Catholic Encyclopedia*’s article on David (Corbett), which sets it beside later datings; the corpus marks it disputed. The superscription answer dates the episode the title names, on the A.M. reckoning that Haydock’s notes report; it is the title’s own assertion and not a date of composition. The composition answer is the Psalter’s common bound, not a date for this psalm. The antiphon’s “rich” is the Latin and Greek reading; the Hebrew has young lions.
+*Responsorial Psalm: Ps. 23:1–3a, 3b–4, 5, 6 (Heb.; Vg. 22), Ps. 23:6cd (Heb.; Vg. 22)*
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Entrance Antiphon | Ps 130 (129):3–4, an adaptation | No place named in the verses | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-A song of ascents, titled *Canticum graduum*, “A gradual canticle”; the title names no author and no occasion, and the setting answer is unresolved. The composition answer is the Psalter’s common bound, not a date for this psalm. The antiphon uses v. 3 and the first clause of v. 4; the query reaches the whole of both verses.
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| First Reading | Is 25:6–10a | “In this mountain” (25:6, 7, 10), the “mount Sion” and Jerusalem where the Lord of hosts reigns (24:23); the vision “concerning Juda and Jerusalem” (1:1) | **Traditional attribution**: Isaias (ministry in Souvay’s traditional account), B.C. 740–701. |
+*Communion Antiphon (first): Cf. Psalm 33:11 (Vg.; Heb. 34)*
 
-Traditional attribution: “Isaias the son of Amos” (1:1). The answer is the length of the prophet’s ministry as the *Catholic Encyclopedia*’s article on Isaias (Souvay) gives it, from the last year of King Ozias to the latest prophecies it admits; the same article reports an old tradition that the prophet lived into the reign of Manasses, which the answer does not carry. It dates the prophet, not chapters 24–27 or this oracle, for which the corpus holds no composition date. The query for v. 10 also covers the clause on Moab, which is not read.
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Gospel, longer form | Mt 22:1–14 | In the temple at Jerusalem, to “the chief priests and ancients of the people” (21:23) | **Event**: The parable of the marriage feast, proposed in the Temple, A.D. 29 (derived). **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. |
-| Gospel, shorter form | Mt 22:1–10 | As for the longer form | **Event**: The parable of the marriage feast, proposed in the Temple, A.D. 29 (derived). **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. |
+- **Superscription setting** (preferred). David’s flight to Achis, king of Geth: A.M. 2944 (Haydock edition reporting Ussher) (“A. M. 2944, A. C. 1060”; Douay Rheims Edition of the Holy Catholic Bible with a Comprehensive Catholic Commentary, William Peter Feeney 2014 Memorial Edition, 1K.21.1-15; Douay Rheims Edition of the Holy Catholic Bible with a Comprehensive Catholic Commentary, William Peter Feeney 2014 Memorial Edition, Ps.70.1). Place: Geth, at the Philistine court (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 33:1, 1 Kings 21:10, 21:15).
 
-*Narrated event: a parable spoken in the temple, after the question about Jesus’ authority (21:23–27) and the parables of the two sons and of the vineyard.*
+- **Composition**. As under Responsorial Psalm: Ps. 23:1–3a, 3b–4, 5, 6 (Heb.; Vg. 22), Ps. 23:6cd (Heb.; Vg. 22).
 
-Traditional attribution: St Matthew the Apostle. The event answer dates the telling of the parable, not the wedding it narrates: it is a derivation within the chronology of the *Catholic Encyclopedia*’s article on Jesus Christ (Maas), which places the parable of the marriage feast on the Tuesday of the last week in Jerusalem. The composition answers keep as disputed alternatives the figures the *Catholic Encyclopedia* reports. Its article on the Gospel (Jacquier) gives four from the ancient writers, who “are at variance”, and the years that “Catholic critics, in general, favour” where “opinion is rather divided”; the last figure is said in its article on the New Testament (Durand) of the original text of Matthew, which that author holds to have been Aramaic. These are dates of the book, not of the saying.
+*Entrance Antiphon: Ps. 129:3–4 (Vg.; Heb. 130)*
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Alleluia verse | cf. Eph 1:17–18, an adaptation | From Paul, “the prisoner of Jesus Christ” (3:1); to “all the saints who are at Ephesus” (1:1) | **Composition** – disputed: A.D. 58–63; A.D. 61. |
+- **Historical setting**. As under Responsorial Psalm: Ps. 23:1–3a, 3b–4, 5, 6 (Heb.; Vg. 22), Ps. 23:6cd (Heb.; Vg. 22).
 
-Traditional attribution: St Paul, writing in captivity. The first range is the one the *Catholic Encyclopedia*’s article on the letter gives for the letters of the captivity, where it leaves the place of the captivity, Caesarea or Rome, “a much mooted question”; the second figure is the year its chronology of St Paul (Prat) gives those letters. They date the letter, not the liturgical verse made from it.
+- **Composition**. As under Responsorial Psalm: Ps. 23:1–3a, 3b–4, 5, 6 (Heb.; Vg. 22), Ps. 23:6cd (Heb.; Vg. 22).
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Second Reading | Phil 4:12–14, 19–20 | From Paul “in my bands” (1:7, 13), with greetings from “Caesar’s household” (4:22); to “all the saints in Christ Jesus who are at Philippi” (1:1) | **Composition** – disputed: A.D. 61; A.D. 62–64. |
+*First Reading: Is. 25:6–10a*
 
-Traditional attribution: St Paul, writing in captivity. The first figure is the year the *Catholic Encyclopedia*’s chronology of St Paul (Prat) gives the letters of the captivity, within his Roman captivity; the second is the range its article on the letter (Vander Heeren) gives for Paul “at Rome”, which it calls “the nearly unanimous opinion”.
+- **Traditional attribution** (preferred). Isaias (ministry in Souvay’s traditional account): B.C. 740–701 (“from the closing year of Ozias, King of Juda (740 B.C.); no prophecies appear to be later than 701 B.C.”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Judah and Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Is. 1:1).
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Communion Antiphon, second option | 1 Jn 3:2, an adaptation | No place named in the letter | **Composition**: c. A.D. 90–100. |
+*Gospel (longer form): Matt. 22:1–14*
 
-Traditional attribution: St John the Apostle. The range is the one the *Catholic Encyclopedia*’s article on the New Testament (Durand) gives for “the Johannine writings”; its article on the Epistles of St John (Drum) finds the arguments “probable in favour of Ephesus and also for the last few years of the first century”.
+- **Narrated event** (preferred). The parable of the marriage feast, proposed in the Temple: A.D. 29 (derived) (“derived A.D. 29 from February, A.U.C. 782- Passover, 782”; The Catholic Encyclopedia, Volume 8 (New York, 1910), article ’Jesus Christ,’ III.B.3, printed p. 378 and pp. 380-381: chronological calibration and Sixth, Seventh, and Ninth Journeys).
+
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
+
+*Gospel (shorter form): Matt. 22:1–10*
+
+- **Narrated event**. As under Gospel (longer form): Matt. 22:1–14.
+
+- **Composition**. As under Gospel (longer form): Matt. 22:1–14.
+
+*Alleluia Verse: Cf. Ephesians 1:17–18*
+
+- **Composition** (disputed). The Epistle to the Ephesians: A.D. 58–63 (“a period between 58 and 63”; The Catholic Encyclopedia, Volume 5 (New York, 1909)); A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)). Place: Rome or Caesarea; recipients in Asia Minor (The Catholic Encyclopedia, Volume 5 (New York, 1909)).
+
+*Second Reading: Phil. 4:12–14, 19–20*
+
+- **Composition** (disputed). The Epistle to the Philippians: A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 62–64 (“at Rome (A.D. 62-64)”; The Catholic Encyclopedia, Volume 12 (1911)). Place: Rome to Philippi in the cited account (The Catholic Encyclopedia, Volume 12 (1911); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Phil. 1:1).
+
+*Communion Antiphon (alternative): 1 John. 3:2*
+
+- **Composition** (preferred). The First Epistle of St John: c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912); The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Ephesus probable (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
 
 ## Appendix: Liturgical Resolution {#sec:liturgical-resolution}
 
@@ -677,6 +696,6 @@ Traditional attribution: St John the Apostle. The range is the one the *Catholi
 
 - George Leo Haydock, notes on 1 Kings 21 and Psalm 70, in the Douay–Rheims Bible with Haydock’s commentary, as the chronology corpus records them for the A.M. figure.
 
-**Last revised (UTC):** 2026-10-08T18:33:23Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

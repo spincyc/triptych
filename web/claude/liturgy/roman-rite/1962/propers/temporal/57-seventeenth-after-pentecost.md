@@ -499,51 +499,78 @@ Each reading ends at the same place, the silence that closes the Gospel. “No m
 
 ## Scriptural Date and Location {#sec:date-location}
 
-Each passage the Mass reads or sings from Scripture, once, in canonical order; beneath each, its historical judgment and critical horizon.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Gradual | Ps 32:6, 12 (Heb. 33) | No place named | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Gradual: Ps. 32:12 (Vg.; Heb. 33), Ps. 32:6 (Vg.; Heb. 33) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: Ps. 75:12–13 (Vg.; Heb. 76) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Ps. 101:2 (Vg.; Heb. 102) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ps. 118:137 (Vg.; Heb. 119), Ps. 118:124 (Vg.; Heb. 119), Ps. 118:1 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Offertory: Dan. 9:17–19 | Historical setting: The seventy years of servitude to Babylon; Judah and Babylon | “seventy years” (duration) |
+|  | Composition: Daniel; Babylonian setting | B.C. 570–536 |
+| Gospel: Matt. 22:34–46 | Narrated event | Date unresolved |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+|  | Composition, Catholic critical comparison: Greek Matthew; Antioch suggested | Post-A.D. 70 date |
+| Epistle: Eph. 4:1–6 | Composition: Ephesians; Rome or Caesarea; recipients in Asia Minor | Disputed: A.D. 58–63; A.D. 61 |
 
-Titled *Psalmus David*, “A psalm for David” (v. 1): a Davidic attribution whose displayed regnal era is a reference point, not a composition date. A hymn of the just to God’s creating word (vv. 1–9) and to the nation he chose (v. 12). The composition bound is the modern critical boundary for the whole Psalter, within which no single psalm can be dated securely.
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Communion | Ps 75:12–13 (Heb. 76) | Judea and Sion named as God’s dwelling (vv. 2–3) | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+### Evidence for each date {#sec:date-location-evidence}
 
-Titled “a psalm for Asaph: a canticle to the Assyrians” (v. 1), with no date or era attached. God broke the weapons of war in Sion and rose to judgment “to save all the meek of the earth” (vv. 4, 10). The date is the Psalter’s critical boundary only.
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Alleluia | Ps 101:2 (Heb. 102) | Sion named in the psalm’s turn to hope (vv. 14, 17) | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+*Gradual: Ps. 32:12 (Vg.; Heb. 33), Ps. 32:6 (Vg.; Heb. 33)*
 
-Titled “The prayer of the poor man, when he was anxious” (v. 1); no author named, no traditional date held. The fifth penitential psalm, moving from lament to the rebuilding of Sion. The date is the Psalter’s critical boundary only.
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Introit | Ps 118:1, 124, 137 (Heb. 119) | No place named | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-An alphabetical psalm in praise of God’s law, with no title beyond *Alleluia*. Haydock reports its general attribution to David while preserving competing occasions. The regnal era identifies David; the composition bound remains the Psalter’s critical boundary.
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Offertory | Dan 9:17–19, compiled | Daniel at the court of Babylon; for the Jews of his own time and after. Event: the kingdom of the Chaldeans, first year of Darius the Mede (9:1); prayer for the desolate sanctuary of Jerusalem (9:17) | **Historical setting**: The seventy years of servitude to Babylon, “seventy years” (duration). **Composition**: B.C. 570–536. |
+*Communion: Ps. 75:12–13 (Vg.; Heb. 76)*
 
-Traditional attribution: Daniel the prophet, in the Exile, telling his own prayer (“I, Daniel”, 9:2) when he understood from Jeremias that the seventy years of desolation were ending. The 1908 *Catholic Encyclopedia* article that holds the traditional date sets against it a more recent critical theory, widely accepted by scholars of its time, that an unknown later author composed the book; no date is given for that position here. The same article’s grounds for the traditional position give the place and the hearers: only “a resident in Babylon” could have written the book’s details, and Daniel, “owing to his position at the court of Babylon”, wrote “for the comfort of the Jews of his time and of subsequent ages”. For the later author it supposes, the article names no place of writing at all.
+- **Historical setting**. As under Gradual: Ps. 32:12 (Vg.; Heb. 33), Ps. 32:6 (Vg.; Heb. 33).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Gospel | Mt 22:34–46 | Matthew in Judea, before he left Jerusalem; to the Jews who had believed. Event: the Temple, Jerusalem (21:23) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Composition (Catholic critical chronology, for comparison)**: The Greek Gospel of Matthew in the NABRE introduction, post-A.D. 70 date. |
+- **Composition**. As under Gradual: Ps. 32:12 (Vg.; Heb. 33), Ps. 32:6 (Vg.; Heb. 33).
 
-*Narrated event: the last of Christ’s controversies in the Temple (21:23–22:46), before the Passion is foretold “after two days” (26:1–2).*
+*Alleluia: Ps. 101:2 (Vg.; Heb. 102)*
 
-Traditional attribution: St Matthew the Apostle, whom the Missal’s heading names (*secundum Matthaeum*); the Date column keeps the traditional ranges of the *Catholic Encyclopedia* (1911, 1912) as disputed alternatives, not equally established estimates. Jacquier’s c. A.D. 38–45 counts eight or fifteen years after the Ascension with early writers; c. A.D. 40–42 follows an apostolic dispersal tradition he calls “admittedly not too reliable”; A.D. 40–45 reports the Catholic critics of his own day. His c. A.D. 60–68 depends on a later proposed apostolic departure; his c. A.D. 64–67 rests on Irenaeus’s statement about Peter and Paul at Rome, whose difficulties of interpretation prevent a positive conclusion. Durand’s c. A.D. 50 concerns the Aramaic original alone; he leaves the Greek rendering undated. Outside its date section Jacquier’s article gives the first hearers and the place of writing: the ecclesiastical writers “agree in declaring that St. Matthew wrote his Gospel for the Jews”; Origen holds that it was “published for Jews converted to the Faith”; Jerome, summarizing tradition, that Matthew “published his Gospel in Judea and in the Hebrew language, principally for those among the Jews who believed in Jesus”; the article has him write “before his departure from Jerusalem”. One qualification it quotes without adopting: Zahn thinks the book meant rather for Jews not yet Christians. The NABRE introduction’s critical account concerns the Greek Gospel: after A.D. 70, probably at least a decade later, with the overall account presented as probable. It describes an anonymous evangelist using Mark and other traditions, and Jewish and Gentile Christian readers. Antioch in Roman Syria is a plausible suggestion, not an established writing-place. The Temple above locates the controversy the Gospel narrates, not the writing of the Gospel; the corpus gives that encounter no date.
+- **Historical setting**. As under Gradual: Ps. 32:12 (Vg.; Heb. 33), Ps. 32:6 (Vg.; Heb. 33).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Epistle | Eph 4:1–6 | Paul, “a prisoner in the Lord” (4:1), at Rome or Caesarea; to the saints at Ephesus (1:1) | **Composition** – disputed: A.D. 58–63; A.D. 61. |
+- **Composition**. As under Gradual: Ps. 32:12 (Vg.; Heb. 33), Ps. 32:6 (Vg.; Heb. 33).
 
-Traditional attribution: St Paul, in a letter of his captivity; the *Catholic Encyclopedia* dates the captivity letters within the range shown, leaving Rome or Caesarea open (1909), and its chronology of St Paul gives Ephesians the single year shown (1911). The first hearers are the church at Ephesus, gentiles once “afar off” and now “made nigh” (2:11–18). Most liberal critics since Schleiermacher have denied the letter to Paul (so the 1909 article); no date is given for that position here. That article also holds the words “at Ephesus” in 1:1 to be no part of the primitive text, and reads the letter as a circular to churches Paul had not visited, probably in Asia Minor; the address above is the received biblical text, not a settled identification of the first recipients.
+*Introit: Ps. 118:137 (Vg.; Heb. 119), Ps. 118:124 (Vg.; Heb. 119), Ps. 118:1 (Vg.; Heb. 119)*
+
+- **Traditional attribution**. As under Gradual: Ps. 32:12 (Vg.; Heb. 33), Ps. 32:6 (Vg.; Heb. 33).
+
+- **Historical setting**. As under Gradual: Ps. 32:12 (Vg.; Heb. 33), Ps. 32:6 (Vg.; Heb. 33).
+
+- **Composition**. As under Gradual: Ps. 32:12 (Vg.; Heb. 33), Ps. 32:6 (Vg.; Heb. 33).
+
+*Offertory: Dan. 9:17–19*
+
+- **Historical setting** (preferred). The seventy years of servitude to Babylon: “seventy years” (duration) (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Jer. 25:11, 25:12). Place: Judah and Babylon (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Jer. 25:11, 25:12).
+
+- **Composition** (preferred). The Book of Daniel: B.C. 570–536 (“admits 570-536 B.C. as its date of composition”; The Catholic Encyclopedia, Volume 4 (New York, 1908)). Place: Babylonian setting (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Dan. 1:1, 1:6, 7:1).
+
+*Gospel: Matt. 22:34–46*
+
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
+
+- **Composition, Catholic critical comparison** (preferred). The Greek Gospel of Matthew in the NABRE introduction: Post-A.D. 70 date (Catholic critical chronology; New American Bible, Revised Edition: USCCB web state (2026), Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25). Place: Antioch suggested (New American Bible, Revised Edition: USCCB web state (2026), Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25).
+
+*Epistle: Eph. 4:1–6*
+
+- **Composition** (disputed). The Epistle to the Ephesians: A.D. 58–63 (“a period between 58 and 63”; The Catholic Encyclopedia, Volume 5 (New York, 1909)); A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)). Place: Rome or Caesarea; recipients in Asia Minor (The Catholic Encyclopedia, Volume 5 (New York, 1909)).
 
 ## Appendix: Scope and Qualifications {#sec:scope}
 
@@ -647,6 +674,6 @@ Traditional attribution: St Paul, in a letter of his captivity; the *Catholic En
 
 - John Corbett, “David, King”, *The Catholic Encyclopedia*, vol. 4 (1908), p. 642: the usual chronology of David’s reign.
 
-**Last revised (UTC):** 2026-11-04T03:34:08Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

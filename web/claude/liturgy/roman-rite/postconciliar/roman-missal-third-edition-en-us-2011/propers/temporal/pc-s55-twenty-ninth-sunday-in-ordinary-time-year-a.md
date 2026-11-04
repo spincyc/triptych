@@ -521,7 +521,7 @@ The first and the third can be preached together without strain: render yourself
 
 ## Scriptural Date and Location {#sec:date-location}
 
-Each passage the Mass reads or sings from Scripture, in canonical order, with what is dated, where it belongs, and the date the Scripture chronology corpus gives for it. A passage whose parts are dated differently has a row for each part; rows that share one answer name every element that uses it. The Entrance Antiphon, both Communion antiphons and the Alleluia verse are placed at the verses they adapt or excerpt; the three orations carry no biblical date. The notes beneath give each passage’s setting, attribution and dating evidence.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
@@ -543,59 +543,55 @@ Each passage the Mass reads or sings from Scripture, in canonical order, with wh
 
 Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-##### Setting notes.
+### Evidence for each date {#sec:date-location-evidence}
 
-**Entrance Antiphon: Cf. Psalm 16:6, 8 (Vulgate numbering; Hebrew 17); Communion Antiphon (first): Cf. Psalm 32:18–19 (Vulgate numbering; Hebrew 33)**. Occasion and place unknown; the psalms’ titles name none.
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-**Entrance Antiphon: Cf. Psalm 16:6, 8 (Vulgate numbering; Hebrew 17); Responsorial Psalm: Psalm 96:1, 3, 4–5, 7–8, 9–10a, 10c, Psalm 96:7b (Hebrew numbering; Vulgate 95); Communion Antiphon (first): Cf. Psalm 32:18–19 (Vulgate numbering; Hebrew 33)**. Place of composition unknown.
+*Entrance Antiphon: Cf. Psalm 16:6, 8 (Vg.; Heb. 17)*
 
-**Communion Antiphon (first): Cf. Psalm 32:18–19 (Vulgate numbering; Hebrew 33)**. Ascribed to David by its Latin and Greek title; David reigns at Hebron, then at Jerusalem. The reign dates David, not the psalm.
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-**Responsorial Psalm: Psalm 96:1, 3, 4–5, 7–8, 9–10a, 10c, Psalm 96:7b (Hebrew numbering; Vulgate 95)**. The house rebuilt after the captivity, named in the psalm’s Latin and Greek title: the Temple at Jerusalem.
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-**Responsorial Psalm: Psalm 96:1, 3, 4–5, 7–8, 9–10a, 10c, Psalm 96:7b (Hebrew numbering; Vulgate 95)**. The Messiah’s coming that the Fathers read in this psalm, taken as the Nativity at Bethlehem.
+*Communion Antiphon (first): Cf. Psalm 32:18–19 (Vg.; Heb. 33)*
 
-**First Reading: Isaiah 45:1, 4–6**. Isaias, a citizen of Jerusalem, prophesies concerning Juda and Jerusalem.
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-**First Reading: Isaiah 45:1, 4–6**. An unnamed prophet, place not stated; his oracles bid the exiles go out of Babylon.
+- **Historical setting**. As under Entrance Antiphon: Cf. Psalm 16:6, 8 (Vg.; Heb. 17).
 
-**Gospel: Matthew 22:15–21**. Jesus answers the tribute question while teaching in the temple at Jerusalem.
+- **Composition**. As under Entrance Antiphon: Cf. Psalm 16:6, 8 (Vg.; Heb. 17).
 
-**Gospel: Matthew 22:15–21**. Matthew writes for Jewish readers; the place is not fixed (Eusebius: on leaving Palestine).
+*Responsorial Psalm: Ps. 96:1, 3, 4–5, 7–8, 9–10a, 10c (Heb.; Vg. 95), Ps. 96:7b (Heb.; Vg. 95)*
 
-**Communion Antiphon (alternative): Mark 10:45**. Mark writes at Rome for Roman Christians (Chrysostom names Egypt).
+- **Superscription setting** (preferred). The raising of the second Temple by Zorobabel: B.C. 537 (“(537 B.C.)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Temple at Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 95:1, 1 Esd. 3:8).
 
-**Alleluia Verse: Philippians 2:15d, 16a**. Paul writes from captivity at Rome (some say Caesarea) to the church at Philippi.
+- **Composition**. As under Entrance Antiphon: Cf. Psalm 16:6, 8 (Vg.; Heb. 17).
 
-**Second Reading: 1 Thessalonians 1:1–5b**. Paul writes from Corinth (an ancient subscription says Athens) to the church at Thessalonica.
+- **Prophetic referent** (disputed). The Nativity of Our Lord: B.C. 3 (“the year of Rome 750 which he styles 3 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)); c. B.C. 7 (“probably the year 7 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)). Place: Bethlehem as the Christian referent (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 2:1).
 
-### Psalms 17 (16), 33 (32) and 96 (95): the antiphons and the psalm {#sec:date-psalms}
+*First Reading: Is. 45:1, 4–6*
 
-None of the three psalms names an occasion in a way the chronology record can date, except for Psalm 96 (95), whose Latin and Greek title does. The “Historical setting” row says so for the Entrance Antiphon’s psalm and the first Communion antiphon’s: the Vulgate titles them “The prayer of David” and “A psalm for David” without naming an event or a place. The composition date shown for all three is the bound that the introduction to the Psalms in the *New American Bible, Revised Edition* sets for the whole Psalter, within which, it holds, no individual psalm can be dated securely. It is not a date for any of these three.
+- **Traditional attribution** (preferred). Isaias (ministry in Souvay’s traditional account): B.C. 740–701 (“from the closing year of Ozias, King of Juda (740 B.C.); no prophecies appear to be later than 701 B.C.”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Judah and Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Is. 1:1).
 
-Psalm 33 (32) alone carries an attribution answer. Its title, *Psalmus David* in the Clementine and *Tō Daueid* in the Greek, ascribes it to David, and the record dates David’s reign in what the *Catholic Encyclopedia*’s “David” (Corbett, vol. 4) calls “the usual chronology”, marked disputed because the article reports later datings beside it. The same article places David’s kingship first at Hebron and then at Jerusalem. The reign is the reference point of the attribution and not a date of the psalm. Psalm 17 (16) is also titled for David in the Vulgate, but the record holds no attribution answer for it, and none is given.
+- **Prophecy given** (preferred). The prophetic activity behind Isaiah 40-55 in the NABRE introduction: Toward the end of the Babylonian exile (Catholic critical chronology; New American Bible, Revised Edition: USCCB web state (2026), Isaiah introduction, especially the final two prose paragraphs before the outline). Place: exiles from Babylon; restoration to Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Is. 48:20, 52:9).
 
-Psalm 96 (95) is the responsorial psalm. Its title in the Clementine and in Swete’s Septuagint sets it “when the house was built after the captivity”; the Hebrew psalm and the *Nova Vulgata* carry no title, and the title is not sung. The superscription row dates the setting the title names, the raising of the Temple at Jerusalem after the return, on the figure the *Catholic Encyclopedia*’s “Temple of Jerusalem” (Meistermann, vol. 14) gives. It dates the title’s setting, not the writing of the psalm. The prophetic-referent row records the same encyclopedia’s statement, in its “Psalms” (Drum, vol. 12), that the coming of the Messiah is foretold in this group of psalms, and the chronology record’s own step from that coming to the Nativity; the two dates shown are those its articles “General Chronology” (Gerard) and “Biblical Chronology” (Howlett, both vol. 3) report, and the record marks them disputed. They date the event the psalm was read as foretelling, not the psalm.
+*Gospel: Matt. 22:15–21*
 
-### Isaiah 45:1, 4–6: the first reading {#sec:date-isaiah}
+- **Narrated event**. Jesus answers about tribute to Caesar in the Temple at Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 21:10, 21:23, 22:15, 22:17, 22:21). No date: the chronology corpus has not yet dated this (research pending).
 
-The first reading has two answers, and they are not two dates for one thing. The traditional attribution is to Isaias, the son of Amos (Is 1:1), whose ministry the *Catholic Encyclopedia*’s “Isaias” (Souvay, vol. 8) describes as lasting from the closing year of King Ozias to the latest prophecies it admits; the article calls him a citizen, perhaps a native, of Jerusalem, and the same paragraph reports that commentators differ on when he was called. The row dates the prophet’s ministry in that account and not the oracle to Cyrus. The second answer is the critical placement of the oracles of chapters 40–55: the introduction to Isaiah in the *New American Bible, Revised Edition* attributes them to an anonymous prophet who spoke toward the end of the Babylonian exile. That introduction gives the prophet no place; the oracles themselves bid the exiles “Come forth out of Babylon” (48:20). Neither answer is a date for the composition of 45:1–6, for which the record holds none.
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
 
-### Matthew 22:15–21: the Gospel {#sec:date-matthew}
+*Communion Antiphon (alternative): Mark 10:45*
 
-The “Event” row has no date: the chronology corpus holds none for the question about tribute, and none is supplied here. Matthew sets it in the temple at Jerusalem, where Jesus is teaching (21:23) after his entry into the city (21:10), and before he leaves the temple (24:1); the *Catholic Encyclopedia*’s “Gospel of St. Matthew” (Jacquier, vol. 10) groups these chapters under the heading “In Jerusalem”, among them the questions “concerning the tribute”. The composition dates shown are those the same article reports from the ancient writers, who “are at variance”, together with the figures it gives where opinion is divided, and one from the encyclopedia’s “The New Testament” (Durand, vol. 14); all are marked disputed. The article says that Matthew wrote for the Jews, and reports Eusebius’s account that he wrote in Hebrew when he was leaving Palestine; the place of writing is not fixed. These are dates of the book, not of the saying.
+- **Composition** (disputed). The Gospel of St Mark: A.D. 38–40 (“the tenth or twelfth year after the Ascension (A.D. 38-40)”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 40 (The Catholic Encyclopedia, Volume 9 (1910)); A.D. 43 (“the third year of Claudius (A.D. 43)”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 50–67 (“somewhere between A.D. 50 and 67”; The Catholic Encyclopedia, Volume 9 (1910)); A.D. 60–70 (“between 60 and 70”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); After Matthew, and not as late as the destruction of Jerusalem (De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam (1912), responsa-i-ix). Place: Rome traditionally; Egypt reported by Chrysostom (The Catholic Encyclopedia, Volume 9 (1910)).
 
-### Mark 10:45: the second Communion antiphon {#sec:date-mark}
+*Alleluia Verse: Phil. 2:15d, 16a*
 
-The antiphon’s source is dated only as part of Mark’s Gospel. The figures shown are those the *Catholic Encyclopedia*’s “Gospel of Saint Mark” (MacRory, vol. 9) reports from a manuscript subscription, the Paschal Chronicle and Eusebius’s Chronicle, together with the article’s own conclusion, a figure from its “The New Testament” (Durand), and the answer of the Pontifical Biblical Commission of 1912 placing the Gospel after Matthew and before the destruction of Jerusalem; all are marked disputed. MacRory holds that the Gospel was written at Rome for Roman Christians, and reports, to reject it, Chrysostom’s statement that Mark wrote in Egypt.
+- **Composition** (disputed). The Epistle to the Philippians: A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 62–64 (“at Rome (A.D. 62-64)”; The Catholic Encyclopedia, Volume 12 (1911)). Place: Rome to Philippi in the cited account (The Catholic Encyclopedia, Volume 12 (1911); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Phil. 1:1).
 
-### Philippians 2:15d, 16a: the Alleluia verse {#sec:date-philippians}
+*Second Reading: 1 Thess. 1:1–5b*
 
-The verse is dated as part of the letter. The first figure is the year the *Catholic Encyclopedia*’s “St. Paul” (Prat, vol. 11) gives the letters of the captivity; the second is the range its “Epistle to the Philippians” (Vander Heeren, vol. 12) gives for Paul’s captivity at Rome. Both are marked disputed. Vander Heeren reports that some have held the letter to have been written at Caesarea, and holds that it was written at Rome; the letter itself names Paul’s bonds (1:13) and greets the Philippians from “Caesar’s household” (4:22). The verse narrates no event.
-
-### 1 Thessalonians 1:1–5b: the second reading {#sec:date-thessalonians}
-
-The figures shown are those of the *Catholic Encyclopedia*’s “St. Paul” (Prat) and “Epistles to the Thessalonians” (Drum, vol. 14), the second of which gives its years “according to the commonly received scheme of Pauline chronology”; both are marked disputed. Drum reports that the received Greek text and several uncials subscribe the letters “written from Athens”, and holds from the letter itself (3:6) and from Acts (18:5) that they were written during Paul’s first stay in Corinth. The letter is addressed “to the church of the Thessalonians” (1:1), whose founding Acts narrates (17:1–10).
+- **Composition** (disputed). The First Epistle to the Thessalonians: A.D. 52 (“(1 and 2 Thessalonians), 52”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 53–54 (“in the year 53 or 54 according to the commonly received scheme of Pauline chronology”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Corinth to Thessalonica (The Catholic Encyclopedia, Volume 14 (New York, 1912); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 1 Thess. 1:1).
 
 ## Appendix: Liturgical Resolution {#sec:liturgical-resolution}
 
@@ -744,6 +740,6 @@ The figures shown are those of the *Catholic Encyclopedia*’s “St. Paul” (
 
 - Pontifical Biblical Commission, *De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam*, *Acta Apostolicae Sedis* 4 (1912), pp. 463–465, responses I–IX, as the chronology corpus records them.
 
-**Last revised (UTC):** 2026-11-04T03:13:49Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

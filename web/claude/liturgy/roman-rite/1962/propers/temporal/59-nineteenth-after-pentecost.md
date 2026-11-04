@@ -514,51 +514,84 @@ The Gospel’s last sentence shows how they meet. “For many are called, but fe
 
 ## Scriptural Date and Location {#sec:date-location}
 
-Each passage the Mass takes from Scripture, once, in canonical order, with its setting, attribution and dating evidence.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Introit (verse) | Ps 77:1 (Heb. 78) | Asaph, by the title, to Israel as “my people”; a history from Egypt to Sion and David (vv. 68–70) | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Introit: Ps. 77:1 (Vg.; Heb. 78) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Ps. 104:1 (Vg.; Heb. 105) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: Ps. 118:4–5 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Offertory: Ps. 137:7 (Vg.; Heb. 138) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gradual: Ps. 140:2 (Vg.; Heb. 141) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gospel: Matt. 22:1–14 | Narrated event: The parable of the marriage feast, proposed in the Temple | A.D. 29 (derived) |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+|  | Composition, Catholic critical comparison: Greek Matthew; Antioch suggested | Post-A.D. 70 date |
+| Epistle: Eph. 4:23–28 | Composition: Ephesians; Rome or Caesarea; recipients in Asia Minor | Disputed: A.D. 58–63; A.D. 61 |
+|  | Composition, Catholic critical comparison: Ephesians (later-disciple hypothesis) | Disputed: c. A.D. 80–100 |
 
-Titled in the Vulgate *Intellectus Asaph*, “Understanding for Asaph”, which the Missal’s verse leaves out; the title gives no occasion or date. The displayed date is the bound that the *New American Bible, Revised Edition* sets for the whole Psalter: its introduction to the Psalms holds that no psalm is as late as the Maccabean period and that none can be dated securely. The antiphon, printed without a citation and standing in no verse of the Vulgate, has no dossier of its own.
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Alleluia | Ps 104:1 (Heb. 105) | Israel, bidden to declare God’s deeds among the Gentiles; sung before the ark at Jerusalem (1 Par 15:3; 16:7–8) | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+### Evidence for each date {#sec:date-location-evidence}
 
-Titled *Alleluia* in the Vulgate, which the Missal’s verse leaves out. Paralipomenon sets these words in the praise Asaph sang on the day the ark was set in David’s tent (1 Par 16:1, 7); the displayed date is the Psalter’s bound, not that day’s.
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Communion | Ps 118:4–5 (Heb. 119) | The psalmist, “a sojourner on the earth” (v. 19), singing the law “in the place of my pilgrimage” (v. 54) | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+*Introit: Ps. 77:1 (Vg.; Heb. 78)*
 
-Titled *Alleluia*, with no author named; the Communion’s verses stand in its first alphabetic strophe, *Aleph*. Haydock reports its general attribution to David while preserving competing occasions. The regnal era identifies David; the composition bound is the Psalter’s.
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Offertory | Ps 137:7 (Heb. 138) | David, by the title; praise “in the sight of the angels” and worship “towards thy holy temple” (vv. 1–2) | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-Titled *Ipsi David*, “For David himself”, without an occasion. The reign shown with the attribution is David’s in the “usual chronology” that the *Catholic Encyclopedia*’s “David, King” (vol. 4, 1908) reports, adding that recent writers date it thirty to fifty years later: the title’s reference point, not the psalm’s date. The composition date is the Psalter’s bound.
+*Alleluia: Ps. 104:1 (Vg.; Heb. 105)*
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Gradual | Ps 140:2 (Heb. 141) | David, by the title; an evening prayer beside Israel’s incense and evening sacrifice (v. 2) | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+- **Historical setting**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
 
-Titled *Psalmus David*, “A psalm of David”, again without an occasion; the reign shown is the same reference point, not the psalm’s date, and the composition date is the Psalter’s bound.
+- **Composition**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Gospel | Mt 22:1–14 | Writing: as Matthew left Palestine (Eusebius). Event: Jerusalem, in the temple (21:23) | **Event**: The parable of the marriage feast, proposed in the Temple, A.D. 29 (derived). **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Composition (Catholic critical chronology, for comparison)**: The Greek Gospel of Matthew in the NABRE introduction, post-A.D. 70 date. |
+*Communion: Ps. 118:4–5 (Vg.; Heb. 119)*
 
-*Narrated event: the third parable Jesus speaks in the temple, on the day after his entry into Jerusalem (21:1–18), when the chief priests and ancients have questioned his authority (21:23), to the chief priests and Pharisees (21:45); St Matthew gives it no date beyond that day.*
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-The event’s year is derived. The *Catholic Encyclopedia*’s “Jesus Christ” (vol. 8, 1910), by A. J. Maas, sets the parable in the last days before the Passion, within a journey it dates from February to the Passover of a year counted from the founding of Rome; the article equates that year elsewhere with A.D. 29, and the displayed year applies the equation to the journey. Traditional attribution: St Matthew the Apostle, whom the Missal’s heading names (*secundum Matthaeum*). The *Catholic Encyclopedia*’s “Gospel of St. Matthew” (vol. 10, 1911) reports Eusebius’s tradition that Matthew wrote his Gospel in Hebrew when he left Palestine. Its five composition dates, shown after the event’s year, reckon from the Ascension, the Apostles’ dispersal and St Irenaeus, or give the Catholic critics’ preference, and it settles on none, the ancient writers being “at variance”. The sixth, c. A.D. 50, is Durand’s in “The New Testament” (vol. 14, 1912) for the lost Aramaic original, of which he adds, “We know nothing definite of the date of its being rendered into Greek.” The comparison shown last is the modern critical horizon: the *New American Bible, Revised Edition*’s introduction to Matthew places the Greek Gospel after A.D. 70. That is a lower bound on the Greek Gospel, not an exact date, and it dates neither the Aramaic original nor the parable’s occasion.
+- **Historical setting**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Epistle | Eph 4:23–28 | Paul, “a prisoner in the Lord” (4:1), in Caesarea or Rome; to “the saints who are at Ephesus” (1:1) | **Composition** – disputed: A.D. 58–63; A.D. 61. **Composition (Catholic critical chronology, for comparison)** – disputed: Ephesians under the later-disciple hypothesis (approximate), c. A.D. 80–100. |
+- **Composition**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
 
-Traditional attribution: St Paul, as the Missal’s heading names him, who names himself (1:1) and writes in chains (3:1; 6:20). The first range shown is Ladeuze’s in the *Catholic Encyclopedia*’s “Epistle to the Ephesians” (vol. 5, 1909), where of the letters of the captivity “whether they were produced in Caesarea or in Rome … is still a much mooted question”. The year is from the table in Prat’s “St. Paul” (vol. 11, 1911), which sets the letter in the Roman captivity with Philemon, Colossians and Philippians; the articles date that captivity differently, and neither answer is settled. The comparison shown last is the modern critical horizon: the *New American Bible, Revised Edition*’s introduction to Ephesians offers, as one possible explanation of the letter’s style and teaching, a later disciple developing Paul’s thought around A.D. 80–100. That is a conditional hypothesis, not a consensus. The same introduction keeps the traditional account of the captivity and allows a secretary working at Paul’s direction, to whom it gives no later date, and it names no place for the later writing.
+*Offertory: Ps. 137:7 (Vg.; Heb. 138)*
+
+- **Traditional attribution**. As under Communion: Ps. 118:4–5 (Vg.; Heb. 119).
+
+- **Historical setting**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
+
+- **Composition**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
+
+*Gradual: Ps. 140:2 (Vg.; Heb. 141)*
+
+- **Traditional attribution**. As under Communion: Ps. 118:4–5 (Vg.; Heb. 119).
+
+- **Historical setting**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
+
+- **Composition**. As under Introit: Ps. 77:1 (Vg.; Heb. 78).
+
+*Gospel: Matt. 22:1–14*
+
+- **Narrated event** (preferred). The parable of the marriage feast, proposed in the Temple: A.D. 29 (derived) (“derived A.D. 29 from February, A.U.C. 782- Passover, 782”; The Catholic Encyclopedia, Volume 8 (New York, 1910), article ’Jesus Christ,’ III.B.3, printed p. 378 and pp. 380-381: chronological calibration and Sixth, Seventh, and Ninth Journeys).
+
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
+
+- **Composition, Catholic critical comparison** (preferred). The Greek Gospel of Matthew in the NABRE introduction: Post-A.D. 70 date (Catholic critical chronology; New American Bible, Revised Edition: USCCB web state (2026), Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25). Place: Antioch suggested (New American Bible, Revised Edition: USCCB web state (2026), Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25).
+
+*Epistle: Eph. 4:23–28*
+
+- **Composition** (disputed). The Epistle to the Ephesians: A.D. 58–63 (“a period between 58 and 63”; The Catholic Encyclopedia, Volume 5 (New York, 1909)); A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)). Place: Rome or Caesarea; recipients in Asia Minor (The Catholic Encyclopedia, Volume 5 (New York, 1909)).
+
+- **Composition, Catholic critical comparison** (disputed). Ephesians under the later-disciple hypothesis (approximate): c. A.D. 80–100 (“around A.D. 80–100”; Catholic critical chronology; New American Bible, Revised Edition: USCCB web state (2026), The Letter to the Ephesians, complete introduction; especially prose paragraphs 3-4, physical HTML lines 626 and 628).
 
 ## Appendix: Scope and Qualifications {#sec:scope}
 
@@ -644,6 +677,6 @@ Traditional attribution: St Paul, as the Missal’s heading names him, who names
 
 - George Leo Haydock, *The Holy Bible, Douay–Rheims with Commentary*, Feeney Memorial edition (Loreto, 2014), Ps 118:1, note continued on p. 781: received Davidic attribution and competing occasions.
 
-**Last revised (UTC):** 2026-11-04T03:34:08Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

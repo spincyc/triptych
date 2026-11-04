@@ -523,7 +523,7 @@ Each also draws on a different clause of the Preface’s one sentence. The first
 
 ## Scriptural Date and Location {#sec:date-location}
 
-Each passage the Mass reads or sings from Scripture, in canonical order, with what is dated, where it belongs, and its date. Where several texts of the Mass share one date, the row names them all. The table covers the feast’s appointed passages. The Tract printed for votive Masses after Septuagesima, never said on this feast, is discussed in the setting notes below. The three orations and the Preface have no biblical date. The notes beneath give each passage’s setting, attribution and dating evidence.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
@@ -533,7 +533,7 @@ Each passage the Mass reads or sings from Scripture, in canonical order, with wh
 | Communion: Ps. 28:10–11 (Vg.; Heb. 29) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
 |  | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
-| Introit: Ps 71:1 (Vg.; Heb. 72) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+| Introit: Ps. 71:1 (Vg.; Heb. 72) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
 |  | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
 | Gradual: Ps. 71:8,11 (Vg.; Heb. 72) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
@@ -544,57 +544,65 @@ Each passage the Mass reads or sings from Scripture, in canonical order, with wh
 | Gospel: John 18:33–37 | Narrated event: Jesus before Pilate in the governor’s hall at Jerusalem | Date unresolved |
 |  | Composition: John; Ephesus traditionally | Disputed: c. A.D. 90–100; A.D. 96–100 |
 | Epistle: Col. 1:12–20 | Composition: Colossians; Rome traditionally; addressed to Colossae | Disputed: A.D. 61; A.D. 61–63 |
-| Introit: Apoc 1:6, Apoc 5:12 | Composition: Apocalypse; seer on Patmos; heavenly scenes are visions | Disputed: A.D. 81–96; c. A.D. 90–100 |
+| Introit: Apoc. 1:6, Apoc. 5:12 | Composition: Apocalypse; seer on Patmos; heavenly scenes are visions | Disputed: A.D. 81–96; c. A.D. 90–100 |
 
 Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-##### Setting notes.
+### Evidence for each date {#sec:date-location-evidence}
 
-**Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29)**. Psalms of a king and of the Lord as King. Ps 71 is titled “on Solomon” and closes with the praises of David (71:20); Ps 2, where the king is set on Sion, is ascribed to David in Acts 4:25; Ps 28, which ends with the Lord sitting as King for ever, is titled “for David, at the finishing of the tabernacle” (28:1). No occasion is dated.
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-**Introit: Ps 71:1 (Vulgate numbering; Hebrew 72); Gradual: Psalms 71:8,11 (Vulgate numbering; Hebrew 72); Tract: Psalms 88:27–28,30 (Vulgate numbering; Hebrew 89); Offertory: Psalms 2:8 (Vulgate and Hebrew numbering agree); Communion: Psalms 28:10–11 (Vulgate numbering; Hebrew 29)**. The psalms of this Mass, under the titles above. Ps 88, titled “for Ethan the Ezrahite” (88:1), is the psalm of the Tract, printed for votive Masses after Septuagesima, never said on this feast.
+*Offertory: Ps. 2:8 (Vg./Heb.)*
 
-**Tract: Psalms 88:27–28,30 (Vulgate numbering; Hebrew 89)**. The Tract, printed for votive Masses after Septuagesima, never said on this feast. The setting dated is the psalm’s lament that God has rejected his anointed and cast his throne down to the ground (Ps 88:39–45).
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-**Alleluia: Daniel 7:14**. Daniel’s night vision “in the first year of Baltasar, king of Babylon” (Dan 7:1), among the exiles of Juda in Babylon.
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-**Alleluia: Daniel 7:14**. The book that presents Daniel, a youth of Juda carried to Babylon (Dan 1:1–6). The same verse opens the paschal Alleluia, printed for Paschaltide, never said on this feast; its second verse, Apoc 19:16, has no row. A later dating is noted below.
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-**Gospel: John 18:33–37**. Jesus questioned by Pilate inside the governor’s hall, the praetorium, at Jerusalem, on the morning before the Pasch (Jn 18:28, 33).
+*Communion: Ps. 28:10–11 (Vg.; Heb. 29)*
 
-**Gospel: John 18:33–37**. John writes his Gospel, by early tradition at Ephesus (Irenaeus, as Fonck reports him).
+- **Traditional attribution**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-**Epistle: Colossians 1:12–20**. Paul writes in bonds (Col 4:3, 18) to the saints at Colossa (1:2); the common view places the letters of the captivity at Rome.
+- **Historical setting**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-**Introit: Apoc 1:6, Apoc 5:12**. John writes the visions he saw “in the island which is called Patmos” (Apoc 1:9).
+- **Composition**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-### Psalms 2, 28 (29) and 71 (72): the Introit verse, Gradual, Offertory and Communion {#sec:date-psalms}
+*Introit: Ps. 71:1 (Vg.; Heb. 72)*
 
-The four chants drawn from the psalms share the first three rows of the table. No occasion is dated for any of them. Their titles name a king and a moment without placing either in time: Psalm 71 is *in Salomonem*, “on Solomon,” and its last verse closes “the praises of David, the son of Jesse”; Psalm 28 is “for David, at the finishing of the tabernacle”; Psalm 2 opens without a title, and Acts 4:25 ascribes it to David. The table’s traditional-attribution row gives David’s reference era, not a date of composition or an occasion for every attributed psalm. Commentators also read the titles differently: for Bellarmine Psalm 71 is literally David’s prayer for Solomon, while Augustine, Cassiodorus and Theodoret hold that it fits Solomon in no way and speaks of Christ.
+- **Traditional attribution**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-The composition date is the bound that the introduction to the Psalms in the *New American Bible, Revised Edition* sets for the whole Psalter, in the same sentence in which it holds that no individual psalm can be dated securely. It dates the book of Psalms as a whole, not any of these psalms. The Tract’s Psalm 88, titled for Ethan the Ezrahite, stands outside this feast’s table; the Tract is printed for votive Masses after Septuagesima and is never said on this feast.
+- **Historical setting**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-For that Tract, the research considers Jerusalem’s destruction under Sedecias as the setting of the psalm’s lament for the anointed rejected and the throne cast down (Ps 88:39–45). Its chronology is discussed in Haydock’s Douay commentary, in a chronological paragraph attributed to Ussher, and in the *Catholic Encyclopedia*’s articles “Captivities of the Israelites” (Reid) and “Temple of Jerusalem” (Meistermann), “Third and Fourth Books of Kings” (Schets), and “Chronology of the Kings” (Sloet, reporting Petavius).
+- **Composition**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-### Daniel 7:14: the Alleluia {#sec:date-daniel}
+*Gradual: Ps. 71:8,11 (Vg.; Heb. 72)*
 
-Daniel dates the vision itself to the first year of Baltasar, king of Babylon (7:1), a year given no date here. The setting dated is the seventy years of servitude to Babylon that Jeremias foretold (Jer 25:11–12), a duration rather than a year. The book presents its author as Daniel, one of the youths of Juda carried to Babylon and taught the learning of the Chaldeans (Dan 1:1–6).
+- **Traditional attribution**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-The composition date is the one that Francis Gigot’s “Book of Daniel” in the *Catholic Encyclopedia* (vol. 4) calls the time-honoured position. Gigot sets beside it what he calls a comparatively recent theory, widely accepted by contemporary scholars, which dates the book in the time of Antiochus IV Epiphanes, and he concludes that Catholic scholars generally abide by the traditional view, although they are not bound to it by any decision of the Church. The table gives Gigot’s traditional date, and no date for the book on the later view.
+- **Historical setting**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-The paschal Alleluia printed for Paschaltide opens with this same verse of Daniel and adds Apoc 19:16, “KING OF KINGS AND LORD OF LORDS.” It is never said on this feast, and no date is given for Apoc 19:16; the dates of the Apocalypse given below are given for the Introit’s verses only.
+- **Composition**. As under Offertory: Ps. 2:8 (Vg./Heb.).
 
-### John 18:33–37: the Gospel {#sec:date-john}
+*Alleluia: Dan. 7:14*
 
-The questioning before Pilate is not dated: the chronology behind the table dates the crucifixion, from the passion narrative at Jn 19:18 onward, but not the questioning in Jn 18:33–37. John places the scene in the governor’s hall at Jerusalem, early in the morning, on the day before the Pasch (18:28). The composition dates shown are those of Alfred Durand’s “The New Testament” (vol. 14) and Leopold Fonck’s “Gospel of St. John” (vol. 8) in the *Catholic Encyclopedia*; both are marked disputed. Fonck reports St Irenaeus (*Adversus Haereses* III.1.2) for the tradition that John wrote his Gospel at Ephesus. The dates are dates of the book, not of the trial.
+- **Historical setting** (preferred). The seventy years of servitude to Babylon: “seventy years” (duration) (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Jer. 25:11, 25:12). Place: Judah and Babylon (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Jer. 25:11, 25:12).
 
-### Colossians 1:12–20: the Epistle {#sec:date-colossians}
+- **Composition** (preferred). The Book of Daniel: B.C. 570–536 (“admits 570-536 B.C. as its date of composition”; The Catholic Encyclopedia, Volume 4 (New York, 1908)). Place: Babylonian setting (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Dan. 1:1, 1:6, 7:1).
 
-The two composition dates are those of Ferdinand Prat’s “St. Paul” (vol. 11), which gives one year to the letters of the captivity, and Cornelius Aherne’s “Epistle to the Colossians” (vol. 4), which gives a range; both are marked disputed. Aherne reports the common view that the captivity letters were written at Rome. The letter itself says that Paul is bound (4:3, 18) and is addressed to the saints at Colossa (1:2): the writer’s place and the recipients’ place are not the same. The passage narrates no event.
+*Gospel: John 18:33–37*
 
-### Apocalypse 1:6 and 5:12: the Introit {#sec:date-apocalypse}
+- **Narrated event**. Jesus before Pilate in the governor’s hall at Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: John 18:1, 18:28, 18:33, 18:37). No date: the chronology corpus has not yet dated this (research pending).
 
-The two composition dates are those of Christian Van den Biesen’s “Apocalypse” (vol. 1), which places the book in the reign of Domitian, and of Durand’s “The New Testament”; both are marked disputed. John writes that he was “in the island which is called Patmos” when he saw the visions (1:9), in the same chapter as the Introit’s verse 6. The throne vision of chapters 4–5 is a vision and has no date of its own.
+- **Composition** (disputed). The Gospel of St John: c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); A.D. 96–100 (“96 or one of the succeeding years”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Ephesus traditionally (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
+
+*Epistle: Col. 1:12–20*
+
+- **Composition** (disputed). The Epistle to the Colossians: A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 61–63 (“some time between A.D. 61 and 63”; The Catholic Encyclopedia, Volume 4 (New York, 1908)). Place: Rome traditionally; addressed to Colossae (The Catholic Encyclopedia, Volume 4 (New York, 1908); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Col. 1:2).
+
+*Introit: Apoc. 1:6, Apoc. 5:12*
+
+- **Composition** (disputed). The Apocalypse of St John: A.D. 81–96 (“the reign of Domitian ... A.D. 81-96”; The Catholic Encyclopedia, Volume 1 (New York, 1907)); c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: seer on Patmos; heavenly scenes are visions (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Apoc. 1:9, 4:1, 7:9).
 
 ## Appendix: Scope and Qualifications {#sec:scope}
 
@@ -674,6 +682,6 @@ The two composition dates are those of Christian Van den Biesen’s “Apocalyps
 
 - *New American Bible, Revised Edition*, introduction to the Psalms (USCCB website), summarized.
 
-**Last revised (UTC):** 2026-11-04T03:13:49Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

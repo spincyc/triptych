@@ -441,61 +441,83 @@ The Missal’s prayers are patient of all three hearings because they say someth
 
 ## Scriptural Date and Location {#sec:date-location}
 
-Each passage the Mass reads or sings from Scripture, and each biblical basis an official liturgical source identifies, once, in canonical order; beneath each, its attribution, its setting and the critical horizon. The Entrance Antiphon is composed, but the official Antiphonary identifies a psalm basis; the three orations carry no biblical date.
+Each passage the Mass reads or sings from Scripture, in canonical order. The Context column names what is dated — the event the passage narrates, a setting it remembers, the traditional attribution of its author, or the composition of its book — and where it belongs; the Date column gives the answer of the Scripture chronology corpus for that subject, with every alternative it records. Texts of the Mass that are not drawn from Scripture have no row. The evidence for each date follows the table.
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Entrance Antiphon, identified basis | Ps 37 (36):39–40 | No place named in the verses | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Entrance Antiphon: Ps. 37:39–40 (Heb.; Vg. 36) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion Antiphon (first): Ps. 119:4–5 (Heb.; Vg. 118) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Responsorial Psalm: Ps. 145:2–3, 8–9, 17–18 (Heb.; Vg. 144), Ps. 145:18a (Heb.; Vg. 144) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| First Reading: Is. 55:6–9 | Traditional attribution: Isaias (ministry in Souvay’s traditional account); Judah and Jerusalem | B.C. 740–701 |
+|  | Prophecy given: The prophetic activity behind Isaiah 40-55 in the NABRE introduction; exiles from Babylon; restoration to Jerusalem | Toward the end of the Babylonian exile |
+| Gospel: Matt. 20:1–16a | Narrated event | Date unresolved |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+|  | Composition, Catholic critical comparison: Greek Matthew; Antioch suggested | Post-A.D. 70 date |
+| Communion Antiphon (alternative): John 10:14 | Composition: John; Ephesus traditionally | Disputed: c. A.D. 90–100; A.D. 96–100 |
+| Alleluia Verse: Cf. Acts 16:14b | Narrated event: St Paul’s Second Missionary Journey | Disputed: A.D. 50–53; A.D. 51–54 |
+|  | Composition: The Acts of the Apostles | c. A.D. 64 |
+| Second Reading: Phil. 1:20c–24, 27a | Composition: Philippians; Rome to Philippi in the cited account | Disputed: A.D. 61; A.D. 62–64 |
 
-The official ICEL Antiphonary identifies these verses as the basis of the composed antiphon; the Missal itself prints no locator. The relation is identified basis, not adaptation. The date is the Psalter’s common critical composition bound, not a date for this psalm or for the antiphon.
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Communion Antiphon, first option | Ps 119 (118):4–5 | No place named in the verses | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+### Evidence for each date {#sec:date-location-evidence}
 
-The opening strophe of the alphabetical psalm of the law; the verses name no author or place. Haydock reports a general attribution to David with competing occasions; the regnal era identifies the attributed figure. The separate date is the common critical composition bound in the NABRE Psalms introduction, not a precise date for this psalm or for the Psalter’s assembly.
+For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Responsorial Psalm | Ps 145 (144):2–3, 8–9, 17–18; response v. 18a | No place named | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+*Entrance Antiphon: Ps. 37:39–40 (Heb.; Vg. 36)*
 
-Headed in the Douay–Rheims “Praise, for David himself” (v. 1): an attribution by title, oriented by David’s regnal era in Corbett’s usual chronology. An alphabetical hymn to “God my king”. The occasion remains unresolved; the composition bound is the Psalter’s critical boundary.
+- **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| First Reading | Isa 55:6–9 | Traditional ministry: Juda and Jerusalem (1:1); critical horizon: Babylonian exile; writing site unestablished | **Traditional attribution**: Isaias (ministry in Souvay’s traditional account), B.C. 740–701. **Prophecy given**: The prophetic activity behind Isaiah 40-55 in the NABRE introduction, toward the end of the Babylonian exile. |
+- **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-Traditional attribution: the prophet Isaias; the range shown is the era the *Catholic Encyclopedia* (1910) gives his ministry, from the closing year of Ozias to the apparent date of his latest prophecies. The article’s tentative collection hypothesis concerns chapters 1–35, not this chapter or the whole book. It treats chapters 54–55 under the heading “Second Isaias” and reports the contention of most modern non-Catholic scholars that those chapters come from an author “living towards the close of the Babylonian Captivity”, against which it sets the Pontifical Biblical Commission’s decision of 28 June 1908. The separate critical horizon comes from the introduction to Isaiah in the New American Bible Revised Edition (NABRE), which generally attributes chapters 40–55 to an anonymous poet prophesying toward the end of the Babylonian exile. That is a horizon for the prophecy, not a date for the writing or final assembly of the book. The exile is the prophetic horizon, not proof of an exact place of writing.
+*Communion Antiphon (first): Ps. 119:4–5 (Heb.; Vg. 118)*
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Gospel | Mt 20:1–16a | Spoken to the disciples on the way to Jerusalem, after Peter’s question (19:27) and before the third prediction of the Passion (20:17–19) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Composition (Catholic critical chronology, for comparison)**: The Greek Gospel of Matthew in the NABRE introduction, post-A.D. 70 date. |
+- **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-*Narrated event: a parable of Jesus, told within the journey that ends at Jerusalem (20:17–18).*
+- **Historical setting**. As under Entrance Antiphon: Ps. 37:39–40 (Heb.; Vg. 36).
 
-Traditional attribution: St Matthew the Apostle. The Date column keeps as disputed alternatives the figures the *Catholic Encyclopedia* reports (1911, 1912): its article on the Gospel opens its discussion of the date with the words “Ancient ecclesiastical writers are at variance” and says that in its own day “opinion is rather divided”. The alternatives are not of equal standing in their own sources: about A.D. 38–45 reckons from the Ascension; about A.D. 40–42 rests on a tradition of the apostles’ dispersal that the article itself calls “admittedly not too reliable”; A.D. 40–45 is the article’s report of Catholic opinion in its own day; about A.D. 60–68 is conditional on a later definitive departure of the apostles; about A.D. 64–67 rests on a text of Irenaeus whose difficulties of interpretation, the article says, prevent any positive conclusion; and the sixth traditional figure is said in the article on the New Testament of the original text of Matthew, which its author holds to have been Aramaic, the Greek rendering being left undated. The principal modern critical account in the NABRE introduction gives a “post-A.D. 70 date”, “probably at least a decade later”, without an upper bound. Its account is probabilistic. Jacquier’s “Destination of the Gospel” reports publication in Judea for converted Jews; NABRE describes an unknown author and proposes Antioch in Syria as a plausible location for Jewish and Gentile Christians. The writing place is distinct from the parable’s scene.
+- **Composition**. As under Entrance Antiphon: Ps. 37:39–40 (Heb.; Vg. 36).
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Communion Antiphon, second option | Jn 10:14 | Spoken to the Pharisees after the healing of the man born blind (9:40–10:6) | **Composition** – disputed: c. A.D. 90–100; A.D. 96–100. |
+*Responsorial Psalm: Ps. 145:2–3, 8–9, 17–18 (Heb.; Vg. 144), Ps. 145:18a (Heb.; Vg. 144)*
 
-*Narrated event: the discourse of the good shepherd.*
+- **Traditional attribution**. As under Communion Antiphon (first): Ps. 119:4–5 (Heb.; Vg. 118).
 
-Traditional attribution: St John the Apostle. The *Catholic Encyclopedia* gives the first range shown for “the Johannine writings” (1912) and the second as “the general opinion” for the Gospel, after conceding that “we possess no certain historical information” (1910). In “Circumstances of the composition”, Fonck reports Ephesus as the writing place and Christians of Asia Minor as the first readers, not as the discourse’s setting. The Missal adapts the verse by adding *dicit Dominus* and the noun *oves*.
+- **Historical setting**. As under Entrance Antiphon: Ps. 37:39–40 (Heb.; Vg. 36).
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Alleluia verse (its basis) | cf. Acts 16:14b, an adaptation | Event: Philippi, “the chief city of part of Macedonia, a colony” (16:12), by the riverside on the sabbath (16:13) | **Event** – disputed: St Paul’s Second Missionary Journey, A.D. 50–53; St Paul’s Second Missionary Journey, A.D. 51–54. **Composition**: c. A.D. 64. |
+- **Composition**. As under Entrance Antiphon: Ps. 37:39–40 (Heb.; Vg. 36).
 
-*Narrated event: the conversion of Lydia during St Paul’s second missionary journey (Acts 15:36–18:22).*
+*First Reading: Is. 55:6–9*
 
-Traditional attribution: St Luke. The two event ranges are those the *Catholic Encyclopedia* gives for the second journey in its articles on St Paul (1911) and on biblical chronology (1908); the former places Philippi in that journey without naming Lydia. The composition date is the one its article on Acts (1907) calls most probable for the completion of the book during Paul’s Roman captivity, a different setting from Philippi. Acts addresses Theophilus (1:1) without locating him. The liturgical verse is a petition formed on Luke’s narrative sentence and is not itself a verse of Scripture.
+- **Traditional attribution** (preferred). Isaias (ministry in Souvay’s traditional account): B.C. 740–701 (“from the closing year of Ozias, King of Juda (740 B.C.); no prophecies appear to be later than 701 B.C.”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Judah and Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Is. 1:1).
 
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Second Reading | Phil 1:20c–24, 27a | Paul in bonds (1:7, 13), at Rome in the received account; to “all the saints in Christ Jesus who are at Philippi” (1:1) | **Composition** – disputed: A.D. 61; A.D. 62–64. |
+- **Prophecy given** (preferred). The prophetic activity behind Isaiah 40-55 in the NABRE introduction: Toward the end of the Babylonian exile (Catholic critical chronology; New American Bible, Revised Edition: USCCB web state (2026), Isaiah introduction, especially the final two prose paragraphs before the outline). Place: exiles from Babylon; restoration to Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Is. 48:20, 52:9).
 
-Traditional attribution: St Paul, writing from captivity. The first figure is the year the *Catholic Encyclopedia*’s chronology of St Paul gives the captivity letters, within the Roman captivity (1911); the second is the range its article on the letter gives for Paul “at Rome” (1911), where it adds that critics disagree whether the letter falls early or late in the Roman sojourn and that its author holds for late.
+*Gospel: Matt. 20:1–16a*
+
+- **Narrated event**. No date: the chronology corpus has not yet dated this (research pending).
+
+- **Composition** (disputed). The Gospel of St Matthew: c. A.D. 38–45 (“about A.D. 38-45”; The Catholic Encyclopedia, Volume 10 (1911); The Catholic Encyclopedia, Volume 14 (New York, 1912)); c. A.D. 40–42 (“about the year 40-42”; The Catholic Encyclopedia, Volume 10 (1911)); A.D. 40–45 (“the years 40-45”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 60–68 (“about the year 60-68”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 64–67 (“about the years 64-67”; The Catholic Encyclopedia, Volume 10 (1911)); c. A.D. 50 (“about the year 50”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Semitic original associated with Palestine (The Catholic Encyclopedia, Volume 10 (1911)).
+
+- **Composition, Catholic critical comparison** (preferred). The Greek Gospel of Matthew in the NABRE introduction: Post-A.D. 70 date (Catholic critical chronology; New American Bible, Revised Edition: USCCB web state (2026), Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25). Place: Antioch suggested (New American Bible, Revised Edition: USCCB web state (2026), Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25).
+
+*Communion Antiphon (alternative): John 10:14*
+
+- **Composition** (disputed). The Gospel of St John: c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); A.D. 96–100 (“96 or one of the succeeding years”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Ephesus traditionally (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
+
+*Alleluia Verse: Cf. Acts 16:14b*
+
+- **Narrated event** (disputed). St Paul’s Second Missionary Journey: A.D. 50–53 (“second mission, 50-53”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 51–54 (“began about three years previously, in 51 ... probably in 54”; The Catholic Encyclopedia, Volume 3 (New York, 1908)).
+
+- **Composition** (preferred). The Acts of the Apostles: c. A.D. 64 (“the year 64 is the most probable date”; The Catholic Encyclopedia, Volume 1 (New York, 1907)).
+
+*Second Reading: Phil. 1:20c–24, 27a*
+
+- **Composition** (disputed). The Epistle to the Philippians: A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 62–64 (“at Rome (A.D. 62-64)”; The Catholic Encyclopedia, Volume 12 (1911)). Place: Rome to Philippi in the cited account (The Catholic Encyclopedia, Volume 12 (1911); The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Phil. 1:1).
 
 ## Appendix: Liturgical Resolution {#sec:liturgical-resolution}
 
@@ -602,6 +624,6 @@ Traditional attribution: St Paul, writing from captivity. The first figure is t
 
 - John Corbett, “David, King”, *The Catholic Encyclopedia*, vol. 4 (1908), p. 642: the usual chronology of David’s reign.
 
-**Last revised (UTC):** 2026-11-04T03:34:08Z
+**Last revised (UTC):** 2026-11-04T16:58:12Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
