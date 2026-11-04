@@ -1977,6 +1977,9 @@ def _passage_display_v3(name: str, citations: tuple[Citation, ...]) -> str:
         # "Tob 12:6"); it takes the same short name as an appointed citation,
         # so one book is never printed two ways in one table.
         token = _tokens().get(book, "")
+        # "Cf. " belongs to the citation; the book name after it is spelled
+        # as any other in the table.
+        cf, text = ("Cf. ", text[4:]) if text.startswith("Cf. ") else ("", text)
         if book == "Psalms":
             text = re.sub(r"^Psalms?\b", "Ps.", text)
             text = re.sub(r"^Ps(?= )", "Ps.", text)
@@ -1984,6 +1987,7 @@ def _passage_display_v3(name: str, citations: tuple[Citation, ...]) -> str:
             text = short + text[len(book):]
         elif token and token != book and text.startswith(token + " "):
             text = short + text[len(token):]
+        text = cf + text
         # Parsed appointment parts include suffixes such as 1bc, not just 1b.
         text = re.sub(r"(?<=[0-9])([a-z]*)-(?=[0-9])", lambda match: match[1] + "\N{EN DASH}", text)
         note = psalm_numbering_note(citation)

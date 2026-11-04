@@ -426,7 +426,7 @@ Each passage the Mass reads or sings from Scripture, in canonical order. The Con
 |:---|:---|:---|
 | Responsorial Psalm: Ps. 23:1–3a,3b–4,5,6 (Heb.; Vg. 22), Ps. 23:6cd (Heb.; Vg. 22) | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
-| Communion: psalm option: Cf. Psalm 33:11 (Vg.; Heb. 34) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+| Communion: psalm option: Cf. Ps. 33:11 (Vg.; Heb. 34) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
 |  | Superscription setting: David’s flight to Achis, king of Geth; Geth, at the Philistine court | A.M. 2944 (Haydock edition reporting Ussher) |
 |  | Composition: Psalms | Before c. 165 B.C. |
 | Entrance antiphon: Ps. 129:3–4 (Vg.; Heb. 130) | Historical setting | Occasion date unresolved |
@@ -438,7 +438,7 @@ Each passage the Mass reads or sings from Scripture, in canonical order. The Con
 | Gospel: short form: Matt. 22:1–10 | Narrated event: The parable of the marriage feast, proposed in the Temple | A.D. 29 (derived) |
 |  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
 |  | Composition, Catholic critical comparison: Greek Matthew; Antioch suggested | Post-A.D. 70 date |
-| Gospel acclamation: Cf. Ephesians 1:17–18 | Composition: Ephesians; Rome or Caesarea; recipients in Asia Minor | Disputed: A.D. 58–63; A.D. 61 |
+| Gospel acclamation: Cf. Eph. 1:17–18 | Composition: Ephesians; Rome or Caesarea; recipients in Asia Minor | Disputed: A.D. 58–63; A.D. 61 |
 | Second reading: Phil. 4:12–14,19–20 | Composition: Philippians; Rome to Philippi in the cited account | Disputed: A.D. 61; A.D. 62–64 |
 | Communion: Johannine option: 1 John. 3:2 | Composition: First John; Ephesus probable | c. A.D. 90–100 |
 
@@ -454,7 +454,7 @@ For each passage, as the Scriptural Date and Location table names it: what is da
 
 - **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-*Communion: psalm option: Cf. Psalm 33:11 (Vg.; Heb. 34)*
+*Communion: psalm option: Cf. Ps. 33:11 (Vg.; Heb. 34)*
 
 - **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
@@ -488,7 +488,7 @@ For each passage, as the Scriptural Date and Location table names it: what is da
 
 - **Composition, Catholic critical comparison**. As under Gospel: long form: Matt. 22:1–14.
 
-*Gospel acclamation: Cf. Ephesians 1:17–18*
+*Gospel acclamation: Cf. Eph. 1:17–18*
 
 - **Composition** (disputed). The Epistle to the Ephesians: A.D. 58–63 (“a period between 58 and 63”; The Catholic Encyclopedia, Volume 5 (New York, 1909)); A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)). Place: Rome or Caesarea; recipients in Asia Minor (The Catholic Encyclopedia, Volume 5 (New York, 1909)).
 

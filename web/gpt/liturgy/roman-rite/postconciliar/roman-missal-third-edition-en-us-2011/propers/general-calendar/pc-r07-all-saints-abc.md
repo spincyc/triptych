@@ -434,7 +434,7 @@ Each passage the Mass reads or sings from Scripture, in canonical order. The Con
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Responsorial Psalm: Ps. 24:1bc–2,3–4ab,5–6 (Heb.; Vg. 23), Cf. Psalm 24:6 (Heb.; Vg. 23) | Historical setting | Occasion date unresolved |
+| Responsorial Psalm: Ps. 24:1bc–2,3–4ab,5–6 (Heb.; Vg. 23), Cf. Ps. 24:6 (Heb.; Vg. 23) | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
 | Gospel: Matt. 5:1–12a | Narrated event: Jesus teaches the Beatitudes on an unnamed mountain in Galilee | Date unresolved |
 |  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
@@ -449,7 +449,7 @@ Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
 For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-*Responsorial Psalm: Ps. 24:1bc–2,3–4ab,5–6 (Heb.; Vg. 23), Cf. Psalm 24:6 (Heb.; Vg. 23)*
+*Responsorial Psalm: Ps. 24:1bc–2,3–4ab,5–6 (Heb.; Vg. 23), Cf. Ps. 24:6 (Heb.; Vg. 23)*
 
 - **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 

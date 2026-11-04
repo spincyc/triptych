@@ -171,6 +171,13 @@ class SharedTableTests(unittest.TestCase):
         cite = chronology.Citation("Psalm 24:1bc-2", "Psalms", "hebrew",
                                    (((24, 1, "bc"), (24, 2, "")),))
         self.assertIn("Ps. 24:1bc–2 (Heb.; Vg. 23)", chronology._passage_display_v3("Psalm", (cite,)))
+        # An adapted citation keeps its "Cf." and spells its book as any other.
+        adapted = chronology.Citation("Cf. Psalm 33:11", "Psalms", "vulgate", (((33, 11, ""), (33, 11, "")),))
+        self.assertEqual(chronology._passage_display_v3("Psalm", (adapted,)),
+                         "Psalm: Cf. Ps. 33:11 (Vg.; Heb. 34)")
+        adapted = chronology.Citation("Cf. Ephesians 1:17-18", "Ephesians", "", (((1, 17, ""), (1, 18, "")),))
+        self.assertEqual(chronology._passage_display_v3("Alleluia Verse", (adapted,)),
+                         "Alleluia Verse: Cf. Eph. 1:17–18")
         rendered = chronology.render_annotations_tex(self.projection)
         self.assertIn("c.~A.D.~50", rendered)
         self.assertIn("221--204 B.C.", rendered)

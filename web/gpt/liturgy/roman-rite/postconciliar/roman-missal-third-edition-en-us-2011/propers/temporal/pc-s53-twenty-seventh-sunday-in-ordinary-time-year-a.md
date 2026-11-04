@@ -512,7 +512,7 @@ Each passage the Mass reads or sings from Scripture, in canonical order. The Con
 |  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
 | Gospel acclamation: Cf. John 15:16 | Narrated event: The Last Supper | Disputed: the fourteenth day of Nisan |
 |  | Composition: John; Ephesus traditionally | Disputed: c. A.D. 90–100; A.D. 96–100 |
-| Communion antiphon: Corinthians option: Cf. 1 Corinthians 10:17, 1 Cor. 10:16 | Composition: The First Epistle to the Corinthians | Disputed: A.D. 56; A.D. 57 |
+| Communion antiphon: Corinthians option: Cf. 1 Cor. 10:17, 1 Cor. 10:16 | Composition: The First Epistle to the Corinthians | Disputed: A.D. 56; A.D. 57 |
 | Second reading: Phil. 4:6–9 | Composition: Philippians; Rome to Philippi in the cited account | Disputed: A.D. 61; A.D. 62–64 |
 
 Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
@@ -555,7 +555,7 @@ For each passage, as the Scriptural Date and Location table names it: what is da
 
 - **Composition** (disputed). The Gospel of St John: c. A.D. 90–100 (“from the year 90 to 100 (approximately)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)); A.D. 96–100 (“96 or one of the succeeding years”; The Catholic Encyclopedia, Volume 8 (New York, 1910)). Place: Ephesus traditionally (The Catholic Encyclopedia, Volume 8 (New York, 1910)).
 
-*Communion antiphon: Corinthians option: Cf. 1 Corinthians 10:17, 1 Cor. 10:16*
+*Communion antiphon: Corinthians option: Cf. 1 Cor. 10:17, 1 Cor. 10:16*
 
 - **Composition** (disputed). The First Epistle to the Corinthians: A.D. 56 (“(1 and 2 Corinthians; Galatians), 56”; The Catholic Encyclopedia, Volume 11 (New York, 1911)); A.D. 57 (“about Easter A.D. 57”; The Catholic Encyclopedia, Volume 4 (New York, 1908)).
 

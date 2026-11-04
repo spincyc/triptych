@@ -392,9 +392,9 @@ Each passage the Mass reads or sings from Scripture, in canonical order. The Con
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Entrance antiphon: Cf. Psalm 16:6,8 (Vg.; Heb. 17) | Historical setting | Occasion date unresolved |
+| Entrance antiphon: Cf. Ps. 16:6,8 (Vg.; Heb. 17) | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
-| Communion: psalm option: Cf. Psalm 32:18–19 (Vg.; Heb. 33) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+| Communion: psalm option: Cf. Ps. 32:18–19 (Vg.; Heb. 33) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
 |  | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
 | Responsorial Psalm: Ps. 96:1,3,4–5,7–8,9,10a,10c (Heb.; Vg. 95), Ps. 96:7b (Heb.; Vg. 95) | Superscription setting: The raising of the second Temple by Zorobabel; Temple at Jerusalem | B.C. 537 |
@@ -414,25 +414,25 @@ Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
 For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-*Entrance antiphon: Cf. Psalm 16:6,8 (Vg.; Heb. 17)*
+*Entrance antiphon: Cf. Ps. 16:6,8 (Vg.; Heb. 17)*
 
 - **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
 - **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-*Communion: psalm option: Cf. Psalm 32:18–19 (Vg.; Heb. 33)*
+*Communion: psalm option: Cf. Ps. 32:18–19 (Vg.; Heb. 33)*
 
 - **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-- **Historical setting**. As under Entrance antiphon: Cf. Psalm 16:6,8 (Vg.; Heb. 17).
+- **Historical setting**. As under Entrance antiphon: Cf. Ps. 16:6,8 (Vg.; Heb. 17).
 
-- **Composition**. As under Entrance antiphon: Cf. Psalm 16:6,8 (Vg.; Heb. 17).
+- **Composition**. As under Entrance antiphon: Cf. Ps. 16:6,8 (Vg.; Heb. 17).
 
 *Responsorial Psalm: Ps. 96:1,3,4–5,7–8,9,10a,10c (Heb.; Vg. 95), Ps. 96:7b (Heb.; Vg. 95)*
 
 - **Superscription setting** (preferred). The raising of the second Temple by Zorobabel: B.C. 537 (“(537 B.C.)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Temple at Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 95:1, 1 Esd. 3:8).
 
-- **Composition**. As under Entrance antiphon: Cf. Psalm 16:6,8 (Vg.; Heb. 17).
+- **Composition**. As under Entrance antiphon: Cf. Ps. 16:6,8 (Vg.; Heb. 17).
 
 - **Prophetic referent** (disputed). The Nativity of Our Lord: B.C. 3 (“the year of Rome 750 which he styles 3 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)); c. B.C. 7 (“probably the year 7 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)). Place: Bethlehem as the Christian referent (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 2:1).
 

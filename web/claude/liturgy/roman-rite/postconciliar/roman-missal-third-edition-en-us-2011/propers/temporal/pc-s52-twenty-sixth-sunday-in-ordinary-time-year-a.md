@@ -469,7 +469,7 @@ Each passage the Mass reads or sings from Scripture, in canonical order. The Con
 |:---|:---|:---|
 | Responsorial Psalm: Ps. 25:4–5, 6–7, 8–9 (Heb.; Vg. 24), Ps. 25:6a (Heb.; Vg. 24) | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
-| Communion Antiphon (first): Cf. Psalm 118:49–50 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+| Communion Antiphon (first): Cf. Ps. 118:49–50 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
 |  | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
 | First Reading: Ezech. 18:25–28 | Historical setting | Date pending its source qualification |
@@ -495,7 +495,7 @@ For each passage, as the Scriptural Date and Location table names it: what is da
 
 - **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-*Communion Antiphon (first): Cf. Psalm 118:49–50 (Vg.; Heb. 119)*
+*Communion Antiphon (first): Cf. Ps. 118:49–50 (Vg.; Heb. 119)*
 
 - **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
