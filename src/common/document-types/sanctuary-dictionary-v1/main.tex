@@ -1,0 +1,14 @@
+%% sanctuary-dictionary-v1: one edition of the shared dictionary shell.
+\newcommand{\DictionaryLeafRoot}{@{document}}
+\newcommand{\RSDGenerationMetadata}{\input{@{document}/generation-metadata}}
+\newcommand{\RSDTitle}{@{title}}
+\newcommand{\RSDSubtitle}{@{subtitle}}
+\newcommand{\RSDEditionLine}{@{edition-line}}
+\newcommand{\RSDOpeningTitle}{@{opening-title}}
+\newcommand{\RSDOpeningText}{@{opening-text}}
+%@ option opening
+\newcommand{\RSDGeneratedFile}{../../build/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated/@{selection}}
+%@ option omissions
+\input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/publication-shell}
+\hypersetup{pdftitle={@{title}}}
+\RSDPublicationBody

@@ -67,3 +67,15 @@ data = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/res
 [[structure]]
 role = "object-inventory"
 data = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/object-inventory.md"
+
+[document]
+type = "sanctuary-dictionary-v1"
+
+[document.main]
+title = 'Pontifical Ceremonies Visual Reference'
+subtitle = 'Vesture, Insignia, Furnishings, Ministers, and Objects'
+edition-line = 'Pontifical-ceremonies edition'
+opening-title = 'Pontifical relationship key'
+opening-text = '''The admitted records distinguish vesture,
+insignia, privilege, rank, furnishing, minister, and ceremonial relationship.'''
+selection = 'ed-pontifical'

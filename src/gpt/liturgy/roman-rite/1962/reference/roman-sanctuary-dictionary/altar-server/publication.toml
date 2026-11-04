@@ -71,3 +71,17 @@ data = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/res
 [[structure]]
 role = "object-inventory"
 data = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/object-inventory.md"
+
+[document]
+type = "sanctuary-dictionary-v1"
+
+[document.main]
+title = '''The Altar Server's Visual Dictionary'''
+subtitle = 'Recognition, Handling Boundaries, and Confusables'
+edition-line = 'Altar-server edition'
+opening-title = 'Read the boundary first'
+opening-text = '''Appearance never grants permission to touch an
+object. Follow the priest, MC, sacristan, and the church's established
+directions. The visual route groups objects by where and how a server
+encounters them; a handling note never substitutes for local training.'''
+selection = 'ed-altar-server'

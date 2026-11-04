@@ -1,0 +1,27 @@
+schema = 1
+record_type = "document-type"
+id = "sanctuary-dictionary-v1"
+description = """
+One edition of the illustrated Roman sanctuary dictionary
+(guidance/liturgy/roman-1962-pictorial-dictionaries.md). Every edition is the
+family's shared publication shell rendering its generated selection of the
+canonical object records; the type owns the definitions that shell reads (leaf
+root, generation metadata, title lines, opening key, generated selection and
+omission record), the PDF title, which is the edition title, and the shell
+itself. A leaf supplies its title lines, its opening key, the stable ID of its
+selection, where its review omissions live, and, for the comprehensive edition,
+the opening composition that precedes the plates.
+
+The definitions stay literal in the entrypoint because the browser-print
+adapter (scripts/_web_print_dictionaries.py) and the dictionary content gate
+read them from main.tex.
+"""
+kinds = ["pictorial-dictionary"]
+
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"
+fields = ["title", "subtitle", "edition-line", "opening-title", "opening-text", "selection"]
+optional_fields = { opening-composition = "" }
+options = { opening = "key", omissions = "generated" }

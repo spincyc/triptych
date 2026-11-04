@@ -67,3 +67,16 @@ data = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/res
 [[structure]]
 role = "object-inventory"
 data = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/object-inventory.md"
+
+[document]
+type = "sanctuary-dictionary-v1"
+
+[document.main]
+title = '''The MC and Trainer's Visual Dictionary'''
+subtitle = 'Roles, Handoffs, Branches, and Recognition'
+edition-line = 'MC and trainer edition'
+opening-title = 'MC and trainer recognition key'
+opening-text = '''This edition supplies source-audited
+recognition prerequisites. Ceremonial relationships appear only when
+claim-level evidence supports them.'''
+selection = 'ed-mc-trainer'
