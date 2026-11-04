@@ -198,11 +198,11 @@ EXAMPLES = {
         Example(
             "tools/document-library list --section biographies --provider claude",
             (
-                "claude  biographies/origen                       --  2026-07-24  eligible     Origen: Man of Adamant, Trial of the Church",
+                "claude  biographies/origen                       --  2026-07-25  eligible     Origen: Man of Adamant, Trial of the Church",
                 "claude  biographies/saint-augustine-of-hippo     --  2026-07-25  eligible     Saint Augustine of Hippo: The Restless Heart",
                 "claude  biographies/saint-jerome                 --  2026-07-25  eligible     Saint Jerome: Doctor of the Sacred Page",
                 "claude  biographies/saint-paul                   --  2026-07-25  eligible     Saint Paul: The Least of the Apostles",
-                "claude  biographies/saint-peter                  --  2026-07-26  eligible     Saint Peter: The Fisherman and the Keys",
+                "claude  biographies/saint-peter                  --  2026-07-29  eligible     Saint Peter: The Fisherman and the Keys",
                 "claude  biographies/saint-robert-bellarmine      --  2026-07-25  eligible     Saint Robert Bellarmine: The Disputer of This Age",
                 "claude  biographies/saint-thomas-aquinas         --  2026-07-25  eligible     Saint Thomas Aquinas: The Common Doctor",
                 "claude  biographies/tertullian                   --  2026-07-25  eligible     Tertullian: Father of Latin Theology, Enemy of Compromise",
@@ -227,7 +227,7 @@ EXAMPLES = {
                 "  subject    A discursive essay on the reflexive apprehension of asymmetric ontological dependence: received being, present conservation, and the fork of recoil or consent. The Creature Before God, Part I",
                 "  section    articles",
                 "  catalog    library/faith.md",
-                "  revised    2026-07-26T02:03:00Z",
+                "  revised    2026-07-25T22:59:31Z",
                 "  web        eligible, reviewed 2026-07-25 -> web/claude/articles/faith/ontological-vertigo.html",
                 "  produced   install_commit 01fcbfda26917a4028d256f7a5d20a50cc847005",
                 "             not recoverable: workflow_id, workflow_version, workflow_digest, run_id, seed_commit",

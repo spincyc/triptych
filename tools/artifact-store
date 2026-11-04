@@ -12,14 +12,14 @@ EXAMPLES = {
         Example(
             "tools/artifact-store inventory --declared --summary",
             (
-                "artifact-store: 5544 artifacts, 4595508983 bytes; 0 archives; ok",
+                "artifact-store: 5548 artifacts, 4657691779 bytes; 0 archives; ok",
             ),
             "Report the exact delivery inventory without opening binary payloads.",
         ),
         Example(
             "tools/artifact-store inventory --declared --summary --json",
             (
-                "{\"artifacts\":5544,\"bytes\":4595508983,\"kinds\":{\"historical-publication\":4837,\"source-evidence\":707},\"status\":\"ok\"}",
+                "{\"artifacts\":5548,\"bytes\":4657691779,\"kinds\":{\"historical-publication\":4837,\"source-evidence\":711},\"status\":\"ok\"}",
             ),
             "The same inventory as a JSON summary.",
         ),
@@ -44,14 +44,14 @@ EXAMPLES = {
         Example(
             "tools/artifact-store check",
             (
-                "artifact-store: 5544 artifacts, 4595508983 bytes; 11 archives; ok",
+                "artifact-store: 5548 artifacts, 4657691779 bytes; 11 archives; ok",
             ),
             "Validate the delivery index without fetching or requiring absent payloads.",
         ),
         Example(
             "tools/artifact-store check --json",
             (
-                "{\"archive_bytes\":4602214400,\"archives\":11,\"artifacts\":5544,\"bytes\":4595508983,\"kinds\":{\"historical-publication\":4837,\"source-evidence\":707},\"status\":\"ok\"}",
+                "{\"archive_bytes\":4602214400,\"archives\":11,\"artifacts\":5548,\"bytes\":4657691779,\"kinds\":{\"historical-publication\":4837,\"source-evidence\":711},\"status\":\"ok\"}",
             ),
             "The same metadata gate as JSON.",
         ),
