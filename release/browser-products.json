@@ -1,14 +1,23 @@
 {
  "editorial_approval": false,
  "inputs": {
-  "content": "5c13461f4ceb764822c217ee6d7683e44b1820f000cb684028c9b5a4ee3b5967",
-  "count": 82589,
-  "generator": "034606fb2646511f72311230c4d830308ec237f669956ec8a3e8c43bc8b4db16",
-  "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-  "membership": "066f124229c139cd8588e15534165572518c9de764256d4605e00302879274c7",
-  "rights": "ff17a0632c6abedd777abf1d51af6da35f6aea8f8c3bc49f52620be3337d293f",
-  "schema": "triptych-browser-product-inputs/v1",
-  "sha256": "ca869f7a0dd9301d2533574b0646f3e3a8134133fb057508041a7402cc98c2f0"
+  "families": {
+   "act-history": "7791aa8c61a7769e73b646a3a29424dce7e542854250a64f85768f80d38ae823",
+   "bibles": "c3af5929514b43e64ae504f2666afcb363c1f6429db6969a7969fd29eff6e928",
+   "calendar": "6fab8e5e9b58424428839c8c60362696dc31255bef3c4c9f2d30c6275d0cd468",
+   "catena": "9a99386e587e401631909dc4da206fd8e6db1c00e396ff809255cfeebcd23eff",
+   "documents": "8b62068f9dd9c6dc42fc60617788e437849fe3cbda6f3868221900c9b4412a5f",
+   "encyclicals": "4af69c7d36f5b1b4ac5098b90ce23d7f8796b04781beca0e1c8ad2fb3ac4d1bd",
+   "ordinary": "fedfbb9bd824efecac3cc283332e06ced1fb16438d2bca99a2c4abbb747c260e",
+   "paragraphs": "b8f6e499506fb811ed9c9132745dd4cad47985b3907229a40f04ea7a9aea70e9",
+   "propers": "80fb6397e48102af6793434c086ba9be5685cdf5e80fc423841065967b450c8e",
+   "readings": "122bf6c35fc03c9e52b28ce291b013d92c116a3f7b014fa61cf88410d2b864e6",
+   "rubrics": "39e55cc43a2d5dbde95953522a830865fef0777af61f34979bb08599e10814f9",
+   "sources": "542416543b96222dc5c47547115401bde03c33c1a5fe96908b4c26ea2aa36b85",
+   "web-editions": "edc5687ecb057a0628f861627a27eba425034a0f1f0ff0a134060c48910e8689"
+  },
+  "schema": "triptych-browser-product-aggregate-inputs/v1",
+  "sha256": "069ddde412e5aeee6bfe70438c2a502185a7d92805d1ae3e439cb2b7068266eb"
  },
  "products": [
   {
@@ -22,16 +31,16 @@
    },
    "id": "bibles",
    "inputs": {
-    "content": "ad5ee58e275956b4bd1c08187d265a90af68d31e27ecf6e26fde378970d6c758",
-    "count": 71757,
-    "generator": "034606fb2646511f72311230c4d830308ec237f669956ec8a3e8c43bc8b4db16",
+    "content": "eacc7fa145ffcfb214ffd4a44e2c27c73a4c48c2d509f01c0108b9f3d7180dbb",
+    "count": 70624,
+    "generator": "58eaae7ec041ec7fba39ae388d7629df69f2722e4d1fe76b3b264a5a17e18a5a",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-    "membership": "cdc3cfec271a0b00937585fb4f0fd357b478de08085b4f10a9895ec62c07876d",
-    "rights": "76c5cf4f2fedd7594e86677c9da483e2f347638abcacc715af94d911fb0b2ec1",
+    "membership": "7b24d19ecc879f8c460ab16075dd633fb6bc3a7e443eb9b9d78b6bac5eb01c63",
+    "rights": "20d414eb29d47265a51ff054ae3743cd062f889f3bac2ffdce6bd4b1acc80ae4",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "5ae0fe88662cb7f021d335c34b28ed1698d2f9a10b6b8fc67df5681bbf7e01ba"
+    "sha256": "c3af5929514b43e64ae504f2666afcb363c1f6429db6969a7969fd29eff6e928"
    },
-   "key": "653eae48d3cfc16070bd64f16e538dcebc57739a090393d8b7f7517b725a673f",
+   "key": "e804f70f7d5aab9e3d6f8bd0f3d1fa1204bd4a6a4b65ce060986a86894c64a3f",
    "path_set_sha256": "14d56894543c1e5457683c8b4a392258e6dfd6703dd6afbf8ffd704a9b039014"
   },
   {
@@ -45,16 +54,16 @@
    },
    "id": "encyclicals",
    "inputs": {
-    "content": "3a8c749ec878d68e09d2dcf895a03c1332174840290c87ceb091f858d2a9bd18",
-    "count": 2201,
-    "generator": "034606fb2646511f72311230c4d830308ec237f669956ec8a3e8c43bc8b4db16",
+    "content": "68303546bd3f0c00306ea4265e073f9c6a4d76af5196d9bf046a15612b1dcf3e",
+    "count": 1048,
+    "generator": "ebbec42d3df9c4bed7f1f863133a0e7014f52a0a0f69b471568828a814a25ed5",
     "lock": "df90b33394fba5ec5a5b141260e3e918e6b0acbe3083dd27beed29a155cf0780",
-    "membership": "de133e84f534b18ff8176c241d5ace9f93e272a09a5f541838f9ff9db0ac25b3",
-    "rights": "7b8491d5abda0e3e50f9f853cceb763cbf3bbea715545499cb943cc3bb86ad98",
+    "membership": "c64b743504e438e87362368be410a9ff224703cd5d3fe1103e8280e0b1f397af",
+    "rights": "03855dd945f9d71b71e647af463289204deb2de894180d53f2333acebcc2d2ac",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "4442706089c1b93f7eedba48d6f1030f8b8d50fbcc83a6d2250a3e84779ba205"
+    "sha256": "4af69c7d36f5b1b4ac5098b90ce23d7f8796b04781beca0e1c8ad2fb3ac4d1bd"
    },
-   "key": "8110af38dc68d888852310dadcca2f6858be7d5d268bc408b28457addc47aab6",
+   "key": "91afa1e39e80ce7ff596c28df7ba54ac1ac3f91a9cf694daddba810a4f7ab030",
    "path_set_sha256": "410846e35c045235205d43b4779485537ff1d8c54041679b06f76628bc0575b2"
   },
   {
@@ -63,7 +72,7 @@
    "files": {
     "structure/act-history/catalogue.json": {
      "bytes": 11583022,
-     "sha256": "23ad401457085de134f92476602a9c39cce9ea0736eb5fbdeaf76bd6525fac63"
+     "sha256": "a1ca0fca9ecc17b0b308963fed06e50240851dd803679994fe8304364c4e6b42"
     },
     "structure/act-history/code-of-canon-law.json": {
      "bytes": 64570,
@@ -1127,127 +1136,127 @@
     },
     "structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-anamnesis-oblation.json": {
      "bytes": 283537,
-     "sha256": "fc1cc6310f49232a8ed495ffe0fcedd26aa52a789cf45374c2bf02f4c4624638"
+     "sha256": "a7a12deab5924baf0f9a6b7bd8026a884ebe4343ec08a848242c01b6fd3808e4"
     },
     "structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-invocation-gifts.json": {
      "bytes": 290625,
-     "sha256": "b4149c398acabc06b195570fe31bd83aed4c928518be8c27608df05880852aa5"
+     "sha256": "5ec9484ab278ba66b42521f16ed9bff65d45bdfb001a65c58f73ee1c53f4d9ed"
     },
     "structure/act-history/comparisons/brightman-1896-greek-basil-james-anamnesis-oblation.json": {
      "bytes": 292364,
-     "sha256": "5afe3e5605652e88fc51fde426fc8f29f8b87a979c49bd3c49444f21edd4e40b"
+     "sha256": "80e9525140b401a4463cc2b223a2828c1ee4c2fd7c61fa47b6559d422d7e4b39"
     },
     "structure/act-history/comparisons/brightman-1896-greek-basil-james-invocation-gifts.json": {
      "bytes": 297589,
-     "sha256": "a3ccca13b955e978fe14b89f7d585d4ec2ae45ca88441b067746017da09479f0"
+     "sha256": "921b4e7f623cd7229855c70782dd3cb22e0a2b13b56a07809109dd5be8f87c29"
     },
     "structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-anamnesis-oblation.json": {
      "bytes": 291395,
-     "sha256": "163f2c57d45bf1187c7ff457f0cc51bba302bb919161f4fbfe520d9aed84ff17"
+     "sha256": "d8f9f3129a71e40798e7812851e6be989256de652f343241e63d7efc25ce0cd0"
     },
     "structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-invocation-gifts.json": {
      "bytes": 292690,
-     "sha256": "09f9ba10d872e97cb2933c9cab376af1836a7cc960969565bd5327fb51ebad8e"
+     "sha256": "dc535c4574e08a82442e4854ac3d69ba471de463c2431ab4e12c5376f39da23a"
     },
     "structure/act-history/comparisons/carmelite-1574-1621-october-05-calendar.json": {
      "bytes": 263233,
-     "sha256": "19ab0bc409d846bd5671235c42bf8843c2297a3746f36cf67d45737eda9e00b1"
+     "sha256": "5c4567dc6f977d4357b934dc6eedc1ab839941c0bcf59abc6539c4e578c8bf1c"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-canon-constituents.json": {
      "bytes": 824649,
-     "sha256": "418acd498aabcbb04158dbcf1ec7266a764487002b6bb8a282588d37ed889589"
+     "sha256": "10654f9d323450f9569269e9adc36e7a93076f3c24343fcd6753a0520bf09f3a"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-confiteor.json": {
      "bytes": 344571,
-     "sha256": "79947f73fb252920df70b6df75a343041a5fe0ff30eda1dcbc932a88f729e300"
+     "sha256": "8398b6e42a75a1404f5f0c8587bdd71d145e404e2eeff60f786d5ce6da39c70c"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-offertory-constituents.json": {
      "bytes": 453881,
-     "sha256": "423cd3e851fde45cda08e40adfc4a16f3ac97a4a04850e273d0cda3868059084"
+     "sha256": "9dcf22bbb580d57b3fcb638e75824b32134bd0a58223d60d1faf29a9da2f1005"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-orate-response.json": {
      "bytes": 345987,
-     "sha256": "8de36cdd477900ab8fed2974debafcc55d7dd6080fa04e12873b345bfbfd7e5a"
+     "sha256": "1c253886f1e32140da82da9e74c9cd74963b225447df508ca858f5c90aecb04b"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-pater-noster-first-chant.json": {
      "bytes": 411792,
-     "sha256": "72ad6e997d4ebc7bcdfec949a8a34ba10d29757b03d0dc35ca31dd20cf809c6c"
+     "sha256": "6eae61c9083b113ab6207f07e073c9b8f8c09281afa04375d6c26adcc958c0c2"
     },
     "structure/act-history/comparisons/cistercian-1606-1657-suscipe-trinitas.json": {
      "bytes": 347038,
-     "sha256": "49ad1bd571705de5123ed814cda33b18a56a439ca9c4c9d55a825c7cde4cec01"
+     "sha256": "41724fcdec2c85e818d342890f5045d209a0eb2571778af3b53c217c69965db5"
     },
     "structure/act-history/comparisons/dominican-1550-1604-suscepimus-collect.json": {
      "bytes": 262545,
-     "sha256": "a4d4cc76a01fa6c2c0579344a0b3cca06c9fc02e77009c79ad6e5ea80590b929"
+     "sha256": "e4d8a4d9098d6787e219a3ffcce65945cf21f904f3917ff248e8589d7e8750cc"
     },
     "structure/act-history/comparisons/mozarabic-1500-1755-benedictio-panis.json": {
      "bytes": 307103,
-     "sha256": "412856ca05d4f82f375a5571f339e0dafda77cb6ccaa22fb945dab8a53df8903"
+     "sha256": "9c230034a59a5e6ef419cd00adf41b9865cdd01d75f400f457dfbd3e7662b9da"
     },
     "structure/act-history/comparisons/mozarabic-1500-1804-benedictio-panis.json": {
      "bytes": 305824,
-     "sha256": "4c9c5ff43ba8762f9f60c9c2b8fe67762dff5aa641ee84cd6cb9e92c140f3355"
+     "sha256": "256950e74e2f1c90be68eac82789136f3a6558222a3d4be868ba16335b7529e2"
     },
     "structure/act-history/comparisons/mozarabic-1755-1804-benedictio-panis.json": {
      "bytes": 304308,
-     "sha256": "882881f55c41dd4873a8aceed58635811d8a7463670d5df72aaf29452fd5bbb0"
+     "sha256": "59a014988f8e15adb22863cb862bfc0bba71bb586f8eea044b116f7ea42285e8"
     },
     "structure/act-history/comparisons/roman-canon-memento-wilson-r-and-cummiskey-1861.json": {
      "bytes": 300735,
-     "sha256": "aab8d65b79944c90d1683622b095b80e4e117722e66e28c90d1174b9df23d78b"
+     "sha256": "9ee27c5a7c7508c6c884bec151a83460fee24a856b17c76f99c461cd6bf8343d"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-cummiskey-1861.json": {
      "bytes": 308010,
-     "sha256": "9e2b02f9c24ed6244b0564db014382d9fb2b8d18aa82239ed553b2310a68e7f3"
+     "sha256": "5bf5077d6c9a01c91d805f86b12618df319976da8be001417aa9106e61c0b845"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-stowe.json": {
      "bytes": 285443,
-     "sha256": "403af32e4fd835d1c65b7beb2d5b6e35b0505263f4cac023b9659087d18714bd"
+     "sha256": "fa918a74e3f102306cf84f7d062380d6227b4148e920cd48456b20940eed4f92"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-cummiskey-1861.json": {
      "bytes": 303027,
-     "sha256": "c6c025de3a80fb7d038e87ecc1e175db7c867568c3339123d20cbb62223e7239"
+     "sha256": "589a82b8c1d6cc20861f15b0d97c3a3d9fc568c5aacc15cd1c2998f43b72656e"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-gelasian.json": {
      "bytes": 274521,
-     "sha256": "ac4a25188f6af5c82630545c05a28e2e117e37842bf8c4c298538a4238dc7357"
+     "sha256": "8fb73539b1dba2d132ec4b769a7739100b69b6e3be4ceed0d6ecb8678e43118d"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-stowe.json": {
      "bytes": 280219,
-     "sha256": "a7219c618764ec1aa1e8e48fb12dc656d3ffe29c21ce0c52c86a6e00f9278500"
+     "sha256": "8841feedfcb03d68c0d9ed728464b9f2769b81865fd51b49c2f9e5d38a16d121"
     },
     "structure/act-history/comparisons/roman-hanc-igitur-stowe-and-cummiskey-1861.json": {
      "bytes": 313900,
-     "sha256": "d94b949603ebc35702dbe3b48121a584109937950698a380bbe8d698f1ac609d"
+     "sha256": "4277e2d4adfae570b2822ae0c607976d782228519f6394f96962ff8006ccc385"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-cummiskey-1861.json": {
      "bytes": 307607,
-     "sha256": "d2b8b5965339ed0c41e7fcb311cf04bae488a4696312fcb49e239880a84b9f98"
+     "sha256": "94f120f8392da19420594ec849c5ec0c54f7ec3068195c1f050908282cc1b423"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-stowe.json": {
      "bytes": 281616,
-     "sha256": "9e378af6a303814a40eaac2921ddf34b2a451ccf434efd28384de357e1720930"
+     "sha256": "c436fb235b2c891298fef0b67827d175a6f7a80c6da2e33dec6b4b0610af1b63"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-cummiskey-1861.json": {
      "bytes": 303230,
-     "sha256": "c60557058083deb67a7981690c3623a65122ff4db83eaa41eab56d1501e1bee0"
+     "sha256": "9a81c1669c2f6fe15bae97271fa61afe0e95c832b2b13e1012675068d2c58847"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-gelasian.json": {
      "bytes": 274853,
-     "sha256": "eac7ed5d892a30fcc06a050422b0ce837ba1f7ba127c5745e966f8e665fc03e8"
+     "sha256": "cca7dfec69ea0e10b1ad78d8aaf3764e009adf1e089cd2521c9e7d84622e29a0"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-stowe.json": {
      "bytes": 277030,
-     "sha256": "0196c4687e3527bf6be2a3753928f3ea9f9ff4ceb39bfdf8de2ab0653e2b6033"
+     "sha256": "a0e90be30af2c421152cbc973d794e33e996a4457854805e60182d7d439c73dd"
     },
     "structure/act-history/comparisons/roman-quam-oblationem-stowe-and-cummiskey-1861.json": {
      "bytes": 309944,
-     "sha256": "f32aeed1e5ac2bef801e48f60123553942723855d7601b92e6864972f11d2a5e"
+     "sha256": "1b9c5248206d960e36b27eed7ac68e27669233b7450d6f63abdbf951e6664fed"
     },
     "structure/act-history/comparisons/roman-sanctus-stowe-and-cummiskey-1861.json": {
      "bytes": 310628,
-     "sha256": "0a65443812c1501ecdb503fb0a10665252fd69651402d66380bc5cb2d9dcc836"
+     "sha256": "8de2308e0304e3af59e67e2a06bf17b7f807c648e46f6f4d285f847746b33f9a"
     },
     "structure/act-history/index.json": {
      "bytes": 337,
@@ -2292,16 +2301,16 @@
    },
    "id": "act-history",
    "inputs": {
-    "content": "c71397eca0162c1675b7ff2d5340e6c9bd0dee1ca32900038d016ad29534d596",
-    "count": 81209,
-    "generator": "034606fb2646511f72311230c4d830308ec237f669956ec8a3e8c43bc8b4db16",
+    "content": "53d56f8591a355e65aeb100dc2cbafa0e6905a245086a1adf65006ec6c546475",
+    "count": 78237,
+    "generator": "f418f230825fa12a2c1054ce29294d39a0b7caac74ac392fc79c2ee5319c0143",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-    "membership": "6b573928eb5495d4ef05050691dba930210244a460a96fa9b51038e2db040c04",
-    "rights": "a7702212d04297d2a62f71af2fa69f4cd23f72f3d60b75637e82f5cb511c8380",
+    "membership": "32dcb7fb2d9b223b60fdb0a71aa9da007f64f150359b13d0ef15cc77aef764d6",
+    "rights": "4e318f3689b3bf0ac1bbcbf593ff1544efc391ef022cb5893e7a7387d8fbfba7",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "63e7deaeddf30e65d4346a8a62d214de2ec23d0a7db1536708f95d124703a9b8"
+    "sha256": "7791aa8c61a7769e73b646a3a29424dce7e542854250a64f85768f80d38ae823"
    },
-   "key": "ac59a3bab7b573a714606ab0a5c96a17a635bcffe216b1ff0fd30cb63fa1d77f",
+   "key": "a028914b8aac72eb3c1835e797b2c085d0294dde1996cb7acfb2fee13ad7d7e5",
    "path_set_sha256": "6c79229e3b84cc13de7dec10eb7e12bccf9e7f43de5a0b920b2ac014966e1eee"
   },
   {
@@ -3527,16 +3536,16 @@
    },
    "id": "calendar",
    "inputs": {
-    "content": "d1acbf9a028fc56f98fb42ce8139c64cb4606a0916a319675be4a28df00b1abf",
-    "count": 1529,
-    "generator": "034606fb2646511f72311230c4d830308ec237f669956ec8a3e8c43bc8b4db16",
+    "content": "c415ed04669007630913d371f013123db5d8594f238de88ae8253a846900f458",
+    "count": 376,
+    "generator": "c09ca29ec9e00c61e8ce8cbeb214d1f001f14db87e123db5ff17b7e2bb66d8aa",
     "lock": "df90b33394fba5ec5a5b141260e3e918e6b0acbe3083dd27beed29a155cf0780",
-    "membership": "edad71268c4b3c8f872b401be231a5e6569d2704afeed9fc16e0c4d692a60956",
-    "rights": "3aa9056c56e119c454f3aeda2f875a281710e691eca899de1a4c835528b2833a",
+    "membership": "a8bb5c3697e5ef506c6e77fbb9ac4878d4bf003f7a5d82222f4c0fcc9500c9cd",
+    "rights": "0df8fe64379e4dfd01f7b37319661c12762c9582df21f45148be359883d051e8",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "31db4b372b322b6c6d712520a81f37237390471acf702870c8e0aabb9db99f75"
+    "sha256": "6fab8e5e9b58424428839c8c60362696dc31255bef3c4c9f2d30c6275d0cd468"
    },
-   "key": "a42888a7b48baec34d51fcd20b45e58e62963c6a197854a7d29eb0937bce2b4d",
+   "key": "670461329aa7e2e210cabd6a9606114983c4c8677da8b25e67e2ebc4333e7f5d",
    "path_set_sha256": "a0c13f328642fecd9fec07952be9cfeef0ab13fa0e58633f104eea29995974a9"
   },
   {
@@ -11750,39 +11759,39 @@
    },
    "id": "catena",
    "inputs": {
-    "content": "ad5ee58e275956b4bd1c08187d265a90af68d31e27ecf6e26fde378970d6c758",
-    "count": 71757,
-    "generator": "034606fb2646511f72311230c4d830308ec237f669956ec8a3e8c43bc8b4db16",
+    "content": "cb933ee2a34f129de5c4e6f00656c61d74d2a87dc941a035475918dfd1e3cb4f",
+    "count": 70628,
+    "generator": "afc3f33c2651b745349fbcb32e577f4efaac06588fc84aa00835af3aea68cc48",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-    "membership": "cdc3cfec271a0b00937585fb4f0fd357b478de08085b4f10a9895ec62c07876d",
-    "rights": "76c5cf4f2fedd7594e86677c9da483e2f347638abcacc715af94d911fb0b2ec1",
+    "membership": "0ea43f62eddad46575b86103413651b9ec0140c2b532ba69696ec9beaf957cab",
+    "rights": "20d414eb29d47265a51ff054ae3743cd062f889f3bac2ffdce6bd4b1acc80ae4",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "5ae0fe88662cb7f021d335c34b28ed1698d2f9a10b6b8fc67df5681bbf7e01ba"
+    "sha256": "9a99386e587e401631909dc4da206fd8e6db1c00e396ff809255cfeebcd23eff"
    },
-   "key": "530ddc99989a1e3facc412d9027491b6ac98766f28f1d6680e72b6318772f692",
+   "key": "33db606c894bd68bf816943672224c96bfddc46e61e8eb6a9899009ae48eed31",
    "path_set_sha256": "9b9fbba9ed683949aad288fb41ff4f90cfe49fdcbd4203c3aba71137c34b68fd"
   },
   {
-   "bytes": 1146592,
+   "bytes": 1212862,
    "count": 1,
    "files": {
     "structure/documents/corpus.json": {
-     "bytes": 1146592,
-     "sha256": "badf05c0d5ae9561192459faca0fe330f074a2a314e7421af24d60bdcd0160f6"
+     "bytes": 1212862,
+     "sha256": "6ac8ce3af9642afa05a6de02d567dcdd9cc3a2d817914e944ca49f1976753dd8"
     }
    },
    "id": "documents",
    "inputs": {
-    "content": "e5942ff4a77ebc7ab0411e2b1b2086fd34c12a8f88ab5b7455b5938d67b32888",
-    "count": 10616,
-    "generator": "034606fb2646511f72311230c4d830308ec237f669956ec8a3e8c43bc8b4db16",
+    "content": "bc4a2809a3e20613e2ee95102e8e0fea1a2153876f67c796db0b343a7c58e167",
+    "count": 7992,
+    "generator": "dc67a3fc2eb5f4cd19fd37dadcd854463cb1ac68e25bd5d87114cdd01f27cf86",
     "lock": "df90b33394fba5ec5a5b141260e3e918e6b0acbe3083dd27beed29a155cf0780",
-    "membership": "16ec4e14ac81bef3a5559bdf36e2f0c419b9337e3ce107a7cdf56714eef4d4c4",
-    "rights": "e28c2505c0bad7c60e027e5b11fda3f19d83ace0a35be775945e5e051cb51c3a",
+    "membership": "4fafca44b5122774aa43f30fb2c5a9f94185c726fda04f8c8978f87c727df2e2",
+    "rights": "fc70db81d2a61165facaa48df8ad63c7eeed0fc00d47c645f88e8c7d21e3f160",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "e114b945b603077733ed02263be9df998f836496259b6e9f40ed3ac9a81f4742"
+    "sha256": "8b62068f9dd9c6dc42fc60617788e437849fe3cbda6f3868221900c9b4412a5f"
    },
-   "key": "910fa021c8633ddb9ba93d1ee87816a16625d9e95f16f6d8873a81760ba364b8",
+   "key": "2b44047d38d469c21f85f79a9d695b4ba76038136e172df372eb5b4e6643429b",
    "path_set_sha256": "0ec113e99b049bb781b04b2631e34ca3f3d0a90d0fdf95112ab234089debe48b"
   },
   {
@@ -11808,16 +11817,16 @@
    },
    "id": "ordinary",
    "inputs": {
-    "content": "ad5ee58e275956b4bd1c08187d265a90af68d31e27ecf6e26fde378970d6c758",
-    "count": 71757,
-    "generator": "034606fb2646511f72311230c4d830308ec237f669956ec8a3e8c43bc8b4db16",
+    "content": "eacc7fa145ffcfb214ffd4a44e2c27c73a4c48c2d509f01c0108b9f3d7180dbb",
+    "count": 70607,
+    "generator": "7c69b568c66b81bec930b2d9a74de43f20aa641d69fd27a698f5e558a0bec163",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-    "membership": "cdc3cfec271a0b00937585fb4f0fd357b478de08085b4f10a9895ec62c07876d",
-    "rights": "76c5cf4f2fedd7594e86677c9da483e2f347638abcacc715af94d911fb0b2ec1",
+    "membership": "1b1033551ca7858cff92e0b3102402f7c11d1da13c523c33c6223f2a720de909",
+    "rights": "20d414eb29d47265a51ff054ae3743cd062f889f3bac2ffdce6bd4b1acc80ae4",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "5ae0fe88662cb7f021d335c34b28ed1698d2f9a10b6b8fc67df5681bbf7e01ba"
+    "sha256": "fedfbb9bd824efecac3cc283332e06ced1fb16438d2bca99a2c4abbb747c260e"
    },
-   "key": "8d1cc88875fcffbd2450fdd6538d566a894218ab980ab8f3cf970173e8b9e5cc",
+   "key": "82c4eb23ae938d894f479b30b4259daf4f715a3d1f85f67fd68a09246b61734b",
    "path_set_sha256": "8d6628d20ee36a40306d533a98efeaafbdf1ff3b8fd15fcaa53e9afc4ae63513"
   },
   {
@@ -34019,16 +34028,16 @@
    },
    "id": "paragraphs",
    "inputs": {
-    "content": "ad5ee58e275956b4bd1c08187d265a90af68d31e27ecf6e26fde378970d6c758",
-    "count": 71757,
-    "generator": "034606fb2646511f72311230c4d830308ec237f669956ec8a3e8c43bc8b4db16",
+    "content": "eacc7fa145ffcfb214ffd4a44e2c27c73a4c48c2d509f01c0108b9f3d7180dbb",
+    "count": 70627,
+    "generator": "afc3f33c2651b745349fbcb32e577f4efaac06588fc84aa00835af3aea68cc48",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-    "membership": "cdc3cfec271a0b00937585fb4f0fd357b478de08085b4f10a9895ec62c07876d",
-    "rights": "76c5cf4f2fedd7594e86677c9da483e2f347638abcacc715af94d911fb0b2ec1",
+    "membership": "5fe08de8c7cd76d81e50726d3b206a441f8df5cdf2dd977e75eef6e2a6862357",
+    "rights": "20d414eb29d47265a51ff054ae3743cd062f889f3bac2ffdce6bd4b1acc80ae4",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "5ae0fe88662cb7f021d335c34b28ed1698d2f9a10b6b8fc67df5681bbf7e01ba"
+    "sha256": "b8f6e499506fb811ed9c9132745dd4cad47985b3907229a40f04ea7a9aea70e9"
    },
-   "key": "6435b40dc9f7e9de7eaf43983c573c554dad817154cb0e0600076fb48db04dc3",
+   "key": "ca2e59708b2a9f0d199804b795ff2f8e1a6a546fe6627ab64c9e225c110d4072",
    "path_set_sha256": "9de3712da5253ae1811b47967cb17448685f69729faff8a58c640179f9049796"
   },
   {
@@ -36034,16 +36043,16 @@
    },
    "id": "propers",
    "inputs": {
-    "content": "ad5ee58e275956b4bd1c08187d265a90af68d31e27ecf6e26fde378970d6c758",
-    "count": 71757,
-    "generator": "034606fb2646511f72311230c4d830308ec237f669956ec8a3e8c43bc8b4db16",
+    "content": "d98d1f404a999917094017ad6fddd69213852f6b887b9bcc2d1206e38b7a0293",
+    "count": 78026,
+    "generator": "58eaae7ec041ec7fba39ae388d7629df69f2722e4d1fe76b3b264a5a17e18a5a",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-    "membership": "cdc3cfec271a0b00937585fb4f0fd357b478de08085b4f10a9895ec62c07876d",
-    "rights": "76c5cf4f2fedd7594e86677c9da483e2f347638abcacc715af94d911fb0b2ec1",
+    "membership": "da7e1de1dd6221c4004b294a487a26d04ceedcbdf1d5b023a54d43b7ccdc27ff",
+    "rights": "f062fa34087a9a9c5835d501d184b8a5343ec362fcd107c44de834b3150182b2",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "5ae0fe88662cb7f021d335c34b28ed1698d2f9a10b6b8fc67df5681bbf7e01ba"
+    "sha256": "80fb6397e48102af6793434c086ba9be5685cdf5e80fc423841065967b450c8e"
    },
-   "key": "dd3caad5c20f8757c668a41b0c3c2ca96ffd5727d16c4dc38c5904917f2310f8",
+   "key": "7896c5827abcbe6f8d1ee340b4ea185381c6bfcd7e68d1eb3acfde874423b4c9",
    "path_set_sha256": "b53fa6715bff5bcbf2f849d69c9dcf20923c4c0fc6cd0695f735724209265f97"
   },
   {
@@ -36057,16 +36066,16 @@
    },
    "id": "readings",
    "inputs": {
-    "content": "ad5ee58e275956b4bd1c08187d265a90af68d31e27ecf6e26fde378970d6c758",
-    "count": 71757,
-    "generator": "034606fb2646511f72311230c4d830308ec237f669956ec8a3e8c43bc8b4db16",
+    "content": "eacc7fa145ffcfb214ffd4a44e2c27c73a4c48c2d509f01c0108b9f3d7180dbb",
+    "count": 70625,
+    "generator": "853559526c8f58b27dc426e8f98ebd29fdf842d2f645437421a8965be15b290b",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-    "membership": "cdc3cfec271a0b00937585fb4f0fd357b478de08085b4f10a9895ec62c07876d",
-    "rights": "76c5cf4f2fedd7594e86677c9da483e2f347638abcacc715af94d911fb0b2ec1",
+    "membership": "610e587a303496be6fa3591897de7bbaa821500a913eb02c611a4fe43af98d2a",
+    "rights": "20d414eb29d47265a51ff054ae3743cd062f889f3bac2ffdce6bd4b1acc80ae4",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "5ae0fe88662cb7f021d335c34b28ed1698d2f9a10b6b8fc67df5681bbf7e01ba"
+    "sha256": "122bf6c35fc03c9e52b28ce291b013d92c116a3f7b014fa61cf88410d2b864e6"
    },
-   "key": "11fd9552a5a945fec4941ebbc7a96fdab6a685b841e81d72f7511107a09f6bee",
+   "key": "c90b4fb5bf7885d18b80aa031d6af25f7e03f792980a1389f16fbc5846e82a46",
    "path_set_sha256": "508b7a8e33c837e26653f6d32011065feafebd126ee7022fefa70a2cccadeabf"
   },
   {
@@ -36092,16 +36101,16 @@
    },
    "id": "rubrics",
    "inputs": {
-    "content": "d1acbf9a028fc56f98fb42ce8139c64cb4606a0916a319675be4a28df00b1abf",
-    "count": 1529,
-    "generator": "034606fb2646511f72311230c4d830308ec237f669956ec8a3e8c43bc8b4db16",
+    "content": "c415ed04669007630913d371f013123db5d8594f238de88ae8253a846900f458",
+    "count": 376,
+    "generator": "a4b651fcd9a803ac2fe234077274400be44daa8279926a9b335f5191e3302202",
     "lock": "df90b33394fba5ec5a5b141260e3e918e6b0acbe3083dd27beed29a155cf0780",
-    "membership": "edad71268c4b3c8f872b401be231a5e6569d2704afeed9fc16e0c4d692a60956",
-    "rights": "3aa9056c56e119c454f3aeda2f875a281710e691eca899de1a4c835528b2833a",
+    "membership": "3e66944863aa5f42173769da65ac8252aa8409f6f4b15419c794d379cc955dd6",
+    "rights": "0df8fe64379e4dfd01f7b37319661c12762c9582df21f45148be359883d051e8",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "31db4b372b322b6c6d712520a81f37237390471acf702870c8e0aabb9db99f75"
+    "sha256": "39e55cc43a2d5dbde95953522a830865fef0777af61f34979bb08599e10814f9"
    },
-   "key": "2651f38e0bef1bfc2349c1a1c44b19d68f46d0f6617f58598f47646bce93c73e",
+   "key": "e2a26f9357e9060345e27ac16acbf22050b6d7e14ff6956f126553bf9d2a093d",
    "path_set_sha256": "b33143518fe47bc2375691f3ef5f78ffee0bc633c3fbb8507344ae056d6b7216"
   },
   {
@@ -109883,1724 +109892,1104 @@
    },
    "id": "sources",
    "inputs": {
-    "content": "c71397eca0162c1675b7ff2d5340e6c9bd0dee1ca32900038d016ad29534d596",
-    "count": 81209,
-    "generator": "034606fb2646511f72311230c4d830308ec237f669956ec8a3e8c43bc8b4db16",
+    "content": "57675fd0756269a7b69d64dcfc417e8d8a404d754c866919a1fde531316f4fad",
+    "count": 78156,
+    "generator": "c110224905cf458e8726bc70259152a3dbdb27f75fecaae2e2ada577cccb5b9e",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-    "membership": "6b573928eb5495d4ef05050691dba930210244a460a96fa9b51038e2db040c04",
-    "rights": "a7702212d04297d2a62f71af2fa69f4cd23f72f3d60b75637e82f5cb511c8380",
+    "membership": "486e21223075454134e80af99a79c07817c42740583d3ce8cf8d7e047c76c59b",
+    "rights": "229e6ed09a49a924789bcd47a4830ff759879685878771687d96e14dd8f3b90d",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "63e7deaeddf30e65d4346a8a62d214de2ec23d0a7db1536708f95d124703a9b8"
+    "sha256": "542416543b96222dc5c47547115401bde03c33c1a5fe96908b4c26ea2aa36b85"
    },
-   "key": "6215fbbba1b47156cc4b8b227c4d3b539d20bb97ceb987ac5cef8336d27775cb",
+   "key": "a7efe8ec732737d9427953aeefa54b269852d894f1f48e1edb1dc8b2a535d41c",
    "path_set_sha256": "ba98f8708403455730a3a155b3c015f285842df2b8b95b3b9214da0a38bbee99"
   },
   {
-   "bytes": 181964493,
-   "count": 422,
+   "bytes": 26482925,
+   "count": 267,
    "files": {
-    "print/preparation/assets/0165041926e6f1a3654ea198c4cbcc93cb2410027216454efed3561b69fd358a.json": {
-     "bytes": 64597,
-     "sha256": "7dcf8c685e34d099c0b5b43106bbdce73092239d0875e79281ce2c1ec0fbf0a9"
-    },
-    "print/preparation/assets/04a0202846250de2264d3ab10468772598b9867ecd3f6c072d76a09a1d336c73.json": {
-     "bytes": 926342,
-     "sha256": "41af157720e1a98a8d874966a3683522e15659389c8b019a76a99dece94eec43"
-    },
-    "print/preparation/assets/062e1473023a680d3f54b53af6efa55bf3ac6a4cd6812ee5b5b1b78f048bdb53.json": {
-     "bytes": 512,
-     "sha256": "5659f8bb502e910dd39fdd24b949b6201aeca8f13ae206b52d7ba78b4ab4be19"
-    },
-    "print/preparation/assets/07f49ab79ca5ebd70af5b31bef5313168e493bfca5eb67ae57df530d59452e0a.json": {
-     "bytes": 4125207,
-     "sha256": "93b7b3ff732fe4dd41b45b7a2c4646964b5c9afd5d85920fd0e4506fd57fd99e"
-    },
-    "print/preparation/assets/08ddec0aa8a590b32cbbc6fb721d5bb714b6a265af2d85b2fed469f4e3b0c89b.json": {
-     "bytes": 4125215,
-     "sha256": "0815099711af69022cac53216d93e017f8dfb57cde1f4f884cdaea44ab9013a7"
-    },
-    "print/preparation/assets/09b27e7df36332beec30fbfd3bc2eec479824a847ee9553545bbb11bfd0bbef6.json": {
-     "bytes": 511,
-     "sha256": "31a90e25cbb6f4a88abda0f6d8275930360e1e02b632ca0ea7990e761ee71856"
-    },
-    "print/preparation/assets/0ad5c67dab0bb637771aafd8a6b828d9ea3bb537564e2f4e14834ee9f44c980c.json": {
-     "bytes": 54273,
-     "sha256": "5014d1ca7a8f63817ab6b4ee59c1a035af69e54819fed2aa1e893dd8b475c586"
-    },
-    "print/preparation/assets/123a3e0f201cad47b4fe6d47f62739802d9efd3d6772c93a0c0cffb7379d3d12.json": {
-     "bytes": 820622,
-     "sha256": "65f571de0b83ce8f06978206a2e39e841e8471a6d35e884d3cdedfec9425eb23"
-    },
-    "print/preparation/assets/14815a860b5e7a1ef718d0c590ed2e323ecefdfe379092f4874b5efa3e0d89bf.json": {
-     "bytes": 284436,
-     "sha256": "6968adad61cdd088b71ca5089e274a61c7e703c45d2a753ab44bb89374870557"
-    },
-    "print/preparation/assets/1497411b3a949bd7f00a97f0529a8239e01882d4cfdd98ad33d67aa6dff4d5db.json": {
-     "bytes": 516,
-     "sha256": "ea3c115a4794bf74771b0bb0cb5bb72ec6bcf3aad87360189a4391850f18b55a"
-    },
-    "print/preparation/assets/18b8ed8ebce8e9edf7a879b366b881e6f3cabc50ebf37245a44aefd39508d840.json": {
-     "bytes": 546,
-     "sha256": "fa72b082c661117b9a291b984c7a27576be126aabde8d7f5e395e24d5177f85c"
-    },
-    "print/preparation/assets/19db899d16133f35a202a9fbe187e75faaf93589eabd6b82857b250104c6a1d3.json": {
-     "bytes": 61649,
-     "sha256": "6ae1927f16b74e2145f2dd9e6e8df7c782ffc2390c7f5b2b3f737378731dc226"
-    },
-    "print/preparation/assets/1a48e746b3b7faaed41b2ea328801f73c43ead8b52e4218f45f582e993e0fa57.json": {
-     "bytes": 505,
-     "sha256": "14b1fea4c6c3888fa9aa2b656947d53c7ac927926879ddd4d9a59aa3642928af"
-    },
-    "print/preparation/assets/1c6bebd11a26dd569890dc1393b08461ed5c99e07d291af8d8d6d8cdb1240ec7.json": {
-     "bytes": 518,
-     "sha256": "19a4095d8c387ed757cd355753512ab12ec0e4b1f950dff8cb9116eabbcebac9"
-    },
-    "print/preparation/assets/25fe34c70a579f6e370c9a3e5e5baebde902d879a34b06bf6667ee69a4808782.json": {
-     "bytes": 759478,
-     "sha256": "9071d5c8ee22bc7263d3baa119eb7fae8fe3907c3bb9332d75cfe956816859c8"
-    },
-    "print/preparation/assets/2731146f3f4febfcaee16a2db7e02b4b50dacc4cad305f36c9d522de4469d488.json": {
-     "bytes": 3828,
-     "sha256": "654a0af6645b83799edb5d5775e9c7bba357efca77a92cdcf76dcd4961e438a5"
-    },
-    "print/preparation/assets/2ce619a178394c879225028608c42f47e0834397f77cf8f7b93cc7bcefc2efdf.json": {
-     "bytes": 242271,
-     "sha256": "f09096607f1b24eec52b3ba6dc129e71a7dc88db8f61f2b35ee48baf7a49fe8f"
-    },
-    "print/preparation/assets/2dcbd8a0026c71eaf294960e88724ad1a7cfb358e0029ddd743654e1a40868a5.json": {
-     "bytes": 513,
-     "sha256": "f42f5781416e56a951f88d92e9e30ec14401a8e072c67c4c3ff16d72bff91b1a"
-    },
-    "print/preparation/assets/307029ebfb389be111f3a836ab9f36c5a03f8b64926fa7f5ce109470c5370dbb.json": {
-     "bytes": 517,
-     "sha256": "13b10208d437ee7f6a7c444c233b205a4d61200a240de6bf9e158e0f6a9316a2"
-    },
-    "print/preparation/assets/31402c7c3c0891b8d28f1cb05df7bda34a053e77c2dc99d72ac7bcabececac0e.json": {
-     "bytes": 546,
-     "sha256": "007a209c8c92208cf32b939beab1c50046dd46076d0f9f177973bd73a919d41f"
-    },
-    "print/preparation/assets/334e8f08394aaa0686029d1d91776583dd41b9c795bd31216846599189285632.json": {
-     "bytes": 542,
-     "sha256": "cd33cbd91ee809240d3dfff82695bcb5137773811e7d14dea7dc4302b82f600b"
-    },
-    "print/preparation/assets/370c3b4942d805345dbcaefea85dd18dc4f7cdbf592244e0f8391d11d09018ce.json": {
-     "bytes": 515,
-     "sha256": "6b180dfa3102a00f6b372b52d2881e0a04341871da85d71eea9064e0333f94a8"
-    },
-    "print/preparation/assets/380c623989480c1a73960e415460948345fbd0704220ac5b7621d02ccd102f40.json": {
-     "bytes": 513,
-     "sha256": "6ebfc1cae2b421dbb43daf219d3a85bbba8e59b1b53cfef057c41913ad23e235"
-    },
-    "print/preparation/assets/386e8954420cb9d9b351ccfe8b5071f2e79c0fd3911df834bf981bf895b71bcf.json": {
-     "bytes": 537,
-     "sha256": "f1c2c153114bfe2cc8276f2307d71ea6f7a33cf567d8288130b76a6eba15fce6"
-    },
-    "print/preparation/assets/38e63310c4a2bd6e3d2d067888a6a71dff224e643e3714772a834cc3ac8cf9eb.json": {
-     "bytes": 4826267,
-     "sha256": "75a82d5c6a3434c1443554e5e56deb1fb6e1a31c3757e67d427198684235919f"
-    },
-    "print/preparation/assets/39bddf4605a6cf80937c5c9e4a82eb6ba5091efb8c2ea9cd18eb777560a71543.json": {
-     "bytes": 510,
-     "sha256": "be5017990eb7a6fa0e91553db33c8aedd599557202cf093230ce502d0ffb47aa"
-    },
-    "print/preparation/assets/404ee72f120839c3db1195d950846c8a9e3a23e0d06886a26f858bbfde8a100b.json": {
-     "bytes": 516,
-     "sha256": "a6aa92b6b0873a807149b380b9778c69810a44f5adaeed6eeef1647dcbdd5215"
-    },
-    "print/preparation/assets/41dd7753545e01d72d430de9d833e0d2ef7dcd28c36b31cefa602f0b1e6ec899.json": {
-     "bytes": 548,
-     "sha256": "d7f9c65d9a039d6d17c13de04adcb47da4f23ac8afbd5095ee82be4d6b0c21b2"
-    },
-    "print/preparation/assets/450b8e7bac8fd54b4fcba90d87ae79eeba29636ec83b7aebf3afd1c7f5ba74e7.json": {
-     "bytes": 342562,
-     "sha256": "2f07467d0bb71a2414bdefb88b24998ade1e39f3e394c4d73cefa62690ef9c6c"
-    },
-    "print/preparation/assets/452796e56e5171dbf5a1825033b8698845eaa929b9f068fc5773aaa790f39e4d.json": {
-     "bytes": 507631,
-     "sha256": "980eb73de86bc611ad6f09c7b92af234cd4e66726fba36afb0d0add74f43670e"
-    },
-    "print/preparation/assets/46003be34a79bf2e7e067b86bad3841fb5d873589de0314c2c72bfc2fa722bf8.json": {
-     "bytes": 46965,
-     "sha256": "798e5d010cfd6c400c61f06b0081682979b61c849afc2684574ba48199c10c2d"
-    },
-    "print/preparation/assets/47cf77323f3a1548f2b5556894fbdb7834c42cfbce5f8c7b018d629ed4b87724.json": {
-     "bytes": 514,
-     "sha256": "487012783ff3154b86aa8cb8d2188feff218186c6aec3f46ae97c6be779fa238"
-    },
-    "print/preparation/assets/4ab621886229f88044a53950491be555f29cf11bc6d9f4f2acdb0a2d49899bbe.json": {
-     "bytes": 532,
-     "sha256": "b194395544f10aaffc7a0865a61980358c790b1b7582a94c04f56d97af28a4d3"
-    },
-    "print/preparation/assets/4b9fc048431f172c0dc9a3dc62e944c33404a21dae2ae0f6ab8de7eb6a239036.json": {
-     "bytes": 531,
-     "sha256": "c24f94d98fcc0e74556078e561739951222c3a4ceb469e81f71e29a8b83dfc38"
-    },
-    "print/preparation/assets/5411793e2a571e59259cccadd59481f6df963be36f43bf6e6cef8503774b00b0.json": {
-     "bytes": 66225,
-     "sha256": "6e5f90d150a10c16f8f622e4c4719e2557243fdfd8bddc8d6aa7d6a4726d75e3"
-    },
-    "print/preparation/assets/55e3e5bcfc2fcf0351554fb8fac89fcbcda6cceee988fa4d26f4fb298ad1f646.json": {
-     "bytes": 40329,
-     "sha256": "58522fe7b6e93c7de037917eebe021ec0e9fc24096e16595a597a09ff03ab895"
-    },
-    "print/preparation/assets/59b6e89b521bda475faec5d5f82f4c0038a7221e8084f635d67d17058d1c5a9e.json": {
-     "bytes": 282396,
-     "sha256": "abd87658876c445feb91df8724f9de64b6205e73a9997c7e60df050e76eb02b5"
-    },
-    "print/preparation/assets/5ec8ef31b37bcfb1f973a487150a61c17f4e6da6595e18b0d6cedd075e66f846.json": {
-     "bytes": 521,
-     "sha256": "20cf6806a46ed2f12d8a2a057df0396f9651d94dc62cd22d1c55c118b99f59ec"
-    },
-    "print/preparation/assets/5f89a826d2a33fe03a529fb4a5f276ff238e9996c7c10936c2195ebb2139b738.json": {
-     "bytes": 540,
-     "sha256": "8bb641a10c145955ffc90fb85a5791735c8e2cb1cfdd2cb0aaa172addbcd27cb"
-    },
-    "print/preparation/assets/6078ed582d53a416f761fd2fdeb384320b69191bf316234c21aabe71e2416822.json": {
-     "bytes": 431,
-     "sha256": "35c4954d75ab90eec87a5cb16d657999b7da953709751320cb054388466964d2"
-    },
-    "print/preparation/assets/610b55df5da44480dfe24ce75dcd4c5c7966cc6bf8bf9b417f18c34c2becb2fe.json": {
-     "bytes": 62193,
-     "sha256": "8267a22ad64a2cba2db9750202ebeaf157c2ca4f178a3dc30360905846ad672d"
-    },
-    "print/preparation/assets/610d15261661f515030f508eeb6c2659a5cd2c596a87f494cd781669e04aad5a.json": {
-     "bytes": 1348467,
-     "sha256": "8fca1583a74121ef66669c7eef7e5fd9050f7097b3bfd018a8087d0e135d3e15"
-    },
-    "print/preparation/assets/64b4bc61d51c26103ea6eb5c79a41994721f00819543241fb1de9e8f369be1fe.json": {
-     "bytes": 552,
-     "sha256": "427ca6159cadab410e1c034ab9386565fbc09337747d6ed6558183795132b037"
-    },
-    "print/preparation/assets/6665782a9b55aaef65222e8482a94751c22b95c78afbf25c82abbaa93b8057bb.json": {
-     "bytes": 56849,
-     "sha256": "994e80133c5ca78e3aa94170bf1d487be8df9cdfdff63a995dba131bc1b2640c"
-    },
-    "print/preparation/assets/66c21fdf70177cb1ced82ea5aa07a5031e15dbf192ef2a1951a33187bdb2b285.json": {
-     "bytes": 1819815,
-     "sha256": "c8af61b3f94759731fb494493a23e364590cedce231d8d9171bff25d74da0a40"
-    },
-    "print/preparation/assets/67b4b72e4931fff04cfa9a29e262b9f24754b29eccbc6da962bef521a30c788f.json": {
-     "bytes": 4821671,
-     "sha256": "b293cb7778b4a2fd23bcada49a5582af557e3b746ce17e821caf051ec5d2c314"
-    },
-    "print/preparation/assets/6866fe5bd5420b438f0444b71f8d0cdd32d0fabc42daa07419f9dedc0586d442.json": {
-     "bytes": 968750,
-     "sha256": "edbf2dd574c04310e93ee0dd2e71ff647428a8fd10990de5526643c908636133"
-    },
-    "print/preparation/assets/6a0bc273a41b16973c378c332d7804c1a5ee3c0bc7db21e21d2769b0e0fec026.json": {
-     "bytes": 89541,
-     "sha256": "9ff54555c30280cb289f605ce77cb9e5d2d2961c36ab39ec599609c13e2d8bee"
-    },
-    "print/preparation/assets/6a8d03bd409aad6abab6cbeb03e96606d317faf59d20f4b31cbf5cc121494b70.json": {
-     "bytes": 542,
-     "sha256": "f7f29e1e72cb3a2a9de92f232136eb1222c6dcde29ecb11c522789a0d192361c"
-    },
-    "print/preparation/assets/6c3b1e11cc373ae9977aff93f166140377a2ac318274825ec7b1c51d9dd18718.json": {
-     "bytes": 570414,
-     "sha256": "b60c5761e0ec31ae4b5244c2b7a26e033b828678eb51dfacd1650b3afcfb3aa0"
-    },
-    "print/preparation/assets/6da34b8aadd2fa6a60bef0e1644ffbbe12870085a429d635be13ed8f52924a6b.json": {
-     "bytes": 571946,
-     "sha256": "e90abba4e41ea524f679f3aa4599f22f742f09147884bcc94151ddc91254badc"
-    },
-    "print/preparation/assets/6e78fcd57b2853a999e7668fb3d454881af86de168cca8654d29bbbc6779ef19.json": {
-     "bytes": 552,
-     "sha256": "0b48d967eb20e4c2e064154d13d76fe546d023407c096c5cd01d79ba4e58e4e7"
-    },
-    "print/preparation/assets/71460673336fa3a55d7951d499a153474476f2ce55550d4fad065d2f8a912bd4.json": {
-     "bytes": 527,
-     "sha256": "2e574ea1182d6ea5f837c653c284c15007a576f567b1de90ca7258de351d2d98"
-    },
-    "print/preparation/assets/71f6f20bacf0b884160f468f8be5e2cd9f09d172f9d722389274d3de01f74293.json": {
-     "bytes": 968790,
-     "sha256": "4195c2ced2de6dd6a402b2481a4c4d53a546fe9adcb1fbf098542effe37cbde7"
-    },
-    "print/preparation/assets/73cfb96660a5778246fc6ac71e4077a734399b0d9357adb3847cf83df1fcfbf7.json": {
-     "bytes": 70653,
-     "sha256": "e38208239eaef5dcc0156f1b9f3438d0245b7447d4cc8d1a9a62254a8964a54c"
-    },
-    "print/preparation/assets/782c345d44f8107029111036d21600c536b3a5a6b419fc69753811a3c1d8c05d.json": {
-     "bytes": 223918,
-     "sha256": "1e478bf998623fe9c3a5f2fccc762fa9202682c79e50556aa6c268591fb9c068"
-    },
-    "print/preparation/assets/78308d224adbc620b73c2a9ef1b7584054340234136a315d258d360914b6ac04.json": {
-     "bytes": 55085,
-     "sha256": "9d445ed361c799646402494c09e54376d2069e82a6cb7daa25c32c39417d9b0b"
-    },
-    "print/preparation/assets/790c44bcee8c62d3f2f3862d343fa21ac6ed9b7ebe5a0797163f88c39a732a1c.json": {
-     "bytes": 517,
-     "sha256": "d9eeda7e3fef4df4b13d021d068c97ec75affa226f42468bdb425e10960a7141"
-    },
-    "print/preparation/assets/7c89384d451c376ea71fd8862a43abb4bed6d7d50ff741e3a124b728abbf5298.json": {
-     "bytes": 70757,
-     "sha256": "942709938eeb70e1e963bcc5e17c651467b5907bf1c27db413c1e15ccb4e580c"
-    },
-    "print/preparation/assets/7d19ca898ea49ea5a142a20788dfbc16c826d6f92069d49939e12fef84c41b7b.json": {
-     "bytes": 551,
-     "sha256": "a73100a963ca5a9ddde0143836abc4318c62a9c4dcd1c0f8bf50af6d9e06988f"
-    },
-    "print/preparation/assets/8303523bf3c106e3f8c7f75e8d4950e8b39d5cd59ca4af6df1fc33755ee5d959.json": {
-     "bytes": 510,
-     "sha256": "2d95abad4dbe960b17ab876a344e904b55fbc753d6a2074df815448492f4a300"
-    },
-    "print/preparation/assets/8427267ff292be2c3423358968ef8c59a213f3d8488a229076bae81e92d6bec7.json": {
-     "bytes": 422634,
-     "sha256": "007a8a589c3a27b03d1859ecdf5c215c5551776d837942fa650e0fd0dfc86bd1"
-    },
-    "print/preparation/assets/842a1bfa769aa31d530c003ba5acefed62ba6d2a43ac0e56b716a37c07184bc2.json": {
-     "bytes": 525,
-     "sha256": "5e3465d617fe967ba42d40973cc62af3ec4418ca7e32b158796b73e8e49d4b4c"
-    },
-    "print/preparation/assets/851a28ec0025588a8d5470c8357ac1869523b26ee5cc031e6d5acafbbc1bc09a.json": {
-     "bytes": 548,
-     "sha256": "7dfa9c45d81adb578f745f5d821d64844040912181cd0c12bee2b668de1322db"
-    },
-    "print/preparation/assets/88325223cb47e9e903f137c0368a2a996bfa04ad09695056bca9c4018642d61c.json": {
-     "bytes": 540,
-     "sha256": "b3fbd50e7bea1409bf80fea953e1f22bf896827b955378121480f0724621e8a8"
-    },
-    "print/preparation/assets/88bf1592fc4d3c8f3149e1710e49327f3ae918a94f3858e0ec766f9f6ebe4736.json": {
-     "bytes": 501,
-     "sha256": "d2d82608fe01ff8cc8d9ebcce784795a3671ed3cf6463e7081ca5c3ae7abe5d9"
-    },
-    "print/preparation/assets/88ee7c9a986ea013f12ce62b66f8f0b12ce71c37e06a9c22483c6be0c76328a6.json": {
-     "bytes": 4022667,
-     "sha256": "e2b88e8eb63ed8f8a41fdfc90aefe1b008a51c6e3f48785af1a4b0c601caeaa4"
-    },
-    "print/preparation/assets/8b722ce6f9ab0e5d16c0ee154750fd336364f0f78c60deb3efead9109fa2e6d0.json": {
-     "bytes": 61993,
-     "sha256": "ec6ad4baa41264b440c073689031edd42faf7c5b94dd19c483bd7461dae47474"
-    },
-    "print/preparation/assets/8c6c36a89b47254b77c903a576e004bbd15a5de6be484bace30020206d6e0bce.json": {
-     "bytes": 251555,
-     "sha256": "528f5db6cb2095add72dcffef61df18fb68a5bc3b3201a2259fd0be6d35df747"
-    },
-    "print/preparation/assets/8d508d9da5fa5a1d56bc48e8b637d5ed4a122a48decd6dd9767d5cde3fa3cb05.json": {
-     "bytes": 4826259,
-     "sha256": "3b9c8eab0f8e77908a127e98683fe338d8ca0a23c43578a300fd9a5d370952d9"
-    },
-    "print/preparation/assets/8fe0eaf6ac691cf4177aa886040ac33d0463540ba57f8c91c04d8ef03c98e3c3.json": {
-     "bytes": 526,
-     "sha256": "1dd6f4acd2a406d8797ee598948814c40b4f160fdab640e5a431b3fa3da79302"
-    },
-    "print/preparation/assets/949c0bdbadae8a612bd1ec277be2a64b37b92dc5169ca6aa07f908ed316188f5.json": {
-     "bytes": 58361,
-     "sha256": "74392b91aaaa6dfa1936510d22f9c8aa6f7c64a417b9d103dc70bd33a289ab51"
-    },
-    "print/preparation/assets/970f9fdc9867a4388dddef993a7d785e4ab8d3e2e40f3fe76b94492792ade2df.json": {
-     "bytes": 517,
-     "sha256": "ade45252f4e29ccfa70362eceaa83f5598e4811307e4e6238d8fd47a79f7e07d"
-    },
-    "print/preparation/assets/973f7cc89692ff07b3dd598d5c148eadcd72a1fe2e7f7206599f6953bee3088a.json": {
-     "bytes": 516,
-     "sha256": "d91e4fefff2fd8116e6449b858156409153a9860d66ca3e154f7f4a8dd7270f0"
-    },
-    "print/preparation/assets/9aeecc8107c489ec1ec0068b0313e531a760edf3493705b32ab8ab8215a8794e.json": {
-     "bytes": 424,
-     "sha256": "84d745ac8752e95b9f606a5fb7cea8cbd0030bb5e68214f9b92258f25db84d3f"
-    },
-    "print/preparation/assets/9d21a20e45dbd10872fa7db4d4736570f5cd526790b2a1dbc451e6ca28766bd4.json": {
-     "bytes": 570370,
-     "sha256": "3c6c72b095118fed85619335c19e0196884f0cfb191f91f81f3bf774809062f3"
-    },
-    "print/preparation/assets/9d2f860c6cc99204277e0deb721daac25f907cd652cc379098e98b9050aeb45c.json": {
-     "bytes": 515,
-     "sha256": "dfc3c5238f2f0fd2c3650ce3917baa59b585c89580b3583295b1fd8c6432d725"
-    },
-    "print/preparation/assets/9e1d8a4848c297600042751579b7e8d5da74a5145ecc703c82cbb1fa1e2a3a2f.json": {
-     "bytes": 506,
-     "sha256": "ba9dafad5c391905ddc923d9970b84c04c79309f412d527f15b2c86ecf3ebd80"
-    },
-    "print/preparation/assets/9f559c77ca03eee7c8ac180ca0e4d726f7eb772dc64b4aef10ceddc324a59f2a.json": {
-     "bytes": 515110,
-     "sha256": "4d5d6a8c216659580db4de8ba0b4bd6cd5f3415f3a65cdff0a9803ab44e9cb79"
-    },
-    "print/preparation/assets/a485b88c70b29cffd130663619c1e15a86aac362de8336a10f3779b7b0517adc.json": {
-     "bytes": 516,
-     "sha256": "1f1a542b640f2706f5d421b32f32bef883b8ae22c4387b632e4be163348feea7"
-    },
-    "print/preparation/assets/a58cb02e86d293657309c264f6b750da9366dcb0c3d01e6f6d95d7dbd536d419.json": {
-     "bytes": 521,
-     "sha256": "39aabd15a7579bf4e131f0b5b141f13dc13de72e82ec03cb65b180183b08d177"
-    },
-    "print/preparation/assets/a6d376810ffc97bdd08a0bf67f25b7b212bf1c9de7374db9441231379179412a.json": {
-     "bytes": 45041,
-     "sha256": "06db0db3cc4aa55b4fab0b8481a501bf96611153de101ca7cb01e88a92a5c311"
-    },
-    "print/preparation/assets/a73659f22857ef8d2d171468ea000f6bf86a34cf48f20fbe0622102b3372744c.json": {
-     "bytes": 64125,
-     "sha256": "f4c706f8cefc32063832dcfae51a62eedc63894305d0bf66e19e203e2f193561"
-    },
-    "print/preparation/assets/a7746371bc7efc66d44bcf3bdae30cbb4f0494070ebfeaa7795a3d979a3de467.json": {
-     "bytes": 519,
-     "sha256": "5d640d7856f22074994746088b25b086489fabc55f45f146c122ad82a0a4004c"
-    },
-    "print/preparation/assets/aaedba7424c7fece948ceffa7705ec2f86e0d645792646cbd66d119f55dff17c.json": {
-     "bytes": 4821667,
-     "sha256": "09471c78b15d7863006341005928d402ccd0f6ee70496c38a20d2edd9ab05742"
-    },
-    "print/preparation/assets/b151c83917c5b82e1950746d880a0fe2d5fe9ddaca44d679cd96465e05a7b286.json": {
-     "bytes": 290678,
-     "sha256": "827403d278315fe4d72fb3b68ecbf30d5c76d95b79063c72d60b8259b54b861e"
-    },
-    "print/preparation/assets/b34f9ae2364d78d5913a299c3cf4b6e3b7fa9c6d375651b88e43c3783dddb9e9.json": {
-     "bytes": 4255391,
-     "sha256": "294cbcee148c9e4e3404bf7e180c9f1d952ecd0fff11680fff7b06f85fdd8d75"
-    },
-    "print/preparation/assets/b45b3742458d4cd5496c8a4202448a700c8d22c6ba1cdd26139471e8b2970105.json": {
-     "bytes": 525,
-     "sha256": "7f2a3e1dde8314bbc9324bf5035b674de93f0bd922c1a7d9d7b5e71efefa142a"
-    },
-    "print/preparation/assets/b485588420a527b76859d90c979ccdde149f8bc583491877826f2edf477884f9.json": {
-     "bytes": 63029,
-     "sha256": "3c1e2368160a8bc22057b3f67907daeb8b89d69d75e912451001d5ddbffb6c6a"
-    },
-    "print/preparation/assets/b491ba8fb6192c3357f0f4ff7e17d054404f3f20032fbc1d414980b1bdedffb5.json": {
-     "bytes": 507,
-     "sha256": "e109421e4eda0247f8d903e78f6527fb2ccbbeac1b822aa039f05da31ac6bb9c"
-    },
-    "print/preparation/assets/b706c55ee5d89514918248820e3c3f5e3c259425fd70d2c1ff534faec8a1b9ec.json": {
-     "bytes": 546,
-     "sha256": "25714fca8b2d9310ac06f62d88a6bab8cc7f1f28cf95790943681f2d44c60dac"
-    },
-    "print/preparation/assets/b7aaf3424adce9b7b0120c59ce33e116f2167456b41d50bf88a24d599f64380f.json": {
-     "bytes": 251670,
-     "sha256": "28e9fa1dbe88ab0b3a4de21104cefee81e9a3abee326f330f7e23c53bb45d023"
-    },
-    "print/preparation/assets/b7fcfd89f831dd1768e90673a739ec5e69ff3953d6018bd572d2a7f757925038.json": {
-     "bytes": 550,
-     "sha256": "61f5dc63c56547c0fcc0851a4156ea23de51cdb14b64bb04a7f6dc813f2f50eb"
-    },
-    "print/preparation/assets/b831e0ef96e8b845498749f3a812b17ef90c9f45972550be9f79304677081a40.json": {
-     "bytes": 549,
-     "sha256": "661d42a4f174d91610c7b776ab6e271f05ae3fe6b03ef4c48da8e8129d1ee854"
-    },
-    "print/preparation/assets/b9496681bb394b93cbfe00396466a458461a0911b814073f8a5842d82a1f28dd.json": {
-     "bytes": 241972,
-     "sha256": "8ccc5c56ea867237d93ed6ddcb6303ead3956fe907dc0fee5518216d93927a85"
-    },
-    "print/preparation/assets/baa62a67b222da585488c1662de08937762c2cf787d04ba4e799d4f24cff7266.json": {
-     "bytes": 509,
-     "sha256": "04ce581743eeb65d124d421e340e7248aefaa18fabe1756e063696e25b62a5e3"
-    },
-    "print/preparation/assets/be712e3e406117af287d6b9f46f033cdfdb781c403ad93e174ba4b89ea1b38bf.json": {
-     "bytes": 258474,
-     "sha256": "14e3148562f77587ca0d618588ca29510fa625e8130870a3d6979140cad2910b"
-    },
-    "print/preparation/assets/bf68bf0bad17fd5bf19928525f76c2c7f25ab705e287f0ab9de5a9119fdec441.json": {
-     "bytes": 541,
-     "sha256": "2e2ff976b5118f7dde3e35a2cd4616bc1e96ecf439dd37b540cfd136a7032727"
-    },
-    "print/preparation/assets/c2839bbcb142864e4e439ae036ecd99253868be25d781bcb95d58762248cb91e.json": {
-     "bytes": 430458,
-     "sha256": "91bb3effcf736eb99c6dade2fb7bb73129a953945ace25964e9a61f3d624a47f"
-    },
-    "print/preparation/assets/c30ac4b8b384ff1816043b48ddaea78cfb255a3791a3b7c13c55c7ce3ba191d4.json": {
-     "bytes": 524,
-     "sha256": "983dcc4cab5884842f89af0fd6f2e0397f46a380f6ea8cb655924b10276a5e3d"
-    },
-    "print/preparation/assets/c3bd7d69c62b3b741fe28ff6ffd04330c68248a46c3f73fdbd16d70b01d57b83.json": {
-     "bytes": 218460,
-     "sha256": "820f9553719de7e546fb3374deb598ee9cead2491a2e79935253b1f16e3030e2"
-    },
-    "print/preparation/assets/c63e3170384426e370564a19fa2092ffac65ae483317e392c86fee8322b5c81c.json": {
-     "bytes": 59209,
-     "sha256": "8e7d777bd30a8ddc78a3fcac4d67f8d6176274f8ac0e25e155765e209c2f4d59"
-    },
-    "print/preparation/assets/c65d507707df7e0c9fb4abf79773920b890f9d7f1e794061ea59f6b45394ccb7.json": {
-     "bytes": 510,
-     "sha256": "1dc3ccf7ac52152fdbe6a132f0f2b185c64f40b8bae4f0d1484f76c8df2fcf4e"
-    },
-    "print/preparation/assets/c8ab566e586cbcff67d3054d10b5757e75faee20588e5e211b4c37d3b18641d0.json": {
-     "bytes": 517,
-     "sha256": "0fb847b0494ff1efffeeecb89cb88c0846a435a07131046f4e043e040bce4ac0"
-    },
-    "print/preparation/assets/cc239b7c1ce387b6406de708317af204799553944933bb29b311349b02c43ccd.json": {
-     "bytes": 547,
-     "sha256": "34685a14f7faf2c7ed45541bc6c9e48a3fe62717856a6770aced9c5983bc7a62"
-    },
-    "print/preparation/assets/cde7dd4c49101278c88760675721ae2e2e9146f0a922211907b764e6867efcda.json": {
-     "bytes": 1144938,
-     "sha256": "0b6d1f160f44243bc7aeb8db82360aed15aadffb98d0075d401c78036b32b3ad"
-    },
-    "print/preparation/assets/ceceb665c362d4471de16e4000f6bfb7c5511347937a6a18edec8a98414724d2.json": {
-     "bytes": 523,
-     "sha256": "7a0d1bc0be4950d1b682c8c0b7a99063b21d6486edeaa549a9074ba48cf4a051"
-    },
-    "print/preparation/assets/cf1e8c5d0142ca51e8396d6ed668a704b94bf883817fa86d5eb17659af6a83ce.json": {
-     "bytes": 4320663,
-     "sha256": "4c7afeca2989899bb7b6c34db11bee5db39e6a6d8e01d6d49f6240d930a8bc51"
-    },
-    "print/preparation/assets/d0888c36ce240256b191aba3d5b253675108c5ac796692505fe8cf87cbb9b497.json": {
-     "bytes": 509,
-     "sha256": "ac9f7c30e90605d81f990f50866079188916301c47cee0dc3c8412e5593b15ec"
-    },
-    "print/preparation/assets/d282beb2c083d3b4b8c8c19e47a940b765bcaa3fb2296ec41e4bb8311da32049.json": {
-     "bytes": 4318343,
-     "sha256": "ea2fc5c7204022f922a880f46fa38a2d785defc6e659ebfb1aaf3590bb15a582"
-    },
-    "print/preparation/assets/d399e9942eec15cbd3d28672946d14c0fe6fa8c4c92923044caba913baa081d0.json": {
-     "bytes": 223914,
-     "sha256": "9e05a93e74ae6214150b701816c4b9ad3a7ebfa9f29887cf6a7bc9fcf8f0d765"
-    },
-    "print/preparation/assets/d51c2b2809a96b238b81c1b02b14908d16a057f6a71453dbc21f06a7e1cc28dd.json": {
-     "bytes": 342562,
-     "sha256": "130c91753837395fdc3f67e54cf6a87226b35954cf5947849c5b8fafe33f7059"
-    },
-    "print/preparation/assets/d5405eb1578f7be4f2755deef2e3601cc55f717adedad5041b3c34105f7fcede.json": {
-     "bytes": 258518,
-     "sha256": "4278fa3d54b8edccf1269939777815c6ebe0d834ed742d6cc3c84660413e0c4e"
-    },
-    "print/preparation/assets/d58e4ccc76d96612af6e918e89bae19c81f8143876fb7e31b181a1d5518a8fd3.json": {
-     "bytes": 532,
-     "sha256": "f10462fa7bc4410b581fc0b74f4d79e469ab8c15b637d4dbb20cf9cd1c5d3fda"
-    },
-    "print/preparation/assets/dda777c86fc2d72458536902282a858c33fdc051273e0707669c3dc7ac1c6f37.json": {
-     "bytes": 422674,
-     "sha256": "b648bd1d21bd4d6a8760340494709cbfe2428f288ced76637d9166d83b0e37fe"
-    },
-    "print/preparation/assets/ddac26f56dac1d02eec78c0ce7c1103dbba89586e23f93d6370e7d2dc2d06250.json": {
-     "bytes": 521,
-     "sha256": "d86cdd523875f29bea413323b7612cb4ca573524e4c3129771427ed2af16b764"
-    },
-    "print/preparation/assets/df5e01c1a8ef2810723cb287060bc4a5e2d8f97829c4b3a59432365c918a854c.json": {
-     "bytes": 514,
-     "sha256": "d29c319d423406d272769492688021e3acd71e6d1a7f6360f5c6c8f77bd215f5"
-    },
-    "print/preparation/assets/e0a3716e4d828c13a5b7c918cd8f1396af10e7717ba4627d6c1c142b19de7a5c.json": {
-     "bytes": 4022703,
-     "sha256": "841c4aa06dd238f85e39901c28a902a58b55ff3ec1615ec82a020b69a3c2559e"
-    },
-    "print/preparation/assets/e1446750090b38c0e009fea7c64b7ae7e7da586c52b3a6728ff6e0ae6df635be.json": {
-     "bytes": 79841,
-     "sha256": "122fdcf521504e4491dedeb89c71bc76e918e068e0198e86b5578e02bec03d55"
-    },
-    "print/preparation/assets/e673990010ed6fa81934645cd82d3031b8055af6155eaf7a802767b7fb4f4a2f.json": {
-     "bytes": 1726799,
-     "sha256": "88e940faa910fff9b2e76a6739ed1bd1a16c0c0d90006972696d8d69c2bccb63"
-    },
-    "print/preparation/assets/e6e88578ea3a269b6ec881346f8466d0f8316f840fce263363652cc207d265cd.json": {
-     "bytes": 4255391,
-     "sha256": "d3b8f1e62fc1c422a36fc9557516f000607c2de3eca9c5c4862af6f04bf8d464"
-    },
-    "print/preparation/assets/e83d557d9c5d755f675d7cb4997d10adf44e0a8061742825e260928062f13dd9.json": {
-     "bytes": 512,
-     "sha256": "9330b1a211ad866aac9473cd4bb653228a739b5c77b9873589475ec999253990"
-    },
-    "print/preparation/assets/ea77c3454267f611ef17dc53ddb18d212549e305041d07505e79a78a23bf3bb4.json": {
-     "bytes": 1819739,
-     "sha256": "64e09b0223e91726c8d55fd8252d416db3eeb46a63ce7e043ff5bf7dfde13a4a"
-    },
-    "print/preparation/assets/ea9ec979c0f40e9b6423184865fda780f3db9007ac9c0d4308fc330b5316aeb4.json": {
-     "bytes": 515094,
-     "sha256": "f6b8b2465fda8a8aaa2e57c5084013a8fe18b58af768c05d92f6fd9ff95d2520"
-    },
-    "print/preparation/assets/eac7199f1433160269ec6c8daaca913ec89088b96fc569271c6e9e528b3d9b1c.json": {
-     "bytes": 519,
-     "sha256": "25453ba096619a08051652d7bcb11372551cfdc88ff5317b97c922dcdc1a69ce"
-    },
-    "print/preparation/assets/ecd68c8deaf0d7790092c5aa9c6d3d4ecc678983cb452483ab6ecdef6ffe037b.json": {
-     "bytes": 1799303,
-     "sha256": "3a700d78625e916927468e3bdaa8d482e8379ef76b6fa79342cde07b366e76b7"
-    },
-    "print/preparation/assets/f1d9801c756ea5317a3424bf083871b8f286a21474951ea13f1018c6663e3895.json": {
-     "bytes": 510,
-     "sha256": "85ea4e4b1cd725676e885f5fc1fec46cc3c675004296a95398bb5869bc78c608"
-    },
-    "print/preparation/assets/f27b01c086b7177e234078849880427c81524961f4637bf04fc6ecc61993d919.json": {
-     "bytes": 223315,
-     "sha256": "a0a7bdc854f6bfca7e552e317605024a650618c21a55224967b893a4c72b9425"
-    },
-    "print/preparation/assets/f40216aa7bd050f5824dd6fba4228589119c511a81347020be8b2668d92fef2c.json": {
-     "bytes": 515,
-     "sha256": "c6cfbd82603ffb598abc9a025e8f82e12664b1a20a7a30a6492b2349c6896202"
-    },
-    "print/preparation/assets/f511a486883ab3ef3b95234ca8cfb95777b6f55c268ab69e4c8622612898fabe.json": {
-     "bytes": 551,
-     "sha256": "b13231aa39ba8017300779eea93803846680296d80ed56ba05061f499d618761"
-    },
-    "print/preparation/assets/f63ae30413acec71df4d595ee14764d994790cc54cf93b69eb5d9ec768d0b3f2.json": {
-     "bytes": 143814,
-     "sha256": "8c6f04f633918259fb32832dd294f5c3bc9e496bb07f87ea07b7ad6b8b5b32ad"
-    },
-    "print/preparation/assets/fd4f21c02aa208bd26b2fed279092dd7cf84e6a083618231a50c81e7c72758d9.json": {
-     "bytes": 398970,
-     "sha256": "cc1a4b66fb04f76b4999af33d6306fedf3f632b5235af46e7018784fdbe9dd95"
-    },
-    "print/preparation/assets/ff164e6d8da53cb94e3432f5f01c271f6977b5c93af67ee0b9bb12bef03ca22e.json": {
-     "bytes": 503,
-     "sha256": "7e8e78f6b9703b6379f3f42aecf74d6d0751cd46800f6e836b0613cf1368bcc2"
-    },
-    "print/preparation/catalog.json": {
-     "bytes": 613085,
-     "sha256": "22f3dd7408aaaa1f83a74b42ae27e4d4dea3879c1b2d410b1caadce8d92f2fd2"
-    },
-    "print/preparation/products/004295d718e44fad4f0537a8ac1b068843aad5fb08a650bad20128f5dcd95f94.json": {
-     "bytes": 84645,
-     "sha256": "546186ccc31cc2b8b9e77c9b16069cba848cd8373b39239319658a8f3b59dcf9"
-    },
-    "print/preparation/products/026137ec5daa18ca183712f78b9c5888516d510e59b45df9ec5d96d7328385e5.json": {
-     "bytes": 414454,
-     "sha256": "851d774446acfb455b038aca03f32e36a96d893a0e17f772cee894dba0deb9f1"
-    },
-    "print/preparation/products/03aca78c1f24e4aa1cc673910510214c91d2d2169468f82c7c364ebe88ed5676.json": {
-     "bytes": 134448,
-     "sha256": "fa9c7b20644cc0de2a307e34f80698d1fa5a47726cac5db6ff0229001a8c0e84"
-    },
-    "print/preparation/products/03cc5f4b60349f219d1814a6b2eb56fe04e46c8a68588a3ff8c623e3237be4eb.json": {
-     "bytes": 201188,
-     "sha256": "f2adc6fe37b27c89c21bf1e3deb465680a7e23096cf772b5b0f2cdae42251c84"
-    },
-    "print/preparation/products/045a056e572f0f0ca36bc579b7c2fae111c9db567b6a85064cb6cfb437d8d603.json": {
-     "bytes": 26660,
-     "sha256": "bae551e05e6b63eae760ef50e68e630919a7806cc3323377952eb13ee161d9a0"
-    },
-    "print/preparation/products/05b4f6fe2401179439f3ad8c1699d20fe7d58880c0b8fe0674876b8db7941e67.json": {
-     "bytes": 17116,
-     "sha256": "735cf429b7d0b3cb6537c64d7f0f62c86c17795066c31095570dad793e78567f"
-    },
-    "print/preparation/products/05d9a9a2c30938c03e5d418dc5e3c7d4bc8d159461a932eea0c84d2bad2b3cd2.json": {
-     "bytes": 136690,
-     "sha256": "ab01a789ae1eac095a45bb497007cbef94a80ea67551d906c3ccebb2693dac70"
-    },
-    "print/preparation/products/06cfa95eae2ed5266345605510d0f2bb44fee45434d80904b8f2329423435d8b.json": {
-     "bytes": 153566,
-     "sha256": "4fa00b75fab8adeb5afc40cac5b9879e3da6a0901003f1950d495338830f0ba5"
-    },
-    "print/preparation/products/0828f053bd430672d83dede2be6bedf7bc36c99936e4135db274ba7c8cbd2cad.json": {
-     "bytes": 109946,
-     "sha256": "dc25d0b9800c89ed4e48b5bd48f9182332d1d6aae6e23ae30572fa8a7be6c082"
-    },
-    "print/preparation/products/08c772c9bbd04b2133b3d3c90755b6a030374b36223b71e4bbf86540f728b45a.json": {
-     "bytes": 63693,
-     "sha256": "d279100f6495cd7331da1857d300a4079580ad9be2430060427997587377f751"
-    },
-    "print/preparation/products/0b72eb70a24464c3129cdeb29865a0beb4a27eabfdf4f5f3fe288f29a93326bf.json": {
-     "bytes": 101336,
-     "sha256": "3bad1e99a29d8406354ff34039f69511d28fbaca48c7218d17c86fedcfa007b4"
-    },
-    "print/preparation/products/0be6e08a9a19fee40ef51977fa4432877128703a2cbe76eaa42e25606bfd8ae3.json": {
-     "bytes": 74502,
-     "sha256": "b3529b581c1730021753f37d35168e1a84c8df857c2edab93056eeb95f0c524b"
-    },
-    "print/preparation/products/0d5e4304ebb5d81b0a9d7ab2ca1f453d0f98d060fc8c86cfc00fb0cfaad98613.json": {
-     "bytes": 18302,
-     "sha256": "cfb56101ae5ebdb801d1e478ef7c0d766b03996af6ee24097029eeace4b90252"
-    },
-    "print/preparation/products/0d6b4f5b13586390ac61f578148f0d3e7ecdb485eb6705f95ddd693da1509a84.json": {
-     "bytes": 61397,
-     "sha256": "acded0aa1af5a0c55fee87e3e260865de80872e42fb157730f8b57e0bab636e0"
-    },
-    "print/preparation/products/0ddedf8734c37f6d52bf5a83707be9b178a12ec68602b79841ac866f5fa60157.json": {
-     "bytes": 573615,
-     "sha256": "beabadb3c3daef9aea79d3c880ed0feb6df606dd3b3040520d1d20379dbc90cd"
-    },
-    "print/preparation/products/0e67e7b1076965830528aa000eee34bb0e9a00d0f0bd894adaf228fa0bfcb8f1.json": {
-     "bytes": 231290,
-     "sha256": "5342cfc7bbbd90513c2b9d243185aacfe3589e868cad2f49143225e1d82f91ef"
-    },
-    "print/preparation/products/0edfd57c5dc3c838c86fa3b91d0696c7b2cce0dc9f862517f29fff74f77a23b7.json": {
-     "bytes": 103721,
-     "sha256": "aa25b423e087ac842df5180eb5307b2905b426230b1704c6f685ee8f5c412323"
-    },
-    "print/preparation/products/101b1ad5a909661d3dccee6f73fb3cc22ab191cc74511c1186aebaa090342455.json": {
-     "bytes": 89843,
-     "sha256": "2716a38c35f773ca19b81966277cd89da91debcb35da8e2a71e8d2ec84408ccb"
-    },
-    "print/preparation/products/10378c2438dbdd9da25956d4bde9854d8d3b79136473f571262f7575854182d6.json": {
-     "bytes": 81444,
-     "sha256": "75e2c268296087fcc26de73a1c7b948031a8b0d616a9d602fc5424aa5732f7eb"
-    },
-    "print/preparation/products/12c999fe53874b5670d555bf4382d00d3c3ef508ad56bc830094b583fa3b93c8.json": {
-     "bytes": 128939,
-     "sha256": "4d1ea34d49f84873a03fed25b83c96fe033b3049a29cdabaa0d46fcce89de5fa"
-    },
-    "print/preparation/products/130a5cd242befe5991a9a7d9c57ac7a9223a7dac3f00d384fdc5dcd3769ca270.json": {
-     "bytes": 93369,
-     "sha256": "8df40765de9feaad9a4b3913ba2de35d69208fe2f58cd1572f0c8f7eb7e3d4ef"
-    },
-    "print/preparation/products/146b6bcef167c3d756add3aa301d0911bf382d7e04cf1cb68c2b7037e4a19240.json": {
-     "bytes": 27371,
-     "sha256": "40e496ba769f97742c4bf2128fdcea0e258d9eda74aef23257778871049a50d4"
-    },
-    "print/preparation/products/162de2c8af27282a2450d3b938ba47a7b9a38b9de352e20419dae294a24e2a4f.json": {
-     "bytes": 161112,
-     "sha256": "492440cc5f9af67a025a2d399880012bc36c7be8349f118c918a2917b7195313"
-    },
-    "print/preparation/products/164e9e9bd20c7f3b22d17bc88083dd71a62c5dd0a5279592342ee888d9652274.json": {
-     "bytes": 68086,
-     "sha256": "a91419984e6d4cbfc975bfccd5a415da6f1afb9e68d7dbc012a3372b2f57beb7"
-    },
-    "print/preparation/products/167819da555c4e12656f469b00a5430d0e72cd3ddc03a029b9762b223ed31c20.json": {
-     "bytes": 187855,
-     "sha256": "971bd00dea2d263c3cd5eaeb982683b3635d6f564d36c1843cc1a8589383d38f"
-    },
-    "print/preparation/products/171354ed7ec7e7d8eceefbe60736d61e1b24a8e127cb9e571e5c150ca5989bbf.json": {
-     "bytes": 163302,
-     "sha256": "0b706c340d787809988ba732c98cf23cd7c476a0bc685d57cdd00de4b722224e"
-    },
-    "print/preparation/products/179517d942f4aadf48ed03ff091a02a19bda5acc07e21a48e9ed5f97134d86f3.json": {
-     "bytes": 21331,
-     "sha256": "510d67a65c463b80357d6e1829346bbceed630032aa38f15f1a7f9d0d4ec2ff1"
-    },
-    "print/preparation/products/17bde004328d8f546e364adf6a15fcf2850be41304b8198b0a34ed9523a92165.json": {
-     "bytes": 242674,
-     "sha256": "76cde2fa293b70bc257a4b45c009794ffe6ccd1e817902c408bc86c2cdb3e156"
-    },
-    "print/preparation/products/1809bbd1d932369040c50d53af4e9e64a32ed6505f48d4ea5deabc31db2bfbf7.json": {
-     "bytes": 153607,
-     "sha256": "f936b258f4bd4c27762bf290ef7fe2389125fb1089bb3dc8387dae5a43466641"
-    },
-    "print/preparation/products/19336722f94839c5fc487e548b7d96620b6cc87dcc0fe29d9e0672edd6902f08.json": {
-     "bytes": 58292,
-     "sha256": "cb57f2c3500d76e55a1029c3fed0b6d1416a02b79b45d5514fbe9fc0cd7963ca"
-    },
-    "print/preparation/products/19b151ac1cc458722b31d1b32566e69749fb751022a7c57c5e0f11d55cbd5faf.json": {
-     "bytes": 57135,
-     "sha256": "a037e92892ef62a22aca535346f22a6985863763b1cdbe20a07546338a333cbb"
-    },
-    "print/preparation/products/1a1e8b09f72f189dbd1d36d28a5e95543073f6b3ba0acb55595fd1a97c0c2959.json": {
-     "bytes": 465433,
-     "sha256": "f67bd18f9303ea0987e29c4011c52da1e4c5bf1252a175f8fcbbee7521eb0860"
-    },
-    "print/preparation/products/1b11f01e54680e8a2ca86cf143ff245da8972fcb12e0b7f407c94d1e6ab86651.json": {
-     "bytes": 120107,
-     "sha256": "e085330dcaf5b7420bf0a33870404409fc63f0a7e3aefdc1a502c88a5a992402"
-    },
-    "print/preparation/products/1d9042ae7df792d33cc2677cee9178168bd8ec5207df309ec4ea01940ea7c649.json": {
-     "bytes": 211725,
-     "sha256": "60ba408721edcbaf56eb4f135c59fd7b55bd3fd7a7caca474764abe015ee73b0"
-    },
-    "print/preparation/products/1e7667594d7fbc57049b2a01a34430b63d7147e37003bb0d151220f8146cf3d5.json": {
-     "bytes": 81948,
-     "sha256": "5d70e71c525f2c13d2d0a603f2217d13b029e42a088342ebb9d20f841e6d4c9d"
-    },
-    "print/preparation/products/21b98fa92fba727c289eeea580e23926bce5e50461c8863835d36ab5460b9285.json": {
-     "bytes": 207505,
-     "sha256": "8d372c37fb694bbc35ea053267b6117e5bf47bc5f7f947d9b43bf90bdf6f7fc9"
-    },
-    "print/preparation/products/22f4178c6aba9f4c03f5157e6d69b24e5fd76b17e935e4fc4331b1180bce030a.json": {
-     "bytes": 98639,
-     "sha256": "4d6005c995aaef86f7f41fe6b776c0e73511fda34ab429dfc90ffabf0b56715c"
-    },
-    "print/preparation/products/230b3c888f566a56f391d4f5a8ed97012468988d9fd5acd00897d03212943664.json": {
-     "bytes": 176184,
-     "sha256": "9aa7ca7e46c6287dc09f1a441991b80a6c9e605e481532fd6bcd61ba2f2f39a6"
-    },
-    "print/preparation/products/249a21e8d6c4d235a5fdfd897e60f0ca1c964cef3d2187614036deb0fee5be5c.json": {
-     "bytes": 100649,
-     "sha256": "c16f01d7699808622a2a92c132419a1df7176f76ede9eed94f0c3656a08f3842"
-    },
-    "print/preparation/products/2650bf142fc214a13e95e7ae500a0e137f1c034a0a69c621c2d17a50123242d4.json": {
-     "bytes": 166421,
-     "sha256": "5b1916aa9a04ef9d7231445148c9de6e78bca0cfa32c3847718e413fc8a2214a"
-    },
-    "print/preparation/products/27587b431072ae250dd04ab639638e081ecad4a1222c422a188c9dbc452a88c9.json": {
-     "bytes": 293202,
-     "sha256": "b46c491df577ed830ac836bbab181d923669e72422ac130e33e4ef24aed2f0a9"
-    },
-    "print/preparation/products/27c0854a87c2adb6d8026def9abc06135a7a89ff04fd0bda948c5bda180decfc.json": {
-     "bytes": 77062,
-     "sha256": "8ba90e614950d5f5d7c7ba2602a269db7a19633b8f7c703f9b3efaec757e3d7e"
-    },
-    "print/preparation/products/2819debf4fcb8586b70b92d86888a7aeb2bd3203fb358df20cb44ba1bc6eb696.json": {
-     "bytes": 60893,
-     "sha256": "37831da95f24339c9f8520ec5f30f6caef7d11125a02b63cc2b228488f86c8ec"
-    },
-    "print/preparation/products/286a7b0802fc2c3f005991dc64b4fd86c6394a90491151b7a620cc4529af6745.json": {
-     "bytes": 76356,
-     "sha256": "9f629cc0879110bdf2d0284059339f46890bdd280a935bff3bd3b270ebe74e9d"
-    },
-    "print/preparation/products/2b2bf958c72b83a5b56308c2fdd19aa309d58334d0e8d3b7358e34b74d5f8bd6.json": {
-     "bytes": 68164,
-     "sha256": "b18c08993a2257e201ed40da4eac0abf94f2ce056097a52de507c9f92115a923"
-    },
-    "print/preparation/products/2b677fc3db419b2b8e563b68cc72e8463245c7841fe828720a6684ff7165e1c1.json": {
-     "bytes": 200816,
-     "sha256": "cb0f202ebacb0c9e5eeb7c9306aa6ec200d263b7441be2585aa0495c19ac23fd"
-    },
-    "print/preparation/products/2d574d06803e84cae0c76f5ee45f6f4ac52cc2bc78d56a00bd23ed9aa97bcbd9.json": {
-     "bytes": 248301,
-     "sha256": "563b9ee74a0fb96daac460e60cf2bb41349fcf250c2a09fe494c7f23ae30745f"
-    },
-    "print/preparation/products/2e05e92c75202b685f53467fef791c3069c9bd9730c72eeef1069f2713dba650.json": {
-     "bytes": 60072,
-     "sha256": "c9073ec5fff407e0ef3f0e2969a33e3aa30efaa144c0a80bea3780063fab09f6"
-    },
-    "print/preparation/products/2e32f5bd13b373406a0d1c89dcf6d3eaac4cf6a0c97450d7527b7866da4f75d4.json": {
-     "bytes": 104045,
-     "sha256": "4a22374fe2ae67b476cc1a9278d9ac6bb2915296b6fd022f8c60d656d6f21921"
-    },
-    "print/preparation/products/2e77d96a52fc0608434d4dedded2024b49f8c16694faf0a400f1169da8ab8d40.json": {
-     "bytes": 117516,
-     "sha256": "cdc9f4ea65f9d2613c582af09522156a39ba0e904c6378af3597058776875884"
-    },
-    "print/preparation/products/2f0291945faf4ea17176b09db1d26b38fcff12882c8df21a513f8c4c1f13bb6f.json": {
-     "bytes": 217049,
-     "sha256": "e1a57b8c3e8c3886649496b57830dfb8d547b17168e58ff8d031775576ba47c9"
-    },
-    "print/preparation/products/305b27d5eb8b3243cf461916ec2741a7e33e6f13158b41464f3db88aa18de05c.json": {
-     "bytes": 110706,
-     "sha256": "7c3e1893e4229f58db9d16280a7d55b265fa9242c349e62a86527fb5099f6829"
-    },
-    "print/preparation/products/325194e82c3249ea064e848dbcf32ec6ee4163d7295fc25d7532fddef2675b13.json": {
-     "bytes": 113531,
-     "sha256": "2e6991d2a4f8a020e6e0b356c646ed8d410a3590d8d628c60330a1f8de4c5821"
-    },
-    "print/preparation/products/3794cac2df5c066cf379826d2c34dfe0c725e011062541b1b65a9b1cf34cb2be.json": {
-     "bytes": 79694,
-     "sha256": "3333fd66c561339b013ebfa10f25c37ecbf3e163713f08473b8589f3a8d5c890"
-    },
-    "print/preparation/products/38d763f9c2649791d1c8ba313a3b7d7eb18ff1d5b7f5f406b3a1ef4b61bc2ce1.json": {
-     "bytes": 2550333,
-     "sha256": "0e6a186e2b08a3b752ae654b7f895e4eab33daf4fd8bdb0340bbd4ccfabbf470"
-    },
-    "print/preparation/products/3941f9df8f0fb68f9087129471c4155e2a228e4c39167c588575807b2bc76c0f.json": {
-     "bytes": 180633,
-     "sha256": "dbabffb157b684524a7be79754c20b765a581d75d5a86ecc4f101169883443a8"
-    },
-    "print/preparation/products/397e4e40da383b3044c8afac4ca4a13f0cb5f151183f1c8560023e8e413ed81e.json": {
-     "bytes": 126492,
-     "sha256": "dc56c91b066ccb56c5a1c8fc72ac1d430d25caea39d4255b7365a6c438191e0b"
-    },
-    "print/preparation/products/398e8aac8da8c94b43269480789135b9e89976c10bdb795edac053919a5ed70b.json": {
-     "bytes": 171156,
-     "sha256": "7f14cacba1b4232a605546823643bcdbfe91d46a5e44a71e99e429b58341c420"
-    },
-    "print/preparation/products/39f8a21a20eb1cc5e9719ba54846b37310432b097ad5d19b00f797c53ad3bc41.json": {
-     "bytes": 150261,
-     "sha256": "1447c05613dca317e27d65f5ecfc2a6a030702ff5f0ae21554656258dbb725db"
-    },
-    "print/preparation/products/3bb7517800d7896eb3d50ecc2a585195367283fe7b2dd6dd1b820cd8e2a56536.json": {
-     "bytes": 176083,
-     "sha256": "3e1f5f59ba5fed74852f0f3ac8b1f3cbc25ee8d16e0f780186ef011e4fab9a82"
-    },
-    "print/preparation/products/3be220cd6cdd9957a5481a4b0a4b258a95330512883b7083fd671f32bc7b4c37.json": {
-     "bytes": 60422,
-     "sha256": "1b7b23b305b14005dc139efb4a0bbf9f979d791a3a90d91c528167ec9ea7eaa7"
-    },
-    "print/preparation/products/3c124f8cc5bc814cd78ea7cc50eefc1ce005e781f7fc1c65a8c9853fb8deba9f.json": {
-     "bytes": 221678,
-     "sha256": "9068cbdd69b6245cef481ceb0ce146ee1182616046927bfa4f9dbeaedb519d20"
-    },
-    "print/preparation/products/3c310c7d0f0c9665ce31bfa39b6cf39117f3440be3c3877912ce9938e12959f2.json": {
-     "bytes": 111410,
-     "sha256": "cb0833a6a50f7bc0aafddc6c1e56344cd5688f2fdba4b8aad55493d3efe9044d"
-    },
-    "print/preparation/products/3d1136d316cb2b22f24d7d528171eccd62e3be5efffe8492d4258419e6b89302.json": {
-     "bytes": 59223,
-     "sha256": "a3ec14f3b32272ca084b80cd9e3908814d7411ccd69c39ed568b5bbf55d7fd07"
-    },
-    "print/preparation/products/3d8126798d5b305ef2e3ff7560c624962abfc35e7df3c8351f82479f09475a83.json": {
-     "bytes": 133710,
-     "sha256": "ca0728f17d8916bbbc2ea8828cd8248219fe01998628b2fe81d6c716830a80f3"
-    },
-    "print/preparation/products/3dd25b9d84556d0c929110f2e548e20cd7fd8c82b32d278073e1931399a5b644.json": {
-     "bytes": 189108,
-     "sha256": "2c3e4a5cf9f001ef95407b06238f0ea6182060e0fff057ce23c6966fe78d4538"
-    },
-    "print/preparation/products/3e11782a820bb9d01f9f25511864de0984c2316185c94b583c39f465348df851.json": {
-     "bytes": 38160,
-     "sha256": "a51172864b802d1077a870211da122068180dcb450219d1b7619b2be82254fcc"
-    },
-    "print/preparation/products/3eded5f2d561f0357ec0ac24709348769443db66d384e04d10d9573a37188c2d.json": {
-     "bytes": 111520,
-     "sha256": "e1e3585cdd905230d15e3e0684c400f8a44316fd53b2b0da1c657825c5de8622"
-    },
-    "print/preparation/products/3ef836c03bad9eff9d2cfc43027775c49c2c71dea95cbd7cf8b2d1ef2ed1c2e9.json": {
-     "bytes": 109101,
-     "sha256": "fbf08a479fd6c73e4d2f3cb0d76feb7a2a463b84919310d5773944aad3499c3b"
-    },
-    "print/preparation/products/403eaa9e89607baf90a2dd6e5bf04821c0193f273a26bfde86b22943082db7d0.json": {
-     "bytes": 66378,
-     "sha256": "4f32842c8a2fac728803089d3fc9290bfb0ceea8282d8461beb684bd6d9ebb31"
-    },
-    "print/preparation/products/404f107f3dd2496f2ef118ea69e592d2de17f5e35c66f6078aec71b431854b9e.json": {
-     "bytes": 73911,
-     "sha256": "9d135b1e3ceb283280c9518d4992a84510238dce7b0d9c28493b32500f8fbd1a"
-    },
-    "print/preparation/products/4090f27452b93dad41181f01a4f4354453b387941c6161a310698de849b8aaaf.json": {
-     "bytes": 180458,
-     "sha256": "c09a0a1e21069e97ad0182b9c5ef70995644700634bcac4d3fe0126a9ab79617"
-    },
-    "print/preparation/products/40a449d86444e8453d6a88b4df66d5b0547ca43de407cc3835c4501494b43444.json": {
-     "bytes": 75512,
-     "sha256": "bce09841d283fa8b686d067149f8a7ae6ab46315e7db74e833949cb110bbc803"
-    },
-    "print/preparation/products/4286af66a3130abe8ef1891666840a55a046429d44c3a5c67a02d772990f7d51.json": {
-     "bytes": 85648,
-     "sha256": "044c7436f05370e3068a4f8cdaaa315689f371e4720b5cd5bb5ae78ef74b6f38"
-    },
-    "print/preparation/products/435af0cc23aa2103e2045dab52c469583731d7b580925495387c17be7b20524e.json": {
-     "bytes": 113318,
-     "sha256": "f5b81a5b9c4c4263eb85645b3739437eb4396250ff9d7764900ed37235e2dc86"
-    },
-    "print/preparation/products/447fc74d5df1c86abe9efe7f1e1f61d5ed7507f721f107eee4cc164a85a01fde.json": {
-     "bytes": 17492,
-     "sha256": "19b0cb5aa83dd80f06c92f0d6ab6289fa3c1cb9fbb00360262a4ec9080a149d7"
-    },
-    "print/preparation/products/458abe1f5a3bb411c77cbe0a481a64a5c647240628529a5c44b75e4906728a24.json": {
-     "bytes": 86425,
-     "sha256": "7349c7ee59980acd5070c17ec0d301e44ee621e13ebb459ee2dccdbc69fdde90"
-    },
-    "print/preparation/products/460b7d373c5b1a7ac3cb05a18826055f7e86412b00ab30f79216556e0e6941c5.json": {
-     "bytes": 429450,
-     "sha256": "c1cab5e590fbfb72ec0365b734c4217a5aaa76c80a8d5e6095b936695d55db3c"
-    },
-    "print/preparation/products/49a16d2d0fd57c529bfafd5c3ffa294bc88ed50d206ab87cc18ed327cc4244bf.json": {
-     "bytes": 60995,
-     "sha256": "6fdae7cfd5fa689e6b198d23925afb9719d5be020ba33ec016ffa1b0c356c974"
-    },
-    "print/preparation/products/49c97ac4782f1396372900cd0b788cc7d6ee5ac31db9c94e6e76d7087f470415.json": {
-     "bytes": 47445,
-     "sha256": "44e9bf240eceb11a56cae4618f646daaca129d8bc3e6109f2328de18e92645b3"
-    },
-    "print/preparation/products/4b8298a77408bc4e87f48d390aad67dda34eb78e2d66f17c64443457fcc5a277.json": {
-     "bytes": 84103,
-     "sha256": "228c55ff31025ed546b7026fe64671c0c2a9c86c6a83e2a3b1cf286dce376b4f"
-    },
-    "print/preparation/products/4baa76b27c2c937ab97f4173ca6d1996c7dbb256537e084edb5b48393c7b898f.json": {
-     "bytes": 226688,
-     "sha256": "3f26bf403b25884a3d63eea974ec4682c01f9da46cae83c783f2634d67158063"
-    },
-    "print/preparation/products/4c24ac94252b9ab2444b6c301c1abf3e0893e59b709a71367471a2a4d759809b.json": {
-     "bytes": 128685,
-     "sha256": "4768e4eed41b8cf69fb02e2d80e3cb4cb47ccbb29a5a8e7aea8ed8448f4b1017"
-    },
-    "print/preparation/products/4c338ef37c4f40de3ecfdfec6b8819b7984f551d100bc60b827e3f9adcae872f.json": {
-     "bytes": 110991,
-     "sha256": "0d3833f61cb604ef95f9ce64acafcc6be1fcacefbffd8c9f1a43a2375dd59c09"
-    },
-    "print/preparation/products/4c5459ea31504d31acb8f215f2abeda13d52ee48356ce2a6fbd44069e85fe16a.json": {
-     "bytes": 95341,
-     "sha256": "a903b22326e191a48f0b79a64ef40784c472debd50fa82265372dbe82e1a547d"
-    },
-    "print/preparation/products/4dda3886faa914738f1eb73952ae481e7c8028ebd7f0a76986a86385abc88db3.json": {
-     "bytes": 80883,
-     "sha256": "6210d2d3653730f02747341377d63b6ef614de90cdeaa30198faef1015b72e87"
-    },
-    "print/preparation/products/4e367b3af1deb34c2752c87210d19d2afbf91f083d97cefeec46db5a5d7ef4bf.json": {
-     "bytes": 18449,
-     "sha256": "f9aa6d1874c3262055f91be8e55922bae33ce7c5b26ab9f31c28c1211ef5e83e"
-    },
-    "print/preparation/products/4e972155fee88324c5dec0ba2f5be76f21c6d9489d2e69f18d2182799621b832.json": {
-     "bytes": 8878566,
-     "sha256": "a13debfe63594c7e575ee2e17ffd0262cfb9a62c5870a1f913dad9a89850f4ea"
-    },
-    "print/preparation/products/4fbaf442ee1172973121fa1c2988ddcd360feef05192d04b2970e853fe769da6.json": {
-     "bytes": 82377,
-     "sha256": "b261f46d6661d013ebcc66412d21f5d24f274f9ebbd34b18e62caf4c6f874762"
-    },
-    "print/preparation/products/508f7813365affb1a6e6843e564b162f50cb20536d3ae5e182adead841b9a5ba.json": {
-     "bytes": 192571,
-     "sha256": "72e6e0f844493ddd1655aacd3c8594effe3786797bb27510419388045d4f6270"
-    },
-    "print/preparation/products/50edcba465fc9e7e227bf28d8bc17aeaabc7021d0bbe0d7e697748ea1c7e089a.json": {
-     "bytes": 152894,
-     "sha256": "27d8a94e5a27cb22f5eedc013fcb7d3eb55ea7e3a30c2caf669851c2bed470b2"
-    },
-    "print/preparation/products/511c71ca00322f918dc7077d15511a9d56fb01037a4a8044ba0e93fd22df1ca9.json": {
-     "bytes": 110466,
-     "sha256": "d5dc0cb11f10cd5aedde131cda434944343e359f345db41fa0bef208b3530649"
-    },
-    "print/preparation/products/53f5b971e80a96a935a6dcbb6d7fd9e85530295f1ce207b61bc3284fb511647f.json": {
-     "bytes": 95457,
-     "sha256": "9cd2ffdfc4337e1f80c8429baa008af4aa542565fe3996938b2f1f64017af1b5"
-    },
-    "print/preparation/products/545aed8226d1837da75b7a276d3614812d6565a4346f59b17f6580f991e51b18.json": {
-     "bytes": 152048,
-     "sha256": "483435db3fe1a0b3acdfb9890c54e08c504e77f3763a34585702f34e226c0675"
-    },
-    "print/preparation/products/54b62b8c59abf31033756f27f12a122f2695b1c313b4c0cb22df800827a93a48.json": {
-     "bytes": 135699,
-     "sha256": "18f3639b6eab7360dd0480eb2d86b395c877ede1f763142219e54e6f02b1fb8d"
-    },
-    "print/preparation/products/5517de63ed09edd75278afc1d041f071521f37f6b3c87b698c80807a42e9c78e.json": {
-     "bytes": 131424,
-     "sha256": "a46d04615c6f20296792a4067ed838c87a47a3984cb89870bfb6366c51f139f0"
-    },
-    "print/preparation/products/561032defefa6a0252dcd257381527699ea92d54dcc23c50d28476a438488b93.json": {
-     "bytes": 178557,
-     "sha256": "6dbf9f8fc696086f519a70361adb3954d439954455ccc3a0f1434f180d35e97a"
-    },
-    "print/preparation/products/5640882fb21d9d3e706d5208d061ec176d0a8509dab335528fda5656abdd6e56.json": {
-     "bytes": 174268,
-     "sha256": "35e163ce3c847f24a5176d893223e5ec2ef838911133cda20b883bf7c8aff74a"
-    },
-    "print/preparation/products/572bdee0dceae3f22a83cc1d934707c46a9c157110b7b894bdd179f46cb81ed6.json": {
-     "bytes": 213364,
-     "sha256": "453587e00a313af5a623d506d263b0e11c78eb8c8278823d19640bf3716e5f69"
-    },
-    "print/preparation/products/590098153b9ab3654486be930c0f9ba912af34dce5620fb973c15c1f2cc7f377.json": {
-     "bytes": 118061,
-     "sha256": "aadd86ead407a4b42cbaa35e1281ef1903c99cc8991ebcde15a72236cfe53504"
-    },
-    "print/preparation/products/5c13c00486eda6381555eea5f1e1328c430d7d1e41e5e9147d51419765255739.json": {
-     "bytes": 94794,
-     "sha256": "9fb966c3d84836d7a89ae91e8f7e766bebfe1541e84bd59e4f538103d67a07a1"
-    },
-    "print/preparation/products/5c83e4996982de7d05c760201b9d38f129eb0378ce23ee4a91e8ae5e3dec86cf.json": {
-     "bytes": 263543,
-     "sha256": "699d5c6b8feec5c7474d909cd0605072283ee2a8d871060e657a2eb470f8b903"
-    },
-    "print/preparation/products/5dc498346c4c2de3401222edb0ec4a344bfa8d8471b86f0a07f239e096952d12.json": {
-     "bytes": 100205,
-     "sha256": "8b1404290af72ca4dc5a1d8edfb40b66cd2e551be4a130130bfe13e0effff5ee"
-    },
-    "print/preparation/products/5e82dc3cc073ac6a436f33526a979d4c4dd4c70c4590cba3ecb8c4fd91532896.json": {
-     "bytes": 158484,
-     "sha256": "7e2cac09ca0b979b07c91afcee8ecbf4828ede2ccda4e0625dbc89df5dc254cd"
-    },
-    "print/preparation/products/604aac3697267f725faed6a4f5082082dc4f6a17580169b55d5e778e0256d641.json": {
-     "bytes": 99819,
-     "sha256": "fa2b8455ef4c4c41cafc8e7ff8d6539f5d43a1f06550e23ac109829df96a05ea"
-    },
-    "print/preparation/products/60ef75d42f7da0414fe2783c34933cc92cfa42984ef5ae2451efd96e02b0038d.json": {
-     "bytes": 191385,
-     "sha256": "442ec3629ee6b40d269fb0bf5f482266f84ea6b79d49a753e8942efa1c355960"
-    },
-    "print/preparation/products/61947a52896fa9f25122647102560cbfff464772534ac37436b53ea3909a3abd.json": {
-     "bytes": 43911,
-     "sha256": "852b41270dc77a091f3cedd6ee39d1a6105228c0d7431a90faa6ca998b76eda1"
-    },
-    "print/preparation/products/620eb55394c4eaf3a6cdababeb15a3ee47fec489ed44c7594fbd4678eded10c4.json": {
-     "bytes": 100107,
-     "sha256": "8fb6721be574b487cd480080bf388e069e1d20619e9e9e56322072d9255ce215"
-    },
-    "print/preparation/products/629c58935ec649f82db2fd04216b9e0dc629945ed654cb75dd789e1808b74560.json": {
-     "bytes": 257349,
-     "sha256": "7268b002a4837bf732a5f0a312eecc5eea13409884b8a07c055ebf4982f8eb30"
-    },
-    "print/preparation/products/638c25116d9b76094d61a5166e35c7fe338b21251a154165a3283b09738fb865.json": {
-     "bytes": 48516,
-     "sha256": "d01dc4784076aec7b7afc4ac966ca0ebd7f777619e770cdd35a91d3bc868b54a"
-    },
-    "print/preparation/products/652ce4e7eea13e9c1ec9ef74a2d85553f86ba63e8bab7ac45ab09d3739a8dbaa.json": {
-     "bytes": 67670,
-     "sha256": "eedd8d20dffee0f5c51215d584af776d6f3e039f8c3f164f9769a3c53d99f46a"
-    },
-    "print/preparation/products/65f89cbf76098db88de7ad102d60b47efe05f6285b9c0b0e60f4e416752fbb18.json": {
-     "bytes": 124191,
-     "sha256": "f9b0cdfa197d0b9f3dd609a83462cd2c20c261b26b8393eb8d30468fbc5eb90b"
-    },
-    "print/preparation/products/683d0ab6eea62c819cba171269da85831a12ada2fd0e5c91fe30f9ffe30fc201.json": {
-     "bytes": 531267,
-     "sha256": "1b0d14b41ba4b28dab9a082b311e4ef7e31bb33366ed21489cf79446ed259c1a"
-    },
-    "print/preparation/products/6983c7acb71c099d6efec4b6ff5c024e67684ab50ae27e46bbb4fe04525e4dd2.json": {
-     "bytes": 102536,
-     "sha256": "49b24b2a646cbf83c435d93bbea3d005240cfa4393907e926da9629bb8ac709a"
-    },
-    "print/preparation/products/6a5856a51f263e0ec5e414b3db0b5ba68081d850fece8cca618be31050af5849.json": {
-     "bytes": 205875,
-     "sha256": "68e92b4657c5d2411ac091115a63ce029568047c03c836d18ca778ea22c7409a"
-    },
-    "print/preparation/products/6ab2e9924020410041aebfa6df0a1f4c8765b9e281df3caa13f730cda2921fa5.json": {
-     "bytes": 154966,
-     "sha256": "99b2d3b64d4dea2900fc4800b78b4d18e07c3c86fe52622e0fa8a1c4765c55da"
-    },
-    "print/preparation/products/6c38ab5fb995e378e7940a582b02a26da09c96d6e433ad391c71f4026e3da6ef.json": {
-     "bytes": 196532,
-     "sha256": "cae227591622780b6d8190bab4c1be27404b2f288731773fd4b05ec2d1a8d41b"
-    },
-    "print/preparation/products/6cc06faee75fa7c715ee51a252b90e5321426066fb8f9e5153310d553ca2659a.json": {
-     "bytes": 195859,
-     "sha256": "4af85058d3fa61376fbedb9e65eebf67f81f81423fe9e68460df6518d58dac1c"
-    },
-    "print/preparation/products/6db0762888c07ce0bcdc903785829a45ae72d5c78af63edfa995faed10550df4.json": {
-     "bytes": 82624,
-     "sha256": "5ccefb9c6ed68c2993c4a39414cf5e9615f6028ce0d3c41328b760b9af866fe8"
-    },
-    "print/preparation/products/6e5b76dd58b7ca710e4a9e72d976e8a2a3eab5cb4ab5c3fa50afa33429c7cd85.json": {
-     "bytes": 114990,
-     "sha256": "d994d235a238a62e8af07c1c59170be6cfe6008eeda342b9d5ebb0c1e10a788f"
-    },
-    "print/preparation/products/6f2f7d8f02ed4a8bd4b0b0aa62872f3a7bbbf66e81cd7606f7e423498d3b7412.json": {
-     "bytes": 112865,
-     "sha256": "a78e9366fa5941066325e24df67e87fa301e82cb1795ea65e73c740a698fef7c"
-    },
-    "print/preparation/products/715c23fbed9eabf7d504ce297f0fcc51afedc0a3fee39989d0c908f69eb3cd66.json": {
-     "bytes": 166900,
-     "sha256": "4d33e44464da0ae4918aed1165a4ad694a3fed40a1ae2499e73f79fee640f0c8"
-    },
-    "print/preparation/products/7186e360186f79f75bf14a2a3ed1598623c6c52a8afea271855ed4de76899667.json": {
-     "bytes": 16991,
-     "sha256": "b43f8d2cc0cf367e266e97e4e13ee415ca7d85625cbca3167e98c1aa99c2544f"
-    },
-    "print/preparation/products/71abe2196ba69a0c28461742bb335dc9155524c074aff562d742c6be2fef2b2b.json": {
-     "bytes": 72536,
-     "sha256": "b0df034c381cdbd116ea840d70c445feb706f9bf9e957a4014900211cf403570"
-    },
-    "print/preparation/products/72b5397e7a7b8081e57395e1d1e9d0e893b1e906022f9362a805a67baea45716.json": {
-     "bytes": 169202,
-     "sha256": "c54d43682dca6aab79f1ae36db869b2f34c864bd5d995c076d25042fe4e020f2"
-    },
-    "print/preparation/products/74fdcb828b2f60cc8abe2c89102598e5fddc28960d7b15b846a6a35e72d9f3af.json": {
-     "bytes": 99367,
-     "sha256": "8925d90db004123062024ec3993cfc0979ba632c1ed25b420323a17ee750b46e"
-    },
-    "print/preparation/products/7551ab7c1e96d5fec4f11226fba0c7b604af79db4d7d519b7dbdefa0b0596bc0.json": {
-     "bytes": 215435,
-     "sha256": "7c616e110deccf3245ac89ce30568f35958f5349c5c97aa05284e8dbcbeffee1"
-    },
-    "print/preparation/products/755ea9f7940420766390d84876edcab09a37db80679b27e87981529ede6033ab.json": {
-     "bytes": 39638,
-     "sha256": "4bd0f84a12997d95d46d3dcc7555b4a8aa39ce76e7508927138b807ac66df50b"
-    },
-    "print/preparation/products/76505ba6dca186de676607e639a5f7c840b2b3a3dd891bd9a0178b4e5d15093b.json": {
-     "bytes": 120144,
-     "sha256": "67b7922d9fd0817c968aad9ba19cb73dcc474d9f78cf4c1d59b646219d5699b1"
-    },
-    "print/preparation/products/76eb44a95e817fe71297d0ed8fa7f00e2874e9ee37f5989d5e5bcefac481477d.json": {
-     "bytes": 95166,
-     "sha256": "da2d7cd93f680d4b44991307f16c015f49baed99bbbee0e81eea4bcb9d797cce"
-    },
-    "print/preparation/products/76fc4edd0f874e0c9d005a580a295f886e3615b99dc6718f4bcf21d812b3ef6b.json": {
-     "bytes": 107635,
-     "sha256": "a4b7fb049dee5a3cd30ff5d6d3cd75a4bedb76d442465f297e68fe4cf09ce638"
-    },
-    "print/preparation/products/77fc24a59e4da737f569ae69f32c775efeabd36b9dc68ab3fdf8ff0a1a4e740a.json": {
-     "bytes": 188782,
-     "sha256": "3b935e0d79ee4ddb2374f5639ad9a9888e64f3d72c9ef7e6476f75ae723b1321"
-    },
-    "print/preparation/products/7824c0f72b6c86823b17d5564398efc61fb9327dc459799823866ffa5f7d171e.json": {
-     "bytes": 217967,
-     "sha256": "984fb147e387e371a1a99bf3d8c3fc2101c8a9416f548586e5768c9642c59b60"
-    },
-    "print/preparation/products/7862b59f5b90711e1b288ccc174fefbf13ffc01a274de079b2173807bc52cd30.json": {
-     "bytes": 395169,
-     "sha256": "46c77b2d465b062e774ead27dd4ba16c012ee71e0f9451c8a22daf2df165c5a1"
-    },
-    "print/preparation/products/7a510b23352146551b9d6b1803a9b79de5a9c114fb4bbaf26fe71d937b84176d.json": {
-     "bytes": 206993,
-     "sha256": "cc7abc8c6ea7a96c9a13cf3ce6d4828828ba9aa946491c31ba6ee12c0edf6547"
-    },
-    "print/preparation/products/7a7a218800eecff0389b26b92bf6ebe41b3207a6b9aa068868d98fa7470da7ee.json": {
-     "bytes": 71531,
-     "sha256": "fc24f46a3b7f96efb1c5847cabd92b50a3d08aa2687b38b91655e8b272eec715"
-    },
-    "print/preparation/products/7aa6a8276d01d1c8c24346af40fac0a52ea80981c78af07a98d8e00437ec2566.json": {
-     "bytes": 68964,
-     "sha256": "d1e607c5ad4af0c72fd75cd08ece252da3e60a98556634605e703d61a2936ec3"
-    },
-    "print/preparation/products/7ae927e9d5d0f370fbce90d7784df651780b6cffcdf66b9fc3ba7e30d80f0e0e.json": {
-     "bytes": 262324,
-     "sha256": "aa08f856022f14d36e8fa85cd73a4a8d6236f4a703eb176538bb632013b83b2d"
-    },
-    "print/preparation/products/7b217efe917119458fdd74c6da76e50c03361a68304cbb0fa31e127b09de9b3e.json": {
-     "bytes": 8368771,
-     "sha256": "403e51e963cdf9b50d2f42412e6926deee50281911ad3142c9023835c75322cb"
-    },
-    "print/preparation/products/7c8c7c8daf04c9ffd553dd482a7bf646e3098261f368bd2b0df5042ee6921446.json": {
-     "bytes": 77563,
-     "sha256": "29f86b35b9f2a08779c6b72deeeaba6f957b35df5d179642142549cde47e46a3"
-    },
-    "print/preparation/products/7d810ecf405501b6023123b1ec9ee51a9de8ad5521ff6530a785e7968f97e921.json": {
-     "bytes": 25328,
-     "sha256": "732229be9e85fd380578850216f284f0e8865d84f446325ee445338fa9cbd179"
-    },
-    "print/preparation/products/7db25a67674b0f1674d38163c5d6c80f99f9f6f399f369cb08ebb50c55370095.json": {
-     "bytes": 95414,
-     "sha256": "8c06b9c04c67ea03b4bed23318726ef89e113fd633b3dbdf271a7dbec754f850"
-    },
-    "print/preparation/products/7db73e4e2e2f44defc10f5607d816f7c5b06108ec5a2783f5e47bfb9a9eade20.json": {
-     "bytes": 214762,
-     "sha256": "e21f3abf7b9438e8df3a5cd2c2e180d0864fdc0a05633b2d98440066c3af7d56"
-    },
-    "print/preparation/products/7dba7c6da498eba39969c0f2ba876ad4eada3439a34f9adea48a698a0718f0f1.json": {
-     "bytes": 26992,
-     "sha256": "14d59c7d45faef9197c3b912481b9015432cb2c4ca9a6cda1b1edfdc7aa58327"
-    },
-    "print/preparation/products/7df6b2c6ad342ae6ea081676e493d8d6fbe5930b9f7a734967113251e22789e4.json": {
-     "bytes": 133936,
-     "sha256": "f01c35161513ead92e539f55e3aa05f19ef6ebe4a46f6111d5f222ab6fd07928"
-    },
-    "print/preparation/products/7e06b2f14e76d71c995492ed2d3e047a3527bbbd058b88257a9eaa2439cc4bbf.json": {
-     "bytes": 170635,
-     "sha256": "32700a0c112fb4628df5f80a0fd81c56c6164dfb6bfcdb95758e7bd35688a684"
-    },
-    "print/preparation/products/7e754c0318804b44b535571343fd19831d25c084a900ddd5b56c0e9b682ee53c.json": {
-     "bytes": 168560,
-     "sha256": "08458dddb302a633e3c538c2edf3c8b74400aed36d3270b436343f04729da31f"
-    },
-    "print/preparation/products/7f40023a490efd0ac444ad79ee51503063db1fb08c93fe8e30384ed0345b4a3d.json": {
-     "bytes": 86984,
-     "sha256": "c301679db0cc009af17f7a1ea4ce9688d79939347d37d2c37dd8f2b65f1a68cf"
-    },
-    "print/preparation/products/7f720d0582f06bfd66240548fcdb9b41834aa8a4a776ee1bb0bedb089c3e660f.json": {
-     "bytes": 64656,
-     "sha256": "37d0a9ac70f60b4a9c676bb7894439cc218d66bda7e868cc58660d304a37b212"
-    },
-    "print/preparation/products/80a2b7c034edbf549d63547887995f40c4b99f14d8536c6cb357c81576e55a32.json": {
-     "bytes": 119739,
-     "sha256": "0a1b38c0897a05907496980f9f6fe33f0f75bf69b47043bec398872238a14b91"
-    },
-    "print/preparation/products/8127750c3371c36a6fb2c3ce5491bfbd9c39d09930daced6e63b921d783a1aaa.json": {
-     "bytes": 272635,
-     "sha256": "3000f76cddc22622d9ce3d281ca64bc5653db9f723a3408e30bdc6d283019ded"
-    },
-    "print/preparation/products/827cdc65f002a6b1b072b53fa7082cb85523e3fe1de369fb929da3678dc429ac.json": {
-     "bytes": 99645,
-     "sha256": "910ba06cb5edae79d41612d64382dba96171676658d7f11e10bef84810563241"
-    },
-    "print/preparation/products/82c5a37a1b1824207b44e616584aff273ade27dec79ce72262185d70d5929fa6.json": {
-     "bytes": 30428,
-     "sha256": "f0f2972ea0686b63cbfe95142d1d029f754ea509b887d4ffdcc6757a6d34c3b1"
-    },
-    "print/preparation/products/84b9f9b608026d2fd763b4cd3d5d8557b4c0fa4ddaa491cd087f79a681eb1d1b.json": {
-     "bytes": 156913,
-     "sha256": "fde5fd2cd3643f834ce10a62d1222bc2513c69a8f538a846dc6c888de4428d6f"
-    },
-    "print/preparation/products/86455564193c4e008611d55d47b4670cd4ea01687a2ad7a59eabe77019fb430f.json": {
-     "bytes": 167301,
-     "sha256": "b41c093caaa8f7e453483ef4b9f35260256a53efa3d2a8b511b004b55a83613e"
-    },
-    "print/preparation/products/868517e6fcc4e3caed866f5fdac183ed019b80687c21a1781c128af8a26fe5e4.json": {
-     "bytes": 196338,
-     "sha256": "821b3eaf2a8c655a45ea191a58105368c80d514bc9cc90b796661fa0cab36882"
-    },
-    "print/preparation/products/86c15283e155f81e02e049c103c5f60f8edbe09286937402c9d526586e0cba8d.json": {
-     "bytes": 141200,
-     "sha256": "2b531ef8c49babe8f82c662a9e055802ed8179c98c6f5b5797f1514136c2cb47"
-    },
-    "print/preparation/products/86dab143022721fe0130c81a933055a055eb28402e7d13d699c645def9d3ee92.json": {
-     "bytes": 112382,
-     "sha256": "96e314dc564ef08014ec13c466c6aebb09a069f17fc0caf42dfecfed4a6b666b"
-    },
-    "print/preparation/products/88e7c0a0509efd1381e46f387947e1c3532ba3f94147ca4a7412b92af6770bcd.json": {
-     "bytes": 155078,
-     "sha256": "8e893666bb0d0ef0983ce3027ba12f51a0046188283c47331d4fbb1f86910c5e"
-    },
-    "print/preparation/products/88ec42c14a0862e71b7ee1cbfbe1935f49fa594368e91dee751999f47a013a38.json": {
-     "bytes": 141275,
-     "sha256": "543d4ebce09e167cae58f864d82a4dbd03f85d47169bc24a7ca3d1f617da285d"
-    },
-    "print/preparation/products/89360d0984294196190beff710956f65092a175d985fd326745bcf11df34089b.json": {
-     "bytes": 181600,
-     "sha256": "538781a1b6159cfc245ee2f8e0a639c9cab54e25f25ea68b1b97f85bb9b2fb8f"
-    },
-    "print/preparation/products/89e3baaa3ede338905a0d6bb5683a42d16e4888568fc885ed11c92414f2a9700.json": {
-     "bytes": 132461,
-     "sha256": "b19ac2583583d71498082a0465fb9bb1b77356b70fb707800c03daa06e2b2779"
-    },
-    "print/preparation/products/89f749584155cc5930fa252fdeddcc5d78a461895455e067d0af59274296a47e.json": {
-     "bytes": 19327,
-     "sha256": "9d825d62493569865fcbd66f52d010047944ef16d32c6a36aeceef7418f3b66c"
-    },
-    "print/preparation/products/8aa10a93b4f0e9cf7f413a7eb6e6d0c37ab6792388dd51266f5898b3365461f3.json": {
-     "bytes": 165715,
-     "sha256": "debd01240310cf9e7d2eebf53889b869c07d284e541ad07c46166a91ec37af33"
-    },
-    "print/preparation/products/8b89322ccc076aa93ba979b24350b6f42f67e6d1967bada6f5f198ae22ee3b45.json": {
-     "bytes": 89714,
-     "sha256": "c76da6b2cb546d2858e8dc742cc9dec73704e5a9cebf8afafd53f2b5acac7712"
-    },
-    "print/preparation/products/8c4f37816b2ccd6f39a18dba51b330b178a59769d29d59cc11dd56d1dfd0018b.json": {
-     "bytes": 61109,
-     "sha256": "69a35d71ab8d9ef52b183d53f6b701f8d2a4c0e4fab15bf7ad6d4363c20cc971"
-    },
-    "print/preparation/products/8c95ea7588cc146ad8f6b68a67f4c42529ae8e15528ed3907aa6f01f32a88fd5.json": {
-     "bytes": 126729,
-     "sha256": "67f007889278937a42107b7a13246eb739b75df68322b7de5dab8308edc16f7e"
-    },
-    "print/preparation/products/8db753969437b1da661c009d6c2b03e1f67b88cb14efa869208d8c7090907e31.json": {
-     "bytes": 8465614,
-     "sha256": "e09379245e6014e55e7083c8cab93027265e8ef47ad70fe3fa8df48c50b393a0"
-    },
-    "print/preparation/products/8fbdc35df74529d17a46389f51436bcbc1e8e5f0154b5c4c4c32d9b472692211.json": {
-     "bytes": 100872,
-     "sha256": "47e1b320256088616dc8d6e0579f173aeec601f50235904e5373523ec99937a4"
-    },
-    "print/preparation/products/8ff3edf4cc379d6842ec2a0cb15a8ef4130d639f838cccc6f561575f8e2c1835.json": {
-     "bytes": 125230,
-     "sha256": "5f497fdb4269fa1f29bebb3ef6dca5734bf46b4469ea389e99787a76efde761a"
-    },
-    "print/preparation/products/92686e0debd890415a50cf275515f3c7c6cb3470b441ceba83331ec0e87e2c21.json": {
-     "bytes": 107874,
-     "sha256": "518ce228a49b63d78ecb561147f944c958d505579834c0451f3bdece754d29d4"
-    },
-    "print/preparation/products/93201e244829e9fa574d0d298ea09fb9f8f2534fffd981931834a3a0c23436b4.json": {
-     "bytes": 51576,
-     "sha256": "88e6e6ae8a73cd1d958f208f6b7bbf8a2aefa768013c07f15f9f4ad4db1c34fe"
-    },
-    "print/preparation/products/941b888005c5f17602de7bffe3a4ff6456c23740d339a379bec8126697cbe6bb.json": {
-     "bytes": 196807,
-     "sha256": "d3eb589caa61b79e68f1bb700ed33955dbf27ac57818ccf4d68e9b34f03904a8"
-    },
-    "print/preparation/products/9615a97564077a6fe256db93f3e8083c0f9158c559ecd461f5f648666001710a.json": {
-     "bytes": 133978,
-     "sha256": "ee3ca26b05539ff7c23e9e2430fa7835aec1c778ae0d1a09dbc677c56eb55e65"
-    },
-    "print/preparation/products/970a5ec9f2d77fb16bc05f6eb32cb4a2f45abcb1dbe05bc15cd447c7e9a442cb.json": {
-     "bytes": 77605,
-     "sha256": "3a31d3d77146487c288c6f5c156dc9ee760939cd5e70cc3a5103f61e8ef84d2f"
-    },
-    "print/preparation/products/97655e13681b77d6fae6431d82ccf66705ee1201867cffc524e4741d34b178c4.json": {
-     "bytes": 16854,
-     "sha256": "b2f28c6b25c766b0e843877ba22c10fbe48fce0ef68f3724a887b5d0250b3e00"
-    },
-    "print/preparation/products/9777612e4e5af489db0ccee7cc97b095f73a2ccd82bee3c0a61022b5c3cc6c4c.json": {
-     "bytes": 163557,
-     "sha256": "9d0f3eadab3b7924d2a03aa5758245d526784500573ec94c4fbb187de7e48a5e"
-    },
-    "print/preparation/products/99a0d255246dddff95db11b4a6a08c921cbf075dd2da067a9bc76b072c6b47bb.json": {
-     "bytes": 17540,
-     "sha256": "6eb3c1ce581f6eb7d235beb7418089e1a0381034e60e6aaa1ff0b934c0752502"
-    },
-    "print/preparation/products/99e3605ecf7d66a6c38a94c7aad45b6c5fe2b17a68085eb82341461668e5c141.json": {
-     "bytes": 93298,
-     "sha256": "d7f9d1d188c718b825daf3588c7476e941383133eb9162369b499ef77de55490"
-    },
-    "print/preparation/products/9bcc84a6067d1d655e446dea18957299d66675eeb31792d9a78fea5f7a0b7fc3.json": {
-     "bytes": 77922,
-     "sha256": "bdf9d8b9d14b5e130786707cdbf53c9ae8db869c410dc005d15c0cc3b1a8aa79"
-    },
-    "print/preparation/products/9e9533a551df19db6beaf9c3c6ea64a7e40f910a683c8f3911cdb27a9c437b09.json": {
-     "bytes": 20441,
-     "sha256": "0af501c349e263d260e97fecc7020bee0883acd01a134a6c7f1181b8bb83b8aa"
-    },
-    "print/preparation/products/9ef349c99d012b621b20fd10c3e31a82c7a645313b6777182f53da0a91bbeced.json": {
-     "bytes": 193009,
-     "sha256": "b51efc1b1045032cff25189196ddc8470ea16903a2a5b0872d551e73c1d08245"
-    },
-    "print/preparation/products/a08357f759bad9cb2bbb771ebe069c7727f2ed8e0be6b7a60eea5142c5d71f26.json": {
-     "bytes": 79816,
-     "sha256": "860e3a91eec368cd5cdac370c35744df08d2e71341941fb070430d6e66da4b66"
-    },
-    "print/preparation/products/a0afb0c33017ae6195ce196bf61b98bea54c5155bfc79023debe9e4d916657fa.json": {
-     "bytes": 315503,
-     "sha256": "2db6a332701c9303c2906b26c33f62b6d8ccafcfe89960efeb1f79b3ca288aca"
-    },
-    "print/preparation/products/a23d1ca4de5654314042c8fdd1302d53e7a869b27ae6158bef827fb53867655d.json": {
-     "bytes": 119083,
-     "sha256": "2e16075873537a754fa54d7215bad97ddb6e09442099f76fc28138e4dd575191"
-    },
-    "print/preparation/products/a2bc1e24aff979cbdc9d067c71c34e8bcb8bbae90678addfa5625232375d4a41.json": {
-     "bytes": 153382,
-     "sha256": "8568859d000e81b302f89d9c602510689508ee20dc9d16a710042190e57288bc"
-    },
-    "print/preparation/products/a34cbe36f9a5389ed8d0431108e22ac8707a6162d450bfc4f8d7d1875ce57426.json": {
-     "bytes": 178197,
-     "sha256": "0ff30521db55607d46d336278bb8ae7c49bf52e4b877bce0959a4843f5197615"
-    },
-    "print/preparation/products/a8e9e81558f300a06c083e06c7308116ed4d5f94789e5b0a8145efd466afffb1.json": {
-     "bytes": 18795,
-     "sha256": "c5aaa76897c73c5a10ca29886290c91d05dd4d492438411fdfaa2cd4fae39466"
-    },
-    "print/preparation/products/ab89cd5414ad696a85e53e5d85d28658a15bb8781f48ea2abd1d319dc6b0eae6.json": {
-     "bytes": 114503,
-     "sha256": "022313a765ca5414265f1454d5df21e6fcff719f5674208eedcda46b1bdfc9e2"
-    },
-    "print/preparation/products/ac153df0dee50906413d08f26895cc8b87c1849f2ad2a1963c244f51c689ccbf.json": {
-     "bytes": 22940,
-     "sha256": "2d499919e595740eb24f21557faf89a7241ad9c96fcf7e4846f9224be66e5e86"
-    },
-    "print/preparation/products/ac764d0a5e9234244503098ac50c6940de5ae0b373712578058108ffc71269f1.json": {
-     "bytes": 65564,
-     "sha256": "62a58c03ab1c4a9e2bc6650f4c1cbf69ba149103d7e96d83dda7ccaaac0bc842"
-    },
-    "print/preparation/products/ac852620a3cae394b33ffd91c526b7faa4994ad548eca7b5382670e61d4319c3.json": {
-     "bytes": 43550,
-     "sha256": "cb99937b3d063226ade60d2ad23d21c2c80bc0a504b78cc63ea04375e8488fad"
-    },
-    "print/preparation/products/ae8b732fec3cb8286b198dd00587d1689f535864efd3e6a4aafc001431921a34.json": {
-     "bytes": 225874,
-     "sha256": "2886dcf05d40f050f0fc256b2ec604e8a0583fd165cc6464365e432981c65cfb"
-    },
-    "print/preparation/products/af3be9df84d4a40d3c5e6766959b5414ebd162b48a446976ebad375e4f656b4b.json": {
-     "bytes": 242853,
-     "sha256": "95128e8ea48b065ed1b57645f57be49eb60e851767556ca38b1c494c7c7891f2"
-    },
-    "print/preparation/products/b28940281722b74511f87d39be2d071ee24305da39f5dda23441deba519fa17d.json": {
-     "bytes": 8860459,
-     "sha256": "b45fca075418695d4b0f113ff52c00fbcd9ca53550a9b58c30f8635220bf8ffb"
-    },
-    "print/preparation/products/b2b4249a88ebd1446d4f6b2441bd558dff766256dd99a836f610646724d812a2.json": {
-     "bytes": 182983,
-     "sha256": "c5a2030ee32a578615be711b0d20cb8d1baf9e1e769eff2ef2c5c1fb71b50efe"
-    },
-    "print/preparation/products/b5435341fbed04a87d942555150e110a433c7279d43f2ee99b26a50fb7a72600.json": {
-     "bytes": 215834,
-     "sha256": "5a7a9e1e392acfe9b239b64a16bfb0680cdeab7df3bd11146d5bc4f9a7d888bd"
-    },
-    "print/preparation/products/b60f6cb332995e98271a2bb1e4d9f3cbdaee0d5aafbd29d5da1e1a2694f6c787.json": {
-     "bytes": 16457,
-     "sha256": "747e206621e9d5fc8724dcbd41fcb0582becb46930fc81750d9f7b9e4c4e2f4f"
-    },
-    "print/preparation/products/b6d3d3ff0df4844405c07660c39796cb8f82ba7af2c89d1ac7cc1f25340f4efa.json": {
-     "bytes": 173138,
-     "sha256": "ad99b0c919c74f455d02f674efca4f8ed4e3b46c5f1e4ce958daa512d6231160"
-    },
-    "print/preparation/products/b79cd2cdc76185b1da6eed4593b9e9a7f08326e1cf9a01578b7429309c9d3446.json": {
-     "bytes": 129665,
-     "sha256": "5c58fe0bd332a95e353154a7a0c49079780b7e1b567c0eef193836869e20e3ca"
-    },
-    "print/preparation/products/b7c51960a32e65ca28efc03b1afff966976c4515cbf32ce06666833715f22504.json": {
-     "bytes": 130335,
-     "sha256": "42aebe98ae33bff2353583bcb6856bd69926dd41c9466c435130f2f3c2fe7d7b"
-    },
-    "print/preparation/products/b803e10a20a033889d166de09089fe4e42b253d44c716e81a1d95b4ab82c45d1.json": {
-     "bytes": 334971,
-     "sha256": "f970b5f9128015c9b863c5eda8b8dda805d0d01c7754b3456138fca6af8931d0"
-    },
-    "print/preparation/products/b888e20d464df65cc3219f85e941ba88e9635a4ea3de69be2106bf493081509a.json": {
-     "bytes": 92676,
-     "sha256": "aa2947599a094b05ff2375518c3c9405008f09b6b39312b327418fd5e553a467"
-    },
-    "print/preparation/products/b9f3f145f95decffe8e017b79bb2eda8511b1d1abcd03f39c9d3330d296c5156.json": {
-     "bytes": 7852313,
-     "sha256": "b76fdf05b8f84254df9bcb4f087778e4c1e8e89c45ab50ad375b4eacc3886a09"
-    },
-    "print/preparation/products/bb470b25376e0a6ccb2fca0fb685fc0e761992e95b99b2620c19c3e1a4c71ac1.json": {
-     "bytes": 43571,
-     "sha256": "c333aaaf439d06e46124a43ab205fef7cd055f0ec1edc939f2f044340c32a903"
-    },
-    "print/preparation/products/bb82051f84323bcd62fb0c3b604a01abcbef72d88a20548daa2993de00e0e51a.json": {
-     "bytes": 184016,
-     "sha256": "afee6f3467a6701a62f2a9f32d78224a4fb0de7eca918acc16338aab1b4133be"
-    },
-    "print/preparation/products/bcac99c53d730314d4e005241173ef3ebf9df3951d6562dd3cf9b7367cbaa94a.json": {
-     "bytes": 29724,
-     "sha256": "f4e19ba3a2083a2438aa20b7e9ab050e057780d302f8dcb01eb3a1c42670f433"
-    },
-    "print/preparation/products/bd17f200b96f83011462dcc43e27fc4be84439ad6ab1c5844c51c145dfcd9af8.json": {
-     "bytes": 220635,
-     "sha256": "5574acdde702940e667eb9226a0637544610b810d8d4c5dd9d105a8860485335"
-    },
-    "print/preparation/products/bdc71572c1218dd2c81d2ca214eed27b96d512a1c4b92cf6717eca095ac2d056.json": {
-     "bytes": 275551,
-     "sha256": "d1fb0ae8fed784084518ddc4a5b633eba65db0a5bfc1cc4b4460ce9b16c0a10c"
-    },
-    "print/preparation/products/be5c899da376505a4238694e9c60c0df7205dcd5effb0e4accdc8fa765c0c4b2.json": {
-     "bytes": 58018,
-     "sha256": "eeecb3f6adaa035aec7153fa7ed2005799846e949e3584d3d984485839ab6052"
-    },
-    "print/preparation/products/be9ca64f1f8c2650290846d7bd42d066c2d9c53845abcae6e8bbfe22424a9075.json": {
-     "bytes": 55575,
-     "sha256": "1b23569daef204ef3f2059293d575d19bae3bcbb73f5b0910746415a4e4f10fa"
-    },
-    "print/preparation/products/beb84d066be1b3c82990350550bc0db2df77e9050f0d3d5206db1bb16204472d.json": {
-     "bytes": 181404,
-     "sha256": "853fa4239d82b6728f399eafa3324ce32e8bd6daa93acbea0833c1f72034b750"
-    },
-    "print/preparation/products/c1263b36744adab7bacef9fb75815cf6a9047d0ff84765e124fae1c73bc45414.json": {
-     "bytes": 114496,
-     "sha256": "f0aec275d3503d58722b3353ce05e5dc5f57956e812b1734b8c22cceff025c08"
-    },
-    "print/preparation/products/c4772442a37d8806e1af72e7090690cd7e259c3afe762555b6ad358ffb366c95.json": {
-     "bytes": 36937,
-     "sha256": "d214a4f15251633f4cf71e4f6f3383e38370b017033b3ee44f72f4fdf3a57c32"
-    },
-    "print/preparation/products/c6ff3c832c99e8d34712518d1f32704a057853ea12c22a3ed701a27b0b17b59b.json": {
-     "bytes": 17524,
-     "sha256": "3a090e563668d4edda70fd0523c2dd3cf9a2a4f7f11ad8d3b2848e4b43cec155"
-    },
-    "print/preparation/products/c7076bc8fd2aad127468f74f174235de9bf0f69a9fd14fb6c9b274f766c7b04a.json": {
-     "bytes": 232241,
-     "sha256": "d82b60c3c6d17ecfebb2f049dd8487f3b60741f3ea06294f2409acccc18f5245"
-    },
-    "print/preparation/products/c77c204cac9e388be1df8d47b04a0f1b77d619e72bfa5012ad9df79e45894ffa.json": {
-     "bytes": 133574,
-     "sha256": "6ff3e383fd4fddbf805db2a289ce0c068bb5c792140944c5d95229c665c539da"
-    },
-    "print/preparation/products/c7a998ead56cd3b98e3a3a79918b6094868cafacfcb0b2e5d58d65a3ad40e15d.json": {
-     "bytes": 70002,
-     "sha256": "277e720328d3a7853d707a9333a3351e3d2331e1cde977edfe81f244cb600492"
-    },
-    "print/preparation/products/c7db09bcf98cd42be844e68f24c54c14471ac35597c777610727f5819b895cd5.json": {
-     "bytes": 171070,
-     "sha256": "37603e0cd1673afc05e821a7129f2181b5b6827c6d53eaf3e8835c644e9732e6"
-    },
-    "print/preparation/products/c8cc3ef1d348a80e99304cdfd564b799e6090f4dbdad7f525771ee6c94e425bb.json": {
-     "bytes": 62886,
-     "sha256": "4cbc62512f60d7ad1b5041f8c151576a9d7b96f7a155f5e7d7b5eed3a875500c"
-    },
-    "print/preparation/products/c9bda29a97664e328f3fad68e01671f072d29fa67969aa899970b1e19452adec.json": {
-     "bytes": 190690,
-     "sha256": "7a1ef85cf7b0fd070a587be2b32099dd140175219c0f054dec4681c8431076e2"
-    },
-    "print/preparation/products/cbcbddc2e91c4d4a5a937b53263757f7beae73cfa2cf3e234f211ac568b97ea5.json": {
-     "bytes": 8462309,
-     "sha256": "8d6bd7a79370d67c8b988750d04dec436d81a82d1021d52e4a462abd3a0db265"
-    },
-    "print/preparation/products/cdaf9130983705a8f9136fbba1393cef833e2b297f6bc642714841521ec73c83.json": {
-     "bytes": 130886,
-     "sha256": "ca7174fe5a20bc0bb98e2495a416e752bbd74e383482b9ad215ca91e824b0c70"
-    },
-    "print/preparation/products/cdbc989a7b4ec85cf6b5fed1e17447f4c50a0339d5c86315bf7f15fa5823ef16.json": {
-     "bytes": 195536,
-     "sha256": "954ad4ba9dfda08366b58be264eb55860fd06a9e876ed017da2e7adc8e44b620"
-    },
-    "print/preparation/products/ce39bab5061b59813909d19c9437f336519a3e24b29df085c3878af3c3972879.json": {
-     "bytes": 628507,
-     "sha256": "d6148d68de3fd8eec46724fe59bc9c92f59f04894c9cc5fc3d2b8061c63833ac"
-    },
-    "print/preparation/products/cf6d3b6c3652b666cdf110035e68a38271524032c2f288aafec532b4969d181e.json": {
-     "bytes": 47103,
-     "sha256": "9a8c00a62216d576d63304130977cad2ffefbf1924136d1af1793620de61516f"
-    },
-    "print/preparation/products/cfe8837b099b3168a2d934fdd1f66d87b36f85cdc942964f97b5bf3d5dcda3b8.json": {
-     "bytes": 259652,
-     "sha256": "5873cc288300f972bf74131e46af4983aae0d9076d8e904a0c10161ffe2518a0"
-    },
-    "print/preparation/products/d156171362b236e26dd1f88eff531f4006775ce43428007be5a29e20d7db315f.json": {
-     "bytes": 92385,
-     "sha256": "28dc7fd20c8ba0bbf8fe6524bd9114f0784e80143c8f375b400f26703de99e60"
-    },
-    "print/preparation/products/d179d35cc9496be37386de3b7f224e4d700711f8029d7fdd9e592814027918a2.json": {
-     "bytes": 31384,
-     "sha256": "eb5b829250e5cdf1c8bcac4d71f2425542b60454ce7b232edd206b4f0d85d141"
-    },
-    "print/preparation/products/d1e106761f762cc6be082fecb014ee2df5df28dba3bd150422c4714d787ae98c.json": {
-     "bytes": 99238,
-     "sha256": "f1733baac161fb144d721a5a899be2cae54fadb22cc9a4438702f5cb0b830b3f"
-    },
-    "print/preparation/products/d2c3d229c0b9312f8c3f33acabe3c877cdb2753d4e373de63af2b62000d3a2a6.json": {
-     "bytes": 131228,
-     "sha256": "e2c53aa66c754da0db53890ae8d4d9cbe13f3bd8535e2201ef224fc2059aac69"
-    },
-    "print/preparation/products/d3226a1ffc46ea30b1d86d2bf1385c34f35d4eddce82f00327d776b598a0a1a4.json": {
-     "bytes": 178997,
-     "sha256": "ba9cf905dd376aefbc7162d0e8c1e8584a2ab7a71f44b922e91b08ed4ff8b195"
-    },
-    "print/preparation/products/d4fee8221c773de07150a4efa96764bc9ce5b22e756411a70d4f1680f9c754ec.json": {
-     "bytes": 93829,
-     "sha256": "a7edca3b7a7b2a78c12b6bd83050084d3c157e3c69311360a70423b1849180c7"
-    },
-    "print/preparation/products/d522c38035051cd696ae5944a7baf03dbe258d6a93255c7832f3625af2f57507.json": {
-     "bytes": 173250,
-     "sha256": "35f0003fbb6ac8a531682cc4d6e7a42256853ba7605753c347c50458fc0b30ee"
-    },
-    "print/preparation/products/d601cefe290bbf049fd0cb44f6e84ab89694663b2e6bfa81219fabfcfd837532.json": {
-     "bytes": 147112,
-     "sha256": "bfbf1ff0f23c7a58738b8f368b08e0ac2d2a5d34c5b8afb2d6fe25588080e86d"
-    },
-    "print/preparation/products/d63ccdc92d320e1e4c0d5fd0c923a58c86bfeee5e99e99e43f1da321830d62ec.json": {
-     "bytes": 92255,
-     "sha256": "851412d4074f256817a4392180c33d7aef34913407dfc9e09d3fe1d3bf2444a3"
-    },
-    "print/preparation/products/d7305158e96792b4bf5158800788ab95b6b4d4be8c26fba4a84e93c34634b7a0.json": {
-     "bytes": 230643,
-     "sha256": "611711ad395dcce45c9e50dcbd8d75cfe0851c316e81e09119b3c1ba69dcc443"
-    },
-    "print/preparation/products/daaf1b920dbd11aead0edcc9776583f0a8e09b6e0bf0eec39f8d5025365f4fd7.json": {
-     "bytes": 64607,
-     "sha256": "1f2c3ac0e22004588a436a214be5005875f8da6e070f676f3471ccb6e6ad28ae"
-    },
-    "print/preparation/products/dadee70fe2c17f5aa59dcfcc4c909416ca15c4a3fad7549f23fe7a0188153177.json": {
-     "bytes": 173848,
-     "sha256": "dbf8818d8ce73cc7d99533ad744f43ac52bccb40455d2dcc4e9d0c2c9ac8716a"
-    },
-    "print/preparation/products/dbd6b49ea90b05785ac7d76d01e16bef10495b20c727cca35107b96da82bac24.json": {
-     "bytes": 213110,
-     "sha256": "6443175c30907bfba5ede67226f54d544788ba93ea4353f801ad4e60fd2194c4"
-    },
-    "print/preparation/products/dc62ee4b591c1287c163e6f0fdec55bee03a6e0a35626b890ca96bdf1b02a363.json": {
-     "bytes": 28197,
-     "sha256": "5588882b4b55d1908184f625d28b21340cfa84d3c968685a715221ddf25e172f"
-    },
-    "print/preparation/products/dcb940b3cf75fabacefb991fbacb185c0095feef936b16026297ee12e1d2aea0.json": {
-     "bytes": 63483,
-     "sha256": "f7aa3e2bd819b3c7d024d081bd09c5b73bd8f9acd988fbe22bae2e3daa26096f"
-    },
-    "print/preparation/products/dcbb77901b020470cb8f0ca72c5812cdfd357e9b75b270f92ff99da089c47e2b.json": {
-     "bytes": 68161,
-     "sha256": "64d63fa66bb5b2e900d0350c2b9383325a7188702fd7cf4c53c5c3632148641e"
-    },
-    "print/preparation/products/dcd64247bfaaa7ba76218e19d1c1aa3ed0998129c48008fda0b3090be426fddd.json": {
-     "bytes": 158758,
-     "sha256": "e2cf028321eab2fb6594c85cc9bf709f3ceeea924faa6d89e587ca105c4014bd"
-    },
-    "print/preparation/products/dcf2a7016f63f0856254a66b638d4cf73460861872b8437f3ae313d7639eb948.json": {
-     "bytes": 125597,
-     "sha256": "4bbef8b69f83478f43209840e90f9250eb246aa9e3c3dbc6095a5e68ea6e7f01"
-    },
-    "print/preparation/products/dcfcbe82aa4058f6cf556eb225f19f588a5827a65fbcc68c7941c22482350ad1.json": {
-     "bytes": 78535,
-     "sha256": "3dfd91bcea91419e2b245eb638bae1215bf8c1816e143076bfaac8c20f2eac26"
-    },
-    "print/preparation/products/dd0835535267c6627a96edf556305a766f846eec2349ce8322729d7b673689a0.json": {
-     "bytes": 349630,
-     "sha256": "5e2d27da83971bdcd6990fa6dd06fc99fb0deb7c9e4d7d1dcc10438c2ebb934f"
-    },
-    "print/preparation/products/de47c5697353b34250d9d234ac9270a90376a277c132b4a8056ae1b60b247357.json": {
-     "bytes": 170851,
-     "sha256": "4c7e9dc39c98b016885bbb799b2e8fd5ea35193e9315a531d147692b379b98c9"
-    },
-    "print/preparation/products/de60729e255cea08cdb00860681da80059116ad8efd408285d4779b454659840.json": {
-     "bytes": 121818,
-     "sha256": "cdc75a19890f06d0aabd35d5ee5eba477760ec229e94230a06884282c8c8af71"
-    },
-    "print/preparation/products/df5e9c9554b25d13823579c2bc4d9812bc20ca06dc616d6ab5c92f51f726d380.json": {
-     "bytes": 16656,
-     "sha256": "6fc388a527cf8dbe47244ba4fc9702c712e9379fce20608f2fb311c7768f9608"
-    },
-    "print/preparation/products/dffaa788ec2972e77889a72c1e74fcfbe6fed86b97f8d633490feeaf1955beab.json": {
-     "bytes": 117944,
-     "sha256": "e2e1608e9737c6fee552d5d90093c3031d0b63652e33e3360f648f9a61c62afe"
-    },
-    "print/preparation/products/e108c0f8db8a0b30280edea85519fda492e9c48adfe2199a0c913b1eb3d4fe43.json": {
-     "bytes": 122183,
-     "sha256": "d357f89d42f20043bf1aba0e6595969049c55f374a391ec1b1dfe1b0182a5e7a"
-    },
-    "print/preparation/products/e1303e35b8f2274db536aaab6f217527be5317cd5d06942a597c38b558268629.json": {
-     "bytes": 60080,
-     "sha256": "862cae7a065b326a5136b722d0d028f0fd4f8867fd2204e52408c51be86fa65e"
-    },
-    "print/preparation/products/e22e8d820e4e0ad257fb11c8bada69e90a216d4e2b667265407d4e1e1b1f0d94.json": {
-     "bytes": 17396,
-     "sha256": "8a460228e4ade32620b5638a10298f2538e2eb4602d4d818a970d2cacecbda99"
-    },
-    "print/preparation/products/e6b02dd6c6e9e621abb92fdd6e3ba1f47ee1a45f97d4f6a999790394dcbf0d90.json": {
-     "bytes": 180622,
-     "sha256": "49fb82f0cce1f1c9613d138f4a48f774f6bb486244a53c8fc2599adcc34fa16e"
-    },
-    "print/preparation/products/e7b8ce6436d9495b13a33280643977229f9e40d48dad5ba27b8bb69253d90c87.json": {
-     "bytes": 5005428,
-     "sha256": "4681632f5eca1c6d31b3be9acb77d602a304b6d3bed387bd5797f57cfaab216d"
-    },
-    "print/preparation/products/ea201b602b022473c978db1885d0de6062aac8f9703bc93b52c0bbe96b2bb93d.json": {
-     "bytes": 20348,
-     "sha256": "e61d529b26e58e36a7a5ce3f3323ebd5b37f1b5d419cc61d6181b339e0593a56"
-    },
-    "print/preparation/products/eb9dfd89cc2200adfb6a9c598a7fa9ffc299855b91c34a13433250e87a69b3cb.json": {
-     "bytes": 175484,
-     "sha256": "e85e2713f300b9a84a515529ef7a5ffb3d0e0fda5c4344ab4b3cbe1844a2a51c"
-    },
-    "print/preparation/products/ec4b32952247148d693e60ceef8c5295cc1c49294148114fbc0ce13aeb06834e.json": {
-     "bytes": 255145,
-     "sha256": "86c98ed040fc850e2aa6505e774bcb006456cb2c7b71ebc646453aba3f799f47"
-    },
-    "print/preparation/products/ecbbf7c131944b3f95b950e4ab599ee7f5800f88e35ad198e04b21f2313f774e.json": {
-     "bytes": 77519,
-     "sha256": "1651cb0b70c1e7883f1324ccb5cb175f8577325e765876f465d3419b142b2349"
-    },
-    "print/preparation/products/ee5c294520c38a15cf8a834bd67af33dbfda8f561a669896c9b522bfaa1932ae.json": {
-     "bytes": 186263,
-     "sha256": "f7b64d606678e31e6f42c812b823c60dd7893b57bcbdcc44705d32c215c80c04"
-    },
-    "print/preparation/products/ee9e4325d678144957aecf107207a68882a4827cc69dfbf5978195d031cfca46.json": {
-     "bytes": 68081,
-     "sha256": "d66de6876df86751eee7d75e72f3a980bd1ce1fa68678e22da4552c5675267fb"
-    },
-    "print/preparation/products/eea531a66de6ffbdadd95a397f5641adafdf34fb85c3ebd2766b47bc8352ac66.json": {
-     "bytes": 279574,
-     "sha256": "54655a79acd22d514fe91ab4d76ccc1f1355572f791f313d5b701752fef94334"
-    },
-    "print/preparation/products/f1d6c97ebc1c87336a039341d4183e94c2d1bfa3e22ddb1b53c18d60788a6346.json": {
-     "bytes": 62183,
-     "sha256": "531aa8e451448602426ebd1b19cf7e87f28ec0625f2b409370d16ce8ccc0bb75"
-    },
-    "print/preparation/products/f1f3546382c0970f280218faec28f0f9240c64ac76a89f6f08504cc0f7a84ad1.json": {
-     "bytes": 8777635,
-     "sha256": "0d2cdbc1de4b603f0e4998c944f9536dd90004f89bf022a57fefc226e4e1b458"
-    },
-    "print/preparation/products/f2717214ec82f39f591a077482a21a256d0f2d2e2d6d0e55be482ce61d8f620a.json": {
-     "bytes": 66789,
-     "sha256": "1dc9a1cd896ca1f4fe17b4fea87445fa211c2f0a045395649d0455c77cfee6d6"
-    },
-    "print/preparation/products/f2be919bc1974fdda88a2e07e7738bb6e1557317ef7fca2561707ce2349939ef.json": {
-     "bytes": 195950,
-     "sha256": "a8af1af3e2b4d917d18cadfe012dd2ff03d71ad83b5b23a7b052eb85220f96e7"
-    },
-    "print/preparation/products/f2f1fb90766fb15e5128c26a3eec5ba5936802c4aede7e4fb784305bd4406561.json": {
-     "bytes": 60279,
-     "sha256": "b4ce5006927590b3f60c4f74617e520a01a793176d858d61b34559d1d807d461"
-    },
-    "print/preparation/products/f394c84903118b3acc4f5c2585a0eb92b544ebf7112a19988b95624c0679679c.json": {
-     "bytes": 226418,
-     "sha256": "bed994505ab5464fdb26754e2282a56412e9d36367bbc288bb56f7459b132a2b"
-    },
-    "print/preparation/products/f443e390b419290ef87122904d68aaf56766adb472757205baa462c32bb28a2b.json": {
-     "bytes": 161155,
-     "sha256": "15b0e52d1419fcebddbce041074093277e66a010f622775fd8bebc000f12cde1"
-    },
-    "print/preparation/products/f4b2cccd047720b98d505c14ca6e8e2bb26cfc567ee6f850928da06014aaef0c.json": {
-     "bytes": 103041,
-     "sha256": "3f4ff15a9e11d606728c02e8ab741fe3f427119d5777a41814e7f16ea8af13ea"
-    },
-    "print/preparation/products/f4f1a50b33a15d0eada92e8f0d7d38bf1f0cbf6302e3acf7f140aba3ea402138.json": {
-     "bytes": 171512,
-     "sha256": "8bee65e59d02bf5dd09160b54013450492dae7615b52715fc701cf209d02b72a"
-    },
-    "print/preparation/products/f514db1aeffe9dc61e676a713c3d8d708f0adb23878ffae427ba2addefc8c37b.json": {
-     "bytes": 82532,
-     "sha256": "a53e77b0e6e86dc5738c37761bd54a305755af818536453e85597f8e7dbfa7ac"
-    },
-    "print/preparation/products/f5e1fcc464bd28fd822ae7856ad34b48e114e69ef62efdb6af0c84c61fb250ce.json": {
-     "bytes": 80395,
-     "sha256": "8904468a08ab3b0a9a87084e95bff5a6cbb594c642c0361e6502286ba55c1e46"
-    },
-    "print/preparation/products/f6416fd1646e2cbe44e6b05e2c3b895212b4122320d567f318d2a6cf8e01b2fc.json": {
-     "bytes": 45325,
-     "sha256": "444b0c101e7b1084c0c6f170af1d1b29142bbbda62f3872ab7b0f3aa972c13c3"
-    },
-    "print/preparation/products/f6b2099be5bf45169c1c2a1f6db72ea9ae20ac75336e5e439b45e6af4df95c3b.json": {
-     "bytes": 101824,
-     "sha256": "823e0f4e1c885d30c6efcea27feaf07cffb9fc7bf3c6cd00db4f24553f66af1a"
-    },
-    "print/preparation/products/f7c679839693d066c38ca9fc4650105caeeaa656b6fe4f4510db96a400c5bbe8.json": {
-     "bytes": 137978,
-     "sha256": "59be4e21b6733e4e2c38f1625d56784f8bffdeda813e3779b3196b209d3aadf0"
-    },
-    "print/preparation/products/f7cb194b77827527eefda730a2915c66be86a61f6896ad783c2e94acd7cfd75d.json": {
-     "bytes": 193704,
-     "sha256": "7cb7115f918a544502ec89cee5ac4371e63c249c4f06a3dd9f3ca856c8e0a9b7"
-    },
-    "print/preparation/products/f85276ab870c1c905bd74edf1f8a5b83ea6be3f0d079a5788958da32dbe85f9f.json": {
-     "bytes": 20536,
-     "sha256": "d4c99f5d7b85d7f79ba9c16bf17a0cf9f0108d0a58e58e9a523756fd71d7395a"
-    },
-    "print/preparation/products/f85b89e2c2a88da2e54dde0ca705dc438cb75a83a20b103a705b96dd6f37c107.json": {
+    "web-editions/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.json": {
+     "bytes": 201884,
+     "sha256": "27c234e515b2c7ab246c34f8366e36004d88470948a7c06c47f050ca16bd080c"
+    },
+    "web-editions/claude/articles/canon-law/natural-positive-divine-human-law.json": {
+     "bytes": 153172,
+     "sha256": "5d2d4e418245f46e80c6cb6ebd64c1b25081e25e90fde4753f2c062cc6d2523b"
+    },
+    "web-editions/claude/articles/faith/against-the-instrumentalists.json": {
+     "bytes": 146457,
+     "sha256": "c7fb94b1b07ad5eecb633b3ee07bcbf05a0b4a3ae4659aa33a03c68fd3334bf0"
+    },
+    "web-editions/claude/articles/faith/at-the-end-of-every-why.json": {
+     "bytes": 79890,
+     "sha256": "98f607830947b9d7ae995e16804318d5fed140ffd6781e454018f55d535b9243"
+    },
+    "web-editions/claude/articles/faith/council-missal-and-crisis.json": {
+     "bytes": 90204,
+     "sha256": "4b9b54d76d0cbd822f06521916d1e2cb62df960326e7141bee6b9af234753106"
+    },
+    "web-editions/claude/articles/faith/four-last-things-01-death.json": {
+     "bytes": 78983,
+     "sha256": "50b764f405627fb6bd992244f2b2c08daf830ac847d4417cf0d55db2e988a64d"
+    },
+    "web-editions/claude/articles/faith/four-last-things-02-judgment.json": {
+     "bytes": 85278,
+     "sha256": "3ea6acc971fffa0f569b0a02a3befe3821ad6371f3c87616a6b212100c579f49"
+    },
+    "web-editions/claude/articles/faith/four-last-things-03-hell.json": {
+     "bytes": 103158,
+     "sha256": "76ffe7e49207f82727fe640027e49adf3660ddbf4994abb95376f0ea30fc3ca7"
+    },
+    "web-editions/claude/articles/faith/four-last-things-04-heaven.json": {
+     "bytes": 77870,
+     "sha256": "830b32b246431123a0bf74cd77b5266b7bef3b62dd79fa14db6dd4dfe802fc07"
+    },
+    "web-editions/claude/articles/faith/freemasonry-and-the-catholic-church.json": {
+     "bytes": 71904,
+     "sha256": "b3190305f33482d2aa51be634998d9125b40a4334c4b95e8ab15aed2f9677fce"
+    },
+    "web-editions/claude/articles/faith/in-defense-of-the-particular.json": {
+     "bytes": 281953,
+     "sha256": "d245fe8b29aa4dbadae9ee81f2a2e0d1e20b0815eba1277ff66bd9d767ef91ae"
+    },
+    "web-editions/claude/articles/faith/ontological-vertigo.json": {
+     "bytes": 148835,
+     "sha256": "7bc38f7ef33fa0ab635fe1a2bf6ad494cc92de75c5f843f564f1486da9682765"
+    },
+    "web-editions/claude/articles/faith/the-due-return.json": {
+     "bytes": 75964,
+     "sha256": "1b68d416c13b0950b8cb632449ba789c6f1be39932e1179b0dbde33347f087b3"
+    },
+    "web-editions/claude/articles/faith/trustful-surrender-to-divine-providence.json": {
+     "bytes": 138152,
+     "sha256": "1abed9ce1a7572dd2a1148da109c0ad0564bbebb31157444946b645d185153bc"
+    },
+    "web-editions/claude/articles/scripture/abraham-and-the-daylight-stars.json": {
+     "bytes": 136056,
+     "sha256": "5c4a08bb3389af3bd9cc576fce6f5bfedb9d263addc276a6948f997aaa0fc171"
+    },
+    "web-editions/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb.json": {
+     "bytes": 142427,
+     "sha256": "16637f6048f97234701f8391282ba4e16e222500575707c088492e6b9692e2a1"
+    },
+    "web-editions/claude/biographies/origen.json": {
+     "bytes": 76817,
+     "sha256": "346fc081343723f7423f84438ca413916c2707f0f1a28123d9fc48a856d29c68"
+    },
+    "web-editions/claude/biographies/saint-augustine-of-hippo.json": {
+     "bytes": 86188,
+     "sha256": "961e41d94bb6e0784a953a5e222b8f7e3a7afd9ad66239f642bc6103deee727b"
+    },
+    "web-editions/claude/biographies/saint-jerome.json": {
+     "bytes": 67266,
+     "sha256": "03a83dc1c16a79de2516738d8a49cbf6604b21e1ef061a56eda59dc2d46e7d50"
+    },
+    "web-editions/claude/biographies/saint-paul.json": {
+     "bytes": 109842,
+     "sha256": "11dae045bf6e98f8b9c69b27391bd723da1687a248018e03560cf6e4080d21aa"
+    },
+    "web-editions/claude/biographies/saint-peter.json": {
+     "bytes": 164241,
+     "sha256": "8547d22858fd41094f846330eb6f7ddc6c10abb50422a1b56a8be95c7a47bcf0"
+    },
+    "web-editions/claude/biographies/saint-robert-bellarmine.json": {
+     "bytes": 114811,
+     "sha256": "4e436fb8c8c1a61161154d0cef0f751f2446aa03fdf946700da8ab704319ed63"
+    },
+    "web-editions/claude/biographies/saint-thomas-aquinas.json": {
+     "bytes": 64393,
+     "sha256": "ab8fe890ce749dec192b04d3263f0fc8e6b9d109b6105cd68e082b8e082219ec"
+    },
+    "web-editions/claude/biographies/tertullian.json": {
+     "bytes": 117648,
+     "sha256": "9236dd8641c604f67d530bb267628b0df067498c985a23273b3e4b17c8367347"
+    },
+    "web-editions/claude/history/biblical-translations/01-septuagint.json": {
+     "bytes": 63453,
+     "sha256": "426877c3f642241fddfa64d76be8c4db3608555fa02be18ad6e90ea762607bb6"
+    },
+    "web-editions/claude/history/biblical-translations/02-vulgate.json": {
+     "bytes": 72545,
+     "sha256": "45ed79916b9c2f71383d5ff9d7e847f5faa2408bb6608c71e974916d58b68150"
+    },
+    "web-editions/claude/history/traditional-priestly-institutes/01-sspx.json": {
+     "bytes": 154368,
+     "sha256": "9228f91cad182a97970a1fe5990a16db8649ce26526f79f3161119cdd599eb93"
+    },
+    "web-editions/claude/history/traditional-priestly-institutes/02-fssp.json": {
+     "bytes": 211441,
+     "sha256": "f60ffb77c655f7e568d1801e5d2593767c4552c5c10f8b54472382c3866327c2"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.json": {
+     "bytes": 156169,
+     "sha256": "1eb0e38bcc357fba502e37648f3487efc173ee6b97008b5bd3882123fd517a7a"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.json": {
+     "bytes": 112799,
+     "sha256": "512f41873bcb77cd85ba886d7c331bd2bf415a95195f0fe9faa999007757d500"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis.json": {
+     "bytes": 56566,
+     "sha256": "4dc1cc44f82875b1d7499fd9748a91a58369ffb25d62e836ab5a07d023426dca"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.json": {
+     "bytes": 137926,
+     "sha256": "f3e1c9542bbcf7c68933f33aab7ca0e660a5337f548c7873a2ec591cd9c20590"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.json": {
+     "bytes": 85247,
+     "sha256": "8bd259733edb8733c982dca316026df13ae77ce562fc371e47db51a3797bad75"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.json": {
+     "bytes": 162271,
+     "sha256": "263a80f951ee992b3f50d270298993084c5517e576890500b8ce6045f1621d66"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.json": {
+     "bytes": 94787,
+     "sha256": "73992b94cfaa2a5dac2a8a121dd09c99bb41c4e88982d8ae97fddb3b47d899bc"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.json": {
+     "bytes": 164922,
+     "sha256": "9a47d046606b6074f56294f2d0b53c27d7a90bab757c384e5290da721c754fb6"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.json": {
+     "bytes": 93751,
+     "sha256": "0f05e759de079bab39ce7033ee592049bb504582443623de2623b3b00be01f08"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.json": {
+     "bytes": 199299,
+     "sha256": "4df6bbee272d2889100debd607e6809b582ad27a49a70b8dbc3e401eaec82a41"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.json": {
+     "bytes": 125950,
+     "sha256": "d0321f6273bc6d68fab8305ca73844bce41046dcd737f6ee54ab167ba47ec66b"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.json": {
+     "bytes": 171373,
+     "sha256": "b593da51905a8f78fdc5e71f473904ee6bc91bcb1aa246af79c43390b4f52614"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.json": {
+     "bytes": 139813,
+     "sha256": "433ab9886f060d1665f1ec948eb7fdee1c08cf49af59cd445f6e182e0f98ff16"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.json": {
+     "bytes": 208057,
+     "sha256": "54a7e35162fa2f823c5673831b055231fc46779f72f85e104da35f8e21f40c55"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.json": {
+     "bytes": 14048,
+     "sha256": "be454f2bd6f42e767de322fdc2e02fa64461c891204a2041e902d5f592ffa6d5"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.json": {
+     "bytes": 44286,
+     "sha256": "5fdc1151d39ce0d919b8f77d3ff6337c637222c5080bff8b658cb98bd3eb36bb"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.json": {
+     "bytes": 118071,
+     "sha256": "88c547c8dae0f7faaad56cc021c1b81487dafada0410924d6e604948bf77e644"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-homily.json": {
+     "bytes": 14820,
+     "sha256": "7126a38c6ee9986219babd2bf3dfb58c5fea7d1212e0092f7410abeb55de85e3"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis.json": {
+     "bytes": 53795,
+     "sha256": "33d546c6899e2f09f601569ecc211d6ddb4508c82e8d282550a181ee14fab030"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.json": {
+     "bytes": 132410,
+     "sha256": "86507dcc481f85857e0df89705c90058be244eacb73b8b55ce94bf5df4d2d75b"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.json": {
+     "bytes": 14620,
+     "sha256": "25a001545ef79b308431d9ae6c5a8144958912524f1dedc9b745aa0564446235"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.json": {
+     "bytes": 57112,
+     "sha256": "97fedf841ef83cdabe4c7cd6020463410a0489966bddf52b4389800b3c46feeb"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.json": {
+     "bytes": 137842,
+     "sha256": "0fd589304e865ce52df07c289cc0e9240eb81cc321f28ae90986b9524524ed3a"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.json": {
+     "bytes": 14542,
+     "sha256": "9a0c9a90d99ab165573dbb6adafb95ca2d964b49010a2b8945df68a821a3de7c"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.json": {
+     "bytes": 57267,
+     "sha256": "b79643dacae5c4b75bf18d3a520cdcaa7d8ab77bee965eab5b841dde8567f317"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.json": {
+     "bytes": 126151,
+     "sha256": "010499ffa3fed24758b812e37996819d0039b816cc21432a55e4e2def35051f0"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.json": {
+     "bytes": 15064,
+     "sha256": "b93d6b56722e5e2dd1870d1287a6d2b230cb846b0e9cc8333ab7928718ffbb01"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.json": {
+     "bytes": 56803,
+     "sha256": "c2e15e172059e07af2471a1921097829fe5e540406c0c8a6e632ab273e5c220e"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.json": {
+     "bytes": 147846,
+     "sha256": "56a3dc21513e541274df860d789c595971fe05a64d58bb15e165a324a4565264"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.json": {
+     "bytes": 19859,
+     "sha256": "59ab9fbb9fec913b67fb6ef3afd2c6744f22edb0cf552ee0165f623b89088732"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.json": {
+     "bytes": 51170,
+     "sha256": "b9ce8db8caa6328b0c136ad4cb9aad9b5d1a4931654c9de17f38b2633bfec67d"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.json": {
+     "bytes": 128231,
+     "sha256": "683c594dbca092f7a8b338bb486d00f44855e29d587ca4e273b1f838ae5583b9"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.json": {
+     "bytes": 20395,
+     "sha256": "14706e4b71aa55667f144f789b1014531b5231682da54162234edcbca0662914"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.json": {
+     "bytes": 48182,
+     "sha256": "5b758a11d7175f63564b19f8a14d690dbf5c8bdca4a4c53f771b1000def2535b"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.json": {
+     "bytes": 117889,
+     "sha256": "3f2b19ca08fe77fd290672e7b95e59b4d2eda09885e5deeab0c686cf60d99322"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.json": {
+     "bytes": 146356,
+     "sha256": "6ea9a351f16c627506a41acc9f8593771f68ab81f70d6779d3202223813ff33a"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.json": {
+     "bytes": 178157,
+     "sha256": "b83d1a61dd8e2ae148e31c6d487a9b9dcc91abb0d94543da4cdf2c4f4b9a217f"
+    },
+    "web-editions/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.json": {
+     "bytes": 165422,
+     "sha256": "6e979909da9a94fe2ed885be899cdd7fd94f3cdb5e92bcdde68ae69a4e181ace"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.json": {
+     "bytes": 175043,
+     "sha256": "616cc0a50c024fc867f4a88ec4dd2e26868b5fed04f8d535a9c9c1256b363894"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 86474,
+     "sha256": "2b9305873274f4c9197fe04d36fba26a68958379a358dec1823f87e2fcb46e64"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.json": {
+     "bytes": 57837,
+     "sha256": "d9dd270eafdd4cffc1106d105b3e01ff7e2c8347a49f5f14b33c983850f5b400"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 116943,
+     "sha256": "12f5c07664d9b0c22199898fa751b665b8b6b0a3e6e7182ae4f8ab45b69b27f7"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.json": {
+     "bytes": 16254,
+     "sha256": "3be3c11fab0dc41241eb2cddc6370f67f75e87894062306fe79eb8abda949eeb"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.json": {
+     "bytes": 44568,
+     "sha256": "a2ab1fe0d7b969ccf1400790f55d53fd2590f1a6e6b9be38e8225365ab9e02fb"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 125636,
+     "sha256": "8d4b03bf3a80c6b3c5d23731a1c8398af27af4d7a7604606efb246a81a2b9d6e"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-homily.json": {
+     "bytes": 19551,
+     "sha256": "f324a58a8d044edc6a50f8a59b0c05942fcc058ba7b9bc7b6b09fa4c204362cb"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis.json": {
+     "bytes": 57869,
+     "sha256": "139f6e82530b3a93a59b80216fcbf8e720f03a6172bb471948499dbc33eaae18"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 134422,
+     "sha256": "bcf9fef1aa4ea74c523bae45584d0a1877068102cf4e673eeffb128605d8b22e"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.json": {
+     "bytes": 19685,
+     "sha256": "5f8c00b7e8e8d14849549df757ee68157f6acb04bc0f95062dd49af230a094e2"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.json": {
+     "bytes": 54819,
+     "sha256": "0d5a8459f4794538e190b2712e1558a87130d8f62b176f2d643d5f91e85f6cef"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 152918,
+     "sha256": "ff57c3715c0784b395ceed002f29653c56b2a228c8dbce5ee4cbc89b3ca71f28"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.json": {
+     "bytes": 20885,
+     "sha256": "2a5898f0af7dd91eb5a601b616f43f2645722a3d36f809a202ba691114ab62f7"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.json": {
+     "bytes": 54189,
+     "sha256": "cb93614a1e4782c9459a7f07ea9550e77b2663f0fe550797f4056b4b20770f0b"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 141704,
+     "sha256": "4f65b77246de13d7450c080271970ef12471fd5eb7711da90db3d98ad695f47a"
+    },
+    "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.json": {
+     "bytes": 143364,
+     "sha256": "9c514ef2dbeb31a0f420eec23d497fb255b8cc6a1cb19a021519ab9697b953c3"
+    },
+    "web-editions/claude/theology/angelology.json": {
+     "bytes": 1808702,
+     "sha256": "998a51360d779a152a86f351f7c142af65a1c5a3ba259f27b81cb5867e0853cc"
+    },
+    "web-editions/claude/theology/mariology/ark-of-the-covenant.json": {
+     "bytes": 1438316,
+     "sha256": "fbfa0895aa1b95299f4d9d5a5c14bd05a49fe9703cfc5677aea11ba873deb5f4"
+    },
+    "web-editions/claude/theology/mariology/champion.json": {
+     "bytes": 141573,
+     "sha256": "3fd8306607ddb82f73593843445f249975b5985a88a8b4ad5ca545ef83ecb82f"
+    },
+    "web-editions/claude/theology/mariology/fatima.json": {
+     "bytes": 168175,
+     "sha256": "ab291986199f8f5ad932be77b1e3f9f003c5ee6fb41d1b3d998faac611985ad4"
+    },
+    "web-editions/claude/theology/mariology/guadalupe.json": {
+     "bytes": 180324,
+     "sha256": "51a80b2acf3039372837034bed9d77a4c915a2454ed6f92373785bbfa5f0652e"
+    },
+    "web-editions/claude/theology/mariology/la-salette.json": {
+     "bytes": 246035,
+     "sha256": "4ded7afed36af74f9cc851123cd3f57c64e03ea52daa491b019825309b1d52cd"
+    },
+    "web-editions/claude/theology/mariology/lourdes.json": {
+     "bytes": 134307,
+     "sha256": "03947303424e7311228ee80a92c2c3fc2de26c92a18cefbcf60b7024d98bb416"
+    },
+    "web-editions/claude/theology/mariology/marian-dogmas.json": {
+     "bytes": 157351,
+     "sha256": "6bb12bac0a5b3b51ff6763290a5b7133a0f72f64f04679bb929827534636c3ba"
+    },
+    "web-editions/claude/theology/mariology/rosary.json": {
+     "bytes": 135546,
+     "sha256": "4580552b85e07f3fa853fc8a13c348665dbb1ab81dfb7f4329f5b53a2fbdb94c"
+    },
+    "web-editions/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence.json": {
+     "bytes": 111923,
+     "sha256": "f2f588a8f2a805f8b1bf02aeabf4f92b7468026dc93dedaa1ce6efc92c31243f"
+    },
+    "web-editions/gpt/articles/canon-law/natural-positive-divine-human-law.json": {
+     "bytes": 170911,
+     "sha256": "c2798ddad56c62ba3d4518f43f54aab74fd800e60dd77a0e521830cafafd2691"
+    },
+    "web-editions/gpt/articles/faith/against-the-instrumentalists.json": {
+     "bytes": 27256,
+     "sha256": "88c0f745c3e6b9d948c3c01dc660012a8bc7a58d8dea9a94f2a1f304476fae76"
+    },
+    "web-editions/gpt/articles/faith/at-the-end-of-every-why.json": {
+     "bytes": 55790,
+     "sha256": "d851ac7d2efd17998586cb657ddc829843ddcb1ccb244f17713381f27380185c"
+    },
+    "web-editions/gpt/articles/faith/catholic-doctrinal-authority.json": {
+     "bytes": 21575,
+     "sha256": "c2498cc15f306bdfbee0e2448008bc1de1675d6bb3b9affb477b6319becba5fd"
+    },
+    "web-editions/gpt/articles/faith/council-missal-and-crisis.json": {
+     "bytes": 199853,
+     "sha256": "3e365d0694b44915d947b08687cce34aabd716256db8248177ca8a72efee78c9"
+    },
+    "web-editions/gpt/articles/faith/four-last-things-01-death.json": {
+     "bytes": 86595,
+     "sha256": "29dcf9233f51e8a00bc3a48d15604ff0791fc662f5ea49de427c015f93fb25e9"
+    },
+    "web-editions/gpt/articles/faith/four-last-things-02-judgment.json": {
+     "bytes": 85372,
+     "sha256": "88e5962506d887b58bb0cebbdfeb91cf998bd95daa13cc4a01cc986575560a8b"
+    },
+    "web-editions/gpt/articles/faith/four-last-things-03-hell.json": {
+     "bytes": 88769,
+     "sha256": "d5ec8bd475e6304b8b51457e39464c69985f29f995d3824abbc0db6ccba77d59"
+    },
+    "web-editions/gpt/articles/faith/four-last-things-04-heaven.json": {
+     "bytes": 81340,
+     "sha256": "61d1b8bfa1bc64b7e520cd6e2b0e0e6267b3524d4fd01450471ae368111f6a4e"
+    },
+    "web-editions/gpt/articles/faith/freemasonry-and-the-catholic-church.json": {
+     "bytes": 188304,
+     "sha256": "c2bf614767b997395c1feee34706703e4865e9024cba5968937a94445eec3076"
+    },
+    "web-editions/gpt/articles/faith/in-defense-of-the-particular.json": {
+     "bytes": 43737,
+     "sha256": "5f678e4b83770fdda9d584b4c146169a87b356b3c3a14045ea3879d4bcecd3f9"
+    },
+    "web-editions/gpt/articles/faith/last-supper-calvary-and-the-mass.json": {
+     "bytes": 32654,
+     "sha256": "d18c8309d559cc8515854b2f3f341b311d8cdefd12a2f685de3b9d96875d99ef"
+    },
+    "web-editions/gpt/articles/faith/ontological-vertigo.json": {
+     "bytes": 46549,
+     "sha256": "cff64258dd58706cd5e1d690d372fed6ae5d054bde3537ef35021a91e5bcf8d0"
+    },
+    "web-editions/gpt/articles/faith/the-due-return.json": {
+     "bytes": 72172,
+     "sha256": "cd44374ea37ab12180f904bf68a2bfc80e250ae8d54ef31203e6d098603bae1b"
+    },
+    "web-editions/gpt/articles/faith/trustful-surrender-to-divine-providence.json": {
+     "bytes": 103892,
+     "sha256": "76ddd9ad47a33ff81a5faae5af1471ab120aafa01ed4bbdf0dde8e696676770c"
+    },
+    "web-editions/gpt/articles/scripture/abraham-and-the-daylight-stars.json": {
+     "bytes": 20664,
+     "sha256": "19e779923388282c347b1279f4a8b6a45d6ce1a09a800065b5287cc74e6b0bee"
+    },
+    "web-editions/gpt/articles/scripture/john-6-bread-from-heaven.json": {
+     "bytes": 39011,
+     "sha256": "3cb2fcd6a614e086fae0d209f5da0b9b59326845304e2831f1518112afca7e2b"
+    },
+    "web-editions/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb.json": {
+     "bytes": 35022,
+     "sha256": "751386426023e8954dc680c368c5e8181a291d774671969f5d812d708c9ad606"
+    },
+    "web-editions/gpt/biographies/origen.json": {
+     "bytes": 114772,
+     "sha256": "b7419d9dcefceb70a40402baef815b83a5bed43c25d712bf3000714478acbb99"
+    },
+    "web-editions/gpt/biographies/saint-augustine-of-hippo.json": {
+     "bytes": 68585,
+     "sha256": "1ac43ea899657f24a70165e4f59fea70644925b57c0f1db6327b5f68fe3c33b1"
+    },
+    "web-editions/gpt/biographies/saint-jerome.json": {
+     "bytes": 76849,
+     "sha256": "83643f0b4b2f4fcc73f6c72d9e3ccdc71c4ccec3a681e8cec8d0ddd1d00a7b41"
+    },
+    "web-editions/gpt/biographies/saint-paul.json": {
+     "bytes": 99265,
+     "sha256": "c4eb67995f3498f06597c1a3822864aa87d92e6fc551f5a8d21e8c6fd589f581"
+    },
+    "web-editions/gpt/biographies/saint-peter.json": {
+     "bytes": 78072,
+     "sha256": "6df882fb7f8b548e91a3880c2066411cf9d9a0d17d11a36ef047d35a43d7ed98"
+    },
+    "web-editions/gpt/biographies/saint-robert-bellarmine.json": {
+     "bytes": 84846,
+     "sha256": "34b0ea36f2308b3273c40bd01f22a6f3f8be8cbd8098eb911cc26f3ab46dca34"
+    },
+    "web-editions/gpt/biographies/saint-thomas-aquinas.json": {
+     "bytes": 82912,
+     "sha256": "a73c274fc8592eccc354ae13581bb30e8130303cbbd42df4fc26b761eef1a57f"
+    },
+    "web-editions/gpt/biographies/tertullian.json": {
+     "bytes": 120082,
+     "sha256": "e0297727c50f4221b4d2ae43f0f465daca363402bebc8171e2c9c41f9eead110"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/00-course-guide.json": {
+     "bytes": 88903,
+     "sha256": "654782a8891bf4ed3de0f77ec1c8f32325687a4850e110655178edeeb5870455"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/00-reference-grammar.json": {
+     "bytes": 213708,
+     "sha256": "f1b84685d8c211f760b29881e1d664a30fbdfedb21b1894fd6c1251671c49e2c"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.json": {
+     "bytes": 82038,
+     "sha256": "27842bb7df749467b88a384cc3ac82e8c9cd04d9bbd9bafd7fe8755c2f6eab70"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems.json": {
+     "bytes": 78901,
+     "sha256": "ccb79dc499520c3e9b914bc1d0f5057f0eb90988f69dffb2fdb831f03d413bdc"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives.json": {
+     "bytes": 84514,
+     "sha256": "1547386d9ae76f26c03ea8d0eb5c6c759aa47ed99f6f67682558a0e97cf23342"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/01-foundations/04-being-and-present-action.json": {
+     "bytes": 80659,
+     "sha256": "896234e7419532579f1d3f5f8c77a14227dc199899361a9580a253c8a2515938"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents.json": {
+     "bytes": 80563,
+     "sha256": "6b41b6a8f6c25e9efd9180989dcd06e7bc291106c2319e5229947c02e18dd33b"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading.json": {
+     "bytes": 106618,
+     "sha256": "e5db8b7898dff86b19b3225010277da92850ad308456336f6d9a630c16aee471"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number.json": {
+     "bytes": 84585,
+     "sha256": "7dab5b259b430a8a481f2432bdf4e7e3caef65794b3d20f053ceeb07d68013be"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes.json": {
+     "bytes": 79229,
+     "sha256": "0877bf9cebfc17d29323b6a582c4f21cbee0589296acd50de7da8c5701440a0a"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/02-core-grammar/09-subjunctive-system-purpose-result.json": {
+     "bytes": 101228,
+     "sha256": "4b102c352dc28501fb5faa88e0c553dc6eaa611ec195eb009e7661798db44db3"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/02-core-grammar/10-circumstance-conditions-characteristic.json": {
+     "bytes": 93080,
+     "sha256": "8847201e5723aa27feb67a78c1aa7ff1cc5853d2d4328f35e7292fa4ec2c689f"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/02-core-grammar/11-commands-wishes-verbal-nouns.json": {
+     "bytes": 76593,
+     "sha256": "87a240176bb6cec41f2cc7ab52165a773b93e4088c0edbd44f7b29d95307458a"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression.json": {
+     "bytes": 79491,
+     "sha256": "2b92a3d06f96105202ecc94ce665469ac285aa55bc3f30805e6928e3d142146d"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/03-missal-reading/13-reader-method-and-ordinary.json": {
+     "bytes": 78980,
+     "sha256": "86f87828d7d4a8368c207a6022e57714cb6d738121703b4e02f5c9cc5538be46"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/03-missal-reading/14-orations-and-petitions.json": {
+     "bytes": 75588,
+     "sha256": "68e8fa592e5a3332fd4786b95eeb0c782a2301f8eebc55b5628561c23d3775e1"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/03-missal-reading/15-lessons-epistles-and-gospels.json": {
+     "bytes": 76875,
+     "sha256": "f5c88516aff84e49ec6ac9a6cf2dcd5e41a7edabe531de8dae6a1f519019e742"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon.json": {
+     "bytes": 84644,
+     "sha256": "fbcc9844faab7b5a128eb0e670e110bbf32d7b1808fa0d0650b795e87df103b8"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons.json": {
+     "bytes": 79927,
+     "sha256": "3edc6d5b32f4c4556520ab15328198b0319e2f0ee0ae1de8e1b9d5e48d5239b9"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass.json": {
+     "bytes": 128837,
+     "sha256": "82ad40c6270645fc4beee1d22ffbea82e06d2410fffc14aba219aab3b27a63b7"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture.json": {
+     "bytes": 77489,
+     "sha256": "88fa41a55210d0745bf75931fcb0876d6bfbf8030b77c1faff2cebd26d32d2bf"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose.json": {
+     "bytes": 77448,
+     "sha256": "82ed999955ac7cc2b8c6fdd504c73d0f0afca1348709ec5bb15a42163a4cdea3"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation.json": {
+     "bytes": 79137,
+     "sha256": "a0d35ce36d219f680dc68f74e90014fdd37f2a826e78f8a3f590fbbdb3293a18"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research.json": {
+     "bytes": 90585,
+     "sha256": "62902ffe5912ff0ef03007f4c408ad820771facb20e283ee3618bf6948598878"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/01-textual-prosody.json": {
+     "bytes": 48294,
+     "sha256": "328522488fbf37b2f6cb86012e38b551dd31ea704c421137168b1a114dc86ec0"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/02-hexameter.json": {
+     "bytes": 43044,
+     "sha256": "f69ca0f8388e85b55ddedc15d28d35e54423ecc0289c7254708cbb2b49d2b9f7"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/03-elegiac-verse.json": {
+     "bytes": 40236,
+     "sha256": "2d1d86d77ab9e9bf95f0c5f61e36b6c8eceb9d5ccf59b43e14473e0d087c8cab"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/04-lyric-meters.json": {
+     "bytes": 43904,
+     "sha256": "6e5c041e46b468419dd3751bc225bab2bed3afdf76fbb9e16394e14ab9f49089"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics.json": {
+     "bytes": 43709,
+     "sha256": "1c516bdcb13849911b87930cea19b31d92ecb7eb4432101f933b51e1eab8f5d4"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences.json": {
+     "bytes": 45126,
+     "sha256": "71361801723d53f767d4bc5466905c11fd8b49962e3f2df84385c759b8c4fbac"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary.json": {
+     "bytes": 47552,
+     "sha256": "91f936b8b3ef7c95c5c27d28a44666d7138c82bcfb5f3a915b6d1d919e6f3d67"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition.json": {
+     "bytes": 50685,
+     "sha256": "61fb9961f9ac13f345fb1b888eeab05ca5b086956ce5c93f58cbf834510ade3e"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations.json": {
+     "bytes": 32774,
+     "sha256": "066c0d66064b2bbb665045a038fca334d55766301726ae519800c3636ce83399"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/02-core-grammar.json": {
+     "bytes": 34755,
+     "sha256": "35150c19c5570159f6b3351d7cc8a1b0a204d7bd7d63d619d7a74e75f44ebc12"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading.json": {
+     "bytes": 59798,
+     "sha256": "5735eee711dcd5ff8beda5001cfee41b703d94c7fbe8d5c99b733d7e30ebc00a"
+    },
+    "web-editions/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced.json": {
+     "bytes": 57366,
+     "sha256": "7d386d037989e34f9b7932e038836f7cac91e0627c8c0d027aa63e68ad06cc2d"
+    },
+    "web-editions/gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer.json": {
+     "bytes": 21977,
+     "sha256": "bed200c094456a60022648001be27a8d530f404404f224931ba1625957fc98a5"
+    },
+    "web-editions/gpt/devotions/novenas/00-ascension-to-pentecost.json": {
+     "bytes": 87939,
+     "sha256": "cf2234d73e5799b88f833f6694d05140e342b158fcb240af81fcdd055538ea19"
+    },
+    "web-editions/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer.json": {
+     "bytes": 22713,
+     "sha256": "a3d1898f1cd483a14adb45ab60e21c514e52428f78bf04abcf6dbbe83efe5b9a"
+    },
+    "web-editions/gpt/devotions/novenas/10-our-lady-of-mount-carmel.json": {
+     "bytes": 99588,
+     "sha256": "6a0e8104494cc65c249cf6f8c28a3928f465a625e26cfadef962bbd89ed08891"
+    },
+    "web-editions/gpt/history/biblical-translations/01-septuagint.json": {
+     "bytes": 79770,
+     "sha256": "63f0ee5d8c24f9034284a3bc7bca7c8883dcbc32a3e7adeb2ffc430d20417fe3"
+    },
+    "web-editions/gpt/history/biblical-translations/02-vulgate.json": {
+     "bytes": 88973,
+     "sha256": "fc74ce93e28ebb6eb06904d9388cc9d3eafcd05267bad42698832fa15c183502"
+    },
+    "web-editions/gpt/history/catholic-exorcism/01-history-and-current-practice.json": {
+     "bytes": 474234,
+     "sha256": "b0a3d210dfb03b72f08ebe7871dfada57bbc48655b3b9e570fecc46598b9ad6e"
+    },
+    "web-editions/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee.json": {
+     "bytes": 138248,
+     "sha256": "f89c59e23ecbadc7f0f60a2c3a08da6524aa1989455fe75841ddcac7c24225e9"
+    },
+    "web-editions/gpt/history/catholic-parish-histories/02-st-anthony-willits.json": {
+     "bytes": 111016,
+     "sha256": "25543cdfca6739c5236cf0b3cf54fa55320ac8247dafc36663950c6d8e744f0e"
+    },
+    "web-editions/gpt/history/traditional-priestly-institutes/01-sspx.json": {
+     "bytes": 88917,
+     "sha256": "0e031ee68a752913e02138040a66ef85d5338c3343768c396438bd84c539201c"
+    },
+    "web-editions/gpt/history/traditional-priestly-institutes/02-fssp.json": {
+     "bytes": 89939,
+     "sha256": "8e99f076545f0b267ace0a2a3c619dc7e9bc1590f5369f0bc53ec6f92e274486"
+    },
+    "web-editions/gpt/history/traditional-priestly-institutes/03-icksp.json": {
+     "bytes": 95349,
+     "sha256": "a1acffad2533645cc6b914d07f1754d39ead90d4ec7b556708234f38a480b5b4"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.json": {
+     "bytes": 164692,
+     "sha256": "28381226514b6079165ddeea01d3cd5a25d5ed6183ab8c327276bd8b8d9c48a2"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.json": {
+     "bytes": 67144,
+     "sha256": "653426f26eeeeeea311dc9b87fb267a8e9024bd017bc48eb48aabe1324468f24"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday.json": {
+     "bytes": 51436,
+     "sha256": "19d3e2b3379c0df7e29c93e4d3f147406847f293c09917f64a7d93bb598d522c"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost.json": {
+     "bytes": 47173,
+     "sha256": "728cb306dd1d53ce4689a6b92801553e0ab26e45ce0041014d3666c260062d2b"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost.json": {
+     "bytes": 47562,
+     "sha256": "6b0d4a118f20d785627b51d889b3a256e8ec76e032fcc964f1bcc9cdcbde505b"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/44-fourth-after-pentecost.json": {
+     "bytes": 42027,
+     "sha256": "2017cc970a39bd6f5c4a9788bfdf9f93bad65471abb36bdc16442d327d543438"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost.json": {
+     "bytes": 51670,
+     "sha256": "5a740b88eeced0af0591ce79b7b4e2eb94110efc3d830e39d091efd029a0b5d9"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/46-sixth-after-pentecost.json": {
+     "bytes": 48365,
+     "sha256": "fb9c16a91f2e56c4aebefb91e773be9036534c8d5c7a9c00ffc8938b6cd73885"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost.json": {
+     "bytes": 51723,
+     "sha256": "1e0920ec474bc0cab62e45bb639e5610567384477b50c2c1e0f288da4cec1d30"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.json": {
+     "bytes": 48076,
+     "sha256": "0967800bbf4f4806beb70c20a39fe0d8ef437079b91e2307b2c85884304c9c98"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis.json": {
+     "bytes": 29677,
+     "sha256": "15b53dd38d3690682e4b2c557d4a29280a9af966fc29fb1e53046bbad3e052ad"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.json": {
+     "bytes": 61131,
+     "sha256": "f6bfcfff2fdc7ce9dcfb49b6f17672bbb5b1bc36895bafca08b5856ee40c333d"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost-synthesis.json": {
+     "bytes": 40403,
+     "sha256": "18cdbaffcf8c8e23b5c111441b383aacf9fb71ec542ecfd6825171d743b80548"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.json": {
+     "bytes": 78612,
+     "sha256": "018fe451eb08cb3cdc1646347196fdf0567234e71499b17f4f549943013dfba8"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.json": {
+     "bytes": 61342,
+     "sha256": "87b7dfb0168c6288d4d0ea6e7c42c92b19afc2e3e5ce60acb9018369e19573bb"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.json": {
+     "bytes": 91648,
+     "sha256": "69f0774cefb6ebbe312a30254ec87d5b60530aa24ff4a3d5cafe209b71dd581e"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.json": {
+     "bytes": 64303,
+     "sha256": "8940c1432df621fd861830e81094edb857c0597127a97ba958b192210d95d14e"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.json": {
+     "bytes": 99915,
+     "sha256": "9f92abab50823d23ac336d90026cc82b358ea2fc18ad8e2a4ff0ea343ceb41e5"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.json": {
+     "bytes": 77541,
+     "sha256": "06f915b7da822c8be724f3f5cc2cab1952fcaadb409bbe477020fe58f6997743"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.json": {
+     "bytes": 117606,
+     "sha256": "3c9861b22d06f41d3bfe9cc370d6a7bf3537c182c9546f5f64db7d09f96bfd8a"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis.json": {
+     "bytes": 65953,
+     "sha256": "670973b898deba95102a53eaff2e27733b62ec533cacb2bb19cf7e4343668e5b"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.json": {
+     "bytes": 87874,
+     "sha256": "f0a12464f64de2a81cd8e15368b46077fe9f94d8f027b4b7ab3accc60221922d"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.json": {
+     "bytes": 62564,
+     "sha256": "5da92c3e46446e2b884da2fb07dfed2bc39918d3b61614269781cc46525d6ebf"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.json": {
+     "bytes": 76221,
+     "sha256": "23e4211bf0beeed57452d8c1fa117ac211bde2df7617ab60a9530126b45e50a4"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.json": {
+     "bytes": 63730,
+     "sha256": "105db2319deb516f991147d2f47d393ab8425782002ae5e7014c4a67a106b556"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.json": {
+     "bytes": 86908,
+     "sha256": "deb3c13b00ca76f37444498e1aedb627b1f6ce823fc1849ab3a472c8c4ef504d"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.json": {
+     "bytes": 11873,
+     "sha256": "d9fc6df6058716bbb95424c08175f2adc8511fc7d0c117d755aa1acdba303df1"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.json": {
+     "bytes": 38876,
+     "sha256": "69f273172db1532a5f46f7a3240b6d5cde0bdab5723397d270d1437bd5ab12e9"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.json": {
+     "bytes": 80947,
+     "sha256": "6e42e9203caea8626ab091755044e1c4bc717bea116a570e42f5917ac6537710"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.json": {
+     "bytes": 11988,
+     "sha256": "b52aa86f628c20914139052c08212368764dde6569e95fd7128f7d3ebc5bbc6b"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.json": {
+     "bytes": 37518,
+     "sha256": "22659fb458ff0279b671428e9bcaeae3314e232b23ceac232e433c723ee47458"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.json": {
+     "bytes": 73697,
+     "sha256": "28ae8de121389b7bef1d25a39af518e0b68e7e99f765d45b5fdb41d7861e81b0"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.json": {
+     "bytes": 12109,
+     "sha256": "e94579c391c1cb192fc5731380ba9dfdedcf2ae7d66d210584a7eb5d42815999"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.json": {
+     "bytes": 38460,
+     "sha256": "2c04096e03567ccbd814112c50026d811562e56493bca162e40aa60794b1aaa2"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.json": {
+     "bytes": 77559,
+     "sha256": "99d3f3d06fd22e2144e5495a0a68018caaf0265d9bdbd3661d353a226ca45a66"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.json": {
+     "bytes": 11765,
+     "sha256": "9d524b93456bb84cbb9d4cb30989c54d3f7578e3159b1c9501a28b5b563b9220"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.json": {
+     "bytes": 36340,
+     "sha256": "4619a8f3484b554922e69ed3a730a83b5a46172d3fc261743e2fd1dbf40be061"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.json": {
+     "bytes": 85963,
+     "sha256": "85327efba946f579cf79c2cc4ad8d8302b8a5408303b165d4708cbbbf7c186b0"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily.json": {
+     "bytes": 12115,
+     "sha256": "35c9f8febfeed35e2fbd003c3c086b6ba56b837e333f3e5497184dfba39b79b8"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.json": {
+     "bytes": 34893,
+     "sha256": "3ea9214c7176741bfee889510ddb23774dc810cc105e0436a8a06e74f5f1ca2c"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.json": {
+     "bytes": 71393,
+     "sha256": "639bb0abbf8a2f795d43082d9c5765cafd6aba8b543a44b73825965751666053"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.json": {
+     "bytes": 11571,
+     "sha256": "7c2f2260da7850ae00159a51de3bbe18b4df43208a3521ba41cd7ae21fadacfd"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.json": {
+     "bytes": 36866,
+     "sha256": "7e269b9f1a4dc6f0c2e008a8c6ea70aa885b1909bc36887b4a98442aefe554c5"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.json": {
+     "bytes": 71832,
+     "sha256": "d846cae5f4ccd0537de6efb5f32b69f4602963fa0d172c92156fe5993bc2abc6"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.json": {
+     "bytes": 11845,
+     "sha256": "d3fee350c376097a976b5fce9c88cfebba44d064907fd14a11225275c15d1583"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.json": {
+     "bytes": 36369,
+     "sha256": "e686c43e0ed6f9127928d74c376dda39539b8029889901545326330c4d37eadc"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.json": {
+     "bytes": 75740,
+     "sha256": "f1f7ef4c46e4d0fbbb332c5e079e2f01976108a467a98e94c1e04d759f573b23"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.json": {
+     "bytes": 123244,
+     "sha256": "1c1db832125863b17c286815f36d15b3724b657efa8f616fd21393d63b0cd100"
+    },
+    "web-editions/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.json": {
+     "bytes": 89350,
+     "sha256": "cb3b1ca72e8bbbe2c7db02321dc8ab379b6cb41301b52a174a6e0bb10f7fa794"
+    },
+    "web-editions/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice.json": {
+     "bytes": 174503,
+     "sha256": "0f1e9c62b8d7946cc6c2fb6e936f11567b828070f961651f60239cd7177fc4a2"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.json": {
+     "bytes": 338538,
+     "sha256": "c8138f56135b59d0b94ef7b7fb42060a4478912689b7c2ca99015be41a0bfea0"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily.json": {
+     "bytes": 12000,
+     "sha256": "fcafbc13562c021b8431733ee9e7784dc6f31977997cd2998e719d40a3b12a33"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.json": {
+     "bytes": 36140,
+     "sha256": "d24a17dd38aaedf59cbc77b134332ee3dacd5106687b7ab5ac0be4fbc9d8a0a6"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.json": {
+     "bytes": 66506,
+     "sha256": "c97e40ad143674dcc645f1edd3e1a7601de0bf199eaeb6fcc1a2420c25409978"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a.json": {
+     "bytes": 46359,
+     "sha256": "c4c535629c66906221d0c6157214cd51176521def7b16a21395dae425da53dc7"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a.json": {
+     "bytes": 50114,
+     "sha256": "1e4848018cf7f89c98bac68da1792bf47b03f6719bf9cd8d5dc47241bab34f03"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 36051,
+     "sha256": "3ee55ef73e4109c62ef06659385f483b6b52849e306ef92ba1853a1e7a37c55a"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-twelfth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 35636,
+     "sha256": "b7547121a2b8488100c93d2912a04f2d2786f0b0306e51a7eeaf0701f6d784f5"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-thirteenth-sunday-in-ordinary-time-year-a.json": {
      "bytes": 36371,
-     "sha256": "8e8af5a31306c39e7872c87c596a8486f13f0140dbf57c0a33b20d5195b4538a"
+     "sha256": "8fed26474cb1e2d20902b8c1020bdbe7787ea6bf3fe79bee31df861a0e7f7dcc"
     },
-    "print/preparation/products/fa4c8665622f52fbebc3f9ffd4808c5bd7ff81662ced282d0f884513548e75ea.json": {
-     "bytes": 162835,
-     "sha256": "6e6939f402d9b9a2f756b07e7a0bb1dfda0fbc8e629655e23cddf1000cb1f114"
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-fourteenth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 38345,
+     "sha256": "bd6a45d746485ab1ae91b301e58433901f57fd42170fc299dd3e3e10f78e03f4"
     },
-    "print/preparation/products/fb3599ce0eb6b371931a4019133941324d8295f4fccb0429139e564ef7747688.json": {
-     "bytes": 173598,
-     "sha256": "d9d63f079d1ce7264ac393ad349d14a6380ba3c9f64e01426d5270bc9517cd5a"
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-fifteenth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 40277,
+     "sha256": "3094f6d26eb5665affbf36703dc8bdda48f66a7f90dc876285df20a353365c1e"
     },
-    "print/preparation/products/fb89e3ac75f81eea274034d9ee08703ee1bb45015cbf84862d75add2afa85b70.json": {
-     "bytes": 66027,
-     "sha256": "b698bc93fd6b716927ace1dd968e33d1c3edc2b1f593e56d132ff2c8e62cba82"
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 41316,
+     "sha256": "60264de93a1a402d2b76cbfa80f30b041aa8d28de7563e91d9e16cd6780a65ba"
     },
-    "print/preparation/products/fba6e25450a943f9310c18b529d06cec8a6c1a008414a2d5a076d8d6fd69f2e4.json": {
-     "bytes": 25847,
-     "sha256": "8a5ba1e01d945c9b2f11974b074672a1e0b040c299b292f7a1e0d06b8baad4f6"
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.json": {
+     "bytes": 32346,
+     "sha256": "f499bb34fe4e6fe9749790c4980bca81ef782fb2c290643d43dd2f1baccbd34d"
     },
-    "print/preparation/products/fca327a1e0e82608e74471732d2644d1f73ffc11fd57a524ee2b27108610cf63.json": {
-     "bytes": 229135,
-     "sha256": "9f1659d80ff34f96439c56adebfd31af4ef36d85bc82fcd4e0e24278ec709bf4"
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 49119,
+     "sha256": "930b197c92479c49a056226b7398343ae737d7d545c7a7fb6946f95a75b2bd32"
     },
-    "print/preparation/products/fcdcfe5922a48125223d574a690d0bad4021ea85c6eaabd8126d14c7243f80e7.json": {
-     "bytes": 162725,
-     "sha256": "c79546901711db82cba59f5c9909194e1b57bfbcb2e726679018fb02b4af3a4d"
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a-synthesis.json": {
+     "bytes": 21564,
+     "sha256": "8d438764b7bc52732585239029dc24829da5f7bab81624dab8df6bcd5809783c"
     },
-    "print/preparation/products/fde2e71f9c24169236f7e4071b04629c5dfd108aa1e12d6a2084ea57477a2642.json": {
-     "bytes": 81544,
-     "sha256": "4b30023657f81307185ac660b3772fa70efbbc411642af39ee18ca3e5c9df5be"
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 45215,
+     "sha256": "eadd35a6b16e429feaccdd0ebae6b77c066489f29cd83549e2a988d416ee27b4"
     },
-    "print/preparation/products/ff236ad86ce141e41ac3ac2a6ec3940cd6fc4ad91c0496f1d3441d62eceda59c.json": {
-     "bytes": 135634,
-     "sha256": "0dd1e5595536153d44633ee2db72275cb03c3f341d58b3fd31ce97037dd79c25"
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b-synthesis.json": {
+     "bytes": 20071,
+     "sha256": "8418acb89b896801ab3976c8beafc0674323f02463f527270b4889b4ca9f1db6"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.json": {
+     "bytes": 33627,
+     "sha256": "1854d5aa020575705e04634fc2453962803cb3a9562d045d3e8e13a9f8648dca"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c-synthesis.json": {
+     "bytes": 14585,
+     "sha256": "ca7d96fd9a13cdcb0ce38bb4e6d779e288db9a13ff01b94f2b160eaf9aca8e58"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.json": {
+     "bytes": 28905,
+     "sha256": "f338c1a83d46302c1a9e9428cb45a6fae8e099a69cb514e34aea0047df723f25"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.json": {
+     "bytes": 12401,
+     "sha256": "cb464db4fff81bcdc6608804603a5bb7c15ac913ead30d28dcd854efa53ed3c6"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.json": {
+     "bytes": 38003,
+     "sha256": "4bfaaff33b0c1f2abd63c03f9338030df3c42d799d98eb38ce93f82e1468c2c3"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 74094,
+     "sha256": "c67890047a0d0e3a9e43487e6be76666f1831ee411d4984d505e27c926b209e9"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.json": {
+     "bytes": 12851,
+     "sha256": "f84c13be2ccd9619f7e55a712e88590d2927af805ae3ad5a70e06f8cb1039ae2"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.json": {
+     "bytes": 37834,
+     "sha256": "1ebc7e183f4085f6b17ef1859a842456113fb57f28ec63189dcb48f59566e3e5"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 81995,
+     "sha256": "26010bbc1445e861928b718aac787bdc1981870d3bd79f567252b170aea6ef9b"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.json": {
+     "bytes": 11506,
+     "sha256": "306931e143f28393a02bc341b0095d21389547563600328b90ac472f50060765"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.json": {
+     "bytes": 36640,
+     "sha256": "1cfd1a1fbf5284b65b396fb8d02fba6c3cb6e2d62b60c5793869314419425cab"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 77853,
+     "sha256": "0767b90fdb76c9057384d8a248bbee5b8a366e3185328bfdd57070b3c4726870"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.json": {
+     "bytes": 12174,
+     "sha256": "b8f96b059e693f66d6418d2e57aaf3f8e21c86e13d284e66a9a3ffb405116317"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.json": {
+     "bytes": 36112,
+     "sha256": "3e13155319ba248d885a7aa83314695bde0d81296c20f2796cdcf3d5c1de12c2"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.json": {
+     "bytes": 76315,
+     "sha256": "0c5373dadbbee42d996c0c2c985ecc427b11d2988701ccdd7fd612dc6b47187a"
+    },
+    "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.json": {
+     "bytes": 86113,
+     "sha256": "9a72770bccb3b687f1b606a7e9e3c1fd5cfb6572ad10ff85607cae83249ce2d7"
+    },
+    "web-editions/gpt/theology/angelology.json": {
+     "bytes": 233027,
+     "sha256": "f2162701d40aa233e7cabf5554df093a24a9b8abd57cecb282d84142e749ca63"
+    },
+    "web-editions/gpt/theology/heresies/heresies-in-catholic-history.json": {
+     "bytes": 380131,
+     "sha256": "c6f2f0c8f7a7c52ff76b6e1d3384bc90c66040e447c6114cf502c6a34a920db2"
+    },
+    "web-editions/gpt/theology/mariology/angelus.json": {
+     "bytes": 24916,
+     "sha256": "e8c5034c4576910149376f5b8552c0329bdec785050cc62d4edea1651d88e87f"
+    },
+    "web-editions/gpt/theology/mariology/apparitions.json": {
+     "bytes": 190944,
+     "sha256": "d6299108dafe000273d16b2a321c1988e16abb0dd7bcffde8d0a310993063872"
+    },
+    "web-editions/gpt/theology/mariology/ark-of-the-covenant.json": {
+     "bytes": 163216,
+     "sha256": "c679946420cd73db545d8dd451c34d361ab055b9dd9902f52798eab2167849f6"
+    },
+    "web-editions/gpt/theology/mariology/champion.json": {
+     "bytes": 116213,
+     "sha256": "93e79ba8b0549ea4bf23468203c29ed676c6c8faa11d254b82e544435fbe53c1"
+    },
+    "web-editions/gpt/theology/mariology/doctrinal-authority.json": {
+     "bytes": 17623,
+     "sha256": "290842bf2f93b7d320452bc45ed19064761286bbc33d06a7a84d55d63fbe5c4a"
+    },
+    "web-editions/gpt/theology/mariology/fatima.json": {
+     "bytes": 116106,
+     "sha256": "fe3efdf7317a0395281920eb176fb47ab682cb4028d5b74ab7eba7de859f6042"
+    },
+    "web-editions/gpt/theology/mariology/guadalupe.json": {
+     "bytes": 116662,
+     "sha256": "796886e426c20a5b9204f1913051267432ed68b13618eff74e2bc3a065fb374b"
+    },
+    "web-editions/gpt/theology/mariology/la-salette.json": {
+     "bytes": 121176,
+     "sha256": "8597bbcb50fc535b0feeda86d40786f592000b487c37a492d78e044fd31462c1"
+    },
+    "web-editions/gpt/theology/mariology/lourdes.json": {
+     "bytes": 114882,
+     "sha256": "826b04df82efc43aaced0cfc29d101231f2d8eb9d2eb5d70c9bc9aa78b9a9da0"
+    },
+    "web-editions/gpt/theology/mariology/marian-dogmas.json": {
+     "bytes": 137079,
+     "sha256": "8d7583d7078f785b8f2cfe161414fc3fc90ae59d649bde0cda718543ac682571"
+    },
+    "web-editions/gpt/theology/mariology/regina-coeli.json": {
+     "bytes": 24997,
+     "sha256": "1f321962030815067b98046f4e7bd0217a3151a7b0835295d476a625ce07d385"
+    },
+    "web-editions/gpt/theology/mariology/rosary.json": {
+     "bytes": 108268,
+     "sha256": "211acdecd39a2671279f9d0780b5f1e46dff044fbcb89d8e786cc7e04e0f9cc8"
+    },
+    "web-editions/gpt/theology/sacraments.json": {
+     "bytes": 318579,
+     "sha256": "d349c4b6bb1d46891acb1957827187517733c50dedab6fd600fdd54cb3825196"
+    },
+    "web-editions/gpt/theology/virtues.json": {
+     "bytes": 166932,
+     "sha256": "e2f772b0680d93c81ca46dc2118d13132ff538679677b2970464e5748b9d962f"
+    },
+    "web-editions/index.json": {
+     "bytes": 163830,
+     "sha256": "5bc97be73d9d3b236e928867d6289a4ae9e5ff71f965fb3eaea75a4bdb5453ce"
     }
    },
-   "id": "print-editions",
+   "id": "web-editions",
    "inputs": {
-    "content": "c71397eca0162c1675b7ff2d5340e6c9bd0dee1ca32900038d016ad29534d596",
-    "count": 81752,
-    "generator": "034606fb2646511f72311230c4d830308ec237f669956ec8a3e8c43bc8b4db16",
+    "content": "668f7a3a4c1d7cd0b4139e356581fb23d5edc1cb1d3f21e3745e9b855a56ddbc",
+    "count": 79054,
+    "generator": "b77a481f8e46fb44a8a42ec22ad7b3e52905014936315528f84d2dd1a432f530",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-    "membership": "0ffdf84803c6d6c77ed19c061f893acc7330f823dfd3a2e10e31c158fa5ae6ba",
-    "rights": "ff17a0632c6abedd777abf1d51af6da35f6aea8f8c3bc49f52620be3337d293f",
+    "membership": "8d03e4e22af19a7bbb2240800b89e21e9a4bf377fc8b23caafea629627a043c6",
+    "rights": "2c22222f05bc8dc038f55bdf6d093c8222566ee606d316d2d53b68f50c977e5c",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "7ac81c4f1fb05784f600915775c41adb9d844a7f9356ce968d6c18aa679d658d"
+    "sha256": "edc5687ecb057a0628f861627a27eba425034a0f1f0ff0a134060c48910e8689"
    },
-   "key": "9144a3d466d6d089ba5113150de5d500531b95993f0de38b2298020f2172089d",
-   "path_set_sha256": "e1117309d3680019153d11415d99b4408a8d07a1191d445d093a0b348d73870f"
+   "key": "9ef12c0059333a082f3d72af5f5a0bbd31f8473bf23cacee77dd3b1e2898cfc9",
+   "path_set_sha256": "1c3b2e8611874b40f99fd4a8815d79a48de2d0e0d2234a9e3715632349f9b6ba"
   }
  ],
  "proof": "two-independent-cold-builds-byte-parity",
@@ -111613,10 +111002,7 @@
     "{root}/src/sources/bibles"
    ],
    "delivery": "browser-data",
-   "exclude_paths": [
-    "src/sources/inventories/source-reader-projection-receipt-v1.json",
-    "src/sources/inventories/act-history-projection-receipt-v1.json"
-   ],
+   "exclude_paths": [],
    "id": "bibles",
    "input_files": [],
    "input_trees": [
@@ -111635,10 +111021,7 @@
     "structure"
    ],
    "delivery": "browser-data",
-   "exclude_paths": [
-    "src/sources/inventories/source-reader-projection-receipt-v1.json",
-    "src/sources/inventories/act-history-projection-receipt-v1.json"
-   ],
+   "exclude_paths": [],
    "id": "encyclicals",
    "input_files": [
     "release/papal-documents.json"
@@ -111658,19 +111041,17 @@
     "structure"
    ],
    "delivery": "browser-data",
-   "exclude_paths": [
-    "src/sources/inventories/source-reader-projection-receipt-v1.json",
-    "src/sources/inventories/act-history-projection-receipt-v1.json"
-   ],
+   "exclude_paths": [],
    "id": "act-history",
-   "input_files": [],
+   "input_files": [
+    "guidance/liturgical-text-publication-policy.md"
+   ],
    "input_trees": [
     "src/sources",
     "src/gpt",
     "src/claude",
     "src/common",
-    "web",
-    "workflows"
+    "web"
    ],
    "output_prefixes": [
     "structure/act-history"
@@ -111689,10 +111070,7 @@
     "2120"
    ],
    "delivery": "browser-data",
-   "exclude_paths": [
-    "src/sources/inventories/source-reader-projection-receipt-v1.json",
-    "src/sources/inventories/act-history-projection-receipt-v1.json"
-   ],
+   "exclude_paths": [],
    "id": "calendar",
    "input_files": [],
    "input_trees": [
@@ -111712,12 +111090,11 @@
     "structure"
    ],
    "delivery": "browser-data",
-   "exclude_paths": [
-    "src/sources/inventories/source-reader-projection-receipt-v1.json",
-    "src/sources/inventories/act-history-projection-receipt-v1.json"
-   ],
+   "exclude_paths": [],
    "id": "catena",
-   "input_files": [],
+   "input_files": [
+    "src/web/browser/catena/catena-model.js"
+   ],
    "input_trees": [
     "src/sources"
    ],
@@ -111732,10 +111109,7 @@
     "structure"
    ],
    "delivery": "browser-data",
-   "exclude_paths": [
-    "src/sources/inventories/source-reader-projection-receipt-v1.json",
-    "src/sources/inventories/act-history-projection-receipt-v1.json"
-   ],
+   "exclude_paths": [],
    "id": "documents",
    "input_files": [],
    "input_trees": [
@@ -111743,7 +111117,10 @@
     "src/claude",
     "src/common",
     "web",
-    "workflows"
+    "workflows/fragments",
+    "workflows/pipelines",
+    "workflows/schema",
+    "release/publications"
    ],
    "output_prefixes": [
     "structure/documents"
@@ -111758,10 +111135,7 @@
     "{root}/src/sources"
    ],
    "delivery": "browser-data",
-   "exclude_paths": [
-    "src/sources/inventories/source-reader-projection-receipt-v1.json",
-    "src/sources/inventories/act-history-projection-receipt-v1.json"
-   ],
+   "exclude_paths": [],
    "id": "ordinary",
    "input_files": [],
    "input_trees": [
@@ -111780,10 +111154,7 @@
     "paragraphs"
    ],
    "delivery": "browser-data",
-   "exclude_paths": [
-    "src/sources/inventories/source-reader-projection-receipt-v1.json",
-    "src/sources/inventories/act-history-projection-receipt-v1.json"
-   ],
+   "exclude_paths": [],
    "id": "paragraphs",
    "input_files": [],
    "input_trees": [
@@ -111802,14 +111173,19 @@
     "{root}/src/sources/calendars"
    ],
    "delivery": "browser-data",
-   "exclude_paths": [
-    "src/sources/inventories/source-reader-projection-receipt-v1.json",
-    "src/sources/inventories/act-history-projection-receipt-v1.json"
-   ],
+   "exclude_paths": [],
    "id": "propers",
-   "input_files": [],
+   "input_files": [
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
+    "workflows/reviews/missal-reader-completion-2026-10-26/gregem-damasus-qualified-rights-adoption.json",
+    "workflows/reviews/reader-completion-2026-10-26/finite-name-two-authority.json",
+    "workflows/reviews/reader-completion-2026-10-26/finite-name-two-root-adoption.json",
+    "workflows/reviews/reader-completion-2026-10-26/oration-execution-six-authority.json"
+   ],
    "input_trees": [
-    "src/sources"
+    "src/sources",
+    "src/gpt",
+    "src/claude"
    ],
    "output_prefixes": [
     "structure/propers"
@@ -111824,10 +111200,7 @@
     "{root}/src/sources/reading-plans"
    ],
    "delivery": "browser-data",
-   "exclude_paths": [
-    "src/sources/inventories/source-reader-projection-receipt-v1.json",
-    "src/sources/inventories/act-history-projection-receipt-v1.json"
-   ],
+   "exclude_paths": [],
    "id": "readings",
    "input_files": [],
    "input_trees": [
@@ -111846,10 +111219,7 @@
     "{root}/src/sources/calendars"
    ],
    "delivery": "browser-data",
-   "exclude_paths": [
-    "src/sources/inventories/source-reader-projection-receipt-v1.json",
-    "src/sources/inventories/act-history-projection-receipt-v1.json"
-   ],
+   "exclude_paths": [],
    "id": "rubrics",
    "input_files": [],
    "input_trees": [
@@ -111868,19 +111238,18 @@
     "--strict"
    ],
    "delivery": "browser-data",
-   "exclude_paths": [
-    "src/sources/inventories/source-reader-projection-receipt-v1.json",
-    "src/sources/inventories/act-history-projection-receipt-v1.json"
-   ],
+   "exclude_paths": [],
    "id": "sources",
-   "input_files": [],
+   "input_files": [
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
+    "workflows/reviews/missal-reader-completion-2026-10-26/gregem-damasus-qualified-rights-adoption.json"
+   ],
    "input_trees": [
     "src/sources",
     "src/gpt",
     "src/claude",
     "src/common",
-    "web",
-    "workflows"
+    "web"
    ],
    "output_prefixes": [
     "structure/sources"
@@ -111889,32 +111258,18 @@
   },
   {
    "argv": [
-    "scripts/_web_print_products.py",
-    "--root",
-    "{root}",
-    "--out",
-    "{out}"
+    "tools/web-edition",
+    "products"
    ],
-   "delivery": "print-preparation",
-   "exclude_paths": [
-    "src/sources/inventories/source-reader-projection-receipt-v1.json",
-    "src/sources/inventories/act-history-projection-receipt-v1.json"
-   ],
-   "id": "print-editions",
-   "input_files": [
-    "release/papal-documents.json"
-   ],
+   "delivery": "site-build",
+   "exclude_paths": [],
+   "id": "web-editions",
+   "input_files": [],
    "input_trees": [
-    "src/sources",
-    "src/gpt",
-    "src/claude",
-    "src/common",
-    "web",
-    "workflows",
-    "release/papal-documents"
+    "src"
    ],
    "output_prefixes": [
-    "print/preparation"
+    "web-editions"
    ],
    "version": 1
   }
