@@ -621,7 +621,7 @@ For each passage, as the Scriptural Date and Location table names it: what is da
 
 - *The Roman Missal, Translated into the English Language for the Use of the Laity* (Philadelphia: Eugene Cummiskey, 1861), pp. 445–448 (XIX Sunday after Pentecost, Introit, Collect, Secret, Postcommunion).
 
-- The Holy Bible, Douay–Rheims version, revised by Bishop Richard Challoner (Project Gutenberg text): 1 Par 15:3; 16:1, 7–8; Ps 34:3; 77:1–8, 12–13, 49, 52–54, 67–72; 90:15; 104:1, 45; 118:1, 4–5, 19, 54; 137:1–4, 7; 138:16; 140:1–4; Mt 13:35; 21:1–18, 23, 43, 45; 22:1–15; 25:34–35; Rom 13:14; Eph 1:1; 3:1; 4:1, 22–32; 6:20; 1 Tim 1:5; 2:8.
+- The Holy Bible, Douay–Rheims version, revised by Bishop Richard Challoner (Project Gutenberg text): 1 Par 16:1, 7–8; Ps 34:3; 77:1–8, 12–13, 49, 52–54, 67–72; 90:15; 104:1, 45; 118:1, 4–5, 19, 54; 137:1–4, 7; 138:16; 140:1–4; Mt 13:35; 21:23, 43, 45; 22:1–15; 25:34–35; Rom 13:14; Eph 1:1; 4:1, 22–32; 1 Tim 1:5; 2:8.
 
 - *Biblia Sacra Vulgatae editionis* (Clementine Vulgate), eBible.org text: Ps 77:1; 104:1; 118:1, 4–5; 137:1, 7; 140:1–2; Mt 22:1–14; Eph 4:1, 23–28.
 

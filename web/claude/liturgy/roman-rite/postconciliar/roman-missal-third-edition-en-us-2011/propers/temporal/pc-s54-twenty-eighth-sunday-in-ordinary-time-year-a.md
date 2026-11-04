@@ -499,7 +499,7 @@ Each passage the Mass reads or sings from Scripture, in canonical order. The Con
 |:---|:---|:---|
 | Responsorial Psalm: Ps. 23:1–3a, 3b–4, 5, 6 (Heb.; Vg. 22), Ps. 23:6cd (Heb.; Vg. 22) | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
-| Communion Antiphon (first): Cf. Psalm 33:11 (Vg.; Heb. 34) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+| Communion Antiphon (first): Cf. Ps. 33:11 (Vg.; Heb. 34) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
 |  | Superscription setting: David’s flight to Achis, king of Geth; Geth, at the Philistine court | A.M. 2944 (Haydock edition reporting Ussher) |
 |  | Composition: Psalms | Before c. 165 B.C. |
 | Entrance Antiphon: Ps. 129:3–4 (Vg.; Heb. 130) | Historical setting | Occasion date unresolved |
@@ -509,7 +509,7 @@ Each passage the Mass reads or sings from Scripture, in canonical order. The Con
 |  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
 | Gospel (shorter form): Matt. 22:1–10 | Narrated event: The parable of the marriage feast, proposed in the Temple | A.D. 29 (derived) |
 |  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
-| Alleluia Verse: Cf. Ephesians 1:17–18 | Composition: Ephesians; Rome or Caesarea; recipients in Asia Minor | Disputed: A.D. 58–63; A.D. 61 |
+| Alleluia Verse: Cf. Eph. 1:17–18 | Composition: Ephesians; Rome or Caesarea; recipients in Asia Minor | Disputed: A.D. 58–63; A.D. 61 |
 | Second Reading: Phil. 4:12–14, 19–20 | Composition: Philippians; Rome to Philippi in the cited account | Disputed: A.D. 61; A.D. 62–64 |
 | Communion Antiphon (alternative): 1 John. 3:2 | Composition: First John; Ephesus probable | c. A.D. 90–100 |
 
@@ -525,7 +525,7 @@ For each passage, as the Scriptural Date and Location table names it: what is da
 
 - **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-*Communion Antiphon (first): Cf. Psalm 33:11 (Vg.; Heb. 34)*
+*Communion Antiphon (first): Cf. Ps. 33:11 (Vg.; Heb. 34)*
 
 - **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
@@ -555,7 +555,7 @@ For each passage, as the Scriptural Date and Location table names it: what is da
 
 - **Composition**. As under Gospel (longer form): Matt. 22:1–14.
 
-*Alleluia Verse: Cf. Ephesians 1:17–18*
+*Alleluia Verse: Cf. Eph. 1:17–18*
 
 - **Composition** (disputed). The Epistle to the Ephesians: A.D. 58–63 (“a period between 58 and 63”; The Catholic Encyclopedia, Volume 5 (New York, 1909)); A.D. 61 (“(Philemon; Colossians; Ephesians; Philippians), 61”; The Catholic Encyclopedia, Volume 11 (New York, 1911)). Place: Rome or Caesarea; recipients in Asia Minor (The Catholic Encyclopedia, Volume 5 (New York, 1909)).
 
@@ -632,7 +632,7 @@ For each passage, as the Scriptural Date and Location table names it: what is da
 
 - *General Instruction of the Roman Missal*, United States edition of 2011 with the emendations of 2021, nos. 48, 51, 53, 61–64, 68, 74, 87, 363–365.
 
-- The Holy Bible, Douay–Rheims version, revised by Bishop Richard Challoner (Project Gutenberg text): 1 Kgs 21:10–15; Ps 16:15; 18:6; 22; 33:1, 9–12; 58:11; 62:6; 71:2; 129; 138:16; Is 1:1; 24:23–25:12; Jer 9:23; Mt 21:23–22:15; Lk 14:18–20; Rom 11:29; 13:14; 1 Cor 11:26; 13:12; 15:53–55; 2 Cor 5:4; Gal 3:27; Eph 1:1, 15–19; 3:1; Phil 1:1, 7, 13; 4:10–23; Col 3:14; 1 Tim 1:5; 1 Pet 3:21; 2 Pet 1:3–4; 1 Jn 3:1–3.
+- The Holy Bible, Douay–Rheims version, revised by Bishop Richard Challoner (Project Gutenberg text): 1 Kgs 21:10–15; Ps 16:15; 18:6; 22; 33:1, 9–12; 58:11; 62:6; 71:2; 129; 138:16; Is 1:1; 24:23–25:12; Jer 9:23; Mt 21:23–22:15; Lk 14:18–20; Rom 11:29; 13:14; 1 Cor 11:26; 13:12; 15:53–55; 2 Cor 5:4; Gal 3:27; Eph 1:1, 15–19; 3:1; Phil 1:1; 4:10–23; Col 3:14; 1 Tim 1:5; 1 Pet 3:21; 2 Pet 1:3–4; 1 Jn 3:1–3.
 
 - *Biblia Sacra Vulgatae editionis* (Clementine Vulgate), eBible.org text: Ps 22:5–6; 33:11; 71:2; 129:3–4; Is 25:6–10; Mt 22:2–14; Eph 1:17–18; Phil 4:12–13, 19; 1 Pet 3:21; 2 Pet 1:4; 1 Jn 3:2.
 

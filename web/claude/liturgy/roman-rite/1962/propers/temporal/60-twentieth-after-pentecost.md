@@ -627,7 +627,7 @@ For each passage, as the Scriptural Date and Location table names it: what is da
 
 - F. X. Lasance, *The New Roman Missal*, revised edition (New York: Benziger Brothers, 1945), pp. 1233, 1235–1236 (Maternity of the Blessed Virgin Mary, Collect, Secret, Postcommunion).
 
-- The Holy Bible, Douay–Rheims version, revised by Bishop Richard Challoner (Project Gutenberg text): Deut 32:15; 2 Mac 15:14; Ps 56:1, 5, 8–9; 59:1–2; 107:1–4; 118:1–3, 19, 49–52; 136:1–9; 144:1, 13–18; Prov 4:18; Dan 3:1, 20, 24–51; Jn 4:39–54; Eph 1:1; 3:1; 4:1; 5:8–33; 6:20.
+- The Holy Bible, Douay–Rheims version, revised by Bishop Richard Challoner (Project Gutenberg text): Deut 32:15; 2 Mac 15:14; Ps 56:1, 5, 8–9; 107:1–4; 118:1–3, 19, 49–52; 136:1–9; 144:1, 13–18; Prov 4:18; Dan 3:1, 20, 24–51; Jn 4:39–54; Eph 1:1; 3:1; 5:8–33.
 
 - *Biblia Sacra Vulgatae editionis* (Clementine Vulgate), eBible.org text: Ps 107:2–4; 118:1, 49–50; 136:1; 144:15–16; Dan 3:29–43; Jn 4:46–53; Eph 5:15–21.
 

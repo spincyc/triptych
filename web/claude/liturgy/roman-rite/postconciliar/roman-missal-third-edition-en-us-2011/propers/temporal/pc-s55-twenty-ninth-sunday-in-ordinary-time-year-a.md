@@ -525,9 +525,9 @@ Each passage the Mass reads or sings from Scripture, in canonical order. The Con
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Entrance Antiphon: Cf. Psalm 16:6, 8 (Vg.; Heb. 17) | Historical setting | Occasion date unresolved |
+| Entrance Antiphon: Cf. Ps. 16:6, 8 (Vg.; Heb. 17) | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
-| Communion Antiphon (first): Cf. Psalm 32:18–19 (Vg.; Heb. 33) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+| Communion Antiphon (first): Cf. Ps. 32:18–19 (Vg.; Heb. 33) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
 |  | Historical setting | Occasion date unresolved |
 |  | Composition: Psalms | Before c. 165 B.C. |
 | Responsorial Psalm: Ps. 96:1, 3, 4–5, 7–8, 9–10a, 10c (Heb.; Vg. 95), Ps. 96:7b (Heb.; Vg. 95) | Superscription setting: The raising of the second Temple by Zorobabel; Temple at Jerusalem | B.C. 537 |
@@ -547,25 +547,25 @@ Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
 For each passage, as the Scriptural Date and Location table names it: what is dated, how the corpus weighs each answer, the source’s own words, and the sources cited. A subject the corpus does not date is reported as such and given no date.
 
-*Entrance Antiphon: Cf. Psalm 16:6, 8 (Vg.; Heb. 17)*
+*Entrance Antiphon: Cf. Ps. 16:6, 8 (Vg.; Heb. 17)*
 
 - **Historical setting**. No date: the chronology corpus has not yet dated this (research pending).
 
 - **Composition** (preferred). Psalms: Before c. 165 B.C. (“before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely”; Catholic critical chronology; New American Bible, Revised Edition — USCCB web state (2026), Psalms introduction).
 
-*Communion Antiphon (first): Cf. Psalm 32:18–19 (Vg.; Heb. 33)*
+*Communion Antiphon (first): Cf. Ps. 32:18–19 (Vg.; Heb. 33)*
 
 - **Traditional attribution** (disputed). David’s reign: B.C. 1055–1015 (“reigned from 1055 to 1015 B.C.”; The Catholic Encyclopedia, Volume 4 (New York, 1908), article ’David, King,’ printed p. 642, opening paragraph). Place: Hebron, then Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: 2 Kings 5:5).
 
-- **Historical setting**. As under Entrance Antiphon: Cf. Psalm 16:6, 8 (Vg.; Heb. 17).
+- **Historical setting**. As under Entrance Antiphon: Cf. Ps. 16:6, 8 (Vg.; Heb. 17).
 
-- **Composition**. As under Entrance Antiphon: Cf. Psalm 16:6, 8 (Vg.; Heb. 17).
+- **Composition**. As under Entrance Antiphon: Cf. Ps. 16:6, 8 (Vg.; Heb. 17).
 
 *Responsorial Psalm: Ps. 96:1, 3, 4–5, 7–8, 9–10a, 10c (Heb.; Vg. 95), Ps. 96:7b (Heb.; Vg. 95)*
 
 - **Superscription setting** (preferred). The raising of the second Temple by Zorobabel: B.C. 537 (“(537 B.C.)”; The Catholic Encyclopedia, Volume 14 (New York, 1912)). Place: Temple at Jerusalem (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Ps. 95:1, 1 Esd. 3:8).
 
-- **Composition**. As under Entrance Antiphon: Cf. Psalm 16:6, 8 (Vg.; Heb. 17).
+- **Composition**. As under Entrance Antiphon: Cf. Ps. 16:6, 8 (Vg.; Heb. 17).
 
 - **Prophetic referent** (disputed). The Nativity of Our Lord: B.C. 3 (“the year of Rome 750 which he styles 3 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)); c. B.C. 7 (“probably the year 7 B.C.”; The Catholic Encyclopedia, Volume 3 (New York, 1908)). Place: Bethlehem as the Christian referent (The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581: Matt. 2:1).
 
@@ -662,7 +662,7 @@ For each passage, as the Scriptural Date and Location table names it: what is da
 
 - *General Instruction of the Roman Missal*, United States edition of 2011 with the emendations of 2021, nos. 48, 51, 61–62, 74, 87 (chapter II, the bishops’ conference’s official page, read on 16 October 2026), 364–365 (chapter VII) and 372, 374 (chapter VIII), the last two chapters read in Internet Archive captures of the official pages of 13 and 18 June 2026.
 
-- The Holy Bible, Douay–Rheims version, revised by Bishop Richard Challoner (Project Gutenberg text): Gn 1:26; Ps 16:1–8; 32:13–19; 57:2; 95:1–13; 145:2; Is 1:1; 44:24–45:13; 48:20; Mt 21:10, 23, 45–46; 22:15–22; 24:1; Mk 10:42–45; Acts 17:1–10; Rom 13:7; 1 Cor 15:49; Phil 1:13; 2:12–16; 4:22; 1 Thes 1:1–5; Jas 1:8.
+- The Holy Bible, Douay–Rheims version, revised by Bishop Richard Challoner (Project Gutenberg text): Gn 1:26; Ps 16:1–8; 32:13–19; 57:2; 95:1–13; 145:2; Is 1:1; 44:24–45:13; 48:20; Mt 21:10, 23, 45–46; 22:15–22; Mk 10:42–45; Acts 17:1–10; Rom 13:7; 1 Cor 15:49; Phil 1:13; 2:12–16; 4:22; 1 Thes 1:1–5; Jas 1:8.
 
 - *Biblia Sacra Vulgatae editionis* (Clementine Vulgate), eBible.org text: Ps 16:6–8; 32:18; 95:5, 7; Is 45:1–6; Mt 22:15–21; Mk 10:45; Phil 2:15–16.
 
