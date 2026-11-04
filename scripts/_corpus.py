@@ -669,12 +669,16 @@ def read_web_edition(path: Path) -> dict:
         raise CorpusError(f"cannot read {path.relative_to(ROOT)}: {error}") from error
 
 
-def read_publication(path: Path) -> dict:
-    """Read one publication's release record. `public-alpha` validates it."""
+def read_publication(path: Path, root: Path | None = None) -> dict:
+    """Read one publication's release record, completed with what its path
+    derives (`_document_schema.release_record`). `public-alpha` validates it."""
+    from _document_schema import SchemaError, release_record
+
+    base = ROOT if root is None else root
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as error:
-        raise CorpusError(f"cannot read {path.relative_to(ROOT)}: {error}") from error
+        return release_record(base, path)
+    except (OSError, ValueError, SchemaError) as error:
+        raise CorpusError(f"cannot read {path}: {error}") from error
 
 
 def eligible_document_ids(source_root: Path | None = None) -> set[tuple[str, str]]:
@@ -808,7 +812,7 @@ def _issues_of(publication: dict, extents: bool, root: Path) -> tuple[Issue, ...
         pdf_identity = f"pdf/{provider}/{stem}.pdf"
         pdf = root / pdf_identity
         record_path = root / "release/publications" / provider / f"{stem}.json"
-        record = read_publication(record_path) if record_path.is_file() else {}
+        record = read_publication(record_path, root) if record_path.is_file() else {}
         issues.append(
             Issue(
                 kind=kind,
@@ -832,7 +836,7 @@ def _catalog_of(provider: str, leaf: str, root: Path = ROOT) -> str | None:
     record_path = root / "release/publications" / provider / f"{leaf}.json"
     if not record_path.is_file():
         return None
-    return read_publication(record_path).get("catalog")
+    return read_publication(record_path, root).get("catalog")
 
 
 @functools.lru_cache(maxsize=8)

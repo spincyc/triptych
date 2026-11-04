@@ -24,6 +24,7 @@ from typing import NamedTuple
 # requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
+from _document_schema import SchemaError, minimal_release_record, release_record  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -316,8 +317,8 @@ def publication_status_counts(manifest: dict) -> tuple[str, dict[str, int]]:
                     f"unsafe publication record: {path.relative_to(ROOT)}"
                 )
             try:
-                publication = json.loads(path.read_text(encoding="utf-8"))
-            except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+                publication = release_record(ROOT, path)
+            except (OSError, UnicodeError, ValueError, SchemaError) as exc:
                 raise BindingError(
                     f"cannot read publication record {path.relative_to(ROOT)}: {exc}"
                 ) from exc
@@ -695,16 +696,21 @@ def add_publication(
     authorizations = list(manifest.get("authorizations", {}))
     if len(authorizations) != 1:
         raise BindingError("expected exactly one manifest authorization")
-    entry = {
-        "schema_version": 1,
-        "id": leaf,
-        "catalog": catalog,
-        "status": status,
-        "authorization": authorizations[0] if status == "alpha" else None,
-    }
     destination = ROOT / PUBLICATION_RECORD_ROOT / provider / f"{leaf}.json"
     if destination.exists():
         raise BindingError(f"publication record already exists: {destination.relative_to(ROOT)}")
+    # The record holds only what its path does not derive
+    # (guidance/document-schemas.md, release records).
+    try:
+        entry = minimal_release_record(ROOT, provider, leaf, {
+            "schema_version": 1,
+            "id": leaf,
+            "catalog": catalog,
+            "status": status,
+            "authorization": authorizations[0] if status == "alpha" else None,
+        })
+    except SchemaError as exc:
+        raise BindingError(str(exc)) from exc
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(entry, indent=2) + "\n", encoding="utf-8")
     return publication_id
@@ -721,13 +727,16 @@ def migrate_publications(manifest: dict) -> int:
         provider, leaf = split_id(manifest, publication_id)
         legacy_status = publication.get("status")
         status = "hold" if legacy_status == "hold" else "alpha"
-        record = {
-            "schema_version": 1,
-            "id": leaf,
-            "catalog": publication.get("catalog"),
-            "status": status,
-            "authorization": authorizations[0] if status == "alpha" else None,
-        }
+        try:
+            record = minimal_release_record(ROOT, provider, leaf, {
+                "schema_version": 1,
+                "id": leaf,
+                "catalog": publication.get("catalog"),
+                "status": status,
+                "authorization": authorizations[0] if status == "alpha" else None,
+            })
+        except SchemaError as exc:
+            raise BindingError(str(exc)) from exc
         destination = ROOT / PUBLICATION_RECORD_ROOT / provider / f"{leaf}.json"
         destination.parent.mkdir(parents=True, exist_ok=True)
         encoded = json.dumps(record, indent=2) + "\n"

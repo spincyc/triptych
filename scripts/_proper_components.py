@@ -643,6 +643,69 @@ def lane_source_paths(data: dict, leaf: Path, *, exists: bool = True) -> set[Pat
     return result
 
 
+# What a component manifest need not say, because its leaf's path or its own
+# schema already does (guidance/document-schemas.md § Derived fields). `complete`
+# supplies each absent one and refuses an explicit value that disagrees.
+RECORD_TYPE = "proper-components"
+ENTRYPOINT_FIELDS = {"research": "entrypoint", "synthesis": "synthesis_entrypoint",
+                     "homily": "homily_entrypoint"}
+CALENDARS = {"1962": "roman-1962", "postconciliar": "postconciliar"}
+PROVIDERS = ("claude", "gpt")
+
+
+def leaf_document(leaf: Path) -> str | None:
+    """The provider-relative leaf id of a manifest's directory, when it has one."""
+    parts = Path(leaf).resolve().parts
+    for index in range(len(parts) - 2, -1, -1):
+        if parts[index] == "src" and parts[index + 1] in PROVIDERS and index + 2 < len(parts):
+            return "/".join(parts[index + 2:])
+    return None
+
+
+def derived_fields(data: dict, leaf: Path | None) -> dict:
+    schema = data.get("schema")
+    modes = MODES if schema == 2 else MODES[:2]
+    result: dict = {"record_type": RECORD_TYPE}
+    for mode in modes:
+        result[ENTRYPOINT_FIELDS[mode]] = ENTRYPOINTS[mode]
+    document = leaf_document(leaf) if leaf is not None else None
+    if document is None:
+        return result
+    result["document"] = document
+    if schema == 2:
+        family = document.split("/")[2] if document.startswith("liturgy/roman-rite/") else ""
+        if family in CALENDARS:
+            result["calendar"] = CALENDARS[family]
+    completeness = data.get("appointed_text_completeness")
+    declared = {mode: document if mode == "research" else f"{document}-{mode}" for mode in modes}
+    declared["web"] = document
+    declared["canonical_label"] = "Full PDF" if completeness == "complete" else "Research PDF"
+    declared["synthesis_label"] = "Synthesis PDF"
+    if schema == 2:
+        declared["homily_label"] = "Homily PDF"
+    result["outputs"] = declared
+    return result
+
+
+def complete(data: dict, leaf: Path | None) -> dict:
+    """The manifest with every absent derived field supplied.
+
+    An explicit value stays as written, so the validators below refuse one
+    that contradicts its derivation with their own message.
+    """
+    if not isinstance(data, dict):
+        return data
+    result = dict(data)
+    for key, value in derived_fields(data, leaf).items():
+        result.setdefault(key, value)
+    return result
+
+
+def load_manifest(path: Path) -> dict:
+    """A component manifest as its consumers read it: completed from its path."""
+    return complete(tomllib.loads(Path(path).read_text(encoding="utf-8")), Path(path).parent)
+
+
 def outputs(data: dict) -> dict[str, str]:
     """Validate identities before any consumer joins them onto a filesystem root."""
     if data.get("schema") not in {1, 2} or data.get("record_type") != "proper-components":
@@ -691,7 +754,7 @@ def companion_owner(source_root: Path, document: str) -> tuple[Path, Path] | Non
         manifest = leaf / MANIFEST
         if not manifest.is_file():
             return None
-        data = tomllib.loads(manifest.read_text(encoding="utf-8"))
+        data = load_manifest(manifest)
         if data.get("schema") not in {1, 2} or data.get("record_type") != "proper-components":
             raise ValueError(f"invalid proper manifest {manifest}")
         declared = outputs(data)
@@ -764,6 +827,7 @@ def audit_v2(data: dict, path: Path, provider_root: Path, *, phase: str = "conte
              require_authority: bool = False) -> None:
     if data.get("schema") != 2:
         raise ValueError("three-edition validation requires schema = 2")
+    data = complete(data, path.parent)
     if phase not in {"scope", "content", "artifacts"} or (edition is not None and edition not in MODES):
         raise ValueError("unknown validation phase or edition")
     leaf = path.parent

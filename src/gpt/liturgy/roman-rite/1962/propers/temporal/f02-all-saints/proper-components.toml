@@ -1,25 +1,10 @@
 schema = 2
-record_type = "proper-components"
 format_contract = "propers-format-v1"
 presentation_contract = "interpretive-pagination-v1"
 authority_contract = "authority-standing-v1"
 chronology_presentation = "orientation-v3"
-document = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
-calendar = "roman-1962"
-entrypoint = "main.tex"
-synthesis_entrypoint = "synthesis.tex"
-homily_entrypoint = "homily.tex"
 appointed_text_completeness = "complete"
 element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
-
-[outputs]
-research = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
-synthesis = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis"
-homily = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily"
-web = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
-canonical_label = "Full PDF"
-synthesis_label = "Synthesis PDF"
-homily_label = "Homily PDF"
 
 [presentation]
 inventory = "concise-inventory"

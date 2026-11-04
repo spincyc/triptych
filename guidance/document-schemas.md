@@ -54,6 +54,26 @@ another.
 | `[[structure]]` records | The body at the entrypoint, `generation-metadata.tex` and `web-edition.toml` when present, and each required role of the kind (and of component schema 2) at its registered path when that record exists. A missing required record still fails as a missing role. |
 | Section roles | The leaf's `[document]` regions (below). |
 
+A proper's `proper-components.toml` is read the same way, by
+`_proper_components.load_manifest`: `record_type`, `document` (the leaf's
+path), `calendar` (`roman-1962` or `postconciliar`, from that path), the
+`entrypoint`, `synthesis_entrypoint` and `homily_entrypoint` file names and the
+whole `[outputs]` table (the edition ids and their PDF labels, which follow from
+`appointed_text_completeness`) are derived, and an explicit value must agree.
+The manifest keeps what is the leaf's own: its schema, its element keys, its
+components, relations, lanes and presentation roles, its appointed-text
+completeness, and its contract pins (`format_contract`, `presentation_contract`,
+`authority_contract`, `chronology_presentation`). A pin stays written even where
+every current leaf names the same version, because a published leaf keeps its
+version when a later one becomes current: a default would re-pin it silently.
+
+A release record, `release/publications/<provider>/<output>.json`, is completed
+the same way by `_document_schema.release_record`: its `schema_version`, its
+`id` (its path) and its `catalog` (the owning kind's registered `catalog` in the
+registry) are derived. Its `status` and `authorization` are release decisions
+and always written; a kind with leaves in several catalogs registers none, and
+its records state their own ([the record format](../release/publications/README.md)).
+
 `derivation = "authored"` identifies authored output; `"projection"` identifies
 a mechanical selection or companion. Schema-1 proper synthesis is a projection;
 schema-2 synthesis and homily retain their separately authored presentations.

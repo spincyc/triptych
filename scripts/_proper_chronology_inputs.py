@@ -257,7 +257,9 @@ def load(document: str, root: Path, provider: str, loci_of) -> Appointments:
     if component_path.exists() or component_path.is_symlink():
         component_path = _file(root, f"{leaf_id}/proper-components.toml")
         components = tomllib.loads(component_path.read_text(encoding="utf-8"))
-        if components.get("document") != document or components.get("calendar") != "postconciliar":
+        # Both are derived from the manifest's path when it does not spell them.
+        if (components.get("document", document) != document
+                or components.get("calendar", "postconciliar") != "postconciliar"):
             raise ValueError("component manifest has a different appointment identity or family")
         if components.get("element_keys") != keys:
             raise ValueError("appointment elements must exactly partition the ordered component element_keys")

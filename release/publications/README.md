@@ -5,18 +5,22 @@ Each migrated publication owns one independently writable JSON record at:
 `release/publications/<provider>/<leaf-id>.json`
 
 The directory structure after `<provider>/` is the publication leaf ID. A
-schema-version-1 record contains exactly the publication-facing policy needed
-for alpha inclusion:
+record holds only the publication-facing policy that nothing else states:
 
 ```json
 {
-  "schema_version": 1,
-  "id": "articles/example",
-  "catalog": "library/faith.md",
   "status": "alpha",
   "authorization": "perpetual-public-repository-2026"
 }
 ```
+
+Its `schema_version` (1), its `id` (the path below the provider) and its
+`catalog` (the library page the owning leaf's kind registers in
+`src/common/document-schemas/registry.toml`) are derived by
+`_document_schema.release_record`; an explicit value must agree. A kind whose
+leaves live in more than one catalog (calendar references, Ordinary
+expositions, historical accounts) has no registered catalog, and each of its
+records states its own `catalog`.
 
 `status` is `alpha` or `hold`. An alpha record names the standing
 authorization; a hold record uses `null`. PDF hashes and aggregate counts are

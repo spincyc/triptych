@@ -15,7 +15,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _tooling import Example, with_examples  # noqa: E402
 from _proper_components import (  # noqa: E402
-    audit_v2, liturgical_family, outputs as proper_outputs, relative_id,
+    audit_v2, liturgical_family, load_manifest, outputs as proper_outputs, relative_id,
 )
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
@@ -108,7 +108,7 @@ def string_list(value: object, field: str, *, nonempty: bool = False) -> list[st
 
 
 def parse_manifest(path: Path) -> dict:
-    data = tomllib.loads(path.read_text(encoding="utf-8"))
+    data = load_manifest(path)
     if data.get("schema") not in {1, 2} or data.get("record_type") != "proper-components":
         raise ValueError("manifest requires schema = 1 or 2 and record_type = 'proper-components'")
     validate_reader_order(data)
@@ -155,8 +155,10 @@ def audit_manifest(path: Path, provider_root: Path, *, phase: str = "content",
     relative = str(leaf.relative_to(provider_root))
     if data["document"] != relative:
         raise ValueError(f"document must match canonical leaf id {relative!r}")
-    safe_file(leaf, data.get("entrypoint"), "entrypoint")
-    safe_file(leaf, data.get("synthesis_entrypoint"), "synthesis_entrypoint")
+    for field, name in (("entrypoint", "main.tex"), ("synthesis_entrypoint", "synthesis.tex")):
+        if data.get(field) != name:
+            raise ValueError(f"{field} must be {name!r}")
+        safe_file(leaf, data.get(field), field)
 
     element_keys = string_list(data.get("element_keys"), "element_keys", nonempty=True)
     if len(element_keys) != len(set(element_keys)):

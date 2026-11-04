@@ -148,9 +148,9 @@ def _publication_records(root: Path, provider: str | None) -> list[dict]:
             records.append(publication_recipe(owner, leaf, root=root))
             manifest = entry.parent / "proper-components.toml"
             if manifest.is_file():
-                import tomllib
+                from _proper_components import load_manifest
                 try:
-                    declared = outputs(tomllib.loads(manifest.read_text(encoding="utf-8")))
+                    declared = outputs(load_manifest(manifest))
                 except (OSError, ValueError) as error:
                     raise PrintError(f"invalid companion manifest {manifest}: {error}") from error
                 for mode in ("synthesis", "homily"):

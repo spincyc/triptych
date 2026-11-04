@@ -40,7 +40,7 @@ from _markdown_render import (  # noqa: E402
     require_locked_markdown_dependency as require_markdown_lock,
 )
 from _proper_components import (
-    audit_v2, companion_owner, outputs as proper_outputs, relative_id,
+    audit_v2, companion_owner, load_manifest as load_component_manifest, outputs as proper_outputs, relative_id,
 )
 
 from _tooling import (  # noqa: E402
@@ -2929,10 +2929,14 @@ def local_publication_records(primary: str, providers: list[str]) -> dict[tuple[
     result: dict[tuple[str, str], dict] = {}
     if not root.is_dir():
         return result
+    from _document_schema import SchemaError, release_record
+
     for path in sorted(root.rglob("*.json")):
         try:
-            record = json.loads(path.read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError) as exc:
+            # Its id, schema version and (by kind) catalog are derived from
+            # its path; an explicit one must agree.
+            record = release_record(ROOT, path)
+        except (OSError, ValueError, SchemaError) as exc:
             raise ReleaseError(f"cannot read publication record {path.relative_to(ROOT)}: {exc}") from exc
         if record.get("schema_version") != 1:
             raise ReleaseError(f"{path.relative_to(ROOT)} must use schema_version 1")
@@ -3583,7 +3587,7 @@ def selected_proper_scope(provider: str, document: str) -> set[tuple[str, str]]:
             raise ValueError("provider must be one path component")
         source_root = ROOT / "src" / provider
         path = source_root / document / "proper-components.toml"
-        data = tomllib.loads(path.read_text(encoding="utf-8"))
+        data = load_component_manifest(path)
         audit_v2(data, path, source_root, phase="scope")
     except (OSError, ValueError, tomllib.TOMLDecodeError) as exc:
         raise ReleaseError(f"invalid selected proper scope: {exc}") from exc

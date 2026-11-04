@@ -16,7 +16,7 @@ from pathlib import Path
 
 from _proper_components import (include_graph, lane_source_paths, validate_liturgical_family,
                                 presentation_contract, format_contract, authority_contract,
-                                pagination_aux_files)
+                                pagination_aux_files, load_manifest)
 from _corpus import active_tex, REVISION_RE, CONTRIBUTION_RE, PRODUCTION_RE, INHERITANCE_RE
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -122,7 +122,7 @@ def scope(root: Path, provider: str, document: str) -> str:
 
 
 def manifest(leaf: Path) -> dict:
-    data = tomllib.loads((leaf / "proper-components.toml").read_text())
+    data = load_manifest(leaf / "proper-components.toml")
     if data.get("schema") != 2:
         raise ValueError("proper-study requires component schema 2; use legacy proper for schema 1")
     return data
@@ -888,7 +888,8 @@ def publication(root: Path, provider: str, document: str, *, mode: str = "print"
             installed = root / "pdf" / provider / f"{output}.pdf"
             if digest(installed) != digest(root / "build" / provider / f"{output}.pdf"):
                 raise ValueError(f"installed {output_mode} differs from reviewed build")
-        record = json.loads((root / "release/publications" / provider / f"{output}.json").read_text())
+        from _document_schema import release_record
+        record = release_record(root, root / "release/publications" / provider / f"{output}.json")
         if (record.get("schema_version"), record.get("id"), record.get("catalog"),
             record.get("status")) != (1, output, catalog, "alpha") or record.get("authorization") not in release.get("authorizations", {}):
             raise ValueError(f"release record does not authorize {output_mode} for this catalog")

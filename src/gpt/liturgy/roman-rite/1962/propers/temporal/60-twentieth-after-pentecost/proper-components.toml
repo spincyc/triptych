@@ -1,25 +1,10 @@
 schema = 2
-record_type = "proper-components"
 format_contract = "propers-format-v1"
 presentation_contract = "interpretive-pagination-v1"
 chronology_presentation = "orientation-v3"
 authority_contract = "authority-standing-v1"
-document = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"
-calendar = "roman-1962"
-entrypoint = "main.tex"
-synthesis_entrypoint = "synthesis.tex"
-homily_entrypoint = "homily.tex"
 appointed_text_completeness = "complete"
 element_keys = ["introit", "collect", "maternity-collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "maternity-secret", "preface", "communion", "postcommunion", "maternity-postcommunion"]
-
-[outputs]
-research = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"
-synthesis = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis"
-homily = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily"
-web = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"
-canonical_label = "Full PDF"
-synthesis_label = "Synthesis PDF"
-homily_label = "Homily PDF"
 
 [presentation]
 inventory = "concise-inventory"
@@ -171,7 +156,6 @@ modes = ["homily"]
 depends_on = []
 element_keys = []
 references = []
-
 
 [[lanes]]
 key = "word-heals"

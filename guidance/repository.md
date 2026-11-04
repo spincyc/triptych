@@ -150,10 +150,10 @@ through a provider-neutral `proper-components.toml` manifest. The bare leaf ID
 is the canonical research edition and the same source is its sole web edition.
 The mechanical `-synthesis` PDF is a derived companion, not a second editable
 leaf: it has no `main.tex`, source records, generation record, web declaration,
-or independently authored prose. It is compiled through the manifest's
-`synthesis_entrypoint`, inherits canonical provenance, and may include only
-components whose manifest mode is `synthesis`. Both output roles are declared
-in `publication.toml` and cataloged in the
+or independently authored prose. It is compiled through the leaf's
+`synthesis.tex`, inherits canonical provenance, and may include only
+components whose manifest mode is `synthesis`. Both output roles are derived
+from that manifest ([document schemas](document-schemas.md#derived-fields)) and cataloged in the
 canonical row. Their print renderings have independent inspection receipts
 when produced; their shared source owner remains the leaf.
 

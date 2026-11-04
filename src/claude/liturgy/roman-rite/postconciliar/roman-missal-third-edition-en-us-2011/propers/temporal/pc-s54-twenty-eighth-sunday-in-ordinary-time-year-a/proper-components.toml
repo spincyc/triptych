@@ -1,12 +1,6 @@
 schema = 2
 format_contract = "propers-format-v1"
 authority_contract = "authority-standing-v1"
-record_type = "proper-components"
-document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"
-calendar = "postconciliar"
-entrypoint = "main.tex"
-synthesis_entrypoint = "synthesis.tex"
-homily_entrypoint = "homily.tex"
 appointed_text_completeness = "rights-limited"
 presentation_contract = "interpretive-pagination-v1"
 chronology_presentation = "orientation-v3"
@@ -15,15 +9,6 @@ chronology_presentation = "orientation-v3"
 # antiphons are closed alternatives and keep separate keys, as the chronology
 # record does.
 element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel-long", "gospel-short", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
-
-[outputs]
-research = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"
-synthesis = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis"
-homily = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily"
-web = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"
-canonical_label = "Research PDF"
-synthesis_label = "Synthesis PDF"
-homily_label = "Homily PDF"
 
 # Physical-page roles of the concise companion's fixed opening
 # (guidance/liturgy/propers-three-documents.md), all to be written by the

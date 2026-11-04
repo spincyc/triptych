@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 import _native_print as native
 import _native_print_artwork as artwork
+from _document_schema import release_record
 
 
 def context(*, wasm=False, archive=False):
@@ -102,7 +103,7 @@ class AdmissionTests(unittest.TestCase):
         self.assertEqual({row["id"] for row in recipes},
                          {identity for identity in documents if identity.startswith(("publication:", "bible:"))})
         for path in (ROOT / "release/publications").glob("*/**/*.json"):
-            record = json.loads(path.read_bytes())
+            record = release_record(ROOT, path)
             provider = path.relative_to(ROOT / "release/publications").parts[0]
             if record.get("status") == "hold":
                 self.assertNotIn("publication:" + provider + "/" + record["id"], documents)

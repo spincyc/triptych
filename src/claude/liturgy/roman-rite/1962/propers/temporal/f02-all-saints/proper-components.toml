@@ -1,12 +1,6 @@
 schema = 2
 format_contract = "propers-format-v1"
 authority_contract = "authority-standing-v1"
-record_type = "proper-components"
-document = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
-calendar = "roman-1962"
-entrypoint = "main.tex"
-synthesis_entrypoint = "synthesis.tex"
-homily_entrypoint = "homily.tex"
 appointed_text_completeness = "complete"
 presentation_contract = "interpretive-pagination-v1"
 chronology_presentation = "orientation-v3"
@@ -20,15 +14,6 @@ chronology_presentation = "orientation-v3"
 # Preface (research/context.md), so the preface key anchors a locator that
 # names both and gives neither text.
 element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
-
-[outputs]
-research = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
-synthesis = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis"
-homily = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily"
-web = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
-canonical_label = "Full PDF"
-synthesis_label = "Synthesis PDF"
-homily_label = "Homily PDF"
 
 # Physical-page roles of the concise companion's fixed opening
 # (guidance/liturgy/propers-three-documents.md), all written by the concise

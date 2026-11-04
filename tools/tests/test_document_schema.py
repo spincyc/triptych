@@ -81,6 +81,47 @@ class DocumentSchemaTests(unittest.TestCase):
         report = schema.validate(self.root, record, phase="content")
         self.assertIn("missing required role: source-audit", report["errors"])
 
+    def test_a_release_record_derives_its_id_version_and_kind_catalog(self):
+        path = self.root / "release/publications/gpt/articles/faith/example.json"
+        path.parent.mkdir(parents=True)
+        path.write_text('{"status": "alpha", "authorization": "standing"}\n', encoding="utf-8")
+        self.assertEqual(schema.release_record(self.root, path), {
+            "status": "alpha", "authorization": "standing", "schema_version": 1,
+            "id": "articles/faith/example", "catalog": "library/faith.md"})
+        for field, value in (("id", "articles/faith/other"), ("catalog", "library/prayer.md"),
+                             ("schema_version", 2)):
+            with self.subTest(field=field):
+                path.write_text(json.dumps({"status": "hold", "authorization": None, field: value}))
+                with self.assertRaisesRegex(schema.SchemaError, "contradicts its derivation"):
+                    schema.release_record(self.root, path)
+        self.assertEqual(schema.minimal_release_record(
+            self.root, "gpt", "articles/faith/example",
+            {"schema_version": 1, "id": "articles/faith/example", "catalog": "library/faith.md",
+             "status": "alpha", "authorization": "standing"}),
+            {"status": "alpha", "authorization": "standing"})
+
+    def test_a_component_manifest_derives_its_identity_entrypoints_and_outputs(self):
+        import _proper_components as components
+
+        leaf = self.root / "src/gpt/liturgy/roman-rite/postconciliar/edition/propers/temporal/x"
+        derived = components.derived_fields(
+            {"schema": 2, "appointed_text_completeness": "rights-limited"}, leaf)
+        document = "liturgy/roman-rite/postconciliar/edition/propers/temporal/x"
+        self.assertEqual(derived["document"], document)
+        self.assertEqual(derived["calendar"], "postconciliar")
+        self.assertEqual(derived["homily_entrypoint"], "homily.tex")
+        self.assertEqual(derived["outputs"], {
+            "research": document, "synthesis": document + "-synthesis",
+            "homily": document + "-homily", "web": document,
+            "canonical_label": "Research PDF", "synthesis_label": "Synthesis PDF",
+            "homily_label": "Homily PDF"})
+        # An explicit value stays as written, for the validators to refuse.
+        self.assertEqual(components.complete({"schema": 2, "document": "other"}, leaf)["document"], "other")
+        with self.assertRaisesRegex(ValueError, "outputs.research"):
+            components.outputs(components.complete(
+                {"schema": 2, "appointed_text_completeness": "complete",
+                 "outputs": {"research": "other"}}, leaf))
+
     def test_discovery_retains_missing_and_invalid_manifest_leaves(self):
         missing = schema.discover(self.root)
         self.assertEqual(len(missing), 1)

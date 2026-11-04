@@ -1,17 +1,6 @@
 schema = 1
-record_type = "proper-components"
-document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c"
-entrypoint = "main.tex"
-synthesis_entrypoint = "synthesis.tex"
 appointed_text_completeness = "rights-limited"
 element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
-
-[outputs]
-research = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c"
-synthesis = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c-synthesis"
-web = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c"
-canonical_label = "Research PDF"
-synthesis_label = "Synthesis PDF"
 
 [[components]]
 key = "orientation"

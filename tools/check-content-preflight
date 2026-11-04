@@ -1294,7 +1294,9 @@ def check_relation_coverage(leaf: Path, root: Path,
         if not required:
             return [], f"not in scope: {why}"
         return ([f"{why}, but the leaf carries no {MANIFEST}"], "")
-    data = tomllib.loads(manifest.read_text(encoding="utf-8"))
+    from _proper_components import load_manifest
+
+    data = load_manifest(manifest)
     if data.get("schema") == 2:
         from _proper_components import audit_v2
 

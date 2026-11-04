@@ -105,7 +105,8 @@ def _admitted_recipes(root: Path, inputs: set | None = None) -> list[dict]:
             inputs.update((declared, disposition))
         try:
             declaration = tomllib.loads((root / declared).read_text(encoding="utf-8"))
-            release = json.loads((root / disposition).read_bytes())
+            from _document_schema import release_record
+            release = release_record(root, root / disposition)
         except (OSError, ValueError) as error:
             raise NativePrintError("cannot read publication disposition: " + recipe["id"]) from error
         _need(release.get("id") == recipe["document"] and release.get("status") in {"alpha", "hold"},

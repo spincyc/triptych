@@ -1,25 +1,10 @@
 schema = 2
-record_type = "proper-components"
-document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"
-calendar = "postconciliar"
-entrypoint = "main.tex"
-synthesis_entrypoint = "synthesis.tex"
-homily_entrypoint = "homily.tex"
 appointed_text_completeness = "rights-limited"
 presentation_contract = "interpretive-pagination-v1"
 chronology_presentation = "orientation-v3"
 format_contract = "propers-format-v1"
 authority_contract = "authority-standing-v1"
 element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
-
-[outputs]
-research = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"
-synthesis = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis"
-homily = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily"
-web = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"
-canonical_label = "Research PDF"
-synthesis_label = "Synthesis PDF"
-homily_label = "Homily PDF"
 
 [presentation]
 inventory = "concise-inventory"

@@ -1,17 +1,6 @@
 schema = 1
-record_type = "proper-components"
-document = "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"
-entrypoint = "main.tex"
-synthesis_entrypoint = "synthesis.tex"
 appointed_text_completeness = "complete"
 element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
-
-[outputs]
-research = "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"
-synthesis = "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis"
-web = "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"
-canonical_label = "Full PDF"
-synthesis_label = "Synthesis PDF"
 
 [[components]]
 key = "orientation"

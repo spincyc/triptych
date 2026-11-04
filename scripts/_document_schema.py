@@ -235,7 +235,7 @@ def registry(root: Path = ROOT) -> dict:
         raise SchemaError("unsupported document schema registry")
     seen = set()
     for item in data.get("types", []):
-        _strict(item, {"kind", "patterns", "profile", "required_roles", "requirements", "gates"}, "type")
+        _strict(item, {"kind", "patterns", "profile", "catalog", "required_roles", "requirements", "gates"}, "type")
         if not KEY.fullmatch(_string(item.get("kind"), "kind")) or item["kind"] in seen:
             raise SchemaError("duplicate or invalid registry kind")
         seen.add(item["kind"])
@@ -450,6 +450,71 @@ def _section_items(root: Path, leaf_dir: Path, explicit: list[dict]) -> list[dic
             if (role, section.source) not in held:
                 items.append({"role": role, "source": section.source, "outputs": list(section.outputs)})
     return items
+
+
+RELEASE_RECORDS = Path("release/publications")
+RELEASE_DERIVED = ("schema_version", "id", "catalog")
+
+
+def release_kind(root: Path, provider: str, output: str) -> str | None:
+    """The kind of the leaf that owns a release record's output, if any."""
+    for leaf in dict.fromkeys((output, output.removesuffix("-synthesis"), output.removesuffix("-homily"))):
+        leaf_dir = Path(root) / "src" / provider / leaf
+        if (leaf_dir / "main.tex").is_file() or (leaf_dir / MANIFEST).is_file():
+            try:
+                return classify(root, leaf_dir)
+            except SchemaError:
+                return None
+    return None
+
+
+def release_record(root: Path, path: Path) -> dict:
+    """One release/publications record, completed with what its path derives.
+
+    `schema_version` is 1, `id` is the path below the provider, and `catalog`
+    is the owning kind's registered catalog where the registry names one (a
+    kind whose leaves live in more than one catalog states it in each record).
+    `status` and `authorization` are the record's own and never derived. An
+    explicit derived value must agree; this refuses one that does not.
+    """
+    root = Path(root).resolve()
+    path = Path(path)
+    if not path.is_absolute():
+        path = root / path
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(data, dict):
+        raise SchemaError(f"{path.relative_to(root)} must be an object")
+    relative = path.relative_to(root / RELEASE_RECORDS)
+    provider = relative.parts[0]
+    output = relative.relative_to(provider).with_suffix("").as_posix()
+    derived = {"schema_version": 1, "id": output}
+    catalog = release_catalog(root, provider, output)
+    if catalog:
+        derived["catalog"] = catalog
+    result = dict(data)
+    for key, value in derived.items():
+        if key in result and result[key] != value:
+            raise SchemaError(f"{path.relative_to(root)}: {key} {result[key]!r} contradicts "
+                              f"its derivation {value!r}")
+        result.setdefault(key, value)
+    return result
+
+
+def release_catalog(root: Path, provider: str, output: str) -> str | None:
+    """The catalog a release record's owning kind registers, if it has one."""
+    kind = release_kind(root, provider, output)
+    return _definition(root, kind).get("catalog") if kind else None
+
+
+def minimal_release_record(root: Path, provider: str, output: str, record: dict) -> dict:
+    """The record without the fields `release_record` derives."""
+    catalog = release_catalog(root, provider, output)
+    if catalog and record.get("catalog") not in (None, catalog):
+        raise SchemaError(f"{provider}/{output} is catalogued in {catalog} by its kind, "
+                          f"not {record['catalog']}")
+    derived = {"schema_version": 1, "id": output, "catalog": catalog}
+    return {key: value for key, value in record.items()
+            if not (key in RELEASE_DERIVED and derived.get(key) == value)}
 
 
 def adapter_manifest(root: Path, leaf_dir: Path) -> dict:

@@ -1,12 +1,6 @@
 schema = 2
 format_contract = "propers-format-v1"
 authority_contract = "authority-standing-v1"
-record_type = "proper-components"
-document = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
-calendar = "roman-1962"
-entrypoint = "main.tex"
-synthesis_entrypoint = "synthesis.tex"
-homily_entrypoint = "homily.tex"
 appointed_text_completeness = "complete"
 presentation_contract = "interpretive-pagination-v1"
 chronology_presentation = "orientation-v3"
@@ -23,15 +17,6 @@ chronology_presentation = "orientation-v3"
 # Scriptural Date and Location appendix and the concise page 2 print them
 # with the rubric's label (research/scope.md section 8.2).
 element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
-
-[outputs]
-research = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
-synthesis = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis"
-homily = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily"
-web = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
-canonical_label = "Full PDF"
-synthesis_label = "Synthesis PDF"
-homily_label = "Homily PDF"
 
 # Physical-page roles of the concise companion's fixed opening
 # (guidance/liturgy/propers-three-documents.md), all written by the concise
