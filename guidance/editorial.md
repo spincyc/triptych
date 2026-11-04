@@ -538,7 +538,10 @@ confined to generated skeletons or shared templates. A commit that changes
 any edition's wording, or regenerates a page a reader sees from changed data
 (a chronology page, for instance), must not carry it, and a commit that
 mixes the two is split. `none` is the trailer's only value; any other fails
-the derivation.
+the derivation. Because such a refactor may move text into files it creates,
+the derivation also reads the marked commit's pre-image — the files it changed
+in the edition's leaf, as they stood before it — so moved text keeps the date
+of its last real revision.
 
 Without usable history the value is never guessed. A shallow clone, or a tree
 that is not a Git work tree, fails the build with a request for full history;

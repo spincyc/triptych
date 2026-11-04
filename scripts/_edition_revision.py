@@ -18,7 +18,10 @@ simplification, skipping every commit that carries the trailer
 reset committer time. The trailer marks a commit that revised no edition's
 text -- a byte-for-byte move between files, or a change confined to generated
 skeletons or shared templates -- so the stamp looks past it to the next older
-commit; ``none`` is its only value, and any other fails the derivation.
+commit; ``none`` is its only value, and any other fails the derivation. A
+marked commit's pre-image is read as well -- the files it changed that the
+edition reads or that lie in the edition's leaf, as of its first parent -- so
+text it moved into a file it created keeps the date of its last revision.
 
 The source closure of an edition (one declared entrypoint: ``main.tex``,
 ``synthesis.tex`` or ``homily.tex``) is:
@@ -190,6 +193,18 @@ class Repository:
                 "(git fetch --unshallow, or actions/checkout with fetch-depth: 0)")
         self._tracked: set[str] | None = None
         self._changed: set[str] | None = None
+        self._pre_images: dict[str, tuple[str | None, set[str]]] = {}
+
+    def pre_image(self, commit: str) -> tuple[str | None, set[str]]:
+        """A commit's first parent and the paths it changed, read without blobs."""
+        if commit not in self._pre_images:
+            parents = _git(self.root, "rev-list", "--parents", "-n", "1", commit).split()[1:]
+            changed = set()
+            if parents:
+                changed = {line for line in _git(self.root, "diff", "--name-only", "--no-renames", "-z",
+                                                 parents[0], commit, "--", "src").split("\0") if line}
+            self._pre_images[commit] = (parents[0] if parents else None, changed)
+        return self._pre_images[commit]
 
     def tracked(self) -> set[str]:
         if self._tracked is None:
@@ -403,6 +418,50 @@ def history_of(root: Path, paths, revision: str = "HEAD") -> list[tuple[int, str
     return result
 
 
+MAX_REFACTOR_DEPTH = 16
+
+
+def _last_revision(repository: "Repository", paths, leaf: str, revision: str, depth: int,
+                   followed: set[str]) -> tuple[int, str] | None:
+    """The newest unmarked commit that revised these paths as of ``revision``.
+
+    A commit marked ``Edition-Revision: none`` revised no text, but it may have
+    moved that text into the files it created, whose own history then starts
+    with it. So its own pre-image is read too: the files it changed that the
+    edition reads, or that lie in the edition's leaf (where the text came
+    from), as they stood in its first parent.
+    """
+    if depth > MAX_REFACTOR_DEPTH:
+        raise RevisionError(f"more than {MAX_REFACTOR_DEPTH} nested {TRAILER}: {TRAILER_NONE} refactors")
+    paths = sorted(set(paths))
+    if not paths:
+        return None
+    history = history_of(repository.root, paths, revision)
+    best = max(((seconds, commit) for seconds, commit, skipped in history if not skipped), default=None)
+    current = set(paths)
+    for _seconds, commit, skipped in history:
+        if not skipped or commit in followed:
+            continue
+        followed.add(commit)
+        parent, before = repository.pre_image(commit)
+        if parent is None:
+            continue
+        sources = {path for path in before
+                   if path in current or (path.startswith(leaf) and _closure_kind(path))}
+        found = _last_revision(repository, sources, leaf, parent, depth + 1, followed)
+        if found is not None and (best is None or found > best):
+            best = found
+    return best
+
+
+def _closure_kind(path: str) -> bool:
+    """A file of the kinds a closure holds, not a leaf's records or contribution log."""
+    name = path.rsplit("/", 1)[-1]
+    parts = path.split("/")
+    return (name != GENERATION_METADATA and not {"research", "evaluations", "evaluation"} & set(parts)
+            and any(name.endswith(suffix) for suffix in TEXT_SUFFIXES | set(GRAPHIC_SUFFIXES[1:])))
+
+
 def _now() -> dt.datetime:
     return dt.datetime.now(dt.timezone.utc)
 
@@ -423,13 +482,12 @@ def revision_of(root: Path, provider: str, document: str, entry: Path, *,
     history = [path for path in found.paths if path not in found.generated]
     if not history:
         raise RevisionError(f"{provider}/{document}: the edition reads no authored provider source")
-    commits = [(seconds, commit) for seconds, commit, skipped in history_of(root, history)
-               if not skipped]
-    if not commits:
+    leaf = entry.resolve().parent.relative_to(root).as_posix() + "/"
+    chosen = _last_revision(repository, history, leaf, "HEAD", 0, set())
+    if chosen is None:
         raise RevisionError(
             f"{provider}/{document}: no commit in this history revised its sources "
             f"(every one that changed them carries {TRAILER}: {TRAILER_NONE})")
-    chosen = max(commits)
     moment = dt.datetime.fromtimestamp(chosen[0], dt.timezone.utc)
     return Revision(provider, document, moment.strftime(TIMESTAMP_FORMAT), chosen[1], False, found.paths, root)
 

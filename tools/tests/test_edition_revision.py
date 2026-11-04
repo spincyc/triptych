@@ -104,6 +104,20 @@ class ClosureAndHistoryTests(Fixture):
         again = self.commit("revise the body again")
         self.assertEqual(self.derive().timestamp, stamp(again))
 
+    def test_text_a_marked_refactor_moved_into_a_new_file_keeps_its_older_stamp(self) -> None:
+        self.write("src/claude/doc/sections/body.tex", "Body, revised.\n")
+        revised = self.commit("revise the body")
+        self.write("src/claude/doc/sections/body.tex", "\\input{doc/sections/part}\n")
+        self.write("src/claude/doc/sections/part.tex", "Body, revised.\n")
+        self.commit("split the body into a part file\n\nEdition-Revision: none")
+        value = self.derive()
+        self.assertIn("src/claude/doc/sections/part.tex", value.closure)
+        self.assertEqual(value.timestamp, stamp(revised))
+        # The same split unmarked is a revision on this rule.
+        self.write("src/claude/doc/sections/part.tex", "Body, revised; and now edited.\n")
+        edited = self.commit("edit the part")
+        self.assertEqual(self.derive().timestamp, stamp(edited))
+
     def test_only_none_is_a_valid_trailer_value(self) -> None:
         self.write("src/claude/doc/sections/body.tex", "Body, revised.\n")
         self.commit("revise\n\nEdition-Revision: minor")
