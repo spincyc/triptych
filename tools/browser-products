@@ -28,6 +28,10 @@ EXAMPLES = {
         Example('tools/browser-products record', ('browser-products: 12 products, 27408 files; ok',), 'Explicitly refresh the mechanical descriptor after independent cold builds agree.'),
         Example('tools/browser-products record --root .scratch/browser-products-missing-example --json', ('{"error": "missing or unsafe browser product directory: <repo>/.scratch/browser-products-missing-example: No such file or directory", "status": "error"}',), 'Return the same missing-checkout refusal as JSON before generation or cache mutation.'),
     ),
+    'audit': (
+        Example('tools/browser-products audit --root .scratch/browser-products-missing-example', ('browser-products: missing or unsafe browser product directory: <repo>/.scratch/browser-products-missing-example: No such file or directory',), 'Reject a missing checkout before running any producer under the audit hook.'),
+        Example('tools/browser-products audit --root .scratch/browser-products-missing-example --json', ('{"error": "missing or unsafe browser product directory: <repo>/.scratch/browser-products-missing-example: No such file or directory", "status": "error"}',), 'Return the same missing-checkout refusal as JSON before any producer runs.'),
+    ),
     'prune': (
         Example('tools/browser-products prune', ('browser-products: 12 products, 27408 files; ok',), 'Verify current products and retain only their exact content keys in this disposable cache.'),
         Example('tools/browser-products prune --root .scratch/browser-products-missing-example --json', ('{"error": "missing or unsafe browser product directory: <repo>/.scratch/browser-products-missing-example: No such file or directory", "status": "error"}',), 'Return the same missing-checkout refusal as JSON before generation or cache mutation.'),

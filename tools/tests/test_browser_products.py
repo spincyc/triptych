@@ -27,7 +27,11 @@ class BrowserProductsTests(unittest.TestCase):
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_text("one\n")
         (self.root / "release").mkdir()
-        self.recipes = [{"id": name, "version": 1, "output_prefixes": ["structure/" + name], "argv": [["offline", name]],
+        # Both producers import one shared generator; only `a` imports a helper.
+        (self.root / "scripts/produce_a.py").write_text("import generator\nimport _helper\n")
+        (self.root / "scripts/produce_b.py").write_text("import generator\n")
+        (self.root / "scripts/_helper.py").write_text("VALUE = 1\n")
+        self.recipes = [{"id": name, "version": 1, "output_prefixes": ["structure/" + name], "argv": [f"scripts/produce_{name}.py"],
                          "input_trees": ["src/" + name], "input_files": [], "exclude_paths": [],
                          "delivery": "browser-data"} for name in ("a", "b")]
         self.generated = []
@@ -129,14 +133,51 @@ class BrowserProductsTests(unittest.TestCase):
                 path.write_bytes(original)
 
     def test_hold_withdrawal_and_rights_are_current_inputs(self):
+        self.recipes[0]["input_files"] = ["release/publications/a.json"]
+        self.manifest = products.record(self.root, cache_root=self.cache)
         for name in ("release/publications/a.json", "src/a/web-edition.toml", "src/a/rights.toml"):
             with self.subTest(name=name):
                 path = self.root / name
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text("hold")
-                with self.assertRaisesRegex(products.ProductError, "inputs changed"):
+                with self.assertRaisesRegex(products.ProductError, r"inputs changed \(a\)"):
                     products.check(self.root, cache_root=self.cache)
                 path.unlink()
+
+    def test_paths_outside_every_family_key_stale_nothing(self):
+        for name in ("guidance/web-data.md", "tools/tests/test_generator.py", "workflows/reviews/r.json",
+                     "AGENTS.md", "Makefile", "release/rights/record.md", "release/publications/b.json",
+                     "scripts/unimported.py", "tools/unrelated"):
+            with self.subTest(name=name):
+                path = self.root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("import _helper\n")
+                self.assertEqual(products.check(self.root, cache_root=self.cache), self.manifest)
+                path.unlink()
+
+    def test_imported_module_stales_only_the_importing_family(self):
+        a = set(products.input_identity(self.root, "a")["source_paths"])
+        b = set(products.input_identity(self.root, "b")["source_paths"])
+        self.assertIn("scripts/_helper.py", a)
+        self.assertNotIn("scripts/_helper.py", b)
+        self.assertIn("scripts/generator.py", a & b)
+        (self.root / "scripts/_helper.py").write_text("VALUE = 2\n")
+        with self.assertRaisesRegex(products.ProductError, r"inputs changed \(a\)"):
+            products.check(self.root, cache_root=self.cache)
+        self.generated.clear()
+        refreshed = products.record(self.root, cache_root=self.cache)
+        self.assertEqual(self.generated, [("a",), ("a",)])
+        self.assertEqual(self.family("b")["key"], refreshed["products"][1]["key"])
+
+    def test_aggregate_is_derived_from_family_commitments(self):
+        families = {product["id"]: product["inputs"] for product in self.manifest["products"]}
+        self.assertEqual(self.manifest["inputs"], products._aggregate(families))
+        forged = copy.deepcopy(self.manifest)
+        forged["inputs"]["families"]["a"] = "0" * 64
+        forged["inputs"]["sha256"] = products._sha(products._json({key: value for key, value in forged["inputs"].items() if key != "sha256"}))
+        self.write_manifest(forged)
+        with self.assertRaisesRegex(products.ProductError, "aggregate inputs differ"):
+            products.load_manifest(self.root)
 
     def test_family_refresh_reuses_exact_prior_mechanical_proof(self):
         (self.root / "src/a/input.txt").write_text("two")
@@ -144,6 +185,15 @@ class BrowserProductsTests(unittest.TestCase):
         self.assertEqual(self.generated, [("a",), ("a",)])
         self.assertEqual(self.family("b")["key"], refreshed["products"][1]["key"])
         self.assertNotEqual(self.family("a")["key"], refreshed["products"][0]["key"])
+
+    def test_one_recipe_change_rebuilds_only_that_family(self):
+        self.recipes[0]["input_files"] = ["other/declared.txt"]
+        with self.assertRaisesRegex(products.ProductError, "recipes changed"):
+            products.check(self.root, cache_root=self.cache)
+        refreshed = products.record(self.root, cache_root=self.cache)
+        self.assertEqual(self.generated, [("a",), ("a",)])
+        self.assertEqual(self.family("b"), refreshed["products"][1])
+        self.assertEqual(products.check(self.root, cache_root=self.cache), refreshed)
 
     def test_private_snapshot_is_stable_after_cache_swap(self):
         with products.verified_products(self.root, cache_root=self.cache) as held:
@@ -439,10 +489,20 @@ class BrowserProductsTests(unittest.TestCase):
         products.check(self.root, cache_root=self.cache)
 
     def test_nonbytecode_cache_members_remain_governed(self):
+        # Code-tree files are inputs only when the producer's code names them.
+        (self.root / "scripts/produce_b.py").write_text(
+            "import generator\nfrom pathlib import Path\nPath(__file__).with_name('not-a-cache.pyc').read_bytes()\n")
+        self.manifest = products.record(self.root, cache_root=self.cache)
         before = products._identity_batch(self.root)
         for name in ("scripts/__pycache__/metadata.json", "tools/__pycache__/notes.txt",
-                     "scripts/__pycache__/nested.pyc/source.txt", "scripts/not-a-cache.pyc",
-                     "src/a/__pycache__/source.pyc"):
+                     "scripts/__pycache__/nested.pyc/source.txt", "scripts/unnamed.txt"):
+            with self.subTest(name=name, governed=False):
+                path = self.root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("not an input")
+                self.assertEqual(before, products._identity_batch(self.root))
+                path.unlink()
+        for name in ("scripts/not-a-cache.pyc", "src/a/__pycache__/source.pyc"):
             with self.subTest(name=name):
                 path = self.root / name
                 path.parent.mkdir(parents=True, exist_ok=True)
@@ -475,6 +535,7 @@ class BrowserProductsTests(unittest.TestCase):
                         path.unlink()
 
     def test_excluded_mechanical_receipts_still_receive_filesystem_preflight(self):
+        self.recipes[1]["input_trees"].append("src/sources/inventories")
         for name in products.receipt.MECHANICAL_RECEIPTS - {products.MANIFEST_RELATIVE}:
             for kind in ("symlink", "fifo"):
                 with self.subTest(name=name, kind=kind):
@@ -540,8 +601,13 @@ class BrowserDeliveryTests(unittest.TestCase):
 
 
 def _c7_identity_reference(root, recipes):
-    """Frozen C7 membership/classification algorithm, sharing unchanged IO."""
-    specs = {None: products._input_spec(), **{recipe["id"]: products._input_spec(recipe) for recipe in recipes}}
+    """Frozen per-family membership/classification algorithm, sharing unchanged IO.
+
+    Each family is its declared scope plus its computed code closure; the
+    aggregate is derived from the family commitments, never a wider walk.
+    """
+    code = products.family_code(root, recipes)
+    specs = {recipe["id"]: products._input_spec(recipe, code[recipe["id"]]) for recipe in recipes}
     trees = sorted({tree for spec in specs.values() for tree in spec[0]})
     trees = tuple(tree for tree in trees if not any(tree.startswith(parent + "/") for parent in trees if parent != tree))
     files = tuple(sorted({name for spec in specs.values() for name in spec[1]}))
@@ -553,16 +619,15 @@ def _c7_identity_reference(root, recipes):
                              if (name in exact or any(name.startswith(tree + "/") for tree in scopes)
                                  or "/" not in name and (name.startswith("requirements") or name.endswith((".lock", "-lock.json"))))
                              and not any(name == excluded or name.startswith(excluded + "/") for excluded in excludes)}
-        selected[None] = set().union(*selected.values())
         return selected
     memberships = discover()
-    external = products.receipt._external_identities(root, memberships[None])
-    memberships[None].update(external)
+    union = set().union(*memberships.values())
+    external = products.receipt._external_identities(root, union)
+    union.update(external)
     for key in memberships:
-        if key is not None:
-            memberships[key].update(name for name, value in external.items() if value["manifest"] in memberships[key] or name in memberships[key])
+        memberships[key].update(name for name, value in external.items() if value["manifest"] in memberships[key] or name in memberships[key])
     values = {}
-    for name in sorted(memberships[None]):
+    for name in sorted(union):
         if name in external:
             value = {"path": name, "external": external[name]}
         else:
@@ -574,10 +639,8 @@ def _c7_identity_reference(root, recipes):
             value = {"path": name, "sha256": products._sha(body), "bytes": len(body)}
         values[name] = value
     after = discover()
-    after[None].update(external)
     for key in after:
-        if key is not None:
-            after[key].update(name for name, value in external.items() if value["manifest"] in after[key] or name in after[key])
+        after[key].update(name for name, value in external.items() if value["manifest"] in after[key] or name in after[key])
     if memberships != after:
         raise products.ProductError("canonical input membership changed while hashing")
     result = {}
@@ -590,6 +653,9 @@ def _c7_identity_reference(root, recipes):
                     "membership": products._sha(products._json(sorted(members))), "count": len(members), "source_paths": sorted(members)}
         identity["sha256"] = products._sha(products._json({name: value for name, value in identity.items() if name != "source_paths"}))
         result[key] = identity
+    aggregate = {"schema": products.AGGREGATE_SCHEMA, "families": {key: result[key]["sha256"] for key in sorted(result)}}
+    aggregate["sha256"] = products._sha(products._json(aggregate))
+    result[None] = {**aggregate, "source_paths": sorted(union)}
     return result
 
 
@@ -642,6 +708,9 @@ class BrowserIdentityLoopTests(unittest.TestCase):
         self.assertNotIn("requirements-custom.txt", actual["neighbor"]["source_paths"])
         self.assertIn("src/sources/external/absent.pdf", actual["neighbor"]["source_paths"])
         self.assertNotIn("src/sources/external/absent.pdf", a)
+        # Nothing outside a family's own scope enters the aggregate.
+        self.assertNotIn("guidance/policy.md", actual[None]["source_paths"])
+        self.assertNotIn("scripts/requirements-tool.txt", actual[None]["source_paths"])
 
     def test_literal_scope_is_not_a_descendant_or_an_exact_file_prefix(self):
         found = {"scope", "scope/child", "scope/drop", "scope/drop/child", "scope/drop-neighbor/child",
@@ -707,8 +776,8 @@ class BrowserCandidateReuseTests(unittest.TestCase):
         self.index_path = self.cache / products.CANDIDATE_INDEX
 
     def new_input_epoch(self, *, changed_bytes=False):
-        path = self.root / ("src/a/input.txt" if changed_bytes else "scripts/generator.py")
-        path.write_text("new source bytes\n" if changed_bytes else "changed generator; same output bytes\n")
+        path = self.root / ("src/a/input.txt" if changed_bytes else "scripts/_helper.py")
+        path.write_text("new source bytes\n" if changed_bytes else "# changed generator; same output bytes\n")
         self.generated.clear()
         self.manifest = products.record(self.root, cache_root=self.cache)
         self.generated.clear()

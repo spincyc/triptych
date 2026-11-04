@@ -66,7 +66,7 @@
         "source-reader"
       ],
       "stage": "draft",
-      "usage": "browser-products {key,check,build,record,prune} [--root DIR] [--cache-root DIR] [--json]"
+      "usage": "browser-products {key,check,build,record,prune,audit} [--root DIR] [--cache-root DIR] [--json] [--family ID]"
     },
     "bullarium": {
       "idempotent": true,

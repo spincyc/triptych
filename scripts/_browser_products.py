@@ -25,17 +25,17 @@ import tempfile
 from typing import Any, Iterator
 
 import _source_projection_receipt as receipt
+from _browser_product_inputs import ClosureError, family_code
 
 MANIFEST_RELATIVE = "release/browser-products.json"
 SCHEMA = "triptych-browser-products/v1"
 INPUT_SCHEMA = "triptych-browser-product-inputs/v1"
+AGGREGATE_SCHEMA = "triptych-browser-product-aggregate-inputs/v1"
 POLICY_SCHEMA = "triptych-browser-publication-policy/v1"
 PROOF = "two-independent-cold-builds-byte-parity"
 CANDIDATE_INDEX = ".browser-products-candidates-v1.json"
 CANDIDATE_SCHEMA = "triptych-browser-product-candidates/v1"
 DELIVERIES = frozenset({"browser-data"})
-INPUT_TREES = ("src", "scripts", "tools", "guidance", "workflows", "web", "release/publications", "release/rights", "release/papal-documents")
-INPUT_FILES = ("AGENTS.md", "LICENSE", "THIRD_PARTY.md", "Makefile", "tmt.json", ".gitattributes", ".gitignore", "requirements-tools.txt", "requirements-public-alpha.txt", "requirements-tui.txt", "release/public-alpha.json", "release/papal-documents.json")
 EXCLUDED = frozenset({MANIFEST_RELATIVE, *receipt.MECHANICAL_RECEIPTS})
 POLICY_FIELDS = {"schema_version", "release_id", "provider", "providers", "authorizations"}
 AUTH_FIELDS = {"basis", "authority_role", "authority_scope", "rights_record", "rights_record_sha256", "site_sources", "approved_on", "duration", "effective_at", "expires_at", "timezone", "conditions"}
@@ -148,7 +148,7 @@ def _regular_bytecode(name):
             and path.suffix in {".pyc", ".pyo"})
 
 
-def _paths(root: Path, trees=INPUT_TREES, files=INPUT_FILES, excludes=()) -> set[str]:
+def _paths(root: Path, trees, files, excludes=()) -> set[str]:
     """Physical membership includes ignored/new canonical inputs, without Git HEAD."""
     result = set()
 
@@ -261,52 +261,64 @@ def _component(name: str) -> str:
     return "content"
 
 
-def _input_spec(recipe=None):
-    if recipe is None:
-        return INPUT_TREES, INPUT_FILES, ()
-    trees = tuple(dict.fromkeys((*recipe["input_trees"], "scripts", "tools", "guidance", "release/publications", "release/rights")))
-    files = tuple(dict.fromkeys((*recipe["input_files"], *INPUT_FILES)))
+def _input_spec(recipe, code=()):
+    """A family reads its declared data, its code closure and the harness.
+
+    `code` is the family's computed closure (`_browser_product_inputs`). No
+    tree or file outside these, other than root dependency locks, can stale it.
+    """
+    trees = tuple(dict.fromkeys(recipe["input_trees"]))
+    files = tuple(dict.fromkeys((*recipe["input_files"], *sorted(code))))
     return trees, files, tuple(recipe["exclude_paths"])
+
+
+def _aggregate(families: dict) -> dict:
+    """The descriptor-wide commitment is a function of the family commitments.
+
+    A change outside every family's key therefore stales nothing.
+    """
+    value = {"schema": AGGREGATE_SCHEMA,
+             "families": {key: families[key]["sha256"] for key in sorted(families)}}
+    value["sha256"] = _sha(_json(value))
+    return value
 
 
 def _identity_batch(root: Path, recipes=None) -> dict:
     """One fresh content-hash pass for overlapping family closures per phase."""
     root = _safe_directory(root)
     recipes = _recipes() if recipes is None else recipes
-    specs = {None: _input_spec(), **{recipe["id"]: _input_spec(recipe) for recipe in recipes}}
-    selectors = {
-        key: (tuple(scope + "/" for scope in scopes), frozenset(exact),
-              frozenset(excludes), tuple(excluded + "/" for excluded in excludes))
-        for key, (scopes, exact, excludes) in specs.items()
-    }
-    trees = sorted({tree for spec in specs.values() for tree in spec[0]})
-    trees = tuple(tree for tree in trees if not any(tree.startswith(parent + "/") for parent in trees if parent != tree))
-    files = tuple(sorted({name for spec in specs.values() for name in spec[1]}))
     def discover():
+        # The code closure is recomputed with membership, so an import added
+        # while hashing is caught by the second discovery like any new file.
+        try:
+            code = family_code(root, recipes)
+        except (ClosureError, OSError) as error:
+            raise ProductError(f"cannot compute browser product code closure: {error}") from error
+        specs = {recipe["id"]: _input_spec(recipe, code[recipe["id"]]) for recipe in recipes}
+        trees = sorted({tree for spec in specs.values() for tree in spec[0]})
+        trees = tuple(tree for tree in trees if not any(tree.startswith(parent + "/") for parent in trees if parent != tree))
+        files = tuple(sorted({name for spec in specs.values() for name in spec[1]}))
         found = _paths(root, trees, files)
         selected = {}
-        for key, (prefixes, exact, excludes, excluded_prefixes) in selectors.items():
+        for key, (scopes, exact, excludes) in specs.items():
+            prefixes, excluded_prefixes = tuple(scope + "/" for scope in scopes), tuple(excluded + "/" for excluded in excludes)
             selected[key] = {name for name in found
                              if (name in exact or name.startswith(prefixes)
                                  or "/" not in name and (name.startswith("requirements") or name.endswith((".lock", "-lock.json"))))
                              and name not in excludes and not name.startswith(excluded_prefixes)}
-        selected[None] = set().union(*selected.values())
         return selected
     memberships = discover()
-    # The aggregate commits every canonical recipe scope, including paths
-    # outside conservative roots, with one filesystem walk per phase.
-    names = memberships[None]
+    names = set().union(*memberships.values())
     try:
         external = receipt._external_identities(root, names)
     except (receipt.ReceiptError, OSError, ValueError) as error:
         raise ProductError(f"invalid external source identities: {error}") from error
-    memberships[None].update(external)
+    names.update(external)
     for key in memberships:
-        if key is not None:
-            memberships[key].update(name for name, value in external.items() if value["manifest"] in memberships[key] or name in memberships[key])
-    categories = {name: _component(name) for name in memberships[None]}
+        memberships[key].update(name for name, value in external.items() if value["manifest"] in memberships[key] or name in memberships[key])
+    categories = {name: _component(name) for name in names}
     values = {}
-    for name in sorted(memberships[None]):
+    for name in sorted(names):
         if name in external:
             value = {"path": name, "external": external[name]}
         else:
@@ -321,10 +333,8 @@ def _identity_batch(root: Path, recipes=None) -> dict:
             value = {"path": name, "sha256": _sha(body), "bytes": len(body)}
         values[name] = value
     after = discover()
-    after[None].update(external)
     for key in after:
-        if key is not None:
-            after[key].update(name for name, value in external.items() if value["manifest"] in after[key] or name in after[key])
+        after[key].update(name for name, value in external.items() if value["manifest"] in after[key] or name in after[key])
     if memberships != after:
         raise ProductError("canonical input membership changed while hashing")
     result = {}
@@ -336,6 +346,9 @@ def _identity_batch(root: Path, recipes=None) -> dict:
                     "membership": _sha(_json(sorted(members))), "count": len(members), "source_paths": sorted(members)}
         identity["sha256"] = _sha(_json({name: value for name, value in identity.items() if name != "source_paths"}))
         result[key] = identity
+    # `source_paths` of the aggregate is the union of family keys: what a held
+    # publication context binds as browser-product canonical inputs.
+    result[None] = {**_aggregate(result), "source_paths": sorted(names)}
     return result
 
 
@@ -357,6 +370,16 @@ def _commitment(identity):
     # hash. Repeating tens of thousands of path strings in each family makes a
     # mechanical descriptor approach the size of the disposable products.
     return {name: value for name, value in identity.items() if name != "source_paths"}
+
+
+def _validate_aggregate(value):
+    _keys(value, {"schema", "families", "sha256"}, "aggregate input identity")
+    if value["schema"] != AGGREGATE_SCHEMA or not isinstance(value["families"], dict):
+        raise ProductError("unsupported browser product aggregate input identity")
+    for family in value["families"].values():
+        _digest(family)
+    if value["sha256"] != _sha(_json({key: item for key, item in value.items() if key != "sha256"})):
+        raise ProductError("invalid browser product aggregate input digest")
 
 
 def _validate_inputs(value):
@@ -402,15 +425,16 @@ def _recipes():
     return _validate_recipes(json.loads(_json(RECIPES)))
 
 
-def _validate_manifest(value):
+def _validate_manifest(value, *, current_recipes=True):
+    """Validate a descriptor; `current_recipes=False` only for `record` retention."""
     _keys(value, {"schema", "inputs", "recipes", "products", "proof", "editorial_approval"}, "browser product descriptor")
     if value["schema"] != SCHEMA or value["proof"] != PROOF or value["editorial_approval"] is not False:
         raise ProductError("unsupported browser product proof/schema")
-    _validate_inputs(value["inputs"])
+    _validate_aggregate(value["inputs"])
     if not isinstance(value["recipes"], list) or not value["recipes"] or not isinstance(value["products"], list) or not value["products"]:
         raise ProductError("browser product descriptor needs recipes and products")
     _validate_recipes(value["recipes"])
-    if value["recipes"] != _recipes():
+    if current_recipes and value["recipes"] != _recipes():
         raise ProductError("browser product recipes changed; run `browser-products record` after reviewing the change")
     seen = set()
     ids = set()
@@ -446,6 +470,8 @@ def _validate_manifest(value):
     recipe_ids = {recipe["id"] for recipe in value["recipes"]}
     if ids != recipe_ids:
         raise ProductError("browser product family membership differs from recipes")
+    if value["inputs"] != _aggregate({product["id"]: product["inputs"] for product in value["products"]}):
+        raise ProductError("browser product aggregate inputs differ from its family inputs")
     return value
 
 
@@ -546,8 +572,9 @@ def _compare(actual, expected):
 
 def _current(root, manifest):
     current = _identity_batch(root)
-    if manifest["inputs"] != _commitment(current[None]) or any(product["inputs"] != _commitment(current[product["id"]]) for product in manifest["products"]):
-        raise ProductError("browser product inputs changed; review source/rights/code changes and run `browser-products record` explicitly")
+    stale = sorted(product["id"] for product in manifest["products"] if product["inputs"] != _commitment(current[product["id"]]))
+    if stale or manifest["inputs"] != _commitment(current[None]):
+        raise ProductError(f"browser product inputs changed ({', '.join(stale) or 'aggregate'}); review source/rights/code changes and run `browser-products record` explicitly")
     return current
 
 
@@ -942,12 +969,17 @@ def record(root: Path, *, cache_root=None) -> dict:
     # complete validated cache. A cache miss always receives two new cold builds.
     retained = {}
     try:
-        previous = load_manifest(root)
+        # Another family's recipe change does not invalidate this family's
+        # proof: a family is retained only when its own recipe, and so its
+        # content-addressed key, is unchanged.
+        previous = _validate_manifest(_decode(_read(root, MANIFEST_RELATIVE)), current_recipes=False)
     except ProductError:
         previous = None
     if previous:
+        current = {recipe["id"]: recipe for recipe in recipes}
         for product in previous["products"]:
-            if product["inputs"] == family_inputs.get(product["id"]):
+            if (product["inputs"] == family_inputs.get(product["id"])
+                    and next(item for item in previous["recipes"] if item["id"] == product["id"]) == current.get(product["id"])):
                 entry = cache_directory(root, cache_root) / product["key"]
                 if entry.exists() or entry.is_symlink():
                     _compare(_inventory(_cache_data(root, product, cache_root)), product["files"])
@@ -1070,20 +1102,50 @@ def verified_products(root: Path, *, cache_root=None, product_ids=None):
             yield products
 
 
+def _audit_main(args) -> int:
+    """Report each family's reads outside its key; mutates neither cache nor descriptor."""
+    from _browser_product_inputs import audit
+    try:
+        report = audit(_safe_directory(args.root), args.families, log=None if args.json else sys.stderr)
+    except (ProductError, ClosureError, OSError) as error:
+        print(json.dumps({"status": "error", "error": str(error)}, sort_keys=True) if args.json else f"browser-products: {error}",
+              file=sys.stdout if args.json else sys.stderr)
+        return 1
+    failed = sorted(family for family, result in report.items() if not result["ok"])
+    if args.json:
+        print(json.dumps({"status": "error" if failed else "ok", "families": report}, sort_keys=True))
+    else:
+        for family, result in report.items():
+            print(f"browser-products audit: {family}: {'ok' if result['ok'] else 'FAIL'}; "
+                  f"{result['opened']} files opened, {result['probed']} probed, {result['listed']} directories listed; {result['members']} key members")
+            for field in ("outside", "listed_outside", "non_canonical", "unaudited_children", "excluded_reads", "children"):
+                for item in result[field][:40]:
+                    origin = result["where"].get(item) if isinstance(item, str) else None
+                    print(f"  {field}: {item}" + (f" <- {origin}" if origin else ""))
+                if len(result[field]) > 40:
+                    print(f"  {field}: ... {len(result[field]) - 40} more")
+    return 1 if failed else 0
+
+
 def main(argv=None, *, examples=None):
     parser = argparse.ArgumentParser(description=__doc__)
     if examples is not None:
         from _tooling import examples_live_on_the_verbs, with_examples
         examples_live_on_the_verbs(parser, "browser-products")
     sub = parser.add_subparsers(dest="verb", required=True)
-    for verb in ("check", "build", "record", "key", "prune"):
-        child = sub.add_parser(verb, help={"check": "Verify current inputs and every exact cached output, offline.", "build": "Reproduce committed products offline on an exact cache miss.", "record": "Explicitly record byte parity from two independent cold builds.", "key": "Print the exact current descriptor/cache identity without generating.", "prune": "Verify current products, then remove obsolete disposable cache keys."}[verb])
+    for verb in ("check", "build", "record", "key", "prune", "audit"):
+        child = sub.add_parser(verb, help={"check": "Verify current inputs and every exact cached output, offline.", "build": "Reproduce committed products offline on an exact cache miss.", "record": "Explicitly record byte parity from two independent cold builds.", "key": "Print the exact current descriptor/cache identity without generating.", "prune": "Verify current products, then remove obsolete disposable cache keys.", "audit": "Run producers cold under an open-audit hook; fail if one reads outside its family key."}[verb])
         if examples is not None:
             with_examples(child, examples.get(verb, ()))
         child.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
         child.add_argument("--cache-root", type=Path)
         child.add_argument("--json", action="store_true")
+        if verb == "audit":
+            child.add_argument("--family", action="append", dest="families", metavar="ID",
+                               help="Audit only this family (repeatable); default every family.")
     args = parser.parse_args(argv)
+    if args.verb == "audit":
+        return _audit_main(args)
     try:
         if args.verb == "key":
             manifest = load_manifest(args.root)

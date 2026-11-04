@@ -2,9 +2,13 @@
 
 Recipes own logical output paths. Every invocation receives an explicit empty
 staging destination; the old tracked projection and sealed caches are never
-producer inputs. Source and act-history deliberately retain broad input scopes.
-The other source-text consumers also retain the whole source library until a
-narrower controller/rights closure has been proved.
+producer inputs. A recipe declares only the data its producer reads: data
+trees and individual files outside scripts/ and tools/. Its code is never
+listed here; `_browser_product_inputs` computes each producer's code closure,
+and `tools/browser-products audit` proves that the two together cover every
+repository path the producer touches. Source and act-history deliberately
+retain broad data scopes, and the other source-text consumers the whole source
+library, until a narrower data closure has been proved.
 """
 from __future__ import annotations
 
@@ -17,11 +21,26 @@ import sys
 import tempfile
 
 from _browser_products import ProductError, _validate_recipes, assert_working_output
+from _browser_product_inputs import ADAPTERS
 
 
-_BROAD = ["src/sources", "src/gpt", "src/claude", "src/common", "web", "workflows"]
+# Neither act-history nor source-reader reads workflows/ beyond the authority
+# records below (2026-11-04 audit), so new review records stale neither.
+_BROAD = ["src/sources", "src/gpt", "src/claude", "src/common", "web"]
 _SOURCE = ["src/sources"]
+# The source library preflights and loads every publication's bindings.
+_LIBRARY = ["src/sources", "src/gpt", "src/claude"]
 _CALENDAR = ["src/sources/calendars", "src/sources/inventories"]
+# Reviewed authority records the proper text pipeline reads by fixed path.
+_LATIN_AUTHORITIES = [
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
+    "workflows/reviews/missal-reader-completion-2026-10-26/gregem-damasus-qualified-rights-adoption.json",
+]
+_EXECUTION_AUTHORITIES = [
+    "workflows/reviews/reader-completion-2026-10-26/finite-name-two-authority.json",
+    "workflows/reviews/reader-completion-2026-10-26/finite-name-two-root-adoption.json",
+    "workflows/reviews/reader-completion-2026-10-26/oration-execution-six-authority.json",
+]
 _EXCLUDE = [
     "src/sources/inventories/source-reader-projection-receipt-v1.json",
     "src/sources/inventories/act-history-projection-receipt-v1.json",
@@ -42,17 +61,22 @@ RECIPES = (
     _recipe("bibles", "bibles.json", ["tools/index-bible", "manifest", "--bible-root", "{root}/src/sources/bibles"], _SOURCE, delivery="browser-data"),
     _recipe("encyclicals", "encyclicals", ["scripts/_encyclicals.py", "--root", "{root}", "structure"],
             ["src/sources/papal-documents", "release/papal-documents"], ["release/papal-documents.json"], delivery="browser-data"),
-    _recipe("act-history", "structure/act-history", ["tools/act-history", "structure"], _BROAD, delivery="browser-data"),
+    _recipe("act-history", "structure/act-history", ["tools/act-history", "structure"], _BROAD,
+            ["guidance/liturgical-text-publication-policy.md"], delivery="browser-data"),
     _recipe("calendar", "structure/calendar", ["tools/calendar-days", "structure", "--root", "{root}/src/sources/calendars", "--first", "2020", "--last", "2120"], _CALENDAR, delivery="browser-data"),
-    _recipe("catena", "structure/catena", ["scripts/_catena.py", "--root", "{root}", "structure"], _SOURCE, delivery="browser-data"),
+    _recipe("catena", "structure/catena", ["scripts/_catena.py", "--root", "{root}", "structure"], _SOURCE,
+            ["src/web/browser/catena/catena-model.js"], delivery="browser-data"),
     _recipe("documents", "structure/documents", ["tools/document-library", "structure"],
-            ["src/gpt", "src/claude", "src/common", "web", "workflows"], delivery="browser-data"),
+            ["src/gpt", "src/claude", "src/common", "web", "workflows/fragments", "workflows/pipelines",
+             "workflows/schema", "release/publications"], delivery="browser-data"),
     _recipe("ordinary", "structure/ordinary", ["tools/mass-ordinary", "structure", "--root", "{root}/src/sources"], _SOURCE, delivery="browser-data"),
     _recipe("paragraphs", "structure/paragraphs", ["scripts/_catena.py", "--root", "{root}", "paragraphs"], _SOURCE, delivery="browser-data"),
-    _recipe("propers", "structure/propers", ["tools/mass-propers", "structure", "--root", "{root}/src/sources/calendars"], _SOURCE, delivery="browser-data"),
+    _recipe("propers", "structure/propers", ["tools/mass-propers", "structure", "--root", "{root}/src/sources/calendars"], _LIBRARY,
+            [*_LATIN_AUTHORITIES, *_EXECUTION_AUTHORITIES], delivery="browser-data"),
     _recipe("readings", "structure/readings", ["tools/reading-plan", "structure", "--root", "{root}/src/sources/reading-plans"], _SOURCE, delivery="browser-data"),
     _recipe("rubrics", "structure/rubrics", ["tools/calendar-rubrics", "structure", "--root", "{root}/src/sources/calendars"], _CALENDAR, delivery="browser-data"),
-    _recipe("sources", "structure/sources", ["tools/source-reader", "structure", "--strict"], _BROAD, delivery="browser-data"),
+    _recipe("sources", "structure/sources", ["tools/source-reader", "structure", "--strict"], _BROAD,
+            _LATIN_AUTHORITIES, delivery="browser-data"),
 )
 
 
@@ -130,13 +154,15 @@ def _run(root: Path, out: Path, recipe: dict, environment: dict) -> None:
         "runpy.run_path(tool_arguments[0], run_name='__main__')\n"
     )
     command = [sys.executable, "-B", "-c", program, str(root), *arguments]
-    if recipe["id"] == "act-history":
+    if recipe["id"] in ADAPTERS:
         # The owning replay supplies fresh isolated source parsers without
         # consulting the former installed projection or a receipt baseline.
+        # The adapter module is part of the family's code closure.
+        adapter = Path(ADAPTERS[recipe["id"]])
         program = _COLD_INPUT_GUARD + "\n" + (
             "from pathlib import Path; import sys; "
-            "sys.path.insert(0,str(Path(sys.argv[1])/'scripts')); "
-            "from _act_history_projection_receipt import _replay; "
+            f"sys.path.insert(0,str(Path(sys.argv[1])/{adapter.parent.as_posix()!r})); "
+            f"from {adapter.stem} import _replay; "
             "_replay(Path(sys.argv[1]),Path(sys.argv[2]))"
         )
         command = [sys.executable, "-B", "-c", program, str(root), str(out)]
@@ -149,13 +175,15 @@ def _run(root: Path, out: Path, recipe: dict, environment: dict) -> None:
         raise RecipeError(f"{recipe['id']} producer exited {finished.returncode}: {detail[-3000:]}")
 
 
-def generate(root: Path, out: Path, product_ids=None) -> dict:
+def generate(root: Path, out: Path, product_ids=None, *, environment=None) -> dict:
     """Derive selected families offline; omitted families never enter staging.
 
     Cross-layer checks consume product dependencies only after generation.
     None of these structure writers needs another browser family to exist.
     Source parsers may share newly populated process caches, but inherited
     stat-keyed disk caches and stale Python bytecode cannot seed a cold build.
+    `environment` adds variables for an observer such as the input audit; it
+    cannot re-enable a cache or bytecode this function disables.
     """
     _validate_recipes(list(RECIPES))
     root, out = Path(root).resolve(), Path(out).absolute()
@@ -176,7 +204,7 @@ def generate(root: Path, out: Path, product_ids=None) -> dict:
     scratch.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="cold-", dir=scratch) as state:
         environment = {
-            **os.environ, "PYTHONDONTWRITEBYTECODE": "1", "PYTHONHASHSEED": "0",
+            **os.environ, **(environment or {}), "PYTHONDONTWRITEBYTECODE": "1", "PYTHONHASHSEED": "0",
             "PYTHONPYCACHEPREFIX": str(Path(state) / ("python-" + secrets.token_hex(12))),
             "TRIPTYCH_CORPUS_CACHE": "0", "TRIPTYCH_YAML_CACHE": "0",
             "TRIPTYCH_CONTAINMENT_CACHE": "0",
