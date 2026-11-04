@@ -39,7 +39,11 @@ Template language (line oriented; everything else is copied verbatim):
 ``%@ option NAME``      the fragment ``<type>/<NAME>/<value>.tex`` chosen by the
                         leaf (or the type's default), expanded recursively
 ``%% ...``              a template comment, never copied
-``@{field}``            the resolved value of a declared metadata field
+``@{field}``            the resolved value of a declared metadata field, of
+                        a declared option (its chosen value), or of the
+                        built-in ``document`` (the leaf's TeX-root path, for a
+                        path that must sit inside a macro body, such as
+                        ``\\input{@{document}/generation-metadata}%``)
 
 A region entry that looks like a leaf-relative path (no backslash, braces or
 whitespace) becomes ``\\input{<document>/<entry>}``; any other entry is raw TeX
@@ -69,6 +73,8 @@ FIELD_REFERENCE = re.compile(r"@\{([a-z0-9]+(?:-[a-z0-9]+)*)\}")
 DIRECTIVE = re.compile(r"%@\s*(region|slot|input\??|option)\s+(\S+)\s*\Z")
 PATH_ENTRY = re.compile(r"[A-Za-z0-9_][A-Za-z0-9_./-]*\Z")
 OUTPUT_ROLES = ("canonical", "synthesis", "homily")
+# A reference every template may make without declaring it.
+BUILTIN_FIELDS = ("document",)
 
 
 class DocumentTypeError(ValueError):
@@ -178,6 +184,8 @@ def load_type(path: Path) -> DocumentType:
         declared = [*fields, *regions, *options]
         if len(declared) != len(set(declared)) or not all(NAME.match(item) for item in declared):
             raise DocumentTypeError(f"{at}: field, region and option names must be distinct lower-case words")
+        if set(declared) & set(BUILTIN_FIELDS):
+            raise DocumentTypeError(f"{at}: {sorted(set(declared) & set(BUILTIN_FIELDS))} is a built-in reference")
         editions[name] = Edition(name, role, template, entrypoint, fields, regions, options)
     found = DocumentType(identifier, path, description.strip(), kinds, editions)
     for edition in editions.values():
@@ -447,6 +455,12 @@ def _expand(decl: Declaration, edition: Edition, template: Path, projections: di
 
 
 def _field(decl: Declaration, edition: Edition, name: str) -> str:
+    if name == "document":
+        return decl.document
+    if name in edition.options:
+        # The chosen value, already one of the type's own fragment names, so a
+        # template may build a path from it (``shared/@{form}-ceremony``).
+        return _resolved(decl, edition, name, "option")
     if name not in edition.fields:
         raise DocumentTypeError(f"{edition.template}: field {name!r} is not declared by its edition")
     return _resolved(decl, edition, name, "field")

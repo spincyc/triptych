@@ -153,6 +153,26 @@ apparatus = ["sections/90-c"]
         (self.leaf / "publication.toml").write_text(text)
         self.assertIn("\\fbox{x}", self.render())
 
+    def test_a_template_may_name_the_leaf_path_and_a_chosen_option(self):
+        self.declare()
+        kind = self.root / types.TYPES_DIR / "fixture-v1"
+        (kind / "main.tex").write_text(TEMPLATE.replace(
+            "\\begin{document}\n",
+            "\\newcommand{\\Meta}{\\input{@{document}/generation-metadata}%}\n"
+            "\\input{shared/@{closing}-sheet}\n\\begin{document}\n"))
+        text = self.render()
+        self.assertIn("\\newcommand{\\Meta}{\\input{fixture/leaf/generation-metadata}%}", text)
+        self.assertIn("\\input{shared/plain-sheet}", text)
+
+    def test_a_type_may_not_declare_a_built_in_reference(self):
+        kind = self.root / types.TYPES_DIR / "fixture-v1"
+        (kind / "type.toml").write_text(TYPE.replace(
+            'optional_fields = { subtitle = "" }',
+            'optional_fields = { subtitle = "", document = "" }', 1))
+        with self.assertRaises(types.DocumentTypeError) as caught:
+            types.discover_types(self.root)
+        self.assertIn("built-in", str(caught.exception))
+
     def test_refusals(self):
         cases = {
             "unknown field": "\n[document.homily]\npdftitle = 'x'\n",
