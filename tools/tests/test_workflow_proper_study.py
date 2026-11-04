@@ -751,19 +751,27 @@ class PublicationTests(unittest.TestCase):
             record.write_text(json.dumps({"schema_version": 1, "id": output,
                 "catalog": self.catalog, "status": "alpha", "authorization": "standing"}))
             lines.append(f"[PDF](../pdf/gpt/{output}.pdf)")
-        for folder in ("web", "build/web"):
-            web = self.root / folder / "gpt" / f"{TLM}.md"
-            web.parent.mkdir(parents=True)
-            web.write_text("# Canonical web\n")
+        # No web edition is tracked: the gate converts current sources afresh,
+        # which this fixture's converter double reproduces byte for byte.
+        web = self.root / "build/web/gpt" / f"{TLM}.md"
+        web.parent.mkdir(parents=True)
+        web.write_text("# Canonical web\n")
+        self.fresh_conversion = "# Canonical web\n"
         study.snapshot(self.root, "gpt", TLM, web=True)
         lines.append(f"[Read](../web/gpt/{TLM}.html)")
         catalog = self.root / self.catalog
         catalog.parent.mkdir()
         catalog.write_text(f"<!-- triptych-publication-id: {TLM} -->\n| " + " · ".join(lines) + " |\n")
 
+    def convert(self, root, *arguments):
+        if "tools/web-edition" in str(arguments[1]) and "--output" in arguments:
+            out = Path(arguments[arguments.index("--output") + 1]) / "gpt" / f"{arguments[-1]}.md"
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(self.fresh_conversion)
+
     def check(self):
         with patch.object(study, "scope", return_value=self.catalog), \
-             patch.object(study, "artifacts"), patch.object(study, "run"):
+             patch.object(study, "artifacts"), patch.object(study, "run", side_effect=self.convert):
             study.publication(self.root, "gpt", TLM)
 
     def test_three_installed_and_reviewed_outputs_pass(self):
@@ -821,14 +829,9 @@ class PublicationTests(unittest.TestCase):
         self.catalog_row(header, ["54", "**Sunday**", self.gpt_links(False), claude])
         self.check()
 
-    def test_changed_web_or_a_second_web_owner_fails(self):
-        path = self.root / "web/gpt" / f"{TLM}.md"
-        path.write_text("unreviewed installed web")
-        with self.assertRaisesRegex(ValueError, "installed web"):
-            self.check()
-        shutil.copy(self.root / "build/web/gpt" / f"{TLM}.md", path)
-        path.with_name(path.stem + "-homily.md").write_text("second authority")
-        with self.assertRaisesRegex(ValueError, "separate web prose"):
+    def test_a_conversion_that_moved_since_review_fails(self):
+        self.fresh_conversion = "# Canonical web, changed since review\n"
+        with self.assertRaisesRegex(ValueError, "not what current sources convert to"):
             self.check()
 
 

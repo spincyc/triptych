@@ -37,7 +37,8 @@ class IsolatedRecipeTests(unittest.TestCase):
         for name in ("tools/tpt", "tools/web-edition", "tools/pdf-review", "tmt.json",
                      "scripts/_tooling.py", "scripts/_corpus.py", "scripts/_workflow.py", "scripts/_document_schema.py",
                      "scripts/_proper_study.py", "scripts/_proper_components.py", "scripts/_markdown_render.py",
-                     "scripts/_edition_revision.py", "scripts/_document_types.py", "scripts/web-shim.tex"):
+                     "scripts/_edition_revision.py", "scripts/_document_types.py", "scripts/web-shim.tex",
+                     "scripts/_web_edition_figures.py"):
             target = self.root / name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(ROOT / name, target)
