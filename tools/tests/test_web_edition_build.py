@@ -89,6 +89,17 @@ class ReaderUniverseTests(unittest.TestCase):
                 provider = path.relative_to(ROOT / "src").parts[0]
                 self.assertNotIn(f"publication:{provider}/{declaration['document']}", ids)
 
+    def test_curriculum_readers_take_their_kind_from_the_owning_path(self):
+        # Manifests state no kind once the schema derives it from the path; a
+        # curriculum leaf read as kind-less would reach the generic converter,
+        # which refuses the course's TeX program.
+        rows = [row for row in DRIVER.reader_outputs()
+                if row["canonical"].startswith("curriculums/")]
+        self.assertTrue(rows)
+        for row in rows:
+            self.assertTrue(row["kind"].startswith("curriculum-"), row["id"])
+            self.assertTrue(DRIVER.curriculum_adapter().applies(row["kind"]), row["id"])
+
     def test_no_copy_of_a_web_edition_is_tracked(self):
         import subprocess
         tracked = subprocess.run(["git", "ls-files", "--", "web"], cwd=ROOT, check=True,

@@ -3727,7 +3727,12 @@ def edition_selection(provider: str, entrypoint: Path, edition: str) -> dict:
 
 
 def publication_outputs() -> list[dict]:
-    """Every declared publication output with its leaf's web declaration."""
+    """Every declared publication output with its leaf's web declaration.
+
+    A leaf's kind is the one the schema derives from its owning path; the
+    manifest states it only where the registry cannot.
+    """
+    from _document_schema import derived_kind_and_outputs
     from _print_document import recipes
     rows = []
     for recipe in recipes(ROOT, family="publication"):
@@ -3736,8 +3741,9 @@ def publication_outputs() -> list[dict]:
         release_path = ROOT / "release/publications" / recipe["provider"] / f"{recipe['document']}.json"
         release = json.loads(release_path.read_text(encoding="utf-8")) if release_path.is_file() else {}
         manifest = tomllib.loads((leaf / "publication.toml").read_text(encoding="utf-8"))
+        kind, _ = derived_kind_and_outputs(ROOT, leaf, manifest)
         rows.append({**recipe, "declaration": declaration, "release_status": release.get("status"),
-                     "kind": manifest.get("kind", "")})
+                     "kind": kind})
     return rows
 
 
