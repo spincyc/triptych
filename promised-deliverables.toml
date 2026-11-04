@@ -384,7 +384,7 @@ state = "complete"
   id = "reviewed-publication-artifacts"
   criterion = "The expansive study, concise study and homily build, pass the owning checks and visual review, and are installed with exact reviewed bytes; the canonical web edition, catalogue, source projections and scoped publication records are current."
   status = "pass"
-  evidence = ["PROJECT-WORK.md", "workflows/reviews/gpt-1962-66-production-2026-11-02/RECORD.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/artifacts.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/web-artifact.json", "web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.md"]
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/gpt-1962-66-production-2026-11-02/RECORD.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/artifacts.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/web-artifact.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/web-edition.toml"]
 
   [[deliverables.requirements]]
   id = "catalogue-density-headers-and-history"
@@ -1447,7 +1447,7 @@ state = "complete"
   id = "gpt-f01-full-material-workflow"
   criterion = "A fresh proper-study run reaches ACCEPTED with the complete appointed Latin and independently sourced historical English required by the 1962 profile, verified full source material, three independently reviewed documents and canonical web edition installed and cataloged, and native run evidence archived; locator-only commentary does not satisfy this requirement."
   status = "pass"
-  evidence = ["workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/095fe00a9fe8cfee/terminal-status.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/propers/verified.md", "web/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.md"]
+  evidence = ["workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/095fe00a9fe8cfee/terminal-status.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/propers/verified.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/web-edition.toml"]
 
   [[deliverables.requirements]]
   id = "gpt-f01-validation-and-main"
@@ -1480,7 +1480,7 @@ state = "complete"
   id = "claude-f01-run-accepted"
   criterion = "A proper-study v12 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king, date 2026-10-25, audience adult parish assembly, reaches ACCEPTED with every review a fresh worker; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes, the owning catalog row and release records are written, and the owning leaf archives the run evidence."
   status = "pass"
-  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/terminal-status.json", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.json", "web/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.md"]
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/terminal-status.json", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.json", "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/web-edition.toml"]
   check = "contains"
   path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/terminal-status.json"
   needle = "\"disposition\": \"ACCEPTED\""
@@ -1538,7 +1538,7 @@ state = "complete"
   id = "claude-pc-s55-revision-run-accepted"
   criterion = "A proper-study version-12 run for provider claude, identity liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a, date 2026-10-18, audience adult parish assembly, seeded with the research handoff, reaches ACCEPTED with every review a fresh worker; the revised PDFs and web edition are installed with exact reviewed bytes and the run is archived in the leaf."
   status = "pass"
-  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/821c824684b0c7a7/record.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/821c824684b0c7a7/terminal-status.json", "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md"]
+  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/821c824684b0c7a7/record.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/821c824684b0c7a7/terminal-status.json", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/web-edition.toml"]
   check = "contains"
   path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/821c824684b0c7a7/terminal-status.json"
   needle = "\"disposition\": \"ACCEPTED\""
@@ -1598,7 +1598,7 @@ state = "complete"
   id = "claude-flt-production"
   criterion = "All four PDFs are rebuilt with settled references and every page is inspected. Faithful web editions are generated and reviewed. Research records, source bindings, inventories, the catalogue and release records are current. GPT publication files are unchanged."
   status = "pass"
-  evidence = ["src/claude/articles/faith/four-last-things-shared/rewrite-review.md", "web/claude/articles/faith/four-last-things-01-death.md", "web/claude/articles/faith/four-last-things-02-judgment.md", "web/claude/articles/faith/four-last-things-03-hell.md", "web/claude/articles/faith/four-last-things-04-heaven.md", "library/faith.md", "release/public-alpha.json"]
+  evidence = ["src/claude/articles/faith/four-last-things-shared/rewrite-review.md", "src/claude/articles/faith/four-last-things-01-death/web-edition.toml", "src/claude/articles/faith/four-last-things-02-judgment/web-edition.toml", "src/claude/articles/faith/four-last-things-03-hell/web-edition.toml", "src/claude/articles/faith/four-last-things-04-heaven/web-edition.toml", "library/faith.md", "release/public-alpha.json"]
   check = "contains"
   path = "src/claude/articles/faith/four-last-things-shared/rewrite-review.md"
   needle = "## Accepted artifacts"
@@ -1631,7 +1631,7 @@ state = "complete"
   id = "claude-pc-s55-run-accepted"
   criterion = "A proper-study v11 run for provider claude, identity liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a, date 2026-10-18, audience adult parish assembly, reaches ACCEPTED with every review a fresh worker; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes, the owning catalog row and release records are written, and the owning leaf archives the run evidence."
   status = "pass"
-  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/4d16b5e19d25dad9/record.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/4d16b5e19d25dad9/terminal-status.json", "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.json", "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md"]
+  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/4d16b5e19d25dad9/record.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/4d16b5e19d25dad9/terminal-status.json", "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.json", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/web-edition.toml"]
   check = "contains"
   path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/4d16b5e19d25dad9/terminal-status.json"
   needle = "\"disposition\": \"ACCEPTED\""
@@ -1689,7 +1689,7 @@ state = "complete"
   id = "claude-61-run-accepted"
   criterion = "A proper-study v11 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost, date 2026-10-18, audience adult parish assembly, reaches ACCEPTED with every review a fresh worker; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes, the owning catalog row and release records are written, and the owning leaf archives the run evidence."
   status = "pass"
-  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/evaluations/proper-study-results/a8bcc37ea3420a07/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/evaluations/proper-study-results/a8bcc37ea3420a07/terminal-status.json", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.json", "web/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md"]
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/evaluations/proper-study-results/a8bcc37ea3420a07/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/evaluations/proper-study-results/a8bcc37ea3420a07/terminal-status.json", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.json", "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/web-edition.toml"]
   check = "contains"
   path = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/evaluations/proper-study-results/a8bcc37ea3420a07/terminal-status.json"
   needle = "\"disposition\": \"ACCEPTED\""
@@ -1993,7 +1993,7 @@ state = "complete"
   id = "claude-pc-s54-run-accepted"
   criterion = "A proper-study v9 run for provider claude, identity liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a, date 2026-10-11, audience adult parish assembly, reaches ACCEPTED with every review a fresh worker; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes, the owning catalog row and release records are written, and the owning leaf archives the run evidence."
   status = "pass"
-  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/0b0f756d95e3ee20/record.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/0b0f756d95e3ee20/terminal-status.json", "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.json", "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.md"]
+  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/0b0f756d95e3ee20/record.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/0b0f756d95e3ee20/terminal-status.json", "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.json", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/web-edition.toml"]
   check = "contains"
   path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/0b0f756d95e3ee20/terminal-status.json"
   needle = "\"disposition\": \"ACCEPTED\""
@@ -2051,7 +2051,7 @@ state = "complete"
   id = "claude-60-run-accepted"
   criterion = "A proper-study v9 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost, date 2026-10-11, audience adult parish assembly, reaches ACCEPTED with every review a fresh worker; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes, the owning catalog row and release records are written, and the owning leaf archives the run evidence."
   status = "pass"
-  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/evaluations/proper-study-results/9c1136f1f8d1241c/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/evaluations/proper-study-results/9c1136f1f8d1241c/terminal-status.json", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.json", "web/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.md"]
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/evaluations/proper-study-results/9c1136f1f8d1241c/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/evaluations/proper-study-results/9c1136f1f8d1241c/terminal-status.json", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.json", "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/web-edition.toml"]
   check = "contains"
   path = "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/evaluations/proper-study-results/9c1136f1f8d1241c/terminal-status.json"
   needle = "\"disposition\": \"ACCEPTED\""
@@ -2137,7 +2137,7 @@ state = "complete"
   id = "gpt-pc-s54-publication"
   criterion = "The reviewed 20–50-page expansive study, 10–12-page concise study, standalone homily and canonical web edition are installed with exact artifact evidence, catalog links and separate release records. Required source and publication checks pass and coherent work is committed on the workspace branch."
   status = "pass"
-  evidence = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/artifacts.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/web-artifact.json", "workflows/reviews/gpt-pc-s54-production-2026-10-06/replacement-run-36f05d0fcf255303/results/install-publication-0000.json", "workflows/reviews/gpt-pc-s54-production-2026-10-06/replacement-run-36f05d0fcf255303/results/publication-gates-0000.json", "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.md", "library/novus-ordo-liturgy.md", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.json", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.json", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.json"]
+  evidence = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/artifacts.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/web-artifact.json", "workflows/reviews/gpt-pc-s54-production-2026-10-06/replacement-run-36f05d0fcf255303/results/install-publication-0000.json", "workflows/reviews/gpt-pc-s54-production-2026-10-06/replacement-run-36f05d0fcf255303/results/publication-gates-0000.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/web-edition.toml", "library/novus-ordo-liturgy.md", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.json", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.json", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.json"]
   check = "path_exists"
   note = "Reviewed 21/10/3-page PDFs and canonical Markdown are installed byte-identically. Native publication gates and the final complete source check pass; 34 PDF pages and thirty desktop/mobile screenshots were inspected. Coherent delivery commits use feature/propers/codex; main integration and live deployment are separate."
 
@@ -2349,7 +2349,7 @@ state = "complete"
   id = "claude-59-run-accepted"
   criterion = "A proper-study v7 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost, date 2026-10-04, audience adult parish assembly, reaches ACCEPTED with every review a fresh worker; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes, the owning catalog row and release records are written, and the owning leaf archives the run evidence."
   status = "pass"
-  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/evaluations/proper-study-results/a27462e34ec9c09a/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/evaluations/proper-study-results/a27462e34ec9c09a/terminal-status.json", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.json", "web/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md"]
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/evaluations/proper-study-results/a27462e34ec9c09a/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/evaluations/proper-study-results/a27462e34ec9c09a/terminal-status.json", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.json", "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/web-edition.toml"]
   check = "contains"
   path = "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/evaluations/proper-study-results/a27462e34ec9c09a/terminal-status.json"
   needle = "\"disposition\": \"ACCEPTED\""
@@ -2498,7 +2498,7 @@ state = "in_progress"
   needle = "7d641c0b2ecdb5ebf84a3376e37eda9a12feca7500a7cccfce40a4f5cfae84c7"
   [[deliverables.requirements]]
   id = "angelology-web-catalog-release"
-  criterion = "The reviewed web edition is installed at web/claude/theology/angelology.md, library/faith.md carries the catalog row, and release/publications/claude/theology/angelology.json exists."
+  criterion = "The reviewed web edition is declared in src/claude/theology/angelology/web-edition.toml (built from canonical TeX at site build since 2026-11-04), library/faith.md carries the catalog row, and release/publications/claude/theology/angelology.json exists."
   status = "blocked"
   evidence = ["src/claude/theology/angelology/web-edition.toml", "src/claude/theology/angelology/research/production-review.md"]
 
@@ -2563,7 +2563,7 @@ state = "complete"
   id = "pc-s53-four-artifacts"
   criterion = "The 20–50-page expansive study, 10–12-page concise study, standalone homily and canonical web edition are independently reviewed and installed with exact receipts, catalog links and separate release records."
   status = "pass"
-  evidence = ["pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.pdf", "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.pdf", "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.pdf", "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/artifacts.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/web-artifact.json", "library/novus-ordo-liturgy.md", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.json", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.json", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.json"]
+  evidence = ["pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.pdf", "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.pdf", "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.pdf", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/web-edition.toml", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/artifacts.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/web-artifact.json", "library/novus-ordo-liturgy.md", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.json", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.json", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.json"]
   check = "pdf_min_pages"
   path = "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.pdf"
   minimum = 20
@@ -2630,7 +2630,7 @@ state = "complete"
   id = "gpt-59-four-artifacts"
   criterion = "The 20–50-page expansive study, 10–12-page concise study with its required four-page opening, standalone homily, and canonical web edition are reviewed and installed; exact artifact identities, homily word count and delivery estimate, catalog links and separate release records are verified."
   status = "pass"
-  evidence = ["pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf", "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf", "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf", "web/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/artifacts.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/web-artifact.json", "library/traditional-latin-mass.md", "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.json", "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.json", "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.json"]
+  evidence = ["pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf", "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf", "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf", "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/web-edition.toml", "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/artifacts.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/web-artifact.json", "library/traditional-latin-mass.md", "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.json", "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.json", "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.json"]
   check = "pdf_min_pages"
   path = "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf"
   minimum = 20
@@ -2730,7 +2730,7 @@ state = "complete"
   id = "claude-pc-s52-run-accepted"
   criterion = "A proper-study run for provider claude, identity liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a, date 2026-09-27, audience adult parish assembly, reaches ACCEPTED with every review a fresh worker; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes and the owning leaf archives the run evidence."
   status = "pass"
-  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/record.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/terminal-status.json", "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.md", "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.json"]
+  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/record.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/terminal-status.json", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/web-edition.toml", "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.json"]
   check = "contains"
   path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/terminal-status.json"
   needle = "ACCEPTED"
@@ -2840,7 +2840,7 @@ state = "complete"
   id = "installed-editions-regenerated-and-reviewed"
   criterion = "Every installed proper web edition the defect affected is regenerated, its receipt refreshed, and an independent reviewer confirms each diff is only the restored title lines; check-web-editions-current passes and no installed PDF changed."
   status = "pass"
-  evidence = ["web/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.md", "web/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md", "web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md", "PROJECT-WORK.md"]
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/web-edition.toml", "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/web-edition.toml", "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/web-edition.toml", "PROJECT-WORK.md"]
   check = "path_exists"
 
   [[deliverables.requirements]]
@@ -3000,7 +3000,7 @@ state = "complete"
   id = "claude-run-accepted"
   criterion = "A proper-study v6 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost, date 2026-09-27, audience adult parish assembly, reaches ACCEPTED with every review a fresh worker; the reviewed PDFs and the canonical web edition are installed with exact reviewed bytes and the owning leaf archives the run evidence."
   status = "pass"
-  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/evaluations/proper-study-results/71b6f89518984232/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/evaluations/proper-study-results/71b6f89518984232/terminal-status.json", "web/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.md", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.json"]
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/evaluations/proper-study-results/71b6f89518984232/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/evaluations/proper-study-results/71b6f89518984232/terminal-status.json", "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/web-edition.toml", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.json"]
   check = "contains"
   path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/evaluations/proper-study-results/71b6f89518984232/terminal-status.json"
   needle = "ACCEPTED"
@@ -3262,7 +3262,7 @@ state = "complete"
   id = "claude-pc-run-accepted"
   criterion = "A proper-study v4 run for provider claude, identity liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a, date 2026-09-20, reaches ACCEPTED with every review a fresh worker at the declared effort; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes and the owning leaf archives the run evidence."
   status = "pass"
-  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/472e2eb20876b22a/record.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/472e2eb20876b22a/terminal-status.json", "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md", "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.json"]
+  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/472e2eb20876b22a/record.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/472e2eb20876b22a/terminal-status.json", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/web-edition.toml", "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.json"]
   check = "path_exists"
 
   [[deliverables.requirements]]
@@ -3309,7 +3309,7 @@ state = "complete"
   id = "claude-run-accepted"
   criterion = "A proper-study v3 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost, date 2026-09-20, reaches ACCEPTED with every review a fresh worker at the declared effort; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes and the owning leaf archives the run evidence."
   status = "pass"
-  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/terminal-status.json", "web/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.json"]
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/terminal-status.json", "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/web-edition.toml", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.json"]
   check = "path_exists"
 
   [[deliverables.requirements]]
@@ -3553,7 +3553,7 @@ state = "complete"
   status = "pass"
   evidence = [
     "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
-    "web/gpt/theology/mariology/ark-of-the-covenant.md",
+    "src/gpt/theology/mariology/ark-of-the-covenant/web-edition.toml",
     "library/mariology.md",
     "release/publications/gpt/theology/mariology/ark-of-the-covenant.json",
     "src/gpt/theology/mariology/ark-of-the-covenant/research/sanity-review.md",
@@ -3573,7 +3573,7 @@ state = "complete"
     "library/mariology.md",
     "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
     "pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
-    "web/gpt/theology/mariology/ark-of-the-covenant.md",
+    "src/gpt/theology/mariology/ark-of-the-covenant/web-edition.toml",
     "tools/tests/test_public_alpha.py",
   ]
 
@@ -4550,11 +4550,11 @@ state = "complete"
     "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
     "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
     "pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf",
-    "web/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.md",
-    "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.md",
-    "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.md",
-    "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.md",
-    "web/gpt/history/catholic-exorcism/01-history-and-current-practice.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost/web-edition.toml",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a/web-edition.toml",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b/web-edition.toml",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c/web-edition.toml",
+    "src/gpt/history/catholic-exorcism/01-history-and-current-practice/web-edition.toml",
   ]
 
   [[deliverables.requirements]]
@@ -4905,9 +4905,9 @@ state = "complete"
     "pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
     "pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
     "pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
-    "web/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.md",
-    "web/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.md",
-    "web/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.md",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/web-edition.toml",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/web-edition.toml",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/web-edition.toml",
   ]
 
   [[deliverables.requirements]]
@@ -4987,7 +4987,9 @@ state = "complete"
     "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.pdf",
     "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
     "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.pdf",
-    "web/gpt/liturgy/roman-rite/1962/propers/temporal",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/web-edition.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/web-edition.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/web-edition.toml",
   ]
 
   [[deliverables.requirements]]

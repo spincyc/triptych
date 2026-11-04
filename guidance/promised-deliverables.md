@@ -82,3 +82,11 @@ PDF digest. Those page counts describe the archived rendering; they do not
 measure or approve a later source/template revision. Unknown or unreceipted
 paths and unmet minima remain errors. Current print acceptance uses a selected
 export and its own inspection record.
+
+## Historical web evidence after build-time web editions
+
+Since 2026-11-04 web readers are converted from canonical sources at site
+build ([web editions](web-editions.md)) and no `web/<provider>/<leaf>.md` is
+tracked. Evidence that once named such a file, or the `web/` tree, names the
+leaf's `web-edition.toml` instead: the tracked declaration from which its
+reader is built. The requirement's original acceptance is unchanged.
