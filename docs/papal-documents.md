@@ -55,7 +55,7 @@ inventory. The index links existing outputs, so keep `current/` with
 manifest remain under `current/`. `PAPAL_OUT` changes the output root and
 `PAPAL_JOBS` bounds compilation concurrency. `make check-papal` runs catalog,
 input-hash, rights and focused tool checks. These commands generate local source
-editions; installation and deployment have their own review requirements.
+editions only; nothing they write is installed or deployed.
 
 `PAPAL_BASE_MANIFESTS` supplies named additive source selections;
 `PAPAL_CORRECTION_MANIFESTS` supplies the ordered corrections to apply.
@@ -65,57 +65,33 @@ selection. `make papal-collection` refreshes the plan and index from existing
 current outputs without starting a render; a changed plan requires matching
 rendered bytes and receipt before collection can succeed.
 
-## Retain reviewed PDFs outside the build directory
+## The historical release record
 
-`typeset-papal prepare-install` checks existing frozen receipt/manifest pairs
-against a newly resolved default source plan. It selects only exact current
-PDFs with passing source fidelity and hash-bound layout inspection of every
-page. Pending, missing, failed and rejected readers remain delivery states;
-they do not receive installed PDF links. A layout PASS retains the source's
-OCR and historical qualifications.
+`release/papal-documents.json` records the reader PDFs that were once
+installed under `pdf/papal-documents/`: each reader's source selection, render
+receipt, full-page review and the exact hash and page count of the bytes that
+were reviewed, with the delivery states of the readers that never passed.
+Installation into that tree was retired on 2026-11-04. `typeset-papal` no
+longer prepares, stages, installs or byte-checks a release, and nothing writes
+the record or the tree. Where the historical bytes are offered at all, they
+come through the exact-artifact delivery layer in
+[`guidance/sources.md`](../guidance/sources.md), which never renews their
+review.
 
-The pair inventory is a JSON object with schema
-`triptych-papal-render-batch-pairs/v1` and a `batches` array. Each entry names
-`name`, repository-relative `receipt` and `manifest` paths, and their exact
-`receipt_sha256` and `manifest_sha256` digests. Use the immutable
-`frozen-manifest.json` retained by that render, or its exact earlier frozen
-snapshot. The inventory locates evidence; it cannot override current source
-withdrawals or missing review evidence.
-
-```sh
-make papal-install-plan PAPAL_INSTALL_BATCH_PAIRS=.scratch/papal-pdfs/batch-pairs.json
-# Inspect .scratch/papal-pdfs/prepared-install.json before copying the release.
-tools/typeset-papal stage-inputs --prepared .scratch/papal-pdfs/prepared-install.json
-```
-
-Continue with the [staged snapshot delivery and installation sequence](../guidance/papal-documents.md#explicit-input-staging-for-reviewed-print-maintenance).
-That sequence requires verified archive delivery declarations before installing
-the prepared release, followed by extraction renewal and the final checks.
-Staging alone changes no installed PDF, release record or approval.
-
-`PAPAL_INSTALL_PREPARED` changes the prepared JSON path. Installation consumes
-that existing proposal and repeats the checks; it refuses a changed proposal
-or source inventory. Preparation and checking resolve the repository's default
-source inputs, including newly admitted correction and withdrawal files.
-They do not accept a source subset as a release of the whole collection.
-
-Installed readers live in `pdf/papal-documents/` with date, identity and
-language in their names. `release/papal-documents.json` binds their exact
-bytes and records the remaining delivery states. Frozen source selections,
-receipts and review records retain their original content-hash references
-through the [snapshot delivery contract](../guidance/papal-documents.md#frozen-input-snapshots-and-compact-records);
+`make check-papal-inputs` keeps the record honest without opening a PDF. It
+reconciles every recorded reader with the current source plan and the attested
+input extracts, reports current selections the record does not cover as not
+installed, and fails a recorded selection that has since been withdrawn or
+changed. Frozen source selections, receipts and review records keep their
+original content-hash references through the
+[snapshot delivery contract](../guidance/papal-documents.md#frozen-input-snapshots-and-compact-records);
 full-page Markdown reports remain tracked under `release/papal-documents/`.
-Deleting `.scratch` can remove local cached originals, whose exact bytes remain
-preserved in the registered archives. Standalone TeX and body fragments remain reproducible
-build outputs. The release record's `documents[].pdf` paths can supply
-appendices or a presentation's source-reader list without introducing an
-AI-provider publication.
 
-Checking reconciles the installed set with the current source plan and
-verifies its files and retained evidence. New selections are reported as
-uninstalled; a withdrawn or changed installed selection fails the check.
-Installation removes an obsolete owned path only when its bytes still match
-the previous release. Unexpected or unowned files are preserved for review.
+Readers now read the retained source text on the papal reader surface. A
+local PDF of one selection comes from `tools/print-document` with
+`DOCUMENT=papal:<selection>/<language>`, as `docs/printing.md` describes, and
+`make papal-pdfs` still typesets the whole current plan into `PAPAL_OUT` for
+inspection. Neither installs anything.
 
 `list --language` selects documents with a linked edition in that language.
 `show --document ID` prints the full catalog record, including its language
@@ -443,8 +419,8 @@ work on the new derivative. Its document row and the supersession row go to
 reads as a correction manifest. Earlier derivatives, selections and documents
 are kept unchanged.
 
-Admission is not installation: a volume must first pass its native-image evidence gate, and
-every page of every repaired PDF is reviewed before install.
+Admission is not publication: a volume must first pass its native-image evidence gate, and
+every page of every repaired PDF is reviewed before any reader is offered.
 
 ## Coverage
 

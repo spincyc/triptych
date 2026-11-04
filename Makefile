@@ -101,7 +101,6 @@ ARCH_OS_RELEASE ?= /etc/os-release
 
 SOURCE_ROOT := src/$(PROVIDER)
 BUILD_ROOT := build/$(PROVIDER)
-PDF_ROOT := pdf/$(PROVIDER)
 WEB_BUILD_ROOT := build/web/$(PROVIDER)
 WEB_ROOT := web/$(PROVIDER)
 # The drift gate compares every provider's tracked tree, not only $(PROVIDER).
@@ -123,7 +122,6 @@ SOURCE_METADATA_CHECKS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .sour
 BUILD_PDFS := $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 BUILD_METADATA_STAMPS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .ok,$(DOCUMENTS)))
 BUILD_METADATA_VERIFICATIONS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .verify,$(DOCUMENTS)))
-INSTALLED_PDFS := $(addprefix $(PDF_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 METADATA_CHECKER := tools/tpt check-generation-metadata
 # Every contents line and bookmark must own its heading's anchor; see the tool.
 PDF_ANCHOR_CHECKER := tools/tpt check-pdf-anchors
@@ -153,18 +151,15 @@ PRINT_DOCUMENT_TOOL := tools/tpt print-document
 PRINT_EDITION ?= main
 PRINT_OUT ?= .scratch/print-document
 # Complete-text bible editions. These are build artifacts, not publications:
-# they are generated from the tracked verse text of the source library and are
-# never installed into pdf/.
+# they are generated from the tracked verse text of the source library.
 BIBLE_TYPESET_TOOL := tools/tpt typeset-bible
 BIBLE_TYPESET_IMPL := tools/typeset-bible
 BIBLE_BUILD_ROOT := build/bibles
 # Tracks of a tracked abridged plan: one tier of the plan in one edition, set
-# from the same verse text and the same typesetter as a whole bible. Unlike a
-# whole bible these are installed, because a track carries the plan's own
-# periods, titles and notes and is a publication of this project.
+# from the same verse text and the same typesetter as a whole bible, into
+# build/ like every other local print output.
 READING_PLAN_TOOL := tools/tpt reading-plan
 READING_BUILD_ROOT := build/reading-plans
-READING_PDF_ROOT := pdf/reading-plans
 # The one tracked plan. `typeset-bible list --plan $(PLAN) --format ids` names
 # its volumes; nothing here restates how many there are or what they cover.
 PLAN ?= narrative-spine
@@ -179,6 +174,8 @@ ECCLESIASTICAL_LATIN_BUILD_PDFS := $(filter \
 	$(BUILD_ROOT)/curriculums/ecclesiastical-latin/%,$(BUILD_PDFS))
 ECCLESIASTICAL_LATIN_DOCUMENTS := $(filter \
 	curriculums/ecclesiastical-latin/%,$(DOCUMENTS))
+ECCLESIASTICAL_LATIN_METADATA_VERIFICATIONS := $(addprefix \
+	$(BUILD_ROOT)/.metadata/,$(addsuffix .verify,$(ECCLESIASTICAL_LATIN_DOCUMENTS)))
 ALTAR_SERVER_GUIDES_ROOT := $(SOURCE_ROOT)/liturgy/roman-rite/1962/reference/altar-server-guides
 ALTAR_SERVER_GUIDES_SHARED := $(shell find $(ALTAR_SERVER_GUIDES_ROOT)/shared -type f \( \
 	-name '*.tex' -o -name '*.sty' -o -name '*.cls' -o -name '*.bib' -o \
@@ -251,7 +248,7 @@ override _TRIPTYCH_PDF_JOBS_INVALID = $(strip \
 override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),,\
 	$(if $(_TRIPTYCH_PDF_JOBS_INVALID),$(error PDF_JOBS requires a positive integer),--jobs=$(PDF_JOBS)))
 
-.PHONY: all pdf _pdf review-pdfs review-all-pdfs install install-all list help clean \
+.PHONY: all pdf _pdf review-pdfs review-all-pdfs list help clean \
 	distclean check-tools check-tool-registry check-calendar-days \
 	check-calendar-masses check-act-history check-act-history-receipt \
 	check-propers-census check-propers-structure \
@@ -281,20 +278,50 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	verify-public-site verify-public-preview \
 	check-mass-ordinary check-scripture-chronology \
 	check-release-bindings refresh-release-bindings approve-release \
-	add-publication doc review-doc install-doc check check-installed \
+	add-publication doc review-doc check check-typeset _typeset-tree \
 	check-all check-tests \
 	check-browser-static check-browser-gate check-browser-harnesses \
 	check-native-print-compile \
 	check-examples recapture-examples \
-	altar-server-guides review-altar-server-guides install-altar-server-guides \
+	altar-server-guides review-altar-server-guides \
 	check-staleness measure-staleness explain-staleness rebaseline-doc \
 	bibles bible review-bible check-bibles \
-	tracks track review-track check-tracks check-plan-sources reading-structure \
+	tracks track review-track check-plan-sources reading-structure \
 	FORCE_METADATA_VERIFICATION FORCE_BIBLE_RENDER $(SOURCE_METADATA_CHECKS)
 .DELETE_ON_ERROR:
 .SECONDARY: $(BUILD_METADATA_STAMPS)
 
 all: public-site
+
+# `review-pdfs` rasters only the built PDFs whose bytes differ from the ones
+# its previous successful run rastered. It used to compare against copies
+# installed under pdf/, a tree nothing fills any more; a hash ledger beside the
+# build stamps answers the same question without keeping a second copy of any
+# PDF. The ledger is replaced only after pdf-review succeeds, so a failed or
+# interrupted review selects the same PDFs again. It records what was rastered,
+# not what a reviewer approved.
+REVIEW_PDFS_LEDGER := $(BUILD_ROOT)/.metadata/review-pdfs.sha256
+
+define _review_changed_pdfs
+@set -eu; \
+	ledger='$(REVIEW_PDFS_LEDGER)'; \
+	mkdir -p "$${ledger%/*}"; \
+	current="$$ledger.current.$$$$"; \
+	trap 'rm -f -- "$$current"' 0 1 2 15; \
+	$(if $(strip $(BUILD_PDFS)),$(SHA256) -- $(BUILD_PDFS),:) > "$$current"; \
+	if [ -f "$$ledger" ]; then \
+		changed=$$(grep -vxF -f "$$ledger" -- "$$current" | sed 's/^[0-9a-f]*  //' || :); \
+	else \
+		changed=$$(sed 's/^[0-9a-f]*  //' "$$current"); \
+	fi; \
+	if [ -z "$$changed" ]; then \
+		echo 'review-pdfs: every built PDF is byte-identical to the ones last rastered'; \
+	else \
+		$(PYTHON) $(PDF_REVIEW_TOOL) $$changed; \
+	fi; \
+	mv -f -- "$$current" "$$ledger"; \
+	trap - 0 1 2 15
+endef
 
 ifeq ($(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),)
 pdf:
@@ -302,11 +329,7 @@ pdf:
 
 review-pdfs:
 	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) pdf
-	@if [ -d '$(PDF_ROOT)' ]; then \
-		$(PYTHON) $(PDF_REVIEW_TOOL) --changed-against $(PDF_ROOT) $(BUILD_PDFS); \
-	else \
-		$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS); \
-	fi
+	$(_review_changed_pdfs)
 
 review-all-pdfs:
 	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) pdf
@@ -315,46 +338,13 @@ else
 pdf: _pdf
 
 review-pdfs: pdf
-	@if [ -d '$(PDF_ROOT)' ]; then \
-		$(PYTHON) $(PDF_REVIEW_TOOL) --changed-against $(PDF_ROOT) $(BUILD_PDFS); \
-	else \
-		$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS); \
-	fi
+	$(_review_changed_pdfs)
 
 review-all-pdfs: pdf
 	@$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS)
 endif
 
 _pdf: check-metadata $(BUILD_METADATA_VERIFICATIONS)
-
-install: check-metadata $(INSTALLED_PDFS)
-	@set -eu; \
-	for document in $(DOCUMENTS); do \
-		pdf='$(BUILD_ROOT)/'$$document.pdf; \
-		stamp='$(BUILD_ROOT)/.metadata/'$$document.ok; \
-		pdf_line=$$($(SHA256) -- "$$pdf"); \
-		pdf_hash=$${pdf_line%% *}; \
-		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
-		validator_hash=$${validator_line%% *}; \
-		expected=$$(printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s' \
-			'$(PROVIDER)' "$$document" "$$pdf_hash" "$$validator_hash"); \
-		actual=$$(cat "$$stamp"); \
-		[ "$$actual" = "$$expected" ] || { echo "Validation stamp does not match current PDF/checker: $$document" >&2; exit 1; }; \
-		cmp -s "$$pdf" "$(PDF_ROOT)/$$document.pdf" || { echo "Installed PDF differs from reviewed build: $$document"; exit 1; }; \
-	done
-
-# Every provider's installed tree, in one command.
-#
-# `install` publishes one provider because DOCUMENTS, BUILD_ROOT and PDF_ROOT
-# are all derived from PROVIDER while the makefile is read; a second provider
-# is therefore a second read of it rather than a second list of targets. The
-# gates below that read pdf/ read every provider's, so this is what they order
-# the build through.
-install-all:
-	@set -eu; \
-		for provider in $(PROVIDERS); do \
-			$(MAKE) --no-print-directory install PROVIDER="$$provider"; \
-		done
 
 list:
 	@printf '%s\n' $(DOCUMENTS)
@@ -420,15 +410,15 @@ check-pdf-review:
 	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_pdf_review.py' -v
 
 # `-v`, for the same reason `check-pdf-review` passes it: this suite skips its
-# installed-PDF assertions on a checkout that has not been built, and the skip
+# built-PDF assertions on a checkout that has not been built, and the skip
 # carries a reason naming what did not run and how to run it. Without `-v` an
 # unbuilt run prints `s` and `OK (skipped=1)` and the reason never reaches the
 # operator, which is the whole point of making the skip visible.
 check-curriculum-rights:
 	@$(PYTHON) -m unittest tools.tests.test_curriculum_liturgical_rights -v
 
-# Keep publication independent of locally installed PDFs and Poppler even on a
-# workstation that happens to have the optional print corpus installed.
+# Keep publication independent of locally built PDFs and Poppler even on a
+# workstation that happens to have the optional print corpus built.
 check-curriculum-source-rights:
 	@$(PYTHON) -m unittest -v \
 		tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests.test_hash_only_registry_is_complete_and_well_formed \
@@ -618,8 +608,8 @@ check-roman-sanctuary-artwork:
 # 1,248 lines of provenance --- and there is no machine-readable manifest to
 # check there; none is invented here.
 #
-# In `check` and not `check-installed`: the manifests and every asset they
-# name are tracked under `src/`, and nothing here opens `pdf/` or `build/`.
+# In `check` and not `check-typeset`: the manifests and every asset they
+# name are tracked under `src/`, and nothing here opens `build/`.
 # `artwork-library check-pdf --strict-review-triggers` is the half that does
 # read a built PDF and it is deliberately absent. Measured on 2026-09-05
 # against the installed altar-server edition of the sanctuary dictionary it
@@ -662,19 +652,15 @@ check-curriculum-structure: \
 
 help:
 	@printf '%s\n' \
-		'Every build, install, review, list, and metadata target honors PROVIDER=<p> (default gpt; claude is the peer branch)' \
+		'Every build, review, list, and metadata target honors PROVIDER=<p> (default gpt; claude is the peer branch)' \
 		'make          Validate sources and build the public website without PDFs' \
 		'make pdf      Explicitly build every document with at most $(PDF_JOBS) parallel jobs, or the current Make jobserver' \
-		'make review-pdfs  Build with at most $(PDF_JOBS) jobs, then raster changed PDFs' \
+		'make review-pdfs  Build with at most $(PDF_JOBS) jobs, then raster PDFs changed since the last review-pdfs' \
 		'make review-all-pdfs  Build with at most $(PDF_JOBS) jobs, then raster every PDF' \
-		'make install  Publish built PDFs into the mirrored pdf/ tree' \
-		'make install-all  Publish every provider, which is what the pdf/ gates read' \
 		'make doc DOC=<id>  Build one document below src/$$PROVIDER/' \
 		'make review-doc DOC=<id>  Build one document and raster it for page review' \
-		'make install-doc DOC=<id>  Build, gate, and install one document' \
 		'make altar-server-guides  Build the complete seven-publication altar-server series' \
 		'make review-altar-server-guides  Build and raster all seven altar-server publications' \
-		'make install-altar-server-guides  Review, validate, stage, and install the complete altar-server series' \
 		'make list     List discovered document IDs' \
 		'make dependencies-arch  List canonical Arch package dependencies' \
 		'make install-dependencies-arch  Run a full Arch upgrade and install canonical packages' \
@@ -724,14 +710,13 @@ help:
 		'make bibles   Typeset every publishable bible edition complete into build/bibles' \
 		'make bible BIBLE=<edition>  Typeset one publishable edition complete' \
 		'make review-bible BIBLE=<edition>  Typeset one edition and raster it for page review' \
-		'make check-bibles  Prove every publishable edition can be set, writing nothing' \
-		'make tracks [PLAN=<plan>]  Typeset and install every track of the abridged plan' \
-		'make track VOLUME=<id>  Typeset and install one track' \
+		'make check-bibles [PLAN=<plan>]  Prove every publishable edition and every track of the plan can be set, writing nothing' \
+		'make tracks [PLAN=<plan>]  Typeset every track of the abridged plan into build/reading-plans' \
+		'make track VOLUME=<id>  Typeset one track' \
 		'make review-track VOLUME=<id>  Typeset one track and raster it for page review' \
-		'make check-tracks [PLAN=<plan>]  Rebuild every track and prove it reproduces the bytes release/public-alpha.json binds' \
 		'make reading-structure  Rewrite the browser structure of every abridged plan' \
 		'make check    Run every policy check over tracked sources; names the ones it leaves' \
-		'make check-installed  Install every provider, then run the checks that read pdf/' \
+		'make check-typeset  Build the typeset outputs the rights scan reads, then run it' \
 		'make check-all  Run all source/research checks without building PDFs' \
 		'make check-calendar-days  Refuse stale generated calendar-day structures' \
 		'make check-calendar-rubrics  Validate the rubrical precedence sources and their solved cases' \
@@ -889,22 +874,10 @@ doc:
 review-doc: doc
 	@$(PYTHON) $(PDF_REVIEW_TOOL) '$(BUILD_ROOT)/$(DOC).pdf'
 
-install-doc:
-	@if [ -z '$(DOC)' ]; then \
-		echo 'install-doc requires DOC=<document id below src/$(PROVIDER)/>' >&2; \
-		exit 1; \
-	fi
-	@case '$(DOC)' in \
-		liturgy/roman-rite/1962/reference/altar-server-guides/*) \
-			$(MAKE) --no-print-directory install-altar-server-guides ;; \
-		*) \
-			$(MAKE) --no-print-directory '$(PDF_ROOT)/$(DOC).pdf' ;; \
-	esac
-
 # The altar-server profile makes the seven leaves one review unit whenever a
-# shared render source changes. Keep an explicit series lifecycle so the
-# single-document convenience wrapper cannot silently install only one member.
-altar-server-guides: check-metadata $(ALTAR_SERVER_GUIDES_BUILD_PDFS)
+# shared render source changes. Keep an explicit series lifecycle so a change
+# to one member is built, metadata-validated and rastered with the other six.
+altar-server-guides: check-metadata $(ALTAR_SERVER_GUIDES_METADATA_VERIFICATIONS)
 	@test '$(words $(ALTAR_SERVER_GUIDES_DOCUMENTS))' -eq 7 || { \
 		echo 'Expected exactly seven altar-server publications; found $(words $(ALTAR_SERVER_GUIDES_DOCUMENTS))' >&2; \
 		exit 1; \
@@ -912,43 +885,6 @@ altar-server-guides: check-metadata $(ALTAR_SERVER_GUIDES_BUILD_PDFS)
 
 review-altar-server-guides: altar-server-guides
 	@$(PYTHON) $(PDF_REVIEW_TOOL) $(ALTAR_SERVER_GUIDES_BUILD_PDFS)
-
-# Validate the complete set before replacing any installed member, then stage
-# every exact build byte before the short same-filesystem move phase. This
-# prevents build or metadata failures from leaving a partially updated series.
-install-altar-server-guides: review-altar-server-guides \
-		$(ALTAR_SERVER_GUIDES_METADATA_VERIFICATIONS)
-	@set -eu; \
-		stage='$(BUILD_ROOT)/.install-stage/altar-server-guides.'$$$$; \
-		trap 'rm -rf -- "$$stage"' 0 1 2 15; \
-		for document in $(ALTAR_SERVER_GUIDES_DOCUMENTS); do \
-			pdf='$(BUILD_ROOT)/'$$document.pdf; \
-			stamp='$(BUILD_ROOT)/.metadata/'$$document.ok; \
-			pdf_line=$$($(SHA256) -- "$$pdf"); pdf_hash=$${pdf_line%% *}; \
-			validator_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
-			validator_hash=$${validator_line%% *}; \
-			expected=$$(printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s' \
-				'$(PROVIDER)' "$$document" "$$pdf_hash" "$$validator_hash"); \
-			actual=$$(cat "$$stamp"); \
-			[ "$$actual" = "$$expected" ] || { \
-				echo "Validation stamp does not match current PDF/checker: $$document" >&2; exit 1; }; \
-		done; \
-		for document in $(ALTAR_SERVER_GUIDES_DOCUMENTS); do \
-			source='$(BUILD_ROOT)/'$$document.pdf; \
-			staged="$$stage/$$document.pdf"; \
-			mkdir -p "$${staged%/*}"; \
-			$(INSTALL) -m 0644 "$$source" "$$staged"; \
-			cmp -s -- "$$source" "$$staged" || { \
-				echo "Staged PDF differs from reviewed build: $$document" >&2; exit 1; }; \
-		done; \
-		for document in $(ALTAR_SERVER_GUIDES_DOCUMENTS); do \
-			staged="$$stage/$$document.pdf"; \
-			destination='$(PDF_ROOT)/'$$document.pdf; \
-			mkdir -p "$${destination%/*}"; \
-			mv -f -- "$$staged" "$$destination"; \
-		done; \
-		rm -rf -- "$$stage"; \
-		trap - 0 1 2 15
 
 # Cross-provider research staleness (policy in guidance/staleness.md).
 #
@@ -991,14 +927,15 @@ rebaseline-doc:
 	fi
 	@$(PYTHON) $(RESEARCH_STALENESS_TOOL) rebaseline --provider '$(PROVIDER)' --id '$(DOC)'
 
-# Optional typeset-artifact QA. Installation validates every selected render's
-# metadata and structure; this additional scan checks the installed curriculum.
-# None of these builds are prerequisites of source publication or check-all.
-INSTALLED_TREE_CHECKS := check-curriculum-rights
+# Optional typeset-artifact QA over local builds. The build validates every
+# selected render's metadata; this additional scan reads the built curriculum
+# PDFs under build/gpt/. None of these builds are prerequisites of source
+# publication or check-all.
+TYPESET_TREE_CHECKS := check-curriculum-rights
 
 # The third list: gates over tracked sources that are cheap to state and
 # expensive to run. They belong in neither of the two above --- they read
-# `src/` and want no build, so `check-installed` would order a seven-minute
+# `src/` and want no build, so `check-typeset` would order a seven-minute
 # corpus build in front of a check that needs none --- but a member that turns
 # `make check` from seconds into minutes forfeits the property the next comment
 # says `check` is kept for, and a gate nobody can afford to run is not a gate.
@@ -1035,15 +972,24 @@ check: check-document-schemas check-artifact-delivery check-snapshot-delivery \
 		'`make check-expensive` runs: $(EXPENSIVE_SOURCE_CHECKS).' \
 		'`make check-all` includes those source/research lanes; it never builds PDFs.' \
 		'`make check-document-content` audits deeper profile/content requirements.' \
-		'`make check-installed` separately builds and checks optional typeset outputs.'
+		'`make check-typeset` separately builds and checks optional typeset outputs.'
 
 # The same gates, with the build that produces what they read ordered ahead of
 # them. From a clone that has never been built this is correct without a manual
 # step. Recursion rather than a prerequisite list: every one of them must see a
-# finished installed tree, and prerequisites of one target may run in any
-# order, including alongside the install.
-check-installed: install-all
-	@$(MAKE) --no-print-directory $(INSTALLED_TREE_CHECKS)
+# finished build, and prerequisites of one target may run in any order,
+# including alongside the build. The curriculum is a gpt publication, so its
+# build is asked of gpt whatever PROVIDER this invocation names.
+#
+# This target was `check-installed`, which first copied every provider's PDFs
+# into pdf/ and scanned the copies. The copies were never what a reader
+# received, and on 2026-11-04 the maintainer retired the pdf/ tree; the scan
+# now reads the same bytes where the build leaves them.
+check-typeset:
+	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) PROVIDER=gpt _typeset-tree
+	@$(MAKE) --no-print-directory $(TYPESET_TREE_CHECKS)
+
+_typeset-tree: check-metadata $(ECCLESIASTICAL_LATIN_METADATA_VERIFICATIONS)
 
 check-all: check check-expensive check-research-sources
 
@@ -1220,7 +1166,7 @@ check-catena:
 # `scripts/_catena.py structure` and `... paragraphs` are what fix a failure.
 #
 # Both read and compare tracked files under `src/` and neither wants a build,
-# so neither belongs in `check-installed`. They part company on cost, which is
+# so neither belongs in `check-typeset`. They part company on cost, which is
 # measured rather than assumed: `paragraphs --check` compares 5,548 files in
 # 0.8s and is a `check` member; `structure --check` takes 348s over 1,914,
 # because it regenerates the catena to compare and spawns node once per book,
@@ -1400,12 +1346,11 @@ endef
 
 # Prove the declared graph complete, against what pdfTeX actually opened.
 #
-# The Pages deploy keys its PDF cache on the prerequisites this makefile
-# declares for a document: it asks `make -p -n install` for them, hashes each,
-# and restores the cached PDF when the hashes match. That key is only as good
-# as the graph, and the graph is written by hand. An \input that reaches a file
-# no prerequisite names leaves that file outside the key, so editing it would
-# score a cache hit and publish the old PDF --- and since a body-text edit need
+# Make reuses a built PDF while every prerequisite this makefile declares for
+# it is unchanged, and the Pages deploy once keyed a PDF cache on the same
+# prerequisites. Either is only as good as the graph, and the graph is written
+# by hand. An \input that reaches a file no prerequisite names leaves that file
+# outside it, so editing it would keep the old PDF --- and since a body-text edit need
 # not move a page count, neither `document-library structure --check` nor the
 # corpus digest binding would notice. Every other gate here fails closed. This
 # is the one that would not, made to.
@@ -1778,36 +1723,6 @@ $(BUILD_ROOT)/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer.pdf: \
 	$(CARMEL_NOVENA_PRAYERS) \
 	$(CARMEL_NOVENA_ROOT)/generation-metadata.tex
 
-$(PDF_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | $(BUILD_ROOT)/.metadata/%.source-check $(BUILD_ROOT)/.metadata/%.verify
-	@set -eu; \
-		pdf='$(BUILD_ROOT)/$*.pdf'; \
-		stamp='$(BUILD_ROOT)/.metadata/$*.ok'; \
-		destination='$@'; \
-		mkdir -p '$(@D)'; \
-		pdf_line=$$($(SHA256) -- "$$pdf"); \
-		pdf_hash=$${pdf_line%% *}; \
-		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
-		validator_hash=$${validator_line%% *}; \
-		expected=$$(printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s' \
-			'$(PROVIDER)' '$*' "$$pdf_hash" "$$validator_hash"); \
-		actual=$$(cat "$$stamp"); \
-		[ "$$actual" = "$$expected" ] || { echo 'Validation stamp does not match current PDF/checker: $*' >&2; exit 1; }; \
-		temporary="$$destination.tmp.$$$$"; \
-		trap 'rm -f -- "$$temporary"' 0 1 2 15; \
-		$(INSTALL) -m 0644 "$$pdf" "$$temporary"; \
-		temporary_line=$$($(SHA256) -- "$$temporary"); \
-		temporary_hash=$${temporary_line%% *}; \
-		pdf_after_line=$$($(SHA256) -- "$$pdf"); \
-		pdf_after_hash=$${pdf_after_line%% *}; \
-		validator_after_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
-		validator_after_hash=$${validator_after_line%% *}; \
-		if [ "$$temporary_hash" != "$$pdf_hash" ] || [ "$$pdf_after_hash" != "$$pdf_hash" ] || [ "$$validator_after_hash" != "$$validator_hash" ]; then \
-			echo 'PDF or metadata checker changed during install: $*' >&2; \
-			exit 1; \
-		fi; \
-		mv -f -- "$$temporary" "$$destination"; \
-		trap - 0 1 2 15
-
 # Complete-text bible editions.
 #
 # Which editions exist is asked of `typeset-bible list`, which reads the
@@ -1832,8 +1747,9 @@ bible:
 review-bible: bible
 	@$(PYTHON) $(PDF_REVIEW_TOOL) '$(BIBLE_BUILD_ROOT)/$(BIBLE).pdf'
 
-check-bibles:
+check-bibles: check-plan-sources
 	@$(PYTHON) $(BIBLE_TYPESET_TOOL) check
+	@$(PYTHON) $(BIBLE_TYPESET_TOOL) check --plan '$(PLAN)'
 
 FORCE_BIBLE_RENDER:
 
@@ -1865,16 +1781,16 @@ $(BIBLE_BUILD_ROOT)/%.pdf: $(BIBLE_BUILD_ROOT)/%.tex | check-tools
 # editions from the registered edition table, so neither the count nor the
 # publishable flag is restated here.
 #
-# A track is installed into pdf/ and a whole bible is not. The difference is
-# what the artifact carries: a whole bible is the source library's own text
-# reset, while a track carries this project's plan — its periods, its titles,
-# its notes and its account of what it leaves out — around that text.
+# A track carries this project's plan — its periods, its titles, its notes and
+# its account of what it leaves out — around the source library's text, so the
+# plan file is validated before a verse of it is set. Like a whole bible, a
+# set track stays in build/; readers get the plan's print route instead.
 tracks: check-plan-sources
 	@set -eu; \
 		volumes=$$($(PYTHON) $(BIBLE_TYPESET_TOOL) list --plan '$(PLAN)' --format ids); \
 		[ -n "$$volumes" ] || { echo 'No track is declared for plan $(PLAN)' >&2; exit 1; }; \
 		for volume in $$volumes; do \
-			$(MAKE) --no-print-directory '$(READING_PDF_ROOT)/'"$$volume"'.pdf'; \
+			$(MAKE) --no-print-directory '$(READING_BUILD_ROOT)/'"$$volume"'.pdf'; \
 		done
 
 track:
@@ -1882,69 +1798,20 @@ track:
 		echo 'track requires VOLUME=<id from `tools/tpt typeset-bible list --plan $(PLAN) --format ids`>' >&2; \
 		exit 1; \
 	fi
-	@$(MAKE) --no-print-directory '$(READING_PDF_ROOT)/$(VOLUME).pdf'
+	@$(MAKE) --no-print-directory '$(READING_BUILD_ROOT)/$(VOLUME).pdf'
 
-# The installed volume is what a reader downloads, so that is what is rastered.
 review-track: track
-	@$(PYTHON) $(PDF_REVIEW_TOOL) '$(READING_PDF_ROOT)/$(VOLUME).pdf'
+	@$(PYTHON) $(PDF_REVIEW_TOOL) '$(READING_BUILD_ROOT)/$(VOLUME).pdf'
 
-# Two questions, both of which must hold before a track may be published: that
-# every volume still resolves against its edition, and that the installed PDF
-# is the one the current sources produce. The second is what stops a plan edit
-# from reaching the site through a stale artifact.
-#
-# It used to ask Git. `git diff --quiet -- pdf/reading-plans` was quiet when
-# the bytes matched and quiet again over a path Git does not track, so on the
-# day pdf/ stopped being tracked the question would have started returning the
-# same answer whatever the file held: a check that passes by no longer being
-# able to fail, which is this project's governing defect wearing the costume of
-# a green line. pdf/reading-plans/ is in fact the exception that stays tracked,
-# so the loss has not happened yet; asking a question that does not depend on
-# that exception is what keeps it from happening quietly later.
-#
-# What it asks instead is the assertion the release record already carries.
-# release/public-alpha.json binds each of the six volumes to an exact SHA-256
-# under the perpetual authorization's site_sources, and those digests are
-# unchanged by the tracking decision: the digest used to prove a tracked file
-# was unmodified and now proves the rebuild reproduced the reviewed bytes. So
-# rebuild, then require each installed volume to hash to what the record binds.
-# A mismatch is a build defect to diagnose, never a hash to refresh.
-#
-# The record is read as text rather than parsed because the question is a
-# yes/no about one path and one digest, and a second implementation of the
-# comparison `release-bindings status` already owns would be a second source of
-# truth. If the manifest is ever reformatted this fails loudly rather than
-# passing quietly, which is the right direction to fail in.
-check-tracks: check-plan-sources
-	@$(PYTHON) $(BIBLE_TYPESET_TOOL) check --plan '$(PLAN)' --verbose
-	@$(MAKE) --no-print-directory tracks
-	@set -eu; \
-		manifest='release/public-alpha.json'; \
-		volumes=$$($(PYTHON) $(BIBLE_TYPESET_TOOL) list --plan '$(PLAN)' --format ids); \
-		[ -n "$$volumes" ] || { echo 'No track is declared for plan $(PLAN)' >&2; exit 1; }; \
-		status=0; \
-		for volume in $$volumes; do \
-			installed='$(READING_PDF_ROOT)/'"$$volume"'.pdf'; \
-			if [ ! -f "$$installed" ]; then \
-				echo "Track is not installed: $$volume; run make tracks" >&2; \
-				status=1; continue; \
-			fi; \
-			line=$$($(SHA256) -- "$$installed"); \
-			actual=$${line%% *}; \
-			bound="\"$(READING_PDF_ROOT)/$$volume.pdf\":"; \
-			if ! grep -qF -- "$$bound" "$$manifest"; then \
-				echo "Track is not bound by $$manifest: $$volume" >&2; \
-				status=1; \
-			elif ! grep -qF -- "$$bound \"$$actual\"" "$$manifest"; then \
-				echo "Rebuilt track does not reproduce the authorized bytes: $$volume ($$actual)" >&2; \
-				status=1; \
-			fi; \
-		done; \
-		[ "$$status" -eq 0 ] || { \
-			echo 'A track the release record binds is not what the current sources build.' >&2; \
-			exit 1; \
-		}; \
-		echo 'Every track reproduces the bytes release/public-alpha.json binds.'
+# `check-tracks` is retired. It rebuilt every track into pdf/reading-plans and
+# required each to hash to a `"pdf/reading-plans/<volume>.pdf":` binding in
+# release/public-alpha.json. Six such bindings existed at 2f23107c10 and none
+# remain: tracks are no longer published as files, so no current record binds
+# their bytes and the gate could only fail. The archived bytes of the last
+# published volumes are historical-publication rows of
+# src/sources/artifact-delivery.json; reproducing them would only prove the
+# plan never changed. Its other question, whether every volume still resolves
+# against its edition, is asked by `check-bibles`.
 
 # The plan file is validated by the tool that owns it before a single verse of
 # it is set. A track built from a plan that does not validate would be a
@@ -1983,7 +1850,7 @@ $(READING_BUILD_ROOT)/%.tex: $(BIBLE_TYPESET_IMPL) FORCE_BIBLE_RENDER
 # The list of readings carries the page each reading begins on, and a list
 # twenty pages long moves the pages it is naming, so two passes do not always
 # settle a track of three hundred pages. Run until LaTeX stops asking, and fail
-# rather than install a volume whose contents point at the wrong pages.
+# rather than keep a volume whose contents point at the wrong pages.
 $(READING_BUILD_ROOT)/%.pdf: $(READING_BUILD_ROOT)/%.tex | check-tools
 	@set -eu; \
 		log='$(READING_BUILD_ROOT)/$*.log'; \
@@ -2001,18 +1868,6 @@ $(READING_BUILD_ROOT)/%.pdf: $(READING_BUILD_ROOT)/%.tex | check-tools
 		done; \
 		echo "References did not settle in $$pass passes: $*" >&2; \
 		exit 1
-
-# Installed only when the bytes differ, so a rebuild that changed nothing does
-# not show up as a modified tracked artifact.
-$(READING_PDF_ROOT)/%.pdf: $(READING_BUILD_ROOT)/%.pdf
-	@set -eu; \
-		mkdir -p '$(@D)'; \
-		if cmp -s '$<' '$@' 2>/dev/null; then \
-			echo "unchanged $@"; \
-		else \
-			$(INSTALL) -m 0644 -- '$<' '$@'; \
-			echo "installed $@"; \
-		fi
 
 check-tools:
 	@command -v $(PDFLATEX) >/dev/null || { echo "Missing $(PDFLATEX)"; exit 1; }
@@ -2063,8 +1918,6 @@ PAPAL_CURRENT_MANIFEST ?= $(PAPAL_OUT)/current-manifest.json
 PAPAL_CURRENT_BATCH ?= $(PAPAL_OUT)/current
 PAPAL_COLLECTION_OUT ?= $(PAPAL_OUT)/collection
 PAPAL_REVIEW_MANIFESTS ?= $(wildcard $(PAPAL_MANIFEST_ROOT)/*-visual-review.json)
-PAPAL_INSTALL_BATCH_PAIRS ?= $(PAPAL_OUT)/batch-pairs.json
-PAPAL_INSTALL_PREPARED ?= $(PAPAL_OUT)/prepared-install.json
 # The typesetter refuses an empty selection. Validate the outer contract first
 # so an honestly empty batch is skipped while malformed JSON still fails.
 PAPAL_MANIFEST_COUNT = $(PYTHON) -c 'import datetime,json,re,sys; \
@@ -2076,7 +1929,7 @@ PAPAL_MANIFEST_COUNT = $(PYTHON) -c 'import datetime,json,re,sys; \
 	isinstance(d.get("documents"),list) or sys.exit("papal manifest requires a documents array"); \
 	print(len(d["documents"]))'
 
-.PHONY: check-papal check-papal-manifests papal-plan papal-catalog papal-pdfs papal-collection papal-install-plan papal-install check-papal-install
+.PHONY: check-papal check-papal-manifests papal-plan papal-catalog papal-pdfs papal-collection
 
 check-papal: check-papal-manifests
 	@$(PYTHON) tools/tpt papal-documents check --json
@@ -2150,18 +2003,3 @@ papal-collection: papal-plan
 	done; \
 	$(PYTHON) tools/tpt typeset-papal collect "$$@" --out '$(PAPAL_COLLECTION_OUT)' --json
 
-# An explicit inventory names existing immutable receipt/frozen-manifest pairs.
-# Preparing never copies PDFs into the tracked release.
-papal-install-plan: papal-plan
-	@test -f '$(PAPAL_INSTALL_BATCH_PAIRS)' || { printf '%s\n' 'Set PAPAL_INSTALL_BATCH_PAIRS to a hash-pinned inventory of existing receipt/frozen-manifest pairs.' >&2; exit 1; }
-	@set -eu; set --; \
-	for manifest in $(PAPAL_REVIEW_MANIFESTS); do set -- "$$@" --review "$$manifest"; done; \
-	$(PYTHON) tools/tpt typeset-papal prepare-install --plan '$(PAPAL_CURRENT_MANIFEST)' \
-		--batch-pairs '$(PAPAL_INSTALL_BATCH_PAIRS)' --out '$(PAPAL_INSTALL_PREPARED)' "$$@" --json
-
-# Deliberately consume the previously prepared proposal; never silently replace it.
-papal-install:
-	@$(PYTHON) tools/tpt typeset-papal install --prepared '$(PAPAL_INSTALL_PREPARED)' --json
-
-check-papal-install: papal-plan
-	@$(PYTHON) tools/tpt typeset-papal check-install --plan '$(PAPAL_CURRENT_MANIFEST)' --json

@@ -508,7 +508,7 @@ class GateTests(unittest.TestCase):
              "check-source-evidence", "check-source-reader", "check-act-history"}
             - reached.keys(), set(),
         )
-        self.assertFalse({"check-installed", "install", "install-all", "pdf", "all"} & reached.keys())
+        self.assertFalse({"check-typeset", "_typeset-tree", "pdf", "all"} & reached.keys())
         research = "\n".join(make_reached("check-research-sources", text).values())
         for command in ("$(SOURCE_LIBRARY_TOOL) validate --full-evidence",
                         "$(SOURCE_READER_TOOL) structure --check-receipt",
@@ -517,8 +517,8 @@ class GateTests(unittest.TestCase):
                         "$(SOURCE_READER_TOOL) structure --check",
                         "tools/tpt act-history structure --check"):
             self.assertIn(command, research)
-        installed = make_reached("check-installed", text)
-        self.assertIn("install-all", installed)
+        typeset = make_reached("check-typeset", text)
+        self.assertIn("_typeset-tree", typeset)
 
     def test_the_gate_resolution_follows_the_goal_and_not_the_whole_makefile(self) -> None:
         """Both halves of what the assertion above rests on, on a fixture.

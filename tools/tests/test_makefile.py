@@ -497,7 +497,7 @@ fi
         result = self.run_make("doc", "DOC=demo-b", check=False)
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual(self.lines(self.latex_log), [])
-        for target in ("pdf", "install", "check-metadata"):
+        for target in ("pdf", "check-metadata"):
             with self.subTest(target=target):
                 self.clear_logs()
                 result = self.run_make(target, check=False)
@@ -543,7 +543,7 @@ fi
                 self.assertEqual(self.lines(self.check_log), ["--provider gpt --document demo-a"])
                 self.assertEqual(self.lines(self.latex_log), [])
 
-    def test_single_installs_scope_sources_and_reject_cached_provenance_defects(self) -> None:
+    def test_single_builds_scope_sources_and_reject_cached_provenance_defects(self) -> None:
         self.checker.write_text(self.checker.read_text() + '''
 if [ "$3" = --document ]; then
     [ -f "src/gpt/$4/generation-metadata.tex" ] || exit 41
@@ -556,16 +556,14 @@ fi
         unrelated.mkdir()
         (unrelated / "main.tex").write_text("% unfinished sibling\n")
         for document, arguments in (
-            ("demo-a", ("install-doc", "DOC=demo-a")),
-            ("demo-b", ("pdf/gpt/demo-b.pdf",)),
+            ("demo-a", ("doc", "DOC=demo-a")),
+            ("demo-b", ("build/gpt/.metadata/demo-b.verify",)),
         ):
             with self.subTest(arguments=arguments):
                 self.clear_logs()
                 self.run_make(*arguments)
                 built = self.root / f"build/gpt/{document}.pdf"
-                installed = self.root / f"pdf/gpt/{document}.pdf"
                 original_bytes = built.read_bytes()
-                self.assertEqual(installed.read_bytes(), original_bytes)
                 self.assertEqual(self.lines(self.check_log), [
                     f"--provider gpt --document {document}",
                     f"--provider gpt --pdf {document} build/gpt/{document}.pdf",
@@ -583,7 +581,7 @@ fi
                         self.assertNotEqual(result.returncode, 0)
                         self.assertEqual(self.lines(self.check_log), [f"--provider gpt --document {document}"])
                         self.assertEqual(self.lines(self.latex_log), [])
-                        self.assertEqual(installed.read_bytes(), original_bytes)
+                        self.assertEqual(built.read_bytes(), original_bytes)
                 metadata.write_text("metadata\n")
                 os.utime(metadata, ns=(metadata_stat.st_atime_ns, metadata_stat.st_mtime_ns))
                 built_stat = built.stat()
@@ -594,12 +592,6 @@ fi
                 self.assertNotEqual(result.returncode, 0)
                 self.assertIn("Validation stamp does not match current PDF/checker", result.stderr)
                 self.assertEqual(self.lines(self.latex_log), [])
-                self.assertEqual(installed.read_bytes(), original_bytes)
-        self.clear_logs()
-        result = self.run_make("install", check=False)
-        self.assertNotEqual(result.returncode, 0)
-        self.assertEqual(self.lines(self.check_log), ["--provider gpt"])
-        self.assertEqual(self.lines(self.latex_log), [])
 
     def test_doc_verification_chain_builds_both_derived_companions(self) -> None:
         checker = self.root / "tools/check-proper-components"
@@ -643,6 +635,7 @@ esac
         self.assertEqual(len(self.lines(self.latex_log)), 4)
         self.assertEqual(len(self.lines(self.check_log)), 5)
         self.assertEqual(len(self.lines(self.review_log)), 1)
+        self.assertFalse((self.root / "pdf").exists())
         self.assertTrue(all("-j2" in flags for flags in self.lines(self.flags_log)))
         self.assertNotIn("resetting jobserver", result.stderr)
         self.assertNotIn("jobserver unavailable", result.stderr)
@@ -660,17 +653,40 @@ esac
         self.assertNotIn("resetting jobserver", result.stderr)
         self.assertNotIn("jobserver unavailable", result.stderr)
 
-    def test_parallel_pdf_and_install_share_one_build_graph(self) -> None:
-        result = self.run_make("-j4", "pdf", "install")
+    def test_review_pdfs_rasters_only_pdfs_changed_since_its_last_run(self) -> None:
+        self.run_make("review-pdfs")
+        self.assertEqual(self.lines(self.review_log), [
+            "build/gpt/demo-a.pdf build/gpt/demo-b.pdf",
+        ])
+
+        self.clear_logs()
+        result = self.run_make("review-pdfs")
+        self.assertEqual(self.lines(self.review_log), [])
+        self.assertIn("byte-identical to the ones last rastered", result.stdout)
+
+        # The fake compiler sets the same bytes on every build, so a changed
+        # PDF is written directly; the build revalidates it before review.
+        time.sleep(0.02)
+        (self.root / "build/gpt/demo-b.pdf").write_bytes(b"revised demo-b\n")
+        self.clear_logs()
+        self.run_make("review-pdfs")
+        self.assertEqual(self.lines(self.latex_log), [])
+        self.assertEqual(self.lines(self.review_log), ["build/gpt/demo-b.pdf"])
+
+    def test_a_failed_review_selects_the_same_pdfs_again(self) -> None:
+        self.run_make("pdf")
+        self.pdf_review.write_text(self.pdf_review.read_text() + "raise SystemExit(1)\n")
+        self.clear_logs()
+        self.assertNotEqual(self.run_make("review-pdfs", check=False).returncode, 0)
+        self.assertFalse((self.root / "build/gpt/.metadata/review-pdfs.sha256").exists())
+        self.assertEqual(list((self.root / "build/gpt/.metadata").glob("review-pdfs.sha256.current.*")), [])
+
+    def test_parallel_pdf_and_review_share_one_build_graph(self) -> None:
+        result = self.run_make("-j4", "pdf", "review-all-pdfs")
         self.assertEqual(len(self.lines(self.latex_log)), 4)
         self.assertEqual(len(self.lines(self.check_log)), 5)
         self.assertNotIn("resetting jobserver", result.stderr)
         self.assertNotIn("jobserver unavailable", result.stderr)
-        for document in ("demo-a", "demo-b"):
-            self.assertEqual(
-                (self.root / f"pdf/gpt/{document}.pdf").read_bytes(),
-                (self.root / f"build/gpt/{document}.pdf").read_bytes(),
-            )
 
     def test_research_edits_do_not_build_but_tex_edits_do(self) -> None:
         self.run_make("pdf")
@@ -744,21 +760,18 @@ esac
             )
         )
 
-    def test_install_uses_only_validated_builds_and_refreshes_changed_pdf(self) -> None:
-        self.run_make("-j4", "install")
+    def test_pdf_revalidates_an_externally_replaced_build(self) -> None:
+        self.run_make("-j4", "pdf")
         build_pdf = self.root / "build/gpt/demo-a.pdf"
-        installed_pdf = self.root / "pdf/gpt/demo-a.pdf"
-        self.assertEqual(installed_pdf.read_bytes(), build_pdf.read_bytes())
 
         time.sleep(0.02)
         build_pdf.write_bytes(b"externally replaced PDF\n")
         self.clear_logs()
-        self.run_make("install")
+        self.run_make("pdf")
         self.assertEqual(self.lines(self.latex_log), [])
         self.assertEqual(len(self.lines(self.check_log)), 4)  # global + two sources + changed PDF
-        self.assertEqual(installed_pdf.read_bytes(), build_pdf.read_bytes())
 
-    def test_altar_server_single_install_routes_through_complete_series_gate(self) -> None:
+    def test_altar_server_review_builds_and_rasters_the_complete_series(self) -> None:
         owner = (
             self.root
             / "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides"
@@ -787,10 +800,7 @@ esac
                 "metadata\n", encoding="utf-8"
             )
 
-        requested = (
-            "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
-        )
-        self.run_make("install-doc", f"DOC={requested}")
+        self.run_make("review-altar-server-guides")
 
         altar_jobs = [
             line
@@ -806,10 +816,6 @@ esac
                 f"{document}.pdf"
             )
             self.assertIn(f"build/gpt/{relative}", reviewed)
-            self.assertEqual(
-                (self.root / f"pdf/gpt/{relative}").read_bytes(),
-                (self.root / f"build/gpt/{relative}").read_bytes(),
-            )
 
         self.clear_logs()
         time.sleep(0.02)
@@ -824,13 +830,13 @@ esac
         ]
         self.assertEqual(len(altar_jobs), 14)
 
-    def test_checker_refresh_does_not_reinstall_identical_pdf_bytes(self) -> None:
-        self.run_make("-j4", "install")
-        installed_pdfs = [
-            self.root / f"pdf/gpt/{document}.pdf"
+    def test_checker_refresh_revalidates_without_rebuilding(self) -> None:
+        self.run_make("-j4", "pdf")
+        built_pdfs = [
+            self.root / f"build/gpt/{document}.pdf"
             for document in ("demo-a", "demo-b")
         ]
-        installed_mtimes = [pdf.stat().st_mtime_ns for pdf in installed_pdfs]
+        built_mtimes = [pdf.stat().st_mtime_ns for pdf in built_pdfs]
 
         time.sleep(0.02)
         self.checker.write_text(
@@ -838,12 +844,11 @@ esac
             encoding="utf-8",
         )
         self.clear_logs()
-        self.run_make("install")
+        self.run_make("pdf")
 
         self.assertEqual(len(self.lines(self.check_log)), 5)  # global + two source/PDF pairs
-        self.assertEqual(
-            [pdf.stat().st_mtime_ns for pdf in installed_pdfs], installed_mtimes
-        )
+        self.assertEqual(self.lines(self.latex_log), [])
+        self.assertEqual([pdf.stat().st_mtime_ns for pdf in built_pdfs], built_mtimes)
 
     def test_old_mtime_pdf_replacement_cannot_bypass_validation(self) -> None:
         self.run_make("pdf")
@@ -858,12 +863,10 @@ esac
             ns=(original_stat.st_atime_ns, original_stat.st_mtime_ns),
         )
         self.clear_logs()
-        result = self.run_make("install", check=False)
+        result = self.run_make("pdf", check=False)
 
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("Validation stamp does not match current PDF/checker", result.stderr)
-        self.assertFalse((self.root / "pdf/gpt/demo-a.pdf").exists())
-        self.assertEqual(len(self.lines(self.check_log)), 2)  # global + selected source
 
     def test_legacy_empty_stamp_is_revalidated_and_migrated(self) -> None:
         self.run_make("pdf")
@@ -885,33 +888,6 @@ esac
                 "pdf_sha256": self.sha256(build_pdf),
                 "validator_sha256": self.sha256(self.checker),
             },
-        )
-
-    def test_pdf_replaced_during_copy_is_not_installed(self) -> None:
-        self.run_make("pdf")
-        mutating_install = self.root / "tools/tests/mutating-install"
-        mutating_install.write_text(
-            """#!/bin/sh
-printf 'replacement during copy\\n' > "$3"
-cp "$3" "$4"
-chmod 0644 "$4"
-""",
-            encoding="utf-8",
-        )
-        mutating_install.chmod(0o755)
-        self.clear_logs()
-
-        result = self.run_make(
-            "pdf/gpt/demo-a.pdf",
-            f"INSTALL={mutating_install}",
-            check=False,
-        )
-
-        self.assertNotEqual(result.returncode, 0)
-        self.assertIn("PDF or metadata checker changed during install", result.stderr)
-        self.assertFalse((self.root / "pdf/gpt/demo-a.pdf").exists())
-        self.assertEqual(
-            list((self.root / "pdf/gpt").glob("demo-a.pdf.tmp.*")), []
         )
 
     def test_empty_parallel_limit_fails_closed(self) -> None:

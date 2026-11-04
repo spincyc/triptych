@@ -356,7 +356,7 @@ class ProperV2Tests(unittest.TestCase):
 
     def test_catalogue_carries_homily_as_third_issue(self):
         with mock.patch.multiple(_corpus, ROOT=self.root, SRC=self.root / "src",
-                                 PDF_ROOT=self.root / "pdf", PUBLICATION_ROOT=self.root / "release/publications"):
+                                 PUBLICATION_ROOT=self.root / "release/publications"):
             issues = _corpus._issues_of(self.path.parent, "gpt", "proper", False)
         self.assertEqual([issue.kind for issue in issues], ["full", "synthesis", "homily"])
         self.assertEqual(issues[-1].title.text, "homily")

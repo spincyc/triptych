@@ -106,57 +106,16 @@ class ManifestTests(unittest.TestCase):
         with self.assertRaisesRegex(papal.PapalTypesetError, "rights_status"):
             papal.validate_document(self.doc, self.root)
 
-    def test_installer_cli_dispatch_is_explicit_and_preparation_stdout_is_bounded(self):
-        import _papal_install as installer
-        summary = {"current": 3, "ready": 1, "pages": 2, "bytes": 100,
-                   "review_pending": 2, "changes_required": 0, "failed": 0, "missing": 0}
-        out = self.root / "prepared.json"
-        def prepare(plan, pairs, target, reviews):
-            self.assertEqual((plan, pairs, reviews), (Path("plan.json"), Path("pairs.json"), [Path("review.json")]))
-            target.write_text('{"synthetic":true}\n')
-            return {"schema": installer.PREPARED_SCHEMA, "summary": summary,
-                    "documents": [{"source": "Do not copy candidate details to stdout"}]}
-        stdout = io.StringIO()
-        with patch.object(installer, "prepare_install", side_effect=prepare) as prepared, redirect_stdout(stdout), \
-                patch.object(papal, "render_documents") as render:
-            code = papal.main(["prepare-install", "--plan", "plan.json", "--batch-pairs", "pairs.json",
-                               "--review", "review.json", "--out", str(out), "--json"])
-        self.assertEqual(code, 0)
-        self.assertEqual(json.loads(stdout.getvalue())["sha256"], hashlib.sha256(out.read_bytes()).hexdigest())
-        self.assertNotIn("documents", json.loads(stdout.getvalue()))
-        prepared.assert_called_once()
-        render.assert_not_called()
-        for verb, arguments, function, returned in (
-            ("install", ["--prepared", "prepared.json"], "install_prepared", {"schema": installer.RELEASE_SCHEMA, "summary": summary}),
-            ("check-install", ["--plan", "plan.json"], "check_install", {"schema": installer.RELEASE_SCHEMA,
-                "status": "valid", "installed": 1, "current": 3, "not_installed": 2})):
-            stdout = io.StringIO()
-            with self.subTest(verb=verb), patch.object(installer, function, return_value=returned) as called, \
-                    redirect_stdout(stdout), patch.object(papal, "render_documents") as render:
-                self.assertEqual(papal.main([verb, *arguments, "--json"]), 0)
-            called.assert_called_once_with(Path(arguments[1]))
-            self.assertEqual(json.loads(stdout.getvalue())["schema"], installer.RELEASE_SCHEMA)
-            render.assert_not_called()
-
-    def test_installer_cli_refusal_is_visible_without_rendering_or_installing(self):
-        import _papal_install as installer
-        stderr = io.StringIO()
-        with patch.object(installer, "prepare_install", side_effect=installer.PapalInstallError("source plan is stale")), \
-                patch.object(installer, "install_prepared") as install, patch.object(papal, "render_documents") as render, \
-                redirect_stderr(stderr):
-            code = papal.main(["prepare-install", "--plan", "plan.json", "--batch-pairs", "pairs.json", "--json"])
-        self.assertEqual(code, 2)
-        self.assertEqual(json.loads(stderr.getvalue())["error"], "source plan is stale")
-        install.assert_not_called()
-        render.assert_not_called()
-
-    def test_installer_help_never_dispatches_an_install(self):
-        import _papal_install as installer
-        with patch.object(installer, "install_prepared") as install, redirect_stdout(io.StringIO()):
-            with self.assertRaises(SystemExit) as result:
-                papal.main(["install", "--help"])
-        self.assertEqual(result.exception.code, 0)
-        install.assert_not_called()
+    def test_retired_installation_verbs_are_refused(self):
+        # Installation into pdf/papal-documents was retired on 2026-11-04;
+        # the release record is checked, never written, by this tool.
+        for verb in ("prepare-install", "stage-inputs", "install", "check-install"):
+            with self.subTest(verb=verb), redirect_stderr(io.StringIO()), \
+                    patch.object(papal, "render_documents") as render:
+                with self.assertRaises(SystemExit) as result:
+                    papal.main([verb, "--help"])
+                self.assertEqual(result.exception.code, 2)
+                render.assert_not_called()
 
     def test_missing_rights_and_payload_tampering_refuse(self):
         for key, value in (("rights_status", "unresolved"), ("rights_basis", ""), ("language", "xx")):

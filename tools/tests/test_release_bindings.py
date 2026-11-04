@@ -368,15 +368,19 @@ class ReleaseBindingsTests(unittest.TestCase):
                 "hold",
             )
 
-    def test_add_alpha_requires_installed_pdf_and_known_provider(self):
-        with self.assertRaises(self.tool.BindingError):
-            self.tool.add_publication(
-                self.tool.load_manifest(),
-                "claude",
-                "articles/missing",
-                "library/faith.md",
-                "alpha",
-            )
+    def test_add_alpha_needs_no_installed_pdf_but_a_known_provider(self):
+        self.tool.add_publication(
+            self.tool.load_manifest(),
+            "claude",
+            "articles/unprinted",
+            "library/faith.md",
+            "alpha",
+        )
+        self.assertFalse((self.root / "pdf/claude/articles/unprinted.pdf").exists())
+        record = json.loads(
+            (self.root / "release/publications/claude/articles/unprinted.json").read_text()
+        )
+        self.assertEqual("alpha", record["status"])
         with self.assertRaises(self.tool.BindingError):
             self.tool.add_publication(
                 self.tool.load_manifest(),
@@ -406,7 +410,7 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.assertEqual("auth-1", gpt_record["authorization"])
         self.assertNotIn("pdf_sha256", gpt_record)
 
-    def test_migrated_inventory_summary_requires_its_installed_pdfs(self):
+    def test_migrated_inventory_summary_needs_no_installed_pdfs(self):
         self.tool.migrate_publications(self.tool.load_manifest())
 
         schema, counts = self.tool.publication_status_counts(
@@ -416,14 +420,13 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.assertEqual("records", schema)
         self.assertEqual({"alpha": 2, "hold": 0}, counts)
         summary = self.tool.publication_clearance_summary(schema, counts)
-        self.assertIn("all 2 exact installed public-alpha", summary)
+        self.assertIn("covers all 2 public-alpha publications", summary)
 
         self.claude_pdf.unlink()
-        with self.assertRaisesRegex(
-            self.tool.BindingError,
-            "installed PDF missing",
-        ):
-            self.tool.publication_status_counts(self.tool.load_manifest())
+        self.assertEqual(
+            (schema, counts),
+            self.tool.publication_status_counts(self.tool.load_manifest()),
+        )
 
     def test_approve_records_note_and_refreshes(self):
         self.claude_pdf.write_bytes(b"claude pdf v3")

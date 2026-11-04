@@ -915,51 +915,9 @@ def main(argv=None, examples=None):
     plan.add_argument("--correction", action="append", nargs=2, default=[], metavar=("NAME", "MANIFEST"))
     plan.add_argument("--out", type=Path, default=ROOT / ".scratch/papal-pdfs/current-manifest.json")
     plan.add_argument("--json", action="store_true")
-    prepare_install = verbs.add_parser("prepare-install", description="Prepare exact current, fully page-reviewed PDFs for inspection before installation",
-                                       formatter_class=argparse.RawDescriptionHelpFormatter)
-    with_examples(prepare_install, examples.get("prepare-install", ()))
-    prepare_install.add_argument("--plan", type=Path, required=True)
-    prepare_install.add_argument("--batch-pairs", type=Path, required=True)
-    prepare_install.add_argument("--review", action="append", type=Path, default=[])
-    prepare_install.add_argument("--out", type=Path, default=ROOT / ".scratch/papal-install/prepared.json")
-    prepare_install.add_argument("--json", action="store_true")
-    stage_inputs = verbs.add_parser("stage-inputs", description="Stage only exact input snapshots from a revalidated proposal; preserve installed PDFs and release",
-                                   formatter_class=argparse.RawDescriptionHelpFormatter)
-    with_examples(stage_inputs, examples.get("stage-inputs", ()))
-    stage_inputs.add_argument("--prepared", type=Path, required=True)
-    stage_inputs.add_argument("--json", action="store_true")
-    install = verbs.add_parser("install", description="Install a reviewed preparation after revalidating its exact current inputs",
-                               formatter_class=argparse.RawDescriptionHelpFormatter)
-    with_examples(install, examples.get("install", ()))
-    install.add_argument("--prepared", type=Path, required=True)
-    install.add_argument("--json", action="store_true")
-    check_install = verbs.add_parser("check-install", description="Check installed PDF bytes, durable evidence and current source selections",
-                                     formatter_class=argparse.RawDescriptionHelpFormatter)
-    with_examples(check_install, examples.get("check-install", ()))
-    check_install.add_argument("--plan", type=Path, required=True)
-    check_install.add_argument("--json", action="store_true")
     args = parser.parse_args(argv)
     try:
-        if args.verb in {"prepare-install", "stage-inputs", "install", "check-install"}:
-            from _papal_install import prepare_install, stage_prepared_inputs, install_prepared, check_install, RELEASE
-            from _papal_collection import PapalCollectionError
-            try:
-                if args.verb == "prepare-install":
-                    prepared = prepare_install(args.plan, args.batch_pairs, args.out, args.review)
-                    payload = {"schema": prepared["schema"], "summary": prepared["summary"],
-                               "prepared": os.path.relpath(args.out.resolve(), ROOT),
-                               "sha256": hashlib.sha256(args.out.read_bytes()).hexdigest()}
-                elif args.verb == "stage-inputs":
-                    payload = stage_prepared_inputs(args.prepared)
-                elif args.verb == "install":
-                    released = install_prepared(args.prepared)
-                    payload = {"schema": released["schema"], "summary": released["summary"],
-                               "release": RELEASE.as_posix()}
-                else:
-                    payload = check_install(args.plan)
-            except PapalCollectionError as error:
-                raise PapalTypesetError(str(error)) from error
-        elif args.verb in {"collect", "plan"}:
+        if args.verb in {"collect", "plan"}:
             from _papal_collection import collect_batches, plan_sources, PapalCollectionError
             try:
                 if args.verb == "collect":
@@ -995,12 +953,6 @@ def main(argv=None, examples=None):
             print(f"collected: {summary['documents']} source editions; {summary['compiled']} compiled PDFs; {summary['layout_reviewed']} layout reviewed")
         elif args.verb == "plan":
             print(f"planned: {payload['summary']['selected']} current source editions; {payload['summary']['excluded']} obsolete selections excluded")
-        elif args.verb == "stage-inputs":
-            print(f"staged: {payload['staged']} exact input snapshots; {payload['already_present']} already present; PDFs and release unchanged")
-        elif args.verb in {"prepare-install", "install"}:
-            print(f"{'prepared' if args.verb == 'prepare-install' else 'installed'}: {payload['summary']['ready']} reviewed PDFs; {payload['summary']['current']} current source editions")
-        elif args.verb == "check-install":
-            print(f"{payload['status']}: {payload['installed']} installed PDFs; {payload['current']} current source editions; {payload['not_installed']} not installed")
         else:
             for item in payload["documents"]:
                 print(f"{item['id']} ({item['language']}): {item['status']}")

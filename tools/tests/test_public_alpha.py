@@ -3560,16 +3560,11 @@ class PublicAlphaTest(unittest.TestCase):
             self.assertIn("../" + reader, links)
         self.assertFalse(list(output.rglob("*.pdf")))
 
-    def test_public_pdf_filename_distinguishes_path_and_survives_revision(self) -> None:
+    def test_public_pdf_filename_distinguishes_every_identity(self) -> None:
         paths = [("gpt", "faith/work"), ("gpt", "law/work"), ("claude", "faith/work")]
-        for provider, leaf in paths:
-            self.write(f"pdf/{provider}/{leaf}.pdf", b"same bytes\n")
-        aliases = self.tool.public_pdf_aliases(paths)
-        self.assertEqual(len({Path(alias).name for alias in aliases.values()}), 3)
-        self.assertEqual(aliases, self.tool.public_pdf_aliases(paths))
-        previous = self.tool.public_pdf_path("gpt", "faith/work")
-        self.write("pdf/gpt/faith/work.pdf", b"revised bytes\n")
-        self.assertEqual(previous, self.tool.public_pdf_path("gpt", "faith/work"))
+        names = [Path(self.tool.public_pdf_path(provider, leaf)).name for provider, leaf in paths]
+        self.assertEqual(len(set(names)), 3)
+        self.assertEqual(names, [Path(self.tool.public_pdf_path(*path)).name for path in paths])
 
     def test_old_local_pdf_bytes_do_not_change_source_first_publication(self) -> None:
         publications, output = self.build_verified_artifact()
@@ -3581,13 +3576,6 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertEqual(reader.read_bytes(), original)
         self.assertFalse(list(output.rglob("*.pdf")))
         self.assertIn("../web/gpt/work.html", self.tool.parsed_html(output / "library/test.html").links)
-
-    def test_public_pdf_basename_collision_is_refused(self) -> None:
-        with mock.patch.object(
-            self.tool, "public_pdf_path", side_effect=["pdf/gpt/same.pdf", "pdf/claude/same.pdf"]
-        ):
-            with self.assertRaisesRegex(self.tool.ReleaseError, "filename collision"):
-                self.tool.public_pdf_aliases([("gpt", "work"), ("claude", "work")])
 
     def test_public_pdf_links_preserve_queries_fragments_and_subpath_portability(self) -> None:
         alias = self.tool.public_pdf_path("gpt", "work")
@@ -3645,25 +3633,15 @@ class PublicAlphaTest(unittest.TestCase):
         with self.assertRaisesRegex(self.tool.ReleaseError, "filename-cache-unsafe canonical URL"):
             self.tool.verify_output(self.manifest, publications, output, preview=False)
 
-    def test_reading_plan_pdfs_keep_old_routes_and_get_public_aliases(self) -> None:
+    def test_reading_plan_pdf_links_route_to_their_reader(self) -> None:
         canonical = "pdf/reading-plans/narrative-spine-story-douay-rheims.pdf"
-        self.write(canonical, b"track bytes\n")
         reader = "reading-plans/narrative-spine-story-douay-rheims.html"
-        with mock.patch.object(self.tool, "offered_bible_ids", return_value={"douay-rheims"}), mock.patch.object(self.tool, "source_reader_routes", return_value={canonical: reader}):
-            aliases = self.tool.public_pdf_aliases({("gpt", "work")})
-            self.assertIn(canonical, aliases)
-            self.assertNotEqual(Path(canonical).name, Path(aliases[canonical]).name)
+        with mock.patch.object(self.tool, "source_reader_routes", return_value={canonical: reader}):
             self.assertEqual(
                 self.tool.source_to_output(
                     "README.md", "index.html", canonical + "#page=4", {("gpt", "work")}
                 ),
                 reader + "#page=4",
-            )
-            self.assertIn(
-                '../' + aliases[canonical],
-                self.tool.rewrite_pdf_hrefs(
-                    f'<a href="../{canonical}">Track</a>', "scripture/index.html", aliases
-                ),
             )
 
     def test_ark_editions_share_one_catalog_row_and_keep_their_titles(self) -> None:
@@ -3873,163 +3851,16 @@ class PublicAlphaTest(unittest.TestCase):
         change(catalogue)
         self.write_json("src/web/data/encyclicals/index.json", catalogue)
 
-    def rewrite_papal_release(self, fixture: dict, change) -> None:
-        release = json.loads(json.dumps(fixture["release"]))
-        change(release)
-        self.write_json("release/papal-documents.json", release)
-
-    def test_papal_readers_are_exactly_the_ones_the_catalogue_links(self) -> None:
+    def test_papal_reader_pdfs_are_never_site_sources(self) -> None:
         self.make_encyclicals_fixture()
 
-        served = self.tool.papal_reader_pdfs()
-
-        self.assertEqual({self.PAPAL_LATIN, self.PAPAL_ENGLISH}, set(served))
         recognized = self.tool.site_source_paths()
         self.assertNotIn(self.PAPAL_LATIN, recognized)
         self.assertNotIn(self.PAPAL_ENGLISH, recognized)
         self.assertIn("release/papal-documents.json", recognized)
         self.assertIn("src/web/data/encyclicals/index.json", recognized)
         self.assertIn("src/web/browser/encyclicals/index.html", recognized)
-        # Installed and reviewed, but linked by nothing: never served, never bound.
         self.assertNotIn(self.PAPAL_UNLINKED, recognized)
-        aliases = self.tool.public_pdf_aliases(())
-        self.assertNotIn(self.PAPAL_UNLINKED, aliases)
-        alias = aliases[self.PAPAL_LATIN]
-        self.assertEqual(
-            alias, self.tool.public_pdf_path("papal-documents", Path(self.PAPAL_LATIN).stem)
-        )
-        self.assertNotEqual(Path(alias).name, Path(self.PAPAL_LATIN).name)
-
-    def test_papal_readers_are_absent_without_a_catalogue_or_a_data_root(self) -> None:
-        self.make_encyclicals_fixture()
-        (self.root / "src/web/data/encyclicals/index.json").unlink()
-        self.assertEqual({}, self.tool.papal_reader_pdfs())
-        self.make_encyclicals_fixture()
-        (self.root / "src/web/data/bibles.json").unlink()
-        self.assertEqual({}, self.tool.papal_reader_pdfs())
-
-    def test_papal_reader_whose_bytes_changed_stops_the_build(self) -> None:
-        self.make_encyclicals_fixture()
-        self.write(self.PAPAL_LATIN, b"%PDF-1.7 latin reader, rebuilt\n")
-
-        with self.assertRaises(self.tool.ReleaseError) as failure:
-            self.tool.papal_reader_pdfs()
-
-        message = str(failure.exception)
-        self.assertIn(self.PAPAL_LATIN, message)
-        self.assertIn("SHA-256 on disk", message)
-        self.assertIn("bytes on disk", message)
-        # The build asks for its aliases before it copies anything.
-        with self.assertRaises(self.tool.ReleaseError):
-            self.tool.public_pdf_aliases(())
-
-    def test_papal_reader_the_release_record_does_not_install_stops_the_build(self) -> None:
-        fixture = self.make_encyclicals_fixture()
-        stray = "pdf/papal-documents/1900-01-01--papal.unrecorded--la--aaaaaaaaaaaaaaaa.pdf"
-        self.write(stray, b"%PDF-1.7 nobody reviewed this\n")
-
-        def link_stray(catalogue: dict) -> None:
-            catalogue["encyclicals"][1]["readers"] = [{
-                "language": "la", "release_id": "papal.unrecorded", "pdf": stray,
-                "pdf_sha256": digest(b"%PDF-1.7 nobody reviewed this\n"), "pages": 1,
-                "witness": "nowhere", "extent": "complete",
-            }]
-
-        self.rewrite_encyclicals(fixture, link_stray)
-        with self.assertRaisesRegex(
-            self.tool.ReleaseError, "is not a reader release/papal-documents.json installs"
-        ):
-            self.tool.papal_reader_pdfs()
-
-    def test_papal_reader_fields_must_match_the_release_record(self) -> None:
-        fixture = self.make_encyclicals_fixture()
-        cases = (
-            ("pages", lambda c: c["encyclicals"][0]["readers"][0].update({"pages": 4}),
-             "the catalogue's pages 4"),
-            ("hash", lambda c: c["encyclicals"][0]["readers"][0].update({"pdf_sha256": "f" * 64}),
-             "the catalogue's pdf_sha256"),
-            ("language", lambda c: c["encyclicals"][0]["readers"][0].update({"language": "it"}),
-             "is not a reader"),
-            ("outside", lambda c: c["encyclicals"][0]["readers"][0].update(
-                {"pdf": "pdf/gpt/work.pdf"}), "not a reader path under pdf/papal-documents/"),
-            ("traversal", lambda c: c["encyclicals"][0]["readers"][0].update(
-                {"pdf": "pdf/papal-documents/../gpt/work.pdf"}), "not a reader path"),
-            ("twice", lambda c: c["encyclicals"][1]["readers"].append(
-                dict(c["encyclicals"][0]["readers"][0], pages=9)), "described two different ways"),
-        )
-        for name, change, expected in cases:
-            with self.subTest(case=name):
-                self.rewrite_encyclicals(fixture, change)
-                with self.assertRaises(self.tool.ReleaseError) as failure:
-                    self.tool.papal_reader_pdfs()
-                self.assertIn(expected, str(failure.exception))
-
-    def test_papal_reader_needs_a_current_reviewed_public_domain_release_row(self) -> None:
-        fixture = self.make_encyclicals_fixture()
-        cases = (
-            ("review", lambda r: r["documents"][0]["review"].update({"status": "FAIL"}),
-             "no PASS review"),
-            ("rights", lambda r: r["documents"][0]["source"].update({"rights_status": "licensed"}),
-             "no public-domain distribution basis"),
-            ("retired", lambda r: r["obsolete"].append({"pdf": self.PAPAL_LATIN}),
-             "retired by release/papal-documents.json"),
-            ("schema", lambda r: r.update({"schema": "something-else/v1"}),
-             "is not a triptych-papal-release/v1 record"),
-        )
-        for name, change, expected in cases:
-            with self.subTest(case=name):
-                self.rewrite_papal_release(fixture, change)
-                with self.assertRaises(self.tool.ReleaseError) as failure:
-                    self.tool.papal_reader_pdfs()
-                self.assertIn(expected, str(failure.exception))
-
-    def test_papal_reader_replacement_history_preserves_the_current_stable_path(self) -> None:
-        fixture = self.make_encyclicals_fixture()
-        current = fixture["release"]["documents"][0]
-        history = {
-            "id": current["id"], "language": current["language"],
-            "pdf": current["pdf"], "pdf_sha256": digest(b"prior reviewed PDF"),
-            "reason": "replaced-by-current-pass",
-        }
-        self.rewrite_papal_release(fixture, lambda release: release["obsolete"].append(history))
-        self.assertEqual({self.PAPAL_LATIN, self.PAPAL_ENGLISH}, set(self.tool.papal_reader_pdfs()))
-        self.assertNotIn(self.PAPAL_LATIN, self.tool.site_source_paths())
-        self.write(self.PAPAL_LATIN, b"prior reviewed PDF")
-        with self.assertRaisesRegex(self.tool.ReleaseError, "bytes on disk|SHA-256"):
-            self.tool.papal_reader_pdfs()
-
-    def test_papal_reader_replacement_history_requires_distinct_exact_prior_identity(self) -> None:
-        fixture = self.make_encyclicals_fixture()
-        current = fixture["release"]["documents"][0]
-        history = {
-            "id": current["id"], "language": current["language"],
-            "pdf": current["pdf"], "pdf_sha256": digest(b"prior reviewed PDF"),
-            "reason": "replaced-by-current-pass",
-        }
-        cases = (
-            {"reason": "withdrawn-or-no-longer-ready"},
-            {"reason": None},
-            {"pdf_sha256": current["pdf_sha256"]},
-            {"pdf_sha256": "not-an-exact-hash"},
-            {"pdf_sha256": None},
-            {"id": "another.act"},
-            {"language": "another-language"},
-        )
-        for change in cases:
-            with self.subTest(change=change):
-                retired = dict(history, **change)
-                self.rewrite_papal_release(fixture, lambda release: release["obsolete"].append(retired))
-                with self.assertRaisesRegex(self.tool.ReleaseError, "retired by release/papal-documents.json"):
-                    self.tool.papal_reader_pdfs()
-
-    def test_papal_reader_reached_through_a_symlink_is_refused(self) -> None:
-        self.make_encyclicals_fixture()
-        target = self.root / self.PAPAL_LATIN
-        held = self.root / "held-reader.pdf"
-        target.rename(held)
-        os.symlink(held, target)
-        with self.assertRaisesRegex(self.tool.ReleaseError, "path is a symlink"):
-            self.tool.papal_reader_pdfs()
 
     def test_served_encyclicals_catalogue_links_only_public_aliases(self) -> None:
         fixture = self.make_encyclicals_fixture()

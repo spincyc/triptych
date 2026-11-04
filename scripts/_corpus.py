@@ -67,7 +67,6 @@ from _document_schema import PROVIDERS
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
-PDF_ROOT = ROOT / "pdf"
 PUBLICATION_ROOT = ROOT / "release" / "publications"
 
 # The schema inventory owns provider identities; this module re-exports them

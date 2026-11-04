@@ -309,43 +309,15 @@ archive. Before deleting a snapshot, verify exact complete pack coverage and
 the extraction contract. Advertise an archive route only after delivery is
 verified. No original-byte audit renews the historical editorial or visual PASS.
 
-### Explicit input staging for reviewed print maintenance
+### Retired reviewed print installation
 
-A new optional reviewed print installation follows this order:
-
-1. Run `typeset-papal prepare-install` and inspect its scratch proposal.
-   The proposal must bind the current source plan, exact rendered bytes and
-   complete page-review evidence.
-2. Run `tools/typeset-papal stage-inputs --prepared
-   .scratch/papal-install/prepared.json`. Staging regenerates and compares the
-   proposal, repeating the source, PDF-fidelity and review checks. It writes
-   only the proposal's exact hash-addressed JSON/JSONL input snapshots under
-   ignored `release/papal-documents/inputs/`. Installed PDFs, the release
-   record, reports, delivery declarations and extraction records stay unchanged.
-   Existing matching snapshots are preserved; collisions, symlinks or changed
-   inputs are refused, and a staging failure rolls back its new snapshots.
-3. Inventory and pack those inputs while retaining every previously declared
-   historical snapshot, including unreferenced ones. Previously externalized
-   originals must be available in the verified local cache for repacking;
-   restore them explicitly when needed. Verify the complete offline pack,
-   publish it through the separately authorized archive workflow, and verify
-   each published archive against its recorded hash and size at its registered
-   delivery URL. Update `input-delivery.json` before installation. Packing and
-   staging do not upload anything.
-4. Run `typeset-papal install --prepared` with the inspected proposal.
-   Installation revalidates the proposal and refuses undeclared input references
-   before changing installed bytes. It does not accept an unregistered raw
-   snapshot as delivery evidence.
-5. Run `python3 scripts/_papal_input_receipt.py record`, then `audit` and
-   `check`, and the explicit `typeset-papal check-install --plan` byte check.
-   Refresh the governed browser products and release bindings, then run the
-   owning publication gates before publishing a source checkpoint.
-
-Routine metadata checks intentionally fail between declaration, installation
-and extraction updates. Keep publication closed until the new extraction binds
-the exact new release and the final gates pass. Staging, archive declaration
-and newly rendered bytes confer no source admission, visual PASS or publication
-approval. Old snapshots and review facts remain preserved throughout.
+Until 2026-11-04 a reviewed reader could be installed under
+`pdf/papal-documents/` through `typeset-papal prepare-install`,
+`stage-inputs`, `install` and `check-install`. That sequence is retired with
+the tree; the tool no longer offers those verbs. The release record it wrote
+stays as historical evidence and is checked, never rewritten, by
+`scripts/_papal_input_receipt.py check`. A new reviewed reader is not
+installed: it is read from retained source text and printed on demand.
 
 ### Current reader delivery
 

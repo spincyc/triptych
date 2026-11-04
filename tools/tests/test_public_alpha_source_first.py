@@ -73,14 +73,6 @@ class PublicAlphaSourceFirstTest(unittest.TestCase):
 
         with (
             mock.patch.object(subprocess, "Popen", side_effect=guarded_popen),
-            mock.patch.object(
-                self.tool, "papal_reader_pdfs",
-                side_effect=AssertionError("source publication read installed papal PDFs"),
-            ),
-            mock.patch.object(
-                self.tool, "reading_plan_pdfs",
-                side_effect=AssertionError("source publication read installed reading-plan PDFs"),
-            ),
         ):
             yield
 
@@ -596,8 +588,6 @@ class PublicAlphaSourceReaderIntegrationTest(unittest.TestCase):
         with (
             tool.held_repository_inputs(),
             mock.patch.object(subprocess, "Popen", side_effect=AssertionError("source-reader regression invoked a subprocess")),
-            mock.patch.object(tool, "papal_reader_pdfs", side_effect=AssertionError("source-reader regression read installed papal PDFs")),
-            mock.patch.object(tool, "reading_plan_pdfs", side_effect=AssertionError("source-reader regression read installed reading-plan PDFs")),
         ):
             pages = tool.source_print_pages()
             self.assertTrue(pages, "real source-reader inventory is empty")

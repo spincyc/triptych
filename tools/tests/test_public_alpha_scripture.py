@@ -110,7 +110,7 @@ class PublicAlphaScriptureTest(unittest.TestCase):
             for name, result in {
                 "publication_map": {}, "included_publications": {},
                 "included_document_pages": {}, "pictorial_gallery_source_paths": set(),
-                "reading_plan_pdfs": {}, "web_browser_pages": {},
+                "web_browser_pages": {},
             }.items():
                 stack.enter_context(mock.patch.object(self.tool, name, return_value=result))
             stack.enter_context(mock.patch.object(self.tool, "SITE_SOURCE_PATHS", set()))

@@ -59,10 +59,10 @@ module.exports = function texts(realm) {
     return loading;
   }
 
-  /* Whether a path the catalogue records is present in this checkout. The
-   * installed PDFs stopped being tracked on 2026-09-04 and are built at deploy
-   * (guidance/repository.md:24-41), so a recorded PDF is usually not here; the
-   * reader says so rather than offering a path that leads nowhere. */
+  /* Whether a path the catalogue records is present in this checkout. PDFs
+   * stopped being tracked on 2026-09-04 and nothing installs them under pdf/
+   * any more (guidance/repository.md), so a recorded PDF is usually not here;
+   * the reader says so rather than offering a path that leads nowhere. */
   function here(relative) {
     if (!relative) return false;
     const file = path.resolve(realm.ROOT, relative);

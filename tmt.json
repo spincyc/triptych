@@ -788,13 +788,13 @@
       "lang": "python",
       "mutates": true,
       "origin": "local",
-      "purpose": "Build, catalog and install admitted papal source reading PDFs.",
+      "purpose": "Build and catalog admitted papal source reading PDFs.",
       "requires": [
         "papal-documents",
         "source-library"
       ],
       "stage": "draft",
-      "usage": "typeset-papal {check,render,plan,collect,prepare-install,stage-inputs,install,check-install} [OPTIONS]"
+      "usage": "typeset-papal {check,render,plan,collect} [OPTIONS]"
     },
     "web-edition": {
       "idempotent": true,

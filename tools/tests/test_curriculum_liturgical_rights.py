@@ -15,7 +15,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 CURRICULUM_ROOT = ROOT / "src/gpt/curriculums/ecclesiastical-latin"
-PDF_ROOT = ROOT / "pdf/gpt/curriculums/ecclesiastical-latin"
+PDF_ROOT = ROOT / "build/gpt/curriculums/ecclesiastical-latin"
+# The reviewed allowances of 2026-08-27 name each PDF where the retired install
+# step copied it. That copy was the build's bytes unchanged, so the scan reads
+# the build and reports each finding under the name the allowance records
+# rather than rewriting a reviewed record to follow a moved file.
+RECORDED_PDF_ROOT = "pdf/gpt/curriculums/ecclesiastical-latin"
 REGISTRY = ROOT / "src/sources/inventories/icel-2010-chant-fingerprints-v1.toml"
 ALLOWLIST = CURRICULUM_ROOT / "research/liturgical-rights-allowlist-v1.toml"
 PASSAGE_INVENTORY = CURRICULUM_ROOT / "research/passage-inventory.md"
@@ -141,7 +146,7 @@ def pdf_findings(
             findings.append(
                 (
                     "installed-pdf",
-                    path.relative_to(ROOT).as_posix(),
+                    f"{RECORDED_PDF_ROOT}/{path.relative_to(PDF_ROOT).as_posix()}",
                     page_start,
                     page_end,
                     counts[key],
@@ -237,7 +242,7 @@ class CurriculumLiturgicalRightsTests(unittest.TestCase):
             else:
                 self.assertEqual(item["surface"], "installed-pdf")
                 self.assertTrue(
-                    item["path"].startswith("pdf/gpt/curriculums/ecclesiastical-latin/")
+                    item["path"].startswith(RECORDED_PDF_ROOT + "/")
                 )
                 self.assertNotIn("line_start", item)
             expected[item["surface"]].append(allowance_key(item))
@@ -256,16 +261,15 @@ class CurriculumLiturgicalRightsTests(unittest.TestCase):
             "hash-only rights finding differs from the exact location-scoped allowlist",
         )
 
-    def test_allowlist_exactly_matches_installed_curriculum_pdfs(self) -> None:
-        # Installed PDFs stopped being tracked on 2026-09-04 and are built during
-        # deployment (guidance/repository.md), so a checkout that has never been
-        # built has nothing to scan. The skip names what did not run; a tree that
-        # has the directory is held to the whole gate below.
+    def test_allowlist_exactly_matches_built_curriculum_pdfs(self) -> None:
+        # PDFs are local build outputs (guidance/repository.md), so a checkout
+        # that has never been built has nothing to scan. The skip names what did
+        # not run; a tree that has the directory is held to the whole gate below.
         if not PDF_ROOT.is_dir():
             self.skipTest(
-                f"{PDF_ROOT.relative_to(ROOT)} is not installed, so the "
-                "installed-PDF half of the curriculum rights gate did not run; "
-                "`make check-installed` builds the tree and runs it"
+                f"{PDF_ROOT.relative_to(ROOT)} is not built, so the "
+                "typeset-PDF half of the curriculum rights gate did not run; "
+                "`make check-typeset` builds the tree and runs it"
             )
         _, window_artifacts = load_registry()
         expected = self.allowlist_expectations(window_artifacts)
@@ -273,18 +277,19 @@ class CurriculumLiturgicalRightsTests(unittest.TestCase):
         # agreeing with it cannot show that the other 24 were scanned at all.
         # The census is kept, and anchored to the publishable leaves that
         # determine it rather than left as a bare number.
-        installed = sorted(
+        built = sorted(
             path.relative_to(PDF_ROOT).with_suffix("").as_posix()
             for path in PDF_ROOT.rglob("*.pdf")
         )
-        self.assertEqual(len(installed), 37, "installed curriculum PDF census changed")
+        self.assertEqual(len(built), 37, "built curriculum PDF census changed")
         self.assertEqual(
-            installed,
+            built,
             sorted(
                 path.parent.relative_to(CURRICULUM_ROOT).as_posix()
                 for path in CURRICULUM_ROOT.rglob("main.tex")
             ),
-            "installed curriculum PDFs do not mirror the publishable leaves",
+            "built curriculum PDFs do not mirror the publishable leaves; "
+            "a stale build/ may hold a removed leaf",
         )
         self.assertEqual(
             sorted(pdf_findings(window_artifacts)),

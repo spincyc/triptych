@@ -205,19 +205,6 @@ def rights_record_path(authorization: dict) -> Path:
     return path
 
 
-def compute_publication_hashes(manifest: dict) -> dict[str, str]:
-    hashes: dict[str, str] = {}
-    for publication in manifest.get("publications", []):
-        publication_id = publication.get("id")
-        if publication.get("status") not in {"release", "review"}:
-            continue
-        path = pdf_path(manifest, publication_id)
-        if not path.is_file():
-            raise BindingError(f"installed PDF missing for {publication_id}: {path}")
-        hashes[publication_id] = sha256_file(path)
-    return hashes
-
-
 def publication_status_counts(manifest: dict) -> tuple[str, dict[str, int]]:
     """Count the active publication inventory in its actual storage schema.
 
@@ -318,13 +305,10 @@ def publication_status_counts(manifest: dict) -> tuple[str, dict[str, int]]:
                 raise BindingError(
                     f"{path.relative_to(ROOT)} has invalid status {status!r}"
                 )
-            if status == "alpha":
-                installed = ROOT / "pdf" / provider / f"{leaf}.pdf"
-                if installed.is_symlink() or not installed.is_file():
-                    raise BindingError(
-                        "installed PDF missing for "
-                        f"{provider}:{leaf}: {installed.relative_to(ROOT)}"
-                    )
+            # An alpha record once also required its PDF installed under
+            # pdf/. That tree was retired on 2026-11-04: readers get the
+            # source-first edition and print on demand, so no file stands
+            # behind a record for this inventory to require.
             counts[status] += 1
     undeclared_records = set(local_records) - declared_records
     if undeclared_records:
@@ -342,8 +326,8 @@ def publication_clearance_summary(schema: str, counts: dict[str, int]) -> str:
     """The supplement sentence for the status vocabulary actually counted."""
     if schema == "records":
         return (
-            f"The approval binds all {counts['alpha']} exact installed public-alpha\n"
-            f"PDF snapshots, records {counts['hold']} publication(s) on hold, and binds\n"
+            f"The approval covers all {counts['alpha']} public-alpha publications,\n"
+            f"records {counts['hold']} publication(s) on hold, and binds\n"
         )
     if schema == "legacy":
         return (
@@ -635,9 +619,6 @@ def add_publication(
     if provider not in providers:
         raise BindingError(f"provider {provider!r} is not declared in the manifest")
     publication_id = leaf if provider == primary_provider(manifest) else f"{provider}:{leaf}"
-    path = ROOT / "pdf" / provider / f"{leaf}.pdf"
-    if status == "alpha" and not path.is_file():
-        raise BindingError(f"installed PDF missing: {path.relative_to(ROOT)}")
     authorizations = list(manifest.get("authorizations", {}))
     if len(authorizations) != 1:
         raise BindingError("expected exactly one manifest authorization")

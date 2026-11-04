@@ -65,25 +65,12 @@ for provider, leaf, status in (
         "authorization": "fixture" if status == "alpha" else None,
     }) + "\n", encoding="utf-8")
 
-try:
-    module.publication_status_counts(manifest)
-except module.BindingError as error:
-    assert "installed PDF missing" in str(error), error
-else:
-    raise AssertionError("an alpha record without its installed PDF was counted")
-for provider, leaf in (
-    ("gpt", "articles/one"),
-    ("claude", "curriculums/three"),
-):
-    pdf = sandbox / "pdf" / provider / f"{leaf}.pdf"
-    pdf.parent.mkdir(parents=True, exist_ok=True)
-    pdf.write_bytes(f"{provider}:{leaf}".encode())
-
+# No PDF stands behind an alpha record since the pdf/ tree was retired.
 schema, counts = module.publication_status_counts(manifest)
 assert schema == "records", schema
 assert counts == {"alpha": 2, "hold": 1}, counts
 summary = module.publication_clearance_summary(schema, counts)
-assert "all 2 exact installed public-alpha" in summary, summary
+assert "covers all 2 public-alpha publications" in summary, summary
 assert "records 1 publication(s) on hold" in summary, summary
 
 # Generated structure JSON participates in the same exact-byte comparison as

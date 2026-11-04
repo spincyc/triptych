@@ -1351,22 +1351,6 @@ def hash_tasks(tasks: list[PdfTask]) -> list[PdfTask]:
 
 
 def changed_mirror_path(source: Path, against: Path) -> Path:
-    build_root = (ROOT / "build").resolve()
-    pdf_root = (ROOT / "pdf").resolve()
-    try:
-        source_relative = source.relative_to(build_root)
-        against_relative = against.relative_to(pdf_root)
-    except ValueError:
-        source_relative = None
-        against_relative = None
-    if source_relative is not None and against_relative is not None:
-        prefix = against_relative.parts
-        if source_relative.parts[: len(prefix)] != prefix:
-            raise ReviewError(
-                f"cannot map {source} into comparison root {against}; "
-                "the build/pdf mirror prefixes differ"
-            )
-        return against.joinpath(*source_relative.parts[len(prefix) :])
     if against.name:
         for ancestor in (source.parent, *source.parents):
             if ancestor.name == against.name:
@@ -1672,7 +1656,8 @@ def parse_arguments(argv: list[str]) -> argparse.Namespace:
         metavar="DIRECTORY",
         help=(
             "select only input PDFs whose exact bytes differ from their mirrored "
-            "files below DIRECTORY (for example, build/gpt PDFs against doc/gpt)"
+            "files below DIRECTORY (for example, build/gpt PDFs against a saved "
+            "copy of an earlier build/gpt)"
         ),
     )
     parser.add_argument("pdf", nargs="*", help="PDFs to rasterize")
