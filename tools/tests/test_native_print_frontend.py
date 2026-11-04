@@ -63,21 +63,6 @@ class NativeAdmissionTests(unittest.TestCase):
         with self.assertRaises(native.NativePrintError):
             native.controls("publication:gpt/held", "print/held.html", context)
 
-    def test_common_and_legacy_pages_use_native_controls_and_preserve_reading(self):
-        identity, row = next(iter(self.documents.items()))
-        context = native.site_context(ROOT, documents=self.documents, revision="b" * 40, endpoint="")
-        descriptor = {"id": identity, "title": row["title"]}
-        page = web._page(descriptor, '<p id="source">Source text.</p>', "print/example.html", native_context=context)
-        self.assertIn("Source text.", page["html"])
-        self.assertIn('data-native-print-start', page["html"])
-        self.assertNotIn('data-web-print-start', page["html"])
-        self.assertIn("shared/native-print.js", page["body_extra"])
-        inventory = {"pages": {}, "reader_actions": {"reading-plans/full.html": {
-            "native_controls": "NATIVE-CONTROLS", "native_head_extra": "NATIVE-HEAD", "native_body_extra": "NATIVE-TAIL"}}}
-        legacy = web.decorate_source_page("reading-plans/full.html", {"html": "CANONICAL-READING"}, inventory)
-        self.assertEqual(legacy["html"], "NATIVE-CONTROLSCANONICAL-READING")
-        self.assertEqual(legacy["body_extra"], "NATIVE-TAIL")
-
     def test_download_names_are_unique_portable_and_carry_the_identity(self):
         names = {identity: native.download_name(identity, row) for identity, row in self.documents.items()}
         repeated = {name: count for name, count in Counter(names.values()).items() if count > 1}
@@ -116,7 +101,7 @@ class NativeAdmissionTests(unittest.TestCase):
             native.site_context(ROOT, documents=self.documents, revision="a" * 40, native_catalog=catalog)
 
 
-def fixture(*, empty=False, failure=None, legacy=False, companion=False, wasm=False, service_prefix=False, auto_option=False):
+def fixture(*, empty=False, failure=None, companion=False, wasm=False, service_prefix=False, auto_option=False):
     identity = "publication:gpt/example" + ("-synthesis" if companion else "")
     chosen = {"id": identity, "output_id": identity, "document": "publication:gpt/example",
               "edition": "synthesis" if companion else "main", "title": "Canonical edition"}
@@ -129,9 +114,7 @@ def fixture(*, empty=False, failure=None, legacy=False, companion=False, wasm=Fa
             "bundle_href": "native-tex/sources/" + "c" * 64 + ".json", "bundle_sha256": "c" * 64, "bundle_bytes": 123}},
             "runtime": {"href": "native-tex/runtime.json", "sha256": "d" * 64, "bytes": 456}}
     body = native.controls(identity, "print/example.html", context)
-    body = ('<section data-web-print-document="' + identity + '">' + body + '</section>')
-    if legacy:
-        body += '<article data-print-volume="full"><button data-print-volume-start hidden>Old browser Print</button></article>'
+    body = '<section>' + body + '</section>'
     hook = """
       window.printCalls=0; window.print=()=>{window.printCalls++;throw Error('Browser print must not run');};
       window.pdfDownloads=0; document.querySelector('[data-native-print-download]').click=()=>{window.pdfDownloads++;};
@@ -170,15 +153,12 @@ def fixture(*, empty=False, failure=None, legacy=False, companion=False, wasm=Fa
             return {bytes,sha256,byteLength:bytes.byteLength,passes:2,log:''};
           }};
         """.replace("BAD_SHA", "sha256='e'.repeat(64);" if failure == "wasm-sha" else "")
-    body += '<script>' + hook + '</script><script src="../shared/web-print.js"></script>'
-    if legacy:
-        body += '<script src="../shared/print-volume.js"></script>'
+    body += '<script>' + hook + '</script>'
     body += '<script src="../shared/native-print.js"></script>'
     if auto_option:
         body += "<script>const root=document.querySelector('[data-native-print]');TriptychNativePrint.install(root,JSON.parse(root.querySelector('[data-native-print-manifest]').textContent),{auto:true});</script>"
     responses = {"print/example.html": '<!doctype html><html><body>' + body + '</body></html>',
-                 "shared/native-print.js": (ROOT / "src/web/browser/shared/native-print.js").read_text(),
-                 "shared/print-volume.js": (ROOT / "src/web/browser/shared/print-volume.js").read_text()}
+                 "shared/native-print.js": (ROOT / "src/web/browser/shared/native-print.js").read_text()}
     return responses
 
 
@@ -189,7 +169,7 @@ def plan(responses, *, print_query=False, cancellation=False):
     if cancellation:
         actions.extend([wait("requests.length===1"), act("document.querySelector('[data-native-print-cancel]').click()")])
     actions.extend([wait("!document.querySelector('[data-native-print-start]').disabled"),
-                    act("({state:document.querySelector('[data-native-print]').dataset.nativePrintState,status:document.querySelector('[data-native-print-status]').textContent,download:document.querySelector('[data-native-print-download]').getAttribute('href'),hidden:document.querySelector('[data-native-print-download]').hidden,calls:printCalls,downloads:pdfDownloads,requests,oldPrintVisible:!!document.querySelector('[data-print-volume-start]:not([hidden])')})", "result")])
+                    act("({state:document.querySelector('[data-native-print]').dataset.nativePrintState,status:document.querySelector('[data-native-print-status]').textContent,download:document.querySelector('[data-native-print-download]').getAttribute('href'),hidden:document.querySelector('[data-native-print-download]').hidden,calls:printCalls,downloads:pdfDownloads,requests})", "result")])
     return {"responses": responses, "acts": actions}
 
 
@@ -259,11 +239,10 @@ class NativeBrowserTests(unittest.TestCase):
         self.assertTrue(result["download"].endswith("/pdf"))
 
     def test_explicit_native_volume_action_never_opens_browser_print(self):
-        result = drive(plan(fixture(legacy=True), print_query=True))["result"]
+        result = drive(plan(fixture(), print_query=True))["result"]
         self.assertEqual(result["state"], "ready", result)
         self.assertEqual(result["downloads"], 1)
         self.assertEqual(result["calls"], 0)
-        self.assertFalse(result["oldPrintVisible"])
 
     def test_unconfigured_service_refuses_without_fetch_or_browser_fallback(self):
         result = drive(plan(fixture(empty=True), print_query=True))["result"]
