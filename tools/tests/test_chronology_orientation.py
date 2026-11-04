@@ -33,12 +33,16 @@ PUBLISHED_V1 = (
 class OrientationProjectionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.found = chronology.dossier(TWENTIETH, provider="gpt")
+        # The leaf itself prints orientation-v3 since the generated date page
+        # (2026-11-04); these tests exercise the v1 renderer on its dossier.
+        cls.leaf_found = chronology.dossier(TWENTIETH, provider="gpt")
+        cls.found = cls.leaf_found._replace(presentation="")
         cls.projection = chronology.annotations(cls.found, presentation="orientation-v1")
 
     def test_legacy_projection_is_byte_identical(self):
         path = ROOT / "src/gpt" / TWENTIETH / chronology.ANNOTATIONS_RECORD
-        self.assertEqual(chronology.render_annotations_tex(chronology.annotations(self.found)), path.read_text())
+        self.assertEqual(chronology.render_annotations_tex(chronology.annotations(self.leaf_found)),
+                         path.read_text())
         self.assertEqual(chronology.render(self.found),
                          (ROOT / "src/gpt" / TWENTIETH / chronology.RECORD).read_text())
 

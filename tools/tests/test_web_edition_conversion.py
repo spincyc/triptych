@@ -147,6 +147,17 @@ def table_rows(markdown: str) -> list[list[tuple[int, str, set[str]]]]:
     return parser.rows
 
 
+def shared_format_files() -> dict[str, str]:
+    """The real shared proper format, relocated into the synthetic leaf with
+    the chronology-table environment it inputs."""
+    format_text = (ROOT / "src/common/propers-format.tex").read_text(encoding="utf-8")
+    return {
+        "propers-format.tex": format_text.replace(
+            "\\input{common/chronology-table}", "\\input{studies/subject/chronology-table}"),
+        "chronology-table.tex": (ROOT / "src/common/chronology-table.tex").read_text(encoding="utf-8"),
+    }
+
+
 @unittest.skipUnless(HAS_PANDOC, "pandoc is not installed")
 class WebEditionConversionTests(unittest.TestCase):
     def convert(
@@ -1243,8 +1254,7 @@ class WebEditionConversionTests(unittest.TestCase):
 
     def convert_proper_title(self, body: str, *, shim: Path | None = None) -> str:
         """Convert under the real print \\propertitle, which the shim must override."""
-        files = {"propers-format.tex": (ROOT / "src/common/propers-format.tex").read_text(
-            encoding="utf-8")}
+        files = shared_format_files()
         preamble = r"\input{studies/subject/propers-format}"
         if shim is None:
             return self.convert(body, preamble=preamble, files=files)
@@ -1301,8 +1311,7 @@ class WebEditionConversionTests(unittest.TestCase):
         """Convert a schema-2 leaf under the real shared proper format."""
         options = dict(
             preamble=r"\input{studies/subject/propers-format}",
-            files={"propers-format.tex": (ROOT / "src/common/propers-format.tex").read_text(
-                encoding="utf-8")},
+            files=shared_format_files(),
             proper=True, proper_schema=2, element_keys=("collect",),
         )
         if not shared:

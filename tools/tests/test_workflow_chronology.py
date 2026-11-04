@@ -87,6 +87,10 @@ AUTHOR_PROPER = (ROOT / "workflows" / "fragments" / "propers" /
 DOCUMENT = ("liturgy/roman-rite/1962/propers/temporal/"
             "54-fourteenth-after-pentecost")
 DOSSIER = "sections/redevelopment/02-scriptural-date-location.tex"
+# The leaf's own date page is generated since 2026-11-04 (document types); the
+# authored-dossier discipline these checks still enforce for any leaf not on a
+# type is exercised on the page the leaf published before then.
+AUTHORED_DOSSIER = ROOT / "tools/tests/fixtures/chronology/gpt-54-authored-date-page.tex"
 
 
 def _at_production(metadata: str, workflow: str, version: int) -> str:
@@ -548,6 +552,12 @@ class BoundLeafTests(unittest.TestCase):
         leaf.parent.mkdir(parents=True)
         shutil.copytree(ROOT / "src" / "gpt" / DOCUMENT, leaf)
         (cls.root / "src" / "sources").symlink_to(ROOT / "src" / "sources")
+        # Restore the legacy shape: the authored page instead of the
+        # generated page and its orientation-v3 table.
+        shutil.rmtree(leaf / "generated")
+        (leaf / "research" / "chronology-table.tex").unlink()
+        (leaf / DOSSIER).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(AUTHORED_DOSSIER, leaf / DOSSIER)
         cls.leaf = leaf
         cls.metadata = leaf / "generation-metadata.tex"
         cls.format = leaf / "format.tex"

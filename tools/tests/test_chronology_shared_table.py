@@ -92,8 +92,17 @@ class SharedTableTests(unittest.TestCase):
                         self.assertEqual(row.passages, rows[index + 1].passages)
                 fact = lambda key, locus, c: (key, locus, c.subject, c.relation,
                                               c.profile, c.disposition, c.label)
+                # A subject whose dates the corpus admits only by an unqualified
+                # reporting exception is withheld as a pending row, not printed.
+                withheld = {(e.key, r.locus, c.relation) for e in found.elements for c in e.claims
+                            for r in c.reaches if c.reporting_exception and not c.orientation_qualification}
+                pending = {(p.element_key, locus, row.group.relation) for row in rows
+                           if row.group.status == chronology.QUALIFICATION_PENDING
+                           for p in row.passages for locus in p.loci}
+                self.assertEqual(pending, withheld)
                 expected = Counter(fact(e.key, r.locus, c) for e in found.elements
-                                   for c in e.claims for r in c.reaches)
+                                   for c in e.claims for r in c.reaches
+                                   if (e.key, r.locus, c.relation) not in withheld)
                 actual = Counter(fact(p.element_key, locus, c) for row in rows
                                  if not row.group.requested_profile and not row.group.anchor_context
                                  for p in row.passages for locus in p.loci for c in row.group.claims)

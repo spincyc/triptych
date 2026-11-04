@@ -110,6 +110,10 @@ class ComputationReadsTests(unittest.TestCase):
                  for claim in holder.get("claims", [])
                  for source in claim.get("sources", [])}
         cited.update(resolved_binding_sources(found))
+        # An orientation-v3 row also cites the setting and narrative context
+        # it prints (the generated date page reads every leaf as v3).
+        cited.update(source for row in _proper_chronology.orientation_rows(found)
+                     for source in row.context_sources)
         library = {source for source in cited if not source.startswith("bible")}
         self.assertEqual(set(self.twenty_fifth["sources"]), library)
         self.assertTrue(any(source.startswith("artifact.catholic-encyclopedia")

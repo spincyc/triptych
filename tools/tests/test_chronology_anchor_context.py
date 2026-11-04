@@ -212,8 +212,12 @@ class AnchorProjectionTests(unittest.TestCase):
                             for claim in element.claims for s in claim.sources}
         compared_sources = {s for comparison in self.found.profile_comparisons
                             for claim in comparison.claims for s in claim.sources}
+        # An orientation-v3 row also cites the setting and narrative context
+        # it prints (the generated date page reads every leaf as v3).
+        row_sources = {s for row in proper.orientation_rows(self.found) for s in row.context_sources}
         self.assertEqual(set(traced["sources"]), {
-            s for s in context_sources | ordinary_sources | compared_sources | resolved_binding_sources(self.found)
+            s for s in context_sources | ordinary_sources | compared_sources | row_sources
+            | resolved_binding_sources(self.found)
             if not s.startswith("bible")})
         self.assertTrue(context_sources - ordinary_sources)
 

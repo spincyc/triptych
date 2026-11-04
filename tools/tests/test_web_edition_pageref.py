@@ -173,20 +173,21 @@ class PageReferenceConversionTests(unittest.TestCase):
         markdown = self.convert(preamble="% " + r"\newcommand{\where}[1]{p.~\pageref{#1}}")
         self.assertIn('<a href="#hist-esther">', markdown)
 
-    def test_current_orientation_leaf_changes_only_the_five_print_references(self) -> None:
+    def test_a_generated_date_page_leaves_nothing_for_page_references(self) -> None:
+        """GPT 61's five print references pointed into its authored date page.
+
+        Since 2026-11-04 that page is generated (no page references), so the
+        real leaf converts identically with or without the preparation; the
+        fixtures above keep the conversion itself covered.
+        """
         leaf = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
         with tempfile.TemporaryDirectory() as temporary:
             output = Path(temporary)
             current = DRIVER.convert("gpt", leaf, output / "current").read_text()
             with mock.patch.object(DRIVER, "prepare_page_references", side_effect=lambda body: (body, [])):
                 previous = DRIVER.convert("gpt", leaf, output / "previous").read_text()
-        before = next(line for line in previous.splitlines() if line.startswith("Sources and fuller qualifications:"))
-        after = next(line for line in current.splitlines() if line.startswith("Sources and fuller qualifications:"))
-        for target in ("esther", "job", "psalms", "matthew", "ephesians"):
-            self.assertEqual(after.count(f'<a href="#hist-{target}">'), 1)
-        self.assertNotIn("p.", after)
-        self.assertEqual(current, previous.replace(before, after))
-
+        self.assertNotIn('<a href="#hist-', current)
+        self.assertEqual(current, previous)
 
 if __name__ == "__main__":
     unittest.main()

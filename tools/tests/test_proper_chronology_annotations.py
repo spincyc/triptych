@@ -25,6 +25,15 @@ FIFTEENTH = f"{COLLECTION}/temporal/55-fifteenth-after-pentecost"
 FOURTEENTH = f"{COLLECTION}/temporal/54-fourteenth-after-pentecost"
 SIXTEENTH = f"{COLLECTION}/temporal/56-sixteenth-after-pentecost"
 TWENTIETH = f"{COLLECTION}/temporal/60-twentieth-after-pentecost"
+
+
+def legacy_dossier(*arguments, **keywords):
+    """The leaf's dossier with the presentation-free element projection.
+
+    Every proper prints orientation-v3 since the generated date page
+    (2026-11-04); these tests hold the element-level annotation projection,
+    which is generated beside the rows, to its own contract."""
+    return chronology.dossier(*arguments, **keywords)._replace(presentation="")
 TRINITY = f"{COLLECTION}/temporal/39-trinity-sunday"
 EIGHTH = f"{COLLECTION}/temporal/48-eighth-after-pentecost"
 NINTH = f"{COLLECTION}/temporal/49-ninth-after-pentecost"
@@ -54,7 +63,7 @@ class AnnotationProjectionTests(unittest.TestCase):
     def test_proper_55_is_grouped_without_collapsing_its_candidates(self) -> None:
         payload = self.payload()
         by_key = {element["key"]: element for element in payload["elements"]}
-        dossier = chronology.dossier(FIFTEENTH)
+        dossier = legacy_dossier(FIFTEENTH)
 
         self.assertEqual(len(by_key), 7)
         composition = next(group for group in by_key["introit"]["groups"]
@@ -107,7 +116,7 @@ class AnnotationProjectionTests(unittest.TestCase):
         )
 
     def test_gospel_without_an_event_gets_an_explicit_gap(self) -> None:
-        dossier = chronology.dossier(FIFTEENTH)
+        dossier = legacy_dossier(FIFTEENTH)
         gospel = dossier.element("gospel")
         self.assertIsNotNone(gospel)
         composition = tuple(
@@ -198,13 +207,12 @@ class AnnotationProjectionTests(unittest.TestCase):
                          "the end of the Roman imprisonment, and not as late as "
                          "the destruction of Jerusalem")
         self.assertEqual(relative["profile"], "catholic-traditional-v1")
-        text = self.run_tool("--document", FIFTEENTH, "--format", "text")
-        self.assertEqual(text.returncode, 0, text.stderr)
+        text = chronology.render_annotations_text(chronology.annotations(legacy_dossier(FIFTEENTH)))
         self.assertIn(
             "Before the end of the Roman imprisonment, when the Acts was finished.",
-            text.stdout,
+            text,
         )
-        self.assertNotIn("imprisonment…", text.stdout)
+        self.assertNotIn("imprisonment…", text)
 
     def test_recent_propers_foreground_only_supported_traditional_attributions(self) -> None:
         expected = {
@@ -278,7 +286,7 @@ class AnnotationProjectionTests(unittest.TestCase):
         )
 
     def test_multiple_attributed_figures_are_not_flattened_into_alternative_dates(self) -> None:
-        dossier = chronology.dossier(FIFTEENTH)
+        dossier = legacy_dossier(FIFTEENTH)
         introit = dossier.element("introit")
         david = next(c for c in introit.publication_claims
                      if c.relation == "traditional-attribution")
@@ -297,7 +305,7 @@ class AnnotationProjectionTests(unittest.TestCase):
         self.assertNotIn("alternatives", rendered)
 
     def test_attribution_only_is_preserved_through_publication_intersection(self) -> None:
-        dossier = chronology.dossier(FIFTEENTH, profile="catholic-traditional-v1")
+        dossier = legacy_dossier(FIFTEENTH, profile="catholic-traditional-v1")
         introit = dossier.element("introit")
         self.assertEqual(introit.status, "attribution-only")
         self.assertEqual(introit.publication_status, "attribution-only")
@@ -309,7 +317,7 @@ class AnnotationProjectionTests(unittest.TestCase):
         self.assertFalse(rendered.groups[1].claims)
 
     def test_twentieth_psalms_expose_traditional_context_and_occasion_limits(self) -> None:
-        dossier = chronology.dossier(TWENTIETH)
+        dossier = legacy_dossier(TWENTIETH)
         projection = chronology.annotations(dossier)
         by_key = {element.key: element for element in projection.elements}
         for key in ("gradual", "alleluia", "communion"):
@@ -352,7 +360,7 @@ class AnnotationProjectionTests(unittest.TestCase):
         self.assertIn(r"\chronologyannotationanchorgroup", tex)
 
     def test_single_event_subject_is_visible_even_without_competing_subjects(self) -> None:
-        projection = chronology.annotations(chronology.dossier(FIFTEENTH))
+        projection = chronology.annotations(legacy_dossier(FIFTEENTH))
         gospel = next(e for e in projection.elements if e.key == "gospel")
         event = next(g for g in gospel.groups if g.relation == "narrated-event")
         self.assertEqual(len({c.subject for c in event.claims}), 1)
@@ -373,7 +381,7 @@ class AnnotationProjectionTests(unittest.TestCase):
         for verse in (45, 54):
             self.assertNotIn(subject, {a.subject for a in
                              corpus.chronology(f"John.4.{verse}").assertions})
-        projected = chronology.annotations(chronology.dossier(TWENTIETH))
+        projected = chronology.annotations(legacy_dossier(TWENTIETH))
         gospel = next(e for e in projected.elements if e.key == "gospel")
         self.assertEqual([g.relation for g in gospel.groups],
                          ["narrated-event", "composition"])
@@ -385,7 +393,7 @@ class AnnotationProjectionTests(unittest.TestCase):
         self.assertEqual(claim.profile, "catholic-traditional-v1")
 
     def test_old_testament_events_survive_and_precede_available_composition(self) -> None:
-        dossier = chronology.dossier(FIFTEENTH)
+        dossier = legacy_dossier(FIFTEENTH)
         for locus in ("Gen.1.1", "Gen.12.4", "Ex.3.1", "Ex.16.1",
                       "Jos.6.20", "3Kings.6.1", "1Mach.4.52"):
             with self.subTest(locus=locus):
@@ -417,7 +425,7 @@ class AnnotationProjectionTests(unittest.TestCase):
                                       chronology._group_display(group))
 
     def test_old_testament_book_genre_does_not_invent_an_event_gap(self) -> None:
-        dossier = chronology.dossier(FIFTEENTH)
+        dossier = legacy_dossier(FIFTEENTH)
         status, reason, claims = chronology._claims_at("Job.1.1", None, None)
         element = dossier.element("epistle")._replace(
             loci=("Job.1.1",), publication_status=status,
@@ -466,7 +474,7 @@ class AnnotationProjectionTests(unittest.TestCase):
         self.assertIn("c. A.D. 90–100", displays)
 
     def test_record_header_scopes_the_generated_display_exception(self) -> None:
-        rendered = chronology.render(chronology.dossier(FIFTEENTH))
+        rendered = chronology.render(legacy_dossier(FIFTEENTH))
         header = rendered.partition("\nschema = ")[0]
         self.assertIn(
             "only value a manually authored\n# guide may display", header
@@ -481,7 +489,7 @@ class AnnotationProjectionTests(unittest.TestCase):
 
     def test_omitted_profile_records_the_effective_corpus_default(self) -> None:
         expected = corpus.load().default_profile
-        dossier = chronology.dossier(FIFTEENTH)
+        dossier = legacy_dossier(FIFTEENTH)
         self.assertEqual(dossier.profile, expected)
 
         record = self.run_command("record", "--document", FIFTEENTH)
@@ -494,7 +502,7 @@ class AnnotationProjectionTests(unittest.TestCase):
 
     def test_explicit_leaf_profile_is_preserved(self) -> None:
         selected = "catholic-traditional-v1"
-        dossier = chronology.dossier(FIFTEENTH, profile=selected)
+        dossier = legacy_dossier(FIFTEENTH, profile=selected)
         self.assertEqual(dossier.profile, selected)
         self.assertEqual(
             {claim.profile for element in dossier.elements for claim in element.claims},
@@ -616,7 +624,7 @@ class AnnotationProjectionTests(unittest.TestCase):
         self.assertEqual(gospel.publication_status, "composition-only")
 
     def test_attestation_only_status_survives_publication_projection(self) -> None:
-        dossier = chronology.dossier(FIFTEENTH)
+        dossier = legacy_dossier(FIFTEENTH)
         introit = dossier.element("introit")
         self.assertIsNotNone(introit)
         attestation = introit.claims[0]._replace(
@@ -881,7 +889,7 @@ class AnnotationProjectionTests(unittest.TestCase):
                 )
 
         # The corpus's own mixed groups, as the 1962 leaves print them.
-        fifteenth = chronology.annotations(chronology.dossier(FIFTEENTH))
+        fifteenth = chronology.annotations(legacy_dossier(FIFTEENTH))
         sixteenth = chronology.annotations(chronology.dossier(SIXTEENTH))
         epistle = next(e for e in fifteenth.elements if e.key == "epistle")
         communion = next(e for e in sixteenth.elements if e.key == "communion")
@@ -922,9 +930,7 @@ class AnnotationProjectionTests(unittest.TestCase):
             written = self.run_tool(*common, "--write")
             self.assertEqual(written.returncode, 0, written.stderr)
             self.assertTrue(annotation_file.is_file())
-            expected = self.run_tool(
-                "--document", FIFTEENTH, "--format", "tex"
-            )
+            expected = self.run_tool(*common, "--format", "tex")
             self.assertEqual(annotation_file.read_bytes(),
                              expected.stdout.encode())
 
@@ -1144,7 +1150,7 @@ class ReaderFacingDisplayTests(unittest.TestCase):
         displayed". Until 2026-10-01 the Fifteenth Sunday printed Maas-derived
         years as "Event: A.D. 27." and "Event: A.D. 28.", the same words a
         source-stated year would print."""
-        found = chronology.annotations(chronology.dossier(FIFTEENTH))
+        found = chronology.annotations(legacy_dossier(FIFTEENTH))
         by_key = {e.key: e for e in found.elements}
         for key, expected in (
             ("gospel", "Event: The raising of the widow's son at Naim, "
@@ -1171,9 +1177,10 @@ class ReaderFacingDisplayTests(unittest.TestCase):
             [str(TOOL), "annotations", "--document", FIFTEENTH, "--format",
              "text"], cwd=ROOT, capture_output=True, text=True, check=False)
         self.assertEqual(rendered.returncode, 0, rendered.stderr)
-        self.assertIn("  Event: The raising of the widow's son at Naim, "
-                      "A.D. 27 (derived).", rendered.stdout)
-        self.assertNotIn("  Event: A.D. 27.\n", rendered.stdout)
+        # The leaf prints orientation-v3 rows: the event row's Date cell.
+        self.assertIn("  Narrated event: The raising of the widow's son at Naim\n"
+                      "  A.D. 27 (derived)\n", rendered.stdout)
+        self.assertNotIn("  A.D. 27\n", rendered.stdout)
 
     def test_every_derivation_in_the_corpus_is_marked_and_nothing_else(self) -> None:
         """Over the whole corpus, not only the leaves that print one today."""
@@ -1206,7 +1213,7 @@ class ReaderFacingDisplayTests(unittest.TestCase):
                     with self.subTest(claim=f"{subject.id}#{index}"):
                         self.assertEqual(claim.date.derived,
                                          claim.basis_class == "derived")
-        record = tomllib.loads(chronology.render(chronology.dossier(FIFTEENTH)))
+        record = tomllib.loads(chronology.render(legacy_dossier(FIFTEENTH)))
         claims = [claim for element in record["elements"]
                   for claim in element.get("claims", [])]
         self.assertTrue(claims)

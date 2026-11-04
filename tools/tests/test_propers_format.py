@@ -27,7 +27,8 @@ class ProperFormatTests(unittest.TestCase):
         self.data["format_contract"] = components.FORMAT_CONTRACT
         common = self.root / "src/common"
         common.mkdir()
-        for name in ("preamble", "propers-format", "propers-homily"):
+        # propers-format inputs the shared chronology table's environment.
+        for name in ("preamble", "propers-format", "propers-homily", "chronology-table"):
             shutil.copyfile(ROOT / "src/common" / f"{name}.tex", common / f"{name}.tex")
         for mode, name in components.ENTRYPOINTS.items():
             entry = self.leaf / name
@@ -200,6 +201,10 @@ class ProperFormatTests(unittest.TestCase):
             with self.subTest(text=text), self.assertRaisesRegex(ValueError, "lane"):
                 self.audit()
 
+    def tex_env(self):
+        """propers-format inputs common/chronology-table by its TEXINPUTS path."""
+        return {**os.environ, "TEXINPUTS": f"{self.root / 'src'}:"}
+
     def test_every_shared_format_control_rejects_local_alias_or_undefinition(self):
         shared = "\n".join(
             (self.root / "src/common" / name).read_text()
@@ -295,7 +300,7 @@ class ProperFormatTests(unittest.TestCase):
             + "\\end{properhomily}\\typeout{NOTE-WIDTH=\\the\\linewidth}\n"
             "\\section*{Source note}Separate apparatus.\\end{document}\n")
         result = subprocess.run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
-                                 source.name], cwd=build, capture_output=True, text=True)
+                                 source.name], cwd=build, capture_output=True, text=True, env=self.tex_env())
         self.assertEqual(result.returncode, 0, result.stdout[-2500:])
         import re
         values = dict(re.findall(r"(BASE-SIZE|TEXT-WIDTH|SPEECH-WIDTH|NOTE-WIDTH)=([0-9.]+)", result.stdout))
@@ -340,7 +345,7 @@ class ProperFormatTests(unittest.TestCase):
             "\\addcontentsline{toc}{section}{References}\\label{sec:references}\n"
             "Text.\\end{document}\n")
         result = subprocess.run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
-                                 source.name], cwd=build, capture_output=True, text=True)
+                                 source.name], cwd=build, capture_output=True, text=True, env=self.tex_env())
         self.assertEqual(result.returncode, 0, result.stdout[-2500:])
         toc = (build / "anchors.toc").read_text()
         anchors = re.findall(r"\\contentsline \{section\}\{([^{}]*)\}\{\d+\}\{([^{}]*)\}", toc)
@@ -439,7 +444,7 @@ class ProperFormatTests(unittest.TestCase):
             )
             result = subprocess.run(
                 ["pdflatex", "-interaction=nonstopmode", "-halt-on-error", source.name],
-                cwd=self.root, capture_output=True, text=True,
+                cwd=self.root, capture_output=True, text=True, env=self.tex_env(),
             )
             self.assertEqual(result.returncode, 0, result.stdout[-2500:])
             values = dict(re.findall(r"(TEXT-WIDTH|SPOOF-WIDTH)=([0-9.]+)", result.stdout))
