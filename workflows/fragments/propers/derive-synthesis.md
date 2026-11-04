@@ -63,13 +63,11 @@ companion that should not exist still renders.
    profile's reader order — the source-grounded synthesis, then `The Propers:
    Notable and Quotable`, then `The Propers: Interpretive Possibilities` —
    which `check-proper-components` requires of a revised manifest.
-4. `generation-metadata.tex` — bring `\AIDocumentRevisionTimestamp` forward
-   to this derivation and append an `\AIModelContribution` record for it, on
-   the rules `author-proper.md` states for that file. The
-   `\AIGenerationProvenance` record is unchanged: this is the same run. A
-   companion derived at 19:06 under a timestamp of 17:30 was found by an
-   evaluator reading mtimes, and nothing in the workflow had told the stage
-   that wrote it the file existed.
+4. `generation-metadata.tex` — append an `\AIModelContribution` record for
+   this derivation, on the rules `author-proper.md` states for that file. The
+   `\AIGenerationProvenance` record is unchanged: this is the same run. The
+   companion's revision timestamp is derived from git by the build, from the
+   companion's own sources; write none.
 
 You may not touch `research/scope.md`, which no stage but its writer —
 `research-synthesis` in `proper`, `brief-revision` in `proper-finish` — may

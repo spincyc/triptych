@@ -43,16 +43,14 @@ So repair the wiring, and do not:
    release record, a scope authorization and the tracked web edition are none
    of them — and the gate you were sent to clear runs
    `check-generation-metadata` against the *installed* PDF, comparing its
-   `ModDate` and its one rendered "Last revised (UTC)" line against the
-   source's `\AIDocumentRevisionTimestamp`. A timestamp moved for a change no
-   installed artifact carries fails that check and refuses the publication for
-   the repair you made to clear it.
+   `ModDate` and its one rendered "Last revised (UTC)" line against the stamp
+   the edition's sources derive from git now. A change to a file the edition
+   builds from moves that stamp, so the installed artifact then fails the check
+   and the publication is refused for the repair you made to clear it.
 6. A finding that can only be cleared by changing a file the document builds
    from is out of reach from here, since this stage may not rebuild or
    retypeset: return `BLOCKED` as below and name the file. If you changed such
-   a file even so, the record has to follow it. Bring
-   `\AIDocumentRevisionTimestamp` forward to this revision, in the UTC
-   whole-second form `YYYY-MM-DDTHH:MM:SSZ` the check requires; append an
+   a file even so, the record has to follow it. Append an
    `\AIModelContribution{model}{qualifiers}{runtime}` record for this pass, in
    the form the records already in the file use and beside the records that
    carry the same model and qualifiers, since `check-generation-metadata`

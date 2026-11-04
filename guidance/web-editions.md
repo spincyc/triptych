@@ -97,7 +97,8 @@ contents nor grants web eligibility or publication acceptance.
 
 A web edition reproduces the document's rights colophon
 (`\TriptychRightsNotice` in `src/common/preamble.tex`) and its
-reader-facing revision timestamp in readable form on the page a reader
+reader-facing revision timestamp — the edition's derived stamp, under
+`guidance/editorial.md` (§ Revision timestamp) — in readable form on the page a reader
 actually reaches. Model identity, qualifiers, effort, agent/runtime details,
 and contribution history remain only in tracked audit records. A web edition
 that drops the timestamp or rights colophon is not publishable. The colophon rule in

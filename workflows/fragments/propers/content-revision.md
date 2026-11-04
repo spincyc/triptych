@@ -66,13 +66,11 @@ what you reasonably can of the advisories.
    and a companion edited here is a companion edited outside its
    evaluation. Say in your summary which of your repairs the derivation will
    have to carry.
-10. Bring `generation-metadata.tex` forward. Update
-    `\AIDocumentRevisionTimestamp` to this revision and append an
-    `\AIModelContribution` record for it, on the rules `author-proper.md`
-    states for that file; leave the `\AIGenerationProvenance` record alone,
-    since the run is the same. A leaf whose sections were revised at 18:08
-    under a timestamp of 17:30 was published with its metadata predating its
-    content, because no fragment had told the reviser the file existed.
+10. Bring `generation-metadata.tex` forward: append an
+    `\AIModelContribution` record for this revision, on the rules
+    `author-proper.md` states for that file, and leave the
+    `\AIGenerationProvenance` record alone, since the run is the same. Write
+    no revision timestamp; the build derives it from git.
 11. Rebuild the canonical edition and compare its page count and the page of
     each `\sectionguard` against the build you started from. The canonical
     flow is continuous from page 5 to the end, so one added line inside an

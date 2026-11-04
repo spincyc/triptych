@@ -497,7 +497,7 @@ Give one terse account of edition and formulary identity, text-verification stat
 
 `References` contains only sources actually used, with exact loci sufficient to verify their claims, and immediately precedes the terminal generation record. Do not retain unused leads or sources used only by deleted material.
 
-The terminal generation record imports the leaf's structured `generation-metadata.tex` and displays the revision without a wrapper heading. Follow the universal metadata standard; refresh the UTC revision timestamp and accurately append materially distinct AI contributions without erasing prior contribution history.
+The terminal generation record imports the leaf's structured `generation-metadata.tex` and displays the revision without a wrapper heading. Follow the universal metadata standard: accurately append materially distinct AI contributions without erasing prior contribution history; the revision timestamp each edition displays is derived at build time, never written.
 
 ## Profile Gates
 

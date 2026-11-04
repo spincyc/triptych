@@ -507,7 +507,7 @@
         {
           "id": "generation-metadata",
           "command": "tools/tpt check-generation-metadata --provider {provider} --pdf {proper} build/{provider}/{proper}.pdf",
-          "required_result": "tracked revision timestamps and AI provenance must be valid in source and PDF"
+          "required_result": "tracked AI provenance must be valid in source, and the PDF must carry its derived revision stamp"
         }
       ],
       "pass_transition": "publish-artifacts",
@@ -629,7 +629,7 @@
         {
           "id": "generation-metadata",
           "command": "tools/tpt check-generation-metadata --provider {provider} --pdf {proper} pdf/{provider}/{proper}.pdf",
-          "required_result": "tracked revision timestamps and AI provenance must be valid in the source and in the installed PDF, not only in the build tree"
+          "required_result": "tracked AI provenance must be valid in the source, and the installed PDF, not only the build tree, must carry its derived revision stamp"
         },
         {
           "id": "web-edition-declared",

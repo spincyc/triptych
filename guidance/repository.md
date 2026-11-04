@@ -327,10 +327,16 @@ path. It must not silently rebuild the corpus or install into tracked paths.
 
 Build recipes declare every render-affecting input and shared-consumer edge,
 isolate concurrent targets, stop on fatal failure, and never expose partial
-output. Keep revision timestamps source-controlled; omit build-clock PDF
-dates and automatic trailer IDs. Repeating unchanged inputs under a pinned
-toolchain should reproduce a render, but ordinary source releases do not
-compare rebuilt PDFs with historical publication bytes.
+output. Every build that typesets a publication edition supplies its
+revision stamp, derived from Git history by `scripts/_edition_revision.py`
+under the rule in `guidance/editorial.md` (§ Revision timestamp), as the
+generated `<job>.revision.tex` the shared preamble reads; a build with no stamp
+fails rather than printing none. Such a build therefore needs a full, unshallow
+checkout. Omit build-clock PDF dates and automatic trailer IDs; the only
+build-time date is the marked stamp of a build from uncommitted sources.
+Repeating unchanged inputs and history under a pinned toolchain should
+reproduce a render, but ordinary source releases do not compare rebuilt PDFs
+with historical publication bytes.
 
 The shared provider preamble owns its guarded `\pdfcompresslevel=1` setting.
 It trades some output size for faster lossless stream compression without

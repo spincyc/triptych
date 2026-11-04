@@ -47,9 +47,8 @@ structured findings covering:
 7. **Rights colophon**: Is the rights and licensing colophon present and
    correct for this material, naming what the reader may do with it?
 8. **Reader-facing revision timestamp**: Does the edition show the reader
-   the revision it was generated from, in the form the repository's
-   generation metadata records, and does it agree with the accepted
-   artifacts?
+   the "Last revised (UTC)" stamp derived for it from git, and does it agree
+   with the accepted artifacts?
 9. **Silent converter loss**: Did the converter drop or mangle anything it
    did not report — a special character, a diacritic on a Latin or Greek
    word, a small-caps or italic distinction that carries meaning, a

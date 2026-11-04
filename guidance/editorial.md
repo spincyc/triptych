@@ -487,7 +487,7 @@ Every text offered for vocal prayer or ritual recitation must reproduce an ident
 
 Keep enough tracked evidence to reproduce editorial judgments without publishing private reasoning or a search diary. The applicable profile defines filenames; collectively the records identify the question and material exclusions, governing editions, source roles and loci, substitutions, disagreements, consequential negative results, material unresolved leads, jurisdiction/currentness, rights, completed review, and outstanding review. Never record credentials, private reasoning, host or user identity, machine paths, network data, or session identifiers.
 
-Every canonical publication keeps `generation-metadata.tex` beside `main.tex` and imports it exactly once at the terminal display point. Its first active declaration is one `\AIDocumentRevisionTimestamp{YYYY-MM-DDTHH:MM:SSZ}`, its second is one `\AIGenerationProvenance{workflow-id}{workflow-version}{workflow-digest}{run-id}{seed-commit}{install-commit}`, and those are followed by one or more `\AIModelContribution` declarations. The declarations are the complete tracked audit record. Their rendered form displays only the revision timestamp; model identity, qualifiers, effort, client/runtime, and contribution history are not reader-facing publication content. A profile may permit a prose-free mechanical companion to declare `\AIInheritedGenerationMetadata` from one named canonical source while displaying its own timestamp once.
+Every canonical publication keeps `generation-metadata.tex` beside `main.tex` and imports it exactly once at the terminal display point. Its first active declaration is one `\AIGenerationProvenance{workflow-id}{workflow-version}{workflow-digest}{run-id}{seed-commit}{install-commit}`, followed by one or more `\AIModelContribution` declarations. The declarations are the complete tracked audit record. It carries no revision timestamp, which is derived as § Revision timestamp below states. The rendered generation record displays only the derived revision timestamp; model identity, qualifiers, effort, client/runtime, and contribution history are not reader-facing publication content. A profile may permit a prose-free mechanical companion to declare `\AIInheritedGenerationMetadata` from one named canonical source while displaying its own timestamp once.
 
 The generation-provenance record states what produced the document and what the
 project state was at that point. Each of its six fields is either a value or the
@@ -510,7 +510,44 @@ staleness ledger, which asks a different question of different inputs under
 `guidance/staleness.md`. A document that records no origin makes no such
 comparison and is shown none.
 
-The timestamp is the whole-second UTC time when the publishable content revision was finalized. Update every affected consumer when authored wording, content-bearing shared material, scope, evidence, or qualifications change. Pure typesetting and template changes preserve that content revision when the content is unchanged; they invalidate the render identity and require the applicable print checks and inspection before the new rendering is called reviewed. Never derive it from Git, file metadata, build time, environment, or a content hash. Preserve every exposed model qualifier and client/runtime fact verbatim in the tracked declarations; name unavailable components specifically and never guess them. Every provider's model disclosures meet the same standard: exact model identifiers, exposed qualifiers reproduced verbatim, and specific naming of unexposed components. Separate tracked contributions when model, qualifiers, or material runtime differ, keep contributions using the same model and qualifiers adjacent, and never repeat an exact contribution declaration.
+### Revision timestamp
+
+Each edition's "Last revised (UTC)" timestamp is derived from Git at build
+time and is never tracked or hand-written. It is the greatest committer time,
+in whole-second UTC, of the commits that changed a file in the edition's
+source closure: the provider-tree files its entrypoint reaches through
+`\input`/`\include` (macro-built paths expanded), their literal artwork, and
+the publication's declared generator data. Shared `src/common/` typesetting,
+`generation-metadata.tex`, and the history of a generated document-type
+entrypoint are outside it, so a template, preamble, or contribution-log change
+revises no edition, while a change to a section, a leaf format file, a
+generated projection page, or content-bearing provider-shared material does.
+`scripts/_edition_revision.py` is the single implementation; its module text
+states the closure exactly, and every surface — the PDF's line and `ModDate`,
+the native print bundle, the web reader, the document library, and the
+metadata gate — takes the value from it. Each edition of a leaf has its own
+stamp, so a homily that reads none of a changed chronology page keeps its
+date. Moving text between files changes those files and is a revision under
+this rule. Committer time moves when a commit is rebased or amended, so
+records keyed on rendered output (the browser-products descriptor) are
+refreshed after integration, not before.
+
+Without usable history the value is never guessed. A shallow clone, or a tree
+that is not a Git work tree, fails the build with a request for full history;
+CI checks out complete history for the jobs that render stamps. An edition
+built while any closure file differs from `HEAD` or is untracked is stamped
+with the build's UTC time and every rendering prints
+`<time> (uncommitted sources)`; the metadata gate refuses such a PDF once the
+sources are committed, and a committed-looking PDF while they are not.
+
+This replaced the tracked `\AIDocumentRevisionTimestamp` declaration on
+2026-11-04, at the maintainer's direction, because rewriting that line was
+474 of the file's 500 changes in the preceding sixty days, and a leaf-wide
+value bumped every edition of a leaf for a change only one of them carried.
+
+### Contribution records, display, and gates
+
+Preserve every exposed model qualifier and client/runtime fact verbatim in the tracked declarations; name unavailable components specifically and never guess them. Every provider's model disclosures meet the same standard: exact model identifiers, exposed qualifiers reproduced verbatim, and specific naming of unexposed components. Separate tracked contributions when model, qualifiers, or material runtime differ, keep contributions using the same model and qualifiers adjacent, and never repeat an exact contribution declaration.
 
 The rendered publication displays the revision timestamp once, without a
 standalone `Generation Metadata` or `AI Generation Metadata` wrapper heading.
@@ -521,14 +558,14 @@ a chronological agent/runtime ledger in a PDF or web edition. Keep audit
 detail that is safe and necessary for reproducibility in the tracked
 declarations or owning research and production records.
 
-The source metadata gate rejects missing, duplicate, noninitial, malformed, or
-non-UTC timestamps; missing, duplicated, misplaced, or malformed provenance;
+The source metadata gate rejects any tracked or hand-written revision
+timestamp; missing, duplicated, misplaced, or malformed provenance;
 provenance fields carried without their workflow; exact duplicate contributions;
 generic family-only model labels; missing exposed qualifiers; invalid
 inheritance; and handwritten display substitutes.
 
 The rendered metadata check applies to the surface actually produced. A PDF
-needs title/subject metadata and dates consistent with the tracked revision,
+needs title/subject metadata and a `ModDate` equal to the derived revision,
 without automatic creation dates or trailer IDs. Every reader surface displays
 the revision once and omits internal model, qualifier, effort, runtime,
 workflow digest, run, seed and install records. The workflow id and version

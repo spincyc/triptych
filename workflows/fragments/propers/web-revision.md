@@ -27,9 +27,7 @@ accepted prose is out of reach from here.
 4. Where the repair reached a file the built document inputs — the canonical
    leaf's markup does, and so do the anchors, which are its labels and its
    headings, while `web-edition.toml` and the generated edition do not — bring
-   `generation-metadata.tex` forward. Update `\AIDocumentRevisionTimestamp`
-   to this revision, in the UTC whole-second form `YYYY-MM-DDTHH:MM:SSZ` the
-   check requires, and append an
+   `generation-metadata.tex` forward: append an
    `\AIModelContribution{model}{qualifiers}{runtime}` record for this pass, in
    the form the records already in the file use and beside the records that
    carry the same model and qualifiers rather than at the end of the file:
@@ -39,8 +37,8 @@ accepted prose is out of reach from here.
    its own. Leave `\AIGenerationProvenance` alone, since it names the run and
    not the pass. Where the repair stayed in `web-edition.toml` or in the
    generated edition, the built document did not change and this file is left
-   exactly as it is: a timestamp moved for a change no artifact carries is a
-   false record, and the publication gate refuses it.
+   exactly as it is: a contribution record for a change no artifact carries is
+   a false record.
 5. Regenerate the web edition from the canonical leaf.
 6. Verify each finding is resolved in the regenerated edition, and that
    nothing previously faithful has been lost.
@@ -51,14 +49,12 @@ This stage is downstream of both acceptances and rebuilds nothing. The two
 PDFs were built, gated, evaluated and installed before this packet was
 compiled, so a repair in the canonical leaf's markup leaves them behind, and
 tracked source that no longer builds the published artifact is the one state
-the acceptance apparatus exists to prevent. Bringing the revision timestamp
-forward is what keeps such an edit from being silent: the publication gate
-runs `check-generation-metadata` against the *installed* PDF and compares its
-`ModDate` and its one rendered "Last revised (UTC)" line with the source's
-`\AIDocumentRevisionTimestamp`, so a source that has moved past the artifact
-is refused there and reaches a person, where an unmoved timestamp leaves both
-sides consistent at the stale value and nothing downstream can see the
-change. Name in your summary every file the built document inputs that you
+the acceptance apparatus exists to prevent. Such an edit cannot be silent: the
+revision timestamp is derived from git, and the publication gate runs
+`check-generation-metadata` against the *installed* PDF and compares its
+`ModDate` and its one rendered "Last revised (UTC)" line with the stamp the
+sources derive now, so a source that has moved past the artifact is refused
+there and reaches a person. Name in your summary every file the built document inputs that you
 changed, and say that the installed artifacts predate it.
 
 ## Result

@@ -15,9 +15,9 @@ while you are already in those files, and leave the rest.
 The companion, and only the companion: `synthesis.tex`, the
 `\ifdefined\TriptychSynthesisEdition` branches in `main.tex`, and the files
 under `sections/synthesis/`. `proper-components.toml` where the manifest must
-follow, and `generation-metadata.tex`, whose `\AIDocumentRevisionTimestamp`
-you bring forward to this revision with an `\AIModelContribution` record for
-it, on the rules `author-proper.md` states for that file.
+follow, and `generation-metadata.tex`, to which you append an
+`\AIModelContribution` record for this revision, on the rules
+`author-proper.md` states for that file.
 
 **The canonical edition is settled and you may not revise it.** It passed a
 content evaluation before the companion was derived. Editing settled canonical
@@ -59,9 +59,10 @@ own `format.tex` already uses that mechanism, and sibling leaf 56 uses it
 inside `sections/90-scope.tex` and `sections/99-references.tex`.
 
 Verify it, do not assume it. Rebuild the canonical edition and compare its
-`pdftotext` output against the build before your change: the only line allowed
-to differ is the revision timestamp. If anything else moved, you have edited
-the canonical edition and must put it back.
+`pdftotext` output against the build before your change: nothing may differ,
+not even its derived revision timestamp, since a change to a file the canonical
+edition reads moves that stamp. If anything moved, you have edited the
+canonical edition and must put it back.
 
 Nothing else in those files is yours. A `seam` finding does not license
 rewriting a canonical sentence you merely disagree with, and a `derivation`

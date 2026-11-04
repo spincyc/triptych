@@ -88,11 +88,12 @@ learns belongs in the files this stage owns, listed below.
    disagreed, and the disagreement was settled on 2026-09-06 in the
    profile's favour.
 4. Create or update `format.tex` with leaf-local LaTeX macros.
-5. Create or update `generation-metadata.tex`. It carries three kinds of
-   declaration and `check-generation-metadata` requires all of them:
-   - `\AIDocumentRevisionTimestamp{...}` first, once.
+5. Create or update `generation-metadata.tex`. It carries two kinds of
+   declaration and `check-generation-metadata` requires both. It carries no
+   revision timestamp, which the build derives from git and the check
+   refuses:
    - `\AIGenerationProvenance{workflow_id}{workflow_version}{workflow_digest}{run_id}{seed_commit}{install_commit}`
-     second, once. Read the first four straight off this packet's own header
+     first, once. Read the first four straight off this packet's own header
      and copy them exactly:
      - `workflow_id` and `workflow_version` are the two halves of the header's
        `WORKFLOW:` line — a header reading `WORKFLOW: proper v9` gives
