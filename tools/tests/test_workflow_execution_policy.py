@@ -44,6 +44,7 @@ from test_workflow_adversarial import (  # noqa: E402
     make_repo,
     pipeline_path,
 )
+from _retired_workflows import WorkflowEngine  # noqa: E402,F811
 
 # Four lanes, deliberately not in alphabetical order, so that a test which
 # passes only because canonical order happens to equal sorted order fails.

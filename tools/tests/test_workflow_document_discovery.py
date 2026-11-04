@@ -26,6 +26,7 @@ from test_workflow_adversarial import (  # noqa: E402
     make_repo,
 )
 from test_workflow_research_fanout import DOC  # noqa: E402
+from _retired_workflows import WorkflowEngine  # noqa: E402,F811
 
 TAIL = DOC.rsplit("/", 1)[-1]
 NEW_TAIL = "68-workflow-document-probe"

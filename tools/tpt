@@ -358,6 +358,16 @@ def workflow_help(engine, workflow_id: str) -> str:
         f"tpt {workflow_id} \u2014 {workflow.get('description', '')} "
         f"(v{workflow['version']})",
         "",
+    ]
+    retired = workflow.get("retired")
+    if retired:
+        lines += [
+            f"retired on {retired['on']}: {retired['reason']}",
+            f"seed refuses; new work uses `tpt {retired['successor']}`. "
+            "Existing runs keep status, replay and debt.",
+            "",
+        ]
+    lines += [
         "usage:",
         f"  tpt {workflow_id} list [--json]",
         f"  tpt {workflow_id} <{argument}> seed {seed_flags}".rstrip(),
@@ -616,7 +626,10 @@ def dispatch_workflow_meta(rest: list[str]) -> int:
             print("(no workflows registered)")
             return 0
         for w in workflows:
-            print(f"  {w['id']:30s} v{w['version']}  {w['description']}")
+            retired = w.get("retired")
+            note = (f"  [retired {retired['on']}; use {retired['successor']}]"
+                    if retired else "")
+            print(f"  {w['id']:30s} v{w['version']}  {w['description']}{note}")
         return 0
     if sub == "show":
         if len(rest) < 2:

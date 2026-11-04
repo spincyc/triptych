@@ -74,6 +74,12 @@ REPAIR_TARGET = "repair_target"
 # was earlier in declaration order.
 REPAIRS = "repairs"
 
+# A workflow definition kept for the runs it already started, after its work
+# has passed to a successor. It names the date, the successor and the reason;
+# `seed` refuses it, and everything a recorded run needs keeps working.
+RETIRED = "retired"
+RETIRED_KEYS = frozenset({"on", "successor", "reason"})
+
 # The only join a fan-out stage may request. Every declared lane is required,
 # lane findings are preserved verbatim under their lane identity in the
 # declared lane order, and the disposition is the worst any lane returned.
@@ -209,6 +215,11 @@ class WorkflowEngine:
     inputs and therefore also deterministic for the same inputs.
     """
 
+    # Whether `seed` may start a run of a workflow its definition marks
+    # `retired`. Only a harness exercising the engine through a frozen
+    # definition sets it, on a subclass of its own; the launcher never does.
+    admit_retired_seeds = False
+
     def __init__(self, repo_root: Path, workflows_dir: Path) -> None:
         self.repo_root = repo_root.resolve()
         self.workflows_dir = workflows_dir.resolve()
@@ -239,6 +250,7 @@ class WorkflowEngine:
                     "id": data["id"],
                     "version": data["version"],
                     "description": data.get("description", ""),
+                    "retired": data.get(RETIRED),
                 })
             except (json.JSONDecodeError, KeyError, OSError):
                 continue
@@ -259,6 +271,14 @@ class WorkflowEngine:
         except json.JSONDecodeError as error:
             raise WorkflowError(f"{path}: invalid JSON: {error}") from error
         _validate_workflow(data, path)
+        retired = data.get(RETIRED)
+        if retired and not (
+            self.pipelines_dir / f"{retired['successor']}.json"
+        ).is_file():
+            raise WorkflowError(
+                f"{path}: retired in favour of {retired['successor']!r}, "
+                f"which is not a workflow here"
+            )
         self._validate_repair_route_coverage(data, path)
         self._validate_repair_reporting(data, path)
         return data
@@ -679,6 +699,19 @@ class WorkflowEngine:
         )
         if existing is not None:
             return existing
+
+        # A retired workflow starts nothing. Its definition stays loadable so
+        # the runs it already started keep their status, replay and debt, and
+        # so this engine's own suite can drive a frozen definition through
+        # `admit_retired_seeds`; no production caller sets that.
+        retired = workflow.get(RETIRED)
+        if retired and not self.admit_retired_seeds:
+            raise WorkflowError(
+                f"workflow {workflow['id']} was retired on {retired['on']} and "
+                f"seeds no new run: {retired['reason']} Seed "
+                f"`{retired['successor']}` instead. Status, replay and debt "
+                f"of existing {workflow['id']} runs remain available."
+            )
 
         # A new run is where an identity is refused. The scope ledger is
         # written by the stage after this one, so an identity that no registry
@@ -4361,6 +4394,20 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
 
     _validate_effort(path, data["id"], "default_effort",
                      data.get("default_effort"))
+
+    retired = data.get(RETIRED)
+    if retired is not None and not (
+        isinstance(retired, dict)
+        and set(retired) == RETIRED_KEYS
+        and all(isinstance(retired[key], str) and retired[key].strip()
+                for key in RETIRED_KEYS)
+        and re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", retired["on"])
+        and retired["successor"] != data["id"]
+    ):
+        raise WorkflowError(
+            f"{path}: '{RETIRED}' declares exactly an 'on' date (YYYY-MM-DD), "
+            f"a 'successor' workflow other than this one, and a 'reason'"
+        )
 
     for arg_name in data.get("argument_schema", {}):
         if str(arg_name).startswith(RUN_IDENTITY_PREFIX):

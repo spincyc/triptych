@@ -36,6 +36,8 @@ from _workflow import (  # noqa: E402
     _current_packet,
 )
 from test_workflow_research_fanout import CONTENT_LANES  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _retired_workflows import WorkflowEngine  # noqa: E402,F811
 
 WORKFLOW = "proper-finish"
 DOC = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"

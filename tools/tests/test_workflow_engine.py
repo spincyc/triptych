@@ -22,13 +22,17 @@ ROOT = Path(__file__).resolve().parents[2]
 LAUNCHER = ROOT / "tools" / "tpt"
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import _workflow  # noqa: E402
 from _workflow import (  # noqa: E402
     RUN_IDENTITY_PREFIX,
     WorkflowEngine,
     WorkflowError,
     _gate_substitutions,
     _substitute_args,
+    _validate_workflow,
 )
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _retired_workflows import WorkflowEngine  # noqa: E402,F811
 
 
 def _run(*argv: str, cwd: Path | None = None) -> subprocess.CompletedProcess:
@@ -616,6 +620,58 @@ class RunIdentitySubstitutionTests(unittest.TestCase):
             _substitute_args("{doc} {run.nothing} {unknown}",
                              {"doc": "a", "run.run_id": "b"}),
             "a {run.nothing} {unknown}")
+
+
+class RetiredWorkflowTests(unittest.TestCase):
+    """`proper` and `proper-finish` were retired on 2026-11-04.
+
+    A retired definition starts no run, and stays loadable so the runs it
+    already started keep status and replay.
+    """
+
+    DOC = "liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"
+
+    def test_the_legacy_pipelines_are_retired_in_favour_of_proper_study(self):
+        listed = {w["id"]: w for w in _workflow.WorkflowEngine(
+            ROOT, ROOT / "workflows").list_workflows()}
+        for workflow_id in ("proper", "proper-finish"):
+            with self.subTest(workflow=workflow_id):
+                self.assertEqual(listed[workflow_id]["retired"]["successor"],
+                                 "proper-study")
+        self.assertIsNone(listed["proper-study"]["retired"])
+
+    def test_the_engine_refuses_to_seed_a_retired_workflow(self):
+        engine = _workflow.WorkflowEngine(ROOT, ROOT / "workflows")
+        runs = _private_runs_dir(self)
+        self.addCleanup(shutil.rmtree, runs, ignore_errors=True)
+        engine.runs_dir = runs
+        for workflow_id in ("proper", "proper-finish"):
+            with self.subTest(workflow=workflow_id):
+                with self.assertRaisesRegex(WorkflowError, "retired.*proper-study"):
+                    engine.seed(workflow_id, {"proper": self.DOC, "provider": "gpt"})
+        self.assertEqual(list(runs.iterdir()), [])
+
+    def test_a_run_seeded_before_retirement_keeps_status_and_replay(self):
+        admitted = WorkflowEngine(ROOT, ROOT / "workflows")
+        runs = _private_runs_dir(self)
+        self.addCleanup(shutil.rmtree, runs, ignore_errors=True)
+        admitted.runs_dir = runs
+        seeded = admitted.seed("proper", {"proper": self.DOC, "provider": "gpt"})
+        plain = _workflow.WorkflowEngine(ROOT, ROOT / "workflows")
+        plain.runs_dir = runs
+        self.assertEqual(plain.status(seeded["run_id"])["workflow_id"], "proper")
+        self.assertTrue(plain.replay(seeded["run_id"])["deterministic"])
+
+    def test_a_retirement_names_its_date_successor_and_reason(self):
+        base = json.loads((ROOT / "workflows/pipelines/proper.json").read_text())
+        good = {"on": "2026-11-04", "successor": "other", "reason": "why"}
+        _validate_workflow(dict(base, retired=good), Path("w.json"))
+        for retired in ({"on": "2026-11-04", "successor": "other"},
+                        dict(good, on="November"), dict(good, successor="proper"),
+                        dict(good, reason=" "), dict(good, extra="x"), "yes"):
+            with self.subTest(retired=retired):
+                with self.assertRaisesRegex(WorkflowError, "retired"):
+                    _validate_workflow(dict(base, retired=retired), Path("w.json"))
 
 
 if __name__ == "__main__":

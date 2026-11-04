@@ -18,8 +18,9 @@ and an approximately 10–12-page concise study retaining the established first
 four pages. The concise opening below adopts those pages without reinstating
 the old mandatory cultural gallery or exploratory-proposal quotas. The older
 two-document requirements remain
-in force for schema-1 publications and the legacy `proper` and `proper-finish`
-workflows. A new contract does not silently invalidate previously reviewed
+in force for schema-1 publications, which the legacy `proper` and
+`proper-finish` workflows produced; both workflows are retired and seed no new
+run (`workflows/OPERATOR.md`), so new and revised guides use `proper-study`. A new contract does not silently invalidate previously reviewed
 documents or reopen the collection's production boundary.
 
 Each canonical leaf declares its type, source roles, ordered output entrypoints,

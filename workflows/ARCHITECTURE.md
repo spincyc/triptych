@@ -271,6 +271,16 @@ since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
 `proper` workflow is at version 29 and `proper-finish` at version 7.
 
+Both were retired on 2026-11-04 in favour of `proper-study`. Retirement is a
+`retired` object in the definition — the date, the successor and the reason —
+and not a deletion. `seed` refuses a retired workflow, because the engine has
+no historical-version resolver and loads only the definition on disk: deleting
+it would leave `tpt <workflow> <doc> status` and `replay` of the runs it already
+started with no workflow to dispatch to. Adding the object moves the digest, so
+a run still active under either definition fails closed, as any changed
+definition makes it. The engine's own suite still drives both definitions,
+through a test-only subclass that admits retired seeds.
+
 Version 29 and `proper-finish` 7 are what a cold review of the pipelines asked
 for, after a run spent three of its four synthesis rounds draining one class of
 defect a site at a time. They add `synthesis-preflight`, a program gate between
@@ -801,7 +811,8 @@ of being patched where nothing would record it.
 
 The rule extends past the leaf to everything a run writes. The scope entry in
 `guidance/liturgy/propers-production-plan.md` is owned by `authorize-target`;
-the installed PDFs under `pdf/<provider>/` by `publish-artifacts`; the
+in the retired `proper` pipelines, the installed PDFs under `pdf/<provider>/`
+by `publish-artifacts`; the
 generated edition under `build/web/<provider>/` by `generate-web`; and the
 tracked edition under `web/<provider>/`, the per-publication release records,
 and this provider's catalog cell by `install-publication`. Each of those

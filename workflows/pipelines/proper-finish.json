@@ -2,6 +2,11 @@
   "id": "proper-finish",
   "version": 7,
   "description": "1962 propers synthesis production workflow",
+  "retired": {
+    "on": "2026-11-04",
+    "successor": "proper-study",
+    "reason": "Schema-1 work under this pipeline installed fixed-layout PDFs into pdf/, which the maintainer retired; new and revised proper guides use proper-study."
+  },
   "default_effort": "xhigh",
   "document_argument": "proper",
   "document_root": "src/{provider}/{proper}",

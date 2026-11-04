@@ -58,6 +58,7 @@ from test_workflow_repair_routing import (  # noqa: E402
     blocking,
 )
 from test_workflow_research_fanout import CONTENT_LANES  # noqa: E402
+from _retired_workflows import WorkflowEngine  # noqa: E402,F811
 
 EVALUATION = "content-evaluation"
 REVISION = "content-revision"
@@ -414,7 +415,7 @@ class TheRecordCannotLeaveItsRootTests(unittest.TestCase):
     def setUp(self):
         import tempfile
         sys.path.insert(0, str(ROOT / "scripts"))
-        from _workflow import WorkflowEngine
+        from _retired_workflows import WorkflowEngine
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
         self.engine = WorkflowEngine(ROOT, ROOT / "workflows")
@@ -468,7 +469,7 @@ class ADeclarationThatCouldNotWorkIsRefusedAtLoadTests(unittest.TestCase):
         import shutil
         import tempfile
         sys.path.insert(0, str(ROOT / "scripts"))
-        from _workflow import WorkflowEngine
+        from _retired_workflows import WorkflowEngine
         tmp = tempfile.mkdtemp()
         self.addCleanup(shutil.rmtree, tmp, ignore_errors=True)
         shutil.copytree(ROOT / "workflows", Path(tmp) / "workflows")
@@ -498,7 +499,7 @@ class ADeclarationThatCouldNotWorkIsRefusedAtLoadTests(unittest.TestCase):
 
     def test_the_real_pipelines_load(self):
         sys.path.insert(0, str(ROOT / "scripts"))
-        from _workflow import WorkflowEngine
+        from _retired_workflows import WorkflowEngine
         engine = WorkflowEngine(ROOT, ROOT / "workflows")
         for workflow_id in ("proper", "proper-finish"):
             with self.subTest(workflow=workflow_id):

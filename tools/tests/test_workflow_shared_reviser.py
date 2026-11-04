@@ -38,6 +38,8 @@ from _workflow import (  # noqa: E402
     WorkflowError,
     _repair_route,
 )
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _retired_workflows import WorkflowEngine  # noqa: E402,F811
 
 EVALUATOR = "synthesis-evaluation"
 REVISER = "synthesis-revision"

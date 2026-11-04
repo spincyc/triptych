@@ -37,6 +37,8 @@ from _workflow import (  # noqa: E402
     WorkflowError,
     _current_packet,
 )
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _retired_workflows import WorkflowEngine  # noqa: E402,F811
 
 def _probe_document() -> str:
     """A real proper to drive runs against.

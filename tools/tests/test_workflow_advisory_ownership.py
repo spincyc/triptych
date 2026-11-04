@@ -51,6 +51,8 @@ from _workflow import (  # noqa: E402
     PASS,
     WorkflowEngine,
 )
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _retired_workflows import WorkflowEngine  # noqa: E402,F811
 
 STUDY_REVIEW = "study-review"
 RESEARCH_REVIEW = "research-review"

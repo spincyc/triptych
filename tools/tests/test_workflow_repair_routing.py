@@ -55,6 +55,7 @@ from test_workflow_research_fanout import (  # noqa: E402
     PropersCase,
     workflow_json,
 )
+from _retired_workflows import WorkflowEngine  # noqa: E402,F811
 
 RESEARCH = "research"
 BRIEF = "brief"

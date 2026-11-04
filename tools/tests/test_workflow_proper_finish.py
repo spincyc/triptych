@@ -62,6 +62,8 @@ from _workflow import (  # noqa: E402
     WorkflowError,
     _validate_result,
 )
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _retired_workflows import WorkflowEngine  # noqa: E402,F811
 
 
 LOADER = importlib.machinery.SourceFileLoader(

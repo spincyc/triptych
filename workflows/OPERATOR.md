@@ -5,8 +5,13 @@
 New and substantially revised proper guides use `tools/tpt proper-study`, the
 schema-2 successor for both the 1962 and postconciliar Roman Rite collections.
 It produces the expansive study, concise `-synthesis` companion and standalone
-`-homily` from one canonical owner. The old `proper` and `proper-finish` remain
-available for legacy schema-1 work. The current three-document contract
+`-homily` from one canonical owner. The old `proper` and `proper-finish` were
+retired on 2026-11-04, with the `pdf/` install tree their publication gates
+required. Each definition declares `retired`, naming `proper-study` as its
+successor: the engine refuses to seed it, and a run it already started keeps
+`status`, `replay` and `debt`. The definitions and their `propers/` fragments
+stay byte-for-byte as frozen records of those runs, so their PDF install
+stages and gates are history, not instructions. The current three-document contract
 preserves the established first four pages for the concise companion when
 printed, while its remaining argument and the expansive study follow their
 distinct roles. Read
@@ -462,38 +467,38 @@ tools/tpt workflow list
 ### Show a workflow definition
 
 ```bash
-tools/tpt workflow show proper
+tools/tpt workflow show proper-study
 ```
 
 ### Read a workflow's own help
 
 ```bash
-tools/tpt proper --help
+tools/tpt proper-study --help
 ```
 
 Prints the workflow's grammar, every action with its flags, and how to name a
-document. `tools/tpt proper` with no arguments prints the same thing.
+document. `tools/tpt proper-study` with no arguments prints the same thing.
 
 ### Find a document id
 
 ```bash
-tools/tpt proper list
-tools/tpt proper list --json
+tools/tpt proper-study list
+tools/tpt proper-study list --json
 ```
 
 Every document the workflow can be seeded for, one per line and in a stable
 order. The workflow declares where its documents live, in
 `document_discovery`, so the list is what is actually on disk rather than
-something maintained by hand: for `proper`, every leaf under
-`src/<provider>/liturgy/roman-rite/1962/propers/` that has a `main.tex`. A
+something maintained by hand: for `proper-study`, every leaf under
+`src/<provider>/liturgy/roman-rite/**/propers/<family>/` that has a `main.tex`. A
 leaf without one is not listed, because it cannot be run.
 
 You do not have to type the whole id. Any unique tail of one stands for it,
 so these are the same command:
 
 ```bash
-tools/tpt proper liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost seed
-tools/tpt proper 49-ninth-after-pentecost seed
+tools/tpt proper-study liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost seed
+tools/tpt proper-study 49-ninth-after-pentecost seed
 ```
 
 A tail matching more than one document is refused with the candidates listed.
@@ -510,13 +515,13 @@ created yet can still be seeded.
 ### Create or replay a run bootstrap
 
 ```bash
-tools/tpt proper <proper-id> seed [--provider <gpt|claude>]
+tools/tpt proper-study <proper-id> seed [--provider <gpt|claude>]
 ```
 
 Example:
 
 ```bash
-tools/tpt proper liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost seed --provider gpt
+tools/tpt proper-study liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost seed --provider gpt
 ```
 
 The first invocation creates a run directory under
@@ -551,20 +556,20 @@ After a fresh AI worker has processed the packet and produced a structured
 JSON result:
 
 ```bash
-tools/tpt proper <proper-id> advance <run-id> --result <path-to-json>
+tools/tpt proper-study <proper-id> advance <run-id> --result <path-to-json>
 ```
 
 For fan-out stages, pass one flag per workflow-defined lane; the engine joins
 the lane results itself:
 
 ```bash
-tools/tpt proper <proper-id> advance <run-id> --lane-result <lane-id>=<path-to-json> ...
+tools/tpt proper-study <proper-id> advance <run-id> --lane-result <lane-id>=<path-to-json> ...
 ```
 
 For gate stages (mechanical checks), the engine runs the checks directly:
 
 ```bash
-tools/tpt proper <proper-id> advance <run-id> --run-gate
+tools/tpt proper-study <proper-id> advance <run-id> --run-gate
 ```
 
 Which of the three forms a stage takes is fixed by its execution policy, not by
@@ -581,13 +586,13 @@ refused.
 ### Check run status
 
 ```bash
-tools/tpt proper <proper-id> status <run-id>
+tools/tpt proper-study <proper-id> status <run-id>
 ```
 
 ### Verify the current packet
 
 ```bash
-tools/tpt proper <proper-id> replay <run-id>
+tools/tpt proper-study <proper-id> replay <run-id>
 ```
 
 Recompiles the current packet from the persisted state and compares it with the
@@ -598,7 +603,7 @@ bytes differ.
 ### Record a manual intervention
 
 ```bash
-tools/tpt proper <proper-id> intervene <run-id> --text "Check the Latin collation against page 412"
+tools/tpt proper-study <proper-id> intervene <run-id> --text "Check the Latin collation against page 412"
 ```
 
 Interventions are stored under the run's `interventions/` directory with
@@ -609,7 +614,7 @@ deterministic gates, or document-specific rules.
 ### Show unencoded workflow debt
 
 ```bash
-tools/tpt proper <proper-id> debt <run-id>
+tools/tpt proper-study <proper-id> debt <run-id>
 ```
 
 Lists all interventions with `encoded: false`.
@@ -618,7 +623,7 @@ Lists all interventions with `encoded: false`.
 
 The parent agent (Claude or Codex session) follows this cycle:
 
-1. **Seed**: Run `tpt proper <id> seed` to create a run and get the first
+1. **Seed**: Run `tpt proper-study <id> seed` to create a run and get the first
    packet.
 2. **Dispatch**: Read the execution policy `tpt` states at the top of the
    `instructions` it just printed, and do exactly what it says:
@@ -664,7 +669,7 @@ effort the instructions name, give it exactly the packet contents, and advance
 with the result it returns:
 
 ```bash
-tools/tpt proper <proper-id> advance <run-id> --result <path-to-json>
+tools/tpt proper-study <proper-id> advance <run-id> --result <path-to-json>
 ```
 
 Launch no additional agents for the stage, and add no work of your own to what
@@ -676,7 +681,7 @@ the packet asks for.
 stage's checks itself:
 
 ```bash
-tools/tpt proper <proper-id> advance <run-id> --run-gate
+tools/tpt proper-study <proper-id> advance <run-id> --run-gate
 ```
 
 ### Fanout / host-max
@@ -691,7 +696,7 @@ structured JSON result per lane. Then advance with one `--lane-result` flag per
 lane:
 
 ```bash
-tools/tpt proper <proper-id> advance <run-id> \
+tools/tpt proper-study <proper-id> advance <run-id> \
   --lane-result evidence-discipline=<path> \
   --lane-result reception-sweep=<path> \
   --lane-result synthesis-argument=<path> \
@@ -1249,7 +1254,10 @@ and it applies to runs seeded after it.
 
 The following diagram and lifecycle describe the legacy `proper` workflow
 (1962 propers synthesis production), with its historical print contract. They
-are not the current `proper-study` version-16 path shown above. Its stages are:
+are not the current `proper-study` version-16 path shown above. `proper` and
+`proper-finish` were retired on 2026-11-04 and seed no new run; this section
+and the version history below it are the record their existing runs are read
+against. Its stages are:
 
 ```
 seed

@@ -27,6 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 LAUNCHER = ROOT / "tools" / "tpt"
 sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from _workflow import (  # noqa: E402
     ACCEPTED,
@@ -1252,17 +1253,32 @@ class LauncherTests(unittest.TestCase):
                               text=True, cwd=ROOT)
 
     def seed_real_run(self) -> dict:
+        """A run of the retired `proper` workflow, as one recorded before it was.
+
+        The launcher refuses to seed it, so the run is seeded through the
+        engine with the suite's explicit opt-in; every check below then drives
+        the launcher, which is what an existing run still has.
+        """
+        from _retired_workflows import WorkflowEngine as RetiredEngine
+
         runs = ROOT / "build" / "tpt-runs"
         existing = {path.name for path in runs.iterdir()} \
             if runs.is_dir() else set()
-        done = self.tpt("proper", self.DOC, "seed")
-        self.assertEqual(done.returncode, 0, done.stderr)
-        seeded = json.loads(done.stdout)
+        seeded = RetiredEngine(ROOT, ROOT / "workflows").seed(
+            "proper", {"proper": self.DOC, "provider": "gpt"})
         if seeded["run_id"] not in existing:
             self.addCleanup(
                 shutil.rmtree, runs / seeded["run_id"], ignore_errors=True
             )
         return seeded
+
+    def test_the_launcher_seeds_no_retired_workflow(self):
+        for workflow in ("proper", "proper-finish"):
+            with self.subTest(workflow=workflow):
+                done = self.tpt(workflow, self.DOC, "seed")
+                self.assertEqual(done.returncode, 2)
+                self.assertIn("retired", done.stderr)
+                self.assertIn("proper-study", done.stderr)
 
     def test_document_id_must_match_the_run(self):
         seeded = self.seed_real_run()

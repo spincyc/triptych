@@ -60,6 +60,7 @@ from test_workflow_research_fanout import (  # noqa: E402
     CONTENT_LANES,
     workflow_json,
 )
+from _retired_workflows import WorkflowEngine  # noqa: E402,F811
 
 EVALUATION = "content-evaluation"
 REGISTRATION = "source-registration"
