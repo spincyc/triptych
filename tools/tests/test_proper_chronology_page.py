@@ -39,6 +39,11 @@ class PageTests(unittest.TestCase):
         self.assertIn("\\zlabel{triptych:concise:chronology:end}", self.sheet)
         self.assertNotIn("\\subsection", self.sheet)
 
+    def test_page_two_closes_its_own_running_head(self):
+        # A following starred section would otherwise inherit page 2's head.
+        self.assertTrue(self.sheet.rstrip().endswith("\\closerunninghead"))
+        self.assertNotIn("\\closerunninghead", self.section)
+
     def test_notes_are_headed_by_the_tables_own_passage_cells(self):
         heads = re.findall(r"\\textit\{([^{}]*)\}\\par", self.section)
         cells = [wiring._date_tex(wiring.orientation_passage(row))

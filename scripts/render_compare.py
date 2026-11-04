@@ -93,13 +93,27 @@ def _expected(page: str, headings: list[str]) -> bool:
     return any(heading in head for heading in headings)
 
 
-def _raster(pdf: Path, page: int, scratch: Path) -> str:
-    prefix = scratch / f"p{page}"
+# Two rasters of the same typeset page can differ by a few antialiased pixels
+# when the PDF's font subsets differ (a page elsewhere added glyphs). A page is
+# reported different only when more than this many pixels change by more than
+# a quarter of the grey range at 50 dpi -- a moved word changes hundreds.
+RASTER_TOLERANCE = 40
+
+
+def _raster(pdf: Path, page: int, scratch: Path) -> bytes:
+    prefix = scratch / f"p{page}-{hashlib.sha256(str(pdf).encode()).hexdigest()[:8]}"
     _run(["pdftoppm", "-r", "50", "-gray", "-f", str(page), "-l", str(page), str(pdf), str(prefix)])
-    image = next(scratch.glob(f"p{page}*"))
-    digest = hashlib.sha256(image.read_bytes()).hexdigest()
+    image = next(scratch.glob(prefix.name + "*"))
+    data = image.read_bytes()
     image.unlink()
-    return digest
+    return data
+
+
+def _same_raster(first: bytes, second: bytes) -> bool:
+    if len(first) != len(second):
+        return False
+    changed = sum(1 for a, b in zip(first, second) if abs(a - b) > 64)
+    return changed <= RASTER_TOLERANCE
 
 
 def compare(before: Path, after: Path, headings: list[str], raster: int) -> dict:
@@ -127,8 +141,8 @@ def compare(before: Path, after: Path, headings: list[str], raster: int) -> dict
         with tempfile.TemporaryDirectory() as scratch:
             for index, match in list(same_text.items())[:raster]:
                 rasters["compared"] += 1
-                if _raster(before / f"{edition}.pdf", index, Path(scratch)) == _raster(
-                        after / f"{edition}.pdf", match, Path(scratch)):
+                if _same_raster(_raster(before / f"{edition}.pdf", index, Path(scratch)),
+                                _raster(after / f"{edition}.pdf", match, Path(scratch))):
                     rasters["identical"] += 1
                 else:
                     rasters["different"].append([index, match])

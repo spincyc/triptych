@@ -50,6 +50,10 @@
 \newcommand{\tptnoshorthead}{}
 \let\tptshortheadtext\tptnoshorthead
 \newcommand{\runninghead}[1]{\gdef\tptshortheadtext{#1}\markright{#1}}
+% Ends a page's own running head (the generated Scriptural Date and Location
+% page): a following page with no mark of its own keeps an empty head, and the
+% next section marks itself as usual.
+\newcommand{\closerunninghead}{\markright{}\global\let\tptshortheadtext\tptnoshorthead}
 \renewcommand{\sectionmark}[1]{%
   \ifx\tptshortheadtext\tptnoshorthead
     \markright{#1}%

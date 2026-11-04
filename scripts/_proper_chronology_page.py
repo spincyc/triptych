@@ -431,6 +431,12 @@ def render(found: wiring.AnnotationProjection | None, *, document: str, variant:
         if not why:
             lines += ["\\smallskip", "{\\footnotesize\\noindent " + PAGE_LEGEND + " " + PAGE_POINTER + "\\par}"]
         lines.append("\\zlabel{triptych:concise:chronology:end}")
+        # Page 2's running head is its own (propers-format's
+        # \closerunninghead): a following page with no mark of its own (a
+        # starred section) keeps the empty head it had, and the next numbered
+        # section marks itself as usual. The expansive appendix needs none:
+        # every apparatus after it marks its own head.
+        lines.append("\\closerunninghead")
     return "\n".join(lines) + "\n"
 
 

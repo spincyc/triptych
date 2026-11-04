@@ -40,8 +40,8 @@ options = { closing = "colophon" }
 role = "homily"
 template = "homily.tex"
 entrypoint = "homily.tex"
-fields = ["pdftitle", "pdfsubject", "title"]
-optional_fields = { subtitle = "", source-line = "", occasion-line = "", running-head = "" }
+fields = ["pdftitle", "pdfsubject"]
+optional_fields = { title = "", subtitle = "", source-line = "", occasion-line = "", running-head = "" }
 regions = ["homily"]
-optional_regions = ["preamble", "apparatus"]
-options = { closing = "colophon" }
+optional_regions = ["preamble", "opening", "apparatus"]
+options = { closing = "colophon", title-block = "propertitle" }
