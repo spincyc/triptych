@@ -481,6 +481,12 @@ class ResearchBuildTests(unittest.TestCase):
                         "    raise SystemExit(127)\n"
                         "os.execv(target, [target] + sys.argv[2:])\n")
         self.executable("tools/check-generation-metadata", "#!/bin/sh\nexit 0\n")
+        # Not a git work tree: a fixed stamp, written as the real tool writes it.
+        self.executable("scripts/_edition_revision.py",
+                        "import sys\nfrom pathlib import Path\n"
+                        "out = Path(sys.argv[sys.argv.index('--out') + 1])\n"
+                        "out.parent.mkdir(parents=True, exist_ok=True)\n"
+                        "out.write_text('\\\\AIDocumentRevisionTimestamp{2026-01-01T00:00:00Z}\\n')\n")
         # Fixture PDFs are text, not navigable PDFs. Anchor validation has its
         # own integration suite; this fixture exercises the component gate.
         self.executable("tools/check-pdf-anchors", "#!/bin/sh\nexit 0\n")

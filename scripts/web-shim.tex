@@ -165,8 +165,10 @@
 \newcommand{\sacramentSummaryEnd}{}
 
 % ----------------------------------------------------------- generation metadata
-% The tracked timestamp remains reader-visible. Model identity, configuration,
-% contribution, and runtime history remain only in the tracked metadata file.
+% The edition's derived revision stamp remains reader-visible: tools/web-edition
+% inserts it from scripts/_edition_revision.py, since no source tracks it. Model
+% identity, configuration, contribution, and runtime history remain only in the
+% tracked metadata file.
 \newcommand{\AIDocumentRevisionTimestamp}[1]{\par\textbf{Last revised (UTC):} #1\par}
 % What produced the document is tracked and not reader-facing, in the web
 % edition exactly as in the PDF: the shared preamble renders it nowhere, and a

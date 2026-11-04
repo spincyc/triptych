@@ -1281,6 +1281,23 @@ $(foreach document,$(PROPER_HOMILY_DOCUMENTS),\
 	$(eval $(BUILD_ROOT)/$(document).pdf: \
 		$(SOURCE_ROOT)/$(patsubst %-homily,%,$(document))/homily.tex))
 
+# Each edition's "Last revised" stamp is derived from git, never tracked
+# (scripts/_edition_revision.py states the rule). The stamp file is written
+# beside the job, as $(BUILD_ROOT)/<document>.revision.tex, and the shared
+# preamble reads it as \jobname.revision.tex through the job's output
+# directory on TEXINPUTS. Its rule runs on every invocation but rewrites the
+# file only when the stamp changes, so a PDF is retypeset exactly when its
+# derived stamp moves: a commit, an edit that leaves the tree uncommitted, or a
+# rebase that rewrote the commit. It shares the job's prefix, so the declared-
+# input check below treats it as the job's own file, and it is precious so that
+# Make does not delete it as an intermediate and retypeset next time.
+EDITION_REVISION_SUFFIX := .revision.tex
+EDITION_REVISION_TOOL := scripts/_edition_revision.py
+FORCE_EDITION_REVISION:
+.PRECIOUS: $(BUILD_ROOT)/%$(EDITION_REVISION_SUFFIX)
+$(BUILD_ROOT)/%$(EDITION_REVISION_SUFFIX): FORCE_EDITION_REVISION
+	@$(PYTHON) $(EDITION_REVISION_TOOL) write --provider '$(PROVIDER)' --document '$*' --out '$@'
+
 # Run pdfLaTeX until the document stops moving under it.
 #
 # Two passes settle most documents and settle none reliably. A table of
@@ -1322,7 +1339,7 @@ set -eu; \
 	settled=0; \
 	while [ "$$pass" -lt $(PDFLATEX_MAX_PASSES) ]; do \
 		pass=$$((pass + 1)); \
-		( cd $(SOURCE_ROOT) && TEXINPUTS=..: $(PDFLATEX) -no-shell-escape -recorder \
+		( cd $(SOURCE_ROOT) && TEXINPUTS='..:$(abspath $(@D)):' $(PDFLATEX) -no-shell-escape -recorder \
 			-interaction=nonstopmode \
 			-halt-on-error -jobname='$(1)' \
 			-output-directory='$(abspath $(@D))' '$(2)' ); \
@@ -1472,7 +1489,7 @@ $(SOURCE_METADATA_CHECKS): $(BUILD_ROOT)/.metadata/%.source-check: | check-tools
 	@$(METADATA_CHECKER) --provider '$(PROVIDER)' --document '$*'
 endif
 
-$(BUILD_ROOT)/%-synthesis.pdf: $(COMMON_SOURCES) | $(BUILD_ROOT)/.metadata/%-synthesis.source-check
+$(BUILD_ROOT)/%-synthesis.pdf: $(COMMON_SOURCES) $(BUILD_ROOT)/%-synthesis$(EDITION_REVISION_SUFFIX) | $(BUILD_ROOT)/.metadata/%-synthesis.source-check
 	@mkdir -p $(@D) '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*-synthesis.ok'
 	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*)-synthesis,$*/synthesis.tex,$(BUILD_ROOT)/$*-synthesis)
@@ -1488,7 +1505,7 @@ $(BUILD_ROOT)/%-synthesis.pdf: $(COMMON_SOURCES) | $(BUILD_ROOT)/.metadata/%-syn
 			'$(PROVIDER)' '$*-synthesis' "$$pdf_hash" "$$validator_hash" \
 			> '$(BUILD_ROOT)/.metadata/$*-synthesis.ok'
 
-$(BUILD_ROOT)/%-homily.pdf: $(COMMON_SOURCES) | $(BUILD_ROOT)/.metadata/%-homily.source-check
+$(BUILD_ROOT)/%-homily.pdf: $(COMMON_SOURCES) $(BUILD_ROOT)/%-homily$(EDITION_REVISION_SUFFIX) | $(BUILD_ROOT)/.metadata/%-homily.source-check
 	@mkdir -p $(@D) '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*-homily.ok'
 	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*)-homily,$*/homily.tex,$(BUILD_ROOT)/$*-homily)
@@ -1509,7 +1526,7 @@ $(BUILD_ROOT)/%-homily.pdf: $(COMMON_SOURCES) | $(BUILD_ROOT)/.metadata/%-homily
 # research edition sat with its themes on page 4 for weeks and nothing failed.
 # The checker, not this rule, reads the manifest and exempts a legacy order;
 # a document without a manifest is not a proper leaf and is never checked.
-$(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) | $(BUILD_ROOT)/.metadata/%.source-check
+$(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) $(BUILD_ROOT)/%$(EDITION_REVISION_SUFFIX) | $(BUILD_ROOT)/.metadata/%.source-check
 	@mkdir -p $(@D)
 	@mkdir -p '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*.ok'

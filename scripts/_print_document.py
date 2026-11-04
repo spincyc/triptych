@@ -343,6 +343,8 @@ def _declared_dependencies(root: Path, recipe: dict) -> list[str]:
 def _dependencies_from_line(root: Path, recipe: dict, prerequisites: str) -> list[str]:
     dependencies = set(recipe["dependencies"])
     for value in prerequisites.split("|", 1)[0].split():
+        if value.endswith(".revision.tex"):
+            continue  # the build's derived stamp (scripts/_edition_revision.py), not a source
         path = Path(value)
         if not path.is_absolute():
             path = root / path

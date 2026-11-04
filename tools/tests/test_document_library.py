@@ -13,6 +13,7 @@ trusted.
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -796,7 +797,6 @@ class SourceOnlyCatalogueTests(unittest.TestCase):
                 "\\begin{document}\n\\end{document}\n", "utf-8"
             )
             (directory / "generation-metadata.tex").write_text(
-                "\\AIDocumentRevisionTimestamp{2026-11-01T00:00:00Z}\n"
                 "\\AIModelContribution{gpt-5}{unexposed: effort}{source fixture}\n", "utf-8"
             )
             (directory / "web-edition.toml").write_text(
@@ -808,12 +808,21 @@ class SourceOnlyCatalogueTests(unittest.TestCase):
             release = fixture / "release/publications/gpt" / f"{leaf}.json"
             release.parent.mkdir(parents=True)
             release.write_text(json.dumps({"status": "alpha", "authorization": "fixture"}), "utf-8")
+            # The catalogue's revision stamp is derived from the fixture's history.
+            when = "@1793491200 +0000"
+            git = dict(os.environ, GIT_AUTHOR_NAME="t", GIT_AUTHOR_EMAIL="t@example.invalid",
+                       GIT_COMMITTER_NAME="t", GIT_COMMITTER_EMAIL="t@example.invalid",
+                       GIT_AUTHOR_DATE=when, GIT_COMMITTER_DATE=when,
+                       GIT_CONFIG_GLOBAL=os.devnull, GIT_CONFIG_NOSYSTEM="1")
+            for arguments in (("init", "-q"), ("add", "-A"), ("commit", "-q", "-m", "fixture")):
+                subprocess.run(["git", *arguments], cwd=fixture, env=git, check=True, capture_output=True)
             with patch.object(_corpus, "read_pdf", side_effect=AssertionError("PDF inspected")):
                 rows = _corpus.documents(root=fixture)
             self.assertFalse((fixture / "pdf").exists())
             self.assertEqual(len(rows), 1)
             issue = rows[0].issues[0]
             self.assertEqual(issue.title.text, "Exact Source Title")
+            self.assertEqual(rows[0].revised, "2026-11-01T00:00:00Z")
             self.assertEqual(issue.pdf, f"pdf/gpt/{leaf}.pdf")
             targets = self.tool.availability_record(rows[0], issue)
             self.assertEqual(targets["available"], {"reader": False, "print": True})
@@ -885,7 +894,7 @@ class SourceOnlyCatalogueTests(unittest.TestCase):
             report = self.tool.run_check_render(arguments)
         inspect.assert_called_once_with(Path(arguments.pdf))
         self.assertEqual(report["render"]["pages"], 19)
-        self.assertEqual(report["render"]["compared_source_revision"], row.provenance.revised)
+        self.assertEqual(report["render"]["compared_source_revision"], row.revised)
         self.assertIsNone(issue.pages)
 
     def test_render_check_refuses_a_title_mismatch(self):

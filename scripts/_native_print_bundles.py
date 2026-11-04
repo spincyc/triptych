@@ -293,7 +293,23 @@ def _publication_inputs(root: Path, recipe: dict):
     return dependencies, computed, declaration["kind"], allowed_binary
 
 
-def _publication_files(root: Path, recipe: dict, work: Path, dependencies, kind, allowed_binary):
+def _revision_file(root: Path, recipe: dict, repository=None) -> tuple[str, bytes]:
+    """The edition's derived "Last revised" stamp, where the preamble reads it.
+
+    pdfTeX runs in ``src/<provider>`` with the entrypoint's stem as its job
+    name, so the shared preamble's ``\\jobname.revision.tex`` is this path.
+    """
+    from _edition_revision import RevisionError, revision
+    try:
+        value = revision(root, recipe["provider"], recipe["document"], repository=repository)
+    except RevisionError as error:
+        raise BundleError("native source bundle cannot derive its revision stamp: " + str(error)) from error
+    stem = PurePosixPath(recipe["entrypoint"]).stem
+    return f"src/{recipe['provider']}/{stem}.revision.tex", value.tex().encode("utf-8")
+
+
+def _publication_files(root: Path, recipe: dict, work: Path, dependencies, kind, allowed_binary,
+                       repository=None):
     files = {}
     for value in sorted(dependencies):
         path = _source(root, value)
@@ -306,6 +322,9 @@ def _publication_files(root: Path, recipe: dict, work: Path, dependencies, kind,
         files.update(_dictionary_files(root, recipe, work))
     entrypoint = recipe["entrypoint"]
     _need(entrypoint in files, "native source bundle is missing its selected entrypoint")
+    stamp, payload = _revision_file(root, recipe, repository)
+    _need(stamp not in files, "native revision stamp collides with a source file: " + stamp)
+    files[stamp] = payload
     return files, entrypoint, f"src/{recipe['provider']}"
 
 
@@ -337,7 +356,8 @@ def _generated_files(root: Path, recipe: dict, work: Path):
 def prepare_bundle(output_id: str, *, root: Path = ROOT, scratch_root: Path | None = None,
                    documents: dict | None = None, revision: str | None = None,
                    recipe: dict | None = None, fingerprint_cache: dict | None = None,
-                   external_assets: dict[str, bytes] | None = None, _checked: bool = False) -> dict:
+                   external_assets: dict[str, bytes] | None = None, _checked: bool = False,
+                   revision_repository=None) -> dict:
     """Prepare one publicly admitted native output; never invoke a TeX engine.
 
     Explicit documents/recipe/revision permit a publisher to hold one verified
@@ -378,7 +398,8 @@ def prepare_bundle(output_id: str, *, root: Path = ROOT, scratch_root: Path | No
     with tempfile.TemporaryDirectory(prefix="source-", dir=scratch) as temporary:
         work = Path(temporary)
         if recipe["family"] == "publication":
-            files, entrypoint, cwd = _publication_files(root, recipe, work, dependencies, kind, allowed_binary)
+            files, entrypoint, cwd = _publication_files(root, recipe, work, dependencies, kind, allowed_binary,
+                                                        revision_repository)
         else:
             files, entrypoint, cwd = _generated_files(root, recipe, work)
         # A dependency snapshot precedes publication of the transport and is
@@ -491,10 +512,19 @@ def prepare_catalog(root: Path = ROOT, *, scratch_root: Path | None = None,
                documents[identity]["edition"], root=root) for identity in wanted]
     checked = printing.check_many(recipes, root=root)
     routes, assets, source_paths, cache, prepared = {}, {}, set(), {}, {}
+    # One view of the work tree serves every publication's revision stamp.
+    # Without one, each publication bundle refuses with the reason itself.
+    repository = None
+    if any(recipe["family"] == "publication" for recipe in checked):
+        from _edition_revision import Repository, RevisionError
+        try:
+            repository = Repository(root)
+        except RevisionError:
+            repository = None
     for identity, recipe in zip(wanted, checked, strict=True):
         bundle = prepare_bundle(identity, root=root, scratch_root=scratch_root, documents=documents,
                                 revision=revision, recipe=recipe, fingerprint_cache=cache,
-                                external_assets=assets, _checked=True)
+                                external_assets=assets, _checked=True, revision_repository=repository)
         prepared[identity] = bundle
         source_paths.update(row["path"] for row in bundle["source_inputs"])
     occurrences = Counter(row["sha256"] for bundle in prepared.values() for row in bundle["files"]

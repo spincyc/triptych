@@ -3112,6 +3112,15 @@ def audit_output(
     return failures
 
 
+def edition_revision(provider: str, entry: Path) -> str:
+    """The edition's derived "Last revised" value; scripts/_edition_revision.py owns the rule."""
+    from _edition_revision import RevisionError, revision_for_entrypoint
+    try:
+        return revision_for_entrypoint(SRC.parent, provider, entry).display
+    except (RevisionError, ValueError) as exc:
+        raise ConversionError(f"cannot derive the revision stamp: {exc}") from exc
+
+
 def declared_contents(leaf: Path) -> bool:
     declaration = leaf / "web-edition.toml"
     if not declaration.is_file():
@@ -3232,6 +3241,12 @@ def convert(provider: str, leaf: str, out: Path = OUT, *, selected: dict | None 
         body, page_references = prepare_page_references(body)
     if r"\TriptychRightsNotice" not in body:
         body += "\n\\TriptychRightsNotice\n"
+    # The stamp is derived, not tracked: print it where the metadata record
+    # is read, as the PDF does, or else just before the rights colophon.
+    stamp = f"\\AIDocumentRevisionTimestamp{{{edition_revision(provider, main)}}}\n"
+    at = body.find(r"\AIGenerationProvenance")
+    at = at if at >= 0 else body.find(r"\TriptychRightsNotice")
+    body = body[:at] + stamp + body[at:]
     if required_anchors is not None:
         failures = proper_anchor_failures(LABEL_RE.findall(strip_for_scan(body)), required_anchors, "source")
         if failures:

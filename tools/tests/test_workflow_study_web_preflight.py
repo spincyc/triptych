@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import os
+import subprocess
 import shutil
 import sys
 import tempfile
@@ -73,9 +75,14 @@ class StudyWebPreflightTests(unittest.TestCase):
             f"\\input{{{DOCUMENT}/generation-metadata}}\n"
             "\\end{document}\n")
         (self.leaf / "generation-metadata.tex").write_text(
-            "\\AIDocumentRevisionTimestamp{2026-10-13T12:00:00Z}\n"
             "\\AIModelContribution{test-model}{effort=high}{Test CLI 1.0}\n")
         self.write_source(r"\section{Collect}\label{proper-collect} Appointed prayer.")
+        # The converter derives the edition's revision stamp from git history.
+        git = dict(os.environ, GIT_AUTHOR_NAME="t", GIT_AUTHOR_EMAIL="t@example.invalid",
+                   GIT_COMMITTER_NAME="t", GIT_COMMITTER_EMAIL="t@example.invalid",
+                   GIT_CONFIG_GLOBAL=os.devnull, GIT_CONFIG_NOSYSTEM="1")
+        for arguments in (("init", "-q"), ("add", "-A", "src"), ("commit", "-q", "-m", "fixture")):
+            subprocess.run(["git", *arguments], cwd=self.root, env=git, check=True, capture_output=True)
         self.engine = WorkflowEngine(self.root, self.root / "workflows")
         self.engine.standing_findings_root = None
         with patch.object(self.engine, "get_repo_commit", return_value="a" * 40):

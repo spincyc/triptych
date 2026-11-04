@@ -526,7 +526,6 @@ run_seed="bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
 
 write_provenance() {
 	cat >"$tree/src/claude/probe/generation-metadata.tex" <<TEX
-\\AIDocumentRevisionTimestamp{2026-09-01T00:00:00Z}
 \\AIGenerationProvenance{${1:-proper}}{${2:-16}}{${3:-$run_digest}}{${4:-0123456789abcdef}}{${5:-$run_seed}}{unknown}
 \\AIModelContribution{a-model}{unexposed}{an agent}
 TEX

@@ -1,0 +1,169 @@
+"""The derived "Last revised" stamp: its closure, its history, and its refusals."""
+from __future__ import annotations
+
+import datetime as dt
+import os
+import subprocess
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+import _edition_revision as revision  # noqa: E402
+
+GENERATED = revision.GENERATED_HEADER + " from src/common/document-types/x/main.template.tex\n"
+NOW = dt.datetime(2026, 11, 4, 20, 0, 0, tzinfo=dt.timezone.utc)
+
+
+def stamp(seconds: int) -> str:
+    return dt.datetime.fromtimestamp(seconds, dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+class Fixture(unittest.TestCase):
+    """A small repository whose commit times the test chooses."""
+
+    def setUp(self) -> None:
+        self.temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temporary.cleanup)
+        self.root = Path(self.temporary.name).resolve() / "repository"
+        self.root.mkdir()
+        self.clock = 1_780_000_000
+        self.git("init", "-q", "-b", "main")
+        self.write("src/common/preamble.tex", "% shared typesetting\n")
+        self.write("src/claude/doc/main.tex",
+                   "\\input{common/preamble}\n\\input{doc/sections/body}\n"
+                   "\\input{doc/generated/date}\n\\input{doc/generation-metadata}\n")
+        self.write("src/claude/doc/homily.tex",
+                   "\\input{common/preamble}\n\\input{doc/sections/homily}\n"
+                   "\\input{doc/generation-metadata}\n")
+        self.write("src/claude/doc/sections/body.tex", "Body.\n")
+        self.write("src/claude/doc/sections/homily.tex", "Homily.\n")
+        self.write("src/claude/doc/generated/date.tex", "Dates.\n")
+        self.write("src/claude/doc/generation-metadata.tex", "\\AIModelContribution{m}{q}{r}\n")
+        self.first = self.commit("create")
+
+    def git(self, *arguments: str, cwd: Path | None = None) -> str:
+        environment = dict(os.environ, GIT_AUTHOR_NAME="t", GIT_AUTHOR_EMAIL="t@example.invalid",
+                           GIT_COMMITTER_NAME="t", GIT_COMMITTER_EMAIL="t@example.invalid",
+                           GIT_CONFIG_GLOBAL=os.devnull, GIT_CONFIG_NOSYSTEM="1")
+        for key in ("GIT_DIR", "GIT_WORK_TREE", "GIT_INDEX_FILE"):
+            environment.pop(key, None)
+        if "GIT_COMMITTER_DATE" in self.__dict__:
+            environment.update(self.__dict__["GIT_COMMITTER_DATE"])
+        return subprocess.run(["git", *arguments], cwd=cwd or self.root, env=environment,
+                              check=True, capture_output=True, text=True).stdout
+
+    def write(self, relative: str, text: str) -> None:
+        path = self.root / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+
+    def commit(self, message: str) -> int:
+        self.clock += 3600
+        when = f"@{self.clock} +0000"
+        self.__dict__["GIT_COMMITTER_DATE"] = {"GIT_COMMITTER_DATE": when, "GIT_AUTHOR_DATE": when}
+        self.git("add", "-A")
+        self.git("commit", "-q", "-m", message)
+        return self.clock
+
+    def derive(self, document: str = "doc") -> revision.Revision:
+        return revision.revision(self.root, "claude", document, now=NOW)
+
+
+class ClosureAndHistoryTests(Fixture):
+    def test_the_stamp_is_the_last_commit_to_the_editions_own_sources(self) -> None:
+        self.assertEqual(self.derive().timestamp, stamp(self.first))
+        self.write("src/claude/doc/sections/body.tex", "Body, revised.\n")
+        revised = self.commit("revise the body")
+        self.write("src/common/preamble.tex", "% shared typesetting, retuned\n")
+        self.write("src/claude/doc/generation-metadata.tex", "\\AIModelContribution{m}{q}{r2}\n")
+        self.commit("retune the preamble and log the contribution")
+        value = self.derive()
+        self.assertEqual(value.timestamp, stamp(revised))
+        self.assertFalse(value.uncommitted)
+        self.assertEqual(value.display, stamp(revised))
+        self.assertNotIn("src/common/preamble.tex", value.closure)
+        self.assertNotIn("src/claude/doc/generation-metadata.tex", value.closure)
+
+    def test_each_edition_of_a_leaf_has_its_own_stamp(self) -> None:
+        self.write("src/claude/doc/generated/date.tex", "Dates, regenerated.\n")
+        dated = self.commit("regenerate the chronology page")
+        self.assertEqual(self.derive().timestamp, stamp(dated))
+        self.assertEqual(self.derive("doc-homily").timestamp, stamp(self.first))
+
+    def test_a_generated_entrypoints_history_moves_no_stamp(self) -> None:
+        main = self.root / "src/claude/doc/main.tex"
+        self.write("src/claude/doc/main.tex", GENERATED + main.read_text())
+        self.commit("generate the entrypoint from a template")
+        self.write("src/claude/doc/main.tex", GENERATED + "% retemplated\n"
+                   + main.read_text().removeprefix(GENERATED))
+        self.commit("change the template")
+        value = self.derive()
+        self.assertEqual(value.timestamp, stamp(self.first))
+        self.assertIn("src/claude/doc/main.tex", value.closure)
+
+    def test_macro_built_inputs_are_expanded_and_an_unknown_one_refused(self) -> None:
+        self.write("src/claude/doc/main.tex",
+                   "\\newcommand{\\DocRoot}{doc}\n\\newcommand{\\Part}{\\DocRoot/sections/body}\n"
+                   "\\input{\\Part}\n\\input{\\DocRoot/generation-metadata}\n")
+        self.commit("compute the inputs")
+        self.assertIn("src/claude/doc/sections/body.tex", self.derive().closure)
+        self.write("src/claude/doc/main.tex", "\\input{\\Undefined/sections/body}\n")
+        self.commit("lose the definition")
+        with self.assertRaisesRegex(revision.RevisionError, "cannot expand"):
+            self.derive()
+
+
+class WithoutUsableHistoryTests(Fixture):
+    def test_uncommitted_or_untracked_sources_are_stamped_now_and_say_so(self) -> None:
+        self.write("src/claude/doc/sections/body.tex", "Body, being edited.\n")
+        value = self.derive()
+        self.assertTrue(value.uncommitted)
+        self.assertEqual(value.display, "2026-11-04T20:00:00Z (uncommitted sources)")
+        self.assertIn("\\AIDocumentRevisionUncommitted", value.tex())
+        # The homily reads none of it and stays committed.
+        self.assertFalse(self.derive("doc-homily").uncommitted)
+        self.git("checkout", "--", "src/claude/doc/sections/body.tex")
+        self.write("src/claude/doc/sections/new.tex", "New.\n")
+        self.write("src/claude/doc/homily.tex", "\\input{doc/sections/new}\n")
+        self.assertTrue(self.derive("doc-homily").uncommitted)
+
+    def test_a_shallow_clone_fails_closed(self) -> None:
+        self.write("src/claude/doc/sections/body.tex", "Body, revised.\n")
+        self.commit("revise")
+        clone = self.root.parent / "shallow"
+        self.git("clone", "-q", "--depth", "1", f"file://{self.root}", str(clone), cwd=self.root.parent)
+        with self.assertRaisesRegex(revision.RevisionError, "shallow"):
+            revision.revision(clone, "claude", "doc")
+
+    def test_a_tree_outside_git_fails_closed(self) -> None:
+        plain = self.root.parent / "plain"
+        (plain / "src/claude/doc").mkdir(parents=True)
+        with self.assertRaisesRegex(revision.RevisionError, "not a git work tree"):
+            revision.revision(plain, "claude", "doc")
+        nested = self.root / "src/claude"
+        with self.assertRaisesRegex(revision.RevisionError, "not the top"):
+            revision.Repository(nested)
+
+    def test_the_build_file_keeps_an_uncommitted_stamp_until_the_sources_move(self) -> None:
+        target = self.root.parent / "build/doc.revision.tex"
+        committed = self.derive()
+        self.assertTrue(revision.write(target, committed))
+        self.assertFalse(revision.write(target, committed))
+        self.write("src/claude/doc/sections/body.tex", "Body, being edited.\n")
+        first = self.derive()
+        self.assertTrue(revision.write(target, first))
+        later = revision.revision(self.root, "claude", "doc", now=NOW + dt.timedelta(minutes=5))
+        self.assertFalse(revision.write(target, later))
+        self.assertIn(first.timestamp, target.read_text())
+        self.write("src/claude/doc/sections/body.tex", "Body, edited again.\n")
+        again = revision.revision(self.root, "claude", "doc", now=NOW + dt.timedelta(minutes=9))
+        self.assertTrue(revision.write(target, again))
+        self.assertIn(again.timestamp, target.read_text())
+
+
+if __name__ == "__main__":
+    unittest.main()

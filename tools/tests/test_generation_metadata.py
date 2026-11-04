@@ -52,6 +52,8 @@ RECORDED_PROVENANCE = (
 # What every record in this file states about its production unless the test is
 # about production: nothing was recoverable.
 NOTHING_RECOVERABLE = None
+# The stamp a committed edition derives; the gate compares renderings with it.
+REVISION = CHECKER.Revision("gpt", "valid", TIMESTAMP, "c" * 40, False, ())
 
 
 class ScopedGenerationMetadataTests(unittest.TestCase):
@@ -66,7 +68,7 @@ class ScopedGenerationMetadataTests(unittest.TestCase):
         self.leaf.mkdir(parents=True)
         (self.leaf / "main.tex").write_text("\\input{valid/generation-metadata}\n")
         (self.leaf / "generation-metadata.tex").write_text(
-            rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n" + PROVENANCE + "\n" + CONTRIBUTION + "\n"
+            PROVENANCE + "\n" + CONTRIBUTION + "\n"
         )
         (self.provider / "incomplete").mkdir()
         (self.provider / "incomplete/main.tex").write_text("% preauthoring scaffold\n")
@@ -142,59 +144,45 @@ class GenerationMetadataParserTests(unittest.TestCase):
 
     def test_accepts_canonical_and_inherited_records(self) -> None:
         canonical = self.parse(
-            rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n"
-            + PROVENANCE + "\n" + CONTRIBUTION + "\n"
+            PROVENANCE + "\n" + CONTRIBUTION + "\n"
         )
-        self.assertEqual(canonical.revision_timestamp, TIMESTAMP)
         self.assertEqual(len(canonical.contributions), 1)
         self.assertIsNone(canonical.inheritance)
 
         inherited = self.parse(
-            rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n"
-            + PROVENANCE + "\n"
+            PROVENANCE + "\n"
             + r"\AIInheritedGenerationMetadata{theology/sacraments}"
             + "\n"
         )
-        self.assertEqual(inherited.revision_timestamp, TIMESTAMP)
         self.assertEqual(inherited.inheritance, "theology/sacraments")
         self.assertFalse(inherited.contributions)
 
-    def test_rejects_missing_duplicate_and_noninitial_timestamp(self) -> None:
+    def test_rejects_any_tracked_revision_timestamp(self) -> None:
+        """The stamp is derived from git per edition; a tracked one is refused."""
+        stamp = rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}"
         cases = {
-            "missing": PROVENANCE + "\n" + CONTRIBUTION + "\n",
-            "duplicate": (
-                rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n"
-                rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n"
-                + PROVENANCE
-                + "\n"
-                + CONTRIBUTION
-                + "\n"
-            ),
-            "noninitial": (
-                CONTRIBUTION
-                + "\n"
-                + rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}"
-                + "\n"
-                + PROVENANCE
-                + "\n"
-            ),
+            "initial, as every record once was": stamp + "\n" + PROVENANCE + "\n" + CONTRIBUTION + "\n",
+            "after the provenance": PROVENANCE + "\n" + stamp + "\n" + CONTRIBUTION + "\n",
+            "trailing": PROVENANCE + "\n" + CONTRIBUTION + "\n" + stamp + "\n",
         }
         for label, text in cases.items():
-            with self.subTest(label=label), self.assertRaises(ValueError):
+            with self.subTest(label=label), self.assertRaisesRegex(ValueError, "derived from git"):
                 self.parse(text)
+
+    def test_provenance_is_the_first_declaration(self) -> None:
+        with self.assertRaisesRegex(ValueError, "first declaration"):
+            self.parse(CONTRIBUTION + "\n" + PROVENANCE + "\n")
 
     def test_rejects_inheritance_mixed_with_contribution_and_stray_text(self) -> None:
         mixed = (
-            rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n"
-            + PROVENANCE + "\n"
+            PROVENANCE + "\n"
             + r"\AIInheritedGenerationMetadata{theology/sacraments}"
             + "\n"
             + CONTRIBUTION
             + "\n"
         )
         stray = (
-            rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n"
-            + PROVENANCE + "\n"
+            PROVENANCE + "\n"
             + CONTRIBUTION
             + "\nnot structured\n"
         )
@@ -204,8 +192,7 @@ class GenerationMetadataParserTests(unittest.TestCase):
 
     def test_rejects_exact_duplicate_contribution(self) -> None:
         text = (
-            rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n"
-            + PROVENANCE
+            PROVENANCE
             + "\n"
             + CONTRIBUTION
             + "\n"
@@ -221,8 +208,7 @@ class GenerationMetadataParserTests(unittest.TestCase):
             r"{OpenAI Codex CLI 1.2.3; API workspace; other role}"
         )
         text = (
-            rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n"
-            + PROVENANCE
+            PROVENANCE
             + "\n"
             + CONTRIBUTION
             + "\n"
@@ -321,7 +307,7 @@ class GenerationMetadataParserTests(unittest.TestCase):
         second = CHECKER.Contribution(
             "same-model", "effort=high", "OpenAI Codex CLI 1.2.4; second role"
         )
-        record = CHECKER.Record(TIMESTAMP, (first, second), None, NOTHING_RECOVERABLE)
+        record = CHECKER.Record((first, second), None, NOTHING_RECOVERABLE)
         rendered = CHECKER.normalize(
             f"Last revised (UTC): {TIMESTAMP}\n"
         )
@@ -329,7 +315,7 @@ class GenerationMetadataParserTests(unittest.TestCase):
             mock.patch.object(CHECKER, "validate_pdf_info"),
             mock.patch.object(CHECKER, "pdf_text", return_value=rendered),
         ):
-            CHECKER.validate_rendered_record(Path("unused.pdf"), record)
+            CHECKER.validate_rendered_record(Path("unused.pdf"), record, revision=REVISION)
 
         exposed = CHECKER.normalize(
             f"Last revised (UTC): {TIMESTAMP}\n"
@@ -340,13 +326,13 @@ class GenerationMetadataParserTests(unittest.TestCase):
             mock.patch.object(CHECKER, "pdf_text", return_value=exposed),
             self.assertRaisesRegex(ValueError, "tracked model"),
         ):
-            CHECKER.validate_rendered_record(Path("unused.pdf"), record)
+            CHECKER.validate_rendered_record(Path("unused.pdf"), record, revision=REVISION)
 
     def test_rendered_record_rejects_runtime_and_process_ledger_fields(self) -> None:
         contribution = CHECKER.Contribution(
             "test-model", "effort=high", "OpenAI Codex CLI 1.2.3; first role"
         )
-        record = CHECKER.Record(TIMESTAMP, (contribution,), None, NOTHING_RECOVERABLE)
+        record = CHECKER.Record((contribution,), None, NOTHING_RECOVERABLE)
         cases = (
             f"Agent/runtime: {contribution.runtime}",
             f"Client/runtime: {contribution.runtime}",
@@ -368,7 +354,7 @@ class GenerationMetadataParserTests(unittest.TestCase):
                     ValueError, "production-ledger|agent/runtime record"
                 ),
             ):
-                CHECKER.validate_rendered_record(Path("unused.pdf"), record)
+                CHECKER.validate_rendered_record(Path("unused.pdf"), record, revision=REVISION)
 
     def test_rendered_record_rejects_model_identity_and_effort(self) -> None:
         first = CHECKER.Contribution(
@@ -377,7 +363,7 @@ class GenerationMetadataParserTests(unittest.TestCase):
         second = CHECKER.Contribution(
             "second-model", "effort=low", "OpenAI Codex CLI 1.2.4; second role"
         )
-        record = CHECKER.Record(TIMESTAMP, (first, second), None, NOTHING_RECOVERABLE)
+        record = CHECKER.Record((first, second), None, NOTHING_RECOVERABLE)
         for exposed in ("first-model", "effort=high"):
             rendered = CHECKER.normalize(
                 f"Last revised (UTC): {TIMESTAMP}\n{exposed}\n"
@@ -388,12 +374,11 @@ class GenerationMetadataParserTests(unittest.TestCase):
                 mock.patch.object(CHECKER, "pdf_text", return_value=rendered),
                 self.assertRaisesRegex(ValueError, "tracked model|model effort"),
             ):
-                CHECKER.validate_rendered_record(Path("unused.pdf"), record)
+                CHECKER.validate_rendered_record(Path("unused.pdf"), record, revision=REVISION)
 
     def test_inherited_render_rejects_duplicated_model_or_ledger(self) -> None:
-        record = CHECKER.Record(TIMESTAMP, (), "theology/sacraments", NOTHING_RECOVERABLE)
+        record = CHECKER.Record((), "theology/sacraments", NOTHING_RECOVERABLE)
         inherited = CHECKER.Record(
-            TIMESTAMP,
             (
                 CHECKER.Contribution(
                     "test-model",
@@ -415,13 +400,12 @@ class GenerationMetadataParserTests(unittest.TestCase):
                 self.assertRaises(ValueError),
             ):
                 CHECKER.validate_rendered_record(
-                    Path("unused.pdf"), record, inherited
+                    Path("unused.pdf"), record, inherited, revision=REVISION
                 )
 
     def test_rendered_record_allows_ordinary_pedagogical_model_heading(self) -> None:
-        record = CHECKER.Record(TIMESTAMP, (), "theology/sacraments", NOTHING_RECOVERABLE)
+        record = CHECKER.Record((), "theology/sacraments", NOTHING_RECOVERABLE)
         inherited = CHECKER.Record(
-            TIMESTAMP,
             (
                 CHECKER.Contribution(
                     "test-model",
@@ -441,7 +425,7 @@ class GenerationMetadataParserTests(unittest.TestCase):
             mock.patch.object(CHECKER, "pdf_text", return_value=rendered),
         ):
             CHECKER.validate_rendered_record(
-                Path("unused.pdf"), record, inherited
+                Path("unused.pdf"), record, inherited, revision=REVISION
             )
 
 
@@ -473,9 +457,12 @@ class ReproduciblePdfMetadataTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         return output / "document.pdf"
 
-    def test_tracked_moddate_has_no_clock_fields_and_rebuild_is_identical(self) -> None:
+    def test_derived_moddate_has_no_clock_fields_and_rebuild_is_identical(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             temporary_path = Path(temporary)
+            # What every supported build writes beside the job, and the shared
+            # preamble reads as \jobname.revision.tex.
+            (temporary_path / "document.revision.tex").write_text(REVISION.tex(), encoding="utf-8")
             source = temporary_path / "main.tex"
             preamble = next(
                 path
@@ -492,8 +479,6 @@ class ReproduciblePdfMetadataTests(unittest.TestCase):
                 "\n"
                 r"\begin{document}"
                 "\nTest\n"
-                + rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}"
-                + "\n"
                 + RECORDED_PROVENANCE
                 + "\n"
                 + CONTRIBUTION
@@ -529,7 +514,6 @@ class ReproduciblePdfMetadataTests(unittest.TestCase):
             CHECKER.validate_rendered_record(
                 first,
                 CHECKER.Record(
-                    TIMESTAMP,
                     (
                         CHECKER.Contribution(
                             "test-model",
@@ -545,6 +529,7 @@ class ReproduciblePdfMetadataTests(unittest.TestCase):
                     None,
                     NOTHING_RECOVERABLE,
                 ),
+                revision=REVISION,
             )
             rendered = CHECKER.pdf_text(first)
             self.assertEqual(rendered.count(f"Last revised (UTC): {TIMESTAMP}"), 1)
@@ -562,6 +547,49 @@ class ReproduciblePdfMetadataTests(unittest.TestCase):
                 self.assertNotIn(value, rendered)
             self.assertIsNone(re.search(rb"/ID\s*\[", first_bytes))
 
+    def test_uncommitted_sources_are_said_on_the_page_and_held_to_it(self) -> None:
+        uncommitted = CHECKER.Revision("gpt", "valid", "2026-11-04T20:00:00Z", None, True, ())
+        with tempfile.TemporaryDirectory() as temporary:
+            temporary_path = Path(temporary)
+            (temporary_path / "document.revision.tex").write_text(uncommitted.tex(), encoding="utf-8")
+            source = temporary_path / "main.tex"
+            source.write_text(
+                rf"\input{{{(ROOT / 'src/common/preamble.tex').as_posix()}}}" "\n"
+                r"\hypersetup{pdftitle={Uncommitted},pdfsubject={Metadata test}}" "\n"
+                r"\begin{document}" "\nTest\n" + PROVENANCE + "\n" + CONTRIBUTION + "\n"
+                r"\end{document}" "\n",
+                encoding="utf-8",
+            )
+            pdf = self.compile(source, temporary_path / "out", os.environ.copy())
+            rendered = CHECKER.pdf_text(pdf)
+            self.assertEqual(
+                rendered.count("Last revised (UTC): 2026-11-04T20:00:00Z (uncommitted sources)"), 1)
+            CHECKER.validate_rendered_revision(pdf, rendered, uncommitted)
+            # Once committed, the same PDF no longer passes for the edition.
+            with self.assertRaisesRegex(ValueError, "uncommitted sources, which are now committed"):
+                CHECKER.validate_rendered_revision(pdf, rendered, REVISION)
+            # A committed-looking PDF cannot pass while the sources are dirty.
+            with self.assertRaisesRegex(ValueError, "differ from HEAD"):
+                CHECKER.validate_rendered_revision(pdf, rendered.replace(" (uncommitted sources)", ""), uncommitted)
+
+    def test_a_build_without_a_derived_stamp_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            temporary_path = Path(temporary)
+            source = temporary_path / "main.tex"
+            source.write_text(
+                rf"\input{{{(ROOT / 'src/common/preamble.tex').as_posix()}}}" "\n"
+                r"\begin{document}" "\nTest\n" r"\end{document}" "\n",
+                encoding="utf-8",
+            )
+            output = temporary_path / "out"
+            output.mkdir()
+            result = subprocess.run(
+                ["pdflatex", "-interaction=nonstopmode", "-halt-on-error", "-jobname=document",
+                 f"-output-directory={output}", str(source)],
+                cwd=temporary_path, check=False, capture_output=True, text=True, timeout=60)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("No edition revision stamp", result.stdout)
+
 
 
 class ProductionRecordTests(unittest.TestCase):
@@ -575,9 +603,7 @@ class ProductionRecordTests(unittest.TestCase):
 
     def record(self, provenance: str) -> str:
         return (
-            rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}"
-            + "\n"
-            + provenance
+            provenance
             + "\n"
             + CONTRIBUTION
             + "\n"
@@ -607,13 +633,8 @@ class ProductionRecordTests(unittest.TestCase):
         self.assertEqual(stated.install_commit, "d" * 40)
         self.assertTrue(stated.recorded)
 
-    def test_the_record_is_required_and_stands_second(self) -> None:
-        missing = (
-            rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}"
-            + "\n"
-            + CONTRIBUTION
-            + "\n"
-        )
+    def test_the_record_is_required_and_stands_first(self) -> None:
+        missing = CONTRIBUTION + "\n"
         with self.assertRaisesRegex(ValueError, "exactly one generation-provenance"):
             self.parse(missing)
 
@@ -623,15 +644,8 @@ class ProductionRecordTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "exactly one generation-provenance"):
             self.parse(twice)
 
-        after = (
-            rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}"
-            + "\n"
-            + CONTRIBUTION
-            + "\n"
-            + PROVENANCE
-            + "\n"
-        )
-        with self.assertRaisesRegex(ValueError, "must follow the document revision"):
+        after = CONTRIBUTION + "\n" + PROVENANCE + "\n"
+        with self.assertRaisesRegex(ValueError, "must be the first declaration"):
             self.parse(after)
 
     def test_every_field_is_held_to_its_own_shape(self) -> None:
@@ -677,9 +691,8 @@ class ProductionRecordTests(unittest.TestCase):
         production = CHECKER.Production(
             "proper", "11", "a" * 64, "b" * 16, "c" * 40, "d" * 40
         )
-        record = CHECKER.Record(TIMESTAMP, (), "theology/sacraments", production)
+        record = CHECKER.Record((), "theology/sacraments", production)
         inherited = CHECKER.Record(
-            TIMESTAMP,
             (CHECKER.Contribution("test-model", "effort=high", CLAUDE_RUNTIME),),
             None,
             NOTHING_RECOVERABLE,
@@ -695,7 +708,7 @@ class ProductionRecordTests(unittest.TestCase):
                 self.assertRaisesRegex(ValueError, "generation-provenance"),
             ):
                 CHECKER.validate_rendered_record(
-                    Path("unused.pdf"), record, inherited
+                    Path("unused.pdf"), record, inherited, revision=REVISION
                 )
 
     def test_the_whole_corpus_records_what_produced_it(self) -> None:
@@ -725,7 +738,7 @@ class ScannedProductionFieldsTests(unittest.TestCase):
             mock.patch.object(CHECKER, "validate_pdf_info"),
             mock.patch.object(CHECKER, "pdf_text", return_value=CHECKER.normalize(text)),
         ):
-            CHECKER.validate_rendered_record(Path("unused.pdf"), record)
+            CHECKER.validate_rendered_record(Path("unused.pdf"), record, revision=REVISION)
 
     def test_the_scanned_fields_are_the_high_entropy_ones_and_only_those(self) -> None:
         self.assertEqual(
@@ -746,7 +759,6 @@ class ScannedProductionFieldsTests(unittest.TestCase):
         own publication gate on the word "proper" and on the number 11.
         """
         record = CHECKER.Record(
-            TIMESTAMP,
             (CHECKER.Contribution("test-model", "effort=high", CLAUDE_RUNTIME),),
             None,
             CHECKER.Production("proper", "11", "a" * 64, "b" * 16, "c" * 40, "d" * 40),
@@ -765,7 +777,6 @@ class ScannedProductionFieldsTests(unittest.TestCase):
             "install_commit": "d" * 40,
         }
         record = CHECKER.Record(
-            TIMESTAMP,
             (CHECKER.Contribution("test-model", "effort=high", CLAUDE_RUNTIME),),
             None,
             CHECKER.Production("proper", "11", *values.values()),
@@ -1186,6 +1197,7 @@ class ProductionRecordIsInertTests(unittest.TestCase):
 
     def compile(self, body: str, where: Path) -> bytes:
         where.mkdir()
+        (where / "document.revision.tex").write_text(REVISION.tex(), encoding="utf-8")
         source = where / "main.tex"
         preamble = ROOT / "src/common/preamble.tex"
         source.write_text(
@@ -1224,23 +1236,12 @@ class ProductionRecordIsInertTests(unittest.TestCase):
         return (where / "document.pdf").read_bytes()
 
     def test_adding_the_record_moves_no_byte_of_the_rendered_pdf(self) -> None:
-        without = (
-            rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}"
-            + "\n"
-            + CONTRIBUTION
-            + "\n"
-        )
+        without = CONTRIBUTION + "\n"
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             before = self.compile(without, root / "before")
             after = self.compile(
-                without.replace(
-                    rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n",
-                    rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}"
-                    + "\n"
-                    + RECORDED_PROVENANCE
-                    + "\n",
-                ),
+                RECORDED_PROVENANCE + "\n" + without,
                 root / "after",
             )
         self.assertEqual(

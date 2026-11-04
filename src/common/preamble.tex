@@ -131,13 +131,15 @@
 \newcommand{\latin}[1]{\textit{#1}}
 \newcommand{\rubric}[1]{\textbf{#1}}
 
-% Generation provenance and the document revision timestamp are stored in each
-% document leaf and processed through these shared commands.  The first model
-% contribution renders only the timestamp.  Model identity, configuration,
-% contribution, and runtime history remain in the tracked metadata file rather
-% than being reproduced in the reader-facing publication.  A mechanically
-% derived companion has no local contribution, so its timestamp is rendered
-% once by the universal final-page colophon instead.
+% Generation provenance is stored in each document leaf's tracked
+% generation-metadata.tex and processed through these shared commands.  The
+% edition's revision timestamp is not tracked: the build derives it from git
+% (scripts/_edition_revision.py) and supplies it as \jobname.revision.tex, which
+% is read below.  The first model contribution renders only the timestamp.
+% Model identity, configuration, contribution, and runtime history remain in
+% the tracked metadata file rather than being reproduced in the reader-facing
+% publication.  A mechanically derived companion has no local contribution, so
+% its timestamp is rendered once by the universal final-page colophon instead.
 \newif\ifAIDocumentRevisionRendered
 \def\AIDocumentRevisionTimestampValue{}
 \makeatletter
@@ -146,17 +148,30 @@
   \gdef\AIDocumentRevisionTimestampValue{#1}%
   \edef\AI@pdfrevisiontimestamp{%
     \expandafter\AI@revisiontopdf#1\@nil}%
-  % Metadata files are imported after the first page in some documents, when
-  % hyperref has frozen its setup keys.  The pdfTeX primitive remains valid at
-  % that point and records the tracked value without consulting the build clock.
+  % The pdfTeX primitive records the derived value without consulting the
+  % build clock, and stays valid after hyperref has frozen its setup keys.
   \pdfinfo{/ModDate (\AI@pdfrevisiontimestamp)}%
 }
 \makeatother
+% A build from sources that differ from HEAD is stamped with the build time
+% and says so wherever the value is printed, including the leaves that set
+% \AIDocumentRevisionTimestampValue in their own colophons, so it can never
+% pass for a committed revision.
+\newcommand{\AIDocumentRevisionUncommitted}{%
+  \xdef\AIDocumentRevisionTimestampValue{%
+    \AIDocumentRevisionTimestampValue\space(uncommitted sources)}}
 \newcommand{\AIDisplayDocumentRevisionTimestamp}{%
   \ifAIDocumentRevisionRendered\else
     \textbf{Last revised (UTC):} \AIDocumentRevisionTimestampValue\\
     \global\AIDocumentRevisionRenderedtrue
   \fi}
+% Every supported build (Make, tools/print-document, native print bundles)
+% writes the derived stamp beside the job.  A build without one fails here
+% rather than printing an empty or guessed date.
+\InputIfFileExists{\jobname.revision}{}{%
+  \errmessage{No edition revision stamp \jobname.revision.tex: build through
+    make, tools/print-document or a native print bundle, which derive it from
+    git history}}
 \makeatletter
 \newcommand{\AIModelContribution}[3]{%
   \AIDisplayDocumentRevisionTimestamp}
@@ -191,7 +206,7 @@
 % Every installed PDF was reviewed and accepted byte for byte, and a record that
 % printed would rewrite all of them; a record that records is the whole of what
 % was asked for.  It follows \AIInheritedGenerationMetadata in being metadata the
-% reader is not shown, and \AIDocumentRevisionTimestamp in being tracked source
+% reader is not shown, and the derived revision stamp in being source-derived
 % rather than build-clock state.  \ignorespaces keeps the declaration's own line
 % break from reaching the page in any mode the metadata file is read in.
 \newcommand{\AIGenerationProvenance}[6]{\ignorespaces}

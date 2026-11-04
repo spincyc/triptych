@@ -359,7 +359,6 @@ class ProvenanceTests(unittest.TestCase):
             )
             (leaf / "generation-metadata.tex").write_text(
                 "\n".join((
-                    r"\AIDocumentRevisionTimestamp{2026-09-04T04:18:43Z}",
                     self.PROVENANCE,
                     r"\AIModelContribution{GPT-5-based Codex agent}"
                     r"{unexposed: exact model identifier and model qualifiers}"

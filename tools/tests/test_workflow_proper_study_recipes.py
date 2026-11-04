@@ -37,7 +37,7 @@ class IsolatedRecipeTests(unittest.TestCase):
         for name in ("tools/tpt", "tools/web-edition", "tools/pdf-review", "tmt.json",
                      "scripts/_tooling.py", "scripts/_corpus.py", "scripts/_workflow.py", "scripts/_document_schema.py",
                      "scripts/_proper_study.py", "scripts/_proper_components.py", "scripts/_markdown_render.py",
-                     "scripts/web-shim.tex"):
+                     "scripts/_edition_revision.py", "scripts/_document_types.py", "scripts/web-shim.tex"):
             target = self.root / name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(ROOT / name, target)
@@ -49,6 +49,16 @@ class IsolatedRecipeTests(unittest.TestCase):
         temporary_root.mkdir(parents=True)
         for name in ("TMPDIR", "TMP", "TEMP"):
             self.environment[name] = str(temporary_root)
+
+    def commit_sources(self):
+        """The converter derives each edition's revision stamp from git history."""
+        git = dict(os.environ, GIT_AUTHOR_NAME="t", GIT_AUTHOR_EMAIL="t@example.invalid",
+                   GIT_COMMITTER_NAME="t", GIT_COMMITTER_EMAIL="t@example.invalid",
+                   GIT_CONFIG_GLOBAL=os.devnull, GIT_CONFIG_NOSYSTEM="1")
+        if not (self.root / ".git").exists():
+            subprocess.run(["git", "init", "-q"], cwd=self.root, env=git, check=True)
+        subprocess.run(["git", "add", "-A", "src"], cwd=self.root, env=git, check=True)
+        subprocess.run(["git", "commit", "-q", "-m", "fixture"], cwd=self.root, env=git, check=True)
 
     def require_tools(self, *names):
         missing = [name for name in names if shutil.which(name) is None]
@@ -80,8 +90,8 @@ class IsolatedRecipeTests(unittest.TestCase):
                     "\\hypersetup{pdftitle={Command recipe fixture}}\n"
                     "\\begin{document}\n\\section{Collect and Readings}\n"
                     "The fixture preserves the Collect and the reading in one paragraph.\n"
-                    "\\AIDocumentRevisionTimestamp{2026-09-20T00:00:00Z}\n"
                     "\\end{document}\n")
+                self.commit_sources()
                 converted = self.execute(self.command("generate-web.md", "tools/tpt web-edition", provider=provider))
                 expected = self.root / "build/web" / provider / f"{DOCUMENT}.md"
                 self.assertTrue(expected.is_file(), converted.stdout)

@@ -19,6 +19,15 @@ import _native_print_bundles as bundles
 import _print_document as printing
 
 
+FIXED_STAMP = b"\\AIDocumentRevisionTimestamp{2026-01-01T00:00:00Z}\n"
+REAL_REVISION_FILE = bundles._revision_file
+
+
+def fixed_revision_file(root, recipe, repository=None):
+    from pathlib import PurePosixPath
+    return f"src/{recipe['provider']}/{PurePosixPath(recipe['entrypoint']).stem}.revision.tex", FIXED_STAMP
+
+
 class NativeSourceBundleTests(unittest.TestCase):
     def setUp(self):
         base = ROOT / ".scratch/prepared-publisher/source-assembly/tests"
@@ -45,6 +54,11 @@ class NativeSourceBundleTests(unittest.TestCase):
                        "edition": "main", "entrypoint": "src/gpt/articles/faith/example/main.tex",
                        "dependencies": ["Makefile", "src/gpt/articles/faith/example/main.tex"]}
         self.revision = "a" * 40
+        # The fixture is not a git work tree. Its stamp is fixed here; the one
+        # test that derives a real stamp makes the fixture a repository first.
+        self.stamp = patch.object(bundles, "_revision_file", side_effect=fixed_revision_file)
+        self.stamp.start()
+        self.addCleanup(self.stamp.stop)
 
     def prepare(self, **changes):
         arguments = dict(root=self.root, documents=self.documents, revision=self.revision,
@@ -52,6 +66,24 @@ class NativeSourceBundleTests(unittest.TestCase):
         arguments.update(changes)
         with patch.object(printing, "check", side_effect=lambda recipe, **_: recipe):
             return bundles.prepare_bundle(self.identity, **arguments)
+
+    def test_the_bundle_carries_the_editions_derived_revision_stamp(self):
+        """pdfTeX runs in src/<provider> as job `main`, so the preamble reads this file."""
+        import _edition_revision as edition
+        environment = {"GIT_AUTHOR_NAME": "t", "GIT_AUTHOR_EMAIL": "t@example.invalid",
+                       "GIT_COMMITTER_NAME": "t", "GIT_COMMITTER_EMAIL": "t@example.invalid",
+                       "GIT_COMMITTER_DATE": "@1780000000 +0000", "GIT_AUTHOR_DATE": "@1780000000 +0000",
+                       "GIT_CONFIG_GLOBAL": "/dev/null", "GIT_CONFIG_NOSYSTEM": "1", "PATH": "/usr/bin:/bin"}
+        for arguments in (("init", "-q"), ("add", "-A"), ("commit", "-q", "-m", "fixture")):
+            subprocess.run(["git", *arguments], cwd=self.root, env=environment, check=True,
+                           capture_output=True)
+        with patch.object(bundles, "_revision_file", new=REAL_REVISION_FILE):
+            result = self.prepare()
+        actual = {row["path"]: bundles.file_bytes(row) for row in result["files"]}
+        derived = edition.revision(self.root, "gpt", "articles/faith/example")
+        self.assertEqual(derived.timestamp, "2026-05-28T20:26:40Z")
+        self.assertEqual(actual["src/gpt/main.revision.tex"], derived.tex().encode("utf-8"))
+        self.assertIn(b"\\AIDocumentRevisionTimestamp{2026-05-28T20:26:40Z}", actual["src/gpt/main.revision.tex"])
 
     def test_original_source_bytes_paths_and_native_working_directory_survive(self):
         result = self.prepare()

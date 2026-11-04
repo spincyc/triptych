@@ -345,7 +345,7 @@ def _sort_key(sort: str):
     if sort == "pages":
         return lambda document: (document.pages or 0, document.leaf)
     if sort == "revised":
-        return lambda document: (document.provenance.revised, document.leaf)
+        return lambda document: (document.revised, document.leaf)
     return lambda document: (document.leaf, document.provider)
 
 
@@ -486,7 +486,7 @@ def run_check_render(arguments: argparse.Namespace) -> dict:
     return {
         "status": "ok", "output": issue.output_id,
         "render": {"path": arguments.pdf, "pages": metadata.pages,
-                   "compared_source_revision": rows[0].provenance.revised},
+                   "compared_source_revision": rows[0].revised},
     }
 
 
@@ -732,7 +732,7 @@ def _row_record(document: Document, by_key: dict[tuple[str, str], Document]) -> 
             (issue.title.absent for issue in document.issues if issue.kind == FULL), None
         ),
         "pages": document.pages,
-        "revised": document.provenance.revised,
+        "revised": document.revised,
         "eligibility": document.eligibility,
         "models": list(resolved_models(document, by_key)),
     }
@@ -858,7 +858,7 @@ def edition_record(document: Document, by_key: dict[tuple[str, str], Document]) 
         "subject": whole.title.subject,
         "title_source": whole.title.source,
         "pages": None,
-        "revised": document.provenance.revised,
+        "revised": document.revised,
         "eligibility": document.eligibility,
         "reviewed": document.reviewed,
         "status": whole.status,

@@ -60,7 +60,7 @@ import re
 import subprocess
 import sys
 import tomllib
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 from _document_schema import PROVIDERS
@@ -97,6 +97,8 @@ class CorpusError(RuntimeError):
 # they are declared here so that the gate and this reader cannot disagree about
 # what a provenance record looks like. That tool imports them.
 
+# A revision timestamp is derived from git per edition (scripts/_edition_revision.py)
+# and is never tracked. The pattern remains so that the gate can refuse one.
 REVISION_RE = re.compile(r"^\\AIDocumentRevisionTimestamp\{([^{}]+)\}\s*$", re.MULTILINE)
 CONTRIBUTION_RE = re.compile(
     r"^\\AIModelContribution\{([^{}]+)\}\{([^{}]+)\}\{([^{}]+)\}\s*$", re.MULTILINE
@@ -229,7 +231,7 @@ class Production:
 
 @dataclass(frozen=True)
 class Provenance:
-    """When a document was last revised, and by which models in which roles.
+    """Which models revised a document, in which roles, and what produced it.
 
     ``inherits`` names another leaf instead of restating its contributions. Six
     documents in this corpus are set from a sibling's sources — a daily-prayer
@@ -240,7 +242,6 @@ class Provenance:
     copy here.
     """
 
-    revised: str
     contributions: tuple[Contribution, ...]
     inherits: str | None
     produced: Production | None
@@ -262,15 +263,8 @@ def read_production(text: str, path: Path) -> Production | None:
 
 def read_provenance(path: Path) -> Provenance:
     text = active_tex(path.read_text(encoding="utf-8"))
-    revisions = REVISION_RE.findall(text)
-    if len(revisions) != 1:
-        raise CorpusError(
-            f"{path.relative_to(ROOT)}: expected one revision timestamp, "
-            f"found {len(revisions)}"
-        )
     inherits = INHERITANCE_RE.findall(text)
     return Provenance(
-        revised=revisions[0],
         contributions=tuple(
             Contribution(*parts) for parts in CONTRIBUTION_RE.findall(text)
         ),
@@ -731,6 +725,29 @@ class Issue:
     print_recipe: str | None = None
 
 
+class _Revisions:
+    """One lazily opened view of the work tree, shared by one discovery.
+
+    A document's "Last revised" stamp is derived from git history by
+    scripts/_edition_revision.py, and only when something asks for it, so
+    reading titles or contributions never needs a repository.
+    """
+
+    def __init__(self, root: Path):
+        self.root = Path(root).resolve()
+        self._repository = None
+
+    def display(self, provider: str, entry: str) -> str:
+        from _edition_revision import Repository, RevisionError, revision_for_entrypoint
+        try:
+            if self._repository is None:
+                self._repository = Repository(self.root)
+            return revision_for_entrypoint(self.root, provider, self.root / entry,
+                                           repository=self._repository).display
+        except RevisionError as error:
+            raise CorpusError(f"{entry}: {error}") from error
+
+
 @dataclass(frozen=True)
 class Document:
     """One provider's edition of one work, with everything recorded about it."""
@@ -751,6 +768,14 @@ class Document:
     manifest: str | None = None
     kind: str | None = None
     profile: str | None = None
+    revisions: _Revisions | None = field(default=None, compare=False, repr=False)
+
+    @functools.cached_property
+    def revised(self) -> str:
+        """The whole edition's derived "Last revised" value, as its pages print it."""
+        whole = next(issue for issue in self.issues if issue.kind == FULL)
+        revisions = self.revisions or _Revisions(ROOT)
+        return revisions.display(self.provider, whole.entry)
 
     @property
     def key(self) -> tuple[str, str]:
@@ -827,6 +852,7 @@ def documents(
     from _document_schema import SchemaError, discover
 
     repository = ROOT if root is None else root
+    revisions = _Revisions(repository)
     try:
         publications = discover(repository)
     except SchemaError as error:
@@ -877,6 +903,7 @@ def documents(
                     manifest=publication["manifest_path"],
                     kind=publication["kind"],
                     profile=publication["profile"],
+                    revisions=revisions,
                 )
             )
     return tuple(found)

@@ -207,6 +207,20 @@ with open(os.environ["MAKE_TEST_SOURCE_READER_LOG"], "a", encoding="utf-8") as l
         (scripts / "_papal_input_receipt.py").write_text(
             "import sys\nassert sys.argv[1:] == ['check']\n", encoding="utf-8"
         )
+        # The fixture is not a git work tree, so it cannot derive a revision
+        # stamp; this writes a fixed one the way the real tool does, only when
+        # it changes, so the graph's rebuild behaviour is what is under test.
+        (scripts / "_edition_revision.py").write_text(
+            "import sys\nfrom pathlib import Path\n"
+            "arguments = sys.argv[1:]\n"
+            "assert arguments[0] == 'write', arguments\n"
+            "out = Path(arguments[arguments.index('--out') + 1])\n"
+            "text = '\\\\AIDocumentRevisionTimestamp{2026-01-01T00:00:00Z}\\n'\n"
+            "if not out.is_file() or out.read_text() != text:\n"
+            "    out.parent.mkdir(parents=True, exist_ok=True)\n"
+            "    out.write_text(text)\n",
+            encoding="utf-8",
+        )
 
         self.source_inventory = library / "source-inventory"
         self.source_inventory.write_text(

@@ -492,7 +492,6 @@ class DriverConversionTests(unittest.TestCase):
             "\\def\\TriptychPrintEdition{}\n"
             "\\begin{document}\n"
             "\\input{shared/plate}\n"
-            "\\AIDocumentRevisionTimestamp{2026-08-16T00:00:00Z}\n"
             "\\AIModelContribution{m}{q}{r}\n"
             "\\end{document}\n"
         )
@@ -511,7 +510,8 @@ class DriverConversionTests(unittest.TestCase):
                 "\\fi\n",
                 encoding="utf-8",
             )
-            with mock.patch.object(DRIVER, "SRC", root / "src"):
+            with mock.patch.object(DRIVER, "SRC", root / "src"), mock.patch.object(
+                    DRIVER, "edition_revision", return_value="2026-08-16T00:00:00Z"):
                 written = DRIVER.convert("gpt", "doc", out=root / "out")
             output = written.read_text(encoding="utf-8")
             self.assertIn("Complete textual equivalent.", output)
@@ -540,7 +540,6 @@ class DriverConversionTests(unittest.TestCase):
             "\\textbf{A} & \\textbf{B}\\\\\n\\midrule\n\\endhead\n"
             "Epistle & 1~Pet. 5:6--11\\\\\n"
             "\\end{longtable}\n"
-            "\\AIDocumentRevisionTimestamp{2026-07-25T00:00:00Z}\n"
             "\\AIModelContribution{m}{q}{r}\n"
             "\\end{document}\n"
         )
@@ -549,7 +548,8 @@ class DriverConversionTests(unittest.TestCase):
             leaf = root / "src" / "provider" / "doc"
             leaf.mkdir(parents=True)
             (leaf / "main.tex").write_text(document, encoding="utf-8")
-            with mock.patch.object(DRIVER, "SRC", root / "src"):
+            with mock.patch.object(DRIVER, "SRC", root / "src"), mock.patch.object(
+                    DRIVER, "edition_revision", return_value="2026-07-25T00:00:00Z"):
                 written = DRIVER.convert("provider", "doc", out=root / "out")
             self.assertIn("| 1", written.read_text(encoding="utf-8"))
 

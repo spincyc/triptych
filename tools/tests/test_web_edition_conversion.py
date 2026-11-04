@@ -184,10 +184,7 @@ class WebEditionConversionTests(unittest.TestCase):
                 path = leaf / name
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(text, encoding="utf-8")
-            (leaf / "generation-metadata.tex").write_text(
-                rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n" + metadata + "\n",
-                encoding="utf-8",
-            )
+            (leaf / "generation-metadata.tex").write_text(metadata + "\n", encoding="utf-8")
             (leaf / "main.tex").write_text(
                 "\\input{common/preamble}\n"
                 r"\hypersetup{pdftitle={" + title + r"},pdfsubject={A synthetic leaf}}"
@@ -198,9 +195,10 @@ class WebEditionConversionTests(unittest.TestCase):
                 "\n\\end{document}\n",
                 encoding="utf-8",
             )
+            # The stamp is derived from git, which a synthetic leaf has none of.
             with mock.patch.object(DRIVER, "SRC", root / "src"), mock.patch.object(
                 DRIVER, "OUT", root / "build" / "web"
-            ):
+            ), mock.patch.object(DRIVER, "edition_revision", return_value=TIMESTAMP):
                 destination = DRIVER.convert(provider, "studies/subject", root / "build" / "web")
             return destination.read_text(encoding="utf-8")
 

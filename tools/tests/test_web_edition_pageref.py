@@ -123,10 +123,10 @@ class PageReferenceConversionTests(unittest.TestCase):
                 r"\subsection{Job: the land of the story}\label{hist-job}" "\n"
                 "Job's source qualification.\n\n"
                 + extra_body + "\n"
-                + r"\AIDocumentRevisionTimestamp{2026-10-13T00:00:00Z}" "\n"
                 r"\end{document}" "\n"
             )
-            with mock.patch.object(DRIVER, "SRC", root / "src"):
+            with mock.patch.object(DRIVER, "SRC", root / "src"), mock.patch.object(
+                    DRIVER, "edition_revision", return_value="2026-10-13T00:00:00Z"):
                 output = DRIVER.convert("test", "doc", root / "output")
             return output.read_text()
 
