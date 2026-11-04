@@ -67,3 +67,26 @@ data = "src/gpt/curriculums/ecclesiastical-latin/shared/companion-scope.tex"
 [[structure]]
 role = "reference"
 data = "src/gpt/curriculums/ecclesiastical-latin/shared/content/reference/all.tex"
+
+[document]
+type = "curriculum-companion-v1"
+
+[document.main]
+companion-id = 'EL-REFERENCE'
+companion-title = 'Reference Grammar and Reading Lexicon'
+title = 'Reference Grammar and Reading Lexicon'
+subtitle = 'A retrieval companion for the common trunk and advanced poetry branch'
+summary = '''
+Definitions, paradigms, syntax summaries, register and genre guidance,
+   cumulative vocabulary, and a repeatable parsing checklist. Form a
+   hypothesis before consulting the reference.'''
+document-line = 'Reference companion'
+pacing = 'Consult after an unaided hypothesis while working through the trunk or poetry branch'
+pdfsubject = 'Definitions, paradigms, syntax, register and genre guidance, vocabulary, and parsing protocol for the self-paced course'
+boundary = "It gathers the curriculum's definitions, paradigms, syntax summaries, register and genre map, reading lexicon, and parsing checklist. Form an unaided hypothesis first, then use this volume as the common retrieval source named by the guide."
+pacing-note = 'Consult after an unaided hypothesis; return to packet teaching and connected Latin for active practice.'
+registries = "memory"
+body = [
+  '\part{Reference Grammar and Reading Lexicon}',
+  '\input{curriculums/ecclesiastical-latin/shared/content/reference/all}',
+]

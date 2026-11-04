@@ -354,6 +354,16 @@ qualification beside the affected passage when it changes how that material
 should be read. The common rights colophon remains the final-page colophon
 supplied by the repository preamble.
 
+This skeleton is written once, as document types
+([document schemas](../document-schemas.md#document-types)), and every
+publication's `main.tex` is generated from one of them:
+`curriculum-packet-v1` for trunk and poetry packets, `curriculum-review-v1`
+for the cumulative reviews, and `curriculum-companion-v1` for the guide,
+reference grammar and memory workbook. A packet's own data is its
+`module-data.tex`; a review's or companion's is its `[document]` fields and
+any `sections/` files. Change the type or the declaration and run `tools/tpt
+document-types refresh`, never the generated entrypoint.
+
 ## Profile checks
 
 Before source or HTML publication, verify that the curriculum map accounts for

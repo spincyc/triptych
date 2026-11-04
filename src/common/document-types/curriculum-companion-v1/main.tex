@@ -1,0 +1,49 @@
+%% curriculum-companion-v1, main edition: one course-wide companion of the
+%% self-paced Ecclesiastical Latin curriculum -- the guide, the reference
+%% grammar or the memory workbook (guidance/curriculums/ecclesiastical-latin.md):
+%% course cover, compact contents, the leaf's own body, then Scope and Sources
+%% closed by the generation metadata.
+\input{common/preamble}
+\input{curriculums/ecclesiastical-latin/shared/course-format.sty}
+\newcommand{\CourseRoot}{curriculums/ecclesiastical-latin}
+\newcommand{\CompanionID}{@{companion-id}}
+\newcommand{\CompanionTitle}{@{companion-title}}
+\renewcommand{\CoursePacing}{@{pacing}}
+%@ option registries
+
+\hypersetup{
+  pdftitle={Ecclesiastical Latin — @{title}},
+  pdfsubject={@{pdfsubject}}
+}
+
+\begin{document}
+\CourseTitlePage
+  {@{title}}
+  {@{subtitle}}
+  {@{summary}}
+  {@{document-line}}
+
+\pagenumbering{roman}
+\begingroup
+%@ option contents
+\sloppy
+\hbadness=10000
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+
+%@ region body
+
+\clearpage
+\part{Scope and Sources}
+%@ option scope
+\input{curriculums/ecclesiastical-latin/shared/content/shared/sources}
+\Needspace{18\baselineskip}
+
+{\footnotesize
+%@ input generation-metadata
+}
+
+\end{document}

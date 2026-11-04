@@ -79,3 +79,26 @@ data = "src/gpt/curriculums/ecclesiastical-latin/shared/memory/lexemes.tex"
 [[structure]]
 role = "answers"
 data = "src/gpt/curriculums/ecclesiastical-latin/shared/memory/grammar-facts.tex"
+
+[document]
+type = "curriculum-companion-v1"
+
+[document.main]
+companion-id = 'EL-MW'
+companion-title = 'Ecclesiastical Latin Memory Workbook'
+title = 'Cumulative Memory Workbook'
+subtitle = 'From ordinary first sentences to Missal reading, broad Latin, and advanced composition'
+summary = '''
+A controlled cumulative lexicon, grammar-fact bank, widening retrieval
+   schedule, printable repetition sheets, and complete project models for the
+   twenty-two-packet common trunk and eight-packet poetry branch.'''
+document-line = 'EL-MW memory companion'
+pacing = 'Repeat by study event until recall is reasonably dependable in reading and composition'
+pdfsubject = 'Self-paced vocabulary, morphology, government, grammar, reconstruction, and composition retrieval for the common trunk and advanced poetry branch'
+registries = "memory"
+contents = "footnotesize"
+scope = "leaf"
+body = [
+  '\input{curriculums/ecclesiastical-latin/shared/content/memory-workbook/all}',
+]
+scope-chapter = ['sections/scope']

@@ -20,12 +20,12 @@ dropped every document whose record it disliked.
 
 ## Why the title is evaluated rather than matched
 
-A document's title is the one fact here that no single file states. Of the 186
-issues this repository builds, 152 declare `pdftitle` in their own `main.tex`
-and 34 do not: the Ecclesiastical Latin modules and cumulative reviews declare
-`\\ModuleTitle` in `module-data.tex`, and a shared shell three `\\input`s away
-composes the printed title out of it and the module's id. A regular expression
-over `main.tex` therefore finds nothing for a seventh of the corpus, and a
+A document's title is the one fact here that no single file states. The
+Ecclesiastical Latin packets and cumulative reviews do not write their title
+out: a packet declares `\\ModuleTitle` in `module-data.tex`, and its `main.tex`,
+generated from the `curriculum-packet-v1` document type, composes `pdftitle`
+out of it and the module's id with macros. A regular expression over `main.tex`
+therefore finds macros, not a title, for every packet and review, and a
 regular expression that reached into `module-data.tex` instead would produce
 `Form, Case, and Agreement` where the document is actually called
 `Ecclesiastical Latin — EL-M01: Form, Case, and Agreement`.

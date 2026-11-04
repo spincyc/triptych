@@ -1,0 +1,28 @@
+schema = 1
+record_type = "document-type"
+id = "curriculum-companion-v1"
+description = """
+One course-wide companion of the self-paced Ecclesiastical Latin curriculum:
+the starter guide, the reference grammar and reading lexicon, or the
+cumulative memory workbook (guidance/curriculums/ecclesiastical-latin.md). The
+type owns the preamble, PDF metadata, the course cover, compact contents, the
+Scope and Sources part and the terminal generation metadata. A leaf supplies
+its companion ID and title, cover lines, pacing line and PDF subject as fields,
+its body as section files, and its choices: whether the memory-registry
+renderers are loaded, the contents size, and whether Scope and Qualifications
+is the course's shared chapter (naming the leaf's boundary and pacing note) or
+the leaf's own.
+"""
+kinds = ["curriculum-guide", "curriculum-reference", "curriculum-memory"]
+
+# The four \CourseTitlePage arguments are the large title (also the PDF title
+# after "Ecclesiastical Latin --- "), the subtitle, the summary paragraph and
+# the Document line of the cover table.
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"
+fields = ["companion-id", "companion-title", "title", "subtitle", "summary", "document-line", "pacing", "pdfsubject", "boundary", "pacing-note"]
+regions = ["body"]
+optional_regions = ["scope-chapter"]
+options = { registries = "none", contents = "small", scope = "shared" }

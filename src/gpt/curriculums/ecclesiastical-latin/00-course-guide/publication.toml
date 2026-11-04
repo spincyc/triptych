@@ -75,3 +75,30 @@ data = "src/gpt/curriculums/ecclesiastical-latin/shared/content/shared/roadmap.t
 [[structure]]
 role = "practice-forms"
 data = "src/gpt/curriculums/ecclesiastical-latin/shared/content/practice-forms.tex"
+
+[document]
+type = "curriculum-companion-v1"
+
+[document.main]
+companion-id = 'EL-GUIDE'
+companion-title = 'Start Here: Course Guide and Reusable Practice Forms'
+title = 'Start Here: Course Guide and Reusable Practice Forms'
+subtitle = 'From ordinary first sentences to independent Missal reading and composition'
+summary = '''
+Begin here for the curriculum roadmap, repetition method, answer use,
+   twenty-two-packet common trunk, eight-packet poetry branch, and reusable
+   handwritten forms.'''
+document-line = 'Starter guide and blank-form companion'
+pacing = 'Begin here; revisit the method and blank forms whenever they help'
+pdfsubject = 'Starter guide, roadmap, self-paced study and answer methods, qualitative readiness, and blank records for a broad Latin curriculum centered on the 1962 Missal'
+boundary = 'It contains the course destination, self-paced study and answer methods, complete trunk and poetry-branch roadmap, qualitative before-continuing method, and reusable blank forms. It contains no packet teaching, populated memory set, worksheet bank, or cumulative review form.'
+pacing-note = 'Begin here, then return to the study method or an individual form whenever it is useful.'
+body = [
+  '\part{Course Handbook}',
+  '\input{curriculums/ecclesiastical-latin/shared/content/00-using-the-course}',
+  '\input{curriculums/ecclesiastical-latin/shared/content/shared/roadmap}',
+  '\clearpage',
+  '\part{Reusable Practice Forms}',
+  '\chapter{Blank Forms for Repeated Work}',
+  '\input{curriculums/ecclesiastical-latin/shared/content/practice-forms}',
+]
