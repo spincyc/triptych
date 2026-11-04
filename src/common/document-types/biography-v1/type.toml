@@ -1,0 +1,25 @@
+schema = 1
+record_type = "document-type"
+id = "biography-v1"
+description = """
+A historical and hagiographic life in the biographies collection
+(guidance/biographies.md). The type owns the preamble -- the common preamble
+and the provider collection's shared biographies/shared/biography-format --
+the PDF metadata, the collection's title page (the subject's name, the
+subtitle, the kind of study and the Triptych series line), the contents on
+their own roman-numbered pages, the deepstudy frame, the \\appendix that
+opens the terminal Scope, Chronology, and Evidence apparatus, and the closing
+provenance block. A leaf supplies its metadata fields, the ordered section
+files of its life (body) and of its terminal apparatus (appendix), and its
+option choices.
+"""
+kinds = ["biography"]
+
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"
+fields = ["pdftitle", "pdfsubject", "title", "subtitle", "kind-line"]
+regions = ["body", "appendix"]
+optional_regions = ["preamble"]
+options = { penalties = "none", closing = "rights" }

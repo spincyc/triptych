@@ -1,0 +1,40 @@
+%% theology-reference-v1, main edition: a theological reference work.
+\input{common/preamble}
+%@ option headings
+\setcounter{tocdepth}{@{tocdepth}}
+\setlength{\emergencystretch}{@{emergencystretch}}
+%@ option penalties
+%@ input? format
+%@ region preamble
+
+\hypersetup{
+  pdftitle={@{pdftitle}},
+  pdfsubject={@{pdfsubject}}
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+%@ option titlepage
+\end{titlepage}
+
+\pagenumbering{roman}
+\begingroup
+@{contents-style}
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+\begin{deepstudy}
+%@ region body
+\appendix
+%@ region appendix
+%@ option closing
+\end{deepstudy}
+
+\end{document}

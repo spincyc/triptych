@@ -1,0 +1,44 @@
+schema = 1
+record_type = "document-type"
+id = "theology-reference-v1"
+description = """
+A theological reference work or study under src/<provider>/theology/: the
+angelology, heresies, virtues, Mariology and sacramental-treatise profiles
+(guidance/theology/). The type owns the preamble skeleton -- the common
+preamble, the heading formats, the contents depth, the emergency stretch and
+the widow and club penalties -- the PDF metadata, the title page in one of
+its declared forms, the contents on their own roman-numbered pages, the
+deepstudy frame, the \\appendix that opens the terminal apparatus, and the
+closing provenance block. A leaf supplies its metadata fields, its leaf-local
+packages and macros in format.tex, the ordered section files of its body and
+of its terminal apparatus (appendix), and its option choices.
+"""
+kinds = [
+  "angelology",
+  "heresies",
+  "marian-apparition",
+  "marian-authority",
+  "marian-dogma",
+  "marian-monograph",
+  "marian-prayer",
+  "marian-rosary",
+  "sacraments",
+  "virtues",
+]
+
+# Title-page fields: title and subtitle always; kind-line (the kind of study)
+# in every form; note (the use qualification) at the foot of the qualified
+# form; description beneath the kind line in the series-described form;
+# overline above the title in the overline form. A field the chosen form does
+# not print is not declared. A line break inside a title-page line is written
+# in the field as \\. contents-style is the TeX that sets the contents list's
+# size inside its group.
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"
+fields = ["pdftitle", "pdfsubject", "title", "subtitle", "emergencystretch"]
+optional_fields = { kind-line = "", note = "", description = "", overline = "", tocdepth = "1", contents-style = '\small' }
+regions = ["body", "appendix"]
+optional_regions = ["preamble"]
+options = { headings = "titlesec", penalties = "strict", titlepage = "qualified", closing = "footnotesize" }

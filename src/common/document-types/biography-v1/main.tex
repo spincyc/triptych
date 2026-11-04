@@ -1,0 +1,47 @@
+%% biography-v1, main edition: one life (guidance/biographies.md).
+%% The collection's shared format is resolved per provider: each provider's
+%% src/<provider>/biographies/shared/biography-format.tex.
+\input{common/preamble}
+\input{biographies/shared/biography-format}
+%@ option penalties
+%@ input? format
+%@ region preamble
+
+\hypersetup{
+  pdftitle={@{pdftitle}},
+  pdfsubject={@{pdfsubject}}
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{0.12\textheight}
+  {\Huge\bfseries @{title}\par}
+  \vspace{0.9em}
+  {\Large @{subtitle}\par}
+  \vspace{1.6em}
+  {\large @{kind-line}\par}
+  \vfill
+  {\small Triptych: AI Driven Studies in Catholic Faith, Worship, and Law\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+\begin{deepstudy}
+%@ region body
+\appendix
+%@ region appendix
+%@ option closing
+\end{deepstudy}
+
+\end{document}
