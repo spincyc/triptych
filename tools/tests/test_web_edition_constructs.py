@@ -103,7 +103,9 @@ class ConversionTests(unittest.TestCase):
                 "\\input{common/preamble}\n\\hypersetup{pdftitle={Subject}}\n\\begin{document}\n"
                 "\\section{Body}\n" + body + "\n\\input{studies/subject/generation-metadata}\n"
                 "\\end{document}\n")
-            with mock.patch.object(DRIVER, "SRC", src):
+            # The fixture has no git history to derive a revision stamp from.
+            with mock.patch.object(DRIVER, "SRC", src), mock.patch.object(
+                    DRIVER, "edition_revision", return_value="2026-11-04T00:00:00Z"):
                 return DRIVER.convert_markdown("test", "studies/subject")
 
     def test_paired_minipages_and_landscape_tables_reach_the_reader(self):

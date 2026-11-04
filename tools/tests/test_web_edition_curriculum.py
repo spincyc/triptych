@@ -27,6 +27,8 @@ sys.modules[SPEC.name] = DRIVER
 SPEC.loader.exec_module(DRIVER)
 
 import _web_edition_curriculum as curriculum  # noqa: E402
+from _document_schema import derived_kind_and_outputs  # noqa: E402
+from _edition_revision import revision_for_entrypoint, write as write_revision  # noqa: E402
 from _markdown_render import MarkdownRenderError, render_markdown  # noqa: E402
 
 HAS_PANDOC = shutil.which("pandoc") is not None
@@ -48,7 +50,8 @@ def curriculum_leaves() -> list[str]:
     leaves = []
     for manifest in sorted(COURSE_ROOT.rglob("publication.toml")):
         declaration = manifest.with_name("web-edition.toml")
-        kind = tomllib.loads(manifest.read_text(encoding="utf-8")).get("kind", "")
+        kind, _ = derived_kind_and_outputs(
+            ROOT, manifest.parent, tomllib.loads(manifest.read_text(encoding="utf-8")))
         if not curriculum.applies(kind) or not declaration.is_file():
             continue
         record = tomllib.loads(declaration.read_text(encoding="utf-8"))
@@ -295,10 +298,13 @@ class TypesetAgreementTests(unittest.TestCase):
     def test_selected_words_are_the_typeset_words(self):
         for leaf in self.LEAVES:
             with self.subTest(leaf=leaf), tempfile.TemporaryDirectory() as directory:
+                # The preamble reads the stamp every build derives from git.
+                write_revision(Path(directory) / "reference.revision.tex", revision_for_entrypoint(
+                    ROOT, "gpt", ROOT / "src/gpt" / leaf / "main.tex"))
                 finished = subprocess.run(
                     ["pdflatex", "-no-shell-escape", "-interaction=nonstopmode", "-halt-on-error",
                      "-jobname=reference", f"-output-directory={directory}", f"{leaf}/main.tex"],
-                    cwd=ROOT / "src/gpt", env={**os.environ, "TEXINPUTS": "..:"},
+                    cwd=ROOT / "src/gpt", env={**os.environ, "TEXINPUTS": f"..:{directory}:"},
                     capture_output=True, text=True, check=False)
                 self.assertEqual(finished.returncode, 0, finished.stdout[-2000:])
                 text = subprocess.run(["pdftotext", "-layout", f"{directory}/reference.pdf", "-"],
