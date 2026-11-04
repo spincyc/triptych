@@ -53,19 +53,10 @@ After a successful source/site build, CI saves verified current products before
 the independent artifact check, so an interrupted deployment can reuse that
 work. Artifact verification still precedes publication.
 
-Family identities include content, generators/options, locks, rights and
-publication decisions, and their dependency membership. Shared or uncertain
-policy ownership is conservative. Neither Git state, timestamps, mtimes, a
-cache pathname nor a restored cache supplies trust. The resulting descriptor
-and mechanical receipt hashes are excluded from their own input identities.
-Only complete verified families are promoted; publication consumes a verified
-snapshot for its whole operation. Current rights/withheld-text filters,
-publishable-edition and hold/withdrawal membership checks, and reader/print
-completeness checks remain independent mandatory gates.
-
 The complete browser descriptor is the normal deployment proof for generated
-source and act-history projections. Its input closure is a conservative
-superset of their earlier receipts, and its cold path runs the same strict
+source and act-history projections. Its input closure is the audited set those
+producers read ([below](#what-a-family-key-covers)), narrower than the older
+receipts' deliberately broad scopes, and its cold path runs the same strict
 producers in two fresh passes. Exact SHA-256, size and membership comparisons,
 fresh inputs before and after generation, current code without inherited
 bytecode, and the publisher's held private snapshot establish mechanical reuse.
@@ -87,6 +78,66 @@ translation would rewrite every page. The same trap sits one level down: a
 fragment set keyed by mass and translation would be just as combinatorial. So
 the rule is that **file counts must be additive, never multiplicative**. Adding
 a translation adds that translation's fragments and changes nothing else.
+
+### What a family key covers
+
+A family's input identity covers what its producer can read, and nothing else:
+
+- the data trees and files its recipe declares in
+  [`_browser_product_recipes.py`](../scripts/_browser_product_recipes.py),
+  less the mechanical receipts;
+- the code closure of its producer, which
+  [`_browser_product_inputs.py`](../scripts/_browser_product_inputs.py)
+  computes from the current source and never takes from a list: modules
+  reached by `import`, by a literal `importlib.import_module` or `__import__`,
+  every module of a package imported by name prefix, and files under
+  `scripts/` or `tools/` that a path names (`ROOT / "tools" / "citations"`,
+  `sibling("mass-propers")`, a literal such as `"tools/source-library"`);
+- the harness that runs and identifies it: `_browser_products.py`,
+  `_browser_product_recipes.py`, `_browser_product_inputs.py` and what they
+  import;
+- the root dependency pins (`requirements*.txt`, lock files), because the
+  installed library versions shape the bytes.
+
+Both halves over-approximate. Code a producer could load counts even when a run
+does not execute it, so `act-history` stales when `tools/public-alpha` changes,
+and most source-text families still declare all of `src/sources` although each
+run reads less of it. Guidance, tests, docs, project records, review records no
+producer reads, and code outside every closure belong to no key. A rights or
+publication record is an input only of a family that reads it: `documents`
+reads `release/publications/`, `act-history` hashes the liturgical-text
+publication policy, and `propers` and `sources` read the reviewed authority
+records their recipes name. Publication does not rest on these keys: current
+rights/withheld-text filters, publishable-edition and hold/withdrawal
+membership checks, and reader/print completeness checks remain independent
+mandatory gates.
+
+The descriptor's aggregate identity commits to the sorted family input
+commitments and to nothing else, so a change outside every family's key stales
+nothing. Neither Git state, timestamps, mtimes, a cache pathname nor a restored
+cache supplies trust. The descriptor and the mechanical receipts are excluded
+from their own input identities; the source library reads the receipts only to
+validate their envelope. Only complete verified families are promoted;
+publication consumes a verified snapshot for its whole operation and binds the
+union of the family keys as the products' canonical site sources.
+
+`tools/browser-products audit` is the executable proof that the keys are
+complete. It runs each producer cold with an audit hook installed through a
+temporary `sitecustomize`, so every Python child is observed as well, records
+each repository file opened or probed and each directory listed, and fails if
+a family touches a path outside its key or reads ignored state such as
+`build/` or another `.scratch/` tree. A non-Python child is reported and the
+repository paths in its arguments are judged as reads; its own further reads
+are not observed. The full audit takes several minutes, so the suite runs it
+only on request (`TRIPTYCH_BROWSER_PRODUCT_AUDIT=1` with
+`tools/tests/test_browser_product_inputs.py`). Run it when a producer starts
+reading a new data file, and declare that file or tree in the recipe.
+
+**When to re-record.** `check` and `key` name the families whose inputs
+changed. A re-record is required after changing a family's declared data, a
+module in its code closure, the harness, a dependency pin, or a recipe, and
+only then. An edit to guidance, tests, docs, an unread review record or
+unrelated code leaves every key, and so the deployment, as it was.
 
 ## A property that is global to the project lives once, at project level
 
@@ -849,13 +900,15 @@ verifies warm families and rebuilds only genuine exact misses from canonical
 inputs, offline. `check` checks existing cache bytes without generation or
 network. A cache restored from CI is only a candidate until these checks pass.
 
-After an intentional source or generator change, review its effects and run
-`tools/browser-products record`. It compares independent cold builds for changed
-families before updating the mechanical descriptor; unchanged families may reuse
-only their exact prior proof after fresh input and byte checks. Recording is
-explicit and grants no editorial or publication approval. A separately requested
-source or act-history receipt audit runs after this product state is frozen;
-renewing those audit receipts is not a normal deployment prerequisite.
+When `check` reports changed inputs ([what a family key
+covers](#what-a-family-key-covers) says when), review the effects and run
+`tools/browser-products record`. It compares independent cold builds for the
+families whose recipe or inputs changed before updating the mechanical
+descriptor; every other family keeps its exact prior proof after fresh input
+and byte checks. Recording is explicit and grants no editorial or publication
+approval. A separately requested source or act-history receipt audit runs after
+this product state is frozen; renewing those audit receipts is not a normal
+deployment prerequisite.
 
 For isolated producer work, use an unsealed destination, for example
 `tools/mass-propers structure --out .scratch/browser-data-work`. Such output is
