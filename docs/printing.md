@@ -119,6 +119,20 @@ the command reports a missing dependency instead of generating a substitute.
 Existing authored typography, artwork, content selection and source notices
 remain part of the recipe.
 
+Every admitted edition is also compiled before the site deploys. The Pages
+`print-compile` job (locally `make check-native-print-compile`) prepares the
+exact source bundle the site serves for each admitted edition and typesets it
+in the pinned TeX Live toolchain with the engine the bundle names and the
+browser's pass policy. It fails when an edition does not compile, produces no
+PDF or does not settle within the bundle's maximum passes; when the admitted and
+prepared sets differ; or when any edition opens a file that is neither in its
+bundle nor in the browser runtime's `texFiles` (only `texmf.cnf`, `ls-R` and
+the engine's format are exempt). XeTeX sees only the runtime's font faces.
+The deploy job waits for it. The native engines are not the WebAssembly ones,
+so a pass proves the bundle and runtime closure, not byte identity with a
+browser-made PDF. Its PDFs are discarded; per-edition receipts and a summary
+are kept as a workflow artifact.
+
 Source and evidence review, print-template review, and inspection of one
 rendering are separate facts. A successful build is not a new visual review
 or publication approval. When issuing a reviewed print edition, follow the

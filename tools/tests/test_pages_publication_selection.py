@@ -185,7 +185,7 @@ else:
                 {"id": "print-editions", "key": PRINT_IDENTITY},
                 {"id": "calendar-days", "key": "c" * 64},
             ]}))
-        for step in self.pages()["jobs"]["deploy"]["steps"]:
+        for step in self.pages()["jobs"]["build"]["steps"]:
             if cache_hit and step.get("if") == "steps.browser-cache.outputs.cache-hit != 'true'":
                 continue
             if step.get("if") == "steps.browser-print.outputs.required == 'true'":
@@ -391,7 +391,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertNotIn(("tools/tpt", "public-alpha", "verify", "--deployment-target", "github-pages"), self.commands())
 
     def test_cache_keys_are_content_addressed_and_candidates_are_verified_before_save(self):
-        steps = self.pages()["jobs"]["deploy"]["steps"]
+        steps = self.pages()["jobs"]["build"]["steps"]
         by_name = {step["name"]: step for step in steps}
         restore = by_name["Restore browser product candidates"]
         save = by_name["Save verified browser products"]
@@ -413,11 +413,11 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(save["if"], "steps.browser-cache.outputs.cache-hit != 'true'")
 
     def test_pages_assembles_browser_compiler_assets_without_executing_pdf_toolchain(self):
-        steps = self.pages()["jobs"]["deploy"]["steps"]
+        steps = self.pages()["jobs"]["build"]["steps"]
         actions = [step["uses"].partition("@")[0] for step in steps if "uses" in step]
         self.assertEqual(actions, ["actions/checkout", "actions/setup-python", "actions/cache", "actions/cache/restore",
                                    "actions/cache/save", "actions/configure-pages",
-                                   "actions/upload-pages-artifact", "actions/deploy-pages"])
+                                   "actions/upload-pages-artifact"])
         upload = next(step for step in steps if step.get("uses", "").startswith("actions/upload-pages-artifact@"))
         self.assertEqual(upload["with"]["path"], "build/public-alpha/site")
         self.assertTrue(upload["with"]["include-hidden-files"])
@@ -436,6 +436,44 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertEqual(marks["if"], converter["if"])
         commands = "\n".join(step.get("run", "") for step in steps)
         self.assertNotRegex(commands, r"(?i)\b(?:texlive|pdflatex|xelatex|lualatex|pdfinfo|poppler|docker|apt-get|pacman)\b")
+
+    def test_only_deploy_publishes_and_it_waits_for_the_print_compile_gate(self):
+        workflow = self.pages()
+        jobs = workflow["jobs"]
+        self.assertEqual(set(jobs), {"build", "print-compile", "deploy"})
+        self.assertEqual(workflow["permissions"], {"contents": "read"})
+        self.assertNotIn("needs", jobs["build"])
+        self.assertNotIn("needs", jobs["print-compile"])
+        self.assertEqual(jobs["build"]["permissions"], {"contents": "read", "pages": "read"})
+        self.assertEqual(jobs["print-compile"]["permissions"], {"contents": "read"})
+        deploy = jobs["deploy"]
+        self.assertEqual(sorted(deploy["needs"]), ["build", "print-compile"])
+        self.assertNotIn("if", deploy)
+        self.assertEqual(deploy["permissions"], {"pages": "write", "id-token": "write"})
+        self.assertEqual(deploy["environment"]["name"], "github-pages")
+        self.assertEqual([step["uses"].partition("@")[0] for step in deploy["steps"]], ["actions/deploy-pages"])
+        self.assertNotIn("environment", jobs["build"])
+        self.assertNotIn("environment", jobs["print-compile"])
+        # Every action outside the build job is pinned to a full commit.
+        for name in ("print-compile", "deploy"):
+            for step in jobs[name]["steps"]:
+                if "uses" in step:
+                    self.assertRegex(step["uses"], r"@[0-9a-f]{40}$")
+        compile_steps = {step["name"]: step for step in jobs["print-compile"]["steps"]}
+        self.assertIn("python tools/tpt native-print-compile prepare",
+                      compile_steps["Prepare every admitted native print bundle"]["run"])
+        toolchain = compile_steps["Build the pinned print toolchain"]["run"]
+        self.assertIn("--target toolchain", toolchain)
+        self.assertIn('"PRINT_BASE=$TEXLIVE_IMAGE"', toolchain)
+        self.assertIn('"ARCH_SNAPSHOT=$ARCH_SNAPSHOT"', toolchain)
+        compiled = compile_steps["Compile every admitted edition from its bundle alone"]["run"]
+        self.assertIn("--network none", compiled)
+        self.assertIn("native-print-compile compile", compiled)
+        self.assertNotIn("--only", compile_steps["Prepare every admitted native print bundle"]["run"] + compiled)
+        for step in jobs["print-compile"]["steps"]:
+            if "if" in step:
+                self.assertEqual(step["if"], "${{ !cancelled() }}")
+                self.assertNotIn("native-print-compile", step.get("run", ""))
 
 
 if __name__ == "__main__":

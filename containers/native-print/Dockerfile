@@ -1,18 +1,14 @@
 # SPDX-License-Identifier: MIT
-# The baseline and archive date match .github/workflows/pages.yml. This is a
-# print-only service image; the Pages build never pulls or runs it.
+# The baseline and archive date match .github/workflows/pages.yml. The final
+# stage is the print-only service image. The `toolchain` stage alone is the
+# compiler the Pages print-compile job builds (`--target toolchain`, passing
+# both pins from pages.yml) to typeset every admitted edition before deploying;
+# that job never runs the service stage or its source checkout.
 ARG PRINT_BASE=ghcr.io/spincyc/triptych-texlive@sha256:fd64daf839c719eef559ca0c74b0b93fb3d6f710ce057561b76500adcd150617
-FROM ${PRINT_BASE}
+FROM ${PRINT_BASE} AS toolchain
 
 ARG PRINT_BASE
 ARG ARCH_SNAPSHOT=2026/09/04
-ARG SOURCE_REVISION
-
-LABEL org.opencontainers.image.source="https://github.com/spincyc/triptych" \
-      org.opencontainers.image.description="Single-edition native TeX PDF service for Triptych" \
-      org.opencontainers.image.revision="${SOURCE_REVISION}" \
-      triptych.print-base="${PRINT_BASE}" \
-      triptych.arch-snapshot="${ARCH_SNAPSHOT}"
 
 # As in the existing manual print workflow, prepare XeTeX and Latin Babel
 # support before compiling anything. No package installer runs at request time.
@@ -68,6 +64,18 @@ RUN printf '%s\n' "$PRINT_BASE" | grep -Eq '^ghcr\.io/[a-z0-9._/-]+@sha256:[0-9a
  && python -c 'from pathlib import Path; reports = Path("/usr/share/triptych-print").glob("*-fonts.txt"); assert all(row.split()[-5:-2] == ["yes", "yes", "yes"] for report in reports for row in report.read_text().splitlines()[2:])' \
  && rm /tmp/triptych-fonts-pdftex.* /tmp/triptych-fonts-xetex.* \
  && pacman -Scc --noconfirm
+
+FROM toolchain
+
+ARG PRINT_BASE
+ARG ARCH_SNAPSHOT=2026/09/04
+ARG SOURCE_REVISION
+
+LABEL org.opencontainers.image.source="https://github.com/spincyc/triptych" \
+      org.opencontainers.image.description="Single-edition native TeX PDF service for Triptych" \
+      org.opencontainers.image.revision="${SOURCE_REVISION}" \
+      triptych.print-base="${PRINT_BASE}" \
+      triptych.arch-snapshot="${ARCH_SNAPSHOT}"
 
 # Fetch one public, committed tree instead of sending a developer checkout,
 # credentials, old Git history or .scratch through the Docker build context.

@@ -9,19 +9,20 @@ on:
       - promised-deliverables.toml
   workflow_dispatch:
 
+# Each job widens this explicitly. Only `deploy` can publish: it alone holds
+# the Pages write and OIDC grants, and it needs both `build` and `print-compile`.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
   cancel-in-progress: false
 
-# These declarations are consumed only by the manual print and toolchain-image
-# workflows. Keeping their shared immutable baseline here preserves the image
-# publisher's existing contract; normal Pages deployment never pulls this image
-# or installs these packages.
+# These declarations are the shared immutable TeX baseline. The manual print
+# and toolchain-image workflows read them from this file, and the
+# `print-compile` job below builds its compiler from TEXLIVE_IMAGE and
+# ARCH_SNAPSHOT. The `build` job never pulls this image or installs these
+# packages.
 env:
   ARCH_IMAGE: archlinux@sha256:82b1b08faae9d61e3e7e13d562f4d09114d939105b0d59ff34140f3bd418593a
   ARCH_SNAPSHOT: "2026/09/04"
@@ -32,12 +33,12 @@ env:
   TEXLIVE_IMAGE: ghcr.io/spincyc/triptych-texlive@sha256:fd64daf839c719eef559ca0c74b0b93fb3d6f710ce057561b76500adcd150617
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    permissions:
+      contents: read
+      pages: read
     env:
       TRIPTYCH_BROWSER_DATA_ROOT: build/browser-data
       PYTHONDONTWRITEBYTECODE: "1"
@@ -58,7 +59,8 @@ jobs:
 
       # These are native browser compiler inputs, not generated PDFs. Cached
       # bytes remain untrusted until the committed runtime manifest verifies
-      # every engine, package, font and notice. No TeX engine runs in Pages CI.
+      # every engine, package, font and notice. No TeX engine runs in this job;
+      # `print-compile` typesets every admitted edition in parallel with it.
       - name: Restore native TeX runtime candidates
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
@@ -157,12 +159,101 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v6
 
+      # The `github-pages` artifact is deployed only by `deploy`, after the
+      # print gate has also passed.
       - name: Upload verified artifact
         uses: actions/upload-pages-artifact@v5
         with:
           path: build/public-alpha/site
           include-hidden-files: true
 
+  # Every admitted print edition (provider publications and companions, Bibles,
+  # papal selections, reading-plan volumes) is typeset from the exact source
+  # bundle the site serves under native-tex/, with the engine that bundle names
+  # and the browser's pass policy, in the pinned TeX Live toolchain. It fails
+  # when an edition does not compile, produces no PDF or does not settle, when
+  # the admitted and materialized sets differ, or when any edition opens a file
+  # outside its bundle and the browser runtime's `texFiles`, so no bundle can
+  # silently depend on a file the WebAssembly runtime lacks. Bundle preparation
+  # reads only tracked sources: it needs neither the hydrated browser runtime
+  # nor any print asset hydration. Native engines are not the WebAssembly
+  # engines; this proves the bundle and runtime closure, not byte identity.
+  print-compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PRINT_COMPILE_OUT: .scratch/native-print-compile
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.13"
+
+      - name: Install source preparation dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-public-alpha.txt -r requirements-tools.txt
+
+      - name: Prepare every admitted native print bundle
+        run: python tools/tpt native-print-compile prepare --out "$PRINT_COMPILE_OUT"
+
+      # The service image's `toolchain` stage: the pinned TeX Live image plus
+      # archive-pinned XeTeX and Latin Babel support, verified by its own font
+      # and hyphenation probes. The anonymous base pull needs no token.
+      - name: Build the pinned print toolchain
+        run: |
+          set -euo pipefail
+          [[ "$TEXLIVE_IMAGE" =~ ^ghcr\.io/[a-z0-9._/-]+@sha256:[0-9a-f]{64}$ ]] || { echo 'TEXLIVE_IMAGE must name an immutable digest' >&2; exit 1; }
+          [[ "$ARCH_SNAPSHOT" =~ ^[0-9]{4}/[0-9]{2}/[0-9]{2}$ ]] || { echo 'ARCH_SNAPSHOT must name a daily archive' >&2; exit 1; }
+          docker build --target toolchain \
+            --build-arg "PRINT_BASE=$TEXLIVE_IMAGE" --build-arg "ARCH_SNAPSHOT=$ARCH_SNAPSHOT" \
+            --tag "triptych-print-compile:$GITHUB_RUN_ID" containers/native-print
+
+      - name: Compile every admitted edition from its bundle alone
+        run: |
+          set -euo pipefail
+          docker run --rm --network none --user "$(id -u):$(id -g)" \
+            --volume "$GITHUB_WORKSPACE:$GITHUB_WORKSPACE" --workdir "$GITHUB_WORKSPACE" \
+            --tmpfs /tmp --env HOME=/tmp --env PYTHONDONTWRITEBYTECODE=1 \
+            "triptych-print-compile:$GITHUB_RUN_ID" \
+            python tools/tpt native-print-compile compile --out "$PRINT_COMPILE_OUT" --jobs "$(nproc)"
+
+      - name: Show the print compile summary
+        if: ${{ !cancelled() }}
+        run: cat "$PRINT_COMPILE_OUT/summary.json" || true
+
+      - name: Upload print compile receipts
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: native-print-compile-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ env.PRINT_COMPILE_OUT }}/summary.json
+            ${{ env.PRINT_COMPILE_OUT }}/receipts/
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 14
+
+  # Publishing is this job's only act, and it needs both gates.
+  deploy:
+    needs: [build, print-compile]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5

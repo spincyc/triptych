@@ -314,7 +314,12 @@ make public-site
 `make` and `make all` select the source-only site path. `make pdf` remains an
 explicit developer opt-in for a corpus PDF build; it is not a normal check or
 deployment prerequisite. Prefer the selected-document print command for an
-individual edition.
+individual edition. Pages deploys only after its `print-compile` job
+(`make check-native-print-compile`, owned by `docs/printing.md`) has compiled
+every admitted edition from its served source bundle against the browser
+runtime's file closure; that job is a verification gate whose PDFs are
+discarded, not the superseded deploy-time corpus typeset, a prepared-PDF
+collection or a print review.
 
 `docs/printing.md` gives the single-document print commands. A print request
 selects one stable document identity, one declared edition, and an output

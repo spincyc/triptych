@@ -287,13 +287,13 @@ class BrowserCacheBootstrapTests(unittest.TestCase):
 
     def test_workflow_bootstraps_explicitly_and_saves_before_independent_verification(self):
         workflow = yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text())
-        job = workflow["jobs"]["deploy"]
+        job = workflow["jobs"]["build"]
         self.assertEqual(job["timeout-minutes"], 60)
         steps = job["steps"]
         names = [step["name"] for step in steps]
         positions = [names.index(name) for name in ("Restore browser product candidates", "Bootstrap optional browser product candidates",
                      "Validate sources and build public artifact", "Retain verified current browser products", "Save verified browser products",
-                     "Verify artifact and GitHub Pages compatibility", "Configure Pages", "Upload verified artifact", "Deploy")]
+                     "Verify artifact and GitHub Pages compatibility", "Configure Pages", "Upload verified artifact")]
         self.assertEqual(positions, sorted(positions))
         bootstrap_step = steps[names.index("Bootstrap optional browser product candidates")]
         self.assertEqual(bootstrap_step["run"], "python scripts/_browser_cache_bootstrap.py --fetch")
