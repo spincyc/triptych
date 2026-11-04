@@ -35,8 +35,9 @@ bind any site-wide design that touches them.
 may not weaken a vision invariant. `guidance/liturgy-reader-state.md` owns the
 frozen v1 reader-state contract and the permanent legacy-URL inventory.
 `guidance/web-data.md` owns everything the browser fetches from `src/web/data/`.
-`guidance/web-editions.md` owns the tracked Markdown web editions of
-publications — a document the corpus master plan's own read-list omits, and
+`guidance/web-editions.md` owns the web editions of publications (tracked
+Markdown at the time of this inventory; since 2026-11-04 converted from
+canonical TeX at site-build time and never tracked) — a document the corpus master plan's own read-list omits, and
 which governs exactly what its long-form-reader lane proposes to change.
 
 Two notes on where this document sits. First, `guidance/corpus-browser-vision.md`
@@ -1736,8 +1737,9 @@ timestamp reproduced on the page a reader actually reaches, without which the
 edition is not publishable; a `web-edition.toml` per leaf, so nothing defaults to
 eligible by silence. Safer reading: treat it as controlling for that lane; a
 long-form reader is a rendering change to the generator and the stylesheet,
-never an edit of tracked `web/<provider>/*.md`; re-run
-`make check-web-editions-current` after any converter touch.
+never an edit of a web edition's text, which since 2026-11-04 is converted
+from canonical TeX at build time; re-run `make check-web-edition-conversions`
+after any converter touch.
 
 **C6 — Durable knowledge in `build/agent-continuity/` contradicts
 `guidance/repository.md`'s rule for `build/`, while being current practice.**

@@ -19,9 +19,8 @@ These are generation choices, not a stored collection of 644 PDFs:
 
 Each edition has a small print page under `print/`: its title and edition or
 companion label, the **Generate PDF** controls, any earlier printed edition,
-and a link to read it online where a web reader exists. The reviewed web
-readers keep their reading presentation; their Print action opens that print
-page. Select **Generate PDF** there to start generation; opening or reloading
+and a link to read it online where a web reader exists. Web readers keep
+their reading presentation; their Print action opens that print page. Select **Generate PDF** there to start generation; opening or reloading
 the page does not start it. The selected edition includes its own notes,
 appendices, references, revision and rights notices. Companions, such as a
 proper's concise study or homily, select their own TeX entrypoint.

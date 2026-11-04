@@ -2170,10 +2170,10 @@ accepted, which `publish-artifacts` used to ask a worker to confirm.
 `release-record-valid` reads both release records and holds their
 `schema_version`, `id`, `catalog`, `status` and `authorization` against this
 publication instead of testing that the files exist.
-`catalog-read-link-resolves` binds the catalog's `Read` link to the tracked
-Markdown the site renders it from — `web/<provider>/<proper>.html` is generated
-at site-build time from `web/<provider>/<proper>.md` and is never tracked, so
-the source is what can be proved — and requires the link to sit in the same row
+`catalog-read-link-resolves` binds the catalog's `Read` link to a reader the
+site builds — since 2026-11-04 `web/<provider>/<proper>.html` is converted from
+the leaf's TeX at site-build time and no Markdown copy is tracked, so the check
+proves the leaf's outputs convert — and requires the link to sit in the same row
 as this provider's PDF link. `other-provider-cell-unchanged` requires this
 identity to own exactly one catalog row, exactly one cell in it to name this
 provider, and every other provider's cell in that row to hold its own
@@ -2182,7 +2182,8 @@ well-formed state: the bare word `Planned` or links of its own.
 tooling reads, the bare leaf id for the manifest's primary provider and the
 `<provider>:` prefixed form for any other. And four site checks —
 `check-release-bindings`, `check-public-alpha`, `check-document-catalogue` and
-`check-web-editions-current` — are now gate checks judged by exit code rather
+`check-web-editions-current` (since 2026-11-04 `web-edition check --leaf`) —
+are now gate checks judged by exit code rather
 than steps `install-publication` asked a worker to run and report on. The
 fragment keeps the one thing in that step that writes,
 `make refresh-release-bindings ADOPT=1`. No stage, lane or transition changed;
@@ -2379,9 +2380,10 @@ authorization still holds; that both PDFs are installed under
 `check-generation-metadata` still pass, the latter against the installed
 canonical PDF rather than the build tree; that the leaf declares a web
 edition and `check-web-edition` accepts it; that the canonical web edition
-exists at `web/<provider>/<proper>.md` and is tracked, not merely generated;
-that no separate `-synthesis` web leaf exists, because the synthesis is a
-derived companion and not a second prose authority; that a per-publication
+and its companions convert from current sources (until 2026-11-04: that the
+canonical edition was tracked at `web/<provider>/<proper>.md`); that no
+separate `-synthesis` web leaf exists, because the synthesis is a derived
+companion and not a second prose authority; that a per-publication
 release record exists for the canonical publication **and** for the
 synthesis; and that this provider's catalog cell links all three published
 artifacts.

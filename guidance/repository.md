@@ -4,7 +4,7 @@
 
 Apply these rules in order:
 
-1. keep authoritative plaintext, typed data, manifests, and audit records under `src/`, with reviewed web editions under `web/`;
+1. keep authoritative plaintext, typed data, manifests, and audit records under `src/`, and track no derived copy of a document's text anywhere;
 2. preserve provider, collection, rite, edition, locale, jurisdiction, and document identity in the path and records;
 3. give shared text one owner, keep reusable external sources provider-neutral, and declare every consumer dependency;
 4. validate source structure and evidence independently of optional print rendering; and
@@ -17,8 +17,9 @@ Apply these rules in order:
 - `src/` contains tracked authoring sources, semantic publication manifests,
   evidence and research records, reusable fragments, and provider-neutral
   typed source data.
-- `web/` contains reviewed reader editions generated from those sources under
-  `guidance/web-editions.md`.
+- Web readers are generated from those sources when the site is built
+  (the `web-editions` browser product); no reader text is tracked.
+  `guidance/web-editions.md` owns them.
 - `build/` contains ignored, reproducible site and build intermediates. In a
   workspace, task-created logs, review output, caches, and experiments go under
   the owning `.scratch/` directory.
@@ -147,13 +148,14 @@ Each publishable leaf contains `publication.toml`, its declared authoring entryp
 
 A proper-guide profile may authorize one canonical leaf to produce multiple PDFs
 through a provider-neutral `proper-components.toml` manifest. The bare leaf ID
-is the canonical research edition and the same source is its sole web edition.
-The mechanical `-synthesis` PDF is a derived companion, not a second editable
-leaf: it has no `main.tex`, source records, generation record, web declaration,
-or independently authored prose. It is compiled through the leaf's
-`synthesis.tex`, inherits canonical provenance, and may include only
-components whose manifest mode is `synthesis`. Both output roles are derived
-from that manifest ([document schemas](document-schemas.md#derived-fields)) and cataloged in the
+is the canonical research edition. The mechanical `-synthesis` output is a
+derived companion, not a second editable leaf: it has no `main.tex`, source
+records, generation record, web declaration of its own, or independently
+authored prose, and its web reader is converted from its synthesis entrypoint
+under the leaf's declaration (`guidance/web-editions.md`). It is compiled
+through the leaf's `synthesis.tex`, inherits canonical provenance, and may
+include only components whose manifest mode is `synthesis`. Both output roles
+are derived from that manifest ([document schemas](document-schemas.md#derived-fields)) and cataloged in the
 canonical row. Their print renderings have independent inspection receipts
 when produced; their shared source owner remains the leaf.
 
@@ -163,18 +165,19 @@ One leaf owns three independently reviewed entrypoints: the research study,
 the concise `-synthesis` study, and the `-homily` companion. Their authored
 prose remains in the canonical leaf, with one research trail and generation
 record; neither companion is another editable publication leaf. Each has its
-own edition role and optional print identity. Only the research study has a web
-edition. The manifest and include graph establish the build dependencies of
-all three outputs.
+own edition role, optional print identity and its own web reader, converted from
+its own entrypoint (`guidance/web-editions.md`). The manifest and include graph
+establish the build dependencies of all three outputs.
 
-`web/<provider>/` mirrors the leaf path below `src/<provider>/`. Print
-output goes to an explicitly selected ignored destination; a basename is
-never a publication identity. For example:
+A web reader's route, `web/<provider>/<output>.html`, mirrors the output's
+leaf path below `src/<provider>/`; it is built, not tracked. Print output goes to
+an explicitly selected ignored destination; a basename is never a publication
+identity. For example:
 
 ```text
 src/gpt/articles/canon-law/example/publication.toml
 src/gpt/articles/canon-law/example/main.tex
-web/gpt/articles/canon-law/example.md
+web/gpt/articles/canon-law/example.html   (site route, built from main.tex)
 .scratch/print/example.pdf
 ```
 

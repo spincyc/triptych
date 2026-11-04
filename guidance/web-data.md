@@ -888,12 +888,16 @@ which `guidance/editorial.md` forbids in an apparatus a reader cannot argue with
 
 ## Assembling the site
 
-`scripts/_browser_product_recipes.py` owns the twelve offline producer families
-and their exact logical output prefixes. The families are `bibles`, `encyclicals`, `act-history`,
+`scripts/_browser_product_recipes.py` owns the thirteen offline producer families
+and their exact logical output prefixes. Twelve — `bibles`, `encyclicals`, `act-history`,
 `calendar`, `catena`, `documents`, `ordinary`, `paragraphs`, `propers`, `readings`,
-`rubrics`, and `sources`, all with `browser-data` delivery. Each output path has one producer. A new directory or
-family requires a recorded recipe and complete descriptor membership; it cannot
-enter publication merely because a directory walk finds it.
+`rubrics`, and `sources` — have `browser-data` delivery and are copied into the
+published `data/` tree. The thirteenth, `web-editions`, has `site-build` delivery:
+every web reader's Markdown, converted from canonical TeX
+([web editions](web-editions.md#pipeline)), is read while the site is assembled
+and never published as a file of its own. Each output path has one producer. A
+new directory or family requires a recorded recipe and complete descriptor
+membership; it cannot enter publication merely because a directory walk finds it.
 
 For a workspace:
 
@@ -936,10 +940,12 @@ small and carries no edition text: title and edition or companion label, what
 Generate PDF does, the native controls, any earlier TeX PDF in the
 [print archive](../release/print-archive.json), and a link to the edition's web
 reader where one exists. Reader pages carry only a Print action that leads
-there. The 140 admitted publications without a reviewed web edition have no
-HTML reading surface; their print page is their only page. The publisher
-refuses a build whose native admissions differ from its included publications,
-publishable Bibles and source readers.
+there. Since 2026-11-04 every admitted output of an eligible or conditional
+leaf, companions included, has a web reader; the outputs of the 15 ineligible
+leaves (cards, workbooks, server guides) have no HTML reading surface, and their
+print page is their only page. The publisher refuses a build whose native
+admissions differ from its included publications, publishable Bibles and source
+readers.
 
 The Generate PDF action assembles current canonical sections and shared styles
 into an exact native source bundle, then typesets the requested edition in the
@@ -949,7 +955,9 @@ carry only the artwork their edition typesets; that positive selection is
 structure change may invalidate source bundles and disposable browser results;
 it does not require generating, storing or uploading a PDF corpus.
 Source/runtime delivery and historical source-evidence packs remain distinct
-from generated PDF output. Normal Pages assembly runs no TeX engine.
+from generated PDF output. Normal Pages assembly typesets no edition; its only
+TeX run compiles web-edition figures inside the pinned TeX image
+([web editions](web-editions.md#pipeline)).
 
 Native source-bundle version 1 also permits repeated UTF-8 sections and styles
 to use content-addressed raw objects. Unique text remains inline. Optional
@@ -974,8 +982,8 @@ their existing meaning. Only a completed, verified result may enter the
 disposable requested-PDF cache. Deferral changes transfer timing, never font
 selection, source rights or the pinned bytes.
 
-The 141 reviewed web readers keep their reading layout and navigate their
-Print action to their print page. Bundle render identity is owned by
+Web readers keep their reading layout and navigate their Print action to their
+print page. Bundle render identity is owned by
 [document schemas](document-schemas.md#native-print-sources). Neither confers
 editorial approval nor certification of a physical printer's pagination or
 duplex alignment; native recipes retain their separate profile and

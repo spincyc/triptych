@@ -54,8 +54,19 @@ FIELDS = frozenset(
         "reviewed",
         "withdrawn",
         "contents",
+        "inspected",
+        "inspected_by",
+        "inspection",
+        "companions",
     }
 )
+# The reader of a leaf is converted from its TeX at every site build and held
+# to the converter's fidelity audits there. These fields record, separately,
+# the last time a person or provider actually looked at the converted reader
+# against its source or PDF: when, who, and how. A reader without them is
+# converter-verified only (guidance/web-editions.md, "Review").
+INSPECTION_FIELDS = ("inspected", "inspected_by", "inspection")
+COMPANIONS = ("synthesis", "homily")
 BASIS_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 INPUT_RE = re.compile(r"\\(?:input|include)\{([^{}]+)\}")
 MACRO_RE = re.compile(r"\\newcommand\{\\([A-Za-z@]+)\}\{([^{}]*)\}")
@@ -91,6 +102,8 @@ class Record:
     # says, so --list-eligible leaves it out and no tracked edition may remain.
     withdrawn: dt.date | None = None
     contents: bool = False
+    # Output edition ("main", "synthesis", "homily") -> (date, by, method).
+    inspections: tuple[tuple[str, dt.date, str, str], ...] = ()
 
 
 @dataclass(frozen=True)
@@ -216,6 +229,26 @@ def parse_record(path: Path) -> Record:
     if not isinstance(contents, bool):
         raise ValueError("contents must be a boolean")
 
+    inspections = []
+    main = parse_inspection(data, "the leaf")
+    if main is not None:
+        inspections.append(("main", *main))
+    companions = data.get("companions", {})
+    if not isinstance(companions, dict) or set(companions) - set(COMPANIONS):
+        raise ValueError("companions must be a table of synthesis and/or homily inspections")
+    for edition in COMPANIONS:
+        if edition not in companions:
+            continue
+        table = companions[edition]
+        if not isinstance(table, dict) or set(table) - set(INSPECTION_FIELDS):
+            raise ValueError(f"companions.{edition} accepts only {', '.join(INSPECTION_FIELDS)}")
+        inspection = parse_inspection(table, f"companions.{edition}")
+        if inspection is None:
+            raise ValueError(f"companions.{edition} must record an inspection")
+        inspections.append((edition, *inspection))
+    if inspections and eligibility == "ineligible":
+        raise ValueError("an ineligible leaf has no web reader to inspect")
+
     withdrawn = data.get("withdrawn")
     return Record(
         document=document,
@@ -226,7 +259,21 @@ def parse_record(path: Path) -> Record:
         reviewed=iso_date("reviewed", data.get("reviewed")),
         withdrawn=None if withdrawn is None else iso_date("withdrawn", withdrawn),
         contents=contents,
+        inspections=tuple(inspections),
     )
+
+
+def parse_inspection(table: dict, label: str) -> tuple[dt.date, str, str] | None:
+    """All three inspection fields, or none of them."""
+    present = [name for name in INSPECTION_FIELDS if name in table]
+    if not present:
+        return None
+    if len(present) != len(INSPECTION_FIELDS):
+        raise ValueError(f"{label} must record all of {', '.join(INSPECTION_FIELDS)} together")
+    for name in ("inspected_by", "inspection"):
+        if not isinstance(table[name], str) or not table[name].strip():
+            raise ValueError(f"{label} {name} must be nonempty text")
+    return iso_date("inspected", table["inspected"]), table["inspected_by"], table["inspection"]
 
 
 def iso_date(name: str, value: object) -> dt.date:

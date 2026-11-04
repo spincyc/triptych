@@ -53,7 +53,7 @@ refusal or absence states.
 | Method studies | `/docs/bibles.html`, `/docs/the-mass.html`, `/docs/reading-and-commentary.html` | Reader | fixed Markdown |
 | Library | sixteen `/library/*.html` routes, including seven portals and nine child catalogues | Catalogue | `library/*.md`, catalogue rewrite |
 | Picture dictionary | `/library/sanctuary-picture-dictionary.html` | special Catalogue/Reader | sanctuary inventory, artwork manifest, gallery renderer |
-| Publication readers | 105 `/web/{provider}/{leaf}.html` routes | Reader | reviewed `web/**/*.md`, shared renderer |
+| Publication readers | 105 `/web/{provider}/{leaf}.html` routes (266 since 2026-11-04) | Reader | `web-editions` product converted from canonical TeX at build time, shared renderer |
 | Liturgy | `/liturgy/`, `/liturgy/day.html` | protected Liturgical Instrument | liturgy source, generated calendars/Propers/Bibles |
 | Scripture | `/scripture/`, `/scripture/track.html` | Reader/Instrument | reading-plan and Bible projections |
 | Commentary | `/catena/` | Instrument | Catena spine and fragment projection |

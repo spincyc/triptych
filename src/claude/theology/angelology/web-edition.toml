@@ -7,3 +7,6 @@ basis = "page-size-ceiling"
 blocking_constructs = ["single-page-length"]
 rationale = "The treatise runs to about 290,000 words; its reviewed single-page rendering is about 2.1 MB, over the site's 1 MB per-page ceiling (PREVIEW_DOCUMENT_LIMIT in tools/public-alpha), so the reader waits on a multi-page web edition. The conversion, reviewed against the PDF on 2026-09-30, stays reproducible from the sources with tools/web-edition."
 reviewed = "2026-09-30"
+inspected = "2026-11-04"
+inspected_by = "Claude (Opus 5.5), web-editions lane"
+inspection = "Rendered reader inspected in headless Chromium at 1280 and 390 px from a full local site build, and compared with the native PDF built from the same sources: the 2.2 MB single page loads and lays out at both widths; its title and subtitle match the PDF's title page."

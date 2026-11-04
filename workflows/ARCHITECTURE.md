@@ -813,8 +813,9 @@ The rule extends past the leaf to everything a run writes. The scope entry in
 `guidance/liturgy/propers-production-plan.md` is owned by `authorize-target`;
 in the retired `proper` pipelines, the installed PDFs under `pdf/<provider>/`
 by `publish-artifacts`; the
-generated edition under `build/web/<provider>/` by `generate-web`; and the
-tracked edition under `web/<provider>/`, the per-publication release records,
+generated edition under `build/web/<provider>/` by `generate-web`; and (until
+2026-11-04, when web editions stopped being tracked) the tracked edition under
+`web/<provider>/`, the per-publication release records,
 and this provider's catalog cell by `install-publication`. Each of those
 stages is `single` for the same reason authoring is: what it writes is
 authoritative, and an authoritative artifact has one owner. A publication

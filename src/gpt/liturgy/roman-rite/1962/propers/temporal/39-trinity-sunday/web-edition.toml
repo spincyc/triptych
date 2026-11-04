@@ -7,3 +7,6 @@ basis = "diagram-dependent"
 blocking_constructs = ["tikzpicture"]
 rationale = "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced."
 reviewed = "2026-07-25"
+inspected = "2026-11-04"
+inspected_by = "Claude (Opus 5.5), web-editions lane"
+inspection = "Rendered reader inspected in headless Chromium at 1280 and 390 px from a full local site build, and compared with the native PDF built from the same sources: the flowchart matches the PDF (page 3) at print size; on mobile it scrolls sideways at print size."

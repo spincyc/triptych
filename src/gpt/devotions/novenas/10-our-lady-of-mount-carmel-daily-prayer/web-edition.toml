@@ -7,3 +7,6 @@ basis = "bilingual-columns"
 blocking_constructs = ["paired-minipage"]
 rationale = "Every received prayer is set as paired Latin and English minipages by \\bilingualprayer; a web edition must stack the pair responsively without separating a text from its facing translation."
 reviewed = "2026-07-25"
+inspected = "2026-11-04"
+inspected_by = "Claude (Opus 5.5), web-editions lane"
+inspection = "Rendered reader inspected in headless Chromium at 1280 and 390 px from a full local site build, and compared with the native PDF built from the same sources: Latin and English columns sit side by side on desktop and stack on mobile, as the PDF pairs them (page 4); the nested work title in each status line is upright where the PDF keeps it italic."

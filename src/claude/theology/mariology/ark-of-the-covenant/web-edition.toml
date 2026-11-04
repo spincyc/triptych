@@ -7,3 +7,6 @@ basis = "diagram-dependent"
 blocking_constructs = ["tikzpicture"]
 rationale = "Seven hand-drawn TikZ figures carry the ark's anatomy, the tabernacle and temple plans, the journey map, the Visitation overlay, and the fulfilment arc; the prose stands alone, but a web edition that silently dropped the drawings would misrepresent the print publication, so the leaf waits on a figure-rendering path."
 reviewed = "2026-08-16"
+inspected = "2026-11-04"
+inspected_by = "Claude (Opus 5.5), web-editions lane"
+inspection = "Rendered reader inspected in headless Chromium at 1280 and 390 px from a full local site build, and compared with the native PDF built from the same sources: Drawing 1 matches the PDF plate and labels (page 2) and its caption number; on mobile the plate keeps its print size and scrolls sideways."

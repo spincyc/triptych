@@ -90,8 +90,9 @@ The companions are deliberately authored condensations and applications within
 the same owner, not independently researched leaves. Each has its own declared
 components and title, is separately source-validated and reviewed, and receives
 its own release record. A selected print export is separately built and reviewed.
-The canonical study supplies the sole web edition under the
-[web-edition profile](../web-editions.md), including its appointed-text anchors.
+Each output has its own web reader under the
+[web-edition profile](../web-editions.md), converted from its own entrypoint;
+the canonical study's carries the appointed-text anchors.
 Shared evidence and exact quotations have one owner; a prose passage belongs to the
 output whose reader it serves. Do not pad a short work with the full study's
 appendices or duplicate the full study verbatim to make a companion.

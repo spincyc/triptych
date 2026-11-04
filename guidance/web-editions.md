@@ -1,20 +1,20 @@
 # Web Editions
 
 This policy governs every provider branch. Its deterministic half is
-implemented by `tools/tpt check-web-edition` and the per-leaf record
-`web-edition.toml`; the evaluative half is provider work that this profile
-defines.
+implemented by `tools/tpt web-edition`, `tools/tpt check-web-edition` and the
+per-leaf record `web-edition.toml`; the evaluative half is provider work that
+this profile defines.
 
 ## What a web edition is
 
-A web edition is a generated, reviewed reading version of one eligible
-publication and the normal reading surface. The publication manifest identifies
-the authoritative plaintext, entrypoint, and semantic roles. Existing
-LaTeX under `src/<provider>/<leaf>/` remains authoritative without a lossy
-conversion to a new authoring format.
-A web edition is derived from it and never hand-authored beside it: there is
-no second editable copy of a publication's text, and a divergence between
-the two is a defect in the web edition, not a variant reading.
+A web edition is the generated reading version of one publication output and
+the normal reading surface. The publication manifest identifies the
+authoritative plaintext, entrypoint, and semantic roles. Existing LaTeX under
+`src/<provider>/<leaf>/` remains authoritative without a lossy conversion to a
+new authoring format. A web edition is derived from it when the site is built
+and never hand-authored or tracked beside it: there is no second copy of a
+publication's text anywhere in Git, and a divergence between the two is a
+defect in the converter, not a variant reading.
 
 `guidance/repository.md` governs ownership, paths, and the colophon;
 `guidance/editorial.md` governs content quality. A web edition weakens
@@ -22,19 +22,74 @@ neither.
 
 ## Pipeline
 
-Three tiers, in order:
+On 2026-11-04 the maintainer decided that the web readers are driven from the
+same canonical TeX as the native PDFs, so that no document is duplicated
+anywhere. Until then a reviewed conversion of each eligible leaf was installed
+as tracked `web/<provider>/<leaf>.md` and `make check-web-editions-current`
+proved each byte-identical to a fresh conversion; those 141 files were pure
+duplicates and were deleted with that check.
 
-1. **generate** — a converter reads the declared source graph and writes
-   `build/web/<provider>/<leaf>.md` under the ignored build tree;
-2. **review** — a person or provider reads the generated file against the
-   canonical source, checking semantic order and complete content, and installs
-   the accepted result as tracked
-   `web/<provider>/<leaf>.md`; and
-3. **install** — the site renders only tracked `web/`.
+1. **convert** — the `web-editions` browser-product family
+   (`scripts/_browser_product_recipes.py`, delivery `site-build`) runs
+   `tools/web-edition products`. It converts every reader output — each
+   eligible or conditional leaf's canonical edition and its synthesis and homily
+   companions, less withdrawals and holds — from that output's own entrypoint,
+   each in a fresh interpreter, with the Pandoc that
+   `src/common/web-edition-toolchain.toml` pins (CI installs its exact official
+   binary with `scripts/_install_web_edition_pandoc.py`). Every fidelity audit
+   below runs on every conversion; one failure fails the family, and nothing
+   partial is adopted. The product is content-keyed like every family, so a
+   warm deploy reuses its verified bytes without converting.
+2. **figures** — a TikZ picture becomes an image named by its source identity
+   (`scripts/_web_edition_figures.py`). `make web-figures` (`tools/web-edition
+   figures`) compiles each figure twice, standalone with its leaf's own
+   preamble, to SVG, and refuses one whose two compilations differ. Pages runs
+   it inside the pinned `TEXLIVE_IMAGE` with no network; the SVG bytes depend
+   on that toolchain, so they are rebuilt with the site rather than committed.
+3. **install** — the site renders the verified product and the compiled
+   figures; `tools/public-alpha` refuses a reader whose product or figure set
+   is missing, stale or altered.
 
-Only tier two is a publication decision. Generated output is a reproducible
-intermediate and is never edited in place to become the tracked file
-without review. An ineligible publication has no tier-one output.
+`tools/browser-products record` establishes determinism the way it does for
+every family: two independent cold builds must agree byte for byte. `make
+check-web-edition-conversions` (`tools/web-edition check`) converts every
+reader with every audit and writes nothing; `--leaf <provider>/<leaf>` checks
+one leaf's outputs. `make web-editions` writes one provider's eligible leaves
+under `build/web/` for inspection only.
+
+## Review
+
+Generation is not a publication decision, and with no tracked copy there is no
+install step at which a reviewer could hold bytes back. "Reviewed" therefore
+means three separate, stated things:
+
+1. **Converter tests** (`tools/tests/test_web_edition*.py`) fix every construct
+   the converter handles and every loss it has met.
+2. **Build-time fidelity checks** run on every reader at every conversion and
+   fail the build: complete text coverage in order where the converter can
+   prove it (table-cell openings, title fields, payload macros, chronology
+   annotations, the curriculum's word-by-word coverage), paragraph integrity,
+   heading counts, anchors and internal targets, quotation and list structure
+   as the site renders them, footnote counts, figure tokens, no fenced div,
+   raw TeX, model metadata or unbalanced reader mark left behind, and the rights
+   colophon and revision timestamp present.
+3. **Inspection records.** `web-edition.toml` states the leaf's eligibility
+   and, separately, when and how its conversion was last looked at:
+   `inspected` (ISO date), `inspected_by` (who: a person, or the provider,
+   model and lane or run), and `inspection` (how: rendered at which widths,
+   compared against what), all three together; `[companions.synthesis]` and
+   `[companions.homily]` record a companion reader's own inspection the same
+   way. A reader without an inspection record is **converter-verified only**.
+   Never record an inspection that did not happen, and never infer one from a
+   neighbouring leaf, an earlier conversion or a passing build. `reviewed`
+   dates the last review of the declaration itself; for a leaf whose edition
+   was tracked before 2026-11-04 it is also the date that edition passed the
+   former install-tier review.
+
+A proper study's web review (its production workflow's web-evaluation stage)
+is such an inspection and is recorded as one when the run installs its
+publication. A conversion that changes after its inspection is
+converter-verified again until someone looks at it.
 
 ## Eligibility
 
@@ -49,17 +104,20 @@ default to eligible by silence.
   explicit `\\ifdefined\\TriptychPrintEdition ... \\else ... \\fi` branch does
   not enter that closure; the always-included source must provide its complete
   textual equivalent, and the normal fidelity review must verify it.
-- **conditional** — renderable only once a named obstacle is solved
-  (wide matrices, diagrams, paired-column bilingual text, gated answers,
-  write-in forms). The record names the obstacle; it does not promise a
-  solution.
+- **conditional** — the meaning depends on a named print construct (wide
+  matrices, diagrams, paired-column bilingual text, gated answers, write-in
+  forms) that the reader sets in its own way under
+  [Conditional constructs](#conditional-constructs). Since 2026-11-04 a
+  conditional leaf has a reader like an eligible one. The record still names
+  every construct it uses, and the scanner still holds an `eligible`
+  declaration to having none.
 - **ineligible** — the page itself carries the meaning (duplex cards,
-  page-matched courses, print artifacts). These publications retain their
-  canonical sources and optional print editions: ineligibility describes layout,
-  not about quality, importance, or release status.
+  page-matched workbooks, server guides). These publications retain their
+  canonical sources and native print editions and have no web reader:
+  ineligibility describes layout, not quality, importance, or release status.
 
-These states govern the reviewed web reader. An admitted output without one
-still has its print page and native PDF; it has no HTML reading surface.
+Every admitted output of an eligible or conditional leaf has a web reader, its
+companions included; an ineligible leaf's outputs keep only their print pages.
 
 Declaring `eligible` against a document that uses a blocking construct is a
 gate failure, not a judgment call. Reclassify the leaf or remove the
@@ -68,16 +126,38 @@ construct.
 Withdrawal is not an eligibility, and is never written as one. A publication
 the maintainer withdraws keeps its sources and its declaration, which adds
 `withdrawn = "YYYY-MM-DD"`, the date of the decision; its eligibility goes on
-stating what the layout allows. A withdrawn leaf has no tier-one output:
-`check-web-edition --list-eligible` omits it, so `make web-editions` and
-`make install-web-editions` never write its edition, and
-`make check-web-editions-current` refuses any tracked edition left behind for
-it. The decision is recorded where its collection records scope — for the
-propers, [the production plan](liturgy/propers-production-plan.md). The first
-was the held Claude 1962 Fourteenth Sunday after Pentecost on 2026-10-01,
-whose tracked edition no evaluation had ever reviewed; until then its
-declaration could only demand that edition, as `eligible`, or claim a
-blocking construct the leaf does not use.
+stating what the layout allows. A withdrawn leaf has no reader:
+`tools/web-edition` converts none of its outputs and `check-web-edition
+--list-eligible` omits it. The decision is recorded where its collection
+records scope — for the propers, [the production plan](liturgy/propers-production-plan.md).
+The first was the held Claude 1962 Fourteenth Sunday after Pentecost on
+2026-10-01, whose web edition no evaluation had ever reviewed.
+
+## Conditional constructs
+
+The maintainer decided on 2026-11-04 that the 60 conditional publications be
+converted despite their obstacles. Each construct has one rendering; a new
+construct, or a new use the converter cannot model, stops the conversion until
+it has one.
+
+| Construct | Reader rendering | Owner |
+| --- | --- | --- |
+| `rule-line` | Write-in space stays visible: a ruled answer area sized from the TeX space (`.web-response`) or an inline blank (`.web-blank`) | `scripts/_web_edition_curriculum.py` |
+| `solutions-enabled` | Answer keys keep the PDF's place and order, each collapsed in its own `<details class="web-answer-key">` under its heading; never interleaved, never hidden text | `scripts/_web_edition_curriculum.py` |
+| `tikzpicture` | An image compiled from the picture's own TeX, shown at its print size (a narrow screen scrolls it sideways rather than shrinking its labels); alt text is the caption, if any, followed by every label the figure carries | `scripts/_web_edition_figures.py` |
+| `multicols` | One column | `scripts/web-shim.tex` |
+| `landscape` | Its tables keep a readable width and scroll sideways (`.web-wide-table`) | `tools/web-edition` |
+| `paired-minipage` | Side-by-side columns that stack on narrow screens (`.web-columns`); a lone minipage is plain content | `tools/web-edition` |
+| `single-page-length` | Ignored: the reader is one long page, exempt from the 1 MB link-preview page limit up to 4 MB | `tools/public-alpha` |
+
+The Ecclesiastical Latin curriculum is a TeX-programmed course. Its adapter
+runs the course's own selection — units, worksheet variants, assessments,
+answer switches and the memory and reader registries — as TeX does, and
+refuses any construct it cannot model rather than guessing. Reader marks the
+converter writes as HTML comments (answer keys, columns, wide tables) are
+expanded after rendering by `scripts/_web_reader_markup.py`, which refuses an
+unbalanced or unknown mark. The reader styles live in
+`src/web/browser/shared/publication-reader.css`.
 
 ## Section contents
 
@@ -100,8 +180,11 @@ A web edition reproduces the document's rights colophon
 reader-facing revision timestamp — the edition's derived stamp, under
 `guidance/editorial.md` (§ Revision timestamp) — in readable form on the page a reader
 actually reaches. Model identity, qualifiers, effort, agent/runtime details,
-and contribution history remain only in tracked audit records. A web edition
-that drops the timestamp or rights colophon is not publishable. The colophon rule in
+and contribution history remain only in tracked audit records; the audit
+refuses a page that names a contributed model or carries a bold "Model:"
+field, while the word itself is content (the Latin course's model answers).
+A web edition that drops the timestamp or rights colophon is not publishable.
+The colophon rule in
 `guidance/repository.md` binds every rendering of a publication, not only
 the PDF.
 
@@ -253,7 +336,7 @@ spans, including a leaf's own dossier notes, retain their table geometry.
 And a `<` inside quoted matter is
 written `\<`, which the site's Python-Markdown does not consume, so the
 backslash reaches the reader; the escape set the converter emits is
-pandoc's, and narrowing it to the site's is a change to every tracked
+pandoc's, and narrowing it to the site's is a change to every
 edition that carries one.
 
 The site presents a dossier's tables without clipping any column, as the
@@ -290,21 +373,20 @@ tests cover both conversion and the site's renderer. The legacy conversion
 dialect for other publications is unchanged.
 
 When a proper profile authorizes `proper-components.toml`, the canonical
-research mode is the publication represented on the web. The converter reads
-the canonical entrypoint and every `research` component. The `-synthesis` edition
-is a bounded mechanical companion and receives no separate web leaf; canonical
-HTML is its accessible superset. This is not an `ineligible` classification
-and must not be represented by a fabricated blocking construct.
+research mode is the full study's reader. The converter reads the canonical
+entrypoint and every `research` component.
 
-Under [the schema-2 contract](liturgy/propers-three-documents.md), the
-canonical research study remains the sole web owner. Its `-synthesis` and
-`-homily` editions contain separately authored concise and spoken presentations
-within that same source leaf and have no separate web declarations. The
-canonical HTML supplies their research and citations, not a claim that it
-reproduces their distinct prose verbatim. Each admitted output also has its own
-print page, whose native PDF is typeset from its own canonical entrypoint,
-including the concise study's or homily's distinct prose. That print edition
-does not create a second editable source or a separate reviewed web declaration.
+Since 2026-11-04 every synthesis and homily companion has a reader of its own,
+converted from its own entrypoint (`synthesis.tex`, `homily.tex`) with that
+edition's switches selected (`\ifdefined\TriptychSynthesisEdition`,
+`\ifdefined\TriptychHomilyEdition`; the print switch is never the web's), so it
+shows the companion's own concise or spoken prose, not the canonical study's.
+Before that date a companion had only its print page and the canonical HTML
+stood in for it. Companions share their leaf's `web-edition.toml`: the leaf's
+eligibility governs them, and `[companions.synthesis]` and
+`[companions.homily]` record their own inspections. A companion reader is no
+second editable source; it is converted from the same tracked sections as its
+print edition.
 
 Component boundaries become semantic headings, stable element keys become
 durable anchors, and relation evidence classes remain readable text rather
@@ -332,8 +414,10 @@ loss of a correctly placed label in conversion belongs to the converter.
 
 Provider publication readers and their print pages share a
 scoped reading interface. Proper-study actions are named **Full Study Guide**,
-**Synthesis** and **Homily** according to their declared output roles;
-**Generate PDF** remains the separate native printing action. The shared
+**Synthesis** and **Homily** according to their declared output roles, and each
+leads to that output's own reader; an output without a reader (an ineligible
+leaf's) leads to its print page. **Generate PDF** remains the separate native
+printing action. The shared
 presentation uses a broad responsive reading plane, collapsible section
 contents and stable section permalinks. Preserve source text, existing heading
 IDs, footnote targets, revision and rights notices. Reader controls belong
@@ -357,7 +441,7 @@ reader presentation change.
 
 The complete-edition **Generate PDF** action renders the selected canonical
 TeX output with its original engine, templates and fonts. It lives on the
-output's print page, `print/<provider>/<output>.html`; each reviewed web reader
+output's print page, `print/<provider>/<output>.html`; each web reader
 carries a Print action that navigates there. The selected source includes its
 declared body, notes, appendices, references, revision, and rights notices.
 Existing rights and hold/withdrawal rules still govern admission. The print

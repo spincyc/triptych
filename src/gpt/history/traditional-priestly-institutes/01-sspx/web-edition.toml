@@ -7,3 +7,6 @@ basis = "multicol-reference-list"
 blocking_constructs = ["multicols"]
 rationale = "The only column-dependent construct is the terminal reference list, which collapses to a single column without loss; the leaf is otherwise reflowable."
 reviewed = "2026-07-25"
+inspected = "2026-11-04"
+inspected_by = "Claude (Opus 5.5), web-editions lane"
+inspection = "Rendered reader inspected in headless Chromium at 1280 and 390 px from a full local site build, and compared with the native PDF built from the same sources: the two-column references read as one column under the same headings (PDF page 19)."

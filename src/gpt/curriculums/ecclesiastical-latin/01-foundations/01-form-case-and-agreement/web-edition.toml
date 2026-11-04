@@ -7,3 +7,6 @@ basis = "answer-key-separation"
 blocking_constructs = ["solutions-enabled", "rule-line"]
 rationale = "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering."
 reviewed = "2026-07-25"
+inspected = "2026-11-04"
+inspected_by = "Claude (Opus 5.5), web-editions lane"
+inspection = "Rendered reader inspected in headless Chromium at 1280 and 390 px from a full local site build, and compared with the native PDF built from the same sources: worksheet write-in lines match the PDF's ruled lines (Reconstruct and compose, PDF page 9); the Answers and Models keys are collapsed under their headings, open in place and scroll wide tables on mobile."

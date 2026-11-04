@@ -4,3 +4,13 @@ document = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentec
 eligibility = "eligible"
 blocking_constructs = []
 reviewed = "2026-09-24"
+
+[companions.synthesis]
+inspected = "2026-11-04"
+inspected_by = "Claude (Opus 5.5), web-editions lane"
+inspection = "Rendered reader inspected in headless Chromium at 1280 and 390 px from a full local site build, and compared with the native PDF built from the same sources: the concise study's own title block, contents and element table under the Synthesis tab, matching its PDF's first page."
+
+[companions.homily]
+inspected = "2026-11-04"
+inspected_by = "Claude (Opus 5.5), web-editions lane"
+inspection = "Rendered reader inspected in headless Chromium at 1280 and 390 px from a full local site build, and compared with the native PDF built from the same sources: the homily's own title block and spoken text under the Homily tab, matching its PDF's first page, whose two columns read as one."

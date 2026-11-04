@@ -166,8 +166,8 @@ conversion.
 - Provider-neutral reusable external-source records and textual payloads belong
   under `src/sources/` and follow `guidance/sources.md`; exact binary evidence
   is resolved through its hash-bound delivery sidecar.
-- Reviewed, publishable web editions belong under `web/`, generated from the
-  same sources and governed by `guidance/web-editions.md`.
+- Web editions are generated from the same canonical TeX when the site is
+  built and are never tracked; `guidance/web-editions.md` governs them.
 - PDFs are downstream print outputs generated on demand from the selected
   canonical sections and current shared styles. The web action uses browser
   native TeX; `tools/print-document` builds one local edition. No maintained PDF

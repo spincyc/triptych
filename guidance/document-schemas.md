@@ -269,6 +269,6 @@ other outputs admit literal graphics arguments in active TeX.
 [`_native_print_artwork.py`](../scripts/_native_print_artwork.py) and
 [`_native_print_bundles.py`](../scripts/_native_print_bundles.py) own these
 rules. [Web data](web-data.md#native-print-pages-and-source-bundles) owns the
-print pages; [web editions](web-editions.md#browser-printing) owns the reviewed
+print pages; [web editions](web-editions.md#browser-printing) owns the web
 reader's Print action, and [printing](../docs/printing.md) explains the
 browser and local native choices.

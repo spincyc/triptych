@@ -190,6 +190,38 @@ class WebEditionTreeTests(unittest.TestCase):
                 ):
                     self.audit("articles/faith/bad")
 
+    def test_an_inspection_records_when_who_and_how_or_nothing(self) -> None:
+        document = "liturgy/study"
+        inspection = ('inspected = "2026-11-04"\ninspected_by = "Claude, web-editions lane"\n'
+                      'inspection = "rendered at 1280 and 390 px; compared with the native PDF"\n')
+        self.write_leaf(document, declaration=record(document) + inspection
+                        + '\n[companions.homily]\n' + inspection)
+        declared = self.audit(document)
+        self.assertEqual([row[0] for row in declared.inspections], ["main", "homily"])
+        self.assertEqual(declared.inspections[0][1], CHECKER.dt.date(2026, 11, 4))
+        self.write_leaf(document, declaration=record(document))
+        self.assertEqual(self.audit(document).inspections, ())  # converter-verified only
+
+    def test_a_partial_misplaced_or_ineligible_inspection_is_refused(self) -> None:
+        document = "liturgy/study"
+        for name, extra, message in (
+            ("partial", 'inspected = "2026-11-04"\n', "must record all of"),
+            ("blank", 'inspected = "2026-11-04"\ninspected_by = " "\ninspection = "x"\n', "nonempty"),
+            ("date", 'inspected = "4 Nov"\ninspected_by = "x"\ninspection = "x"\n', "ISO date"),
+            ("companion", '\n[companions.notes]\ninspected = "2026-11-04"\n', "synthesis and/or homily"),
+            ("empty-companion", '\n[companions.synthesis]\n', "must record an inspection"),
+        ):
+            with self.subTest(name=name):
+                self.write_leaf(document, declaration=record(document) + extra)
+                with self.assertRaisesRegex(ValueError, message):
+                    self.audit(document)
+        self.write_leaf(document, main="\\geometry{margin=0in}\n", declaration=record(
+            document, eligibility='"ineligible"', basis='"cards"',
+            blocking_constructs='["zero-margin-geometry"]', rationale='"Cards."')
+            + 'inspected = "2026-11-04"\ninspected_by = "x"\ninspection = "x"\n')
+        with self.assertRaisesRegex(ValueError, "no web reader to inspect"):
+            self.audit(document)
+
     def test_missing_declaration_is_an_error(self) -> None:
         self.write_leaf("articles/faith/undeclared")
         status, _, errors = self.run_main("--provider", "gpt")
