@@ -173,6 +173,33 @@ apparatus = ["sections/90-c"]
             types.discover_types(self.root)
         self.assertIn("built-in", str(caught.exception))
 
+    def test_an_if_block_keeps_its_lines_only_for_a_non_empty_field(self):
+        self.declare()
+        kind = self.root / types.TYPES_DIR / "fixture-v1"
+        (kind / "closing/plain.tex").write_text(
+            "%@ if subtitle\n\\vspace{1em}\n%@ if pdftitle\n{@{subtitle}}\n%@ end\n%@ end\n"
+            "%@ input generation-metadata\n")
+        self.assertIn("\\vspace{1em}\n{Shared \\emph{sub}}\n", self.render())
+        path = self.leaf / "publication.toml"
+        path.write_text(path.read_text().replace("subtitle = 'Shared \\emph{sub}'", "subtitle = ''"))
+        rendered = self.render()
+        self.assertNotIn("vspace", rendered)
+        self.assertIn("\\input{fixture/leaf/generation-metadata}", rendered)
+
+    def test_an_unbalanced_or_undeclared_if_is_refused(self):
+        self.declare()
+        kind = self.root / types.TYPES_DIR / "fixture-v1"
+        for fragment, needle in (
+                ("%@ if subtitle\nx\n", "without %@ end"),
+                ("x\n%@ end\n", "without %@ if"),
+                ("%@ if surprise\nx\n%@ end\n", "not declared"),
+        ):
+            with self.subTest(needle=needle):
+                (kind / "closing/plain.tex").write_text(fragment)
+                with self.assertRaises(types.DocumentTypeError) as caught:
+                    self.render()
+                self.assertIn(needle, str(caught.exception))
+
     def test_refusals(self):
         cases = {
             "unknown field": "\n[document.homily]\npdftitle = 'x'\n",

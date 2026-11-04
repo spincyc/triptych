@@ -38,6 +38,9 @@ Template language (line oriented; everything else is copied verbatim):
 ``%@ input? PATH``      the same, omitted when the leaf has no such file
 ``%@ option NAME``      the fragment ``<type>/<NAME>/<value>.tex`` chosen by the
                         leaf (or the type's default), expanded recursively
+``%@ if FIELD``         keep the lines up to the matching ``%@ end`` only when
+                        the field resolves non-empty (blocks nest; they close
+                        in the file that opens them)
 ``%% ...``              a template comment, never copied
 ``@{field}``            the resolved value of a declared metadata field, of
                         a declared option (its chosen value), or of the
@@ -70,7 +73,8 @@ PROVIDERS = ("claude", "gpt")
 GENERATED_BY = "tools/tpt document-types refresh"
 NAME = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 FIELD_REFERENCE = re.compile(r"@\{([a-z0-9]+(?:-[a-z0-9]+)*)\}")
-DIRECTIVE = re.compile(r"%@\s*(region|slot|input\??|option)\s+(\S+)\s*\Z")
+DIRECTIVE = re.compile(r"%@\s*(region|slot|input\??|option|if)\s+(\S+)\s*\Z")
+END = re.compile(r"%@\s*end\s*\Z")
 PATH_ENTRY = re.compile(r"[A-Za-z0-9_][A-Za-z0-9_./-]*\Z")
 OUTPUT_ROLES = ("canonical", "synthesis", "homily")
 # A reference every template may make without declaring it.
@@ -416,12 +420,23 @@ def _expand(decl: Declaration, edition: Edition, template: Path, projections: di
     if depth > 8:
         raise DocumentTypeError(f"{template}: option fragments nest too deeply")
     lines: list[str] = []
+    kept: list[bool] = []  # one entry per open ``%@ if`` block
     for line in template.read_text(encoding="utf-8").splitlines():
         if line.startswith("%%"):
+            continue
+        if END.match(line.strip()):
+            if not kept:
+                raise DocumentTypeError(f"{template}: %@ end without %@ if")
+            kept.pop()
             continue
         match = DIRECTIVE.match(line.strip())
         if line.lstrip().startswith("%@") and match is None:
             raise DocumentTypeError(f"{template}: malformed directive {line.strip()!r}")
+        if match is not None and match.group(1) == "if":
+            kept.append(bool(str(_field(decl, edition, match.group(2))).strip()))
+            continue
+        if not all(kept):
+            continue
         if match is None:
             lines.append(FIELD_REFERENCE.sub(
                 lambda found: str(_field(decl, edition, found.group(1))), line))
@@ -451,6 +466,8 @@ def _expand(decl: Declaration, edition: Edition, template: Path, projections: di
                     f"{decl.type.option_values(argument)}")
             lines.extend(_expand(decl, edition, decl.type.path / argument / f"{value}.tex",
                                  projections, slots, depth + 1))
+    if kept:
+        raise DocumentTypeError(f"{template}: %@ if without %@ end")
     return lines
 
 
