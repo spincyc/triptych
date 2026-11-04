@@ -99,3 +99,43 @@ source = "sections/95-checklist.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = 'Assembling the Mass'
+pdfsubject = 'A practical source-audited guide to combining the Ordinary, propers, calendar, and rubrics of the 1962 Roman Missal'
+title-style = "plain"
+closing = "scriptsize"
+title = 'Assembling the Mass'
+subtitle = 'The Ordinary, Propers, Calendar, and Rubrics'
+title-detail = 'A practical guide to the 1962 Roman Missal'
+title-notice = 'Not an official liturgical book or a statement of present canonical authorization; see the terminal Scope, Editions, and Qualifications appendix.'
+body = [
+  'sections/00-scope',
+  'sections/10-method',
+  'sections/20-classes',
+  'sections/30-precedence',
+  'sections/40-occurrence',
+  'sections/50-mass-kinds',
+  'sections/60-assembly',
+  'sections/70-devotional-votives',
+  'sections/80-requiem-ritual',
+  'sections/90-cases-calendar',
+  'sections/91-cases-assembly',
+  'sections/95-checklist',
+]
+apparatus = [
+  '\begingroup',
+  '\footnotesize',
+  '\setlength{\parskip}{0.25em}',
+  '\assemblyscopeappendix',
+  'sections/99-references',
+  '\phantomsection',
+  '\par\smallskip',
+  '\vspace{0.15\baselineskip}',
+]
+end = [
+  '\endgroup',
+]

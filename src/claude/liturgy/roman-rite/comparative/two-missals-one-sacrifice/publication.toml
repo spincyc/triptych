@@ -91,3 +91,33 @@ source = "sections/95-scope.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = 'Two Missals, One Sacrifice'
+pdfsubject = 'A locus-by-locus comparison of the 1962 Missale Romanum and the postconciliar Roman Missal: what the promulgating acts legislate, what the Order of Mass retains, drops and newly composes, the offertory and its replacement, the Roman Canon in each book and the three added Eucharistic Prayers, the lectionary and calendar provision, the rubrics on the priest, and the language question as the books themselves legislate it.'
+title-style = "series"
+notes = "endnotes"
+closing = "scriptsize-tight"
+series-line = 'A Triptych Comparative Study'
+title = 'Two Missals, One Sacrifice'
+subtitle = 'Reading the 1962 and Postconciliar Roman Missals at Their Own Loci'
+title-notice = 'The discipline governing the 1962 Missal is mutable law, stated here as of 25 July 2026; see the terminal Scope, Method, and Qualifications appendix.'
+body = [
+  'sections/00-two-books',
+  'sections/10-the-acts',
+  'sections/20-ordinary',
+  'sections/30-offertory',
+  'sections/40-canon',
+  'sections/50-lectionary',
+  'sections/60-calendar',
+  'sections/70-priest',
+  'sections/80-language',
+  'sections/90-synthesis',
+]
+apparatus = [
+  'sections/95-scope',
+  'sections/99-references',
+]

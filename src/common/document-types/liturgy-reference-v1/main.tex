@@ -1,0 +1,21 @@
+%% liturgy-reference-v1: one deep-study sequence with typed front and back.
+\input{common/preamble}
+%@ option headings
+%@ input? format
+\hypersetup{
+  pdftitle={@{pdftitle}},
+  pdfsubject={@{pdfsubject}},
+  pdfkeywords={@{pdfkeywords}}
+}
+
+\begin{document}
+%@ option front
+\begin{deepstudy}
+%@ region body
+%@ option notes
+%@ option appendix
+%@ region apparatus
+%@ option closing
+%@ region end
+\end{deepstudy}
+\end{document}

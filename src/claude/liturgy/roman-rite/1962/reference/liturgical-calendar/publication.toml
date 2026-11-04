@@ -103,3 +103,41 @@ source = "sections/95-scope.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = 'The 1962 Roman Calendar: Rules, Ranks, and Reckoning'
+pdfsubject = 'An edition-specific reference to the calendar of the 1962 Missale Romanum under the 1960 Rubricae generales: the temporal cycle and its seasons, the I-IV class system that replaced the double and semidouble grades, occurrence and concurrence, commemorations, the movable computation from Easter, the resumed Epiphany Sundays, Ember and Rogation days, vigils and octaves, the sanctoral structure, and the table of precedence.'
+title-style = "series-detail"
+closing = "scriptsize-tight"
+series-line = 'A Triptych Calendar Reference'
+title = 'The 1962 Roman Calendar'
+subtitle = 'Rules, Ranks, and Reckoning'
+title-detail = '''\textit{Missale Romanum}, editio typica, 23 June 1962\\[0.35em]
+under the \textit{Rubricae Breviarii et Missalis Romani} of 26 July 1960'''
+title-notice = '''This reference states recurring law and arithmetic, not the celebration of a
+particular day in a particular place. A competent calendar, an approved proper, and the
+current annual Ordo govern an actual Mass; see the terminal
+\textit{Scope, Edition, and Qualifications} appendix.'''
+body = [
+  'sections/00-promulgation',
+  'sections/10-grammar-of-the-day',
+  'sections/20-temporal-cycle',
+  'sections/30-vigils-octaves-ember-rogation',
+  'sections/40-movable-computation',
+  'sections/50-resumed-sundays',
+  'sections/60-sanctoral',
+  'sections/70-precedence-and-occurrence',
+  'sections/80-commemorations',
+  'sections/85-worked-years',
+  'sections/88-synthesis',
+  'sections/90-collation',
+  'sections/92-timeline',
+  '\Needspace{10\baselineskip}',
+]
+apparatus = [
+  'sections/95-scope',
+  'sections/99-references',
+]

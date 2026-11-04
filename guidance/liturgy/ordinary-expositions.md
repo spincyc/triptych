@@ -7,7 +7,11 @@ cross-edition studies belong under `liturgy/roman-rite/comparative/`.
 
 Declare the leaf's type, source roles, contract version, and ordered outputs in
 `publication.toml` under [document schemas](../document-schemas.md); preserve
-the edition-specific sequence inventory without imposing uniform dossiers.
+the edition-specific sequence inventory without imposing uniform dossiers. The
+entrypoint is generated from the `liturgy-reference-v1` [document
+type](../document-schemas.md#document-types): the leaf's `[document]` table
+declares its title lines, section order and front, notes and closing options,
+and its `format.tex` holds its own macros.
 
 An edition-specific reading preface may use `O00` only as a technical assembly
 key before variable propers. It is not a title, temporal identity, or public

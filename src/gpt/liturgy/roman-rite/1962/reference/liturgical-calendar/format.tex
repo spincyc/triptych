@@ -1,0 +1,27 @@
+% The Liturgical Calendar of the 1962 Roman Missal: leaf-local typesetting.
+
+\setlength{\emergencystretch}{3em}
+
+\newenvironment{calendarlist}{%
+  \begingroup
+  \small
+  \setlength{\LTpre}{0.35em}
+  \setlength{\LTpost}{0.8em}
+  \setlength{\tabcolsep}{0.35em}
+  \begin{longtable}{@{}>{\RaggedRight\arraybackslash}p{0.13\linewidth}>{\RaggedRight\arraybackslash}p{0.70\linewidth}>{\RaggedRight\arraybackslash}p{0.10\linewidth}@{}}
+  \toprule
+  \textbf{Date} & \textbf{Celebration or observance} & \textbf{Class}\\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Date} & \textbf{Celebration or observance} & \textbf{Class}\\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+}{%
+  \end{longtable}
+  \endgroup
+}
+\newcommand{\calmonth}[1]{\addlinespace[0.7em]\multicolumn{3}{@{}l}{\textbf{#1}}\\*}
+\newcommand{\calentry}[3]{#1 & #2 & #3\\}

@@ -87,3 +87,32 @@ source = "sections/80-leonine-prayers.tex"
 [[structure]]
 role = "references"
 source = "sections/90-references.tex"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = 'The Ordinary and Order of the Mass'
+pdfsubject = 'A movement-by-movement, source-critical mystagogy of the stable texts and ritual sequence in the 1962 Roman Order of Mass, with the post-Mass Leonine prayers'
+title-style = "plain"
+closing = "footnotesize"
+title = 'The Ordinary and Order of the Mass'
+subtitle = 'A mystagogy of the 1962 Roman Order'
+title-detail = 'Each movement interpreted according to its own text, action, voice, and history'
+title-notice = 'Catalog preface O00: the stable framework studied before the variable propers. See the appendices for edition, method, provenance, and use qualifications.'
+body = [
+  'sections/00-scope-thesis',
+  'sections/05-structural-map',
+  'sections/20-entrance',
+  'sections/30-word',
+  'sections/40-offertory',
+  'sections/50-canon',
+  'sections/60-communion-conclusion',
+  'sections/70-whole',
+]
+apparatus = [
+  '\ordinaryapparatusappendix',
+  'sections/10-history',
+  'sections/80-leonine-prayers',
+  'sections/90-references',
+]

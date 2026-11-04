@@ -91,3 +91,35 @@ source = "sections/20-substantive-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = 'The Liturgical Calendar of the 1962 Roman Missal'
+pdfsubject = 'Construction, historical revisions, universal calendar, and a source-qualified United States overlay'
+title-style = "plain"
+closing = "scriptsize"
+title = 'The Liturgical Calendar'
+subtitle = 'The 1962 Roman Missal'
+title-detail = 'Its construction, revision, universal cycle, and United States layer'
+title-notice = 'Not an official liturgical book or a statement of present canonical authorization; see the terminal Scope and Qualifications appendix.'
+body = [
+  'sections/00-scope-method',
+  'sections/10-construction-history',
+  'sections/30-how-calendar-works',
+  'sections/40-temporale',
+  'sections/50-sanctorale-jan-jun',
+  'sections/60-sanctorale-jul-dec',
+  'sections/70-united-states',
+]
+apparatus = [
+  'sections/80-cum-sanctissima',
+  'sections/90-use-boundaries',
+  'sections/20-substantive-timeline',
+  '\calendarcommonscopeappendix',
+  '\begingroup',
+  '\footnotesize',
+  'sections/99-references',
+  '\endgroup',
+]

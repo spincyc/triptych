@@ -1,0 +1,11 @@
+%% The endnotes page after the body, in the contents; the leaf's format.tex
+%% loads the endnotes package.
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\footnotesize
+\setlength{\parskip}{0.28em}
+\theendnotes
+\endgroup
+\Needspace{14\baselineskip}

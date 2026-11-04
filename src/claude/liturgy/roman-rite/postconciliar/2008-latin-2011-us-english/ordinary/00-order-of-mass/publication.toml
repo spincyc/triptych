@@ -103,3 +103,39 @@ source = "sections/94-development-timeline.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = 'The Order of Mass'
+pdfsubject = 'A sequential exposition of the Roman Order of Mass as printed in the 2008 Latin editio typica tertia emendata and translated for the dioceses of the United States in 2011: what each movement prints, what the General Instruction requires of it, where it came from, and what it means.'
+title-style = "series"
+notes = "endnotes"
+closing = "scriptsize-tight"
+series-line = 'A Triptych Study of the Roman Rite'
+title = 'The Order of Mass'
+subtitle = '''\latin{Missale Romanum}, editio typica tertia emendata (2008)\\[0.3em]
+and the English translation for the United States (2011)'''
+title-notice = '''This is a study of the received rite, not an altar book, a ritual text, or a book for
+recitation. The approved English of the Order of Mass is under copyright and is not reproduced
+here; see the terminal Scope, Edition, and Qualifications appendix.'''
+body = [
+  'sections/00-shape-of-the-action',
+  'sections/10-introductory-rites',
+  'sections/20-liturgy-of-the-word',
+  'sections/30-creed-and-universal-prayer',
+  'sections/40-preparation-of-the-gifts',
+  'sections/50-eucharistic-prayer',
+  'sections/55-roman-canon',
+  'sections/60-prayers-two-three-four',
+  'sections/70-communion-rite',
+  'sections/80-concluding-rites',
+  'sections/85-english-of-2011',
+  'sections/90-synthesis',
+]
+apparatus = [
+  'sections/92-scope-edition-qualifications',
+  'sections/94-development-timeline',
+  'sections/99-references',
+]

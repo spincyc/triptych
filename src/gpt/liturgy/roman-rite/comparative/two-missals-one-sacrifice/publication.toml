@@ -99,3 +99,36 @@ source = "sections/120-references.tex"
 [[structure]]
 role = "scope-appendix"
 source = "sections/00-question-method.tex"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = 'Two Missals, One Sacrifice'
+pdfsubject = 'The Roman Missal of 1962 and the postconciliar Roman Missal in history, theology, sacramental discipline, and law'
+pdfkeywords = 'Traditional Latin Mass, TLM, Novus Ordo, Roman Missal of 1962, Mass of Paul VI, sacramental validity, Eucharistic discipline'
+title-style = "plain"
+closing = "scriptsize"
+title = 'Two Missals, One Sacrifice'
+subtitle = '''The Roman Mass of 1962 and the postconciliar Roman Missal\\
+in history, theology, sacramental discipline, and law'''
+title-detail = 'A comparative Catholic study'
+title-notice = 'Not a liturgical authorization or a case-specific canonical opinion; see \emph{Scope, Edition, and Qualifications}.'
+body = [
+  'sections/00-question-method',
+  'sections/10-one-sacrifice',
+  'sections/20-trent-and-1570',
+  'sections/30-1570-to-1962',
+  'sections/40-postconciliar-reform',
+  'sections/50-synoptic-comparison',
+  'sections/60-sacramental-validity',
+  'sections/70-eucharistic-discipline',
+  'sections/80-current-law',
+  'sections/100-pastoral-judgment',
+]
+apparatus = [
+  '\missalscopeappendix',
+  'sections/90-community-census',
+  'sections/110-timeline',
+  'sections/120-references',
+]

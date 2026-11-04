@@ -9,7 +9,11 @@ is a separate, mutable question unless deliberately researched and dated.
 
 Declare the leaf's type, source roles, contract version, and ordered outputs in
 `publication.toml` under [document schemas](../document-schemas.md), retaining
-the five decisions and their checked rubric and case records.
+the five decisions and their checked rubric and case records. The entrypoint is
+generated from the `liturgy-reference-v1` [document
+type](../document-schemas.md#document-types): the leaf's `[document]` table
+declares its title lines, section order and front, notes and closing options,
+and its `format.tex` holds its own macros.
 
 Every calendar arithmetic rule this profile relies on — movable anchors, the
 resumed-Sunday mechanism, and the fixed-date windows — is owned by

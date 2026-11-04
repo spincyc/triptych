@@ -103,3 +103,34 @@ source = "sections/00-object-method.tex"
 [[structure]]
 role = "references"
 source = "sections/90-sources.tex"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = 'The Order of Mass: A Mystagogy of the Postconciliar Roman Rite'
+pdfsubject = 'A movement-by-movement, source-critical exposition of the postconciliar Roman Order of Mass in the 2008 Latin third typical edition and its current United States English implementation'
+title-style = "plain"
+closing = "footnotesize-rights"
+title = 'The Order of Mass'
+subtitle = 'A Mystagogy of the Postconciliar Roman Rite'
+title-detail = 'The gathering, Word, thanksgiving, sacrifice, Communion, and mission interpreted movement by movement'
+title-notice = 'A Triptych study instrument. See the appendices for the exact edition, date cutoff, method, provenance, and use qualifications.'
+body = [
+  'sections/00-object-method',
+  'sections/05-structural-map',
+  'sections/20-introductory-rites',
+  'sections/30-liturgy-of-the-word',
+  'sections/40-preparation-of-the-gifts',
+  'sections/50-eucharistic-prayer-common',
+  'sections/51-principal-eucharistic-prayers',
+  'sections/52-special-eucharistic-prayers',
+  'sections/60-communion-rite',
+  'sections/70-concluding-rites',
+  'sections/80-whole-action',
+]
+apparatus = [
+  '\postordinaryapparatusappendix',
+  'sections/10-history',
+  'sections/90-sources',
+]

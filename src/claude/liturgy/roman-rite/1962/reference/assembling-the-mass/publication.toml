@@ -103,3 +103,34 @@ source = "sections/95-concordance.tex"
 [[structure]]
 role = "references"
 source = "sections/99-references.tex"
+
+[document]
+type = "liturgy-reference-v1"
+
+[document.main]
+pdftitle = '''Assembling the Mass: How a Day's Mass Is Put Together out of the 1962 Missale Romanum'''
+pdfsubject = 'A working reference for the 1960 Codex rubricarum as printed in the 1962 Missale Romanum: determining the liturgical day, applying the table of precedence, disposing of the impeded day by omission, commemoration, transfer or reposition, testing which category of Mass is admitted, and assembling the formulary from Ordinary, Proper and Common through the Preface and the Last Gospel, with six worked cases and the contested readings preserved'
+headings = "class"
+front = "heading"
+appendix = "none"
+closing = "guarded-rights"
+title = 'Assembling the Mass'
+subtitle = '''How a day's Mass is put together out of the 1962 \textit{Missale Romanum}'''
+title-notice = '''The 1960 \textit{Rubricae generales} as printed in the 1962 Vatican typical edition.
+   A study aid, not an Ordo and not a permission: see \textit{Scope, Editions, and Qualifications}.'''
+body = [
+  'sections/00-five-decisions',
+  'sections/10-the-day',
+  'sections/20-precedence',
+  'sections/30-impediment',
+  'sections/40-mass-category',
+  'sections/50-assembly-map',
+  'sections/55-preface-last-gospel',
+  'sections/60-worked-cases-a',
+  'sections/65-worked-cases-b',
+  'sections/80-contested',
+  'sections/85-worksheet',
+  'sections/90-scope',
+  'sections/95-concordance',
+  'sections/99-references',
+]

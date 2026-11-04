@@ -1,0 +1,31 @@
+schema = 1
+record_type = "document-type"
+id = "liturgy-reference-v1"
+description = """
+A single-edition liturgical reference study set as one deep-study sequence:
+the Roman calendar references (guidance/liturgy/roman-calendar-references.md),
+the assembly references (roman-1962-assembly.md), and the expositions and
+comparisons of the Ordinary and Order of Mass (ordinary-expositions.md). The
+type owns the preamble, the PDF metadata, the heading style, the front matter
+(a title page with roman-numbered contents, a compact heading over the
+contents, or none where the first section sets its own), the optional endnotes
+page, the start of the lettered apparatus and the closing revision block. A
+leaf supplies its metadata and title lines, the ordered sections of its body
+and apparatus (with any raw keep-together or scope-appendix macro between
+them), and its option choices; doc-local macros stay in its format.tex.
+"""
+kinds = ["calendar-reference", "assembly-reference", "mass-ordinary", "mass-comparison"]
+
+# Title lines, as each front option and title style uses them: series-line is
+# the small-capitals series line above the title; title-detail the edition or
+# description line beneath the subtitle; title-notice the scope notice at the
+# foot of the title page or beneath the compact heading.
+[editions.main]
+role = "canonical"
+template = "main.tex"
+entrypoint = "main.tex"
+fields = ["pdftitle", "pdfsubject"]
+optional_fields = { pdfkeywords = "", series-line = "", title = "", subtitle = "", title-detail = "", title-notice = "" }
+regions = ["body"]
+optional_regions = ["apparatus", "end"]
+options = { headings = "titlesec", front = "title-page", title-style = "plain", notes = "none", appendix = "lettered", closing = "scriptsize" }

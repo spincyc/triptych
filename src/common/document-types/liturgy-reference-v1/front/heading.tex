@@ -1,0 +1,13 @@
+%% A compact heading and the contents on the first page of the body.
+\begin{center}
+  {\Large\bfseries @{title}}\\[0.35em]
+  {\large @{subtitle}}\\[0.5em]
+  {\small @{title-notice}}
+\end{center}
+
+\vspace{0.4em}
+% The document-wide \parskip is inherited by every table-of-contents line and
+% doubles the height of the contents. Suppress it for the contents only.
+{\footnotesize\setlength{\parskip}{0pt}\tableofcontents}
+\vspace{0.6em}
+
