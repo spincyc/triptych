@@ -110,242 +110,1168 @@ Dates below are rules, not a 2026 computation. “Sunday” includes its liturgi
 
 This is the fixed universal inventory current through 17 July 2026. The 2002 Latin calendar is the base; the amendment chain is integrated into the rows and identified by notes after the table. Labels are editorial English identifiers, not reproduced formularies. Distinct choices on one date are separate singular rows; the date is repeated and every later row carries a discriminator. The repeated rows remain coequal alternatives and state no winner.
 
-| Date | Universal celebration | Rank |
-|:---------|:---------------------------------------|:--------------|
-| **January** |  |  |
-| 1 | Mary, the Holy Mother of God | <span class="smallcaps">Solemnity</span> |
-| 2 | Saints Basil the Great and Gregory Nazianzen, Bishops and Doctors of the Church | <span class="smallcaps">Memorial</span> |
-| 3 | The Most Holy Name of Jesus | <span class="smallcaps">Optional memorial</span> |
-| 6 | The Epiphany of the Lord | <span class="smallcaps">Solemnity</span> |
-| 7 | Saint Raymond of Penyafort, Priest | <span class="smallcaps">Optional memorial</span> |
-| 13 | Saint Hilary, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 17 | Saint Anthony, Abbot | <span class="smallcaps">Memorial</span> |
-| 20 | Saint Fabian, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 20 | Saint Sebastian, Martyr | <span class="smallcaps">Optional memorial</span> |
-| 21 | Saint Agnes, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
-| 22 | Saint Vincent, Deacon and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 24 | Saint Francis de Sales, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 25 | The Conversion of Saint Paul the Apostle | <span class="smallcaps">Feast</span> |
-| 26 | Saints Timothy and Titus, Bishops | <span class="smallcaps">Memorial</span> |
-| 27 | Saint Angela Merici, Virgin | <span class="smallcaps">Optional memorial</span> |
-| 28 | Saint Thomas Aquinas, Priest and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 31 | Saint John Bosco, Priest | <span class="smallcaps">Memorial</span> |
-| **February** |  |  |
-| 2 | The Presentation of the Lord | <span class="smallcaps">Feast</span> |
-| 3 | Saint Blaise, Bishop and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 3 | Saint Ansgar, Bishop | <span class="smallcaps">Optional memorial</span> |
-| 5 | Saint Agatha, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
-| 6 | Saints Paul Miki and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
-| 8 | Saint Jerome Emiliani | <span class="smallcaps">Optional memorial</span> |
-| 8 | Saint Josephine Bakhita, Virgin | <span class="smallcaps">Optional memorial</span> |
-| 10 | Saint Scholastica, Virgin | <span class="smallcaps">Memorial</span> |
-| 11 | Our Lady of Lourdes | <span class="smallcaps">Optional memorial</span> |
-| 14 | Saints Cyril, Monk, and Methodius, Bishop | <span class="smallcaps">Memorial</span> |
-| 17 | The Seven Holy Founders of the Servite Order | <span class="smallcaps">Optional memorial</span> |
-| 21 | Saint Peter Damian, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 22 | The Chair of Saint Peter the Apostle | <span class="smallcaps">Feast</span> |
-| 23 | Saint Polycarp, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
-| 27 | Saint Gregory of Narek, Abbot and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| **March** |  |  |
-| 4 | Saint Casimir | <span class="smallcaps">Optional memorial</span> |
-| 7 | Saints Perpetua and Felicity, Martyrs | <span class="smallcaps">Memorial</span> |
-| 8 | Saint John of God, Religious | <span class="smallcaps">Optional memorial</span> |
-| 9 | Saint Frances of Rome, Religious | <span class="smallcaps">Optional memorial</span> |
-| 17 | Saint Patrick, Bishop | <span class="smallcaps">Optional memorial</span> |
-| 18 | Saint Cyril of Jerusalem, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 19 | Saint Joseph, Spouse of the Blessed Virgin Mary | <span class="smallcaps">Solemnity</span> |
-| 23 | Saint Turibius of Mogrovejo, Bishop | <span class="smallcaps">Optional memorial</span> |
-| 25 | The Annunciation of the Lord | <span class="smallcaps">Solemnity</span> |
-| **April** |  |  |
-| 2 | Saint Francis of Paola, Hermit | <span class="smallcaps">Optional memorial</span> |
-| 4 | Saint Isidore, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 5 | Saint Vincent Ferrer, Priest | <span class="smallcaps">Optional memorial</span> |
-| 7 | Saint John Baptist de la Salle, Priest | <span class="smallcaps">Memorial</span> |
-| 11 | Saint Stanislaus, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
-| 13 | Saint Martin I, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 21 | Saint Anselm, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 23 | Saint George, Martyr | <span class="smallcaps">Optional memorial</span> |
-| 23 | Saint Adalbert, Bishop and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 24 | Saint Fidelis of Sigmaringen, Priest and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 25 | Saint Mark, Evangelist | <span class="smallcaps">Feast</span> |
-| 28 | Saint Peter Chanel, Priest and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 28 | Saint Louis Grignion de Montfort, Priest | <span class="smallcaps">Optional memorial</span> |
-| 29 | Saint Catherine of Siena, Virgin and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 30 | Saint Pius V, Pope | <span class="smallcaps">Optional memorial</span> |
-| **May** |  |  |
-| 1 | Saint Joseph the Worker | <span class="smallcaps">Optional memorial</span> |
-| 2 | Saint Athanasius, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 3 | Saints Philip and James, Apostles | <span class="smallcaps">Feast</span> |
-| 10 | Saint John of Avila, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 12 | Saints Nereus and Achilleus, Martyrs | <span class="smallcaps">Optional memorial</span> |
-| 12 | Saint Pancras, Martyr | <span class="smallcaps">Optional memorial</span> |
-| 13 | Our Lady of Fatima | <span class="smallcaps">Optional memorial</span> |
-| 14 | Saint Matthias, Apostle | <span class="smallcaps">Feast</span> |
-| 18 | Saint John I, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 20 | Saint Bernardine of Siena, Priest | <span class="smallcaps">Optional memorial</span> |
-| 21 | Saints Christopher Magallanes, Priest, and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
-| 22 | Saint Rita of Cascia, Religious | <span class="smallcaps">Optional memorial</span> |
-| 25 | Saint Bede the Venerable, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 25 | Saint Gregory VII, Pope | <span class="smallcaps">Optional memorial</span> |
-| 25 | Saint Mary Magdalene de’ Pazzi, Virgin | <span class="smallcaps">Optional memorial</span> |
-| 26 | Saint Philip Neri, Priest | <span class="smallcaps">Memorial</span> |
-| 27 | Saint Augustine of Canterbury, Bishop | <span class="smallcaps">Optional memorial</span> |
-| 29 | Saint Paul VI, Pope | <span class="smallcaps">Optional memorial</span> |
-| 31 | The Visitation of the Blessed Virgin Mary | <span class="smallcaps">Feast</span> |
-| **June** |  |  |
-| 1 | Saint Justin, Martyr | <span class="smallcaps">Memorial</span> |
-| 2 | Saints Marcellinus and Peter, Martyrs | <span class="smallcaps">Optional memorial</span> |
-| 3 | Saints Charles Lwanga and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
-| 5 | Saint Boniface, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
-| 6 | Saint Norbert, Bishop | <span class="smallcaps">Optional memorial</span> |
-| 9 | Saint Ephrem, Deacon and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 11 | Saint Barnabas, Apostle | <span class="smallcaps">Memorial</span> |
-| 13 | Saint Anthony of Padua, Priest and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 19 | Saint Romuald, Abbot | <span class="smallcaps">Optional memorial</span> |
-| 21 | Saint Aloysius Gonzaga, Religious | <span class="smallcaps">Memorial</span> |
-| 22 | Saint Paulinus of Nola, Bishop | <span class="smallcaps">Optional memorial</span> |
-| 22 | Saints John Fisher, Bishop, and Thomas More, Martyrs | <span class="smallcaps">Optional memorial</span> |
-| 24 | The Nativity of Saint John the Baptist | <span class="smallcaps">Solemnity</span> |
-| 27 | Saint Cyril of Alexandria, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 28 | Saint Irenaeus, Bishop, Martyr, and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 29 | Saints Peter and Paul, Apostles | <span class="smallcaps">Solemnity</span> |
-| 30 | The First Martyrs of the Holy Roman Church | <span class="smallcaps">Optional memorial</span> |
-| **July** |  |  |
-| 3 | Saint Thomas, Apostle | <span class="smallcaps">Feast</span> |
-| 4 | Saint Elizabeth of Portugal | <span class="smallcaps">Optional memorial</span> |
-| 5 | Saint Anthony Zaccaria, Priest | <span class="smallcaps">Optional memorial</span> |
-| 6 | Saint Maria Goretti, Virgin and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 9 | Saints Augustine Zhao Rong, Priest, and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
-| 11 | Saint Benedict, Abbot | <span class="smallcaps">Memorial</span> |
-| 13 | Saint Henry | <span class="smallcaps">Optional memorial</span> |
-| 14 | Saint Camillus de Lellis, Priest | <span class="smallcaps">Optional memorial</span> |
-| 15 | Saint Bonaventure, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 16 | Our Lady of Mount Carmel | <span class="smallcaps">Optional memorial</span> |
-| 20 | Saint Apollinaris, Bishop and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 21 | Saint Lawrence of Brindisi, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 22 | Saint Mary Magdalene | <span class="smallcaps">Feast</span> |
-| 23 | Saint Bridget, Religious | <span class="smallcaps">Optional memorial</span> |
-| 24 | Saint Sharbel Makhluf, Priest | <span class="smallcaps">Optional memorial</span> |
-| 25 | Saint James, Apostle | <span class="smallcaps">Feast</span> |
-| 26 | Saints Joachim and Anne, Parents of the Blessed Virgin Mary | <span class="smallcaps">Memorial</span> |
-| 29 | Saints Martha, Mary, and Lazarus | <span class="smallcaps">Memorial</span> |
-| 30 | Saint Peter Chrysologus, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 31 | Saint Ignatius of Loyola, Priest | <span class="smallcaps">Memorial</span> |
-| **August** |  |  |
-| 1 | Saint Alphonsus Liguori, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 2 | Saint Eusebius of Vercelli, Bishop | <span class="smallcaps">Optional memorial</span> |
-| 2 | Saint Peter Julian Eymard, Priest | <span class="smallcaps">Optional memorial</span> |
-| 4 | Saint John Vianney, Priest | <span class="smallcaps">Memorial</span> |
-| 5 | The Dedication of the Basilica of Saint Mary Major | <span class="smallcaps">Optional memorial</span> |
-| 6 | The Transfiguration of the Lord | <span class="smallcaps">Feast</span> |
-| 7 | Saints Sixtus II, Pope, and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
-| 7 | Saint Cajetan, Priest | <span class="smallcaps">Optional memorial</span> |
-| 8 | Saint Dominic, Priest | <span class="smallcaps">Memorial</span> |
-| 9 | Saint Teresa Benedicta of the Cross, Virgin and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 10 | Saint Lawrence, Deacon and Martyr | <span class="smallcaps">Feast</span> |
-| 11 | Saint Clare, Virgin | <span class="smallcaps">Memorial</span> |
-| 12 | Saint Jane Frances de Chantal, Religious | <span class="smallcaps">Optional memorial</span> |
-| 13 | Saints Pontian, Pope, and Hippolytus, Priest, Martyrs | <span class="smallcaps">Optional memorial</span> |
-| 14 | Saint Maximilian Mary Kolbe, Priest and Martyr | <span class="smallcaps">Memorial</span> |
-| 15 | The Assumption of the Blessed Virgin Mary | <span class="smallcaps">Solemnity</span> |
-| 16 | Saint Stephen of Hungary | <span class="smallcaps">Optional memorial</span> |
-| 19 | Saint John Eudes, Priest | <span class="smallcaps">Optional memorial</span> |
-| 20 | Saint Bernard, Abbot and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 21 | Saint Pius X, Pope | <span class="smallcaps">Memorial</span> |
-| 22 | The Queenship of the Blessed Virgin Mary | <span class="smallcaps">Memorial</span> |
-| 23 | Saint Rose of Lima, Virgin | <span class="smallcaps">Optional memorial</span> |
-| 24 | Saint Bartholomew, Apostle | <span class="smallcaps">Feast</span> |
-| 25 | Saint Louis | <span class="smallcaps">Optional memorial</span> |
-| 25 | Saint Joseph Calasanz, Priest | <span class="smallcaps">Optional memorial</span> |
-| 27 | Saint Monica | <span class="smallcaps">Memorial</span> |
-| 28 | Saint Augustine, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 29 | The Passion of Saint John the Baptist | <span class="smallcaps">Memorial</span> |
-| **September** |  |  |
-| 3 | Saint Gregory the Great, Pope and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 5 | Saint Teresa of Calcutta, Virgin | <span class="smallcaps">Optional memorial</span> |
-| 8 | The Nativity of the Blessed Virgin Mary | <span class="smallcaps">Feast</span> |
-| 9 | Saint Peter Claver, Priest | <span class="smallcaps">Optional memorial</span> |
-| 12 | The Most Holy Name of Mary | <span class="smallcaps">Optional memorial</span> |
-| 13 | Saint John Chrysostom, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 14 | The Exaltation of the Holy Cross | <span class="smallcaps">Feast</span> |
-| 15 | Our Lady of Sorrows | <span class="smallcaps">Memorial</span> |
-| 16 | Saints Cornelius, Pope, and Cyprian, Bishop, Martyrs | <span class="smallcaps">Memorial</span> |
-| 17 | Saint Robert Bellarmine, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 17 | Saint Hildegard of Bingen, Virgin and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 19 | Saint Januarius, Bishop and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 20 | Saints Andrew Kim Tae-gon, Priest, Paul Chong Ha-sang, and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
-| 21 | Saint Matthew, Apostle and Evangelist | <span class="smallcaps">Feast</span> |
-| 23 | Saint Pius of Pietrelcina, Priest | <span class="smallcaps">Memorial</span> |
-| 26 | Saints Cosmas and Damian, Martyrs | <span class="smallcaps">Optional memorial</span> |
-| 27 | Saint Vincent de Paul, Priest | <span class="smallcaps">Memorial</span> |
-| 28 | Saint Wenceslaus, Martyr | <span class="smallcaps">Optional memorial</span> |
-| 28 | Saints Lawrence Ruiz and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
-| 29 | Saints Michael, Gabriel, and Raphael, Archangels | <span class="smallcaps">Feast</span> |
-| 30 | Saint Jerome, Priest and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| **October** |  |  |
-| 1 | Saint Thérèse of the Child Jesus, Virgin and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 2 | The Holy Guardian Angels | <span class="smallcaps">Memorial</span> |
-| 4 | Saint Francis of Assisi | <span class="smallcaps">Memorial</span> |
-| 5 | Saint Faustina Kowalska, Virgin | <span class="smallcaps">Optional memorial</span> |
-| 6 | Saint Bruno, Priest | <span class="smallcaps">Optional memorial</span> |
-| 7 | Our Lady of the Rosary | <span class="smallcaps">Memorial</span> |
-| 9 | Saints Denis, Bishop, and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
-| 9 | Saint John Leonardi, Priest | <span class="smallcaps">Optional memorial</span> |
-| 9 | Saint John Henry Newman, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 11 | Saint John XXIII, Pope | <span class="smallcaps">Optional memorial</span> |
-| 14 | Saint Callistus I, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 15 | Saint Teresa of Jesus, Virgin and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 16 | Saint Hedwig, Religious | <span class="smallcaps">Optional memorial</span> |
-| 16 | Saint Margaret Mary Alacoque, Virgin | <span class="smallcaps">Optional memorial</span> |
-| 17 | Saint Ignatius of Antioch, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
-| 18 | Saint Luke, Evangelist | <span class="smallcaps">Feast</span> |
-| 19 | Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
-| 19 | Saint Paul of the Cross, Priest | <span class="smallcaps">Optional memorial</span> |
-| 22 | Saint John Paul II, Pope | <span class="smallcaps">Optional memorial</span> |
-| 23 | Saint John of Capistrano, Priest | <span class="smallcaps">Optional memorial</span> |
-| 24 | Saint Anthony Mary Claret, Bishop | <span class="smallcaps">Optional memorial</span> |
-| 28 | Saints Simon and Jude, Apostles | <span class="smallcaps">Feast</span> |
-| **November** |  |  |
-| 1 | All Saints | <span class="smallcaps">Solemnity</span> |
-| 2 | The Commemoration of All the Faithful Departed (All Souls) | <span class="smallcaps">All Souls commemoration</span> |
-| 3 | Saint Martin de Porres, Religious | <span class="smallcaps">Optional memorial</span> |
-| 4 | Saint Charles Borromeo, Bishop | <span class="smallcaps">Memorial</span> |
-| 9 | The Dedication of the Lateran Basilica | <span class="smallcaps">Feast</span> |
-| 10 | Saint Leo the Great, Pope and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 11 | Saint Martin of Tours, Bishop | <span class="smallcaps">Memorial</span> |
-| 12 | Saint Josaphat, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
-| 15 | Saint Albert the Great, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 16 | Saint Margaret of Scotland | <span class="smallcaps">Optional memorial</span> |
-| 16 | Saint Gertrude, Virgin | <span class="smallcaps">Optional memorial</span> |
-| 17 | Saint Elizabeth of Hungary, Religious | <span class="smallcaps">Memorial</span> |
-| 18 | The Dedication of the Basilicas of Saints Peter and Paul, Apostles | <span class="smallcaps">Optional memorial</span> |
-| 21 | The Presentation of the Blessed Virgin Mary | <span class="smallcaps">Memorial</span> |
-| 22 | Saint Cecilia, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
-| 23 | Saint Clement I, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 23 | Saint Columban, Abbot | <span class="smallcaps">Optional memorial</span> |
-| 24 | Saints Andrew Dung-Lac, Priest, and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
-| 25 | Saint Catherine of Alexandria, Virgin and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 30 | Saint Andrew, Apostle | <span class="smallcaps">Feast</span> |
-| **December** |  |  |
-| 3 | Saint Francis Xavier, Priest | <span class="smallcaps">Memorial</span> |
-| 4 | Saint John Damascene, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 6 | Saint Nicholas, Bishop | <span class="smallcaps">Optional memorial</span> |
-| 7 | Saint Ambrose, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 8 | The Immaculate Conception of the Blessed Virgin Mary | <span class="smallcaps">Solemnity</span> |
-| 9 | Saint Juan Diego Cuauhtlatoatzin | <span class="smallcaps">Optional memorial</span> |
-| 10 | Our Lady of Loreto | <span class="smallcaps">Optional memorial</span> |
-| 11 | Saint Damasus I, Pope | <span class="smallcaps">Optional memorial</span> |
-| 12 | Our Lady of Guadalupe | <span class="smallcaps">Optional memorial</span> |
-| 13 | Saint Lucy, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
-| 14 | Saint John of the Cross, Priest and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 21 | Saint Peter Canisius, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 23 | Saint John of Kanty, Priest | <span class="smallcaps">Optional memorial</span> |
-| 25 | The Nativity of the Lord | <span class="smallcaps">Solemnity</span> |
-| 26 | Saint Stephen, the First Martyr | <span class="smallcaps">Feast</span> |
-| 27 | Saint John, Apostle and Evangelist | <span class="smallcaps">Feast</span> |
-| 28 | The Holy Innocents, Martyrs | <span class="smallcaps">Feast</span> |
-| 29 | Saint Thomas Becket, Bishop and Martyr | <span class="smallcaps">Optional memorial</span> |
-| 31 | Saint Sylvester I, Pope | <span class="smallcaps">Optional memorial</span> |
+<table style="width:90%;">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 56%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Date</th>
+<th style="text-align: left;">Universal celebration</th>
+<th style="text-align: left;">Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>January</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Mary, the Holy Mother of God</td>
+<td style="text-align: left;"><span class="smallcaps">Solemnity</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Saints Basil the Great and Gregory Nazianzen, Bishops and Doctors of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">The Most Holy Name of Jesus</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">The Epiphany of the Lord</td>
+<td style="text-align: left;"><span class="smallcaps">Solemnity</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Saint Raymond of Penyafort, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">Saint Hilary, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">Saint Anthony, Abbot</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">Saint Fabian, Pope and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">Saint Sebastian, Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">Saint Agnes, Virgin and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">Saint Vincent, Deacon and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">Saint Francis de Sales, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">The Conversion of Saint Paul the Apostle</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">Saints Timothy and Titus, Bishops</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">27</td>
+<td style="text-align: left;">Saint Angela Merici, Virgin</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">Saint Thomas Aquinas, Priest and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">Saint John Bosco, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>February</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">The Presentation of the Lord</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Saint Blaise, Bishop and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Saint Ansgar, Bishop</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Saint Agatha, Virgin and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Saints Paul Miki and Companions, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">Saint Jerome Emiliani</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">Saint Josephine Bakhita, Virgin</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Saint Scholastica, Virgin</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">Our Lady of Lourdes</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">Saints Cyril, Monk, and Methodius, Bishop</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">The Seven Holy Founders of the Servite Order</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">Saint Peter Damian, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">The Chair of Saint Peter the Apostle</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">Saint Polycarp, Bishop and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">27</td>
+<td style="text-align: left;">Saint Gregory of Narek, Abbot and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>March</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Saint Casimir</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Saints Perpetua and Felicity, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">Saint John of God, Religious</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Saint Frances of Rome, Religious</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">Saint Patrick, Bishop</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">Saint Cyril of Jerusalem, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">Saint Joseph, Spouse of the Blessed Virgin Mary</td>
+<td style="text-align: left;"><span class="smallcaps">Solemnity</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">Saint Turibius of Mogrovejo, Bishop</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">The Annunciation of the Lord</td>
+<td style="text-align: left;"><span class="smallcaps">Solemnity</span></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>April</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Saint Francis of Paola, Hermit</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Saint Isidore, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Saint Vincent Ferrer, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Saint John Baptist de la Salle, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">Saint Stanislaus, Bishop and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">Saint Martin I, Pope and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">Saint Anselm, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">Saint George, Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">Saint Adalbert, Bishop and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">Saint Fidelis of Sigmaringen, Priest and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">Saint Mark, Evangelist</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">Saint Peter Chanel, Priest and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">Saint Louis Grignion de Montfort, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">Saint Catherine of Siena, Virgin and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">Saint Pius V, Pope</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>May</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Saint Joseph the Worker</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Saint Athanasius, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Saints Philip and James, Apostles</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Saint John of Avila, Priest and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">Saints Nereus and Achilleus, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">Saint Pancras, Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">Our Lady of Fatima</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">Saint Matthias, Apostle</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">Saint John I, Pope and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">Saint Bernardine of Siena, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">Saints Christopher Magallanes, Priest, and Companions, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">Saint Rita of Cascia, Religious</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">Saint Bede the Venerable, Priest and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">Saint Gregory VII, Pope</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">Saint Mary Magdalene de’ Pazzi, Virgin</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">Saint Philip Neri, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">27</td>
+<td style="text-align: left;">Saint Augustine of Canterbury, Bishop</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">Saint Paul VI, Pope</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">The Visitation of the Blessed Virgin Mary</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>June</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Saint Justin, Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Saints Marcellinus and Peter, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Saints Charles Lwanga and Companions, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Saint Boniface, Bishop and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Saint Norbert, Bishop</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Saint Ephrem, Deacon and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">Saint Barnabas, Apostle</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">Saint Anthony of Padua, Priest and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">Saint Romuald, Abbot</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">Saint Aloysius Gonzaga, Religious</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">Saint Paulinus of Nola, Bishop</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">Saints John Fisher, Bishop, and Thomas More, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">The Nativity of Saint John the Baptist</td>
+<td style="text-align: left;"><span class="smallcaps">Solemnity</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">27</td>
+<td style="text-align: left;">Saint Cyril of Alexandria, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">Saint Irenaeus, Bishop, Martyr, and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">Saints Peter and Paul, Apostles</td>
+<td style="text-align: left;"><span class="smallcaps">Solemnity</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">The First Martyrs of the Holy Roman Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>July</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Saint Thomas, Apostle</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Saint Elizabeth of Portugal</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Saint Anthony Zaccaria, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Saint Maria Goretti, Virgin and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Saints Augustine Zhao Rong, Priest, and Companions, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">Saint Benedict, Abbot</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">Saint Henry</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">Saint Camillus de Lellis, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">Saint Bonaventure, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">Our Lady of Mount Carmel</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">Saint Apollinaris, Bishop and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">Saint Lawrence of Brindisi, Priest and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">Saint Mary Magdalene</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">Saint Bridget, Religious</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">Saint Sharbel Makhluf, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">Saint James, Apostle</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">Saints Joachim and Anne, Parents of the Blessed Virgin Mary</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">Saints Martha, Mary, and Lazarus</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">Saint Peter Chrysologus, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">Saint Ignatius of Loyola, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>August</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Saint Alphonsus Liguori, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Saint Eusebius of Vercelli, Bishop</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Saint Peter Julian Eymard, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Saint John Vianney, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">The Dedication of the Basilica of Saint Mary Major</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">The Transfiguration of the Lord</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Saints Sixtus II, Pope, and Companions, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Saint Cajetan, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">Saint Dominic, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Saint Teresa Benedicta of the Cross, Virgin and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Saint Lawrence, Deacon and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">Saint Clare, Virgin</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">Saint Jane Frances de Chantal, Religious</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">Saints Pontian, Pope, and Hippolytus, Priest, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">Saint Maximilian Mary Kolbe, Priest and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">The Assumption of the Blessed Virgin Mary</td>
+<td style="text-align: left;"><span class="smallcaps">Solemnity</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">Saint Stephen of Hungary</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">Saint John Eudes, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">Saint Bernard, Abbot and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">Saint Pius X, Pope</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">The Queenship of the Blessed Virgin Mary</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">Saint Rose of Lima, Virgin</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">Saint Bartholomew, Apostle</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">Saint Louis</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">Saint Joseph Calasanz, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">27</td>
+<td style="text-align: left;">Saint Monica</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">Saint Augustine, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">The Passion of Saint John the Baptist</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>September</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Saint Gregory the Great, Pope and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Saint Teresa of Calcutta, Virgin</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">The Nativity of the Blessed Virgin Mary</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Saint Peter Claver, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">The Most Holy Name of Mary</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">Saint John Chrysostom, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">The Exaltation of the Holy Cross</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">Our Lady of Sorrows</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">Saints Cornelius, Pope, and Cyprian, Bishop, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">Saint Robert Bellarmine, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">Saint Hildegard of Bingen, Virgin and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">Saint Januarius, Bishop and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">Saints Andrew Kim Tae-gon, Priest, Paul Chong Ha-sang, and Companions, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">Saint Matthew, Apostle and Evangelist</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">Saint Pius of Pietrelcina, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">Saints Cosmas and Damian, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">27</td>
+<td style="text-align: left;">Saint Vincent de Paul, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">Saint Wenceslaus, Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">Saints Lawrence Ruiz and Companions, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">Saints Michael, Gabriel, and Raphael, Archangels</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">Saint Jerome, Priest and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>October</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Saint Thérèse of the Child Jesus, Virgin and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">The Holy Guardian Angels</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Saint Francis of Assisi</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Saint Faustina Kowalska, Virgin</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Saint Bruno, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Our Lady of the Rosary</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Saints Denis, Bishop, and Companions, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Saint John Leonardi, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Saint John Henry Newman, Priest and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">Saint John XXIII, Pope</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">Saint Callistus I, Pope and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">Saint Teresa of Jesus, Virgin and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">Saint Hedwig, Religious</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">Saint Margaret Mary Alacoque, Virgin</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">Saint Ignatius of Antioch, Bishop and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">Saint Luke, Evangelist</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">Saint Paul of the Cross, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">Saint John Paul II, Pope</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">Saint John of Capistrano, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">Saint Anthony Mary Claret, Bishop</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">Saints Simon and Jude, Apostles</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>November</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">All Saints</td>
+<td style="text-align: left;"><span class="smallcaps">Solemnity</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">The Commemoration of All the Faithful Departed (All Souls)</td>
+<td style="text-align: left;"><span class="smallcaps">All Souls commemoration</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Saint Martin de Porres, Religious</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Saint Charles Borromeo, Bishop</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">The Dedication of the Lateran Basilica</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Saint Leo the Great, Pope and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">Saint Martin of Tours, Bishop</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">Saint Josaphat, Bishop and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">Saint Albert the Great, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">Saint Margaret of Scotland</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">Saint Gertrude, Virgin</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">Saint Elizabeth of Hungary, Religious</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">The Dedication of the Basilicas of Saints Peter and Paul, Apostles</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">The Presentation of the Blessed Virgin Mary</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">Saint Cecilia, Virgin and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">Saint Clement I, Pope and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">Saint Columban, Abbot</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">Saints Andrew Dung-Lac, Priest, and Companions, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">Saint Catherine of Alexandria, Virgin and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">Saint Andrew, Apostle</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>December</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Saint Francis Xavier, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Saint John Damascene, Priest and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Saint Nicholas, Bishop</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Saint Ambrose, Bishop and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">The Immaculate Conception of the Blessed Virgin Mary</td>
+<td style="text-align: left;"><span class="smallcaps">Solemnity</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Saint Juan Diego Cuauhtlatoatzin</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Our Lady of Loreto</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">Saint Damasus I, Pope</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">Our Lady of Guadalupe</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">Saint Lucy, Virgin and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">Saint John of the Cross, Priest and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">Saint Peter Canisius, Priest and Doctor of the Church</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">Saint John of Kanty, Priest</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">The Nativity of the Lord</td>
+<td style="text-align: left;"><span class="smallcaps">Solemnity</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">Saint Stephen, the First Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">27</td>
+<td style="text-align: left;">Saint John, Apostle and Evangelist</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">The Holy Innocents, Martyrs</td>
+<td style="text-align: left;"><span class="smallcaps">Feast</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">Saint Thomas Becket, Bishop and Martyr</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">Saint Sylvester I, Pope</td>
+<td style="text-align: left;"><span class="smallcaps">Optional memorial</span></td>
+</tr>
+</tbody>
+</table>
 
 The 2002 Missal also provides proper Vigil and Day Masses for the Nativity of St John the Baptist (24 June), Sts Peter and Paul (29 June), and the Assumption (15 August). These Vigil forms belong to the same celebration and rank; they are not extra civil-date rows. Vigil and Day forms for Epiphany and the Ascension are accounted for in the Proper of Time.
 

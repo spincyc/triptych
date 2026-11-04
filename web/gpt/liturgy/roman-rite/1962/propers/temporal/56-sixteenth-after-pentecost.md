@@ -30,77 +30,30 @@
 
 ## Scriptural Date and Location
 
-### Offertory
-
-**Citation:** Ps. 39 (40):14–15, selected
-
-**Location:** Davidic title; an endangered petitioner.
-
-**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C.
-
-Corbett’s “usual chronology” supplies the Davidic regnal frame (*Catholic Encyclopedia*, IV, p. 642). Rescue and obedience return to threatened life; writing-place and enemy are unnamed. USCCB’s composition bound is shared by the Psalter, not an individual date. <span class="nodecor">(Ps. 39:1–18; USCCB, Psalms introduction.)</span>
-
-### Communion
-
-**Citation:** Ps. 70 (71):16–18, selected
-
-**Location:** An aging speaker; Davidic and captivity settings remain distinct.
-
-**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Superscription setting**: Preferred: In the third year of the reign of Joakim, king of Juda; alternative: A.M. 3398. **Historical setting**: When he fled from the face of his son Absalom. **Composition**: Before c. 165 B.C.
-
-Youth, failing strength and future hearers frame Bellarmine’s Davidic reading; writing-place is unestablished. The composition bound is general; the alternate A.M. figure concerns the superscription, not the preferred historical setting. <span class="nodecor">(Ps. 70:1–24; Bellarmine, pp. 212–213; chronology sources in References.)</span>
-
-### Introit
-
-**Citation:** Ps. 85 (86):3,5; v. 1
-
-**Location:** Davidic title; a needy servant threatened by attackers.
-
-**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C.
-
-The title names David, without a particular crisis or writing-place. Prayer opens toward the nations’ worship; individual composition remains insecure within the common critical bound. <span class="nodecor">(Ps. 85:1–17; USCCB, Psalms introduction.)</span>
-
-### Alleluia
-
-**Citation:** Ps. 97 (98):1, opening
-
-**Location:** Israel’s salvation before the nations and creation.
-
-**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C. **Prophetic referent** – disputed: B.C. 3; c. B.C. 7.
-
-The Douay title names David, without a particular rescue or writing-place. The composition bound is common; the Nativity dates concern prophecy, with Gerard reporting one as others’ opinion. <span class="nodecor">(Ps. 97:1–9; USCCB, Psalms introduction; Gerard, “General Chronology,” “Christian era,” first paragraph; “Chronology of the Life of Jesus Christ.”)</span>
-
-### Gradual
-
-**Citation:** Ps. 101 (102):16–17
-
-**Location:** Sion/Jerusalem restored; peoples gathered for worship.
-
-**Date:** **Composition**: Before c. 165 B.C.
-
-The afflicted speaker contrasts his frailty with God’s permanence. Jerusalem is the subject; writing-place, restoration date and individual composition date are unestablished. <span class="nodecor">(Ps. 101:1–29; USCCB, Psalms introduction.)</span>
-
-### Gospel
-
-**Citation:** Luke 14:1–11
-
-**Location:** St Luke’s Gospel; an unnamed leading Pharisee’s house.
-
-**Date:** **Event** – No narrated-event date in the chronology corpus. **Composition** – disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished.
-
-*Event: Sabbath meal and cure in the journey-to-Jerusalem context (Luke 13:22; 14:1–11); town and host unnamed. The wedding is the seating parable’s setting.*
-
-Composition alternatives follow the *Catholic Encyclopedia* and Biblical Commission; writing-place, first-audience geography and a full modern authorship account remain unestablished. USCCB notes son/ox beside the ass/ox variant retained by the Missal.
-
-### Epistle
-
-**Citation:** Eph. 3:13–21
-
-**Location:** St Paul, imprisoned for his Gentile mission; saints sharing one inheritance.
-
-**Date:** **Composition** – disputed: A.D. 58–63; A.D. 61.
-
-Affliction and the Gentile mission frame the prayer (Eph. 2–4). The Encyclopedia supplies the traditional dates; prison city, destination geography and a full modern authorship account remain unestablished. USCCB treats wording and interpretation.
+|  |
+|:---|
+| **Offertory — Ps. 39 (40):14–15, selected**. Davidic title; an endangered petitioner. |
+| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+| Corbett’s “usual chronology” supplies the Davidic regnal frame (*Catholic Encyclopedia*, IV, p. 642). Rescue and obedience return to threatened life; writing-place and enemy are unnamed. USCCB’s composition bound is shared by the Psalter, not an individual date. <span class="nodecor">(Ps. 39:1–18; USCCB, Psalms introduction.)</span> |
+| **Communion — Ps. 70 (71):16–18, selected**. An aging speaker; Davidic and captivity settings remain distinct. |
+| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Superscription setting**: Preferred: The first captivity of Juda, under Joakim, In the third year of the reign of Joakim, king of Juda; alternative: The first captivity of Juda, under Joakim, A.M. 3398. **Historical setting**: David’s flight from the face of Absalom, when he fled from the face of his son Absalom. **Composition**: Before c. 165 B.C. |
+| Youth, failing strength and future hearers frame Bellarmine’s Davidic reading; writing-place is unestablished. The composition bound is general; the alternate A.M. figure concerns the superscription, not the preferred historical setting. <span class="nodecor">(Ps. 70:1–24; Bellarmine, pp. 212–213; chronology sources in References.)</span> |
+| **Introit — Ps. 85 (86):3,5; v. 1**. Davidic title; a needy servant threatened by attackers. |
+| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+| The title names David, without a particular crisis or writing-place. Prayer opens toward the nations’ worship; individual composition remains insecure within the common critical bound. <span class="nodecor">(Ps. 85:1–17; USCCB, Psalms introduction.)</span> |
+| **Alleluia — Ps. 97 (98):1, opening**. Israel’s salvation before the nations and creation. |
+| **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. **Prophetic referent** – disputed: The Nativity of Our Lord, B.C. 3; The Nativity of Our Lord, c. B.C. 7. |
+| The Douay title names David, without a particular rescue or writing-place. The composition bound is common; the Nativity dates concern prophecy, with Gerard reporting one as others’ opinion. <span class="nodecor">(Ps. 97:1–9; USCCB, Psalms introduction; Gerard, “General Chronology,” “Christian era,” first paragraph; “Chronology of the Life of Jesus Christ.”)</span> |
+| **Gradual — Ps. 101 (102):16–17**. Sion/Jerusalem restored; peoples gathered for worship. |
+| **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+| The afflicted speaker contrasts his frailty with God’s permanence. Jerusalem is the subject; writing-place, restoration date and individual composition date are unestablished. <span class="nodecor">(Ps. 101:1–29; USCCB, Psalms introduction.)</span> |
+| **Gospel — Luke 14:1–11**. St Luke’s Gospel; an unnamed leading Pharisee’s house. |
+| **Event** – No narrated-event date in the chronology corpus. **Composition** – disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished. |
+| *Event: Sabbath meal and cure in the journey-to-Jerusalem context (Luke 13:22; 14:1–11); town and host unnamed. The wedding is the seating parable’s setting.* |
+| Composition alternatives follow the *Catholic Encyclopedia* and Biblical Commission; writing-place, first-audience geography and a full modern authorship account remain unestablished. USCCB notes son/ox beside the ass/ox variant retained by the Missal. |
+| **Epistle — Eph. 3:13–21**. St Paul, imprisoned for his Gentile mission; saints sharing one inheritance. |
+| **Composition** – disputed: A.D. 58–63; A.D. 61. |
+| Affliction and the Gentile mission frame the prayer (Eph. 2–4). The Encyclopedia supplies the traditional dates; prison city, destination geography and a full modern authorship account remain unestablished. USCCB treats wording and interpretation. |
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -646,6 +599,6 @@ The Latin’s publication basis is its independently witnessed public-domain ant
 
 Online research witnesses were accessed on 5 September 2026; chronology retains its separately recorded corpus source states.
 
-**Last revised (UTC):** 2026-09-24T17:01:32Z
+**Last revised (UTC):** 2026-11-04T03:34:08Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

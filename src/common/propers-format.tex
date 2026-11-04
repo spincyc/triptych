@@ -123,6 +123,15 @@
 \newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{\linewidth}@{}}{#1}\\[.1em]}
 \newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{\linewidth}@{}}{\textit{#1}}\\}
 
+% Full-width passage dossiers retain long legacy date annotations at normal
+% footnote size. The passage heading, dates and explanatory rows stay together.
+\newenvironment{passagedossiertable}
+{\footnotesize\renewcommand{\arraystretch}{1.02}%
+ \setlength{\LTpre}{0pt}\setlength{\LTpost}{0pt}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\linewidth}@{}}
+ \toprule}
+{\bottomrule\end{longtable}}
+
 % Opt-in orientation rows keep the dated subject beside its own place and date.
 % Legacy dossiers above retain their published measurements and rendering.
 \newenvironment{chronologysharedtable}

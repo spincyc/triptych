@@ -399,31 +399,31 @@ Each passage this Mass reads or sings from Scripture, once, in canonical order; 
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Gradual | Ps. 32:6, 12 (modern 33) | No place named in the appointed verses | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C. |
+| Gradual | Ps. 32:6, 12 (modern 33) | No place named in the appointed verses | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 The appointed verses join two of the psalm’s movements: the blessedness of the people the Lord chose for his inheritance (v. 12) and the heavens established by his word and spirit (v. 6). The Douay–Rheims heading reads “A psalm for David”, an attribution without a named occasion or place of writing, first audience or stage in the attributed author’s life. Corbett’s “usual chronology” supplies David’s regnal frame for that attribution, not the poem’s composition date. The NABRE introduction supplies the broad limit shown for the Psalter, not a precise date for this poem, and denies that individual psalms can be dated with certainty.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Communion | Ps. 75:12–13 (modern 76) | Judea and Sion, named earlier in the psalm as the place of God’s dwelling and victory (vv. 2–3) | **Composition**: Before c. 165 B.C. |
+| Communion | Ps. 75:12–13 (modern 76) | Judea and Sion, named earlier in the psalm as the place of God’s dwelling and victory (vv. 2–3) | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 The superscription ascribes the psalm to Asaph, “a canticle to the Assyrians” (v. 1), without attaching a date or era. In the complete psalm God breaks the weapons of war in Sion and rises to judgment “to save all the meek of the earth” (vv. 4, 10); the appointed conclusion commands vows and their payment and gathers gift-bearers before the Lord who humbles the spirit of princes. Neither title nor verses fixes an occasion, first audience, stage in the attributed author’s life or place of composition. The Date column therefore carries only the Psalter-wide modern limit; this individual psalm is not securely dated.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Alleluia | Ps. 101:2 (modern 102) | Sion named in the psalm’s turn from lament to hope (vv. 14, 17) | **Composition**: Before c. 165 B.C. |
+| Alleluia | Ps. 101:2 (modern 102) | Sion named in the psalm’s turn from lament to hope (vv. 14, 17) | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 The superscription describes the poor man’s anxious prayer and supplication before the Lord (v. 1): an afflicted speaker, no author, no traditional date, first audience or authorial life-stage. The appointed verse is the psalm’s opening cry for a hearing; the complete poem moves from that frailty to the rebuilding of Sion and the gathering of peoples to serve the Lord. Sion is the object of the psalm’s hope, not an established place of writing, and the general Psalter boundary does not date any particular restoration.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Introit | Ps. 118:1, 124, 137 (modern 119) | No place named | **Composition**: Before c. 165 B.C. |
+| Introit | Ps. 118:1, 124, 137 (modern 119) | No place named | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
-An alphabetical psalm in praise of the law, with no named author and no traditional date or setting. The antiphon places the confession of God’s just judgment before the petition for mercy (vv. 137, 124), reversing their order in the complete psalm, and the verse sung with it is the psalm’s opening beatitude over those who walk in the law of the Lord (v. 1). No particular crisis, first audience or writing-place is established by the appointed verses, nor can an authorial life-stage be established where no author is named. The date shown is only the Psalter-wide modern limit; this individual psalm is not securely dated.
+An alphabetical psalm in praise of the law, with no named author in its title. Haydock reports a general attribution to David, with competing proposed occasions. The antiphon places the confession of God’s just judgment before the petition for mercy (vv. 137, 124), reversing their order in the complete psalm, and the verse sung with it is the psalm’s opening beatitude over those who walk in the law of the Lord (v. 1). No particular crisis, first audience or writing-place is established by the appointed verses. David’s regnal era orients the received attribution without settling an occasion or life-stage. The separate composition bound is the Psalter-wide modern limit; this individual psalm is not securely dated.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Offertory | Dan. 9:17–19, adapted | Daniel at the court of Babylon, in the first year of Darius the Mede (9:1); prayer for the desolate sanctuary of Jerusalem (9:17) | **Historical setting**: “seventy years” (duration). **Composition**: B.C. 570–536. |
+| Offertory | Dan. 9:17–19, adapted | Daniel at the court of Babylon, in the first year of Darius the Mede (9:1); prayer for the desolate sanctuary of Jerusalem (9:17) | **Historical setting**: The seventy years of servitude to Babylon, “seventy years” (duration). **Composition**: B.C. 570–536. |
 
 Traditional attribution: the prophet Daniel, in the Exile, recording his own prayer (“I, Daniel”, 9:2) when he understood from Jeremias that the seventy years of desolation were ending. The 1908 *Catholic Encyclopedia* article that admits 570–536 B.C. as the book’s date grounds the traditional position in details it says only “a resident in Babylon” could supply, written by Daniel, “owing to his position at the court of Babylon”, “for the comfort of the Jews of his time and of subsequent ages”. Gigot also reports the critical attribution to an unknown later author rather than Daniel; his account describes scholarship of 1908, not a fresh survey of present opinion, and it establishes no numerical modern critical date for that alternative. The “seventy years” carried in the Date column is the duration of the servitude within the prayer’s setting (Jer. 25:11–12), not a composition date. The chant selects and rearranges Daniel’s petitions; its liturgical form has its own history, distinct from the composition of the chapter.
 
@@ -483,7 +483,9 @@ The source research received an independent workflow review before authoring. Th
 
 14. *New American Bible Revised Edition*, introductions to [Psalms](https://bible.usccb.org/bible/psalms/0) (superscriptions and broad chronological limit) and [Matthew](https://bible.usccb.org/bible/matthew/0) (the separately identified post-A.D. 70 critical boundary and its probabilistic qualification), official USCCB web edition, inspected 21 September 2026. Protected introductions summarized, not reproduced.
 
-**Last revised (UTC):** 2026-10-01T22:25:03Z
+15. George Leo Haydock, *The Holy Bible, Douay–Rheims with Commentary*, Feeney Memorial edition (Loreto, 2014), Ps 118:1, note continued on p. 781: received Davidic attribution and competing occasions.
+
+**Last revised (UTC):** 2026-11-04T03:34:08Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

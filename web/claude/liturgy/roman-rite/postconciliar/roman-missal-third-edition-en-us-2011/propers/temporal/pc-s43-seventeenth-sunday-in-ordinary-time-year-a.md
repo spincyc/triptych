@@ -8,26 +8,88 @@ Year A · Lectionary no. 109 · Ordinary Time Week XVII formulary
 
 *Roman Missal*, Third Edition, and *Lectionary for Mass*, Second Typical Edition, for the dioceses of the United States of America
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:------------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | *Cf.* Ps 67:6–7, 36 (Vulgate/Septuagint numbering; Ps 68 Hebrew). Latin incipit *Deus in loco sancto suo*. An approved entrance chant may be used instead. |
-| Penitential Act | No proper text. On a Sunday the blessing and sprinkling of water may replace it; that rite has its own texts. |
-| Collect | *Protéctor in te sperántium, Deus*. One text, shared by Years A, B and C. |
-| **Liturgy of the Word** |  |
-| First Reading | 1 Kings 3:5, 7–12. Verse 6 falls inside the span and is not proclaimed. |
-| Responsorial Psalm | Ps 119:57, 72, 76–77, 127–128, 129–130; response *Cf.* Ps 119:97a. Verses from six of the psalm’s twenty-two alphabetic stanzas; the refrain from a seventh. |
-| Second Reading | Romans 8:28–30. |
-| Gospel Acclamation | *Cf.* Matthew 11:25, set between the Alleluia. |
-| Gospel | Matthew 13:44–52, *or* the shorter form Matthew 13:44–46. Only one is proclaimed. |
-| **Liturgy of the Eucharist** |  |
-| Offertory chant | No Missal antiphon. Any chant used is a local selection. |
-| Prayer over the Offerings | *Súscipe, quǽsumus, Dómine, múnera*. Shared by Years A, B and C. |
-| Preface | None proper. A Preface of Sundays in Ordinary Time is used unless the Eucharistic Prayer chosen carries its own. |
-| Eucharistic Prayer | No proper insert. The choice is coupled to the Preface decision above. |
-| **Communion Rites** |  |
-| Communion Antiphon | Either Ps 102:2 (Vulgate/Septuagint; Ps 103 Hebrew), *Bénedic, ánima mea, Dómino*; *or* Matthew 5:7–8, *Beáti misericórdes*. The Missal prints them as alternatives; an approved chant may be used instead. |
-| Prayer after Communion | *Súmpsimus, Dómine, divínum sacraméntum*. Shared by Years A, B and C. |
+<table style="width:93%;">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance Antiphon</td>
+<td style="text-align: left;"><em>Cf.</em> Ps 67:6–7, 36 (Vulgate/Septuagint numbering; Ps 68 Hebrew). Latin incipit <em>Deus in loco sancto suo</em>. An approved entrance chant may be used instead.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Penitential Act</td>
+<td style="text-align: left;">No proper text. On a Sunday the blessing and sprinkling of water may replace it; that rite has its own texts.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Protéctor in te sperántium, Deus</em>. One text, shared by Years A, B and C.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">1 Kings 3:5, 7–12. Verse 6 falls inside the span and is not proclaimed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps 119:57, 72, 76–77, 127–128, 129–130; response <em>Cf.</em> Ps 119:97a. Verses from six of the psalm’s twenty-two alphabetic stanzas; the refrain from a seventh.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Romans 8:28–30.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel Acclamation</td>
+<td style="text-align: left;"><em>Cf.</em> Matthew 11:25, set between the Alleluia.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Matthew 13:44–52, <em>or</em> the shorter form Matthew 13:44–46. Only one is proclaimed.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Offertory chant</td>
+<td style="text-align: left;">No Missal antiphon. Any chant used is a local selection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over the Offerings</td>
+<td style="text-align: left;"><em>Súscipe, quǽsumus, Dómine, múnera</em>. Shared by Years A, B and C.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Preface</td>
+<td style="text-align: left;">None proper. A Preface of Sundays in Ordinary Time is used unless the Eucharistic Prayer chosen carries its own.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Eucharistic Prayer</td>
+<td style="text-align: left;">No proper insert. The choice is coupled to the Preface decision above.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Communion Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon</td>
+<td style="text-align: left;">Either Ps 102:2 (Vulgate/Septuagint; Ps 103 Hebrew), <em>Bénedic, ánima mea, Dómino</em>; <em>or</em> Matthew 5:7–8, <em>Beáti misericórdes</em>. The Missal prints them as alternatives; an approved chant may be used instead.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Súmpsimus, Dómine, divínum sacraméntum</em>. Shared by Years A, B and C.</td>
+</tr>
+</tbody>
+</table>
 
 | **Sense** | **Synthesis** |
 |:----------|:-------------------------------------------------------|
@@ -38,28 +100,120 @@ Year A · Lectionary no. 109 · Ordinary Time Week XVII formulary
 
 ## Scriptural Date and Location
 
-| **Textual unit / alternative** | **Citation** | **Location** | **Date** |
-|:-----------|:-----------|:------------------------|:---------------|
-| **First Reading** | 1 Kings 3:5, 7–12 | Written: Judah, or Babylonia during the exile; place unnamed by the book | Final form commonly placed in the sixth century BC |
-| *Narrated event* | The dream at Gibeon | The high place at Gibeon, about ten km north-west of Jerusalem | Early in Solomon’s reign, conventionally about 970–960 BC |
-| The book names no author. Jewish tradition credits Jeremiah; modern accounts generally place Kings within a longer Deuteronomistic history reaching its present shape in or after the exile, with earlier court and annalistic material behind it. Neither reconstruction is a premise here. The audience of the finished book is a people who have lost the monarchy and are asked to judge it. Verse 6, Solomon’s recital of God’s mercy to David, falls inside the appointed span but is not proclaimed. |  |  |  |
-| **Entrance Antiphon *(adaptation)*** | *Cf.* Ps 67:6–7, 36 | Israel; a sanctuary and procession setting is internal to the psalm | Uncertain; the psalm is widely judged archaic in parts |
-| The received heading assigns the psalm to David; modern study treats it as one of the most textually difficult in the Psalter and does not settle its date. The Missal splices the end of v. 6, the opening of v. 7, and the closing v. 36, and marks the result *Cf.* It is therefore an adaptation, not a proclamation of the psalm. |  |  |  |
-| **Communion Antiphon A *(alternative)*** | Ps 102:2 | Israel; no locale is named in the psalm | Uncertain; postexilic language is often noted |
-| The received heading assigns the psalm to David. The antiphon quotes the opening summons to bless and not to forget, without the psalm’s later catalogue of benefits. Selection of this antiphon rather than the alternative is a local decision that this guide does not resolve. |  |  |  |
-| **Responsorial Psalm** | Ps 119:57, 72, 76–77, 127–128, 129–130; response *Cf.* Ps 119:97a | Israel; no narrative setting | Uncertain; a postexilic Torah piety is commonly proposed |
-| Psalm 119 is anonymous and alphabetic: twenty-two stanzas of eight verses, each stanza’s verses beginning with the same Hebrew letter. The appointed verses are drawn from six stanzas and the refrain from a seventh, so the sung text is a liturgical selection and not a continuous biblical pericope. Its horizon is Israel’s delight in *torah*. |  |  |  |
-| **Communion Antiphon B *(alternative)*** | Matthew 5:7–8 | Written: eastern Mediterranean, Antioch often proposed and unproved | Composed after AD 70; often placed about AD 80–90 |
-| *Narrated event* | Two of the Beatitudes | A mountainside in Galilee, before a crowd and the disciples | Within the Galilean ministry |
-| Ancient tradition, reported by Papias through Eusebius, names Matthew the apostle and a Semitic-language original; the canonical Greek text’s relation to that report is disputed. The two beatitudes are adjacent but distinct sayings, and the antiphon quotes them without their surrounding series. |  |  |  |
-| **Gospel Acclamation *(adaptation)*** | *Cf.* Matthew 11:25 | Same written setting as above | Same as above |
-| *Narrated event* | Jesus’s thanksgiving to the Father | Galilee, after the woes on the unrepentant towns | Within the Galilean ministry |
-| The acclamation abbreviates and adapts the verse; it does not proclaim it whole, and Matthew 11 is a distinct scene from Matthew 13. The Latin of this verse and of the appointed Ps 118:130 share the word *parvuli*, the little ones to whom understanding is given. |  |  |  |
-| **Gospel *(long and short forms)*** | Matthew 13:44–52; short form 13:44–46 | Same written setting as above | Same as above |
-| *Narrated event* | Close of the parable discourse | By the Sea of Galilee, then indoors with the disciples | Within the Galilean ministry |
-| Matthew’s third discourse begins in a boat before crowds and continues in a house with the disciples alone; the treasure, pearl, net and scribe belong to the indoor portion. The short form ends with the purchase of the pearl; the long form alone reaches the shore, the separation and the householder’s new and old. |  |  |  |
-| **Second Reading** | Romans 8:28–30 | Written from Corinth, or its port Cenchreae, to believers at Rome | About AD 56–58 |
-| Authorship by Paul is undisputed; Tertius names himself as the scribe at 16:22. The Roman congregations included Jewish and gentile believers whom Paul had not yet met. These verses stand inside a long argument that runs from present suffering to the assurance that nothing separates from God’s love; that frame is not proclaimed with them. |  |  |  |
+<table style="width:87%;">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 34%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>First Reading</strong></td>
+<td style="text-align: left;">1 Kings 3:5, 7–12</td>
+<td style="text-align: left;">Written: Judah, or Babylonia during the exile; place unnamed by the book</td>
+<td style="text-align: left;">Final form commonly placed in the sixth century BC</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Narrated event</em></td>
+<td style="text-align: left;">The dream at Gibeon</td>
+<td style="text-align: left;">The high place at Gibeon, about ten km north-west of Jerusalem</td>
+<td style="text-align: left;">Early in Solomon’s reign, conventionally about 970–960 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The book names no author. Jewish tradition credits Jeremiah; modern accounts generally place Kings within a longer Deuteronomistic history reaching its present shape in or after the exile, with earlier court and annalistic material behind it. Neither reconstruction is a premise here. The audience of the finished book is a people who have lost the monarchy and are asked to judge it. Verse 6, Solomon’s recital of God’s mercy to David, falls inside the appointed span but is not proclaimed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Entrance Antiphon <em>(adaptation)</em></strong></td>
+<td style="text-align: left;"><em>Cf.</em> Ps 67:6–7, 36</td>
+<td style="text-align: left;">Israel; a sanctuary and procession setting is internal to the psalm</td>
+<td style="text-align: left;">Uncertain; the psalm is widely judged archaic in parts</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The received heading assigns the psalm to David; modern study treats it as one of the most textually difficult in the Psalter and does not settle its date. The Missal splices the end of v. 6, the opening of v. 7, and the closing v. 36, and marks the result <em>Cf.</em> It is therefore an adaptation, not a proclamation of the psalm.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Communion Antiphon A <em>(alternative)</em></strong></td>
+<td style="text-align: left;">Ps 102:2</td>
+<td style="text-align: left;">Israel; no locale is named in the psalm</td>
+<td style="text-align: left;">Uncertain; postexilic language is often noted</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The received heading assigns the psalm to David. The antiphon quotes the opening summons to bless and not to forget, without the psalm’s later catalogue of benefits. Selection of this antiphon rather than the alternative is a local decision that this guide does not resolve.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Responsorial Psalm</strong></td>
+<td style="text-align: left;">Ps 119:57, 72, 76–77, 127–128, 129–130; response <em>Cf.</em> Ps 119:97a</td>
+<td style="text-align: left;">Israel; no narrative setting</td>
+<td style="text-align: left;">Uncertain; a postexilic Torah piety is commonly proposed</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Psalm 119 is anonymous and alphabetic: twenty-two stanzas of eight verses, each stanza’s verses beginning with the same Hebrew letter. The appointed verses are drawn from six stanzas and the refrain from a seventh, so the sung text is a liturgical selection and not a continuous biblical pericope. Its horizon is Israel’s delight in <em>torah</em>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Communion Antiphon B <em>(alternative)</em></strong></td>
+<td style="text-align: left;">Matthew 5:7–8</td>
+<td style="text-align: left;">Written: eastern Mediterranean, Antioch often proposed and unproved</td>
+<td style="text-align: left;">Composed after AD 70; often placed about AD 80–90</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Narrated event</em></td>
+<td style="text-align: left;">Two of the Beatitudes</td>
+<td style="text-align: left;">A mountainside in Galilee, before a crowd and the disciples</td>
+<td style="text-align: left;">Within the Galilean ministry</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Ancient tradition, reported by Papias through Eusebius, names Matthew the apostle and a Semitic-language original; the canonical Greek text’s relation to that report is disputed. The two beatitudes are adjacent but distinct sayings, and the antiphon quotes them without their surrounding series.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gospel Acclamation <em>(adaptation)</em></strong></td>
+<td style="text-align: left;"><em>Cf.</em> Matthew 11:25</td>
+<td style="text-align: left;">Same written setting as above</td>
+<td style="text-align: left;">Same as above</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Narrated event</em></td>
+<td style="text-align: left;">Jesus’s thanksgiving to the Father</td>
+<td style="text-align: left;">Galilee, after the woes on the unrepentant towns</td>
+<td style="text-align: left;">Within the Galilean ministry</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The acclamation abbreviates and adapts the verse; it does not proclaim it whole, and Matthew 11 is a distinct scene from Matthew 13. The Latin of this verse and of the appointed Ps 118:130 share the word <em>parvuli</em>, the little ones to whom understanding is given.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gospel <em>(long and short forms)</em></strong></td>
+<td style="text-align: left;">Matthew 13:44–52; short form 13:44–46</td>
+<td style="text-align: left;">Same written setting as above</td>
+<td style="text-align: left;">Same as above</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Narrated event</em></td>
+<td style="text-align: left;">Close of the parable discourse</td>
+<td style="text-align: left;">By the Sea of Galilee, then indoors with the disciples</td>
+<td style="text-align: left;">Within the Galilean ministry</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Matthew’s third discourse begins in a boat before crowds and continues in a house with the disciples alone; the treasure, pearl, net and scribe belong to the indoor portion. The short form ends with the purchase of the pearl; the long form alone reaches the shore, the separation and the householder’s new and old.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Second Reading</strong></td>
+<td style="text-align: left;">Romans 8:28–30</td>
+<td style="text-align: left;">Written from Corinth, or its port Cenchreae, to believers at Rome</td>
+<td style="text-align: left;">About AD 56–58</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Authorship by Paul is undisputed; Tertius names himself as the scribe at 16:22. The Roman congregations included Jewish and gentile believers whom Paul had not yet met. These verses stand inside a long argument that runs from present suffering to the assurance that nothing separates from God’s love; that frame is not proclaimed with them.</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -428,22 +582,73 @@ Two apparent contacts do *not* hold. The Collect’s ruler-and-guide language is
 >
 > The approved U.S. Missal and Lectionary English is protected and is not reproduced. Below stands every appointed unit in order: lawful Latin incipits, public-domain biblical loci, exact alternatives, and descriptions identifying the appointed matter without replacing the liturgical books.
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:------------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | *Cf.* Ps 67:6–7, 36 (modern 68); *Deus in loco sancto suo*; God provides a dwelling and strength. |
-| Collect | *Protéctor in te sperántium, Deus*; protection and guidance in using passing goods while adhering to those that endure. |
-| **Liturgy of the Word** |  |
-| First Reading | 1 Kings 3:5, 7–12; Solomon asks for a hearing heart able to judge the entrusted people and distinguish good from evil. |
-| Responsorial Psalm | Ps 119:57, 72, 76–77, 127–130; response *cf.* v. 97a; instruction is loved above wealth and asked to give light. |
-| Second Reading | Romans 8:28–30; divine purpose amid groaning tends toward conformity to the firstborn Son. |
-| Gospel Acclamation | *Cf.* Matthew 11:25; the Father’s revelation is received by the little ones. |
-| Gospel | Long: Matthew 13:44–52, treasure, pearl, net, sorting, and the instructed scribe. Short: Matthew 13:44–46, treasure and pearl only. |
-| **Liturgy of the Eucharist** |  |
-| Prayer over the Offerings | *Súscipe, quǽsumus, Dómine, múnera*; bounty first received is offered back, with present sanctification sought. |
-| Communion Antiphon A | Ps 102:2 (modern 103); bless the Lord and do not forget his benefits. |
-| Communion Antiphon B | Matthew 5:7–8; mercy and purity of heart retain their distinct promises. |
-| Prayer after Communion | *Súmpsimus, Dómine, divínum sacraméntum*; the perpetual memorial of the Passion is ordered toward saving fruit. |
+<table style="width:93%;">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance Antiphon</td>
+<td style="text-align: left;"><em>Cf.</em> Ps 67:6–7, 36 (modern 68); <em>Deus in loco sancto suo</em>; God provides a dwelling and strength.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Protéctor in te sperántium, Deus</em>; protection and guidance in using passing goods while adhering to those that endure.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">1 Kings 3:5, 7–12; Solomon asks for a hearing heart able to judge the entrusted people and distinguish good from evil.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps 119:57, 72, 76–77, 127–130; response <em>cf.</em> v. 97a; instruction is loved above wealth and asked to give light.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Romans 8:28–30; divine purpose amid groaning tends toward conformity to the firstborn Son.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel Acclamation</td>
+<td style="text-align: left;"><em>Cf.</em> Matthew 11:25; the Father’s revelation is received by the little ones.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Long: Matthew 13:44–52, treasure, pearl, net, sorting, and the instructed scribe. Short: Matthew 13:44–46, treasure and pearl only.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over the Offerings</td>
+<td style="text-align: left;"><em>Súscipe, quǽsumus, Dómine, múnera</em>; bounty first received is offered back, with present sanctification sought.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon A</td>
+<td style="text-align: left;">Ps 102:2 (modern 103); bless the Lord and do not forget his benefits.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon B</td>
+<td style="text-align: left;">Matthew 5:7–8; mercy and purity of heart retain their distinct promises.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Súmpsimus, Dómine, divínum sacraméntum</em>; the perpetual memorial of the Passion is ordered toward saving fruit.</td>
+</tr>
+</tbody>
+</table>
 
 ## Source-Grounded Synthesis Across the Propers
 

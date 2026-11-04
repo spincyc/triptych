@@ -30,23 +30,93 @@
 
 ## Scriptural Date and Location
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:----------|:-------------|:---------------------|:--------------|
-| Gradual | Ps. 27:7, 1 Vulg. (modern 28:7, 1) | David fleeing Saul, away from the tabernacle | Traditional: before David’s accession, before 1055 BC (older chronology) |
-| The title names David. Theodoret places him fleeing Saul and away from the tabernacle; exact site and first audience are unknown, while Israel receives his prayer. Aquinas reads David and Christ. The older accession bounds this horizon; NABRE leaves the poem’s origin open. *Sources: Theodoret, PG 80:1057–1060; Aquinas, *Super Ps.* 27; Catholic Encyclopedia; NABRE Ps. 28.* |  |  |  |
-| Offertory | Ps. 29:2–3 Vulg. (modern 30:2–3) | Jerusalem: David’s palace or Araunah’s future-Temple site | Traditional: after c. 1047 or late in the reign before 1015 BC |
-| Aquinas and Bellarmine give the palace; Patrizi the census-plague altar. The dates derive from the older reign; the first audience is unknown. NABRE Ps. 30:1 records a later Temple-dedication adaptation, with its 164 BC horizon in 1 Maccabees. *Sources: 2 Sam. 5:11; 24:18–25; Aquinas, *Super Ps.* 29; Patrizi, pp. 115–116; 1 Macc. 4:52–59; NABRE Ps. 30.* |  |  |  |
-| Introit | Ps. 67:2, 6–7, 36 Vulg. (modern 68:2, 6–7, 36) | Traditional Davidic procession: the Ark brought to Zion | Traditional: soon after c. 1047 BC |
-| Haydock, citing Houbigant, joins the Davidic title to the Ark’s procession; Bellarmine notes the Mosaic echo. Israel before the Ark is the received audience. The date derives from David’s Jerusalem reign; NABRE does not securely date the poem. *Sources: Num. 10:35; 1 Chr. 15–16; Haydock at Ps. 67:1; Bellarmine; Catholic Encyclopedia; NABRE Ps. 68.* |  |  |  |
-| Alleluia | Ps. 80:2–3 Vulg. (modern 81:2–3) | Israel’s sanctuary; Asaph before the Ark in Jerusalem | Traditional: Asaph, or David for Asaph, c. 1047–1015 BC |
-| Bossuet records Jerome’s attribution to Asaph and Ambrose’s to David for Asaph to sing. Chronicles places Asaph before the Ark; Israel’s festival assembly receives the song, though the feast is debated. NABRE secondarily allows later guild transmission. *Sources: 1 Chr. 15–16; Bossuet on Asaphic psalms; NABRE Ps. 81.* |  |  |  |
-| Communion | Prov. 3:9–10 | Royal, parental wisdom in Israel | Traditional: tenth century BC (older c. 1015–975) |
-| Proverbs 1:1 associates the collection with Solomon; chapters 1–9 form a son in trust and the neighbor’s due. The first addressee is unknown; Israel receives the wisdom. Later collections are named, and NABRE places final gathering postexilically or early in the Second-Temple period. *Sources: Prov. 1:1; 3:1–35; 25:1; Catholic Encyclopedia; NABRE introduction.* |  |  |  |
-| Gospel | Mark 7:31–37 | Rome; Mark as Peter’s interpreter for Roman Christians | Traditional: AD 50–67; PBC: before AD 70 |
-| *Narrated event* | Mark 7:31–37 (context 7:24–8:10) | Tyre–Sidon–Sea of Galilee–Decapolis; town unknown | Maas: May–Sept. AD 28; a Lapide: about May AD 33 |
-| Papias transmits Mark’s Petrine relation; Clement, Irenaeus, and Jerome supply Rome. Maas and a Lapide give incompatible event harmonies; Mark names Jesus, the afflicted man, and unnamed bearers. NABRE dates composition around AD 70: Rome shortly before, or Syria shortly after. *Sources: Eusebius, *HE* III.39.15; VI.14.6–7; Irenaeus III.1.1; Jerome, *Vir. ill.* 8; Maas; a Lapide; PBC 1912; NABRE.* |  |  |  |
-| Epistle | 1 Cor. 15:1–10 | St. Paul at Ephesus, to the Church at Corinth | Traditional: about Easter AD 57 |
-| Paul writes during his Ephesian mission to Corinth and recalls received Resurrection tradition in vv. 3–7; NABRE dates the letter about AD 56. The lesson stops within v. 10 after grace was not void, before labor and grace “with me.” *Sources: Acts 18–19; 1 Cor. 15:1–11; Catholic Encyclopedia; NABRE introduction and notes.* |  |  |  |
+<table style="width:83%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 18%" />
+<col style="width: 31%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Proper</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Gradual</td>
+<td style="text-align: left;">Ps. 27:7, 1 Vulg. (modern 28:7, 1)</td>
+<td style="text-align: left;">David fleeing Saul, away from the tabernacle</td>
+<td style="text-align: left;">Traditional: before David’s accession, before 1055 BC (older chronology)</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title names David. Theodoret places him fleeing Saul and away from the tabernacle; exact site and first audience are unknown, while Israel receives his prayer. Aquinas reads David and Christ. The older accession bounds this horizon; NABRE leaves the poem’s origin open. <em>Sources: Theodoret, PG 80:1057–1060; Aquinas, <em>Super Ps.</em> 27; Catholic Encyclopedia; NABRE Ps. 28.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Offertory</td>
+<td style="text-align: left;">Ps. 29:2–3 Vulg. (modern 30:2–3)</td>
+<td style="text-align: left;">Jerusalem: David’s palace or Araunah’s future-Temple site</td>
+<td style="text-align: left;">Traditional: after c. 1047 or late in the reign before 1015 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Aquinas and Bellarmine give the palace; Patrizi the census-plague altar. The dates derive from the older reign; the first audience is unknown. NABRE Ps. 30:1 records a later Temple-dedication adaptation, with its 164 BC horizon in 1 Maccabees. <em>Sources: 2 Sam. 5:11; 24:18–25; Aquinas, <em>Super Ps.</em> 29; Patrizi, pp. 115–116; 1 Macc. 4:52–59; NABRE Ps. 30.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Introit</td>
+<td style="text-align: left;">Ps. 67:2, 6–7, 36 Vulg. (modern 68:2, 6–7, 36)</td>
+<td style="text-align: left;">Traditional Davidic procession: the Ark brought to Zion</td>
+<td style="text-align: left;">Traditional: soon after c. 1047 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Haydock, citing Houbigant, joins the Davidic title to the Ark’s procession; Bellarmine notes the Mosaic echo. Israel before the Ark is the received audience. The date derives from David’s Jerusalem reign; NABRE does not securely date the poem. <em>Sources: Num. 10:35; 1 Chr. 15–16; Haydock at Ps. 67:1; Bellarmine; Catholic Encyclopedia; NABRE Ps. 68.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Alleluia</td>
+<td style="text-align: left;">Ps. 80:2–3 Vulg. (modern 81:2–3)</td>
+<td style="text-align: left;">Israel’s sanctuary; Asaph before the Ark in Jerusalem</td>
+<td style="text-align: left;">Traditional: Asaph, or David for Asaph, c. 1047–1015 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Bossuet records Jerome’s attribution to Asaph and Ambrose’s to David for Asaph to sing. Chronicles places Asaph before the Ark; Israel’s festival assembly receives the song, though the feast is debated. NABRE secondarily allows later guild transmission. <em>Sources: 1 Chr. 15–16; Bossuet on Asaphic psalms; NABRE Ps. 81.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion</td>
+<td style="text-align: left;">Prov. 3:9–10</td>
+<td style="text-align: left;">Royal, parental wisdom in Israel</td>
+<td style="text-align: left;">Traditional: tenth century BC (older c. 1015–975)</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Proverbs 1:1 associates the collection with Solomon; chapters 1–9 form a son in trust and the neighbor’s due. The first addressee is unknown; Israel receives the wisdom. Later collections are named, and NABRE places final gathering postexilically or early in the Second-Temple period. <em>Sources: Prov. 1:1; 3:1–35; 25:1; Catholic Encyclopedia; NABRE introduction.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Mark 7:31–37</td>
+<td style="text-align: left;">Rome; Mark as Peter’s interpreter for Roman Christians</td>
+<td style="text-align: left;">Traditional: AD 50–67; PBC: before AD 70</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Narrated event</em></td>
+<td style="text-align: left;">Mark 7:31–37 (context 7:24–8:10)</td>
+<td style="text-align: left;">Tyre–Sidon–Sea of Galilee–Decapolis; town unknown</td>
+<td style="text-align: left;">Maas: May–Sept. AD 28; a Lapide: about May AD 33</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Papias transmits Mark’s Petrine relation; Clement, Irenaeus, and Jerome supply Rome. Maas and a Lapide give incompatible event harmonies; Mark names Jesus, the afflicted man, and unnamed bearers. NABRE dates composition around AD 70: Rome shortly before, or Syria shortly after. <em>Sources: Eusebius, <em>HE</em> III.39.15; VI.14.6–7; Irenaeus III.1.1; Jerome, <em>Vir. ill.</em> 8; Maas; a Lapide; PBC 1912; NABRE.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Epistle</td>
+<td style="text-align: left;">1 Cor. 15:1–10</td>
+<td style="text-align: left;">St. Paul at Ephesus, to the Church at Corinth</td>
+<td style="text-align: left;">Traditional: about Easter AD 57</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Paul writes during his Ephesian mission to Corinth and recalls received Resurrection tradition in vv. 3–7; NABRE dates the letter about AD 56. The lesson stops within v. 10 after grace was not void, before labor and grace “with me.” <em>Sources: Acts 18–19; 1 Cor. 15:1–11; Catholic Encyclopedia; NABRE introduction and notes.</em></td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 

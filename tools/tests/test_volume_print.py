@@ -20,7 +20,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from tools.tests.test_web_print_controller import HARNESS, browser
+from tools.tests.test_web_print_controller import HARNESS, browser, drive as shared_drive, idle_arrivals
 
 ROOT = Path(__file__).resolve().parents[2]
 SCRATCH = ROOT / ".scratch/browser-print/volume"
@@ -66,6 +66,10 @@ def drive(plan):
                               "join(ROOT, '.scratch/browser-print/volume/chrome-')")
     harness = harness.replace("JSON.parse(process.argv[3])",
                               "JSON.parse(await readFile(process.argv[3], 'utf8'))")
+    # The complete real volume exceeds a pipe buffer. Flush its result before
+    # the inherited harness exits, so a successful print cannot truncate JSON.
+    harness = harness.replace("process.stdout.write(JSON.stringify(seen));",
+                              "await new Promise((resolve, reject) => process.stdout.write(JSON.stringify(seen), error => error ? reject(error) : resolve()));")
     harness = harness.replace("} else if (act.do === 'eval') {", """} else if (act.do === 'media') {
         await cdp.send('Emulation.setEmulatedMedia', {media: act.media});
       } else if (act.do === 'eval') {""")
@@ -144,7 +148,24 @@ def plan_for(volume, responses):
 
 
 class VolumePrintTests(unittest.TestCase):
-    def test_print_query_uses_the_same_complete_guarded_path_without_a_second_click(self):
+    def test_navigation_query_reload_and_background_wait_for_print_action(self):
+        volume,responses=fixture()
+        route=f"/reading-plans/{volume}.html"
+        responses[route[1:]]=responses[route[1:]].replace('<script src="../shared/print-volume.js">','<script>'+PRINT_STUB+'</script><script src="../shared/print-volume.js">')
+        responses['shared/print-volume.js']=CONTROLLER.read_text()
+        idle="({calls:printCalls,ready:document.querySelector('[data-print-volume]').dataset.printVolumeReady,parts:document.querySelector('[data-print-volume-periods]').children.length,fetches:performance.getEntriesByType('resource').filter(n=>n.initiatorType==='fetch').length})"
+        loaded=wait("document.readyState==='complete' && document.querySelector('[data-print-volume]').dataset.printVolumeReady")
+        plan={"responses":responses,"acts":[*idle_arrivals(route,loaded,idle),
+            {'do':'click','selector':'[data-print-volume-start]'},
+            wait("!document.querySelector('[data-print-volume-start]').disabled"),
+            action("({calls:printCalls,parts:document.querySelector('[data-print-volume-periods]').children.length})",'printed')]}
+        seen=shared_drive(plan)
+        for arrival in ['normal','query','reload','background']:
+            self.assertEqual(seen[arrival],{'calls':0,'ready':'false','parts':0,'fetches':0},seen)
+        self.assertTrue(seen['hidden'],seen)
+        self.assertEqual(seen['printed'],{'calls':1,'parts':12},seen)
+
+    def test_print_query_uses_the_complete_guarded_path_after_an_explicit_click(self):
         for missing in [False, True]:
             with self.subTest(missing=missing):
                 volume,responses=fixture()
@@ -153,6 +174,8 @@ class VolumePrintTests(unittest.TestCase):
                 if missing:del responses[f"reading-plans/{volume}/period-p07.html"]
                 plan={"responses":responses,"acts":[
                     {"do":"navigate","url":f"/reading-plans/{volume}.html?print=1"},
+                    wait("document.readyState==='complete'"),
+                    action("document.querySelector('[data-print-volume-start]').click()"),
                     wait("window.printCalls===1 || document.querySelector('[data-print-volume-status]')?.textContent.startsWith('Print unavailable:')"),
                     action("({calls:printCalls,snapshot:window.printSnapshot,ready:document.querySelector('[data-print-volume]').dataset.printVolumeReady,parts:document.querySelector('[data-print-volume-periods]').children.length})","result")
                 ]}

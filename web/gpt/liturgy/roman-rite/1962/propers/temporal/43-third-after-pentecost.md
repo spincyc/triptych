@@ -32,21 +32,86 @@
 
 *Canonical order governs; proper rows give traditional composition data under Location and Date, Luke’s additional row gives the narrated setting, spanning rows distinguish inherited attribution from historical judgment, and Psalm numbers follow the Vulgate with common modern numbers in parentheses.*
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:-----------|:-------------|:------------------------|:-----------|
-| **Alleluia** | Ps. 7:12 | Judah / Israel; site unrecorded | c. 1010 BC |
-| The Greek and Latin title traditionally makes this David’s lament concerning Cush the Benjaminite; older Catholic scholarship places it during Saul’s persecution, but neither title nor Scripture identifies the episode or writing site. Pre-royal David addresses God and Israel’s worshippers, placing threatened innocence beneath the Judge who searches hearts and peoples. Modern author, date, place, and Cush’s identity remain uncertain (Ps. 7 and notes, *NABRE*; *Catholic Encyclopedia*, “Psalms”). |  |  |  |
-| **Offertory** | Ps. 9:11–13 | Israel; site unrecorded | c. 1000 BC |
-| The title traditionally attributes the hymn to David but names no life episode or site; Israel at worship is its inherited audience. Personal victory opens into God’s judgment of nations, refuge for the poor, and praise in Zion, placing Davidic kingship under universal justice. Greek and Latin join Psalms 9–10 as one acrostic; modern authorship, date, and place remain unknown (Ps. 9 and notes, *NABRE*). |  |  |  |
-| **Introit** | Ps. 24:1–2, 16, 18 (modern 25:1–2, 16, 18) | Israel; site unrecorded | c. 1000 BC |
-| The title traditionally attributes this acrostic lament to David but records neither site nor episode, so his stage of life cannot responsibly be recovered. He addresses God before worshipping Israel, joining trust, guidance, forgiveness, loneliness, and affliction before the psalm widens to Israel’s redemption. Modern scholarship identifies the form but cannot establish author, date, or place (Ps. 25 and notes, *NABRE*). |  |  |  |
-| **Gradual** | Ps. 54:17, 19, 23 (modern 55:17, 19, 23) | Israel; site unrecorded | c. 1000 BC |
-| The superscription traditionally calls this maskil David’s but supplies no episode or site; his precise life stage is therefore unknown. A betrayed worshipper amid civic violence prays throughout the day and entrusts his burden to God, turning personal crisis into Israel’s durable prayer and language later echoed by 1 Peter 5:7. Modern judgment cannot identify the betrayer, city, author, date, or place (Ps. 55 and notes, *NABRE*). |  |  |  |
-| **Gospel; Communion** | Luke 15:1–10 | Achaia (present-day Greece) | c. AD 60 |
-| *Narrated event* | Luke 9:51; 13:22; 15:1–10 | Journey toward Jerusalem; exact site unrecorded | Final ministry, c. AD 28–29 |
-| Ancient tradition identifies St. Luke, Antiochene physician and Paul’s companion. The row joins an ancient tradition that he wrote in Achaia for Theophilus and other catechized Christians to an early chronology placing the Gospel before Acts, after years in apostolic mission; the modern majority dates it c. AD 80–90 and leaves its city unknown. Luke supplies the Jerusalem-journey frame but no town: there Jesus answers sinners who approach and leaders who murmur by revealing divine search, repentance, and heaven’s joy within Israel’s salvation extended to the nations (Luke introduction and 15, *NABRE*; *Catholic Encyclopedia*, “Gospel of Saint Luke” and “Chronology”). |  |  |  |
-| **Epistle** | 1 Pet. 5:6–11 | Rome (present-day Italy) | c. AD 63–64 |
-| Tradition identifies St. Peter writing through Silvanus from Rome, called Babylon in 5:13, near the end of his apostolic life and before Nero’s persecution and Peter’s martyrdom. He addresses largely Gentile churches across five provinces of Asia Minor, joining humility, God’s care, vigilance, worldwide solidarity in suffering, and promised glory. Modern proposals range from Petrine authorship to a Roman Petrine disciple or circle c. AD 70–90 (1 Peter introduction and 5, *NABRE*; *Catholic Encyclopedia*, “Epistles of Saint Peter”). |  |  |  |
+<table style="width:84%;">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Proper</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Alleluia</strong></td>
+<td style="text-align: left;">Ps. 7:12</td>
+<td style="text-align: left;">Judah / Israel; site unrecorded</td>
+<td style="text-align: left;">c. 1010 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The Greek and Latin title traditionally makes this David’s lament concerning Cush the Benjaminite; older Catholic scholarship places it during Saul’s persecution, but neither title nor Scripture identifies the episode or writing site. Pre-royal David addresses God and Israel’s worshippers, placing threatened innocence beneath the Judge who searches hearts and peoples. Modern author, date, place, and Cush’s identity remain uncertain (Ps. 7 and notes, <em>NABRE</em>; <em>Catholic Encyclopedia</em>, “Psalms”).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Offertory</strong></td>
+<td style="text-align: left;">Ps. 9:11–13</td>
+<td style="text-align: left;">Israel; site unrecorded</td>
+<td style="text-align: left;">c. 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title traditionally attributes the hymn to David but names no life episode or site; Israel at worship is its inherited audience. Personal victory opens into God’s judgment of nations, refuge for the poor, and praise in Zion, placing Davidic kingship under universal justice. Greek and Latin join Psalms 9–10 as one acrostic; modern authorship, date, and place remain unknown (Ps. 9 and notes, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Introit</strong></td>
+<td style="text-align: left;">Ps. 24:1–2, 16, 18 (modern 25:1–2, 16, 18)</td>
+<td style="text-align: left;">Israel; site unrecorded</td>
+<td style="text-align: left;">c. 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title traditionally attributes this acrostic lament to David but records neither site nor episode, so his stage of life cannot responsibly be recovered. He addresses God before worshipping Israel, joining trust, guidance, forgiveness, loneliness, and affliction before the psalm widens to Israel’s redemption. Modern scholarship identifies the form but cannot establish author, date, or place (Ps. 25 and notes, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gradual</strong></td>
+<td style="text-align: left;">Ps. 54:17, 19, 23 (modern 55:17, 19, 23)</td>
+<td style="text-align: left;">Israel; site unrecorded</td>
+<td style="text-align: left;">c. 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The superscription traditionally calls this maskil David’s but supplies no episode or site; his precise life stage is therefore unknown. A betrayed worshipper amid civic violence prays throughout the day and entrusts his burden to God, turning personal crisis into Israel’s durable prayer and language later echoed by 1 Peter 5:7. Modern judgment cannot identify the betrayer, city, author, date, or place (Ps. 55 and notes, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gospel; Communion</strong></td>
+<td style="text-align: left;">Luke 15:<br />
+Gospel: 1–10;<br />
+Communion: 10</td>
+<td style="text-align: left;">Achaia (present-day Greece)</td>
+<td style="text-align: left;">c. AD 60</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Narrated event</em></td>
+<td style="text-align: left;">Luke 9:51; 13:22; 15:1–10</td>
+<td style="text-align: left;">Journey toward Jerusalem; exact site unrecorded</td>
+<td style="text-align: left;">Final ministry, c. AD 28–29</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Ancient tradition identifies St. Luke, Antiochene physician and Paul’s companion. The row joins an ancient tradition that he wrote in Achaia for Theophilus and other catechized Christians to an early chronology placing the Gospel before Acts, after years in apostolic mission; the modern majority dates it c. AD 80–90 and leaves its city unknown. Luke supplies the Jerusalem-journey frame but no town: there Jesus answers sinners who approach and leaders who murmur by revealing divine search, repentance, and heaven’s joy within Israel’s salvation extended to the nations (Luke introduction and 15, <em>NABRE</em>; <em>Catholic Encyclopedia</em>, “Gospel of Saint Luke” and “Chronology”).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Epistle</strong></td>
+<td style="text-align: left;">1 Pet. 5:6–11</td>
+<td style="text-align: left;">Rome (present-day Italy)</td>
+<td style="text-align: left;">c. AD 63–64</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Tradition identifies St. Peter writing through Silvanus from Rome, called Babylon in 5:13, near the end of his apostolic life and before Nero’s persecution and Peter’s martyrdom. He addresses largely Gentile churches across five provinces of Asia Minor, joining humility, God’s care, vigilance, worldwide solidarity in suffering, and promised glory. Modern proposals range from Petrine authorship to a Roman Petrine disciple or circle c. AD 70–90 (1 Peter introduction and 5, <em>NABRE</em>; <em>Catholic Encyclopedia</em>, “Epistles of Saint Peter”).</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement
 
@@ -337,6 +402,6 @@ The Communion repeats Luke 15:10 rather than choosing an unrelated sacramental v
 
 - Septuagint/Vulgate titles and chapter context: [Psalm 7](https://www.newadvent.org/bible/psa007.htm), [Psalm 9/10](https://www.newadvent.org/bible/psa009.htm), [Psalm 24 (modern 25)](https://www.newadvent.org/bible/psa024.htm), [Psalm 54 (modern 55)](https://www.newadvent.org/bible/psa054.htm), [Luke 15](https://www.newadvent.org/bible/luk015.htm), and [1 Peter 5](https://www.newadvent.org/bible/1pe005.htm); contextual transcription aid, consulted 2026-07-10.
 
-**Last revised (UTC):** 2026-09-24T18:45:21Z
+**Last revised (UTC):** 2026-11-04T03:09:25Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

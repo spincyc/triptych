@@ -109,6 +109,44 @@ def list_items(rendered: str) -> list[tuple[int, str]]:
     return [(depth, " ".join(text.split())) for depth, text in parser.items]
 
 
+def table_rows(markdown: str) -> list[list[tuple[int, str, set[str]]]]:
+    """Cells as the site renders them: declared span, text, and text formats."""
+    class Tables(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__()
+            self.rows = []
+            self.row = None
+            self.cell = None
+
+        def handle_starttag(self, tag: str, attributes: list) -> None:
+            if tag == "tr":
+                self.row = []
+            elif tag in {"th", "td"}:
+                self.cell = [int(dict(attributes).get("colspan", "1")), [], set()]
+            elif self.cell is not None:
+                if tag in {"strong", "em", "small", "sup"}:
+                    self.cell[2].add(tag)
+                elif tag == "br":
+                    self.cell[1].append(" ")
+
+        def handle_endtag(self, tag: str) -> None:
+            if tag in {"th", "td"} and self.cell is not None:
+                span, text, formats = self.cell
+                self.row.append((span, " ".join("".join(text).split()), formats))
+                self.cell = None
+            elif tag == "tr" and self.row is not None:
+                self.rows.append(self.row)
+                self.row = None
+
+        def handle_data(self, text: str) -> None:
+            if self.cell is not None:
+                self.cell[1].append(text)
+
+    parser = Tables()
+    parser.feed(DRIVER.render_markdown(markdown, ROOT))
+    return parser.rows
+
+
 @unittest.skipUnless(HAS_PANDOC, "pandoc is not installed")
 class WebEditionConversionTests(unittest.TestCase):
     def convert(
@@ -1069,7 +1107,8 @@ class WebEditionConversionTests(unittest.TestCase):
             (PC54, ("A.M. 2944 (Haydock edition reporting Ussher)",)),
         )
         for document, values in fixtures:
-            projection = chronology.annotations(chronology.dossier(document, provider="gpt"),
+            projection = chronology.annotations(chronology.dossier(document, provider="gpt")._replace(
+                                                    presentation=chronology.ORIENTATION_V1),
                                                 presentation="orientation-v1")
             definitions = chronology.render_annotations_tex(projection)
             table = (r"\begin{tabular}{lll}" + "\n"
@@ -1086,6 +1125,24 @@ class WebEditionConversionTests(unittest.TestCase):
                         self.assertIn(value, markdown)
                     self.assertNotIn("triptychchronologyorientation@", markdown)
                     self.assertNotIn("catholic-traditional-v1", markdown)
+
+    def test_complete_shared_chronology_table_preserves_starred_rows_through_pandoc(self) -> None:
+        import _proper_chronology as chronology
+        document = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
+        projection = chronology.annotations(chronology.dossier(document, provider="claude"))
+        definitions = chronology.render_annotations_tex(projection)
+        self.assertIn(r"\\*[.1em]", definitions)
+        markdown = self.convert_shared_dossier(
+            r"\subsection{Prayer}\label{proper-collect} Prayer." + "\n"
+            + definitions + chronology.render_orientation_table(projection))
+        for phrase in ("story at Susa", "writing in Persia conjectured", "story in Hus",
+                       "Capharnaum by narrative continuity", "Antioch suggested",
+                       "Rome or Caesarea", "480th year after the Exodus",
+                       "440th year after the Exodus", "Catholic critical comparison"):
+            self.assertIn(phrase, markdown)
+        self.assertNotIn("*[.1em]", markdown)
+        self.assertNotIn("chronologyorientationrow", markdown)
+        self.assertEqual(markdown.count("Gospel: Matt. 18:23–35"), 1)
 
     def test_generated_chronology_with_tex_quotation_marks_survives(self) -> None:
         markdown = self.convert(
@@ -1290,12 +1347,10 @@ class WebEditionConversionTests(unittest.TestCase):
         site = runpy.run_path(str(ROOT / "tools/public-alpha"))
         rendered = site["render_page"]("web/test/studies/subject.md", markdown, "subject.html", True, {})
         self.assertIn("</table>\n<p><em>Narrated event: none recorded.</em></p>", rendered)
-        # A leaf that defines its own dossier keeps the padded-row handling.
+        # A leaf's own explicit multicolumn remains a semantic table span.
         legacy = self.convert_shared_dossier(body, shared=False)
-        self.assertRegex(
-            legacy, r"(?m)^\| A note the print sets across all four columns\. +\|(?: +\|){3}$"
-        )
-        self.assertEqual(re.sub(r" {2,}", " ", legacy).count(header), 1)
+        self.assertIn([(4, "A note the print sets across all four columns.", set())], table_rows(legacy))
+        self.assertEqual(legacy.count("<table"), 1)
 
     def test_commented_out_dossier_notes_never_reach_the_output(self) -> None:
         table = (
@@ -1361,7 +1416,7 @@ class WebEditionConversionTests(unittest.TestCase):
         )
         self.assertNotIn("2-4", markdown)
         self.assertNotIn("<span>", markdown)
-        self.assertIn("| *Narrated event* |", markdown)
+        self.assertIn((1, "Narrated event", {"em"}), [row[0] for row in table_rows(markdown)])
         self.assertIn("Wilderness of Ziph", markdown)
         self.assertIn("The superscription assigns the psalm to David.", markdown)
 
@@ -1403,15 +1458,14 @@ class WebEditionConversionTests(unittest.TestCase):
             r"\dossiernote{Undisputed Pauline authorship.}" "\n"
             "\\end{dossiertable}"
         )
-        self.assertNotIn("<table", markdown)
         self.assertNotIn("<strong></strong>", markdown)
         self.assertNotIn(DRIVER.SPAN_CELL_MARK, markdown)
-        self.assertRegex(markdown, r"(?m)^\| \*\*Textual unit / alternative\*\* +\|")
-        self.assertRegex(markdown, r"(?m)^\| \*\*Entrance Antiphon\*\* +\| Psalm 54:6 +\|")
-        self.assertRegex(markdown, r"(?m)^\| \*\*Second Reading\*\* +\| Romans 8:26")
-        self.assertRegex(markdown, r"(?m)^\| \*Narrated event\* +\| 1 Samuel 23:19 +\|")
-        self.assertRegex(markdown, r"(?m)^\| The superscription assigns the psalm to David\. +\|")
-        self.assertRegex(markdown, r"(?m)^\| Undisputed Pauline authorship\. +\|")
+        rows = table_rows(markdown)
+        for text in ("Textual unit / alternative", "Entrance Antiphon", "Second Reading"):
+            self.assertIn((1, text, {"strong"}), [row[0] for row in rows])
+        self.assertIn((1, "Narrated event", {"em"}), [row[0] for row in rows])
+        for text in ("The superscription assigns the psalm to David.", "Undisputed Pauline authorship."):
+            self.assertIn([(4, text, set())], rows)
 
     def test_blank_line_after_the_foot_does_not_unbold_a_bold_column(self) -> None:
         # The parish ledgers leave a blank line after \endfoot; pandoc read it
@@ -1529,20 +1583,20 @@ class WebEditionConversionTests(unittest.TestCase):
         # spec declared was lost; it is carried into the span, and a span in a
         # bold column still takes only its own face.
         for column, span, expected in (
-            ("p{0.3\\linewidth}", r"\multicolumn{2}{>{\bfseries}l}{Span heading}", "**Span heading**"),
+            ("p{0.3\\linewidth}", r"\multicolumn{2}{>{\bfseries}l}{Span heading}", {"strong"}),
             ("p{0.3\\linewidth}", r"\multicolumn{2}{>{\itshape\raggedright\arraybackslash}l}{Span heading}",
-             "*Span heading*"),
-            ("p{0.3\\linewidth}", r"\multicolumn{2}{l}{Span heading}", "Span heading"),
-            (">{\\bfseries}p{0.3\\linewidth}", r"\multicolumn{2}{l}{Span heading}", "Span heading"),
+             {"em"}),
+            ("p{0.3\\linewidth}", r"\multicolumn{2}{l}{Span heading}", set()),
+            (">{\\bfseries}p{0.3\\linewidth}", r"\multicolumn{2}{l}{Span heading}", set()),
             (">{\\bfseries}p{0.3\\linewidth}", r"\multicolumn{2}{>{\itshape}l}{Span heading}",
-             "*Span heading*"),
+             {"em"}),
         ):
             with self.subTest(column=column, span=span):
                 markdown = self.convert(
                     "\\begin{longtable}{" + column + "p{0.5\\linewidth}}\n"
                     r"Unit & Text\\" "\n" + span + r"\\" "\n\\end{longtable}"
                 )
-                self.assertRegex(markdown, rf"(?m)^\| {re.escape(expected)} +\| +\|$")
+                self.assertIn([(2, "Span heading", expected)], table_rows(markdown))
 
     TWO_TABLES = (
         "\\begin{longtable}{ll}\n" r"\textbf{Year} & \textbf{Act}\\" "\n\\endfirsthead\n"
@@ -1686,10 +1740,12 @@ class WebEditionConversionTests(unittest.TestCase):
             r"\multicolumn{2}{l}{\textbf{Liturgy of the Word}}\\" "\n"
             "\\end{longtable}"
         )
-        self.assertRegex(markdown, r"(?m)^\| \*\*Offertory\*\* +\| Ps 95:8 +\|$")
-        self.assertRegex(markdown, r"(?m)^\| \*Narrated event\* +\| Sinai +\|$")
-        self.assertRegex(markdown, r"(?m)^\| A note set across both columns\. +\| +\|$")
-        self.assertRegex(markdown, r"(?m)^\| \*\*Liturgy of the Word\*\* +\| +\|$")
+        self.assertEqual(table_rows(markdown), [
+            [(1, "Offertory", {"strong"}), (1, "Ps 95:8", set())],
+            [(1, "Narrated event", {"em"}), (1, "Sinai", set())],
+            [(2, "A note set across both columns.", set())],
+            [(2, "Liturgy of the Word", {"strong"})],
+        ])
 
     def test_span_opening_with_a_declaration_stays_one_plain_cell(self) -> None:
         # The span mark follows the cell's text, so a span that opens with
@@ -1700,8 +1756,54 @@ class WebEditionConversionTests(unittest.TestCase):
             r"\multicolumn{2}{p{0.9\linewidth}}{\raggedright\scriptsize A spanning note.}\\" "\n"
             "\\end{longtable}"
         )
-        self.assertNotIn("<table", markdown)
-        self.assertRegex(markdown, r"(?m)^\| A spanning note\. +\| +\|$")
+        self.assertIn([(2, "A spanning note.", set())], table_rows(markdown))
+
+    def test_source_spans_survive_actual_site_html_without_consuming_later_cells(self) -> None:
+        markdown = self.convert(
+            r"\newcommand{\sharednote}[1]{\multicolumn{4}{l}{#1}\\}" "\n"
+            r"\begin{longtable}{llll}" "\n"
+            r"\multicolumn{2}{l}{First heading} & \multicolumn{2}{l}{Second heading}\\\endhead" "\n"
+            r"Before & \multicolumn{2}{l}{A partial span} & After\\" "\n"
+            r"\sharednote{A full-width note with \textit{its own emphasis}.}" "\n"
+            r"Ordinary & Second & Third & Fourth\\" "\n"
+            r"\end{longtable}"
+        )
+        self.assertEqual(table_rows(markdown), [
+            [(2, "First heading", set()), (2, "Second heading", set())],
+            [(1, "Before", set()), (2, "A partial span", set()), (1, "After", set())],
+            [(4, "A full-width note with its own emphasis.", {"em"})],
+            [(1, "Ordinary", set()), (1, "Second", set()), (1, "Third", set()), (1, "Fourth", set())],
+        ])
+
+    def test_source_span_cannot_overrun_a_nonempty_cell(self) -> None:
+        with self.assertRaisesRegex(DRIVER.ConversionError, "span exceeds table columns"):
+            self.convert(r"\begin{tabular}{ll}\multicolumn{2}{l}{Both} & Must survive\\\end{tabular}")
+
+    def test_source_span_removes_only_empty_formatted_padding(self) -> None:
+        # Pandoc applies the column's bold prefix to padding cells too, as in
+        # the five-column virtues appendix. Empty formatting is not payload.
+        markdown = self.convert(
+            r"\begin{tabular}{l>{\bfseries}l>{\bfseries}l>{\bfseries}ll}"
+            r"\multicolumn{5}{l}{\textbf{Complete group heading}}\\"
+            r"Parent & Defect & Virtue & Excess & Relation\\\end{tabular}")
+        self.assertEqual(table_rows(markdown), [
+            [(5, "Complete group heading", {"strong"})],
+            [(1, "Parent", set()), (1, "Defect", {"strong"}),
+             (1, "Virtue", {"strong"}), (1, "Excess", {"strong"}),
+             (1, "Relation", set())],
+        ])
+        for payload in (r"\textbf{Must survive}", r"\emph{X}", r"\rule{1cm}{0.4pt}"):
+            with self.subTest(payload=payload), self.assertRaisesRegex(
+                    DRIVER.ConversionError, "span exceeds table columns"):
+                self.convert(r"\begin{tabular}{ll}\multicolumn{2}{l}{Both} & "
+                             + payload + r"\\\end{tabular}")
+
+    def test_downstream_loss_of_a_source_span_is_refused(self) -> None:
+        original = DRIVER.nest_lists_for_site
+        with mock.patch.object(DRIVER, "nest_lists_for_site", side_effect=lambda text:
+                               original(text).replace(' colspan="2"', '')):
+            with self.assertRaisesRegex(DRIVER.ConversionError, "source multicolumn spans changed"):
+                self.convert(r"\begin{tabular}{ll}\multicolumn{2}{l}{Both}\\\end{tabular}")
 
     def test_starred_row_end_inside_a_carried_row_macro_leaks_no_spacing(self) -> None:
         # \unitphase ends its phase row with \\*[-0.06em]; pandoc set the star
@@ -1720,8 +1822,8 @@ class WebEditionConversionTests(unittest.TestCase):
         )
         self.assertNotIn("0.06em", markdown)
         self.assertNotRegex(markdown, r"(?m)^\| \\")
-        self.assertIn("**Introductory Rites**", markdown)
-        self.assertRegex(markdown, r"(?m)^\| Entrance Antiphon +\| Psalm 54:6, 8\. +\|$")
+        self.assertIn([(2, "Introductory Rites", {"strong"})], table_rows(markdown))
+        self.assertIn([(1, "Entrance Antiphon", set()), (1, "Psalm 54:6, 8.", set())], table_rows(markdown))
 
     def test_long_form_heading_and_anchor_fidelity(self) -> None:
         count = 120

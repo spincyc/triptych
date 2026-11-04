@@ -36,24 +36,93 @@
 
 Seven passages are directly appointed. Each has one dossier: a four-field summary, the narrated event where there is one, then a short explanation. Composed orations are not listed; their biblical echoes are not quotations. Psalm citations give the missal’s Vulgate number with the English-Bible equivalent; the appendix adds the Masoretic series.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:----------|:-------------|:------------------------|:-----------|
-| Gradual | Ps. 8:2 Vulg. (Eng. 8:1) | Superscription *In finem, pro torcularibus. Psalmus David.* No place named | Traditional: Davidic, *c.* 1000 BC |
-| The title claims David and a musical direction, not an occasion; unlike Pss. 53 and 58 it anchors no episode, and nothing fixes a writing place or a moment in David’s life. The 1910 *Catholic Encyclopedia* defends the titles as ancient and canonical while conceding many are obscure. Hebrews 2:6–8 later quotes vv. 5–7 verbatim; the Gradual quotes only v. 2. |  |  |  |
-| Offertory | Ps. 18:9–12 Vulg. (Eng. 19:8–11) | Superscription *In finem. Psalmus David.* No episode, place or life stage named | Traditional: Davidic, *c.* 1000 BC |
-| The Torah half of a psalm whose first half praises the wordless witness of the heavens. Its title carries no historical notice at all, so even the traditional horizon is a bare attribution; Romans 10:18 quotes v. 5, Paul’s warrant for hearing the psalm of apostolic preaching. |  |  |  |
-| Introit | Ps. 53:3, 6–7 Vulg. (Eng. 54:1, 4–5) | Title names the Ziphites’ report to Saul; narratives at 1 Sam. 23:19 and 26:1, in the Judaean wilderness | Traditional: David’s pre-royal flight, *c.* 1010 BC |
-| The title’s *absconditus est* matches 26:1 rather than 23:19’s *latitat*. A title associating a prayer with an episode is received tradition, not proof it was composed then; modern date and authorship remain open. |  |  |  |
-| Alleluia | Ps. 58:2 Vulg. (Eng. 59:1) | Title names Saul’s watch on David’s house; narrative at 1 Sam. 19:11, at David’s house | Traditional: David’s pre-royal danger, *c.* 1010 BC |
-| The title reads *quando misit Saul, et custodivit domum ejus, ut eum interficeret*, and the appointed verse matches the Clementine psalter word for word. The horizon is a night of imminent assassination in a watched house: an inherited setting, not a proved date. |  |  |  |
-| Gospel | Lk. 19:41–47 | Writing: place unknown; traditionally Achaia. Audience largely Gentile and non-Palestinian, through Theophilus | Traditional: before AD 70. Modern: AD 80–90 |
-| *Event: the descent of the Mount of Olives toward Jerusalem (Lk. 19:29, 37), then the Temple (19:45), both in present-day Jerusalem; the last week before the Passover of Jesus’ death. AD 29 on the *Catholic Encyclopedia*’s computation, commonly AD 30–33 later; not settled here.* |  |  |  |
-| The *Catholic Encyclopedia* identifies Luke the physician and Pauline companion and reports Julius Africanus for Achaia; the NABRE reports the same attribution but places composition after AD 70, many proposing AD 80–90, and leaves the place unstated. |  |  |  |
-| Communion | Jn. 6:57 Clem. (mod. 6:56) | Writing: traditionally Ephesus; the NABRE reports Ephesus, Syria and others | Traditional: *c.* AD 96. Modern: final form AD 90–100 |
-| *Event: the bread-of-life discourse, located by Jn. 6:59 *in synagoga … in Capharnaum* — Capernaum on the Sea of Galilee, in present-day northern Israel; during the Galilean ministry.* |  |  |  |
-| The *Catholic Encyclopedia* argues for John son of Zebedee at Ephesus about AD 96; the NABRE reports that most modern scholars find that evidence insufficient and describes a gospel edited in stages. |  |  |  |
-| Epistle | 1 Cor. 10:6–13 | From Ephesus (1 Cor. 16:8), near present-day Selçuk, Türkiye, to Corinth in Greece | Third missionary journey, mid-AD 50s |
-| Pauline authorship is both traditional and the mainstream modern judgment, and *permanebo autem Ephesi* supplies the writing place. Paul writes into a church he had founded, mixed Jewish and Gentile, divided over food associated with idols. At 10:1 he calls the wilderness generation *patres nostri*: writer, recipients and narrated desert are three different places. |  |  |  |
+<table style="width:83%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Proper</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Gradual</td>
+<td style="text-align: left;">Ps. 8:2 Vulg. (Eng. 8:1)</td>
+<td style="text-align: left;">Superscription <em>In finem, pro torcularibus. Psalmus David.</em> No place named</td>
+<td style="text-align: left;">Traditional: Davidic, <em>c.</em> 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title claims David and a musical direction, not an occasion; unlike Pss. 53 and 58 it anchors no episode, and nothing fixes a writing place or a moment in David’s life. The 1910 <em>Catholic Encyclopedia</em> defends the titles as ancient and canonical while conceding many are obscure. Hebrews 2:6–8 later quotes vv. 5–7 verbatim; the Gradual quotes only v. 2.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Offertory</td>
+<td style="text-align: left;">Ps. 18:9–12 Vulg. (Eng. 19:8–11)</td>
+<td style="text-align: left;">Superscription <em>In finem. Psalmus David.</em> No episode, place or life stage named</td>
+<td style="text-align: left;">Traditional: Davidic, <em>c.</em> 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The Torah half of a psalm whose first half praises the wordless witness of the heavens. Its title carries no historical notice at all, so even the traditional horizon is a bare attribution; Romans 10:18 quotes v. 5, Paul’s warrant for hearing the psalm of apostolic preaching.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Introit</td>
+<td style="text-align: left;">Ps. 53:3, 6–7 Vulg. (Eng. 54:1, 4–5)</td>
+<td style="text-align: left;">Title names the Ziphites’ report to Saul; narratives at 1 Sam. 23:19 and 26:1, in the Judaean wilderness</td>
+<td style="text-align: left;">Traditional: David’s pre-royal flight, <em>c.</em> 1010 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title’s <em>absconditus est</em> matches 26:1 rather than 23:19’s <em>latitat</em>. A title associating a prayer with an episode is received tradition, not proof it was composed then; modern date and authorship remain open.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alleluia</td>
+<td style="text-align: left;">Ps. 58:2 Vulg. (Eng. 59:1)</td>
+<td style="text-align: left;">Title names Saul’s watch on David’s house; narrative at 1 Sam. 19:11, at David’s house</td>
+<td style="text-align: left;">Traditional: David’s pre-royal danger, <em>c.</em> 1010 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title reads <em>quando misit Saul, et custodivit domum ejus, ut eum interficeret</em>, and the appointed verse matches the Clementine psalter word for word. The horizon is a night of imminent assassination in a watched house: an inherited setting, not a proved date.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Lk. 19:41–47</td>
+<td style="text-align: left;">Writing: place unknown; traditionally Achaia. Audience largely Gentile and non-Palestinian, through Theophilus</td>
+<td style="text-align: left;">Traditional: before AD 70. Modern: AD 80–90</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;"><em>Event: the descent of the Mount of Olives toward Jerusalem (Lk. 19:29, 37), then the Temple (19:45), both in present-day Jerusalem; the last week before the Passover of Jesus’ death. AD 29 on the <em>Catholic Encyclopedia</em>’s computation, commonly AD 30–33 later; not settled here.</em></td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The <em>Catholic Encyclopedia</em> identifies Luke the physician and Pauline companion and reports Julius Africanus for Achaia; the NABRE reports the same attribution but places composition after AD 70, many proposing AD 80–90, and leaves the place unstated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion</td>
+<td style="text-align: left;">Jn. 6:57 Clem. (mod. 6:56)</td>
+<td style="text-align: left;">Writing: traditionally Ephesus; the NABRE reports Ephesus, Syria and others</td>
+<td style="text-align: left;">Traditional: <em>c.</em> AD 96. Modern: final form AD 90–100</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;"><em>Event: the bread-of-life discourse, located by Jn. 6:59 <em>in synagoga … in Capharnaum</em> — Capernaum on the Sea of Galilee, in present-day northern Israel; during the Galilean ministry.</em></td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The <em>Catholic Encyclopedia</em> argues for John son of Zebedee at Ephesus about AD 96; the NABRE reports that most modern scholars find that evidence insufficient and describes a gospel edited in stages.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Epistle</td>
+<td style="text-align: left;">1 Cor. 10:6–13</td>
+<td style="text-align: left;">From Ephesus (1 Cor. 16:8), near present-day Selçuk, Türkiye, to Corinth in Greece</td>
+<td style="text-align: left;">Third missionary journey, mid-AD 50s</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Pauline authorship is both traditional and the mainstream modern judgment, and <em>permanebo autem Ephesi</em> supplies the writing place. Paul writes into a church he had founded, mixed Jewish and Gentile, divided over food associated with idols. At 10:1 he calls the wilderness generation <em>patres nostri</em>: writer, recipients and narrated desert are three different places.</td>
+</tr>
+</tbody>
+</table>
 
 ## The Appointed Formulary in Full
 

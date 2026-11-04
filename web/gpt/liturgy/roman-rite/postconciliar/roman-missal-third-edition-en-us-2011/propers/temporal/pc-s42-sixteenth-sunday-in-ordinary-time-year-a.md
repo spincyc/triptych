@@ -8,21 +8,69 @@
 
 PC-S42-A
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:-----------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | Ps. 54:6, 8; sustaining help and praise |
-| Collect | *Propitiare…et clementer gratiae tuae…dona multiplica* |
-| **Liturgy of the Word** |  |
-| First Reading | Wis. 12:13, 16–19 |
-| Responsorial Psalm | Response Ps. 86:5a; vv. 5–6, 9–10, 15–16 |
-| Second Reading | Rom. 8:26–27 |
-| Gospel Acclamation | *Cf.* Matt. 11:25 |
-| Gospel | Long: Matt. 13:24–43; Short: Matt. 13:24–30 |
-| **Liturgy of the Eucharist** |  |
-| Prayer over Offerings | *Deus, qui legalium differentiam hostiarum unius sacrificii perfectione sanxisti* |
-| Communion Antiphon | A: Ps. 111:4–5; memorial, mercy, and food; B: Rev. 3:20; knock and meal |
-| Prayer after Communion | *Populo tuo…quem mysteriis caelestibus imbuisti* |
+<table style="width:92%;">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance Antiphon</td>
+<td style="text-align: left;">Ps. 54:6, 8; sustaining help and praise</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Propitiare…et clementer gratiae tuae…dona multiplica</em></td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Wis. 12:13, 16–19</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Response Ps. 86:5a; vv. 5–6, 9–10, 15–16</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 8:26–27</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel Acclamation</td>
+<td style="text-align: left;"><em>Cf.</em> Matt. 11:25</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Long: Matt. 13:24–43; Short: Matt. 13:24–30</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over Offerings</td>
+<td style="text-align: left;"><em>Deus, qui legalium differentiam hostiarum unius sacrificii perfectione sanxisti</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon</td>
+<td style="text-align: left;">A: Ps. 111:4–5; memorial, mercy, and food; B: Rev. 3:20; knock and meal</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Populo tuo…quem mysteriis caelestibus imbuisti</em></td>
+</tr>
+</tbody>
+</table>
 
 | **Sense** | **Synthesis** |
 |:-----------|:------------------------------------------------------|
@@ -35,24 +83,102 @@ PC-S42-A
 
 *Canonical order governs; composition and narrated-event rows remain distinct, and branches stay explicit. Matthew 13’s internal Psalm citation remains within the long Gospel, not a separate Lectionary unit.*
 
-| **Textual unit / alternative** | **Citation** | **Location** | **Date** |
-|:------------|:-------------|:-----------------------|:--------------|
-| Entrance | Ps. 54:6, 8 | Kingdom of Israel; exact composition place unknown | Davidic attribution traditional; date unknown |
-| The Davidic heading names no event; author, place, and date remain unresolved. Fear, desired escape, civic violence, betrayal, petition, and trust frame the lament. The Entrance selects sustaining help, offering, and praise without erasing anguish. |  |  |  |
-| Responsorial Psalm | Ps. 86:5–6, 9–10, 15–16 | Israel; exact composition place unknown | Davidic attribution traditional; date unknown |
-| Davidic title; no secure authorial event, place, or final date. Lament, trust, instruction, universal worship, and divine compassion turn Wisdom’s lenient rule into the servant’s appeal for attention, strength, and mercy. |  |  |  |
-| Communion A | Ps. 111:4–5 | Israel’s wisdom and liturgical tradition; exact place unknown | Author and date unknown |
-| Author, date, and place unknown. The alphabetic communal instruction praises works, righteousness, mercy, covenant, provision, and redemption. Communion branch A appoints memorial and food language. |  |  |  |
-| First Reading | Wis. 12:13, 16–19 | Alexandria, Egypt, commonly proposed | Late first century BC commonly proposed |
-| The book uses Solomon’s wisdom persona; modern Catholic study generally places its Greek author and Jewish audience at Alexandria. Unlimited mastery needs no defensive harshness: clemency teaches kindness and gives sinners hope of repentance. Verses 14–15 are outside the appointed boundary. |  |  |  |
-| Acclamation / Gospel branches | *Cf.* Matt. 11:25; Matt. 13:24–43 / 13:24–30 | Palestine in traditional attribution; Antioch plausible for the final Greek Gospel | Traditional early apostolic date; modern majority c. AD 80–90 |
-| Acclamation source event | Matt. 11:20–30 | Galilee; exact place unrecorded | Public ministry, c. AD 28–29 |
-| Gospel narrated event | Matt. 13:24–43 | Sea-of-Galilee teaching region, then a house; exact locations unrecorded | Galilean ministry, c. AD 28 |
-| Tradition names Matthew writing for Jewish believers in Palestine; the modern majority posits an unknown Greek author after AD 70, often at Antioch. The acclamation uses Jesus’ earlier thanksgiving. The long branch gives three parables, fulfillment notice, and private explanation; the short gives only weeds through delayed harvest. |  |  |  |
-| Second Reading | Rom. 8:26–27 | Corinth, Achaia (present-day Greece) | c. AD 57 |
-| Paul writes from Corinth to mixed Jewish and Gentile house churches at Rome near his eastern mission’s end. After creation and believers groan, the Spirit aids weak prayer beyond speech; the heart-searching God knows the Spirit’s intention. This is semi-continuous, not Gospel-field imagery. |  |  |  |
-| Communion B | Rev. 3:20 | Patmos and the seven churches of Roman Asia | Late first century, often c. AD 95 |
-| John writes from Patmos to seven churches in western Asia Minor; exact compositional stages remain debated. The risen Christ rebukes Laodicean self-satisfaction, calls for zeal and repentance, and promises table fellowship. Communion branch B appoints the invitation without canceling the admonition. |  |  |  |
+<table style="width:90%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 19%" />
+<col style="width: 34%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Entrance</td>
+<td style="text-align: left;">Ps. 54:6, 8</td>
+<td style="text-align: left;">Kingdom of Israel; exact composition place unknown</td>
+<td style="text-align: left;">Davidic attribution traditional; date unknown</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The Davidic heading names no event; author, place, and date remain unresolved. Fear, desired escape, civic violence, betrayal, petition, and trust frame the lament. The Entrance selects sustaining help, offering, and praise without erasing anguish.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps. 86:5–6, 9–10, 15–16</td>
+<td style="text-align: left;">Israel; exact composition place unknown</td>
+<td style="text-align: left;">Davidic attribution traditional; date unknown</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Davidic title; no secure authorial event, place, or final date. Lament, trust, instruction, universal worship, and divine compassion turn Wisdom’s lenient rule into the servant’s appeal for attention, strength, and mercy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion A</td>
+<td style="text-align: left;">Ps. 111:4–5</td>
+<td style="text-align: left;">Israel’s wisdom and liturgical tradition; exact place unknown</td>
+<td style="text-align: left;">Author and date unknown</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Author, date, and place unknown. The alphabetic communal instruction praises works, righteousness, mercy, covenant, provision, and redemption. Communion branch A appoints memorial and food language.</td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Wis. 12:13, 16–19</td>
+<td style="text-align: left;">Alexandria, Egypt, commonly proposed</td>
+<td style="text-align: left;">Late first century BC commonly proposed</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The book uses Solomon’s wisdom persona; modern Catholic study generally places its Greek author and Jewish audience at Alexandria. Unlimited mastery needs no defensive harshness: clemency teaches kindness and gives sinners hope of repentance. Verses 14–15 are outside the appointed boundary.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Acclamation; Gospel branches</td>
+<td style="text-align: left;">Acclamation: <em>cf.</em> Matt. 11:25;<br />
+Gospel: Matt. 13,<br />
+long 24–43,<br />
+short 24–30</td>
+<td style="text-align: left;">Palestine in traditional attribution; Antioch plausible for the final Greek Gospel</td>
+<td style="text-align: left;">Traditional early apostolic date; modern majority c. AD 80–90</td>
+</tr>
+<tr>
+<td style="text-align: left;">Acclamation source event</td>
+<td style="text-align: left;">Matt. 11:20–30</td>
+<td style="text-align: left;">Galilee; exact place unrecorded</td>
+<td style="text-align: left;">Public ministry, c. AD 28–29</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel narrated event</td>
+<td style="text-align: left;">Matt. 13:24–43</td>
+<td style="text-align: left;">Sea-of-Galilee teaching region, then a house; exact locations unrecorded</td>
+<td style="text-align: left;">Galilean ministry, c. AD 28</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Tradition names Matthew writing for Jewish believers in Palestine; the modern majority posits an unknown Greek author after AD 70, often at Antioch. The acclamation uses Jesus’ earlier thanksgiving. The long branch gives three parables, fulfillment notice, and private explanation; the short gives only weeds through delayed harvest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 8:26–27</td>
+<td style="text-align: left;">Corinth, Achaia (present-day Greece)</td>
+<td style="text-align: left;">c. AD 57</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Paul writes from Corinth to mixed Jewish and Gentile house churches at Rome near his eastern mission’s end. After creation and believers groan, the Spirit aids weak prayer beyond speech; the heart-searching God knows the Spirit’s intention. This is semi-continuous, not Gospel-field imagery.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion B</td>
+<td style="text-align: left;">Rev. 3:20</td>
+<td style="text-align: left;">Patmos and the seven churches of Roman Asia</td>
+<td style="text-align: left;">Late first century, often c. AD 95</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">John writes from Patmos to seven churches in western Asia Minor; exact compositional stages remain debated. The risen Christ rebukes Laodicean self-satisfaction, calls for zeal and repentance, and promises table fellowship. Communion branch B appoints the invitation without canceling the admonition.</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement
 
@@ -285,6 +411,6 @@ The two antiphons remain distinct textual paths: one proceeds through remembered
 
 - Museum of Oxford, [“The Light of the World”](https://moxdigiexhibits.omeka.net/exhibits/show/oxford-re-formed/item/1110), catalogue record for William Holman Hunt’s 1851–1853 painting, its Revelation 3:20 source, symbolic door, reception, and image rights.
 
-**Last revised (UTC):** 2026-09-24T18:19:55Z
+**Last revised (UTC):** 2026-11-04T03:09:25Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

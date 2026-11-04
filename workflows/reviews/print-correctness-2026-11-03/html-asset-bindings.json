@@ -1,0 +1,139 @@
+{
+  "schema": "triptych-selected-illustration-binding-review/v1",
+  "status": "pass",
+  "baseline_revision": "40bea725b14b16e711b922bacd6368b6755c8bed",
+  "scope": "Mechanical selected-output binding repair after the approved citation-cell and revision-metadata edits; no new artwork, editorial, rights or PDF approval.",
+  "files_sha256": {
+    "src/common/browser-print-assets.json": "6f163fa5db0e615ecc2fa173ae195306fe532254a4988ac67a3790eb73f968b5",
+    "scripts/_web_print_assets.py": "10a7e374139da7bc028131f4e5d31ab5ebcb7e9e63d05e2865ce2727c971f311",
+    "tools/tests/test_web_print_assets.py": "9ec604df00bca3ed9763414d85640d935a778b7199252c57d3c65fd71a58fe41"
+  },
+  "before_registry_sha256": "ee7a485f89c34a29bb307dd68f9c10c8329b81f4ecbf4b7a95cce76d6ebc2e95",
+  "outputs": [
+    {
+      "output": "gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass",
+      "source_cell_substitution_exact": true,
+      "selected_body_and_head_pins_current": true,
+      "diagram_bytes_labels_rights_geometry_membership_unchanged": true
+    },
+    {
+      "output": "gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost",
+      "source_cell_substitution_exact": true,
+      "selected_body_and_head_pins_current": true,
+      "diagram_bytes_labels_rights_geometry_membership_unchanged": true
+    },
+    {
+      "output": "gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost",
+      "source_cell_substitution_exact": true,
+      "selected_body_and_head_pins_current": true,
+      "diagram_bytes_labels_rights_geometry_membership_unchanged": true
+    },
+    {
+      "output": "gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost",
+      "source_cell_substitution_exact": true,
+      "selected_body_and_head_pins_current": true,
+      "diagram_bytes_labels_rights_geometry_membership_unchanged": true
+    },
+    {
+      "output": "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a",
+      "source_cell_substitution_exact": true,
+      "selected_body_and_head_pins_current": true,
+      "diagram_bytes_labels_rights_geometry_membership_unchanged": true
+    }
+  ],
+  "changed_fields": "Only the five selected body/closure/selection pins, corresponding diagram offsets and registry digest.",
+  "native_output_qualification": "The registry input hash changes; source TeX, styles and all illustration payloads remain unchanged. Previously reviewed native PDF receipts are preserved rather than represented as new captures.",
+  "payloads_verified": 68,
+  "payload_bytes_verified": 57746126,
+  "unchanged_other_generic_outputs": 7,
+  "unchanged_server_entries": 39,
+  "canonical_render_and_prepare": [
+    {
+      "id": "gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass",
+      "coverage": "pass",
+      "complete": true,
+      "units": 416,
+      "assets": 1,
+      "html_sha256": "c6109406d898a5effe95be9525884be144faad7256074fcf1a6acb16750d30f7",
+      "parts": 1,
+      "source_paths": 9
+    },
+    {
+      "id": "gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost",
+      "coverage": "pass",
+      "complete": true,
+      "units": 346,
+      "assets": 1,
+      "html_sha256": "c04e781a17ffa9d1e7b24523e78cf3c96c3f73f279c4b399f5cafadc488e3161",
+      "parts": 1,
+      "source_paths": 7
+    },
+    {
+      "id": "gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost",
+      "coverage": "pass",
+      "complete": true,
+      "units": 305,
+      "assets": 1,
+      "html_sha256": "e51c093f1a0224847268dc1afd86492236982e5a0250e3f028b776e2e222fe3f",
+      "parts": 1,
+      "source_paths": 7
+    },
+    {
+      "id": "gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost",
+      "coverage": "pass",
+      "complete": true,
+      "units": 314,
+      "assets": 1,
+      "html_sha256": "3c099b4b3dc3af09ccfdacfae3e2ce45c292996ea73b481d9277a16fc2000c13",
+      "parts": 1,
+      "source_paths": 7
+    },
+    {
+      "id": "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a",
+      "coverage": "pass",
+      "complete": true,
+      "units": 368,
+      "assets": 1,
+      "html_sha256": "d292a6e9c99db1a50f9f1df5b681e90d84f6fcc894f31b87ed42ec8f4798fa08",
+      "parts": 1,
+      "source_paths": 8
+    }
+  ],
+  "negative_replay_probes": [
+    {
+      "case": "unapproved-prose",
+      "status": "refused",
+      "reason": "unapproved selected body change"
+    },
+    {
+      "case": "diagram-context",
+      "status": "refused",
+      "reason": "unapproved selected body change"
+    },
+    {
+      "case": "unapproved-source",
+      "status": "refused",
+      "reason": "current source fingerprint mismatch"
+    },
+    {
+      "case": "changed-rights",
+      "status": "refused",
+      "reason": "diagram rendering head changed"
+    },
+    {
+      "case": "different-membership",
+      "status": "refused",
+      "reason": "unapproved selected body change"
+    }
+  ],
+  "normal_registry_lookup": {
+    "generic_outputs": 12,
+    "generic_diagrams": 21,
+    "server_entries": 39
+  },
+  "receipt_sha256": {
+    "author": "8c08ef81001af09befc1464b96b7cb9eac25c3b92193e302b75ac4cbc10703a4",
+    "independent_review": "d2a34cf146525674d77c54b96b419315091f9b552ee6c20c7da91cf16dcd58dc",
+    "final_registry_lookup": "762c4c59fa0fe7638e11956fa4fa86e2e550767707c2499ed7a3239c91d6c4fc"
+  }
+}

@@ -8,21 +8,69 @@
 
 PC-S41-A
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:-----------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | *Cf.* Ps. 17:15; beholding and satisfaction |
-| Collect | *Deus, qui errantibus…veritatis tuae lumen ostendis* |
-| **Liturgy of the Word** |  |
-| First Reading | Isa. 55:10–11 |
-| Responsorial Psalm | Response marked Luke 8:8; Ps. 65:10, 11, 12–13, 14 |
-| Second Reading | Rom. 8:18–23 |
-| Gospel Acclamation | “The seed is the word…” |
-| Gospel | Long: Matt. 13:1–23; Short: Matt. 13:1–9 |
-| **Liturgy of the Eucharist** |  |
-| Prayer over Offerings | *Respice…munera supplicantis Ecclesiae* |
-| Communion Antiphon | A: *Cf.* Ps. 84:4–5; dwelling and praise; B: John 6:57; mutual abiding |
-| Prayer after Communion | *Sumptis muneribus…cum frequentatione mysterii* |
+<table style="width:92%;">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance Antiphon</td>
+<td style="text-align: left;"><em>Cf.</em> Ps. 17:15; beholding and satisfaction</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Deus, qui errantibus…veritatis tuae lumen ostendis</em></td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Isa. 55:10–11</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Response marked Luke 8:8; Ps. 65:10, 11, 12–13, 14</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 8:18–23</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel Acclamation</td>
+<td style="text-align: left;">“The seed is the word…”</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Long: Matt. 13:1–23; Short: Matt. 13:1–9</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over Offerings</td>
+<td style="text-align: left;"><em>Respice…munera supplicantis Ecclesiae</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon</td>
+<td style="text-align: left;">A: <em>Cf.</em> Ps. 84:4–5; dwelling and praise; B: John 6:57; mutual abiding</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Sumptis muneribus…cum frequentatione mysterii</em></td>
+</tr>
+</tbody>
+</table>
 
 | **Sense** | **Synthesis** |
 |:-----------|:------------------------------------------------------|
@@ -35,27 +83,114 @@ PC-S41-A
 
 *Canonical order governs; composition and narrated-event rows remain distinct. Branch labels are retained; the uncited composed acclamation remains outside this direct-Scripture inventory.*
 
-| **Textual unit / alternative** | **Citation** | **Location** | **Date** |
-|:------------|:-------------|:-----------------------|:--------------|
-| Entrance | *Cf.* Ps. 17:15 | Kingdom of Israel; exact composition place unknown | Davidic attribution traditional; date unknown |
-| Traditional Davidic title; human author, setting, and final date unresolved. The Israelite prayer seeks vindication, rejects violent paths, and hopes to behold God; the Entrance adapts only v. 15. |  |  |  |
-| Responsorial Psalm | Ps. 65:10, 11, 12–13, 14 | Israel; agricultural and sanctuary horizon; exact place unknown | Date and author unknown |
-| Author, date, and place remain unknown; Israel’s sanctuary and agricultural worship form the horizon. Praise and forgiveness in Zion open to cosmic power, watered earth, grain, flocks, and joyful valleys. The Luke 8:8 response overlays Gospel harvest language without altering the verses. |  |  |  |
-| Communion A | *Cf.* Ps. 84:4–5 | Jerusalem sanctuary in the pilgrimage horizon; exact composition place unknown | Korahite attribution traditional; date unknown |
-| The Korahite heading names a Levitical sanctuary guild, not an individual author; date and place remain unknown. Birds, altars, pilgrimage, prayer, and trust frame the poem. Communion branch A selects dwelling and praise; no branch use is claimed. |  |  |  |
-| First Reading | Isa. 55:10–11 | Babylonian exile horizon; exact composition place disputed | Near the exile’s end, commonly c. 540 BC |
-| Tradition attributes Isaiah; modern Catholic study commonly hears an anonymous exilic voice addressing displaced Judah near Babylon’s fall. Free gift, covenant, conversion, pardon, and return culminate in rain imaging God’s effective word. |  |  |  |
-| Gospel — long / short | Matt. 13:1–23 / 13:1–9 | Palestine in traditional attribution; Antioch plausible for the final Greek Gospel | Traditional early apostolic date; modern majority c. AD 80–90 |
-| Narrated event | Matt. 13:1–23 | Sea of Galilee; exact shore unrecorded | Galilean ministry, c. AD 28 |
-| Tradition names Matthew writing for Jewish believers in Palestine; the modern majority posits an unknown Greek author after AD 70, often at Antioch. Jesus teaches shore-side crowds from a boat. The long branch adds the disciples’ question, Isaiah 6, a hearing beatitude, and interpretation; the short ends with the summons to hear. |  |  |  |
-| Psalm response | Luke 8:8, adapted | Achaia (present-day Greece) in ancient tradition; exact final place disputed | Traditional c. AD 60; modern majority c. AD 80–90 |
-| Narrated source event | Luke 8:4–15 | Galilee; exact place unrecorded | Galilean ministry, c. AD 28 |
-| Tradition names Luke the physician and Pauline companion; modern study commonly proposes a later, predominantly Gentile setting outside Palestine. The Lectionary adapts Luke 8:8 for the response while proclaiming Matthew 13; this is neither a second Gospel nor replacement wording. |  |  |  |
-| Communion B | John 6:57 | Ephesus and Asia Minor in ancient ecclesial association; final place disputed | Late first century commonly proposed |
-| Narrated source event | John 6:22–59 | Capernaum synagogue, Galilee | Public ministry, after the feeding sign |
-| Ancient reception associates John and Ephesus; modern Catholic discussion distinguishes testimony, community, and final shaping without unanimity. The Capernaum discourse moves from bread, faith, and heavenly origin to eating, abiding, life, and resurrection; Week XV appoints v. 57 as Communion branch B. |  |  |  |
-| Second Reading | Rom. 8:18–23 | Corinth, Achaia (present-day Greece) | c. AD 57 |
-| Paul writes from Corinth to mixed Jewish and Gentile house churches at Rome near his eastern mission’s end. Present suffering yields to glory; creation labors, and believers with the Spirit’s firstfruits groan for adoption’s bodily completion. The course is semi-continuous. |  |  |  |
+<table style="width:90%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 19%" />
+<col style="width: 34%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Entrance</td>
+<td style="text-align: left;"><em>Cf.</em> Ps. 17:15</td>
+<td style="text-align: left;">Kingdom of Israel; exact composition place unknown</td>
+<td style="text-align: left;">Davidic attribution traditional; date unknown</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Traditional Davidic title; human author, setting, and final date unresolved. The Israelite prayer seeks vindication, rejects violent paths, and hopes to behold God; the Entrance adapts only v. 15.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps. 65:10, 11, 12–13, 14</td>
+<td style="text-align: left;">Israel; agricultural and sanctuary horizon; exact place unknown</td>
+<td style="text-align: left;">Date and author unknown</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Author, date, and place remain unknown; Israel’s sanctuary and agricultural worship form the horizon. Praise and forgiveness in Zion open to cosmic power, watered earth, grain, flocks, and joyful valleys. The Luke 8:8 response overlays Gospel harvest language without altering the verses.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion A</td>
+<td style="text-align: left;"><em>Cf.</em> Ps. 84:4–5</td>
+<td style="text-align: left;">Jerusalem sanctuary in the pilgrimage horizon; exact composition place unknown</td>
+<td style="text-align: left;">Korahite attribution traditional; date unknown</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The Korahite heading names a Levitical sanctuary guild, not an individual author; date and place remain unknown. Birds, altars, pilgrimage, prayer, and trust frame the poem. Communion branch A selects dwelling and praise; no branch use is claimed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Isa. 55:10–11</td>
+<td style="text-align: left;">Babylonian exile horizon; exact composition place disputed</td>
+<td style="text-align: left;">Near the exile’s end, commonly c. 540 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Tradition attributes Isaiah; modern Catholic study commonly hears an anonymous exilic voice addressing displaced Judah near Babylon’s fall. Free gift, covenant, conversion, pardon, and return culminate in rain imaging God’s effective word.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel — long / short</td>
+<td style="text-align: left;">Matt. 13:1–23 / 13:1–9</td>
+<td style="text-align: left;">Palestine in traditional attribution; Antioch plausible for the final Greek Gospel</td>
+<td style="text-align: left;">Traditional early apostolic date; modern majority c. AD 80–90</td>
+</tr>
+<tr>
+<td style="text-align: left;">Narrated event</td>
+<td style="text-align: left;">Matt. 13:1–23</td>
+<td style="text-align: left;">Sea of Galilee; exact shore unrecorded</td>
+<td style="text-align: left;">Galilean ministry, c. AD 28</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Tradition names Matthew writing for Jewish believers in Palestine; the modern majority posits an unknown Greek author after AD 70, often at Antioch. Jesus teaches shore-side crowds from a boat. The long branch adds the disciples’ question, Isaiah 6, a hearing beatitude, and interpretation; the short ends with the summons to hear.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Psalm response</td>
+<td style="text-align: left;">Luke 8:8, adapted</td>
+<td style="text-align: left;">Achaia (present-day Greece) in ancient tradition; exact final place disputed</td>
+<td style="text-align: left;">Traditional c. AD 60; modern majority c. AD 80–90</td>
+</tr>
+<tr>
+<td style="text-align: left;">Narrated source event</td>
+<td style="text-align: left;">Luke 8:4–15</td>
+<td style="text-align: left;">Galilee; exact place unrecorded</td>
+<td style="text-align: left;">Galilean ministry, c. AD 28</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Tradition names Luke the physician and Pauline companion; modern study commonly proposes a later, predominantly Gentile setting outside Palestine. The Lectionary adapts Luke 8:8 for the response while proclaiming Matthew 13; this is neither a second Gospel nor replacement wording.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion B</td>
+<td style="text-align: left;">John 6:57</td>
+<td style="text-align: left;">Ephesus and Asia Minor in ancient ecclesial association; final place disputed</td>
+<td style="text-align: left;">Late first century commonly proposed</td>
+</tr>
+<tr>
+<td style="text-align: left;">Narrated source event</td>
+<td style="text-align: left;">John 6:22–59</td>
+<td style="text-align: left;">Capernaum synagogue, Galilee</td>
+<td style="text-align: left;">Public ministry, after the feeding sign</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Ancient reception associates John and Ephesus; modern Catholic discussion distinguishes testimony, community, and final shaping without unanimity. The Capernaum discourse moves from bread, faith, and heavenly origin to eating, abiding, life, and resurrection; Week XV appoints v. 57 as Communion branch B.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 8:18–23</td>
+<td style="text-align: left;">Corinth, Achaia (present-day Greece)</td>
+<td style="text-align: left;">c. AD 57</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Paul writes from Corinth to mixed Jewish and Gentile house churches at Rome near his eastern mission’s end. Present suffering yields to glory; creation labors, and believers with the Spirit’s firstfruits groan for adoption’s bodily completion. The course is semi-continuous.</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement
 

@@ -8,21 +8,69 @@
 
 PC-S38-A
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:-----------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | cf. Ps. 28:8–9 |
-| Collect | *Sancti nominis tui…timorem pariter et amorem* |
-| **Liturgy of the Word** |  |
-| First Reading | Jer. 20:10–13 |
-| Responsorial Psalm | Ps. 69:8–10, 14, 17, 33–35; response 14c |
-| Second Reading | Rom. 5:12–15 |
-| Gospel Acclamation | John 15:26b, 27a |
-| Gospel | Matt. 10:26–33 |
-| **Liturgy of the Eucharist** |  |
-| Prayer over Offerings | *Suscipe…sacrificium placationis et laudis* |
-| Communion Antiphon | A: Ps. 145:15; B: John 10:11, 15 |
-| Prayer after Communion | *Sacri Corporis et Sanguinis pretiosi alimonia renovati* |
+<table style="width:92%;">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance Antiphon</td>
+<td style="text-align: left;">cf. Ps. 28:8–9</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Sancti nominis tui…timorem pariter et amorem</em></td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Jer. 20:10–13</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps. 69:8–10, 14, 17, 33–35; response 14c</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 5:12–15</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel Acclamation</td>
+<td style="text-align: left;">John 15:26b, 27a</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Matt. 10:26–33</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over Offerings</td>
+<td style="text-align: left;"><em>Suscipe…sacrificium placationis et laudis</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon</td>
+<td style="text-align: left;">A: Ps. 145:15; B: John 10:11, 15</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Sacri Corporis et Sanguinis pretiosi alimonia renovati</em></td>
+</tr>
+</tbody>
+</table>
 
 | **Sense** | **Synthesis** |
 |:-----------|:------------------------------------------------------|
@@ -35,27 +83,114 @@ PC-S38-A
 
 *Canonical order governs; composition and narrated event remain distinct, and inherited and modern judgments remain separate where the evidence is uncertain.*
 
-| **Textual unit / alternative** | **Citation** | **Location** | **Date** |
-|:------------|:-------------|:-----------------------|:--------------|
-| Entrance | Ps. 28:8–9 | Israel; exact composition place unknown | Traditional Davidic attribution; historical date uncertain |
-| Davidic title; historical author, site, and date unrecoverable. Divine majesty yields to the Lord as his people’s strength and his inheritance’s shepherd; the Entrance appoints that pastoral conclusion. |  |  |  |
-| Responsorial Psalm | Ps. 69:8–10, 14, 17, 33–35 | Israel; Jerusalem imagery, precise writing site unknown | Traditional Davidic attribution; historical date uncertain |
-| Davidic lament: reproach, zeal, petition, and praise of the poor coexist. The appointed verses omit much imprecation and autobiography; the canonical context remains relevant but is not inserted into the proclamation. |  |  |  |
-| Comm. A | Ps. 145:15 | Israel’s worship; exact place unknown | Davidic title; historical date uncertain |
-| Davidic-titled acrostic praise confesses God’s kingship, compassion, justice, and creaturely provision. Communion A appoints eyes turned to God for food. |  |  |  |
-| First Reading | Jer. 20:10–13 | Judah / Jerusalem; final book shaped through later transmission | Prophetic event late seventh or early sixth century BC |
-| The book identifies Jeremiah’s ministry through Judah’s final decades; its final form passed through later transmission. The event follows Pashhur’s beating and confinement. Confidence stands amid complaint and later curse: courage is not uninterrupted calm. |  |  |  |
-| Gospel | Matt. 10:26–33 | Canonical Gospel: traditional Palestine; modern Antioch proposal uncertain | Traditionally early apostolic period; modern majority c. AD 80–90 |
-| Narrated event | Matt. 4:23; 10:1–33 | Galilee; exact speaking site unrecorded | Public ministry, c. AD 28–29 |
-| Tradition: the Apostle Matthew writing for Jewish believers. Modern judgment: the canonical Greek Gospel after AD 70. Event horizon: within the missionary discourse, persecution precedes Jesus’ repeated command not to fear. |  |  |  |
-| Comm. B | John 10:11, 15 | Canonical Gospel: traditional Ephesus; modern history debated | Late first century |
-| Narrated event | John 9:1–10:21 | Jerusalem ministry | c. AD 29 |
-| The Good Shepherd discourse contrasts Jesus’ self-gift with a hireling’s abandonment. Communion B receives the shepherd who knows the sheep and lays down his life. |  |  |  |
-| Acclamation | John 15:26b, 27a | Canonical Gospel: traditional Ephesus; modern history debated | Late first century |
-| Narrated event | John 13:1; 15:18–27 | Jerusalem, final supper | c. AD 29–30 |
-| Amid the world’s hatred, Jesus promises that the Spirit bears witness and the disciples testify. The acclamation welcomes the Gospel’s demand for public acknowledgment. |  |  |  |
-| Second Reading | Rom. 5:12–15 | Corinth, Achaia (present-day Greece), to churches at Rome | c. AD 56–58 |
-| Paul addresses mixed Jewish and Gentile churches at Rome. The boundary opens the Adam–Christ comparison and stops before its elaboration. The gift is “not like” the trespass: grace exceeds, rather than balances, sin’s devastation. |  |  |  |
+<table style="width:90%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 19%" />
+<col style="width: 34%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Entrance</td>
+<td style="text-align: left;"><em>cf.</em> Ps. 28:8–9</td>
+<td style="text-align: left;">Israel; exact composition place unknown</td>
+<td style="text-align: left;">Traditional Davidic attribution; historical date uncertain</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Davidic title; historical author, site, and date unrecoverable. Divine majesty yields to the Lord as his people’s strength and his inheritance’s shepherd; the Entrance appoints that pastoral conclusion.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps. 69:8–10, 14, 17, 33–35</td>
+<td style="text-align: left;">Israel; Jerusalem imagery, precise writing site unknown</td>
+<td style="text-align: left;">Traditional Davidic attribution; historical date uncertain</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Davidic lament: reproach, zeal, petition, and praise of the poor coexist. The appointed verses omit much imprecation and autobiography; the canonical context remains relevant but is not inserted into the proclamation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Comm. A</td>
+<td style="text-align: left;">Ps. 145:15</td>
+<td style="text-align: left;">Israel’s worship; exact place unknown</td>
+<td style="text-align: left;">Davidic title; historical date uncertain</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Davidic-titled acrostic praise confesses God’s kingship, compassion, justice, and creaturely provision. Communion A appoints eyes turned to God for food.</td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Jer. 20:10–13</td>
+<td style="text-align: left;">Judah / Jerusalem; final book shaped through later transmission</td>
+<td style="text-align: left;">Prophetic event late seventh or early sixth century BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The book identifies Jeremiah’s ministry through Judah’s final decades; its final form passed through later transmission. The event follows Pashhur’s beating and confinement. Confidence stands amid complaint and later curse: courage is not uninterrupted calm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Matt. 10:26–33</td>
+<td style="text-align: left;">Canonical Gospel: traditional Palestine; modern Antioch proposal uncertain</td>
+<td style="text-align: left;">Traditionally early apostolic period; modern majority c. AD 80–90</td>
+</tr>
+<tr>
+<td style="text-align: left;">Narrated event</td>
+<td style="text-align: left;">Matt. 4:23; 10:1–33</td>
+<td style="text-align: left;">Galilee; exact speaking site unrecorded</td>
+<td style="text-align: left;">Public ministry, c. AD 28–29</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Tradition: the Apostle Matthew writing for Jewish believers. Modern judgment: the canonical Greek Gospel after AD 70. Event horizon: within the missionary discourse, persecution precedes Jesus’ repeated command not to fear.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Comm. B</td>
+<td style="text-align: left;">John 10:11, 15</td>
+<td style="text-align: left;">Canonical Gospel: traditional Ephesus; modern history debated</td>
+<td style="text-align: left;">Late first century</td>
+</tr>
+<tr>
+<td style="text-align: left;">Narrated event</td>
+<td style="text-align: left;">John 9:1–10:21</td>
+<td style="text-align: left;">Jerusalem ministry</td>
+<td style="text-align: left;">c. AD 29</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The Good Shepherd discourse contrasts Jesus’ self-gift with a hireling’s abandonment. Communion B receives the shepherd who knows the sheep and lays down his life.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Acclamation</td>
+<td style="text-align: left;">John 15:26b, 27a</td>
+<td style="text-align: left;">Canonical Gospel: traditional Ephesus; modern history debated</td>
+<td style="text-align: left;">Late first century</td>
+</tr>
+<tr>
+<td style="text-align: left;">Narrated event</td>
+<td style="text-align: left;">John 13:1; 15:18–27</td>
+<td style="text-align: left;">Jerusalem, final supper</td>
+<td style="text-align: left;">c. AD 29–30</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Amid the world’s hatred, Jesus promises that the Spirit bears witness and the disciples testify. The acclamation welcomes the Gospel’s demand for public acknowledgment.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 5:12–15</td>
+<td style="text-align: left;">Corinth, Achaia (present-day Greece), to churches at Rome</td>
+<td style="text-align: left;">c. AD 56–58</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Paul addresses mixed Jewish and Gentile churches at Rome. The boundary opens the Adam–Christ comparison and stops before its elaboration. The gift is “not like” the trespass: grace exceeds, rather than balances, sin’s devastation.</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement
 
@@ -238,6 +373,6 @@ Cyril of Jerusalem’s *Catechetical Lecture 10*, section 5, receives the same s
 
 - Kim Albrecht with Doublelucky Productions, [*The Hairs of Your Head Are Numbered*](https://www.kimalbrecht.com/item/hairs-of-your-head/), project and performances, 2017–2018; and Albrecht, [artist statement](https://www.kimalbrecht.com/about/), checked 2026-07-19.
 
-**Last revised (UTC):** 2026-09-24T18:04:15Z
+**Last revised (UTC):** 2026-11-04T03:59:07Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

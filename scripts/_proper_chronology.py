@@ -313,6 +313,7 @@ class Dossier(NamedTuple):
     presentation: str = ""
     orientation_contexts: tuple[_chronology.OrientationContext, ...] = ()
     orientation_subject_labels: dict[str, str] = {}
+    orientation_settings: dict[str, _chronology.OrientationSetting] = {}
 
     def element(self, key: str) -> Element | None:
         for item in self.elements:
@@ -383,6 +384,9 @@ class OrientationRow(NamedTuple):
     context_label: str = ""
     context_sources: tuple[str, ...] = ()
     subject_label: str = ""
+    passage_start: bool = True
+    passage_end: bool = True
+    setting_label: str = ""
 
 
 class AnnotationProjection(NamedTuple):
@@ -1081,6 +1085,7 @@ def dossier(
         presentation=presentation_contract(root / "src" / provider / document),
         orientation_contexts=_chronology.load(corpus_root).orientation_contexts,
         orientation_subject_labels=_chronology.load(corpus_root).orientation_subject_labels,
+        orientation_settings=_chronology.load(corpus_root).orientation_settings,
     )
 
 
@@ -1594,6 +1599,47 @@ def orientation_rows(found: Dossier, presentation: str | None = None) -> tuple[O
         raise ChronologyWiringError(f"unknown chronology presentation: {selected!r}")
     held: dict[str, tuple[AnnotationGroup, dict[str, set[str]]]] = {}
 
+    def passage_signature(element: Element, locus: str) -> tuple:
+        """Keep a passage's complete answer together, not one matching date.
+
+        Two Psalms sharing a collection bound need separate dossiers. Within
+        one appointment, split only where the complete candidate set changes;
+        otherwise a broad composition row overlaps a narrower event row.
+        """
+        claims = tuple(claim._replace(reaches=()) for claim in element.claims
+                       if any(reach.locus == locus for reach in claim.reaches))
+        comparisons = tuple(
+            comparison._replace(key="", element_key="", claims=matching)
+            for comparison in found.profile_comparisons if comparison.element_key == element.key
+            if (matching := tuple(claim._replace(reaches=()) for claim in comparison.claims
+                                  if any(reach.locus == locus for reach in claim.reaches))))
+        anchors = tuple(context._replace(element_key="", parent=context.parent._replace(reaches=()))
+                        for context in found.anchor_contexts if context.element_key == element.key
+                        and any(reach.locus == locus for reach in context.parent.reaches))
+        point = _chronology.parse_locus(locus)
+        context = next((item for item in found.orientation_contexts
+                        if _chronology._scope_covers(item.scope, point.token, point.chapter, point.verse)), None)
+        # Separate books, and separate Psalms within one composite appointment,
+        # even when their dates happen to coincide. Discontinuous verses of
+        # the same Psalm or other book may still form one appointed passage.
+        passage = point.token, point.chapter if point.token == "Ps" else None
+        return element.key, passage, claims, comparisons, anchors, context
+
+    # Equal answers separated by another answer must not jump over it. Walk
+    # each component's appointed loci in order, retaining deliberate gaps in
+    # its citation but opening a new group whenever its complete answer changes.
+    partitions = {}
+    if selected == ORIENTATION_V3:
+        for element in found.elements:
+            previous = None
+            run = 0
+            for locus in sorted(element.loci, key=_locus_order):
+                signature = passage_signature(element, locus)
+                if signature != previous:
+                    run += 1
+                partitions[element.key, locus] = (signature, run)
+                previous = signature
+
     def add(element: Element, loci: tuple[str, ...], group: AnnotationGroup) -> None:
         if selected == ORIENTATION_V3:
             group = group._replace(claims=tuple(claim._replace(
@@ -1603,13 +1649,15 @@ def orientation_rows(found: Dossier, presentation: str | None = None) -> tuple[O
                     tuple(claim._replace(reaches=()) for claim in group.claims),
                     group.anchor_context._replace(element_key="")
                     if group.anchor_context else None)
+        if selected == ORIENTATION_V3:
+            semantic += (partitions[element.key, loci[0]],)
         if selected == ORIENTATION_V3 and group.relation == "narrated-event" and not group.claims:
             points = [_chronology.parse_locus(locus) for locus in loci]
             context = next((item for item in found.orientation_contexts
                             if all(_chronology._scope_covers(item.scope, point.token, point.chapter, point.verse)
                                    for point in points)), None)
             # Different known episodes must never consolidate merely because
-            # neither has a date. Long/short forms of one episode still can.
+            # neither has a date. Distinct appointed forms retain their owner.
             semantic += (context,)
         key = "row-" + hashlib.sha256(json.dumps(semantic).encode()).hexdigest()[:16]
         if key not in held:
@@ -1663,8 +1711,12 @@ def orientation_rows(found: Dossier, presentation: str | None = None) -> tuple[O
                          if any(reach.locus == locus for reach in context.parent.reaches))
             if not loci:
                 continue
-            add(element, loci, AnnotationGroup(
-                "anchor-context", "context", "", claims, anchor_context=context))
+            group = AnnotationGroup("anchor-context", "context", "", claims, anchor_context=context)
+            if selected == ORIENTATION_V3:
+                for locus in loci:
+                    add(element, (locus,), group)
+            else:
+                add(element, loci, group)
 
     rows = []
     for key, (group, by_element) in held.items():
@@ -1689,17 +1741,30 @@ def orientation_rows(found: Dossier, presentation: str | None = None) -> tuple[O
             context = next((item for item in found.orientation_contexts
                             if all(_chronology._scope_covers(item.scope, locus.token, locus.chapter, locus.verse)
                                    for locus in loci)), None)
+        setting = (found.orientation_settings.get(group.claims[0].subject)
+                   if selected == ORIENTATION_V3 and group.claims else None)
+        if setting and setting.relation != group.relation:
+            setting = None
         rows.append(OrientationRow(row_key, tuple(passages), group,
                                    "; ".join(dict.fromkeys(displays)),
                                    context.label if context else "",
-                                   context.sources if context else (),
+                                   tuple(dict.fromkeys((context.sources if context else ())
+                                         + (setting.sources if setting else ()))),
                                    found.orientation_subject_labels.get(group.claims[0].subject, "")
-                                   if selected == ORIENTATION_V3 and group.claims else ""))
-    return tuple(sorted(rows, key=lambda row: (
+                                   if selected == ORIENTATION_V3 and group.claims else "",
+                                   setting_label=setting.label if setting else ""))
+    ordered = sorted(rows, key=lambda row: (
         min(_locus_order(locus) for passage in row.passages for locus in passage.loci),
+        tuple(p.element_key for p in row.passages) if selected == ORIENTATION_V3 else (),
         ANNOTATION_RELATION_ORDER.get(row.group.relation, 999),
         row.group.requested_profile,
-        row.group.claims[0].subject if row.group.claims else "", row.key)))
+        row.group.claims[0].subject if row.group.claims else "", row.key))
+    if selected == ORIENTATION_V3:
+        ordered = [row._replace(
+            passage_start=index == 0 or row.passages != ordered[index - 1].passages,
+            passage_end=index == len(ordered) - 1 or row.passages != ordered[index + 1].passages)
+            for index, row in enumerate(ordered)]
+    return tuple(ordered)
 
 
 def _orientation_anchor_value(candidate: AnchorCandidate) -> str:
@@ -1720,7 +1785,10 @@ def orientation_subject(row: OrientationRow, presentation: str = "") -> str:
         heading = "Narrated event"
     if not group.claims:
         return f"{heading}: {row.context_label}" if row.context_label else heading
-    return f"{heading}: {row.subject_label or group.claims[0].title}"
+    if presentation == ORIENTATION_V3 and group.requested_profile == "catholic-critical-v1":
+        heading = f"{_relation_label(group.relation)}, Catholic critical comparison"
+    subject = f"{heading}: {row.subject_label or group.claims[0].title}"
+    return f"{subject}; {row.setting_label}" if row.setting_label else subject
 
 
 def orientation_date(row: OrientationRow) -> str:
@@ -2375,10 +2443,11 @@ def render_annotations_tex(found: AnnotationProjection) -> str:
             lines.extend([
                 "\\expandafter\\def\\csname "
                 f"triptychchronologyorientation@{row.key}" + r"\endcsname#1{%",
-                tex_escape(orientation_passage(row)) + " & "
+                (tex_escape(orientation_passage(row)) if not shared or row.passage_start else "") + " & "
                 + tex_escape(orientation_subject(row, found.presentation))
                 + (" & " if found.presentation == ORIENTATION_V3 else ". #1 & ")
-                + values + (r"\\[.7em]%" if found.presentation == ORIENTATION_V3 else r"\\[.25em]%"),
+                + values + ((r"\\[.3em]%" if row.passage_end else r"\\*[.1em]%")
+                            if shared else r"\\[.25em]%"),
                 "}",
             ])
     return "\n".join(lines) + "\n"
@@ -2397,7 +2466,9 @@ def render_orientation_table(found: AnnotationProjection) -> str:
         "% Generated. Do not edit.",
         "% Complete orientation-v3 table; wording, dates and order belong to the corpus.",
         r"\begin{chronologysharedtable}",
-        *(r"\chronologyorientationrow{" + row.key + "}{}" for row in found.orientation_rows),
+        *(line for index, row in enumerate(found.orientation_rows)
+          for line in (([r"\midrule"] if index and row.passage_start else [])
+                       + [r"\chronologyorientationrow{" + row.key + "}{}"])),
         r"\end{chronologysharedtable}",
         *([r"{\footnotesize Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.\par}"]
           if any(locus.startswith("Ps.") for row in found.orientation_rows

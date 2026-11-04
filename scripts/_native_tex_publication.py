@@ -163,7 +163,11 @@ def _pack_tex_files(tex_files: list, runtime_assets: dict) -> tuple[list, dict]:
             suffix = suffix if suffix in {".pfb", ".otf", ".ttf", ".ttc"} else {
                 32: ".pfb", 36: ".ttf", 47: ".otf",
             }[row["format"]]
-            group = suffix, row.get("name", "")[:2].casefold()
+            name = row.get("name", "")
+            # Native metric/map discovery supplies exact Type1 face hints.
+            # Keep each body separate so one requested Latin Modern face
+            # cannot bring every unrelated roman, sans and mono face along.
+            group = suffix, (name if suffix == ".pfb" else name[:2]).casefold()
             font_groups[key] = min(group, font_groups.get(key, group))
 
     groups, current, size = [], [], 0
@@ -177,9 +181,9 @@ def _pack_tex_files(tex_files: list, runtime_assets: dict) -> tuple[list, dict]:
         size += identity[1]
     if current:
         groups.append((current, False))
-    # A native failure can stop at the first needed face. Coarse, deterministic
-    # filename-prefix packs bring related faces together without guessing which
-    # fonts a document uses. The same expansion bound applies to every group.
+    # A native failure can stop at the first needed face. Unicode fonts retain
+    # coarse filename-prefix groups; Type1 faces arrive individually from
+    # native accesses and metric/map hints. The same bound applies to every group.
     for family in sorted({font_groups[key] for key in payloads if deferred[key]}):
         current, size = [], 0
         for identity, route in sorted(payloads.items()):

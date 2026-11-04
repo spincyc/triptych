@@ -108,6 +108,18 @@ def wait(expression):
     return {'do': 'wait', 'until': expression}
 
 
+def idle_arrivals(route, loaded, snapshot):
+    """Observe direct and retained print links without invoking their action."""
+    return [
+        {'do':'navigate','url':route},loaded,act(snapshot,'normal'),
+        {'do':'navigate','url':route+'?print=1'},loaded,act(snapshot,'query'),
+        {'do':'reload'},loaded,act(snapshot,'reload'),
+        {'do':'background'},
+        {'do':'navigate','url':route+'?print=1&background=1'},loaded,
+        act(snapshot,'background'),act('document.hidden','hidden'),
+        {'do':'foreground'}]
+
+
 def drive(plan):
     harness = HARNESS.replace("JSON.parse(process.argv[3])", "JSON.parse(await readFile(process.argv[3], 'utf8'))")
     harness = harness.replace('mkdtemp, readFile, rm', 'mkdtemp, readFile, rm, writeFile')
@@ -118,6 +130,20 @@ def drive(plan):
       const point=await evaluate(cdp,`(()=>{const rect=document.querySelector(${JSON.stringify(act.selector)}).getBoundingClientRect();return {x:rect.left+rect.width/2,y:rect.top+rect.height/2};})()`);
       await cdp.send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...point});
       await cdp.send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...point});
+    } else if (act.do === 'reload') {
+      await evaluate(cdp, 'window.printTestReloadPending=true');
+      await cdp.send('Page.reload');
+      await waitFor(cdp, "!window.printTestReloadPending && document.readyState === 'complete'", 'reloaded document');
+    } else if (act.do === 'background') {
+      const other=await cdp.send('Target.createTarget',{url:'about:blank'});
+      await cdp.send('Target.activateTarget',{targetId:other.targetId});
+      await waitFor(cdp, 'document.hidden', 'background document');
+    } else if (act.do === 'foreground') {
+      await cdp.send('Page.bringToFront');
+      await waitFor(cdp, '!document.hidden', 'foreground document');
+    } else if (act.do === 'key') {
+      await cdp.send('Input.dispatchKeyEvent',{type:'keyDown',key:act.key,code:act.code,modifiers:act.modifiers||0});
+      await cdp.send('Input.dispatchKeyEvent',{type:'keyUp',key:act.key,code:act.code,modifiers:act.modifiers||0});
     } else if (act.do === 'media') {
       await cdp.send('Emulation.setEmulatedMedia', {media: act.media});
     } else if (act.do === 'network') {
@@ -252,17 +278,81 @@ def fixture(inline=False, image=False, font=False, native=False):
     return descriptor,responses
 
 
-def plan(responses, auto=False):
+def plan(responses, print_query=False):
     return {'responses':responses,'acts':[
-        {'do':'navigate','url':'/print/example.html'+('?print=1' if auto else '')},
+        {'do':'navigate','url':'/print/example.html'+('?print=1' if print_query else '')},
         wait("window.TriptychWebPrint && document.querySelector('[data-web-print-document]').dataset.webPrintState"),
-        *([] if auto else [act("document.querySelector('[data-web-print-start]').click()")]),
+        act("document.querySelector('[data-web-print-start]').click()"),
         wait("!document.querySelector('[data-web-print-start]').disabled"),
         act("({calls:printCalls,nativeEvents, snapshot:window.printSnapshot,state:document.querySelector('[data-web-print-document]').dataset.webPrintState,status:document.querySelector('[data-web-print-status]').textContent,frames:document.querySelectorAll('[data-web-print-frame]').length})",'result')
     ]}
 
 
 class ControllerTests(unittest.TestCase):
+    def test_source_column_classes_and_spanning_notes_survive_preparation(self):
+        widths = [16, 23, 24, 28, 30, 32, 35, 38, 40, 42, 56, 68, 69, 70, 86]
+        table_widths = [70, 74, 84, 86, 90, 94]
+        for mutation in ['valid', 'unknown-width', 'unknown-table-width', 'inline-style']:
+            with self.subTest(mutation=mutation):
+                descriptor, responses = fixture()
+                changed = copy.deepcopy(descriptor)
+                path = 'print/example/part-1.html'
+                body = ''.join(
+                    f'<table class="print-table-width-{table_widths[index % len(table_widths)]}"><colgroup><col class="print-column-width-{width}"><col class="print-column-width-10"></colgroup>'
+                    f'<tbody><tr><td>{width}</td><td>Source</td></tr><tr><td colspan="2">Complete spanning note {width}.</td></tr></tbody></table>'
+                    for index, width in enumerate(widths))
+                if mutation == 'unknown-width':
+                    body = body.replace('print-column-width-35', 'print-column-width-99')
+                if mutation == 'unknown-table-width':
+                    body = body.replace('print-table-width-70', 'print-table-width-99')
+                if mutation == 'inline-style':
+                    body = body.replace('class="print-column-width-35"', 'style="width:35%;display:none"')
+                old = '<p class="print-callout">Complete canonical body 1; τέλος. Source qualification retained.</p>'
+                responses[path] = responses[path].replace(old, body)
+                changed['parts'][0].update(text_sha256=sha(Text(responses[path]).normalized()),
+                    structure_sha256=structure_sha256(responses[path], 'part-1'), counts={})
+                responses['print/example.html'] = responses['print/example.html'].replace(
+                    json.dumps(descriptor), json.dumps(compact_descriptor(changed)))
+                p = plan(responses)
+                if mutation == 'valid':
+                    p['acts'].append(act("""(()=>{const doc=document.querySelector('[data-web-print-frame]').contentDocument;
+return {columns:[...doc.querySelectorAll('col')].map(c=>c.className),
+tables:[...doc.querySelectorAll('table')].map(t=>({width:t.getBoundingClientRect().width,parentWidth:t.parentElement.getBoundingClientRect().width})),
+notes:[...doc.querySelectorAll('td[colspan]')].map(c=>({span:c.colSpan,text:c.textContent,width:c.getBoundingClientRect().width,rowWidth:c.parentElement.getBoundingClientRect().width}))};})()""", 'sourceGeometry'))
+                seen = drive(p)
+                self.assertEqual(seen['result']['calls'], 1 if mutation == 'valid' else 0, seen)
+                if mutation == 'valid':
+                    geometry = seen['sourceGeometry']
+                    self.assertEqual(geometry['columns'], [name for width in widths for name in
+                        [f'print-column-width-{width}', 'print-column-width-10']])
+                    self.assertEqual(len(geometry['notes']), len(widths))
+                    for index, table in enumerate(geometry['tables']):
+                        self.assertAlmostEqual(table['width'] / table['parentWidth'],
+                            table_widths[index % len(table_widths)] / 100, delta=0.002)
+                    for width, note in zip(widths, geometry['notes']):
+                        self.assertEqual(note['span'], 2)
+                        self.assertEqual(note['text'], f'Complete spanning note {width}.')
+                        self.assertAlmostEqual(note['width'], note['rowWidth'], delta=2)
+
+    def test_navigation_query_reload_and_background_wait_for_print_action(self):
+        for auto_option in [False, True]:
+            with self.subTest(auto_option=auto_option):
+                _,responses=fixture()
+                if auto_option:
+                    install="<script>const root=document.querySelector('[data-web-print-document]');TriptychWebPrint.install(root,JSON.parse(root.querySelector('[data-web-print-manifest]').textContent),{auto:true});</script>"
+                    responses['print/example.html']=responses['print/example.html'].replace('<script src="../shared/web-print.js"></script>', '<script src="../shared/web-print.js"></script>'+install)
+                idle="({state:document.querySelector('[data-web-print-document]').dataset.webPrintState,calls:printCalls,frames:document.querySelectorAll('[data-web-print-frame]').length,fetches:performance.getEntriesByType('resource').filter(n=>n.initiatorType==='fetch').length})"
+                loaded=wait("document.readyState==='complete' && window.TriptychWebPrint")
+                p=plan(responses,print_query=True)
+                p['acts']=[*idle_arrivals('/print/example.html',loaded,idle),
+                    {'do':'click','selector':'[data-web-print-start]'},*p['acts'][3:]]
+                seen=drive(p)
+                for arrival in ['normal','query','reload','background']:
+                    self.assertEqual(seen[arrival],{'state':'idle','calls':0,'frames':0,'fetches':0},seen)
+                self.assertTrue(seen['hidden'],seen)
+                self.assertEqual(seen['result']['calls'],1,seen)
+                self.assertEqual(seen['result']['snapshot']['units'],['u-1','u-2','u-3'])
+
     def test_verified_cross_part_notes_become_internal_without_stealing_other_citations(self):
         descriptor,responses=fixture();changed=copy.deepcopy(descriptor);path='print/example/part-1.html'
         links=[('part-2.html#heading-%CE%93','Cross-part note'),('/print/example.html#heading-%CE%93','Whole-edition note'),
@@ -274,7 +364,7 @@ class ControllerTests(unittest.TestCase):
         for index,key in enumerate([path,second]):
             changed['parts'][index].update(text_sha256=sha(Text(responses[key]).normalized()),structure_sha256=structure_sha256(responses[key],'part-'+str(index+1)),counts={})
         responses['print/example.html']=responses['print/example.html'].replace(json.dumps(descriptor),json.dumps(compact_descriptor(changed)))
-        p=plan(responses,auto=True);p['acts'].append(act("[...document.querySelector('[data-web-print-frame]').contentDocument.querySelectorAll('a')].map(n=>({text:n.textContent,href:n.getAttribute('href')}))",'links'))
+        p=plan(responses,print_query=True);p['acts'].append(act("[...document.querySelector('[data-web-print-frame]').contentDocument.querySelectorAll('a')].map(n=>({text:n.textContent,href:n.getAttribute('href')}))",'links'))
         observed=drive(p);self.assertEqual(observed['result']['calls'],1,observed)
         values={link['text']:link['href'] for link in observed['links']}
         self.assertEqual(values['Cross-part note'],'#heading-%CE%93')
@@ -587,7 +677,7 @@ return {box,centre:[...pixels.slice((y*120+x)*4,(y*120+x)*4+4)],horizontalRuns:r
 
     def test_complete_inline_edition_print_query_and_actual_native_print_events(self):
         _,responses=fixture(inline=True,native=True)
-        seen=drive(plan(responses,auto=True))['result']
+        seen=drive(plan(responses,print_query=True))['result']
         self.assertEqual(seen['calls'],1,seen)
         self.assertGreaterEqual(seen['nativeEvents'],1,seen)
         self.assertEqual(seen['snapshot']['units'],['u-1','u-2','u-3'])

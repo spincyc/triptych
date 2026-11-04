@@ -15,43 +15,288 @@ subject_labels:
   composition.first-epistle-to-the-thessalonians: First Thessalonians
   composition.epistle-to-the-philippians: Philippians
   composition.epistle-to-the-colossians: Colossians
+  composition.book-of-esther: Esther
+  critical.book-of-job: Job
+  composition.epistle-to-the-ephesians: Ephesians
+  critical.ephesians-later-disciple: Ephesians (later-disciple hypothesis)
   critical.gospel-of-matthew: Greek Matthew
   critical.gospel-of-mark: Mark
 contexts:
   - scope: {book: Matt, chapter: 5, first: 1, last: 12}
-    label: Jesus teaches the Beatitudes on a mountain
+    label: Jesus teaches the Beatitudes on an unnamed mountain in Galilee
     sources:
+      - bible:douay-rheims:Matt.4.23
+      - bible:douay-rheims:Matt.4.25
       - bible:douay-rheims:Matt.5.1
       - bible:douay-rheims:Matt.5.2
       - bible:douay-rheims:Matt.5.3
       - bible:douay-rheims:Matt.5.12
     basis: >-
       Matthew 5:1-2 sets Jesus' teaching on an unnamed mountain; verses 3-12
-      give the blessings. The narrative does not supply an absolute year.
+      give the blessings, after the Galilean ministry of 4:23-25. The hill is
+      unnamed. The narrative does not supply an absolute year.
   - scope: {book: Matt, chapter: 13, first: 24, last: 30}
-    label: Jesus tells the parable of the wheat and cockle
+    label: Jesus tells the parable of the wheat and cockle beside the sea
     sources:
+      - bible:douay-rheims:Matt.13.1
+      - bible:douay-rheims:Matt.13.2
       - bible:douay-rheims:Matt.13.24
       - bible:douay-rheims:Matt.13.25
       - bible:douay-rheims:Matt.13.30
     basis: >-
       Matthew expressly introduces a parable. The narrated event is Jesus'
       telling it, not the fictional sowing or an inferred date for the harvest.
-  - scope: {book: Matt, chapter: 22, first: 15, last: 21}
-    label: Jesus answers the question about tribute to Caesar
+      Verses 1-2 set the teaching beside the sea; no named shoreline is supplied.
+  - scope: {book: Matt, chapter: 18, first: 23, last: 35}
+    label: Jesus tells the parable of the unforgiving servant; Capharnaum by narrative continuity
     sources:
+      - bible:douay-rheims:Matt.17.23
+      - bible:douay-rheims:Matt.18.1
+      - bible:douay-rheims:Matt.19.1
+      - bible:douay-rheims:Matt.18.21
+      - bible:douay-rheims:Matt.18.22
+      - bible:douay-rheims:Matt.18.23
+      - bible:douay-rheims:Matt.18.35
+    basis: >-
+      Jesus answers Peter's question about forgiveness with a comparison to
+      a king and his servants, then applies it to forgiveness from the heart.
+      The episode is Jesus' telling, not a dated event in the parable. The
+      preceding Capharnaum setting (17:23) continues through 18:1 until the
+      departure from Galilee in 19:1. This is narrative continuity, not a
+      separately named venue in the appointed verses.
+  - scope: {book: Matt, chapter: 22, first: 15, last: 21}
+    label: Jesus answers about tribute to Caesar in the Temple at Jerusalem
+    sources:
+      - bible:douay-rheims:Matt.21.10
+      - bible:douay-rheims:Matt.21.23
       - bible:douay-rheims:Matt.22.15
       - bible:douay-rheims:Matt.22.17
       - bible:douay-rheims:Matt.22.21
     basis: >-
       The Pharisees' disciples and the Herodians question Jesus about tribute;
       his reply distinguishes what belongs to Caesar and what belongs to God.
+      Matthew 21:10 and 21:23 set the continuing controversy at Jerusalem
+      and in the Temple.
   - scope: {book: John, chapter: 18, first: 33, last: 37}
-    label: Jesus before Pilate in the governor's hall
+    label: Jesus before Pilate in the governor's hall at Jerusalem
     sources:
+      - bible:douay-rheims:John.18.1
       - bible:douay-rheims:John.18.28
       - bible:douay-rheims:John.18.33
       - bible:douay-rheims:John.18.37
     basis: >-
       The governor's hall is named in verse 28. Pilate returns inside and
       questions Jesus in verse 33; their dialogue continues through verse 37.
+      The arrest across the Cedron and the subsequent trial belong to the
+      Jerusalem Passion narrative, not a claim about the place of writing.
+
+# Places qualify the named date relation; they never supply a date.
+settings:
+  composition.book-of-esther:
+    relation: composition
+    label: story at Susa; writing in Persia conjectured
+    sources:
+    - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05549a-ab721ede-article-text
+    - bible:douay-rheims:Esth.1.2
+    basis: Esther 1:2 names Susa as the court setting. McMahon's composition discussion
+      conjectures writing and publication in Persia; it does not establish a certain writing
+      site.
+  critical.book-of-job:
+    relation: composition
+    label: story in Hus; writing site unspecified
+    sources:
+    - bible:douay-rheims:Job.1.1
+    basis: Job 1:1 locates its protagonist in the land of Hus. This is the story's setting,
+      not evidence for the book's writing place; the dated composition answer supplies no
+      writing site.
+  israel.exodus.the-exodus:
+    relation: retrospective-event
+    label: departure from Egypt; interval to Jerusalem's Temple
+    sources:
+    - bible:douay-rheims:Ps.113.1
+    - bible:douay-rheims:3Kings.6.1
+    - bible:douay-rheims:2Par.3.1
+    basis: The psalm names the departure from Egypt. The interval ends at Solomon's Temple's
+      foundation; 2 Paralipomenon 3:1 explicitly locates that Temple at Jerusalem. This
+      is not a journey directly from Egypt to Jerusalem.
+  israel.monarchy.david-traditional-era:
+    relation: traditional-attribution
+    label: Hebron, then Jerusalem
+    sources:
+    - bible:douay-rheims:2Kings.5.5
+    basis: 2 Kings 5:5 divides David's reign between Hebron and Jerusalem. The places qualify
+      the attributed author's reign, not a psalm's otherwise unknown occasion.
+  composition.gospel-of-matthew:
+    relation: composition
+    label: Semitic original associated with Palestine
+    sources:
+    - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef-article-text
+    basis: 'Jacquier''s date discussion reports Eusebius: Matthew wrote in Hebrew when he
+      left Palestine. This is a traditional association for the Semitic original, not a
+      firm writing site for the extant Greek Gospel.'
+  critical.gospel-of-matthew:
+    relation: composition
+    label: Antioch suggested
+    sources:
+    - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.matthew-introduction
+    basis: The NABRE introduction calls Antioch in Syria a plausible suggestion for the
+      Greek Gospel's place of composition; it does not make the place certain.
+  composition.epistle-to-the-ephesians:
+    relation: composition
+    label: Rome or Caesarea; recipients in Asia Minor
+    sources:
+    - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae-article-text
+    basis: Ladeuze leaves Rome versus Caesarea a much mooted question, favoring Rome's circumstances.
+      His discussion of destination considers Ephesus and groups of churches in Asia Minor;
+      the short wording does not resolve that dispute.
+  israel.exile.seventy-years:
+    relation: historical-setting
+    label: Judah and Babylon
+    sources:
+    - bible:douay-rheims:Jer.25.11
+    - bible:douay-rheims:Jer.25.12
+    basis: Jeremias 25 makes Judah and the surrounding nations serve Babylon. The places
+      qualify the historical exile, not an individual psalm's writing site.
+  composition.book-of-daniel:
+    relation: composition
+    label: Babylonian setting
+    sources:
+    - bible:douay-rheims:Dan.1.1
+    - bible:douay-rheims:Dan.1.6
+    - bible:douay-rheims:Dan.7.1
+    basis: Daniel 1 sets the Judaean captives at Babylon, and 7:1 locates the vision in
+      the reign of Baltasar king of Babylon. These are narrative settings; no independently
+      established writing location is claimed.
+  composition.gospel-of-john:
+    relation: composition
+    label: Ephesus traditionally
+    sources:
+    - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c-article-text
+    basis: Fonck's place-of-composition paragraph reports Irenaeus and the early witnesses
+      locating the Gospel's writing at Ephesus in Asia.
+  composition.epistle-to-the-colossians:
+    relation: composition
+    label: Rome traditionally; addressed to Colossae
+    sources:
+    - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04131b-08367306-article-text
+    - bible:douay-rheims:Col.1.2
+    basis: Aherne reports Roman captivity as the accepted place among those who admit Pauline
+      authenticity and notes the earlier Caesarean proposal. Colossians 1:2 names the recipients
+      at Colossae; neither authorship nor prison location is independently settled by this
+      label.
+  composition.apocalypse:
+    relation: composition
+    label: seer on Patmos; heavenly scenes are visions
+    sources:
+    - bible:douay-rheims:Apoc.1.9
+    - bible:douay-rheims:Apoc.4.1
+    - bible:douay-rheims:Apoc.7.9
+    basis: The seer identifies Patmos in 1:9. The heavenly throne and multitude are scenes
+      of the vision, not a terrestrial place of writing. The label does not infer that every
+      stage of composition occurred on Patmos.
+  israel.monarchy.david-at-geth:
+    relation: superscription-setting
+    label: Geth, at the Philistine court
+    sources:
+    - bible:douay-rheims:Ps.33.1
+    - bible:douay-rheims:1Kings.21.10
+    - bible:douay-rheims:1Kings.21.15
+    basis: The psalm's title names the feigned madness before Achimelech; the corresponding
+      narrative in 1 Kings 21 places David before Achis king of Geth. This is the title's
+      historical association, not a new composition claim.
+  composition.book-of-wisdom:
+    relation: composition
+    label: Alexandria in Gigot's account
+    sources:
+    - artifact.catholic-encyclopedia.volume-15.new-york-1912.newadvent-15666a-999fbc07-article-text
+    basis: Gigot's place-of-composition argument identifies Alexandria from internal characteristics
+      and the book's Alexandrian reception. The attribution remains the cited author's account.
+  israel.restoration.temple-raised-by-zorobabel:
+    relation: superscription-setting
+    label: Temple at Jerusalem
+    sources:
+    - bible:douay-rheims:Ps.95.1
+    - bible:douay-rheims:1Esd.3.8
+    basis: The Latin psalm title speaks of the house built after captivity, and 1 Esdras
+      3:8 places the rebuilding of God's house at Jerusalem. The title association is not
+      an independently secured date of the psalm.
+  life-of-christ.nativity:
+    relation: prophetic-referent
+    label: Bethlehem as the Christian referent
+    sources:
+    - bible:douay-rheims:Matt.2.1
+    basis: Matthew 2:1 locates the Nativity at Bethlehem. Here the relation is the Christian
+      prophetic referent, not a claim that the psalm itself names Bethlehem or its own occasion.
+  israel.prophets.isaias-traditional-era:
+    relation: traditional-attribution
+    label: Judah and Jerusalem
+    sources:
+    - bible:douay-rheims:Is.1.1
+    basis: Isaias 1:1 describes the vision concerning Judah and Jerusalem. The setting qualifies
+      the attributed prophet's ministry, not the location or date of every later textual
+      layer.
+  israel.exile.second-isaias-oracles:
+    relation: prophecy-given
+    label: exiles from Babylon; restoration to Jerusalem
+    sources:
+    - bible:douay-rheims:Is.48.20
+    - bible:douay-rheims:Is.52.9
+    basis: Isaias 48:20 calls the exiles out of Babylon and 52:9 addresses the ruins of
+      Jerusalem with restoration. The passages establish the oracles' horizon, not the unnamed
+      prophet's writing address.
+  composition.gospel-of-mark:
+    relation: composition
+    label: Rome traditionally; Egypt reported by Chrysostom
+    sources:
+    - artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9-article-text
+    basis: MacRory holds Rome to be the place, while reporting and rejecting Chrysostom's
+      Egyptian location. The short label retains the reported alternative without treating
+      it as equally preferred by MacRory.
+  critical.gospel-of-mark:
+    relation: composition
+    label: Syria possible
+    sources:
+    - artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-11-02.mark-introduction-web-text-272bcce7
+    basis: The NABRE's tentative anonymous-author proposal includes possibly Syria. The
+      location is part of that conditional modern proposal, not its traditional Roman account.
+  composition.epistle-to-the-philippians:
+    relation: composition
+    label: Rome to Philippi in the cited account
+    sources:
+    - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12008a-1e39e824-article-text
+    - bible:douay-rheims:Phil.1.1
+    basis: Vander Heeren's place-and-date section argues for Rome and rejects the Caesarean
+      proposal; Philippians 1:1 identifies the addressees in Philippi. The label remains
+      qualified as this account.
+  composition.first-epistle-to-the-thessalonians:
+    relation: composition
+    label: Corinth to Thessalonica
+    sources:
+    - artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14629d-95947a74-article-text
+    - bible:douay-rheims:1Thess.1.1
+    basis: Drum's Time and place section locates the first letter at Corinth and rejects
+      the subscription locating it at Athens; the address names the church of the Thessalonians.
+  composition.jeremias-letter-to-the-exiles:
+    relation: composition
+    label: Jerusalem to Babylon
+    sources:
+    - bible:douay-rheims:Jer.29.1
+    - bible:douay-rheims:Jer.29.3
+    basis: Jeremias 29:1 names the letter sent from Jerusalem to the captives at Babylon,
+      and verse 3 names the messengers sent from Jerusalem to Babylon.
+  composition.book-of-jeremias:
+    relation: final-formation
+    label: Judah ministry; final writing site unspecified
+    sources:
+    - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08334a-dd4ae528-article-text
+    basis: Faulhaber's account places Jeremias's ministry in Judah and Jerusalem and later
+      in Egypt. Its final-formation dating does not establish where the whole book's final
+      form was written.
+  composition.first-epistle-of-st-john:
+    relation: composition
+    label: Ephesus probable
+    sources:
+    - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08435a-d50fa955-article-text
+    basis: Drum's Time and place section says nothing certain can be determined, but calls
+      the arguments for Ephesus probable. This remains a probability, not an established
+      address.

@@ -228,6 +228,25 @@ class NativeTeXPublicationTest(unittest.TestCase):
         published = json.loads(self.build()["assets"][RUNTIME_ROUTE]["body"])
         self.assertNotIn("deferred", published["texPacks"][0])
 
+    def test_type1_faces_are_individual_while_unicode_families_keep_their_groups(self):
+        faces = {"lmr10.pfb": b"roman", "lmbx10.pfb": b"bold", "lmtt10.pfb": b"mono",
+                 "Family-Regular.otf": b"unicode regular", "Family-Bold.otf": b"unicode bold"}
+        for name, body in faces.items():
+            self.add_tex_file(body, name)
+        self.add_tex_file(faces["lmr10.pfb"], "lmr10-alias.pfb")
+        catalog = self.build()
+        published = json.loads(catalog["assets"][RUNTIME_ROUTE]["body"])
+        packs = published["texPacks"]
+        self.assertEqual(len(packs), 4)
+        self.assertTrue(all(pack["deferred"] for pack in packs))
+        self.assertEqual(len({pack["font_group"] for pack in packs}), 4)
+        for name, body in faces.items():
+            pack = next(pack for pack in packs if any(member["sha256"] == digest(body) for member in pack["files"]))
+            self.assertEqual(len(pack["files"]), 1 if name.endswith(".pfb") else 2)
+            if name.endswith(".pfb"):
+                self.assertEqual(gzip.decompress(catalog["assets"][pack["url"]]["body"]), body)
+        self.assertEqual(published["texFiles"], self.runtime["texFiles"])
+
     def test_pack_identity_is_deterministic_across_alias_order_and_duplicate_lookup_payloads(self):
         self.add_tex_file(b"first payload", "one.sty")
         self.add_tex_file(b"second payload", "two.sty")

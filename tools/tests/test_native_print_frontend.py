@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 import _native_print as native
 import _web_print as web
-from .test_web_print_controller import drive, act, wait
+from .test_web_print_controller import drive, act, wait, idle_arrivals
 
 
 class NativeAdmissionTests(unittest.TestCase):
@@ -94,7 +94,7 @@ class NativeAdmissionTests(unittest.TestCase):
             native.site_context(ROOT, documents=self.documents, revision="a" * 40, native_catalog=catalog)
 
 
-def fixture(*, empty=False, failure=None, legacy=False, companion=False, wasm=False, service_prefix=False):
+def fixture(*, empty=False, failure=None, legacy=False, companion=False, wasm=False, service_prefix=False, auto_option=False):
     identity = "publication:gpt/example" + ("-synthesis" if companion else "")
     chosen = {"id": identity, "output_id": identity, "document": "publication:gpt/example",
               "edition": "synthesis" if companion else "main", "title": "Canonical edition"}
@@ -113,7 +113,7 @@ def fixture(*, empty=False, failure=None, legacy=False, companion=False, wasm=Fa
     hook = """
       window.printCalls=0; window.print=()=>{window.printCalls++;throw Error('Browser print must not run');};
       window.pdfDownloads=0; document.querySelector('[data-native-print-download]').click=()=>{window.pdfDownloads++;};
-      window.requests=[];window.polls=0;
+      window.requests=[];window.compilerRequests=[];window.polls=0;
       const chosen=JSON.parse(document.querySelector('[data-native-print-manifest]').textContent);
       const row={key:'b'.repeat(64),source_revision:chosen.source_revision,document:chosen.document,edition:chosen.edition,
         output_id:chosen.id,state:'queued',status_url:'/v1/jobs/'+'b'.repeat(64),pdf_url:null,error:null};
@@ -136,7 +136,6 @@ def fixture(*, empty=False, failure=None, legacy=False, companion=False, wasm=Fa
     hook = hook.replace("FAILURE", changes.get(failure, ""))
     if wasm:
         hook += """
-          window.compilerRequests=[];
           window.TriptychNativeTeX={generate:async(options)=>{
             window.compilerRequests.push({bundleURL:options.bundleURL,runtimeURL:options.runtimeURL,
               bundleSHA256:options.bundleSHA256,bundleBytes:options.bundleBytes,
@@ -153,17 +152,18 @@ def fixture(*, empty=False, failure=None, legacy=False, companion=False, wasm=Fa
     if legacy:
         body += '<script src="../shared/print-volume.js"></script>'
     body += '<script src="../shared/native-print.js"></script>'
+    if auto_option:
+        body += "<script>const root=document.querySelector('[data-native-print]');TriptychNativePrint.install(root,JSON.parse(root.querySelector('[data-native-print-manifest]').textContent),{auto:true});</script>"
     responses = {"print/example.html": '<!doctype html><html><body>' + body + '</body></html>',
                  "shared/native-print.js": (ROOT / "src/web/browser/shared/native-print.js").read_text(),
                  "shared/print-volume.js": (ROOT / "src/web/browser/shared/print-volume.js").read_text()}
     return responses
 
 
-def plan(responses, *, auto=False, cancellation=False):
-    actions = [{"do": "navigate", "url": "/print/example.html" + ("?print=1" if auto else "")},
+def plan(responses, *, print_query=False, cancellation=False):
+    actions = [{"do": "navigate", "url": "/print/example.html" + ("?print=1" if print_query else "")},
                wait("window.TriptychNativePrint && document.querySelector('[data-native-print]').dataset.nativePrintState")]
-    if not auto:
-        actions.append(act("document.querySelector('[data-native-print-start]').click()"))
+    actions.append({"do": "click", "selector": "[data-native-print-start]"})
     if cancellation:
         actions.extend([wait("requests.length===1"), act("document.querySelector('[data-native-print-cancel]').click()")])
     actions.extend([wait("!document.querySelector('[data-native-print-start]').disabled"),
@@ -172,16 +172,36 @@ def plan(responses, *, auto=False, cancellation=False):
 
 
 class NativeBrowserTests(unittest.TestCase):
+    def test_navigation_query_reload_and_background_never_request_a_pdf(self):
+        for wasm in [False, True]:
+            for auto_option in [False, True]:
+                with self.subTest(wasm=wasm, auto_option=auto_option):
+                    p = plan(fixture(wasm=wasm, auto_option=auto_option), print_query=True)
+                    idle = "({state:document.querySelector('[data-native-print]').dataset.nativePrintState,requests,compilerRequests,downloads:pdfDownloads,calls:printCalls,busy:document.querySelector('[data-native-print]').hasAttribute('aria-busy'),hidden:document.querySelector('[data-native-print-download]').hidden})"
+                    loaded = wait("document.readyState==='complete' && window.TriptychNativePrint")
+                    p['acts'] = [*idle_arrivals('/print/example.html', loaded, idle),
+                        *p['acts'][2:], act('compilerRequests.length', 'compilations')]
+                    seen = drive(p)
+                    for arrival in ['normal', 'query', 'reload', 'background']:
+                        self.assertEqual(seen[arrival], {'state': 'idle', 'requests': [], 'compilerRequests': [],
+                            'downloads': 0, 'calls': 0, 'busy': False, 'hidden': True}, seen)
+                    self.assertTrue(seen['hidden'], seen)
+                    self.assertEqual(seen['result']['state'], 'ready', seen)
+                    self.assertEqual(seen['result']['downloads'], 1, seen)
+                    self.assertEqual(seen['compilations'], int(wasm), seen)
+                    self.assertEqual(len([request for request in seen['result']['requests'] if request['method'] == 'POST']),
+                                     int(not wasm), seen)
+
     def test_keyboard_print_requests_native_pdf_instead_of_browser_print(self):
         p = plan(fixture())
-        p["acts"][2] = act("window.dispatchEvent(new KeyboardEvent('keydown',{key:'p',ctrlKey:true,cancelable:true}))")
+        p["acts"][2] = {"do": "key", "key": "p", "code": "KeyP", "modifiers": 2}
         result = drive(p)["result"]
         self.assertEqual(result["state"], "ready", result)
         self.assertEqual(result["calls"], 0)
         self.assertEqual(result["downloads"], 1)
 
     def test_service_paths_keep_the_configured_reverse_proxy_prefix(self):
-        result = drive(plan(fixture(service_prefix=True), auto=True))["result"]
+        result = drive(plan(fixture(service_prefix=True), print_query=True))["result"]
         self.assertEqual(result["state"], "ready", result)
         self.assertEqual(result["downloads"], 1)
         self.assertEqual(result["calls"], 0)
@@ -190,7 +210,7 @@ class NativeBrowserTests(unittest.TestCase):
         self.assertTrue(result["download"].startswith("http://localhost:9999/typesetting/v1/jobs/"))
 
     def test_native_wasm_compiler_takes_precedence_and_downloads_verified_pdf(self):
-        p = plan(fixture(wasm=True, empty=True), auto=True)
+        p = plan(fixture(wasm=True, empty=True), print_query=True)
         p["acts"].append(act("({requests:compilerRequests,type:document.querySelector('[data-native-print-download]').download})", "compiler"))
         observed = drive(p)
         result = observed["result"]
@@ -206,7 +226,7 @@ class NativeBrowserTests(unittest.TestCase):
         self.assertEqual(observed["compiler"]["type"], "example.pdf")
 
     def test_changed_compiler_pdf_is_refused_without_browser_or_service_fallback(self):
-        result = drive(plan(fixture(wasm=True, failure="wasm-sha"), auto=True))["result"]
+        result = drive(plan(fixture(wasm=True, failure="wasm-sha"), print_query=True))["result"]
         self.assertEqual(result["state"], "error", result)
         self.assertIn("failed verification", result["status"])
         self.assertEqual(result["requests"], [])
@@ -224,15 +244,15 @@ class NativeBrowserTests(unittest.TestCase):
         self.assertFalse(result["hidden"])
         self.assertTrue(result["download"].endswith("/pdf"))
 
-    def test_automatic_legacy_volume_action_never_opens_browser_print(self):
-        result = drive(plan(fixture(legacy=True), auto=True))["result"]
+    def test_explicit_native_volume_action_never_opens_browser_print(self):
+        result = drive(plan(fixture(legacy=True), print_query=True))["result"]
         self.assertEqual(result["state"], "ready", result)
         self.assertEqual(result["downloads"], 1)
         self.assertEqual(result["calls"], 0)
         self.assertFalse(result["oldPrintVisible"])
 
     def test_unconfigured_service_refuses_without_fetch_or_browser_fallback(self):
-        result = drive(plan(fixture(empty=True), auto=True))["result"]
+        result = drive(plan(fixture(empty=True), print_query=True))["result"]
         self.assertEqual(result["state"], "error", result)
         self.assertIn("not connected", result["status"])
         self.assertEqual(result["requests"], [])
@@ -242,7 +262,7 @@ class NativeBrowserTests(unittest.TestCase):
     def test_mismatch_failure_and_unfinished_download_are_refused(self):
         for failure in ("stale", "different", "host", "failed", "partial"):
             with self.subTest(failure=failure):
-                result = drive(plan(fixture(failure=failure), auto=True))["result"]
+                result = drive(plan(fixture(failure=failure), print_query=True))["result"]
                 self.assertEqual(result["state"], "error", result)
                 self.assertTrue(result["hidden"])
                 self.assertIsNone(result["download"])

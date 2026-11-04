@@ -468,8 +468,9 @@ theme. An author's reign or ministry dates that author, never every work
 attributed to him.
 
 Retain the generated material alternatives and uncertainty in short form.
-Consolidate identical chronological answers, including overlapping long and
-short forms, while naming all their appointed uses. Full source names,
+Consolidate identical answers within each appointed passage. Keep distinct
+passages and their appointed component identities separate even when their
+dates match; name long and short forms and response roles explicitly. Full source names,
 profile explanations, derivation details and verification detail belong in the
 same canonical family's expansive historical appendix and research record,
 precisely referenced from the concise table. Short reader-facing comparison

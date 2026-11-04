@@ -8,31 +8,107 @@ Year A
 
 Formula `PC-S42-A` ⋅ Lectionary 106
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:------------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | Psalm 54:6, 8 (Vulgate 53:6, 8). Sung entrance chant may instead be another text authorized under the four options in force for the dioceses of the United States. |
-| Gloria | Required, the day being a Sunday in Ordinary Time; the text is of the Order of Mass, not of this formulary. |
-| Collect | Proper to Week XVI: *Propitiare, Domine, famulis tuis … spe, fide et caritate ferventes … vigili custodia perseverent*. |
-| **Liturgy of the Word** |  |
-| First Reading | Wisdom 12:13, 16–19. Verses 14–15 are not appointed. |
-| Responsorial Psalm | Psalm 86:5–6, 9–10, 15–16, with the response drawn from 86:5a. One response path is printed; no alternative refrain is appointed for the day. |
-| Second Reading | Romans 8:26–27. |
-| Gospel Acclamation | Alleluia with a verse adapted from Matthew 11:25 (printed *Cf.*): revelation of the mysteries of the kingdom to the little ones. |
-| Gospel | Longer form Matthew 13:24–43 *or* shorter form Matthew 13:24–30. The forms are alternatives; only one is proclaimed. |
-| Creed | Required, the day being a Sunday; the text is of the Order of Mass. |
-| **Liturgy of the Eucharist** |  |
-| Offertory chant | No antiphon is supplied by this Missal for the preparation of the gifts; any music is locally chosen. |
-| Prayer over the Offerings | Proper to Week XVI: *Deus, qui legalium differentiam hostiarum unius sacrificii perfectione sanxisti … sicut munera Abel*. |
-| Preface | No proper Preface. One of the Prefaces of the Sundays in Ordinary Time is used unless the Eucharistic Prayer chosen carries its own. |
-| Eucharistic Prayer | No proper insert is appointed for this formulary. |
-| **Communion Rite** |  |
-| Communion Antiphon, first | Psalm 111:4–5 (Vulgate 110:4–5): the memorial of wonders; food given to those who fear the Lord. |
-| Communion Antiphon, second | Revelation 3:20: the knock at the door and the promised supper. |
-| Communion chant | Either printed antiphon, or another text authorized under the four options in force for the dioceses of the United States. |
-| Prayer after Communion | Proper to Week XVI: *Populo tuo … fac ad novitatem vitae de vetustate transire*. |
-| **Concluding Rites** |  |
-| Dismissal | No text proper to this formulary; the Order of Mass supplies the blessing and dismissal formulas. |
+<table style="width:93%;">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance Antiphon</td>
+<td style="text-align: left;">Psalm 54:6, 8 (Vulgate 53:6, 8). Sung entrance chant may instead be another text authorized under the four options in force for the dioceses of the United States.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gloria</td>
+<td style="text-align: left;">Required, the day being a Sunday in Ordinary Time; the text is of the Order of Mass, not of this formulary.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;">Proper to Week XVI: <em>Propitiare, Domine, famulis tuis … spe, fide et caritate ferventes … vigili custodia perseverent</em>.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Wisdom 12:13, 16–19. Verses 14–15 are not appointed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Psalm 86:5–6, 9–10, 15–16, with the response drawn from 86:5a. One response path is printed; no alternative refrain is appointed for the day.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Romans 8:26–27.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel Acclamation</td>
+<td style="text-align: left;">Alleluia with a verse adapted from Matthew 11:25 (printed <em>Cf.</em>): revelation of the mysteries of the kingdom to the little ones.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Longer form Matthew 13:24–43 <em>or</em> shorter form Matthew 13:24–30. The forms are alternatives; only one is proclaimed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Creed</td>
+<td style="text-align: left;">Required, the day being a Sunday; the text is of the Order of Mass.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Offertory chant</td>
+<td style="text-align: left;">No antiphon is supplied by this Missal for the preparation of the gifts; any music is locally chosen.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over the Offerings</td>
+<td style="text-align: left;">Proper to Week XVI: <em>Deus, qui legalium differentiam hostiarum unius sacrificii perfectione sanxisti … sicut munera Abel</em>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Preface</td>
+<td style="text-align: left;">No proper Preface. One of the Prefaces of the Sundays in Ordinary Time is used unless the Eucharistic Prayer chosen carries its own.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Eucharistic Prayer</td>
+<td style="text-align: left;">No proper insert is appointed for this formulary.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Communion Rite</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon, first</td>
+<td style="text-align: left;">Psalm 111:4–5 (Vulgate 110:4–5): the memorial of wonders; food given to those who fear the Lord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon, second</td>
+<td style="text-align: left;">Revelation 3:20: the knock at the door and the promised supper.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion chant</td>
+<td style="text-align: left;">Either printed antiphon, or another text authorized under the four options in force for the dioceses of the United States.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;">Proper to Week XVI: <em>Populo tuo … fac ad novitatem vitae de vetustate transire</em>.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Concluding Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Dismissal</td>
+<td style="text-align: left;">No text proper to this formulary; the Order of Mass supplies the blessing and dismissal formulas.</td>
+</tr>
+</tbody>
+</table>
 
 | **Sense** | **Synthesis** |
 |:----------|:-------------------------------------------------------|
@@ -73,10 +149,7 @@ Formula `PC-S42-A` ⋅ Lectionary 106
 <td style="text-align: left;">Reign of Saul, traditionally eleventh century BC</td>
 </tr>
 <tr>
-<td style="text-align: left;">The superscription assigns the psalm to David when the Ziphites betrayed his hiding place; inherited attribution is not a dated autograph, and historical judgment leaves author and date open. The two half-verses the Missal prints stand at the psalm’s turn from danger to willing sacrifice. The Missal cites the psalm as 53 in the Vulgate series; the same text is numbered 54 in the Hebrew series used by the United States Lectionary.</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td colspan="4" style="text-align: left;">The superscription assigns the psalm to David when the Ziphites betrayed his hiding place; inherited attribution is not a dated autograph, and historical judgment leaves author and date open. The two half-verses the Missal prints stand at the psalm’s turn from danger to willing sacrifice. The Missal cites the psalm as 53 in the Vulgate series; the same text is numbered 54 in the Hebrew series used by the United States Lectionary.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Responsorial Psalm</strong></td>
@@ -85,10 +158,7 @@ Formula `PC-S42-A` ⋅ Lectionary 106
 <td style="text-align: left;">Uncertain; the borrowing suggests a relatively late compilation</td>
 </tr>
 <tr>
-<td style="text-align: left;">The psalm carries a Davidic heading but no narrated occasion. Verse 9—all the nations coming to worship—places an individual petition inside a universal horizon; verse 15 quotes the divine self-description of Exodus 34:6. The appointed verses omit the psalm’s complaint against violent adversaries (86:14).</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td colspan="4" style="text-align: left;">The psalm carries a Davidic heading but no narrated occasion. Verse 9—all the nations coming to worship—places an individual petition inside a universal horizon; verse 15 quotes the divine self-description of Exodus 34:6. The appointed verses omit the psalm’s complaint against violent adversaries (86:14).</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Communion Antiphon, first</strong></td>
@@ -98,10 +168,7 @@ Formula `PC-S42-A` ⋅ Lectionary 106
 <td style="text-align: left;">Post-exilic; commonly placed in the Persian or early Hellenistic period</td>
 </tr>
 <tr>
-<td style="text-align: left;">An alphabetic acrostic in Hebrew: each half-line begins with a successive letter, a form that survives in neither Latin nor English. The remembered wonders are the Exodus deeds; the food given is, in the psalm’s own frame, the covenant provision, not yet the Eucharist.</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td colspan="4" style="text-align: left;">An alphabetic acrostic in Hebrew: each half-line begins with a successive letter, a form that survives in neither Latin nor English. The remembered wonders are the Exodus deeds; the food given is, in the psalm’s own frame, the covenant provision, not yet the Eucharist.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>First Reading</strong></td>
@@ -116,10 +183,7 @@ Formula `PC-S42-A` ⋅ Lectionary 106
 <td style="text-align: left;">Israel’s occupation of the land, in the book’s own frame</td>
 </tr>
 <tr>
-<td style="text-align: left;">The book speaks in the persona of Solomon and is preserved only in Greek; Catholic canons receive it, and it is not in the Hebrew Bible. The appointed verses belong to a defence of God’s slowness against Canaan; the Lectionary omits verses 14–15, which deny that any king or tyrant may call God to account and state that God’s justice is the reason he governs justly.</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td colspan="4" style="text-align: left;">The book speaks in the persona of Solomon and is preserved only in Greek; Catholic canons receive it, and it is not in the Hebrew Bible. The appointed verses belong to a defence of God’s slowness against Canaan; the Lectionary omits verses 14–15, which deny that any king or tyrant may call God to account and state that God’s justice is the reason he governs justly.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Gospel Acclamation</strong></td>
@@ -128,10 +192,7 @@ Formula `PC-S42-A` ⋅ Lectionary 106
 <td style="text-align: left;">See the Gospel dossier below</td>
 </tr>
 <tr>
-<td style="text-align: left;">The verse is a liturgical adaptation, marked <em>Cf.</em> in the Lectionary; it compresses Matthew 11:25 and supplies the phrase <em>mysteries of the kingdom</em>, which in Matthew belongs to 13:11 rather than to 11:25. It is an acclamation greeting the Gospel, not a passage read in course.</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td colspan="4" style="text-align: left;">The verse is a liturgical adaptation, marked <em>Cf.</em> in the Lectionary; it compresses Matthew 11:25 and supplies the phrase <em>mysteries of the kingdom</em>, which in Matthew belongs to 13:11 rather than to 11:25. It is an acclamation greeting the Gospel, not a passage read in course.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Gospel (both forms)</strong></td>
@@ -146,10 +207,7 @@ Formula `PC-S42-A` ⋅ Lectionary 106
 <td style="text-align: left;">Galilean ministry, c. AD 28–30</td>
 </tr>
 <tr>
-<td style="text-align: left;">The longer form crosses from public parable to private explanation; the shorter form stops inside the first parable and never leaves the shore. At 13:35 Matthew cites Psalm 78:2 (Vulgate 77:2) as fulfilled; that quotation is part of Matthew’s argument and is not separately appointed.</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td colspan="4" style="text-align: left;">The longer form crosses from public parable to private explanation; the shorter form stops inside the first parable and never leaves the shore. At 13:35 Matthew cites Psalm 78:2 (Vulgate 77:2) as fulfilled; that quotation is part of Matthew’s argument and is not separately appointed.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Second Reading</strong></td>
@@ -158,10 +216,7 @@ Formula `PC-S42-A` ⋅ Lectionary 106
 <td style="text-align: left;">c. AD 56–58</td>
 </tr>
 <tr>
-<td style="text-align: left;">Undisputed Pauline authorship; the letter names Tertius as the scribe (16:22). These two verses continue the groaning sequence of 8:22–23 and are read in course.</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td colspan="4" style="text-align: left;">Undisputed Pauline authorship; the letter names Tertius as the scribe (16:22). These two verses continue the groaning sequence of 8:22–23 and are read in course.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Communion Antiphon, second</strong></td>
@@ -170,10 +225,7 @@ Formula `PC-S42-A` ⋅ Lectionary 106
 <td style="text-align: left;">Traditionally the last years of Domitian, c. AD 95; an earlier date in the 60s is argued</td>
 </tr>
 <tr>
-<td style="text-align: left;">The verse stands inside a rebuke: Laodicea is lukewarm, self-satisfied, and counselled to buy gold refined by fire (3:14–19). The knock is addressed to a community that thinks it needs nothing, and the promised meal is the offer that follows the reproof.</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td colspan="4" style="text-align: left;">The verse stands inside a rebuke: Laodicea is lukewarm, self-satisfied, and counselled to buy gold refined by fire (3:14–19). The knock is addressed to a community that thinks it needs nothing, and the promised meal is the offer that follows the reproof.</td>
 </tr>
 </tbody>
 </table>

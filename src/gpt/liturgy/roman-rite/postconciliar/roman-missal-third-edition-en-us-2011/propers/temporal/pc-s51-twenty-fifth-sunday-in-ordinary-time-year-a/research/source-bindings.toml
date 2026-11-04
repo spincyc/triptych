@@ -420,3 +420,17 @@ states = ["cataloged", "acquired", "inspected"]
 context = "Additional dossier context inspected in the retained Douay-Rheims verse text on 21 September 2026: book address or narrative geography, not new numerical chronology."
 loci = ["Acts.1.1"]
 source_fingerprint = "sha256:dd87be0f13bd98112feedd55e3532a9a4dcbbfe28dee45371197dbc842acd2da"
+
+[[bindings]]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-118-attribution-and-occasions"
+loci = ["Ps.118.1"]
+role = "context"
+states = ["cataloged"]
+context = "Received Davidic attribution and competing proposed occasions, adopted through the canonical Scripture chronology corpus. The registered passage record was read; this refresh does not claim a new facsimile inspection."
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology"
+loci = ["article 'David, King,' printed p. 642, opening paragraph"]
+role = "context"
+states = ["cataloged"]
+context = "The usual chronology of David's reign supplies the canonical attribution reference era, with its disputed status preserved. The registered passage record was read; this refresh does not claim a new facsimile inspection."

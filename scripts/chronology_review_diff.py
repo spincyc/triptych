@@ -47,6 +47,9 @@ bindings   grouped by (relation, event) -- the identity a manifest row names --
            comparing the union of authored scopes, and, under `full`, the
            notes and the sources
 gaps       keyed by (status, scope), comparing reason and sources
+orientation
+           subject labels, scoped episode descriptions and relation-bound
+           geographic settings, including their sources and basis
 sources    the work/edition/artifact/passage TOML registry, field by field
 contracts  `guidance/` files, which state contracts
 code       `scripts/`, `tools/`, `tests/`, which state behaviour
@@ -176,6 +179,9 @@ out["orientation"] = {
     "contexts": [{"scope": [span(s) for s in item.scope], "label": item.label,
                   "sources": list(item.sources), "basis": item.basis}
                  for item in getattr(corpus, "orientation_contexts", ())],
+    "settings": {subject: {"relation": item.relation, "label": item.label,
+                           "sources": list(item.sources), "basis": item.basis}
+                 for subject, item in getattr(corpus, "orientation_settings", {}).items()},
 }
 # The profile mapping AS AUTHORED. Normalisation happens on the other side of
 # the boundary, so both revisions are normalised by one function.

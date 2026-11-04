@@ -1,0 +1,135 @@
+{
+  "schema": "triptych-browser-print-cold-review/v2",
+  "status": "no_actionable_blockers_in_reviewed_scope",
+  "baseline_head": "40bea725b14b16e711b922bacd6368b6755c8bed",
+  "files_sha256": {
+    "src/web/browser/shared/native-print.js": "f9525e8881212f74d446752ab434e193b5bdbb6a8868ccc612392337e1702555",
+    "src/web/browser/shared/web-print.js": "b7e2ffa79555c6fb82fed37aede35edcf17c9f41454259f863c82fa0bc67ee06",
+    "src/web/browser/shared/print-volume.js": "2de888bfb583c5b9a105a42af915a50d8ef56fddb062c5a70aa0da479d5cc524",
+    "src/web/browser/shared/native-tex.js": "d5c554011171256b6cd17cff34a15df238855718f7fce23d69897d906a9e3ca9",
+    "scripts/_native_tex_publication.py": "2ba6d9d942d28d323b8080d4692b97714bc2e362c7b631f529751d666e90b3d2",
+    "tools/tests/native_tex_runtime.mjs": "bcc66243c4d2cc160cd1c56c23e9d9ef092f849bf4af9e80685bcb3a151277f8",
+    "tools/tests/test_native_tex_publication.py": "38fc1a19f08a3f29f09631db0f0fc205b2384e3d6563e82547cc599839c5e1bf",
+    "tools/tests/test_native_print_frontend.py": "3f297b3b8b9b1b7e8c69f421b07800da830ae7915a3c791aa271ae54b1f50ff4",
+    "tools/tests/test_web_print_controller.py": "cdfe40fef13e3c013a9395ad4a4794101932844250d6532686f961af71ca6e37",
+    "tools/tests/test_volume_print.py": "e77db84348bf417a68269559a1300481a3ead5350531a0fa1d95e0035b6e6dc1"
+  },
+  "scope": [
+    "Explicit generation semantics in native, complete HTML, and volume controllers",
+    "Native font hints and Type1 transport scheduling",
+    "Output integrity, fallback, cancellation, cache identity and original byte fidelity"
+  ],
+  "reviewed_guards": {
+    "consent": "native-print.js:245, web-print.js:627, print-volume.js:206 retain idle state without URL/options autostart; click and Ctrl-P remain explicit actions.",
+    "hints": "native-tex.js:546-578 reads accessed metric/map names; hints only exist after missing-file access. Scan budget is 16 MiB.",
+    "authority": "native-tex.js:1025-1044 validates nativeMissing and nativeInventory first. Hints only expand a required retry; invalid hints are ignored. Fresh attempts precede log/PDF acceptance.",
+    "bounds": "native-tex.js:1002 limits discovery to four attempts, last with complete inventory; compile passes capped at eight. Existing resource, pack expansion, network pool and timeout limits remain.",
+    "cache": "Compiler key advances to triptych-native-tex-v4; independent old-key cache probe forces fresh generation.",
+    "publisher": "_native_tex_publication.py:166-171 groups Type1 bodies individually; original registry rows, aliases, payload pins and Unicode grouping are preserved."
+  },
+  "pack_fidelity": {
+    "packs": 115,
+    "registry_rows": 5489,
+    "unique_payloads": 2956,
+    "runtime_sha256": "21b64bdfb58d20045ce940af42f0723e8cf5d6f20693d24ba343085cb7d9369d",
+    "all_raw_bodies_equal": true,
+    "engine_pins_equal": true,
+    "registry_aliases_equal": true
+  },
+  "pdftex": {
+    "selected_pdf_sha256": "1d96f1ffab76bed22a6259dd3a73ee723354eb394698e39f2c27cb6c36e88c98",
+    "full_pdf_sha256": "1d96f1ffab76bed22a6259dd3a73ee723354eb394698e39f2c27cb6c36e88c98",
+    "bytes": 454926,
+    "pages": 12,
+    "byte_identical": true,
+    "selected_native_transfer_bytes": 13722040,
+    "full_native_transfer_bytes": 34298686,
+    "selected_workers": 2,
+    "full_workers": 1,
+    "first_missing_count": 1,
+    "first_hint_count": 25
+  },
+  "real_cancel": {
+    "pass": true,
+    "cancel_ui_ms": 50,
+    "workers_terminated": 1,
+    "downloads_after_cancel": 0,
+    "cache_keys_after_cancel": 0,
+    "retry_generation_ms": 3571.5,
+    "retry_cached": false
+  },
+  "limitations": [
+    "Read-only review did not rebuild or deploy the final integrated site. Real generation uses canonical source bundles from the existing recovery site; chronology content/layout acceptance belongs to the other lane.",
+    "Actual browsers are desktop Chromium 156.0.8078.79 with mobile viewport emulation, not physical Android/iOS or Safari.",
+    "The 4x CPU setting slowed only the main thread; worker calibration remained approximately 1x. pdfTeX timings may overlap chronology work and are not an isolated benchmark. Transfer counts and output fidelity remain directly measured.",
+    "Selective pdfTeX sampled peak renderer PSS was 544988 KiB; this is not evidence for low-memory-device compatibility. Samples occurred every 250ms.",
+    "Real engines cover one pdfTeX and one XeTeX edition, plus a cancellation/retry. This does not certify all 644 editions. Service protocol/error tests use synthetic responses; no external PDF service was called.",
+    "No new tracked tests or code were written by this review lane. Reused CDP/mock transport mechanics are identified in scratch scripts; findings were derived from fresh executions rather than earlier verdicts."
+  ],
+  "review_sha256": "768dbeb201391332a38dded5b8fe10ace7c78a20ea88c0bfb5a171867cd89527",
+  "independent_checks": [
+    {
+      "command": "/usr/bin/node --test tools/tests/native_tex_runtime.mjs",
+      "exit": 0,
+      "tests": 56
+    },
+    {
+      "command": "/usr/bin/node --test .scratch/browser-print-cold-review-v2/adversarial.mjs",
+      "exit": 0,
+      "tests": 6
+    },
+    {
+      "command": ".scratch/integration-venv/bin/python .scratch/browser-print-cold-review-v2/publisher-tests.py",
+      "exit": 0,
+      "tests": 32
+    },
+    {
+      "command": ".scratch/integration-venv/bin/python .scratch/browser-print-cold-review-v2/ui-probes.py",
+      "exit": 0
+    },
+    {
+      "command": ".scratch/integration-venv/bin/python .scratch/browser-print-cold-review-v2/ui-errors.py",
+      "exit": 0,
+      "tests": 3
+    },
+    {
+      "command": ".scratch/integration-venv/bin/python .scratch/browser-print-cold-review-v2/ui-screenshot.py",
+      "exit": 0
+    },
+    {
+      "command": "/usr/bin/node .scratch/browser-print-cold-review-v2/real-probe.mjs --out .scratch/browser-print-cold-review-v2/real/selected --script src/web/browser/shared/native-tex.js --overlay .scratch/print-performance-v2/overlay --route print/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.html --cold-only --cancel-probe",
+      "exit": 0
+    },
+    {
+      "command": "/usr/bin/node .scratch/browser-print-cold-review-v2/real-probe.mjs --out .scratch/browser-print-cold-review-v2/real/full --script .scratch/browser-print-cold-review-v2/full-inventory.js --overlay .scratch/print-performance-v2/overlay --route print/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.html --cold-only",
+      "exit": 0
+    },
+    {
+      "command": "/usr/bin/node .scratch/browser-print-cold-review-v2/real-probe.mjs --out .scratch/browser-print-cold-review-v2/real/unicode-selected --script src/web/browser/shared/native-tex.js --overlay .scratch/browser-print-cold-review-v2/unicode-overlay --route papal-documents/1918-12-01--papal.benedict-xv.hf-ben-xv-enc-01121918-quod-iam-diu--la--505f49972b3300b9.html --cold-only --cpu 1 --mbps 1000",
+      "exit": 0
+    },
+    {
+      "command": "/usr/bin/node .scratch/browser-print-cold-review-v2/real-probe.mjs --out .scratch/browser-print-cold-review-v2/real/unicode-full --script .scratch/browser-print-cold-review-v2/full-inventory.js --overlay .scratch/browser-print-cold-review-v2/unicode-overlay --route papal-documents/1918-12-01--papal.benedict-xv.hf-ben-xv-enc-01121918-quod-iam-diu--la--505f49972b3300b9.html --cold-only --cpu 1 --mbps 1000",
+      "exit": 0
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 .scratch/browser-print-cold-review-v2/verify-artifacts.py",
+      "exit": 0
+    }
+  ],
+  "xetex_fidelity": {
+    "pdf_equal": false,
+    "all_nonstream_bytes_identical": true,
+    "equal_after_decoded_creation_date_only": true,
+    "pages": 1,
+    "text_coordinates_fonts_pixels_identical": true,
+    "difference": "CreationDate in one compressed object stream"
+  },
+  "actual_ui": "ui-actual-idle.json: normal, ?print=1, reload, hidden background, beforeprint all idle with zero compiler calls/workers/fetch calls/downloads; history cancels without generation.",
+  "negative_ui": "ui-cancel-service.json and ui-cancel-wasm.json: repeated real Ctrl-P starts once; real Cancel aborts and restores controls. Three additional UI tests cover corrupt WASM output and stale/different/host/failed/partial/unconfigured service refusals.",
+  "cleanup": {
+    "owned_live_processes": [],
+    "tracked_files_edited_by_reviewer": []
+  },
+  "scope_note": "This receipt preserves the initial explicit-action and native runtime review at the recorded hashes. The later finite HTML table-width contract changes web-print.js and its controller tests; html-width-contract.json records their current hashes and independent consent/style regression review. Native controller, runtime and pack proof inputs remain unchanged."
+}

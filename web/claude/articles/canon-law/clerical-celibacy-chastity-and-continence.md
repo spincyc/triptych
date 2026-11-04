@@ -319,33 +319,171 @@ One official source does make a Church-by-Church statement, and it is recent eno
 
 In the fourth column, <span class="smallcaps">p</span> marks the twenty Eastern Churches covered by the 2014 statement that they may admit married men to the diaconate and presbyterate; <span class="smallcaps">x</span> marks the two Churches the same statement names as exceptions; <span class="smallcaps">n</span> marks the Church erected after that statement, which it therefore cannot reach. For all twenty-three, the competent legislator is that Church’s own particular law or special norms of the Apostolic See (CCEO c. 758 §3), and none of their particular law was examined here.
 
-| **Church *sui iuris*** | **Tradition** | **Juridical rank** | **2014** |
-|:----------------|:--------------|:---------------------|:-------|
-| *(continued)* |  |  |  |
-| Coptic | Alexandrian | Patriarchal (CCEO c. 55) | <span class="smallcaps">p</span> |
-| Ethiopian | Alexandrian | Metropolitan *sui iuris* (c. 155) | <span class="smallcaps">p</span> |
-| Eritrean | Alexandrian (Ge’ez) | Metropolitan *sui iuris*, 19 January 2015 | <span class="smallcaps">n</span> |
-| Syriac | Antiochene | Patriarchal | <span class="smallcaps">p</span> |
-| Maronite | Antiochene | Patriarchal | <span class="smallcaps">p</span> |
-| Syro-Malankara | Antiochene | Major archiepiscopal (c. 151) | <span class="smallcaps">x</span> |
-| Armenian | Armenian | Patriarchal | <span class="smallcaps">p</span> |
-| Chaldean | Chaldean | Patriarchal | <span class="smallcaps">p</span> |
-| Syro-Malabar | Chaldean | Major archiepiscopal | <span class="smallcaps">x</span> |
-| Melkite | Constantinopolitan | Patriarchal | <span class="smallcaps">p</span> |
-| Ukrainian | Constantinopolitan | Major archiepiscopal | <span class="smallcaps">p</span> |
-| Romanian | Constantinopolitan | Major archiepiscopal | <span class="smallcaps">p</span> |
-| Ruthenian | Constantinopolitan | Metropolitan *sui iuris* | <span class="smallcaps">p</span> |
-| Slovak | Constantinopolitan | Metropolitan *sui iuris* | <span class="smallcaps">p</span> |
-| Hungarian | Constantinopolitan | Metropolitan *sui iuris*, 20 March 2015 | <span class="smallcaps">p</span> |
-| Albanian | Constantinopolitan | Other *sui iuris* (c. 174) | <span class="smallcaps">p</span> |
-| Belarusian | Constantinopolitan | Other *sui iuris* | <span class="smallcaps">p</span> |
-| Bulgarian | Constantinopolitan | Other *sui iuris* | <span class="smallcaps">p</span> |
-| Croatian | Constantinopolitan | Other *sui iuris* | <span class="smallcaps">p</span> |
-| Greek | Constantinopolitan | Other *sui iuris* | <span class="smallcaps">p</span> |
-| Italo-Albanian | Constantinopolitan | Other *sui iuris* | <span class="smallcaps">p</span> |
-| Macedonian | Constantinopolitan | Other *sui iuris* | <span class="smallcaps">p</span> |
-| Russian | Constantinopolitan | Other *sui iuris* | <span class="smallcaps">p</span> |
-| **Latin** | Latin (Roman) | The Latin Church (CIC c. 1) | — |
+<table style="width:84%;">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 20%" />
+<col style="width: 31%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Church <em>sui iuris</em></strong></th>
+<th style="text-align: left;"><strong>Tradition</strong></th>
+<th style="text-align: left;"><strong>Juridical rank</strong></th>
+<th style="text-align: left;"><strong>2014</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="4" style="text-align: left;"><em>(continued)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Coptic</td>
+<td style="text-align: left;">Alexandrian</td>
+<td style="text-align: left;">Patriarchal (CCEO c. 55)</td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Ethiopian</td>
+<td style="text-align: left;">Alexandrian</td>
+<td style="text-align: left;">Metropolitan <em>sui iuris</em> (c. 155)</td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Eritrean</td>
+<td style="text-align: left;">Alexandrian (Ge’ez)</td>
+<td style="text-align: left;">Metropolitan <em>sui iuris</em>, 19 January 2015</td>
+<td style="text-align: left;"><span class="smallcaps">n</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Syriac</td>
+<td style="text-align: left;">Antiochene</td>
+<td style="text-align: left;">Patriarchal</td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Maronite</td>
+<td style="text-align: left;">Antiochene</td>
+<td style="text-align: left;">Patriarchal</td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Syro-Malankara</td>
+<td style="text-align: left;">Antiochene</td>
+<td style="text-align: left;">Major archiepiscopal (c. 151)</td>
+<td style="text-align: left;"><span class="smallcaps">x</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Armenian</td>
+<td style="text-align: left;">Armenian</td>
+<td style="text-align: left;">Patriarchal</td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Chaldean</td>
+<td style="text-align: left;">Chaldean</td>
+<td style="text-align: left;">Patriarchal</td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Syro-Malabar</td>
+<td style="text-align: left;">Chaldean</td>
+<td style="text-align: left;">Major archiepiscopal</td>
+<td style="text-align: left;"><span class="smallcaps">x</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Melkite</td>
+<td style="text-align: left;">Constantinopolitan</td>
+<td style="text-align: left;">Patriarchal</td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Ukrainian</td>
+<td style="text-align: left;">Constantinopolitan</td>
+<td style="text-align: left;">Major archiepiscopal</td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Romanian</td>
+<td style="text-align: left;">Constantinopolitan</td>
+<td style="text-align: left;">Major archiepiscopal</td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Ruthenian</td>
+<td style="text-align: left;">Constantinopolitan</td>
+<td style="text-align: left;">Metropolitan <em>sui iuris</em></td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Slovak</td>
+<td style="text-align: left;">Constantinopolitan</td>
+<td style="text-align: left;">Metropolitan <em>sui iuris</em></td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Hungarian</td>
+<td style="text-align: left;">Constantinopolitan</td>
+<td style="text-align: left;">Metropolitan <em>sui iuris</em>, 20 March 2015</td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Albanian</td>
+<td style="text-align: left;">Constantinopolitan</td>
+<td style="text-align: left;">Other <em>sui iuris</em> (c. 174)</td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Belarusian</td>
+<td style="text-align: left;">Constantinopolitan</td>
+<td style="text-align: left;">Other <em>sui iuris</em></td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Bulgarian</td>
+<td style="text-align: left;">Constantinopolitan</td>
+<td style="text-align: left;">Other <em>sui iuris</em></td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Croatian</td>
+<td style="text-align: left;">Constantinopolitan</td>
+<td style="text-align: left;">Other <em>sui iuris</em></td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Greek</td>
+<td style="text-align: left;">Constantinopolitan</td>
+<td style="text-align: left;">Other <em>sui iuris</em></td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Italo-Albanian</td>
+<td style="text-align: left;">Constantinopolitan</td>
+<td style="text-align: left;">Other <em>sui iuris</em></td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Macedonian</td>
+<td style="text-align: left;">Constantinopolitan</td>
+<td style="text-align: left;">Other <em>sui iuris</em></td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Russian</td>
+<td style="text-align: left;">Constantinopolitan</td>
+<td style="text-align: left;">Other <em>sui iuris</em></td>
+<td style="text-align: left;"><span class="smallcaps">p</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Latin</strong></td>
+<td style="text-align: left;">Latin (Roman)</td>
+<td style="text-align: left;">The Latin Church (CIC c. 1)</td>
+<td style="text-align: left;">—</td>
+</tr>
+</tbody>
+</table>
 
 Three qualifications belong with that table rather than in a footnote, because each changes what a cell means. The names and ranks are the 2010 Press Office sheet’s, corrected by the two 2015 acts, with English forms rendering the sheet’s Italian designations. The Latin Church’s own rule is that of section 4: married men are impeded by CIC c. 1042 1° except when legitimately destined to the permanent diaconate, and dispensation for the presbyterate is reserved to the Apostolic See under c. 1047 §2 3°. And “may admit married men” concerns admission to orders only; it says nothing about marriage after ordination, which CCEO canon 804 forbids in every one of the twenty-three.
 

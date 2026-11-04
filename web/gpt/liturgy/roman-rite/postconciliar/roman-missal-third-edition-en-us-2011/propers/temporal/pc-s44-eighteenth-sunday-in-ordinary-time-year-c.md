@@ -8,22 +8,73 @@
 
 PC-S44-C
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:-----------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | *Cf.* Ps. 67:6–7, 36 (modern 68); *Deus in loco sancto suo*. |
-| Collect | *Adesto, Domine, famulis tuis*; divine help is sought for those who glory in God as creator and guide. |
-| **Liturgy of the Word** |  |
-| First Reading | Eccl. 1:2; 2:21–23. |
-| Responsorial Psalm | Ps. 90:3–4, 5–6, 12–13, 14, 17; response from Ps. 95:8. |
-| Second Reading | Col. 3:1–5, 9–11. |
-| Gospel Acclamation | Matt. 5:3. |
-| Gospel | Luke 12:13–21. |
-| **Liturgy of the Eucharist** |  |
-| Prayer over Offerings | *Sanctifica, quaesumus, Domine Deus, haec munera*. |
-| Communion Antiphon A | Wis. 16:20. |
-| Communion Antiphon B | John 6:35. |
-| Prayer after Communion | *Quos caelesti recreas munere*. |
+<table style="width:92%;">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance Antiphon</td>
+<td style="text-align: left;">Ps. 69:2, 6 (modern 70); <em>Deus, in adiutorium meum intende</em>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Adesto, Domine, famulis tuis</em>; divine help is sought for those who glory in God as creator and guide.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Eccl. 1:2; 2:21–23.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps. 90:3–4, 5–6, 12–13, 14, 17; response from Ps. 95:8.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Col. 3:1–5, 9–11.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel Acclamation</td>
+<td style="text-align: left;">Matt. 5:3.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Luke 12:13–21.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over Offerings</td>
+<td style="text-align: left;"><em>Propitius, Domine, quaesumus, haec dona sanctifica</em>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon A</td>
+<td style="text-align: left;">Wis. 16:20.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon B</td>
+<td style="text-align: left;">John 6:35.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Quos caelesti recreas munere</em>.</td>
+</tr>
+</tbody>
+</table>
 
 | **Sense** | **Synthesis** |
 |:-----------|:------------------------------------------------------|
@@ -34,22 +85,96 @@ PC-S44-C
 
 ## Scriptural Date and Location
 
-| **Textual unit / alternative** | **Citation** | **Location** | **Date** |
-|:------------|:-------------|:-----------------------|:--------------|
-| First Reading | Eccl. 1:2; 2:21–23 | Probably Judea, commonly Jerusalem; exact place unknown | Late Persian or early Hellenistic period, often placed in the third century BC |
-| The book frames Qoheleth as a Davidic royal wisdom speaker. Its unnamed author, exact date, and place remain debated. The discontinuous selection joins the programmatic “vanity” saying to toil, anxiety, and property left to another; Hebrew *hevel* can suggest breath, transience, or enigma, not simple nihilism. |  |  |  |
-| Responsorial Psalm | Ps. 90:3–6, 12–14, 17; response Ps. 95:8 | Israel/Judah; exact setting unknown | Undated; received heading associates Moses |
-| The psalm moves from dust, passing time, and grass to numbered days, mercy, and the work of human hands. The heading is inherited attribution, not proof of individual Mosaic composition. The appointed response is drawn from another psalm. |  |  |  |
-| Second Reading | Col. 3:1–5, 9–11 | Addressed to the church at Colossae in Asia Minor | Traditionally a Pauline imprisonment, about AD 60–62; authorship and circumstances debated |
-| The canonical letter names Paul and Timothy and presents a prison setting. The appointed cut is discontinuous: it moves from life hidden with Christ and the mortification of greed to the old and new person and unity in Christ. |  |  |  |
-| Acclamation | Matt. 5:3 | Galilee in the narrated discourse; composition setting uncertain | Canonical Greek Matthew commonly dated late first century |
-| The beatitude supplies an authorized liturgical lens of poverty of spirit; it is not part of Luke’s narrated inheritance dispute. |  |  |  |
-| Gospel | Luke 12:13–21 | Journey-to-Jerusalem teaching scene; exact narrated location unstated | Canonical Greek Luke commonly dated about AD 80–90; exact place unknown |
-| An inheritance request prompts Jesus to refuse the requested adjudication and warn the crowd about greed through the rich-fool parable. The narrative does not establish either brother’s civil merits. |  |  |  |
-| Communion A | Wis. 16:20 | Alexandrian Jewish setting commonly proposed | Late Hellenistic period, before the first century AD |
-| The verse recalls divinely given food in Israel’s wilderness history; here it functions as a Missal antiphon, not a Lectionary reading. |  |  |  |
-| Communion B | John 6:35 | Capernaum in the narrated discourse | Canonical John commonly placed late first century |
-| Jesus identifies himself as the bread of life. This alternative remains distinct from the Wisdom antiphon. |  |  |  |
+<table style="width:90%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 19%" />
+<col style="width: 34%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Entrance</td>
+<td style="text-align: left;">Ps. 69:2, 6 (modern 70)</td>
+<td style="text-align: left;">No place named in the appointed verses</td>
+<td style="text-align: left;">Before c. 165 BC; individual date uncertain</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The Douay–Rheims title names David, but neither that attribution nor the appointed pleas for help establishes an occasion or composition year. The <a href="https://bible.usccb.org/bible/psalms/0">NABRE Psalms introduction</a> supplies only the collection’s latest composition boundary and denies secure dating of an individual psalm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps. 90:3–6, 12–14, 17; response Ps. 95:8</td>
+<td style="text-align: left;">Israel/Judah; exact setting unknown</td>
+<td style="text-align: left;">Undated; received heading associates Moses</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The psalm moves from dust, passing time, and grass to numbered days, mercy, and the work of human hands. The heading is inherited attribution, not proof of individual Mosaic composition. The appointed response is drawn from another psalm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Eccl. 1:2; 2:21–23</td>
+<td style="text-align: left;">Probably Judea, commonly Jerusalem; exact place unknown</td>
+<td style="text-align: left;">Late Persian or early Hellenistic period, often placed in the third century BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The book frames Qoheleth as a Davidic royal wisdom speaker. Its unnamed author, exact date, and place remain debated. The discontinuous selection joins the programmatic “vanity” saying to toil, anxiety, and property left to another; Hebrew <em>hevel</em> can suggest breath, transience, or enigma, not simple nihilism.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion A</td>
+<td style="text-align: left;">Wis. 16:20</td>
+<td style="text-align: left;">Alexandrian Jewish setting commonly proposed</td>
+<td style="text-align: left;">Late Hellenistic period, before the first century AD</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The verse recalls divinely given food in Israel’s wilderness history; here it functions as a Missal antiphon, not a Lectionary reading.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Acclamation</td>
+<td style="text-align: left;">Matt. 5:3</td>
+<td style="text-align: left;">Galilee in the narrated discourse; composition setting uncertain</td>
+<td style="text-align: left;">Canonical Greek Matthew commonly dated late first century</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The beatitude supplies an authorized liturgical lens of poverty of spirit; it is not part of Luke’s narrated inheritance dispute.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Luke 12:13–21</td>
+<td style="text-align: left;">Journey-to-Jerusalem teaching scene; exact narrated location unstated</td>
+<td style="text-align: left;">Canonical Greek Luke commonly dated about AD 80–90; exact place unknown</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">An inheritance request prompts Jesus to refuse the requested adjudication and warn the crowd about greed through the rich-fool parable. The narrative does not establish either brother’s civil merits.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion B</td>
+<td style="text-align: left;">John 6:35</td>
+<td style="text-align: left;">Capernaum in the narrated discourse</td>
+<td style="text-align: left;">Canonical John commonly placed late first century</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Jesus identifies himself as the bread of life. This alternative remains distinct from the Wisdom antiphon.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Col. 3:1–5, 9–11</td>
+<td style="text-align: left;">Addressed to the church at Colossae in Asia Minor</td>
+<td style="text-align: left;">Traditionally a Pauline imprisonment, about AD 60–62; authorship and circumstances debated</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The canonical letter names Paul and Timothy and presents a prison setting. The appointed cut is discontinuous: it moves from life hidden with Christ and the mortification of greed to the old and new person and unity in Christ.</td>
+</tr>
+</tbody>
+</table>
 
 <span id="triptych:brief-synthesis:start" data-label="triptych:brief-synthesis:start"></span>
 
@@ -282,6 +407,6 @@ This source-first guide treats the recurring U.S. Year C formula, not a parish r
 
 - Charles Ives, *Psalm 90* (1923–24).
 
-**Last revised (UTC):** 2026-09-24T18:04:15Z
+**Last revised (UTC):** 2026-11-04T03:59:07Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -8,21 +8,69 @@
 
 PC-S39-A
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:-----------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | Ps. 47:2 |
-| Collect | *Deus, qui, per adoptionem gratiae, lucis nos esse filios voluisti* |
-| **Liturgy of the Word** |  |
-| First Reading | 2 Kgs. 4:8–11, 14–16a |
-| Responsorial Psalm | Ps. 89:2–3, 16–17, 18–19; response 2a |
-| Second Reading | Rom. 6:3–4, 8–11 |
-| Gospel Acclamation | 1 Pet. 2:9 |
-| Gospel | Matt. 10:37–42 |
-| **Liturgy of the Eucharist** |  |
-| Prayer over Offerings | *Deus, qui mysteriorum tuorum…operaris effectus* |
-| Communion Antiphon | A: cf. Ps. 103:1; B: John 17:20–21 |
-| Prayer after Communion | *Vivificet nos…divina quam obtulimus et sumpsimus hostia* |
+<table style="width:92%;">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance Antiphon</td>
+<td style="text-align: left;">Ps. 47:2</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Deus, qui, per adoptionem gratiae, lucis nos esse filios voluisti</em></td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">2 Kgs. 4:8–11, 14–16a</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps. 89:2–3, 16–17, 18–19; response 2a</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 6:3–4, 8–11</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel Acclamation</td>
+<td style="text-align: left;">1 Pet. 2:9</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Matt. 10:37–42</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over Offerings</td>
+<td style="text-align: left;"><em>Deus, qui mysteriorum tuorum…operaris effectus</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon</td>
+<td style="text-align: left;">A: cf. Ps. 103:1; B: John 17:20–21</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Vivificet nos…divina quam obtulimus et sumpsimus hostia</em></td>
+</tr>
+</tbody>
+</table>
 
 | **Sense** | **Synthesis** |
 |:-----------|:------------------------------------------------------|
@@ -35,27 +83,114 @@ PC-S39-A
 
 *Canonical order governs; composition and narrated event remain distinct, and inherited and modern judgments remain separate where the evidence is uncertain.*
 
-| **Textual unit / alternative** | **Citation** | **Location** | **Date** |
-|:------------|:-------------|:-----------------------|:--------------|
-| First Reading | 2 Kgs. 4:8–11, 14–16a | Judah or Babylonian exile horizon; exact place of final formation unresolved | Exilic or early postexilic final form; precise date unresolved |
-| Narrated event | 2 Kgs. 4:8–37 | Shunem, northern kingdom of Israel | Ninth century BC; precise date not recoverable |
-| Kings is received prophetic history; modern study locates its Deuteronomistic formation across monarchic and exilic transmission. Event: at Shunem (modern Sulam), a prominent woman provides a permanent upper room; the promise belongs to a longer birth–death–restoration story. |  |  |  |
-| Entrance | Ps. 47:2 | Israel’s worship; exact writing place unknown | Korahite title; historical date uncertain |
-| The sons-of-Korah psalm acclaims God’s universal kingship. Its Entrance use summons all peoples. |  |  |  |
-| Responsorial Psalm | Ps. 89:2–3, 16–17, 18–19 | Israel / Jerusalem royal and covenant horizon | Title names Ethan the Ezrahite; date uncertain |
-| Enduring covenant mercy precedes lament over the fallen Davidic king. Appointed verses retain praise, worship, and God-given strength while omitting that lament; the canonical tension remains relevant. |  |  |  |
-| Comm. A | Ps. 103:1 | Israel; exact place unknown | Traditional Davidic attribution; historical date uncertain |
-| The whole self is called to bless and remember; forgiveness, healing, compassion, and creaturely dependence follow. Communion A appoints the opening summons. |  |  |  |
-| Gospel | Matt. 10:37–42 | Canonical Gospel: traditional Palestine; modern Antioch proposal uncertain | Traditionally early apostolic period; modern majority c. AD 80–90 |
-| Narrated event | Matt. 4:23; 10:1–42 | Galilee; exact speaking site unrecorded | Public ministry, c. AD 28–29 |
-| Tradition: the Apostle Matthew writing for Jewish believers. Modern judgment: the canonical Greek Gospel after AD 70. The missionary discourse closes by moving from costly allegiance and the cross to receiving apostles, prophets, righteous persons, and little ones. |  |  |  |
-| Comm. B | John 17:20–21 | Canonical Gospel: traditional Ephesus; modern history debated | Late first century |
-| Narrated event | John 13:1; 17:1–26 | Jerusalem, final supper | c. AD 29–30 |
-| Tradition associates the Apostle John with Ephesus. Christ’s prayer reaches future believers and orders unity toward the world’s belief. The Missal appoints it as Communion B. |  |  |  |
-| Second Reading | Rom. 6:3–4, 8–11 | Corinth, Achaia (present-day Greece), to churches at Rome | c. AD 56–58 |
-| Paul rejects the inference that abundant grace licenses sin. Baptism joins believers to Christ’s death and burial and orders new life; the reading omits vv. 5–7, then resumes with dying and living with Christ. |  |  |  |
-| Acclamation | 1 Pet. 2:9 | From “Babylon” (received as Rome) to Christians in Asia Minor | Traditional Petrine setting in AD 60s; authorship and date disputed |
-| Audience: Pontus, Galatia, Cappadocia, Asia, and Bithynia. Royal-priestly and holy-nation language receives Exodus in Christological ecclesial identity; the clause calls from darkness to light and to proclamation of God’s mighty acts. |  |  |  |
+<table style="width:90%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 19%" />
+<col style="width: 34%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">2 Kgs. 4:8–11, 14–16a</td>
+<td style="text-align: left;">Judah or Babylonian exile horizon; exact place of final formation unresolved</td>
+<td style="text-align: left;">Exilic or early postexilic final form; precise date unresolved</td>
+</tr>
+<tr>
+<td style="text-align: left;">Narrated event</td>
+<td style="text-align: left;">2 Kgs. 4:8–37</td>
+<td style="text-align: left;">Shunem, northern kingdom of Israel</td>
+<td style="text-align: left;">Ninth century BC; precise date not recoverable</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Kings is received prophetic history; modern study locates its Deuteronomistic formation across monarchic and exilic transmission. Event: at Shunem (modern Sulam), a prominent woman provides a permanent upper room; the promise belongs to a longer birth–death–restoration story.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance</td>
+<td style="text-align: left;">Ps. 47:2</td>
+<td style="text-align: left;">Israel’s worship; exact writing place unknown</td>
+<td style="text-align: left;">Korahite title; historical date uncertain</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The sons-of-Korah psalm acclaims God’s universal kingship. Its Entrance use summons all peoples.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps. 89:2–3, 16–17, 18–19</td>
+<td style="text-align: left;">Israel / Jerusalem royal and covenant horizon</td>
+<td style="text-align: left;">Title names Ethan the Ezrahite; date uncertain</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Enduring covenant mercy precedes lament over the fallen Davidic king. Appointed verses retain praise, worship, and God-given strength while omitting that lament; the canonical tension remains relevant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Comm. A</td>
+<td style="text-align: left;"><em>cf.</em> Ps. 103:1</td>
+<td style="text-align: left;">Israel; exact place unknown</td>
+<td style="text-align: left;">Traditional Davidic attribution; historical date uncertain</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The whole self is called to bless and remember; forgiveness, healing, compassion, and creaturely dependence follow. Communion A appoints the opening summons.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Matt. 10:37–42</td>
+<td style="text-align: left;">Canonical Gospel: traditional Palestine; modern Antioch proposal uncertain</td>
+<td style="text-align: left;">Traditionally early apostolic period; modern majority c. AD 80–90</td>
+</tr>
+<tr>
+<td style="text-align: left;">Narrated event</td>
+<td style="text-align: left;">Matt. 4:23; 10:1–42</td>
+<td style="text-align: left;">Galilee; exact speaking site unrecorded</td>
+<td style="text-align: left;">Public ministry, c. AD 28–29</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Tradition: the Apostle Matthew writing for Jewish believers. Modern judgment: the canonical Greek Gospel after AD 70. The missionary discourse closes by moving from costly allegiance and the cross to receiving apostles, prophets, righteous persons, and little ones.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Comm. B</td>
+<td style="text-align: left;">John 17:20–21</td>
+<td style="text-align: left;">Canonical Gospel: traditional Ephesus; modern history debated</td>
+<td style="text-align: left;">Late first century</td>
+</tr>
+<tr>
+<td style="text-align: left;">Narrated event</td>
+<td style="text-align: left;">John 13:1; 17:1–26</td>
+<td style="text-align: left;">Jerusalem, final supper</td>
+<td style="text-align: left;">c. AD 29–30</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Tradition associates the Apostle John with Ephesus. Christ’s prayer reaches future believers and orders unity toward the world’s belief. The Missal appoints it as Communion B.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 6:3–4, 8–11</td>
+<td style="text-align: left;">Corinth, Achaia (present-day Greece), to churches at Rome</td>
+<td style="text-align: left;">c. AD 56–58</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Paul rejects the inference that abundant grace licenses sin. Baptism joins believers to Christ’s death and burial and orders new life; the reading omits vv. 5–7, then resumes with dying and living with Christ.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Acclamation</td>
+<td style="text-align: left;">1 Pet. 2:9</td>
+<td style="text-align: left;">From “Babylon” (received as Rome) to Christians in Asia Minor</td>
+<td style="text-align: left;">Traditional Petrine setting in AD 60s; authorship and date disputed</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Audience: Pontus, Galatia, Cappadocia, Asia, and Bithynia. Royal-priestly and holy-nation language receives Exodus in Christological ecclesial identity; the clause calls from darkness to light and to proclamation of God’s mighty acts.</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement
 
@@ -248,6 +383,6 @@ The Prayer after Communion names the Eucharistic gift as the offered and receive
 
 - Edith Wharton, [“A Cup of Cold Water”](https://www.gutenberg.org/cache/epub/9190/pg9190-images.html), in *The Greater Inclination* (New York: Charles Scribner’s Sons, 1899), Project Gutenberg eBook 9190; story and U.S. public-domain status checked 2026-07-19.
 
-**Last revised (UTC):** 2026-09-24T18:04:15Z
+**Last revised (UTC):** 2026-11-04T03:59:07Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

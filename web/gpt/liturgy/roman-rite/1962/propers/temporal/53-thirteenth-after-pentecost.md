@@ -30,23 +30,92 @@
 
 ## Scriptural Date and Location
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:----------|:-------------|:------------------------|:-----------|
-| Offertory | Ps. 30:15–16 (modern 31:15–16; or 31:14–15) | Flight from Jerusalem under Absalom; exact Psalm site unrecorded; Maon alternative | Davidic: Maon c. 1059 BC; Absalom 1024–1023 BC |
-| The titles assign the psalm to David. Theodoret and Bellarmine place it during Absalom’s revolt; Boylan records Saul’s pursuit near Maon. The received sources do not settle the occasion; the checked NABRE note supplies no composition place or date. The Missal maps to Catholic 31:15–16 where the title is v. 1, or 31:14–15 where unnumbered (Theodoret, PG 80:1077–1080; Bellarmine, p. 78; Boylan, I, p. 106; NABRE Ps. 31). |  |  |  |
-| Introit; Gradual | Ps. 73 (modern 74) | Zion/Jerusalem; sanctuary in ruins | Asaphic/Davidic horizon c. 1055–1015 BC; later referents chiefly 587 BC, 167–164 BC, and AD 70 |
-| The title recalls David’s singer/seer and the Asaphite house (1 Chr. 25:1–2; 2 Chr. 29:30). The afflicted sanctuary community is the literal voice. Lyra hears Babylon; Bellarmine, Antiochus IV (167–164 BC); Augustine, Cassiodorus, and Theodoret, prophecy of AD 70. The NABRE calls it especially apt to the destruction of 587 BC without fixing composition there. The numerical Davidic range comes from an older Catholic reign chronology and dates the received Asaphic ministry horizon, not a demonstrated autograph (Corbett, “King David,” *Catholic Encyclopedia* IV). |  |  |  |
-| Gradual close | Ps. 88:51a (modern 89:51a) | No site for Davidic alternative; Babylon in captive reading | Received Ethan attribution; Davidic horizon c. 1055–1015 BC; Babylonian alternative A.M. 3416 |
-| The received superscription, *Intellectus Ethan Ezrahitae*, names Ethan but no composition site or regnal year. Haydock preserves both David writing in Ethan’s (or Idithun’s) person and a captive in Babylon under Sedecias lamenting Juda’s ruin. Thus c. 1055–1015 BC dates only the received Davidic horizon; a separate Usher-attributed chronology places Jerusalem’s ruin and Sedecias’s capture at A.M. 3416. Neither is an autograph date. The checked NABRE identifies a communal lament but supplies no king, event, composition site, or date (Haydock, Pss. 70:1; 88:1; Corbett, “King David,” *Catholic Encyclopedia* IV; NABRE, Ps. 89). |  |  |  |
-| Alleluia | Ps. 89:1 (modern 90:1) | Israel; no site named | Mosaic/Exodus horizon, c. 1491 BC (older Catholic chronology) |
-| Jerome and Lyra receive Mosaic attribution positively; no camp or first audience is named. Augustine regards the Mosaic title as deliberate and reads Moses as Old-Covenant minister and New-Covenant prophet, while declining to require Moses’ direct composition; Theodoret reports both authorship traditions. The numerical date marks that chronology’s Exodus epoch, not a datable Psalm episode; the checked NABRE note supplies no composition place or date (Jerome, *Ep. 140* 2–5; Augustine, *Enarr. in Ps. 89* 1–3; NABRE Ps. 90). |  |  |  |
-| Communion | Wis. 16:20 | Royal Jerusalem in Solomonic persona; probable composition in Alexandria | Solomonic horizon, tenth century BC; NABRE c. 50 BC |
-| Augustine receives the book as Scripture without making its Greek wording Solomon’s own (*Civ. Dei* XVII.20). The NABRE places an anonymous Greek-speaking Jewish author in Alexandria about 50 BC, addressing Jews under Hellenistic pressure. Manna is Israel’s Exodus gift and a type of Christ and the Eucharist (NABRE Wisdom introduction and 16:20). |  |  |  |
-| Gospel | Luke 17:11–19 | Achaia and Boeotia in Jerome; modern place disputed | PBC 1912: before c. AD 63; NABRE c. AD 80–90; Gadenz: prevailing 70s or 80s |
-| *Narrated event: an older Catholic harmony places the unnamed village on the ninth/final journey, through or between Samaria and Galilee, February–Passover AUC 782 (AD 29); Luke gives no exact route or date.* |  |  |  |
-| The Church receives Luke, Paul’s physician-companion, as author. Jerome’s prologue names Achaia and Boeotia. The PBC’s 1912 chronology puts Luke before Acts and the end of Paul’s first Roman captivity, conventionally before c. AD 63. The NABRE proposes c. AD 80–90; Gadenz separately reports prevailing dates in the 70s or 80s and a minority pre-70 case. Modern place remains disputed (PBC, responses VI–VII; Jerome, prologue, PL 26:18; Gadenz, pp. 16–19, esp. p. 19 n. 20; NABRE Luke introduction). |  |  |  |
-| Epistle | Gal. 3:16–22 | Rome in ancient subscriptions; Ephesus or another Greek city in the contrary tradition; to Galatia | Baronius/a Lapide chronology AD 58; modern north c. AD 54–55, south perhaps AD 48–50 |
-| Paul addresses Gentile converts pressed toward circumcision and Mosaic observance. A Lapide records Syriac and Greek endings and Jerome, Athanasius, and Theodoret for Rome, but also Chrysostom and Baronius for Ephesus or another Greek city and leaves place and time uncertain; his Baronius-based chronology gives AD 58. The checked NABRE introduction instead gives a northern hypothesis—ethnic Galatia near Ancyra, from Ephesus c. AD 54–55—and a southern hypothesis in Pisidia and Lycaonia, perhaps AD 48–50, with writing place unsettled (Gal. 1:1; 6:11; a Lapide, *Argumentum* and proemium; NABRE Galatians introduction). |  |  |  |
+<table style="width:83%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Proper</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Offertory</td>
+<td style="text-align: left;">Ps. 30:15–16 (modern 31:15–16; or 31:14–15)</td>
+<td style="text-align: left;">Flight from Jerusalem under Absalom; exact Psalm site unrecorded; Maon alternative</td>
+<td style="text-align: left;">Davidic: Maon c. 1059 BC; Absalom 1024–1023 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The titles assign the psalm to David. Theodoret and Bellarmine place it during Absalom’s revolt; Boylan records Saul’s pursuit near Maon. The received sources do not settle the occasion; the checked NABRE note supplies no composition place or date. The Missal maps to Catholic 31:15–16 where the title is v. 1, or 31:14–15 where unnumbered (Theodoret, PG 80:1077–1080; Bellarmine, p. 78; Boylan, I, p. 106; NABRE Ps. 31).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Introit; Gradual</td>
+<td style="text-align: left;">Ps. 73 (modern 74):<br />
+Introit: 1, 19–20, 22–23;<br />
+Gradual: 19–20, 22</td>
+<td style="text-align: left;">Zion/Jerusalem; sanctuary in ruins</td>
+<td style="text-align: left;">Asaphic/Davidic horizon c. 1055–1015 BC; later referents chiefly 587 BC, 167–164 BC, and AD 70</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title recalls David’s singer/seer and the Asaphite house (1 Chr. 25:1–2; 2 Chr. 29:30). The afflicted sanctuary community is the literal voice. Lyra hears Babylon; Bellarmine, Antiochus IV (167–164 BC); Augustine, Cassiodorus, and Theodoret, prophecy of AD 70. The NABRE calls it especially apt to the destruction of 587 BC without fixing composition there. The numerical Davidic range comes from an older Catholic reign chronology and dates the received Asaphic ministry horizon, not a demonstrated autograph (Corbett, “King David,” <em>Catholic Encyclopedia</em> IV).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gradual close</td>
+<td style="text-align: left;">Ps. 88:51a (modern 89:51a)</td>
+<td style="text-align: left;">No site for Davidic alternative; Babylon in captive reading</td>
+<td style="text-align: left;">Received Ethan attribution; Davidic horizon c. 1055–1015 BC; Babylonian alternative A.M. 3416</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The received superscription, <em>Intellectus Ethan Ezrahitae</em>, names Ethan but no composition site or regnal year. Haydock preserves both David writing in Ethan’s (or Idithun’s) person and a captive in Babylon under Sedecias lamenting Juda’s ruin. Thus c. 1055–1015 BC dates only the received Davidic horizon; a separate Usher-attributed chronology places Jerusalem’s ruin and Sedecias’s capture at A.M. 3416. Neither is an autograph date. The checked NABRE identifies a communal lament but supplies no king, event, composition site, or date (Haydock, Pss. 70:1; 88:1; Corbett, “King David,” <em>Catholic Encyclopedia</em> IV; NABRE, Ps. 89).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alleluia</td>
+<td style="text-align: left;">Ps. 89:1 (modern 90:1)</td>
+<td style="text-align: left;">Israel; no site named</td>
+<td style="text-align: left;">Mosaic/Exodus horizon, c. 1491 BC (older Catholic chronology)</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Jerome and Lyra receive Mosaic attribution positively; no camp or first audience is named. Augustine regards the Mosaic title as deliberate and reads Moses as Old-Covenant minister and New-Covenant prophet, while declining to require Moses’ direct composition; Theodoret reports both authorship traditions. The numerical date marks that chronology’s Exodus epoch, not a datable Psalm episode; the checked NABRE note supplies no composition place or date (Jerome, <em>Ep. 140</em> 2–5; Augustine, <em>Enarr. in Ps. 89</em> 1–3; NABRE Ps. 90).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion</td>
+<td style="text-align: left;">Wis. 16:20</td>
+<td style="text-align: left;">Royal Jerusalem in Solomonic persona; probable composition in Alexandria</td>
+<td style="text-align: left;">Solomonic horizon, tenth century BC; NABRE c. 50 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Augustine receives the book as Scripture without making its Greek wording Solomon’s own (<em>Civ. Dei</em> XVII.20). The NABRE places an anonymous Greek-speaking Jewish author in Alexandria about 50 BC, addressing Jews under Hellenistic pressure. Manna is Israel’s Exodus gift and a type of Christ and the Eucharist (NABRE Wisdom introduction and 16:20).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Luke 17:11–19</td>
+<td style="text-align: left;">Achaia and Boeotia in Jerome; modern place disputed</td>
+<td style="text-align: left;">PBC 1912: before c. AD 63; NABRE c. AD 80–90; Gadenz: prevailing 70s or 80s</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;"><em>Narrated event: an older Catholic harmony places the unnamed village on the ninth/final journey, through or between Samaria and Galilee, February–Passover AUC 782 (AD 29); Luke gives no exact route or date.</em></td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The Church receives Luke, Paul’s physician-companion, as author. Jerome’s prologue names Achaia and Boeotia. The PBC’s 1912 chronology puts Luke before Acts and the end of Paul’s first Roman captivity, conventionally before c. AD 63. The NABRE proposes c. AD 80–90; Gadenz separately reports prevailing dates in the 70s or 80s and a minority pre-70 case. Modern place remains disputed (PBC, responses VI–VII; Jerome, prologue, PL 26:18; Gadenz, pp. 16–19, esp. p. 19 n. 20; NABRE Luke introduction).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Epistle</td>
+<td style="text-align: left;">Gal. 3:16–22</td>
+<td style="text-align: left;">Rome in ancient subscriptions; Ephesus or another Greek city in the contrary tradition; to Galatia</td>
+<td style="text-align: left;">Baronius/a Lapide chronology AD 58; modern north c. AD 54–55, south perhaps AD 48–50</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Paul addresses Gentile converts pressed toward circumcision and Mosaic observance. A Lapide records Syriac and Greek endings and Jerome, Athanasius, and Theodoret for Rome, but also Chrysostom and Baronius for Ephesus or another Greek city and leaves place and time uncertain; his Baronius-based chronology gives AD 58. The checked NABRE introduction instead gives a northern hypothesis—ethnic Galatia near Ancyra, from Ephesus c. AD 54–55—and a southern hypothesis in Pisidia and Lycaonia, perhaps AD 48–50, with writing place unsettled (Gal. 1:1; 6:11; a Lapide, <em>Argumentum</em> and proemium; NABRE Galatians introduction).</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -599,6 +668,6 @@ Franz Werfel titled a 1935 poem *Tempora mea in manibus tuis*. The title reorder
 
 - Cultural afterlives: Leo X, [*Exsurge Domine*](https://la.wikisource.org/wiki/Exsurge_Domine) (15 June 1520); Ulrich von Hutten’s annotated satire and Martin Luther’s letter to Spalatin of 10 December 1520 in Preserved Smith, trans., *Luther’s Correspondence*, vol. I (Philadelphia, 1913), pp. 414–415; James Joyce, [*Ulysses*](https://www.gutenberg.org/ebooks/4300) (1922), “Nausicaa,” with the *Rituale Romanum* Benediction versicle cited above; 32nd International Nestroy Conversations, [archived official program](https://web.archive.org/web/20260412025114id_/https://nestroy-archiv.at/forschung/nestroy-gespraeche/nestroy-gespraeche-2006/) (Schwechat, 1–5 July 2006), Monday forum, Otmar Nestroy, *Familiäres oder: A generatione et progenie aus dem Hause Nestroy*, with the [archived abstract](https://web.archive.org/web/20260209051747id_/https://nestroy-archiv.at/forschung/nestroy-gespraeche/nestroy-gespraeche-2006/nestroy-gespraeche-2006-referate/) on twenty-two family documents from 1828–1939; Franz Werfel, “Tempora mea in manibus tuis” (May 1935), in *Schlaf und Erwachen*, reprinted in *Das lyrische Werk*, p. 456, [German National Library contents](https://d-nb.info/458619736/04); Friedrich Buchmayr, “Franz Werfel: Heimatlosigkeit und Heimat,” [*Chilufim* 2 (2007)](https://www.plus.ac.at/wp-content/uploads/2021/02/1165209.pdf), pp. 67–69.
 
-**Last revised (UTC):** 2026-09-24T18:09:07Z
+**Last revised (UTC):** 2026-11-04T03:09:25Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

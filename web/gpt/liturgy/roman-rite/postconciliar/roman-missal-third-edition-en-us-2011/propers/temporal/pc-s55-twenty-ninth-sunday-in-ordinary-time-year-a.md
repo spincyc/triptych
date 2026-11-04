@@ -388,6 +388,26 @@ Either reading becomes incomplete when isolated. An account of obligations can l
 
 ## Appendix: Scriptural Date and Location {#historical-appendix}
 
+| **Passage** | **Context** | **Date** |
+|:---|:---|:---|
+| Entrance antiphon: Cf. Psalm 16:6,8 (Vg.; Heb. 17) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: psalm option: Cf. Psalm 32:18–19 (Vg.; Heb. 33) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Responsorial Psalm: Ps. 96:1,3,4–5,7–8,9,10a,10c (Heb.; Vg. 95), Ps. 96:7b (Heb.; Vg. 95) | Superscription setting: The raising of the second Temple by Zorobabel; Temple at Jerusalem | B.C. 537 |
+|  | Composition: Psalms | Before c. 165 B.C. |
+|  | Prophetic referent: The Nativity of Our Lord; Bethlehem as the Christian referent | Disputed: B.C. 3; c. B.C. 7 |
+| First reading: Is. 45:1,4–6 | Traditional attribution: Isaias (ministry in Souvay’s traditional account); Judah and Jerusalem | B.C. 740–701 |
+|  | Prophecy given: The prophetic activity behind Isaiah 40-55 in the NABRE introduction; exiles from Babylon; restoration to Jerusalem | Toward the end of the Babylonian exile |
+| Gospel: Matt. 22:15–21 | Narrated event: Jesus answers about tribute to Caesar in the Temple at Jerusalem | Date unresolved |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Communion: Mark option: Mark 10:45 | Composition: Mark; Rome traditionally; Egypt reported by Chrysostom | Disputed: A.D. 38–40; A.D. 40; A.D. 43; A.D. 50–67; A.D. 60–70; After Matthew, and not as late as the destruction of Jerusalem |
+| Gospel acclamation: Phil. 2:15d,16a | Composition: Philippians; Rome to Philippi in the cited account | Disputed: A.D. 61; A.D. 62–64 |
+| Second reading: 1 Thess. 1:1–5b | Composition: First Thessalonians; Corinth to Thessalonica | Disputed: A.D. 52; A.D. 53–54 |
+
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
 Composition dates concern the writing of a work. Narrated events, received attributions, superscription settings and Christian prophetic referents answer different questions. The historical Catholic sources below preserve alternative judgments rather than a single agreed chronology. The modern NABRE introductions supply the identified critical horizons for the Psalms and Isaiah. Neither the date of the Sunday nor the date of a Missal is a date for its biblical passages.
 
 ### Psalms of shelter, mercy and universal praise {#history-psalms}
@@ -516,7 +536,7 @@ Historical orientation
 
 : The *Catholic Encyclopedia* articles by Corbett, Gerard, Howlett, Souvay, Meistermann, Jacquier, Durand, MacRory, Vander Heeren, Prat and Drum are identified at their claims in the historical appendix. PBC, responsa of 26 June 1912, *AAS* 4 (1912), pp.463–465. USCCB, NABRE introductions to Psalms and Isaiah, official web deliveries read in the research of 13 October 2026. Historical source judgments and modern critical horizons remain distinct.
 
-**Last revised (UTC):** 2026-10-14T06:21:50Z
+**Last revised (UTC):** 2026-11-04T03:13:49Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

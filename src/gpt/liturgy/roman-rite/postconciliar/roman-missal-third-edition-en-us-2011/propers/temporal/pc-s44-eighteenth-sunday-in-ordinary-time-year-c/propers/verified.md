@@ -18,14 +18,14 @@
 
 | Order | Element | Status | Identifier or boundary |
 | ---: | --- | --- | --- |
-| 1 | Entrance Antiphon | Missal; required printed layer | `cf.` Ps 67:6–7, 36 (modern 68) |
+| 1 | Entrance Antiphon | Missal; required printed layer | Ps 69:2, 6 (modern 70) |
 | 2 | Collect | Missal; required | *Adesto, Domine, famulis tuis* |
 | 3 | First Reading | Lectionary; required | Ecclesiastes 1:2; 2:21–23 |
 | 4 | Responsorial Psalm | Lectionary; required | Psalm 90:3–6, 12–14, 17; response sourced to Psalm 95:8 |
 | 5 | Second Reading | Lectionary; required | Colossians 3:1–5, 9–11 |
 | 6 | Gospel Acclamation | Lectionary; required | Matthew 5:3 |
 | 7 | Gospel | Lectionary; required | Luke 12:13–21 |
-| 8 | Prayer over the Offerings | Missal; required | *Sanctifica, quaesumus, Domine Deus, haec munera* |
+| 8 | Prayer over the Offerings | Missal; required | *Propitius, Domine, quaesumus, haec dona sanctifica* |
 | 9 | Communion Antiphon A | Missal; appointed alternative | Wisdom 16:20 |
 | 10 | Communion Antiphon B | Missal; appointed alternative | John 6:35 |
 | 11 | Prayer after Communion | Missal; required | *Quos caelesti recreas munere* |

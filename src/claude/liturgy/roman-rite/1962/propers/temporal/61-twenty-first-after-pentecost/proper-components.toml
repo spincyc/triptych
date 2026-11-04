@@ -9,7 +9,7 @@ synthesis_entrypoint = "synthesis.tex"
 homily_entrypoint = "homily.tex"
 appointed_text_completeness = "complete"
 presentation_contract = "interpretive-pagination-v1"
-chronology_presentation = "orientation-v1"
+chronology_presentation = "orientation-v3"
 element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
 
 [outputs]
@@ -23,7 +23,7 @@ homily_label = "Homily PDF"
 
 # Physical-page roles of the concise companion's fixed opening
 # (guidance/liturgy/propers-three-documents.md), all written by the concise
-# author. The chronology role uses the orientation-v1 rows of
+# author. The chronology role uses the orientation-v3 table of
 # research/chronology-annotations.tex. Their reviewed home in the study is the
 # terminal Scriptural Date and Location appendix (component
 # scriptural-date-location), which prints every generated row once with its
@@ -111,7 +111,7 @@ path = "sections/80-date-location.tex"
 modes = ["research"]
 depends_on = []
 element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
-references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/chronology-profile-comparisons.toml", "research/scope.md"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology-table.tex", "research/chronology.toml", "research/chronology-profile-comparisons.toml", "research/scope.md"]
 
 [[components]]
 key = "study-apparatus"
@@ -149,7 +149,7 @@ path = "sections/concise/03-date-location.tex"
 modes = ["synthesis"]
 depends_on = []
 element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
-references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/chronology-profile-comparisons.toml"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology-table.tex", "research/chronology.toml", "research/chronology-profile-comparisons.toml"]
 
 [[components]]
 key = "concise-themes"

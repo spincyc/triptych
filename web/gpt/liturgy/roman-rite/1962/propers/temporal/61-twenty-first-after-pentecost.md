@@ -560,17 +560,45 @@ The prayers bring both movements to the same altar without making them the same 
 
 The date of a narrated event, the composition of a book, and a traditional attribution are different claims. The following orientation preserves those distinctions. A book-wide span does not date each verse separately. An unresolved occasion is left unresolved; the prayers of the Mass are not assigned biblical dates merely because they echo biblical language. The rows reproduce the reviewed chronology, with fuller source qualifications immediately below. They are an orientation to the sources used here, not a survey of every proposed modern chronology.
 
-| **Passage** | **Occurrence and place** | **Date** |
+| **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Introit: Esth 13:9–11 | Composition: The Book of Esther. Persian court narrative at Susa; the book’s place and date of composition remain conjectural. | B.C. 465–425 (Conjectural early dating; later date possible) |
-| Offertory: Job 1:1, Job 1:12, Job 2:6-7 | Composition: The Book of Job. The story names Hus (Uz), not the book’s place of composition. | Probably sometime between the seventh and fifth centuries B.C. |
-| Introit: Ps 118:1; Gradual: Psalm 89:1-2; Communion: Psalm 118:81, 84, 86 | Historical setting. No secure individual occasion or place is established for these verses. | Occasion date unresolved |
-| Introit: Ps 118:1; Gradual: Psalm 89:1-2; Alleluia: Psalm 113:1; Communion: Psalm 118:81, 84, 86 | Composition: Psalms. Collection-wide outer boundary, not one date or place for all four liturgical uses. | Before c. 165 B.C. |
-| Alleluia: Psalm 113:1 | Retrospective event: The Exodus from Egypt. Departure from Egypt remembered in song. The interval ends at the beginning of Solomon’s Temple, not at the Psalm’s composition. | Preferred: Temple begun in the 480th year after the Exodus (Vulgate); alternative: Temple begun in the 440th year after the Exodus (Septuagint) |
-| Introit: Ps 118:1; Communion: Psalm 118:81, 84, 86 | Traditional attribution: David’s reign. Traditional royal era, conditional upon Davidic attribution; not a dated occasion for Psalm 118. | Disputed: B.C. 1055–1015 |
-| Gospel: Matthew 18:23-35 | Event. Galilean discourse after the Capharnaum scene and before the departure for Judea; precise teaching venue unspecified. | Date unresolved |
-| Gospel: Matthew 18:23-35 | Composition: The Gospel of St Matthew. Competing historical estimates, some concerning a posited Hebrew or Aramaic original. They do not date the parable’s delivery. | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
-| Epistle: Ephesians 6:10-17 | Composition: The Epistle to the Ephesians. Pauline captivity hypotheses: Rome favored, Caesarea an alternative; recipients in Asia Minor, with a circular-letter theory. | Disputed: A.D. 58–63; A.D. 61 |
+| Introit: Esth 13:9–11 | Composition: Esther; story at Susa; writing in Persia conjectured | B.C. 465–425 (Conjectural early dating; later date possible) |
+| Offertory: Job 1:1, Job 1:12, Job 2:6–7 | Composition: Job; story in Hus; writing site unspecified | Probably sometime between the seventh and fifth centuries B.C. |
+| Gradual: Ps. 89:1–2 (Vg.; Heb. 90) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Ps. 113:1 (Vg.; Heb. 114) | Retrospective event: The Exodus from Egypt; departure from Egypt; interval to Jerusalem’s Temple | Preferred: Temple begun in the 480th year after the Exodus (Vulgate); alternative: Temple begun in the 440th year after the Exodus (Septuagint) |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ps 118:1 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: Ps. 118:81, 84, 86 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gospel: Matt. 18:23–35 | Narrated event: Jesus tells the parable of the unforgiving servant; Capharnaum by narrative continuity | Date unresolved |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Epistle: Eph. 6:10–17 | Composition: Ephesians; Rome or Caesarea; recipients in Asia Minor | Disputed: A.D. 58–63; A.D. 61 |
+
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+##### Setting notes.
+
+**Introit: Esth 13:9–11**. Persian court narrative at Susa; the book’s place and date of composition remain conjectural.
+
+**Offertory: Job 1:1, Job 1:12, Job 2:6-7**. The story names Hus (Uz), not the book’s place of composition.
+
+**Introit: Ps 118:1; Gradual: Psalm 89:1-2; Communion: Psalm 118:81, 84, 86**. No secure individual occasion or place is established for these verses.
+
+**Introit: Ps 118:1; Gradual: Psalm 89:1-2; Alleluia: Psalm 113:1; Communion: Psalm 118:81, 84, 86**. Collection-wide outer boundary, not one date or place for all four liturgical uses.
+
+**Alleluia: Psalm 113:1**. Departure from Egypt remembered in song. The interval ends at the beginning of Solomon’s Temple, not at the Psalm’s composition.
+
+**Introit: Ps 118:1; Communion: Psalm 118:81, 84, 86**. Traditional royal era, conditional upon Davidic attribution; not a dated occasion for Psalm 118.
+
+**Gospel: Matthew 18:23-35**. Galilean discourse after the Capharnaum scene and before the departure for Judea; precise teaching venue unspecified.
+
+**Gospel: Matthew 18:23-35**. Competing historical estimates, some concerning a posited Hebrew or Aramaic original. They do not date the parable’s delivery.
+
+**Epistle: Ephesians 6:10-17**. Pauline captivity hypotheses: Rome favored, Caesarea an alternative; recipients in Asia Minor, with a circular-letter theory.
 
 Sources and fuller qualifications: Esther, <a href="#hist-esther">Esther: a threatened people in the Persian court</a>; Job, <a href="#hist-job">Job: the land of the story and the date of the book</a>; Psalms, <a href="#hist-psalms">The Psalms: remembered events and undated prayers</a>; Matthew, <a href="#hist-matthew">Matthew: the location of the discourse and competing composition dates</a>; Ephesians, <a href="#hist-ephesians">Ephesians: an imprisoned writer and the readers of the letter</a>.
 
@@ -644,7 +672,7 @@ The work’s substantive boundaries are deliberate: no new local calendar decisi
 
 Historical date sources are cited individually in the preceding appendix.
 
-**Last revised (UTC):** 2026-10-13T07:54:09Z
+**Last revised (UTC):** 2026-11-04T03:13:49Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

@@ -5,6 +5,7 @@ import copy
 import hashlib
 import json
 from pathlib import Path
+import re
 import sys
 import unittest
 
@@ -26,6 +27,46 @@ def descriptor():
 
 
 class CommonPrintTests(unittest.TestCase):
+    def test_source_column_widths_have_matching_browser_classes_and_css(self):
+        # The source-preserved colspan consumers expose these actual colgroup widths.
+        observed = {16, 23, 24, 28, 30, 32, 35, 38, 40, 42, 56, 68, 69, 70, 86}
+        self.assertLessEqual(observed, common.COLUMN_WIDTHS)
+        script = (ROOT / 'src/web/browser/shared/web-print.js').read_text()
+        columns = re.search(r"\.concat\(\[([0-9,]+)\]\.map\(\(n\) => 'print-column-width-'", script)
+        self.assertIsNotNone(columns)
+        self.assertEqual({int(n) for n in columns[1].split(',')}, common.COLUMN_WIDTHS)
+        css = (ROOT / 'src/web/browser/shared/web-print.css').read_text()
+        rules = re.findall(r'\[data-web-print-paper\] col\.print-column-width-(\d+)\s*\{\s*width:\s*(\d+)%;\s*\}', css)
+        self.assertEqual({int(name) for name, _ in rules}, common.COLUMN_WIDTHS)
+        self.assertTrue(all(name == width for name, width in rules))
+        for width in observed:
+            with self.subTest(width=width):
+                source = f'<section><table><colgroup><col style="width: {width}%"></colgroup><tbody><tr><td colspan="2">Complete source note.</td></tr></tbody></table></section>'
+                normalized = common.normalize_html(source)
+                self.assertIn(f'class="print-column-width-{width}"', normalized)
+                self.assertIn('colspan="2"', normalized)
+                self.assertNotIn(' style=', normalized)
+                self.assertEqual(common.part_statistics(source)['text_sha256'], common.part_statistics(normalized)['text_sha256'])
+
+    def test_source_table_widths_have_matching_browser_classes_and_css(self):
+        observed = {70, 74, 84, 86, 90, 94}
+        self.assertLessEqual(observed, common.TABLE_WIDTHS)
+        script = (ROOT / 'src/web/browser/shared/web-print.js').read_text()
+        tables = re.search(r"const TABLE_CLASSES = \[([0-9,]+)\]\.map", script)
+        self.assertIsNotNone(tables)
+        self.assertEqual({int(n) for n in tables[1].split(',')}, common.TABLE_WIDTHS)
+        css = (ROOT / 'src/web/browser/shared/web-print.css').read_text()
+        rules = re.findall(r'\[data-web-print-paper\] table\.print-table-width-(\d+)\s*\{\s*width:\s*(\d+)%;\s*\}', css)
+        self.assertEqual({int(name) for name, _ in rules}, common.TABLE_WIDTHS)
+        self.assertTrue(all(name == width for name, width in rules))
+        for width in observed:
+            with self.subTest(width=width):
+                source = f'<section><table style="width:{width}%;"><tbody><tr><td colspan="2">Complete source note.</td></tr></tbody></table></section>'
+                normalized = common.normalize_html(source)
+                self.assertIn(f'class="print-table-width-{width}"', normalized)
+                self.assertIn('colspan="2"', normalized)
+                self.assertEqual(common.part_statistics(source)['text_sha256'], common.part_statistics(normalized)['text_sha256'])
+
     def test_typed_source_styles_preserve_text_and_declared_dimensions(self):
         source=('<section><table style="width:85%;"><colgroup><col style="width: 10%"></colgroup><tbody><tr>'
                 '<th style="text-align: right;">Source</th><td style="text-align: left;">same &amp; complete</td>'
@@ -42,6 +83,10 @@ class CommonPrintTests(unittest.TestCase):
     def test_unbound_visibility_styles_and_wrong_element_styles_refuse(self):
         for source in ['<p style="display:none">source</p>','<p style="text-align:left">source</p>',
                        '<table style="width:1%"></table>','<col style="width:99%">',
+                       '<col style="width:33%">','<col style="width:35.5%">',
+                       '<col style="width:35%;display:none">','<col style="width:calc(35%)">',
+                       '<col style="width:var(--width)">','<table style="width:35%"></table>',
+                       '<td style="width:35%">source</td>',
                        '<div class="response-space" style="min-height:0.1in"></div>',
                        '<p style="margin:0">untyped source</p>']:
             with self.subTest(source=source),self.assertRaises(common.ProfileError):common.normalize_html(source)

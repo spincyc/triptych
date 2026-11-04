@@ -18,61 +18,324 @@ The thesis this study defends, and against which its evidence should be read, is
 
 The following is a working guide to the 2008 Latin Order of Mass by its own numbering. Elements marked *fixed* occur at every celebration of this Order; *conditional* elements occur when the day, rank, or rubric prescribes; *optional* elements depend on a choice the Missal itself grants.
 
-| **n.** | **Movement (Latin incipit or name)** | **Status** | **Principal agent and act** |
-|:-------|:---------------------|:-----------|:--------------------------|
-| ***Ritus initiales*** |  |  |  |
-| 1 | Entrance; veneration of the altar | fixed | Procession; priest kisses the altar, may incense |
-| 1 | *In nomine Patris* | fixed | Priest and people sign themselves |
-| 2 | Greeting (three forms; bishop: *Pax vobis*) | fixed | Priest greets; people answer |
-| 3 | Brief introduction | optional | Priest, deacon, or another minister |
-| 4–6 | *Actus paenitentialis*, three forms | fixed (form chosen) | All confess; priest absolves (not sacramental) |
-| 7 | *Kyrie, eleison* | conditional | Omitted if already sung in form III |
-| 8 | *Gloria in excelsis* | conditional | Sung or said when prescribed |
-| 9 | *Oremus* + silence + Collect | fixed | Priest prays in the people’s name; people: *Amen* |
-| ***Liturgia verbi*** |  |  |  |
-| 10 | First reading; *Verbum Domini* | fixed | Lector proclaims; all seated |
-| 11 | Responsorial Psalm | fixed | Psalmist; people respond |
-| 12 | Second reading | conditional | Sundays, solemnities, feasts |
-| 13 | *Alleluia* or other acclamation | fixed | All stand |
-| 14–16 | Gospel: dialogue, proclamation, *Verbum Domini* | fixed | Deacon or priest; incense and candles optional |
-| 17 | Homily | fixed on Sundays and holydays | Priest or deacon |
-| 18 | *Symbolum*: Nicene-Constantinopolitan | conditional | All; bow at *Et incarnatus est* |
-| 19 | Apostles’ Creed as alternative | optional | Especially in Lent and Eastertide |
-| 20 | *Oratio universalis* | fixed | Deacon or another proposes; all pray |
-| ***Liturgia eucharistica* — preparation** |  |  |  |
-| 21–22 | Offertory chant; gifts brought | fixed / optional | Ministers prepare altar; faithful may bring gifts |
-| 23–25 | *Benedictus es, Domine* over bread and wine | fixed | Priest, quietly or aloud |
-| 24 | Mingling of water and wine | fixed | Deacon or priest, secretly |
-| 26 | *In spiritu humilitatis* | fixed | Priest, bowing, secretly |
-| 27 | Incensation of gifts, cross, altar, priest, people | optional | Priest and deacon |
-| 28 | *Lava me, Domine* at the washing of hands | fixed | Priest, secretly |
-| 29 | *Orate, fratres* and the people’s answer | fixed | Priest and people |
-| 30 | Prayer over the Offerings | fixed | Priest; people: *Amen* |
-| ***Prex eucharistica*** |  |  |  |
-| 31 | Dialogue; Preface; *Sanctus* | fixed | Priest and people together |
-| 83–98 | Prayer I, the Roman Canon | choice | May always be used |
-| 99–106 | Prayer II | choice | Has its own preface; weekdays especially |
-| 107–115 | Prayer III | choice | Any preface; Sundays and feasts |
-| 116–123 | Prayer IV | choice | Fixed preface; not when a proper preface is used |
-| ***Ritus communionis*** |  |  |  |
-| 124 | *Pater noster* with its introduction | fixed | Priest invites; all pray |
-| 125 | *Libera nos* and the people’s doxology | fixed | Priest alone, then people |
-| 126–127 | *Domine Iesu Christe, qui dixisti*; *Pax Domini* | fixed | Priest |
-| 128 | *Offerte vobis pacem* | optional | Deacon or priest invites |
-| 129–130 | Fraction, commingling, *Agnus Dei* | fixed | Priest; all sing or say |
-| 131 | Priest’s private preparation (two forms) | fixed | Priest, secretly |
-| 132 | *Ecce Agnus Dei*; *Domine, non sum dignus* | fixed | Priest shows the Host; all answer once |
-| 133–136 | Communion of priest, then of the faithful | fixed | *Corpus Christi* — *Amen* |
-| 137 | Purification | fixed | Priest, deacon, or acolyte |
-| 138 | Silence or a psalm or hymn | optional | All |
-| 139 | Prayer after Communion | fixed | Priest; people: *Amen* |
-| ***Ritus conclusionis*** |  |  |  |
-| 140 | Announcements | optional | If necessary |
-| 141 | Greeting and blessing | fixed | Priest |
-| 142 | Solemn blessing or prayer over the people | conditional | On certain days and occasions |
-| 143 | Pontifical form of the blessing | conditional | At a pontifical Mass |
-| 144 | Dismissal (four formulas in 2008) | fixed | Deacon or priest; people: *Deo gratias* |
-| 145–146 | Veneration of the altar; departure | fixed | Omitted if another rite follows immediately |
+<table style="width:92%;">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 30%" />
+<col style="width: 15%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>n.</strong></th>
+<th style="text-align: left;"><strong>Movement (Latin incipit or name)</strong></th>
+<th style="text-align: left;"><strong>Status</strong></th>
+<th style="text-align: left;"><strong>Principal agent and act</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="4" style="text-align: left;"><strong><em>Ritus initiales</em></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Entrance; veneration of the altar</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Procession; priest kisses the altar, may incense</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><em>In nomine Patris</em></td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest and people sign themselves</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Greeting (three forms; bishop: <em>Pax vobis</em>)</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest greets; people answer</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Brief introduction</td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;">Priest, deacon, or another minister</td>
+</tr>
+<tr>
+<td style="text-align: left;">4–6</td>
+<td style="text-align: left;"><em>Actus paenitentialis</em>, three forms</td>
+<td style="text-align: left;">fixed (form chosen)</td>
+<td style="text-align: left;">All confess; priest absolves (not sacramental)</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;"><em>Kyrie, eleison</em></td>
+<td style="text-align: left;">conditional</td>
+<td style="text-align: left;">Omitted if already sung in form III</td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;"><em>Gloria in excelsis</em></td>
+<td style="text-align: left;">conditional</td>
+<td style="text-align: left;">Sung or said when prescribed</td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;"><em>Oremus</em> + silence + Collect</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest prays in the people’s name; people: <em>Amen</em></td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;"><strong><em>Liturgia verbi</em></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">First reading; <em>Verbum Domini</em></td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Lector proclaims; all seated</td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Psalmist; people respond</td>
+</tr>
+<tr>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">Second reading</td>
+<td style="text-align: left;">conditional</td>
+<td style="text-align: left;">Sundays, solemnities, feasts</td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;"><em>Alleluia</em> or other acclamation</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">All stand</td>
+</tr>
+<tr>
+<td style="text-align: left;">14–16</td>
+<td style="text-align: left;">Gospel: dialogue, proclamation, <em>Verbum Domini</em></td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Deacon or priest; incense and candles optional</td>
+</tr>
+<tr>
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">Homily</td>
+<td style="text-align: left;">fixed on Sundays and holydays</td>
+<td style="text-align: left;">Priest or deacon</td>
+</tr>
+<tr>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;"><em>Symbolum</em>: Nicene-Constantinopolitan</td>
+<td style="text-align: left;">conditional</td>
+<td style="text-align: left;">All; bow at <em>Et incarnatus est</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">Apostles’ Creed as alternative</td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;">Especially in Lent and Eastertide</td>
+</tr>
+<tr>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;"><em>Oratio universalis</em></td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Deacon or another proposes; all pray</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;"><strong><em>Liturgia eucharistica</em> — preparation</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">21–22</td>
+<td style="text-align: left;">Offertory chant; gifts brought</td>
+<td style="text-align: left;">fixed / optional</td>
+<td style="text-align: left;">Ministers prepare altar; faithful may bring gifts</td>
+</tr>
+<tr>
+<td style="text-align: left;">23–25</td>
+<td style="text-align: left;"><em>Benedictus es, Domine</em> over bread and wine</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest, quietly or aloud</td>
+</tr>
+<tr>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">Mingling of water and wine</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Deacon or priest, secretly</td>
+</tr>
+<tr>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;"><em>In spiritu humilitatis</em></td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest, bowing, secretly</td>
+</tr>
+<tr>
+<td style="text-align: left;">27</td>
+<td style="text-align: left;">Incensation of gifts, cross, altar, priest, people</td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;">Priest and deacon</td>
+</tr>
+<tr>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;"><em>Lava me, Domine</em> at the washing of hands</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest, secretly</td>
+</tr>
+<tr>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;"><em>Orate, fratres</em> and the people’s answer</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest and people</td>
+</tr>
+<tr>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">Prayer over the Offerings</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest; people: <em>Amen</em></td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;"><strong><em>Prex eucharistica</em></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">Dialogue; Preface; <em>Sanctus</em></td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest and people together</td>
+</tr>
+<tr>
+<td style="text-align: left;">83–98</td>
+<td style="text-align: left;">Prayer I, the Roman Canon</td>
+<td style="text-align: left;">choice</td>
+<td style="text-align: left;">May always be used</td>
+</tr>
+<tr>
+<td style="text-align: left;">99–106</td>
+<td style="text-align: left;">Prayer II</td>
+<td style="text-align: left;">choice</td>
+<td style="text-align: left;">Has its own preface; weekdays especially</td>
+</tr>
+<tr>
+<td style="text-align: left;">107–115</td>
+<td style="text-align: left;">Prayer III</td>
+<td style="text-align: left;">choice</td>
+<td style="text-align: left;">Any preface; Sundays and feasts</td>
+</tr>
+<tr>
+<td style="text-align: left;">116–123</td>
+<td style="text-align: left;">Prayer IV</td>
+<td style="text-align: left;">choice</td>
+<td style="text-align: left;">Fixed preface; not when a proper preface is used</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;"><strong><em>Ritus communionis</em></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">124</td>
+<td style="text-align: left;"><em>Pater noster</em> with its introduction</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest invites; all pray</td>
+</tr>
+<tr>
+<td style="text-align: left;">125</td>
+<td style="text-align: left;"><em>Libera nos</em> and the people’s doxology</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest alone, then people</td>
+</tr>
+<tr>
+<td style="text-align: left;">126–127</td>
+<td style="text-align: left;"><em>Domine Iesu Christe, qui dixisti</em>; <em>Pax Domini</em></td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest</td>
+</tr>
+<tr>
+<td style="text-align: left;">128</td>
+<td style="text-align: left;"><em>Offerte vobis pacem</em></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;">Deacon or priest invites</td>
+</tr>
+<tr>
+<td style="text-align: left;">129–130</td>
+<td style="text-align: left;">Fraction, commingling, <em>Agnus Dei</em></td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest; all sing or say</td>
+</tr>
+<tr>
+<td style="text-align: left;">131</td>
+<td style="text-align: left;">Priest’s private preparation (two forms)</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest, secretly</td>
+</tr>
+<tr>
+<td style="text-align: left;">132</td>
+<td style="text-align: left;"><em>Ecce Agnus Dei</em>; <em>Domine, non sum dignus</em></td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest shows the Host; all answer once</td>
+</tr>
+<tr>
+<td style="text-align: left;">133–136</td>
+<td style="text-align: left;">Communion of priest, then of the faithful</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;"><em>Corpus Christi</em> — <em>Amen</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">137</td>
+<td style="text-align: left;">Purification</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest, deacon, or acolyte</td>
+</tr>
+<tr>
+<td style="text-align: left;">138</td>
+<td style="text-align: left;">Silence or a psalm or hymn</td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;">All</td>
+</tr>
+<tr>
+<td style="text-align: left;">139</td>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest; people: <em>Amen</em></td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;"><strong><em>Ritus conclusionis</em></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">140</td>
+<td style="text-align: left;">Announcements</td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;">If necessary</td>
+</tr>
+<tr>
+<td style="text-align: left;">141</td>
+<td style="text-align: left;">Greeting and blessing</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Priest</td>
+</tr>
+<tr>
+<td style="text-align: left;">142</td>
+<td style="text-align: left;">Solemn blessing or prayer over the people</td>
+<td style="text-align: left;">conditional</td>
+<td style="text-align: left;">On certain days and occasions</td>
+</tr>
+<tr>
+<td style="text-align: left;">143</td>
+<td style="text-align: left;">Pontifical form of the blessing</td>
+<td style="text-align: left;">conditional</td>
+<td style="text-align: left;">At a pontifical Mass</td>
+</tr>
+<tr>
+<td style="text-align: left;">144</td>
+<td style="text-align: left;">Dismissal (four formulas in 2008)</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Deacon or priest; people: <em>Deo gratias</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">145–146</td>
+<td style="text-align: left;">Veneration of the altar; departure</td>
+<td style="text-align: left;">fixed</td>
+<td style="text-align: left;">Omitted if another rite follows immediately</td>
+</tr>
+</tbody>
+</table>
 
 Two features of that table are worth noticing before the exposition begins. First, the numbering runs 1–30, then jumps to 31 for the Eucharistic Prayer dialogue, and then to 83 for the Roman Canon, because the prefaces occupy nn. 33–82 in between: the book is arranged for use at the altar, not for reading, and the Order of Mass literally has the prefaces bound into its middle. Second, the “fixed” column is thinner than the reputation of the older rite would suggest and thicker than the reputation of the newer one: the great majority of the sequence admits no choice at all, and where choice exists the Missal names the alternatives.
 

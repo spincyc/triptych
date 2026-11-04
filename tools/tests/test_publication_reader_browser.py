@@ -219,6 +219,42 @@ class PublicationReaderBrowserTest(unittest.TestCase):
         desktop = [row["contentWidth"] for row in report if row["width"] == 1440]
         self.assertLessEqual(max(desktop) - min(desktop), 80)
 
+    def test_source_spanned_chronology_notes_keep_the_reading_width(self):
+        routes = (
+            "web/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.html",
+            "web/gpt/liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost.html",
+        )
+        report = []
+        for route in routes:
+            self.visit(route)
+            for width, height in ((1440, 900), (390, 844)):
+                self.browser.viewport(width, height)
+                metrics = self.browser.js("""const content=document.querySelector('[data-reader-content]');
+                    const tables=[...content.querySelectorAll('table')].filter(table=>{
+                      const heading=table.querySelector('thead')?.innerText || '';
+                      return heading.includes('Location') && heading.includes('Date');
+                    });
+                    return {width:innerWidth,documentWidth:document.documentElement.scrollWidth,
+                      notes:tables.flatMap(table=>[...table.querySelectorAll('td[colspan="4"]')].map(cell=>{
+                        const bounds=cell.getBoundingClientRect(),row=cell.parentElement.getBoundingClientRect();
+                        return {text:cell.innerText.length,cells:cell.parentElement.children.length,
+                          width:bounds.width,rowWidth:row.width,left:bounds.left-row.left,
+                          client:cell.clientWidth,scroll:cell.scrollWidth};
+                      }))};""")
+                report.append({"route": route, **metrics})
+                with self.subTest(route=route, width=width):
+                    self.assertTrue(metrics["notes"], "Source multicolumn notes were lost")
+                    self.assertLessEqual(metrics["documentWidth"], metrics["width"] + 1)
+                    for note in metrics["notes"]:
+                        self.assertGreater(note["text"], 20)
+                        self.assertEqual(note["cells"], 1)
+                        self.assertLessEqual(abs(note["left"]), 2)
+                        self.assertLessEqual(abs(note["width"] - note["rowWidth"]), 2)
+                        self.assertLessEqual(note["scroll"], note["client"] + 1)
+                self.assert_console_clean()
+        (self.evidence / "source-spanned-chronology.json").write_text(
+            json.dumps(report, indent=2) + "\n")
+
     def test_section_links_focus_reload_and_back(self):
         for prefix in ("", "triptych/"):
             self.visit(prefix + FULL)

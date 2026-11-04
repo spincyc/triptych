@@ -8,21 +8,69 @@
 
 PC-S40-A
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:-----------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | *Cf.* Ps. 48:10–11; mercy in the Temple |
-| Collect | *Deus, qui in Filii tui humilitate…* |
-| **Liturgy of the Word** |  |
-| First Reading | Zech. 9:9–10 |
-| Responsorial Psalm | Ps. 145:1–2, 8–9, 10–11, 13–14; A: *cf.* Ps. 145:1; B: *Alleluia* |
-| Second Reading | Rom. 8:9, 11–13 |
-| Gospel Acclamation | *Cf.* Matt. 11:25 |
-| Gospel | Matt. 11:25–30 |
-| **Liturgy of the Eucharist** |  |
-| Prayer over Offerings | *Oblatio nos…tuo nomini dicata purificet* |
-| Communion Antiphon | A: Ps. 34:9; taste and refuge; B: Matt. 11:28; the burdened invited |
-| Prayer after Communion | *Tantis…repleti muneribus* |
+<table style="width:92%;">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance Antiphon</td>
+<td style="text-align: left;"><em>Cf.</em> Ps. 48:10–11; mercy in the Temple</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Deus, qui in Filii tui humilitate…</em></td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Zech. 9:9–10</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps. 145:1–2, 8–9, 10–11, 13–14; A: <em>cf.</em> Ps. 145:1; B: <em>Alleluia</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 8:9, 11–13</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel Acclamation</td>
+<td style="text-align: left;"><em>Cf.</em> Matt. 11:25</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Matt. 11:25–30</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over Offerings</td>
+<td style="text-align: left;"><em>Oblatio nos…tuo nomini dicata purificet</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon</td>
+<td style="text-align: left;">A: Ps. 34:9; taste and refuge; B: Matt. 11:28; the burdened invited</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Tantis…repleti muneribus</em></td>
+</tr>
+</tbody>
+</table>
 
 | **Sense** | **Synthesis** |
 |:-----------|:------------------------------------------------------|
@@ -35,21 +83,87 @@ PC-S40-A
 
 *Canonical order governs; composition and narrated event remain distinct. Marked *Cf.* texts are adaptations, and dates orient rather than claim autograph precision.*
 
-| **Textual unit / alternative** | **Citation** | **Location** | **Date** |
-|:------------|:-------------|:-----------------------|:--------------|
-| Communion A | Ps. 34:9 | Kingdom of Israel; exact composition place unknown | Davidic attribution traditional; final date unknown |
-| The inherited heading places David in flight from Saul; modern study cannot recover author, place, or date. Afflicted prayer becomes shared instruction in reverent trust; Communion A appoints one clause of that wisdom invitation. |  |  |  |
-| Entrance | *Cf.* Ps. 48:10–11 | Jerusalem sanctuary in the poem’s cultic horizon; composition place unknown | Korahite attribution traditional; date unknown |
-| Zion is the great King’s city and divine mercy is received in the Temple. The sons-of-Korah heading locates sanctuary tradition, not a recoverable autograph event. The Missal adapts Temple, mercy, praise, and worldwide horizon for the gathered Church. |  |  |  |
-| Responsorial Psalm | Ps. 145:1–2, 8–9, 10–11, 13–14 | Israel; exact place unknown | Davidic attribution traditional; likely late final form, date disputed |
-| The alphabetic hymn praises God’s kingship through graciousness, compassion, fidelity, universal care, and support for the fallen. Davidic title and likely later shaping are distinct judgments. It answers the peaceful-king oracle while still addressing God directly. |  |  |  |
-| First Reading | Zech. 9:9–10 | Judah and Jerusalem; exact collection place unknown | Postexilic period; final date of Zech. 9–14 disputed |
-| The heading names Zechariah son of Berechiah in the Persian period. Modern Catholic study distinguishes undated chapters 9–14 from 1–8 and places their final form later; authorship and date remain debated. Daughter Zion receives a just, saving, humble king who removes war and extends peace to the nations. |  |  |  |
-| Acclamation / Gospel / Communion B | *Cf.* Matt. 11:25; Matt. 11:25–30; Matt. 11:28 | Palestine in traditional attribution; Antioch in Syria plausible for the final Greek Gospel | Traditional early apostolic date; modern majority c. AD 80–90 |
-| Narrated event | Matt. 11:20–30 | Galilee; exact place unrecorded | Public ministry, c. AD 28–29 |
-| Tradition: Matthew the Apostle to Jewish believers in Palestine. Modern majority: unknown final Greek author, after AD 70, often Antioch. After rebuking Galilean towns, Jesus thanks the Father for revelation to little ones, declares the Son’s unique knowledge and mediation, and calls the burdened to learn his meekness. |  |  |  |
-| Second Reading | Rom. 8:9, 11–13 | Corinth, Achaia (present-day Greece) | c. AD 57 |
-| Paul addresses mixed Jewish and Gentile house churches at Rome near his eastern mission’s end. Spirit-governed life opposes disordered flesh and hopes for bodily resurrection. Lectionary 100 omits v. 10, then resumes with the Spirit who raised Jesus and the duty to mortify evil deeds. |  |  |  |
+<table style="width:90%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 19%" />
+<col style="width: 34%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Communion A</td>
+<td style="text-align: left;">Ps. 34:9</td>
+<td style="text-align: left;">Kingdom of Israel; exact composition place unknown</td>
+<td style="text-align: left;">Davidic attribution traditional; final date unknown</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The inherited heading places David in flight from Saul; modern study cannot recover author, place, or date. Afflicted prayer becomes shared instruction in reverent trust; Communion A appoints one clause of that wisdom invitation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance</td>
+<td style="text-align: left;"><em>Cf.</em> Ps. 48:10–11</td>
+<td style="text-align: left;">Jerusalem sanctuary in the poem’s cultic horizon; composition place unknown</td>
+<td style="text-align: left;">Korahite attribution traditional; date unknown</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Zion is the great King’s city and divine mercy is received in the Temple. The sons-of-Korah heading locates sanctuary tradition, not a recoverable autograph event. The Missal adapts Temple, mercy, praise, and worldwide horizon for the gathered Church.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps. 145:1–2, 8–9, 10–11, 13–14</td>
+<td style="text-align: left;">Israel; exact place unknown</td>
+<td style="text-align: left;">Davidic attribution traditional; likely late final form, date disputed</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The alphabetic hymn praises God’s kingship through graciousness, compassion, fidelity, universal care, and support for the fallen. Davidic title and likely later shaping are distinct judgments. It answers the peaceful-king oracle while still addressing God directly.</td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Zech. 9:9–10</td>
+<td style="text-align: left;">Judah and Jerusalem; exact collection place unknown</td>
+<td style="text-align: left;">Postexilic period; final date of Zech. 9–14 disputed</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The heading names Zechariah son of Berechiah in the Persian period. Modern Catholic study distinguishes undated chapters 9–14 from 1–8 and places their final form later; authorship and date remain debated. Daughter Zion receives a just, saving, humble king who removes war and extends peace to the nations.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Acclamation; Gospel; Communion B</td>
+<td style="text-align: left;">Matt. 11:<br />
+Acclamation: <em>cf.</em> 25;<br />
+Gospel: 25–30;<br />
+Communion B: 28</td>
+<td style="text-align: left;">Palestine in traditional attribution; Antioch in Syria plausible for the final Greek Gospel</td>
+<td style="text-align: left;">Traditional early apostolic date; modern majority c. AD 80–90</td>
+</tr>
+<tr>
+<td style="text-align: left;">Narrated event</td>
+<td style="text-align: left;">Matt. 11:20–30</td>
+<td style="text-align: left;">Galilee; exact place unrecorded</td>
+<td style="text-align: left;">Public ministry, c. AD 28–29</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Tradition: Matthew the Apostle to Jewish believers in Palestine. Modern majority: unknown final Greek author, after AD 70, often Antioch. After rebuking Galilean towns, Jesus thanks the Father for revelation to little ones, declares the Son’s unique knowledge and mediation, and calls the burdened to learn his meekness.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 8:9, 11–13</td>
+<td style="text-align: left;">Corinth, Achaia (present-day Greece)</td>
+<td style="text-align: left;">c. AD 57</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Paul addresses mixed Jewish and Gentile house churches at Rome near his eastern mission’s end. Spirit-governed life opposes disordered flesh and hopes for bodily resurrection. Lectionary 100 omits v. 10, then resumes with the Spirit who raised Jesus and the duty to mortify evil deeds.</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement
 
@@ -268,6 +382,6 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 
 - *Catechism of the Catholic Church* 541–550, [the Kingdom present in Christ and disclosed in his ministry](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_3/paragraph_3_the_mysteries_of_christs_public_life.html); doctrinal illumination, not direct commentary on the Week XIV formulary.
 
-**Last revised (UTC):** 2026-09-24T18:19:55Z
+**Last revised (UTC):** 2026-11-04T03:09:25Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

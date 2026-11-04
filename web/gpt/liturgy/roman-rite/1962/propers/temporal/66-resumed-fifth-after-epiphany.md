@@ -462,17 +462,22 @@ The passages below have several different dated subjects. Jeremias’s letter ha
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Introit: Ps 84:2 (Vg.; Heb. 85); Gradual: Ps. 43:8–9 (Vg.; Heb. 44); Alleluia: Ps. 129:1–2 (Vg.; Heb. 130); Offertory: Ps. 129:1–2 (Vg.; Heb. 130) | Historical setting | Occasion date unresolved |
-| Introit: Ps 84:2 (Vg.; Heb. 85); Gradual: Ps. 43:8–9 (Vg.; Heb. 44) | Composition: The Psalms of the Sons of Korah | Between the days of Isaias and the return from exile |
-| Alleluia: Ps. 129:1–2 (Vg.; Heb. 130); Offertory: Ps. 129:1–2 (Vg.; Heb. 130) | Composition: Psalms | Before c. 165 B.C. |
-| Introit: Jer 29:11–12,14 | Composition: Jeremias’s letter to the exiles after Jechonias’s deportation | After Jechonias and the deportees had departed from Jerusalem |
-| Introit: Jer 29:11–12,14 | Final formation: The received Book of Jeremias after enlargement | After the first authentic recension |
-| Gospel: Matt. 13:24–30 | Narrated event: Jesus tells the parable of the wheat and cockle | Date unresolved |
-| Gospel: Matt. 13:24–30 | Composition: Matthew | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
-| Gospel: Matt. 13:24–30 | Composition (Catholic critical chronology, for comparison): Greek Matthew | Post-A.D. 70 date |
-| Communion: Mark 11:24 | Composition: Mark | Disputed: A.D. 38–40; A.D. 40; A.D. 43; A.D. 50–67; A.D. 60–70; After Matthew, and not as late as the destruction of Jerusalem |
-| Communion: Mark 11:24 | Composition (Catholic critical chronology, for comparison): Mark | Perhaps shortly after A.D. 70 |
-| Epistle: Col. 3:12–17 | Composition: Colossians | Disputed: A.D. 61; A.D. 61–63 |
+| Gradual: Ps. 43:8–9 (Vg.; Heb. 44) | Historical setting | Occasion date unresolved |
+|  | Composition: The Psalms of the Sons of Korah | Between the days of Isaias and the return from exile |
+| Introit: Ps 84:2 (Vg.; Heb. 85) | Historical setting | Occasion date unresolved |
+|  | Composition: The Psalms of the Sons of Korah | Between the days of Isaias and the return from exile |
+| Alleluia: Ps. 129:1–2 (Vg.; Heb. 130) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Offertory: Ps. 129:1–2 (Vg.; Heb. 130) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Jer 29:11–12,14 | Composition: Jeremias’s letter to the exiles after Jechonias’s deportation; Jerusalem to Babylon | After Jechonias and the deportees had departed from Jerusalem |
+|  | Final formation: The received Book of Jeremias after enlargement; Judah ministry; final writing site unspecified | After the first authentic recension |
+| Gospel: Matt. 13:24–30 | Narrated event: Jesus tells the parable of the wheat and cockle beside the sea | Date unresolved |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+|  | Composition, Catholic critical comparison: Greek Matthew; Antioch suggested | Post-A.D. 70 date |
+| Communion: Mark 11:24 | Composition: Mark; Rome traditionally; Egypt reported by Chrysostom | Disputed: A.D. 38–40; A.D. 40; A.D. 43; A.D. 50–67; A.D. 60–70; After Matthew, and not as late as the destruction of Jerusalem |
+|  | Composition, Catholic critical comparison: Mark; Syria possible | Perhaps shortly after A.D. 70 |
+| Epistle: Col. 3:12–17 | Composition: Colossians; Rome traditionally; addressed to Colossae | Disputed: A.D. 61; A.D. 61–63 |
 
 Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
@@ -572,7 +577,7 @@ The inherited Latin and historical English retain their recorded United States p
 
 The historical appendix gives the exact articles, official introductions and AAS responses used for its chronological and geographical claims. All online witnesses were inspected in the research completed on 2 November 2026; their exact identities and source-local limits remain in the binding record.
 
-**Last revised (UTC):** 2026-11-03T21:06:51Z
+**Last revised (UTC):** 2026-11-04T03:13:49Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

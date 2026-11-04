@@ -467,25 +467,25 @@ Each passage the Mass reads or sings from Scripture, once, in canonical order; b
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Responsorial Psalm | Ps 25 (24):4–5, 6–7, 8–9; response v. 6a | No place named in the verses | **Composition**: Before c. 165 B.C. |
+| Responsorial Psalm | Ps 25 (24):4–5, 6–7, 8–9; response v. 6a | No place named in the verses | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 Inherited attribution: the Vulgate title *In finem. Psalmus David*, in the Douay–Rheims “Unto the end, a psalm for David” (24:1), ascribes the psalm to David; the title gives no date and does not place the psalm in his reign. An alphabetic prayer for guidance and pardon. The date shown is the Psalter’s common critical bound, taken from the introduction to the Psalms in the New American Bible Revised Edition, which holds that no individual psalm can be dated securely; it is not a date for this psalm.
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Communion Antiphon, first option | cf. Ps 119 (118):49–50, an adaptation | No place named in the verses | **Composition**: Before c. 165 B.C. |
+| Communion Antiphon, first option | cf. Ps 119 (118):49–50, an adaptation | No place named in the verses | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
-The strophe of the letter Zain in the long alphabetic psalm on God’s law. The psalm has no attributive title, the Vulgate printing only *Alleluia*, and no traditional date is held for it. The date is the same common critical bound, not a date for this psalm.
+The strophe of the letter Zain in the long alphabetic psalm on God’s law. The psalm has no attributive title, the Vulgate printing only *Alleluia*. Haydock reports its general attribution to David with competing occasions. The regnal era identifies David; the separate composition bound is the same common critical limit.
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| First Reading | Ezek 18:25–28 | Among the captives “by the river Chobar”, “in the land of the Chaldeans” (1:1–3); addressed to “the house of Israel” (18:25) | **Historical setting**: Preferred: In the eighth year of his reign; alternatives: A.M. 3405, B.C. 597, B.C. 598. **Prophecy given**: “he prophesied during at least twenty-two years” (duration). |
+| First Reading | Ezek 18:25–28 | Among the captives “by the river Chobar”, “in the land of the Chaldeans” (1:1–3); addressed to “the house of Israel” (18:25) | **Historical setting**: Preferred: The second captivity of Juda, under Jechonias, in the eighth year of his reign; alternatives: The second captivity of Juda, under Jechonias, A.M. 3405, The second captivity of Juda, under Jechonias, B.C. 597, The second captivity of Juda, under Jechonias, B.C. 598. **Prophecy given**: The prophetic ministry of Ezechiel among the exiles by the river Chobar, “he prophesied during at least twenty-two years” (duration). |
 
 Traditional attribution: “Ezechiel the priest the son of Buzi” (1:3). Chapter 18 carries no date formula; in the book’s order it falls between the oracles dated to the sixth year of the captivity (8:1) and the seventh (20:1). The setting answers date the captivity on which the book is framed, not this oracle. The preferred label is the Douay–Rheims phrase for Joachin’s surrender to Nabuchodonosor in the second captivity (4 Kgs 24:12), the year being that of Nabuchodonosor’s reign; the A.M. figure is Usher’s reckoning as Haydock reports it in his note on Psalm 70; and the first figure before the Christian era is the year of the surrender in the *Catholic Encyclopedia*’s article on the captivities (Reid). The prophecy row gives the length of Ezekiel’s ministry that the *Catholic Encyclopedia*’s article on the prophet (Schets) reads from 29:17; that article dates his deportation a year earlier than the article on the captivities.
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Entrance Antiphon | Dan 3:29–31, 42–43 (Vulgate), adapted | The furnace of Nabuchodonosor, “of the province of Babylon” (3:1, 20–25) | **Historical setting**: “seventy years” (duration). **Composition**: Most likely long after the Exile. |
+| Entrance Antiphon | Dan 3:29–31, 42–43 (Vulgate), adapted | The furnace of Nabuchodonosor, “of the province of Babylon” (3:1, 20–25) | **Historical setting**: The seventy years of servitude to Babylon, “seventy years” (duration). **Composition**: Most likely long after the Exile. |
 
 *Narrated event: the prayer of Azarias in the midst of the fire.*
 
@@ -635,7 +635,11 @@ Traditional attribution: St John the Apostle. The range is the one the *Catholi
 
 - George Leo Haydock, note on Psalm 70:1, in the Douay–Rheims Bible with Haydock’s commentary, reporting Usher’s chronology; cited for the A.M. figure as the chronology corpus records it.
 
-**Last revised (UTC):** 2026-10-01T22:32:35Z
+- George Leo Haydock, *The Holy Bible, Douay–Rheims with Commentary*, Feeney Memorial edition (Loreto, 2014), Ps 118:1, note continued on p. 781: received Davidic attribution and competing occasions.
+
+- John Corbett, “David, King”, *The Catholic Encyclopedia*, vol. 4 (1908), p. 642: the usual chronology of David’s reign.
+
+**Last revised (UTC):** 2026-11-04T03:34:08Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

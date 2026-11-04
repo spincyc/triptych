@@ -154,7 +154,7 @@ declares until that face was carried into it; `\cline` leaked its span as
 `\bfseries` or a blank line after `\endfoot`, set each cell as an empty
 bold paragraph with its text unbolded after it and forced the table into
 HTML, so the converter's table filter now restores the cell as TeX sets
-it, leaves a collapsed `\multicolumn` span its own face, split or not,
+it, leaves a `\multicolumn` span its own face, split or not,
 because a span replaces its column's prefix, writes bold inside bold once,
 and the audit
 refuses empty or nested bold; `\endnote` disappears with its citations; an `enumitem`
@@ -231,10 +231,16 @@ without assuming that normal deployment compiles a PDF:
   `\subsubsection` in Claude 55's `format.tex`, restyles a heading, and the
   web edition renders headings itself.
 
-Two handlings are deliberate rather than repaired, and a reviewer meets
-the decision here rather than the bare defect. A `\multicolumn` span
-keeps its contents but not its span, because neither Markdown nor the
-site's renderer has a cell span. In the dossier of the shared proper
+An explicit `\multicolumn` retains its source column count as an HTML
+`colspan`; the converter uses an HTML table when a pipe table cannot carry
+that geometry. The table filter removes only empty padding added by the
+LaTeX reader, checks the resulting grid against the source column count,
+and the audit checks that those spans survive the site's Markdown renderer.
+Full-width notes must not collapse into the first column with empty cells
+beside them: the authored chronology tables exposed that loss in visual
+review on 2026-11-04.
+
+Two other adaptations remain deliberate. In the dossier of the shared proper
 format — `\dossierprose` and `\dossierevent` in a `dossiertable`, in a
 leaf declaring `format_contract = "propers-format-v1"` — each note is set
 as a paragraph directly beneath the row it annotates, and the table
@@ -242,11 +248,9 @@ resumes after it under its own header row, as a longtable repeats its
 header on each page. The maintainer decided this on 2026-09-23: written
 into the first cell of a padded row, those notes stood in the table's
 narrowest column, and the Eighteenth Sunday's dossier ran about 8,900 px
-tall at 1280 px wide, against about 3,900 px lifted out. Everywhere else,
-including a leaf that defines its own dossier, a full-width note is still
-written into the row's first cell and the row is padded with empty cells
-to the table's width, readable but under a column header that does not
-govern it. And a `<` inside quoted matter is
+tall at 1280 px wide, against about 3,900 px lifted out. Other source-declared
+spans, including a leaf's own dossier notes, retain their table geometry.
+And a `<` inside quoted matter is
 written `\<`, which the site's Python-Markdown does not consume, so the
 backslash reaches the reader; the escape set the converter emits is
 pandoc's, and narrowing it to the site's is a change to every tracked

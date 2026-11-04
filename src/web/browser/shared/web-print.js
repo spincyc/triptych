@@ -8,7 +8,7 @@
   const TYPES = new Set(['flow', 'proper', 'curriculum', 'guide', 'cards', 'plates', 'bible', 'source-volume', 'server-guide', 'server-cards']);
   const words = (value) => new Set(value.split(' ').filter(Boolean));
   const FLOW_TAGS = 'ARTICLE SECTION HEADER FOOTER ASIDE DIV P H1 H2 H3 H4 H5 H6 SPAN SUP SUB STRONG EM I B SMALL BR HR BLOCKQUOTE UL OL LI DL DT DD TABLE CAPTION COLGROUP COL THEAD TBODY TFOOT TR TH TD A ABBR CITE CODE PRE FIGURE FIGCAPTION IMG DETAILS SUMMARY';
-  const TABLE_CLASSES = [83,85,87,92,93,95,96].map((n) => 'print-table-width-' + n).concat([7,8,9,10,11,12,13,14,15,17,18,19,20,21,25,26,27,31,34].map((n) => 'print-column-width-' + n)).join(' ');
+  const TABLE_CLASSES = [70,74,83,84,85,86,87,90,92,93,94,95,96].map((n) => 'print-table-width-' + n).concat([7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27,28,30,31,32,34,35,38,40,42,56,68,69,70,86].map((n) => 'print-column-width-' + n)).join(' ');
   const RESPONSE_BLOCKS = ['022','038','065','070','080','090','100','110','115','120','130','140'];
   const RESPONSE_STRUTS = ['050','052','055','062','065','072','076','078','082'];
   const RESPONSE_VARIANTS = words('response-blank-short response-blank-long response-cell response-lines-2 response-lines-4 response-rule response-block-baseline110 ' + RESPONSE_BLOCKS.map((n) => 'response-block-' + n).join(' ') + ' ' + RESPONSE_STRUTS.map((n) => 'response-strut-' + n).join(' '));
@@ -625,7 +625,8 @@
     startButton.hidden = false;
     cancelButton.hidden = true;
     update('idle');
-    if (options.auto || new URLSearchParams(location.search).get('print') === '1') queueMicrotask(() => { start(); });
+    // Loading an edition, including a retained ?print=1 link, does not request
+    // preparation. Fetch the complete print content only after the Print action.
     return controller;
   }
 

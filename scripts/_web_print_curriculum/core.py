@@ -157,6 +157,22 @@ class Packet:
                           'lock_path':attestation['lock_path'],'lock_sha256':attestation['lock_sha256']}
         return str(path)
 
+    def table_span_receipt(self, run):
+        # The shared table filter emits exactly one typed receipt, including
+        # an empty inventory. All other diagnostics still fail closed.
+        lines=run.stderr.splitlines()
+        receipt=self.web.TABLE_SPANS_RE.fullmatch(lines[0]) if len(lines)==1 else None
+        if run.returncode or receipt is None:
+            raise CurriculumError('Pandoc table-span receipt refused: '+run.stderr)
+        spans=Counter(int(value) for value in receipt[1].split())
+        if any(value<2 for value in spans):
+            raise CurriculumError('invalid Pandoc table-span receipt')
+        return spans
+
+    def validate_table_spans(self, expected, rendered):
+        if self.web.html_table_spans(rendered)!=expected:
+            raise CurriculumError('source multicolumn spans changed in curriculum HTML')
+
     def normalize_profile(self, rendered):
         import _web_print_common as common
         normalized=common.normalize_html(rendered,profile='curriculum')
@@ -670,7 +686,7 @@ class Packet:
         source_selection,semantic_ledger,semantic_engine=self.independent_semantic_ledger()
         title=self.scalar(r'\ModuleID: \ModuleTitle')
         run=self.pandoc_html(body,shim)
-        if run.returncode or run.stderr.strip(): raise CurriculumError(run.stderr)
+        expected_spans=self.table_span_receipt(run)
         rendered=self.render_responses(run.stdout)
         rendered=self.annotate_minipages(self.postprocess_html(rendered))
         if re.search(r'\\[A-Za-z]+',rendered): raise CurriculumError('unconverted control sequence in output')
@@ -739,6 +755,7 @@ class Packet:
             raise CurriculumError('independent canonical prompt/answer payload shortfall: '+repr(item_failures))
         rendered=REGISTRY_MARKER.sub('',ITEM_MARKER.sub('',rendered))
         rendered=self.normalize_profile(rendered)
+        self.validate_table_spans(expected_spans,rendered)
         from . import prose_coverage
         literal_units,literal_coverage=prose_coverage.derive_and_check(self.expected_units,rendered,self.web)
         complete_coverage=semantic_engine.check_units(semantic_ledger,rendered,self.web)

@@ -266,3 +266,17 @@ role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "Retained opening paragraph inspected on 2026-10-01. Corbett’s usual chronology supplies the generated Davidic regnal frame now bound by the corpus to Ps 32. This is a traditional-attribution reference, not a composition date for the psalm; the article’s adjacent later-dating alternative remains a qualification of its account."
 source_fingerprint = "sha256:f6d97140146a6cb3adcbb583db08c82f18a5f42f59b85e884f8feabb8380640d"
+
+[[bindings]]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-118-attribution-and-occasions"
+loci = ["Ps.118.1"]
+role = "context"
+states = ["cataloged"]
+context = "Received Davidic attribution and competing proposed occasions, adopted through the canonical Scripture chronology corpus. The registered passage record was read; this refresh does not claim a new facsimile inspection."
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology"
+loci = ["article 'David, King,' printed p. 642, opening paragraph"]
+role = "context"
+states = ["cataloged"]
+context = "The usual chronology of David's reign supplies the canonical attribution reference era, with its disputed status preserved. The registered passage record was read; this refresh does not claim a new facsimile inspection."

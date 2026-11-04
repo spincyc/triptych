@@ -11,7 +11,7 @@
   const encoder = new TextEncoder();
   // Bump the implementation key when bridge,
   // convergence or output checks change without changing the admitted pins.
-  const COMPILER_VERSION = 'triptych-native-tex-v3';
+  const COMPILER_VERSION = 'triptych-native-tex-v4';
   const PDF_CACHE = 'triptych-native-pdf-v1';
   const CACHE_BYTES = 64 * 1024 * 1024;
   const CACHE_ENTRIES = 3;
@@ -537,15 +537,47 @@
   const placeholderNodes=new Map();
   const lookupPaths=new Map();
   const missingPackages=new Set();
+  const metricNames=new Set();
+  const mapPaths=new Set();
   let tracking=false;
   let trackingFailed=false;
   const originalPost=self.postMessage;
   self.postMessage=function(message,...rest){
     if(message.cmd==='compile')message={...message,nativeMissing:Array.from(missingPackages),
+      nativeFontHints:missingPackages.size?fontHints():[],
       nativeInventory:deferredPaths.size===0||(tracking&&!trackingFailed)};
     return originalPost.call(self,message,...rest);
   };
-  function track(path){const id=deferredPaths.get(path);if(id)missingPackages.add(id);}
+  function fontHints(){
+    // Only suggest additional bodies after a real missing-file access. The
+    // native font map joins metrics already opened by TeX to their Type1
+    // bodies, including aliases and reencodings. It never selects a font or
+    // authorizes output: the fresh attempt still checks every body access.
+    const hints=new Set();
+    let remaining=16*1024*1024;
+    for(const path of mapPaths){try{
+      const size=FS.stat(path).size;
+      if(!Number.isSafeInteger(size)||size<0||size>remaining)continue;
+      remaining-=size;
+      for(const line of FS.readFile(path,{encoding:'utf8'}).split(/\r?\n/)){
+        const metric=line.match(/^\s*([^\s%]+)\s/);
+        if(!metric||!metricNames.has(metric[1]))continue;
+        for(const match of line.matchAll(/<{1,2}([^\s<>[\]]+\.pfb)(?=\s|$)/g)){
+          const target=lookupPaths.get('32/'+match[1])||lookupPaths.get('32/'+match[1].slice(0,-4));
+          const id=deferredPaths.get(target);
+          if(id)hints.add(id);
+        }
+      }
+    }catch(_){/* Missing or unusual maps leave native discovery in charge. */}}
+    return Array.from(hints);
+  }
+  function track(path){
+    if(typeof path==='string'){
+      if(path.endsWith('.tfm'))metricNames.add(path.split('/').pop().slice(0,-4));
+      if(path.endsWith('.map'))mapPaths.add(path);
+    }
+    const id=deferredPaths.get(path);if(id)missingPackages.add(id);
+  }
   function trackDeferred(){
     if(!deferredPaths.size)return true;
     if(typeof FS.open!=='function'||typeof FS.getPath!=='function'||
@@ -1002,6 +1034,13 @@ self.importScripts=function(...urls){
           if (response.nativeInventory !== true) { requested = null; return true; }
           if (!response.nativeMissing.length) return false;
           for (const id of response.nativeMissing) requested.add(id);
+          // Hints only expand a required retry. Unknown or absent hints are
+          // ignored; actual accesses and the complete-inventory fallback
+          // retain authority when a map is unusual or discovery is partial.
+          const hints = response.nativeFontHints;
+          if (Array.isArray(hints) && hints.length <= deferred.size && hints.every(id => deferred.has(id))) {
+            for (const id of hints) requested.add(id);
+          }
           return true;
         };
         let previous = null;

@@ -816,3 +816,10 @@ role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:fc0fe651fc1f34b1d124831a6538442a81cd47acb7ec6161c19a7bfb4269aadf"
 context = "The tracked OCR of the same volume, SHA-256 recomputed and matched, used in iteration 1 to locate Aquinas on Eph 4:23-28 before the facsimile pages were read; no quotation is taken from it."
+
+[[bindings]]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-118-attribution-and-occasions"
+loci = ["Ps.118.1"]
+role = "context"
+states = ["cataloged"]
+context = "Received Davidic attribution and competing proposed occasions, adopted through the canonical Scripture chronology corpus. The registered passage record was read; this refresh does not claim a new facsimile inspection."

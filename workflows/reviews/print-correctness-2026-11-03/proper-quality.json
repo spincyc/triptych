@@ -1,0 +1,527 @@
+{
+  "schema": 1,
+  "review": "independent cold content and rendering review",
+  "baseline_revision": "40bea725b14b16e711b922bacd6368b6755c8bed",
+  "verdict": "pass within reviewed source and PDF scope; final built-site review pending",
+  "scope": {
+    "proper_main_leaves_censused": 62,
+    "orientation_consumers": 10,
+    "legacy_record_consumers": 19,
+    "older_authored_tables": 33,
+    "authored_mapping_changes": 13,
+    "legitimate_shared_mapping_unchanged": 1,
+    "authored_tables_changed": 20,
+    "authored_appointment_rows_audited": 227,
+    "context_rows_distinguished": 24,
+    "final_appointed_rows": 230,
+    "postconciliar_shared_owner_checks": 14
+  },
+  "findings_resolved": [
+    "Passage/component grouping separated without removing canonical claims",
+    "Canonical passage order and Psalm-numbering legend restored",
+    "Concise source-bound geography and uncertainty retained",
+    "Stale legacy records and annotations refreshed; contradictory obsolete prose corrected",
+    "Eleven older authored component-to-citation mappings made explicit",
+    "Starred chronology row terminators survive web conversion",
+    "Source-declared multicolumn cells preserved as semantic HTML colspans",
+    "Abbreviated and single component labels audited across all33 older authored tables; false Gradual assignment and ambiguous shared Psalm citations corrected",
+    "Three omitted cf. adaptation qualifiers restored across PC37/38/39",
+    "Three missing appointed passage dossiers added with source-bound uncertainty and geography",
+    "Five older authored dossier orders corrected without changing existing historical wording",
+    "PC44C Entrance and Offering identities corrected to canonical shared Week18 owner"
+  ],
+  "orientation": {
+    "default_claim_locus_facts_preserved": 996,
+    "comparison_claim_locus_facts_preserved": 29,
+    "appointment_loci_preserved": 302,
+    "all_projected_cells_exact": true,
+    "canonical_order_checked": true,
+    "source_bound_geography_checked": true,
+    "pdf_page2_visual_checks": 10,
+    "current_receipt_inputs_verified": 332
+  },
+  "legacy": {
+    "records_compared_to_baseline": 19,
+    "existing_assertion_payloads_removed_or_changed": 0,
+    "new_assertions": "disputed traditional David attribution only",
+    "current_annotations_exact": 19,
+    "source_inputs_verified": 404,
+    "frozen_source_paths_verified": 73,
+    "pdfs_verified": 28,
+    "chronology_pages_visually_reviewed": 42,
+    "ten_reformatted_pages_pixel_identical_to_reviewed_layout": true,
+    "pc_s52_reference_page12_visually_checked": true,
+    "prose_comparisons_reviewed": 43
+  },
+  "authored_mapping": {
+    "older_tables_audited": 33,
+    "original_component_citation_rows": 227,
+    "context_rows_separately_identified": 24,
+    "final_component_citation_rows": 230,
+    "postconciliar_shared_owner_checks": 14,
+    "source_tables_changed": 20,
+    "initial_exact_mapping_substitutions": 11,
+    "reopened_source_leaves": 10,
+    "reopened_source_checks": "Four leaves have exact citation/qualifier substitutions; six have complete existing dossier byte conservation with three additions; PC44C identity substitutions independently verified",
+    "new_dossier_count": 3,
+    "new_dossier_source_bounds": "NABRE Psalter latest bound before c.165BC retains individual uncertainty; Gigot Wisdom alternatives221\u2013204BC or145\u2013117BC retain in-or-after relation and Alexandria attribution; no new event date inferred",
+    "canonical_order_reviewed": true,
+    "geography_and_qualifications_preserved": true,
+    "pdfs_verified_and_visually_reviewed": 28,
+    "current_selected_source_inputs_verified": 226,
+    "chronology_page_locations": "Claude48 physical3 inherited; other27 physical2",
+    "new_pdf_pagecounts_and_warning_sets_unchanged": true,
+    "current_closure_sha256": "3573df070a4d311f801d7f97f387d2fd35a53547e5fda7e51ca1824ad6dad800",
+    "appointment_census_sha256": "4b529c2ee3295003b02216229a7e474c9d2d849e8925da6e4b666c11bb0f1c09",
+    "shared_owner_investigation_sha256": "dbb47a4b588ed7817ce5c3739f3e7641eeb3458132574b06e7bcfe9992b9878a",
+    "final_owner_hashes_sha256": "01e773d9fd16189bc2643152af2fc91e81307988a8d1022cdd0eca7c64adba32",
+    "source_conservation_and_new_pdf_review_sha256": "a70e0e34792d1c613327ae6e59d673dc012a0dee50dabab8ce44730796ad0bbb"
+  },
+  "web": {
+    "current_inputs_verified": 619,
+    "canonical_outputs_verified": 54,
+    "span_readers": 31,
+    "span_tables": 50,
+    "semantic_colspans_verified": 277,
+    "table_visible_text_conserved": "20 of31 span readers exact; approved differences in ten authored census corrections and legacy GPT PC53. All retained dossier text and all unchanged date/place cells conserved; three new source-bound dossiers exactly present.",
+    "actual_built_site_desktop_mobile_review": "pending; follow-up evidence required",
+    "isolated_desktop_mobile_states": 100,
+    "isolated_overflow_or_narrow_chronology_note_failures": 0,
+    "ordinary_reader_review_pending": 54,
+    "print_route_review_pending": 10
+  },
+  "independent_checks": [
+    {
+      "check": "Orientation conservation/projection/current source and PDF hashes",
+      "exit": 0
+    },
+    {
+      "check": "Nineteen legacy records and exact current annotations",
+      "exit": 0
+    },
+    {
+      "check": "Legacy current receipt and 28 PDFs",
+      "exit": 0
+    },
+    {
+      "check": "Canonical web span union/current hashes/text conservation",
+      "exit": 0
+    },
+    {
+      "check": "Six focused Pandoc span, refusal, and starred-row tests",
+      "tests": 6,
+      "exit": 0
+    },
+    {
+      "check": "Read-only adopted chronology freshness and deployment reachability",
+      "tests": 2,
+      "exit": 0
+    },
+    {
+      "check": "Full33 appointment census plus14 shared-owner investigation and final correction closure",
+      "exit": 0
+    },
+    {
+      "check": "Ten reopened source changes,16 actual PDF chronology pages and combined28 current authored PDF hashes",
+      "exit": 0
+    },
+    {
+      "check": "Current54 web outputs,31 span readers,277 spans and100 desktop/mobile states",
+      "exit": 0
+    },
+    {
+      "check": "Bounded pipeline rebind:54 prior-reader byte hashes,11 frozen files,66 retained PDF hashes, registry pin plus diagnostic-wording input drift and68 unchanged payloads",
+      "exit": 0
+    }
+  ],
+  "limitations": [
+    "Review verifies claim-to-passage mapping, conservation, currentness, and specified rendering; it is not a new historical investigation of every statement in all 62 studies.",
+    "Legacy long research tables retain page breaks and variable blank space; no reviewed chronology content is clipped or overprinted.",
+    "Full proper preflight reports 35 diagnostics also present at baseline, per owner baseline comparison; that whole-corpus preflight was not independently rerun by this reviewer.",
+    "Final built-site desktop/mobile check remains pending and is not implied by source/PDF approval."
+  ],
+  "critical_current_hashes": {
+    "scripts/_proper_chronology.py": "20516b036d2239e50ec2a23b0d0599dac8ca41294ccb6af523331ced906f78ed",
+    "scripts/_chronology.py": "c0258db522c51ff53c3e4d6fee0cf538287e3f8f0172d60f81d7af0448d052b0",
+    "src/common/propers-format.tex": "8efe7c2c28eee077f98f74fc8998cf54eae9883228e523e966eaee7a7280ea3f",
+    "tools/web-edition": "9be3fed135b8f83b7c8ca5895fa50b14bbf99fb32e74cadc44d227feef554311",
+    "scripts/web-shim.tex": "13e017f8b7dab94b226561c1d096021241ab9189be01de754f1422daeba22b41",
+    "release/public-alpha/assets/site.css": "53ae3b2dcdbcae03e9aff296b0443afb3beb562ec75b2d30c836bf07e6f28d20",
+    "Makefile": "8ea7964488f6d9a2c3cfcc3bd6f6981a3bbfb01e4fe4f2cc1fc16cecadd9ad0a",
+    "tools/tests/test_generated_proper_chronology_freshness.py": "50da1132318479dec0640471adbfa2aa51e2620eebce0e5ca624c5da8b469d6b"
+  },
+  "receipts": [
+    {
+      "group": "orientation",
+      "source_receipt_sha256": "c5c83bd9de47ae96003f244980103ee9e2cb5ee0b2b1c0b6f2162acefc12ba26",
+      "render_report_sha256": "7c4aafc579044f3a118609453c9e0a64dc22eaac3d4541d38610ba7951c14001"
+    },
+    {
+      "group": "legacy",
+      "source_receipt_sha256": "24592e22780a8734f6dec3f87cfab9454f3184af68babc39d5cb7b1990b379c1",
+      "render_report_sha256": "f33c69fcc7ee2db8c61c945fa18079b7773662d590197ecad04abfd135bb63d2"
+    },
+    {
+      "group": "authored_mapping",
+      "current_selected_closure_sha256": "3573df070a4d311f801d7f97f387d2fd35a53547e5fda7e51ca1824ad6dad800",
+      "current_source_freeze_sha256": "e52d63eda0e3fa2fb1baf71f77171c729b0a9577429c0754bbf5876e2309b11b"
+    }
+  ],
+  "pdfs": [
+    {
+      "group": "orientation",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis",
+      "sha256": "1d6326fd6372aaa2b762d3a21b6fcf68de4d8ac43450a6de7ea26d0b4997a0c6"
+    },
+    {
+      "group": "orientation",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis",
+      "sha256": "aa625f5490de14eba59ec9561f620cb50e125e376ab845197442d144632ae012"
+    },
+    {
+      "group": "orientation",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis",
+      "sha256": "c30c67249b0d6c897a016d1a8c95b16d9a23e80d3e8c345a87163b8afdbad52d"
+    },
+    {
+      "group": "orientation",
+      "publication": "publication:claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis",
+      "sha256": "2a7c0581c71180e680a7d04402f592b62c1e4e5469cce389cd79abc4b6898fff"
+    },
+    {
+      "group": "orientation",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis",
+      "sha256": "d6958bb35c09365110b1c93befe16705bddae9b932d371e895cb666aabf43ed0"
+    },
+    {
+      "group": "orientation",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis",
+      "sha256": "beac08cc33cfd6331bd389f0baeb56b19fb246d22f939a8c5f06596cefa2e73a"
+    },
+    {
+      "group": "orientation",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis",
+      "sha256": "1dee7ababcbfdcd4a1de24f9ec8359714b8e545e4c04149dffb30a3645d17444"
+    },
+    {
+      "group": "orientation",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis",
+      "sha256": "e363d85c2883533878ede7fa50fd62049a8bed5aea0f8562e2ba6d52fd6bd0c7"
+    },
+    {
+      "group": "orientation",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis",
+      "sha256": "2c60288faf8e479d0cdbfa3f8ffd95020a31c2037152cfab98a8cc829d177156"
+    },
+    {
+      "group": "orientation",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis",
+      "sha256": "66db1d32369349cd2e3b8ef59af71c856457b05f3df0bdc8f5102c7700070445"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost",
+      "sha256": "5039c0e8d49fe58f436ab232000aba4bc010a38dacd48603c71130630a106039"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis",
+      "sha256": "219ab21cc49a8a3534241cc7b7cec50a1310da145bd7b0eea877d53effc155e3"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost",
+      "sha256": "9d2b2b41e0714fac86ffe099a90a6816d640a38dbaaaf52f1fb87001cddf6da5"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis",
+      "sha256": "ec0c3cd35f50e2b888bb3e787452129bfbf5078ef086421259a8813857c4c695"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "sha256": "12d9acc7a7252101ce64d1f7ee220ad9d30e9d340ceb0f63f8c9de67a175c96b"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis",
+      "sha256": "7838f168a76803805f414b3424d7fa52ac469c585387492213e390214b2ea94e"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+      "sha256": "71dd428db50c430bc62de58ae23c42dee36406ae6b74a702a55060f81fd0febb"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis",
+      "sha256": "bf554dbe785d32b14ffc56632a2f088eb7051b67867aaa70c69ef1be2d76f869"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+      "sha256": "e2b35bfec4b3c86c082cddd4a0a44360b0c8b79d9493c219e8cb1a5fcd2a2d5e"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis",
+      "sha256": "29683afe443b6f97bf03cd0464a050ee971b1420173963cacc6a094723d8854e"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+      "sha256": "ae37ba7cc4a7fba2305721db591c9a8d83e5589bb72bc945b3131ba9d2083e2f"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis",
+      "sha256": "ded981dbe5c3616f4c6581f242874003a64e5feddc4d44cab1d3db3bd0498b31"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a",
+      "sha256": "df5d3a56c4f114073bf54e1bb48cc5144df02eb55a0c35cd3b3d4e02c9d2a2f4"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis",
+      "sha256": "8d6f142b7318de1bc212d55bfb2f111a59679e8b5d529153e37458e46aeab26d"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost",
+      "sha256": "db0f83f7383318407b1f40c06f3293ef95ec167588efac021096090dfe713f44"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis",
+      "sha256": "0892ca723155c7b4c9dedf51373fe1eb66275ef414e64333dab65d883e88eef3"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost",
+      "sha256": "d77b4a2f8b1eb48dcdb3ea4614436f84d8f7e49f0d902fd21254f97260c17037"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis",
+      "sha256": "d7fa0a10a1eea7c6c20a9f2a3129eb5f46c10c60461e20431109185ec5b509b7"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost",
+      "sha256": "72e52bc7a216b2f691ade92b67b4280e0ebf29039afb43e70430aa36dba0b6e1"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis",
+      "sha256": "e84e9d65d4530ae663264c54847a08d65a6783ba6de22373d22aa5c931abd4f8"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "sha256": "fafdbbf7ab5698d2729f9d3961ef7989ad8e32fa21eaa1d41b0c6f7c58c69d2e"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis",
+      "sha256": "acca7dd89c92f53afe73a10172ac62b2e50d01e6ddaf3662aaa826f488d1358f"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+      "sha256": "563d51165aa66cec804756cf63513f3bfc1ac83a4ffb80bb3f0e76314dac6769"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis",
+      "sha256": "4707f223a806fc8352dafa67e74178f013acb3ca47b3e494702ae38c6450acff"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+      "sha256": "9060e128cd8a972ff3a1b7a197374dadb83cd5fbefa3d3ac8ca5918fc7d4f4ff"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis",
+      "sha256": "a7a1b7c6aeabe06925b385bf7d388e8b283e2acafc52cefc46241f131af23385"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+      "sha256": "30702bf730d33f0da68fcef54db8fe3c4e0d3cba67290df59de81b50ab9d9cc6"
+    },
+    {
+      "group": "legacy",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis",
+      "sha256": "c07bf40b5367c9d5a64d9d2e2f8f6a106e97555e0aa3e3d1634a485733f1a132"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost",
+      "sha256": "5c674f964bf4d7a894169dcac88d7a4fa5dfe0bf0b29b015525a40597ef05b37"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis",
+      "sha256": "ce8ba9965a653c4830cd652cd8eaf639e2e5cfa89d8e8a2247c0db679262495f"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass",
+      "sha256": "141178f380423ba4bc897cfb79e052e955b87c78dea662ee417a168a593e7f62"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost",
+      "sha256": "5d6cc131db85c776deb81a10351edbdde036f2cbe5ce1c88ce09941b1b40155d"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost",
+      "sha256": "064beed884428e91ce0cd564661af962c1b5959f871a79430e72260eda78f941"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost",
+      "sha256": "773b0ce479610e1a65c47a6cde79c7f0a242a2793a00fea33b10ae600791f66b"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost",
+      "sha256": "63b9d95e253c3e0bb1bcd0c4b0ce237e6879194b4c08bc4c8a60d9a929309c5b"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost",
+      "sha256": "4e560e7a5f5d0dd8cef606f0986e2167bf59ac33517ffd4ed1f8d9414057fbed"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis",
+      "sha256": "1f13c0a74dc40367f46e0c186ed4c4e366e6ca8e7be7c37e6990c5eac3959c59"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a",
+      "sha256": "71b036c48388a1132777a1a8063413be9300a0e28b5e29998f9bd22e4c306248"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-fourteenth-sunday-in-ordinary-time-year-a",
+      "sha256": "bc2693c827d686e79a242a51167e73d4cfa3462a30bc1cbfd426fd4c64c10f90"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a",
+      "sha256": "9b9533532af20030dcbcd4649a8848936f461ef964431e06ff128b6cbe6944e2"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b",
+      "sha256": "c4f10a11e4f263cc7a3a5c179761db1ae3b27f9caa82c62ac04d6128bfe72699"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b-synthesis",
+      "sha256": "1f9a7c637fdfa5153f6c932c019971a8aa6fdc55f8b53dff2c6724c921304450"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost",
+      "sha256": "11415ec04822691b00197d640461961fce660ac8421b8af198ee397148ebd1cb"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a",
+      "sha256": "9ae7d654d50a83081552a2d71d811212368da4270418fac77c8786788bd6ec04"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost",
+      "sha256": "15d0b685dbbf6415ad53ed2c0058cc26e3e429e328325fffd522d9e5fb86b1a9"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis",
+      "sha256": "3fc0a0aa526037dd70fd9fdcbf3bdec755c61538618cb79d1869ea50036ccc8f"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost",
+      "sha256": "69fe8981a50f2ff8073352a12e44217434fb8bc33fa15bb35ff5ae3c91d1e885"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost-synthesis",
+      "sha256": "7beb2dee03b497a03b1a7cfd74fd53d1eea489fa678e745168682ed0949fd860"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost",
+      "sha256": "b2d310a92eee091f363a802769cad1c3b6fe3d8b77ff00825e274a80a541196b"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis",
+      "sha256": "cfcc77b7e1de7d8d447867e243115e7fe044418c7abcdb9773e580e5af8ca99c"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-twelfth-sunday-in-ordinary-time-year-a",
+      "sha256": "8ac9cff2bc7b222ab5f4096c6e06535b163007b75bbde441c496f3b446796977"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-thirteenth-sunday-in-ordinary-time-year-a",
+      "sha256": "b46255ddf78143f0bf4ea27b9f8bb51af5070d502cd39b0198aa9a38a72969d3"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a",
+      "sha256": "8b1bb541ff88f0ad7651323a4fc12a381add38e3ad0b490cc0d447ac79aa0464"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a-synthesis",
+      "sha256": "60a57c6dd97862e805e294874df7038f8db901ac2babcae8dc8e5029ffac7d48"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c",
+      "sha256": "e7a0c9834c63404f08376c79627fba2c2c95878388e2f609dfaed64cc031e69a"
+    },
+    {
+      "group": "authored_mapping",
+      "publication": "publication:gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c-synthesis",
+      "sha256": "137b04fa50f4f00e8055a3c7130653e3039b8de6ead2efa8e56b2f9ae9749fe1"
+    }
+  ],
+  "review_counts": {
+    "unique_current_pdfs": 66,
+    "orientation": 10,
+    "legacy": 28,
+    "authored": 28
+  },
+  "limits_acknowledged": {
+    "actual_built_site": "pending: all10 orientation print routes, including reported Claude61 query URL, and54 ordinary readers at desktop/mobile with actual-route DOM/hash equivalence",
+    "historical_review": "No blanket historical re-research of all62 studies is claimed"
+  },
+  "bounded_pipeline_revalidation": {
+    "evidence_sha256": "ce7a2ae66b28740ab4121a6cc066b3dfc091b698877f663607ede37d9c477fbb",
+    "previous_proof_sha256": "ce30bdcea14e049186c8d1a264971b1084039fc4e5cd9bfdcbe1090689a162b1",
+    "converter_sha256": "9be3fed135b8f83b7c8ca5895fa50b14bbf99fb32e74cadc44d227feef554311",
+    "reader_files_byte_identical": 54,
+    "span_readers": 31,
+    "semantic_colspans": 277,
+    "pipeline_freeze_sha256": "fa96739cee9ed622954c2c4e3134b136c23b79dae2210f1793953d8ea48bd07c",
+    "native_registry_sha256": "6f163fa5db0e615ecc2fa173ae195306fe532254a4988ac67a3790eb73f968b5",
+    "asset_pin_review_sha256": "d2a34cf146525674d77c54b96b419315091f9b552ee6c20c7da91cf16dcd58dc",
+    "asset_delta": "Only five selected-output pins and diagram offsets refreshed for already-reviewed citation edits; all68 payloads independently rehashed unchanged.",
+    "native_receipt_qualification": "The66 PDF hashes and source review are retained. Native input receipts predate the registry pin update and one Makefile diagnostic wording change; no66-PDF recapture is claimed. Reversing that one diagnostic sentence exactly reproduces the reviewed Makefile hash; commands and behavior are unchanged. Independent comparison found no other native input drift.",
+    "native_recaptures_after_registry_update": 0,
+    "print_css_qualification": "New finite width rules are scoped to data-web-print-paper. Ordinary reader bytes are unchanged; actual built-site desktop/mobile review remains pending."
+  }
+}

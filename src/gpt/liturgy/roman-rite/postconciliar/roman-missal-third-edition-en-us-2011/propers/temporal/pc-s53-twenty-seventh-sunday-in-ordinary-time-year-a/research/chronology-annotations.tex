@@ -12,9 +12,9 @@
   \else
     \PackageError{triptych}{No chronology annotation for #1}{}%
   \fi}
-% appointment-dependency: guidance/liturgy/postconciliar-propers-registry.md sha256=ffe8a6d8b7d79c652bdc49b3d5f6d4dbb32e3506abc7ab0310e745c2b7306ad4
-% appointment-dependency: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md sha256=e61f5323480cbe19b7bf3b9ee046cfe8966f93662367513dea9cf9b0f27d5b66
-% appointment-dependency: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/formula-dispositions.md sha256=89d9d58ac5bcc07c00d12da3660e07d5ffad72866cc43f40b9581918ed71bde5
+% appointment-dependency: guidance/liturgy/postconciliar-propers-registry.md sha256=376860a7c37a4c75bb6d880cd1b260183be1877a07e3cd01660a9e2854e2ea72
+% appointment-dependency: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md sha256=4e2d92326dece103e1475e70ffb5e447815f9b12d697926e48a54850a1641208
+% appointment-dependency: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/formula-dispositions.md sha256=de58754f5a8ab61dffa3f4a6a479c843fe3763b6a5b37099282960de71d93989
 % appointment-dependency: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/instance/manifest.md sha256=9ab2f377d6de66eb639a2115620d32379b1d22b40cea1ac67dcf429b821630e9
 % appointment-dependency: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/propers/verified.md sha256=c4367c88e48ca6954481a904edde9c857128f2a94e74649cc38e993cafb22bb8
 % appointment-dependency: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/chronology-inputs.toml sha256=9fd487f1561888df70c71ff005090c7a9ff3a09bf7d846ab70671ac156997841
@@ -42,7 +42,8 @@
 }
 % responsorial-psalm: Responsorial psalm
 \expandafter\def\csname triptychchronologyannotation@responsorial-psalm\endcsname{%
-  \chronologyannotationgroup{composition}{nonuniform}{\textbf{Composition} -- No single date applies across every cited locus.}%
+  \chronologyannotationgroup{historical-setting}{research-pending}{\textbf{Historical setting} -- Occasion date unresolved.}%
+  \space \chronologyannotationgroup{composition}{nonuniform}{\textbf{Composition} -- No single date applies across every cited locus.}%
 }
 % second-reading: Second reading
 \expandafter\def\csname triptychchronologyannotation@second-reading\endcsname{%
@@ -50,7 +51,7 @@
 }
 % acclamation: Gospel acclamation
 \expandafter\def\csname triptychchronologyannotation@acclamation\endcsname{%
-  \chronologyannotationgroup{narrated-event}{disputed}{\textbf{Event} -- disputed: \chronologyannotationreach{John.15.16}{Matt.26.20-29 Mark.14.17-25 Luke.22.14-38 John.13.1- John.14 John.15 John.16 John.17.1-26}{true}\chronologyannotationclaim{life-of-christ.last-supper}{narrated-event}{catholic-traditional-v1}{disputed}{the fourteenth day of Nisan}{01-14}.}%
+  \chronologyannotationgroup{narrated-event}{disputed}{\textbf{Event} -- disputed: \chronologyannotationreach{John.15.16}{Matt.26.20-29 Mark.14.17-25 Luke.22.14-38 John.13.1- John.14 John.15 John.16 John.17.1-26}{true}\chronologyannotationclaim{life-of-christ.last-supper}{narrated-event}{catholic-traditional-v1}{disputed}{the fourteenth day of Nisan}{The Last Supper, 01-14}.}%
   \space \chronologyannotationgroup{composition}{disputed}{\textbf{Composition} -- disputed: \chronologyannotationreach{John.15.16}{John}{true}\chronologyannotationclaim{composition.gospel-of-john}{composition}{catholic-traditional-v1}{disputed}{from the year 90 to 100 (approximately)}{c. A.D. 90--100}; \chronologyannotationreach{John.15.16}{John}{true}\chronologyannotationclaim{composition.gospel-of-john}{composition}{catholic-traditional-v1}{disputed}{96 or one of the succeeding years}{A.D. 96--100}.}%
 }
 % gospel: Gospel

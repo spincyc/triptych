@@ -22,21 +22,65 @@ The apostolic reading adds its own voice. Philippians moves from petition and th
 
 The two Communion antiphons give alternative conclusions to this movement. Lamentations places the communicant among those who seek and wait for the good Lord. The alternative based on First Corinthians makes the many and the one body explicit. Waiting and incorporation are compatible Christian realities, but these are alternatives, not two successive antiphons in one prescribed sequence.
 
-| **Textual unit** | **Text / citation** |
-|:---|:---|
-| **Introductory Rites** |  |
-| Entrance | *In voluntate tua, Domine*; cf. Esther 4:17 (Mordecai’s prayer; Douay–Rheims basis 13:9–11). Missal-antiphon route. |
-| Collect | *Omnipotens sempiterne Deus, qui abundantia*. |
-| **Liturgy of the Word** |  |
-| First reading | Isaiah 5:1–7. |
-| Responsorial Psalm | Psalm 80:9,12,13–14,15–16,19–20 (Vulgate / Douay–Rheims 79); response Isaiah 5:7a. |
-| Second reading | Philippians 4:6–9. |
-| Acclamation | Alleluia; cf. John 15:16 (adaptation). |
-| Gospel | Matthew 21:33–43. |
-| **Liturgy of the Eucharist and Communion** |  |
-| Prayer over the Offerings | *Suscipe, quaesumus, Domine*. |
-| Communion | Lamentations 3:25; **or** cf. 1 Corinthians 10:17 (adaptation, with chalice language). Neither alternative is selected here. |
-| Prayer after Communion | *Concede nobis, omnipotens Deus*. |
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance</td>
+<td style="text-align: left;"><em>In voluntate tua, Domine</em>; cf. Esther 4:17 (Mordecai’s prayer; Douay–Rheims basis 13:9–11). Missal-antiphon route.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Omnipotens sempiterne Deus, qui abundantia</em>.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First reading</td>
+<td style="text-align: left;">Isaiah 5:1–7.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Psalm 80:9,12,13–14,15–16,19–20 (Vulgate / Douay–Rheims 79); response Isaiah 5:7a.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second reading</td>
+<td style="text-align: left;">Philippians 4:6–9.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Acclamation</td>
+<td style="text-align: left;">Alleluia; cf. John 15:16 (adaptation).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Matthew 21:33–43.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist and Communion</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over the Offerings</td>
+<td style="text-align: left;"><em>Suscipe, quaesumus, Domine</em>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion</td>
+<td style="text-align: left;">Lamentations 3:25; <strong>or</strong> cf. 1 Corinthians 10:17 (adaptation, with chalice language). Neither alternative is selected here.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Concede nobis, omnipotens Deus</em>.</td>
+</tr>
+</tbody>
+</table>
 
 The Missal identifies no unique Week 27 Preface, proper Offertory antiphon, Sequence, special Eucharistic Prayer insertion, or distinctive concluding formula in the inspected formulary. Permitted chant, Preface and Eucharistic Prayer selections remain open; the terminal liturgical appendix distinguishes them from the appointed texts above.
 
@@ -464,7 +508,7 @@ McMahon’s traditional book-level proposal is concessive and calls authorship c
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Psalm | Psalm 80 (Vulgate 79), selected verses; response Isaiah 5:7a | Israel recalled from Egypt; sea and river in the poem. | **Composition** – No single date applies across every cited locus. |
+| Psalm | Psalm 80 (Vulgate 79), selected verses; response Isaiah 5:7a | Israel recalled from Egypt; sea and river in the poem. | **Historical setting** – Occasion date unresolved. **Composition** – No single date applies across every cited locus. |
 
 The psalm’s broad pre-Maccabean composition limit in the NABRE introduction does not securely date this individual psalm; the response has Isaiah’s different attribution horizon. Augustine’s Jordan and Bellarmine’s Euphrates are distinct interpretations, not an agreed composition location.
 
@@ -488,7 +532,7 @@ Jacquier’s proposals depend upon differing testimonies: the early dispersal pr
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Acclamation | Cf. John 15:16 | Farewell discourse to the disciples; proposed Gospel composition at Ephesus is a different location. | **Event** – disputed: 01-14. **Composition** – disputed: c. A.D. 90–100; A.D. 96–100. |
+| Acclamation | Cf. John 15:16 | Farewell discourse to the disciples; proposed Gospel composition at Ephesus is a different location. | **Event** – disputed: The Last Supper, 01-14. **Composition** – disputed: c. A.D. 90–100; A.D. 96–100. |
 
 *Narrated event: 01-14 means 14 Nisan, not 14 January; no year is supplied. Maas’s disputed Supper reconstruction binds John 13–17 broadly and does not locate each sentence in an exact room.*
 
@@ -561,7 +605,7 @@ The Catholic Encyclopedia chronology witnesses are historical reference judgment
 
 - NABRE introductions to Psalms and Lamentations, official USCCB witnesses: broad psalm composition limits and the setting, authorship and grouping of Lamentations. Used for chronology and orientation; protected Bible translation not reproduced.
 
-**Last revised (UTC):** 2026-10-01T22:25:03Z
+**Last revised (UTC):** 2026-11-04T03:34:08Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

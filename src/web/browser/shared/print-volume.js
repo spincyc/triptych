@@ -203,8 +203,6 @@
         if (generation === selected) start.disabled = false;
       }
     });
-    if (new URLSearchParams(window.location.search).get('print') === '1') {
-      queueMicrotask(() => start.click());
-    }
+    // Retained ?print=1 links open the volume; only its Print action loads parts.
   }
 }());

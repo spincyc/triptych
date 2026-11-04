@@ -46,15 +46,15 @@ appointment_notes = ["entrance-antiphon: Daniel 3:31, 29, 30, 43, 42; adaptation
 
 [[appointment_dependencies]]
 path = "guidance/liturgy/postconciliar-propers-registry.md"
-sha256 = "ffe8a6d8b7d79c652bdc49b3d5f6d4dbb32e3506abc7ab0310e745c2b7306ad4"
+sha256 = "376860a7c37a4c75bb6d880cd1b260183be1877a07e3cd01660a9e2854e2ea72"
 
 [[appointment_dependencies]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md"
-sha256 = "0e0c42bbfd928a95e9c1980d13c826bf4cedb961bebc8f42f8201061c8b5b0e9"
+sha256 = "22626b14e0506b69c0ddc254b0ade2b6f7c9ae7cf8ef98fe356746a8f47fb1eb"
 
 [[appointment_dependencies]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/formula-dispositions.md"
-sha256 = "f2d1f54cad9daef9cf30a362389d2f5bdcd4edfdbbddc443b0d9aaa6fe70d184"
+sha256 = "37735c7edc0fbf692a691c7c4b0487b80831108daf91621b91f7b8858e190879"
 
 [[appointment_dependencies]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/instance/manifest.md"
@@ -1715,6 +1715,29 @@ locus = "Ps.118.50"
 inherited = true
 scope = "Ps"
 
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Ps.118.49"
+inherited = true
+scope = "Ps.118"
+
+[[elements.claims.reaches]]
+locus = "Ps.118.50"
+inherited = true
+scope = "Ps.118"
+
 [[elements.publication_claims]]
 relation = "composition"
 subject = "critical.psalms.latest-composition-boundary"
@@ -1737,6 +1760,29 @@ scope = "Ps"
 locus = "Ps.118.50"
 inherited = true
 scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.118.49"
+inherited = true
+scope = "Ps.118"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.118.50"
+inherited = true
+scope = "Ps.118"
 
 [[elements]]
 key = "communion-antiphon-b"

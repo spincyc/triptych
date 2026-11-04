@@ -36,23 +36,90 @@
 
 Seven passages are directly appointed, in four books; composed orations are not listed, their resemblances to Scripture being echoes rather than quotations. Each dossier is a summary row, an event row where a passage narrates one, then a short explanation. Psalm citations give the missal’s Vulgate number with the English-Bible equivalent; the appendix supplies the Masoretic series and the two witnesses’ general judgments on the psalm titles.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:----------|:-------------|:------------------------|:-----------|
-| Gradual | Ps. 27:7, 1 Vulg. (Eng. 28:7, 1) | Superscription *Psalmus ipsi David*. No episode, occasion or place | Traditional: Davidic, *c.* 1000 BC |
-| A bare attribution: no occasion and no musical direction, so nothing fixes a place or a stage of David’s life. Theodoret’s reading of the psalm as David in flight from Saul is exegesis, not a dated setting. |  |  |  |
-| Offertory | Ps. 29:2–3 Vulg. (Eng. 30:1–2) | Superscription *Psalmus cantici in dedicatione domus David*: an occasion named, no place | Traditional: Davidic, *c.* 1000 BC |
-| The only title of the four naming a dedication, and it drives the psalm’s whole reception. Aquinas notes the historical difficulty — David did not dedicate the Lord’s house — and Theodoret argues that the letter cannot be David’s own building. |  |  |  |
-| Introit | Ps. 67:6–7, 36, with v. 2 Vulg. (Eng. 68:5–6, 35, with v. 1) | Superscription *In finem, psalmus cantici ipsi David*. No occasion or place | Traditional: Davidic, *c.* 1000 BC |
-| *In finem* renders a term the *Catholic Encyclopedia* says is “now generally interpreted ‘of the Director’,” marking a collection rather than a date or an event; Jerome rendered it *victori*. The psalm is a processional but anchors no episode, and the missal takes three clauses from it. |  |  |  |
-| Alleluia | Ps. 80:2–3 Vulg. (Eng. 81:1–2) | Superscription *In finem, pro torcularibus, psalmus ipsi Asaph*. Levitical temple choir | Traditional: Asaph or his family, under the monarchy |
-| The one appointed psalm not ascribed to David. The *Catholic Encyclopedia* makes Asaph a Levite, one of the three chiefs of the Levitical choir, and judges it probable that his family composed the psalms later gathered into an Asaph psalter; *pro torcularibus* renders a term that “may mean that these psalms were to be sung to some vintage-melody.” |  |  |  |
-| Communion | Prov. 3:9–10 | A father’s wisdom instruction; no place named. Traditionally Solomon at Jerusalem | Traditional: Solomonic, 10th c. BC |
-| The two witnesses disagree. The *Catholic Encyclopedia* (Gigot, 1911) reports Catholic writers “wellnigh unanimous” in ascribing chapters i–ix to Solomon and dates the arrangement only to “either under Ezechias, or as late as Esdras”; the *NABRE* makes chapters 1–9 an early postexilic introduction. Neither is preferred here. |  |  |  |
-| Gospel | Mk. 7:31–37 | Writing: Rome, for Roman Christians (*Cath. Enc.*); the *NABRE* adds a possible Syrian setting | AD 50–67 (*Cath. Enc.*); often after AD 70 |
-| *Event: out of the district of Tyre (Arabic Sour) north through Sidon (Saida), both in present-day Lebanon, then to the Sea of Galilee through the Decapolis — for the *Catholic Encyclopedia*, which names Mk. 7:31 among its three New Testament loci, a region east and south of that lake whose cities lie east of the Jordan but for Scythopolis. Largely Gentile territory, in the Galilean ministry; no year is settled here.* |  |  |  |
-| The *Catholic Encyclopedia* takes the evangelist to be Peter’s interpreter, holds that “it is certain that the Gospel was written at Rome,” says “the date of the Gospel is uncertain,” and settles for AD 50–67; the *NABRE* reports the attribution to John Mark, notes that the book is anonymous, and prefers a date shortly after AD 70. |  |  |  |
-| Epistle | 1 Cor. 15:1–10 | From Ephesus, near present-day Selçuk, Türkiye, to Corinth in Greece | About Easter AD 57 (*Cath. Enc.*); about AD 56 (*NABRE*) |
-| Pauline authorship is both traditional and the mainstream modern judgment, and the letter names its own writing place at 16:8, “But I will tarry at Ephesus, until Pentecost.” The *Catholic Encyclopedia* reaches Ephesus by Paul’s itinerary instead, and has Titus carry the letter to a church founded about the end of AD 51; chapter 15 answers people there saying there is no resurrection of the dead. |  |  |  |
+<table style="width:83%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Proper</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Gradual</td>
+<td style="text-align: left;">Ps. 27:7, 1 Vulg. (Eng. 28:7, 1)</td>
+<td style="text-align: left;">Superscription <em>Psalmus ipsi David</em>. No episode, occasion or place</td>
+<td style="text-align: left;">Traditional: Davidic, <em>c.</em> 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">A bare attribution: no occasion and no musical direction, so nothing fixes a place or a stage of David’s life. Theodoret’s reading of the psalm as David in flight from Saul is exegesis, not a dated setting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Offertory</td>
+<td style="text-align: left;">Ps. 29:2–3 Vulg. (Eng. 30:1–2)</td>
+<td style="text-align: left;">Superscription <em>Psalmus cantici in dedicatione domus David</em>: an occasion named, no place</td>
+<td style="text-align: left;">Traditional: Davidic, <em>c.</em> 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The only title of the four naming a dedication, and it drives the psalm’s whole reception. Aquinas notes the historical difficulty — David did not dedicate the Lord’s house — and Theodoret argues that the letter cannot be David’s own building.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Introit</td>
+<td style="text-align: left;">Ps. 67:6–7, 36, with v. 2 Vulg. (Eng. 68:5–6, 35, with v. 1)</td>
+<td style="text-align: left;">Superscription <em>In finem, psalmus cantici ipsi David</em>. No occasion or place</td>
+<td style="text-align: left;">Traditional: Davidic, <em>c.</em> 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;"><em>In finem</em> renders a term the <em>Catholic Encyclopedia</em> says is “now generally interpreted ‘of the Director’,” marking a collection rather than a date or an event; Jerome rendered it <em>victori</em>. The psalm is a processional but anchors no episode, and the missal takes three clauses from it.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alleluia</td>
+<td style="text-align: left;">Ps. 80:2–3 Vulg. (Eng. 81:1–2)</td>
+<td style="text-align: left;">Superscription <em>In finem, pro torcularibus, psalmus ipsi Asaph</em>. Levitical temple choir</td>
+<td style="text-align: left;">Traditional: Asaph or his family, under the monarchy</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The one appointed psalm not ascribed to David. The <em>Catholic Encyclopedia</em> makes Asaph a Levite, one of the three chiefs of the Levitical choir, and judges it probable that his family composed the psalms later gathered into an Asaph psalter; <em>pro torcularibus</em> renders a term that “may mean that these psalms were to be sung to some vintage-melody.”</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion</td>
+<td style="text-align: left;">Prov. 3:9–10</td>
+<td style="text-align: left;">A father’s wisdom instruction; no place named. Traditionally Solomon at Jerusalem</td>
+<td style="text-align: left;">Traditional: Solomonic, 10th c. BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The two witnesses disagree. The <em>Catholic Encyclopedia</em> (Gigot, 1911) reports Catholic writers “wellnigh unanimous” in ascribing chapters i–ix to Solomon and dates the arrangement only to “either under Ezechias, or as late as Esdras”; the <em>NABRE</em> makes chapters 1–9 an early postexilic introduction. Neither is preferred here.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Mk. 7:31–37</td>
+<td style="text-align: left;">Writing: Rome, for Roman Christians (<em>Cath. Enc.</em>); the <em>NABRE</em> adds a possible Syrian setting</td>
+<td style="text-align: left;">AD 50–67 (<em>Cath. Enc.</em>); often after AD 70</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;"><em>Event: out of the district of Tyre (Arabic Sour) north through Sidon (Saida), both in present-day Lebanon, then to the Sea of Galilee through the Decapolis — for the <em>Catholic Encyclopedia</em>, which names Mk. 7:31 among its three New Testament loci, a region east and south of that lake whose cities lie east of the Jordan but for Scythopolis. Largely Gentile territory, in the Galilean ministry; no year is settled here.</em></td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The <em>Catholic Encyclopedia</em> takes the evangelist to be Peter’s interpreter, holds that “it is certain that the Gospel was written at Rome,” says “the date of the Gospel is uncertain,” and settles for AD 50–67; the <em>NABRE</em> reports the attribution to John Mark, notes that the book is anonymous, and prefers a date shortly after AD 70.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Epistle</td>
+<td style="text-align: left;">1 Cor. 15:1–10</td>
+<td style="text-align: left;">From Ephesus, near present-day Selçuk, Türkiye, to Corinth in Greece</td>
+<td style="text-align: left;">About Easter AD 57 (<em>Cath. Enc.</em>); about AD 56 (<em>NABRE</em>)</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Pauline authorship is both traditional and the mainstream modern judgment, and the letter names its own writing place at 16:8, “But I will tarry at Ephesus, until Pentecost.” The <em>Catholic Encyclopedia</em> reaches Ephesus by Paul’s itinerary instead, and has Titus carry the letter to a church founded about the end of AD 51; chapter 15 answers people there saying there is no resurrection of the dead.</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 

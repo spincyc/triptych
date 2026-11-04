@@ -1376,10 +1376,29 @@ tables across providers; differing appointments or profiles are not harmonized.
 Preflight refuses altered, reordered, omitted, additional or provider-authored
 rows. `--format table-tex` previews the complete table without writing it.
 
+Group the table by appointed passage and component, never by a shared date.
+Each group prints its passage once, followed by that passage's separate
+relation/date rows; rules separate passage groups. A Psalm's occasion gap or
+collection-wide composition bound cannot merge it with another Psalm. Split
+an appointment only where its complete chronology differs, so its resulting
+passage ranges are disjoint. Keep those groups in canonical book and verse
+order and identify distinct appointed uses, including long/short alternatives
+and a response drawn from the Psalm it accompanies. All comparisons,
+dispositions and source alternatives stay beside their own passage.
+
+On 2026-11-03 the remaining three v1 consumers were explicitly migrated and
+all ten orientation consumers received this grouping repair. The former
+equal-answer grouping repeated unrelated chants together and could print
+Psalm 71 before Psalm 2 or Matthew 11 before Matthew 5. The legacy v1/v2
+renderer remains available for historical reproduction; it is not the current
+presentation of those ten leaves. Corpus-derived coverage tests hold each
+current component/locus and assertion to its one passage group.
+
 The passage display abbreviates book names from canonical tokens and names
 each Psalm's own numbering and its counterpart explicitly (`Vg.` / `Heb.`),
-with a legend. The corpus's `orientation.yaml` owns short subject labels and
-sourced, exactly scoped descriptions of episodes whose dates remain unresolved.
+with a legend. The corpus's `orientation.yaml` owns short subject labels,
+sourced, exactly scoped descriptions of episodes whose dates remain unresolved,
+and sourced geographic settings keyed to one temporal subject and relation.
 Descriptions are not chronology assertions: Jesus telling a parable is the
 narrated episode, not a date assigned to its fictional characters. Different
 episodes do not merge just because both dates are unresolved. New labels need
@@ -1387,10 +1406,15 @@ source review; they may never supply dates or overwrite the original claim
 labels. `_chronology.py` alone reads and validates this metadata. Source seals
 include the descriptive sources actually used by a projection.
 
-Retain material geographic and source qualifications in the research historical
-appendix and point there from the concise page. A site already named by a shared
-temporal subject or episode remains in its Context cell. Do not force a guessed
-place into every row or copy a writer's location into a narrated-event row.
+Retain concise geographic context in the Context cell, with its uncertainty;
+the research historical appendix keeps the fuller source discussion. A
+`settings` entry has a known subject, an explicit relation, a concise date-free
+label, source ids and a basis. The loader and source validator check these
+fields, and the projection attaches it only to that subject and relation.
+Keep narrative places distinct from writing sites and recipients; qualify
+traditional associations, proposed sites and inferences from narrative
+continuity. Do not force a guessed place into every row or copy a writer's
+location into a narrated-event row.
 Migration preserves existing source-owned setting prose beside the research
 table; it does not grant that prose a new historical review. Classical eras,
 approximation, disputes, A.M. attributions and all alternatives remain visible;

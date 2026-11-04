@@ -503,31 +503,31 @@ Each passage the Mass reads or sings from Scripture, once, in canonical order; b
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Gradual | Ps 32:6, 12 (Heb. 33) | No place named | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C. |
+| Gradual | Ps 32:6, 12 (Heb. 33) | No place named | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 Titled *Psalmus David*, “A psalm for David” (v. 1): a Davidic attribution whose displayed regnal era is a reference point, not a composition date. A hymn of the just to God’s creating word (vv. 1–9) and to the nation he chose (v. 12). The composition bound is the modern critical boundary for the whole Psalter, within which no single psalm can be dated securely.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Communion | Ps 75:12–13 (Heb. 76) | Judea and Sion named as God’s dwelling (vv. 2–3) | **Composition**: Before c. 165 B.C. |
+| Communion | Ps 75:12–13 (Heb. 76) | Judea and Sion named as God’s dwelling (vv. 2–3) | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 Titled “a psalm for Asaph: a canticle to the Assyrians” (v. 1), with no date or era attached. God broke the weapons of war in Sion and rose to judgment “to save all the meek of the earth” (vv. 4, 10). The date is the Psalter’s critical boundary only.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Alleluia | Ps 101:2 (Heb. 102) | Sion named in the psalm’s turn to hope (vv. 14, 17) | **Composition**: Before c. 165 B.C. |
+| Alleluia | Ps 101:2 (Heb. 102) | Sion named in the psalm’s turn to hope (vv. 14, 17) | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 Titled “The prayer of the poor man, when he was anxious” (v. 1); no author named, no traditional date held. The fifth penitential psalm, moving from lament to the rebuilding of Sion. The date is the Psalter’s critical boundary only.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Introit | Ps 118:1, 124, 137 (Heb. 119) | No place named | **Composition**: Before c. 165 B.C. |
+| Introit | Ps 118:1, 124, 137 (Heb. 119) | No place named | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
-An alphabetical psalm in praise of God’s law, with no title beyond *Alleluia*; no author named, no traditional date held. The date is the Psalter’s critical boundary only.
+An alphabetical psalm in praise of God’s law, with no title beyond *Alleluia*. Haydock reports its general attribution to David while preserving competing occasions. The regnal era identifies David; the composition bound remains the Psalter’s critical boundary.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Offertory | Dan 9:17–19, compiled | Daniel at the court of Babylon; for the Jews of his own time and after. Event: the kingdom of the Chaldeans, first year of Darius the Mede (9:1); prayer for the desolate sanctuary of Jerusalem (9:17) | **Historical setting**: “seventy years” (duration). **Composition**: B.C. 570–536. |
+| Offertory | Dan 9:17–19, compiled | Daniel at the court of Babylon; for the Jews of his own time and after. Event: the kingdom of the Chaldeans, first year of Darius the Mede (9:1); prayer for the desolate sanctuary of Jerusalem (9:17) | **Historical setting**: The seventy years of servitude to Babylon, “seventy years” (duration). **Composition**: B.C. 570–536. |
 
 Traditional attribution: Daniel the prophet, in the Exile, telling his own prayer (“I, Daniel”, 9:2) when he understood from Jeremias that the seventy years of desolation were ending. The 1908 *Catholic Encyclopedia* article that holds the traditional date sets against it a more recent critical theory, widely accepted by scholars of its time, that an unknown later author composed the book; no date is given for that position here. The same article’s grounds for the traditional position give the place and the hearers: only “a resident in Babylon” could have written the book’s details, and Daniel, “owing to his position at the court of Babylon”, wrote “for the comfort of the Jews of his time and of subsequent ages”. For the later author it supposes, the article names no place of writing at all.
 
@@ -643,6 +643,10 @@ Traditional attribution: St Paul, in a letter of his captivity; the *Catholic En
 
 - Fraternité Saint-Pierre (France), *Ordo du mois*, entry for 20 September 2026; Institut du Christ Roi Souverain Prêtre (France), *Ordo*, entry for 20 September 2026.
 
-**Last revised (UTC):** 2026-10-01T22:37:06Z
+- George Leo Haydock, *The Holy Bible, Douay–Rheims with Commentary*, Feeney Memorial edition (Loreto, 2014), Ps 118:1, note continued on p. 781: received Davidic attribution and competing occasions.
+
+- John Corbett, “David, King”, *The Catholic Encyclopedia*, vol. 4 (1908), p. 642: the usual chronology of David’s reign.
+
+**Last revised (UTC):** 2026-11-04T03:34:08Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

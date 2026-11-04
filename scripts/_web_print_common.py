@@ -187,8 +187,8 @@ class ProfileError(PrintError):
 
 
 HEIGHTS={Decimal('0.65'):'065',Decimal('0.8'):'080',Decimal('0.9'):'090',Decimal('1.0'):'100',Decimal('1.1'):'110',Decimal('1.2'):'120',Decimal('1.3'):'130',Decimal('1.4'):'140'}
-TABLE_WIDTHS=frozenset({83,85,87,92,93,95,96})
-COLUMN_WIDTHS=frozenset({7,8,9,10,11,12,13,14,15,17,18,19,20,21,25,26,27,31,34})
+TABLE_WIDTHS=frozenset({70,74,83,84,85,86,87,90,92,93,94,95,96})
+COLUMN_WIDTHS=frozenset({7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27,28,30,31,32,34,35,38,40,42,56,68,69,70,86})
 _SERVER_CLASSES=frozenset('action branch continuation diagram guide-part minipage paired-lanes response scene titlepage trainer-layout trainer-rail center description role smallcaps uri samepage unnumbered align-left sheet low sung grid face blank answer apparatus face-header sheet-notice sheet-duplex action-body dense face-footer field field-label learner meaning sound source-size-6 source-size-8 source-size-9 source-size-10 source-size-11 small tiny'.split())
 
 

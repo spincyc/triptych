@@ -8,21 +8,69 @@
 
 PC-S43-A
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:-----------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | *Cf.* Ps. 67:6–7, 36; God gathers a household and strengthens the people |
-| Collect | *Protector in te sperantium*; passing goods under God’s direction, eternal goods not lost |
-| **Liturgy of the Word** |  |
-| First Reading | 1 Kgs. 3:5, 7–12 |
-| Responsorial Psalm | Response Ps. 119:97a; vv. 57, 72, 76–77, 127–128, 129–130 |
-| Second Reading | Rom. 8:28–30 |
-| Gospel Acclamation | *Cf.* Matt. 11:25 |
-| Gospel | Long: Matt. 13:44–52; Short: Matt. 13:44–46 |
-| **Liturgy of the Eucharist** |  |
-| Prayer over Offerings | *Suscipe, quaesumus, Domine, munera*; gifts from God’s bounty, present life sanctified |
-| Communion Antiphon | A: Ps. 102:2; bless and remember; B: Matt. 5:7–8; mercy and purity of heart |
-| Prayer after Communion | *Sumpsimus, Domine, divinum sacramentum*; perpetual memorial of the Son’s Passion, the gift of love advancing salvation |
+<table style="width:92%;">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance Antiphon</td>
+<td style="text-align: left;"><em>Cf.</em> Ps. 67:6–7, 36; God gathers a household and strengthens the people</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Protector in te sperantium</em>; passing goods under God’s direction, eternal goods not lost</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">1 Kgs. 3:5, 7–12</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Response Ps. 119:97a; vv. 57, 72, 76–77, 127–128, 129–130</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 8:28–30</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel Acclamation</td>
+<td style="text-align: left;"><em>Cf.</em> Matt. 11:25</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Long: Matt. 13:44–52; Short: Matt. 13:44–46</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over Offerings</td>
+<td style="text-align: left;"><em>Suscipe, quaesumus, Domine, munera</em>; gifts from God’s bounty, present life sanctified</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon</td>
+<td style="text-align: left;">A: Ps. 102:2; bless and remember; B: Matt. 5:7–8; mercy and purity of heart</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Sumpsimus, Domine, divinum sacramentum</em>; perpetual memorial of the Son’s Passion, the gift of love advancing salvation</td>
+</tr>
+</tbody>
+</table>
 
 | **Sense** | **Synthesis** |
 |:-----------|:------------------------------------------------------|
@@ -35,28 +83,120 @@ PC-S43-A
 
 *Canonical order governs. Each dossier first locates the text’s formation and then, where distinct, its narrated event; inherited attribution and modern historical judgment are kept visible together.*
 
-| **Textual unit / alternative** | **Citation** | **Location** | **Date** |
-|:----------|:-------------|:------------------------|:-----------|
-| **First Reading** | 1 Kgs. 3:5, 7–12 | Israel and Judah; final compilation place unknown | Final literary form commonly exilic |
-| *Narrated event* | 1 Kgs. 3:4–15 | Gibeon, at the principal high place | Early reign of Solomon, conventionally c. 970 BC |
-| Kings belongs to the Deuteronomistic History and addresses the divided kingdoms through disputed editorial stages; the final form is commonly placed in the exile. That literary horizon is distinct from the dream scene in which a young king confesses inadequacy before the people entrusted to him (First Kings introduction and 3, *NABRE*). |  |  |  |
-| **Entrance adaptation** | *Cf.* Ps. 67:6–7, 36 (modern 68) | Israelite liturgical tradition; exact place and first audience unknown | Davidic superscription inherited; historical date unknown |
-| This complex processional hymn praises God as warrior, defender of the vulnerable, giver of a household, and source of strength. Its superscription belongs to the received text but does not securely date its composition; the Entrance adapts selected clauses rather than relocating the entire Psalm (Psalms introduction and Psalm 68, *NABRE*). |  |  |  |
-| **Communion A** | Ps. 102:2 (modern 103) | Israel; exact composition place and first audience unknown | Davidic superscription inherited; historical date unknown |
-| The inherited superscription is not a recoverable event notice. The whole hymn summons the self to bless and remember, then unfolds divine mercy, healing, rescue, compassion, and creaturely frailty (Psalms introduction and Psalm 103, *NABRE*). |  |  |  |
-| **Responsorial Psalm** | Ps. 119:57, 72, 76–77, 97a, 127–130 | Israel’s Torah and wisdom tradition; exact place unknown | Anonymous; date unknown |
-| The alphabetic meditation supplies no author, narrated event, or site. These separated stanzas name the Lord as portion, value instruction beyond wealth, ask covenant mercy, love the commands, and welcome the understanding their unfolding gives (Psalm 119, *NABRE*). |  |  |  |
-| **Communion B** | Matt. 5:7–8 | Greek Matthew; probably Syria, with Antioch plausible | Commonly c. AD 80–90 |
-| *Narrated event* | Matt. 5:1–12 | Galilee; mountain site unrecorded | Public ministry, conventionally c. AD 28 |
-| Ancient tradition attributes the Gospel to the apostle Matthew; modern study commonly identifies an otherwise unknown Jewish Christian author writing for a mixed Jewish and Gentile community after AD 70. The final Greek Gospel’s setting is distinct from the Galilean sermon it narrates (Matthew introduction and 5, *NABRE*). |  |  |  |
-| **Acclamation source** | *Cf.* Matt. 11:25 | Greek Matthew; probably Syria, with Antioch plausible | Commonly c. AD 80–90 |
-| *Narrated event* | Matt. 11:20–30 | Galilee; exact place unrecorded | Public ministry, conventionally c. AD 28–29 |
-| The adaptation draws from Jesus’ thanksgiving after judgment sayings concerning Galilean towns. The Gospel’s traditional attribution and modern compositional judgment remain as above, while the narrated setting belongs to Jesus’ ministry rather than the evangelist’s later audience (Matthew introduction and 11, *NABRE*). |  |  |  |
-| **Gospel: long / short** | Matt. 13:44–52 / 13:44–46 | Greek Matthew; probably Syria, with Antioch plausible | Commonly c. AD 80–90 |
-| *Narrated event* | Matt. 13:36, 44–52 | A house in the Sea-of-Galilee teaching region; town unrecorded | Galilean ministry, conventionally c. AD 28 |
-| The short branch proclaims treasure and pearl only. The long branch also proclaims the net, final sorting, the disciples’ response, and the trained householder’s new and old treasures. The Gospel’s compositional audience must not be confused with the house and ministry region inside the narrative (Matthew introduction and 13, *NABRE*). |  |  |  |
-| **Second Reading** | Rom. 8:28–30 | Corinth in Achaia, to established house churches at Rome | c. AD 56–58 |
-| Paul writes near the end of his eastern mission to a Roman community he did not found, comprising believers from Jewish and Gentile backgrounds. These verses stand within groaning, Spirit-aided prayer, suffering, and inseparable divine love; the Lectionary reads them semi-continuously (Romans introduction and 8, *NABRE*). |  |  |  |
+<table style="width:83%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>First Reading</strong></td>
+<td style="text-align: left;">1 Kgs. 3:5, 7–12</td>
+<td style="text-align: left;">Israel and Judah; final compilation place unknown</td>
+<td style="text-align: left;">Final literary form commonly exilic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Narrated event</em></td>
+<td style="text-align: left;">1 Kgs. 3:4–15</td>
+<td style="text-align: left;">Gibeon, at the principal high place</td>
+<td style="text-align: left;">Early reign of Solomon, conventionally c. 970 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Kings belongs to the Deuteronomistic History and addresses the divided kingdoms through disputed editorial stages; the final form is commonly placed in the exile. That literary horizon is distinct from the dream scene in which a young king confesses inadequacy before the people entrusted to him (First Kings introduction and 3, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Entrance adaptation</strong></td>
+<td style="text-align: left;"><em>Cf.</em> Ps. 67:6–7, 36 (modern 68)</td>
+<td style="text-align: left;">Israelite liturgical tradition; exact place and first audience unknown</td>
+<td style="text-align: left;">Davidic superscription inherited; historical date unknown</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">This complex processional hymn praises God as warrior, defender of the vulnerable, giver of a household, and source of strength. Its superscription belongs to the received text but does not securely date its composition; the Entrance adapts selected clauses rather than relocating the entire Psalm (Psalms introduction and Psalm 68, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Communion A</strong></td>
+<td style="text-align: left;">Ps. 102:2 (modern 103)</td>
+<td style="text-align: left;">Israel; exact composition place and first audience unknown</td>
+<td style="text-align: left;">Davidic superscription inherited; historical date unknown</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The inherited superscription is not a recoverable event notice. The whole hymn summons the self to bless and remember, then unfolds divine mercy, healing, rescue, compassion, and creaturely frailty (Psalms introduction and Psalm 103, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Responsorial Psalm</strong></td>
+<td style="text-align: left;">Ps. 119:57, 72, 76–77, 97a, 127–130</td>
+<td style="text-align: left;">Israel’s Torah and wisdom tradition; exact place unknown</td>
+<td style="text-align: left;">Anonymous; date unknown</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The alphabetic meditation supplies no author, narrated event, or site. These separated stanzas name the Lord as portion, value instruction beyond wealth, ask covenant mercy, love the commands, and welcome the understanding their unfolding gives (Psalm 119, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Communion B</strong></td>
+<td style="text-align: left;">Matt. 5:7–8</td>
+<td style="text-align: left;">Greek Matthew; probably Syria, with Antioch plausible</td>
+<td style="text-align: left;">Commonly c. AD 80–90</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Narrated event</em></td>
+<td style="text-align: left;">Matt. 5:1–12</td>
+<td style="text-align: left;">Galilee; mountain site unrecorded</td>
+<td style="text-align: left;">Public ministry, conventionally c. AD 28</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Ancient tradition attributes the Gospel to the apostle Matthew; modern study commonly identifies an otherwise unknown Jewish Christian author writing for a mixed Jewish and Gentile community after AD 70. The final Greek Gospel’s setting is distinct from the Galilean sermon it narrates (Matthew introduction and 5, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Acclamation source</strong></td>
+<td style="text-align: left;"><em>Cf.</em> Matt. 11:25</td>
+<td style="text-align: left;">Greek Matthew; probably Syria, with Antioch plausible</td>
+<td style="text-align: left;">Commonly c. AD 80–90</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Narrated event</em></td>
+<td style="text-align: left;">Matt. 11:20–30</td>
+<td style="text-align: left;">Galilee; exact place unrecorded</td>
+<td style="text-align: left;">Public ministry, conventionally c. AD 28–29</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The adaptation draws from Jesus’ thanksgiving after judgment sayings concerning Galilean towns. The Gospel’s traditional attribution and modern compositional judgment remain as above, while the narrated setting belongs to Jesus’ ministry rather than the evangelist’s later audience (Matthew introduction and 11, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gospel: long / short</strong></td>
+<td style="text-align: left;">Matt. 13:44–52 / 13:44–46</td>
+<td style="text-align: left;">Greek Matthew; probably Syria, with Antioch plausible</td>
+<td style="text-align: left;">Commonly c. AD 80–90</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Narrated event</em></td>
+<td style="text-align: left;">Matt. 13:36, 44–52</td>
+<td style="text-align: left;">A house in the Sea-of-Galilee teaching region; town unrecorded</td>
+<td style="text-align: left;">Galilean ministry, conventionally c. AD 28</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The short branch proclaims treasure and pearl only. The long branch also proclaims the net, final sorting, the disciples’ response, and the trained householder’s new and old treasures. The Gospel’s compositional audience must not be confused with the house and ministry region inside the narrative (Matthew introduction and 13, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Second Reading</strong></td>
+<td style="text-align: left;">Rom. 8:28–30</td>
+<td style="text-align: left;">Corinth in Achaia, to established house churches at Rome</td>
+<td style="text-align: left;">c. AD 56–58</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Paul writes near the end of his eastern mission to a Roman community he did not found, comprising believers from Jewish and Gentile backgrounds. These verses stand within groaning, Spirit-aided prayer, suffering, and inseparable divine love; the Lectionary reads them semi-continuously (Romans introduction and 8, <em>NABRE</em>).</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -205,22 +345,73 @@ The alternatives are exclusive, and either can illuminate the final prayer’s c
 >
 > The controlling U.S. Missal and Lectionary English is protected and is not reproduced. The complete ordered inventory below gives lawful Latin incipits for the orations and antiphons, public-domain scriptural loci, and concise descriptions sufficient to identify every branch; the descriptions are a study aid, not a substitute for the approved liturgical books.
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:-----------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | *Cf.* Ps. 67:6–7, 36 (modern 68); *Deus in loco sancto suo*; God gives the forsaken a dwelling and strengthens his people. |
-| Collect | *Protector in te sperantium, Deus*; God is asked to protect, govern, and guide his people so that passing goods are used without losing those that endure. |
-| **Liturgy of the Word** |  |
-| First Reading | 1 Kgs. 3:5, 7–12; Solomon asks for a listening heart capable of discerning good and evil for the people entrusted to him. |
-| Responsorial Psalm | Ps. 119:57, 72, 76–77, 127–130, with response from v. 97a; divine instruction is preferred to wealth and asked to give understanding. |
-| Second Reading | Rom. 8:28–30; within suffering and Spirit-aided prayer, divine purpose tends toward conformity to the Son. |
-| Gospel Acclamation | *Cf.* Matt. 11:25; the Father reveals the mysteries of the Kingdom to the little ones. |
-| Gospel | Long branch: Matt. 13:44–52, treasure, pearl, net, sorting, and the instructed householder. Short branch: Matt. 13:44–46, treasure and pearl only. |
-| **Liturgy of the Eucharist** |  |
-| Prayer over Offerings | *Suscipe, quaesumus, Domine, munera*; gifts received from divine bounty are returned, with a petition that the mysteries sanctify present life. |
-| Communion Antiphon A | Ps. 102:2 (modern 103); the soul blesses the Lord and refuses to forget his benefits. |
-| Communion Antiphon B | Matt. 5:7–8; the merciful and the clean of heart are named with their distinct promises. |
-| Prayer after Communion | *Sumpsimus, Domine, divinum sacramentum*; the sacrament is confessed as the perpetual memorial of the Son’s Passion and its saving fruit is sought. |
+<table style="width:92%;">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance Antiphon</td>
+<td style="text-align: left;"><em>Cf.</em> Ps. 67:6–7, 36 (modern 68); <em>Deus in loco sancto suo</em>; God gives the forsaken a dwelling and strengthens his people.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Protector in te sperantium, Deus</em>; God is asked to protect, govern, and guide his people so that passing goods are used without losing those that endure.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">1 Kgs. 3:5, 7–12; Solomon asks for a listening heart capable of discerning good and evil for the people entrusted to him.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps. 119:57, 72, 76–77, 127–130, with response from v. 97a; divine instruction is preferred to wealth and asked to give understanding.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 8:28–30; within suffering and Spirit-aided prayer, divine purpose tends toward conformity to the Son.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel Acclamation</td>
+<td style="text-align: left;"><em>Cf.</em> Matt. 11:25; the Father reveals the mysteries of the Kingdom to the little ones.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Long branch: Matt. 13:44–52, treasure, pearl, net, sorting, and the instructed householder. Short branch: Matt. 13:44–46, treasure and pearl only.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over Offerings</td>
+<td style="text-align: left;"><em>Suscipe, quaesumus, Domine, munera</em>; gifts received from divine bounty are returned, with a petition that the mysteries sanctify present life.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon A</td>
+<td style="text-align: left;">Ps. 102:2 (modern 103); the soul blesses the Lord and refuses to forget his benefits.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon B</td>
+<td style="text-align: left;">Matt. 5:7–8; the merciful and the clean of heart are named with their distinct promises.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Sumpsimus, Domine, divinum sacramentum</em>; the sacrament is confessed as the perpetual memorial of the Son’s Passion and its saving fruit is sought.</td>
+</tr>
+</tbody>
+</table>
 
 ## Source-Grounded Synthesis Across the Propers
 

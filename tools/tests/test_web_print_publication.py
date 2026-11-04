@@ -163,6 +163,45 @@ class PublicationTests(unittest.TestCase):
         with self.assertRaises(printing.PartError):
             printing.split_parts("<p>" + "x" * 100 + "</p>", limit=55)
 
+    def test_actual_spanned_chronology_preserves_typed_source_column_widths(self):
+        result = printing.render_publication(
+            ROOT, "claude", "liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost")
+        fragment = "".join(part["html"] for part in result["parts"])
+        self.assertEqual(result["coverage_result"]["status"], "pass")
+        self.assertTrue(result["coverage_result"]["complete"])
+        for width in (14, 18, 35, 16):
+            self.assertIn(f'class="print-column-width-{width}"', fragment)
+        self.assertIn('colspan="4"', fragment)
+        self.assertNotIn('style="width:', fragment)
+
+    def test_actual_calendar_preserves_typed_source_table_widths(self):
+        result = printing.render_publication(
+            ROOT, "claude", "liturgy/roman-rite/1962/reference/liturgical-calendar")
+        fragment = "".join(part["html"] for part in result["parts"])
+        self.assertEqual(result["coverage_result"]["status"], "pass")
+        self.assertTrue(result["coverage_result"]["complete"])
+        for width in (70, 74, 86, 94):
+            self.assertIn(f'class="print-table-width-{width}"', fragment)
+        self.assertIn('colspan=', fragment)
+        self.assertNotIn('style="width:', fragment)
+
+    def test_actual_virtues_group_labels_keep_five_column_spans(self):
+        result = printing.render_publication(ROOT, "gpt", "theology/virtues")
+        fragment = "".join(part["html"] for part in result["parts"])
+        self.assertTrue(result["coverage_result"]["complete"])
+        labels = re.findall(r'<td\b[^>]*colspan="5"[^>]*>(.*?)</td>', fragment, re.S)
+        self.assertEqual(len(labels), 7)
+        self.assertTrue(all('<strong>' in label for label in labels))
+        self.assertIn('Theological virtues', labels[0])
+        self.assertIn('Remaining intellectual virtues', labels[-1])
+
+    def test_actual_print_only_source_preserves_column_28(self):
+        result = printing.render_publication(
+            ROOT, "gpt", "articles/canon-law/clerical-celibacy-chastity-and-continence")
+        fragment = "".join(part["html"] for part in result["parts"])
+        self.assertTrue(result["coverage_result"]["complete"])
+        self.assertIn('class="print-column-width-28"', fragment)
+
     def test_both_held_outputs_refuse_before_conversion(self):
         leaf = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
         with patch.object(printing, "require_print_toolchain", return_value={}):

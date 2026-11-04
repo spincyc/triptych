@@ -14,6 +14,34 @@ M01 = 'publication:gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-c
 M20 = 'publication:gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose'
 
 
+class CurriculumTableReceiptTests(unittest.TestCase):
+    def setUp(self):
+        self.packet=Packet(ROOT,select(M01,root=ROOT))
+
+    def receipt(self, stderr, code=0):
+        return self.packet.table_span_receipt(subprocess.CompletedProcess([],code,'',stderr))
+
+    def test_empty_and_nonempty_typed_receipts(self):
+        self.assertEqual(self.receipt('triptych-table-spans: \n'),{})
+        self.assertEqual(self.receipt('triptych-table-spans: 2 4 2\n'),{2:2,4:1})
+
+    def test_missing_duplicate_warning_and_nonzero_receipts_refuse(self):
+        for stderr,code in [('',0),('triptych-table-spans:\n',0),
+                ('triptych-table-spans: \ntriptych-table-spans: \n',0),
+                ('triptych-table-spans: \n[WARNING] Arbitrary warning\n',0),
+                ('triptych-table-spans: \n',1),('triptych-table-spans: 1\n',0)]:
+            with self.subTest(stderr=stderr,code=code),self.assertRaises(CurriculumError):
+                self.receipt(stderr,code)
+
+    def test_final_span_inventory_must_match_even_when_empty(self):
+        fragment='<table><tr><td colspan="2">Complete note</td></tr></table>'
+        self.packet.validate_table_spans({2:1},fragment)
+        for expected,rendered in [({},fragment),({2:1},fragment.replace(' colspan="2"','')),
+                                  ({4:1},fragment)]:
+            with self.subTest(expected=expected),self.assertRaisesRegex(CurriculumError,'spans changed'):
+                self.packet.validate_table_spans(expected,rendered)
+
+
 class CurriculumPacketPrintTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -43,6 +71,13 @@ class CurriculumPacketPrintTests(unittest.TestCase):
         self.assertEqual(self.product['checks']['lost_table_cell_openings'],[])
         self.assertNotIn('class="tabularx"',self.product['html'])
         self.assertIn('EL-I.1 EL-I.2',self.product['html'])
+
+    def test_span_validation_follows_final_packet_normalization(self):
+        original=Packet.normalize_profile
+        def inject(packet,rendered):
+            return re.sub(r'<td\b', '<td colspan="2"', original(packet,rendered), count=1)
+        with patch.object(Packet,'normalize_profile',inject),self.assertRaisesRegex(CurriculumError,'spans changed'):
+            render_packet(ROOT,self.recipe)
 
     def test_memory_fields_answers_rights_and_revision_retained(self):
         for text in ('vulpes, vulpis f.','Lemma and printed form','Reconstruction prompt.','Composition prompt.',
@@ -238,6 +273,13 @@ def companion_recipe(name):return select_companion_recipe('publication:gpt/curri
 
 
 class CurriculumCompanionTests(unittest.TestCase):
+    def test_span_validation_follows_final_companion_normalization(self):
+        original=CurriculumCompanion.normalize_profile
+        def drop(companion,rendered):
+            return re.sub(r' colspan="[2-9][0-9]*"','',original(companion,rendered),count=1)
+        with patch.object(CurriculumCompanion,'normalize_profile',drop),self.assertRaisesRegex(CurriculumError,'spans changed'):
+            render_curriculum_companion(COMPANION_TEST_ROOT,companion_recipe('00-reference-grammar'))
+
     @classmethod
     def setUpClass(cls):
         cls.guide=render_curriculum_companion(COMPANION_TEST_ROOT,companion_recipe('00-course-guide'))

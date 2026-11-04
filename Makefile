@@ -267,7 +267,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-source-family-migration check-source-family-migration-tool \
 	check-source-family-screening check-source-containment \
 	check-commentator-inventories check-commentary-corpus \
-	check-source-graph check-publication-inventories \
+	check-source-graph check-publication-inventories check-proper-chronology-current \
 	check-artwork-manifests \
 	check-catena check-catena-structure check-catena-paragraphs \
 	check-expensive \
@@ -464,7 +464,7 @@ check-source-evidence:
 
 check-document-schemas: | prepare-browser-data
 	@$(PYTHON) $(DOCUMENT_SCHEMA_TOOL) check --include-sources
-	@test -z "$$(git ls-files -- ':(icase)*.pdf')" || { printf '%s\n' 'Tracked PDFs must be preserved outside Git and removed from the source tree.' >&2; exit 1; }
+	@test -z "$$(git ls-files -- ':(icase)*.pdf')" || { printf '%s\n' 'Generated PDFs must remain untracked; keep their canonical sources and shared styles in Git.' >&2; exit 1; }
 	@test -z "$$(git ls-files -- ':(icase)*.zip' ':(icase)*.zip.part-*')" || { printf '%s\n' 'Tracked binary archives must be preserved outside Git and replaced by exact manifests.' >&2; exit 1; }
 	@test -z "$$(git ls-files -- src/web/data)" || { printf '%s\n' 'Generated browser products must live in the validated content cache, not Git.' >&2; exit 1; }
 	@test -z "$$(git ls-files -- release/papal-documents/inputs)" || { printf '%s\n' 'Historical papal input snapshots must be preserved outside Git and replaced by exact delivery and extraction records.' >&2; exit 1; }
@@ -506,7 +506,7 @@ check-publication-inventories: check-source-graph
 # receipt checks remain explicit research audits rather than duplicate warm gates.
 DEPLOYMENT_SOURCE_MEMBERS := check-curriculum-source-rights check-document-schemas \
 	check-artifact-delivery check-snapshot-delivery check-papal-inputs \
-	check-document-catalogue check-source-graph
+	check-document-catalogue check-source-graph check-proper-chronology-current
 
 # Bootstrap bounded concurrency when the caller supplied no jobserver. Keep
 # ordinary liturgical derivation and rights checks in the source publication
@@ -537,8 +537,14 @@ check-research-sources: check-deployment-sources check-source-evidence \
 # Ordinary source maintenance validates the metadata graph, inventory and
 # reviewed ledgers without requiring optional acquired binary evidence.
 check-sources: check-source-graph check-publication-inventories \
-		check-source-containment check-commentator-inventories check-commentary-corpus
+		check-source-containment check-commentator-inventories check-commentary-corpus \
+		check-proper-chronology-current
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
+
+# Adopted proper chronology remains current with the canonical corpus, including
+# older dossiers. This source-only gate neither migrates legacy prose nor prints.
+check-proper-chronology-current:
+	@$(PYTHON) -m unittest tools.tests.test_generated_proper_chronology_freshness -v
 
 # A work held only inside another record -- a Migne volume, an NPNF anthology,
 # a whole-volume optical layer filed under one of its constituents -- is

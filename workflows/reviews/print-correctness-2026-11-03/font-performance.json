@@ -1,0 +1,187 @@
+{
+  "schema": "triptych-native-font-performance-proof/v1",
+  "scope": "Exact reported Claude temporal61 synthesis with unchanged sources and styles; feature baseline, not live deployment",
+  "baseline_head": "40bea725b14b16e711b922bacd6368b6755c8bed",
+  "conditions": {
+    "browser": "desktop Chromium mobile emulation",
+    "network_mbps": 10,
+    "network_latency_ms": 80,
+    "page_cpu_slowdown": 4,
+    "worker_cpu_throttled": false,
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "deviceScaleFactor": 3
+    },
+    "cache_modes": [
+      "cold browser and HTTP cache",
+      "same-page PDF cache",
+      "reloaded PDF cache",
+      "HTTP-warm with PDF cache cleared"
+    ]
+  },
+  "tests": {
+    "node_runtime": {
+      "count": 56,
+      "exit": 0,
+      "log": ".scratch/print-performance-v2/runtime-tests.log"
+    },
+    "python_publication": {
+      "count": 32,
+      "exit": 0,
+      "log": ".scratch/print-performance-v2/publication-tests.log"
+    }
+  },
+  "comparison": {
+    "before": {
+      "script_sha256": "5d884a5ab759a6fb7bb534c90a815150cffec61ffe1a02f182a89dff2eff45f3",
+      "status": "pass",
+      "runs": [
+        {
+          "name": "cold",
+          "generation_ms": 20012,
+          "native_print_network_bytes": 20489590,
+          "workers": 2,
+          "passes": 2,
+          "pdf_pages": 12,
+          "pdf_bytes": 454926,
+          "ui_load": {
+            "long_task_count": 2,
+            "long_task_max_ms": 95,
+            "long_task_total_ms": 178,
+            "blocking_time_over_50_ms": 78,
+            "heartbeat_max_gap_ms": 138.70000000298023
+          }
+        },
+        {
+          "name": "warm-same-page",
+          "generation_ms": 41,
+          "native_print_network_bytes": 0,
+          "workers": 0,
+          "passes": 2,
+          "pdf_pages": 12,
+          "pdf_bytes": 454926,
+          "ui_load": {
+            "long_task_count": 0,
+            "long_task_max_ms": 0,
+            "long_task_total_ms": 0,
+            "blocking_time_over_50_ms": 0,
+            "heartbeat_max_gap_ms": 52.20000000298023
+          }
+        },
+        {
+          "name": "warm-reload",
+          "generation_ms": 38,
+          "native_print_network_bytes": 0,
+          "workers": 0,
+          "passes": 2,
+          "pdf_pages": 12,
+          "pdf_bytes": 454926,
+          "ui_load": {
+            "long_task_count": 0,
+            "long_task_max_ms": 0,
+            "long_task_total_ms": 0,
+            "blocking_time_over_50_ms": 0,
+            "heartbeat_max_gap_ms": 0
+          }
+        },
+        {
+          "name": "warm-runtime-only",
+          "generation_ms": 3635,
+          "native_print_network_bytes": 0,
+          "workers": 2,
+          "passes": 2,
+          "pdf_pages": 12,
+          "pdf_bytes": 454926,
+          "ui_load": {
+            "long_task_count": 2,
+            "long_task_max_ms": 81,
+            "long_task_total_ms": 160,
+            "blocking_time_over_50_ms": 60,
+            "heartbeat_max_gap_ms": 125.79999999701977
+          }
+        }
+      ],
+      "pdf_sha256": "1d96f1ffab76bed22a6259dd3a73ee723354eb394698e39f2c27cb6c36e88c98",
+      "text_sha256": "8742c73203bb6f03383613e26d56c9ea661f8b6c5062c87d583025b6d3c90fd9"
+    },
+    "prototype": {
+      "script_sha256": "835ce4b1779d1d9fcd6eebbe294fe7cdba5cd14a1560d5ea0cf276a9eea1a667",
+      "status": "pass",
+      "runs": [
+        {
+          "name": "cold",
+          "generation_ms": 14674,
+          "native_print_network_bytes": 13722040,
+          "workers": 2,
+          "passes": 2,
+          "pdf_pages": 12,
+          "pdf_bytes": 454926,
+          "ui_load": {
+            "long_task_count": 2,
+            "long_task_max_ms": 93,
+            "long_task_total_ms": 179,
+            "blocking_time_over_50_ms": 79,
+            "heartbeat_max_gap_ms": 136.20000000298023
+          }
+        },
+        {
+          "name": "warm-same-page",
+          "generation_ms": 35,
+          "native_print_network_bytes": 0,
+          "workers": 0,
+          "passes": 2,
+          "pdf_pages": 12,
+          "pdf_bytes": 454926,
+          "ui_load": {
+            "long_task_count": 0,
+            "long_task_max_ms": 0,
+            "long_task_total_ms": 0,
+            "blocking_time_over_50_ms": 0,
+            "heartbeat_max_gap_ms": 0
+          }
+        },
+        {
+          "name": "warm-reload",
+          "generation_ms": 35,
+          "native_print_network_bytes": 0,
+          "workers": 0,
+          "passes": 2,
+          "pdf_pages": 12,
+          "pdf_bytes": 454926,
+          "ui_load": {
+            "long_task_count": 0,
+            "long_task_max_ms": 0,
+            "long_task_total_ms": 0,
+            "blocking_time_over_50_ms": 0,
+            "heartbeat_max_gap_ms": 0
+          }
+        },
+        {
+          "name": "warm-runtime-only",
+          "generation_ms": 3600,
+          "native_print_network_bytes": 0,
+          "workers": 2,
+          "passes": 2,
+          "pdf_pages": 12,
+          "pdf_bytes": 454926,
+          "ui_load": {
+            "long_task_count": 2,
+            "long_task_max_ms": 84,
+            "long_task_total_ms": 167,
+            "blocking_time_over_50_ms": 67,
+            "heartbeat_max_gap_ms": 114.40000000596046
+          }
+        }
+      ],
+      "pdf_sha256": "1d96f1ffab76bed22a6259dd3a73ee723354eb394698e39f2c27cb6c36e88c98",
+      "text_sha256": "8742c73203bb6f03383613e26d56c9ea661f8b6c5062c87d583025b6d3c90fd9"
+    }
+  },
+  "independent_final_implementation": "browser-print.json binds the reviewed final files and verifies identical original native output.",
+  "limits": [
+    "Single controlled before/prototype pair; no statistical or physical-device claim.",
+    "Warm compilation is approximately unchanged; cold transfer is improved.",
+    "Current chronology source changes and final integrated/live acceptance are checked separately."
+  ]
+}

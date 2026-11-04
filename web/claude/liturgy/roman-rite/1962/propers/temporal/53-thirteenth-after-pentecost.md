@@ -36,21 +36,83 @@
 
 Six passages are directly appointed. Each has one dossier: a four-field summary, the narrated event where there is one, then a short explanation. Composed orations are not listed; their biblical echoes are not quotations. Psalm citations give the missal’s Vulgate number with the English-Bible equivalent; the appendix adds the Masoretic series.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:----------|:-------------|:------------------------|:-----------|
-| Offertory | Ps. 30:15–16 Vulg. (Eng. 31:14–15) | Superscription *In finem. Psalmus David, pro extasi.* No episode or place named | Traditional: Davidic, *c.* 1000 BC |
-| The title claims David and nothing else; no narrative anchors it. The 1910 *Catholic Encyclopedia* defends the titles as ancient and canonical while conceding many are obscure; the NABRE reads the psalm as a lament with a strong emphasis on trust. Its v. 6 is *In manus tuas commendo spiritum meum*, the verse Christ dies with at Lk. 23:46 — so the antiphon’s surrender of *témpora mea* is sung from a psalm the Passion made its own. |  |  |  |
-| Introit, Gradual | Ps. 73:1, 19–20, 22–23 Vulg. (Eng. 74:1, 19–20, 22–23) | Superscription *Intellectus Asaph.* The psalm laments a ravaged sanctuary; no place of writing named | Traditional: Asaphite; modern: after 587 BC |
-| Asaph is David’s chief musician, so the bare title suggests a Davidic-era horizon — yet the psalm mourns a sanctuary already destroyed. The NABRE calls it “a communal lament sung when the enemy invaded the temple; it would be especially appropriate at the destruction of Jerusalem in 587 B.C.” Witnesses since antiquity have resolved the tension as prophecy or as a later Asaphite’s voice; this sheet reports it unresolved. |  |  |  |
-| Alleluia | Ps. 89:1 Vulg. (Eng. 90:1) | Superscription *Oratio Moysi, hominis Dei.* No place named | Traditional: Mosaic, *c.* 13th c. BC |
-| The one psalm in the Psalter bearing Moses’ name. A title associating a prayer with a figure is received tradition, not proof of composition; the NABRE reads it as a communal lament naming its distress only in general terms, contrasting God’s eternity with human brevity. The chant takes exactly the clause that carries that contrast: refuge *a generatióne et progénie*. |  |  |  |
-| Communion | Wis. 16:20 | Written in Greek at Alexandria, in Egypt, by an unknown Jew of that community | *c.* 100 BC; older range 221–117 BC |
-| Solomonic attribution is the book’s own literary fiction, set aside on all sides. The *Catholic Encyclopedia* places the author under Ptolemy IV (221–204 BC) or Ptolemy VII (145–117 BC); the NABRE says “about a hundred years before the coming of Christ,” written “in Greek, in a style patterned on that of Hebrew verse” to edify an oppressed community. The verse remembers the wilderness manna — narrated event Ex. 16, in the Sinai desert — from Hellenistic Egypt, a millennium later. |  |  |  |
-| Gospel | Lk. 17:11–19 | Writing: place unknown; traditionally Achaia. Audience largely Gentile and non-Palestinian, through Theophilus | Traditional: by AD 62–63. Modern: AD 80–90 |
-| *Event: on the final journey to Jerusalem, “through the midst of Samaria and Galilee” (v. 11) — the border country in the north of present-day Israel and the West Bank; an unnamed village. Months before the Passover of the Passion: AD 29 on the *Catholic Encyclopedia*’s computation, commonly AD 30–33 later; not settled here.* |  |  |  |
-| The *Catholic Encyclopedia* identifies Luke the physician and Pauline companion, reports Julius Africanus for Achaia, and argues the Gospel was finished before Acts, by about AD 62–63; the NABRE reports the same attribution — “Luke, a Syrian from Antioch” — but proposes AD 80–90 and leaves the place unstated. |  |  |  |
-| Epistle | Gal. 3:16–22 | From Ephesus (NABRE) or Antioch (older South-Galatian view), to the churches of Galatia in central Asia Minor, around present-day Ankara | Third journey, AD 54–55; or AD 48–50 |
-| Pauline authorship is traditional and the mainstream modern judgment alike. Who the Galatians were is not settled: the NABRE holds them “most likely among the descendants of Celts” of North Galatia and dates the letter “around A.D. 54 or 55 … most likely from Ephesus”; the *Catholic Encyclopedia* favours the South-Galatian theory, under which the letter goes to the churches of the first journey, perhaps from Antioch before the council, AD 48–50. Occasion on either view: converts from paganism pressed by judaizing missionaries to add circumcision and the law — the pressure the appointed argument answers. |  |  |  |
+<table style="width:83%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Proper</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Offertory</td>
+<td style="text-align: left;">Ps. 30:15–16 Vulg. (Eng. 31:14–15)</td>
+<td style="text-align: left;">Superscription <em>In finem. Psalmus David, pro extasi.</em> No episode or place named</td>
+<td style="text-align: left;">Traditional: Davidic, <em>c.</em> 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title claims David and nothing else; no narrative anchors it. The 1910 <em>Catholic Encyclopedia</em> defends the titles as ancient and canonical while conceding many are obscure; the NABRE reads the psalm as a lament with a strong emphasis on trust. Its v. 6 is <em>In manus tuas commendo spiritum meum</em>, the verse Christ dies with at Lk. 23:46 — so the antiphon’s surrender of <em>témpora mea</em> is sung from a psalm the Passion made its own.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Introit, Gradual</td>
+<td style="text-align: left;">Ps. 73 Vulg. (Eng. 74):<br />
+Introit: 1, 19–20, 22–23;<br />
+Gradual: 19–20, 22</td>
+<td style="text-align: left;">Superscription <em>Intellectus Asaph.</em> The psalm laments a ravaged sanctuary; no place of writing named</td>
+<td style="text-align: left;">Traditional: Asaphite; modern: after 587 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Asaph is David’s chief musician, so the bare title suggests a Davidic-era horizon — yet the psalm mourns a sanctuary already destroyed. The NABRE calls it “a communal lament sung when the enemy invaded the temple; it would be especially appropriate at the destruction of Jerusalem in 587 B.C.” Witnesses since antiquity have resolved the tension as prophecy or as a later Asaphite’s voice; this sheet reports it unresolved.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alleluia</td>
+<td style="text-align: left;">Ps. 89:1 Vulg. (Eng. 90:1)</td>
+<td style="text-align: left;">Superscription <em>Oratio Moysi, hominis Dei.</em> No place named</td>
+<td style="text-align: left;">Traditional: Mosaic, <em>c.</em> 13th c. BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The one psalm in the Psalter bearing Moses’ name. A title associating a prayer with a figure is received tradition, not proof of composition; the NABRE reads it as a communal lament naming its distress only in general terms, contrasting God’s eternity with human brevity. The chant takes exactly the clause that carries that contrast: refuge <em>a generatióne et progénie</em>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion</td>
+<td style="text-align: left;">Wis. 16:20</td>
+<td style="text-align: left;">Written in Greek at Alexandria, in Egypt, by an unknown Jew of that community</td>
+<td style="text-align: left;"><em>c.</em> 100 BC; older range 221–117 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Solomonic attribution is the book’s own literary fiction, set aside on all sides. The <em>Catholic Encyclopedia</em> places the author under Ptolemy IV (221–204 BC) or Ptolemy VII (145–117 BC); the NABRE says “about a hundred years before the coming of Christ,” written “in Greek, in a style patterned on that of Hebrew verse” to edify an oppressed community. The verse remembers the wilderness manna — narrated event Ex. 16, in the Sinai desert — from Hellenistic Egypt, a millennium later.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Lk. 17:11–19</td>
+<td style="text-align: left;">Writing: place unknown; traditionally Achaia. Audience largely Gentile and non-Palestinian, through Theophilus</td>
+<td style="text-align: left;">Traditional: by AD 62–63. Modern: AD 80–90</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;"><em>Event: on the final journey to Jerusalem, “through the midst of Samaria and Galilee” (v. 11) — the border country in the north of present-day Israel and the West Bank; an unnamed village. Months before the Passover of the Passion: AD 29 on the <em>Catholic Encyclopedia</em>’s computation, commonly AD 30–33 later; not settled here.</em></td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The <em>Catholic Encyclopedia</em> identifies Luke the physician and Pauline companion, reports Julius Africanus for Achaia, and argues the Gospel was finished before Acts, by about AD 62–63; the NABRE reports the same attribution — “Luke, a Syrian from Antioch” — but proposes AD 80–90 and leaves the place unstated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Epistle</td>
+<td style="text-align: left;">Gal. 3:16–22</td>
+<td style="text-align: left;">From Ephesus (NABRE) or Antioch (older South-Galatian view), to the churches of Galatia in central Asia Minor, around present-day Ankara</td>
+<td style="text-align: left;">Third journey, AD 54–55; or AD 48–50</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Pauline authorship is traditional and the mainstream modern judgment alike. Who the Galatians were is not settled: the NABRE holds them “most likely among the descendants of Celts” of North Galatia and dates the letter “around A.D. 54 or 55 … most likely from Ephesus”; the <em>Catholic Encyclopedia</em> favours the South-Galatian theory, under which the letter goes to the churches of the first journey, perhaps from Antioch before the council, AD 48–50. Occasion on either view: converts from paganism pressed by judaizing missionaries to add circumcision and the law — the pressure the appointed argument answers.</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -952,6 +1014,6 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 - Robert Browning, “Rabbi Ben Ezra,” stanza 1, in *Dramatis Personæ* (London: Chapman & Hall, 1864).
 
-**Last revised (UTC):** 2026-09-24T17:00:16Z
+**Last revised (UTC):** 2026-11-04T03:09:25Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

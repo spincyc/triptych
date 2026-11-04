@@ -500,7 +500,7 @@ Each passage the Mass reads or sings from Scripture, once, in canonical order; b
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Offertory | Ex 24:4–5, compiled | Sinai: an altar at the foot of the mount, with twelve titles for the twelve tribes of Israel (24:4) | **Event**: Rising in the morning. |
+| Offertory | Ex 24:4–5, compiled | Sinai: an altar at the foot of the mount, with twelve titles for the twelve tribes of Israel (24:4) | **Event**: The sealing of the covenant at the foot of the mount, rising in the morning. |
 
 *Narrated event: the ratifying of the covenant at Sinai, after Moses has told the people all the words of the Lord and they have answered with one voice (24:3); the altar is built “rising in the morning” (24:4), a relative date within the narrative.*
 
@@ -508,25 +508,25 @@ The chronology record dates the narrated event only, and only relatively; it hol
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Communion | Ps 95:8–9 (Heb. 96) | The house of God and its courts; by the title, the house built after the captivity, at Jerusalem | **Superscription setting**: B.C. 537. **Composition**: Before c. 165 B.C. **Prophetic referent** – disputed: B.C. 3; c. B.C. 7. |
+| Communion | Ps 95:8–9 (Heb. 96) | The house of God and its courts; by the title, the house built after the captivity, at Jerusalem | **Superscription setting**: The raising of the second Temple by Zorobabel, B.C. 537. **Composition**: Before c. 165 B.C. **Prophetic referent** – disputed: The Nativity of Our Lord, B.C. 3; The Nativity of Our Lord, c. B.C. 7. |
 
 Titled in the Vulgate *Canticum ipsi David, quando domus aedificabatur post captivitatem*, “A canticle for David himself, when the house was built after the captivity” (v. 1). The title names David and a setting after the exile together; the chronology record reads that setting against the raising of the Temple from its ruins under Zorobabel after the return (the *Catholic Encyclopedia*, “Temple of Jerusalem”), and holds no Davidic era for the psalm. For its composition the record gives only the modern critical boundary for the whole Psalter, within which no single psalm can be dated securely. The third date is not a date of the psalm: the record reads Ps 95, with Pss 67, 96 and 97, as looking prophetically to Christ’s coming, and the two years it gives are two *Catholic Encyclopedia* articles’ dates for the Nativity.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Alleluia | Ps 101:16 (Heb. 102) | Sion, to be rebuilt and seen in glory (vv. 14, 17) | **Composition**: Before c. 165 B.C. |
+| Alleluia | Ps 101:16 (Heb. 102) | Sion, to be rebuilt and seen in glory (vv. 14, 17) | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 Titled “The prayer of the poor man, when he was anxious, and poured out his supplication before the Lord” (v. 1); the title names no author, and the chronology record holds no traditional date for the psalm. Its lament turns at verse 14 to Sion, on which the Lord will have mercy, and verse 17 gives the reason for the nations’ fear: “the Lord hath built up Sion”. The date is the Psalter’s critical boundary only.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Gradual | Ps 121:1, 7 (Heb. 122); verse 1 is also the Introit’s verse | Jerusalem: the house of the Lord, and the city’s courts, walls and towers (vv. 1–7) | **Composition**: Before c. 165 B.C. |
+| Gradual | Ps 121:1, 7 (Heb. 122); verse 1 is also the Introit’s verse | Jerusalem: the house of the Lord, and the city’s courts, walls and towers (vv. 1–7) | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 Titled in the Vulgate *Canticum graduum*, one of the Songs of Ascents (from Ps 119 to Ps 133 in the Missal’s numbering), sung by pilgrims going up to the house of the Lord; the Vulgate title names no author, and the chronology record holds no traditional date for the psalm. Among its ancient interpreters St John Chrysostom and Theodoret set it at the return from the Babylonian exile, of a city whose walls and towers lay in ruins. The date is the Psalter’s critical boundary only.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Introit | Ecclus 36:18 (the antiphon, adapted); its verse, Ps 121:1, stands with the Gradual | “Jesus the son of Sirach, of Jerusalem” (50:29), praying for Jerusalem and Sion (36:14–16) | **Composition** – No single date applies across every cited locus. |
+| Introit | Ecclus 36:18 (the antiphon, adapted); its verse, Ps 121:1, stands with the Gradual | “Jesus the son of Sirach, of Jerusalem” (50:29), praying for Jerusalem and Sion (36:14–16) | **Historical setting** – Occasion date unresolved. **Composition** – No single date applies across every cited locus. |
 
 Traditional attribution: Jesus the son of Sirach, whom the Greek prologue names and whom the Greek and Latin text calls a man of Jerusalem (50:29); his grandson rendered the book into Greek after coming into Egypt (*Catholic Encyclopedia*, “Ecclesiasticus”, which calls the authorship universally assigned to him). The chapter is a prayer for Israel’s deliverance, for Jerusalem, and for the fulfilment of the prophets’ words. The chronology record dates the element’s composition passage by passage. Ecclus 36:18: B.C. 190–170 or c. B.C. 280, the composition of the Book of Ecclesiasticus under the traditional Catholic profile, the interval preferred and the approximate year its alternate, both from the *Catholic Encyclopedia*’s article “Ecclesiasticus” (1909). Ps 121:1: before c. 165 B.C., the Psalter’s critical composition boundary, already given with the Gradual. Neither date holds at both loci, so the Date cell gives the element none. The antiphon’s wording is liturgical: at its opening and its close it is neither the Vulgate’s nor the Greek’s.
 
@@ -658,6 +658,6 @@ Traditional attribution: St Paul, with Sosthenes named beside him (1:1). The *Ca
 
 - Fraternité Saint-Pierre (France), *Ordo du mois*, entry for 27 September 2026; Institut du Christ Roi Souverain Prêtre (France), *Ordo*, entry for 27 September 2026.
 
-**Last revised (UTC):** 2026-10-01T22:25:46Z
+**Last revised (UTC):** 2026-11-04T03:34:08Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

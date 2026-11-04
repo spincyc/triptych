@@ -1579,7 +1579,7 @@ class PublicAlphaTest(unittest.TestCase):
         # Every dossier rule needs both its opening heading and its next-h2
         # boundary; adding an id to just one rule leaves part of the layout out.
         selectors = re.findall(r"^[ \t]*\.page-shell\.reading :is\(h2.*?\{", css, flags=re.M)
-        self.assertEqual(len(selectors), 11)
+        self.assertEqual(len(selectors), 12)
         for selector in selectors:
             with self.subTest(selector=selector):
                 opening, ending = selector.split(" ~ table:not(", 1)

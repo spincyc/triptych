@@ -1,0 +1,225 @@
+{
+  "schema": "triptych-html-width-and-span-contract-review/v1",
+  "status": "pass",
+  "scope": "Bounded HTML print width and table receipt/padding integration review; candidate source/site and actual route gates remain separate requirements.",
+  "files_sha256": {
+    "scripts/_web_print_common.py": "849c27d7e71d69e7a2523f82f07c747d6676c24fdb6c8cb405ec2337ad935212",
+    "src/web/browser/shared/web-print.js": "008c65bbae959d671573e01de8f760f47ec7c7e08218027be7d8e09ac55926fd",
+    "src/web/browser/shared/web-print.css": "a12e63dcf0b1da73c340651563ee2f4863d9eff2cce41d3fcb9902f509dce985",
+    "tools/tests/test_web_print_common.py": "e50264dea6571a21d9f6ffa697ce78c16dd7db89fd5d2175e95eb93bdd461037",
+    "tools/tests/test_web_print_publication.py": "d17f67507b80464ecf205048598cb7f3b869205c908791e888bc0b55910ef0a5",
+    "tools/tests/test_web_print_controller.py": "fb6976e04c237b9623f51c549c35b6ac68541762d08433accf3a2467486c42ed",
+    "tools/web-edition": "9be3fed135b8f83b7c8ca5895fa50b14bbf99fb32e74cadc44d227feef554311",
+    "tools/tests/test_web_edition_conversion.py": "2faaeec4d30154463efb37360b385dab0c7356bc2c4714edfd65bddc0425b27a",
+    "scripts/_web_print_curriculum/core.py": "c38842305d2e453fcb068697df183879f867bdf3e49688e360063746c85b6bf8",
+    "scripts/_web_print_curriculum/companions.py": "2dbd60d132f96b305cce739242b2ca56deec097b289b2e4fd4535eb5b575a339",
+    "tools/tests/test_web_print_curriculum.py": "3f1c91aa336f4916d2e846ce68146c05fb6ebf723b5d975756efeb4ca62b86cf"
+  },
+  "explicit_action_continuity": {
+    "initial_web_print_js_sha256": "b7e2ffa79555c6fb82fed37aede35edcf17c9f41454259f863c82fa0bc67ee06",
+    "independently_proved_only_later_js_delta": "TABLE_CLASSES finite width lists",
+    "navigation_query_reload_background_and_auto_option": "No preparation or print until explicit action; current browser regression passes."
+  },
+  "finite_width_contract": {
+    "added_table_percentages": [
+      70,
+      74,
+      84,
+      86,
+      90,
+      94
+    ],
+    "added_column_percentages": [
+      16,
+      23,
+      24,
+      28,
+      30,
+      32,
+      35,
+      38,
+      40,
+      42,
+      56,
+      68,
+      69,
+      70,
+      86
+    ],
+    "independent_tracked_reader_census": {
+      "path": ".scratch/final-main-cold-review/independent-all-width-census.json",
+      "sha256": "668024eb592e38330a944656026143239abf0a24e8ba7a3a07dd879ce5578154"
+    },
+    "print_only_column28_outputs": [
+      "publication:gpt/articles/canon-law/clerical-celibacy-chastity-and-continence"
+    ],
+    "python_javascript_css_exact_parity": {
+      "table": [
+        70,
+        74,
+        83,
+        84,
+        85,
+        86,
+        87,
+        90,
+        92,
+        93,
+        94,
+        95,
+        96
+      ],
+      "column": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        30,
+        31,
+        32,
+        34,
+        35,
+        38,
+        40,
+        42,
+        56,
+        68,
+        69,
+        70,
+        86
+      ]
+    },
+    "refusals": [
+      "unknown percentages",
+      "fractional percentages",
+      "calc and var expressions",
+      "additional visibility CSS",
+      "width styles on unsupported elements",
+      "unlisted browser classes",
+      "untyped inline styles"
+    ]
+  },
+  "curriculum_receipt_contract": {
+    "rule": "Exactly one typed receipt is mandatory, including an empty inventory. Nonzero exit, absent, duplicate, malformed or additional diagnostic receipts refuse. The final normalized HTML span inventory must equal the receipt, including when empty.",
+    "independent_tests": "Receipt refusal plus injected packet span and dropped companion span after normalization all pass."
+  },
+  "padding_contract": {
+    "rule": "Remove only trailing over-width padding with empty Plain/Para or finite Strong/Emph/SmallCaps/Underline chains. Preserve nonempty source cells and column ordering.",
+    "independent_actual_virtues_ast_probes": [
+      {
+        "case": "finite_empty_formatting",
+        "exit": 0,
+        "expected": "accept"
+      },
+      {
+        "case": "visible_text",
+        "exit": 83,
+        "expected": "refuse"
+      },
+      {
+        "case": "unknown_empty_span",
+        "exit": 83,
+        "expected": "refuse"
+      },
+      {
+        "case": "unknown_empty_code",
+        "exit": 83,
+        "expected": "refuse"
+      },
+      {
+        "case": "unknown_empty_raw",
+        "exit": 83,
+        "expected": "refuse"
+      }
+    ]
+  },
+  "independent_tests": {
+    "tests": 14,
+    "exit": 0,
+    "seconds": 64.968,
+    "log": {
+      "path": ".scratch/final-main-cold-review/width-adapter-independent-tests.log",
+      "sha256": "9fd15826dc3fed27054a19f72ae2b25681ff156f208de78da161aea8cb072d2c"
+    },
+    "static_and_ast_review": {
+      "path": ".scratch/final-main-cold-review/width-adapter-independent-review.json",
+      "sha256": "067a43fd2a9db9577a98913fb4595e003edd7b898c98cc4b8d6b10c6168d8832"
+    }
+  },
+  "reader_revalidation": {
+    "readers": 54,
+    "all_prior_and_current_reader_bytes_identical": true,
+    "refreshed_receipt": {
+      "path": ".scratch/authored-table-mapping/column-widths/reader-proof-refresh.json",
+      "sha256": "ae226e5456950e9009dfc989546dfe4bacf4e5a36a1a5abd31aede8fd567bdc8"
+    },
+    "scope": "Prior reader DOM evidence remains applicable to unchanged output bytes; this does not replace the final site gate."
+  },
+  "strict_complete_producer": {
+    "entrypoint": "scripts/_web_print_products.py:generate",
+    "status": "production-completed-and-independently-validated",
+    "original_generate_returned": {
+      "products": 288,
+      "assets": 133,
+      "source_paths": 4821
+    },
+    "observer_exit": 1,
+    "observer_failure": "After production returned successfully, the scratch observer looked for out/catalog.json instead of out/print/preparation/catalog.json. Original failure receipt is preserved.",
+    "postvalidation_exit": 0,
+    "regenerated": false,
+    "products": 288,
+    "assets": 133,
+    "source_paths": 4821,
+    "seconds": 301.653,
+    "original_observer_receipt": {
+      "path": ".scratch/authored-table-mapping/column-widths/strict-producer-receipt.json",
+      "sha256": "a702f6fb9c81eb60da72c7f43b40f6fcceae3ce126a77eca2a12a0d3dd188a85"
+    },
+    "postvalidation_receipt": {
+      "path": ".scratch/authored-table-mapping/column-widths/strict-producer-postvalidation.json",
+      "sha256": "995e417f109752382358f13b8794c729ae0f7c52a0621858b8e37f7836d30b78"
+    },
+    "catalog": {
+      "path": ".scratch/authored-table-mapping/column-widths/strict-final-producer/print/preparation/catalog.json",
+      "sha256": "22f3dd7408aaaa1f83a74b42ae27e4d4dea3879c1b2d410b1caadce8d92f2fd2"
+    },
+    "observer": {
+      "path": ".scratch/authored-table-mapping/column-widths/run_strict_producer.py",
+      "sha256": "012dcc2529329392a93cd5c74532aaebf2772f8408c210f155a9112313d2b7a1"
+    },
+    "postvalidation_script": {
+      "path": ".scratch/authored-table-mapping/column-widths/validate_strict_producer.py",
+      "sha256": "c1bb68d68147604af56ccb60747b71db3ca881fe6e137d4667bca084ec1c423b"
+    },
+    "independent_checks": [
+      "Observer calls original normalization/render/generate and propagates all refusals.",
+      "All current admitted IDs exactly equal receipt and final catalog, without omission or duplicate.",
+      "All288 prepared product hashes, identities and coverage pass receipts revalidated.",
+      "All133 asset envelopes and payload hashes revalidated.",
+      "All frozen compiler and11 reviewed file hashes remain current.",
+      "Every added percentage appears in actual strict producer source styles."
+    ]
+  },
+  "limitations": [
+    "This is an integration addendum to the initial controller proof, not a replacement of its historical hashes.",
+    "The whole-producer pass is HTML preparation, not a new native-PDF capture or final site/browser approval.",
+    "Prior native PDF receipts are retained with separately reviewed registry and Makefile wording deltas."
+  ]
+}

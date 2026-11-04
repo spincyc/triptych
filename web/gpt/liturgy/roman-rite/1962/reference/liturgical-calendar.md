@@ -120,302 +120,1454 @@ The Major Litany is observed on April 25, subject to its rubrics when Easter or 
 
 The following is the universal fixed calendar printed in the 1962 typical Missal. Blank civil dates have no universal fixed entry. “Comm.” means that the printed entry is a commemoration; a commemoration following a feast is shown after a semicolon. The leap-year displacement of Saints Matthias and Gabriel is stated after February.
 
-| **Date** | **Celebration or observance** | **Class** |
-|:---------|:------------------------------------------------|:-------|
-| **January** |  |  |
-| Jan. 1 | *Octava Nativitatis Domini* | I |
-| Jan. 5 | Comm. *S. Telesphori Papae et Martyris* | Comm. |
-| Jan. 6 | *In Epiphania Domini* | I |
-| Jan. 11 | Comm. *S. Hygini Papae et Martyris* | Comm. |
-| Jan. 13 | *In Commemoratione Baptismatis Domini Nostri Iesu Christi* | II |
-| Jan. 14 | *S. Hilarii Episcopi, Confessoris et Ecclesiae Doctoris*; comm. *S. Felicis Presbyteri et Martyris* | III |
-| Jan. 15 | *S. Pauli primi Eremitae, Confessoris*; comm. *S. Mauri Abbatis* | III |
-| Jan. 16 | *S. Marcelli I Papae et Martyris* | III |
-| Jan. 17 | *S. Antonii Abbatis* | III |
-| Jan. 18 | Comm. *S. Priscae Virginis et Martyris* | Comm. |
-| Jan. 19 | Comm. *Ss. Marii, Marthae, Audifacis et Abachum Martyrum*; comm. *S. Canuti Regis, Martyris* | Comm. |
-| Jan. 20 | *Ss. Fabiani Papae et Sebastiani Martyrum* | III |
-| Jan. 21 | *S. Agnetis Virginis et Martyris* | III |
-| Jan. 22 | *Ss. Vincentii et Anastasii Martyrum* | III |
-| Jan. 23 | *S. Raymundi de Penafort Confessoris*; comm. *S. Emerentianae Virginis et Martyris* | III |
-| Jan. 24 | *S. Timothei Episcopi et Martyris* | III |
-| Jan. 25 | *In Conversione S. Pauli Apostoli*; comm. *S. Petri Apostoli* | III |
-| Jan. 26 | *S. Polycarpi Episcopi et Martyris* | III |
-| Jan. 27 | *S. Ioannis Chrysostomi Episcopi, Confessoris et Ecclesiae Doctoris* | III |
-| Jan. 28 | *S. Petri Nolasci Confessoris*; comm. *S. Agnetis Virginis et Martyris, secundo* | III |
-| Jan. 29 | *S. Francisci Salesii Episcopi, Confessoris et Ecclesiae Doctoris* | III |
-| Jan. 30 | *S. Martinae Virginis et Martyris* | III |
-| Jan. 31 | *S. Ioannis Bosco Confessoris* | III |
-| **February** |  |  |
-| Feb. 1 | *S. Ignatii Episcopi et Martyris* | III |
-| Feb. 2 | *In Purificatione Beatae Mariae Virginis* | II |
-| Feb. 3 | Comm. *S. Blasii Episcopi et Martyris* | Comm. |
-| Feb. 4 | *S. Andreae Corsini Episcopi et Confessoris* | III |
-| Feb. 5 | *S. Agathae Virginis et Martyris* | III |
-| Feb. 6 | *S. Titi Episcopi et Confessoris*; comm. *S. Dorotheae Virginis et Martyris* | III |
-| Feb. 7 | *S. Romualdi Abbatis* | III |
-| Feb. 8 | *S. Ioannis de Matha Confessoris* | III |
-| Feb. 9 | *S. Cyrilli Episcopi Alexandrini, Confessoris et Ecclesiae Doctoris*; comm. *S. Apolloniae Virginis et Martyris* | III |
-| Feb. 10 | *S. Scholasticae Virginis* | III |
-| Feb. 11 | *In Apparitione Beatae Mariae Virginis Immaculatae* | III |
-| Feb. 12 | *Ss. septem Fundatorum Ordinis Servorum Beatae Mariae Virginis, Confessorum* | III |
-| Feb. 14 | Comm. *S. Valentini Presbyteri et Martyris* | Comm. |
-| Feb. 15 | Comm. *Ss. Faustini et Iovitae Martyrum* | Comm. |
-| Feb. 18 | Comm. *S. Simeonis Episcopi et Martyris* | Comm. |
-| Feb. 22 | *Cathedrae S. Petri Apostoli*; comm. *S. Pauli Apostoli* | II |
-| Feb. 23 | *S. Petri Damiani Episcopi, Confessoris et Ecclesiae Doctoris* | III |
-| Feb. 24 | *S. Matthiae Apostoli* | II |
-| Feb. 27 | *S. Gabrielis a Virgine Perdolente, Confessoris* | III |
-| **March** |  |  |
-| Mar. 4 | *S. Casimiri Confessoris*; comm. *S. Lucii I Papae et Martyris* | III |
-| Mar. 6 | *Ss. Perpetuae et Felicitatis Martyrum* | III |
-| Mar. 7 | *S. Thomae de Aquino Confessoris et Ecclesiae Doctoris* | III |
-| Mar. 8 | *S. Ioannis a Deo Confessoris* | III |
-| Mar. 9 | *S. Franciscae Romanae Viduae* | III |
-| Mar. 10 | *Ss. Quadraginta Martyrum* | III |
-| Mar. 12 | *S. Gregorii I Papae, Confessoris et Ecclesiae Doctoris* | III |
-| Mar. 17 | *S. Patricii Episcopi et Confessoris* | III |
-| Mar. 18 | *S. Cyrilli Episcopi Hierosolymitani, Confessoris et Ecclesiae Doctoris* | III |
-| Mar. 19 | *S. Ioseph, Sponsi Beatae Mariae Virginis, Confessoris et Ecclesiae universalis Patroni* | I |
-| Mar. 21 | *S. Benedicti Abbatis* | III |
-| Mar. 24 | *S. Gabrielis Archangeli* | III |
-| Mar. 25 | *Annuntiatio Beatae Mariae Virginis* | I |
-| Mar. 27 | *S. Ioannis Damasceni Confessoris et Ecclesiae Doctoris* | III |
-| Mar. 28 | *S. Ioannis de Capistrano Confessoris* | III |
-| **April** |  |  |
-| Apr. 2 | *S. Francisci de Paula Confessoris* | III |
-| Apr. 4 | *S. Isidori Episcopi, Confessoris et Ecclesiae Doctoris* | III |
-| Apr. 5 | *S. Vincentii Ferrerii Confessoris* | III |
-| Apr. 11 | *S. Leonis I Papae, Confessoris et Ecclesiae Doctoris* | III |
-| Apr. 13 | *S. Hermenegildi Martyris* | III |
-| Apr. 14 | *S. Iustini Martyris*; comm. *Ss. Tiburtii, Valeriani et Maximi Martyrum* | III |
-| Apr. 17 | Comm. *S. Aniceti Papae et Martyris* | Comm. |
-| Apr. 21 | *S. Anselmi Episcopi, Confessoris et Ecclesiae Doctoris* | III |
-| Apr. 22 | *Ss. Soteris et Caii Paparum et Martyrum* | III |
-| Apr. 23 | Comm. *S. Georgii Martyris* | Comm. |
-| Apr. 24 | *S. Fidelis de Sigmaringa Martyris* | III |
-| Apr. 25 | *Litania maior*; *S. Marci Evangelistae* | II |
-| Apr. 26 | *Ss. Cleti et Marcellini Paparum et Martyrum* | III |
-| Apr. 27 | *S. Petri Canisii Confessoris et Ecclesiae Doctoris* | III |
-| Apr. 28 | *S. Pauli a Cruce Confessoris* | III |
-| Apr. 29 | *S. Petri Martyris* | III |
-| Apr. 30 | *S. Catharinae Senensis Virginis* | III |
-| **May** |  |  |
-| May 1 | *S. Ioseph Opificis, Sponsi Beatae Mariae Virginis, Confessoris* | I |
-| May 2 | *S. Athanasii Episcopi, Confessoris et Ecclesiae Doctoris* | III |
-| May 3 | Comm. *Ss. Alexandri, Eventii et Theoduli Martyrum, ac S. Iuvenalis Episcopi et Confessoris* | Comm. |
-| May 4 | *S. Monicae Viduae* | III |
-| May 5 | *S. Pii V Papae et Confessoris* | III |
-| May 7 | *S. Stanislai Episcopi et Martyris* | III |
-| May 9 | *S. Gregorii Nazianzeni Episcopi, Confessoris et Ecclesiae Doctoris* | III |
-| May 10 | *S. Antonini Episcopi et Confessoris*; comm. *Ss. Gordiani et Epimachi Martyrum* | III |
-| May 11 | *Ss. Philippi et Iacobi Apostolorum* | II |
-| May 12 | *Ss. Nerei, Achillei et Domitillae Virginis, atque Pancratii, Martyrum* | III |
-| May 13 | *S. Roberti Bellarmino Episcopi, Confessoris et Ecclesiae Doctoris* | III |
-| May 14 | Comm. *S. Bonifatii Martyris* | Comm. |
-| May 15 | *S. Ioannis Baptistae de la Salle Confessoris* | III |
-| May 16 | *S. Ubaldi Episcopi et Confessoris* | III |
-| May 17 | *S. Paschalis Baylon Confessoris* | III |
-| May 18 | *S. Venantii Martyris* | III |
-| May 19 | *S. Petri Caelestini Papae et Confessoris*; comm. *S. Pudentianae Virginis* | III |
-| May 20 | *S. Bernardini Senensis Confessoris* | III |
-| May 25 | *S. Gregorii VII Papae et Confessoris*; comm. *S. Urbani I Papae et Martyris* | III |
-| May 26 | *S. Philippi Nerii Confessoris*; comm. *S. Eleutherii Papae et Martyris* | III |
-| May 27 | *S. Bedae Venerabilis Confessoris et Ecclesiae Doctoris*; comm. *S. Ioannis I Papae et Martyris* | III |
-| May 28 | *S. Augustini Episcopi et Confessoris* | III |
-| May 29 | *S. Mariae Magdalenae de Pazzis Virginis* | III |
-| May 30 | Comm. *S. Felicis I Papae et Martyris* | Comm. |
-| May 31 | *Beatae Mariae Virginis Reginae*; comm. *S. Petronillae Virginis* | II |
-| **June** |  |  |
-| June 1 | *S. Angelae Mericiae Virginis* | III |
-| June 2 | Comm. *Ss. Marcellini, Petri atque Erasmi Episcopi, Martyrum* | Comm. |
-| June 4 | *S. Francisci Caracciolo Confessoris* | III |
-| June 5 | *S. Bonifatii Episcopi et Martyris* | III |
-| June 6 | *S. Norberti Episcopi et Confessoris* | III |
-| June 9 | Comm. *Ss. Primi et Feliciani Martyrum* | Comm. |
-| June 10 | *S. Margaritae Reginae, Viduae* | III |
-| June 11 | *S. Barnabae Apostoli* | III |
-| June 12 | *S. Ioannis de S. Facundo Confessoris*; comm. *Ss. Basilidis, Cyrini, Naboris et Nazarii Martyrum* | III |
-| June 13 | *S. Antonii de Padua Confessoris et Ecclesiae Doctoris* | III |
-| June 14 | *S. Basilii Magni Episcopi, Confessoris et Ecclesiae Doctoris* | III |
-| June 15 | Comm. *Ss. Viti, Modesti atque Crescentiae Martyrum* | Comm. |
-| June 17 | *S. Gregorii Barbadici Episcopi et Confessoris* | III |
-| June 18 | *S. Ephraem Syri Diaconi, Confessoris et Ecclesiae Doctoris*; comm. *Ss. Marci et Marcelliani Martyrum* | III |
-| June 19 | *S. Iulianae de Falconeriis Virginis*; comm. *Ss. Gervasii et Protasii Martyrum* | III |
-| June 20 | Comm. *S. Silverii Papae et Martyris* | Comm. |
-| June 21 | *S. Aloisii Gonzagae Confessoris* | III |
-| June 22 | *S. Paulini Episcopi et Confessoris* | III |
-| June 23 | Vigil of the Nativity of Saint John the Baptist | II |
-| June 24 | *In Nativitate S. Ioannis Baptistae* | I |
-| June 25 | *S. Gulielmi Abbatis* | III |
-| June 26 | *Ss. Ioannis et Pauli Martyrum* | III |
-| June 28 | Vigil of Saints Peter and Paul | II |
-| June 29 | *Ss. Petri et Pauli Apostolorum* | I |
-| June 30 | *In Commemoratione S. Pauli Apostoli*; comm. *S. Petri Apostoli* | III |
+<table style="width:93%;">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Date</strong></th>
+<th style="text-align: left;"><strong>Celebration or observance</strong></th>
+<th style="text-align: left;"><strong>Class</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>January</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 1</td>
+<td style="text-align: left;"><em>Octava Nativitatis Domini</em></td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 5</td>
+<td style="text-align: left;">Comm. <em>S. Telesphori Papae et Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 6</td>
+<td style="text-align: left;"><em>In Epiphania Domini</em></td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 11</td>
+<td style="text-align: left;">Comm. <em>S. Hygini Papae et Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 13</td>
+<td style="text-align: left;"><em>In Commemoratione Baptismatis Domini Nostri Iesu Christi</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 14</td>
+<td style="text-align: left;"><em>S. Hilarii Episcopi, Confessoris et Ecclesiae Doctoris</em>; comm. <em>S. Felicis Presbyteri et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 15</td>
+<td style="text-align: left;"><em>S. Pauli primi Eremitae, Confessoris</em>; comm. <em>S. Mauri Abbatis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 16</td>
+<td style="text-align: left;"><em>S. Marcelli I Papae et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 17</td>
+<td style="text-align: left;"><em>S. Antonii Abbatis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 18</td>
+<td style="text-align: left;">Comm. <em>S. Priscae Virginis et Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 19</td>
+<td style="text-align: left;">Comm. <em>Ss. Marii, Marthae, Audifacis et Abachum Martyrum</em>; comm. <em>S. Canuti Regis, Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 20</td>
+<td style="text-align: left;"><em>Ss. Fabiani Papae et Sebastiani Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 21</td>
+<td style="text-align: left;"><em>S. Agnetis Virginis et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 22</td>
+<td style="text-align: left;"><em>Ss. Vincentii et Anastasii Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 23</td>
+<td style="text-align: left;"><em>S. Raymundi de Penafort Confessoris</em>; comm. <em>S. Emerentianae Virginis et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 24</td>
+<td style="text-align: left;"><em>S. Timothei Episcopi et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 25</td>
+<td style="text-align: left;"><em>In Conversione S. Pauli Apostoli</em>; comm. <em>S. Petri Apostoli</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 26</td>
+<td style="text-align: left;"><em>S. Polycarpi Episcopi et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 27</td>
+<td style="text-align: left;"><em>S. Ioannis Chrysostomi Episcopi, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 28</td>
+<td style="text-align: left;"><em>S. Petri Nolasci Confessoris</em>; comm. <em>S. Agnetis Virginis et Martyris, secundo</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 29</td>
+<td style="text-align: left;"><em>S. Francisci Salesii Episcopi, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 30</td>
+<td style="text-align: left;"><em>S. Martinae Virginis et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jan. 31</td>
+<td style="text-align: left;"><em>S. Ioannis Bosco Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>February</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 1</td>
+<td style="text-align: left;"><em>S. Ignatii Episcopi et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 2</td>
+<td style="text-align: left;"><em>In Purificatione Beatae Mariae Virginis</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 3</td>
+<td style="text-align: left;">Comm. <em>S. Blasii Episcopi et Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 4</td>
+<td style="text-align: left;"><em>S. Andreae Corsini Episcopi et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 5</td>
+<td style="text-align: left;"><em>S. Agathae Virginis et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 6</td>
+<td style="text-align: left;"><em>S. Titi Episcopi et Confessoris</em>; comm. <em>S. Dorotheae Virginis et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 7</td>
+<td style="text-align: left;"><em>S. Romualdi Abbatis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 8</td>
+<td style="text-align: left;"><em>S. Ioannis de Matha Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 9</td>
+<td style="text-align: left;"><em>S. Cyrilli Episcopi Alexandrini, Confessoris et Ecclesiae Doctoris</em>; comm. <em>S. Apolloniae Virginis et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 10</td>
+<td style="text-align: left;"><em>S. Scholasticae Virginis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 11</td>
+<td style="text-align: left;"><em>In Apparitione Beatae Mariae Virginis Immaculatae</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 12</td>
+<td style="text-align: left;"><em>Ss. septem Fundatorum Ordinis Servorum Beatae Mariae Virginis, Confessorum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 14</td>
+<td style="text-align: left;">Comm. <em>S. Valentini Presbyteri et Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 15</td>
+<td style="text-align: left;">Comm. <em>Ss. Faustini et Iovitae Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 18</td>
+<td style="text-align: left;">Comm. <em>S. Simeonis Episcopi et Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 22</td>
+<td style="text-align: left;"><em>Cathedrae S. Petri Apostoli</em>; comm. <em>S. Pauli Apostoli</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 23</td>
+<td style="text-align: left;"><em>S. Petri Damiani Episcopi, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 24</td>
+<td style="text-align: left;"><em>S. Matthiae Apostoli</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feb. 27</td>
+<td style="text-align: left;"><em>S. Gabrielis a Virgine Perdolente, Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>March</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 4</td>
+<td style="text-align: left;"><em>S. Casimiri Confessoris</em>; comm. <em>S. Lucii I Papae et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 6</td>
+<td style="text-align: left;"><em>Ss. Perpetuae et Felicitatis Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 7</td>
+<td style="text-align: left;"><em>S. Thomae de Aquino Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 8</td>
+<td style="text-align: left;"><em>S. Ioannis a Deo Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 9</td>
+<td style="text-align: left;"><em>S. Franciscae Romanae Viduae</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 10</td>
+<td style="text-align: left;"><em>Ss. Quadraginta Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 12</td>
+<td style="text-align: left;"><em>S. Gregorii I Papae, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 17</td>
+<td style="text-align: left;"><em>S. Patricii Episcopi et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 18</td>
+<td style="text-align: left;"><em>S. Cyrilli Episcopi Hierosolymitani, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 19</td>
+<td style="text-align: left;"><em>S. Ioseph, Sponsi Beatae Mariae Virginis, Confessoris et Ecclesiae universalis Patroni</em></td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 21</td>
+<td style="text-align: left;"><em>S. Benedicti Abbatis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 24</td>
+<td style="text-align: left;"><em>S. Gabrielis Archangeli</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 25</td>
+<td style="text-align: left;"><em>Annuntiatio Beatae Mariae Virginis</em></td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 27</td>
+<td style="text-align: left;"><em>S. Ioannis Damasceni Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mar. 28</td>
+<td style="text-align: left;"><em>S. Ioannis de Capistrano Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>April</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 2</td>
+<td style="text-align: left;"><em>S. Francisci de Paula Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 4</td>
+<td style="text-align: left;"><em>S. Isidori Episcopi, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 5</td>
+<td style="text-align: left;"><em>S. Vincentii Ferrerii Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 11</td>
+<td style="text-align: left;"><em>S. Leonis I Papae, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 13</td>
+<td style="text-align: left;"><em>S. Hermenegildi Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 14</td>
+<td style="text-align: left;"><em>S. Iustini Martyris</em>; comm. <em>Ss. Tiburtii, Valeriani et Maximi Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 17</td>
+<td style="text-align: left;">Comm. <em>S. Aniceti Papae et Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 21</td>
+<td style="text-align: left;"><em>S. Anselmi Episcopi, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 22</td>
+<td style="text-align: left;"><em>Ss. Soteris et Caii Paparum et Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 23</td>
+<td style="text-align: left;">Comm. <em>S. Georgii Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 24</td>
+<td style="text-align: left;"><em>S. Fidelis de Sigmaringa Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 25</td>
+<td style="text-align: left;"><em>Litania maior</em>; <em>S. Marci Evangelistae</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 26</td>
+<td style="text-align: left;"><em>Ss. Cleti et Marcellini Paparum et Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 27</td>
+<td style="text-align: left;"><em>S. Petri Canisii Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 28</td>
+<td style="text-align: left;"><em>S. Pauli a Cruce Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 29</td>
+<td style="text-align: left;"><em>S. Petri Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Apr. 30</td>
+<td style="text-align: left;"><em>S. Catharinae Senensis Virginis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>May</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">May 1</td>
+<td style="text-align: left;"><em>S. Ioseph Opificis, Sponsi Beatae Mariae Virginis, Confessoris</em></td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 2</td>
+<td style="text-align: left;"><em>S. Athanasii Episcopi, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 3</td>
+<td style="text-align: left;">Comm. <em>Ss. Alexandri, Eventii et Theoduli Martyrum, ac S. Iuvenalis Episcopi et Confessoris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 4</td>
+<td style="text-align: left;"><em>S. Monicae Viduae</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 5</td>
+<td style="text-align: left;"><em>S. Pii V Papae et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 7</td>
+<td style="text-align: left;"><em>S. Stanislai Episcopi et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 9</td>
+<td style="text-align: left;"><em>S. Gregorii Nazianzeni Episcopi, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 10</td>
+<td style="text-align: left;"><em>S. Antonini Episcopi et Confessoris</em>; comm. <em>Ss. Gordiani et Epimachi Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 11</td>
+<td style="text-align: left;"><em>Ss. Philippi et Iacobi Apostolorum</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 12</td>
+<td style="text-align: left;"><em>Ss. Nerei, Achillei et Domitillae Virginis, atque Pancratii, Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 13</td>
+<td style="text-align: left;"><em>S. Roberti Bellarmino Episcopi, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 14</td>
+<td style="text-align: left;">Comm. <em>S. Bonifatii Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 15</td>
+<td style="text-align: left;"><em>S. Ioannis Baptistae de la Salle Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 16</td>
+<td style="text-align: left;"><em>S. Ubaldi Episcopi et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 17</td>
+<td style="text-align: left;"><em>S. Paschalis Baylon Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 18</td>
+<td style="text-align: left;"><em>S. Venantii Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 19</td>
+<td style="text-align: left;"><em>S. Petri Caelestini Papae et Confessoris</em>; comm. <em>S. Pudentianae Virginis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 20</td>
+<td style="text-align: left;"><em>S. Bernardini Senensis Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 25</td>
+<td style="text-align: left;"><em>S. Gregorii VII Papae et Confessoris</em>; comm. <em>S. Urbani I Papae et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 26</td>
+<td style="text-align: left;"><em>S. Philippi Nerii Confessoris</em>; comm. <em>S. Eleutherii Papae et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 27</td>
+<td style="text-align: left;"><em>S. Bedae Venerabilis Confessoris et Ecclesiae Doctoris</em>; comm. <em>S. Ioannis I Papae et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 28</td>
+<td style="text-align: left;"><em>S. Augustini Episcopi et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 29</td>
+<td style="text-align: left;"><em>S. Mariae Magdalenae de Pazzis Virginis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 30</td>
+<td style="text-align: left;">Comm. <em>S. Felicis I Papae et Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">May 31</td>
+<td style="text-align: left;"><em>Beatae Mariae Virginis Reginae</em>; comm. <em>S. Petronillae Virginis</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>June</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">June 1</td>
+<td style="text-align: left;"><em>S. Angelae Mericiae Virginis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 2</td>
+<td style="text-align: left;">Comm. <em>Ss. Marcellini, Petri atque Erasmi Episcopi, Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 4</td>
+<td style="text-align: left;"><em>S. Francisci Caracciolo Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 5</td>
+<td style="text-align: left;"><em>S. Bonifatii Episcopi et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 6</td>
+<td style="text-align: left;"><em>S. Norberti Episcopi et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 9</td>
+<td style="text-align: left;">Comm. <em>Ss. Primi et Feliciani Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 10</td>
+<td style="text-align: left;"><em>S. Margaritae Reginae, Viduae</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 11</td>
+<td style="text-align: left;"><em>S. Barnabae Apostoli</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 12</td>
+<td style="text-align: left;"><em>S. Ioannis de S. Facundo Confessoris</em>; comm. <em>Ss. Basilidis, Cyrini, Naboris et Nazarii Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 13</td>
+<td style="text-align: left;"><em>S. Antonii de Padua Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 14</td>
+<td style="text-align: left;"><em>S. Basilii Magni Episcopi, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 15</td>
+<td style="text-align: left;">Comm. <em>Ss. Viti, Modesti atque Crescentiae Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 17</td>
+<td style="text-align: left;"><em>S. Gregorii Barbadici Episcopi et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 18</td>
+<td style="text-align: left;"><em>S. Ephraem Syri Diaconi, Confessoris et Ecclesiae Doctoris</em>; comm. <em>Ss. Marci et Marcelliani Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 19</td>
+<td style="text-align: left;"><em>S. Iulianae de Falconeriis Virginis</em>; comm. <em>Ss. Gervasii et Protasii Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 20</td>
+<td style="text-align: left;">Comm. <em>S. Silverii Papae et Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 21</td>
+<td style="text-align: left;"><em>S. Aloisii Gonzagae Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 22</td>
+<td style="text-align: left;"><em>S. Paulini Episcopi et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 23</td>
+<td style="text-align: left;">Vigil of the Nativity of Saint John the Baptist</td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 24</td>
+<td style="text-align: left;"><em>In Nativitate S. Ioannis Baptistae</em></td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 25</td>
+<td style="text-align: left;"><em>S. Gulielmi Abbatis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 26</td>
+<td style="text-align: left;"><em>Ss. Ioannis et Pauli Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 28</td>
+<td style="text-align: left;">Vigil of Saints Peter and Paul</td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 29</td>
+<td style="text-align: left;"><em>Ss. Petri et Pauli Apostolorum</em></td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">June 30</td>
+<td style="text-align: left;"><em>In Commemoratione S. Pauli Apostoli</em>; comm. <em>S. Petri Apostoli</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+</tbody>
+</table>
 
 In a leap year Saint Matthias is celebrated on February 25 and Saint Gabriel on February 28; the Roman bissextile reckoning repeats the sixth day before the Kalends of March. This is an edition rule, not an editorial transfer inferred from an empty date.
 
 ## Complete fixed calendar: July–December
 
-| **Date** | **Celebration or observance** | **Class** |
-|:---------|:------------------------------------------------|:-------|
-| **July** |  |  |
-| July 1 | *Pretiosissimi Sanguinis Domini Nostri Iesu Christi* | I |
-| July 2 | *In Visitatione Beatae Mariae Virginis*; comm. *Ss. Processi et Martiniani Martyrum* | II |
-| July 3 | *S. Irenaei Episcopi et Martyris* | III |
-| July 5 | *S. Antonii Mariae Zaccaria Confessoris* | III |
-| July 7 | *Ss. Cyrilli et Methodii Episcoporum et Confessorum* | III |
-| July 8 | *S. Elisabeth Reginae, Viduae* | III |
-| July 10 | *Ss. septem Fratrum Martyrum, ac Ss. Rufinae et Secundae Virginum et Martyrum* | III |
-| July 11 | Comm. *S. Pii I Papae et Martyris* | Comm. |
-| July 12 | *S. Ioannis Gualberti Abbatis*; comm. *Ss. Naboris et Felicis Martyrum* | III |
-| July 14 | *S. Bonaventurae Episcopi, Confessoris et Ecclesiae Doctoris* | III |
-| July 15 | *S. Henrici Imperatoris, Confessoris* | III |
-| July 16 | Comm. *Beatae Mariae Virginis de Monte Carmelo* | Comm. |
-| July 17 | Comm. *S. Alexii Confessoris* | Comm. |
-| July 18 | *S. Camilli de Lellis Confessoris*; comm. *Ss. Symphorosae et septem eius filiorum Martyrum* | III |
-| July 19 | *S. Vincentii a Paulo Confessoris* | III |
-| July 20 | *S. Hieronymi Aemiliani Confessoris*; comm. *S. Margaritae Virginis et Martyris* | III |
-| July 21 | *S. Laurentii de Brundusio Confessoris et Ecclesiae Doctoris*; comm. *S. Praxedis Virginis* | III |
-| July 22 | *S. Mariae Magdalenae Paenitentis* | III |
-| July 23 | *S. Apollinaris Episcopi et Martyris*; comm. *S. Liborii Episcopi et Confessoris* | III |
-| July 24 | Comm. *S. Christinae Virginis et Martyris* | Comm. |
-| July 25 | *S. Iacobi Apostoli*; comm. *S. Christophori Martyris* | II |
-| July 26 | *S. Annae Matris Beatae Mariae Virginis* | II |
-| July 27 | Comm. *S. Pantaleonis Martyris* | Comm. |
-| July 28 | *Ss. Nazarii et Celsi Martyrum, Victoris I Papae et Martyris, ac Innocentii I Papae et Confessoris* | III |
-| July 29 | *S. Marthae Virginis*; comm. *Ss. Felicis, Simplicii, Faustini et Beatricis Martyrum* | III |
-| July 30 | Comm. *Ss. Abdon et Sennen Martyrum* | Comm. |
-| July 31 | *S. Ignatii Confessoris* | III |
-| **August** |  |  |
-| Aug. 1 | Comm. *Ss. Machabaeorum Martyrum* | Comm. |
-| Aug. 2 | *S. Alfonsi Mariae de Ligorio Episcopi, Confessoris et Ecclesiae Doctoris*; comm. *S. Stephani I Papae et Martyris* | III |
-| Aug. 4 | *S. Dominici Confessoris* | III |
-| Aug. 5 | *In Dedicatione S. Mariae ad Nives* | III |
-| Aug. 6 | *In Transfiguratione Domini Nostri Iesu Christi*; comm. *Ss. Xysti II Papae, Felicissimi et Agapiti Martyrum* | II |
-| Aug. 7 | *S. Caietani Confessoris*; comm. *S. Donati Episcopi et Martyris* | III |
-| Aug. 8 | *S. Ioannis Mariae Vianney Confessoris*; comm. *Ss. Cyriaci, Largi et Smaragdi Martyrum* | III |
-| Aug. 9 | Vigil of Saint Lawrence; comm. *S. Romani Martyris* | III |
-| Aug. 10 | *S. Laurentii Martyris* | II |
-| Aug. 11 | Comm. *Ss. Tiburtii et Susannae Virginis, Martyrum* | Comm. |
-| Aug. 12 | *S. Clarae Virginis* | III |
-| Aug. 13 | Comm. *Ss. Hippolyti et Cassiani Martyrum* | Comm. |
-| Aug. 14 | Vigil of the Assumption; comm. *S. Eusebii Confessoris* | II |
-| Aug. 15 | *In Assumptione Beatae Mariae Virginis* | I |
-| Aug. 16 | *S. Ioachim, Patris Beatae Mariae Virginis, Confessoris* | II |
-| Aug. 17 | *S. Hyacinthi Confessoris* | III |
-| Aug. 18 | Comm. *S. Agapiti Martyris* | Comm. |
-| Aug. 19 | *S. Ioannis Eudes Confessoris* | III |
-| Aug. 20 | *S. Bernardi Abbatis et Ecclesiae Doctoris* | III |
-| Aug. 21 | *S. Ioannae Franciscae Fremiot de Chantal Viduae* | III |
-| Aug. 22 | *Immaculati Cordis Beatae Mariae Virginis*; comm. *Ss. Timothei et Sociorum Martyrum* | II |
-| Aug. 23 | *S. Philippi Benitii Confessoris* | III |
-| Aug. 24 | *S. Bartholomaei Apostoli* | II |
-| Aug. 25 | *S. Ludovici Regis, Confessoris* | III |
-| Aug. 26 | Comm. *S. Zephyrini Papae et Martyris* | Comm. |
-| Aug. 27 | *S. Iosephi Calasanctii Confessoris* | III |
-| Aug. 28 | *S. Augustini Episcopi, Confessoris et Ecclesiae Doctoris*; comm. *S. Hermetis Martyris* | III |
-| Aug. 29 | *In Decollatione S. Ioannis Baptistae*; comm. *S. Sabinae Martyris* | III |
-| Aug. 30 | *S. Rosae Limanae Virginis*; comm. *Ss. Felicis et Adaucti Martyrum* | III |
-| Aug. 31 | *S. Raymundi Nonnati Confessoris* | III |
-| **September** |  |  |
-| Sept. 1 | Comm. *S. Aegidii Abbatis*; comm. *Ss. duodecim Fratrum Martyrum* | Comm. |
-| Sept. 2 | *S. Stephani Regis, Confessoris* | III |
-| Sept. 3 | *S. Pii X Papae et Confessoris* | III |
-| Sept. 5 | *S. Laurentii Iustiniani Episcopi et Confessoris* | III |
-| Sept. 8 | *In Nativitate Beatae Mariae Virginis*; comm. *S. Hadriani Martyris* | II |
-| Sept. 9 | Comm. *S. Gorgonii Martyris* | Comm. |
-| Sept. 10 | *S. Nicolai de Tolentino Confessoris* | III |
-| Sept. 11 | Comm. *Ss. Proti et Hyacinthi Martyrum* | Comm. |
-| Sept. 12 | *Sanctissimi Nominis Beatae Mariae Virginis* | III |
-| Sept. 14 | *In Exaltatione S. Crucis* | II |
-| Sept. 15 | *Septem Dolorum Beatae Mariae Virginis*; comm. *S. Nicomedis Martyris* | II |
-| Sept. 16 | *Ss. Cornelii Papae et Cypriani Episcopi, Martyrum*; comm. *Ss. Euphemiae Virginis, Luciae et Geminiani Martyrum* | III |
-| Sept. 17 | Comm. *Impressionis Sacrorum Stigmatum S. Francisci Confessoris* | Comm. |
-| Sept. 18 | *S. Iosephi de Cupertino Confessoris* | III |
-| Sept. 19 | *Ss. Ianuarii Episcopi et Sociorum Martyrum* | III |
-| Sept. 20 | Comm. *Ss. Eustachii et Sociorum Martyrum* | Comm. |
-| Sept. 21 | *S. Matthaei Apostoli et Evangelistae* | II |
-| Sept. 22 | *S. Thomae de Villanova Episcopi et Confessoris*; comm. *Ss. Mauritii et Sociorum Martyrum* | III |
-| Sept. 23 | *S. Lini Papae et Martyris*; comm. *S. Theclae Virginis et Martyris* | III |
-| Sept. 24 | Comm. *Beatae Mariae Virginis a Mercede* | Comm. |
-| Sept. 26 | Comm. *Ss. Cypriani et Iustinae Virginis, Martyrum* | Comm. |
-| Sept. 27 | *Ss. Cosmae et Damiani Martyrum* | III |
-| Sept. 28 | *S. Wenceslai Ducis, Martyris* | III |
-| Sept. 29 | *In Dedicatione S. Michaelis Archangeli* | I |
-| Sept. 30 | *S. Hieronymi Presbyteri, Confessoris et Ecclesiae Doctoris* | III |
-| **October** |  |  |
-| Oct. 1 | Comm. *S. Remigii Episcopi et Confessoris* | Comm. |
-| Oct. 2 | *Ss. Angelorum Custodum* | III |
-| Oct. 3 | *S. Teresiae a Iesu Infante Virginis* | III |
-| Oct. 4 | *S. Francisci Confessoris* | III |
-| Oct. 5 | Comm. *Ss. Placidi et Sociorum Martyrum* | Comm. |
-| Oct. 6 | *S. Brunonis Confessoris* | III |
-| Oct. 7 | *Beatae Mariae Virginis a Rosario*; comm. *S. Marci Papae et Confessoris* | II |
-| Oct. 8 | *S. Birgittae Viduae*; comm. *Ss. Sergii, Bacchi, Marcelli et Apuleii Martyrum* | III |
-| Oct. 9 | *S. Ioannis Leonardi Confessoris*; comm. *Ss. Dionysii Episcopi, Rustici et Eleutherii Martyrum* | III |
-| Oct. 10 | *S. Francisci Borgiae Confessoris* | III |
-| Oct. 11 | *Maternitatis Beatae Mariae Virginis* | II |
-| Oct. 13 | *S. Eduardi Regis, Confessoris* | III |
-| Oct. 14 | *S. Callisti I Papae et Martyris* | III |
-| Oct. 15 | *S. Teresiae Virginis* | III |
-| Oct. 16 | *S. Hedwigis Viduae* | III |
-| Oct. 17 | *S. Margaritae Mariae Alacoque Virginis* | III |
-| Oct. 18 | *S. Lucae Evangelistae* | II |
-| Oct. 19 | *S. Petri de Alcantara Confessoris* | III |
-| Oct. 20 | *S. Ioannis Cantii Confessoris* | III |
-| Oct. 21 | Comm. *S. Hilarionis Abbatis*; comm. *Ss. Ursulae ac Sociarum Virginum et Martyrum* | Comm. |
-| Oct. 23 | *S. Antonii Mariae Claret Episcopi et Confessoris* | III |
-| Oct. 24 | *S. Raphaelis Archangeli* | III |
-| Oct. 25 | Comm. *Ss. Chrysanthi et Dariae Martyrum* | Comm. |
-| Oct. 26 | Comm. *S. Evaristi Papae et Martyris* | Comm. |
-| Oct. 28 | *Ss. Simonis et Iudae Apostolorum* | II |
-| **November** |  |  |
-| Nov. 1 | *Omnium Sanctorum* | I |
-| Nov. 2 | *In Commemoratione Omnium Fidelium Defunctorum* | I |
-| Nov. 4 | *S. Caroli Episcopi et Confessoris*; comm. *Ss. Vitalis et Agricolae Martyrum* | III |
-| Nov. 8 | Comm. *Ss. Quatuor Coronatorum Martyrum* | Comm. |
-| Nov. 9 | *In Dedicatione Archibasilicae Ss.mi Salvatoris*; comm. *S. Theodori Martyris* | II |
-| Nov. 10 | *S. Andreae Avellini Confessoris*; comm. *Ss. Tryphonis, Respicii et Nymphae Virginis, Martyrum* | III |
-| Nov. 11 | *S. Martini Episcopi et Confessoris*; comm. *S. Mennae Martyris* | III |
-| Nov. 12 | *S. Martini I Papae et Martyris* | III |
-| Nov. 13 | *S. Didaci Confessoris* | III |
-| Nov. 14 | *S. Iosaphat Episcopi et Martyris* | III |
-| Nov. 15 | *S. Alberti Magni Episcopi, Confessoris et Ecclesiae Doctoris* | III |
-| Nov. 16 | *S. Gertrudis Virginis* | III |
-| Nov. 17 | *S. Gregorii Thaumaturgi Episcopi et Confessoris* | III |
-| Nov. 18 | *In Dedicatione Basilicarum Ss. Petri et Pauli Apostolorum* | III |
-| Nov. 19 | *S. Elisabeth Viduae*; comm. *S. Pontiani Papae et Martyris* | III |
-| Nov. 20 | *S. Felicis de Valois Confessoris* | III |
-| Nov. 21 | *In Praesentatione Beatae Mariae Virginis* | III |
-| Nov. 22 | *S. Caeciliae Virginis et Martyris* | III |
-| Nov. 23 | *S. Clementis I Papae et Martyris*; comm. *S. Felicitatis Martyris* | III |
-| Nov. 24 | *S. Ioannis a Cruce Confessoris et Ecclesiae Doctoris*; comm. *S. Chrysogoni Martyris* | III |
-| Nov. 25 | *S. Catharinae Virginis et Martyris* | III |
-| Nov. 26 | *S. Silvestri Abbatis*; comm. *S. Petri Alexandrini Episcopi et Martyris* | III |
-| Nov. 29 | Comm. *S. Saturnini Martyris* | Comm. |
-| Nov. 30 | *S. Andreae Apostoli* | II |
-| **December** |  |  |
-| Dec. 2 | *S. Bibianae Virginis et Martyris* | III |
-| Dec. 3 | *S. Francisci Xaverii Confessoris* | III |
-| Dec. 4 | *S. Petri Chrysologi Episcopi, Confessoris et Ecclesiae Doctoris*; comm. *S. Barbarae Virginis et Martyris* | III |
-| Dec. 5 | Comm. *S. Sabbae Abbatis* | Comm. |
-| Dec. 6 | *S. Nicolai Episcopi et Confessoris* | III |
-| Dec. 7 | *S. Ambrosii Episcopi, Confessoris et Ecclesiae Doctoris* | III |
-| Dec. 8 | *In Conceptione Immaculata Beatae Mariae Virginis* | I |
-| Dec. 10 | Comm. *S. Melchiadis Papae et Martyris* | Comm. |
-| Dec. 11 | *S. Damasi I Papae et Confessoris* | III |
-| Dec. 13 | *S. Luciae Virginis et Martyris* | III |
-| Dec. 16 | *S. Eusebii Episcopi et Martyris* | III |
-| Dec. 21 | *S. Thomae Apostoli* | II |
-| Dec. 24 | Vigil of the Nativity of the Lord | I |
-| Dec. 25 | *In Nativitate Domini*, with octave; at the second Mass, comm. *S. Anastasiae Martyris* | I |
-| Dec. 26 | Second day within the octave: *S. Stephani Protomartyris* | II |
-| Dec. 27 | Third day within the octave: *S. Ioannis Apostoli et Evangelistae* | II |
-| Dec. 28 | Fourth day within the octave: *Ss. Innocentium Martyrum* | II |
-| Dec. 29 | Fifth day within the octave; comm. *S. Thomae Episcopi et Martyris* | II |
-| Dec. 30 | Sixth day within the octave | II |
-| Dec. 31 | Seventh day within the octave; comm. *S. Silvestri I Papae et Confessoris* | II |
+<table style="width:93%;">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Date</strong></th>
+<th style="text-align: left;"><strong>Celebration or observance</strong></th>
+<th style="text-align: left;"><strong>Class</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>July</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">July 1</td>
+<td style="text-align: left;"><em>Pretiosissimi Sanguinis Domini Nostri Iesu Christi</em></td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 2</td>
+<td style="text-align: left;"><em>In Visitatione Beatae Mariae Virginis</em>; comm. <em>Ss. Processi et Martiniani Martyrum</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 3</td>
+<td style="text-align: left;"><em>S. Irenaei Episcopi et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 5</td>
+<td style="text-align: left;"><em>S. Antonii Mariae Zaccaria Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 7</td>
+<td style="text-align: left;"><em>Ss. Cyrilli et Methodii Episcoporum et Confessorum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 8</td>
+<td style="text-align: left;"><em>S. Elisabeth Reginae, Viduae</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 10</td>
+<td style="text-align: left;"><em>Ss. septem Fratrum Martyrum, ac Ss. Rufinae et Secundae Virginum et Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 11</td>
+<td style="text-align: left;">Comm. <em>S. Pii I Papae et Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 12</td>
+<td style="text-align: left;"><em>S. Ioannis Gualberti Abbatis</em>; comm. <em>Ss. Naboris et Felicis Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 14</td>
+<td style="text-align: left;"><em>S. Bonaventurae Episcopi, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 15</td>
+<td style="text-align: left;"><em>S. Henrici Imperatoris, Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 16</td>
+<td style="text-align: left;">Comm. <em>Beatae Mariae Virginis de Monte Carmelo</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 17</td>
+<td style="text-align: left;">Comm. <em>S. Alexii Confessoris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 18</td>
+<td style="text-align: left;"><em>S. Camilli de Lellis Confessoris</em>; comm. <em>Ss. Symphorosae et septem eius filiorum Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 19</td>
+<td style="text-align: left;"><em>S. Vincentii a Paulo Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 20</td>
+<td style="text-align: left;"><em>S. Hieronymi Aemiliani Confessoris</em>; comm. <em>S. Margaritae Virginis et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 21</td>
+<td style="text-align: left;"><em>S. Laurentii de Brundusio Confessoris et Ecclesiae Doctoris</em>; comm. <em>S. Praxedis Virginis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 22</td>
+<td style="text-align: left;"><em>S. Mariae Magdalenae Paenitentis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 23</td>
+<td style="text-align: left;"><em>S. Apollinaris Episcopi et Martyris</em>; comm. <em>S. Liborii Episcopi et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 24</td>
+<td style="text-align: left;">Comm. <em>S. Christinae Virginis et Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 25</td>
+<td style="text-align: left;"><em>S. Iacobi Apostoli</em>; comm. <em>S. Christophori Martyris</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 26</td>
+<td style="text-align: left;"><em>S. Annae Matris Beatae Mariae Virginis</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 27</td>
+<td style="text-align: left;">Comm. <em>S. Pantaleonis Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 28</td>
+<td style="text-align: left;"><em>Ss. Nazarii et Celsi Martyrum, Victoris I Papae et Martyris, ac Innocentii I Papae et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 29</td>
+<td style="text-align: left;"><em>S. Marthae Virginis</em>; comm. <em>Ss. Felicis, Simplicii, Faustini et Beatricis Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 30</td>
+<td style="text-align: left;">Comm. <em>Ss. Abdon et Sennen Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">July 31</td>
+<td style="text-align: left;"><em>S. Ignatii Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>August</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 1</td>
+<td style="text-align: left;">Comm. <em>Ss. Machabaeorum Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 2</td>
+<td style="text-align: left;"><em>S. Alfonsi Mariae de Ligorio Episcopi, Confessoris et Ecclesiae Doctoris</em>; comm. <em>S. Stephani I Papae et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 4</td>
+<td style="text-align: left;"><em>S. Dominici Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 5</td>
+<td style="text-align: left;"><em>In Dedicatione S. Mariae ad Nives</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 6</td>
+<td style="text-align: left;"><em>In Transfiguratione Domini Nostri Iesu Christi</em>; comm. <em>Ss. Xysti II Papae, Felicissimi et Agapiti Martyrum</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 7</td>
+<td style="text-align: left;"><em>S. Caietani Confessoris</em>; comm. <em>S. Donati Episcopi et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 8</td>
+<td style="text-align: left;"><em>S. Ioannis Mariae Vianney Confessoris</em>; comm. <em>Ss. Cyriaci, Largi et Smaragdi Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 9</td>
+<td style="text-align: left;">Vigil of Saint Lawrence; comm. <em>S. Romani Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 10</td>
+<td style="text-align: left;"><em>S. Laurentii Martyris</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 11</td>
+<td style="text-align: left;">Comm. <em>Ss. Tiburtii et Susannae Virginis, Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 12</td>
+<td style="text-align: left;"><em>S. Clarae Virginis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 13</td>
+<td style="text-align: left;">Comm. <em>Ss. Hippolyti et Cassiani Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 14</td>
+<td style="text-align: left;">Vigil of the Assumption; comm. <em>S. Eusebii Confessoris</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 15</td>
+<td style="text-align: left;"><em>In Assumptione Beatae Mariae Virginis</em></td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 16</td>
+<td style="text-align: left;"><em>S. Ioachim, Patris Beatae Mariae Virginis, Confessoris</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 17</td>
+<td style="text-align: left;"><em>S. Hyacinthi Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 18</td>
+<td style="text-align: left;">Comm. <em>S. Agapiti Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 19</td>
+<td style="text-align: left;"><em>S. Ioannis Eudes Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 20</td>
+<td style="text-align: left;"><em>S. Bernardi Abbatis et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 21</td>
+<td style="text-align: left;"><em>S. Ioannae Franciscae Fremiot de Chantal Viduae</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 22</td>
+<td style="text-align: left;"><em>Immaculati Cordis Beatae Mariae Virginis</em>; comm. <em>Ss. Timothei et Sociorum Martyrum</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 23</td>
+<td style="text-align: left;"><em>S. Philippi Benitii Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 24</td>
+<td style="text-align: left;"><em>S. Bartholomaei Apostoli</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 25</td>
+<td style="text-align: left;"><em>S. Ludovici Regis, Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 26</td>
+<td style="text-align: left;">Comm. <em>S. Zephyrini Papae et Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 27</td>
+<td style="text-align: left;"><em>S. Iosephi Calasanctii Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 28</td>
+<td style="text-align: left;"><em>S. Augustini Episcopi, Confessoris et Ecclesiae Doctoris</em>; comm. <em>S. Hermetis Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 29</td>
+<td style="text-align: left;"><em>In Decollatione S. Ioannis Baptistae</em>; comm. <em>S. Sabinae Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 30</td>
+<td style="text-align: left;"><em>S. Rosae Limanae Virginis</em>; comm. <em>Ss. Felicis et Adaucti Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aug. 31</td>
+<td style="text-align: left;"><em>S. Raymundi Nonnati Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>September</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 1</td>
+<td style="text-align: left;">Comm. <em>S. Aegidii Abbatis</em>; comm. <em>Ss. duodecim Fratrum Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 2</td>
+<td style="text-align: left;"><em>S. Stephani Regis, Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 3</td>
+<td style="text-align: left;"><em>S. Pii X Papae et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 5</td>
+<td style="text-align: left;"><em>S. Laurentii Iustiniani Episcopi et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 8</td>
+<td style="text-align: left;"><em>In Nativitate Beatae Mariae Virginis</em>; comm. <em>S. Hadriani Martyris</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 9</td>
+<td style="text-align: left;">Comm. <em>S. Gorgonii Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 10</td>
+<td style="text-align: left;"><em>S. Nicolai de Tolentino Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 11</td>
+<td style="text-align: left;">Comm. <em>Ss. Proti et Hyacinthi Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 12</td>
+<td style="text-align: left;"><em>Sanctissimi Nominis Beatae Mariae Virginis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 14</td>
+<td style="text-align: left;"><em>In Exaltatione S. Crucis</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 15</td>
+<td style="text-align: left;"><em>Septem Dolorum Beatae Mariae Virginis</em>; comm. <em>S. Nicomedis Martyris</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 16</td>
+<td style="text-align: left;"><em>Ss. Cornelii Papae et Cypriani Episcopi, Martyrum</em>; comm. <em>Ss. Euphemiae Virginis, Luciae et Geminiani Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 17</td>
+<td style="text-align: left;">Comm. <em>Impressionis Sacrorum Stigmatum S. Francisci Confessoris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 18</td>
+<td style="text-align: left;"><em>S. Iosephi de Cupertino Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 19</td>
+<td style="text-align: left;"><em>Ss. Ianuarii Episcopi et Sociorum Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 20</td>
+<td style="text-align: left;">Comm. <em>Ss. Eustachii et Sociorum Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 21</td>
+<td style="text-align: left;"><em>S. Matthaei Apostoli et Evangelistae</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 22</td>
+<td style="text-align: left;"><em>S. Thomae de Villanova Episcopi et Confessoris</em>; comm. <em>Ss. Mauritii et Sociorum Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 23</td>
+<td style="text-align: left;"><em>S. Lini Papae et Martyris</em>; comm. <em>S. Theclae Virginis et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 24</td>
+<td style="text-align: left;">Comm. <em>Beatae Mariae Virginis a Mercede</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 26</td>
+<td style="text-align: left;">Comm. <em>Ss. Cypriani et Iustinae Virginis, Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 27</td>
+<td style="text-align: left;"><em>Ss. Cosmae et Damiani Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 28</td>
+<td style="text-align: left;"><em>S. Wenceslai Ducis, Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 29</td>
+<td style="text-align: left;"><em>In Dedicatione S. Michaelis Archangeli</em></td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sept. 30</td>
+<td style="text-align: left;"><em>S. Hieronymi Presbyteri, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>October</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 1</td>
+<td style="text-align: left;">Comm. <em>S. Remigii Episcopi et Confessoris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 2</td>
+<td style="text-align: left;"><em>Ss. Angelorum Custodum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 3</td>
+<td style="text-align: left;"><em>S. Teresiae a Iesu Infante Virginis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 4</td>
+<td style="text-align: left;"><em>S. Francisci Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 5</td>
+<td style="text-align: left;">Comm. <em>Ss. Placidi et Sociorum Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 6</td>
+<td style="text-align: left;"><em>S. Brunonis Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 7</td>
+<td style="text-align: left;"><em>Beatae Mariae Virginis a Rosario</em>; comm. <em>S. Marci Papae et Confessoris</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 8</td>
+<td style="text-align: left;"><em>S. Birgittae Viduae</em>; comm. <em>Ss. Sergii, Bacchi, Marcelli et Apuleii Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 9</td>
+<td style="text-align: left;"><em>S. Ioannis Leonardi Confessoris</em>; comm. <em>Ss. Dionysii Episcopi, Rustici et Eleutherii Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 10</td>
+<td style="text-align: left;"><em>S. Francisci Borgiae Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 11</td>
+<td style="text-align: left;"><em>Maternitatis Beatae Mariae Virginis</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 13</td>
+<td style="text-align: left;"><em>S. Eduardi Regis, Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 14</td>
+<td style="text-align: left;"><em>S. Callisti I Papae et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 15</td>
+<td style="text-align: left;"><em>S. Teresiae Virginis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 16</td>
+<td style="text-align: left;"><em>S. Hedwigis Viduae</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 17</td>
+<td style="text-align: left;"><em>S. Margaritae Mariae Alacoque Virginis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 18</td>
+<td style="text-align: left;"><em>S. Lucae Evangelistae</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 19</td>
+<td style="text-align: left;"><em>S. Petri de Alcantara Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 20</td>
+<td style="text-align: left;"><em>S. Ioannis Cantii Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 21</td>
+<td style="text-align: left;">Comm. <em>S. Hilarionis Abbatis</em>; comm. <em>Ss. Ursulae ac Sociarum Virginum et Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 23</td>
+<td style="text-align: left;"><em>S. Antonii Mariae Claret Episcopi et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 24</td>
+<td style="text-align: left;"><em>S. Raphaelis Archangeli</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 25</td>
+<td style="text-align: left;">Comm. <em>Ss. Chrysanthi et Dariae Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 26</td>
+<td style="text-align: left;">Comm. <em>S. Evaristi Papae et Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oct. 28</td>
+<td style="text-align: left;"><em>Ss. Simonis et Iudae Apostolorum</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>November</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 1</td>
+<td style="text-align: left;"><em>Omnium Sanctorum</em></td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 2</td>
+<td style="text-align: left;"><em>In Commemoratione Omnium Fidelium Defunctorum</em></td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 4</td>
+<td style="text-align: left;"><em>S. Caroli Episcopi et Confessoris</em>; comm. <em>Ss. Vitalis et Agricolae Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 8</td>
+<td style="text-align: left;">Comm. <em>Ss. Quatuor Coronatorum Martyrum</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 9</td>
+<td style="text-align: left;"><em>In Dedicatione Archibasilicae Ss.mi Salvatoris</em>; comm. <em>S. Theodori Martyris</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 10</td>
+<td style="text-align: left;"><em>S. Andreae Avellini Confessoris</em>; comm. <em>Ss. Tryphonis, Respicii et Nymphae Virginis, Martyrum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 11</td>
+<td style="text-align: left;"><em>S. Martini Episcopi et Confessoris</em>; comm. <em>S. Mennae Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 12</td>
+<td style="text-align: left;"><em>S. Martini I Papae et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 13</td>
+<td style="text-align: left;"><em>S. Didaci Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 14</td>
+<td style="text-align: left;"><em>S. Iosaphat Episcopi et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 15</td>
+<td style="text-align: left;"><em>S. Alberti Magni Episcopi, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 16</td>
+<td style="text-align: left;"><em>S. Gertrudis Virginis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 17</td>
+<td style="text-align: left;"><em>S. Gregorii Thaumaturgi Episcopi et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 18</td>
+<td style="text-align: left;"><em>In Dedicatione Basilicarum Ss. Petri et Pauli Apostolorum</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 19</td>
+<td style="text-align: left;"><em>S. Elisabeth Viduae</em>; comm. <em>S. Pontiani Papae et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 20</td>
+<td style="text-align: left;"><em>S. Felicis de Valois Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 21</td>
+<td style="text-align: left;"><em>In Praesentatione Beatae Mariae Virginis</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 22</td>
+<td style="text-align: left;"><em>S. Caeciliae Virginis et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 23</td>
+<td style="text-align: left;"><em>S. Clementis I Papae et Martyris</em>; comm. <em>S. Felicitatis Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 24</td>
+<td style="text-align: left;"><em>S. Ioannis a Cruce Confessoris et Ecclesiae Doctoris</em>; comm. <em>S. Chrysogoni Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 25</td>
+<td style="text-align: left;"><em>S. Catharinae Virginis et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 26</td>
+<td style="text-align: left;"><em>S. Silvestri Abbatis</em>; comm. <em>S. Petri Alexandrini Episcopi et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 29</td>
+<td style="text-align: left;">Comm. <em>S. Saturnini Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nov. 30</td>
+<td style="text-align: left;"><em>S. Andreae Apostoli</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><strong>December</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 2</td>
+<td style="text-align: left;"><em>S. Bibianae Virginis et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 3</td>
+<td style="text-align: left;"><em>S. Francisci Xaverii Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 4</td>
+<td style="text-align: left;"><em>S. Petri Chrysologi Episcopi, Confessoris et Ecclesiae Doctoris</em>; comm. <em>S. Barbarae Virginis et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 5</td>
+<td style="text-align: left;">Comm. <em>S. Sabbae Abbatis</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 6</td>
+<td style="text-align: left;"><em>S. Nicolai Episcopi et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 7</td>
+<td style="text-align: left;"><em>S. Ambrosii Episcopi, Confessoris et Ecclesiae Doctoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 8</td>
+<td style="text-align: left;"><em>In Conceptione Immaculata Beatae Mariae Virginis</em></td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 10</td>
+<td style="text-align: left;">Comm. <em>S. Melchiadis Papae et Martyris</em></td>
+<td style="text-align: left;">Comm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 11</td>
+<td style="text-align: left;"><em>S. Damasi I Papae et Confessoris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 13</td>
+<td style="text-align: left;"><em>S. Luciae Virginis et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 16</td>
+<td style="text-align: left;"><em>S. Eusebii Episcopi et Martyris</em></td>
+<td style="text-align: left;">III</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 21</td>
+<td style="text-align: left;"><em>S. Thomae Apostoli</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 24</td>
+<td style="text-align: left;">Vigil of the Nativity of the Lord</td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 25</td>
+<td style="text-align: left;"><em>In Nativitate Domini</em>, with octave; at the second Mass, comm. <em>S. Anastasiae Martyris</em></td>
+<td style="text-align: left;">I</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 26</td>
+<td style="text-align: left;">Second day within the octave: <em>S. Stephani Protomartyris</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 27</td>
+<td style="text-align: left;">Third day within the octave: <em>S. Ioannis Apostoli et Evangelistae</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 28</td>
+<td style="text-align: left;">Fourth day within the octave: <em>Ss. Innocentium Martyrum</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 29</td>
+<td style="text-align: left;">Fifth day within the octave; comm. <em>S. Thomae Episcopi et Martyris</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 30</td>
+<td style="text-align: left;">Sixth day within the octave</td>
+<td style="text-align: left;">II</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dec. 31</td>
+<td style="text-align: left;">Seventh day within the octave; comm. <em>S. Silvestri I Papae et Confessoris</em></td>
+<td style="text-align: left;">II</td>
+</tr>
+</tbody>
+</table>
 
 The class-I feast of Christ the King on the last Sunday of October is movable and therefore appears in the Temporale table rather than under an arbitrarily chosen October date.
 

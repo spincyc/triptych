@@ -36,24 +36,93 @@
 
 Seven directly appointed passages, the Introit’s antiphon and verse counted once; each has a four-field summary, the narrated event where there is one, then a short explanation. Composed orations are not listed. Psalms carry the missal’s Vulgate number with the English-Bible equivalent.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:----------|:-------------|:------------------------|:-----------|
-| Offertory | Ex. 32:11, 13, 14 | Golden-calf narrative; no superscription | Traditional: Mosaic, 2nd millennium BC |
-| *Event: Moses’ intercession at the mountain of God (Horeb/Sinai, the calf below, Ex. 32:1–6, 19), traditionally Jebel Musa in the south Sinai Peninsula, present-day Egypt, in the wilderness months after the Exodus — whose own century, fifteenth or thirteenth BC, is disputed and not settled here.* |  |  |  |
-| Traditional Mosaic authorship stands with the qualifications the Biblical Commission allowed in 1906: secretaries, sources, inspired post-Mosaic additions; modern judgment prevailingly reads the Pentateuch as compiled from earlier strands. The chant is in any case an Old-Latin adaptation, older than the Vulgate. |  |  |  |
-| Gradual | Ps. 33:2–3 Vulg. (Eng. 34:1–2) | Title: madness feigned “before Achimelech” | Traditional: David’s pre-royal flight, *c.* 1010 BC |
-| The narrative behind the title is 1 Sam. 21:10–15, at Geth (Gath) in the Philistine coastal plain — but it names Achis, not Achimelech, a discrepancy the tradition discusses and the commentary answers four ways. Modern judgment reads the alphabetical acrostic as composed wisdom poetry rather than the episode’s heat; the attribution is tradition, not a proved date. |  |  |  |
-| Introit | Ps. 69:2–4 Vulg. (Eng. 70:1–3) | Superscription gives a purpose, not a place or episode | Traditional: Davidic, *c.* 1000 BC |
-| The title reads *In finem … in rememorationem, quod salvum fecerit eum Dominus*. The psalm is the psalter’s own doublet, standing nearly verbatim as the close of Ps. 39 (Vulg.) and transmitted separately, so the question of an original setting is one about the psalter’s editing. Date and authorship remain open. |  |  |  |
-| Alleluia | Ps. 87:2 Vulg. (Eng. 88:1) | Double title; no place named | Traditional: Eman the Ezrahite, 10th c. BC |
-| The title assigns the psalm both to the sons of Core and to *Eman Ezrahita*, named at 3 Kings 4:31 among the sages Solomon exceeded and at 1 Par. 6 among the Levitical singers. It is the psalter’s darkest lament, the only one ending in darkness; the appointed verse is its opening cry. Author and date are unsettled. |  |  |  |
-| Gospel | Lk. 10:23–37 | Writing place unstated by the sources checked; audience largely Gentile, through Theophilus | Traditional: before AD 63. Modern: *c.* AD 80–90 |
-| *Event: on the journey to Jerusalem (Lk. 9:51), during the ministry, c. AD 29–33, not settled here. The parable’s road is real geography: the descent from Jerusalem to Jericho drops some 3,400 feet through desert past the ascent of Adummim (Jos. 15:7), in the present-day West Bank — a name Jerome records as read “of blood.”* |  |  |  |
-| The *Catholic Encyclopedia* (1910) argues from unanimous external witness that the author is Luke, Paul’s physician-companion, and dates the Gospel before AD 63; the NABRE reports that attribution as traditional while placing composition about AD 80–90, by a non-eyewitness. |  |  |  |
-| Epistle | 2 Cor. 3:4–9 | From Macedonia, in present-day northern Greece, to Corinth in Greece | Third missionary journey, mid-to-late AD 50s |
-| Pauline authorship is both traditional and mainstream modern judgment. Paul writes from Macedonia (2 Cor. 7:5; 8:1; 9:2–4) after the painful visit and the severe letter, met there by Titus; whether canonical 2 Corinthians is one letter or several joined is left open here. Its furniture — tables of stone, the glory of Moses’ face — narrates Sinai (Ex. 34:29–35): writer, recipients and remembered mountain are three places. |  |  |  |
-| Communion | Ps. 103:13–15 Vulg. (Eng. 104:13–15) | Title *Ipsi David*; no episode or place | Traditional: Davidic per title; date open |
-| A creation hymn following the order of the works of Genesis 1; the appointed verses are its bread, wine and oil. The bare title assigns no occasion, the date is open, and nothing appointed turns on it. |  |  |  |
+<table style="width:83%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Proper</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Offertory</td>
+<td style="text-align: left;">Ex. 32:11, 13, 14</td>
+<td style="text-align: left;">Golden-calf narrative; no superscription</td>
+<td style="text-align: left;">Traditional: Mosaic, 2nd millennium BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;"><em>Event: Moses’ intercession at the mountain of God (Horeb/Sinai, the calf below, Ex. 32:1–6, 19), traditionally Jebel Musa in the south Sinai Peninsula, present-day Egypt, in the wilderness months after the Exodus — whose own century, fifteenth or thirteenth BC, is disputed and not settled here.</em></td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Traditional Mosaic authorship stands with the qualifications the Biblical Commission allowed in 1906: secretaries, sources, inspired post-Mosaic additions; modern judgment prevailingly reads the Pentateuch as compiled from earlier strands. The chant is in any case an Old-Latin adaptation, older than the Vulgate.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gradual</td>
+<td style="text-align: left;">Ps. 33:2–3 Vulg. (Eng. 34:1–2)</td>
+<td style="text-align: left;">Title: madness feigned “before Achimelech”</td>
+<td style="text-align: left;">Traditional: David’s pre-royal flight, <em>c.</em> 1010 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The narrative behind the title is 1 Sam. 21:10–15, at Geth (Gath) in the Philistine coastal plain — but it names Achis, not Achimelech, a discrepancy the tradition discusses and the commentary answers four ways. Modern judgment reads the alphabetical acrostic as composed wisdom poetry rather than the episode’s heat; the attribution is tradition, not a proved date.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Introit</td>
+<td style="text-align: left;">Ps. 69:2–4 Vulg. (Eng. 70:1–3)</td>
+<td style="text-align: left;">Superscription gives a purpose, not a place or episode</td>
+<td style="text-align: left;">Traditional: Davidic, <em>c.</em> 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title reads <em>In finem … in rememorationem, quod salvum fecerit eum Dominus</em>. The psalm is the psalter’s own doublet, standing nearly verbatim as the close of Ps. 39 (Vulg.) and transmitted separately, so the question of an original setting is one about the psalter’s editing. Date and authorship remain open.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alleluia</td>
+<td style="text-align: left;">Ps. 87:2 Vulg. (Eng. 88:1)</td>
+<td style="text-align: left;">Double title; no place named</td>
+<td style="text-align: left;">Traditional: Eman the Ezrahite, 10th c. BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title assigns the psalm both to the sons of Core and to <em>Eman Ezrahita</em>, named at 3 Kings 4:31 among the sages Solomon exceeded and at 1 Par. 6 among the Levitical singers. It is the psalter’s darkest lament, the only one ending in darkness; the appointed verse is its opening cry. Author and date are unsettled.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion</td>
+<td style="text-align: left;">Ps. 103:13–15 Vulg. (Eng. 104:13–15)</td>
+<td style="text-align: left;">Title <em>Ipsi David</em>; no episode or place</td>
+<td style="text-align: left;">Traditional: Davidic per title; date open</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">A creation hymn following the order of the works of Genesis 1; the appointed verses are its bread, wine and oil. The bare title assigns no occasion, the date is open, and nothing appointed turns on it.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Lk. 10:23–37</td>
+<td style="text-align: left;">Writing place unstated by the sources checked; audience largely Gentile, through Theophilus</td>
+<td style="text-align: left;">Traditional: before AD 63. Modern: <em>c.</em> AD 80–90</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;"><em>Event: on the journey to Jerusalem (Lk. 9:51), during the ministry, c. AD 29–33, not settled here. The parable’s road is real geography: the descent from Jerusalem to Jericho drops some 3,400 feet through desert past the ascent of Adummim (Jos. 15:7), in the present-day West Bank — a name Jerome records as read “of blood.”</em></td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The <em>Catholic Encyclopedia</em> (1910) argues from unanimous external witness that the author is Luke, Paul’s physician-companion, and dates the Gospel before AD 63; the NABRE reports that attribution as traditional while placing composition about AD 80–90, by a non-eyewitness.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Epistle</td>
+<td style="text-align: left;">2 Cor. 3:4–9</td>
+<td style="text-align: left;">From Macedonia, in present-day northern Greece, to Corinth in Greece</td>
+<td style="text-align: left;">Third missionary journey, mid-to-late AD 50s</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Pauline authorship is both traditional and mainstream modern judgment. Paul writes from Macedonia (2 Cor. 7:5; 8:1; 9:2–4) after the painful visit and the severe letter, met there by Titus; whether canonical 2 Corinthians is one letter or several joined is left open here. Its furniture — tables of stone, the glory of Moses’ face — narrates Sinai (Ex. 34:29–35): writer, recipients and remembered mountain are three places.</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -857,6 +926,6 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 - Giovanni Pierluigi da Palestrina, *Precatus est Moyses*, 5vv, in *Offertoria totius anni* (Rome: Francesco Coattino, 1593), under the rubric *Dominica XII post Pentecosten*; Orlande de Lassus, *Precatus est Moyses*, LV 858, in *Sämtliche Werke* vol. 3 (Leipzig: Breitkopf & Härtel, 1895), pp. 23–25. *Cited for their existence and publication facts only.*
 
-**Last revised (UTC):** 2026-09-24T17:00:16Z
+**Last revised (UTC):** 2026-11-04T03:59:07Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

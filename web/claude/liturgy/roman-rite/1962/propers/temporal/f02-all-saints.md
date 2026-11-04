@@ -545,14 +545,18 @@ Each passage the Mass reads or sings from Scripture, in canonical order, with wh
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Introit: Ps. 32:1 (Vg.; Heb. 33); Gradual: Ps. 33:10–11 (Vg.; Heb. 34) | Traditional attribution: David’s reign | Disputed: B.C. 1055–1015 |
-| Introit: Ps. 32:1 (Vg.; Heb. 33) | Historical setting | Occasion date unresolved |
-| Introit: Ps. 32:1 (Vg.; Heb. 33); Gradual: Ps. 33:10–11 (Vg.; Heb. 34) | Composition: Psalms | Before c. 165 B.C. |
-| Gradual: Ps. 33:10–11 (Vg.; Heb. 34) | Superscription setting: David’s flight to Achis, king of Geth | A.M. 2944 (Haydock edition reporting Ussher) |
-| Offertory: Wis. 3:1–3 | Composition: Wisdom | Disputed: In or after the time of Ptolemy IV Philopator (221–204 B.C.); In or after the time of Ptolemy VII Physicon (145–117 B.C.) |
-| Gospel: Matt. 5:1–12 | Narrated event: Jesus teaches the Beatitudes on a mountain | Date unresolved |
-| Alleluia: Matt. 11:28; Gospel: Matt. 5:1–12; Communion: Matt. 5:8–10 | Composition: Matthew | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
-| Lesson: Apoc. 7:2–12 | Composition: Apocalypse | Disputed: A.D. 81–96; c. A.D. 90–100 |
+| Introit: Ps. 32:1 (Vg.; Heb. 33) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gradual: Ps. 33:10–11 (Vg.; Heb. 34) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Superscription setting: David’s flight to Achis, king of Geth; Geth, at the Philistine court | A.M. 2944 (Haydock edition reporting Ussher) |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Offertory: Wis. 3:1–3 | Composition: Wisdom; Alexandria in Gigot’s account | Disputed: In or after the time of Ptolemy IV Philopator (221–204 B.C.); In or after the time of Ptolemy VII Physicon (145–117 B.C.) |
+| Gospel: Matt. 5:1–12 | Narrated event: Jesus teaches the Beatitudes on an unnamed mountain in Galilee | Date unresolved |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Communion: Matt. 5:8–10 | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Alleluia: Matt. 11:28 | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Lesson: Apoc. 7:2–12 | Composition: Apocalypse; seer on Patmos; heavenly scenes are visions | Disputed: A.D. 81–96; c. A.D. 90–100 |
 
 Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
@@ -700,6 +704,6 @@ The two composition dates are those of Christian Van den Biesen’s “Apocalyps
 
 - *New American Bible, Revised Edition*, introduction to the Psalms (USCCB website), summarized.
 
-**Last revised (UTC):** 2026-11-03T21:06:51Z
+**Last revised (UTC):** 2026-11-04T03:13:49Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

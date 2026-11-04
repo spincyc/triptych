@@ -209,11 +209,17 @@ body:is([data-print-type="server-guide"], [data-print-type="server-cards"]) {fon
 [data-print-type="server-guide"] .server-align-left { text-align: left; }
 
 /* Finite canonical table proportions from the owning source schemas. */
+[data-web-print-paper] table.print-table-width-70 { width: 70%; }
+[data-web-print-paper] table.print-table-width-74 { width: 74%; }
 [data-web-print-paper] table.print-table-width-83 { width: 83%; }
+[data-web-print-paper] table.print-table-width-84 { width: 84%; }
 [data-web-print-paper] table.print-table-width-85 { width: 85%; }
+[data-web-print-paper] table.print-table-width-86 { width: 86%; }
 [data-web-print-paper] table.print-table-width-87 { width: 87%; }
+[data-web-print-paper] table.print-table-width-90 { width: 90%; }
 [data-web-print-paper] table.print-table-width-92 { width: 92%; }
 [data-web-print-paper] table.print-table-width-93 { width: 93%; }
+[data-web-print-paper] table.print-table-width-94 { width: 94%; }
 [data-web-print-paper] table.print-table-width-95 { width: 95%; }
 [data-web-print-paper] table.print-table-width-96 { width: 96%; }
 [data-web-print-paper] col.print-column-width-7 { width: 7%; }
@@ -225,15 +231,30 @@ body:is([data-print-type="server-guide"], [data-print-type="server-cards"]) {fon
 [data-web-print-paper] col.print-column-width-13 { width: 13%; }
 [data-web-print-paper] col.print-column-width-14 { width: 14%; }
 [data-web-print-paper] col.print-column-width-15 { width: 15%; }
+[data-web-print-paper] col.print-column-width-16 { width: 16%; }
 [data-web-print-paper] col.print-column-width-17 { width: 17%; }
 [data-web-print-paper] col.print-column-width-18 { width: 18%; }
 [data-web-print-paper] col.print-column-width-19 { width: 19%; }
 [data-web-print-paper] col.print-column-width-20 { width: 20%; }
 [data-web-print-paper] col.print-column-width-21 { width: 21%; }
+[data-web-print-paper] col.print-column-width-23 { width: 23%; }
+[data-web-print-paper] col.print-column-width-24 { width: 24%; }
 [data-web-print-paper] col.print-column-width-25 { width: 25%; }
 [data-web-print-paper] col.print-column-width-26 { width: 26%; }
 [data-web-print-paper] col.print-column-width-27 { width: 27%; }
+[data-web-print-paper] col.print-column-width-28 { width: 28%; }
+[data-web-print-paper] col.print-column-width-30 { width: 30%; }
 [data-web-print-paper] col.print-column-width-31 { width: 31%; }
+[data-web-print-paper] col.print-column-width-32 { width: 32%; }
 [data-web-print-paper] col.print-column-width-34 { width: 34%; }
+[data-web-print-paper] col.print-column-width-35 { width: 35%; }
+[data-web-print-paper] col.print-column-width-38 { width: 38%; }
+[data-web-print-paper] col.print-column-width-40 { width: 40%; }
+[data-web-print-paper] col.print-column-width-42 { width: 42%; }
+[data-web-print-paper] col.print-column-width-56 { width: 56%; }
+[data-web-print-paper] col.print-column-width-68 { width: 68%; }
+[data-web-print-paper] col.print-column-width-69 { width: 69%; }
+[data-web-print-paper] col.print-column-width-70 { width: 70%; }
+[data-web-print-paper] col.print-column-width-86 { width: 86%; }
 body[data-print-type="plates"] { font-size: 10pt; }
 [data-print-type="plates"] .dictionary-title > .source-minipage { width: 30%; }

@@ -32,24 +32,99 @@
 
 *Canonical order governs; proper rows give inherited composition data under Location and Date, narrated-event rows locate the episode, spanning rows distinguish tradition from historical judgment, and Psalm numbers follow the Vulgate with modern numbers in parentheses.*
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:----------|:-------------|:------------------------|:-----------|
-| **Gradual** | Ps. 8:2 (modern 8:2) | Kingdom of Israel; exact place unrecorded | c. 1000 BC |
-| The superscription traditionally attributes the hymn to David but fixes no life stage, writing site, or first performance. Israel receives its praise of the Creator and human dignity in worship; modern author, place, and date remain unknown (Ps. 8 and notes, *NABRE*). |  |  |  |
-| **Offertory** | Ps. 18:9–12 (modern 19:9–12) | Kingdom of Israel; exact place unrecorded | c. 1000 BC |
-| The superscription names David but no episode or writing site. Israel’s worshiping community receives the poem’s movement from creation’s witness to the Lord’s instruction and the servant’s cleansing; modern authorship, place, and date are not securely recoverable (Ps. 19 and notes, *NABRE*). |  |  |  |
-| **Introit** | Ps. 53:3, 6–7 (modern 54) | Wilderness of Ziph, Judah (narrated setting) | c. 1010 BC |
-| The title associates the prayer with the Ziphites’ reports to Saul during David’s pre-royal flight (1 Sam. 23:19; 26:1). It supplies an inherited narrative horizon, not a recovered writing desk; Israel later receives the lament in worship, while modern author, place, and date remain uncertain. |  |  |  |
-| **Alleluia** | Ps. 58:2 (modern 59:2) | David’s house in Saul’s territory (narrated setting) | c. 1010 BC |
-| The title links the lament to Saul’s agents watching David’s house to kill him (1 Sam. 19:11), before his flight toward Samuel at Ramah. This inherited pre-royal horizon does not prove composition place or date. Israel later receives the lament in worship; its first liturgical audience and modern historical coordinates remain unknown. |  |  |  |
-| **Gospel** | Luke 19:41–47 | Achaia (present-day Greece), in ancient tradition | c. AD 60 |
-| *Narrated event* | Luke 19:28–48 | Mount of Olives, Jerusalem, and the Temple | Final ministry, c. AD 29–30 |
-| Tradition identifies St. Luke, the Antiochene physician and Pauline companion, writing in Achaia. Modern Catholic orientation commonly dates the final Gospel about AD 80–90 for a substantially Gentile Christian audience outside Palestine but cannot securely name its city. The narrated approach, tears, siege oracle, Temple correction, and daily teaching remain distinct from composition and from the later AD 70 siege (Luke introduction and 19, *NABRE*). |  |  |  |
-| **Communion** | John 6:57 in the missal’s numbering | Ephesus (present-day Türkiye), in ancient tradition | Late first century |
-| *Narrated event* | John 6:1–71 | Galilee and the synagogue at Capernaum | Galilean ministry, c. AD 29 |
-| Ancient tradition identifies John the Apostle at Ephesus; modern Catholic orientation commonly places the Gospel’s final form near the end of the first century while preserving debate about its compositional stages and first audience. John locates the discourse after the Galilean feeding and, at 6:59, in Capernaum (John introduction and 6, *NABRE*). |  |  |  |
-| **Epistle** | 1 Cor. 10:6–13 | Ephesus (present-day Türkiye) | c. AD 56 |
-| St. Paul writes during his third missionary journey to the mixed Jewish and Gentile church he founded at Corinth. Within the idol-meal dispute of chapters 8–10, he calls the wilderness generation “our fathers,” applies their history to the baptized, and proceeds from warning to the Eucharistic cup, bread, and one body (1 Corinthians introduction and 8–10, *NABRE*). |  |  |  |
+<table style="width:83%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Proper</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Gradual</strong></td>
+<td style="text-align: left;">Ps. 8:2 (modern 8:2)</td>
+<td style="text-align: left;">Kingdom of Israel; exact place unrecorded</td>
+<td style="text-align: left;">c. 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The superscription traditionally attributes the hymn to David but fixes no life stage, writing site, or first performance. Israel receives its praise of the Creator and human dignity in worship; modern author, place, and date remain unknown (Ps. 8 and notes, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Offertory</strong></td>
+<td style="text-align: left;">Ps. 18:9–12 (modern 19:9–12)</td>
+<td style="text-align: left;">Kingdom of Israel; exact place unrecorded</td>
+<td style="text-align: left;">c. 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The superscription names David but no episode or writing site. Israel’s worshiping community receives the poem’s movement from creation’s witness to the Lord’s instruction and the servant’s cleansing; modern authorship, place, and date are not securely recoverable (Ps. 19 and notes, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Introit</strong></td>
+<td style="text-align: left;">Ps. 53:3, 6–7 (modern 54)</td>
+<td style="text-align: left;">Wilderness of Ziph, Judah (narrated setting)</td>
+<td style="text-align: left;">c. 1010 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title associates the prayer with the Ziphites’ reports to Saul during David’s pre-royal flight (1 Sam. 23:19; 26:1). It supplies an inherited narrative horizon, not a recovered writing desk; Israel later receives the lament in worship, while modern author, place, and date remain uncertain.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alleluia</strong></td>
+<td style="text-align: left;">Ps. 58:2 (modern 59:2)</td>
+<td style="text-align: left;">David’s house in Saul’s territory (narrated setting)</td>
+<td style="text-align: left;">c. 1010 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title links the lament to Saul’s agents watching David’s house to kill him (1 Sam. 19:11), before his flight toward Samuel at Ramah. This inherited pre-royal horizon does not prove composition place or date. Israel later receives the lament in worship; its first liturgical audience and modern historical coordinates remain unknown.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gospel</strong></td>
+<td style="text-align: left;">Luke 19:41–47</td>
+<td style="text-align: left;">Achaia (present-day Greece), in ancient tradition</td>
+<td style="text-align: left;">c. AD 60</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Narrated event</em></td>
+<td style="text-align: left;">Luke 19:28–48</td>
+<td style="text-align: left;">Mount of Olives, Jerusalem, and the Temple</td>
+<td style="text-align: left;">Final ministry, c. AD 29–30</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Tradition identifies St. Luke, the Antiochene physician and Pauline companion, writing in Achaia. Modern Catholic orientation commonly dates the final Gospel about AD 80–90 for a substantially Gentile Christian audience outside Palestine but cannot securely name its city. The narrated approach, tears, siege oracle, Temple correction, and daily teaching remain distinct from composition and from the later AD 70 siege (Luke introduction and 19, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Communion</strong></td>
+<td style="text-align: left;">John 6:57 in the missal’s numbering</td>
+<td style="text-align: left;">Ephesus (present-day Türkiye), in ancient tradition</td>
+<td style="text-align: left;">Late first century</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Narrated event</em></td>
+<td style="text-align: left;">John 6:1–71</td>
+<td style="text-align: left;">Galilee and the synagogue at Capernaum</td>
+<td style="text-align: left;">Galilean ministry, c. AD 29</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Ancient tradition identifies John the Apostle at Ephesus; modern Catholic orientation commonly places the Gospel’s final form near the end of the first century while preserving debate about its compositional stages and first audience. John locates the discourse after the Galilean feeding and, at 6:59, in Capernaum (John introduction and 6, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Epistle</strong></td>
+<td style="text-align: left;">1 Cor. 10:6–13</td>
+<td style="text-align: left;">Ephesus (present-day Türkiye)</td>
+<td style="text-align: left;">c. AD 56</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">St. Paul writes during his third missionary journey to the mixed Jewish and Gentile church he founded at Corinth. Within the idol-meal dispute of chapters 8–10, he calls the wilderness generation “our fathers,” applies their history to the baptized, and proceeds from warning to the Eucharistic cup, bread, and one body (1 Corinthians introduction and 8–10, <em>NABRE</em>).</td>
+</tr>
+</tbody>
+</table>
 
 ## The Appointed Formulary in Full
 

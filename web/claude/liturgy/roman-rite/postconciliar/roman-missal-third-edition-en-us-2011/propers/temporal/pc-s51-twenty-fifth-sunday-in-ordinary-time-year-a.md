@@ -445,25 +445,25 @@ Each passage the Mass reads or sings from Scripture, and each biblical basis an 
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Entrance Antiphon, identified basis | Ps 37 (36):39–40 | No place named in the verses | **Composition**: Before c. 165 B.C. |
+| Entrance Antiphon, identified basis | Ps 37 (36):39–40 | No place named in the verses | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 The official ICEL Antiphonary identifies these verses as the basis of the composed antiphon; the Missal itself prints no locator. The relation is identified basis, not adaptation. The date is the Psalter’s common critical composition bound, not a date for this psalm or for the antiphon.
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Communion Antiphon, first option | Ps 119 (118):4–5 | No place named in the verses | **Composition**: Before c. 165 B.C. |
+| Communion Antiphon, first option | Ps 119 (118):4–5 | No place named in the verses | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
-The opening strophe of the alphabetical psalm of the law; the verses name no author and no place, and no traditional date is held for them. The date is the common critical composition bound in the NABRE Psalms introduction, not a precise date for this psalm or for the Psalter’s assembly.
-
-| **Textual unit** | **Citation** | **Location** | **Date** |
-|:---|:---|:---|:---|
-| Responsorial Psalm | Ps 145 (144):2–3, 8–9, 17–18; response v. 18a | No place named | **Composition**: Before c. 165 B.C. |
-
-Headed in the Douay–Rheims “Praise, for David himself” (v. 1): an attribution by title, with no traditional date attached. An alphabetical hymn to “God my king”. The date is the Psalter’s critical boundary only.
+The opening strophe of the alphabetical psalm of the law; the verses name no author or place. Haydock reports a general attribution to David with competing occasions; the regnal era identifies the attributed figure. The separate date is the common critical composition bound in the NABRE Psalms introduction, not a precise date for this psalm or for the Psalter’s assembly.
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| First Reading | Isa 55:6–9 | Traditional ministry: Juda and Jerusalem (1:1); critical horizon: Babylonian exile; writing site unestablished | **Traditional attribution**: Isaias (ministry in Souvay’s traditional account), B.C. 740–701. **Prophecy given**: Toward the end of the Babylonian exile. |
+| Responsorial Psalm | Ps 145 (144):2–3, 8–9, 17–18; response v. 18a | No place named | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
+
+Headed in the Douay–Rheims “Praise, for David himself” (v. 1): an attribution by title, oriented by David’s regnal era in Corbett’s usual chronology. An alphabetical hymn to “God my king”. The occasion remains unresolved; the composition bound is the Psalter’s critical boundary.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
+| First Reading | Isa 55:6–9 | Traditional ministry: Juda and Jerusalem (1:1); critical horizon: Babylonian exile; writing site unestablished | **Traditional attribution**: Isaias (ministry in Souvay’s traditional account), B.C. 740–701. **Prophecy given**: The prophetic activity behind Isaiah 40-55 in the NABRE introduction, toward the end of the Babylonian exile. |
 
 Traditional attribution: the prophet Isaias; the range shown is the era the *Catholic Encyclopedia* (1910) gives his ministry, from the closing year of Ozias to the apparent date of his latest prophecies. The article’s tentative collection hypothesis concerns chapters 1–35, not this chapter or the whole book. It treats chapters 54–55 under the heading “Second Isaias” and reports the contention of most modern non-Catholic scholars that those chapters come from an author “living towards the close of the Babylonian Captivity”, against which it sets the Pontifical Biblical Commission’s decision of 28 June 1908. The separate critical horizon comes from the introduction to Isaiah in the New American Bible Revised Edition (NABRE), which generally attributes chapters 40–55 to an anonymous poet prophesying toward the end of the Babylonian exile. That is a horizon for the prophecy, not a date for the writing or final assembly of the book. The exile is the prophetic horizon, not proof of an exact place of writing.
 
@@ -485,7 +485,7 @@ Traditional attribution: St John the Apostle. The *Catholic Encyclopedia* gives
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Alleluia verse (its basis) | cf. Acts 16:14b, an adaptation | Event: Philippi, “the chief city of part of Macedonia, a colony” (16:12), by the riverside on the sabbath (16:13) | **Event** – disputed: A.D. 50–53; A.D. 51–54. **Composition**: c. A.D. 64. |
+| Alleluia verse (its basis) | cf. Acts 16:14b, an adaptation | Event: Philippi, “the chief city of part of Macedonia, a colony” (16:12), by the riverside on the sabbath (16:13) | **Event** – disputed: St Paul’s Second Missionary Journey, A.D. 50–53; St Paul’s Second Missionary Journey, A.D. 51–54. **Composition**: c. A.D. 64. |
 
 *Narrated event: the conversion of Lydia during St Paul’s second missionary journey (Acts 15:36–18:22).*
 
@@ -598,6 +598,10 @@ Traditional attribution: St Paul, writing from captivity. The first figure is t
 
 - United States Conference of Catholic Bishops, *New American Bible, Revised Edition*, introductions to [Isaiah](https://bible.usccb.org/bible/isaiah/0), [Psalms](https://bible.usccb.org/bible/psalms/0) and [Matthew](https://bible.usccb.org/bible/matthew/0), registered 21 September 2026 web state (summarized, with brief source phrases).
 
-**Last revised (UTC):** 2026-10-01T22:25:46Z
+- George Leo Haydock, *The Holy Bible, Douay–Rheims with Commentary*, Feeney Memorial edition (Loreto, 2014), Ps 118:1, note continued on p. 781: received Davidic attribution and competing occasions.
+
+- John Corbett, “David, King”, *The Catholic Encyclopedia*, vol. 4 (1908), p. 642: the usual chronology of David’s reign.
+
+**Last revised (UTC):** 2026-11-04T03:34:08Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

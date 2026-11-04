@@ -18,21 +18,65 @@ These readings converge in Christ, who gives what his people cannot provide for 
 
 The Gospel may end with the gathering of the guests or continue through the judgment of the garment. Communion may be accompanied by the psalm of those who seek the Lord or by John’s promise of likeness through vision. These alternatives make a real difference: the short Gospel does not proclaim the garment scene, and the Johannine Communion speaks explicitly of a fulfillment still to come. The complete set of appointments follows.
 
-| **Textual unit** | **Text / citation** |
-|:---|:---|
-| **Introductory Rites** |  |
-| Entrance | *Si iniquitates observaveris*; Ps 130 (Vulgate 129):3–4, biblical basis. Missal-antiphon route. |
-| Collect | *Tua nos, quaesumus, Domine, gratia*; grace and good action. |
-| **Liturgy of the Word** |  |
-| First reading | Is 25:6–10a; the feast and the end of death. |
-| Responsorial Psalm | Ps 23 (Vulgate 22):1–3a, 3b–4, 5, 6; response 6cd. |
-| Second reading | Phil 4:12–14, 19–20; want, abundance and fellowship. |
-| Acclamation | Alleluia; cf. Eph 1:17–18, an adapted prayer for illumination. |
-| Gospel | Mt 22:1–14; **or short form**, 22:1–10. The garment belongs only to the long form. |
-| **Liturgy of the Eucharist and Communion** |  |
-| Prayer over the Offerings | *Suscipe, Domine, fidelium preces*; offerings, prayer and heavenly glory. |
-| Communion | *Divites eguerunt*, cf. Ps 34 (Vulgate 33):11; **or** *Cum apparuerit Dominus*, 1 Jn 3:2. |
-| Prayer after Communion | *Maiestatem tuam, Domine*; sacramental nourishment and participation in divine life. |
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance</td>
+<td style="text-align: left;"><em>Si iniquitates observaveris</em>; Ps 130 (Vulgate 129):3–4, biblical basis. Missal-antiphon route.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Tua nos, quaesumus, Domine, gratia</em>; grace and good action.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First reading</td>
+<td style="text-align: left;">Is 25:6–10a; the feast and the end of death.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps 23 (Vulgate 22):1–3a, 3b–4, 5, 6; response 6cd.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second reading</td>
+<td style="text-align: left;">Phil 4:12–14, 19–20; want, abundance and fellowship.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Acclamation</td>
+<td style="text-align: left;">Alleluia; cf. Eph 1:17–18, an adapted prayer for illumination.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Mt 22:1–14; <strong>or short form</strong>, 22:1–10. The garment belongs only to the long form.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist and Communion</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over the Offerings</td>
+<td style="text-align: left;"><em>Suscipe, Domine, fidelium preces</em>; offerings, prayer and heavenly glory.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion</td>
+<td style="text-align: left;"><em>Divites eguerunt</em>, cf. Ps 34 (Vulgate 33):11; <strong>or</strong> <em>Cum apparuerit Dominus</em>, 1 Jn 3:2.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Maiestatem tuam, Domine</em>; sacramental nourishment and participation in divine life.</td>
+</tr>
+</tbody>
+</table>
 
 The three orations are identified by their Latin openings; their approved English is not reproduced. The Prayer over the Offerings also lacks an inspected exact U.S. English exemplar. No unique Preface, Preparation chant, Eucharistic Prayer insertion, Sequence or concluding formula is appointed in the inspected Sunday block. Open chant and ritual choices remain unselected; the liturgical-resolution appendix identifies their governing rubrics.
 

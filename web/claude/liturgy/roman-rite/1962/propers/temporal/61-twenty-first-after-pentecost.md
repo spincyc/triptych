@@ -528,21 +528,53 @@ Each reading meets a demanding feature of the formulary that the others leave in
 
 ## Scriptural Date and Location {#sec:date-location}
 
-Each passage the Mass reads or sings from Scripture, in canonical order, with what is dated, where it belongs, and the date the Scripture chronology corpus gives for it. A passage whose parts are dated differently has a row for each part; rows that share one answer name every element that uses it. The notes beneath give each passage’s setting, attribution and dating evidence.
+The table groups each appointed passage with its dated subjects. The notes below give its setting, attribution and dating evidence.
 
-| **Passage** | **Occurrence and place** | **Date** |
+| **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Introit: Esth 13:9–11 | Composition: The Book of Esther. Written in Persia, as the article “Esther” in the Catholic Encyclopedia holds; the story is set at the Persian court in Susa (Esth 1:2), and Mardochai’s prayer stands in the Greek chapters (13:8–18). | B.C. 465–425 (Conjectural early dating; later date possible) |
-| Offertory: Job 1:1, Job 1:12, Job 2:6-7 | Composition: The Book of Job. Place of writing unknown; the story is set in the land of Hus (Job 1:1), which Lam 4:21 joins to Edom. | Probably sometime between the seventh and fifth centuries B.C. |
-| Introit: Ps 118:1; Gradual: Psalm 89:1-2; Communion: Psalm 118:81, 84, 86 | Historical setting. No psalm names an occasion or a place; the unsung title of Ps 89 names Moses, and Ps 118 names no author. | Occasion date unresolved |
-| Introit: Ps 118:1; Gradual: Psalm 89:1-2; Alleluia: Psalm 113:1; Communion: Psalm 118:81, 84, 86 | Composition: Psalms. The Psalter as a collection; no individual psalm is dated, and no place of writing is named. | Before c. 165 B.C. |
-| Alleluia: Psalm 113:1 | Retrospective event: The Exodus from Egypt. The psalm remembers Israel going out of Egypt and through the sea (Ps 113:1–3); the years are reckoned from the founding of the Temple (3 Kgs 6:1). | Preferred: Temple begun in the 480th year after the Exodus (Vulgate); alternative: Temple begun in the 440th year after the Exodus (Septuagint) |
-| Introit: Ps 118:1; Communion: Psalm 118:81, 84, 86 | Traditional attribution: David’s reign. David, king in Jerusalem, to whom tradition attributes Ps 118; the reign dates David, not the psalm. | Disputed: B.C. 1055–1015 |
-| Gospel: Matthew 18:23-35 | Event. Jesus tells the parable to his disciples at Capharnaum in Galilee (Mt 17:23; 18:1); its king and servants are characters of a parable. | Date unresolved |
-| Gospel: Matthew 18:23-35 | Composition: The Gospel of St Matthew. St Matthew writes in Palestine, by the tradition the Catholic Encyclopedia reports. | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
-| Gospel: Matthew 18:23-35 | Composition (Catholic critical chronology, for comparison): The Greek Gospel of Matthew in the NABRE introduction. Writing place: Antioch in Syria, which the NABRE introduction offers as a plausible suggestion. | Post-A.D. 70 date |
-| Epistle: Ephesians 6:10-17 | Composition: The Epistle to the Ephesians. Paul writes in chains (Eph 6:20), at Rome or Caesarea, to Ephesus or to a group of churches. | Disputed: A.D. 58–63; A.D. 61 |
-| Epistle: Ephesians 6:10-17 | Composition (Catholic critical chronology, for comparison): Ephesians under the later-disciple hypothesis (approximate). A later disciple developing Paul’s thought, as one hypothesis the NABRE introduction offers; no place is given. | Disputed: c. A.D. 80–100 |
+| Introit: Esth 13:9–11 | Composition: Esther; story at Susa; writing in Persia conjectured | B.C. 465–425 (Conjectural early dating; later date possible) |
+| Offertory: Job 1:1, Job 1:12, Job 2:6–7 | Composition: Job; story in Hus; writing site unspecified | Probably sometime between the seventh and fifth centuries B.C. |
+| Gradual: Ps. 89:1–2 (Vg.; Heb. 90) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Alleluia: Ps. 113:1 (Vg.; Heb. 114) | Retrospective event: The Exodus from Egypt; departure from Egypt; interval to Jerusalem’s Temple | Preferred: Temple begun in the 480th year after the Exodus (Vulgate); alternative: Temple begun in the 440th year after the Exodus (Septuagint) |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Introit: Ps 118:1 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion: Ps. 118:81, 84, 86 (Vg.; Heb. 119) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gospel: Matt. 18:23–35 | Narrated event: Jesus tells the parable of the unforgiving servant; Capharnaum by narrative continuity | Date unresolved |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+|  | Composition, Catholic critical comparison: Greek Matthew; Antioch suggested | Post-A.D. 70 date |
+| Epistle: Eph. 6:10–17 | Composition: Ephesians; Rome or Caesarea; recipients in Asia Minor | Disputed: A.D. 58–63; A.D. 61 |
+|  | Composition, Catholic critical comparison: Ephesians (later-disciple hypothesis) | Disputed: c. A.D. 80–100 |
+
+Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
+
+##### Setting notes.
+
+**Introit: Esth 13:9–11**. Written in Persia, as the article “Esther” in the Catholic Encyclopedia holds; the story is set at the Persian court in Susa (Esth 1:2), and Mardochai’s prayer stands in the Greek chapters (13:8–18).
+
+**Offertory: Job 1:1, Job 1:12, Job 2:6-7**. Place of writing unknown; the story is set in the land of Hus (Job 1:1), which Lam 4:21 joins to Edom.
+
+**Introit: Ps 118:1; Gradual: Psalm 89:1-2; Communion: Psalm 118:81, 84, 86**. No psalm names an occasion or a place; the unsung title of Ps 89 names Moses, and Ps 118 names no author.
+
+**Introit: Ps 118:1; Gradual: Psalm 89:1-2; Alleluia: Psalm 113:1; Communion: Psalm 118:81, 84, 86**. The Psalter as a collection; no individual psalm is dated, and no place of writing is named.
+
+**Alleluia: Psalm 113:1**. The psalm remembers Israel going out of Egypt and through the sea (Ps 113:1–3); the years are reckoned from the founding of the Temple (3 Kgs 6:1).
+
+**Introit: Ps 118:1; Communion: Psalm 118:81, 84, 86**. David, king in Jerusalem, to whom tradition attributes Ps 118; the reign dates David, not the psalm.
+
+**Gospel: Matthew 18:23-35**. Jesus tells the parable to his disciples at Capharnaum in Galilee (Mt 17:23; 18:1); its king and servants are characters of a parable.
+
+**Gospel: Matthew 18:23-35**. St Matthew writes in Palestine, by the tradition the Catholic Encyclopedia reports.
+
+**Gospel: Matthew 18:23-35**. Writing place: Antioch in Syria, which the NABRE introduction offers as a plausible suggestion.
+
+**Epistle: Ephesians 6:10-17**. Paul writes in chains (Eph 6:20), at Rome or Caesarea, to Ephesus or to a group of churches.
+
+**Epistle: Ephesians 6:10-17**. A later disciple developing Paul’s thought, as one hypothesis the NABRE introduction offers; no place is given.
 
 ### Esther 13:9–11, the Introit {#sec:date-esther}
 
@@ -652,6 +684,6 @@ Paul names himself (1:1) and writes as a prisoner (3:1; 4:1) and “an ambassado
 
 - United States Conference of Catholic Bishops, *New American Bible, Revised Edition*, introductions to Job, the Psalms, Matthew and Ephesians, on their dating; summarised, not reproduced.
 
-**Last revised (UTC):** 2026-10-15T17:54:00Z
+**Last revised (UTC):** 2026-11-04T03:13:49Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

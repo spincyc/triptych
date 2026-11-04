@@ -238,6 +238,104 @@ test('bounded discovery uses the complete registry on the fourth attempt', async
   assert.equal(f.peakBlobs(), 4, 'retired worker resources are released before every retry');
 });
 
+test('font hints expand an actual retry but never trigger one or weaken missing-file checks', async () => {
+  for (const mode of ['valid', 'absent', 'unknown', 'oversized', 'hint-only', 'missing-invalid']) {
+    const f = fixture({ runtime: deferredPackages, compile: (data, worker) => {
+      if (worker.index !== 0) return;
+      const ids = Array.from(worker.deferred);
+      data.nativeFontHints = mode === 'absent' ? undefined : mode === 'unknown' ? ['unowned'] :
+        mode === 'oversized' ? Array(5).fill(ids[1]) : [ids[1], ids[1]];
+      data.nativeMissing = mode === 'hint-only' ? [] : mode === 'missing-invalid' ? ['unowned'] : [ids[0]];
+    } });
+    if (mode === 'missing-invalid') {
+      await assert.rejects(f.generate(f.options), /complete package inventory/);
+    } else {
+      await f.generate(f.options);
+      assert.equal(f.workers.length, mode === 'hint-only' ? 1 : 2);
+      assert.equal(f.fetches.filter(url => /font-\d\.bin$/.test(url)).length,
+        mode === 'hint-only' ? 0 : mode === 'valid' ? 2 : 1);
+    }
+    assert.ok(f.workers.every(worker => worker.terminated));
+    assert.equal(f.liveBlobs.size, 0);
+  }
+});
+
+test('corruption or cancellation of a hinted font cannot publish the provisional output', async () => {
+  for (const cancel of [false, true]) {
+    const controller = new AbortController();
+    const caches = memoryCaches();
+    const f = fixture({ caches, runtime: deferredPackages, compile: (data, worker) => {
+      if (worker.index !== 0) return;
+      const ids = Array.from(worker.deferred);
+      data.nativeMissing = [ids[0]];
+      data.nativeFontHints = [ids[1]];
+    }, fetch: (url, options, respond) => {
+      if (!url.endsWith('/font-1.bin')) return respond();
+      if (cancel) { controller.abort(); throw new DOMException('Cancelled', 'AbortError'); }
+      return new Response('changed hinted font');
+    } });
+    await assert.rejects(f.generate({ ...f.options, signal: controller.signal }),
+      error => cancel ? error.name === 'AbortError' : /changed/.test(error.message));
+    assert.ok(f.workers.every(worker => worker.terminated));
+    assert.equal(caches.entries.size, 0);
+  }
+});
+
+test('native font hints join only accessed metrics and maps with known deferred Type1 bodies', () => {
+  const bridge = source.match(/const WORKER_BRIDGE = String\.raw`([\s\S]*?)`;/)[1];
+  for (const mode of ['mapped', 'unopened', 'unreadable', 'oversized']) {
+    const messages = [], bodies = new Map(), reads = [];
+    const nodes = new Map();
+    const context = { WORKROOT: '/work', texlive200: {},
+      PATH_FS: { resolve: path => path }, UTF8ToString: value => value, kpse_find_file_impl() {},
+      self: { onmessage() {}, postMessage: value => messages.push(value) },
+      FS: {
+        chdir() {},
+        writeFile(path, bytes) {
+          bodies.set(path, bytes);
+          nodes.set(path, { path, node_ops: { getattr: () => ({ size: bytes.byteLength, blksize: 4096 }) } });
+        },
+        lookupPath: path => ({ node: nodes.get(path) }),
+        open: path => ({ node: { path } }), getPath: node => node.path,
+        stat: path => ({ size: mode === 'oversized' ? 16 * 1024 * 1024 + 1 : bodies.get(path).byteLength }),
+        readFile(path) {
+          reads.push(path);
+          if (mode === 'unreadable') throw Error('Map unavailable');
+          return new TextDecoder().decode(bodies.get(path));
+        }
+      }
+    };
+    vm.runInContext(bridge, vm.createContext(context));
+    const map = encode([
+      '% regular Ignored <unrelated.pfb',
+      'regular Original " enc ReEncodeFont " <encoding.enc <roman.pfb',
+      'alias Original <roman.pfb',
+      'bold OriginalBold <<bold.pfb',
+      'unused Unused <unrelated.pfb',
+      'regular Unknown <unregistered.pfb',
+      'regular Broken <not-a-font.otf'
+    ].join('\n'));
+    const id = name => hash(encode(name)) + ':123';
+    context.self.onmessage({ data: { cmd: 'triptych-preload', final: true, payloads: [{ id: 'map', data: map.buffer }],
+      files: [{ format: 11, filename: 'fonts.map', fileId: 'map' },
+        ...['roman.pfb', 'bold.pfb', 'unrelated.pfb'].map(filename => ({ format: 32, filename,
+          fileId: id(filename), deferred: true }))] } });
+    context.self.onmessage({ data: { cmd: 'triptych-configure', cwd: 'src/example', texinputs: '' } });
+    assert.equal(messages.at(-1).nativeInventory, true);
+    for (const name of ['regular', 'alias', 'bold']) context.FS.open('/tex/' + name + '.tfm');
+    if (mode !== 'unopened') context.FS.open('/tex/fonts.map');
+    context.self.postMessage({ cmd: 'compile' });
+    assert.equal(messages.at(-1).nativeFontHints.length, 0, 'hints alone do not invalidate output');
+    context.FS.open('/tex/roman.pfb');
+    context.self.postMessage({ cmd: 'compile' });
+    const result = messages.at(-1);
+    assert.deepEqual(Array.from(result.nativeMissing), [id('roman.pfb')]);
+    assert.deepEqual(Array.from(result.nativeFontHints).sort(), mode === 'mapped' ? [id('roman.pfb'), id('bold.pfb')].sort() : []);
+    assert.equal(result.nativeInventory, true);
+    assert.equal(reads.length, mode === 'unopened' || mode === 'oversized' ? 0 : 1);
+  }
+});
+
 test('split font-group packs arrive together without fetching unrelated fonts', async () => {
   const f = fixture({ runtime: (runtime, pin) => {
     deferredPackages(runtime, pin);

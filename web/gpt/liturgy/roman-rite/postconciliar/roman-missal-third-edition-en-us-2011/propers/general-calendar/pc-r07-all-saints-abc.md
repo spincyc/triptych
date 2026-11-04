@@ -435,11 +435,13 @@ Composition, narrated event and remembered setting answer different historical q
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
 | Responsorial Psalm: Ps. 24:1bc–2,3–4ab,5–6 (Heb.; Vg. 23), Cf. Psalm 24:6 (Heb.; Vg. 23) | Historical setting | Occasion date unresolved |
-| Responsorial Psalm: Ps. 24:1bc–2,3–4ab,5–6 (Heb.; Vg. 23), Cf. Psalm 24:6 (Heb.; Vg. 23) | Composition: Psalms | Before c. 165 B.C. |
-| Gospel: Matt. 5:1–12a | Narrated event: Jesus teaches the Beatitudes on a mountain | Date unresolved |
-| Gospel acclamation: Matt. 11:28; Gospel: Matt. 5:1–12a; Communion antiphon: Matt. 5:8–10 | Composition: Matthew | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
-| Second Reading: 1 John. 3:1–3 | Composition: First John | c. A.D. 90–100 |
-| First Reading: Apoc. 7:2–4,9–14 | Composition: Apocalypse | Disputed: A.D. 81–96; c. A.D. 90–100 |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Gospel: Matt. 5:1–12a | Narrated event: Jesus teaches the Beatitudes on an unnamed mountain in Galilee | Date unresolved |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Communion antiphon: Matt. 5:8–10 | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Gospel acclamation: Matt. 11:28 | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Second Reading: 1 John. 3:1–3 | Composition: First John; Ephesus probable | c. A.D. 90–100 |
+| First Reading: Apoc. 7:2–4,9–14 | Composition: Apocalypse; seer on Patmos; heavenly scenes are visions | Disputed: A.D. 81–96; c. A.D. 90–100 |
 
 Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
@@ -531,7 +533,7 @@ Chronological alternatives follow the generated canonical record and the histori
 
 - **Historical orientation.** USCCB, NABRE, “The Book of Psalms,” introduction. E. Jacquier, “Gospel of St. Matthew,” *Catholic Encyclopedia* X (1911). Walter Drum, “Epistles of Saint John,” VIII (1910). A. Durand, “The New Testament,” XIV (1912). F. Van den Biesen, “Apocalypse,” I (1907). Exact date/place discussions are cited in the historical appendix.
 
-**Last revised (UTC):** 2026-11-03T21:06:51Z
+**Last revised (UTC):** 2026-11-04T03:13:49Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

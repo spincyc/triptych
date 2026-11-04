@@ -433,37 +433,37 @@ The appointed biblical units appear below in canonical and verse order. The psal
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Introit verse | Ps 77(78):1 | Israel; instruction addressed to the people | **Composition**: Before c. 165 B.C. |
+| Introit verse | Ps 77(78):1 | Israel; instruction addressed to the people | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 The psalm teaches through Israel’s deliverances and failures and ends with David’s shepherding. Augustine hears God through the prophet; Bellarmine identifies David as immediate speaker. These interpret the voice; they date no occasion of composition. The USCCB introduction supplies the broad boundary and warns that individual psalms cannot be securely dated.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Alleluia | Ps 104(105):1 | Israel’s covenant memory; proclamation among nations | **Composition**: Before c. 165 B.C. |
+| Alleluia | Ps 104(105):1 | Israel’s covenant memory; proclamation among nations | **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 The psalm recalls covenant, Joseph, Exodus, and land. Those recalled events are distinct from the writing of the psalm and its later Christian reception. No single composition site or individual life stage is established.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Communion | Ps 118(119):4–5 | Prayer within Israel’s life under God’s law | **Composition**: Before c. 165 B.C. |
+| Communion | Ps 118(119):4–5 | Prayer within Israel’s life under God’s law | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 The speaker’s wish for directed ways belongs to the opening of an alphabetic meditation on divine instruction. Its recurring prayers, afflictions, promises, and confessions do not identify one recoverable biographical occasion. The displayed boundary does not date every constituent of the Psalter together.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Offertory | Ps 137(138):7 | Thanksgiving and trust amid hostile surroundings | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C. |
+| Offertory | Ps 137(138):7 | Thanksgiving and trust amid hostile surroundings | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 The psalm gives thanks for answered prayer and trusts God’s continuing work. Neither the named trouble nor the enemies establish an individually dated event. The Offertory’s verbal adaptation belongs to its liturgical use.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Gradual | Ps 140(141):2 | Prayer imaged through incense and evening sacrifice | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C. |
+| Gradual | Ps 140(141):2 | Prayer imaged through incense and evening sacrifice | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C. |
 
 The fuller prayer concerns speech, temptation, correction, and danger. Its sacrificial language supplies the image, not a securely located occasion of composition. Augustine’s Passion reading is distinct from the poem’s composition chronology.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Gospel | Matt 22:1–14 | Jesus teaching in the Temple, Jerusalem; traditional composition associated with Palestine | **Event**: A.D. 29 (derived). **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Composition (Catholic critical chronology, for comparison)**: The Greek Gospel of Matthew in the NABRE introduction, post-A.D. 70 date. |
+| Gospel | Matt 22:1–14 | Jesus teaching in the Temple, Jerusalem; traditional composition associated with Palestine | **Event**: The parable of the marriage feast, proposed in the Temple, A.D. 29 (derived). **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Composition (Catholic critical chronology, for comparison)**: The Greek Gospel of Matthew in the NABRE introduction, post-A.D. 70 date. |
 
 Traditional attribution names Matthew. Jacquier reports several composition proposals; Durand’s early proposal concerns a hypothesized Aramaic original and does not date the Greek rendering. The separately displayed critical comparison concerns the Greek Gospel: the USCCB introduction treats authorship and dependence on Mark as critical questions and suggests Antioch as a plausible location. The proposals concern distinguishable literary objects and arguments, not one agreed date.
 
@@ -525,7 +525,7 @@ Scriptural chronology and location
 
 : Paulin Ladeuze, “Epistle to the Ephesians,” *Catholic Encyclopedia* 5 (1909), “Date and place of composition; occasion” and destination discussion; <https://www.newadvent.org/cathen/05485a.htm>. Ferdinand Prat, “St. Paul,” vol. 11 (1911), “Chronology,” concluding table; <https://www.newadvent.org/cathen/11567b.htm>. E. Jacquier, “Gospel of St. Matthew,” vol. 10 (1911), “Date and place of composition”; <https://www.newadvent.org/cathen/10057a.htm>. Alfred Durand, “The New Testament,” vol. 14 (1912), “Origin,” Aramaic original and Greek rendering; <https://www.newadvent.org/cathen/14530a.htm>. Anthony J. Maas, “Chronology of the Life of Jesus Christ,” vol. 8 (1910), the Ninth Journey and the Tuesday of its closing week, with the article’s equation of the Roman and Christian years; <https://www.newadvent.org/cathen/08377a.htm>. John Corbett, “King David,” vol. 4 (1908), opening paragraph, the “usual chronology” of his reign; <https://www.newadvent.org/cathen/04642b.htm>. USCCB, NABRE introductions to Psalms and Matthew, consulted 28 September 2026: <https://bible.usccb.org/bible/psalms/0> and <https://bible.usccb.org/bible/matthew/0>. USCCB, NABRE introduction to Ephesians, paragraphs 3–4, destination and authorship alternatives, consulted 28 September 2026: <https://bible.usccb.org/bible/ephesians/0>. The introductions supply bounded historical judgments, not liturgical English.
 
-**Last revised (UTC):** 2026-10-01T22:25:03Z
+**Last revised (UTC):** 2026-11-04T03:34:08Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

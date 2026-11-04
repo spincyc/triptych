@@ -243,7 +243,8 @@
     });
     for (const event of ['hashchange', 'popstate', 'pagehide']) window.addEventListener(event, controls.cancel);
     root.dataset.nativePrintState = 'idle';
-    if (options.auto || new URLSearchParams(location.search).get('print') === '1') queueMicrotask(generate);
+    // A URL or installation option is not a request to run the typesetter.
+    // Retained ?print=1 links stay readable until the reader invokes Generate PDF.
     return controls;
   }
 

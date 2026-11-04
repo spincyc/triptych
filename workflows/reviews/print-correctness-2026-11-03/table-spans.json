@@ -1,0 +1,556 @@
+{
+  "schema": "triptych-source-table-span-review/v1",
+  "status": "source-and-isolated-dom-pass; final assembled-site review recorded separately",
+  "files_sha256": {
+    "tools/web-edition": "9be3fed135b8f83b7c8ca5895fa50b14bbf99fb32e74cadc44d227feef554311",
+    "scripts/web-shim.tex": "13e017f8b7dab94b226561c1d096021241ab9189be01de754f1422daeba22b41",
+    "tools/tests/test_web_edition_conversion.py": "2faaeec4d30154463efb37360b385dab0c7356bc2c4714edfd65bddc0425b27a",
+    "guidance/web-editions.md": "c5c6a035a6c29eea3d4b679727732e269bff53cb5c4b86950af137cb56985034",
+    "release/public-alpha/assets/site.css": "53ae3b2dcdbcae03e9aff296b0443afb3beb562ec75b2d30c836bf07e6f28d20",
+    "tools/tests/test_publication_reader_browser.py": "89b42620d5fedacafe48e973eb52f3fc1e04e0112b4bb931ad164b13f6bb213b",
+    "tools/tests/test_public_alpha.py": "56c8297d84be48bf331533b191cab3ea2a38881da94b5e72712b12298d53a8df"
+  },
+  "conversion_scope": {
+    "audited_multicolumn_closures": 54,
+    "regenerated_union_readers": 54,
+    "changed_readers": 44,
+    "readers_with_restored_spans": 31,
+    "original_spans_restored": 274,
+    "current_semantic_spans_preserved": 277,
+    "rendered_text_identical": 30,
+    "authorized_legacy_updates": 14,
+    "authorized_full_census_corrections": 10,
+    "source_inputs": 612,
+    "text_changes": "Fourteen legacy readers follow reviewed chronology updates; ten further authored readers repair appointments, qualifiers or canonical row order. All other union text is unchanged."
+  },
+  "implementation": "Preserve numeric source spans through the Pandoc AST; remove only empty trailing reader padding, validate row widths and retain every nonempty cell. The mobile rule lets a source-declared full-width note occupy both grid columns.",
+  "conversion_tests": {
+    "cache_independent_full_cases": 144,
+    "focused_cases": 68,
+    "exit": 0,
+    "qualification": "These initial span-converter tests predate the bounded empty-formatting-padding and curriculum-receipt delta. Current focused regression coverage and independently revalidated hashes are recorded in html-width-contract.json; the full suite is rerun after the global descriptor refresh."
+  },
+  "isolated_dom": {
+    "table_viewport_states": 100,
+    "matched_before_states": 100,
+    "span_tables": 50,
+    "full_width_chronology_checks": 364,
+    "text_cell_document_overflows": 0,
+    "qualification": "Actual locked Markdown renderer and current site CSS in bounded previews; assembled-page review is separate."
+  },
+  "source_to_dom": [
+    {
+      "web_path": "web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md",
+      "source_multicolumn_paths": [
+        "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/70-twenty-four-churches.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "4": 1
+      },
+      "site_dom_span_counts": {
+        "4": 1
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "a5767f6c33f28c9a1a48cbb31197caba11fa39dfc26c4a534ad859d408b0a5b4",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.md",
+      "source_multicolumn_paths": [
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost/format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "4": 7
+      },
+      "site_dom_span_counts": {
+        "4": 7
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "046e9791a69aac62c562cb205e9dae48bcad04a68c335484e7d78611c436b342",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.md",
+      "source_multicolumn_paths": [
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "4": 9
+      },
+      "site_dom_span_counts": {
+        "4": 9
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "2d5f943662580b22399f6d11b4ebd5d137b74c84af08622e9efc12607dbdc0b3",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.md",
+      "source_multicolumn_paths": [
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "4": 8
+      },
+      "site_dom_span_counts": {
+        "4": 8
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "ddf95766bf76d1ce0a5fd99a14b44cf838d1f290e99d77f0b95ad3f535658fa6",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.md",
+      "source_multicolumn_paths": [
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "4": 9
+      },
+      "site_dom_span_counts": {
+        "4": 9
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "5331d0711f5d47f2bd5d745ce8077dd9cbceac09b76163656b1fa3ba6869daa3",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.md",
+      "source_multicolumn_paths": [
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "4": 7
+      },
+      "site_dom_span_counts": {
+        "4": 7
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "6c5917491f1651ffcfc2a207f1f0e891a88ebc4df99291e87e98920b0efddfad",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.md",
+      "source_multicolumn_paths": [
+        "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/30-vigils-octaves-ember-rogation.tex",
+        "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/50-resumed-sundays.tex",
+        "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/60-sanctoral.tex",
+        "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/70-precedence-and-occurrence.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "3": 3,
+        "4": 2,
+        "2": 5
+      },
+      "site_dom_span_counts": {
+        "3": 3,
+        "4": 2,
+        "2": 5
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "834ae4657a83642221794c87432757d05386c731d00615aed1f23ed6274e1585",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.md",
+      "source_multicolumn_paths": [
+        "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/00-shape-of-the-action.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "4": 6
+      },
+      "site_dom_span_counts": {
+        "4": 6
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "f1a9a65d1f78274dd809aa7588ec18315df38c191454804e80043620b07485d6",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.md",
+      "source_multicolumn_paths": [
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "2": 5,
+        "4": 8
+      },
+      "site_dom_span_counts": {
+        "2": 5,
+        "4": 8
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "d706bd6c41219b9ddeea213a94b9fa197bee78617a9a2bbbbf5fe42687873b99",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.md",
+      "source_multicolumn_paths": [
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "2": 7,
+        "4": 8
+      },
+      "site_dom_span_counts": {
+        "2": 7,
+        "4": 8
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "217b3581c3989e48e44b4f7f930b1f56475ecd80b267b06a4edfcc9f837d0223",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost/main.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "4": 6
+      },
+      "site_dom_span_counts": {
+        "4": 6
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "46d2a49e792e27121ae49ac5bb3d7da57f3f6c4dcdfbe54e24919356b28cda5d",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/1962/propers/temporal/44-fourth-after-pentecost.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/44-fourth-after-pentecost/main.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "4": 7
+      },
+      "site_dom_span_counts": {
+        "4": 7
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "71bfaa703809e9224892338d2b725ed90902f582cecb8ab5ce0fe43d382958da",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/main.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "4": 7
+      },
+      "site_dom_span_counts": {
+        "4": 7
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "59082da634c44dea0f896647530956784fcc8bea8d76d00f6e6086d2fc09d588",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost/sections/redevelopment/02-scriptural-date-location.tex",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost/sections/24-gospel-redevelopment.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "4": 7
+      },
+      "site_dom_span_counts": {
+        "4": 7
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "5d0e8b3608a95a823c85fd69d9ed08131b5ae31171863752afec284734d6de32",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/sections/10-date-location.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "4": 7
+      },
+      "site_dom_span_counts": {
+        "4": 7
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "20ed44fd887b6461f544cf4e9a8abba4f0b6eb29662f34ce67723aad2300bc6a",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "4": 9
+      },
+      "site_dom_span_counts": {
+        "4": 9
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "1bcc560ec035fadd21a3d039b0b7f42c891ce3b41891fad7354884be044a1c8d",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "4": 8
+      },
+      "site_dom_span_counts": {
+        "4": 8
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "35da480642532ae0f4e81bf6e45efcf54f94df91f8bb3e7714a3a421d4299cf3",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/main.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "3": 12
+      },
+      "site_dom_span_counts": {
+        "3": 12
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "3b35569024d46ee6cad70cdd1e88a9464d13c039d7cabc4a6c4c87af08073f90",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "2": 3,
+        "4": 7
+      },
+      "site_dom_span_counts": {
+        "2": 3,
+        "4": 7
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "76ecd1f4af4fd96834597d982b0443bb097d93e2f914f776d7326ff51654fc15",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-twelfth-sunday-in-ordinary-time-year-a.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "2": 3,
+        "4": 8
+      },
+      "site_dom_span_counts": {
+        "2": 3,
+        "4": 8
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "8ff48878ab5c3c6d52adeb15d9030eaec11fb0f4ea861a7f24e3fc17c98c8924",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-thirteenth-sunday-in-ordinary-time-year-a.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "2": 3,
+        "4": 8
+      },
+      "site_dom_span_counts": {
+        "2": 3,
+        "4": 8
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "279e6b9c61e7c2aa9bf611fc9cda4a0d5ebd3188d37fbd80177c40660354f2cb",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-fourteenth-sunday-in-ordinary-time-year-a.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "2": 3,
+        "4": 6
+      },
+      "site_dom_span_counts": {
+        "2": 3,
+        "4": 6
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "aba366e3b99275bf54130a937301cf18155368c7518a2993074f1a84db043d9d",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-fifteenth-sunday-in-ordinary-time-year-a.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "2": 3,
+        "4": 8
+      },
+      "site_dom_span_counts": {
+        "2": 3,
+        "4": 8
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "2d045a36ac9c6a5d4af04a0424edce054466dabc77d7a6f0817cf4e9eccb1f3b",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "2": 3,
+        "4": 7
+      },
+      "site_dom_span_counts": {
+        "2": 3,
+        "4": 7
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "b14d91b6ab4c56730ae63f749fc32a200de7121ec37c2f0c71d16fb64c43d32f",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/main.tex",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "2": 6,
+        "4": 8
+      },
+      "site_dom_span_counts": {
+        "2": 6,
+        "4": 8
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "6572d19de0425c84b3120926c06ba843d82d25ac3ebe574e2b78cc39d386375c",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "2": 6,
+        "4": 8
+      },
+      "site_dom_span_counts": {
+        "2": 6,
+        "4": 8
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "396d016ab33172c1f02d8957461bdf4708176374f3ffba071412edf17c896db1",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "2": 3,
+        "4": 7
+      },
+      "site_dom_span_counts": {
+        "2": 3,
+        "4": 7
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "e6371862b1a8042a3a786e8a5a524d4b361828a37d43458c3d661deae9e5afde",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "2": 3,
+        "4": 8
+      },
+      "site_dom_span_counts": {
+        "2": 3,
+        "4": 8
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "3ead1995b5df2d2cc5611681cb1353f3acaacf694d5ec3471159985036af9cd4",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.md",
+      "source_multicolumn_paths": [
+        "src/common/propers-format.tex",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/01-map.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "2": 3
+      },
+      "site_dom_span_counts": {
+        "2": 3
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "8197844a86556449a2beaf4b7350b38b10c310042fa5f812a59d145df8755864",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.md",
+      "source_multicolumn_paths": [
+        "src/common/propers-format.tex",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/01-map.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "2": 3
+      },
+      "site_dom_span_counts": {
+        "2": 3
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "d0b53f76a5f7f46f000cfb4398e4571cb1a66b12a6483be0496cb42c84c38c43",
+      "unchanged_from_frozen_install": true
+    },
+    {
+      "web_path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md",
+      "source_multicolumn_paths": [
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/50-general-calendar.tex"
+      ],
+      "source_span_counts_from_marked_tex_cells": {
+        "3": 12
+      },
+      "site_dom_span_counts": {
+        "3": 12
+      },
+      "source_table_row_widths_validated": true,
+      "canonical_sha256": "b0f0283c11f9c34f9bb01ad33a5f0b69a718af359faa643f706475800c6016ca",
+      "unchanged_from_frozen_install": true
+    }
+  ],
+  "receipt_sha256": {
+    "union-install.json": "8b3f6b87dbe5384579fc2da05560019599fb0b5b7c5839b77443265abf434d20",
+    "source-to-dom-span-manifest.json": "9eb7699c6b51a9b4168db8717a006d35ca329adbd8b3b3e939aa030ca03ecf25",
+    "final-counts.json": "2e656b0cbccfcbf8b586145f5b4a803c774b4730139247d9e8b526157e298ffc"
+  },
+  "converter_delta_revalidation": {
+    "canonical_readers_regenerated": 54,
+    "all_reader_bytes_unchanged": true,
+    "span_readers": 31,
+    "spans": 277,
+    "receipt_sha256": "ae226e5456950e9009dfc989546dfe4bacf4e5a36a1a5abd31aede8fd567bdc8",
+    "scope": "The finite empty-formatting-padding repair changes the converter, not these reader bytes; prior isolated DOM evidence remains applicable. Current converter and regression hashes are recorded above and in html-width-contract.json."
+  }
+}

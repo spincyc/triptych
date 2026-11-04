@@ -8,22 +8,73 @@
 
 PC-S44-A
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:-----------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | Ps. 69:2, 6 (modern 70); an urgent plea to the Lord as helper and deliverer. |
-| Collect | *Adesto, Domine, famulis tuis*; God’s servants ask the Creator and Governor to restore and preserve what he has made. |
-| **Liturgy of the Word** |  |
-| First Reading | Isa. 55:1–3; the thirsty and penniless are invited to receive freely and to hear so that they may live. |
-| Responsorial Psalm | Ps. 145:8–9, 15–18; response from v. 16; every creature looks to God, whose hand satisfies the living. |
-| Second Reading | Rom. 8:35, 37–39; no tribulation or created power can separate those in Christ from God’s love. |
-| Gospel Acclamation | Matt. 4:4b; life depends on every word proceeding from God. |
-| Gospel | Matt. 14:13–21; Jesus receives the crowd, heals, blesses and breaks five loaves, and feeds all through the disciples. |
-| **Liturgy of the Eucharist** |  |
-| Prayer over Offerings | *Propitius, Domine, quaesumus, haec dona sanctifica*; God is asked to sanctify and accept the gifts and make the worshippers an enduring offering. |
-| Communion Antiphon A | Wis. 16:20; heavenly bread is remembered as bearing every delight and sweetness. |
-| Communion Antiphon B | John 6:35; Christ names himself the bread of life and promises an end to hunger and thirst for those who come and believe. |
-| Prayer after Communion | *Quos caelesti recreas munere*; those refreshed by the heavenly gift ask protection and worthiness for eternal redemption. |
+<table style="width:92%;">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance Antiphon</td>
+<td style="text-align: left;">Ps. 69:2, 6 (modern 70); an urgent plea to the Lord as helper and deliverer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Adesto, Domine, famulis tuis</em>; God’s servants ask the Creator and Governor to restore and preserve what he has made.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Isa. 55:1–3; the thirsty and penniless are invited to receive freely and to hear so that they may live.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps. 145:8–9, 15–18; response from v. 16; every creature looks to God, whose hand satisfies the living.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 8:35, 37–39; no tribulation or created power can separate those in Christ from God’s love.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel Acclamation</td>
+<td style="text-align: left;">Matt. 4:4b; life depends on every word proceeding from God.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Matt. 14:13–21; Jesus receives the crowd, heals, blesses and breaks five loaves, and feeds all through the disciples.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over Offerings</td>
+<td style="text-align: left;"><em>Propitius, Domine, quaesumus, haec dona sanctifica</em>; God is asked to sanctify and accept the gifts and make the worshippers an enduring offering.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon A</td>
+<td style="text-align: left;">Wis. 16:20; heavenly bread is remembered as bearing every delight and sweetness.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon B</td>
+<td style="text-align: left;">John 6:35; Christ names himself the bread of life and promises an end to hunger and thirst for those who come and believe.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Quos caelesti recreas munere</em>; those refreshed by the heavenly gift ask protection and worthiness for eternal redemption.</td>
+</tr>
+</tbody>
+</table>
 
 | **Sense** | **Synthesis** |
 |:-----------|:------------------------------------------------------|
@@ -36,27 +87,114 @@ PC-S44-A
 
 *Canonical order governs. Composition and narrated event are distinguished, and inherited attribution is not silently identified with modern historical judgment.*
 
-| **Textual unit / alternative** | **Citation** | **Location** | **Date** |
-|:------------|:-------------|:-----------------------|:--------------|
-| First Reading | Isa. 55:1–3 | Exilic audience associated with Babylon; final literary setting addresses Zion’s restoration | Sixth century BC; commonly placed near the end of the Babylonian exile |
-| The book is traditionally received under Isaiah’s name; modern study ordinarily identifies chapters 40–55 with an exilic prophetic voice. The invitation closes that collection: the displaced poor are summoned to hear, live, and receive the enduring Davidic covenant without price. |  |  |  |
-| Entrance | Ps. 69:2, 6 (modern 70) | Israelite worship; exact place unresolved | Davidic superscription; historical date uncertain |
-| A brief urgent lament adapted from Psalm 40 asks immediate aid. The Missal appoints its opening and closing pleas; its use does not establish the psalm’s original date or a cycle-specific relation to Matthew. |  |  |  |
-| Responsorial Psalm | Ps. 145:8–9, 15–18 | Israelite worship, likely Jerusalem horizon | Traditional Davidic attribution; many modern studies place final form after the exile |
-| This alphabetic hymn praises God’s kingship, compassion, justice, and care for the vulnerable. The appointed strophes place creaturely dependence and God’s open hand beside nearness to those who call in truth. |  |  |  |
-| Comm. A | Wis. 16:20 | Alexandrian Jewish setting, written in Greek | Usually late first century BC |
-| Wisdom retells manna within an address to God, contrasting Israel’s nourishment with judgments upon oppressors. The antiphon selects its richly theological description of heavenly food. |  |  |  |
-| Acclamation | Matt. 4:4b | Canonical Gospel: traditional Palestine; modern Antioch proposal remains debated | Traditionally apostolic; modern majority c. AD 80–90 |
-| Narrated event | Matt. 4:1–11 | Judean wilderness | Beginning of Jesus’ public ministry, c. AD 27–28 |
-| Jesus answers the tempter with Deuteronomy 8:3: bodily bread is real but not sufficient apart from God’s life-giving word. The acclamation prepares hearing without denying the Gospel crowd’s bodily hunger. |  |  |  |
-| Gospel | Matt. 14:13–21 | Canonical Gospel as above | As above |
-| Narrated event | Matt. 14:13–21 | A deserted place reached from the Galilean lakeshore; exact site uncertain | Galilean ministry, c. AD 28–29 |
-| After John the Baptist’s death, Jesus withdraws, receives the pursuing crowd with compassion, heals, and feeds them. Twelve baskets remain after the disciples distribute the blessed and broken loaves. |  |  |  |
-| Comm. B | John 6:35 | Canonical Gospel: traditionally associated with Ephesus; compositional history debated | Late first century |
-| Narrated event | John 6:22–59 | Capernaum synagogue after the feeding across the sea | Galilean ministry, c. AD 28–29 |
-| Within the Bread of Life discourse Christ identifies himself as the bread satisfying those who come and believe. This appointed alternative is not evidence that it was selected on the dated occurrence. |  |  |  |
-| Second Reading | Rom. 8:35, 37–39 | Written from Corinth to Christians at Rome | c. AD 56–58 |
-| Paul concludes the chapter’s movement through suffering, Spirit-aided prayer, and divine purpose. The omitted v. 36 cites persecuted Israel; the appointed conclusion names afflictions and cosmic powers while grounding victory in God’s love in Christ. |  |  |  |
+<table style="width:90%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 19%" />
+<col style="width: 34%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Entrance</td>
+<td style="text-align: left;">Ps. 69:2, 6 (modern 70)</td>
+<td style="text-align: left;">Israelite worship; exact place unresolved</td>
+<td style="text-align: left;">Davidic superscription; historical date uncertain</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">A brief urgent lament adapted from Psalm 40 asks immediate aid. The Missal appoints its opening and closing pleas; its use does not establish the psalm’s original date or a cycle-specific relation to Matthew.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps. 145:8–9, 15–18</td>
+<td style="text-align: left;">Israelite worship, likely Jerusalem horizon</td>
+<td style="text-align: left;">Traditional Davidic attribution; many modern studies place final form after the exile</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">This alphabetic hymn praises God’s kingship, compassion, justice, and care for the vulnerable. The appointed strophes place creaturely dependence and God’s open hand beside nearness to those who call in truth.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Comm. A</td>
+<td style="text-align: left;">Wis. 16:20</td>
+<td style="text-align: left;">Alexandrian Jewish setting, written in Greek</td>
+<td style="text-align: left;">Usually late first century BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Wisdom retells manna within an address to God, contrasting Israel’s nourishment with judgments upon oppressors. The antiphon selects its richly theological description of heavenly food.</td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Isa. 55:1–3</td>
+<td style="text-align: left;">Exilic audience associated with Babylon; final literary setting addresses Zion’s restoration</td>
+<td style="text-align: left;">Sixth century BC; commonly placed near the end of the Babylonian exile</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The book is traditionally received under Isaiah’s name; modern study ordinarily identifies chapters 40–55 with an exilic prophetic voice. The invitation closes that collection: the displaced poor are summoned to hear, live, and receive the enduring Davidic covenant without price.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Acclamation</td>
+<td style="text-align: left;">Matt. 4:4b</td>
+<td style="text-align: left;">Canonical Gospel: traditional Palestine; modern Antioch proposal remains debated</td>
+<td style="text-align: left;">Traditionally apostolic; modern majority c. AD 80–90</td>
+</tr>
+<tr>
+<td style="text-align: left;">Narrated event</td>
+<td style="text-align: left;">Matt. 4:1–11</td>
+<td style="text-align: left;">Judean wilderness</td>
+<td style="text-align: left;">Beginning of Jesus’ public ministry, c. AD 27–28</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Jesus answers the tempter with Deuteronomy 8:3: bodily bread is real but not sufficient apart from God’s life-giving word. The acclamation prepares hearing without denying the Gospel crowd’s bodily hunger.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Matt. 14:13–21</td>
+<td style="text-align: left;">Canonical Gospel as above</td>
+<td style="text-align: left;">As above</td>
+</tr>
+<tr>
+<td style="text-align: left;">Narrated event</td>
+<td style="text-align: left;">Matt. 14:13–21</td>
+<td style="text-align: left;">A deserted place reached from the Galilean lakeshore; exact site uncertain</td>
+<td style="text-align: left;">Galilean ministry, c. AD 28–29</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">After John the Baptist’s death, Jesus withdraws, receives the pursuing crowd with compassion, heals, and feeds them. Twelve baskets remain after the disciples distribute the blessed and broken loaves.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Comm. B</td>
+<td style="text-align: left;">John 6:35</td>
+<td style="text-align: left;">Canonical Gospel: traditionally associated with Ephesus; compositional history debated</td>
+<td style="text-align: left;">Late first century</td>
+</tr>
+<tr>
+<td style="text-align: left;">Narrated event</td>
+<td style="text-align: left;">John 6:22–59</td>
+<td style="text-align: left;">Capernaum synagogue after the feeding across the sea</td>
+<td style="text-align: left;">Galilean ministry, c. AD 28–29</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Within the Bread of Life discourse Christ identifies himself as the bread satisfying those who come and believe. This appointed alternative is not evidence that it was selected on the dated occurrence.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 8:35, 37–39</td>
+<td style="text-align: left;">Written from Corinth to Christians at Rome</td>
+<td style="text-align: left;">c. AD 56–58</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Paul concludes the chapter’s movement through suffering, Spirit-aided prayer, and divine purpose. The omitted v. 36 cites persecuted Israel; the appointed conclusion names afflictions and cosmic powers while grounding victory in God’s love in Christ.</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -165,22 +303,73 @@ The final prayer speaks after reception: heavenly refreshment is already gift, w
 >
 > The controlling U.S. Missal and Lectionary English is protected and is not reproduced. The citations and Latin incipits identify every proper; descriptions are original summaries. Public-domain study translations, where consulted, are not the English proclaimed at Mass.
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:-----------------------------------------------|
-| **Entrance and Opening Prayer** |  |
-| Entrance | Ps. 69:2, 6 (modern 70); *Deus, in adiutorium meum intende*. |
-| Collect | *Adesto, Domine, famulis tuis*; restoration and preservation by the Creator and Governor. |
-| **Word** |  |
-| First Reading | Isa. 55:1–3; free water, wine, milk, attentive hearing, life, and the everlasting covenant. |
-| Psalm | Ps. 145:8–9, 15–18; response v. 16; compassion, food in due season, the open hand, and divine nearness. |
-| Second Reading | Rom. 8:35, 37–39; suffering and created powers cannot separate believers from God’s love in Christ. |
-| Acclamation | Matt. 4:4b; life from every word proceeding from God. |
-| Gospel | Matt. 14:13–21; compassion, healing, five loaves and two fish, blessing, distribution, universal satisfaction, and twelve baskets. |
-| **Eucharistic Liturgy** |  |
-| Prayer over Offerings | *Propitius, Domine, quaesumus, haec dona sanctifica*; sanctified gifts and worshippers made an enduring offering. |
-| Communion A | Wis. 16:20; heavenly bread with delight and sweetness. |
-| Communion B | John 6:35; Christ the bread of life. |
-| Prayer after Communion | *Quos caelesti recreas munere*; protection after heavenly refreshment and worthiness for eternal redemption. |
+<table style="width:92%;">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Entrance and Opening Prayer</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance</td>
+<td style="text-align: left;">Ps. 69:2, 6 (modern 70); <em>Deus, in adiutorium meum intende</em>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Adesto, Domine, famulis tuis</em>; restoration and preservation by the Creator and Governor.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Isa. 55:1–3; free water, wine, milk, attentive hearing, life, and the everlasting covenant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Psalm</td>
+<td style="text-align: left;">Ps. 145:8–9, 15–18; response v. 16; compassion, food in due season, the open hand, and divine nearness.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Rom. 8:35, 37–39; suffering and created powers cannot separate believers from God’s love in Christ.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Acclamation</td>
+<td style="text-align: left;">Matt. 4:4b; life from every word proceeding from God.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">Matt. 14:13–21; compassion, healing, five loaves and two fish, blessing, distribution, universal satisfaction, and twelve baskets.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Eucharistic Liturgy</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over Offerings</td>
+<td style="text-align: left;"><em>Propitius, Domine, quaesumus, haec dona sanctifica</em>; sanctified gifts and worshippers made an enduring offering.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion A</td>
+<td style="text-align: left;">Wis. 16:20; heavenly bread with delight and sweetness.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion B</td>
+<td style="text-align: left;">John 6:35; Christ the bread of life.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Quos caelesti recreas munere</em>; protection after heavenly refreshment and worthiness for eternal redemption.</td>
+</tr>
+</tbody>
+</table>
 
 > **Study translation**
 >
@@ -360,6 +549,6 @@ The feeding ends in visible abundance, but Romans locates security in inseparabl
 
 - Matthew Arnold, [*Dover Beach*](https://anthology.lib.virginia.edu/exist/apps/LiC/work/Arnold/arnold-dover-beach.xml), lines 29–37, in *New Poems* (Macmillan, 1867), Literature in Context first-edition transcription.
 
-**Last revised (UTC):** 2026-09-24T18:04:15Z
+**Last revised (UTC):** 2026-11-04T03:59:07Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

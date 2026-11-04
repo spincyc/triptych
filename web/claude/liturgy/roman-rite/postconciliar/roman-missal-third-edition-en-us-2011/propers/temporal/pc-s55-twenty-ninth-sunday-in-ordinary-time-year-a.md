@@ -525,18 +525,21 @@ Each passage the Mass reads or sings from Scripture, in canonical order, with wh
 
 | **Passage** | **Context** | **Date** |
 |:---|:---|:---|
-| Entrance Antiphon: Cf. Psalm 16:6, 8 (Vg.; Heb. 17); Communion Antiphon (first): Cf. Psalm 32:18–19 (Vg.; Heb. 33) | Historical setting | Occasion date unresolved |
-| Entrance Antiphon: Cf. Psalm 16:6, 8 (Vg.; Heb. 17); Responsorial Psalm: Ps. 96:1, 3, 4–5, 7–8, 9–10a, 10c (Heb.; Vg. 95), Ps. 96:7b (Heb.; Vg. 95); Communion Antiphon (first): Cf. Psalm 32:18–19 (Vg.; Heb. 33) | Composition: Psalms | Before c. 165 B.C. |
-| Communion Antiphon (first): Cf. Psalm 32:18–19 (Vg.; Heb. 33) | Traditional attribution: David’s reign | Disputed: B.C. 1055–1015 |
-| Responsorial Psalm: Ps. 96:1, 3, 4–5, 7–8, 9–10a, 10c (Heb.; Vg. 95), Ps. 96:7b (Heb.; Vg. 95) | Superscription setting: The raising of the second Temple by Zorobabel | B.C. 537 |
-| Responsorial Psalm: Ps. 96:1, 3, 4–5, 7–8, 9–10a, 10c (Heb.; Vg. 95), Ps. 96:7b (Heb.; Vg. 95) | Prophetic referent: The Nativity of Our Lord | Disputed: B.C. 3; c. B.C. 7 |
-| First Reading: Is. 45:1, 4–6 | Traditional attribution: Isaias (ministry in Souvay’s traditional account) | B.C. 740–701 |
-| First Reading: Is. 45:1, 4–6 | Prophecy given: The prophetic activity behind Isaiah 40-55 in the NABRE introduction | Toward the end of the Babylonian exile |
-| Gospel: Matt. 22:15–21 | Narrated event: Jesus answers the question about tribute to Caesar | Date unresolved |
-| Gospel: Matt. 22:15–21 | Composition: Matthew | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
-| Communion Antiphon (alternative): Mark 10:45 | Composition: Mark | Disputed: A.D. 38–40; A.D. 40; A.D. 43; A.D. 50–67; A.D. 60–70; After Matthew, and not as late as the destruction of Jerusalem |
-| Alleluia Verse: Phil. 2:15d, 16a | Composition: Philippians | Disputed: A.D. 61; A.D. 62–64 |
-| Second Reading: 1 Thess. 1:1–5b | Composition: First Thessalonians | Disputed: A.D. 52; A.D. 53–54 |
+| Entrance Antiphon: Cf. Psalm 16:6, 8 (Vg.; Heb. 17) | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Communion Antiphon (first): Cf. Psalm 32:18–19 (Vg.; Heb. 33) | Traditional attribution: David’s reign; Hebron, then Jerusalem | Disputed: B.C. 1055–1015 |
+|  | Historical setting | Occasion date unresolved |
+|  | Composition: Psalms | Before c. 165 B.C. |
+| Responsorial Psalm: Ps. 96:1, 3, 4–5, 7–8, 9–10a, 10c (Heb.; Vg. 95), Ps. 96:7b (Heb.; Vg. 95) | Superscription setting: The raising of the second Temple by Zorobabel; Temple at Jerusalem | B.C. 537 |
+|  | Composition: Psalms | Before c. 165 B.C. |
+|  | Prophetic referent: The Nativity of Our Lord; Bethlehem as the Christian referent | Disputed: B.C. 3; c. B.C. 7 |
+| First Reading: Is. 45:1, 4–6 | Traditional attribution: Isaias (ministry in Souvay’s traditional account); Judah and Jerusalem | B.C. 740–701 |
+|  | Prophecy given: The prophetic activity behind Isaiah 40-55 in the NABRE introduction; exiles from Babylon; restoration to Jerusalem | Toward the end of the Babylonian exile |
+| Gospel: Matt. 22:15–21 | Narrated event: Jesus answers about tribute to Caesar in the Temple at Jerusalem | Date unresolved |
+|  | Composition: Matthew; Semitic original associated with Palestine | Disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50 |
+| Communion Antiphon (alternative): Mark 10:45 | Composition: Mark; Rome traditionally; Egypt reported by Chrysostom | Disputed: A.D. 38–40; A.D. 40; A.D. 43; A.D. 50–67; A.D. 60–70; After Matthew, and not as late as the destruction of Jerusalem |
+| Alleluia Verse: Phil. 2:15d, 16a | Composition: Philippians; Rome to Philippi in the cited account | Disputed: A.D. 61; A.D. 62–64 |
+| Second Reading: 1 Thess. 1:1–5b | Composition: First Thessalonians; Corinth to Thessalonica | Disputed: A.D. 52; A.D. 53–54 |
 
 Psalm numbering: Vg. = Vulgate; Heb. = Hebrew.
 
@@ -741,6 +744,6 @@ The figures shown are those of the *Catholic Encyclopedia*’s “St. Paul” (
 
 - Pontifical Biblical Commission, *De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam*, *Acta Apostolicae Sedis* 4 (1912), pp. 463–465, responses I–IX, as the chronology corpus records them.
 
-**Last revised (UTC):** 2026-11-03T21:06:51Z
+**Last revised (UTC):** 2026-11-04T03:13:49Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

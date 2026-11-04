@@ -114,7 +114,7 @@
 
 **Location:** David’s flight to Geth in the title’s setting
 
-**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Superscription setting**: A.M. 2944. **Composition**: Before c. 165 B.C.
+**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Superscription setting**: David’s flight to Achis, king of Geth, A.M. 2944. **Composition**: Before c. 165 B.C.
 
 The Davidic regnal frame follows Corbett’s “usual chronology” (*Catholic Encyclopedia*, IV, p. 642). The Douay title names Achimelech; 1 Kings 21:10–15 names Achis, king of Geth. The title-setting figure is reported-excluded in the corpus and does not date composition. Thanksgiving becomes instruction for those fearing God; the critical boundary applies to the Psalter, without securely dating this poem (Ps. 33; NABRE Psalms introduction; Haydock, 1 Kings 21).
 
@@ -124,7 +124,7 @@ The Davidic regnal frame follows Corbett’s “usual chronology” (*Catholic E
 
 **Location:** Sons of Core; worship and ascent toward Sion
 
-**Date:** **Composition**: Between the days of Isaias and the return from exile.
+**Date:** **Historical setting** – Occasion date unresolved. **Composition**: Between the days of Isaias and the return from exile.
 
 The title supplies the Korahite attribution. Courts, altars and Sion locate the desired worship; neither an individual writer, composition site nor earthly royal addressee is named. The received range concerns the Korahite collection (Ps. 83; *Catholic Encyclopedia*, “Psalms”).
 
@@ -134,7 +134,7 @@ The title supplies the Korahite attribution. Courts, altars and Sion locate the 
 
 **Location:** Israel summoned to its Creator and shepherd
 
-**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C.
+**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C.
 
 The Clementine title names David; Hebrews 4:7 receives the warning “in David.” The complete psalm joins praise to wilderness disobedience and refused rest; it names no first performance or writing place. The modern critical boundary is general, not an individual composition date (Ps. 94; Heb. 3–4; NABRE Psalms introduction).
 
@@ -144,7 +144,7 @@ The Clementine title names David; Hebrews 4:7 receives the warning “in David.
 
 **Location:** Israel, Aaron’s house; gates and the Lord’s altar
 
-**Date:** **Composition**: Before c. 165 B.C.
+**Date:** **Historical setting** – Occasion date unresolved. **Composition**: Before c. 165 B.C.
 
 Personal deliverance becomes communal thanksgiving. Neither the speaker nor a particular historical procession is identified. Bellarmine uses received Davidic examples; the critical boundary dates no specific occasion (Ps. 117; Bellarmine, p. 370; NABRE Psalms introduction).
 
@@ -708,6 +708,6 @@ The online witnesses cited below for SBLGNT, the Authorized Version, Augustine, 
 
 - Local exploratory precedents: the earlier GPT and Claude guides to this Fourteenth Sunday, especially their *Interpretive Possibilities* and *Source-Grounded Synthesis*; GPT’s Eighth Sunday proposal on tasting and conversion. Exact file and proposal loci are recorded under PRE-002–010 in `research/scope.md`. These are editorial precedents, not historical authorities for the formulary.
 
-**Last revised (UTC):** 2026-09-24T16:53:25Z
+**Last revised (UTC):** 2026-11-04T03:34:08Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

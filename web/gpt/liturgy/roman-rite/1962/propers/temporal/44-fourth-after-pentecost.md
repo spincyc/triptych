@@ -32,23 +32,93 @@
 
 *Canonical order governs; proper rows give traditional composition data under Location and Date, Luke’s additional row gives the narrated setting, spanning rows distinguish inherited attribution from historical judgment, and Psalm numbers follow the Vulgate with common modern numbers in parentheses.*
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:-----------|:-------------|:------------------------|:-----------|
-| **Alleluia** | Ps. 9:5, 10 | Israel; exact site unrecorded | c. 1000 BC |
-| The title traditionally attributes the acrostic hymn to David but names no episode or writing site; Israel’s worshippers are its inherited audience. The royal petitioner moves from victory to God’s judgment of the nations and refuge for the poor, placing Davidic kingship beneath universal justice. Modern scholarship treats Psalms 9–10 as one poem and cannot securely recover author, date, or place (Ps. 9 and notes, *NABRE*). |  |  |  |
-| **Offertory** | Ps. 12:4–5 (modern 13:4–5) | Israel; exact site unrecorded | c. 1000 BC |
-| The title traditionally attributes this lament to David but names no life episode or site; its prayer trains threatened Israel to speak before God. Apparent abandonment and enemy pressure yield to petition and trust, carrying personal danger into Israel’s durable worship. Modern scholarship calls it a typical lament but cannot recover its historical author, date, or place (Ps. 13 and notes, *NABRE*). |  |  |  |
-| **Communion** | Ps. 17:3 (modern 18:3) | Kingdom of Israel; exact site unrecorded | c. 1000 BC |
-| The title and 2 Samuel 22 attribute the song to David after deliverance from Saul and all enemies: a mature king looks back over dangers through which the kingdom was established and bears witness to Israel. Rescue enters Davidic-covenant and messianic history; the final form’s date and place remain uncertain (Ps. 18 and notes, *NABRE*; 2 Sam. 22). |  |  |  |
-| **Introit** | Ps. 26:1–3 (modern 27:1–3) | Judah / Israel; exact site unrecorded | c. 1010 BC |
-| The Greek and Latin title attributes the psalm to David before anointing, placing him traditionally amid threatened pre-royal life in Judah; because Scripture records several anointings, the exact stage is unclear. He addresses God and worshipping Israel, joining courage before armies to desire for God’s dwelling. Modern authorship, date, and site remain uncertain (Ps. 27 and notes, *NABRE*). |  |  |  |
-| **Gradual** | Ps. 78:9–10 (modern 79:9–10) | Jerusalem sanctuary (traditional Asaph association) | c. 1000 BC |
-| The title names Asaph, the Levitical singer linked to worship ordered under David; a strict personal reading of the title therefore hears him prophetically voicing devastated Israel after nations ruin Jerusalem and profane the Temple. Catholic scholarship also allows an Asaph family or collection, and modern judgment places the poem probably after Babylon’s destruction in 587 BC; its individual composer and site remain unknown (Ps. 79 and notes, *NABRE*; *Catholic Encyclopedia*, “Psalms”). |  |  |  |
-| **Gospel** | Luke 5:1–11 | Achaia (present-day Greece) | c. AD 60 |
-| *Narrated event* | Luke 4:31–44; 5:1–11 | Lake Gennesaret, Galilee (present-day Sea of Galilee) | Early public ministry, c. AD 27 |
-| Ancient tradition identifies St. Luke, Antiochene physician and Paul’s companion, as the evangelist. The row joins an ancient tradition that he wrote in Achaia for Theophilus and other catechized Christians to an early chronology placing the Gospel before Acts, after years in apostolic mission. The modern majority dates it c. AD 80–90, with its city unknown. Much earlier at the lake, Jesus turns Israel’s hearing, Peter’s confession, and the catch toward apostolic mission to the nations (Luke introduction and 5, *NABRE*; *Catholic Encyclopedia*, “Gospel of Saint Luke”). |  |  |  |
-| **Epistle** | Rom. 8:18–23 | Corinth, Achaia (present-day Greece) | c. AD 57 |
-| Tradition and scholarship identify St. Paul, with Tertius as scribe, writing to Jewish and Gentile house churches in Rome he had not visited. His eastern mission was nearly complete and the Jerusalem collection came next; Spain lay beyond Rome. Creation’s travail places Israel, Church, body, and cosmos within hoped-for liberation and resurrection (Romans introduction; Rom. 15–16, *NABRE*). |  |  |  |
+<table style="width:84%;">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Proper</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Alleluia</strong></td>
+<td style="text-align: left;">Ps. 9:5, 10</td>
+<td style="text-align: left;">Israel; exact site unrecorded</td>
+<td style="text-align: left;">c. 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title traditionally attributes the acrostic hymn to David but names no episode or writing site; Israel’s worshippers are its inherited audience. The royal petitioner moves from victory to God’s judgment of the nations and refuge for the poor, placing Davidic kingship beneath universal justice. Modern scholarship treats Psalms 9–10 as one poem and cannot securely recover author, date, or place (Ps. 9 and notes, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Offertory</strong></td>
+<td style="text-align: left;">Ps. 12:4–5 (modern 13:4–5)</td>
+<td style="text-align: left;">Israel; exact site unrecorded</td>
+<td style="text-align: left;">c. 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title traditionally attributes this lament to David but names no life episode or site; its prayer trains threatened Israel to speak before God. Apparent abandonment and enemy pressure yield to petition and trust, carrying personal danger into Israel’s durable worship. Modern scholarship calls it a typical lament but cannot recover its historical author, date, or place (Ps. 13 and notes, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Communion</strong></td>
+<td style="text-align: left;">Ps. 17:3 (modern 18:3)</td>
+<td style="text-align: left;">Kingdom of Israel; exact site unrecorded</td>
+<td style="text-align: left;">c. 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title and 2 Samuel 22 attribute the song to David after deliverance from Saul and all enemies: a mature king looks back over dangers through which the kingdom was established and bears witness to Israel. Rescue enters Davidic-covenant and messianic history; the final form’s date and place remain uncertain (Ps. 18 and notes, <em>NABRE</em>; 2 Sam. 22).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Introit</strong></td>
+<td style="text-align: left;">Ps. 26:1–3 (modern 27:1–3)</td>
+<td style="text-align: left;">Judah / Israel; exact site unrecorded</td>
+<td style="text-align: left;">c. 1010 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The Greek and Latin title attributes the psalm to David before anointing, placing him traditionally amid threatened pre-royal life in Judah; because Scripture records several anointings, the exact stage is unclear. He addresses God and worshipping Israel, joining courage before armies to desire for God’s dwelling. Modern authorship, date, and site remain uncertain (Ps. 27 and notes, <em>NABRE</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gradual</strong></td>
+<td style="text-align: left;">Ps. 78:9–10 (modern 79:9–10)</td>
+<td style="text-align: left;">Jerusalem sanctuary (traditional Asaph association)</td>
+<td style="text-align: left;">c. 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title names Asaph, the Levitical singer linked to worship ordered under David; a strict personal reading of the title therefore hears him prophetically voicing devastated Israel after nations ruin Jerusalem and profane the Temple. Catholic scholarship also allows an Asaph family or collection, and modern judgment places the poem probably after Babylon’s destruction in 587 BC; its individual composer and site remain unknown (Ps. 79 and notes, <em>NABRE</em>; <em>Catholic Encyclopedia</em>, “Psalms”).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gospel</strong></td>
+<td style="text-align: left;">Luke 5:1–11</td>
+<td style="text-align: left;">Achaia (present-day Greece)</td>
+<td style="text-align: left;">c. AD 60</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Narrated event</em></td>
+<td style="text-align: left;">Luke 4:31–44; 5:1–11</td>
+<td style="text-align: left;">Lake Gennesaret, Galilee (present-day Sea of Galilee)</td>
+<td style="text-align: left;">Early public ministry, c. AD 27</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Ancient tradition identifies St. Luke, Antiochene physician and Paul’s companion, as the evangelist. The row joins an ancient tradition that he wrote in Achaia for Theophilus and other catechized Christians to an early chronology placing the Gospel before Acts, after years in apostolic mission. The modern majority dates it c. AD 80–90, with its city unknown. Much earlier at the lake, Jesus turns Israel’s hearing, Peter’s confession, and the catch toward apostolic mission to the nations (Luke introduction and 5, <em>NABRE</em>; <em>Catholic Encyclopedia</em>, “Gospel of Saint Luke”).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Epistle</strong></td>
+<td style="text-align: left;">Rom. 8:18–23</td>
+<td style="text-align: left;">Corinth, Achaia (present-day Greece)</td>
+<td style="text-align: left;">c. AD 57</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Tradition and scholarship identify St. Paul, with Tertius as scribe, writing to Jewish and Gentile house churches in Rome he had not visited. His eastern mission was nearly complete and the Jerusalem collection came next; Spain lay beyond Rome. Creation’s travail places Israel, Church, body, and cosmos within hoped-for liberation and resurrection (Romans introduction; Rom. 15–16, <em>NABRE</em>).</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement
 

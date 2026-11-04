@@ -1,6 +1,60 @@
 schema_version = 1
 
 [[deliverables]]
+id = "explicit-print-and-proper-quality-2026-11-03"
+owner = "PROJECT-WORK.md"
+promise = "Require an explicit user action before PDF generation, repair grouped and repeated proper chronology tables across their current consumers, improve measured browser performance without quality loss, and independently cold-review source correctness and actual rendered output."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "explicit-generation-action"
+  criterion = "Navigation, query flags, reloads and initialization do not download native runtime resources, start typesetting or open printing; explicit button activation still generates the selected complete edition, with regressions covering the actual route."
+  status = "pass"
+  evidence = ["workflows/reviews/print-correctness-2026-11-03/browser-print.json", "workflows/reviews/print-correctness-2026-11-03/html-width-contract.json", "tools/tests/test_native_print_frontend.py"]
+
+  [[deliverables.requirements]]
+  id = "passage-level-chronology"
+  criterion = "All ten current orientation consumers present identifiable passage/component rows without unrelated grouped or duplicated passage labels, preserve sourced dates and distinct event/composition/comparison evidence, use classical notation and share deterministic provider-neutral rendering."
+  status = "pass"
+  evidence = ["workflows/reviews/print-correctness-2026-11-03/proper-quality.json", "tools/tests/test_chronology_shared_table.py"]
+
+  [[deliverables.requirements]]
+  id = "measured-quality-preserving-performance"
+  criterion = "Further browser performance changes have comparable before/after timings and native text/font/layout fidelity evidence; cold, warm and cached behavior and device limitations are reported separately."
+  status = "pass"
+  evidence = ["workflows/reviews/print-correctness-2026-11-03/font-performance.json", "workflows/reviews/print-correctness-2026-11-03/browser-print.json"]
+
+  [[deliverables.requirements]]
+  id = "generated-chronology-currency"
+  criterion = "All nineteen older generated chronology consumers have current dossiers and annotations; concretely contradictory date prose is reconciled against the canonical evidence, with freshness regressions and independent review of changed facts. The broader authored-table population and review limits are recorded."
+  status = "pass"
+  evidence = ["workflows/reviews/print-correctness-2026-11-03/proper-quality.json", "tools/tests/test_generated_proper_chronology_freshness.py"]
+
+  [[deliverables.requirements]]
+  id = "authored-component-mapping"
+  criterion = "The twelve older authored-table leaves flagged by the structural census have unambiguous component-to-passage assignments checked against appointed sources, preserving date/place claims and independently inspecting changed table output."
+  status = "pass"
+  evidence = ["workflows/reviews/print-correctness-2026-11-03/proper-quality.json", "workflows/reviews/print-correctness-2026-11-03/table-spans.json"]
+
+  [[deliverables.requirements]]
+  id = "complete-authored-appointment-census"
+  criterion = "Check component-to-passage assertions throughout all thirty-three authored chronology tables, including abbreviated, single and combined labels, against their appointed sources. Correct false assignments, missing appointed passages, lost adaptation qualifiers and canonical-order defects; distinguish contextual references and independently inspect affected source and rendered output."
+  status = "pass"
+  evidence = ["workflows/reviews/print-correctness-2026-11-03/proper-quality.json", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "independent-output-and-integration-review"
+  criterion = "Independent cold review checks the exact reported PDF, chronology pages of every affected synthesis, desktop/mobile tables and semantic coverage; affected source/site checks pass with no unresolved blocking findings, and publication state is explicit."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "reviewed-main-publication"
+  criterion = "After independent final cold review, the validated change reaches main without history rewriting; the Pages workflow and exact live reported route are checked, including idle arrival and explicit generation."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "shared-proper-chronology-2026-11-03"
 owner = "PROJECT-WORK.md"
 promise = "Make proper chronology tables consistent across agent providers through shared biblical-time encoding, with terse accurate descriptions, classical dates and attractive tables, verified by independent cold review."

@@ -1490,6 +1490,15 @@ class OrientationContext(NamedTuple):
     basis: str
 
 
+class OrientationSetting(NamedTuple):
+    """A source-bound place qualification for one subject and date relation."""
+
+    relation: str
+    label: str
+    sources: tuple[str, ...]
+    basis: str
+
+
 class Corpus(NamedTuple):
     """Everything authored, validated, and keyed the way a query asks for it."""
 
@@ -1504,6 +1513,7 @@ class Corpus(NamedTuple):
     default_profile: str
     orientation_contexts: tuple[OrientationContext, ...] = ()
     orientation_subject_labels: dict[str, str] = {}
+    orientation_settings: dict[str, OrientationSetting] = {}
 
     def answers_with(self, claim: Claim) -> bool:
         """Whether the profile the claim was authored under answers with it.
@@ -1983,7 +1993,7 @@ def _load_orientation_contexts(root: Path, books: dict[str, int]) -> tuple[Orien
     if not (root / "orientation.yaml").is_file():
         return ()
     data = _document("orientation", root)
-    _keys(data, {"schema", "numbering", "contexts", "subject_labels"}, "orientation")
+    _keys(data, {"schema", "numbering", "contexts", "subject_labels", "settings"}, "orientation")
     if not isinstance(data.get("contexts"), list):
         raise ChronologyError("orientation: contexts must be a list")
     contexts = []
@@ -2024,6 +2034,31 @@ def _load_orientation_subject_labels(root: Path, subjects: set[str]) -> dict[str
     return labels
 
 
+def _load_orientation_settings(root: Path, subjects: set[str]) -> dict[str, OrientationSetting]:
+    if not (root / "orientation.yaml").is_file():
+        return {}
+    raw = _document("orientation", root).get("settings", {})
+    if not isinstance(raw, dict):
+        raise ChronologyError("orientation: settings must be a mapping")
+    settings = {}
+    for subject, item in raw.items():
+        where = f"orientation setting {subject}"
+        if subject not in subjects:
+            raise ChronologyError(f"{where}: unknown temporal subject")
+        if not isinstance(item, dict):
+            raise ChronologyError(f"{where}: expected a mapping")
+        _keys(item, {"relation", "label", "sources", "basis"}, where)
+        relation = _text(item, "relation", where, required=True)
+        if relation not in RELATIONS:
+            raise ChronologyError(f"{where}: unknown relation {relation!r}")
+        label = _text(item, "label", where, required=True)
+        if len(label) > 140 or re.search(r"[0-9]|[\\{}]", label):
+            raise ChronologyError(f"{where}: label must be concise plain prose without dates")
+        settings[subject] = OrientationSetting(relation, label,
+            _sources(item, where, required=True), _text(item, "basis", where, required=True))
+    return settings
+
+
 @lru_cache(maxsize=4)
 def load(root: Path | None = None) -> Corpus:
     """Read and validate the whole corpus, or refuse with the reason."""
@@ -2040,6 +2075,7 @@ def load(root: Path | None = None) -> Corpus:
         profiles, events, units, bindings, gaps, books, policies, cascades,
         default_profile, _load_orientation_contexts(where, books),
         _load_orientation_subject_labels(where, set(events) | set(units)),
+        _load_orientation_settings(where, set(events) | set(units)),
     )
 
 
@@ -3890,6 +3926,8 @@ def audit(root: Path | None = None, repo: Path | None = None) -> list[str]:
     ]
     source_holders: list[tuple[str, str, tuple[str, ...]]] = [
         *(("orientation", context.label, context.sources) for context in corpus.orientation_contexts),
+        *(("orientation setting", subject, setting.sources)
+          for subject, setting in corpus.orientation_settings.items()),
         *(
             (kind, identifier, claim.sources)
             for kind, identifier, claims in holders

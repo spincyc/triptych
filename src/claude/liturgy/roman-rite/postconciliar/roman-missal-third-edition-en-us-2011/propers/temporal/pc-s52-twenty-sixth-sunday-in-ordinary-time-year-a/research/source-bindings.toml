@@ -1082,3 +1082,17 @@ query = "two sons"
 method = "tools/source-library search, casefolded physical-line literal search, replayed by validation; every hit read in context."
 matching_line_count = 3
 source_fingerprint = "sha256:10294711891b3ca7163bf578e02d0a027dbd110257bdaf2fb0b89b65ffe858de"
+
+[[bindings]]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-118-attribution-and-occasions"
+loci = ["Ps.118.1"]
+role = "context"
+states = ["cataloged"]
+context = "Received Davidic attribution and competing proposed occasions, adopted through the canonical Scripture chronology corpus. The registered passage record was read; this refresh does not claim a new facsimile inspection."
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology"
+loci = ["article 'David, King,' printed p. 642, opening paragraph"]
+role = "context"
+states = ["cataloged"]
+context = "The usual chronology of David's reign supplies the canonical attribution reference era, with its disputed status preserved. The registered passage record was read; this refresh does not claim a new facsimile inspection."

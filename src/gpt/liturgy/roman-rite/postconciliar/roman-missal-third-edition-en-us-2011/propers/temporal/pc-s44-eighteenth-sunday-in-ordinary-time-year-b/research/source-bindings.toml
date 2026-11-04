@@ -170,3 +170,19 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The cataloged public-domain hymnal witness controls the hymn identity and bread-of-heaven pilgrimage reception. It is congregational reception combining scriptural images, not direct commentary on John 6."
 verified_on = "2026-07-29"
 source_fingerprint = "sha256:219dc41b5373c1b5fc1bb623ab9e3d1bd7cf753912af4da1c2d44f72916fffa6"
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"
+loci = ["Psalms introduction"]
+role = "context"
+states = ["cataloged"]
+context = "The added Psalm 69 dossier reuses this registered passage's previously verified chronology basis: composition before about 165 BC, with no securely dated individual psalm. The corpus query and passage record were checked; the restricted original HTML is not retained, and no fresh acquisition or source-page inspection is claimed. The Douay-Rheims Psalm 69 title and appointed verses were read from the tracked Bible chapter; the Davidic title supplies attribution rather than a composition year or place."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-15.new-york-1912.newadvent-15666a-999fbc07-article-text"
+loci = ["Book of Wisdom, Place and date of composition, paragraphs 27 and 29"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact tracked article text was read and its artifact hash checked. Gigot argues for Alexandria and relates the book's persecution setting to either Ptolemy IV (221-204 BC) or Ptolemy VII (145-117 BC), allowing later publication. The added Communion A dossier preserves both disputed lower bounds without inventing an upper bound or dating the narrated manna event."
+verified_on = "2026-11-04"
+source_fingerprint = "sha256:06b80c78cc59f0d76590a5994e34bf394b98cb1911ea10a37853548546cc220c"

@@ -18,7 +18,8 @@ These are generation choices, not a stored collection of 644 PDFs:
 | Reading-plan volumes | 6 |
 
 The reviewed web readers keep their reading presentation. Their Print action
-opens the corresponding complete edition and starts PDF generation. The
+opens the corresponding complete edition. Select **Generate PDF** on that page
+to start generation; opening or reloading the page does not start it. The
 selected edition includes its own notes, appendices, references, revision and
 rights notices. Companions, such as a proper's concise study or homily, select
 their own TeX entrypoint.

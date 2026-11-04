@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import sys
+import hashlib
 import tempfile
 import unittest
 from pathlib import Path
@@ -20,10 +21,13 @@ PC54 = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/
         "propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a")
 PC55 = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
         "propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a")
-# The leaves published under orientation-v1, whose bytes v2 must not move.
-# Claude PC55 moved to orientation-v2 in its 2026-10-16 revision (run
-# 821c824684b0c7a7); the other three published orientation leaves stay v1.
-PUBLISHED_V1 = (("claude", NEXT), ("gpt", NEXT), ("gpt", PC55))
+# Original v1 artifacts at 40bea725b1, before their explicit v3 migration.
+# The legacy renderer remains reproducible independently of current manifests.
+PUBLISHED_V1 = (
+    ("claude", NEXT, "2939236e5d2ed65886eaf5e274423e01fb376e7715c2deba84b666b554c490e7"),
+    ("gpt", NEXT, "33b9163ad02af527ee07041eaec7cbfdd9aa46782c0ce8e75ad9c13140542f6a"),
+    ("gpt", PC55, "f203f79a253e494a3356b38b056ab1163b545c67bddcc114f805f1e7975260b6"),
+)
 
 
 class OrientationProjectionTests(unittest.TestCase):
@@ -116,7 +120,7 @@ class OrientationProjectionTests(unittest.TestCase):
 
     def test_next_sunday_has_no_invented_job_era(self):
         found = chronology.dossier(NEXT, provider="gpt")
-        rows = chronology.annotations(found, presentation="orientation-v1").orientation_rows
+        rows = chronology.annotations(found).orientation_rows
         job = [row for row in rows if any(locus.startswith("Job.")
                for p in row.passages for locus in p.loci)]
         self.assertTrue(job)
@@ -189,13 +193,11 @@ class OrientationV2Tests(unittest.TestCase):
         return chronology.annotations(found._replace(presentation=presentation)).orientation_rows
 
     def test_published_v1_leaves_regenerate_byte_identical(self):
-        for provider, document in PUBLISHED_V1:
+        for provider, document, digest in PUBLISHED_V1:
             with self.subTest(provider=provider, document=document):
                 found = chronology.dossier(document, provider=provider)
-                self.assertEqual(found.presentation, chronology.ORIENTATION_V1)
-                path = ROOT / "src" / provider / document / chronology.ANNOTATIONS_RECORD
-                self.assertEqual(chronology.render_annotations_tex(chronology.annotations(found)),
-                                 path.read_text())
+                legacy = chronology.annotations(found._replace(presentation=chronology.ORIENTATION_V1))
+                self.assertEqual(hashlib.sha256(chronology.render_annotations_tex(legacy).encode()).hexdigest(), digest)
 
     def test_acclamation_gets_no_event_row_but_gospel_keeps_one(self):
         found = chronology.dossier(PC54, provider="claude")

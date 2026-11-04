@@ -8,22 +8,73 @@
 
 PC-S44-B
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:-----------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | Ps. 69:2, 6 (modern Ps. 70); an urgent plea for the Lord’s help and deliverance. |
-| Collect | *Adesto, Domine, famulis tuis*; God’s servants ask the Creator and Governor to restore what he has made and preserve what he has restored. |
-| **Liturgy of the Word** |  |
-| First Reading | Exod. 16:2–4, 12–15. |
-| Responsorial Psalm | Ps. 78:3–4, 23–25, 54; response from v. 24b. |
-| Second Reading | Eph. 4:17, 20–24. |
-| Gospel Acclamation | Matt. 4:4b. |
-| Gospel | John 6:24–35. |
-| **Liturgy of the Eucharist** |  |
-| Prayer over Offerings | *Propitius, Domine, quaesumus, haec dona sanctifica*; the gifts are sanctified and the worshippers ask to become an enduring offering. |
-| Communion Antiphon A | Wis. 16:20; bread from heaven, containing delight and sweetness. |
-| Communion Antiphon B | John 6:35. |
-| Prayer after Communion | *Quos caelesti recreas munere*; those refreshed by a heavenly gift ask continuing protection and worthiness for eternal redemption. |
+<table style="width:92%;">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit</strong></th>
+<th style="text-align: left;"><strong>Text / citation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Introductory Rites</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance Antiphon</td>
+<td style="text-align: left;">Ps. 69:2, 6 (modern Ps. 70); an urgent plea for the Lord’s help and deliverance.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Collect</td>
+<td style="text-align: left;"><em>Adesto, Domine, famulis tuis</em>; God’s servants ask the Creator and Governor to restore what he has made and preserve what he has restored.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Word</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Exod. 16:2–4, 12–15.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Responsorial Psalm</td>
+<td style="text-align: left;">Ps. 78:3–4, 23–25, 54; response from v. 24b.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Eph. 4:17, 20–24.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel Acclamation</td>
+<td style="text-align: left;">Matt. 4:4b.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel</td>
+<td style="text-align: left;">John 6:24–35.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Liturgy of the Eucharist</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer over Offerings</td>
+<td style="text-align: left;"><em>Propitius, Domine, quaesumus, haec dona sanctifica</em>; the gifts are sanctified and the worshippers ask to become an enduring offering.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon A</td>
+<td style="text-align: left;">Wis. 16:20; bread from heaven, containing delight and sweetness.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion Antiphon B</td>
+<td style="text-align: left;">John 6:35.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prayer after Communion</td>
+<td style="text-align: left;"><em>Quos caelesti recreas munere</em>; those refreshed by a heavenly gift ask continuing protection and worthiness for eternal redemption.</td>
+</tr>
+</tbody>
+</table>
 
 | **Sense** | **Synthesis** |
 |:-----------|:------------------------------------------------------|
@@ -34,18 +85,89 @@ PC-S44-B
 
 ## Scriptural Date and Location
 
-| **Textual unit / alternative** | **Citation** | **Location** | **Date** |
-|:------------|:-------------|:-----------------------|:--------------|
-| First Reading | Exod. 16:2–4, 12–15 | The wilderness of Sin, between Elim and Sinai | Narrated in Israel’s wilderness journey |
-| Exodus presents Israel’s murmuring and God’s provision within the journey from Egypt to Sinai. The book’s final literary form addresses Israel through remembered deliverance and covenant formation; the narrated event and the composition of the received text are not the same date. |  |  |  |
-| Psalm | Ps. 78:3–4, 23–25, 54 | Israel; the remembered route runs from Egypt and wilderness to the sanctuary land | A historical psalm looking back over generations |
-| The psalm speaks as instruction received from the ancestors and retold to a later generation. Its rehearsal of manna interprets the wilderness event inside a longer history of divine fidelity and human forgetfulness. |  |  |  |
-| Acclamation | Matt. 4:4b | The wilderness of Judea in Matthew’s narrative | Narrated at the beginning of Jesus’ public ministry |
-| The liturgical line is an excerpt from Jesus’ answer to the tempter and itself cites Deuteronomy. Matthew’s Gospel reached its early Christian audience after the narrated event; the excerpt does not transfer the temptation scene into John 6. |  |  |  |
-| Gospel; Communion B | John 6:24–35 | Across the Sea of Galilee; the discourse begins at Capharnaum | First-century narrated ministry; Gospel composed later |
-| John places the exchange on the day after the feeding and the crossing. The crowd seeks Jesus, invokes manna, and hears the discourse move from perishing food to the Father’s present gift and Christ’s self-identification as bread of life. Communion B repeats v. 35. |  |  |  |
-| Second Reading | Eph. 4:17, 20–24 | Addressed to gentile Christians in Asia Minor | First century; Pauline authorship is traditional, while modern scholarship disputes direct authorship |
-| The selected verses belong to the letter’s transition from ecclesial confession to baptismal conduct. Verses 18–19 are not appointed; the boundary therefore moves directly from the prohibition in v. 17 to learning Christ in vv. 20–24. |  |  |  |
+<table style="width:90%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 19%" />
+<col style="width: 34%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Textual unit / alternative</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">First Reading</td>
+<td style="text-align: left;">Exod. 16:2–4, 12–15</td>
+<td style="text-align: left;">The wilderness of Sin, between Elim and Sinai</td>
+<td style="text-align: left;">Narrated in Israel’s wilderness journey</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Exodus presents Israel’s murmuring and God’s provision within the journey from Egypt to Sinai. The book’s final literary form addresses Israel through remembered deliverance and covenant formation; the narrated event and the composition of the received text are not the same date.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Entrance</td>
+<td style="text-align: left;">Ps. 69:2, 6 (modern 70)</td>
+<td style="text-align: left;">No place named in the appointed verses</td>
+<td style="text-align: left;">Before c. 165 BC; individual date uncertain</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The Douay–Rheims title names David, but neither that attribution nor the appointed pleas for help establishes an occasion or composition year. The <a href="https://bible.usccb.org/bible/psalms/0">NABRE Psalms introduction</a> supplies only the collection’s latest composition boundary and denies secure dating of an individual psalm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Psalm</td>
+<td style="text-align: left;">Ps. 78:3–4, 23–25, 54</td>
+<td style="text-align: left;">Israel; the remembered route runs from Egypt and wilderness to the sanctuary land</td>
+<td style="text-align: left;">A historical psalm looking back over generations</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The psalm speaks as instruction received from the ancestors and retold to a later generation. Its rehearsal of manna interprets the wilderness event inside a longer history of divine fidelity and human forgetfulness.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communion A</td>
+<td style="text-align: left;">Wis. 16:20</td>
+<td style="text-align: left;">Alexandria in Gigot’s account</td>
+<td style="text-align: left;">In or after 221–204 BC or 145–117 BC; disputed alternatives</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">In <a href="https://www.newadvent.org/cathen/15666a.htm">“Book of Wisdom,” <em>Catholic Encyclopedia</em></a>, Francis E. Gigot relates the book’s persecution setting to either Ptolemy IV (221–204 BC) or Ptolemy VII (145–117 BC), allowing publication after their deaths. These are alternative lower bounds, not a closed date range. The verse recalls wilderness manna without establishing its event date.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Acclamation</td>
+<td style="text-align: left;">Matt. 4:4b</td>
+<td style="text-align: left;">The wilderness of Judea in Matthew’s narrative</td>
+<td style="text-align: left;">Narrated at the beginning of Jesus’ public ministry</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The liturgical line is an excerpt from Jesus’ answer to the tempter and itself cites Deuteronomy. Matthew’s Gospel reached its early Christian audience after the narrated event; the excerpt does not transfer the temptation scene into John 6.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gospel; Communion B</td>
+<td style="text-align: left;">John 6:<br />
+Gospel: 24–35;<br />
+Communion B: 35</td>
+<td style="text-align: left;">Across the Sea of Galilee; the discourse begins at Capharnaum</td>
+<td style="text-align: left;">First-century narrated ministry; Gospel composed later</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">John places the exchange on the day after the feeding and the crossing. The crowd seeks Jesus, invokes manna, and hears the discourse move from perishing food to the Father’s present gift and Christ’s self-identification as bread of life. Communion B repeats v. 35.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Reading</td>
+<td style="text-align: left;">Eph. 4:17, 20–24</td>
+<td style="text-align: left;">Addressed to gentile Christians in Asia Minor</td>
+<td style="text-align: left;">First century; Pauline authorship is traditional, while modern scholarship disputes direct authorship</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The selected verses belong to the letter’s transition from ecclesial confession to baptismal conduct. Verses 18–19 are not appointed; the boundary therefore moves directly from the prohibition in v. 17 to learning Christ in vv. 20–24.</td>
+</tr>
+</tbody>
+</table>
 
 <span id="triptych:brief-synthesis:start" data-label="triptych:brief-synthesis:start"></span>
 
@@ -293,6 +415,6 @@ The reception search concentrated on direct exposition: Chrysostom’s *Homilies
 
 - GIRM 46–90, 352–367; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
 
-**Last revised (UTC):** 2026-09-24T19:07:20Z
+**Last revised (UTC):** 2026-11-04T03:59:07Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

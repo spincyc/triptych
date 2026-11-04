@@ -34,23 +34,95 @@ The book also prints inside this formulary **Credo** after the Gospel and **Præ
 
 Seven passages are directly appointed; the composed orations quote none of Scripture directly and are not inventoried. Psalm numbers follow the missal’s Vulgate reckoning, with the modern number in parentheses.
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:----------|:-------------|:------------------------|:-----------|
-| Grad. v.; Off. | Ps. 17 (18), 28 and 32 | Israel; royal thanksgiving in the mouth of David after deliverance | Setting claimed: united monarchy, c. 1000 BC |
-| The title assigns the psalm to David “in the day that the Lord delivered him … from the hand of Saul”; the same canticle stands again at 2 Kings (2 Samuel) 22 with the same occasion clause, a doublet observable in the text itself. Modern study fixes no author, date, or place of writing. Verse 28 turns from rescue to a rule about the low and the high; verse 32 denies any other God. |  |  |  |
-| Grad. resp. | Ps. 30 (31), 3 | Israel; an individual under threat, no place named | Setting claimed: Davidic; composition undated |
-| The Vulgate title reads only *In finem. Psalmus David, pro exstasi*, which Augustine took as a transport of mind, not a place or occasion. No event, city, or reign is named, so historical placement is unavailable; only the literary situation is, a speaker encircled and asking to be hidden. |  |  |  |
-| Comm. | Ps. 33 (34), 9 | Israel; Philistine Geth, in the title’s setting | Setting claimed: David’s flight from Saul, c. 1000 BC |
-| The Latin title places the psalm “when he changed his countenance before Achimelech.” The narrative pointed to, 1 Kings (1 Samuel) 21:10–15, names the king of Geth *Achis*; title and narrative disagree, and the disagreement is old enough that Augustine expounds the psalm using *Achis*. It is an alphabetic thanksgiving with no further anchor. |  |  |  |
-| Int.; All. | Ps. 47 (48), 2 and 10–11 | Jerusalem: Mount Zion and the temple precinct | Setting claimed: monarchic Jerusalem; composition undated |
-| A Korahite Zion song — the title assigns it to “the sons of Core,” the temple singers’ guild — whose horizon is one city and one mountain, with the kings of the earth troubled before them. It is the only appointed psalm whose place is unambiguous and the only one naming a temple: verse 10 speaks from inside that sanctuary, verse 11 carries the praise to the ends of the earth. No reign or festival is securely identifiable behind it. |  |  |  |
-| Grad. v. | Ps. 70 (71), 1 | Israel; an old man’s prayer, no place named | Claimed by the Latin title: the Rechabites and the first exiles |
-| The Hebrew psalm has no title; the Greek and Latin supply one — “of the sons of Jonadab, and of the first captives” — pointing to the family praised for obedience in Jeremiah 35 and to the deportations of 597 BC. That is an inherited liturgical ascription, not a datable authorship claim. The speaker is aged; verses 1–3 repeat Psalm 30:2–4 almost word for word. |  |  |  |
-| Gosp. | Luc. 16, 1–9 | *Composition:* a Greek-writing author, for Theophilus and a largely Gentile readership; place disputed | *Composition:* commonly c. AD 62–90 |
-| *Narrated event* | *Lk 16:1, with 15:1–2 and 16:14* | *On the journey to Jerusalem (Lk 9:51–19:44); no town named; Pharisees within earshot* | *c. AD 28–33; day and season unstated* |
-| Tradition names Luke, physician and companion of Paul; the attribution is early and uncontested in antiquity. Modern judgment divides over whether the author travelled with Paul, and over dating before Paul’s death, after AD 70, or later; Antioch, Achaia, Ephesus, and Rome are each proposed as the place of writing, none established. The narrated setting is firmer in shape than in coordinates: the parable falls inside Luke’s travel narrative, follows three parables spoken against complaining Pharisees, and is overheard by the covetous Pharisees of 16:14. |  |  |  |
-| Ep. | Rom. 8, 12–17 | *Writer:* Corinth or Cenchreae; *recipients:* the Christians at Rome | *Composition:* c. AD 56–58 |
-| Pauline authorship is not seriously contested. The letter places its own writing at the close of the Aegean mission, the collection gathered and Spain still intended (15:22–28); Phoebe of Cenchreae carries it and Gaius of Corinth hosts the writer (16:1, 16:23), which is why Corinth is the standard identification. Paul writes to a church he did not found and had not seen; the appointed verses report no event. |  |  |  |
+<table style="width:83%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Proper</strong></th>
+<th style="text-align: left;"><strong>Citation</strong></th>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Offertory</td>
+<td style="text-align: left;">Ps. 17 (18), 28 and 32</td>
+<td style="text-align: left;">Israel; royal thanksgiving in the mouth of David after deliverance</td>
+<td style="text-align: left;">Setting claimed: united monarchy, c. 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The title assigns the psalm to David “in the day that the Lord delivered him … from the hand of Saul”; the same canticle stands again at 2 Kings (2 Samuel) 22 with the same occasion clause, a doublet observable in the text itself. Modern study fixes no author, date, or place of writing. Verse 28 turns from rescue to a rule about the low and the high; verse 32 denies any other God.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Grad. resp.</td>
+<td style="text-align: left;">Ps. 30 (31), 3</td>
+<td style="text-align: left;">Israel; an individual under threat, no place named</td>
+<td style="text-align: left;">Setting claimed: Davidic; composition undated</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The Vulgate title reads only <em>In finem. Psalmus David, pro exstasi</em>, which Augustine took as a transport of mind, not a place or occasion. No event, city, or reign is named, so historical placement is unavailable; only the literary situation is, a speaker encircled and asking to be hidden.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Comm.</td>
+<td style="text-align: left;">Ps. 33 (34), 9</td>
+<td style="text-align: left;">Israel; Philistine Geth, in the title’s setting</td>
+<td style="text-align: left;">Setting claimed: David’s flight from Saul, c. 1000 BC</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The Latin title places the psalm “when he changed his countenance before Achimelech.” The narrative pointed to, 1 Kings (1 Samuel) 21:10–15, names the king of Geth <em>Achis</em>; title and narrative disagree, and the disagreement is old enough that Augustine expounds the psalm using <em>Achis</em>. It is an alphabetic thanksgiving with no further anchor.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Introit; Alleluia</td>
+<td style="text-align: left;">Ps. 47 (48):<br />
+Introit: 2, 10–11;<br />
+Alleluia: 2</td>
+<td style="text-align: left;">Jerusalem: Mount Zion and the temple precinct</td>
+<td style="text-align: left;">Setting claimed: monarchic Jerusalem; composition undated</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">A Korahite Zion song — the title assigns it to “the sons of Core,” the temple singers’ guild — whose horizon is one city and one mountain, with the kings of the earth troubled before them. It is the only appointed psalm whose place is unambiguous and the only one naming a temple: verse 10 speaks from inside that sanctuary, verse 11 carries the praise to the ends of the earth. No reign or festival is securely identifiable behind it.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Grad. v.</td>
+<td style="text-align: left;">Ps. 70 (71), 1</td>
+<td style="text-align: left;">Israel; an old man’s prayer, no place named</td>
+<td style="text-align: left;">Claimed by the Latin title: the Rechabites and the first exiles</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">The Hebrew psalm has no title; the Greek and Latin supply one — “of the sons of Jonadab, and of the first captives” — pointing to the family praised for obedience in Jeremiah 35 and to the deportations of 597 BC. That is an inherited liturgical ascription, not a datable authorship claim. The speaker is aged; verses 1–3 repeat Psalm 30:2–4 almost word for word.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gosp.</td>
+<td style="text-align: left;">Luc. 16, 1–9</td>
+<td style="text-align: left;"><em>Composition:</em> a Greek-writing author, for Theophilus and a largely Gentile readership; place disputed</td>
+<td style="text-align: left;"><em>Composition:</em> commonly c. AD 62–90</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Narrated event</em></td>
+<td style="text-align: left;"><em>Lk 16:1, with 15:1–2 and 16:14</em></td>
+<td style="text-align: left;"><em>On the journey to Jerusalem (Lk 9:51–19:44); no town named; Pharisees within earshot</em></td>
+<td style="text-align: left;"><em>c. AD 28–33; day and season unstated</em></td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Tradition names Luke, physician and companion of Paul; the attribution is early and uncontested in antiquity. Modern judgment divides over whether the author travelled with Paul, and over dating before Paul’s death, after AD 70, or later; Antioch, Achaia, Ephesus, and Rome are each proposed as the place of writing, none established. The narrated setting is firmer in shape than in coordinates: the parable falls inside Luke’s travel narrative, follows three parables spoken against complaining Pharisees, and is overheard by the covetous Pharisees of 16:14.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ep.</td>
+<td style="text-align: left;">Rom. 8, 12–17</td>
+<td style="text-align: left;"><em>Writer:</em> Corinth or Cenchreae; <em>recipients:</em> the Christians at Rome</td>
+<td style="text-align: left;"><em>Composition:</em> c. AD 56–58</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Pauline authorship is not seriously contested. The letter places its own writing at the close of the Aegean mission, the collection gathered and Spain still intended (15:22–28); Phoebe of Cenchreae carries it and Gaius of Corinth hosts the writer (16:1, 16:23), which is why Corinth is the standard identification. Paul writes to a church he did not found and had not seen; the appointed verses report no event.</td>
+</tr>
+</tbody>
+</table>
 
 ## The Propers: Themes and Movement
 
@@ -649,7 +721,7 @@ Only sources actually used for a published claim are listed. Loci are given at t
 
 - United Kingdom, House of Commons, Representation of the People (No. 2) Bill, 3 February 1931, HC Deb vol. 247, cc. 1662–1664. Historic Hansard, <https://api.parliament.uk/historic-hansard/commons/1931/feb/03/representation-of-the-people-no-2-bill>, read 2026-07-25. Parliamentary copyright; quoted under the Open Parliament Licence.
 
-**Last revised (UTC):** 2026-09-24T16:57:47Z
+**Last revised (UTC):** 2026-11-04T03:50:06Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

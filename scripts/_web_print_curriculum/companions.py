@@ -214,11 +214,12 @@ class Companion(Packet):
             table_filter=Path(folder)/'tables.lua';table_filter.write_text(self.web.TABLE_FILTER)
             run=subprocess.run([pandoc,'-f','latex','-t','html5','--wrap=none','--shift-heading-level-by=1','--lua-filter='+str(table_filter)],
                 input=shim+'\n\\begin{document}\n'+body+'\n\\end{document}\n',text=True,capture_output=True)
-        if run.returncode or run.stderr.strip():raise CurriculumError('Pandoc refused companion: '+run.stderr)
+        expected_spans=self.table_span_receipt(run)
         rendered=self.render_responses(run.stdout)
         rendered=self.postprocess_html(rendered)
         try:rendered=self.normalize_profile(rendered)
         except ValueError as error:raise CurriculumError('untyped companion HTML style: '+str(error)) from error
+        self.validate_table_spans(expected_spans,rendered)
         if re.search(r'\\[A-Za-z]+',rendered):raise CurriculumError('unconverted companion control sequence')
         tables=self.web.table_count(body,shim)
         if tables!=len(re.findall(r'<table(?:\s|>)',rendered)):raise CurriculumError('companion source/HTML table count differs')

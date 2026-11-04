@@ -261,17 +261,63 @@ n. 28 defines the vigil functionally: *Nomine vigiliae intellegitur dies liturg
 
 n. 29 makes vigils of the I, II, or III class, and nn. 30–32 name every vigil there is. The list is closed and short:
 
-| **Class** | **Vigil** | **Effect** |
-|:-|:----------------------|:-----------------------------|
-| I (n. 30) | of the Nativity of the Lord (24 December) | Takes the place of the Fourth Sunday of Advent in occurrence, no commemoration of the Sunday being made |
-| I (n. 30) | of Pentecost |  |
-| *Both I class vigils are preferred to any feasts whatever and admit no commemoration at all.* |  |  |
-| II (n. 31) | of the Ascension |  |
-| II | of the Assumption (14 August) |  |
-| II | of the Nativity of St John the Baptist (23 June) |  |
-| II | of Ss Peter and Paul (28 June) |  |
-| *Preferred to liturgical days of the III and IV class; if impeded, commemorated according to the rubrics.* |  |  |
-| III (n. 32) | of St Lawrence (9 August) | Preferred to liturgical days of the IV class; if impeded, commemorated according to the rubrics |
+<table style="width:74%;">
+<colgroup>
+<col />
+<col style="width: 32%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Class</strong></th>
+<th style="text-align: left;"><strong>Vigil</strong></th>
+<th style="text-align: left;"><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">I (n. 30)</td>
+<td style="text-align: left;">of the Nativity of the Lord (24 December)</td>
+<td style="text-align: left;">Takes the place of the Fourth Sunday of Advent in occurrence, no commemoration of the Sunday being made</td>
+</tr>
+<tr>
+<td style="text-align: left;">I (n. 30)</td>
+<td style="text-align: left;">of Pentecost</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><em>Both I class vigils are preferred to any feasts whatever and admit no commemoration at all.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">II (n. 31)</td>
+<td style="text-align: left;">of the Ascension</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">II</td>
+<td style="text-align: left;">of the Assumption (14 August)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">II</td>
+<td style="text-align: left;">of the Nativity of St John the Baptist (23 June)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">II</td>
+<td style="text-align: left;">of Ss Peter and Paul (28 June)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><em>Preferred to liturgical days of the III and IV class; if impeded, commemorated according to the rubrics.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">III (n. 32)</td>
+<td style="text-align: left;">of St Lawrence (9 August)</td>
+<td style="text-align: left;">Preferred to liturgical days of the IV class; if impeded, commemorated according to the rubrics</td>
+</tr>
+</tbody>
+</table>
 
 Seven vigils, of which two are movable and five stand at fixed dates. The fixed five are inscribed in the universal calendar in exactly those places, and no others; the reader can verify the closure of the list by scanning the printed calendar for the word *Vigilia*.
 
@@ -503,13 +549,45 @@ Two readings are defensible on the text, and this reference gives both rather th
 
 ### The four resumed formularies as the Missal prints them
 
-| **Printed heading** | **Class** | **Proper elements retained** |
-|:-----------------------------|:---------|:----------------------------|
-| *Dominica tertia quae superfuit post Epiphaniam* | II | Orations, Epistle (Rom. 12:16–21), Gospel (Mt. 8:1–13) |
-| *Dominica quarta quae superfuit post Epiphaniam* | II | Orations, Epistle (Rom. 13:8–10), Gospel (Mt. 8:23–27) |
-| *Dominica quinta quae superfuit post Epiphaniam* | II | Orations, Epistle, Gospel |
-| *Dominica sexta quae superfuit post Epiphaniam* | II | Orations, Epistle, Gospel |
-| *All four borrow the Introit, Gradual, Alleluia with its verse, Offertory, and Communion of the Twenty-third Sunday after Pentecost (Missal rubrics n. 298).* |  |  |
+<table style="width:94%;">
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 12%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Printed heading</strong></th>
+<th style="text-align: left;"><strong>Class</strong></th>
+<th style="text-align: left;"><strong>Proper elements retained</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>Dominica tertia quae superfuit post Epiphaniam</em></td>
+<td style="text-align: left;">II</td>
+<td style="text-align: left;">Orations, Epistle (Rom. 12:16–21), Gospel (Mt. 8:1–13)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Dominica quarta quae superfuit post Epiphaniam</em></td>
+<td style="text-align: left;">II</td>
+<td style="text-align: left;">Orations, Epistle (Rom. 13:8–10), Gospel (Mt. 8:23–27)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Dominica quinta quae superfuit post Epiphaniam</em></td>
+<td style="text-align: left;">II</td>
+<td style="text-align: left;">Orations, Epistle, Gospel</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Dominica sexta quae superfuit post Epiphaniam</em></td>
+<td style="text-align: left;">II</td>
+<td style="text-align: left;">Orations, Epistle, Gospel</td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><em>All four borrow the Introit, Gradual, Alleluia with its verse, Offertory, and Communion of the Twenty-third Sunday after Pentecost (Missal rubrics n. 298).</em></td>
+</tr>
+</tbody>
+</table>
 
 That the Missal prints exactly four such formularies, and no First or Second, is itself the book’s confirmation that only the Third through the Sixth are ever resumed. The Third and Fourth were read in the facsimile and their proper Epistles and Gospels are given above; the Fifth and Sixth were located in the same run of pages but their readings were not separately collated for this reference, and are therefore not cited here.
 
@@ -556,28 +634,138 @@ To these the temporal cycle adds the movable I class celebrations that the calen
 
 The II class layer is larger and structurally more varied, because it contains feasts, vigils, and days within the octave of the Nativity in the same rank. Read from the same pages, it is:
 
-| **Date** | **Entry** | **Date** | **Entry** |
-|:-|:--------------------------|:-|:----------------------|
-| 13 Jan | *In Commemoratione Baptismatis D. N. I. C.* | 14 Aug | *Vigilia* (of the Assumption) |
-| 2 Feb | *In Purificatione B. Mariae Virg.* | 16 Aug | *S. Ioachim, Patris B. Mariae Virg., Conf.* |
-| 22 Feb | *Cathedrae S. Petri Ap.* | 22 Aug | *Immaculati Cordis B. Mariae Virg.* |
-| 24 Feb | *S. Matthiae Ap.* | 24 Aug | *S. Bartholomaei Ap.* |
-| 25 Apr | *S. Marci Evangelistae* | 8 Sep | *In Nativitate B. Mariae Virg.* |
-| 11 May | *Ss. Philippi et Iacobi App.* | 14 Sep | *In Exaltatione S. Crucis* |
-| 31 May | *B. Mariae Virg. Reginae* | 15 Sep | *Septem Dolorum B. Mariae Virg.* |
-| 23 Jun | *Vigilia* (of St John the Baptist) | 21 Sep | *S. Matthaei Ap. et Evangelistae* |
-| 28 Jun | *Vigilia* (of Ss Peter and Paul) | 7 Oct | *B. Mariae Virg. a Rosario* |
-| 2 Jul | *In Visitatione B. Mariae Virg.* | 11 Oct | *Maternitatis B. Mariae Virg.* |
-| 25 Jul | *S. Iacobi Ap.* | 18 Oct | *S. Lucae Evangelistae* |
-| 26 Jul | *S. Annae Matris B. Mariae Virg.* | 28 Oct | *Ss. Simonis et Iudae App.* |
-| 6 Aug | *In Transfiguratione D. N. I. C.* | 9 Nov | *In Dedicatione Archibasilicae Ss.mi Salvatoris* |
-| 10 Aug | *S. Laurentii Mart.* | 30 Nov | *S. Andreae Ap.* |
-| 21 Dec | *S. Thomae Ap.* | 29 Dec | *De V die infra octavam Nativitatis Domini* |
-| 26 Dec | *S. Stephani Protomart.* (II day within the octave) | 30 Dec | *De VI die infra octavam Nativitatis Domini* |
-| 27 Dec | *S. Ioannis Ap. et Evang.* (III day within the octave) | 31 Dec | *De VII die infra octavam Nativitatis Domini* |
-| 28 Dec | *Ss. Innocentium Mart.* (IV day within the octave) |  |  |
-| Sunday between the octave of the Nativity and the Epiphany, otherwise 2 January: *Sanctissimi Nominis Iesu* |  |  |  |
-| First Sunday after the Epiphany: *S. Familiae, Iesu, Mariae, Ioseph* |  |  |  |
+<table style="width:70%;">
+<colgroup>
+<col />
+<col style="width: 38%" />
+<col />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Date</strong></th>
+<th style="text-align: left;"><strong>Entry</strong></th>
+<th style="text-align: left;"><strong>Date</strong></th>
+<th style="text-align: left;"><strong>Entry</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">13 Jan</td>
+<td style="text-align: left;"><em>In Commemoratione Baptismatis D. N. I. C.</em></td>
+<td style="text-align: left;">14 Aug</td>
+<td style="text-align: left;"><em>Vigilia</em> (of the Assumption)</td>
+</tr>
+<tr>
+<td style="text-align: left;">2 Feb</td>
+<td style="text-align: left;"><em>In Purificatione B. Mariae Virg.</em></td>
+<td style="text-align: left;">16 Aug</td>
+<td style="text-align: left;"><em>S. Ioachim, Patris B. Mariae Virg., Conf.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">22 Feb</td>
+<td style="text-align: left;"><em>Cathedrae S. Petri Ap.</em></td>
+<td style="text-align: left;">22 Aug</td>
+<td style="text-align: left;"><em>Immaculati Cordis B. Mariae Virg.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">24 Feb</td>
+<td style="text-align: left;"><em>S. Matthiae Ap.</em></td>
+<td style="text-align: left;">24 Aug</td>
+<td style="text-align: left;"><em>S. Bartholomaei Ap.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">25 Apr</td>
+<td style="text-align: left;"><em>S. Marci Evangelistae</em></td>
+<td style="text-align: left;">8 Sep</td>
+<td style="text-align: left;"><em>In Nativitate B. Mariae Virg.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">11 May</td>
+<td style="text-align: left;"><em>Ss. Philippi et Iacobi App.</em></td>
+<td style="text-align: left;">14 Sep</td>
+<td style="text-align: left;"><em>In Exaltatione S. Crucis</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">31 May</td>
+<td style="text-align: left;"><em>B. Mariae Virg. Reginae</em></td>
+<td style="text-align: left;">15 Sep</td>
+<td style="text-align: left;"><em>Septem Dolorum B. Mariae Virg.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">23 Jun</td>
+<td style="text-align: left;"><em>Vigilia</em> (of St John the Baptist)</td>
+<td style="text-align: left;">21 Sep</td>
+<td style="text-align: left;"><em>S. Matthaei Ap. et Evangelistae</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">28 Jun</td>
+<td style="text-align: left;"><em>Vigilia</em> (of Ss Peter and Paul)</td>
+<td style="text-align: left;">7 Oct</td>
+<td style="text-align: left;"><em>B. Mariae Virg. a Rosario</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">2 Jul</td>
+<td style="text-align: left;"><em>In Visitatione B. Mariae Virg.</em></td>
+<td style="text-align: left;">11 Oct</td>
+<td style="text-align: left;"><em>Maternitatis B. Mariae Virg.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">25 Jul</td>
+<td style="text-align: left;"><em>S. Iacobi Ap.</em></td>
+<td style="text-align: left;">18 Oct</td>
+<td style="text-align: left;"><em>S. Lucae Evangelistae</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">26 Jul</td>
+<td style="text-align: left;"><em>S. Annae Matris B. Mariae Virg.</em></td>
+<td style="text-align: left;">28 Oct</td>
+<td style="text-align: left;"><em>Ss. Simonis et Iudae App.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">6 Aug</td>
+<td style="text-align: left;"><em>In Transfiguratione D. N. I. C.</em></td>
+<td style="text-align: left;">9 Nov</td>
+<td style="text-align: left;"><em>In Dedicatione Archibasilicae Ss.mi Salvatoris</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">10 Aug</td>
+<td style="text-align: left;"><em>S. Laurentii Mart.</em></td>
+<td style="text-align: left;">30 Nov</td>
+<td style="text-align: left;"><em>S. Andreae Ap.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">21 Dec</td>
+<td style="text-align: left;"><em>S. Thomae Ap.</em></td>
+<td style="text-align: left;">29 Dec</td>
+<td style="text-align: left;"><em>De V die infra octavam Nativitatis Domini</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">26 Dec</td>
+<td style="text-align: left;"><em>S. Stephani Protomart.</em> (II day within the octave)</td>
+<td style="text-align: left;">30 Dec</td>
+<td style="text-align: left;"><em>De VI die infra octavam Nativitatis Domini</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">27 Dec</td>
+<td style="text-align: left;"><em>S. Ioannis Ap. et Evang.</em> (III day within the octave)</td>
+<td style="text-align: left;">31 Dec</td>
+<td style="text-align: left;"><em>De VII die infra octavam Nativitatis Domini</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">28 Dec</td>
+<td style="text-align: left;"><em>Ss. Innocentium Mart.</em> (IV day within the octave)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">Sunday between the octave of the Nativity and the Epiphany, otherwise 2 January: <em>Sanctissimi Nominis Iesu</em></td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left;">First Sunday after the Epiphany: <em>S. Familiae, Iesu, Mariae, Ioseph</em></td>
+</tr>
+</tbody>
+</table>
 
 Thirty-seven II class entries stand in the calendar, of which three are vigils (23 June, 28 June, 14 August), six are days within the octave of the Nativity — three of them simultaneously feasts — and two are assigned to Sundays. The vigil count agrees exactly with n. 31, which names four II class vigils, the fourth being the movable vigil of the Ascension. This is the kind of cross-check a reference should perform and report: the closed list in the rubrics and the entries in the calendar account for each other without residue.
 
@@ -633,40 +821,143 @@ n. 62 handles the case of several Saints inscribed under one feast: they are al
 
 n. 91 introduces the table with the exclusivity clause already quoted, and then prints twenty-eight numbered lines grouped under the four classes. It is the operative core of the 1960 calendar, and this reference gives it complete.
 
-| ***Tabella dierum liturgicorum secundum ordinem praecedentiae disposita* (n. 91)** |  |
-|-:|:------------------------------------------------------------|
-| *Liturgical days of the I class* |  |
-| 1 | The feast of the Nativity of the Lord, the Sunday of the Resurrection, and the Sunday of Pentecost (I class with an octave). |
-| 2 | The Sacred Triduum. |
-| 3 | The feasts of the Epiphany and of the Ascension of the Lord, of the Most Holy Trinity, of Corpus Christi, of the Heart of Jesus, and of Christ the King. |
-| 4 | The feasts of the Immaculate Conception and of the Assumption of the Blessed Virgin Mary. |
-| 5 | The vigil and the octave day of the Nativity of the Lord. |
-| 6 | The Sundays of Advent, of Lent, and of the Passion, and Low Sunday. |
-| 7 | Ferias of the I class not named above, namely Ash Wednesday and the Monday, Tuesday, and Wednesday of Holy Week. |
-| 8 | The Commemoration of All the Faithful Departed, which however yields place to an occurring Sunday. |
-| 9 | The vigil of Pentecost. |
-| 10 | The days within the octaves of Easter and of Pentecost. |
-| 11 | Feasts of the I class of the universal Church not named above. |
-| 12 | Proper feasts of the I class, namely: (1) the feast of the duly constituted principal Patron of *a*) a nation, *b*) a region or province, whether ecclesiastical or civil, *c*) a diocese; (2) the anniversary of the dedication of the cathedral; (3) the feast of the duly constituted principal Patron of a place, town, or city; (4) the feast and anniversary of the dedication of one’s own church, or of a public or semi-public oratory taking the place of a church; (5) the Title of one’s own church; (6) the feast of the Title of an Order or Congregation; (7) the feast of the canonised Founder of an Order or Congregation; (8) the feast of the duly constituted principal Patron of an Order or Congregation, and of a religious province. |
-| 13 | Indult feasts of the I class, movable first, then fixed. |
-| *Liturgical days of the II class* |  |
-| 14 | Feasts of the Lord of the II class, movable first, then fixed. |
-| 15 | Sundays of the II class. |
-| 16 | Feasts of the II class of the universal Church that are not of the Lord. |
-| 17 | The days within the octave of the Nativity of the Lord. |
-| 18 | Ferias of the II class, namely: of Advent from 17 to 23 December inclusive, and the Ember ferias of Advent, of Lent, and of September. |
-| 19 | Proper feasts of the II class, namely: (1) the feast of the duly constituted secondary Patron of *a*) a nation, *b*) a region or province, *c*) a diocese, *d*) a place, town, or city; (2) feasts of Saints or Blessed under n. 43 d; (3) feasts of Saints proper to a church under n. 45 c; (4) the feast of the beatified Founder of an Order or Congregation (n. 46 b); (5) the feast of the duly constituted secondary Patron of an Order or Congregation and of a religious province (n. 46 d); (6) feasts of Saints or Blessed under n. 46 e. |
-| 20 | Indult feasts of the II class, movable first, then fixed. |
-| 21 | Vigils of the II class. |
-| *Liturgical days of the III class* |  |
-| 22 | Ferias of Lent and of the Passion, from the Thursday after Ash Wednesday to the Saturday before the Second Sunday of the Passion inclusive, the Ember ferias excepted. |
-| 23 | Feasts of the III class inscribed in particular calendars, and first proper feasts, namely: (1) feasts of Saints or Blessed under n. 43 d; (2) feasts of Blessed proper to a church (n. 45 d); (3) feasts of Saints or Blessed under n. 46 e; then indult feasts, movable first, then fixed. |
-| 24 | Feasts of the III class inscribed in the calendar of the universal Church, movable first, then fixed. |
-| 25 | Ferias of Advent to 16 December inclusive, the Ember ferias excepted. |
-| 26 | The vigil of the III class. |
-| *Liturgical days of the IV class* |  |
-| 27 | The Office of Holy Mary on Saturday. |
-| 28 | Ferias of the IV class. |
+<table style="width:86%;">
+<colgroup>
+<col />
+<col style="width: 86%" />
+</colgroup>
+<thead>
+<tr>
+<th colspan="2" style="text-align: right;"><strong><em>Tabella dierum liturgicorum secundum ordinem praecedentiae disposita</em> (n. 91)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: right;"><em>Liturgical days of the I class</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">The feast of the Nativity of the Lord, the Sunday of the Resurrection, and the Sunday of Pentecost (I class with an octave).</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">The Sacred Triduum.</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">The feasts of the Epiphany and of the Ascension of the Lord, of the Most Holy Trinity, of Corpus Christi, of the Heart of Jesus, and of Christ the King.</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">The feasts of the Immaculate Conception and of the Assumption of the Blessed Virgin Mary.</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">The vigil and the octave day of the Nativity of the Lord.</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">The Sundays of Advent, of Lent, and of the Passion, and Low Sunday.</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Ferias of the I class not named above, namely Ash Wednesday and the Monday, Tuesday, and Wednesday of Holy Week.</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">The Commemoration of All the Faithful Departed, which however yields place to an occurring Sunday.</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">The vigil of Pentecost.</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">The days within the octaves of Easter and of Pentecost.</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">Feasts of the I class of the universal Church not named above.</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">Proper feasts of the I class, namely: (1) the feast of the duly constituted principal Patron of <em>a</em>) a nation, <em>b</em>) a region or province, whether ecclesiastical or civil, <em>c</em>) a diocese; (2) the anniversary of the dedication of the cathedral; (3) the feast of the duly constituted principal Patron of a place, town, or city; (4) the feast and anniversary of the dedication of one’s own church, or of a public or semi-public oratory taking the place of a church; (5) the Title of one’s own church; (6) the feast of the Title of an Order or Congregation; (7) the feast of the canonised Founder of an Order or Congregation; (8) the feast of the duly constituted principal Patron of an Order or Congregation, and of a religious province.</td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">Indult feasts of the I class, movable first, then fixed.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: right;"><em>Liturgical days of the II class</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">Feasts of the Lord of the II class, movable first, then fixed.</td>
+</tr>
+<tr>
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">Sundays of the II class.</td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">Feasts of the II class of the universal Church that are not of the Lord.</td>
+</tr>
+<tr>
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">The days within the octave of the Nativity of the Lord.</td>
+</tr>
+<tr>
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">Ferias of the II class, namely: of Advent from 17 to 23 December inclusive, and the Ember ferias of Advent, of Lent, and of September.</td>
+</tr>
+<tr>
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">Proper feasts of the II class, namely: (1) the feast of the duly constituted secondary Patron of <em>a</em>) a nation, <em>b</em>) a region or province, <em>c</em>) a diocese, <em>d</em>) a place, town, or city; (2) feasts of Saints or Blessed under n. 43 d; (3) feasts of Saints proper to a church under n. 45 c; (4) the feast of the beatified Founder of an Order or Congregation (n. 46 b); (5) the feast of the duly constituted secondary Patron of an Order or Congregation and of a religious province (n. 46 d); (6) feasts of Saints or Blessed under n. 46 e.</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">Indult feasts of the II class, movable first, then fixed.</td>
+</tr>
+<tr>
+<td style="text-align: right;">21</td>
+<td style="text-align: left;">Vigils of the II class.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: right;"><em>Liturgical days of the III class</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">22</td>
+<td style="text-align: left;">Ferias of Lent and of the Passion, from the Thursday after Ash Wednesday to the Saturday before the Second Sunday of the Passion inclusive, the Ember ferias excepted.</td>
+</tr>
+<tr>
+<td style="text-align: right;">23</td>
+<td style="text-align: left;">Feasts of the III class inscribed in particular calendars, and first proper feasts, namely: (1) feasts of Saints or Blessed under n. 43 d; (2) feasts of Blessed proper to a church (n. 45 d); (3) feasts of Saints or Blessed under n. 46 e; then indult feasts, movable first, then fixed.</td>
+</tr>
+<tr>
+<td style="text-align: right;">24</td>
+<td style="text-align: left;">Feasts of the III class inscribed in the calendar of the universal Church, movable first, then fixed.</td>
+</tr>
+<tr>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;">Ferias of Advent to 16 December inclusive, the Ember ferias excepted.</td>
+</tr>
+<tr>
+<td style="text-align: right;">26</td>
+<td style="text-align: left;">The vigil of the III class.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: right;"><em>Liturgical days of the IV class</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">27</td>
+<td style="text-align: left;">The Office of Holy Mary on Saturday.</td>
+</tr>
+<tr>
+<td style="text-align: right;">28</td>
+<td style="text-align: left;">Ferias of the IV class.</td>
+</tr>
+</tbody>
+</table>
 
 Several features of the table are worth naming because they are invisible to anyone who reasons from class labels alone.
 

@@ -7,6 +7,115 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-03.
 
+## Explicit printing and passage-level chronology correction, 2026-11-03
+
+<!-- promised-deliverable: explicit-print-and-proper-quality-2026-11-03 -->
+
+**Source and PDF review passed; final site integration and publication pending.**
+The maintainer reported automatic PDF generation when opening a proper page
+and mixed, repeated Scripture groups in the Claude Twenty-first Sunday after
+Pentecost synthesis. The correction keeps canonical structured sections, typed
+evidence and shared styles in Git, with PDF generation downstream of an explicit
+browser action. No current PDF collection is maintained in Git or elsewhere.
+
+All three print controllers now remain idle on navigation, initialization,
+query flags and reload. Independent real-browser review confirms explicit click
+and Ctrl-P generation, cancellation and failure handling. Exact Type1 font
+scheduling reduces the controlled unchanged sample's cold generation from
+20.012 to 14.674 seconds and native transfer from 20,489,590 to 13,722,040 bytes;
+the 12-page output is byte-identical. Warm compilation stays about 3.6 seconds;
+cached downloads take 35–41 milliseconds. These are desktop Chromium emulation
+measurements with unthrottled workers, not physical mobile-device acceptance.
+The final corrected document still needs its assembled-site measurement.
+
+All ten orientation consumers, including three missed by the earlier seven-leaf
+acceptance, now use distinct component/passage groups. Independent review
+confirms preservation of 996 default facts, 29 comparison facts and 302
+appointed loci, plus qualified source-bound geography. Partial comparison and
+anchor ranges are partitioned without overlapping verses. Identical inputs and
+profiles share deterministic dates and descriptions; different appointments
+and documented uncertainty remain distinguishable. All ten current native
+chronology sheets fit page two.
+
+All nineteen older generated consumers now have current dossiers and
+annotations. Eight stale records and fourteen annotation files were refreshed;
+existing assertions remain, with disputed David attribution restored from the
+canonical corpus. A regression checks all 29 generated consumers and is required
+by both maintenance and deployment. Six older layouts were repaired at 9pt;
+all fourteen affected syntheses keep chronology on page two and Themes on page
+three. All 28 affected native editions render successfully.
+
+The full source census covers 62 proper publications: ten orientation,
+nineteen older generated, and thirty-three authored tables. The authored audit
+checks 227 component/citation rows separately from 24 contextual rows; fourteen
+postconciliar publications were also checked against their shared edition
+owners. Twenty authored tables were corrected. Changes include explicit
+component assignments, adaptation qualifiers, five canonical-order repairs,
+and three omitted appointed passages with sourced date bounds and uncertainty.
+PC-S44C's wrong-Sunday Entrance and Offering identities were corrected in both
+its local research record and visible orientation. Existing historical wording
+is preserved outside these bounded corrections. This is not a new historical
+investigation of every claim in all 62 publications.
+
+The initial full-word census missed an abbreviated false Gradual assignment;
+independent review caught it before publication. The first browser-product
+record was stopped, the complete authored-label audit was added as a required
+criterion, and the affected sources and outputs were reviewed again. The final
+selected authored closure has 28 unique PDFs and 226 source inputs, with the
+reviewed registry-pin and Makefile-message deltas recorded separately.
+Claude48 retains its inherited chronology on physical page three; the other
+27 authored outputs have chronology on page two. All corrected outputs retain
+their prior page totals and warning sets.
+
+The converter now preserves declared table spans. The final union regenerates
+54 readers, changing 44: thirty retain identical visible text, fourteen follow
+approved legacy chronology updates, and ten follow the expanded authored
+census corrections. Thirty-one readers preserve 277 semantic spans in fifty
+tables, including three newly added notes. Desktop/mobile previews pass 100
+current states and 364 full-width chronology checks, with matched before
+captures. Final acceptance must still check actual assembled pages: all ten
+orientation print routes and all 54 ordinary readers, including the exact
+reported `?print=1` route remaining idle.
+
+The complete print-output integration exposed additional compatibility gaps:
+source-declared column and table widths, typed span receipts in curriculum
+exporters, empty formatting in Pandoc's trailing padding, and stale selected
+illustration bindings. The fixes admit only the observed finite widths,
+validate exact receipts and final spans, and retain refusals for unknown styles,
+nonempty padding and arbitrary diagnostics. All 54 readers regenerate byte for
+byte unchanged after this converter follow-up. The five illustration bindings
+were independently checked against the approved citation edits; all 68 image
+payloads, geometry, labels and rights remain unchanged. The original strict
+producer now succeeds for all 288 admitted HTML print outputs and 133 assets;
+separate validation confirms every output hash. A scratch observer used the
+wrong final catalog path after successful generation; its failure is preserved
+alongside the successful validation at the actual path. Independent two-build
+publication reproduction now passes: thirteen families, 27,836 files and
+382,696,591 bytes agree exactly. The deployment source gate and deliverables
+validation pass. The full conversion suite, assembled-site acceptance and main
+publication remain pending.
+
+Independent source/PDF review covers 66 retained outputs: ten orientation,
+28 legacy and 28 authored. The later registry-binding and diagnostic-message
+deltas are explicitly bounded as non-rendering changes; no new 66-PDF capture
+is claimed. The durable pre-site receipts are under
+`workflows/reviews/print-correctness-2026-11-03/`; `proper-quality.json` has SHA-256
+`74d41a6d1ab5b185741b4088705699857fa97f81343a236b446312758211a820`.
+Those frozen receipts explicitly leave assembled-site acceptance separate.
+The 28-edition legacy preflight retains 35 inherited diagnostics in five
+editions, exactly matching its baseline. An additional Claude52 house-voice
+finding is also unchanged from baseline. These qualifications do not claim an
+entirely green historical editorial suite. The 58 controller integration tests,
+focused chronology/runtime tests and registry checks pass.
+
+The feature baseline is `40bea725b14b16e711b922bacd6368b6755c8bed`; the initial
+live revision is `aa6ca926752ab89c019291e115ceb226ae3412fc`. Live and feature
+validation remain separate. The maintainer explicitly authorized main
+publication after final independent cold review. Work stays on
+`feature/no-pdfs`; the validated candidate will be pushed to main without
+rewriting history only after the final source/site gates and review. The Pages
+workflow, live idle arrival and explicit PDF generation remain pending.
+
 ## Recovery and shared proper chronology, 2026-11-03
 
 <!-- promised-deliverable: shared-proper-chronology-2026-11-03 -->
