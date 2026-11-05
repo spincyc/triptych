@@ -4,7 +4,7 @@
 # compiler the Pages print-compile job builds (`--target toolchain`, passing
 # both pins from pages.yml) to typeset every admitted edition before deploying;
 # that job never runs the service stage or its source checkout.
-ARG PRINT_BASE=ghcr.io/spincyc/triptych-texlive@sha256:fd64daf839c719eef559ca0c74b0b93fb3d6f710ce057561b76500adcd150617
+ARG PRINT_BASE=ghcr.io/spincyc/triptych-texlive@sha256:45dbaaa9ba1eccff8621c8ed5ff614363384ccd5bc1b72d3b708f8eb2d2d057a
 FROM ${PRINT_BASE} AS toolchain
 
 ARG PRINT_BASE
