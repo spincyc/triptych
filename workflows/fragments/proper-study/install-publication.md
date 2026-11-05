@@ -22,8 +22,10 @@ Create or confirm one per-publication release record for each declared source
 output using the repository's release tooling. The catalog is
 `library/traditional-latin-mass.md` for 1962 and
 `library/novus-ordo-liturgy.md` for postconciliar. Read and preserve correct
-existing records. All three records must name the exact IDs, owning catalog,
-and applicable standing authorization; generated print hashes are separate.
+existing records. Their paths determine the exact output IDs, and the schema
+registry determines the owning catalog. Write the release decisions, `status`
+and applicable standing `authorization`, without repeating derived fields;
+generated print hashes are separate.
 
 Wire the existing Sunday's row to the canonical reader and any actually
 available reader-facing formats in the manifest's declared order. Keep source

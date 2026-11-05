@@ -18,11 +18,14 @@ independent source/content and web reviews. The requested occurrence is
 the Thirty-second Sunday in Ordinary Time, Year A, Lectionary 154.
 
 The request also requires verifying the no-PDF migration throughout this
-workflow and publishing the validated work to main. Before seeding, audit the
-current source/reader path and repair stale author instructions about fields
-now derived by the publication schema. No production review or publication
-has yet been completed. The exact provider/identity authorization is recorded
-in `guidance/liturgy/propers-production-plan.md`.
+workflow and publishing the validated work to main. The pre-seed audit is
+complete: version 18 repairs derived-field duplication, component placement,
+hand-written timestamp instructions and companion-reader wording. All 28
+focused regressions pass. The durable audit is
+`workflows/reviews/gpt-pc-s58-production-2026-11-05/WORKFLOW-AUDIT.md`.
+No production review or publication has yet been completed. The exact
+provider/identity authorization is recorded in
+`guidance/liturgy/propers-production-plan.md`.
 
 Completion requires terminal workflow acceptance, all three reader outputs and
 their catalog/release records, a durable workflow audit, passing publication
@@ -101,8 +104,9 @@ Limits and open items:
   89422cd524) still date some editions to 2026-10-01.
 - **Manifests.** Nine schema-1 proper manifests keep stale `main.tex`
   component paths.
-- **Workflow fragments** still mention declaring outputs; update them at the
-  next proper-study version.
+- **Workflow fragments:** the 5 November PC-S58-A pre-seed audit closes the
+  derived-output instruction follow-up in proper-study version 18, together
+  with stale timestamp, component-placement and companion-reader instructions.
 - **Not yet observed:** the docker figure runner, physical devices, and
   Safari/Firefox.
 

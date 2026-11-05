@@ -16,7 +16,7 @@ preserves the established first four pages for the concise companion when
 printed, while its remaining argument and the expansive study follow their
 distinct roles. Read
 `guidance/liturgy/propers-three-documents.md` for the owning standard. The
-`proper-study` workflow is at version 17. Its current path publishes source
+`proper-study` workflow is at version 18. Its current path publishes source
 and reader editions; optional print rendering is separate. The version
 paragraphs below retain the contracts of earlier runs.
 
@@ -47,7 +47,7 @@ complete adopted expansion; mixed or partial shapes fail closed. Other
 postconciliar families require an explicit registry resolver rather than a
 grammar-only pass.
 
-### Current source and reader path: version 17
+### Current source and reader path: version 18
 
 The sequence is context, research, reusable source registration, cold research
 review, expansive study and cold review, concise study and cold review, homily
@@ -70,6 +70,17 @@ new worker with no authoring conversation history, exactly the compiled packet
 and its result destination. Never prefill a PASS from preparatory work or use
 an author as the cold reviewer of that work. Follow each packet's repair route;
 the linear diagram shows the passing path, not permission to bypass a loop.
+
+Version 18 aligns authoring packets with the single-source schema and reader
+contracts. Proper regions place components by key; their paths and membership
+stay in `proper-components.toml`. Publication identities, output IDs and labels,
+and release IDs and owning catalogs are derived rather than copied into records.
+Component contract pins remain explicit. Revision timestamps come from Git;
+authors record provenance and contributions without writing timestamp declarations.
+All three outputs have readers under one leaf's web declaration. The canonical
+conversion receives the workflow's cold web review; companions are converter-verified
+unless their own inspection is recorded. Active version-17 runs must be reseeded;
+historical terminal records retain their original identities.
 
 Version 17 starts every leaf from a document type (the convention is owned by
 `guidance/document-schemas.md`). Authors write section files and the
@@ -131,7 +142,7 @@ replay remain available with their original identity and `deterministic: null`.
 ### Historical proper-study print path: through version 15
 
 The following receipt behavior and version narratives describe earlier print
-runs. They do not add PDF stages or approvals to version 17. Omitting `--mode`
+runs. They do not add PDF stages or approvals to the current source path. Omitting `--mode`
 from the standalone `_proper_study.py` CLI, or passing `--mode print`, retains
 the historical exact-PDF checks; every current engine invocation opts into
 source mode explicitly.
@@ -1263,7 +1274,7 @@ and it applies to runs seeded after it.
 
 The following diagram and lifecycle describe the legacy `proper` workflow
 (1962 propers synthesis production), with its historical print contract. They
-are not the current `proper-study` version-16 path shown above. `proper` and
+are not the current `proper-study` source path shown above. `proper` and
 `proper-finish` were retired on 2026-11-04 and seed no new run; this section
 and the version history below it are the record their existing runs are read
 against. Its stages are:

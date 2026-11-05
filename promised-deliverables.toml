@@ -9,7 +9,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "current-workflow"
   criterion = "Audit the current proper-study source/reader path against the no-PDF and single-source conventions, repair necessary omissions, and validate the changed workflow before seeding."
-  status = "open"
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-pc-s58-production-2026-11-05/WORKFLOW-AUDIT.md", "workflows/pipelines/proper-study.json"]
 
   [[deliverables.requirements]]
   id = "accepted-three-documents"

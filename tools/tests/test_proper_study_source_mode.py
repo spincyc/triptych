@@ -192,9 +192,9 @@ class SourceFixture(unittest.TestCase):
 
 
 class SourceWorkflowTests(unittest.TestCase):
-    def test_v17_source_route_finishes_after_independent_source_and_web_reviews(self):
+    def test_v18_source_route_finishes_after_independent_source_and_web_reviews(self):
         fixture = EngineFixture(self, source_mode=True)
-        self.assertEqual(fixture.workflow["version"], 17)
+        self.assertEqual(fixture.workflow["version"], 18)
         self.assertNotIn("visual-review", fixture.stages)
         fixture.drive_to("artifact-gates")
         fixture.advance()

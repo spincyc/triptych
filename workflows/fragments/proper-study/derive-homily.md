@@ -39,7 +39,8 @@ any recited prayer must reproduce an exact received human witness.
 
 Declare `[document.homily]` in `publication.toml` -- its metadata fields, the
 `homily` region holding the spoken component and the `apparatus` region holding
-the terminal note -- and run `tools/tpt document-types refresh --leaf
+the terminal note, each placed by component key without repeating its path --
+and run `tools/tpt document-types refresh --leaf
 {provider}/{proper}`, which writes `homily.tex`; never write it by hand. The
 type imports `common/preamble`, `common/propers-format` and
 `common/propers-homily`, sets the full-width shared title, and encloses only
@@ -47,6 +48,7 @@ the `homily` region in `properhomily`: two Latin Modern columns at the shared
 11-point baseline, with the terminal apparatus after the environment's closing
 page break. Never put columns in the studies.
 Do not add local font, geometry or title overrides. Keep
-components local and update the common generation timestamp. Add no new
+components local and record actual contributions; revision timestamps are
+derived from Git. Add no new
 source-dependent claims or repairs to the accepted study. Report upstream
 defects for the independent homily reviewer to route to their true owner.

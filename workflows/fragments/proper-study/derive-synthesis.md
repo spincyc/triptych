@@ -3,7 +3,8 @@
 Read the accepted expansive study and write the concise components. Declare
 `[document.synthesis]` in `publication.toml` -- its metadata fields, the
 `opening` region (the inventory and overview components of page 1) and the
-`body` region (themes, commentary and apparatus) -- and run
+`body` region (themes, commentary and apparatus), placing each component by key
+as `{ component = 'inventory' }` without repeating its path -- and run
 `tools/tpt document-types refresh --leaf {provider}/{proper}`, which writes
 `synthesis.tex` and the generated page 2; never write either by hand. Use the
 shared inventory and overview forms. Do not re-derive their layouts, change
@@ -47,8 +48,8 @@ source note, scope, timestamp and rights notice.
 Add no new evidence-dependent claim. A missing argument or source is an
 upstream defect to report, not permission to edit accepted research or study.
 Maintain synthesis-only components and truthful mode membership in the common
-manifest. Update the common generation timestamp and actual contribution
-record, and record the substantive word count in the production audit. A
+manifest. Update the actual contribution record; the edition's revision
+timestamp is derived from Git. Record the substantive word count in the production audit. A
 fresh reviewer compares this work both on its own and against its source study.
 
 Validate synthesis source roles, component coverage, source ownership, and
