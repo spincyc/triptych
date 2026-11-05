@@ -577,7 +577,9 @@ def load_canonical_validator():
         raise ContractError(f"cannot load canonical validator: {VALIDATOR_PATH}")
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
-    spec.loader.exec_module(module)
+    # Execute the source without a bytecode cache: a __pycache__ beside the
+    # validator under src/ would count as a browser-product input.
+    exec(compile(VALIDATOR_PATH.read_bytes(), str(VALIDATOR_PATH), "exec"), module.__dict__)
     return module
 
 

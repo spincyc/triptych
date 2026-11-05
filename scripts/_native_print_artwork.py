@@ -47,7 +47,11 @@ def _module(path: Path, name: str):
     loader = importlib.machinery.SourceFileLoader(name, str(path))
     module = importlib.util.module_from_spec(importlib.util.spec_from_loader(name, loader))
     sys.modules[name] = module
-    loader.exec_module(module)
+    # The sanctuary validator lives beneath src/, where importlib's bytecode
+    # cache would add an ignored __pycache__ to browser-product inputs (it
+    # staled five families on 2026-11-05). Execute the current source bytes
+    # without a cache, as document_schema_checks/liturgy.py does.
+    exec(compile(path.read_bytes(), str(path), "exec"), module.__dict__)
     return module
 
 
