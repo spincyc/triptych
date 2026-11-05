@@ -4425,6 +4425,14 @@ class RemediationTests(unittest.TestCase):
                 self.assertEqual(claim.date.precision, "boundary", identifier)
                 self.assertIsNone(claim.date.begin, identifier)
                 continue
+            if identifier == "composition.psalm-129-possible-davidic-composition#0":
+                # Berthier's conditional composition proposal in the verse
+                # commentary is distinct from the edition's year apparatus.
+                self.assertEqual(claim.basis_class, "traditional-catholic")
+                self.assertEqual(claim.disposition, "disputed")
+                self.assertEqual(claim.date.precision, "boundary")
+                self.assertIsNone(claim.reporting_exception)
+                continue
             self.assertEqual(claim.basis_class, "reported-excluded", identifier)
             self.assertEqual(
                 claim.reporting_exception,
@@ -5132,6 +5140,11 @@ class QuotedBasisTests(unittest.TestCase):
     # a fabricated claim with a fabricated quotation walked into, and it is why
     # an undeclared skip is now a failure.
     UNREOPENABLE = {
+        "unit:composition.psalm-129-possible-davidic-composition#0": (1, (
+            "The Berthier proposal was read directly in printed p.790, PDF "
+            "page826, on 2026-11-05 after the complete registered Haydock PDF "
+            "hash was verified. The quotation is verified but the remote "
+            "facsimile bytes are not retained in Git.")),
         "unit:critical.gospel-of-mark#0": (1, (
             "The NABRE Mark introduction was inspected in the exact restricted "
             "web-tool text artifact mark-introduction-web-text-272bcce7, "
@@ -5203,6 +5216,11 @@ class QuotedBasisTests(unittest.TestCase):
         "date the passage record names; not reopenable from the edition's "
         "bytes in this repository.")
     SELF_WITNESSED = {
+        "unit:composition.psalm-129-possible-davidic-composition#0": (1, (
+            "The modal word might appears in the verified passage summary, "
+            "which is not source bytes. Its conditional force was checked "
+            "directly in Haydock printed p.790, PDF page826, on 2026-11-05; "
+            "the registered remote facsimile is not retained in Git.")),
         "unit:critical.gospel-of-matthew#0": (1, (
             "The probable later-decade phrase also occurs in the bounded "
             "passage summary, but that summary is not source bytes. Direct "

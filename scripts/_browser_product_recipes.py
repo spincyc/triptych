@@ -79,6 +79,7 @@ RECIPES = (
     # Release records decide each reader's publication status, so they are
     # inputs too (the cold audit found the read).
     _recipe("web-editions", "web-editions", ["tools/web-edition", "products"], ["src", "release/publications"],
+            ["guidance/liturgy/postconciliar-propers-registry.md"],
             delivery="site-build"),
 )
 

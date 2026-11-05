@@ -79,6 +79,45 @@ pending migration units remain unchanged. These browser checks
 supplement the recorded content reviews; they do not add an independent
 companion web review or print-layout approval.
 
+## Useful shared biblical dates, 2026-11-05
+
+<!-- promised-deliverable: useful-shared-biblical-dates-2026-11-05 -->
+
+**Reviewed candidate; publication pending.** Revise the shared chronology projection to give useful
+approximate calendar dates, distinguish events from composition, and distinguish
+David's periods where the evidence does. Preserve substantive uncertainty in
+concise wording and the underlying source records. The change must reach all
+existing proper documents when their own text is assembled with shared templates
+and machinery, without regenerating each publication's tracked files.
+
+Acceptance includes independent cold review for conciseness, informativeness,
+clarity and composition of multiple passages; focused source and assembly
+regressions; and reconciliation, commit and non-force publication to main.
+The requested examples include Psalms 43, 84 and 129 (Vulgate numbering),
+Jeremias 29, Matthew 13, Mark 11 and Colossians 3. Shared assembly now supplies
+current generated content to web conversion, native bundles and local print
+for all 62 proper leaves (128 declared outputs); no provider-leaf source has
+been regenerated. Existing missing appointment inputs remain explicit.
+
+The sample date sheet now has separate event and composition dates, sourced
+calendar estimates and concise numerical proposal spans. Distinct Davidic
+settings retain their own dates. Original claims, alternatives and qualifications
+remain in the evidence appendix. The sample GPT 66 synthesis and GPT 54 synthesis
+were actually typeset; their date sheets fit page two without overflow.
+
+Focused renderer, assembly, legacy chronology, freshness, source-identity and
+revision tests pass. Independent review identified and verified repairs to
+staging-directory safety, stale process caches, suppressed Davidic source
+qualifications and estimate scope. The source review checked the sample, joined
+Psalm/Daniel passages and David's distinct Geth, Maon and Absalom settings against
+their evidence. The final census covers all 62 proper leaves: 48 can query
+chronology (including the nuptial leaf's explicit no-formulary result); 14
+postconciliar leaves still lack reviewed appointment inputs. Remaining nonnumeric
+subjects are Sinai's unresolved calendar date, David's unspecified deliverance
+occasion, and Job's and Tobias's already useful century wording. Existing
+source-qualification gaps remain explicit. Release checks and main publication
+are pending.
+
 ## Review follow-up: single-source corpus and gated printing, 2026-11-04
 
 <!-- promised-deliverable: single-source-print-followup-2026-11-04 -->

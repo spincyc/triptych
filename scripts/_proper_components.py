@@ -766,7 +766,7 @@ def companion_owner(source_root: Path, document: str) -> tuple[Path, Path] | Non
     return None
 
 
-def include_graph(entry: Path, leaf: Path, provider_root: Path) -> set[Path]:
+def include_graph(entry: Path, leaf: Path, provider_root: Path, *, assembly=None) -> set[Path]:
     """Walk static, unconditional local includes; refuse unsupported ambiguity.
 
     The build resolves TeX inputs from the provider directory and src/. Local
@@ -784,7 +784,8 @@ def include_graph(entry: Path, leaf: Path, provider_root: Path) -> set[Path]:
             return
         visited.add(path)
         stack.add(path)
-        text = tex_source(path)
+        text = (re.sub(r"(?<!\\)%[^\n]*", "", assembly.read_text(path))
+                if assembly is not None else tex_source(path))
         if path.resolve().is_relative_to(leaf.resolve()):
             audit_executable_tex(path, leaf, text)
         depth = 0
@@ -809,7 +810,9 @@ def include_graph(entry: Path, leaf: Path, provider_root: Path) -> set[Path]:
                 raise ValueError(f"{path.name}: unsafe or dynamic include {value!r}")
             candidates = [base / (value if relative.suffix else f"{value}.tex")
                           for base in (provider_root, provider_root.parent)]
-            target = next((candidate.resolve() for candidate in candidates if candidate.is_file()), None)
+            target = next((candidate.resolve() for candidate in candidates
+                           if (assembly.is_file(candidate) if assembly is not None
+                               else candidate.is_file())), None)
             if target is None:
                 raise ValueError(f"{path.name}: missing include {value!r}")
             if not target.is_relative_to(provider_root.resolve()) and not target.is_relative_to((provider_root.parent / "common").resolve()):

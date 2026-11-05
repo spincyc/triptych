@@ -106,6 +106,41 @@ class NativeSourceBundleTests(unittest.TestCase):
         self.assertIn("src/gpt/articles/faith/example/body.tex", [row["path"] for row in result["files"]])
         self.assertIn("src/gpt/articles/faith/example/body.tex", [row["path"] for row in result["source_inputs"]])
 
+    def test_shared_template_and_generated_page_replace_snapshots_and_change_render_identity(self):
+        from types import SimpleNamespace
+        from _document_types import Assembly
+        kind = self.root / "src/common/document-types/fixture-v1"
+        kind.mkdir(parents=True)
+        (kind / "type.toml").write_text(
+            'schema = 1\nrecord_type = "document-type"\nid = "fixture-v1"\n'
+            'description = "Fixture"\nkinds = ["article-faith"]\n'
+            '[editions.main]\nrole = "canonical"\ntemplate = "main.template.tex"\n'
+            'entrypoint = "main.tex"\nregions = ["body"]\n')
+        (kind / "main.template.tex").write_text(
+            '\\input{common/preamble}\n%@ region body\n%@ slot fake/page\n')
+        manifest = self.leaf / "publication.toml"
+        manifest.write_text(manifest.read_text() + '\n[document]\ntype = "fixture-v1"\n'
+                            '[document.main]\nbody = ["body"]\n')
+        generated = self.leaf / "generated/fake.tex"
+        generated.parent.mkdir()
+        generated.write_text("Stale generated content.\n")
+        held = self.main.read_bytes(), generated.read_bytes()
+        value = ["Current shared date.\n"]
+        projection = SimpleNamespace(NAME="fake", OUTPUTS={"page": "generated/fake.tex"},
+                                     render=lambda _: {"generated/fake.tex": value[0]})
+        def prepare():
+            return self.prepare(assembly=Assembly(self.root, projections={"fake": projection}))
+        first = prepare()
+        files = {row["path"]: bundles.file_bytes(row) for row in first["files"]}
+        self.assertEqual(files[generated.relative_to(self.root).as_posix()], value[0].encode())
+        self.assertIn(b"generated/fake", files[first["entrypoint"]])
+        self.assertNotIn(generated.relative_to(self.root).as_posix(),
+                         [row["path"] for row in first["source_inputs"]])
+        value[0] = "Revised shared date.\n"
+        second = prepare()
+        self.assertNotEqual(first["render_sha256"], second["render_sha256"])
+        self.assertEqual((self.main.read_bytes(), generated.read_bytes()), held)
+
     def test_missing_literal_import_refuses_source_preparation(self):
         (self.leaf / "body.tex").unlink()
         with self.assertRaisesRegex(ValueError, "unresolved literal input"):

@@ -1,5 +1,5 @@
-# Descriptive labels only. These identify a narrated episode when its date is
-# unresolved; they supply no date, inferred chronology, or composition claim.
+# Shared reader orientation. Descriptive labels supply no chronology; the
+# separately typed calendar_estimates retain their evidence and derivation.
 schema: triptych-chronology-orientation/v1
 numbering: vulgate
 # Presentation names for these existing temporal subjects. The source title,
@@ -15,6 +15,9 @@ subject_labels:
   composition.first-epistle-to-the-thessalonians: First Thessalonians
   composition.epistle-to-the-philippians: Philippians
   composition.epistle-to-the-colossians: Colossians
+  composition.psalm-129-possible-davidic-composition: David after his sin (proposed)
+  composition.book-of-jeremias: Jeremias
+  composition.jeremias-letter-to-the-exiles: Letter to the exiles
   composition.book-of-esther: Esther
   critical.book-of-job: Job
   composition.epistle-to-the-ephesians: Ephesians
@@ -104,6 +107,16 @@ contexts:
 
 # Places qualify the named date relation; they never supply a date.
 settings:
+  life-of-christ.parables-by-the-sea:
+    relation: narrated-event
+    label: Sea of Galilee
+    sources: [bible:douay-rheims:Matt.13.1, bible:douay-rheims:Matt.13.36]
+    basis: Matthew places the parable discourse beside the sea and the explanation in the house.
+  life-of-christ.faith-and-prayer-after-the-fig-tree:
+    relation: narrated-event
+    label: Bethany to Jerusalem, before the Passion
+    sources: [bible:douay-rheims:Mark.11.12, bible:douay-rheims:Mark.11.20, bible:douay-rheims:Mark.11.27]
+    basis: The fig tree is encountered after leaving Bethany; the teaching precedes the return to Jerusalem and its Temple.
   composition.book-of-esther:
     relation: composition
     label: story at Susa; writing in Persia conjectured
@@ -208,7 +221,7 @@ settings:
       stage of composition occurred on Patmos.
   israel.monarchy.david-at-geth:
     relation: superscription-setting
-    label: Geth, at the Philistine court
+    label: Geth, fleeing Saul before David's kingship
     sources:
     - bible:douay-rheims:Ps.33.1
     - bible:douay-rheims:1Kings.21.10
@@ -258,12 +271,12 @@ settings:
       prophet's writing address.
   composition.gospel-of-mark:
     relation: composition
-    label: Rome traditionally; Egypt reported by Chrysostom
+    label: Rome traditionally
     sources:
     - artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9-article-text
     basis: MacRory holds Rome to be the place, while reporting and rejecting Chrysostom's
-      Egyptian location. The short label retains the reported alternative without treating
-      it as equally preferred by MacRory.
+      Egyptian location. The compact label gives his preferred location; the source evidence
+      retains his discussion of the Egyptian proposal.
   critical.gospel-of-mark:
     relation: composition
     label: Syria possible
@@ -296,14 +309,6 @@ settings:
     - bible:douay-rheims:Jer.29.3
     basis: Jeremias 29:1 names the letter sent from Jerusalem to the captives at Babylon,
       and verse 3 names the messengers sent from Jerusalem to Babylon.
-  composition.book-of-jeremias:
-    relation: final-formation
-    label: Judah ministry; final writing site unspecified
-    sources:
-    - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08334a-dd4ae528-article-text
-    basis: Faulhaber's account places Jeremias's ministry in Judah and Jerusalem and later
-      in Egypt. Its final-formation dating does not establish where the whole book's final
-      form was written.
   composition.first-epistle-of-st-john:
     relation: composition
     label: Ephesus probable
@@ -312,3 +317,445 @@ settings:
     basis: Drum's Time and place section says nothing certain can be determined, but calls
       the arguments for Ephesus probable. This remains a probability, not an established
       address.
+
+# Calendar estimates are reviewed orientation, not additional query candidates.
+# Exact claims, competing reckonings and source wording remain in the evidence.
+calendar_estimates:
+  - subject: israel.exile.ezechiel.ministry
+    relation: prophecy-given
+    profile: catholic-traditional-v1
+    date:
+      precision: interval
+      from: {year: 594, era: bc}
+      to: {year: 571, era: bc}
+      label: "Attested ministry: c. 594–571 B.C."
+    qualification: "derived calendar frame; ministry may have continued"
+    inputs: [israel.exile.ezechiel.ministry, israel.exile.second-captivity]
+    sources:
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070-article-text
+      - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03315a-9cb437e2-article-text
+      - bible:douay-rheims:Ezech.1.2
+      - bible:douay-rheims:Ezech.29.17
+    basis: >-
+      Schets dates Ezechiel's captivity to 598 B.C., his call to its fifth
+      year and his last dated prophecy to its twenty-seventh; Reid dates
+      that captivity 597. Counting the captivity year as year one gives
+      fifth-year positions 594/593 and twenty-seventh-year positions 572/571.
+      Their outer frame is approximate because calendar-year boundaries are
+      not settled here. It locates the attested ministry, not its final end;
+      Schets explicitly says at least twenty-two years.
+  - subject: israel.exile.second-isaias-oracles
+    relation: prophecy-given
+    profile: catholic-critical-v1
+    kind: anchor-context
+    anchor: israel.restoration.decree-of-cyrus
+    date:
+      precision: approximate-year
+      from: {year: 538, era: bc}
+      label: "Toward the Exile's end, c. 538 B.C."
+    qualification: "NABRE period; prophecy precedes the return"
+    inputs: [israel.exile.second-isaias-oracles, israel.restoration.decree-of-cyrus]
+    sources:
+      - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.isaiah-introduction
+      - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.song-of-songs-introduction
+    basis: >-
+      The Isaiah introduction places these oracles toward the end of the
+      Babylonian exile. The same NABRE's Song of Songs introduction names
+      538 B.C. as that exile's end. This supplies the calendar anchor that
+      the prophecy precedes, not an exact year for the oracles.
+  - subject: life-of-christ.last-supper
+    relation: narrated-event
+    profile: catholic-traditional-v1
+    date:
+      precision: approximate-year
+      from: {year: 29, era: ad}
+      label: "c. A.D. 29"
+    qualification: "Maas's chronology; Passion dates disputed"
+    inputs: [life-of-christ.last-supper, life-of-christ.crucifixion, chronology.maas-auc-782-ad-29-calibration]
+    sources:
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text
+      - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five
+    basis: >-
+      Maas places the supper on 14 Nisan immediately before the Passion,
+      which his own chronology dates A.D. 29. This names his approximate
+      calendar orientation without resolving the corpus's other Passion
+      chronologies or translating the disputed Nisan day to a civil date.
+  - subject: life-of-christ.resurrection
+    relation: prophetic-referent
+    profile: catholic-traditional-v1
+    date:
+      precision: approximate-year
+      from: {year: 29, era: ad}
+      label: "c. A.D. 29"
+    qualification: "Maas's chronology; Passion dates disputed"
+    inputs: [life-of-christ.resurrection, life-of-christ.crucifixion, chronology.maas-auc-782-ad-29-calibration]
+    sources:
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text
+      - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five
+      - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04-article-text
+    basis: >-
+      The corpus's Resurrection claim is three days after the Crucifixion.
+      Applying Maas's A.D. 29 Passion chronology gives the same calendar year,
+      explicitly as his chronology rather than a resolution of all proposals.
+  - subject: composition.book-of-daniel.prayer-of-azarias
+    relation: composition
+    profile: catholic-traditional-v1
+    kind: anchor-context
+    anchor: israel.exile.seventy-years
+    date:
+      precision: approximate-year
+      from: {year: 536, era: bc}
+      label: "Most likely long after the Exile ended, c. 536 B.C."
+    qualification: "Gigot's chronology; no closing date"
+    inputs: [composition.book-of-daniel.prayer-of-azarias, israel.exile.seventy-years]
+    sources: [artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04621b-2a74931e-article-text]
+    basis: >-
+      Gigot's Book of Daniel places the Exile at 586–536 B.C. in its authorship
+      discussion and judges this fragment most likely long after that Exile
+      in the deuterocanonical section. The displayed year locates the end of
+      his anchor, not the fragment's composition. No closing date is supplied.
+  - subject: israel.exile.seventy-years
+    relation: historical-setting
+    profile: catholic-traditional-v1
+    date:
+      precision: interval
+      from: {year: 605, era: bc}
+      to: {year: 536, era: bc}
+      label: "Babylonian captivity era: c. 605–536 B.C."
+    qualification: "approximate historical frame"
+    inputs: [israel.exile.seventy-years, israel.exile.first-captivity, composition.book-of-daniel]
+    sources:
+      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04620a-900282cd-article-text
+      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04621b-2a74931e-article-text
+    basis: >-
+      The Daniel article begins the prophet's captivity in 605 B.C.; Gigot's
+      Book of Daniel places the end of the Exile at 536. This broad frame
+      locates the Babylonian captivity/servitude era associated with the book,
+      not every narrated event or chapter: Daniel continues under Cyrus.
+      It is not an exact arithmetic conversion of Jeremiah's seventy years.
+  - subject: israel.monarchy.david-house-built
+    relation: superscription-setting
+    profile: catholic-traditional-v1
+    date:
+      precision: interval
+      from: {year: 1048, era: bc}
+      to: {year: 1015, era: bc}
+      label: "During the Jerusalem reign, c. 1048–1015 B.C."
+    qualification: "Corbett's chronology; precise year unknown"
+    inputs: [israel.monarchy.david-house-built, israel.monarchy.david-reign, israel.monarchy.david-traditional-era]
+    sources:
+      - passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology
+      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text
+      - bible:douay-rheims:2Kings.5.5
+      - bible:douay-rheims:2Kings.5.11
+    basis: >-
+      Corbett puts the palace after Jerusalem's capture during the Jerusalem
+      reign. His reported 1055–1015 reign less seven and a half Hebron years
+      gives an approximately 1048–1015 Jerusalem phase. The whole phase is a
+      containing frame, not a specific building or dedication date, and does
+      not adopt Meistermann's differing 1058 date for Jerusalem's capture.
+  - subject: israel.monarchy.david-repentance
+    relation: superscription-setting
+    profile: catholic-traditional-v1
+    date:
+      precision: interval
+      from: {year: 1048, era: bc}
+      to: {year: 1015, era: bc}
+      label: "During the Jerusalem reign, c. 1048–1015 B.C."
+    qualification: "Corbett's chronology; precise year unknown"
+    inputs: [israel.monarchy.david-repentance, israel.monarchy.david-reign, israel.monarchy.david-traditional-era]
+    sources:
+      - passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology
+      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text
+      - bible:douay-rheims:2Kings.5.5
+      - bible:douay-rheims:2Kings.11.1
+    basis: >-
+      Corbett places the sin and repentance in the Jerusalem phase. Subtracting
+      seven and a half years at Hebron from his reported accession in 1055
+      gives approximately 1048; death closes the containing reign in 1015.
+      This names the entire phase rather than dating the sin precisely.
+  - subject: israel.monarchy.saul-reign
+    relation: superscription-setting
+    profile: catholic-traditional-v1
+    date:
+      precision: boundary
+      boundary:
+        direction: no-later-than
+        endpoint: {year: 1055, era: bc}
+        statement: no later than David's accession
+      label: "By David's accession, c. 1055 B.C."
+    qualification: "Corbett's chronology; Saul's accession unresolved"
+    inputs: [israel.monarchy.saul-reign, israel.monarchy.david-traditional-era]
+    sources:
+      - passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology
+      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text
+    basis: >-
+      Corbett places Saul's death before David's accession and reports the
+      latter at 1055 B.C. This calendar boundary locates Saul's reign without
+      treating the problematic two-year reading as its complete duration or
+      inventing a starting year.
+  - subject: israel.exile.psalm-136-captive-lament
+    relation: historical-setting
+    profile: catholic-traditional-v1
+    kind: anchor-context
+    anchor: israel.exile.third-captivity
+    date:
+      precision: interval
+      from: {year: 588, era: bc}
+      to: {year: 586, era: bc}
+      label: "After Jerusalem's fall, c. 588–586 B.C."
+    qualification: "Reid and Schets; Petavius via Sloet, transcription only"
+    inputs: [israel.exile.psalm-136-captive-lament, israel.exile.third-captivity]
+    sources:
+      - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03315a-9cb437e2
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08652a-189e1a8f
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c
+    basis: >-
+      Reid dates the destruction 586, Schets 587 and the Petavius table 588.
+      Their named frame locates the destruction remembered by the captives,
+      without dating the poem's composition. The full anchor evidence retains
+      the Haydock Anno Mundi alternative and Howlett's anomalous 536 as
+      preserved, nonanswerable evidence. This context resolves neither.
+  - subject: critical.book-of-proverbs.final-formation
+    relation: final-formation
+    profile: catholic-critical-v1
+    kind: anchor-context
+    anchor: israel.exile.seventy-years
+    date:
+      precision: approximate-year
+      from: {year: 538, era: bc}
+      label: "Early after the Exile ended, c. 538 B.C."
+    qualification: "NABRE period; exact editing date unknown"
+    inputs: [critical.book-of-proverbs.final-formation, israel.exile.seventy-years]
+    sources:
+      - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-08-20.proverbs-introduction
+      - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.song-of-songs-introduction
+    basis: >-
+      The Proverbs introduction dates final editing to the early postexilic
+      period. The same NABRE's Song of Songs introduction explicitly dates
+      the end of the Babylonian Exile to 538 B.C. That second passage supplies
+      only the era anchor, not a composition claim about Proverbs; no closing
+      year or transfer of Song of Songs' authorship is inferred.
+  - subject: composition.psalms-of-the-sons-of-korah
+    relation: composition
+    profile: catholic-traditional-v1
+    date:
+      precision: interval
+      from: {year: 740, era: bc}
+      to: {year: 536, era: bc}
+      label: "c. 740–536 B.C."
+    qualification: "Korahite collection estimate"
+    inputs: [composition.psalms-of-the-sons-of-korah, israel.prophets.isaias-traditional-era, israel.restoration.decree-of-cyrus]
+    sources:
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25-article-text
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text
+      - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03315a-9cb437e2
+      - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+    basis: >-
+      Drum places the Korahite psalms between the days of Isaias and the return
+      from exile. Souvay places Isaias's ministry from 740 B.C.; the corpus's
+      return sources give 538 and 536 B.C. The outer calendar frame uses the
+      beginning of that ministry and the later proposed return, as an explicitly
+      approximate editorial orientation. It does not choose between the return
+      dates or assert that an individual psalm was written at either endpoint.
+  - subject: composition.jeremias-letter-to-the-exiles
+    relation: composition
+    profile: catholic-traditional-v1
+    kind: anchor-context
+    anchor: israel.exile.second-captivity
+    date:
+      precision: interval
+      from: {year: 598, era: bc}
+      to: {year: 597, era: bc}
+      label: "After the deportation of c. 598–597 B.C."
+    qualification: "possibly in that same year"
+    inputs: [composition.jeremias-letter-to-the-exiles, israel.exile.second-captivity]
+    sources:
+      - bible:douay-rheims:Jer.29.2
+      - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03315a-9cb437e2
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+    basis: >-
+      The letter follows Jechonias's deportation. Reid dates that deportation
+      to 597 B.C.; Schets gives 598 B.C. The adjacent proposals give approximate
+      calendar context for the anchor. The date belongs to the deportation,
+      not the letter; after the event does not require a later calendar year.
+  - subject: composition.book-of-jeremias
+    relation: final-formation
+    profile: catholic-traditional-v1
+    kind: anchor-context
+    anchor: israel.exile.jeremias-first-scroll
+    date:
+      precision: approximate-year
+      from: {year: 604, era: bc}
+      label: "After the first scroll of c. 604 B.C."
+    qualification: "completion date unknown"
+    inputs: [composition.book-of-jeremias, israel.exile.jeremias-first-scroll]
+    sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08334a-dd4ae528]
+    basis: >-
+      Faulhaber dates the first authentic recension to 604 B.C. and places the
+      enlarged received form after it. This is approximate calendar context
+      for that first scroll, not a completion year or a composition date of
+      every constituent; the final-formation bound remains open.
+  - subject: composition.psalm-129-possible-davidic-composition
+    relation: composition
+    profile: catholic-traditional-v1
+    date:
+      precision: interval
+      from: {year: 1048, era: bc}
+      to: {year: 1015, era: bc}
+      label: "c. 1048–1015 B.C."
+    qualification: "traditional Jerusalem chronology"
+    inputs: [composition.psalm-129-possible-davidic-composition, israel.monarchy.david-traditional-era, israel.monarchy.david-reign, israel.monarchy.david-repentance]
+    sources:
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-129-possible-davidic-composition
+      - passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology
+      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text
+      - bible:douay-rheims:2Kings.5.5
+      - bible:douay-rheims:2Kings.11.1
+    basis: >-
+      Berthier's conditional proposal in Haydock puts composition after David's
+      sin. Corbett places that sin during the Jerusalem reign, after the seven
+      and a half years at Hebron, within his reported reign of 1055–1015 B.C.
+      Subtracting seven and a half from 1055 and rounding to a calendar year
+      yields approximately 1048 B.C. for the beginning of the Jerusalem phase.
+      The estimate gives that entire phase, not the year of the sin or a
+      narrower date for the poem. Both attribution and chronology are qualified.
+  - subject: israel.monarchy.david-traditional-era
+    relation: traditional-attribution
+    profile: catholic-traditional-v1
+    date:
+      precision: range
+      from: {year: 1055, era: bc}
+      to: {year: 1015, era: bc}
+      label: "c. 1055–1015 B.C."
+    qualification: "traditional regnal chronology"
+    inputs: [israel.monarchy.david-traditional-era]
+    sources: [passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology]
+    basis: >-
+      Corbett reports these regnal years as the usual chronology and immediately
+      notes a later competing chronology. Approximation makes the orientation
+      status explicit. This is the attributed figure's reign, not his lifetime,
+      a psalm's writing date, or a pre-accession historical occasion.
+  - subject: israel.monarchy.david-at-geth
+    relation: superscription-setting
+    profile: catholic-traditional-v1
+    date:
+      precision: approximate-year
+      from: {year: 1060, era: bc}
+      label: "c. 1060 B.C."
+    qualification: "flight from Saul; Haydock edition reporting Ussher"
+    inputs: [israel.monarchy.david-at-geth]
+    sources:
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-21-achis-geth-chronology
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology
+    basis: >-
+      The inspected edition prints A.C. 1060 beside its A.M. 2944 marker before
+      this pre-accession episode. This displays that printed Christian-era
+      coordinate approximately; it converts no Anno Mundi year and retains
+      the reporting exception's attribution.
+  - subject: israel.monarchy.david-in-the-desert-of-maon
+    relation: superscription-setting
+    profile: catholic-traditional-v1
+    date:
+      precision: approximate-year
+      from: {year: 1059, era: bc}
+      label: "c. 1059 B.C."
+    qualification: "flight from Saul; Haydock edition reporting Ussher"
+    inputs: [israel.monarchy.david-in-the-desert-of-maon]
+    sources:
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-23-maon-chronology
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology
+    basis: >-
+      The edition's printed A.C. 1059 at the opening of 1 Kings 23 gives a
+      calendar orientation to the Maon episode under Saul, separately from
+      the later Maon/Nabal episode in chapter 25. No era conversion is made.
+  - subject: israel.monarchy.david-in-the-cave
+    relation: superscription-setting
+    profile: catholic-traditional-v1
+    date:
+      precision: approximate-year
+      from: {year: 1058, era: bc}
+      label: "c. 1058 B.C."
+    qualification: "flight from Saul; Haydock edition reporting Ussher"
+    inputs: [israel.monarchy.david-in-the-cave]
+    sources:
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-23-maon-chronology
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology
+    basis: >-
+      The registered page includes the following chapter's A.C. 1058 marker,
+      corresponding to the cave episode at 1 Kings 24. It is the edition's
+      printed calendar coordinate, not a computed conversion of A.M. 2946.
+  - subject: israel.monarchy.david-flight-from-absalom
+    relation: superscription-setting
+    profile: catholic-traditional-v1
+    date:
+      precision: interval
+      from: {year: 1025, era: bc}
+      to: {year: 1024, era: bc}
+      label: "c. 1025–1024 B.C."
+    qualification: "Absalom's rebellion; Haydock edition reporting Ussher"
+    inputs: [israel.monarchy.david-flight-from-absalom, israel.monarchy.absalom-revolt]
+    sources:
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.second-kings-15-absalom-conspiracy-chronology
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology
+    basis: >-
+      The inspected Haydock page prints A.C. 1025 at the beginning of 2 Kings
+      15 and A.C. 1024 within that chapter. These adjacent markers give an
+      approximate frame for the rebellion and flight, without choosing a
+      marker the superscription does not choose. This late regnal crisis is
+      kept separate from David's earlier flight from Saul.
+  - subject: israel.monarchy.david-in-the-desert-of-maon
+    relation: historical-setting
+    profile: catholic-traditional-v1
+    date:
+      precision: approximate-year
+      from: {year: 1059, era: bc}
+      label: "c. 1059 B.C."
+    qualification: "proposed occasion; flight from Saul; Haydock edition reporting Ussher"
+    inputs: [israel.monarchy.david-in-the-desert-of-maon]
+    sources:
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-23-maon-chronology
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology
+    basis: >-
+      The edition's printed A.C. 1059 at the opening of 1 Kings 23 gives a
+      calendar orientation to the Maon episode under Saul, separately from
+      the later Maon/Nabal episode in chapter 25. No era conversion is made.
+  - subject: israel.monarchy.david-flight-from-absalom
+    relation: historical-setting
+    profile: catholic-traditional-v1
+    date:
+      precision: interval
+      from: {year: 1025, era: bc}
+      to: {year: 1024, era: bc}
+      label: "c. 1025–1024 B.C."
+    qualification: "proposed association; Absalom's rebellion; Haydock edition reporting Ussher"
+    inputs: [israel.monarchy.david-flight-from-absalom, israel.monarchy.absalom-revolt]
+    sources:
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.second-kings-15-absalom-conspiracy-chronology
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology
+    basis: >-
+      The inspected Haydock page prints A.C. 1025 at the beginning of 2 Kings
+      15 and A.C. 1024 within that chapter. These adjacent markers give an
+      approximate frame for the rebellion and flight, without choosing a
+      marker the superscription does not choose. This late regnal crisis is
+      kept separate from David's earlier flight from Saul.
+  - subject: israel.monarchy.saul-reign
+    relation: historical-setting
+    profile: catholic-traditional-v1
+    date:
+      precision: boundary
+      boundary:
+        direction: no-later-than
+        endpoint: {year: 1055, era: bc}
+        statement: no later than David's accession
+      label: "By David's accession, c. 1055 B.C."
+    qualification: "Corbett's chronology; Saul's accession unresolved"
+    inputs: [israel.monarchy.saul-reign, israel.monarchy.david-traditional-era]
+    sources:
+      - passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology
+      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text
+    basis: >-
+      Corbett places Saul's death before David's accession and reports the
+      latter at 1055 B.C. This calendar boundary locates Saul's reign without
+      treating the problematic two-year reading as its complete duration or
+      inventing a starting year.

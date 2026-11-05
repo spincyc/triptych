@@ -937,11 +937,12 @@ def strip_for_scan(text: str) -> str:
     return MATH_RE.sub(" ", COMMENT_RE.sub("", text))
 
 
-def resolve_input(name: str, provider: str) -> Path | None:
+def resolve_input(name: str, provider: str, *, assembly=None) -> Path | None:
     """Resolve ``\\input{name}`` under the build's ``cd src/<provider>; TEXINPUTS=..``."""
     candidates = (SRC / provider / name, SRC / provider / f"{name}.tex",
                   SRC / name, SRC / f"{name}.tex")
-    return next((path for path in candidates if path.is_file()), None)
+    return next((path for path in candidates
+                 if (assembly.is_file(path) if assembly is not None else path.is_file())), None)
 
 
 def select_branch(match: re.Match[str]) -> str:
@@ -1181,9 +1182,13 @@ def resolve_page_references(
 
 
 def assemble(
-    text: str, provider: str, seen: dict[Path, str] | None, *, proper: bool = False
+    text: str, provider: str, seen: dict[Path, str] | None, *, proper: bool = False,
+    assembly=None,
 ) -> str:
     """Inline every ``\\input`` in ``text``; record each file when ``seen`` is given."""
+    if assembly is None:
+        from _document_types import Assembly
+        assembly = Assembly(SRC.parent)
     text = select_web_branches(text, proper=proper)
     out, index = [], 0
     # A commented-out \input is no input: TeX never reads it, and the checker's
@@ -1198,19 +1203,19 @@ def assemble(
         # need not provide a physical copy; schema-2 graph validation already
         # requires and records it when the current contract applies.
         if name.endswith("common/preamble"):
-            target = resolve_input(name, provider)
+            target = resolve_input(name, provider, assembly=assembly)
             if seen is not None and target is not None:
-                seen[target.resolve()] = target.read_text(encoding="utf-8")
+                seen[target.resolve()] = assembly.read_text(target)
             continue
-        target = resolve_input(name, provider)
+        target = resolve_input(name, provider, assembly=assembly)
         if target is None:
             raise ConversionError(f"cannot resolve \\input{{{name}}}")
         target = target.resolve()
-        nested = target.read_text(encoding="utf-8")
+        nested = assembly.read_text(target)
         nested = select_web_branches(nested, proper=proper)
         if seen is not None:
             seen[target] = nested
-        out.append(assemble(nested, provider, seen, proper=proper))
+        out.append(assemble(nested, provider, seen, proper=proper, assembly=assembly))
     out.append(text[index:])
     return "".join(out)
 
@@ -3199,6 +3204,10 @@ def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None,
     caller separately proves public admission, expected units and assets.
     Default canonical conversion retains the existing reader behavior.
     """
+    from _document_types import Assembly
+    assembly = selected.get("assembly") if selected is not None else None
+    if assembly is None:
+        assembly = Assembly(SRC.parent)
     if selected is not None:
         if selected.get("edition") not in {"main", "synthesis", "homily"}:
             raise ConversionError("unknown selected publication edition")
@@ -3208,10 +3217,10 @@ def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None,
     else:
         main = SRC / provider / leaf / "main.tex"
     shim_path = Path(selected.get("shim", SHIM)) if selected is not None else SHIM
-    if not main.is_file():
+    if not assembly.is_file(main):
         raise ConversionError(f"no such document: {main}")
     contents = declared_contents(main.parent)
-    source = selected["source"] if selected is not None else main.read_text(encoding="utf-8")
+    source = selected["source"] if selected is not None else assembly.read_text(main)
     proper = (main.parent / "proper-components.toml").is_file()
     components = None
     semantic_graph = None
@@ -3220,7 +3229,7 @@ def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None,
         if components.get("schema") == 2 and components.get("format_contract") == "propers-format-v1":
             from _proper_components import include_graph
             try:
-                semantic_graph = include_graph(main, main.parent, SRC / provider)
+                semantic_graph = include_graph(main, main.parent, SRC / provider, assembly=assembly)
             except ValueError as exc:
                 raise ConversionError(f"schema-2 semantic source graph rejected: {exc}") from exc
     source = select_web_branches(source, proper=proper)
@@ -3228,9 +3237,9 @@ def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None,
     # Preamble includes supply definitions but never content, so they are not
     # scanned; only what reaches the body can lose scholarship.
     preamble_sources: dict[Path, str] = dict(selected["sources"]) if selected is not None else {}
-    preamble = assemble(head, provider, preamble_sources, proper=proper)
+    preamble = assemble(head, provider, preamble_sources, proper=proper, assembly=assembly)
     sources: dict[Path, str] = {main: tail}
-    body = project_heading_aliases(assemble(tail, provider, sources, proper=proper))
+    body = project_heading_aliases(assemble(tail, provider, sources, proper=proper, assembly=assembly))
     # A TikZ picture becomes a figure token here and an image after pandoc; its
     # SVG is compiled from the same standalone source at site-build time.
     try:
@@ -3439,7 +3448,7 @@ def convert_markdown(provider: str, leaf: str, *, selected: dict | None = None,
     # that introduced a break cannot supply the reference that excuses it.
     raw_sources = web_figures.strip_figures(
         selected.get("canonical_body", selected["body"]) if selected is not None else "\n\n".join(
-            path.read_text(encoding="utf-8") for path in sorted(sources)
+            assembly.read_text(path) for path in sorted(sources)
         )
     )
     try:
@@ -3686,6 +3695,8 @@ def edition_selection(provider: str, entrypoint: Path, edition: str) -> dict:
     preamble stays an input because the shim replaces it. The paragraph audits
     judge against the raw files the edition reads, as for a canonical reader.
     """
+    from _document_types import Assembly
+    assembly = Assembly(SRC.parent)
     entry = entrypoint.resolve()
     if not entry.is_relative_to((SRC / provider).resolve()):
         raise ConversionError("edition entrypoint escapes its provider")
@@ -3695,7 +3706,7 @@ def edition_selection(provider: str, entrypoint: Path, edition: str) -> dict:
     def walk(path: Path, stack: frozenset) -> str:
         if path in stack:
             raise ConversionError(f"input cycle at {path}")
-        text = path.read_text(encoding="utf-8")
+        text = assembly.read_text(path)
         selected_text = select_edition_branches(text, edition)
         raw[path], walked[path] = text, selected_text
         out, index = [], 0
@@ -3706,7 +3717,7 @@ def edition_selection(provider: str, entrypoint: Path, edition: str) -> dict:
             if name.endswith("common/preamble"):
                 out.append(match.group(0))
                 continue
-            target = resolve_input(name, provider)
+            target = resolve_input(name, provider, assembly=assembly)
             if target is None:
                 raise ConversionError(f"cannot resolve \\input{{{name}}}")
             out.append(walk(target.resolve(), stack | {path}))
@@ -3716,6 +3727,7 @@ def edition_selection(provider: str, entrypoint: Path, edition: str) -> dict:
     source = walk(entry, frozenset())
     _, body = split_document(source)
     return {
+        "assembly": assembly,
         "edition": edition,
         "entrypoint": str(entry),
         "source": source,

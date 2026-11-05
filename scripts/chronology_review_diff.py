@@ -182,6 +182,13 @@ out["orientation"] = {
     "settings": {subject: {"relation": item.relation, "label": item.label,
                            "sources": list(item.sources), "basis": item.basis}
                  for subject, item in getattr(corpus, "orientation_settings", {}).items()},
+    "calendar_estimates": [{"subject": item.subject, "relation": item.relation,
+                             "profile": item.profile, "date": date(item.date),
+                             "qualification": item.qualification,
+                             "sources": list(item.sources), "basis": item.basis,
+                             "inputs": list(item.inputs), "kind": item.kind,
+                             "anchor": item.anchor}
+                            for _, item in sorted(getattr(corpus, "orientation_calendar_estimates", {}).items())],
 }
 # The profile mapping AS AUTHORED. Normalisation happens on the other side of
 # the boundary, so both revisions are normalised by one function.

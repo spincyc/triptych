@@ -314,6 +314,7 @@ class Dossier(NamedTuple):
     orientation_contexts: tuple[_chronology.OrientationContext, ...] = ()
     orientation_subject_labels: dict[str, str] = {}
     orientation_settings: dict[str, _chronology.OrientationSetting] = {}
+    orientation_calendar_estimates: dict[tuple[str, str, str], _chronology.OrientationCalendarEstimate] = {}
 
     def element(self, key: str) -> Element | None:
         for item in self.elements:
@@ -387,6 +388,7 @@ class OrientationRow(NamedTuple):
     passage_start: bool = True
     passage_end: bool = True
     setting_label: str = ""
+    calendar_estimate: _chronology.OrientationCalendarEstimate | None = None
 
 
 class AnnotationProjection(NamedTuple):
@@ -1086,6 +1088,7 @@ def dossier(
         orientation_contexts=_chronology.load(corpus_root).orientation_contexts,
         orientation_subject_labels=_chronology.load(corpus_root).orientation_subject_labels,
         orientation_settings=_chronology.load(corpus_root).orientation_settings,
+        orientation_calendar_estimates=_chronology.load(corpus_root).orientation_calendar_estimates,
     )
 
 
@@ -1536,7 +1539,10 @@ def _orientation_claim(claim: Claim) -> AnnotationClaim:
             f"{claim.subject}: an orientation claim admitted by reporting exception "
             "requires a source-owned orientation_qualification or context_qualification")
     if claim.orientation_qualification:
-        value += f" ({claim.orientation_qualification})"
+        if value.endswith(" (derived)"):
+            value = value.removesuffix(" (derived)") + f" (derived; {claim.orientation_qualification})"
+        else:
+            value += f" ({claim.orientation_qualification})"
     return _annotation_claim(claim)._replace(
         title=claim.orientation_title or claim.title, display_label=value)
 
@@ -1764,6 +1770,9 @@ def orientation_rows(found: Dossier, presentation: str | None = None) -> tuple[O
                    if selected == ORIENTATION_V3 and group.claims else None)
         if setting and setting.relation != group.relation:
             setting = None
+        estimate = (found.orientation_calendar_estimates.get((
+            group.claims[0].subject, group.relation, group.claims[0].profile))
+            if selected == ORIENTATION_V3 and group.claims and not group.anchor_context else None)
         rows.append(OrientationRow(row_key, tuple(passages), group,
                                    "; ".join(dict.fromkeys(displays)),
                                    context.label if context else "",
@@ -1771,7 +1780,8 @@ def orientation_rows(found: Dossier, presentation: str | None = None) -> tuple[O
                                          + (setting.sources if setting else ()))),
                                    found.orientation_subject_labels.get(group.claims[0].subject, "")
                                    if selected == ORIENTATION_V3 and group.claims else "",
-                                   setting_label=setting.label if setting else ""))
+                                   setting_label=setting.label if setting else "",
+                                   calendar_estimate=estimate))
     ordered = sorted(rows, key=lambda row: (
         min(_locus_order(locus) for passage in row.passages for locus in passage.loci),
         tuple(p.element_key for p in row.passages) if selected == ORIENTATION_V3 else (),
@@ -1810,14 +1820,52 @@ def orientation_subject(row: OrientationRow, presentation: str = "") -> str:
     return f"{subject}; {row.setting_label}" if row.setting_label else subject
 
 
-def orientation_date(row: OrientationRow) -> str:
+def compact_orientation_rows(found: AnnotationProjection) -> tuple[OrientationRow, ...]:
+    """The dated orientation, leaving repeated occasion gaps in the evidence.
+
+    Keep every appointed passage. Automatic occasion/event placeholders and
+    a relative formation bound beside a composition date belong in the
+    evidence, where the complete projection retains their exact scopes.
+    """
+    if found.presentation != ORIENTATION_V3:
+        return found.orientation_rows
+    dated = {row.passages for row in found.orientation_rows if row.group.claims}
+    composed = {row.passages for row in found.orientation_rows
+                if row.group.claims and row.group.relation == "composition"}
+    rows = tuple(row for row in found.orientation_rows
+                 if not (row.passages in dated and not row.group.claims
+                         and row.group.status == "research-pending"
+                         and row.group.relation in {"historical-setting", "narrated-event"})
+                 and not (row.passages in composed and row.group.relation == "final-formation"
+                          and row.group.claims
+                          and all(claim.precision in {"relative", "boundary"}
+                                  for claim in row.group.claims)))
+    return tuple(row._replace(
+        passage_start=index == 0 or row.passages != rows[index - 1].passages,
+        passage_end=index == len(rows) - 1 or row.passages != rows[index + 1].passages)
+        for index, row in enumerate(rows))
+
+
+def orientation_date(row: OrientationRow, *, compact: bool = False) -> str:
     group = row.group
     if not group.claims:
         if group.status == QUALIFICATION_PENDING:
             return "Date pending its source qualification"
         return "Occasion date unresolved" if group.relation == "historical-setting" else "Date unresolved"
+    if compact and row.calendar_estimate:
+        return orientation_calendar_date(row)
     prefix = "Disputed: " if _group_status(group.claims) == "disputed" else ""
-    return prefix + _candidate_display(group, lambda claim: claim.display_label)
+    display = _orientation_candidate_display if compact else _candidate_display
+    value = display(group, lambda claim: claim.display_label)
+    return ("" if value.startswith(("Proposals span ", "Numerical proposal: ")) else prefix) + value
+
+
+def orientation_calendar_date(row: OrientationRow) -> str:
+    """The corpus's reviewed calendar wording, including its claim-local limit."""
+    estimate = row.calendar_estimate
+    if estimate is None:
+        raise ChronologyWiringError(f"{row.key}: no calendar estimate")
+    return estimate.label + (f" ({estimate.qualification})" if estimate.qualification else "")
 
 
 def orientation_passage(row: OrientationRow) -> str:
@@ -2001,6 +2049,7 @@ def _passage_display_v3(name: str, citations: tuple[Citation, ...]) -> str:
 
 def annotation_payload(found: AnnotationProjection) -> dict[str, object]:
     """The JSON-ready annotation contract, with source and display labels."""
+    visible = {row.key for row in compact_orientation_rows(found)}
     return {
         "status": "ok",
         "schema": _annotation_schema(found),
@@ -2027,7 +2076,20 @@ def annotation_payload(found: AnnotationProjection) -> dict[str, object]:
                  "passage_display": orientation_passage(row),
                  "subject_display": orientation_subject(row, found.presentation),
                  **({"context_sources": list(row.context_sources)} if row.context_sources else {}),
-                 "date_display": orientation_date(row)}
+                 **({"calendar_estimate": {
+                     "subject": row.calendar_estimate.subject,
+                     "relation": row.calendar_estimate.relation,
+                     "profile": row.calendar_estimate.profile,
+                     "kind": row.calendar_estimate.kind,
+                     "anchor": row.calendar_estimate.anchor,
+                     "date": str(row.calendar_estimate.date),
+                     "label": row.calendar_estimate.label,
+                     "qualification": row.calendar_estimate.qualification,
+                     "sources": list(row.calendar_estimate.sources),
+                     "inputs": list(row.calendar_estimate.inputs),
+                 }} if row.calendar_estimate else {}),
+                 **({"displayed": row.key in visible} if found.presentation == ORIENTATION_V3 else {}),
+                 "date_display": orientation_date(row, compact=found.presentation == ORIENTATION_V3)}
                 for row in found.orientation_rows]}
            if found.presentation else {}),
         "elements": [
@@ -2180,8 +2242,8 @@ def render_annotations_text(found: AnnotationProjection) -> str:
     """A compact human-readable view of the annotation projection."""
     if found.presentation:
         return "\n".join(
-            f"{row.key}\n  {orientation_passage(row)}\n  {orientation_subject(row, found.presentation)}\n  {orientation_date(row)}"
-            for row in found.orientation_rows) + "\n"
+            f"{row.key}\n  {orientation_passage(row)}\n  {orientation_subject(row, found.presentation)}\n  {orientation_date(row, compact=found.presentation == ORIENTATION_V3)}"
+            for row in compact_orientation_rows(found)) + "\n"
     if not found.elements:
         return (found.reason or "No scriptural element resolved for this formulary") + "\n"
     lines: list[str] = []
@@ -2330,6 +2392,87 @@ def _candidate_display(group: AnnotationGroup, render_claim,
     return "; ".join(segments)
 
 
+def _orientation_estimates(group: AnnotationGroup) -> tuple[tuple[str, tuple[AnnotationClaim, ...]], ...]:
+    """The labelled extent of calendar proposals, never a replacement claim.
+
+    An envelope can include gaps between proposals: its label says what it
+    bounds, rather than asserting a continuous candidate interval. Relative
+    alternatives remain in the evidence when a numerical overview exists.
+    Spanning events and century notation keep their own semantics. Profiles,
+    dispositions, eras and source qualifications are never combined.
+    """
+    if group.anchor_context:
+        return tuple((claim.display_label, (claim,)) for claim in group.claims)
+    buckets: dict[tuple, list[tuple[int, int, int, AnnotationClaim]]] = {}
+    values: list[tuple[int, str, tuple[AnnotationClaim, ...]]] = []
+    for index, claim in enumerate(group.claims):
+        point = ABSOLUTE_POINT.fullmatch(claim.date)
+        span = ABSOLUTE_SPAN.fullmatch(claim.date)
+        if (claim.precision not in {"year", "approximate-year", "interval"}
+                or not (point or span) or (span and _is_century_notation(span))):
+            values.append((index, claim.display_label, (claim,)))
+            continue
+        plain = _concise_value(claim)
+        if not claim.display_label.startswith(plain):
+            values.append((index, claim.display_label, (claim,)))
+            continue
+        suffix = claim.display_label[len(plain):]
+        matched = point or span
+        era = matched.group("era")
+        first = int(point.group("year") if point else span.group("first"))
+        last = int(point.group("year") if point else span.group("last"))
+        low, high = sorted((-first, -last) if era == "B.C." else (first, last))
+        key = claim.subject, claim.relation, claim.profile, claim.disposition, era, suffix
+        buckets.setdefault(key, []).append((low, high, index, claim))
+
+    grouped: list[tuple[int, str, tuple[AnnotationClaim, ...]]] = []
+    for key, candidates in buckets.items():
+        members = tuple(item[3] for item in sorted(candidates, key=lambda item: item[2]))
+        first_index = min(item[2] for item in candidates)
+        # A relative alternative is not an extra calendar proposal. It remains
+        # a sealed assertion and a full evidence note; no arithmetic converts
+        # its anchor into a numerical endpoint here.
+        relative = [(index, claim) for index, _, held in values for claim in held
+                    if claim.precision in {"relative", "boundary"}
+                    and (claim.subject, claim.relation, claim.profile, claim.disposition) == key[:4]
+                    and not key[-1] and claim.display_label == _concise_value(claim)]
+        if relative:
+            indexes = {index for index, _ in relative}
+            values = [item for item in values if item[0] not in indexes]
+        if len({claim.display_label.casefold() for claim in members}) == 1 and not relative:
+            grouped.append((first_index, members[0].display_label, members))
+            continue
+        low, high = min(item[0] for item in candidates), max(item[1] for item in candidates)
+        era, suffix = key[-2:]
+        first, last = (-low, -high) if era == "B.C." else (low, high)
+        about = any(hedges_the_year(claim.display_label) for claim in members)
+        years = str(first) if first == last else f"{first}\N{EN DASH}{last}"
+        heading = "Numerical proposal: " if first == last else "Proposals span "
+        label = f"{heading}{'c. ' if about else ''}{era} {years}{suffix}"
+        grouped.append((first_index, label, members + tuple(claim for _, claim in relative)))
+    return tuple((label, members) for _, label, members in sorted(values + grouped, key=lambda item: item[0]))
+
+
+def _orientation_candidate_display(group: AnnotationGroup, render_claim,
+                                   render_repeat=lambda claim: "") -> str:
+    """Render the summary, sealing every contributing claim independently."""
+    summaries = []
+    evidence = {}
+    for label, members in _orientation_estimates(group):
+        summary = members[0]._replace(display_label=label)
+        summaries.append(summary)
+        evidence[id(summary)] = members
+
+    def visible(summary):
+        members = evidence[id(summary)]
+        return render_claim(summary) + "".join(render_repeat(claim) for claim in members[1:])
+
+    def repeated(summary):
+        return "".join(render_repeat(claim) for claim in evidence[id(summary)])
+
+    return _candidate_display(group._replace(claims=tuple(summaries)), visible, repeated)
+
+
 def _tex_group(group: AnnotationGroup, *, comparison_enabled: bool = False) -> str:
     relation = r"\textbf{" + tex_escape(_group_heading(group)) + "}"
     if group.anchor_context:
@@ -2448,7 +2591,9 @@ def render_annotations_tex(found: AnnotationProjection) -> str:
             r"    \PackageError{triptych}{No chronology orientation row for #1}{}%",
             r"  \fi}",
         ])
+        visible_rows = {row.key: row for row in compact_orientation_rows(found)}
         for row in found.orientation_rows:
+            row = visible_rows.get(row.key, row)
             group = row.group
             shared = found.presentation == ORIENTATION_V3
             if group.anchor_context:
@@ -2467,10 +2612,21 @@ def render_annotations_tex(found: AnnotationProjection) -> str:
             else:
                 render_claim = (lambda claim: _tex_comparison_claim(claim, group.requested_profile, date_typography=shared)
                                 if group.requested_profile else _tex_claim(claim, date_typography=shared))
-                values = (_candidate_display(group, render_claim,
+                display = _orientation_candidate_display if shared else _candidate_display
+                values = (display(group, render_claim,
                     lambda claim: render_claim(claim._replace(display_label="")))
                     if group.claims else tex_escape(orientation_date(row)))
-            if group.claims and _group_status(group.claims) == "disputed":
+            if shared and row.calendar_estimate:
+                # The reviewable calendar wording is a projection over the
+                # unchanged assertions. Keep each original claim sealed with
+                # an empty visible value instead of forging a replacement.
+                values = (_date_tex(orientation_calendar_date(row))
+                          + "".join(render_claim(claim._replace(display_label=""))
+                                    for claim in group.claims))
+            elif (group.claims and _group_status(group.claims) == "disputed"
+                  and not (shared and _orientation_candidate_display(
+                      group, lambda claim: claim.display_label).startswith(
+                          ("Proposals span ", "Numerical proposal: ")))):
                 values = "Disputed: " + values
             lines.extend([
                 "\\expandafter\\def\\csname "
@@ -2498,7 +2654,7 @@ def render_orientation_table(found: AnnotationProjection) -> str:
         "% Generated. Do not edit.",
         "% Complete orientation-v3 table; wording, dates and order belong to the corpus.",
         r"\begin{chronologysharedtable}",
-        *(line for index, row in enumerate(found.orientation_rows)
+        *(line for index, row in enumerate(compact_orientation_rows(found))
           for line in (([r"\midrule"] if index and row.passage_start else [])
                        + [r"\chronologyorientationrow{" + row.key + "}{}"])),
         r"\end{chronologysharedtable}",
@@ -2857,6 +3013,8 @@ def _traced(
     cited_sources = {source for claim in claims
                     for source in (*claim.sources, *getattr(claim, "binding_sources", ()))}
     cited_sources.update(source for row in projection.orientation_rows for source in row.context_sources)
+    cited_sources.update(source for row in projection.orientation_rows if row.calendar_estimate
+                         for source in row.calendar_estimate.sources)
     for source in cited_sources:
         if source.startswith("bible:"):
             _, edition, raw = (source.split(":", 2) + ["", ""])[:3]

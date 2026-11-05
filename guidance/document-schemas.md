@@ -153,23 +153,30 @@ Doc-local macros stay in the leaf's `format.tex`, which a template inputs when
 it exists. An output whose entrypoint file exists must have its edition table;
 a companion that is declared but not yet written may gain one later.
 
-**Entrypoints are generated.** `tools/tpt document-types refresh --leaf
-<provider>/<document>` instantiates the type's templates with the declaration
-and writes each declared edition's entrypoint (`main.tex`, `synthesis.tex`,
-`homily.tex`) as ordinary literal TeX headed "Do not edit". Change the
-declaration or the template, never the entrypoint. The entrypoint is literal on
-purpose: Make's dependency graph and recorder check, print bundles,
-`web-edition`, the schema closure and every content gate follow literal
-`\input` paths, so they serve every type without type-specific code.
+**Entrypoints are assembled from current inputs.** The shared assembly in
+`scripts/_document_types.py` instantiates the type's templates with the leaf's
+declaration and supplies literal TeX entrypoints (`main.tex`, `synthesis.tex`,
+`homily.tex`) and projection files to web conversion and native print. Change
+the declaration, template or projection's canonical inputs; consumers recompute
+the result without rewriting every publication. The literal `\input` graph
+remains available to dependency discovery and the print recorder.
+
+`tools/tpt document-types refresh --leaf <provider>/<document>` can materialize
+these generated files for inspection. A saved generated file is not an
+authoritative copy and must not override current assembly. Content checks
+validate the declaration, projection and authored sections, rather than require
+an old saved date table to match new shared chronology.
+Existing entrypoint files remain required for publication discovery and Make's
+target selection; assembly replaces their contents, not their role as discoverable
+paths. This does not authorize deleting a publication's tracked entrypoints.
 
 **Deterministic pages fill slots.** A template line `%@ slot
 <projection>/<output>` places a generated page. A projection is one module in
 `scripts/document_projections/`, found by file name, that returns every file it
-owns for one leaf: its pages under the leaf's `generated/`, and any record it
-regenerates. `refresh` runs each projection a leaf's templates slot, then writes
-the entrypoints; `refresh --check`, run by `make
-check-generated-documents-current`, refuses any generated file that differs from
-its regeneration and any authored copy of a generated page. The template
+owns for one leaf: its virtual pages under the leaf's `generated/`, and any
+support record it computes. Assembly runs the projections named by the leaf's
+templates. `make check-generated-documents-current` validates this live
+assembly and refuses an authored copy of a generated page. The template
 directives and the projection contract are stated in
 `scripts/_document_types.py` and `scripts/document_projections/__init__.py`.
 The first projection, `scriptural-date-location`, is the proper studies'
@@ -190,8 +197,8 @@ Scriptural Date and Location page; its content contract is
   snapshot again and `compare`. Every difference outside a page the migration
   intends to change is either repaired or reported with its cause.
 - **To add a deterministic page to every leaf of a type,** write its projection
-  module, add one slot line to the template, and run `tools/tpt document-types
-  refresh --all`. No leaf is edited by hand.
+  module, declare its canonical dependencies, and add one slot line to the
+  template. Verify live assembly; no per-leaf regeneration is required.
 
 ## Validation and review
 

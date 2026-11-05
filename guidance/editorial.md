@@ -517,11 +517,14 @@ time and is never tracked or hand-written. It is the greatest author time, in
 whole-second UTC, of the commits that changed a file in the edition's
 source closure: the provider-tree files its entrypoint reaches through
 `\input`/`\include` (macro-built paths expanded), their literal artwork, and
-the publication's declared generator data. Shared `src/common/` typesetting,
+the publication's declared generator data. An assembled projection contributes
+its canonical content and generator dependencies rather than the history of a
+saved generated copy; an edition that omits it acquires none of those
+dependencies. Shared `src/common/` typesetting,
 `generation-metadata.tex`, and the history of a generated document-type
 entrypoint are outside it, so a template, preamble, or contribution-log change
 revises no edition, while a change to a section, a leaf format file, a
-generated projection page, or content-bearing provider-shared material does.
+projection's content inputs, or content-bearing provider-shared material does.
 `scripts/_edition_revision.py` is the single implementation; its module text
 states the closure exactly, and every surface — the PDF's line and `ModDate`,
 the native print bundle, the web reader, the document library, and the

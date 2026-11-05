@@ -181,7 +181,8 @@ class PageReferenceConversionTests(unittest.TestCase):
         fixtures above keep the conversion itself covered.
         """
         leaf = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
-        with tempfile.TemporaryDirectory() as temporary:
+        with tempfile.TemporaryDirectory() as temporary, mock.patch.object(
+                DRIVER, "edition_revision", return_value="2026-11-05T00:00:00Z"):
             output = Path(temporary)
             current = DRIVER.convert("gpt", leaf, output / "current").read_text()
             with mock.patch.object(DRIVER, "prepare_page_references", side_effect=lambda body: (body, [])):

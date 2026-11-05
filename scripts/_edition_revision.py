@@ -35,7 +35,10 @@ The source closure of an edition (one declared entrypoint: ``main.tex``,
 2. the literal ``\\includegraphics``/``\\pgfimage`` artwork of those files;
 3. the publication's declared build-time render data (the
    ``RENDER_DATA_ROLES`` structure entries of ``publication.toml``), which a
-   generator turns into TeX that no tracked ``\\input`` names.
+   generator turns into TeX that no tracked ``\\input`` names;
+4. the canonical content and generator dependencies of any assembled
+   projection this edition actually reads. Saved generated copies contribute
+   neither history nor uncommitted state; current assembly supplies their text.
 
 It excludes:
 
@@ -85,7 +88,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from _corpus import active_tex  # noqa: E402
-from _document_types import GENERATED_BY  # noqa: E402
+from _document_types import Assembly, GENERATED_BY  # noqa: E402
 from _proper_components import companion_owner  # noqa: E402
 
 PROVIDERS = ("claude", "gpt")
@@ -202,21 +205,21 @@ class Repository:
             changed = set()
             if parents:
                 changed = {line for line in _git(self.root, "diff", "--name-only", "--no-renames", "-z",
-                                                 parents[0], commit, "--", "src").split("\0") if line}
+                                                 parents[0], commit, "--", "src", "scripts").split("\0") if line}
             self._pre_images[commit] = (parents[0] if parents else None, changed)
         return self._pre_images[commit]
 
     def tracked(self) -> set[str]:
         if self._tracked is None:
-            output = _git(self.root, "ls-files", "-z", "--", "src")
+            output = _git(self.root, "ls-files", "-z", "--", "src", "scripts")
             self._tracked = {value for value in output.split("\0") if value}
         return self._tracked
 
     def changed(self) -> set[str]:
-        """Paths under src/ that differ from HEAD, staged or not, or are untracked."""
+        """Content and generator paths differing from HEAD, including untracked files."""
         if self._changed is None:
             output = _git(self.root, "status", "--porcelain=v1", "-z", "--untracked-files=all",
-                          "--no-renames", "--", "src")
+                          "--no-renames", "--", "src", "scripts")
             self._changed = {entry[3:] for entry in output.split("\0") if len(entry) > 3}
         return self._changed
 
@@ -229,8 +232,9 @@ def entrypoint(root: Path, provider: str, document: str) -> Path:
             or "\\" in document):
         raise RevisionError(f"unsafe document id: {document!r}")
     source_root = root / "src" / provider
+    assembly = Assembly(root)
     main = source_root / document / "main.tex"
-    if main.is_file():
+    if assembly.is_file(main):
         return main
     try:
         owner = companion_owner(source_root, document)
@@ -241,20 +245,21 @@ def entrypoint(root: Path, provider: str, document: str) -> Path:
     for suffix, name in (("-synthesis", "synthesis.tex"), ("-homily", "homily.tex")):
         if document.endswith(suffix):
             candidate = source_root / document.removesuffix(suffix) / name
-            if candidate.is_file():
+            if assembly.is_file(candidate):
                 return candidate
     raise RevisionError(f"no edition entrypoint for {provider}/{document}")
 
 
 def _resolve(root: Path, provider_root: Path, path: Path, argument: str,
-             suffixes: tuple[str, ...]) -> Path | None:
+             suffixes: tuple[str, ...], *, assembly=None) -> Path | None:
     argument = argument.strip()
     if not argument or argument.startswith("/") or ".." in argument.split("/"):
         raise RevisionError(f"{path.relative_to(root)}: unsafe input {argument!r}")
     for base in (root / "src", provider_root, path.parent):
         for suffix in suffixes:
             candidate = base / (argument + suffix)
-            if candidate.is_file():
+            exists = assembly.is_file(candidate) if assembly is not None else candidate.is_file()
+            if exists:
                 resolved = candidate.resolve()
                 if not resolved.is_relative_to(root):
                     raise RevisionError(f"{path.relative_to(root)}: input escapes the repository")
@@ -311,11 +316,12 @@ class Closure:
     generated: frozenset[str]
 
 
-def closure(root: Path, provider: str, entry: Path) -> Closure:
+def closure(root: Path, provider: str, entry: Path, *, assembly=None) -> Closure:
     """The repository paths whose commits revise this edition; see the module text."""
     root = Path(root).resolve()
     provider_root = (root / "src" / provider).resolve()
     entry = entry.resolve()
+    assembly = Assembly(root) if assembly is None else assembly
     seen: set[Path] = set()
     definitions: dict[str, set[str]] = {}
     computed: list[tuple[Path, str]] = []
@@ -330,7 +336,7 @@ def closure(root: Path, provider: str, entry: Path) -> Closure:
             seen.add(path)
             if path.suffix not in TEXT_SUFFIXES:
                 continue
-            text = active_tex(path.read_text(encoding="utf-8"))
+            text = active_tex(assembly.read_text(path))
             for groups in DEFINITION_RE.findall(text):
                 name, body = groups[0] or groups[1], groups[2].strip()
                 definitions.setdefault(name, set()).add(body)
@@ -343,14 +349,14 @@ def closure(root: Path, provider: str, entry: Path) -> Closure:
                     if argument.strip().rsplit("/", 1)[-1] not in {GENERATION_METADATA, "generation-metadata"}:
                         computed.append((path, argument))
                     continue
-                target = _resolve(root, provider_root, path, argument, ("", ".tex"))
+                target = _resolve(root, provider_root, path, argument, ("", ".tex"), assembly=assembly)
                 if target is None:
                     raise RevisionError(f"{path.relative_to(root)}: unresolved input {argument}")
                 pending.append(target)
             for argument in GRAPHICS_RE.findall(text):
                 if "\\" in argument or "#" in argument:
                     continue
-                target = _resolve(root, provider_root, path, argument, GRAPHIC_SUFFIXES)
+                target = _resolve(root, provider_root, path, argument, GRAPHIC_SUFFIXES, assembly=assembly)
                 if target is not None:
                     graphics.add(target)
 
@@ -365,7 +371,7 @@ def closure(root: Path, provider: str, entry: Path) -> Closure:
             if spellings is None:
                 continue
             for spelling in spellings:
-                target = _resolve(root, provider_root, path, spelling, ("", ".tex"))
+                target = _resolve(root, provider_root, path, spelling, ("", ".tex"), assembly=assembly)
                 if target is None:
                     raise RevisionError(
                         f"{path.relative_to(root)}: computed input {argument} expands to "
@@ -384,6 +390,10 @@ def closure(root: Path, provider: str, entry: Path) -> Closure:
 
     members = {path for path in seen | graphics | _render_data(root, provider_root, entry)
                if path.is_relative_to(provider_root) and path.name != GENERATION_METADATA}
+    virtual = {path for path in members if assembly.generated(path) is not None}
+    for path in virtual:
+        members.update(assembly.content_dependencies(path))
+    members.difference_update(virtual)
     generated = set()
     for path in members:
         if path.name in ENTRYPOINTS and path.suffix == ".tex":

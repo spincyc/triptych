@@ -228,7 +228,7 @@ def _dictionary_files(root: Path, recipe: dict, work: Path) -> dict[str, bytes]:
     return {f"{prefix}/{path.name}": path.read_bytes() for path in sorted(target.glob("*.tex"))}
 
 
-def _binary_selection(root: Path, recipe: dict, kind: str, dependencies: set[str]):
+def _binary_selection(root: Path, recipe: dict, kind: str, dependencies: set[str], assembly=None):
     """Positive selected artwork only; a Make shared-directory glob is not admission."""
     if kind == "pictorial-dictionary" or kind.startswith("server-"):
         from _native_print_artwork import dictionary_artwork, server_artwork
@@ -250,7 +250,8 @@ def _binary_selection(root: Path, recipe: dict, kind: str, dependencies: set[str
     for value in sorted(dependencies):
         if PurePosixPath(value).suffix.lower() not in _TEXT_SUFFIXES:
             continue
-        text = active_tex(_source(root, value).read_text(encoding="utf-8"))
+        text = active_tex(assembly.read_text(root / value) if assembly is not None
+                          else _source(root, value).read_text(encoding="utf-8"))
         for command, argument in calls.findall(text):
             argument = argument.strip()
             if "\\" in argument or "#" in argument:
@@ -270,8 +271,10 @@ def _binary_selection(root: Path, recipe: dict, kind: str, dependencies: set[str
     return selected
 
 
-def _publication_inputs(root: Path, recipe: dict):
+def _publication_inputs(root: Path, recipe: dict, assembly=None):
     from _document_schema import _literal_closure, load_manifest
+    from _document_types import Assembly
+    assembly = assembly or Assembly(root)
     dependencies = set(recipe["dependencies"])
     manifest_path = root / f"src/{recipe['provider']}/{recipe['canonical']}/publication.toml"
     _need(manifest_path.is_file(), "native source bundle requires a declared publication manifest")
@@ -279,7 +282,7 @@ def _publication_inputs(root: Path, recipe: dict):
     # The literal graph is an independent supplement to Make's conservative
     # owned/shared input sets. Computed inputs retain their original definitions;
     # their selected typed-family closure is provided by the owning Make graph.
-    literal, computed = _literal_closure(root, declaration)
+    literal, computed = _literal_closure(root, declaration, assembly=assembly)
     dependencies.add(manifest_path.relative_to(root).as_posix())
     dependencies.update(path.relative_to(root).as_posix() for path in literal)
     if declaration["kind"] == "pictorial-dictionary":
@@ -288,8 +291,12 @@ def _publication_inputs(root: Path, recipe: dict):
         dependencies.add(base + "/research/artwork-manifest.toml")
         dependencies.update(path.relative_to(root).as_posix()
                             for path in (root / base / "shared").rglob("*.toml"))
-    allowed_binary = _binary_selection(root, recipe, declaration["kind"], dependencies)
+    allowed_binary = _binary_selection(root, recipe, declaration["kind"], dependencies, assembly)
     dependencies.update(allowed_binary)
+    dependencies.update(path.relative_to(root).as_posix()
+                        for path in assembly.dependencies(manifest_path.parent))
+    dependencies.difference_update(path.relative_to(root).as_posix()
+                                   for path in assembly.files(manifest_path.parent))
     return dependencies, computed, declaration["kind"], allowed_binary
 
 
@@ -309,7 +316,9 @@ def _revision_file(root: Path, recipe: dict, repository=None) -> tuple[str, byte
 
 
 def _publication_files(root: Path, recipe: dict, work: Path, dependencies, kind, allowed_binary,
-                       repository=None):
+                       repository=None, assembly=None):
+    from _document_types import Assembly
+    assembly = assembly or Assembly(root)
     files = {}
     for value in sorted(dependencies):
         path = _source(root, value)
@@ -318,6 +327,10 @@ def _publication_files(root: Path, recipe: dict, work: Path, dependencies, kind,
                   "native publication render input has no provider/shared owner: " + value)
             if path.suffix.lower() in _TEXT_SUFFIXES or value in allowed_binary:
                 files[value] = path.read_bytes()
+    leaf = root / "src" / recipe["provider"] / recipe["canonical"]
+    files.update((path.relative_to(root).as_posix(), text.encode("utf-8"))
+                 for path, text in assembly.files(leaf).items()
+                 if path.suffix.lower() in _TEXT_SUFFIXES)
     if kind == "pictorial-dictionary":
         files.update(_dictionary_files(root, recipe, work))
     entrypoint = recipe["entrypoint"]
@@ -357,7 +370,7 @@ def prepare_bundle(output_id: str, *, root: Path = ROOT, scratch_root: Path | No
                    documents: dict | None = None, revision: str | None = None,
                    recipe: dict | None = None, fingerprint_cache: dict | None = None,
                    external_assets: dict[str, bytes] | None = None, _checked: bool = False,
-                   revision_repository=None) -> dict:
+                   revision_repository=None, assembly=None) -> dict:
     """Prepare one publicly admitted native output; never invoke a TeX engine.
 
     Explicit documents/recipe/revision permit a publisher to hold one verified
@@ -366,7 +379,9 @@ def prepare_bundle(output_id: str, *, root: Path = ROOT, scratch_root: Path | No
     """
     from _native_print import admitted_documents, source_revision
     import _print_document as printing
+    from _document_types import Assembly
     root = Path(root).resolve()
+    assembly = assembly or Assembly(root)
     documents = admitted_documents(root) if documents is None else documents
     _need(output_id in documents, "native print output is not publicly admitted: " + str(output_id))
     selected = documents[output_id]
@@ -387,8 +402,8 @@ def prepare_bundle(output_id: str, *, root: Path = ROOT, scratch_root: Path | No
     guarded_inputs = _fingerprints(root, dependencies, fingerprint_cache)
     computed, kind, allowed_binary = [], None, set()
     if recipe["family"] == "publication":
-        additions, computed, kind, allowed_binary = _publication_inputs(root, recipe)
-        dependencies.update(additions)
+        dependencies, computed, kind, allowed_binary = _publication_inputs(
+            root, dict(recipe, dependencies=dependencies), assembly)
     else:
         software = ("tools/typeset-bible",) if recipe["family"] in {"bible", "reading-plan"} else (
             "scripts/_typeset_papal.py", "scripts/_papal_collection.py")
@@ -399,7 +414,7 @@ def prepare_bundle(output_id: str, *, root: Path = ROOT, scratch_root: Path | No
         work = Path(temporary)
         if recipe["family"] == "publication":
             files, entrypoint, cwd = _publication_files(root, recipe, work, dependencies, kind, allowed_binary,
-                                                        revision_repository)
+                                                        revision_repository, assembly)
         else:
             files, entrypoint, cwd = _generated_files(root, recipe, work)
         # A dependency snapshot precedes publication of the transport and is
@@ -499,7 +514,9 @@ def prepare_catalog(root: Path = ROOT, *, scratch_root: Path | None = None,
     """Prepare source transports and a route map for the held admitted universe."""
     from _native_print import admitted_documents, source_revision
     import _print_document as printing
+    from _document_types import Assembly
     root = Path(root).resolve()
+    assembly = Assembly(root)
     documents = admitted_documents(root) if documents is None else documents
     revision = source_revision(root) if revision is None else revision
     wanted = sorted(documents if output_ids is None else output_ids)
@@ -524,7 +541,8 @@ def prepare_catalog(root: Path = ROOT, *, scratch_root: Path | None = None,
     for identity, recipe in zip(wanted, checked, strict=True):
         bundle = prepare_bundle(identity, root=root, scratch_root=scratch_root, documents=documents,
                                 revision=revision, recipe=recipe, fingerprint_cache=cache,
-                                external_assets=assets, _checked=True, revision_repository=repository)
+                                external_assets=assets, _checked=True, revision_repository=repository,
+                                assembly=assembly)
         prepared[identity] = bundle
         source_paths.update(row["path"] for row in bundle["source_inputs"])
     occurrences = Counter(row["sha256"] for bundle in prepared.values() for row in bundle["files"]
