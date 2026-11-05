@@ -29,11 +29,19 @@ Cope/humeral veil,
 remaining appointments and vessels, Requiem, ritual Masses, Holy Week and
 whole-composition work remain in the delivery plan.
 
-Published branch history has been merged with current upstream source
-assembly on `feature/altar-server`. The maintainer authorized main integration;
-publication awaits the remaining source/product validation, exact outgoing-range
-review and deployment gates. Research records distinguish source, figure, consumer,
-print and live-deployment evidence.
+Source and deployment-source gates pass at `632ddac931`. Thirteen selected
+native bundles compile in two passes to 255 pages; the seven guide/card PDFs
+match their accepted baseline exactly, and the six dictionaries preserve the
+reviewed pages apart from their committed revision lines. Two independent cold
+browser-product builds agree on 27,697 files. Scoped release refresh updated
+92 existing bindings and admitted 88 reviewed dependencies, without changing
+authorization terms.
+
+This is a pre-integration checkpoint. Main subsequently advanced to
+`39acdf4332` with separate PC-S58 advisory corrections. The maintainer authorized
+main integration; publication awaits reconciliation, current product and site
+verification, exact outgoing-range review and deployment gates. Research records
+distinguish source, figure, consumer, print and live-deployment evidence.
 
 ## Altar-server and sanctuary guide revision — 5 November 2026
 
