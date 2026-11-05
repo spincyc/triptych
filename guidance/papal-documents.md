@@ -213,7 +213,8 @@ note anchors, rewrite OCR word divisions, or move notes into invented footnotes.
 XeLaTeX needs the Latin Modern OpenType fonts and Babel's English and Latin
 support. A TeX Live installation requires `babel-english`, `babel-latin` and
 `hyphen-latin`; rebuild its XeLaTeX format after enabling the Latin patterns.
-Arch packages supply the additional Latin support through `texlive-langother`.
+Arch packages supply the additional Latin support through `texlive-langeuropean`
+(`babel-latin` and `hyphen-latin`; `texlive-langother` does not carry them).
 Missing Latin patterns stop compilation rather than silently substituting
 English patterns. Junicode and FreeSerif remain character-specific fallbacks.
 

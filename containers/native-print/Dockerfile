@@ -14,10 +14,10 @@ ARG ARCH_SNAPSHOT=2026/09/04
 # support before compiling anything. No package installer runs at request time.
 RUN printf '%s\n' "$PRINT_BASE" | grep -Eq '^ghcr\.io/[a-z0-9._/-]+@sha256:[0-9a-f]{64}$' \
  && printf '%s\n' "$ARCH_SNAPSHOT" | grep -Eq '^[0-9]{4}/[0-9]{2}/[0-9]{2}$' \
- && if ! pacman -Q texlive-langother texlive-xetex > /dev/null 2>&1; then \
+ && if ! pacman -Q texlive-langeuropean texlive-xetex > /dev/null 2>&1; then \
       printf 'Server=https://archive.archlinux.org/repos/%s/$repo/os/$arch\n' "$ARCH_SNAPSHOT" > /etc/pacman.d/mirrorlist \
       && pacman -Sy --noconfirm --needed archlinux-keyring \
-      && pacman -Syu --noconfirm --needed texlive-langother texlive-xetex; \
+      && pacman -Syu --noconfirm --needed texlive-langeuropean texlive-xetex; \
     fi \
  && { test -n "$(kpsewhich -engine=xetex xelatex.fmt)" || fmtutil-sys --byfmt xelatex; } \
  && fc-cache -f \

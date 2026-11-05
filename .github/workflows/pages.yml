@@ -29,7 +29,7 @@ env:
   ARCH_PACKAGES: >-
     texlive-bin texlive-basic texlive-latex texlive-latexrecommended
     texlive-latexextra texlive-pictures texlive-fontsrecommended
-    texlive-fontsextra texlive-xetex texlive-langother poppler python
+    texlive-fontsextra texlive-xetex texlive-langeuropean poppler python
     python-yaml make git diffutils
   TEXLIVE_IMAGE: ghcr.io/spincyc/triptych-texlive@sha256:fd64daf839c719eef559ca0c74b0b93fb3d6f710ce057561b76500adcd150617
 

@@ -105,7 +105,7 @@ jobs:
           ARG ARCH_SNAPSHOT
           RUN printf 'Server=https://archive.archlinux.org/repos/%s/$repo/os/$arch\n' "$ARCH_SNAPSHOT" > /etc/pacman.d/mirrorlist \
            && pacman -Sy --noconfirm --needed archlinux-keyring \
-           && pacman -Syu --noconfirm --needed texlive-langother texlive-xetex \
+           && pacman -Syu --noconfirm --needed texlive-langeuropean texlive-xetex \
            && fmtutil-sys --byfmt xelatex \
            && fc-cache -f \
            && command -v pdflatex xelatex pdfinfo pdftotext pdffonts \
@@ -115,7 +115,7 @@ jobs:
            && fc-match --format '%{family}\n' FreeSerif | grep -Fx FreeSerif \
            && pdflatex --version | head -n 1 \
            && xelatex --version | head -n 1 \
-           && pacman -Q texlive-bin texlive-langother texlive-xetex texlive-fontsextra \
+           && pacman -Q texlive-bin texlive-langeuropean texlive-xetex texlive-fontsextra \
            && pacman -Scc --noconfirm
           DOCKERFILE
           docker build --build-arg "PRINT_BASE=$PRINT_BASE" \

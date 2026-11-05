@@ -1028,7 +1028,7 @@ with patch("importlib.metadata.version", side_effect=installed_version):
             "texlive-pictures",
             "texlive-fontsrecommended",
             "texlive-fontsextra",
-            "texlive-langother",
+            "texlive-langeuropean",
             "poppler",
             "imagemagick",
             "pandoc",
