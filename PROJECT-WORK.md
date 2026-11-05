@@ -5,7 +5,29 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-04.
+Last reconciled: 2026-11-05.
+
+## GPT Thirty-second Sunday in Ordinary Time, 2026-11-08
+
+<!-- promised-deliverable: gpt-pc-s58-production-2026-11-05 -->
+
+**In progress.** Complete the proper-study workflow for PC-S58-A in the
+United States edition: an expansive study, concise study and homily, with
+independent source/content and web reviews. The requested occurrence is
+8 November 2026; calendar computation and the USCCB dated readings identify
+the Thirty-second Sunday in Ordinary Time, Year A, Lectionary 154.
+
+The request also requires verifying the no-PDF migration throughout this
+workflow and publishing the validated work to main. Before seeding, audit the
+current source/reader path and repair stale author instructions about fields
+now derived by the publication schema. No production review or publication
+has yet been completed. The exact provider/identity authorization is recorded
+in `guidance/liturgy/propers-production-plan.md`.
+
+Completion requires terminal workflow acceptance, all three reader outputs and
+their catalog/release records, a durable workflow audit, passing publication
+checks, a main push, and verification of the resulting Pages deployment and
+live readers. Source/HTML acceptance does not assert a print-layout review.
 
 ## Review follow-up: single-source corpus and gated printing, 2026-11-04
 

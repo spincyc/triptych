@@ -1,6 +1,32 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-pc-s58-production-2026-11-05"
+owner = "PROJECT-WORK.md"
+promise = "Complete and publish the GPT three-document proper study for the Thirty-second Sunday in Ordinary Time, Year A, 8 November 2026; verify the no-PDF workflow migration and push the validated result to main."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "current-workflow"
+  criterion = "Audit the current proper-study source/reader path against the no-PDF and single-source conventions, repair necessary omissions, and validate the changed workflow before seeding."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "accepted-three-documents"
+  criterion = "The dated PC-S58-A GPT production reaches terminal ACCEPTED through genuine independent reviews and source/publication gates, with the expansive study, concise study and homily under one canonical owner."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "reviewed-reader-publication"
+  criterion = "All three current reader outputs, catalog links and release records pass their required checks, with exact evidence and honest limitations retained."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "main-and-live-verification"
+  criterion = "Validated commits reach main without history rewriting; the resulting Pages build, print-compile and deploy succeed, and the three live reader routes are verified."
+  status = "open"
+
+[[deliverables]]
 id = "single-source-print-followup-2026-11-04"
 owner = "PROJECT-WORK.md"
 promise = "Act on the cold review of the no-PDF series as the maintainer directed: fix the Generate PDF controls, narrow browser-product keys, gate deploys on compiling every edition, generate the Scriptural Date and Location page for all proper leaves, retire the pdf/ machinery and delete the browser-reflow print path, move publications onto document types, build web readers from canonical sources, remove duplicated tracked tables and copies, and deploy to main."
