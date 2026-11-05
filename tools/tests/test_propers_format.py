@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import pathlib
 import shutil
 import subprocess
 import tempfile
@@ -13,6 +14,11 @@ from unittest.mock import patch
 
 from tools.tests.test_proper_components_v2 import ROOT, components, fixture
 import _proper_study as study
+
+# A probe compiled with the shared preamble is not an edition; it gets the fixed
+# stamp the preamble requires (scripts/_edition_revision.py supplies real ones).
+PROBE_REVISION = ("% Test probe: not an edition.\n"
+                  "\\AIDocumentRevisionTimestamp{1970-01-01T00:00:00Z}\n")
 
 
 class ProperFormatTests(unittest.TestCase):
@@ -299,6 +305,7 @@ class ProperFormatTests(unittest.TestCase):
             + "A spoken paragraph that remains in the shared type.\n\n" * 120
             + "\\end{properhomily}\\typeout{NOTE-WIDTH=\\the\\linewidth}\n"
             "\\section*{Source note}Separate apparatus.\\end{document}\n")
+        (build / (pathlib.Path(source.name).stem + ".revision.tex")).write_text(PROBE_REVISION, encoding="utf-8")
         result = subprocess.run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
                                  source.name], cwd=build, capture_output=True, text=True, env=self.tex_env())
         self.assertEqual(result.returncode, 0, result.stdout[-2500:])
@@ -344,6 +351,7 @@ class ProperFormatTests(unittest.TestCase):
             "\\phantomsection\n\\section*{References}\n"
             "\\addcontentsline{toc}{section}{References}\\label{sec:references}\n"
             "Text.\\end{document}\n")
+        (build / (pathlib.Path(source.name).stem + ".revision.tex")).write_text(PROBE_REVISION, encoding="utf-8")
         result = subprocess.run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
                                  source.name], cwd=build, capture_output=True, text=True, env=self.tex_env())
         self.assertEqual(result.returncode, 0, result.stdout[-2500:])
@@ -405,6 +413,8 @@ class ProperFormatTests(unittest.TestCase):
             treatment.write_text(original + attack + "\n")
             build = self.root / f"{name}-input-build"
             build.mkdir()
+            for stamp_dir in (self.provider, build):
+                (stamp_dir / "main.revision.tex").write_text(PROBE_REVISION, encoding="utf-8")
             result = subprocess.run(
                 ["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
                  "-output-directory", str(build), "proper/main.tex"],
@@ -442,6 +452,8 @@ class ProperFormatTests(unittest.TestCase):
                 "\\begin{properhomily}\\typeout{SPOOF-WIDTH=\\the\\linewidth}"
                 "Rendered alias proof.\\end{properhomily}\n\\end{document}\n"
             )
+            (self.root / (pathlib.Path(source.name).stem + ".revision.tex")).write_text(
+                PROBE_REVISION, encoding="utf-8")
             result = subprocess.run(
                 ["pdflatex", "-interaction=nonstopmode", "-halt-on-error", source.name],
                 cwd=self.root, capture_output=True, text=True, env=self.tex_env(),

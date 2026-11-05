@@ -17,6 +17,11 @@ import tempfile
 import unittest
 from pathlib import Path
 
+# A probe compiled with the shared preamble is not an edition; it gets the fixed
+# stamp the preamble requires (scripts/_edition_revision.py supplies real ones).
+PROBE_REVISION = ("% Test probe: not an edition.\n"
+                  "\\AIDocumentRevisionTimestamp{1970-01-01T00:00:00Z}\n")
+
 ROOT = Path(__file__).resolve().parents[2]
 
 DOCUMENT = r"""\input{%(preamble)s}
@@ -44,6 +49,7 @@ class TitlesecAnchorPageTests(unittest.TestCase):
             (build / "probe.tex").write_text(
                 DOCUMENT % {"preamble": preamble.with_suffix("").as_posix(), "filler": filler})
             for _ in range(2):
+                (build / "probe.revision.tex").write_text(PROBE_REVISION, encoding="utf-8")
                 result = subprocess.run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
                                          "probe.tex"], cwd=build, capture_output=True, text=True)
                 self.assertEqual(result.returncode, 0, result.stdout[-2000:])
@@ -95,6 +101,7 @@ class TitlesecAnchorPageTests(unittest.TestCase):
                 "\\typeout{STEP=\\meaning\\ttl@Hy@steplink}\n"
                 "\\typeout{REF=\\meaning\\ttl@Hy@refstepcounter}\n"
                 "\\makeatother x\\end{document}\n")
+            (build / "hooks.revision.tex").write_text(PROBE_REVISION, encoding="utf-8")
             result = subprocess.run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
                                      "hooks.tex"], cwd=build, capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stdout[-2000:])
@@ -149,6 +156,7 @@ class LandscapeAnchorPageTests(unittest.TestCase):
   \refstepcounter{section}\addcontentsline{toc}{section}{Initiation}}
 \begin{document}
 """ + "\n".join(inputs) + r"\end{document}")
+            (build / "probe.revision.tex").write_text(PROBE_REVISION, encoding="utf-8")
             for _ in range(2):
                 result = subprocess.run(
                     ["pdflatex", "-interaction=nonstopmode", "-halt-on-error", "probe.tex"],
