@@ -7,6 +7,25 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-05.
 
+## Sanctuary dictionary continuation — 5 November 2026
+
+<!-- promised-deliverable: sanctuary-dictionary-continuation-2026-11 -->
+
+**In progress.** Continue the dictionary's remaining-work plan, independently
+review consistency, correctness, clarity and visual quality, and integrate
+validated work in coherent commits. The July delivery plan still describes
+an obsolete six-entry prototype; the current structured inventory has 80
+records and six differentiated selections. Reconcile that plan with actual
+evidence before claiming any category closed. The next source-controlled
+addition addresses a missing clothing or vestment family. Keep the larger
+Requiem, ritual Mass, Holy Week and whole-composition work explicit.
+
+The work stays on `feature/altar-server`. The maintainer has authorized
+reconciliation/rebase and publication to `main` where reasonable; integration
+must preserve published history and pass the affected release gates.
+Current review and implementation evidence belongs in the dictionary's
+`research/` records and its existing delivery plan.
+
 ## Altar-server and sanctuary guide revision — 5 November 2026
 
 <!-- promised-deliverable: altar-server-grounded-visual-revision-2026-11 -->
