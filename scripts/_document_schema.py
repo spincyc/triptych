@@ -861,8 +861,11 @@ def _source_files(root: Path, base: Path, *, evidence: bool) -> set[Path]:
     return result
 
 
-def _literal_closure(root: Path, record: dict) -> tuple[set[Path], list[str]]:
+def _literal_closure(root: Path, record: dict, *, assembly=None) -> tuple[set[Path], list[str]]:
     """Conservative literal edges only; computed TeX is explicitly unproven."""
+    if assembly is None:
+        from _document_types import Assembly
+        assembly = Assembly(root)
     files, pending, graph, unresolved = set(), [], {}, []
     for output in record["outputs"]:
         pending.append(root / output["source_path"])
@@ -877,7 +880,7 @@ def _literal_closure(root: Path, record: dict) -> tuple[set[Path], list[str]]:
         graph[path.as_posix()] = []
         if path.suffix not in {".tex", ".sty", ".cls"}:
             continue
-        text = re.sub(r"(?<!\\)%[^\n]*", "", path.read_text(encoding="utf-8"))
+        text = re.sub(r"(?<!\\)%[^\n]*", "", assembly.read_text(path))
         for argument in INPUT_RE.findall(text):
             if "\\" in argument or "#" in argument:
                 unresolved.append(f"{path.relative_to(root)}: computed input {argument}")
@@ -886,7 +889,7 @@ def _literal_closure(root: Path, record: dict) -> tuple[set[Path], list[str]]:
             target = None
             for base in (path.parent,) + bases:
                 for candidate in (base / argument, base / f"{argument}.tex"):
-                    if candidate.is_file():
+                    if assembly.is_file(candidate):
                         target = _within(root, candidate)
                         break
                 if target:
@@ -951,7 +954,7 @@ def _web_declaration_identity(path: Path) -> bytes:
     return hashlib.sha256(payload).digest()
 
 
-def _digest(root: Path, paths: set[Path], declaration=None, *, projections=None) -> dict:
+def _digest(root: Path, paths: set[Path], declaration=None, *, projections=None, virtual=None) -> dict:
     digest = hashlib.sha256()
     if declaration is not None:
         digest.update(json.dumps(declaration, sort_keys=True, separators=(",", ":")).encode())
@@ -962,7 +965,12 @@ def _digest(root: Path, paths: set[Path], declaration=None, *, projections=None)
         names.append(name)
         digest.update(name.encode())
         digest.update(b"\0")
-        digest.update(projections[path] if projections and path in projections else _file_hash(path))
+        if projections and path in projections:
+            digest.update(projections[path])
+        else:
+            text = virtual.get(path) if virtual is not None else None
+            digest.update(hashlib.sha256(text.encode("utf-8")).digest()
+                          if text is not None else _file_hash(path))
     return {"sha256": digest.hexdigest(), "inputs": names}
 
 
@@ -1115,9 +1123,15 @@ def identities(root: Path, record: dict, *, output: str | None = None) -> dict:
     if record.get("discovery_error"):
         raise SchemaError(record["discovery_error"])
     leaf_dir = root / record["source_dir"]
+    from _document_types import Assembly
+    assembly = Assembly(root)
+    virtual = assembly.files(leaf_dir)
     owner = _owner(root, record["provider"], record["leaf"])
     content = _source_files(root, leaf_dir, evidence=False)
     evidence = _source_files(root, leaf_dir, evidence=True)
+    for path in virtual:
+        target = evidence if set(path.relative_to(leaf_dir).parts[:-1]) & AUDIT_DIRS else content
+        target.add(path)
     profile = root / record["profile"]
     if profile.is_file():
         evidence.add(profile)
@@ -1128,7 +1142,7 @@ def identities(root: Path, record: dict, *, output: str | None = None) -> dict:
         else:
             content.update(_source_files(root, base, evidence=False))
             evidence.update(_source_files(root, base, evidence=True))
-    closure, unresolved = _literal_closure(root, record)
+    closure, unresolved = _literal_closure(root, record, assembly=assembly)
     content.update(closure)
     for item in record["structure"]:
         paths = _structure_paths(root, record, item)
@@ -1137,6 +1151,7 @@ def identities(root: Path, record: dict, *, output: str | None = None) -> dict:
         else:
             content.update(paths)
     render = set(content)
+    render.update(assembly.dependencies(leaf_dir))
     render_patterns = ["src/common/*.tex", "src/common/*.sty", "scripts/*.py",
                        "scripts/document_schema_checks/*.py",
                        "tools/web-edition", str(REGISTRY), "Makefile"]
@@ -1149,14 +1164,17 @@ def identities(root: Path, record: dict, *, output: str | None = None) -> dict:
             target.update(_paths(root, pattern))
     # Metadata asserts witness hashes; identity never hydrates or reads external
     # witness blobs. Exhaustive source-byte validation remains an owning gate.
-    evidence = _evidence_ancestry(root, {p for p in evidence if _metadata_path(p, root)})
+    generated_evidence = evidence.intersection(virtual)
+    evidence = _evidence_ancestry(root, {p for p in evidence
+                                      if p not in virtual and _metadata_path(p, root)})
+    evidence.update(generated_evidence)
     declaration = _raw_manifest(record)
     web_declaration = leaf_dir / "web-edition.toml"
     projections = ({web_declaration: _web_declaration_identity(web_declaration)}
                    if web_declaration.is_file() else {})
-    result = {"content": _digest(root, content, declaration, projections=projections),
-              "evidence": _digest(root, evidence, projections=projections),
-              "render": _digest(root, render, projections=projections),
+    result = {"content": _digest(root, content, declaration, projections=projections, virtual=virtual),
+              "evidence": _digest(root, evidence, projections=projections, virtual=virtual),
+              "render": _digest(root, render, projections=projections, virtual=virtual),
               "outputs": {}, "limitations": [
                   "Source identity does not establish semantic or rendered review acceptance.",
                   "Evidence identity covers audit/binding metadata and controlling source-record ancestry, not external witness payload verification.",

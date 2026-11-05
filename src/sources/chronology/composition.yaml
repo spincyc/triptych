@@ -2846,6 +2846,36 @@ units:
           from: {year: 737, era: bc}
           label: "at the time of the havoc wrought by the Assyrian invasion of Tiglath-pileser III in 737 B.C."
 
+  - id: composition.psalm-129-possible-davidic-composition
+    title: Possible Davidic composition of Psalm 129 after his sin
+    orientation_title: "Possible Davidic composition"
+    scope: {book: Ps, chapter: 129}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis_class: traditional-catholic
+        basis: >-
+          The Haydock edition, Psalm 129:1, printed p. 790, reports Berthier's
+          proposal: "David might compose it after his sin". The modal "might"
+          governs the composition proposal. The same sentence says the psalm
+          suits the captives, sinners and souls in purgatory; suitability does
+          not assign a second date of composition.
+        sources:
+          - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-129-possible-davidic-composition
+        note: >-
+          A proposed occasion for composition, not an attribution in the
+          anonymous biblical heading or a settled historical finding. David's
+          penitence is a reusable subject whose scriptural context is the
+          reign at Jerusalem. The calendar orientation gives the wider regnal
+          frame as an estimate only; it does not assign this psalm a year.
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            anchor: israel.monarchy.david-repentance
+            statement: possibly after David's sin
+          label: "David might compose it after his sin"
+
   - id: composition.psalms-of-the-sons-of-korah
     title: The Psalms of the Sons of Korah
     scope:
@@ -2878,13 +2908,14 @@ units:
           sources into one liturgical hymnal by the guild of the sons of Korah."
         sources: [artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25]
         note: >-
-          The article prints no year of any era for these psalms, so nothing
-          here is a year. It bounds them by two termini and this corpus holds
+          The article prints no year of any era for these psalms; this query
+          claim preserves its relative wording. It bounds them by two termini and this corpus holds
           only one anchor per relative claim, so the anchor is the later
           terminus, the return from exile, and the article's whole sentence is
           carried in the statement. The corpus's own date for that return is
-          itself disputed between 538 and 536 B.C., which is a further reason
-          not to convert this bound into numbers. The article is not saying the
+          itself disputed between 538 and 536 B.C. The separate reader estimate
+          uses an explicitly approximate outer calendar frame without replacing
+          this claim or deciding the return's year. The article is not saying the
           sons of Korah wrote them; it leaves composition by a member of the
           guild and mere collection by the guild open side by side.
         date:

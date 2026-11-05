@@ -285,6 +285,10 @@ def uncommented(text: str) -> str:
 
 @functools.lru_cache(maxsize=None)
 def flag_defined(leaf: Path, edition: str) -> bool | None:
+    return _flag_defined(leaf, edition)
+
+
+def _flag_defined(leaf: Path, edition: str, assembly=None) -> bool | None:
     """Whether `\\TriptychSynthesisEdition` is defined as this edition builds.
 
     `None` for `leaf`, which resolves nothing at all: it is the union of both
@@ -295,10 +299,10 @@ def flag_defined(leaf: Path, edition: str) -> bool | None:
     if edition in (CANONICAL_EDITION, RESEARCH_EDITION):
         return False
     entry = leaf / entry_files(leaf, edition)[0]
-    if not entry.is_file():
+    if not _source_exists(entry, assembly):
         return False
     return bool(DEFINES_FLAG.search(
-        uncommented(entry.read_text(encoding="utf-8"))))
+        uncommented(_source_text(entry, assembly))))
 
 
 def _guard_parts(masked: str,
@@ -379,14 +383,24 @@ def resolve_edition(text: str, defined: bool | None) -> str:
         at = opening.end()
 
 
+def _source_text(path: Path, assembly=None) -> str:
+    return (assembly.read_text(path) if assembly is not None
+            else path.read_text(encoding="utf-8"))
+
+
+def _source_exists(path: Path, assembly=None) -> bool:
+    return assembly.is_file(path) if assembly is not None else path.is_file()
+
+
 def edition_text(leaf: Path, path: Path,
-                 edition: str = LEAF_EDITION) -> str:
+                 edition: str = LEAF_EDITION, assembly=None) -> str:
     """One file's bytes as the named edition typesets them."""
-    return resolve_edition(path.read_text(encoding="utf-8"),
-                           flag_defined(leaf, edition))
+    return resolve_edition(_source_text(path, assembly),
+                           _flag_defined(leaf, edition, assembly) if assembly is not None
+                           else flag_defined(leaf, edition))
 
 
-def leaf_tex(leaf: Path, edition: str = LEAF_EDITION) -> list[Path]:
+def leaf_tex(leaf: Path, edition: str = LEAF_EDITION, assembly=None) -> list[Path]:
     """Every .tex file the named edition publishes, in a stable order.
 
     `format.tex` defines macros and `generation-metadata.tex` is stamped by
@@ -398,12 +412,21 @@ def leaf_tex(leaf: Path, edition: str = LEAF_EDITION) -> list[Path]:
     what `reader_facing` settles by following the `\\input` graph: a section
     file only the other edition inputs is not this edition's to repair.
     """
-    paths = [path for path in sorted(leaf.rglob("*.tex"))
+    found = set(leaf.rglob("*.tex"))
+    if assembly is not None:
+        generated = assembly.files(leaf)
+        found.update(path for path in generated if path.suffix == ".tex")
+        # A now-absent table is no longer read by the generated page. Its
+        # historical snapshot cannot manufacture a live chronology claim.
+        table = leaf / _wiring().ORIENTATION_TABLE_RECORD
+        if table not in generated:
+            found.discard(table)
+    paths = [path for path in sorted(found)
              if path.name not in ("format.tex", "generation-metadata.tex",
                                   "chronology-annotations.tex")]
     if edition == LEAF_EDITION:
         return paths
-    typeset = set(reader_facing(leaf, edition))
+    typeset = set(reader_facing(leaf, edition, assembly))
     return [path for path in paths if path in typeset]
 
 
@@ -2292,7 +2315,7 @@ def _per_passage_dates(
     return problems, text, passed
 
 
-def _annotation_macro_definitions(leaf: Path, generated: Path) -> list[str]:
+def _annotation_macro_definitions(leaf: Path, generated: Path, assembly=None) -> list[str]:
     """Definitions of the generated annotation API outside its own artifact.
 
     A byte-current generated file proves nothing about what reaches the reader
@@ -2317,7 +2340,7 @@ def _annotation_macro_definitions(leaf: Path, generated: Path) -> list[str]:
     for path in paths:
         if path == generated:
             continue
-        text = active_tex(path.read_text(encoding="utf-8"))
+        text = active_tex(_source_text(path, assembly))
         for call in re.finditer(r"\\chronologyannotationanchor(?:claim|group)\b", text):
             line = text.count("\n", 0, call.start()) + 1
             problems.append(
@@ -2341,7 +2364,7 @@ def _annotation_macro_definitions(leaf: Path, generated: Path) -> list[str]:
 
 
 def _date_cell_wrapper_integrity(
-    leaf: Path, root: Path, edition: str = LEAF_EDITION
+    leaf: Path, root: Path, edition: str = LEAF_EDITION, assembly=None
 ) -> list[str]:
     """The checked annotation remains the content TeX typesets for a cell.
 
@@ -2370,10 +2393,10 @@ def _date_cell_wrapper_integrity(
                 r"\\input\s*\{common/propers-format(?:\.tex)?\}")
             for entry in entry_files(leaf, edition):
                 path = leaf / entry
-                if not path.is_file():
+                if not _source_exists(path, assembly):
                     problems.append(f"{entry}: missing shared-template entrypoint")
                     continue
-                text = active_tex(path.read_text(encoding="utf-8"))
+                text = active_tex(_source_text(path, assembly))
                 preamble = text.split(r"\begin{document}", 1)[0]
                 if (len(template_import.findall(preamble)) != 1 or
                         len(template_import.findall(text)) != 1):
@@ -2391,7 +2414,7 @@ def _date_cell_wrapper_integrity(
     if owner.is_file():
         paths.add(owner)
     for path in sorted(paths):
-        text = active_tex(path.read_text(encoding="utf-8"))
+        text = active_tex(_source_text(path, assembly))
         matches = sorted(
             (match.start(), match.group("kind"), match.group("name"))
             for pattern in patterns for match in pattern.finditer(text)
@@ -2544,10 +2567,15 @@ def _stated_production(leaf: Path) -> tuple[str, int] | None:
         return None
 
 
-def _chronology_scope(leaf: Path, edition: str = LEAF_EDITION) -> tuple[bool, bool, str]:
+def _chronology_scope(leaf: Path, edition: str = LEAF_EDITION,
+                      assembly=None) -> tuple[bool, bool, str]:
     """`(record required, macro discipline required, why)` for this leaf."""
     production = _stated_production(leaf)
     wiring = _wiring()
+    if assembly is not None:
+        files = assembly.files(leaf)
+        return True, (leaf / wiring.ANNOTATIONS_RECORD in files
+                      and edition != HOMILY_EDITION), "the document type assembles current chronology"
     carried = (leaf / wiring.RECORD).is_file()
     if three_document_study(leaf):
         from _proper_components import presentation_contract
@@ -2596,11 +2624,13 @@ def _chronology_scope(leaf: Path, edition: str = LEAF_EDITION) -> tuple[bool, bo
     return required, required, why
 
 
-def _annotations_scope(leaf: Path) -> tuple[bool, str]:
+def _annotations_scope(leaf: Path, assembly=None) -> tuple[bool, str]:
     """Whether this leaf must carry and use the generated annotation file."""
     production = _stated_production(leaf)
     wiring = _wiring()
     path = wiring.annotations_path(leaf)
+    if assembly is not None:
+        return path in assembly.files(leaf), "the document type assembles current chronology"
     carried = path.is_file()
     if three_document_study(leaf):
         from _proper_components import presentation_contract
@@ -2633,9 +2663,33 @@ def _annotations_scope(leaf: Path) -> tuple[bool, str]:
     )
 
 
-def _corpus_answer(leaf: Path, root: Path):
+def _chronology_assembly(leaf: Path, root: Path):
+    """Validate typed generated content before trusting its live projection."""
+    import _document_types
+
+    assembly = _document_types.Assembly(root)
+    files = assembly.files(leaf)
+    return assembly if any(path.parent == leaf / GENERATED_DIR
+                           and path.name.startswith("scriptural-date-location")
+                           for path in files) else None
+
+
+def _corpus_answer(leaf: Path, root: Path, assembly=None):
     """What the chronology corpus answers about this proper, right now."""
     wiring = _wiring()
+    if assembly is not None:
+        import _proper_chronology_page as page
+
+        found, _projection, absent = page.projection(
+            _leaf_document(leaf, root), root=root,
+            corpus_root=root / "src/sources/chronology",
+            provider=leaf.relative_to(root / "src").parts[0])
+        if found is not None:
+            return found
+        # Pending appointment research supplies no claim that authored prose
+        # can borrow; preserve that absence while still checking the prose.
+        return wiring.Dossier(_leaf_document(leaf, root), "postconciliar", "", "", "",
+                              absent, page.ABSENT[absent], ())
     return wiring.dossier(
         _leaf_document(leaf, root),
         root=root,
@@ -2653,23 +2707,26 @@ def check_chronology_record_current(leaf: Path, root: Path,
     relation — "so prose can be regenerated without re-researching the fact".
     A carried id is only worth carrying if it still names what the corpus
     holds, and a copy of a fact is a prediction that the two will differ, so
-    this regenerates the record from the corpus and compares. There is no
-    tolerance and no merge: the record is generated, and a leaf whose copy has
-    drifted is told to rewrite it rather than to reconcile it.
+    typed consumers validate the live assembly. Legacy consumers still compare
+    the carried record with regeneration and refuse a copy that has drifted.
     """
     wiring = _wiring()
-    required, _macros, why = _chronology_scope(leaf)
+    assembly = _chronology_assembly(leaf, root)
+    required, _macros, why = _chronology_scope(leaf, assembly=assembly)
     path = leaf / wiring.RECORD
     if not required:
         return [], f"not in scope: {why}"
-    if not path.is_file():
+    if assembly is not None and path not in assembly.files(leaf):
+        found = _corpus_answer(leaf, root, assembly)
+        return [], f"assembly reports no chronology record: {found.reason}"
+    if not _source_exists(path, assembly):
         return ([
             f"{why}, so the leaf must carry {wiring.RECORD}; write it with "
             f"`{_record_remedy(leaf, root)}`"
         ], "")
-    found = _corpus_answer(leaf, root)
+    found = _corpus_answer(leaf, root, assembly)
     rendered = wiring.render(found)
-    if path.read_text(encoding="utf-8") != rendered:
+    if _source_text(path, assembly) != rendered:
         return ([
             f"{wiring.RECORD} is not what the chronology corpus answers now. "
             f"It is generated, not authored: rewrite it with "
@@ -2704,33 +2761,35 @@ def check_chronology_annotations_current(
     complete, and no second implementation of the projection lives here.
     """
     wiring = _wiring()
-    required, why = _annotations_scope(leaf)
+    assembly = _chronology_assembly(leaf, root)
+    required, why = _annotations_scope(leaf, assembly)
     path = wiring.annotations_path(leaf)
-    problems = _annotation_macro_definitions(leaf, path)
+    problems = _annotation_macro_definitions(leaf, path, assembly)
     if not required:
         return problems, f"not in scope: {why}"
-    if (not three_document_study(leaf) and not wiring.presentation_contract(leaf)) or any(
-        "\\" + CHRONOLOGY_CELL in active_tex(edition_text(leaf, prose_path, edition))
-        for prose_path in leaf_tex(leaf, edition)
+    if (assembly is None and not three_document_study(leaf)
+            and not wiring.presentation_contract(leaf)) or any(
+        "\\" + CHRONOLOGY_CELL in active_tex(edition_text(leaf, prose_path, edition, assembly))
+        for prose_path in leaf_tex(leaf, edition, assembly)
     ):
-        problems.extend(_date_cell_wrapper_integrity(leaf, root, edition))
-    if not path.is_file():
+        problems.extend(_date_cell_wrapper_integrity(leaf, root, edition, assembly))
+    if not _source_exists(path, assembly):
         problems.append(
             f"{why}, so the leaf must carry {path.relative_to(leaf)}; write "
             f"it with `{_annotations_remedy(leaf, root)}`"
         )
         return problems, ""
 
-    found = _corpus_answer(leaf, root)
+    found = _corpus_answer(leaf, root, assembly)
     projection = wiring.annotations(found)
     rendered = wiring.render_annotations_tex(projection)
     if found.presentation == wiring.ORIENTATION_V3:
         table_path = leaf / wiring.ORIENTATION_TABLE_RECORD
-        if (not table_path.is_file()
-                or table_path.read_text(encoding="utf-8") != wiring.render_orientation_table(projection)):
+        if (not _source_exists(table_path, assembly)
+                or _source_text(table_path, assembly) != wiring.render_orientation_table(projection)):
             problems.append(f"{wiring.ORIENTATION_TABLE_RECORD} is not the complete shared chronology table; "
                             f"regenerate with `{_annotations_remedy(leaf, root)}`")
-    if path.read_text(encoding="utf-8") != rendered:
+    if _source_text(path, assembly) != rendered:
         problems.append(
             f"{path.relative_to(leaf)} is not the complete annotation "
             f"projection the chronology corpus produces now. It is generated, "
@@ -2756,8 +2815,9 @@ def _orientation_tables(printed, found, leaf, *, required):
     """A row's passage, subject and dates are generated as one indivisible unit."""
     wiring = _wiring()
     projection = wiring.annotations(found)
-    expected = {row.key: row for row in projection.orientation_rows}
     shared = found.presentation == wiring.ORIENTATION_V3
+    expected = {row.key: row for row in (wiring.compact_orientation_rows(projection)
+                                        if shared else projection.orientation_rows)}
     problems, cleaned, seen = [], {}, 0
     tables_seen = 0
     table_re = re.compile(r"\\begin\{chronology(?:orientation|shared)table\}(.*?)"
@@ -2818,7 +2878,7 @@ def _orientation_tables(printed, found, leaf, *, required):
 
 
 def check_chronology_claims_supported(leaf: Path, root: Path,
-                                     edition: str = LEAF_EDITION
+                                     edition: str = LEAF_EDITION, *, assembly=None
                                      ) -> tuple[list[str], str]:
     """Every date the guide prints is one the corpus asserts, and it says which.
 
@@ -2861,25 +2921,26 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
     large, and in a row whose passages answer differently a date true of only
     some of them is refused unless it carries that label.
     """
-    required, macros, why = _chronology_scope(leaf, edition)
+    assembly = assembly or _chronology_assembly(leaf, root)
+    required, macros, why = _chronology_scope(leaf, edition, assembly)
     if edition == LEAF_EDITION and three_document_study(leaf) and macros:
         # The v3 page-two inventory belongs to the concise edition. Counting
         # the whole leaf together both rejects a separate research appendix
         # as duplicate cells and lets that appendix hide a missing concise row.
         problems, details = [], []
         for mode in (RESEARCH_EDITION, SYNTHESIS_EDITION, HOMILY_EDITION):
-            found, detail = check_chronology_claims_supported(leaf, root, mode)
+            found, detail = check_chronology_claims_supported(leaf, root, mode, assembly=assembly)
             problems.extend(f"{mode}: {problem}" for problem in found)
             details.append(f"{mode}: {detail}")
         return problems, "; ".join(details)
-    annotation_required, annotation_why = _annotations_scope(leaf)
+    annotation_required, annotation_why = _annotations_scope(leaf, assembly)
     # A document type's generated pages (`generated/`) are projections of the
-    # same record, held byte for byte by `tools/tpt document-types refresh
-    # --check`; their dates are the record's by construction, so they are not
+    # same live record, validated by the assembly above; their dates are the
+    # record's by construction, so they are not
     # scanned as authored prose. The rows they input are still read here.
     printed = {
-        path: active_tex(edition_text(leaf, path, edition))
-        for path in leaf_tex(leaf, edition)
+        path: active_tex(edition_text(leaf, path, edition, assembly))
+        for path in leaf_tex(leaf, edition, assembly)
         if not generated_page(leaf, path)
     }
     # THE CORPUS IS NOT CONSULTED WHEN THERE IS NOTHING TO HOLD AGAINST IT. A
@@ -2893,7 +2954,7 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
         mark in text for text in printed.values() for mark in marks
     ):
         return [], f"no chronology claim printed ({why})"
-    found = _corpus_answer(leaf, root)
+    found = _corpus_answer(leaf, root, assembly)
     orientation = bool(found.presentation)
     orientation_seen = 0
     orientation_problems = []
@@ -2901,7 +2962,9 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
         orientation_problems, printed, orientation_seen = _orientation_tables(
             printed, found, leaf, required=macros or (
                 found.presentation == _wiring().ORIENTATION_V3
-                and edition in {RESEARCH_EDITION, SYNTHESIS_EDITION}))
+                and edition in {RESEARCH_EDITION, SYNTHESIS_EDITION}
+                and (assembly is None or leaf / _wiring().ORIENTATION_TABLE_RECORD
+                     in assembly.files(leaf))))
         if macros and any(r"\chronodate" in text for text in printed.values()):
             orientation_problems.append("orientation page two uses generated rows, not element-wide date cells")
     elif any(r"\chronologyorientationrow" in text for text in printed.values()):
@@ -3252,7 +3315,7 @@ TEX_INPUT = re.compile(r"\\input\{([^{}]*)\}")
 NOT_PROSE = ("format.tex", "generation-metadata.tex")
 
 
-def reader_facing(leaf: Path, edition: str = LEAF_EDITION) -> list[Path]:
+def reader_facing(leaf: Path, edition: str = LEAF_EDITION, assembly=None) -> list[Path]:
     """Every .tex file the named edition typesets, in the order reached.
 
     Under `leaf`, both editions deliberately: `synthesis.tex` sets a flag and
@@ -3274,10 +3337,10 @@ def reader_facing(leaf: Path, edition: str = LEAF_EDITION) -> list[Path]:
         paths = set()
         for name in entry_files(leaf, edition):
             entry = leaf / name
-            if edition == LEAF_EDITION and not entry.is_file():
+            if edition == LEAF_EDITION and not _source_exists(entry, assembly):
                 # An early phase may legitimately precede either companion.
                 continue
-            paths.update(include_graph(entry, leaf, provider_root))
+            paths.update(include_graph(entry, leaf, provider_root, assembly=assembly))
         # The component checker's semantic graph deliberately retains shared
         # engine/template inputs for sealing, recorder reconciliation, and web
         # conversion. Content preflight reads this leaf's reader-facing prose;
@@ -3298,12 +3361,12 @@ def reader_facing(leaf: Path, edition: str = LEAF_EDITION) -> list[Path]:
         # leaf is dropped rather than followed.
         if root not in path.resolve().parents:
             continue
-        if path in seen or not path.is_file():
+        if path in seen or not _source_exists(path, assembly):
             continue
         seen.add(path)
         if path.name not in NOT_PROSE:
             order.append(path)
-        text = edition_text(leaf, path, edition)
+        text = edition_text(leaf, path, edition, assembly)
         for hit in TEX_INPUT.finditer(text):
             argument = hit.group(1)
             tail = (argument.split(f"{leaf.name}/", 1)[-1]

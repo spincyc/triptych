@@ -39,10 +39,12 @@ class OrientationProjectionTests(unittest.TestCase):
         cls.found = cls.leaf_found._replace(presentation="")
         cls.projection = chronology.annotations(cls.found, presentation="orientation-v1")
 
-    def test_legacy_projection_is_byte_identical(self):
-        path = ROOT / "src/gpt" / TWENTIETH / chronology.ANNOTATIONS_RECORD
-        self.assertEqual(chronology.render_annotations_tex(chronology.annotations(self.leaf_found)),
-                         path.read_text())
+    def test_record_is_independent_of_the_current_orientation_display(self):
+        # Current shared display is assembled on demand; historical generated
+        # leaf snapshots no longer control its bytes. The audit record remains
+        # independent of the selected display, and the frozen v1 hashes below
+        # still prove legacy rendering compatibility.
+        self.assertEqual(chronology.render(self.found), chronology.render(self.leaf_found))
         self.assertEqual(chronology.render(self.found),
                          (ROOT / "src/gpt" / TWENTIETH / chronology.RECORD).read_text())
 

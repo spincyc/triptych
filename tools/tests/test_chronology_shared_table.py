@@ -52,6 +52,11 @@ class SharedTableTests(unittest.TestCase):
         other = chronology.dossier(BASE + "66-resumed-fifth-after-epiphany", provider="gpt")
         a = self.found.element("gospel")._replace(key="gospel-long")
         b = other.element("gospel")._replace(key="gospel-short")
+        # Exercise the undated-context interface even after this episode gains
+        # sourced chronology in the live corpus.
+        b = b._replace(claims=tuple(c for c in b.claims if c.relation != "narrated-event"),
+                       publication_claims=tuple(c for c in b.publication_claims
+                                                if c.relation != "narrated-event"))
         found = self.found._replace(elements=(a, b), profile_comparisons=())
         events = [r for r in chronology.orientation_rows(found) if r.group.relation == "narrated-event"]
         self.assertEqual(len(events), 2)
@@ -188,9 +193,10 @@ class SharedTableTests(unittest.TestCase):
         self.assertEqual(chronology._passage_display_v3("Alleluia Verse", (adapted,)),
                          "Alleluia Verse: Cf. Eph. 1:17–18")
         rendered = chronology.render_annotations_tex(self.projection)
-        self.assertIn("c.~A.D.~50", rendered)
+        self.assertIn("Proposals span c.~A.D.~38--68", rendered)
         self.assertIn("221--204 B.C.", rendered)
-        self.assertIn("A.M.~2944 (Haydock edition reporting Ussher)", rendered)
+        self.assertIn("c.~1060 B.C. (flight from Saul; Haydock edition reporting Ussher)", rendered)
+        self.assertIn("{A. M. 2944, A. C. 1060}", rendered)
         self.assertIn("Composition: Matthew", rendered)
         # Source wording remains sealed, not rewritten to match typography.
         claim = next(c for row in self.projection.orientation_rows for c in row.group.claims

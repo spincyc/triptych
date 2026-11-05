@@ -28,7 +28,12 @@ Augustine recurrence found and repaired during that review. Both initial and
 recheck results are preserved under the leaf's
 `evaluations/post-publication-2026-11-05/`. All three source/content checks and
 the complete content/schema gates pass. The research boundary remains exactly
-unchanged at 1,732 files. Reader and deployment requirements remain open.
+unchanged at 1,732 files before upstream integration. Reader and deployment
+requirements remain open. Main subsequently advanced with shared chronology
+assembly changes through `4bcc8c80fe`. A history-preserving merge retains those
+changes; regenerated target readers and their affected chronology need a fresh
+bounded integration review before publication. The earlier preservation and
+reader reviews remain scoped to their recorded source checkpoint.
 
 ## GPT Thirty-second Sunday in Ordinary Time, 2026-11-08
 
@@ -101,6 +106,78 @@ or visual acceptance was renewed. Both source classifications and all 166
 pending migration units remain unchanged. These browser checks
 supplement the recorded content reviews; they do not add an independent
 companion web review or print-layout approval.
+
+## Useful shared biblical dates, 2026-11-05
+
+<!-- promised-deliverable: useful-shared-biblical-dates-2026-11-05 -->
+
+**Reviewed candidate; publication pending.** Revise the shared chronology projection to give useful
+approximate calendar dates, distinguish events from composition, and distinguish
+David's periods where the evidence does. Preserve substantive uncertainty in
+concise wording and the underlying source records. The change must reach all
+existing proper documents when their own text is assembled with shared templates
+and machinery, without regenerating each publication's tracked files.
+
+Acceptance includes independent cold review for conciseness, informativeness,
+clarity and composition of multiple passages; focused source and assembly
+regressions; and reconciliation, commit and non-force publication to main.
+The requested examples include Psalms 43, 84 and 129 (Vulgate numbering),
+Jeremias 29, Matthew 13, Mark 11 and Colossians 3. Shared assembly now supplies
+current generated content to web conversion, native bundles and local print
+for all 63 proper leaves; no provider-leaf source has
+been regenerated. Existing missing appointment inputs remain explicit.
+
+The sample date sheet now has separate event and composition dates, sourced
+calendar estimates and concise numerical proposal spans. Distinct Davidic
+settings retain their own dates. Original claims, alternatives and qualifications
+remain in the evidence appendix. The sample GPT 66 synthesis and GPT 54 synthesis
+were actually typeset; their date sheets fit page two without overflow.
+
+Focused renderer, assembly, legacy chronology, freshness, source-identity and
+revision tests pass. Independent review identified and verified repairs to
+staging-directory safety, stale process caches, suppressed Davidic source
+qualifications and estimate scope. The source review checked the sample, joined
+Psalm/Daniel passages and David's distinct Geth, Maon and Absalom settings against
+their evidence. The reconciled census covers all 63 proper leaves: 49 can query
+chronology (including the nuptial leaf's explicit no-formulary result); 14
+postconciliar leaves still lack reviewed appointment inputs. Remaining nonnumeric
+subjects are Sinai's unresolved calendar date, David's unspecified deliverance
+occasion, and Job's and Tobias's already useful century wording. Existing
+source-qualification gaps remain explicit. Source-library, publication-inventory,
+family-ledger, coverage and review-manifest checks pass. The ordinary generated
+document gate now checks live assembly across every typed leaf; explicit legacy
+snapshot checks retain their original contract.
+
+Two full read-suite tests could not replay because the archived Aquinas PDF and
+Gregory EPUB payloads are unavailable in this checkout. Their failing tests and
+implementation are unchanged; both payload paths are absent at the base commit
+`c57e60ef3d`. This is an evidence-availability limitation, not a claimed baseline
+test replay. The focused source, rendering and assembly checks above passed.
+The registered web-editions input audit passed with no undeclared or scratch
+inputs, and the initial browser-product cold builds matched. Reconciliation
+onto `3d00a7ef7b` preserves the new PC-S58 proper and upstream reader-inspection
+identity rules. All 34 schema tests and an independent combined-identity review
+pass. The newly explicit Davidic qualification is retained in the compact
+estimate; nine estimate tests and independent source review pass. The new proper
+preserves all 39 appointed passage pairs and both reading forms through shared
+assembly. Its actual synthesis print is ten pages, with all twelve compact date
+rows on page two; body continuity, anchors, metadata, components and recorder
+checks pass without overflow. Source-library, inventory, family-ledger, coverage
+and review-manifest checks pass on the combined source tree. Independent cold
+builds matched for all thirteen product families (27,690 files). The reconciled
+descriptor has identity
+`e5fd68be1dc1a5885e02f9a8a86333acef23e248bfb8a88892f775440528ac4d`;
+106 web editions change from upstream, with no output removals and all three
+new PC-S58 readers retained.
+Release verification then identified redundant per-edition chronology traces in
+native revision stamping. Revision calculation now shares the catalog's existing
+Assembly, retaining a fresh Assembly for each new operation. Independent cold
+review and 37 focused revision/bundle tests passed. A real GPT 66 main/synthesis
+comparison reduced three chronology traces to one and 27.992 seconds to 8.195
+seconds; both complete catalogs were byte-identical. The scoped release refresh
+verified all 24,029 source hashes, updating 19 and adopting 17 dependencies with
+none retired or outside the reviewed scope. Upstream authorization is preserved.
+Final site checks and main publication remain pending.
 
 ## Review follow-up: single-source corpus and gated printing, 2026-11-04
 

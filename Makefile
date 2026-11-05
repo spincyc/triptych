@@ -531,9 +531,9 @@ check-sources: check-source-graph check-publication-inventories \
 check-proper-chronology-current:
 	@$(PYTHON) -m unittest tools.tests.test_generated_proper_chronology_freshness -v
 
-# Every leaf that opts into a document type (src/common/document-types/) has
-# generated entrypoints and deterministic pages; each must equal its
-# regeneration, and none may be authored. One check for every projection.
+# Every leaf that opts into a document type (src/common/document-types/) must
+# assemble current entrypoints and deterministic pages without authored copies.
+# Saved generated snapshots need not be refreshed. One check for every projection.
 check-generated-documents-current:
 	@$(PYTHON) -m unittest tools.tests.test_generated_documents_freshness -v
 
@@ -1276,6 +1276,23 @@ FORCE_EDITION_REVISION:
 $(BUILD_ROOT)/%$(EDITION_REVISION_SUFFIX): FORCE_EDITION_REVISION
 	@$(PYTHON) $(EDITION_REVISION_TOOL) write --provider '$(PROVIDER)' --document '$*' --out '$@'
 
+# Templates and deterministic pages are assembled at use, without rewriting
+# the carried source snapshots. Recheck the projection on every invocation;
+# its manifest's mtime changes only when its actual rendered bytes change.
+# Consequently a shared corpus/template edit rebuilds exactly the affected
+# print outputs, while the untouched source checkout stays untouched.
+FORCE_DOCUMENT_ASSEMBLY:
+.PRECIOUS: $(BUILD_ROOT)/.assembly/%/manifest.json
+$(BUILD_ROOT)/.assembly/%/manifest.json: FORCE_DOCUMENT_ASSEMBLY
+	@set -eu; \
+		document='$*'; entry="$$document/main.tex"; \
+		case "$$document" in \
+			*-synthesis) entry="$${document%-synthesis}/synthesis.tex" ;; \
+			*-homily) entry="$${document%-homily}/homily.tex" ;; \
+		esac; \
+		$(PYTHON) scripts/_document_types.py stage --provider '$(PROVIDER)' \
+			--entrypoint "$$entry" --out '$(@D)'
+
 # Run pdfLaTeX until the document stops moving under it.
 #
 # Two passes settle most documents and settle none reliably. A table of
@@ -1312,15 +1329,17 @@ $(BUILD_ROOT)/%$(EDITION_REVISION_SUFFIX): FORCE_EDITION_REVISION
 define PDFLATEX_TO_FIXED_POINT
 set -eu; \
 	rm -f -- '$(3).fls'; \
+	assembly='$(abspath $(BUILD_ROOT)/.assembly/$(patsubst $(BUILD_ROOT)/%,%,$(3)))'; \
+	entry=$$(cat "$$assembly/entrypoint"); \
 	pass=0; \
 	fingerprint=''; \
 	settled=0; \
 	while [ "$$pass" -lt $(PDFLATEX_MAX_PASSES) ]; do \
 		pass=$$((pass + 1)); \
-		( cd $(SOURCE_ROOT) && TEXINPUTS='..:$(abspath $(@D)):' $(PDFLATEX) -no-shell-escape -recorder \
+		( cd $(SOURCE_ROOT) && TEXINPUTS="$$assembly/src/$(PROVIDER):..:$(abspath $(@D)):" $(PDFLATEX) -no-shell-escape -recorder \
 			-interaction=nonstopmode \
 			-halt-on-error -jobname='$(1)' \
-			-output-directory='$(abspath $(@D))' '$(2)' ); \
+			-output-directory='$(abspath $(@D))' "$$entry" ); \
 		previous="$$fingerprint"; \
 		fingerprint=''; \
 		for auxiliary in '$(3).'*; do \
@@ -1418,6 +1437,7 @@ recorded='$(1).fls'; \
 			printf '%s\n' "$$prerequisite"; \
 		fi; \
 	done > "$$declared"; \
+	cat '$(BUILD_ROOT)/.assembly/$(patsubst $(BUILD_ROOT)/%,%,$(1))/files' >> "$$declared"; \
 	set -- $$(cat "$$declared"); \
 	{ [ "$$#" -eq 0 ] || realpath -m -- "$$@"; } | LC_ALL=C sort -u > "$$declared"; \
 	while read -r role path; do \
@@ -1467,7 +1487,7 @@ $(SOURCE_METADATA_CHECKS): $(BUILD_ROOT)/.metadata/%.source-check: | check-tools
 	@$(METADATA_CHECKER) --provider '$(PROVIDER)' --document '$*'
 endif
 
-$(BUILD_ROOT)/%-synthesis.pdf: $(COMMON_SOURCES) $(BUILD_ROOT)/%-synthesis$(EDITION_REVISION_SUFFIX) | $(BUILD_ROOT)/.metadata/%-synthesis.source-check
+$(BUILD_ROOT)/%-synthesis.pdf: $(COMMON_SOURCES) $(BUILD_ROOT)/%-synthesis$(EDITION_REVISION_SUFFIX) $(BUILD_ROOT)/.assembly/%-synthesis/manifest.json | $(BUILD_ROOT)/.metadata/%-synthesis.source-check
 	@mkdir -p $(@D) '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*-synthesis.ok'
 	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*)-synthesis,$*/synthesis.tex,$(BUILD_ROOT)/$*-synthesis)
@@ -1483,7 +1503,7 @@ $(BUILD_ROOT)/%-synthesis.pdf: $(COMMON_SOURCES) $(BUILD_ROOT)/%-synthesis$(EDIT
 			'$(PROVIDER)' '$*-synthesis' "$$pdf_hash" "$$validator_hash" \
 			> '$(BUILD_ROOT)/.metadata/$*-synthesis.ok'
 
-$(BUILD_ROOT)/%-homily.pdf: $(COMMON_SOURCES) $(BUILD_ROOT)/%-homily$(EDITION_REVISION_SUFFIX) | $(BUILD_ROOT)/.metadata/%-homily.source-check
+$(BUILD_ROOT)/%-homily.pdf: $(COMMON_SOURCES) $(BUILD_ROOT)/%-homily$(EDITION_REVISION_SUFFIX) $(BUILD_ROOT)/.assembly/%-homily/manifest.json | $(BUILD_ROOT)/.metadata/%-homily.source-check
 	@mkdir -p $(@D) '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*-homily.ok'
 	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*)-homily,$*/homily.tex,$(BUILD_ROOT)/$*-homily)
@@ -1504,7 +1524,7 @@ $(BUILD_ROOT)/%-homily.pdf: $(COMMON_SOURCES) $(BUILD_ROOT)/%-homily$(EDITION_RE
 # research edition sat with its themes on page 4 for weeks and nothing failed.
 # The checker, not this rule, reads the manifest and exempts a legacy order;
 # a document without a manifest is not a proper leaf and is never checked.
-$(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) $(BUILD_ROOT)/%$(EDITION_REVISION_SUFFIX) | $(BUILD_ROOT)/.metadata/%.source-check
+$(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) $(BUILD_ROOT)/%$(EDITION_REVISION_SUFFIX) $(BUILD_ROOT)/.assembly/%/manifest.json | $(BUILD_ROOT)/.metadata/%.source-check
 	@mkdir -p $(@D)
 	@mkdir -p '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*.ok'

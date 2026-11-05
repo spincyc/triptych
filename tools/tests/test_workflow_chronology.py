@@ -546,11 +546,15 @@ class BoundLeafTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.tmp = tempfile.TemporaryDirectory()
+        scratch = ROOT / ".scratch/assembly-gates"
+        scratch.mkdir(parents=True, exist_ok=True)
+        cls.tmp = tempfile.TemporaryDirectory(dir=scratch)
         cls.root = Path(cls.tmp.name) / "tree"
         leaf = cls.root / "src" / "gpt" / DOCUMENT
         leaf.parent.mkdir(parents=True)
         shutil.copytree(ROOT / "src" / "gpt" / DOCUMENT, leaf)
+        publication = leaf / "publication.toml"
+        publication.write_text(publication.read_text().split("[document]", 1)[0])
         (cls.root / "src" / "sources").symlink_to(ROOT / "src" / "sources")
         # Restore the legacy shape: the authored page instead of the
         # generated page and its orientation-v3 table.
@@ -1066,11 +1070,16 @@ class RitualLeafTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.tmp = tempfile.TemporaryDirectory()
+        scratch = ROOT / ".scratch/assembly-gates"
+        scratch.mkdir(parents=True, exist_ok=True)
+        cls.tmp = tempfile.TemporaryDirectory(dir=scratch)
         cls.root = Path(cls.tmp.name) / "tree"
         leaf = cls.root / "src" / "gpt" / cls.DOCUMENT
         leaf.parent.mkdir(parents=True)
         shutil.copytree(ROOT / "src" / "gpt" / cls.DOCUMENT, leaf)
+        # Exercise the legacy carried-record contract, without a live type.
+        publication = leaf / "publication.toml"
+        publication.write_text(publication.read_text().split("[document]", 1)[0])
         (cls.root / "src" / "sources").symlink_to(ROOT / "src" / "sources")
         cls.leaf = leaf
         cls.metadata = leaf / "generation-metadata.tex"

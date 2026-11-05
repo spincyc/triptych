@@ -58,6 +58,7 @@ class MakefileBuildGraphTests(unittest.TestCase):
 
         scripts = self.root / "scripts"
         scripts.mkdir()
+        shutil.copy2(REPOSITORY_ROOT / "scripts/_document_types.py", scripts / "_document_types.py")
         library = self.root / "tools"
         library.mkdir(parents=True)
         (self.root / "tools" / "tests").mkdir()
@@ -91,6 +92,10 @@ class CurriculumLiturgicalRightsTests(unittest.TestCase):
                 f"            log.write({module!r} + '\\n')\n",
                 encoding="utf-8",
             )
+        for module in ("test_generated_proper_chronology_freshness", "test_generated_documents_freshness"):
+            (self.root / "tools/tests" / f"{module}.py").write_text(
+                "import unittest\n\nclass AssemblyGateTests(unittest.TestCase):\n"
+                "    def test_gate_was_invoked(self):\n        pass\n", encoding="utf-8")
         launcher = self.root / "tools" / "tpt"
         launcher.write_text(
             """#!/usr/bin/env python3

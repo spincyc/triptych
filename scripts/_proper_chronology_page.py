@@ -39,7 +39,7 @@ import _chronology
 import _proper_chronology as wiring
 
 PROJECTION = "scriptural-date-location"
-VERSION = 1
+VERSION = 2
 SECTION = "section"
 PAGE = "page"
 SHEET = "sheet"
@@ -56,13 +56,13 @@ TABLE = wiring.ORIENTATION_TABLE_RECORD.removesuffix(".tex")
 # leaf at the next refresh, which is the point.
 SECTION_INTRO = (
     "Each passage the Mass reads or sings from Scripture, in canonical order. "
-    "The Context column names what is dated --- the event the passage "
-    "narrates, a setting it remembers, the traditional attribution of its "
-    "author, or the composition of its book --- and where it belongs; the Date "
-    "column gives the answer of the Scripture chronology corpus for that "
-    "subject, with every alternative it records. Texts of the Mass that are "
-    "not drawn from Scripture have no row. The evidence for each date follows "
-    "the table."
+    "The Context column distinguishes the event or setting, an attributed "
+    "author's era, and the writing or formation of the text. The Date column "
+    "gives calendar orientation. A proposal span summarizes the extent of "
+    "numerical dates in the sources, including gaps between proposals. "
+    "Undated occasions and relative formation bounds beside a composition "
+    "date are left to the evidence. "
+    "The complete alternatives and their evidence follow the table."
 )
 EVIDENCE_INTRO = (
     "For each passage, as the Scriptural Date and Location table names it: what "
@@ -71,10 +71,10 @@ EVIDENCE_INTRO = (
     "subject the corpus does not date is reported as such and given no date."
 )
 PAGE_LEGEND = (
-    "\\emph{Disputed}: the sources disagree and the corpus prefers none. "
-    "\\emph{(derived)}: computed by the corpus from a stated relation, not "
-    "printed by a source. \\emph{Date unresolved}: the corpus gives this "
-    "subject no date."
+    "\\emph{c.}: approximately. Proposal spans summarize numerical alternatives, "
+    "including gaps between them. \\emph{Disputed}: no preferred answer. "
+    "An author's era does not date a poem's occasion; undated occasions are "
+    "omitted. \\emph{(derived)} marks a calculation from the sources."
 )
 SHEET_POINTER = (
     "The evidence for every date, with its sources, is set out in the "
@@ -325,6 +325,10 @@ def _row_note(row: wiring.OrientationRow, *, primary: str, names: dict[str, str]
                                      names=names, root=root))
     title = wiring.tex_escape(group.claims[0].title)
     note = f"{heading} ({word if len(statuses) == 1 else 'answers differ'}). {title}: " + "; ".join(candidates) + "."
+    if row.calendar_estimate:
+        sources = _sources_tex(row.calendar_estimate.sources, root)
+        note += (" Calendar orientation: " + wiring._date_tex(wiring.orientation_calendar_date(row))
+                 + (f" ({sources})" if sources else "") + ".")
     if group.anchor_context is not None:
         note += (" These dates belong to that event, not to the passage or its composition, "
                  "and the two could fall in the same year.")

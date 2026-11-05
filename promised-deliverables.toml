@@ -55,6 +55,35 @@ state = "complete"
   evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
+id = "useful-shared-biblical-dates-2026-11-05"
+owner = "PROJECT-WORK.md"
+promise = "Give all existing propers useful, concise, sourced calendar chronology through shared assembly, with separate event and composition dates, meaningful Davidic periods, multi-passage composition, independent cold review and validated publication to main."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "useful-dates"
+  criterion = "The reported passages and Davidic settings display useful sourced calendar orientation, retaining material uncertainty and separate temporal relations."
+  status = "pass"
+  evidence = ["src/sources/chronology/orientation.yaml", "tools/tests/test_chronology_calendar_estimates.py", "tools/tests/test_proper_chronology_page.py"]
+
+  [[deliverables.requirements]]
+  id = "shared-assembly"
+  criterion = "Current shared chronology is used when every proper is assembled for web or native print, without regenerating individual tracked publications; multi-passage scope remains accurate."
+  status = "pass"
+  evidence = ["scripts/_document_types.py", "tools/tests/test_document_assembly.py", "tools/tests/test_generated_proper_chronology_freshness.py", "tools/tests/test_native_print_bundles.py"]
+
+  [[deliverables.requirements]]
+  id = "cold-review"
+  criterion = "Independent cold review assesses conciseness, informativeness, clarity and composition across multiple passages; material findings are resolved and focused regressions pass."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "tools/tests/test_document_assembly.py", "tools/tests/test_chronology_calendar_estimates.py"]
+
+  [[deliverables.requirements]]
+  id = "main-publication"
+  criterion = "The validated changes are committed, reconciled with current main and pushed without force; deployment state is verified and reported accurately."
+  status = "open"
+
+[[deliverables]]
 id = "single-source-print-followup-2026-11-04"
 owner = "PROJECT-WORK.md"
 promise = "Act on the cold review of the no-PDF series as the maintainer directed: fix the Generate PDF controls, narrow browser-product keys, gate deploys on compiling every edition, generate the Scriptural Date and Location page for all proper leaves, retire the pdf/ machinery and delete the browser-reflow print path, move publications onto document types, build web readers from canonical sources, remove duplicated tracked tables and copies, and deploy to main."

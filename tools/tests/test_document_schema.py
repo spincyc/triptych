@@ -43,6 +43,41 @@ class DocumentSchemaTests(unittest.TestCase):
         self.assertTrue(schema.validate(self.root, record)["ok"])
         self.assertEqual(schema.dumps_manifest(record), schema.dumps_manifest(self.data))
 
+    def test_identity_and_closure_use_current_template_without_refreshing_leaf(self):
+        type_dir = self.root / "src/common/document-types/article-fixture-v1"
+        type_dir.mkdir(parents=True)
+        (type_dir / "type.toml").write_text('''schema = 1
+record_type = "document-type"
+id = "article-fixture-v1"
+description = "Assembly identity fixture"
+kinds = ["article-faith"]
+[editions.main]
+role = "canonical"
+template = "main.template.tex"
+entrypoint = "main.tex"
+regions = ["body"]
+''')
+        template = type_dir / "main.template.tex"
+        template.write_text("%@ region body\n")
+        (self.leaf / "body.tex").write_text("Current authored section.\n")
+        manifest = self.write()
+        with manifest.open("a") as stream:
+            stream.write('\n[document]\ntype = "article-fixture-v1"\n'
+                         '[document.main]\nbody = ["body"]\n')
+        record = schema.load_manifest(self.root, manifest)
+        entry = self.leaf / "main.tex"
+        original = entry.read_text()
+        first = schema.identities(self.root, record)
+        self.assertEqual(entry.read_text(), original)
+        self.assertIn("src/gpt/articles/faith/example/body.tex", first["content"]["inputs"])
+        entry.write_text("Stale saved projection with a bogus \\input{missing}.\n")
+        stale = schema.identities(self.root, record)
+        self.assertEqual(first["content"]["sha256"], stale["content"]["sha256"])
+        template.write_text("Current shared introduction.\n%@ region body\n")
+        revised = schema.identities(self.root, record)
+        self.assertNotEqual(first["content"]["sha256"], revised["content"]["sha256"])
+        self.assertNotEqual(first["render"]["sha256"], revised["render"]["sha256"])
+
     def test_a_minimal_manifest_derives_everything_its_path_and_records_state(self):
         # The leaf's path, its registered kind and its research records say
         # all of this; the manifest need not (guidance/document-schemas.md).

@@ -7,6 +7,30 @@ schema: triptych-chronology-bindings/v1
 numbering: vulgate
 updated: '2026-11-02'
 bindings:
+  - relation: narrated-event
+    event: life-of-christ.parables-by-the-sea
+    scope: {book: Matt, chapter: 13, first: 1, last: 53}
+    sources:
+      - bible:douay-rheims:Matt.13.1
+      - bible:douay-rheims:Matt.13.24
+      - bible:douay-rheims:Matt.13.36
+      - bible:douay-rheims:Matt.13.53
+    note: >-
+      The unit is the parable discourse, including the explanations in the
+      house, ending with Matthew's explicit close at verse 53. It dates the
+      teaching, not the events inside the parables or the Gospel's writing.
+  - relation: narrated-event
+    event: life-of-christ.faith-and-prayer-after-the-fig-tree
+    scope: {book: Mark, chapter: 11, first: 20, last: 26}
+    sources:
+      - bible:douay-rheims:Mark.11.20
+      - bible:douay-rheims:Mark.11.24
+      - bible:douay-rheims:Mark.11.26
+      - bible:douay-rheims:Mark.11.27
+    note: >-
+      The returning disciples see the withered fig tree and hear Jesus'
+      teaching about faith, prayer and forgiveness. Verse 27 begins the next
+      Temple encounter. The scope includes the forgiveness continuation.
   - relation: traditional-attribution
     event: israel.monarchy.david-traditional-era
     scope:

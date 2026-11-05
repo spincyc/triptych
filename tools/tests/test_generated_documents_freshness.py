@@ -1,9 +1,9 @@
-"""Every document-type leaf's generated files are current, and none is authored.
+"""Every document-type leaf assembles current content, and none is authored.
 
-`tools/tpt document-types refresh --check` is the one freshness check for
-every projection a document-type template slots (the generated entrypoints and
-deterministic pages such as the Scriptural Date and Location page). This module
-runs it over every opted-in leaf from the ordinary source gates.
+Like `tools/tpt document-types refresh --check`, the ordinary source gates
+validate the live assembly of every opted-in leaf. Carried generated files are
+optional snapshots; declarations, projection inputs, authored conflicts and
+orphaned generated files remain checked by the assembly.
 """
 
 from __future__ import annotations
@@ -39,12 +39,13 @@ class GeneratedDocumentsFreshnessTests(unittest.TestCase):
                 self.assertIn("tools.tests.test_generated_documents_freshness",
                               reached["check-generated-documents-current"])
 
-    def test_every_opted_in_leaf_is_current_and_has_no_authored_copy(self):
-        for result in types.refresh(ROOT, types.opted_in_leaves(ROOT), check=True):
-            with self.subTest(leaf=result.leaf):
-                self.assertEqual(result.changed, (), "regenerate with tools/tpt document-types refresh")
-                self.assertEqual(result.conflicts, (), "an authored date page remains")
-                self.assertEqual(result.orphans, (), "a generated file nothing generates")
+    def test_every_opted_in_leaf_assembles_and_has_no_authored_copy(self):
+        leaves = types.opted_in_leaves(ROOT)
+        self.assertTrue(leaves, "no document-type consumers discovered")
+        assembly = types.Assembly(ROOT)
+        for leaf in leaves:
+            with self.subTest(leaf=leaf.relative_to(ROOT).as_posix()):
+                self.assertTrue(assembly.files(leaf), "an opted-in leaf assembles no files")
 
 
 class EveryProperLeafIsOnADocumentTypeTests(unittest.TestCase):
