@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-11-04"
+audited_on = "2026-11-05"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:53908585785ddd942f2f83e3f8e47ce6111d77058c044dd0f0ac1d7f878b08be"
+inventory_snapshot = "sha256:ab4b418c4ddac9c525aa1dd8946f7f8fd9f2bd6c557316c1c76886544e3f8f31"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:39680fdb5c6abc8cf3fbf866bcc2f2e8d9f599c3d46bc25799ddcd2ebebf4d97"
 canonical_catalog_snapshot = "sha256:65ce895aa61a686b6809a751819284ada1555e4d1240ad3ad7bc75e90f0bbad5"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:51b7d0307ddbeccc020fab9c42287eeeff6087e950dc5b63f681429d35924501"
+snapshot = "sha256:7f51143fb1657b6241d4398b26d83a86aff4a74e6957cb5dff46a5a6ea411e40"
 families = []
 
 [[review_units]]
@@ -613,7 +613,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a"
-surface_snapshot = "sha256:6482322f39b07ccb93b6b0d48689e5ad439c1c1de9db4c9596771e638a229635"
+surface_snapshot = "sha256:e9d637044780aaa247f36389e773a0170341a3bcefc5f1b8132373f012a314b2"
 review_state = "pending"
 
 [[review_units]]
@@ -638,7 +638,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-fifteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:84c71c32a17411994a99ac1c4088c395b5222ec77993c1f950ae36fc6ac5eda9"
+surface_snapshot = "sha256:1729171651ee8d6e1e401838afd45775b7d91ec539ebf023310b8c6f6247a0d5"
 review_state = "pending"
 
 [[review_units]]

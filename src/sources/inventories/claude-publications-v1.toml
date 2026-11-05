@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-11-04"
+audited_on = "2026-11-05"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 64
 source_surface_file_count = 2267
-snapshot = "sha256:c41f5371bcd6ca9f17b88c196804ca965e8fc4a1a04f56d23ea9052fc9627eaf"
+snapshot = "sha256:f1c67cbb9b335fa8bad58c8b3c4e13fb0bffc9093bd4f06431b4a42690b2a005"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -7751,7 +7751,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecos
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/90-apparatus.tex"
-sha256 = "61502064f06c12096fbd50b848a794ad97c4d62c8d4f46c2308185b8ea2f8e34"
+sha256 = "808dcf65c73b6e2178d7bf059ab06cc0c1771b1cbf767a252e8a6d5a701d97d6"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
 
@@ -11297,7 +11297,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex"
-sha256 = "6725ede4481bad06e2dafde84b13043dc763fd9d0052b5dba213c2648b4eed70"
+sha256 = "f4b74c45125c4a896c78f7a6a6e8a0e3f8baf4838635a3beba063f3397c15357"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
