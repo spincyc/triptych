@@ -1,0 +1,187 @@
+schema = 2
+appointed_text_completeness = "rights-limited"
+presentation_contract = "interpretive-pagination-v1"
+chronology_presentation = "orientation-v3"
+format_contract = "propers-format-v1"
+authority_contract = "authority-standing-v1"
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-chronology"
+themes = "concise-themes"
+commentary = "concise-commentary"
+
+[[components]]
+key = "opening"
+path = "sections/00-opening.tex"
+kind = "front-matter"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+depends_on = []
+references = []
+
+[[components]]
+key = "study-map"
+path = "sections/01-map.tex"
+kind = "front-matter"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+depends_on = []
+references = []
+
+[[components]]
+key = "treatment"
+path = "sections/10-treatment.tex"
+kind = "proper-treatment"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+depends_on = []
+references = ["research/scope.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "texts"
+path = "sections/20-texts.tex"
+kind = "appointed-text"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+depends_on = []
+references = ["research/source-bindings.toml"]
+
+[[components]]
+key = "mercy"
+path = "sections/30-mercy.tex"
+kind = "interpretive-lane"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+depends_on = []
+references = ["research/interpretations.md"]
+
+[[components]]
+key = "charity-within"
+path = "sections/40-charity-within.tex"
+kind = "interpretive-lane"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+depends_on = []
+references = ["research/interpretations.md"]
+
+[[components]]
+key = "comparison"
+path = "sections/50-comparison.tex"
+kind = "front-matter"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+depends_on = []
+references = []
+
+[[components]]
+key = "chronology"
+path = "generated/scriptural-date-location.tex"
+kind = "terminal-apparatus"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+depends_on = []
+references = ["research/chronology-annotations.tex", "research/chronology-table.tex"]
+
+[[components]]
+key = "apparatus"
+path = "sections/90-apparatus.tex"
+kind = "terminal-apparatus"
+modes = ["research"]
+element_keys = []
+depends_on = []
+references = ["research/scope.md"]
+
+[[components]]
+key = "concise-inventory"
+path = "sections/synthesis-01-inventory.tex"
+kind = "front-matter"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+depends_on = []
+references = []
+
+[[components]]
+key = "concise-overview"
+path = "sections/synthesis-02-overview.tex"
+kind = "front-matter"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+depends_on = []
+references = []
+
+[[components]]
+key = "concise-chronology"
+path = "generated/scriptural-date-location-page.tex"
+kind = "front-matter"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+depends_on = []
+references = ["research/chronology-annotations.tex", "research/chronology-table.tex"]
+
+[[components]]
+key = "concise-themes"
+path = "sections/synthesis-04-themes.tex"
+kind = "front-matter"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+depends_on = []
+references = []
+
+[[components]]
+key = "concise-commentary"
+path = "sections/synthesis-05-commentary.tex"
+kind = "integrated-commentary"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+depends_on = []
+references = ["research/interpretations.md"]
+
+[[components]]
+key = "concise-apparatus"
+path = "sections/synthesis-90-apparatus.tex"
+kind = "terminal-apparatus"
+modes = ["synthesis"]
+element_keys = []
+depends_on = []
+references = []
+
+[[components]]
+key = "spoken"
+path = "sections/homily-10-spoken.tex"
+kind = "homily"
+modes = ["homily"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+depends_on = []
+references = ["research/interpretations.md"]
+
+[[components]]
+key = "homily-notes"
+path = "sections/homily-90-notes.tex"
+kind = "terminal-apparatus"
+modes = ["homily"]
+element_keys = []
+depends_on = []
+references = []
+
+[[lanes]]
+key = "mercy"
+title = "Mercy practiced before the meeting"
+authors = ["John Chrysostom", "Gregory the Great"]
+carrying_authors = ["John Chrysostom", "Gregory the Great"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+component_keys = ["mercy"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+
+[[lanes]]
+key = "charity-within"
+title = "A lamp sustained by charity within"
+authors = ["Augustine of Hippo", "Gregory the Great"]
+carrying_authors = ["Augustine of Hippo", "Gregory the Great"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+component_keys = ["charity-within"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading-long", "second-reading-short", "acclamation", "gospel", "offerings", "communion-psalm", "communion-luke", "after-communion"]
+senses = ["literal", "allegorical", "moral", "anagogical"]

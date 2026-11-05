@@ -22,11 +22,21 @@ homily from one canonical research owner. The three entrypoints are `main.tex`,
 document type by `tools/tpt document-types refresh` (`guidance/document-schemas.md`,
 Document types); agents author only the leaf's own section files and its
 `[document]` declaration. Outputs are the bare ID, `-synthesis`, and
-`-homily`. `proper-components.toml` uses schema 2. The sole web edition belongs
-to the canonical study. No second research owner or companion leaf is created.
+`-homily`. `proper-components.toml` uses schema 2. Each output has its own
+generated web reader under the leaf's one `web-edition.toml`. This workflow's
+independent web review covers the canonical study; companion readers pass the
+converter's fidelity checks and carry an inspection only when actually reviewed.
+No second research owner or companion leaf is created.
 
-Read `guidance/document-schemas.md`. Declare this leaf's actual source type,
-roles, three ordered outputs, and contract versions in `publication.toml`.
+Read `guidance/document-schemas.md`. In `publication.toml`, declare the
+`[document]` type, metadata and edition regions, placing proper components by
+key (`{ component = 'opening' }`). Keep each component's path and membership in
+`proper-components.toml`; do not repeat section paths in the regions. Declare
+only additional records and dependencies the schema cannot derive. The loaders
+derive source type, identity, output IDs and labels, and contract versions from
+the canonical path and records; do not copy those derived fields into manifests.
+Keep the component schema and its format, presentation, authority and chronology
+contract pins explicit in `proper-components.toml`.
 Existing TeX and typed records remain lossless canonical sources. The normal
 deliverable is reviewed sources and the canonical HTML edition. PDF export is
 selected on demand through `tools/print-document` under `docs/printing.md`;
@@ -38,7 +48,7 @@ reference-only study requires the production plan's separate exact-provider,
 exact-identity authorization; it produces original commentary and precise
 element-specific source locators, without full Latin or English proper bodies.
 Research and source records declare `appointed_text_completeness = "reference-only"`;
-the manifest must match and use `canonical_label = "Research PDF"`. Follow the
+the component manifest must match; its derived canonical label is `Research PDF`. Follow the
 1962 profile's locator/audit exception for `retrieved.txt` and `verified.md`.
 In this mode, do not create full proper-text pulls or transcriptions,
 substitute translations or close paraphrases, or retry rejected source-text
@@ -102,9 +112,10 @@ Ordinary Time target. A 1962 target instead uses only its own Time-after-
 Pentecost appointments and their independently documented transmission; never
 project the postconciliar calendar or Lectionary structure into it.
 
-Use this run's exact header for generation provenance. Update the finalization
-timestamp and actual model contributions when render-relevant sources change.
-The one shared generation record serves all three artifacts. Keep research
+Use this run's exact header for generation provenance and record actual model
+contributions. Revision timestamps are derived from Git for each edition under
+`guidance/editorial.md`; never write or update a timestamp declaration in the
+sources. The one shared generation record serves all three outputs. Keep research
 findings in `research/scope.md`, interpretation reasoning in
 `research/interpretations.md`, and completed production/review facts in
 `research/production-review.md`. Do not put machine paths or invented review

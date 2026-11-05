@@ -8,6 +8,8 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -120,6 +122,78 @@ class ClosureAndHistoryTests(Fixture):
         self.assertNotIn(leaf + "/publication.toml", value.closure)
         self.write(paths[1], 'description = "Changed selection"\n')
         self.assertTrue(self.derive(document).uncommitted)
+
+    def test_shared_projection_revises_only_editions_reading_it_without_refresh(self):
+        self.write("src/common/document-types/fixture-v1/type.toml", '''schema = 1
+record_type = "document-type"
+id = "fixture-v1"
+description = "Revision fixture"
+kinds = ["fixture"]
+[editions.main]
+role = "canonical"
+template = "main.template.tex"
+entrypoint = "main.tex"
+regions = ["body"]
+[editions.homily]
+role = "homily"
+template = "homily.template.tex"
+entrypoint = "homily.tex"
+regions = ["body"]
+''')
+        self.write("src/common/document-types/fixture-v1/main.template.tex",
+                   "%@ region body\n%@ slot fake/page\n")
+        self.write("src/common/document-types/fixture-v1/homily.template.tex", "%@ region body\n")
+        self.write("src/claude/doc/publication.toml", '''kind = "fixture"
+[[outputs]]
+role = "canonical"
+entrypoint = "main.tex"
+[[outputs]]
+role = "homily"
+entrypoint = "homily.tex"
+[document]
+type = "fixture-v1"
+[document.main]
+body = ["sections/body"]
+[document.homily]
+body = ["sections/homily"]
+''')
+        dates = self.root / "src/sources/dates.txt"
+        generator = self.root / "scripts/date_generator.py"
+        self.write("src/sources/dates.txt", "c. 1000 B.C.\n")
+        self.write("scripts/date_generator.py", "# date prose generator\n")
+        adopted = self.commit("assemble the date page")
+        projection = SimpleNamespace(
+            NAME="fake", OUTPUTS={"page": "generated/date.tex"},
+            render=lambda context: {"generated/date.tex": dates.read_text()},
+            dependencies=lambda context: {dates, generator})
+        # This projection fixture has no registered publication genre or render data.
+        with patch.object(revision, "_render_data", return_value=set()), \
+                patch("_document_types.discover_projections", return_value={"fake": projection}):
+            with patch.object(projection, "render", wraps=projection.render) as render:
+                self.assertEqual(self.derive().timestamp, stamp(adopted))
+            self.assertEqual(render.call_count, 1)
+            assembly = revision.Assembly(self.root)
+            with patch.object(projection, "render", wraps=projection.render) as render, \
+                    patch.object(projection, "dependencies", wraps=projection.dependencies) as dependencies:
+                main = revision.revision(self.root, "claude", "doc", assembly=assembly)
+                homily = revision.revision_for_entrypoint(
+                    self.root, "claude", self.root / "src/claude/doc/homily.tex", assembly=assembly)
+                self.assertEqual(main.timestamp, stamp(adopted))
+                self.assertEqual(homily.timestamp, stamp(self.first))
+                self.assertIn("src/sources/dates.txt", main.closure)
+                self.assertNotIn("src/sources/dates.txt", homily.closure)
+            self.assertEqual(render.call_count, 1)
+            self.assertEqual(dependencies.call_count, 1)
+            self.assertEqual(self.derive("doc-homily").timestamp, stamp(self.first))
+            self.write("src/claude/doc/generated/date.tex", "Stale saved copy.\n")
+            self.assertFalse(self.derive().uncommitted)
+            self.write("src/sources/dates.txt", "c. 1055–1015 B.C.\n")
+            self.assertTrue(self.derive().uncommitted)
+            revised = self.commit("clarify date range")
+            self.assertEqual(self.derive().timestamp, stamp(revised))
+            self.assertEqual(self.derive("doc-homily").timestamp, stamp(self.first))
+            generator.write_text("# clearer date prose generator\n")
+            self.assertTrue(self.derive().uncommitted)
 
     def test_the_stamp_is_the_last_commit_to_the_editions_own_sources(self) -> None:
         self.assertEqual(self.derive().timestamp, stamp(self.first))

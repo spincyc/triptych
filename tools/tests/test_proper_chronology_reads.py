@@ -114,6 +114,8 @@ class ComputationReadsTests(unittest.TestCase):
         # it prints (the generated date page reads every leaf as v3).
         cited.update(source for row in _proper_chronology.orientation_rows(found)
                      for source in row.context_sources)
+        cited.update(source for row in _proper_chronology.orientation_rows(found)
+                     if row.calendar_estimate for source in row.calendar_estimate.sources)
         library = {source for source in cited if not source.startswith("bible")}
         self.assertEqual(set(self.twenty_fifth["sources"]), library)
         self.assertTrue(any(source.startswith("artifact.catholic-encyclopedia")
@@ -145,7 +147,7 @@ class InterpreterBoundaryTests(unittest.TestCase):
             for path in (compiled, loaded, data, repository):
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text("fixture")
-            found = SimpleNamespace(elements=[], profile_comparisons=[])
+            found = SimpleNamespace(elements=[], profile_comparisons=[], presentation="")
             with (patch.object(sys, "prefix", str(interpreter)),
                   patch.dict(sys.modules, {
                       "chronology_test_extension": SimpleNamespace(__file__=str(loaded)),

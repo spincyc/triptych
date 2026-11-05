@@ -395,8 +395,14 @@ class DictionaryGeneratedRootTests(unittest.TestCase):
             make = (ROOT / "Makefile").read_text()
             macro = "define PDFLATEX_TO_FIXED_POINT\n" + make.split(
                 "define PDFLATEX_TO_FIXED_POINT\n", 1)[1].split("\nendef", 1)[0] + "\nendef\n"
+            assembly = root / "isolated/.assembly/output/selected"
+            assembled_entry = assembly / "src/gpt/main.tex"
+            assembled_entry.parent.mkdir(parents=True)
+            assembled_entry.write_text("\\typeout{ASSEMBLEDENTRY}\n" + (source / "main.tex").read_text())
+            (assembly / "entrypoint").write_text(str(assembled_entry) + "\n")
             (root / "Makefile").write_text(
-                "SOURCE_ROOT := src/gpt\nPDFLATEX := " + shutil.which("pdflatex") + "\n"
+                "SOURCE_ROOT := src/gpt\nPROVIDER := gpt\nBUILD_ROOT := isolated\nPDFLATEX := "
+                + shutil.which("pdflatex") + "\n"
                 "PDFLATEX_MAX_PASSES := 4\nSHA256 := sha256sum\n"
                 "ROMAN_SANCTUARY_DICTIONARY_BUILD_PDFS := isolated/output/selected.pdf\n"
                 "ROMAN_SANCTUARY_DICTIONARY_GENERATED := isolated/generated\n" + macro +
@@ -405,6 +411,7 @@ class DictionaryGeneratedRootTests(unittest.TestCase):
             result = subprocess.run([shutil.which("make"), "--no-print-directory", "isolated/output/selected.pdf"],
                                     cwd=root, capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, (result.stdout + result.stderr)[-3000:])
+            self.assertIn("ASSEMBLEDENTRY", result.stdout)
             self.assertIn("ISOLATEDBODY", result.stdout)
             self.assertIn("ISOLATEDOMISSIONS", result.stdout)
             self.assertNotIn("DEFAULTBODY", result.stdout)

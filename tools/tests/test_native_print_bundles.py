@@ -23,7 +23,7 @@ FIXED_STAMP = b"\\AIDocumentRevisionTimestamp{2026-01-01T00:00:00Z}\n"
 REAL_REVISION_FILE = bundles._revision_file
 
 
-def fixed_revision_file(root, recipe, repository=None):
+def fixed_revision_file(root, recipe, repository=None, assembly=None):
     from pathlib import PurePosixPath
     return f"src/{recipe['provider']}/{PurePosixPath(recipe['entrypoint']).stem}.revision.tex", FIXED_STAMP
 
@@ -70,6 +70,7 @@ class NativeSourceBundleTests(unittest.TestCase):
     def test_the_bundle_carries_the_editions_derived_revision_stamp(self):
         """pdfTeX runs in src/<provider> as job `main`, so the preamble reads this file."""
         import _edition_revision as edition
+        from _document_types import Assembly
         environment = {"GIT_AUTHOR_NAME": "t", "GIT_AUTHOR_EMAIL": "t@example.invalid",
                        "GIT_COMMITTER_NAME": "t", "GIT_COMMITTER_EMAIL": "t@example.invalid",
                        "GIT_COMMITTER_DATE": "@1780000000 +0000", "GIT_AUTHOR_DATE": "@1780000000 +0000",
@@ -77,8 +78,11 @@ class NativeSourceBundleTests(unittest.TestCase):
         for arguments in (("init", "-q"), ("add", "-A"), ("commit", "-q", "-m", "fixture")):
             subprocess.run(["git", *arguments], cwd=self.root, env=environment, check=True,
                            capture_output=True)
-        with patch.object(bundles, "_revision_file", new=REAL_REVISION_FILE):
-            result = self.prepare()
+        assembly = Assembly(self.root)
+        with patch.object(bundles, "_revision_file", new=REAL_REVISION_FILE), \
+                patch.object(edition, "revision", wraps=edition.revision) as derive:
+            result = self.prepare(assembly=assembly)
+        self.assertIs(derive.call_args.kwargs["assembly"], assembly)
         actual = {row["path"]: bundles.file_bytes(row) for row in result["files"]}
         derived = edition.revision(self.root, "gpt", "articles/faith/example")
         self.assertEqual(derived.timestamp, "2026-05-28T20:26:40Z")
@@ -105,6 +109,41 @@ class NativeSourceBundleTests(unittest.TestCase):
         result = self.prepare()
         self.assertIn("src/gpt/articles/faith/example/body.tex", [row["path"] for row in result["files"]])
         self.assertIn("src/gpt/articles/faith/example/body.tex", [row["path"] for row in result["source_inputs"]])
+
+    def test_shared_template_and_generated_page_replace_snapshots_and_change_render_identity(self):
+        from types import SimpleNamespace
+        from _document_types import Assembly
+        kind = self.root / "src/common/document-types/fixture-v1"
+        kind.mkdir(parents=True)
+        (kind / "type.toml").write_text(
+            'schema = 1\nrecord_type = "document-type"\nid = "fixture-v1"\n'
+            'description = "Fixture"\nkinds = ["article-faith"]\n'
+            '[editions.main]\nrole = "canonical"\ntemplate = "main.template.tex"\n'
+            'entrypoint = "main.tex"\nregions = ["body"]\n')
+        (kind / "main.template.tex").write_text(
+            '\\input{common/preamble}\n%@ region body\n%@ slot fake/page\n')
+        manifest = self.leaf / "publication.toml"
+        manifest.write_text(manifest.read_text() + '\n[document]\ntype = "fixture-v1"\n'
+                            '[document.main]\nbody = ["body"]\n')
+        generated = self.leaf / "generated/fake.tex"
+        generated.parent.mkdir()
+        generated.write_text("Stale generated content.\n")
+        held = self.main.read_bytes(), generated.read_bytes()
+        value = ["Current shared date.\n"]
+        projection = SimpleNamespace(NAME="fake", OUTPUTS={"page": "generated/fake.tex"},
+                                     render=lambda _: {"generated/fake.tex": value[0]})
+        def prepare():
+            return self.prepare(assembly=Assembly(self.root, projections={"fake": projection}))
+        first = prepare()
+        files = {row["path"]: bundles.file_bytes(row) for row in first["files"]}
+        self.assertEqual(files[generated.relative_to(self.root).as_posix()], value[0].encode())
+        self.assertIn(b"generated/fake", files[first["entrypoint"]])
+        self.assertNotIn(generated.relative_to(self.root).as_posix(),
+                         [row["path"] for row in first["source_inputs"]])
+        value[0] = "Revised shared date.\n"
+        second = prepare()
+        self.assertNotEqual(first["render_sha256"], second["render_sha256"])
+        self.assertEqual((self.main.read_bytes(), generated.read_bytes()), held)
 
     def test_missing_literal_import_refuses_source_preparation(self):
         (self.leaf / "body.tex").unlink()

@@ -15,8 +15,8 @@
     \PackageError{triptych}{No chronology annotation for #1}{}%
   \fi}
 % appointment-dependency: guidance/liturgy/postconciliar-propers-registry.md sha256=376860a7c37a4c75bb6d880cd1b260183be1877a07e3cd01660a9e2854e2ea72
-% appointment-dependency: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md sha256=4e2d92326dece103e1475e70ffb5e447815f9b12d697926e48a54850a1641208
-% appointment-dependency: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/formula-dispositions.md sha256=de58754f5a8ab61dffa3f4a6a479c843fe3763b6a5b37099282960de71d93989
+% appointment-dependency: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md sha256=df0aae579b2ae7e02cca5597f382ee615974bc84fc46fea909a9c21d942ce152
+% appointment-dependency: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/formula-dispositions.md sha256=af014f05723fb53a99006ef740101dc8abf629ed8b0b53a60069e94713cb289e
 % appointment-dependency: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/instance/manifest.md sha256=684b6a565026a5227b4a1c62817e40a6b9fef727d07d56218ceee78d123422ef
 % appointment-dependency: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/propers/verified.md sha256=3fc1045aed7de765bb183ff9e3097f7d46f78bb2ba4164e3be84d30042b1208e
 % appointment-dependency: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/chronology-inputs.toml sha256=110e8e186301d2cfe4abece105f7028e7a6d1415445434971af4e7303df4332a
@@ -46,7 +46,8 @@
 }
 % psalm: Responsorial Psalm
 \expandafter\def\csname triptychchronologyannotation@psalm\endcsname{%
-  \chronologyannotationgroup{historical-setting}{research-pending}{\textbf{Historical setting} -- Occasion date unresolved.}%
+  \chronologyannotationgroup{traditional-attribution}{disputed}{\textbf{Traditional attribution} -- disputed: \chronologyannotationreach{Ps.22.1}{Ps.22 Ps.62}{true}\chronologyannotationreach{Ps.22.2}{Ps.22 Ps.62}{true}\chronologyannotationreach{Ps.22.3}{Ps.22 Ps.62}{true}\chronologyannotationreach{Ps.22.4}{Ps.22 Ps.62}{true}\chronologyannotationreach{Ps.22.5}{Ps.22 Ps.62}{true}\chronologyannotationreach{Ps.22.6}{Ps.22 Ps.62}{true}\chronologyannotationclaim{israel.monarchy.david-traditional-era}{traditional-attribution}{catholic-traditional-v1}{disputed}{reigned from 1055 to 1015 B.C.}{David (reign in the usual chronology), B.C. 1055--1015}.}%
+  \space \chronologyannotationgroup{historical-setting}{research-pending}{\textbf{Historical setting} -- Occasion date unresolved.}%
   \space \chronologyannotationgroup{composition}{preferred}{\textbf{Composition}: \chronologyannotationreach{Ps.22.1}{Ps}{true}\chronologyannotationreach{Ps.22.2}{Ps}{true}\chronologyannotationreach{Ps.22.3}{Ps}{true}\chronologyannotationreach{Ps.22.4}{Ps}{true}\chronologyannotationreach{Ps.22.5}{Ps}{true}\chronologyannotationreach{Ps.22.6}{Ps}{true}\chronologyannotationclaim{critical.psalms.latest-composition-boundary}{composition}{catholic-critical-v1}{preferred}{before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely}{Before c. 165 B.C.}}%
 }
 % second-reading: Second reading
@@ -86,19 +87,22 @@
   \else
     \PackageError{triptych}{No chronology orientation row for #1}{}%
   \fi}
-\expandafter\def\csname triptychchronologyorientation@row-6cf64594e06a40e8\endcsname#1{%
-Responsorial Psalm: Ps. 23:1--3a,3b--4,5,6 (Heb.; Vg. 22), Ps. 23:6cd (Heb.; Vg. 22) & Historical setting & Occasion date unresolved\\*[.1em]%
+\expandafter\def\csname triptychchronologyorientation@row-33de555834f49d4c\endcsname#1{%
+Responsorial Psalm: Ps. 23:1--3a,3b--4,5,6 (Heb.; Vg. 22), Ps. 23:6cd (Heb.; Vg. 22) & Traditional attribution: David's reign in the usual chronology; Hebron, then Jerusalem & Disputed: \chronologyannotationreach{Ps.22.1}{Ps.22 Ps.62}{true}\chronologyannotationreach{Ps.22.2}{Ps.22 Ps.62}{true}\chronologyannotationreach{Ps.22.3}{Ps.22 Ps.62}{true}\chronologyannotationreach{Ps.22.4}{Ps.22 Ps.62}{true}\chronologyannotationreach{Ps.22.5}{Ps.22 Ps.62}{true}\chronologyannotationreach{Ps.22.6}{Ps.22 Ps.62}{true}\chronologyannotationclaim{israel.monarchy.david-traditional-era}{traditional-attribution}{catholic-traditional-v1}{disputed}{reigned from 1055 to 1015 B.C.}{B.C.~1055--1015 (Corbett also reports writers dating the reign 30--50 years later)}\\*[.1em]%
 }
-\expandafter\def\csname triptychchronologyorientation@row-1d157d22b829ad61\endcsname#1{%
+\expandafter\def\csname triptychchronologyorientation@row-0f3632fa7900895f\endcsname#1{%
+ & Historical setting & Occasion date unresolved\\*[.1em]%
+}
+\expandafter\def\csname triptychchronologyorientation@row-4312e0f5373e84aa\endcsname#1{%
  & Composition: Psalms & \chronologyannotationreach{Ps.22.1}{Ps}{true}\chronologyannotationreach{Ps.22.2}{Ps}{true}\chronologyannotationreach{Ps.22.3}{Ps}{true}\chronologyannotationreach{Ps.22.4}{Ps}{true}\chronologyannotationreach{Ps.22.5}{Ps}{true}\chronologyannotationreach{Ps.22.6}{Ps}{true}\chronologyannotationclaim{critical.psalms.latest-composition-boundary}{composition}{catholic-critical-v1}{preferred}{before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely}{Before c.~165 B.C.}\\[.3em]%
 }
-\expandafter\def\csname triptychchronologyorientation@row-dace467ee657861e\endcsname#1{%
-Communion: psalm option: Cf. Ps. 33:11 (Vg.; Heb. 34) & Traditional attribution: David's reign; Hebron, then Jerusalem & Disputed: \chronologyannotationreach{Ps.33.11}{Ps.33 Ps.39 Ps.70 Ps.85 Ps.94 Ps.97}{true}\chronologyannotationclaim{israel.monarchy.david-traditional-era}{traditional-attribution}{catholic-traditional-v1}{disputed}{reigned from 1055 to 1015 B.C.}{B.C.~1055--1015}\\*[.1em]%
+\expandafter\def\csname triptychchronologyorientation@row-10f240f794e2073b\endcsname#1{%
+Communion: psalm option: Cf. Ps. 33:11 (Vg.; Heb. 34) & Traditional attribution: David's reign in the usual chronology; Hebron, then Jerusalem & Disputed: \chronologyannotationreach{Ps.33.11}{Ps.33 Ps.39 Ps.70 Ps.85 Ps.94 Ps.97}{true}\chronologyannotationclaim{israel.monarchy.david-traditional-era}{traditional-attribution}{catholic-traditional-v1}{disputed}{reigned from 1055 to 1015 B.C.}{B.C.~1055--1015 (Corbett also reports writers dating the reign 30--50 years later)}\\*[.1em]%
 }
-\expandafter\def\csname triptychchronologyorientation@row-28a163bd98f6651c\endcsname#1{%
+\expandafter\def\csname triptychchronologyorientation@row-128f1ecd15b7af06\endcsname#1{%
  & Superscription setting: David's flight to Achis, king of Geth; Geth, at the Philistine court & \chronologyannotationreach{Ps.33.11}{Ps.33 Ps.55}{true}\chronologyannotationclaim{israel.monarchy.david-at-geth}{superscription-setting}{catholic-traditional-v1}{preferred}{A. M. 2944, A. C. 1060}{A.M.~2944 (Haydock edition reporting Ussher)}\\*[.1em]%
 }
-\expandafter\def\csname triptychchronologyorientation@row-feb4ba649437ba3b\endcsname#1{%
+\expandafter\def\csname triptychchronologyorientation@row-11e0af5c33136c15\endcsname#1{%
  & Composition: Psalms & \chronologyannotationreach{Ps.33.11}{Ps}{true}\chronologyannotationclaim{critical.psalms.latest-composition-boundary}{composition}{catholic-critical-v1}{preferred}{before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely}{Before c.~165 B.C.}\\[.3em]%
 }
 \expandafter\def\csname triptychchronologyorientation@row-3ca5fe3fd11a7096\endcsname#1{%

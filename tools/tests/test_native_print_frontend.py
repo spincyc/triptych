@@ -23,10 +23,10 @@ class NativeAdmissionTests(unittest.TestCase):
 
     def test_exact_public_universe_excludes_holds_and_unadvertised_papal_sources(self):
         self.assertEqual(Counter(identity.partition(":")[0] for identity in self.documents),
-                         {"publication": 281, "bible": 7, "papal": 350, "reading-plan": 6})
+                         {"publication": 284, "bible": 7, "papal": 350, "reading-plan": 6})
         self.assertNotIn("bible:knox", self.documents)
         selected = {(row["document"], row["edition"]) for row in self.documents.values()}
-        self.assertEqual(len(selected), 644)
+        self.assertEqual(len(selected), 647)
         release = json.loads((ROOT / "release/papal-documents.json").read_bytes())
         self.assertGreater(len(release["documents"]), 350)
         for path in (ROOT / "release/publications").glob("**/*.json"):

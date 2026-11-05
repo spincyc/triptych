@@ -1,0 +1,188 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "sections/homily-10-spoken.tex:27, second sentence",
+      "problem": "The sentence says the Church 'asks the Spirit to preserve' those who have received, but the Prayer after Communion addresses the Lord and asks for preservation through the outpouring of his Spirit. This distinction is explicit in the inspected Latin witness, physical pp. 294\u2013295, and FDLC's approved English excerpt, p. 9. The requested work of the Spirit is correctly described; the isolated imprecision concerns the prayer's addressee and does not compromise the homily's argument.",
+      "required_result": "When revising this sentence, distinguish the addressee from the requested action: for example, 'The Church gives thanks and asks the Lord to sustain, through his Spirit, the integrity of those who have received.'",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-luke",
+            "after-communion"
+          ],
+          "key": "spoken",
+          "kind": "homily",
+          "path": "sections/homily-10-spoken.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "homily-notes",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily-90-notes.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "psalm",
+        "second-reading-long",
+        "second-reading-short",
+        "acclamation",
+        "gospel",
+        "offerings",
+        "communion-psalm",
+        "communion-luke",
+        "after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "John Chrysostom",
+            "Gregory the Great"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Gregory the Great"
+          ],
+          "component_keys": [
+            "mercy"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-luke",
+            "after-communion"
+          ],
+          "key": "mercy",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "Mercy practiced before the meeting"
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Gregory the Great"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Gregory the Great"
+          ],
+          "component_keys": [
+            "charity-within"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-luke",
+            "after-communion"
+          ],
+          "key": "charity-within",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "A lamp sustained by charity within"
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/homily.tex": "f17f2db2e0f5bd503c8ba5836d56a2849fc5c8d922054e6cbffcc54860623ecd",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/research/interpretations.md": "3231e34b5db882448325dbc81145f0edff4073dded383011dd1b3809294f308f",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/homily-10-spoken.tex": "be258ddda6b8ada592903fd89928278980c4fe484ccfcb97b24768c0dc651430",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/homily-90-notes.tex": "c8e1eace6eab59f1c0239a6f215f1a22bef5d7cc51d5940e022d4535286dde75"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "64c60ef0cfd8f349",
+            "7aad8c957de31f3e5a1d394532db068569892aaf",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "PASS with one advisory after reading homily.tex and both homily components continuously, comparing the argument with the study and synthesis, and checking Augustine Sermon 93 \u00a7\u00a71\u201317, Aquinas on 1 Thessalonians 4 lectio 2, the appointed Scripture and exact Week 32 prayer witnesses. The 1,281-word speech supports the stated 10.2\u201311.6-minute estimate at 110\u2013125 words per minute, all eight packet-sealed files match, and the qualified Missal-witness limitations remain explicit; this is a source-mode judgment, with no PDF/web inspection, audible rehearsal, human performance or publication acceptance claimed."
+}

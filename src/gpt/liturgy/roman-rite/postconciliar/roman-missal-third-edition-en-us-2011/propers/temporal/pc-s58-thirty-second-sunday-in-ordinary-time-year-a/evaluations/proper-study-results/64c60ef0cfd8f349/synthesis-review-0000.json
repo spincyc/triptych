@@ -1,0 +1,280 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "SYN-001",
+      "location": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex:10; sections/synthesis-05-commentary.tex:36 (inherited from sections/10-treatment.tex:21 and sections/30-mercy.tex:31)",
+      "problem": "The thematic opening says Augustine specifically connects hands raised in prayer with hands extended to the needy. In the checked NPNF witness of Expositions on Psalm 62.10 (heading Psalm LXIII), he repeatedly connects prayer with good works generally and explains Christ\u2019s outstretched hands and mercy; he does not specify the needy in that locus. Applying his point to aid for the needy is reasonable, but that application should remain the study\u2019s rather than being presented as his exact explanation. The related commentary sentence can retain the application with clearer attribution. This narrow precision issue does not change either interpretation or its substantial direct support.",
+      "required_result": "When next editing these passages, distinguish Augustine\u2019s general statement from the study\u2019s application: for example, \u201cHe connects the hands raised in prayer with their exercise in good works. Here that connection supports practical care for a neighbor.\u201d In the commentary, \u201cAugustine joins raised hands in prayer to good works; this includes the acts of mercy considered here\u201d would preserve the reasoning. Align the corresponding expansive-study sentences at the same time, without changing the approved source evidence.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-luke",
+            "after-communion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/synthesis-01-inventory.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-luke",
+            "after-communion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/synthesis-02-overview.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-luke",
+            "after-communion"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location-page.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-luke",
+            "after-communion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/synthesis-04-themes.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-luke",
+            "after-communion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/synthesis-05-commentary.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/synthesis-90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "psalm",
+        "second-reading-long",
+        "second-reading-short",
+        "acclamation",
+        "gospel",
+        "offerings",
+        "communion-psalm",
+        "communion-luke",
+        "after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "John Chrysostom",
+            "Gregory the Great"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Gregory the Great"
+          ],
+          "component_keys": [
+            "mercy"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-luke",
+            "after-communion"
+          ],
+          "key": "mercy",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "Mercy practiced before the meeting"
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Gregory the Great"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Gregory the Great"
+          ],
+          "component_keys": [
+            "charity-within"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-luke",
+            "after-communion"
+          ],
+          "key": "charity-within",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "A lamp sustained by charity within"
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/generated/scriptural-date-location-page.tex": "a80c023b18b83e6a85d54647bdfbdae1dd640b60f2088126a97e50b1f2a361f6",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "20f86479e7cdf61117346827ddba3e4c49089dc1179f2be622038eccc81a8144",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/research/chronology-table.tex": "db1faf673deedfc96931b6dc30244abd007a8af28d51492f6f3dd138985bfe5c",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/research/interpretations.md": "3231e34b5db882448325dbc81145f0edff4073dded383011dd1b3809294f308f",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/synthesis-01-inventory.tex": "1e723cf277c8337de48a0f5897ff86d1c19e2dd46dac6a0fb347a10106fb99e7",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/synthesis-02-overview.tex": "67cf4fe05bcef0d6f5c123ed103c92cc4e6159f570ed9320a4c562a78c1ee644",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex": "258738668c0761d8b6ddd7ff341e69c1784a76704bc38b6096b59b0f33dd2784",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/synthesis-05-commentary.tex": "25726e1414fe190aefcb82d3af0b0d3f030f166b5b1c4f9173d870ba86ef2575",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/synthesis-90-apparatus.tex": "1b8813099acd1ad52a2396fc6ff67bf069a78f9fba508d2a41a3169cd60474aa",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/synthesis.tex": "76fedab89afed22a1efc29281b3432ec2c677e666c073056988f33ded4180f39"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "64c60ef0cfd8f349",
+            "7aad8c957de31f3e5a1d394532db068569892aaf",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "PASS: the pc-s58 concise study preserves the expansive study\u2019s independently intelligible interpretations, appointed alternatives and witness qualifications, checked against the cited Augustine, Chrysostom, Gregory, Bonaventure, Aquinas, Bellarmine, biblical and liturgical evidence. This source-mode review includes successful passage-to-context/place/date lookups in the generated table and one nonblocking attribution-precision advisory; it makes no PDF pagination or completed browser-layout claim."
+}

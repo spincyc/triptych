@@ -85,6 +85,150 @@ hashes (GPT pc-s27/pc-s41; Claude 1962 temporal 59 and postconciliar pc-s51).
 Only this revision's owned inventory rows were refreshed; unrelated baselines
 were preserved.
 
+## GPT Thirty-second Sunday in Ordinary Time, 2026-11-08
+
+<!-- promised-deliverable: gpt-pc-s58-production-2026-11-05 -->
+
+**Complete: pushed to main, deployed and verified live.** The United States
+PC-S58-A production covers 8 November 2026, Thirty-second Sunday in Ordinary
+Time, Year A, Lectionary 154. The expansive study has 6,346 substantive words,
+the concise study 3,389, and the homily 1,281 spoken words. The homily's
+10.25–11.65-minute estimate is based on 110–125 words per minute; it does not
+claim a human delivery or timed rehearsal.
+
+Live readers:
+
+- [Full study](https://mystago.gy/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a.html)
+- [Concise study](https://mystago.gy/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-synthesis.html)
+- [Homily](https://mystago.gy/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-homily.html)
+
+Proper-study version 19 run `64c60ef0cfd8f349` reached terminal ACCEPTED through
+genuine independent research, study, synthesis, homily and canonical web
+reviews and the engine's publication gate. All twenty-eight results and
+packets are archived under the leaf's
+`evaluations/proper-study-results/64c60ef0cfd8f349/`. The repair rounds, exact
+inspection evidence and scope are retained in
+[the production record](workflows/reviews/gpt-pc-s58-production-2026-11-05/CYCLES.md).
+The blocked v18 run remains honestly archived without acceptance.
+
+The [no-PDF workflow audit](workflows/reviews/gpt-pc-s58-production-2026-11-05/WORKFLOW-AUDIT.md)
+repairs derived-field duplication, component placement, Git-derived revision
+instructions, companion readers, inspection receipt identity and the ordering
+of source registration versus complete browser products. Release documentation
+now describes the actual reader/native-source publication boundary. All 62
+focused schema/workflow regressions and six native admission tests pass. The
+reviewed-source checkpoint is `2db4948252`; all three edition stamps remain
+committed at `2026-11-05T16:09:40Z` after the operational publication commit.
+
+Publication commit `3d00a7ef7b4c1fa47a5ca4353566e2e6221f35ed` was pushed without
+history rewriting to main and the workspace branch. Pages run
+[42079272387](https://github.com/spincyc/triptych/actions/runs/42079272387)
+passed build, print-compile and deploy. Its downloaded compile receipt binds
+the exact commit and confirms all 647 admitted editions passed with zero
+failures (297 pdfTeX, 350 XeTeX). These are disposable mechanical compiles,
+not a maintained PDF corpus or print-layout approval.
+
+Live verification on 5 November 2026 confirms that the publication manifest
+names that exact commit, all 647 native editions and `stored_pdfs: false`.
+Its SHA-256 is
+`bad2f5da6105be8a0142875757c0e89f180a06f522940db760d1366b3d71dc14`.
+All three reader routes return HTTP 200 and match the locally verified HTML
+byte for byte, including the edition stamps. Chromium checks at 1280 and 390
+pixels reproduce the local reader text without page-wide overflow or native
+runtime requests. The three linked print pages, including arrival with
+`?print=1`, remain idle and bind the deployed source commit. Their controls
+require an explicit generation action.
+
+The complete browser snapshot reproduces thirteen families and 27,689 files.
+Source and publication gates, full local site assembly and GitHub Pages
+compatibility verification pass. The final task-status-only commit changes
+this register and the promise ledger; those two files are excluded from the
+Pages trigger and do not change the deployed publication snapshot.
+
+Limits remain explicit. SYN-001 and HOM-001 are nonblocking precision
+advisories for the next revision, not unresolved required repairs. Missal
+witness authentication and rights qualifications remain in the source dossier;
+no protected full prayer text was reconstructed. Thirty existing chronology
+consumers received the shared qualification correction: their generated
+currency, schemas and all 76 reader conversions pass, while nine inherited
+content-gate failures remain in unchanged authored sources. No old scholarly
+or visual acceptance was renewed. Both source classifications and all 166
+pending migration units remain unchanged. These browser checks
+supplement the recorded content reviews; they do not add an independent
+companion web review or print-layout approval.
+
+## Useful shared biblical dates, 2026-11-05
+
+<!-- promised-deliverable: useful-shared-biblical-dates-2026-11-05 -->
+
+**Reviewed candidate; publication pending.** Revise the shared chronology projection to give useful
+approximate calendar dates, distinguish events from composition, and distinguish
+David's periods where the evidence does. Preserve substantive uncertainty in
+concise wording and the underlying source records. The change must reach all
+existing proper documents when their own text is assembled with shared templates
+and machinery, without regenerating each publication's tracked files.
+
+Acceptance includes independent cold review for conciseness, informativeness,
+clarity and composition of multiple passages; focused source and assembly
+regressions; and reconciliation, commit and non-force publication to main.
+The requested examples include Psalms 43, 84 and 129 (Vulgate numbering),
+Jeremias 29, Matthew 13, Mark 11 and Colossians 3. Shared assembly now supplies
+current generated content to web conversion, native bundles and local print
+for all 63 proper leaves; no provider-leaf source has
+been regenerated. Existing missing appointment inputs remain explicit.
+
+The sample date sheet now has separate event and composition dates, sourced
+calendar estimates and concise numerical proposal spans. Distinct Davidic
+settings retain their own dates. Original claims, alternatives and qualifications
+remain in the evidence appendix. The sample GPT 66 synthesis and GPT 54 synthesis
+were actually typeset; their date sheets fit page two without overflow.
+
+Focused renderer, assembly, legacy chronology, freshness, source-identity and
+revision tests pass. Independent review identified and verified repairs to
+staging-directory safety, stale process caches, suppressed Davidic source
+qualifications and estimate scope. The source review checked the sample, joined
+Psalm/Daniel passages and David's distinct Geth, Maon and Absalom settings against
+their evidence. The reconciled census covers all 63 proper leaves: 49 can query
+chronology (including the nuptial leaf's explicit no-formulary result); 14
+postconciliar leaves still lack reviewed appointment inputs. Remaining nonnumeric
+subjects are Sinai's unresolved calendar date, David's unspecified deliverance
+occasion, and Job's and Tobias's already useful century wording. Existing
+source-qualification gaps remain explicit. Source-library, publication-inventory,
+family-ledger, coverage and review-manifest checks pass. The ordinary generated
+document gate now checks live assembly across every typed leaf; explicit legacy
+snapshot checks retain their original contract.
+
+Two full read-suite tests could not replay because the archived Aquinas PDF and
+Gregory EPUB payloads are unavailable in this checkout. Their failing tests and
+implementation are unchanged; both payload paths are absent at the base commit
+`c57e60ef3d`. This is an evidence-availability limitation, not a claimed baseline
+test replay. The focused source, rendering and assembly checks above passed.
+The registered web-editions input audit passed with no undeclared or scratch
+inputs, and the initial browser-product cold builds matched. Reconciliation
+onto `3d00a7ef7b` preserves the new PC-S58 proper and upstream reader-inspection
+identity rules. All 34 schema tests and an independent combined-identity review
+pass. The newly explicit Davidic qualification is retained in the compact
+estimate; nine estimate tests and independent source review pass. The new proper
+preserves all 39 appointed passage pairs and both reading forms through shared
+assembly. Its actual synthesis print is ten pages, with all twelve compact date
+rows on page two; body continuity, anchors, metadata, components and recorder
+checks pass without overflow. Source-library, inventory, family-ledger, coverage
+and review-manifest checks pass on the combined source tree. Independent cold
+builds matched for all thirteen product families (27,690 files). The reconciled
+descriptor has identity
+`e5fd68be1dc1a5885e02f9a8a86333acef23e248bfb8a88892f775440528ac4d`;
+106 web editions change from upstream, with no output removals and all three
+new PC-S58 readers retained.
+Release verification then identified redundant per-edition chronology traces in
+native revision stamping. Revision calculation now shares the catalog's existing
+Assembly, retaining a fresh Assembly for each new operation. Independent cold
+review and 37 focused revision/bundle tests passed. A real GPT 66 main/synthesis
+comparison reduced three chronology traces to one and 27.992 seconds to 8.195
+seconds; both complete catalogs were byte-identical. The scoped release refresh
+verified all 24,029 source hashes, updating 19 and adopting 17 dependencies with
+none retired or outside the reviewed scope. Upstream authorization is preserved.
+Final site checks and main publication remain pending.
+
 ## Review follow-up: single-source corpus and gated printing, 2026-11-04
 
 <!-- promised-deliverable: single-source-print-followup-2026-11-04 -->
@@ -157,8 +301,9 @@ Limits and open items:
   89422cd524) still date some editions to 2026-10-01.
 - **Manifests.** Nine schema-1 proper manifests keep stale `main.tex`
   component paths.
-- **Workflow fragments** still mention declaring outputs; update them at the
-  next proper-study version.
+- **Workflow fragments:** the 5 November PC-S58-A pre-seed audit closes the
+  derived-output instruction follow-up in proper-study version 18, together
+  with stale timestamp, component-placement and companion-reader instructions.
 - **Not yet observed:** the docker figure runner, physical devices, and
   Safari/Firefox.
 

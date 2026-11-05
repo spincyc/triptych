@@ -1,0 +1,44 @@
+Coordinator retention: original installation-stage report follows. Its statements
+are scoped to that stage; later engine and deployment facts are in CYCLES.md
+and PROJECT-WORK.md. Scratch paths name transient evidence, not tracked inputs.
+
+Install-publication iteration 0: PASS
+Run: 64c60ef0cfd8f349
+
+Completed validation:
+- publication-check: PASS (exit 0)
+- release-bindings-check: PASS (exit 0)
+- public-alpha-check: PASS (exit 0)
+- document-catalog-check: PASS (exit 0)
+- document-structure-check: PASS (exit 0)
+- web-final-check: PASS (exit 0)
+- Complete browser-products record and check: PASS; 13 products / 27,689 files / 227,442,767 bytes.
+- Content-schema gates, make check-sources and tmt check: PASS.
+- All five accepted review input objects and exact canonical conversion hash: unchanged.
+- Scoped refresh: 168 site-source bindings, within explicit 219-path scope; derived rights table/digest updated.
+- Existing release records and authority terms unchanged; 166 pending source-family migration units preserved.
+
+Changed owned resources:
+- src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/web-edition.toml
+- src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/research/production-review.md
+- library/novus-ordo-liturgy.md
+- src/sources/inventories/publications-v1.toml
+- src/sources/inventories/source-family-migration-v1.toml
+- release/browser-products.json
+- release/public-alpha.json
+- release/rights/public-alpha-2026-07-15.md
+- release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a.json
+- release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-synthesis.json
+- release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-homily.json
+
+Working outputs: .scratch/browser-data-work/structure/documents/corpus.json; full content-addressed browser products under .scratch/browser-data/3580742d2a3dced86123bb17d8c272a029fe8387569413406c113ff45c5d451f/.
+
+Limits:
+- No independent companion web inspection claimed; three readers passed converter fidelity.
+- No print export or print review performed.
+- No full-site deployment performed or claimed.
+- No renewed scholarly approval of older consumers; preexisting holds preserved.
+- Engine publication-gates transition belongs to the coordinator.
+
+No installation blockers remain. Engine transition, archival refresh, full-site assembly and deployment are coordinator work.
+Exact evidence and command logs are in this scratch directory.
