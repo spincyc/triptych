@@ -157,7 +157,8 @@ jobs:
           printf '%s\n' '\documentclass{article}' '\usepackage[latin]{babel}' \
             '\begin{document}Agnus Dei, qui tollis peccata mundi.\end{document}' > /tmp/xetex-probe.tex
           xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error \
-            -output-directory=/tmp /tmp/xetex-probe.tex > /dev/null
+            -output-directory=/tmp /tmp/xetex-probe.tex > /dev/null \
+            || { tail -n 40 /tmp/xetex-probe.log; kpsewhich -all xelatex.fmt; exit 1; }
           test -n "$(kpsewhich latin.ldf)"
           test -n "$(kpsewhich hyph-la.tex)"
           SH
