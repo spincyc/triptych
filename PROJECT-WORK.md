@@ -115,8 +115,28 @@ chronology (including the nuptial leaf's explicit no-formulary result); 14
 postconciliar leaves still lack reviewed appointment inputs. Remaining nonnumeric
 subjects are Sinai's unresolved calendar date, David's unspecified deliverance
 occasion, and Job's and Tobias's already useful century wording. Existing
-source-qualification gaps remain explicit. Release checks and main publication
-are pending.
+source-qualification gaps remain explicit. Source-library, publication-inventory,
+family-ledger, coverage and review-manifest checks pass. The ordinary generated
+document gate now checks live assembly across every typed leaf; explicit legacy
+snapshot checks retain their original contract.
+
+Two full read-suite tests could not replay because the archived Aquinas PDF and
+Gregory EPUB payloads are unavailable in this checkout. Their failing tests and
+implementation are unchanged; both payload paths are absent at the base commit
+`c57e60ef3d`. This is an evidence-availability limitation, not a claimed baseline
+test replay. The focused source, rendering and assembly checks above passed.
+The registered web-editions input audit passed with no undeclared or scratch
+inputs. Two independent cold builds matched across all 13 browser-product
+families (27,682 files); 104 web editions changed, with no output removals.
+That initial proof had product identity
+`cd5bc9911799d3d2b338161aa43a2a0e546a9d6e116f063603ffd87de05e5043`.
+Release verification then identified redundant per-edition chronology traces in
+native revision stamping. Revision calculation now shares the catalog's existing
+Assembly, retaining a fresh Assembly for each new operation. Independent cold
+review and 37 focused revision/bundle tests passed. A real GPT 66 main/synthesis
+comparison reduced three chronology traces to one and 27.992 seconds to 8.195
+seconds; both complete catalogs were byte-identical. Refreshed release proof,
+final site checks and main publication remain pending.
 
 ## Review follow-up: single-source corpus and gated printing, 2026-11-04
 

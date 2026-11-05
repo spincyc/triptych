@@ -531,9 +531,9 @@ check-sources: check-source-graph check-publication-inventories \
 check-proper-chronology-current:
 	@$(PYTHON) -m unittest tools.tests.test_generated_proper_chronology_freshness -v
 
-# Every leaf that opts into a document type (src/common/document-types/) has
-# generated entrypoints and deterministic pages; each must equal its
-# regeneration, and none may be authored. One check for every projection.
+# Every leaf that opts into a document type (src/common/document-types/) must
+# assemble current entrypoints and deterministic pages without authored copies.
+# Saved generated snapshots need not be refreshed. One check for every projection.
 check-generated-documents-current:
 	@$(PYTHON) -m unittest tools.tests.test_generated_documents_freshness -v
 

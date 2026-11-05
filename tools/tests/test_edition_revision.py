@@ -121,7 +121,21 @@ body = ["sections/homily"]
             render=lambda context: {"generated/date.tex": dates.read_text()},
             dependencies=lambda context: {dates, generator})
         with patch("_document_types.discover_projections", return_value={"fake": projection}):
-            self.assertEqual(self.derive().timestamp, stamp(adopted))
+            with patch.object(projection, "render", wraps=projection.render) as render:
+                self.assertEqual(self.derive().timestamp, stamp(adopted))
+            self.assertEqual(render.call_count, 1)
+            assembly = revision.Assembly(self.root)
+            with patch.object(projection, "render", wraps=projection.render) as render, \
+                    patch.object(projection, "dependencies", wraps=projection.dependencies) as dependencies:
+                main = revision.revision(self.root, "claude", "doc", assembly=assembly)
+                homily = revision.revision_for_entrypoint(
+                    self.root, "claude", self.root / "src/claude/doc/homily.tex", assembly=assembly)
+                self.assertEqual(main.timestamp, stamp(adopted))
+                self.assertEqual(homily.timestamp, stamp(self.first))
+                self.assertIn("src/sources/dates.txt", main.closure)
+                self.assertNotIn("src/sources/dates.txt", homily.closure)
+            self.assertEqual(render.call_count, 1)
+            self.assertEqual(dependencies.call_count, 1)
             self.assertEqual(self.derive("doc-homily").timestamp, stamp(self.first))
             self.write("src/claude/doc/generated/date.tex", "Stale saved copy.\n")
             self.assertFalse(self.derive().uncommitted)

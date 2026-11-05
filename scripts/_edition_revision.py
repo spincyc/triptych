@@ -224,7 +224,7 @@ class Repository:
         return self._changed
 
 
-def entrypoint(root: Path, provider: str, document: str) -> Path:
+def entrypoint(root: Path, provider: str, document: str, *, assembly=None) -> Path:
     """The file an edition id typesets, by the rule Make and the gate share."""
     if provider not in PROVIDERS:
         raise RevisionError(f"unknown provider: {provider}")
@@ -232,7 +232,7 @@ def entrypoint(root: Path, provider: str, document: str) -> Path:
             or "\\" in document):
         raise RevisionError(f"unsafe document id: {document!r}")
     source_root = root / "src" / provider
-    assembly = Assembly(root)
+    assembly = Assembly(root) if assembly is None else assembly
     main = source_root / document / "main.tex"
     if assembly.is_file(main):
         return main
@@ -477,12 +477,13 @@ def _now() -> dt.datetime:
 
 
 def revision_of(root: Path, provider: str, document: str, entry: Path, *,
-                repository: Repository | None = None, now: dt.datetime | None = None) -> Revision:
+                repository: Repository | None = None, now: dt.datetime | None = None,
+                assembly=None) -> Revision:
     root = Path(root).resolve()
     repository = Repository(root) if repository is None else repository
     if repository.root != root:
         raise RevisionError("repository state belongs to another root")
-    found = closure(root, provider, entry)
+    found = closure(root, provider, entry, assembly=assembly)
     if not found.paths:
         raise RevisionError(f"{provider}/{document}: the edition reads no provider source")
     tracked, changed = repository.tracked(), repository.changed()
@@ -503,16 +504,19 @@ def revision_of(root: Path, provider: str, document: str, entry: Path, *,
 
 
 def revision(root: Path, provider: str, document: str, *,
-             repository: Repository | None = None, now: dt.datetime | None = None) -> Revision:
+             repository: Repository | None = None, now: dt.datetime | None = None,
+             assembly=None) -> Revision:
     """The stamp of the edition Make and the gate call ``<provider>/<document>``."""
     root = Path(root).resolve()
     repository = Repository(root) if repository is None else repository
-    return revision_of(root, provider, document, entrypoint(root, provider, document),
-                       repository=repository, now=now)
+    assembly = Assembly(root) if assembly is None else assembly
+    return revision_of(root, provider, document,
+                       entrypoint(root, provider, document, assembly=assembly),
+                       repository=repository, now=now, assembly=assembly)
 
 
 def revision_for_entrypoint(root: Path, provider: str, entry: Path, *,
-                            repository: Repository | None = None) -> Revision:
+                            repository: Repository | None = None, assembly=None) -> Revision:
     """The stamp of the edition a given entrypoint typesets."""
     root = Path(root).resolve()
     entry = Path(entry).resolve()
@@ -521,7 +525,7 @@ def revision_for_entrypoint(root: Path, provider: str, entry: Path, *,
     if role is None:
         raise RevisionError(f"{entry.name} is not an edition entrypoint")
     document = leaf if role == "canonical" else f"{leaf}-{role}"
-    return revision_of(root, provider, document, entry, repository=repository)
+    return revision_of(root, provider, document, entry, repository=repository, assembly=assembly)
 
 
 def write(path: Path, value: Revision) -> bool:

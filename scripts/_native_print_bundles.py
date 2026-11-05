@@ -300,7 +300,7 @@ def _publication_inputs(root: Path, recipe: dict, assembly=None):
     return dependencies, computed, declaration["kind"], allowed_binary
 
 
-def _revision_file(root: Path, recipe: dict, repository=None) -> tuple[str, bytes]:
+def _revision_file(root: Path, recipe: dict, repository=None, assembly=None) -> tuple[str, bytes]:
     """The edition's derived "Last revised" stamp, where the preamble reads it.
 
     pdfTeX runs in ``src/<provider>`` with the entrypoint's stem as its job
@@ -308,7 +308,8 @@ def _revision_file(root: Path, recipe: dict, repository=None) -> tuple[str, byte
     """
     from _edition_revision import RevisionError, revision
     try:
-        value = revision(root, recipe["provider"], recipe["document"], repository=repository)
+        value = revision(root, recipe["provider"], recipe["document"], repository=repository,
+                         assembly=assembly)
     except RevisionError as error:
         raise BundleError("native source bundle cannot derive its revision stamp: " + str(error)) from error
     stem = PurePosixPath(recipe["entrypoint"]).stem
@@ -335,7 +336,7 @@ def _publication_files(root: Path, recipe: dict, work: Path, dependencies, kind,
         files.update(_dictionary_files(root, recipe, work))
     entrypoint = recipe["entrypoint"]
     _need(entrypoint in files, "native source bundle is missing its selected entrypoint")
-    stamp, payload = _revision_file(root, recipe, repository)
+    stamp, payload = _revision_file(root, recipe, repository, assembly=assembly)
     _need(stamp not in files, "native revision stamp collides with a source file: " + stamp)
     files[stamp] = payload
     return files, entrypoint, f"src/{recipe['provider']}"

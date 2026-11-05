@@ -23,7 +23,7 @@ FIXED_STAMP = b"\\AIDocumentRevisionTimestamp{2026-01-01T00:00:00Z}\n"
 REAL_REVISION_FILE = bundles._revision_file
 
 
-def fixed_revision_file(root, recipe, repository=None):
+def fixed_revision_file(root, recipe, repository=None, assembly=None):
     from pathlib import PurePosixPath
     return f"src/{recipe['provider']}/{PurePosixPath(recipe['entrypoint']).stem}.revision.tex", FIXED_STAMP
 
@@ -70,6 +70,7 @@ class NativeSourceBundleTests(unittest.TestCase):
     def test_the_bundle_carries_the_editions_derived_revision_stamp(self):
         """pdfTeX runs in src/<provider> as job `main`, so the preamble reads this file."""
         import _edition_revision as edition
+        from _document_types import Assembly
         environment = {"GIT_AUTHOR_NAME": "t", "GIT_AUTHOR_EMAIL": "t@example.invalid",
                        "GIT_COMMITTER_NAME": "t", "GIT_COMMITTER_EMAIL": "t@example.invalid",
                        "GIT_COMMITTER_DATE": "@1780000000 +0000", "GIT_AUTHOR_DATE": "@1780000000 +0000",
@@ -77,8 +78,11 @@ class NativeSourceBundleTests(unittest.TestCase):
         for arguments in (("init", "-q"), ("add", "-A"), ("commit", "-q", "-m", "fixture")):
             subprocess.run(["git", *arguments], cwd=self.root, env=environment, check=True,
                            capture_output=True)
-        with patch.object(bundles, "_revision_file", new=REAL_REVISION_FILE):
-            result = self.prepare()
+        assembly = Assembly(self.root)
+        with patch.object(bundles, "_revision_file", new=REAL_REVISION_FILE), \
+                patch.object(edition, "revision", wraps=edition.revision) as derive:
+            result = self.prepare(assembly=assembly)
+        self.assertIs(derive.call_args.kwargs["assembly"], assembly)
         actual = {row["path"]: bundles.file_bytes(row) for row in result["files"]}
         derived = edition.revision(self.root, "gpt", "articles/faith/example")
         self.assertEqual(derived.timestamp, "2026-05-28T20:26:40Z")
