@@ -109,6 +109,7 @@ jobs:
            && pacman -Sy --noconfirm --needed archlinux-keyring \\
            && pacman -Syu --noconfirm --needed ${PACKAGES} \\
            && fmtutil-sys --byfmt xelatex \\
+           && mktexlsr \\
            && fc-cache -f \\
            && pacman -Scc --noconfirm
           EOF
@@ -153,7 +154,10 @@ jobs:
           command -v pdftotext pdfinfo make git xelatex xdvipdfmx
           # The print-compile job typesets XeTeX editions and Latin hyphenation
           # from this image without installing anything.
-          test -n "$(kpsewhich -engine=xetex xelatex.fmt)"
+          printf '%s\n' '\documentclass{article}' '\usepackage[latin]{babel}' \
+            '\begin{document}Agnus Dei, qui tollis peccata mundi.\end{document}' > /tmp/xetex-probe.tex
+          xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error \
+            -output-directory=/tmp /tmp/xetex-probe.tex > /dev/null
           test -n "$(kpsewhich latin.ldf)"
           test -n "$(kpsewhich hyph-la.tex)"
           SH
