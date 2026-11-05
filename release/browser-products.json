@@ -2,22 +2,22 @@
  "editorial_approval": false,
  "inputs": {
   "families": {
-   "act-history": "691d3ff6a3a09059a39fce610aa39a02acf43e4134029973a5071a8fe9bb5493",
-   "bibles": "2e568d1fef95a829a01c9dbfb314a12d44f2f34b3d1f46d9a36c67e8f146f64c",
-   "calendar": "8f5fc8498cb93a26fff81f65b782d3d5e7b5d00452a6906a0aaad8516ec1fe1d",
-   "catena": "5085617d23f76346735bcd03ffc317e1926398b4ded31e6dbfd2e0d54f53cbe0",
-   "documents": "50ecf8662793e05709fcd55cb11b94ce39eb758bfa8461067eba0b053857b83c",
+   "act-history": "0e96a8e481ccb25807bbefcc6c9ae2d0e948ce49233a275b06950e8db7ddb62e",
+   "bibles": "abc0bbfa1fdb713b994e623982f3810b65a0b503c95c21bc5175a8f6df51fa84",
+   "calendar": "e4f7fda5edb3186f1c7bdedaf4c605304e69e57ceefd704c6dc0028f9e4e3478",
+   "catena": "9e3f7dd9478bfe7a96441b4ab42fc469b8d78fdeb55e913e6d8c9f22162c43f0",
+   "documents": "17e920c3d17d03008db6f6503b1be497df4a89ca92d56b5de64e0c7ca400c497",
    "encyclicals": "fd7025f912a494b9385782102027c8c581b0700bac4d3fc0ca053da867693685",
-   "ordinary": "51d0d07bbe2c8c3fb6fc8fc1da92a3aa31be10b078aacd3070f84e0d9641a3d9",
-   "paragraphs": "77868c28d0048e1dfe35195d192f1494456836c3bdb766346848f7c122620bf6",
-   "propers": "777303ad0a9d4453600df1b4c86fb420fadf77960fd0a17f70ab2542ea9c61c9",
-   "readings": "d78cdd94308d0ff33c7296a7bf8762d67c8a509079119b7a85da41f482858da0",
-   "rubrics": "0b4e64afefc062d96b8762e0e333b62ec646f5c0d0305311f1308ac4d894eed0",
-   "sources": "1c42b325b0e2762505dd3f965542750c319098cf58e6ab628c2ff897986bc68e",
-   "web-editions": "8b2f24150ef7912b75a0d8c85c016131a6ce124ec3bcb6af39d9ffc4b4431db6"
+   "ordinary": "694dfb7defd547c7aa37dd23fa3e47d2953596737323357e1fe195da04794472",
+   "paragraphs": "491796be4924bcc9d1ec7b4c6f4fe731480249516110f25fb8cd30227ce364d4",
+   "propers": "150aa10be4869ff856f3527f11215d2a02946546e139a964cd34348c9a5c4b99",
+   "readings": "434bb57ae717293e538ce167cb0ee4cef6da29f495b6532f426a78b9fa8e6a0e",
+   "rubrics": "97483aa6d26059ec0afb57fa681bb3b6dae7faf950195bfda5623d5223916050",
+   "sources": "9ef4cab242d23acaac3366aac29f299f06f5e60733e4a3499cc331caff554b13",
+   "web-editions": "38d0bdcaa46207aa117aca869998bde67ea626fa8bc215a88d179ebd793f8a15"
   },
   "schema": "triptych-browser-product-aggregate-inputs/v1",
-  "sha256": "164644012f29c7259ae8d55e3e4be9e843472db41862630433c645060ae294ac"
+  "sha256": "69304edc947cbc544f071a625452bf149bc1464420beea4f03b3a3affc637b28"
  },
  "products": [
   {
@@ -31,16 +31,16 @@
    },
    "id": "bibles",
    "inputs": {
-    "content": "eacc7fa145ffcfb214ffd4a44e2c27c73a4c48c2d509f01c0108b9f3d7180dbb",
+    "content": "b86d421bfb3201ceb4fc5fc4870f41e4ea524a864f41367b8a17f2be191555b3",
     "count": 70624,
     "generator": "212d12dd664e46f6f2ca66816270604a49eefbe6c98995fad3a7c0082f538d11",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
     "membership": "7b24d19ecc879f8c460ab16075dd633fb6bc3a7e443eb9b9d78b6bac5eb01c63",
     "rights": "20d414eb29d47265a51ff054ae3743cd062f889f3bac2ffdce6bd4b1acc80ae4",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "2e568d1fef95a829a01c9dbfb314a12d44f2f34b3d1f46d9a36c67e8f146f64c"
+    "sha256": "abc0bbfa1fdb713b994e623982f3810b65a0b503c95c21bc5175a8f6df51fa84"
    },
-   "key": "7431592823023caf270f59c62bf15b0952f52abd25e128ad3e1e6ec6e80fca00",
+   "key": "98d984abb2f0e25bbcfbe44e3da6b554cb3b1a648b9fb66d0d6ecc32b8d165b7",
    "path_set_sha256": "14d56894543c1e5457683c8b4a392258e6dfd6703dd6afbf8ffd704a9b039014"
   },
   {
@@ -2301,16 +2301,16 @@
    },
    "id": "act-history",
    "inputs": {
-    "content": "4fec034b071334887339773a0a9ccb1b88406983e19b9190a4bb173b3f319219",
+    "content": "c1470a87850ad2383af672e5b9c24d481b3b78d79696ea62cdaf975ef975807a",
     "count": 78237,
-    "generator": "c002f7c1c6745cebee27e8d001d6201656d76cd6ebd8b49b90edde7dd4cb221e",
+    "generator": "8747ec432e00f1feea15dfb3d68eb98e69ab7413474299fe534e50fa7dad1c85",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
     "membership": "32dcb7fb2d9b223b60fdb0a71aa9da007f64f150359b13d0ef15cc77aef764d6",
     "rights": "c88b0ba9d1c04d9a69c541e16f4d5aaa5490fd4422410ee3df06280683d0d857",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "691d3ff6a3a09059a39fce610aa39a02acf43e4134029973a5071a8fe9bb5493"
+    "sha256": "0e96a8e481ccb25807bbefcc6c9ae2d0e948ce49233a275b06950e8db7ddb62e"
    },
-   "key": "7cae8f7a82b1b4d3e61b2ead72de9772d82f058c0d8919277972761b849f5727",
+   "key": "ec04eedfab39c175faa5eb52ccfc87ff54bc826faca6bb8caa1f6f0ffd7f908c",
    "path_set_sha256": "6c79229e3b84cc13de7dec10eb7e12bccf9e7f43de5a0b920b2ac014966e1eee"
   },
   {
@@ -3536,16 +3536,16 @@
    },
    "id": "calendar",
    "inputs": {
-    "content": "c415ed04669007630913d371f013123db5d8594f238de88ae8253a846900f458",
+    "content": "2fcb7141d725aa87b24bc84545805538255ff6342bd73b9faa5a975b82c95c1c",
     "count": 376,
     "generator": "87f1f413ca574262d4fb8ab95f84a57ebcc192f279ce5b4652d532b106e647df",
     "lock": "df90b33394fba5ec5a5b141260e3e918e6b0acbe3083dd27beed29a155cf0780",
     "membership": "a8bb5c3697e5ef506c6e77fbb9ac4878d4bf003f7a5d82222f4c0fcc9500c9cd",
     "rights": "0df8fe64379e4dfd01f7b37319661c12762c9582df21f45148be359883d051e8",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "8f5fc8498cb93a26fff81f65b782d3d5e7b5d00452a6906a0aaad8516ec1fe1d"
+    "sha256": "e4f7fda5edb3186f1c7bdedaf4c605304e69e57ceefd704c6dc0028f9e4e3478"
    },
-   "key": "7fdb588e0f8d32b6aa168023bd93405c3cb8097074356827773dbfec402d8df0",
+   "key": "c6630142925bde7973ddaa102b773ebb6f62d5dfe22b8241415e470198c1ac53",
    "path_set_sha256": "a0c13f328642fecd9fec07952be9cfeef0ab13fa0e58633f104eea29995974a9"
   },
   {
@@ -11759,16 +11759,16 @@
    },
    "id": "catena",
    "inputs": {
-    "content": "cb933ee2a34f129de5c4e6f00656c61d74d2a87dc941a035475918dfd1e3cb4f",
+    "content": "ec04f4a58332c2301e44053f4fa8f5b0c7567b6612b7e00abd0b61e1798f8bca",
     "count": 70628,
     "generator": "02514a1105a7f8e09fd3df1a0b5a39d9d12b6b99ee7a89c127cf7900ffcd7a37",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
     "membership": "0ea43f62eddad46575b86103413651b9ec0140c2b532ba69696ec9beaf957cab",
     "rights": "20d414eb29d47265a51ff054ae3743cd062f889f3bac2ffdce6bd4b1acc80ae4",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "5085617d23f76346735bcd03ffc317e1926398b4ded31e6dbfd2e0d54f53cbe0"
+    "sha256": "9e3f7dd9478bfe7a96441b4ab42fc469b8d78fdeb55e913e6d8c9f22162c43f0"
    },
-   "key": "cf3df6ab271adcd45e3888f1b9f8532814fa9c34a9b8ce40eed5a02cdb7a703d",
+   "key": "5aa3241f5c5ea89a7cfca448b7a6a89d27920f1452bc60d8d230465b5f33d023",
    "path_set_sha256": "9b9fbba9ed683949aad288fb41ff4f90cfe49fdcbd4203c3aba71137c34b68fd"
   },
   {
@@ -11777,21 +11777,21 @@
    "files": {
     "structure/documents/corpus.json": {
      "bytes": 1212862,
-     "sha256": "69954fd74b431013d276135ca927394bbf18248e3eb8ff116f64c9e638e275d6"
+     "sha256": "2d36481679af7b77499c7313b87c5b72707a25e53037e93ac190824173d4c58d"
     }
    },
    "id": "documents",
    "inputs": {
-    "content": "0c6fdf7e64293a68f8a318e72cb6f7c4644370cb8d9fb666382b75eb1f690955",
+    "content": "657212139c6fcf847f64b83c67698f9569d85c3371c1ba953640026293180107",
     "count": 7992,
-    "generator": "7fb4ac33d93ff174ee57ca2c654558629117d04a47ffe774d2651c49af01bdac",
+    "generator": "7ee5be923fce5a5613600f8076f00b95af6d08ca204335c61b663a39cde6e0fc",
     "lock": "df90b33394fba5ec5a5b141260e3e918e6b0acbe3083dd27beed29a155cf0780",
     "membership": "4fafca44b5122774aa43f30fb2c5a9f94185c726fda04f8c8978f87c727df2e2",
     "rights": "fc70db81d2a61165facaa48df8ad63c7eeed0fc00d47c645f88e8c7d21e3f160",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "50ecf8662793e05709fcd55cb11b94ce39eb758bfa8461067eba0b053857b83c"
+    "sha256": "17e920c3d17d03008db6f6503b1be497df4a89ca92d56b5de64e0c7ca400c497"
    },
-   "key": "822c015b616c16a7437cc1fb9d4c5039b33a0208189294b99a906ebdd6e899c4",
+   "key": "b1ca7386709b92fb16e8d64067d282e3258079bf127b1f42ec7bbe5352e4fec0",
    "path_set_sha256": "0ec113e99b049bb781b04b2631e34ca3f3d0a90d0fdf95112ab234089debe48b"
   },
   {
@@ -11817,16 +11817,16 @@
    },
    "id": "ordinary",
    "inputs": {
-    "content": "eacc7fa145ffcfb214ffd4a44e2c27c73a4c48c2d509f01c0108b9f3d7180dbb",
+    "content": "b86d421bfb3201ceb4fc5fc4870f41e4ea524a864f41367b8a17f2be191555b3",
     "count": 70607,
     "generator": "7ffd611a8294da5e0af962f8087750903acc5e627aa2e86d6ee86af6eb30b659",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
     "membership": "1b1033551ca7858cff92e0b3102402f7c11d1da13c523c33c6223f2a720de909",
     "rights": "20d414eb29d47265a51ff054ae3743cd062f889f3bac2ffdce6bd4b1acc80ae4",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "51d0d07bbe2c8c3fb6fc8fc1da92a3aa31be10b078aacd3070f84e0d9641a3d9"
+    "sha256": "694dfb7defd547c7aa37dd23fa3e47d2953596737323357e1fe195da04794472"
    },
-   "key": "249f7c6330837b42a4333cb7b2fd817003324a96ec05ae1ad8461a78885835f3",
+   "key": "c72b3e5c38b445339faedd3b2e518d9256cf4d7a7b472f4776d48a3190d53e70",
    "path_set_sha256": "8d6628d20ee36a40306d533a98efeaafbdf1ff3b8fd15fcaa53e9afc4ae63513"
   },
   {
@@ -34028,16 +34028,16 @@
    },
    "id": "paragraphs",
    "inputs": {
-    "content": "eacc7fa145ffcfb214ffd4a44e2c27c73a4c48c2d509f01c0108b9f3d7180dbb",
+    "content": "b86d421bfb3201ceb4fc5fc4870f41e4ea524a864f41367b8a17f2be191555b3",
     "count": 70627,
     "generator": "02514a1105a7f8e09fd3df1a0b5a39d9d12b6b99ee7a89c127cf7900ffcd7a37",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
     "membership": "5fe08de8c7cd76d81e50726d3b206a441f8df5cdf2dd977e75eef6e2a6862357",
     "rights": "20d414eb29d47265a51ff054ae3743cd062f889f3bac2ffdce6bd4b1acc80ae4",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "77868c28d0048e1dfe35195d192f1494456836c3bdb766346848f7c122620bf6"
+    "sha256": "491796be4924bcc9d1ec7b4c6f4fe731480249516110f25fb8cd30227ce364d4"
    },
-   "key": "67542838b48305aed3d700388e7b24bf937d34f0e6cf2ba42c782267945cfa39",
+   "key": "76d3623e32cc58907ffd306eaaba09659942a3eaefb3dc7d78483a5cb05fff41",
    "path_set_sha256": "9de3712da5253ae1811b47967cb17448685f69729faff8a58c640179f9049796"
   },
   {
@@ -36043,16 +36043,16 @@
    },
    "id": "propers",
    "inputs": {
-    "content": "6cf4966817df02de4b121c8a53ebb7b082f8e1e330ff1b9969dca240eeb04998",
+    "content": "86a78e1a6af106fb7243f1605524caf712771a30f387b7667eadbf144335fc80",
     "count": 78026,
     "generator": "212d12dd664e46f6f2ca66816270604a49eefbe6c98995fad3a7c0082f538d11",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
     "membership": "da7e1de1dd6221c4004b294a487a26d04ceedcbdf1d5b023a54d43b7ccdc27ff",
     "rights": "f062fa34087a9a9c5835d501d184b8a5343ec362fcd107c44de834b3150182b2",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "777303ad0a9d4453600df1b4c86fb420fadf77960fd0a17f70ab2542ea9c61c9"
+    "sha256": "150aa10be4869ff856f3527f11215d2a02946546e139a964cd34348c9a5c4b99"
    },
-   "key": "7c1cf1a9ad53397380d78e11ed0a70d73fbf3ddad0c61f01df71e2802339437b",
+   "key": "3d3841e58bc2533ddacffc65050a86d6bfb7b8e96342b3212d07c08bc460d5b1",
    "path_set_sha256": "b53fa6715bff5bcbf2f849d69c9dcf20923c4c0fc6cd0695f735724209265f97"
   },
   {
@@ -36066,16 +36066,16 @@
    },
    "id": "readings",
    "inputs": {
-    "content": "eacc7fa145ffcfb214ffd4a44e2c27c73a4c48c2d509f01c0108b9f3d7180dbb",
+    "content": "b86d421bfb3201ceb4fc5fc4870f41e4ea524a864f41367b8a17f2be191555b3",
     "count": 70625,
     "generator": "719ada689b80b890919a38c8daaa32ffef97df36ada09c9e4c27a8ae9e982ceb",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
     "membership": "610e587a303496be6fa3591897de7bbaa821500a913eb02c611a4fe43af98d2a",
     "rights": "20d414eb29d47265a51ff054ae3743cd062f889f3bac2ffdce6bd4b1acc80ae4",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "d78cdd94308d0ff33c7296a7bf8762d67c8a509079119b7a85da41f482858da0"
+    "sha256": "434bb57ae717293e538ce167cb0ee4cef6da29f495b6532f426a78b9fa8e6a0e"
    },
-   "key": "cf14d6b537302e97fd534fc6be1e87934ddc8d97d25a63a50b725a70fa1449f3",
+   "key": "71721a8e1b197f38ee1e654e4de6c04940eac05ceeee744aa1d3a03bd5e05329",
    "path_set_sha256": "508b7a8e33c837e26653f6d32011065feafebd126ee7022fefa70a2cccadeabf"
   },
   {
@@ -36101,16 +36101,16 @@
    },
    "id": "rubrics",
    "inputs": {
-    "content": "c415ed04669007630913d371f013123db5d8594f238de88ae8253a846900f458",
+    "content": "2fcb7141d725aa87b24bc84545805538255ff6342bd73b9faa5a975b82c95c1c",
     "count": 376,
     "generator": "f33b1c227e4eaaf354245b9d32450ebc86f2d982a49dd762189b3f69bc96c0a4",
     "lock": "df90b33394fba5ec5a5b141260e3e918e6b0acbe3083dd27beed29a155cf0780",
     "membership": "3e66944863aa5f42173769da65ac8252aa8409f6f4b15419c794d379cc955dd6",
     "rights": "0df8fe64379e4dfd01f7b37319661c12762c9582df21f45148be359883d051e8",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "0b4e64afefc062d96b8762e0e333b62ec646f5c0d0305311f1308ac4d894eed0"
+    "sha256": "97483aa6d26059ec0afb57fa681bb3b6dae7faf950195bfda5623d5223916050"
    },
-   "key": "0b7be0a516b226feced65c9606662b7a0cd4a59997bf2271a278846aca20048f",
+   "key": "4f5cc0ab17c367fa53c6077ad8cb4ba7251f6f1ce9976b970cb64a91d1673210",
    "path_set_sha256": "b33143518fe47bc2375691f3ef5f78ffee0bc633c3fbb8507344ae056d6b7216"
   },
   {
@@ -109892,16 +109892,16 @@
    },
    "id": "sources",
    "inputs": {
-    "content": "0273e7e7d8dd33709edd697345bd29049e93a9655c01fb40e3c86f8a485ebbdf",
+    "content": "936f8329f63a503fa33bbca460f5a59c34f9bb32c514ca345c7591b66c637606",
     "count": 78156,
     "generator": "a3d897799b8c829db7bf6200f34e140da13edd427971a9d223b6bd3eec68bf8d",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
     "membership": "486e21223075454134e80af99a79c07817c42740583d3ce8cf8d7e047c76c59b",
     "rights": "229e6ed09a49a924789bcd47a4830ff759879685878771687d96e14dd8f3b90d",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "1c42b325b0e2762505dd3f965542750c319098cf58e6ab628c2ff897986bc68e"
+    "sha256": "9ef4cab242d23acaac3366aac29f299f06f5e60733e4a3499cc331caff554b13"
    },
-   "key": "3820fccb8f33b497064c99b254212a3d462ba14a64d391f988d0831ed0e5c1e6",
+   "key": "60bee5b1e6003b5bc12b37bccb08fe7c836849cf0b97afd0eb80491f95d54a3a",
    "path_set_sha256": "ba98f8708403455730a3a155b3c015f285842df2b8b95b3b9214da0a38bbee99"
   },
   {
@@ -110979,16 +110979,16 @@
    },
    "id": "web-editions",
    "inputs": {
-    "content": "2660b98573721493877ec2559aa55f97f602c52e1a2bf0dcfc268bc3c5c5af28",
+    "content": "dbea781b33853140eaf9dbf61bda9549c8cc45dc45cdcea024179d2f931b3017",
     "count": 79338,
-    "generator": "ac683484d592c04f8624e77479c1b744d2f6080d19cd9556a6328b6db4beff83",
+    "generator": "cee6631e6acc658c3104c79405babdb3cfc508fb17e31c49f4d55be884558790",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
     "membership": "4840374f2e6dc469108d2f9175703471cf77f4f2cccad888173e7f5f2be0aa75",
     "rights": "050437a1965775dc35b06e693f945f073cd628e9286e10754000afef9b8c2dc5",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "8b2f24150ef7912b75a0d8c85c016131a6ce124ec3bcb6af39d9ffc4b4431db6"
+    "sha256": "38d0bdcaa46207aa117aca869998bde67ea626fa8bc215a88d179ebd793f8a15"
    },
-   "key": "b6dbe1063c93a13e1934eece9218e7dc261bbe8860a24cfcb059514b3a13f793",
+   "key": "e613e064c07ecfded3441772a5976416fbb9445241334f8df4cef10257483ad2",
    "path_set_sha256": "1c3b2e8611874b40f99fd4a8815d79a48de2d0e0d2234a9e3715632349f9b6ba"
   }
  ],
