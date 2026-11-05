@@ -180,20 +180,27 @@ overflow. All three print pages stay idle without fetching native TeX assets;
 the artifact declares 647 native editions and `stored_pdfs: false`.
 
 Publication commit `2f94728d075029a8a043021eb2006a5a9925f9d5` reached both
-the workspace branch and main without rewriting history. Its push triggered
-[Pages run 42117986012](https://github.com/spincyc/triptych/actions/runs/42117986012),
-initially queued behind the preceding run. That predecessor,
+the workspace branch and main without rewriting history. The combined commit
+`1e2669f5fba8a01a37985785d3493d087e50d4a1` preserves the reviewed content and
+product identity and includes the timeout repair and its reconciled contract
+test. All 19 bootstrap/workflow tests pass. Its
+[Pages run 42122381067](https://github.com/spincyc/triptych/actions/runs/42122381067)
+has passed the complete native compile gate: 647 editions, zero failures and
+15,357 compiled pages. The three PC-S58 receipts pass, each settling in two
+passes, and the summary binds the exact combined commit. The site build,
+independent artifact verification, deployment and live checks remain pending.
+
+The budget repair follows predecessor
 [42099806134](https://github.com/spincyc/triptych/actions/runs/42099806134),
-built its site after roughly 96 minutes, saved its products and then exhausted
-the two-hour job budget during independent artifact verification. Twelve of
-thirteen family input identities differ for this correction, so its build
-cannot reuse most of those families. The Pages build limit is now three hours;
-all source, artifact and print gates remain intact. The semantic workflow diff
-changes only that timeout, and the browser-product identity above is unchanged.
-The first correction run is being superseded by this timeout-only repair.
-Replacement CI, deployment
-and live reader verification remain pending. Earlier runs are not evidence of
-this correction's deployment.
+which built its site after roughly 96 minutes and then exhausted its two-hour
+job limit during independent verification, as GitHub's failure annotation
+confirms. Commit `19a7e266ec` changes only the build timeout to three hours;
+every source, artifact and print gate remains intact. Only documents and
+web-editions output bytes differ from the prior products. Upstream preparation
+with the saved candidates verified ten reused families, two generated families
+and one already current family against the committed proof. Earlier correction
+runs `42117986012` and `42121273497` were superseded and cancelled; neither is
+claimed as deployment evidence.
 No new engine-run acceptance, print-layout approval or human delivery is claimed.
 
 The merged chronology task had an open publication requirement without the
@@ -343,7 +350,16 @@ comparison reduced three chronology traces to one and 27.992 seconds to 8.195
 seconds; both complete catalogs were byte-identical. The scoped release refresh
 verified all 24,029 source hashes, updating 19 and adopting 17 dependencies with
 none retired or outside the reviewed scope. Upstream authorization is preserved.
-Final site checks and main publication remain pending.
+The chronology implementation reached main through `4bcc8c80fe`. Its full local
+site build and independent deployment verification passed. Pages run
+`42099806134` passed source/site generation and all 647 native compiles, then
+hit the two-hour limit during independent verification; the current browser
+products had already been saved. Main subsequently incorporated the reviewed
+PC-S58 advisory corrections without changing chronology data or machinery,
+and increased the build budget to three hours in `19a7e266ec`. The workflow
+contract test is reconciled with that budget. The combined descriptor is
+`7061eb0e269f66fe963062d8ff56e7a6e37aecbbbcb5bae7df28e26f11743bae`.
+Final combined deployment and live verification remain pending.
 
 ## Review follow-up: single-source corpus and gated printing, 2026-11-04
 
