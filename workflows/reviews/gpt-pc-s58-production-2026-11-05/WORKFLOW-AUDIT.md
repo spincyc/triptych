@@ -112,3 +112,23 @@ enumeration, then records products before refreshing release bindings. The
 authorization manifest and rights record refreshed last are not product inputs,
 so that ordering introduces no refresh cycle. The reviewer did not rerun the
 reported tests or claim production acceptance.
+
+## Production validation of the no-PDF path
+
+The reviewed source checkpoint `2db4948252` supplies three admitted native
+source bundles. A bounded local compile of those exact new outputs passes
+with pdfTeX in two passes each (21, 10 and 4 pages for the expansive study,
+concise study and homily). These disposable outputs are mechanical compile
+evidence, not print-layout approval or publication artifacts. The admitted
+universe now contains 284 publication outputs and 647 editions in total;
+the existing census assertions were updated and all six native admission
+tests pass. Deployment still requires its independent full-corpus compile
+job in the pinned toolchain.
+
+The installation's complete browser snapshot reproduces thirteen families
+and 27,689 files in its required independent builds. Release binding adoption
+is bounded to this task's actual changes plus five existing source records
+newly reached through its accepted bindings: the Douay-Rheims projection,
+the Missal acquisition audit, the 2008 Notitiae edition and artifact, and the
+Internet Archive catalogue work. Those five records were already tracked and
+unchanged; no witness admission or rights decision was upgraded.

@@ -15,17 +15,20 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "accepted-three-documents"
   criterion = "The dated PC-S58-A GPT production reaches terminal ACCEPTED through genuine independent reviews and source/publication gates, with the expansive study, concise study and homily under one canonical owner."
-  status = "open"
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-pc-s58-production-2026-11-05/CYCLES.md"]
 
   [[deliverables.requirements]]
   id = "reviewed-reader-publication"
   criterion = "All three current reader outputs, catalog links and release records pass their required checks, with exact evidence and honest limitations retained."
-  status = "open"
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/web-edition.toml"]
 
   [[deliverables.requirements]]
   id = "main-and-live-verification"
   criterion = "Validated commits reach main without history rewriting; the resulting Pages build, print-compile and deploy succeed, and the three live reader routes are verified."
   status = "open"
+  evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
 id = "single-source-print-followup-2026-11-04"

@@ -68,9 +68,32 @@ three-output content/schema gates, generated currentness and exact comparison
 of all four upstream accepted review records and current input objects.
 Only the operational production record changed; 55 other leaf files remained
 unchanged. Engine artifact gates pass and dispatch generate-web iteration 0.
-The coordinator will commit this reviewed source checkpoint before conversion
-so all three edition revisions have committed inputs. Reader review and
-installation remain subsequent stages; no print approval is claimed.
+The coordinator committed this reviewed source checkpoint as
+`2db494825222ea7c6503130a492a12a31eed40c7` before conversion. All three edition
+revisions report `uncommitted: false` and `2026-11-05T16:09:40Z`. Generate-web
+iteration 0 passes fidelity and declaration checks. Its exact canonical
+Markdown is 72,151 bytes, SHA-256
+`f67bd573ced15f680948a7f47dad677e7cb5b057a4d319dd3b3c1ba9e9d56bbc`,
+recorded in the generated web receipt. Accepted sources and declarations remain
+unchanged. Fresh independent web-review iteration 0 passes with no findings.
+It compares all 613 Markdown lines, eight authored components and 34 notes;
+an isolated preview using the existing pinned renderer and reader CSS/JS is
+inspected in Chromium at desktop and phone widths. All 69 fragment references,
+twelve appointed anchors and both four-sense blocks remain usable; wide-table
+columns are reachable and the body does not overflow. All 294 monitored paths
+and the content/evidence/render/output identities remain unchanged. The actual
+inspection and its limits are retained in [WEB-REVIEW-0.txt](WEB-REVIEW-0.txt).
+Full-site preview requires the complete products created during installation;
+this review grants no companion, PDF or deployment approval. Fresh
+install-publication iteration 0 passes all six publication commands and its
+complete browser-product and scoped binding checks; its original report is
+[INSTALL-0.txt](INSTALL-0.txt). All five accepted review input objects match.
+The engine publication-gates stage passes and the run reaches ACCEPTED.
+Twenty-eight actual results and twenty-eight packets are retained under the
+leaf's `evaluations/proper-study-results/64c60ef0cfd8f349/`, with seed, terminal
+status/replay and explicit redaction records. The archive and terminal audit
+are followed by fresh inventories, browser products and release bindings
+before final site assembly. Deployment status belongs to PROJECT-WORK.md.
 The
 retained same-owner research is an explicit handoff for independent checking,
 not an inherited approval. Registration reconciles 45 bindings and 57 source
@@ -144,3 +167,40 @@ inherited failures in unchanged sources: missing component manifests in Claude
 Claude PC-S51/52/54 and GPT PC-S51. This integration does not renew their prior
 scholarly or visual acceptance. PC-S51 and PC-S55 now have actual visible
 qualification changes; only GPT PC-R07 and PC-S53 remain metadata-only updates.
+
+## Final local integration checks
+
+After terminal archival and the operational audit update, both publication
+inventories and the source-family ledger were refreshed. Both classification
+records remain byte-identical to the reviewed source checkpoint; all 166
+pending units and the empty admitted-family list remain unchanged. Complete
+browser-product record and check pass again: thirteen families, 27,689 files,
+identity `54969f94c28b84e49ebb67b79fc3f3a5c59d2b49e7ed4190915561721a1389ec`.
+The resulting binding scan reports only the changed browser descriptor;
+the scoped refresh changes that binding and its derived rights digests.
+Current publication acceptance still passes after archival. The promise ledger,
+tool registry and whitespace checks pass.
+
+The complete public-site build passes its deployment source gates and builds
+all twenty-one figures with the local host TeX toolchain. Its manifest contains
+all three new publications and 647 native editions, with `stored_pdfs: false`;
+the artifact contains no PDF files. The local artifact's global source revision
+is the reviewed-source checkpoint `2db4948252`; CI derives the final publication
+commit independently. Git-derived edition stamps remain tied to the committed
+source closures rather than the later operational commit.
+
+Coordinator Chromium checks load all three assembled readers at 1280 and 390
+pixels, with their titles and complete body text present, working print links,
+no page-wide overflow and no native-runtime requests. All six entry-view
+screenshots were opened and inspected. The three linked print pages also load
+with `?print=1`, retain their idle controls and make no native-runtime request;
+their three phone-width screenshots were inspected. An initial test assumed
+inline print controls on the reader; the actual reader correctly links to a
+separate print page, and the harness was corrected to exercise that flow.
+These integration checks add no independent companion content review or
+print-layout approval. Actual deployment and live verification are recorded
+in PROJECT-WORK.md.
+
+The independent artifact command `public-alpha verify --deployment-target
+github-pages` passes for the complete locally built site. No source or
+publication input changed during that build and verification.

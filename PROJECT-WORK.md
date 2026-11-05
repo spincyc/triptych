@@ -59,8 +59,17 @@ fifty baseline files are unchanged. Engine homily preflight and cold review
 pass. HOM-001 remains a nonblocking precision advisory about the post-Communion
 prayer's addressee and the requested work of the Spirit. Complete source-family
 validation and engine artifact gates pass; all four upstream review records
-and current input objects match. The reviewed sources are ready for their
-required commit checkpoint and canonical reader conversion.
+and current input objects match. Source checkpoint `2db4948252` commits all
+three editions, whose revisions report committed inputs. Canonical reader
+conversion passes its fidelity checks and records the exact Markdown receipt.
+Independent web review passes with no findings after complete text/note
+comparison and isolated desktop/mobile renderer checks. Installation passes all six checks, complete browser reproduction and scoped
+release bindings. The engine publication gate passes and run `64c60ef0cfd8f349`
+is terminal ACCEPTED, with all twenty-eight results and packets archived.
+The archive-dependent inventory/product refresh, full site build and GitHub
+Pages artifact verification pass. All three assembled readers pass desktop and
+phone-width browser checks; their print pages remain idle on arrival. Main
+push, CI deployment and live verification remain pending.
 No gate or publication
 check is bypassed. The source handoff has 45 bindings and 57
 dispositions, and the strict working projection and full source audits pass.
@@ -72,8 +81,8 @@ reaches thirty existing chronology consumers. Their generated currentness,
 schema and reader conversions pass; nine inherited content-gate failures remain
 in unchanged authored sources. Two additional GPT leaves require only registry
 dependency-hash updates.
-All three documents have passed their independent content reviews;
-publication acceptance remains pending. The
+All three documents have passed their independent content reviews and terminal
+source/reader publication acceptance. The
 exact provider/identity authorization is recorded in
 `guidance/liturgy/propers-production-plan.md`; the driver's ongoing record is
 `workflows/reviews/gpt-pc-s58-production-2026-11-05/CYCLES.md`.
