@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "eb621aedbeee828e"
 workflow = "proper-study"
 workflow_version = 17
-stage = "homily-review"
-iteration = 1
+stage = "web-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 13
-observation_count = 11
+advisory_count = 14
+observation_count = 13
 
 [[stages]]
 stage = "homily-review"
@@ -104,6 +104,18 @@ standing = 0
 accepted_count = 0
 advisory_count = 1
 observation_count = 4
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "eb621aedbeee828e"
+workflow = "proper-study"
+workflow_version = 17
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 2
 
 [[advisories]]
 stage = "homily-review"
@@ -209,6 +221,14 @@ location = "sections/concise/04-themes.tex lines 19-21 and 38-42; sections/conci
 problem = "Twice in this round's text, a point is stated again just after the reader has been given it (guidance/editorial.md, 'Say it once'). (1) Jerome's answer on Jer 29:12 is that the Lord could have fulfilled his promise without the captives' prayer, but urges them to pray so that they may be worthy to receive it. The opening thesis gives it (04-themes 19-21). The Introit paragraph fifteen lines later gives it again (38-42). The commentary gives it a third time, in Latin and English (10-commentary 175-180). Page 1 and the compared senses also summarise it. The commentary's version adds the Latin and its context: the false prophets, Futurorum scientia and Mt 7:7. The Introit paragraph adds nothing to the thesis on the same page. (2) The commentary quotes Bede's two statements on Mk 11:23-25 (212-219): the unclean spirit is driven out when the word is preached, and the perfect in faith move such mountains by praying. The next sentence restates both in a relative clause to reach its inference (219-223): 'the unclean spirit that Bede says is driven from the heart when the word is preached, and that the perfect in faith move by praying, is the parable's enemy'. This paraphrases what the reader has just read, and it leaves 'move' without its object, which is Bede's mountain. These are two instances, not a pattern that recurs through a section. Neither changes an attribution or a claim, and both attributions were checked against PL 24 col. 893 and Bede's Migne text."
 required_result = "Each point is given once, at its fullest place. Plain rewrites: (1) 04-themes 38-42: 'God has promised the return and still tells the captives to call on him; that is the difficulty St Jerome answers (In Hieremiam V, PL 24 col. 893).' This leaves his answer to the thesis above it, and its Latin and reasoning to the commentary. (2) 10-commentary 219-223: 'Since the Lord names the devil as the enemy who sowed the cockle (Mt 13:39), Bede's mountain is the parable's enemy, and the Communion makes its promise to the faith that moves it by praying.'"
 
+[[advisories]]
+stage = "web-review"
+id = "WEB-001"
+severity = "advisory"
+location = "sections/40-word-in-the-heart.tex lines 15-17 (web Markdown line 463, the last sentence of the opening paragraph of 'While Men Slept: The Field Kept by the Word That Dwells in the Heart')"
+problem = "\"They are set together here because both ask something of each hearer\" names the study's own joining of the parable and Col 3:16 instead of stating the connection. This is the editor's synthesis labelled in the body, which 'State the finding, not the process that produced it' in guidance/editorial.md excludes; deleting the clause loses nothing. It is the only instance found in the study, so it does not block."
+required_result = "State the connection without the process clause, keeping the preceding qualification that Chrysostom does not set the two passages side by side. For example: \"Both ask something of each hearer: the parable, as Chrysostom reads it, asks him to stay awake, and Paul says what he is to keep in his heart.\""
+
 [[observations]]
 stage = "homily-review"
 location = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/concise/90-apparatus.tex lines 77-80; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/source-bindings.toml (Douay-Rheims verse-text bindings)"
@@ -263,3 +283,13 @@ note = "Still true, and stated in the tool's own comments as a deliberate trade-
 stage = "synthesis-review"
 location = "sections/30-cry-from-captivity.tex line 276 (the second interpretation's anagogical sense); sections/90-apparatus.tex line 53 (Reception paragraph of the expansive scope appendix)"
 note = "The study owner still has two items that the concise has now repaired in its own text. First, the study's anagogical sense compresses Bellarmine to 'the deliverance is accomplished \"in the resurrection only\"'; his text reads 'complete delivery from captivity, which will be thoroughly accomplished in the resurrection only ... We are at present only partially free'. Second, the expansive scope appendix leaves Bede out of the authors read in web text, although the study quotes his Latin from the Wikisource Migne text."
+
+[[observations]]
+stage = "web-review"
+location = "sections/20-patience-of-the-field.tex lines 38, 97, 176 and 186; sections/30-cry-from-captivity.tex line 192; sections/40-word-in-the-heart.tex lines 42, 45 and 106"
+note = "These eight inner quotations close with the TeX sequence ''' (for example `Wilt Thou?'''). A pdflatex test under the leaf's T1/lmodern setup sets that as a double closing quote followed by a single one (‘Wilt Thou?”’), so the native print edition nests the marks the wrong way round, while the web reader sets ‘Wilt Thou?’” correctly; writing '\\,'' gives the right order in both. No screen or review criterion covers this sequence, which points to a missing typography lint rather than to anything particular to this leaf."
+
+[[observations]]
+stage = "web-review"
+location = "sections/20-patience-of-the-field.tex lines 153 and 156 (Augustine, Ep. 93.34 and 93.36, quoted from NPNF)"
+note = "The quotations \"at the end of the world,--meanwhile\" and \"even to apostles,--namely\" copy the CCEL plain text, which writes its dashes as ASCII -- (the same file has \"formless;--on account\"). In TeX, -- sets an en dash, so the print and web editions both show \"world,–meanwhile\"; the printed NPNF very likely has an em dash there (---), but this was not checked against page images."

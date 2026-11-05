@@ -777,3 +777,58 @@ for Scripture verse texts, stands for the source-registration owner and the
 bindings check's owner; the concise References still cite the Douay for
 1 Cor 5:13 and other unbound books, which is the concise study's owner's to
 weigh. The items recorded under earlier stages stand for their owners.
+
+## Install-publication, iteration 0 (5 November 2026)
+
+**Completed reviews.** The engine's recorded results for this run, by stage.
+The SHA-256 is that of the accepting result as the run state records it.
+
+| Review | Iterations and dispositions | Accepting result SHA-256 |
+| --- | --- | --- |
+| Research review | 0 changes required (4 blocking, 3 advisories); 1 pass, 6 advisories | `e31e1324db3fb82fec2ca85196dee61c98e53e33a91925a6983d77f7bcad9d2b` |
+| Study review | 0–2 changes required (7, 5 and 1 blocking); 3 pass, 3 advisories | `627cc98cb1e7634d15a36f5abcbbb2ac737787c1d2bfdf3b49d769d44ee42e27` |
+| Synthesis review | 0 changes required (1 blocking, 3 advisories); 1 pass, 1 advisory | `70277d6fa07bf5012c70395a4f843fb49a636850756bda480d1c83649c4d48c8` |
+| Homily review | 0 changes required (1 blocking, 4 advisories); 1 pass, 3 advisories | `f2edb5cff3d6449c04f4d9dcc9acc106d623b3d2d55590f88c980fe083d1af65` |
+| Artifact gates | 0 pass | `97af5c9c6c70bfc4459030f6b4c4d3ef1c5d44f458a9759ff4ab5fcbb5607d3c` |
+| Web review | 0 pass, 1 advisory (WEB-001) and 2 observations | `94c2d33c7ee1cd248561dd7feef74b0c537ad35747efbed5bdb7579fa7ad220f` |
+
+**Web edition.** Nothing is installed: the site converts the study and its
+companions from their canonical TeX at build time. A fresh conversion of the
+canonical study with `tools/web-edition --provider claude` into the run's
+scratch area is byte-identical to the reviewed conversion
+`build/web/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.md`
+(SHA-256 `a447f8956c3ef7bec1067548230250abc0aa606a72cc5bde4cc22ab2d03e3c6f`,
+equal to `research/web-artifact.json` and to the web review's bound bytes).
+The synthesis and homily readers are converter-verified: no review of their
+own conversions ran. The inspection fields of `web-edition.toml`
+(`inspected`, `inspected_by`, `inspection`) were not written at this stage:
+at this run's seed that file is an input of the content and render
+identities the web review binds, so writing them would stale the review they
+describe. The driver records the inspection after acceptance.
+
+**Release records and catalog.** `make add-publication` with `PROVIDER=claude`
+and `STATUS=alpha` created the three records under
+`release/publications/claude/liturgy/roman-rite/1962/propers/temporal/` for
+the bare ID, `-synthesis` and `-homily`; none existed before. Each is `alpha`
+under the standing authorization `perpetual-public-repository-2026`, and the
+release manifest resolves all three to `library/traditional-latin-mass.md`.
+In that page, row 66's Claude cell, which read `Planned`, now links Full
+Study Guide, Synthesis and Homily to the three readers in the document
+type's output order; no PDF is linked, because none is published. The page
+gains the one publication marker
+`claude:liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany`
+(the release's primary provider is `gpt`, so a Claude marker carries its
+provider prefix). No other row and no other provider's cell was changed.
+Each of the three outputs has exactly one owning catalog line.
+
+**Checks.** `tools/tpt web-edition check --leaf` for this leaf: 3 reader
+outputs convert with every fidelity audit. `tools/check-web-edition`: valid.
+The publication-phase `scripts/_proper_study.py check` in source mode with
+the presentation, format, authority, orientation and orientation-v3
+requirements: pass. `tools/tpt document-library check` scoped to this leaf:
+pass. `make check-release-bindings`, `tools/tpt public-alpha check` and
+`tools/tpt document-library structure --check` refused with "browser product
+inputs changed", because the committed leaf changes those inputs; recording
+the browser products (which carry the document catalogue), adopting the
+scoped release bindings and refreshing the source inventories belong to the
+driver after this stage. The program gate decides acceptance.
