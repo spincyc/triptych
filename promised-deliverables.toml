@@ -82,6 +82,7 @@ state = "candidate"
   id = "main-publication"
   criterion = "The validated changes are committed, reconciled with current main and pushed without force; deployment state is verified and reported accurately."
   status = "open"
+  evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
 id = "single-source-print-followup-2026-11-04"

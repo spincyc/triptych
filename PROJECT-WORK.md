@@ -11,29 +11,48 @@ Last reconciled: 2026-11-05.
 
 <!-- promised-deliverable: gpt-pc-s58-advisory-corrections-2026-11-05 -->
 
-**In progress.** The maintainer requested applying SYN-001 and HOM-001 and
-pushing the corrections to main. Distinguish Augustine's general connection
-between prayer and good works from the studies' application to helping the
-needy, and distinguish the Prayer after Communion's addressee, the Lord,
-from preservation through his Spirit. Align recurrences across the expansive
-study, concise study and homily. Preserve the original production's archived
-results as historical evidence; changed prose needs fresh scoped review and
-current reader/publication checks. Completion requires the corrected sources,
-reviewed readers and current release products to reach main, with successful
-Pages gates and live verification. No new research claim or print review is
-requested.
+**In progress: reviewed publication candidate; site and deployment verification pending.**
+The maintainer requested applying SYN-001 and HOM-001 and pushing to main.
+Five Augustine passages now distinguish his general good-works explanation
+from the studies' practical-mercy application. Five direct post-Communion
+statements name the Lord as addressee and preservation through his Spirit.
+The homily has 1,284 spoken words, with a textual estimate of 10.3–11.7 minutes.
+Both advisories pass independent bounded source review, including the additional
+recurrence found and repaired during that review. Current standing advisories
+are zero. The genuine initial and passing recheck results are preserved in the
+leaf's `evaluations/post-publication-2026-11-05/`.
 
-The corrected prose now passes independent bounded review, including a fifth
-Augustine recurrence found and repaired during that review. Both initial and
-recheck results are preserved under the leaf's
-`evaluations/post-publication-2026-11-05/`. All three source/content checks and
-the complete content/schema gates pass. The research boundary remains exactly
-unchanged at 1,732 files before upstream integration. Reader and deployment
-requirements remain open. Main subsequently advanced with shared chronology
-assembly changes through `4bcc8c80fe`. A history-preserving merge retains those
-changes; regenerated target readers and their affected chronology need a fresh
-bounded integration review before publication. The earlier preservation and
-reader reviews remain scoped to their recorded source checkpoint.
+Source checkpoint `628cf63b508d0194aec82a27d2a717c8b485fa8d` preserved the
+original 1,732-file research boundary. Main subsequently advanced with shared
+chronology and assembly changes through `4bcc8c80fe`; merge
+`baced82298220931a8f004ecfc6acc2cee5b4295` preserves both histories. Current
+research inputs comprise 1,741 files, and a separate independent bounded
+integration review passes. All 39 appointed passage pairs and candidate claims
+remain intact, with the full evidence behind the 12-row compact table.
+Historical runs, seals and original judgments remain unchanged.
+
+All three current readers pass fresh independent inspection. Exact source-impact
+and web results, limits and a clerical review-locator correction are indexed in
+the evaluation README. Full and concise revision stamps are committed at
+`2026-11-05T20:12:56Z`; the homily retains `2026-11-05T20:05:55Z`.
+The independent rebuilds and cache check pass for thirteen browser-product
+families, 27,690 files and 227,473,491 bytes. Their identity is
+`7061eb0e269f66fe963062d8ff56e7a6e37aecbbbcb5bae7df28e26f11743bae`.
+All three recorded reader hashes match the independent rendered review.
+
+Source/content, live assembly, conversion, the proper-study publication gate,
+target catalogue and complete catalogue structure pass. Only eleven reviewed
+release-input bindings and two derived rights-record values were refreshed;
+authorization terms and source membership are unchanged. Both classifications
+and all 166 pending migration states are preserved. No PDFs or binary archives
+are tracked; the review handoff stays ignored. Full-site assembly, the final
+binding check, main push, Pages gates and live verification remain pending.
+No new engine-run acceptance, print-layout approval or human delivery is claimed.
+
+The merged chronology task had an open publication requirement without the
+evidence pointer required by the ledger schema. Its evidence now points to
+this register; its candidate/open status and acceptance criterion are unchanged.
+The ledger validates with 118 tracked deliverables, 93 complete.
 
 ## GPT Thirty-second Sunday in Ordinary Time, 2026-11-08
 
