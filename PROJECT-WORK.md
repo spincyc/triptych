@@ -11,7 +11,7 @@ Last reconciled: 2026-11-05.
 
 <!-- promised-deliverable: sanctuary-dictionary-continuation-2026-11 -->
 
-**Reviewed release candidate; final deployment verification pending.** The remaining-work plan
+**Bounded continuation complete: verified sources pushed to main; Pages deployment pending.** The remaining-work plan
 now distinguishes the original bounded repairs from the full open corpus.
 Two canonical records for cassock and surplice bring the inventory to 82;
 three source-controlled drawings show the separate garments and their worn
@@ -20,8 +20,8 @@ lay-dress custom remains explicit. No completeness-matrix row is closed.
 
 Cold review repaired missing printed source references, suppressed handling
 boundaries, absent scale notices, small/repeated captions and page collisions.
-The comprehensive selection now includes thirteen already-admitted pontifical
-objects. The six screen proofs contain 100 pages, with exact identities and
+The comprehensive selection now contains 64 objects, including thirteen
+previously excluded but already-admitted pontifical objects. The six screen proofs contain 100 pages, with exact identities and
 review coverage in the dictionary's current cold-review record. Source checks
 also corrected false vestment editions and illustration claims, the ombrellino's
 purported 1952 witness, and the conopaeum's grant dates and source limits.
@@ -29,7 +29,8 @@ Cope/humeral veil,
 remaining appointments and vessels, Requiem, ritual Masses, Holy Week and
 whole-composition work remain in the delivery plan.
 
-Source and deployment-source gates pass at `632ddac931`. Thirteen selected
+Standalone source-maintenance checks passed at `b5baadeaa7`; the later combined
+deployment-source gates passed at `63d7d94867`. Thirteen selected
 native bundles compile in two passes to 255 pages; the seven guide/card PDFs
 match their accepted baseline exactly, and the six dictionaries preserve the
 reviewed pages apart from their committed revision lines. Two independent cold
@@ -58,14 +59,42 @@ The six dictionary proofs cover 100 pages and 1,165 resolving numbered links.
 The [release review](workflows/reviews/sanctuary-dictionary-2026-11-05/release-verification.json)
 pins those artifacts and the historical source, audit and compilation scopes.
 A separate [complete comparison](workflows/reviews/sanctuary-dictionary-2026-11-05/all-reader-revision-transfer.json)
-proves that all 105 proper readers changed from current main differ only in
+proves that all 105 proper readers changed from `19a7e266ec` differ only in
 revision timestamps and their derived hashes; the web index differs only in
 those hashes. This mechanical equality renews no editorial or print approval.
 Main's subsequent changes through `53d90dbc69` affect operational records and
-the matching workflow test, with no changed publication inputs. The final
-committed site rebuild, full Pages verification and main push remain pending.
-The maintainer authorized main integration. Research records distinguish
-source, figure, consumer, print and live-deployment evidence.
+the matching workflow test, with no changed publication inputs. They were
+reconciled without rewriting history. Final publication commit
+`76e0fa8c54135d43f1ed90bf0a2fa7190c6de3ff` passed a fresh committed-site build
+and full `public-alpha verify --deployment-target github-pages`, then reached
+main and the workspace branch by ordinary pushes.
+
+The final site has 43,666 files including its checksum manifest and 647 native
+catalog selections. Twenty HTML routes and sixteen referenced bundle descriptors
+match the inspected candidate after only validated global-commit and derived
+transport substitutions; the gallery and three readers are byte-identical.
+All thirteen final served native selections were freshly compiled again:
+255 pages, two passes each, all 29 runtime fonts, no runtime-byte mismatches,
+and exact accepted PDF and render hashes. This is a selected compile proof;
+the complete 647-edition CI compile remains separate.
+
+| Final local evidence at `76e0fa8c54` | SHA-256 |
+| --- | --- |
+| Publication manifest | `b6735fdc0ba9ac8e21246a20947ee74a2c52cf40d3a3cea89f61364233173190` |
+| Site checksum manifest | `cbfefca0f8d4f236cb793f6ee034ebbaa826a6592316e9451535020ef7d2df6f` |
+| Full Pages verifier log (exit 0) | `3c927c76052f1d0296da487cfb40da550159e21d4a1702aa8aed78abe00dec44` |
+| Final selected native compile summary | `1e10c200d677df33a11947094e4d1fb6e0e398732d2b84b7381c758d2fe02e91` |
+| Final served-content transfer | `212230a7f15964da8e95014ca57f63717c2626c4b5074097772d085fc3fa13cd` |
+| Composite final local verification summary | `72fd6722acbb63ad5b22c50105eaa6e4d2de74333202e552e076486499636999` |
+
+The push triggered [Pages run 42131423670](https://github.com/spincyc/triptych/actions/runs/42131423670),
+confirmed pending for that exact source commit; repository hygiene passed.
+CI compilation, deployment and live-site verification are not claimed.
+The final status-only commit changes this register and the promise ledger,
+which are excluded from the Pages trigger. The immutable candidate receipts
+retain their original scope. This checkpoint completes the plan's current
+gallery/transport and validation/integration pass; future corpus slices repeat
+those checks, and every completeness-matrix row remains open.
 
 The upstream [Pages build](https://github.com/spincyc/triptych/actions/runs/42099806134/job/127500251862)
 passed source checks and site assembly, then exceeded its two-hour limit during

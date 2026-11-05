@@ -4804,7 +4804,7 @@ state = "complete"
 id = "sanctuary-dictionary-continuation-2026-11"
 owner = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
 promise = "Advance the sanctuary dictionary remaining-work plan, cold-review the six editions, and integrate verified improvements coherently."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "current-plan"
@@ -4821,7 +4821,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "cold-review-and-integration"
   criterion = "Independent review findings on consistency, correctness, clarity and visual quality are resolved or explicitly bounded; affected consumers are validated and coherent commits are published with the exact integration state recorded."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/cold-review-2026-11-05.md", "workflows/reviews/sanctuary-dictionary-2026-11-05/release-verification.json"]
 
 [[deliverables]]
