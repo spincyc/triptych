@@ -59,8 +59,11 @@ initially queued behind the preceding run. That predecessor,
 [42099806134](https://github.com/spincyc/triptych/actions/runs/42099806134),
 built its site after roughly 96 minutes, saved its products and then exhausted
 the two-hour job budget during independent artifact verification. Twelve of
-thirteen family input identities differ for this correction, so its build
-cannot reuse most of those families. The Pages build limit is now three hours;
+thirteen family input identities differ for this correction, while only the
+documents and web-editions output bytes differ. Local preparation with the
+saved prior candidates reused ten families, generated two and retained one
+already current; all thirteen match the committed proof. The Pages build limit
+is now three hours;
 all source, artifact and print gates remain intact. The semantic workflow diff
 changes only that timeout, and the browser-product identity above is unchanged.
 The first correction run is being superseded by this timeout-only repair.
@@ -216,7 +219,16 @@ comparison reduced three chronology traces to one and 27.992 seconds to 8.195
 seconds; both complete catalogs were byte-identical. The scoped release refresh
 verified all 24,029 source hashes, updating 19 and adopting 17 dependencies with
 none retired or outside the reviewed scope. Upstream authorization is preserved.
-Final site checks and main publication remain pending.
+The chronology implementation reached main through `4bcc8c80fe`. Its full local
+site build and independent deployment verification passed. Pages run
+`42099806134` passed source/site generation and all 647 native compiles, then
+hit the two-hour limit during independent verification; the current browser
+products had already been saved. Main subsequently incorporated the reviewed
+PC-S58 advisory corrections without changing chronology data or machinery,
+and increased the build budget to three hours in `19a7e266ec`. The workflow
+contract test is reconciled with that budget. The combined descriptor is
+`7061eb0e269f66fe963062d8ff56e7a6e37aecbbbcb5bae7df28e26f11743bae`.
+Final combined deployment and live verification remain pending.
 
 ## Review follow-up: single-source corpus and gated printing, 2026-11-04
 
