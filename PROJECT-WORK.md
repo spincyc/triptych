@@ -35,6 +35,11 @@ source grounding, visual consistency, coverage and actual reader usability.
   lessons/captions, a cut-line intrusion and clipped terminal text. All thirteen
   served source bundles compile in two passes with the runtime boundary intact.
   The 82 focused tests and all 39 metadata/source/content checks pass.
+- Post-commit verification exposed stale dictionary revision dates: the date
+  resolver read only explicitly written manifest roles and missed the canonical
+  object data supplied by the document schema. It now uses the effective
+  manifest; all six dictionaries derive the content commit's date. Fifteen
+  revision tests pass, including derived and leaf-relative data regressions.
 
 The current production and exact artifact evidence is in the
 [guide production manifest](src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md)

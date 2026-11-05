@@ -34,7 +34,8 @@ The source closure of an edition (one declared entrypoint: ``main.tex``,
    be expanded fails, rather than leaving a source out;
 2. the literal ``\\includegraphics``/``\\pgfimage`` artwork of those files;
 3. the publication's declared build-time render data (the
-   ``RENDER_DATA_ROLES`` structure entries of ``publication.toml``), which a
+   ``RENDER_DATA_ROLES`` structure entries of the effective publication
+   manifest, including roles derived by its owning schema), which a
    generator turns into TeX that no tracked ``\\input`` names.
 
 It excludes:
@@ -78,7 +79,6 @@ import os
 import re
 import subprocess
 import sys
-import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -86,6 +86,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from _corpus import active_tex  # noqa: E402
 from _document_types import GENERATED_BY  # noqa: E402
+from _document_schema import SchemaError, load_manifest, _structure_paths  # noqa: E402
 from _proper_components import companion_owner  # noqa: E402
 
 PROVIDERS = ("claude", "gpt")
@@ -286,18 +287,18 @@ def _render_data(root: Path, provider_root: Path, entry: Path) -> set[Path]:
     if not manifest.is_file():
         return set()
     try:
-        data = tomllib.loads(manifest.read_text(encoding="utf-8"))
-    except (OSError, tomllib.TOMLDecodeError) as error:
+        data = load_manifest(root, manifest)
+    except (OSError, SchemaError, ValueError) as error:
         raise RevisionError(f"cannot read {manifest.relative_to(root)}: {error}") from error
     role = next((output.get("role") for output in data.get("outputs", [])
                  if output.get("entrypoint") == entry.name), ENTRYPOINTS.get(entry.name))
     result = set()
     for item in data.get("structure", []):
-        if item.get("role") not in RENDER_DATA_ROLES or not isinstance(item.get("data"), str):
+        if item.get("role") not in RENDER_DATA_ROLES:
             continue
         if item.get("outputs") and role not in item["outputs"]:
             continue
-        for path in root.glob(item["data"]):
+        for path in _structure_paths(root, data, item):
             if path.is_file() and path.suffix in RENDER_DATA_SUFFIXES:
                 resolved = path.resolve()
                 if resolved.is_relative_to(provider_root):

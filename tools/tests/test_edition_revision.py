@@ -75,6 +75,52 @@ class Fixture(unittest.TestCase):
 
 
 class ClosureAndHistoryTests(Fixture):
+    def test_explicit_leaf_relative_render_data_is_part_of_the_revision(self) -> None:
+        document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"
+        leaf = "src/claude/" + document
+        self.write(leaf + "/main.tex", GENERATED + "\\input{doc/sections/body}\n")
+        self.write(leaf + "/publication.toml",
+                   '[[structure]]\nrole = "object-records"\nsource = "objects/*.toml"\n')
+        record = leaf + "/objects/chalice.toml"
+        self.write(record, 'description = "Original data"\n')
+        self.commit("declare leaf-relative render data")
+        self.write(record, 'description = "Corrected definition"\n')
+        edited = self.commit("correct the rendered object")
+        value = self.derive(document)
+        self.assertEqual(value.timestamp, stamp(edited))
+        self.assertIn(record, value.closure)
+
+    def test_derived_dictionary_render_data_revises_a_minimal_manifest_edition(self) -> None:
+        owner = "src/claude/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
+        leaf = owner + "/altar-server"
+        document = leaf.removeprefix("src/claude/")
+        self.write(leaf + "/main.tex", GENERATED + "\\input{" +
+                   owner.removeprefix("src/claude/") + "/shared/body}\n")
+        self.write(owner + "/shared/body.tex", "Dictionary shell.\n")
+        # These roles are supplied by the owning schema, so a minimized
+        # publication manifest deliberately carries none of them.
+        self.write(leaf + "/publication.toml", "# All structure roles are derived.\n")
+        paths = [owner + "/shared/schema/inventory-schema.toml",
+                 owner + "/shared/schema/edition-selections.toml",
+                 owner + "/shared/objects/chalice.toml",
+                 owner + "/research/artwork-manifest.toml"]
+        for path in paths:
+            self.write(path, 'description = "Original data"\n')
+        self.commit("create dictionary")
+        self.write(paths[2], 'description = "Corrected chalice definition"\n')
+        edited = self.commit("correct the rendered object")
+        # Generated entrypoints and common templates still cannot move stamps.
+        self.write(leaf + "/main.tex", (self.root / (leaf + "/main.tex")).read_text() +
+                   "% template change\n")
+        self.write("src/common/dictionary-template.tex", "% typesetting only\n")
+        self.commit("retune dictionary template")
+        value = self.derive(document)
+        self.assertEqual(value.timestamp, stamp(edited))
+        self.assertTrue(set(paths).issubset(value.closure))
+        self.assertNotIn(leaf + "/publication.toml", value.closure)
+        self.write(paths[1], 'description = "Changed selection"\n')
+        self.assertTrue(self.derive(document).uncommitted)
+
     def test_the_stamp_is_the_last_commit_to_the_editions_own_sources(self) -> None:
         self.assertEqual(self.derive().timestamp, stamp(self.first))
         self.write("src/claude/doc/sections/body.tex", "Body, revised.\n")
