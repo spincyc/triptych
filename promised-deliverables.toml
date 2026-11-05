@@ -15,8 +15,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-review-and-publication"
   criterion = "Fresh independent scoped review checks the changed claims and current readers; source/content, conversion, inventory, product and release checks pass without carrying old approval across changed prose."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/evaluations/post-publication-2026-11-05/README.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/web-edition.toml"]
 
   [[deliverables.requirements]]
   id = "main-and-live"

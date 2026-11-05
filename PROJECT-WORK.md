@@ -11,7 +11,7 @@ Last reconciled: 2026-11-05.
 
 <!-- promised-deliverable: gpt-pc-s58-advisory-corrections-2026-11-05 -->
 
-**In progress: reviewed publication candidate; site and deployment verification pending.**
+**In progress: validated corrections pushed to main; deployment verification pending.**
 The maintainer requested applying SYN-001 and HOM-001 and pushing to main.
 Five Augustine passages now distinguish his general good-works explanation
 from the studies' practical-mercy application. Five direct post-Communion
@@ -45,8 +45,19 @@ target catalogue and complete catalogue structure pass. Only eleven reviewed
 release-input bindings and two derived rights-record values were refreshed;
 authorization terms and source membership are unchanged. Both classifications
 and all 166 pending migration states are preserved. No PDFs or binary archives
-are tracked; the review handoff stays ignored. Full-site assembly, the final
-binding check, main push, Pages gates and live verification remain pending.
+are tracked; the review handoff stays ignored. The final release check reports
+zero stale bindings. `make public-site` and `public-alpha verify
+--deployment-target github-pages` both pass. The assembled readers contain all
+corrected claims and revision stamps at 1280- and 390-pixel widths without page
+overflow. All three print pages stay idle without fetching native TeX assets;
+the artifact declares 647 native editions and `stored_pdfs: false`.
+
+Publication commit `2f94728d075029a8a043021eb2006a5a9925f9d5` reached both
+the workspace branch and main without rewriting history. Its push triggered
+[Pages run 42117986012](https://github.com/spincyc/triptych/actions/runs/42117986012),
+initially queued behind the preceding run. The new run's build, full native
+compile, deployment and live reader verification remain pending. Earlier runs
+are not evidence of this correction's deployment.
 No new engine-run acceptance, print-layout approval or human delivery is claimed.
 
 The merged chronology task had an open publication requirement without the
